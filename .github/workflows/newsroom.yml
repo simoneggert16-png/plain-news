@@ -26,7 +26,7 @@ jobs:
       - name: Run AI newsroom
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '2' }}
+          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '5' }}
         run: node bots/newsroom.mjs
       - name: Commit new stories
         run: |

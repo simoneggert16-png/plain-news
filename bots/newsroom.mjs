@@ -14,8 +14,8 @@ import { translate } from './lib/translate.mjs';
 import { loadIndex, saveIndex, loadState, saveState, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 
-const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 6);
-const MAX_PER_CATEGORY = 2;
+const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 8);
+const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 3);
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 async function pool(items, n, fn) {
@@ -133,11 +133,37 @@ async function main() {
   const recent = index.articles.filter((a) => Date.now() - Date.parse(a.publishedAt) < 48 * 3600e3);
   const recentTitles = recent.map((a) => a.locales?.[SOURCE_LOCALE]?.title).filter(Boolean);
 
-  // Keep prompt size crisp, focused and ultra-reliable: newest ~45 items.
-  const deskItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt)).slice(0, 45);
-  log(`DESK   clustering ${deskItems.length} headlines…`);
-  const events = (await desk(deskItems, recentTitles)).slice(0, MAX_STORIES);
-  log(`DESK   ${events.length} events selected`);
+  // Keep prompt size crisp and reliable: cluster in batches of ~45 items across unseen news
+  const sortedItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  const batchSize = 45;
+  const maxBatches = Math.min(4, Math.ceil(sortedItems.length / batchSize));
+  let allEvents = [];
+  const publishedTitles = [...recentTitles];
+
+  for (let b = 0; b < maxBatches; b++) {
+    const chunk = sortedItems.slice(b * batchSize, (b + 1) * batchSize);
+    if (chunk.length < 10) break;
+    log(`DESK   clustering batch ${b + 1}/${maxBatches} (${chunk.length} headlines)…`);
+    try {
+      const found = await desk(chunk, publishedTitles);
+      for (const ev of found) {
+        if (!allEvents.some((existing) => existing.event.toLowerCase() === ev.event.toLowerCase())) {
+          allEvents.push(ev);
+          publishedTitles.push(ev.event);
+        }
+      }
+    } catch (err) {
+      log(`DESK   batch ${b + 1} error: ${err.message}`);
+    }
+    if (allEvents.length >= MAX_STORIES * 2) break;
+  }
+
+  allEvents.sort((a, b) => b.importance * 10 + b.outlets - (a.importance * 10 + a.outlets));
+  const perCat = {};
+  const events = allEvents
+    .filter((e) => (perCat[e.category] = (perCat[e.category] || 0) + 1) <= MAX_PER_CATEGORY)
+    .slice(0, MAX_STORIES);
+  log(`DESK   ${events.length} events selected across categories`);
 
   const published = [];
   for (const event of events) {
