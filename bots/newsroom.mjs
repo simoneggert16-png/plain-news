@@ -12,8 +12,8 @@ import { chatJSON } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
 import { loadIndex, saveIndex, loadState, saveState, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
-import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { curateMedia } from './lib/media.mjs';
+import { verifyAndCaptionImage } from './lib/vision.mjs';
 
 const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 8);
 const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 3);
@@ -204,16 +204,50 @@ async function main() {
 
       const category = CATEGORIES.includes(final.category) ? final.category : event.category;
       const now = new Date();
+
+      // Multimodal double-check & captioning
+      let imageCaption = null;
+      let imageCredit = null;
+      let verifiedImage = heroImage;
+      if (heroImage) {
+        log(`  VISION double-checking image & generating caption…`);
+        const vResult = await verifyAndCaptionImage(heroImage, {
+          category,
+          title: final.title,
+          facts: final.facts,
+          sources: event.sources,
+        }).catch(() => null);
+
+        if (vResult?.verified) {
+          imageCaption = vResult.caption?.en || final.title;
+          imageCredit = vResult.credit || event.sources[0]?.outlet || null;
+          log(`  VISION verified: "${imageCaption.slice(0, 60)}…" (Credit: ${imageCredit})`);
+        } else if (vResult?.verified === false) {
+          log(`  VISION rejected misleading image; removing.`);
+          verifiedImage = null;
+        }
+      }
+
       const article = {
         slug: slugify(final.title, now),
         category,
-        image: heroImage,
+        image: verifiedImage,
+        imageCredit: imageCredit || null,
         video: heroVideo || null,
         importance: Math.min(5, Math.max(1, +final.importance || event.importance || 3)),
         publishedAt: now.toISOString(),
         updatedAt: now.toISOString(),
         sources: event.sources.map(({ outlet, title, url, publishedAt }) => ({ outlet, title, url, publishedAt })),
-        locales: { [SOURCE_LOCALE]: { title: final.title, dek: final.dek, facts: final.facts, body: final.body, context: final.context || '' } },
+        locales: {
+          [SOURCE_LOCALE]: {
+            title: final.title,
+            dek: final.dek,
+            facts: final.facts,
+            body: final.body,
+            context: final.context || '',
+            imageCaption: imageCaption || '',
+          },
+        },
         meta: { writer: writerModel, editor: editorModel, verdict: review.verdict, problemsFixed: review.problems || [] },
       };
 

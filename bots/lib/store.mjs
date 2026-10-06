@@ -22,18 +22,26 @@ export const saveArticle = (a) => write(path.join(ARTICLES, `${a.slug}.json`), a
 export const deleteArticle = (slug) => fs.rmSync(path.join(ARTICLES, `${slug}.json`), { force: true });
 export const listArticleFiles = () => fs.readdirSync(ARTICLES).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5));
 
-/** Index entry = only what list views need (titles/deks in every language). */
 export function toIndexEntry(a) {
   return {
     slug: a.slug,
     category: a.category,
     image: a.image || null,
+    imageCredit: a.imageCredit || null,
     video: a.video || null,
     importance: a.importance,
     publishedAt: a.publishedAt,
     updatedAt: a.updatedAt,
     sourceCount: new Set(a.sources.map((s) => s.outlet)).size,
-    locales: Object.fromEntries(Object.entries(a.locales).map(([l, v]) => [l, { title: v.title, dek: v.dek, facts: (v.facts || []).slice(0, 3) }])),
+    locales: Object.fromEntries(Object.entries(a.locales).map(([l, v]) => [
+      l,
+      {
+        title: v.title,
+        dek: v.dek,
+        facts: (v.facts || []).slice(0, 3),
+        imageCaption: v.imageCaption || null,
+      },
+    ])),
   };
 }
 

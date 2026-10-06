@@ -76,10 +76,18 @@ export default async function ArticlePage({ params }) {
             caption={a.video.caption}
           />
         ) : a.image ? (
-          <div className="art-hero-wrap">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={a.image} alt={l.title} className="art-hero" loading="lazy" />
-          </div>
+          <figure className="art-hero-figure">
+            <div className="art-hero-wrap">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={a.image} alt={l.imageCaption || l.title} className="art-hero" loading="lazy" />
+            </div>
+            {(l.imageCaption || a.imageCredit) && (
+              <figcaption className="art-hero-caption">
+                {l.imageCaption && <span className="caption-text">{l.imageCaption}</span>}
+                {a.imageCredit && <span className="caption-credit">Foto: {a.imageCredit}</span>}
+              </figcaption>
+            )}
+          </figure>
         ) : null}
       </header>
 

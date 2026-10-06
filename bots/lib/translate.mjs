@@ -4,7 +4,14 @@ import { LOCALES } from '../../lib/config.mjs';
 /** Translate one article (source-language fields) into `locale`. Validates structure. */
 export async function translate(src, locale) {
   const lang = LOCALES.find((l) => l.code === locale);
-  const input = { title: src.title, dek: src.dek, facts: src.facts || [], body: src.body, context: src.context || '' };
+  const input = {
+    title: src.title,
+    dek: src.dek,
+    facts: src.facts || [],
+    body: src.body,
+    context: src.context || '',
+    imageCaption: src.imageCaption || '',
+  };
   const { data } = await chatJSON('translator', [
     {
       role: 'system',
@@ -20,6 +27,7 @@ export async function translate(src, locale) {
     dek: data.dek || src.dek,
     facts: Array.isArray(data.facts) && data.facts.length > 0 ? data.facts : src.facts,
     body: data.body,
-    context: data.context || ''
+    context: data.context || '',
+    imageCaption: data.imageCaption || src.imageCaption || '',
   };
 }
