@@ -23,7 +23,7 @@ export default async function LegalPage({ params }) {
               <strong>Plattform:</strong> PLAIN. ([plain-news.ch](https://plain-news.ch))<br />
               <strong>Herausgeber & Initiator:</strong> Simon Eggert<br />
               <strong>Standort:</strong> Schweiz (CH)<br />
-              <strong>Kontakt:</strong> <a href="mailto:contact@plain-news.ch">contact@plain-news.ch</a><br />
+              <strong>Kontakt & Impressum:</strong> <a href="mailto:simoneggert16@gmail.com">simoneggert16@gmail.com</a><br />
               <strong>Charakter:</strong> Nicht-kommerzielles, unabhängiges Open-Source-Informationsprojekt.
             </>
           ) : (
@@ -31,7 +31,7 @@ export default async function LegalPage({ params }) {
               <strong>Platform:</strong> PLAIN. ([plain-news.ch](https://plain-news.ch))<br />
               <strong>Founder & Publisher:</strong> Simon Eggert<br />
               <strong>Location:</strong> Switzerland (CH)<br />
-              <strong>Contact:</strong> <a href="mailto:contact@plain-news.ch">contact@plain-news.ch</a><br />
+              <strong>Contact & Legal:</strong> <a href="mailto:simoneggert16@gmail.com">simoneggert16@gmail.com</a><br />
               <strong>Nature:</strong> Non-commercial, independent open-source information project.
             </>
           )}
@@ -68,14 +68,14 @@ export default async function LegalPage({ params }) {
             <>
               Sollten Sie als Medienunternehmen oder Urheber der Ansicht sein, dass eine Verlinkung, ein Zitat oder
               eine Quellenzuordnung Ihre Rechte verletzt, bitten wir um eine formlose Nachricht an{' '}
-              <a href="mailto:contact@plain-news.ch">contact@plain-news.ch</a>. Beanstandete Inhalte werden nach
+              <a href="mailto:simoneggert16@gmail.com">simoneggert16@gmail.com</a>. Beanstandete Inhalte werden nach
               Prüfung umgehend angepasst oder entfernt.
             </>
           ) : (
             <>
               If any publisher or rights holder believes that a citation, link, or media reference infringes upon
               their rights, please send an informal notice to{' '}
-              <a href="mailto:contact@plain-news.ch">contact@plain-news.ch</a>. The content in question will be reviewed
+              <a href="mailto:simoneggert16@gmail.com">simoneggert16@gmail.com</a>. The content in question will be reviewed
               and modified or removed promptly.
             </>
           )}
