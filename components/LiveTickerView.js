@@ -24,6 +24,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState(initialFilter);
+  const [sportSubFilter, setSportSubFilter] = useState('all');
   const [intervalSec, setIntervalSec] = useState(180); // default: 3 min
   const [countdown, setCountdown] = useState(180);
   const [lastUpdated, setLastUpdated] = useState(null);
@@ -50,6 +51,17 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
     fetchTicker();
   }, [fetchTicker]);
 
+  // Read URL filter param if present
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const f = params.get('filter');
+      if (f && FILTERS.some((x) => x.id === f)) {
+        setFilter(f);
+      }
+    }
+  }, []);
+
   // Interval timer and countdown
   useEffect(() => {
     setCountdown(intervalSec);
@@ -70,7 +82,11 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
 
   const filteredItems = items.filter((item) => {
     if (filter === 'all') return true;
-    if (filter === 'sport') return item.type === 'sport';
+    if (filter === 'sport') {
+      if (item.type !== 'sport') return false;
+      if (sportSubFilter !== 'all') return item.sportType === sportSubFilter;
+      return true;
+    }
     if (filter === 'politics') return item.type === 'politics';
     if (filter === 'business') return item.type === 'business';
     if (filter === 'world') return item.type === 'world';
@@ -143,13 +159,43 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
           <button
             key={f.id}
             type="button"
-            onClick={() => setFilter(f.id)}
+            onClick={() => {
+              setFilter(f.id);
+              if (f.id !== 'sport') setSportSubFilter('all');
+            }}
             className={`liveticker-filter-btn ${filter === f.id ? 'active' : ''}`}
           >
             {isDe ? f.de : f.en}
           </button>
         ))}
       </div>
+
+      {/* Sub-Filters for Sports (Top 10 world sports) */}
+      {filter === 'sport' && (
+        <div className="sport-pills-bar" style={{ padding: '8px 16px', background: 'var(--paper-2)', borderBottom: 'var(--rule)' }}>
+          {[
+            { id: 'all', de: 'Alle', en: 'All' },
+            { id: 'football', de: 'Fußball & Länderspiele', en: 'Football' },
+            { id: 'tennis', de: 'Tennis', en: 'Tennis' },
+            { id: 'f1', de: 'Formel 1', en: 'Formula 1' },
+            { id: 'basketball', de: 'Basketball', en: 'Basketball' },
+            { id: 'nfl', de: 'NFL', en: 'NFL' },
+            { id: 'eishockey', de: 'Eishockey', en: 'Ice Hockey' },
+            { id: 'cycling', de: 'Radsport', en: 'Cycling' },
+            { id: 'golf', de: 'Golf', en: 'Golf' },
+            { id: 'cricket', de: 'Cricket', en: 'Cricket' },
+          ].map((sp) => (
+            <button
+              key={sp.id}
+              type="button"
+              onClick={() => setSportSubFilter(sp.id)}
+              className={`sport-pill ${sportSubFilter === sp.id ? 'active' : ''}`}
+            >
+              {isDe ? sp.de : sp.en}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Feed List */}
       <div className="liveticker-feed">
