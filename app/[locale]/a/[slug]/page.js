@@ -5,6 +5,7 @@ import { getDict, fmt } from '@/lib/i18n.mjs';
 import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mjs';
 import { fmtDate } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
+import ArticleActions from '@/components/ArticleActions';
 
 export const dynamicParams = false;
 
@@ -68,6 +69,7 @@ export default async function ArticlePage({ params }) {
           <span>{fmt(t.minRead, { n: readingMinutes(a, locale) })}</span>
           <span>{outlets} {t.sources}</span>
         </div>
+        <ArticleActions slug={a.slug} title={l.title} locale={locale} isDe={locale === 'de'} />
         {a.video ? (
           <VideoPlayer
             src={a.video.url}

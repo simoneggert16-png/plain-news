@@ -14,10 +14,16 @@ const JUNK_PATTERNS = [
   /apple-touch-icon/i,
   /blank\.(?:gif|png|jpe?g)/i,
   /avatar/i,
+  /author/i,
+  /headshot/i,
+  /bio[-_]?pic/i,
+  /staff/i,
+  /profile/i,
   /share[_-]?icon/i,
   /logo[-_.]?(?:png|svg|jpg)/i,
   /og[-_]default/i,
   /meta[-_]default/i,
+  /\b(?:340\/340|150\/150|100\/100|80\/80|64\/64)\b/i,
 ];
 
 export function isJunkImage(url) {

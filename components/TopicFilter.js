@@ -1,8 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { CATEGORIES } from '@/lib/config.mjs';
 
 export default function TopicFilter({ locale, t }) {
+  const router = useRouter();
   const [selectedTopics, setSelectedTopics] = useState(CATEGORIES);
   const [isCustom, setIsCustom] = useState(false);
 
@@ -31,14 +33,14 @@ export default function TopicFilter({ locale, t }) {
     setSelectedTopics(next);
     setIsCustom(next.length !== CATEGORIES.length);
     document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(next))};path=/;max-age=31536000;samesite=lax`;
-    window.location.reload();
+    router.refresh();
   }
 
   function selectAll() {
     setSelectedTopics(CATEGORIES);
     setIsCustom(false);
-    document.cookie = `plain_topics=;path=/;max-age=0`;
-    window.location.reload();
+    document.cookie = `plain_topics=;path=/;max-age=0;expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    router.refresh();
   }
 
   return (
