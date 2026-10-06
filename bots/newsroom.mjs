@@ -12,6 +12,7 @@ import { chatJSON } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
 import { loadIndex, saveIndex, loadState, saveState, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
+import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
 
@@ -78,15 +79,19 @@ function sourcePack(sources) {
 
 const ARTICLE_SCHEMA = `{"title":"...","dek":"one-sentence summary, max 30 words","facts":["3-5 short key facts"],"body":["3-6 paragraphs, each 2-4 sentences"],"context":"1-3 sentences of neutral background that helps a young reader understand why this is happening (only from sources)","category":"${CATEGORIES.join('|')}","importance":1}`;
 
+import { AGENT_DESKS } from './lib/desks.mjs';
+
 async function reporter(event) {
+  const desk = AGENT_DESKS[event.category] || AGENT_DESKS.world;
+  const systemPrompt = `${desk.systemPrompt}\n\nDesk: ${desk.name} (Focus: ${desk.focus})\n\n${STYLE_GUIDE}\n\nReply with JSON only.`;
   const { data, model } = await chatJSON('writer', [
-    { role: 'system', content: `You are a reporter for PLAIN., an unbiased news site for curious young people.\n\n${STYLE_GUIDE}\n\nReply with JSON only.` },
+    { role: 'system', content: systemPrompt },
     {
       role: 'user',
-      content: `EVENT: ${event.event}\n\nSOURCES:\n${sourcePack(event.sources)}\n\nWrite the article in English using ONLY information from the sources. Where outlets frame the event differently, reflect that neutrally with attribution.\nReturn exactly this JSON shape:\n${ARTICLE_SCHEMA}`,
+      content: `EVENT: ${event.event}\n\nCATEGORY: ${event.category}\n\nSOURCES:\n${sourcePack(event.sources)}\n\nWrite the article in English using ONLY information from the sources. Where outlets frame the event differently, reflect that neutrally with attribution.\nReturn exactly this JSON shape:\n${ARTICLE_SCHEMA}`,
     },
   ], { temperature: 0.3, maxTokens: 5000 });
-  return { draft: data, model };
+  return { draft: data, model, desk: desk.name };
 }
 
 // ─────────────────────────── 4. EDITOR ───────────────────────────
@@ -186,7 +191,7 @@ async function main() {
       const heroVideo = media.video;
       log(`  REPORTER reading ${reading.length} sources (${reading.filter((s) => s.text).length} with text, hero image: ${heroImage ? 'found' : 'none'}, video: ${heroVideo ? heroVideo.type : 'none'})`);
 
-      let { draft, model: writerModel } = await reporter(event);
+      let { draft, model: writerModel, desk: deskName } = await reporter(event);
       if (!validArticle(draft)) throw new Error('draft invalid');
 
       let { review, model: editorModel } = await editor(event, draft);
@@ -248,7 +253,7 @@ async function main() {
             imageCaption: imageCaption || '',
           },
         },
-        meta: { writer: writerModel, editor: editorModel, verdict: review.verdict, problemsFixed: review.problems || [] },
+        meta: { writer: writerModel, editor: editorModel, desk: deskName, verdict: review.verdict, problemsFixed: review.problems || [] },
       };
 
       const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);

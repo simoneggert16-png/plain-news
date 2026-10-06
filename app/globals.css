@@ -841,6 +841,81 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   text-transform: uppercase;
 }
 
+/* ── Search Fallback Card & External Providers ── */
+.search-fallback-card {
+  border: var(--rule-thick);
+  background: var(--paper-2);
+  padding: 32px;
+  margin-top: 24px;
+  box-shadow: 4px 4px 0 var(--ink);
+  max-width: 900px;
+}
+.search-fallback-badge {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  margin-bottom: 16px;
+}
+.search-fallback-card h2 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  margin: 0 0 14px 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.search-fallback-desc {
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+  max-width: 65ch;
+}
+.search-fallback-providers {
+  border-top: var(--rule);
+  padding-top: 18px;
+}
+.search-fallback-lead {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.search-fallback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+.fallback-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: all 0.15s ease;
+}
+.fallback-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+.fallback-btn .ext-arrow {
+  margin-left: 6px;
+  opacity: 0.8;
+}
+
 
 /* ── Topic Filter Bar ── */
 .topic-filter-bar {

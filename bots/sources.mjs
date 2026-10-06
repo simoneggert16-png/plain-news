@@ -3,17 +3,21 @@
 export const FEEDS = [
   // ── Public broadcasters / international
   { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
+  { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/world/middle_east/rss.xml' },
   { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/business/rss.xml' },
   { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml' },
   { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml' },
   { outlet: 'NPR', url: 'https://feeds.npr.org/1001/rss.xml' },
   { outlet: 'DW', url: 'https://rss.dw.com/rdf/rss-en-all' },
   { outlet: 'France 24', url: 'https://www.france24.com/en/rss' },
+  { outlet: 'France 24', url: 'https://www.france24.com/en/middle-east/rss' },
   { outlet: 'Euronews', url: 'https://www.euronews.com/rss' },
   { outlet: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml' },
   { outlet: 'CBC', url: 'https://www.cbc.ca/webfeed/rss/rss-world' },
   { outlet: 'ABC Australia', url: 'https://www.abc.net.au/news/feed/51120/rss.xml' },
   { outlet: 'Tagesschau', url: 'https://www.tagesschau.de/index~rss2.xml' },
+  { outlet: 'UN News', url: 'https://news.un.org/feed/subscribe/en/news/all/rss.xml' },
+  { outlet: 'Good News Network', url: 'https://www.goodnewsnetwork.org/feed/' },
 
   // ── Newspapers across the spectrum
   { outlet: 'The Guardian', url: 'https://www.theguardian.com/world/rss' },

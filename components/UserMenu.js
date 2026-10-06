@@ -110,14 +110,30 @@ export default function UserMenu({ locale, isDe }) {
           {user ? (
             <div className="user-panel-content">
               <div className="user-panel-head">
-                <strong>{user.name}</strong>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span className="user-badge-avatar" style={{ width: '22px', height: '22px', fontSize: '12px' }}>
+                    {user.avatar || '●'}
+                  </span>
+                  <div>
+                    <strong>{user.name}</strong>
+                    <div style={{ fontSize: '10px', color: 'var(--muted)' }}>{user.email || 'Angemeldet'}</div>
+                  </div>
+                </div>
                 <span className="user-provider-tag">{user.provider.toUpperCase()}</span>
               </div>
               <p className="user-panel-info">
                 {isDe
-                  ? 'Dein Feed ist personalisiert. Deine Einstellungen werden serverseitig gespeichert.'
-                  : 'Your feed is personalized. Preferences are saved server-side.'}
+                  ? '✓ Dein Profil ist aktiv. Dein Homefeed ist für dich personalisiert.'
+                  : '✓ Your profile is active. Your homefeed is personalized for you.'}
               </p>
+              <div style={{ padding: '8px 0', borderTop: '1px solid var(--paper-3)', marginBottom: '10px' }}>
+                <span className="label" style={{ fontSize: '10px', display: 'block', marginBottom: '4px' }}>
+                  {isDe ? 'STATUS:' : 'STATUS:'}
+                </span>
+                <span style={{ fontSize: '12px', color: 'var(--up)', fontWeight: 600 }}>
+                  ● {isDe ? 'Serverseitig synchronisiert' : 'Server-side synced'}
+                </span>
+              </div>
               <button type="button" className="auth-btn-action logout" onClick={handleLogout}>
                 {isDe ? 'Abmelden' : 'Sign Out'}
               </button>
