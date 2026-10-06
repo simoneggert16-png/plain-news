@@ -289,7 +289,7 @@ async function main() {
 
       const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
       log(`  TRANSLATOR → ${targets.join(', ')}`);
-      const translations = await pool(targets, 2, (l) => translate(article.locales[SOURCE_LOCALE], l));
+      const translations = await pool(targets, 4, (l) => translate(article.locales[SOURCE_LOCALE], l));
       targets.forEach((l, i) => {
         if (translations[i] && !translations[i].error) article.locales[l] = translations[i];
         else log(`    ✗ ${l}: ${translations[i]?.error?.message}`);

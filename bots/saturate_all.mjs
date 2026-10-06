@@ -42,22 +42,28 @@ async function loop() {
       break;
     }
 
-    const code = await runNewsroomBatch(8, 2);
+    const code = await runNewsroomBatch(12, 4);
     console.log(`Batch ${iteration} exited with code ${code}`);
 
     // Auto-commit and push newly published stories
     try {
       const { execSync } = await import('child_process');
       execSync('git add content/', { stdio: 'inherit' });
-      execSync(`git commit -m "feat(newsroom): auto-publish batch ${iteration}"`, { stdio: 'inherit' });
-      execSync('git push origin main', { stdio: 'inherit' });
+      const status = execSync('git status --porcelain', { encoding: 'utf8' });
+      if (status.trim().length > 0) {
+        execSync(`git commit -m "feat(newsroom): auto-publish batch ${iteration}"`, { stdio: 'inherit' });
+        execSync('git push origin main', { stdio: 'inherit' });
+        console.log(`Git push for batch ${iteration} successful!`);
+      } else {
+        console.log('No new files to commit in this batch.');
+      }
     } catch (gitErr) {
       console.warn('Git sync warning:', gitErr.message);
     }
 
     iteration++;
     // Small pause between batches
-    await new Promise((r) => setTimeout(r, 4000));
+    await new Promise((r) => setTimeout(r, 3000));
   }
   
   const finalStatus = getCounts();
