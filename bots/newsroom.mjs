@@ -35,26 +35,25 @@ async function desk(items, recentTitles) {
   const { data } = await chatJSON('desk', [
     {
       role: 'system',
-      content: `You are the news desk of an unbiased global news site for curious young readers. You group headlines into real-world EVENTS and judge newsworthiness. Reply with JSON only.`,
+      content: `You are the news desk editor of an unbiased global news site. You group headlines into real-world EVENTS.
+IMPORTANT: Do NOT output thinking, analysis or preamble. Output ONLY a valid JSON object starting with { and ending with }.`,
     },
     {
       role: 'user',
-      content: `Headlines (id|outlet|headline). Headlines may be in different languages.
+      content: `Headlines (id|outlet|headline):
 ${list}
 
-ALREADY PUBLISHED in the last 48h (do NOT return these events again unless there is a major new development):
+ALREADY PUBLISHED in the last 48h (do NOT duplicate):
 ${recentTitles.map((t) => '- ' + t).join('\n') || '- none'}
 
-Task: group headlines that report the SAME specific event (same incident/decision/announcement — not just the same topic).
-Rules:
-- Only return events where the ids come from AT LEAST 2 DIFFERENT outlets.
-- Skip opinion, analysis-only pieces, celebrity gossip, product deals, lifestyle, horoscopes, obituaries of non-public figures, local crime with no wider relevance.
-- importance 1-5: 5 = globally significant, affects millions; 3 = notable national/international; 1 = minor.
-- category must be one of: ${CATEGORIES.join(', ')}.
-- "event" = one neutral English sentence describing what happened.
+Task: Identify real-world events reported by AT LEAST 2 DIFFERENT outlets.
+- Skip opinion pieces, sports betting, lifestyle, celebrity gossip.
+- Importance: 1 (minor) to 5 (major global impact).
+- Category must be one of: ${CATEGORIES.join(', ')}.
+- "event": One objective English sentence stating what occurred.
 
-Return valid raw JSON starting with { and ending with }:
-{"events":[{"ids":[1,7,22],"category":"world","importance":4,"event":"..."}]}`,
+Format response strictly as JSON:
+{"events":[{"ids":[0, 14],"category":"world","importance":4,"event":"..."}]}`,
     },
   ], { temperature: 0.1, maxTokens: 3000 });
 
