@@ -4,6 +4,7 @@ import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mjs';
 import { fmtDate } from '@/lib/format.mjs';
+import VideoPlayer from '@/components/VideoPlayer';
 
 export const dynamicParams = false;
 
@@ -68,28 +69,12 @@ export default async function ArticlePage({ params }) {
           <span>{outlets} {t.sources}</span>
         </div>
         {a.video ? (
-          <div className="art-video-wrap">
-            {a.video.type === 'youtube' ? (
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${a.video.id}`}
-                title={l.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="art-video"
-              />
-            ) : (
-              <video controls poster={a.image} className="art-video">
-                <source src={a.video.url} type="video/mp4" />
-              </video>
-            )}
-            <div className="art-media-caption">
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                VIDEO
-              </span>
-              {a.video.caption ? ` · ${a.video.caption}` : ''}
-            </div>
-          </div>
+          <VideoPlayer
+            src={a.video.url}
+            poster={a.image}
+            title={l.title}
+            caption={a.video.caption}
+          />
         ) : a.image ? (
           <div className="art-hero-wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}

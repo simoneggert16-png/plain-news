@@ -1,29 +1,49 @@
 import Link from 'next/link';
+import { cookies } from 'next/headers';
 import { LOCALES, CATEGORIES } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
 import { fmtDate } from '@/lib/format.mjs';
 import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
+import TopicFilter from '@/components/TopicFilter';
 
 export default async function Home({ params }) {
   const { locale } = await params;
+  const cookieStore = await cookies();
+  const topicsCookie = cookieStore.get('plain_topics')?.value;
+  let allowedTopics = CATEGORIES;
+  if (topicsCookie) {
+    try {
+      const parsed = JSON.parse(decodeURIComponent(topicsCookie));
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        allowedTopics = parsed;
+      }
+    } catch (e) {}
+  }
+
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
-  const all = listFor();
+  const rawAll = listFor();
 
-  if (!all.length) return <div className="empty">{t.empty}</div>;
+  if (!rawAll.length) return <div className="empty">{t.empty}</div>;
+
+  // Filter articles based on user preferences (server-side personalized)
+  const all = rawAll.filter((a) => allowedTopics.includes(a.category));
+  const displayArticles = all.length > 0 ? all : rawAll;
 
   // Lead = most important story of the last 24h, else newest.
   const dayAgo = Date.now() - 864e5;
-  const lead = [...all.filter((a) => new Date(a.publishedAt) > dayAgo)].sort((a, b) => (b.importance || 0) - (a.importance || 0))[0] || all[0];
-  const rest = all.filter((a) => a.slug !== lead.slug);
+  const lead = [...displayArticles.filter((a) => new Date(a.publishedAt) > dayAgo)].sort((a, b) => (b.importance || 0) - (a.importance || 0))[0] || displayArticles[0];
+  const rest = displayArticles.filter((a) => a.slug !== lead.slug);
   const brief = rest.slice(0, 5);
   const latest = rest.slice(5, 14);
   const L = localize(lead, locale);
 
   return (
     <>
+      <TopicFilter locale={locale} t={t} />
+
       <section className="lead-grid">
         <article className="lead">
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>

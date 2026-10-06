@@ -8,11 +8,15 @@ export default function Footer({ locale, t }) {
         <div className="footer-logo">PLAIN<span className="logo-dot">.</span></div>
         <p className="footer-claim">{t.footer}</p>
         <nav className="footer-links">
+          <Link href={`/${locale}/search`}>{locale === 'de' ? 'Suche' : 'Search'}</Link>
           <Link href={`/${locale}/about`}>{t.about}</Link>
+          <Link href={`/${locale}/legal`}>{locale === 'de' ? 'Impressum' : 'Legal'}</Link>
           <Link href={`/${locale}/markets`}>{t.markets}</Link>
           <a href="/feed.xml">RSS</a>
         </nav>
-        <p className="footer-small">© {new Date().getFullYear()} {SITE.name} · Open source · AI-assisted, human-principled.</p>
+        <p className="footer-small">
+          © {new Date().getFullYear()} {SITE.name} · Gegründet von <strong>Simon Eggert</strong> · Unabhängig & Werbefrei.
+        </p>
       </div>
     </footer>
   );
