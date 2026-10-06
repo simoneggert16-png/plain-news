@@ -4,7 +4,7 @@ import { LOCALES, LOCALE_CODES, SITE, isLocale } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 import '../globals.css';
 
 const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--f-serif', display: 'swap' });
