@@ -146,7 +146,7 @@ async function main() {
   // Keep prompt size crisp and reliable: cluster in batches of ~45 items across unseen news
   const sortedItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   const batchSize = 45;
-  const maxBatches = Math.min(4, Math.ceil(sortedItems.length / batchSize));
+  const maxBatches = Math.min(8, Math.ceil(sortedItems.length / batchSize));
   let allEvents = [];
   const publishedTitles = [...recentTitles];
 

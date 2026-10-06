@@ -1,40 +1,81 @@
-// Minimal NVIDIA NIM client (OpenAI-compatible) with streaming, retries and model fallback.
-const BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
+// Multi-Provider LLM Client: Ollama Cloud (DeepSeek v4.1 Flash, MiniMax M3) + NVIDIA NIM
+const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
+const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
 export const MODELS = {
-  writer: [process.env.WRITER_MODEL, 'nvidia/nemotron-3-super-120b-a12b', 'openai/gpt-oss-20b', 'nvidia/nemotron-3.5-lightning-30b-a3b', 'deepseek-ai/deepseek-v4.1-flash'].filter(Boolean),
-  editor: [process.env.EDITOR_MODEL, 'nvidia/nemotron-3-super-120b-a12b', 'openai/gpt-oss-20b', 'nvidia/nemotron-3.5-lightning-30b-a3b', 'z-ai/glm-5.3'].filter(Boolean),
-  translator: [process.env.TRANSLATOR_MODEL, 'nvidia/nemotron-3-super-120b-a12b', 'openai/gpt-oss-20b', 'nvidia/nemotron-3.5-lightning-30b-a3b'].filter(Boolean),
-  desk: [process.env.DESK_MODEL, 'nvidia/nemotron-3-super-120b-a12b', 'openai/gpt-oss-20b', 'nvidia/nemotron-3.5-lightning-30b-a3b'].filter(Boolean),
+  // Use ultra-fast deepseek-v4.1-flash as primary for reporting, editing, translating and clustering
+  writer: [process.env.WRITER_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'nvidia/nemotron-3-super-120b-a12b'].filter(Boolean),
+  editor: [process.env.EDITOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'nvidia/nemotron-3-super-120b-a12b'].filter(Boolean),
+  translator: [process.env.TRANSLATOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'nvidia/nemotron-3-super-120b-a12b'].filter(Boolean),
+  desk: [process.env.DESK_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'nvidia/nemotron-3-super-120b-a12b'].filter(Boolean),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function once(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90_000 } = {}) {
+async function callOllama(model, messages, { temperature = 0.2, timeoutMs = 60_000 } = {}) {
+  const key = process.env.OLLAMA_API_KEY;
+  if (!key) throw new Error('OLLAMA_API_KEY missing');
+
+  const res = await fetch(`${OLLAMA_BASE}/api/chat`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${key}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model,
+      messages: messages.map(m => ({ role: m.role, content: m.content })),
+      options: { temperature },
+      stream: false,
+    }),
+    signal: AbortSignal.timeout(timeoutMs),
+  });
+
+  if (!res.ok) {
+    const body = await res.text().catch(() => '');
+    const err = new Error(`Ollama ${model} HTTP ${res.status}: ${body.slice(0, 200)}`);
+    err.status = res.status;
+    throw err;
+  }
+
+  const json = await res.json();
+  const msg = json.message || {};
+  return (msg.content && msg.content.trim()) ? msg.content : (msg.thinking || '');
+}
+
+async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90_000 } = {}) {
   const key = process.env.NVIDIA_API_KEY;
   if (!key) throw new Error('NVIDIA_API_KEY missing');
-  const res = await fetch(`${BASE}/chat/completions`, {
+
+  const res = await fetch(`${NVIDIA_BASE}/chat/completions`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ model, messages, temperature, top_p: 0.9, max_tokens: maxTokens, stream: false }),
     signal: AbortSignal.timeout(timeoutMs),
   });
+
   if (!res.ok) {
     const body = await res.text().catch(() => '');
-    const err = new Error(`${model} HTTP ${res.status}: ${body.slice(0, 200)}`);
+    const err = new Error(`Nvidia ${model} HTTP ${res.status}: ${body.slice(0, 200)}`);
     err.status = res.status;
     throw err;
   }
+
   const json = await res.json();
   const choice = json.choices?.[0];
   const msg = choice?.message || {};
-  // If msg.content exists and is non-empty, use that; otherwise fall back to reasoning_content
   let out = (msg.content && msg.content.trim()) ? msg.content : (msg.reasoning_content || '');
-  // If content didn't have JSON but reasoning did (or vice versa), concatenate them
   if (msg.content && msg.reasoning_content && !msg.content.includes('{') && msg.reasoning_content.includes('{')) {
     out = msg.reasoning_content;
   }
   return out;
+}
+
+async function once(model, messages, opts = {}) {
+  if (model.startsWith('deepseek') || model.startsWith('minimax') || model.startsWith('glm') || model.startsWith('kimi') || model.startsWith('gemma')) {
+    return callOllama(model, messages, opts);
+  }
+  return callNvidia(model, messages, opts);
 }
 
 /** Chat with fallback across a list of models. Returns { text, model }. */
@@ -49,7 +90,7 @@ export async function chat(role, messages, opts = {}) {
         return { text, model };
       } catch (e) {
         lastErr = e;
-        if (e.status === 404 || e.status === 400 || e.status === 401 || e.status === 403) break; // try next model
+        if (e.status === 404 || e.status === 400 || e.status === 401 || e.status === 403) break;
         await sleep(1500 * (attempt + 1));
       }
     }
@@ -67,11 +108,10 @@ export async function chatJSON(role, messages, opts = {}) {
       return { data: extractJSON(text), model };
     } catch (e) {
       lastErr = e;
-      console.warn(`[chatJSON] attempt ${attempt + 1} parse failed (${e.message}). Raw output (first 300 chars):`, JSON.stringify(text.slice(0, 300)));
       messages = [
         ...messages,
         { role: 'assistant', content: text.slice(0, 1500) },
-        { role: 'user', content: 'Your previous output did not contain valid parseable JSON. Output ONLY raw JSON now. Start with { or [ and end with } or ]. No explanations, no markdown.' },
+        { role: 'user', content: 'Output ONLY raw valid JSON starting with { and ending with }. No markdown, no explanations.' },
       ];
     }
   }
