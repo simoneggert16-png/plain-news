@@ -48,7 +48,9 @@ async function loop() {
     // Auto-commit and push newly published stories
     try {
       const { execSync } = await import('child_process');
-      execSync('git add content/; git commit -m "feat(newsroom): auto-publish batch ' + iteration + '"; git push origin main', { stdio: 'inherit' });
+      execSync('git add content/', { stdio: 'inherit' });
+      execSync(`git commit -m "feat(newsroom): auto-publish batch ${iteration}"`, { stdio: 'inherit' });
+      execSync('git push origin main', { stdio: 'inherit' });
     } catch (gitErr) {
       console.warn('Git sync warning:', gitErr.message);
     }
