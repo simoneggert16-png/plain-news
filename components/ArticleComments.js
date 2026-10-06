@@ -15,20 +15,10 @@ export default function ArticleComments({ slug, locale, isDe }) {
       if (saved) {
         setComments(JSON.parse(saved));
       } else {
-        // Sample factual community note
-        setComments([
-          {
-            id: 'c1',
-            author: 'L. Keller (Zürich)',
-            date: new Date(Date.now() - 3600000 * 2).toISOString(),
-            content: isDe
-              ? 'Wichtiger Kontext: Entsprechende Mitteilungen wurden auch direkt über die offiziellen Portale der zuständigen Behörden bestätigt.'
-              : 'Important context: Official statements were cross-referenced and confirmed via public agency portals.',
-          },
-        ]);
+        setComments([]);
       }
     } catch {
-      // fallback
+      setComments([]);
     }
   }, [storageKey, isDe]);
 
@@ -101,15 +91,21 @@ export default function ArticleComments({ slug, locale, isDe }) {
 
       {/* Comments List */}
       <div className="comments-list">
-        {comments.map((c) => (
-          <div key={c.id} className="comment-card">
-            <div className="comment-meta">
-              <span className="comment-author">{c.author}</span>
-              <span className="comment-date">{new Date(c.date).toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span>
+        {comments.length === 0 ? (
+          <p className="comments-empty" style={{ fontStyle: 'italic', color: 'var(--muted)', fontFamily: 'var(--mono)', fontSize: '12px' }}>
+            {isDe ? 'Noch keine Beiträge vorhanden. Sei der Erste, der verifizierten Kontext beiträgt.' : 'No notes yet. Be the first to provide factual context.'}
+          </p>
+        ) : (
+          comments.map((c) => (
+            <div key={c.id} className="comment-card">
+              <div className="comment-meta">
+                <span className="comment-author">{c.author}</span>
+                <span className="comment-date">{new Date(c.date).toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span>
+              </div>
+              <p className="comment-content">{c.content}</p>
             </div>
-            <p className="comment-content">{c.content}</p>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </section>
   );
