@@ -30,7 +30,7 @@ async function pool(items, n, fn) {
 }
 
 // ─────────────────────────── 2. DESK ───────────────────────────
-async function desk(items, recentTitles) {
+async function desk(items, recentTitles, neededCategories = []) {
   const list = items.map((it, i) => `${i}|${it.outlet}|${it.title}`).join('\n');
   const { data } = await chatJSON('desk', [
     {
@@ -50,6 +50,7 @@ CRITICAL DEDUPLICATION RULE:
 - NEVER output an event that was already published above.
 - Only report an existing story if there is an urgent, game-changing NEW BREAKING DEVELOPMENT (e.g. an official peace accord, unexpected verdict, or dramatic escalation), and explicitly state the new development.
 - Otherwise, strictly choose FRESH events that have not been published yet.
+${neededCategories.length ? `\nPRIORITY DESKS: We are actively building depth in these categories: ${neededCategories.join(', ')}. Prioritize events matching these topics.` : ''}
 
 Task: Identify real-world events reported by AT LEAST 2 DIFFERENT outlets.
 - Skip opinion pieces, sports betting, lifestyle, celebrity gossip.
@@ -68,8 +69,12 @@ Format response strictly as JSON:
     .map((e) => ({ ...e, sources: e.ids.map((i) => items[i]), outlets: new Set(e.ids.map((i) => items[i].outlet)).size }))
     .filter((e) => e.outlets >= 2);
 
-  // Rank: importance first, then breadth of coverage. Enforce category diversity.
-  events.sort((a, b) => b.importance * 10 + b.outlets - (a.importance * 10 + a.outlets));
+  // Rank: priority desk boost first, then importance, then breadth of coverage.
+  events.sort((a, b) => {
+    const aNeeded = neededCategories.includes(a.category) ? 50 : 0;
+    const bNeeded = neededCategories.includes(b.category) ? 50 : 0;
+    return (bNeeded + b.importance * 10 + b.outlets) - (aNeeded + a.importance * 10 + a.outlets);
+  });
   const perCat = {};
   return events.filter((e) => (perCat[e.category] = (perCat[e.category] || 0) + 1) <= MAX_PER_CATEGORY);
 }
@@ -143,6 +148,18 @@ async function main() {
   const recent = index.articles.filter((a) => Date.now() - Date.parse(a.publishedAt) < 48 * 3600e3);
   const recentTitles = recent.map((a) => a.locales?.[SOURCE_LOCALE]?.title).filter(Boolean);
 
+  const categoryCounts = {};
+  for (const c of CATEGORIES) categoryCounts[c] = 0;
+  for (const a of index.articles) {
+    if (categoryCounts[a.category] !== undefined) categoryCounts[a.category]++;
+  }
+  const TARGET_PER_CAT = +(process.env.TARGET_PER_CATEGORY || 25);
+  const neededCategories = CATEGORIES.filter((c) => (categoryCounts[c] || 0) < TARGET_PER_CAT);
+  log(`DESK   category counts: ${Object.entries(categoryCounts).map(([k, v]) => `${k}:${v}`).join(' ')}`);
+  if (neededCategories.length) {
+    log(`DESK   prioritizing under-target categories (<${TARGET_PER_CAT}): ${neededCategories.join(', ')}`);
+  }
+
   // Keep prompt size crisp and reliable: cluster in batches of ~45 items across unseen news
   const sortedItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   const batchSize = 45;
@@ -155,7 +172,7 @@ async function main() {
     if (chunk.length < 10) break;
     log(`DESK   clustering batch ${b + 1}/${maxBatches} (${chunk.length} headlines)…`);
     try {
-      const found = await desk(chunk, publishedTitles);
+      const found = await desk(chunk, publishedTitles, neededCategories);
       for (const ev of found) {
         if (!allEvents.some((existing) => existing.event.toLowerCase() === ev.event.toLowerCase())) {
           allEvents.push(ev);
@@ -168,10 +185,18 @@ async function main() {
     if (allEvents.length >= MAX_STORIES * 2) break;
   }
 
-  allEvents.sort((a, b) => b.importance * 10 + b.outlets - (a.importance * 10 + a.outlets));
+  allEvents.sort((a, b) => {
+    const aNeeded = (categoryCounts[a.category] || 0) < TARGET_PER_CAT ? 100 : 0;
+    const bNeeded = (categoryCounts[b.category] || 0) < TARGET_PER_CAT ? 100 : 0;
+    return (bNeeded + b.importance * 10 + b.outlets) - (aNeeded + a.importance * 10 + a.outlets);
+  });
   const perCat = {};
   const events = allEvents
-    .filter((e) => (perCat[e.category] = (perCat[e.category] || 0) + 1) <= MAX_PER_CATEGORY)
+    .filter((e) => {
+      const current = categoryCounts[e.category] || 0;
+      if (current >= TARGET_PER_CAT && neededCategories.length > 0) return false;
+      return (perCat[e.category] = (perCat[e.category] || 0) + 1) <= MAX_PER_CATEGORY;
+    })
     .slice(0, MAX_STORIES);
   log(`DESK   ${events.length} events selected across categories`);
 
@@ -262,7 +287,7 @@ async function main() {
 
       const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
       log(`  TRANSLATOR → ${targets.join(', ')}`);
-      const translations = await pool(targets, 4, (l) => translate(article.locales[SOURCE_LOCALE], l));
+      const translations = await pool(targets, 2, (l) => translate(article.locales[SOURCE_LOCALE], l));
       targets.forEach((l, i) => {
         if (translations[i] && !translations[i].error) article.locales[l] = translations[i];
         else log(`    ✗ ${l}: ${translations[i]?.error?.message}`);

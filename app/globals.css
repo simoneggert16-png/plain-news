@@ -80,6 +80,14 @@ img { max-width: 100%; display: block; }
   color: #f3efe6;
   font-weight: 500;
 }
+.ticker-link {
+  color: #f3efe6;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ticker-link:hover {
+  text-decoration: underline;
+}
 .live-dot-badge {
   font-size: 9px;
   background: #c93b2b;

@@ -70,10 +70,22 @@ export default function TopBar({ locale }) {
         <div className="ticker-track" style={{ animationDuration: `${Math.max(35, items.length * 6)}s` }}>
           {items.map((item, i) => (
             item.kind === 'live' ? (
-              <span key={i} className="ticker-item ticker-live-tag">
-                <span className="live-dot-badge">● {item.badge}</span>
-                <b>{item.label}:</b> {item.text}
-              </span>
+              item.slug ? (
+                <Link key={i} href={`/${locale}/a/${item.slug}`} className="ticker-item ticker-live-tag ticker-link">
+                  <span className="live-dot-badge">● {item.badge}</span>
+                  <b>{item.label}:</b> {item.text}
+                </Link>
+              ) : item.url ? (
+                <a key={i} href={item.url} target="_blank" rel="noopener noreferrer" className="ticker-item ticker-live-tag ticker-link">
+                  <span className="live-dot-badge">● {item.badge}</span>
+                  <b>{item.label}:</b> {item.text}
+                </a>
+              ) : (
+                <span key={i} className="ticker-item ticker-live-tag">
+                  <span className="live-dot-badge">● {item.badge}</span>
+                  <b>{item.label}:</b> {item.text}
+                </span>
+              )
             ) : (
               <span key={i} className="ticker-item">
                 <b>{item.label}</b> {fmtNum(item.price, bcp)}{' '}
