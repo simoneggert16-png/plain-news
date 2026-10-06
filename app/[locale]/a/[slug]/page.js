@@ -19,11 +19,42 @@ export async function generateMetadata({ params }) {
   const a = getArticle(slug);
   if (!a) return {};
   const l = localize(a, locale);
+  const articleUrl = `${SITE.url}/${locale}/a/${slug}`;
   return {
     title: l.title,
     description: l.dek,
-    alternates: { languages: Object.fromEntries(LOCALE_CODES.map((c) => [c, `/${c}/a/${slug}`])) },
-    openGraph: { title: l.title, description: l.dek, type: 'article', publishedTime: a.publishedAt, siteName: SITE.name },
+    alternates: {
+      canonical: articleUrl,
+      languages: Object.fromEntries(LOCALE_CODES.map((c) => [c, `${SITE.url}/${c}/a/${slug}`])),
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: l.title,
+      description: l.dek,
+      url: articleUrl,
+      type: 'article',
+      publishedTime: a.publishedAt,
+      modifiedTime: a.updatedAt || a.publishedAt,
+      section: a.category,
+      siteName: SITE.name,
+      images: a.image ? [{ url: a.image, alt: l.imageCaption || l.title }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: l.title,
+      description: l.dek,
+      images: a.image ? [a.image] : [],
+    },
   };
 }
 
@@ -35,17 +66,37 @@ export default async function ArticlePage({ params }) {
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
   const l = localize(a, locale);
   const outlets = new Set(a.sources.map((s) => s.outlet)).size;
+  const articleUrl = `${SITE.url}/${locale}/a/${slug}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': articleUrl,
+    },
     headline: l.title,
     description: l.dek,
+    articleSection: a.category,
+    image: a.image ? [a.image] : undefined,
     datePublished: a.publishedAt,
     dateModified: a.updatedAt || a.publishedAt,
     inLanguage: bcp,
     isBasedOn: a.sources.map((s) => s.url),
-    publisher: { '@type': 'Organization', name: SITE.name },
+    author: {
+      '@type': 'Organization',
+      name: 'PLAIN. Editorial Wire',
+      url: SITE.url,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE.url}/icon.svg`,
+      },
+    },
   };
 
   return (

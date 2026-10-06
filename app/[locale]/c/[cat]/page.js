@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { LOCALES, LOCALE_CODES, CATEGORIES, isCategory } from '@/lib/config.mjs';
+import { LOCALES, LOCALE_CODES, CATEGORIES, SITE, isCategory } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
 import { fmtDate } from '@/lib/format.mjs';
@@ -14,7 +14,24 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { locale, cat } = await params;
-  return { title: getDict(locale).cat[cat] };
+  const t = getDict(locale);
+  const catName = t.cat[cat] || cat;
+  const pageUrl = `${SITE.url}/${locale}/c/${cat}`;
+  return {
+    title: catName,
+    description: `${catName} — Factual, multi-source verified reporting on PLAIN.`,
+    alternates: {
+      canonical: pageUrl,
+      languages: Object.fromEntries(LOCALE_CODES.map((c) => [c, `${SITE.url}/${c}/c/${cat}`])),
+    },
+    openGraph: {
+      title: `${catName} — ${SITE.name}`,
+      description: `${catName} — Factual, multi-source verified reporting on PLAIN.`,
+      url: pageUrl,
+      siteName: SITE.name,
+      type: 'website',
+    },
+  };
 }
 
 export default async function CategoryPage({ params }) {

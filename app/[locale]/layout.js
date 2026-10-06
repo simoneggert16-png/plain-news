@@ -18,14 +18,54 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = getDict(locale);
+  const canonicalUrl = `${SITE.url}/${locale}`;
   return {
     metadataBase: new URL(SITE.url),
     title: { default: `${SITE.name} — ${t.tagline}`, template: `%s — ${SITE.name}` },
     description: t.tagline + ' ' + t.footer,
+    keywords: [
+      'news',
+      'neutral news',
+      'unbiased journalism',
+      'fact-checked news',
+      'breaking news',
+      'world news',
+      'sports live ticker',
+      'plain news',
+      'nachrichten ohne meinungsmache',
+      'echtzeit ticker',
+    ],
+    authors: [{ name: 'PLAIN. Editorial Team', url: SITE.url }],
+    creator: 'PLAIN.',
+    publisher: 'PLAIN.',
     alternates: {
-      languages: Object.fromEntries(LOCALE_CODES.map((l) => [l, `/${l}`])),
+      canonical: canonicalUrl,
+      languages: Object.fromEntries(LOCALE_CODES.map((l) => [l, `${SITE.url}/${l}`])),
     },
-    openGraph: { siteName: SITE.name, type: 'website' },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: `${SITE.name} — ${t.tagline}`,
+      description: t.tagline + ' ' + t.footer,
+      url: canonicalUrl,
+      siteName: SITE.name,
+      locale: LOCALES.find((l) => l.code === locale)?.bcp47 || 'de_CH',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${SITE.name} — ${t.tagline}`,
+      description: t.tagline,
+    },
   };
 }
 
