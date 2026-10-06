@@ -1,0 +1,39 @@
+name: Newsroom
+
+on:
+  schedule:
+    - cron: '17 */2 * * *'   # every 2 hours
+  workflow_dispatch: {}       # manual "Run workflow" button
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-bots
+  cancel-in-progress: false
+
+jobs:
+  newsroom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Run AI newsroom
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '6' }}
+        run: node bots/newsroom.mjs
+      - name: Commit new stories
+        run: |
+          git config user.name  "plain-newsroom-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add content
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase
+          git push

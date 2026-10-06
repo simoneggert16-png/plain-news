@@ -1,0 +1,24 @@
+{
+  "name": "plain-news",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PLAIN. – unbiased, minimal, free news. No ads. No subscriptions. No tracking.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "bot:newsroom": "node bots/newsroom.mjs",
+    "bot:maintenance": "node bots/maintenance.mjs"
+  },
+  "dependencies": {
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "rss-parser": "^3.13.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

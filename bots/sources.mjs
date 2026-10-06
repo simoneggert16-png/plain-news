@@ -1,0 +1,53 @@
+// Deliberately diverse: public broadcasters, wire-style outlets, left- and right-leaning papers,
+// and non-Western newsrooms. A story needs ≥2 DIFFERENT outlets to be published.
+export const FEEDS = [
+  // ── Public broadcasters / international
+  { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
+  { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/business/rss.xml' },
+  { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml' },
+  { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml' },
+  { outlet: 'NPR', url: 'https://feeds.npr.org/1001/rss.xml' },
+  { outlet: 'DW', url: 'https://rss.dw.com/rdf/rss-en-all' },
+  { outlet: 'France 24', url: 'https://www.france24.com/en/rss' },
+  { outlet: 'Euronews', url: 'https://www.euronews.com/rss' },
+  { outlet: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml' },
+  { outlet: 'CBC', url: 'https://www.cbc.ca/webfeed/rss/rss-world' },
+  { outlet: 'ABC Australia', url: 'https://www.abc.net.au/news/feed/51120/rss.xml' },
+  { outlet: 'Tagesschau', url: 'https://www.tagesschau.de/index~rss2.xml' },
+
+  // ── Newspapers across the spectrum
+  { outlet: 'The Guardian', url: 'https://www.theguardian.com/world/rss' },
+  { outlet: 'The Guardian', url: 'https://www.theguardian.com/environment/rss' },
+  { outlet: 'The Guardian', url: 'https://www.theguardian.com/uk/sport/rss' },
+  { outlet: 'New York Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml' },
+  { outlet: 'New York Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml' },
+  { outlet: 'New York Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Science.xml' },
+  { outlet: 'New York Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Health.xml' },
+  { outlet: 'Wall Street Journal', url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml' },
+  { outlet: 'Wall Street Journal', url: 'https://feeds.a.dj.com/rss/RSSMarketsMain.xml' },
+  { outlet: 'Fox News', url: 'https://moxie.foxnews.com/google-publisher/world.xml' },
+  { outlet: 'Fox News', url: 'https://moxie.foxnews.com/google-publisher/politics.xml' },
+  { outlet: 'The Hill', url: 'https://thehill.com/feed/' },
+  { outlet: 'Politico Europe', url: 'https://www.politico.eu/feed/' },
+  { outlet: 'Der Spiegel', url: 'https://www.spiegel.de/schlagzeilen/index.rss' },
+  { outlet: 'FAZ', url: 'https://www.faz.net/rss/aktuell/' },
+  { outlet: 'Die Welt', url: 'https://www.welt.de/feeds/latest.rss' },
+  { outlet: 'Le Monde', url: 'https://www.lemonde.fr/en/rss/une.xml' },
+  { outlet: 'El País', url: 'https://feeds.elpais.com/mrss-s/pages/ep/site/english.elpais.com/portada' },
+
+  // ── Asia
+  { outlet: 'South China Morning Post', url: 'https://www.scmp.com/rss/91/feed' },
+  { outlet: 'The Japan Times', url: 'https://www.japantimes.co.jp/feed/' },
+  { outlet: 'Yonhap', url: 'https://en.yna.co.kr/RSS/news.xml' },
+  { outlet: 'Times of India', url: 'https://timesofindia.indiatimes.com/rssfeedstopstories.cms' },
+
+  // ── Business / tech / science / sport
+  { outlet: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html' },
+  { outlet: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index' },
+  { outlet: 'The Verge', url: 'https://www.theverge.com/rss/index.xml' },
+  { outlet: 'TechCrunch', url: 'https://techcrunch.com/feed/' },
+  { outlet: 'Nature', url: 'https://www.nature.com/nature.rss' },
+  { outlet: 'ScienceDaily', url: 'https://www.sciencedaily.com/rss/top.xml' },
+  { outlet: 'ESPN', url: 'https://www.espn.com/espn/rss/news' },
+  { outlet: 'Sky Sports', url: 'https://www.skysports.com/rss/12040' },
+];
