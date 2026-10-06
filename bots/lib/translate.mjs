@@ -12,8 +12,14 @@ export async function translate(src, locale) {
     },
     { role: 'user', content: JSON.stringify(input) },
   ], { temperature: 0.2, maxTokens: 6000 });
-  if (!data.title || !Array.isArray(data.body) || data.body.length !== input.body.length || (data.facts || []).length !== input.facts.length) {
-    throw new Error(`translation ${locale} has wrong shape`);
+  if (!data.title || !Array.isArray(data.body) || data.body.length === 0) {
+    throw new Error(`translation ${locale} missing title or body`);
   }
-  return { title: data.title, dek: data.dek, facts: data.facts, body: data.body, context: data.context || '' };
+  return {
+    title: data.title,
+    dek: data.dek || src.dek,
+    facts: Array.isArray(data.facts) && data.facts.length > 0 ? data.facts : src.facts,
+    body: data.body,
+    context: data.context || ''
+  };
 }

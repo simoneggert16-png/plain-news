@@ -51,9 +51,10 @@ Rules:
 - category must be one of: ${CATEGORIES.join(', ')}.
 - "event" = one neutral English sentence describing what happened.
 
-Return: {"events":[{"ids":[1,7,22],"category":"world","importance":4,"event":"..."}]}`,
+Return valid raw JSON starting with { and ending with }:
+{"events":[{"ids":[1,7,22],"category":"world","importance":4,"event":"..."}]}`,
     },
-  ], { temperature: 0.1, maxTokens: 6000 });
+  ], { temperature: 0.1, maxTokens: 3000 });
 
   const events = (data.events || [])
     .map((e) => ({ ...e, ids: [...new Set((e.ids || []).map(Number))].filter((i) => items[i]) }))
@@ -132,8 +133,8 @@ async function main() {
   const recent = index.articles.filter((a) => Date.now() - Date.parse(a.publishedAt) < 48 * 3600e3);
   const recentTitles = recent.map((a) => a.locales?.[SOURCE_LOCALE]?.title).filter(Boolean);
 
-  // Keep prompt size sane: newest ~350 items.
-  const deskItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt)).slice(0, 350);
+  // Keep prompt size crisp, focused and ultra-reliable: newest ~45 items.
+  const deskItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt)).slice(0, 45);
   log(`DESK   clustering ${deskItems.length} headlines…`);
   const events = (await desk(deskItems, recentTitles)).slice(0, MAX_STORIES);
   log(`DESK   ${events.length} events selected`);

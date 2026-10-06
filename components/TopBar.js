@@ -24,13 +24,25 @@ export default function TopBar({ locale }) {
     return () => { clearInterval(tick); clearInterval(poll); };
   }, []);
 
-  function switchLang(e) {
-    const next = e.target.value;
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const close = (e) => {
+      if (!e.target.closest('.lang-dropdown')) setOpen(false);
+    };
+    window.addEventListener('click', close);
+    return () => window.removeEventListener('click', close);
+  }, [open]);
+
+  function switchLang(next) {
     document.cookie = `lang=${next};path=/;max-age=31536000;samesite=lax`;
+    setOpen(false);
     router.push(path.replace(/^\/[a-z]{2}/, `/${next}`));
   }
 
   const items = quotes.length ? [...quotes, ...quotes] : [];
+  const currentLocale = LOCALES.find((l) => l.code === locale) || LOCALES[0];
 
   return (
     <div className="topbar">
@@ -47,14 +59,34 @@ export default function TopBar({ locale }) {
           ))}
         </div>
       </div>
-      <label className="lang">
-        <span className="sr-only">Language</span>
-        <select value={locale} onChange={switchLang}>
-          {LOCALES.map((l) => (
-            <option key={l.code} value={l.code}>{l.short}</option>
-          ))}
-        </select>
-      </label>
+      <div className="lang-dropdown">
+        <button
+          type="button"
+          className="lang-btn"
+          onClick={(e) => { e.stopPropagation(); setOpen(!open); }}
+          aria-expanded={open}
+          aria-haspopup="listbox"
+        >
+          <span>{currentLocale.short}</span>
+          <span className="lang-arrow" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▾</span>
+        </button>
+        {open && (
+          <ul className="lang-menu" role="listbox">
+            {LOCALES.map((l) => (
+              <li
+                key={l.code}
+                role="option"
+                aria-selected={l.code === locale}
+                className={`lang-option ${l.code === locale ? 'active' : ''}`}
+                onClick={() => switchLang(l.code)}
+              >
+                <span className="lang-code">{l.short}</span>
+                <span className="lang-label">{l.label}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 }
