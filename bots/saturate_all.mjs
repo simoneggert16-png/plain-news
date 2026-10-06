@@ -42,8 +42,17 @@ async function loop() {
       break;
     }
 
-    const code = await runNewsroomBatch(10, 3);
+    const code = await runNewsroomBatch(8, 2);
     console.log(`Batch ${iteration} exited with code ${code}`);
+
+    // Auto-commit and push newly published stories
+    try {
+      const { execSync } = await import('child_process');
+      execSync('git add content/; git commit -m "feat(newsroom): auto-publish batch ' + iteration + '"; git push origin main', { stdio: 'inherit' });
+    } catch (gitErr) {
+      console.warn('Git sync warning:', gitErr.message);
+    }
+
     iteration++;
     // Small pause between batches
     await new Promise((r) => setTimeout(r, 4000));
