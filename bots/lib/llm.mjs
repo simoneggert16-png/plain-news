@@ -3,11 +3,11 @@ const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
 export const MODELS = {
-  // Use ultra-fast deepseek-v4.1-flash as primary, minimax-m3 as secondary
+  // Use deepseek-v4.1-flash for writing and editing, minimax-m3 for rapid desk clustering and vision
   writer: [process.env.WRITER_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'gpt-oss:20b'].filter(Boolean),
   editor: [process.env.EDITOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'gpt-oss:20b'].filter(Boolean),
   translator: [process.env.TRANSLATOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'gpt-oss:20b'].filter(Boolean),
-  desk: [process.env.DESK_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'gpt-oss:20b'].filter(Boolean),
+  desk: [process.env.DESK_MODEL, 'minimax-m3', 'deepseek-v4.1-flash', 'gpt-oss:20b'].filter(Boolean),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

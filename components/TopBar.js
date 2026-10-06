@@ -75,16 +75,11 @@ export default function TopBar({ locale }) {
                   <span className="live-dot-badge">● {item.badge}</span>
                   <b>{item.label}:</b> {item.text}
                 </Link>
-              ) : item.url ? (
-                <a key={i} href={item.url} target="_blank" rel="noopener noreferrer" className="ticker-item ticker-live-tag ticker-link">
-                  <span className="live-dot-badge">● {item.badge}</span>
-                  <b>{item.label}:</b> {item.text}
-                </a>
               ) : (
-                <span key={i} className="ticker-item ticker-live-tag">
+                <Link key={i} href={`/${locale}/ticker?filter=${item.type || 'sport'}`} className="ticker-item ticker-live-tag ticker-link">
                   <span className="live-dot-badge">● {item.badge}</span>
                   <b>{item.label}:</b> {item.text}
-                </span>
+                </Link>
               )
             ) : (
               <span key={i} className="ticker-item">

@@ -72,7 +72,8 @@ export default async function ArticlePage({ params }) {
         <ArticleActions slug={a.slug} title={l.title} locale={locale} isDe={locale === 'de'} />
         {a.video ? (
           <VideoPlayer
-            src={a.video.url}
+            video={a.video}
+            src={a.video.url || a.video.embedUrl}
             poster={a.image}
             title={l.title}
             caption={a.video.caption}

@@ -1,13 +1,41 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 
-export default function VideoPlayer({ src, poster, title, caption }) {
+export default function VideoPlayer({ video, src, poster, title, caption }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [showControls, setShowControls] = useState(true);
+
+  // Check if it's a YouTube video
+  const ytId = video?.id || (typeof src === 'string' && src.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/)?.[1]);
+  const isYouTube = video?.type === 'youtube' || Boolean(ytId) || (typeof src === 'string' && src.includes('youtube'));
+  const embedUrl = video?.embedUrl || (ytId ? `https://www.youtube-nocookie.com/embed/${ytId}` : src);
+
+  // If YouTube video, render direct responsive iframe for seamless one-click playback
+  if (isYouTube) {
+    return (
+      <figure className="clip-player-wrap">
+        <div className="clip-player">
+          <iframe
+            src={`${embedUrl}${embedUrl.includes('?') ? '&' : '?'}rel=0&modestbranding=1`}
+            title={title || 'PLAIN. Video Footage'}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+            className="clip-iframe"
+          />
+        </div>
+        {caption && (
+          <figcaption className="clip-caption">
+            <strong>FOOTAGE</strong> · {caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -58,7 +86,7 @@ export default function VideoPlayer({ src, poster, title, caption }) {
       <div className="clip-player" onClick={togglePlay} onMouseEnter={() => setShowControls(true)}>
         <video
           ref={videoRef}
-          src={src}
+          src={src || video?.url}
           poster={poster}
           playsInline
           muted={isMuted}
@@ -69,7 +97,6 @@ export default function VideoPlayer({ src, poster, title, caption }) {
           className="clip-video"
         />
 
-        {/* Big play button when paused */}
         {!isPlaying && (
           <button className="clip-play-btn" aria-label="Play video" onClick={togglePlay}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -78,7 +105,6 @@ export default function VideoPlayer({ src, poster, title, caption }) {
           </button>
         )}
 
-        {/* Minimalist Overlay Controls (NYT style) */}
         <div className={`clip-overlay ${showControls ? 'visible' : ''}`}>
           <div className="clip-bar-track" onClick={handleSeek}>
             <div className="clip-bar-fill" style={{ width: `${progress}%` }} />

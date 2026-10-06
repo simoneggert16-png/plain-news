@@ -23,6 +23,13 @@ const JUNK_PATTERNS = [
   /logo[-_.]?(?:png|svg|jpg)/i,
   /og[-_]default/i,
   /meta[-_]default/i,
+  /vgwort\.de/i,
+  /blurple/i,
+  /tracking/i,
+  /pixel/i,
+  /writer/i,
+  /columnist/i,
+  /bylines?/i,
   /\b(?:340\/340|150\/150|100\/100|80\/80|64\/64)\b/i,
 ];
 

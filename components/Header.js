@@ -6,6 +6,7 @@ import NavLinks from './NavLinks';
 export default function Header({ locale, t }) {
   const items = [
     { href: `/${locale}`, label: t.latest },
+    { href: `/${locale}/ticker`, label: locale === 'de' ? 'Liveticker' : 'Live Ticker' },
     ...CATEGORIES.map((c) => ({ href: `/${locale}/c/${c}`, label: t.cat[c] })),
     { href: `/${locale}/markets`, label: t.markets },
   ];

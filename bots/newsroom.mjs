@@ -18,7 +18,9 @@ import { verifyAndCaptionImage } from './lib/vision.mjs';
 
 const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 8);
 const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 3);
-const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
+const log = (...a) => {
+  process.stdout.write(`${new Date().toISOString().slice(11, 19)} ${a.join(' ')}\n`);
+};
 
 async function pool(items, n, fn) {
   const out = new Array(items.length);
@@ -44,7 +46,7 @@ IMPORTANT: Do NOT output thinking, analysis or preamble. Output ONLY a valid JSO
 ${list}
 
 ALREADY PUBLISHED in the last 72 hours:
-${recentTitles.slice(0, 100).map((t) => '- ' + t).join('\n') || '- none'}
+${recentTitles.slice(0, 30).map((t) => '- ' + t).join('\n') || '- none'}
 
 CRITICAL DEDUPLICATION RULE:
 - NEVER output an event that was already published above.
@@ -160,10 +162,10 @@ async function main() {
     log(`DESK   prioritizing under-target categories (<${TARGET_PER_CAT}): ${neededCategories.join(', ')}`);
   }
 
-  // Keep prompt size crisp and reliable: cluster in batches of ~45 items across unseen news
+  // Keep prompt size crisp and reliable: cluster in batches of ~25 items across unseen news
   const sortedItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
-  const batchSize = 45;
-  const maxBatches = Math.min(8, Math.ceil(sortedItems.length / batchSize));
+  const batchSize = 25;
+  const maxBatches = Math.min(10, Math.ceil(sortedItems.length / batchSize));
   let allEvents = [];
   const publishedTitles = [...recentTitles];
 
@@ -252,12 +254,12 @@ async function main() {
           sources: event.sources,
         }).catch(() => null);
 
-        if (vResult?.verified) {
+        if (vResult?.verified === true) {
           imageCaption = vResult.caption?.en || final.title;
           imageCredit = vResult.credit || event.sources[0]?.outlet || null;
           log(`  VISION verified: "${imageCaption.slice(0, 60)}…" (Credit: ${imageCredit})`);
-        } else if (vResult?.verified === false) {
-          log(`  VISION rejected misleading image; removing.`);
+        } else {
+          log(`  VISION rejected or unverified image; removing.`);
           verifiedImage = null;
         }
       }
@@ -297,7 +299,8 @@ async function main() {
       index.articles.unshift(toIndexEntry(article));
       saveIndex(index);
       published.push(article.slug);
-      log(`  ✓ PUBLISHED ${article.slug} (${Object.keys(article.locales).length} languages)`);
+      categoryCounts[article.category] = (categoryCounts[article.category] || 0) + 1;
+      log(`  ✓ PUBLISHED ${article.slug} (${Object.keys(article.locales).length} langs) [${article.category.toUpperCase()}: ${categoryCounts[article.category]}/${TARGET_PER_CAT}]`);
     } catch (e) {
       log(`  ✗ failed: ${e.message}`);
     } finally {
