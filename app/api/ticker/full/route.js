@@ -23,43 +23,40 @@ export async function GET(request) {
 
   // 1. Fetch real-time sports matches and breaking ticker items (Kicker & Sportschau & BBC)
   try {
-    const [kickerRes, sportschauRes, bbcSportRes] = await Promise.allSettled([
+    const [kickerFussball, sportschauFussball, kickerGeneral, bbcSportRes] = await Promise.allSettled([
+      parser.parseURL('https://newsfeed.kicker.de/news/fussball'),
+      parser.parseURL('https://www.sportschau.de/fussball/index~rss2.xml'),
       parser.parseURL('https://newsfeed.kicker.de/news/aktuell'),
-      parser.parseURL('https://www.sportschau.de/index~rss2.xml'),
       parser.parseURL('https://feeds.bbci.co.uk/sport/football/rss.xml'),
     ]);
 
-    if (kickerRes.status === 'fulfilled' && kickerRes.value?.items) {
-      kickerRes.value.items.slice(0, 10).forEach((item, idx) => {
-        const isLive = /live|spiel|länderspiel|halbzeit|tor|führung|em|wm/i.test(item.title);
-        items.push({
-          id: `kicker-${idx}-${Date.parse(item.pubDate || '') || now}`,
-          time: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString(),
-          type: 'sport',
-          badge: isLive ? 'LIVE' : 'SPORT',
-          title: item.title.replace(/^LIVE!\s*/i, '').trim(),
-          detail: item.contentSnippet ? item.contentSnippet.slice(0, 180) : null,
-          url: item.link,
-          source: 'Kicker',
-        });
-      });
-    }
+    const addItems = (res, sourceName) => {
+      if (res.status !== 'fulfilled' || !res.value?.items) return;
+      res.value.items.slice(0, 10).forEach((item, idx) => {
+        const title = item.title || '';
+        const isLaenderspiel = /länderspiel|england|kroatien|spanien|tschechien|belgien|frankreich|italien|schweiz|deutschland|u\s*21|georgien|em|wm|nations league/i.test(title);
+        const isLive = /live|halbzeit|endstand|führt|tor|spieltag/i.test(title) || isLaenderspiel;
 
-    if (sportschauRes.status === 'fulfilled' && sportschauRes.value?.items) {
-      sportschauRes.value.items.slice(0, 10).forEach((item, idx) => {
-        const isLive = /live|spiel|länderspiel|halbzeit|tor|führung|em|wm/i.test(item.title);
+        let badge = 'SPORT';
+        if (isLaenderspiel) badge = 'LÄNDERSPIEL';
+        else if (isLive) badge = 'LIVE';
+
         items.push({
-          id: `sportschau-${idx}-${Date.parse(item.pubDate || '') || now}`,
+          id: `${sourceName.toLowerCase()}-${idx}-${Date.parse(item.pubDate || '') || now}`,
           time: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString(),
           type: 'sport',
-          badge: isLive ? 'LIVE' : 'SPORT',
-          title: item.title.replace(/^Jetzt live\s*[-–:]\s*/i, '').trim(),
+          badge,
+          title: title.replace(/^(?:LIVE!|Jetzt live\s*[-–:]\s*)/i, '').trim(),
           detail: item.contentSnippet ? item.contentSnippet.slice(0, 180) : null,
           url: item.link,
-          source: 'Sportschau',
+          source: sourceName,
         });
       });
-    }
+    };
+
+    addItems(kickerFussball, 'Kicker');
+    addItems(sportschauFussball, 'Sportschau');
+    addItems(kickerGeneral, 'Kicker');
 
     if (bbcSportRes.status === 'fulfilled' && bbcSportRes.value?.items) {
       bbcSportRes.value.items.slice(0, 6).forEach((item, idx) => {
@@ -80,14 +77,18 @@ export async function GET(request) {
   }
 
   // 2. Add published PLAIN. articles as ticker entries
+  const BREAKING_WINDOW_MS = 90 * 60 * 1000;
   articles.forEach((a) => {
     const de = a.locales?.de;
     const en = a.locales?.en;
+    const isRecent = a.publishedAt && (now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS);
+    const isEilmeldung = a.importance >= 4 && isRecent;
+
     items.push({
       id: `plain-${a.slug}`,
       time: a.publishedAt,
       type: a.category,
-      badge: a.importance >= 4 ? 'EILMELDUNG' : a.category.toUpperCase(),
+      badge: isEilmeldung ? 'EILMELDUNG' : a.category.toUpperCase(),
       title: de?.title || en?.title || a.slug,
       detail: de?.dek || en?.dek || null,
       slug: a.slug,

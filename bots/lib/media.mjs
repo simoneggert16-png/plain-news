@@ -30,7 +30,7 @@ const JUNK_PATTERNS = [
   /writer/i,
   /columnist/i,
   /bylines?/i,
-  /\b(?:340\/340|150\/150|100\/100|80\/80|64\/64)\b/i,
+  /\b(?:340\/340|150\/150|100\/100|80\/80|64\/64|150x150|200x200|300x200|w[=_:]150|w[=_:]200|w[=_:]300|thumb|thumbnail)\b/i,
 ];
 
 export function isJunkImage(url) {
