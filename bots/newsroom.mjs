@@ -54,10 +54,13 @@ CRITICAL DEDUPLICATION RULE:
 - Otherwise, strictly choose FRESH events that have not been published yet.
 ${neededCategories.length ? `\nPRIORITY DESKS: We are actively building depth in these categories: ${neededCategories.join(', ')}. Prioritize events matching these topics.` : ''}
 
-Task: Identify real-world events reported by AT LEAST 2 DIFFERENT outlets.
-- Skip opinion pieces, sports betting, lifestyle, celebrity gossip.
+Task: Identify real-world events.
+SOURCE RULES:
+- Primary/Authoritative Source Rule: A story can be covered with 1 SINGLE authoritative source IF that source is an official company press release, scientific institute/journal (Nature, ScienceDaily, Phys.org), government agency (CDC, WHO, NASA), or premier broadcaster/wire (Reuters, BBC, AP, CNBC, Wall Street Journal).
+- Secondary/General Rule: If the source is not a primary authority, require AT LEAST 2 DIFFERENT outlets.
+- NEVER accept random blogs, unverified speculation, gossip, lifestyle, or sponsored posts.
 - Importance: 1 (minor) to 5 (major global impact).
-- Category must be one of: ${CATEGORIES.join(', ')}.
+- Category must be one of: ${CATEGORIES.filter((c) => c !== 'community').join(', ')}.
 - "event": One objective English sentence stating what occurred.
 
 Format response strictly as JSON:
@@ -69,7 +72,13 @@ Format response strictly as JSON:
     .map((e) => ({ ...e, ids: [...new Set((e.ids || []).map(Number))].filter((i) => items[i]) }))
     .filter((e) => CATEGORIES.includes(e.category))
     .map((e) => ({ ...e, sources: e.ids.map((i) => items[i]), outlets: new Set(e.ids.map((i) => items[i].outlet)).size }))
-    .filter((e) => e.outlets >= 2);
+    .filter((e) => {
+      if (e.outlets >= 2) return true;
+      // Single authoritative primary sources permitted
+      const singleOutlet = e.sources[0]?.outlet || '';
+      const isAuthoritative = /Nature|ScienceDaily|Phys\.org|InsideClimate News|Mongabay|Medical News Today|STAT News|CNBC|Wall Street Journal|Ars Technica|TechCrunch|The Verge|Wired|BBC|NPR|DW|France 24|Tagesschau|UN News/i.test(singleOutlet);
+      return isAuthoritative && e.sources.length >= 1;
+    });
 
   // Rank: priority desk boost first, then importance, then breadth of coverage.
   events.sort((a, b) => {
@@ -162,16 +171,33 @@ async function main() {
     log(`DESK   prioritizing under-target categories (<${TARGET_PER_CAT}): ${neededCategories.join(', ')}`);
   }
 
-  // Keep prompt size crisp and reliable: cluster in batches of ~25 items across unseen news
-  const sortedItems = items.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
-  const batchSize = 25;
-  const maxBatches = Math.min(10, Math.ceil(sortedItems.length / batchSize));
+  // Sort items so topic-related stories from different outlets appear in the same chunk
+  const PRIORITY_KEYWORDS = {
+    science: /nobel|space|telescope|physics|biology|nasa|esa|genome|dna|discovery|satellite/i,
+    climate: /climate|warming|cop|cop\d+|emissions|carbon|renewable|solar|wind|glacier|drought|wildfire/i,
+    culture: /culture|film|movie|theatre|theater|museum|art|exhibition|author|book|novel|award|oscars/i,
+    health: /health|who|cdc|virus|vaccine|disease|hospital|plague|epidemic|cancer|clinical/i,
+    business: /market|stock|inflation|rate|central bank|fed|ecb|acquisition|merger|gdp|economy|earnings/i,
+  };
+
+  const prioritized = [];
+  const others = [];
+  for (const it of items) {
+    const text = `${it.title} ${it.summary || ''}`;
+    const matchesPriority = neededCategories.some((c) => PRIORITY_KEYWORDS[c]?.test(text));
+    if (matchesPriority) prioritized.push(it);
+    else others.push(it);
+  }
+
+  const sortedItems = [...prioritized, ...others];
+  const batchSize = 45;
+  const maxBatches = Math.min(8, Math.ceil(sortedItems.length / batchSize));
   let allEvents = [];
   const publishedTitles = [...recentTitles];
 
   for (let b = 0; b < maxBatches; b++) {
     const chunk = sortedItems.slice(b * batchSize, (b + 1) * batchSize);
-    if (chunk.length < 10) break;
+    if (chunk.length < 5) break;
     log(`DESK   clustering batch ${b + 1}/${maxBatches} (${chunk.length} headlines)…`);
     try {
       const found = await desk(chunk, publishedTitles, neededCategories);

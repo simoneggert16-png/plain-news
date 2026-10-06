@@ -6,6 +6,7 @@ import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mj
 import { fmtDate } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
+import ArticleComments from '@/components/ArticleComments';
 
 export const dynamicParams = false;
 
@@ -188,6 +189,8 @@ export default async function ArticlePage({ params }) {
         <h2>{t.howMade}</h2>
         <p className="howmade">{fmt(t.howMadeText, { n: outlets })}</p>
       </section>
+
+      <ArticleComments slug={a.slug} locale={locale} isDe={locale === 'de'} />
     </article>
   );
 }

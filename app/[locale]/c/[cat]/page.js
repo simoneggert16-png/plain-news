@@ -5,6 +5,7 @@ import { getDict } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
 import { fmtDate } from '@/lib/format.mjs';
 import SportsLiveSidebar from '@/components/SportsLiveSidebar';
+import CommunitySubmitSection from '@/components/CommunitySubmitSection';
 
 export const dynamicParams = false;
 
@@ -55,7 +56,9 @@ export default async function CategoryPage({ params }) {
         )}
       </div>
 
-      {cat === 'sport' ? (
+      {cat === 'community' ? (
+        <CommunitySubmitSection locale={locale} isDe={isDe} />
+      ) : cat === 'sport' ? (
         <div className="sport-split-layout">
           {/* Main Feed: Editorial Stories & Reports */}
           <div className="sport-main-content">
