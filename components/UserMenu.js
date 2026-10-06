@@ -43,12 +43,16 @@ export default function UserMenu({ locale, isDe }) {
   }
 
   function handleOAuth(provider) {
-    const name = provider === 'google' ? 'Google Nutzer' : 'Apple Nutzer';
+    if (provider === 'google') {
+      window.location.href = '/api/auth/google';
+      return;
+    }
+    const name = 'Apple Nutzer';
     completeLogin({
       name,
       provider,
-      avatar: provider === 'google' ? 'G' : '',
-      email: `${provider.toLowerCase()}@user.ch`,
+      avatar: '',
+      email: 'apple@user.ch',
     });
   }
 
