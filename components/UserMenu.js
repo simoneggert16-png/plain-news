@@ -90,7 +90,17 @@ export default function UserMenu({ locale, isDe }) {
           onClick={(e) => { e.stopPropagation(); setOpen(!open); }}
           aria-expanded={open}
         >
-          <span className="user-badge-avatar">{user.avatar || '●'}</span>
+          {user.avatar && (user.avatar.startsWith('http') || user.avatar.startsWith('/')) ? (
+            <img
+              src={user.avatar}
+              alt={user.name}
+              className="user-badge-avatar"
+              referrerPolicy="no-referrer"
+              style={{ objectFit: 'cover' }}
+            />
+          ) : (
+            <span className="user-badge-avatar">{user.avatar || user.name?.charAt(0) || '●'}</span>
+          )}
           <span className="user-btn-label">{user.name.split(' ')[0]}</span>
           <span className="lang-arrow" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▾</span>
         </button>
@@ -114,31 +124,91 @@ export default function UserMenu({ locale, isDe }) {
           {user ? (
             <div className="user-panel-content">
               <div className="user-panel-head">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span className="user-badge-avatar" style={{ width: '22px', height: '22px', fontSize: '12px' }}>
-                    {user.avatar || '●'}
-                  </span>
-                  <div>
-                    <strong>{user.name}</strong>
-                    <div style={{ fontSize: '10px', color: 'var(--muted)' }}>{user.email || 'Angemeldet'}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0, flex: 1 }}>
+                  {user.avatar && (user.avatar.startsWith('http') || user.avatar.startsWith('/')) ? (
+                    <img
+                      src={user.avatar}
+                      alt={user.name}
+                      className="user-badge-avatar"
+                      style={{ width: '28px', height: '28px', objectFit: 'cover' }}
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <span className="user-badge-avatar" style={{ width: '28px', height: '28px', fontSize: '13px' }}>
+                      {user.avatar || user.name?.charAt(0) || '●'}
+                    </span>
+                  )}
+                  <div style={{ minWidth: 0, flex: 1 }}>
+                    <strong style={{ display: 'block', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                      {user.name}
+                    </strong>
+                    <div style={{ fontSize: '10px', color: 'var(--muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                      {user.email || 'Angemeldet'}
+                    </div>
                   </div>
                 </div>
                 <span className="user-provider-tag">{user.provider.toUpperCase()}</span>
               </div>
-              <p className="user-panel-info">
-                {isDe
-                  ? '✓ Dein Profil ist aktiv. Dein Homefeed ist für dich personalisiert.'
-                  : '✓ Your profile is active. Your homefeed is personalized for you.'}
-              </p>
-              <div style={{ padding: '8px 0', borderTop: '1px solid var(--paper-3)', marginBottom: '10px' }}>
-                <span className="label" style={{ fontSize: '10px', display: 'block', marginBottom: '4px' }}>
-                  {isDe ? 'STATUS:' : 'STATUS:'}
+
+              <div className="user-panel-status-block">
+                <span className="label" style={{ fontSize: '9px', display: 'block', marginBottom: '3px' }}>
+                  {isDe ? 'KONTO-STATUS' : 'ACCOUNT STATUS'}
                 </span>
-                <span style={{ fontSize: '12px', color: 'var(--up)', fontWeight: 600 }}>
-                  ● {isDe ? 'Serverseitig synchronisiert' : 'Server-side synced'}
+                <span style={{ fontSize: '11px', color: 'var(--up)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <span style={{ fontSize: '9px' }}>●</span> {isDe ? 'Serverseitig synchronisiert' : 'Server-side synced'}
                 </span>
               </div>
-              <button type="button" className="auth-btn-action logout" onClick={handleLogout}>
+
+              {/* Direct Topic Manager in Profile */}
+              <div style={{ margin: '12px 0', borderTop: '1px solid var(--paper-3)', paddingTop: '10px' }}>
+                <span className="label" style={{ fontSize: '9.5px', display: 'block', marginBottom: '8px' }}>
+                  {isDe ? 'DEINE FEED-INTERESSEN:' : 'YOUR FEED TOPICS:'}
+                </span>
+                <p style={{ fontSize: '11px', color: 'var(--ink-2)', margin: '0 0 8px 0', lineHeight: '1.35' }}>
+                  {isDe
+                    ? 'Wähle Themen aus, um deinen Homefeed anzupassen. Nutze auch die Leiste direkt über den News.'
+                    : 'Personalize which categories appear in your feed:'}
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                  {['world', 'politics', 'science', 'tech', 'business', 'health', 'culture', 'sport'].map((cat) => {
+                    const deLabels = {
+                      world: 'Welt', politics: 'Politik', science: 'Wissenschaft', tech: 'Tech',
+                      business: 'Wirtschaft', health: 'Gesundheit', culture: 'Kultur', sport: 'Sport'
+                    };
+                    const label = isDe ? (deLabels[cat] || cat) : cat.toUpperCase();
+                    return (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => {
+                          const match = document.cookie.match(/(?:^|;\s*)plain_topics=([^;]+)/);
+                          let current = ['world', 'politics', 'business', 'tech', 'science', 'climate', 'health', 'culture', 'sport'];
+                          if (match) {
+                            try { current = JSON.parse(decodeURIComponent(match[1])) || current; } catch (e) {}
+                          }
+                          const next = current.includes(cat)
+                            ? (current.length > 1 ? current.filter((c) => c !== cat) : current)
+                            : [...current, cat];
+                          document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(next))};path=/;max-age=31536000;samesite=lax`;
+                          window.location.reload();
+                        }}
+                        style={{
+                          fontSize: '10px',
+                          padding: '3px 6px',
+                          background: 'var(--paper-2)',
+                          border: '1px solid var(--ink)',
+                          cursor: 'pointer',
+                          fontFamily: 'var(--mono)',
+                        }}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <button type="button" className="auth-btn-action logout" onClick={handleLogout} style={{ marginTop: '8px' }}>
                 {isDe ? 'Abmelden' : 'Sign Out'}
               </button>
             </div>
