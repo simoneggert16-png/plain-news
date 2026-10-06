@@ -43,8 +43,13 @@ IMPORTANT: Do NOT output thinking, analysis or preamble. Output ONLY a valid JSO
       content: `Headlines (id|outlet|headline):
 ${list}
 
-ALREADY PUBLISHED in the last 48h (do NOT duplicate):
-${recentTitles.map((t) => '- ' + t).join('\n') || '- none'}
+ALREADY PUBLISHED in the last 72 hours:
+${recentTitles.slice(0, 100).map((t) => '- ' + t).join('\n') || '- none'}
+
+CRITICAL DEDUPLICATION RULE:
+- NEVER output an event that was already published above.
+- Only report an existing story if there is an urgent, game-changing NEW BREAKING DEVELOPMENT (e.g. an official peace accord, unexpected verdict, or dramatic escalation), and explicitly state the new development.
+- Otherwise, strictly choose FRESH events that have not been published yet.
 
 Task: Identify real-world events reported by AT LEAST 2 DIFFERENT outlets.
 - Skip opinion pieces, sports betting, lifestyle, celebrity gossip.

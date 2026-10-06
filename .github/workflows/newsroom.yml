@@ -2,7 +2,7 @@ name: Newsroom
 
 on:
   schedule:
-    - cron: '*/30 * * * *'   # every 30 minutes
+    - cron: '*/10 * * * *'   # every 10 minutes
   workflow_dispatch: {}       # manual "Run workflow" button
 
 permissions:
@@ -26,8 +26,8 @@ jobs:
       - name: Run AI newsroom
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '5' }}
-        run: node bots/newsroom.mjs
+          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '10' }}
+          MAX_PER_CATEGORY: '3'
       - name: Commit new stories
         run: |
           git config user.name  "plain-newsroom-bot"

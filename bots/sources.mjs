@@ -45,7 +45,7 @@ export const FEEDS = [
   { outlet: 'Yonhap', url: 'https://en.yna.co.kr/RSS/news.xml' },
   { outlet: 'Times of India', url: 'https://timesofindia.indiatimes.com/rssfeedstopstories.cms' },
 
-  // ── Business / tech / science / sport
+  // ── Business / tech / science / sport & live feeds
   { outlet: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html' },
   { outlet: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index' },
   { outlet: 'The Verge', url: 'https://www.theverge.com/rss/index.xml' },
@@ -54,4 +54,9 @@ export const FEEDS = [
   { outlet: 'ScienceDaily', url: 'https://www.sciencedaily.com/rss/top.xml' },
   { outlet: 'ESPN', url: 'https://www.espn.com/espn/rss/news' },
   { outlet: 'Sky Sports', url: 'https://www.skysports.com/rss/12040' },
+  { outlet: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml' },
+  { outlet: 'BBC Football', url: 'https://feeds.bbci.co.uk/sport/football/rss.xml' },
+  { outlet: 'Kicker', url: 'https://newsfeed.kicker.de/news/aktuell' },
+  { outlet: 'Sportschau', url: 'https://www.sportschau.de/index~rss2.xml' },
+  { outlet: 'Eurosport', url: 'https://www.eurosport.com/rss.xml' },
 ];

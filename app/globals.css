@@ -76,6 +76,21 @@ img { max-width: 100%; display: block; }
 .ticker-item b { font-weight: 500; color: #b9b09c; margin-right: 4px; }
 .ticker .up { color: #7fc48f; }
 .ticker .down { color: #e58a77; }
+.ticker-live-tag {
+  color: #f3efe6;
+  font-weight: 500;
+}
+.live-dot-badge {
+  font-size: 9px;
+  background: #c93b2b;
+  color: #fff;
+  padding: 1px 5px;
+  margin-right: 6px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  vertical-align: middle;
+}
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .lang-dropdown { position: relative; border-left: 1px solid #3a372f; display: flex; align-items: stretch; }
 .lang-btn {
