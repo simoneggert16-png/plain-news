@@ -111,25 +111,27 @@ export default async function Home({ params }) {
       </div>
       <MarketStrip locale={locale} />
 
-      {latest.length > 0 && (
+      {rest.length > 0 && (
         <>
-          <div className="sec-head"><h2>{t.latest}</h2></div>
+          <div className="sec-head">
+            <h2>{t.latest} ({rest.length})</h2>
+          </div>
           <div className="grid grid-top">
-            {latest.map((a) => <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />)}
+            {rest.map((a) => <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />)}
           </div>
         </>
       )}
 
       {CATEGORIES.map((c) => {
-        const items = all.filter((a) => a.category === c).slice(0, 4);
-        if (items.length < 2) return null;
+        const items = all.filter((a) => a.category === c);
+        if (items.length === 0) return null;
         return (
           <section key={c}>
             <div className="sec-head">
               <h2>{t.cat[c]}</h2>
               <Link href={`/${locale}/c/${c}`}>{t.more} →</Link>
             </div>
-            <div className="grid grid-4 grid-top">
+            <div className="grid grid-top">
               {items.map((a) => <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />)}
             </div>
           </section>

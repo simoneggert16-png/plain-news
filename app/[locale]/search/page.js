@@ -37,21 +37,37 @@ export default async function SearchPage({ params, searchParams }) {
   return (
     <div className="search-page">
       <header className="search-header">
+        <div className="label" style={{ marginBottom: '8px' }}>ARCHIV & RECHERCHE</div>
         <h1 className="page-title">{locale === 'de' ? 'Suche' : 'Search'}</h1>
 
-        <form action={`/${locale}/search`} method="GET" className="search-form">
-          <input
-            type="search"
-            name="q"
-            defaultValue={q}
-            placeholder={locale === 'de' ? 'Thema, Person oder Stichwort suchen…' : 'Search topics, people, events…'}
-            className="search-input"
-            autoFocus
-          />
-          <button type="submit" className="search-submit">
-            {locale === 'de' ? 'Suchen' : 'Search'}
+        <form action={`/${locale}/search`} method="GET" className="search-console">
+          <div className="search-input-wrap">
+            <svg className="search-input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16" y2="16" />
+            </svg>
+            <input
+              type="search"
+              name="q"
+              defaultValue={q}
+              placeholder={locale === 'de' ? 'Thema, Person oder Stichwort suchen (z. B. Frankreich, AfD, KI)…' : 'Search topics, people, events (e.g. France, AI, Markets)…'}
+              className="search-input"
+              autoFocus
+            />
+          </div>
+          <button type="submit" className="search-submit-btn">
+            {locale === 'de' ? 'SUCHEN' : 'SEARCH'}
           </button>
         </form>
+
+        <div className="search-quick-tags">
+          <span className="label">{locale === 'de' ? 'HÄUFIG GESUCHT:' : 'TRENDING:'}</span>
+          {['Frankreich', 'Sachsen-Anhalt', 'Anthropic', 'Paramount', 'NFL'].map((tag) => (
+            <Link key={tag} href={`/${locale}/search?q=${encodeURIComponent(tag)}`} className="search-quick-tag">
+              {tag}
+            </Link>
+          ))}
+        </div>
       </header>
 
       {q && (
