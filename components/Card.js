@@ -6,6 +6,12 @@ export default function Card({ a, locale, t, bcp }) {
   const l = localize(a, locale);
   return (
     <Link href={`/${locale}/a/${a.slug}`} className="card">
+      {a.image && (
+        <div className="card-thumb-wrap">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={a.image} alt="" className="card-thumb" loading="lazy" />
+        </div>
+      )}
       <span className="label">{t.cat[a.category]}</span>
       <h3>{l.title}</h3>
       <p>{l.dek}</p>

@@ -7,7 +7,7 @@
 //   5. TRANSLATOR translate into all site languages
 //   6. PUBLISH    write JSON → git commit → Vercel redeploys
 import { FEEDS } from './sources.mjs';
-import { fetchFeeds, fetchArticleText } from './lib/feeds.mjs';
+import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { chatJSON } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
@@ -146,9 +146,14 @@ async function main() {
       const byOutlet = new Map();
       for (const s of event.sources) if (!byOutlet.has(s.outlet)) byOutlet.set(s.outlet, s);
       const reading = [...byOutlet.values(), ...event.sources.filter((s) => ![...byOutlet.values()].includes(s))].slice(0, 5);
-      await pool(reading, 5, async (s) => { s.text = await fetchArticleText(s.url); });
+      await pool(reading, 5, async (s) => {
+        const details = await fetchArticleDetails(s.url);
+        s.text = details.text;
+        if (!s.image && details.image) s.image = details.image;
+      });
       event.sources = reading;
-      log(`  REPORTER reading ${reading.length} sources (${reading.filter((s) => s.text).length} with full text)`);
+      const heroImage = event.sources.find((s) => s.image)?.image || null;
+      log(`  REPORTER reading ${reading.length} sources (${reading.filter((s) => s.text).length} with text, hero image: ${heroImage ? 'found' : 'none'})`);
 
       let { draft, model: writerModel } = await reporter(event);
       if (!validArticle(draft)) throw new Error('draft invalid');
@@ -171,6 +176,7 @@ async function main() {
       const article = {
         slug: slugify(final.title, now),
         category,
+        image: heroImage,
         importance: Math.min(5, Math.max(1, +final.importance || event.importance || 3)),
         publishedAt: now.toISOString(),
         updatedAt: now.toISOString(),

@@ -27,10 +27,12 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 14 } = {})
       if (!title || !link || JUNK.test(title) || /\/(opinion|commentisfree|video|live)\//i.test(link)) continue;
       const ts = Date.parse(it.isoDate || it.pubDate || '') || Date.now();
       if (ts < cutoff) continue;
+      const img = it.enclosure?.url || it['media:content']?.url || it['media:thumbnail']?.url || null;
       items.push({
         outlet: f.outlet,
         title,
         url: link,
+        image: img,
         summary: clean(it.contentSnippet || it.content || it.summary || it.description || '').slice(0, 500),
         publishedAt: new Date(ts).toISOString(),
       });
@@ -41,17 +43,30 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 14 } = {})
   return { items: items.filter((i) => (seen.has(i.url) ? false : seen.add(i.url))), feedsOk: ok, feedsTotal: feeds.length };
 }
 
-/** Best-effort full text: grab <p> paragraphs from the article page. */
-export async function fetchArticleText(url, maxChars = 3500) {
+/** Best-effort full text & hero image: grab text paragraphs and OpenGraph/meta image */
+export async function fetchArticleDetails(url, maxChars = 3500) {
   try {
     const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'text/html' }, signal: AbortSignal.timeout(12000), redirect: 'follow' });
-    if (!res.ok) return '';
-    const html = (await res.text()).replace(/<(script|style|noscript|svg|nav|footer|header|aside|form)[\s\S]*?<\/\1>/gi, ' ');
-    const paras = [...html.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
+    if (!res.ok) return { text: '', image: null };
+    const html = await res.text();
+    
+    // Extract og:image or twitter:image
+    let image = null;
+    const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
+                    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i) ||
+                    html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i);
+    if (ogMatch && ogMatch[1] && /^https?:\/\//i.test(ogMatch[1])) {
+      image = ogMatch[1];
+    }
+
+    const stripped = html.replace(/<(script|style|noscript|svg|nav|footer|header|aside|form)[\s\S]*?<\/\1>/gi, ' ');
+    const paras = [...stripped.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
       .map((m) => clean(m[1]))
       .filter((p) => p.length > 60 && !/cookie|subscribe|sign up|newsletter|advertis|all rights reserved|javascript/i.test(p));
-    return paras.join('\n').slice(0, maxChars);
+
+    return { text: paras.join('\n').slice(0, maxChars), image };
   } catch {
-    return '';
+    return { text: '', image: null };
   }
 }
+

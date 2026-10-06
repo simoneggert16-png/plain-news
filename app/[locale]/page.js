@@ -30,6 +30,12 @@ export default async function Home({ params }) {
           <Link href={`/${locale}/a/${lead.slug}`}>
             <h1>{L.title}</h1>
           </Link>
+          {lead.image && (
+            <Link href={`/${locale}/a/${lead.slug}`} className="lead-hero-wrap">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={lead.image} alt="" className="lead-hero" loading="eager" />
+            </Link>
+          )}
           <p className="dek">{L.dek}</p>
           {L.facts?.length > 0 && (
             <ul className="lead-facts">

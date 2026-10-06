@@ -59,6 +59,12 @@ export default async function ArticlePage({ params }) {
           <span>{fmt(t.minRead, { n: readingMinutes(a, locale) })}</span>
           <span>{outlets} {t.sources}</span>
         </div>
+        {a.image && (
+          <div className="art-hero-wrap">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={a.image} alt={l.title} className="art-hero" loading="lazy" />
+          </div>
+        )}
       </header>
 
       {l.isFallback && <div className="notice">EN</div>}
