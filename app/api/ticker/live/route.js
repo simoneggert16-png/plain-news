@@ -33,12 +33,16 @@ export async function GET(request) {
 
     const processItem = (item, sourceName) => {
       const title = item.title || '';
-      const isLaenderspiel = /länderspiel|england|kroatien|spanien|tschechien|belgien|frankreich|italien|schweiz|deutschland|u\s*21|georgien|em|wm|nations league/i.test(title);
+      const isMessi = /messi|albiceleste/i.test(title);
+      const isLaenderspiel = /länderspiel|england|kroatien|spanien|tschechien|belgien|frankreich|italien|schweiz|deutschland|u\s*21|georgien|em|wm|nations league|argentinien/i.test(title) || isMessi;
       const isLive = /live|halbzeit|endstand|führt|tor|spieltag/i.test(title) || isLaenderspiel;
 
       let label = 'SPORT';
       let badge = 'SPORT';
-      if (isLaenderspiel) {
+      if (isMessi) {
+        label = 'MESSI ABSCHIED';
+        badge = 'LIVE';
+      } else if (isLaenderspiel) {
         label = 'LÄNDERSPIEL';
         badge = 'LIVE';
       } else if (isLive) {
@@ -53,7 +57,7 @@ export async function GET(request) {
         badge,
         url: item.link,
         source: sourceName,
-        isPriority: isLaenderspiel || isLive,
+        isPriority: isMessi ? 2 : (isLaenderspiel || isLive ? 1 : 0),
       });
     };
 
@@ -69,8 +73,8 @@ export async function GET(request) {
       kickerGeneral.value.items.slice(0, 4).forEach((i) => processItem(i, 'Kicker'));
     }
 
-    // Prioritize Länderspiele & live match results
-    liveCandidates.sort((a, b) => (b.isPriority ? 1 : 0) - (a.isPriority ? 1 : 0));
+    // Prioritize Messi, Länderspiele & live match results
+    liveCandidates.sort((a, b) => (b.isPriority || 0) - (a.isPriority || 0));
     tickerItems.push(...liveCandidates.slice(0, 5));
   } catch (err) {
     console.error('Ticker sports fetch error:', err);
