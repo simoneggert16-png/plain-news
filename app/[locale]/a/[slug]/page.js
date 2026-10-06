@@ -52,7 +52,12 @@ export default async function ArticlePage({ params }) {
       <header className="art-head">
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
           <Link href={`/${locale}/c/${a.category}`} className="label label-inv">{t.cat[a.category]}</Link>
-          {a.video && <span className="badge-video">▶ VIDEO</span>}
+          {a.video && (
+            <span className="badge-video">
+              <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              VIDEO
+            </span>
+          )}
         </div>
         <h1>{l.title}</h1>
         <p className="dek">{l.dek}</p>
@@ -78,7 +83,10 @@ export default async function ArticlePage({ params }) {
               </video>
             )}
             <div className="art-media-caption">
-              <span>▶ VIDEO</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                VIDEO
+              </span>
               {a.video.caption ? ` · ${a.video.caption}` : ''}
             </div>
           </div>
@@ -116,7 +124,14 @@ export default async function ArticlePage({ params }) {
           {a.sources.map((s, i) => (
             <li key={i}>
               <span className="outlet">{s.outlet}</span>
-              <a href={s.url} target="_blank" rel="noopener noreferrer nofollow">{s.title} ↗</a>
+              <a href={s.url} target="_blank" rel="noopener noreferrer nofollow">
+                <span>{s.title}</span>
+                <span className="ext-arrow" aria-hidden="true">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
+                    <path d="M7 17L17 7M17 7H8M17 7V16" />
+                  </svg>
+                </span>
+              </a>
             </li>
           ))}
         </ul>

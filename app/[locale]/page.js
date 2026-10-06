@@ -28,7 +28,12 @@ export default async function Home({ params }) {
         <article className="lead">
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
             <Link href={`/${locale}/c/${lead.category}`} className="label label-inv">{t.cat[lead.category]}</Link>
-            {lead.video && <span className="badge-video">▶ VIDEO</span>}
+            {lead.video && (
+              <span className="badge-video">
+                <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                VIDEO
+              </span>
+            )}
           </div>
           <Link href={`/${locale}/a/${lead.slug}`}>
             <h1>{L.title}</h1>
@@ -57,7 +62,12 @@ export default async function Home({ params }) {
                 <Link href={`/${locale}/a/${a.slug}`}>
                   <div style={{ display: 'flex', gap: '6px', alignItems: 'center', marginBottom: '4px' }}>
                     <span className="label">{t.cat[a.category]}</span>
-                    {a.video && <span className="badge-video">▶ VIDEO</span>}
+                    {a.video && (
+                      <span className="badge-video">
+                        <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        VIDEO
+                      </span>
+                    )}
                   </div>
                   <h3>{localize(a, locale).title}</h3>
                 </Link>

@@ -14,7 +14,12 @@ export default function Card({ a, locale, t, bcp }) {
       )}
       <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
         <span className="label">{t.cat[a.category]}</span>
-        {a.video && <span className="badge-video">▶ VIDEO</span>}
+        {a.video && (
+          <span className="badge-video">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            VIDEO
+          </span>
+        )}
       </div>
       <h3>{l.title}</h3>
       <p>{l.dek}</p>

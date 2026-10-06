@@ -346,3 +346,18 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   color: #fff;
 }
 
+.ext-arrow {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 5px;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.ext-arrow svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
