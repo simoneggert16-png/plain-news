@@ -26,7 +26,10 @@ export default async function Home({ params }) {
     <>
       <section className="lead-grid">
         <article className="lead">
-          <Link href={`/${locale}/c/${lead.category}`} className="label label-inv">{t.cat[lead.category]}</Link>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
+            <Link href={`/${locale}/c/${lead.category}`} className="label label-inv">{t.cat[lead.category]}</Link>
+            {lead.video && <span className="badge-video">▶ VIDEO</span>}
+          </div>
           <Link href={`/${locale}/a/${lead.slug}`}>
             <h1>{L.title}</h1>
           </Link>
@@ -52,7 +55,10 @@ export default async function Home({ params }) {
             {brief.map((a) => (
               <li key={a.slug}>
                 <Link href={`/${locale}/a/${a.slug}`}>
-                  <span className="label">{t.cat[a.category]}</span>
+                  <div style={{ display: 'flex', gap: '6px', alignItems: 'center', marginBottom: '4px' }}>
+                    <span className="label">{t.cat[a.category]}</span>
+                    {a.video && <span className="badge-video">▶ VIDEO</span>}
+                  </div>
                   <h3>{localize(a, locale).title}</h3>
                 </Link>
               </li>

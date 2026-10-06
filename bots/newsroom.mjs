@@ -13,6 +13,7 @@ import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
 import { loadIndex, saveIndex, loadState, saveState, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
+import { curateMedia } from './lib/media.mjs';
 
 const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 8);
 const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 3);
@@ -176,11 +177,14 @@ async function main() {
       await pool(reading, 5, async (s) => {
         const details = await fetchArticleDetails(s.url);
         s.text = details.text;
-        if (!s.image && details.image) s.image = details.image;
+        s.image = details.image;
+        s.video = details.video;
       });
       event.sources = reading;
-      const heroImage = event.sources.find((s) => s.image)?.image || null;
-      log(`  REPORTER reading ${reading.length} sources (${reading.filter((s) => s.text).length} with text, hero image: ${heroImage ? 'found' : 'none'})`);
+      const media = curateMedia(event.sources);
+      const heroImage = media.image;
+      const heroVideo = media.video;
+      log(`  REPORTER reading ${reading.length} sources (${reading.filter((s) => s.text).length} with text, hero image: ${heroImage ? 'found' : 'none'}, video: ${heroVideo ? heroVideo.type : 'none'})`);
 
       let { draft, model: writerModel } = await reporter(event);
       if (!validArticle(draft)) throw new Error('draft invalid');
@@ -204,6 +208,7 @@ async function main() {
         slug: slugify(final.title, now),
         category,
         image: heroImage,
+        video: heroVideo || null,
         importance: Math.min(5, Math.max(1, +final.importance || event.importance || 3)),
         publishedAt: now.toISOString(),
         updatedAt: now.toISOString(),

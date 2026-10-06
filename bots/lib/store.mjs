@@ -28,6 +28,7 @@ export function toIndexEntry(a) {
     slug: a.slug,
     category: a.category,
     image: a.image || null,
+    video: a.video || null,
     importance: a.importance,
     publishedAt: a.publishedAt,
     updatedAt: a.updatedAt,

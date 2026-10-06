@@ -43,30 +43,30 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 14 } = {})
   return { items: items.filter((i) => (seen.has(i.url) ? false : seen.add(i.url))), feedsOk: ok, feedsTotal: feeds.length };
 }
 
-/** Best-effort full text & hero image: grab text paragraphs and OpenGraph/meta image */
+import { extractVideoFromHtml, extractImagesFromHtml, isJunkImage } from './media.mjs';
+
+/** Best-effort full text, high-res photo & video: grab text paragraphs and media */
 export async function fetchArticleDetails(url, maxChars = 3500) {
   try {
     const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'text/html' }, signal: AbortSignal.timeout(12000), redirect: 'follow' });
-    if (!res.ok) return { text: '', image: null };
+    if (!res.ok) return { text: '', image: null, video: null };
     const html = await res.text();
     
-    // Extract og:image or twitter:image
-    let image = null;
-    const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
-                    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i) ||
-                    html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i);
-    if (ogMatch && ogMatch[1] && /^https?:\/\//i.test(ogMatch[1])) {
-      image = ogMatch[1];
-    }
+    // Extract video (YouTube embed or MP4 stream)
+    const video = extractVideoFromHtml(html);
+
+    // Extract images, prioritizing non-junk editorial photojournalism
+    const candidateImages = extractImagesFromHtml(html);
+    const image = candidateImages.length > 0 ? candidateImages.sort((a, b) => b.score - a.score)[0].url : null;
 
     const stripped = html.replace(/<(script|style|noscript|svg|nav|footer|header|aside|form)[\s\S]*?<\/\1>/gi, ' ');
     const paras = [...stripped.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
       .map((m) => clean(m[1]))
       .filter((p) => p.length > 60 && !/cookie|subscribe|sign up|newsletter|advertis|all rights reserved|javascript/i.test(p));
 
-    return { text: paras.join('\n').slice(0, maxChars), image };
+    return { text: paras.join('\n').slice(0, maxChars), image, video };
   } catch {
-    return { text: '', image: null };
+    return { text: '', image: null, video: null };
   }
 }
 

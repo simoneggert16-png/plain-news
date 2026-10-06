@@ -50,7 +50,10 @@ export default async function ArticlePage({ params }) {
     <article className="article">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="art-head">
-        <Link href={`/${locale}/c/${a.category}`} className="label label-inv">{t.cat[a.category]}</Link>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
+          <Link href={`/${locale}/c/${a.category}`} className="label label-inv">{t.cat[a.category]}</Link>
+          {a.video && <span className="badge-video">▶ VIDEO</span>}
+        </div>
         <h1>{l.title}</h1>
         <p className="dek">{l.dek}</p>
         <div className="art-meta meta">
@@ -59,12 +62,32 @@ export default async function ArticlePage({ params }) {
           <span>{fmt(t.minRead, { n: readingMinutes(a, locale) })}</span>
           <span>{outlets} {t.sources}</span>
         </div>
-        {a.image && (
+        {a.video ? (
+          <div className="art-video-wrap">
+            {a.video.type === 'youtube' ? (
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${a.video.id}`}
+                title={l.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="art-video"
+              />
+            ) : (
+              <video controls poster={a.image} className="art-video">
+                <source src={a.video.url} type="video/mp4" />
+              </video>
+            )}
+            <div className="art-media-caption">
+              <span>▶ VIDEO</span>
+              {a.video.caption ? ` · ${a.video.caption}` : ''}
+            </div>
+          </div>
+        ) : a.image ? (
           <div className="art-hero-wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={a.image} alt={l.title} className="art-hero" loading="lazy" />
           </div>
-        )}
+        ) : null}
       </header>
 
       {l.isFallback && <div className="notice">EN</div>}

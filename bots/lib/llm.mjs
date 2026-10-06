@@ -81,29 +81,35 @@ export async function chatJSON(role, messages, opts = {}) {
 export function extractJSON(text) {
   let t = text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
   const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  if (fence) t = fence[1].trim();
-  
-  // Find outermost matching braces/brackets
-  const firstCurly = t.indexOf('{');
-  const firstSquare = t.indexOf('[');
-  let start = -1;
-  let closeChar = '}';
-  if (firstCurly !== -1 && (firstSquare === -1 || firstCurly < firstSquare)) {
-    start = firstCurly;
-    closeChar = '}';
-  } else if (firstSquare !== -1) {
-    start = firstSquare;
-    closeChar = ']';
+  if (fence) {
+    try { return JSON.parse(fence[1].trim()); } catch {}
+    t = fence[1].trim();
   }
 
-  if (start < 0) {
-    // Check if the raw text is inside a JSON string or snippet
-    const rawMatch = text.match(/(\{[\s\S]*\}|\[[\s\S]*\])/);
-    if (rawMatch) return JSON.parse(rawMatch[0]);
-    throw new Error('No JSON found in response');
+  try { return JSON.parse(t); } catch {}
+
+  let best = null;
+  for (const openChar of ['{', '[']) {
+    const closeChar = openChar === '{' ? '}' : ']';
+    let startIdx = 0;
+    while ((startIdx = t.indexOf(openChar, startIdx)) !== -1) {
+      let endIdx = t.lastIndexOf(closeChar);
+      while (endIdx > startIdx) {
+        const candidate = t.slice(startIdx, endIdx + 1);
+        try {
+          const parsed = JSON.parse(candidate);
+          if (!best || candidate.length > best.raw.length) {
+            best = { parsed, raw: candidate };
+          }
+          break;
+        } catch {
+          endIdx = t.lastIndexOf(closeChar, endIdx - 1);
+        }
+      }
+      startIdx++;
+    }
   }
 
-  const end = t.lastIndexOf(closeChar);
-  if (end <= start) throw new Error('Unterminated JSON in response');
-  return JSON.parse(t.slice(start, end + 1));
+  if (best) return best.parsed;
+  throw new Error('No valid JSON could be extracted from response');
 }
