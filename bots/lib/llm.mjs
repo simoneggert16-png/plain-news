@@ -3,13 +3,13 @@ const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
 export const MODELS = {
-  // Model 1: MiniMax M3 — Rapid clustering & multimodal vision
-  desk: [process.env.DESK_MODEL, 'minimax-m3', 'deepseek-v4.1-flash'].filter(Boolean),
-  // Model 2: DeepSeek v4.1 Flash — In-depth neutral reporting & multilingual translation
-  writer: [process.env.WRITER_MODEL, 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
-  translator: [process.env.TRANSLATOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
+  // Model 1: MiniMax M3 — Rapid clustering & multimodal vision (with GPT-OSS 120B fallback)
+  desk: [process.env.DESK_MODEL, 'minimax-m3', 'deepseek-v4.1-flash', 'gpt-oss:120b', 'gemma4:31b'].filter(Boolean),
+  // Model 2: DeepSeek v4.1 Flash — In-depth neutral reporting & multilingual translation (with GPT-OSS 120B fallback)
+  writer: [process.env.WRITER_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'gpt-oss:120b', 'gemma4:31b'].filter(Boolean),
+  translator: [process.env.TRANSLATOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3', 'gpt-oss:120b', 'gemma4:31b'].filter(Boolean),
   // Model 3: GLM-5.3 Flash & DeepSeek — Independent standards editor & adversarial verification
-  editor: [process.env.EDITOR_MODEL, 'glm-5.3-flash', 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
+  editor: [process.env.EDITOR_MODEL, 'glm-5.3-flash', 'deepseek-v4.1-flash', 'minimax-m3', 'gpt-oss:120b', 'gemma4:31b'].filter(Boolean),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -80,11 +80,17 @@ async function once(model, messages, opts = {}) {
   return callNvidia(model, messages, opts);
 }
 
+const disabledModels = new Map();
+
 /** Chat with fallback across a list of models. Returns { text, model }. */
 export async function chat(role, messages, opts = {}) {
   const models = MODELS[role] || [role];
   let lastErr;
+  const now = Date.now();
   for (const model of [...new Set(models)]) {
+    if (disabledModels.has(model) && disabledModels.get(model) > now) {
+      continue;
+    }
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         const text = await once(model, messages, opts);
@@ -92,7 +98,12 @@ export async function chat(role, messages, opts = {}) {
         return { text, model };
       } catch (e) {
         lastErr = e;
-        if (e.status === 404 || e.status === 400 || e.status === 401 || e.status === 402 || e.status === 403) break;
+        if (e.status === 402 || e.status === 401 || e.status === 403) {
+          // Cooldown for 15 minutes so we don't spam failing requests during translation/batches
+          disabledModels.set(model, Date.now() + 15 * 60 * 1000);
+          break;
+        }
+        if (e.status === 404 || e.status === 400) break;
         await sleep(1500 * (attempt + 1));
       }
     }
