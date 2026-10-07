@@ -12,7 +12,6 @@ export default function CommunitySubmitSection({ locale, isDe }) {
   const [summary, setSummary] = useState('');
   const [author, setAuthor] = useState('');
   const [submittingArticle, setSubmittingArticle] = useState(false);
-  const [articleModError, setArticleModError] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
   // Chatroom state
@@ -20,7 +19,6 @@ export default function CommunitySubmitSection({ locale, isDe }) {
   const [chatUser, setChatUser] = useState('');
   const [chatText, setChatText] = useState('');
   const [sendingChat, setSendingChat] = useState(false);
-  const [chatModError, setChatModError] = useState(null);
 
   // Translation cache for submissions and chat messages: { [id]: { translated: string, showTranslated: boolean, loading: boolean } }
   const [translations, setTranslations] = useState({});
@@ -99,41 +97,15 @@ export default function CommunitySubmitSection({ locale, isDe }) {
     }
   };
 
-  // Submit Community Article / Primary Source with NVIDIA AI Moderation & Server Persistence
+  // Submit Community Article / Primary Source directly to server
   const handleArticleSubmit = async (e) => {
     e.preventDefault();
     if (!title.trim() || !sourceUrl.trim() || !summary.trim() || submittingArticle) return;
 
     setSubmittingArticle(true);
-    setArticleModError(null);
-
-    const fullContent = `${title.trim()}\n\n${summary.trim()}`;
     const authorName = author.trim() || (isDe ? 'Community-Mitglied' : 'Community Contributor');
 
     try {
-      // 1. Call NVIDIA NIM AI Content Moderation
-      const modRes = await fetch('/api/community/moderate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          text: fullContent,
-          author: authorName,
-          type: 'community_post',
-          locale: locale || 'de',
-        }),
-      });
-
-      const modResult = await modRes.json();
-
-      if (!modResult.approved) {
-        setArticleModError(modResult.reason || (isDe
-          ? 'Der Beitrag wurde von der NVIDIA AI-Moderation wegen unpassenden Inhalts oder Vulgärsprache abgelehnt.'
-          : 'Submission rejected by NVIDIA AI moderation due to inappropriate content or offensive language.'));
-        setSubmittingArticle(false);
-        return;
-      }
-
-      // 2. Persist to server
       const postRes = await fetch('/api/community/submissions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -157,48 +129,22 @@ export default function CommunitySubmitSection({ locale, isDe }) {
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 4000);
     } catch (err) {
-      console.error('Article submit moderation error:', err);
-      setArticleModError(isDe ? 'Prüfung fehlgeschlagen. Bitte erneut versuchen.' : 'Verification failed. Please retry.');
+      console.error('Article submit error:', err);
     } finally {
       setSubmittingArticle(false);
     }
   };
 
-  // Submit Chatroom Message with NVIDIA AI Moderation & Server Persistence
+  // Submit Chatroom Message directly to server
   const handleChatSubmit = async (e) => {
     e.preventDefault();
     if (!chatText.trim() || sendingChat) return;
 
     setSendingChat(true);
-    setChatModError(null);
-
     const userName = chatUser.trim() || (isDe ? 'Leser' : 'Reader');
     const messageContent = chatText.trim();
 
     try {
-      // 1. Call NVIDIA NIM AI Content Moderation
-      const modRes = await fetch('/api/community/moderate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          text: messageContent,
-          author: userName,
-          type: 'chat_message',
-          locale: locale || 'de',
-        }),
-      });
-
-      const modResult = await modRes.json();
-
-      if (!modResult.approved) {
-        setChatModError(modResult.reason || (isDe
-          ? 'Nachricht von NVIDIA AI abgelehnt: Unpassende Sprache, Beleidigungen oder Spam erkannt.'
-          : 'Message rejected by NVIDIA AI: Inappropriate language, insults, or spam detected.'));
-        setSendingChat(false);
-        return;
-      }
-
-      // 2. Persist to server
       const postRes = await fetch('/api/community/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -215,8 +161,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
 
       setChatText('');
     } catch (err) {
-      console.error('Chat moderation error:', err);
-      setChatModError(isDe ? 'Prüfung fehlgeschlagen. Bitte versuche es erneut.' : 'Verification failed. Please retry.');
+      console.error('Chat error:', err);
     } finally {
       setSendingChat(false);
     }
@@ -229,15 +174,15 @@ export default function CommunitySubmitSection({ locale, isDe }) {
           <div>
             <p className="lead-dek" style={{ margin: 0 }}>
               {isDe
-                ? 'Das offene PLAIN-Community-Zentrum: Primärquellen einreichen und im moderierten Live-Chatroom sachlich debattieren. Alle Beiträge sind serverseitig für jeden Leser synchronisiert.'
-                : 'The open PLAIN community hub: Submit primary sources and engage in moderated discourse in the live chatroom. All contributions are server-synced across readers.'}
+                ? 'Das offene PLAIN-Community-Zentrum: Primärquellen einreichen und im Live-Chatroom direkt debattieren. Alle Beiträge sind serverseitig in Echtzeit synchronisiert.'
+                : 'The open PLAIN community hub: Submit primary sources and engage in real-time discourse in the live chatroom.'}
             </p>
           </div>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <span className="comments-ai-badge">
-              <span className="ai-dot"></span> NVIDIA NIM AI Moderation & Live-Übersetzung aktiv
-            </span>
             <span className="comments-server-badge">● Live-Sync</span>
+            <span className="comments-ai-badge" style={{ fontSize: '9.5px' }}>
+              🌐 Live-Übersetzung aktiv
+            </span>
           </div>
         </div>
       </div>
@@ -267,8 +212,8 @@ export default function CommunitySubmitSection({ locale, isDe }) {
             <h2 className="sec-title">{isDe ? 'Artikel oder Primärquelle einreichen' : 'Submit Community Story or Primary Source'}</h2>
             <p className="form-subtext">
               {isDe
-                ? 'Regel: Verlinke eine überprüfbare Primärquelle (Behördenmeldung, wissenschaftliches Paper, Finanzbericht). Alle Einreichungen werden in Echtzeit von der NVIDIA AI auf Vulgärsprache und Spam gescannt und serverseitig gespeichert.'
-                : 'Requirement: Link a verifiable primary source. All submissions are vetted in real time by NVIDIA NIM AI against vulgarity, hostility, and spam, and stored on server.'}
+                ? 'Regel: Verlinke eine überprüfbare Primärquelle (Behördenmeldung, wissenschaftliches Paper, Finanzbericht).'
+                : 'Requirement: Link a verifiable primary source.'}
             </p>
 
             <form onSubmit={handleArticleSubmit} className="community-form">
@@ -278,10 +223,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                   required
                   placeholder={isDe ? 'Titel / Schlagzeile des Beitrags*' : 'Article headline / title*'}
                   value={title}
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                    if (articleModError) setArticleModError(null);
-                  }}
+                  onChange={(e) => setTitle(e.target.value)}
                   className="input-field"
                 />
                 <input
@@ -299,24 +241,9 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                 rows={3}
                 placeholder={isDe ? 'Faktische Zusammenfassung (Kernaussage in 2-3 Sätzen)*' : 'Factual summary (core facts in 2-3 sentences)*'}
                 value={summary}
-                onChange={(e) => {
-                  setSummary(e.target.value);
-                  if (articleModError) setArticleModError(null);
-                }}
+                onChange={(e) => setSummary(e.target.value)}
                 className="input-textarea"
               />
-
-              {articleModError && (
-                <div className="comment-moderation-alert">
-                  <span className="alert-icon">⚠️</span>
-                  <div className="alert-body">
-                    <strong>{isDe ? 'Einreichung abgelehnt' : 'Submission Rejected'}:</strong> {articleModError}
-                    <div style={{ fontSize: '11px', marginTop: '2px', opacity: 0.85 }}>
-                      {isDe ? 'Beitrag muss sachlich und frei von Beleidigungen oder Spam sein.' : 'Contribution must remain factual and free from profanity or promotions.'}
-                    </div>
-                  </div>
-                </div>
-              )}
 
               <div className="form-footer-row">
                 <input
@@ -327,19 +254,13 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                   className="input-field-compact"
                 />
                 <button type="submit" disabled={submittingArticle} className="btn btn-inv">
-                  {submittingArticle ? (
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                      <span className="spinner-dots"></span> {isDe ? 'NVIDIA AI Prüfung…' : 'AI Verifying…'}
-                    </span>
-                  ) : (
-                    isDe ? 'Zur Veröffentlichung einreichen' : 'Submit Contribution'
-                  )}
+                  {submittingArticle ? (isDe ? 'Wird übermittelt…' : 'Submitting…') : (isDe ? 'Zur Veröffentlichung einreichen' : 'Submit Contribution')}
                 </button>
               </div>
 
               {submitted && (
                 <div className="submit-success-badge">
-                  ✓ {isDe ? 'NVIDIA AI Prüfung bestanden – Erfolgreich auf dem Server veröffentlicht!' : 'NVIDIA AI verification passed – Successfully published on server!'}
+                  ✓ {isDe ? 'Erfolgreich auf dem Server veröffentlicht!' : 'Successfully published on server!'}
                 </div>
               )}
             </form>
@@ -361,10 +282,6 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                       {new Date(item.date).toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric' })}
                       <br />
                       <strong>{item.author}</strong>
-                      <br />
-                      <span className="comment-ai-verified" style={{ display: 'inline-block', marginTop: '4px' }}>
-                        ✓ AI-geprüft
-                      </span>
                     </span>
                     <div style={{ flex: 1 }}>
                       <h3 style={{ margin: '0 0 6px' }}>{item.title}</h3>
@@ -373,7 +290,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                       {isShowingTranslated && (
                         <div style={{ marginBottom: '8px' }}>
                           <span className="comment-translated-tag">
-                            🌐 NVIDIA AI Live-Übersetzung ({locale.toUpperCase()})
+                            🌐 Live-Übersetzung ({locale.toUpperCase()})
                           </span>
                         </div>
                       )}
@@ -417,8 +334,8 @@ export default function CommunitySubmitSection({ locale, isDe }) {
               </h2>
               <p style={{ margin: '4px 0 0', fontSize: '13px', color: 'var(--muted)' }}>
                 {isDe
-                  ? 'Offener, moderierter Echtzeit-Austausch. Alle Mitteilungen werden vor der Übertragung von NVIDIA AI gescannt und serverseitig gespeichert.'
-                  : 'Open, moderated real-time debate. All messages are scanned by NVIDIA AI prior to broadcast and stored on server.'}
+                  ? 'Offener Echtzeit-Austausch. Alle Mitteilungen werden direkt serverseitig übertragen.'
+                  : 'Open real-time debate synced across all readers.'}
               </p>
             </div>
             <span className="chat-live-pulse">● LIVE</span>
@@ -439,35 +356,17 @@ export default function CommunitySubmitSection({ locale, isDe }) {
               <input
                 type="text"
                 required
-                placeholder={isDe ? 'Deine Nachricht an den Chatroom (sachlich, keine Vulgärsprache)…' : 'Your message to the room (factual, respectful)…'}
+                placeholder={isDe ? 'Deine Nachricht an den Chatroom…' : 'Your message to the room…'}
                 value={chatText}
-                onChange={(e) => {
-                  setChatText(e.target.value);
-                  if (chatModError) setChatModError(null);
-                }}
+                onChange={(e) => setChatText(e.target.value)}
                 className="input-field"
                 style={{ flex: 1 }}
                 maxLength={500}
               />
               <button type="submit" disabled={sendingChat || !chatText.trim()} className="btn btn-inv">
-                {sendingChat ? (
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                    <span className="spinner-dots"></span> {isDe ? 'Prüfung…' : 'Scanning…'}
-                  </span>
-                ) : (
-                  isDe ? 'Senden' : 'Send'
-                )}
+                {sendingChat ? (isDe ? 'Sende…' : 'Sending…') : (isDe ? 'Senden' : 'Send')}
               </button>
             </div>
-
-            {chatModError && (
-              <div className="comment-moderation-alert" style={{ marginTop: '10px' }}>
-                <span className="alert-icon">⚠️</span>
-                <div className="alert-body">
-                  <strong>{isDe ? 'Nachricht abgewiesen' : 'Message Rejected'}:</strong> {chatModError}
-                </div>
-              </div>
-            )}
           </form>
 
           {/* Chat Messages Stream */}
@@ -487,9 +386,6 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                     <div className="chat-bubble-header">
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                         <span className="chat-bubble-author">{msg.user}</span>
-                        <span className="comment-ai-verified" title={isDe ? 'Geprüft durch NVIDIA AI Moderation' : 'Verified by NVIDIA AI'}>
-                          ✓ AI-geprüft
-                        </span>
                       </div>
                       <span className="chat-bubble-time">
                         {new Date(msg.date).toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' })}
@@ -500,7 +396,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
 
                     {isShowingTranslated && (
                       <span className="comment-translated-tag" style={{ marginTop: '2px', display: 'inline-block' }}>
-                        🌐 NVIDIA AI Live-Übersetzung ({locale.toUpperCase()})
+                        🌐 Live-Übersetzung ({locale.toUpperCase()})
                       </span>
                     )}
 

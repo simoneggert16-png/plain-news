@@ -1,7 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { ALL_BEATS, DEFAULT_ACTIVE_TOPICS } from '@/lib/topics.mjs';
 
-// Color Palette Definitions
+// 7 Curated Swiss Palettes
 const PALETTES = [
   { id: 'default', name: 'Schweizer Papier', desc: 'Klassischer Zeitungsdruck', bg: '#eae3d2', ink: '#0d0d0b', accent: '#0d0d0b' },
   { id: 'swiss-red', name: 'Schweizer Rot', desc: 'Eidgenössisches Rot & Helvetica', bg: '#f4eee2', ink: '#11100e', accent: '#c5221f' },
@@ -12,47 +14,33 @@ const PALETTES = [
   { id: 'sepia-print', name: 'Warm Sepia', desc: 'Historischer Bleisatz & NZZ-Stil', bg: '#f6efe1', ink: '#2b1f13', accent: '#7c6249' },
 ];
 
-// Extended Topics (Core Categories + Specialized Beats)
-const EXTENDED_TOPICS = [
-  // Core Categories
-  { id: 'world', labelDe: 'Weltpolitik', labelEn: 'World Politics', tag: 'KATEGORIE' },
-  { id: 'politics', labelDe: 'Bundeshaus & Politik', labelEn: 'Swiss & Global Politics', tag: 'KATEGORIE' },
-  { id: 'business', labelDe: 'Wirtschaft & Märkte', labelEn: 'Economy & Markets', tag: 'KATEGORIE' },
-  { id: 'tech', labelDe: 'Technologie & KI', labelEn: 'Tech & AI', tag: 'KATEGORIE' },
-  { id: 'science', labelDe: 'Wissenschaft & CERN', labelEn: 'Science & Physics', tag: 'KATEGORIE' },
-  { id: 'climate', labelDe: 'Klima & Alpengletscher', labelEn: 'Climate & Glaciers', tag: 'KATEGORIE' },
-  { id: 'health', labelDe: 'Gesundheit & Pharma', labelEn: 'Health & Biotech', tag: 'KATEGORIE' },
-  { id: 'culture', labelDe: 'Kultur & Gesellschaft', labelEn: 'Culture & Society', tag: 'KATEGORIE' },
-  { id: 'sport', labelDe: 'Sport & Match Center', labelEn: 'Sports & Matches', tag: 'KATEGORIE' },
-  // Extended Micro-Beats
-  { id: 'snb', labelDe: 'SNB & Zinspolitik', labelEn: 'SNB & Central Banking', tag: 'SCHWERPUNKT' },
-  { id: 'ai', labelDe: 'KI & Halbleiter', labelEn: 'AI & Chips', tag: 'SCHWERPUNKT' },
-  { id: 'alps', labelDe: 'Alpen & Permafrost', labelEn: 'Alpine Research', tag: 'SCHWERPUNKT' },
-  { id: 'geopolitics', labelDe: 'Geopolitik & UNO', labelEn: 'Geopolitics & UN', tag: 'SCHWERPUNKT' },
-  { id: 'crypto', labelDe: 'Fintech & Krypto', labelEn: 'Fintech & Crypto', tag: 'SCHWERPUNKT' },
-  { id: 'cyber', labelDe: 'Cyber-Sicherheit', labelEn: 'Cybersecurity', tag: 'SCHWERPUNKT' },
-];
-
 export default function UserMenu({ locale, isDe }) {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const [modalView, setModalView] = useState('auth'); // 'auth' | 'customization'
-  const [authSubTab, setAuthSubTab] = useState('email'); // 'email' | 'oauth' (username login is COMPLETELY removed)
+  const [modalView, setModalView] = useState('auth'); // 'auth' | 'customization' | 'forgot_password'
+  const [authSubTab, setAuthSubTab] = useState('email'); // 'email' | 'oauth'
 
   // Auth form states
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [usernameInput, setUsernameInput] = useState('');
   const [newsletterOptIn, setNewsletterOptIn] = useState(true);
   const [notice, setNotice] = useState('');
   const [loadingAuth, setLoadingAuth] = useState(false);
+
+  // Forgot password state
+  const [forgotEmail, setForgotEmail] = useState('');
+  const [forgotSuccess, setForgotSuccess] = useState(false);
+  const [savedCount, setSavedCount] = useState(0);
 
   // Customization states
   const [palette, setPalette] = useState('default');
   const [fontSize, setFontSize] = useState('normal'); // 'compact' | 'normal' | 'large'
   const [fontFamily, setFontFamily] = useState('sans'); // 'sans' | 'serif' | 'mono'
-  const [activeTopics, setActiveTopics] = useState([
-    'world', 'politics', 'business', 'tech', 'science', 'climate', 'health', 'culture', 'sport'
-  ]);
+  const [lineHeight, setLineHeight] = useState('normal'); // 'compact' | 'normal' | 'relaxed'
+  const [highContrast, setHighContrast] = useState(false);
+  const [textOnlyMode, setTextOnlyMode] = useState(false);
+  const [activeTopics, setActiveTopics] = useState(DEFAULT_ACTIVE_TOPICS);
   const [tickerSound, setTickerSound] = useState(false);
 
   // Initialize from cookies / localStorage
@@ -63,30 +51,49 @@ export default function UserMenu({ locale, isDe }) {
       if (match) {
         const decoded = JSON.parse(decodeURIComponent(match[1]));
         setUser(decoded);
+        if (decoded.name) setUsernameInput(decoded.name);
       }
-    } catch (e) {
-      console.warn('Session parse error', e);
-    }
+    } catch (e) {}
 
-    // 2. Load Palette
+    // 2. Count saved articles
+    try {
+      const storedSaved = localStorage.getItem('plain_saved_articles');
+      if (storedSaved) {
+        const list = JSON.parse(storedSaved);
+        if (Array.isArray(list)) setSavedCount(list.length);
+      }
+    } catch (e) {}
+
+    // 3. Load Palette
     try {
       const savedPalette = localStorage.getItem('plain_palette') || 'default';
       setPalette(savedPalette);
       document.documentElement.setAttribute('data-palette', savedPalette);
     } catch (e) {}
 
-    // 3. Load Font Size
+    // 4. Load Font Size & Family
     try {
       const savedSize = localStorage.getItem('plain_font_size') || 'normal';
       setFontSize(savedSize);
       document.documentElement.setAttribute('data-font-size', savedSize);
-    } catch (e) {}
 
-    // 4. Load Font Family
-    try {
       const savedFont = localStorage.getItem('plain_font_family') || 'sans';
       setFontFamily(savedFont);
       document.documentElement.setAttribute('data-font-family', savedFont);
+
+      const savedLH = localStorage.getItem('plain_line_height') || 'normal';
+      setLineHeight(savedLH);
+      document.documentElement.setAttribute('data-line-height', savedLH);
+
+      if (localStorage.getItem('plain_high_contrast') === 'true') {
+        setHighContrast(true);
+        document.documentElement.setAttribute('data-contrast', 'high');
+      }
+
+      if (localStorage.getItem('plain_text_only') === 'true') {
+        setTextOnlyMode(true);
+        document.documentElement.setAttribute('data-text-only', 'true');
+      }
     } catch (e) {}
 
     // 5. Load Topics
@@ -102,8 +109,7 @@ export default function UserMenu({ locale, isDe }) {
 
     // 6. Load Ticker Sound
     try {
-      const soundPref = localStorage.getItem('plain_ticker_sound');
-      if (soundPref === 'true') setTickerSound(true);
+      if (localStorage.getItem('plain_ticker_sound') === 'true') setTickerSound(true);
     } catch (e) {}
   }, []);
 
@@ -121,7 +127,6 @@ export default function UserMenu({ locale, isDe }) {
       return;
     }
 
-    // PASSWORD IS STRICTLY MANDATORY (NOT OPTIONAL)
     if (!password || password.length < 6) {
       setNotice(isDe ? 'Passwort ist erforderlich (mindestens 6 Zeichen)!' : 'Password is required (minimum 6 characters)!');
       return;
@@ -132,8 +137,8 @@ export default function UserMenu({ locale, isDe }) {
 
     try {
       const cleanEmail = email.trim().toLowerCase();
+      const cleanUser = usernameInput.trim() || cleanEmail.split('@')[0];
 
-      // If user checked newsletter, register subscriber on server
       if (newsletterOptIn) {
         await fetch('/api/community/newsletter', {
           method: 'POST',
@@ -143,33 +148,43 @@ export default function UserMenu({ locale, isDe }) {
             topics: activeTopics,
             locale: locale || 'de',
           }),
-        }).catch(err => console.warn('Newsletter sub error', err));
+        }).catch(() => {});
       }
 
-      // Complete authentication
       const sessionPayload = {
-        name: cleanEmail.split('@')[0],
+        name: cleanUser,
+        username: cleanUser,
         email: cleanEmail,
         provider: 'email',
         newsletter: newsletterOptIn,
-        avatar: cleanEmail.charAt(0).toUpperCase(),
+        avatar: cleanUser.charAt(0).toUpperCase(),
         loggedInAt: new Date().toISOString(),
       };
 
       document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionPayload))};path=/;max-age=2592000;samesite=lax`;
       setUser(sessionPayload);
-      setNotice(isDe ? 'Erfolgreich angemeldet & Newsletter aktiviert!' : 'Signed in successfully with newsletter!');
+      setNotice(isDe ? 'Erfolgreich angemeldet!' : 'Signed in successfully!');
 
       setTimeout(() => {
         setOpen(false);
         window.location.reload();
       }, 400);
     } catch (err) {
-      console.error('Auth error', err);
-      setNotice(isDe ? 'Anmeldung fehlgeschlagen. Bitte erneut versuchen.' : 'Login failed. Please retry.');
+      setNotice(isDe ? 'Anmeldung fehlgeschlagen.' : 'Login failed.');
     } finally {
       setLoadingAuth(false);
     }
+  }
+
+  function handleUpdateUsername(e) {
+    e.preventDefault();
+    if (!usernameInput.trim()) return;
+    const clean = usernameInput.trim();
+    const updated = { ...user, name: clean, username: clean, avatar: clean.charAt(0).toUpperCase() };
+    document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(updated))};path=/;max-age=2592000;samesite=lax`;
+    setUser(updated);
+    setNotice(isDe ? 'Benutzername aktualisiert!' : 'Username updated!');
+    setTimeout(() => setNotice(''), 2500);
   }
 
   function handleOAuth(provider) {
@@ -179,6 +194,7 @@ export default function UserMenu({ locale, isDe }) {
     }
     const sessionPayload = {
       name: 'Apple Nutzer',
+      username: 'apple_user',
       email: 'apple@user.ch',
       provider: 'apple',
       avatar: '',
@@ -188,6 +204,12 @@ export default function UserMenu({ locale, isDe }) {
     setUser(sessionPayload);
     setOpen(false);
     window.location.reload();
+  }
+
+  function handleForgotPassword(e) {
+    e.preventDefault();
+    if (!forgotEmail || !forgotEmail.includes('@')) return;
+    setForgotSuccess(true);
   }
 
   // Palette change
@@ -217,6 +239,35 @@ export default function UserMenu({ locale, isDe }) {
     try {
       localStorage.setItem('plain_font_family', font);
       document.cookie = `plain_font_family=${font};path=/;max-age=31536000;samesite=lax`;
+    } catch (e) {}
+  }
+
+  // Line Height change
+  function applyLineHeight(lh) {
+    setLineHeight(lh);
+    document.documentElement.setAttribute('data-line-height', lh);
+    try {
+      localStorage.setItem('plain_line_height', lh);
+    } catch (e) {}
+  }
+
+  // Contrast toggle
+  function toggleContrast() {
+    const next = !highContrast;
+    setHighContrast(next);
+    document.documentElement.setAttribute('data-contrast', next ? 'high' : 'normal');
+    try {
+      localStorage.setItem('plain_high_contrast', String(next));
+    } catch (e) {}
+  }
+
+  // Text-only mode toggle
+  function toggleTextOnly() {
+    const next = !textOnlyMode;
+    setTextOnlyMode(next);
+    document.documentElement.setAttribute('data-text-only', String(next));
+    try {
+      localStorage.setItem('plain_text_only', String(next));
     } catch (e) {}
   }
 
@@ -303,11 +354,34 @@ export default function UserMenu({ locale, isDe }) {
             </button>
             <button
               type="button"
-              className={`panel-nav-tab ${modalView === 'auth' ? 'active' : ''}`}
+              className={`panel-nav-tab ${modalView === 'auth' || modalView === 'forgot_password' ? 'active' : ''}`}
               onClick={() => setModalView('auth')}
             >
               👤 {user ? (isDe ? 'Mein Profil' : 'My Profile') : (isDe ? 'Anmelden' : 'Sign In')}
             </button>
+          </div>
+
+          {/* Quick Shortcuts Bar: Saved Articles & Notes */}
+          <div style={{ marginBottom: '10px', paddingBottom: '8px', borderBottom: '1px solid var(--rule-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Link
+              href={`/${locale}/saved`}
+              onClick={() => setOpen(false)}
+              className="pill-btn"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', textDecoration: 'none' }}
+            >
+              <span>📌 {isDe ? 'Gespeicherte Artikel & Notizen' : 'Saved Stories & Notes'}</span>
+              <span className="custom-active-tag" style={{ padding: '0 4px', fontSize: '9px' }}>{savedCount}</span>
+            </Link>
+
+            {!user && (
+              <Link
+                href={`/${locale}/register`}
+                onClick={() => setOpen(false)}
+                style={{ fontSize: '11px', fontFamily: 'var(--mono)', textDecoration: 'underline', color: 'var(--ink)' }}
+              >
+                {isDe ? 'Registrieren →' : 'Register →'}
+              </Link>
+            )}
           </div>
 
           {/* VIEW 1: CUSTOMIZATION (Available to Everyone) */}
@@ -342,19 +416,19 @@ export default function UserMenu({ locale, isDe }) {
                 </div>
               </div>
 
-              {/* 2. Extended Topics Selection */}
+              {/* 2. Extended Topics Selection (Full 23 Beats) */}
               <div className="custom-section">
                 <div className="custom-section-head">
                   <strong className="label">{isDe ? 'ERWEITERTE THEMENAUSWAHL' : 'EXTENDED TOPIC SELECTION'}</strong>
-                  <span className="custom-active-tag">{activeTopics.length} {isDe ? 'Aktiv' : 'Active'}</span>
+                  <span className="custom-active-tag">{activeTopics.length} / {ALL_BEATS.length} {isDe ? 'Aktiv' : 'Active'}</span>
                 </div>
                 <p className="custom-hint">
                   {isDe
-                    ? 'Klicke auf Themen, um sie zu aktivieren oder auszublenden. Dein persönlicher Feed passt sich sofort an.'
-                    : 'Toggle topics to tailor your personal newsfeed in real time.'}
+                    ? 'Wähle spezifische Beats (z. B. Fussball, Formel 1, SNB, KI, Alpen). Dein persönlicher Homefeed passt sich sofort an.'
+                    : 'Toggle granular beats to shape your personal feed.'}
                 </p>
                 <div className="topics-chip-grid">
-                  {EXTENDED_TOPICS.map((topic) => {
+                  {ALL_BEATS.map((topic) => {
                     const isActive = activeTopics.includes(topic.id);
                     return (
                       <button
@@ -363,6 +437,7 @@ export default function UserMenu({ locale, isDe }) {
                         onClick={() => toggleTopic(topic.id)}
                         className={`topic-chip ${isActive ? 'active' : ''}`}
                       >
+                        <span>{topic.icon}</span>
                         <span className="chip-indicator">{isActive ? '✓' : '+'}</span>
                         <span>{isDe ? topic.labelDe : topic.labelEn}</span>
                       </button>
@@ -431,16 +506,57 @@ export default function UserMenu({ locale, isDe }) {
                   </div>
                 </div>
 
-                {/* Ticker Sound */}
-                <div className="custom-row-options" style={{ marginTop: '10px' }}>
-                  <span className="option-label">{isDe ? 'Ticker-Audio:' : 'Ticker sound:'}</span>
+                <div className="custom-row-options" style={{ marginTop: '8px' }}>
+                  <span className="option-label">{isDe ? 'Zeilenabstand:' : 'Line height:'}</span>
+                  <div className="option-pill-group">
+                    <button
+                      type="button"
+                      className={`pill-btn ${lineHeight === 'compact' ? 'active' : ''}`}
+                      onClick={() => applyLineHeight('compact')}
+                    >
+                      {isDe ? 'Dicht' : 'Tight'}
+                    </button>
+                    <button
+                      type="button"
+                      className={`pill-btn ${lineHeight === 'normal' ? 'active' : ''}`}
+                      onClick={() => applyLineHeight('normal')}
+                    >
+                      Standard
+                    </button>
+                    <button
+                      type="button"
+                      className={`pill-btn ${lineHeight === 'relaxed' ? 'active' : ''}`}
+                      onClick={() => applyLineHeight('relaxed')}
+                    >
+                      {isDe ? 'Entspannt' : 'Relaxed'}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Additional Toggles */}
+                <div style={{ display: 'flex', gap: '8px', marginTop: '10px', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    onClick={toggleContrast}
+                    className={`pill-btn ${highContrast ? 'active' : ''}`}
+                  >
+                    {highContrast ? '⚡ ' + (isDe ? 'Maximal-Kontrast AN' : 'High Contrast ON') : (isDe ? 'Maximal-Kontrast' : 'High Contrast')}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={toggleTextOnly}
+                    className={`pill-btn ${textOnlyMode ? 'active' : ''}`}
+                  >
+                    {textOnlyMode ? '📄 ' + (isDe ? 'Nur-Text-Modus AN' : 'Text-Only ON') : (isDe ? 'Nur-Text (Keine Bilder)' : 'Text-Only')}
+                  </button>
+
                   <button
                     type="button"
                     onClick={toggleTickerSound}
                     className={`pill-btn ${tickerSound ? 'active' : ''}`}
-                    style={{ minWidth: '120px' }}
                   >
-                    {tickerSound ? (isDe ? '🔊 Aktiviert' : '🔊 Enabled') : (isDe ? '🔇 Stumm' : '🔇 Muted')}
+                    {tickerSound ? '🔊 ' + (isDe ? 'Ticker-Audio AN' : 'Ticker Audio ON') : '🔇 ' + (isDe ? 'Ticker Stumm' : 'Ticker Mute')}
                   </button>
                 </div>
               </div>
@@ -470,7 +586,7 @@ export default function UserMenu({ locale, isDe }) {
                       )}
                       <div style={{ minWidth: 0, flex: 1 }}>
                         <strong style={{ display: 'block', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                          {user.name}
+                          @{user.username || user.name}
                         </strong>
                         <div style={{ fontSize: '11px', color: 'var(--muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                           {user.email || 'Angemeldet'}
@@ -480,24 +596,41 @@ export default function UserMenu({ locale, isDe }) {
                     <span className="user-provider-tag">{user.provider.toUpperCase()}</span>
                   </div>
 
+                  {/* Edit Username Feature */}
+                  <form onSubmit={handleUpdateUsername} style={{ margin: '10px 0', display: 'flex', gap: '6px' }}>
+                    <input
+                      type="text"
+                      value={usernameInput}
+                      onChange={(e) => setUsernameInput(e.target.value)}
+                      placeholder={isDe ? 'Benutzername / Handle ändern' : 'Change handle'}
+                      className="auth-text-input"
+                      style={{ fontSize: '11px', padding: '5px 8px' }}
+                    />
+                    <button type="submit" className="pill-btn">
+                      {isDe ? 'Speichern' : 'Save'}
+                    </button>
+                  </form>
+
+                  {notice && <div className="auth-notice">{notice}</div>}
+
                   <div className="user-panel-status-block">
                     <span className="label" style={{ fontSize: '9px', display: 'block', marginBottom: '3px' }}>
-                      {isDe ? 'NEWSLETTER-STATUS' : 'NEWSLETTER STATUS'}
+                      {isDe ? 'KONTO & SYNCHRONISATION' : 'ACCOUNT & SYNC'}
                     </span>
                     <span style={{ fontSize: '11px', color: 'var(--up)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '5px' }}>
-                      <span style={{ fontSize: '9px' }}>●</span> {isDe ? 'PLAIN Briefing Aktiviert (täglich 06:00 Uhr)' : 'PLAIN Briefing Active (06:00 CET)'}
+                      <span style={{ fontSize: '9px' }}>●</span> {isDe ? 'Serverseitig aktiv (Kommentare & Quellen)' : 'Synced across devices'}
                     </span>
                   </div>
 
-                  <div style={{ marginTop: '16px', display: 'flex', gap: '8px' }}>
-                    <button
-                      type="button"
+                  <div style={{ marginTop: '14px', display: 'flex', gap: '8px' }}>
+                    <Link
+                      href={`/${locale}/saved`}
+                      onClick={() => setOpen(false)}
                       className="auth-btn-action"
-                      style={{ flex: 1 }}
-                      onClick={() => setModalView('customization')}
+                      style={{ flex: 1, textAlign: 'center', textDecoration: 'none' }}
                     >
-                      🎨 {isDe ? 'Design anpassen' : 'Customize Design'}
-                    </button>
+                      📌 {isDe ? 'Gemerkte Artikel' : 'Saved Articles'}
+                    </Link>
                     <button
                       type="button"
                       className="auth-btn-action logout"
@@ -511,11 +644,11 @@ export default function UserMenu({ locale, isDe }) {
               ) : (
                 <div>
                   <div className="user-panel-head">
-                    <strong>{isDe ? 'PLAIN. Anmelden & Registrieren' : 'PLAIN. Sign In & Register'}</strong>
+                    <strong>{isDe ? 'PLAIN. Anmelden' : 'PLAIN. Sign In'}</strong>
                     <span className="label" style={{ fontSize: '9px' }}>SERVERSIDE</span>
                   </div>
 
-                  {/* Sub-tabs: strictly Email vs OAuth (Username completely removed!) */}
+                  {/* Sub-tabs: Email vs OAuth (Username completely removed!) */}
                   <div className="auth-tab-row">
                     <button
                       type="button"
@@ -553,9 +686,18 @@ export default function UserMenu({ locale, isDe }) {
                       </div>
 
                       <div className="auth-field">
-                        <label className="label">
-                          {isDe ? 'Passwort* (mindestens 6 Zeichen)' : 'Password* (min 6 characters)'}
-                        </label>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                          <label className="label">
+                            {isDe ? 'Passwort*' : 'Password*'}
+                          </label>
+                          <button
+                            type="button"
+                            onClick={() => setModalView('forgot_password')}
+                            style={{ background: 'none', border: 'none', color: 'var(--muted)', fontSize: '10.5px', fontFamily: 'var(--mono)', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}
+                          >
+                            {isDe ? 'Passwort vergessen?' : 'Forgot password?'}
+                          </button>
+                        </div>
                         <input
                           type="password"
                           required
@@ -567,40 +709,36 @@ export default function UserMenu({ locale, isDe }) {
                         />
                       </div>
 
-                      {/* Newsletter subscription checkbox */}
-                      <label className="auth-checkbox-label">
-                        <input
-                          type="checkbox"
-                          checked={newsletterOptIn}
-                          onChange={(e) => setNewsletterOptIn(e.target.checked)}
-                          className="auth-checkbox"
-                        />
-                        <span>
-                          {isDe
-                            ? 'PLAIN Daily Briefing Newsletter abonnieren (Faktenbasiert & werbefrei)'
-                            : 'Subscribe to PLAIN Daily Briefing (Factual & ad-free)'}
-                        </span>
-                      </label>
+                      <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginTop: '10px' }}>
+                        <button
+                          type="submit"
+                          disabled={loadingAuth || !email.trim() || !password || password.length < 6}
+                          className="auth-btn-action primary"
+                          style={{ flex: 1, margin: 0 }}
+                        >
+                          {loadingAuth ? (isDe ? 'Prüfe…' : 'Signing in…') : (isDe ? 'Jetzt Einloggen' : 'Sign In')}
+                        </button>
+                      </div>
 
-                      <button
-                        type="submit"
-                        disabled={loadingAuth || !email.trim() || !password || password.length < 6}
-                        className="auth-btn-action primary"
-                        style={{ marginTop: '10px' }}
-                      >
-                        {loadingAuth ? (
-                          isDe ? 'Verarbeite…' : 'Processing…'
-                        ) : (
-                          isDe ? 'Anmelden & Registrieren' : 'Sign In & Register'
-                        )}
-                      </button>
+                      <div style={{ marginTop: '12px', textAlign: 'center', borderTop: '1px solid var(--rule-color)', paddingTop: '8px' }}>
+                        <span style={{ fontSize: '11px', color: 'var(--muted)' }}>
+                          {isDe ? 'Neu bei PLAIN?' : 'New to PLAIN?'}{' '}
+                          <Link
+                            href={`/${locale}/register`}
+                            onClick={() => setOpen(false)}
+                            style={{ fontWeight: 700, textDecoration: 'underline', color: 'var(--ink)' }}
+                          >
+                            {isDe ? 'Hier registrieren & Themen wählen →' : 'Register here →'}
+                          </Link>
+                        </span>
+                      </div>
                     </form>
                   ) : (
                     <div className="auth-buttons-list">
                       <p className="user-panel-info">
                         {isDe
-                          ? 'Sofortige 1-Klick-Anmeldung über dein bestehendes Konto:'
-                          : 'Instant 1-click sign-in via your provider:'}
+                          ? '1-Klick-Anmeldung über bestehendes Konto:'
+                          : 'Instant 1-click sign-in:'}
                       </p>
                       <button
                         type="button"
@@ -629,6 +767,64 @@ export default function UserMenu({ locale, isDe }) {
                     </div>
                   )}
                 </div>
+              )}
+            </div>
+          )}
+
+          {/* VIEW 3: FORGOT PASSWORD */}
+          {modalView === 'forgot_password' && (
+            <div className="user-panel-content">
+              <div className="user-panel-head">
+                <strong>{isDe ? 'Passwort zurücksetzen' : 'Reset Password'}</strong>
+                <button
+                  type="button"
+                  onClick={() => setModalView('auth')}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: '11px' }}
+                >
+                  ← {isDe ? 'Zurück' : 'Back'}
+                </button>
+              </div>
+
+              {forgotSuccess ? (
+                <div style={{ padding: '8px 0' }}>
+                  <div className="comment-moderation-success">
+                    ✓ {isDe
+                      ? `Sicherheitslink an ${forgotEmail} versendet! Bitte prüfe dein Postfach.`
+                      : `Reset instructions sent to ${forgotEmail}!`
+                    }
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => { setForgotSuccess(false); setModalView('auth'); }}
+                    className="auth-btn-action primary"
+                    style={{ marginTop: '12px' }}
+                  >
+                    {isDe ? 'Zurück zum Login' : 'Back to Login'}
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleForgotPassword} className="auth-form-body">
+                  <p style={{ fontSize: '12px', color: 'var(--ink-2)', lineHeight: '1.4', margin: 0 }}>
+                    {isDe
+                      ? 'Gib deine registrierte E-Mail-Adresse ein. Wir senden dir unverzüglich einen gesicherten Link zur Passwort-Erneuerung.'
+                      : 'Enter your registered email address to receive password reset instructions.'}
+                  </p>
+                  <div className="auth-field">
+                    <label className="label">{isDe ? 'E-Mail-Adresse*' : 'Email address*'}</label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="name@beispiel.ch"
+                      value={forgotEmail}
+                      onChange={(e) => setForgotEmail(e.target.value)}
+                      className="auth-text-input"
+                      autoFocus
+                    />
+                  </div>
+                  <button type="submit" className="auth-btn-action primary">
+                    {isDe ? 'Reset-Link anfordern' : 'Send Reset Link'}
+                  </button>
+                </form>
               )}
             </div>
           )}

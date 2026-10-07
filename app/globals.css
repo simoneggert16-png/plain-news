@@ -3483,6 +3483,241 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   line-height: 1.4;
 }
 
+/* ── Inline Article Note Box ── */
+.art-inline-note-box {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--paper-2);
+  border: var(--rule);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.art-inline-note-input {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  border: var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.45;
+  resize: vertical;
+}
+
+/* ── Register Page ── */
+.register-page-container {
+  max-width: 860px;
+  margin: 40px auto 80px;
+  padding: 0 var(--gut);
+}
+
+.register-card {
+  border: var(--rule-thick);
+  background: var(--paper);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 32px 36px;
+}
+
+@media (max-width: 600px) {
+  .register-card {
+    padding: 20px 16px;
+  }
+}
+
+.register-header {
+  margin-bottom: 24px;
+  border-bottom: var(--rule-thick);
+  padding-bottom: 16px;
+}
+
+.register-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin: 6px 0;
+  line-height: 1.2;
+}
+
+.register-sub {
+  color: var(--ink-2);
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.register-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 700px) {
+  .register-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.register-topics-box {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: var(--paper-2);
+  border: var(--rule);
+}
+
+/* ── Saved Articles & Notebook Page ── */
+.saved-page-container {
+  max-width: 960px;
+  margin: 32px auto 80px;
+  padding: 0 var(--gut);
+}
+
+.saved-header {
+  margin-bottom: 30px;
+  border-bottom: var(--rule-thick);
+  padding-bottom: 16px;
+}
+
+.saved-sub {
+  color: var(--ink-2);
+  font-size: 15px;
+  margin: 6px 0 0;
+  line-height: 1.45;
+}
+
+.saved-empty-box {
+  padding: 40px 24px;
+  text-align: center;
+  border: var(--rule);
+  background: var(--paper-2);
+}
+
+.saved-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.saved-card {
+  border: var(--rule);
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saved-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--rule-light);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.saved-remove-btn {
+  background: transparent;
+  border: 1px solid var(--down);
+  color: var(--down);
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.saved-remove-btn:hover {
+  background: var(--down);
+  color: var(--paper);
+}
+
+.saved-card-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.saved-card-title a:hover {
+  text-decoration: underline;
+}
+
+.saved-read-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink);
+  text-decoration: underline;
+  letter-spacing: 0.04em;
+}
+
+.saved-card-note-box {
+  background: var(--paper-2);
+  border: 1px dashed var(--rule-color);
+  padding: 10px 12px;
+}
+
+.note-box-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.saved-note-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.45;
+  border: 1px solid var(--rule-color);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
+.scratchpad-box {
+  border: var(--rule-thick);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 20px;
+}
+
+.scratchpad-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.6;
+  border: var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
+/* ── Reading Enhancements: High Contrast, Line Height & Text-Only ── */
+[data-contrast='high'] {
+  --ink: #000000 !important;
+  --paper: #ffffff !important;
+  --paper-2: #f2f2f2 !important;
+  --rule: 2px solid #000000 !important;
+  --rule-thick: 4px solid #000000 !important;
+}
+
+[data-line-height='compact'] body {
+  line-height: 1.35;
+}
+
+[data-line-height='relaxed'] body {
+  line-height: 1.8;
+}
+
+[data-text-only='true'] img,
+[data-text-only='true'] .card-thumb,
+[data-text-only='true'] .art-figure {
+  display: none !important;
+}
+
+
 
 
 

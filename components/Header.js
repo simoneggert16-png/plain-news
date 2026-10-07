@@ -21,7 +21,12 @@ export default function Header({ locale, t }) {
       </div>
       <nav className="wrap nav" aria-label="Sections">
         <NavLinks items={items} />
-        <Link href={`/${locale}/about`} className="nav-about">{t.about}</Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <Link href={`/${locale}/saved`} className="nav-about">
+            {locale === 'de' ? '📌 Gemerkt' : '📌 Saved'}
+          </Link>
+          <Link href={`/${locale}/about`} className="nav-about">{t.about}</Link>
+        </div>
       </nav>
     </header>
   );

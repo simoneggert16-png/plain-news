@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import fs from 'node:fs';
+import path from 'node:path';
 import { LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
-import { listFor, localize } from '@/lib/content.mjs';
+import { listFor, localize, getArticle } from '@/lib/content.mjs';
 import Card from '@/components/Card';
 
 export async function generateMetadata({ params, searchParams }) {
@@ -9,8 +11,63 @@ export async function generateMetadata({ params, searchParams }) {
   const sp = await searchParams;
   const q = sp?.q || '';
   return {
-    title: q ? `${q} – Suche | PLAIN.` : 'Suche | PLAIN.',
+    title: q ? `${q} – Suche & Recherche | PLAIN.` : 'Suche & Recherche | PLAIN.',
   };
+}
+
+function searchCommunityByUsername(query) {
+  if (!query || query.length < 2) return { comments: [], submissions: [], chatMessages: [] };
+  const qLower = query.toLowerCase().replace(/^@+/, '');
+
+  let commentsMatches = [];
+  let submissionsMatches = [];
+  let chatMatches = [];
+
+  try {
+    const commentsPath = path.join(process.cwd(), 'content', 'community', 'comments.json');
+    if (fs.existsSync(commentsPath)) {
+      const allComments = JSON.parse(fs.readFileSync(commentsPath, 'utf8'));
+      Object.entries(allComments).forEach(([slug, list]) => {
+        if (Array.isArray(list)) {
+          list.forEach(c => {
+            if (c.author && c.author.toLowerCase().includes(qLower)) {
+              commentsMatches.push({ ...c, slug });
+            }
+          });
+        }
+      });
+    }
+  } catch (e) {}
+
+  try {
+    const subPath = path.join(process.cwd(), 'content', 'community', 'submissions.json');
+    if (fs.existsSync(subPath)) {
+      const allSubs = JSON.parse(fs.readFileSync(subPath, 'utf8'));
+      if (Array.isArray(allSubs)) {
+        allSubs.forEach(s => {
+          if (s.author && s.author.toLowerCase().includes(qLower)) {
+            submissionsMatches.push(s);
+          }
+        });
+      }
+    }
+  } catch (e) {}
+
+  try {
+    const chatPath = path.join(process.cwd(), 'content', 'community', 'chat.json');
+    if (fs.existsSync(chatPath)) {
+      const allChat = JSON.parse(fs.readFileSync(chatPath, 'utf8'));
+      if (Array.isArray(allChat)) {
+        allChat.forEach(m => {
+          if (m.user && m.user.toLowerCase().includes(qLower)) {
+            chatMatches.push(m);
+          }
+        });
+      }
+    }
+  } catch (e) {}
+
+  return { comments: commentsMatches, submissions: submissionsMatches, chatMessages: chatMatches };
 }
 
 export default async function SearchPage({ params, searchParams }) {
@@ -18,27 +75,43 @@ export default async function SearchPage({ params, searchParams }) {
   const sp = await searchParams;
   const q = (sp?.q || '').trim();
   const t = getDict(locale);
+  const isDe = locale === 'de';
   const bcp = LOCALES.find((l) => l.code === locale)?.bcp47 || 'de-CH';
 
   const all = listFor();
   const queryLower = q.toLowerCase();
 
+  // 1. Search full article contents (Titles, Deks, Facts AND full body text)
   const results = q
     ? all.filter((a) => {
         const l = localize(a, locale);
         const titleMatch = l.title?.toLowerCase().includes(queryLower);
         const dekMatch = l.dek?.toLowerCase().includes(queryLower);
         const factsMatch = (l.facts || []).some((f) => f.toLowerCase().includes(queryLower));
-        const bodyMatch = (l.body || []).some((p) => p.toLowerCase().includes(queryLower));
-        return titleMatch || dekMatch || factsMatch || bodyMatch;
+
+        if (titleMatch || dekMatch || factsMatch) return true;
+
+        // Check full article body
+        const fullArticle = getArticle(a.slug);
+        if (fullArticle) {
+          const fullLoc = fullArticle.locales?.[locale] || fullArticle.locales?.['en'] || {};
+          const bodyMatch = (fullLoc.body || []).some((p) => p.toLowerCase().includes(queryLower));
+          if (bodyMatch) return true;
+        }
+
+        return false;
       })
     : [];
+
+  // 2. Search community users & contributors by username / author
+  const userResults = q ? searchCommunityByUsername(q) : { comments: [], submissions: [], chatMessages: [] };
+  const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
     <div className="search-page">
       <header className="search-header">
-        <div className="label" style={{ marginBottom: '8px' }}>ARCHIV & RECHERCHE</div>
-        <h1 className="page-title">{locale === 'de' ? 'Suche' : 'Search'}</h1>
+        <div className="label" style={{ marginBottom: '8px' }}>ARCHIV, VOLLTEXT & COMMUNITY-RECHERCHE</div>
+        <h1 className="page-title">{isDe ? 'Suche & Recherche' : 'Search & Archive'}</h1>
 
         <form action={`/${locale}/search`} method="GET" className="search-console">
           <div className="search-input-wrap">
@@ -50,19 +123,19 @@ export default async function SearchPage({ params, searchParams }) {
               type="search"
               name="q"
               defaultValue={q}
-              placeholder={locale === 'de' ? 'Thema, Person oder Stichwort suchen (z. B. Frankreich, AfD, KI)…' : 'Search topics, people, events (e.g. France, AI, Markets)…'}
+              placeholder={isDe ? 'Artikelinhalt, Thema oder Benutzername suchen (z. B. SNB, KI, @Alex, Bern)…' : 'Search article body, topic or username (e.g. SNB, AI, @Alex)…'}
               className="search-input"
               autoFocus
             />
           </div>
           <button type="submit" className="search-submit-btn">
-            {locale === 'de' ? 'SUCHEN' : 'SEARCH'}
+            {isDe ? 'SUCHEN' : 'SEARCH'}
           </button>
         </form>
 
         <div className="search-quick-tags">
-          <span className="label">{locale === 'de' ? 'HÄUFIG GESUCHT:' : 'TRENDING:'}</span>
-          {['Frankreich', 'Sachsen-Anhalt', 'Anthropic', 'Paramount', 'NFL'].map((tag) => (
+          <span className="label">{isDe ? 'HÄUFIG GESUCHT:' : 'TRENDING:'}</span>
+          {['Bundesrat', 'SNB', 'Fussball', 'Anthropic', 'Klimadaten', 'Alex'].map((tag) => (
             <Link key={tag} href={`/${locale}/search?q=${encodeURIComponent(tag)}`} className="search-quick-tag">
               {tag}
             </Link>
@@ -70,19 +143,70 @@ export default async function SearchPage({ params, searchParams }) {
         </div>
       </header>
 
+      {/* COMMUNITY / USERNAME RESULTS */}
+      {q && totalUserMatches > 0 && (
+        <section className="search-community-results" style={{ marginBottom: '32px' }}>
+          <div className="sec-head">
+            <h2>
+              👤 {isDe ? `Gefundene Community-Beiträge & Kommentare von „${q}“` : `Community Contributions & Comments by “${q}”`} ({totalUserMatches})
+            </h2>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {userResults.comments.map((c) => (
+              <div key={c.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
+                <div className="comment-meta">
+                  <span className="comment-author">💬 Kommentar von <strong>{c.author}</strong></span>
+                  <Link href={`/${locale}/a/${c.slug}`} style={{ textDecoration: 'underline', color: 'var(--ink)' }}>
+                    ↗ {isDe ? 'Zum Artikel' : 'View Article'}
+                  </Link>
+                </div>
+                <p className="comment-content" style={{ margin: '4px 0 0' }}>„{c.content}“</p>
+              </div>
+            ))}
+
+            {userResults.submissions.map((s) => (
+              <div key={s.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
+                <div className="comment-meta">
+                  <span className="comment-author">📄 Primärquelle eingereicht von <strong>{s.author}</strong></span>
+                  <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
+                    ↗ {isDe ? 'Quelle öffnen' : 'Open Source'}
+                  </a>
+                </div>
+                <h4 style={{ margin: '4px 0 2px' }}>{s.title}</h4>
+                <p className="comment-content">{s.summary}</p>
+              </div>
+            ))}
+
+            {userResults.chatMessages.map((m) => (
+              <div key={m.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
+                <div className="comment-meta">
+                  <span className="comment-author">💭 Live-Chat Beitrag von <strong>{m.user}</strong></span>
+                  <Link href={`/${locale}/c/community`} style={{ textDecoration: 'underline' }}>
+                    ↗ {isDe ? 'Zum Chatroom' : 'To Chatroom'}
+                  </Link>
+                </div>
+                <p className="comment-content">„{m.text}“</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ARTICLE FULL-TEXT RESULTS */}
       {q && (
         <div className="search-results-info">
           {results.length > 0 ? (
             <p className="search-count">
-              {locale === 'de'
-                ? `${results.length} verifizierte Meldung(en) zu „${q}“`
-                : `${results.length} verified story(ies) for “${q}”`}
+              {isDe
+                ? `${results.length} verifizierte Meldung(en) mit Volltext-Treffer zu „${q}“`
+                : `${results.length} verified report(s) matching article content for “${q}”`}
             </p>
           ) : null}
         </div>
       )}
 
-      {/* RESULTS LIST */}
+      {/* RESULTS GRID */}
       {results.length > 0 && (
         <section className="grid">
           {results.map((a) => (
@@ -91,24 +215,24 @@ export default async function SearchPage({ params, searchParams }) {
         </section>
       )}
 
-      {/* NO RESULTS: EDITORIAL EXPLANATION & EXTERNAL REDIRECT TO TRUSTED PROVIDERS */}
-      {q && results.length === 0 && (
+      {/* NO RESULTS FALLBACK */}
+      {q && results.length === 0 && totalUserMatches === 0 && (
         <section className="search-fallback-card">
           <div className="search-fallback-badge">PLAIN. FACT GATE</div>
           <h2>
-            {locale === 'de'
-              ? `Keine bestätigten Meldungen zu „${q}“ im Archiv`
-              : `No verified reports for “${q}” in our archive`}
+            {isDe
+              ? `Keine Treffer zu „${q}“ im Volltext-Archiv oder bei Nutzern`
+              : `No verified reports or users found for “${q}”`}
           </h2>
           <p className="search-fallback-desc">
-            {locale === 'de'
-              ? `PLAIN veröffentlicht eine Story nur, wenn mindestens 2 unabhängige Primärmedien das Ereignis verifizieren. Möglicherweise ist das Thema noch unbestätigt, fällt unter Gerüchte oder wurde von unseren Quellen noch nicht abgedeckt.`
-              : `PLAIN only publishes when at least 2 independent wire/news outlets confirm an event. The story might still be unconfirmed, single-sourced, or breaking.`}
+            {isDe
+              ? `PLAIN durchsucht Titel, Zusammenfassungen, den gesamten Artikeltext und alle Community-Autoren. Möglicherweise ist der gesuchte Begriff noch nicht vorgekommen oder anders formuliert.`
+              : `Searched across headlines, body paragraphs, and community handles.`}
           </p>
 
           <div className="search-fallback-providers">
             <span className="search-fallback-lead">
-              {locale === 'de' ? 'Bei etablierten Primäranbietern weitersuchen:' : 'Continue search across primary outlets:'}
+              {isDe ? 'Bei Primärquellen weitersuchen:' : 'Continue search across primary outlets:'}
             </span>
             <div className="search-fallback-grid">
               <a
@@ -118,53 +242,16 @@ export default async function SearchPage({ params, searchParams }) {
                 className="fallback-btn"
               >
                 <span>Google News</span>
-                <span className="ext-arrow" aria-hidden="true">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-                    <path d="M7 17L17 7M17 7H8M17 7V16" />
-                  </svg>
-                </span>
+                <span className="fallback-arr">↗</span>
               </a>
-
               <a
-                href={`https://www.reuters.com/site-search/?query=${encodeURIComponent(q)}`}
+                href={`https://de.wikipedia.org/w/index.php?search=${encodeURIComponent(q)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fallback-btn"
               >
-                <span>Reuters</span>
-                <span className="ext-arrow" aria-hidden="true">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-                    <path d="M7 17L17 7M17 7H8M17 7V16" />
-                  </svg>
-                </span>
-              </a>
-
-              <a
-                href={`https://www.bbc.co.uk/search?q=${encodeURIComponent(q)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="fallback-btn"
-              >
-                <span>BBC News</span>
-                <span className="ext-arrow" aria-hidden="true">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-                    <path d="M7 17L17 7M17 7H8M17 7V16" />
-                  </svg>
-                </span>
-              </a>
-
-              <a
-                href={`https://apnews.com/search?q=${encodeURIComponent(q)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="fallback-btn"
-              >
-                <span>Associated Press</span>
-                <span className="ext-arrow" aria-hidden="true">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-                    <path d="M7 17L17 7M17 7H8M17 7V16" />
-                  </svg>
-                </span>
+                <span>Wikipedia</span>
+                <span className="fallback-arr">↗</span>
               </a>
             </div>
           </div>
