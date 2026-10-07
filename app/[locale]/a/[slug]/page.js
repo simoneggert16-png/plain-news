@@ -7,6 +7,7 @@ import { fmtDate } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
 import ArticleComments from '@/components/ArticleComments';
+import MatchCenterView from '@/components/MatchCenterView';
 
 export const dynamicParams = false;
 
@@ -152,6 +153,12 @@ export default async function ArticlePage({ params }) {
         <section className="facts">
           <h2>{t.keyFacts}</h2>
           <ul>{l.facts.map((f, i) => <li key={i}>{f}</li>)}</ul>
+        </section>
+      )}
+
+      {a.category === 'sport' && (
+        <section className="art-match-center">
+          <MatchCenterView matchId="401921408" locale={locale} />
         </section>
       )}
 

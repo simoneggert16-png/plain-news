@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import MatchCenterView from '@/components/MatchCenterView';
 
 const INTERVALS = [
   { label: '3 Min', sec: 180 },
@@ -28,6 +29,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
   const [intervalSec, setIntervalSec] = useState(180); // default: 3 min
   const [countdown, setCountdown] = useState(180);
   const [lastUpdated, setLastUpdated] = useState(null);
+  const [showMatchCenter, setShowMatchCenter] = useState(true);
 
   const isDe = locale === 'de';
 
@@ -194,6 +196,49 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
               {isDe ? sp.de : sp.en}
             </button>
           ))}
+        </div>
+      )}
+
+      {/* Featured Live Match Center (SofaScore View) */}
+      {(filter === 'all' || filter === 'sport') && (
+        <div style={{ margin: '16px 0 24px' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            background: 'var(--ink)',
+            color: 'var(--paper)',
+            padding: '10px 16px',
+            fontFamily: 'var(--mono)',
+            fontSize: '11px',
+            fontWeight: 800,
+            letterSpacing: '0.08em',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span className="live-dot-pulse" style={{ width: 8, height: 8, borderRadius: '50%', background: '#c93b2b', display: 'inline-block' }} />
+              <span>LIVE MATCH CENTER · ARGENTINIEN VS. BENIN (MESSI ABSCHIEDSSPIEL)</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowMatchCenter(!showMatchCenter)}
+              style={{
+                background: 'var(--paper)',
+                color: 'var(--ink)',
+                border: 'none',
+                padding: '4px 10px',
+                fontFamily: 'var(--mono)',
+                fontSize: '10px',
+                fontWeight: 800,
+                cursor: 'pointer',
+              }}
+            >
+              {showMatchCenter ? (isDe ? '▲ ZUKLAPPEN' : '▲ COLLAPSE') : (isDe ? '▼ SOFASCORE LIVE ÖFFNEN' : '▼ OPEN SOFASCORE VIEW')}
+            </button>
+          </div>
+
+          {showMatchCenter && (
+            <MatchCenterView matchId="401921408" locale={locale} />
+          )}
         </div>
       )}
 
