@@ -1,0 +1,216 @@
+{
+  "slug": "attackers-hijack-three-country-code-domains-to-obtain-counterfeit-20261007-yus7",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-10-07T10:49:11.357Z",
+  "updatedAt": "2026-10-07T10:49:11.357Z",
+  "sources": [
+    {
+      "outlet": "Ars Technica",
+      "title": "Hackers obtain counterfeit TLS certificates for Google and other large services",
+      "url": "https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services/",
+      "publishedAt": "2026-10-06T19:21:14.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Attackers hijack three country-code domains to obtain counterfeit TLS certificates",
+      "dek": "Google said attackers hijacked the .gh, .sl and .as domains to obtain unauthorized certificates for several Google domains and other large organizations.",
+      "facts": [
+        "Attackers hijacked the .gh, .sl and .as country code top-level domains and modified authoritative DNS records for selected domains, according to Google.",
+        "Google said the attackers passed automated domain control validation checks and obtained unauthorized certificates for several Google domains and several leading global brands.",
+        "Google said it updated Chrome to block the unauthorized certificates it identified and worked with issuing certification authorities to revoke those for Google properties.",
+        "Google did not identify the affected Google domains or name the other organizations whose domains were affected.",
+        "Google said the incident did not involve compromise of any affected domain owner's infrastructure and that certificate authorities followed all requirements."
+      ],
+      "body": [
+        "Attackers hijacked three country code top-level domains, .gh, .sl and .as, and used that control to obtain counterfeit TLS certificates for Google and other large organizations, Google said on Tuesday, 6 October. Google said the attackers modified authoritative DNS records for selected domains within those namespaces. By controlling those records, the attackers passed automated domain control validation checks, according to Google.",
+        "Google said unauthorized certificates were obtained for \"several Google domains\" and for \"several leading global brands and widely used online services.\" Google did not identify which of its own domains were affected or name any of the other organizations. Ars Technica reported it is not immediately clear how many unauthorized certificates were issued, what the other affected organizations are, or whether all of them except those for Google domains have been blocked.",
+        "TLS certificates are cryptographic credentials that bind a domain name such as google.com to a public key and underpin authentication and encryption for websites, mail servers and other internet infrastructure, Ars Technica reported. Possession of unauthorized certificates allows attackers to cryptographically impersonate the affected infrastructure, according to Ars Technica. Google said it updated Chrome to block all certificates it identified as unauthorized and worked with the issuing certification authorities to ensure the unauthorized certificates for Google properties were revoked.",
+        "Google said Chrome users do not need to take any action to be protected. \"While Chrome took steps during these incidents to identify and block suspected unauthorized certificates across the affected ccTLDs, browser-side intervention should not be relied on to protect your users,\" Google said. Google also said that due to the complexity of DNS hijacks it cannot guarantee its analysis identified every affected domain, and that Chrome interventions do not reliably protect non-Chrome users.",
+        "Google advised domain owners to monitor certificate transparency logs for unexpected certificate issuance across their domains and to publish restrictive Certification Authority Authorization DNS records. Google said this prevents attackers from reusing cached validation data after DNS control is restored. Ars Technica reported that the official process for revoking certificates is slow and cumbersome, so browser makers have devised quicker methods to block specific certificates at the browser level. Ars Technica reported that with all known unauthorized certificates now blocked the risk is mitigated, but that any certificates remaining undiscovered pose a threat.",
+        "Google said the incident did not involve the compromise of the infrastructure of any of the affected domain owners and that certificate authorities followed all requirements. With control of the three ccTLDs, the attackers were able to change the IP addresses of a selected list of websites and to modify authoritative DNS records and nameserver delegations for selected domains, according to Google."
+      ],
+      "context": "TLS certificates let a browser check that a site is the one it claims to be. Attackers who control a top-level domain's DNS records can redirect traffic for selected sites and pass the automated checks that certificate authorities use to confirm a domain owner controls a domain, according to Google.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "Angreifer kapern drei Ländercode-Domains, um gefälschte TLS-Zertifikate zu erlangen",
+      "dek": "Google zufolge kaperten Angreifer die Domains .gh, .sl und .as, um unbefugte Zertifikate für mehrere Google-Domains und andere große Organisationen zu erhalten.",
+      "facts": [
+        "Laut Google kaperten Angreifer die Ländercode-Top-Level-Domains .gh, .sl und .as und änderten autoritative DNS-Einträge für ausgewählte Domains.",
+        "Google zufolge bestanden die Angreifer automatisierte Prüfungen zur Domainkontrolle und erhielten unbefugte Zertifikate für mehrere Google-Domains und mehrere führende globale Marken.",
+        "Google zufolge aktualisierte das Unternehmen Chrome, um die von ihm identifizierten unbefugten Zertifikate zu blockieren, und arbeitete mit den ausstellenden Zertifizierungsstellen zusammen, um diejenigen für Google-Properties zu widerrufen.",
+        "Google nannte weder die betroffenen Google-Domains noch die anderen Organisationen, deren Domains betroffen waren.",
+        "Google zufolge war der Vorfall nicht mit einer Kompromittierung der Infrastruktur eines betroffenen Domaininhabers verbunden, und die Zertifizierungsstellen befolgten alle Anforderungen."
+      ],
+      "body": [
+        "Angreifer kaperten drei Ländercode-Top-Level-Domains, .gh, .sl und .as, und nutzten diese Kontrolle, um gefälschte TLS-Zertifikate für Google und andere große Organisationen zu erhalten, wie Google am Dienstag, dem 6. Oktober, mitteilte. Google zufolge änderten die Angreifer autoritative DNS-Einträge für ausgewählte Domains innerhalb dieser Namensräume. Durch die Kontrolle dieser Einträge bestanden die Angreifer laut Google automatisierte Prüfungen zur Domainkontrolle.",
+        "Google zufolge wurden unbefugte Zertifikate für \"mehrere Google-Domains\" und für \"mehrere führende globale Marken und weit verbreitete Online-Dienste\" erhalten. Google nannte nicht, welche seiner eigenen Domains betroffen waren, und nannte auch keine der anderen Organisationen. Ars Technica berichtete, es sei zunächst unklar, wie viele unbefugte Zertifikate ausgestellt wurden, welche anderen Organisationen betroffen sind oder ob alle von ihnen mit Ausnahme derjenigen für Google-Domains blockiert wurden.",
+        "TLS-Zertifikate sind kryptografische Nachweise, die einen Domainnamen wie google.com an einen öffentlichen Schlüssel binden und die Authentifizierung und Verschlüsselung für Websites, Mailserver und andere Internetinfrastruktur untermauern, berichtete Ars Technica. Der Besitz unbefugter Zertifikate ermöglicht es Angreifern, sich kryptografisch als die betroffene Infrastruktur auszugeben, so Ars Technica. Google zufolge aktualisierte das Unternehmen Chrome, um alle Zertifikate zu blockieren, die es als unbefugt identifizierte, und arbeitete mit den ausstellenden Zertifizierungsstellen zusammen, um sicherzustellen, dass die unbefugten Zertifikate für Google-Properties widerrufen wurden.",
+        "Google zufolge müssen Chrome-Nutzer nichts unternehmen, um geschützt zu sein. \"Während Chrome während dieser Vorfälle Schritte unternahm, um mutmaßlich unbefugte Zertifikate in den betroffenen ccTLDs zu identifizieren und zu blockieren, sollte man sich zum Schutz Ihrer Nutzer nicht auf Eingriffe auf Browserseite verlassen\", so Google. Google erklärte außerdem, dass es aufgrund der Komplexität von DNS-Hijackings nicht garantieren könne, dass seine Analyse jede betroffene Domain identifiziert habe, und dass Chrome-Eingriffe Nicht-Chrome-Nutzer nicht zuverlässig schützten.",
+        "Google riet Domaininhabern, die Certificate-Transparency-Logs auf unerwartete Zertifikatsausstellungen für ihre Domains zu überwachen und restriktive Certification Authority Authorization DNS-Einträge zu veröffentlichen. Google zufolge verhindert dies, dass Angreifer zwischengespeicherte Validierungsdaten wiederverwenden, nachdem die DNS-Kontrolle wiederhergestellt ist. Ars Technica berichtete, dass der offizielle Prozess zum Widerrufen von Zertifikaten langsam und umständlich sei, weshalb Browserhersteller schnellere Methoden entwickelt hätten, um bestimmte Zertifikate auf Browserebene zu blockieren. Ars Technica berichtete, dass das Risiko gemindert sei, da alle bekannten unbefugten Zertifikate inzwischen blockiert seien, dass aber alle noch unentdeckten Zertifikate eine Bedrohung darstellten.",
+        "Google zufolge war der Vorfall nicht mit einer Kompromittierung der Infrastruktur betroffener Domaininhaber verbunden, und die Zertifizierungsstellen befolgten alle Anforderungen. Laut Google konnten die Angreifer mit der Kontrolle über die drei ccTLDs die IP-Adressen einer ausgewählten Liste von Websites ändern sowie autoritative DNS-Einträge und Nameserver-Delegierungen für ausgewählte Domains modifizieren."
+      ],
+      "context": "TLS-Zertifikate ermöglichen es einem Browser zu prüfen, dass eine Website diejenige ist, für die sie sich ausgibt. Angreifer, die die DNS-Einträge einer Top-Level-Domain kontrollieren, können den Datenverkehr für ausgewählte Websites umleiten und die automatisierten Prüfungen bestehen, mit denen Zertifizierungsstellen bestätigen, dass ein Domaininhaber eine Domain kontrolliert, so Google.",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Des attaquants détournent trois domaines de premier niveau de code pays pour obtenir de faux certificats TLS",
+      "dek": "Google a déclaré que des attaquants avaient détourné les domaines .gh, .sl et .as pour obtenir des certificats non autorisés pour plusieurs domaines de Google et d'autres grandes organisations.",
+      "facts": [
+        "Selon Google, des attaquants ont détourné les domaines de premier niveau de code pays .gh, .sl et .as et ont modifié les enregistrements DNS faisant autorité de domaines sélectionnés.",
+        "Google a déclaré que les attaquants avaient passé les contrôles automatisés de validation du contrôle de domaine et obtenu des certificats non autorisés pour plusieurs domaines de Google et plusieurs grandes marques mondiales.",
+        "Google a déclaré avoir mis à jour Chrome pour bloquer les certificats non autorisés qu'il a identifiés et avoir travaillé avec les autorités de certification émettrices pour révoquer ceux des propriétés de Google.",
+        "Google n'a pas identifié les domaines Google concernés ni nommé les autres organisations dont les domaines ont été affectés.",
+        "Google a déclaré que l'incident n'avait impliqué la compromission de l'infrastructure d'aucun propriétaire de domaine concerné et que les autorités de certification avaient respecté toutes les exigences."
+      ],
+      "body": [
+        "Des attaquants ont détourné trois domaines de premier niveau de code pays, .gh, .sl et .as, et ont utilisé ce contrôle pour obtenir de faux certificats TLS pour Google et d'autres grandes organisations, a déclaré Google le mardi 6 octobre. Google a déclaré que les attaquants avaient modifié les enregistrements DNS faisant autorité de domaines sélectionnés au sein de ces espaces de noms. Selon Google, en contrôlant ces enregistrements, les attaquants ont passé les contrôles automatisés de validation du contrôle de domaine.",
+        "Google a déclaré que des certificats non autorisés avaient été obtenus pour « plusieurs domaines de Google » et pour « plusieurs grandes marques mondiales et services en ligne largement utilisés ». Google n'a pas identifié lesquels de ses propres domaines étaient concernés ni nommé aucune des autres organisations. Ars Technica a rapporté qu'il n'était pas immédiatement clair combien de certificats non autorisés avaient été émis, quelles étaient les autres organisations concernées, ni si tous, à l'exception de ceux des domaines de Google, avaient été bloqués.",
+        "Les certificats TLS sont des identifiants cryptographiques qui lient un nom de domaine tel que google.com à une clé publique et sous-tendent l'authentification et le chiffrement pour les sites web, les serveurs de messagerie et d'autres infrastructures internet, a rapporté Ars Technica. Selon Ars Technica, la possession de certificats non autorisés permet aux attaquants d'usurper cryptographiquement l'infrastructure concernée. Google a déclaré avoir mis à jour Chrome pour bloquer tous les certificats qu'il a identifiés comme non autorisés et avoir travaillé avec les autorités de certification émettrices pour garantir que les certificats non autorisés des propriétés de Google soient révoqués.",
+        "Google a déclaré que les utilisateurs de Chrome n'ont pas besoin de prendre la moindre mesure pour être protégés. « Bien que Chrome ait pris des mesures pendant ces incidents pour identifier et bloquer les certificats soupçonnés d'être non autorisés dans les ccTLD concernés, il ne faut pas compter sur une intervention côté navigateur pour protéger vos utilisateurs », a déclaré Google. Google a également déclaré qu'en raison de la complexité des détournements DNS, il ne peut pas garantir que son analyse ait identifié tous les domaines concernés, et que les interventions de Chrome ne protègent pas de manière fiable les utilisateurs non-Chrome.",
+        "Google a conseillé aux propriétaires de domaines de surveiller les journaux de transparence des certificats pour détecter toute émission inattendue de certificats sur leurs domaines et de publier des enregistrements DNS restrictifs d'autorisation d'autorité de certification. Google a déclaré que cela empêche les attaquants de réutiliser des données de validation mises en cache après le rétablissement du contrôle DNS. Ars Technica a rapporté que le processus officiel de révocation des certificats est lent et fastidieux, de sorte que les fabricants de navigateurs ont conçu des méthodes plus rapides pour bloquer des certificats spécifiques au niveau du navigateur. Ars Technica a rapporté que maintenant que tous les certificats non autorisés connus sont bloqués, le risque est atténué, mais que tout certificat restant non découvert constitue une menace.",
+        "Google a déclaré que l'incident n'avait impliqué la compromission de l'infrastructure d'aucun des propriétaires de domaines concernés et que les autorités de certification avaient respecté toutes les exigences. Selon Google, avec le contrôle des trois ccTLD, les attaquants ont pu modifier les adresses IP d'une liste sélectionnée de sites web et modifier les enregistrements DNS faisant autorité et les délégations de serveurs de noms pour des domaines sélectionnés."
+      ],
+      "context": "Les certificats TLS permettent à un navigateur de vérifier qu'un site est bien celui qu'il prétend être. Selon Google, les attaquants qui contrôlent les enregistrements DNS d'un domaine de premier niveau peuvent rediriger le trafic de sites sélectionnés et passer les contrôles automatisés que les autorités de certification utilisent pour confirmer qu'un propriétaire de domaine contrôle un domaine.",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "Atacantes secuestran tres dominios de código de país para obtener certificados TLS falsificados",
+      "dek": "Google dijo que los atacantes secuestraron los dominios .gh, .sl y .as para obtener certificados no autorizados para varios dominios de Google y otras grandes organizaciones.",
+      "facts": [
+        "Los atacantes secuestraron los dominios de nivel superior con código de país .gh, .sl y .as y modificaron registros DNS autoritativos de dominios seleccionados, según Google.",
+        "Google dijo que los atacantes superaron las comprobaciones automáticas de validación del control de dominio y obtuvieron certificados no autorizados para varios dominios de Google y varias marcas globales líderes.",
+        "Google dijo que actualizó Chrome para bloquear los certificados no autorizados que identificó y colaboró con las autoridades de certificación emisoras para revocar los de propiedades de Google.",
+        "Google no identificó los dominios de Google afectados ni nombró las otras organizaciones cuyos dominios se vieron afectados.",
+        "Google dijo que el incidente no implicó el compromiso de la infraestructura de ningún propietario de dominio afectado y que las autoridades de certificación siguieron todos los requisitos."
+      ],
+      "body": [
+        "Los atacantes secuestraron tres dominios de nivel superior con código de país, .gh, .sl y .as, y usaron ese control para obtener certificados TLS falsificados para Google y otras grandes organizaciones, dijo Google el martes 6 de octubre. Google dijo que los atacantes modificaron registros DNS autoritativos de dominios seleccionados dentro de esos espacios de nombres. Al controlar esos registros, los atacantes superaron las comprobaciones automáticas de validación del control de dominio, según Google.",
+        "Google dijo que se obtuvieron certificados no autorizados para \"varios dominios de Google\" y para \"varias marcas globales líderes y servicios en línea ampliamente usados\". Google no identificó cuáles de sus propios dominios se vieron afectados ni nombró a ninguna de las otras organizaciones. Ars Technica informó que no está claro de inmediato cuántos certificados no autorizados se emitieron, cuáles son las otras organizaciones afectadas o si todos ellos, excepto los de dominios de Google, han sido bloqueados.",
+        "Los certificados TLS son credenciales criptográficas que vinculan un nombre de dominio como google.com a una clave pública y sustentan la autenticación y el cifrado de sitios web, servidores de correo y otra infraestructura de internet, informó Ars Technica. La posesión de certificados no autorizados permite a los atacantes suplantar criptográficamente la infraestructura afectada, según Ars Technica. Google dijo que actualizó Chrome para bloquear todos los certificados que identificó como no autorizados y colaboró con las autoridades de certificación emisoras para asegurar que se revocaran los certificados no autorizados de propiedades de Google.",
+        "Google dijo que los usuarios de Chrome no necesitan tomar ninguna medida para estar protegidos. \"Si bien Chrome tomó medidas durante estos incidentes para identificar y bloquear certificados presuntamente no autorizados en los ccTLD afectados, no se debe depender de la intervención del navegador para proteger a sus usuarios\", dijo Google. Google también dijo que, debido a la complejidad de los secuestros de DNS, no puede garantizar que su análisis haya identificado todos los dominios afectados, y que las intervenciones de Chrome no protegen de manera confiable a los usuarios que no usan Chrome.",
+        "Google aconsejó a los propietarios de dominios monitorear los registros de transparencia de certificados en busca de emisiones inesperadas de certificados en sus dominios y publicar registros DNS restrictivos de Autorización de Autoridad de Certificación. Google dijo que esto impide que los atacantes reutilicen datos de validación en caché después de que se restablezca el control del DNS. Ars Technica informó que el proceso oficial para revocar certificados es lento y engorroso, por lo que los fabricantes de navegadores han ideado métodos más rápidos para bloquear certificados específicos a nivel del navegador. Ars Technica informó que, ahora que todos los certificados no autorizados conocidos están bloqueados, el riesgo está mitigado, pero que cualquier certificado que permanezca sin descubrir representa una amenaza.",
+        "Google dijo que el incidente no implicó el compromiso de la infraestructura de ninguno de los propietarios de dominios afectados y que las autoridades de certificación siguieron todos los requisitos. Con el control de los tres ccTLD, los atacantes pudieron cambiar las direcciones IP de una lista seleccionada de sitios web y modificar registros DNS autoritativos y delegaciones de servidores de nombres para dominios seleccionados, según Google."
+      ],
+      "context": "Los certificados TLS permiten que un navegador compruebe que un sitio es el que dice ser. Los atacantes que controlan los registros DNS de un dominio de nivel superior pueden redirigir el tráfico de sitios seleccionados y superar las comprobaciones automáticas que las autoridades de certificación usan para confirmar que el propietario de un dominio controla un dominio, según Google.",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "Gli aggressori dirottano tre domini con codice paese per ottenere certificati TLS contraffatti",
+      "dek": "Google ha dichiarato che gli aggressori hanno dirottato i domini .gh, .sl e .as per ottenere certificati non autorizzati per diversi domini Google e altre grandi organizzazioni.",
+      "facts": [
+        "Secondo Google, gli aggressori hanno dirottato i domini di primo livello con codice paese .gh, .sl e .as e hanno modificato i record DNS autoritativi per domini selezionati.",
+        "Google ha dichiarato che gli aggressori hanno superato i controlli automatizzati di convalida del controllo del dominio e hanno ottenuto certificati non autorizzati per diversi domini Google e diversi principali marchi globali.",
+        "Google ha dichiarato di aver aggiornato Chrome per bloccare i certificati non autorizzati che ha identificato e di aver collaborato con le autorità di certificazione emittenti per revocare quelli relativi alle proprietà Google.",
+        "Google non ha identificato i domini Google interessati né ha nominato le altre organizzazioni i cui domini sono stati interessati.",
+        "Google ha dichiarato che l'incidente non ha comportato la compromissione dell'infrastruttura di alcun proprietario di dominio interessato e che le autorità di certificazione hanno rispettato tutti i requisiti."
+      ],
+      "body": [
+        "Gli aggressori hanno dirottato tre domini di primo livello con codice paese, .gh, .sl e .as, e hanno usato quel controllo per ottenere certificati TLS contraffatti per Google e altre grandi organizzazioni, ha dichiarato Google martedì 6 ottobre. Google ha dichiarato che gli aggressori hanno modificato i record DNS autoritativi per domini selezionati all'interno di quegli spazi di nomi. Secondo Google, controllando quei record, gli aggressori hanno superato i controlli automatizzati di convalida del controllo del dominio.",
+        "Google ha dichiarato che sono stati ottenuti certificati non autorizzati per \"diversi domini Google\" e per \"diversi principali marchi globali e servizi online ampiamente utilizzati\". Google non ha identificato quali dei propri domini siano stati interessati né ha nominato alcuna delle altre organizzazioni. Ars Technica ha riferito che non è immediatamente chiaro quanti certificati non autorizzati siano stati emessi, quali siano le altre organizzazioni interessate o se tutti quelli, tranne quelli per i domini Google, siano stati bloccati.",
+        "I certificati TLS sono credenziali crittografiche che legano un nome di dominio come google.com a una chiave pubblica e sono alla base dell'autenticazione e della crittografia per siti web, server di posta e altre infrastrutture internet, ha riferito Ars Technica. Secondo Ars Technica, il possesso di certificati non autorizzati consente agli aggressori di impersonare crittograficamente l'infrastruttura interessata. Google ha dichiarato di aver aggiornato Chrome per bloccare tutti i certificati che ha identificato come non autorizzati e di aver collaborato con le autorità di certificazione emittenti per assicurare che i certificati non autorizzati per le proprietà Google fossero revocati.",
+        "Google ha dichiarato che gli utenti di Chrome non devono intraprendere alcuna azione per essere protetti. \"Sebbene Chrome abbia adottato misure durante questi incidenti per identificare e bloccare i certificati sospettati di essere non autorizzati nei ccTLD interessati, non ci si dovrebbe affidare all'intervento lato browser per proteggere i propri utenti\", ha dichiarato Google. Google ha anche affermato che, data la complessità dei dirottamenti DNS, non può garantire che la sua analisi abbia identificato ogni dominio interessato e che gli interventi di Chrome non proteggono in modo affidabile gli utenti non Chrome.",
+        "Google ha consigliato ai proprietari di domini di monitorare i log di trasparenza dei certificati per individuare emissioni inattese di certificati nei loro domini e di pubblicare record DNS di autorizzazione dell'autorità di certificazione restrittivi. Google ha dichiarato che ciò impedisce agli aggressori di riutilizzare i dati di convalida memorizzati nella cache dopo che il controllo DNS è stato ripristinato. Ars Technica ha riferito che il processo ufficiale per revocare i certificati è lento e macchinoso, perciò i produttori di browser hanno ideato metodi più rapidi per bloccare certificati specifici a livello di browser. Ars Technica ha riferito che, ora che tutti i certificati non autorizzati noti sono bloccati, il rischio è mitigato, ma che eventuali certificati rimasti non scoperti rappresentano una minaccia.",
+        "Google ha dichiarato che l'incidente non ha comportato la compromissione dell'infrastruttura di nessuno dei proprietari dei domini interessati e che le autorità di certificazione hanno rispettato tutti i requisiti. Secondo Google, con il controllo dei tre ccTLD, gli aggressori sono stati in grado di cambiare gli indirizzi IP di un elenco selezionato di siti web e di modificare i record DNS autoritativi e le deleghe dei server dei nomi per domini selezionati."
+      ],
+      "context": "I certificati TLS consentono a un browser di verificare che un sito sia quello che dichiara di essere. Secondo Google, gli aggressori che controllano i record DNS di un dominio di primo livello possono reindirizzare il traffico per siti selezionati e superare i controlli automatizzati che le autorità di certificazione usano per confermare che un proprietario di dominio controlla un dominio.",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Atacantes sequestram três domínios de topo de código de país para obter certificados TLS contrafeitos",
+      "dek": "A Google afirmou que os atacantes sequestraram os domínios .gh, .sl e .as para obter certificados não autorizados para vários domínios da Google e outras grandes organizações.",
+      "facts": [
+        "Os atacantes sequestraram os domínios de topo de código de país .gh, .sl e .as e modificaram registos DNS autoritativos de domínios selecionados, segundo a Google.",
+        "A Google disse que os atacantes passaram verificações automatizadas de validação do controlo do domínio e obtiveram certificados não autorizados para vários domínios da Google e várias marcas globais líderes.",
+        "A Google disse que atualizou o Chrome para bloquear os certificados não autorizados que identificou e colaborou com as autoridades de certificação emissoras para revogar os relativos às propriedades da Google.",
+        "A Google não identificou os domínios da Google afetados nem nomeou as outras organizações cujos domínios foram afetados.",
+        "A Google disse que o incidente não envolveu o comprometimento da infraestrutura de qualquer proprietário de domínio afetado e que as autoridades de certificação cumpriram todos os requisitos."
+      ],
+      "body": [
+        "Os atacantes sequestraram três domínios de topo de código de país, .gh, .sl e .as, e usaram esse controlo para obter certificados TLS contrafeitos para a Google e outras grandes organizações, disse a Google na terça-feira, 6 de outubro. A Google disse que os atacantes modificaram registos DNS autoritativos de domínios selecionados dentro desses espaços de nomes. Ao controlarem esses registos, os atacantes passaram verificações automatizadas de validação do controlo do domínio, segundo a Google.",
+        "A Google disse que foram obtidos certificados não autorizados para \"vários domínios da Google\" e para \"várias marcas globais líderes e serviços online amplamente utilizados\". A Google não identificou quais dos seus próprios domínios foram afetados nem nomeou qualquer uma das outras organizações. A Ars Technica noticiou que não é imediatamente claro quantos certificados não autorizados foram emitidos, quais são as outras organizações afetadas, ou se todos eles, exceto os dos domínios da Google, foram bloqueados.",
+        "Os certificados TLS são credenciais criptográficas que associam um nome de domínio como google.com a uma chave pública e sustentam a autenticação e a encriptação de sites, servidores de correio e outras infraestruturas da internet, noticiou a Ars Technica. A posse de certificados não autorizados permite aos atacantes personificar criptograficamente a infraestrutura afetada, segundo a Ars Technica. A Google disse que atualizou o Chrome para bloquear todos os certificados que identificou como não autorizados e colaborou com as autoridades de certificação emissoras para garantir que os certificados não autorizados para propriedades da Google fossem revogados.",
+        "A Google disse que os utilizadores do Chrome não precisam de tomar qualquer medida para estarem protegidos. \"Embora o Chrome tenha tomado medidas durante estes incidentes para identificar e bloquear certificados suspeitos de não autorizados nos ccTLDs afetados, não se deve confiar na intervenção do lado do navegador para proteger os seus utilizadores\", disse a Google. A Google disse também que, devido à complexidade dos sequestros de DNS, não pode garantir que a sua análise identificou todos os domínios afetados, e que as intervenções do Chrome não protegem de forma fiável os utilizadores que não usam o Chrome.",
+        "A Google aconselhou os proprietários de domínios a monitorizarem os registos de transparência de certificados para detetarem emissões inesperadas de certificados nos seus domínios e a publicarem registos DNS de Autorização de Autoridade de Certificação restritivos. A Google disse que isto impede os atacantes de reutilizarem dados de validação em cache depois de o controlo do DNS ser restaurado. A Ars Technica noticiou que o processo oficial de revogação de certificados é lento e complicado, pelo que os fabricantes de navegadores conceberam métodos mais rápidos para bloquear certificados específicos ao nível do navegador. A Ars Technica noticiou que, estando agora bloqueados todos os certificados não autorizados conhecidos, o risco é mitigado, mas que quaisquer certificados que permaneçam por descobrir representam uma ameaça.",
+        "A Google disse que o incidente não envolveu o comprometimento da infraestrutura de qualquer um dos proprietários de domínios afetados e que as autoridades de certificação cumpriram todos os requisitos. Com o controlo dos três ccTLDs, os atacantes conseguiram alterar os endereços IP de uma lista selecionada de sites e modificar registos DNS autoritativos e delegações de servidores de nomes de domínios selecionados, segundo a Google."
+      ],
+      "context": "Os certificados TLS permitem que um navegador verifique que um site é aquele que afirma ser. Os atacantes que controlam os registos DNS de um domínio de topo podem redirecionar o tráfego de sites selecionados e passar as verificações automatizadas que as autoridades de certificação utilizam para confirmar que um proprietário de domínio controla um domínio, segundo a Google.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "攻击者劫持三个国家代码域名以获取伪造 TLS 证书",
+      "dek": "谷歌表示，攻击者劫持了 .gh、.sl 和 .as 域名，为多个谷歌域名及其他大型机构获取未经授权的证书。",
+      "facts": [
+        "据谷歌称，攻击者劫持了 .gh、.sl 和 .as 国家代码顶级域名，并修改了选定域名的权威 DNS 记录。",
+        "谷歌表示，攻击者通过了自动域名控制验证检查，并为多个谷歌域名和数个全球领先品牌获取了未经授权的证书。",
+        "谷歌表示，它更新了 Chrome 以阻止其识别出的未经授权证书，并与签发认证机构合作，撤销了针对谷歌资产的此类证书。",
+        "谷歌未指明受影响的谷歌域名，也未点名其他域名受影响的机构。",
+        "谷歌表示，该事件不涉及任何受影响域名所有者的基础设施遭入侵，且认证机构遵守了所有要求。"
+      ],
+      "body": [
+        "谷歌于10月6日（周二）表示，攻击者劫持了 .gh、.sl 和 .as 三个国家代码顶级域名，并利用这一控制权为谷歌及其他大型机构获取伪造 TLS 证书。谷歌表示，攻击者修改了这些命名空间内选定域名的权威 DNS 记录。据谷歌称，通过控制这些记录，攻击者通过了自动域名控制验证检查。",
+        "谷歌表示，未经授权的证书是针对“多个谷歌域名”以及“数个全球领先品牌和广泛使用的在线服务”获取的。谷歌未说明其自身哪些域名受到影响，也未点名任何其他机构。Ars Technica 报道称，目前尚不清楚共签发了多少未经授权的证书、其他受影响机构是哪些，或者除谷歌域名相关的证书外，其余证书是否都已被阻止。",
+        "Ars Technica 报道称，TLS 证书是一种加密凭证，将 google.com 等域名与公钥绑定，并支撑网站、邮件服务器和其他互联网基础设施的身份验证与加密。据 Ars Technica 报道，持有未经授权的证书使攻击者能够以加密方式冒充受影响的基础设施。谷歌表示，它更新了 Chrome 以阻止其识别为未经授权的所有证书，并与签发认证机构合作，确保针对谷歌资产的未经授权证书被撤销。",
+        "谷歌表示，Chrome 用户无需采取任何行动即可受到保护。谷歌说：“尽管 Chrome 在这些事件期间采取措施，识别并阻止受影响 ccTLD 中疑似未经授权的证书，但不应依赖浏览器端干预来保护你的用户。”谷歌还表示，由于 DNS 劫持的复杂性，它无法保证其分析识别出了每一个受影响域名，而且 Chrome 的干预措施不能可靠地保护非 Chrome 用户。",
+        "谷歌建议域名所有者监控证书透明度日志，以发现其域名中出现意外签发证书的情况，并发布限制性的证书颁发机构授权 DNS 记录。谷歌表示，这可以防止攻击者在 DNS 控制权恢复后重复使用缓存的验证数据。Ars Technica 报道称，官方撤销证书的流程缓慢且繁琐，因此浏览器厂商设计了更快捷的方法，在浏览器层面阻止特定证书。Ars Technica 报道称，随着所有已知未经授权证书现已被阻止，风险有所缓解，但任何尚未被发现的证书仍构成威胁。",
+        "谷歌表示，该事件不涉及任何受影响域名所有者的基础设施遭入侵，且认证机构遵守了所有要求。据谷歌称，通过控制这三个 ccTLD，攻击者得以更改选定网站列表的 IP 地址，并修改选定域名的权威 DNS 记录和名称服务器委派。"
+      ],
+      "context": "TLS 证书让浏览器能够检查某个网站确实是其声称的那个网站。据谷歌称，控制顶级域名 DNS 记录的攻击者可以重定向选定网站的流量，并通过证书颁发机构用来确认域名所有者控制某个域名的自动检查。",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "攻撃者、偽造TLS証明書を取得するため3つの国別コードドメインを乗っ取る",
+      "dek": "グーグルによると、攻撃者は.gh、.sl、.asのドメインを乗っ取り、複数のグーグルのドメインと他の大規模組織向けの不正な証明書を取得した。",
+      "facts": [
+        "グーグルによると、攻撃者は国別コードトップレベルドメインの.gh、.sl、.asを乗っ取り、選択したドメインの権威DNSレコードを改ざんした。",
+        "グーグルによると、攻撃者は自動化されたドメイン制御検証チェックを通過し、複数のグーグルのドメインと複数の世界的な大手ブランド向けに不正な証明書を取得した。",
+        "グーグルによると、同社は特定した不正な証明書をブロックするためChromeを更新し、グーグルのプロパティ向けの証明書を失効させるため発行認証局と協力した。",
+        "グーグルは、影響を受けたグーグルのドメインを特定せず、ドメインが影響を受けた他の組織の名前も明らかにしなかった。",
+        "グーグルによると、このインシデントには影響を受けたドメイン所有者のインフラの侵害は含まれておらず、認証局はすべての要件を遵守した。"
+      ],
+      "body": [
+        "グーグルが10月6日火曜日に発表したところによると、攻撃者は3つの国別コードトップレベルドメイン.gh、.sl、.asを乗っ取り、その支配を利用してグーグルや他の大規模組織向けの偽造TLS証明書を取得した。グーグルによると、攻撃者はこれらの名前空間内の選択されたドメインの権威DNSレコードを改ざんした。グーグルによると、攻撃者はこれらのレコードを支配することで、自動化されたドメイン制御検証チェックを通過した。",
+        "グーグルによると、「複数のグーグルのドメイン」と「複数の世界的な大手ブランドおよび広く利用されているオンラインサービス」向けに不正な証明書が取得された。グーグルは、自社のどのドメインが影響を受けたか、また他の組織の名前を明らかにしなかった。Ars Technicaは、不正な証明書が何件発行されたのか、他の影響を受けた組織はどこか、またグーグルのドメイン向けのものを除いてすべてがブロックされたのかはすぐには明らかではないと報じた。",
+        "Ars Technicaが報じたところによると、TLS証明書はgoogle.comのようなドメイン名を公開鍵に結び付ける暗号学的な資格情報であり、ウェブサイト、メールサーバー、その他のインターネットインフラの認証と暗号化を支えている。Ars Technicaによると、不正な証明書を所持することで、攻撃者は影響を受けたインフラになりすますことが暗号学的に可能になる。グーグルによると、同社は不正と特定したすべての証明書をブロックするためChromeを更新し、グーグルのプロパティ向けの不正な証明書が失効されるよう、発行認証局と協力した。",
+        "グーグルによると、Chromeユーザーは保護されるために何ら行動を取る必要はない。グーグルは「Chromeはこれらのインシデントの間、影響を受けたccTLD全体にわたって不正の疑いのある証明書を特定しブロックするための措置を講じたが、あなたのユーザーを保護するためにブラウザー側の介入に頼るべきではない」と述べた。グーグルはまた、DNSハイジャックの複雑さのため、同社の分析が影響を受けたすべてのドメインを特定したことを保証することはできず、Chromeの介入はChrome以外のユーザーを確実に保護するものではないと述べた。",
+        "グーグルはドメイン所有者に対し、自らのドメイン全体で予期しない証明書発行がないか証明書透明性ログを監視し、制限的なCertification Authority Authorization DNSレコードを公開するよう助言した。グーグルによると、これによりDNSの支配が回復された後に攻撃者がキャッシュされた検証データを再利用するのを防ぐ。Ars Technicaは、証明書を失効させる公式プロセスは遅く煩雑なため、ブラウザーメーカーは特定の証明書をブラウザーレベルでブロックするより迅速な方法を考案したと報じた。Ars Technicaは、既知の不正な証明書がすべてブロックされたことでリスクは軽減されたが、未発見のまま残る証明書は脅威をもたらすと報じた。",
+        "グーグルによると、このインシデントには影響を受けたドメイン所有者のインフラの侵害は含まれておらず、認証局はすべての要件を遵守した。グーグルによると、3つのccTLDの支配により、攻撃者は選択されたウェブサイトのリストのIPアドレスを変更し、選択されたドメインの権威DNSレコードとネームサーバー委任を改ざんすることができた。"
+      ],
+      "context": "TLS証明書により、ブラウザーはサイトが主張するとおりのサイトであることを確認できる。グーグルによると、トップレベルドメインのDNSレコードを支配する攻撃者は、選択されたサイトのトラフィックをリダイレクトし、認証局がドメイン所有者がドメインを制御していることを確認するために使用する自動チェックを通過することができる。",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "공격자들이 3개 국가 코드 도메인을 탈취해 위조 TLS 인증서를 획득",
+      "dek": "구글은 공격자들이 .gh, .sl, .as 도메인을 탈취해 여러 구글 도메인과 다른 대형 조직을 위한 무단 인증서를 획득했다고 밝혔다.",
+      "facts": [
+        "구글에 따르면 공격자들은 .gh, .sl, .as 국가 코드 최상위 도메인을 탈취하고 선택된 도메인의 권한 있는 DNS 레코드를 수정했다.",
+        "구글은 공격자들이 자동화된 도메인 제어 검증 검사를 통과해 여러 구글 도메인과 여러 주요 글로벌 브랜드에 대한 무단 인증서를 획득했다고 밝혔다.",
+        "구글은 자사가 식별한 무단 인증서를 차단하도록 크롬을 업데이트했으며, 구글 자산에 대한 인증서를 폐기하기 위해 발급 인증 기관들과 협력했다고 밝혔다.",
+        "구글은 영향을 받은 구글 도메인을 밝히지 않았고, 도메인이 영향을 받은 다른 조직들의 이름도 공개하지 않았다.",
+        "구글은 이번 사건에 영향을 받은 어떤 도메인 소유자의 인프라 침해도 포함되지 않았으며, 인증 기관들이 모든 요건을 준수했다고 밝혔다."
+      ],
+      "body": [
+        "구글은 10월 6일 화요일, 공격자들이 세 개의 국가 코드 최상위 도메인인 .gh, .sl, .as를 탈취하고 그 통제권을 이용해 구글과 다른 대형 조직을 위한 위조 TLS 인증서를 획득했다고 밝혔다. 구글은 공격자들이 해당 네임스페이스 내 선택된 도메인의 권한 있는 DNS 레코드를 수정했다고 말했다. 구글에 따르면 공격자들은 그 레코드를 통제함으로써 자동화된 도메인 제어 검증 검사를 통과했다.",
+        "구글은 “여러 구글 도메인”과 “여러 주요 글로벌 브랜드 및 널리 사용되는 온라인 서비스”를 위한 무단 인증서가 획득됐다고 밝혔다. 구글은 자사 도메인 중 어느 것이 영향을 받았는지 밝히지 않았고, 다른 조직들의 이름도 공개하지 않았다. 아스 테크니카는 무단 인증서가 몇 개 발급됐는지, 다른 영향을 받은 조직이 어디인지, 구글 도메인에 대한 것을 제외한 나머지가 모두 차단됐는지는 즉시 명확하지 않다고 보도했다.",
+        "아스 테크니카에 따르면 TLS 인증서는 google.com과 같은 도메인 이름을 공개 키에 묶고 웹사이트, 메일 서버 및 기타 인터넷 인프라의 인증과 암호화를 뒷받침하는 암호학적 자격 증명이다. 아스 테크니카에 따르면 무단 인증서를 보유하면 공격자들이 영향을 받은 인프라를 암호학적으로 사칭할 수 있다. 구글은 무단 인증서로 식별한 모든 인증서를 차단하도록 크롬을 업데이트했으며, 구글 자산에 대한 무단 인증서가 폐기되도록 발급 인증 기관들과 협력했다고 밝혔다.",
+        "구글은 크롬 사용자들은 보호받기 위해 아무런 조치를 취할 필요가 없다고 밝혔다. 구글은 “크롬은 이번 사건들 동안 영향을 받은 ccTLD 전반에서 의심되는 무단 인증서를 식별하고 차단하기 위한 조치를 취했지만, 여러분의 사용자를 보호하는 데 브라우저 측 개입에 의존해서는 안 됩니다”라고 말했다. 구글은 또한 DNS 탈취의 복잡성 때문에 자사 분석이 영향을 받은 모든 도메인을 식별했다고 보장할 수 없으며, 크롬의 개입이 크롬을 사용하지 않는 사용자를 안정적으로 보호하지는 못한다고 밝혔다.",
+        "구글은 도메인 소유자들에게 자사 도메인 전반에서 예상치 못한 인증서 발급이 있는지 인증서 투명성 로그를 모니터링하고, 제한적인 인증 기관 권한 부여(CAA) DNS 레코드를 게시할 것을 권고했다. 구글은 이것이 DNS 통제가 복원된 후 공격자들이 캐시된 검증 데이터를 재사용하는 것을 막는다고 밝혔다. 아스 테크니카는 인증서를 폐기하는 공식 절차가 느리고 번거로워 브라우저 제조사들이 브라우저 수준에서 특정 인증서를 차단하는 더 빠른 방법을 고안했다고 보도했다. 아스 테크니카는 알려진 모든 무단 인증서가 이제 차단되어 위험이 완화됐지만, 아직 발견되지 않은 인증서는 위협이 된다고 보도했다.",
+        "구글은 이번 사건에 영향을 받은 어떤 도메인 소유자의 인프라 침해도 포함되지 않았으며, 인증 기관들이 모든 요건을 준수했다고 밝혔다. 구글에 따르면 공격자들은 세 개의 ccTLD를 통제함으로써 선택된 웹사이트 목록의 IP 주소를 변경하고 선택된 도메인의 권한 있는 DNS 레코드와 네임서버 위임을 수정할 수 있었다."
+      ],
+      "context": "TLS 인증서를 통해 브라우저는 사이트가 주장하는 바로 그 사이트인지 확인할 수 있다. 구글에 따르면 최상위 도메인의 DNS 레코드를 통제하는 공격자들은 선택된 사이트의 트래픽을 다른 곳으로 돌리고, 인증 기관이 도메인 소유자가 도메인을 통제하는지 확인하기 위해 사용하는 자동 검사를 통과할 수 있다.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "deepseek-v4.1-flash",
+    "editor": "glm-5.3-flash",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "publish",
+    "problemsFixed": []
+  }
+}

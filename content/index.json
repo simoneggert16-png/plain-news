@@ -1,6 +1,109 @@
 {
-  "updatedAt": "2026-10-07T10:48:34.362Z",
+  "updatedAt": "2026-10-07T10:50:46.511Z",
   "articles": [
+    {
+      "slug": "attackers-hijack-three-country-code-domains-to-obtain-counterfeit-20261007-yus7",
+      "category": "tech",
+      "image": null,
+      "imageCredit": null,
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-10-07T10:49:11.357Z",
+      "updatedAt": "2026-10-07T10:49:11.357Z",
+      "sourceCount": 1,
+      "locales": {
+        "en": {
+          "title": "Attackers hijack three country-code domains to obtain counterfeit TLS certificates",
+          "dek": "Google said attackers hijacked the .gh, .sl and .as domains to obtain unauthorized certificates for several Google domains and other large organizations.",
+          "facts": [
+            "Attackers hijacked the .gh, .sl and .as country code top-level domains and modified authoritative DNS records for selected domains, according to Google.",
+            "Google said the attackers passed automated domain control validation checks and obtained unauthorized certificates for several Google domains and several leading global brands.",
+            "Google said it updated Chrome to block the unauthorized certificates it identified and worked with issuing certification authorities to revoke those for Google properties."
+          ],
+          "imageCaption": null
+        },
+        "de": {
+          "title": "Angreifer kapern drei Ländercode-Domains, um gefälschte TLS-Zertifikate zu erlangen",
+          "dek": "Google zufolge kaperten Angreifer die Domains .gh, .sl und .as, um unbefugte Zertifikate für mehrere Google-Domains und andere große Organisationen zu erhalten.",
+          "facts": [
+            "Laut Google kaperten Angreifer die Ländercode-Top-Level-Domains .gh, .sl und .as und änderten autoritative DNS-Einträge für ausgewählte Domains.",
+            "Google zufolge bestanden die Angreifer automatisierte Prüfungen zur Domainkontrolle und erhielten unbefugte Zertifikate für mehrere Google-Domains und mehrere führende globale Marken.",
+            "Google zufolge aktualisierte das Unternehmen Chrome, um die von ihm identifizierten unbefugten Zertifikate zu blockieren, und arbeitete mit den ausstellenden Zertifizierungsstellen zusammen, um diejenigen für Google-Properties zu widerrufen."
+          ],
+          "imageCaption": null
+        },
+        "fr": {
+          "title": "Des attaquants détournent trois domaines de premier niveau de code pays pour obtenir de faux certificats TLS",
+          "dek": "Google a déclaré que des attaquants avaient détourné les domaines .gh, .sl et .as pour obtenir des certificats non autorisés pour plusieurs domaines de Google et d'autres grandes organisations.",
+          "facts": [
+            "Selon Google, des attaquants ont détourné les domaines de premier niveau de code pays .gh, .sl et .as et ont modifié les enregistrements DNS faisant autorité de domaines sélectionnés.",
+            "Google a déclaré que les attaquants avaient passé les contrôles automatisés de validation du contrôle de domaine et obtenu des certificats non autorisés pour plusieurs domaines de Google et plusieurs grandes marques mondiales.",
+            "Google a déclaré avoir mis à jour Chrome pour bloquer les certificats non autorisés qu'il a identifiés et avoir travaillé avec les autorités de certification émettrices pour révoquer ceux des propriétés de Google."
+          ],
+          "imageCaption": null
+        },
+        "es": {
+          "title": "Atacantes secuestran tres dominios de código de país para obtener certificados TLS falsificados",
+          "dek": "Google dijo que los atacantes secuestraron los dominios .gh, .sl y .as para obtener certificados no autorizados para varios dominios de Google y otras grandes organizaciones.",
+          "facts": [
+            "Los atacantes secuestraron los dominios de nivel superior con código de país .gh, .sl y .as y modificaron registros DNS autoritativos de dominios seleccionados, según Google.",
+            "Google dijo que los atacantes superaron las comprobaciones automáticas de validación del control de dominio y obtuvieron certificados no autorizados para varios dominios de Google y varias marcas globales líderes.",
+            "Google dijo que actualizó Chrome para bloquear los certificados no autorizados que identificó y colaboró con las autoridades de certificación emisoras para revocar los de propiedades de Google."
+          ],
+          "imageCaption": null
+        },
+        "it": {
+          "title": "Gli aggressori dirottano tre domini con codice paese per ottenere certificati TLS contraffatti",
+          "dek": "Google ha dichiarato che gli aggressori hanno dirottato i domini .gh, .sl e .as per ottenere certificati non autorizzati per diversi domini Google e altre grandi organizzazioni.",
+          "facts": [
+            "Secondo Google, gli aggressori hanno dirottato i domini di primo livello con codice paese .gh, .sl e .as e hanno modificato i record DNS autoritativi per domini selezionati.",
+            "Google ha dichiarato che gli aggressori hanno superato i controlli automatizzati di convalida del controllo del dominio e hanno ottenuto certificati non autorizzati per diversi domini Google e diversi principali marchi globali.",
+            "Google ha dichiarato di aver aggiornato Chrome per bloccare i certificati non autorizzati che ha identificato e di aver collaborato con le autorità di certificazione emittenti per revocare quelli relativi alle proprietà Google."
+          ],
+          "imageCaption": null
+        },
+        "pt": {
+          "title": "Atacantes sequestram três domínios de topo de código de país para obter certificados TLS contrafeitos",
+          "dek": "A Google afirmou que os atacantes sequestraram os domínios .gh, .sl e .as para obter certificados não autorizados para vários domínios da Google e outras grandes organizações.",
+          "facts": [
+            "Os atacantes sequestraram os domínios de topo de código de país .gh, .sl e .as e modificaram registos DNS autoritativos de domínios selecionados, segundo a Google.",
+            "A Google disse que os atacantes passaram verificações automatizadas de validação do controlo do domínio e obtiveram certificados não autorizados para vários domínios da Google e várias marcas globais líderes.",
+            "A Google disse que atualizou o Chrome para bloquear os certificados não autorizados que identificou e colaborou com as autoridades de certificação emissoras para revogar os relativos às propriedades da Google."
+          ],
+          "imageCaption": null
+        },
+        "zh": {
+          "title": "攻击者劫持三个国家代码域名以获取伪造 TLS 证书",
+          "dek": "谷歌表示，攻击者劫持了 .gh、.sl 和 .as 域名，为多个谷歌域名及其他大型机构获取未经授权的证书。",
+          "facts": [
+            "据谷歌称，攻击者劫持了 .gh、.sl 和 .as 国家代码顶级域名，并修改了选定域名的权威 DNS 记录。",
+            "谷歌表示，攻击者通过了自动域名控制验证检查，并为多个谷歌域名和数个全球领先品牌获取了未经授权的证书。",
+            "谷歌表示，它更新了 Chrome 以阻止其识别出的未经授权证书，并与签发认证机构合作，撤销了针对谷歌资产的此类证书。"
+          ],
+          "imageCaption": null
+        },
+        "ja": {
+          "title": "攻撃者、偽造TLS証明書を取得するため3つの国別コードドメインを乗っ取る",
+          "dek": "グーグルによると、攻撃者は.gh、.sl、.asのドメインを乗っ取り、複数のグーグルのドメインと他の大規模組織向けの不正な証明書を取得した。",
+          "facts": [
+            "グーグルによると、攻撃者は国別コードトップレベルドメインの.gh、.sl、.asを乗っ取り、選択したドメインの権威DNSレコードを改ざんした。",
+            "グーグルによると、攻撃者は自動化されたドメイン制御検証チェックを通過し、複数のグーグルのドメインと複数の世界的な大手ブランド向けに不正な証明書を取得した。",
+            "グーグルによると、同社は特定した不正な証明書をブロックするためChromeを更新し、グーグルのプロパティ向けの証明書を失効させるため発行認証局と協力した。"
+          ],
+          "imageCaption": null
+        },
+        "ko": {
+          "title": "공격자들이 3개 국가 코드 도메인을 탈취해 위조 TLS 인증서를 획득",
+          "dek": "구글은 공격자들이 .gh, .sl, .as 도메인을 탈취해 여러 구글 도메인과 다른 대형 조직을 위한 무단 인증서를 획득했다고 밝혔다.",
+          "facts": [
+            "구글에 따르면 공격자들은 .gh, .sl, .as 국가 코드 최상위 도메인을 탈취하고 선택된 도메인의 권한 있는 DNS 레코드를 수정했다.",
+            "구글은 공격자들이 자동화된 도메인 제어 검증 검사를 통과해 여러 구글 도메인과 여러 주요 글로벌 브랜드에 대한 무단 인증서를 획득했다고 밝혔다.",
+            "구글은 자사가 식별한 무단 인증서를 차단하도록 크롬을 업데이트했으며, 구글 자산에 대한 인증서를 폐기하기 위해 발급 인증 기관들과 협력했다고 밝혔다."
+          ],
+          "imageCaption": null
+        }
+      }
+    },
     {
       "slug": "pimco-chief-says-markets-send-france-serious-signal-analysts-20261007-y7y0",
       "category": "business",
