@@ -1,13 +1,14 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import TacticalPitchCanvas from './TacticalPitchCanvas';
 
 const RATING_LEGEND = [
   { label: '≥ 7.5 Hervorragend', color: '#1b5e20' },
   { label: '7.0–7.4 Sehr gut', color: '#2e7d32' },
   { label: '6.7–6.9 Gut', color: '#689f38' },
-  { label: '6.5–6.6 Solide', color: '#f57f17' },
-  { label: '< 6.5 Ausbaufähig', color: '#e65100' },
+  { label: '6.4–6.6 Solide', color: '#f57f17' },
+  { label: '< 6.4 Ausbaufähig', color: '#e65100' },
 ];
 
 export default function MatchCenterView({ matchId = '401921408', locale = 'de' }) {
@@ -56,7 +57,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
     return (
       <div className="match-center-card loading">
         <div className="match-center-loading-text">
-          <span className="live-dot" /> {isDe ? 'Lade SofaScore Match Center & Aufstellungsgrafik…' : 'Loading SofaScore Match Center & Tactical Pitch…'}
+          <span className="live-dot" /> {isDe ? 'Lade Match Center & dynamische Taktikgrafik…' : 'Loading Match Center & Dynamic Tactical Pitch…'}
         </div>
       </div>
     );
@@ -66,7 +67,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
     return null;
   }
 
-  const { header, stats, tacticalPitch, lineups, events, commentary, attribution } = data;
+  const { header, stats, topPerformers, lineups, events, commentary, attribution } = data;
   const currentRoster = selectedTeam === 'home' ? lineups.home : lineups.away;
   const currentTeamName = selectedTeam === 'home' ? header.homeTeam.name : header.awayTeam.name;
 
@@ -128,7 +129,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
           className={`match-tab-btn ${activeTab === 'lineups' ? 'active' : ''}`}
           onClick={() => setActiveTab('lineups')}
         >
-          {isDe ? '🏟️ Aufstellung & SofaScore-Ratings' : '🏟️ Lineup & SofaScore Ratings'}
+          {isDe ? '🏟️ Taktische Formation & Ratings' : '🏟️ Tactical Formation & Ratings'}
         </button>
         <button
           type="button"
@@ -146,10 +147,10 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
         </button>
       </div>
 
-      {/* ── 3. TAB: LINEUPS & RATINGS ── */}
+      {/* ── 3. TAB: LINEUPS & DYNAMIC PITCH ── */}
       {activeTab === 'lineups' && (
         <div className="match-tab-content">
-          {/* Sub-View Switcher: Pitch Graphic vs Detailed List */}
+          {/* Sub-View Switcher: Dynamic Vector Pitch vs Detailed List */}
           <div className="lineup-view-toggle-bar">
             <div className="lineup-sub-buttons">
               <button
@@ -157,7 +158,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                 className={`lineup-toggle-btn ${lineupSubView === 'pitch' ? 'active' : ''}`}
                 onClick={() => setLineupSubView('pitch')}
               >
-                🏟️ {isDe ? 'Taktische Grafik (Spielfeld)' : 'Tactical Pitch Graphic'}
+                🏟️ {isDe ? 'Taktisches Spielfeld (Vektor)' : 'Tactical Pitch (Vector)'}
               </button>
               <button
                 type="button"
@@ -178,12 +179,11 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
             </div>
           </div>
 
-          {/* ── 3A. TACTICAL PITCH GRAPHIC VIEW (PRIMARY) ── */}
+          {/* ── 3A. DYNAMIC TACTICAL PITCH VIEW (PRIMARY) ── */}
           {lineupSubView === 'pitch' && (
             <div className="tactical-pitch-section">
               <div className="pitch-teams-banner">
                 <div className="pitch-team-left">
-                  <span className="pitch-flag">🇦🇷</span>
                   <span className="pitch-team-name">{header.homeTeam.name}</span>
                   <span className="pitch-sys-badge">{header.homeTeam.formation}</span>
                   <span className="pitch-coach-name">({header.homeTeam.coach})</span>
@@ -193,31 +193,35 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                   <span className="pitch-coach-name">({header.awayTeam.coach})</span>
                   <span className="pitch-sys-badge">{header.awayTeam.formation}</span>
                   <span className="pitch-team-name">{header.awayTeam.name}</span>
-                  <span className="pitch-flag">🇧🇯</span>
                 </div>
               </div>
 
-              {/* The Visual Soccer Pitch Container */}
+              {/* The 100% Dynamic Interactive Pitch Canvas */}
               <div className="tactical-pitch-container">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={tacticalPitch?.image || '/sport/argentina_benin_pitch.png'}
-                  alt="Taktische Aufstellung Argentinien vs. Benin SofaScore"
-                  className="tactical-pitch-image"
+                <TacticalPitchCanvas
+                  homeTeam={header.homeTeam}
+                  awayTeam={header.awayTeam}
+                  homePlayers={lineups.home.starters}
+                  awayPlayers={lineups.away.starters}
+                  onSelectPlayer={(p) => setInspectedPlayer(p)}
                 />
               </div>
 
               {/* Top Performer Highlights Bar */}
-              {tacticalPitch?.topPerformers && (
+              {topPerformers && topPerformers.length > 0 && (
                 <div className="top-performers-showcase">
                   <div className="performer-heading">
-                    {isDe ? 'SCHLÜSSELAKTEURE & SOFASCORE RATINGS' : 'KEY PERFORMERS & SOFASCORE RATINGS'}
+                    {isDe ? 'SCHLÜSSELAKTEURE & PERFORMANCE-RATINGS' : 'KEY PERFORMERS & LIVE RATINGS'}
                   </div>
                   <div className="performer-cards-grid">
-                    {tacticalPitch.topPerformers.map((p, idx) => (
+                    {topPerformers.map((p, idx) => (
                       <div key={idx} className="performer-card">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={p.photo} alt={p.name} className="performer-photo" />
+                        {p.photo ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={p.photo} alt={p.name} className="performer-photo" />
+                        ) : (
+                          <div className="player-photo-placeholder sub">{p.name.charAt(0)}</div>
+                        )}
                         <div className="performer-info">
                           <div className="performer-name">{p.name}</div>
                           <div className="performer-role">{p.role}</div>
@@ -235,7 +239,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                                 : '#e65100',
                           }}
                         >
-                          {p.rating.toFixed(1)}
+                          {Number(p.rating).toFixed(1)}
                         </div>
                       </div>
                     ))}
@@ -254,20 +258,20 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                   className={`team-pill ${selectedTeam === 'home' ? 'active' : ''}`}
                   onClick={() => setSelectedTeam('home')}
                 >
-                  🇦🇷 {header.homeTeam.name} (Startelf · {header.homeTeam.formation})
+                  {header.homeTeam.name} (Startelf · {header.homeTeam.formation})
                 </button>
                 <button
                   type="button"
                   className={`team-pill ${selectedTeam === 'away' ? 'active' : ''}`}
                   onClick={() => setSelectedTeam('away')}
                 >
-                  🇧🇯 {header.awayTeam.name} (Startelf · {header.awayTeam.formation})
+                  {header.awayTeam.name} (Startelf · {header.awayTeam.formation})
                 </button>
               </div>
 
               <div className="lineup-section-heading">
                 <span>STARTELF · {currentTeamName.toUpperCase()}</span>
-                <span className="rating-legend">SOFASCORE RATINGS (OPTA LIVE METRICS)</span>
+                <span className="rating-legend">STATISTISCHE BEWERTUNG (1.0–10.0)</span>
               </div>
 
               <div className="players-list">
@@ -298,7 +302,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                           {player.isCaptain && <span className="captain-badge">C</span>}
                           {player.isMotm && <span className="motm-badge">MOTM</span>}
                         </div>
-                        <div className="player-pos">{player.position}</div>
+                        <div className="player-pos">{player.position || player.posAbbr}</div>
                       </div>
                     </div>
 
@@ -310,7 +314,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                         <span className="player-stat-tag">🛡️ {player.stats.tackles} Tackles</span>
                       )}
                       {player.stats?.keyPasses && (
-                        <span className="player-stat-tag">🎯 {player.stats.keyPasses} Torschussvorlagen</span>
+                        <span className="player-stat-tag">🎯 {player.stats.keyPasses} Key Passes</span>
                       )}
                       {player.stats?.saves && (
                         <span className="player-stat-tag">🧤 {player.stats.saves} Paraden</span>
@@ -319,7 +323,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                         className="player-rating-badge"
                         style={{ backgroundColor: player.ratingColor }}
                       >
-                        {player.rating.toFixed(1)}
+                        {Number(player.rating).toFixed(1)}
                       </span>
                     </div>
                   </div>
@@ -344,7 +348,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                           )}
                           <div className="player-meta">
                             <span className="player-name">{player.name}</span>
-                            <span className="player-pos">{player.position}</span>
+                            <span className="player-pos">{player.position || player.posAbbr}</span>
                           </div>
                         </div>
                         <div className="player-right">
@@ -364,9 +368,9 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
       {activeTab === 'stats' && (
         <div className="match-tab-content stats-tab">
           <div className="stats-teams-legend">
-            <span className="stat-team-left">🇦🇷 {header.homeTeam.name}</span>
+            <span className="stat-team-left">{header.homeTeam.name}</span>
             <span className="stat-team-title">SPIEL-STATISTIKEN (OPTA)</span>
-            <span className="stat-team-right">🇧🇯 {header.awayTeam.name}</span>
+            <span className="stat-team-right">{header.awayTeam.name}</span>
           </div>
 
           <div className="stats-bars-container">

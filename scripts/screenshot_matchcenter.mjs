@@ -9,29 +9,26 @@ async function capture() {
     args: ['--no-sandbox']
   });
   const page = await browser.newPage();
-  page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-  page.on('pageerror', err => console.log('PAGE ERROR:', err.message));
+  await page.setViewport({ width: 1200, height: 1300 });
 
   await page.goto('http://127.0.0.1:3000/de/a/lionel-messi-bestreitet-letztes-laenderspiel-fuer-argentinien-abschied-im-monumental-20261006-m10', { waitUntil: 'networkidle0', timeout: 20000 });
   await page.waitForSelector('.match-center-card', { timeout: 10000 });
-  await new Promise(r => setTimeout(r, 1000));
+  await new Promise(r => setTimeout(r, 1200));
 
   const el = await page.$('.match-center-card');
   if (el) {
     await el.scrollIntoView();
-    await el.screenshot({ path: 'C:/Users/Simon/.gemini/antigravity/brain/2ca82bd4-4e93-4750-a352-322d18846780/sofascore_tactical_pitch_proof.png' });
-    console.log('MatchCenter card screenshot captured!');
-  }
+    // 1. Screenshot of the dynamic vector pitch
+    await el.screenshot({ path: 'C:/Users/Simon/.gemini/antigravity/brain/2ca82bd4-4e93-4750-a352-322d18846780/sofascore_dynamic_svg_pitch.png' });
+    console.log('Dynamic SVG pitch screenshot captured!');
 
-  // Also test clicking the detailed list view
-  const listBtn = await page.$('.lineup-toggle-btn:nth-child(2)');
-  if (listBtn) {
-    await listBtn.click();
-    await new Promise(r => setTimeout(r, 600));
-    const listEl = await page.$('.match-center-card');
-    if (listEl) {
-      await listEl.screenshot({ path: 'C:/Users/Simon/.gemini/antigravity/brain/2ca82bd4-4e93-4750-a352-322d18846780/sofascore_list_proof.png' });
-      console.log('List view screenshot captured!');
+    // 2. Click on a player node on the SVG pitch to show the interactive drawer!
+    const playerNode = await page.$('.pitch-player-node:nth-child(11)'); // e.g. Messi or De Paul
+    if (playerNode) {
+      await playerNode.click();
+      await new Promise(r => setTimeout(r, 600));
+      await el.screenshot({ path: 'C:/Users/Simon/.gemini/antigravity/brain/2ca82bd4-4e93-4750-a352-322d18846780/sofascore_dynamic_interactive_drawer.png' });
+      console.log('Interactive player drawer screenshot captured!');
     }
   }
 

@@ -2176,11 +2176,132 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   overflow: hidden;
   border-radius: 2px;
 }
-.tactical-pitch-image {
+.dynamic-pitch-wrapper {
+  position: relative;
+  width: 100%;
+}
+.dynamic-pitch-svg {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
+}
+.pitch-player-node {
+  transition: transform 0.15s ease-out;
+}
+.pitch-player-node:hover {
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+}
+
+/* Dynamic Interactive Player Drawer */
+.dynamic-player-drawer {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+  animation: slide-up 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.drawer-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(22, 28, 33, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 16px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.drawer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.drawer-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 1.5px solid #fff;
+}
+.drawer-photo-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.drawer-meta {
+  display: flex;
+  flex-direction: column;
+}
+.drawer-title {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.drawer-c {
+  font-size: 9px;
+  font-weight: 900;
+  background: #f57f17;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+.drawer-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #9ca3af;
+}
+.drawer-stats {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.drawer-chip {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e5e7eb;
+  padding: 3px 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.drawer-rating-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: #fff;
+}
+.drawer-rating-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+.drawer-rating-val {
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
 }
 
 /* Top Performers Showcase */
