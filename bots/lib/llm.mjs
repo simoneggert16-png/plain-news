@@ -1,3 +1,18 @@
+import fs from 'node:fs';
+
+// Explicitly load .env file so the Pro key from .env is always guaranteed
+if (fs.existsSync('.env')) {
+  for (const line of fs.readFileSync('.env', 'utf8').split('\n')) {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
+      const idx = trimmed.indexOf('=');
+      const key = trimmed.slice(0, idx).trim();
+      const val = trimmed.slice(idx + 1).trim();
+      process.env[key] = val;
+    }
+  }
+}
+
 // Multi-Provider LLM Client: Ollama Cloud (DeepSeek v4.1 Flash, MiniMax M3) + NVIDIA NIM
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';

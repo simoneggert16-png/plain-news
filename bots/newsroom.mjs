@@ -16,7 +16,7 @@ if (fs.existsSync('.env')) {
       const idx = trimmed.indexOf('=');
       const key = trimmed.slice(0, idx).trim();
       const val = trimmed.slice(idx + 1).trim();
-      if (!process.env[key]) process.env[key] = val;
+      process.env[key] = val;
     }
   }
 }
@@ -223,7 +223,7 @@ async function main() {
         }
       }
     } catch (err) {
-      log(`DESK   batch ${b + 1} error: ${err.message}`);
+      log(`DESK   batch ${b + 1} error: ${err?.message || err}`);
     }
     if (allEvents.length >= MAX_STORIES * 2) break;
   }
