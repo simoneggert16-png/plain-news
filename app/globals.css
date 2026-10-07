@@ -2283,6 +2283,16 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+.drawer-chip.pos {
+  background: rgba(46, 125, 50, 0.25);
+  color: #a5d6a7;
+  border-color: rgba(46, 125, 50, 0.4);
+}
+.drawer-chip.neg {
+  background: rgba(198, 40, 40, 0.25);
+  color: #ef9a9a;
+  border-color: rgba(198, 40, 40, 0.4);
+}
 .drawer-rating-pill {
   display: flex;
   flex-direction: column;

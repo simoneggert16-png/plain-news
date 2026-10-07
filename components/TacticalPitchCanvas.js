@@ -305,20 +305,32 @@ export default function TacticalPitchCanvas({
                 </div>
 
                 <div className="drawer-stats">
-                  {cur.stats?.passPct && (
-                    <span className="drawer-chip">👟 {cur.stats.passPct} Passquote</span>
-                  )}
-                  {cur.stats?.tackles !== undefined && (
-                    <span className="drawer-chip">🛡️ {cur.stats.tackles} Tackles</span>
-                  )}
-                  {cur.stats?.keyPasses !== undefined && (
-                    <span className="drawer-chip">🎯 {cur.stats.keyPasses} Key Passes</span>
-                  )}
-                  {cur.stats?.saves !== undefined && (
-                    <span className="drawer-chip">🧤 {cur.stats.saves} Paraden</span>
-                  )}
-                  {cur.stats?.SOG !== undefined && (
-                    <span className="drawer-chip">⚡ {cur.stats.SOG} Schüsse aufs Tor</span>
+                  {/* Positives */}
+                  {(cur.breakdown?.positives || []).map((posText, i) => (
+                    <span key={`pos-${i}`} className="drawer-chip pos">
+                      ✅ {posText}
+                    </span>
+                  ))}
+
+                  {/* Negatives (Ballverluste, verlorene Dribblings, Fouls) */}
+                  {(cur.breakdown?.negatives || []).map((negText, i) => (
+                    <span key={`neg-${i}`} className="drawer-chip neg">
+                      ⚠️ {negText}
+                    </span>
+                  ))}
+
+                  {(!cur.breakdown?.positives?.length && !cur.breakdown?.negatives?.length) && (
+                    <>
+                      {cur.stats?.passPct && (
+                        <span className="drawer-chip">👟 {cur.stats.passPct} Passquote</span>
+                      )}
+                      {cur.stats?.tackles > 0 && (
+                        <span className="drawer-chip">🛡️ {cur.stats.tackles} Tackles</span>
+                      )}
+                      {cur.stats?.keyPasses > 0 && (
+                        <span className="drawer-chip">🎯 {cur.stats.keyPasses} Key Passes</span>
+                      )}
+                    </>
                   )}
                 </div>
 
