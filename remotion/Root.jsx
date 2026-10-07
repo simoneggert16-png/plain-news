@@ -1,10 +1,22 @@
 import React from 'react';
 import { Composition } from 'remotion';
 import { PlainNewsReel } from './PlainNewsReel';
+import { PlainMotionAd } from './PlainMotionAd';
 
 export const RemotionRoot = () => {
   return (
     <>
+      {/* 1. Viral Premium Motion Ad (14 seconds, hook + manifesto + CTA) */}
+      <Composition
+        id="PlainMotionAd"
+        component={PlainMotionAd}
+        durationInFrames={420} // 14 seconds
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* 2. Single Story News Reel (10 seconds) */}
       <Composition
         id="PlainNewsReel"
         component={PlainNewsReel}
