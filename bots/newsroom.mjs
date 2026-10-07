@@ -47,6 +47,37 @@ async function pool(items, n, fn) {
 }
 
 // ─────────────────────────── 2. DESK ───────────────────────────
+// ─────────────────────────── DEDUPLICATION ENGINE ───────────────────────────
+const STOP_WORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'first', 'report', 'study', 'finds', 'announces', 'amid', 'during', 'could']);
+
+export function isDuplicateStory(candidateText, existingTitles = []) {
+  if (!candidateText || !existingTitles.length) return { isDup: false };
+  const getKeywords = (str) => {
+    return new Set(
+      str.toLowerCase()
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .split(/\s+/)
+        .filter((w) => w.length >= 4 && !STOP_WORDS.has(w))
+    );
+  };
+  const candWords = getKeywords(candidateText);
+  if (candWords.size === 0) return { isDup: false };
+
+  for (const existing of existingTitles) {
+    const existWords = getKeywords(existing);
+    let matchCount = 0;
+    for (const w of candWords) {
+      if (existWords.has(w)) matchCount++;
+    }
+    const overlap = matchCount / Math.min(candWords.size, existWords.size);
+    if ((matchCount >= 3 && overlap >= 0.45) || (matchCount >= 2 && overlap >= 0.65)) {
+      return { isDup: true, matchCount, overlap, matchingTitle: existing };
+    }
+  }
+  return { isDup: false };
+}
+
+// ─────────────────────────── 2. DESK ───────────────────────────
 async function desk(items, recentTitles, neededCategories = []) {
   const list = items.map((it, i) => `${i}|${it.outlet}|${it.title}`).join('\n');
   const { data } = await chatJSON('desk', [
@@ -60,13 +91,13 @@ IMPORTANT: Do NOT output thinking, analysis or preamble. Output ONLY a valid JSO
       content: `Headlines (id|outlet|headline):
 ${list}
 
-ALREADY PUBLISHED in the last 72 hours:
-${recentTitles.slice(0, 30).map((t) => '- ' + t).join('\n') || '- none'}
+ALREADY PUBLISHED ARCHIVE (DO NOT REPEAT ANY OF THESE STORIES):
+${recentTitles.slice(0, 150).map((t) => '- ' + t).join('\n') || '- none'}
 
 CRITICAL DEDUPLICATION RULE:
 - NEVER output an event that was already published above.
-- Only report an existing story if there is an urgent, game-changing NEW BREAKING DEVELOPMENT (e.g. an official peace accord, unexpected verdict, or dramatic escalation), and explicitly state the new development.
-- Otherwise, strictly choose FRESH events that have not been published yet.
+- If a story was covered in the archive above (e.g. Nobel Prize, past elections, previous strikes), IT IS FORBIDDEN to report it again unless there is a dramatic, game-changing NEW development.
+- Otherwise, strictly choose 100% FRESH events that have not been published yet.
 ${neededCategories.length ? `\nPRIORITY DESKS: We are actively building depth in these categories: ${neededCategories.join(', ')}. Prioritize events matching these topics.` : ''}
 
 Task: Identify real-world events.
@@ -86,6 +117,15 @@ Format response strictly as JSON:
   const events = (data.events || [])
     .map((e) => ({ ...e, ids: [...new Set((e.ids || []).map(Number))].filter((i) => items[i]) }))
     .filter((e) => CATEGORIES.includes(e.category))
+    .filter((e) => {
+      // Programmatic semantic deduplication gate
+      const dup = isDuplicateStory(e.event, recentTitles);
+      if (dup.isDup) {
+        log(`DESK   dropping duplicate event: "${e.event.slice(0, 50)}…" matches existing "${dup.matchingTitle.slice(0, 50)}…"`);
+        return false;
+      }
+      return true;
+    })
     .map((e) => ({ ...e, sources: e.ids.map((i) => items[i]), outlets: new Set(e.ids.map((i) => items[i].outlet)).size }))
     .filter((e) => {
       if (e.outlets >= 2) return true;
@@ -171,8 +211,8 @@ async function main() {
   log(`SCOUT  ${feedsOk}/${FEEDS.length} feeds ok, ${raw.length} items, ${items.length} unseen`);
   if (items.length < 5) return log('Nothing new. Done.');
 
-  const recent = index.articles.filter((a) => Date.now() - Date.parse(a.publishedAt) < 48 * 3600e3);
-  const recentTitles = recent.map((a) => a.locales?.[SOURCE_LOCALE]?.title).filter(Boolean);
+  // Full archive deduplication: check against all published articles (up to 200)
+  const recentTitles = index.articles.map((a) => a.locales?.[SOURCE_LOCALE]?.title || a.title).filter(Boolean);
 
   const categoryCounts = {};
   for (const c of CATEGORIES) categoryCounts[c] = 0;
@@ -274,6 +314,13 @@ async function main() {
         ({ review } = await editor(event, final));
         if (validArticle(review.article)) final = review.article;
         if (slopHits(final).length) { log('  SLOP   still present → dropped'); continue; }
+      }
+
+      // Final programmatic semantic duplicate check against full archive
+      const dupFinal = isDuplicateStory(final.title, recentTitles);
+      if (dupFinal.isDup) {
+        log(`  DEDUP  final title matches existing story: "${dupFinal.matchingTitle}" → dropped`);
+        continue;
       }
 
       const category = CATEGORIES.includes(final.category) ? final.category : event.category;
