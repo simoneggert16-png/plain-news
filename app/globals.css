@@ -2007,6 +2007,22 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   color: #c93b2b;
   letter-spacing: 0.08em;
 }
+.match-formation-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+.match-rating-comp {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.08);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-top: 4px;
+}
 .match-venue-row {
   display: flex;
   align-items: center;
@@ -2058,6 +2074,201 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
 .match-tab-content {
   padding: 20px;
 }
+/* Lineup Sub-view Switcher & Legend */
+.lineup-view-toggle-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.lineup-sub-buttons {
+  display: flex;
+  gap: 8px;
+}
+.lineup-toggle-btn {
+  padding: 6px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.lineup-toggle-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.rating-legend-compact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+/* Tactical Pitch Section */
+.tactical-pitch-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pitch-teams-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #1e2225;
+  color: #fff;
+  border: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pitch-team-left, .pitch-team-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pitch-center-vs {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 0.1em;
+}
+.pitch-sys-badge {
+  background: #333d42;
+  color: #4ade80;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 11px;
+}
+.pitch-coach-name {
+  font-size: 10px;
+  color: #9ca3af;
+  font-weight: normal;
+}
+.tactical-pitch-container {
+  position: relative;
+  width: 100%;
+  background: #181c1f;
+  border: 2px solid var(--ink);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.tactical-pitch-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Top Performers Showcase */
+.top-performers-showcase {
+  margin-top: 4px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 14px;
+}
+.performer-heading {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.performer-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.performer-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+.performer-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+.performer-info {
+  flex: 1;
+  min-width: 0;
+}
+.performer-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.performer-role {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+}
+.performer-rating-pill {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 900;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 3px;
+  min-width: 32px;
+  text-align: center;
+}
+.motm-badge {
+  font-size: 9px;
+  font-weight: 900;
+  background: #1b5e20;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+.player-photo-sub {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+.player-photo-placeholder.sub {
+  width: 28px;
+  height: 28px;
+  font-size: 11px;
+}
+
 .team-selector-switch {
   display: flex;
   gap: 8px;
