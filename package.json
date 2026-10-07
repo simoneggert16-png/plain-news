@@ -8,13 +8,18 @@
     "build": "next build",
     "start": "next start",
     "bot:newsroom": "node bots/newsroom.mjs",
-    "bot:maintenance": "node bots/maintenance.mjs"
+    "bot:maintenance": "node bots/maintenance.mjs",
+    "remotion:studio": "remotion studio remotion/index.js",
+    "remotion:render": "remotion render remotion/index.js PlainNewsReel out/reel.mp4"
   },
   "dependencies": {
+    "@remotion/cli": "^4.0.533",
+    "@remotion/player": "^4.0.533",
     "@vercel/analytics": "^2.0.1",
     "next": "^15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.533"
   },
   "devDependencies": {
     "rss-parser": "^3.13.0"
