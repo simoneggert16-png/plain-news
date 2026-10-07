@@ -26,11 +26,11 @@ async function runCycle() {
   const timestamp = new Date().toISOString();
   console.log(`\n[${timestamp}] Starting newsroom ingest cycle (Target: 2 fresh stories)...`);
   try {
-    // 1. Run newsroom bot with 10-minute timeout safeguard
+    // 1. Run newsroom bot with 15-minute timeout safeguard (translating 2 stories to 9 langs takes ~5-7 min)
     execSync('node bots/newsroom.mjs', {
       stdio: 'inherit',
       env: process.env,
-      timeout: 10 * 60 * 1000,
+      timeout: 15 * 60 * 1000,
     });
 
     // 2. Check if new stories were published in content/
