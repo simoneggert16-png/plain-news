@@ -326,12 +326,40 @@ export async function GET(request, { params }) {
       text: e.text || '',
     })).filter((e) => e.text);
 
-    // Live Commentary (Play-by-play)
-    const commentary = (sum.commentary || []).slice(0, 30).map((c) => ({
-      clock: c.time?.displayValue || '',
-      text: c.text || '',
-      isKey: c.type?.id === 'goal' || c.type?.id === 'card',
-    }));
+    // Live Commentary (Play-by-play) - Reverse chronological: newest events on top!
+    const rawCommentary = sum.commentary || [];
+    const commentary = [...rawCommentary].reverse().map((c) => {
+      const text = c.text || '';
+      const clock = c.time?.displayValue || '';
+      const isGoal = text.startsWith('Goal!') || text.toLowerCase().includes('converts the penalty');
+      const isRed = text.includes('shown the red card');
+      const isYellow = text.includes('shown the yellow card');
+      const isSub = text.startsWith('Substitution,');
+
+      let eventType = null;
+      let label = null;
+      if (isGoal) {
+        eventType = 'goal';
+        label = 'TOR';
+      } else if (isRed) {
+        eventType = 'red_card';
+        label = 'ROT';
+      } else if (isYellow) {
+        eventType = 'yellow_card';
+        label = 'GELB';
+      } else if (isSub) {
+        eventType = 'sub';
+        label = 'WECHSEL';
+      }
+
+      return {
+        clock,
+        text,
+        type: eventType,
+        typeLabel: label,
+        isKey: Boolean(eventType) || c.type?.id === 'goal' || c.type?.id === 'card',
+      };
+    });
 
     return NextResponse.json({
       header: matchHeader,

@@ -6,8 +6,8 @@ import TacticalPitchCanvas from './TacticalPitchCanvas';
 export default function MatchCenterView({ matchId = '401921408', locale = 'de' }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('lineups'); // 'lineups' | 'stats' | 'timeline'
-  const [lineupSubView, setLineupSubView] = useState('pitch'); // 'pitch' | 'list'
+  const [activeTab, setActiveTab] = useState('timeline'); // 'timeline' | 'lineups' | 'stats'
+  const [lineupSubView, setLineupSubView] = useState('list'); // 'list' | 'pitch'
   const [selectedTeam, setSelectedTeam] = useState('home'); // 'home' | 'away'
   const [countdown, setCountdown] = useState(15);
 
@@ -391,11 +391,23 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
       {/* ── 5. TAB: TIMELINE & LIVETICKER ── */}
       {activeTab === 'timeline' && (
         <div className="match-tab-content timeline-tab">
-          <div className="timeline-list">
+          <div className="timeline-header-bar">
+            <span className="timeline-heading-title">{isDe ? 'SPIELVERLAUF & LIVETICKER' : 'MATCH COMMENTARY & TIMELINE'}</span>
+            <span className="timeline-order-badge">{isDe ? 'NEUESTE AKTIONEN ZUERST' : 'LATEST ACTIONS FIRST'}</span>
+          </div>
+
+          <div className="timeline-list scrollable-timeline">
             {commentary.length > 0 ? (
               commentary.map((c, i) => (
-                <div key={i} className={`timeline-entry ${c.isKey ? 'highlight' : ''}`}>
-                  <div className="timeline-clock">{c.clock || 'LIVE'}</div>
+                <div key={i} className={`timeline-entry ${c.isKey ? 'highlight' : ''} ${c.type || ''}`}>
+                  <div className="timeline-left-col">
+                    <span className="timeline-clock">{c.clock || 'LIVE'}</span>
+                    {c.typeLabel && (
+                      <span className={`timeline-event-badge ${c.type}`}>
+                        {c.typeLabel}
+                      </span>
+                    )}
+                  </div>
                   <div className="timeline-content">
                     <p>{c.text}</p>
                   </div>
@@ -404,7 +416,9 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
             ) : (
               events.map((e, i) => (
                 <div key={i} className="timeline-entry">
-                  <div className="timeline-clock">{e.clock || '•'}</div>
+                  <div className="timeline-left-col">
+                    <span className="timeline-clock">{e.clock || '•'}</span>
+                  </div>
                   <div className="timeline-content">
                     <strong>{e.type}</strong>
                     <p>{e.text}</p>

@@ -29,7 +29,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
   const [intervalSec, setIntervalSec] = useState(180); // default: 3 min
   const [countdown, setCountdown] = useState(180);
   const [lastUpdated, setLastUpdated] = useState(null);
-  const [showMatchCenter, setShowMatchCenter] = useState(true);
+  const [showMatchCenter, setShowMatchCenter] = useState(false);
 
   const isDe = locale === 'de';
 
@@ -216,7 +216,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span className="live-dot-pulse" style={{ width: 8, height: 8, borderRadius: '50%', background: '#c93b2b', display: 'inline-block' }} />
-              <span>LIVE MATCH CENTER · ARGENTINIEN VS. BENIN (MESSI ABSCHIEDSSPIEL)</span>
+              <span>LIVE · ARGENTINIEN 3:0 BENIN · MESSI ABSCHIEDSSPIEL</span>
             </div>
             <button
               type="button"
@@ -232,7 +232,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
                 cursor: 'pointer',
               }}
             >
-              {showMatchCenter ? (isDe ? '▲ ZUKLAPPEN' : '▲ COLLAPSE') : (isDe ? '▼ SOFASCORE LIVE ÖFFNEN' : '▼ OPEN SOFASCORE VIEW')}
+              {showMatchCenter ? (isDe ? '▲ ZUKLAPPEN' : '▲ COLLAPSE') : (isDe ? '▼ SPIELDETAILS & TICKER ANZEIGEN' : '▼ SHOW MATCH DETAILS & TIMELINE')}
             </button>
           </div>
 

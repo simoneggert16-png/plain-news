@@ -23,8 +23,8 @@ function calculatePlayerPositions(players = [], formationStr = '4-3-3', isHome =
   const W = 1000;
   const H = 640;
 
-  const startX = isHome ? 60 : 940;
-  const endX = isHome ? 440 : 560;
+  const startX = isHome ? 70 : 930;
+  const endX = isHome ? 410 : 590;
 
   const positions = [];
   let playerIdx = 0;
@@ -176,8 +176,8 @@ export default function TacticalPitchCanvas({
                 cx="0"
                 cy="0"
                 r={radius}
-                fill="#ffffff"
-                stroke={isSelected ? '#ffffff' : p.isHome ? '#75AADB' : '#008751'}
+                fill={p.headshot ? '#ffffff' : (p.isHome ? '#1a2327' : '#14251b')}
+                stroke={isSelected ? '#ffffff' : p.isHome ? '#75AADB' : '#4ade80'}
                 strokeWidth={2}
                 filter="url(#nodeShadow)"
               />
@@ -187,7 +187,7 @@ export default function TacticalPitchCanvas({
                 <circle cx="0" cy="0" r={radius - 1} />
               </clipPath>
 
-              {/* Player Image or Initials Fallback */}
+              {/* Player Image or Squad Number Fallback */}
               {p.headshot ? (
                 <image
                   href={p.headshot}
@@ -201,14 +201,14 @@ export default function TacticalPitchCanvas({
               ) : (
                 <text
                   x="0"
-                  y="6"
+                  y="5.5"
                   textAnchor="middle"
-                  fill="#111111"
-                  fontSize="14"
-                  fontWeight="bold"
-                  fontFamily="system-ui, sans-serif"
+                  fill="#ffffff"
+                  fontSize="13"
+                  fontWeight="900"
+                  fontFamily="'SF Mono', Menlo, monospace"
                 >
-                  {p.name ? p.name.charAt(0) : p.jersey}
+                  {p.jersey || (p.name ? p.name.charAt(0) : '')}
                 </text>
               )}
 
