@@ -6,6 +6,21 @@
 //   4. EDITOR     separate model fact-checks the draft against sources → publish / revise / reject
 //   5. TRANSLATOR translate into all site languages
 //   6. PUBLISH    write JSON → git commit → Vercel redeploys
+import fs from 'node:fs';
+
+if (fs.existsSync('.env')) {
+  const envContent = fs.readFileSync('.env', 'utf8');
+  for (const line of envContent.split('\n')) {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
+      const idx = trimmed.indexOf('=');
+      const key = trimmed.slice(0, idx).trim();
+      const val = trimmed.slice(idx + 1).trim();
+      if (!process.env[key]) process.env[key] = val;
+    }
+  }
+}
+
 import { FEEDS } from './sources.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { chatJSON } from './lib/llm.mjs';
@@ -16,8 +31,8 @@ import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
 
-const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 8);
-const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 3);
+const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 2);
+const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 1);
 const log = (...a) => {
   process.stdout.write(`${new Date().toISOString().slice(11, 19)} ${a.join(' ')}\n`);
 };
@@ -338,6 +353,7 @@ async function main() {
   state.runs = [{ at: new Date().toISOString(), feedsOk, items: items.length, events: events.length, published: published.length }, ...(state.runs || [])].slice(0, 50);
   saveState(state);
   log(`\nDone. Published ${published.length} stories.`);
+  process.exit(0);
 }
 
 main().catch((e) => {
