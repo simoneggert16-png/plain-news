@@ -2054,8 +2054,15 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   color: var(--ink);
   flex-wrap: wrap;
 }
-.scorer-icon {
-  font-size: 13px;
+.scorer-type-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: #1b5e20;
+  color: #ffffff;
+  padding: 1px 5px;
+  border-radius: 2px;
 }
 .scorer-minute {
   font-family: var(--mono);
@@ -2073,6 +2080,7 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   font-size: 12px;
   color: #0277bd;
   font-weight: 600;
+  font-family: var(--mono);
 }
 .scorer-team {
   font-family: var(--mono);
@@ -2080,17 +2088,21 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   color: var(--muted);
 }
 .performer-icon-badge {
-  font-size: 18px;
-  width: 32px;
-  height: 32px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding: 4px 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e8f5e9;
-  border-radius: 50%;
+  background: #1b5e20;
+  color: #ffffff;
+  border-radius: 2px;
 }
 .performer-icon-badge.assist {
-  background: #e1f5fe;
+  background: #0277bd;
+  color: #ffffff;
 }
 .player-stat-tag.assist {
   background: #e1f5fe;
@@ -2098,11 +2110,47 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   border-color: #0277bd;
   font-weight: bold;
 }
-.player-stat-tag.card {
+.player-stat-tag.card-tag.yellow {
   background: #fff9c4;
-  color: #f57f17;
-  border-color: #f57f17;
+  color: #b78103;
+  border-color: #fbc02d;
   font-weight: bold;
+}
+.player-stat-tag.card-tag.red {
+  background: #ffebee;
+  color: #c62828;
+  border-color: #c62828;
+  font-weight: bold;
+}
+.player-stat-tag.sub {
+  background: var(--paper-2);
+  color: var(--muted);
+  border-color: var(--rule);
+  font-weight: 600;
+}
+.drawer-chip.goal {
+  background: rgba(46, 125, 50, 0.35);
+  color: #a5d6a7;
+  border-color: rgba(46, 125, 50, 0.5);
+  font-weight: 700;
+}
+.drawer-chip.assist {
+  background: rgba(2, 119, 189, 0.35);
+  color: #81d4fa;
+  border-color: rgba(2, 119, 189, 0.5);
+  font-weight: 700;
+}
+.drawer-chip.card-chip.yellow {
+  background: rgba(251, 192, 45, 0.25);
+  color: #fff59d;
+  border-color: rgba(251, 192, 45, 0.5);
+  font-weight: 700;
+}
+.drawer-chip.card-chip.red {
+  background: rgba(198, 40, 40, 0.35);
+  color: #ef9a9a;
+  border-color: rgba(198, 40, 40, 0.5);
+  font-weight: 700;
 }
 
 .match-venue-row {

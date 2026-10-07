@@ -20,6 +20,14 @@ async function capture() {
     await el.scrollIntoView();
     await el.screenshot({ path: 'C:/Users/Simon/.gemini/antigravity/brain/2ca82bd4-4e93-4750-a352-322d18846780/match_center_facts_proof.png' });
     console.log('Facts-only MatchCenter screenshot captured!');
+
+    const toggleBtns = await page.$$('.lineup-toggle-btn');
+    if (toggleBtns[1]) {
+      await toggleBtns[1].click();
+      await new Promise(r => setTimeout(r, 800));
+      await el.screenshot({ path: 'C:/Users/Simon/.gemini/antigravity/brain/2ca82bd4-4e93-4750-a352-322d18846780/match_center_list_no_emojis.png' });
+      console.log('Facts-only List screenshot captured!');
+    }
   }
 
   await browser.close();

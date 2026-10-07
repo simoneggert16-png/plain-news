@@ -110,12 +110,12 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
             <div className="scorers-list">
               {goals.map((g, i) => (
                 <div key={i} className="scorer-item">
-                  <span className="scorer-icon">⚽</span>
+                  <span className="scorer-type-badge">TOR</span>
                   <span className="scorer-minute">{g.clock}</span>
                   <strong className="scorer-name">{g.scorer}</strong>
                   {g.assist && (
                     <span className="scorer-assist">
-                      (👟 Vorlage: {g.assist})
+                      · Vorlage: {g.assist}
                     </span>
                   )}
                   <span className="scorer-team">({g.teamName})</span>
@@ -126,7 +126,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
         )}
 
         <div className="match-venue-row">
-          <span>📍 {header.venue}</span>
+          <span>Spielort: {header.venue}</span>
           <span>•</span>
           <span className="match-note-highlight">{header.note}</span>
         </div>
@@ -139,21 +139,21 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
           className={`match-tab-btn ${activeTab === 'lineups' ? 'active' : ''}`}
           onClick={() => setActiveTab('lineups')}
         >
-          {isDe ? '🏟️ Aufstellung & Formation' : '🏟️ Lineup & Formation'}
+          {isDe ? 'Aufstellung & Formation' : 'Lineup & Formation'}
         </button>
         <button
           type="button"
           className={`match-tab-btn ${activeTab === 'stats' ? 'active' : ''}`}
           onClick={() => setActiveTab('stats')}
         >
-          {isDe ? '📊 Spiel-Statistiken' : '📊 Match Statistics'}
+          {isDe ? 'Spiel-Statistiken' : 'Match Statistics'}
         </button>
         <button
           type="button"
           className={`match-tab-btn ${activeTab === 'timeline' ? 'active' : ''}`}
           onClick={() => setActiveTab('timeline')}
         >
-          {isDe ? '⚡ Liveticker & Highlights' : '⚡ Live Timeline'}
+          {isDe ? 'Liveticker & Highlights' : 'Live Timeline'}
         </button>
       </div>
 
@@ -168,14 +168,14 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                 className={`lineup-toggle-btn ${lineupSubView === 'pitch' ? 'active' : ''}`}
                 onClick={() => setLineupSubView('pitch')}
               >
-                🏟️ {isDe ? 'Taktisches Spielfeld' : 'Tactical Pitch'}
+                {isDe ? 'Taktisches Spielfeld' : 'Tactical Pitch'}
               </button>
               <button
                 type="button"
                 className={`lineup-toggle-btn ${lineupSubView === 'list' ? 'active' : ''}`}
                 onClick={() => setLineupSubView('list')}
               >
-                📋 {isDe ? 'Kader & Aufstellung' : 'Squad & Lineup'}
+                {isDe ? 'Kader & Aufstellung' : 'Squad & Lineup'}
               </button>
             </div>
           </div>
@@ -216,16 +216,16 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                   <div className="performer-cards-grid">
                     {goals.map((g, idx) => (
                       <div key={`g-${idx}`} className="performer-card">
-                        <div className="performer-icon-badge">⚽</div>
+                        <div className="performer-icon-badge">TOR</div>
                         <div className="performer-info">
                           <div className="performer-name">{g.scorer}</div>
-                          <div className="performer-role">Tor in Minute {g.clock} ({g.teamName})</div>
+                          <div className="performer-role">Minute {g.clock} ({g.teamName})</div>
                         </div>
                       </div>
                     ))}
                     {assisters.map((a, idx) => (
                       <div key={`a-${idx}`} className="performer-card">
-                        <div className="performer-icon-badge assist">👟</div>
+                        <div className="performer-icon-badge assist">AST</div>
                         <div className="performer-info">
                           <div className="performer-name">{a.name}</div>
                           <div className="performer-role">{a.assists} {a.assists === 1 ? 'Torvorlage' : 'Torvorlagen'}</div>
@@ -292,24 +292,24 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
 
                     <div className="player-right">
                       {player.goals > 0 && (
-                        <span className="player-stat-tag goal">⚽ {player.goals} {player.goals === 1 ? 'Tor' : 'Tore'}</span>
+                        <span className="player-stat-tag goal">TOR: {player.goals}</span>
                       )}
                       {player.assists > 0 && (
-                        <span className="player-stat-tag assist">👟 {player.assists} {player.assists === 1 ? 'Vorlage' : 'Vorlagen'}</span>
+                        <span className="player-stat-tag assist">VORLAGE: {player.assists}</span>
                       )}
                       {player.card && (
-                        <span className="player-stat-tag card">
-                          {player.card.isRed ? '🟥' : '🟨'} {player.card.clock}
+                        <span className={`player-stat-tag card-tag ${player.card.isRed ? 'red' : 'yellow'}`}>
+                          {player.card.isRed ? 'ROT' : 'GELB'} {player.card.clock}
                         </span>
                       )}
                       {player.sub?.replacedBy && (
-                        <span className="player-stat-tag sub">🔄 {player.sub.clock}</span>
+                        <span className="player-stat-tag sub">AUS ({player.sub.clock})</span>
                       )}
                       {player.stats?.shotsOnTarget > 0 && (
-                        <span className="player-stat-tag">🎯 {player.stats.shotsOnTarget} Torschüsse</span>
+                        <span className="player-stat-tag">{player.stats.shotsOnTarget} Torschüsse</span>
                       )}
                       {player.stats?.saves > 0 && (
-                        <span className="player-stat-tag">🧤 {player.stats.saves} Paraden</span>
+                        <span className="player-stat-tag">{player.stats.saves} Paraden</span>
                       )}
                     </div>
                   </div>
@@ -339,10 +339,10 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                         </div>
                         <div className="player-right">
                           {player.goals > 0 && (
-                            <span className="player-stat-tag goal">⚽ {player.goals} Tor</span>
+                            <span className="player-stat-tag goal">TOR: {player.goals}</span>
                           )}
                           {player.sub?.replaces && (
-                            <span className="player-stat-tag sub">🔄 Eingewechselt ({player.sub.clock})</span>
+                            <span className="player-stat-tag sub">EIN ({player.sub.clock})</span>
                           )}
                         </div>
                       </div>
@@ -419,7 +419,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
       {/* ── 6. TRANSPARENCY ATTRIBUTION ── */}
       <div className="match-center-footer">
         <p className="attribution-note">
-          ℹ️ {attribution}
+          {attribution}
         </p>
       </div>
     </div>

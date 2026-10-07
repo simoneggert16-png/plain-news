@@ -212,41 +212,43 @@ export default function TacticalPitchCanvas({
                 </text>
               )}
 
-              {/* Goalscorer Badge (⚽) */}
+              {/* Goalscorer Badge (G) */}
               {p.goals > 0 && (
                 <g transform="translate(14, -14)">
-                  <circle cx="0" cy="0" r="10" fill="#1b5e20" stroke="#ffffff" strokeWidth="1.5" />
+                  <circle cx="0" cy="0" r="9" fill="#1b5e20" stroke="#ffffff" strokeWidth="1.5" />
                   <text
                     x="0"
-                    y="4"
+                    y="3.5"
                     textAnchor="middle"
                     fill="#ffffff"
-                    fontSize="11"
-                    fontFamily="sans-serif"
+                    fontSize="9"
+                    fontWeight="900"
+                    fontFamily="'SF Mono', Menlo, monospace"
                   >
-                    ⚽
+                    {p.goals > 1 ? `${p.goals}G` : 'G'}
                   </text>
                 </g>
               )}
 
-              {/* Assister Badge (👟) */}
+              {/* Assister Badge (A) */}
               {p.assists > 0 && !p.goals && (
                 <g transform="translate(14, -14)">
-                  <circle cx="0" cy="0" r="10" fill="#0277bd" stroke="#ffffff" strokeWidth="1.5" />
+                  <circle cx="0" cy="0" r="9" fill="#0277bd" stroke="#ffffff" strokeWidth="1.5" />
                   <text
                     x="0"
-                    y="4"
+                    y="3.5"
                     textAnchor="middle"
                     fill="#ffffff"
-                    fontSize="11"
-                    fontFamily="sans-serif"
+                    fontSize="9"
+                    fontWeight="900"
+                    fontFamily="'SF Mono', Menlo, monospace"
                   >
-                    👟
+                    {p.assists > 1 ? `${p.assists}A` : 'A'}
                   </text>
                 </g>
               )}
 
-              {/* Yellow / Red Card Badge */}
+              {/* Yellow / Red Card Badge (Sharp Vector Rectangle) */}
               {p.card && (
                 <g transform={`translate(-18, -14)`}>
                   <rect
@@ -254,7 +256,7 @@ export default function TacticalPitchCanvas({
                     y="-6"
                     width="8"
                     height="12"
-                    rx="1.5"
+                    rx="1"
                     fill={p.card.isRed ? '#c62828' : '#ffd600'}
                     stroke="#111"
                     strokeWidth="0.8"
@@ -349,27 +351,27 @@ export default function TacticalPitchCanvas({
 
                 <div className="drawer-stats">
                   {cur.goals > 0 && (
-                    <span className="drawer-chip goal">⚽ {cur.goals} {cur.goals === 1 ? 'Tor' : 'Tore'}</span>
+                    <span className="drawer-chip goal">TOR: {cur.goals}</span>
                   )}
                   {cur.assists > 0 && (
-                    <span className="drawer-chip assist">👟 {cur.assists} {cur.assists === 1 ? 'Vorlage' : 'Vorlagen'}</span>
+                    <span className="drawer-chip assist">VORLAGE: {cur.assists}</span>
                   )}
                   {cur.card && (
-                    <span className="drawer-chip card">
-                      {cur.card.isRed ? '🟥 Rote Karte' : '🟨 Gelbe Karte'} ({cur.card.clock})
+                    <span className={`drawer-chip card-chip ${cur.card.isRed ? 'red' : 'yellow'}`}>
+                      {cur.card.isRed ? 'ROTE KARTE' : 'GELBE KARTE'} ({cur.card.clock})
                     </span>
                   )}
                   {cur.sub?.replacedBy && (
-                    <span className="drawer-chip sub">🔄 Ausgewechselt ({cur.sub.clock})</span>
+                    <span className="drawer-chip sub">AUSGEWECHSELT ({cur.sub.clock})</span>
                   )}
                   {cur.sub?.replaces && (
-                    <span className="drawer-chip sub">🔄 Eingewechselt ({cur.sub.clock})</span>
+                    <span className="drawer-chip sub">EINGEWECHSELT ({cur.sub.clock})</span>
                   )}
                   {cur.stats?.shotsOnTarget > 0 && (
-                    <span className="drawer-chip">🎯 {cur.stats.shotsOnTarget} Schüsse aufs Tor</span>
+                    <span className="drawer-chip">{cur.stats.shotsOnTarget} Torschüsse</span>
                   )}
                   {cur.stats?.saves > 0 && (
-                    <span className="drawer-chip">🧤 {cur.stats.saves} Paraden</span>
+                    <span className="drawer-chip">{cur.stats.saves} Paraden</span>
                   )}
                 </div>
               </div>
