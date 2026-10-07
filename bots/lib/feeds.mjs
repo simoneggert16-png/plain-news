@@ -57,16 +57,19 @@ export async function fetchArticleDetails(url, maxChars = 3500) {
 
     // Extract images, prioritizing non-junk editorial photojournalism
     const candidateImages = extractImagesFromHtml(html);
-    const image = candidateImages.length > 0 ? candidateImages.sort((a, b) => b.score - a.score)[0].url : null;
+    const top = candidateImages.length > 0 ? candidateImages.sort((a, b) => b.score - a.score)[0] : null;
+    const image = top ? top.url : null;
+    const imageCaption = top ? top.caption : null;
+    const imageCredit = top ? top.credit : null;
 
     const stripped = html.replace(/<(script|style|noscript|svg|nav|footer|header|aside|form)[\s\S]*?<\/\1>/gi, ' ');
     const paras = [...stripped.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
       .map((m) => clean(m[1]))
       .filter((p) => p.length > 60 && !/cookie|subscribe|sign up|newsletter|advertis|all rights reserved|javascript/i.test(p));
 
-    return { text: paras.join('\n').slice(0, maxChars), image, video };
+    return { text: paras.join('\n').slice(0, maxChars), image, imageCaption, imageCredit, video };
   } catch {
-    return { text: '', image: null, video: null };
+    return { text: '', image: null, imageCaption: null, imageCredit: null, video: null };
   }
 }
 

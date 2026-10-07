@@ -152,26 +152,45 @@ export function extractImagesFromHtml(html) {
   if (!html) return [];
   const list = [];
 
+  // Extract primary figcaption if present in the document
+  const fig = html.match(/<figcaption[^>]*>([\s\S]*?)<\/figcaption>/i);
+  let pageCaption = '';
+  let pageCredit = '';
+  if (fig && fig[1]) {
+    const raw = fig[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    const creditMatch = raw.match(/\[(?:File:?\s*)?([^\]]+)\]|\((?:Photo(?:\s+by)?:\s*)?([^\)]+)\)/i);
+    if (creditMatch) {
+      pageCredit = (creditMatch[1] || creditMatch[2]).trim();
+    }
+    pageCaption = raw.replace(/\[[^\]]+\]|\([^\)]+\)/g, '').trim();
+  }
+
   // OpenGraph image
   const og = html.match(/<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]+content=["']([^"']+)["']/i) ||
              html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::secure_url)?["']/i);
-  if (og && og[1] && !isJunkImage(og[1])) list.push({ url: og[1], score: 8 });
+  if (og && og[1] && !isJunkImage(og[1])) list.push({ url: og[1], score: 8, caption: pageCaption, credit: pageCredit });
 
   // Twitter image
   const tw = html.match(/<meta[^>]+name=["']twitter:image(?::src)?["'][^>]+content=["']([^"']+)["']/i) ||
              html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image(?::src)?["']/i);
-  if (tw && tw[1] && !isJunkImage(tw[1])) list.push({ url: tw[1], score: 7 });
+  if (tw && tw[1] && !isJunkImage(tw[1])) list.push({ url: tw[1], score: 7, caption: pageCaption, credit: pageCredit });
 
   // Editorial article lead image
   const articleImg = html.match(/<article[\s\S]*?<img[^>]+src=["']([^"']+)["'][^>]*>/i);
-  if (articleImg && articleImg[1] && !isJunkImage(articleImg[1])) list.push({ url: articleImg[1], score: 9 });
+  if (articleImg && articleImg[1] && !isJunkImage(articleImg[1])) {
+    const altMatch = articleImg[0].match(/alt=["']([^"']+)["']/i);
+    const altText = altMatch ? altMatch[1].trim() : '';
+    list.push({ url: articleImg[1], score: 9, caption: pageCaption || altText, credit: pageCredit });
+  }
 
   return list;
 }
 
-/** Score and select highest quality image and video from source material. */
+/** Score and select highest quality image, real caption, and video from source material. */
 export function curateMedia(sources = []) {
   let bestImage = null;
+  let bestCaption = null;
+  let bestCredit = null;
   let bestVideo = null;
   let highestScore = -1;
 
@@ -182,18 +201,22 @@ export function curateMedia(sources = []) {
 
     if (s.image && !isJunkImage(s.image)) {
       let score = 5;
-      // High-res photojournalism domains get bonus score
-      if (/aljazeera|spiegel|nytimes|reuters|apnews|gettyimages|afp/i.test(s.image)) score += 5;
+      if (/aljazeera|spiegel|nytimes|reuters|apnews|gettyimages|afp|tagesschau/i.test(s.image)) score += 5;
       if (/1920|1440|1080|1200/i.test(s.image)) score += 3;
+      if (s.caption) score += 4; // Prioritize images with verified photographer captions!
       if (score > highestScore) {
         highestScore = score;
         bestImage = s.image;
+        bestCaption = s.caption || null;
+        bestCredit = s.credit || null;
       }
     }
   }
 
   return {
     image: bestImage,
+    caption: bestCaption,
+    credit: bestCredit,
     video: bestVideo,
   };
 }

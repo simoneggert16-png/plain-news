@@ -292,6 +292,8 @@ async function main() {
         const details = await fetchArticleDetails(s.url);
         s.text = details.text;
         s.image = details.image;
+        s.imageCaption = details.imageCaption;
+        s.imageCredit = details.imageCredit;
         s.video = details.video;
       });
       event.sources = reading;
@@ -328,6 +330,7 @@ async function main() {
 
       // Multimodal double-check & captioning
       let imageCaption = null;
+      let imageCaptionDe = null;
       let imageCredit = null;
       let verifiedImage = heroImage;
       if (heroImage) {
@@ -337,11 +340,14 @@ async function main() {
           title: final.title,
           facts: final.facts,
           sources: event.sources,
+          sourceCaption: media.caption,
+          sourceCredit: media.credit,
         }).catch(() => null);
 
         if (vResult?.verified === true) {
-          imageCaption = vResult.caption?.en || final.title;
-          imageCredit = vResult.credit || event.sources[0]?.outlet || null;
+          imageCaption = vResult.caption?.en || media.caption || final.title;
+          imageCaptionDe = vResult.caption?.de || null;
+          imageCredit = vResult.credit || media.credit || event.sources[0]?.outlet || null;
           log(`  VISION verified: "${imageCaption.slice(0, 60)}…" (Credit: ${imageCredit})`);
         } else {
           log(`  VISION rejected or unverified image; removing.`);
@@ -376,8 +382,14 @@ async function main() {
       log(`  TRANSLATOR → ${targets.join(', ')}`);
       const translations = await pool(targets, 4, (l) => translate(article.locales[SOURCE_LOCALE], l));
       targets.forEach((l, i) => {
-        if (translations[i] && !translations[i].error) article.locales[l] = translations[i];
-        else log(`    ✗ ${l}: ${translations[i]?.error?.message}`);
+        if (translations[i] && !translations[i].error) {
+          article.locales[l] = translations[i];
+          if (l === 'de' && imageCaptionDe) {
+            article.locales['de'].imageCaption = imageCaptionDe;
+          }
+        } else {
+          log(`    ✗ ${l}: ${translations[i]?.error?.message}`);
+        }
       });
 
       saveArticle(article);

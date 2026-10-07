@@ -56,37 +56,36 @@ export async function verifyAndCaptionImage(imageUrl, storyContext = {}) {
   }
 
   const base64 = quality.buffer.toString('base64');
+  const sourceCaption = storyContext.sourceCaption || '';
+  const sourceCredit = storyContext.sourceCredit || '';
 
   const prompt = `You are the Senior Photo Editor for PLAIN, an unbiased global news wire.
 Story Category: ${storyContext.category || 'news'}
 Story Title: ${storyContext.title || ''}
 Key Facts: ${(storyContext.facts || []).slice(0, 3).join('; ')}
 Source Outlets: ${(storyContext.sources || []).map(s => s.outlet).join(', ')}
+${sourceCaption ? `ORIGINAL PHOTOJOURNALIST CAPTION FROM WIRE (GROUND TRUTH): "${sourceCaption}"` : ''}
+${sourceCredit ? `ORIGINAL PHOTO CREDIT: "${sourceCredit}"` : ''}
 
 Examine this image carefully:
-AUTOMATIC REJECTION RULES (You MUST set "verified": false):
-1. TV news studio set, newsroom desk, or broadcast graphic (e.g. Fox News Flash Headlines, CNN alert, broadcast overlay, lower-third graphic).
-2. TV news anchor headshot, talking head, or generic microphone cluster.
-3. Logo graphic, network watermark, stock illustration, 3D icon, or chart.
-4. The image does NOT directly depict the primary real-world actors, physical event, or location described in the headline.
-5. Low quality, blurry, or generic stock photo.
+CRITICAL ACCURACY & IDENTITY RULES:
+1. DO NOT ASSUME the person in the image is the person named in the article headline! News articles frequently illustrate stories with opposition politicians, supporters, voters, or spokespersons (e.g. an article about Friedrich Merz reacting to election gains may be illustrated with a photo of AfD politician Ulrich Siegmund).
+2. If an ORIGINAL PHOTOJOURNALIST CAPTION is provided above, you MUST treat it as authoritative ground truth regarding WHO is depicted. Translate and adapt that caption cleanly into German and English.
+3. If no wire caption is available and you are not 100% certain of an individual's name, describe what is visibly happening (e.g. "AfD-Politiker auf einer Wahlbühne", "Abgeordnete im Plenarsaal", "Demonstranten vor dem Regierungsgebäude"). NEVER hallucinate or guess a politician's name from the headline!
+4. Automatic rejection: reject TV studio screenshots, news anchor talking heads, lower-third graphics, stock illustrations, or blurred logos.
 
-ACCEPTANCE RULES (You MUST set "verified": true):
-1. Real editorial photojournalism directly capturing the actual physical subject, people, or event described in the headline.
-2. Professional clarity and composition.
-
-If verified is true, write a calm, factual caption in German and English describing what is visually depicted. Do NOT write disclaimers like "does not depict" or meta-commentary.
-Determine image credit (e.g. Reuters, AP, AFP, dpa, Getty Images).
+If verified is true, write a calm, factual caption in German and English accurately describing what is depicted.
+Determine image credit (e.g. ${sourceCredit || 'Reuters / AP / AFP'}).
 
 Return ONLY valid raw JSON:
 {
   "verified": true, // or false
   "rejectionReason": "brief reason if false",
   "caption": {
-    "de": "Sachliche Bildbeschreibung auf Deutsch",
-    "en": "Factual caption in English"
+    "de": "Sachliche, wahrheitsgetreue Bildbeschreibung auf Deutsch",
+    "en": "Factual, accurate caption in English"
   },
-  "credit": "Reuters / AP"
+  "credit": "${sourceCredit || 'Reuters / AP'}"
 }`;
 
   // 2. MiniMax M3 Multimodal Vision on Ollama Cloud
