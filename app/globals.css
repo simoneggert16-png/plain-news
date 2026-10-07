@@ -2023,6 +2023,88 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   border-radius: 2px;
   margin-top: 4px;
 }
+/* Match Scorers & Assists Bar */
+.match-scorers-bar {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 10px 14px;
+  margin: 12px 0 8px;
+  border-radius: 2px;
+}
+.scorers-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.scorers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.scorer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink);
+  flex-wrap: wrap;
+}
+.scorer-icon {
+  font-size: 13px;
+}
+.scorer-minute {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--ink);
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+.scorer-name {
+  font-weight: 700;
+}
+.scorer-assist {
+  font-size: 12px;
+  color: #0277bd;
+  font-weight: 600;
+}
+.scorer-team {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.performer-icon-badge {
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f5e9;
+  border-radius: 50%;
+}
+.performer-icon-badge.assist {
+  background: #e1f5fe;
+}
+.player-stat-tag.assist {
+  background: #e1f5fe;
+  color: #0277bd;
+  border-color: #0277bd;
+  font-weight: bold;
+}
+.player-stat-tag.card {
+  background: #fff9c4;
+  color: #f57f17;
+  border-color: #f57f17;
+  font-weight: bold;
+}
+
 .match-venue-row {
   display: flex;
   align-items: center;

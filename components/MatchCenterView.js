@@ -3,21 +3,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import TacticalPitchCanvas from './TacticalPitchCanvas';
 
-const RATING_LEGEND = [
-  { label: '≥ 7.5 Hervorragend', color: '#1b5e20' },
-  { label: '7.0–7.4 Sehr gut', color: '#2e7d32' },
-  { label: '6.7–6.9 Gut', color: '#689f38' },
-  { label: '6.4–6.6 Solide', color: '#f57f17' },
-  { label: '< 6.4 Ausbaufähig', color: '#e65100' },
-];
-
 export default function MatchCenterView({ matchId = '401921408', locale = 'de' }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('lineups'); // 'lineups' | 'stats' | 'timeline'
   const [lineupSubView, setLineupSubView] = useState('pitch'); // 'pitch' | 'list'
   const [selectedTeam, setSelectedTeam] = useState('home'); // 'home' | 'away'
-  const [inspectedPlayer, setInspectedPlayer] = useState(null);
   const [countdown, setCountdown] = useState(15);
 
   const isDe = locale === 'de';
@@ -57,7 +48,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
     return (
       <div className="match-center-card loading">
         <div className="match-center-loading-text">
-          <span className="live-dot" /> {isDe ? 'Lade Match Center & dynamische Taktikgrafik…' : 'Loading Match Center & Dynamic Tactical Pitch…'}
+          <span className="live-dot" /> {isDe ? 'Lade Spieldaten, Aufstellung & Spielstand…' : 'Loading Match Center & Live Score…'}
         </div>
       </div>
     );
@@ -67,7 +58,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
     return null;
   }
 
-  const { header, stats, topPerformers, lineups, events, commentary, attribution } = data;
+  const { header, goals = [], assisters = [], stats = [], lineups, events = [], commentary = [], attribution } = data;
   const currentRoster = selectedTeam === 'home' ? lineups.home : lineups.away;
   const currentTeamName = selectedTeam === 'home' ? header.homeTeam.name : header.awayTeam.name;
 
@@ -100,9 +91,6 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
               {header.homeTeam.score} : {header.awayTeam.score}
             </div>
             <div className="match-time-label">{header.clock || header.status}</div>
-            <div className="match-rating-comp">
-              Ø {header.homeTeam.avgRating} vs Ø {header.awayTeam.avgRating}
-            </div>
           </div>
 
           <div className="match-team away">
@@ -115,6 +103,28 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
           </div>
         </div>
 
+        {/* ── TORSCHÜTZEN & VORLAGEN BANNER ── */}
+        {goals.length > 0 && (
+          <div className="match-scorers-bar">
+            <div className="scorers-title">{isDe ? 'TORE & VORLAGEN' : 'GOALS & ASSISTS'}</div>
+            <div className="scorers-list">
+              {goals.map((g, i) => (
+                <div key={i} className="scorer-item">
+                  <span className="scorer-icon">⚽</span>
+                  <span className="scorer-minute">{g.clock}</span>
+                  <strong className="scorer-name">{g.scorer}</strong>
+                  {g.assist && (
+                    <span className="scorer-assist">
+                      (👟 Vorlage: {g.assist})
+                    </span>
+                  )}
+                  <span className="scorer-team">({g.teamName})</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="match-venue-row">
           <span>📍 {header.venue}</span>
           <span>•</span>
@@ -122,21 +132,21 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
         </div>
       </div>
 
-      {/* ── 2. SOFASCORE TABS NAVIGATION ── */}
+      {/* ── 2. NAVIGATION TABS (PURE FACTS) ── */}
       <div className="match-nav-tabs">
         <button
           type="button"
           className={`match-tab-btn ${activeTab === 'lineups' ? 'active' : ''}`}
           onClick={() => setActiveTab('lineups')}
         >
-          {isDe ? '🏟️ Taktische Formation & Ratings' : '🏟️ Tactical Formation & Ratings'}
+          {isDe ? '🏟️ Aufstellung & Formation' : '🏟️ Lineup & Formation'}
         </button>
         <button
           type="button"
           className={`match-tab-btn ${activeTab === 'stats' ? 'active' : ''}`}
           onClick={() => setActiveTab('stats')}
         >
-          {isDe ? '📊 Match-Statistiken' : '📊 Match Statistics'}
+          {isDe ? '📊 Spiel-Statistiken' : '📊 Match Statistics'}
         </button>
         <button
           type="button"
@@ -150,7 +160,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
       {/* ── 3. TAB: LINEUPS & DYNAMIC PITCH ── */}
       {activeTab === 'lineups' && (
         <div className="match-tab-content">
-          {/* Sub-View Switcher: Dynamic Vector Pitch vs Detailed List */}
+          {/* Sub-View Switcher: Pitch Graphic vs Detailed List */}
           <div className="lineup-view-toggle-bar">
             <div className="lineup-sub-buttons">
               <button
@@ -158,28 +168,19 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                 className={`lineup-toggle-btn ${lineupSubView === 'pitch' ? 'active' : ''}`}
                 onClick={() => setLineupSubView('pitch')}
               >
-                🏟️ {isDe ? 'Taktisches Spielfeld (Vektor)' : 'Tactical Pitch (Vector)'}
+                🏟️ {isDe ? 'Taktisches Spielfeld' : 'Tactical Pitch'}
               </button>
               <button
                 type="button"
                 className={`lineup-toggle-btn ${lineupSubView === 'list' ? 'active' : ''}`}
                 onClick={() => setLineupSubView('list')}
               >
-                📋 {isDe ? 'Detaillierte Spielerbewertungen' : 'Detailed Player Ratings'}
+                📋 {isDe ? 'Kader & Aufstellung' : 'Squad & Lineup'}
               </button>
-            </div>
-
-            <div className="rating-legend-compact">
-              {RATING_LEGEND.map((l, i) => (
-                <span key={i} className="legend-chip">
-                  <span className="legend-dot" style={{ backgroundColor: l.color }} />
-                  {l.label}
-                </span>
-              ))}
             </div>
           </div>
 
-          {/* ── 3A. DYNAMIC TACTICAL PITCH VIEW (PRIMARY) ── */}
+          {/* ── 3A. DYNAMIC TACTICAL PITCH VIEW ── */}
           {lineupSubView === 'pitch' && (
             <div className="tactical-pitch-section">
               <div className="pitch-teams-banner">
@@ -196,50 +197,38 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                 </div>
               </div>
 
-              {/* The 100% Dynamic Interactive Pitch Canvas */}
+              {/* Dynamic Vector Pitch Canvas with Goals & Assists */}
               <div className="tactical-pitch-container">
                 <TacticalPitchCanvas
                   homeTeam={header.homeTeam}
                   awayTeam={header.awayTeam}
                   homePlayers={lineups.home.starters}
                   awayPlayers={lineups.away.starters}
-                  onSelectPlayer={(p) => setInspectedPlayer(p)}
                 />
               </div>
 
-              {/* Top Performer Highlights Bar */}
-              {topPerformers && topPerformers.length > 0 && (
+              {/* Key Playmakers & Scorers Bar */}
+              {(goals.length > 0 || assisters.length > 0) && (
                 <div className="top-performers-showcase">
                   <div className="performer-heading">
-                    {isDe ? 'SCHLÜSSELAKTEURE & PERFORMANCE-RATINGS' : 'KEY PERFORMERS & LIVE RATINGS'}
+                    {isDe ? 'MATCH-HIGHLIGHTS & SCORER' : 'MATCH HIGHLIGHTS & SCORERS'}
                   </div>
                   <div className="performer-cards-grid">
-                    {topPerformers.map((p, idx) => (
-                      <div key={idx} className="performer-card">
-                        {p.photo ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img src={p.photo} alt={p.name} className="performer-photo" />
-                        ) : (
-                          <div className="player-photo-placeholder sub">{p.name.charAt(0)}</div>
-                        )}
+                    {goals.map((g, idx) => (
+                      <div key={`g-${idx}`} className="performer-card">
+                        <div className="performer-icon-badge">⚽</div>
                         <div className="performer-info">
-                          <div className="performer-name">{p.name}</div>
-                          <div className="performer-role">{p.role}</div>
+                          <div className="performer-name">{g.scorer}</div>
+                          <div className="performer-role">Tor in Minute {g.clock} ({g.teamName})</div>
                         </div>
-                        <div
-                          className="performer-rating-pill"
-                          style={{
-                            backgroundColor:
-                              p.rating >= 7.5
-                                ? '#1b5e20'
-                                : p.rating >= 7.0
-                                ? '#2e7d32'
-                                : p.rating >= 6.7
-                                ? '#689f38'
-                                : '#e65100',
-                          }}
-                        >
-                          {Number(p.rating).toFixed(1)}
+                      </div>
+                    ))}
+                    {assisters.map((a, idx) => (
+                      <div key={`a-${idx}`} className="performer-card">
+                        <div className="performer-icon-badge assist">👟</div>
+                        <div className="performer-info">
+                          <div className="performer-name">{a.name}</div>
+                          <div className="performer-role">{a.assists} {a.assists === 1 ? 'Torvorlage' : 'Torvorlagen'}</div>
                         </div>
                       </div>
                     ))}
@@ -271,16 +260,12 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
 
               <div className="lineup-section-heading">
                 <span>STARTELF · {currentTeamName.toUpperCase()}</span>
-                <span className="rating-legend">STATISTISCHE BEWERTUNG (1.0–10.0)</span>
+                <span className="rating-legend">POSITION & MATCH-AKTIONEN</span>
               </div>
 
               <div className="players-list">
                 {currentRoster.starters.map((player) => (
-                  <div
-                    key={player.id || player.name}
-                    className={`player-row ${inspectedPlayer?.name === player.name ? 'selected' : ''}`}
-                    onClick={() => setInspectedPlayer(player === inspectedPlayer ? null : player)}
-                  >
+                  <div key={player.id || player.name} className="player-row">
                     <div className="player-left">
                       <span className="player-jersey">{player.jersey}</span>
                       {player.headshot ? (
@@ -300,31 +285,32 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                         <div className="player-name">
                           {player.name}
                           {player.isCaptain && <span className="captain-badge">C</span>}
-                          {player.isMotm && <span className="motm-badge">MOTM</span>}
                         </div>
                         <div className="player-pos">{player.position || player.posAbbr}</div>
                       </div>
                     </div>
 
                     <div className="player-right">
-                      {player.stats?.passPct && (
-                        <span className="player-stat-tag">👟 {player.stats.passPct} Passquote</span>
+                      {player.goals > 0 && (
+                        <span className="player-stat-tag goal">⚽ {player.goals} {player.goals === 1 ? 'Tor' : 'Tore'}</span>
                       )}
-                      {player.stats?.tackles && (
-                        <span className="player-stat-tag">🛡️ {player.stats.tackles} Tackles</span>
+                      {player.assists > 0 && (
+                        <span className="player-stat-tag assist">👟 {player.assists} {player.assists === 1 ? 'Vorlage' : 'Vorlagen'}</span>
                       )}
-                      {player.stats?.keyPasses && (
-                        <span className="player-stat-tag">🎯 {player.stats.keyPasses} Key Passes</span>
+                      {player.card && (
+                        <span className="player-stat-tag card">
+                          {player.card.isRed ? '🟥' : '🟨'} {player.card.clock}
+                        </span>
                       )}
-                      {player.stats?.saves && (
+                      {player.sub?.replacedBy && (
+                        <span className="player-stat-tag sub">🔄 {player.sub.clock}</span>
+                      )}
+                      {player.stats?.shotsOnTarget > 0 && (
+                        <span className="player-stat-tag">🎯 {player.stats.shotsOnTarget} Torschüsse</span>
+                      )}
+                      {player.stats?.saves > 0 && (
                         <span className="player-stat-tag">🧤 {player.stats.saves} Paraden</span>
                       )}
-                      <span
-                        className="player-rating-badge"
-                        style={{ backgroundColor: player.ratingColor }}
-                      >
-                        {Number(player.rating).toFixed(1)}
-                      </span>
                     </div>
                   </div>
                 ))}
@@ -352,7 +338,12 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
                           </div>
                         </div>
                         <div className="player-right">
-                          <span className="player-rating-badge sub">-</span>
+                          {player.goals > 0 && (
+                            <span className="player-stat-tag goal">⚽ {player.goals} Tor</span>
+                          )}
+                          {player.sub?.replaces && (
+                            <span className="player-stat-tag sub">🔄 Eingewechselt ({player.sub.clock})</span>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -369,7 +360,7 @@ export default function MatchCenterView({ matchId = '401921408', locale = 'de' }
         <div className="match-tab-content stats-tab">
           <div className="stats-teams-legend">
             <span className="stat-team-left">{header.homeTeam.name}</span>
-            <span className="stat-team-title">SPIEL-STATISTIKEN (OPTA)</span>
+            <span className="stat-team-title">SPIEL-STATISTIKEN</span>
             <span className="stat-team-right">{header.awayTeam.name}</span>
           </div>
 

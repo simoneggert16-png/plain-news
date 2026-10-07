@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { getRatingColor } from '@/lib/sport/ratingEngine';
 
 /**
  * Parses formation string like "4-3-3" or "4-2-3-1" into array of counts including GK:
@@ -20,11 +19,10 @@ function parseFormationLines(formationStr = '4-3-3') {
  */
 function calculatePlayerPositions(players = [], formationStr = '4-3-3', isHome = true) {
   const lines = parseFormationLines(formationStr);
-  const numLines = lines.length; // e.g. 4 for 4-3-3 (GK, DEF, MID, ATT)
+  const numLines = lines.length;
   const W = 1000;
   const H = 640;
 
-  // Horizontal span on one half: Home occupies 60 to 450, Away occupies 940 to 550
   const startX = isHome ? 60 : 940;
   const endX = isHome ? 440 : 560;
 
@@ -35,11 +33,10 @@ function calculatePlayerPositions(players = [], formationStr = '4-3-3', isHome =
     const xFraction = numLines === 1 ? 0 : lineIdx / (numLines - 1);
     const x = Math.round(startX + (endX - startX) * xFraction);
 
-    // Vertical spacing
     for (let i = 0; i < count; i++) {
       let y;
       if (count === 1) {
-        y = H / 2; // Dead center (GK or solitary striker)
+        y = H / 2;
       } else {
         const topMargin = 70;
         const bottomMargin = 570;
@@ -49,7 +46,6 @@ function calculatePlayerPositions(players = [], formationStr = '4-3-3', isHome =
       const player = players[playerIdx] || {
         name: `Spieler ${playerIdx + 1}`,
         jersey: `${playerIdx + 1}`,
-        rating: 6.5,
       };
 
       positions.push({
@@ -146,13 +142,11 @@ export default function TacticalPitchCanvas({
         <path d="M 980 40 A 20 20 0 0 1 960 20" fill="none" stroke="#3d4952" strokeWidth="2" />
         <path d="M 980 600 A 20 20 0 0 0 960 620" fill="none" stroke="#3d4952" strokeWidth="2" />
 
-        {/* ── 2. Dynamic Player Nodes ── */}
+        {/* ── 2. Dynamic Player Nodes (Pure Match Facts: Goals, Assists, Cards) ── */}
         {allPositions.map((p, idx) => {
           const isSelected = activePlayer?.name === p.name;
           const isHovered = hoveredPlayer?.name === p.name;
-          const rating = Number(p.rating || 6.5);
-          const ratingColor = getRatingColor(rating);
-          const radius = 23;
+          const radius = 24;
 
           return (
             <g
@@ -164,7 +158,7 @@ export default function TacticalPitchCanvas({
               onMouseLeave={() => setHoveredPlayer(null)}
               style={{ cursor: 'pointer' }}
             >
-              {/* Highlight Halo when active/hovered */}
+              {/* Highlight Halo */}
               {(isSelected || isHovered) && (
                 <circle
                   cx="0"
@@ -183,8 +177,8 @@ export default function TacticalPitchCanvas({
                 cy="0"
                 r={radius}
                 fill="#ffffff"
-                stroke={isSelected ? '#ffffff' : '#455a64'}
-                strokeWidth={isSelected ? 3 : 1.5}
+                stroke={isSelected ? '#ffffff' : p.isHome ? '#75AADB' : '#008751'}
+                strokeWidth={2}
                 filter="url(#nodeShadow)"
               />
 
@@ -218,28 +212,78 @@ export default function TacticalPitchCanvas({
                 </text>
               )}
 
-              {/* SofaScore Rating Badge (Pinned at bottom edge) */}
-              <g transform="translate(10, 12)">
+              {/* Goalscorer Badge (⚽) */}
+              {p.goals > 0 && (
+                <g transform="translate(14, -14)">
+                  <circle cx="0" cy="0" r="10" fill="#1b5e20" stroke="#ffffff" strokeWidth="1.5" />
+                  <text
+                    x="0"
+                    y="4"
+                    textAnchor="middle"
+                    fill="#ffffff"
+                    fontSize="11"
+                    fontFamily="sans-serif"
+                  >
+                    ⚽
+                  </text>
+                </g>
+              )}
+
+              {/* Assister Badge (👟) */}
+              {p.assists > 0 && !p.goals && (
+                <g transform="translate(14, -14)">
+                  <circle cx="0" cy="0" r="10" fill="#0277bd" stroke="#ffffff" strokeWidth="1.5" />
+                  <text
+                    x="0"
+                    y="4"
+                    textAnchor="middle"
+                    fill="#ffffff"
+                    fontSize="11"
+                    fontFamily="sans-serif"
+                  >
+                    👟
+                  </text>
+                </g>
+              )}
+
+              {/* Yellow / Red Card Badge */}
+              {p.card && (
+                <g transform={`translate(-18, -14)`}>
+                  <rect
+                    x="-4"
+                    y="-6"
+                    width="8"
+                    height="12"
+                    rx="1.5"
+                    fill={p.card.isRed ? '#c62828' : '#ffd600'}
+                    stroke="#111"
+                    strokeWidth="0.8"
+                  />
+                </g>
+              )}
+
+              {/* Player Jersey Number Tag Badge */}
+              <g transform="translate(0, 16)">
                 <rect
                   x="-12"
-                  y="-8"
+                  y="-7"
                   width="24"
-                  height="16"
+                  height="14"
                   rx="3"
-                  fill={ratingColor}
+                  fill="#111827"
                   stroke="#ffffff"
                   strokeWidth="1"
                 />
                 <text
                   x="0"
-                  y="4"
+                  y="3.5"
                   textAnchor="middle"
                   fill="#ffffff"
-                  fontSize="10"
+                  fontSize="9"
                   fontWeight="900"
                   fontFamily="'SF Mono', Menlo, monospace"
                 >
-                  {rating.toFixed(1)}
+                  {p.jersey}
                 </text>
               </g>
 
@@ -254,12 +298,12 @@ export default function TacticalPitchCanvas({
                 fontFamily="system-ui, sans-serif"
                 filter="drop-shadow(0px 1px 2px rgba(0,0,0,0.9))"
               >
-                {p.jersey} {p.shortName || p.name}
+                {p.shortName || p.name}
               </text>
 
               {/* Captain Indicator */}
               {p.isCaptain && (
-                <g transform={`translate(-${radius + 4}, -${radius - 4})`}>
+                <g transform={`translate(-${radius + 4}, 0)`}>
                   <circle cx="0" cy="0" r="7" fill="#f57f17" stroke="#ffffff" strokeWidth="1" />
                   <text
                     x="0"
@@ -284,7 +328,6 @@ export default function TacticalPitchCanvas({
         <div className="dynamic-player-drawer">
           {(() => {
             const cur = activePlayer || hoveredPlayer;
-            const rating = Number(cur.rating || 6.5);
             return (
               <div className="drawer-card">
                 <div className="drawer-left">
@@ -305,41 +348,29 @@ export default function TacticalPitchCanvas({
                 </div>
 
                 <div className="drawer-stats">
-                  {/* Positives */}
-                  {(cur.breakdown?.positives || []).map((posText, i) => (
-                    <span key={`pos-${i}`} className="drawer-chip pos">
-                      ✅ {posText}
-                    </span>
-                  ))}
-
-                  {/* Negatives (Ballverluste, verlorene Dribblings, Fouls) */}
-                  {(cur.breakdown?.negatives || []).map((negText, i) => (
-                    <span key={`neg-${i}`} className="drawer-chip neg">
-                      ⚠️ {negText}
-                    </span>
-                  ))}
-
-                  {(!cur.breakdown?.positives?.length && !cur.breakdown?.negatives?.length) && (
-                    <>
-                      {cur.stats?.passPct && (
-                        <span className="drawer-chip">👟 {cur.stats.passPct} Passquote</span>
-                      )}
-                      {cur.stats?.tackles > 0 && (
-                        <span className="drawer-chip">🛡️ {cur.stats.tackles} Tackles</span>
-                      )}
-                      {cur.stats?.keyPasses > 0 && (
-                        <span className="drawer-chip">🎯 {cur.stats.keyPasses} Key Passes</span>
-                      )}
-                    </>
+                  {cur.goals > 0 && (
+                    <span className="drawer-chip goal">⚽ {cur.goals} {cur.goals === 1 ? 'Tor' : 'Tore'}</span>
                   )}
-                </div>
-
-                <div
-                  className="drawer-rating-pill"
-                  style={{ backgroundColor: getRatingColor(rating) }}
-                >
-                  <span className="drawer-rating-label">SOFASCORE</span>
-                  <span className="drawer-rating-val">{rating.toFixed(1)}</span>
+                  {cur.assists > 0 && (
+                    <span className="drawer-chip assist">👟 {cur.assists} {cur.assists === 1 ? 'Vorlage' : 'Vorlagen'}</span>
+                  )}
+                  {cur.card && (
+                    <span className="drawer-chip card">
+                      {cur.card.isRed ? '🟥 Rote Karte' : '🟨 Gelbe Karte'} ({cur.card.clock})
+                    </span>
+                  )}
+                  {cur.sub?.replacedBy && (
+                    <span className="drawer-chip sub">🔄 Ausgewechselt ({cur.sub.clock})</span>
+                  )}
+                  {cur.sub?.replaces && (
+                    <span className="drawer-chip sub">🔄 Eingewechselt ({cur.sub.clock})</span>
+                  )}
+                  {cur.stats?.shotsOnTarget > 0 && (
+                    <span className="drawer-chip">🎯 {cur.stats.shotsOnTarget} Schüsse aufs Tor</span>
+                  )}
+                  {cur.stats?.saves > 0 && (
+                    <span className="drawer-chip">🧤 {cur.stats.saves} Paraden</span>
+                  )}
                 </div>
               </div>
             );
