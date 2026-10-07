@@ -102,6 +102,7 @@ export default function RegisterPage() {
 
       // 4. Create Session Payload
       const sessionPayload = {
+        v: 2,
         name: cleanUser,
         username: cleanUser,
         email: cleanEmail,

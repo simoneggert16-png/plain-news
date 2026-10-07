@@ -50,8 +50,14 @@ export default function UserMenu({ locale, isDe }) {
       const match = document.cookie.match(/(?:^|;\s*)plain_session=([^;]+)/);
       if (match) {
         const decoded = JSON.parse(decodeURIComponent(match[1]));
-        setUser(decoded);
-        if (decoded.name) setUsernameInput(decoded.name);
+        if (!decoded.v || decoded.v < 2) {
+          // Clean fresh start: wipe legacy test session
+          document.cookie = 'plain_session=;path=/;max-age=0';
+          setUser(null);
+        } else {
+          setUser(decoded);
+          if (decoded.name) setUsernameInput(decoded.name);
+        }
       }
     } catch (e) {}
 
@@ -120,6 +126,19 @@ export default function UserMenu({ locale, isDe }) {
     window.location.reload();
   }
 
+  function handleDeleteAccount() {
+    if (window.confirm(isDe ? 'Möchtest du dein Konto wirklich unwiderruflich löschen?' : 'Do you really want to permanently delete your account?')) {
+      document.cookie = 'plain_session=;path=/;max-age=0';
+      try {
+        localStorage.removeItem('plain_saved_articles');
+        localStorage.removeItem('plain_notes');
+      } catch (e) {}
+      setUser(null);
+      setOpen(false);
+      window.location.reload();
+    }
+  }
+
   async function handleEmailAuth(e) {
     e.preventDefault();
     if (!email.trim() || !email.includes('@')) {
@@ -152,6 +171,7 @@ export default function UserMenu({ locale, isDe }) {
       }
 
       const sessionPayload = {
+        v: 2,
         name: cleanUser,
         username: cleanUser,
         email: cleanEmail,
@@ -638,6 +658,15 @@ export default function UserMenu({ locale, isDe }) {
                       style={{ flex: 1 }}
                     >
                       {isDe ? 'Abmelden' : 'Sign Out'}
+                    </button>
+                    <button
+                      type="button"
+                      className="auth-btn-action"
+                      onClick={handleDeleteAccount}
+                      style={{ flex: 1, color: '#dc2626', borderColor: '#fca5a5' }}
+                      title={isDe ? 'Konto und alle Daten unwiderruflich löschen' : 'Permanently delete account'}
+                    >
+                      🗑 {isDe ? 'Konto löschen' : 'Delete Account'}
                     </button>
                   </div>
                 </div>
