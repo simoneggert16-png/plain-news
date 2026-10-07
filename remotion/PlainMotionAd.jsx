@@ -11,710 +11,1339 @@ import {
   Easing,
 } from 'remotion';
 
+// =====================================================================
+// LUXURY 3D IPHONE 16 PRO DEVICE COMPONENT
+// =====================================================================
+const Phone3D = ({
+  children,
+  rotX = 0,
+  rotY = 0,
+  rotZ = 0,
+  scale = 1,
+  translateY = 0,
+  translateX = 0,
+  shadowIntensity = 1,
+  screenContent,
+  screenScrollY = 0,
+  width = 540,
+  height = 1100,
+}) => {
+  return (
+    <div
+      style={{
+        position: 'relative',
+        width,
+        height,
+        margin: '0 auto',
+        perspective: 1500,
+        transformStyle: 'preserve-3d',
+      }}
+    >
+      {/* 3D Titanium Chassis */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          borderRadius: 64,
+          background: 'linear-gradient(135deg, #32302d 0%, #171615 45%, #2e2c29 100%)',
+          padding: 12,
+          boxShadow: `
+            ${-35 * shadowIntensity}px ${50 * shadowIntensity}px ${125 * shadowIntensity}px -20px rgba(0,0,0,0.65),
+            0 25px 50px -10px rgba(0,0,0,0.4),
+            inset 0 1px 2px rgba(255,255,255,0.25),
+            inset 0 -1px 2px rgba(0,0,0,0.85)
+          `,
+          transform: `
+            translate3d(${translateX}px, ${translateY}px, 0px)
+            rotateX(${rotX}deg)
+            rotateY(${rotY}deg)
+            rotateZ(${rotZ}deg)
+            scale(${scale})
+          `,
+          transformOrigin: 'center center',
+        }}
+      >
+        {/* Specular Titanium Edge */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 1,
+            borderRadius: 62,
+            border: '1.5px solid rgba(255,255,255,0.15)',
+            pointerEvents: 'none',
+          }}
+        />
+
+        {/* Screen Display Container */}
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#0a0a09',
+            borderRadius: 54,
+            overflow: 'hidden',
+            border: '3px solid #000000',
+          }}
+        >
+          {screenContent ? (
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                position: 'relative',
+                transform: `translateY(${screenScrollY}px)`,
+              }}
+            >
+              {screenContent}
+            </div>
+          ) : (
+            children
+          )}
+
+          {/* Dynamic Island Pill */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 14,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: 140,
+              height: 38,
+              backgroundColor: '#000000',
+              borderRadius: 24,
+              zIndex: 100,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '0 16px',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
+            }}
+          >
+            {/* Camera */}
+            <div
+              style={{
+                width: 12,
+                height: 12,
+                borderRadius: '50%',
+                backgroundColor: '#07111e',
+                border: '1px solid rgba(255,255,255,0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <div style={{ width: 4, height: 4, borderRadius: '50%', backgroundColor: '#0f2742' }} />
+            </div>
+
+            {/* Sensor */}
+            <div
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: '50%',
+                backgroundColor: '#111',
+              }}
+            />
+          </div>
+
+          {/* Glass Glare */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(130deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.03) 30%, transparent 60%)',
+              pointerEvents: 'none',
+              zIndex: 90,
+            }}
+          />
+
+          {/* Home Bar */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 10,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: 150,
+              height: 5,
+              backgroundColor: 'rgba(255,255,255,0.7)',
+              borderRadius: 3,
+              zIndex: 95,
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// =====================================================================
+// MAIN MOTION AD COMPOSITION
+// =====================================================================
 export const PlainMotionAd = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   // -------------------------------------------------------------
-  // COLORS & THEME (Authentic PLAIN. Swiss Brutalism)
+  // LUXURY COLOR SYSTEM
   // -------------------------------------------------------------
   const C = {
-    paper: '#eae3d2',
-    paper2: '#e1d8c3',
-    paper3: '#d6ccb4',
-    ink: '#0d0d0b',
-    ink2: '#34312a',
-    muted: '#776f5f',
-    accent: '#c93b2b',
-    green: '#2c6a3d',
-    border: '3px solid #0d0d0b',
-    heavyBorder: '6px solid #0d0d0b',
+    paper: '#f4efe6',
+    paperLight: '#faf6ee',
+    paperDark: '#e8dfce',
+    ink: '#0b0c0e',
+    inkMuted: '#4a4944',
+    inkSubtle: '#78756c',
+    red: '#dc2626',
+    redGlow: 'rgba(220, 38, 38, 0.35)',
+    green: '#15803d',
+    border: '1.5px solid rgba(11, 12, 14, 0.14)',
+    borderBold: '2px solid #0b0c0e',
+    cardShadow: '0 20px 50px -15px rgba(20, 18, 14, 0.12), 0 10px 20px -8px rgba(20, 18, 14, 0.08)',
   };
 
   // -------------------------------------------------------------
   // TIMELINE SEGMENTS (900 frames = 30.0s @ 30fps)
+  // Perfectly mapped to the neural voiceover audio:
+  // 0.0s - 4.7s   (0 - 140): Hook
+  // 4.7s - 9.3s   (140 - 280): Antidote Product Reveal
+  // 9.3s - 23.5s  (280 - 705): Five Principles (85 frames each)
+  // 23.5s - 30.0s (705 - 900): Broadsheet Climax & CTA
   // -------------------------------------------------------------
-  // Act 1: The Outrage Economy Hook (0 - 140)       [0.0s - 4.7s]
-  // Act 2: Enter PLAIN — Real Frontpage (140 - 280)  [4.7s - 9.3s]
-  // Act 3: The 5 Core Principles (280 - 720)         [9.3s - 24.0s]
-  //   - P1: Zero Spin (280 - 368)
-  //   - P2: Two-Source Rule (368 - 456)
-  //   - P3: Expose the Framing (456 - 544)
-  //   - P4: Zero Commerce (544 - 632)
-  //   - P5: Adversarial AI Pipeline (632 - 720)
-  // Act 4: Broadsheet Authority & Climax CTA (720 - 900) [24.0s - 30.0s]
-
   const isAct1 = frame < 140;
   const isAct2 = frame >= 140 && frame < 280;
-  const isAct3 = frame >= 280 && frame < 720;
-  const isAct4 = frame >= 720;
+  const isAct3 = frame >= 280 && frame < 705;
+  const isAct4 = frame >= 705;
 
-  // Flash transition at cut into PLAIN (frame 137 - 144)
-  const cutFlash = interpolate(frame, [137, 140, 145], [0, 1, 0], {
+  // Flash cut transition at 4.6s (frame 137 - 146)
+  const cutFlash = interpolate(frame, [137, 140, 146], [0, 1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
   // =============================================================
-  // ACT 1: ENHANCED HOOK ANIMATIONS (0 - 140)
+  // ACT 1: KINETIC HOOK (0 - 140)
   // =============================================================
-  const jitterIntensity = isAct1 && frame > 40 ? interpolate(frame, [40, 135], [2, 16]) : 0;
-  const jitterX = Math.sin(frame * 3.3) * jitterIntensity;
-  const jitterY = Math.cos(frame * 3.9) * jitterIntensity;
+  const title1Spring = spring({ frame: frame - 2, fps, config: { damping: 14, stiffness: 180 } });
+  const anxiousSpring = spring({ frame: frame - 18, fps, config: { damping: 12, stiffness: 220 } });
+  const subSpring = spring({ frame: frame - 55, fps, config: { damping: 15, stiffness: 160 } });
 
-  // Kinetic Hook Text
-  const hookPhase1 = spring({ frame, fps, config: { damping: 13, stiffness: 150 } });
-  const hookPhase2 = spring({ frame: frame - 25, fps, config: { damping: 13, stiffness: 160 } });
+  const a1PhoneRotX = interpolate(frame, [0, 138], [12, 4]);
+  const a1PhoneRotY = interpolate(frame, [0, 138], [-16, -5]);
+  const a1PhoneScale = interpolate(frame, [0, 138], [0.92, 1.04]);
 
-  // Popups popping in on phone
-  const p1Spring = spring({ frame: frame - 28, fps, config: { damping: 10, stiffness: 220 } });
-  const p2Spring = spring({ frame: frame - 48, fps, config: { damping: 10, stiffness: 220 } });
-  const p3Spring = spring({ frame: frame - 68, fps, config: { damping: 10, stiffness: 230 } });
-  const p4Spring = spring({ frame: frame - 86, fps, config: { damping: 9, stiffness: 240 } });
-  const pushNotif = spring({ frame: frame - 18, fps, config: { damping: 12, stiffness: 190 } });
+  const jitterIntensity = frame > 65 ? interpolate(frame, [65, 138], [0, 9]) : 0;
+  const jitterX = Math.sin(frame * 4.2) * jitterIntensity;
+  const jitterY = Math.cos(frame * 5.1) * jitterIntensity;
 
-  // Stamp Slam
-  const stampSpring = spring({
-    frame: frame - 102,
-    fps,
-    config: { damping: 7, stiffness: 260 },
-  });
+  const notif1 = spring({ frame: frame - 40, fps, config: { damping: 12, stiffness: 200 } });
+  const notif2 = spring({ frame: frame - 68, fps, config: { damping: 12, stiffness: 200 } });
+  const paywallModal = spring({ frame: frame - 92, fps, config: { damping: 11, stiffness: 190 } });
+  const truthStamp = spring({ frame: frame - 116, fps, config: { damping: 10, stiffness: 240 } });
 
   // =============================================================
-  // ACT 2: ENTER PLAIN — REAL FRONTPAGE (140 - 280)
+  // ACT 2: ENTER PLAIN — THE ANTIDOTE (140 - 280)
   // =============================================================
   const act2Frame = Math.max(0, frame - 140);
+  const a2IntroSpring = spring({ frame: act2Frame, fps, config: { damping: 16, stiffness: 130 } });
+  const a2PhoneEntrance = spring({ frame: act2Frame - 8, fps, config: { damping: 15, stiffness: 120 } });
 
-  const a2Entrance = spring({
-    frame: act2Frame,
-    fps,
-    config: { damping: 16, stiffness: 110 },
-  });
-
-  // Continuous sub-pixel scroll through the real 2600px tall English frontpage
-  const frontpageScrollY = interpolate(act2Frame, [20, 130], [0, -820], {
+  const a2ScrollY = interpolate(act2Frame, [20, 135], [0, -820], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
     easing: Easing.bezier(0.2, 0.05, 0.2, 1),
   });
 
-  const a2BadgeSpring = spring({
-    frame: act2Frame - 35,
-    fps,
-    config: { damping: 13, stiffness: 160 },
-  });
+  const a2Badge1 = spring({ frame: act2Frame - 38, fps, config: { damping: 14, stiffness: 180 } });
+  const a2Badge2 = spring({ frame: act2Frame - 54, fps, config: { damping: 14, stiffness: 180 } });
 
   // =============================================================
-  // ACT 3: THE 5 PRINCIPLES — FULLSCREEN SWISS COMPOSITION (280 - 720)
+  // ACT 3: THE 5 PRINCIPLES — GOLDEN PROPORTIONS (280 - 705)
   // =============================================================
   const act3Frame = Math.max(0, frame - 280);
+  const currentPIndex = Math.min(4, Math.max(0, Math.floor(act3Frame / 85)));
+  const pLocalFrame = act3Frame % 85;
 
-  // Exact 88 frames per principle (5 x 88 = 440 frames)
-  const currentPIndex = Math.min(4, Math.max(0, Math.floor(act3Frame / 88)));
-  const pLocalFrame = act3Frame % 88;
-
-  const cardEntranceSpring = spring({
+  const cardEntrance = spring({
     frame: pLocalFrame,
+    fps,
+    config: { damping: 15, stiffness: 150 },
+  });
+
+  const visualEntrance = spring({
+    frame: pLocalFrame - 10,
     fps,
     config: { damping: 14, stiffness: 160 },
   });
 
-  const visualEntranceSpring = spring({
-    frame: pLocalFrame - 12,
-    fps,
-    config: { damping: 13, stiffness: 170 },
-  });
-
-  const principlesList = [
+  // Data for the 5 principles - designed to perfectly fill the 1080x1920 canvas
+  const principles = [
     {
-      num: '01',
+      index: '01',
+      category: 'RADICAL OBJECTIVITY',
       title: 'ZERO SPIN',
-      subtitle: 'VERIFIED PRIMARY DATA ONLY',
-      dek: 'No speculation. No loaded adjectives. No narrative framing. Pure verified events, hard numbers, and direct quotes.',
-      tag: 'PRINCIPLE 01 / 05',
+      subtitle: 'Pure verified events. Zero emotional manipulation.',
+      dek: 'No speculation, no loaded adjectives, no sensationalist outrage. Every story is reduced to verified facts, hard metrics, and authenticated direct quotes.',
       renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 28, width: '100%' }}>
+          {/* Card 1: Sensationalist Media */}
           <div
             style={{
-              backgroundColor: '#fff',
-              border: C.border,
-              padding: '22px 24px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 20,
-              boxShadow: '6px 6px 0px rgba(0,0,0,0.1)',
+              backgroundColor: '#ffffff',
+              borderRadius: 26,
+              border: '2.5px solid rgba(220, 38, 38, 0.45)',
+              padding: '48px 44px',
+              minHeight: 380,
+              boxShadow: '0 20px 50px -10px rgba(220, 38, 38, 0.16)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}
           >
-            <div style={{ color: C.muted, fontSize: 14, textTransform: 'uppercase', marginBottom: 6, fontWeight: 700 }}>
-              STANDARD OUTLET (BIASED SENSATIONALISM)
+            <div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: 18,
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    color: C.red,
+                    fontSize: 15,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontWeight: 800,
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.red }} />
+                  CONVENTIONAL OUTLET (BIASED SENSATIONALISM)
+                </div>
+                <span
+                  style={{
+                    backgroundColor: 'rgba(220, 38, 38, 0.12)',
+                    color: C.red,
+                    padding: '6px 14px',
+                    borderRadius: 14,
+                    fontSize: 13,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontWeight: 800,
+                  }}
+                >
+                  MANIPULATION DETECTED
+                </span>
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: 38,
+                  lineHeight: 1.35,
+                  color: '#71717a',
+                  textDecoration: 'line-through',
+                  fontWeight: 600,
+                }}
+              >
+                "Disastrous bill sparks furious civil backlash as democracy collapses in total chaos!"
+              </div>
             </div>
-            <div style={{ color: C.accent, textDecoration: 'line-through', fontWeight: 'bold', lineHeight: 1.3 }}>
-              "Disastrous bill sparks furious civil backlash as democracy collapses in chaos!"
+            <div
+              style={{
+                marginTop: 22,
+                display: 'flex',
+                gap: 24,
+                fontSize: 15,
+                fontFamily: "'JetBrains Mono', monospace",
+                color: C.red,
+                fontWeight: 700,
+              }}
+            >
+              <span>✕ 3 LOADED ADJECTIVES REMOVED</span>
+              <span>✕ APOCALYPTIC FRAMING PURGED</span>
             </div>
           </div>
+
+          {/* Transformation Bridge */}
           <div
             style={{
-              backgroundColor: C.paper,
-              border: '4px solid #0d0d0b',
-              padding: '22px 24px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 21,
-              boxShadow: '8px 8px 0px #0d0d0b',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 16,
+              padding: '6px 0',
             }}
           >
-            <div style={{ color: C.green, fontSize: 14, fontWeight: 'bold', textTransform: 'uppercase', marginBottom: 6 }}>
-              PLAIN. (RADICAL OBJECTIVITY)
+            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
+            <div
+              style={{
+                backgroundColor: C.ink,
+                color: '#fff',
+                padding: '12px 28px',
+                borderRadius: 24,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 15,
+                fontWeight: 800,
+                letterSpacing: 1.5,
+              }}
+            >
+              PLAIN RADICAL OBJECTIVITY FILTER ▼
             </div>
-            <div style={{ color: C.ink, fontWeight: 800, lineHeight: 1.3 }}>
-              "Senate approves infrastructure bill 51 to 49 following 8-hour committee session."
+            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
+          </div>
+
+          {/* Card 2: PLAIN Fact-Only Card */}
+          <div
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: 26,
+              border: '3.5px solid #0b0c0e',
+              padding: '48px 44px',
+              minHeight: 380,
+              boxShadow: '0 26px 65px -12px rgba(0,0,0,0.18)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: 18,
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    color: C.green,
+                    fontSize: 15,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontWeight: 800,
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.green }} />
+                  PLAIN (RADICAL OBJECTIVITY)
+                </div>
+                <span
+                  style={{
+                    backgroundColor: 'rgba(21, 128, 61, 0.12)',
+                    color: C.green,
+                    padding: '6px 14px',
+                    borderRadius: 14,
+                    fontSize: 13,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontWeight: 800,
+                  }}
+                >
+                  100% FACTUAL DENSITY
+                </span>
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontSize: 42,
+                  lineHeight: 1.28,
+                  color: C.ink,
+                  fontWeight: 700,
+                }}
+              >
+                "Senate approves infrastructure legislation 51 to 49 following 8-hour committee session."
+              </div>
             </div>
+            <div
+              style={{
+                marginTop: 24,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                padding: '12px 24px',
+                backgroundColor: 'rgba(21, 128, 61, 0.08)',
+                borderRadius: 24,
+                color: C.green,
+                fontSize: 15,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontWeight: 700,
+                alignSelf: 'flex-start',
+              }}
+            >
+              ✓ PRIMARY DATA ONLY · ZERO EMOTIONAL DISTORTION
+            </div>
+          </div>
+
+          {/* Audit Telemetry Metric Bar */}
+          <div
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: 20,
+              border: C.border,
+              padding: '24px 34px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 15,
+              fontWeight: 700,
+              color: C.inkMuted,
+            }}
+          >
+            <span>OUTRAGE INDEX: 0.00%</span>
+            <span>AUDIT: 100% FACTUAL RECORD</span>
+            <span>READ TIME: 24 SECONDS</span>
           </div>
         </div>
       ),
     },
     {
-      num: '02',
+      index: '02',
+      category: 'INDEPENDENT CONFIRMATION',
       title: 'TWO-SOURCE RULE',
-      subtitle: 'ZERO RUMORS TOLERATED',
-      dek: 'A story does not exist until at least two independent, established global newsrooms confirm the underlying facts.',
-      tag: 'PRINCIPLE 02 / 05',
+      subtitle: 'Zero rumors. Zero uncorroborated leaks.',
+      dek: 'A story does not enter our newsroom until at least two independent, established global primary news organizations have matched and confirmed the factual core.',
       renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div style={{ display: 'flex', gap: 16 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 28, width: '100%' }}>
+          {/* Dual Wires Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            {/* Wire 1 */}
             <div
               style={{
-                flex: 1,
-                backgroundColor: '#fff',
+                backgroundColor: '#ffffff',
+                borderRadius: 26,
                 border: C.border,
-                padding: '26px 20px',
-                textAlign: 'center',
-                boxShadow: '6px 6px 0px #0d0d0b',
+                padding: '50px 38px',
+                height: 520,
+                boxShadow: C.cardShadow,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
               }}
             >
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.muted }}>PRIMARY WIRE</div>
-              <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 32, fontWeight: 900, marginTop: 8 }}>
-                REUTERS
+              <div>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.inkSubtle }}>
+                  PRIMARY WIRE · 08:14 UTC
+                </div>
+                <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 58, fontWeight: 700, margin: '16px 0 20px' }}>
+                  Reuters
+                </div>
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    color: C.green,
+                    fontSize: 15,
+                    fontWeight: 800,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    marginBottom: 20,
+                  }}
+                >
+                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.green }} />
+                  VERIFIED FACT RECORD
+                </div>
               </div>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 15, color: C.green, marginTop: 8, fontWeight: 'bold' }}>
-                ✓ INDEPENDENTLY CONFIRMED
+              <div style={{ fontSize: 19, color: C.inkMuted, lineHeight: 1.55 }}>
+                Primary legislative roll call and official transcript confirmed by parliamentary desk in Washington.
               </div>
             </div>
+
+            {/* Wire 2 */}
             <div
               style={{
-                flex: 1,
-                backgroundColor: '#fff',
+                backgroundColor: '#ffffff',
+                borderRadius: 26,
                 border: C.border,
-                padding: '26px 20px',
-                textAlign: 'center',
-                boxShadow: '6px 6px 0px #0d0d0b',
+                padding: '50px 38px',
+                height: 520,
+                boxShadow: C.cardShadow,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
               }}
             >
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.muted }}>SECONDARY WIRE</div>
-              <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 32, fontWeight: 900, marginTop: 8 }}>
-                AP NEWS
+              <div>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.inkSubtle }}>
+                  SECONDARY WIRE · 08:16 UTC
+                </div>
+                <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 58, fontWeight: 700, margin: '16px 0 20px' }}>
+                  AP News
+                </div>
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    color: C.green,
+                    fontSize: 15,
+                    fontWeight: 800,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    marginBottom: 20,
+                  }}
+                >
+                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.green }} />
+                  CROSS-CORROBORATED
+                </div>
               </div>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 15, color: C.green, marginTop: 8, fontWeight: 'bold' }}>
-                ✓ PRIMARY DATA MATCHED
+              <div style={{ fontSize: 19, color: C.inkMuted, lineHeight: 1.55 }}>
+                Independent newsroom correspondent validated voting margin and quorum protocol on-site.
               </div>
             </div>
           </div>
+
+          {/* Central Consensus Seal */}
           <div
             style={{
               backgroundColor: C.ink,
-              color: C.paper,
-              padding: '16px',
-              textAlign: 'center',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 18,
-              fontWeight: 800,
-              letterSpacing: 1.5,
-              border: '2px solid #fff',
+              borderRadius: 24,
+              padding: '38px 42px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              boxShadow: '0 25px 60px rgba(0,0,0,0.3)',
             }}
           >
-            ● AUTOMATIC AUDIT: VERIFIED FOR IMMEDIATE PUBLICATION
+            <div>
+              <div style={{ color: '#ffffff', fontSize: 28, fontWeight: 800 }}>
+                Automatic Dual-Wire Corroboration Seal
+              </div>
+              <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 17, fontFamily: "'JetBrains Mono', monospace", marginTop: 8 }}>
+                Zero unverified single-source claims enter the feed.
+              </div>
+            </div>
+            <div
+              style={{
+                backgroundColor: C.green,
+                color: '#fff',
+                padding: '14px 28px',
+                borderRadius: 14,
+                fontSize: 16,
+                fontWeight: 900,
+                fontFamily: "'JetBrains Mono', monospace",
+                letterSpacing: 1.5,
+              }}
+            >
+              PUBLISH READY
+            </div>
+          </div>
+
+          {/* Bottom Security Note */}
+          <div
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: 20,
+              border: C.border,
+              padding: '28px 36px',
+              fontFamily: "'Newsreader', Georgia, serif",
+              fontStyle: 'italic',
+              fontSize: 24,
+              color: C.inkMuted,
+              textAlign: 'center',
+            }}
+          >
+            "If only one outlet is reporting it, it is not news. It is an unverified rumor."
           </div>
         </div>
       ),
     },
     {
-      num: '03',
+      index: '03',
+      category: 'MEDIA LITERACY',
       title: 'EXPOSE THE FRAMING',
-      subtitle: 'SIDE-BY-SIDE TRANSPARENCY',
-      dek: 'We extract and place competing headlines next to each other. Media spin and partisan manipulation become visible at a glance.',
-      tag: 'PRINCIPLE 03 / 05',
+      subtitle: 'Side-by-side partisan comparison.',
+      dek: 'We extract and contrast opposing headlines simultaneously. Partisan manipulation and narrative agendas become instantly visible to the reader.',
       renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%' }}>
+          {/* Outlet Left */}
           <div
             style={{
-              backgroundColor: '#fff',
+              backgroundColor: '#ffffff',
+              borderRadius: 24,
               border: C.border,
-              padding: '16px 22px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 18,
-              borderLeft: '10px solid #0055ff',
+              padding: '32px 38px',
+              borderLeft: '12px solid #2563eb',
+              boxShadow: C.cardShadow,
             }}
           >
-            <span style={{ fontSize: 13, color: C.muted, display: 'block', fontWeight: 700 }}>LEFT LEANING OUTLET:</span>
-            <span style={{ fontWeight: 700 }}>"Historic progressive victory transforms the entire economic landscape"</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+              <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', fontWeight: 800 }}>
+                LEFT-LEANING NARRATIVE LENS:
+              </div>
+              <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.08)', padding: '4px 10px', borderRadius: 6, fontWeight: 700 }}>
+                EMOTIONAL BIAS: 84%
+              </div>
+            </div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: C.ink, lineHeight: 1.32 }}>
+              "Historic progressive triumph transforms national economy and uplifts working families."
+            </div>
+            <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 10 }}>
+              EDITORIAL FRAMING: TRIUMPHANT · SOCIAL REFORM EMPHASIS
+            </div>
           </div>
+
+          {/* Outlet Right */}
           <div
             style={{
-              backgroundColor: '#fff',
+              backgroundColor: '#ffffff',
+              borderRadius: 24,
               border: C.border,
-              padding: '16px 22px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 18,
-              borderLeft: '10px solid #ff2200',
+              padding: '32px 38px',
+              borderLeft: '12px solid #dc2626',
+              boxShadow: C.cardShadow,
             }}
           >
-            <span style={{ fontSize: 13, color: C.muted, display: 'block', fontWeight: 700 }}>RIGHT LEANING OUTLET:</span>
-            <span style={{ fontWeight: 700 }}>"Reckless government spending package threatens national debt crisis"</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+              <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', fontWeight: 800 }}>
+                RIGHT-LEANING NARRATIVE LENS:
+              </div>
+              <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', backgroundColor: 'rgba(220, 38, 38, 0.08)', padding: '4px 10px', borderRadius: 6, fontWeight: 700 }}>
+                EMOTIONAL BIAS: 91%
+              </div>
+            </div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: C.ink, lineHeight: 1.32 }}>
+              "Reckless federal spending package fuels national debt and ignites inflation crisis."
+            </div>
+            <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 10 }}>
+              EDITORIAL FRAMING: CATASTROPHIC · FISCAL DEFICIT EMPHASIS
+            </div>
           </div>
+
+          {/* Center PLAIN Lens */}
           <div
             style={{
-              backgroundColor: C.paper,
-              border: C.border,
-              padding: '16px 20px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 17,
-              fontWeight: 900,
-              color: C.ink,
-              textAlign: 'center',
-              boxShadow: '6px 6px 0px #0d0d0b',
+              backgroundColor: '#ffffff',
+              borderRadius: 24,
+              border: '4px solid #0b0c0e',
+              padding: '32px 38px',
+              boxShadow: '0 25px 60px rgba(0,0,0,0.12)',
             }}
           >
-            PLAIN REVEALS THE SPIN BEFORE YOU READ THE FIRST WORD.
-          </div>
-        </div>
-      ),
-    },
-    {
-      num: '04',
-      title: 'ZERO COMMERCE',
-      subtitle: 'NO ADS · NO PAYWALLS · NO TRACKERS',
-      dek: '0 subscriptions. 0 sponsor popups. 0 behavioral tracking. Pure unmonetized information, unconditionally open and free forever.',
-      tag: 'PRINCIPLE 04 / 05',
-      renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 14,
-            }}
-          >
-            {['0 ADVERTISEMENTS', '0 PAYWALLS', '0 TRACKING COOKIES', '0 SUBSCRIPTIONS'].map((item) => (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
               <div
-                key={item}
                 style={{
                   backgroundColor: C.ink,
-                  color: C.paper,
-                  border: '3px solid #0d0d0b',
-                  padding: '28px 16px',
-                  textAlign: 'center',
+                  color: '#fff',
+                  padding: '7px 16px',
+                  borderRadius: 10,
+                  fontSize: 15,
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 20,
                   fontWeight: 900,
-                  letterSpacing: 1.5,
-                  boxShadow: '6px 6px 0px rgba(201,59,43,0.7)',
+                  letterSpacing: 1,
                 }}
               >
-                {item}
+                PLAIN SYNTHESIS
+              </div>
+              <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.green, fontWeight: 800 }}>
+                ● 100% FACTUAL RECONSTRUCTION
+              </div>
+            </div>
+            <div style={{ fontSize: 29, fontWeight: 800, color: C.ink, lineHeight: 1.3 }}>
+              "Senate approves $1.2T infrastructure bill 51 to 49 following 8-hour committee session."
+            </div>
+            <div style={{ fontSize: 15, color: C.inkMuted, marginTop: 10, lineHeight: 1.45 }}>
+              Zero rhetorical manipulation. The verifiable core separated from ideological theater.
+            </div>
+          </div>
+
+          {/* Bottom Analytical Principle Note */}
+          <div
+            style={{
+              backgroundColor: C.ink,
+              borderRadius: 20,
+              padding: '24px 32px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              boxShadow: '0 15px 40px rgba(0,0,0,0.25)',
+            }}
+          >
+            <div style={{ color: '#ffffff', fontSize: 18, fontWeight: 700, fontFamily: "'Newsreader', Georgia, serif", fontStyle: 'italic' }}>
+              "When you see the spin explicitly labeled, manipulation loses all power over you."
+            </div>
+            <div
+              style={{
+                color: C.red,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 13,
+                fontWeight: 800,
+                letterSpacing: 1.5,
+                whiteSpace: 'nowrap',
+                marginLeft: 20,
+              }}
+            >
+              RADICAL TRANSPARENCY
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      index: '04',
+      category: 'TOTAL INDEPENDENCE',
+      title: 'ZERO COMMERCE',
+      subtitle: 'Zero ads. Zero paywalls. Zero tracking.',
+      dek: 'Information is a public utility, not an attention slot machine. We are 100% free, unconditionally open, and built with zero financial incentives to manipulate.',
+      renderVisual: () => (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 26, width: '100%' }}>
+          {/* 4 Architectural Luxury Tiles - 360px Height */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            {[
+              { val: '0', label: 'ADVERTISEMENTS', desc: 'No sponsored articles, no banner injections, zero commercial bias.' },
+              { val: '0', label: 'PAYWALLS', desc: 'Completely open for all 8 billion humans on Earth.' },
+              { val: '0', label: 'TRACKING COOKIES', desc: 'Zero analytics pixels, zero behavioral surveillance.' },
+              { val: '0', label: 'SUBSCRIPTIONS', desc: 'No credit cards required. Unconditionally free forever.' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: 26,
+                  border: C.border,
+                  padding: '48px 38px',
+                  height: 360,
+                  boxShadow: C.cardShadow,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div>
+                  <div style={{ fontSize: 104, fontWeight: 900, color: C.red, fontFamily: "'Inter', sans-serif", lineHeight: 0.9 }}>
+                    {item.val}
+                  </div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: C.ink, fontFamily: "'JetBrains Mono', monospace", marginTop: 16 }}>
+                    {item.label}
+                  </div>
+                </div>
+                <div style={{ fontSize: 18, color: C.inkSubtle, lineHeight: 1.5 }}>
+                  {item.desc}
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Simon Eggert Quote Card */}
           <div
             style={{
-              backgroundColor: C.paper2,
-              border: '2px dashed #0d0d0b',
-              padding: '14px 20px',
-              textAlign: 'center',
-              fontFamily: "'Newsreader', Georgia, serif",
-              fontSize: 21,
-              fontStyle: 'italic',
-              color: C.ink,
+              backgroundColor: '#ffffff',
+              borderRadius: 26,
+              padding: '40px 48px',
+              borderLeft: '8px solid #0b0c0e',
+              border: C.border,
+              boxShadow: C.cardShadow,
             }}
           >
-            "Information is a public utility, not an attention slot machine." — Founded by Simon Eggert
+            <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontStyle: 'italic', fontSize: 32, color: C.ink, lineHeight: 1.35 }}>
+              "Information is a public utility, not an attention casino."
+            </div>
+            <div style={{ fontSize: 16, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 14, fontWeight: 700 }}>
+              — Simon Eggert, Founder of PLAIN
+            </div>
           </div>
         </div>
       ),
     },
     {
-      num: '05',
+      index: '05',
+      category: 'AI VERIFICATION',
       title: 'ADVERSARIAL AI AUDIT',
-      subtitle: 'REPORTER + ADVERSARIAL EDITOR',
-      dek: 'Reporter agents extract raw facts; a separate independent editor agent ruthlessly cross-examines every sentence against primary sources.',
-      tag: 'PRINCIPLE 05 / 05',
+      subtitle: 'Dual-engine cross-examination pipeline.',
+      dek: 'DeepSeek v4.1 Flash acts as primary reporter; MiniMax M3 acts as ruthless adversarial editor, auditing every single statement against primary wires.',
       renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%' }}>
+          {/* Engine 1: Reporter */}
           <div
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              backgroundColor: '#fff',
+              backgroundColor: '#ffffff',
+              borderRadius: 24,
               border: C.border,
-              padding: '20px 24px',
-              boxShadow: '6px 6px 0px #0d0d0b',
+              padding: '36px 38px',
+              boxShadow: C.cardShadow,
             }}
           >
-            <div>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.muted, fontWeight: 700 }}>
-                STAGE 1: FACT EXTRACTION
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, fontWeight: 700 }}>
+                  STAGE 01 · PRIMARY FACT SYNTHESIS
+                </div>
+                <div style={{ fontSize: 36, fontWeight: 900, color: C.ink, marginTop: 6 }}>
+                  DeepSeek v4.1 Flash
+                </div>
+                <div style={{ fontSize: 17, color: C.inkMuted, marginTop: 4 }}>
+                  Ingests live global wires & extracts immutable primary data points.
+                </div>
               </div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 900 }}>
-                DeepSeek v4.1 Flash Agent
+              <div
+                style={{
+                  backgroundColor: C.ink,
+                  color: '#fff',
+                  padding: '12px 24px',
+                  borderRadius: 12,
+                  fontSize: 15,
+                  fontWeight: 900,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  letterSpacing: 1.5,
+                }}
+              >
+                REPORTER
               </div>
             </div>
-            <div style={{ background: C.ink, color: C.paper, padding: '6px 14px', fontFamily: "'JetBrains Mono', monospace", fontSize: 15, fontWeight: 800 }}>
-              REPORTER
+
+            {/* Telemetry Block */}
+            <div
+              style={{
+                marginTop: 16,
+                padding: '14px 18px',
+                backgroundColor: 'rgba(11, 12, 14, 0.04)',
+                borderRadius: 12,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 14,
+                display: 'flex',
+                justifyContent: 'space-between',
+              }}
+            >
+              <span style={{ color: C.inkSubtle }}>INPUT: Reuters (08:14 UTC) + AP (08:16 UTC)</span>
+              <span style={{ color: C.green, fontWeight: 700 }}>✓ 18 immutable data points extracted</span>
             </div>
           </div>
+
+          {/* Audit Link Protocol */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
-              backgroundColor: '#fff',
-              border: C.border,
-              padding: '20px 24px',
-              boxShadow: '6px 6px 0px #0d0d0b',
+              justifyContent: 'center',
+              gap: 16,
             }}
           >
-            <div>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.muted, fontWeight: 700 }}>
-                STAGE 2: ADVERSARIAL CROSS-EXAMINATION
+            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
+            <div
+              style={{
+                backgroundColor: C.red,
+                color: '#fff',
+                padding: '10px 24px',
+                borderRadius: 20,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 14,
+                fontWeight: 800,
+                letterSpacing: 1.5,
+              }}
+            >
+              ADVERSARIAL CROSS-EXAMINATION PROTOCOL ▼
+            </div>
+            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
+          </div>
+
+          {/* Engine 2: Auditor */}
+          <div
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: 24,
+              border: '3.5px solid #dc2626',
+              padding: '36px 38px',
+              boxShadow: '0 20px 50px -10px rgba(220, 38, 38, 0.2)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.red, fontWeight: 800 }}>
+                  STAGE 02 · ADVERSARIAL CROSS-EXAMINER
+                </div>
+                <div style={{ fontSize: 36, fontWeight: 900, color: C.ink, marginTop: 6 }}>
+                  MiniMax M3
+                </div>
+                <div style={{ fontSize: 17, color: C.inkMuted, marginTop: 4 }}>
+                  Challenges every phrase. Ruthlessly purges hallucinations & bias.
+                </div>
               </div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 900 }}>
-                MiniMax M3 Editor Agent
+              <div
+                style={{
+                  backgroundColor: C.red,
+                  color: '#fff',
+                  padding: '12px 24px',
+                  borderRadius: 12,
+                  fontSize: 15,
+                  fontWeight: 900,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  letterSpacing: 1.5,
+                }}
+              >
+                AUDITOR
               </div>
             </div>
-            <div style={{ background: C.accent, color: '#fff', padding: '6px 14px', fontFamily: "'JetBrains Mono', monospace", fontSize: 15, fontWeight: 800 }}>
-              EDITOR
+
+            {/* Telemetry Block */}
+            <div
+              style={{
+                marginTop: 16,
+                padding: '14px 18px',
+                backgroundColor: 'rgba(220, 38, 38, 0.05)',
+                borderRadius: 12,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 14,
+                display: 'flex',
+                justifyContent: 'space-between',
+              }}
+            >
+              <span style={{ color: C.red, fontWeight: 700 }}>AUDIT: 2 speculative adjectives challenged</span>
+              <span style={{ color: C.ink, fontWeight: 700 }}>✓ Replaced with factual metrics</span>
             </div>
+          </div>
+
+          {/* Consensus Verification Bar */}
+          <div
+            style={{
+              backgroundColor: 'rgba(21, 128, 61, 0.08)',
+              borderRadius: 18,
+              padding: '22px 30px',
+              textAlign: 'center',
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 16,
+              fontWeight: 800,
+              color: C.green,
+            }}
+          >
+            ● DUAL-AGENT CONSENSUS VERIFIED BEFORE ANY STORY GOES LIVE
+          </div>
+
+          {/* Quote Card */}
+          <div
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: 20,
+              border: C.border,
+              padding: '22px 32px',
+              fontFamily: "'Newsreader', Georgia, serif",
+              fontStyle: 'italic',
+              fontSize: 22,
+              color: C.inkMuted,
+              textAlign: 'center',
+              boxShadow: C.cardShadow,
+            }}
+          >
+            "One AI writes the story. A second adversarial AI fights to tear it down."
           </div>
         </div>
       ),
     },
   ];
 
-  const p = principlesList[currentPIndex];
+  const currentPrinciple = principles[currentPIndex];
 
   // =============================================================
-  // ACT 4: BROADSHEET & CLIMAX CTA (720 - 900)
+  // ACT 4: THE MONUMENTAL CTA (705 - 900)
   // =============================================================
-  const act4Frame = Math.max(0, frame - 720);
-
-  const broadsheetEntrance = spring({
-    frame: act4Frame,
-    fps,
-    config: { damping: 17, stiffness: 100 },
-  });
-
-  const ctaEntrance = spring({
-    frame: act4Frame - 25,
-    fps,
-    config: { damping: 12, stiffness: 130 },
-  });
-
-  const ctaPulse = 1 + Math.sin(act4Frame * 0.16) * 0.025;
+  const act4Frame = Math.max(0, frame - 705);
+  const a4Entrance = spring({ frame: act4Frame, fps, config: { damping: 16, stiffness: 120 } });
+  const a4CardSpring = spring({ frame: act4Frame - 25, fps, config: { damping: 14, stiffness: 140 } });
+  const a4DeviceSpring = spring({ frame: act4Frame - 15, fps, config: { damping: 15, stiffness: 130 } });
 
   return (
     <AbsoluteFill
       style={{
         backgroundColor: C.paper,
         color: C.ink,
-        fontFamily: "'Helvetica Neue', Arial, -apple-system, sans-serif",
+        fontFamily: "'Inter', -apple-system, sans-serif",
         overflow: 'hidden',
       }}
     >
-      {/* 30-Second Master Audio */}
-      <Audio src={staticFile('audio/master_ad_30s.mp3')} volume={1} />
+      {/* 30-Second Master Neural Voiceover & Soundscape */}
+      <Audio src={staticFile('audio/master_ad_30s_v3.mp3')} volume={1} />
 
-      {/* Global CSS for Paper Texture and High-End Typography */}
+      {/* Global Luxury Typography & Editorial Styling */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Inter:wght@400;700;900&family=Bebas+Neue&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=JetBrains+Mono:wght@500;600;700;800&display=swap');
           
           * {
             box-sizing: border-box;
-            border-radius: 0 !important;
           }
 
-          .paper-bg {
-            background-color: #eae3d2;
-            background-image: radial-gradient(rgba(13, 13, 11, 0.045) 1px, transparent 1px);
-            background-size: 24px 24px;
+          .paper-texture {
+            background-color: #f4efe6;
+            background-image: 
+              radial-gradient(circle at 50% 25%, #faf7f2 0%, #f4efe6 55%, #eae1d0 100%),
+              radial-gradient(rgba(11, 12, 14, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px;
           }
 
-          .brut-shadow {
-            box-shadow: 12px 12px 0px #0d0d0b;
-          }
-
-          .brut-shadow-sm {
-            box-shadow: 6px 6px 0px #0d0d0b;
-          }
-
-          .brut-shadow-lg {
-            box-shadow: 18px 18px 0px #0d0d0b;
+          .dark-studio {
+            background-color: #09090b;
+            background-image: 
+              radial-gradient(ellipse at 50% 30%, #1a1a20 0%, #09090b 80%);
           }
         `}
       </style>
 
       {/* =========================================================== */}
-      {/* ACT 1: THE ENHANCED SENSORY HOOK (Frames 0 - 140 / 0.0s - 4.7s) */}
+      {/* ACT 1: KINETIC HOOK (0 - 140) */}
       {/* =========================================================== */}
       {isAct1 && (
         <AbsoluteFill
+          className="dark-studio"
           style={{
-            backgroundColor: '#0a0a0a',
-            color: '#FFFFFF',
-            padding: '70px 50px',
+            padding: '70px 55px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
             transform: `translate(${jitterX}px, ${jitterY}px)`,
           }}
         >
-          {/* Top Status Bar */}
+          {/* Subtle Top Metadata */}
           <div
             style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              borderBottom: '2px solid rgba(255,255,255,0.2)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
               paddingBottom: 20,
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 22,
+              fontSize: 16,
               letterSpacing: 2,
-              color: '#ff4d4d',
+              color: 'rgba(255, 255, 255, 0.5)',
             }}
           >
-            <span>● PSYCHOLOGICAL TOLL: MODERN MEDIA</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: C.red }} />
+              INVESTIGATION: THE ATTENTION ECONOMY
+            </span>
             <span>01 / 04</span>
           </div>
 
-          {/* Incoming Push Notification */}
-          {pushNotif > 0.05 && (
+          {/* Kinetic Typography Question */}
+          <div style={{ marginTop: 20 }}>
             <div
               style={{
-                backgroundColor: '#222222',
-                border: '2px solid #666666',
-                padding: '16px 24px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 16,
-                transform: `translateY(${interpolate(pushNotif, [0, 1], [-60, 0])}px)`,
-                boxShadow: '0 8px 30px rgba(0,0,0,0.8)',
-              }}
-            >
-              <span style={{ fontSize: 32 }}>🚨</span>
-              <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 15, color: '#ff4d4d', fontWeight: 'bold' }}>
-                  PUSH ALERT · BREAKING TRAGEDY
-                </div>
-                <div style={{ fontSize: 20, fontWeight: 700, color: '#fff', marginTop: 3 }}>
-                  "Urgent: You won't believe what just collapsed. Tap to read."
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* High-Impact Kinetic Headline */}
-          <div style={{ marginTop: 10 }}>
-            <div
-              style={{
-                fontFamily: "'Bebas Neue', 'Inter', sans-serif",
-                fontSize: 92,
-                lineHeight: 0.95,
-                letterSpacing: 1.5,
-                color: '#FFFFFF',
+                fontFamily: "'Inter', sans-serif",
+                fontSize: 68,
+                fontWeight: 900,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+                color: '#ffffff',
                 textTransform: 'uppercase',
-                opacity: hookPhase1,
-                transform: `translateY(${interpolate(hookPhase1, [0, 1], [30, 0])}px)`,
+                opacity: title1Spring,
+                transform: `translateY(${interpolate(title1Spring, [0, 1], [30, 0])}px)`,
               }}
             >
-              WHY ARE YOU ALWAYS{' '}
-              <span style={{ color: '#ff3b30', textDecoration: 'underline' }}>
-                ANXIOUS
+              Why are you always{' '}
+              <span
+                style={{
+                  color: '#ef4444',
+                  textShadow: '0 0 40px rgba(239, 68, 68, 0.6)',
+                  opacity: anxiousSpring,
+                  display: 'inline-block',
+                  transform: `scale(${interpolate(anxiousSpring, [0, 1], [0.92, 1])})`,
+                }}
+              >
+                anxious
               </span>{' '}
-              AFTER READING THE NEWS?
+              after reading the news?
             </div>
 
             <div
               style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 26,
-                color: '#cccccc',
-                marginTop: 20,
-                lineHeight: 1.4,
-                opacity: hookPhase2,
-                transform: `translateY(${interpolate(hookPhase2, [0, 1], [30, 0])}px)`,
+                marginTop: 24,
+                fontFamily: "'Newsreader', Georgia, serif",
+                fontSize: 30,
+                fontStyle: 'italic',
+                color: 'rgba(255, 255, 255, 0.75)',
+                lineHeight: 1.35,
+                opacity: subSpring,
+                transform: `translateY(${interpolate(subSpring, [0, 1], [20, 0])}px)`,
               }}
             >
-              Because 94% of the modern media does not want to inform you.
+              Because modern media does not want to inform you.
               <br />
-              <span style={{ color: '#ffffff', fontWeight: 'bold' }}>
-                They monetize your panic and outrage.
-              </span>
+              <strong style={{ color: '#ffffff', fontStyle: 'normal', fontWeight: 600 }}>
+                They monetize your panic and rage.
+              </strong>
             </div>
           </div>
 
-          {/* Horror Popup Stack on Mock Device */}
+          {/* 3D Phone in Dark Studio Space with Chaotic Media Overload */}
           <div
             style={{
               position: 'relative',
-              height: 940,
+              height: 980,
               width: '100%',
-              margin: '10px 0',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            {/* Blurry Background */}
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundColor: '#161616',
-                border: '3px solid #333',
-                padding: 30,
-                opacity: 0.45,
-                filter: 'blur(2px)',
-              }}
-            >
-              <div style={{ height: 40, background: '#333', marginBottom: 20 }} />
-              <div style={{ height: 260, background: '#444', marginBottom: 20 }} />
-              <div style={{ height: 35, background: '#2e2e2e', marginBottom: 15 }} />
-              <div style={{ height: 35, background: '#2e2e2e', width: '60%' }} />
-            </div>
+            <Phone3D
+              rotX={a1PhoneRotX}
+              rotY={a1PhoneRotY}
+              scale={a1PhoneScale}
+              shadowIntensity={1.2}
+              screenContent={
+                <div style={{ padding: 24, paddingTop: 60, color: '#fff' }}>
+                  <div
+                    style={{
+                      height: 18,
+                      width: '40%',
+                      backgroundColor: 'rgba(255,255,255,0.2)',
+                      borderRadius: 4,
+                      marginBottom: 20,
+                    }}
+                  />
+                  <div
+                    style={{
+                      height: 140,
+                      backgroundColor: 'rgba(255,255,255,0.06)',
+                      borderRadius: 12,
+                      marginBottom: 16,
+                      border: '1px solid rgba(255,255,255,0.08)',
+                    }}
+                  />
+                  <div
+                    style={{
+                      height: 80,
+                      backgroundColor: 'rgba(255,255,255,0.04)',
+                      borderRadius: 12,
+                      marginBottom: 16,
+                    }}
+                  />
+                </div>
+              }
+            />
 
-            {/* Popup 1: Cookie Consent */}
-            {p1Spring > 0.05 && (
+            {/* Notification Alert 1 */}
+            {notif1 > 0.05 && (
               <div
                 style={{
                   position: 'absolute',
-                  top: 30,
+                  top: 100,
+                  left: 30,
+                  right: 30,
+                  backgroundColor: 'rgba(20, 20, 24, 0.94)',
+                  backdropFilter: 'blur(20px)',
+                  borderRadius: 20,
+                  border: '1px solid rgba(239, 68, 68, 0.4)',
+                  padding: '22px 26px',
+                  boxShadow: '0 25px 60px rgba(0,0,0,0.7), 0 0 30px rgba(239, 68, 68, 0.2)',
+                  transform: `scale(${notif1}) translateY(${interpolate(notif1, [0, 1], [-40, 0])}px) rotate(-1.5deg)`,
+                  zIndex: 40,
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#ef4444' }} />
+                  <span style={{ fontSize: 12, fontFamily: "'JetBrains Mono', monospace", color: '#ef4444', fontWeight: 700 }}>
+                    BREAKING ALERT · HIGH SENSATIONALISM
+                  </span>
+                </div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: '#fff', marginTop: 8, lineHeight: 1.25 }}>
+                  "Urgent: Disaster Looms as Tensions Reach Catastrophic Breaking Point!"
+                </div>
+              </div>
+            )}
+
+            {/* Notification Alert 2 */}
+            {notif2 > 0.05 && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 320,
                   left: 20,
                   right: 20,
+                  backgroundColor: 'rgba(24, 24, 28, 0.95)',
+                  backdropFilter: 'blur(20px)',
+                  borderRadius: 20,
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  padding: '22px 26px',
+                  boxShadow: '0 25px 60px rgba(0,0,0,0.7)',
+                  transform: `scale(${notif2}) rotate(2deg)`,
+                  zIndex: 45,
+                }}
+              >
+                <div style={{ fontSize: 12, fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.6)', fontWeight: 700 }}>
+                  PRIVACY BREACH WARNING
+                </div>
+                <div style={{ fontSize: 21, fontWeight: 700, color: '#fff', marginTop: 6, lineHeight: 1.3 }}>
+                  842 behavioral advertisers are currently tracking your location and read history.
+                </div>
+              </div>
+            )}
+
+            {/* Paywall Gate Modal */}
+            {paywallModal > 0.05 && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 540,
+                  left: 35,
+                  right: 35,
                   backgroundColor: '#ffffff',
-                  color: '#000000',
-                  padding: 28,
-                  border: '4px solid #000000',
-                  boxShadow: '10px 10px 0px rgba(255,59,48,0.8)',
-                  transform: `scale(${p1Spring}) rotate(-2deg)`,
-                }}
-              >
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 16, color: '#ff3b30', fontWeight: 'bold' }}>
-                  🍪 942 ADVERTISING PARTNERS WANT YOUR DATA
-                </div>
-                <div style={{ fontSize: 26, fontWeight: 900, marginTop: 10, lineHeight: 1.2 }}>
-                  Allow all behavioral tracking or pay $14.99 / month?
-                </div>
-                <div style={{ marginTop: 18, background: '#000', color: '#fff', padding: 12, textAlign: 'center', fontWeight: 'bold' }}>
-                  ACCEPT ALL TRACKERS
-                </div>
-              </div>
-            )}
-
-            {/* Popup 2: Obscene Clickbait */}
-            {p2Spring > 0.05 && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 280,
-                  left: 10,
-                  right: 10,
-                  backgroundColor: '#ffff00',
-                  color: '#000000',
-                  padding: 24,
-                  border: '4px solid #ff0000',
-                  boxShadow: '12px 12px 0px #000',
-                  transform: `scale(${p2Spring}) rotate(2.5deg)`,
-                }}
-              >
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 17, color: '#cc0000', fontWeight: 900 }}>
-                  ⚠️ CLICKBAIT: DOCTORS ARE SPEECHLESS!
-                </div>
-                <div style={{ fontSize: 32, fontWeight: 900, lineHeight: 1.1, marginTop: 6 }}>
-                  THIS ONE WEIRD TRICK MELTS BELLY FAT OVERNIGHT!
-                </div>
-              </div>
-            )}
-
-            {/* Popup 3: Autoplay Video Ad */}
-            {p3Spring > 0.05 && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 490,
-                  left: 25,
-                  right: 25,
-                  backgroundColor: '#ff2d55',
-                  color: '#ffffff',
-                  padding: 22,
-                  border: '3px solid #ffffff',
-                  boxShadow: '12px 12px 0px #000',
-                  transform: `scale(${p3Spring}) rotate(-2deg)`,
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 17, fontWeight: 800 }}>
-                    ▶ VIDEO AD (0:30) · SOUND UNMUTED
-                  </span>
-                  <span style={{ fontSize: 24, fontWeight: 'bold' }}>[X]</span>
-                </div>
-                <div style={{ fontSize: 24, fontWeight: 800, marginTop: 8 }}>
-                  Claim $5,000 casino bonus right now! Offer expires in 60s!
-                </div>
-              </div>
-            )}
-
-            {/* Popup 4: Paywall Lock */}
-            {p4Spring > 0.05 && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 670,
-                  left: 15,
-                  right: 15,
-                  backgroundColor: '#000000',
-                  color: '#ffffff',
-                  padding: 22,
-                  border: '3px solid #ff4d4d',
-                  boxShadow: '10px 10px 0px #ff4d4d',
-                  transform: `scale(${p4Spring}) rotate(1.2deg)`,
-                }}
-              >
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 19, color: '#ff4d4d', fontWeight: 'bold' }}>
-                  🔒 PAYWALL: 0 OF 0 FREE ARTICLES REMAINING
-                </div>
-                <div style={{ fontSize: 22, marginTop: 6 }}>
-                  $1 for your first 3 days, then renews at $59.99/month.
-                </div>
-              </div>
-            )}
-
-            {/* THE RED STAMP SLAM */}
-            {stampSpring > 0.1 && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '36%',
-                  left: '3%',
-                  right: '3%',
-                  backgroundColor: '#c93b2b',
-                  color: '#ffffff',
-                  padding: '38px 20px',
-                  border: '6px solid #ffffff',
-                  boxShadow: '20px 20px 0px #000000',
-                  textAlign: 'center',
-                  transform: `scale(${stampSpring}) rotate(-6deg)`,
+                  borderRadius: 22,
+                  padding: '28px 28px',
+                  boxShadow: '0 30px 80px rgba(0,0,0,0.85)',
+                  transform: `scale(${paywallModal}) rotate(-1deg)`,
                   zIndex: 50,
+                  color: '#000',
                 }}
               >
-                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 76, letterSpacing: 3, lineHeight: 1 }}>
-                  THIS IS NOT JOURNALISM.
+                <div style={{ fontSize: 12, fontFamily: "'JetBrains Mono', monospace", color: '#ef4444', fontWeight: 800 }}>
+                  PAYWALL RESTRICTION
                 </div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 26, fontWeight: 800, letterSpacing: 2, marginTop: 12 }}>
+                <div style={{ fontSize: 26, fontWeight: 900, marginTop: 8, lineHeight: 1.2 }}>
+                  You have read 0 of 0 free articles. Pay $29.99/mo to continue.
+                </div>
+                <div
+                  style={{
+                    marginTop: 18,
+                    backgroundColor: '#000000',
+                    color: '#ffffff',
+                    borderRadius: 12,
+                    padding: '14px',
+                    textAlign: 'center',
+                    fontWeight: 700,
+                    fontSize: 15,
+                  }}
+                >
+                  SUBSCRIBE OR LEAVE
+                </div>
+              </div>
+            )}
+
+            {/* The Slapped Truth Stamp */}
+            {truthStamp > 0.05 && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '40%',
+                  left: '4%',
+                  right: '4%',
+                  backgroundColor: '#dc2626',
+                  color: '#ffffff',
+                  borderRadius: 20,
+                  padding: '36px 30px',
+                  boxShadow: '0 30px 90px rgba(220, 38, 38, 0.6), 0 0 0 4px #ffffff',
+                  transform: `scale(${truthStamp}) rotate(-4deg)`,
+                  zIndex: 60,
+                  textAlign: 'center',
+                }}
+              >
+                <div style={{ fontSize: 44, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-0.02em', lineHeight: 1 }}>
+                  This is not journalism.
+                </div>
+                <div
+                  style={{
+                    fontSize: 22,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontWeight: 800,
+                    letterSpacing: 2,
+                    marginTop: 12,
+                    color: '#fecaca',
+                  }}
+                >
                   THIS IS AN OUTRAGE CASINO.
                 </div>
               </div>
@@ -725,59 +1354,61 @@ export const PlainMotionAd = () => {
           <div
             style={{
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 22,
-              color: '#888888',
+              fontSize: 16,
+              color: 'rgba(255,255,255,0.4)',
               textAlign: 'center',
-              borderTop: '2px solid rgba(255,255,255,0.2)',
-              paddingTop: 20,
               letterSpacing: 2,
             }}
           >
-            DISCOVER THE RADICAL ANTIDOTE ▼
+            PREPARE FOR THE RADICAL ANTIDOTE
           </div>
         </AbsoluteFill>
       )}
 
       {/* =========================================================== */}
-      {/* ACT 2: ENTER PLAIN — REAL FRONTPAGE (Frames 140 - 280 / 4.7s - 9.3s) */}
+      {/* ACT 2: ENTER PLAIN — THE ANTIDOTE (140 - 280) */}
       {/* =========================================================== */}
       {isAct2 && (
-        <AbsoluteFill className="paper-bg" style={{ padding: '60px 45px' }}>
-          {/* Top Swiss Header */}
+        <AbsoluteFill className="paper-texture" style={{ padding: '60px 50px' }}>
+          {/* Top Swiss Editorial Header */}
           <div
             style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              borderBottom: C.border,
+              borderBottom: C.borderBold,
               paddingBottom: 16,
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 20,
-              fontWeight: 700,
+              fontSize: 16,
               letterSpacing: 2,
-              color: C.ink,
+              fontWeight: 700,
             }}
           >
-            <span>PLAIN. SWISS MODERNIST NEWS</span>
-            <span style={{ color: C.accent }}>● 02 / 04</span>
+            <span>PLAIN · SWISS MODERNIST NEWSROOM</span>
+            <span style={{ color: C.red }}>● 02 / 04</span>
           </div>
 
-          {/* Stark Masthead Header */}
+          {/* Hero Masthead Reveal */}
           <div
             style={{
-              marginTop: 25,
-              borderBottom: '1px solid #34312a',
-              paddingBottom: 25,
+              marginTop: 24,
+              display: 'flex',
+              alignItems: 'baseline',
+              justifyContent: 'space-between',
+              borderBottom: C.border,
+              paddingBottom: 20,
+              opacity: a2IntroSpring,
+              transform: `translateY(${interpolate(a2IntroSpring, [0, 1], [25, 0])}px)`,
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 15 }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 18 }}>
               <span
                 style={{
-                  fontFamily: "'Newsreader', Georgia, serif",
-                  fontSize: 105,
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: 104,
                   fontWeight: 900,
-                  letterSpacing: -4,
-                  lineHeight: 0.85,
+                  letterSpacing: '-0.05em',
+                  lineHeight: 0.9,
                   color: C.ink,
                 }}
               >
@@ -786,172 +1417,322 @@ export const PlainMotionAd = () => {
               <span
                 style={{
                   fontFamily: "'Newsreader', Georgia, serif",
-                  fontSize: 34,
+                  fontSize: 42,
                   fontStyle: 'italic',
-                  color: C.muted,
+                  color: C.inkMuted,
                 }}
               >
-                News without noise.
+                The antidote.
               </span>
             </div>
-
             <div
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 20,
-                color: C.ink,
+                fontSize: 13,
                 fontWeight: 700,
-                marginTop: 15,
+                color: C.green,
                 letterSpacing: 1.5,
-                display: 'flex',
-                gap: 15,
               }}
             >
-              <span style={{ background: C.ink, color: C.paper, padding: '4px 10px' }}>
-                0 ADS
-              </span>
-              <span style={{ background: C.ink, color: C.paper, padding: '4px 10px' }}>
-                0 PAYWALL
-              </span>
-              <span style={{ background: C.ink, color: C.paper, padding: '4px 10px' }}>
-                0 TRACKING
-              </span>
-              <span style={{ background: C.accent, color: '#fff', padding: '4px 10px' }}>
-                100% FACTS
-              </span>
+              ● LIVE GLOBAL EDITION
             </div>
           </div>
 
-          {/* REAL MOBILE FOOTAGE IN ACTION (Continuous Smooth 60fps Subpixel Scroll) */}
+          {/* Majestic 3D Device Showcase with Real English Frontpage */}
           <div
             style={{
-              flex: 1,
-              marginTop: 30,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
               position: 'relative',
-              opacity: a2Entrance,
-              transform: `translateY(${interpolate(a2Entrance, [0, 1], [150, 0])}px)`,
+              height: 1080,
+              width: '100%',
+              margin: '25px 0',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: a2PhoneEntrance,
             }}
           >
-            <div
-              className="brut-shadow-lg"
-              style={{
-                width: 860,
-                height: 1220,
-                backgroundColor: C.paper,
-                border: '6px solid #0d0d0b',
-                overflow: 'hidden',
-                position: 'relative',
-              }}
-            >
-              {/* Simulated Live Top Status */}
-              <div
-                style={{
-                  height: 38,
-                  backgroundColor: C.ink,
-                  color: C.paper,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '0 20px',
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 14,
-                  letterSpacing: 1,
-                  zIndex: 10,
-                  position: 'relative',
-                }}
-              >
-                <span>plain-news.ch</span>
-                <span style={{ color: '#7fc48f' }}>● LIVE ENGLISH EDITION</span>
-              </div>
-
-              {/* REAL RECORDED FOOTAGE: Continuous 60fps Subpixel Smooth Translation */}
-              <div
-                style={{
-                  width: '100%',
-                  height: 'calc(100% - 38px)',
-                  overflow: 'hidden',
-                  position: 'relative',
-                }}
-              >
-                <div
+            <Phone3D
+              width={540}
+              height={1100}
+              rotX={interpolate(act2Frame, [0, 140], [10, 0])}
+              rotY={interpolate(act2Frame, [0, 140], [-10, 0])}
+              scale={interpolate(act2Frame, [0, 140], [0.98, 1.05])}
+              shadowIntensity={1.2}
+              screenScrollY={a2ScrollY}
+              screenContent={
+                <Img
+                  src={staticFile('footage_en/mobile_frontpage_long.png')}
                   style={{
                     width: '100%',
-                    transform: `translate3d(0, ${frontpageScrollY}px, 0)`,
-                    willChange: 'transform',
+                    display: 'block',
                   }}
-                >
-                  <Img
-                    src={staticFile('footage_en/mobile_frontpage_long.png')}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      display: 'block',
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
+                />
+              }
+            />
 
-            {/* Kinetic Callout Badge */}
-            {a2BadgeSpring > 0.1 && (
+            {/* Floating Luxury Pill 1 (Left) */}
+            {a2Badge1 > 0.05 && (
               <div
-                className="brut-shadow"
                 style={{
                   position: 'absolute',
-                  bottom: 30,
-                  backgroundColor: C.paper,
+                  left: 10,
+                  bottom: 140,
+                  backgroundColor: '#ffffff',
+                  borderRadius: 18,
                   border: C.border,
-                  padding: '20px 30px',
-                  maxWidth: 780,
-                  transform: `scale(${a2BadgeSpring})`,
+                  padding: '24px 26px',
+                  boxShadow: C.cardShadow,
+                  transform: `scale(${a2Badge1}) translateY(${interpolate(a2Badge1, [0, 1], [30, 0])}px)`,
+                  zIndex: 80,
+                  maxWidth: 320,
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: "'Newsreader', Georgia, serif",
-                    fontSize: 32,
-                    fontWeight: 700,
-                    lineHeight: 1.2,
-                    color: C.ink,
-                  }}
-                >
-                  No algorithm. No sensationalism.
+                <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.green, fontWeight: 700 }}>
+                  VERIFIED FACT PIPELINE
                 </div>
-                <div
-                  style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 18,
-                    color: C.muted,
-                    marginTop: 8,
-                    letterSpacing: 1,
-                  }}
-                >
-                  Chronological feeds · Verified source count · Read time transparency.
+                <div style={{ fontSize: 22, fontWeight: 800, color: C.ink, marginTop: 4 }}>
+                  Zero sensationalism.
+                </div>
+                <div style={{ fontSize: 14, color: C.inkSubtle, marginTop: 4 }}>
+                  No algorithm altering your feed.
                 </div>
               </div>
             )}
+
+            {/* Floating Luxury Pill 2 (Right) */}
+            {a2Badge2 > 0.05 && (
+              <div
+                style={{
+                  position: 'absolute',
+                  right: 10,
+                  top: 160,
+                  backgroundColor: C.ink,
+                  color: '#ffffff',
+                  borderRadius: 18,
+                  padding: '24px 26px',
+                  boxShadow: '0 20px 50px rgba(0,0,0,0.3)',
+                  transform: `scale(${a2Badge2}) translateY(${interpolate(a2Badge2, [0, 1], [-30, 0])}px)`,
+                  zIndex: 80,
+                  maxWidth: 320,
+                }}
+              >
+                <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: '#ffffff', opacity: 0.7, fontWeight: 700 }}>
+                  PURE READABILITY
+                </div>
+                <div style={{ fontSize: 22, fontWeight: 800, marginTop: 4 }}>
+                  100% Free Forever.
+                </div>
+                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginTop: 4 }}>
+                  No ads. No paywalls. No tracking.
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Bottom Footnote */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderTop: C.border,
+              paddingTop: 18,
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 14,
+              color: C.inkSubtle,
+            }}
+          >
+            <span>plain-news.ch</span>
+            <span>BUILT ON 5 NON-NEGOTIABLE PRINCIPLES</span>
           </div>
         </AbsoluteFill>
       )}
 
       {/* =========================================================== */}
-      {/* ACT 3: THE 5 PRINCIPLES — ULTRA HIGH-IMPACT FULLSCREEN DESIGN */}
-      {/* (Frames 280 - 720 / 9.3s - 24.0s) */}
-      {/* PERFECT VERTICAL COMPOSITION — ZERO EMPTY BLOCKS */}
+      {/* ACT 3: THE 5 PRINCIPLES — ARCHITECTURAL SUITE (280 - 705) */}
       {/* =========================================================== */}
       {isAct3 && (
-        <AbsoluteFill
-          className="paper-bg"
-          style={{
-            padding: '60px 50px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-          }}
-        >
+        <AbsoluteFill className="paper-texture" style={{ padding: '60px 55px', display: 'flex', flexDirection: 'column' }}>
+          {/* Top Bar */}
+          <div>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                borderBottom: C.borderBold,
+                paddingBottom: 16,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 16,
+                letterSpacing: 2,
+                fontWeight: 700,
+              }}
+            >
+              <span>PLAIN · 5 CORE PRINCIPLES</span>
+              <span style={{ color: C.red }}>● {currentPrinciple.index} / 05</span>
+            </div>
+
+            {/* Principle Header Block - Grand Monumental Proportions */}
+            <div
+              style={{
+                marginTop: 26,
+                borderBottom: C.border,
+                paddingBottom: 22,
+                opacity: cardEntrance,
+                transform: `translateY(${interpolate(cardEntrance, [0, 1], [25, 0])}px)`,
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: 10,
+                }}
+              >
+                <span
+                  style={{
+                    backgroundColor: C.red,
+                    color: '#ffffff',
+                    padding: '8px 16px',
+                    borderRadius: 6,
+                    fontSize: 14,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontWeight: 800,
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  PRINCIPLE {currentPrinciple.index} / 05
+                </span>
+                <span
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: 14,
+                    color: C.inkSubtle,
+                    fontWeight: 700,
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  {currentPrinciple.category}
+                </span>
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: 76,
+                  fontWeight: 900,
+                  lineHeight: 1.0,
+                  letterSpacing: '-0.04em',
+                  color: C.ink,
+                  marginTop: 12,
+                }}
+              >
+                <span style={{ color: C.red, fontFamily: "'Newsreader', Georgia, serif", fontStyle: 'italic', marginRight: 16 }}>
+                  {currentPrinciple.index}.
+                </span>
+                {currentPrinciple.title}
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontSize: 34,
+                  fontStyle: 'italic',
+                  color: C.inkMuted,
+                  marginTop: 10,
+                  lineHeight: 1.3,
+                }}
+              >
+                {currentPrinciple.subtitle}
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: 22,
+                  lineHeight: 1.45,
+                  color: C.inkSubtle,
+                  marginTop: 12,
+                }}
+              >
+                {currentPrinciple.dek}
+              </div>
+            </div>
+          </div>
+
+          {/* Central Visual Component Showcase (Tightly filling vertical space) */}
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              margin: '25px 0',
+              opacity: visualEntrance,
+              transform: `translateY(${interpolate(visualEntrance, [0, 1], [20, 0])}px)`,
+            }}
+          >
+            {currentPrinciple.renderVisual()}
+          </div>
+
+          {/* Bottom Stepper Progress Bar */}
+          <div style={{ marginTop: 'auto' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                fontSize: 13,
+                fontFamily: "'JetBrains Mono', monospace",
+                color: C.inkSubtle,
+                marginBottom: 12,
+                fontWeight: 700,
+              }}
+            >
+              <span>PILLAR PROGRESSION</span>
+              <span>{currentPIndex + 1} OF 5 PILLARS</span>
+            </div>
+            <div style={{ display: 'flex', gap: 10, height: 8 }}>
+              {[0, 1, 2, 3, 4].map((idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    flex: 1,
+                    backgroundColor:
+                      idx === currentPIndex
+                        ? C.red
+                        : idx < currentPIndex
+                        ? C.ink
+                        : 'rgba(11, 12, 14, 0.15)',
+                    borderRadius: 4,
+                  }}
+                />
+              ))}
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingTop: 18,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 13,
+                color: C.inkSubtle,
+              }}
+            >
+              <span>plain-news.ch</span>
+              <span>FOUNDED BY SIMON EGGERT · OPEN SOURCE</span>
+            </div>
+          </div>
+        </AbsoluteFill>
+      )}
+
+      {/* =========================================================== */}
+      {/* ACT 4: THE MONUMENTAL CTA (705 - 900) */}
+      {/* =========================================================== */}
+      {isAct4 && (
+        <AbsoluteFill className="paper-texture" style={{ padding: '60px 50px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           {/* Top Swiss Header */}
           <div>
             <div
@@ -959,270 +1740,110 @@ export const PlainMotionAd = () => {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                borderBottom: C.border,
+                borderBottom: C.borderBold,
                 paddingBottom: 16,
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 20,
-                fontWeight: 700,
+                fontSize: 16,
                 letterSpacing: 2,
-                color: C.ink,
+                fontWeight: 700,
               }}
             >
-              <span>PLAIN. OUR 5 CORE PRINCIPLES</span>
-              <span style={{ color: C.accent }}>● {p.num} / 05</span>
+              <span>PLAIN · THE INDEPENDENT NEWSROOM</span>
+              <span style={{ color: C.red }}>● 04 / 04</span>
             </div>
 
-            {/* Section Masthead */}
+            {/* Monumental Headline */}
             <div
               style={{
-                marginTop: 20,
-                borderBottom: '2px solid #0d0d0b',
-                paddingBottom: 18,
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
+                marginTop: 24,
+                textAlign: 'center',
+                opacity: a4Entrance,
+                transform: `translateY(${interpolate(a4Entrance, [0, 1], [30, 0])}px)`,
               }}
             >
-              <div>
-                <div
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 82,
-                    letterSpacing: 2,
-                    lineHeight: 0.95,
-                    color: C.ink,
-                  }}
-                >
-                  THE ARCHITECTURE OF TRUTH.
-                </div>
-                <div
-                  style={{
-                    fontFamily: "'Newsreader', Georgia, serif",
-                    fontSize: 28,
-                    fontStyle: 'italic',
-                    color: C.muted,
-                    marginTop: 6,
-                  }}
-                >
-                  How we engineered a completely bias-free newsroom.
-                </div>
-              </div>
-
-              {/* Rule Indicator Badge */}
               <div
                 style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 18,
-                  fontWeight: 800,
-                  background: C.ink,
-                  color: C.paper,
-                  padding: '6px 16px',
-                  letterSpacing: 1.5,
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: 88,
+                  fontWeight: 900,
+                  letterSpacing: '-0.04em',
+                  lineHeight: 0.95,
+                  color: C.ink,
+                  textTransform: 'uppercase',
                 }}
               >
-                RULE {p.num}
+                Turn off the noise.
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontSize: 38,
+                  fontStyle: 'italic',
+                  color: C.inkMuted,
+                  marginTop: 12,
+                }}
+              >
+                Read the first real news of your life.
               </div>
             </div>
           </div>
 
-          {/* MAIN PRINCIPLE CARD — EXPANDED TALL DESIGN TO FILL SCREEN HARMONIOUSLY */}
+          {/* High-End Broadsheet Display Mockup with Realistic Browser Chrome & Shadow */}
           <div
             style={{
-              flex: 1,
-              margin: '25px 0',
+              position: 'relative',
+              width: '100%',
+              height: 840,
+              margin: '20px 0',
+              borderRadius: 24,
+              overflow: 'hidden',
+              boxShadow: '0 40px 100px -20px rgba(0,0,0,0.35), 0 0 0 2px rgba(11,12,14,0.14)',
+              opacity: a4DeviceSpring,
+              transform: `scale(${interpolate(a4DeviceSpring, [0, 1], [0.94, 1])})`,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              backgroundColor: '#fff',
             }}
           >
+            {/* Browser Chrome Header */}
             <div
-              className="brut-shadow-lg"
               style={{
-                backgroundColor: C.paper,
-                border: C.heavyBorder,
-                padding: '45px 45px',
-                transform: `scale(${cardEntranceSpring})`,
+                height: 46,
+                backgroundColor: '#ede8dd',
+                borderBottom: '1px solid rgba(0,0,0,0.1)',
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                minHeight: 1120,
+                alignItems: 'center',
+                padding: '0 18px',
+                gap: 12,
               }}
             >
-              {/* Card Header Tag Row */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span
-                  style={{
-                    backgroundColor: C.accent,
-                    color: '#ffffff',
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 17,
-                    fontWeight: 800,
-                    padding: '8px 18px',
-                    letterSpacing: 1.5,
-                  }}
-                >
-                  {p.tag}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 18,
-                    fontWeight: 800,
-                    color: C.muted,
-                    letterSpacing: 1.5,
-                  }}
-                >
-                  {p.subtitle}
-                </span>
+              <div style={{ display: 'flex', gap: 7 }}>
+                <div style={{ width: 11, height: 11, borderRadius: '50%', backgroundColor: '#ff5f57' }} />
+                <div style={{ width: 11, height: 11, borderRadius: '50%', backgroundColor: '#febc2e' }} />
+                <div style={{ width: 11, height: 11, borderRadius: '50%', backgroundColor: '#28c840' }} />
               </div>
-
-              {/* Massive Principle Title & Body */}
-              <div style={{ margin: '15px 0' }}>
-                <div
-                  style={{
-                    fontFamily: "'Newsreader', Georgia, serif",
-                    fontSize: 78,
-                    fontWeight: 900,
-                    letterSpacing: -2,
-                    lineHeight: 1.0,
-                    color: C.ink,
-                  }}
-                >
-                  <span style={{ color: C.accent, marginRight: 15 }}>{p.num}.</span>
-                  {p.title}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: 27,
-                    lineHeight: 1.45,
-                    color: '#2a2822',
-                    marginTop: 18,
-                  }}
-                >
-                  {p.dek}
-                </div>
-              </div>
-
-              {/* Visual Component Specific to the Principle */}
               <div
                 style={{
-                  borderTop: '2px solid #34312a',
-                  paddingTop: 24,
-                  opacity: visualEntranceSpring,
-                  transform: `translateY(${interpolate(visualEntranceSpring, [0, 1], [20, 0])}px)`,
+                  flex: 1,
+                  backgroundColor: '#ffffff',
+                  height: 30,
+                  borderRadius: 6,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 13,
+                  color: C.inkSubtle,
+                  letterSpacing: 1,
+                  border: '1px solid rgba(0,0,0,0.06)',
                 }}
               >
-                {p.renderVisual()}
-              </div>
-
-              {/* Progress Bar & Footer */}
-              <div style={{ marginTop: 20 }}>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 15,
-                    color: C.muted,
-                    marginBottom: 10,
-                    fontWeight: 700,
-                    letterSpacing: 1,
-                  }}
-                >
-                  <span>PROGRESSION</span>
-                  <span>{currentPIndex + 1} OF 5 PILLARS</span>
-                </div>
-                <div
-                  style={{
-                    display: 'flex',
-                    gap: 10,
-                  }}
-                >
-                  {[0, 1, 2, 3, 4].map((idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        flex: 1,
-                        height: 12,
-                        backgroundColor:
-                          idx === currentPIndex
-                            ? C.accent
-                            : idx < currentPIndex
-                            ? C.ink
-                            : 'rgba(13, 13, 11, 0.2)',
-                        border: '1px solid #0d0d0b',
-                      }}
-                    />
-                  ))}
-                </div>
+                https://plain-news.ch
               </div>
             </div>
-          </div>
 
-          {/* Bottom Swiss Sub-Footer */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              borderTop: '2px solid #0d0d0b',
-              paddingTop: 16,
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 16,
-              color: C.muted,
-              letterSpacing: 1.5,
-            }}
-          >
-            <span>PLAIN-NEWS.CH</span>
-            <span>FOUNDED BY SIMON EGGERT · OPEN SOURCE</span>
-          </div>
-        </AbsoluteFill>
-      )}
-
-      {/* =========================================================== */}
-      {/* ACT 4: BROADSHEET & CLIMAX CTA (Frames 720 - 900 / 24.0s - 30.0s) */}
-      {/* =========================================================== */}
-      {isAct4 && (
-        <AbsoluteFill className="paper-bg" style={{ padding: '60px 45px' }}>
-          {/* Top Swiss Header */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              borderBottom: C.border,
-              paddingBottom: 16,
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 20,
-              fontWeight: 700,
-              letterSpacing: 2,
-              color: C.ink,
-            }}
-          >
-            <span>PLAIN. THE INDEPENDENT NEWSROOM</span>
-            <span style={{ color: C.accent }}>● 04 / 04</span>
-          </div>
-
-          {/* REAL DESKTOP BROADSHEET SHOWCASE */}
-          <div
-            style={{
-              marginTop: 25,
-              opacity: broadsheetEntrance,
-              transform: `translateY(${interpolate(broadsheetEntrance, [0, 1], [40, 0])}px)`,
-              position: 'relative',
-            }}
-          >
-            <div
-              className="brut-shadow-sm"
-              style={{
-                width: '100%',
-                height: 520,
-                border: C.border,
-                overflow: 'hidden',
-                backgroundColor: '#ffffff',
-              }}
-            >
+            {/* Broadsheet Screenshot */}
+            <div style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
               <Img
                 src={staticFile('footage_en/desktop_broadsheet_en.png')}
                 style={{
@@ -1232,172 +1853,112 @@ export const PlainMotionAd = () => {
                   objectPosition: 'top center',
                 }}
               />
-            </div>
-            <div
-              style={{
-                position: 'absolute',
-                top: 15,
-                left: 15,
-                background: C.ink,
-                color: C.paper,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 16,
-                padding: '6px 14px',
-                fontWeight: 700,
-                letterSpacing: 1,
-              }}
-            >
-              DESKTOP BROADSHEET · 100% READABILITY
-            </div>
-          </div>
-
-          {/* Climax Headlines */}
-          <div
-            style={{
-              marginTop: 35,
-              textAlign: 'center',
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: 88,
-                letterSpacing: 3,
-                lineHeight: 0.9,
-                color: C.ink,
-              }}
-            >
-              TURN OFF THE NOISE.
-            </div>
-            <div
-              style={{
-                fontFamily: "'Newsreader', Georgia, serif",
-                fontSize: 34,
-                fontStyle: 'italic',
-                color: C.muted,
-                marginTop: 15,
-              }}
-            >
-              Read the first real news of your life.
-            </div>
-          </div>
-
-          {/* FINAL HIGH-CONVERTING BRUTALIST CALL-TO-ACTION CARD */}
-          <div
-            style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              opacity: ctaEntrance,
-              transform: `scale(${ctaEntrance})`,
-            }}
-          >
-            <div
-              className="brut-shadow-lg"
-              style={{
-                width: '100%',
-                backgroundColor: C.ink,
-                color: C.paper,
-                border: '6px solid #0d0d0b',
-                padding: '50px 40px',
-                textAlign: 'center',
-                position: 'relative',
-              }}
-            >
-              {/* Corner badge */}
+              {/* Subtle Gradient Fog at bottom */}
               <div
                 style={{
                   position: 'absolute',
-                  top: -24,
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  backgroundColor: C.accent,
-                  color: '#ffffff',
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 18,
-                  fontWeight: 800,
-                  padding: '8px 24px',
-                  letterSpacing: 2,
-                  border: '3px solid #0d0d0b',
+                  inset: 0,
+                  background: 'linear-gradient(to bottom, transparent 65%, rgba(244,239,230,0.95) 100%)',
                 }}
-              >
-                ● 100% FREE · NO SUBSCRIPTION EVER
-              </div>
+              />
+            </div>
+          </div>
 
+          {/* Luxury CTA Card */}
+          <div>
+            <div
+              style={{
+                backgroundColor: C.ink,
+                borderRadius: 24,
+                padding: '40px 42px',
+                textAlign: 'center',
+                color: '#ffffff',
+                boxShadow: '0 25px 65px rgba(0,0,0,0.35)',
+                opacity: a4CardSpring,
+                transform: `scale(${interpolate(a4CardSpring, [0, 1], [0.92, 1])})`,
+              }}
+            >
               <div
                 style={{
-                  fontFamily: "'Newsreader', Georgia, serif",
-                  fontSize: 80,
-                  fontWeight: 900,
-                  letterSpacing: -3,
-                  lineHeight: 1,
-                  color: C.paper,
-                }}
-              >
-                PLAIN.
-              </div>
-
-              <div
-                style={{
-                  marginTop: 30,
-                  transform: `scale(${ctaPulse})`,
                   display: 'inline-block',
+                  backgroundColor: C.red,
+                  color: '#fff',
+                  padding: '6px 18px',
+                  borderRadius: 20,
+                  fontSize: 13,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontWeight: 800,
+                  letterSpacing: 2,
+                  marginBottom: 16,
                 }}
               >
-                <div
-                  style={{
-                    backgroundColor: C.paper,
-                    color: C.ink,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 48,
-                    fontWeight: 900,
-                    letterSpacing: 2,
-                    padding: '20px 45px',
-                    border: '4px solid #ffffff',
-                    boxShadow: '8px 8px 0px rgba(255,255,255,0.4)',
-                  }}
-                >
-                  plain-news.ch
-                </div>
+                100% FREE · NO SUBSCRIPTION EVER
               </div>
 
               <div
                 style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: 76,
+                  fontWeight: 900,
+                  letterSpacing: '-0.04em',
+                  lineHeight: 1,
+                  color: '#ffffff',
+                }}
+              >
+                plain-news.ch
+              </div>
+
+              <div
+                style={{
+                  marginTop: 18,
+                  fontSize: 16,
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 22,
-                  color: '#b0a996',
-                  marginTop: 30,
-                  letterSpacing: 2,
+                  color: 'rgba(255,255,255,0.7)',
+                  letterSpacing: 1.5,
                 }}
               >
                 OPEN DIRECTLY IN YOUR BROWSER · NO APP NEEDED
               </div>
-
               <div
                 style={{
+                  marginTop: 8,
+                  fontSize: 13,
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 18,
-                  color: '#776f5f',
-                  marginTop: 15,
+                  color: 'rgba(255,255,255,0.4)',
                   letterSpacing: 1.5,
                 }}
               >
-                9 LANGUAGES IN REAL-TIME · 100% UNBIASED & OPEN SOURCE
+                9 LANGUAGES IN REAL-TIME · 100% UNBIASED · OPEN SOURCE
               </div>
+            </div>
+
+            {/* Footer */}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingTop: 18,
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 13,
+                color: C.inkSubtle,
+              }}
+            >
+              <span>FOUNDED BY SIMON EGGERT</span>
+              <span>RADICAL OBJECTIVITY</span>
             </div>
           </div>
         </AbsoluteFill>
       )}
 
-      {/* Global Hard Cut Flash Overlay */}
-      {cutFlash > 0.01 && (
+      {/* Cinematic White Flash at Cut into Plain (Frames 137 - 146) */}
+      {cutFlash > 0 && (
         <AbsoluteFill
           style={{
             backgroundColor: '#ffffff',
             opacity: cutFlash,
             pointerEvents: 'none',
+            zIndex: 999,
           }}
         />
       )}
