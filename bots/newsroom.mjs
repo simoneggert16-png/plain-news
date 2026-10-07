@@ -31,7 +31,7 @@ import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
 
-const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 2);
+const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 9);
 const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 1);
 const log = (...a) => {
   process.stdout.write(`${new Date().toISOString().slice(11, 19)} ${a.join(' ')}\n`);
@@ -229,19 +229,16 @@ async function main() {
   }
 
   allEvents.sort((a, b) => {
-    const aNeeded = (categoryCounts[a.category] || 0) < TARGET_PER_CAT ? 100 : 0;
-    const bNeeded = (categoryCounts[b.category] || 0) < TARGET_PER_CAT ? 100 : 0;
-    return (bNeeded + b.importance * 10 + b.outlets) - (aNeeded + a.importance * 10 + a.outlets);
+    // Sort by importance and source depth
+    return (b.importance * 10 + b.outlets) - (a.importance * 10 + a.outlets);
   });
   const perCat = {};
   const events = allEvents
     .filter((e) => {
-      const current = categoryCounts[e.category] || 0;
-      if (current >= TARGET_PER_CAT && neededCategories.length > 0) return false;
       return (perCat[e.category] = (perCat[e.category] || 0) + 1) <= MAX_PER_CATEGORY;
     })
     .slice(0, MAX_STORIES);
-  log(`DESK   ${events.length} events selected across categories`);
+  log(`DESK   ${events.length} events selected across categories (${Object.keys(perCat).join(', ')})`);
 
   const published = [];
   for (const event of events) {

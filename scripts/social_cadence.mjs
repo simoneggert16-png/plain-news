@@ -69,15 +69,32 @@ export async function checkAndPublishNextBatch() {
     },
   ];
 
-  const pending = availableBatches.filter(b => !state.publishedBatches.includes(b.id));
+  let pending = availableBatches.filter(b => !state.publishedBatches.includes(b.id));
 
   if (!pending.length) {
-    console.log('[SOCIAL] All existing batches have been posted! Generating next batch automatically...');
-    return;
+    console.log('[SOCIAL] All existing batches have been posted! Generating next batch automatically from fresh news...');
+    try {
+      const { execSync } = await import('child_process');
+      execSync('node scripts/generate_social.mjs', { stdio: 'inherit' });
+      // Queue a new dynamic batch
+      const batchId = `dynamic-batch-${Date.now().toString(36)}`;
+      const newBatch = {
+        id: batchId,
+        type: 'carousel',
+        title: 'PLAIN — Fresh editorial wire updates',
+        caption: 'Latest unbiased news updates directly from primary sources.\n\nRead full coverage without ads: https://www.plain-news.ch',
+      };
+      availableBatches.push(newBatch);
+      pending.push(newBatch);
+      console.log(`[SOCIAL] ✓ Automatically synthesized fresh social content: ${batchId}`);
+    } catch (e) {
+      console.error('[SOCIAL] Failed to generate fresh social content:', e.message);
+      return;
+    }
   }
 
   const nextBatch = pending[0];
-  console.log(`[SOCIAL] Publishing batch: ${nextBatch.id} (${nextBatch.type})`);
+  console.log(`[SOCIAL] Selected batch for 5-hour window: ${nextBatch.id} (${nextBatch.type})`);
 
   // If TikTok or Instagram Access Tokens are configured, trigger dispatch
   const hasTikTok = Boolean(process.env.TIKTOK_ACCESS_TOKEN);

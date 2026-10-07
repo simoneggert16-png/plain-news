@@ -1,8 +1,8 @@
 // PLAIN. Media Intelligence & Curator
-// Filters out boring logos, billboards & stock icons.
-// Extracts authentic editorial photography and embedded video reports (YouTube, MP4, broadcasters).
+// Strict editorial standards: authentic high-res photojournalism only.
+// Filters out logos, TV banners, thumbnails, studio headshots, and stock slop.
 
-const JUNK_PATTERNS = [
+export const JUNK_PATTERNS = [
   /politico-billboard/i,
   /billboard/i,
   /site[_-]?logo/i,
@@ -30,6 +30,16 @@ const JUNK_PATTERNS = [
   /writer/i,
   /columnist/i,
   /bylines?/i,
+  /foxnews.*(?:boltdns|match|flash|headline)/i,
+  /boltdns\.net/i,
+  /(?:flash|breaking)[_-]?headline/i,
+  /(?:video[_-]?thumb|preview[_-]?thumb|default[_-]?thumb|lead[_-]?thumb)/i,
+  /\b(?:100x100|150x150|200x200|300x200|337x225|sq-[a-f0-9]+)\b/i,
+  /[?&]s=100\b/i,
+  /ci102l/i,
+  /w[=_:]?(?:100|150|200|300|337|400)\b/i,
+  /badge|watermark|banner|ticker/i,
+  /broadcast.*capture|capture-\d+/i,
   /\b(?:340\/340|150\/150|100\/100|80\/80|64\/64|150x150|200x200|300x200|w[=_:]150|w[=_:]200|w[=_:]300|thumb|thumbnail)\b/i,
 ];
 
@@ -37,6 +47,79 @@ export function isJunkImage(url) {
   if (!url || typeof url !== 'string') return true;
   if (!/^https?:\/\//i.test(url)) return true;
   return JUNK_PATTERNS.some((pat) => pat.test(url));
+}
+
+/** Pure Node.js zero-dependency image dimension parser from buffer header */
+export function getImageDimensions(buffer) {
+  if (!buffer || buffer.length < 16) return null;
+  // PNG: 89 50 4E 47 0D 0A 1A 0A
+  if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47 && buffer.length >= 24) {
+    return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20), type: 'png' };
+  }
+  // GIF: GIF87a or GIF89a
+  if (buffer[0] === 0x47 && buffer[1] === 0x49 && buffer[2] === 0x46 && buffer.length >= 10) {
+    return { width: buffer.readUInt16LE(6), height: buffer.readUInt16LE(8), type: 'gif' };
+  }
+  // JPEG: FF D8
+  if (buffer[0] === 0xFF && buffer[1] === 0xD8) {
+    let offset = 2;
+    while (offset < buffer.length - 8) {
+      if (buffer[offset] !== 0xFF) { offset++; continue; }
+      const marker = buffer[offset + 1];
+      if (marker === 0xC0 || marker === 0xC1 || marker === 0xC2 || marker === 0xC3) {
+        const height = buffer.readUInt16BE(offset + 5);
+        const width = buffer.readUInt16BE(offset + 7);
+        return { width, height, type: 'jpeg' };
+      }
+      const len = buffer.readUInt16BE(offset + 2);
+      offset += 2 + len;
+    }
+  }
+  // WEBP: RIFF .... WEBP
+  if (buffer.toString('ascii', 0, 4) === 'RIFF' && buffer.toString('ascii', 8, 12) === 'WEBP') {
+    const vp8 = buffer.toString('ascii', 12, 16);
+    if (vp8 === 'VP8X' && buffer.length >= 30) {
+      return { width: 1 + buffer.readUIntLE(24, 3), height: 1 + buffer.readUIntLE(27, 3), type: 'webp' };
+    }
+    if (vp8 === 'VP8 ' && buffer.length >= 30) {
+      return { width: buffer.readUInt16LE(26) & 0x3fff, height: buffer.readUInt16LE(28) & 0x3fff, type: 'webp' };
+    }
+    if (vp8 === 'VP8L' && buffer.length >= 25) {
+      const b1 = buffer[21], b2 = buffer[22], b3 = buffer[23], b4 = buffer[24];
+      return { width: 1 + (((b2 & 0x3f) << 8) | b1), height: 1 + ((((b4 & 0xf) << 10) | (b3 << 2) | ((b2 & 0xc0) >> 6))), type: 'webp' };
+    }
+  }
+  return null;
+}
+
+/** Check image resolution and aspect ratio against Swiss editorial wire standards */
+export async function checkImageQuality(imageUrl) {
+  if (isJunkImage(imageUrl)) return { ok: false, reason: 'URL matches junk pattern' };
+  try {
+    const res = await fetch(imageUrl, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) return { ok: false, reason: `HTTP ${res.status}` };
+    const buf = Buffer.from(await res.arrayBuffer());
+    const dims = getImageDimensions(buf);
+    if (!dims) return { ok: false, reason: 'Unable to parse image dimensions' };
+    
+    // Strict wire standards: minimum 640x360
+    if (dims.width < 640 || dims.height < 360) {
+      return { ok: false, reason: `Resolution too low: ${dims.width}x${dims.height} < 640x360`, dims, buffer: buf };
+    }
+
+    // Aspect ratio check: must be reasonable landscape (1.15 to 2.4)
+    const ratio = dims.width / dims.height;
+    if (ratio < 1.15 || ratio > 2.4) {
+      return { ok: false, reason: `Unacceptable aspect ratio: ${ratio.toFixed(2)} (requires 1.15-2.4)`, dims, buffer: buf };
+    }
+
+    return { ok: true, dims, buffer: buf };
+  } catch (err) {
+    return { ok: false, reason: err.message };
+  }
 }
 
 export function extractVideoFromHtml(html) {
@@ -114,3 +197,4 @@ export function curateMedia(sources = []) {
     video: bestVideo,
   };
 }
+
