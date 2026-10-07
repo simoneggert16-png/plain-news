@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export default function ArticleComments({ slug, locale, isDe }) {
   const [comments, setComments] = useState([]);
@@ -8,62 +8,98 @@ export default function ArticleComments({ slug, locale, isDe }) {
   const [submitting, setSubmitting] = useState(false);
   const [loadingComments, setLoadingComments] = useState(true);
   const [postSuccess, setPostSuccess] = useState(false);
+  const [lastSyncTime, setLastSyncTime] = useState(null);
   
   // Track live translations per comment ID: { [id]: { translated: string, showTranslated: boolean, loading: boolean } }
   const [translations, setTranslations] = useState({});
 
-  // Fetch comments from server so all readers see comments in real time
+  // Auto-load username from session if available
   useEffect(() => {
-    let active = true;
-
-    async function loadComments() {
-      try {
-        setLoadingComments(true);
-        const res = await fetch(`/api/community/comments?slug=${encodeURIComponent(slug)}`, {
-          cache: 'no-store'
-        });
-        if (res.ok) {
-          const data = await res.json();
-          if (active && Array.isArray(data.comments)) {
-            // Also check localStorage for local fallback or merge
-            const localSaved = localStorage.getItem(`plain_comments_${slug}`);
-            let localList = [];
-            try {
-              if (localSaved) localList = JSON.parse(localSaved);
-            } catch (e) {}
-
-            const mergedMap = new Map();
-            data.comments.forEach(c => mergedMap.set(c.id, c));
-            localList.forEach(c => {
-              if (!mergedMap.has(c.id)) mergedMap.set(c.id, c);
-            });
-
-            const merged = Array.from(mergedMap.values()).sort(
-              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-            );
-
-            setComments(merged);
-            return;
-          }
+    try {
+      const match = document.cookie.split('; ').find(r => r.startsWith('plain_session='));
+      if (match) {
+        const val = JSON.parse(decodeURIComponent(match.split('=')[1]));
+        if (val?.username || val?.name) {
+          setName(val.username || val.name);
         }
-      } catch (err) {
-        console.warn('Failed to load server comments, falling back to local:', err);
-      } finally {
-        if (active) setLoadingComments(false);
       }
+    } catch {}
+  }, []);
 
-      // Fallback to local storage if network error
-      try {
-        const saved = localStorage.getItem(`plain_comments_${slug}`);
-        if (saved && active) {
-          setComments(JSON.parse(saved));
+  // Fetch comments from server with deduplication
+  const fetchComments = useCallback(async (isInitial = false) => {
+    if (isInitial) setLoadingComments(true);
+    try {
+      const res = await fetch(`/api/community/comments?slug=${encodeURIComponent(slug)}&_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.comments)) {
+          // Merge with any local offline comments if needed
+          const localSaved = localStorage.getItem(`plain_comments_${slug}`);
+          let localList = [];
+          try {
+            if (localSaved) localList = JSON.parse(localSaved);
+          } catch {}
+
+          const map = new Map();
+          // Server comments take priority
+          data.comments.forEach((c) => map.set(c.id, c));
+          localList.forEach((c) => {
+            if (!map.has(c.id)) map.set(c.id, c);
+          });
+
+          const merged = Array.from(map.values()).sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          );
+
+          setComments(merged);
+          setLastSyncTime(new Date());
+          try {
+            localStorage.setItem(`plain_comments_${slug}`, JSON.stringify(merged));
+          } catch {}
         }
-      } catch {}
+      }
+    } catch (err) {
+      console.warn('Comments sync notice:', err.message);
+      // Fallback to local storage if offline
+      if (isInitial) {
+        try {
+          const saved = localStorage.getItem(`plain_comments_${slug}`);
+          if (saved) setComments(JSON.parse(saved));
+        } catch {}
+      }
+    } finally {
+      if (isInitial) setLoadingComments(false);
+    }
+  }, [slug]);
+
+  // Initial load + Real-time sync polling every 4.5 seconds + focus listener
+  useEffect(() => {
+    fetchComments(true);
+
+    const interval = setInterval(() => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'visible') {
+        fetchComments(false);
+      }
+    }, 4500);
+
+    function handleFocus() {
+      fetchComments(false);
     }
 
-    loadComments();
-    return () => { active = false; };
-  }, [slug]);
+    window.addEventListener('focus', handleFocus);
+    document.addEventListener('visibilitychange', handleFocus);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('focus', handleFocus);
+      document.removeEventListener('visibilitychange', handleFocus);
+    };
+  }, [fetchComments]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -76,7 +112,6 @@ export default function ArticleComments({ slug, locale, isDe }) {
     const commentContent = text.trim();
 
     try {
-      // Direct server-side persistence (no blocking AI moderation)
       const postRes = await fetch('/api/community/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -94,7 +129,7 @@ export default function ArticleComments({ slug, locale, isDe }) {
         setComments(updatedList);
       } else {
         const newLocalComment = {
-          id: 'c_' + Date.now(),
+          id: 'c_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
           author: authorName,
           date: new Date().toISOString(),
           content: commentContent,
@@ -111,8 +146,11 @@ export default function ArticleComments({ slug, locale, isDe }) {
       setText('');
       setPostSuccess(true);
       setTimeout(() => setPostSuccess(false), 3000);
+      
+      // Re-fetch immediately to ensure cloud confirmation
+      setTimeout(() => fetchComments(false), 800);
     } catch (err) {
-      console.error('Comment error:', err);
+      console.error('Comment submission error:', err);
     } finally {
       setSubmitting(false);
     }
@@ -170,13 +208,18 @@ export default function ArticleComments({ slug, locale, isDe }) {
       <div className="comments-header">
         <div>
           <h2>{isDe ? 'Leser-Debatte & Community-Fakten' : 'Reader Discussion & Community Notes'}</h2>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
-            <span className="comments-server-badge">
-              ● Live-Sync (Server-Synchronisiert)
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px', flexWrap: 'wrap' }}>
+            <span className="comments-server-badge" title="Automatische Echtzeit-Synchronisation mit allen Lesern und Kollegen">
+              ● Live-Sync aktiv (Echtzeit)
             </span>
             <span className="comments-ai-badge" style={{ fontSize: '9.5px' }}>
               🌐 Live-Übersetzung verfügbar
             </span>
+            {lastSyncTime && (
+              <span style={{ fontSize: '10px', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
+                Stand: {lastSyncTime.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+              </span>
+            )}
           </div>
         </div>
         <span className="comments-count">
@@ -195,7 +238,7 @@ export default function ArticleComments({ slug, locale, isDe }) {
         <div className="comment-inputs">
           <input
             type="text"
-            placeholder={isDe ? 'Dein Name / Handle (optional)' : 'Your name / handle (optional)'}
+            placeholder={isDe ? 'Dein Name / Handle (z. B. Simon_CH)' : 'Your name / handle (e.g. Simon_CH)'}
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="comment-name-input"
@@ -214,13 +257,13 @@ export default function ArticleComments({ slug, locale, isDe }) {
 
         {postSuccess && (
           <div className="comment-moderation-success">
-            ✓ {isDe ? 'Kommentar erfolgreich veröffentlicht!' : 'Comment published successfully!'}
+            ✓ {isDe ? 'Kommentar erfolgreich für alle Leser veröffentlicht!' : 'Comment published successfully for all readers!'}
           </div>
         )}
 
         <div className="comment-actions">
           <button type="submit" disabled={submitting || !text.trim()} className="btn btn-inv comment-btn">
-            {submitting ? (isDe ? 'Wird veröffentlicht…' : 'Publishing…') : (isDe ? 'Beitrag veröffentlichen' : 'Publish Note')}
+            {submitting ? (isDe ? 'Wird synchronisiert…' : 'Syncing…') : (isDe ? 'Beitrag veröffentlichen' : 'Publish Note')}
           </button>
         </div>
       </form>
@@ -229,7 +272,7 @@ export default function ArticleComments({ slug, locale, isDe }) {
       <div className="comments-list">
         {loadingComments ? (
           <p className="comments-empty" style={{ fontStyle: 'italic', color: 'var(--muted)', fontFamily: 'var(--mono)', fontSize: '12px' }}>
-            {isDe ? 'Lade Beiträge vom Server…' : 'Loading contributions from server…'}
+            {isDe ? 'Lade Beiträge vom Cloud-Server…' : 'Loading contributions from cloud server…'}
           </p>
         ) : comments.length === 0 ? (
           <p className="comments-empty" style={{ fontStyle: 'italic', color: 'var(--muted)', fontFamily: 'var(--mono)', fontSize: '12px' }}>

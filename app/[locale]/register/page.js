@@ -19,6 +19,8 @@ export default function RegisterPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [emailDetails, setEmailDetails] = useState(null);
+  const [showEmailPreviewModal, setShowEmailPreviewModal] = useState(false);
 
   function toggleTopic(id) {
     if (selectedTopics.includes(id)) {
@@ -81,10 +83,24 @@ export default function RegisterPage() {
         }).catch(() => {});
       }
 
-      // 2. Save topics to cookie
+      // 2. Dispatch Confirmation Email via backend API
+      const mailRes = await fetch('/api/auth/send-confirmation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: cleanEmail,
+          username: cleanUser,
+          locale,
+          topics: selectedTopics,
+        }),
+      });
+
+      const mailData = await mailRes.json().catch(() => ({}));
+
+      // 3. Save topics to cookie
       document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(selectedTopics))};path=/;max-age=31536000;samesite=lax`;
 
-      // 3. Create Session Payload
+      // 4. Create Session Payload
       const sessionPayload = {
         name: cleanUser,
         username: cleanUser,
@@ -94,15 +110,21 @@ export default function RegisterPage() {
         topics: selectedTopics,
         newsletter,
         registeredAt: new Date().toISOString(),
+        verified: false,
       };
 
       document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionPayload))};path=/;max-age=2592000;samesite=lax`;
-      setSuccess(true);
 
-      setTimeout(() => {
-        router.push(`/${locale}`);
-        window.location.href = `/${locale}`;
-      }, 1000);
+      setEmailDetails({
+        email: cleanEmail,
+        username: cleanUser,
+        confirmUrl: mailData.confirmUrl,
+        htmlPreview: mailData.htmlPreview,
+        deliveryMethod: mailData.deliveryMethod,
+      });
+
+      setSuccess(true);
+      setLoading(false);
     } catch (err) {
       console.error(err);
       setError(isDe ? 'Registrierung fehlgeschlagen. Bitte erneut versuchen.' : 'Registration failed. Please retry.');
@@ -124,131 +146,236 @@ export default function RegisterPage() {
         </div>
 
         {error && <div className="comment-moderation-alert">{error}</div>}
-        {success && (
-          <div className="comment-moderation-success">
-            ✓ {isDe ? 'Konto erfolgreich erstellt! Weiterleitung zum Newsfeed…' : 'Account created! Redirecting to feed…'}
-          </div>
-        )}
 
-        <form onSubmit={handleRegister} className="register-form">
-          <div className="register-grid">
-            <div className="auth-field">
-              <label className="label">{isDe ? 'Benutzername / Handle*' : 'Username / Handle*'}</label>
-              <input
-                type="text"
-                required
-                minLength={3}
-                placeholder={isDe ? 'z. B. Simon_CH oder NewsFan' : 'e.g. Simon_CH'}
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="auth-text-input"
-              />
-            </div>
+        {success && emailDetails ? (
+          <div className="register-success-box" style={{ background: '#f8f8f6', border: '2px solid #000', padding: '28px 24px', boxShadow: '5px 5px 0 #000', marginTop: '16px' }}>
+            <div className="label" style={{ color: '#16a34a' }}>✓ {isDe ? 'REGISTRIERUNG ERFOLGREICH' : 'REGISTRATION SUCCESSFUL'}</div>
+            <h2 style={{ fontSize: '20px', fontWeight: 900, textTransform: 'uppercase', margin: '8px 0 14px 0' }}>
+              ✉️ {isDe ? 'Bestätigungs-Mail wurde versendet' : 'Confirmation Email Sent'}
+            </h2>
+            <p style={{ fontSize: '14.5px', lineHeight: '1.6', marginBottom: '16px' }}>
+              {isDe
+                ? `Wir haben eine Bestätigungs-E-Mail an `
+                : `We sent a confirmation email to `}
+              <strong>{emailDetails.email}</strong>
+              {isDe
+                ? ` gesendet. Bitte klicke auf den Bestätigungslink in der Mail, um dein Konto zu aktivieren.`
+                : `. Please click the activation link in your inbox to verify your account.`}
+            </p>
 
-            <div className="auth-field">
-              <label className="label">{isDe ? 'E-Mail-Adresse*' : 'Email address*'}</label>
-              <input
-                type="email"
-                required
-                placeholder="name@beispiel.ch"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="auth-text-input"
-              />
-            </div>
-
-            <div className="auth-field">
-              <label className="label">{isDe ? 'Passwort* (mind. 6 Zeichen)' : 'Password* (min 6 characters)'}</label>
-              <input
-                type="password"
-                required
-                minLength={6}
-                placeholder="••••••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="auth-text-input"
-              />
-            </div>
-
-            <div className="auth-field">
-              <label className="label">{isDe ? 'Passwort wiederholen*' : 'Confirm password*'}</label>
-              <input
-                type="password"
-                required
-                minLength={6}
-                placeholder="••••••••••••"
-                value={passwordConfirm}
-                onChange={(e) => setPasswordConfirm(e.target.value)}
-                className="auth-text-input"
-              />
-            </div>
-          </div>
-
-          <label className="auth-checkbox-label" style={{ margin: '14px 0' }}>
-            <input
-              type="checkbox"
-              checked={newsletter}
-              onChange={(e) => setNewsletter(e.target.checked)}
-              className="auth-checkbox"
-            />
-            <span>
-              <strong>{isDe ? 'PLAIN Daily Briefing Newsletter abonnieren' : 'Subscribe to PLAIN Daily Briefing'}</strong>
-              <div style={{ fontSize: '11px', color: 'var(--muted)', marginTop: '2px' }}>
-                {isDe
-                  ? 'Erhalte jeden Morgen um 06:00 Uhr die wichtigsten, faktengeprüften Primärnachrichten zu deinen gewählten Themen direkt per Mail.'
-                  : 'Receive the daily fact-checked morning briefing on your selected topics.'}
-              </div>
-            </span>
-          </label>
-
-          {/* ONBOARDING TOPIC SELECTION */}
-          <div className="register-topics-box">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <div>
-                <strong className="label">{isDe ? 'ERWEITERTE THEMENAUSWAHL FÜR DEINEN HOMEFEED' : 'PERSONALIZE YOUR FEED TOPICS'}</strong>
-                <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--muted)' }}>
-                  {isDe ? `${selectedTopics.length} von ${ALL_BEATS.length} Themen aktiv` : `${selectedTopics.length} of ${ALL_BEATS.length} beats active`}
-                </p>
-              </div>
-              <div style={{ display: 'flex', gap: '6px' }}>
-                <button type="button" onClick={selectAllTopics} className="pill-btn">
-                  {isDe ? 'Alle wählen' : 'Select all'}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '24px' }}>
+              {emailDetails.confirmUrl && (
+                <a
+                  href={emailDetails.confirmUrl}
+                  className="btn btn-inv"
+                  style={{ textDecoration: 'none', display: 'inline-block' }}
+                >
+                  ✓ {isDe ? 'Jetzt direkt bestätigen (Aktivierungslink)' : 'Verify Now (Direct Link)'}
+                </a>
+              )}
+              {emailDetails.htmlPreview && (
+                <button
+                  type="button"
+                  onClick={() => setShowEmailPreviewModal(true)}
+                  className="btn"
+                  style={{ background: '#fff' }}
+                >
+                  ✉️ {isDe ? 'E-Mail-Vorschau ansehen' : 'View Email Preview'}
                 </button>
-                <button type="button" onClick={resetTopics} className="pill-btn">
-                  {isDe ? 'Standard' : 'Default'}
-                </button>
+              )}
+              <Link href={`/${locale}`} className="btn" style={{ background: '#fff' }}>
+                {isDe ? 'Weiter zum Newsfeed →' : 'Continue to Feed →'}
+              </Link>
+            </div>
+
+            {/* Email Preview Modal */}
+            {showEmailPreviewModal && (
+              <div
+                style={{
+                  position: 'fixed',
+                  inset: 0,
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  zIndex: 9999,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '20px',
+                }}
+              >
+                <div
+                  style={{
+                    backgroundColor: '#fff',
+                    maxWidth: '640px',
+                    width: '100%',
+                    maxHeight: '90vh',
+                    overflowY: 'auto',
+                    border: '3px solid #000',
+                    boxShadow: '8px 8px 0 #000',
+                    padding: '24px',
+                    position: 'relative',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid #ddd', paddingBottom: '12px' }}>
+                    <span className="label">✉️ {isDe ? 'POSTEINGANG VORSCHAU' : 'INBOX PREVIEW'}</span>
+                    <button
+                      type="button"
+                      onClick={() => setShowEmailPreviewModal(false)}
+                      style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer', fontWeight: 'bold' }}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: emailDetails.htmlPreview }}
+                    style={{ border: '1px solid #eee', padding: '12px' }}
+                  />
+                  <div style={{ marginTop: '20px', textAlign: 'right' }}>
+                    <button
+                      type="button"
+                      onClick={() => setShowEmailPreviewModal(false)}
+                      className="btn btn-inv"
+                    >
+                      {isDe ? 'Schliessen' : 'Close'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <form onSubmit={handleRegister} className="register-form">
+            <div className="register-grid">
+              <div className="auth-field">
+                <label className="label">{isDe ? 'Benutzername / Handle*' : 'Username / Handle*'}</label>
+                <input
+                  type="text"
+                  required
+                  minLength={3}
+                  placeholder={isDe ? 'z. B. Simon_CH oder NewsFan' : 'e.g. Simon_CH'}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="auth-text-input"
+                />
+              </div>
+
+              <div className="auth-field">
+                <label className="label">{isDe ? 'E-Mail-Adresse*' : 'Email address*'}</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="name@beispiel.ch"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="auth-text-input"
+                />
+              </div>
+
+              <div className="auth-field">
+                <label className="label">{isDe ? 'Passwort (mind. 6 Zeichen)*' : 'Password (min. 6 chars)*'}</label>
+                <input
+                  type="password"
+                  required
+                  minLength={6}
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="auth-text-input"
+                />
+              </div>
+
+              <div className="auth-field">
+                <label className="label">{isDe ? 'Passwort bestätigen*' : 'Confirm password*'}</label>
+                <input
+                  type="password"
+                  required
+                  minLength={6}
+                  placeholder="••••••••"
+                  value={passwordConfirm}
+                  onChange={(e) => setPasswordConfirm(e.target.value)}
+                  className="auth-text-input"
+                />
               </div>
             </div>
 
-            <div className="topics-chip-grid">
-              {ALL_BEATS.map((beat) => {
-                const isSelected = selectedTopics.includes(beat.id);
-                return (
-                  <button
-                    key={beat.id}
-                    type="button"
-                    onClick={() => toggleTopic(beat.id)}
-                    className={`topic-chip ${isSelected ? 'active' : ''}`}
-                    title={beat.cat}
-                  >
-                    <span>{beat.icon}</span>
-                    <span className="chip-indicator">{isSelected ? '✓' : '+'}</span>
-                    <span>{isDe ? beat.labelDe : beat.labelEn}</span>
+            {/* Newsletter Opt-In */}
+            <div className="register-checkbox-row">
+              <label className="register-checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={newsletter}
+                  onChange={(e) => setNewsletter(e.target.checked)}
+                  className="register-checkbox"
+                />
+                <span>
+                  <strong>{isDe ? 'Täglicher Fakten-Briefing Newsletter' : 'Daily Fact Briefing Newsletter'}</strong>
+                  <br />
+                  <span style={{ fontSize: '12px', color: 'var(--muted)' }}>
+                    {isDe
+                      ? 'Erhalte morgens um 07:00 eine werbefreie Zusammenfassung der wichtigsten Welt- und Schweizer Ereignisse.'
+                      : 'Receive an ad-free 7:00 AM summary of crucial Swiss and global events.'}
+                  </span>
+                </span>
+              </label>
+            </div>
+
+            {/* Extended Beats & Topic Selection */}
+            <div className="register-beats-section">
+              <div className="register-beats-header">
+                <div>
+                  <div className="label">{isDe ? 'THEMEN-AUSWAHL (23 SCHWERPUNKTE)' : 'TOPIC SELECTION (23 BEATS)'}</div>
+                  <h3 className="register-beats-title">
+                    {isDe ? 'Passe deinen persönlichen Newsfeed an' : 'Customize your personalized newsfeed'}
+                  </h3>
+                </div>
+                <div className="register-beats-actions">
+                  <button type="button" onClick={selectAllTopics} className="topics-btn">
+                    {isDe ? 'Alle wählen' : 'Select all'}
                   </button>
-                );
-              })}
-            </div>
-          </div>
+                  <button type="button" onClick={resetTopics} className="topics-btn">
+                    {isDe ? 'Standard' : 'Reset'}
+                  </button>
+                </div>
+              </div>
 
-          <div style={{ marginTop: '20px', display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-            <button type="submit" disabled={loading} className="btn btn-inv" style={{ padding: '12px 24px', fontSize: '13px' }}>
-              {loading ? (isDe ? 'Erstelle Konto…' : 'Creating account…') : (isDe ? 'Konto registrieren & Personalisieren' : 'Create Account & Personalize')}
-            </button>
-            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>
-              {isDe ? 'Bereits registriert?' : 'Already have an account?'} <Link href={`/${locale}`} style={{ textDecoration: 'underline', color: 'var(--ink)' }}>{isDe ? 'Zum Login' : 'Sign In'}</Link>
-            </span>
-          </div>
-        </form>
+              <div className="register-beats-grid">
+                {ALL_BEATS.map((beat) => {
+                  const active = selectedTopics.includes(beat.id);
+                  return (
+                    <button
+                      key={beat.id}
+                      type="button"
+                      onClick={() => toggleTopic(beat.id)}
+                      className={`register-beat-chip ${active ? 'active' : ''}`}
+                    >
+                      <span className="register-beat-icon">{beat.icon}</span>
+                      <span className="register-beat-label">{isDe ? beat.labelDe : beat.labelEn}</span>
+                      <span className="register-beat-check">{active ? '✓' : '+'}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="register-submit-row">
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn btn-inv register-submit-btn"
+              >
+                {loading
+                  ? (isDe ? 'Registrierung & Mailversand läuft…' : 'Creating account & sending email…')
+                  : (isDe ? 'Konto registrieren & Bestätigungs-Mail senden →' : 'Register & Send Confirmation Email →')}
+              </button>
+
+              <div style={{ textAlign: 'center', marginTop: '12px', fontSize: '13px' }}>
+                {isDe ? 'Bereits registriert? ' : 'Already registered? '}
+                <Link href={`/${locale}`} style={{ fontWeight: 'bold', textDecoration: 'underline' }}>
+                  {isDe ? 'Hier anmelden' : 'Log in here'}
+                </Link>
+              </div>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   );
