@@ -18,18 +18,20 @@ Key Facts: ${(storyContext.facts || []).slice(0, 3).join('; ')}
 Source Outlets: ${(storyContext.sources || []).map(s => s.outlet).join(', ')}
 
 Examine this image carefully:
-1. Double check authenticity & relevance: Does this image appropriately and factually illustrate this real-world event without being misleading, generic clipart, or an unrelated meme?
-2. Generate an accurate, journalistic image caption (Bildbeschreibung) in German and English. State who or what is depicted calmly and objectively. Do NOT speculate.
+1. STRICT RELEVANCE GATE:
+   - Does this image directly depict the specific subject of the story (e.g. the specific aircraft, politician, location, or physical event)?
+   - REJECT (verified: false) immediately if the image is merely a TV news anchor portrait, news studio screenshot (e.g. Fox News/CNN/MSNBC anchor headshot), talking head, unrelated generic person, logo graphic, or stock illustration.
+2. If verified is true, generate an accurate, journalistic image caption in German and English. State who or what is depicted calmly and objectively. Do NOT speculate.
 3. Determine image credit (e.g. from known outlet or news agency like dpa, AFP, Reuters, AP, Getty).
 
 Return ONLY valid raw JSON:
 {
-  "verified": true,
+  "verified": true, // or false if anchor portrait, studio screenshot, or unrelated
   "caption": {
     "de": "Sachliche, präzise Bildbeschreibung auf Deutsch",
     "en": "Factual, precise caption in English"
   },
-  "credit": "MDR / dpa"
+  "credit": "Reuters / AP"
 }`;
 
   // 1. Try MiniMax M3 on Ollama Cloud
