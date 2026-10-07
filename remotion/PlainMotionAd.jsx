@@ -187,18 +187,17 @@ export const PlainMotionAd = () => {
   const { fps } = useVideoConfig();
 
   // -------------------------------------------------------------
-  // LUXURY COLOR SYSTEM
+  // LUXURY SWISS MODERNIST COLOR SYSTEM
   // -------------------------------------------------------------
   const C = {
     paper: '#f4efe6',
     paperLight: '#faf6ee',
-    paperDark: '#e8dfce',
+    paperDark: '#ece5d8',
     ink: '#0b0c0e',
-    inkMuted: '#4a4944',
-    inkSubtle: '#78756c',
+    inkMuted: '#3f3e3a',
+    inkSubtle: '#716e65',
     red: '#dc2626',
     redGlow: 'rgba(220, 38, 38, 0.35)',
-    green: '#15803d',
     border: '1.5px solid rgba(11, 12, 14, 0.14)',
     borderBold: '2px solid #0b0c0e',
     cardShadow: '0 20px 50px -15px rgba(20, 18, 14, 0.12), 0 10px 20px -8px rgba(20, 18, 14, 0.08)',
@@ -286,223 +285,271 @@ export const PlainMotionAd = () => {
       title: 'ZERO SPIN',
       subtitle: 'Pure verified events. Zero emotional manipulation.',
       dek: 'No speculation, no loaded adjectives, no sensationalist outrage. Every story is reduced to verified facts, hard metrics, and authenticated direct quotes.',
-      renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 28, width: '100%' }}>
-          {/* Card 1: Sensationalist Media */}
+      renderVisual: (pFrame = 0) => {
+        // Bespoke Transition for P1: Outrage Strikethrough & Fact Seal Slam
+        const p1Strikethrough = interpolate(pFrame, [12, 32], [0, 100], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+        const p1FactReveal = spring({
+          frame: pFrame - 22,
+          fps: 30,
+          config: { damping: 14, stiffness: 180 },
+        });
+        const p1ExitX = interpolate(pFrame, [72, 85], [0, -1200], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+          easing: Easing.bezier(0.4, 0, 0.2, 1),
+        });
+        const p1ExitOpacity = interpolate(pFrame, [72, 84], [1, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+
+        return (
           <div
             style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 26,
-              border: '2.5px solid rgba(220, 38, 38, 0.45)',
-              padding: '48px 44px',
-              minHeight: 380,
-              boxShadow: '0 20px 50px -10px rgba(220, 38, 38, 0.16)',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
+              gap: 24,
+              width: '100%',
+              transform: `translateX(${p1ExitX}px)`,
+              opacity: p1ExitOpacity,
             }}
           >
-            <div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginBottom: 18,
-                }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                    color: C.red,
-                    fontSize: 15,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontWeight: 800,
-                    letterSpacing: 1.5,
-                  }}
-                >
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.red }} />
-                  CONVENTIONAL OUTLET (BIASED SENSATIONALISM)
-                </div>
-                <span
-                  style={{
-                    backgroundColor: 'rgba(220, 38, 38, 0.12)',
-                    color: C.red,
-                    padding: '6px 14px',
-                    borderRadius: 14,
-                    fontSize: 13,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontWeight: 800,
-                  }}
-                >
-                  MANIPULATION DETECTED
-                </span>
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: 38,
-                  lineHeight: 1.35,
-                  color: '#71717a',
-                  textDecoration: 'line-through',
-                  fontWeight: 600,
-                }}
-              >
-                "Disastrous bill sparks furious civil backlash as democracy collapses in total chaos!"
-              </div>
-            </div>
+            {/* Card 1: Sensationalist Media */}
             <div
               style={{
-                marginTop: 22,
-                display: 'flex',
-                gap: 24,
-                fontSize: 15,
-                fontFamily: "'JetBrains Mono', monospace",
-                color: C.red,
-                fontWeight: 700,
-              }}
-            >
-              <span>✕ 3 LOADED ADJECTIVES REMOVED</span>
-              <span>✕ APOCALYPTIC FRAMING PURGED</span>
-            </div>
-          </div>
-
-          {/* Transformation Bridge */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 16,
-              padding: '6px 0',
-            }}
-          >
-            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
-            <div
-              style={{
-                backgroundColor: C.ink,
-                color: '#fff',
-                padding: '12px 28px',
+                backgroundColor: '#ffffff',
                 borderRadius: 24,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 15,
-                fontWeight: 800,
-                letterSpacing: 1.5,
+                border: '2px solid rgba(220, 38, 38, 0.4)',
+                padding: '38px 40px',
+                minHeight: 280,
+                boxShadow: '0 16px 40px -10px rgba(220, 38, 38, 0.12)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
               }}
             >
-              PLAIN RADICAL OBJECTIVITY FILTER ▼
-            </div>
-            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
-          </div>
-
-          {/* Card 2: PLAIN Fact-Only Card */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 26,
-              border: '3.5px solid #0b0c0e',
-              padding: '48px 44px',
-              minHeight: 380,
-              boxShadow: '0 26px 65px -12px rgba(0,0,0,0.18)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginBottom: 18,
-                }}
-              >
+              <div>
                 <div
                   style={{
                     display: 'flex',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
-                    gap: 10,
-                    color: C.green,
-                    fontSize: 15,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontWeight: 800,
-                    letterSpacing: 1.5,
+                    marginBottom: 16,
                   }}
                 >
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.green }} />
-                  PLAIN (RADICAL OBJECTIVITY)
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      color: C.red,
+                      fontSize: 14,
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontWeight: 800,
+                      letterSpacing: 1.5,
+                    }}
+                  >
+                    <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.red }} />
+                    CONVENTIONAL MEDIA (SENSATIONALISM)
+                  </div>
+                  <span
+                    style={{
+                      backgroundColor: 'rgba(220, 38, 38, 0.12)',
+                      color: C.red,
+                      padding: '5px 12px',
+                      borderRadius: 12,
+                      fontSize: 12,
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontWeight: 800,
+                    }}
+                  >
+                    MANIPULATION DETECTED
+                  </span>
                 </div>
-                <span
-                  style={{
-                    backgroundColor: 'rgba(21, 128, 61, 0.12)',
-                    color: C.green,
-                    padding: '6px 14px',
-                    borderRadius: 14,
-                    fontSize: 13,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontWeight: 800,
-                  }}
-                >
-                  100% FACTUAL DENSITY
-                </span>
+                <div style={{ position: 'relative', display: 'inline-block', width: '100%' }}>
+                  <div
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: 34,
+                      lineHeight: 1.35,
+                      color: '#716e65',
+                      fontWeight: 600,
+                    }}
+                  >
+                    "Disastrous bill sparks furious civil backlash as democracy collapses in total chaos!"
+                  </div>
+                  {/* Kinetic Red Laser Strikethrough */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: 0,
+                      height: 6,
+                      backgroundColor: C.red,
+                      width: `${p1Strikethrough}%`,
+                      boxShadow: '0 0 16px rgba(220, 38, 38, 0.6)',
+                      borderRadius: 3,
+                    }}
+                  />
+                </div>
               </div>
               <div
                 style={{
-                  fontFamily: "'Newsreader', Georgia, serif",
-                  fontSize: 42,
-                  lineHeight: 1.28,
-                  color: C.ink,
+                  marginTop: 18,
+                  display: 'flex',
+                  gap: 20,
+                  fontSize: 14,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  color: C.red,
                   fontWeight: 700,
                 }}
               >
-                "Senate approves infrastructure legislation 51 to 49 following 8-hour committee session."
+                <span>✕ 3 LOADED ADJECTIVES REMOVED</span>
+                <span>✕ APOCALYPTIC FRAMING PURGED</span>
               </div>
             </div>
+
+            {/* Kinetic Transformation Divider */}
             <div
               style={{
-                marginTop: 24,
-                display: 'inline-flex',
+                display: 'flex',
                 alignItems: 'center',
-                gap: 10,
-                padding: '12px 24px',
-                backgroundColor: 'rgba(21, 128, 61, 0.08)',
-                borderRadius: 24,
-                color: C.green,
-                fontSize: 15,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontWeight: 700,
-                alignSelf: 'flex-start',
+                justifyContent: 'center',
+                gap: 16,
+                padding: '4px 0',
               }}
             >
-              ✓ PRIMARY DATA ONLY · ZERO EMOTIONAL DISTORTION
+              <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
+              <div
+                style={{
+                  backgroundColor: C.ink,
+                  color: '#ffffff',
+                  padding: '10px 24px',
+                  borderRadius: 20,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 13,
+                  fontWeight: 800,
+                  letterSpacing: 1.5,
+                }}
+              >
+                PLAIN RADICAL OBJECTIVITY FILTER ▼
+              </div>
+              <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
+            </div>
+
+            {/* Card 2: PLAIN Fact-Only Card (Revealed with kinetic impact) */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 24,
+                border: '3.5px solid #0b0c0e',
+                padding: '40px 40px',
+                minHeight: 310,
+                boxShadow: '0 24px 60px -12px rgba(0,0,0,0.18)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                opacity: p1FactReveal,
+                transform: `scale(${interpolate(p1FactReveal, [0, 1], [0.94, 1])}) translateY(${interpolate(p1FactReveal, [0, 1], [30, 0])}px)`,
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: 16,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      color: C.ink,
+                      fontSize: 15,
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontWeight: 800,
+                      letterSpacing: 1.5,
+                    }}
+                  >
+                    <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.ink }} />
+                    PLAIN (RADICAL OBJECTIVITY)
+                  </div>
+                  <span
+                    style={{
+                      backgroundColor: C.ink,
+                      color: '#ffffff',
+                      padding: '6px 14px',
+                      borderRadius: 14,
+                      fontSize: 12,
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontWeight: 800,
+                    }}
+                  >
+                    100% FACTUAL RECORD
+                  </span>
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'Newsreader', Georgia, serif",
+                    fontSize: 38,
+                    lineHeight: 1.3,
+                    color: C.ink,
+                    fontWeight: 700,
+                  }}
+                >
+                  "Senate approves infrastructure legislation 51 to 49 following 8-hour committee session."
+                </div>
+              </div>
+              <div
+                style={{
+                  marginTop: 20,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 10,
+                  padding: '10px 20px',
+                  backgroundColor: 'rgba(11, 12, 14, 0.05)',
+                  border: '1.5px solid rgba(11, 12, 14, 0.12)',
+                  borderRadius: 20,
+                  color: C.ink,
+                  fontSize: 14,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontWeight: 700,
+                  alignSelf: 'flex-start',
+                }}
+              >
+                ✓ PRIMARY DATA ONLY · ZERO EMOTIONAL DISTORTION
+              </div>
+            </div>
+
+            {/* Audit Telemetry Metric Bar */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 18,
+                border: C.border,
+                padding: '20px 28px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 14,
+                fontWeight: 700,
+                color: C.inkMuted,
+              }}
+            >
+              <span>OUTRAGE INDEX: 0.00%</span>
+              <span style={{ color: C.red }}>● AUDIT: 100% VERIFIED</span>
+              <span>READ TIME: 24 SECONDS</span>
             </div>
           </div>
-
-          {/* Audit Telemetry Metric Bar */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 20,
-              border: C.border,
-              padding: '24px 34px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 15,
-              fontWeight: 700,
-              color: C.inkMuted,
-            }}
-          >
-            <span>OUTRAGE INDEX: 0.00%</span>
-            <span>AUDIT: 100% FACTUAL RECORD</span>
-            <span>READ TIME: 24 SECONDS</span>
-          </div>
-        </div>
-      ),
+        );
+      },
     },
     {
       index: '02',
@@ -510,149 +557,196 @@ export const PlainMotionAd = () => {
       title: 'TWO-SOURCE RULE',
       subtitle: 'Zero rumors. Zero uncorroborated leaks.',
       dek: 'A story does not enter our newsroom until at least two independent, established global primary news organizations have matched and confirmed the factual core.',
-      renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 28, width: '100%' }}>
-          {/* Dual Wires Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-            {/* Wire 1 */}
-            <div
-              style={{
-                backgroundColor: '#ffffff',
-                borderRadius: 26,
-                border: C.border,
-                padding: '50px 38px',
-                height: 520,
-                boxShadow: C.cardShadow,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.inkSubtle }}>
-                  PRIMARY WIRE · 08:14 UTC
-                </div>
-                <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 58, fontWeight: 700, margin: '16px 0 20px' }}>
-                  Reuters
-                </div>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    color: C.green,
-                    fontSize: 15,
-                    fontWeight: 800,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    marginBottom: 20,
-                  }}
-                >
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.green }} />
-                  VERIFIED FACT RECORD
-                </div>
-              </div>
-              <div style={{ fontSize: 19, color: C.inkMuted, lineHeight: 1.55 }}>
-                Primary legislative roll call and official transcript confirmed by parliamentary desk in Washington.
-              </div>
-            </div>
+      renderVisual: (pFrame = 0) => {
+        // Bespoke Transition for P2: Dual-Wire Horizontal Split Collision
+        const wire1Slide = interpolate(pFrame, [0, 24], [-600, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+          easing: Easing.bezier(0.16, 1, 0.3, 1),
+        });
+        const wire2Slide = interpolate(pFrame, [0, 24], [600, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+          easing: Easing.bezier(0.16, 1, 0.3, 1),
+        });
+        const sealImpact = spring({
+          frame: pFrame - 20,
+          fps: 30,
+          config: { damping: 12, stiffness: 220 },
+        });
+        const p2ExitY = interpolate(pFrame, [72, 85], [0, -1000], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+          easing: Easing.bezier(0.4, 0, 0.2, 1),
+        });
+        const p2ExitOpacity = interpolate(pFrame, [72, 84], [1, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
 
-            {/* Wire 2 */}
-            <div
-              style={{
-                backgroundColor: '#ffffff',
-                borderRadius: 26,
-                border: C.border,
-                padding: '50px 38px',
-                height: 520,
-                boxShadow: C.cardShadow,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: C.inkSubtle }}>
-                  SECONDARY WIRE · 08:16 UTC
-                </div>
-                <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 58, fontWeight: 700, margin: '16px 0 20px' }}>
-                  AP News
-                </div>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    color: C.green,
-                    fontSize: 15,
-                    fontWeight: 800,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    marginBottom: 20,
-                  }}
-                >
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: C.green }} />
-                  CROSS-CORROBORATED
-                </div>
-              </div>
-              <div style={{ fontSize: 19, color: C.inkMuted, lineHeight: 1.55 }}>
-                Independent newsroom correspondent validated voting margin and quorum protocol on-site.
-              </div>
-            </div>
-          </div>
-
-          {/* Central Consensus Seal */}
+        return (
           <div
             style={{
-              backgroundColor: C.ink,
-              borderRadius: 24,
-              padding: '38px 42px',
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.3)',
+              flexDirection: 'column',
+              gap: 24,
+              width: '100%',
+              transform: `translateY(${p2ExitY}px)`,
+              opacity: p2ExitOpacity,
             }}
           >
-            <div>
-              <div style={{ color: '#ffffff', fontSize: 28, fontWeight: 800 }}>
-                Automatic Dual-Wire Corroboration Seal
+            {/* Dual Wires Collision Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+              {/* Wire 1: Reuters (Slides from Left) */}
+              <div
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: 24,
+                  border: C.border,
+                  padding: '44px 34px',
+                  height: 480,
+                  boxShadow: C.cardShadow,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transform: `translateX(${wire1Slide}px)`,
+                }}
+              >
+                <div>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: C.inkSubtle }}>
+                    PRIMARY WIRE · 08:14 UTC
+                  </div>
+                  <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 52, fontWeight: 700, margin: '14px 0 16px', color: C.ink }}>
+                    Reuters
+                  </div>
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      color: C.ink,
+                      fontSize: 13,
+                      fontWeight: 800,
+                      fontFamily: "'JetBrains Mono', monospace",
+                      marginBottom: 16,
+                      backgroundColor: 'rgba(11, 12, 14, 0.06)',
+                      padding: '5px 12px',
+                      borderRadius: 12,
+                    }}
+                  >
+                    <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: C.red }} />
+                    VERIFIED FACT RECORD
+                  </div>
+                </div>
+                <div style={{ fontSize: 18, color: C.inkMuted, lineHeight: 1.5 }}>
+                  Primary legislative roll call and official transcript confirmed by parliamentary desk in Washington.
+                </div>
               </div>
-              <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 17, fontFamily: "'JetBrains Mono', monospace", marginTop: 8 }}>
-                Zero unverified single-source claims enter the feed.
+
+              {/* Wire 2: AP News (Slides from Right) */}
+              <div
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: 24,
+                  border: C.border,
+                  padding: '44px 34px',
+                  height: 480,
+                  boxShadow: C.cardShadow,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transform: `translateX(${wire2Slide}px)`,
+                }}
+              >
+                <div>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: C.inkSubtle }}>
+                    SECONDARY WIRE · 08:16 UTC
+                  </div>
+                  <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 52, fontWeight: 700, margin: '14px 0 16px', color: C.ink }}>
+                    AP News
+                  </div>
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      color: C.ink,
+                      fontSize: 13,
+                      fontWeight: 800,
+                      fontFamily: "'JetBrains Mono', monospace",
+                      marginBottom: 16,
+                      backgroundColor: 'rgba(11, 12, 14, 0.06)',
+                      padding: '5px 12px',
+                      borderRadius: 12,
+                    }}
+                  >
+                    <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: C.red }} />
+                    CROSS-CORROBORATED
+                  </div>
+                </div>
+                <div style={{ fontSize: 18, color: C.inkMuted, lineHeight: 1.5 }}>
+                  Independent newsroom correspondent validated voting margin and quorum protocol on-site.
+                </div>
               </div>
             </div>
+
+            {/* Central Consensus Seal (Impact Slam) */}
             <div
               style={{
-                backgroundColor: C.green,
-                color: '#fff',
-                padding: '14px 28px',
-                borderRadius: 14,
-                fontSize: 16,
-                fontWeight: 900,
-                fontFamily: "'JetBrains Mono', monospace",
-                letterSpacing: 1.5,
+                backgroundColor: C.ink,
+                borderRadius: 22,
+                padding: '34px 38px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                boxShadow: '0 24px 60px rgba(0,0,0,0.3)',
+                transform: `scale(${interpolate(sealImpact, [0, 1], [0.85, 1])})`,
+                opacity: sealImpact,
               }}
             >
-              PUBLISH READY
+              <div>
+                <div style={{ color: '#ffffff', fontSize: 26, fontWeight: 800 }}>
+                  Automatic Dual-Wire Corroboration Seal
+                </div>
+                <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 16, fontFamily: "'JetBrains Mono', monospace", marginTop: 6 }}>
+                  Zero unverified single-source claims enter the feed.
+                </div>
+              </div>
+              <div
+                style={{
+                  backgroundColor: C.red,
+                  color: '#ffffff',
+                  padding: '12px 26px',
+                  borderRadius: 12,
+                  fontSize: 15,
+                  fontWeight: 900,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  letterSpacing: 1.5,
+                }}
+              >
+                CORROBORATED
+              </div>
+            </div>
+
+            {/* Bottom Security Manifesto */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 18,
+                border: C.border,
+                padding: '24px 32px',
+                fontFamily: "'Newsreader', Georgia, serif",
+                fontStyle: 'italic',
+                fontSize: 22,
+                color: C.inkMuted,
+                textAlign: 'center',
+              }}
+            >
+              "If only one outlet is reporting it, it is not news. It is an unverified rumor."
             </div>
           </div>
-
-          {/* Bottom Security Note */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 20,
-              border: C.border,
-              padding: '28px 36px',
-              fontFamily: "'Newsreader', Georgia, serif",
-              fontStyle: 'italic',
-              fontSize: 24,
-              color: C.inkMuted,
-              textAlign: 'center',
-            }}
-          >
-            "If only one outlet is reporting it, it is not news. It is an unverified rumor."
-          </div>
-        </div>
-      ),
+        );
+      },
     },
     {
       index: '03',
@@ -660,130 +754,167 @@ export const PlainMotionAd = () => {
       title: 'EXPOSE THE FRAMING',
       subtitle: 'Side-by-side partisan comparison.',
       dek: 'We extract and contrast opposing headlines simultaneously. Partisan manipulation and narrative agendas become instantly visible to the reader.',
-      renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%' }}>
-          {/* Outlet Left */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 24,
-              border: C.border,
-              padding: '32px 38px',
-              borderLeft: '12px solid #2563eb',
-              boxShadow: C.cardShadow,
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-              <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', fontWeight: 800 }}>
-                LEFT-LEANING NARRATIVE LENS:
-              </div>
-              <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.08)', padding: '4px 10px', borderRadius: 6, fontWeight: 700 }}>
-                EMOTIONAL BIAS: 84%
-              </div>
-            </div>
-            <div style={{ fontSize: 28, fontWeight: 700, color: C.ink, lineHeight: 1.32 }}>
-              "Historic progressive triumph transforms national economy and uplifts working families."
-            </div>
-            <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 10 }}>
-              EDITORIAL FRAMING: TRIUMPHANT · SOCIAL REFORM EMPHASIS
-            </div>
-          </div>
+      renderVisual: (pFrame = 0) => {
+        // Bespoke Transition for P3: Comparative Aperture Expand & Center Synthesis Punch
+        const p3Entrance = spring({
+          frame: pFrame,
+          fps: 30,
+          config: { damping: 14, stiffness: 180 },
+        });
+        const p3CenterPunch = spring({
+          frame: pFrame - 18,
+          fps: 30,
+          config: { damping: 12, stiffness: 220 },
+        });
+        const p3ExitScale = interpolate(pFrame, [70, 85], [1, 0.82], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+        const p3ExitOpacity = interpolate(pFrame, [70, 85], [1, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
 
-          {/* Outlet Right */}
+        return (
           <div
             style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 24,
-              border: C.border,
-              padding: '32px 38px',
-              borderLeft: '12px solid #dc2626',
-              boxShadow: C.cardShadow,
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-              <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', fontWeight: 800 }}>
-                RIGHT-LEANING NARRATIVE LENS:
-              </div>
-              <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', backgroundColor: 'rgba(220, 38, 38, 0.08)', padding: '4px 10px', borderRadius: 6, fontWeight: 700 }}>
-                EMOTIONAL BIAS: 91%
-              </div>
-            </div>
-            <div style={{ fontSize: 28, fontWeight: 700, color: C.ink, lineHeight: 1.32 }}>
-              "Reckless federal spending package fuels national debt and ignites inflation crisis."
-            </div>
-            <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 10 }}>
-              EDITORIAL FRAMING: CATASTROPHIC · FISCAL DEFICIT EMPHASIS
-            </div>
-          </div>
-
-          {/* Center PLAIN Lens */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 24,
-              border: '4px solid #0b0c0e',
-              padding: '32px 38px',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.12)',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
-              <div
-                style={{
-                  backgroundColor: C.ink,
-                  color: '#fff',
-                  padding: '7px 16px',
-                  borderRadius: 10,
-                  fontSize: 15,
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontWeight: 900,
-                  letterSpacing: 1,
-                }}
-              >
-                PLAIN SYNTHESIS
-              </div>
-              <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.green, fontWeight: 800 }}>
-                ● 100% FACTUAL RECONSTRUCTION
-              </div>
-            </div>
-            <div style={{ fontSize: 29, fontWeight: 800, color: C.ink, lineHeight: 1.3 }}>
-              "Senate approves $1.2T infrastructure bill 51 to 49 following 8-hour committee session."
-            </div>
-            <div style={{ fontSize: 15, color: C.inkMuted, marginTop: 10, lineHeight: 1.45 }}>
-              Zero rhetorical manipulation. The verifiable core separated from ideological theater.
-            </div>
-          </div>
-
-          {/* Bottom Analytical Principle Note */}
-          <div
-            style={{
-              backgroundColor: C.ink,
-              borderRadius: 20,
-              padding: '24px 32px',
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              boxShadow: '0 15px 40px rgba(0,0,0,0.25)',
+              flexDirection: 'column',
+              gap: 18,
+              width: '100%',
+              transform: `scale(${p3ExitScale})`,
+              opacity: p3ExitOpacity,
             }}
           >
-            <div style={{ color: '#ffffff', fontSize: 18, fontWeight: 700, fontFamily: "'Newsreader', Georgia, serif", fontStyle: 'italic' }}>
-              "When you see the spin explicitly labeled, manipulation loses all power over you."
-            </div>
+            {/* Outlet Left: Partisan framing (Strict Swiss Monochromatic Ink) */}
             <div
               style={{
-                color: C.red,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 13,
-                fontWeight: 800,
-                letterSpacing: 1.5,
-                whiteSpace: 'nowrap',
-                marginLeft: 20,
+                backgroundColor: '#ffffff',
+                borderRadius: 22,
+                border: C.border,
+                padding: '28px 34px',
+                borderLeft: '10px solid #0b0c0e',
+                boxShadow: C.cardShadow,
+                opacity: p3Entrance,
+                transform: `translateX(${interpolate(p3Entrance, [0, 1], [-80, 0])}px)`,
               }}
             >
-              RADICAL TRANSPARENCY
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.ink, fontWeight: 800 }}>
+                  LEFT-LEANING NARRATIVE LENS:
+                </div>
+                <div style={{ fontSize: 12, fontFamily: "'JetBrains Mono', monospace", color: C.ink, backgroundColor: 'rgba(11, 12, 14, 0.08)', padding: '4px 10px', borderRadius: 6, fontWeight: 700 }}>
+                  EMOTIONAL BIAS: 84%
+                </div>
+              </div>
+              <div style={{ fontSize: 26, fontWeight: 700, color: C.ink, lineHeight: 1.3 }}>
+                "Historic progressive triumph transforms national economy and uplifts working families."
+              </div>
+              <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 8 }}>
+                EDITORIAL FRAMING: TRIUMPHANT · SOCIAL REFORM EMPHASIS
+              </div>
+            </div>
+
+            {/* Outlet Right: Partisan framing (Strict Swiss Red Accent) */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 22,
+                border: C.border,
+                padding: '28px 34px',
+                borderLeft: `10px solid ${C.red}`,
+                boxShadow: C.cardShadow,
+                opacity: p3Entrance,
+                transform: `translateX(${interpolate(p3Entrance, [0, 1], [80, 0])}px)`,
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.red, fontWeight: 800 }}>
+                  RIGHT-LEANING NARRATIVE LENS:
+                </div>
+                <div style={{ fontSize: 12, fontFamily: "'JetBrains Mono', monospace", color: C.red, backgroundColor: 'rgba(220, 38, 38, 0.08)', padding: '4px 10px', borderRadius: 6, fontWeight: 700 }}>
+                  EMOTIONAL BIAS: 91%
+                </div>
+              </div>
+              <div style={{ fontSize: 26, fontWeight: 700, color: C.ink, lineHeight: 1.3 }}>
+                "Reckless federal spending package fuels national debt and ignites inflation crisis."
+              </div>
+              <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 8 }}>
+                EDITORIAL FRAMING: CATASTROPHIC · FISCAL DEFICIT EMPHASIS
+              </div>
+            </div>
+
+            {/* Center PLAIN Synthesis (Punches into center) */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 24,
+                border: '3.5px solid #0b0c0e',
+                padding: '30px 36px',
+                boxShadow: '0 25px 60px rgba(0,0,0,0.18)',
+                opacity: p3CenterPunch,
+                transform: `scale(${interpolate(p3CenterPunch, [0, 1], [0.92, 1])})`,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 10 }}>
+                <div
+                  style={{
+                    backgroundColor: C.ink,
+                    color: '#ffffff',
+                    padding: '6px 14px',
+                    borderRadius: 8,
+                    fontSize: 14,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontWeight: 900,
+                    letterSpacing: 1,
+                  }}
+                >
+                  PLAIN SYNTHESIS
+                </div>
+                <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.ink, fontWeight: 800 }}>
+                  ● 100% FACTUAL RECONSTRUCTION
+                </div>
+              </div>
+              <div style={{ fontSize: 27, fontWeight: 800, color: C.ink, lineHeight: 1.3 }}>
+                "Senate approves $1.2T infrastructure bill 51 to 49 following 8-hour committee session."
+              </div>
+              <div style={{ fontSize: 14, color: C.inkMuted, marginTop: 8, lineHeight: 1.45 }}>
+                Zero rhetorical manipulation. The verifiable core separated from ideological theater.
+              </div>
+            </div>
+
+            {/* Bottom Analytical Principle Note */}
+            <div
+              style={{
+                backgroundColor: C.ink,
+                borderRadius: 18,
+                padding: '22px 30px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                boxShadow: '0 15px 40px rgba(0,0,0,0.25)',
+              }}
+            >
+              <div style={{ color: '#ffffff', fontSize: 17, fontWeight: 700, fontFamily: "'Newsreader', Georgia, serif", fontStyle: 'italic' }}>
+                "When you see the spin explicitly labeled, manipulation loses all power over you."
+              </div>
+              <div
+                style={{
+                  color: C.red,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 13,
+                  fontWeight: 800,
+                  letterSpacing: 1.5,
+                  whiteSpace: 'nowrap',
+                  marginLeft: 18,
+                }}
+              >
+                RADICAL TRANSPARENCY
+              </div>
             </div>
           </div>
-        </div>
-      ),
+        );
+      },
     },
     {
       index: '04',
@@ -791,248 +922,344 @@ export const PlainMotionAd = () => {
       title: 'ZERO COMMERCE',
       subtitle: 'Zero ads. Zero paywalls. Zero tracking.',
       dek: 'Information is a public utility, not an attention slot machine. We are 100% free, unconditionally open, and built with zero financial incentives to manipulate.',
-      renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 26, width: '100%' }}>
-          {/* 4 Architectural Luxury Tiles - 360px Height */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-            {[
-              { val: '0', label: 'ADVERTISEMENTS', desc: 'No sponsored articles, no banner injections, zero commercial bias.' },
-              { val: '0', label: 'PAYWALLS', desc: 'Completely open for all 8 billion humans on Earth.' },
-              { val: '0', label: 'TRACKING COOKIES', desc: 'Zero analytics pixels, zero behavioral surveillance.' },
-              { val: '0', label: 'SUBSCRIPTIONS', desc: 'No credit cards required. Unconditionally free forever.' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                style={{
-                  backgroundColor: '#ffffff',
-                  borderRadius: 26,
-                  border: C.border,
-                  padding: '48px 38px',
-                  height: 360,
-                  boxShadow: C.cardShadow,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <div>
-                  <div style={{ fontSize: 104, fontWeight: 900, color: C.red, fontFamily: "'Inter', sans-serif", lineHeight: 0.9 }}>
-                    {item.val}
-                  </div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: C.ink, fontFamily: "'JetBrains Mono', monospace", marginTop: 16 }}>
-                    {item.label}
-                  </div>
-                </div>
-                <div style={{ fontSize: 18, color: C.inkSubtle, lineHeight: 1.5 }}>
-                  {item.desc}
-                </div>
-              </div>
-            ))}
-          </div>
+      renderVisual: (pFrame = 0) => {
+        // Bespoke Transition for P4: 4-Beat Percussive Cascade of ZEROS
+        const tileItems = [
+          { val: '0', label: 'ADVERTISEMENTS', desc: 'No sponsored articles, no banner injections, zero commercial bias.' },
+          { val: '0', label: 'PAYWALLS', desc: 'Completely open for all 8 billion humans on Earth.' },
+          { val: '0', label: 'TRACKING COOKIES', desc: 'Zero analytics pixels, zero behavioral surveillance.' },
+          { val: '0', label: 'SUBSCRIPTIONS', desc: 'No credit cards required. Unconditionally free forever.' },
+        ];
 
-          {/* Simon Eggert Quote Card */}
+        const p4ExitX = interpolate(pFrame, [72, 85], [0, 1200], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+          easing: Easing.bezier(0.4, 0, 0.2, 1),
+        });
+        const p4ExitOpacity = interpolate(pFrame, [72, 84], [1, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+
+        return (
           <div
             style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 26,
-              padding: '40px 48px',
-              borderLeft: '8px solid #0b0c0e',
-              border: C.border,
-              boxShadow: C.cardShadow,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 22,
+              width: '100%',
+              transform: `translateX(${p4ExitX}px)`,
+              opacity: p4ExitOpacity,
             }}
           >
-            <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontStyle: 'italic', fontSize: 32, color: C.ink, lineHeight: 1.35 }}>
-              "Information is a public utility, not an attention casino."
+            {/* 4 Architectural Luxury Tiles - 4-Beat Percussive Entry */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+              {tileItems.map((item, idx) => {
+                const beatSpring = spring({
+                  frame: pFrame - idx * 6,
+                  fps: 30,
+                  config: { damping: 12, stiffness: 220 },
+                });
+                return (
+                  <div
+                    key={item.label}
+                    style={{
+                      backgroundColor: '#ffffff',
+                      borderRadius: 24,
+                      border: C.border,
+                      padding: '38px 32px',
+                      height: 330,
+                      boxShadow: C.cardShadow,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      opacity: beatSpring,
+                      transform: `scale(${interpolate(beatSpring, [0, 1], [0.85, 1])}) translateY(${interpolate(beatSpring, [0, 1], [40, 0])}px)`,
+                    }}
+                  >
+                    <div>
+                      <div style={{ fontSize: 96, fontWeight: 900, color: C.red, fontFamily: "'Inter', sans-serif", lineHeight: 0.9 }}>
+                        {item.val}
+                      </div>
+                      <div style={{ fontSize: 20, fontWeight: 800, color: C.ink, fontFamily: "'JetBrains Mono', monospace", marginTop: 14 }}>
+                        {item.label}
+                      </div>
+                    </div>
+                    <div style={{ fontSize: 16, color: C.inkSubtle, lineHeight: 1.45 }}>
+                      {item.desc}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div style={{ fontSize: 16, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 14, fontWeight: 700 }}>
-              — Simon Eggert, Founder of PLAIN
+
+            {/* Simon Eggert Quote Card */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 22,
+                padding: '32px 42px',
+                borderLeft: '8px solid #0b0c0e',
+                border: C.border,
+                boxShadow: C.cardShadow,
+                opacity: spring({ frame: pFrame - 28, fps: 30, config: { damping: 14, stiffness: 180 } }),
+              }}
+            >
+              <div style={{ fontFamily: "'Newsreader', Georgia, serif", fontStyle: 'italic', fontSize: 28, color: C.ink, lineHeight: 1.35 }}>
+                "Information is a public utility, not an attention casino."
+              </div>
+              <div style={{ fontSize: 15, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, marginTop: 12, fontWeight: 700 }}>
+                — Simon Eggert, Founder of PLAIN
+              </div>
             </div>
           </div>
-        </div>
-      ),
+        );
+      },
     },
     {
       index: '05',
       category: 'AI VERIFICATION',
       title: 'ADVERSARIAL AI AUDIT',
       subtitle: 'Dual-engine cross-examination pipeline.',
-      dek: 'DeepSeek v4.1 Flash acts as primary reporter; MiniMax M3 acts as ruthless adversarial editor, auditing every single statement against primary wires.',
-      renderVisual: () => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%' }}>
-          {/* Engine 1: Reporter */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 24,
-              border: C.border,
-              padding: '36px 38px',
-              boxShadow: C.cardShadow,
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, fontWeight: 700 }}>
-                  STAGE 01 · PRIMARY FACT SYNTHESIS
-                </div>
-                <div style={{ fontSize: 36, fontWeight: 900, color: C.ink, marginTop: 6 }}>
-                  DeepSeek v4.1 Flash
-                </div>
-                <div style={{ fontSize: 17, color: C.inkMuted, marginTop: 4 }}>
-                  Ingests live global wires & extracts immutable primary data points.
-                </div>
-              </div>
-              <div
-                style={{
-                  backgroundColor: C.ink,
-                  color: '#fff',
-                  padding: '12px 24px',
-                  borderRadius: 12,
-                  fontSize: 15,
-                  fontWeight: 900,
-                  fontFamily: "'JetBrains Mono', monospace",
-                  letterSpacing: 1.5,
-                }}
-              >
-                REPORTER
-              </div>
-            </div>
+      dek: 'A primary AI Reporter synthesizes the verified wires. A separate, ruthless Adversarial AI Auditor challenges every single claim before publication.',
+      renderVisual: (pFrame = 0) => {
+        // Bespoke Transition for P5: Dual-Agent Convergence & Cross-Examination Scan
+        const reporterDrop = spring({
+          frame: pFrame,
+          fps: 30,
+          config: { damping: 14, stiffness: 190 },
+        });
+        const auditorRise = spring({
+          frame: pFrame - 8,
+          fps: 30,
+          config: { damping: 14, stiffness: 190 },
+        });
+        const scanLineX = interpolate(pFrame, [20, 50], [0, 100], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+        const consensusBadge = spring({
+          frame: pFrame - 36,
+          fps: 30,
+          config: { damping: 12, stiffness: 220 },
+        });
+        const p5ExitScale = interpolate(pFrame, [72, 85], [1, 0.9], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+        const p5ExitOpacity = interpolate(pFrame, [72, 84], [1, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
 
-            {/* Telemetry Block */}
-            <div
-              style={{
-                marginTop: 16,
-                padding: '14px 18px',
-                backgroundColor: 'rgba(11, 12, 14, 0.04)',
-                borderRadius: 12,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 14,
-                display: 'flex',
-                justifyContent: 'space-between',
-              }}
-            >
-              <span style={{ color: C.inkSubtle }}>INPUT: Reuters (08:14 UTC) + AP (08:16 UTC)</span>
-              <span style={{ color: C.green, fontWeight: 700 }}>✓ 18 immutable data points extracted</span>
-            </div>
-          </div>
-
-          {/* Audit Link Protocol */}
+        return (
           <div
             style={{
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 16,
+              flexDirection: 'column',
+              gap: 18,
+              width: '100%',
+              transform: `scale(${p5ExitScale})`,
+              opacity: p5ExitOpacity,
             }}
           >
-            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
+            {/* Engine 1: Autonomous AI Reporter (Enters from Top) */}
             <div
               style={{
-                backgroundColor: C.red,
-                color: '#fff',
-                padding: '10px 24px',
-                borderRadius: 20,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 14,
-                fontWeight: 800,
-                letterSpacing: 1.5,
+                backgroundColor: '#ffffff',
+                borderRadius: 22,
+                border: C.border,
+                padding: '30px 36px',
+                boxShadow: C.cardShadow,
+                opacity: reporterDrop,
+                transform: `translateY(${interpolate(reporterDrop, [0, 1], [-40, 0])}px)`,
               }}
             >
-              ADVERSARIAL CROSS-EXAMINATION PROTOCOL ▼
-            </div>
-            <div style={{ height: 1.5, flex: 1, backgroundColor: 'rgba(11, 12, 14, 0.18)' }} />
-          </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.inkSubtle, fontWeight: 700 }}>
+                    STAGE 01 · WIRE INGESTION & FACT SYNTHESIS
+                  </div>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: C.ink, marginTop: 4 }}>
+                    Autonomous AI Reporter
+                  </div>
+                  <div style={{ fontSize: 16, color: C.inkMuted, marginTop: 4 }}>
+                    Ingests live primary global wires & extracts immutable factual records.
+                  </div>
+                </div>
+                <div
+                  style={{
+                    backgroundColor: C.ink,
+                    color: '#ffffff',
+                    padding: '10px 22px',
+                    borderRadius: 12,
+                    fontSize: 14,
+                    fontWeight: 900,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  REPORTER
+                </div>
+              </div>
 
-          {/* Engine 2: Auditor */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 24,
-              border: '3.5px solid #dc2626',
-              padding: '36px 38px',
-              boxShadow: '0 20px 50px -10px rgba(220, 38, 38, 0.2)',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", color: C.red, fontWeight: 800 }}>
-                  STAGE 02 · ADVERSARIAL CROSS-EXAMINER
-                </div>
-                <div style={{ fontSize: 36, fontWeight: 900, color: C.ink, marginTop: 6 }}>
-                  MiniMax M3
-                </div>
-                <div style={{ fontSize: 17, color: C.inkMuted, marginTop: 4 }}>
-                  Challenges every phrase. Ruthlessly purges hallucinations & bias.
-                </div>
+              {/* Telemetry Record */}
+              <div
+                style={{
+                  marginTop: 14,
+                  padding: '12px 16px',
+                  backgroundColor: 'rgba(11, 12, 14, 0.04)',
+                  borderRadius: 10,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 13,
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <span style={{ color: C.inkSubtle }}>WIRES: Reuters (08:14 UTC) + AP (08:16 UTC)</span>
+                <span style={{ color: C.ink, fontWeight: 700 }}>✓ 18 immutable data points extracted</span>
+              </div>
+            </div>
+
+            {/* Kinetic Cross-Examination Scan Divider */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 16,
+                position: 'relative',
+              }}
+            >
+              <div style={{ height: 2, flex: 1, backgroundColor: 'rgba(220, 38, 38, 0.25)', position: 'relative' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: -2,
+                    left: 0,
+                    height: 6,
+                    width: `${scanLineX}%`,
+                    backgroundColor: C.red,
+                    boxShadow: '0 0 14px rgba(220, 38, 38, 0.8)',
+                    borderRadius: 3,
+                  }}
+                />
               </div>
               <div
                 style={{
                   backgroundColor: C.red,
-                  color: '#fff',
-                  padding: '12px 24px',
-                  borderRadius: 12,
-                  fontSize: 15,
-                  fontWeight: 900,
+                  color: '#ffffff',
+                  padding: '9px 22px',
+                  borderRadius: 20,
                   fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 13,
+                  fontWeight: 800,
                   letterSpacing: 1.5,
                 }}
               >
-                AUDITOR
+                ADVERSARIAL CROSS-EXAMINATION PROTOCOL ▼
+              </div>
+              <div style={{ height: 2, flex: 1, backgroundColor: 'rgba(220, 38, 38, 0.25)' }} />
+            </div>
+
+            {/* Engine 2: Adversarial AI Auditor (Enters from Bottom) */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 22,
+                border: '3px solid #dc2626',
+                padding: '30px 36px',
+                boxShadow: '0 20px 50px -10px rgba(220, 38, 38, 0.16)',
+                opacity: auditorRise,
+                transform: `translateY(${interpolate(auditorRise, [0, 1], [40, 0])}px)`,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.red, fontWeight: 800 }}>
+                    STAGE 02 · RUTHLESS ADVERSARIAL CROSS-EXAMINATION
+                  </div>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: C.ink, marginTop: 4 }}>
+                    Adversarial AI Auditor
+                  </div>
+                  <div style={{ fontSize: 16, color: C.inkMuted, marginTop: 4 }}>
+                    Challenges every phrase. Ruthlessly purges bias, speculation, and spin.
+                  </div>
+                </div>
+                <div
+                  style={{
+                    backgroundColor: C.red,
+                    color: '#ffffff',
+                    padding: '10px 22px',
+                    borderRadius: 12,
+                    fontSize: 14,
+                    fontWeight: 900,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  AUDITOR
+                </div>
+              </div>
+
+              {/* Telemetry Record */}
+              <div
+                style={{
+                  marginTop: 14,
+                  padding: '12px 16px',
+                  backgroundColor: 'rgba(220, 38, 38, 0.05)',
+                  borderRadius: 10,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 13,
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <span style={{ color: C.red, fontWeight: 700 }}>AUDIT: 2 speculative adjectives challenged</span>
+                <span style={{ color: C.ink, fontWeight: 700 }}>✓ Replaced with factual metrics</span>
               </div>
             </div>
 
-            {/* Telemetry Block */}
+            {/* Consensus Verification Bar */}
             <div
               style={{
-                marginTop: 16,
-                padding: '14px 18px',
-                backgroundColor: 'rgba(220, 38, 38, 0.05)',
-                borderRadius: 12,
+                backgroundColor: C.ink,
+                borderRadius: 16,
+                padding: '18px 26px',
+                textAlign: 'center',
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 14,
-                display: 'flex',
-                justifyContent: 'space-between',
+                fontSize: 15,
+                fontWeight: 800,
+                color: '#ffffff',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+                opacity: consensusBadge,
+                transform: `scale(${interpolate(consensusBadge, [0, 1], [0.94, 1])})`,
               }}
             >
-              <span style={{ color: C.red, fontWeight: 700 }}>AUDIT: 2 speculative adjectives challenged</span>
-              <span style={{ color: C.ink, fontWeight: 700 }}>✓ Replaced with factual metrics</span>
+              <span style={{ color: C.red, marginRight: 10 }}>●</span>
+              ADVERSARIAL CONSENSUS VERIFIED BEFORE ANY STORY GOES LIVE
+            </div>
+
+            {/* Editorial Rule Quote */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: 18,
+                border: C.border,
+                padding: '20px 28px',
+                fontFamily: "'Newsreader', Georgia, serif",
+                fontStyle: 'italic',
+                fontSize: 21,
+                color: C.inkMuted,
+                textAlign: 'center',
+                boxShadow: C.cardShadow,
+              }}
+            >
+              "One AI writes the facts. A second adversarial AI fights to tear them down."
             </div>
           </div>
-
-          {/* Consensus Verification Bar */}
-          <div
-            style={{
-              backgroundColor: 'rgba(21, 128, 61, 0.08)',
-              borderRadius: 18,
-              padding: '22px 30px',
-              textAlign: 'center',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 16,
-              fontWeight: 800,
-              color: C.green,
-            }}
-          >
-            ● DUAL-AGENT CONSENSUS VERIFIED BEFORE ANY STORY GOES LIVE
-          </div>
-
-          {/* Quote Card */}
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: 20,
-              border: C.border,
-              padding: '22px 32px',
-              fontFamily: "'Newsreader', Georgia, serif",
-              fontStyle: 'italic',
-              fontSize: 22,
-              color: C.inkMuted,
-              textAlign: 'center',
-              boxShadow: C.cardShadow,
-            }}
-          >
-            "One AI writes the story. A second adversarial AI fights to tear it down."
-          </div>
-        </div>
-      ),
+        );
+      },
     },
   ];
 
@@ -1069,10 +1296,8 @@ export const PlainMotionAd = () => {
 
           .paper-texture {
             background-color: #f4efe6;
-            background-image: 
-              radial-gradient(circle at 50% 25%, #faf7f2 0%, #f4efe6 55%, #eae1d0 100%),
-              radial-gradient(rgba(11, 12, 14, 0.025) 1px, transparent 1px);
-            background-size: 100% 100%, 20px 20px;
+            background-image: radial-gradient(rgba(11, 12, 14, 0.035) 1px, transparent 1px);
+            background-size: 24px 24px;
           }
 
           .dark-studio {
@@ -1430,7 +1655,7 @@ export const PlainMotionAd = () => {
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: 13,
                 fontWeight: 700,
-                color: C.green,
+                color: C.red,
                 letterSpacing: 1.5,
               }}
             >
@@ -1487,7 +1712,7 @@ export const PlainMotionAd = () => {
                   maxWidth: 320,
                 }}
               >
-                <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.green, fontWeight: 700 }}>
+                <div style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace", color: C.red, fontWeight: 700 }}>
                   VERIFIED FACT PIPELINE
                 </div>
                 <div style={{ fontSize: 22, fontWeight: 800, color: C.ink, marginTop: 4 }}>
@@ -1661,7 +1886,7 @@ export const PlainMotionAd = () => {
             </div>
           </div>
 
-          {/* Central Visual Component Showcase (Tightly filling vertical space) */}
+          {/* Central Visual Component Showcase (Individual Kinetic Motion Transitions) */}
           <div
             style={{
               flex: 1,
@@ -1669,11 +1894,10 @@ export const PlainMotionAd = () => {
               flexDirection: 'column',
               justifyContent: 'center',
               margin: '25px 0',
-              opacity: visualEntrance,
-              transform: `translateY(${interpolate(visualEntrance, [0, 1], [20, 0])}px)`,
+              overflow: 'visible',
             }}
           >
-            {currentPrinciple.renderVisual()}
+            {currentPrinciple.renderVisual(pLocalFrame, fps)}
           </div>
 
           {/* Bottom Stepper Progress Bar */}
