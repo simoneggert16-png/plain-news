@@ -18,12 +18,12 @@ const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
 export const MODELS = {
-  // Model 1: MiniMax M3 — Rapid clustering & multimodal vision
-  desk: [process.env.DESK_MODEL, 'minimax-m3', 'deepseek-v4.1-flash'].filter(Boolean),
-  // Model 2: DeepSeek v4.1 Flash — In-depth neutral reporting & multilingual translation
+  // Fast headline clustering
+  desk: [process.env.DESK_MODEL, 'deepseek-v4.1-flash', 'glm-5.3-flash', 'minimax-m3'].filter(Boolean),
+  // In-depth neutral reporting & multilingual translation
   writer: [process.env.WRITER_MODEL, 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
   translator: [process.env.TRANSLATOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
-  // Model 3: GLM-5.3 Flash & DeepSeek — Independent standards editor & adversarial verification
+  // Independent standards editor & adversarial verification
   editor: [process.env.EDITOR_MODEL, 'glm-5.3-flash', 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
 };
 

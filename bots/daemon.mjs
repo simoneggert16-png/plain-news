@@ -14,12 +14,12 @@ if (fs.existsSync('.env')) {
   }
 }
 
-const INTERVAL_MS = 15 * 60 * 1000; // 15 minutes
+const INTERVAL_MS = 5 * 60 * 1000; // 5 minutes between runs
 process.env.MAX_STORIES_PER_RUN = process.env.MAX_STORIES_PER_RUN || '9';
 process.env.MAX_PER_CATEGORY = process.env.MAX_PER_CATEGORY || '1';
 
 console.log('====================================================');
-console.log('PLAIN Continuous Newsroom Daemon (High-Frequency: 9 desks / 15 min)');
+console.log('PLAIN Continuous Newsroom Daemon (High-Frequency: 9 desks)');
 console.log('Target: Minimum 3-4 published articles per category per hour');
 console.log('====================================================');
 
@@ -31,7 +31,7 @@ async function runCycle() {
     execSync('node bots/newsroom.mjs', {
       stdio: 'inherit',
       env: process.env,
-      timeout: 25 * 60 * 1000,
+      timeout: 60 * 60 * 1000,
     });
 
     // 2. Run social media cadence check (5-hour batch window)

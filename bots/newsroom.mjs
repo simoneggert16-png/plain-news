@@ -206,7 +206,7 @@ async function main() {
 
   const sortedItems = [...prioritized, ...others];
   const batchSize = 45;
-  const maxBatches = Math.min(8, Math.ceil(sortedItems.length / batchSize));
+  const maxBatches = Math.min(4, Math.ceil(sortedItems.length / batchSize));
   let allEvents = [];
   const publishedTitles = [...recentTitles];
 
@@ -339,6 +339,15 @@ async function main() {
       published.push(article.slug);
       categoryCounts[article.category] = (categoryCounts[article.category] || 0) + 1;
       log(`  ✓ PUBLISHED ${article.slug} (${Object.keys(article.locales).length} langs) [${article.category.toUpperCase()}: ${categoryCounts[article.category]}/${TARGET_PER_CAT}]`);
+
+      // Push immediately to production so users never wait for batch end
+      try {
+        const { execSync } = await import('node:child_process');
+        execSync(`git add content/ && git commit -m "newsroom: live [${article.category.toUpperCase()}] ${article.slug.slice(0, 45)}" && git push origin main`, { stdio: 'pipe', timeout: 45000 });
+        log(`  🚀 PUSHED TO ORIGIN MAIN → live on plain-news.ch`);
+      } catch (pushErr) {
+        log(`  push notice: ${pushErr.message?.slice(0, 80)}`);
+      }
     } catch (e) {
       log(`  ✗ failed: ${e.message}`);
     } finally {
