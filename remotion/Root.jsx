@@ -6,11 +6,11 @@ import { PlainMotionAd } from './PlainMotionAd';
 export const RemotionRoot = () => {
   return (
     <>
-      {/* 1. Viral Premium Motion Ad (14 seconds, hook + manifesto + CTA) */}
+      {/* 1. Viral Premium Motion Ad (30 seconds, 900 frames @ 30fps, 5 principles + hook + CTA) */}
       <Composition
         id="PlainMotionAd"
         component={PlainMotionAd}
-        durationInFrames={420} // 14 seconds
+        durationInFrames={900} // 30 seconds
         fps={30}
         width={1080}
         height={1920}
