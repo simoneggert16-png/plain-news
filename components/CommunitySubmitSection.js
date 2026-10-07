@@ -26,77 +26,30 @@ export default function CommunitySubmitSection({ locale, isDe }) {
   const [translations, setTranslations] = useState({});
 
   useEffect(() => {
-    // 1. Load community submissions
-    try {
-      const savedArticles = localStorage.getItem('plain_community_articles');
-      if (savedArticles) {
-        setSubmissions(JSON.parse(savedArticles));
-      } else {
-        setSubmissions([
-          {
-            id: 'comm-1',
-            title: isDe
-              ? 'Offene Forschungsdaten: Neues Schweizer Repositorium für Klimadaten freigeschaltet'
-              : 'Open Research Data: New Swiss Climate Open Repository Launched',
-            sourceUrl: 'https://opendata.swiss',
-            summary: isDe
-              ? 'Behörden und Universitäten haben einen zentralen, offenen Zugriffspunkt für historische Wetter- und Schmelzdaten der Alpengletscher bereitgestellt.'
-              : 'Public institutions and universities released a unified open-access repository for historical Alpine glacier melt data.',
-            author: 'Marc V. (ETH Alumnus)',
-            date: new Date(Date.now() - 3600000 * 5).toISOString(),
-          },
-          {
-            id: 'comm-2',
-            title: isDe
-              ? 'SNB Devisenreserven: Quartalsübersicht zu Fremdwährungsbeständen'
-              : 'SNB Foreign Reserves: Q3 Foreign Exchange Allocation Breakdown',
-            sourceUrl: 'https://www.snb.ch',
-            summary: isDe
-              ? 'Die Schweizerische Nationalbank hat die aktualisierte Zusammensetzung der Währungsreserven publiziert. Der Anteil an Euro- und US-Dollar-Anleihen bleibt stabil.'
-              : 'The Swiss National Bank published its updated quarterly asset allocation of foreign reserves.',
-            author: 'Elena R. (Finanzanalystin)',
-            date: new Date(Date.now() - 3600000 * 12).toISOString(),
-          }
-        ]);
-      }
-    } catch {
-      // fallback
-    }
+    let active = true;
 
-    // 2. Load chatroom messages
-    try {
-      const savedChat = localStorage.getItem('plain_community_chat');
-      if (savedChat) {
-        setChatMessages(JSON.parse(savedChat));
-      } else {
-        setChatMessages([
-          {
-            id: 'chat-1',
-            user: 'Sébastien (Lausanne)',
-            text: 'Les nouvelles données du CERN confirment la stabilité des expériences sur les neutrinos sans anomalies.',
-            date: new Date(Date.now() - 3600000 * 1).toISOString(),
-            verified: true,
-          },
-          {
-            id: 'chat-2',
-            user: 'Lukas B. (Basel)',
-            text: 'Interessante Entwicklung bei den Schweizer Exportzahlen für Pharmazeutika im letzten Monat.',
-            date: new Date(Date.now() - 3600000 * 2).toISOString(),
-            verified: true,
-          },
-          {
-            id: 'chat-3',
-            user: 'Andrea (Lugano)',
-            text: 'Grazie per aver verificato le fonti primarie dei documenti federali. Questo approccio è unico.',
-            date: new Date(Date.now() - 3600000 * 3).toISOString(),
-            verified: true,
-          }
-        ]);
-      }
-    } catch {
-      // fallback
-    }
-  }, [isDe]);
+    // Load server submissions
+    fetch('/api/community/submissions', { cache: 'no-store' })
+      .then(res => res.json())
+      .then(data => {
+        if (active && Array.isArray(data.submissions)) {
+          setSubmissions(data.submissions);
+        }
+      })
+      .catch(err => console.warn('Failed to load server submissions:', err));
+
+    // Load server chat
+    fetch('/api/community/chat', { cache: 'no-store' })
+      .then(res => res.json())
+      .then(data => {
+        if (active && Array.isArray(data.messages)) {
+          setChatMessages(data.messages);
+        }
+      })
+      .catch(err => console.warn('Failed to load server chat:', err));
+
+    return () => { active = false; };
+  }, []);
 
   // Translate handler (used for both submissions and chat messages)
   const handleToggleTranslate = async (id, textToTranslate) => {
@@ -146,7 +99,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
     }
   };
 
-  // Submit Community Article / Primary Source with NVIDIA AI Moderation
+  // Submit Community Article / Primary Source with NVIDIA AI Moderation & Server Persistence
   const handleArticleSubmit = async (e) => {
     e.preventDefault();
     if (!title.trim() || !sourceUrl.trim() || !summary.trim() || submittingArticle) return;
@@ -158,8 +111,8 @@ export default function CommunitySubmitSection({ locale, isDe }) {
     const authorName = author.trim() || (isDe ? 'Community-Mitglied' : 'Community Contributor');
 
     try {
-      // Call NVIDIA NIM AI Content Moderation
-      const res = await fetch('/api/community/moderate', {
+      // 1. Call NVIDIA NIM AI Content Moderation
+      const modRes = await fetch('/api/community/moderate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -170,7 +123,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
         }),
       });
 
-      const modResult = await res.json();
+      const modResult = await modRes.json();
 
       if (!modResult.approved) {
         setArticleModError(modResult.reason || (isDe
@@ -180,22 +133,21 @@ export default function CommunitySubmitSection({ locale, isDe }) {
         return;
       }
 
-      const newSub = {
-        id: 'comm-' + Date.now(),
-        title: title.trim(),
-        sourceUrl: sourceUrl.trim(),
-        summary: summary.trim(),
-        author: authorName,
-        date: new Date().toISOString(),
-        verified: true,
-      };
+      // 2. Persist to server
+      const postRes = await fetch('/api/community/submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: title.trim(),
+          sourceUrl: sourceUrl.trim(),
+          summary: summary.trim(),
+          author: authorName,
+        }),
+      });
 
-      const updated = [newSub, ...submissions];
-      setSubmissions(updated);
-      try {
-        localStorage.setItem('plain_community_articles', JSON.stringify(updated));
-      } catch {
-        // ignore
+      if (postRes.ok) {
+        const postData = await postRes.json();
+        if (postData.submissions) setSubmissions(postData.submissions);
       }
 
       setTitle('');
@@ -212,7 +164,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
     }
   };
 
-  // Submit Chatroom Message with NVIDIA AI Moderation
+  // Submit Chatroom Message with NVIDIA AI Moderation & Server Persistence
   const handleChatSubmit = async (e) => {
     e.preventDefault();
     if (!chatText.trim() || sendingChat) return;
@@ -224,8 +176,8 @@ export default function CommunitySubmitSection({ locale, isDe }) {
     const messageContent = chatText.trim();
 
     try {
-      // Call NVIDIA NIM AI Content Moderation
-      const res = await fetch('/api/community/moderate', {
+      // 1. Call NVIDIA NIM AI Content Moderation
+      const modRes = await fetch('/api/community/moderate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -236,7 +188,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
         }),
       });
 
-      const modResult = await res.json();
+      const modResult = await modRes.json();
 
       if (!modResult.approved) {
         setChatModError(modResult.reason || (isDe
@@ -246,20 +198,19 @@ export default function CommunitySubmitSection({ locale, isDe }) {
         return;
       }
 
-      const newMsg = {
-        id: 'chat-' + Date.now(),
-        user: userName,
-        text: messageContent,
-        date: new Date().toISOString(),
-        verified: true,
-      };
+      // 2. Persist to server
+      const postRes = await fetch('/api/community/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user: userName,
+          text: messageContent,
+        }),
+      });
 
-      const updated = [newMsg, ...chatMessages];
-      setChatMessages(updated);
-      try {
-        localStorage.setItem('plain_community_chat', JSON.stringify(updated));
-      } catch {
-        // ignore
+      if (postRes.ok) {
+        const postData = await postRes.json();
+        if (postData.messages) setChatMessages(postData.messages);
       }
 
       setChatText('');
@@ -278,13 +229,16 @@ export default function CommunitySubmitSection({ locale, isDe }) {
           <div>
             <p className="lead-dek" style={{ margin: 0 }}>
               {isDe
-                ? 'Das offene PLAIN-Community-Zentrum: Primärquellen einreichen und im moderierten Live-Chatroom sachlich debattieren.'
-                : 'The open PLAIN community hub: Submit primary sources and engage in moderated discourse in the live chatroom.'}
+                ? 'Das offene PLAIN-Community-Zentrum: Primärquellen einreichen und im moderierten Live-Chatroom sachlich debattieren. Alle Beiträge sind serverseitig für jeden Leser synchronisiert.'
+                : 'The open PLAIN community hub: Submit primary sources and engage in moderated discourse in the live chatroom. All contributions are server-synced across readers.'}
             </p>
           </div>
-          <span className="comments-ai-badge" style={{ alignSelf: 'center' }}>
-            <span className="ai-dot"></span> NVIDIA NIM AI Moderation & Live-Übersetzung aktiv
-          </span>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <span className="comments-ai-badge">
+              <span className="ai-dot"></span> NVIDIA NIM AI Moderation & Live-Übersetzung aktiv
+            </span>
+            <span className="comments-server-badge">● Live-Sync</span>
+          </div>
         </div>
       </div>
 
@@ -313,8 +267,8 @@ export default function CommunitySubmitSection({ locale, isDe }) {
             <h2 className="sec-title">{isDe ? 'Artikel oder Primärquelle einreichen' : 'Submit Community Story or Primary Source'}</h2>
             <p className="form-subtext">
               {isDe
-                ? 'Regel: Verlinke eine überprüfbare Primärquelle (Behördenmeldung, wissenschaftliches Paper, Finanzbericht). Alle Einreichungen werden in Echtzeit von der NVIDIA AI auf Vulgärsprache und Spam gescannt.'
-                : 'Requirement: Link a verifiable primary source. All submissions are vetted in real time by NVIDIA NIM AI against vulgarity, hostility, and spam.'}
+                ? 'Regel: Verlinke eine überprüfbare Primärquelle (Behördenmeldung, wissenschaftliches Paper, Finanzbericht). Alle Einreichungen werden in Echtzeit von der NVIDIA AI auf Vulgärsprache und Spam gescannt und serverseitig gespeichert.'
+                : 'Requirement: Link a verifiable primary source. All submissions are vetted in real time by NVIDIA NIM AI against vulgarity, hostility, and spam, and stored on server.'}
             </p>
 
             <form onSubmit={handleArticleSubmit} className="community-form">
@@ -385,7 +339,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
 
               {submitted && (
                 <div className="submit-success-badge">
-                  ✓ {isDe ? 'NVIDIA AI Prüfung bestanden – Erfolgreich veröffentlicht!' : 'NVIDIA AI verification passed – Successfully published!'}
+                  ✓ {isDe ? 'NVIDIA AI Prüfung bestanden – Erfolgreich auf dem Server veröffentlicht!' : 'NVIDIA AI verification passed – Successfully published on server!'}
                 </div>
               )}
             </form>
@@ -463,8 +417,8 @@ export default function CommunitySubmitSection({ locale, isDe }) {
               </h2>
               <p style={{ margin: '4px 0 0', fontSize: '13px', color: 'var(--muted)' }}>
                 {isDe
-                  ? 'Offener, moderierter Echtzeit-Austausch. Alle Mitteilungen werden vor der Übertragung von NVIDIA AI gescannt.'
-                  : 'Open, moderated real-time debate. All messages are scanned by NVIDIA AI prior to broadcast.'}
+                  ? 'Offener, moderierter Echtzeit-Austausch. Alle Mitteilungen werden vor der Übertragung von NVIDIA AI gescannt und serverseitig gespeichert.'
+                  : 'Open, moderated real-time debate. All messages are scanned by NVIDIA AI prior to broadcast and stored on server.'}
               </p>
             </div>
             <span className="chat-live-pulse">● LIVE</span>

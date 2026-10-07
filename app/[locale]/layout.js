@@ -79,6 +79,22 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={bcp} className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var p = localStorage.getItem('plain_palette');
+                if (p) document.documentElement.setAttribute('data-palette', p);
+                var s = localStorage.getItem('plain_font_size');
+                if (s) document.documentElement.setAttribute('data-font-size', s);
+                var f = localStorage.getItem('plain_font_family');
+                if (f) document.documentElement.setAttribute('data-font-family', f);
+              } catch(e) {}
+            `,
+          }}
+        />
+      </head>
       <body data-locale={locale}>
         <Header locale={locale} t={t} />
         <main className="wrap">{children}</main>
