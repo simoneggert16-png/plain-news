@@ -534,9 +534,51 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   transition: background 0.15s ease;
 }
 
-.clip-icon-btn:hover {
-  background: var(--paper);
-  color: var(--ink);
+.clip-loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.clip-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--paper);
+  border-radius: 50%;
+  animation: clipSpin 0.7s linear infinite;
+}
+
+@keyframes clipSpin {
+  to { transform: rotate(360deg); }
+}
+
+.clip-error-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 16px;
+  text-align: center;
+  z-index: 5;
+  gap: 10px;
+}
+
+.clip-external-link {
+  color: var(--paper);
+  text-decoration: underline;
+  font-weight: 700;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .clip-caption {

@@ -37,11 +37,43 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
     );
   }
 
-  const togglePlay = () => {
+  const [hasError, setHasError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const togglePlay = (e) => {
+    if (e && typeof e.stopPropagation === 'function') {
+      e.stopPropagation();
+    }
     if (!videoRef.current) return;
+
     if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
+      setIsLoading(true);
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            console.warn('Play attempt failed, trying muted fallback:', err);
+            if (videoRef.current) {
+              videoRef.current.muted = true;
+              setIsMuted(true);
+              videoRef.current
+                .play()
+                .then(() => {
+                  setIsPlaying(true);
+                  setIsLoading(false);
+                })
+                .catch((fallbackErr) => {
+                  console.error('Video playback failed:', fallbackErr);
+                  setIsLoading(false);
+                  setHasError(true);
+                });
+            }
+          });
+      }
     } else {
       videoRef.current.pause();
       setIsPlaying(false);
@@ -81,31 +113,79 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
     }
   };
 
+  const videoUrl = src || video?.url;
+
   return (
     <figure className="clip-player-wrap">
-      <div className="clip-player" onClick={togglePlay} onMouseEnter={() => setShowControls(true)}>
+      <div
+        className="clip-player"
+        onClick={togglePlay}
+        onMouseEnter={() => setShowControls(true)}
+      >
         <video
           ref={videoRef}
-          src={src || video?.url}
+          src={videoUrl}
           poster={poster}
           playsInline
           muted={isMuted}
+          preload="metadata"
+          referrerPolicy="no-referrer"
           loop
           onTimeUpdate={handleTimeUpdate}
+          onWaiting={() => setIsLoading(true)}
+          onPlaying={() => {
+            setIsPlaying(true);
+            setIsLoading(false);
+          }}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
+          onError={(e) => {
+            console.error('HTML5 video error event:', e);
+            setHasError(true);
+            setIsLoading(false);
+          }}
           className="clip-video"
         />
 
-        {!isPlaying && (
-          <button className="clip-play-btn" aria-label="Play video" onClick={togglePlay}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        {!isPlaying && !isLoading && (
+          <button
+            type="button"
+            className="clip-play-btn"
+            aria-label="Play video"
+            onClick={(e) => {
+              e.stopPropagation();
+              togglePlay(e);
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <polygon points="6 3 20 12 6 21 6 3" />
             </svg>
           </button>
         )}
 
-        <div className={`clip-overlay ${showControls ? 'visible' : ''}`}>
+        {isLoading && (
+          <div className="clip-loading-indicator">
+            <div className="clip-spinner" />
+          </div>
+        )}
+
+        {hasError && (
+          <div className="clip-error-fallback" onClick={(e) => e.stopPropagation()}>
+            <p>Clip kann im Browser nicht direkt gestreamt werden.</p>
+            {videoUrl && (
+              <a
+                href={videoUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="clip-external-link"
+              >
+                In neuem Tab öffnen ↗
+              </a>
+            )}
+          </div>
+        )}
+
+        <div className={`clip-overlay ${showControls ? 'visible' : ''}`} onClick={(e) => e.stopPropagation()}>
           <div className="clip-bar-track" onClick={handleSeek}>
             <div className="clip-bar-fill" style={{ width: `${progress}%` }} />
           </div>
@@ -113,7 +193,12 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
           <div className="clip-btn-row">
             <span className="clip-tag">PLAIN. CLIP</span>
             <div className="clip-actions">
-              <button className="clip-icon-btn" onClick={toggleMute} aria-label={isMuted ? 'Unmute' : 'Mute'}>
+              <button
+                type="button"
+                className="clip-icon-btn"
+                onClick={toggleMute}
+                aria-label={isMuted ? 'Unmute' : 'Mute'}
+              >
                 {isMuted ? (
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
@@ -129,7 +214,12 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
                 )}
               </button>
 
-              <button className="clip-icon-btn" onClick={toggleFullscreen} aria-label="Fullscreen">
+              <button
+                type="button"
+                className="clip-icon-btn"
+                onClick={toggleFullscreen}
+                aria-label="Fullscreen"
+              >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square">
                   <path d="M8 3H3v5" />
                   <path d="M16 3h5v5" />
