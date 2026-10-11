@@ -1,0 +1,193 @@
+{
+  "slug": "study-finds-ai-coding-agents-raise-code-output-but-20261011-5219",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-10-11T01:10:40.324Z",
+  "updatedAt": "2026-10-11T01:10:40.324Z",
+  "sources": [
+    {
+      "outlet": "Ars Technica",
+      "title": "AI coding agents generate more code, but not more software",
+      "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+      "publishedAt": "2026-10-09T19:43:50.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Study finds AI coding agents raise code output but not software output",
+      "dek": "Harvard researchers found AI coding agents raised lines of code and pull requests at firms, while code review time and revisions also rose.",
+      "facts": [
+        "AI coding agents raised total lines of code by 30 percent, commits by 20 percent and pull requests by 23 percent on average, the researchers reported.",
+        "The average review time between a pull request being submitted and merged rose 49 percent after AI coding agents were introduced.",
+        "Resolution rates for Issues and Epics, meaning wholesale software features, tracked by tools such as Jira did not change in a statistically significant way.",
+        "The study used analytics from Jellyfish covering 300 million work events and more than 700,000 employees at over 700 firms from 2021 through March 2026."
+      ],
+      "body": [
+        "A study of coding practices across hundreds of firms found that human code review forms a significant bottleneck for the overall efficiency of AI coding tools, according to Ars Technica. The researchers reported little evidence that firms increase software output or reduce employment by using those tools. Any efficiency gained during the coding phase is absorbed by downstream constraints in the production process, according to the report.",
+        "Harvard University researchers Fiona Chen and James Stratton used aggregated analytics data from Jellyfish, which measures the output of engineering teams, Ars Technica reported. The data covers 300 million individual work events, such as commits and pull requests, and issue management software data across more than 700,000 employees at over 700 software development firms from 2021 through March 2026. Pull requests are proposed code changes that reviewers check before the code is merged into a codebase. The researchers combined directly measured AI usage with analyses of GitHub activity to determine when each company introduced AI coding assistants, which auto-complete code primarily authored by humans, or AI coding agents, which primarily write and submit code autonomously based on prompts.",
+        "The researchers reported that introducing AI coding agents at a firm led to a 30 percent increase in total lines of code generated, a 20 percent rise in total commits and a 23 percent increase in pull requests on average. That extra code did not translate directly into improved software output at the firm level, they found. The resolution rate for Issues and Epics, meaning wholesale software features, tracked by tools such as Jira did not change in a statistically significant way after AI tools were introduced. The researchers also found no compositional shift in the size or complexity of those Jira-tracked issues across the AI introduction.",
+        "The researchers located the reason for the discrepancy in the code review process, which took longer on average after AI coding agents were introduced. The average review process time between a pull request being submitted and it being merged rose 49 percent on average. The share of pull requests with changes requested nearly doubled, and the number of comments per pull request rose 35 percent, they reported. The researchers also found a 14 percent increase in the share of workers performing code reviews after the change, according to the report."
+      ],
+      "context": "AI coding assistants and agents can generate large amounts of functional code, according to Ars Technica. Coders who use those tools also know not to trust the accuracy of that code, meaning substantial effort goes into reviewing AI-generated output.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "Studie: KI-Coding-Agenten steigern Code-Output, aber nicht Software-Output",
+      "dek": "Harvard-Forscher fanden heraus, dass KI-Coding-Agenten in Unternehmen die Zahl der Codezeilen und Pull Requests erhöhten, während auch die Code-Review-Zeit und die Überarbeitungen zunahmen.",
+      "facts": [
+        "KI-Coding-Agenten erhöhten die Gesamtzahl der Codezeilen um 30 Prozent, die Commits um 20 Prozent und die Pull Requests um 23 Prozent im Durchschnitt, berichteten die Forscher.",
+        "Die durchschnittliche Review-Zeit zwischen Einreichung und Zusammenführung eines Pull Requests stieg nach der Einführung von KI-Coding-Agenten um 49 Prozent.",
+        "Die Abschlussraten für Issues und Epics, also komplette Softwarefunktionen, die mit Tools wie Jira verfolgt werden, änderten sich nicht statistisch signifikant.",
+        "Die Studie nutzte Analysedaten von Jellyfish, die 300 Millionen Arbeitsereignisse und mehr als 700.000 Beschäftigte in über 700 Unternehmen von 2021 bis März 2026 abdecken."
+      ],
+      "body": [
+        "Eine Studie zu Programmierpraktiken in Hunderten von Unternehmen ergab, dass die menschliche Codeüberprüfung einen erheblichen Engpass für die Gesamteffizienz von KI-Coding-Tools darstellt, berichtet Ars Technica. Die Forscher fanden kaum Belege dafür, dass Unternehmen durch die Nutzung dieser Tools ihren Software-Output steigern oder Beschäftigung abbauen. Jegliche Effizienzgewinne in der Codierungsphase werden durch nachgelagerte Engpässe im Produktionsprozess aufgezehrt, heißt es in dem Bericht.",
+        "Die Harvard-Forscher Fiona Chen und James Stratton nutzten aggregierte Analysedaten von Jellyfish, das die Leistung von Engineering-Teams misst, wie Ars Technica berichtete. Die Daten umfassen 300 Millionen einzelne Arbeitsereignisse wie Commits und Pull Requests sowie Daten aus Issue-Management-Software zu mehr als 700.000 Beschäftigten in über 700 Softwareentwicklungsunternehmen von 2021 bis März 2026. Pull Requests sind vorgeschlagene Codeänderungen, die Prüfer kontrollieren, bevor der Code in eine Codebasis zusammengeführt wird. Die Forscher kombinierten direkt gemessene KI-Nutzung mit Analysen der GitHub-Aktivität, um festzustellen, wann jedes Unternehmen KI-Coding-Assistenten einführte, die Code automatisch vervollständigen, der überwiegend von Menschen verfasst wurde, oder KI-Coding-Agenten, die Code überwiegend autonom auf Basis von Prompts schreiben und einreichen.",
+        "Die Forscher berichteten, dass die Einführung von KI-Coding-Agenten in einem Unternehmen im Durchschnitt zu einem Anstieg der insgesamt generierten Codezeilen um 30 Prozent, der Gesamtzahl der Commits um 20 Prozent und der Pull Requests um 23 Prozent führte. Dieser zusätzliche Code schlug sich nicht direkt in einem verbesserten Software-Output auf Unternehmensebene nieder, fanden sie. Die Abschlussrate für Issues und Epics, also komplette Softwarefunktionen, die mit Tools wie Jira verfolgt werden, änderte sich nach der Einführung von KI-Tools nicht statistisch signifikant. Die Forscher fanden außerdem keine Verschiebung in der Zusammensetzung hinsichtlich Größe oder Komplexität dieser von Jira erfassten Issues im Zuge der KI-Einführung.",
+        "Die Forscher machten den Grund für die Diskrepanz im Code-Review-Prozess aus, der nach der Einführung von KI-Coding-Agenten im Durchschnitt länger dauerte. Die durchschnittliche Review-Prozesszeit zwischen der Einreichung eines Pull Requests und dessen Zusammenführung stieg im Durchschnitt um 49 Prozent. Der Anteil der Pull Requests, bei denen Änderungen angefordert wurden, verdoppelte sich nahezu, und die Zahl der Kommentare pro Pull Request stieg um 35 Prozent, berichteten sie. Die Forscher fanden außerdem einen Anstieg um 14 Prozent beim Anteil der Beschäftigten, die nach der Änderung Code-Reviews durchführten, heißt es in dem Bericht."
+      ],
+      "context": "KI-Coding-Assistenten und -Agenten können laut Ars Technica große Mengen funktionsfähigen Code erzeugen. Programmierer, die diese Tools nutzen, wissen zudem, dass sie sich nicht auf die Genauigkeit dieses Codes verlassen können, was bedeutet, dass erheblicher Aufwand in die Überprüfung KI-generierter Ergebnisse fließt.",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Une étude révèle que les agents de codage IA augmentent la production de code, mais pas la production logicielle",
+      "dek": "Des chercheurs de Harvard ont constaté que les agents de codage IA augmentaient le nombre de lignes de code et de pull requests dans les entreprises, tandis que le temps de revue de code et les révisions augmentaient aussi.",
+      "facts": [
+        "Les agents de codage IA ont augmenté le nombre total de lignes de code de 30 %, les commits de 20 % et les pull requests de 23 % en moyenne, ont rapporté les chercheurs.",
+        "Le temps moyen de revue entre la soumission et la fusion d'une pull request a augmenté de 49 % après l'introduction des agents de codage IA.",
+        "Les taux de résolution des Issues et des Epics, c'est-à-dire des fonctionnalités logicielles complètes, suivis par des outils tels que Jira, n'ont pas changé de manière statistiquement significative.",
+        "L'étude a utilisé des données analytiques de Jellyfish couvrant 300 millions d'événements de travail et plus de 700 000 employés dans plus de 700 entreprises de 2021 à mars 2026."
+      ],
+      "body": [
+        "Une étude des pratiques de codage dans des centaines d'entreprises a constaté que la revue humaine du code constitue un goulot d'étranglement important pour l'efficacité globale des outils de codage IA, selon Ars Technica. Les chercheurs ont rapporté peu de preuves que les entreprises augmentent leur production logicielle ou réduisent l'emploi en utilisant ces outils. Tout gain d'efficacité obtenu pendant la phase de codage est absorbé par des contraintes en aval dans le processus de production, selon le rapport.",
+        "Les chercheurs de l'université Harvard Fiona Chen et James Stratton ont utilisé des données analytiques agrégées de Jellyfish, qui mesure la production des équipes d'ingénierie, a rapporté Ars Technica. Les données couvrent 300 millions d'événements de travail individuels, tels que des commits et des pull requests, ainsi que des données de logiciels de gestion des tickets pour plus de 700 000 employés dans plus de 700 entreprises de développement logiciel de 2021 à mars 2026. Les pull requests sont des propositions de modifications de code que les relecteurs vérifient avant que le code ne soit fusionné dans une base de code. Les chercheurs ont combiné l'usage de l'IA mesuré directement avec des analyses de l'activité GitHub pour déterminer quand chaque entreprise a introduit des assistants de codage IA, qui complètent automatiquement du code principalement écrit par des humains, ou des agents de codage IA, qui écrivent et soumettent principalement du code de manière autonome à partir de prompts.",
+        "Les chercheurs ont rapporté que l'introduction d'agents de codage IA dans une entreprise entraînait en moyenne une augmentation de 30 % du nombre total de lignes de code générées, de 20 % du nombre total de commits et de 23 % des pull requests. Ce code supplémentaire ne s'est pas traduit directement par une amélioration de la production logicielle au niveau de l'entreprise, ont-ils constaté. Le taux de résolution des Issues et des Epics, c'est-à-dire des fonctionnalités logicielles complètes, suivis par des outils tels que Jira, n'a pas changé de manière statistiquement significative après l'introduction des outils d'IA. Les chercheurs n'ont pas non plus constaté de changement de composition dans la taille ou la complexité de ces tickets suivis dans Jira avec l'introduction de l'IA.",
+        "Les chercheurs ont identifié la raison de cet écart dans le processus de revue de code, qui a pris plus de temps en moyenne après l'introduction des agents de codage IA. Le temps moyen du processus de revue entre la soumission et la fusion d'une pull request a augmenté de 49 % en moyenne. La part des pull requests ayant fait l'objet de demandes de modifications a presque doublé, et le nombre de commentaires par pull request a augmenté de 35 %, ont-ils rapporté. Les chercheurs ont également constaté une augmentation de 14 % de la part des travailleurs effectuant des revues de code après ce changement, selon le rapport."
+      ],
+      "context": "Les assistants et agents de codage IA peuvent générer de grandes quantités de code fonctionnel, selon Ars Technica. Les développeurs qui utilisent ces outils savent aussi qu'il ne faut pas se fier à l'exactitude de ce code, ce qui signifie qu'un effort substantiel est consacré à la revue de la production générée par l'IA.",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "Un estudio halla que los agentes de codificación con IA elevan la producción de código, pero no la de software",
+      "dek": "Investigadores de Harvard hallaron que los agentes de codificación con IA aumentaron las líneas de código y las solicitudes de extracción en las empresas, mientras que el tiempo de revisión de código y las revisiones también aumentaron.",
+      "facts": [
+        "Los agentes de codificación con IA aumentaron las líneas totales de código un 30 %, los commits un 20 % y las solicitudes de extracción un 23 % en promedio, informaron los investigadores.",
+        "El tiempo medio de revisión entre el envío y la fusión de una solicitud de extracción aumentó un 49 % después de la introducción de los agentes de codificación con IA.",
+        "Las tasas de resolución de Incidencias y Epics, es decir, funcionalidades de software completas, seguidas por herramientas como Jira no cambiaron de forma estadísticamente significativa.",
+        "El estudio utilizó analíticas de Jellyfish que abarcan 300 millones de eventos de trabajo y más de 700.000 empleados en más de 700 empresas desde 2021 hasta marzo de 2026."
+      ],
+      "body": [
+        "Un estudio sobre prácticas de programación en cientos de empresas encontró que la revisión humana del código constituye un cuello de botella significativo para la eficiencia general de las herramientas de codificación con IA, según Ars Technica. Los investigadores informaron que hay pocas pruebas de que las empresas aumenten la producción de software o reduzcan el empleo al usar esas herramientas. Cualquier eficiencia obtenida durante la fase de codificación es absorbida por restricciones posteriores en el proceso de producción, según el informe.",
+        "Los investigadores de la Universidad de Harvard Fiona Chen y James Stratton utilizaron datos analíticos agregados de Jellyfish, que mide la producción de los equipos de ingeniería, informó Ars Technica. Los datos abarcan 300 millones de eventos de trabajo individuales, como commits y solicitudes de extracción, y datos de software de gestión de incidencias de más de 700.000 empleados en más de 700 empresas de desarrollo de software desde 2021 hasta marzo de 2026. Las solicitudes de extracción son cambios de código propuestos que los revisores comprueban antes de que el código se fusione en una base de código. Los investigadores combinaron el uso de IA medido directamente con análisis de la actividad de GitHub para determinar cuándo introdujo cada empresa asistentes de codificación con IA, que autocompletan código escrito principalmente por humanos, o agentes de codificación con IA, que principalmente escriben y envían código de forma autónoma a partir de indicaciones.",
+        "Los investigadores informaron que la introducción de agentes de codificación con IA en una empresa condujo a un aumento del 30 % en el total de líneas de código generadas, un aumento del 20 % en el total de commits y un aumento del 23 % en las solicitudes de extracción en promedio. Ese código adicional no se tradujo directamente en una mejora de la producción de software a nivel de empresa, encontraron. La tasa de resolución de Incidencias y Epics, es decir, funcionalidades de software completas, seguidas por herramientas como Jira no cambió de forma estadísticamente significativa después de la introducción de las herramientas de IA. Los investigadores tampoco encontraron un cambio composicional en el tamaño o la complejidad de esas incidencias seguidas en Jira a lo largo de la introducción de la IA.",
+        "Los investigadores situaron la razón de la discrepancia en el proceso de revisión de código, que tardó más en promedio después de la introducción de los agentes de codificación con IA. El tiempo medio del proceso de revisión entre el envío de una solicitud de extracción y su fusión aumentó un 49 % en promedio. La proporción de solicitudes de extracción con cambios solicitados casi se duplicó, y el número de comentarios por solicitud de extracción aumentó un 35 %, informaron. Los investigadores también encontraron un aumento del 14 % en la proporción de trabajadores que realizan revisiones de código después del cambio, según el informe."
+      ],
+      "context": "Los asistentes y agentes de codificación con IA pueden generar grandes cantidades de código funcional, según Ars Technica. Los programadores que usan esas herramientas también saben que no deben confiar en la exactitud de ese código, lo que significa que se dedica un esfuerzo sustancial a revisar el resultado generado por IA.",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "Uno studio rileva che gli agenti di codifica IA aumentano la produzione di codice ma non quella di software",
+      "dek": "I ricercatori di Harvard hanno scoperto che gli agenti di codifica IA hanno aumentato le righe di codice e le pull request nelle aziende, mentre sono aumentati anche i tempi di revisione del codice e le revisioni.",
+      "facts": [
+        "Gli agenti di codifica IA hanno aumentato in media del 30 per cento le righe totali di codice, del 20 per cento i commit e del 23 per cento le pull request, hanno riferito i ricercatori.",
+        "Il tempo medio di revisione tra l'invio e il merge di una pull request è aumentato del 49 per cento dopo l'introduzione degli agenti di codifica IA.",
+        "I tassi di risoluzione di Issue ed Epic, cioè funzionalità software nel loro complesso, monitorati da strumenti come Jira, non sono cambiati in modo statisticamente significativo.",
+        "Lo studio ha utilizzato analisi di Jellyfish che coprono 300 milioni di eventi lavorativi e più di 700.000 dipendenti in oltre 700 aziende dal 2021 a marzo 2026."
+      ],
+      "body": [
+        "Uno studio sulle pratiche di codifica in centinaia di aziende ha rilevato che la revisione umana del codice costituisce un collo di bottiglia significativo per l'efficienza complessiva degli strumenti di codifica IA, secondo Ars Technica. I ricercatori hanno riferito che ci sono poche prove che le aziende aumentino la produzione di software o riducano l'occupazione usando questi strumenti. Qualsiasi efficienza guadagnata durante la fase di codifica viene assorbita dai vincoli a valle nel processo di produzione, secondo il rapporto.",
+        "I ricercatori dell'Università di Harvard Fiona Chen e James Stratton hanno utilizzato dati analitici aggregati di Jellyfish, che misura la produzione dei team di ingegneria, ha riferito Ars Technica. I dati coprono 300 milioni di singoli eventi lavorativi, come commit e pull request, e dati di software per la gestione delle issue relativi a più di 700.000 dipendenti in oltre 700 aziende di sviluppo software dal 2021 a marzo 2026. Le pull request sono proposte di modifiche al codice che i revisori controllano prima che il codice venga unito a una base di codice. I ricercatori hanno combinato l'uso dell'IA misurato direttamente con analisi dell'attività su GitHub per determinare quando ciascuna azienda ha introdotto assistenti di codifica IA, che completano automaticamente codice scritto principalmente da esseri umani, o agenti di codifica IA, che principalmente scrivono e inviano codice in modo autonomo sulla base di prompt.",
+        "I ricercatori hanno riferito che l'introduzione di agenti di codifica IA in un'azienda ha portato in media a un aumento del 30 per cento delle righe totali di codice generate, del 20 per cento dei commit totali e del 23 per cento delle pull request. Quel codice in più non si è tradotto direttamente in una migliore produzione di software a livello aziendale, hanno scoperto. Il tasso di risoluzione di Issue ed Epic, ovvero funzionalità software nel loro complesso, monitorato da strumenti come Jira, non è cambiato in modo statisticamente significativo dopo l'introduzione degli strumenti IA. I ricercatori hanno anche scoperto che non vi è stato alcuno spostamento compositivo nelle dimensioni o nella complessità di quelle issue monitorate da Jira in concomitanza con l'introduzione dell'IA.",
+        "I ricercatori hanno individuato la ragione della discrepanza nel processo di revisione del codice, che in media ha richiesto più tempo dopo l'introduzione degli agenti di codifica IA. Il tempo medio del processo di revisione tra l'invio di una pull request e il suo merge è aumentato in media del 49 per cento. La quota di pull request con richieste di modifiche è quasi raddoppiata, e il numero di commenti per pull request è aumentato del 35 per cento, hanno riferito. I ricercatori hanno anche scoperto un aumento del 14 per cento della quota di lavoratori che svolgono revisioni del codice dopo il cambiamento, secondo il rapporto."
+      ],
+      "context": "Gli assistenti e gli agenti di codifica IA possono generare grandi quantità di codice funzionale, secondo Ars Technica. I programmatori che usano questi strumenti sanno anche di non fidarsi dell'accuratezza di quel codice, il che significa che viene profuso uno sforzo sostanziale nella revisione dell'output generato dall'IA.",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Estudo conclui que agentes de codificação com IA aumentam a produção de código mas não a produção de software",
+      "dek": "Investigadores de Harvard concluíram que os agentes de codificação com IA aumentaram as linhas de código e os pull requests nas empresas, ao mesmo tempo que o tempo de revisão de código e as revisões também aumentaram.",
+      "facts": [
+        "Os agentes de codificação com IA aumentaram, em média, o total de linhas de código em 30%, os commits em 20% e os pull requests em 23%, relataram os investigadores.",
+        "O tempo médio de revisão entre a submissão e a integração de um pull request aumentou 49% depois da introdução dos agentes de codificação com IA.",
+        "As taxas de resolução de Issues e Epics, ou seja, funcionalidades de software no seu todo, acompanhadas por ferramentas como o Jira, não sofreram alterações estatisticamente significativas.",
+        "O estudo utilizou análises da Jellyfish que abrangem 300 milhões de eventos de trabalho e mais de 700 000 trabalhadores em mais de 700 empresas, de 2021 a março de 2026."
+      ],
+      "body": [
+        "Um estudo sobre práticas de programação em centenas de empresas concluiu que a revisão humana de código constitui um gargalo significativo para a eficiência global das ferramentas de codificação com IA, segundo a Ars Technica. Os investigadores relataram poucas provas de que as empresas aumentem a produção de software ou reduzam o emprego ao utilizar essas ferramentas. Qualquer eficiência obtida durante a fase de codificação é absorvida por restrições a jusante no processo de produção, segundo o relatório.",
+        "Os investigadores da Universidade de Harvard Fiona Chen e James Stratton utilizaram dados analíticos agregados da Jellyfish, que mede a produção das equipas de engenharia, noticiou a Ars Technica. Os dados abrangem 300 milhões de eventos de trabalho individuais, como commits e pull requests, e dados de software de gestão de issues relativos a mais de 700 000 trabalhadores de mais de 700 empresas de desenvolvimento de software, de 2021 a março de 2026. Os pull requests são alterações de código propostas que os revisores verificam antes de o código ser integrado numa base de código. Os investigadores combinaram a utilização de IA medida diretamente com análises da atividade no GitHub para determinar quando cada empresa introduziu assistentes de codificação com IA, que completam automaticamente código sobretudo da autoria de humanos, ou agentes de codificação com IA, que escrevem e submetem código sobretudo de forma autónoma com base em prompts.",
+        "Os investigadores relataram que a introdução de agentes de codificação com IA numa empresa conduziu a um aumento de 30% no total de linhas de código geradas, a um aumento de 20% no total de commits e a um aumento de 23% nos pull requests, em média. Esse código adicional não se traduziu diretamente numa melhoria da produção de software ao nível da empresa, concluíram. A taxa de resolução de Issues e Epics, ou seja, funcionalidades de software no seu todo, acompanhadas por ferramentas como o Jira, não mudou de forma estatisticamente significativa depois da introdução das ferramentas de IA. Os investigadores também não encontraram qualquer mudança de composição no tamanho ou na complexidade dessas issues acompanhadas no Jira com a introdução da IA.",
+        "Os investigadores localizaram a razão para a discrepância no processo de revisão de código, que passou a demorar mais, em média, depois da introdução dos agentes de codificação com IA. O tempo médio do processo de revisão entre a submissão de um pull request e a sua integração aumentou 49%, em média. A proporção de pull requests com alterações solicitadas quase duplicou, e o número de comentários por pull request aumentou 35%, relataram. Os investigadores também encontraram um aumento de 14% na proporção de trabalhadores que realizam revisões de código após a mudança, segundo o relatório."
+      ],
+      "context": "Os assistentes e agentes de codificação com IA podem gerar grandes quantidades de código funcional, segundo a Ars Technica. Os programadores que utilizam essas ferramentas também sabem que não devem confiar na exatidão desse código, o que significa que é feito um esforço substancial na revisão do resultado gerado por IA.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "研究发现 AI 编程代理提高代码产出，但未提高软件产出",
+      "dek": "哈佛研究人员发现，AI 编程代理提高了公司的代码行数和拉取请求数量，而代码审查时间和修订次数也上升了。",
+      "facts": [
+        "研究人员报告称，平均而言，AI 编程代理使代码总行数增加 30%，提交量增加 20%，拉取请求增加 23%。",
+        "在引入 AI 编程代理后，拉取请求从提交到合并的平均审查时间上升了 49%。",
+        "由 Jira 等工具跟踪的 Issues 和 Epics（即整体软件功能）的解决率没有发生统计上显著的变化。",
+        "该研究使用了 Jellyfish 的分析数据，涵盖 2021 年至 2026 年 3 月期间超过 700 家公司的 3 亿个工作事件和 70 多万名员工。"
+      ],
+      "body": [
+        "据 Ars Technica 报道，一项针对数百家公司编程实践的研究发现，人工代码审查构成了 AI 编程工具整体效率的显著瓶颈。研究人员报告称，几乎没有证据表明公司通过使用这些工具提高了软件产出或减少了用工。报告称，编码阶段获得的任何效率都被生产流程下游的制约因素吸收。",
+        "据 Ars Technica 报道，哈佛大学研究人员菲奥娜·陈和詹姆斯·斯特拉顿使用了 Jellyfish 的汇总分析数据，该数据衡量工程团队的产出。这些数据涵盖 2021 年至 2026 年 3 月期间 700 多家软件开发公司的超过 70 万名员工，包含 3 亿个单独工作事件（如提交和拉取请求）以及问题管理软件数据。拉取请求是提议的代码更改，审查者在代码合并到代码库之前会对其进行检查。研究人员将直接测量的 AI 使用情况与对 GitHub 活动的分析相结合，以确定每家公司何时引入 AI 编程助手（主要自动补全由人类编写的代码）或 AI 编程代理（主要根据提示词自主编写并提交代码）。",
+        "研究人员报告称，在一家公司引入 AI 编程代理后，生成的代码总行数平均增加 30%，总提交量增加 20%，拉取请求增加 23%。他们发现，这些额外代码并未直接转化为公司层面软件产出的改善。在引入 AI 工具后，由 Jira 等工具跟踪的 Issues 和 Epics（即整体软件功能）的解决率没有发生统计上显著的变化。研究人员还发现，在引入 AI 前后，这些由 Jira 跟踪的问题在规模或复杂度上没有构成变化。",
+        "研究人员将这一差异的原因归结于代码审查流程：在引入 AI 编程代理后，该流程平均耗时更长。拉取请求从提交到合并之间的平均审查流程时间平均上升了 49%。他们报告称，被要求更改的拉取请求占比几乎翻倍，每个拉取请求的评论数上升了 35%。据该报告，研究人员还发现，在这一变化之后，执行代码审查的员工比例增加了 14%。"
+      ],
+      "context": "据 Ars Technica 报道，AI 编程助手和代理可以生成大量可运行的代码。使用这些工具的编程人员也知道不能信任这些代码的准确性，这意味着需要投入大量精力审查 AI 生成的输出。",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "研究：AIコーディングエージェントはコード生成量を増やすが、ソフトウェアの生産量は増やさない",
+      "dek": "ハーバード大学の研究者は、AIコーディングエージェントが企業でコード行数とプルリクエストを増やした一方、コードレビュー時間と修正も増えたことを明らかにした。",
+      "facts": [
+        "研究者らは、AIコーディングエージェントにより、平均で総コード行数が30％、コミットが20％、プルリクエストが23％増加したと報告した。",
+        "AIコーディングエージェント導入後、プルリクエストが提出されてからマージされるまでの平均レビュー時間は49％増加した。",
+        "Jiraなどのツールで追跡されるイシューとエピック（ソフトウェア機能全体を意味する）の解決率は、統計的に有意な変化を示さなかった。",
+        "この研究は、2021年から2026年3月までの、3億件の作業イベントと700社超の企業の70万人超の従業員を網羅するJellyfishの分析データを使用した。"
+      ],
+      "body": [
+        "アルス・テクニカによると、数百社のコーディング慣行を対象とした研究で、人間によるコードレビューがAIコーディングツールの全体的な効率にとって重大なボトルネックになっていることが分かった。研究者らは、企業がこれらのツールを使うことでソフトウェアの生産量を増やしたり、雇用を削減したりしているという証拠はほとんどないと報告した。報告書によると、コーディング段階で得られた効率は、生産プロセスにおける下流の制約によって吸収されてしまうという。",
+        "アルス・テクニカが報じたところによると、ハーバード大学の研究者フィオナ・チェン氏とジェームズ・ストラットン氏は、エンジニアリングチームの成果を測定するJellyfishの集計分析データを使用した。このデータは、2021年から2026年3月までの、700社以上のソフトウェア開発企業における70万人以上の従業員を対象に、コミットやプルリクエストなどの3億件の個別作業イベントと、課題管理ソフトウェアのデータを網羅している。プルリクエストとは、コードがコードベースにマージされる前にレビュー担当者が確認する、提案されたコード変更である。研究者らは、直接測定されたAI使用状況とGitHub活動の分析を組み合わせ、各企業がいつAIコーディングアシスタント（主に人間が作成したコードを自動補完する）またはAIコーディングエージェント（プロンプトに基づいて主に自律的にコードを作成・提出する）を導入したかを特定した。",
+        "研究者らは、企業にAIコーディングエージェントを導入すると、平均で、生成される総コード行数が30％増え、総コミット数が20％増え、プルリクエストが23％増えたと報告した。彼らによると、その余分なコードは、企業レベルでのソフトウェア生産量の改善に直接つながったわけではなかった。Jiraなどのツールで追跡されるイシューとエピック（ソフトウェア機能全体を意味する）の解決率は、AIツール導入後、統計的に有意な変化を示さなかった。研究者らはまた、AI導入を通じて、Jiraで追跡されたこれらのイシューの規模や複雑さに構成上の変化は見られなかった。",
+        "研究者らは、この不一致の理由をコードレビュー工程に見いだした。AIコーディングエージェント導入後、この工程は平均して長くなった。プルリクエストが提出されてからマージされるまでの平均レビュー工程時間は、平均49％増加した。変更を求められたプルリクエストの割合はほぼ2倍になり、プルリクエスト当たりのコメント数は35％増えたと、彼らは報告した。報告書によると、研究者らはまた、この変化後にコードレビューを実施する労働者の割合が14％増えたことを見いだした。"
+      ],
+      "context": "アルス・テクニカによると、AIコーディングアシスタントとエージェントは大量の機能するコードを生成できる。これらのツールを使うコーダーは、そのコードの正確さを信用してはならないことも知っており、そのためAI生成の成果物をレビューするのに相当な労力が費やされる。",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "연구 결과, AI 코딩 에이전트는 코드 산출량은 늘리지만 소프트웨어 산출량은 늘리지 못해",
+      "dek": "하버드 연구진은 AI 코딩 에이전트가 기업에서 코드 라인 수와 풀 리퀘스트를 늘렸지만, 코드 리뷰 시간과 수정도 증가했다고 밝혔다.",
+      "facts": [
+        "연구진은 AI 코딩 에이전트가 평균적으로 전체 코드 라인 수를 30%, 커밋을 20%, 풀 리퀘스트를 23% 늘렸다고 보고했다.",
+        "AI 코딩 에이전트가 도입된 후 풀 리퀘스트가 제출되고 병합되기까지의 평균 리뷰 시간은 49% 증가했다.",
+        "지라와 같은 도구로 추적되는 이슈와 에픽, 즉 소프트웨어 기능 전체의 해결률은 통계적으로 유의미하게 변하지 않았다.",
+        "이 연구는 2021년부터 2026년 3월까지 700개 이상 기업의 70만 명 이상 직원을 대상으로 한 3억 건의 업무 이벤트를 포괄하는 젤리피시의 분석 데이터를 사용했다."
+      ],
+      "body": [
+        "아스 테크니카에 따르면, 수백 개 기업의 코딩 관행을 조사한 한 연구는 사람의 코드 리뷰가 AI 코딩 도구의 전반적 효율성에 상당한 병목을 형성한다는 사실을 발견했다. 연구진은 기업이 이러한 도구를 사용해 소프트웨어 산출량을 늘리거나 고용을 줄인다는 증거는 거의 없다고 보고했다. 보고서에 따르면 코딩 단계에서 얻은 효율성은 생산 과정의 후속 단계 제약에 흡수된다.",
+        "아스 테크니카에 따르면, 하버드대학교 연구진인 피오나 천과 제임스 스트래턴은 엔지니어링 팀의 산출량을 측정하는 젤리피시의 집계 분석 데이터를 사용했다. 이 데이터는 2021년부터 2026년 3월까지 700개 이상의 소프트웨어 개발 기업에서 70만 명 이상의 직원에 걸친 커밋과 풀 리퀘스트 같은 3억 건의 개별 업무 이벤트와 이슈 관리 소프트웨어 데이터를 포괄한다. 풀 리퀘스트는 코드가 코드베이스에 병합되기 전에 리뷰어가 확인하는 제안된 코드 변경이다. 연구진은 직접 측정한 AI 사용량과 깃허브 활동 분석을 결합해 각 기업이 언제 AI 코딩 어시스턴트—주로 사람이 작성한 코드를 자동 완성하는 도구—또는 프롬프트에 따라 주로 코드를 자율적으로 작성하고 제출하는 AI 코딩 에이전트를 도입했는지 판단했다.",
+        "연구진은 기업에 AI 코딩 에이전트를 도입하면 평균적으로 생성된 전체 코드 라인 수가 30% 증가하고, 전체 커밋이 20% 늘고, 풀 리퀘스트가 23% 증가했다고 보고했다. 그들은 늘어난 코드가 기업 수준의 소프트웨어 산출량 개선으로 직접 이어지지는 않았다고 밝혔다. 지라와 같은 도구로 추적되는 이슈와 에픽, 즉 소프트웨어 기능 전체의 해결률은 AI 도구 도입 후 통계적으로 유의미하게 변하지 않았다. 연구진은 또한 AI 도입 전후에 걸쳐 지라로 추적된 이슈의 규모나 복잡성에 구성상 변화가 없었다고 발견했다.",
+        "연구진은 이러한 불일치의 원인을 코드 리뷰 과정에서 찾았다. AI 코딩 에이전트가 도입된 후 코드 리뷰는 평균적으로 더 오래 걸렸다. 풀 리퀘스트가 제출되고 병합되기까지의 평균 리뷰 과정 시간은 평균 49% 증가했다. 변경 요청이 있는 풀 리퀘스트의 비중은 거의 두 배로 늘었고, 풀 리퀘스트당 댓글 수는 35% 증가했다고 그들은 보고했다. 보고서에 따르면 연구진은 또한 이 변화 이후 코드 리뷰를 수행하는 근로자의 비중이 14% 증가한 것을 발견했다."
+      ],
+      "context": "아스 테크니카에 따르면 AI 코딩 어시스턴트와 에이전트는 대량의 작동하는 코드를 생성할 수 있다. 이러한 도구를 사용하는 코더들은 그 코드의 정확성을 신뢰해서는 안 된다는 것도 알고 있으며, 이는 AI가 생성한 결과물을 검토하는 데 상당한 노력이 들어간다는 뜻이다.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "deepseek-v4.1-flash",
+    "editor": "glm-5.3-flash",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Attribution verb 'wrote' is not on the allowed neutral-verb list (said, stated, announced, reported); replaced with 'reported' and 'according to the report'.",
+      "Jargon 'pull request' was never explained in-line, which rule 8 requires; added a one-sentence gloss supported by the source's own description of pull requests being submitted, reviewed and merged into a codebase.",
+      "Minor repetition of 'they wrote'/'they found' attribution tightened for variety without changing meaning or adding claims."
+    ]
+  }
+}
