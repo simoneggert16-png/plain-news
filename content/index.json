@@ -1,6 +1,1040 @@
 {
-  "updatedAt": "2026-10-11T13:55:44.293Z",
+  "updatedAt": "2026-10-11T18:44:07.330Z",
   "articles": [
+    {
+      "slug": "cloudflare-acquires-deno-to-improve-its-workers-programming-model-20261011-eso3",
+      "category": "tech",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/06/GettyImages-1186369127.jpeg?resize=1200,800",
+      "imageCredit": "Cloudflare / PR image",
+      "video": null,
+      "importance": 3,
+      "publishedAt": "2026-10-11T18:42:50.470Z",
+      "updatedAt": "2026-10-11T18:42:50.470Z",
+      "sourceCount": 1,
+      "locales": {
+        "en": {
+          "title": "Cloudflare acquires Deno to improve its Workers programming model",
+          "dek": "Cloudflare said it will use its acquisition of Deno, the runtime startup co-founded by Node.js creator Ryan Dahl, to improve its Workers platform; terms were not disclosed.",
+          "facts": [
+            "Cloudflare announced on Friday it is acquiring Deno, the startup behind the Deno programming runtime, according to TechCrunch.",
+            "Financial terms of the acquisition were not disclosed.",
+            "Deno had raised a total of $26 million, including a Series A led by Sequoia, according to TechCrunch."
+          ],
+          "imageCaption": "View of a multi-story industrial building with large windows, displaying two orange banners on its facade featuring the Cloudflare logo and the \"CLOUDFLARE\" brand name."
+        },
+        "de": {
+          "title": "Cloudflare übernimmt Deno, um sein Workers-Programmiermodell zu verbessern",
+          "dek": "Cloudflare erklärte, die Übernahme von Deno, dem von Node.js-Erfinder Ryan Dahl mitgegründeten Runtime-Startup, nutzen zu wollen, um seine Workers-Plattform zu verbessern; die Bedingungen wurden nicht bekannt gegeben.",
+          "facts": [
+            "Cloudflare gab am Freitag bekannt, dass es Deno übernimmt, das Startup hinter der Deno-Programm-Runtime, wie TechCrunch berichtet.",
+            "Die finanziellen Bedingungen der Übernahme wurden nicht bekannt gegeben.",
+            "Deno hatte nach Angaben von TechCrunch insgesamt 26 Millionen US-Dollar eingesammelt, darunter eine von Sequoia angeführte Series A."
+          ],
+          "imageCaption": "Ansicht eines mehrstöckigen Industriegebäudes mit großen Fenstern, an dessen Fassade zwei orange Banner mit dem Cloudflare-Logo und der Aufschrift \"CLOUDFLARE\" angebracht sind."
+        },
+        "fr": {
+          "title": "Cloudflare acquiert Deno pour améliorer son modèle de programmation Workers",
+          "dek": "Cloudflare a déclaré qu’elle utiliserait l’acquisition de Deno, la start-up du runtime cofondée par le créateur de Node.js, Ryan Dahl, pour améliorer sa plateforme Workers ; les conditions financières n’ont pas été divulguées.",
+          "facts": [
+            "Cloudflare a annoncé vendredi qu’elle rachetait Deno, la start-up derrière le runtime de programmation Deno, selon TechCrunch.",
+            "Les conditions financières de l’acquisition n’ont pas été divulguées.",
+            "Deno avait levé un total de 26 millions de dollars, dont un tour de série A mené par Sequoia, selon TechCrunch."
+          ],
+          "imageCaption": "Vue d’un bâtiment industriel à plusieurs étages avec de grandes fenêtres, affichant deux bannières orange sur sa façade portant le logo Cloudflare et le nom de marque « CLOUDFLARE »."
+        },
+        "es": {
+          "title": "Cloudflare adquiere Deno para mejorar su modelo de programación de Workers",
+          "dek": "Cloudflare dijo que utilizará su adquisición de Deno, la startup de runtime cofundada por el creador de Node.js, Ryan Dahl, para mejorar su plataforma Workers; no se revelaron los términos.",
+          "facts": [
+            "Cloudflare anunció el viernes que adquirirá Deno, la startup detrás del runtime de programación Deno, según TechCrunch.",
+            "No se revelaron los términos financieros de la adquisición.",
+            "Deno había recaudado un total de 26 millones de dólares, incluida una ronda Serie A liderada por Sequoia, según TechCrunch."
+          ],
+          "imageCaption": "Vista de un edificio industrial de varios pisos con grandes ventanales, que muestra dos pancartas naranjas en su fachada con el logotipo de Cloudflare y el nombre de marca \"CLOUDFLARE\"."
+        },
+        "it": {
+          "title": "Cloudflare acquisisce Deno per migliorare il suo modello di programmazione Workers",
+          "dek": "Cloudflare ha dichiarato che utilizzerà l'acquisizione di Deno, la startup del runtime co-fondata dal creatore di Node.js Ryan Dahl, per migliorare la sua piattaforma Workers; i termini non sono stati resi noti.",
+          "facts": [
+            "Secondo TechCrunch, Cloudflare ha annunciato venerdì che acquisirà Deno, la startup dietro il runtime di programmazione Deno.",
+            "I termini finanziari dell'acquisizione non sono stati resi noti.",
+            "Secondo TechCrunch, Deno aveva raccolto un totale di 26 milioni di dollari, incluso un round Serie A guidato da Sequoia."
+          ],
+          "imageCaption": "Veduta di un edificio industriale a più piani con grandi finestre, che mostra due striscioni arancioni sulla facciata con il logo Cloudflare e il nome del marchio \"CLOUDFLARE\"."
+        },
+        "pt": {
+          "title": "Cloudflare adquire a Deno para melhorar o seu modelo de programação Workers",
+          "dek": "A Cloudflare afirmou que vai usar a aquisição da Deno, a startup de runtime cofundada pelo criador do Node.js, Ryan Dahl, para melhorar a sua plataforma Workers; os termos não foram divulgados.",
+          "facts": [
+            "A Cloudflare anunciou na sexta-feira que vai adquirir a Deno, a startup por trás do runtime de programação Deno, segundo a TechCrunch.",
+            "Os termos financeiros da aquisição não foram divulgados.",
+            "A Deno tinha angariado um total de 26 milhões de dólares, incluindo uma Série A liderada pela Sequoia, segundo a TechCrunch."
+          ],
+          "imageCaption": "Vista de um edifício industrial de vários andares com grandes janelas, exibindo duas faixas laranja na sua fachada com o logótipo da Cloudflare e o nome da marca \"CLOUDFLARE\"."
+        },
+        "zh": {
+          "title": "Cloudflare 收购 Deno，以改进其 Workers 编程模型",
+          "dek": "Cloudflare 表示，将利用对 Deno 的收购来改进其 Workers 平台；Deno 是由 Node.js 创造者 Ryan Dahl 联合创办的运行时初创公司；交易条款未披露。",
+          "facts": [
+            "据 TechCrunch 报道，Cloudflare 周五宣布，它正在收购 Deno，后者是 Deno 编程运行时背后的初创公司。",
+            "该收购的财务条款未披露。",
+            "据 TechCrunch 报道，Deno 共筹集了 2600 万美元，其中包括由红杉资本领投的 A 轮融资。"
+          ],
+          "imageCaption": "一栋多层工业建筑，带有大窗户，其外立面上展示着两条橙色横幅，上面有 Cloudflare 标志和“CLOUDFLARE”品牌名称。"
+        },
+        "ja": {
+          "title": "Cloudflare、Workersのプログラミングモデル改善のためDenoを買収",
+          "dek": "Cloudflareは、Node.jsの作者ライアン・ダール氏が共同創業したランタイム新興企業Denoの買収を、自社のWorkersプラットフォーム改善に活用すると述べた。取引条件は明らかにされていない。",
+          "facts": [
+            "TechCrunchによると、Cloudflareは金曜日、Denoというプログラミングランタイムを手がける新興企業Denoを買収すると発表した。",
+            "買収の財務条件は明らかにされていない。",
+            "TechCrunchによると、Denoはセコイアが主導したシリーズAを含め、総額2600万ドルを調達していた。"
+          ],
+          "imageCaption": "大きな窓を備えた多層階の産業用建物の眺め。ファサードには、Cloudflareのロゴと「CLOUDFLARE」のブランド名をあしらったオレンジ色のバナー2枚が掲げられている。"
+        },
+        "ko": {
+          "title": "클라우드플레어, 워커스 프로그래밍 모델 개선 위해 데노 인수",
+          "dek": "클라우드플레어는 Node.js 창시자 라이언 달이 공동 창업한 런타임 스타트업 데노 인수를 통해 자사 워커스 플랫폼을 개선하겠다고 밝혔다. 거래 조건은 공개되지 않았다.",
+          "facts": [
+            "테크크런치에 따르면 클라우드플레어는 금요일 데노 프로그래밍 런타임을 만든 스타트업 데노를 인수한다고 발표했다.",
+            "이번 인수의 재무 조건은 공개되지 않았다.",
+            "테크크런치에 따르면 데노는 세쿼이아가 주도한 시리즈 A를 포함해 총 2,600만 달러를 조달했다."
+          ],
+          "imageCaption": "큰 창문이 있는 여러 층의 산업용 건물 외벽에 클라우드플레어 로고와 ‘CLOUDFLARE’ 브랜드명이 들어간 주황색 배너 두 개가 걸려 있는 모습."
+        }
+      }
+    },
+    {
+      "slug": "citroen-unveils-electric-2cv-concept-car-plans-showroom-version-20261011-wu0u",
+      "category": "business",
+      "image": "https://ichef.bbci.co.uk/ace/standard/3840/cpsprodpb/b9db/live/c47fea70-c3f4-11f1-97a9-2d4b5e26e282.jpg",
+      "imageCredit": "AFP / Citroen",
+      "video": null,
+      "importance": 3,
+      "publishedAt": "2026-10-11T18:40:13.811Z",
+      "updatedAt": "2026-10-11T18:40:13.811Z",
+      "sourceCount": 1,
+      "locales": {
+        "en": {
+          "title": "Citroen unveils electric 2CV concept car, plans showroom version by 2028",
+          "dek": "Citroen has unveiled an electric concept version of its 2CV at the Paris Motor Show, with a production version planned for showrooms by 2028.",
+          "facts": [
+            "Citroen showed the new 2CV as a \"concept car\" at the Paris Motor Show, per the BBC.",
+            "The electric small city car is expected to sell for about £13,000.",
+            "Citroen plans to have a version in showrooms by 2028."
+          ],
+          "imageCaption": "The Citroën 2CV La Deuche concept car, a modern all-electric reinterpretation of the classic Citroën 2CV, displayed in bright red with a glass dome roof, yellow interior seats, Michelin tires and the Citroën double-chevron logo on the front."
+        },
+        "de": {
+          "title": "Citroën stellt elektrisches 2CV-Konzeptauto vor, Showroom-Version bis 2028 geplant",
+          "dek": "Citroën hat auf dem Pariser Autosalon eine elektrische Konzeptversion seines 2CV vorgestellt; eine Serienversion soll bis 2028 in die Showrooms kommen.",
+          "facts": [
+            "Laut BBC zeigte Citroën den neuen 2CV auf dem Pariser Autosalon als „Konzeptauto“.",
+            "Der kleine elektrische Stadtwagen soll für etwa 13.000 Pfund verkauft werden.",
+            "Citroën plant, bis 2028 eine Version in den Showrooms zu haben."
+          ],
+          "imageCaption": "Das Konzeptfahrzeug Citroën 2CV La Deuche, eine moderne, vollelektrische Neuinterpretation des klassischen Citroën 2CV, präsentiert in leuchtendem Rot mit Glaskuppeldach, gelben Innensitzen, Michelin-Reifen und dem Citroën-Doppelwinkel-Logo auf der Front."
+        },
+        "fr": {
+          "title": "Citroën dévoile un concept car électrique de 2CV et prévoit une version en concession d'ici 2028",
+          "dek": "Citroën a dévoilé une version concept électrique de sa 2CV au Mondial de l'Auto de Paris, avec une version de production prévue dans les concessions d'ici 2028.",
+          "facts": [
+            "Citroën a présenté la nouvelle 2CV comme une « concept car » au Mondial de l'Auto de Paris, selon la BBC.",
+            "Cette petite citadine électrique devrait se vendre autour de 13 000 £.",
+            "Citroën prévoit d'avoir une version dans les concessions d'ici 2028."
+          ],
+          "imageCaption": "Le concept car Citroën 2CV La Deuche, une réinterprétation moderne entièrement électrique de la classique Citroën 2CV, exposé en rouge vif avec un toit en dôme de verre, des sièges intérieurs jaunes, des pneus Michelin et le logo aux doubles chevrons de Citroën à l'avant."
+        },
+        "es": {
+          "title": "Citroën presenta un coche conceptual eléctrico del 2CV y planea una versión en concesionarios para 2028",
+          "dek": "Citroën ha presentado una versión conceptual eléctrica de su 2CV en el Salón del Automóvil de París, con una versión de producción prevista para los concesionarios en 2028.",
+          "facts": [
+            "Citroën mostró el nuevo 2CV como un \"concept car\" en el Salón del Automóvil de París, según la BBC.",
+            "Se espera que el pequeño coche urbano eléctrico se venda por unas 13.000 libras.",
+            "Citroën planea tener una versión en los concesionarios para 2028."
+          ],
+          "imageCaption": "El concept car Citroën 2CV La Deuche, una reinterpretación moderna totalmente eléctrica del clásico Citroën 2CV, exhibido en rojo brillante con techo de cúpula de cristal, asientos interiores amarillos, neumáticos Michelin y el logotipo de doble cheurón de Citroën en el frontal."
+        },
+        "it": {
+          "title": "Citroën svela la concept car elettrica 2CV, versione in concessionaria prevista entro il 2028",
+          "dek": "Citroën ha svelato al Salone dell'Auto di Parigi una versione concept elettrica della sua 2CV, con una versione di produzione prevista nelle concessionarie entro il 2028.",
+          "facts": [
+            "Secondo la BBC, Citroën ha presentato la nuova 2CV come \"concept car\" al Salone dell'Auto di Parigi.",
+            "Si prevede che l'auto elettrica compatta da città venga venduta a circa 13.000 sterline.",
+            "Citroën prevede di avere una versione nelle concessionarie entro il 2028."
+          ],
+          "imageCaption": "La concept car Citroën 2CV La Deuche, una moderna reinterpretazione completamente elettrica della classica Citroën 2CV, esposta in rosso brillante con tetto a cupola in vetro, sedili interni gialli, pneumatici Michelin e il logo Citroën a doppio chevron sul frontale."
+        },
+        "pt": {
+          "title": "Citroën revela carro-conceito elétrico 2CV e planeia versão nos concessionários até 2028",
+          "dek": "A Citroën apresentou uma versão conceito elétrica do seu 2CV no Salão Automóvel de Paris, com uma versão de produção prevista para os concessionários até 2028.",
+          "facts": [
+            "A Citroën apresentou o novo 2CV como um \"carro-conceito\" no Salão Automóvel de Paris, segundo a BBC.",
+            "Espera-se que o pequeno citadino elétrico seja vendido por cerca de 13 000 libras.",
+            "A Citroën planeia ter uma versão nos concessionários até 2028."
+          ],
+          "imageCaption": "O carro-conceito Citroën 2CV La Deuche, uma reinterpretação moderna totalmente elétrica do clássico Citroën 2CV, apresentado em vermelho vivo com um teto de cúpula de vidro, bancos interiores amarelos, pneus Michelin e o logótipo de duplo chevron da Citroën na frente."
+        },
+        "zh": {
+          "title": "雪铁龙发布电动2CV概念车，计划2028年前推出展厅版",
+          "dek": "雪铁龙在巴黎车展上发布了其2CV的电动概念版，并计划到2028年推出可进入展厅的量产版。",
+          "facts": [
+            "据BBC报道，雪铁龙在巴黎车展上以“概念车”形式展示了新款2CV。",
+            "这款电动小型城市车预计售价约为1.3万英镑。",
+            "雪铁龙计划到2028年让一款版本进入展厅。"
+          ],
+          "imageCaption": "雪铁龙2CV La Deuche概念车，是对经典雪铁龙2CV的现代纯电动重新诠释，车身呈亮红色，配有玻璃穹顶车顶、黄色内饰座椅、米其林轮胎，前部带有雪铁龙双人字形标志。"
+        },
+        "ja": {
+          "title": "シトロエン、電動2CVコンセプトカー公開 2028年までにショールーム版を計画",
+          "dek": "シトロエンはパリモーターショーで2CVの電動コンセプト版を公開し、生産版を2028年までにショールームに投入する計画だ。",
+          "facts": [
+            "BBCによると、シトロエンはパリモーターショーで新型2CVを「コンセプトカー」として展示した。",
+            "この電動小型シティカーは約1万3000ポンドで販売されるとみられる。",
+            "シトロエンは2028年までにショールームに並ぶバージョンを用意する計画だ。"
+          ],
+          "imageCaption": "シトロエン2CV「ラ・ドゥーシュ」コンセプトカー。クラシックなシトロエン2CVを現代的に完全電動で再解釈した車で、鮮やかな赤色、ガラス製ドームルーフ、黄色い内装シート、ミシュランタイヤ、フロントにシトロエンのダブルシェブロンロゴを備えて展示されている。"
+        },
+        "ko": {
+          "title": "시트로엥, 전기 2CV 콘셉트카 공개…2028년까지 전시장 버전 계획",
+          "dek": "시트로엥이 파리 모터쇼에서 2CV의 전기 콘셉트 버전을 공개했으며, 2028년까지 전시장에 선보일 양산 버전을 계획하고 있다.",
+          "facts": [
+            "BBC에 따르면 시트로엥은 파리 모터쇼에서 신형 2CV를 “콘셉트카”로 선보였다.",
+            "이 전기 소형 도시형 차량은 약 1만3000파운드에 판매될 것으로 예상된다.",
+            "시트로엥은 2028년까지 전시장에 선보일 버전을 계획하고 있다."
+          ],
+          "imageCaption": "클래식 시트로엥 2CV를 현대적으로 완전 전기식으로 재해석한 시트로엥 2CV 라 되슈 콘셉트카. 밝은 빨간색 차체에 유리 돔 지붕, 노란색 실내 시트, 미쉐린 타이어, 전면의 시트로엥 이중 쉐브론 로고를 갖춘 모습이다."
+        }
+      }
+    },
+    {
+      "slug": "verstappen-wins-singapore-grand-prix-as-hamilton-apologises-for-20261011-dagq",
+      "category": "sport",
+      "image": "https://e0.365dm.com/26/10/1600x900/skysports-lewis-hamilton-ferrari_7374372.jpg?20261011163510",
+      "imageCredit": "Getty Images",
+      "video": null,
+      "importance": 3,
+      "publishedAt": "2026-10-11T18:37:50.262Z",
+      "updatedAt": "2026-10-11T18:37:50.262Z",
+      "sourceCount": 2,
+      "locales": {
+        "en": {
+          "title": "Verstappen wins Singapore Grand Prix as Hamilton apologises for strategy call",
+          "dek": "Max Verstappen won the Singapore Grand Prix from pole for his first win there, while Lewis Hamilton finished sixth after staying out when Ferrari called him to pit.",
+          "facts": [
+            "Max Verstappen won the Singapore Grand Prix from pole on 11 October, leading every lap.",
+            "Lewis Hamilton finished sixth after staying out under a Virtual Safety Car instead of pitting as Ferrari instructed.",
+            "Ferrari team principal Frederic Vasseur said Hamilton ignored the team's call to pit; Hamilton said he missed the pit entry and then chose to stay out."
+          ],
+          "imageCaption": "Ferrari car number 44, the car of Lewis Hamilton, drives through the pit lane with smoke rising from the tires. Red Bull team personnel are visible in the background."
+        },
+        "de": {
+          "title": "Verstappen gewinnt Großen Preis von Singapur, Hamilton entschuldigt sich für Strategieentscheidung",
+          "dek": "Max Verstappen gewann den Großen Preis von Singapur von der Pole aus und feierte dort seinen ersten Sieg, während Lewis Hamilton Sechster wurde, nachdem er draußen geblieben war, als Ferrari ihn zum Boxenstopp rief.",
+          "facts": [
+            "Max Verstappen gewann am 11. Oktober den Großen Preis von Singapur von der Pole aus und führte jede Runde an.",
+            "Lewis Hamilton wurde Sechster, nachdem er unter einem virtuellen Safety-Car draußen geblieben war, statt wie von Ferrari angewiesen an die Box zu fahren.",
+            "Ferrari-Teamchef Frédéric Vasseur sagte, Hamilton habe die Anweisung des Teams zum Boxenstopp ignoriert; Hamilton sagte, er habe die Boxeneinfahrt verpasst und sich dann entschieden, draußen zu bleiben."
+          ],
+          "imageCaption": "Der Ferrari mit der Startnummer 44, das Fahrzeug von Lewis Hamilton, fährt durch die Boxengasse, während Rauch von den Reifen aufsteigt. Im Hintergrund sind Mechaniker des Red-Bull-Teams zu sehen."
+        },
+        "fr": {
+          "title": "Verstappen remporte le Grand Prix de Singapour, Hamilton s'excuse pour son choix stratégique",
+          "dek": "Max Verstappen a remporté le Grand Prix de Singapour depuis la pole pour sa première victoire sur place, tandis que Lewis Hamilton a terminé sixième après être resté en piste lorsque Ferrari lui a demandé de rentrer aux stands.",
+          "facts": [
+            "Max Verstappen a remporté le Grand Prix de Singapour depuis la pole le 11 octobre, en menant chaque tour.",
+            "Lewis Hamilton a terminé sixième après être resté en piste sous voiture de sécurité virtuelle au lieu de rentrer aux stands comme Ferrari le lui avait demandé.",
+            "Le directeur de l'équipe Ferrari, Frédéric Vasseur, a déclaré que Hamilton avait ignoré la consigne de rentrer aux stands ; Hamilton a déclaré avoir manqué l'entrée des stands, puis avoir choisi de rester en piste."
+          ],
+          "imageCaption": "La voiture Ferrari numéro 44, celle de Lewis Hamilton, traverse la voie des stands avec de la fumée s'élevant des pneus. Des membres de l'équipe Red Bull sont visibles en arrière-plan."
+        },
+        "es": {
+          "title": "Verstappen gana el Gran Premio de Singapur y Hamilton se disculpa por la decisión estratégica",
+          "dek": "Max Verstappen ganó el Gran Premio de Singapur desde la pole para lograr su primera victoria allí, mientras que Lewis Hamilton terminó sexto tras quedarse en pista cuando Ferrari le pidió entrar en boxes.",
+          "facts": [
+            "Max Verstappen ganó el Gran Premio de Singapur desde la pole el 11 de octubre, liderando todas las vueltas.",
+            "Lewis Hamilton terminó sexto tras quedarse en pista bajo un coche de seguridad virtual en lugar de entrar en boxes como le indicó Ferrari.",
+            "El jefe de equipo de Ferrari, Frederic Vasseur, dijo que Hamilton ignoró la llamada del equipo para entrar en boxes; Hamilton dijo que se pasó la entrada de boxes y luego decidió quedarse en pista."
+          ],
+          "imageCaption": "El coche número 44 de Ferrari, el monoplaza de Lewis Hamilton, circula por la calle de boxes con humo saliendo de los neumáticos. En el fondo se ve a personal del equipo Red Bull."
+        },
+        "it": {
+          "title": "Verstappen vince il Gran Premio di Singapore, Hamilton si scusa per la scelta strategica",
+          "dek": "Max Verstappen ha vinto il Gran Premio di Singapore partendo dalla pole per la sua prima vittoria sul circuito, mentre Lewis Hamilton ha concluso sesto dopo essere rimasto in pista quando la Ferrari gli ha chiesto di rientrare ai box.",
+          "facts": [
+            "Max Verstappen ha vinto il Gran Premio di Singapore partendo dalla pole l'11 ottobre, restando in testa in ogni giro.",
+            "Lewis Hamilton ha concluso sesto dopo essere rimasto in pista durante una Virtual Safety Car invece di rientrare ai box come gli aveva indicato la Ferrari.",
+            "Il team principal della Ferrari Frederic Vasseur ha detto che Hamilton ha ignorato l'ordine del team di rientrare ai box; Hamilton ha detto di aver mancato l'ingresso ai box e di aver poi scelto di restare in pista."
+          ],
+          "imageCaption": "La vettura Ferrari numero 44, la monoposto di Lewis Hamilton, percorre la corsia dei box con del fumo che si alza dagli pneumatici. In secondo piano sono visibili membri del team Red Bull."
+        },
+        "pt": {
+          "title": "Verstappen vence Grande Prémio de Singapura e Hamilton pede desculpa por decisão estratégica",
+          "dek": "Max Verstappen venceu o Grande Prémio de Singapura a partir da pole position para a sua primeira vitória ali, enquanto Lewis Hamilton terminou em sexto depois de ter ficado em pista quando a Ferrari o chamou às boxes.",
+          "facts": [
+            "Max Verstappen venceu o Grande Prémio de Singapura a partir da pole position, em 11 de outubro, liderando todas as voltas.",
+            "Lewis Hamilton terminou em sexto depois de ter ficado em pista sob um carro de segurança virtual, em vez de ir às boxes como a Ferrari instruiu.",
+            "O chefe de equipa da Ferrari, Frédéric Vasseur, disse que Hamilton ignorou a chamada da equipa para ir às boxes; Hamilton disse que falhou a entrada das boxes e depois optou por ficar em pista."
+          ],
+          "imageCaption": "O carro número 44 da Ferrari, o carro de Lewis Hamilton, atravessa a via das boxes com fumo a sair dos pneus. Elementos da equipa Red Bull estão visíveis ao fundo."
+        },
+        "zh": {
+          "title": "维斯塔潘赢得新加坡大奖赛，汉密尔顿为策略决定道歉",
+          "dek": "马克斯·维斯塔潘从杆位赢得新加坡大奖赛，首次在该站夺冠；刘易斯·汉密尔顿在法拉利叫他进站时留在赛道上，最终获得第六名。",
+          "facts": [
+            "马克斯·维斯塔潘于10月11日从杆位赢得新加坡大奖赛，全程领跑每一圈。",
+            "刘易斯·汉密尔顿在虚拟安全车期间没有按法拉利指示进站，而是留在赛道上，最终获得第六名。",
+            "法拉利车队领队弗雷德里克·瓦塞尔表示，汉密尔顿无视了车队要求进站的指令；汉密尔顿称他错过了维修区入口，随后选择留在赛道上。"
+          ],
+          "imageCaption": "法拉利44号赛车，即刘易斯·汉密尔顿的赛车，驶过维修区，轮胎冒烟。背景中可以看到红牛车队人员。"
+        },
+        "ja": {
+          "title": "フェルスタッペン、シンガポールGP制す ハミルトンは戦略判断を謝罪",
+          "dek": "マックス・フェルスタッペンはポールポジションからシンガポールGPを制し、同地での初優勝を飾った。一方、ルイス・ハミルトンはフェラーリからピットインを指示された際にコースにとどまり、6位で終えた。",
+          "facts": [
+            "マックス・フェルスタッペンは10月11日、ポールポジションからシンガポールGPを制し、全ラップで首位を走った。",
+            "ルイス・ハミルトンは、フェラーリの指示に従ってピットインせず、バーチャル・セーフティカー下でコースにとどまったため、6位で終えた。",
+            "フェラーリのチーム代表フレデリック・バスールは、ハミルトンがチームのピットイン指示を無視したと述べた。ハミルトンはピット入口を逃し、その後コースにとどまることを選んだと説明した。"
+          ],
+          "imageCaption": "フェラーリの44号車、ルイス・ハミルトンのマシンが、タイヤから煙を上げながらピットレーンを走行する。背景にはレッドブルのチーム関係者が見える。"
+        },
+        "ko": {
+          "title": "페르스타펜, 싱가포르 그랑프리 우승… 해밀턴은 전략 판단 사과",
+          "dek": "막스 페르스타펜이 폴 포지션에서 출발해 싱가포르 그랑프리에서 첫 우승을 차지했고, 루이스 해밀턴은 페라리가 피트인을 지시했을 때 그대로 남아 6위에 그쳤다.",
+          "facts": [
+            "막스 페르스타펜은 10월 11일 폴 포지션에서 출발해 모든 랩을 선두로 달리며 싱가포르 그랑프리에서 우승했다.",
+            "루이스 해밀턴은 페라리의 지시대로 피트인하는 대신 버추얼 세이프티 카 상황에서 트랙에 남아 6위를 기록했다.",
+            "페라리 팀 대표 프레데리크 바스르는 해밀턴이 팀의 피트인 지시를 무시했다고 말했고, 해밀턴은 피트 진입로를 놓친 뒤 트랙에 남기로 선택했다고 밝혔다."
+          ],
+          "imageCaption": "루이스 해밀턴의 차량인 페라리 44번 차가 타이어에서 연기가 피어오르는 가운데 피트 레인을 통과하고 있다. 배경에는 레드불 팀 관계자들이 보인다."
+        }
+      }
+    },
+    {
+      "slug": "afd-youth-board-member-helmut-strauf-resigns-after-greater-20261011-mt57",
+      "category": "politics",
+      "image": "https://cdn.prod.www.spiegel.de/images/b4116c80-881f-4526-be27-8031c74eeed7_w960_r1.5_fpx38.66_fpy50.jpg",
+      "imageCredit": "Reuters",
+      "video": null,
+      "importance": 3,
+      "publishedAt": "2026-10-11T18:35:44.095Z",
+      "updatedAt": "2026-10-11T18:35:44.095Z",
+      "sourceCount": 2,
+      "locales": {
+        "en": {
+          "title": "AfD youth board member Helmut Strauf resigns after 'Greater Germany' map post",
+          "dek": "Strauf left the federal board of the AfD youth organisation Generation Deutschland 'for personal reasons' days after posting a map that assigned parts of neighbouring countries to Germany.",
+          "facts": [
+            "Helmut Strauf resigned from the federal board of the AfD youth organisation Generation Deutschland, which said he stepped down 'for personal reasons' (Der Spiegel).",
+            "On 3 October, the Day of German Unity, he posted a map assigning parts of many neighbouring countries to Germany, as reported by taz and cited by Der Spiegel.",
+            "He deleted the post shortly afterwards; the map spread via other accounts and, according to taz, drew indignation abroad."
+          ],
+          "imageCaption": "Participants of a demonstration carry black-red-gold German flags and other banners during a march. The predominantly young men are dressed mostly in dark clothing."
+        },
+        "de": {
+          "title": "AfD-Jugendvorstandsmitglied Helmut Strauf tritt nach Beitrag mit 'Großdeutschland'-Karte zurück",
+          "dek": "Strauf schied 'aus persönlichen Gründen' aus dem Bundesvorstand der AfD-Jugendorganisation Generation Deutschland aus, Tage nachdem er eine Karte veröffentlicht hatte, die Teile von Nachbarländern Deutschland zuordnete.",
+          "facts": [
+            "Helmut Strauf trat aus dem Bundesvorstand der AfD-Jugendorganisation Generation Deutschland zurück; diese erklärte, er sei 'aus persönlichen Gründen' zurückgetreten (Der Spiegel).",
+            "Am 3. Oktober, dem Tag der Deutschen Einheit, veröffentlichte er eine Karte, die Teile vieler Nachbarländer Deutschland zuordnete, wie taz berichtete und Der Spiegel unter Berufung auf taz schrieb.",
+            "Er löschte den Beitrag kurz darauf; die Karte verbreitete sich über andere Konten und rief laut taz im Ausland Empörung hervor."
+          ],
+          "imageCaption": "Teilnehmer einer Demonstration tragen schwarz-rot-goldene Deutschlandflaggen und weitere Fahnen während eines Aufmarschs. Die überwiegend jungen Männer sind überwiegend in dunkler Kleidung unterwegs."
+        },
+        "fr": {
+          "title": "Helmut Strauf, membre du conseil fédéral de l'organisation de jeunesse de l'AfD, démissionne après une publication sur une carte de la « Grande Allemagne »",
+          "dek": "Strauf a quitté le conseil fédéral de l'organisation de jeunesse de l'AfD Generation Deutschland « pour raisons personnelles », quelques jours après avoir publié une carte attribuant à l'Allemagne des parties de pays voisins.",
+          "facts": [
+            "Helmut Strauf a démissionné du conseil fédéral de l'organisation de jeunesse de l'AfD Generation Deutschland, qui a déclaré qu'il quittait ses fonctions « pour raisons personnelles » (Der Spiegel).",
+            "Le 3 octobre, jour de l'Unité allemande, il a publié une carte attribuant à l'Allemagne des parties de nombreux pays voisins, selon taz, cité par Der Spiegel.",
+            "Il a supprimé la publication peu après ; la carte s'est propagée via d'autres comptes et, selon taz, a suscité l'indignation à l'étranger."
+          ],
+          "imageCaption": "Des participants à une manifestation portent des drapeaux allemands noir, rouge et or et d'autres banderoles lors d'une marche. Les hommes, majoritairement jeunes, sont vêtus principalement de vêtements sombres."
+        },
+        "es": {
+          "title": "El miembro de la directiva de las juventudes de la AfD Helmut Strauf dimite tras publicar un mapa de la “Gran Alemania”",
+          "dek": "Strauf dejó la directiva federal de la organización juvenil de la AfD Generation Deutschland “por motivos personales” días después de publicar un mapa que atribuía a Alemania partes de países vecinos.",
+          "facts": [
+            "Helmut Strauf dimitió de la directiva federal de la organización juvenil de la AfD Generation Deutschland, que afirmó que dejó el cargo “por motivos personales” (Der Spiegel).",
+            "El 3 de octubre, Día de la Unidad Alemana, publicó un mapa que asignaba a Alemania partes de muchos países vecinos, según informó taz y recogió Der Spiegel.",
+            "Eliminó la publicación poco después; el mapa se difundió a través de otras cuentas y, según taz, provocó indignación en el extranjero."
+          ],
+          "imageCaption": "Participantes de una manifestación portan banderas alemanas negras, rojas y doradas y otras pancartas durante una marcha. Los hombres, predominantemente jóvenes, visten en su mayoría ropa oscura."
+        },
+        "it": {
+          "title": "Helmut Strauf, membro del direttivo federale dei giovani dell'AfD, si dimette dopo il post sulla mappa della 'Grande Germania'",
+          "dek": "Strauf ha lasciato il direttivo federale dell'organizzazione giovanile dell'AfD Generation Deutschland 'per motivi personali' pochi giorni dopo aver pubblicato una mappa che assegnava alla Germania parti di Paesi confinanti.",
+          "facts": [
+            "Helmut Strauf si è dimesso dal direttivo federale dell'organizzazione giovanile dell'AfD Generation Deutschland, che ha dichiarato che ha lasciato l'incarico 'per motivi personali' (Der Spiegel).",
+            "Il 3 ottobre, Giorno dell'Unità tedesca, ha pubblicato una mappa che assegnava alla Germania parti di molti Paesi confinanti, come riportato da taz e citato da Der Spiegel.",
+            "Ha cancellato il post poco dopo; la mappa si è diffusa tramite altri account e, secondo taz, ha suscitato indignazione all'estero."
+          ],
+          "imageCaption": "I partecipanti a una manifestazione portano bandiere tedesche nero-rosso-oro e altri striscioni durante un corteo. Gli uomini, in prevalenza giovani, indossano per lo più abiti scuri."
+        },
+        "pt": {
+          "title": "Membro da direção da juventude da AfD, Helmut Strauf, demite-se após publicação de mapa da 'Grande Alemanha'",
+          "dek": "Strauf deixou a direção federal da organização juvenil da AfD Generation Deutschland 'por razões pessoais' dias depois de publicar um mapa que atribuía partes de países vizinhos à Alemanha.",
+          "facts": [
+            "Helmut Strauf demitiu-se da direção federal da organização juvenil da AfD Generation Deutschland, que afirmou que ele deixou o cargo 'por razões pessoais' (Der Spiegel).",
+            "A 3 de outubro, Dia da Unidade Alemã, publicou um mapa que atribuía partes de muitos países vizinhos à Alemanha, segundo o taz, citado pelo Der Spiegel.",
+            "Apagou a publicação pouco depois; o mapa difundiu-se através de outras contas e, segundo o taz, provocou indignação no estrangeiro."
+          ],
+          "imageCaption": "Participantes numa manifestação transportam bandeiras alemãs pretas, vermelhas e douradas e outras faixas durante uma marcha. Os homens, predominantemente jovens, vestem sobretudo roupa escura."
+        },
+        "zh": {
+          "title": "德国选择党青年组织董事会成员赫尔穆特·施特劳夫因“大德意志”地图帖文辞职",
+          "dek": "施特劳夫在发布一张将邻国部分领土划归德国的地图数日后，以“个人原因”离开了德国选择党青年组织“德国世代”的联邦董事会。",
+          "facts": [
+            "赫尔穆特·施特劳夫从德国选择党青年组织“德国世代”的联邦董事会辞职，该组织称他因“个人原因”卸任（《明镜》周刊）。",
+            "据《日报》报道、并经《明镜》周刊援引，他在10月3日德国统一日发布了一张将许多邻国部分领土划归德国的地图。",
+            "他随后不久删除了该帖；这张地图通过其他账号传播，据《日报》报道，在国外引发愤慨。"
+          ],
+          "imageCaption": "游行期间，示威参与者举着黑红金三色德国国旗和其他横幅。以年轻男性为主的人群大多穿着深色服装。"
+        },
+        "ja": {
+          "title": "AfD青年組織の理事会メンバー、ヘルムート・シュトラウフ氏が「大ドイツ」地図投稿後に辞任",
+          "dek": "シュトラウフ氏は、近隣諸国の一部をドイツに割り当てる地図を投稿してから数日後、AfD青年組織ゲネラツィオン・ドイチュラントの連邦理事会を「個人的な理由」で去った。",
+          "facts": [
+            "ヘルムート・シュトラウフ氏はAfD青年組織ゲネラツィオン・ドイチュラントの連邦理事会を辞任した。同組織は、同氏が「個人的な理由」で退任したと述べた（シュピーゲル紙）。",
+            "ターツ紙が報じ、シュピーゲル紙が引用したところによると、同氏はドイツ統一の日である10月3日、多くの近隣諸国の一部をドイツに割り当てる地図を投稿した。",
+            "同氏は直後にその投稿を削除した。地図は他のアカウントを通じて拡散し、ターツ紙によると、国外で憤りを招いた。"
+          ],
+          "imageCaption": "デモの参加者たちが行進中に黒・赤・金のドイツ国旗やその他の横断幕を掲げている。主に若い男性たちで、大半は暗い色の服装をしている。"
+        },
+        "ko": {
+          "title": "AfD 청년조직 연방이사회 위원 헬무트 슈트라우프, '대독일' 지도 게시 후 사임",
+          "dek": "슈트라우프는 이웃 국가들의 일부를 독일에 귀속시키는 지도를 게시한 지 며칠 뒤 '개인적 이유'로 AfD 청년조직 독일 세대(Generation Deutschland)의 연방이사회에서 물러났다.",
+          "facts": [
+            "헬무트 슈트라우프는 AfD 청년조직 독일 세대(Generation Deutschland)의 연방이사회에서 사임했으며, 이 조직은 그가 '개인적 이유'로 물러났다고 밝혔다(Der Spiegel).",
+            "그는 독일 통일의 날인 10월 3일, 여러 이웃 국가의 일부를 독일에 귀속시키는 지도를 게시했다고 taz가 보도했으며 Der Spiegel이 이를 인용했다.",
+            "그는 곧 게시물을 삭제했다. 그 지도는 다른 계정들을 통해 퍼졌고, taz에 따르면 해외에서 분노를 샀다."
+          ],
+          "imageCaption": "시위 참가자들이 행진 중 검은색·빨간색·금색의 독일 국기와 다른 현수막을 들고 있다. 대부분 젊은 남성들인 이들은 주로 어두운 옷을 입고 있다."
+        }
+      }
+    },
+    {
+      "slug": "manchester-city-booed-at-liverpool-in-first-match-after-20261011-x6nx",
+      "category": "sport",
+      "image": "https://cdn.prod.www.spiegel.de/images/acebcc3b-7bb5-45fc-806f-9d12b5977b7f_w960_r1.5_fpx58_fpy78.jpg",
+      "imageCredit": "Reuters",
+      "video": null,
+      "importance": 3,
+      "publishedAt": "2026-10-11T18:32:57.285Z",
+      "updatedAt": "2026-10-11T18:32:57.285Z",
+      "sourceCount": 2,
+      "locales": {
+        "en": {
+          "title": "Manchester City booed at Liverpool in first match after guilty verdict",
+          "dek": "Manchester City won 3-0 at Liverpool in their first match since an independent commission found the club guilty of breaching Premier League financial rules, Der Spiegel reported.",
+          "facts": [
+            "Manchester City won 3-0 at Liverpool, Der Spiegel reported on 11 October.",
+            "Liverpool fans held banners and whistled City players at every attack at Anfield, according to Der Spiegel.",
+            "An independent commission found City guilty of breaching Premier League financial rules during the international break."
+          ],
+          "imageCaption": "Erling Haaland (No. 9) of Manchester City celebrates with arms outstretched in front of cheering fans at the touchline. Supporters wave yellow inflatable bananas, a well-known fan tradition of the Citizens. A photographer and a steward in an orange high-visibility vest are visible at the pitch side."
+        },
+        "de": {
+          "title": "Manchester City bei Liverpool im ersten Spiel nach Schuldspruch ausgepfiffen",
+          "dek": "Manchester City gewann bei Liverpool 3:0 in seinem ersten Spiel, seit eine unabhängige Kommission den Klub des Verstoßes gegen die Finanzregeln der Premier League für schuldig befunden hatte, berichtete Der Spiegel.",
+          "facts": [
+            "Manchester City gewann bei Liverpool 3:0, berichtete Der Spiegel am 11. Oktober.",
+            "Liverpool-Fans hielten Banner hoch und pfiffen die City-Spieler bei jedem Angriff im Anfield aus, laut Der Spiegel.",
+            "Eine unabhängige Kommission befand City des Verstoßes gegen die Finanzregeln der Premier League für schuldig, während der Länderspielpause."
+          ],
+          "imageCaption": "Erling Haaland (Nr. 9) von Manchester City feiert mit ausgestreckten Armen vor den jubelnden Fans am Spielfeldrand. Anhänger schwenken gelbe aufblasbare Bananen, ein bekanntes Fan-Utensil der Citizens. Ein Fotograf und ein Ordner in orangefarbener Warnweste sind am Spielfeldrand zu sehen."
+        },
+        "fr": {
+          "title": "Manchester City hué à Liverpool lors de son premier match après le verdict de culpabilité",
+          "dek": "Manchester City s'est imposé 3-0 à Liverpool lors de son premier match depuis qu'une commission indépendante a jugé le club coupable d'avoir enfreint les règles financières de la Premier League, rapporte Der Spiegel.",
+          "facts": [
+            "Manchester City s'est imposé 3-0 à Liverpool, a rapporté Der Spiegel le 11 octobre.",
+            "Les supporters de Liverpool ont brandi des banderoles et sifflé les joueurs de City à chaque attaque à Anfield, selon Der Spiegel.",
+            "Une commission indépendante a jugé City coupable d'avoir enfreint les règles financières de la Premier League pendant la trêve internationale."
+          ],
+          "imageCaption": "Erling Haaland (n° 9) de Manchester City célèbre, les bras écartés, devant des supporters en liesse au bord du terrain. Des supporters agitent des bananes gonflables jaunes, une tradition bien connue des fans des Citizens. Un photographe et un stadier en gilet de haute visibilité orange sont visibles au bord de la pelouse."
+        },
+        "es": {
+          "title": "El Manchester City, abucheado en Liverpool en su primer partido tras el veredicto de culpabilidad",
+          "dek": "El Manchester City ganó 3-0 al Liverpool en su primer partido desde que una comisión independiente declaró al club culpable de infringir las normas financieras de la Premier League, informó Der Spiegel.",
+          "facts": [
+            "El Manchester City ganó 3-0 al Liverpool, informó Der Spiegel el 11 de octubre.",
+            "Los aficionados del Liverpool sostuvieron pancartas y silbaron a los jugadores del City en cada ataque en Anfield, según Der Spiegel.",
+            "Una comisión independiente declaró al City culpable de infringir las normas financieras de la Premier League durante el parón internacional."
+          ],
+          "imageCaption": "Erling Haaland (n.º 9) del Manchester City celebra con los brazos extendidos frente a los aficionados que lo vitorean en la banda. Los seguidores agitan plátanos inflables amarillos, una conocida tradición de los aficionados de los Citizens. Un fotógrafo y un auxiliar con chaleco reflectante naranja son visibles junto al campo."
+        },
+        "it": {
+          "title": "Manchester City fischiato a Liverpool nella prima partita dopo il verdetto di colpevolezza",
+          "dek": "Il Manchester City ha vinto 3-0 a Liverpool nella sua prima partita da quando una commissione indipendente ha giudicato il club colpevole di aver violato le regole finanziarie della Premier League, ha riferito Der Spiegel.",
+          "facts": [
+            "Der Spiegel ha riferito l'11 ottobre che il Manchester City ha vinto 3-0 a Liverpool.",
+            "Secondo Der Spiegel, i tifosi del Liverpool hanno esposto striscioni e fischiato i giocatori del City a ogni attacco ad Anfield.",
+            "Una commissione indipendente ha giudicato il City colpevole di aver violato le regole finanziarie della Premier League durante la sosta per le nazionali."
+          ],
+          "imageCaption": "Erling Haaland (n. 9) del Manchester City esulta a braccia aperte davanti ai tifosi festanti sulla linea laterale. I sostenitori agitano banane gonfiabili gialle, una nota tradizione dei tifosi dei Citizens. Un fotografo e uno steward con un gilet ad alta visibilità arancione sono visibili a bordo campo."
+        },
+        "pt": {
+          "title": "Manchester City vaiado em Liverpool no primeiro jogo após veredicto de culpabilidade",
+          "dek": "O Manchester City venceu por 3-0 em Liverpool no seu primeiro jogo desde que uma comissão independente considerou o clube culpado de violar as regras financeiras da Premier League, noticiou o Der Spiegel.",
+          "facts": [
+            "O Manchester City venceu por 3-0 em Liverpool, noticiou o Der Spiegel a 11 de outubro.",
+            "Adeptos do Liverpool exibiram faixas e assobiaram os jogadores do City em cada ataque em Anfield, segundo o Der Spiegel.",
+            "Uma comissão independente considerou o City culpado de violar as regras financeiras da Premier League durante a pausa internacional."
+          ],
+          "imageCaption": "Erling Haaland (n.º 9) do Manchester City celebra com os braços abertos em frente a adeptos em festa junto à linha lateral. Adeptos agitam bananas insufláveis amarelas, uma tradição de adeptos bem conhecida dos Citizens. Um fotógrafo e um steward com colete de alta visibilidade laranja são visíveis junto ao relvado."
+        },
+        "zh": {
+          "title": "曼城被判有罪后首场比赛在利物浦遭嘘",
+          "dek": "据《明镜》报道，曼城在独立委员会认定该俱乐部违反英超财务规则后的首场比赛中，在利物浦以3比0获胜。",
+          "facts": [
+            "据《明镜》10月11日报道，曼城在利物浦以3比0获胜。",
+            "据《明镜》报道，利物浦球迷在安菲尔德举起横幅，并在曼城每次进攻时对曼城球员发出嘘声。",
+            "独立委员会在国际比赛日期间认定曼城违反英超财务规则。"
+          ],
+          "imageCaption": "曼城的埃尔林·哈兰德（9号）在边线前张开双臂庆祝，面前是欢呼的球迷。支持者挥舞着黄色的充气香蕉，这是曼城球迷广为人知的传统。球场边可见一名摄影师和一名身穿橙色高可见度背心的安保人员。"
+        },
+        "ja": {
+          "title": "マンチェスター・シティ、有罪評決後の初戦でリヴァプールでブーイング浴びる",
+          "dek": "独立委員会が同クラブのプレミアリーグ財務規則違反で有罪と認定して以降の初戦で、マンチェスター・シティはリヴァプールで3-0と勝利したと、シュピーゲルが報じた。",
+          "facts": [
+            "シュピーゲルが10月11日に報じたところによると、マンチェスター・シティはリヴァプールで3-0と勝利した。",
+            "シュピーゲルによると、リヴァプールのファンはアンフィールドで横断幕を掲げ、シティの選手が攻撃するたびにブーイングを浴びせた。",
+            "独立委員会は、インターナショナルブレーク中に、シティがプレミアリーグの財務規則に違反したとして有罪と認定した。"
+          ],
+          "imageCaption": "マンチェスター・シティのアーリング・ハーランド（背番号9）が、タッチライン際で声援を送るファンを前に、両腕を広げて喜んでいる。サポーターは黄色い空気注入式バナナを振っており、これは同クラブのファンのよく知られた伝統だ。ピッチサイドには写真家と、オレンジ色の高視認性ベストを着た係員が見える。"
+        },
+        "ko": {
+          "title": "맨체스터 시티, 유죄 평결 후 첫 경기서 리버풀에서 야유 받아",
+          "dek": "데어 슈피겔에 따르면, 독립 위원회가 맨체스터 시티의 프리미어리그 재정 규정 위반 혐의를 유죄로 판단한 뒤 치른 첫 경기에서 맨체스터 시티가 리버풀 원정에서 3-0으로 승리했다.",
+          "facts": [
+            "데어 슈피겔은 10월 11일 맨체스터 시티가 리버풀 원정에서 3-0으로 승리했다고 보도했다.",
+            "데어 슈피겔에 따르면 리버풀 팬들은 안필드에서 배너를 들고 맨시티 선수들이 공격할 때마다 야유를 보냈다.",
+            "독립 위원회는 A매치 휴식기 동안 맨시티가 프리미어리그 재정 규정을 위반한 혐의에 대해 유죄로 판단했다."
+          ],
+          "imageCaption": "맨체스터 시티의 엘링 홀란(9번)이 터치라인에서 환호하는 팬들 앞에서 두 팔을 벌리고 기뻐하고 있다. 서포터스들은 시티즌스의 잘 알려진 팬 전통인 노란색 바나나 풍선을 흔들고 있다. 주황색 형광 조끼를 입은 사진기자와 경기장 안전요원이 피치 사이드에 보인다."
+        }
+      }
+    },
+    {
+      "slug": "india-s-cockroach-janta-party-leaders-released-in-delhi-20261011-8pjc",
+      "category": "politics",
+      "image": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/e56a/live/17da0620-c561-11f1-9cae-455625013d45.jpg",
+      "imageCredit": "AFP",
+      "video": null,
+      "importance": 3,
+      "publishedAt": "2026-10-11T18:30:04.241Z",
+      "updatedAt": "2026-10-11T18:30:04.241Z",
+      "sourceCount": 2,
+      "locales": {
+        "en": {
+          "title": "India's Cockroach Janta Party leaders released in Delhi as protests continue",
+          "dek": "Abhijeet Dipke and two other Cockroach Janta Party leaders were freed on a court condition on Sunday as protests continued in Delhi for a second day, the BBC reported.",
+          "facts": [
+            "Abhijeet Dipke, Saurav Das and Ashutosh Ranka were arrested on arrival in Delhi on Saturday and released on Sunday, according to the BBC.",
+            "A magistrate's court freed them \"on the condition that they will not engage in breach of peace for one year\", police said, per the BBC.",
+            "Media reports said 7,000 protesters were detained and released on Saturday, with hundreds detained on Sunday, the BBC reported."
+          ],
+          "imageCaption": "A young man wearing sunglasses and a purple and yellow sports jersey is being restrained by multiple individuals in camouflage uniforms as he appears to shout or resist. The scene takes place on a street, apparently during a protest or demonstration."
+        },
+        "de": {
+          "title": "Indiens Cockroach-Janta-Party-Anführer in Delhi freigelassen, während Proteste andauern",
+          "dek": "Abhijeet Dipke und zwei weitere Anführer der Cockroach Janta Party wurden am Sonntag unter einer Auflage des Gerichts freigelassen, während die Proteste in Delhi den zweiten Tag andauerten, wie die BBC berichtete.",
+          "facts": [
+            "Abhijeet Dipke, Saurav Das und Ashutosh Ranka wurden laut BBC bei ihrer Ankunft in Delhi am Samstag festgenommen und am Sonntag freigelassen.",
+            "Ein Amtsgericht ließ sie „unter der Bedingung, dass sie ein Jahr lang nicht den öffentlichen Frieden stören“, frei, wie die Polizei laut BBC mitteilte.",
+            "Medienberichten zufolge wurden am Samstag 7.000 Demonstranten festgenommen und wieder freigelassen, am Sonntag Hunderte festgenommen, wie die BBC berichtete."
+          ],
+          "imageCaption": "Ein junger Mann mit Sonnenbrille und einem violetten und gelben Sporttrikot wird von mehreren Personen in Tarnuniformen festgehalten, während er offenbar schreit oder sich wehrt. Die Szene spielt sich offenbar während eines Protestes auf einer Straße ab."
+        },
+        "fr": {
+          "title": "Les dirigeants du Cockroach Janta Party indien libérés à Delhi alors que les manifestations se poursuivent",
+          "dek": "Abhijeet Dipke et deux autres dirigeants du Cockroach Janta Party ont été libérés dimanche sous condition imposée par un tribunal, alors que les manifestations se poursuivaient à Delhi pour le deuxième jour, selon la BBC.",
+          "facts": [
+            "Abhijeet Dipke, Saurav Das et Ashutosh Ranka ont été arrêtés à leur arrivée à Delhi samedi et libérés dimanche, selon la BBC.",
+            "Un tribunal de magistrat les a libérés « à la condition qu'ils ne troublent pas l'ordre public pendant un an », a déclaré la police, selon la BBC.",
+            "Des médias ont rapporté que 7 000 manifestants avaient été détenus puis libérés samedi, et que des centaines l'ont été dimanche, selon la BBC."
+          ],
+          "imageCaption": "Un jeune homme portant des lunettes de soleil et un maillot de sport violet et jaune est retenu par plusieurs personnes en uniforme de camouflage alors qu'il semble crier ou résister. La scène se déroule dans une rue, apparemment lors d'une manifestation ou d'un rassemblement."
+        },
+        "es": {
+          "title": "Liberados en Delhi los líderes del Cockroach Janta Party de la India mientras continúan las protestas",
+          "dek": "Abhijeet Dipke y otros dos líderes del Cockroach Janta Party quedaron en libertad el domingo bajo una condición judicial mientras las protestas continuaban en Delhi por segundo día, según informó la BBC.",
+          "facts": [
+            "Abhijeet Dipke, Saurav Das y Ashutosh Ranka fueron arrestados a su llegada a Delhi el sábado y liberados el domingo, según la BBC.",
+            "Un tribunal de magistrados los liberó \"con la condición de que no incurrirán en un quebrantamiento de la paz durante un año\", dijo la policía, según la BBC.",
+            "Informes de medios dijeron que 7.000 manifestantes fueron detenidos y liberados el sábado, mientras que cientos fueron detenidos el domingo, informó la BBC."
+          ],
+          "imageCaption": "Un joven con gafas de sol y una camiseta deportiva morada y amarilla es sujetado por varias personas con uniformes de camuflaje mientras parece gritar o resistirse. La escena ocurre en una calle, aparentemente durante una protesta o manifestación."
+        },
+        "it": {
+          "title": "I leader del Cockroach Janta Party indiano rilasciati a Delhi mentre le proteste continuano",
+          "dek": "Abhijeet Dipke e altri due leader del Cockroach Janta Party sono stati liberati domenica con una condizione imposta dal tribunale, mentre le proteste continuavano a Delhi per il secondo giorno, ha riferito la BBC.",
+          "facts": [
+            "Abhijeet Dipke, Saurav Das e Ashutosh Ranka sono stati arrestati al loro arrivo a Delhi sabato e rilasciati domenica, secondo la BBC.",
+            "Un tribunale del magistrato li ha liberati \"a condizione che non commettano violazioni della pace per un anno\", ha detto la polizia, secondo la BBC.",
+            "Secondo resoconti dei media, 7.000 manifestanti sono stati fermati e rilasciati sabato, mentre centinaia sono stati fermati domenica, ha riferito la BBC."
+          ],
+          "imageCaption": "Un giovane con occhiali da sole e una maglia sportiva viola e gialla viene trattenuto da diverse persone in uniforme mimetica mentre sembra gridare o resistere. La scena si svolge in strada, apparentemente durante una protesta o manifestazione."
+        },
+        "pt": {
+          "title": "Líderes do Cockroach Janta Party da Índia libertados em Deli enquanto os protestos continuam",
+          "dek": "Abhijeet Dipke e outros dois líderes do Cockroach Janta Party foram libertados no domingo sob uma condição judicial, enquanto os protestos continuavam em Deli pelo segundo dia, informou a BBC.",
+          "facts": [
+            "Abhijeet Dipke, Saurav Das e Ashutosh Ranka foram detidos à chegada a Deli no sábado e libertados no domingo, segundo a BBC.",
+            "Um tribunal de magistrados libertou-os \"sob a condição de que não se envolverão em perturbação da ordem pública durante um ano\", disse a polícia, segundo a BBC.",
+            "Relatos dos media disseram que 7.000 manifestantes foram detidos e libertados no sábado, com centenas detidos no domingo, informou a BBC."
+          ],
+          "imageCaption": "Um jovem a usar óculos de sol e uma camisola desportiva roxa e amarela está a ser contido por várias pessoas fardadas de camuflado, enquanto parece gritar ou resistir. A cena passa-se numa rua, aparentemente durante um protesto ou manifestação."
+        },
+        "zh": {
+          "title": "印度蟑螂人民党领导人在德里获释，抗议持续",
+          "dek": "据BBC报道，阿比吉特·迪普克和另外两名蟑螂人民党领导人周日在一项法院条件下获释，与此同时德里的抗议活动进入第二天。",
+          "facts": [
+            "据BBC报道，阿比吉特·迪普克、索拉夫·达斯和阿舒托什·兰卡周六抵达德里时被捕，周日获释。",
+            "据BBC报道，警方说，一家治安法院释放他们，“条件是他们一年内不得从事破坏治安的行为”。",
+            "据BBC报道，媒体报道称，周六有7000名抗议者被拘留后获释，周日又有数百人被拘留。"
+          ],
+          "imageCaption": "一名戴着太阳镜、身穿紫色和黄色运动衫的年轻男子正被多名身穿迷彩制服的人约束，他似乎在大喊或反抗。场景发生在街道上，显然是在抗议或示威期间。"
+        },
+        "ja": {
+          "title": "インドのゴキブリ・ジャンタ党指導者ら、デリーで釈放 抗議続く",
+          "dek": "BBCによると、アビジート・ディプケ氏とゴキブリ・ジャンタ党の指導者2人は、デリーで抗議が2日目も続く中、日曜日に裁判所の条件付きで釈放された。",
+          "facts": [
+            "BBCによると、アビジート・ディプケ氏、サウラフ・ダス氏、アシュトシュ・ランカ氏は土曜日にデリー到着時に逮捕され、日曜日に釈放された。",
+            "BBCによると、警察は、治安判事裁判所が彼らを「1年間、平和を乱す行為に関与しないことを条件に」釈放したと述べた。",
+            "BBCによると、メディア報道では、土曜日に抗議者7000人が拘束され、その後釈放された。日曜日には数百人が拘束された。"
+          ],
+          "imageCaption": "サングラスをかけ、紫と黄色のスポーツジャージーを着た若い男性が、迷彩服を着た複数の人物に取り押さえられている。叫んだり抵抗したりしているように見える。場面は路上で、明らかに抗議やデモの最中と思われる。"
+        },
+        "ko": {
+          "title": "인도 바퀴벌레 잔타당 지도부, 델리서 석방…시위 계속",
+          "dek": "BBC에 따르면 아비지트 딥케와 바퀴벌레 잔타당 지도부 2명은 일요일 법원 조건에 따라 석방됐으며, 델리에서는 이틀째 시위가 이어졌다.",
+          "facts": [
+            "BBC에 따르면 아비지트 딥케, 사우라브 다스, 아슈토시 랑카는 토요일 델리에 도착하자마자 체포됐다가 일요일 석방됐다.",
+            "BBC에 따르면 경찰은 치안판사 법원이 이들을 “1년 동안 평화를 해치는 행위에 가담하지 않는다는 조건”으로 석방했다고 밝혔다.",
+            "BBC에 따르면 언론 보도에서는 토요일 시위자 7,000명이 구금됐다가 석방됐고, 일요일에는 수백 명이 구금됐다고 전했다."
+          ],
+          "imageCaption": "선글라스를 쓰고 보라색과 노란색 스포츠 유니폼을 입은 한 청년이 소리를 지르거나 저항하는 듯한 모습으로 위장복을 입은 여러 사람에게 제압되고 있다. 장면은 거리에서 벌어지며, 아마도 시위나 데모 중인 것으로 보인다."
+        }
+      }
+    },
+    {
+      "slug": "poland-detains-man-suspected-of-planning-attack-on-pm-20261011-q2g9",
+      "category": "politics",
+      "image": "https://ichef.bbci.co.uk/ace/standard/944/cpsprodpb/187d/live/a4be0650-c592-11f1-9d5a-23156cc094cf.jpg",
+      "imageCredit": "Reuters",
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-10-11T18:28:24.188Z",
+      "updatedAt": "2026-10-11T18:28:24.188Z",
+      "sourceCount": 1,
+      "locales": {
+        "en": {
+          "title": "Poland detains man suspected of planning attack on PM Tusk, officials say",
+          "dek": "Polish Prime Minister Donald Tusk said a man accused of plotting an assassination attack against him and Defence Minister Wladyslaw Kosiniak-Kamysz has been detained.",
+          "facts": [
+            "Prime Minister Donald Tusk said a man accused of plotting an assassination attack against him and Defence Minister Wladyslaw Kosiniak-Kamysz has been detained.",
+            "The interior ministry reported that police had received credible information about possible attacks against the two ministers.",
+            "Security services held a special meeting on Sunday, 11 October, and a spokesman said the threat was being treated as \"deadly serious\"."
+          ],
+          "imageCaption": "Close-up portrait of Polish Defence Minister Władysław Kosiniak-Kamysz photographed outdoors, wearing a dark suit with a navy tie and a small heart-shaped pin on the lapel. The background shows blurred greenery."
+        },
+        "de": {
+          "title": "Polen nimmt Mann fest, der Anschlag auf Ministerpräsident Tusk geplant haben soll, sagen Beamte",
+          "dek": "Polens Ministerpräsident Donald Tusk sagte, ein Mann, der beschuldigt wird, einen Mordanschlag auf ihn und Verteidigungsminister Władysław Kosiniak-Kamysz geplant zu haben, sei festgenommen worden.",
+          "facts": [
+            "Ministerpräsident Donald Tusk sagte, ein Mann, der beschuldigt wird, einen Mordanschlag auf ihn und Verteidigungsminister Władysław Kosiniak-Kamysz geplant zu haben, sei festgenommen worden.",
+            "Das Innenministerium berichtete, die Polizei habe glaubwürdige Informationen über mögliche Anschläge auf die beiden Minister erhalten.",
+            "Die Sicherheitsdienste hielten am Sonntag, dem 11. Oktober, eine Sondersitzung ab, und ein Sprecher sagte, die Bedrohung werde als \"todernst\" eingestuft."
+          ],
+          "imageCaption": "Nahaufnahme von Verteidigungsminister Władysław Kosiniak-Kamysz im Freien, gekleidet in dunklen Anzug mit Krawatte und einem herzförmigen Anstecker am Revers. Der Hintergrund zeigt unscharfes Grün."
+        },
+        "fr": {
+          "title": "La Pologne arrête un homme soupçonné de préparer une attaque contre le Premier ministre Tusk, selon les autorités",
+          "dek": "Le Premier ministre polonais Donald Tusk a déclaré qu'un homme accusé d'avoir projeté un attentat contre lui et le ministre de la Défense Władysław Kosiniak-Kamysz a été arrêté.",
+          "facts": [
+            "Le Premier ministre Donald Tusk a déclaré qu'un homme accusé d'avoir projeté un attentat contre lui et le ministre de la Défense Władysław Kosiniak-Kamysz a été arrêté.",
+            "Le ministère de l'Intérieur a indiqué que la police avait reçu des informations crédibles sur de possibles attaques contre les deux ministres.",
+            "Les services de sécurité ont tenu une réunion spéciale le dimanche 11 octobre, et un porte-parole a déclaré que la menace était traitée comme « extrêmement grave »."
+          ],
+          "imageCaption": "Portrait en gros plan du ministre polonais de la Défense, Władysław Kosiniak-Kamysz, photographié en extérieur, portant un costume sombre avec une cravate bleu marine et une petite épingle en forme de cœur sur le revers. L'arrière-plan montre une verdure floue."
+        },
+        "es": {
+          "title": "Polonia detiene a un hombre sospechoso de planear un ataque contra el primer ministro Tusk, según las autoridades",
+          "dek": "El primer ministro polaco, Donald Tusk, dijo que ha sido detenido un hombre acusado de planear un atentado contra él y el ministro de Defensa, Władysław Kosiniak-Kamysz.",
+          "facts": [
+            "El primer ministro Donald Tusk dijo que ha sido detenido un hombre acusado de planear un atentado contra él y el ministro de Defensa, Władysław Kosiniak-Kamysz.",
+            "El Ministerio del Interior informó de que la policía había recibido información creíble sobre posibles ataques contra los dos ministros.",
+            "Los servicios de seguridad celebraron una reunión especial el domingo 11 de octubre, y un portavoz dijo que la amenaza se estaba tratando como \"de extrema gravedad\"."
+          ],
+          "imageCaption": "Retrato en primer plano del ministro de Defensa polaco, Władysław Kosiniak-Kamysz, fotografiado al aire libre, con traje oscuro, corbata azul marino y un pequeño pin en forma de corazón en la solapa. El fondo muestra vegetación desenfocada."
+        },
+        "it": {
+          "title": "Polonia, fermato un uomo sospettato di pianificare un attentato contro il premier Tusk, dicono i funzionari",
+          "dek": "Il primo ministro polacco Donald Tusk ha dichiarato che è stato fermato un uomo accusato di aver pianificato un attentato contro di lui e il ministro della Difesa Wladyslaw Kosiniak-Kamysz.",
+          "facts": [
+            "Il primo ministro Donald Tusk ha dichiarato che è stato fermato un uomo accusato di aver pianificato un attentato contro di lui e il ministro della Difesa Wladyslaw Kosiniak-Kamysz.",
+            "Il ministero dell'Interno ha riferito che la polizia aveva ricevuto informazioni credibili su possibili attacchi contro i due ministri.",
+            "I servizi di sicurezza hanno tenuto una riunione speciale domenica 11 ottobre e un portavoce ha detto che la minaccia veniva considerata \"estremamente grave\"."
+          ],
+          "imageCaption": "Ritratto in primo piano del ministro della Difesa polacco Władysław Kosiniak-Kamysz fotografato all'aperto, con un abito scuro, una cravatta blu navy e una piccola spilla a forma di cuore sul bavero. Lo sfondo mostra una vegetazione sfocata."
+        },
+        "pt": {
+          "title": "Polónia detém homem suspeito de planear ataque contra o primeiro-ministro Tusk, dizem autoridades",
+          "dek": "O primeiro-ministro polaco, Donald Tusk, disse que foi detido um homem acusado de planear um atentado contra ele e o ministro da Defesa, Władysław Kosiniak-Kamysz.",
+          "facts": [
+            "O primeiro-ministro Donald Tusk disse que foi detido um homem acusado de planear um atentado contra ele e o ministro da Defesa, Władysław Kosiniak-Kamysz.",
+            "O Ministério do Interior informou que a polícia tinha recebido informações credíveis sobre possíveis ataques contra os dois ministros.",
+            "Os serviços de segurança realizaram uma reunião especial no domingo, 11 de outubro, e um porta-voz disse que a ameaça estava a ser tratada como \"extremamente grave\"."
+          ],
+          "imageCaption": "Retrato em close-up do ministro da Defesa polaco, Władysław Kosiniak-Kamysz, fotografado ao ar livre, vestindo um fato escuro com gravata azul-marinho e um pequeno alfinete em forma de coração na lapela. O fundo mostra vegetação desfocada."
+        },
+        "zh": {
+          "title": "官员称波兰拘留一名涉嫌策划袭击总理图斯克的男子",
+          "dek": "波兰总理唐纳德·图斯克表示，一名被控策划对他和国防部长瓦迪斯瓦夫·科希尼亚克-卡梅什实施暗杀袭击的男子已被拘留。",
+          "facts": [
+            "波兰总理唐纳德·图斯克表示，一名被控策划对他和国防部长瓦迪斯瓦夫·科希尼亚克-卡梅什实施暗杀袭击的男子已被拘留。",
+            "内政部报告称，警方已收到关于可能针对这两名部长发动袭击的可信信息。",
+            "安全部门于10月11日星期日举行特别会议，一名发言人表示，该威胁被视为“极其严重”。"
+          ],
+          "imageCaption": "波兰国防部长瓦迪斯瓦夫·科希尼亚克-卡梅什的户外特写肖像，他身穿深色西装，系藏青色领带，翻领上别着一枚心形小徽章。背景是模糊的绿色植物。"
+        },
+        "ja": {
+          "title": "ポーランド、トゥスク首相襲撃計画容疑の男を拘束 当局者",
+          "dek": "ポーランドのドナルド・トゥスク首相は、自身とヴワディスワフ・コシニャク＝カミシュ国防相に対する暗殺攻撃を計画した疑いのある男が拘束されたと述べた。",
+          "facts": [
+            "ポーランドのドナルド・トゥスク首相は、自身とヴワディスワフ・コシニャク＝カミシュ国防相に対する暗殺攻撃を計画した疑いのある男が拘束されたと述べた。",
+            "内務省は、警察が両大臣に対する攻撃の可能性について信頼できる情報を得たと発表した。",
+            "治安機関は10月11日（日曜日）に特別会合を開き、報道官はこの脅威を「極めて深刻」なものとして扱っていると述べた。"
+          ],
+          "imageCaption": "ポーランドのヴワディスワフ・コシニャク＝カミシュ国防相のクローズアップ肖像写真。屋外で撮影されたもので、濃紺のネクタイを締めたダークスーツ姿で、襟に小さなハート形のピンを付けている。背景にはぼやけた緑が写っている。"
+        },
+        "ko": {
+          "title": "폴란드, 투스크 총리 암살 공격 모의 혐의 남성 체포... 당국 발표",
+          "dek": "도널드 투스크 폴란드 총리는 자신과 브와디스와프 코시니아크-카미시 국방장관에 대한 암살 공격을 모의한 혐의를 받는 남성이 구금됐다고 밝혔다.",
+          "facts": [
+            "도널드 투스크 폴란드 총리는 자신과 브와디스와프 코시니아크-카미시 국방장관에 대한 암살 공격을 모의한 혐의를 받는 남성이 구금됐다고 밝혔다.",
+            "내무부는 경찰이 두 장관에 대한 공격 가능성에 관한 신빙성 있는 정보를 입수했다고 밝혔다.",
+            "보안 당국은 10월 11일 일요일 특별 회의를 열었으며, 한 대변인은 이 위협을 \"극도로 심각한\" 사안으로 다루고 있다고 말했다."
+          ],
+          "imageCaption": "야외에서 촬영된 브와디스와프 코시니아크-카미시 폴란드 국방장관의 근접 인물 사진. 그는 남색 넥타이를 맨 어두운 색 정장을 입고 옷깃에 작은 하트 모양 핀을 달고 있다. 배경에는 흐릿한 녹지가 보인다."
+        }
+      }
+    },
+    {
+      "slug": "riyadh-airport-hit-by-second-strike-in-two-days-20261011-i15h",
+      "category": "world",
+      "image": "https://ichef.bbci.co.uk/ace/standard/1600/cpsprodpb/53a4/live/4134abe0-c581-11f1-9a39-31b474234113.png",
+      "imageCredit": "BBC",
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-10-11T18:24:50.758Z",
+      "updatedAt": "2026-10-11T18:24:50.758Z",
+      "sourceCount": 1,
+      "locales": {
+        "en": {
+          "title": "Riyadh airport hit by second strike in two days; Houthis claim responsibility",
+          "dek": "Saudi officials say a projectile hit Riyadh's King Khalid International Airport on Sunday, 11 October, causing injuries, a day after a strike there killed 13 people and injured 308.",
+          "facts": [
+            "A projectile hit King Khalid International Airport in Riyadh on Sunday, 11 October, causing a fire in Passenger Hall No 4, Saudi officials said.",
+            "Saudi Arabia's civil aviation authority said there had been injuries.",
+            "Officials said a strike on the same airport on Saturday, 10 October, killed 13 people and injured 308 others."
+          ],
+          "imageCaption": "Locator map showing the position of King Khalid International Airport in Riyadh, Saudi Arabia, marked with a pinpoint and a red label box. The map also shows neighbouring Iran to the northeast and Yemen to the south, as well as the Indian Ocean. Scale bar: 500 km / 200 miles."
+        },
+        "de": {
+          "title": "Flughafen Riad von zweitem Angriff in zwei Tagen getroffen; Huthi reklamieren Verantwortung",
+          "dek": "Saudische Beamte sagen, ein Geschoss habe am Sonntag, 11. Oktober, den King-Khalid-Flughafen in Riad getroffen und dabei Menschen verletzt, einen Tag, nachdem ein Angriff dort 13 Menschen getötet und 308 verletzt hatte.",
+          "facts": [
+            "Ein Geschoss traf am Sonntag, 11. Oktober, den King-Khalid-Flughafen in Riad und verursachte ein Feuer in Passagierhalle Nr. 4, sagten saudische Beamte.",
+            "Die saudische Zivilluftfahrtbehörde erklärte, es habe Verletzte gegeben.",
+            "Beamte sagten, ein Angriff auf denselben Flughafen am Samstag, 10. Oktober, habe 13 Menschen getötet und 308 weitere verletzt."
+          ],
+          "imageCaption": "Lokalisierungskarte mit der Lage des King Khalid International Airport in Riad, Saudi-Arabien, gekennzeichnet mit einem Punkt und einem roten Beschriftungsfeld. Die Karte zeigt auch die Nachbarländer Iran im Nordosten und Jemen im Süden sowie den Indischen Ozean. Maßstabsleiste: 500 km / 200 Meilen."
+        },
+        "fr": {
+          "title": "L'aéroport de Riyad touché par une deuxième frappe en deux jours ; les Houthis revendiquent la responsabilité",
+          "dek": "Des responsables saoudiens affirment qu'un projectile a touché l'aéroport international King Khalid de Riyad le dimanche 11 octobre, faisant des blessés, un jour après une frappe qui y a tué 13 personnes et en a blessé 308.",
+          "facts": [
+            "Un projectile a touché l'aéroport international King Khalid à Riyad le dimanche 11 octobre, provoquant un incendie dans le hall passagers n° 4, ont déclaré des responsables saoudiens.",
+            "L'Autorité de l'aviation civile d'Arabie saoudite a indiqué qu'il y avait eu des blessés.",
+            "Des responsables ont déclaré qu'une frappe sur le même aéroport le samedi 10 octobre avait tué 13 personnes et blessé 308 autres."
+          ],
+          "imageCaption": "Carte de localisation montrant la position de l'aéroport international King Khalid à Riyad, en Arabie saoudite, marquée par une punaise et un encadré rouge. La carte montre également l'Iran voisin au nord-est et le Yémen au sud, ainsi que l'océan Indien. Échelle : 500 km / 200 miles."
+        },
+        "es": {
+          "title": "El aeropuerto de Riad recibe un segundo ataque en dos días; los hutíes reivindican la autoría",
+          "dek": "Responsables saudíes afirman que un proyectil impactó el domingo 11 de octubre en el Aeropuerto Internacional Rey Khalid de Riad y causó heridos, un día después de que un ataque allí matara a 13 personas e hiriera a 308.",
+          "facts": [
+            "Un proyectil impactó el Aeropuerto Internacional Rey Khalid de Riad el domingo 11 de octubre y provocó un incendio en la Sala de Pasajeros n.º 4, según responsables saudíes.",
+            "La autoridad de aviación civil de Arabia Saudí informó de que se habían producido heridos.",
+            "Responsables afirmaron que un ataque contra el mismo aeropuerto el sábado 10 de octubre mató a 13 personas e hirió a otras 308."
+          ],
+          "imageCaption": "Mapa de localización que muestra la posición del Aeropuerto Internacional Rey Khalid en Riad, Arabia Saudí, marcado con un punto y un recuadro de etiqueta rojo. El mapa también muestra el vecino Irán al noreste y Yemen al sur, así como el océano Índico. Barra de escala: 500 km / 200 millas."
+        },
+        "it": {
+          "title": "Aeroporto di Riad colpito da un secondo attacco in due giorni; gli Houthi rivendicano la responsabilità",
+          "dek": "Funzionari sauditi affermano che un proiettile ha colpito l'aeroporto internazionale King Khalid di Riad domenica 11 ottobre, provocando feriti, un giorno dopo che un attacco nello stesso luogo ha ucciso 13 persone e ne ha ferite 308.",
+          "facts": [
+            "Un proiettile ha colpito l'aeroporto internazionale King Khalid a Riad domenica 11 ottobre, provocando un incendio nella sala passeggeri n. 4, hanno dichiarato funzionari sauditi.",
+            "L'autorità per l'aviazione civile dell'Arabia Saudita ha dichiarato che ci sono stati feriti.",
+            "Funzionari hanno dichiarato che un attacco allo stesso aeroporto sabato 10 ottobre ha ucciso 13 persone e ne ha ferite altre 308."
+          ],
+          "imageCaption": "Mappa di localizzazione che mostra la posizione dell'aeroporto internazionale King Khalid a Riad, in Arabia Saudita, contrassegnata da un segnaposto e da un riquadro rosso. La mappa mostra anche l'Iran vicino a nord-est e lo Yemen a sud, nonché l'Oceano Indiano. Scala: 500 km / 200 miglia."
+        },
+        "pt": {
+          "title": "Aeroporto de Riade atingido por segundo ataque em dois dias; houthis reivindicam responsabilidade",
+          "dek": "Autoridades sauditas dizem que um projétil atingiu o Aeroporto Internacional Rei Khalid, em Riade, no domingo, 11 de outubro, provocando feridos, um dia depois de um ataque no local ter matado 13 pessoas e ferido 308.",
+          "facts": [
+            "Um projétil atingiu o Aeroporto Internacional Rei Khalid, em Riade, no domingo, 11 de outubro, provocando um incêndio no Hall de Passageiros n.º 4, disseram autoridades sauditas.",
+            "A Autoridade de Aviação Civil da Arábia Saudita disse que houve feridos.",
+            "Autoridades disseram que um ataque ao mesmo aeroporto no sábado, 10 de outubro, matou 13 pessoas e feriu outras 308."
+          ],
+          "imageCaption": "Mapa de localização que mostra a posição do Aeroporto Internacional Rei Khalid em Riade, Arábia Saudita, assinalada com um alfinete e uma caixa de etiqueta vermelha. O mapa mostra também o Irão vizinho a nordeste e o Iémen a sul, bem como o Oceano Índico. Barra de escala: 500 km / 200 milhas."
+        },
+        "zh": {
+          "title": "利雅得机场两天内遭第二次袭击；胡塞武装宣称负责",
+          "dek": "沙特官员称，10月11日周日，一枚发射物击中利雅得的哈立德国王国际机场，造成人员受伤；此前一天该机场遭袭，造成13人死亡、308人受伤。",
+          "facts": [
+            "沙特官员称，10月11日周日，一枚发射物击中利雅得的哈立德国王国际机场，导致4号旅客大厅起火。",
+            "沙特阿拉伯民航局称有人受伤。",
+            "官员称，10月10日周六，同一机场遭袭，造成13人死亡、另有308人受伤。"
+          ],
+          "imageCaption": "定位地图显示沙特阿拉伯利雅得哈立德国王国际机场的位置，以图钉和红色标签框标出。地图还显示东北方向的邻国伊朗和南部的也门，以及印度洋。比例尺：500公里/200英里。"
+        },
+        "ja": {
+          "title": "リヤド空港、2日間で2度目の攻撃 フーシ派が犯行声明",
+          "dek": "サウジ当局によると、10月11日（日）、リヤドのキング・ハリド国際空港に飛翔体が着弾し、負傷者が出た。その前日の同空港への攻撃で13人が死亡、308人が負傷していた。",
+          "facts": [
+            "サウジ当局によると、10月11日（日）、リヤドのキング・ハリド国際空港に飛翔体が着弾し、第4旅客ホールで火災が発生した。",
+            "サウジアラビア民間航空局は負傷者が出たと発表した。",
+            "当局によると、10月10日（土）に同じ空港への攻撃で13人が死亡し、308人が負傷した。"
+          ],
+          "imageCaption": "サウジアラビアのリヤドにあるキング・ハリド国際空港の位置を示す地図。ピンと赤いラベル枠で示されている。地図には北東に隣接するイラン、南にイエメン、インド洋も示されている。縮尺バー：500km／200マイル。"
+        },
+        "ko": {
+          "title": "리야드 공항, 이틀 새 두 번째 공격 받아…후티, 책임 주장",
+          "dek": "사우디 관리들에 따르면 10월 11일 일요일 리야드의 킹 칼리드 국제공항에 발사체가 떨어져 부상자가 발생했다. 이곳에서는 하루 전 공격으로 13명이 숨지고 308명이 다쳤다.",
+          "facts": [
+            "사우디 관리들에 따르면 10월 11일 일요일 리야드의 킹 칼리드 국제공항에 발사체가 떨어져 제4 여객홀에서 화재가 발생했다.",
+            "사우디아라비아 민간항공청은 부상자가 발생했다고 밝혔다.",
+            "관리들에 따르면 10월 10일 토요일 같은 공항에 대한 공격으로 13명이 숨지고 308명이 다쳤다."
+          ],
+          "imageCaption": "사우디아라비아 리야드에 있는 킹 칼리드 국제공항의 위치를 핀포인트와 빨간 라벨 상자로 표시한 위치 지도. 이 지도는 북동쪽의 이웃 국가 이란과 남쪽의 예멘, 그리고 인도양도 보여준다. 축척: 500km / 200마일."
+        }
+      }
+    },
+    {
+      "slug": "aid-agencies-in-yemen-report-worsening-hunger-as-fighting-20261011-tcsg",
+      "category": "world",
+      "image": null,
+      "imageCredit": null,
+      "video": {
+        "type": "youtube",
+        "id": "SXq7VhWGAAw",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/SXq7VhWGAAw"
+      },
+      "importance": 5,
+      "publishedAt": "2026-10-11T18:23:15.784Z",
+      "updatedAt": "2026-10-11T18:23:15.784Z",
+      "sourceCount": 1,
+      "locales": {
+        "en": {
+          "title": "Aid agencies in Yemen report worsening hunger as fighting continues",
+          "dek": "Aid agencies say renewed fighting between Houthi forces and Government troops has worsened hunger, with mobile clinics reporting hundreds of displaced children suffering the deadliest form of malnutrition.",
+          "facts": [
+            "Aid agencies in Yemen highlighted a growing hunger emergency sparked by renewed fighting between Houthi opposition forces and Government troops, France 24 reported on 11 October.",
+            "Mobile health clinics reported that hundreds of children displaced by the violence are suffering from the most deadly form of malnutrition, according to France 24.",
+            "On 5 October, France 24 reported, citing officials, that Saudi-backed Yemeni forces expelled the Houthis from several areas around a key strait."
+          ],
+          "imageCaption": null
+        },
+        "de": {
+          "title": "Hilfsorganisationen im Jemen melden sich verschlimmernden Hunger, während die Kämpfe andauern",
+          "dek": "Hilfsorganisationen erklären, dass erneute Kämpfe zwischen Huthi-Kräften und Regierungstruppen den Hunger verschlimmert haben; mobile Kliniken melden, dass Hunderte vertriebene Kinder an der tödlichsten Form der Unterernährung leiden.",
+          "facts": [
+            "Hilfsorganisationen im Jemen wiesen auf einen wachsenden Hungernotstand hin, der durch erneute Kämpfe zwischen oppositionellen Huthi-Kräften und Regierungstruppen ausgelöst wurde, wie France 24 am 11. Oktober berichtete.",
+            "Mobile Gesundheitskliniken berichteten laut France 24, dass Hunderte durch die Gewalt vertriebene Kinder an der tödlichsten Form der Unterernährung leiden.",
+            "Am 5. Oktober berichtete France 24 unter Berufung auf offizielle Stellen, dass von Saudi-Arabien unterstützte jemenitische Kräfte die Huthi aus mehreren Gebieten rund um eine wichtige Meerenge vertrieben."
+          ],
+          "imageCaption": null
+        },
+        "fr": {
+          "title": "Les agences humanitaires au Yémen signalent une aggravation de la faim alors que les combats se poursuivent",
+          "dek": "Les agences humanitaires affirment que la reprise des combats entre les forces houthies et les troupes gouvernementales a aggravé la faim, des cliniques mobiles signalant que des centaines d'enfants déplacés souffrent de la forme la plus mortelle de malnutrition.",
+          "facts": [
+            "Les agences humanitaires au Yémen ont mis en évidence une urgence alimentaire croissante déclenchée par la reprise des combats entre les forces d'opposition houthies et les troupes gouvernementales, a rapporté France 24 le 11 octobre.",
+            "Des cliniques mobiles de santé ont rapporté que des centaines d'enfants déplacés par les violences souffrent de la forme la plus mortelle de malnutrition, selon France 24.",
+            "Le 5 octobre, France 24 a rapporté, citant des responsables, que des forces yéménites soutenues par l'Arabie saoudite avaient chassé les houthis de plusieurs zones autour d'un détroit stratégique."
+          ],
+          "imageCaption": null
+        },
+        "es": {
+          "title": "Las agencias de ayuda en Yemen informan de un empeoramiento del hambre mientras continúan los combates",
+          "dek": "Las agencias de ayuda afirman que la reanudación de los combates entre las fuerzas hutíes y las tropas gubernamentales ha agravado el hambre, y las clínicas móviles informan de que cientos de niños desplazados padecen la forma más letal de desnutrición.",
+          "facts": [
+            "Las agencias de ayuda en Yemen destacaron una creciente emergencia de hambre provocada por la reanudación de los combates entre las fuerzas opositoras hutíes y las tropas gubernamentales, informó France 24 el 11 de octubre.",
+            "Las clínicas móviles de salud informaron de que cientos de niños desplazados por la violencia padecen la forma más letal de desnutrición, según France 24.",
+            "El 5 de octubre, France 24 informó, citando a funcionarios, que las fuerzas yemeníes respaldadas por Arabia Saudí expulsaron a los hutíes de varias zonas alrededor de un estrecho clave."
+          ],
+          "imageCaption": null
+        },
+        "it": {
+          "title": "Le agenzie umanitarie in Yemen segnalano un peggioramento della fame mentre continuano i combattimenti",
+          "dek": "Le agenzie umanitarie affermano che i rinnovati combattimenti tra le forze Houthi e le truppe governative hanno aggravato la fame, con cliniche mobili che segnalano centinaia di bambini sfollati affetti dalla forma più letale di malnutrizione.",
+          "facts": [
+            "Le agenzie umanitarie in Yemen hanno evidenziato una crescente emergenza fame provocata dai rinnovati combattimenti tra le forze di opposizione Houthi e le truppe governative, ha riferito France 24 l'11 ottobre.",
+            "Le cliniche sanitarie mobili hanno riferito che centinaia di bambini sfollati a causa della violenza soffrono della forma più letale di malnutrizione, secondo France 24.",
+            "Il 5 ottobre, France 24 ha riferito, citando funzionari, che le forze yemenite sostenute dall'Arabia Saudita hanno espulso gli Houthi da diverse aree attorno a uno stretto chiave."
+          ],
+          "imageCaption": null
+        },
+        "pt": {
+          "title": "Agências de ajuda no Iémen relatam agravamento da fome à medida que prosseguem os combates",
+          "dek": "Agências de ajuda dizem que os combates reacendidos entre as forças houthis e as tropas governamentais agravaram a fome, com clínicas móveis a relatar centenas de crianças deslocadas a sofrer da forma mais letal de desnutrição.",
+          "facts": [
+            "Agências de ajuda no Iémen destacaram uma emergência de fome crescente desencadeada por combates reacendidos entre as forças da oposição houthis e as tropas governamentais, noticiou a France 24 a 11 de outubro.",
+            "Clínicas de saúde móveis relataram que centenas de crianças deslocadas pela violência sofrem da forma mais letal de desnutrição, segundo a France 24.",
+            "Em 5 de outubro, a France 24 noticiou, citando responsáveis, que forças iemenitas apoiadas pela Arábia Saudita expulsaram os houthis de várias zonas em torno de um estreito estratégico."
+          ],
+          "imageCaption": null
+        },
+        "zh": {
+          "title": "也门援助机构称战事持续 饥饿状况不断恶化",
+          "dek": "援助机构表示，胡塞武装与政府军之间重新爆发的战斗加剧了饥饿状况，流动诊所报告称，数百名流离失所儿童正遭受最致命的营养不良。",
+          "facts": [
+            "据法国24电视台10月11日报道，也门援助机构强调，胡塞反对派武装与政府军之间重新爆发的战斗引发了日益严重的饥饿紧急状况。",
+            "据法国24电视台报道，流动医疗诊所报告称，数百名因暴力而流离失所的儿童正遭受最致命的营养不良。",
+            "10月5日，法国24电视台援引官员的话报道称，沙特支持的也门部队将胡塞武装逐出关键海峡周边的数个地区。"
+          ],
+          "imageCaption": null
+        },
+        "ja": {
+          "title": "イエメンの援助機関、戦闘続く中で飢餓の悪化を報告",
+          "dek": "援助機関によると、フーシ派勢力と政府軍の間で戦闘が再燃し飢餓が悪化しており、移動診療所は、避難した数百人の子どもが最も致死性の高い栄養失調に苦しんでいると報告している。",
+          "facts": [
+            "イエメンの援助機関は、フーシ派反政府勢力と政府軍の間で戦闘が再燃したことで引き起こされた、拡大する飢餓の緊急事態を強調したと、フランス24が10月11日に報じた。",
+            "フランス24によると、移動保健診療所は、暴力によって避難した数百人の子どもが最も致死性の高い栄養失調に苦しんでいると報告した。",
+            "10月5日、フランス24は当局者の話として、サウジアラビアが支援するイエメン軍が、重要な海峡周辺の複数地域からフーシ派を排除したと報じた。"
+          ],
+          "imageCaption": null
+        },
+        "ko": {
+          "title": "예멘 구호단체들, 전투 계속되는 가운데 기아 악화 보고",
+          "dek": "구호단체들은 후티 세력과 정부군 사이의 재개된 교전으로 기아가 악화됐으며, 이동 진료소들은 피란한 어린이 수백 명이 가장 치명적인 형태의 영양실조를 겪고 있다고 보고했다.",
+          "facts": [
+            "예멘의 구호단체들은 후티 반군 세력과 정부군 사이의 재개된 교전으로 촉발된 기아 비상사태가 커지고 있다고 강조했다고 프랑스24가 10월 11일 보도했다.",
+            "프랑스24에 따르면 이동 진료소들은 폭력 사태로 피란한 어린이 수백 명이 가장 치명적인 형태의 영양실조를 겪고 있다고 보고했다.",
+            "프랑스24는 10월 5일 관계자들을 인용해 사우디아라비아의 지원을 받는 예멘군이 주요 해협 주변 여러 지역에서 후티를 축출했다고 보도했다."
+          ],
+          "imageCaption": null
+        }
+      }
+    },
+    {
+      "slug": "pentagon-raises-acknowledged-u-s-death-toll-in-iran-20261011-69me",
+      "category": "world",
+      "image": "https://cdn.prod.www.spiegel.de/images/c5f7c8f4-eab1-4334-8f55-2a81a76a092c_w960_r1.5_fpx44.65_fpy54.97.jpg",
+      "imageCredit": "AP",
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-10-11T18:21:35.839Z",
+      "updatedAt": "2026-10-11T18:21:35.839Z",
+      "sourceCount": 2,
+      "locales": {
+        "en": {
+          "title": "Pentagon raises acknowledged U.S. death toll in Iran war to 21",
+          "dek": "The Pentagon now says 21 U.S. service members have died in the Iran war, including two non-combat deaths, as House Democrats say Congress pressed for the correction.",
+          "facts": [
+            "The Pentagon now says 21 U.S. service members have died in connection with the Iran war, Der Spiegel reported on 11 October 2026.",
+            "A government official said the two newly added deaths were not combat deaths: one was a suicide and one occurred without enemy action, Der Spiegel reported.",
+            "The New York Times reported the change was unannounced and that the Defense Department is now acknowledging troops who died or were wounded in support roles."
+          ],
+          "imageCaption": "U.S. President Donald Trump salutes during an outdoor military ceremony, flanked by two service members in dress uniform wearing peaked caps. In the foreground to the right, a folded American flag is visible, as is customary during dignified transfers honoring fallen service members."
+        },
+        "de": {
+          "title": "Pentagon erhöht die Zahl der bestätigten US-Toten im Iran-Krieg auf 21",
+          "dek": "Das Pentagon erklärt nun, 21 US-Militärangehörige seien im Iran-Krieg gestorben, darunter zwei nicht kampfbedingte Todesfälle, während Demokraten im Repräsentantenhaus sagen, der Kongress habe auf die Korrektur gedrängt.",
+          "facts": [
+            "Das Pentagon erklärt nun, 21 US-Militärangehörige seien im Zusammenhang mit dem Iran-Krieg gestorben, wie Der Spiegel am 11. Oktober 2026 berichtete.",
+            "Ein Regierungsvertreter sagte, die beiden neu hinzugefügten Todesfälle seien keine Kampftoten gewesen: Einer sei ein Suizid gewesen, der andere habe sich ohne Feindeinwirkung ereignet, wie Der Spiegel berichtete.",
+            "The New York Times berichtete, die Änderung sei nicht angekündigt worden, und das Verteidigungsministerium erkenne nun Militärangehörige an, die in Unterstützungsrollen gestorben oder verwundet worden seien."
+          ],
+          "imageCaption": "US-Präsident Donald Trump salutiert bei einer militärischen Zeremonie im Freien, flankiert von zwei Soldaten in Paradeuniform mit Schirmmützen. Im Vordergrund rechts wird eine gefaltete US-Flagge gehalten, wie sie bei Ehrenspielen für gefallene Soldaten üblich ist."
+        },
+        "fr": {
+          "title": "Le Pentagone porte à 21 le bilan des morts américains reconnus dans la guerre contre l'Iran",
+          "dek": "Le Pentagone affirme désormais que 21 militaires américains sont morts dans la guerre contre l'Iran, dont deux décès non liés au combat, alors que des démocrates de la Chambre des représentants affirment que le Congrès a fait pression pour cette correction.",
+          "facts": [
+            "Le Pentagone affirme désormais que 21 militaires américains sont morts en lien avec la guerre contre l'Iran, a rapporté Der Spiegel le 11 octobre 2026.",
+            "Un responsable gouvernemental a déclaré que les deux décès nouvellement ajoutés n'étaient pas des décès au combat : l'un était un suicide et l'autre est survenu sans action de l'ennemi, a rapporté Der Spiegel.",
+            "Le New York Times a rapporté que ce changement n'avait pas été annoncé et que le département de la Défense reconnaît désormais les militaires morts ou blessés dans des rôles de soutien."
+          ],
+          "imageCaption": "Le président américain Donald Trump salue lors d'une cérémonie militaire en plein air, entouré de deux militaires en uniforme de cérémonie portant des casquettes à visière. Au premier plan à droite, un drapeau américain plié est visible, comme il est d'usage lors des transferts solennels rendant hommage aux militaires tombés."
+        },
+        "es": {
+          "title": "El Pentágono eleva a 21 la cifra reconocida de muertos estadounidenses en la guerra con Irán",
+          "dek": "El Pentágono afirma ahora que 21 militares estadounidenses han muerto en la guerra con Irán, incluidas dos muertes no de combate, mientras los demócratas de la Cámara dicen que el Congreso presionó para que se corrigiera.",
+          "facts": [
+            "El Pentágono afirma ahora que 21 militares estadounidenses han muerto en relación con la guerra con Irán, informó Der Spiegel el 11 de octubre de 2026.",
+            "Un funcionario gubernamental dijo que las dos muertes recién añadidas no fueron muertes de combate: una fue un suicidio y la otra ocurrió sin acción del enemigo, informó Der Spiegel.",
+            "The New York Times informó que el cambio no fue anunciado y que el Departamento de Defensa ahora reconoce a las tropas que murieron o resultaron heridas en funciones de apoyo."
+          ],
+          "imageCaption": "El presidente de Estados Unidos, Donald Trump, saluda durante una ceremonia militar al aire libre, flanqueado por dos militares con uniforme de gala y gorras de plato. En primer plano a la derecha, se ve una bandera estadounidense doblada, como es habitual durante los traslados dignos en honor a los militares caídos."
+        },
+        "it": {
+          "title": "Il Pentagono porta a 21 il numero di vittime statunitensi riconosciute nella guerra con l'Iran",
+          "dek": "Il Pentagono ora afferma che 21 militari statunitensi sono morti nella guerra con l'Iran, comprese due morti non di combattimento, mentre i democratici della Camera affermano che il Congresso ha sollecitato la correzione.",
+          "facts": [
+            "Il Pentagono ora afferma che 21 militari statunitensi sono morti in relazione alla guerra con l'Iran, ha riferito Der Spiegel l'11 ottobre 2026.",
+            "Un funzionario governativo ha detto che le due morti aggiunte di recente non erano morti in combattimento: una è stata un suicidio e una è avvenuta senza azione nemica, ha riferito Der Spiegel.",
+            "Il New York Times ha riferito che il cambiamento non è stato annunciato e che il Dipartimento della Difesa ora riconosce i militari morti o feriti in ruoli di supporto."
+          ],
+          "imageCaption": "Il presidente degli Stati Uniti Donald Trump saluta durante una cerimonia militare all'aperto, affiancato da due militari in uniforme da cerimonia che indossano berretti con visiera. In primo piano a destra è visibile una bandiera americana piegata, come è consuetudine durante i trasferimenti solenni in onore dei militari caduti."
+        },
+        "pt": {
+          "title": "Pentágono eleva para 21 o número reconhecido de militares dos EUA mortos na guerra com o Irão",
+          "dek": "O Pentágono afirma agora que 21 militares norte-americanos morreram na guerra com o Irão, incluindo duas mortes não relacionadas com o combate, enquanto os democratas da Câmara dos Representantes dizem que o Congresso pressionou para que a correção fosse feita.",
+          "facts": [
+            "O Pentágono afirma agora que 21 militares norte-americanos morreram em ligação com a guerra com o Irão, noticiou o Der Spiegel em 11 de outubro de 2026.",
+            "Um responsável governamental disse que as duas mortes agora acrescentadas não foram mortes em combate: uma foi um suicídio e a outra ocorreu sem ação do inimigo, noticiou o Der Spiegel.",
+            "O New York Times noticiou que a alteração não foi anunciada e que o Departamento de Defesa está agora a reconhecer militares que morreram ou ficaram feridos em funções de apoio."
+          ],
+          "imageCaption": "O presidente dos EUA, Donald Trump, saúda durante uma cerimónia militar ao ar livre, ladeado por dois militares de uniforme de gala a usar bonés de pala. Em primeiro plano, à direita, é visível uma bandeira americana dobrada, como é habitual durante transferências dignas que homenageiam militares caídos."
+        },
+        "zh": {
+          "title": "五角大楼将伊朗战争中已承认的美军死亡人数上调至21人",
+          "dek": "五角大楼现在表示，已有21名美国军人在伊朗战争中死亡，其中包括两起非战斗死亡；众议院民主党人称，国会施压推动了这一更正。",
+          "facts": [
+            "据《明镜》2026年10月11日报道，五角大楼现在表示，已有21名美国军人在与伊朗战争相关的情况下死亡。",
+            "据《明镜》报道，一名政府官员表示，新增加的两起死亡并非战斗死亡：其中一起为自杀，另一起在没有敌方行动的情况下发生。",
+            "《纽约时报》报道称，这一变化未对外宣布，国防部现在承认在支援岗位中死亡或受伤的军人。"
+          ],
+          "imageCaption": "美国总统唐纳德·特朗普在一场户外军事仪式上敬礼，两侧是两名身穿礼服、戴着大檐帽的军人。右前方可以看到一面折叠的美国国旗，这是为阵亡军人举行庄严转移仪式时的惯例。"
+        },
+        "ja": {
+          "title": "国防総省、イラン戦争での米国人死者の公表数を21人に引き上げ",
+          "dek": "国防総省は現在、イラン戦争で米軍兵士21人が死亡したとしている。うち2人は非戦闘死。下院民主党議員らは、議会が修正を迫ったと述べている。",
+          "facts": [
+            "国防総省は現在、イラン戦争に関連して米軍兵士21人が死亡したとしていると、シュピーゲル誌が2026年10月11日に報じた。",
+            "政府当局者によると、新たに加えられた2人の死亡は戦闘死ではなく、1人は自殺、もう1人は敵の行動によらないものだったと、シュピーゲル誌が報じた。",
+            "ニューヨーク・タイムズ紙によると、この変更は発表されず、国防総省は現在、支援任務で死亡または負傷した兵士も計上している。"
+          ],
+          "imageCaption": "米国のドナルド・トランプ大統領が、屋外の軍事式典で敬礼している。両側には、制帽をかぶった正装の米軍兵士2人が立っている。右手前には、戦死者をたたえる厳粛な移送の際に慣例となっている折りたたまれた米国旗が見える。"
+        },
+        "ko": {
+          "title": "펜타곤, 이란 전쟁 미군 사망자 공식 집계 21명으로 상향",
+          "dek": "펜타곤은 이제 이란 전쟁에서 미군 장병 21명이 사망했다고 밝혔으며, 여기에는 비전투 사망 2명이 포함된다. 하원 민주당 의원들은 의회가 이번 정정을 압박했다고 말한다.",
+          "facts": [
+            "펜타곤은 이란 전쟁과 관련해 미군 장병 21명이 사망했다고 이제 밝혔다고 슈피겔이 2026년 10월 11일 보도했다.",
+            "한 정부 관계자는 새로 추가된 사망자 2명이 전투 사망이 아니라고 말했다. 한 명은 자살이었고, 다른 한 명은 적의 공격 없이 사망했다고 슈피겔이 보도했다.",
+            "뉴욕타임스는 이번 변경이 예고 없이 이뤄졌으며, 국방부가 이제 지원 임무 중 사망하거나 부상한 장병들도 인정하고 있다고 보도했다."
+          ],
+          "imageCaption": "도널드 트럼프 미국 대통령이 야외 군 행사에서 경례하고 있으며, 정복을 입고 챙 있는 모자를 쓴 두 장병이 양옆에 서 있다. 오른쪽 전경에는 전사한 장병을 추모하는 엄숙한 유해 이송 때 관례처럼 접힌 성조기가 보인다."
+        }
+      }
+    },
     {
       "slug": "algorithm-forecasts-arctic-sea-ice-up-to-nine-months-20261011-a8d8",
       "category": "climate",
