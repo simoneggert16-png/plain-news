@@ -13,9 +13,11 @@ if (fs.existsSync('.env')) {
   }
 }
 
-// ─── Hybrid pipeline: DeepSeek primary (Ollama) + NVIDIA fallback ──────────
-// Verified live on 2026-10-13: ollama deepseek-v4.1-flash/minimax-m3/glm-5.3-flash = 200 OK;
-// nvidia 550b + super-120b + gpt-oss-20b + gemma-4-31b = 200 OK (70b/51b = 404 on this key)
+// ─── NVIDIA-only pipeline (Ollama expired) ─────────────────────────────────
+// Verified live on NVIDIA build key: 550b + super-120b + gpt-oss-20b + gemma-4-31b = 200 OK.
+// NOT entitled on this key (404): nemotron-70b/51b/ultra-253b, mistral-large-2, kimi-k2.6.
+// Too slow (timeout): deepseek-v4.1-flash, glm-5.3-flash via NVIDIA.
+// (Ollama 'ollama/' routing kept below as fallback if resubscribed.)
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
@@ -26,14 +28,14 @@ const GPT_OSS_20B    = 'openai/gpt-oss-20b';
 const GEMMA_31B      = 'google/gemma-4-31b-it';
 
 export const MODELS = {
-  // Desk: DeepSeek clusters, MiniMax second, NVIDIA 550B adversarial backup
-  desk:       [process.env.DESK_MODEL || 'ollama/deepseek-v4.1-flash', 'ollama/minimax-m3', NEMOTRON_550B, NEMOTRON_120B],
-  // Writer: DeepSeek neutral reporting, NVIDIA 550B backup
-  writer:     [process.env.WRITER_MODEL || 'ollama/deepseek-v4.1-flash', NEMOTRON_550B, NEMOTRON_120B],
-  // Translator: DeepSeek 9-language, NVIDIA fast small backup
-  translator: [process.env.TRANSLATOR_MODEL || 'ollama/deepseek-v4.1-flash', GPT_OSS_20B, NEMOTRON_120B],
-  // Editor: GLM adversarial check, DeepSeek second, NVIDIA 550B backup
-  editor:     [process.env.EDITOR_MODEL || 'ollama/glm-5.3-flash', 'ollama/deepseek-v4.1-flash', NEMOTRON_550B],
+  // Desk: 550B clusters, fast small models as backup
+  desk:       [process.env.DESK_MODEL || NEMOTRON_550B, NEMOTRON_120B, GPT_OSS_20B, GEMMA_31B],
+  // Writer: 550B neutral reporting, backup chain
+  writer:     [process.env.WRITER_MODEL || NEMOTRON_550B, NEMOTRON_120B, GPT_OSS_20B],
+  // Translator: small + fast first (9 languages per story), 550B last
+  translator: [process.env.TRANSLATOR_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
+  // Editor: 550B adversarial check, backup chain
+  editor:     [process.env.EDITOR_MODEL || NEMOTRON_550B, NEMOTRON_120B, GPT_OSS_20B],
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

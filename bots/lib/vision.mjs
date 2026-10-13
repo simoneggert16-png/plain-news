@@ -89,7 +89,7 @@ Return ONLY valid raw JSON:
   "credit": "${sourceCredit || 'Reuters / AP'}"
 }`;
 
-  // 2. MiniMax M3 Multimodal Vision on Ollama (primary — verified 200 OK)
+  // 2. MiniMax M3 on Ollama (primary while subscription active; auto-skips on 401/402 after expiry)
   if (process.env.OLLAMA_API_KEY) {
     try {
       const res = await fetch(`${OLLAMA_BASE}/api/chat`, {
@@ -139,7 +139,7 @@ Return ONLY valid raw JSON:
     }
   }
 
-  // 3. NVIDIA NIM Vision fallback (verified 200 OK)
+  // 3. NVIDIA NIM Vision (permanent fallback + primary after Ollama expiry — verified 200 OK)
   if (process.env.NVIDIA_API_KEY) {
     try {
       const res = await fetch(`${NVIDIA_BASE}/chat/completions`, {
