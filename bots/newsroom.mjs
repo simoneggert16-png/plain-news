@@ -112,7 +112,7 @@ SOURCE RULES:
 Format response strictly as JSON:
 {"events":[{"ids":[0, 14],"category":"world","importance":4,"event":"..."}]}`,
     },
-  ], { temperature: 0.1, maxTokens: 3000 });
+  ], { temperature: 0.1, maxTokens: 12000 });
 
   const events = (data.events || [])
     .map((e) => ({ ...e, ids: [...new Set((e.ids || []).map(Number))].filter((i) => items[i]) }))
@@ -165,7 +165,7 @@ async function reporter(event) {
       role: 'user',
       content: `EVENT: ${event.event}\n\nCATEGORY: ${event.category}\n\nSOURCES:\n${sourcePack(event.sources)}\n\nWrite the article in English using ONLY information from the sources. Where outlets frame the event differently, reflect that neutrally with attribution.\nReturn exactly this JSON shape:\n${ARTICLE_SCHEMA}`,
     },
-  ], { temperature: 0.3, maxTokens: 5000 });
+  ], { temperature: 0.3, maxTokens: 10000 });
   return { draft: data, model, desk: desk.name };
 }
 
@@ -189,7 +189,7 @@ Verdict:
 - "reject" if sources are too thin/contradictory to publish responsibly.
 Return: {"verdict":"publish|revise|reject","problems":["..."],"article":${ARTICLE_SCHEMA}}`,
     },
-  ], { temperature: 0.1, maxTokens: 6000 });
+  ], { temperature: 0.1, maxTokens: 10000 });
   return { review: data, model };
 }
 
