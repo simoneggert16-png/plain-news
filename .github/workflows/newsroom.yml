@@ -2,7 +2,7 @@ name: Newsroom
 
 on:
   schedule:
-    - cron: '*/10 * * * *'   # every 10 minutes
+    - cron: '*/15 * * * *'   # every 15 minutes -> ~4 runs/hour x 4 stories = 10+/hour
   workflow_dispatch: {}       # manual "Run workflow" button
 
 permissions:
@@ -26,13 +26,10 @@ jobs:
       - name: Run AI newsroom
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
-          DESK_MODEL: nvidia/nemotron-3-ultra-550b-a55b
-          WRITER_MODEL: nvidia/nemotron-3-ultra-550b-a55b
-          TRANSLATOR_MODEL: nvidia/llama-3.1-nemotron-70b-instruct
-          EDITOR_MODEL: nvidia/nemotron-3-ultra-550b-a55b
-          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '10' }}
-          MAX_PER_CATEGORY: '3'
+          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '4' }}
+          MAX_PER_CATEGORY: '4'
         run: node bots/newsroom.mjs
       - name: Commit new stories
         run: |
