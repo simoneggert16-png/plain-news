@@ -28,14 +28,16 @@ const GPT_OSS_20B    = 'openai/gpt-oss-20b';
 const GEMMA_31B      = 'google/gemma-4-31b-it';
 
 export const MODELS = {
-  // Desk: 550B clusters, fast small models as backup
-  desk:       [process.env.DESK_MODEL || NEMOTRON_550B, NEMOTRON_120B, GPT_OSS_20B, GEMMA_31B],
-  // Writer: 550B neutral reporting, backup chain
-  writer:     [process.env.WRITER_MODEL || NEMOTRON_550B, NEMOTRON_120B, GPT_OSS_20B],
-  // Translator: small + fast first (9 languages per story), 550B last
+  // Live probe 2026-10-13 ~18:10 UTC: gpt-oss-20b = 1s, super-120b = instant,
+  // gemma-4-31b = 35s, 550b = 503/timeout. 550B parked last, auto-rejoins when healthy.
+  // Desk: fast + clean JSON first
+  desk:       [process.env.DESK_MODEL || GPT_OSS_20B, NEMOTRON_120B, GEMMA_31B, NEMOTRON_550B],
+  // Writer: best neutral reporting available right now
+  writer:     [process.env.WRITER_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
+  // Translator: small + fast first (9 languages per story)
   translator: [process.env.TRANSLATOR_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
-  // Editor: 550B adversarial check, backup chain
-  editor:     [process.env.EDITOR_MODEL || NEMOTRON_550B, NEMOTRON_120B, GPT_OSS_20B],
+  // Editor: adversarial check
+  editor:     [process.env.EDITOR_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
