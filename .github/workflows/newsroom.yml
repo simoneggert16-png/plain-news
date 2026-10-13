@@ -25,15 +25,19 @@ jobs:
       - run: npm ci
       - name: Run AI newsroom
         env:
-          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
+          DESK_MODEL: nvidia/nemotron-3-ultra-550b-a55b
+          WRITER_MODEL: nvidia/nemotron-3-ultra-550b-a55b
+          TRANSLATOR_MODEL: nvidia/llama-3.1-nemotron-70b-instruct
+          EDITOR_MODEL: nvidia/nemotron-3-ultra-550b-a55b
           MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '10' }}
           MAX_PER_CATEGORY: '3'
         run: node bots/newsroom.mjs
       - name: Commit new stories
         run: |
-          git config user.name  "plain-newsroom-bot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "simoneggert16-png"
+          git config user.email "simoneggert16@gmail.com"
           git add content
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC"

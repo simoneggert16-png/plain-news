@@ -13,8 +13,8 @@ if (fs.existsSync('.env')) {
   }
 }
 
-const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
+const VISION_MODEL = process.env.NVIDIA_VISION_MODEL || 'meta/llama-3.2-11b-vision-instruct';
 
 // Blacklisted phrases that indicate bad AI generation, logo captions, or meta-disclaimers
 const BANNED_CAPTION_PATTERNS = [
@@ -42,7 +42,7 @@ function isDisqualifiedCaption(captionObj) {
 
 /**
  * Multimodal AI Image Verifier & Caption Generator.
- * Powered primarily by MiniMax M3 (multimodal visual analysis) on Ollama Cloud.
+ * Powered by NVIDIA NIM Vision (meta/llama-3.2-11b-vision-instruct).
  * Enforces Swiss journalistic standards: authentic, high-res photojournalism only.
  */
 export async function verifyAndCaptionImage(imageUrl, storyContext = {}) {
@@ -88,58 +88,7 @@ Return ONLY valid raw JSON:
   "credit": "${sourceCredit || 'Reuters / AP'}"
 }`;
 
-  // 2. MiniMax M3 Multimodal Vision on Ollama Cloud
-  if (process.env.OLLAMA_API_KEY) {
-    try {
-      const res = await fetch(`${OLLAMA_BASE}/api/chat`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${process.env.OLLAMA_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: 'minimax-m3',
-          messages: [{
-            role: 'user',
-            content: prompt,
-            images: [base64],
-          }],
-          options: { temperature: 0.1 },
-          stream: false,
-        }),
-        signal: AbortSignal.timeout(30000),
-      });
-
-      if (res.ok) {
-        const json = await res.json();
-        const raw = json.message?.content || json.message?.thinking || '';
-        const match = raw.match(/\{[\s\S]*\}/);
-        if (match) {
-          const parsed = JSON.parse(match[0]);
-          if (parsed.verified === false) {
-            console.log(`  VISION MiniMax M3 rejected image: ${parsed.rejectionReason || 'Not verified'}`);
-            // Strict gate: if MiniMax M3 actively rejects, do NOT fall back to other models!
-            return null;
-          }
-          if (parsed.verified === true && parsed.caption) {
-            if (isDisqualifiedCaption(parsed.caption)) {
-              console.log(`  VISION MiniMax M3 caption contained disqualified phrases, rejecting image.`);
-              return null;
-            }
-            return {
-              verified: true,
-              caption: parsed.caption,
-              credit: parsed.credit || storyContext.sources?.[0]?.outlet || null,
-            };
-          }
-        }
-      }
-    } catch (e) {
-      console.warn('  VISION MiniMax M3 vision check encountered error, trying fallback:', e.message);
-    }
-  }
-
-  // 3. Fallback to NVIDIA Vision ONLY on network/service failure
+  // 2. NVIDIA NIM Vision (primary — no Ollama, NVIDIA-only pipeline)
   if (process.env.NVIDIA_API_KEY) {
     try {
       const res = await fetch(`${NVIDIA_BASE}/chat/completions`, {
@@ -149,7 +98,7 @@ Return ONLY valid raw JSON:
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'meta/llama-3.2-11b-vision-instruct',
+          model: VISION_MODEL,
           messages: [
             {
               role: 'user',

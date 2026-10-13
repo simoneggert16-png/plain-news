@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 
-// Explicitly load .env file so the Pro key from .env is always guaranteed
+// Explicitly load .env file
 if (fs.existsSync('.env')) {
   for (const line of fs.readFileSync('.env', 'utf8').split('\n')) {
     const trimmed = line.trim();
@@ -13,36 +13,41 @@ if (fs.existsSync('.env')) {
   }
 }
 
-// Multi-Provider LLM Client: Ollama Cloud (DeepSeek v4.1 Flash, MiniMax M3) + NVIDIA NIM
-const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
+// ─── NVIDIA NIM Client — Primary LLM Provider ───────────────────────────────
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
+// Nemotron 550B is the primary model for all roles
+const NEMOTRON_550B  = 'nvidia/nemotron-3-ultra-550b-a55b';
+// Fast fallback: Nemotron 70B or Llama-3.1 Nemotron 70B
+const NEMOTRON_70B   = 'nvidia/llama-3.1-nemotron-70b-instruct';
+// Lighter fallback: 51B instruct
+const NEMOTRON_51B   = 'nvidia/llama-3.1-nemotron-51b-instruct';
+
 export const MODELS = {
-  // Fast headline clustering
-  desk: [process.env.DESK_MODEL, 'deepseek-v4.1-flash', 'glm-5.3-flash', 'minimax-m3'].filter(Boolean),
+  // Fast headline clustering — use 70B for speed, 550B as fallback
+  desk:       [process.env.DESK_MODEL       || NEMOTRON_550B, NEMOTRON_70B, NEMOTRON_51B],
   // In-depth neutral reporting & multilingual translation
-  writer: [process.env.WRITER_MODEL, 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
-  translator: [process.env.TRANSLATOR_MODEL, 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
+  writer:     [process.env.WRITER_MODEL     || NEMOTRON_550B, NEMOTRON_70B],
+  translator: [process.env.TRANSLATOR_MODEL || NEMOTRON_70B,  NEMOTRON_51B],
   // Independent standards editor & adversarial verification
-  editor: [process.env.EDITOR_MODEL, 'glm-5.3-flash', 'deepseek-v4.1-flash', 'minimax-m3'].filter(Boolean),
+  editor:     [process.env.EDITOR_MODEL     || NEMOTRON_550B, NEMOTRON_70B],
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function callOllama(model, messages, { temperature = 0.2, timeoutMs = 60_000 } = {}) {
-  const key = process.env.OLLAMA_API_KEY;
-  if (!key) throw new Error('OLLAMA_API_KEY missing');
+async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 120_000 } = {}) {
+  const key = process.env.NVIDIA_API_KEY;
+  if (!key) throw new Error('NVIDIA_API_KEY missing');
 
-  const res = await fetch(`${OLLAMA_BASE}/api/chat`, {
+  const res = await fetch(`${NVIDIA_BASE}/chat/completions`, {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-    },
+    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model,
-      messages: messages.map(m => ({ role: m.role, content: m.content })),
-      options: { temperature },
+      messages,
+      temperature,
+      top_p: 0.9,
+      max_tokens: maxTokens,
       stream: false,
     }),
     signal: AbortSignal.timeout(timeoutMs),
@@ -50,30 +55,7 @@ async function callOllama(model, messages, { temperature = 0.2, timeoutMs = 60_0
 
   if (!res.ok) {
     const body = await res.text().catch(() => '');
-    const err = new Error(`Ollama ${model} HTTP ${res.status}: ${body.slice(0, 200)}`);
-    err.status = res.status;
-    throw err;
-  }
-
-  const json = await res.json();
-  const msg = json.message || {};
-  return (msg.content && msg.content.trim()) ? msg.content : (msg.thinking || '');
-}
-
-async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90_000 } = {}) {
-  const key = process.env.NVIDIA_API_KEY;
-  if (!key) throw new Error('NVIDIA_API_KEY missing');
-
-  const res = await fetch(`${NVIDIA_BASE}/chat/completions`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model, messages, temperature, top_p: 0.9, max_tokens: maxTokens, stream: false }),
-    signal: AbortSignal.timeout(timeoutMs),
-  });
-
-  if (!res.ok) {
-    const body = await res.text().catch(() => '');
-    const err = new Error(`Nvidia ${model} HTTP ${res.status}: ${body.slice(0, 200)}`);
+    const err = new Error(`Nvidia ${model} HTTP ${res.status}: ${body.slice(0, 300)}`);
     err.status = res.status;
     throw err;
   }
@@ -81,45 +63,40 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
   const json = await res.json();
   const choice = json.choices?.[0];
   const msg = choice?.message || {};
+
+  // Nemotron 550B reasoning model: prefer content, fall back to reasoning_content
   let out = (msg.content && msg.content.trim()) ? msg.content : (msg.reasoning_content || '');
-  if (msg.content && msg.reasoning_content && !msg.content.includes('{') && msg.reasoning_content.includes('{')) {
+  if (msg.reasoning_content && msg.content && !msg.content.includes('{') && msg.reasoning_content.includes('{')) {
     out = msg.reasoning_content;
   }
-  return out;
-}
-
-async function once(model, messages, opts = {}) {
-  if (model.startsWith('deepseek') || model.startsWith('minimax') || model.startsWith('glm') || model.startsWith('kimi') || model.startsWith('gemma') || model.startsWith('gpt-oss') || model.startsWith('nemotron')) {
-    return callOllama(model, messages, opts);
-  }
-  return callNvidia(model, messages, opts);
+  return out.trim();
 }
 
 const disabledModels = new Map();
 
-/** Chat with fallback across a list of models. Returns { text, model }. */
+/** Chat with fallback across a list of NVIDIA models. Returns { text, model }. */
 export async function chat(role, messages, opts = {}) {
   const models = MODELS[role] || [role];
   let lastErr;
   const now = Date.now();
+
   for (const model of [...new Set(models)]) {
     if (disabledModels.has(model) && disabledModels.get(model) > now) {
       continue;
     }
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        const text = await once(model, messages, opts);
+        const text = await callNvidia(model, messages, opts);
         if (!text.trim()) throw new Error(`${model} returned empty output`);
         return { text, model };
       } catch (e) {
         lastErr = e;
         if (e.status === 402 || e.status === 401 || e.status === 403) {
-          // Cooldown for 15 minutes so we don't spam failing requests during translation/batches
           disabledModels.set(model, Date.now() + 15 * 60 * 1000);
           break;
         }
         if (e.status === 404 || e.status === 400) break;
-        await sleep(1500 * (attempt + 1));
+        await sleep(2000 * (attempt + 1));
       }
     }
     console.warn(`  ↳ model ${model} failed: ${lastErr?.message}`);

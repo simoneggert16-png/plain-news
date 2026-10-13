@@ -31,8 +31,8 @@ jobs:
         run: npm run build
       - name: Commit
         run: |
-          git config user.name  "plain-maintenance-bot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "simoneggert16-png"
+          git config user.email "simoneggert16@gmail.com"
           git add content
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "maintenance: $(date -u +'%Y-%m-%d') "
