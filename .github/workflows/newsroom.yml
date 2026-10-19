@@ -2,20 +2,23 @@ name: Newsroom
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # every 15 minutes -> ~4 runs/hour x 4 stories = 10+/hour
+    # Every 20 minutes -> 3 runs/hour × up to 4 stories = up to 12 stories/hour.
+    # 20 minutes (not 15) leaves room for the reporter/editor/translation pipeline
+    # to finish before the next run, so scheduled runs are not cancelled.
+    - cron: '*/20 * * * *'
   workflow_dispatch: {}       # manual "Run workflow" button
 
 permissions:
   contents: write
 
 concurrency:
-  group: content-bots
+  group: newsroom
   cancel-in-progress: false
 
 jobs:
   newsroom:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,13 +27,24 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Run AI newsroom
+        timeout-minutes: 16
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
           MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '4' }}
-          MAX_PER_CATEGORY: '4'
+          MAX_PER_CATEGORY: '2'
+          TARGET_PER_CATEGORY_PER_HOUR: '2'
+          EVENT_CONCURRENCY: '4'
+          TRANSLATION_CONCURRENCY: '8'
+          RUN_BUDGET_MINUTES: '15'
+          MAX_ARTICLES_PER_DAY: '300'
+          MAX_AGE_HOURS: '12'
+          PER_FEED: '20'
+          DESK_BATCH_SIZE: '60'
+          DESK_MAX_BATCHES: '2'
         run: node bots/newsroom.mjs
       - name: Commit new stories
+        if: always()
         run: |
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"

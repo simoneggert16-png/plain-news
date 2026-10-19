@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { localize } from '@/lib/content.mjs';
-import { fmtDate } from '@/lib/format.mjs';
+import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 
 export default function Card({ a, locale, t, bcp }) {
   const l = localize(a, locale);
@@ -23,7 +23,7 @@ export default function Card({ a, locale, t, bcp }) {
       </div>
       <h3>{l.title}</h3>
       <p>{l.dek}</p>
-      <span className="meta">{fmtDate(a.publishedAt, bcp)} · {a.sourceCount} {t.sources}</span>
+      <span className="meta">{fmtDate(a.publishedAt, bcp)} · {sourceLabel(a, t)}</span>
     </Link>
   );
 }

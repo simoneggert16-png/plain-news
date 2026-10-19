@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { classifySources, distinctOutlets } from '../../lib/editorial.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const CONTENT = path.join(ROOT, 'content');
@@ -32,7 +33,8 @@ export function toIndexEntry(a) {
     importance: a.importance,
     publishedAt: a.publishedAt,
     updatedAt: a.updatedAt,
-    sourceCount: new Set(a.sources.map((s) => s.outlet)).size,
+    sourceCount: distinctOutlets(a.sources || []).length,
+    sourcePolicy: a.sourcePolicy || classifySources(a.sources || []).policy,
     locales: Object.fromEntries(Object.entries(a.locales).map(([l, v]) => [
       l,
       {

@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: content-bots
+  group: maintenance
   cancel-in-progress: false
 
 jobs:

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mjs';
-import { fmtDate } from '@/lib/format.mjs';
+import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
 import ArticleComments from '@/components/ArticleComments';
@@ -120,7 +120,7 @@ export default async function ArticlePage({ params }) {
           <span>{fmtDate(a.publishedAt, bcp, { year: 'numeric' })}</span>
           {a.updatedAt && a.updatedAt !== a.publishedAt && <span>{t.updated} {fmtDate(a.updatedAt, bcp)}</span>}
           <span>{fmt(t.minRead, { n: readingMinutes(a, locale) })}</span>
-          <span>{outlets} {t.sources}</span>
+          <span>{sourceLabel({ ...a, sourceCount: outlets }, t)}</span>
         </div>
         <ArticleActions slug={a.slug} title={l.title} locale={locale} isDe={locale === 'de'} />
         {a.video ? (

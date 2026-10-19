@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { LOCALES, LOCALE_CODES, CATEGORIES, SITE, isCategory } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
-import { fmtDate } from '@/lib/format.mjs';
+import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import SportsLiveSidebar from '@/components/SportsLiveSidebar';
 import CommunitySubmitSection from '@/components/CommunitySubmitSection';
 
@@ -73,7 +73,7 @@ export default async function CategoryPage({ params }) {
                   const l = localize(a, locale);
                   return (
                     <Link key={a.slug} href={`/${locale}/a/${a.slug}`} className="row">
-                      <span className="meta">{fmtDate(a.publishedAt, bcp)}<br />{a.sourceCount} {t.sources}</span>
+                      <span className="meta">{fmtDate(a.publishedAt, bcp)}<br />{sourceLabel(a, t)}</span>
                       <h3>{l.title}</h3>
                       <p>{l.dek}</p>
                     </Link>
@@ -97,7 +97,7 @@ export default async function CategoryPage({ params }) {
               const l = localize(a, locale);
               return (
                 <Link key={a.slug} href={`/${locale}/a/${a.slug}`} className="row">
-                  <span className="meta">{fmtDate(a.publishedAt, bcp)}<br />{a.sourceCount} {t.sources}</span>
+                  <span className="meta">{fmtDate(a.publishedAt, bcp)}<br />{sourceLabel(a, t)}</span>
                   <h3>{l.title}</h3>
                   <p>{l.dek}</p>
                 </Link>

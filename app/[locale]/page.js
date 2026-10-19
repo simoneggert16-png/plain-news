@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { LOCALES, CATEGORIES } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
-import { fmtDate } from '@/lib/format.mjs';
+import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
 import TopicFilter from '@/components/TopicFilter';
@@ -79,7 +79,7 @@ export default async function Home({ params }) {
             </ul>
           )}
           <div className="meta">
-            {fmtDate(lead.publishedAt, bcp)} · {t.sources}: {lead.sourceCount}
+            {fmtDate(lead.publishedAt, bcp)} · {sourceLabel(lead, t)}
           </div>
         </article>
         <aside className="brief">
