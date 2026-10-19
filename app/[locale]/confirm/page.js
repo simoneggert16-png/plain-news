@@ -1,80 +1,94 @@
 'use client';
-import { useState, useEffect, Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useParams } from 'next/navigation';
+import { getSupabaseBrowserClient } from '@/lib/supabase-browser';
 
 function ConfirmContent() {
   const searchParams = useSearchParams();
   const params = useParams();
   const locale = params?.locale || 'de';
   const isDe = locale === 'de';
-
-  const token = searchParams.get('token');
-  const email = searchParams.get('email');
-
+  const code = searchParams.get('code');
+  const authError = searchParams.get('error_description') || searchParams.get('error');
   const [loading, setLoading] = useState(true);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [userInfo, setUserInfo] = useState({ username: '', email: '' });
 
   useEffect(() => {
-    if (!token) {
-      setError(isDe ? 'Kein Bestätigungs-Token gefunden.' : 'No verification token provided.');
-      setLoading(false);
-      return;
-    }
-
+    let active = true;
     async function verify() {
       try {
-        const res = await fetch(`/api/auth/verify?token=${encodeURIComponent(token)}&email=${encodeURIComponent(email || '')}`);
-        const data = await res.json();
+        if (authError) throw new Error(authError);
+        const supabase = getSupabaseBrowserClient();
+        if (code) {
+          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+          if (exchangeError) throw exchangeError;
+        }
 
-        if (res.ok && data.success) {
-          setSuccess(true);
-          setUserInfo({
-            username: data.username || 'Leser',
-            email: data.email || email,
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+        if (sessionError) throw sessionError;
+        if (!session?.user?.email_confirmed_at) {
+          throw new Error(isDe
+            ? 'Bestätigungslink ungültig oder abgelaufen. Bitte melde dich erneut an.'
+            : 'Verification link is invalid or expired. Please sign in again.');
+        }
+
+        const user = session.user;
+        const username = user.user_metadata?.username || user.email.split('@')[0];
+        const userInfoCookie = {
+          v: 2,
+          name: username,
+          username,
+          email: user.email,
+          provider: user.app_metadata?.provider || 'email',
+          avatar: username.charAt(0).toUpperCase(),
+          verified: true,
+        };
+        document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(userInfoCookie))};path=/;max-age=2592000;samesite=lax`;
+        if (Array.isArray(user.user_metadata?.topics)) {
+          document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(user.user_metadata.topics))};path=/;max-age=31536000;samesite=lax`;
+        }
+
+        if (user.user_metadata?.newsletter === true) {
+          const response = await fetch('/api/community/newsletter', {
+            method: 'POST',
+            headers: { Authorization: `Bearer ${session.access_token}` },
           });
+          if (!response.ok) {
+            const result = await response.json().catch(() => ({}));
+            throw new Error(result.error || 'Newsletter konnte nicht aktiviert werden.');
+          }
+        }
 
-          // Update cookie if session exists
-          try {
-            const rawSession = document.cookie
-              .split('; ')
-              .find((row) => row.startsWith('plain_session='));
-            if (rawSession) {
-              const sessionVal = JSON.parse(decodeURIComponent(rawSession.split('=')[1]));
-              sessionVal.verified = true;
-              sessionVal.verifiedAt = new Date().toISOString();
-              document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionVal))};path=/;max-age=2592000;samesite=lax`;
-            }
-          } catch {}
-        } else {
-          setError(data.error || (isDe ? 'Bestätigungslink ungültig oder abgelaufen.' : 'Verification link is invalid or expired.'));
+        if (active) {
+          setUserInfo({ username, email: user.email });
+          setSuccess(true);
         }
       } catch (err) {
-        setError(isDe ? 'Netzwerkfehler bei der Bestätigung.' : 'Network error during verification.');
+        if (active) setError(err.message || (isDe ? 'Bestätigung fehlgeschlagen.' : 'Email confirmation failed.'));
       } finally {
-        setLoading(false);
+        if (active) setLoading(false);
       }
     }
 
     verify();
-  }, [token, email, isDe]);
+    return () => { active = false; };
+  }, [authError, code, isDe]);
 
   return (
     <div className="register-page-container">
       <div className="register-card" style={{ maxWidth: '580px', margin: '40px auto' }}>
         <div className="register-header">
           <div className="label">{isDe ? 'PLAIN. KONTO-VERIFIZIERUNG' : 'PLAIN. ACCOUNT VERIFICATION'}</div>
-          <h1 className="register-title">
-            {isDe ? 'E-Mail-Bestätigung' : 'Email Confirmation'}
-          </h1>
+          <h1 className="register-title">{isDe ? 'E-Mail-Bestätigung' : 'Email Confirmation'}</h1>
         </div>
 
         {loading && (
           <div style={{ padding: '30px 0', textAlign: 'center' }}>
             <p style={{ fontFamily: 'var(--mono)', fontSize: '13px', color: 'var(--muted)' }}>
-               {isDe ? 'Bestätige E-Mail-Adresse und schalte Konto frei…' : 'Verifying email address and activating account…'}
+              {isDe ? 'Bestätige E-Mail-Adresse und schalte Konto frei…' : 'Verifying email address and activating account…'}
             </p>
           </div>
         )}
@@ -84,13 +98,11 @@ function ConfirmContent() {
             <div className="comment-moderation-success" style={{ fontSize: '14px', padding: '16px 20px', marginBottom: '24px' }}>
               <strong>✓ {isDe ? 'E-Mail-Adresse erfolgreich bestätigt!' : 'Email successfully verified!'}</strong>
             </div>
-
             <p style={{ fontSize: '14.5px', lineHeight: '1.6', marginBottom: '20px' }}>
               {isDe
-                ? `Willkommen, ${userInfo.username || 'Leser'}! Dein PLAIN-Konto für ${userInfo.email || email} wurde erfolgreich verifiziert. Du hast jetzt vollen Zugriff auf personalisierte Themen, Community-Debatten und dein Notizbuch.`
-                : `Welcome, ${userInfo.username || 'Reader'}! Your PLAIN account for ${userInfo.email || email} is now verified. You now have full access to personalized feeds, reader debates, and your research notebook.`}
+                ? `Willkommen, ${userInfo.username}! Dein Konto für ${userInfo.email} ist aktiviert.`
+                : `Welcome, ${userInfo.username}! Your account for ${userInfo.email} is active.`}
             </p>
-
             <div style={{ display: 'flex', gap: '12px', marginTop: '28px' }}>
               <Link href={`/${locale}`} className="btn btn-inv" style={{ flex: 1, textAlign: 'center', padding: '12px 20px' }}>
                 {isDe ? 'Zum Newsfeed →' : 'Go to Feed →'}
@@ -107,13 +119,6 @@ function ConfirmContent() {
             <div className="comment-moderation-alert" style={{ fontSize: '14px', padding: '16px 20px', marginBottom: '24px' }}>
               <strong>✕ {error}</strong>
             </div>
-
-            <p style={{ fontSize: '14px', lineHeight: '1.6', marginBottom: '20px', color: 'var(--muted)' }}>
-              {isDe
-                ? 'Der Link ist möglicherweise abgelaufen oder wurde bereits verwendet. Du kannst dich jederzeit neu registrieren oder einloggen.'
-                : 'The link might have expired or been used already. You can register again or log in at any time.'}
-            </p>
-
             <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
               <Link href={`/${locale}/register`} className="btn btn-inv" style={{ flex: 1, textAlign: 'center' }}>
                 {isDe ? 'Zur Registrierung' : 'Back to Register'}
@@ -131,15 +136,7 @@ function ConfirmContent() {
 
 export default function ConfirmPage() {
   return (
-    <Suspense fallback={
-      <div className="register-page-container">
-        <div className="register-card" style={{ maxWidth: '580px', margin: '40px auto', textAlign: 'center', padding: '40px 20px' }}>
-          <p style={{ fontFamily: 'var(--mono)', fontSize: '13px', color: 'var(--muted)' }}>
-            Lade Verifizierung…
-          </p>
-        </div>
-      </div>
-    }>
+    <Suspense fallback={<div className="register-page-container"><div className="register-card">Lade Verifizierung…</div></div>}>
       <ConfirmContent />
     </Suspense>
   );

@@ -1,63 +1,45 @@
 import { NextResponse } from 'next/server';
-import fs from 'node:fs';
-import path from 'node:path';
-
-const newsletterFilePath = path.join(process.cwd(), 'content', 'community', 'newsletter.json');
-
-function readSubscribers() {
-  try {
-    if (!fs.existsSync(newsletterFilePath)) {
-      return [];
-    }
-    const raw = fs.readFileSync(newsletterFilePath, 'utf8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('Failed to read newsletter subscribers:', err);
-    return [];
-  }
-}
-
-function writeSubscribers(data) {
-  try {
-    fs.mkdirSync(path.dirname(newsletterFilePath), { recursive: true });
-    fs.writeFileSync(newsletterFilePath, JSON.stringify(data, null, 2), 'utf8');
-  } catch (err) {
-    console.error('Failed to save newsletter subscribers:', err);
-  }
-}
+import { createClient } from '@supabase/supabase-js';
+import { getSupabaseAdminClient } from '@/lib/supabase-admin.mjs';
 
 export async function POST(request) {
   try {
-    const body = await request.json();
-    const { email, topics, locale } = body || {};
-
-    if (!email || !email.includes('@')) {
-      return NextResponse.json({ error: 'Valid email required' }, { status: 400 });
+    const accessToken = request.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
+    if (!accessToken) {
+      return NextResponse.json({ error: 'Sign in with a verified email first.' }, { status: 401 });
     }
 
-    const cleanEmail = email.trim().toLowerCase();
-    const subscribers = readSubscribers();
-
-    const existingIndex = subscribers.findIndex(s => s.email === cleanEmail);
-    const entry = {
-      email: cleanEmail,
-      subscribedAt: new Date().toISOString(),
-      topics: Array.isArray(topics) ? topics : ['world', 'politics', 'business', 'tech', 'science'],
-      locale: locale || 'de',
-      status: 'active',
-    };
-
-    if (existingIndex >= 0) {
-      subscribers[existingIndex] = { ...subscribers[existingIndex], ...entry };
-    } else {
-      subscribers.push(entry);
+    const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !anonKey) {
+      throw new Error('Supabase public credentials are not configured.');
+    }
+    const authClient = createClient(url, anonKey, {
+      auth: { autoRefreshToken: false, persistSession: false },
+    });
+    const { data: { user }, error: authError } = await authClient.auth.getUser(accessToken);
+    if (authError || !user?.email || !user.email_confirmed_at) {
+      return NextResponse.json({ error: 'Email verification is required.' }, { status: 403 });
+    }
+    if (user.user_metadata?.newsletter !== true) {
+      return NextResponse.json({ error: 'Newsletter consent was not provided.' }, { status: 403 });
     }
 
-    writeSubscribers(subscribers);
+    const { error } = await getSupabaseAdminClient()
+      .from('newsletter_subscribers')
+      .upsert({
+        email: user.email.toLowerCase(),
+        locale: user.user_metadata?.locale || 'de',
+        topics: Array.isArray(user.user_metadata?.topics) ? user.user_metadata.topics : [],
+        active: true,
+        subscribed_at: new Date().toISOString(),
+        unsubscribed_at: null,
+      }, { onConflict: 'email' });
+    if (error) throw error;
 
-    return NextResponse.json({ success: true, subscribed: true, email: cleanEmail });
+    return NextResponse.json({ success: true, subscribed: true });
   } catch (err) {
-    console.error('Error handling newsletter:', err);
+    console.error('Error handling newsletter:', err.message);
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

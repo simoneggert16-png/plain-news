@@ -1,11 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { ALL_BEATS, DEFAULT_ACTIVE_TOPICS } from '@/lib/topics.mjs';
+import { getSupabaseBrowserClient } from '@/lib/supabase-browser';
 
 export default function RegisterPage() {
-  const router = useRouter();
   const params = useParams();
   const locale = params?.locale || 'de';
   const isDe = locale === 'de';
@@ -20,7 +20,6 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [emailDetails, setEmailDetails] = useState(null);
-  const [showEmailPreviewModal, setShowEmailPreviewModal] = useState(false);
 
   function toggleTopic(id) {
     if (selectedTopics.includes(id)) {
@@ -57,8 +56,8 @@ export default function RegisterPage() {
       return;
     }
 
-    if (!password || password.length < 6) {
-      setError(isDe ? 'Das Passwort muss mindestens 6 Zeichen lang sein.' : 'Password must be at least 6 characters.');
+    if (!password || password.length < 8) {
+      setError(isDe ? 'Das Passwort muss mindestens 8 Zeichen lang sein.' : 'Password must be at least 8 characters.');
       return;
     }
 
@@ -70,65 +69,31 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      // 1. Newsletter registration
-      if (newsletter) {
-        await fetch('/api/community/newsletter', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: cleanEmail,
+      const supabase = getSupabaseBrowserClient();
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: cleanEmail,
+        password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/${locale}/confirm`,
+          data: {
+            username: cleanUser,
+            newsletter,
             topics: selectedTopics,
             locale,
-          }),
-        }).catch(() => {});
+          },
+        },
+      });
+      if (signUpError) throw signUpError;
+      if (data.session) {
+        document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(selectedTopics))};path=/;max-age=31536000;samesite=lax`;
       }
 
-      // 2. Dispatch Confirmation Email via backend API
-      const mailRes = await fetch('/api/auth/send-confirmation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: cleanEmail,
-          username: cleanUser,
-          locale,
-          topics: selectedTopics,
-        }),
-      });
-
-      const mailData = await mailRes.json().catch(() => ({}));
-
-      // 3. Save topics to cookie
-      document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(selectedTopics))};path=/;max-age=31536000;samesite=lax`;
-
-      // 4. Create Session Payload
-      const sessionPayload = {
-        v: 2,
-        name: cleanUser,
-        username: cleanUser,
-        email: cleanEmail,
-        provider: 'email',
-        avatar: cleanUser.charAt(0).toUpperCase(),
-        topics: selectedTopics,
-        newsletter,
-        registeredAt: new Date().toISOString(),
-        verified: false,
-      };
-
-      document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionPayload))};path=/;max-age=2592000;samesite=lax`;
-
-      setEmailDetails({
-        email: cleanEmail,
-        username: cleanUser,
-        confirmUrl: mailData.confirmUrl,
-        htmlPreview: mailData.htmlPreview,
-        deliveryMethod: mailData.deliveryMethod,
-      });
-
+      setEmailDetails({ email: cleanEmail, newsletter });
       setSuccess(true);
       setLoading(false);
     } catch (err) {
       console.error(err);
-      setError(isDe ? 'Registrierung fehlgeschlagen. Bitte erneut versuchen.' : 'Registration failed. Please retry.');
+      setError(err.message || (isDe ? 'Registrierung fehlgeschlagen. Bitte erneut versuchen.' : 'Registration failed. Please retry.'));
       setLoading(false);
     }
   }
@@ -150,98 +115,30 @@ export default function RegisterPage() {
 
         {success && emailDetails ? (
           <div className="register-success-box" style={{ background: '#f8f8f6', border: '2px solid #000', padding: '28px 24px', boxShadow: '5px 5px 0 #000', marginTop: '16px' }}>
-            <div className="label" style={{ color: '#16a34a' }}>✓ {isDe ? 'REGISTRIERUNG ERFOLGREICH' : 'REGISTRATION SUCCESSFUL'}</div>
+            <div className="label" style={{ color: '#16a34a' }}>✓ {isDe ? 'REGISTRIERUNG GESTARTET' : 'REGISTRATION STARTED'}</div>
             <h2 style={{ fontSize: '20px', fontWeight: 900, textTransform: 'uppercase', margin: '8px 0 14px 0' }}>
                {isDe ? 'Bestätigungs-Mail wurde versendet' : 'Confirmation Email Sent'}
             </h2>
             <p style={{ fontSize: '14.5px', lineHeight: '1.6', marginBottom: '16px' }}>
               {isDe
-                ? `Wir haben eine Bestätigungs-E-Mail an `
-                : `We sent a confirmation email to `}
+                ? `Supabase sendet eine Bestätigungs-E-Mail an `
+                : `A confirmation email is being sent to `}
               <strong>{emailDetails.email}</strong>
               {isDe
-                ? ` gesendet. Bitte klicke auf den Bestätigungslink in der Mail, um dein Konto zu aktivieren.`
-                : `. Please click the activation link in your inbox to verify your account.`}
+                ? ` . Bitte bestätige deine Adresse über den Link in der Mail.`
+                : `. Please use the link in that email to verify your address.`}
+              {emailDetails.newsletter && (
+                <>{' '}{isDe
+                  ? 'Der tägliche Newsletter wird nach der E-Mail-Bestätigung aktiviert.'
+                  : 'Your daily newsletter subscription will activate after email verification.'}</>
+              )}
             </p>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '24px' }}>
-              {emailDetails.confirmUrl && (
-                <a
-                  href={emailDetails.confirmUrl}
-                  className="btn btn-inv"
-                  style={{ textDecoration: 'none', display: 'inline-block' }}
-                >
-                  ✓ {isDe ? 'Jetzt direkt bestätigen (Aktivierungslink)' : 'Verify Now (Direct Link)'}
-                </a>
-              )}
-              {emailDetails.htmlPreview && (
-                <button
-                  type="button"
-                  onClick={() => setShowEmailPreviewModal(true)}
-                  className="btn"
-                  style={{ background: '#fff' }}
-                >
-                   {isDe ? 'E-Mail-Vorschau ansehen' : 'View Email Preview'}
-                </button>
-              )}
               <Link href={`/${locale}`} className="btn" style={{ background: '#fff' }}>
                 {isDe ? 'Weiter zum Newsfeed →' : 'Continue to Feed →'}
               </Link>
             </div>
-
-            {/* Email Preview Modal */}
-            {showEmailPreviewModal && (
-              <div
-                style={{
-                  position: 'fixed',
-                  inset: 0,
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                  zIndex: 9999,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '20px',
-                }}
-              >
-                <div
-                  style={{
-                    backgroundColor: '#fff',
-                    maxWidth: '640px',
-                    width: '100%',
-                    maxHeight: '90vh',
-                    overflowY: 'auto',
-                    border: '3px solid #000',
-                    boxShadow: '8px 8px 0 #000',
-                    padding: '24px',
-                    position: 'relative',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid #ddd', paddingBottom: '12px' }}>
-                    <span className="label"> {isDe ? 'POSTEINGANG VORSCHAU' : 'INBOX PREVIEW'}</span>
-                    <button
-                      type="button"
-                      onClick={() => setShowEmailPreviewModal(false)}
-                      style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer', fontWeight: 'bold' }}
-                    >
-                      ✕
-                    </button>
-                  </div>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: emailDetails.htmlPreview }}
-                    style={{ border: '1px solid #eee', padding: '12px' }}
-                  />
-                  <div style={{ marginTop: '20px', textAlign: 'right' }}>
-                    <button
-                      type="button"
-                      onClick={() => setShowEmailPreviewModal(false)}
-                      className="btn btn-inv"
-                    >
-                      {isDe ? 'Schliessen' : 'Close'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         ) : (
           <form onSubmit={handleRegister} className="register-form">
@@ -272,11 +169,11 @@ export default function RegisterPage() {
               </div>
 
               <div className="auth-field">
-                <label className="label">{isDe ? 'Passwort (mind. 6 Zeichen)*' : 'Password (min. 6 chars)*'}</label>
+                <label className="label">{isDe ? 'Passwort (mind. 8 Zeichen)*' : 'Password (min. 8 chars)*'}</label>
                 <input
                   type="password"
                   required
-                  minLength={6}
+                  minLength={8}
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -289,7 +186,7 @@ export default function RegisterPage() {
                 <input
                   type="password"
                   required
-                  minLength={6}
+                  minLength={8}
                   placeholder="••••••••"
                   value={passwordConfirm}
                   onChange={(e) => setPasswordConfirm(e.target.value)}
@@ -312,8 +209,8 @@ export default function RegisterPage() {
                   <br />
                   <span style={{ fontSize: '12px', color: 'var(--muted)' }}>
                     {isDe
-                      ? 'Erhalte morgens um 07:00 eine werbefreie Zusammenfassung der wichtigsten Welt- und Schweizer Ereignisse.'
-                      : 'Receive an ad-free 7:00 AM summary of crucial Swiss and global events.'}
+                      ? 'Erhalte täglich ein werbefreies Briefing mit den wichtigsten Welt- und Schweizer Ereignissen.'
+                      : 'Receive a daily ad-free briefing of important Swiss and global news.'}
                   </span>
                 </span>
               </label>

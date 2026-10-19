@@ -54,22 +54,32 @@ Das Portal ist für **Vercel** optimiert:
 - **Git-basiert**: Jedes Mal, wenn die Bots neuen Content pushen, aktualisiert sich die Seite automatisch ohne Downtime.
 
 ### 2. Autonome Bots via GitHub Actions
-In `.github/workflows/` sind zwei Workflows hinterlegt:
-- `newsroom.yml`: Läuft **alle 5 Stunden** (`cron: '17 */5 * * *'`), ruft die Feeds ab und generiert bis zu **5 verifizierte Stories pro Kategorie** (max. 45 pro Lauf). Die Desk-Agenten laufen parallel (Standard: 3 gleichzeitig), damit der Lauf innerhalb des Timeouts bleibt.
+In `.github/workflows/` sind drei Workflows hinterlegt:
+- `newsroom.yml`: Läuft **stündlich** (`cron: '17 * * * *'`) und hat keine feste Obergrenze pro Kategorie, pro Lauf oder pro Tag. Wie viele Artikel tatsächlich erscheinen, hängt von aktuellen, ausreichend belegten Meldungen und dem Laufzeitbudget ab. Community-Beiträge sind davon ausgenommen.
 - `maintenance.yml`: Läuft täglich um 03:40 UTC für Cleanup und Re-Indexing.
+- `newsletter.yml`: Sendet täglich um 06:15 UTC ein Briefing mit den wichtigsten neuen Artikeln an bestätigte Abonnenten.
 
 **Einrichtung auf GitHub:**
 1. Repository auf GitHub pushen.
 2. In den Repository-Einstellungen unter `Settings -> Secrets and variables -> Actions` die Secrets hinterlegen:
    - `NVIDIA_API_KEY`: Dein NVIDIA NIM API Key
    - `OLLAMA_API_KEY`: Dein Ollama-Cloud-Key
-3. Optional unter `Settings -> Secrets and variables -> Actions -> Variables` die Kadenz steuern:
-   - `MAX_STORIES_PER_RUN` (Standard `45`)
-   - `MAX_PER_CATEGORY` (Standard `5`)
-   - `EVENT_CONCURRENCY` (Standard `3`)
-   - `TRANSLATION_CONCURRENCY` (Standard `4`)
+3. Optional unter `Settings -> Secrets and variables -> Actions -> Variables` die Parallelität steuern:
+   - `EVENT_CONCURRENCY` (Standard `4`)
+   - `TRANSLATION_CONCURRENCY` (Standard `8`)
 
-Wichtig: Die 5 Stories pro Kategorie sind ein **Ziel**, kein Zwang. Gibt es für eine Kategorie keine ausreichend belegte neue Meldung, wird sie nicht mit erfundenen Inhalten aufgefüllt. Das ist bewusst so.
+Wichtig: Der Bot priorisiert zuerst Kategorien, die im letzten Stundenfenster noch keine Meldung erhalten haben. Veröffentlicht wird weiterhin nur, wenn mindestens zwei unabhängige Medien oder eine zulässige Primärquelle die Meldung belegen; es werden keine Inhalte erfunden. Die Recherche bleibt durch Feeds und Laufzeitbudget begrenzt. Bei `MAX_STORIES_PER_RUN`, `MAX_PER_CATEGORY`, `TARGET_PER_CATEGORY_PER_CYCLE` und `MAX_ARTICLES_PER_DAY` bedeutet `0`: kein zahlenmäßiges Limit.
+
+### 3. Kostenlose Anmeldung und täglicher Newsletter
+Konten und E-Mail-Bestätigungen laufen über Supabase Auth; Newsletter-Adressen liegen in Supabase. Apple-Anmeldung ist entfernt. Google kann optional in Supabase OAuth aktiviert werden. Der Newsletter-Workflow läuft täglich um 06:15 UTC; Resends kostenlose Stufe hat Versandlimits.
+
+1. Erstelle ein kostenloses Supabase-Projekt und führe `supabase/schema.sql` im SQL Editor aus.
+2. In Supabase → Authentication → URL Configuration setze die Site URL auf `https://www.plain-news.ch` und erlaube `https://www.plain-news.ch/**` sowie `http://localhost:3000/**`. Aktiviere E-Mail-Bestätigung. Lege bei Bedarf in Supabase → Authentication → SMTP Settings Resend als SMTP-Anbieter fest.
+3. Lege in Vercel `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_URL` und `SUPABASE_SERVICE_ROLE_KEY` an. Der Service-Role-Key darf nur serverseitig verwendet werden.
+4. Für Bestätigungs-/Reset-Mails und den täglichen Newsletter richte ein kostenloses Resend-Konto ein, verifiziere deine Absenderdomain und setze Resend-SMTP in Supabase. Hinterlege `RESEND_API_KEY` als GitHub Actions Secret und `RESEND_FROM_EMAIL` als Actions Variable.
+5. Dieselben Supabase-URL- und Service-Role-Werte sowie `RESEND_API_KEY` und `RESEND_FROM_EMAIL` als GitHub Actions Secrets/Variable für den Workflow `Daily newsletter` hinterlegen. `NEWSLETTER_UNSUBSCRIBE_SECRET` kann ein eigener zufälliger Secret-Wert sein; ohne ihn wird der Service-Role-Key zum Signieren der Abmeldelinks genutzt.
+
+Die Newsletter-Anmeldung wird nur mit gesetztem Opt-in und nach bestätigter E-Mail aktiviert. Jede Ausgabe enthält einen Abmeldelink. Für Google-OAuth muss zusätzlich der Google-Provider in Supabase eingerichtet und dort die Supabase-Callback-URL beim Google OAuth Client eingetragen werden.
 
 ---
 

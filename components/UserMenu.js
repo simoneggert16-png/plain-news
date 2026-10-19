@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ALL_BEATS, DEFAULT_ACTIVE_TOPICS } from '@/lib/topics.mjs';
+import { getSupabaseBrowserClient } from '@/lib/supabase-browser';
 
 // 7 Curated Swiss Palettes
 const PALETTES = [
@@ -24,7 +25,6 @@ export default function UserMenu({ locale, isDe }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [usernameInput, setUsernameInput] = useState('');
-  const [newsletterOptIn, setNewsletterOptIn] = useState(true);
   const [notice, setNotice] = useState('');
   const [loadingAuth, setLoadingAuth] = useState(false);
 
@@ -45,21 +45,40 @@ export default function UserMenu({ locale, isDe }) {
 
   // Initialize from cookies / localStorage
   useEffect(() => {
-    // 1. Session check
-    try {
-      const match = document.cookie.match(/(?:^|;\s*)plain_session=([^;]+)/);
-      if (match) {
-        const decoded = JSON.parse(decodeURIComponent(match[1]));
-        if (!decoded.v || decoded.v < 2) {
-          // Clean fresh start: wipe legacy test session
-          document.cookie = 'plain_session=;path=/;max-age=0';
-          setUser(null);
-        } else {
-          setUser(decoded);
-          if (decoded.name) setUsernameInput(decoded.name);
-        }
+    const updateUser = (authUser) => {
+      if (!authUser) {
+        setUser(null);
+        document.cookie = 'plain_session=;path=/;max-age=0';
+        return;
       }
-    } catch (e) {}
+      const username = authUser.user_metadata?.username || authUser.email?.split('@')[0] || 'Reader';
+      const profile = {
+        v: 2,
+        name: username,
+        username,
+        email: authUser.email,
+        provider: authUser.app_metadata?.provider || 'email',
+        avatar: username.charAt(0).toUpperCase(),
+        verified: Boolean(authUser.email_confirmed_at),
+      };
+      document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(profile))};path=/;max-age=2592000;samesite=lax`;
+      setUser(profile);
+      setUsernameInput(username);
+    };
+
+    let subscription;
+    try {
+      const supabase = getSupabaseBrowserClient();
+      supabase.auth.getSession().then(({ data, error }) => {
+        if (error) console.error('Could not load auth session:', error.message);
+        updateUser(data?.session?.user || null);
+      });
+      const { data } = supabase.auth.onAuthStateChange((_event, session) => updateUser(session?.user || null));
+      subscription = data.subscription;
+    } catch (error) {
+      console.error(error.message);
+      updateUser(null);
+    }
 
     // 2. Count saved articles
     try {
@@ -117,17 +136,39 @@ export default function UserMenu({ locale, isDe }) {
     try {
       if (localStorage.getItem('plain_ticker_sound') === 'true') setTickerSound(true);
     } catch (e) {}
+    return () => subscription?.unsubscribe();
   }, []);
 
-  function handleLogout() {
+  async function handleLogout() {
+    try {
+      await getSupabaseBrowserClient().auth.signOut();
+    } catch (error) {
+      setNotice(error.message || 'Sign out failed.');
+      return;
+    }
     document.cookie = 'plain_session=;path=/;max-age=0';
     setUser(null);
     setOpen(false);
     window.location.reload();
   }
 
-  function handleDeleteAccount() {
+  async function handleDeleteAccount() {
     if (window.confirm(isDe ? 'Möchtest du dein Konto wirklich unwiderruflich löschen?' : 'Do you really want to permanently delete your account?')) {
+      try {
+        const supabase = getSupabaseBrowserClient();
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) throw new Error(isDe ? 'Bitte melde dich erneut an.' : 'Please sign in again.');
+        const response = await fetch('/api/auth/account', {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${session.access_token}` },
+        });
+        if (!response.ok) throw new Error((await response.json()).error || 'Account deletion failed.');
+        const { error: signOutError } = await supabase.auth.signOut({ scope: 'local' });
+        if (signOutError) console.warn('Could not clear the local auth session:', signOutError.message);
+      } catch (error) {
+        setNotice(error.message);
+        return;
+      }
       document.cookie = 'plain_session=;path=/;max-age=0';
       try {
         localStorage.removeItem('plain_saved_articles');
@@ -146,8 +187,8 @@ export default function UserMenu({ locale, isDe }) {
       return;
     }
 
-    if (!password || password.length < 6) {
-      setNotice(isDe ? 'Passwort ist erforderlich (mindestens 6 Zeichen)!' : 'Password is required (minimum 6 characters)!');
+    if (!password || password.length < 8) {
+      setNotice(isDe ? 'Passwort ist erforderlich (mindestens 8 Zeichen)!' : 'Password is required (minimum 8 characters)!');
       return;
     }
 
@@ -156,31 +197,24 @@ export default function UserMenu({ locale, isDe }) {
 
     try {
       const cleanEmail = email.trim().toLowerCase();
-      const cleanUser = usernameInput.trim() || cleanEmail.split('@')[0];
-
-      if (newsletterOptIn) {
-        await fetch('/api/community/newsletter', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: cleanEmail,
-            topics: activeTopics,
-            locale: locale || 'de',
-          }),
-        }).catch(() => {});
+      const { data, error } = await getSupabaseBrowserClient().auth.signInWithPassword({
+        email: cleanEmail,
+        password,
+      });
+      if (error) throw error;
+      if (!data.user?.email_confirmed_at) {
+        throw new Error(isDe ? 'Bitte bestätige zuerst deine E-Mail-Adresse.' : 'Please verify your email address first.');
       }
-
+      const cleanUser = data.user.user_metadata?.username || usernameInput.trim() || cleanEmail.split('@')[0];
       const sessionPayload = {
         v: 2,
         name: cleanUser,
         username: cleanUser,
         email: cleanEmail,
         provider: 'email',
-        newsletter: newsletterOptIn,
         avatar: cleanUser.charAt(0).toUpperCase(),
-        loggedInAt: new Date().toISOString(),
+        verified: true,
       };
-
       document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionPayload))};path=/;max-age=2592000;samesite=lax`;
       setUser(sessionPayload);
       setNotice(isDe ? 'Erfolgreich angemeldet!' : 'Signed in successfully!');
@@ -190,46 +224,52 @@ export default function UserMenu({ locale, isDe }) {
         window.location.reload();
       }, 400);
     } catch (err) {
-      setNotice(isDe ? 'Anmeldung fehlgeschlagen.' : 'Login failed.');
+      setNotice(err.message || (isDe ? 'Anmeldung fehlgeschlagen.' : 'Login failed.'));
     } finally {
       setLoadingAuth(false);
     }
   }
 
-  function handleUpdateUsername(e) {
+  async function handleUpdateUsername(e) {
     e.preventDefault();
     if (!usernameInput.trim()) return;
     const clean = usernameInput.trim();
+    const { data, error } = await getSupabaseBrowserClient().auth.updateUser({ data: { username: clean } });
+    if (error) {
+      setNotice(error.message);
+      return;
+    }
     const updated = { ...user, name: clean, username: clean, avatar: clean.charAt(0).toUpperCase() };
     document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(updated))};path=/;max-age=2592000;samesite=lax`;
     setUser(updated);
-    setNotice(isDe ? 'Benutzername aktualisiert!' : 'Username updated!');
+    setNotice(data.user ? (isDe ? 'Benutzername aktualisiert!' : 'Username updated!') : '');
     setTimeout(() => setNotice(''), 2500);
   }
 
-  function handleOAuth(provider) {
-    if (provider === 'google') {
-      window.location.href = '/api/auth/google';
-      return;
+  async function handleOAuth(provider) {
+    try {
+      const { error } = await getSupabaseBrowserClient().auth.signInWithOAuth({
+        provider,
+        options: { redirectTo: `${window.location.origin}/${locale}/confirm` },
+      });
+      if (error) throw error;
+    } catch (error) {
+      setNotice(error.message || (isDe ? 'Anmeldung fehlgeschlagen.' : 'Sign in failed.'));
     }
-    const sessionPayload = {
-      name: 'Apple Nutzer',
-      username: 'apple_user',
-      email: 'apple@user.ch',
-      provider: 'apple',
-      avatar: '',
-      loggedInAt: new Date().toISOString(),
-    };
-    document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionPayload))};path=/;max-age=2592000;samesite=lax`;
-    setUser(sessionPayload);
-    setOpen(false);
-    window.location.reload();
   }
 
-  function handleForgotPassword(e) {
+  async function handleForgotPassword(e) {
     e.preventDefault();
     if (!forgotEmail || !forgotEmail.includes('@')) return;
-    setForgotSuccess(true);
+    try {
+      const { error } = await getSupabaseBrowserClient().auth.resetPasswordForEmail(forgotEmail.trim().toLowerCase(), {
+        redirectTo: `${window.location.origin}/${locale}/reset-password`,
+      });
+      if (error) throw error;
+      setForgotSuccess(true);
+    } catch (error) {
+      setNotice(error.message || (isDe ? 'Reset-Mail konnte nicht gesendet werden.' : 'Could not send reset email.'));
+    }
   }
 
   // Palette change
@@ -729,7 +769,7 @@ export default function UserMenu({ locale, isDe }) {
                         <input
                           type="password"
                           required
-                          minLength={6}
+                          minLength={8}
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           placeholder="••••••••••••"
@@ -740,7 +780,7 @@ export default function UserMenu({ locale, isDe }) {
                       <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginTop: '10px' }}>
                         <button
                           type="submit"
-                          disabled={loadingAuth || !email.trim() || !password || password.length < 6}
+                          disabled={loadingAuth || !email.trim() || !password || password.length < 8}
                           className="auth-btn-action primary"
                           style={{ flex: 1, margin: 0 }}
                         >
@@ -782,16 +822,6 @@ export default function UserMenu({ locale, isDe }) {
                         <span>{isDe ? 'Mit Google anmelden' : 'Sign in with Google'}</span>
                       </button>
 
-                      <button
-                        type="button"
-                        className="auth-oauth-btn apple"
-                        onClick={() => handleOAuth('apple')}
-                      >
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.71-.93 2.73 1.01.08 2.03-.5 2.64-1.23"/>
-                        </svg>
-                        <span>{isDe ? 'Mit Apple anmelden' : 'Sign in with Apple'}</span>
-                      </button>
                     </div>
                   )}
                 </div>

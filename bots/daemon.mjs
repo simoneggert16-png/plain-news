@@ -14,20 +14,23 @@ if (fs.existsSync('.env')) {
   }
 }
 
-const INTERVAL_MS = 5 * 60 * 60 * 1000; // every 5 hours
-process.env.MAX_STORIES_PER_RUN = process.env.MAX_STORIES_PER_RUN || '45';
-process.env.MAX_PER_CATEGORY = process.env.MAX_PER_CATEGORY || '5';
+const INTERVAL_MS = 60 * 60 * 1000; // every hour
+process.env.MAX_STORIES_PER_RUN = process.env.MAX_STORIES_PER_RUN || '0';
+process.env.MAX_PER_CATEGORY = process.env.MAX_PER_CATEGORY || '0';
+process.env.MIN_PER_CATEGORY_PER_CYCLE = process.env.MIN_PER_CATEGORY_PER_CYCLE || '1';
+process.env.TARGET_PER_CATEGORY_PER_CYCLE = process.env.TARGET_PER_CATEGORY_PER_CYCLE || '0';
 process.env.EVENT_CONCURRENCY = process.env.EVENT_CONCURRENCY || '3';
-process.env.RECENT_WINDOW_HOURS = process.env.RECENT_WINDOW_HOURS || '5';
+process.env.RECENT_WINDOW_HOURS = process.env.RECENT_WINDOW_HOURS || '1';
+process.env.MAX_ARTICLES_PER_DAY = process.env.MAX_ARTICLES_PER_DAY || '0';
 
 console.log('====================================================');
-console.log('PLAIN Newsroom Daemon (9 desks, every 5 hours)');
-console.log('Target: up to 5 verified stories per category per cycle');
+console.log('PLAIN Newsroom Daemon (9 desks, every hour)');
+console.log('Target: at least 1 and up to 2 verified stories per category per cycle');
 console.log('====================================================');
 
 async function runCycle() {
   const timestamp = new Date().toISOString();
-  console.log(`\n[${timestamp}] Starting newsroom cycle (Target: up to 5 fresh stories per category)...`);
+  console.log(`\n[${timestamp}] Starting newsroom cycle (Target: 1-2 fresh stories per category)...`);
   try {
     // 1. Run newsroom bot
     execSync('node bots/newsroom.mjs', {
@@ -67,7 +70,7 @@ async function runCycle() {
 async function loop() {
   await runCycle();
   const nextDate = new Date(Date.now() + INTERVAL_MS);
-  console.log(`\n[${new Date().toISOString()}] Cycle finished. Next automated run scheduled for ${nextDate.toLocaleString()} (in 5 hours)...`);
+  console.log(`\n[${new Date().toISOString()}] Cycle finished. Next automated run scheduled for ${nextDate.toLocaleString()} (in 1 hour)...`);
   setTimeout(loop, INTERVAL_MS);
 }
 

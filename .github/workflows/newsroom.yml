@@ -2,9 +2,8 @@ name: Newsroom
 
 on:
   schedule:
-    # Every 5 hours at :17 UTC (00:17, 05:17, 10:17, 15:17, 20:17).
-    # One cycle covers the last 5 hours and targets up to 5 stories per category.
-    - cron: '17 */5 * * *'
+    # Every hour at :17 UTC; target up to 2 stories per editorial category.
+    - cron: '17 * * * *'
   workflow_dispatch: {}       # manual "Run workflow" button
 
 permissions:
@@ -30,18 +29,19 @@ jobs:
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
-          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '45' }}
-          MAX_PER_CATEGORY: ${{ vars.MAX_PER_CATEGORY || '5' }}
-          TARGET_PER_CATEGORY_PER_CYCLE: ${{ vars.TARGET_PER_CATEGORY_PER_CYCLE || '5' }}
+          MAX_STORIES_PER_RUN: '0'
+          MAX_PER_CATEGORY: '0'
+          MIN_PER_CATEGORY_PER_CYCLE: '1'
+          TARGET_PER_CATEGORY_PER_CYCLE: '0'
           EVENT_CONCURRENCY: ${{ vars.EVENT_CONCURRENCY || '4' }}
           TRANSLATION_CONCURRENCY: ${{ vars.TRANSLATION_CONCURRENCY || '8' }}
           RUN_BUDGET_MINUTES: '110'
-          RECENT_WINDOW_HOURS: '5'
-          MAX_ARTICLES_PER_DAY: '250'
+          RECENT_WINDOW_HOURS: '1'
+          MAX_ARTICLES_PER_DAY: '0'
           MAX_AGE_HOURS: '8'
           PER_FEED: '20'
           DESK_BATCH_SIZE: '60'
-          DESK_MAX_BATCHES: '6'
+          DESK_MAX_BATCHES: '10'
         run: node bots/newsroom.mjs
       - name: Commit new stories
         if: always()

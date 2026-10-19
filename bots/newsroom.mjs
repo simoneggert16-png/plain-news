@@ -8,10 +8,8 @@
 //   5. TRANSLATOR translate into all site languages
 //   6. PUBLISH    write JSON → git commit → Vercel redeploys
 //
-// Cadence: the desk/publisher is designed for ~4 stories per run, 3 runs/hour
-// (every 20 min). A per-category hourly quota stops one category from hogging
-// the run and keeps the front page fresh across all desks. Never invent filler:
-// if there are no verified events, publish nothing.
+// Cadence: run hourly and publish every qualifying story found within the
+// discovery and runtime budgets. Never invent filler: only publish verified events.
 import fs from 'node:fs';
 
 if (fs.existsSync('.env')) {
@@ -38,18 +36,23 @@ import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
 import { classifySources, normalizeDraft, isPublishableArticle } from '../lib/editorial.mjs';
 
-const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 45);
-const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 5);
+const configuredLimit = (name, fallback = Infinity) => {
+  const value = Number(process.env[name]);
+  return Number.isFinite(value) && value > 0 ? value : fallback;
+};
+const MAX_STORIES = configuredLimit('MAX_STORIES_PER_RUN');
+const MAX_PER_CATEGORY = configuredLimit('MAX_PER_CATEGORY');
+const MIN_PER_CATEGORY_PER_CYCLE = Math.max(1, +(process.env.MIN_PER_CATEGORY_PER_CYCLE || 1));
 // One newsroom cycle covers the last RECENT_WINDOW_HOURS, so the per-category
 // target is per cycle (not per hour).
-const RECENT_WINDOW_HOURS = +(process.env.RECENT_WINDOW_HOURS || 5);
-const TARGET_PER_CATEGORY_PER_CYCLE = Math.max(
-  1,
-  +(process.env.TARGET_PER_CATEGORY_PER_CYCLE || process.env.TARGET_PER_CATEGORY_PER_HOUR || MAX_PER_CATEGORY)
+const RECENT_WINDOW_HOURS = +(process.env.RECENT_WINDOW_HOURS || 1);
+const TARGET_PER_CATEGORY_PER_CYCLE = configuredLimit(
+  'TARGET_PER_CATEGORY_PER_CYCLE',
+  configuredLimit('TARGET_PER_CATEGORY_PER_HOUR')
 );
 const EVENT_CONCURRENCY = Math.max(1, +(process.env.EVENT_CONCURRENCY || 4));
 const TRANSLATION_CONCURRENCY = Math.max(1, +(process.env.TRANSLATION_CONCURRENCY || 8));
-const MAX_ARTICLES_PER_DAY = +(process.env.MAX_ARTICLES_PER_DAY || 300);
+const MAX_ARTICLES_PER_DAY = configuredLimit('MAX_ARTICLES_PER_DAY');
 const RUN_BUDGET_MS = Math.max(1, +(process.env.RUN_BUDGET_MINUTES || 100)) * 60e3;
 const RUN_STARTED = Date.now();
 const timeLeft = () => RUN_BUDGET_MS - (Date.now() - RUN_STARTED);
@@ -123,7 +126,7 @@ DEDUPLICATION RULE:
 
 ${priorityCategories.length ? `PRIORITY DESKS (we are short in these categories this hour): ${priorityCategories.join(', ')}. Prefer these when the event is important enough.` : ''}
 
-Task: Identify real-world events and return up to ${MAX_PER_CATEGORY} events per category.
+Task: Identify real-world events and return ${Number.isFinite(MAX_PER_CATEGORY) ? `up to ${MAX_PER_CATEGORY}` : 'all relevant'} events per category.
 
 SOURCE RULES:
 - Two-source rule: a story normally needs at least 2 DIFFERENT outlets covering the same event.
@@ -366,7 +369,7 @@ async function main() {
   });
   const items = raw.filter((i) => !seen.has(i.url));
   log(`SCOUT  ${feedsOk}/${FEEDS.length} feeds ok, ${raw.length} items, ${items.length} unseen`);
-  if (items.length < 5) return log('Nothing new. Done.');
+  if (!items.length) return log('Nothing new. Done.');
 
   // Deduplicate against the last 14 days (full archive is only ~140 stories, but
   // old titles caused false positives on recurring topics).
@@ -390,7 +393,7 @@ async function main() {
   const archiveNeeded = CATEGORIES.filter((c) => c !== 'community' && (categoryCounts[c] || 0) < TARGET_PER_CAT);
   const cycleNeeded = CATEGORIES.filter((c) => c !== 'community' && (publishedInWindow[c] || 0) < TARGET_PER_CATEGORY_PER_CYCLE);
   const priorityCategories = [...new Set([...cycleNeeded, ...archiveNeeded])];
-  log(`DESK   last ${RECENT_WINDOW_HOURS}h: ${CATEGORIES.filter((c) => c !== 'community').map((c) => `${c}:${publishedInWindow[c]}`).join(' ')} (target ${TARGET_PER_CATEGORY_PER_CYCLE}/cat/cycle)`);
+  log(`DESK   last ${RECENT_WINDOW_HOURS}h: ${CATEGORIES.filter((c) => c !== 'community').map((c) => `${c}:${publishedInWindow[c]}`).join(' ')} (target ${Number.isFinite(TARGET_PER_CATEGORY_PER_CYCLE) ? `${TARGET_PER_CATEGORY_PER_CYCLE}/cat/cycle` : 'no category cap'})`);
   log(`DESK   archive: ${Object.entries(categoryCounts).filter(([c]) => c !== 'community').map(([k, v]) => `${k}:${v}`).join(' ')}`);
   if (priorityCategories.length) log(`DESK   prioritizing: ${priorityCategories.join(', ')}`);
 
@@ -474,7 +477,7 @@ async function main() {
     if (timeLeft() < 6 * 60e3) { log('DESK   time budget low → stopping discovery'); break; }
     const clusterGroup = batches[b];
     const chunk = clusterGroup.flatMap((c) => c.items);
-    if (!chunk || chunk.length < 5) break;
+    if (!chunk || chunk.length < 1) continue;
     const indexOfItem = new Map(chunk.map((it, i) => [it, i]));
     const groups = clusterGroup.map((c) => c.items.map((it) => indexOfItem.get(it)));
     log(`DESK   clustering batch ${b + 1}/${maxBatches} (${chunk.length} headlines, ${groups.length} candidate groups)…`);
@@ -492,13 +495,24 @@ async function main() {
     if (allEvents.length >= Math.max(MAX_STORIES * 2, 8)) break;
   }
 
-  // Rank by importance + source depth, then apply the per-category cycle quota.
+  // Rank by importance + source depth, but reserve one slot per desk before
+  // selecting second stories so busy categories cannot crowd out others.
   allEvents.sort((a, b) => ((+b.importance || 1) * 10 + b.outlets) - ((+a.importance || 1) * 10 + a.outlets));
   const projected = { ...publishedInWindow };
   const perCat = {};
   const events = [];
+  for (const category of CATEGORIES.filter((c) => c !== 'community')) {
+    if ((projected[category] || 0) >= MIN_PER_CATEGORY_PER_CYCLE) continue;
+    if ((perCat[category] || 0) >= MAX_PER_CATEGORY || events.length >= MAX_STORIES) continue;
+    const event = allEvents.find((e) => e.category === category);
+    if (!event) continue;
+    events.push(event);
+    perCat[category] = 1;
+    projected[category] = (projected[category] || 0) + 1;
+  }
   for (const e of allEvents) {
     if (events.length >= MAX_STORIES) break;
+    if (events.includes(e)) continue;
     if ((projected[e.category] || 0) >= TARGET_PER_CATEGORY_PER_CYCLE) continue;
     if ((perCat[e.category] || 0) >= MAX_PER_CATEGORY) continue;
     perCat[e.category] = (perCat[e.category] || 0) + 1;
@@ -566,7 +580,7 @@ async function main() {
     events: events.length,
     published: accepted.length,
     translated,
-    targetPerCategoryPerCycle: TARGET_PER_CATEGORY_PER_CYCLE,
+    targetPerCategoryPerCycle: Number.isFinite(TARGET_PER_CATEGORY_PER_CYCLE) ? TARGET_PER_CATEGORY_PER_CYCLE : null,
     recentWindowHours: RECENT_WINDOW_HOURS,
     byCategory: Object.fromEntries(CATEGORIES.map((c) => [c, accepted.filter((a) => a.category === c).length])),
     sourcePolicies: Object.fromEntries(['two-source', 'primary'].map((p) => [p, accepted.filter((a) => a.sourcePolicy === p).length])),
