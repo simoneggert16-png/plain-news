@@ -2,6 +2,9 @@
    Beige / black. Hard edges. Typography does the work. */
 
 :root {
+  --f-serif: 'Instrument Serif';
+  --f-sans: 'Inter Tight Variable';
+  --f-mono: 'JetBrains Mono Variable';
   --paper: #eae3d2;
   --paper-2: #e1d8c3;
   --paper-3: #d6ccb4;
@@ -3728,7 +3731,6 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
 [data-text-only='true'] .art-figure {
   display: none !important;
 }
-
 
 
 

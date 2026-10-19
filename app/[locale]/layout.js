@@ -1,15 +1,14 @@
 import { notFound } from 'next/navigation';
-import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from 'next/font/google';
 import { LOCALES, LOCALE_CODES, SITE, isLocale } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Analytics } from '@vercel/analytics/next';
+import '@fontsource/instrument-serif/latin-400.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '@fontsource-variable/inter-tight/index.css';
+import '@fontsource-variable/jetbrains-mono/index.css';
 import '../globals.css';
-
-const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--f-serif', display: 'swap' });
-const sans = Inter_Tight({ subsets: ['latin'], weight: ['400', '500', '600', '800', '900'], variable: '--f-sans', display: 'swap' });
-const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--f-mono', display: 'swap' });
 
 export function generateStaticParams() {
   return LOCALE_CODES.map((locale) => ({ locale }));
@@ -132,7 +131,7 @@ export default async function LocaleLayout({ children, params }) {
   };
 
   return (
-    <html lang={bcp} className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang={bcp}>
       <head>
         <script
           type="application/ld+json"
