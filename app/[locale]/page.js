@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { cookies } from 'next/headers';
-import { LOCALES, CATEGORIES } from '@/lib/config.mjs';
+import { LOCALES, CATEGORIES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
@@ -39,9 +39,29 @@ export default async function Home({ params }) {
   const brief = rest.slice(0, 5);
   const latest = rest.slice(5, 14);
   const L = localize(lead, locale);
+  const homeUrl = `${SITE.url}/${locale}`;
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': homeUrl,
+    url: homeUrl,
+    name: `${SITE.name} — ${t.tagline}`,
+    inLanguage: bcp,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: [lead, ...brief].filter(Boolean).map((article, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${SITE.url}/${locale}/a/${article.slug}`,
+        name: localize(article, locale).title,
+      })),
+    },
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
       <TopicFilter locale={locale} t={t} />
 
       <section className="lead-grid">

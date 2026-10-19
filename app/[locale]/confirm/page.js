@@ -74,7 +74,7 @@ function ConfirmContent() {
         {loading && (
           <div style={{ padding: '30px 0', textAlign: 'center' }}>
             <p style={{ fontFamily: 'var(--mono)', fontSize: '13px', color: 'var(--muted)' }}>
-              ⏳ {isDe ? 'Bestätige E-Mail-Adresse und schalte Konto frei…' : 'Verifying email address and activating account…'}
+               {isDe ? 'Bestätige E-Mail-Adresse und schalte Konto frei…' : 'Verifying email address and activating account…'}
             </p>
           </div>
         )}

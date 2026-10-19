@@ -1,10 +1,14 @@
-import Link from 'next/link';
+import { SITE, LOCALES } from '@/lib/config.mjs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   return {
     title: locale === 'de' ? 'Datenschutzerklärung | PLAIN.' : 'Privacy Policy | PLAIN.',
     description: 'Privacy Policy for PLAIN. News — Zero tracking, zero ads, zero data monetization.',
+    alternates: {
+      canonical: `${SITE.url}/${locale}/privacy`,
+      languages: Object.fromEntries(LOCALES.map((l) => [l.code, `${SITE.url}/${l.code}/privacy`])),
+    },
   };
 }
 

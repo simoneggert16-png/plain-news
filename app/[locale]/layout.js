@@ -40,7 +40,10 @@ export async function generateMetadata({ params }) {
     publisher: 'PLAIN.',
     alternates: {
       canonical: canonicalUrl,
-      languages: Object.fromEntries(LOCALE_CODES.map((l) => [l, `${SITE.url}/${l}`])),
+      languages: {
+        ...Object.fromEntries(LOCALE_CODES.map((l) => [l, `${SITE.url}/${l}`])),
+        'x-default': `${SITE.url}/en`,
+      },
     },
     robots: {
       index: true,
@@ -76,10 +79,67 @@ export default async function LocaleLayout({ children, params }) {
   if (!isLocale(locale)) notFound();
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
+  const organizationId = `${SITE.url}/#organization`;
+  const websiteId = `${SITE.url}/#website`;
+  const siteJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'NewsMediaOrganization',
+        '@id': organizationId,
+        name: SITE.name,
+        alternateName: 'PLAIN News',
+        url: SITE.url,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE.url}/app-icon-1024.png`,
+          width: 1024,
+          height: 1024,
+        },
+        image: `${SITE.url}/app-icon-1024.png`,
+        foundingDate: '2026',
+        founder: { '@type': 'Person', name: 'Simon Eggert' },
+        publishingPrinciples: `${SITE.url}/${locale}/about`,
+        masthead: `${SITE.url}/${locale}/about`,
+        ethicsPolicy: `${SITE.url}/${locale}/about`,
+        correctionsPolicy: `${SITE.url}/${locale}/about#corrections`,
+        ownershipFundingInfo: `${SITE.url}/${locale}/about#funding`,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'editorial',
+          email: 'simoneggert16@gmail.com',
+          availableLanguage: LOCALE_CODES,
+        },
+        knowsLanguage: LOCALE_CODES,
+      },
+      {
+        '@type': 'WebSite',
+        '@id': websiteId,
+        url: SITE.url,
+        name: SITE.name,
+        publisher: { '@id': organizationId },
+        inLanguage: LOCALE_CODES,
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${SITE.url}/${locale}/search?q={search_term_string}`,
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+    ],
+  };
 
   return (
     <html lang={bcp} className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
+        <link rel="alternate" type="application/rss+xml" title={`${SITE.name} RSS`} href={`${SITE.url}/feed.xml`} />
+        <link rel="alternate" type="text/plain" title="llms.txt" href={`${SITE.url}/llms.txt`} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

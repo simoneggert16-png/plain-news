@@ -370,14 +370,14 @@ export default function UserMenu({ locale, isDe }) {
               className={`panel-nav-tab ${modalView === 'customization' ? 'active' : ''}`}
               onClick={() => setModalView('customization')}
             >
-              🎨 {isDe ? 'Design & Themen' : 'Design & Topics'}
+               {isDe ? 'Design & Themen' : 'Design & Topics'}
             </button>
             <button
               type="button"
               className={`panel-nav-tab ${modalView === 'auth' || modalView === 'forgot_password' ? 'active' : ''}`}
               onClick={() => setModalView('auth')}
             >
-              👤 {user ? (isDe ? 'Mein Profil' : 'My Profile') : (isDe ? 'Anmelden' : 'Sign In')}
+               {user ? (isDe ? 'Mein Profil' : 'My Profile') : (isDe ? 'Anmelden' : 'Sign In')}
             </button>
           </div>
 
@@ -389,7 +389,7 @@ export default function UserMenu({ locale, isDe }) {
               className="pill-btn"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', textDecoration: 'none' }}
             >
-              <span>📌 {isDe ? 'Gespeicherte Artikel & Notizen' : 'Saved Stories & Notes'}</span>
+              <span> {isDe ? 'Gespeicherte Artikel & Notizen' : 'Saved Stories & Notes'}</span>
               <span className="custom-active-tag" style={{ padding: '0 4px', fontSize: '9px' }}>{savedCount}</span>
             </Link>
 
@@ -457,7 +457,6 @@ export default function UserMenu({ locale, isDe }) {
                         onClick={() => toggleTopic(topic.id)}
                         className={`topic-chip ${isActive ? 'active' : ''}`}
                       >
-                        <span>{topic.icon}</span>
                         <span className="chip-indicator">{isActive ? '✓' : '+'}</span>
                         <span>{isDe ? topic.labelDe : topic.labelEn}</span>
                       </button>
@@ -560,7 +559,7 @@ export default function UserMenu({ locale, isDe }) {
                     onClick={toggleContrast}
                     className={`pill-btn ${highContrast ? 'active' : ''}`}
                   >
-                    {highContrast ? '⚡ ' + (isDe ? 'Maximal-Kontrast AN' : 'High Contrast ON') : (isDe ? 'Maximal-Kontrast' : 'High Contrast')}
+                    {highContrast ? ' ' + (isDe ? 'Maximal-Kontrast AN' : 'High Contrast ON') : (isDe ? 'Maximal-Kontrast' : 'High Contrast')}
                   </button>
 
                   <button
@@ -568,7 +567,7 @@ export default function UserMenu({ locale, isDe }) {
                     onClick={toggleTextOnly}
                     className={`pill-btn ${textOnlyMode ? 'active' : ''}`}
                   >
-                    {textOnlyMode ? '📄 ' + (isDe ? 'Nur-Text-Modus AN' : 'Text-Only ON') : (isDe ? 'Nur-Text (Keine Bilder)' : 'Text-Only')}
+                    {textOnlyMode ? ' ' + (isDe ? 'Nur-Text-Modus AN' : 'Text-Only ON') : (isDe ? 'Nur-Text (Keine Bilder)' : 'Text-Only')}
                   </button>
 
                   <button
@@ -576,7 +575,7 @@ export default function UserMenu({ locale, isDe }) {
                     onClick={toggleTickerSound}
                     className={`pill-btn ${tickerSound ? 'active' : ''}`}
                   >
-                    {tickerSound ? '🔊 ' + (isDe ? 'Ticker-Audio AN' : 'Ticker Audio ON') : '🔇 ' + (isDe ? 'Ticker Stumm' : 'Ticker Mute')}
+                    {tickerSound ? ' ' + (isDe ? 'Ticker-Audio AN' : 'Ticker Audio ON') : ' ' + (isDe ? 'Ticker Stumm' : 'Ticker Mute')}
                   </button>
                 </div>
               </div>
@@ -649,7 +648,7 @@ export default function UserMenu({ locale, isDe }) {
                       className="auth-btn-action"
                       style={{ flex: 1, textAlign: 'center', textDecoration: 'none' }}
                     >
-                      📌 {isDe ? 'Gemerkte Artikel' : 'Saved Articles'}
+                       {isDe ? 'Gemerkte Artikel' : 'Saved Articles'}
                     </Link>
                     <button
                       type="button"
@@ -666,7 +665,7 @@ export default function UserMenu({ locale, isDe }) {
                       style={{ flex: 1, color: '#dc2626', borderColor: '#fca5a5' }}
                       title={isDe ? 'Konto und alle Daten unwiderruflich löschen' : 'Permanently delete account'}
                     >
-                      🗑 {isDe ? 'Konto löschen' : 'Delete Account'}
+                       {isDe ? 'Konto löschen' : 'Delete Account'}
                     </button>
                   </div>
                 </div>
@@ -684,14 +683,14 @@ export default function UserMenu({ locale, isDe }) {
                       className={`auth-tab-btn ${authSubTab === 'email' ? 'active' : ''}`}
                       onClick={() => setAuthSubTab('email')}
                     >
-                      ✉️ E-Mail & Passwort
+                       E-Mail & Passwort
                     </button>
                     <button
                       type="button"
                       className={`auth-tab-btn ${authSubTab === 'oauth' ? 'active' : ''}`}
                       onClick={() => setAuthSubTab('oauth')}
                     >
-                      ⚡ 1-Klick OAuth
+                       1-Klick OAuth
                     </button>
                   </div>
 

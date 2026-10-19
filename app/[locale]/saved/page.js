@@ -99,14 +99,14 @@ export default function SavedArticlesPage() {
             onClick={() => setActiveTab('articles')}
             className={`community-tab-btn ${activeTab === 'articles' ? 'active' : ''}`}
           >
-            📌 {isDe ? 'Gemerkte Artikel' : 'Saved Articles'} ({savedArticles.length})
+             {isDe ? 'Gemerkte Artikel' : 'Saved Articles'} ({savedArticles.length})
           </button>
           <button
             type="button"
             onClick={() => setActiveTab('scratchpad')}
             className={`community-tab-btn ${activeTab === 'scratchpad' ? 'active' : ''}`}
           >
-            📝 {isDe ? 'Recherche-Notizbuch' : 'Research Scratchpad'}
+             {isDe ? 'Recherche-Notizbuch' : 'Research Scratchpad'}
           </button>
         </div>
       </header>
@@ -131,7 +131,7 @@ export default function SavedArticlesPage() {
             <div className="saved-list">
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '12px' }}>
                 <button type="button" onClick={copyAllNotes} className="pill-btn">
-                  📋 {copiedAll ? (isDe ? 'Kopiert!' : 'Copied!') : (isDe ? 'Alle Notizen kopieren' : 'Copy all notes')}
+                   {copiedAll ? (isDe ? 'Kopiert!' : 'Copied!') : (isDe ? 'Alle Notizen kopieren' : 'Copy all notes')}
                 </button>
               </div>
 
@@ -163,7 +163,7 @@ export default function SavedArticlesPage() {
 
                       <div style={{ marginTop: '10px' }}>
                         <Link href={`/${locale}/a/${item.slug}`} className="saved-read-link">
-                          ↗ {isDe ? 'Artikel jetzt lesen' : 'Read article now'}
+                           {isDe ? 'Artikel jetzt lesen' : 'Read article now'}
                         </Link>
                       </div>
                     </div>
@@ -172,7 +172,7 @@ export default function SavedArticlesPage() {
                     <div className="saved-card-note-box">
                       <div className="note-box-head">
                         <label className="label">
-                          📝 {isDe ? 'DEINE PERSÖNLICHE NOTIZ ZU DIESEM ARTIKEL:' : 'YOUR NOTE FOR THIS ARTICLE:'}
+                           {isDe ? 'DEINE PERSÖNLICHE NOTIZ ZU DIESEM ARTIKEL:' : 'YOUR NOTE FOR THIS ARTICLE:'}
                         </label>
                         {articleNote && (
                           <span style={{ fontSize: '10px', color: 'var(--up)', fontFamily: 'var(--mono)' }}>
@@ -202,7 +202,7 @@ export default function SavedArticlesPage() {
           <div className="scratchpad-box">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
               <label className="label">
-                📓 {isDe ? 'FREIES RECHERCHE-NOTIZBUCH (SCHNELLNOTIZEN):' : 'FREE RESEARCH SCRATCHPAD:'}
+                 {isDe ? 'FREIES RECHERCHE-NOTIZBUCH (SCHNELLNOTIZEN):' : 'FREE RESEARCH SCRATCHPAD:'}
               </label>
               <span style={{ fontSize: '10px', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
                 {scratchpad.length} {isDe ? 'Zeichen' : 'chars'}

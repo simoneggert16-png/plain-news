@@ -9,6 +9,7 @@
     "start": "next start",
     "bot:newsroom": "node bots/newsroom.mjs",
     "bot:maintenance": "node bots/maintenance.mjs",
+    "check:ai": "node scripts/check_ai_visibility.mjs",
     "remotion:studio": "remotion studio remotion/index.js",
     "remotion:render": "remotion render remotion/index.js PlainNewsReel out/reel.mp4"
   },

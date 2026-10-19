@@ -15,6 +15,13 @@ export function middleware(req) {
 
   const url = req.nextUrl.clone();
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;
+
+  // Crawlers often do not follow redirects. Serve them the English page
+  // directly (HTTP 200) instead of a 307, while humans keep language redirects.
+  const userAgent = req.headers.get('user-agent') || '';
+  const isCrawler = /bot|crawler|spider|slurp|OAI-SearchBot|ChatGPT|GPTBot|Perplexity|Claude|Google-Extended|Applebot|Amazonbot|meta-externalagent|CCBot|cohere-ai|YouBot|Diffbot/i.test(userAgent);
+  if (isCrawler) return NextResponse.rewrite(url);
+
   return NextResponse.redirect(url);
 }
 

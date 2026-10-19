@@ -10,11 +10,23 @@ PLAIN. is a modern, high-integrity factual news publication providing bias-free,
 
 ## Canonical URL & API Endpoints
 - Canonical Homepage: https://www.plain-news.ch/
-- Multilingual Sitemaps: https://www.plain-news.ch/sitemap.xml
+- Multilingual Sitemap: https://www.plain-news.ch/sitemap.xml
+- Google News Sitemap (last 48h): https://www.plain-news.ch/news-sitemap.xml
+- Full article index for AI agents: https://www.plain-news.ch/llms-full.txt
 - RSS 2.0 Feed: https://www.plain-news.ch/feed.xml
+- About, operator & editorial policy: https://www.plain-news.ch/en/about
+- Legal notice & contact: https://www.plain-news.ch/en/legal
 - Live Ticker API (JSON): https://www.plain-news.ch/api/ticker/live
 - Comprehensive Multi-Sport & Financial Wire API (JSON): https://www.plain-news.ch/api/ticker/full
 - Real-Time Market Quotes API (JSON): https://www.plain-news.ch/api/markets
+
+## Crawling & Rendering
+- `robots.txt` explicitly allows search and AI agents, including `OAI-SearchBot`, `GPTBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot` and `Google-Extended`.
+- Every article is server-rendered HTML. Headline, dek, body, key facts, byline, publication date and primary-source links are present without JavaScript or login.
+- No paywall, no bot challenge, no tracking wall.
+
+## Citation
+Suggested citation: "PLAIN. (plain-news.ch), <headline>, <publication date>, <URL>". Attribution and a link to the canonical URL are required. Each article exposes the original outlets, headlines and source URLs used for verification. Corrections: simoneggert16@gmail.com.
 
 ## Structured Data & Citation
 All articles on `plain-news.ch` expose complete Schema.org `NewsArticle` JSON-LD metadata, including:

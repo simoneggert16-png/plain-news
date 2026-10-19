@@ -37,7 +37,7 @@ Datei: 01_PLAIN_Master_Ad_30s.mp4
 ======================================================================
 
 DEUTSCHER POST-TEXT (Caption zum Kopieren):
-Warum bist du nach dem Nachrichtenschauen eigentlich immer gestresst? 🚨
+Warum bist du nach dem Nachrichtenschauen eigentlich immer gestresst?
 Weil 94% der Medien dich nicht informieren wollen — sie monetarisieren deine Panik und Wut.
 
 PLAIN ist das radikale Gegenmittel:
@@ -46,13 +46,13 @@ PLAIN ist das radikale Gegenmittel:
 ✓ Reiner Fakten-Draht ohne Meinungsfärbung.
 
 Lies die Nachrichten so, wie sie sein sollten:
-👉 plain-news.ch
+ plain-news.ch
 
 #news #nachrichten #journalismus #fakten #schweiz #deutschland #medien #politik #wissen
 
 ----------------------------------------------------------------------
 ENGLISH CAPTION (Copy & Paste):
-Why are you always anxious after reading the news? 🚨
+Why are you always anxious after reading the news?
 Because the modern media economy doesn't want to inform you. They monetize your panic and outrage.
 
 PLAIN is the antidote:
@@ -61,7 +61,7 @@ PLAIN is the antidote:
 ✓ Zero spin, adversarial audit.
 
 Information is a public utility, not an attention slot machine:
-👉 plain-news.ch
+ plain-news.ch
 
 #journalism #technews #worldnews #facts #media #unbiased #press #news
 `;
@@ -185,23 +185,23 @@ Facebook hochzuladen!
 
 ORDNER-STRUKTUR:
 
-📁 01_Videos_and_Reels/
+ 01_Videos_and_Reels/
    • 01_PLAIN_Master_Ad_30s.mp4 -> Das 30-Sekunden Meister-Video (Apple/Swiss brutalist Style mit Audio & Voiceover).
    • 02_PLAIN_Brand_Promo.mp4   -> Vertikales Promo-Video.
    • 03_PLAIN_Platform_Tour.mp4 -> UI-Tour der Website.
    • VIDEO_POSTING_TEXTS.txt    -> Fertige Captions auf Deutsch & Englisch.
 
-📁 02_Carousel_Batch_01_Die_5_Prinzipien/
+ 02_Carousel_Batch_01_Die_5_Prinzipien/
    • 5 hochauflösende Slides (01-05) im 1080x1350 Instagram/TikTok Karussell-Format.
    • Thema: 0 Werbung, 0 Paywalls, 0 Trackers, Simon Eggert Zitat.
    • POSTING_TEXT_BATCH_01.txt -> Fertiger Text & Hashtags.
 
-📁 03_Carousel_Batch_02_Zero_Spin/
+ 03_Carousel_Batch_02_Zero_Spin/
    • 5 hochauflösende Slides (01-05).
    • Thema: Verifizierte Ereignisse, direkte Zitate, harte Daten, kein Narrativ.
    • POSTING_TEXT_BATCH_02.txt -> Fertiger Text & Hashtags.
 
-📁 04_App_Assets/
+ 04_App_Assets/
    • PLAIN_App_Icon_1024x1024.png -> Offizielles quadratisches App-Icon.
    • TikTok_Demo_Integration.mp4  -> Demo-Video für Developer Portal Registrierungen.
 

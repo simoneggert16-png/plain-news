@@ -12,6 +12,11 @@ export async function generateMetadata({ params, searchParams }) {
   const q = sp?.q || '';
   return {
     title: q ? `${q} – Suche & Recherche | PLAIN.` : 'Suche & Recherche | PLAIN.',
+    // Search result pages are useful to humans but should not compete with the
+    // article URLs in search or AI indexes.
+    robots: q
+      ? { index: false, follow: true }
+      : { index: true, follow: true },
   };
 }
 
@@ -148,7 +153,7 @@ export default async function SearchPage({ params, searchParams }) {
         <section className="search-community-results" style={{ marginBottom: '32px' }}>
           <div className="sec-head">
             <h2>
-              👤 {isDe ? `Gefundene Community-Beiträge & Kommentare von „${q}“` : `Community Contributions & Comments by “${q}”`} ({totalUserMatches})
+               {isDe ? `Gefundene Community-Beiträge & Kommentare von „${q}“` : `Community Contributions & Comments by “${q}”`} ({totalUserMatches})
             </h2>
           </div>
 
@@ -156,9 +161,9 @@ export default async function SearchPage({ params, searchParams }) {
             {userResults.comments.map((c) => (
               <div key={c.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
                 <div className="comment-meta">
-                  <span className="comment-author">💬 Kommentar von <strong>{c.author}</strong></span>
+                  <span className="comment-author"> Kommentar von <strong>{c.author}</strong></span>
                   <Link href={`/${locale}/a/${c.slug}`} style={{ textDecoration: 'underline', color: 'var(--ink)' }}>
-                    ↗ {isDe ? 'Zum Artikel' : 'View Article'}
+                     {isDe ? 'Zum Artikel' : 'View Article'}
                   </Link>
                 </div>
                 <p className="comment-content" style={{ margin: '4px 0 0' }}>„{c.content}“</p>
@@ -168,9 +173,9 @@ export default async function SearchPage({ params, searchParams }) {
             {userResults.submissions.map((s) => (
               <div key={s.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
                 <div className="comment-meta">
-                  <span className="comment-author">📄 Primärquelle eingereicht von <strong>{s.author}</strong></span>
+                  <span className="comment-author"> Primärquelle eingereicht von <strong>{s.author}</strong></span>
                   <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
-                    ↗ {isDe ? 'Quelle öffnen' : 'Open Source'}
+                     {isDe ? 'Quelle öffnen' : 'Open Source'}
                   </a>
                 </div>
                 <h4 style={{ margin: '4px 0 2px' }}>{s.title}</h4>
@@ -181,9 +186,9 @@ export default async function SearchPage({ params, searchParams }) {
             {userResults.chatMessages.map((m) => (
               <div key={m.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
                 <div className="comment-meta">
-                  <span className="comment-author">💭 Live-Chat Beitrag von <strong>{m.user}</strong></span>
+                  <span className="comment-author"> Live-Chat Beitrag von <strong>{m.user}</strong></span>
                   <Link href={`/${locale}/c/community`} style={{ textDecoration: 'underline' }}>
-                    ↗ {isDe ? 'Zum Chatroom' : 'To Chatroom'}
+                     {isDe ? 'Zum Chatroom' : 'To Chatroom'}
                   </Link>
                 </div>
                 <p className="comment-content">„{m.text}“</p>
@@ -242,7 +247,7 @@ export default async function SearchPage({ params, searchParams }) {
                 className="fallback-btn"
               >
                 <span>Google News</span>
-                <span className="fallback-arr">↗</span>
+                <span className="fallback-arr"></span>
               </a>
               <a
                 href={`https://de.wikipedia.org/w/index.php?search=${encodeURIComponent(q)}`}
@@ -251,7 +256,7 @@ export default async function SearchPage({ params, searchParams }) {
                 className="fallback-btn"
               >
                 <span>Wikipedia</span>
-                <span className="fallback-arr">↗</span>
+                <span className="fallback-arr"></span>
               </a>
             </div>
           </div>

@@ -14,24 +14,26 @@ if (fs.existsSync('.env')) {
   }
 }
 
-const INTERVAL_MS = 5 * 60 * 1000; // 5 minutes between runs
-process.env.MAX_STORIES_PER_RUN = process.env.MAX_STORIES_PER_RUN || '9';
-process.env.MAX_PER_CATEGORY = process.env.MAX_PER_CATEGORY || '1';
+const INTERVAL_MS = 5 * 60 * 60 * 1000; // every 5 hours
+process.env.MAX_STORIES_PER_RUN = process.env.MAX_STORIES_PER_RUN || '45';
+process.env.MAX_PER_CATEGORY = process.env.MAX_PER_CATEGORY || '5';
+process.env.EVENT_CONCURRENCY = process.env.EVENT_CONCURRENCY || '3';
+process.env.RECENT_WINDOW_HOURS = process.env.RECENT_WINDOW_HOURS || '5';
 
 console.log('====================================================');
-console.log('PLAIN Continuous Newsroom Daemon (High-Frequency: 9 desks)');
-console.log('Target: Minimum 3-4 published articles per category per hour');
+console.log('PLAIN Newsroom Daemon (9 desks, every 5 hours)');
+console.log('Target: up to 5 verified stories per category per cycle');
 console.log('====================================================');
 
 async function runCycle() {
   const timestamp = new Date().toISOString();
-  console.log(`\n[${timestamp}] Starting newsroom cycle (Target: 9 fresh stories across all desks)...`);
+  console.log(`\n[${timestamp}] Starting newsroom cycle (Target: up to 5 fresh stories per category)...`);
   try {
     // 1. Run newsroom bot
     execSync('node bots/newsroom.mjs', {
       stdio: 'inherit',
       env: process.env,
-      timeout: 60 * 60 * 1000,
+      timeout: 120 * 60 * 1000,
     });
 
     // 2. Run social media cadence check (5-hour batch window)
@@ -65,7 +67,7 @@ async function runCycle() {
 async function loop() {
   await runCycle();
   const nextDate = new Date(Date.now() + INTERVAL_MS);
-  console.log(`\n[${new Date().toISOString()}] Cycle finished. Next automated run scheduled for ${nextDate.toLocaleTimeString()} (in 15 min)...`);
+  console.log(`\n[${new Date().toISOString()}] Cycle finished. Next automated run scheduled for ${nextDate.toLocaleString()} (in 5 hours)...`);
   setTimeout(loop, INTERVAL_MS);
 }
 

@@ -10,6 +10,12 @@ export const FEEDS = [
   { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/politics/rss.xml' },
   { outlet: 'BBC', url: 'https://feeds.bbci.co.uk/news/health/rss.xml' },
   { outlet: 'NPR', url: 'https://feeds.npr.org/1001/rss.xml' },
+  { outlet: 'NPR', url: 'https://feeds.npr.org/1004/rss.xml' },   // World
+  { outlet: 'NPR', url: 'https://feeds.npr.org/1014/rss.xml' },  // Politics
+  { outlet: 'NPR', url: 'https://feeds.npr.org/1006/rss.xml' },  // Business
+  { outlet: 'NPR', url: 'https://feeds.npr.org/1019/rss.xml' },  // Technology
+  { outlet: 'NPR', url: 'https://feeds.npr.org/1027/rss.xml' },  // Science
+  { outlet: 'NPR', url: 'https://feeds.npr.org/1128/rss.xml' },  // Health
   { outlet: 'DW', url: 'https://rss.dw.com/rdf/rss-en-all' },
   { outlet: 'France 24', url: 'https://www.france24.com/en/rss' },
   { outlet: 'France 24', url: 'https://www.france24.com/en/middle-east/rss' },
@@ -63,6 +69,8 @@ export const FEEDS = [
   { outlet: 'Wired', url: 'https://www.wired.com/feed/rss' },
   { outlet: 'Nature', url: 'https://www.nature.com/nature.rss' },
   { outlet: 'ScienceDaily', url: 'https://www.sciencedaily.com/rss/top.xml' },
+  { outlet: 'Science News', url: 'https://www.sciencenews.org/feed' },
+  { outlet: 'Quanta Magazine', url: 'https://www.quantamagazine.org/feed/' },
   { outlet: 'Phys.org', url: 'https://phys.org/rss-feed/' },
   { outlet: 'NASA', url: 'https://www.nasa.gov/feed/' },
   { outlet: 'ESA', url: 'https://www.esa.int/rssfeed/Our_Activities/Space_News' },
@@ -75,6 +83,9 @@ export const FEEDS = [
   { outlet: 'Copernicus', url: 'https://climate.copernicus.eu/rss.xml' },
   { outlet: 'Yale Climate Connections', url: 'https://yaleclimateconnections.org/feed/' },
   { outlet: 'Climate Home News', url: 'https://www.climatechangenews.com/feed/' },
+  { outlet: 'MIT Technology Review', url: 'https://www.technologyreview.com/feed/' },
+  { outlet: 'Carbon Brief', url: 'https://www.carbonbrief.org/feed/' },
+  { outlet: 'WHO', url: 'https://www.who.int/rss-feeds/news-english.xml' },
   { outlet: 'Medical News Today', url: 'https://rss.medicalnewstoday.com/featurednews.xml' },
   { outlet: 'STAT News', url: 'https://www.statnews.com/feed/' },
   { outlet: 'Healthline', url: 'https://www.healthline.com/rss/health-news' },

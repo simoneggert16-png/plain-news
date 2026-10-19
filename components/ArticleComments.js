@@ -213,7 +213,7 @@ export default function ArticleComments({ slug, locale, isDe }) {
               ● Live-Sync aktiv (Echtzeit)
             </span>
             <span className="comments-ai-badge" style={{ fontSize: '9.5px' }}>
-              🌐 Live-Übersetzung verfügbar
+               Live-Übersetzung verfügbar
             </span>
             {lastSyncTime && (
               <span style={{ fontSize: '10px', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
@@ -305,7 +305,7 @@ export default function ArticleComments({ slug, locale, isDe }) {
                   <p className="comment-content">{displayText}</p>
                   {isShowingTranslated && (
                     <span className="comment-translated-tag">
-                      🌐 Live-Übersetzung ({locale.toUpperCase()})
+                       Live-Übersetzung ({locale.toUpperCase()})
                     </span>
                   )}
                 </div>
@@ -318,11 +318,11 @@ export default function ArticleComments({ slug, locale, isDe }) {
                     className="comment-translate-btn"
                   >
                     {trans?.loading ? (
-                      <span>⏳ {isDe ? 'Übersetze…' : 'Translating…'}</span>
+                      <span> {isDe ? 'Übersetze…' : 'Translating…'}</span>
                     ) : isShowingTranslated ? (
-                      <span>↩ {isDe ? 'Original anzeigen' : 'Show original'}</span>
+                      <span> {isDe ? 'Original anzeigen' : 'Show original'}</span>
                     ) : (
-                      <span>🌐 {isDe ? `Live übersetzen (${locale.toUpperCase()})` : `Live translate (${locale.toUpperCase()})`}</span>
+                      <span> {isDe ? `Live übersetzen (${locale.toUpperCase()})` : `Live translate (${locale.toUpperCase()})`}</span>
                     )}
                   </button>
                 </div>

@@ -23,7 +23,21 @@ export async function generateMetadata({ params }) {
     description: `${catName} — Factual, multi-source verified reporting on PLAIN.`,
     alternates: {
       canonical: pageUrl,
-      languages: Object.fromEntries(LOCALE_CODES.map((c) => [c, `${SITE.url}/${c}/c/${cat}`])),
+      languages: {
+        ...Object.fromEntries(LOCALE_CODES.map((c) => [c, `${SITE.url}/${c}/c/${cat}`])),
+        'x-default': `${SITE.url}/en/c/${cat}`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
     },
     openGraph: {
       title: `${catName} — ${SITE.name}`,
@@ -42,9 +56,32 @@ export default async function CategoryPage({ params }) {
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
   const items = listFor({ category: cat, limit: 60 });
   const isDe = locale === 'de';
+  const pageUrl = `${SITE.url}/${locale}/c/${cat}`;
+  const catName = t.cat[cat] || cat;
+  const categoryJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': pageUrl,
+    url: pageUrl,
+    name: `${catName} — ${SITE.name}`,
+    description: `${catName} — factual, multi-source verified reporting on PLAIN.`,
+    inLanguage: bcp,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: items.length,
+      itemListElement: items.slice(0, 10).map((article, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${SITE.url}/${locale}/a/${article.slug}`,
+        name: localize(article, locale).title,
+      })),
+    },
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }} />
       <div className="category-header-wrap">
         <h1 className="page-title">{t.cat[cat]}</h1>
         {cat === 'sport' && (

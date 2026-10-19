@@ -181,7 +181,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
             <span className="comments-server-badge">● Live-Sync</span>
             <span className="comments-ai-badge" style={{ fontSize: '9.5px' }}>
-              🌐 Live-Übersetzung aktiv
+               Live-Übersetzung aktiv
             </span>
           </div>
         </div>
@@ -194,14 +194,14 @@ export default function CommunitySubmitSection({ locale, isDe }) {
           onClick={() => setActiveTab('submissions')}
           className={`community-tab-btn ${activeTab === 'submissions' ? 'active' : ''}`}
         >
-          📄 {isDe ? 'Community-Quellen & Beiträge' : 'Community Stories & Sources'} ({submissions.length})
+           {isDe ? 'Community-Quellen & Beiträge' : 'Community Stories & Sources'} ({submissions.length})
         </button>
         <button
           type="button"
           onClick={() => setActiveTab('chatroom')}
           className={`community-tab-btn ${activeTab === 'chatroom' ? 'active' : ''}`}
         >
-          💬 {isDe ? 'Live Debatten-Chatroom' : 'Live Debate Chatroom'} ({chatMessages.length})
+           {isDe ? 'Live Debatten-Chatroom' : 'Live Debate Chatroom'} ({chatMessages.length})
         </button>
       </div>
 
@@ -290,14 +290,14 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                       {isShowingTranslated && (
                         <div style={{ marginBottom: '8px' }}>
                           <span className="comment-translated-tag">
-                            🌐 Live-Übersetzung ({locale.toUpperCase()})
+                             Live-Übersetzung ({locale.toUpperCase()})
                           </span>
                         </div>
                       )}
 
                       <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
                         <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="community-source-link">
-                          ↗ {isDe ? 'Primärquelle öffnen' : 'View Primary Source'}
+                           {isDe ? 'Primärquelle öffnen' : 'View Primary Source'}
                         </a>
 
                         <button
@@ -307,11 +307,11 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                           className="comment-translate-btn"
                         >
                           {trans?.loading ? (
-                            <span>⏳ {isDe ? 'Übersetze…' : 'Translating…'}</span>
+                            <span> {isDe ? 'Übersetze…' : 'Translating…'}</span>
                           ) : isShowingTranslated ? (
-                            <span>↩ {isDe ? 'Original anzeigen' : 'Show original'}</span>
+                            <span> {isDe ? 'Original anzeigen' : 'Show original'}</span>
                           ) : (
-                            <span>🌐 {isDe ? `Live übersetzen (${locale.toUpperCase()})` : `Live translate (${locale.toUpperCase()})`}</span>
+                            <span> {isDe ? `Live übersetzen (${locale.toUpperCase()})` : `Live translate (${locale.toUpperCase()})`}</span>
                           )}
                         </button>
                       </div>
@@ -396,7 +396,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
 
                     {isShowingTranslated && (
                       <span className="comment-translated-tag" style={{ marginTop: '2px', display: 'inline-block' }}>
-                        🌐 Live-Übersetzung ({locale.toUpperCase()})
+                         Live-Übersetzung ({locale.toUpperCase()})
                       </span>
                     )}
 
@@ -409,11 +409,11 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                         style={{ fontSize: '11px', padding: '2px 6px' }}
                       >
                         {trans?.loading ? (
-                          <span>⏳ {isDe ? 'Übersetze…' : 'Translating…'}</span>
+                          <span> {isDe ? 'Übersetze…' : 'Translating…'}</span>
                         ) : isShowingTranslated ? (
-                          <span>↩ {isDe ? 'Original' : 'Original'}</span>
+                          <span> {isDe ? 'Original' : 'Original'}</span>
                         ) : (
-                          <span>🌐 {isDe ? `Live übersetzen (${locale.toUpperCase()})` : `Live translate (${locale.toUpperCase()})`}</span>
+                          <span> {isDe ? `Live übersetzen (${locale.toUpperCase()})` : `Live translate (${locale.toUpperCase()})`}</span>
                         )}
                       </button>
                     </div>

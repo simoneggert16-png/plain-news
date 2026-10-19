@@ -152,7 +152,7 @@ export default function RegisterPage() {
           <div className="register-success-box" style={{ background: '#f8f8f6', border: '2px solid #000', padding: '28px 24px', boxShadow: '5px 5px 0 #000', marginTop: '16px' }}>
             <div className="label" style={{ color: '#16a34a' }}>✓ {isDe ? 'REGISTRIERUNG ERFOLGREICH' : 'REGISTRATION SUCCESSFUL'}</div>
             <h2 style={{ fontSize: '20px', fontWeight: 900, textTransform: 'uppercase', margin: '8px 0 14px 0' }}>
-              ✉️ {isDe ? 'Bestätigungs-Mail wurde versendet' : 'Confirmation Email Sent'}
+               {isDe ? 'Bestätigungs-Mail wurde versendet' : 'Confirmation Email Sent'}
             </h2>
             <p style={{ fontSize: '14.5px', lineHeight: '1.6', marginBottom: '16px' }}>
               {isDe
@@ -181,7 +181,7 @@ export default function RegisterPage() {
                   className="btn"
                   style={{ background: '#fff' }}
                 >
-                  ✉️ {isDe ? 'E-Mail-Vorschau ansehen' : 'View Email Preview'}
+                   {isDe ? 'E-Mail-Vorschau ansehen' : 'View Email Preview'}
                 </button>
               )}
               <Link href={`/${locale}`} className="btn" style={{ background: '#fff' }}>
@@ -217,7 +217,7 @@ export default function RegisterPage() {
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid #ddd', paddingBottom: '12px' }}>
-                    <span className="label">✉️ {isDe ? 'POSTEINGANG VORSCHAU' : 'INBOX PREVIEW'}</span>
+                    <span className="label"> {isDe ? 'POSTEINGANG VORSCHAU' : 'INBOX PREVIEW'}</span>
                     <button
                       type="button"
                       onClick={() => setShowEmailPreviewModal(false)}
@@ -348,7 +348,6 @@ export default function RegisterPage() {
                       onClick={() => toggleTopic(beat.id)}
                       className={`register-beat-chip ${active ? 'active' : ''}`}
                     >
-                      <span className="register-beat-icon">{beat.icon}</span>
                       <span className="register-beat-label">{isDe ? beat.labelDe : beat.labelEn}</span>
                       <span className="register-beat-check">{active ? '✓' : '+'}</span>
                     </button>

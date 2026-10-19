@@ -179,7 +179,7 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
                 rel="noreferrer noopener"
                 className="clip-external-link"
               >
-                In neuem Tab öffnen ↗
+                In neuem Tab öffnen
               </a>
             )}
           </div>

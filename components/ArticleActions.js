@@ -105,7 +105,7 @@ export default function ArticleActions({ slug, title, locale, isDe }) {
           className={`art-action-btn ${noteText.trim() || showNoteBox ? 'active' : ''}`}
           title={isDe ? 'Persönliche Notiz hinzufügen' : 'Add personal note'}
         >
-          <span>📝 {noteText.trim() ? (isDe ? 'NOTIZ (1)' : 'NOTE (1)') : (isDe ? 'NOTIZ' : 'NOTE')}</span>
+          <span> {noteText.trim() ? (isDe ? 'NOTIZ (1)' : 'NOTE (1)') : (isDe ? 'NOTIZ' : 'NOTE')}</span>
         </button>
 
         <button
@@ -141,7 +141,7 @@ export default function ArticleActions({ slug, title, locale, isDe }) {
         <div className="art-inline-note-box">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
             <span className="label" style={{ fontSize: '10px' }}>
-              📝 {isDe ? 'PERSÖNLICHE NOTIZ ZU DIESEM ARTIKEL' : 'PERSONAL NOTE'}
+               {isDe ? 'PERSÖNLICHE NOTIZ ZU DIESEM ARTIKEL' : 'PERSONAL NOTE'}
             </span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               {savedNoteIndicator && (

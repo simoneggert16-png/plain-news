@@ -23,7 +23,7 @@ export default function Header({ locale, t }) {
         <NavLinks items={items} />
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <Link href={`/${locale}/saved`} className="nav-about">
-            {locale === 'de' ? '📌 Gemerkt' : '📌 Saved'}
+            {locale === 'de' ? ' Gemerkt' : ' Saved'}
           </Link>
           <Link href={`/${locale}/about`} className="nav-about">{t.about}</Link>
         </div>

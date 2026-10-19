@@ -25,9 +25,16 @@ export async function generateMetadata({ params }) {
   return {
     title: l.title,
     description: l.dek,
+    keywords: [l.title, a.category, ...(l.facts || []).slice(0, 4)],
+    authors: [{ name: 'PLAIN. Editorial Desk', url: `${SITE.url}/${locale}/about` }],
+    creator: 'PLAIN. Editorial Desk',
+    publisher: SITE.name,
     alternates: {
       canonical: articleUrl,
-      languages: Object.fromEntries(LOCALE_CODES.map((c) => [c, `${SITE.url}/${c}/a/${slug}`])),
+      languages: {
+        ...Object.fromEntries(LOCALE_CODES.map((c) => [c, `${SITE.url}/${c}/a/${slug}`])),
+        'x-default': `${SITE.url}/en/a/${slug}`,
+      },
     },
     robots: {
       index: true,
@@ -69,36 +76,97 @@ export default async function ArticlePage({ params }) {
   const l = localize(a, locale);
   const outlets = new Set(a.sources.map((s) => s.outlet)).size;
   const articleUrl = `${SITE.url}/${locale}/a/${slug}`;
+  const categoryUrl = `${SITE.url}/${locale}/c/${a.category}`;
+  const absolute = (url) => {
+    try { return new URL(url, SITE.url).toString(); } catch { return url; }
+  };
+  const articleBody = [l.dek, ...(l.facts || []), ...(l.body || []), l.context || '']
+    .filter(Boolean)
+    .join('\n\n');
+  const wordCount = articleBody.split(/\s+/).filter(Boolean).length;
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': articleUrl,
-    },
-    headline: l.title,
-    description: l.dek,
-    articleSection: a.category,
-    image: a.image ? [a.image] : undefined,
-    datePublished: a.publishedAt,
-    dateModified: a.updatedAt || a.publishedAt,
-    inLanguage: bcp,
-    isBasedOn: a.sources.map((s) => s.url),
-    author: {
-      '@type': 'Organization',
-      name: 'PLAIN. Editorial Wire',
-      url: SITE.url,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: SITE.name,
-      url: SITE.url,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE.url}/icon.svg`,
+    '@graph': [
+      {
+        '@type': 'NewsArticle',
+        '@id': `${articleUrl}#article`,
+        isPartOf: { '@id': `${SITE.url}/#website` },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': articleUrl,
+        },
+        url: articleUrl,
+        headline: l.title,
+        description: l.dek,
+        articleSection: a.category,
+        articleBody,
+        wordCount,
+        timeRequired: `PT${readingMinutes(a, locale)}M`,
+        image: a.image ? [absolute(a.image)] : undefined,
+        thumbnailUrl: a.image ? absolute(a.image) : undefined,
+        datePublished: a.publishedAt,
+        dateModified: a.updatedAt || a.publishedAt,
+        inLanguage: bcp,
+        isAccessibleForFree: true,
+        isBasedOn: a.sources.map((s) => s.url),
+        citation: a.sources.map((s) => ({
+          '@type': 'CreativeWork',
+          name: s.title,
+          url: s.url,
+          publisher: { '@type': 'Organization', name: s.outlet },
+        })),
+        author: {
+          '@type': 'Organization',
+          name: 'PLAIN. Editorial Desk',
+          url: `${SITE.url}/${locale}/about`,
+        },
+        publisher: {
+          '@type': 'NewsMediaOrganization',
+          '@id': `${SITE.url}/#organization`,
+          name: SITE.name,
+          url: SITE.url,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE.url}/app-icon-1024.png`,
+            width: 1024,
+            height: 1024,
+          },
+        },
+        copyrightHolder: { '@id': `${SITE.url}/#organization` },
+        license: `${SITE.url}/en/legal`,
+        about: { '@type': 'Thing', name: l.title },
+        keywords: [a.category, l.title, ...(l.facts || []).slice(0, 5)].join(', '),
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', '.dek', '.facts'],
+        },
       },
-    },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${articleUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: SITE.name,
+            item: `${SITE.url}/${locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: t.cat[a.category] || a.category,
+            item: categoryUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: l.title,
+            item: articleUrl,
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -117,8 +185,14 @@ export default async function ArticlePage({ params }) {
         <h1>{l.title}</h1>
         <p className="dek">{l.dek}</p>
         <div className="art-meta meta">
-          <span>{fmtDate(a.publishedAt, bcp, { year: 'numeric' })}</span>
-          {a.updatedAt && a.updatedAt !== a.publishedAt && <span>{t.updated} {fmtDate(a.updatedAt, bcp)}</span>}
+          <span>{locale === 'de' ? 'Von' : 'By'} PLAIN. Editorial Desk</span>
+          <span>
+            {locale === 'de' ? 'Veröffentlicht' : 'Published'}{' '}
+            <time dateTime={a.publishedAt}>{fmtDate(a.publishedAt, bcp, { year: 'numeric' })}</time>
+          </span>
+          {a.updatedAt && a.updatedAt !== a.publishedAt && (
+            <span>{t.updated} <time dateTime={a.updatedAt}>{fmtDate(a.updatedAt, bcp)}</time></span>
+          )}
           <span>{fmt(t.minRead, { n: readingMinutes(a, locale) })}</span>
           <span>{sourceLabel({ ...a, sourceCount: outlets }, t)}</span>
         </div>
@@ -192,9 +266,13 @@ export default async function ArticlePage({ params }) {
         </ul>
       </section>
 
-      <section className="art-section">
+      <section className="art-section" id="corrections">
         <h2>{t.howMade}</h2>
         <p className="howmade">{fmt(t.howMadeText, { n: outlets })}</p>
+        <p className="howmade">
+          {locale === 'de' ? 'Korrekturhinweis oder Quellenbeleg?' : 'Correction or source request?'}{' '}
+          <a href="mailto:simoneggert16@gmail.com">simoneggert16@gmail.com</a>
+        </p>
       </section>
 
       <ArticleComments slug={a.slug} locale={locale} isDe={locale === 'de'} />

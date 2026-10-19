@@ -15,7 +15,7 @@ export default function Footer({ locale, t }) {
           <a href="/feed.xml">RSS</a>
         </nav>
         <p className="footer-small">
-          © {new Date().getFullYear()} {SITE.name} · Gegründet von <strong>Simon Eggert</strong> · Unabhängig & Werbefrei.
+           {new Date().getFullYear()} {SITE.name} · Gegründet von <strong>Simon Eggert</strong> · Unabhängig & Werbefrei.
         </p>
       </div>
     </footer>

@@ -95,7 +95,7 @@ ${de.facts.slice(0, 3).map((f, i) => `Point ${i + 1}: "${f}"`).join('\n')}
 
 -------------------------------------------------------
 CAPTION / POSTING-TEXT:
-${de.title} 📰
+${de.title}
 
 Die wichtigsten Fakten ohne Wertung:
 ${de.facts.slice(0, 3).map(f => `• ${f}`).join('\n')}

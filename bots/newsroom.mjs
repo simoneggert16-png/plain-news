@@ -38,13 +38,19 @@ import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
 import { classifySources, normalizeDraft, isPublishableArticle } from '../lib/editorial.mjs';
 
-const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 4);
-const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 2);
-const TARGET_PER_CATEGORY_PER_HOUR = Math.max(1, +(process.env.TARGET_PER_CATEGORY_PER_HOUR || 2));
+const MAX_STORIES = +(process.env.MAX_STORIES_PER_RUN || 45);
+const MAX_PER_CATEGORY = +(process.env.MAX_PER_CATEGORY || 5);
+// One newsroom cycle covers the last RECENT_WINDOW_HOURS, so the per-category
+// target is per cycle (not per hour).
+const RECENT_WINDOW_HOURS = +(process.env.RECENT_WINDOW_HOURS || 5);
+const TARGET_PER_CATEGORY_PER_CYCLE = Math.max(
+  1,
+  +(process.env.TARGET_PER_CATEGORY_PER_CYCLE || process.env.TARGET_PER_CATEGORY_PER_HOUR || MAX_PER_CATEGORY)
+);
 const EVENT_CONCURRENCY = Math.max(1, +(process.env.EVENT_CONCURRENCY || 4));
 const TRANSLATION_CONCURRENCY = Math.max(1, +(process.env.TRANSLATION_CONCURRENCY || 8));
 const MAX_ARTICLES_PER_DAY = +(process.env.MAX_ARTICLES_PER_DAY || 300);
-const RUN_BUDGET_MS = Math.max(1, +(process.env.RUN_BUDGET_MINUTES || 15)) * 60e3;
+const RUN_BUDGET_MS = Math.max(1, +(process.env.RUN_BUDGET_MINUTES || 100)) * 60e3;
 const RUN_STARTED = Date.now();
 const timeLeft = () => RUN_BUDGET_MS - (Date.now() - RUN_STARTED);
 const log = (...a) => {
@@ -372,19 +378,19 @@ async function main() {
   const dedupTitles = recentTitles.length >= 20 ? recentTitles : index.articles.map((a) => a.locales?.[SOURCE_LOCALE]?.title || a.title).filter(Boolean);
 
   const categoryCounts = {};
-  const publishedLastHour = {};
-  for (const c of CATEGORIES) { categoryCounts[c] = 0; publishedLastHour[c] = 0; }
-  const hourAgo = Date.now() - 3600e3;
+  const publishedInWindow = {};
+  for (const c of CATEGORIES) { categoryCounts[c] = 0; publishedInWindow[c] = 0; }
+  const windowStart = Date.now() - RECENT_WINDOW_HOURS * 3600e3;
   for (const a of index.articles) {
     if (categoryCounts[a.category] !== undefined) categoryCounts[a.category]++;
-    if (Date.parse(a.publishedAt) >= hourAgo && publishedLastHour[a.category] !== undefined) publishedLastHour[a.category]++;
+    if (Date.parse(a.publishedAt) >= windowStart && publishedInWindow[a.category] !== undefined) publishedInWindow[a.category]++;
   }
 
   const TARGET_PER_CAT = +(process.env.TARGET_PER_CATEGORY || 25);
   const archiveNeeded = CATEGORIES.filter((c) => c !== 'community' && (categoryCounts[c] || 0) < TARGET_PER_CAT);
-  const hourlyNeeded = CATEGORIES.filter((c) => c !== 'community' && (publishedLastHour[c] || 0) < TARGET_PER_CATEGORY_PER_HOUR);
-  const priorityCategories = [...new Set([...hourlyNeeded, ...archiveNeeded])];
-  log(`DESK   last hour: ${CATEGORIES.filter((c) => c !== 'community').map((c) => `${c}:${publishedLastHour[c]}`).join(' ')} (target ${TARGET_PER_CATEGORY_PER_HOUR}/cat/h)`);
+  const cycleNeeded = CATEGORIES.filter((c) => c !== 'community' && (publishedInWindow[c] || 0) < TARGET_PER_CATEGORY_PER_CYCLE);
+  const priorityCategories = [...new Set([...cycleNeeded, ...archiveNeeded])];
+  log(`DESK   last ${RECENT_WINDOW_HOURS}h: ${CATEGORIES.filter((c) => c !== 'community').map((c) => `${c}:${publishedInWindow[c]}`).join(' ')} (target ${TARGET_PER_CATEGORY_PER_CYCLE}/cat/cycle)`);
   log(`DESK   archive: ${Object.entries(categoryCounts).filter(([c]) => c !== 'community').map(([k, v]) => `${k}:${v}`).join(' ')}`);
   if (priorityCategories.length) log(`DESK   prioritizing: ${priorityCategories.join(', ')}`);
 
@@ -486,14 +492,14 @@ async function main() {
     if (allEvents.length >= Math.max(MAX_STORIES * 2, 8)) break;
   }
 
-  // Rank by importance + source depth, then apply the per-category hourly quota.
+  // Rank by importance + source depth, then apply the per-category cycle quota.
   allEvents.sort((a, b) => ((+b.importance || 1) * 10 + b.outlets) - ((+a.importance || 1) * 10 + a.outlets));
-  const projected = { ...publishedLastHour };
+  const projected = { ...publishedInWindow };
   const perCat = {};
   const events = [];
   for (const e of allEvents) {
     if (events.length >= MAX_STORIES) break;
-    if ((projected[e.category] || 0) >= TARGET_PER_CATEGORY_PER_HOUR) continue;
+    if ((projected[e.category] || 0) >= TARGET_PER_CATEGORY_PER_CYCLE) continue;
     if ((perCat[e.category] || 0) >= MAX_PER_CATEGORY) continue;
     perCat[e.category] = (perCat[e.category] || 0) + 1;
     projected[e.category] = (projected[e.category] || 0) + 1;
@@ -560,7 +566,8 @@ async function main() {
     events: events.length,
     published: accepted.length,
     translated,
-    targetPerCategoryPerHour: TARGET_PER_CATEGORY_PER_HOUR,
+    targetPerCategoryPerCycle: TARGET_PER_CATEGORY_PER_CYCLE,
+    recentWindowHours: RECENT_WINDOW_HOURS,
     byCategory: Object.fromEntries(CATEGORIES.map((c) => [c, accepted.filter((a) => a.category === c).length])),
     sourcePolicies: Object.fromEntries(['two-source', 'primary'].map((p) => [p, accepted.filter((a) => a.sourcePolicy === p).length])),
     durationMs: Date.now() - RUN_STARTED,

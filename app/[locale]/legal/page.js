@@ -1,9 +1,16 @@
-import Link from 'next/link';
+import { SITE, LOCALES } from '@/lib/config.mjs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   return {
     title: locale === 'de' ? 'Impressum & Rechtliches | PLAIN.' : 'Legal Notice & Disclaimer | PLAIN.',
+    description: locale === 'de'
+      ? 'Betreiber, Kontakt, Urheberrecht, Haftung und Finanzmarkt-Disclaimer von PLAIN.'
+      : 'Operator, contact, copyright, liability and financial-market disclaimer for PLAIN.',
+    alternates: {
+      canonical: `${SITE.url}/${locale}/legal`,
+      languages: Object.fromEntries(LOCALES.map((l) => [l.code, `${SITE.url}/${l.code}/legal`])),
+    },
   };
 }
 
@@ -20,7 +27,7 @@ export default async function LegalPage({ params }) {
         <p>
           {isDe ? (
             <>
-              <strong>Plattform:</strong> PLAIN. ([plain-news.ch](https://plain-news.ch))<br />
+              <strong>Plattform:</strong> PLAIN. (<a href="https://www.plain-news.ch">plain-news.ch</a>)<br />
               <strong>Herausgeber & Initiator:</strong> Simon Eggert<br />
               <strong>Standort:</strong> Schweiz (CH)<br />
               <strong>Kontakt & Impressum:</strong> <a href="mailto:simoneggert16@gmail.com">simoneggert16@gmail.com</a><br />
@@ -28,7 +35,7 @@ export default async function LegalPage({ params }) {
             </>
           ) : (
             <>
-              <strong>Platform:</strong> PLAIN. ([plain-news.ch](https://plain-news.ch))<br />
+              <strong>Platform:</strong> PLAIN. (<a href="https://www.plain-news.ch">plain-news.ch</a>)<br />
               <strong>Founder & Publisher:</strong> Simon Eggert<br />
               <strong>Location:</strong> Switzerland (CH)<br />
               <strong>Contact & Legal:</strong> <a href="mailto:simoneggert16@gmail.com">simoneggert16@gmail.com</a><br />

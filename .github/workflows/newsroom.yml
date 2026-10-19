@@ -2,10 +2,9 @@ name: Newsroom
 
 on:
   schedule:
-    # Every 20 minutes -> 3 runs/hour × up to 4 stories = up to 12 stories/hour.
-    # 20 minutes (not 15) leaves room for the reporter/editor/translation pipeline
-    # to finish before the next run, so scheduled runs are not cancelled.
-    - cron: '*/20 * * * *'
+    # Every 5 hours at :17 UTC (00:17, 05:17, 10:17, 15:17, 20:17).
+    # One cycle covers the last 5 hours and targets up to 5 stories per category.
+    - cron: '17 */5 * * *'
   workflow_dispatch: {}       # manual "Run workflow" button
 
 permissions:
@@ -18,7 +17,7 @@ concurrency:
 jobs:
   newsroom:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,21 +26,22 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Run AI newsroom
-        timeout-minutes: 16
+        timeout-minutes: 130
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
-          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '4' }}
-          MAX_PER_CATEGORY: '2'
-          TARGET_PER_CATEGORY_PER_HOUR: '2'
-          EVENT_CONCURRENCY: '4'
-          TRANSLATION_CONCURRENCY: '8'
-          RUN_BUDGET_MINUTES: '15'
-          MAX_ARTICLES_PER_DAY: '300'
-          MAX_AGE_HOURS: '12'
+          MAX_STORIES_PER_RUN: ${{ vars.MAX_STORIES_PER_RUN || '45' }}
+          MAX_PER_CATEGORY: ${{ vars.MAX_PER_CATEGORY || '5' }}
+          TARGET_PER_CATEGORY_PER_CYCLE: ${{ vars.TARGET_PER_CATEGORY_PER_CYCLE || '5' }}
+          EVENT_CONCURRENCY: ${{ vars.EVENT_CONCURRENCY || '4' }}
+          TRANSLATION_CONCURRENCY: ${{ vars.TRANSLATION_CONCURRENCY || '8' }}
+          RUN_BUDGET_MINUTES: '110'
+          RECENT_WINDOW_HOURS: '5'
+          MAX_ARTICLES_PER_DAY: '250'
+          MAX_AGE_HOURS: '8'
           PER_FEED: '20'
           DESK_BATCH_SIZE: '60'
-          DESK_MAX_BATCHES: '2'
+          DESK_MAX_BATCHES: '6'
         run: node bots/newsroom.mjs
       - name: Commit new stories
         if: always()
