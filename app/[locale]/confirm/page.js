@@ -22,13 +22,33 @@ function ConfirmContent() {
       try {
         if (authError) throw new Error(authError);
         const supabase = getSupabaseBrowserClient();
+        let session;
         if (code) {
-          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+          const { data, error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
           if (exchangeError) throw exchangeError;
+          session = data.session;
+        } else {
+          const fragment = new URLSearchParams(window.location.hash.slice(1));
+          const fragmentError = fragment.get('error_description') || fragment.get('error');
+          if (fragmentError) throw new Error(fragmentError);
+
+          const accessToken = fragment.get('access_token');
+          const refreshToken = fragment.get('refresh_token');
+          if (!accessToken || !refreshToken) {
+            throw new Error(isDe
+              ? 'Bestätigungslink ungültig oder abgelaufen. Bitte melde dich erneut an.'
+              : 'Verification link is invalid or expired. Please sign in again.');
+          }
+
+          const { data, error: sessionError } = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+          if (sessionError) throw sessionError;
+          session = data.session;
+          window.history.replaceState({}, document.title, `${window.location.pathname}${window.location.search}`);
         }
 
-        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-        if (sessionError) throw sessionError;
         if (!session?.user?.email_confirmed_at) {
           throw new Error(isDe
             ? 'Bestätigungslink ungültig oder abgelaufen. Bitte melde dich erneut an.'
