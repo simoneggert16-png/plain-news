@@ -17,6 +17,17 @@ const titleText = {
   ja: '毎日のファクト・ブリーフィング',
   ko: '오늘의 팩트 브리핑',
 };
+const newsletterText = {
+  de: { edition: 'DAS WICHTIGSTE DES TAGES', read: 'Artikel lesen', unsubscribe: 'Newsletter abbestellen', footer: 'Unabhängige Nachrichten. Klar auf den Punkt.' },
+  en: { edition: 'YOUR DAILY EDITION', read: 'Read the story', unsubscribe: 'Unsubscribe', footer: 'Independent news. Clearly explained.' },
+  fr: { edition: 'VOTRE ÉDITION DU JOUR', read: 'Lire l’article', unsubscribe: 'Se désabonner', footer: 'Une information indépendante, en toute clarté.' },
+  es: { edition: 'TU EDICIÓN DEL DÍA', read: 'Leer el artículo', unsubscribe: 'Cancelar suscripción', footer: 'Noticias independientes, explicadas con claridad.' },
+  it: { edition: 'LA TUA EDIZIONE DI OGGI', read: 'Leggi l’articolo', unsubscribe: 'Annulla iscrizione', footer: 'Notizie indipendenti, spiegate con chiarezza.' },
+  pt: { edition: 'A SUA EDIÇÃO DE HOJE', read: 'Leia a notícia', unsubscribe: 'Cancelar inscrição', footer: 'Jornalismo independente, explicado com clareza.' },
+  zh: { edition: '今日精选', read: '阅读报道', unsubscribe: '取消订阅', footer: '独立新闻，清晰易懂。' },
+  ja: { edition: '今日のニュースレター', read: '記事を読む', unsubscribe: '配信停止', footer: '独立したニュースを、わかりやすく。' },
+  ko: { edition: '오늘의 브리핑', read: '기사 읽기', unsubscribe: '구독 취소', footer: '독립적인 뉴스를 명확하게 전합니다.' },
+};
 
 function escapeHtml(value = '') {
   return String(value).replace(/[&<>"']/g, (char) => ({
@@ -45,56 +56,120 @@ async function main() {
   if (!RESEND_API_KEY || !FROM_EMAIL) {
     throw new Error('Set RESEND_API_KEY and RESEND_FROM_EMAIL to send the newsletter.');
   }
+  const recipientInput = process.env.NEWSLETTER_RECIPIENTS;
+  const isDirectSend = recipientInput !== undefined || process.env.NEWSLETTER_SEND_ONCE_DATE !== undefined;
+  const directRecipients = typeof recipientInput === 'string'
+    ? [...new Set(recipientInput.split(/[,\n;]+/).map((email) => email.trim()).filter(Boolean))]
+    : [];
+  if (isDirectSend) {
+    if (directRecipients.length === 0) {
+      throw new Error('NEWSLETTER_RECIPIENTS must contain at least one email address.');
+    }
+    if (directRecipients.some((email) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+      throw new Error('NEWSLETTER_RECIPIENTS contains an invalid email address.');
+    }
+    const targetDate = process.env.NEWSLETTER_SEND_ONCE_DATE;
+    if (!targetDate || !/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
+      throw new Error('A valid NEWSLETTER_SEND_ONCE_DATE is required for a direct send.');
+    }
+    if (new Date().toISOString().slice(0, 10) !== targetDate) {
+      console.log(`One-time newsletter is restricted to ${targetDate} UTC; no email sent.`);
+      return;
+    }
+  }
   const { articles = [] } = JSON.parse(fs.readFileSync('content/index.json', 'utf8'));
   const cutoff = Date.now() - 24 * 60 * 60 * 1000;
   const recent = articles
     .filter((article) => Date.parse(article.publishedAt) >= cutoff)
+    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
     .slice(0, 5);
   if (!recent.length) {
     console.log('No articles from the last 24 hours; no newsletter sent.');
     return;
   }
 
-  const supabase = getSupabaseAdminClient();
-  const oldDate = new Date(cutoff).toISOString();
-  const { data: subscribers, error } = await supabase
-    .from('newsletter_subscribers')
-    .select('email, locale')
-    .eq('active', true)
-    .or(`last_sent_at.is.null,last_sent_at.lt.${oldDate}`);
-  if (error) throw error;
-  console.log(`Sending a ${recent.length}-article digest to ${subscribers.length} subscriber(s).`);
+  let supabase;
+  let subscribers;
+  if (isDirectSend) {
+    subscribers = directRecipients.map((email) => ({ email, locale: 'de' }));
+  } else {
+    supabase = getSupabaseAdminClient();
+    const oldDate = new Date(cutoff).toISOString();
+    const { data, error } = await supabase
+      .from('newsletter_subscribers')
+      .select('email, locale')
+      .eq('active', true)
+      .or(`last_sent_at.is.null,last_sent_at.lt.${oldDate}`);
+    if (error) throw error;
+    subscribers = data;
+  }
+  console.log(`Sending a ${recent.length}-article digest to ${subscribers.length} ${isDirectSend ? 'requested recipient(s)' : 'subscriber(s)'}.`);
 
   let failed = 0;
   for (const subscriber of subscribers) {
     const locale = locales.has(subscriber.locale) ? subscriber.locale : 'de';
-    const items = recent.map((article) => {
+    const copy = newsletterText[locale];
+    const date = new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'Europe/Zurich' }).format(new Date());
+    const items = recent.map((article, index) => {
       const translation = article.locales?.[locale] || article.locales?.en || {};
       const url = `${SITE_URL}/${locale}/a/${encodeURIComponent(article.slug)}`;
-      return `<article style="margin:0 0 24px;padding:0 0 18px;border-bottom:1px solid #ddd">
-        <h2 style="font-size:18px;line-height:1.35"><a href="${url}" style="color:#111">${escapeHtml(translation.title || article.slug)}</a></h2>
-        <p style="font-size:14px;line-height:1.6">${escapeHtml(translation.dek || '')}</p>
-      </article>`;
+      return `<tr>
+        <td style="padding:24px 28px;border-bottom:1px solid #e8eaf0">
+          <p style="margin:0 0 10px;color:#667085;font:700 11px/1.4 Arial,Helvetica,sans-serif;letter-spacing:1.5px">${String(index + 1).padStart(2, '0')}</p>
+          <h2 style="margin:0 0 10px;font:700 20px/1.35 Arial,Helvetica,sans-serif"><a href="${escapeHtml(url)}" style="color:#17233b;text-decoration:none">${escapeHtml(translation.title || article.slug)}</a></h2>
+          <p style="margin:0 0 16px;color:#475467;font:15px/1.65 Arial,Helvetica,sans-serif">${escapeHtml(translation.dek || '')}</p>
+          <a href="${escapeHtml(url)}" style="display:inline-block;color:#155eef;font:700 13px/1.4 Arial,Helvetica,sans-serif;text-decoration:none">${copy.read} &rarr;</a>
+        </td>
+      </tr>`;
     }).join('');
-    const token = unsubscribeToken(subscriber.email);
-    const unsubscribeUrl = `${SITE_URL}/api/community/newsletter/unsubscribe?email=${encodeURIComponent(subscriber.email)}&token=${token}`;
-    const html = `<div style="max-width:620px;margin:auto;font:16px/1.6 Arial,sans-serif;color:#111">
-      <p style="font:700 12px monospace;letter-spacing:2px">PLAIN. — DAILY FACT BRIEFING</p>
-      <h1 style="font-size:24px">${titleText[locale]}</h1>
-      ${items}
-      <p style="font-size:12px;color:#555">PLAIN. · <a href="${unsubscribeUrl}">Newsletter abbestellen / Unsubscribe</a></p>
-    </div>`;
+    const unsubscribeUrl = isDirectSend
+      ? ''
+      : `${SITE_URL}/api/community/newsletter/unsubscribe?email=${encodeURIComponent(subscriber.email)}&token=${unsubscribeToken(subscriber.email)}`;
+    const footer = isDirectSend
+      ? `<p style="margin:0;color:#667085;font:12px/1.6 Arial,Helvetica,sans-serif">Diese einmalige Ausgabe wurde direkt an Sie gesendet.</p>`
+      : `<p style="margin:0;color:#667085;font:12px/1.6 Arial,Helvetica,sans-serif"><a href="${escapeHtml(unsubscribeUrl)}" style="color:#475467;text-decoration:underline">${copy.unsubscribe}</a></p>`;
+    const html = `<!doctype html>
+<html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(titleText[locale])}</title></head>
+<body style="margin:0;padding:0;background:#f3f5f8;color:#17233b;font-family:Arial,Helvetica,sans-serif">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent">${escapeHtml(titleText[locale])} · ${recent.length} stories, ${date}</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f3f5f8">
+    <tr><td align="center" style="padding:32px 14px">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:600px;background:#ffffff;border:1px solid #e5e8ef">
+        <tr><td style="padding:26px 28px;background:#17233b">
+          <p style="margin:0;color:#ffffff;font:800 21px/1 Arial,Helvetica,sans-serif;letter-spacing:3px">PLAIN<span style="color:#f4b544">.</span></p>
+          <p style="margin:12px 0 0;color:#cbd5e1;font:700 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:1.8px">${copy.edition}</p>
+        </td></tr>
+        <tr><td style="padding:30px 28px 24px">
+          <p style="margin:0 0 10px;color:#667085;font:13px/1.5 Arial,Helvetica,sans-serif">${escapeHtml(date)}</p>
+          <h1 style="margin:0;color:#17233b;font:700 27px/1.25 Arial,Helvetica,sans-serif">${escapeHtml(titleText[locale])}</h1>
+        </td></tr>
+        ${items}
+        <tr><td style="padding:22px 28px;background:#f8f9fb">
+          <p style="margin:0 0 10px;color:#17233b;font:700 14px/1.5 Arial,Helvetica,sans-serif">PLAIN.</p>
+          <p style="margin:0 0 14px;color:#667085;font:13px/1.6 Arial,Helvetica,sans-serif">${copy.footer}</p>
+          ${footer}
+        </td></tr>
+      </table>
+      <p style="margin:16px 0 0;color:#98a2b3;font:11px/1.5 Arial,Helvetica,sans-serif">plain-news.ch</p>
+    </td></tr>
+  </table>
+</body></html>`;
     try {
       await sendEmail({ to: subscriber.email, subject: `PLAIN. — ${titleText[locale]}`, html });
-      const { error: updateError } = await supabase
-        .from('newsletter_subscribers')
-        .update({ last_sent_at: new Date().toISOString() })
-        .eq('email', subscriber.email);
-      if (updateError) throw updateError;
-      console.log(`Sent newsletter to ${subscriber.email}`);
+      if (!isDirectSend) {
+        const { error: updateError } = await supabase
+          .from('newsletter_subscribers')
+          .update({ last_sent_at: new Date().toISOString() })
+          .eq('email', subscriber.email);
+        if (updateError) throw updateError;
+      }
+      console.log(isDirectSend ? 'Sent one-time newsletter to a requested recipient.' : `Sent newsletter to ${subscriber.email}`);
     } catch (sendError) {
       failed++;
-      console.error(`Newsletter delivery failed for ${subscriber.email}: ${sendError.message}`);
+      const errorMessage = isDirectSend
+        ? sendError.message.replaceAll(subscriber.email, '[redacted]')
+        : sendError.message;
+      console.error(`Newsletter delivery failed${isDirectSend ? ' for a requested recipient' : ` for ${subscriber.email}`}: ${errorMessage}`);
     }
   }
   if (failed) throw new Error(`${failed} newsletter email(s) failed.`);
