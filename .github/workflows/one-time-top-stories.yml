@@ -4,6 +4,7 @@ on:
   schedule:
     # 07:30 Europe/Zurich (UTC+2 on 2026-10-20); the script enforces the exact date.
     - cron: '30 5 20 10 *'
+  workflow_dispatch: {}
 
 permissions:
   actions: write
