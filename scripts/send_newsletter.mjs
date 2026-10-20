@@ -103,6 +103,9 @@ async function main() {
     .filter((article) => Date.parse(article.publishedAt) >= cutoff)
     .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
     .slice(0, articleLimit);
+  if (isDailyDirectSend && recent.length < articleLimit) {
+    throw new Error(`Only ${recent.length} articles are available; refusing to send an incomplete ${articleLimit}-article daily digest.`);
+  }
   if (!recent.length) {
     console.log('No articles from the last 24 hours; no newsletter sent.');
     return;
