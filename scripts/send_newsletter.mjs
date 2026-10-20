@@ -57,7 +57,10 @@ async function main() {
     throw new Error('Set RESEND_API_KEY and RESEND_FROM_EMAIL to send the newsletter.');
   }
   const recipientInput = process.env.NEWSLETTER_RECIPIENTS;
-  const isDirectSend = recipientInput !== undefined || process.env.NEWSLETTER_SEND_ONCE_DATE !== undefined;
+  const isDailyDirectSend = process.env.NEWSLETTER_DAILY_SEND === 'true';
+  const isDirectSend = recipientInput !== undefined
+    || process.env.NEWSLETTER_SEND_ONCE_DATE !== undefined
+    || isDailyDirectSend;
   const directRecipients = typeof recipientInput === 'string'
     ? [...new Set(recipientInput.split(/[,\n;]+/).map((email) => email.trim()).filter(Boolean))]
     : [];
@@ -68,21 +71,38 @@ async function main() {
     if (directRecipients.some((email) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
       throw new Error('NEWSLETTER_RECIPIENTS contains an invalid email address.');
     }
-    const targetDate = process.env.NEWSLETTER_SEND_ONCE_DATE;
-    if (!targetDate || !/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
-      throw new Error('A valid NEWSLETTER_SEND_ONCE_DATE is required for a direct send.');
-    }
-    if (new Date().toISOString().slice(0, 10) !== targetDate) {
-      console.log(`One-time newsletter is restricted to ${targetDate} UTC; no email sent.`);
-      return;
+    if (isDailyDirectSend) {
+      const localTime = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Zurich',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23',
+      }).format(new Date());
+      if (!localTime.startsWith('07:') || Number(localTime.slice(3)) < 30) {
+        console.log(`Daily newsletter is restricted to 07:30 Europe/Zurich; current time is ${localTime}, no email sent.`);
+        return;
+      }
+    } else {
+      const targetDate = process.env.NEWSLETTER_SEND_ONCE_DATE;
+      if (!targetDate || !/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
+        throw new Error('A valid NEWSLETTER_SEND_ONCE_DATE is required for a direct send.');
+      }
+      if (new Date().toISOString().slice(0, 10) !== targetDate) {
+        console.log(`One-time newsletter is restricted to ${targetDate} UTC; no email sent.`);
+        return;
+      }
     }
   }
   const { articles = [] } = JSON.parse(fs.readFileSync('content/index.json', 'utf8'));
   const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+  const articleLimit = Number(process.env.NEWSLETTER_ARTICLE_LIMIT || 5);
+  if (!Number.isInteger(articleLimit) || articleLimit < 1 || articleLimit > 100) {
+    throw new Error('NEWSLETTER_ARTICLE_LIMIT must be an integer between 1 and 100.');
+  }
   const recent = articles
     .filter((article) => Date.parse(article.publishedAt) >= cutoff)
     .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
-    .slice(0, 5);
+    .slice(0, articleLimit);
   if (!recent.length) {
     console.log('No articles from the last 24 hours; no newsletter sent.');
     return;
@@ -126,7 +146,7 @@ async function main() {
       ? ''
       : `${SITE_URL}/api/community/newsletter/unsubscribe?email=${encodeURIComponent(subscriber.email)}&token=${unsubscribeToken(subscriber.email)}`;
     const footer = isDirectSend
-      ? `<p style="margin:0;color:#667085;font:12px/1.6 Arial,Helvetica,sans-serif">Diese einmalige Ausgabe wurde direkt an Sie gesendet.</p>`
+      ? `<p style="margin:0;color:#667085;font:12px/1.6 Arial,Helvetica,sans-serif">Diese Ausgabe wurde direkt an Sie gesendet.</p>`
       : `<p style="margin:0;color:#667085;font:12px/1.6 Arial,Helvetica,sans-serif"><a href="${escapeHtml(unsubscribeUrl)}" style="color:#475467;text-decoration:underline">${copy.unsubscribe}</a></p>`;
     const html = `<!doctype html>
 <html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(titleText[locale])}</title></head>

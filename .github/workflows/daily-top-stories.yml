@@ -1,14 +1,17 @@
-name: One-time top stories
+name: Daily top stories
 
 on:
   schedule:
-    # 07:30 Europe/Zurich (UTC+2 on 2026-10-20); the script enforces the exact date.
-    - cron: '30 5 20 10 *'
-  workflow_dispatch: {}
+    # Pair with the local-time guard for 07:30 Europe/Zurich across DST changes.
+    - cron: '30 5 * * *'
+    - cron: '30 6 * * *'
 
 permissions:
-  actions: write
   contents: read
+
+concurrency:
+  group: daily-top-stories
+  cancel-in-progress: false
 
 jobs:
   send:
@@ -21,15 +24,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Send the one-time digest
+      - name: Send the daily digest to the requested addresses
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM_EMAIL: ${{ vars.RESEND_FROM_EMAIL }}
           NEWSLETTER_RECIPIENTS: ${{ secrets.NEWSLETTER_TOPSTORIES_RECIPIENTS_ONCE }}
-          NEWSLETTER_SEND_ONCE_DATE: '2026-10-20'
+          NEWSLETTER_DAILY_SEND: 'true'
+          NEWSLETTER_ARTICLE_LIMIT: '50'
         run: node scripts/send_newsletter.mjs
-      - name: Disable this one-time schedule
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow disable one-time-top-stories.yml
