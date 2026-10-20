@@ -10,6 +10,10 @@ export default function ArticleComments({ slug, locale, isDe }) {
   const [postSuccess, setPostSuccess] = useState(false);
   const [postError, setPostError] = useState('');
   const [loadError, setLoadError] = useState('');
+  const [replyingTo, setReplyingTo] = useState(null);
+  const [replyText, setReplyText] = useState('');
+  const [replyError, setReplyError] = useState('');
+  const [submittingReply, setSubmittingReply] = useState(false);
   const [lastSyncTime, setLastSyncTime] = useState(null);
   
   // Track live translations per comment ID: { [id]: { translated: string, showTranslated: boolean, loading: boolean } }
@@ -113,6 +117,41 @@ export default function ArticleComments({ slug, locale, isDe }) {
       setPostError(err.message);
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  const handleReplySubmit = async (e, parent) => {
+    e.preventDefault();
+    if (!replyText.trim() || submittingReply) return;
+
+    setSubmittingReply(true);
+    setReplyError('');
+    try {
+      const response = await fetch('/api/community/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug,
+          parentId: parent.id,
+          author: name.trim() || (isDe ? 'Anonym' : 'Anonymous Reader'),
+          content: replyText.trim(),
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || (isDe ? 'Antwort konnte nicht gespeichert werden.' : 'Reply could not be saved.'));
+      }
+      if (!Array.isArray(data.comments)) {
+        throw new Error(isDe ? 'Server hat keine gespeicherten Antworten zurückgegeben.' : 'The server did not return the saved replies.');
+      }
+      setComments(data.comments);
+      setReplyText('');
+      setReplyingTo(null);
+    } catch (err) {
+      console.error('Comment reply error:', err);
+      setReplyError(err.message);
+    } finally {
+      setSubmittingReply(false);
     }
   };
 
@@ -249,13 +288,23 @@ export default function ArticleComments({ slug, locale, isDe }) {
             {isDe ? 'Noch keine Beiträge vorhanden. Sei der Erste, der verifizierten Kontext beiträgt.' : 'No notes yet. Be the first to provide factual context.'}
           </p>
         ) : (
-          comments.map((c) => {
+          (() => {
+            const repliesByParent = new Map();
+            comments.forEach((comment) => {
+              if (comment.parentId) {
+                const replies = repliesByParent.get(comment.parentId) || [];
+                replies.push(comment);
+                repliesByParent.set(comment.parentId, replies);
+              }
+            });
+            const renderComment = (c, depth = 0) => {
             const trans = translations[c.id];
             const isShowingTranslated = trans?.showTranslated && trans?.translated;
             const displayText = isShowingTranslated ? trans.translated : c.content;
 
             return (
-              <div key={c.id} className="comment-card">
+              <div key={c.id} className="comment-thread">
+              <div className="comment-card" style={depth ? { marginLeft: `${Math.min(depth, 4) * 18}px`, borderLeft: '2px solid var(--line, #d0d5dd)' } : undefined}>
                 <div className="comment-meta">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span className="comment-author">{c.author}</span>
@@ -295,10 +344,46 @@ export default function ArticleComments({ slug, locale, isDe }) {
                       <span> {isDe ? `Live übersetzen (${locale.toUpperCase()})` : `Live translate (${locale.toUpperCase()})`}</span>
                     )}
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setReplyingTo(replyingTo === c.id ? null : c.id);
+                      setReplyError('');
+                      setReplyText('');
+                    }}
+                    className="comment-translate-btn"
+                  >
+                    {replyingTo === c.id
+                      ? (isDe ? 'Abbrechen' : 'Cancel')
+                      : (isDe ? 'Antworten' : 'Reply')}
+                  </button>
                 </div>
+                {replyingTo === c.id && (
+                  <form onSubmit={(e) => handleReplySubmit(e, c)} style={{ marginTop: '12px' }}>
+                    <textarea
+                      required
+                      rows={2}
+                      maxLength={1000}
+                      value={replyText}
+                      onChange={(e) => setReplyText(e.target.value)}
+                      placeholder={isDe ? `Antwort an ${c.author}…` : `Reply to ${c.author}…`}
+                      className="comment-text-input"
+                    />
+                    {replyError && <p role="alert" style={{ color: '#b42318', margin: '6px 0' }}>{replyError}</p>}
+                    <button type="submit" disabled={submittingReply || !replyText.trim()} className="btn btn-inv comment-btn">
+                      {submittingReply ? (isDe ? 'Wird gespeichert…' : 'Saving…') : (isDe ? 'Antwort veröffentlichen' : 'Post reply')}
+                    </button>
+                  </form>
+                )}
+              </div>
+              {(repliesByParent.get(c.id) || []).map((reply) => renderComment(reply, depth + 1))}
               </div>
             );
-          })
+            };
+            return comments
+              .filter((comment) => !comment.parentId || !comments.some((item) => item.id === comment.parentId))
+              .map((comment) => renderComment(comment));
+          })()
         )}
       </div>
     </section>

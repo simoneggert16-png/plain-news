@@ -17,12 +17,20 @@ create table if not exists public.community_comments (
   article_slug text not null,
   author text not null,
   content text not null,
+  parent_id text,
   created_at timestamptz not null default now(),
   verified boolean not null default true
 );
 
+alter table public.community_comments
+  add column if not exists parent_id text;
+
 create index if not exists community_comments_article_created_idx
   on public.community_comments (article_slug, created_at desc);
+
+create index if not exists community_comments_parent_created_idx
+  on public.community_comments (parent_id, created_at asc)
+  where parent_id is not null;
 
 create table if not exists public.community_submissions (
   id text primary key,

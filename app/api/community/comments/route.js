@@ -35,11 +35,12 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { slug, author, content } = body || {};
+    const { slug, author, content, parentId } = body || {};
 
     if (typeof slug !== 'string' || !slug.trim() || slug.length > 200
       || typeof content !== 'string' || !content.trim() || content.length > 1000
-      || (author !== undefined && (typeof author !== 'string' || author.length > 50))) {
+      || (author !== undefined && (typeof author !== 'string' || author.length > 50))
+      || (parentId !== undefined && (typeof parentId !== 'string' || !parentId.trim() || parentId.length > 100))) {
       return NextResponse.json({ error: 'Slug and content are required' }, { status: 400 });
     }
 
@@ -48,6 +49,7 @@ export async function POST(request) {
       author: (author && author.trim()) || 'Anonym',
       date: new Date().toISOString(),
       content: content.trim(),
+      parentId: parentId?.trim() || null,
       verified: true,
     };
 
