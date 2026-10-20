@@ -13,12 +13,14 @@ export default function CommunitySubmitSection({ locale, isDe }) {
   const [author, setAuthor] = useState('');
   const [submittingArticle, setSubmittingArticle] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submissionError, setSubmissionError] = useState('');
 
   // Chatroom state
   const [chatMessages, setChatMessages] = useState([]);
   const [chatUser, setChatUser] = useState('');
   const [chatText, setChatText] = useState('');
   const [sendingChat, setSendingChat] = useState(false);
+  const [chatError, setChatError] = useState('');
 
   // Translation cache for submissions and chat messages: { [id]: { translated: string, showTranslated: boolean, loading: boolean } }
   const [translations, setTranslations] = useState({});
@@ -26,27 +28,53 @@ export default function CommunitySubmitSection({ locale, isDe }) {
   useEffect(() => {
     let active = true;
 
-    // Load server submissions
-    fetch('/api/community/submissions', { cache: 'no-store' })
-      .then(res => res.json())
+    const loadSubmissions = () => fetch('/api/community/submissions', { cache: 'no-store' })
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Beiträge konnten nicht geladen werden.');
+        return data;
+      })
       .then(data => {
         if (active && Array.isArray(data.submissions)) {
           setSubmissions(data.submissions);
+          setSubmissionError('');
         }
       })
-      .catch(err => console.warn('Failed to load server submissions:', err));
+      .catch(err => {
+        console.warn('Failed to load server submissions:', err);
+        if (active) setSubmissionError(err.message);
+      });
 
-    // Load server chat
-    fetch('/api/community/chat', { cache: 'no-store' })
-      .then(res => res.json())
+    const loadChat = () => fetch('/api/community/chat', { cache: 'no-store' })
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Chat konnte nicht geladen werden.');
+        return data;
+      })
       .then(data => {
         if (active && Array.isArray(data.messages)) {
           setChatMessages(data.messages);
+          setChatError('');
         }
       })
-      .catch(err => console.warn('Failed to load server chat:', err));
+      .catch(err => {
+        console.warn('Failed to load server chat:', err);
+        if (active) setChatError(err.message);
+      });
 
-    return () => { active = false; };
+    const refresh = () => {
+      loadSubmissions();
+      loadChat();
+    };
+    refresh();
+    const interval = setInterval(() => {
+      if (document.visibilityState === 'visible') refresh();
+    }, 15000);
+
+    return () => {
+      active = false;
+      clearInterval(interval);
+    };
   }, []);
 
   // Translate handler (used for both submissions and chat messages)
@@ -103,6 +131,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
     if (!title.trim() || !sourceUrl.trim() || !summary.trim() || submittingArticle) return;
 
     setSubmittingArticle(true);
+    setSubmissionError('');
     const authorName = author.trim() || (isDe ? 'Community-Mitglied' : 'Community Contributor');
 
     try {
@@ -117,10 +146,10 @@ export default function CommunitySubmitSection({ locale, isDe }) {
         }),
       });
 
-      if (postRes.ok) {
-        const postData = await postRes.json();
-        if (postData.submissions) setSubmissions(postData.submissions);
-      }
+      const postData = await postRes.json();
+      if (!postRes.ok) throw new Error(postData.error || (isDe ? 'Beitrag konnte nicht gespeichert werden.' : 'Contribution could not be saved.'));
+      if (!Array.isArray(postData.submissions)) throw new Error(isDe ? 'Server hat keine gespeicherten Beiträge zurückgegeben.' : 'The server did not return the saved contributions.');
+      setSubmissions(postData.submissions);
 
       setTitle('');
       setSourceUrl('');
@@ -130,6 +159,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
       setTimeout(() => setSubmitted(false), 4000);
     } catch (err) {
       console.error('Article submit error:', err);
+      setSubmissionError(err.message);
     } finally {
       setSubmittingArticle(false);
     }
@@ -141,6 +171,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
     if (!chatText.trim() || sendingChat) return;
 
     setSendingChat(true);
+    setChatError('');
     const userName = chatUser.trim() || (isDe ? 'Leser' : 'Reader');
     const messageContent = chatText.trim();
 
@@ -154,14 +185,15 @@ export default function CommunitySubmitSection({ locale, isDe }) {
         }),
       });
 
-      if (postRes.ok) {
-        const postData = await postRes.json();
-        if (postData.messages) setChatMessages(postData.messages);
-      }
+      const postData = await postRes.json();
+      if (!postRes.ok) throw new Error(postData.error || (isDe ? 'Chat-Nachricht konnte nicht gespeichert werden.' : 'Chat message could not be saved.'));
+      if (!Array.isArray(postData.messages)) throw new Error(isDe ? 'Server hat keine gespeicherten Nachrichten zurückgegeben.' : 'The server did not return the saved messages.');
+      setChatMessages(postData.messages);
 
       setChatText('');
     } catch (err) {
       console.error('Chat error:', err);
+      setChatError(err.message);
     } finally {
       setSendingChat(false);
     }
@@ -262,6 +294,11 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                 <div className="submit-success-badge">
                   ✓ {isDe ? 'Erfolgreich auf dem Server veröffentlicht!' : 'Successfully published on server!'}
                 </div>
+              )}
+              {submissionError && (
+                <p role="alert" className="submit-success-badge" style={{ color: '#b42318' }}>
+                  {submissionError}
+                </p>
               )}
             </form>
           </div>
@@ -368,6 +405,11 @@ export default function CommunitySubmitSection({ locale, isDe }) {
               </button>
             </div>
           </form>
+          {chatError && (
+            <p role="alert" className="submit-success-badge" style={{ color: '#b42318' }}>
+              {chatError}
+            </p>
+          )}
 
           {/* Chat Messages Stream */}
           <div className="chatroom-stream">

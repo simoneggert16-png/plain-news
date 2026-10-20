@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getCommentsForSlug, addCommentToCloud, fetchAllComments } from '@/lib/cloudStore.mjs';
+import { addComment, listAllComments, listComments } from '@/lib/communityStore.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -10,11 +10,14 @@ export async function GET(request) {
     const slug = searchParams.get('slug');
 
     if (!slug) {
-      const all = await fetchAllComments();
+      const all = await listAllComments();
       return NextResponse.json({ comments: [], all });
     }
+    if (slug.length > 200) {
+      return NextResponse.json({ error: 'Invalid article slug.' }, { status: 400 });
+    }
 
-    const list = await getCommentsForSlug(slug);
+    const list = await listComments(slug);
     return NextResponse.json({
       comments: list,
       timestamp: new Date().toISOString(),
@@ -25,7 +28,7 @@ export async function GET(request) {
     });
   } catch (err) {
     console.error('Comments GET error:', err);
-    return NextResponse.json({ comments: [] });
+    return NextResponse.json({ error: 'Comments could not be loaded.' }, { status: 500 });
   }
 }
 
@@ -34,7 +37,9 @@ export async function POST(request) {
     const body = await request.json();
     const { slug, author, content } = body || {};
 
-    if (!slug || !content || !content.trim()) {
+    if (typeof slug !== 'string' || !slug.trim() || slug.length > 200
+      || typeof content !== 'string' || !content.trim() || content.length > 1000
+      || (author !== undefined && (typeof author !== 'string' || author.length > 50))) {
       return NextResponse.json({ error: 'Slug and content are required' }, { status: 400 });
     }
 
@@ -46,7 +51,7 @@ export async function POST(request) {
       verified: true,
     };
 
-    const updatedComments = await addCommentToCloud(slug, newComment);
+    const updatedComments = await addComment(slug.trim(), newComment);
 
     return NextResponse.json({
       success: true,
@@ -59,6 +64,6 @@ export async function POST(request) {
     });
   } catch (err) {
     console.error('Error posting comment:', err);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Comment could not be saved.' }, { status: 500 });
   }
 }

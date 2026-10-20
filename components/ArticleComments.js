@@ -8,6 +8,8 @@ export default function ArticleComments({ slug, locale, isDe }) {
   const [submitting, setSubmitting] = useState(false);
   const [loadingComments, setLoadingComments] = useState(true);
   const [postSuccess, setPostSuccess] = useState(false);
+  const [postError, setPostError] = useState('');
+  const [loadError, setLoadError] = useState('');
   const [lastSyncTime, setLastSyncTime] = useState(null);
   
   // Track live translations per comment ID: { [id]: { translated: string, showTranslated: boolean, loading: boolean } }
@@ -35,43 +37,15 @@ export default function ArticleComments({ slug, locale, isDe }) {
         headers: { 'Cache-Control': 'no-cache' },
       });
 
-      if (res.ok) {
-        const data = await res.json();
-        if (Array.isArray(data.comments)) {
-          // Merge with any local offline comments if needed
-          const localSaved = localStorage.getItem(`plain_comments_${slug}`);
-          let localList = [];
-          try {
-            if (localSaved) localList = JSON.parse(localSaved);
-          } catch {}
-
-          const map = new Map();
-          // Server comments take priority
-          data.comments.forEach((c) => map.set(c.id, c));
-          localList.forEach((c) => {
-            if (!map.has(c.id)) map.set(c.id, c);
-          });
-
-          const merged = Array.from(map.values()).sort(
-            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-          );
-
-          setComments(merged);
-          setLastSyncTime(new Date());
-          try {
-            localStorage.setItem(`plain_comments_${slug}`, JSON.stringify(merged));
-          } catch {}
-        }
-      }
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Kommentare konnten nicht geladen werden.');
+      if (!Array.isArray(data.comments)) throw new Error('Der Server hat keine gültige Kommentarliste zurückgegeben.');
+      setComments(data.comments);
+      setLoadError('');
+      setLastSyncTime(new Date());
     } catch (err) {
       console.warn('Comments sync notice:', err.message);
-      // Fallback to local storage if offline
-      if (isInitial) {
-        try {
-          const saved = localStorage.getItem(`plain_comments_${slug}`);
-          if (saved) setComments(JSON.parse(saved));
-        } catch {}
-      }
+      if (isInitial) setLoadError(err.message);
     } finally {
       if (isInitial) setLoadingComments(false);
     }
@@ -107,6 +81,7 @@ export default function ArticleComments({ slug, locale, isDe }) {
 
     setSubmitting(true);
     setPostSuccess(false);
+    setPostError('');
 
     const authorName = name.trim() || (isDe ? 'Anonym' : 'Anonymous Reader');
     const commentContent = text.trim();
@@ -122,26 +97,10 @@ export default function ArticleComments({ slug, locale, isDe }) {
         }),
       });
 
-      let updatedList = [];
-      if (postRes.ok) {
-        const postData = await postRes.json();
-        updatedList = postData.comments || [];
-        setComments(updatedList);
-      } else {
-        const newLocalComment = {
-          id: 'c_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
-          author: authorName,
-          date: new Date().toISOString(),
-          content: commentContent,
-          verified: true,
-        };
-        updatedList = [newLocalComment, ...comments];
-        setComments(updatedList);
-      }
-
-      try {
-        localStorage.setItem(`plain_comments_${slug}`, JSON.stringify(updatedList));
-      } catch {}
+      const postData = await postRes.json();
+      if (!postRes.ok) throw new Error(postData.error || (isDe ? 'Kommentar konnte nicht gespeichert werden.' : 'Comment could not be saved.'));
+      if (!Array.isArray(postData.comments)) throw new Error(isDe ? 'Server hat keine gespeicherten Kommentare zurückgegeben.' : 'The server did not return the saved comments.');
+      setComments(postData.comments);
 
       setText('');
       setPostSuccess(true);
@@ -151,6 +110,7 @@ export default function ArticleComments({ slug, locale, isDe }) {
       setTimeout(() => fetchComments(false), 800);
     } catch (err) {
       console.error('Comment submission error:', err);
+      setPostError(err.message);
     } finally {
       setSubmitting(false);
     }
@@ -260,6 +220,11 @@ export default function ArticleComments({ slug, locale, isDe }) {
             ✓ {isDe ? 'Kommentar erfolgreich für alle Leser veröffentlicht!' : 'Comment published successfully for all readers!'}
           </div>
         )}
+        {postError && (
+          <p role="alert" className="comment-moderation-success" style={{ color: '#b42318' }}>
+            {postError}
+          </p>
+        )}
 
         <div className="comment-actions">
           <button type="submit" disabled={submitting || !text.trim()} className="btn btn-inv comment-btn">
@@ -270,6 +235,11 @@ export default function ArticleComments({ slug, locale, isDe }) {
 
       {/* Comments List */}
       <div className="comments-list">
+        {loadError && (
+          <p role="alert" className="comments-empty" style={{ color: '#b42318' }}>
+            {loadError}
+          </p>
+        )}
         {loadingComments ? (
           <p className="comments-empty" style={{ fontStyle: 'italic', color: 'var(--muted)', fontFamily: 'var(--mono)', fontSize: '12px' }}>
             {isDe ? 'Lade Beiträge vom Cloud-Server…' : 'Loading contributions from cloud server…'}

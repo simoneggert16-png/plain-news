@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import fs from 'node:fs';
-import path from 'node:path';
 import { LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import { listFor, localize, getArticle } from '@/lib/content.mjs';
+import { listAllComments, listSubmissions, listChatMessages } from '@/lib/communityStore.mjs';
 import Card from '@/components/Card';
 
 export async function generateMetadata({ params, searchParams }) {
@@ -20,59 +19,22 @@ export async function generateMetadata({ params, searchParams }) {
   };
 }
 
-function searchCommunityByUsername(query) {
+async function searchCommunityByUsername(query) {
   if (!query || query.length < 2) return { comments: [], submissions: [], chatMessages: [] };
   const qLower = query.toLowerCase().replace(/^@+/, '');
-
-  let commentsMatches = [];
-  let submissionsMatches = [];
-  let chatMatches = [];
-
-  try {
-    const commentsPath = path.join(process.cwd(), 'content', 'community', 'comments.json');
-    if (fs.existsSync(commentsPath)) {
-      const allComments = JSON.parse(fs.readFileSync(commentsPath, 'utf8'));
-      Object.entries(allComments).forEach(([slug, list]) => {
-        if (Array.isArray(list)) {
-          list.forEach(c => {
-            if (c.author && c.author.toLowerCase().includes(qLower)) {
-              commentsMatches.push({ ...c, slug });
-            }
-          });
-        }
-      });
-    }
-  } catch (e) {}
-
-  try {
-    const subPath = path.join(process.cwd(), 'content', 'community', 'submissions.json');
-    if (fs.existsSync(subPath)) {
-      const allSubs = JSON.parse(fs.readFileSync(subPath, 'utf8'));
-      if (Array.isArray(allSubs)) {
-        allSubs.forEach(s => {
-          if (s.author && s.author.toLowerCase().includes(qLower)) {
-            submissionsMatches.push(s);
-          }
-        });
-      }
-    }
-  } catch (e) {}
-
-  try {
-    const chatPath = path.join(process.cwd(), 'content', 'community', 'chat.json');
-    if (fs.existsSync(chatPath)) {
-      const allChat = JSON.parse(fs.readFileSync(chatPath, 'utf8'));
-      if (Array.isArray(allChat)) {
-        allChat.forEach(m => {
-          if (m.user && m.user.toLowerCase().includes(qLower)) {
-            chatMatches.push(m);
-          }
-        });
-      }
-    }
-  } catch (e) {}
-
-  return { comments: commentsMatches, submissions: submissionsMatches, chatMessages: chatMatches };
+  const [commentsBySlug, submissions, chatMessages] = await Promise.all([
+    listAllComments(),
+    listSubmissions(),
+    listChatMessages(),
+  ]);
+  const comments = Object.entries(commentsBySlug).flatMap(([slug, list]) =>
+    list.filter((comment) => comment.author.toLowerCase().includes(qLower)).map((comment) => ({ ...comment, slug }))
+  );
+  return {
+    comments,
+    submissions: submissions.filter((item) => item.author.toLowerCase().includes(qLower)),
+    chatMessages: chatMessages.filter((message) => message.user.toLowerCase().includes(qLower)),
+  };
 }
 
 export default async function SearchPage({ params, searchParams }) {
@@ -109,7 +71,7 @@ export default async function SearchPage({ params, searchParams }) {
     : [];
 
   // 2. Search community users & contributors by username / author
-  const userResults = q ? searchCommunityByUsername(q) : { comments: [], submissions: [], chatMessages: [] };
+  const userResults = q ? await searchCommunityByUsername(q) : { comments: [], submissions: [], chatMessages: [] };
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (

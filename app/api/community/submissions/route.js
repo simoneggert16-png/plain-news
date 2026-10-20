@@ -1,34 +1,19 @@
 import { NextResponse } from 'next/server';
-import fs from 'node:fs';
-import path from 'node:path';
+import { addSubmission, listSubmissions } from '@/lib/communityStore.mjs';
 
-const submissionsFilePath = path.join(process.cwd(), 'content', 'community', 'submissions.json');
-
-function readSubmissions() {
-  try {
-    if (!fs.existsSync(submissionsFilePath)) {
-      return [];
-    }
-    const raw = fs.readFileSync(submissionsFilePath, 'utf8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('Failed to read submissions:', err);
-    return [];
-  }
-}
-
-function writeSubmissions(data) {
-  try {
-    fs.mkdirSync(path.dirname(submissionsFilePath), { recursive: true });
-    fs.writeFileSync(submissionsFilePath, JSON.stringify(data.slice(0, 150), null, 2), 'utf8');
-  } catch (err) {
-    console.error('Failed to save submissions:', err);
-  }
-}
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function GET() {
-  const submissions = readSubmissions();
-  return NextResponse.json({ submissions });
+  try {
+    const submissions = await listSubmissions();
+    return NextResponse.json({ submissions }, {
+      headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' },
+    });
+  } catch (err) {
+    console.error('Failed to load community submissions:', err);
+    return NextResponse.json({ error: 'Community submissions could not be loaded.' }, { status: 500 });
+  }
 }
 
 export async function POST(request) {
@@ -36,11 +21,21 @@ export async function POST(request) {
     const body = await request.json();
     const { title, sourceUrl, summary, author } = body || {};
 
-    if (!title || !sourceUrl || !summary) {
+    if (typeof title !== 'string' || !title.trim() || title.length > 200
+      || typeof sourceUrl !== 'string' || !sourceUrl.trim() || sourceUrl.length > 2048
+      || typeof summary !== 'string' || !summary.trim() || summary.length > 3000
+      || (author !== undefined && (typeof author !== 'string' || author.length > 50))) {
       return NextResponse.json({ error: 'Title, URL and summary are required' }, { status: 400 });
     }
-
-    const items = readSubmissions();
+    let parsedUrl;
+    try {
+      parsedUrl = new URL(sourceUrl);
+    } catch {
+      return NextResponse.json({ error: 'Source URL must be a valid HTTP or HTTPS URL.' }, { status: 400 });
+    }
+    if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+      return NextResponse.json({ error: 'Source URL must use HTTP or HTTPS.' }, { status: 400 });
+    }
     const newItem = {
       id: 'comm-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
       title: title.trim(),
@@ -51,12 +46,11 @@ export async function POST(request) {
       verified: true,
     };
 
-    const updated = [newItem, ...items];
-    writeSubmissions(updated);
+    const updated = await addSubmission(newItem);
 
     return NextResponse.json({ success: true, item: newItem, submissions: updated });
   } catch (err) {
     console.error('Error posting community submission:', err);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Community contribution could not be saved.' }, { status: 500 });
   }
 }

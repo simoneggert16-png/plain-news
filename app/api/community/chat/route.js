@@ -1,34 +1,19 @@
 import { NextResponse } from 'next/server';
-import fs from 'node:fs';
-import path from 'node:path';
+import { addChatMessage, listChatMessages } from '@/lib/communityStore.mjs';
 
-const chatFilePath = path.join(process.cwd(), 'content', 'community', 'chat.json');
-
-function readChat() {
-  try {
-    if (!fs.existsSync(chatFilePath)) {
-      return [];
-    }
-    const raw = fs.readFileSync(chatFilePath, 'utf8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('Failed to read chat:', err);
-    return [];
-  }
-}
-
-function writeChat(data) {
-  try {
-    fs.mkdirSync(path.dirname(chatFilePath), { recursive: true });
-    fs.writeFileSync(chatFilePath, JSON.stringify(data.slice(0, 200), null, 2), 'utf8');
-  } catch (err) {
-    console.error('Failed to save chat:', err);
-  }
-}
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function GET() {
-  const messages = readChat();
-  return NextResponse.json({ messages });
+  try {
+    const messages = await listChatMessages();
+    return NextResponse.json({ messages }, {
+      headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' },
+    });
+  } catch (err) {
+    console.error('Failed to load community chat:', err);
+    return NextResponse.json({ error: 'Community chat could not be loaded.' }, { status: 500 });
+  }
 }
 
 export async function POST(request) {
@@ -36,11 +21,11 @@ export async function POST(request) {
     const body = await request.json();
     const { user, text } = body || {};
 
-    if (!text || !text.trim()) {
+    if (typeof text !== 'string' || !text.trim() || text.length > 500
+      || (user !== undefined && (typeof user !== 'string' || user.length > 40))) {
       return NextResponse.json({ error: 'Message text is required' }, { status: 400 });
     }
 
-    const messages = readChat();
     const newMsg = {
       id: 'chat-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
       user: (user && user.trim()) || 'Leser',
@@ -49,12 +34,11 @@ export async function POST(request) {
       verified: true,
     };
 
-    const updated = [newMsg, ...messages];
-    writeChat(updated);
+    const updated = await addChatMessage(newMsg);
 
     return NextResponse.json({ success: true, message: newMsg, messages: updated });
   } catch (err) {
     console.error('Error posting chat message:', err);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Chat message could not be saved.' }, { status: 500 });
   }
 }
