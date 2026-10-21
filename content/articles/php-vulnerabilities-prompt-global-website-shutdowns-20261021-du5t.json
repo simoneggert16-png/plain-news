@@ -1,0 +1,276 @@
+{
+  "slug": "php-vulnerabilities-prompt-global-website-shutdowns-20261021-du5t",
+  "category": "tech",
+  "image": "https://static.dw.com/image/70077444_6.jpg",
+  "imageCredit": "Julian Strasenschulze/dpa/picture alliance",
+  "video": {
+    "type": "video",
+    "url": "https://tvdownloaddw-a.akamaihd.net/vps/webvideos/ENG/2026/NEWS/NEWSENG260912_CA_Berlin-Hack_CMS_01SMW_AVC_1920x1080.mp4"
+  },
+  "importance": 1,
+  "publishedAt": "2026-10-21T18:54:43.437Z",
+  "updatedAt": "2026-10-21T18:54:43.437Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "DW",
+      "title": "PHP developers say key patches available after global scare",
+      "url": "https://www.dw.com/en/php-developers-say-key-patches-available-after-global-scare/a-79725938?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-10-21T16:56:00.000Z"
+    },
+    {
+      "outlet": "ABC Australia",
+      "title": "Australian government sites among those exposed to 'critical' software flaw",
+      "url": "https://www.abc.net.au/news/2026-10-22/php-vulnerabilities-cyber-asd/107294812",
+      "publishedAt": "2026-10-21T15:58:02.000Z"
+    },
+    {
+      "outlet": "The Guardian",
+      "title": "Flaw in PHP computer language leads to shutdown of websites around world",
+      "url": "https://www.theguardian.com/technology/2026/oct/21/flaw-in-php-computer-language-leads-to-shutdown-of-websites-around-world",
+      "publishedAt": "2026-10-21T18:20:30.000Z"
+    },
+    {
+      "outlet": "Wired",
+      "title": "‘This Is Not a Drill’: Critical PHP Vulnerabilities Are Setting the Internet on Fire",
+      "url": "https://www.wired.com/story/this-is-not-a-drill-2-php-vulnerabilities-are-setting-the-internet-on-fire/",
+      "publishedAt": "2026-10-21T14:26:19.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "PHP Vulnerabilities Prompt Global Website Shutdowns",
+      "dek": "Two critical PHP flaws caused widespread site outages as governments and businesses urged immediate patching.",
+      "facts": [
+        "CVE-2026-109618 and CVE-2026-109619 are the two vulnerabilities identified.",
+        "The PHP Foundation released patches on Wednesday before 10 a.m. ET.",
+        "Governments in Australia, France, Germany, Belgium, Netherlands, Finland, Japan, and the US took sites offline.",
+        "Cloudflare CTO Dane Knecht reported early attacks exploiting the flaws.",
+        "The vulnerabilities affect all PHP installations from version 5 onward, though only PHP 8.2+ receives official support."
+      ],
+      "body": [
+        "The PHP Foundation announced patches for CVE-2026-109618 and CVE-2026-109619 on Wednesday. The flaws could allow attackers to take remote control of servers. The patches were released before 10 a.m. ET. The PHP Foundation noted that updating is the only safe choice.",
+        "Governments and major websites shut down sites to prevent exploitation. The Australian Signals Directorate, French police prefecture, German government IT service, Belgian Foreign Ministry, Dutch cybersecurity agency, Finnish National Land Survey, and others took sites offline. The US National Security Agency warned that the flaws could provide direct access to file systems or databases. The UK National Cyber Security Centre advised checking for backdoors.",
+        "Cloudflare CTO Dane Knecht said early attacks were emerging. Cloudflare updated firewall rules as a stopgap measure. The vulnerabilities were first flagged by security companies Calif and Wiz using AI tools.",
+        "PHP powers roughly 75% of websites that can be identified. The language is free, open-source software maintained by volunteers. WordPress, Wikipedia, Slack, and Adobe’s Magento are built on PHP.",
+        "The vulnerabilities affect all PHP installations from version 5 onward, though only PHP 8.2+ receives official support. Legacy PHP versions may still be vulnerable if not patched."
+      ],
+      "context": [
+        "PHP is a programming language that runs websites.",
+        "When a visitor loads a page, a server running PHP assembles the content and sends it to the browser.",
+        "The language is free and maintained by volunteers."
+      ],
+      "imageCaption": "A server room with multiple rows of servers, each equipped with various cables and wires."
+    },
+    "pt": {
+      "title": "Vulnerabilidades PHP provocam encerramentos globais de websites",
+      "dek": "Dois defeitos críticos do PHP causaram interrupções generalizadas, enquanto governos e empresas exigiam correções imediatas",
+      "facts": [
+        "CVE-2026-109618 e CVE-2026-109619 são as duas vulnerabilidades identificadas.",
+        "A Fundação PHP lançou as correções na quarta-feira antes das 10h00 ET.",
+        "Governos na Austrália, França, Alemanha, Bélgica, Países Baixos, Finlândia, Japão e EUA retiraram sites offline.",
+        "O CTO da Cloudflare, Dane Knecht, relatou ataques iniciais que exploravam as falhas.",
+        "As vulnerabilidades afetam todas as instalações PHP a partir da versão 5, embora apenas o PHP 8.2+ receba suporte oficial."
+      ],
+      "body": [
+        "A Fundação PHP anunciou correções para CVE-2026-109618 e CVE-2026-109619 na quarta-feira. Os defeitos poderiam permitir que atacantes tomassem controlo remoto de servidores. As correções foram lançadas antes das 10h00 ET. A Fundação PHP observou que atualizar é a única escolha segura.",
+        "Governos e sites de grande porte encerraram sites para evitar exploração. A Australian Signals Directorate, a polícia francesa, o serviço de TI do governo alemão, o Ministério dos Negócios Estrangeiros da Bélgica, a agência de cibersegurança holandesa, o Serviço Nacional de Cartografia da Finlândia e outros retiraram sites offline. A Agência de Segurança Nacional dos EUA alertou que as falhas poderiam proporcionar acesso direto a sistemas de ficheiros ou bases de dados. O Centro Nacional de Segurança Cibernética do Reino Unido aconselhou a verificação de backdoors.",
+        "O CTO da Cloudflare, Dane Knecht, afirmou que ataques iniciais estavam surgindo. A Cloudflare atualizou as regras do firewall como medida provisória. As vulnerabilidades foram inicialmente sinalizadas por empresas de segurança Calif e Wiz, utilizando ferramentas de IA.",
+        "O PHP alimenta cerca de 75% dos sites que podem ser identificados. A linguagem é gratuita, de código aberto e mantida por voluntários. WordPress, Wikipedia, Slack e o Magento da Adobe são construídos sobre PHP.",
+        "As vulnerabilidades afetam todas as instalações PHP a partir da versão 5, embora apenas o PHP 8.2+ receba suporte oficial. Versões legadas do PHP podem ainda ser vulneráveis se não forem corrigidas."
+      ],
+      "context": [
+        "O PHP é uma linguagem de programação que executa websites.",
+        "Quando um visitante carrega uma página, um servidor que executa PHP monta o conteúdo e o envia ao navegador.",
+        "A linguagem é gratuita e mantida por voluntários."
+      ],
+      "imageCaption": "Uma sala de servidores com várias fileiras de servidores, cada um equipado com vários cabos e fios."
+    },
+    "es": {
+      "title": "Las vulnerabilidades de PHP provocan cierres globales de sitios web",
+      "dek": "Dos fallos críticos de PHP provocaron apagones generalizados de sitios, mientras gobiernos y empresas exigían una corrección inmediata.",
+      "facts": [
+        "CVE-2026-109618 y CVE-2026-109619 son las dos vulnerabilidades identificadas.",
+        "La Fundación PHP lanzó parches el miércoles antes de las 10 a.m. ET.",
+        "Gobiernos de Australia, Francia, Alemania, Bélgica, Países Bajos, Finlandia, Japón y EE. UU. retiraron sitios de línea.",
+        "El director de tecnología de Cloudflare, Dane Knecht, informó de ataques tempranos que explotaban las fallas.",
+        "Las vulnerabilidades afectan a todas las instalaciones de PHP a partir de la versión 5, aunque solo PHP 8.2+ recibe soporte oficial."
+      ],
+      "body": [
+        "La Fundación PHP anunció parches para CVE-2026-109618 y CVE-2026-109619 el miércoles. Las fallas podrían permitir a los atacantes tomar el control remoto de servidores. Los parches se publicaron antes de las 10 a.m. ET. La Fundación PHP señaló que actualizar es la única opción segura.",
+        "Gobiernos y sitios web importantes cerraron sitios para prevenir la explotación. La Dirección de Señales de Australia, la Prefectura de Policía Francesa, el Servicio de TI del Gobierno Alemán, el Ministerio de Asuntos Exteriores de Bélgica, la Agencia de Ciberseguridad de los Países Bajos, el Instituto Nacional de Geografía de Finlandia y otros retiraron sitios de línea. La Agencia de Seguridad Nacional de EE. UU. advirtió que las fallas podrían proporcionar acceso directo a sistemas de archivos o bases de datos. El Centro Nacional de Ciberseguridad del Reino Unido aconsejó comprobar la presencia de puertas traseras.",
+        "El director de tecnología de Cloudflare, Dane Knecht, dijo que surgían ataques tempranos. Cloudflare actualizó las reglas del cortafuegos como medida provisional. Las vulnerabilidades fueron señaladas por primera vez por las empresas de seguridad Calif y Wiz utilizando herramientas de IA.",
+        "PHP alimenta aproximadamente el 75 % de los sitios web identificables. El lenguaje es software libre y de código abierto mantenido por voluntarios. WordPress, Wikipedia, Slack y Magento de Adobe están construidos sobre PHP.",
+        "Las vulnerabilidades afectan a todas las instalaciones de PHP a partir de la versión 5, aunque solo PHP 8.2+ recibe soporte oficial. Las versiones heredadas de PHP pueden seguir siendo vulnerables si no se corrigen."
+      ],
+      "context": [
+        "PHP es un lenguaje de programación que ejecuta sitios web.",
+        "Cuando un visitante carga una página, un servidor que ejecuta PHP arma el contenido y lo envía al navegador.",
+        "El lenguaje es libre y mantenido por voluntarios."
+      ],
+      "imageCaption": "Una sala de servidores con varias filas de equipos, cada uno equipado con diversos cables y alambres."
+    },
+    "de": {
+      "title": "PHP-Schwachstellen veranlassen weltweite Website-Ausfälle",
+      "dek": "Zwei kritische PHP-Schwachstellen führten zu weit verbreiteten Ausfällen, während Regierungen und Unternehmen zur sofortigen Behebung aufriefen.",
+      "facts": [
+        "CVE-2026-109618 und CVE-2026-109619 sind die beiden identifizierten Schwachstellen.",
+        "Die PHP Foundation veröffentlichte die Patches am Mittwoch vor 10 Uhr ET.",
+        "Regierungen in Australien, Frankreich, Deutschland, Belgien, den Niederlanden, Finnland, Japan und den USA schalteten Websites offline.",
+        "Der CTO von Cloudflare, Dane Knecht, meldete frühe Angriffe, die die Schwachstellen ausnutzten.",
+        "Die Schwachstellen betreffen alle PHP-Installationen ab Version 5, obwohl nur PHP 8.2+ offiziell unterstützt wird."
+      ],
+      "body": [
+        "Die PHP Foundation kündigte am Mittwoch die Patches für CVE-2026-109618 und CVE-2026-109619 an. Die Schwachstellen könnten es Angreifern ermöglichen, die Kontrolle über Server aus der Ferne zu übernehmen. Die Patches wurden vor 10 Uhr ET veröffentlicht. Die PHP Foundation betonte, dass ein Update die einzige sichere Option sei.",
+        "Regierungen und große Websites schalteten Seiten ab, um Missbrauch zu verhindern. Das Australian Signals Directorate, die französische Polizeiprefektur, der IT-Dienst der deutschen Regierung, das belgische Außenministerium, die niederländische Cybersicherheitsbehörde, die finnische National Land Survey und weitere schalteten Websites offline. Die US National Security Agency warnte, dass die Schwachstellen direkten Zugriff auf Dateisysteme oder Datenbanken ermöglichen könnten. Das UK National Cyber Security Centre riet, nach Hintertüren zu suchen.",
+        "Der CTO von Cloudflare, Dane Knecht, erklärte, dass frühere Angriffe auftreteten. Cloudflare aktualisierte die Firewall-Regeln als Übergangslösung. Die Schwachstellen wurden erstmals von Sicherheitsfirmen Calif und Wiz mithilfe von KI-Tools erkannt.",
+        "PHP betreibt etwa 75 % aller identifizierbaren Websites. Die Sprache ist freie, quelloffene Software, die von Freiwilligen gepflegt wird. WordPress, Wikipedia, Slack und Adobes Magento basieren auf PHP.",
+        "Die Schwachstellen betreffen alle PHP-Installationen ab Version 5, obwohl nur PHP 8.2+ offiziell unterstützt wird. Legacy-PHP-Versionen können weiterhin anfällig sein, wenn sie nicht gepatcht werden."
+      ],
+      "context": [
+        "PHP ist eine Programmiersprache, die Websites betreibt.",
+        "Wenn ein Besucher eine Seite lädt, stellt ein PHP-Server den Inhalt zusammen und sendet ihn an den Browser.",
+        "Die Sprache ist frei und wird von Freiwilligen gepflegt."
+      ],
+      "imageCaption": "Ein Serverraum mit mehreren Reihen von Servern, jeder ausgestattet mit verschiedenen Kabeln und Drähten."
+    },
+    "fr": {
+      "title": "Les vulnérabilités PHP provoquent des fermetures de sites web à l'échelle mondiale",
+      "dek": "Deux failles PHP critiques ont provoqué des pannes généralisées de sites, les gouvernements et les entreprises appelant à une mise à jour immédiate.",
+      "facts": [
+        "CVE-2026-109618 et CVE-2026-109619 sont les deux vulnérabilités identifiées.",
+        "La PHP Foundation a publié des correctifs mercredi avant 10 h. EST.",
+        "Les gouvernements d'Australie, France, Allemagne, Belgique, Pays-Bas, Finlande, Japon et États-Unis ont mis des sites hors ligne.",
+        "Le CTO de Cloudflare, Dane Knecht, a déclaré que des attaques précoces se développaient.",
+        "Les vulnérabilités affectent toutes les installations PHP à partir de la version 5, bien que seule la version 8.2+ reçoive un support officiel."
+      ],
+      "body": [
+        "La PHP Foundation a annoncé des correctifs pour CVE-2026-109618 et CVE-2026-109619 mercredi. Les failles pourraient permettre aux attaquants de prendre le contrôle à distance des serveurs. Les correctifs ont été publiés avant 10 h. EST. La PHP Foundation a noté que la mise à jour est le seul choix sûr.",
+        "Les gouvernements et les grands sites web ont mis hors ligne des sites pour prévenir l'exploitation. L'Australian Signals Directorate, la préfecture de police française, le service informatique du gouvernement allemand, le ministère belge des Affaires étrangères, l'agence néerlandaise de cybersécurité, le Service national finlandais des terres et d'autres ont mis des sites hors ligne. L'Agence nationale de la sécurité des États-Unis a averti que les failles pourraient donner un accès direct aux systèmes de fichiers ou aux bases de données. Le Centre national de cybersécurité du Royaume-Uni a conseillé de vérifier les portes dérobées.",
+        "Le CTO de Cloudflare, Dane Knecht, a déclaré que des attaques précoces se développaient. Cloudflare a mis à jour les règles de pare-feu comme mesure provisoire. Les vulnérabilités ont été signalées pour la première fois par les sociétés de sécurité Calif et Wiz utilisant des outils d'IA.",
+        "PHP alimente environ 75 % des sites web identifiables. Le langage est gratuit, logiciel open-source maintenu par des bénévoles. WordPress, Wikipedia, Slack et Magento d'Adobe sont construits sur PHP.",
+        "Les vulnérabilités affectent toutes les installations PHP à partir de la version 5, bien que seule la version 8.2+ reçoive un support officiel. Les versions héritées de PHP peuvent encore être vulnérables si elles ne sont pas corrigées."
+      ],
+      "context": [
+        "PHP est un langage de programmation qui exécute des sites web.",
+        "Lorsqu'un visiteur charge une page, un serveur exécutant PHP assemble le contenu et l'envoie au navigateur.",
+        "Le langage est gratuit et maintenu par des bénévoles."
+      ],
+      "imageCaption": "Une salle de serveurs avec plusieurs rangées de serveurs, chacun équipé de divers câbles et fils."
+    },
+    "zh": {
+      "title": "PHP漏洞导致全球网站停运",
+      "dek": "两项关键PHP漏洞引发大规模站点中断，政府与企业敦促立即补丁",
+      "facts": [
+        "CVE-2026-109618 与 CVE-2026-109619 是已识别的两项漏洞。",
+        "PHP基金会在周三上午10点（东部时间）之前发布了补丁。",
+        "澳大利亚、法国、德国、比利时、荷兰、芬兰、日本和美国政府将网站下线。",
+        "Cloudflare首席技术官Dane Knecht 报告称早期攻击正在利用这些漏洞。",
+        "这些漏洞影响从 PHP 5 版本开始的所有安装，尽管只有 PHP 8.2+ 获得官方支持。"
+      ],
+      "body": [
+        "PHP基金会在周三宣布了针对 CVE-2026-109618 和 CVE-2026-109619 的补丁。",
+        "这些缺陷可能使攻击者能够远程控制服务器。",
+        "补丁在上午10点（东部时间）之前发布。",
+        "PHP基金会指出，更新是唯一安全的选择。",
+        "各国政府和主要网站关闭了站点以防止被利用。",
+        "澳大利亚情报局、法国警察省、德国政府IT服务、比利时外交部、荷兰网络安全机构、芬兰国家土地测量局等机构将站点下线。",
+        "美国国家安全局警告称，这些漏洞可能直接访问文件系统或数据库。",
+        "英国国家网络安全中心建议检查后门。",
+        "Cloudflare首席技术官Dane Knecht 表示早期攻击正在出现。",
+        "Cloudflare 更新了防火墙规则作为临时措施。",
+        "这些漏洞最初由安全公司 Calif 和 Wiz 使用人工智能工具发现。",
+        "PHP 约占可识别网站的 75%。",
+        "该语言免费且由志愿者维护。",
+        "WordPress、维基百科、Slack 和 Adobe 的 Magento 均基于 PHP。",
+        "这些漏洞影响从 PHP 5 版本开始的所有安装，尽管只有 PHP 8.2+ 获得官方支持。",
+        "如果未打补丁，旧版 PHP 仍可能存在漏洞。"
+      ],
+      "context": [
+        "PHP 是一种运行网站的编程语言。",
+        "当访客加载页面时，运行 PHP 的服务器会组装内容并发送给浏览器。",
+        "该语言免费且由志愿者维护。"
+      ],
+      "imageCaption": "服务器机房，排布多排服务器，每台都配有各种电缆和线路。"
+    },
+    "it": {
+      "title": "Le vulnerabilità PHP provocano chiusure di siti web a livello globale",
+      "dek": "Due vulnerabilità PHP critiche hanno causato interruzioni di siti su larga scala, spingendo governi e aziende a intervenire immediatamente.",
+      "facts": [
+        "CVE-2026-109618 e CVE-2026-109619 sono le due vulnerabilità identificate.",
+        "La PHP Foundation ha rilasciato le patch mercoledì prima delle 10 a.m. ET.",
+        "I governi di Australia, Francia, Germania, Belgio, Paesi Bassi, Finlandia, Giappone e Stati Uniti hanno sospeso i siti.",
+        "Il CTO di Cloudflare, Dane Knecht, ha segnalato attacchi precoci che sfruttano le vulnerabilità.",
+        "Le vulnerabilità interessano tutte le installazioni PHP dalla versione 5 in poi, anche se solo PHP 8.2+ riceve supporto ufficiale."
+      ],
+      "body": [
+        "La PHP Foundation ha annunciato le patch per CVE-2026-109618 e CVE-2026-109619 mercoledì. Le vulnerabilità potrebbero consentire agli aggressori di prendere il controllo remoto dei server. Le patch sono state rilasciate prima delle 10 a.m. ET. La PHP Foundation ha sottolineato che l'aggiornamento è l'unica scelta sicura.",
+        "I governi e i principali siti web hanno chiuso i siti per prevenire lo sfruttamento. La Australian Signals Directorate, la prefettura di polizia francese, il servizio IT del governo tedesco, il Ministero degli Affari Esteri belga, l'agenzia di sicurezza cibernetica olandese, l'Agenzia Nazionale di Cartografia finlandese e altri hanno sospeso i siti. La National Security Agency degli Stati Uniti ha avvertito che le vulnerabilità potrebbero fornire accesso diretto ai sistemi di file o ai database. Il National Cyber Security Centre del Regno Unito ha consigliato di verificare la presenza di backdoor.",
+        "Il CTO di Cloudflare, Dane Knecht, ha affermato che si stavano verificando attacchi precoci. Cloudflare ha aggiornato le regole del firewall come misura provvisoria. Le vulnerabilità sono state segnalate per la prima volta dalle società di sicurezza Calif e Wiz, che hanno utilizzato strumenti AI.",
+        "PHP alimenta circa il 75% dei siti web identificabili. Il linguaggio è software libero, open-source e mantenuto da volontari. WordPress, Wikipedia, Slack e Magento di Adobe sono costruiti su PHP.",
+        "Le vulnerabilità interessano tutte le installazioni PHP dalla versione 5 in poi, anche se solo PHP 8.2+ riceve supporto ufficiale. Le versioni legacy di PHP possono ancora essere vulnerabili se non vengono patchate."
+      ],
+      "context": [
+        "PHP è un linguaggio di programmazione che esegue siti web.",
+        "Quando un visitatore carica una pagina, un server che esegue PHP assemblano il contenuto e lo inviano al browser.",
+        "Il linguaggio è gratuito e mantenuto da volontari."
+      ],
+      "imageCaption": "Una sala server con più file di server, ciascuno dotato di vari cavi e fili."
+    },
+    "ja": {
+      "title": "PHPの脆弱性が世界的なウェブサイト停止を引き起こす",
+      "dek": "2つの重大なPHP欠陥が広範なサイト停止を招き、政府と企業が即時パッチ適用を要請",
+      "facts": [
+        "CVE-2026-109618 と CVE-2026-109619 が特定された2つの脆弱性です。",
+        "PHP Foundation は水曜日の午前10時（ET）前にパッチをリリースしました。",
+        "オーストラリア、フランス、ドイツ、ベルギー、オランダ、フィンランド、日本、米国の政府がサイトをオフラインにしました。",
+        "Cloudflare CTO の Dane Knecht は脆弱性を悪用した初期攻撃を報告しました。",
+        "脆弱性は PHP バージョン5 以降のすべてのインストールに影響しますが、公式サポートは PHP 8.2+ のみです。"
+      ],
+      "body": [
+        "PHP Foundation は水曜日に CVE-2026-109618 と CVE-2026-109619 のパッチを発表しました。欠陥により攻撃者がサーバーを遠隔操作できる恐れがあります。パッチは午前10時（ET）前にリリースされました。PHP Foundation は更新が唯一の安全策であると指摘しました。",
+        "政府機関と主要ウェブサイトは、悪用を防ぐためにサイトを停止しました。オーストラリア信号局、フランス警察県、ドイツ政府ITサービス、ベルギー外務省、オランダサイバーセキュリティ機関、フィンランド国土測量局などがサイトをオフラインにしました。米国国家安全保障局は、欠陥がファイルシステムやデータベースへの直接アクセスを可能にする恐れがあると警告しました。英国国家サイバーセキュリティセンターはバックドアの確認を勧告しました。",
+        "Cloudflare CTO の Dane Knecht は初期攻撃が出現していると述べました。Cloudflare は一時的対策としてファイアウォールルールを更新しました。脆弱性はセキュリティ企業 Calif と Wiz が AI ツールを使用して最初に指摘しました。",
+        "PHP は識別可能なウェブサイトの約75％を支えており、無料でオープンソースのソフトウェアで、ボランティアによって維持されています。WordPress、Wikipedia、Slack、Adobe の Magento などが PHP 上に構築されています。",
+        "脆弱性は PHP バージョン5 以降のすべてのインストールに影響しますが、公式サポートは PHP 8.2+ のみです。パッチが適用されていないレガシー PHP バージョンはまだ脆弱である可能性があります。"
+      ],
+      "context": [
+        "PHP はウェブサイトを実行するプログラミング言語です。",
+        "訪問者がページを読み込むと、PHP を実行するサーバーがコンテンツを組み立て、ブラウザに送信します。",
+        "言語は無料でボランティアによって維持されています。"
+      ],
+      "imageCaption": "複数のサーバーが並ぶサーバールームで、各サーバーにはさまざまなケーブルや配線が装備されている"
+    },
+    "ko": {
+      "title": "PHP 취약점, 전 세계 웹사이트 정지 사태 촉발",
+      "dek": "두 개의 중대한 PHP 취약점이 광범위한 사이트 장애를 일으키며, 정부와 기업이 즉각적인 패치를 촉구했습니다.",
+      "facts": [
+        "CVE-2026-109618 및 CVE-2026-109619이 두 개의 식별된 취약점입니다.",
+        "PHP 재단은 수요일에 미국 동부 표준시 오전 10시 이전에 패치를 발표했습니다.",
+        "호주, 프랑스, 독일, 벨기에, 네덜란드, 핀란드, 일본, 미국의 정부가 사이트를 오프라인으로 전환했습니다.",
+        "Cloudflare CTO Dane Knecht는 초기 공격을 보고했습니다.",
+        "이 취약점은 PHP 5 이상 모든 설치에 영향을 미치지만, 공식 지원은 PHP 8.2+에 한정됩니다."
+      ],
+      "body": [
+        "PHP 재단은 수요일에 CVE-2026-109618 및 CVE-2026-109619에 대한 패치를 발표했습니다. 이 결함은 공격자가 서버를 원격으로 제어할 수 있게 할 수 있습니다. 패치는 미국 동부 표준시 오전 10시 이전에 공개되었습니다. PHP 재단은 업데이트가 유일한 안전한 선택이라고 언급했습니다.",
+        "정부와 주요 웹사이트는 악용을 방지하기 위해 사이트를 정지했습니다. 호주 신호국, 프랑스 경찰 사무소, 독일 정부 IT 서비스, 벨기에 외교부, 네덜란드 사이버 보안 기관, 핀란드 국토 조사국 등은 사이트를 오프라인으로 전환했습니다. 미국 국가 안보국은 이 결함이 파일 시스템이나 데이터베이스에 직접 접근할 수 있다고 경고했습니다. 영국 국가 사이버 보안 센터는 백도어를 확인할 것을 권고했습니다.",
+        "Cloudflare CTO Dane Knecht는 초기 공격이 발생하고 있다고 밝혔습니다. Cloudflare는 임시 방편으로 방화벽 규칙을 업데이트했습니다. 이 취약점은 AI 도구를 사용한 보안 기업 Calif와 Wiz가 처음으로 지적했습니다.",
+        "PHP는 식별 가능한 웹사이트의 약 75%를 지원합니다. 이 언어는 자원봉사자들이 유지 관리하는 무료 오픈소스 소프트웨어입니다. WordPress, Wikipedia, Slack, Adobe의 Magento는 PHP를 기반으로 구축되었습니다.",
+        "이 취약점은 PHP 5 이상 모든 설치에 영향을 미치지만, 공식 지원은 PHP 8.2+에 한정됩니다. 패치되지 않은 경우 기존 PHP 버전도 여전히 취약할 수 있습니다."
+      ],
+      "context": [
+        "PHP는 웹사이트를 구동하는 프로그래밍 언어입니다.",
+        "방문자가 페이지를 로드하면 PHP를 실행하는 서버가 콘텐츠를 조립해 브라우저에 전송합니다.",
+        "이 언어는 무료이며 자원봉사자들이 유지 관리합니다."
+      ],
+      "imageCaption": "다수의 서버가 줄지어 있는 서버실, 각 서버에는 다양한 케이블과 전선이 연결되어 있습니다."
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "openai/gpt-oss-20b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "publish",
+    "problemsFixed": []
+  }
+}
