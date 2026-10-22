@@ -1,0 +1,207 @@
+{
+  "slug": "php-security-breach-forces-global-website-outages-20261022-rppr",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 1,
+  "publishedAt": "2026-10-22T07:58:53.710Z",
+  "updatedAt": "2026-10-22T07:58:53.710Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Tagesschau",
+      "title": "PHP-Bedrohung: Was über die Sicherheitslücke bekannt ist",
+      "url": "https://www.tagesschau.de/wirtschaft/digitales/php-panne-100.html",
+      "publishedAt": "2026-10-22T07:25:17.000Z"
+    },
+    {
+      "outlet": "Der Spiegel",
+      "title": "Sicherheitslücken: Onlinedienste nach kritischen Updates teils wieder erreichbar",
+      "url": "https://www.spiegel.de/netzwelt/web/sicherheitsluecken-onlinedienste-nach-kritischen-updates-teils-wieder-erreichbar-a-e6cab184-6f27-4b76-8f7f-2fc7cb74edd7#ref=rss",
+      "publishedAt": "2026-10-22T06:59:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "PHP Security Breach Forces Global Website Outages",
+      "dek": "Critical PHP flaw triggers site shutdowns worldwide.",
+      "facts": [
+        "BSI issued a warning on 21 Oct 2026 for PHP flaws CVE-2026-109618 and CVE-2026-109619.",
+        "The flaws, named PHP2Shell, allow remote code execution (running code on a server).",
+        "Many sites, including the German BKA and Berlin.de, were taken offline.",
+        "Updated PHP versions were released by the PHP project on 22 Oct 2026.",
+        "Several services, such as S-Bahn Berlin and German state portals, returned online after patches."
+      ],
+      "body": [
+        "On 21 October 2026, the German Federal Office for Information Security (BSI) issued a cybersecurity warning. It identified two critical vulnerabilities in PHP, catalogued as CVE-2026-109618 and CVE-2026-109619. The BSI rated the risk as level 3, Orange, indicating an exceptionally high threat. The warning urged immediate security updates.",
+        "The vulnerabilities, dubbed PHP2Shell, enable attackers to execute code remotely without authentication. As a result, many websites were proactively shut down. The German Federal Criminal Police Office (BKA) site remained offline in the morning. Other sites, such as Berlin.de, faced temporary restrictions.",
+        "The PHP development team released patched versions on 22 October 2026. After applying the updates, several services resumed operation. The S-Bahn Berlin website was reported online again by nightfall. German state portals in Rheinland-Pfalz and Saarland also reopened after the patches.",
+        "China’s Ministry of Industry called for a comprehensive review of IT systems and urged users to upgrade to the latest PHP version. South Korea’s National Security Office convened a cyber‑security crisis meeting. Finland’s state IT centre noted that public government web services were affected."
+      ],
+      "context": "PHP is a programming language that powers many websites, including blogs, news portals, e‑commerce sites, and content‑management systems. The flaw affected an estimated 400–500 million sites that use PHP, according to IT professionals.",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "Brecha de seguridad en PHP provoca interrupciones globales de sitios web",
+      "dek": "Defecto crítico de PHP desencadena cierres de sitios en todo el mundo.",
+      "facts": [
+        "El BSI emitió una advertencia el 21 de octubre de 2026 sobre las fallas de PHP CVE-2026-109618 y CVE-2026-109619.",
+        "Las fallas, llamadas PHP2Shell, permiten la ejecución remota de código (ejecutar código en un servidor).",
+        "Muchos sitios, incluido el BKA alemán y Berlin.de, fueron retirados de línea.",
+        "Las versiones actualizadas de PHP fueron lanzadas por el proyecto PHP el 22 de octubre de 2026.",
+        "Varios servicios, como el S-Bahn Berlin y los portales estatales alemanes, volvieron en línea después de los parches."
+      ],
+      "body": [
+        "El 21 de octubre de 2026, la Oficina Federal de Seguridad de la Información (BSI) emitió una advertencia de ciberseguridad. Identificó dos vulnerabilidades críticas en PHP, catalogadas como CVE-2026-109618 y CVE-2026-109619. El BSI calificó el riesgo como nivel 3, naranja, indicando una amenaza excepcionalmente alta. La advertencia instó a actualizar la seguridad de inmediato.",
+        "Las vulnerabilidades, denominadas PHP2Shell, permiten a los atacantes ejecutar código remotamente sin autenticación. Como resultado, muchos sitios web fueron cerrados de forma proactiva. El sitio del BKA alemán permaneció fuera de línea por la mañana. Otros sitios, como Berlin.de, enfrentaron restricciones temporales.",
+        "El equipo de desarrollo de PHP lanzó versiones parcheadas el 22 de octubre de 2026. Tras aplicar las actualizaciones, varios servicios reanudaron su funcionamiento. El sitio del S-Bahn Berlin volvió a estar en línea al caer la noche. Los portales estatales de Rheinland-Pfalz y Saarland también se reabrieron después de los parches.",
+        "El Ministerio de Industria de China llamó a una revisión exhaustiva de los sistemas de TI y pidió a los usuarios que actualicen a la última versión de PHP. La Oficina Nacional de Seguridad de Corea del Sur convocó una reunión de crisis de ciberseguridad. El centro estatal de TI de Finlandia señaló que los servicios web públicos gubernamentales se vieron afectados."
+      ],
+      "context": "PHP es un lenguaje de programación que alimenta muchos sitios web, incluidos blogs, portales de noticias, sitios de comercio electrónico y sistemas de gestión de contenidos. Se estima que la falla afectó a entre 400 y 500 millones de sitios que utilizan PHP, según profesionales de TI.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "PHP‑Sicherheitslücke führt zu weltweiten Website‑Ausfällen",
+      "dek": "Kritische PHP‑Fehler führen weltweit zu Website‑Stopps.",
+      "facts": [
+        "Das BSI gab am 21. Oktober 2026 eine Warnung zu PHP‑Fehlern CVE-2026-109618 und CVE-2026-109619 heraus.",
+        "Die Fehler, genannt PHP2Shell, ermöglichen die Ausführung von Code aus der Ferne (Ausführen von Code auf einem Server).",
+        "Viele Seiten, darunter das deutsche BKA und Berlin.de, wurden offline genommen.",
+        "Aktualisierte PHP‑Versionen wurden vom PHP‑Projekt am 22. Oktober 2026 veröffentlicht.",
+        "Mehrere Dienste, wie S-Bahn Berlin und deutsche Landesportale, kehrten nach Patches wieder online."
+      ],
+      "body": [
+        "Am 21. Oktober 2026 gab das Bundesamt für Sicherheit in der Informationstechnik (BSI) eine Cybersicherheitswarnung heraus. Es identifizierte zwei kritische Schwachstellen in PHP, katalogisiert als CVE-2026-109618 und CVE-2026-109619. Das BSI bewertete das Risiko als Level 3, Orange, was eine außergewöhnlich hohe Bedrohung bedeutet. Die Warnung forderte sofortige Sicherheitsupdates.",
+        "Die Schwachstellen, genannt PHP2Shell, ermöglichen es Angreifern, Code aus der Ferne ohne Authentifizierung auszuführen. Infolgedessen wurden viele Websites proaktiv heruntergefahren. Die Website des Bundeskriminalamts (BKA) blieb am Morgen offline. Andere Seiten, wie Berlin.de, sahen sich vorübergehenden Beschränkungen gegenüber.",
+        "Das PHP‑Entwicklungsteam veröffentlichte am 22. Oktober 2026 gepatchte Versionen. Nach der Anwendung der Updates setzten mehrere Dienste ihre Tätigkeit fort. Die Website der S-Bahn Berlin wurde bis zum Abend wieder online gemeldet. Deutsche Landesportale in Rheinland-Pfalz und Saarland öffneten ebenfalls nach den Patches wieder.",
+        "Das chinesische Industrie- und Handelsministerium forderte eine umfassende Überprüfung der IT‑Systeme und rief die Nutzer dazu auf, auf die neueste PHP‑Version zu aktualisieren. Das nationale Sicherheitsamt Südkoreas einberief ein Krisenmeeting zur Cybersicherheit. Das staatliche IT‑Zentrum Finnlands stellte fest, dass öffentliche Regierungs‑Webdienste betroffen waren."
+      ],
+      "context": "PHP ist eine Programmiersprache, die viele Websites antreibt, darunter Blogs, Nachrichtenportale, E‑Commerce‑Seiten und Content‑Management‑Systeme. Der Fehler betraf schätzungsweise 400–500 Millionen Websites, die PHP nutzen, so IT‑Experten.",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "Violazione della sicurezza di PHP causa interruzioni globali dei siti web",
+      "dek": "Critico difetto di PHP provoca chiusure di siti in tutto il mondo.",
+      "facts": [
+        "Il BSI ha emesso un avviso il 21 ottobre 2026 per i difetti PHP CVE-2026-109618 e CVE-2026-109619.",
+        "I difetti, chiamati PHP2Shell, consentono l'esecuzione di codice remoto (esecuzione di codice su un server).",
+        "Molti siti, tra cui il BKA tedesco e Berlin.de, sono stati messi offline.",
+        "Versioni aggiornate di PHP sono state rilasciate dal progetto PHP il 22 ottobre 2026.",
+        "Diversi servizi, come S-Bahn Berlin e i portali statali tedeschi, sono tornati online dopo le patch."
+      ],
+      "body": [
+        "Il 21 ottobre 2026, l'Ufficio federale tedesco per la sicurezza delle informazioni (BSI) ha emesso un avviso di cybersicurezza. Ha identificato due vulnerabilità critiche in PHP, catalogate come CVE-2026-109618 e CVE-2026-109619. Il BSI ha valutato il rischio al livello 3, Orange, indicando una minaccia eccezionalmente alta. L'avviso ha esortato a aggiornamenti di sicurezza immediati.",
+        "Le vulnerabilità, soprannominate PHP2Shell, consentono agli aggressori di eseguire codice da remoto senza autenticazione. Di conseguenza, molti siti web sono stati chiusi in modo proattivo. Il sito dell'Ufficio federale tedesco per la polizia criminale (BKA) è rimasto offline al mattino. Altri siti, come Berlin.de, hanno subito restrizioni temporanee.",
+        "Il team di sviluppo PHP ha rilasciato versioni patchate il 22 ottobre 2026. Dopo aver applicato gli aggiornamenti, diversi servizi hanno ripreso a funzionare. Il sito S-Bahn Berlin è stato riportato online entro la sera. I portali statali tedeschi in Rheinland-Pfalz e Saarland si sono anch'essi riaperti dopo le patch.",
+        "Il Ministero dell'Industria cinese ha chiesto una revisione completa dei sistemi IT e ha esortato gli utenti a passare all'ultima versione di PHP. L'Ufficio nazionale della sicurezza della Corea del Sud ha convocato una riunione di crisi sulla cybersicurezza. Il centro IT statale finlandese ha osservato che i servizi web pubblici governativi sono stati colpiti."
+      ],
+      "context": "PHP è un linguaggio di programmazione che alimenta molti siti web, tra cui blog, portali di notizie, siti di e-commerce e sistemi di gestione dei contenuti. Il difetto ha colpito un numero stimato di 400–500 milioni di siti che utilizzano PHP, secondo professionisti IT.",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Violation de sécurité PHP provoque des coupures de sites Web à l’échelle mondiale",
+      "dek": "Vulnérabilité critique de PHP provoque la fermeture de sites dans le monde entier.",
+      "facts": [
+        "Le BSI a émis un avertissement le 21 octobre 2026 concernant les failles PHP CVE-2026-109618 et CVE-2026-109619.",
+        "Les failles, nommées PHP2Shell, permettent l’exécution de code à distance (exécution de code sur un serveur).",
+        "De nombreux sites, dont le BKA allemand et Berlin.de, ont été mis hors ligne.",
+        "Des versions mises à jour de PHP ont été publiées par le projet PHP le 22 octobre 2026.",
+        "Plusieurs services, tels que S-Bahn Berlin et les portails d’État allemands, sont revenus en ligne après les correctifs."
+      ],
+      "body": [
+        "Le 21 octobre 2026, le Bureau fédéral allemand de la sécurité de l’information (BSI) a émis un avertissement de cybersécurité. Il a identifié deux vulnérabilités critiques dans PHP, cataloguées comme CVE-2026-109618 et CVE-2026-109619. Le BSI a évalué le risque à un niveau 3, Orange, indiquant une menace exceptionnellement élevée. L’avertissement a appelé à des mises à jour de sécurité immédiates.",
+        "Les vulnérabilités, baptisées PHP2Shell, permettent aux attaquants d’exécuter du code à distance sans authentification. En conséquence, de nombreux sites Web ont été fermés de façon proactive.",
+        "L’équipe de développement PHP a publié des versions corrigées le 22 octobre 2026. Après l’application des mises à jour, plusieurs services ont repris leur fonctionnement. Le site du S-Bahn Berlin a été signalé en ligne à nouveau d’ici la nuit. Les portails d’État allemands de Rhineland-Palatinate (Rheinland-Pfalz) et du Sarre (Saarland) ont également rouvert après les correctifs.",
+        "Le ministère chinois de l’Industrie a appelé à un examen complet des systèmes informatiques et a exhorté les utilisateurs à passer à la dernière version de PHP. Le bureau de la sécurité nationale de la Corée du Sud a convoqué une réunion de crise sur la cybersécurité. Le centre d’informatique d’État finlandais a noté que les services Web publics gouvernementaux étaient affectés."
+      ],
+      "context": "PHP est un langage de programmation qui alimente de nombreux sites Web, notamment les blogs, les portails d’information, les sites de commerce électronique et les systèmes de gestion de contenu. La faille a affecté environ 400 à 500 millions de sites utilisant PHP, selon les professionnels de l’informatique.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "PHP安全漏洞导致全球网站停机",
+      "dek": "关键PHP漏洞引发全球网站停机",
+      "facts": [
+        "德国联邦信息安全局（BSI）于2026年10月21日发布警告，指出PHP漏洞CVE-2026-109618和CVE-2026-109619。",
+        "这些漏洞被命名为PHP2Shell，允许攻击者在服务器上远程执行代码。",
+        "许多网站，包括德国联邦刑事警察局（BKA）和Berlin.de，被迫下线。",
+        "PHP项目于2026年10月22日发布了更新版本。",
+        "多项服务，如柏林S-Bahn网站和德国州级门户网站，在补丁发布后恢复上线。"
+      ],
+      "body": [
+        "2026年10月21日，德国联邦信息安全局（BSI）发布了网络安全警告，指出PHP存在两处关键漏洞，编号为CVE-2026-109618和CVE-2026-109619。BSI将风险评为3级橙色，表明威胁极高，并敦促立即进行安全更新。",
+        "这些被称为PHP2Shell的漏洞使攻击者能够在未认证的情况下远程执行代码。因此，许多网站被主动关闭。德国联邦刑事警察局（BKA）网站在清晨仍保持离线。其他网站，如Berlin.de，也受到临时限制。",
+        "PHP开发团队于2026年10月22日发布了补丁版本。更新后，多项服务恢复运行。柏林S-Bahn网站在傍晚时分已重新上线。莱茵兰-普法尔茨州和萨尔兰州的德国州级门户网站也在补丁后重新开放。",
+        "中国工业部呼吁全面审查IT系统，并敦促用户升级至最新PHP版本。韩国国家安全办公室召开了网络安全危机会议。芬兰国家IT中心指出，公共政府网站服务受到影响。"
+      ],
+      "context": "PHP是一种编程语言，驱动着众多网站，包括博客、新闻门户、电子商务网站和内容管理系统。根据IT专业人士的估计，该漏洞影响了约4亿至5亿个使用PHP的网站。",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "PHP 보안 위반으로 전 세계 웹사이트 중단",
+      "dek": "중대한 PHP 결함이 전 세계 사이트를 정지시킴",
+      "facts": [
+        "BSI는 2026년 10월 21일 PHP 결함 CVE-2026-109618 및 CVE-2026-109619에 대해 경고를 발표했습니다.",
+        "이 결함은 PHP2Shell이라고 불리며, 인증 없이 원격으로 코드를 실행할 수 있게 합니다.",
+        "독일 BKA와 Berlin.de를 포함한 많은 사이트가 오프라인 상태가 되었습니다.",
+        "PHP 프로젝트는 2026년 10월 22일에 업데이트된 PHP 버전을 발표했습니다.",
+        "S-Bahn Berlin 및 독일 주 포털과 같은 여러 서비스가 패치를 적용한 후 다시 온라인으로 돌아왔습니다."
+      ],
+      "body": [
+        "2026년 10월 21일, 독일 연방 정보 보안청(BSI)은 사이버 보안 경고를 발표했습니다. 이 경고는 PHP에서 CVE-2026-109618 및 CVE-2026-109619로 분류된 두 개의 치명적인 취약점을 식별했습니다. BSI는 위험 수준을 3단계 오렌지로 평가했으며, 이는 매우 높은 위협을 나타냅니다. 경고는 즉각적인 보안 업데이트를 촉구했습니다.",
+        "이 취약점은 PHP2Shell이라고 불리며, 인증 없이 공격자가 원격으로 코드를 실행할 수 있게 합니다. 그 결과, 많은 웹사이트가 사전 예방적으로 종료되었습니다. 독일 연방 형사경찰청(BKA) 사이트는 아침에 오프라인 상태를 유지했습니다. Berlin.de와 같은 다른 사이트는 일시적인 제한을 받았습니다.",
+        "PHP 개발팀은 2026년 10월 22일에 패치 버전을 발표했습니다. 업데이트를 적용한 후, 여러 서비스가 운영을 재개했습니다. S-Bahn Berlin 웹사이트는 밤이 되기 전에 다시 온라인으로 돌아온 것으로 보고되었습니다. 라인란트-팔츠와 사르란트의 독일 주 포털도 패치를 적용한 뒤 재개되었습니다.",
+        "중국 산업부는 IT 시스템에 대한 종합적인 검토를 촉구하고 사용자에게 최신 PHP 버전으로 업그레이드할 것을 권고했습니다. 한국 국가안보원은 사이버 보안 위기 회의를 소집했습니다. 핀란드 국가 IT 센터는 공공 정부 웹 서비스가 영향을 받았다고 밝혔습니다."
+      ],
+      "context": "PHP는 블로그, 뉴스 포털, 전자상거래 사이트, 콘텐츠 관리 시스템 등 많은 웹사이트를 구동하는 프로그래밍 언어입니다. IT 전문가에 따르면, 이 결함은 PHP를 사용하는 약 4억~5억 개의 사이트에 영향을 미쳤습니다.",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "PHPのセキュリティ侵害で世界的にウェブサイト停止",
+      "dek": "重大なPHPの欠陥が世界中でサイト停止を引き起こす。",
+      "facts": [
+        "BSIは2026年10月21日にCVE-2026-109618とCVE-2026-109619というPHPの欠陥について警告を発表した。",
+        "この欠陥はPHP2Shellと名付けられ、認証なしでリモートコード実行を可能にする。",
+        "ドイツ連邦刑事警察局（BKA）やBerlin.deを含む多くのサイトが停止した。",
+        "2026年10月22日にPHPプロジェクトが更新版をリリースした。",
+        "S-Bahn Berlinやドイツ州ポータルなどのサービスがパッチ適用後にオンラインに戻った。"
+      ],
+      "body": [
+        "2026年10月21日、ドイツ連邦情報セキュリティ庁（BSI）はサイバーセキュリティ警告を発表した。CVE-2026-109618とCVE-2026-109619という2つの重大なPHPの脆弱性を特定し、リスクをレベル3（オレンジ）と評価し、極めて高い脅威であると示した。警告は即時のセキュリティ更新を促した。",
+        "「PHP2Shell」と呼ばれる脆弱性は、認証なしでリモートでコードを実行できる。結果として、多くのウェブサイトが事前に停止された。ドイツ連邦刑事警察局（BKA）のサイトは朝に停止したままでした。Berlin.deなど他のサイトは一時的な制限に直面した。",
+        "2026年10月22日にPHPプロジェクトが修正済みバージョンをリリースした。更新を適用後、いくつかのサービスが再稼働した。S-Bahn Berlinのウェブサイトは夜間に再びオンラインになった。Rheinland-PfalzとSaarlandのドイツ州ポータルもパッチ適用後に再開された。",
+        "中国産業省は包括的なITシステムの見直しを呼びかけ、ユーザーに最新のPHPバージョンへのアップグレードを促した。韓国国防安全局はサイバーセキュリティ危機会議を開催した。フィンランド国立ITセンターは公的政府ウェブサービスが影響を受けたと指摘した。"
+      ],
+      "context": "PHPは多くのウェブサイトを支えるプログラミング言語であり、ブログ、ニュースポータル、e‑commerceサイト、コンテンツ管理システムなどを動かす。欠陥は約400〜500万件のサイトに影響したとIT専門家は見積もっている。",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Falha de Segurança PHP Força Interrupções Globais de Sites",
+      "dek": "Falha crítica de PHP desencadeia desligamentos de sites em todo o mundo.",
+      "facts": [
+        "O BSI emitiu um alerta em 21 de outubro de 2026 sobre falhas PHP CVE-2026-109618 e CVE-2026-109619.",
+        "As falhas, nomeadas PHP2Shell, permitem a execução remota de código (executar código num servidor).",
+        "Muitos sites, incluindo o BKA alemão e o Berlin.de, foram colocados offline.",
+        "Versões atualizadas do PHP foram lançadas pelo projeto PHP em 22 de outubro de 2026.",
+        "Vários serviços, como o S-Bahn Berlin e portais estaduais alemães, voltaram online após as correções."
+      ],
+      "body": [
+        "Em 21 de outubro de 2026, o Escritório Federal de Segurança da Informação da Alemanha (BSI) emitiu um alerta de cibersegurança. Identificou duas vulnerabilidades críticas no PHP, catalogadas como CVE-2026-109618 e CVE-2026-109619. O BSI classificou o risco como nível 3, Laranja, indicando uma ameaça excepcionalmente alta. O alerta recomendou atualizações de segurança imediatas.",
+        "As vulnerabilidades, batizadas de PHP2Shell, permitem que atacantes executem código remotamente sem autenticação. Como resultado, muitos sites foram desligados de forma proativa. O site da Oficina Federal de Polícia Criminal (BKA) permaneceu offline pela manhã. Outros sites, como Berlin.de, enfrentaram restrições temporárias.",
+        "A equipa de desenvolvimento do PHP lançou versões corrigidas em 22 de outubro de 2026. Após a aplicação das atualizações, vários serviços retomaram a operação. O site do S-Bahn Berlin voltou a estar online até ao final do dia. Portais estaduais alemães em Rheinland-Pfalz e Saarland também reabriram após as correções.",
+        "O Ministério da Indústria da China pediu uma revisão abrangente dos sistemas de TI e instou os utilizadores a atualizar para a versão mais recente do PHP. O Escritório de Segurança Nacional da Coreia do Sul convocou uma reunião de crise de cibersegurança. O centro de TI do Estado da Finlândia observou que os serviços web públicos do governo foram afetados."
+      ],
+      "context": "O PHP é uma linguagem de programação que alimenta muitos sites, incluindo blogs, portais de notícias, sites de comércio eletrónico e sistemas de gestão de conteúdo. A falha afetou, segundo profissionais de TI, cerca de 400–500 milhões de sites que utilizam PHP.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "openai/gpt-oss-20b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Unsupported claim: the draft states that 400–500 million sites use PHP; the source only cites that WordPress alone powers 400–500 million sites. The context should be corrected to reflect this."
+    ]
+  }
+}

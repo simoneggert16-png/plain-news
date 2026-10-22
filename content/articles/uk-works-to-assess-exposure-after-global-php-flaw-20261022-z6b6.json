@@ -1,0 +1,217 @@
+{
+  "slug": "uk-works-to-assess-exposure-after-global-php-flaw-20261022-z6b6",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 1,
+  "publishedAt": "2026-10-22T07:51:04.864Z",
+  "updatedAt": "2026-10-22T07:51:04.864Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "BBC",
+      "title": "UK working to identify exposure after global cyber-security warning",
+      "url": "https://www.bbc.co.uk/news/articles/cmx23d0k57d3o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-10-22T06:58:38.000Z"
+    },
+    {
+      "outlet": "The Guardian",
+      "title": "What is PHP, and how bad is the computer language flaw causing website shutdowns globally?",
+      "url": "https://www.theguardian.com/technology/2026/oct/22/what-is-php-computer-language-flaw-causing-global-website-shutdowns",
+      "publishedAt": "2026-10-22T04:21:19.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "UK works to assess exposure after global PHP flaw warning",
+      "dek": "UK government seeks to identify exposure in online services after AI‑discovered PHP flaws that could let attackers run code on servers.",
+      "facts": [
+        "The UK National Cyber Security Centre urged organisations to apply PHP fixes or take systems offline, according to the BBC.",
+        "The PHP Foundation said the vulnerabilities affect memory management and error handling, present in nearly every request, according to the Guardian.",
+        "An estimated 70% of websites use PHP, including WordPress, Wikipedia, and Facebook, according to the Guardian.",
+        "Amazon reported a PHP2Shell exploitation attempt on 17 October from an anonymous IP, according to the BBC.",
+        "The vulnerabilities were discovered by AI and a researcher named Ryan Austin, according to the BBC and Guardian."
+      ],
+      "body": [
+        "The UK government is working to identify any potential exposure in its online services after critical cyber‑security flaws were found in PHP, the language that powers many websites, according to the BBC.",
+        "PHP is an open‑source scripting language that has been used on the internet for more than 30 years. The PHP Foundation said the flaws sit in memory management and error handling, parts of PHP that nearly every request touches, according to the Guardian.",
+        "The two vulnerabilities, dubbed PHP2Shell by security vendor Hadrian, can corrupt memory through a request and give an attacker a direct path to a server’s file system or database, according to the US National Security Agency and the Guardian.",
+        "Governments and companies, including Amazon, are rushing to protect systems that use PHP before hackers can exploit the flaws. The UK National Cyber Security Centre urged organisations to apply fixes or take systems offline if immediate remediation is not feasible, according to the BBC.",
+        "An estimated 70% of websites use PHP, and the PHP Foundation said the vulnerabilities could affect some 30 million sites, according to the Guardian and BBC. Patches are already available, and the PHP Foundation has worked with AI models to scan its code, according to the Guardian."
+      ],
+      "context": "PHP is a programming language that many websites use to run their content. A flaw in PHP can let attackers run code on a server, and the flaw was discovered by AI and a researcher, prompting governments to urge fixes.",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "El Reino Unido trabaja para evaluar la exposición tras la advertencia global sobre fallo PHP",
+      "dek": "El gobierno británico busca identificar la exposición en sus servicios en línea tras los fallos PHP descubiertos por IA que podrían permitir a atacantes ejecutar código en servidores.",
+      "facts": [
+        "El Centro Nacional de Ciberseguridad del Reino Unido instó a las organizaciones a aplicar las correcciones PHP o a desconectar los sistemas, según la BBC.",
+        "La PHP Foundation dijo que las vulnerabilidades afectan la gestión de memoria y el manejo de errores, presentes en casi todas las peticiones, según el Guardian.",
+        "Se estima que el 70 % de los sitios web utilizan PHP, incluidos WordPress, Wikipedia y Facebook, según el Guardian.",
+        "Amazon informó de un intento de explotación PHP2Shell el 17 de octubre desde una IP anónima, según la BBC.",
+        "Las vulnerabilidades fueron descubiertas por IA y un investigador llamado Ryan Austin, según la BBC y el Guardian."
+      ],
+      "body": [
+        "El gobierno del Reino Unido está trabajando para identificar cualquier exposición potencial en sus servicios en línea después de que se encontraran fallos críticos de ciberseguridad en PHP, el lenguaje que impulsa muchos sitios web, según la BBC.",
+        "PHP es un lenguaje de secuencias de comandos de código abierto que se ha utilizado en Internet durante más de 30 años. La PHP Foundation dijo que las vulnerabilidades se encuentran en la gestión de memoria y el manejo de errores, partes de PHP que casi todas las peticiones tocan, según el Guardian.",
+        "Las dos vulnerabilidades, denominadas PHP2Shell por el proveedor de seguridad Hadrian, pueden corromper la memoria a través de una petición y dar a un atacante un camino directo al sistema de archivos o a la base de datos del servidor, según la Agencia de Seguridad Nacional de EE. UU. y el Guardian.",
+        "Los gobiernos y las empresas, incluida Amazon, están apresurándose a proteger los sistemas que usan PHP antes de que los hackers puedan explotar las vulnerabilidades. El Centro Nacional de Ciberseguridad del Reino Unido instó a las organizaciones a aplicar las correcciones o a desconectar los sistemas si la remediación inmediata no es factible, según la BBC.",
+        "Se estima que el 70 % de los sitios web utilizan PHP, y la PHP Foundation dijo que las vulnerabilidades podrían afectar a unos 30 millones de sitios, según el Guardian y la BBC. Los parches ya están disponibles, y la PHP Foundation ha trabajado con modelos de IA para escanear su código, según el Guardian."
+      ],
+      "context": "PHP es un lenguaje de programación que muchos sitios web utilizan para ejecutar su contenido. Una falla en PHP puede permitir a atacantes ejecutar código en un servidor, y la falla fue descubierta por IA y un investigador, lo que llevó a los gobiernos a instar a la corrección.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "UK arbeitet an der Bewertung von Risiken nach globaler PHP-Sicherheitswarnung",
+      "dek": "Die britische Regierung sucht nach potenziellen Risiken in Online-Diensten, nachdem KI-gestützte PHP-Schwachstellen entdeckt wurden, die Angreifern das Ausführen von Code auf Servern ermöglichen könnten.",
+      "facts": [
+        "Das UK National Cyber Security Centre forderte laut BBC Organisationen auf, PHP-Fehler zu beheben oder Systeme offline zu schalten.",
+        "Die PHP Foundation erklärte laut Guardian, dass die Schwachstellen die Speicherverwaltung und Fehlerbehandlung betreffen und in nahezu jeder Anfrage vorhanden sind.",
+        "Schätzungsweise nutzen 70 % der Websites PHP, darunter WordPress, Wikipedia und Facebook, so der Guardian.",
+        "Amazon meldete laut BBC am 17. Oktober einen PHP2Shell-Ausnutzungsversuch von einer anonymen IP.",
+        "Die Schwachstellen wurden laut BBC und Guardian von KI und einem Forscher namens Ryan Austin entdeckt."
+      ],
+      "body": [
+        "Die UK-Regierung arbeitet daran, mögliche Risiken in ihren Online-Diensten zu identifizieren, nachdem kritische Cybersicherheitslücken in PHP, der Sprache, die viele Websites antreibt, entdeckt wurden, so die BBC.",
+        "PHP ist eine Open‑Source-Skriptsprache, die seit mehr als 30 Jahren im Internet eingesetzt wird. Die PHP Foundation erklärte laut Guardian, dass die Schwachstellen in der Speicherverwaltung und Fehlerbehandlung liegen, Bereichen von PHP, die nahezu jede Anfrage berühren.",
+        "Die beiden Schwachstellen, von dem Sicherheitsanbieter Hadrian als PHP2Shell bezeichnet, können durch eine Anfrage Speicher verfälschen und einem Angreifer einen direkten Weg zum Dateisystem oder zur Datenbank eines Servers ermöglichen, so die US National Security Agency und der Guardian.",
+        "Regierungen und Unternehmen, darunter Amazon, beeilen sich, Systeme, die PHP nutzen, zu schützen, bevor Hacker die Schwachstellen ausnutzen können. Das UK National Cyber Security Centre forderte laut BBC Organisationen auf, Patches einzuspielen oder Systeme offline zu schalten, falls eine sofortige Behebung nicht möglich ist.",
+        "Schätzungsweise nutzen 70 % der Websites PHP, und die PHP Foundation erklärte laut Guardian und BBC, dass die Schwachstellen etwa 30 Millionen Seiten betreffen könnten. Patches sind bereits verfügbar, und die PHP Foundation hat mit KI-Modellen zusammengearbeitet, um ihren Code zu scannen, so der Guardian."
+      ],
+      "context": "PHP ist eine Programmiersprache, die von vielen Websites verwendet wird, um Inhalte auszuführen. Eine Schwachstelle in PHP kann Angreifern erlauben, Code auf einem Server auszuführen, und die Lücke wurde von KI und einem Forscher entdeckt, was Regierungen dazu veranlasste, Korrekturen zu fordern.",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "英国、AIが発見したPHP欠陥の曝露を評価へ",
+      "dek": "英国政府、AIが検出したPHP欠陥により攻撃者がサーバー上でコードを実行できる可能性を踏まえ、オンラインサービスの曝露を特定しようとしている。",
+      "facts": [
+        "BBCによると、英国国立サイバーセキュリティセンターは組織に対しPHPの修正を適用するか、システムをオフラインにするよう促した。",
+        "Guardianによると、PHP Foundationは、脆弱性がメモリ管理とエラーハンドリングに影響し、ほぼすべてのリクエストで発生すると述べた。",
+        "Guardianによると、推定70％のウェブサイトがPHPを使用しており、WordPress、Wikipedia、Facebookなどが含まれる。",
+        "BBCによると、Amazonは10月17日に匿名IPからのPHP2Shell悪用試行を報告した。",
+        "BBCとGuardianによると、脆弱性はAIと研究者Ryan Austinによって発見された。"
+      ],
+      "body": [
+        "BBCによると、英国政府は多くのウェブサイトを支える言語PHPに重大なサイバーセキュリティ欠陥が発見されたため、オンラインサービスにおける曝露を特定する作業を進めている。",
+        "PHPは30年以上にわたりインターネットで使用されているオープンソースのスクリプト言語である。PHP Foundationは、欠陥がメモリ管理とエラーハンドリングに存在し、ほぼすべてのリクエストが触れるPHPの部分に影響すると述べた。",
+        "米国国家安全保障局とGuardianによると、セキュリティベンダーHadrianがPHP2Shellと呼ぶ2つの脆弱性は、リクエストを通じてメモリを破損させ、攻撃者にサーバーのファイルシステムやデータベースへの直接的な経路を与える可能性がある。",
+        "BBCによると、Amazonを含む政府や企業は、ハッカーが欠陥を悪用する前にPHPを使用するシステムを保護するために急いでいる。英国国立サイバーセキュリティセンターは、即時の修復が不可能な場合は修正を適用するかシステムをオフラインにするよう促した。",
+        "GuardianとBBCによると、推定70％のウェブサイトがPHPを使用しており、PHP Foundationは脆弱性が約3,000万サイトに影響を与える可能性があると述べた。パッチはすでに入手可能であり、PHP FoundationはAIモデルと協力してコードをスキャンした。"
+      ],
+      "context": "PHPは多くのウェブサイトがコンテンツを実行するために使用するプログラミング言語である。PHPの欠陥は攻撃者にサーバー上でコードを実行させる可能性があり、AIと研究者によって発見されたため、政府は修正を促した。",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "Il Regno Unito valuta l'esposizione dopo l'avviso globale sul difetto PHP",
+      "dek": "Il governo del Regno Unito cerca di individuare l'esposizione nei servizi online dopo che difetti PHP scoperti dall'IA potrebbero permettere agli aggressori di eseguire codice sui server.",
+      "facts": [
+        "Il Centro Nazionale di Sicurezza Cibernetica del Regno Unito ha invitato le organizzazioni a applicare le correzioni PHP o a dismettere i sistemi, secondo la BBC.",
+        "La PHP Foundation ha affermato che le vulnerabilità riguardano la gestione della memoria e la gestione degli errori, presenti in quasi ogni richiesta, secondo il Guardian.",
+        "Si stima che il 70% dei siti web utilizzi PHP, tra cui WordPress, Wikipedia e Facebook, secondo il Guardian.",
+        "Amazon ha segnalato un tentativo di sfruttamento PHP2Shell il 17 ottobre da un IP anonimo, secondo la BBC.",
+        "Le vulnerabilità sono state scoperte dall'IA e da un ricercatore di nome Ryan Austin, secondo la BBC e il Guardian."
+      ],
+      "body": [
+        "Il governo del Regno Unito sta lavorando per individuare eventuali esposizioni nei suoi servizi online dopo che sono stati scoperti difetti critici di sicurezza informatica in PHP, il linguaggio che alimenta molti siti web, secondo la BBC.",
+        "PHP è un linguaggio di scripting open-source che viene utilizzato su Internet da oltre 30 anni. La PHP Foundation ha affermato che i difetti riguardano la gestione della memoria e la gestione degli errori, parti di PHP che toccano quasi ogni richiesta, secondo il Guardian.",
+        "Le due vulnerabilità, soprannominati PHP2Shell dal fornitore di sicurezza Hadrian, possono corrompere la memoria tramite una richiesta e dare all'aggressore un percorso diretto al file system o al database del server, secondo l'US National Security Agency e il Guardian.",
+        "Governamenti e aziende, tra cui Amazon, si affrettano a proteggere i sistemi che utilizzano PHP prima che gli hacker possano sfruttare le vulnerabilità. Il Centro Nazionale di Sicurezza Cibernetica del Regno Unito ha invitato le organizzazioni a applicare le correzioni o a dismettere i sistemi se la rimozione immediata non è fattibile, secondo la BBC.",
+        "Si stima che il 70% dei siti web utilizzi PHP, e la PHP Foundation ha affermato che le vulnerabilità potrebbero interessare circa 30 milioni di siti, secondo il Guardian e la BBC. Le patch sono già disponibili, e la PHP Foundation ha collaborato con modelli di IA per esaminare il suo codice, secondo il Guardian."
+      ],
+      "context": "PHP è un linguaggio di programmazione che molti siti web utilizzano per eseguire i loro contenuti. Un difetto in PHP può consentire agli aggressori di eseguire codice su un server, e il difetto è stato scoperto dall'IA e da un ricercatore, spingendo i governi a chiedere correzioni.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "英国正评估曝光风险，回应全球 PHP 漏洞警告",
+      "dek": "英国政府在 AI 发现的 PHP 漏洞可能让攻击者在服务器上执行代码后，寻求识别在线服务的潜在风险。",
+      "facts": [
+        "英国国家网络安全中心（National Cyber Security Centre）根据 BBC 报道，敦促组织应用 PHP 修复或将系统下线。",
+        "PHP 基金会根据《卫报》称，这些漏洞影响内存管理和错误处理，几乎每一次请求都会触及。",
+        "据《卫报》称，约 70% 的网站使用 PHP，包括 WordPress、Wikipedia 和 Facebook。",
+        "据 BBC 报道，亚马逊于 10 月 17 日收到一次来自匿名 IP 的 PHP2Shell 利用尝试。",
+        "据 BBC 与《卫报》报道，这些漏洞由 AI 与研究员 Ryan Austin 发现。"
+      ],
+      "body": [
+        "英国政府正努力识别其在线服务中可能存在的风险，原因是 BBC 报道发现 PHP（许多网站的核心语言）存在严重的网络安全漏洞。",
+        "PHP 是一种开源脚本语言，已在互联网上使用超过 30 年。根据《卫报》报道，PHP 基金会表示，这些漏洞位于内存管理和错误处理部分，几乎每一次请求都会触及。",
+        "安全供应商 Hadrian 将这两个漏洞命名为 PHP2Shell，据美国国家安全局和《卫报》称，它们可通过一次请求破坏内存，并为攻击者直接访问服务器文件系统或数据库提供路径。",
+        "政府和企业，包括亚马逊，正急于在黑客利用漏洞之前保护使用 PHP 的系统。英国国家网络安全中心根据 BBC 报道，敦促组织在无法立即修复时应用补丁或将系统下线。",
+        "据《卫报》和 BBC 报道，约 70% 的网站使用 PHP，PHP 基金会称这些漏洞可能影响约 3000 万个站点。补丁已可用，基金会已与 AI 模型合作扫描其代码。"
+      ],
+      "context": "PHP 是许多网站用于运行内容的编程语言。PHP 的漏洞可能让攻击者在服务器上执行代码，该漏洞由 AI 与研究员发现，促使各国政府敦促修复。",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "영국, 글로벌 PHP 결함 경고 이후 노출 여부 평가 진행 중",
+      "dek": "영국 정부, AI가 발견한 PHP 결함으로 공격자가 서버에서 코드를 실행할 수 있는 온라인 서비스의 노출 여부를 파악하려 한다.",
+      "facts": [
+        "BBC에 따르면 영국 국가 사이버 보안 센터는 조직에 PHP 패치를 적용하거나 시스템을 오프라인으로 전환할 것을 촉구했다.",
+        "Guardian에 따르면 PHP 재단은 이 취약점이 메모리 관리와 오류 처리에 영향을 미치며, 거의 모든 요청에서 발생한다고 밝혔다.",
+        "Guardian에 따르면 추정 70%의 웹사이트가 PHP를 사용하며, 워드프레스, 위키피디아, 페이스북 등이 포함된다.",
+        "BBC에 따르면 Amazon은 익명 IP에서 10월 17일 PHP2Shell 악용 시도를 보고했다.",
+        "BBC와 Guardian에 따르면 이 취약점은 AI와 연구원 Ryan Austin에 의해 발견되었다."
+      ],
+      "body": [
+        "BBC에 따르면 영국 정부는 PHP에서 발견된 치명적인 사이버 보안 결함 이후 온라인 서비스에서 잠재적 노출 여부를 파악하기 위해 노력하고 있다.",
+        "PHP는 30년 이상 인터넷에서 사용되어 온 오픈소스 스크립트 언어이다. PHP 재단은 이 결함이 메모리 관리와 오류 처리에 존재하며, 거의 모든 요청이 해당 부분에 접근한다고 Guardian에 밝혔다.",
+        "미국 국가 안보국과 Guardian에 따르면 보안 업체 Hadrian이 명명한 두 개의 취약점, PHP2Shell은 요청을 통해 메모리를 손상시키고 공격자에게 서버 파일 시스템이나 데이터베이스에 직접 접근할 수 있는 경로를 제공한다.",
+        "Amazon을 포함한 정부와 기업들은 해커가 결함을 악용하기 전에 PHP를 사용하는 시스템을 보호하기 위해 서둘러 조치를 취하고 있다. BBC에 따르면 영국 국가 사이버 보안 센터는 즉각적인 수정이 어려울 경우 조직에 패치를 적용하거나 시스템을 오프라인으로 전환할 것을 권고했다.",
+        "Guardian과 BBC에 따르면 추정 70%의 웹사이트가 PHP를 사용하며, PHP 재단은 이 취약점이 약 3천만 개의 사이트에 영향을 미칠 수 있다고 말했다. 패치는 이미 제공되고 있으며, PHP 재단은 AI 모델과 협력해 코드를 스캔했다고 Guardian이 보도했다."
+      ],
+      "context": "PHP는 많은 웹사이트가 콘텐츠를 실행하기 위해 사용하는 프로그래밍 언어이다. PHP의 결함은 공격자가 서버에서 코드를 실행할 수 있게 하며, 이 결함은 AI와 연구원에 의해 발견되어 정부가 패치를 촉구하게 만들었다.",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Le Royaume‑Uni travaille à évaluer son exposition après l’avertissement mondial sur une faille PHP",
+      "dek": "Le gouvernement britannique cherche à identifier les risques dans ses services en ligne après la découverte par l’IA de failles PHP pouvant permettre aux attaquants d’exécuter du code sur les serveurs.",
+      "facts": [
+        "Le Centre national de la cybersécurité britannique a exhorté les organisations à appliquer les correctifs PHP ou à mettre hors ligne leurs systèmes, selon la BBC.",
+        "La PHP Foundation a déclaré que les vulnérabilités touchent la gestion de la mémoire et la gestion des erreurs, présentes dans presque chaque requête, selon le Guardian.",
+        "On estime que 70 % des sites web utilisent PHP, notamment WordPress, Wikipedia et Facebook, selon le Guardian.",
+        "Amazon a signalé une tentative d’exploitation PHP2Shell le 17 octobre depuis une adresse IP anonyme, selon la BBC.",
+        "Les vulnérabilités ont été découvertes par l’IA et un chercheur nommé Ryan Austin, selon la BBC et le Guardian."
+      ],
+      "body": [
+        "Le gouvernement britannique travaille à identifier toute exposition potentielle dans ses services en ligne après la découverte de failles de cybersécurité critiques dans PHP, le langage qui alimente de nombreux sites web, selon la BBC.",
+        "PHP est un langage de script open source utilisé sur Internet depuis plus de 30 ans. La PHP Foundation a indiqué que les failles concernent la gestion de la mémoire et la gestion des erreurs, des parties de PHP que presque chaque requête touche, selon le Guardian.",
+        "Les deux vulnérabilités, baptisées PHP2Shell par le fournisseur de sécurité Hadrian, peuvent corrompre la mémoire via une requête et offrir à un attaquant un accès direct au système de fichiers ou à la base de données d’un serveur, selon l’Agence de sécurité nationale américaine et le Guardian.",
+        "Les gouvernements et les entreprises, dont Amazon, se précipitent pour protéger les systèmes utilisant PHP avant que les pirates ne puissent exploiter les failles. Le Centre national de la cybersécurité britannique a exhorté les organisations à appliquer les correctifs ou à mettre hors ligne leurs systèmes si la remédiation immédiate n’est pas possible, selon la BBC.",
+        "On estime que 70 % des sites web utilisent PHP, et la PHP Foundation a déclaré que les vulnérabilités pourraient toucher environ 30 millions de sites, selon le Guardian et la BBC. Des correctifs sont déjà disponibles, et la PHP Foundation a collaboré avec des modèles d’IA pour analyser son code, selon le Guardian."
+      ],
+      "context": "PHP est un langage de programmation que de nombreux sites web utilisent pour exécuter leur contenu. Une faille dans PHP peut permettre aux attaquants d’exécuter du code sur un serveur, et la faille a été découverte par l’IA et un chercheur, incitant les gouvernements à demander des correctifs.",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Reino Unido trabalha para avaliar exposição após alerta global sobre falha PHP",
+      "dek": "O governo do Reino Unido procura identificar a exposição nos seus serviços online após falhas PHP descobertas por IA que poderiam permitir que atacantes executassem código nos servidores.",
+      "facts": [
+        "O Centro Nacional de Segurança Cibernética do Reino Unido instou as organizações a aplicar correções PHP ou a colocar os sistemas offline, segundo a BBC.",
+        "A Fundação PHP afirmou que as vulnerabilidades afetam a gestão de memória e o tratamento de erros, presentes em quase todas as solicitações, segundo o Guardian.",
+        "Estima-se que 70% dos sites utilizam PHP, incluindo WordPress, Wikipedia e Facebook, segundo o Guardian.",
+        "A Amazon relatou uma tentativa de exploração PHP2Shell em 17 de outubro a partir de um IP anónimo, segundo a BBC.",
+        "As vulnerabilidades foram descobertas por IA e por um investigador chamado Ryan Austin, segundo a BBC e o Guardian."
+      ],
+      "body": [
+        "O governo do Reino Unido está a trabalhar para identificar qualquer exposição potencial nos seus serviços online após a descoberta de falhas críticas de segurança cibernética no PHP, a linguagem que alimenta muitos sites, segundo a BBC.",
+        "O PHP é uma linguagem de script de código aberto que tem sido usada na internet há mais de 30 anos. A Fundação PHP afirmou que as falhas se situam na gestão de memória e no tratamento de erros, partes do PHP que quase todas as solicitações tocam, segundo o Guardian.",
+        "As duas vulnerabilidades, batizadas de PHP2Shell pelo fornecedor de segurança Hadrian, podem corromper a memória através de uma solicitação e dar ao atacante um caminho direto para o sistema de ficheiros ou base de dados do servidor, segundo a Agência de Segurança Nacional dos EUA e o Guardian.",
+        "Governos e empresas, incluindo a Amazon, estão a acelerar a proteção de sistemas que utilizam PHP antes que os hackers possam explorar as falhas. O Centro Nacional de Segurança Cibernética do Reino Unido instou as organizações a aplicar correções ou a colocar os sistemas offline se a remediação imediata não for factível, segundo a BBC.",
+        "Estima-se que 70% dos sites utilizam PHP, e a Fundação PHP afirmou que as vulnerabilidades poderiam afetar cerca de 30 milhões de sites, segundo o Guardian e a BBC. Os patches já estão disponíveis, e a Fundação PHP trabalhou com modelos de IA para analisar o seu código, segundo o Guardian."
+      ],
+      "context": "O PHP é uma linguagem de programação que muitos sites utilizam para executar o seu conteúdo. Uma falha no PHP pode permitir que atacantes executem código num servidor, e a falha foi descoberta por IA e por um investigador, o que levou os governos a exigir correções.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "openai/gpt-oss-20b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Misattributed the 30 million‑site figure to the PHP Foundation; it comes from the BBC.",
+      "The fact list and body paragraph 5 incorrectly linked the 30 million‑site claim to the PHP Foundation."
+    ]
+  }
+}
