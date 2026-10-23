@@ -4,6 +4,21 @@ import { LOCALE_CODES, DEFAULT_LOCALE } from './lib/config.mjs';
 const CRAWLER_RE =
   /bot|crawler|spider|slurp|OAI-SearchBot|ChatGPT|GPTBot|Perplexity|Claude|Google-Extended|Applebot|Amazonbot|meta-externalagent|CCBot|cohere-ai|YouBot|Diffbot/i;
 
+// Stricter than the locale-redirect check: these never count as human visits.
+const TRACK_SKIP_UA_RE = new RegExp(
+  `${CRAWLER_RE.source}|GoogleOther|Google-InspectionTool|AdsBot|Mediapartners|APIs-Google|FeedFetcher|HeadlessChrome|PhantomJS|python-requests|curl/|Wget`,
+  'i',
+);
+
+function decodeHeader(value) {
+  if (!value) return null;
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 /* ------------------------------------------------------------------ */
 /* Visitor logging (opt-in per env, never blocks a response)          */
 /* ------------------------------------------------------------------ */
@@ -42,7 +57,7 @@ function shouldTrack(req, pathname) {
   const accept = req.headers.get('accept') || '';
   if (!accept.includes('text/html')) return false;
   const ua = req.headers.get('user-agent') || '';
-  if (!ua || CRAWLER_RE.test(ua)) return false;
+  if (!ua || TRACK_SKIP_UA_RE.test(ua)) return false;
   return true;
 }
 
@@ -58,8 +73,8 @@ async function trackVisit(req, pathname) {
     ip_masked: maskIp(ip),
     ip_hash: await hashIp(ip),
     country: req.headers.get('x-vercel-ip-country') || null,
-    region: req.headers.get('x-vercel-ip-country-region') || null,
-    city: req.headers.get('x-vercel-ip-city') || null,
+    region: decodeHeader(req.headers.get('x-vercel-ip-country-region')),
+    city: decodeHeader(req.headers.get('x-vercel-ip-city')),
     path: pathname.slice(0, 300),
     referrer: (req.headers.get('referer') || '').slice(0, 300) || null,
     ua: (req.headers.get('user-agent') || '').slice(0, 300),
