@@ -1,4 +1,4 @@
-import { getSupabaseAdminClient } from '@/lib/supabase-admin.mjs';
+﻿import { getSupabaseAdminClient } from '@/lib/supabase-admin.mjs';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,7 +58,17 @@ function hostOf(url) {
   try {
     return new URL(url).hostname;
   } catch {
-    return '—';
+    return 'â€”';
+  }
+}
+
+// Vercel sends geo headers percent-encoded (e.g. "Sankt%20Gallen").
+function place(value) {
+  if (!value) return '';
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
   }
 }
 
@@ -98,12 +108,12 @@ export default async function VisitsPage({ searchParams }) {
     const c = r.country || '??';
     byCountry.set(c, (byCountry.get(c) || 0) + 1);
 
-    const key = r.ip || `${r.ip_masked || '?'}·${r.ip_hash || ''}`;
+    const key = r.ip || `${r.ip_masked || '?'}Â·${r.ip_hash || ''}`;
     const v = byVisitor.get(key) || {
-      ip: r.ip || r.ip_masked || '—',
+      ip: r.ip || r.ip_masked || 'â€”',
       hash: r.ip_hash || '',
       country: r.country || '??',
-      city: r.city || '',
+      city: place(r.city),
       visits: 0,
       first: r.ts,
       last: r.ts,
@@ -115,7 +125,7 @@ export default async function VisitsPage({ searchParams }) {
     if (new Date(r.ts) > new Date(v.last)) {
       v.last = r.ts;
       v.ua = r.ua || v.ua;
-      if (r.city) v.city = r.city;
+      if (r.city) v.city = place(r.city);
     }
     v.paths.set(r.path, (v.paths.get(r.path) || 0) + 1);
     byVisitor.set(key, v);
@@ -148,7 +158,7 @@ export default async function VisitsPage({ searchParams }) {
           </a>
         ))}
         <span style={{ marginLeft: 'auto', color: 'var(--muted)' }}>
-          {visitors.length} IPs · {rows.length} Aufrufe · {days} Tage
+          {visitors.length} IPs Â· {rows.length} Aufrufe Â· {days} Tage
         </span>
       </div>
 
@@ -170,9 +180,9 @@ export default async function VisitsPage({ searchParams }) {
             {[
               ['Aufrufe', rows.length],
               ['Unique (Hash)', new Set(rows.map((r) => r.ip_hash)).size],
-              ['Länder', countries.length],
+              ['LÃ¤nder', countries.length],
               ['aus CH', chCount],
-              ['CH-Anteil', rows.length ? `${Math.round((chCount / rows.length) * 100)} %` : '–'],
+              ['CH-Anteil', rows.length ? `${Math.round((chCount / rows.length) * 100)} %` : 'â€“'],
             ].map(([label, value]) => (
               <div key={label} style={{ background: 'var(--paper)', padding: '14px 16px' }}>
                 <div className="label" style={{ color: 'var(--muted)', fontSize: '10px' }}>{label}</div>
@@ -182,7 +192,7 @@ export default async function VisitsPage({ searchParams }) {
           </div>
 
           <section style={{ marginBottom: '36px' }}>
-            <div className="label" style={{ marginBottom: '8px' }}>Länder</div>
+            <div className="label" style={{ marginBottom: '8px' }}>LÃ¤nder</div>
             <div style={{ ...mono, display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {countries.map(([c, n]) => (
                 <a
@@ -202,7 +212,7 @@ export default async function VisitsPage({ searchParams }) {
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '720px' }}>
               <thead>
                 <tr>
-                  {['IP', 'Hash', 'Land', 'Stadt', 'Aufrufe', 'Zuletzt', 'Top-Seite', 'Gerät'].map((h) => (
+                  {['IP', 'Hash', 'Land', 'Stadt', 'Aufrufe', 'Zuletzt', 'Top-Seite', 'GerÃ¤t'].map((h) => (
                     <th key={h} style={head}>{h}</th>
                   ))}
                 </tr>
@@ -215,11 +225,11 @@ export default async function VisitsPage({ searchParams }) {
                       <td style={{ ...cell, ...mono }}>{v.ip}</td>
                       <td style={{ ...cell, ...mono, color: 'var(--muted)' }}>{(v.hash || '').slice(0, 10)}</td>
                       <td style={cell}>{v.country}</td>
-                      <td style={cell}>{v.city || '–'}</td>
+                      <td style={cell}>{v.city || 'â€“'}</td>
                       <td style={{ ...cell, ...mono }}>{v.visits}</td>
                       <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{timeAgo(v.last)}</td>
                       <td style={{ ...cell, ...mono, maxWidth: '260px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{topPath?.[0]}</td>
-                      <td style={{ ...cell, ...mono }}>{browserOf(v.ua)} · {deviceOf(v.ua)}</td>
+                      <td style={{ ...cell, ...mono }}>{browserOf(v.ua)} Â· {deviceOf(v.ua)}</td>
                     </tr>
                   );
                 })}
@@ -242,7 +252,7 @@ export default async function VisitsPage({ searchParams }) {
                     <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{new Date(r.ts).toLocaleString('de-CH', { timeZone: 'Europe/Zurich' })}</td>
                     <td style={{ ...cell, ...mono }}>{r.ip || r.ip_masked}</td>
                     <td style={cell}>{r.country || '??'}</td>
-                    <td style={cell}>{r.city || '–'}</td>
+                    <td style={cell}>{place(r.city) || 'â€“'}</td>
                     <td style={{ ...cell, ...mono }}>{r.path}</td>
                     <td style={{ ...cell, ...mono, color: 'var(--muted)' }}>{hostOf(r.referrer)}</td>
                   </tr>
@@ -260,3 +270,6 @@ export default async function VisitsPage({ searchParams }) {
     </div>
   );
 }
+
+
+
