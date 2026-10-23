@@ -66,3 +66,30 @@ revoke all on public.community_chat_messages from anon, authenticated;
 grant all on public.community_comments to service_role;
 grant all on public.community_submissions to service_role;
 grant all on public.community_chat_messages to service_role;
+
+-- ---------------------------------------------------------------------------
+-- Visitor log (/[locale]/admin/visits)
+-- Only written by the Next.js middleware via the service-role key.
+-- No policies => anon/authenticated cannot read or write.
+-- ---------------------------------------------------------------------------
+create table if not exists public.visits (
+  id bigint generated always as identity primary key,
+  ts timestamptz not null default now(),
+  ip text,
+  ip_masked text,
+  ip_hash text,
+  country text,
+  region text,
+  city text,
+  path text,
+  referrer text,
+  ua text
+);
+
+create index if not exists visits_ts_idx on public.visits (ts desc);
+create index if not exists visits_hash_idx on public.visits (ip_hash, ts desc);
+create index if not exists visits_country_idx on public.visits (country, ts desc);
+
+alter table public.visits enable row level security;
+revoke all on public.visits from anon, authenticated;
+grant all on public.visits to service_role;
