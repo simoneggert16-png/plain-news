@@ -1,4 +1,4 @@
-﻿import { getSupabaseAdminClient } from '@/lib/supabase-admin.mjs';
+import { getSupabaseAdminClient } from '@/lib/supabase-admin.mjs';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,7 +58,7 @@ function hostOf(url) {
   try {
     return new URL(url).hostname;
   } catch {
-    return 'â€”';
+    return '�?"';
   }
 }
 
@@ -84,6 +84,7 @@ export default async function VisitsPage({ searchParams }) {
 
   let rows = [];
   let error = null;
+  let comments = [];
 
   try {
     const sb = getSupabaseAdminClient();
@@ -97,6 +98,14 @@ export default async function VisitsPage({ searchParams }) {
     const res = await q;
     if (res.error) error = res.error;
     else rows = res.data || [];
+
+    const cres = await sb
+      .from('community_comments')
+      .select('id,article_slug,author,content,created_at,ip,ip_masked,country,city,ua')
+      .gte('created_at', since)
+      .order('created_at', { ascending: false })
+      .limit(100);
+    if (!cres.error) comments = cres.data || [];
   } catch (e) {
     error = e;
   }
@@ -108,9 +117,9 @@ export default async function VisitsPage({ searchParams }) {
     const c = r.country || '??';
     byCountry.set(c, (byCountry.get(c) || 0) + 1);
 
-    const key = r.ip || `${r.ip_masked || '?'}Â·${r.ip_hash || ''}`;
+    const key = r.ip || `${r.ip_masked || '?'}·${r.ip_hash || ''}`;
     const v = byVisitor.get(key) || {
-      ip: r.ip || r.ip_masked || 'â€”',
+      ip: r.ip || r.ip_masked || '�?"',
       hash: r.ip_hash || '',
       country: r.country || '??',
       city: place(r.city),
@@ -158,7 +167,7 @@ export default async function VisitsPage({ searchParams }) {
           </a>
         ))}
         <span style={{ marginLeft: 'auto', color: 'var(--muted)' }}>
-          {visitors.length} IPs Â· {rows.length} Aufrufe Â· {days} Tage
+          {visitors.length} IPs · {rows.length} Aufrufe · {days} Tage
         </span>
       </div>
 
@@ -180,9 +189,9 @@ export default async function VisitsPage({ searchParams }) {
             {[
               ['Aufrufe', rows.length],
               ['Unique (Hash)', new Set(rows.map((r) => r.ip_hash)).size],
-              ['LÃ¤nder', countries.length],
+              ['Länder', countries.length],
               ['aus CH', chCount],
-              ['CH-Anteil', rows.length ? `${Math.round((chCount / rows.length) * 100)} %` : 'â€“'],
+              ['CH-Anteil', rows.length ? `${Math.round((chCount / rows.length) * 100)} %` : '�?"'],
             ].map(([label, value]) => (
               <div key={label} style={{ background: 'var(--paper)', padding: '14px 16px' }}>
                 <div className="label" style={{ color: 'var(--muted)', fontSize: '10px' }}>{label}</div>
@@ -192,7 +201,7 @@ export default async function VisitsPage({ searchParams }) {
           </div>
 
           <section style={{ marginBottom: '36px' }}>
-            <div className="label" style={{ marginBottom: '8px' }}>LÃ¤nder</div>
+            <div className="label" style={{ marginBottom: '8px' }}>Länder</div>
             <div style={{ ...mono, display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {countries.map(([c, n]) => (
                 <a
@@ -212,7 +221,7 @@ export default async function VisitsPage({ searchParams }) {
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '720px' }}>
               <thead>
                 <tr>
-                  {['IP', 'Hash', 'Land', 'Stadt', 'Aufrufe', 'Zuletzt', 'Top-Seite', 'GerÃ¤t'].map((h) => (
+                  {['IP', 'Hash', 'Land', 'Stadt', 'Aufrufe', 'Zuletzt', 'Top-Seite', 'Gerät'].map((h) => (
                     <th key={h} style={head}>{h}</th>
                   ))}
                 </tr>
@@ -225,11 +234,11 @@ export default async function VisitsPage({ searchParams }) {
                       <td style={{ ...cell, ...mono }}>{v.ip}</td>
                       <td style={{ ...cell, ...mono, color: 'var(--muted)' }}>{(v.hash || '').slice(0, 10)}</td>
                       <td style={cell}>{v.country}</td>
-                      <td style={cell}>{v.city || 'â€“'}</td>
+                      <td style={cell}>{v.city || '�?"'}</td>
                       <td style={{ ...cell, ...mono }}>{v.visits}</td>
                       <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{timeAgo(v.last)}</td>
                       <td style={{ ...cell, ...mono, maxWidth: '260px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{topPath?.[0]}</td>
-                      <td style={{ ...cell, ...mono }}>{browserOf(v.ua)} Â· {deviceOf(v.ua)}</td>
+                      <td style={{ ...cell, ...mono }}>{browserOf(v.ua)} · {deviceOf(v.ua)}</td>
                     </tr>
                   );
                 })}
@@ -238,6 +247,34 @@ export default async function VisitsPage({ searchParams }) {
                 )}
               </tbody>
             </table>
+          </section>
+
+          <section style={{ marginBottom: '36px', overflowX: 'auto' }}>
+            <div className="label" style={{ marginBottom: '8px' }}>Kommentare ({comments.length})</div>
+            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '720px' }}>
+              <thead>
+                <tr>{['Zeit', 'Autor', 'IP', 'Land', 'Stadt', 'Artikel', 'Inhalt'].map((h) => <th key={h} style={head}>{h}</th>)}</tr>
+              </thead>
+              <tbody>
+                {comments.map((c) => (
+                  <tr key={c.id}>
+                    <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{new Date(c.created_at).toLocaleString('de-CH', { timeZone: 'Europe/Zurich' })}</td>
+                    <td style={cell}>{c.author}</td>
+                    <td style={{ ...cell, ...mono }}>{c.ip || c.ip_masked || '-'}</td>
+                    <td style={cell}>{c.country || '-'}</td>
+                    <td style={cell}>{place(c.city) || '-'}</td>
+                    <td style={{ ...cell, ...mono, maxWidth: '220px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{c.article_slug}</td>
+                    <td style={{ ...cell, maxWidth: '260px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{c.content}</td>
+                  </tr>
+                ))}
+                {comments.length === 0 && (
+                  <tr><td style={cell} colSpan={7}>Keine Kommentare im Zeitraum.</td></tr>
+                )}
+              </tbody>
+            </table>
+            <p style={{ ...mono, color: 'var(--muted)', marginTop: '8px' }}>
+              Kommentare von vor dem 23.10.2026 haben keine IP - damals wurde noch nichts erfasst.
+            </p>
           </section>
 
           <section style={{ overflowX: 'auto' }}>
@@ -252,7 +289,7 @@ export default async function VisitsPage({ searchParams }) {
                     <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{new Date(r.ts).toLocaleString('de-CH', { timeZone: 'Europe/Zurich' })}</td>
                     <td style={{ ...cell, ...mono }}>{r.ip || r.ip_masked}</td>
                     <td style={cell}>{r.country || '??'}</td>
-                    <td style={cell}>{place(r.city) || 'â€“'}</td>
+                    <td style={cell}>{place(r.city) || '�?"'}</td>
                     <td style={{ ...cell, ...mono }}>{r.path}</td>
                     <td style={{ ...cell, ...mono, color: 'var(--muted)' }}>{hostOf(r.referrer)}</td>
                   </tr>
