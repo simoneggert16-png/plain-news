@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { addComment, listAllComments, listComments } from '@/lib/communityStore.mjs';
+import { visitorMeta } from '@/lib/visitorMeta.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -52,6 +53,8 @@ export async function POST(request) {
       parentId: parentId?.trim() || null,
       verified: true,
     };
+
+    Object.assign(newComment, await visitorMeta(request));
 
     const updatedComments = await addComment(slug.trim(), newComment);
 

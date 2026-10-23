@@ -4,7 +4,7 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   return {
     title: locale === 'de' ? 'Datenschutzerklärung | PLAIN.' : 'Privacy Policy | PLAIN.',
-    description: 'Privacy Policy for PLAIN. News — no ads, no third-party tracking, no data monetization.',
+    description: 'Privacy Policy for PLAIN. News �?" no ads, no third-party tracking, no data monetization.',
     alternates: {
       canonical: `${SITE.url}/${locale}/privacy`,
       languages: Object.fromEntries(LOCALES.map((l) => [l.code, `${SITE.url}/${l.code}/privacy`])),
@@ -68,7 +68,7 @@ export default async function PrivacyPage({ params }) {
         </h2>
         <p style={{ lineHeight: 1.6 }}>
           {isDe
-            ? 'Wenn Sie mit unseren Inhalten auf Drittplattformen (wie TikTok, Instagram, Facebook oder YouTube) interagieren, unterliegt diese Nutzung den Datenschutzrichtlinien der jeweiligen Plattformbetreiber. Bei der Nutzung von API-Schnittstellen zur Inhaltsverteilung werden ausschließlich von Entwicklern autorisierte API-Tokens verwendet; es werden keine personenbezogenen Daten von Endnutzern an Dritte übertragen.'
+            ? 'Wenn Sie mit unseren Inhalten auf Drittplattformen (wie TikTok, Instagram, Facebook oder YouTube) interagieren, unterliegt diese Nutzung den Datenschutzrichtlinien der jeweiligen Plattformbetreiber. Bei der Nutzung von API-Schnittstellen zur Inhaltsverteilung werden ausschlie�Ylich von Entwicklern autorisierte API-Tokens verwendet; es werden keine personenbezogenen Daten von Endnutzern an Dritte übertragen.'
             : 'When interacting with our content on third-party networks (such as TikTok, Instagram, Facebook, or YouTube), data processing is governed by the respective platform policies. Automated publishing integrations only utilize developer-authorized API credentials; no personal end-user data is collected or transmitted.'}
         </p>
       </section>
@@ -79,8 +79,8 @@ export default async function PrivacyPage({ params }) {
         </h2>
         <p style={{ lineHeight: 1.6 }}>
           {isDe
-            ? 'Beim Zugriff auf die Website speichert unsere Infrastruktur technisch notwendige Verbindungsdaten. Für die Reichweitenmessung erfassen wir zusätzlich: IP-Adresse, Land und Region (aus den von Vercel übermittelten Geo-Headern), aufgerufener Pfad, Referrer und User-Agent. Die IP-Adresse wird zusätzlich mit einem Salt gehasht; die Roh-IP wird nach spätestens 90 Tagen gelöscht. Rechtsgrundlage ist unser berechtigtes Interesse an der Sicherheit und der Messung der Reichweite unseres nicht-kommerziellen Angebots (Art. 31 DSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Es findet kein Profiling, keine Weitergabe an Werbenetzwerke und kein Cross-Site-Tracking statt. Die Auswertung ist ausschliesslich intern zugänglich.'
-            : 'When you access the website, our infrastructure retains technically necessary connection data. For audience measurement we additionally record: IP address, country and region (from the geo headers provided by Vercel), requested path, referrer and user agent. The IP address is also hashed with a salt; raw IPs are deleted after 90 days at the latest. The legal basis is our legitimate interest in the security and reach measurement of this non-commercial offering (Art. 31 FADP / Art. 6(1)(f) GDPR). There is no profiling, no sharing with ad networks and no cross-site tracking. The evaluation is accessible internally only.'}
+            ? 'Beim Zugriff auf die Website speichert unsere Infrastruktur technisch notwendige Verbindungsdaten. Für die Reichweitenmessung erfassen wir zusätzlich: IP-Adresse, Land und Region (aus den von Vercel übermittelten Geo-Headern), aufgerufener Pfad, Referrer und User-Agent. Die IP-Adresse wird zusätzlich mit einem Salt gehasht; die Roh-IP wird nach spätestens 90 Tagen gelöscht. Rechtsgrundlage ist unser berechtigtes Interesse an der Sicherheit und der Messung der Reichweite unseres nicht-kommerziellen Angebots (Art. 31 DSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Es findet kein Profiling, keine Weitergabe an Werbenetzwerke und kein Cross-Site-Tracking statt. Bei Kommentaren und Einreichungen speichern wir zusätzlich IP-Adresse und Herkunftsland zur Missbrauchsabwehr. Die Auswertung ist ausschliesslich intern zugänglich.'
+            : 'When you access the website, our infrastructure retains technically necessary connection data. For audience measurement we additionally record: IP address, country and region (from the geo headers provided by Vercel), requested path, referrer and user agent. The IP address is also hashed with a salt; raw IPs are deleted after 90 days at the latest. The legal basis is our legitimate interest in the security and reach measurement of this non-commercial offering (Art. 31 FADP / Art. 6(1)(f) GDPR). There is no profiling, no sharing with ad networks and no cross-site tracking. For comments and submissions we additionally store the IP address and country of origin to prevent abuse. The evaluation is accessible internally only.'}
         </p>
       </section>
 
@@ -90,10 +90,11 @@ export default async function PrivacyPage({ params }) {
         </h2>
         <p style={{ lineHeight: 1.6 }}>
           {isDe
-            ? 'Gemäß Schweizer Datenschutzgesetz (DSG) sowie der DSGVO haben Sie jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten. Kontaktieren Sie uns jederzeit unter simoneggert16@gmail.com.'
+            ? 'Gemä�Y Schweizer Datenschutzgesetz (DSG) sowie der DSGVO haben Sie jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten. Kontaktieren Sie uns jederzeit unter simoneggert16@gmail.com.'
             : 'Under Swiss Federal Data Protection Act (FADP) and GDPR, you have the right to access, rectify, or request deletion of any personal data. Contact us directly at simoneggert16@gmail.com.'}
         </p>
       </section>
     </div>
   );
 }
+
