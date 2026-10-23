@@ -4,7 +4,7 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   return {
     title: locale === 'de' ? 'Datenschutzerklärung | PLAIN.' : 'Privacy Policy | PLAIN.',
-    description: 'Privacy Policy for PLAIN. News — Zero tracking, zero ads, zero data monetization.',
+    description: 'Privacy Policy for PLAIN. News — no ads, no third-party tracking, no data monetization.',
     alternates: {
       canonical: `${SITE.url}/${locale}/privacy`,
       languages: Object.fromEntries(LOCALES.map((l) => [l.code, `${SITE.url}/${l.code}/privacy`])),
@@ -24,8 +24,8 @@ export default async function PrivacyPage({ params }) {
 
       <p style={{ fontSize: 18, color: '#555', marginBottom: 40, lineHeight: 1.6 }}>
         {isDe
-          ? 'Letzte Aktualisierung: 7. Oktober 2026. PLAIN. ist eine gemeinnützige, radikal transparente Nachrichtenplattform. Unsere Grundregel lautet: Wir sammeln, verkaufen und monetarisieren keinerlei persönliche Nutzerdaten.'
-          : 'Last updated: 7 October 2026. PLAIN. is a non-commercial, radically transparent news platform. Our founding principle is simple: We do not track, collect, monetize, or sell personal user data.'}
+          ? 'Letzte Aktualisierung: 23. Oktober 2026. PLAIN. ist eine gemeinnützige, radikal transparente Nachrichtenplattform. Wir verkaufen und monetarisieren keine Nutzerdaten, setzen keine Werbe- oder Drittanbieter-Tracker ein und erstellen keine Profile. Für die eigene Reichweitenmessung verarbeitet der Betreiber technische Zugriffsdaten (Details in Abschnitt 4).'
+          : 'Last updated: 23 October 2026. PLAIN. is a non-commercial, radically transparent news platform. We do not sell or monetize user data, run no advertising or third-party trackers, and build no profiles. For our own audience measurement the operator processes technical access data (details in section 4).'}
       </p>
 
       <section className="art-section" style={{ marginBottom: 32 }}>
@@ -79,8 +79,8 @@ export default async function PrivacyPage({ params }) {
         </h2>
         <p style={{ lineHeight: 1.6 }}>
           {isDe
-            ? 'Beim Zugriff auf die Website speichern unsere Server lediglich minimale, technisch notwendige Verbindungsdaten (wie anonymisierte IP-Adressen zur Abwehr von Denial-of-Service-Angriffen). Diese Logs werden nach 7 Tagen automatisch gelöscht.'
-            : 'When accessing the website, our infrastructure only retains minimal technical access logs (e.g., anonymized IP addresses for DDoS mitigation) which are automatically purged after 7 days.'}
+            ? 'Beim Zugriff auf die Website speichert unsere Infrastruktur technisch notwendige Verbindungsdaten. Für die Reichweitenmessung erfassen wir zusätzlich: IP-Adresse, Land und Region (aus den von Vercel übermittelten Geo-Headern), aufgerufener Pfad, Referrer und User-Agent. Die IP-Adresse wird zusätzlich mit einem Salt gehasht; die Roh-IP wird nach spätestens 90 Tagen gelöscht. Rechtsgrundlage ist unser berechtigtes Interesse an der Sicherheit und der Messung der Reichweite unseres nicht-kommerziellen Angebots (Art. 31 DSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Es findet kein Profiling, keine Weitergabe an Werbenetzwerke und kein Cross-Site-Tracking statt. Die Auswertung ist ausschliesslich intern zugänglich.'
+            : 'When you access the website, our infrastructure retains technically necessary connection data. For audience measurement we additionally record: IP address, country and region (from the geo headers provided by Vercel), requested path, referrer and user agent. The IP address is also hashed with a salt; raw IPs are deleted after 90 days at the latest. The legal basis is our legitimate interest in the security and reach measurement of this non-commercial offering (Art. 31 FADP / Art. 6(1)(f) GDPR). There is no profiling, no sharing with ad networks and no cross-site tracking. The evaluation is accessible internally only.'}
         </p>
       </section>
 
