@@ -1,0 +1,216 @@
+{
+  "slug": "php-foundation-releases-patches-for-two-remote-code-execution-20261024-brqp",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 1,
+  "publishedAt": "2026-10-24T18:20:39.021Z",
+  "updatedAt": "2026-10-24T18:20:39.021Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "TechCrunch",
+      "title": "PHP-ocalypse: How two critical web bugs almost broke the internet",
+      "url": "https://techcrunch.com/2026/10/24/php-ocalypse-how-two-critical-web-bugs-almost-broke-the-internet/",
+      "publishedAt": "2026-10-24T15:30:00.000Z"
+    },
+    {
+      "outlet": "Wired",
+      "title": "The PHP Meltdown Shows How AI Makes Bugs More Exploitable",
+      "url": "https://www.wired.com/story/kernel-panic-the-php-meltdown-shows-how-ai-makes-bugs-more-exploitable/",
+      "publishedAt": "2026-10-24T12:00:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "PHP Foundation Releases Patches for Two Remote Code Execution Bugs",
+      "dek": "PHP bugs exposed, prompting worldwide patching and millions of exploit attempts",
+      "facts": [
+        "PHP2Shell bugs (CVE-2026-109618, CVE-2026-109619) allow remote code execution without a password, according to TechCrunch",
+        "Researchers at Calif discovered the vulnerabilities in early August, using AI tools and human expertise, according to Wired",
+        "The PHP Foundation released patches on 24 October 2026, giving major internet companies an early headstart, according to TechCrunch",
+        "Cloudflare analysis shows millions of exploitation attempts hit within hours of the bugs’ publication, according to Wired",
+        "The PHP Foundation reports no successful exploitation of the bugs so far, according to Wired"
+      ],
+      "body": [
+        "The PHP Foundation announced patches for two critical bugs, dubbed PHP2Shell, that enable remote code execution on PHP-based systems without a password, according to TechCrunch.",
+        "Security researchers at Calif first identified the vulnerabilities in early August, employing AI tools as part of OpenAI’s Patch the Planet program and human expertise, according to Wired.",
+        "OpenAI and the Google‑owned firm Wiz also discovered the flaws using AI tools, according to Wired.",
+        "Cloudflare analysis shows millions of exploitation attempts hit within hours of the bugs’ publication, but the PHP Foundation reports no successful exploitation so far, according to Wired.",
+        "Many websites, banks, retailers, gaming sites, hospitals, and some government agencies took down servers to patch, and security researchers warn many systems remain unpatched, according to TechCrunch."
+      ],
+      "context": "PHP is an open‑source web programming language used worldwide for building websites and web apps. The PHP Foundation maintains the software and issues security patches when vulnerabilities are discovered.",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Fundação PHP Lança Patches para Dois Bugs de Execução Remota de Código",
+      "dek": "Falhas PHP expostas, desencadeando correções globais e milhões de tentativas de exploração",
+      "facts": [
+        "Os bugs PHP2Shell (CVE-2026-109618, CVE-2026-109619) permitem a execução remota de código sem password, segundo a TechCrunch",
+        "Os investigadores da Calif descobriram as vulnerabilidades no início de agosto, utilizando ferramentas de IA e experiência humana, segundo a Wired",
+        "A Fundação PHP lançou patches em 24 de outubro de 2026, dando às grandes empresas de internet uma vantagem inicial, segundo a TechCrunch",
+        "Análise da Cloudflare mostra que milhões de tentativas de exploração ocorreram em poucas horas após a publicação dos bugs, segundo a Wired",
+        "A Fundação PHP relata que até agora não houve exploração bem-sucedida dos bugs, segundo a Wired"
+      ],
+      "body": [
+        "A Fundação PHP anunciou patches para dois bugs críticos, denominados PHP2Shell, que permitem a execução remota de código em sistemas PHP sem password, segundo a TechCrunch.",
+        "Os investigadores de segurança da Calif identificaram primeiro as vulnerabilidades no início de agosto, empregando ferramentas de IA como parte do programa Patch the Planet da OpenAI e experiência humana, segundo a Wired.",
+        "A OpenAI e a empresa Wiz, de propriedade da Google, também descobriram as falhas utilizando ferramentas de IA, segundo a Wired.",
+        "Análise da Cloudflare mostra que milhões de tentativas de exploração atingiram dentro de horas da publicação dos bugs, mas a Fundação PHP relata que até agora não houve exploração bem-sucedida, segundo a Wired.",
+        "Muitos sites, bancos, retalhistas, sites de jogos, hospitais e algumas agências governamentais derrubaram servidores para aplicar as correções, e os investigadores de segurança alertam que muitos sistemas permanecem sem correção, segundo a TechCrunch."
+      ],
+      "context": "O PHP é uma linguagem de programação web de código aberto usada em todo o mundo para criar sites e aplicações web. A Fundação PHP mantém o software e emite patches de segurança quando são descobertas vulnerabilidades.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "PHP基金会发布两项远程代码执行漏洞补丁",
+      "dek": "PHP漏洞曝光，引发全球补丁更新与数百万次利用尝试",
+      "facts": [
+        "TechCrunch 报道，PHP2Shell 漏洞（CVE-2026-109618、CVE-2026-109619）可在无需密码的情况下实现远程代码执行",
+        "Wired 报道，Calif 的研究人员在八月初发现了这些漏洞，使用了 AI 工具和人工专业知识",
+        "TechCrunch 报道，PHP基金会于2026年10月24日发布补丁，为主要互联网公司抢得先机",
+        "Wired 报道，Cloudflare 的分析显示，漏洞公布后数小时内出现数百万次利用尝试",
+        "Wired 报道，PHP基金会表示迄今为止未发现成功利用该漏洞的案例"
+      ],
+      "body": [
+        "TechCrunch 报道，PHP基金会宣布发布两项关键漏洞的补丁，称为 PHP2Shell，可在无需密码的情况下实现对基于 PHP 的系统的远程代码执行",
+        "Wired 报道，Calif 的安全研究人员在八月初首次发现了这些漏洞，利用了 OpenAI 的 Patch the Planet 项目中的 AI 工具以及人工专业知识",
+        "Wired 报道，OpenAI 与 Google 拥有的 Wiz 公司也使用 AI 工具发现了这些缺陷",
+        "Wired 报道，Cloudflare 的分析显示，漏洞公布后数小时内出现数百万次利用尝试，但 PHP基金会表示迄今为止未发现成功利用案例",
+        "TechCrunch 报道，许多网站、银行、零售商、游戏站点、医院以及部分政府机构下线服务器进行补丁，安全研究人员警告许多系统仍未得到修补"
+      ],
+      "context": "PHP 是一种全球广泛用于构建网站和 Web 应用程序的开源 Web 编程语言。PHP 基金会负责维护该软件，并在发现漏洞时发布安全补丁。",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "La Fundación PHP lanza parches para dos fallos de ejecución remota de código",
+      "dek": "Los fallos de PHP expuestos provocan parches a nivel mundial y millones de intentos de explotación",
+      "facts": [
+        "Los fallos PHP2Shell (CVE-2026-109618, CVE-2026-109619) permiten la ejecución remota de código sin contraseña, según TechCrunch",
+        "Investigadores de Calif descubrieron las vulnerabilidades a principios de agosto, utilizando herramientas de IA y experiencia humana, según Wired",
+        "La Fundación PHP lanzó los parches el 24 de octubre de 2026, dando a las principales empresas de internet una ventaja temprana, según TechCrunch",
+        "El análisis de Cloudflare muestra que millones de intentos de explotación se produjeron en cuestión de horas tras la publicación de los fallos, según Wired",
+        "La Fundación PHP informa de que hasta ahora no ha habido explotación exitosa de los fallos, según Wired"
+      ],
+      "body": [
+        "La Fundación PHP anunció parches para dos fallos críticos, denominados PHP2Shell, que permiten la ejecución remota de código en sistemas basados en PHP sin contraseña, según TechCrunch.",
+        "Los investigadores de seguridad de Calif identificaron primero las vulnerabilidades a principios de agosto, empleando herramientas de IA como parte del programa Patch the Planet de OpenAI y experiencia humana, según Wired.",
+        "OpenAI y la empresa propiedad de Google Wiz también descubrieron las fallas utilizando herramientas de IA, según Wired.",
+        "El análisis de Cloudflare muestra que millones de intentos de explotación se produjeron en cuestión de horas tras la publicación de los fallos, pero la Fundación PHP informa de que hasta ahora no ha habido explotación exitosa, según Wired.",
+        "Muchos sitios web, bancos, minoristas, sitios de juegos, hospitales y algunas agencias gubernamentales retiraron servidores para parchear, y los investigadores de seguridad advierten que muchos sistemas siguen sin parchear, según TechCrunch."
+      ],
+      "context": "PHP es un lenguaje de programación web de código abierto utilizado en todo el mundo para crear sitios web y aplicaciones web. La Fundación PHP mantiene el software y emite parches de seguridad cuando se descubren vulnerabilidades.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "Die PHP Foundation veröffentlicht Patches für zwei Remote-Code-Execution-Bugs",
+      "dek": "PHP-Fehler werden aufgedeckt, was weltweite Patches und Millionen von Exploit-Versuchen auslöst",
+      "facts": [
+        "Die PHP2Shell-Fehler (CVE-2026-109618, CVE-2026-109619) ermöglichen die Ausführung von Code aus der Ferne ohne Passwort, so TechCrunch",
+        "Forscher bei Calif entdeckten die Schwachstellen Anfang August, unter Einsatz von KI-Tools und menschlicher Expertise, so Wired",
+        "Die PHP Foundation veröffentlichte Patches am 24. Oktober 2026 und verschaffte großen Internetunternehmen einen frühen Vorsprung, berichtet TechCrunch",
+        "Eine Analyse von Cloudflare zeigt, dass innerhalb von Stunden nach der Veröffentlichung der Bugs Millionen von Ausnutzungsversuchen stattfanden, so Wired",
+        "Die PHP Foundation meldet bislang keine erfolgreiche Ausnutzung der Bugs, so Wired"
+      ],
+      "body": [
+        "Die PHP Foundation kündigte Patches für zwei kritische Bugs an, die PHP2Shell genannt werden und die Ausführung von Code aus der Ferne auf PHP-basierten Systemen ohne Passwort ermöglichen, so TechCrunch.",
+        "Sicherheitsforscher bei Calif identifizierten die Schwachstellen zunächst Anfang August, indem sie KI-Tools im Rahmen des Patch the Planet-Programms von OpenAI sowie menschliche Expertise einsetzten, berichtet Wired.",
+        "OpenAI und das von Google geführte Unternehmen Wiz entdeckten die Fehler ebenfalls mithilfe von KI-Tools, so Wired.",
+        "Eine Analyse von Cloudflare zeigt, dass innerhalb von Stunden nach der Veröffentlichung der Bugs Millionen von Ausnutzungsversuchen stattfanden, jedoch meldet die PHP Foundation bislang keine erfolgreiche Ausnutzung, berichtet Wired.",
+        "Viele Websites, Banken, Einzelhändler, Gaming-Seiten, Krankenhäuser und einige Regierungsbehörden zogen Server herunter, um Patches einzuspielen, und Sicherheitsforscher warnen, dass viele Systeme weiterhin unpatched bleiben, so TechCrunch."
+      ],
+      "context": "PHP ist eine Open‑Source-Webprogrammiersprache, die weltweit zum Erstellen von Websites und Webanwendungen verwendet wird. Die PHP Foundation pflegt die Software und veröffentlicht Sicherheits‑Patches, sobald Schwachstellen entdeckt werden.",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "La Fondation PHP publie des correctifs pour deux failles d'exécution de code à distance",
+      "dek": "Les failles PHP exposées, entraînant une mise à jour mondiale et des millions de tentatives d'exploitation",
+      "facts": [
+        "Les failles PHP2Shell (CVE-2026-109618, CVE-2026-109619) permettent l'exécution de code à distance sans mot de passe, selon TechCrunch.",
+        "Des chercheurs de Calif ont découvert les vulnérabilités début août, en utilisant des outils d'IA et l'expertise humaine, selon Wired.",
+        "La Fondation PHP a publié des correctifs le 24 octobre 2026, donnant aux grandes entreprises Internet un avantage précoce, selon TechCrunch.",
+        "L'analyse de Cloudflare montre que des millions de tentatives d'exploitation ont eu lieu dans les heures qui ont suivi la publication des failles, selon Wired.",
+        "La Fondation PHP indique qu'aucune exploitation réussie des failles n'a été constatée jusqu'à présent, selon Wired."
+      ],
+      "body": [
+        "La Fondation PHP a annoncé des correctifs pour deux failles critiques, baptisées PHP2Shell, qui permettent l'exécution de code à distance sur les systèmes basés sur PHP sans mot de passe, selon TechCrunch.",
+        "Les chercheurs en sécurité de Calif ont d'abord identifié les vulnérabilités début août, en utilisant des outils d'IA dans le cadre du programme Patch the Planet d'OpenAI ainsi que l'expertise humaine, selon Wired.",
+        "OpenAI et la société Wiz, détenue par Google, ont également découvert les failles en utilisant des outils d'IA, selon Wired.",
+        "L'analyse de Cloudflare montre que des millions de tentatives d'exploitation ont eu lieu dans les heures qui ont suivi la publication des failles, mais la Fondation PHP indique qu'aucune exploitation réussie n'a été constatée jusqu'à présent, selon Wired.",
+        "De nombreux sites Web, banques, détaillants, sites de jeux, hôpitaux et certaines agences gouvernementales ont mis hors ligne leurs serveurs pour appliquer les correctifs, et les chercheurs en sécurité avertissent que de nombreux systèmes restent non corrigés, selon TechCrunch."
+      ],
+      "context": "PHP est un langage de programmation web open source utilisé dans le monde entier pour créer des sites Web et des applications web. La Fondation PHP maintient le logiciel et publie des correctifs de sécurité lorsqu'une vulnérabilité est découverte.",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "La PHP Foundation rilascia patch per due bug di esecuzione di codice remoto",
+      "dek": "I bug PHP esposti hanno spinto a patch globali e a milioni di tentativi di sfruttamento",
+      "facts": [
+        "\"PHP2Shell\" bugs (CVE-2026-109618, CVE-2026-109619) consentono l'esecuzione di codice remoto senza password, secondo TechCrunch",
+        "I ricercatori di Calif hanno scoperto le vulnerabilità all'inizio di agosto, utilizzando strumenti AI e competenze umane, secondo Wired",
+        "La PHP Foundation ha rilasciato le patch il 24 ottobre 2026, dando alle principali aziende internet un vantaggio iniziale, secondo TechCrunch",
+        "L'analisi di Cloudflare mostra che milioni di tentativi di sfruttamento hanno colpito entro poche ore dalla pubblicazione dei bug, secondo Wired",
+        "La PHP Foundation non ha registrato ancora alcun sfruttamento riuscito, secondo Wired"
+      ],
+      "body": [
+        "La PHP Foundation ha annunciato le patch per due bug critici, soprannominati \"PHP2Shell\", che consentono l'esecuzione di codice remoto su sistemi PHP senza password, secondo TechCrunch.",
+        "I ricercatori di sicurezza di Calif hanno identificato per la prima volta le vulnerabilità all'inizio di agosto, utilizzando strumenti AI nell'ambito del programma Patch the Planet di OpenAI e competenze umane, secondo Wired.",
+        "OpenAI e l'azienda Wiz, di proprietà di Google, hanno scoperto le vulnerabilità utilizzando strumenti AI, secondo Wired.",
+        "L'analisi di Cloudflare mostra che milioni di tentativi di sfruttamento hanno colpito entro poche ore dalla pubblicazione dei bug, ma la PHP Foundation non ha registrato ancora alcun sfruttamento riuscito, secondo Wired.",
+        "Molti siti web, banche, rivenditori, siti di gioco, ospedali e alcune agenzie governative hanno sospeso i server per applicare le patch, e i ricercatori di sicurezza avvertono che molti sistemi rimangono non patchati, secondo TechCrunch."
+      ],
+      "context": "PHP è un linguaggio di programmazione web open-source utilizzato in tutto il mondo per creare siti web e applicazioni web. La PHP Foundation mantiene il software e rilascia patch di sicurezza quando vengono scoperte vulnerabilità.",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "PHP 재단, 두 개의 원격 코드 실행 취약점에 대한 패치 발표",
+      "dek": "PHP 버그가 드러나 전 세계적으로 패치와 수백만 건의 악용 시도가 발생",
+      "facts": [
+        "TechCrunch에 따르면 PHP2Shell 버그(CVE-2026-109618, CVE-2026-109619)는 비밀번호 없이 원격 코드 실행을 허용한다",
+        "Wired에 따르면 캘리포니아 연구원들이 8월 초에 AI 도구와 인간 전문성을 활용해 취약점을 발견했다",
+        "TechCrunch에 따르면 PHP 재단은 2026년 10월 24일에 패치를 발표해 주요 인터넷 기업들에게 조기 선점 기회를 제공했다",
+        "Wired에 따르면 Cloudflare 분석은 버그가 공개된 몇 시간 이내에 수백만 건의 악용 시도가 발생했음을 보여준다",
+        "Wired에 따르면 PHP 재단은 지금까지 버그가 성공적으로 악용된 사례가 없다고 보고했다"
+      ],
+      "body": [
+        "TechCrunch에 따르면 PHP 재단은 비밀번호 없이 PHP 기반 시스템에서 원격 코드 실행을 가능하게 하는 두 개의 치명적인 버그, PHP2Shell에 대한 패치를 발표했다",
+        "Wired에 따르면 캘리포니아 연구원들은 8월 초에 OpenAI의 Patch the Planet 프로그램의 일환으로 AI 도구와 인간 전문성을 활용해 취약점을 최초로 확인했다",
+        "Wired에 따르면 OpenAI와 Google 소유의 Wiz도 AI 도구를 사용해 결함을 발견했다",
+        "Wired에 따르면 Cloudflare 분석은 버그가 공개된 몇 시간 이내에 수백만 건의 악용 시도가 발생했으나 PHP 재단은 지금까지 성공적인 악용 사례가 없다고 보고했다",
+        "TechCrunch에 따르면 많은 웹사이트, 은행, 소매업체, 게임 사이트, 병원 및 일부 정부 기관이 패치를 위해 서버를 중단했으며, 보안 연구원들은 여전히 많은 시스템이 패치되지 않았다고 경고했다"
+      ],
+      "context": "PHP는 전 세계적으로 웹사이트와 웹 애플리케이션을 구축하는 데 사용되는 오픈소스 웹 프로그래밍 언어이며, PHP 재단은 소프트웨어를 유지 관리하고 취약점이 발견될 때 보안 패치를 제공한다",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "PHP Foundation、リモートコード実行脆弱性2件に対するパッチをリリース",
+      "dek": "PHPの脆弱性が明らかに、世界中でパッチ適用と数百万件の攻撃試行が行われた",
+      "facts": [
+        "TechCrunchによると、PHP2Shell脆弱性（CVE-2026-109618、CVE-2026-109619）は、パスワードなしでリモートコード実行を可能にする",
+        "Wiredによると、カリフォルニア州の研究者が8月初旬にAIツールと人間の専門知識を用いて脆弱性を発見した",
+        "TechCrunchによると、PHP Foundationは2026年10月24日にパッチをリリースし、主要インターネット企業に早期の優位性を与えた",
+        "Wiredによると、Cloudflareの分析では、脆弱性公開後数時間以内に数百万件の攻撃試行が行われた",
+        "Wiredによると、PHP Foundationはこれまでに脆弱性の成功した悪用は報告されていないと述べている"
+      ],
+      "body": [
+        "TechCrunchによると、PHP Foundationは、パスワードなしでPHPベースのシステム上でリモートコード実行を可能にする2つの重大脆弱性「PHP2Shell」に対するパッチを発表した",
+        "Wiredによると、カリフォルニア州のセキュリティ研究者は、OpenAIのPatch the Planetプログラムの一環としてAIツールと人間の専門知識を用い、8月初旬に脆弱性を初めて特定した",
+        "Wiredによると、OpenAIとGoogle傘下のWizもAIツールを使用して脆弱性を発見した",
+        "Wiredによると、Cloudflareの分析では脆弱性公開後数時間以内に数百万件の攻撃試行が行われたが、PHP Foundationはこれまでに成功した悪用は報告されていないと述べている",
+        "TechCrunchによると、多くのウェブサイト、銀行、小売業者、ゲームサイト、病院、そして一部の政府機関がサーバーを停止してパッチを適用したが、セキュリティ研究者は多くのシステムが未パッチのままであると警告している"
+      ],
+      "context": "PHPは、世界中でウェブサイトやウェブアプリを構築するために使用されるオープンソースのウェブプログラミング言語です。PHP Foundationはソフトウェアを管理し、脆弱性が発見された際にセキュリティパッチを発行します。",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "openai/gpt-oss-20b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Dek exceeds 90 characters"
+    ]
+  }
+}
