@@ -1,0 +1,57 @@
+{
+  "slug": "un-commission-calls-russian-energy-attacks-war-crimes-20261026-ce4u",
+  "category": "world",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-10-26T22:24:55.885Z",
+  "updatedAt": "2026-10-26T22:24:55.885Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Al Jazeera",
+      "title": "Russian attacks on Ukraine’s energy infrastructure a war crime: UN",
+      "url": "https://www.aljazeera.com/news/2026/10/26/russian-attacks-on-ukraines-energy-infrastructure-a-war-crime-un?traffic_source=rss",
+      "publishedAt": "2026-10-26T17:27:34.000Z"
+    },
+    {
+      "outlet": "New York Times",
+      "title": "Civilian Suffering Was Goal of Russian Strikes in Ukraine, U.N. Panel Says",
+      "url": "https://www.nytimes.com/2026/10/26/world/europe/russia-ukraine-energy-strikes-un.html",
+      "publishedAt": "2026-10-26T21:08:14.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "UN commission calls Russian energy attacks war crimes",
+      "dek": "UN commission says Russian attacks on Ukraine’s energy infrastructure are war crimes, citing civilian suffering and intent.",
+      "facts": [
+        "UN commission says Russian attacks on Ukraine’s energy infrastructure are war crimes (Al Jazeera).",
+        "The attacks intensified during the 2025‑2026 winter, causing heating, electricity, water and gas outages (Al Jazeera).",
+        "The commission also accused Russia of human trafficking in recruiting foreign fighters (Al Jazeera).",
+        "New York Times reports the attacks cut off heat and power on bitterly cold winter days, amounting to a crime against humanity (NYT)."
+      ],
+      "body": [
+        "The United Nations Independent International Commission of Inquiry on Ukraine released a report on Monday. It says Russia’s attacks on Ukraine’s energy infrastructure are war crimes. The report was submitted to the UN General Assembly.",
+        "The commission noted that attacks increased during the severe winter of 2025‑2026. Temperatures fell to minus 21 °C, and millions lost heating, electricity, water and gas. The attacks were aimed at heating facilities that civilians rely on.",
+        "The report also accuses Russia of human trafficking in recruiting foreign fighters. It says many of those recruited were killed, went missing, or were injured or captured.",
+        "The New York Times reports that the assaults cut off heat and power on bitterly cold winter days, amounting to a crime against humanity. Russia and Ukraine continue daily attacks as winter approaches, with little sign of a ceasefire. A recent strike on Zaporizhzhia injured four people, according to the regional governor."
+      ],
+      "context": "Russia launched a full‑scale invasion of Ukraine in February 2022, and since then has targeted civilian infrastructure. The UN commission says Moscow has sought to inflict suffering on Ukrainian citizens. Daily attacks continue as winter approaches.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "openai/gpt-oss-20b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Dek exceeds 90 characters",
+      "Body contains too many repetitive 'According to' sentences",
+      "Too many bullet points, not condensed into paragraphs",
+      "Excessive repetition of source attribution"
+    ]
+  }
+}
