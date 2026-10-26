@@ -21,7 +21,8 @@ concurrency:
 jobs:
   newsroom:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    # The run loops for ~5 h; the job limit must sit above the step limit.
+    timeout-minutes: 360
     steps:
       - name: Cadence guard
         id: cadence
@@ -84,7 +85,7 @@ jobs:
           # depends on the scheduler: the next queued trigger continues after.
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
-          deadline=$(( $(date +%s) + 330 * 60 ))
+          deadline=$(( $(date +%s) + 300 * 60 ))
           cycle=0
           published_total=0
           while [ "$(date +%s)" -lt "$deadline" ]; do
@@ -103,8 +104,12 @@ jobs:
               echo "published in cycle $cycle"
             fi
             echo "::endgroup::"
+            # Aim for one publish cycle per ~55 min, but never sleep past the
+            # deadline - the step timeout would kill the run before the handover.
             pause=$(( 3300 - ($(date +%s) - started) ))
-            if [ "$pause" -gt 60 ]; then sleep "$pause"; fi
+            if [ "$pause" -gt 60 ] && [ $(( $(date +%s) + pause )) -lt "$deadline" ]; then
+              sleep "$pause"
+            fi
           done
           echo "Run finished after $cycle cycles ($published_total with new stories)."
       - name: Hand over to the newsroom chain
