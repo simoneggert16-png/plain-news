@@ -35,6 +35,7 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 14 } = {})
         image: img,
         summary: clean(it.contentSnippet || it.content || it.summary || it.description || '').slice(0, 500),
         publishedAt: new Date(ts).toISOString(),
+        ...(f.positive ? { positive: true } : {}),
       });
     }
   }

@@ -130,12 +130,17 @@ Task: Identify real-world events and return ${Number.isFinite(MAX_PER_CATEGORY) 
 
 SOURCE RULES:
 - Two-source rule: a story normally needs at least 2 DIFFERENT outlets covering the same event.
-- Exception: 1 official primary source is allowed (government, ministry, court, international organisation, scientific journal, company press release). BBC, Reuters, AP, CNBC, newspapers and other news outlets are NOT primary sources.
+- Exception 1: 1 official primary source is allowed (government, ministry, court, international organisation, scientific journal, company press release). BBC, Reuters, AP, CNBC, newspapers and other news outlets are NOT primary sources.
+- Exception 2: constructive-journalism outlets (Good News Network, Positive News, Reasons to Be Cheerful, The Optimist Daily) may be used as a SINGLE source — their stories are original reporting nobody else picks up. Prefer them for the positive mix.
 - If an event appears in only one non-primary outlet, do NOT output it.
 - NEVER accept random blogs, unverified speculation, gossip, lifestyle, or sponsored posts.
 - Importance: 1 (minor) to 5 (major global impact).
 - Category must be one of: ${CATEGORIES.filter((c) => c !== 'community').join(', ')}.
 - "event": One objective English sentence stating what occurred.
+
+POSITIVE MIX:
+- Roughly one in five events should be constructive: scientific or medical breakthroughs, conservation and climate wins, recoveries, community solutions, sport stories about people rather than transfers, culture that is not celebrity gossip.
+- It must be a real, verifiable event — never a puff piece, listicle or "inspiring" quote. Label it with "positive": true.
 
 Format response strictly as JSON:
 {"events":[{"ids":[0, 14],"category":"world","importance":4,"event":"..."}]}`,
@@ -148,7 +153,8 @@ Format response strictly as JSON:
     .map((e) => {
       const sources = e.ids.map((i) => items[i]);
       const policy = classifySources(sources);
-      return { ...e, sources, outlets: policy.outlets.length, sourcePolicy: policy.policy, policyOk: policy.ok };
+      const positive = Boolean(e.positive) || (sources.length > 0 && sources.every((s) => s.positive));
+      return { ...e, positive, sources, outlets: policy.outlets.length, sourcePolicy: policy.policy, policyOk: policy.ok };
     })
     .filter((e) => e.policyOk)
     .filter((e) => {
@@ -162,10 +168,13 @@ Format response strictly as JSON:
     });
 
   // Rank: priority desk boost first, then importance, then breadth of coverage.
+  // Constructive events get a small nudge so the positive mix actually reaches
+  // the reporter instead of dying in the queue.
   events.sort((a, b) => {
     const aNeeded = priorityCategories.includes(a.category) ? 50 : 0;
     const bNeeded = priorityCategories.includes(b.category) ? 50 : 0;
-    return (bNeeded + b.importance * 10 + b.outlets) - (aNeeded + a.importance * 10 + a.outlets);
+    return (bNeeded + b.importance * 10 + b.outlets + (b.positive ? 8 : 0))
+      - (aNeeded + a.importance * 10 + a.outlets + (a.positive ? 8 : 0));
   });
   const perCat = {};
   return events.filter((e) => (perCat[e.category] = (perCat[e.category] || 0) + 1) <= MAX_PER_CATEGORY);

@@ -1,11 +1,9 @@
 import { NextResponse } from 'next/server';
-import Parser from 'rss-parser';
 import { getIndex } from '@/lib/content.mjs';
+import { fetchTickerFeeds } from '@/lib/tickerFeeds.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 20; // 20s cache
-
-const parser = new Parser({ timeout: 4500 });
 
 let cache = null;
 let lastFetch = 0;
@@ -15,6 +13,22 @@ let lastFetch = 0;
 // "now" (that bug pinned old stories to the top of the ticker forever).
 const WINDOW_MS = Number(process.env.TICKER_WINDOW_HOURS || 48) * 3600 * 1000;
 const MAX_ITEMS = Number(process.env.TICKER_MAX_ITEMS || 150);
+const MAX_PER_OUTLET = 18;
+// Without quotas a busy news morning pushes every result off the wire; the
+// sport filter on /ticker would then be empty.
+const SPORT_QUOTA = 40;
+const POSITIVE_QUOTA = 15;
+const ARTICLE_QUOTA = 10;
+
+const FILTER_TYPE = { science: 'tech', culture: 'world', health: 'world' };
+
+const normalizeTitle = (str) =>
+  (str || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\u00e4\u00f6\u00fc\u00df]/g, '')
+    .slice(0, 40);
 
 export async function GET() {
   const now = Date.now();
@@ -24,91 +38,40 @@ export async function GET() {
     });
   }
 
-  const items = [];
   const seenNorm = new Set();
   const articles = await getIndex();
   const cutoff = now - WINDOW_MS;
 
-  const normalizeTitle = (str) => (str || '').toLowerCase().replace(/[^a-z0-9äöü]/g, '').slice(0, 35);
-
-  // 1. Fetch Real-Time Multi-Sport Feeds across Top 10 Sports Worldwide
+  // 1. World / politics / business / tech / science + sport + constructive news
+  const wire = [];
   try {
-    const sportFeedPromises = [
-      // Fußball
-      { sportType: 'football', source: 'Kicker', url: 'https://newsfeed.kicker.de/news/fussball' },
-      { sportType: 'football', source: 'Sportschau', url: 'https://www.sportschau.de/fussball/index~rss2.xml' },
-      { sportType: 'football', source: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/football/rss.xml' },
-      // Tennis
-      { sportType: 'tennis', source: 'Sportschau', url: 'https://www.sportschau.de/tennis/index~rss2.xml' },
-      { sportType: 'tennis', source: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/tennis/rss.xml' },
-      // Formel 1 / Motorsport
-      { sportType: 'f1', source: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml' },
-      { sportType: 'f1', source: 'Sportschau', url: 'https://www.sportschau.de/motorsport/index~rss2.xml' },
-      // Basketball / NBA
-      { sportType: 'basketball', source: 'Sportschau', url: 'https://www.sportschau.de/basketball/index~rss2.xml' },
-      // American Football / NFL
-      { sportType: 'nfl', source: 'Sportschau', url: 'https://www.sportschau.de/american-football/index~rss2.xml' },
-      // Eishockey / NHL
-      { sportType: 'eishockey', source: 'Sportschau', url: 'https://www.sportschau.de/eishockey/index~rss2.xml' },
-      // Radsport / Cycling
-      { sportType: 'cycling', source: 'Sportschau', url: 'https://www.sportschau.de/radsport/index~rss2.xml' },
-      // Golf
-      { sportType: 'golf', source: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/golf/rss.xml' },
-      // Cricket
-      { sportType: 'cricket', source: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/cricket/rss.xml' },
-    ];
-
-    const results = await Promise.allSettled(sportFeedPromises.map(async (f) => {
-      const feed = await parser.parseURL(f.url);
-      return { ...f, items: feed.items || [] };
-    }));
-
-    results.forEach((res) => {
-      if (res.status !== 'fulfilled' || !res.value?.items) return;
-      const { sportType, source, items: feedItems } = res.value;
-
-      feedItems.slice(0, 8).forEach((item, idx) => {
-        const rawTitle = item.title || '';
-        const norm = normalizeTitle(rawTitle);
-        if (!norm || seenNorm.has(norm)) return;
-
-        const published = item.isoDate ? Date.parse(item.isoDate) : Date.parse(item.pubDate || '');
-        if (!Number.isFinite(published) || published < cutoff || published > now + 3600e3) return;
-        seenNorm.add(norm);
-
-        const cleanTitle = rawTitle.replace(/^(?:LIVE!|Jetzt live\s*[-–:]\s*)/i, '').trim();
-        const isLive = /live|halbzeit|endstand|führt|tor|spieltag|remis/i.test(cleanTitle);
-
-        let badge = sportType.toUpperCase();
-        if (sportType === 'football') badge = isLive ? 'LIVE' : 'FUSSBALL';
-        else if (sportType === 'f1') badge = 'FORMEL 1';
-        else if (sportType === 'eishockey') badge = 'EISHOCKEY';
-        else if (sportType === 'basketball') badge = 'BASKETBALL';
-        else if (sportType === 'nfl') badge = 'NFL';
-        else if (sportType === 'tennis') badge = 'TENNIS';
-        else if (sportType === 'cycling') badge = 'RADSPORT';
-        else if (sportType === 'golf') badge = 'GOLF';
-        else if (sportType === 'cricket') badge = 'CRICKET';
-
-        items.push({
-          id: `${source.toLowerCase()}-${sportType}-${idx}-${published}`,
-          time: new Date(published).toISOString(),
-          type: 'sport',
-          sportType,
-          badge,
-          isLive,
-          title: cleanTitle,
-          detail: item.contentSnippet ? item.contentSnippet.slice(0, 160) : null,
-          url: item.link,
-          source,
-        });
-      });
+    const fetched = await fetchTickerFeeds({
+      maxAgeHours: Number(process.env.TICKER_WINDOW_HOURS || 48),
+      perFeed: 8,
+      now,
     });
+
+    const perOutlet = {};
+    for (const item of fetched) {
+      const norm = normalizeTitle(item.title);
+      if (!norm || seenNorm.has(norm)) continue;
+
+      perOutlet[item.source] = (perOutlet[item.source] || 0) + 1;
+      if (perOutlet[item.source] > MAX_PER_OUTLET) continue;
+      seenNorm.add(norm);
+
+      wire.push({
+        ...item,
+        type: FILTER_TYPE[item.type] || item.type,
+        positive: item.positive || undefined,
+      });
+    }
   } catch (err) {
-    console.error('Multi-sport ticker fetch error:', err);
+    console.error('Ticker wire fetch error:', err);
   }
 
-  // 2. Add published PLAIN. editorial articles into ticker (same live window)
+  // 2. Published PLAIN. editorial articles (same live window)
+  const plainItems = [];
   const BREAKING_WINDOW_MS = 90 * 60 * 1000;
   articles
     .filter((a) => Number.isFinite(Date.parse(a.publishedAt || '')) && Date.parse(a.publishedAt) >= cutoff)
@@ -121,26 +84,30 @@ export async function GET() {
       if (seenNorm.has(norm)) return;
       seenNorm.add(norm);
 
-      const isRecent = a.publishedAt && (now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS);
+      const isRecent = a.publishedAt && now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS;
       const isEilmeldung = a.importance >= 4 && isRecent;
 
       let sportType = 'football';
       if (a.category === 'sport') {
         const t = title.toLowerCase();
         if (/tennis|djokovic|zverev|sinner|atp|wta/i.test(t)) sportType = 'tennis';
-        else if (/nfl|football|super bowl|eagles|quarterback/i.test(t)) sportType = 'nfl';
+        else if (/nfl|super bowl|quarterback/i.test(t)) sportType = 'nfl';
         else if (/f1|formel|verstappen|hamilton|ferrari|grand prix/i.test(t)) sportType = 'f1';
         else if (/nba|basketball|lakers|celtics/i.test(t)) sportType = 'basketball';
         else if (/eishockey|nhl/i.test(t)) sportType = 'eishockey';
         else if (/golf|ryder cup/i.test(t)) sportType = 'golf';
       }
 
-      items.push({
+      plainItems.push({
         id: `plain-${a.slug}`,
         time: a.publishedAt,
-        type: a.category,
+        type: FILTER_TYPE[a.category] || a.category,
         sportType: a.category === 'sport' ? sportType : null,
-        badge: isEilmeldung ? 'EILMELDUNG' : (a.category === 'sport' ? (sportType ? sportType.toUpperCase() : 'SPORT') : a.category.toUpperCase()),
+        badge: isEilmeldung
+          ? 'EILMELDUNG'
+          : a.category === 'sport'
+            ? sportType.toUpperCase()
+            : a.category.toUpperCase(),
         title,
         detail: de?.dek || en?.dek || null,
         slug: a.slug,
@@ -149,7 +116,42 @@ export async function GET() {
       });
     });
 
-  // Sort strictly by timestamp descending, then cut to the live window size.
+  // 3. Quotas keep every filter useful, then the whole wire is sorted by time.
+  //    Without desk shares the world feed floods everything and /ticker shows
+  //    an empty business filter.
+  const positive = wire.filter((i) => i.positive).slice(0, POSITIVE_QUOTA);
+  const sport = wire.filter((i) => i.type === 'sport').slice(0, SPORT_QUOTA);
+  const plain = plainItems.slice(0, ARTICLE_QUOTA);
+  const newsQuota = Math.max(0, MAX_ITEMS - positive.length - sport.length - plain.length);
+
+  const byDesk = {};
+  for (const item of wire) {
+    if (item.positive || item.type === 'sport') continue;
+    (byDesk[item.type] ||= []).push(item);
+  }
+  const SHARES = [
+    ['world', 0.5],
+    ['politics', 0.24],
+    ['business', 0.14],
+    ['tech', 0.08],
+    ['science', 0.04],
+  ];
+  const news = [];
+  for (const [desk, share] of SHARES) {
+    const take = Math.round(newsQuota * share);
+    news.push(...(byDesk[desk] || []).slice(0, take));
+  }
+  // Fill any remainder with the newest stories left over.
+  if (news.length < newsQuota) {
+    const chosen = new Set(news.map((i) => i.id));
+    for (const item of wire) {
+      if (news.length >= newsQuota) break;
+      if (chosen.has(item.id) || item.positive || item.type === 'sport') continue;
+      news.push(item);
+    }
+  }
+
+  const items = [...news, ...sport, ...positive, ...plain];
   items.sort((a, b) => Date.parse(b.time) - Date.parse(a.time) || String(a.id).localeCompare(String(b.id)));
 
   cache = items.slice(0, MAX_ITEMS);
