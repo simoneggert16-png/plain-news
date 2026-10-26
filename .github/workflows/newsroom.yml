@@ -1,4 +1,4 @@
-name: Newsroom
+﻿name: Newsroom
 
 on:
   schedule:
@@ -111,7 +111,7 @@ jobs:
           # fire for runs started with GITHUB_TOKEN, but workflow_dispatch does,
           # so hand over to the chain job instead of waiting for the cron.
           if [ "$published_total" -gt 0 ]; then
-            gh workflow run newsroom-chain.yml -f delay=1500 \
+            gh workflow run newsroom-chain.yml -f delay=1800 \
               && echo "Handed over to the newsroom chain."
           else
             echo "Nothing published in this run - not chaining, cron backstop takes over."
