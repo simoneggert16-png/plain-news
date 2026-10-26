@@ -2,20 +2,19 @@ name: Newsroom chain
 
 # GitHub's scheduler delivers the Newsroom cron only a handful of times per day
 # (scheduled runs regularly arrive 3-7 h late), so the site went stale between
-# cycles. A finished Newsroom run therefore starts the next one itself:
-# workflow_run always fires, and a workflow_dispatch created with GITHUB_TOKEN
-# is the one token-triggered event GitHub still accepts. The scheduled cron
-# stays as a backstop in case the chain ever breaks.
+# cycles. The newsroom run therefore hands over to this job before it ends:
+# wait out the cadence guard, then start the next newsroom run. The scheduled
+# cron stays as a backstop in case the chain ever breaks.
 
 on:
-  workflow_run:
-    workflows: [Newsroom]
-    types: [completed]
+  # Started by the newsroom run itself (workflow_dispatch) shortly before it
+  # ends: it waits out the cadence guard, then starts the next run. workflow_run
+  # cannot be used here - it does not fire for runs created with GITHUB_TOKEN.
   workflow_dispatch:
     inputs:
       delay:
         description: Seconds to wait before dispatching (0 = immediately)
-        default: '0'
+        default: '1500'
 
 permissions:
   actions: write
@@ -27,7 +26,6 @@ concurrency:
 
 jobs:
   chain:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -49,5 +47,5 @@ jobs:
           # Wait out the cadence guard (25 min) so the next run does real work
           # instead of immediately skipping itself.
           if [ "$delay" -gt 0 ]; then sleep "$delay"; fi
-          gh workflow run newsroom.yml --ref "${{ github.event.workflow_run.head_branch || 'main' }}"
+          gh workflow run newsroom.yml --ref main
           echo "Dispatched the next newsroom run."
