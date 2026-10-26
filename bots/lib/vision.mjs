@@ -41,10 +41,27 @@ function isDisqualifiedCaption(captionObj) {
   return BANNED_CAPTION_PATTERNS.some(pat => pat.test(en) || pat.test(de));
 }
 
+function sniffMime(buf) {
+  if (buf?.[0] === 0xff && buf?.[1] === 0xd8) return 'image/jpeg';
+  if (buf?.[0] === 0x89 && buf?.[1] === 0x50) return 'image/png';
+  if (buf?.[0] === 0x47 && buf?.[1] === 0x49) return 'image/gif';
+  if (buf?.[0] === 0x52 && buf?.[1] === 0x49) return 'image/webp';
+  return 'image/jpeg';
+}
+
 /**
  * Multimodal AI Image Verifier & Caption Generator.
  * Powered by NVIDIA NIM Vision (meta/llama-3.2-11b-vision-instruct).
  * Enforces Swiss journalistic standards: authentic, high-res photojournalism only.
+ *
+ * Return contract:
+ *   { verified: true, caption, credit }   -> image approved, use AI caption
+ *   { verified: false, rejectionReason }  -> editorial rejection, drop the image
+ *   { verified: null, unavailable: true } -> provider unreachable/expired/broken
+ *   null                                  -> failed the technical gate, drop it
+ *
+ * The unavailable state matters: it used to be indistinguishable from a
+ * rejection, so every API hiccup silently threw away a perfectly good photo.
  */
 export async function verifyAndCaptionImage(imageUrl, storyContext = {}) {
   if (!imageUrl || isJunkImage(imageUrl)) return null;
@@ -57,8 +74,10 @@ export async function verifyAndCaptionImage(imageUrl, storyContext = {}) {
   }
 
   const base64 = quality.buffer.toString('base64');
+  const dataUrl = `data:${sniffMime(quality.buffer)};base64,${base64}`;
   const sourceCaption = storyContext.sourceCaption || '';
   const sourceCredit = storyContext.sourceCredit || '';
+  let unavailable = null;
 
   const prompt = `You are the Senior Photo Editor for PLAIN, an unbiased global news wire.
 Story Category: ${storyContext.category || 'news'}
@@ -119,12 +138,12 @@ Return ONLY valid raw JSON:
           const parsed = JSON.parse(match[0]);
           if (parsed.verified === false) {
             console.log(`  VISION MiniMax M3 rejected image: ${parsed.rejectionReason || 'Not verified'}`);
-            return null;
+            return { verified: false, rejectionReason: parsed.rejectionReason || 'not verified' };
           }
           if (parsed.verified === true && parsed.caption) {
             if (isDisqualifiedCaption(parsed.caption)) {
               console.log(`  VISION MiniMax M3 caption contained disqualified phrases, rejecting image.`);
-              return null;
+              return { verified: false, rejectionReason: 'caption contained banned phrases' };
             }
             return {
               verified: true,
@@ -133,9 +152,13 @@ Return ONLY valid raw JSON:
             };
           }
         }
+        if (!match) unavailable = 'ollama returned unparseable JSON';
+      } else {
+        unavailable = `ollama HTTP ${res.status}`;
       }
     } catch (e) {
       console.warn('  VISION MiniMax M3 error, trying NVIDIA fallback:', e.message);
+      unavailable = `ollama ${e.message}`;
     }
   }
 
@@ -155,14 +178,14 @@ Return ONLY valid raw JSON:
               role: 'user',
               content: [
                 { type: 'text', text: prompt },
-                { type: 'image_url', image_url: { url: imageUrl } },
+                { type: 'image_url', image_url: { url: dataUrl } },
               ],
             },
           ],
           temperature: 0.1,
-          max_tokens: 350,
+          max_tokens: 500,
         }),
-        signal: AbortSignal.timeout(25000),
+        signal: AbortSignal.timeout(30000),
       });
 
       if (res.ok) {
@@ -173,12 +196,12 @@ Return ONLY valid raw JSON:
           const parsed = JSON.parse(match[0]);
           if (parsed.verified === false) {
             console.log(`  VISION Fallback model rejected image: ${parsed.rejectionReason || 'Not verified'}`);
-            return null;
+            return { verified: false, rejectionReason: parsed.rejectionReason || 'not verified' };
           }
           if (parsed.verified === true && parsed.caption) {
             if (isDisqualifiedCaption(parsed.caption)) {
               console.log(`  VISION Fallback caption contained disqualified phrases, rejecting image.`);
-              return null;
+              return { verified: false, rejectionReason: 'caption contained banned phrases' };
             }
             return {
               verified: true,
@@ -187,12 +210,17 @@ Return ONLY valid raw JSON:
             };
           }
         }
+        unavailable = 'nvidia returned unparseable JSON';
+      } else {
+        unavailable = `nvidia HTTP ${res.status}`;
       }
     } catch (e) {
       console.warn('  VISION Fallback vision check failed:', e.message);
+      unavailable = `nvidia ${e.message}`;
     }
   }
 
-  return null;
+  console.log(`  VISION no verdict from any provider (${unavailable || 'none configured'}).`);
+  return { verified: null, unavailable: true, reason: unavailable || 'no vision provider configured' };
 }
 

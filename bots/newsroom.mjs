@@ -366,8 +366,16 @@ async function processEvent(event, recentTitles, seen) {
         imageCaptionDe = vResult.caption?.de || null;
         imageCredit = vResult.credit || media.credit || event.sources[0]?.outlet || null;
         log(`  VISION verified: "${imageCaption.slice(0, 60)}…" (Credit: ${imageCredit})`);
+      } else if (vResult?.unavailable) {
+        // Vision provider down (quota, 401, timeout, unparseable answer). The
+        // photo already cleared the technical gate, so keep it with the wire's
+        // own caption and credit instead of discarding every image of the run.
+        imageCaption = media.caption || '';
+        imageCaptionDe = null;
+        imageCredit = media.credit || event.sources[0]?.outlet || null;
+        log(`  VISION unavailable (${vResult.reason || 'no provider'}); keeping image with source caption.`);
       } else {
-        log(`  VISION rejected or unverified image; removing.`);
+        log(`  VISION rejected image${vResult?.rejectionReason ? `: ${vResult.rejectionReason}` : ''}; removing.`);
         verifiedImage = null;
       }
     }
