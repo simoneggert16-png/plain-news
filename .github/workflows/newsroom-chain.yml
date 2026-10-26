@@ -1,4 +1,4 @@
-name: Newsroom chain
+﻿name: Newsroom chain
 
 # GitHub's scheduler delivers the Newsroom cron only a handful of times per day
 # (scheduled runs regularly arrive 3-7 h late), so the site went stale between
@@ -14,7 +14,7 @@ on:
     inputs:
       delay:
         description: Seconds to wait before dispatching (0 = immediately)
-        default: '1500'
+        default: '1800'
 
 permissions:
   actions: write
@@ -35,7 +35,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           delay="${{ inputs.delay }}"
-          if [ -z "$delay" ]; then delay=1500; fi
+          if [ -z "$delay" ]; then delay=1800; fi
           last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=content&per_page=1" \
             --jq '.[0].commit.committer.date')
           mins=$(( ( $(date -u +%s) - $(date -d "$last" +%s) ) / 60 ))
