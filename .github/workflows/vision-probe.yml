@@ -1,0 +1,30 @@
+name: Vision probe
+
+# Read-only diagnostic: shows whether the image verifier can actually reach a
+# provider. Run it manually (Actions -> Vision probe -> Run workflow) whenever
+# articles suddenly stop carrying photos.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'bots/lib/vision.mjs'
+      - 'scripts/vision-check.mjs'
+
+concurrency:
+  group: vision-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Probe providers
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+        run: node scripts/vision-check.mjs
