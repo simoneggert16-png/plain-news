@@ -2,11 +2,12 @@ name: Newsroom
 
 on:
   schedule:
-    # Twice an hour at odd minutes. GitHub's scheduler drops/delays entries
-    # regularly (gaps of 5-7 h were observed with a single :17 entry), so a
-    # second trigger doubles the chance that one actually fires. Concurrency
-    # keeps the runs serialised, so this does not double the workload.
-    - cron: '17,47 * * * *'
+    # Every 10 minutes. GitHub's scheduler silently drops most entries of
+    # frequent crons: with two daily-ish entries the newsroom actually ran only
+    # 4-5 times a day (gaps of 3-6 h), which is why the newest article was
+    # routinely hours old. Many triggers plus the cadence guard below yield a
+    # real publish cycle roughly every 30-60 min without publishing more often.
+    - cron: '*/10 * * * *'
   workflow_dispatch: {}       # manual "Run workflow" button
 
 permissions:
@@ -26,18 +27,22 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Two cron entries improve the odds that GitHub actually fires one.
-          # Skip this run if the previous cycle finished less than 40 minutes
-          # ago, so a double trigger does not mean double deployments.
-          last=$(gh run list -R "${{ github.repository }}" --workflow=newsroom.yml --status=completed --limit 1 \
-            --json updatedAt --jq '.[0].updatedAt // empty')
+          # Skip when the last publish cycle committed content recently. This
+          # measures the last commit that touched content/ (an actual publish),
+          # not the last run: with many triggers, skipped runs must not reset
+          # the clock or the workflow skips itself forever.
+          mins=999
+          last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=content&per_page=1" \
+            --jq '.[0].commit.committer.date' 2>/dev/null || true)
           if [ -n "$last" ]; then
             mins=$(( ( $(date -u +%s) - $(date -d "$last" +%s) ) / 60 ))
-            echo "Last completed run ended $mins min ago ($last)"
-            if [ "$mins" -lt 40 ]; then
-              echo "skip=true" >> "$GITHUB_OUTPUT"
-              echo "Skipping: last cycle finished $mins min ago."
-            fi
+            echo "Last content commit ${mins} min ago ($last)"
+          else
+            echo "Could not read last content commit; running anyway."
+          fi
+          if [ "$mins" -lt 25 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Skipping: published ${mins} min ago."
           fi
       - if: steps.cadence.outputs.skip != 'true'
         uses: actions/checkout@v4
