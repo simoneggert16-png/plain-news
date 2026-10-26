@@ -107,12 +107,21 @@ jobs:
             if [ "$pause" -gt 60 ]; then sleep "$pause"; fi
           done
           echo "Run finished after $cycle cycles ($published_total with new stories)."
-          # Keep the newsroom alive without the scheduler: workflow_run does not
-          # fire for runs started with GITHUB_TOKEN, but workflow_dispatch does,
-          # so hand over to the chain job instead of waiting for the cron.
-          if [ "$published_total" -gt 0 ]; then
-            gh workflow run newsroom-chain.yml -f delay=1800 \
-              && echo "Handed over to the newsroom chain."
-          else
-            echo "Nothing published in this run - not chaining, cron backstop takes over."
+      - name: Hand over to the newsroom chain
+        # Runs even when the cadence guard skipped this trigger: a skipped run
+        # must not break the chain, it just has to try again in 30 minutes.
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=content&per_page=1" \
+            --jq '.[0].commit.committer.date' 2>/dev/null || true)
+          if [ -z "$last" ]; then echo "No content commit found - not chaining."; exit 0; fi
+          mins=$(( ( $(date -u +%s) - $(date -d "$last" +%s) ) / 60 ))
+          echo "Last content commit was ${mins} min ago."
+          if [ "$mins" -ge 120 ]; then
+            echo "Nothing published for 2 h - not chaining, the cron backstop takes over."
+            exit 0
           fi
+          gh workflow run newsroom-chain.yml -f delay=1800 && echo "Handed over to the newsroom chain."
