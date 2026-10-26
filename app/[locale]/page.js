@@ -144,10 +144,10 @@ export default async function Home({ params }) {
       {rest.length > 0 && (
         <>
           <div className="sec-head">
-            <h2>{t.latest} ({rest.length})</h2>
+            <h2>{t.latest}</h2>
           </div>
           <div className="grid grid-top">
-            {rest.map((a) => <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />)}
+            {rest.slice(0, 12).map((a) => <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />)}
           </div>
         </>
       )}
@@ -162,7 +162,7 @@ export default async function Home({ params }) {
               <Link href={`/${locale}/c/${c}`}>{t.more} →</Link>
             </div>
             <div className="grid grid-top">
-              {items.map((a) => <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />)}
+              {items.slice(0, 9).map((a) => <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />)}
             </div>
           </section>
         );
