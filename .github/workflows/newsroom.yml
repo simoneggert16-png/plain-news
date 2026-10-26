@@ -61,19 +61,19 @@ jobs:
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
-          MAX_STORIES_PER_RUN: '0'
+          MAX_STORIES_PER_RUN: '12'
           MAX_PER_CATEGORY: '0'
           MIN_PER_CATEGORY_PER_CYCLE: '1'
           TARGET_PER_CATEGORY_PER_CYCLE: '0'
           EVENT_CONCURRENCY: ${{ vars.EVENT_CONCURRENCY || '4' }}
           TRANSLATION_CONCURRENCY: ${{ vars.TRANSLATION_CONCURRENCY || '8' }}
-          RUN_BUDGET_MINUTES: '30'
+          RUN_BUDGET_MINUTES: '35'
           RECENT_WINDOW_HOURS: '1'
           MAX_ARTICLES_PER_DAY: '120'
           MAX_AGE_HOURS: '8'
           PER_FEED: '20'
           DESK_BATCH_SIZE: '60'
-          DESK_MAX_BATCHES: '10'
+          DESK_MAX_BATCHES: '4'
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           GH_TOKEN: ${{ github.token }}
