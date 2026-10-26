@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write      # the run dispatches the hand-over job at the end
 
 concurrency:
   group: newsroom
@@ -74,6 +75,7 @@ jobs:
           DESK_MAX_BATCHES: '10'
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           # GitHub's scheduler fires this workflow only a few times per day and
           # scheduled runs regularly arrive 3-7 h late. A single 45-minute run
@@ -84,6 +86,7 @@ jobs:
           git config user.email "simoneggert16@gmail.com"
           deadline=$(( $(date +%s) + 330 * 60 ))
           cycle=0
+          published_total=0
           while [ "$(date +%s)" -lt "$deadline" ]; do
             cycle=$((cycle + 1))
             started=$(date +%s)
@@ -96,10 +99,20 @@ jobs:
             else
               git commit -q -m "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC"
               git pull -q --rebase --autostash && git push -q || echo "push failed, continuing"
+              published_total=$((published_total + 1))
               echo "published in cycle $cycle"
             fi
             echo "::endgroup::"
             pause=$(( 3300 - ($(date +%s) - started) ))
             if [ "$pause" -gt 60 ]; then sleep "$pause"; fi
           done
-          echo "Run finished after $cycle cycles."
+          echo "Run finished after $cycle cycles ($published_total with new stories)."
+          # Keep the newsroom alive without the scheduler: workflow_run does not
+          # fire for runs started with GITHUB_TOKEN, but workflow_dispatch does,
+          # so hand over to the chain job instead of waiting for the cron.
+          if [ "$published_total" -gt 0 ]; then
+            gh workflow run newsroom-chain.yml -f delay=1500 \
+              && echo "Handed over to the newsroom chain."
+          else
+            echo "Nothing published in this run - not chaining, cron backstop takes over."
+          fi
