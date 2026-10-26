@@ -118,15 +118,21 @@ export function isDuplicateStory(candidateText, existingTitles = []) {
 // Retry a few of those at the start of every cycle.
 async function backfillTranslations(index, limit = 8) {
   const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
+  // German first: /de is the edition readers actually see. Other languages are
+  // filled afterwards by the same pool or by the translations workflow.
+  const ordered = ['de', ...targets.filter((c) => c !== 'de')];
   const missing = index.articles
     .filter((e) => targets.some((c) => !e.locales?.[c]?.title))
     .slice(0, limit);
   if (!missing.length) return 0;
-  const tasks = missing.flatMap((entry) =>
-    targets.filter((c) => !entry.locales?.[c]?.title).map((locale) => ({ entry, locale })),
+  const tasks = ordered.flatMap((locale) =>
+    missing.filter((e) => !e.locales?.[locale]?.title).map((entry) => ({ entry, locale }))
   );
+  // One cycle can only afford a slice - the German jobs sit at the front.
+  const budget = Number(process.env.BACKFILL_MAX_JOBS || 24);
+  const batch = Number.isFinite(budget) ? tasks.slice(0, budget) : tasks;
   let done = 0;
-  await pool(tasks, TRANSLATION_CONCURRENCY, async ({ entry, locale }) => {
+  await pool(batch, TRANSLATION_CONCURRENCY, async ({ entry, locale }) => {
     const article = loadArticle(entry.slug);
     if (!article) return;
     try {
@@ -142,7 +148,7 @@ async function backfillTranslations(index, limit = 8) {
     }
   });
   if (done) saveIndex(index);
-  log(`TRANSLATOR backfill: ${done} of ${tasks.length} missing translation(s) fixed`);
+  log(`TRANSLATOR backfill: ${done} of ${batch.length} queued (${tasks.length} missing) translation(s) fixed`);
   return done;
 }
 
@@ -646,7 +652,10 @@ async function main() {
 
   // ── Phase 2: translate accepted articles with one global pool ──
   const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
-  const tasks = accepted.flatMap((article) => targets.map((locale) => ({ article, locale })));
+  // German first: it is the edition readers notice, and the cycle budget is
+  // better spent on one finished language than on nine half-done ones.
+  const orderedTargets = ['de', ...targets.filter((c) => c !== 'de')];
+  const tasks = orderedTargets.flatMap((locale) => accepted.map((article) => ({ article, locale })));
   let translated = 0;
   if (tasks.length && timeLeft() > 2 * 60e3) {
     log(`TRANSLATOR ${tasks.length} jobs (${accepted.length} articles × ${targets.length} languages)…`);

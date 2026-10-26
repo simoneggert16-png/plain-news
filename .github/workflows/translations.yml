@@ -21,7 +21,7 @@ concurrency:
 jobs:
   fill:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -38,11 +38,17 @@ jobs:
           RETRIES: '3'
         run: node scripts/translate-missing.mjs
       - name: Commit repaired translations
+        if: always()
         run: |
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
+          # Pick up stories the newsroom published while this run was busy.
+          git pull -q --rebase --autostash || true
+          if [ -f translated-slugs.txt ]; then
+            node scripts/sync-index.mjs --file translated-slugs.txt
+          fi
           git add content
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -q -m "translations: $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull -q --rebase --autostash
+          git pull -q --rebase --autostash || true
           git push -q
