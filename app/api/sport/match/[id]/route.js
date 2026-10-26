@@ -21,10 +21,7 @@ function parseFormationString(displayFormation, roster = []) {
 export async function GET(request, { params }) {
   try {
     const { id: rawId } = await params;
-    let eventId = rawId;
-    if (rawId === 'latest' || rawId === 'messi' || rawId === 'argentina') {
-      eventId = '401921408'; // Argentina vs Benin (Lionel Messi Farewell Match)
-    }
+    const eventId = rawId;
 
     const leaguesToTry = ['fifa.friendly', 'uefa.champions', 'eng.1', 'esp.1', 'ger.1', 'ita.1'];
     let sum = null;
@@ -70,8 +67,8 @@ export async function GET(request, { params }) {
     const matchHeader = {
       id: eventId,
       name: sum.header?.season?.name || comp.name || 'International Football',
-      note: eventId === '401921408' ? 'Lionel Messi Farewell Match · Estadio Mâs Monumental' : comp.status?.type?.detail || 'Match Center',
-      venue: sum.gameInfo?.venue?.displayName || 'Estadio Mâs Monumental, Buenos Aires',
+      note: comp.status?.type?.detail || 'Match Center',
+      venue: sum.gameInfo?.venue?.displayName || '',
       status: comp.status?.type?.detail || comp.status?.type?.description || 'LIVE',
       clock: comp.status?.displayClock || '',
       period: comp.status?.period || 1,
@@ -85,7 +82,7 @@ export async function GET(request, { params }) {
         logo: homeComp?.team?.logos?.[0]?.href || 'https://a.espncdn.com/i/teamlogos/countries/500/arg.png',
         color: homeComp?.team?.color || '75AADB',
         formation: homeFormation,
-        coach: sum.gameInfo?.coaches?.find(c => c.team?.id === homeComp?.id)?.displayName || (eventId === '401921408' ? 'Lionel Scaloni' : 'Head Coach'),
+        coach: sum.gameInfo?.coaches?.find(c => c.team?.id === homeComp?.id)?.displayName || '',
       },
       awayTeam: {
         id: awayComp?.id,
@@ -95,7 +92,7 @@ export async function GET(request, { params }) {
         logo: awayComp?.team?.logos?.[0]?.href || 'https://a.espncdn.com/i/teamlogos/countries/500/ben.png',
         color: awayComp?.team?.color || '008751',
         formation: awayFormation,
-        coach: sum.gameInfo?.coaches?.find(c => c.team?.id === awayComp?.id)?.displayName || (eventId === '401921408' ? 'Gernot Rohr' : 'Head Coach'),
+        coach: sum.gameInfo?.coaches?.find(c => c.team?.id === awayComp?.id)?.displayName || '',
       },
     };
 
@@ -292,7 +289,7 @@ export async function GET(request, { params }) {
           position: p.position?.displayName || '',
           posAbbr: p.position?.abbreviation || '',
           headshot: photoUrl,
-          isCaptain: rawName.toLowerCase().includes('messi') || p.captain || false,
+          isCaptain: Boolean(p.captain),
           goals: goalsScored,
           assists: assistsCount,
           card: cardInfo,

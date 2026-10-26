@@ -12,7 +12,9 @@
     "newsletter:send": "node scripts/send_newsletter.mjs",
     "check:ai": "node scripts/check_ai_visibility.mjs",
     "remotion:studio": "remotion studio remotion/index.js",
-    "remotion:render": "remotion render remotion/index.js PlainNewsReel out/reel.mp4"
+    "remotion:render": "remotion render remotion/index.js PlainNewsReel out/reel.mp4",
+    "content:sync": "node scripts/sync-content.mjs",
+    "content:verify": "node scripts/sync-content.mjs --verify"
   },
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.3.0",

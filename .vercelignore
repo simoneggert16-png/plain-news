@@ -1,0 +1,16 @@
+# Keep video/audio production assets in git, but out of every Vercel deployment.
+# They were shipped on every deploy (62 MB of public/audio + public/footage*) and
+# are only used by the offline Remotion/social scripts, never by the website.
+public/audio/
+public/footage/
+public/footage_en/
+social_content/
+remotion/
+scripts/
+.github/
+
+# After `npm run content:sync` has seeded Supabase and /api/content/status
+# reports source=supabase with the full article count, content/ can also be
+# removed from deployments by uncommenting the next line (Vercel then stores
+# no article JSON at all). Git keeps the history either way.
+# content/

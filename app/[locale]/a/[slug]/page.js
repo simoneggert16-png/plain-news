@@ -7,18 +7,22 @@ import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
 import ArticleComments from '@/components/ArticleComments';
-import MatchCenterView from '@/components/MatchCenterView';
 
-export const dynamicParams = false;
+// Article pages are rendered on demand and cached by ISR (1h). Pre-rendering
+// every story in every language produced ~7,000 HTML files per deployment
+// (~700 MB and growing), which exhausted Vercel's 10 GB deployment storage.
+// The latest stories stay pre-rendered by generateStaticParams below.
+export const dynamicParams = true;
+export const revalidate = 3600;
 
-export function generateStaticParams() {
-  const slugs = getIndex().map((a) => a.slug);
+export async function generateStaticParams() {
+  const slugs = (await getIndex()).slice(0, 40).map((a) => a.slug);
   return LOCALE_CODES.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }) {
   const { locale, slug } = await params;
-  const a = getArticle(slug);
+  const a = await getArticle(slug);
   if (!a) return {};
   const l = localize(a, locale);
   const articleUrl = `${SITE.url}/${locale}/a/${slug}`;
@@ -69,7 +73,7 @@ export async function generateMetadata({ params }) {
 
 export default async function ArticlePage({ params }) {
   const { locale, slug } = await params;
-  const a = getArticle(slug);
+  const a = await getArticle(slug);
   if (!a) notFound();
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
@@ -227,12 +231,6 @@ export default async function ArticlePage({ params }) {
         <section className="facts">
           <h2>{t.keyFacts}</h2>
           <ul>{l.facts.map((f, i) => <li key={i}>{f}</li>)}</ul>
-        </section>
-      )}
-
-      {a.category === 'sport' && (
-        <section className="art-match-center">
-          <MatchCenterView matchId="401921408" locale={locale} />
         </section>
       )}
 

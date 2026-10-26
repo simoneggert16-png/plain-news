@@ -42,7 +42,16 @@ jobs:
           PER_FEED: '20'
           DESK_BATCH_SIZE: '60'
           DESK_MAX_BATCHES: '10'
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node bots/newsroom.mjs
+      - name: Mirror content to Supabase
+        if: always()
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/sync-content.mjs
       - name: Commit new stories
         if: always()
         run: |

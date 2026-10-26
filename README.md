@@ -91,7 +91,7 @@ PLAIN. liefert alle Inhalte als serverseitig gerendertes HTML. Es gibt keinen Lo
 |---|---|
 | `/robots.txt` | Erlaubt Such- und KI-Crawler explizit, u. a. `OAI-SearchBot`, `GPTBot`, `PerplexityBot`, `ClaudeBot`, `Googlebot`, `Bingbot`. |
 | `/sitemap.xml` | Alle Sprachversionen, Kategorien und Artikel (max. 1000 Stories). |
-| `/news-sitemap.xml` | Google-News-Sitemap mit Artikeln der letzten 48 Stunden. |
+| `/news-sitemap.xml` | Google-News-Sitemap-Index (max. 1.000 URLs pro Kind-Datei unter `/news-sitemap/<n>.xml`). |
 | `/llms.txt` | Kurzer Leitfaden für LLM- und Retrieval-Agenten. |
 | `/llms-full.txt` | Maschinenlesbarer Index der letzten 500 Artikel mit kanonischen URLs. |
 | `/feed.xml` | RSS-2.0-Feed mit den letzten 100 Artikeln. |
@@ -130,7 +130,24 @@ Erst wenn die Artikelseite in Production mit HTTP `200` und lesbarem HTML antwor
 
 ---
 
+##  Speicher & Deployment-Größe
+
+Vercel Hobby hat 10 GB Deployment-Storage, und jede Version zählt mit. Deshalb gilt:
+
+- **Artikelseiten sind ISR** (`revalidate = 3600`), nicht vorgerendert. Vorher wurden 776 Artikel × 9 Sprachen ≈ 7.000 HTML-Dateien pro Deployment gebaut (~700 MB und täglich ~85 MB mehr).
+- **Medien bleiben im Repo, aber nicht im Deployment** (`.vercelignore`): `public/audio`, `public/footage*`, `social_content`, `remotion`, `scripts`. Das sind ~62 MB pro Version, die nur die Offline-Videoproduktion braucht.
+- **Inhalte können aus Supabase kommen** statt aus dem Deployment. Einmalig `supabase/schema.sql` im SQL-Editor ausführen, danach spiegelt jeder Newsroom-Lauf die Artikel automatisch nach Supabase (`npm run content:sync`). Status prüfen:
+
+```bash
+npm run content:verify
+curl https://www.plain-news.ch/api/content/status   # { source, articles, newest }
+```
+
+Wenn dort `source: supabase` mit vollständiger Artikelzahl steht, in `.vercelignore` die Zeile `content/` aktivieren – dann enthält kein Deployment mehr Artikel-JSON. Git bleibt die Quelle und Historie; die Website liest die aktuelle Fassung aus Supabase.
+
 ##  Lokale Entwicklung
+
+
 
 ```bash
 # Abhängigkeiten installieren
