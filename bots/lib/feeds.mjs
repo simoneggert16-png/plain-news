@@ -44,7 +44,7 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 14 } = {})
   return { items: items.filter((i) => (seen.has(i.url) ? false : seen.add(i.url))), feedsOk: ok, feedsTotal: feeds.length };
 }
 
-import { extractVideoFromHtml, extractImagesFromHtml, isJunkImage } from './media.mjs';
+import { extractVideoFromHtml, extractImagesFromHtml, isJunkImage, cleanImageUrl } from './media.mjs';
 
 /** Best-effort full text, high-res photo & video: grab text paragraphs and media */
 export async function fetchArticleDetails(url, maxChars = 3500) {
@@ -59,7 +59,7 @@ export async function fetchArticleDetails(url, maxChars = 3500) {
     // Extract images, prioritizing non-junk editorial photojournalism
     const candidateImages = extractImagesFromHtml(html);
     const top = candidateImages.length > 0 ? candidateImages.sort((a, b) => b.score - a.score)[0] : null;
-    const image = top ? top.url : null;
+    const image = top ? cleanImageUrl(top.url) : null;
     const imageCaption = top ? top.caption : null;
     const imageCredit = top ? top.credit : null;
 
