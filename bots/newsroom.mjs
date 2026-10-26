@@ -505,6 +505,27 @@ async function main() {
     if (allEvents.length >= Math.max(MAX_STORIES * 2, 8)) break;
   }
 
+  // Constructive slot: the desk model fills its quota with hard news, so the
+  // positive feeds (Good News Network, Positive News, Reasons to Be Cheerful,
+  // The Optimist Daily) hardly ever survived the ranking. They get their own
+  // pass and a reserved slot per cycle.
+  const constructive = items.filter((i) => i.positive && !seen.has(i.url)).slice(0, 40);
+  if (!allEvents.some((e) => e.positive) && constructive.length) {
+    log(`DESK   constructive pass (${constructive.length} headlines)`);
+    try {
+      const found = await desk(constructive, publishedTitles, []);
+      for (const ev of found) {
+        if (!allEvents.some((existing) => existing.event.toLowerCase() === ev.event.toLowerCase())) {
+          allEvents.push(ev);
+          publishedTitles.push(ev.event);
+        }
+      }
+      log(`DESK   constructive pass found ${found.length} event(s)`);
+    } catch (err) {
+      log(`DESK   constructive pass error: ${err?.message || err}`);
+    }
+  }
+
   // Rank by importance + source depth, but reserve one slot per desk before
   // selecting second stories so busy categories cannot crowd out others.
   allEvents.sort((a, b) => ((+b.importance || 1) * 10 + b.outlets) - ((+a.importance || 1) * 10 + a.outlets));
@@ -519,6 +540,14 @@ async function main() {
     events.push(event);
     perCat[category] = 1;
     projected[category] = (projected[category] || 0) + 1;
+  }
+  // One constructive story per cycle, independent of the ranking.
+  const constructiveEvent = allEvents.find((e) => e.positive && !events.includes(e));
+  if (constructiveEvent && events.length < MAX_STORIES) {
+    events.push(constructiveEvent);
+    perCat[constructiveEvent.category] = (perCat[constructiveEvent.category] || 0) + 1;
+    projected[constructiveEvent.category] = (projected[constructiveEvent.category] || 0) + 1;
+    log(`DESK   reserved constructive slot: ${constructiveEvent.event.slice(0, 60)}`);
   }
   for (const e of allEvents) {
     if (events.length >= MAX_STORIES) break;
