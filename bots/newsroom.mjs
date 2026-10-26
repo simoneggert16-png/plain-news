@@ -30,7 +30,7 @@ import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { chatJSON } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
-import { loadIndex, saveIndex, loadState, saveState, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
+import { loadIndex, saveIndex, loadState, saveState, saveArticle, loadArticle, toIndexEntry, slugify } from './lib/store.mjs';
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
@@ -99,6 +99,41 @@ export function isDuplicateStory(candidateText, existingTitles = []) {
     }
   }
   return { isDup: false };
+}
+
+// ─────────────────────────── TRANSLATION BACKFILL ───────────────────────────
+// A translation call can fail (rate limit, timeout, malformed JSON). The
+// article is already published at that point, so the German site silently fell
+// back to English - 28 of 817 articles were English-only after one bad batch.
+// Retry a few of those at the start of every cycle.
+async function backfillTranslations(index, limit = 8) {
+  const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
+  const missing = index.articles
+    .filter((e) => targets.some((c) => !e.locales?.[c]?.title))
+    .slice(0, limit);
+  if (!missing.length) return 0;
+  const tasks = missing.flatMap((entry) =>
+    targets.filter((c) => !entry.locales?.[c]?.title).map((locale) => ({ entry, locale })),
+  );
+  let done = 0;
+  await pool(tasks, TRANSLATION_CONCURRENCY, async ({ entry, locale }) => {
+    const article = loadArticle(entry.slug);
+    if (!article) return;
+    try {
+      const t = await translate(article.locales[SOURCE_LOCALE], locale);
+      if (!t?.title) return;
+      article.locales[locale] = t;
+      saveArticle(article);
+      const i = index.articles.findIndex((x) => x.slug === entry.slug);
+      if (i >= 0) index.articles[i] = toIndexEntry(article);
+      done++;
+    } catch (err) {
+      log(`TRANSLATOR backfill ${entry.slug}/${locale}: ${err?.message || err}`);
+    }
+  });
+  if (done) saveIndex(index);
+  log(`TRANSLATOR backfill: ${done} of ${tasks.length} missing translation(s) fixed`);
+  return done;
 }
 
 async function desk(items, recentTitles, priorityCategories = [], groups = []) {
@@ -363,6 +398,11 @@ async function main() {
   const state = loadState();
   const index = loadIndex();
   const seen = new Set(state.seenUrls);
+
+  // Fix articles that were published while a translation call was failing.
+  if (timeLeft() > 8 * 60e3) {
+    await backfillTranslations(index, 8).catch((err) => log(`TRANSLATOR backfill error: ${err?.message || err}`));
+  }
 
   // Daily budget guard: protects the LLM quota and the Vercel build limit.
   const dayAgo = Date.now() - 864e5;
