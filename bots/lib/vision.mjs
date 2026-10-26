@@ -195,7 +195,7 @@ Return ONLY valid raw JSON:
       if (res.ok) {
         const json = await res.json();
         const raw = json.choices?.[0]?.message?.content || '';
-        if (process.env.VISION_DEBUG) console.log(`  VISION raw: ${raw.slice(0, 1200)}`);
+        if (process.env.VISION_DEBUG) console.log(`  VISION raw: ${raw.slice(0, 800)} | message: ${JSON.stringify(json.choices?.[0]?.message || {}).slice(0, 900)}`);
         const match = raw.match(/\{[\s\S]*\}/);
         if (match) {
           const parsed = JSON.parse(match[0]);
@@ -228,5 +228,6 @@ Return ONLY valid raw JSON:
   console.log(`  VISION no verdict from any provider (${unavailable || 'none configured'}).`);
   return { verified: null, unavailable: true, reason: unavailable || 'no vision provider configured' };
 }
+
 
 
