@@ -1,0 +1,48 @@
+name: Translations
+
+# Repairs articles that were published while a translation call was failing.
+# Run it manually after a bad batch, or on a schedule as a safety net.
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Max articles to repair (empty = all)
+        default: ''
+  schedule:
+    - cron: '40 */4 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: translations
+  cancel-in-progress: false
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Translate missing locales
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
+          LIMIT: ${{ inputs.limit }}
+          CONCURRENCY: '3'
+          RETRIES: '3'
+        run: node scripts/translate-missing.mjs
+      - name: Commit repaired translations
+        run: |
+          git config user.name "simoneggert16-png"
+          git config user.email "simoneggert16@gmail.com"
+          git add content
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -q -m "translations: $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull -q --rebase --autostash
+          git push -q
