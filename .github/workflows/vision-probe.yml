@@ -1,0 +1,42 @@
+﻿name: Vision probe
+
+# Read-only diagnostic: shows whether the image verifier can actually reach a
+# provider. Run it manually (Actions -> Vision probe -> Run workflow) whenever
+# articles suddenly stop carrying photos.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'bots/lib/vision.mjs'
+      - 'scripts/vision-check.mjs'
+
+concurrency:
+  group: vision-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+      - name: List vision-capable NIM models
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          curl -s -H "Authorization: Bearer $NVIDIA_API_KEY" \
+            https://integrate.api.nvidia.com/v1/models \
+            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const m=(j.data||[]).map(x=>x.id).filter(id=>/vision|vl|llava|vila|pixtral|intern/i.test(id));console.log(m.join('\n'))})"
+      - name: Probe explicit model
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          VISION_IMAGE_MODE: data
+          VISION_DEBUG: '1'
+          VISION_TIMEOUT_MS: '60000'
+          NVIDIA_VISION_MODEL: ${{ vars.VISION_MODEL || 'meta/llama-3.2-11b-vision-instruct' }}
+        run: node scripts/vision-check.mjs 3

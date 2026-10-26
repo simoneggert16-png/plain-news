@@ -366,9 +366,17 @@ async function processEvent(event, recentTitles, seen) {
         imageCaptionDe = vResult.caption?.de || null;
         imageCredit = vResult.credit || media.credit || event.sources[0]?.outlet || null;
         log(`  VISION verified: "${imageCaption.slice(0, 60)}…" (Credit: ${imageCredit})`);
-      } else {
-        log(`  VISION rejected or unverified image; removing.`);
+      } else if (vResult?.verified === false) {
+        log(`  VISION rejected image: ${vResult.rejectionReason || 'not usable'}; removing.`);
         verifiedImage = null;
+      } else {
+        // No usable verdict (provider down, quota, timeout, unsure model). The
+        // photo already cleared the technical gate, so keep it with the wire's
+        // own caption and credit instead of discarding every image of the run.
+        imageCaption = media.caption || '';
+        imageCaptionDe = null;
+        imageCredit = media.credit || event.sources[0]?.outlet || null;
+        log(`  VISION no verdict (${vResult?.reason || 'none'}); keeping image with wire caption.`);
       }
     }
 

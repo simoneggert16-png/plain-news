@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { LOCALES, CATEGORIES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
-import { rankArticles, isElectionHeadline } from '@/lib/storyRank.mjs';
+import { rankArticles, isElectionHeadline, sharesSubject } from '@/lib/storyRank.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
@@ -41,13 +41,27 @@ export default async function Home({ params }) {
   const lead = rankArticles(recent.length ? recent : displayArticles)[0] || displayArticles[0];
   const rest = displayArticles.filter((a) => a.slug !== lead.slug);
   // The brief may carry at most two election headlines, otherwise every vote
-  // in the world crowds out everything else.
+  // in the world crowds out everything else. Stories about the same subject as
+  // the lead (e.g. a second Israel election item) are skipped so the front
+  // page never repeats itself.
   const rankedRest = rankArticles(rest);
-  const electionPicks = rankedRest.filter((a) => isElectionHeadline(a)).slice(0, 2);
-  const brief = [
-    ...electionPicks,
-    ...rankedRest.filter((a) => !electionPicks.includes(a)),
-  ].slice(0, 5);
+  const electionPicks = [];
+  for (const a of rankedRest) {
+    if (electionPicks.length >= 2) break;
+    if (!isElectionHeadline(a) || sharesSubject(a, lead)) continue;
+    if (electionPicks.some((p) => sharesSubject(a, p))) continue;
+    electionPicks.push(a);
+  }
+  const brief = [];
+  const fillTarget = 5 - electionPicks.length;
+  for (const a of rankedRest) {
+    if (brief.length >= fillTarget) break;
+    if (electionPicks.includes(a) || isElectionHeadline(a)) continue;
+    if (sharesSubject(a, lead)) continue;
+    if (brief.some((b) => sharesSubject(a, b))) continue;
+    brief.push(a);
+  }
+  brief.unshift(...electionPicks);
   const L = localize(lead, locale);
   const homeUrl = `${SITE.url}/${locale}`;
   const homeJsonLd = {
