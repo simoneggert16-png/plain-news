@@ -187,6 +187,11 @@ export function extractImagesFromHtml(html) {
 }
 
 /** Score and select highest quality image, real caption, and video from source material. */
+export function cleanImageUrl(url) {
+  if (typeof url !== 'string') return url;
+  return url.replace(/&amp;/gi, '&').replace(/&#0*38;/g, '&');
+}
+
 export function curateMedia(sources = []) {
   let bestImage = null;
   let bestCaption = null;
@@ -199,14 +204,15 @@ export function curateMedia(sources = []) {
       bestVideo = s.video;
     }
 
-    if (s.image && !isJunkImage(s.image)) {
+    const imageUrl = cleanImageUrl(s.image);
+    if (imageUrl && !isJunkImage(imageUrl)) {
       let score = 5;
-      if (/aljazeera|spiegel|nytimes|reuters|apnews|gettyimages|afp|tagesschau/i.test(s.image)) score += 5;
-      if (/1920|1440|1080|1200/i.test(s.image)) score += 3;
+      if (/aljazeera|spiegel|nytimes|reuters|apnews|gettyimages|afp|tagesschau/i.test(imageUrl)) score += 5;
+      if (/1920|1440|1080|1200/i.test(imageUrl)) score += 3;
       if (s.caption) score += 4; // Prioritize images with verified photographer captions!
       if (score > highestScore) {
         highestScore = score;
-        bestImage = s.image;
+        bestImage = imageUrl;
         bestCaption = s.caption || null;
         bestCredit = s.credit || null;
       }
