@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import fs from 'node:fs';
 // Fill translations that are missing in the published archive.
 //
 // The newsroom saves an article before translating it; if that translate call
@@ -8,7 +9,7 @@
 //
 //   node scripts/translate-missing.mjs            # everything that is missing
 //   LIMIT=10 CONCURRENCY=3 node scripts/translate-missing.mjs
-import { loadIndex, saveIndex, loadArticle, saveArticle, toIndexEntry } from '../bots/lib/store.mjs';
+import { loadIndex, loadArticle, saveArticle } from '../bots/lib/store.mjs';
 import { translate } from '../bots/lib/translate.mjs';
 import { LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 
@@ -48,8 +49,7 @@ async function worker() {
         article.locales[locale] = t;
         article.updatedAt = new Date().toISOString();
         saveArticle(article);
-        const i = index.articles.findIndex((x) => x.slug === entry.slug);
-        if (i >= 0) index.articles[i] = toIndexEntry(article);
+        fixedSlugs.add(entry.slug);
         fixed++;
         console.log(`  ok    ${entry.slug} -> ${locale}`);
         break;
@@ -66,7 +66,14 @@ async function worker() {
 }
 
 await Promise.all(Array.from({ length: Math.min(CONCURRENCY, jobs.length) }, worker));
-if (fixed) saveIndex(index);
+
+// Only the article files are written here. The index is patched afterwards by
+// scripts/sync-index.mjs, which first pulls the newest content - so a long
+// translation run can never overwrite stories the newsroom published meanwhile,
+// and a timeout cannot throw away finished work.
+if (fixedSlugs.size) {
+  fs.writeFileSync('translated-slugs.txt', [...fixedSlugs].join('\n') + '\n');
+}
 
 console.log(`done: ${fixed} translation(s) written, ${failures.length} still failing`);
 for (const f of failures.slice(0, 20)) console.log(`  fail ${f}`);
