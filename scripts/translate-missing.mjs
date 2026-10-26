@@ -24,9 +24,13 @@ const missing = index.articles.filter((e) => TARGETS.some((c) => !e.locales?.[c]
 console.log(`archive: ${index.articles.length} articles, ${missing.length} missing a translation`);
 if (!missing.length) process.exit(0);
 
+// German first, across all articles: /de is the edition readers see. If the
+// run hits its timeout, the German editions are finished rather than half of
+// nine languages.
+const orderedTargets = ['de', ...TARGETS.filter((c) => c !== 'de')];
 const jobs = [];
-for (const entry of missing.slice(0, LIMIT)) {
-  for (const locale of TARGETS) {
+for (const locale of orderedTargets) {
+  for (const entry of missing.slice(0, LIMIT)) {
     if (!entry.locales?.[locale]?.title) jobs.push({ entry, locale });
   }
 }
@@ -34,6 +38,7 @@ console.log(`jobs: ${jobs.length} (concurrency ${CONCURRENCY}, retries ${RETRIES
 
 let cursor = 0;
 let fixed = 0;
+const fixedSlugs = new Set();
 const failures = [];
 
 async function worker() {
