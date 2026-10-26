@@ -61,10 +61,20 @@ const log = (...a) => {
 };
 
 async function pool(items, n, fn) {
-  const out = new Array(items.length);
+  const out = new Array(items.length).fill(null);
   let i = 0;
   await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => {
-    while (i < items.length) { const k = i++; out[k] = await fn(items[k], k).catch((e) => ({ error: e })); }
+    while (i < items.length) {
+      const k = i++;
+      // fn may return null on purpose (time budget exhausted). Calling
+      // .catch() on that null crashed whole cycles and threw away every
+      // story they had already written.
+      try {
+        out[k] = await fn(items[k], k);
+      } catch (e) {
+        out[k] = { error: e };
+      }
+    }
   }));
   return out;
 }
