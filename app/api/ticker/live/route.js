@@ -1,18 +1,65 @@
 import { NextResponse } from 'next/server';
-import Parser from 'rss-parser';
 import { getIndex } from '@/lib/content.mjs';
+import { fetchTickerFeeds } from '@/lib/tickerFeeds.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 30; // 30s cache
-
-const parser = new Parser({ timeout: 4000 });
 
 let cache = null;
 let lastFetch = 0;
 
 const WINDOW_MS = Number(process.env.TICKER_WINDOW_HOURS || 48) * 3600 * 1000;
-const MAX_LIVE = 5;
 const MAX_ARTICLES = 4;
+const MAX_NEWS = 8;
+const MAX_SPORT = 3;
+const MAX_POSITIVE = 1;
+const MAX_LIVE = MAX_ARTICLES + MAX_NEWS + MAX_SPORT + MAX_POSITIVE;
+
+// TopBar renders `label` + `text`; the ticker page renders `badge` + `title`.
+const LABELS = {
+  world: 'WELT',
+  politics: 'POLITIK',
+  business: 'WIRTSCHAFT',
+  tech: 'TECH',
+  science: 'WISSEN',
+  culture: 'KULTUR',
+  health: 'GESUNDHEIT',
+  sport: 'SPORT',
+};
+
+const FILTER_TYPE = { science: 'tech', culture: 'world', health: 'world' };
+
+function toLiveItem(item) {
+  const type = FILTER_TYPE[item.type] || item.type;
+  const label = item.positive
+    ? 'GUTE NACHRICHTEN'
+    : item.type === 'sport' && item.isLive
+      ? 'LIVE / SPORT'
+      : LABELS[item.type] || 'WELT';
+  return { ...item, type, label, text: item.title };
+}
+
+const SALIENT = /election|runoff|presidential|wins|won|victory|resigns|ceasefire|invasion|earthquake|killed|dies|death toll|verdict|ruling|coup|referendum|wählt|stichwahl|siegt|gewinnt|Rücktritt|Erdbeben|Urteil|Gipfel/i;
+
+/** Diversity-aware pick: no desk and no outlet may dominate the short wire. */
+function pick(items, limit, { perDesk = 2, perOutlet = 1, seen = new Set() } = {}) {
+  const out = [];
+  const deskCount = {};
+  const outletCount = {};
+  for (const item of items) {
+    if (out.length >= limit) break;
+    if (seen.has(item.id)) continue;
+    const desk = item.type || 'world';
+    const outlet = item.source || '';
+    if ((deskCount[desk] || 0) >= perDesk) continue;
+    if (outlet && (outletCount[outlet] || 0) >= perOutlet) continue;
+    deskCount[desk] = (deskCount[desk] || 0) + 1;
+    if (outlet) outletCount[outlet] = (outletCount[outlet] || 0) + 1;
+    seen.add(item.id);
+    out.push(item);
+  }
+  return out;
+}
 
 export async function GET() {
   const now = Date.now();
@@ -26,54 +73,27 @@ export async function GET() {
   const articles = await getIndex();
   const cutoff = now - WINDOW_MS;
 
-  // 1. Real-time football & international match feeds (Kicker & Sportschau)
+  // 1. World / politics / business / tech wire — the part that was missing.
+  //    A Brazilian election belongs here just as much as a Bundesliga result.
   try {
-    const [kickerFussball, sportschauFussball, kickerGeneral] = await Promise.allSettled([
-      parser.parseURL('https://newsfeed.kicker.de/news/fussball'),
-      parser.parseURL('https://www.sportschau.de/fussball/index~rss2.xml'),
-      parser.parseURL('https://newsfeed.kicker.de/news/aktuell'),
-    ]);
+    const wire = await fetchTickerFeeds({ maxAgeHours: 30, perFeed: 6, now });
+    const news = wire.filter((i) => i.type !== 'sport' && !i.positive);
+    const sport = wire.filter((i) => i.type === 'sport');
+    const positive = wire.filter((i) => i.positive);
 
-    const liveCandidates = [];
+    // A result like Brazil's election is minutes older than a transfer rumour
+    // but far more important. Put genuinely salient stories first so they are
+    // not crowded out by the newest item from whichever feed refreshed last.
+    const salientSince = now - 14 * 3600e3;
+    const salient = news.filter((i) => SALIENT.test(i.title) && Date.parse(i.time) >= salientSince);
+    const orderedNews = [...salient, ...news];
 
-    const processItem = (item, sourceName) => {
-      const title = (item.title || '').replace(/^(?:LIVE!|Jetzt live\s*[-–:]\s*)/i, '').trim();
-      if (!title) return;
-
-      const published = item.isoDate ? Date.parse(item.isoDate) : Date.parse(item.pubDate || '');
-      // No timestamp → not a live item. Never fake "now": that pinned old
-      // stories (e.g. a finished farewell match) to the top of the ticker.
-      if (!Number.isFinite(published) || published < cutoff || published > now + 3600e3) return;
-
-      const isLive = /live|halbzeit|endstand|führt|tor|spieltag/i.test(title);
-
-      liveCandidates.push({
-        type: 'sport',
-        label: isLive ? 'LIVE / SPORT' : 'SPORT',
-        text: title,
-        badge: isLive ? 'LIVE' : 'SPORT',
-        url: item.link,
-        source: sourceName,
-        time: new Date(published).toISOString(),
-      });
-    };
-
-    if (kickerFussball.status === 'fulfilled' && kickerFussball.value?.items) {
-      kickerFussball.value.items.slice(0, 6).forEach((i) => processItem(i, 'Kicker'));
-    }
-
-    if (sportschauFussball.status === 'fulfilled' && sportschauFussball.value?.items) {
-      sportschauFussball.value.items.slice(0, 6).forEach((i) => processItem(i, 'Sportschau'));
-    }
-
-    if (kickerGeneral.status === 'fulfilled' && kickerGeneral.value?.items) {
-      kickerGeneral.value.items.slice(0, 4).forEach((i) => processItem(i, 'Kicker'));
-    }
-
-    liveCandidates.sort((a, b) => Date.parse(b.time) - Date.parse(a.time));
-    tickerItems.push(...liveCandidates.slice(0, MAX_LIVE));
+    const seen = new Set();
+    tickerItems.push(...pick(orderedNews, MAX_NEWS, { perDesk: 3, perOutlet: 1, seen }).map(toLiveItem));
+    tickerItems.push(...pick(sport, MAX_SPORT, { perDesk: 3, perOutlet: 1, seen }).map(toLiveItem));
+    tickerItems.push(...pick(positive, MAX_POSITIVE, { perDesk: 1, perOutlet: 1, seen }).map(toLiveItem));
   } catch (err) {
-    console.error('Ticker sports fetch error:', err);
+    console.error('Ticker wire fetch error:', err);
   }
 
   // 2. Latest published PLAIN. stories (EILMELDUNG only inside the 90 min window)
@@ -88,17 +108,20 @@ export async function GET() {
       const isEilmeldung = a.importance >= 4 && isRecent;
 
       tickerItems.push({
-        type: a.category,
-        label: isEilmeldung ? 'EILMELDUNG' : a.category.toUpperCase(),
+        id: `plain-${a.slug}`,
+        type: FILTER_TYPE[a.category] || a.category,
+        label: isEilmeldung ? 'EILMELDUNG' : LABELS[a.category] || 'WELT',
         text: deTitle,
-        badge: isEilmeldung ? 'EIL' : 'AKTUELL',
+        title: deTitle,
+        badge: isEilmeldung ? 'EILMELDUNG' : LABELS[a.category] || 'WELT',
         slug: a.slug,
+        source: 'PLAIN.',
         time: a.publishedAt,
       });
     });
 
   tickerItems.sort((a, b) => Date.parse(b.time) - Date.parse(a.time));
-  cache = tickerItems.slice(0, MAX_LIVE + MAX_ARTICLES);
+  cache = tickerItems.slice(0, MAX_LIVE);
   lastFetch = now;
 
   return NextResponse.json(cache, {

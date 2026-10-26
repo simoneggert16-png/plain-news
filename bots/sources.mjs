@@ -25,7 +25,14 @@ export const FEEDS = [
   { outlet: 'ABC Australia', url: 'https://www.abc.net.au/news/feed/51120/rss.xml' },
   { outlet: 'Tagesschau', url: 'https://www.tagesschau.de/index~rss2.xml' },
   { outlet: 'UN News', url: 'https://news.un.org/feed/subscribe/en/news/all/rss.xml' },
-  { outlet: 'Good News Network', url: 'https://www.goodnewsnetwork.org/feed/' },
+  // Constructive / solutions journalism. Flagged so the source policy can
+  // accept them as a single source: their stories are original reporting that
+  // no second outlet picks up, but they are exactly the counterweight the
+  // homepage needs.
+  { outlet: 'Good News Network', url: 'https://www.goodnewsnetwork.org/feed/', positive: true },
+  { outlet: 'Positive News', url: 'https://www.positive.news/feed/', positive: true },
+  { outlet: 'Reasons to Be Cheerful', url: 'https://reasonstobecheerful.world/feed/', positive: true },
+  { outlet: 'The Optimist Daily', url: 'https://www.optimistdaily.com/feed/', positive: true },
 
   // ── Newspapers across the spectrum
   { outlet: 'The Guardian', url: 'https://www.theguardian.com/world/rss' },
@@ -59,6 +66,19 @@ export const FEEDS = [
   { outlet: 'The Japan Times', url: 'https://www.japantimes.co.jp/feed/' },
   { outlet: 'Yonhap', url: 'https://en.yna.co.kr/RSS/news.xml' },
   { outlet: 'Times of India', url: 'https://timesofindia.indiatimes.com/rssfeedstopstories.cms' },
+  { outlet: 'The Hindu', url: 'https://www.thehindu.com/news/international/feeder/default.rss' },
+  { outlet: 'NHK World', url: 'https://www3.nhk.or.jp/nhkworld/en/news/rss/all.xml' },
+  { outlet: 'CNA', url: 'https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml' },
+
+  // ── Latin America / Africa: the blind spots of the German wire
+  { outlet: 'G1', url: 'https://g1.globo.com/rss/g1/' },
+  { outlet: 'Agência Brasil', url: 'https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml' },
+  { outlet: 'Folha', url: 'https://feeds.folha.uol.com.br/mundo/rss.xml' },
+  { outlet: 'El Universal', url: 'https://www.eluniversal.com.mx/rss.xml' },
+  { outlet: 'Buenos Aires Times', url: 'https://www.batimes.com.ar/feed' },
+  { outlet: 'Mail & Guardian', url: 'https://mg.co.za/feed/' },
+  { outlet: 'AllAfrica', url: 'https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf' },
+  { outlet: 'Africanews', url: 'https://www.africanews.com/feed/rss' },
 
   // ── Business / tech / science / sport & live feeds
   { outlet: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html' },

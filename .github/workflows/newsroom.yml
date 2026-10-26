@@ -2,8 +2,11 @@ name: Newsroom
 
 on:
   schedule:
-    # Every hour at :17 UTC; target up to 2 stories per editorial category.
-    - cron: '17 * * * *'
+    # Twice an hour at odd minutes. GitHub's scheduler drops/delays entries
+    # regularly (gaps of 5-7 h were observed with a single :17 entry), so a
+    # second trigger doubles the chance that one actually fires. Concurrency
+    # keeps the runs serialised, so this does not double the workload.
+    - cron: '17,47 * * * *'
   workflow_dispatch: {}       # manual "Run workflow" button
 
 permissions:
@@ -16,16 +19,38 @@ concurrency:
 jobs:
   newsroom:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 75
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Cadence guard
+        id: cadence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Two cron entries improve the odds that GitHub actually fires one.
+          # Skip this run if the previous cycle finished less than 40 minutes
+          # ago, so a double trigger does not mean double deployments.
+          last=$(gh run list -R "${{ github.repository }}" --workflow=newsroom.yml --status=completed --limit 1 \
+            --json updatedAt --jq '.[0].updatedAt // empty')
+          if [ -n "$last" ]; then
+            mins=$(( ( $(date -u +%s) - $(date -d "$last" +%s) ) / 60 ))
+            echo "Last completed run ended $mins min ago ($last)"
+            if [ "$mins" -lt 40 ]; then
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              echo "Skipping: last cycle finished $mins min ago."
+            fi
+          fi
+      - if: steps.cadence.outputs.skip != 'true'
+        uses: actions/checkout@v4
+      - if: steps.cadence.outputs.skip != 'true'
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - if: steps.cadence.outputs.skip != 'true'
+        run: npm ci
       - name: Run AI newsroom
-        timeout-minutes: 130
+        if: steps.cadence.outputs.skip != 'true'
+        timeout-minutes: 60
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
@@ -35,7 +60,7 @@ jobs:
           TARGET_PER_CATEGORY_PER_CYCLE: '0'
           EVENT_CONCURRENCY: ${{ vars.EVENT_CONCURRENCY || '4' }}
           TRANSLATION_CONCURRENCY: ${{ vars.TRANSLATION_CONCURRENCY || '8' }}
-          RUN_BUDGET_MINUTES: '110'
+          RUN_BUDGET_MINUTES: '45'
           RECENT_WINDOW_HOURS: '1'
           MAX_ARTICLES_PER_DAY: '0'
           MAX_AGE_HOURS: '8'
@@ -46,14 +71,14 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node bots/newsroom.mjs
       - name: Mirror content to Supabase
-        if: always()
+        if: always() && steps.cadence.outputs.skip != 'true'
         continue-on-error: true
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node scripts/sync-content.mjs
       - name: Commit new stories
-        if: always()
+        if: always() && steps.cadence.outputs.skip != 'true'
         run: |
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
