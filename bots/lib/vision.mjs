@@ -187,7 +187,7 @@ Return ONLY valid raw JSON:
             },
           ],
           temperature: 0.1,
-          max_tokens: 500,
+          max_tokens: 800,
         }),
         signal: AbortSignal.timeout(VISION_TIMEOUT_MS),
       });
@@ -195,6 +195,7 @@ Return ONLY valid raw JSON:
       if (res.ok) {
         const json = await res.json();
         const raw = json.choices?.[0]?.message?.content || '';
+        if (process.env.VISION_DEBUG) console.log(`  VISION raw: ${raw.slice(0, 1200)}`);
         const match = raw.match(/\{[\s\S]*\}/);
         if (match) {
           const parsed = JSON.parse(match[0]);
