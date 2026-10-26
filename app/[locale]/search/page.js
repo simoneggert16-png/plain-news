@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
-import { listFor, localize, getArticle } from '@/lib/content.mjs';
+import { listFor, localize, getAllArticles } from '@/lib/content.mjs';
 import { listAllComments, listSubmissions, listChatMessages } from '@/lib/communityStore.mjs';
 import Card from '@/components/Card';
 
@@ -45,10 +45,11 @@ export default async function SearchPage({ params, searchParams }) {
   const isDe = locale === 'de';
   const bcp = LOCALES.find((l) => l.code === locale)?.bcp47 || 'de-CH';
 
-  const all = listFor();
+  const all = await listFor();
   const queryLower = q.toLowerCase();
 
   // 1. Search full article contents (Titles, Deks, Facts AND full body text)
+  const fullBySlug = q ? new Map((await getAllArticles()).map((a) => [a.slug, a])) : new Map();
   const results = q
     ? all.filter((a) => {
         const l = localize(a, locale);
@@ -59,7 +60,7 @@ export default async function SearchPage({ params, searchParams }) {
         if (titleMatch || dekMatch || factsMatch) return true;
 
         // Check full article body
-        const fullArticle = getArticle(a.slug);
+        const fullArticle = fullBySlug.get(a.slug);
         if (fullArticle) {
           const fullLoc = fullArticle.locales?.[locale] || fullArticle.locales?.['en'] || {};
           const bodyMatch = (fullLoc.body || []).some((p) => p.toLowerCase().includes(queryLower));

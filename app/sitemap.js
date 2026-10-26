@@ -6,7 +6,7 @@ const STATIC_PATHS = ['', '/about', '/markets', '/ticker', '/search', '/legal', 
 const alternatesFor = (path, base) =>
   Object.fromEntries(LOCALE_CODES.map((locale) => [locale, `${base}/${locale}${path}`]));
 
-export default function sitemap() {
+export default async function sitemap() {
   const base = SITE.url;
   const now = new Date();
 
@@ -30,7 +30,7 @@ export default function sitemap() {
     }))
   );
 
-  const articles = getIndex().slice(0, 1000).flatMap((article) => {
+  const articles = (await getIndex()).slice(0, 1000).flatMap((article) => {
     const lastModified = article.updatedAt || article.publishedAt;
     const languages = Object.fromEntries(
       LOCALE_CODES.map((locale) => [locale, `${base}/${locale}/a/${article.slug}`])

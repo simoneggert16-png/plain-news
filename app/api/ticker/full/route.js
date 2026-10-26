@@ -10,7 +10,13 @@ const parser = new Parser({ timeout: 4500 });
 let cache = null;
 let lastFetch = 0;
 
-export async function GET(request) {
+// A ticker is a live wire, not an archive. Anything older than the window is
+// dropped, and undated feed items are dropped instead of being stamped with
+// "now" (that bug pinned old stories to the top of the ticker forever).
+const WINDOW_MS = Number(process.env.TICKER_WINDOW_HOURS || 48) * 3600 * 1000;
+const MAX_ITEMS = Number(process.env.TICKER_MAX_ITEMS || 150);
+
+export async function GET() {
   const now = Date.now();
   if (cache && now - lastFetch < 20000) {
     return NextResponse.json(cache, {
@@ -20,7 +26,8 @@ export async function GET(request) {
 
   const items = [];
   const seenNorm = new Set();
-  const articles = getIndex();
+  const articles = await getIndex();
+  const cutoff = now - WINDOW_MS;
 
   const normalizeTitle = (str) => (str || '').toLowerCase().replace(/[^a-z0-9äöü]/g, '').slice(0, 35);
 
@@ -64,14 +71,16 @@ export async function GET(request) {
         const rawTitle = item.title || '';
         const norm = normalizeTitle(rawTitle);
         if (!norm || seenNorm.has(norm)) return;
+
+        const published = item.isoDate ? Date.parse(item.isoDate) : Date.parse(item.pubDate || '');
+        if (!Number.isFinite(published) || published < cutoff || published > now + 3600e3) return;
         seenNorm.add(norm);
 
         const cleanTitle = rawTitle.replace(/^(?:LIVE!|Jetzt live\s*[-–:]\s*)/i, '').trim();
-        const isLaenderspiel = /länderspiel|england|kroatien|spanien|tschechien|belgien|frankreich|italien|schweiz|deutschland|u\s*21|georgien|em|wm|nations league/i.test(cleanTitle);
-        const isLive = /live|halbzeit|endstand|führt|tor|spieltag|remis/i.test(cleanTitle) || isLaenderspiel;
+        const isLive = /live|halbzeit|endstand|führt|tor|spieltag|remis/i.test(cleanTitle);
 
         let badge = sportType.toUpperCase();
-        if (sportType === 'football') badge = isLaenderspiel ? 'LÄNDERSPIEL' : (isLive ? 'LIVE' : 'FUSSBALL');
+        if (sportType === 'football') badge = isLive ? 'LIVE' : 'FUSSBALL';
         else if (sportType === 'f1') badge = 'FORMEL 1';
         else if (sportType === 'eishockey') badge = 'EISHOCKEY';
         else if (sportType === 'basketball') badge = 'BASKETBALL';
@@ -82,8 +91,8 @@ export async function GET(request) {
         else if (sportType === 'cricket') badge = 'CRICKET';
 
         items.push({
-          id: `${source.toLowerCase()}-${sportType}-${idx}-${Date.parse(item.pubDate || '') || now}`,
-          time: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString(),
+          id: `${source.toLowerCase()}-${sportType}-${idx}-${published}`,
+          time: new Date(published).toISOString(),
           type: 'sport',
           sportType,
           badge,
@@ -99,51 +108,54 @@ export async function GET(request) {
     console.error('Multi-sport ticker fetch error:', err);
   }
 
-  // 2. Add published PLAIN. editorial articles into ticker
+  // 2. Add published PLAIN. editorial articles into ticker (same live window)
   const BREAKING_WINDOW_MS = 90 * 60 * 1000;
-  articles.forEach((a) => {
-    const de = a.locales?.de;
-    const en = a.locales?.en;
-    const title = de?.title || en?.title || a.slug;
-    const norm = normalizeTitle(title);
-    if (seenNorm.has(norm)) return;
-    seenNorm.add(norm);
+  articles
+    .filter((a) => Number.isFinite(Date.parse(a.publishedAt || '')) && Date.parse(a.publishedAt) >= cutoff)
+    .slice(0, 100)
+    .forEach((a) => {
+      const de = a.locales?.de;
+      const en = a.locales?.en;
+      const title = de?.title || en?.title || a.slug;
+      const norm = normalizeTitle(title);
+      if (seenNorm.has(norm)) return;
+      seenNorm.add(norm);
 
-    const isRecent = a.publishedAt && (now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS);
-    const isEilmeldung = a.importance >= 4 && isRecent;
+      const isRecent = a.publishedAt && (now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS);
+      const isEilmeldung = a.importance >= 4 && isRecent;
 
-    let sportType = 'football';
-    if (a.category === 'sport') {
-      const t = title.toLowerCase();
-      if (/tennis|djokovic|zverev|sinner|atp|wta/i.test(t)) sportType = 'tennis';
-      else if (/nfl|football|super bowl|eagles|quarterback/i.test(t)) sportType = 'nfl';
-      else if (/f1|formel|verstappen|hamilton|ferrari|grand prix/i.test(t)) sportType = 'f1';
-      else if (/nba|basketball|lakers|celtics/i.test(t)) sportType = 'basketball';
-      else if (/eishockey|nhl/i.test(t)) sportType = 'eishockey';
-      else if (/golf|ryder cup/i.test(t)) sportType = 'golf';
-    }
+      let sportType = 'football';
+      if (a.category === 'sport') {
+        const t = title.toLowerCase();
+        if (/tennis|djokovic|zverev|sinner|atp|wta/i.test(t)) sportType = 'tennis';
+        else if (/nfl|football|super bowl|eagles|quarterback/i.test(t)) sportType = 'nfl';
+        else if (/f1|formel|verstappen|hamilton|ferrari|grand prix/i.test(t)) sportType = 'f1';
+        else if (/nba|basketball|lakers|celtics/i.test(t)) sportType = 'basketball';
+        else if (/eishockey|nhl/i.test(t)) sportType = 'eishockey';
+        else if (/golf|ryder cup/i.test(t)) sportType = 'golf';
+      }
 
-    items.push({
-      id: `plain-${a.slug}`,
-      time: a.publishedAt,
-      type: a.category,
-      sportType: a.category === 'sport' ? sportType : null,
-      badge: isEilmeldung ? 'EILMELDUNG' : (a.category === 'sport' ? (sportType ? sportType.toUpperCase() : 'SPORT') : a.category.toUpperCase()),
-      title,
-      detail: de?.dek || en?.dek || null,
-      slug: a.slug,
-      source: 'PLAIN.',
-      importance: a.importance,
+      items.push({
+        id: `plain-${a.slug}`,
+        time: a.publishedAt,
+        type: a.category,
+        sportType: a.category === 'sport' ? sportType : null,
+        badge: isEilmeldung ? 'EILMELDUNG' : (a.category === 'sport' ? (sportType ? sportType.toUpperCase() : 'SPORT') : a.category.toUpperCase()),
+        title,
+        detail: de?.dek || en?.dek || null,
+        slug: a.slug,
+        source: 'PLAIN.',
+        importance: a.importance,
+      });
     });
-  });
 
-  // Sort strictly by timestamp descending
-  items.sort((a, b) => Date.parse(b.time) - Date.parse(a.time));
+  // Sort strictly by timestamp descending, then cut to the live window size.
+  items.sort((a, b) => Date.parse(b.time) - Date.parse(a.time) || String(a.id).localeCompare(String(b.id)));
 
-  cache = items;
+  cache = items.slice(0, MAX_ITEMS);
   lastFetch = now;
 
-  return NextResponse.json(items, {
+  return NextResponse.json(cache, {
     headers: { 'Cache-Control': 'public, s-maxage=20, stale-while-revalidate=40' },
   });
 }

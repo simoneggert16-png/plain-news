@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  // Article JSON files are read from disk at build time; make sure they ship with server functions.
+  // Article JSON is read from disk at build time (fallback when Supabase is not
+  // configured); keep the snapshot available to server functions.
   outputFileTracingIncludes: {
     '/**': ['./content/**/*'],
   },

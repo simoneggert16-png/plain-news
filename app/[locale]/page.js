@@ -24,7 +24,7 @@ export default async function Home({ params }) {
 
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
-  const rawAll = listFor();
+  const rawAll = await listFor();
 
   if (!rawAll.length) return <div className="empty">{t.empty}</div>;
 

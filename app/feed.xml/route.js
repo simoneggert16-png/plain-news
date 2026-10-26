@@ -7,8 +7,8 @@ const esc = (s = '') => String(s).replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>'
 
 // GET /feed.xml ships the English feed. Each item links to the canonical
 // server-rendered article, which is available in all nine languages.
-export function GET() {
-  const articles = getIndex().slice(0, 100);
+export async function GET() {
+  const articles = (await getIndex()).slice(0, 100);
   const lastBuildDate = articles[0]?.publishedAt ? new Date(articles[0].publishedAt).toUTCString() : new Date().toUTCString();
 
   const items = articles.map((a) => {

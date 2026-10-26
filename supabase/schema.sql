@@ -93,3 +93,41 @@ create index if not exists visits_country_idx on public.visits (country, ts desc
 alter table public.visits enable row level security;
 revoke all on public.visits from anon, authenticated;
 grant all on public.visits to service_role;
+
+-- ---------------------------------------------------------------------------
+-- Editorial content mirror (read by the website, written by
+-- scripts/sync-content.mjs with the service-role key).
+-- Keeps ~25 MB of article JSON out of every Vercel deployment.
+-- Content is public by definition, so anon may SELECT; writes stay service-role.
+-- ---------------------------------------------------------------------------
+create table if not exists public.articles (
+  slug text primary key,
+  published_at timestamptz,
+  updated_at timestamptz not null default now(),
+  data jsonb not null
+);
+
+create index if not exists articles_published_idx on public.articles (published_at desc);
+
+create table if not exists public.content_blobs (
+  key text primary key,
+  updated_at timestamptz not null default now(),
+  data jsonb not null
+);
+
+alter table public.articles enable row level security;
+alter table public.content_blobs enable row level security;
+
+revoke all on public.articles from anon, authenticated;
+revoke all on public.content_blobs from anon, authenticated;
+
+grant select on public.articles to anon;
+grant select on public.content_blobs to anon;
+grant all on public.articles to service_role;
+grant all on public.content_blobs to service_role;
+
+drop policy if exists articles_public_read on public.articles;
+create policy articles_public_read on public.articles for select using (true);
+
+drop policy if exists content_blobs_public_read on public.content_blobs;
+create policy content_blobs_public_read on public.content_blobs for select using (true);
