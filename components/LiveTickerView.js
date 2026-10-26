@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
@@ -13,9 +13,9 @@ const INTERVALS = [
 
 const FILTERS = [
   { id: 'all', de: 'Alle Meldungen', en: 'All' },
-  { id: 'sport', de: 'Sport & Länderspiele', en: 'Sport & Live Matches' },
+  { id: 'sport', de: 'Sport & LÃ¤nderspiele', en: 'Sport & Live Matches' },
   { id: 'politics', de: 'Politik', en: 'Politics' },
-  { id: 'business', de: 'Wirtschaft & Märkte', en: 'Business & Markets' },
+  { id: 'business', de: 'Wirtschaft & MÃ¤rkte', en: 'Business & Markets' },
   { id: 'world', de: 'Welt', en: 'World' },
   { id: 'tech', de: 'Tech & Wissenschaft', en: 'Tech & Science' },
 ];
@@ -94,6 +94,12 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
     return item.type === filter;
   });
 
+  // High-impact stories (elections, wars, disasters) stay on top of their
+  // filter for the whole day; everything else remains chronological.
+  const orderedItems = [...filteredItems].sort(
+    (a, b) => (b.important ? 1 : 0) - (a.important ? 1 : 0) || Date.parse(b.time) - Date.parse(a.time),
+  );
+
   const formatCountdown = (seconds) => {
     const m = Math.floor(seconds / 60);
     const s = seconds % 60;
@@ -147,7 +153,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
             className="liveticker-btn-refresh"
             title={isDe ? 'Jetzt aktualisieren' : 'Refresh now'}
           >
-            <span className={`refresh-icon ${loading ? 'spin' : ''}`}>⟳</span>
+            <span className={`refresh-icon ${loading ? 'spin' : ''}`}>âŸ³</span>
             <span className="countdown-text">({formatCountdown(countdown)})</span>
           </button>
         </div>
@@ -175,7 +181,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
         <div className="sport-pills-bar" style={{ padding: '8px 16px', background: 'var(--paper-2)', borderBottom: 'var(--rule)' }}>
           {[
             { id: 'all', de: 'Alle', en: 'All' },
-            { id: 'football', de: 'Fußball & Länderspiele', en: 'Football' },
+            { id: 'football', de: 'FuÃŸball & LÃ¤nderspiele', en: 'Football' },
             { id: 'tennis', de: 'Tennis', en: 'Tennis' },
             { id: 'f1', de: 'Formel 1', en: 'Formula 1' },
             { id: 'basketball', de: 'Basketball', en: 'Basketball' },
@@ -200,11 +206,11 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
       {/* Feed List */}
       <div className="liveticker-feed">
         {loading && items.length === 0 ? (
-          <div className="liveticker-empty">{isDe ? 'Lade Meldungen…' : 'Loading live updates…'}</div>
-        ) : filteredItems.length === 0 ? (
-          <div className="liveticker-empty">{isDe ? 'Keine Meldungen für diesen Filter vorhanden.' : 'No items match this filter.'}</div>
+          <div className="liveticker-empty">{isDe ? 'Lade Meldungenâ€¦' : 'Loading live updatesâ€¦'}</div>
+        ) : orderedItems.length === 0 ? (
+          <div className="liveticker-empty">{isDe ? 'Keine Meldungen fÃ¼r diesen Filter vorhanden.' : 'No items match this filter.'}</div>
         ) : (
-          filteredItems.map((item) => {
+          orderedItems.map((item) => {
             const timeStr = item.time ? new Date(item.time).toLocaleTimeString(isDe ? 'de-DE' : 'en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
             const isLiveBadge = item.badge === 'LIVE' || item.badge === 'EILMELDUNG';
 
@@ -217,7 +223,7 @@ export default function LiveTickerView({ locale = 'de', initialFilter = 'all' })
                 <div className="liveticker-entry-body">
                   <div className="liveticker-entry-header">
                     <span className={`liveticker-badge ${isLiveBadge ? 'badge-live' : 'badge-desk'}`}>
-                      {isLiveBadge ? '● ' : ''}{item.badge}
+                      {isLiveBadge ? 'â— ' : ''}{item.badge}
                     </span>
                     <h3 className="liveticker-entry-title">{item.title}</h3>
                   </div>

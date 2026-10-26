@@ -122,6 +122,7 @@ ${recentTitles.slice(0, 120).map((t) => '- ' + t).join('\n') || '- none'}
 DEDUPLICATION RULE:
 - Do not repeat an event that was already published above.
 - A clearly NEW development (new death toll, new vote, new ruling, new strike) is allowed; a repeat of the same announcement is not.
+- Elections count as major events: a result, a concession, a certified outcome or a coalition deal is a new development even if the campaign was covered before. Never drop an election event just because an older campaign story exists.
 - Otherwise choose 100% FRESH events.
 
 ${priorityCategories.length ? `PRIORITY DESKS (we are short in these categories this hour): ${priorityCategories.join(', ')}. Prefer these when the event is important enough.` : ''}
@@ -187,7 +188,7 @@ function sourcePack(sources) {
     .join('\n\n');
 }
 
-const ARTICLE_SCHEMA = `{"title":"...","dek":"one-sentence summary, max 30 words","facts":["3-5 short key facts"],"body":["3-6 paragraphs, each 2-4 sentences"],"context":"1-3 sentences of neutral background that helps a young reader understand why this is happening (only from sources)","category":"${CATEGORIES.join('|')}","importance":1}`;
+const ARTICLE_SCHEMA = `{"title":"...","dek":"one-sentence summary, max 30 words","facts":["3-5 short key facts"],"body":["3-6 paragraphs, each 2-4 sentences"],"context":"1-3 sentences of neutral background that helps a young reader understand why this is happening (only from sources)","category":"${CATEGORIES.join('|')}","importance":3}`;
 
 import { AGENT_DESKS } from './lib/desks.mjs';
 
@@ -332,7 +333,7 @@ async function processEvent(event, recentTitles, seen) {
       image: verifiedImage,
       imageCredit: imageCredit || null,
       video: heroVideo || null,
-      importance: Math.min(5, Math.max(1, +final.importance || event.importance || 3)),
+      importance: Math.min(5, Math.max(1, +event.importance || +final.importance || 3)),
       publishedAt: now.toISOString(),
       updatedAt: now.toISOString(),
       sourcePolicy: policy.policy,

@@ -3,6 +3,7 @@ import { cookies } from 'next/headers';
 import { LOCALES, CATEGORIES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
+import { rankArticles, isElectionHeadline } from '@/lib/storyRank.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
@@ -32,12 +33,21 @@ export default async function Home({ params }) {
   const all = rawAll.filter((a) => allowedTopics.includes(a.category));
   const displayArticles = all.length > 0 ? all : rawAll;
 
-  // Lead = most important story of the last 24h, else newest.
-  const dayAgo = Date.now() - 864e5;
-  const lead = [...displayArticles.filter((a) => new Date(a.publishedAt) > dayAgo)].sort((a, b) => (b.importance || 0) - (a.importance || 0))[0] || displayArticles[0];
+  // Lead = highest-impact story of the last 30h, not just the newest one.
+  // Elections and wars stay on the front page for a day instead of being
+  // buried by the next minor item that happens to publish at :26.
+  const dayAgo = Date.now() - 30 * 36e5;
+  const recent = displayArticles.filter((a) => Date.parse(a.publishedAt) >= dayAgo);
+  const lead = rankArticles(recent.length ? recent : displayArticles)[0] || displayArticles[0];
   const rest = displayArticles.filter((a) => a.slug !== lead.slug);
-  const brief = rest.slice(0, 5);
-  const latest = rest.slice(5, 14);
+  // The brief may carry at most two election headlines, otherwise every vote
+  // in the world crowds out everything else.
+  const rankedRest = rankArticles(rest);
+  const electionPicks = rankedRest.filter((a) => isElectionHeadline(a)).slice(0, 2);
+  const brief = [
+    ...electionPicks,
+    ...rankedRest.filter((a) => !electionPicks.includes(a)),
+  ].slice(0, 5);
   const L = localize(lead, locale);
   const homeUrl = `${SITE.url}/${locale}`;
   const homeJsonLd = {

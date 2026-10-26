@@ -1,6 +1,7 @@
-import { NextResponse } from 'next/server';
+﻿import { NextResponse } from 'next/server';
 import { getIndex } from '@/lib/content.mjs';
 import { fetchTickerFeeds } from '@/lib/tickerFeeds.mjs';
+import { rankArticles, isTopStory } from '@/lib/storyRank.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 30; // 30s cache
@@ -39,7 +40,10 @@ function toLiveItem(item) {
   return { ...item, type, label, text: item.title };
 }
 
-const SALIENT = /election|runoff|presidential|wins|won|victory|resigns|ceasefire|invasion|earthquake|killed|dies|death toll|verdict|ruling|coup|referendum|wählt|stichwahl|siegt|gewinnt|Rücktritt|Erdbeben|Urteil|Gipfel/i;
+const SALIENT = /election|runoff|presidential|wins|won|victory|resigns|ceasefire|invasion|earthquake|killed|dies|death toll|verdict|ruling|coup|referendum|wÃ¤hlt|stichwahl|siegt|gewinnt|RÃ¼cktritt|Erdbeben|Urteil|Gipfel/i;
+
+// Actual votes outrank other impact stories in the three reserved slots.
+const ELECTION = /election|\bwahl|stichwahl|president|prÃ¤sident|referendum/i;
 
 /** Diversity-aware pick: no desk and no outlet may dominate the short wire. */
 function pick(items, limit, { perDesk = 2, perOutlet = 1, seen = new Set() } = {}) {
@@ -73,7 +77,7 @@ export async function GET() {
   const articles = await getIndex();
   const cutoff = now - WINDOW_MS;
 
-  // 1. World / politics / business / tech wire — the part that was missing.
+  // 1. World / politics / business / tech wire â€” the part that was missing.
   //    A Brazilian election belongs here just as much as a Bundesliga result.
   try {
     const wire = await fetchTickerFeeds({ maxAgeHours: 30, perFeed: 6, now });
@@ -85,23 +89,43 @@ export async function GET() {
     // but far more important. Put genuinely salient stories first so they are
     // not crowded out by the newest item from whichever feed refreshed last.
     const salientSince = now - 14 * 3600e3;
-    const salient = news.filter((i) => SALIENT.test(i.title) && Date.parse(i.time) >= salientSince);
-    const orderedNews = [...salient, ...news];
+    const salient = news.filter(
+      (i) => (i.important || SALIENT.test(i.title)) && Date.parse(i.time) >= salientSince,
+    );
+    // Elections first, then the rest of the impact stories, newest first.
+    const orderedNews = [
+      ...salient.filter((i) => ELECTION.test(i.title)),
+      ...salient.filter((i) => !ELECTION.test(i.title)),
+      ...news,
+    ];
+    const topSlots = 3;
 
     const seen = new Set();
-    tickerItems.push(...pick(orderedNews, MAX_NEWS, { perDesk: 3, perOutlet: 1, seen }).map(toLiveItem));
+    const topNews = pick(orderedNews, topSlots, { perDesk: 4, perOutlet: 1, seen });
+    tickerItems.push(...topNews.map(toLiveItem));
+    tickerItems.push(
+      ...pick(orderedNews, MAX_NEWS - topNews.length, { perDesk: 4, perOutlet: 1, seen }).map(toLiveItem),
+    );
     tickerItems.push(...pick(sport, MAX_SPORT, { perDesk: 3, perOutlet: 1, seen }).map(toLiveItem));
     tickerItems.push(...pick(positive, MAX_POSITIVE, { perDesk: 1, perOutlet: 1, seen }).map(toLiveItem));
   } catch (err) {
     console.error('Ticker wire fetch error:', err);
   }
 
-  // 2. Latest published PLAIN. stories (EILMELDUNG only inside the 90 min window)
+  // 2. Editorial stories: two ranked by impact (so an election stays visible
+  //    for a day), the rest newest. EILMELDUNG only inside the 90 min window.
   const BREAKING_WINDOW_MS = 90 * 60 * 1000;
-  articles
-    .filter((a) => Number.isFinite(Date.parse(a.publishedAt || '')) && Date.parse(a.publishedAt) >= cutoff)
-    .slice(0, MAX_ARTICLES)
-    .forEach((a) => {
+  const inWindow = articles.filter(
+    (a) => Number.isFinite(Date.parse(a.publishedAt || '')) && Date.parse(a.publishedAt) >= cutoff,
+  );
+  const byImpact = rankArticles(inWindow).slice(0, 2);
+  const byTime = inWindow.slice(0, MAX_ARTICLES);
+  const picked = [];
+  for (const a of [...byImpact, ...byTime]) {
+    if (picked.length >= MAX_ARTICLES) break;
+    if (!picked.some((x) => x.slug === a.slug)) picked.push(a);
+  }
+  picked.forEach((a) => {
       const deTitle = a.locales?.de?.title || a.locales?.en?.title;
       if (!deTitle) return;
       const isRecent = a.publishedAt && (now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS);
@@ -116,11 +140,14 @@ export async function GET() {
         badge: isEilmeldung ? 'EILMELDUNG' : LABELS[a.category] || 'WELT',
         slug: a.slug,
         source: 'PLAIN.',
+        important: isTopStory(a) || (a.importance || 0) >= 4,
         time: a.publishedAt,
       });
     });
 
-  tickerItems.sort((a, b) => Date.parse(b.time) - Date.parse(a.time));
+  tickerItems.sort(
+    (a, b) => (b.important ? 1 : 0) - (a.important ? 1 : 0) || Date.parse(b.time) - Date.parse(a.time),
+  );
   cache = tickerItems.slice(0, MAX_LIVE);
   lastFetch = now;
 

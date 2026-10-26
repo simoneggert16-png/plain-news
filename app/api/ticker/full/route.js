@@ -1,6 +1,7 @@
-import { NextResponse } from 'next/server';
+﻿import { NextResponse } from 'next/server';
 import { getIndex } from '@/lib/content.mjs';
 import { fetchTickerFeeds } from '@/lib/tickerFeeds.mjs';
+import { rankArticles, isTopStory } from '@/lib/storyRank.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 20; // 20s cache
@@ -70,13 +71,19 @@ export async function GET() {
     console.error('Ticker wire fetch error:', err);
   }
 
-  // 2. Published PLAIN. editorial articles (same live window)
+  // 2. Published PLAIN. editorial articles (same live window). Include the
+  //    highest-impact stories even when they are hours old: the ticker had no
+  //    way to surface an election result once a gondola rescue came in.
   const plainItems = [];
   const BREAKING_WINDOW_MS = 90 * 60 * 1000;
-  articles
-    .filter((a) => Number.isFinite(Date.parse(a.publishedAt || '')) && Date.parse(a.publishedAt) >= cutoff)
-    .slice(0, 100)
-    .forEach((a) => {
+  const editorialWindow = articles.filter(
+    (a) => Number.isFinite(Date.parse(a.publishedAt || '')) && Date.parse(a.publishedAt) >= cutoff,
+  );
+  const editorialCandidates = [];
+  for (const a of [...rankArticles(editorialWindow).slice(0, 6), ...editorialWindow.slice(0, 6)]) {
+    if (!editorialCandidates.some((x) => x.slug === a.slug)) editorialCandidates.push(a);
+  }
+  editorialCandidates.forEach((a) => {
       const de = a.locales?.de;
       const en = a.locales?.en;
       const title = de?.title || en?.title || a.slug;
@@ -113,6 +120,7 @@ export async function GET() {
         slug: a.slug,
         source: 'PLAIN.',
         importance: a.importance,
+        important: isTopStory(a) || (a.importance || 0) >= 4,
       });
     });
 
