@@ -24,8 +24,17 @@ jobs:
         with:
           node-version: 22
       - run: npm ci --ignore-scripts
-      - name: Probe providers
+      - name: Probe providers (remote URL)
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
-        run: node scripts/vision-check.mjs
+          VISION_IMAGE_MODE: url
+          VISION_TIMEOUT_MS: '60000'
+        run: node scripts/vision-check.mjs 3
+      - name: Probe providers (inline data URL)
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          VISION_IMAGE_MODE: data
+          VISION_TIMEOUT_MS: '60000'
+        run: node scripts/vision-check.mjs 3

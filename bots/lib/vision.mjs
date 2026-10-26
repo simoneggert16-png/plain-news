@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import { isJunkImage, checkImageQuality } from './media.mjs';
 
 if (fs.existsSync('.env')) {
@@ -16,6 +16,10 @@ if (fs.existsSync('.env')) {
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const VISION_MODEL = process.env.NVIDIA_VISION_MODEL || 'meta/llama-3.2-11b-vision-instruct';
+// NVIDIA NIM vision is slow on cold start. The timeout is deliberately short:
+// the photo is kept even without an AI verdict (see below), so waiting a full
+// minute per image only burns the newsroom budget.
+const VISION_TIMEOUT_MS = Math.max(5000, Number(process.env.VISION_TIMEOUT_MS) || 20000);
 
 // Blacklisted phrases that indicate bad AI generation, logo captions, or meta-disclaimers
 const BANNED_CAPTION_PATTERNS = [
@@ -30,7 +34,7 @@ const BANNED_CAPTION_PATTERNS = [
   /serves\s*as\s*a\s*visual\s*representation/i,
   /generic\s*illustration/i,
   /factual,\s*precise\s*caption/i,
-  /sachliche,\s*pr[aä]zise\s*bildbeschreibung/i,
+  /sachliche,\s*pr[aÃ¤]zise\s*bildbeschreibung/i,
   /stock\s*photo/i,
 ];
 
@@ -91,7 +95,7 @@ Examine this image carefully:
 CRITICAL ACCURACY & IDENTITY RULES:
 1. DO NOT ASSUME the person in the image is the person named in the article headline! News articles frequently illustrate stories with opposition politicians, supporters, voters, or spokespersons (e.g. an article about Friedrich Merz reacting to election gains may be illustrated with a photo of AfD politician Ulrich Siegmund).
 2. If an ORIGINAL PHOTOJOURNALIST CAPTION is provided above, you MUST treat it as authoritative ground truth regarding WHO is depicted. Translate and adapt that caption cleanly into German and English.
-3. If no wire caption is available and you are not 100% certain of an individual's name, describe what is visibly happening (e.g. "AfD-Politiker auf einer Wahlbühne", "Abgeordnete im Plenarsaal", "Demonstranten vor dem Regierungsgebäude"). NEVER hallucinate or guess a politician's name from the headline!
+3. If no wire caption is available and you are not 100% certain of an individual's name, describe what is visibly happening (e.g. "AfD-Politiker auf einer WahlbÃ¼hne", "Abgeordnete im Plenarsaal", "Demonstranten vor dem RegierungsgebÃ¤ude"). NEVER hallucinate or guess a politician's name from the headline!
 4. Automatic rejection: reject TV studio screenshots, news anchor talking heads, lower-third graphics, stock illustrations, or blurred logos.
 
 If verified is true, write a calm, factual caption in German and English accurately describing what is depicted.
@@ -127,7 +131,7 @@ Return ONLY valid raw JSON:
           options: { temperature: 0.1 },
           stream: false,
         }),
-        signal: AbortSignal.timeout(45000),
+        signal: AbortSignal.timeout(Math.max(VISION_TIMEOUT_MS, 45000)),
       });
 
       if (res.ok) {
@@ -162,7 +166,7 @@ Return ONLY valid raw JSON:
     }
   }
 
-  // 3. NVIDIA NIM Vision (permanent fallback + primary after Ollama expiry — verified 200 OK)
+  // 3. NVIDIA NIM Vision (permanent fallback + primary after Ollama expiry â€” verified 200 OK)
   if (process.env.NVIDIA_API_KEY) {
     try {
       const res = await fetch(`${NVIDIA_BASE}/chat/completions`, {
@@ -178,14 +182,14 @@ Return ONLY valid raw JSON:
               role: 'user',
               content: [
                 { type: 'text', text: prompt },
-                { type: 'image_url', image_url: { url: dataUrl } },
+                { type: 'image_url', image_url: { url: process.env.VISION_IMAGE_MODE === 'url' ? imageUrl : dataUrl } },
               ],
             },
           ],
           temperature: 0.1,
           max_tokens: 500,
         }),
-        signal: AbortSignal.timeout(30000),
+        signal: AbortSignal.timeout(VISION_TIMEOUT_MS),
       });
 
       if (res.ok) {
@@ -223,4 +227,5 @@ Return ONLY valid raw JSON:
   console.log(`  VISION no verdict from any provider (${unavailable || 'none configured'}).`);
   return { verified: null, unavailable: true, reason: unavailable || 'no vision provider configured' };
 }
+
 
