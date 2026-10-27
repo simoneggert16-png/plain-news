@@ -1,0 +1,65 @@
+{
+  "slug": "women-more-likely-to-receive-psychiatric-misdiagnoses-for-autoimmune-20261027-kjlw",
+  "category": "health",
+  "image": "https://i.guim.co.uk/img/media/84c0f7699a6541de9da30fa4a33c91f1f35b01e3/433_0_4333_3467/master/4333.jpg?width=465&dpr=1&s=none&crop=none",
+  "imageCredit": "The Guardian",
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-10-27T13:48:10.366Z",
+  "updatedAt": "2026-10-27T13:48:10.366Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "The Guardian",
+      "title": "Women: was your autoimmune condition misdiagnosed?",
+      "url": "https://www.theguardian.com/wellness/2026/oct/27/woman-autoimmune-condition-community-readers",
+      "publishedAt": "2026-10-27T09:00:07.000Z"
+    },
+    {
+      "outlet": "Healthline",
+      "title": "Christina Applegate ‘Not Happy at All’ After Learning She Was Misdiagnosed With MS",
+      "url": "https://www.healthline.com/health-news/christina-applegate-reveals-misdiagnosed-ms",
+      "publishedAt": "2026-10-27T13:25:20.308Z"
+    },
+    {
+      "outlet": "Healthline",
+      "title": "Women With Autoimmune Diseases More Likely to Be Misdiagnosed Than Men",
+      "url": "https://www.healthline.com/health-news/women-with-autoimmune-diseases-often-misdiagnosed",
+      "publishedAt": "2026-10-27T13:25:20.308Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Women More Likely to Receive Psychiatric Misdiagnoses for Autoimmune Conditions",
+      "dek": "Research shows women wait longer for autoimmune diagnoses and are more often misdiagnosed with psychiatric conditions.",
+      "facts": [
+        "Women are 43% more likely than men to receive a psychiatric misdiagnosis for autoimmune conditions, according to a study by Cambridge University and the University of East Anglia (S1).",
+        "Women are 74% more likely to receive a psychosomatic misdiagnosis for autoimmune conditions (S1).",
+        "Women report delays of one to two years before diagnosis, compared to less than three months for men (S1).",
+        "A 2024 systematic review found around 15% of people diagnosed with multiple sclerosis may have another condition, with females twice as likely to be misdiagnosed (S2).",
+        "An international survey of 6,607 participants found women experience longer diagnostic delays than men (S3)."
+      ],
+      "body": [
+        "Autoimmune diseases affect roughly one in ten people globally, The Guardian reports (S1). A new study from Cambridge University and the University of East Anglia found a stark gender divide in diagnosis patterns (S1).",
+        "Women are 43% more likely than men to receive a psychiatric misdiagnosis, meaning an autoimmune issue is mistaken for a mental health problem (S1). They are also 74% more likely to receive a psychosomatic misdiagnosis, where symptoms are considered psychological or stress‑induced (S1).",
+        "The same study reported that women experience longer periods between symptom onset and diagnosis, with delays of one to two years, whereas men receive a diagnosis in less than three months (S1).",
+        "A 2024 systematic review and meta‑analysis indicated that about 15% of people diagnosed with multiple sclerosis may actually have another condition, and females are twice as likely to be misdiagnosed (S2). Misdiagnosis can lead to unnecessary treatments and emotional distress, a neurologist told Healthline (S2).",
+        "An international survey published in eClinicalMedicine, involving 6,607 participants, also found women experience longer diagnostic delays than men (S3)."
+      ],
+      "context": "Autoimmune diseases, in which the immune system attacks the body’s own cells, affect an estimated 4.6% of the U.S. population (S3). Misdiagnosis can delay proper treatment and expose patients to unnecessary medication and anxiety (S2, S3).",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "nvidia/nemotron-3-ultra-550b-a55b",
+    "desk": "Global Health & Medicine Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "First sentence attributes global prevalence statistic to the study, but the study concerns gender divide; prevalence is a separate statement in the Guardian article.",
+      "Use of 'averaging one to two years' implies a calculated mean; source gives a range ('one to two years').",
+      "MS misdiagnosis rate stated as 'actually have another condition' without 'may', overstating certainty; source says 'may actually have another condition'.",
+      "Context's second sentence synthesizes implications without direct attribution; should attribute to sources."
+    ]
+  }
+}
