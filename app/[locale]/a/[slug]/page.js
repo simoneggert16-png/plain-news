@@ -7,6 +7,7 @@ import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
 import ArticleComments from '@/components/ArticleComments';
+import LiveArticle from '@/components/LiveArticle';
 
 // Article pages are rendered on demand and cached by ISR (1h). Pre-rendering
 // every story in every language produced ~7,000 HTML files per deployment
@@ -84,10 +85,32 @@ export default async function ArticlePage({ params }) {
   const absolute = (url) => {
     try { return new URL(url, SITE.url).toString(); } catch { return url; }
   };
-  const articleBody = [l.dek, ...(l.facts || []), ...(l.body || []), l.context || '']
+  const bodyText = l.sections?.length
+    ? l.sections.flatMap((s) => [s.heading || '', ...(s.paragraphs || [])])
+    : (l.body || []);
+  const articleBody = [l.dek, l.standfirst || '', ...(l.facts || []), ...bodyText, l.context || '']
     .filter(Boolean)
     .join('\n\n');
   const wordCount = articleBody.split(/\s+/).filter(Boolean).length;
+
+  // Articles that belong to a live ticker keep their body in sync with the
+  // ticker (client-side), while the committed version stays server-rendered.
+  const isLive = Boolean(a.live);
+  const liveInitial = {
+    title: l.title,
+    dek: l.dek,
+    facts: l.facts || [],
+    body: l.body || [],
+    context: l.context || '',
+    updatedAt: a.updatedAt || a.publishedAt,
+    stats: a.stats || null,
+  };
+  const liveVersions = Array.isArray(a.history)
+    ? a.history.filter((v) => v?.locales?.en || v?.locales?.de)
+    : [];
+
+  // Long reads carry structured sections; normal reports a flat paragraph list.
+  const isLongform = a.form === 'longform' && Array.isArray(l.sections) && l.sections.length > 0;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -179,15 +202,27 @@ export default async function ArticlePage({ params }) {
       <header className="art-head">
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
           <Link href={`/${locale}/c/${a.category}`} className="label label-inv">{t.cat[a.category]}</Link>
+          {isLive && (
+            <Link href={`/${locale}/live/${a.liveSlug || a.slug}`} className="badge-live">
+              <span className="badge-live-dot" aria-hidden="true" />
+              {t.live.nav}
+            </Link>
+          )}
           {a.video && (
             <span className="badge-video">
               <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               VIDEO
             </span>
           )}
+          {isLongform && (
+            <Link href={`/${locale}/longreads`} className="badge-form">
+              {t.longreads.badge}
+            </Link>
+          )}
         </div>
         <h1>{l.title}</h1>
         <p className="dek">{l.dek}</p>
+        {isLongform && l.standfirst && <p className="standfirst">{l.standfirst}</p>}
         <div className="art-meta meta">
           <span>{locale === 'de' ? 'Von' : 'By'} PLAIN. Editorial Desk</span>
           <span>
@@ -227,22 +262,46 @@ export default async function ArticlePage({ params }) {
 
       {l.isFallback && <div className="notice">EN</div>}
 
-      {l.facts?.length > 0 && (
-        <section className="facts">
-          <h2>{t.keyFacts}</h2>
-          <ul>{l.facts.map((f, i) => <li key={i}>{f}</li>)}</ul>
-        </section>
-      )}
+      {isLive ? (
+        <LiveArticle
+          slug={a.slug}
+          locale={locale}
+          initial={liveInitial}
+          versions={liveVersions}
+          tickerSlug={a.liveSlug || null}
+          live
+        />
+      ) : (
+        <>
+          {l.facts?.length > 0 && (
+            <section className="facts">
+              <h2>{t.keyFacts}</h2>
+              <ul>{l.facts.map((f, i) => <li key={i}>{f}</li>)}</ul>
+            </section>
+          )}
 
-      <div className="body">
-        {(l.body || []).map((p, i) => <p key={i}>{p}</p>)}
-      </div>
+          {isLongform ? (
+            <div className="body longform">
+              {l.sections.map((s, i) => (
+                <section className="lf-section" key={i}>
+                  {s.heading && <h2>{s.heading}</h2>}
+                  {(s.paragraphs || []).map((p, j) => <p key={j}>{p}</p>)}
+                </section>
+              ))}
+            </div>
+          ) : (
+            <div className="body">
+              {(l.body || []).map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+          )}
 
-      {l.context && (
-        <section className="art-section">
-          <h2>{t.context}</h2>
-          <p>{l.context}</p>
-        </section>
+          {l.context && (
+            <section className="art-section">
+              <h2>{t.context}</h2>
+              <p>{l.context}</p>
+            </section>
+          )}
+        </>
       )}
 
       <section className="art-section">

@@ -9,6 +9,9 @@ export default function Footer({ locale, t }) {
         <p className="footer-claim">{t.footer}</p>
         <nav className="footer-links">
           <Link href={`/${locale}/search`}>{locale === 'de' ? 'Suche' : 'Search'}</Link>
+          <Link href={`/${locale}/longreads`}>{t.longreads.nav}</Link>
+          <Link href={`/${locale}/live`}>{t.live.nav}</Link>
+          <Link href={`/${locale}/sources`}>{t.sourcesPage.nav}</Link>
           <Link href={`/${locale}/about`}>{t.about}</Link>
           <Link href={`/${locale}/legal`}>{locale === 'de' ? 'Impressum' : 'Legal'}</Link>
           <Link href={`/${locale}/markets`}>{t.markets}</Link>

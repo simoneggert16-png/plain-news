@@ -1,0 +1,85 @@
+name: Live tickers
+
+on:
+  schedule:
+    # Every 10 minutes. No-ops in a few seconds when no ticker is live.
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+    inputs:
+      create:
+        description: 'Force-open a new ticker: title of the event (leave empty for a normal run)'
+        type: string
+        required: false
+      keywords:
+        description: 'Comma-separated keywords for the forced ticker, e.g. "israel,knesset,wahl"'
+        type: string
+        required: false
+      end:
+        description: 'Slug of a ticker to close'
+        type: string
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Rebase on main
+        run: git pull --rebase --autostash
+
+      - name: Update live tickers
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          LIVE_WINDOW_HOURS: '6'
+          LIVE_PER_FEED: '25'
+          LIVE_MIN_SOURCES: '2'
+          LIVE_MIN_OUTLETS_CREATE: '4'
+          LIVE_MAX_NEW_TICKERS: '1'
+          LIVE_MAX_UPDATES_PER_RUN: '3'
+          LIVE_ARTICLE_REFRESH_MIN: '25'
+          LIVE_IDLE_END_HOURS: '12'
+          LIVE_AUTO_CREATE: '1'
+          LIVE_TRANSLATE_CONCURRENCY: '4'
+        run: |
+          if [ -n "${{ inputs.create }}" ]; then
+            node bots/live.mjs --create "${{ inputs.create }}" --keywords "${{ inputs.keywords }}"
+          elif [ -n "${{ inputs.end }}" ]; then
+            node bots/live.mjs --end "${{ inputs.end }}"
+          else
+            node bots/live.mjs
+          fi
+
+      - name: Mirror content to Supabase
+        if: always()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/sync-content.mjs || echo "supabase mirror skipped"
+
+      - name: Commit ticker archive and running articles
+        if: always()
+        run: |
+          git config user.name "simoneggert16-png"
+          git config user.email "simoneggert16@gmail.com"
+          git add content
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase --autostash
+          git push

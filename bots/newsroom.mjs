@@ -34,7 +34,8 @@ import { loadIndex, saveIndex, loadState, saveState, saveArticle, loadArticle, t
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
-import { classifySources, normalizeDraft, isPublishableArticle } from '../lib/editorial.mjs';
+import { classifySources, normalizeDraft, isPublishableArticle, importanceFromCoverage, freshestAgeHours, distinctOutlets, isDuplicateStory } from '../lib/editorial.mjs';
+import { watchScore, isLiveWorthy } from '../lib/watchlist.mjs';
 
 const configuredLimit = (name, fallback = Infinity) => {
   const value = Number(process.env[name]);
@@ -80,36 +81,9 @@ async function pool(items, n, fn) {
 }
 
 // ─────────────────────────── 2. DESK ───────────────────────────
-const STOP_WORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'first', 'report', 'study', 'finds', 'announces', 'amid', 'during', 'could']);
-
-export function isDuplicateStory(candidateText, existingTitles = []) {
-  if (!candidateText || !existingTitles.length) return { isDup: false };
-  const getKeywords = (str) => {
-    return new Set(
-      str.toLowerCase()
-        .replace(/[^a-z0-9\s]/g, ' ')
-        .split(/\s+/)
-        .filter((w) => w.length >= 4 && !STOP_WORDS.has(w))
-    );
-  };
-  const candWords = getKeywords(candidateText);
-  if (candWords.size === 0) return { isDup: false };
-
-  for (const existing of existingTitles) {
-    const existWords = getKeywords(existing);
-    let matchCount = 0;
-    for (const w of candWords) {
-      if (existWords.has(w)) matchCount++;
-    }
-    const overlap = matchCount / Math.min(candWords.size, existWords.size);
-    // Slightly looser than before: new developments (new toll, new ruling, new
-    // vote) were being dropped as "duplicates" of the original story.
-    if ((matchCount >= 4 && overlap >= 0.5) || (matchCount >= 3 && overlap >= 0.72)) {
-      return { isDup: true, matchCount, overlap, matchingTitle: existing };
-    }
-  }
-  return { isDup: false };
-}
+// Duplicate detection lives in lib/editorial.mjs so the live ticker uses the
+// exact same rule. Re-exported for older imports/tests.
+export { isDuplicateStory };
 
 // ─────────────────────────── TRANSLATION BACKFILL ───────────────────────────
 // A translation call can fail (rate limit, timeout, malformed JSON). The
@@ -206,7 +180,14 @@ Format response strictly as JSON:
       const sources = e.ids.map((i) => items[i]);
       const policy = classifySources(sources);
       const positive = Boolean(e.positive) || (sources.length > 0 && sources.every((s) => s.positive));
-      return { ...e, positive, sources, outlets: policy.outlets.length, sourcePolicy: policy.policy, policyOk: policy.ok };
+      const text = `${e.event} ${sources.map((s) => s.title).join(' ')}`;
+      const watch = Math.max(watchScore(text), ...sources.map((s) => s.watch || 0));
+      const outlets = policy.outlets.length;
+      const importance = Math.max(
+        Number.isFinite(+e.importance) ? +e.importance : 1,
+        importanceFromCoverage({ outlets, ageHours: freshestAgeHours(sources), watch, category: e.category })
+      );
+      return { ...e, positive, sources, outlets, sourcePolicy: policy.policy, policyOk: policy.ok, watch, importance };
     })
     .filter((e) => e.policyOk)
     .filter((e) => {
@@ -219,14 +200,14 @@ Format response strictly as JSON:
       return true;
     });
 
-  // Rank: priority desk boost first, then importance, then breadth of coverage.
-  // Constructive events get a small nudge so the positive mix actually reaches
-  // the reporter instead of dying in the queue.
+  // Rank: watchlist first, then importance, then breadth of coverage. Filling an
+  // empty category and constructive stories are tiebreakers — they must never
+  // outrank a major story.
   events.sort((a, b) => {
-    const aNeeded = priorityCategories.includes(a.category) ? 50 : 0;
-    const bNeeded = priorityCategories.includes(b.category) ? 50 : 0;
-    return (bNeeded + b.importance * 10 + b.outlets + (b.positive ? 8 : 0))
-      - (aNeeded + a.importance * 10 + a.outlets + (a.positive ? 8 : 0));
+    const aNeeded = priorityCategories.includes(a.category) ? 5 : 0;
+    const bNeeded = priorityCategories.includes(b.category) ? 5 : 0;
+    return (b.watch * 1000 + b.importance * 20 + b.outlets + bNeeded + (b.positive ? 8 : 0))
+         - (a.watch * 1000 + a.importance * 20 + a.outlets + aNeeded + (a.positive ? 8 : 0));
   });
   const perCat = {};
   return events.filter((e) => (perCat[e.category] = (perCat[e.category] || 0) + 1) <= MAX_PER_CATEGORY);
@@ -291,11 +272,13 @@ async function processEvent(event, recentTitles, seen) {
   const allSources = [...event.sources];
   try {
     log(`\n▶ ${event.category.toUpperCase()} [${event.importance}] ${event.event} (${event.outlets} outlets, ${event.sourcePolicy})`);
-    // Read up to 5 sources in full (one per outlet preferred).
+    // Read up to 5 sources in full (one per outlet preferred, direct feeds
+    // before Google News redirects, which often have no readable text).
+    const preferred = [...event.sources].sort((a, b) => (a.aggregator ? 1 : 0) - (b.aggregator ? 1 : 0));
     const byOutlet = new Map();
-    for (const s of event.sources) if (!byOutlet.has(s.outlet)) byOutlet.set(s.outlet, s);
+    for (const s of preferred) if (!byOutlet.has(s.outlet)) byOutlet.set(s.outlet, s);
     const unique = [...byOutlet.values()];
-    const reading = [...unique, ...event.sources.filter((s) => !unique.includes(s))].slice(0, 5);
+    const reading = [...unique, ...preferred.filter((s) => !unique.includes(s))].slice(0, 5);
     await pool(reading, 5, async (s) => {
       const details = await fetchArticleDetails(s.url);
       s.text = details.text;
@@ -351,6 +334,16 @@ async function processEvent(event, recentTitles, seen) {
     const category = CATEGORIES.includes(final.category) ? final.category : event.category;
     const now = new Date();
 
+    // Observable importance beats the writer's self-assessment: the model
+    // returned 1 for every single story, which killed ranking and EILMELDUNG.
+    const computedImportance = importanceFromCoverage({
+      outlets: policy.outlets.length,
+      ageHours: freshestAgeHours(event.sources),
+      watch: event.watch || watchScore(`${event.event} ${final.title}`),
+      category,
+    });
+    const importance = Math.max(computedImportance, Math.min(5, +final.importance || 0));
+
     // Multimodal double-check & captioning
     let imageCaption = null;
     let imageCaptionDe = null;
@@ -392,7 +385,7 @@ async function processEvent(event, recentTitles, seen) {
       image: verifiedImage,
       imageCredit: imageCredit || null,
       video: heroVideo || null,
-      importance: Math.min(5, Math.max(1, +event.importance || +final.importance || 3)),
+      importance: Math.min(5, Math.max(1, +event.importance || importance || +final.importance || 3)),
       publishedAt: now.toISOString(),
       updatedAt: now.toISOString(),
       sourcePolicy: policy.policy,
@@ -439,10 +432,18 @@ async function main() {
   log(`SCOUT  fetching ${FEEDS.length} feeds…`);
   const { items: raw, feedsOk } = await fetchFeeds(FEEDS, {
     maxAgeHours: +(process.env.MAX_AGE_HOURS || 12),
-    perFeed: +(process.env.PER_FEED || 20),
+    perFeed: +(process.env.PER_FEED || 25),
   });
+  // Tag every headline before anything is filtered or clustered: watchlist
+  // weight (0-3) and whether it looks like rolling live coverage.
+  for (const it of raw) {
+    const text = `${it.title} ${it.summary || ''}`;
+    it.watch = watchScore(text);
+    it.liveWorthy = isLiveWorthy(text);
+    it.isLive = !!(it.isLive || it.liveWorthy);
+  }
   const items = raw.filter((i) => !seen.has(i.url));
-  log(`SCOUT  ${feedsOk}/${FEEDS.length} feeds ok, ${raw.length} items, ${items.length} unseen`);
+  log(`SCOUT  ${feedsOk}/${FEEDS.length} feeds ok, ${raw.length} items, ${items.length} unseen (${items.filter((i) => i.isLive).length} live, ${items.filter((i) => i.watch >= 2).length} watchlist)`);
   if (!items.length) return log('Nothing new. Done.');
 
   // Deduplicate against the last 14 days (full archive is only ~140 stories, but
@@ -474,22 +475,6 @@ async function main() {
   // Cluster headlines by shared keywords so that several outlets covering the
   // SAME event end up in the same desk batch. Splitting them across batches
   // made the desk see only single-source events and drop them.
-  const CATEGORY_HINTS = [
-    ['climate', /climate|warming|emissions|carbon|renewable|solar|wind|glacier|drought|wildfire|cop\d*|biodiversity|ecosystem/i],
-    ['health', /health|who|cdc|virus|vaccine|disease|hospital|epidemic|cancer|clinical|medicine|drug|fda|mental/i],
-    ['science', /nobel|space|telescope|physics|biology|nasa|esa|genome|dna|discovery|satellite|research|study|scientist|quantum/i],
-    ['tech', /technology|tech|\bai\b|artificial intelligence|software|chip|semiconductor|apple|google|microsoft|meta|openai|cyber|robot|smartphone|internet/i],
-    ['business', /market|stock|inflation|rate|central bank|fed|ecb|acquisition|merger|gdp|economy|earnings|trade|tariff|oil|bank|company/i],
-    ['sport', /match|game|league|cup|championship|olympic|football|soccer|basketball|tennis|formula|f1|nba|nfl|fifa|uefa|athlete|coach/i],
-    ['culture', /culture|film|movie|theatre|theater|museum|art\b|exhibition|author|book|novel|award|oscars|music|album|festival|fashion/i],
-    ['politics', /election|parliament|congress|senate|president|minister|vote|law|court|policy|government|trump|putin|xi jinping|\beu\b|sanction|diplomat/i],
-    ['world', /war|conflict|attack|ceasefire|border|military|protest|earthquake|flood|refugee|summit|\bun\b|nato|middle east|ukraine|gaza|israel|china|africa|asia|europe/i],
-  ];
-  const hintCategory = (it) => {
-    const text = `${it.title} ${it.summary || ''}`;
-    for (const [cat, re] of CATEGORY_HINTS) if (re.test(text)) return cat;
-    return 'world';
-  };
   const rawWords = (it) => new Set(
     `${it.title} ${it.summary || ''}`.toLowerCase()
       .replace(/[^a-z0-9\s]/g, ' ')
@@ -504,7 +489,7 @@ async function main() {
   const commonWords = new Set([...docFreq.entries()].filter(([, c]) => c > commonCut).map(([w]) => w));
   const keywordsOf = (it) => new Set([...rawWords(it)].filter((w) => !commonWords.has(w)));
 
-  const MAX_CLUSTER = Math.max(2, +(process.env.CLUSTER_MAX || 8));
+  const MAX_CLUSTER = Math.max(2, +(process.env.CLUSTER_MAX || 12));
   const clusters = [];
   for (const it of items) {
     const words = keywordsOf(it);
@@ -524,13 +509,23 @@ async function main() {
 
   const batchSize = +(process.env.DESK_BATCH_SIZE || 60);
   const prioritySet = new Set(priorityCategories);
-  // Bigger clusters = events covered by more outlets: show those to the desk first.
-  clusters.sort((a, b) => {
-    const aPri = prioritySet.has(hintCategory(a.items[0])) ? 1 : 0;
-    const bPri = prioritySet.has(hintCategory(b.items[0])) ? 1 : 0;
-    if (aPri !== bPri) return bPri - aPri;
-    return b.items.length - a.items.length;
-  });
+  // Rank candidate clusters by what readers would call "the news": watchlist
+  // topics first, then the number of independent outlets, then volume, then
+  // freshness. This is what used to go wrong — the desk saw whatever fit into
+  // two batches, not the stories the most outlets were covering.
+  const clusterStats = (c) => {
+    const outlets = distinctOutlets(c.items).length;
+    const watch = Math.max(0, ...c.items.map((i) => i.watch || 0));
+    const newest = Math.max(0, ...c.items.map((i) => Date.parse(i.publishedAt) || 0));
+    const ageH = (Date.now() - newest) / 3600e3;
+    const fresh = ageH <= 1 ? 3 : ageH <= 4 ? 2 : ageH <= 10 ? 1 : 0;
+    return { outlets, watch, fresh, score: watch * 1000 + outlets * 25 + c.items.length + fresh * 10 };
+  };
+  const ranked = clusters.map((c) => ({ cluster: c, ...clusterStats(c) }));
+  ranked.sort((a, b) => b.score - a.score);
+  clusters.length = 0;
+  clusters.push(...ranked.map((r) => r.cluster));
+  log(`SCOUT  widest coverage: ${ranked.slice(0, 6).map((r) => `${r.outlets}x ${r.cluster.items[0].title.slice(0, 40)}`).join(' | ') || 'none'}`);
 
   // Keep every cluster (event) intact inside one batch.
   const batches = [];
@@ -544,6 +539,15 @@ async function main() {
   }
   if (current.length) batches.push(current);
   const maxBatches = Math.min(+(process.env.DESK_MAX_BATCHES || 2), batches.length);
+
+  // Make the blind spot visible. If a watchlist story with several outlets did
+  // not even reach the desk, that is a scouting bug, not an editorial decision.
+  const batchedClusters = new Set(batches.slice(0, maxBatches).flat());
+  for (const r of ranked) {
+    if (r.watch >= 2 && r.outlets >= 2 && !batchedClusters.has(r.cluster)) {
+      log(`SCOUT MISS  watchlist cluster not shown to desk: "${r.cluster.items[0].title.slice(0, 60)}" (${r.outlets} outlets)`);
+    }
+  }
 
   let allEvents = [];
   const publishedTitles = [...dedupTitles];
@@ -596,6 +600,21 @@ async function main() {
   const projected = { ...publishedInWindow };
   const perCat = {};
   const events = [];
+
+  // 1) Watchlist stories with real coverage are guaranteed a slot: an election
+  //    or a war must not lose its place to a thin lobby story just because the
+  //    category already hit its hourly target.
+  for (const e of allEvents) {
+    if (events.length >= MAX_STORIES) break;
+    if (e.watch >= 2 && e.importance >= 3) {
+      events.push(e);
+      perCat[e.category] = (perCat[e.category] || 0) + 1;
+      projected[e.category] = (projected[e.category] || 0) + 1;
+      log(`DESK   guaranteed slot (watchlist ${e.watch}, ${e.outlets} outlets): ${e.event.slice(0, 70)}`);
+    }
+  }
+
+  // 2) Reserve one slot per desk so the front page stays varied.
   for (const category of CATEGORIES.filter((c) => c !== 'community')) {
     if ((projected[category] || 0) >= MIN_PER_CATEGORY_PER_CYCLE) continue;
     if ((perCat[category] || 0) >= MAX_PER_CATEGORY || events.length >= MAX_STORIES) continue;

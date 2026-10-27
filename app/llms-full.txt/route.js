@@ -1,5 +1,6 @@
 import { SITE, LOCALE_CODES, CATEGORIES, LOCALES } from '@/lib/config.mjs';
 import { getIndex, localize } from '@/lib/content.mjs';
+import { getLiveIndex } from '@/lib/liveStore.mjs';
 
 export const dynamic = 'force-static';
 
@@ -20,6 +21,9 @@ export async function GET() {
   lines.push(`RSS feed: ${SITE.url}/feed.xml`);
   lines.push(`About, operator and editorial policy: ${SITE.url}/en/about`);
   lines.push(`Legal notice: ${SITE.url}/en/legal`);
+  lines.push(`Long reads (2-3 long, explanatory pieces per day): ${SITE.url}/en/longreads`);
+  lines.push(`Sources and research tools we use: ${SITE.url}/en/sources`);
+  lines.push(`Live tickers: ${SITE.url}/en/live`);
   lines.push(`Languages: ${LOCALES.map((l) => `${l.label} (${l.code})`).join(', ')}`);
   lines.push(`Categories: ${CATEGORIES.map((c) => c).join(', ')}`);
   lines.push('');
@@ -41,6 +45,9 @@ export async function GET() {
     lines.push(`### ${en.title}`);
     lines.push(`- URL: ${canonical}`);
     lines.push(`- Category: ${article.category}`);
+    if (article.form === 'longform') {
+      lines.push(`- Form: long read${article.readingMinutes ? ` (${article.readingMinutes} min)` : ''}`);
+    }
     lines.push(`- Published: ${article.publishedAt || 'unknown'}`);
     if (article.updatedAt && article.updatedAt !== article.publishedAt) {
       lines.push(`- Updated: ${article.updatedAt}`);
@@ -52,6 +59,28 @@ export async function GET() {
     }
     lines.push(`- Other languages: ${LOCALE_CODES.filter((l) => l !== 'en').map((l) => `${SITE.url}/${l}/a/${article.slug}`).join(' ')}`);
     lines.push('');
+  }
+
+  const live = getLiveIndex();
+  if (live.length) {
+    lines.push(`## Live tickers (${live.length})`);
+    lines.push('');
+    lines.push('A live ticker is one continuing event. Each entry is confirmed by at least two independent outlets and links its sources. The ticker page is updated continuously; earlier article versions stay readable on the linked article.');
+    lines.push('');
+    for (const ticker of live) {
+      const en = ticker.locales?.en || {};
+      lines.push(`### ${en.title || ticker.topic || ticker.slug}`);
+      lines.push(`- URL: ${SITE.url}/en/live/${ticker.slug}`);
+      lines.push(`- Status: ${ticker.status}`);
+      lines.push(`- Started: ${ticker.startedAt || 'unknown'}`);
+      if (ticker.updatedAt) lines.push(`- Updated: ${ticker.updatedAt}`);
+      if (ticker.endedAt) lines.push(`- Ended: ${ticker.endedAt}`);
+      if (Number.isFinite(ticker.updateCount)) lines.push(`- Confirmed updates: ${ticker.updateCount}`);
+      if (en.dek) lines.push(`- Summary: ${en.dek}`);
+      if (ticker.articleSlug) lines.push(`- Running article: ${SITE.url}/en/a/${ticker.articleSlug}`);
+      lines.push(`- Other languages: ${LOCALE_CODES.filter((l) => l !== 'en').map((l) => `${SITE.url}/${l}/live/${ticker.slug}`).join(' ')}`);
+      lines.push('');
+    }
   }
 
   lines.push('## Notes for retrieval systems');

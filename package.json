@@ -8,6 +8,8 @@
     "build": "next build",
     "start": "next start",
     "bot:newsroom": "node bots/newsroom.mjs",
+    "bot:live": "node bots/live.mjs",
+    "bot:longform": "node bots/longform.mjs",
     "bot:maintenance": "node bots/maintenance.mjs",
     "newsletter:send": "node scripts/send_newsletter.mjs",
     "check:ai": "node scripts/check_ai_visibility.mjs",

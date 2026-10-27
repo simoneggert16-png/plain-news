@@ -43,6 +43,59 @@ Das System nutzt NVIDIA NIM APIs (u.a. `nvidia/nemotron-3-super-120b`, `openai/g
 
 Zusätzlich läuft ein **Wartungs-Bot** (`bots/maintenance.mjs`), der kaputte Artikel aussortiert, Duplikate bereinigt, veraltete News nach 45 Tagen archiviert und unvollständige Übersetzungen heilt.
 
+### Live-Ticker (`bots/live.mjs`)
+
+Ein Liveticker gehört zu **einem** laufenden Ereignis (Wahlnacht, Krieg, Katastrophe, Gerichtsverfahren) und sammelt chronologisch bestätigte Meldungen. Er läuft alle 10 Minuten, solange er offen ist:
+
+```
+1. RADAR      Feeds holen und Schlagzeilen gegen laufende Ticker matchen
+2. DETECT     Ticker automatisch öffnen, wenn ein Watchlist-Ereignis breit belegt ist
+3. WRITE      Meldungen zu Fakten bündeln (ein LLM-Call pro Ticker)
+4. GATE       Jedes Update braucht ≥2 unabhängige Medien – als Code-Gate, nicht als Prompt
+5. TRANSLATE  Neue Zeilen in alle 9 Sprachen übersetzen (gebündelt pro Sprache)
+6. ARTICLE    Laufenden Artikel (EN+DE) neu schreiben, alte Fassung als Version behalten
+7. SAVE       Supabase (live, ohne Redeploy) + content/live/*.json (Archiv)
+```
+
+- **Quelle zur Laufzeit ist Supabase** (`supabase/live_schema.sql`): Aktualisierungen sind in Sekunden sichtbar, ohne Vercel-Deploy. `content/live/*.json` ist Archiv und Fallback.
+- **Der verlinkte Artikel aktualisiert sich live**: Die Seite liefert die committete Fassung serverseitig aus, der Client pollt `/api/live/article/<slug>` und tauscht den Text. Frühere Fassungen bleiben unter „Frühere Versionen“ lesbar (max. 20).
+- **Beenden**: Ohne bestätigte Updates über `LIVE_IDLE_END_HOURS` (Standard 12) schließt der Bot den Ticker automatisch (`--end <slug>` geht auch manuell). Beendete Ticker bleiben dauerhaft lesbar.
+- **Live-Statistiken**: Für Zahlen gilt die Zwei-Quellen-Regel **nicht**. Ein Wert ist veröffentlicht oder nicht, deshalb genügt **eine vertrauenswürdige Quelle** (Statistikamt, Wahlkommission, Zentralbank, Agentur). Nicht vertrauenswürdige Einzelquellen werden im Code verworfen. Der Snapshot liegt in `ticker.stats` (+ `statsHistory`, max. 60), wird in den Artikel gespiegelt und im Frontend live nachgezogen (`LIVE_STATS=0` schaltet das Feature ab).
+
+| Endpunkt / Route | Zweck |
+|---|---|
+| `/[locale]/live` | Übersicht: laufende und beendete Ticker |
+| `/[locale]/live/<slug>` | Ticker selbst (`force-dynamic`, `LiveBlogPosting`-JSON-LD) |
+| `/api/live` | Aktive Ticker für Banner und Übersicht |
+| `/api/live/<slug>` | Voller Ticker für das Client-Polling |
+| `/api/live/article/<slug>` | Neueste Artikel-Fassung + Versionshistorie |
+
+Der Banner über dem Header ist pro Besucher schließbar (`localStorage`), über die Seite `/live` wieder einschaltbar und global per `NEXT_PUBLIC_LIVE_BANNER=0` abschaltbar.
+
+### Reportagen & lange Texte (`bots/longform.mjs`)
+
+Zwei bis drei große Stücke pro Tag – keine Meinung, sondern die Erklärung, für die im News-Takt sonst kein Platz ist:
+
+```
+1. RADAR      Feeds holen, Schlagzeilen zu Themen clustern (≥2 Medien)
+2. PLAN       ein LLM-Call wählt die Themen, die 950+ Wörter hergeben
+3. MATERIAL   Volltexte lesen + passende eigene Archivartikel als Hintergrund
+4. WRITE      4–6 Abschnitte, danach ein strenger Editor-Durchgang
+5. TRANSLATE  Übersetzung in EN, DE, FR, ES, IT, PT (andere Sprachen fallen auf EN zurück)
+6. PUBLISH    form:"longform" → content/articles + index (mit readingMinutes)
+```
+
+- **Länge als Gate**: Unter `LONGFORM_MIN_WORDS` (Standard 950) wird nichts veröffentlicht; der Editor darf das Stück nicht zu einem Nachrichtenartikel kürzen.
+- **Kein Füllmaterial**: Alles muss in den Quellen stehen. Was nicht belegt ist, fällt raus – lieber kein Long Read als ein erfundener.
+- **Struktur**: `sections: [{ heading, paragraphs[] }]`; das flache `body` bleibt für RSS, `llms-full.txt` und Kompatibilität erhalten.
+- **Seiten**: Übersicht `/[locale]/longreads`, Badge „Reportage“ und Lesezeit auf der Artikelseite, Band auf der Startseite.
+- **Steuerung**: `LONGFORM_PER_RUN`, `LONGFORM_MIN_WORDS`, `LONGFORM_LOCALES`, `LONGFORM_DRY_RUN=1` (schreibt nichts). Zeitplan: `.github/workflows/longform.yml`, 3× täglich.
+
+### Quellen & Werkzeuge (`/[locale]/sources`)
+
+Die Seite zeigt, womit die Redaktion tatsächlich arbeitet: alle Medien aus `bots/sources.mjs` (plus die Google-News-Radar-Abfragen), kuratierte Primärquellen (Wahlkommissionen, Statistikämter, Zentralbanken, Gerichte), Recherche- und Verifikationswerkzeuge sowie die Modelle, die schreiben und prüfen. Die Liste ist bewusst kurz und wird von Hand gepflegt – nur was wirklich benutzt wird.
+
+
 ---
 
 ##  Deployment & Automatisierung
@@ -54,8 +107,9 @@ Das Portal ist für **Vercel** optimiert:
 - **Git-basiert**: Jedes Mal, wenn die Bots neuen Content pushen, aktualisiert sich die Seite automatisch ohne Downtime.
 
 ### 2. Autonome Bots via GitHub Actions
-In `.github/workflows/` sind drei Workflows hinterlegt:
+In `.github/workflows/` sind vier Workflows hinterlegt:
 - `newsroom.yml`: Läuft **stündlich** (`cron: '17 * * * *'`) und hat keine feste Obergrenze pro Kategorie, pro Lauf oder pro Tag. Wie viele Artikel tatsächlich erscheinen, hängt von aktuellen, ausreichend belegten Meldungen und dem Laufzeitbudget ab. Community-Beiträge sind davon ausgenommen.
+- `live.yml`: Läuft **alle 10 Minuten** (`cron: '*/10 * * * *'`) und aktualisiert laufende Liveticker. Ohne offenen Ticker beendet er sich in Sekunden.
 - `maintenance.yml`: Läuft täglich um 03:40 UTC für Cleanup und Re-Indexing.
 - `newsletter.yml`: Sendet täglich um 06:15 UTC ein Briefing mit den wichtigsten neuen Artikeln an bestätigte Abonnenten.
 
@@ -161,6 +215,13 @@ npm run build
 
 # Newsroom-Bot manuell ausführen
 node --env-file=.env bots/newsroom.mjs
+
+# Liveticker-Bot manuell ausführen (ohne Flags = normaler Lauf)
+node --env-file=.env bots/live.mjs
+node --env-file=.env bots/live.mjs --create "Title" --keywords "israel,knesset,wahl"
+
+# Reportagen-Bot manuell ausführen (LONGFORM_DRY_RUN=1 schreibt nichts)
+node --env-file=.env bots/longform.mjs
 
 # Wartungs-Bot manuell ausführen
 node --env-file=.env bots/maintenance.mjs

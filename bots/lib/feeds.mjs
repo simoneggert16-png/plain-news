@@ -9,10 +9,26 @@ export const clean = (s = '') =>
     .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
     .replace(/\s+/g, ' ').trim();
 
-const JUNK = /(live:|live updates|as it happened|quiz|crossword|wordle|horoscope|podcast|newsletter|sponsored|deal(s)? of|best .* to buy|opinion|op-ed|letters:|in pictures|watch:|video:|gallery)/i;
+// Hard junk only. Live blogs, "live updates" and "as it happened" are kept on
+// purpose: those are exactly the pages that carry rolling coverage of
+// elections, wars and disasters. They get flagged with isLive instead of being
+// thrown away before the desk ever sees them.
+const JUNK = /(quiz|crossword|wordle|horoscope|podcast|newsletter|sponsored|deal(s)? of|best .* to buy|op-ed|letters:|in pictures|photo gallery|live stream|how to watch)/i;
+const OPINION = /\b(opinion|commentary|column|editorial board|analysis:)\b/i;
+const LINK_JUNK = /\/(opinion|commentisfree|video|videos|gallery|pictures|slideshow)\//i;
+const LIVE_RE = /\b(live|liveticker|live ticker|live updates?|as it happened|breaking|eilmeldung|rolling coverage)\b/i;
+
+/** Google News RSS puts the real publisher at the end: "Headline - The Guardian". */
+function publisherFromAggregator(title = '') {
+  const m = title.match(/\s[-–—]\s([^-–—]{2,40})$/);
+  if (!m) return { title, publisher: null };
+  const publisher = m[1].trim();
+  if (!publisher || /google|news\.google|^\W+$/i.test(publisher)) return { title, publisher: null };
+  return { title: title.slice(0, m.index).trim(), publisher };
+}
 
 /** Fetch all feeds in parallel; return recent, de-junked items. */
-export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 14 } = {}) {
+export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 20 } = {}) {
   const cutoff = Date.now() - maxAgeHours * 3600e3;
   const results = await Promise.allSettled(feeds.map((f) => parser.parseURL(f.url).then((r) => ({ f, r }))));
   const items = [];
@@ -22,26 +38,50 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 14 } = {})
     ok++;
     const { f, r } = res.value;
     for (const it of (r.items || []).slice(0, perFeed)) {
-      const title = clean(it.title);
+      let title = clean(it.title);
+      let outlet = f.outlet;
+      if (!title) continue;
+
+      if (f.kind === 'aggregator') {
+        const parsed = publisherFromAggregator(title);
+        if (!parsed.publisher) continue; // no publisher = cannot count as a source
+        title = parsed.title;
+        outlet = parsed.publisher;
+      }
+
       const link = it.link?.trim();
-      if (!title || !link || JUNK.test(title) || /\/(opinion|commentisfree|video|live)\//i.test(link)) continue;
+      if (!link || JUNK.test(title) || OPINION.test(title) || LINK_JUNK.test(link)) continue;
       const ts = Date.parse(it.isoDate || it.pubDate || '') || Date.now();
       if (ts < cutoff) continue;
       const img = it.enclosure?.url || it['media:content']?.url || it['media:thumbnail']?.url || null;
+      const summary = clean(it.contentSnippet || it.content || it.summary || it.description || '').slice(0, 700);
       items.push({
-        outlet: f.outlet,
+        outlet,
         title,
         url: link,
         image: img,
-        summary: clean(it.contentSnippet || it.content || it.summary || it.description || '').slice(0, 500),
+        summary,
         publishedAt: new Date(ts).toISOString(),
         ...(f.positive ? { positive: true } : {}),
+        via: f.via || (f.kind === 'aggregator' ? 'Google News' : null),
+        aggregator: f.kind === 'aggregator',
+        isLive: LIVE_RE.test(title) || /\/live\//i.test(link),
       });
     }
   }
-  // de-dup by URL
+  // de-dup by URL and by outlet+title (the same story often appears in two
+  // section feeds of the same outlet under different URLs).
   const seen = new Set();
-  return { items: items.filter((i) => (seen.has(i.url) ? false : seen.add(i.url))), feedsOk: ok, feedsTotal: feeds.length };
+  const seenTitle = new Set();
+  const unique = items.filter((i) => {
+    if (seen.has(i.url)) return false;
+    seen.add(i.url);
+    const key = `${i.outlet.toLowerCase()}|${i.title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().slice(0, 90)}`;
+    if (seenTitle.has(key)) return false;
+    seenTitle.add(key);
+    return true;
+  });
+  return { items: unique, feedsOk: ok, feedsTotal: feeds.length };
 }
 
 import { extractVideoFromHtml, extractImagesFromHtml, isJunkImage, cleanImageUrl } from './media.mjs';
@@ -52,7 +92,7 @@ export async function fetchArticleDetails(url, maxChars = 3500) {
     const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'text/html' }, signal: AbortSignal.timeout(12000), redirect: 'follow' });
     if (!res.ok) return { text: '', image: null, video: null };
     const html = await res.text();
-    
+
     // Extract video (YouTube embed or MP4 stream)
     const video = extractVideoFromHtml(html);
 
@@ -73,4 +113,3 @@ export async function fetchArticleDetails(url, maxChars = 3500) {
     return { text: '', image: null, imageCaption: null, imageCredit: null, video: null };
   }
 }
-

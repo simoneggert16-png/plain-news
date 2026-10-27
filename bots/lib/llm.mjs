@@ -38,6 +38,8 @@ export const MODELS = {
   translator: [process.env.TRANSLATOR_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
   // Editor: adversarial check
   editor:     [process.env.EDITOR_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
+  // Live ticker: needs to be fast (every 10 min) and still write clean prose.
+  live:       [process.env.LIVE_MODEL || NEMOTRON_120B, GPT_OSS_20B, GEMMA_31B, NEMOTRON_550B],
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

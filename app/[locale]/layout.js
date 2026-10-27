@@ -3,12 +3,15 @@ import { LOCALES, LOCALE_CODES, SITE, isLocale } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import LiveBanner from '@/components/LiveBanner';
 import { Analytics } from '@vercel/analytics/next';
 import '@fontsource/instrument-serif/latin-400.css';
 import '@fontsource/instrument-serif/latin-400-italic.css';
 import '@fontsource-variable/inter-tight/index.css';
 import '@fontsource-variable/jetbrains-mono/index.css';
 import '../globals.css';
+import '../live.css';
+import '../pages.css';
 
 export function generateStaticParams() {
   return LOCALE_CODES.map((locale) => ({ locale }));
@@ -156,6 +159,7 @@ export default async function LocaleLayout({ children, params }) {
       </head>
       <body data-locale={locale}>
         <Header locale={locale} t={t} />
+        <LiveBanner locale={locale} />
         <main className="wrap">{children}</main>
         <Footer locale={locale} t={t} />
         <Analytics />

@@ -40,18 +40,6 @@ export default async function Home({ params }) {
   const recent = displayArticles.filter((a) => Date.parse(a.publishedAt) >= dayAgo);
   const lead = rankArticles(recent.length ? recent : displayArticles)[0] || displayArticles[0];
   const rest = displayArticles.filter((a) => a.slug !== lead.slug);
-  // The brief may carry at most two election headlines, otherwise every vote
-  // in the world crowds out everything else. Stories about the same subject as
-  // the lead (e.g. a second Israel election item) are skipped so the front
-  // page never repeats itself.
-  const rankedRest = rankArticles(rest);
-  const electionPicks = [];
-  for (const a of rankedRest) {
-    if (electionPicks.length >= 2) break;
-    if (!isElectionHeadline(a) || sharesSubject(a, lead)) continue;
-    if (electionPicks.some((p) => sharesSubject(a, p))) continue;
-    electionPicks.push(a);
-  }
   const brief = [];
   const fillTarget = 5 - electionPicks.length;
   for (const a of rankedRest) {
@@ -62,6 +50,8 @@ export default async function Home({ params }) {
     brief.push(a);
   }
   brief.unshift(...electionPicks);
+  // Long reads get their own band: they are the pieces we spent the day on.
+  const longreads = rawAll.filter((a) => a.form === 'longform').slice(0, 3);
   const L = localize(lead, locale);
   const homeUrl = `${SITE.url}/${locale}`;
   const homeJsonLd = {
@@ -154,6 +144,31 @@ export default async function Home({ params }) {
         <Link href={`/${locale}/markets`}>{t.markets} →</Link>
       </div>
       <MarketStrip locale={locale} />
+
+      {longreads.length > 0 && (
+        <section className="lr-band">
+          <div className="sec-head">
+            <h2>{t.longreads.latest}</h2>
+            <Link href={`/${locale}/longreads`}>{t.longreads.nav} →</Link>
+          </div>
+          <div className="lr-band-grid">
+            {longreads.map((a) => {
+              const l = localize(a, locale);
+              return (
+                <Link key={a.slug} href={`/${locale}/a/${a.slug}`} className="lr-band-item">
+                  <span className="label">{t.cat[a.category] || a.category}</span>
+                  <h3>{l.title}</h3>
+                  <p>{l.standfirst || l.dek}</p>
+                  <span className="meta">
+                    {fmtDate(a.publishedAt, bcp)}
+                    {a.readingMinutes ? ` · ${fmt(t.minRead, { n: a.readingMinutes })}` : ''}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       {rest.length > 0 && (
         <>
