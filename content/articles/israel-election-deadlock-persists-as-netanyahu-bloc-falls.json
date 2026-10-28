@@ -6,22 +6,22 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-28T18:57:30.689Z",
-  "updatedAt": "2026-10-28T21:41:30.448Z",
+  "updatedAt": "2026-10-28T22:57:32.373Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
   "stats": {
     "label": "Israel Election Results",
-    "note": "Snapshot of seat counts and vote counting progress in the 2026 Israeli election.",
+    "note": "Snapshot of seat counts, turnout and ballot counting in the 2026 Israeli election.",
     "unit": "",
     "max": null,
     "asOf": "2026-10-28T12:00:00.000Z",
-    "updatedAt": "2026-10-28T19:07:25.465Z",
+    "updatedAt": "2026-10-28T22:57:31.781Z",
     "source": {
       "outlet": "BBC",
       "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
       "url": "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-10-28T16:59:47.000Z",
+      "publishedAt": "2026-10-28T20:24:39.000Z",
       "trusted": true
     },
     "sourceCount": 1,
@@ -29,14 +29,11 @@
       {
         "key": "counted-ballots",
         "label": "Counted ballots",
-        "value": 86,
+        "value": 85,
         "change": null,
         "locales": {
           "de": {
             "label": "Gezählte Stimmen"
-          },
-          "it": {
-            "label": "Voti conteggiati"
           },
           "fr": {
             "label": "Bulletins comptés"
@@ -44,17 +41,20 @@
           "es": {
             "label": "Votos contados"
           },
+          "it": {
+            "label": "Voti conteggiati"
+          },
+          "pt": {
+            "label": "Votos contabilizados"
+          },
           "zh": {
             "label": "已计票"
-          },
-          "ko": {
-            "label": "집계된 투표지"
           },
           "ja": {
             "label": "集計済み投票票数"
           },
-          "pt": {
-            "label": "Votos contabilizados"
+          "ko": {
+            "label": "집계된 투표지"
           }
         }
       },
@@ -67,26 +67,26 @@
           "de": {
             "label": "Sitze des Netanyahu-Blocs"
           },
-          "it": {
-            "label": "Seggi del blocco Netanyahu"
-          },
           "fr": {
             "label": "Sièges du bloc Netanyahu"
           },
           "es": {
             "label": "Asientos del bloque Netanyahu"
           },
+          "it": {
+            "label": "Seggi del blocco Netanyahu"
+          },
+          "pt": {
+            "label": "Assentos do bloco Netanyahu"
+          },
           "zh": {
             "label": "内塔尼亚胡阵营席位"
-          },
-          "ko": {
-            "label": "네타냐후 블록 의석"
           },
           "ja": {
             "label": "ネタニヤフ陣営の議席数"
           },
-          "pt": {
-            "label": "Assentos do bloco Netanyahu"
+          "ko": {
+            "label": "네타냐후 블록 의석"
           }
         }
       },
@@ -99,26 +99,26 @@
           "de": {
             "label": "Sitze der Oppositionsblöcke"
           },
-          "it": {
-            "label": "Seggi del blocco di opposizione"
-          },
           "fr": {
             "label": "Sièges du bloc d'opposition"
           },
           "es": {
             "label": "Asientos del bloque de oposición"
           },
+          "it": {
+            "label": "Seggi del blocco di opposizione"
+          },
+          "pt": {
+            "label": "Assentos do bloco da oposição"
+          },
           "zh": {
             "label": "反对派阵营席位"
-          },
-          "ko": {
-            "label": "반대 블록 의석"
           },
           "ja": {
             "label": "野党陣営の議席数"
           },
-          "pt": {
-            "label": "Assentos do bloco da oposição"
+          "ko": {
+            "label": "반대 블록 의석"
           }
         }
       },
@@ -131,26 +131,26 @@
           "de": {
             "label": "Sitze arabischer Parteien"
           },
-          "it": {
-            "label": "Seggi dei partiti arabi"
-          },
           "fr": {
             "label": "Sièges des partis arabes"
           },
           "es": {
             "label": "Asientos de los partidos árabes"
           },
+          "it": {
+            "label": "Seggi dei partiti arabi"
+          },
+          "pt": {
+            "label": "Assentos dos partidos árabes"
+          },
           "zh": {
             "label": "阿拉伯党派席位"
-          },
-          "ko": {
-            "label": "아랍 정당 의석"
           },
           "ja": {
             "label": "アラブ政党の議席数"
           },
-          "pt": {
-            "label": "Assentos dos partidos árabes"
+          "ko": {
+            "label": "아랍 정당 의석"
           }
         }
       },
@@ -163,26 +163,26 @@
           "de": {
             "label": "Gesamtzahl der Knesset-Sitze"
           },
-          "it": {
-            "label": "Totale seggi della Knesset"
-          },
           "fr": {
             "label": "Sièges totaux de la Knesset"
           },
           "es": {
             "label": "Asientos totales de la Knesset"
           },
+          "it": {
+            "label": "Totale seggi della Knesset"
+          },
+          "pt": {
+            "label": "Total de assentos na Knesset"
+          },
           "zh": {
             "label": "议会总席位"
-          },
-          "ko": {
-            "label": "전체 국회 의석"
           },
           "ja": {
             "label": "全議席数"
           },
-          "pt": {
-            "label": "Total de assentos na Knesset"
+          "ko": {
+            "label": "전체 국회 의석"
           }
         }
       },
@@ -195,62 +195,62 @@
           "de": {
             "label": "Wählerbeteiligung arabischer Wähler"
           },
-          "it": {
-            "label": "Turnout degli elettori arabi"
-          },
           "fr": {
             "label": "Taux de participation des électeurs arabes"
           },
           "es": {
             "label": "Participación de votantes árabes"
           },
+          "it": {
+            "label": "Turnout degli elettori arabi"
+          },
+          "pt": {
+            "label": "Participação dos eleitores árabes"
+          },
           "zh": {
             "label": "阿拉伯选民投票率"
-          },
-          "ko": {
-            "label": "아랍 유권자 투표율"
           },
           "ja": {
             "label": "アラブ有権者投票率"
           },
-          "pt": {
-            "label": "Participação dos eleitores árabes"
+          "ko": {
+            "label": "아랍 유권자 투표율"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "Ergebnisse der israelischen Wahl",
-        "note": "Momentaufnahme der Sitzverteilung und des Fortschritts der Stimmenzählung bei der israelischen Wahl 2026."
+        "note": "Momentaufnahme der Sitzverteilung und des Fortschritts der Stimmenzählung bei der israelischen Wahl 2026.",
+        "label": "Ergebnisse der israelischen Wahl"
       },
       "fr": {
-        "label": "Résultats des élections israéliennes",
-        "note": "Instantané des effectifs de sièges et de l'avancement du dépouillement dans l'élection israélienne de 2026."
+        "note": "Instantané des effectifs de sièges et de l'avancement du dépouillement dans l'élection israélienne de 2026.",
+        "label": "Résultats des élections israéliennes"
       },
       "es": {
-        "label": "Resultados de las elecciones de Israel",
-        "note": "Instantánea de los recuentos de asientos y el progreso del conteo de votos en las elecciones israelíes de 2026."
+        "note": "Instantánea de los recuentos de asientos y el progreso del conteo de votos en las elecciones israelíes de 2026.",
+        "label": "Resultados de las elecciones de Israel"
       },
       "it": {
-        "label": "Risultati Elezioni Israele",
-        "note": "Riepilogo dei conteggi dei seggi e dello stato di avanzamento del conteggio dei voti nelle elezioni israeliane del 2026."
+        "note": "Riepilogo dei conteggi dei seggi e dello stato di avanzamento del conteggio dei voti nelle elezioni israeliane del 2026.",
+        "label": "Risultati Elezioni Israele"
       },
       "pt": {
-        "label": "Resultados das Eleições em Israel",
-        "note": "Instantâneo dos números de assentos e do progresso da contagem de votos nas eleições israelenses de 2026."
+        "note": "Instantâneo dos números de assentos e do progresso da contagem de votos nas eleições israelenses de 2026.",
+        "label": "Resultados das Eleições em Israel"
       },
       "zh": {
-        "label": "以色列选举结果",
-        "note": "2026年以色列选举中席位计数和投票进度的快照。"
+        "note": "2026年以色列选举中席位计数和投票进度的快照。",
+        "label": "以色列选举结果"
       },
       "ja": {
-        "label": "イスラエル選挙結果",
-        "note": "2026年イスラエル選挙における議席数と投票集計の進捗状況を示すスナップショット。"
+        "note": "2026年イスラエル選挙における議席数と投票集計の進捗状況を示すスナップショット。",
+        "label": "イスラエル選挙結果"
       },
       "ko": {
-        "label": "이스라엘 선거 결과",
-        "note": "2026년 이스라엘 선거에서 의석 수와 득표 진행 상황을 한눈에 보여주는 스냅샷."
+        "note": "2026년 이스라엘 선거에서 의석 수와 득표 진행 상황을 한눈에 보여주는 스냅샷.",
+        "label": "이스라엘 선거 결과"
       }
     }
   },
