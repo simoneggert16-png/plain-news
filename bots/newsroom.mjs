@@ -34,7 +34,7 @@ import { loadIndex, saveIndex, loadState, saveState, saveArticle, loadArticle, t
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { curateMedia } from './lib/media.mjs';
 import { verifyAndCaptionImage } from './lib/vision.mjs';
-import { classifySources, normalizeDraft, isPublishableArticle, importanceFromCoverage, freshestAgeHours, distinctOutlets, isDuplicateStory } from '../lib/editorial.mjs';
+import { classifySources, normalizeDraft, isPublishableArticle, importanceFromCoverage, freshestAgeHours, distinctOutlets, isDuplicateStory, STOP_WORDS } from '../lib/editorial.mjs';
 import { watchScore, isLiveWorthy } from '../lib/watchlist.mjs';
 
 const configuredLimit = (name, fallback = Infinity) => {
