@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
-import { listFor, searchArticles } from '@/lib/content.mjs';
+import { entriesForSlugs, searchArticles } from '@/lib/content.mjs';
 import { searchCommunity } from '@/lib/communityStore.mjs';
 import Card from '@/components/Card';
 
@@ -27,8 +27,6 @@ export default async function SearchPage({ params, searchParams }) {
   const isDe = locale === 'de';
   const bcp = LOCALES.find((l) => l.code === locale)?.bcp47 || 'de-CH';
 
-  const all = await listFor();
-
   // Full-text search runs in Postgres (fast); community search runs alongside.
   // A community backend that is briefly unavailable must not take the article
   // search down with it.
@@ -39,8 +37,7 @@ export default async function SearchPage({ params, searchParams }) {
       ])
     : [[], { comments: [], submissions: [], chatMessages: [] }];
 
-  const bySlug = new Map(all.map((a) => [a.slug, a]));
-  const results = slugs.map((slug) => bySlug.get(slug)).filter(Boolean);
+  const results = await entriesForSlugs(slugs);
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
