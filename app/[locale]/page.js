@@ -39,7 +39,19 @@ export default async function Home({ params }) {
   // buried by the next minor item that happens to publish at :26.
   const dayAgo = Date.now() - 30 * 36e5;
   const recent = displayArticles.filter((a) => Date.parse(a.publishedAt) >= dayAgo);
-  const lead = rankArticles(recent.length ? recent : displayArticles)[0] || displayArticles[0];
+  // Nothing on the German front page may be English: prefer articles that
+  // actually have this locale. The most important story wins among those.
+  // A "translation" that is byte-identical to the English title is a failed
+  // translation (the old pipeline stored those), so it does not count.
+  const normTitle = (s) => String(s ?? '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const translated = (a) => {
+    if (locale === 'en') return true;
+    const t = a.locales?.[locale]?.title;
+    if (!t) return false;
+    return normTitle(t) !== normTitle(a.locales?.en?.title);
+  };
+  const rankedAll = rankArticles(recent.length ? recent : displayArticles);
+  const lead = rankedAll.find(translated) || rankedAll[0] || displayArticles[0];
   const rest = displayArticles.filter((a) => a.slug !== lead.slug);
   // The brief may carry at most two election headlines, otherwise every vote in
   // the world crowds out everything else. Stories about the same subject as the
@@ -49,6 +61,7 @@ export default async function Home({ params }) {
   const electionPicks = [];
   for (const a of rankedRest) {
     if (electionPicks.length >= 2) break;
+    if (!translated(a)) continue;
     if (!isElectionHeadline(a) || sharesSubject(a, lead)) continue;
     if (electionPicks.some((p) => sharesSubject(a, p))) continue;
     electionPicks.push(a);
@@ -57,10 +70,22 @@ export default async function Home({ params }) {
   const fillTarget = 5 - electionPicks.length;
   for (const a of rankedRest) {
     if (brief.length >= fillTarget) break;
+    if (!translated(a)) continue;
     if (electionPicks.includes(a) || isElectionHeadline(a)) continue;
     if (sharesSubject(a, lead)) continue;
     if (brief.some((b) => sharesSubject(a, b))) continue;
     brief.push(a);
+  }
+  // Only if there are not enough translated stories at all, fall back to the
+  // untranslated ones (a gap in the brief is worse than a foreign headline).
+  if (brief.length < fillTarget) {
+    for (const a of rankedRest) {
+      if (brief.length >= fillTarget) break;
+      if (translated(a) || electionPicks.includes(a)) continue;
+      if (sharesSubject(a, lead)) continue;
+      if (brief.some((b) => sharesSubject(a, b))) continue;
+      brief.push(a);
+    }
   }
   brief.unshift(...electionPicks);
   // Live coverage of whatever is actually running (election night, war,
