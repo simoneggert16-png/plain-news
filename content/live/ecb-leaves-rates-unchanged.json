@@ -7,47 +7,95 @@
       "Rock Hill Herald"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "openai/gpt-oss-20b"
+    "lastUpdateModel": "ollama/gemma4:31b"
   },
   "slug": "ecb-leaves-rates-unchanged",
   "topic": "ECB leaves rates unchanged",
   "status": "live",
   "article": {
     "slug": "ecb-leaves-rates-unchanged",
+    "updatedAt": "2026-10-29T21:04:39.442Z",
     "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "",
-        "body": [],
-        "facts": [],
-        "title": "EZB hält Leitzins bei 2,5 %",
-        "context": ""
-      },
       "en": {
-        "dek": "ECB keeps main policy rate at 2.5% and announces President Christine Lagarde will resign on 7 February 2027.",
-        "body": [
-          "On 29 October 2026, the ECB left its main policy rate unchanged at 2.5% and announced that President Christine Lagarde will step down on 7 February 2027. According to Yahoo Finance and CNA, the decision was made on Thursday.",
-          "The rate decision was reported by Tagesschau and CNBC, which both said the ECB held the rate at 2.5%.",
-          "Lagarde said the ECB debated a rate hike and hinted at a possible move in December. Euronews reported that she made the statement, and Morningstar noted that the December hike is now in focus.",
-          "Lagarde confirmed her resignation in a statement released by The Straits Times and CNBC. She said she would step down before the end of her term to speak freely on topics beyond monetary policy.",
-          "The ECB cited an energy shock as a driver of inflation when it left rates unchanged. Morningstar reported that the energy shock is an inflation driver.",
-          "The decision comes after months of speculation about Lagarde’s future. The Straits Times reported that her resignation is effective 7 February 2027.",
-          "The ECB’s policy rate influences borrowing costs across eurozone member states.",
-          "Lagarde has served as ECB president since 2019."
-        ],
-        "facts": [
-          "Christine Lagarde will resign on 7 February 2027.",
-          "ECB kept its main policy rate at 2.5%.",
-          "ECB debated a rate hike and hinted at a December move.",
-          "An energy shock is cited as an inflation driver.",
-          "Decision was made on 29 October 2026."
-        ],
         "title": "ECB keeps key interest rate at 2.5%",
-        "context": "The European Central Bank sets monetary policy for the eurozone, with its main policy rate influencing borrowing costs across member states. Christine Lagarde has served as ECB president since 2019. The ECB’s policy decisions are closely watched by markets and governments.",
+        "dek": "ECB held its main policy rate at 2.5% on 29 Oct 2026 and President Christine Lagarde announced she will resign on 7 Feb 2027.",
+        "facts": [
+          "ECB kept its main policy rate at 2.5% on 29 Oct 2026 (Tagesschau, CNBC).",
+          "The decision was reported by Yahoo Finance and CNA as made on Thursday (Yahoo Finance, CNA).",
+          "President Christine Lagarde will resign effective 7 Feb 2027 (Euronews, The Straits Times).",
+          "Lagarde said the ECB debated a rate hike and a December move is now in focus (Euronews, Morningstar).",
+          "ECB cited an energy shock as an inflation driver (Morningstar)."
+        ],
+        "body": [
+          "On 29 October 2026, the European Central Bank left its main policy rate unchanged at 2.5%, according to Tagesschau and CNBC. Yahoo Finance and CNA noted that the decision was made on Thursday.",
+          "President Christine Lagarde announced she will step down on 7 February 2027, saying she wants to speak freely on topics beyond monetary policy. The announcement was reported by Euronews, The Straits Times and CNBC.",
+          "Lagarde said the Governing Council debated a rate hike and that a possible move in December is now in focus. Morningstar reported that the December hike moves into focus following the meeting.",
+          "The ECB cited an energy shock as a driver of inflation when it left rates unchanged. Morningstar highlighted the energy shock in its coverage of the decision.",
+          "The euro edged higher against the dollar after the decision, as reported by CNA. Yahoo Finance also noted that European equities rose in Thursday trading following the announcement.",
+          "Speculation about Lagarde’s future had been reported for months, and The Straits Times said her resignation comes after that period of speculation. The resignation is effective 7 February 2027."
+        ],
+        "context": "The ECB cited an energy shock as a driver of inflation when it left rates unchanged (Morningstar).",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "EZB belässt Leitzins bei 2,5 %",
+        "dek": "Die EZB hielt ihren Leitzins am 29. Oktober 2026 bei 2,5 %, und Präsidentin Christine Lagarde kündigte ihren Rücktritt zum 7. Februar 2027 an.",
+        "facts": [
+          "Die EZB beließ ihren Leitzins am 29. Oktober 2026 bei 2,5 % (Tagesschau, CNBC).",
+          "Die Entscheidung wurde von Yahoo Finance und CNA als am Donnerstag getroffen gemeldet (Yahoo Finance, CNA).",
+          "Präsidentin Christine Lagarde wird zum 7. Februar 2027 zurücktreten (Euronews, The Straits Times).",
+          "Lagarde sagte, die EZB habe über eine Zinserhöhung debattiert und ein Schritt im Dezember stehe nun im Fokus (Euronews, Morningstar).",
+          "Die EZB nannte einen Energieschock als Inflationstreiber (Morningstar)."
+        ],
+        "body": [
+          "Am 29. Oktober 2026 beließ die Europäische Zentralbank ihren Leitzins unverändert bei 2,5 %, so Tagesschau und CNBC. Yahoo Finance und CNA merkten an, dass die Entscheidung am Donnerstag getroffen wurde.",
+          "Präsidentin Christine Lagarde kündigte an, dass sie am 7. Februar 2027 zurücktreten wird, mit der Begründung, sie wolle sich frei zu Themen außerhalb der Geldpolitik äußern. Die Ankündigung wurde von Euronews, The Straits Times und CNBC berichtet.",
+          "Lagarde sagte, der Rat habe über eine Zinserhöhung debattiert und ein möglicher Schritt im Dezember stehe nun im Fokus. Morningstar berichtete, dass die Dezember-Erhöhung nach dem Treffen in den Fokus rücke.",
+          "Die EZB nannte einen Energieschock als Treiber der Inflation, als sie die Zinsen unverändert ließ. Morningstar hob den Energieschock in seiner Berichterstattung über die Entscheidung hervor.",
+          "Der Euro legte nach der Entscheidung gegenüber dem Dollar leicht zu, wie CNA berichtete. Yahoo Finance merkte ebenfalls an, dass europäische Aktien im Donnerstagshandel nach der Ankündigung stiegen.",
+          "Spekulationen über Lagardes Zukunft wurden bereits seit Monaten berichtet, und The Straits Times schrieb, ihr Rücktritt erfolge nach dieser Phase der Spekulation. Der Rücktritt wird zum 7. Februar 2027 wirksam."
+        ],
+        "context": "Die EZB nannte einen Energieschock als Treiber der Inflation, als sie die Zinsen unverändert ließ (Morningstar)."
       }
     },
     "versions": [
+      {
+        "at": "2026-10-29T18:03:35.491Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "ECB keeps main policy rate at 2.5% and announces President Christine Lagarde will resign on 7 February 2027.",
+            "body": [
+              "On 29 October 2026, the ECB left its main policy rate unchanged at 2.5% and announced that President Christine Lagarde will step down on 7 February 2027. According to Yahoo Finance and CNA, the decision was made on Thursday.",
+              "The rate decision was reported by Tagesschau and CNBC, which both said the ECB held the rate at 2.5%.",
+              "Lagarde said the ECB debated a rate hike and hinted at a possible move in December. Euronews reported that she made the statement, and Morningstar noted that the December hike is now in focus.",
+              "Lagarde confirmed her resignation in a statement released by The Straits Times and CNBC. She said she would step down before the end of her term to speak freely on topics beyond monetary policy.",
+              "The ECB cited an energy shock as a driver of inflation when it left rates unchanged. Morningstar reported that the energy shock is an inflation driver.",
+              "The decision comes after months of speculation about Lagarde’s future. The Straits Times reported that her resignation is effective 7 February 2027.",
+              "The ECB’s policy rate influences borrowing costs across eurozone member states.",
+              "Lagarde has served as ECB president since 2019."
+            ],
+            "facts": [
+              "Christine Lagarde will resign on 7 February 2027.",
+              "ECB kept its main policy rate at 2.5%.",
+              "ECB debated a rate hike and hinted at a December move.",
+              "An energy shock is cited as an inflation driver.",
+              "Decision was made on 29 October 2026."
+            ],
+            "title": "ECB keeps key interest rate at 2.5%",
+            "context": "The European Central Bank sets monetary policy for the eurozone, with its main policy rate influencing borrowing costs across member states. Christine Lagarde has served as ECB president since 2019. The ECB’s policy decisions are closely watched by markets and governments.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "EZB hält Leitzins bei 2,5 %",
+            "context": ""
+          }
+        }
+      },
       {
         "at": "2026-10-29T16:10:01.598Z",
         "reason": "1 new update(s)",
@@ -116,8 +164,7 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-10-29T18:03:35.491Z"
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -159,6 +206,64 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1793303014000-ra6o",
+      "at": "2026-10-29T19:43:34.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "EU and Canada explore associate member status",
+          "body": "European Commission President Ursula von der Leyen said on 29 October that the EU and Canada are exploring Canada becoming an associate member. The designation is divisive among member countries, according to the South China Morning Post."
+        },
+        "es": {
+          "headline": "La UE y Canadá exploran el estatus de miembro asociado",
+          "body": "La presidenta de la Comisión Europea, Ursula von der Leyen, afirmó el 29 de octubre que la UE y Canadá están explorando que Canadá se convierta en miembro asociado. Según el South China Morning Post, esta designación es divisiva entre los países miembros."
+        },
+        "fr": {
+          "headline": "L'UE et le Canada explorent le statut de membre associé",
+          "body": "La présidente de la Commission européenne, Ursula von der Leyen, a déclaré le 29 octobre que l'UE et le Canada étudient la possibilité que le Canada devienne membre associé. Cette désignation divise les pays membres, selon le South China Morning Post."
+        },
+        "de": {
+          "headline": "EU und Kanada prüfen Status als assoziiertes Mitglied",
+          "body": "Die Präsidentin der Europäischen Kommission, Ursula von der Leyen, erklärte am 29. Oktober, dass die EU und Kanada die Möglichkeit eines assoziierten Mitgliedstatus für Kanada prüfen. Laut der South China Morning Post ist diese Bezeichnung unter den Mitgliedstaaten umstritten."
+        },
+        "it": {
+          "headline": "UE e Canada valutano lo status di membro associato",
+          "body": "La presidente della Commissione europea Ursula von der Leyen ha dichiarato il 29 ottobre che l'UE e il Canada stanno valutando l'ipotesi che quest'ultimo diventi un membro associato. La designazione divide i paesi membri, secondo il South China Morning Post."
+        },
+        "pt": {
+          "headline": "UE e Canadá exploram estatuto de membro associado",
+          "body": "A Presidente da Comissão Europeia, Ursula von der Leyen, afirmou a 29 de outubro que a UE e o Canadá estão a explorar a possibilidade de o Canadá se tornar um membro associado. A designação é divisiva entre os países membros, segundo o South China Morning Post."
+        },
+        "zh": {
+          "headline": "欧盟与加拿大探讨准会员身份",
+          "body": "欧盟委员会主席乌尔苏拉·冯德莱恩于10月29日表示，欧盟与加拿大正在探讨加拿大成为准会员的可能性。据《南华早报》报道，成员国对这一称号存在分歧。"
+        },
+        "ko": {
+          "headline": "EU와 캐나다, 준회원국 지위 검토",
+          "body": "우르줄라 폰데어라이엔 유럽연합(EU) 집행위원장은 10월 29일 EU와 캐나다가 캐나다의 준회원국 가입을 검토하고 있다고 밝혔다. 사우스차이나모닝포스트에 따르면, 해당 지정을 두고 회원국 간 의견이 갈리고 있다."
+        },
+        "ja": {
+          "headline": "EUとカナダ、準会員資格を検討",
+          "body": "欧州委員会のウルズラ・フォン・デア・ライエン委員長は10月29日、EUとカナダがカナダの準会員化を検討していると述べた。サウスチャイナ・モーニング・ポスト紙によると、この指定を巡っては加盟国間で意見が分かれている。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "South China Morning Post",
+          "title": "EU considering Canada as ‘associate member’ despite internal opposition",
+          "url": "https://www.scmp.com/news/world/united-states-canada/article/3372638/eu-considering-canada-associate-member-despite-internal-opposition",
+          "publishedAt": "2026-10-29T19:43:34.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "EU considering Canada as ‘associate member’, Ursula von der Leyen says, despite internal opposition",
+          "url": "https://www.straitstimes.com/world/europe/eu-considering-canada-as-associate-member-ursula-von-der-leyen-says-despite-internal-opposition",
+          "publishedAt": "2026-10-29T19:12:37.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-10-29T17:06:11.000Z",
       "id": "u-1793293571000-rwn8",
@@ -543,13 +648,25 @@
     "https://www.kyivpost.com/post/88584",
     "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeE91a2VQZFdXLXB2NG5rMUpWOTh0YkQyXzhKZmZsX0M4Smo1ZzVpbFNISTYxcVVEOWtSV1JQWWJDVWswd0xfQ1Rod2duX1hWVmExTXZOOXZUTDNoX3RYRHA1N0ZscHE5ZmFEV0FBZkFvbXdrTndOY0hBQWgySGJKcUZXaUFSdjFzRjk5dDR1V1k3d3pFemt5WVdMR0FVb0EzYUU2dnVjcjM4T19rWnRJ?oc=5",
     "https://www.channelnewsasia.com/business/euro-edges-higher-against-dollar-after-ecb-leaves-rates-unchanged-6501936",
-    "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWUFxS3puX3I1dXMzeUVaeUIxY3ZMcDlQb2d2NXRrR0VRT3B3RHNLemNLRms1T3NGeHZNMTExQjBKZzJGUTZuRzV4cFNMVU1HLUdBanVxZURRd2E2djI5WGIxNDFmcER6bXNsV1diVW9CZnNtaG9DZDNCVWlWbG42MHgtNXd2WC1DcDBRaWRBZjY1eEhMLWZDTWFBOXgzNUFsTHhJRzZQWTNxV2JBV0YtMDJ3OVg1NzZwWGZraFZKd1lXcFhx?oc=5"
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWUFxS3puX3I1dXMzeUVaeUIxY3ZMcDlQb2d2NXRrR0VRT3B3RHNLemNLRms1T3NGeHZNMTExQjBKZzJGUTZuRzV4cFNMVU1HLUdBanVxZURRd2E2djI5WGIxNDFmcER6bXNsV1diVW9CZnNtaG9DZDNCVWlWbG42MHgtNXd2WC1DcDBRaWRBZjY1eEhMLWZDTWFBOXgzNUFsTHhJRzZQWTNxV2JBV0YtMDJ3OVg1NzZwWGZraFZKd1lXcFhx?oc=5",
+    "https://www.kyivpost.com/post/88604",
+    "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNVkdUUlJZTzE0akdrZFkwSUFZcFRRR21vdm10MC1iM2tuTGRQbXVNOGw4Y0w3TVNsenRBa1JYZmRvcmpGcGxZbUxXX25YRmRReHR3VGxmNHF4MlBPaXEtY05kck5rTlhBal9yQmVlRE5wbWhNYmd5REVWZEFqTWpWY0JDOWFtQzRia1BsSW1oY3dRejlTeWpRbzlJU19NYzZKdEdkZU9SNlRWVF9KM3NRb2N0OWJzalJRbTN5LTR2NlZ5dTVzOU1CaUNvSUpMMDQwTk1RTU9LWUs4WTRfbVI1YkJCWlZFQQ?oc=5",
+    "https://timesofindia.indiatimes.com/world/rest-of-world/canada-seeks-eu-associate-member-status-as-carney-counters-trumps-trade-pressure/articleshow/135330997.cms",
+    "https://www.dawn.com/news/2040760/us-stocks-slide-as-google-parents-revenue-miss-revives-ai-spending-jitters",
+    "https://phys.org/news/2026-10-africa-debunking-myth-europeans-plotted.html",
+    "https://www.scmp.com/news/world/united-states-canada/article/3372638/eu-considering-canada-associate-member-despite-internal-opposition",
+    "https://www.straitstimes.com/world/europe/eu-considering-canada-as-associate-member-ursula-von-der-leyen-says-despite-internal-opposition",
+    "https://www.dw.com/en/eu-seeks-highest-level-ties-with-canada-in-montreal-summit/a-79800299?maca=en-rss-en-all-1573-rdf",
+    "https://www.abc.net.au/news/2026-10-30/europe-trains-safe-spain-tragedies/107324128",
+    "https://www.straitstimes.com/world/europe/eu-pressure-on-antiguas-golden-passport-trade-threatens-budget-cushion",
+    "https://www.france24.com/en/lt-gen-ben-hodges-accuses-hegseth-of-getting-rid-of-people-who-may-have-the-courage-to-push-back",
+    "https://www.bbc.co.uk/news/articles/cr15jxzv4w24o?at_medium=RSS&at_campaign=rss"
   ],
   "startedAt": "2026-10-29T15:33:10.946Z",
-  "updatedAt": "2026-10-29T18:02:50.086Z",
+  "updatedAt": "2026-10-29T21:04:28.881Z",
   "importance": 5,
   "wantsStats": true,
-  "articleSlug": null,
-  "sourceCount": 7,
+  "articleSlug": "ecb-leaves-rates-unchanged",
+  "sourceCount": 8,
   "seenHeadlines": []
 }
