@@ -14,8 +14,43 @@ fs.mkdirSync(ARTICLES, { recursive: true });
 const read = (f, fb) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return fb; } };
 const write = (f, d) => fs.writeFileSync(f, JSON.stringify(d, null, 2) + '\n');
 
-export const loadIndex = () => read(INDEX, { articles: [] });
-export const saveIndex = (idx) => write(INDEX, { updatedAt: new Date().toISOString(), articles: idx.articles });
+/**
+ * Never treat an unreadable index as an empty archive.
+ *
+ * The old fallback returned {articles: []} on any parse error. Every writer
+ * then saved a "repaired" index with just the few entries it had touched - one
+ * bad read wiped 930 of 936 articles from the front page. Failing loudly is
+ * the only safe behaviour for the archive.
+ */
+export const loadIndex = () => {
+  if (!fs.existsSync(INDEX)) return { articles: [] };
+  const raw = fs.readFileSync(INDEX, 'utf8');
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (e) {
+    throw new Error(`content/index.json is unreadable (${e.message}) - refusing to continue with an empty archive`);
+  }
+  if (!Array.isArray(parsed.articles)) {
+    throw new Error('content/index.json has no articles array - refusing to continue with an empty archive');
+  }
+  return parsed;
+};
+
+/** Refuse to shrink the archive by more than half in one write. */
+export const saveIndex = (idx) => {
+  const articles = Array.isArray(idx?.articles) ? idx.articles : [];
+  let prev = 0;
+  try {
+    const raw = fs.readFileSync(INDEX, 'utf8');
+    const parsed = JSON.parse(raw);
+    prev = Array.isArray(parsed.articles) ? parsed.articles.length : 0;
+  } catch { prev = 0; }
+  if (prev >= 20 && articles.length < prev * 0.5) {
+    throw new Error(`refusing to shrink content/index.json from ${prev} to ${articles.length} entries`);
+  }
+  write(INDEX, { updatedAt: new Date().toISOString(), articles });
+};
 export const loadState = () => read(STATE, { seenUrls: [], runs: [] });
 export const saveState = (s) => write(STATE, s);
 export const loadArticle = (slug) => read(path.join(ARTICLES, `${slug}.json`), null);
