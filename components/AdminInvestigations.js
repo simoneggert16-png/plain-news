@@ -141,6 +141,7 @@ export default function AdminInvestigations() {
   const requests = data?.requests || [];
   const investigations = data?.investigations || [];
   const outreach = data?.outreach || [];
+  const messages = data?.messages || [];
   const quota = data?.quota;
 
   const wishes = requests.filter((r) => r.status === 'new');
@@ -448,6 +449,47 @@ export default function AdminInvestigations() {
                   ))}
                   {history.length === 0 && (
                     <tr><td style={cell} colSpan={7}>Noch kein Verlauf.</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section style={panel}>
+            <div style={panelHead}>
+              <strong style={mono}>POSTFACH DESK</strong>
+              <span style={{ ...mono, color: 'var(--muted)' }}>
+                {messages.filter((m) => m.direction === 'in').length} eingegangen · {messages.length} gesamt
+              </span>
+            </div>
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '760px' }}>
+                <thead>
+                  <tr>
+                    {['Zeit', 'Dossier', 'Von', 'Betreff', 'Auszug', 'Gelesen'].map((h) => (
+                      <th key={h} style={headCell}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {messages.map((m) => (
+                    <tr key={m.id}>
+                      <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{fmtTime(m.received_at || m.created_at)}</td>
+                      <td style={{ ...cell, ...mono }}>{m.slug || '—'}</td>
+                      <td style={{ ...cell, ...mono }}>{m.from_email}</td>
+                      <td style={{ ...cell, maxWidth: '240px' }}>{m.subject || '—'}</td>
+                      <td style={{ ...cell, maxWidth: '320px', color: 'var(--ink-2)' }}>
+                        {(m.body || '').slice(0, 220)}{(m.body || '').length > 220 ? ' …' : ''}
+                      </td>
+                      <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>
+                        {m.processed_at ? `verarbeitet ${fmtTime(m.processed_at)}` : 'neu'}
+                      </td>
+                    </tr>
+                  ))}
+                  {messages.length === 0 && (
+                    <tr><td style={cell} colSpan={6}>
+                      Noch keine Mail. Die Desk-Adresse ist desk+&lt;dossier&gt;@DESK_EMAIL_DOMAIN.
+                    </td></tr>
                   )}
                 </tbody>
               </table>

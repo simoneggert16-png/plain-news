@@ -45,6 +45,7 @@ import {
   addOutreach,
   listOutreach,
   listRequests,
+  requestOutreach,
   setInvestigationStatus,
   setOutreach,
   setRequestStatus,
@@ -858,6 +859,31 @@ Return {"subject":"…","body":"…"}`,
   return { subject, body };
 }
 
+async function queueOutreach(d) {
+  const rows = await outreachRows(d.slug).catch(() => []);
+  const known = new Set(rows.map((r) => String(r.to_email || '').toLowerCase()).filter(Boolean));
+  const ready = (d.contacts || []).filter((c) => c.email && !known.has(String(c.email).toLowerCase()));
+  const queued = [];
+  for (const contact of ready.slice(0, 3)) {
+    try {
+      await requestOutreach({
+        slug: d.slug,
+        toEmail: contact.email,
+        org: contact.org,
+        note: contact.emailSource ? `Adresse gefunden auf ${contact.emailSource}` : null,
+      });
+      queued.push(contact.org);
+    } catch (err) {
+      log(`OUTREACH  could not queue ${contact.org}: ${err.message}`);
+    }
+  }
+  if (queued.length) {
+    note(d, null, `queued ${queued.length} request(s): ${queued.join(', ')}`);
+    log(`OUTREACH  queued ${queued.length} request(s) from its own contact list`);
+  }
+  return queued.length;
+}
+
 async function draftOutreach(d) {
   const rows = await outreachRows(d.slug);
   const requested = rows.filter((r) => r.status === 'requested');
@@ -1287,6 +1313,7 @@ async function main() {
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
         }
+        await queueOutreach(d);
         await draftOutreach(d);
         await sendApproved(d);
         const fresh = await outreachRows(d.slug);
