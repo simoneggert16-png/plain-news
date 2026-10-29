@@ -21,11 +21,11 @@
   "slug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
   "stats": {
     "label": "Israel Election Results",
-    "note": "Snapshot of Israel election results: vote share and seat allocation.",
+    "note": "Israel election results: ballots counted, Netanyahu bloc seats, opposition bloc seats, total Knesset seats.",
     "unit": "",
     "max": null,
     "asOf": "2026-10-28T12:00:00.000Z",
-    "updatedAt": "2026-10-29T13:56:54.719Z",
+    "updatedAt": "2026-10-29T14:24:52.994Z",
     "source": {
       "outlet": "BBC",
       "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
@@ -41,9 +41,6 @@
         "value": 93,
         "change": null,
         "locales": {
-          "it": {
-            "label": "Voti conteggiati"
-          },
           "de": {
             "label": "Stimmzettel gezählt"
           },
@@ -53,14 +50,17 @@
           "es": {
             "label": "Votos contabilizados"
           },
-          "ja": {
-            "label": "投票用紙の集計"
+          "it": {
+            "label": "Voti conteggiati"
+          },
+          "pt": {
+            "label": "Votos contabilizados"
           },
           "zh": {
             "label": "已计票"
           },
-          "pt": {
-            "label": "Votos contabilizados"
+          "ja": {
+            "label": "投票用紙の集計"
           },
           "ko": {
             "label": "투표 수거 완료"
@@ -102,7 +102,7 @@
       {
         "key": "opposition-bloc-seats",
         "label": "Opposition bloc seats",
-        "value": 48,
+        "value": 67,
         "change": null,
         "locales": {
           "de": {
@@ -166,36 +166,36 @@
     ],
     "locales": {
       "de": {
-        "label": "Ergebnisse der israelischen Wahl",
-        "note": "Momentaufnahme der israelischen Wahlergebnisse: Stimmenanteil und Sitzverteilung."
+        "note": "Momentaufnahme der israelischen Wahlergebnisse: Stimmenanteil und Sitzverteilung.",
+        "label": "Ergebnisse der israelischen Wahl"
       },
       "fr": {
-        "label": "Résultats des élections en Israël",
-        "note": "Instantané des résultats des élections en Israël : part des voix et répartition des sièges."
+        "note": "Instantané des résultats des élections en Israël : part des voix et répartition des sièges.",
+        "label": "Résultats des élections en Israël"
       },
       "es": {
-        "label": "Resultados de las elecciones en Israel",
-        "note": "Instantánea de los resultados electorales en Israel: participación de votos y asignación de escaños."
+        "note": "Instantánea de los resultados electorales en Israel: participación de votos y asignación de escaños.",
+        "label": "Resultados de las elecciones en Israel"
       },
       "it": {
-        "label": "Risultati Elezioni Israele",
-        "note": "Riepilogo dei risultati delle elezioni in Israele: quota di voti e ripartizione dei seggi."
+        "note": "Riepilogo dei risultati delle elezioni in Israele: quota di voti e ripartizione dei seggi.",
+        "label": "Risultati Elezioni Israele"
       },
       "pt": {
-        "label": "Resultados das Eleições em Israel",
-        "note": "Instantâneo dos resultados das eleições em Israel: participação de votos e distribuição de assentos."
+        "note": "Instantâneo dos resultados das eleições em Israel: participação de votos e distribuição de assentos.",
+        "label": "Resultados das Eleições em Israel"
       },
       "zh": {
-        "label": "以色列选举结果",
-        "note": "以色列选举结果快照：投票份额与席位分配。"
+        "note": "以色列选举结果快照：投票份额与席位分配。",
+        "label": "以色列选举结果"
       },
       "ja": {
-        "label": "イスラエル選挙結果",
-        "note": "イスラエル選挙結果の概要：票数と議席配分。"
+        "note": "イスラエル選挙結果の概要：票数と議席配分。",
+        "label": "イスラエル選挙結果"
       },
       "ko": {
-        "label": "이스라엘 선거 결과",
-        "note": "이스라엘 선거 결과 현황: 득표율과 의석 배분."
+        "note": "이스라엘 선거 결과 현황: 득표율과 의석 배분.",
+        "label": "이스라엘 선거 결과"
       }
     }
   },
@@ -203,44 +203,10 @@
   "status": "live",
   "article": {
     "slug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
-    "updatedAt": "2026-10-29T14:03:33.140Z",
     "reason": "2 new update(s)",
     "locales": {
-      "en": {
-        "title": "Israel election deadlock persists as Netanyahu bloc falls short of majority",
-        "dek": "Israel's election results show Netanyahu's bloc leading but not a majority, with no clear winner after 85% of ballots counted.",
-        "facts": [
-          "85% of ballots counted (BBC, CNA)",
-          "Netanyahu's bloc leading but not majority (BBC, CNA)",
-          "No clear winner emerged (Al Jazeera, DW)",
-          "Netanyahu will remain caretaker prime minister (SCMP, Dawn)",
-          "Likud alleges Arab parties stole election (Jerusalem Post, Times of India)",
-          "Foreign interference claims surface (AP, ABC Australia)"
-        ],
-        "body": [
-          "Al Jazeera and DW reported that no clear winner emerged after 85% of ballots were counted. The partial results show Netanyahu's bloc leading but not a majority. The vote count is still incomplete.",
-          "South China Morning Post and Dawn said Benjamin Netanyahu will remain caretaker prime minister after the inconclusive election. The decision follows the partial results. No new government has been formed.",
-          "The Jerusalem Post and Times of India reported that Likud claims Arab parties stole the election and will submit evidence to police. Likud said the allegations are evidence of fraud. The claim has not been verified by independent observers.",
-          "CNA reported that President Isaac Herzog urged against holding a new vote despite the inconclusive result. Herzog said a new election could worsen instability. The statement was made on 28 Oct 2026.",
-          "AP News and ABC Australia reported that Israelis await final results as claims of foreign interference emerge. An Israeli election official demanded a probe into the allegations. The claims involve foreign funding and voter fraud.",
-          "The Jerusalem Post and Open Magazine reported that a foreign funding probe was launched amid the election chaos. The probe could lead to new elections if fraud is found. The investigation is part of the broader scrutiny of the vote.",
-          "BBC reported that the election was held on 28 October 2026 and multiple parties contested the vote. The results are being counted in stages. The final outcome will determine the next government.",
-          "The New York Times and NBC News said Netanyahu was not defeated and still has options to remain in power. The reports emphasize that the election has no clear winner. Netanyahu's future depends on coalition negotiations."
-        ],
-        "context": "Israel held a general election on 28 October 2026. The vote was contested by multiple parties. The results are still incomplete, and no coalition has secured a majority.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Israelische Wahl bleibt im Stillstand, da Netanyahus Block knapp unter der Mehrheit liegt",
         "dek": "Die Wahlergebnisse Israels zeigen, dass Netanyahus Block führt, jedoch nicht die Mehrheit erreicht, und nach 85 % der Stimmen keine klare Siegerin oder Sieger ermittelt wurde.",
-        "facts": [
-          "85 % der Stimmen ausgezählt (BBC, CNA)",
-          "Netanyahus Block führt, erreicht jedoch keine Mehrheit (BBC, CNA)",
-          "Kein klarer Sieger ist ermittelt worden (Al Jazeera, DW)",
-          "Netanyahu bleibt Übergangsminister (SCMP, Dawn)",
-          "Likud behauptet, arabische Parteien hätten die Wahl gestohlen (Jerusalem Post, Times of India)",
-          "Behauptungen über ausländische Einflussnahme tauchen auf (AP, ABC Australia)"
-        ],
         "body": [
           "Al Jazeera und DW berichteten, dass nach Auszählung von 85 % der Stimmen kein klarer Sieger ermittelt wurde. Die vorläufigen Ergebnisse zeigen, dass Netanyahus Block führt, jedoch keine Mehrheit erreicht. Die Stimmenauszählung ist noch nicht abgeschlossen.",
           "South China Morning Post und Dawn berichteten, dass Benjamin Netanyahu nach der unklaren Wahl weiterhin Übergangsminister bleiben wird. Die Entscheidung folgt auf die vorläufigen Ergebnisse. Es wurde noch keine neue Regierung gebildet.",
@@ -251,7 +217,40 @@
           "BBC berichtete, dass die Wahl am 28. Oktober 2026 stattgefunden hat und mehrere Parteien daran teilgenommen haben. Die Ergebnisse werden in Phasen ausgezählt. Das Endergebnis wird die nächste Regierung bestimmen.",
           "The New York Times und NBC News berichteten, dass Netanyahu nicht besiegt wurde und noch Möglichkeiten hat, an der Macht zu bleiben. Die Berichte betonen, dass die Wahl keinen klaren Sieger hervorbringt. Netanyahus Zukunft hängt von Koalitionsverhandlungen ab."
         ],
+        "facts": [
+          "85 % der Stimmen ausgezählt (BBC, CNA)",
+          "Netanyahus Block führt, erreicht jedoch keine Mehrheit (BBC, CNA)",
+          "Kein klarer Sieger ist ermittelt worden (Al Jazeera, DW)",
+          "Netanyahu bleibt Übergangsminister (SCMP, Dawn)",
+          "Likud behauptet, arabische Parteien hätten die Wahl gestohlen (Jerusalem Post, Times of India)",
+          "Behauptungen über ausländische Einflussnahme tauchen auf (AP, ABC Australia)"
+        ],
+        "title": "Israelische Wahl bleibt im Stillstand, da Netanyahus Block knapp unter der Mehrheit liegt",
         "context": "Israel führte am 28. Oktober 2026 eine allgemeine Wahl durch. Die Wahl wurde von mehreren Parteien disputiert. Die Ergebnisse sind noch unvollständig, und keine Koalition hat die Mehrheit erreicht."
+      },
+      "en": {
+        "dek": "Israel's election results show Netanyahu's bloc leading but not a majority, with no clear winner after 85% of ballots counted.",
+        "body": [
+          "Al Jazeera and DW reported that no clear winner emerged after 85% of ballots were counted. The partial results show Netanyahu's bloc leading but not a majority. The vote count is still incomplete.",
+          "South China Morning Post and Dawn said Benjamin Netanyahu will remain caretaker prime minister after the inconclusive election. The decision follows the partial results. No new government has been formed.",
+          "The Jerusalem Post and Times of India reported that Likud claims Arab parties stole the election and will submit evidence to police. Likud said the allegations are evidence of fraud. The claim has not been verified by independent observers.",
+          "CNA reported that President Isaac Herzog urged against holding a new vote despite the inconclusive result. Herzog said a new election could worsen instability. The statement was made on 28 Oct 2026.",
+          "AP News and ABC Australia reported that Israelis await final results as claims of foreign interference emerge. An Israeli election official demanded a probe into the allegations. The claims involve foreign funding and voter fraud.",
+          "The Jerusalem Post and Open Magazine reported that a foreign funding probe was launched amid the election chaos. The probe could lead to new elections if fraud is found. The investigation is part of the broader scrutiny of the vote.",
+          "BBC reported that the election was held on 28 October 2026 and multiple parties contested the vote. The results are being counted in stages. The final outcome will determine the next government.",
+          "The New York Times and NBC News said Netanyahu was not defeated and still has options to remain in power. The reports emphasize that the election has no clear winner. Netanyahu's future depends on coalition negotiations."
+        ],
+        "facts": [
+          "85% of ballots counted (BBC, CNA)",
+          "Netanyahu's bloc leading but not majority (BBC, CNA)",
+          "No clear winner emerged (Al Jazeera, DW)",
+          "Netanyahu will remain caretaker prime minister (SCMP, Dawn)",
+          "Likud alleges Arab parties stole election (Jerusalem Post, Times of India)",
+          "Foreign interference claims surface (AP, ABC Australia)"
+        ],
+        "title": "Israel election deadlock persists as Netanyahu bloc falls short of majority",
+        "context": "Israel held a general election on 28 October 2026. The vote was contested by multiple parties. The results are still incomplete, and no coalition has secured a majority.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -259,6 +258,27 @@
         "at": "2026-10-29T02:18:35.150Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Netanyahu remains caretaker prime minister after Israel election shows his bloc leading but not a majority, with 85% of ballots counted and no clear winner.",
+            "body": [
+              "Benjamin Netanyahu will continue as caretaker prime minister after the election. The decision was reported by South China Morning Post and Dawn.",
+              "Eighty‑five percent of ballots were counted. BBC and CNA reported the figure.",
+              "Netanyahu's bloc is ahead but does not hold a majority. BBC and CNA said the partial results show this.",
+              "No clear winner emerged from the vote. Al Jazeera and DW reported the uncertainty.",
+              "Likud claims Arab parties stole the election and will submit evidence to police. The Jerusalem Post and Times of India reported the allegations.",
+              "The president urged against holding a new election. CNA reported the statement.",
+              "The election was held on 28 October 2026. BBC reported that multiple parties contested the vote."
+            ],
+            "facts": [
+              "85% of ballots counted",
+              "Netanyahu's bloc leading but not majority",
+              "No clear winner emerged",
+              "Netanyahu will remain caretaker prime minister",
+              "Likud alleges Arab parties stole election and will submit evidence to police"
+            ],
+            "title": "Israel election deadlock persists as Netanyahu bloc falls short of majority",
+            "context": "Israel held a general election on 28 October 2026. The vote count is still incomplete, and no coalition has secured a majority, according to BBC."
+          },
           "en": {
             "dek": "Netanyahu remains caretaker prime minister after Israel election shows his bloc leading but not a majority, with 85% of ballots counted and no clear winner.",
             "body": [
@@ -280,27 +300,6 @@
             "title": "Israel election deadlock persists as Netanyahu bloc falls short of majority",
             "context": "Israel held a general election on 28 October 2026. The vote count is still incomplete, and no coalition has secured a majority, according to BBC.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Netanyahu remains caretaker prime minister after Israel election shows his bloc leading but not a majority, with 85% of ballots counted and no clear winner.",
-            "body": [
-              "Benjamin Netanyahu will continue as caretaker prime minister after the election. The decision was reported by South China Morning Post and Dawn.",
-              "Eighty‑five percent of ballots were counted. BBC and CNA reported the figure.",
-              "Netanyahu's bloc is ahead but does not hold a majority. BBC and CNA said the partial results show this.",
-              "No clear winner emerged from the vote. Al Jazeera and DW reported the uncertainty.",
-              "Likud claims Arab parties stole the election and will submit evidence to police. The Jerusalem Post and Times of India reported the allegations.",
-              "The president urged against holding a new election. CNA reported the statement.",
-              "The election was held on 28 October 2026. BBC reported that multiple parties contested the vote."
-            ],
-            "facts": [
-              "85% of ballots counted",
-              "Netanyahu's bloc leading but not majority",
-              "No clear winner emerged",
-              "Netanyahu will remain caretaker prime minister",
-              "Likud alleges Arab parties stole election and will submit evidence to police"
-            ],
-            "title": "Israel election deadlock persists as Netanyahu bloc falls short of majority",
-            "context": "Israel held a general election on 28 October 2026. The vote count is still incomplete, and no coalition has secured a majority, according to BBC."
           }
         }
       },
@@ -349,7 +348,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-10-29T14:03:33.140Z"
   },
   "endedAt": null,
   "locales": {
@@ -392,120 +392,236 @@
   },
   "updates": [
     {
-      "id": "u-1793280240000-o6dw",
-      "at": "2026-10-29T13:24:00.000Z",
+      "id": "u-1793283378000-htlw",
+      "at": "2026-10-29T14:16:18.000Z",
       "kind": "statement",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Foreign interference claims surface in Israel election",
-          "body": "AP News reported that Israelis await final election results as claim of foreign interference emerges. ABC Australia reported that an Israeli election official demanded a probe into foreign interference claims."
-        },
-        "es": {
-          "headline": "Aparecen alegaciones de interferencia extranjera en las elecciones de Israel",
-          "body": "AP News informó que los israelíes esperan los resultados finales de las elecciones mientras surgen alegaciones de interferencia extranjera. ABC Australia informó que un funcionario electoral israelí exigió una investigación sobre las alegaciones de interferencia extranjera."
-        },
-        "it": {
-          "headline": "Apariscono accuse di interferenza estera nelle elezioni israeliane",
-          "body": "AP News ha riferito che gli israeliani attendono i risultati finali delle elezioni mentre emergono accuse di interferenza estera. ABC Australia ha riportato che un funzionario elettorale israeliano ha chiesto un'indagine sulle accuse di interferenza estera."
+          "headline": "Netanyahu alleges voter fraud in Israel election",
+          "body": "Benjamin Netanyahu alleged on Thursday that Arab parties' gains were driven by voter fraud, according to The Straits Times. Fox News reported the same claim. The allegations have not been substantiated."
         },
         "fr": {
-          "headline": "Des allégations d'ingérence étrangère émergent dans l'élection israélienne",
-          "body": "AP News a rapporté que les Israéliens attendent les résultats définitifs de l'élection alors qu'une allégation d'ingérence étrangère apparaît. ABC Australia a signalé qu'un officier électoral israélien a exigé une enquête sur ces allégations d'ingérence étrangère."
+          "headline": "Netanyahu accuse de fraude électorale lors de l'élection israélienne",
+          "body": "Benjamin Netanyahu a déclaré jeudi que les gains des partis arabes étaient dus à une fraude électorale, selon The Straits Times. Fox News a relayé la même affirmation. Les allégations n'ont pas été confirmées."
         },
-        "de": {
-          "headline": "Behauptungen über ausländische Einflussnahme tauchen bei israelischer Wahl auf",
-          "body": "AP News berichtete, dass Israelis auf die endgültigen Wahlergebnisse warten, während Behauptungen über ausländische Einflussnahme auftauchen. ABC Australia berichtete, dass ein israelischer Wahlbeamter eine Untersuchung der Behauptungen über ausländische Einflussnahme gefordert hat."
+        "it": {
+          "headline": "Netanyahu accusa frode elettorale nelle elezioni israeliane",
+          "body": "Benjamin Netanyahu ha affermato giovedì che i guadagni dei partiti arabi erano alimentati da frode elettorale, secondo The Straits Times. Fox News ha riportato la stessa affermazione. Le accuse non sono state confermate."
         },
-        "zh": {
-          "headline": "以色列选举出现外部干预指控",
-          "body": "美联社报道，以色列人正等待最终选举结果，外部干预指控浮现。ABC澳大利亚报道，一名以色列选举官员要求调查外部干预指控。"
+        "es": {
+          "headline": "Netanyahu alega fraude electoral en las elecciones de Israel",
+          "body": "Benjamin Netanyahu alegó el jueves que las ganancias de los partidos árabes se debían a fraude electoral, según The Straits Times. Fox News informó la misma afirmación. Las acusaciones no han sido corroboradas."
         },
         "pt": {
-          "headline": "Afirmações de interferência estrangeira surgem nas eleições de Israel",
-          "body": "AP News informou que os israelenses aguardam os resultados finais das eleições enquanto surgem alegações de interferência estrangeira. ABC Australia relatou que um oficial eleitoral israelita exigiu uma investigação sobre as alegações de interferência estrangeira."
+          "headline": "Netanyahu alega fraude de eleitores nas eleições de Israel",
+          "body": "Benjamin Netanyahu alegou na quinta-feira que os ganhos dos partidos árabes foram impulsionados por fraude de eleitores, segundo The Straits Times. A Fox News reportou a mesma afirmação. As alegações ainda não foram comprovadas."
+        },
+        "de": {
+          "headline": "Netanyahu behauptet Wahlbetrug bei israelischer Wahl",
+          "body": "Benjamin Netanyahu behauptete am Donnerstag, dass die Gewinne der arabischen Parteien durch Wahlbetrug verursacht wurden, so der Straits Times. Fox News berichtete dieselbe Behauptung. Die Vorwürfe wurden nicht belegt."
+        },
+        "zh": {
+          "headline": "内塔尼亚胡指控以色列选举存在投票欺诈",
+          "body": "本周四，内塔尼亚胡声称阿拉伯党派的获胜是由投票欺诈驱动的，马来西亚海峡时报报道。福克斯新闻也报道了同样的说法。这些指控尚未得到证实。"
         },
         "ko": {
-          "headline": "이스라엘 선거에서 외부 간섭 주장 등장",
-          "body": "AP 뉴스는 이스라엘인들이 최종 선거 결과를 기다리는 가운데 외부 간섭 주장이 제기되었다고 보도했다. ABC 오스트레일리아는 이스라엘 선거 관리자가 외부 간섭 주장에 대한 조사를 요구했다고 보도했다."
+          "headline": "네타냐후, 이스라엘 선거에서 유권자 사기 주장",
+          "body": "Benjamin Netanyahu는 목요일 이스라엘 선거에서 아랍 정당의 승리가 유권자 사기에 의해 이루어졌다고 주장했으며, 이는 The Straits Times에 의해 보도되었습니다. Fox News도 같은 주장을 보도했습니다. 그러나 그 주장은 입증되지 않았습니다."
         },
         "ja": {
-          "headline": "イスラエル選挙で外国介入主張が浮上",
-          "body": "APニュースは、イスラエル人が最終選挙結果を待つ中、外国介入の主張が浮上したと報じた。ABCオーストラリアは、イスラエルの選挙関係者が外国介入主張の調査を求めたと報じた。"
+          "headline": "ネタニヤフ、イスラエル選挙で有権者詐欺を主張",
+          "body": "ベンジャミン・ネタニヤフは木曜日、アラブ系政党の得票増が有権者詐欺によるものだと主張したと、The Straits Times は報じた。Fox News も同じ主張を報じた。これらの主張は裏付けられていない。"
         }
       },
       "sources": [
         {
-          "outlet": "AP News",
-          "title": "Israelis await final election results as claim of foreign interference emerges",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUlRWdElCT21MdGllQ29QbmxreHhfeTJvaUQ5Rjd2VndKSFRqSmJVMEhKY1VpOTNYWm1zZklsVWVjY0FHbDZxenZUa2NFaWQ0NEluY1ZXV1lqSWNPOWVyMXZ4eGhuQnkxLWVha01PVlhLb2l4Y2RzdENjSTQ0c3UweG5qTFZiOWE1MHFoVllsQjdqeURjUUxfSHpCWnlwNFdnR0N1Y2h1dUw5VElo?oc=5",
-          "publishedAt": "2026-10-29T13:24:00.000Z"
+          "outlet": "The Straits Times",
+          "title": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties",
+          "url": "https://www.straitstimes.com/world/middle-east/netanyahu-at-risk-of-losing-power-steps-up-attacks-on-israels-arab-parties",
+          "publishedAt": "2026-10-29T14:16:18.000Z"
         },
         {
-          "outlet": "ABC Australia",
-          "title": "Israeli election official demands probe into foreign interference claims",
-          "url": "https://www.abc.net.au/news/2026-10-29/israel-election-foreign-interference-allegations-investigation/107325606",
-          "publishedAt": "2026-10-29T11:25:33.000Z"
+          "outlet": "Fox News",
+          "title": "Netanyahu falls short of majority as Israel faces three possible paths to a new government",
+          "url": "https://www.foxnews.com/world/netanyahu-bloc-falls-short-arab-vote-surges-qatar-election-interference-allegations-emerge",
+          "publishedAt": "2026-10-29T13:47:49.000Z"
         }
       ]
     },
     {
-      "id": "u-1793280699000-jypp",
-      "at": "2026-10-29T13:31:39.000Z",
-      "kind": "statement",
+      "id": "u-1793281669000-krap",
+      "at": "2026-10-29T13:47:49.000Z",
+      "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Foreign funding probe launched in Israel election",
-          "body": "Jerusalem Post reported that reports of foreign funding and voter fraud could lead to new elections. Open Magazine reported that a foreign funding probe was part of the election chaos."
-        },
-        "es": {
-          "headline": "Se inicia investigación sobre financiación extranjera en las elecciones de Israel",
-          "body": "Jerusalem Post informó que los informes de financiación extranjera y fraude electoral podrían llevar a nuevas elecciones. Open Magazine informó que una investigación sobre financiación extranjera formaba parte del caos electoral."
-        },
-        "it": {
-          "headline": "Avviata indagine sul finanziamento estero nelle elezioni israeliane",
-          "body": "Jerusalem Post ha riferito che i rapporti di finanziamento estero e frodi elettorali potrebbero portare a nuove elezioni. Open Magazine ha riportato che l'indagine sul finanziamento estero faceva parte del caos elettorale."
+          "headline": "Netanyahu bloc holds lead but lacks majority in Israel election",
+          "body": "The Netanyahu bloc remains the largest group in the Knesset but does not hold a majority, according to Fox News. The Jerusalem Post reported the same. The bloc must negotiate with other parties to form a government."
         },
         "fr": {
-          "headline": "Une enquête sur le financement étranger est lancée dans l'élection israélienne",
-          "body": "Le Jerusalem Post a rapporté que les allégations de financement étranger et de fraude électorale pourraient entraîner de nouvelles élections. Open Magazine a indiqué qu'une enquête sur le financement étranger faisait partie du chaos électoral."
+          "headline": "Le bloc Netanyahu reste en tête mais ne détient pas la majorité à l'élection israélienne",
+          "body": "Le bloc Netanyahu demeure le plus grand groupe à la Knesset mais ne possède pas la majorité, selon Fox News. The Jerusalem Post a confirmé la même information. Le bloc doit négocier avec d'autres partis pour former un gouvernement."
         },
-        "de": {
-          "headline": "Untersuchung zu ausländischer Finanzierung gestartet bei israelischer Wahl",
-          "body": "Jerusalem Post berichtete, dass Berichte über ausländische Finanzierung und Wahlbetrug zu neuen Wahlen führen könnten. Open Magazine berichtete, dass eine Untersuchung zu ausländischer Finanzierung Teil des Wahlchaos war."
+        "it": {
+          "headline": "Il blocco Netanyahu detiene la leadership ma manca di maggioranza nelle elezioni israeliane",
+          "body": "Il blocco Netanyahu rimane il gruppo più grande nella Knesset ma non detiene la maggioranza, secondo Fox News. The Jerusalem Post ha riportato la stessa notizia. Il blocco deve negoziare con altri partiti per formare un governo."
         },
-        "zh": {
-          "headline": "以色列选举启动外部资金调查",
-          "body": "耶路撒冷邮报报道，外部资金和选民欺诈的报道可能导致新一轮选举。开放杂志报道，外部资金调查是选举混乱的一部分。"
+        "es": {
+          "headline": "El bloque de Netanyahu lidera pero carece de mayoría en las elecciones de Israel",
+          "body": "El bloque de Netanyahu sigue siendo el grupo más grande en la Knesset pero no tiene mayoría, según Fox News. The Jerusalem Post informó lo mismo. El bloque debe negociar con otros partidos para formar un gobierno."
         },
         "pt": {
-          "headline": "Investigação de financiamento estrangeiro lançada nas eleições de Israel",
-          "body": "Jerusalem Post relatou que os relatos de financiamento estrangeiro e fraude de eleitores poderiam levar a novas eleições. Open Magazine afirmou que a investigação de financiamento estrangeiro fazia parte do caos eleitoral."
+          "headline": "Bloco de Netanyahu mantém liderança mas não tem maioria nas eleições de Israel",
+          "body": "O bloco de Netanyahu permanece o maior grupo no Knesset, mas não detém maioria, segundo a Fox News. O Jerusalem Post reportou o mesmo. O bloco tem de negociar com outros partidos para formar um governo."
+        },
+        "de": {
+          "headline": "Netanyahu-Block behält Führung, hat jedoch keine Mehrheit bei israelischer Wahl",
+          "body": "Der Netanyahu-Block bleibt die größte Gruppe im Knesset, hat jedoch keine Mehrheit, so Fox News. Die Jerusalem Post berichtete dasselbe. Der Block muss mit anderen Parteien verhandeln, um eine Regierung zu bilden."
+        },
+        "zh": {
+          "headline": "内塔尼亚胡阵营领先但在以色列选举中缺乏多数",
+          "body": "福克斯新闻称，内塔尼亚胡阵营仍是国会中最大的团体，但并未拥有多数席位。耶路撒冷邮报也报道了同样情况。该阵营必须与其他党派协商以组建政府。"
         },
         "ko": {
-          "headline": "이스라엘 선거에서 외부 자금 조사 시작",
-          "body": "예루살렘 포스트는 외부 자금 및 유권자 사기 보고가 새 선거로 이어질 수 있다고 보도했다. 오픈 매거진은 외부 자금 조사가 선거 혼란의 일부였다고 보도했다."
+          "headline": "네타냐후 블록, 이스라엘 선거에서 리드하지만 다수 확보 못함",
+          "body": "Fox News에 따르면 네타냐후 블록은 국회에서 가장 큰 그룹이지만 다수를 보유하지 못했습니다. The Jerusalem Post도 같은 보도를 했습니다. 블록은 정부를 구성하기 위해 다른 정당과 협상해야 합니다."
         },
         "ja": {
-          "headline": "イスラエル選挙で外国資金調査が開始",
-          "body": "エルサレム・ポストは、外国資金と有権者詐欺の報告が新たな選挙につながる可能性があると報じた。オープン・マガジンは、外国資金調査が選挙混乱の一部であったと報じた。"
+          "headline": "ネタニヤフ陣営、イスラエル選挙でリードを保つが多数派を欠く",
+          "body": "Fox News によると、ネタニヤフ陣営は国会（クネセト）で最大のグループであるが、過半数を保持していない。The Jerusalem Post も同様に報じた。陣営は政府を形成するために他の政党と交渉する必要がある。"
         }
       },
       "sources": [
         {
+          "outlet": "Fox News",
+          "title": "Netanyahu falls short of majority as Israel faces three possible paths to a new government",
+          "url": "https://www.foxnews.com/world/netanyahu-bloc-falls-short-arab-vote-surges-qatar-election-interference-allegations-emerge",
+          "publishedAt": "2026-10-29T13:47:49.000Z"
+        },
+        {
           "outlet": "The Jerusalem Post",
-          "title": "Could reports of foreign funding, voter fraud lead to new elections? - explainer",
+          "title": "Benjamin Netanyahu bloc holds lead, but coalition math remains elusive",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5qT0NlendKU1RrSDJUemNpZ3hYQzI2QjNZYmc1eThZaWoxQlZwV1YtRGxnS0FyYTJGc3NpdUlPM1NPQW9WVWNXYkg4NjdlWjNBSndJVERKSkVKS09oRWtZZU1GcWkyR1M5?oc=5",
+          "publishedAt": "2026-10-29T09:01:32.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-29T13:24:00.000Z",
+      "id": "u-1793280240000-o6dw",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "AP News berichtete, dass Israelis auf die endgültigen Wahlergebnisse warten, während Behauptungen über ausländische Einflussnahme auftauchen. ABC Australia berichtete, dass ein israelischer Wahlbeamter eine Untersuchung der Behauptungen über ausländische Einflussnahme gefordert hat.",
+          "headline": "Behauptungen über ausländische Einflussnahme tauchen bei israelischer Wahl auf"
+        },
+        "en": {
+          "body": "AP News reported that Israelis await final election results as claim of foreign interference emerges. ABC Australia reported that an Israeli election official demanded a probe into foreign interference claims.",
+          "headline": "Foreign interference claims surface in Israel election"
+        },
+        "es": {
+          "body": "AP News informó que los israelíes esperan los resultados finales de las elecciones mientras surgen alegaciones de interferencia extranjera. ABC Australia informó que un funcionario electoral israelí exigió una investigación sobre las alegaciones de interferencia extranjera.",
+          "headline": "Aparecen alegaciones de interferencia extranjera en las elecciones de Israel"
+        },
+        "fr": {
+          "body": "AP News a rapporté que les Israéliens attendent les résultats définitifs de l'élection alors qu'une allégation d'ingérence étrangère apparaît. ABC Australia a signalé qu'un officier électoral israélien a exigé une enquête sur ces allégations d'ingérence étrangère.",
+          "headline": "Des allégations d'ingérence étrangère émergent dans l'élection israélienne"
+        },
+        "it": {
+          "body": "AP News ha riferito che gli israeliani attendono i risultati finali delle elezioni mentre emergono accuse di interferenza estera. ABC Australia ha riportato che un funzionario elettorale israeliano ha chiesto un'indagine sulle accuse di interferenza estera.",
+          "headline": "Apariscono accuse di interferenza estera nelle elezioni israeliane"
+        },
+        "ja": {
+          "body": "APニュースは、イスラエル人が最終選挙結果を待つ中、外国介入の主張が浮上したと報じた。ABCオーストラリアは、イスラエルの選挙関係者が外国介入主張の調査を求めたと報じた。",
+          "headline": "イスラエル選挙で外国介入主張が浮上"
+        },
+        "ko": {
+          "body": "AP 뉴스는 이스라엘인들이 최종 선거 결과를 기다리는 가운데 외부 간섭 주장이 제기되었다고 보도했다. ABC 오스트레일리아는 이스라엘 선거 관리자가 외부 간섭 주장에 대한 조사를 요구했다고 보도했다.",
+          "headline": "이스라엘 선거에서 외부 간섭 주장 등장"
+        },
+        "pt": {
+          "body": "AP News informou que os israelenses aguardam os resultados finais das eleições enquanto surgem alegações de interferência estrangeira. ABC Australia relatou que um oficial eleitoral israelita exigiu uma investigação sobre as alegações de interferência estrangeira.",
+          "headline": "Afirmações de interferência estrangeira surgem nas eleições de Israel"
+        },
+        "zh": {
+          "body": "美联社报道，以色列人正等待最终选举结果，外部干预指控浮现。ABC澳大利亚报道，一名以色列选举官员要求调查外部干预指控。",
+          "headline": "以色列选举出现外部干预指控"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUlRWdElCT21MdGllQ29QbmxreHhfeTJvaUQ5Rjd2VndKSFRqSmJVMEhKY1VpOTNYWm1zZklsVWVjY0FHbDZxenZUa2NFaWQ0NEluY1ZXV1lqSWNPOWVyMXZ4eGhuQnkxLWVha01PVlhLb2l4Y2RzdENjSTQ0c3UweG5qTFZiOWE1MHFoVllsQjdqeURjUUxfSHpCWnlwNFdnR0N1Y2h1dUw5VElo?oc=5",
+          "title": "Israelis await final election results as claim of foreign interference emerges",
+          "outlet": "AP News",
+          "publishedAt": "2026-10-29T13:24:00.000Z"
+        },
+        {
+          "url": "https://www.abc.net.au/news/2026-10-29/israel-election-foreign-interference-allegations-investigation/107325606",
+          "title": "Israeli election official demands probe into foreign interference claims",
+          "outlet": "ABC Australia",
+          "publishedAt": "2026-10-29T11:25:33.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-29T13:31:39.000Z",
+      "id": "u-1793280699000-jypp",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Jerusalem Post berichtete, dass Berichte über ausländische Finanzierung und Wahlbetrug zu neuen Wahlen führen könnten. Open Magazine berichtete, dass eine Untersuchung zu ausländischer Finanzierung Teil des Wahlchaos war.",
+          "headline": "Untersuchung zu ausländischer Finanzierung gestartet bei israelischer Wahl"
+        },
+        "en": {
+          "body": "Jerusalem Post reported that reports of foreign funding and voter fraud could lead to new elections. Open Magazine reported that a foreign funding probe was part of the election chaos.",
+          "headline": "Foreign funding probe launched in Israel election"
+        },
+        "es": {
+          "body": "Jerusalem Post informó que los informes de financiación extranjera y fraude electoral podrían llevar a nuevas elecciones. Open Magazine informó que una investigación sobre financiación extranjera formaba parte del caos electoral.",
+          "headline": "Se inicia investigación sobre financiación extranjera en las elecciones de Israel"
+        },
+        "fr": {
+          "body": "Le Jerusalem Post a rapporté que les allégations de financement étranger et de fraude électorale pourraient entraîner de nouvelles élections. Open Magazine a indiqué qu'une enquête sur le financement étranger faisait partie du chaos électoral.",
+          "headline": "Une enquête sur le financement étranger est lancée dans l'élection israélienne"
+        },
+        "it": {
+          "body": "Jerusalem Post ha riferito che i rapporti di finanziamento estero e frodi elettorali potrebbero portare a nuove elezioni. Open Magazine ha riportato che l'indagine sul finanziamento estero faceva parte del caos elettorale.",
+          "headline": "Avviata indagine sul finanziamento estero nelle elezioni israeliane"
+        },
+        "ja": {
+          "body": "エルサレム・ポストは、外国資金と有権者詐欺の報告が新たな選挙につながる可能性があると報じた。オープン・マガジンは、外国資金調査が選挙混乱の一部であったと報じた。",
+          "headline": "イスラエル選挙で外国資金調査が開始"
+        },
+        "ko": {
+          "body": "예루살렘 포스트는 외부 자금 및 유권자 사기 보고가 새 선거로 이어질 수 있다고 보도했다. 오픈 매거진은 외부 자금 조사가 선거 혼란의 일부였다고 보도했다.",
+          "headline": "이스라엘 선거에서 외부 자금 조사 시작"
+        },
+        "pt": {
+          "body": "Jerusalem Post relatou que os relatos de financiamento estrangeiro e fraude de eleitores poderiam levar a novas eleições. Open Magazine afirmou que a investigação de financiamento estrangeiro fazia parte do caos eleitoral.",
+          "headline": "Investigação de financiamento estrangeiro lançada nas eleições de Israel"
+        },
+        "zh": {
+          "body": "耶路撒冷邮报报道，外部资金和选民欺诈的报道可能导致新一轮选举。开放杂志报道，外部资金调查是选举混乱的一部分。",
+          "headline": "以色列选举启动外部资金调查"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.jpost.com/israel-election-2026/article-913206",
+          "title": "Could reports of foreign funding, voter fraud lead to new elections? - explainer",
+          "outlet": "The Jerusalem Post",
           "publishedAt": "2026-10-29T12:42:08.000Z"
         },
         {
-          "outlet": "Open Magazine",
-          "title": "Israel Election Chaos: No Majority, Foreign Funding Probe & a Qatar Row",
           "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcjNpQXJJc3l4MmhMUkNxNmF6UGZfdWZ4Z0lFMlhhV1FnN2JGX0NRcWs2c1pyNkMtd2JvU21FVjgweVJiQzc3c2pvQ1dINGRjWl83bjM4Z2xtaXF2MkhHMUNYQ2RnekxyZW4yekZCVkh1V2kxUk1FVWV0aGQ1b2ZhNkpMdmtoeVpmQThlVThiekdYN1kxYUFONlg5WHpEZjlwTWVJ?oc=5",
+          "title": "Israel Election Chaos: No Majority, Foreign Funding Probe & a Qatar Row",
+          "outlet": "Open Magazine",
           "publishedAt": "2026-10-29T13:31:39.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-29T00:01:07.000Z",
@@ -1053,15 +1169,76 @@
     "https://www.jpost.com/israel-election-2026/article-913196",
     "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNakpzem9pdUNHNG1NM1duZjRGYVdUYk9tMzhNSzRDOUFOMGRya0lGTEtTU3REN2JFbGNaZU9nbWhFaS1GdDdEOGFOX05Yc2dod0FaeEpIU2dzWVBPN3pRNHhwd3VmR2VOcDBvT3pROThjNFdWNm9UWTlnX3d5Mm50LUVOakJVSVVKTmRaMzZfdDh6TFdTSlFjWFY5dzBra1dGZ3hSYnJPcS16ei1WWldCenRFNmtDeWNV?oc=5",
     "https://www.straitstimes.com/world/europe/ecb-president-lagarde-resigns-after-months-of-speculation",
-    "https://news.google.com/rss/articles/CBMihwFBVV95cUxNT3lnU3c4ZGlyZGZ5c2VudENjcFhjUnkwbW0zV0Jhcnp6UVp6WFZDX25pME1IYjgzYTZFYU1USTBnZ2UycDBoOWs1OTZmN2FRamU2cnIxNl85XzRpbDBDVUwtWXc0R3dfVVFrTzlDdzhWQk9YY25KcmtoZ29tdUNLQW5OU0dEalU?oc=5"
+    "https://news.google.com/rss/articles/CBMihwFBVV95cUxNT3lnU3c4ZGlyZGZ5c2VudENjcFhjUnkwbW0zV0Jhcnp6UVp6WFZDX25pME1IYjgzYTZFYU1USTBnZ2UycDBoOWs1OTZmN2FRamU2cnIxNl85XzRpbDBDVUwtWXc0R3dfVVFrTzlDdzhWQk9YY25KcmtoZ29tdUNLQW5OU0dEalU?oc=5",
+    "https://www.nytimes.com/2026/10/29/world/americas/haiti-elections-postponed-violence.html",
+    "https://www.straitstimes.com/world/middle-east/netanyahu-at-risk-of-losing-power-steps-up-attacks-on-israels-arab-parties",
+    "https://variety.com/2026/tv/news/paula-reid-ms-now-joins-1236934091/",
+    "https://www.hollywoodreporter.com/movies/movie-news/cannibal-fairy-tale-rotterdam-iffr-2027-film-world-premiere-1236742486/",
+    "https://www.nytimes.com/2026/10/29/insider/questions-and-answers-about-midterm-election-coverage.html",
+    "https://www.spiegel.de/ausland/israel-welche-konsequenzen-deutschland-aus-dem-wahlerfolg-von-benjamin-netanyahu-ziehen-muss-a-387cc9ee-c543-457f-ab39-ac7790d4da09#ref=rss",
+    "https://www.scmp.com/week-asia/politics/article/3372623/anwars-ex-rival-backs-malaysias-budget-will-muhyiddin-become-pms-election-partner",
+    "https://timesofindia.indiatimes.com/world/middle-east/this-is-not-a-drama-israeli-agency-had-intel-on-illegal-funds-before-election-failed-to-share-it/articleshow/135314791.cms",
+    "https://www.foxnews.com/world/netanyahu-bloc-falls-short-arab-vote-surges-qatar-election-interference-allegations-emerge",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxNclZxMHhlUWhwMXNLVWJGX0ViSENSSmNWYWE3ajFXS0lBSk90VDJqMXBRZFBiOU8wNlZKNUdsOFhMMHFBVnRkMm1xV21VTXN5ZzJ6Wl9mLWR3Q2ZLMkFvWkFHSjhxWUFVRndrQV94bjVsR2paSVlSVnJ3Nkw0SkxJcXByZ1JuX1c4VFhJWGIzeGJ6ZS14bGwwVVF2dE1IOExCbzEzVmlBOWlYM0pmM0QwbkMwNUQ?oc=5",
+    "https://www.straitstimes.com/world/europe/spains-deadly-train-crash-adds-new-complication-to-sanchez-reelection-campaign",
+    "https://news.google.com/rss/articles/CBMioAJBVV95cUxNbVl2YVY4Zi0zR1pqQnpQSnJjNEc3UWNiaVN0V2pJNmh3aktxcEpYRVNBS25qb2N5Y0JFbXRpMDZ4aG9RYTlpXzY0X1c0M2hyS1pFdmpFU0gyWlM0TmFpNHM0THNoZGVqVnBGTTl3SU1OVlBTVEZ4b2JER2dMa0tPek1EM2plaDQ3NnFmQU1GZmVMQTZGeWZSOXpEZTA1RFhHY1ZoNm5PMVJrR1RhUFFCRjhQSFdKOExPZjJxbFVjWWVOTW1UcFhVZnRlRmFXSkVWTm1JT2lBV01wRDJZNTRlWGVzN2U5SEZ6S3o3VV9TOWc3U1pQSFEyd3g0bjNBODE2VVMteENyR3V3bXdSSDZSNmUxX2pZRklPaUNNbzFVVTI?oc=5",
+    "https://www.nytimes.com/2026/10/29/world/middleeast/netanyahu-fear-election-votes.html",
+    "https://www.channelnewsasia.com/business/ecb-president-lagarde-resigns-after-months-speculation-6503121",
+    "https://www.euronews.com/2026/10/29/ecb-president-christine-lagarde-to-step-down-in-february-months-before-her-term-ends",
+    "https://www.lemonde.fr/en/politics/article/2026/10/29/2027-french-presidential-election-melenchon-and-radical-left-la-france-insoumise-court-gamers_6766731_5.html",
+    "https://news.google.com/rss/articles/CBMilgJBVV95cUxQWWpBUmJKbjFESGVqUXBZWGtsNWdjY1BKaG1QM1QxV1hjbS1mZ1M1ZkVYSVJFQ0ZOLXRwekFxRWJ3NHB4T0VITE1XSVplcGUyX1lBZ0lwSU5hMy1rMGpnX2hEQWRzdFptY1VVRFdwM193andlNFR3Q1YzSDMtcmhaeFFaaElHYktfUW4zb2tZNUptbTJ1QWVqbHRyV2pucExGWVdmdThKTFF6VXpSZG93MVNEeDgzS2lhZTQxZmFZcDBQYXlHWjVhXzROeWpDUm01NW5kZjM3MV84UjE2ZTFwbFFsT3Z3YlZDVk5yTzFCcTVxWTVjWVN0Y2I5ZGZfb29CQTlOcmM0TEwyNVJndFN3ZWNrUkVRUdIBmwJBVV95cUxNVThOSUFqWDg4UHpVdXZfb2hXOEtaVnpUZmhLb0hOS3lDclNXbDVKWkZfZkhYNlI2SUZhbldUVnlyQ0VEWU1lTVZtcjQxaThFYU1admczZFZ0YVZIZGlmVHlCZ0l6WnBhOVNVNGlFMEJiaEdBbXo2Z0JIb0pCQW55WDNWM2VsZHd3WWJhYko5eDVBNDRaMmxhM0ZBQzZTYjRzNFlJVFgwY2JXRXhwT2dSeGUxYjJNX0NHYjlhbllGUEJaSDBkWVZRN3g0UGlULUNkZEFvUm9uWENDYU0xcXV1ZlB1Q3VVSXBvTk5KWFBBaU1MUktSWmVBeE4wSk9HNEllYmh2WHFhR3I1aU5aS21zR29CMXIwOWRlc3NZ?oc=5",
+    "https://www.straitstimes.com/world/europe/ecb-president-lagarde-resigns-effective-feb-7",
+    "https://www.foxnews.com/world/netanyahu-alleges-fraud-arab-parties-score-record-gains-emerge-potential-kingmakers",
+    "https://www.straitstimes.com/world/trump-confronts-a-new-midterm-battleground-south-carolina",
+    "https://www.tagesanzeiger.ch/militaerschlag-gegen-den-iran-droht-angriff-nach-den-midterms-326209543433",
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxOTmd1MXZMRF9mb3JPLXFuaUViRXVEX0ZpdUF1LXBWRFZPWkt2VE1TLVlsZk54ckJUd0huTlBSd3ctUm50T2xxRmtPNnQ2Znhaak1sR09jWkgxMDFiV09scHUzek5MbmI4SXRWRzdWMnBuNnVzUnRNbWdUcHFsTENKeU5rZWlrYVN1NXZDX2kzMjN4TWNKelRaX2R3?oc=5",
+    "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPZWRFbWFnM2J4SUFVWWxiTjVVbUZzRUV4UVFDeHJkWEEwRGljenI0MjJnRVFfX1VIOEhhNkZoTjFNMWhicGlGUmV3Q3JoS1NzWldNd2dKellaYlRBT0pnMkg5TFV0d1RkZ0Y4clh1TnBXMl9uY0s3Q3FqZnBsVEluOWk4c0lYN3NoTUFYbzFEMUdoSlRhd19HX2drdTdtZFFHbFhob09lQ1lMdGNUemFYQ0xiTkhGQU9ZN3NxTkUzVGE1a1RwLVJhWXpseHp6bUl4a1RWcHZVdlc2c0FSNkFkNGNVc3pJeFpTc2t2VGpkdXJHTGPSAfgBQVVfeXFMT1J0TVRwcmlEY2RKRURHNDhQenFRNnA0dVU3RThJUURlX1JiNm02d2dnM0hxYUlySW5IaXhEYjJ5ellmME93cXMtU29RcE5WVEtSaXdCcXJPZE91bVZQLWFRQ29XbHU3bEFyUlJma05UaGtNNzNPWVJrd3NoV3NzZ0ZtX0p0UTlZTno0THc2MEE4SWlMbkhZX1Fnclp0dWV3OFRjNWdFSGNVRHNaT0RGYVpSakFhMXRfZWxSMFRlM3NrVEdmMGlJMXM5T2VTcHZGeTMyQkcteFBWLTNEalZtVnMxQVQzNXlNbE4tb0R5eWM1U0k2emZHVWg?oc=5",
+    "https://www.wired.com/story/law-firm-linked-to-elon-musk-started-an-election-integrity-organization/",
+    "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUmtTZy1jOEZ2R3huSE9rOW5aYlBGVlN2ckhvdWJndXF0b0xMN0FaSk9OblhPNy0tbmZLMkJwYVBJMHM3aUI4SW5DWWNTdGt0VTA4NmxqNy1hcE9FN3U0YVRZNmlPVldOZC1TekJvTmVseWpXbmNZSy12cDZrRC1nQlRqUVk1TjdtZjI2eTdXNm5US2tMemZhVjYwS0NGbVhWYm10NGNQTmh3cjVxaVFXRjF0NW1TdUpkX2hiZmItMEc?oc=5",
+    "https://www.straitstimes.com/world/middle-east/explainer-how-could-israel-break-the-election-deadlock",
+    "https://www.jpost.com/israel-election-2026/article-913187",
+    "https://www.thehindu.com/news/international/israel-election-2026-benjamin-netanyahu-is-down-but-not-out/article71639548.ece",
+    "https://www.kyivpost.com/post/88527",
+    "https://www.straitstimes.com/world/europe/head-of-serbias-public-rts-tv-resigns-after-student-list-election-victory",
+    "https://www.axios.com/2026/10/29/republicans-trump-husted-ass",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxOX05Oc1ZNR1VKOWo0a3VYZjd5R2dGcFczYXdrQ2ZzZXVtSlBTVlM5a18yY2I0QTgzV2dVWkFlQ3p3VGNyWmJscy03bS02eTVHTWFKWFlWenc3SkZXUlZ1emRLX1BtblE3aXNnbzRyTTJULUg4WHp2WUkweVpuYlNhS2dlR0Q5aTRObUVTRHcySEdOLVBRTVlydW5HY0RpOHJSeDhVTlZ1UmJkQ05Hck1Qa09qN042WDZwb3RDQjJvYThzN1VfenlF?oc=5",
+    "https://www.npr.org/2026/10/29/g-s1-147496/ukraine-ai-drones-war-russia",
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5qT0NlendKU1RrSDJUemNpZ3hYQzI2QjNZYmc1eThZaWoxQlZwV1YtRGxnS0FyYTJGc3NpdUlPM1NPQW9WVWNXYkg4NjdlWjNBSndJVERKSkVKS09oRWtZZU1GcWkyR1M5?oc=5",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxNa3hfVE05YXZQd3F6eXhFTF82U2RVUDJWaUVkNzZWLVRHd293UXgxbnZqWS1rNW9jY0tFS00zME9mOUtGZ0FvSDNjektGbktLTDFVN01jQzN2M3hkcHFSUVNCNmVOX2x5aVVmRVY4cWtHc0dnTWt1a2ZkTkFQOVRKODlyb1A5dVpFTWVhd2JPWGZxOGxOVm10MUhWUTBQSGJVT0xtUHRB?oc=5",
+    "https://www.axios.com/2026/10/29/democrats-medicare-for-all-ice-israel",
+    "https://www.npr.org/2026/10/29/nx-s1-6020921/2026-house-map-democrats-flip-republicans-tossup-triage",
+    "https://www.npr.org/2026/10/29/nx-s1-6012227/morning-news-brief",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxQM1hPZGl4NDBEMEZxTlE1NWN1OHc4V3lKOUtwNGtUVld1dTY5MVlxYUFRQmRkR0R1VlY1d05FUjRpUTR4bzR3SW5xWVB5SVI0bkkwSHYzT0c3THYzT0dwQnJad09TV2hPclpZUmo3NTN6cEJjVEtUMDlFTzNKeTV5YmF0UnloQk1MOWFscXBGMnVZRlZCMzI0Qg?oc=5",
+    "https://www.npr.org/2026/10/29/nx-s1-6012410/support-for-trump-among-white-evangelicals-has-plummeted-polls-reveal"
   ],
   "startedAt": "2026-10-28T18:57:30.689Z",
-  "updatedAt": "2026-10-29T14:01:21.586Z",
+  "updatedAt": "2026-10-29T14:27:10.649Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
-  "sourceCount": 13,
+  "sourceCount": 15,
   "statsHistory": [
+    {
+      "at": "2026-10-28T12:00:00.000Z",
+      "rows": [
+        {
+          "key": "ballots-counted",
+          "value": 93
+        },
+        {
+          "key": "netanyahu-bloc-seats",
+          "value": 53
+        },
+        {
+          "key": "opposition-bloc-seats",
+          "value": 67
+        },
+        {
+          "key": "total-knesset-seats",
+          "value": 120
+        }
+      ]
+    },
     {
       "at": "2026-10-28T12:00:00.000Z",
       "rows": [

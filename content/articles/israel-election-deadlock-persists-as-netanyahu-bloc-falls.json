@@ -6,17 +6,17 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-28T18:57:30.689Z",
-  "updatedAt": "2026-10-29T14:03:33.140Z",
+  "updatedAt": "2026-10-29T14:24:53.568Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
   "stats": {
     "label": "Israel Election Results",
-    "note": "Snapshot of Israel election results: vote share and seat allocation.",
+    "note": "Israel election results: ballots counted, Netanyahu bloc seats, opposition bloc seats, total Knesset seats.",
     "unit": "",
     "max": null,
     "asOf": "2026-10-28T12:00:00.000Z",
-    "updatedAt": "2026-10-29T13:56:54.719Z",
+    "updatedAt": "2026-10-29T14:24:52.994Z",
     "source": {
       "outlet": "BBC",
       "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
@@ -32,9 +32,6 @@
         "value": 93,
         "change": null,
         "locales": {
-          "it": {
-            "label": "Voti conteggiati"
-          },
           "de": {
             "label": "Stimmzettel gezählt"
           },
@@ -44,14 +41,17 @@
           "es": {
             "label": "Votos contabilizados"
           },
-          "ja": {
-            "label": "投票用紙の集計"
+          "it": {
+            "label": "Voti conteggiati"
+          },
+          "pt": {
+            "label": "Votos contabilizados"
           },
           "zh": {
             "label": "已计票"
           },
-          "pt": {
-            "label": "Votos contabilizados"
+          "ja": {
+            "label": "投票用紙の集計"
           },
           "ko": {
             "label": "투표 수거 완료"
@@ -93,7 +93,7 @@
       {
         "key": "opposition-bloc-seats",
         "label": "Opposition bloc seats",
-        "value": 48,
+        "value": 67,
         "change": null,
         "locales": {
           "de": {
@@ -157,36 +157,36 @@
     ],
     "locales": {
       "de": {
-        "label": "Ergebnisse der israelischen Wahl",
-        "note": "Momentaufnahme der israelischen Wahlergebnisse: Stimmenanteil und Sitzverteilung."
+        "note": "Momentaufnahme der israelischen Wahlergebnisse: Stimmenanteil und Sitzverteilung.",
+        "label": "Ergebnisse der israelischen Wahl"
       },
       "fr": {
-        "label": "Résultats des élections en Israël",
-        "note": "Instantané des résultats des élections en Israël : part des voix et répartition des sièges."
+        "note": "Instantané des résultats des élections en Israël : part des voix et répartition des sièges.",
+        "label": "Résultats des élections en Israël"
       },
       "es": {
-        "label": "Resultados de las elecciones en Israel",
-        "note": "Instantánea de los resultados electorales en Israel: participación de votos y asignación de escaños."
+        "note": "Instantánea de los resultados electorales en Israel: participación de votos y asignación de escaños.",
+        "label": "Resultados de las elecciones en Israel"
       },
       "it": {
-        "label": "Risultati Elezioni Israele",
-        "note": "Riepilogo dei risultati delle elezioni in Israele: quota di voti e ripartizione dei seggi."
+        "note": "Riepilogo dei risultati delle elezioni in Israele: quota di voti e ripartizione dei seggi.",
+        "label": "Risultati Elezioni Israele"
       },
       "pt": {
-        "label": "Resultados das Eleições em Israel",
-        "note": "Instantâneo dos resultados das eleições em Israel: participação de votos e distribuição de assentos."
+        "note": "Instantâneo dos resultados das eleições em Israel: participação de votos e distribuição de assentos.",
+        "label": "Resultados das Eleições em Israel"
       },
       "zh": {
-        "label": "以色列选举结果",
-        "note": "以色列选举结果快照：投票份额与席位分配。"
+        "note": "以色列选举结果快照：投票份额与席位分配。",
+        "label": "以色列选举结果"
       },
       "ja": {
-        "label": "イスラエル選挙結果",
-        "note": "イスラエル選挙結果の概要：票数と議席配分。"
+        "note": "イスラエル選挙結果の概要：票数と議席配分。",
+        "label": "イスラエル選挙結果"
       },
       "ko": {
-        "label": "이스라엘 선거 결과",
-        "note": "이스라엘 선거 결과 현황: 득표율과 의석 배분."
+        "note": "이스라엘 선거 결과 현황: 득표율과 의석 배분.",
+        "label": "이스라엘 선거 결과"
       }
     }
   },
