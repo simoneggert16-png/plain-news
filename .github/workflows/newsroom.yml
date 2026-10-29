@@ -96,6 +96,7 @@ jobs:
             echo "::group::Cycle $cycle ($(date -u +%H:%M) UTC)"
             node bots/newsroom.mjs || echo "cycle $cycle failed, continuing"
             node scripts/sync-content.mjs || echo "supabase mirror skipped"
+            node scripts/check-content.mjs --fix
             git add content
             if git diff --cached --quiet; then
               echo "no new stories in cycle $cycle"

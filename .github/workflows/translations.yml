@@ -49,6 +49,7 @@ jobs:
           if [ -f translated-slugs.txt ]; then
             node scripts/sync-index.mjs --file translated-slugs.txt
           fi
+          node scripts/check-content.mjs --fix
           git add content
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -q -m "translations: $(date -u +'%Y-%m-%d %H:%M') UTC"
