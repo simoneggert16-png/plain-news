@@ -108,9 +108,18 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
 
 const disabledModels = new Map();
 
+// A cycle may not run forever. The model list (4 models × 3 attempts × 120 s)
+// allowed a single call to burn an hour, which is how the newsroom sat in one
+// cycle for four hours without publishing. Callers set an absolute deadline;
+// every attempt is cut at it.
+let globalDeadline = 0;
+export function setDeadline(ts) { globalDeadline = ts || 0; }
+export function deadlineLeft() { return globalDeadline ? globalDeadline - Date.now() : Infinity; }
+
 /** Chat with fallback across a list of NVIDIA models. Returns { text, model }. */
 export async function chat(role, messages, opts = {}) {
   const models = MODELS[role] || [role];
+  const deadline = opts.deadline || globalDeadline;
   let lastErr;
   const now = Date.now();
 
@@ -119,10 +128,17 @@ export async function chat(role, messages, opts = {}) {
       continue;
     }
     for (let attempt = 0; attempt < 3; attempt++) {
+      if (deadline && Date.now() > deadline) {
+        throw new Error(`deadline reached before ${model} answered`);
+      }
+      const remaining = deadline ? deadline - Date.now() : Infinity;
+      const callOpts = Number.isFinite(remaining)
+        ? { ...opts, timeoutMs: Math.max(5000, Math.min(opts.timeoutMs || 120_000, remaining)) }
+        : opts;
       try {
         const text = model.startsWith('ollama/')
-          ? await callOllama(model.slice(7), messages, opts)
-          : await callNvidia(model, messages, opts);
+          ? await callOllama(model.slice(7), messages, callOpts)
+          : await callNvidia(model, messages, callOpts);
         if (!text.trim()) throw new Error(`${model} returned empty output`);
         return { text, model };
       } catch (e) {
@@ -143,7 +159,11 @@ export async function chat(role, messages, opts = {}) {
 /** Ask for JSON and parse robustly (strips <think>, code fences, prose). */
 export async function chatJSON(role, messages, opts = {}) {
   let lastErr;
+  const deadline = opts.deadline || globalDeadline;
   for (let attempt = 0; attempt < 3; attempt++) {
+    if (deadline && Date.now() > deadline) {
+      throw lastErr || new Error('deadline reached before a valid JSON answer arrived');
+    }
     const { text, model } = await chat(role, messages, opts);
     try {
       return { data: extractJSON(text), model };
