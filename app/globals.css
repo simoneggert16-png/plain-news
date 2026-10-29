@@ -3735,3 +3735,74 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
 
 
 
+
+/* -- Front-page live strip ------------------------------------------------
+   The running tickers (election night, war, disaster, rate decision) must be
+   visible on the front page, not only under /live. Compact, one line per
+   topic, with the newest confirmed update underneath. */
+.live-strip {
+  border: var(--rule);
+  border-left: 6px solid var(--down);
+  margin: 18px 0 22px;
+  padding: 10px 14px 12px;
+  background: transparent;
+}
+.live-strip-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--down);
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none; }
+}
+.live-strip-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.live-strip-all {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.live-strip-all:hover { color: var(--ink); }
+.live-strip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 6px 24px;
+}
+.live-strip-list li { border-top: 1px solid var(--muted); padding-top: 6px; }
+.live-strip-topic {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.2;
+}
+.live-strip-latest {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-top: 3px;
+}
