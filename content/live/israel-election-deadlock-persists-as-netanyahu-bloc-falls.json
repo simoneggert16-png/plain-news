@@ -20,20 +20,9 @@
   },
   "slug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
   "stats": {
-    "label": "Israel Election 2026 Results",
-    "note": "Seat counts for major blocs and parties in the 120-seat Knesset.",
-    "unit": "seats",
     "max": 120,
     "asOf": "2026-10-28T12:00:00.000Z",
-    "updatedAt": "2026-10-29T20:47:46.692Z",
-    "source": {
-      "outlet": "BBC",
-      "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
-      "url": "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-10-29T15:47:20.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
+    "note": "Seat counts for major blocs and parties in the 120-seat Knesset.",
     "rows": [
       {
         "key": "netanyahu-bloc",
@@ -41,29 +30,29 @@
         "value": 53,
         "change": 0,
         "locales": {
-          "es": {
-            "label": "Bloque de Netanyahu"
-          },
           "de": {
             "label": "Netanjahu-Block"
           },
-          "it": {
-            "label": "Blocco Netanyahu"
-          },
-          "zh": {
-            "label": "内塔尼亚胡集团"
-          },
-          "ja": {
-            "label": "ネタニヤフ派"
+          "es": {
+            "label": "Bloque de Netanyahu"
           },
           "fr": {
             "label": "Bloc Netanyahu"
           },
-          "pt": {
-            "label": "Bloco de Netanyahu"
+          "it": {
+            "label": "Blocco Netanyahu"
+          },
+          "ja": {
+            "label": "ネタニヤフ派"
           },
           "ko": {
             "label": "네타냐후 블록"
+          },
+          "pt": {
+            "label": "Bloco de Netanyahu"
+          },
+          "zh": {
+            "label": "内塔尼亚胡集团"
           }
         }
       },
@@ -79,17 +68,17 @@
           "it": {
             "label": "Opposizione"
           },
-          "zh": {
-            "label": "反对派"
-          },
           "ja": {
             "label": "野党"
+          },
+          "ko": {
+            "label": "야권"
           },
           "pt": {
             "label": "Oposição"
           },
-          "ko": {
-            "label": "야권"
+          "zh": {
+            "label": "反对派"
           }
         }
       },
@@ -99,29 +88,29 @@
         "value": 19,
         "change": 0,
         "locales": {
-          "es": {
-            "label": "Partidos árabes"
-          },
           "de": {
             "label": "Arabische Parteien"
           },
-          "it": {
-            "label": "Partiti arabi"
-          },
-          "zh": {
-            "label": "阿拉伯政党"
-          },
-          "ja": {
-            "label": "アラブ系政党"
+          "es": {
+            "label": "Partidos árabes"
           },
           "fr": {
             "label": "Partis arabes"
           },
-          "pt": {
-            "label": "Partidos árabes"
+          "it": {
+            "label": "Partiti arabi"
+          },
+          "ja": {
+            "label": "アラブ系政党"
           },
           "ko": {
             "label": "아랍 정당"
+          },
+          "pt": {
+            "label": "Partidos árabes"
+          },
+          "zh": {
+            "label": "阿拉伯政党"
           }
         }
       },
@@ -131,95 +120,75 @@
         "value": 27,
         "change": null,
         "locales": {
-          "zh": {
-            "label": "利库德集团"
+          "fr": {
+            "label": "Likoud"
           },
           "ja": {
             "label": "リクード"
           },
-          "fr": {
-            "label": "Likoud"
-          },
           "ko": {
             "label": "리쿠드"
+          },
+          "zh": {
+            "label": "利库德集团"
           }
         }
       }
     ],
+    "unit": "seats",
+    "label": "Israel Election 2026 Results",
+    "source": {
+      "url": "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss",
+      "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
+      "outlet": "BBC",
+      "trusted": true,
+      "publishedAt": "2026-10-29T15:47:20.000Z"
+    },
     "locales": {
       "de": {
-        "label": "Israelische Wahlen 2026: Ergebnisse",
-        "note": "Sitzverteilung der wichtigsten Blöcke und Parteien in der 120-sitzigen Knesset."
-      },
-      "fr": {
-        "label": "Résultats des élections israéliennes de 2026",
-        "note": "Nombre de sièges pour les principaux blocs et partis à la Knesset (120 sièges)."
+        "note": "Sitzverteilung der wichtigsten Blöcke und Parteien in der 120-sitzigen Knesset.",
+        "label": "Israelische Wahlen 2026: Ergebnisse"
       },
       "es": {
-        "label": "Resultados de las elecciones de Israel 2026",
-        "note": "Número de escaños para los principales bloques y partidos en la Knesset de 120 asientos."
+        "note": "Número de escaños para los principales bloques y partidos en la Knesset de 120 asientos.",
+        "label": "Resultados de las elecciones de Israel 2026"
+      },
+      "fr": {
+        "note": "Nombre de sièges pour les principaux blocs et partis à la Knesset (120 sièges).",
+        "label": "Résultats des élections israéliennes de 2026"
       },
       "it": {
-        "label": "Risultati delle elezioni israeliane 2026",
-        "note": "Conteggio dei seggi per i principali blocchi e partiti nella Knesset da 120 seggi."
-      },
-      "pt": {
-        "label": "Resultados das Eleições de Israel 2026",
-        "note": "Número de assentos para os principais blocos e partidos na Knesset de 120 lugares."
-      },
-      "zh": {
-        "label": "2026年以色列选举结果",
-        "note": "120席议会中主要政治集团和政党的席位统计。"
+        "note": "Conteggio dei seggi per i principali blocchi e partiti nella Knesset da 120 seggi.",
+        "label": "Risultati delle elezioni israeliane 2026"
       },
       "ja": {
-        "label": "2026年イスラエル総選挙結果",
-        "note": "定数120議席のクネセトにおける主要会派および政党の獲得議席数。"
+        "note": "定数120議席のクネセトにおける主要会派および政党の獲得議席数。",
+        "label": "2026年イスラエル総選挙結果"
       },
       "ko": {
-        "label": "2026년 이스라엘 선거 결과",
-        "note": "120석 규모의 크네세트 내 주요 블록 및 정당별 의석수."
+        "note": "120석 규모의 크네세트 내 주요 블록 및 정당별 의석수.",
+        "label": "2026년 이스라엘 선거 결과"
+      },
+      "pt": {
+        "note": "Número de assentos para os principais blocos e partidos na Knesset de 120 lugares.",
+        "label": "Resultados das Eleições de Israel 2026"
+      },
+      "zh": {
+        "note": "120席议会中主要政治集团和政党的席位统计。",
+        "label": "2026年以色列选举结果"
       }
-    }
+    },
+    "updatedAt": "2026-10-29T20:47:46.692Z",
+    "sourceCount": 1
   },
   "topic": "Israel election deadlock persists as Netanyahu bloc falls short of majority",
   "status": "live",
   "article": {
     "slug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
-    "updatedAt": "2026-10-29T20:48:04.555Z",
     "reason": "1 new update(s)",
     "locales": {
-      "en": {
-        "title": "Israel election deadlock continues as Netanyahu bloc leads without majority",
-        "dek": "Netanyahu's bloc remains the largest but short of a Knesset majority, with no clear winner and allegations of fraud and foreign interference.",
-        "facts": [
-          "85% of ballots counted; Netanyahu bloc leading but short of majority (BBC, CNA).",
-          "No clear winner after nearly 90% of votes counted (Al Jazeera, DW).",
-          "Likud is the largest party with 27 Knesset seats (Jerusalem Post).",
-          "Netanyahu alleges Arab parties' gains stem from voter fraud (The Straits Times, Fox News).",
-          "An election official has called for a probe into foreign‑interference claims (ABC Australia)."
-        ],
-        "body": [
-          "On 29 October, Benjamin Netanyahu said Arab parties' gains were the result of voter fraud, according to The Straits Times and Fox News. The Jerusalem Post also reported that Likud remains the largest party with 27 seats in the Knesset.",
-          "Earlier, the BBC and CNA noted that 85% of ballots had been counted and that Netanyahu's bloc was ahead but did not hold a majority of seats.",
-          "Al Jazeera and DW reported that with nearly 90% of votes tallied, no clear winner had emerged, leaving the formation of a governing coalition uncertain.",
-          "South China Morning Post and Dawn said Netanyahu will continue as caretaker prime minister until a coalition is agreed.",
-          "AP News and ABC Australia reported claims of foreign interference in the election, and an Israeli election official demanded a formal investigation.",
-          "The Jerusalem Post and Times of India quoted Likud officials alleging that Arab parties stole the election and said they would submit evidence to police.",
-          "The New York Times and NBC News stated that Netanyahu did not lose the election and still has options to remain in power."
-        ],
-        "context": "Israel held a general election on 28 October 2026 to fill all 120 Knesset seats. Multiple parties contested, and the partial results have not produced a clear governing majority.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Wahllogjam in Israel hält an: Netanjahus Block führt ohne Mehrheit",
         "dek": "Netanjahus Block bleibt die größte Kraft, verfehlt jedoch die Mehrheit in der Knesset; es gibt keinen klaren Sieger sowie Vorwürfe von Betrug und ausländischer Einmischung.",
-        "facts": [
-          "85 % der Stimmzettel ausgezählt; Netanjahus Block führt, verfehlt aber die Mehrheit (BBC, CNA).",
-          "Kein klarer Sieger nach Auszählung von fast 90 % der Stimmen (Al Jazeera, DW).",
-          "Likud ist mit 27 Sitzen in der Knesset die größte Partei (Jerusalem Post).",
-          "Netanyahu behauptet, Gewinne arabischer Parteien resultierten aus Wahlbetrug (The Straits Times, Fox News).",
-          "Ein Wahlbeamter hat eine Untersuchung zu Vorwürfen ausländischer Einmischung gefordert (ABC Australia)."
-        ],
         "body": [
           "Am 29. Oktober erklärte Benjamin Netanyahu, dass die Gewinne arabischer Parteien das Ergebnis von Wahlbetrug seien, so The Straits Times und Fox News. Die Jerusalem Post berichtete zudem, dass Likud mit 27 Sitzen in der Knesset die größte Partei bleibt.",
           "Zuvor merkten die BBC und CNA an, dass 85 % der Stimmzettel ausgezählt worden seien und Netanjahus Block zwar führe, aber keine Mehrheit der Sitze halte.",
@@ -229,7 +198,37 @@
           "Die Jerusalem Post und Times of India zitierten Likud-Beamte, die den arabischen Parteien den Wahldiebstahl vorwarfen und erklärten, sie würden Beweise bei der Polizei einreichen.",
           "The New York Times und NBC News erklärten, dass Netanyahu die Wahl nicht verloren habe und weiterhin Optionen besitze, an der Macht zu bleiben."
         ],
+        "facts": [
+          "85 % der Stimmzettel ausgezählt; Netanjahus Block führt, verfehlt aber die Mehrheit (BBC, CNA).",
+          "Kein klarer Sieger nach Auszählung von fast 90 % der Stimmen (Al Jazeera, DW).",
+          "Likud ist mit 27 Sitzen in der Knesset die größte Partei (Jerusalem Post).",
+          "Netanyahu behauptet, Gewinne arabischer Parteien resultierten aus Wahlbetrug (The Straits Times, Fox News).",
+          "Ein Wahlbeamter hat eine Untersuchung zu Vorwürfen ausländischer Einmischung gefordert (ABC Australia)."
+        ],
+        "title": "Wahllogjam in Israel hält an: Netanjahus Block führt ohne Mehrheit",
         "context": "Israel hielt am 28. Oktober 2026 eine Generalwahl für alle 120 Sitze der Knesset ab. Mehrere Parteien traten an, und die Teilergebnisse haben keine klare Regierungsmehrheit ergeben."
+      },
+      "en": {
+        "dek": "Netanyahu's bloc remains the largest but short of a Knesset majority, with no clear winner and allegations of fraud and foreign interference.",
+        "body": [
+          "On 29 October, Benjamin Netanyahu said Arab parties' gains were the result of voter fraud, according to The Straits Times and Fox News. The Jerusalem Post also reported that Likud remains the largest party with 27 seats in the Knesset.",
+          "Earlier, the BBC and CNA noted that 85% of ballots had been counted and that Netanyahu's bloc was ahead but did not hold a majority of seats.",
+          "Al Jazeera and DW reported that with nearly 90% of votes tallied, no clear winner had emerged, leaving the formation of a governing coalition uncertain.",
+          "South China Morning Post and Dawn said Netanyahu will continue as caretaker prime minister until a coalition is agreed.",
+          "AP News and ABC Australia reported claims of foreign interference in the election, and an Israeli election official demanded a formal investigation.",
+          "The Jerusalem Post and Times of India quoted Likud officials alleging that Arab parties stole the election and said they would submit evidence to police.",
+          "The New York Times and NBC News stated that Netanyahu did not lose the election and still has options to remain in power."
+        ],
+        "facts": [
+          "85% of ballots counted; Netanyahu bloc leading but short of majority (BBC, CNA).",
+          "No clear winner after nearly 90% of votes counted (Al Jazeera, DW).",
+          "Likud is the largest party with 27 Knesset seats (Jerusalem Post).",
+          "Netanyahu alleges Arab parties' gains stem from voter fraud (The Straits Times, Fox News).",
+          "An election official has called for a probe into foreign‑interference claims (ABC Australia)."
+        ],
+        "title": "Israel election deadlock continues as Netanyahu bloc leads without majority",
+        "context": "Israel held a general election on 28 October 2026 to fill all 120 Knesset seats. Multiple parties contested, and the partial results have not produced a clear governing majority.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -237,6 +236,28 @@
         "at": "2026-10-29T15:27:48.449Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Netanyahus Block führt, hat aber keine Mehrheit; kein klarer Sieger nach 85 % der Stimmen; Übergangs-Premierminister bleibt; Betrugs- und Auslandsinterferenzvorwürfe werden untersucht.",
+            "body": [
+              "Al Jazeera berichtete, dass nach 85 % der Stimmen kein klarer Sieger ermittelt wurde. DW.com bestätigte das gleiche Ergebnis.",
+              "BBC und CNA sagten, Netanyahus Block sei die größte Gruppe, aber keine Mehrheit. Fox News und der Jerusalem Post bestätigten dasselbe Ergebnis.",
+              "South China Morning Post und Dawn sagten, Benjamin Netanyahu wird nach der unklaren Wahl weiterhin als Übergangs-Premierminister fungieren. Die Entscheidung folgt den Teilsergebnissen und hält den Status quo aufrecht.",
+              "Der Jerusalem Post berichtete, dass Likud behauptet, arabische Parteien hätten die Wahl gestohlen und wird Beweise der Polizei vorlegen. Times of India zitierte Netanyahu, der sagte, die Vorwürfe seien Beweise für Betrug.",
+              "Benjamin Netanyahu behauptete am Donnerstag, dass die Gewinne arabischer Parteien durch Wahlbetrug getrieben wurden, laut The Straits Times. Fox News berichtete die gleiche Behauptung.",
+              "AP News sagte, Israelis warten auf die endgültigen Ergebnisse, während Vorwürfe ausländischer Einflussnahme auftauchen. ABC Australia berichtete, dass ein israelischer Wahlbeamter eine Untersuchung der Vorwürfe verlangte. Der Jerusalem Post und Open Magazine bemerkten, dass eine Untersuchung zu ausländischer Finanzierung eingeleitet wurde.",
+              "CNA berichtete, dass Präsident Isaac Herzog gegen einen neuen Wahlaufruf war und sagte, eine neue Wahl könne die Instabilität verschlimmern."
+            ],
+            "facts": [
+              "85 % der Stimmen wurden gezählt (BBC, CNA)",
+              "Netanyahus Block führt, hat aber keine Mehrheit (BBC, CNA, Fox News, Jerusalem Post)",
+              "Kein klarer Sieger ist ermittelt (Al Jazeera, DW)",
+              "Benjamin Netanyahu bleibt Übergangs-Premierminister (SCMP, Dawn)",
+              "Vorwürfe des Betrugs durch arabische Parteien (Jerusalem Post, Times of India)",
+              "Behauptungen über ausländische Einflussnahme stehen noch zur Untersuchung (AP News, ABC Australia)"
+            ],
+            "title": "Israelische Wahl bleibt im Patt, Netanyahus Block reicht nicht für Mehrheitsmehrheit",
+            "context": "Israel hielt am 28. Oktober 2026 eine allgemeine Wahl ab. Die Wahl wurde von mehreren Parteien bestritten. Die Ergebnisse sind noch unvollständig, und keine Koalition hat eine Mehrheit erreicht."
+          },
           "en": {
             "dek": "Netanyahu's bloc leads but lacks majority; no clear winner after 85% of ballots counted; caretaker PM remains; fraud and foreign interference allegations pending investigation.",
             "body": [
@@ -259,28 +280,6 @@
             "title": "Israel election deadlock persists as Netanyahu bloc falls short of majority",
             "context": "Israel held a general election on 28 October 2026. The vote was contested by multiple parties. The results are still incomplete, and no coalition has secured a majority.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Netanyahus Block führt, hat aber keine Mehrheit; kein klarer Sieger nach 85 % der Stimmen; Übergangs-Premierminister bleibt; Betrugs- und Auslandsinterferenzvorwürfe werden untersucht.",
-            "body": [
-              "Al Jazeera berichtete, dass nach 85 % der Stimmen kein klarer Sieger ermittelt wurde. DW.com bestätigte das gleiche Ergebnis.",
-              "BBC und CNA sagten, Netanyahus Block sei die größte Gruppe, aber keine Mehrheit. Fox News und der Jerusalem Post bestätigten dasselbe Ergebnis.",
-              "South China Morning Post und Dawn sagten, Benjamin Netanyahu wird nach der unklaren Wahl weiterhin als Übergangs-Premierminister fungieren. Die Entscheidung folgt den Teilsergebnissen und hält den Status quo aufrecht.",
-              "Der Jerusalem Post berichtete, dass Likud behauptet, arabische Parteien hätten die Wahl gestohlen und wird Beweise der Polizei vorlegen. Times of India zitierte Netanyahu, der sagte, die Vorwürfe seien Beweise für Betrug.",
-              "Benjamin Netanyahu behauptete am Donnerstag, dass die Gewinne arabischer Parteien durch Wahlbetrug getrieben wurden, laut The Straits Times. Fox News berichtete die gleiche Behauptung.",
-              "AP News sagte, Israelis warten auf die endgültigen Ergebnisse, während Vorwürfe ausländischer Einflussnahme auftauchen. ABC Australia berichtete, dass ein israelischer Wahlbeamter eine Untersuchung der Vorwürfe verlangte. Der Jerusalem Post und Open Magazine bemerkten, dass eine Untersuchung zu ausländischer Finanzierung eingeleitet wurde.",
-              "CNA berichtete, dass Präsident Isaac Herzog gegen einen neuen Wahlaufruf war und sagte, eine neue Wahl könne die Instabilität verschlimmern."
-            ],
-            "facts": [
-              "85 % der Stimmen wurden gezählt (BBC, CNA)",
-              "Netanyahus Block führt, hat aber keine Mehrheit (BBC, CNA, Fox News, Jerusalem Post)",
-              "Kein klarer Sieger ist ermittelt (Al Jazeera, DW)",
-              "Benjamin Netanyahu bleibt Übergangs-Premierminister (SCMP, Dawn)",
-              "Vorwürfe des Betrugs durch arabische Parteien (Jerusalem Post, Times of India)",
-              "Behauptungen über ausländische Einflussnahme stehen noch zur Untersuchung (AP News, ABC Australia)"
-            ],
-            "title": "Israelische Wahl bleibt im Patt, Netanyahus Block reicht nicht für Mehrheitsmehrheit",
-            "context": "Israel hielt am 28. Oktober 2026 eine allgemeine Wahl ab. Die Wahl wurde von mehreren Parteien bestritten. Die Ergebnisse sind noch unvollständig, und keine Koalition hat eine Mehrheit erreicht."
           }
         }
       },
@@ -431,7 +430,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-10-29T20:48:04.555Z"
   },
   "endedAt": null,
   "locales": {
@@ -474,68 +474,184 @@
   },
   "updates": [
     {
-      "id": "u-1793305880000-qs35",
-      "at": "2026-10-29T20:31:20.000Z",
+      "id": "u-1793305324000-w1ms",
+      "at": "2026-10-29T20:22:04.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Likud remains largest party in Israel election",
-          "body": "Netanyahu's Likud party is the largest party in the Knesset, according to The Jerusalem Post and Die Welt. Die Welt reported Likud won 27 mandates."
+          "headline": "No party secures parliamentary majority in Israel election",
+          "body": "The vote count is complete, according to Al Jazeera. No party secured the 61 seats required for a parliamentary majority, Al Jazeera reported."
         },
         "es": {
-          "headline": "Likud sigue siendo el partido más votado en las elecciones de Israel",
-          "body": "El partido Likud de Netanyahu es la fuerza mayoritaria en la Knesset, según The Jerusalem Post y Die Welt. Die Welt informó que Likud obtuvo 27 mandatos."
+          "headline": "Ningún partido logra la mayoría parlamentaria en las elecciones de Israel",
+          "body": "El recuento de votos ha finalizado, según Al Jazeera. Ningún partido obtuvo los 61 escaños necesarios para alcanzar la mayoría parlamentaria, informó Al Jazeera."
         },
         "it": {
-          "headline": "Il Likud resta il partito più votato nelle elezioni israeliane",
-          "body": "Il partito Likud di Netanyahu è il gruppo più numeroso nella Knesset, secondo The Jerusalem Post e Die Welt. Die Welt ha riportato che il Likud ha ottenuto 27 mandati."
-        },
-        "de": {
-          "headline": "Likud bleibt stärkste Partei bei israelischen Wahlen",
-          "body": "Netanyahus Likud-Partei ist die stärkste Fraktion in der Knesset, so The Jerusalem Post und Die Welt. Die Welt berichtete, dass die Likud 27 Mandate gewonnen hat."
+          "headline": "Nessun partito ottiene la maggioranza parlamentare nelle elezioni in Israele",
+          "body": "Il conteggio dei voti è completato, secondo Al Jazeera. Nessun partito ha ottenuto i 61 seggi necessari per la maggioranza parlamentare, ha riferito Al Jazeera."
         },
         "fr": {
-          "headline": "Le Likoud reste le premier parti aux élections israéliennes",
-          "body": "Le parti Likoud de Netanyahu est le premier parti à la Knesset, selon The Jerusalem Post et Die Welt. Die Welt a rapporté que le Likoud a remporté 27 mandats."
+          "headline": "Aucun parti n'obtient de majorité parlementaire aux élections en Israël",
+          "body": "Le dépouillement est terminé, selon Al Jazeera. Aucun parti n'a obtenu les 61 sièges requis pour une majorité parlementaire, a rapporté Al Jazeera."
         },
-        "pt": {
-          "headline": "Likud mantém-se como o maior partido nas eleições de Israel",
-          "body": "O partido Likud, de Netanyahu, é o maior partido no Knesset, de acordo com o The Jerusalem Post e o Die Welt. O Die Welt reportou que o Likud conquistou 27 mandatos."
+        "de": {
+          "headline": "Keine Partei sichert sich parlamentarische Mehrheit bei israelischen Wahlen",
+          "body": "Die Stimmenauszählung ist abgeschlossen, so Al Jazeera. Keine Partei habe die für eine parlamentarische Mehrheit erforderlichen 61 Sitze erreicht, berichtete Al Jazeera."
         },
         "zh": {
-          "headline": "利库德集团仍是以色列选举中最大政党",
-          "body": "据《耶路撒冷邮报》和《世界报》报道，内塔尼亚胡领导的利库德集团是以色列议会中的最大政党。《世界报》报道称，利库德集团赢得了27个席位。"
+          "headline": "以色列选举无政党获得议会多数席位",
+          "body": "据半岛电视台报道，计票工作已经完成。没有政党获得获得议会多数席位所需的61个席位。"
         },
-        "ja": {
-          "headline": "イスラエル選挙、リクードが最大党を維持",
-          "body": "エルサレム・ポスト紙とディー・ヴェルト紙によると、ネタニヤフ氏率いるリクード党がクネセト（国会）で最大党となった。ディー・ヴェルト紙は、リクードが27議席を獲得したと報じた。"
+        "pt": {
+          "headline": "Nenhum partido consegue maioria parlamentar nas eleições em Israel",
+          "body": "A contagem de votos está concluída, segundo a Al Jazeera. Nenhum partido assegurou os 61 assentos necessários para uma maioria parlamentar, informou a Al Jazeera."
         },
         "ko": {
-          "headline": "리쿠드당, 이스라엘 총선서 제1당 유지",
-          "body": "더 제루살렘 포스트와 디 벨트에 따르면, 네타냐후의 리쿠드당이 크네세트(이스라엘 의회) 내 제1당이 되었다. 디 벨트는 리쿠드당이 27석을 확보했다고 보도했다."
+          "headline": "이스라엘 총선, 과반 의석 확보 정당 없어",
+          "body": "알자지라에 따르면 개표가 완료되었다. 알자지라는 어느 정당도 의회 과반 확보에 필요한 61석을 차지하지 못했다고 보도했다."
+        },
+        "ja": {
+          "headline": "イスラエル選挙、過半数を確保した政党なし",
+          "body": "アルジャジーラによると、開票が完了した。同メディアは、議会で過半数に必要な61議席を確保した政党はなかったと報じた。"
         }
       },
       "sources": [
         {
-          "outlet": "The Jerusalem Post",
-          "title": "Israel Election 2026: Netanyahu's Likud remains Israel's biggest party",
+          "outlet": "Al Jazeera",
+          "title": "Israel election result shows no overall majority as vote count complete",
+          "url": "https://www.aljazeera.com/news/2026/10/29/israel-election-result-shows-no-overall-majority-as-vote-count-complete?traffic_source=rss",
+          "publishedAt": "2026-10-29T20:22:04.000Z"
+        },
+        {
+          "outlet": "FAZ",
+          "title": "Knesset-Wahl: Regiert bald eine jüdisch-arabische Koalition Israel?",
+          "url": "https://www.faz.net/aktuell/politik/ausland/israels-parlamentswahl-regiert-bald-eine-juedisch-arabische-koalition-201632198.html",
+          "publishedAt": "2026-10-29T17:02:18.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793290419000-tf12",
+      "at": "2026-10-29T16:13:39.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Qatar denies interfering in Israel election",
+          "body": "Qatar denied interfering in the election or funding efforts to influence the result, according to Euronews. A Qatar Foreign Ministry spokesman rejected the allegations as disinformation, according to Al Jazeera."
+        },
+        "es": {
+          "headline": "Qatar niega interferir en las elecciones de Israel",
+          "body": "Qatar ha negado interferir en las elecciones o financiar esfuerzos para influir en el resultado, según Euronews. Un portavoz del Ministerio de Asuntos Exteriores de Qatar rechazó las acusaciones calificándolas de desinformación, según Al Jazeera."
+        },
+        "it": {
+          "headline": "Il Qatar nega ogni interferenza nelle elezioni israeliane",
+          "body": "Il Qatar ha negato di aver interferito nelle elezioni o di aver finanziato sforzi per influenzarne il risultato, secondo Euronews. Un portavoce del Ministero degli Esteri del Qatar ha respinto le accuse definendole disinformazione, secondo Al Jazeera."
+        },
+        "fr": {
+          "headline": "Le Qatar nie toute ingérence dans les élections israéliennes",
+          "body": "Le Qatar a nié toute ingérence dans l'élection ou tout financement d'efforts visant à influencer le résultat, selon Euronews. Un porte-parole du ministère qatarien des Affaires étrangères a rejeté ces allégations, les qualifiant de désinformation, selon Al Jazeera."
+        },
+        "de": {
+          "headline": "Katar bestreitet Einmischung in israelische Wahlen",
+          "body": "Katar hat eine Einmischung in die Wahl oder die Finanzierung von Bemühungen zur Beeinflussung des Ergebnisses bestritten, so Euronews. Ein Sprecher des katarischen Außenministeriumss wies die Anschuldigungen laut Al Jazeera als Desinformation zurück."
+        },
+        "zh": {
+          "headline": "卡塔尔否认干预以色列选举",
+          "body": "据欧洲新闻网报道，卡塔尔否认干预选举或资助影响结果的活动。据半岛电视台报道，卡塔尔外交部发言人驳斥相关指控为虚假信息。"
+        },
+        "pt": {
+          "headline": "Qatar nega interferência nas eleições em Israel",
+          "body": "O Qatar negou ter interferido nas eleições ou financiado esforços para influenciar o resultado, segundo a Euronews. Um porta-voz do Ministério dos Negócios Estrangeiros do Qatar rejeitou as alegações, classificando-as como desinformação, de acordo com a Al Jazeera."
+        },
+        "ko": {
+          "headline": "카타르, 이스라엘 선거 개입 부인",
+          "body": "유로뉴스는 카타르가 선거 개입이나 결과에 영향을 미치기 위한 자금 지원을 부인했다고 전했다. 알자지라에 따르면 카타르 외무부 대변인은 해당 의혹을 허위 정보라며 일축했다."
+        },
+        "ja": {
+          "headline": "カタール、イスラエル選挙への介入を否定",
+          "body": "ユーロニュースによると、カタールは選挙への介入や、結果に影響を与えるための資金提供を否定した。アルジャジーラによれば、カタール外務省の報道官はこれらの疑惑を誤情報として退けた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Euronews",
+          "title": "Netenyahu's Likud party alleges interference and fraud in Israel's election",
+          "url": "https://www.euronews.com/2026/10/29/netenyahus-likud-party-alleges-interference-and-fraud-in-israels-election",
+          "publishedAt": "2026-10-29T16:13:39.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Israel’s anti-Qatar campaign bleeds into elections",
+          "url": "https://www.aljazeera.com/news/2026/10/29/israels-anti-qatar-campaign-bleeds-into-elections?traffic_source=rss",
+          "publishedAt": "2026-10-29T15:35:53.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-29T20:31:20.000Z",
+      "id": "u-1793305880000-qs35",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Netanyahus Likud-Partei ist die stärkste Fraktion in der Knesset, so The Jerusalem Post und Die Welt. Die Welt berichtete, dass die Likud 27 Mandate gewonnen hat.",
+          "headline": "Likud bleibt stärkste Partei bei israelischen Wahlen"
+        },
+        "en": {
+          "body": "Netanyahu's Likud party is the largest party in the Knesset, according to The Jerusalem Post and Die Welt. Die Welt reported Likud won 27 mandates.",
+          "headline": "Likud remains largest party in Israel election"
+        },
+        "es": {
+          "body": "El partido Likud de Netanyahu es la fuerza mayoritaria en la Knesset, según The Jerusalem Post y Die Welt. Die Welt informó que Likud obtuvo 27 mandatos.",
+          "headline": "Likud sigue siendo el partido más votado en las elecciones de Israel"
+        },
+        "fr": {
+          "body": "Le parti Likoud de Netanyahu est le premier parti à la Knesset, selon The Jerusalem Post et Die Welt. Die Welt a rapporté que le Likoud a remporté 27 mandats.",
+          "headline": "Le Likoud reste le premier parti aux élections israéliennes"
+        },
+        "it": {
+          "body": "Il partito Likud di Netanyahu è il gruppo più numeroso nella Knesset, secondo The Jerusalem Post e Die Welt. Die Welt ha riportato che il Likud ha ottenuto 27 mandati.",
+          "headline": "Il Likud resta il partito più votato nelle elezioni israeliane"
+        },
+        "ja": {
+          "body": "エルサレム・ポスト紙とディー・ヴェルト紙によると、ネタニヤフ氏率いるリクード党がクネセト（国会）で最大党となった。ディー・ヴェルト紙は、リクードが27議席を獲得したと報じた。",
+          "headline": "イスラエル選挙、リクードが最大党を維持"
+        },
+        "ko": {
+          "body": "더 제루살렘 포스트와 디 벨트에 따르면, 네타냐후의 리쿠드당이 크네세트(이스라엘 의회) 내 제1당이 되었다. 디 벨트는 리쿠드당이 27석을 확보했다고 보도했다.",
+          "headline": "리쿠드당, 이스라엘 총선서 제1당 유지"
+        },
+        "pt": {
+          "body": "O partido Likud, de Netanyahu, é o maior partido no Knesset, de acordo com o The Jerusalem Post e o Die Welt. O Die Welt reportou que o Likud conquistou 27 mandatos.",
+          "headline": "Likud mantém-se como o maior partido nas eleições de Israel"
+        },
+        "zh": {
+          "body": "据《耶路撒冷邮报》和《世界报》报道，内塔尼亚胡领导的利库德集团是以色列议会中的最大政党。《世界报》报道称，利库德集团赢得了27个席位。",
+          "headline": "利库德集团仍是以色列选举中最大政党"
+        }
+      },
+      "sources": [
+        {
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oeHhfTnotN1N5OU1vQ1lzRHUwTm5QUEdQd0k1bGxEWXRORldPalZGbVktUzNrMTRPT1pGZk0zLWlvMFNRV3RoOUpfeWIwQ0dPNHM3Q0thX1R4SHlCOXlNYmZ4SWFsRWdW?oc=5",
+          "title": "Israel Election 2026: Netanyahu's Likud remains Israel's biggest party",
+          "outlet": "The Jerusalem Post",
           "publishedAt": "2026-10-29T20:31:20.000Z"
         },
         {
-          "outlet": "The Jerusalem Post",
-          "title": "Israel election results: Netanyahu's Likud biggest party in Israel after all votes counted",
           "url": "https://www.jpost.com/israel-election-2026/article-913237",
+          "title": "Israel election results: Netanyahu's Likud biggest party in Israel after all votes counted",
+          "outlet": "The Jerusalem Post",
           "publishedAt": "2026-10-29T19:25:31.000Z"
         },
         {
-          "outlet": "Die Welt",
-          "title": "Netanjahu und Eisenkot verfehlen Mehrheit – nun droht Israel politischer Stillstand",
           "url": "https://www.welt.de/politik/ausland/article6ae39702981b80c0b79861fe/wahl-endergebnis-netanjahu-und-eisenkot-verfehlen-mehrheit-nun-droht-israel-politischer-stillstand.html",
+          "title": "Netanjahu und Eisenkot verfehlen Mehrheit – nun droht Israel politischer Stillstand",
+          "outlet": "Die Welt",
           "publishedAt": "2026-10-29T19:12:28.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-29T15:16:24.000Z",
@@ -1492,14 +1608,45 @@
     "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbjB6Sy05WGFZNEpOcWpjU29vbVdzWUZzaTZyZmtqbUw0QTV1WlJMVkNjRWdKWHVHcEgwR3lTTlNWeGFmUHdYdHV3S2JFZkZjTDE4aGVfT3RLZUhjVjdZYlJXVDZsUFpNUVRJTVMyd1pPbWJIWjJuaFdSS0pBamxoMmtrU2ZwMzBKbk9GSzFuNWYteFE1dU0yQWhLNmRPMEpBSUJXbnFjT0dsUQ?oc=5",
     "https://www.cnbc.com/2026/10/29/midterm-elections-stock-market-history.html",
     "https://thehill.com/homenews/administration/6181651-trump-blasts-democrats-hegseth-impeachment/",
-    "https://thehill.com/homenews/state-watch/6181622-newsom-trump-california-election-observers-battleground-districts/"
+    "https://thehill.com/homenews/state-watch/6181622-newsom-trump-california-election-observers-battleground-districts/",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYU8yZm9VVnY4dU1xZ3pubXdEblZHSWtwaFBSenhGRE1NYmRXeG1rVVZxcEdPY0dJOFJuUjJBRzl3Q19oVzQyRjBqdUlXaDRLX0JIUTI5MXpfOUtoOTg2OHkwWktPWk05cTJKd3o4a2publk2QUJWYjI2WjhSM3hINFB5dmdTbmdkWkUtNHNFaWl6Um5BUEcwZ1dDZmZyT1NrMVlNRXlOd25FRHh0TTRqdV9HTEs?oc=5",
+    "https://www.axios.com/2026/10/29/midterms-election-lawsuits-ballot-disputes",
+    "https://www.abc.net.au/news/2026-10-30/us-midterms-daily-news-briefing-trump-economy/107321896",
+    "https://thehill.com/policy/technology/6182500-senators-press-kalshi-polymarket/",
+    "https://www.nytimes.com/2026/10/29/world/americas/machado-trump-venezuela-return.html",
+    "https://www.aljazeera.com/news/2026/10/29/palestinians-injured-arrested-in-israeli-raids-across-west-bank?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMivgFBVV95cUxNNzlzdlNsUFVzQ2hXa192b3ZScnJFY1lYRm1yZHZTa3d1dVdJT1FLcklVZ0Y2YjBJc1dOVUxCd2ctY3hwbTJ6X1FHOHFEbDlfbWEtZFhBdV9KV3hidHBhMU9JTzlBME9DVXJMcHZFbl9HaV9QUmdKY3QxaHRENWREX2k3V0ZTT2ZCSm5oeTd6LTZXRDVWS1ZITDJvYzQ0TjVKZDRKaG5YblVSbmFxTHBNbnZOV3J2YmRjZEFTcUp3?oc=5",
+    "https://www.aljazeera.com/news/2026/10/29/israel-election-result-shows-no-overall-majority-as-vote-count-complete?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRlpCRG9NcHVDQ0tyZU1oTW4zc0FveHBWQmdzLTFpZW1Cal9nVlpmVHlyeGZodTBaS29JVFRTNlNDUmhDbVlzUUttZ2VwTGxNX21RaWhQSlN2eDI3ZU1ZUWc4TGdoVkd4bzhSaEROVDNhUDZjWGs4TkhWaVdraU84Q3haaFkybDhPTTZsNVBZbm52LWpvUGpPUVFKRFNDWk5OZWs5SmNMZ0ZiUlU?oc=5",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZGlmalZLSVMzbEdsVkYwWFpZbGFIYjlJanMzY1ViTUNyZFlLQjFjLTlwMEY0NnNOLWZRSmEwTV9aVnRSbmc3VE5FNDNZZGJPYzNRQVRzdlhXeHZzazBMeFpUZjJrUHA4UjNiYV85bm1DenRwQVhkdHZHQUdlSDRoeFpURy1kaTJmOWdfWFdWZW1FdVE1VFZ5QmZSLURFQ2t5X0xmS2UtbmcxQQ?oc=5",
+    "https://thehill.com/homenews/administration/6181657-vance-peltola-alaska-senate-prosecution/",
+    "https://www.faz.net/aktuell/politik/ausland/israels-parlamentswahl-regiert-bald-eine-juedisch-arabische-koalition-201632198.html",
+    "https://www.euronews.com/2026/10/29/deadly-train-crash-puts-sanchez-on-the-ropes-a-month-before-elections",
+    "https://timesofindia.indiatimes.com/world/middle-east/netanyahus-unity-government-gambit-can-he-lure-eisenkot-from-opposition/articleshow/135323190.cms",
+    "https://www.thehindu.com/news/international/republicans-defend-their-bastions-as-senate-comes-within-reach-of-democrats/article71641257.ece",
+    "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVzFDWk1GRENKX0VCQkZFMlE3ZldUNEkxZ1liUmZMYnlHNmZPOU8tU25sVkRNYnJQemg2M2VfYy1KRXNwLXdxMXE4YktKVzJjNnVraHc2SUNnc2VnV0dOdDdMRDVFQUJYTjN5TmU2dWFJRVYxZnFQQjVLLVM3QlMzcXQtRzVfUjNzaDdwaUhIX0tWajhoUGpiVGpHNjJjdTl1M3NoUGdPMDVwa2lCRk5yX1BkMFpRblNfOG5MY2dHN1FNTGNuX181dnRYX090TXdiYndQZkpESXkwMTdyX2dOQmJ1elVZWm01cmR5WVdERkJVSzFxeGpYZzdmMHU?oc=5",
+    "https://www.thehindu.com/news/international/ukraine-says-at-least-13-killed-in-russian-attack-on-train-station/article71641924.ece",
+    "https://www.france24.com/en/americas/20261029-flavio-bolsonaro-s-great-escape-is-this-the-beginning-of-the-end-for-bolsonarism",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxQR2w2d2psSzhPT1ZYbTNhbWo3UExuRloteTFUazU2bWV4Yjc1Mm02bjUyNFlObnRVdGJVcFRoWl8yVXlOZnJNV2xvenhsendxR2tjUmZiZjFWOTI0U0JydTloZmhzQ2JZRTlsWURmLW5NZXZUZEJVYWY0T2VJNF9pa3hWM2dMYnNfdUtrbFpFeUw3RnlkdFNJcmhlLWdJZjZK?oc=5",
+    "https://www.euronews.com/2026/10/29/netenyahus-likud-party-alleges-interference-and-fraud-in-israels-election",
+    "https://www.france24.com/en/tv-shows/people-profit/20261029-a-tale-of-two-economies-how-america-s-cost-of-living-crisis-is-shaping-us-midterm-elections",
+    "https://www.euronews.com/2026/10/29/palestinian-president-abbas-signals-readiness-for-talks-with-israel-seeks-cyprus-mediation",
+    "https://news.google.com/rss/articles/CBMie0FVX3lxTE9ONHFfYm5EWDBpZURMdzA1eGFDR2QyTEsxeHA3MTRZd2kyak9oQnBENU4xNU03bVFxeHIwVHZwZjFmbmpkemc3WEtSRW5icGw3N1M1bm1jWjlLelVKTnV3Znk0T19FaUxYRm13SGkxT3pEemZHTG1Fa3BQUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkI4Q3pYUVhzX1QyeEpZLWcwZm94Z2hoV1BiU0pqWkhQM1JUZmhwakN6N0g3enoySWNaN2prWGVXRUZIXzRNMllwSFhxTWVWNFpjSWh4eEdiYzhhcUczdGRGZktZYnZNNzlCNVowVk44UlZLYXpLTlpqX215SEFMaHdkYUVRYU8zTkQ2NXRQbkswV3VpbG0ydmhsRldPUdIBowFBVV95cUxPeHFIS19GdjN0aTJpalJSdEp6SUVqazNvaEdlak5jYW5TRjlTS0RwYkRmaWRhM0FHd21qTGtHOENQUVNnekNRaEJlSHZTSVg1dnBDMHE1TVcxNGdSVGJNYW9WT0hOYzROWTJ0VGdwbXEwOUI4M3lCQWMwMm1kQy1NMGhfWkJBT0I5NGpLZ2kxWE5LaGMzZXBPVjMxNTFYV2lsSFVN?oc=5",
+    "https://www.jpost.com/israel-news/article-913242",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVVhJaUhGRHA3a2hDRmNQYTVnOXZXeXM3aGRQMzF4eG92eWV5aThxZldjQnV4TXpPT1hKUHQtSmhDOGwycjkxaHpUR21sTEprYTA3b2o5S1FwN193UGRsQjdxYTNxZzVwMklodXM4SEZIa2NGQnhoQTdQRnlMVHZHZEs3SjN2Rlo4WDBhOUtSNjVTeFc5UVlOeWNnbHd6Y3FC?oc=5",
+    "https://www.thehindu.com/news/international/serbias-students-demand-resignations-in-police-judiciary-as-they-prepare-to-take-power/article71641428.ece",
+    "https://www.straitstimes.com/world/middle-east/vance-outreach-to-iran-related-to-medical-supplies-says-trump",
+    "https://www.aljazeera.com/news/2026/10/29/israels-anti-qatar-campaign-bleeds-into-elections?traffic_source=rss",
+    "https://www.batimes.com.ar/news/latin-america/trump-says-brazil-election-was-a-disgrace.phtml",
+    "https://www.bbc.co.uk/news/articles/c3x2w4109pj8o?at_medium=RSS&at_campaign=rss"
   ],
   "startedAt": "2026-10-28T18:57:30.689Z",
-  "updatedAt": "2026-10-29T20:47:55.058Z",
+  "updatedAt": "2026-10-29T20:54:14.322Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "israel-election-deadlock-persists-as-netanyahu-bloc-falls",
-  "sourceCount": 17,
+  "sourceCount": 19,
   "statsHistory": [
     {
       "at": "2026-10-28T12:00:00.000Z",

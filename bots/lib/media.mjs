@@ -148,6 +148,19 @@ export function extractVideoFromHtml(html) {
   return null;
 }
 
+/** Decode entities and strip the CMS prefixes that ship inside figcaptions. */
+export function cleanCaptionText(value) {
+  return String(value || '')
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(+dec))
+    .replace(/&(amp|quot|lt|gt|nbsp|apos);/gi, (m) => ({ '&amp;': '&', '&quot;': '"', '&lt;': '<', '&gt;': '>', '&nbsp;': ' ', '&apos;': "'" }[m.toLowerCase()] ?? m))
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^figure caption[:\s,-]*/i, '')
+    .replace(/^(?:caption|bild(?:unterschrift)?|photo|photograph|image|credit|source|courtesy)[:\s,-]+/i, '')
+    .trim();
+}
+
 export function extractImagesFromHtml(html) {
   if (!html) return [];
   const list = [];
@@ -157,10 +170,13 @@ export function extractImagesFromHtml(html) {
   let pageCaption = '';
   let pageCredit = '';
   if (fig && fig[1]) {
-    const raw = fig[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    const raw = cleanCaptionText(fig[1].replace(/<[^>]+>/g, ' '));
     const creditMatch = raw.match(/\[(?:File:?\s*)?([^\]]+)\]|\((?:Photo(?:\s+by)?:\s*)?([^\)]+)\)/i);
+    // Parentheses in captions often hold a party name or a date, not a credit.
+    const PHOTO_CREDIT = /\b(photo|photograph|foto|bild|getty|reuters|ap|afp|dpa|epa|keystone|shutterstock|imago|anadolu|zuma|bloomberg|flash90|laif|picture alliance|agency)\b|\//i;
     if (creditMatch) {
-      pageCredit = (creditMatch[1] || creditMatch[2]).trim();
+      const candidate = cleanCaptionText(creditMatch[1] || creditMatch[2]);
+      if (candidate && PHOTO_CREDIT.test(candidate)) pageCredit = candidate;
     }
     pageCaption = raw.replace(/\[[^\]]+\]|\([^\)]+\)/g, '').trim();
   }
@@ -179,7 +195,7 @@ export function extractImagesFromHtml(html) {
   const articleImg = html.match(/<article[\s\S]*?<img[^>]+src=["']([^"']+)["'][^>]*>/i);
   if (articleImg && articleImg[1] && !isJunkImage(articleImg[1])) {
     const altMatch = articleImg[0].match(/alt=["']([^"']+)["']/i);
-    const altText = altMatch ? altMatch[1].trim() : '';
+    const altText = altMatch ? cleanCaptionText(altMatch[1]) : '';
     list.push({ url: articleImg[1], score: 9, caption: pageCaption || altText, credit: pageCredit });
   }
 
@@ -206,15 +222,17 @@ export function curateMedia(sources = []) {
 
     const imageUrl = cleanImageUrl(s.image);
     if (imageUrl && !isJunkImage(imageUrl)) {
+      const caption = cleanCaptionText(s.imageCaption || s.caption);
+      const credit = cleanCaptionText(s.imageCredit || s.credit);
       let score = 5;
       if (/aljazeera|spiegel|nytimes|reuters|apnews|gettyimages|afp|tagesschau/i.test(imageUrl)) score += 5;
       if (/1920|1440|1080|1200/i.test(imageUrl)) score += 3;
-      if (s.caption) score += 4; // Prioritize images with verified photographer captions!
+      if (caption) score += 4; // Prioritize images with verified photographer captions!
       if (score > highestScore) {
         highestScore = score;
         bestImage = imageUrl;
-        bestCaption = s.caption || null;
-        bestCredit = s.credit || null;
+        bestCaption = caption || null;
+        bestCredit = credit || null;
       }
     }
   }

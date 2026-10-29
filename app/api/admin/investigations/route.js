@@ -1,0 +1,139 @@
+import { NextResponse } from 'next/server';
+import { createClient } from '@supabase/supabase-js';
+import {
+  getInvestigationStatus,
+  listInvestigations,
+  listOutreach,
+  listRequests,
+  requestOutreach,
+  setInvestigationStatus,
+  setOutreach,
+  setRequestStatus,
+  weekUsage,
+} from '@/lib/investigationStore.mjs';
+import { weekKey } from '@/lib/investigations.mjs';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+const ADMINS = String(process.env.ADMIN_EMAILS || 'simoneggert16@gmail.com')
+  .split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
+
+async function requireAdmin(request) {
+  const accessToken = request.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
+  if (!accessToken) return { error: 'Anmeldung erforderlich.', status: 401 };
+  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !anonKey) return { error: 'Supabase ist nicht konfiguriert.', status: 500 };
+  const authClient = createClient(url, anonKey, { auth: { autoRefreshToken: false, persistSession: false } });
+  const { data: { user }, error } = await authClient.auth.getUser(accessToken);
+  if (error || !user?.email) return { error: 'Sitzung ungültig.', status: 401 };
+  if (!ADMINS.includes(user.email.toLowerCase())) {
+    return { error: 'Kein Redaktionszugang für dieses Konto.', status: 403 };
+  }
+  return { user };
+}
+
+export async function GET(request) {
+  try {
+    const auth = await requireAdmin(request);
+    if (auth.error) return NextResponse.json({ error: auth.error }, { status: auth.status });
+
+    const [requests, investigations, outreach, usage] = await Promise.all([
+      listRequests({ limit: 80 }),
+      listInvestigations(),
+      listOutreach({ limit: 80 }),
+      weekUsage(weekKey()),
+    ]);
+    return NextResponse.json({
+      admin: auth.user.email,
+      week: weekKey(),
+      quota: usage,
+      requests,
+      investigations,
+      outreach,
+    }, { headers: { 'Cache-Control': 'no-store' } });
+  } catch (err) {
+    console.error('Admin investigations GET failed:', err.message);
+    return NextResponse.json({ error: 'Übersicht konnte nicht geladen werden.' }, { status: 500 });
+  }
+}
+
+export async function POST(request) {
+  try {
+    const auth = await requireAdmin(request);
+    if (auth.error) return NextResponse.json({ error: auth.error }, { status: auth.status });
+
+    const body = await request.json().catch(() => ({}));
+    const action = String(body.action || '');
+    const by = auth.user.email;
+    const now = new Date().toISOString();
+
+    if (action === 'approve-outreach' || action === 'reject-outreach') {
+      const ids = Array.isArray(body.ids) ? body.ids.filter((id) => typeof id === 'string') : [];
+      if (!ids.length) return NextResponse.json({ error: 'Keine Entwürfe ausgewählt.' }, { status: 400 });
+      await setOutreach(ids, action === 'approve-outreach'
+        ? { status: 'approved', approved_by: by, approved_at: now }
+        : { status: 'rejected', approved_by: by, approved_at: now });
+      return NextResponse.json({ ok: true, updated: ids.length });
+    }
+
+    if (action === 'request-outreach') {
+      const slug = String(body.slug || '').trim();
+      const toEmail = String(body.toEmail || '').trim().toLowerCase();
+      if (!slug) return NextResponse.json({ error: 'Kein Dossier ausgewählt.' }, { status: 400 });
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(toEmail)) {
+        return NextResponse.json({ error: 'Bitte eine gültige E-Mail-Adresse angeben.' }, { status: 400 });
+      }
+      const dossier = await getInvestigationStatus(slug);
+      if (!dossier) return NextResponse.json({ error: 'Dossier nicht gefunden.' }, { status: 404 });
+      if (dossier.status === 'published') {
+        return NextResponse.json({ error: 'Veröffentlichte Dossiers verschicken keine Anfragen mehr.' }, { status: 409 });
+      }
+      await requestOutreach({
+        slug,
+        toEmail,
+        org: String(body.org || '').slice(0, 160),
+        note: String(body.note || '').slice(0, 1000),
+      });
+      return NextResponse.json({ ok: true, status: 'requested' }, { status: 201 });
+    }
+
+    if (action === 'mark-replied') {
+      const id = String(body.id || '');
+      if (!id) return NextResponse.json({ error: 'Kein Eintrag ausgewählt.' }, { status: 400 });
+      await setOutreach([id], { status: 'replied', reply_note: String(body.note || '').slice(0, 2000) });
+      return NextResponse.json({ ok: true });
+    }
+
+    if (action === 'publish') {
+      const slug = String(body.slug || '');
+      const current = await getInvestigationStatus(slug);
+      if (!current) return NextResponse.json({ error: 'Dossier nicht gefunden.' }, { status: 404 });
+      if (current.status !== 'review') {
+        return NextResponse.json({ error: `Nur geprüfte Dossiers können freigegeben werden (Status: ${current.status}).` }, { status: 409 });
+      }
+      await setInvestigationStatus(slug, 'approved', { approved_at: now });
+      return NextResponse.json({ ok: true, status: 'approved' });
+    }
+
+    if (action === 'drop' || action === 'reopen') {
+      const slug = String(body.slug || '');
+      if (!slug) return NextResponse.json({ error: 'Kein Dossier ausgewählt.' }, { status: 400 });
+      await setInvestigationStatus(slug, action === 'drop' ? 'dropped' : 'research');
+      return NextResponse.json({ ok: true });
+    }
+
+    if (action === 'decline-request' || action === 'accept-request') {
+      const id = String(body.id || '');
+      if (!id) return NextResponse.json({ error: 'Kein Wunsch ausgewählt.' }, { status: 400 });
+      await setRequestStatus(id, action === 'decline-request' ? 'declined' : 'selected');
+      return NextResponse.json({ ok: true });
+    }
+
+    return NextResponse.json({ error: 'Unbekannte Aktion.' }, { status: 400 });
+  } catch (err) {
+    console.error('Admin investigations POST failed:', err.message);
+    return NextResponse.json({ error: 'Aktion fehlgeschlagen.' }, { status: 500 });
+  }
+}

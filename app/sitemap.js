@@ -2,7 +2,7 @@ import { SITE, LOCALE_CODES, CATEGORIES } from '@/lib/config.mjs';
 import { getIndex } from '@/lib/content.mjs';
 import { getLiveIndex } from '@/lib/liveStore.mjs';
 
-const STATIC_PATHS = ['', '/about', '/markets', '/ticker', '/live', '/longreads', '/sources', '/search', '/legal', '/privacy'];
+const STATIC_PATHS = ['', '/about', '/markets', '/ticker', '/live', '/longreads', '/investigations', '/sources', '/search', '/legal', '/privacy'];
 
 const alternatesFor = (path, base) =>
   Object.fromEntries(LOCALE_CODES.map((locale) => [locale, `${base}/${locale}${path}`]));

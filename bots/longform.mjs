@@ -28,7 +28,8 @@ if (fs.existsSync('.env')) {
 import { FEEDS } from './sources.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { chatJSON } from './lib/llm.mjs';
-import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
+import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
+import { collectImages, assignImages } from './lib/illustrate.mjs';
 import { loadIndex, saveIndex, loadArticle, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { distinctOutlets, isDuplicateStory } from '../lib/editorial.mjs';
@@ -180,12 +181,14 @@ async function gatherMaterial(theme, items, index) {
   };
 
   for (const cluster of theme.clusters) {
-    for (const it of cluster.items.slice(0, 8)) add({ outlet: it.outlet, title: it.title, url: it.url, publishedAt: it.publishedAt, summary: it.summary });
+    for (const it of cluster.items.slice(0, 8)) {
+      add({ outlet: it.outlet, title: it.title, url: it.url, publishedAt: it.publishedAt, summary: it.summary, image: it.image });
+    }
   }
   // Fresh reports that carry the theme keywords beyond the seed clusters.
   for (const it of items) {
     if (keywordHits(`${it.title} ${it.summary || ''}`, theme.keywords) >= 2) {
-      add({ outlet: it.outlet, title: it.title, url: it.url, publishedAt: it.publishedAt, summary: it.summary });
+      add({ outlet: it.outlet, title: it.title, url: it.url, publishedAt: it.publishedAt, summary: it.summary, image: it.image });
     }
   }
 
@@ -210,6 +213,12 @@ async function gatherMaterial(theme, items, index) {
   await pool(toRead, 4, async (s) => {
     const d = await fetchArticleDetails(s.url).catch(() => null);
     if (d?.text) s.text = d.text;
+    // The article page is what carries the photo; feed enclosures are often too small.
+    if (d?.image) {
+      s.image = d.image;
+      s.imageCaption = d.imageCaption;
+      s.imageCredit = d.imageCredit;
+    }
   });
 
   return { ok: true, sources, background, read: toRead.filter((s) => s.text).length };
@@ -250,8 +259,9 @@ ${sourcePack(material.sources)}
 TASK: Write ONE long, explanatory piece in English, ${MIN_WORDS}-1600 words total.
 
 STRUCTURE
-- standfirst: the scene in one calm paragraph.
-- sections: 4-6 sections. Each has a short heading (max 60 characters, no puns) and 3-6 paragraphs of 2-4 sentences.
+- standfirst: one calm paragraph that states the concrete development and why it matters, with at least one figure.
+- sections: 4-6 sections. Each has a short heading (max 60 characters, no puns) and 3-5 real paragraphs of 3-5 sentences.
+- Paragraphs are prose, not stacked facts. A paragraph develops one idea: a figure from the sources, who is affected, what the documents or officials say, what is disputed.
 - Move from the concrete (what happened, what the numbers say, who is affected) to the wider context (how it developed, what it compares to) and end with what is confirmed about next steps.
 - facts: 4-6 short key facts, each with the number or date it relies on.
 
@@ -262,6 +272,9 @@ RULES
 - No opinion, no predictions of your own, no "experts say" without naming them, no first person, no calls to action.
 - No bullet lists, no sub-sub-headings, no "in conclusion", no "it remains to be seen".
 - Do not repeat the same fact in two sections.
+- Depth comes from detail, not from repetition: use the source's figures, chronology, official titles and exact wording. Never pad a section by restating an earlier fact in new words.
+- Do not write four short declarative sentences in a row and do not start consecutive sentences with the same subject. One longer sentence with two clauses per paragraph is mandatory.
+- No evaluative summary sentences ("This was a test of…", "It showed…", "The election underlined…"). Stop the paragraph on the last fact.
 
 Return exactly:
 ${LONGFORM_SCHEMA}${strict ? '\n\nIMPORTANT: your previous reply was invalid. Return valid JSON only: "sections" must be an array of objects, "paragraphs" and "facts" arrays of strings.' : ''}`,
@@ -270,7 +283,7 @@ ${LONGFORM_SCHEMA}${strict ? '\n\nIMPORTANT: your previous reply was invalid. Re
   return { draft: data, model };
 }
 
-async function editLongform(theme, material, draft) {
+async function editLongform(theme, material, draft, styleIssues = []) {
   const { data, model } = await chatJSON('editor', [
     {
       role: 'system',
@@ -279,10 +292,11 @@ async function editLongform(theme, material, draft) {
     {
       role: 'user',
       content: `SOURCES:\n${sourcePack(material.sources)}\n\nBACKGROUND:\n${backgroundPack(material.background) || '(none)'}\n\nDRAFT:\n${JSON.stringify(draft, null, 2)}
-
+${styleIssues.length ? `\nSTYLE PROBLEMS MEASURED IN THE DRAFT (fix all of them):\n${styleIssues.map((p) => `- ${p}`).join('\n')}\n` : ''}
 Check:
 - Every claim, number, date, name and quote must appear in the sources. Delete or fix anything unsupported — including plausible-sounding context.
 - Remove speculation, opinion, filler, repeated facts and any sentence that only restates the headline.
+- Rewrite monotonous prose: vary sentence length, remove repeated sentence openings, cut evaluative summary sentences, and keep every paragraph advancing.
 - Keep the explanatory structure and the length (${MIN_WORDS}+ words). Do not shorten it into a news report.
 Verdict: "publish" if correct, "revise" with the fully corrected piece in "article", "reject" if the material cannot support ${MIN_WORDS} words honestly.
 
@@ -328,11 +342,14 @@ async function buildOne(theme, material, index) {
   const slop = slopHits({ title: draft.title, dek: draft.dek });
   if (slop.length) throw new Error(`banned phrases: ${slop.join(', ')}`);
 
+  const styleIssues = styleProblems(draft);
+  if (styleIssues.length) log(`  STYLE  ${styleIssues.join(' | ')}`);
+
   let final = draft;
   let editorModel = null;
   let verdict = 'skipped';
   try {
-    const { review, model: em } = await editLongform(theme, material, draft);
+    const { review, model: em } = await editLongform(theme, material, draft, styleIssues);
     editorModel = em;
     verdict = review?.verdict || 'unknown';
     log(`  EDITOR ${verdict}${review?.problems?.length ? ' — ' + review.problems.slice(0, 3).join(' | ') : ''}`);
@@ -349,6 +366,9 @@ async function buildOne(theme, material, index) {
     final = draft;
   }
 
+  const leftoverStyle = styleProblems(validLongform(final) ? final : draft);
+  if (leftoverStyle.length) log(`  STYLE  after edit: ${leftoverStyle.join(' | ')}`);
+
   const dup = isDuplicateStory(edited.title, index.articles.map((a) => a.locales?.[SOURCE_LOCALE]?.title || '').filter(Boolean));
   if (dup.isDup) {
     log(`  DEDUP  "${edited.title}" ≈ "${dup.matchingTitle}" → skipped`);
@@ -363,17 +383,21 @@ async function buildOne(theme, material, index) {
     sources.push({ outlet: s.outlet, title: s.title, url: s.url, publishedAt: s.publishedAt });
   }
 
-  const sections = edited.sections.map((s) => ({
+  const pictures = await collectImages(material.sources, { max: 3 });
+  const hero = pictures[0] || null;
+  log(`  PHOTO  ${pictures.length} usable image(s)${hero ? ` — hero from ${hero.outlet || 'source'}` : ''}`);
+
+  const sections = assignImages(edited.sections.map((s) => ({
     heading: String(s.heading || '').trim().slice(0, 90),
     paragraphs: (s.paragraphs || []).map((p) => String(p).trim()).filter(Boolean),
-  }));
+  })), pictures);
 
   const doc = {
     slug: slugify(edited.title),
     category: theme.category,
     form: 'longform',
-    image: null,
-    imageCredit: null,
+    image: hero?.url || null,
+    imageCredit: hero?.credit || null,
     video: null,
     importance: Math.min(5, 3 + (distinctOutlets(sources).length >= 5 ? 1 : 0) + (theme.category === 'world' || theme.category === 'politics' ? 1 : 0)),
     publishedAt: nowISO(),
@@ -390,7 +414,7 @@ async function buildOne(theme, material, index) {
         body: sections.flatMap((s) => s.paragraphs),
         sections,
         context: String(edited.context || '').trim(),
-        imageCaption: '',
+        imageCaption: hero?.caption || '',
       },
     },
     history: [],
@@ -410,22 +434,35 @@ async function translateLongform(block, locale) {
     },
     {
       role: 'user',
-      content: `Translate this JSON into ${lang.label}. Keep "sections" as an array with the same number of items, each with "heading" and "paragraphs". Return exactly the same keys.
+      content: `Translate this JSON into ${lang.label}. Keep "sections" as an array with the same number of items, each with "heading" and "paragraphs". If a section has an "image" object, keep its "url" and "credit" unchanged and translate only "caption". Return exactly the same keys.
 
-${JSON.stringify({ title: block.title, dek: block.dek, standfirst: block.standfirst, facts: block.facts, sections: block.sections, context: block.context })}`,
+${JSON.stringify({ title: block.title, dek: block.dek, standfirst: block.standfirst, facts: block.facts, sections: block.sections, context: block.context, imageCaption: block.imageCaption || '' })}`,
     },
   ], { temperature: 0.2, maxTokens: 12000 });
 
   if (!Array.isArray(data.sections) || data.sections.length < 2) throw new Error('translation lost sections');
+  const sections = data.sections.map((s, i) => {
+    const source = block.sections?.[i];
+    const section = { heading: String(s.heading || ''), paragraphs: (s.paragraphs || []).map(String) };
+    if (source?.image?.url) {
+      section.image = {
+        url: source.image.url,
+        credit: source.image.credit || '',
+        caption: String(s?.image?.caption || source.image.caption || '').trim(),
+      };
+    }
+    return section;
+  });
+
   return {
     title: String(data.title || block.title).trim(),
     dek: String(data.dek || block.dek).trim(),
     standfirst: String(data.standfirst || block.standfirst).trim(),
     facts: Array.isArray(data.facts) && data.facts.length ? data.facts.map(String) : block.facts,
-    body: data.sections.flatMap((s) => (s.paragraphs || []).map(String)),
-    sections: data.sections.map((s) => ({ heading: String(s.heading || ''), paragraphs: (s.paragraphs || []).map(String) })),
+    body: sections.flatMap((s) => s.paragraphs),
+    sections,
     context: String(data.context || block.context || '').trim(),
-    imageCaption: '',
+    imageCaption: String(data.imageCaption || block.imageCaption || '').trim(),
   };
 }
 

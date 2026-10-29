@@ -28,7 +28,7 @@ if (fs.existsSync('.env')) {
 import { FEEDS } from './sources.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { chatJSON, setDeadline } from './lib/llm.mjs';
-import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
+import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
 import { loadIndex, saveIndex, loadState, saveState, saveArticle, loadArticle, toIndexEntry, slugify } from './lib/store.mjs';
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
@@ -262,7 +262,7 @@ async function reporter(event, strict = false) {
 }
 
 // ─────────────────────────── 4. EDITOR ───────────────────────────
-async function editor(event, draft) {
+async function editor(event, draft, styleIssues = []) {
   const { data, model } = await chatJSON('editor', [
     {
       role: 'system',
@@ -270,11 +270,14 @@ async function editor(event, draft) {
     },
     {
       role: 'user',
-      content: `SOURCES:\n${sourcePack(event.sources)}\n\nDRAFT:\n${JSON.stringify(draft, null, 2)}\n\nCheck every sentence:
+      content: `SOURCES:\n${sourcePack(event.sources)}\n\nDRAFT:\n${JSON.stringify(draft, null, 2)}
+${styleIssues.length ? `\nSTYLE PROBLEMS MEASURED IN THE DRAFT (fix all of them):\n${styleIssues.map((p) => `- ${p}`).join('\n')}\n` : ''}
+Check every sentence:
 - Is it supported by the sources? Remove or fix anything unsupported (including invented numbers, quotes, dates).
 - Is it neutral and attributed? Fix loaded language, one-sided framing, speculation, filler.
 - Is the headline factual, ≤90 chars, no clickbait?
 - Is it genuinely informative (not thin or repetitive)?
+- Does it read like prose? Break up four-sentence staccato, remove repeated sentence openings, cut summary sentences that only evaluate.
 Verdict:
 - "publish" if it is already correct,
 - "revise" if fixable — then provide the fully corrected article in "article",
@@ -335,7 +338,9 @@ async function processEvent(event, recentTitles, seen) {
     const writerModel = writer.model;
     const deskName = writer.desk;
 
-    let { review, model: editorModel } = await editor(event, draft);
+    const styleIssues = styleProblems({ sections: [{ paragraphs: draft.body || [] }] });
+    if (styleIssues.length) log(`  STYLE   ${styleIssues.join(' | ')}`);
+    let { review, model: editorModel } = await editor(event, draft, styleIssues);
     log(`  EDITOR  ${review.verdict}${review.problems?.length ? ' — ' + review.problems.slice(0, 3).join(' | ') : ''}`);
     if (review.verdict === 'reject') return null;
     let final = review.verdict === 'revise' && validArticle(normalizeDraft(review.article)) ? normalizeDraft(review.article) : draft;
