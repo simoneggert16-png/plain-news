@@ -2,9 +2,9 @@ name: Investigations
 
 on:
   schedule:
-    # One small step per day. Intake only happens when the ISO week changes, so
-    # this is the heartbeat of a desk that can work on a story for months.
-    - cron: '10 6 * * *'
+    # Morning and evening shift. Intake only happens when the ISO week changes,
+    # so this is the heartbeat of a desk that can work on a story for months.
+    - cron: '10 6,18 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -51,9 +51,12 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM_EMAIL: ${{ vars.RESEND_FROM_EMAIL }}
+          DESK_EMAIL_DOMAIN: ${{ vars.DESK_EMAIL_DOMAIN }}
+          EDITORIAL_EMAIL: ${{ vars.EDITORIAL_EMAIL }}
           INVESTIGATE_DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
           INVESTIGATE_SLUG: ${{ inputs.slug || '' }}
           INVESTIGATE_INTAKE: ${{ inputs.intake == true && '1' || '' }}
+          INVESTIGATE_AGENT_STEPS: '12'
           INVESTIGATE_MIN_SOURCES: '8'
           INVESTIGATE_MIN_PRIMARY: '2'
           INVESTIGATE_MIN_CLAIMS: '6'

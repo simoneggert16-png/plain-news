@@ -12,6 +12,7 @@ import {
   weekUsage,
 } from '@/lib/investigationStore.mjs';
 import { weekKey } from '@/lib/investigations.mjs';
+import { listMessages } from '@/lib/inboxStore.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -39,11 +40,14 @@ export async function GET(request) {
     const auth = await requireAdmin(request);
     if (auth.error) return NextResponse.json({ error: auth.error }, { status: auth.status });
 
-    const [requests, investigations, outreach, usage] = await Promise.all([
+    const [requests, investigations, outreach, usage, messages] = await Promise.all([
       listRequests({ limit: 80 }),
       listInvestigations(),
       listOutreach({ limit: 80 }),
       weekUsage(weekKey()),
+      // The inbox table only exists after the migration ran; the page keeps
+      // loading without it.
+      listMessages({ limit: 60 }).catch(() => []),
     ]);
     return NextResponse.json({
       admin: auth.user.email,
@@ -52,6 +56,7 @@ export async function GET(request) {
       requests,
       investigations,
       outreach,
+      messages,
     }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (err) {
     console.error('Admin investigations GET failed:', err.message);

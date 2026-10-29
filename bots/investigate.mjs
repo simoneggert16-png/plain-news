@@ -30,6 +30,10 @@ if (fs.existsSync('.env')) {
 
 import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
+import { FEEDS } from './sources.mjs';
+import { googleNews, bingNews, webSearch } from './lib/search.mjs';
+import { openPage } from './lib/browse.mjs';
+import { runAgent } from './lib/agent.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
 import { collectImages, assignImages } from './lib/illustrate.mjs';
 import { loadIndex, saveIndex, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
@@ -38,13 +42,16 @@ import { LOCALES, SOURCE_LOCALE, SITE } from '../lib/config.mjs';
 import { terminologyFor } from './lib/terminology.mjs';
 import { INVESTIGATION_QUOTAS, weekKey } from '../lib/investigations.mjs';
 import {
+  addOutreach,
   listOutreach,
   listRequests,
+  requestOutreach,
   setInvestigationStatus,
   setOutreach,
   setRequestStatus,
   upsertInvestigation,
 } from '../lib/investigationStore.mjs';
+import { listMessages, markMessages } from '../lib/inboxStore.mjs';
 
 // ─────────────────────────── config ───────────────────────────
 const DOSSIER_DIR = 'content/investigations';
@@ -63,6 +70,10 @@ const TRANSLATE_CONCURRENCY = Math.max(1, +(process.env.INVESTIGATE_TRANSLATE_CO
 const TRANSLATE_LOCALES = String(process.env.INVESTIGATE_LOCALES || 'en,de,fr,es,it,pt')
   .split(',').map((s) => s.trim()).filter((c) => LOCALES.some((l) => l.code === c));
 const EDITORIAL_EMAIL = process.env.INVESTIGATE_REPLY_TO || process.env.RESEND_FROM_EMAIL || 'simoneggert16@gmail.com';
+
+// The desk answers under its own threaded address, so a reply lands on the
+// right dossier instead of in the general editorial inbox.
+const deskAddress = (slug) => (process.env.DESK_EMAIL_DOMAIN ? `desk+${slug}@${process.env.DESK_EMAIL_DOMAIN}` : EDITORIAL_EMAIL);
 const ACTIVE_STATUSES = ['pitch', 'research', 'outreach', 'drafting', 'review', 'approved'];
 
 setDeadline(Date.now() + Math.max(10, +(process.env.INVESTIGATE_MINUTES || 50)) * 60000);
@@ -92,7 +103,10 @@ async function safe(fn, fallback) {
   }
 }
 
-const googleNews = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-US&gl=US&ceid=US:en`;
+// Google News refuses most datacenter requests, so the search feeds come back
+// nearly empty on GitHub runners. The home-market outlets are always read in
+// addition; they are the sources a Swiss investigation needs anyway.
+const HOME_FEEDS = FEEDS.filter((f) => f.market === 'ch');
 
 // ─────────────────────────── dossier storage ───────────────────────────
 function loadDossiers() {
@@ -170,15 +184,21 @@ function addSource(d, item, extra = {}) {
   return true;
 }
 
-const STOPWORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'were', 'deutsch', 'thema']);
+const STOPWORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'were', 'deutsch', 'thema', 'einer', 'eines', 'einem', 'einen', 'diese', 'dieser', 'diesem', 'werden', 'wurde', 'wurden', 'nicht', 'auch', 'sowie', 'oder', 'aber', 'noch', 'nur', 'schon', 'sich', 'sind', 'dass', 'nach', 'ueber', 'über', 'beim', 'vom', 'zum', 'zur', 'durch', 'gegen', 'ohne', 'zwischen', 'immer', 'jeder', 'jede', 'jedes', 'keine', 'mehr', 'sowie']);
 
 function keywordsOf(d) {
-  const text = `${d.title} ${d.angle} ${d.brief?.topic || ''} ${d.brief?.region || ''} ${(d.brief?.hints || '')}`;
-  const set = new Set(String(text).toLowerCase()
-    .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
-    .split(/\s+/)
-    .filter((w) => w.length >= 5 && !STOPWORDS.has(w)));
-  return [...set].slice(0, 12);
+  // The brief comes first: it is where a Swiss desk names the German-language
+  // terms the primary sources actually use, so those must survive the cap.
+  const text = `${(d.brief?.hints || '')} ${d.brief?.topic || ''} ${d.brief?.region || ''} ${d.title} ${d.angle}`;
+  const seeded = (Array.isArray(d.keywords) ? d.keywords : []).map((k) => String(k).toLowerCase());
+  const set = new Set([
+    ...seeded,
+    ...String(text).toLowerCase()
+      .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w.length >= 5 && !STOPWORDS.has(w)),
+  ]);
+  return [...set].slice(0, 24);
 }
 
 function keywordHits(text, keywords) {
@@ -359,10 +379,422 @@ async function ensureQueries(d) {
   if (!d.queries.length) throw new Error('no research queries');
 }
 
+// ─────────────────────────── 2a. AGENT ───────────────────────────
+// The desk works like a reporter with a browser and a phone: it searches,
+// opens documents, follows links, writes down what it can prove, and keeps a
+// list of who has to answer. One run per day, state on disk.
+async function researchAgent(d) {
+  const cache = new Map();
+  const startedSources = d.sources.length;
+  const startedClaims = d.claims.length;
+
+  const state = () =>
+    [
+      `SOURCES ON FILE (${d.sources.length})`,
+      d.sources.map((s) => `[${s.id}] ${s.outlet}${s.primary ? ' (primary)' : ''} — ${s.title} — ${s.url}`).join('\n') || '(none)',
+      '',
+      `CLAIMS ON FILE (${d.claims.length})`,
+      d.claims.map((c) => `[${c.id}] ${c.text} (${c.sources.join(',')})`).join('\n') || '(none)',
+      '',
+      `GAPS (${d.gaps.length})`,
+      d.gaps.map((g) => `- ${g}`).join('\n') || '(none)',
+    ].join('\n');
+
+  const tools = [
+    {
+      name: 'search',
+      args: '{"query": string}',
+      description: 'Search Google News and Bing News. Returns headlines with outlet, date and URL. Use short queries (2-4 words), in German for Swiss sources.',
+      run: async ({ query }) => {
+        const q = String(query || '').trim().slice(0, 120);
+        if (q.length < 3) return { error: 'query too short' };
+        const hits = await webSearch(q, { limit: 12 });
+        return hits.length ? { query: q, results: hits } : { query: q, results: [], note: 'no hits — try a shorter or different wording' };
+      },
+    },
+    {
+      name: 'open',
+      args: '{"url": string}',
+      description: 'Open a page or document and return its title, running text and the links that lead further. Only URLs seen in an earlier observation.',
+      run: async ({ url }) => {
+        const target = String(url || '').trim();
+        if (!/^https?:\/\//i.test(target)) return { error: 'not a URL' };
+        const page = await openPage(target, { maxChars: 7000 });
+        if (page.error && !page.text) return { url: target, error: page.error };
+        cache.set(target, page.text || '');
+        return {
+          url: target,
+          title: page.title,
+          text: page.text,
+          links: (page.links || []).slice(0, 20),
+          ...(page.pdf ? { document: 'PDF — text extracted, cite page-level detail only as printed' } : {}),
+        };
+      },
+    },
+    {
+      name: 'save_source',
+      args: '{"url": string, "outlet": string, "title": string, "publishedAt": "YYYY-MM-DD"?}',
+      description: 'File a source in the dossier. Use for anything you rely on — articles, official pages, court decisions, tender notices.',
+      run: async ({ url, outlet, title, publishedAt }) => {
+        const target = String(url || '').trim();
+        if (!/^https?:\/\//i.test(target)) return { error: 'not a URL' };
+        const added = addSource(
+          d,
+          { url: target, outlet: String(outlet || hostOf(target)), title: String(title || target), publishedAt: publishedAt || null },
+        );
+        const src = d.sources.find((s) => s.url === target);
+        if (src && cache.has(target) && !src.text) {
+          src.text = cache.get(target).slice(0, MAX_SOURCE_CHARS);
+          src.readAt = nowISO();
+        }
+        return { added, id: src?.id || null, total: d.sources.length };
+      },
+    },
+    {
+      name: 'save_claim',
+      args: '{"text": string, "sources": ["S1"], "contested": boolean?}',
+      description: 'Record one verifiable finding that the cited sources directly support. One fact per claim: who, what, when, how much. Never a reading of motives.',
+      run: async ({ text, sources, contested }) => {
+        const value = String(text || '').trim().slice(0, 600);
+        const ids = [...new Set((Array.isArray(sources) ? sources : []).map((s) => String(s).trim()).filter(Boolean))];
+        const known = new Set(d.sources.map((s) => s.id));
+        const valid = ids.filter((id) => known.has(id));
+        if (value.length < 20) return { error: 'claim too short' };
+        if (!valid.length) return { error: `no valid source id — on file: ${[...known].join(', ') || 'none'}` };
+        const norm = value.toLowerCase().replace(/\W+/g, ' ').trim();
+        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm);
+        if (dup) return { duplicate: dup.id };
+        const claim = {
+          id: `C${d.claims.length + 1}`,
+          text: value,
+          sources: valid,
+          status: contested ? 'contested' : 'verified',
+          weight: 2,
+          checkedAt: nowISO(),
+        };
+        d.claims.push(claim);
+        return { id: claim.id, total: d.claims.length };
+      },
+    },
+    {
+      name: 'add_gap',
+      args: '{"text": string}',
+      description: 'Note an open question that still needs a document, a figure or an answer. Be concrete: which office, which file.',
+      run: async ({ text }) => {
+        const value = String(text || '').trim().slice(0, 300);
+        if (value.length < 15) return { error: 'gap too short' };
+        if (d.gaps.some((g) => g.toLowerCase() === value.toLowerCase())) return { duplicate: true };
+        d.gaps.push(value);
+        return { total: d.gaps.length };
+      },
+    },
+    {
+      name: 'contact',
+      args: '{"org": string, "role": string, "email"?: string, "sourceUrl"?: string}',
+      description: 'File an institution or person who must answer, with the address you found on their own website. Never guess an address; if you cannot find one, omit it.',
+      run: async ({ org, role, email, sourceUrl }) => {
+        const name = String(org || '').trim().slice(0, 160);
+        if (name.length < 3) return { error: 'org too short' };
+        const mail = String(email || '').trim();
+        if (mail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return { error: 'email looks invalid — drop it or find the published address' };
+        const existing = d.contacts.find((c) => c.org.toLowerCase() === name.toLowerCase());
+        if (existing) {
+          if (mail && !existing.email) {
+            existing.email = mail;
+            existing.emailSource = sourceUrl || null;
+          }
+          return { updated: true, total: d.contacts.length };
+        }
+        d.contacts.push({
+          org: name,
+          role: String(role || 'must be asked for comment').slice(0, 300),
+          ...(mail ? { email: mail, emailSource: sourceUrl || null } : {}),
+        });
+        return { added: true, total: d.contacts.length };
+      },
+    },
+  ];
+
+  const steps = Math.max(4, +(process.env.INVESTIGATE_AGENT_STEPS || 10));
+  const { final, steps: log2 } = await runAgent({
+    role: 'desk',
+    system: `You are the investigative desk of PLAIN., a Swiss news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. Your sources are mostly German; write your findings in English.`,
+    task: `INVESTIGATION: ${d.title}
+QUESTION: ${d.angle}
+DESK BRIEF: ${JSON.stringify(d.brief || {})}
+${d.nextStep ? `NOTE FROM THE LAST SHIFT: ${d.nextStep}` : ''}
+${(d.dropped || []).length ? `ALREADY THROWN OUT (no source carries them):\n${d.dropped.slice(-6).map((x) => `- ${x.text}`).join('\n')}` : ''}
+
+${state()}
+
+WHAT THIS RUN SHOULD ACHIEVE
+Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
+Priorities, in order: (1) find the primary documents — tender and award notices, audit reports (EFK), court rulings, parliamentary answers, official statistics; (2) file the sources you actually opened; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
+When the news feeds run dry, ask for the document itself with "site:" queries in the search tool — site:simap.ch (Vergaben), site:admin.ch, site:parlament.ch (Interpellationen, Curia Vista), site:efk.admin.ch (Prüfberichte), site:bger.ch and site:bvger.ch (Urteile). A tender notice or a ruling that you opened is worth more than ten articles about it.`,
+    tools,
+    maxSteps: steps,
+    deadline: Number.isFinite(deadlineLeft()) ? Date.now() + deadlineLeft() : 0,
+    log,
+  });
+
+  if (final) d.nextStep = final.slice(0, 300);
+  d.agent = [...(d.agent || []), { at: nowISO(), steps: log2, final }].slice(-3);
+
+  const added = d.sources.length - startedSources;
+  const claims = d.claims.length - startedClaims;
+  log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
+
+  if (added === 0 && claims === 0) return false;
+  if (['pitch'].includes(d.status) && d.sources.length >= 3) note(d, 'research', `${d.sources.length} sources`);
+  return true;
+}
+
+function hostOf(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return 'unknown';
+  }
+}
+
+// ─────────────────────────── 2b. INBOX ───────────────────────────
+// Replies come in under the desk's own address. Each one is read, turned into
+// claims and gaps, and — if it asks something — answered in a draft that still
+// needs the editor's approval before it leaves the building.
+function addEmailSource(d, msg) {
+  const url = `mailto:${msg.from_email}`;
+  const title = `Antwort: ${String(msg.subject || '(ohne Betreff)').slice(0, 160)}`;
+  const existing = d.sources.find((s) => s.kind === 'email' && s.url === url && s.title === title);
+  if (existing) return existing;
+  const src = {
+    id: `S${d.sources.length + 1}`,
+    url,
+    outlet: String(msg.from_email).split('@')[1] || msg.from_email,
+    title,
+    publishedAt: msg.received_at || nowISO(),
+    primary: true,
+    kind: 'email',
+    addedAt: nowISO(),
+    text: String(msg.body || '').slice(0, MAX_SOURCE_CHARS),
+    readAt: nowISO(),
+  };
+  d.sources.push(src);
+  return src;
+}
+
+async function classifyMessage(d, msg) {
+  const { data } = await chatJSON('desk', [
+    {
+      role: 'system',
+      content: `You read replies to a Swiss investigative desk. You record only what the sender wrote — never what you assume they meant. A denial is a finding, not an obstacle. Return JSON only.`,
+    },
+    {
+      role: 'user',
+      content: `WE ASKED: ${d.title}
+OUR QUESTION: ${d.angle}
+
+FROM: ${msg.from_email}
+SUBJECT: ${msg.subject || '(none)'}
+MESSAGE:
+${String(msg.body || '').slice(0, 4000)}
+
+TASK
+1. kind: one of answer | denial | question | auto-reply | unrelated.
+2. summary: two sentences, what the sender actually said.
+3. claims: facts the sender states that we can use, one per line, with their exact numbers and dates. Only what they wrote. If they deny something, phrase it as their denial.
+4. gaps: what they did not answer or what their reply makes newly unclear.
+5. needs_reply: true only if they ask us something or a short acknowledgement is due.
+6. reply: if needs_reply, a formal German or English answer in plain text, max 150 words, signed "PLAIN. Investigative desk", stating again that the research is AI-assisted and editor-reviewed. Otherwise empty.
+
+Return {"kind":"…","summary":"…","claims":["…"],"gaps":["…"],"needs_reply":false,"reply":""}`,
+    },
+  ], { temperature: 0.2, maxTokens: 1600 });
+
+  return {
+    kind: ['answer', 'denial', 'question', 'auto-reply', 'unrelated'].includes(data.kind) ? data.kind : 'answer',
+    summary: String(data.summary || '').slice(0, 1000),
+    claims: (Array.isArray(data.claims) ? data.claims : []).map(String).filter((s) => s.trim().length > 20).slice(0, 8),
+    gaps: (Array.isArray(data.gaps) ? data.gaps : []).map(String).filter(Boolean).slice(0, 5),
+    needsReply: Boolean(data.needs_reply),
+    reply: String(data.reply || '').trim(),
+  };
+}
+
+const replySubject = (subject) => {
+  const value = String(subject || '').trim() || 'Ihre Auskunft';
+  return /^re:/i.test(value) ? value.slice(0, 160) : `Re: ${value}`.slice(0, 160);
+};
+
+async function readInbox(d) {
+  let messages = [];
+  try {
+    messages = await listMessages({ slug: d.slug, status: 'new', limit: 5 });
+  } catch (err) {
+    log(`INBOX  ${d.slug}: ${err.message}`);
+    return 0;
+  }
+  if (!messages.length) return 0;
+
+  const rows = (await outreachRows(d.slug).catch(() => []))
+    .filter((r) => ['sent', 'replied'].includes(r.status));
+  const handled = [];
+
+  for (const msg of messages) {
+    if (deadlineLeft() < 120_000) {
+      log('INBOX  deadline close — leaving the rest for the next run');
+      break;
+    }
+    const parsed = await classifyMessage(d, msg).catch((err) => {
+      log(`INBOX  classify failed (${msg.from_email}): ${err.message}`);
+      return null;
+    });
+    if (!parsed) continue;
+
+    // Anyone can write to the desk address. Only a reply to a request we
+    // actually sent counts as evidence; everything else is a lead.
+    const row = rows.find((r) => String(r.to_email || '').toLowerCase() === String(msg.from_email).toLowerCase());
+    if (!row) {
+      const gap = `Unverlangte Mail von ${msg.from_email}: ${parsed.summary.slice(0, 220)}`;
+      if (!d.gaps.some((g) => g.toLowerCase() === gap.toLowerCase())) d.gaps.push(gap);
+      note(d, null, `mail from ${msg.from_email} (lead, no request on file)`);
+      handled.push(msg.id);
+      continue;
+    }
+
+    const src = addEmailSource(d, msg);
+    for (const text of parsed.claims) {
+      if (d.claims.some((c) => c.text.toLowerCase() === text.toLowerCase())) continue;
+      d.claims.push({
+        id: `C${d.claims.length + 1}`,
+        text: text.slice(0, 600),
+        sources: [src.id],
+        status: parsed.kind === 'denial' ? 'contested' : 'verified',
+        weight: 3,
+        checkedAt: nowISO(),
+      });
+    }
+    for (const gap of parsed.gaps) {
+      if (!d.gaps.some((g) => g.toLowerCase() === gap.toLowerCase())) d.gaps.push(gap.slice(0, 300));
+    }
+
+    await setOutreach([row.id], { status: 'replied', reply_note: parsed.summary.slice(0, 1000) }).catch(() => {});
+
+    if (parsed.needsReply && parsed.reply.length > 80) {
+      await addOutreach([{
+        slug: d.slug,
+        toEmail: msg.from_email,
+        org: row?.org || msg.from_email,
+        subject: replySubject(msg.subject),
+        body: parsed.reply,
+      }]).catch((err) => log(`INBOX  reply draft failed: ${err.message}`));
+    }
+
+    note(d, null, `mail from ${msg.from_email} (${parsed.kind})`);
+    handled.push(msg.id);
+  }
+
+  if (handled.length) {
+    await markMessages(handled, { status: 'processed', processed_at: nowISO() }).catch(() => {});
+  }
+  log(`INBOX  ${handled.length}/${messages.length} message(s) processed`);
+  return handled.length;
+}
+
+// A desk that publishes on trust is not a desk. Before anything is written or
+// asked, every claim is read back against the text it cites: what the document
+// does not say leaves the dossier.
+async function factcheck(d) {
+  const checkable = d.claims.filter(
+    (c) => !c.checked && (c.sources || []).some((id) => (d.sources.find((s) => s.id === id)?.text || '').length >= 300),
+  );
+  const unreadable = d.claims.filter((c) => !c.checked && !checkable.includes(c));
+  for (const c of unreadable) c.checked = 'unreadable'; // headline only — cannot be read back
+  if (!checkable.length) return;
+  if (deadlineLeft() < 6 * 60_000) {
+    log('CHECK  deadline close — claims left unchecked');
+    return;
+  }
+
+  const batch = checkable.slice(0, 8);
+  const pack = batch.map((c) => {
+    const texts = c.sources
+      .map((id) => d.sources.find((s) => s.id === id))
+      .filter((s) => s?.text)
+      .slice(0, 2)
+      .map((s) => `[${s.id}] ${s.outlet} — ${s.title}\n${s.text.slice(0, 1800)}`)
+      .join('\n\n');
+    return `[${c.id}] CLAIM: ${c.text}\n${texts}`;
+  }).join('\n\n────────\n\n');
+
+  let data;
+  try {
+    ({ data } = await chatJSON('desk', [
+      {
+        role: 'system',
+        content: 'You are the fact-checker of an investigative desk. You compare a claim with the source text it cites. You do not judge plausibility and you do not use outside knowledge: if the text does not carry the claim, the verdict is unsupported. Return JSON only.',
+      },
+      {
+        role: 'user',
+        content: `For each claim below, decide against the quoted source text:
+- supported: the text states it, including every number and date.
+- partial: the text supports the core but not all details, or only one of several citations carries it.
+- unsupported: the text does not say it, says something else, or is about a different entity.
+
+${pack}
+
+Return {"checks":[{"id":"C1","verdict":"supported|partial|unsupported","reason":"one sentence, quote the sentence that decides it"}]}`,
+      },
+    ], { temperature: 0, maxTokens: 1600 }));
+  } catch (err) {
+    log(`CHECK  failed: ${err.message}`);
+    return;
+  }
+
+  const verdicts = new Map((Array.isArray(data.checks) ? data.checks : []).map((c) => [String(c.id), c]));
+  const dropped = [];
+  for (const c of batch) {
+    const v = verdicts.get(c.id);
+    if (!v) continue;
+    const verdict = ['supported', 'partial', 'unsupported'].includes(v.verdict) ? v.verdict : 'partial';
+    c.checked = verdict;
+    if (verdict === 'partial') c.checkNote = String(v.reason || '').slice(0, 240);
+    if (verdict === 'unsupported') dropped.push(c);
+  }
+
+  if (dropped.length) {
+    const keep = new Set(dropped.map((c) => c.id));
+    d.claims = d.claims.filter((c) => !keep.has(c.id));
+    d.dropped = [...(d.dropped || []), ...dropped.map((c) => ({ text: c.text, why: c.checkNote || 'nicht belegt' }))].slice(-40);
+    for (const c of dropped) d.gaps.push(`Nicht belegt, deshalb gestrichen: ${c.text.slice(0, 200)}`);
+    log(`CHECK  ${dropped.length} claim(s) dropped — the cited text does not carry them`);
+  }
+  log(`CHECK  ${batch.length - dropped.length}/${batch.length} claim(s) stand`);
+}
+
 async function research(d) {
+  if (process.env.INVESTIGATE_AGENT !== '0') {
+    const ok = await researchAgent(d).catch((err) => {
+      log(`RESEARCH  agent failed: ${err.message}`);
+      return false;
+    });
+    if (ok) return;
+    log('RESEARCH  agent produced nothing — falling back to the feed pass');
+  }
   await ensureQueries(d);
 
-  const feeds = d.queries.slice(0, 5).map((q) => ({ outlet: `Search: ${q}`, url: googleNews(q), kind: 'aggregator' }));
+  // Rotate the window so a dossier with more than five queries uses all of them
+  // over several days instead of hammering the same five every run.
+  const size = Math.min(5, d.queries.length);
+  const start = ((d.researchRuns || 0) * size) % d.queries.length;
+  const picked = Array.from({ length: size }, (_, i) => d.queries[(start + i) % d.queries.length]);
+  d.researchRuns = (d.researchRuns || 0) + 1;
+  const feeds = [
+    ...picked.flatMap((q) => [
+      { outlet: `Search: ${q}`, url: googleNews(q), kind: 'aggregator' },
+      { outlet: `Bing: ${q}`, url: bingNews(q), kind: 'bing' },
+    ]),
+    ...HOME_FEEDS,
+  ];
   const { items, feedsOk } = await safe(() => fetchFeeds(feeds, { maxAgeHours: 24 * 45, perFeed: 25 }), { items: [], feedsOk: 0 });
   log(`RESEARCH  ${d.slug}: ${items.length} hits from ${feedsOk} search feed(s)`);
 
@@ -510,6 +942,31 @@ Return {"subject":"…","body":"…"}`,
   return { subject, body };
 }
 
+async function queueOutreach(d) {
+  const rows = await outreachRows(d.slug).catch(() => []);
+  const known = new Set(rows.map((r) => String(r.to_email || '').toLowerCase()).filter(Boolean));
+  const ready = (d.contacts || []).filter((c) => c.email && !known.has(String(c.email).toLowerCase()));
+  const queued = [];
+  for (const contact of ready.slice(0, 3)) {
+    try {
+      await requestOutreach({
+        slug: d.slug,
+        toEmail: contact.email,
+        org: contact.org,
+        note: contact.emailSource ? `Adresse gefunden auf ${contact.emailSource}` : null,
+      });
+      queued.push(contact.org);
+    } catch (err) {
+      log(`OUTREACH  could not queue ${contact.org}: ${err.message}`);
+    }
+  }
+  if (queued.length) {
+    note(d, null, `queued ${queued.length} request(s): ${queued.join(', ')}`);
+    log(`OUTREACH  queued ${queued.length} request(s) from its own contact list`);
+  }
+  return queued.length;
+}
+
 async function draftOutreach(d) {
   const rows = await outreachRows(d.slug);
   const requested = rows.filter((r) => r.status === 'requested');
@@ -555,7 +1012,7 @@ async function sendApproved(d) {
         body: JSON.stringify({
           from: process.env.RESEND_FROM_EMAIL,
           to: [row.to_email],
-          reply_to: EDITORIAL_EMAIL,
+          reply_to: deskAddress(d.slug),
           subject: row.subject,
           text: row.body,
         }),
@@ -580,7 +1037,7 @@ const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfi
 async function writeInvestigation(d, outreach) {
   const replies = outreach.filter((o) => o.status === 'replied' && o.reply_note);
   const sent = outreach.filter((o) => ['sent', 'replied'].includes(o.status));
-  const claims = d.claims.map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}] ${c.text} (sources: ${c.sources.join(', ')})`).join('\n');
+  const claims = d.claims.map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${c.text} (sources: ${c.sources.join(', ')})`).join('\n');
   const outreachLog = sent.length
     ? sent.map((o) => `- ${o.org || o.to_email}: requested ${day(o.sent_at || o.approved_at || o.created_at)}${o.status === 'replied' ? `\n  REPLY: ${o.reply_note}` : '\n  no reply so far'}`).join('\n')
     : '(no requests sent yet)';
@@ -933,9 +1390,14 @@ async function main() {
         log('  waiting for human approval');
         d.nextStep = 'human approval in /admin/investigations';
       } else {
+        // Mail first: a reply from an authority is evidence, and it can change
+        // what the agent should look for next.
+        await readInbox(d);
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
         }
+        await factcheck(d);
+        await queueOutreach(d);
         await draftOutreach(d);
         await sendApproved(d);
         const fresh = await outreachRows(d.slug);

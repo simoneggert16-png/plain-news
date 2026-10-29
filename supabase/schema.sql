@@ -131,3 +131,33 @@ create policy articles_public_read on public.articles for select using (true);
 
 drop policy if exists content_blobs_public_read on public.content_blobs;
 create policy content_blobs_public_read on public.content_blobs for select using (true);
+
+-- ---------------------------------------------------------------------------
+-- Inbound correspondence of the investigative desk.
+-- Replies to desk+<slug>@plain-news.ch arrive through the provider webhook,
+-- are stored here, and are read by bots/investigate.mjs on its next run.
+-- Only the service role may touch this table: it holds unpublished source mail.
+-- ---------------------------------------------------------------------------
+create table if not exists public.investigation_messages (
+  id bigserial primary key,
+  slug text,
+  direction text not null default 'in',
+  from_email text not null,
+  to_email text,
+  subject text,
+  body text,
+  message_id text,
+  in_reply_to text,
+  status text not null default 'new',
+  received_at timestamptz not null default now(),
+  processed_at timestamptz
+);
+
+create index if not exists investigation_messages_slug_idx
+  on public.investigation_messages (slug, status, received_at desc);
+create index if not exists investigation_messages_sender_idx
+  on public.investigation_messages (from_email, received_at desc);
+
+alter table public.investigation_messages enable row level security;
+revoke all on public.investigation_messages from anon, authenticated;
+grant all on public.investigation_messages to service_role;

@@ -73,11 +73,13 @@ export const FEEDS = [
   { outlet: 'Africanews', url: 'https://www.africanews.com/feed/rss' },
 
   // â”€â”€ Switzerland (home market)
-  { outlet: 'SRF', url: 'https://www.srf.ch/news/bnf/rss/1646' },
-  { outlet: 'NZZ', url: 'https://www.nzz.ch/recent.rss' },
-  { outlet: 'Tages-Anzeiger', url: 'https://www.tagesanzeiger.ch/rss.html' },
-  { outlet: 'Le Temps', url: 'https://www.letemps.ch/rss' },
-  { outlet: 'SWI swissinfo', url: 'https://www.swissinfo.ch/eng/latest-news/rss' },
+  // market: 'ch' marks the desk's own beat — the investigate bot reads these
+  // feeds directly because Google News returns almost nothing from CI runners.
+  { outlet: 'SRF', url: 'https://www.srf.ch/news/bnf/rss/1646', market: 'ch' },
+  { outlet: 'NZZ', url: 'https://www.nzz.ch/recent.rss', market: 'ch' },
+  { outlet: 'Tages-Anzeiger', url: 'https://www.tagesanzeiger.ch/rss.html', market: 'ch' },
+  { outlet: 'Le Temps', url: 'https://www.letemps.ch/rss', market: 'ch' },
+  { outlet: 'SWI swissinfo', url: 'https://www.swissinfo.ch/eng/latest-news/rss', market: 'ch' },
 
   // â”€â”€ Asia
   { outlet: 'South China Morning Post', url: 'https://www.scmp.com/rss/91/feed' },
