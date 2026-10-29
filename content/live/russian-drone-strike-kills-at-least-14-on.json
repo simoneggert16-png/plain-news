@@ -1,9 +1,562 @@
 {
+  "meta": {
+    "outlets": [
+      "BBC",
+      "DW",
+      "France 24",
+      "Euronews",
+      "New York Times",
+      "The Japan Times",
+      "CNA",
+      "The Straits Times",
+      "The Kyiv Post",
+      "Reuters",
+      "The New York Times",
+      "CNN"
+    ],
+    "createdBy": "bots/live.mjs",
+    "statsModel": "openai/gpt-oss-20b",
+    "lastUpdateModel": "openai/gpt-oss-20b"
+  },
   "slug": "russian-drone-strike-kills-at-least-14-on",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
+  "stats": {
+    "max": null,
+    "asOf": "2026-10-29T12:00:00.000Z",
+    "note": "Number of people killed and injured in the Russian drone strike on the Ukrainian train station.",
+    "rows": [
+      {
+        "key": "killed",
+        "label": "Killed",
+        "value": 14,
+        "change": 1,
+        "locales": {
+          "de": {
+            "label": "Getötet"
+          },
+          "es": {
+            "label": "Muertos"
+          },
+          "fr": {
+            "label": "Tués"
+          },
+          "it": {
+            "label": "Uccisi"
+          },
+          "ja": {
+            "label": "死亡"
+          },
+          "ko": {
+            "label": "사망자"
+          },
+          "pt": {
+            "label": "Mortos"
+          },
+          "zh": {
+            "label": "死亡"
+          }
+        }
+      },
+      {
+        "key": "injured",
+        "label": "Injured",
+        "value": 14,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Verletzte"
+          },
+          "es": {
+            "label": "Heridos"
+          },
+          "fr": {
+            "label": "Blessés"
+          },
+          "it": {
+            "label": "Feriti"
+          },
+          "ja": {
+            "label": "負傷"
+          },
+          "ko": {
+            "label": "부상자"
+          },
+          "pt": {
+            "label": "Feridos"
+          },
+          "zh": {
+            "label": "受伤"
+          }
+        }
+      }
+    ],
+    "unit": "",
+    "label": "Casualties",
+    "source": {
+      "url": "https://www.bbc.co.uk/news/articles/c9p8gdlz1p2ko?at_medium=RSS&at_campaign=rss",
+      "title": "Russian drone attack on Ukrainian train station kills at least 14, officials say",
+      "outlet": "BBC",
+      "trusted": true,
+      "publishedAt": "2026-10-29T14:17:35.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Anzahl der getöteten und verletzten Personen bei dem Drohnenangriff auf den Bahnhof Dnipro.",
+        "label": "Tote und Verletzte"
+      },
+      "es": {
+        "note": "Número de personas asesinadas y heridas en el ataque con drones sobre la estación de tren de Dnipro.",
+        "label": "Víctimas"
+      },
+      "fr": {
+        "note": "Nombre de personnes tuées et blessées lors de la frappe aérienne de drones sur la gare de Dnipro.",
+        "label": "Victimes"
+      },
+      "it": {
+        "note": "Numero di persone uccise e ferite nell'attacco con droni alla stazione ferroviaria di Dnipro.",
+        "label": "Persone coinvolte"
+      },
+      "ja": {
+        "note": "ドニプロ駅に対するドローン攻撃で死亡・負傷した人数。",
+        "label": "死傷者"
+      },
+      "ko": {
+        "note": "드론 공격으로 디니프로 기차역에서 사망 및 부상한 인원 수.",
+        "label": "사상자"
+      },
+      "pt": {
+        "note": "Número de pessoas mortas e feridas no ataque de drones na estação de comboios de Dnipro.",
+        "label": "Vítimas"
+      },
+      "zh": {
+        "note": "无人机袭击德涅普罗火车站造成的死亡和受伤人数。",
+        "label": "伤亡人数"
+      }
+    },
+    "updatedAt": "2026-10-29T17:17:44.095Z",
+    "sourceCount": 1
+  },
   "topic": "Russian drone strike kills at least 14 on Ukrainian train station",
+  "status": "live",
+  "article": {
+    "slug": "russian-drone-strike-kills-at-least-14-on",
+    "reason": "1 new update(s)",
+    "locales": {
+      "de": {
+        "dek": "",
+        "body": [],
+        "facts": [],
+        "title": "Russischer Drohnenangriff tötet mindestens 14 Personen am Bahnhof Dnipro",
+        "context": ""
+      },
+      "en": {
+        "dek": "A Russian drone hit the main platform of Dnipro train station on 29 October, killing at least 14 people, according to Reuters and CNN.",
+        "body": [
+          "On 29 October 2026, a Russian drone struck the main platform of Dnipro train station, killing at least 14 people, according to Reuters and CNN. The platform was crowded with passengers at the time of the attack.",
+          "Some outlets report a slightly lower death toll. FAZ and Der Spiegel cited 13 deaths, according to their reports.",
+          "The strike occurred at Dnipro station, a major rail hub in central Ukraine. The platform was busy with travelers heading to and from Kyiv.",
+          "Ukrainian President Volodymyr Zelenskyy called the attack \"horrific,\" according to DW. Kyiv officials also described the strike as horrific, according to AFP.",
+          "A localised truce between Kyiv and Moscow brokered by Melania Trump is in place, according to CBS News. France 24 reported the truce has held for a third day.",
+          "The war in Ukraine continues despite Trump's promise to end it, according to Gray TV and FOX5 Vegas. No change in front‑line activity has been reported since the truce."
+        ],
+        "facts": [
+          "Russian drone strike on Dnipro station killed at least 14 people, per Reuters and CNN.",
+          "Some outlets, including FAZ and Der Spiegel, report 13 deaths.",
+          "Ukrainian President Zelenskyy called the attack \"horrific,\" per DW.",
+          "Kyiv officials described the strike as horrific, per AFP.",
+          "A localised truce between Kyiv and Moscow brokered by Melania Trump is in place, per CBS News and France 24.",
+          "War in Ukraine continues despite Trump’s promise to end it, per Gray TV and FOX5 Vegas."
+        ],
+        "title": "Russian drone strike kills at least 14 at Dnipro train station",
+        "context": "Dnipro is a city in central Ukraine and a major rail hub. The strike occurred on 29 October 2026 amid the ongoing conflict between Russia and Ukraine that began in 2022.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [
+      {
+        "at": "2026-10-29T17:06:20.448Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Russischer Drohnenangriff tötet mindestens 14 Personen am Bahnhof Dnipro",
+            "context": ""
+          },
+          "en": {
+            "dek": "A Russian drone strike on 29 October 2026 hit the main platform of Dnipro train station, killing at least 14 people, with some reports citing 13 deaths.",
+            "body": [
+              "On 29 October 2026, a Russian drone struck the main platform of Dnipro train station, killing at least 14 people, according to Reuters and CNN.",
+              "The platform was crowded with passengers at the time of the attack. The drone was launched from Russian‑controlled territory and was identified as a Russian model, reported by Reuters.",
+              "Other outlets reported a slightly lower death toll. FAZ and Der Spiegel cited 13 deaths, according to their reports.",
+              "Ukrainian President Volodymyr Zelenskyy called the attack \"horrific,\" according to DW. Kyiv officials also described the strike as horrific, according to AFP.",
+              "The incident is part of the ongoing conflict between Russia and Ukraine that began in 2022. Both sides have accused each other of targeting civilian infrastructure, according to the context.",
+              "A localised truce between Kyiv and Moscow brokered by Melania Trump has been in place, according to CBS News. France 24 reported that the truce has held for a third day."
+            ],
+            "facts": [
+              "Russian drone strike on Dnipro station killed at least 14 people, according to Reuters and CNN.",
+              "Some outlets, including FAZ and Der Spiegel, report 13 deaths.",
+              "Ukrainian President Volodymyr Zelenskyy called the attack \"horrific\" according to DW.",
+              "Kyiv officials also described the strike as horrific, according to AFP.",
+              "A localised truce between Kyiv and Moscow brokered by Melania Trump has held for a third day, according to CBS News and France 24."
+            ],
+            "title": "Russian drone strike kills at least 14 at Dnipro train station",
+            "context": "Dnipro is a city in central Ukraine and a major rail hub. The strike occurred on 29 October 2026. It is part of the ongoing conflict between Russia and Ukraine.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T16:17:11.459Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Russischer Drohnenangriff tötet mindestens 14 Personen am Bahnhof Dnipro",
+            "context": ""
+          },
+          "en": {
+            "dek": "A Russian drone strike on a Ukrainian rail platform in Dnipro on 29 October 2026 killed at least 14 people, with some reports citing 13 deaths.",
+            "body": [
+              "A Russian drone strike on a Ukrainian rail platform in Dnipro on 29 October 2026 killed at least 14 people, according to Reuters and CNN. The strike occurred on the main platform of the station, which was crowded with passengers at the time.",
+              "FAZ and Der Spiegel reported 13 deaths, citing different sources. Both outlets noted that the numbers were still being verified.",
+              "The strike targeted a rail platform in central Ukraine, a major rail hub, according to Reuters. The platform was crowded with passengers at the time.",
+              "Reuters reported that the drone was launched from Russian-controlled territory. The drone was identified as a Russian model.",
+              "Ukrainian President Volodymyr Zelenskyy called the attack \"horrific\", according to DW. He urged the international community to respond.",
+              "Kyiv described the strike as horrific, according to AFP. The city’s officials called for increased security measures.",
+              "The incident is part of the ongoing conflict between Russia and Ukraine, which began in 2022. Both sides have accused each other of targeting civilian infrastructure."
+            ],
+            "facts": [
+              "Russian drone strike on Dnipro station on 29 October 2026.",
+              "At least 14 people were killed according to Reuters and CNN.",
+              "13 deaths were reported by FAZ and Der Spiegel.",
+              "Ukrainian President Zelenskyy called the attack \"horrific\" according to DW.",
+              "Kyiv described the strike as horrific according to AFP."
+            ],
+            "title": "Russian drone strike kills at least 14 at Dnipro train station",
+            "context": "Dnipro is a city in central Ukraine and a major rail hub. The strike occurred on 29 October 2026. It is part of the ongoing conflict between Russia and Ukraine.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T14:10:15.732Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "A Russian drone attack on a Ukrainian rail platform in Dnipro on 29 October 2026 killed at least 14 people, with some reports citing 13 deaths.",
+            "body": [
+              "According to Reuters and CNN, a Russian drone strike on Dnipro station on 29 October 2026 killed at least 14 people. The strike targeted a rail platform in central Ukraine.",
+              "FAZ and Der Spiegel reported a death toll of 13. The discrepancy reflects differing reports from independent outlets.",
+              "The attack was carried out by a Russian drone. The drone was launched from Russian-controlled territory.",
+              "The incident occurred in Dnipro, a city in central Ukraine. Dnipro is a major rail hub in the region.",
+              "The strike is part of the ongoing conflict between Russia and Ukraine. No further details about the motive were provided by the outlets.",
+              "Ukrainian authorities have not issued a statement according to the reports. The incident has been reported by multiple independent news outlets."
+            ],
+            "facts": [
+              "Russian drone strike on Dnipro station on 29 October 2026.",
+              "At least 14 people were killed according to Reuters and CNN.",
+              "13 deaths were reported by FAZ and Der Spiegel.",
+              "The strike targeted a rail platform in central Ukraine.",
+              "The attack was carried out by a Russian drone."
+            ],
+            "title": "Russian drone strike kills at least 14 at Dnipro train station",
+            "context": "Dnipro is a city in central Ukraine.",
+            "imageCaption": ""
+          }
+        }
+      }
+    ],
+    "updatedAt": "2026-10-29T18:23:53.661Z"
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Ein russischer Drohnenangriff auf eine stark frequentierte Bahnplattform in Dnipro hat mehrere Todesfälle und Verletzte verursacht, was internationale Verurteilung und Forderungen nach einer Untersuchung ausgelöst hat.",
+      "title": "Russischer Drohnenangriff tötet mindestens 14 Personen an ukrainischer Bahnhofsplattform"
+    },
+    "en": {
+      "dek": "A Russian drone attack on a crowded train platform in Dnipro has caused multiple fatalities and injuries, prompting international condemnation and calls for an investigation.",
+      "title": "Russian drone strike kills at least 14 at Ukrainian train station"
+    },
+    "es": {
+      "dek": "Un ataque con dron ruso a una plataforma de tren concurrida en Dnipro ha provocado varias víctimas mortales y heridas, provocando condena internacional y llamados a una investigación.",
+      "title": "Ataque con dron ruso mata a al menos 14 en la estación de tren ucraniana"
+    },
+    "fr": {
+      "dek": "Une attaque de drone russe sur une plateforme de train très fréquentée à Dnipro a entraîné plusieurs décès et blessures, suscitant une condamnation internationale et des appels à une enquête.",
+      "title": "Attaque de drone russe tue au moins 14 à la gare ukrainienne"
+    },
+    "it": {
+      "dek": "Un attacco a drone russo su una piattaforma ferroviaria affollata a Dnipro ha causato numerose vittime e feriti, suscitando condanne internazionali e richieste di indagine.",
+      "title": "Attacco a drone russo uccide almeno 14 a stazione ferroviaria ucraina"
+    },
+    "ja": {
+      "dek": "ドニプロの混雑した駅のホームに対するロシアのドローン攻撃により、複数の死亡者と負傷者が出た。国際的な非難と調査要請が呼びかけられている。",
+      "title": "ロシアのドローン攻撃でウクライナの鉄道駅で少なくとも14人が死亡"
+    },
+    "ko": {
+      "dek": "드니프로의 혼잡한 기차 승강장에서 러시아 드론이 공격을 가해 다수의 사망자와 부상자를 발생시켰으며, 이는 국제 사회의 비난과 조사를 촉구하는 목소리를 불러일으켰다",
+      "title": "러시아 드론 공격, 우크라이나 기차역에서 최소 14명 사망"
+    },
+    "pt": {
+      "dek": "Um ataque de drone russo num pátio de comboios lotado em Dnipro resultou em múltiplas fatalidades e feridos, provocando condenação internacional e pedidos de investigação.",
+      "title": "Ataque de drone russo mata pelo menos 14 na estação de comboios ucraniana"
+    },
+    "zh": {
+      "dek": "俄国无人机袭击第聂伯罗市拥挤的火车站平台，导致多名人员死亡和受伤，引发国际谴责并呼吁展开调查。",
+      "title": "俄国无人机袭击乌克兰火车站至少造成14人死亡"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-10-29T17:13:00.000Z",
+      "id": "u-1793293980000-xp88",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Laut Gray TV und FOX5 Vegas geht der Krieg in der Ukraine weiter, trotz Trumps Versprechen, ihn zu beenden.",
+          "headline": "Krieg in der Ukraine geht weiter, trotz Trumps Versprechen, ihn zu beenden"
+        },
+        "en": {
+          "body": "According to Gray TV and FOX5 Vegas, the war in Ukraine continues despite Trump’s promise to end it.",
+          "headline": "Ukraine war continues despite Trump’s promise to end it"
+        },
+        "es": {
+          "body": "Según Gray TV y FOX5 Vegas, la guerra en Ucrania continúa a pesar de la promesa de Trump de acabarla.",
+          "headline": "La guerra en Ucrania continúa a pesar de la promesa de Trump de acabarla"
+        },
+        "fr": {
+          "body": "Selon Gray TV et FOX5 Vegas, la guerre en Ukraine continue malgré la promesse de Trump de la mettre fin.",
+          "headline": "La guerre en Ukraine continue malgré la promesse de Trump de la mettre fin"
+        },
+        "it": {
+          "body": "Secondo Gray TV e FOX5 Vegas, la guerra in Ucraina continua nonostante la promessa di Trump di porla fine.",
+          "headline": "La guerra in Ucraina continua nonostante la promessa di Trump di porla fine"
+        },
+        "ja": {
+          "body": "グレイTVとFOX5ベガスによると、ウクライナの戦争はトランプの終結約束にもかかわらず継続しています。",
+          "headline": "トランプ氏の終結約束にもかかわらず、ウクライナ戦争は継続中"
+        },
+        "ko": {
+          "body": "그레이 TV와 FOX5 베가스에 따르면, 트럼프의 종식 약속에도 불구하고 우크라이나 전쟁은 계속되고 있다",
+          "headline": "트럼프의 종식 약속에도 불구하고 우크라이나 전쟁은 계속된다"
+        },
+        "pt": {
+          "body": "De acordo com a Gray TV e a FOX5 Vegas, a guerra na Ucrânia continua apesar da promessa de Trump de terminá‑la.",
+          "headline": "Guerra na Ucrânia continua apesar da promessa de Trump de terminá‑la"
+        },
+        "zh": {
+          "body": "根据Gray TV和FOX5 Vegas的报道，尽管特朗普承诺结束，乌克兰战争仍在继续。",
+          "headline": "尽管特朗普承诺结束，乌克兰战争仍在继续"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQV0djalJkLWJiYTdjWWhsa1dZeDNiNDN6aVJLZmFlNVowYUZ1OGhKNVBJUWFmWTFFbmcwdlhZS3I4cVpTcDNlZ3Q4WnZVaFY0cTloYmdSWFVpdTlaajhHX0UyTkNKVldtZUNTYTEtaG44NXdHZ2ZWdDBjTWxrTmZVV3VJdXNkYnUtanhUTEJ5eGpOLXNaR0NsZk9HN0lHXzVm?oc=5",
+          "title": "Ukraine war continues despite Trump’s promise to end it",
+          "outlet": "Gray TV",
+          "publishedAt": "2026-10-29T17:13:00.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbGVIOFlzRng0WDVhQWMzZWMtTENTQ0M5Umx4NlFWN1JOem1pRWttdTM0Q3htVHByRDZ3Y05SU3RpZUJ3S09LZ3JWMjhMa3p3TllndzR2LXVOQTQ5VTdaajFzMUlxemtSWEJIdEh5R216SER3cjFHQm05MFhWZkVVX3F5c2VwRjV6OFVuNHdGd3o0LVNuZ3AydnhQdw?oc=5",
+          "title": "Ukraine war continues despite Trump’s promise to end it",
+          "outlet": "FOX5 Vegas",
+          "publishedAt": "2026-10-29T17:13:00.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-29T16:33:07.000Z",
+      "id": "u-1793291587000-3c5i",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut CBS News ist ein lokaler Waffenstillstand zwischen Kiew und Moskau, vermittelt von Melania Trump, in Kraft. France 24 berichtete, dass der Waffenstillstand bereits seit dem dritten Tag anhält.",
+          "headline": "Lokaler Waffenstillstand zwischen Kiew und Moskau, vermittelt von Melania Trump, hält an"
+        },
+        "en": {
+          "body": "According to CBS News, a localised truce between Kyiv and Moscow brokered by Melania Trump is in place. France 24 reported the truce has held for a third day.",
+          "headline": "Localised truce between Kyiv and Moscow brokered by Melania Trump holds"
+        },
+        "es": {
+          "body": "Según CBS News, existe una tregua localizada entre Kiev y Moscú mediada por Melania Trump. France 24 informó que la tregua se mantiene desde el tercer día.",
+          "headline": "La tregua localizada entre Kiev y Moscú, mediada por Melania Trump, se mantiene"
+        },
+        "fr": {
+          "body": "Selon CBS News, une trêve localisée entre Kiev et Moscou, négociée par Melania Trump, est en place. France 24 a rapporté que la trêve tient depuis le troisième jour.",
+          "headline": "Une trêve localisée entre Kiev et Moscou, négociée par Melania Trump, tient"
+        },
+        "it": {
+          "body": "Secondo CBS News, una tregua localizzata tra Kiev e Mosca mediata da Melania Trump è in vigore. France 24 ha riferito che la tregua è durata già il terzo giorno.",
+          "headline": "Trattativa locale tra Kiev e Mosca mediata da Melania Trump è in vigore"
+        },
+        "ja": {
+          "body": "CBSニュースによると、ミレニア・トランプが仲介したキエフとモスクワの局所的停戦が実施されている。フランス24は、停戦が3日目まで継続したと報じた。",
+          "headline": "ミレニア・トランプが仲介したキエフとモスクワの局所的停戦が継続"
+        },
+        "ko": {
+          "body": "CBS 뉴스에 따르면 멜라니아 트럼프가 중재한 키이우와 모스크바 간 지역적 휴전이 체결되었다. 프랑스 24는 휴전이 세 번째 날까지 유지되었다고 보도했다.",
+          "headline": "멜라니아 트럼프가 중재한 키이우와 모스크바 간 지역적 휴전이 유지된다"
+        },
+        "pt": {
+          "body": "De acordo com a CBS News, existe uma trégua localizada entre Kiev e Moscou, mediada por Melania Trump. A France 24 reportou que a trégua já se mantém há três dias.",
+          "headline": "Trégua localizada entre Kiev e Moscou, mediada por Melania Trump, mantém-se"
+        },
+        "zh": {
+          "body": "据 CBS 新闻报道，基辅与莫斯科之间由梅拉尼娅·特朗普斡旋的局部停火已生效。法国24 报道该停火已持续第三天。",
+          "headline": "由梅拉尼娅·特朗普斡旋的基辅与莫斯科局部停火持续有效"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZWd0M0wwVlZvUTBQUGdrS3lzUE5iT09FOGJLWk5FdEgzTEozS0VTN1d6MF9EbGRtM1V0b1gwSDN0S29hTkJPN3FWRG9oVmtRXzdKeDVWUXAtVWtYbkljbmV0WGhNNG8wVkZmb1ExSGl2RnJ0RlFWaTAyM3F0X0UtNUJwRWNwNmRhODhYVVp2TjZWQmFOZl9xWg?oc=5",
+          "title": "Russian drone kills 14 at Ukraine train station, but local truce credited to Melania Trump brings some hope",
+          "outlet": "CBS News",
+          "publishedAt": "2026-10-29T16:33:07.000Z"
+        },
+        {
+          "url": "https://www.france24.com/en/europe/20261029-aid-mission-set-to-enter-ukraine-s-oleshky-as-localised-ceasefire-holds-for-third-day",
+          "title": "Aid mission set to enter Ukraine's Oleshky as localised ceasefire holds for third day",
+          "outlet": "France 24",
+          "publishedAt": "2026-10-29T16:19:14.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-29T13:41:06.000Z",
+      "id": "u-1793281266000-z9xt",
+      "kind": "reaction",
+      "locales": {
+        "de": {
+          "body": "Ukrainischer Präsident Zelenskyy bezeichnete den Angriff als \"schrecklich\", laut DW. Kiew bezeichnete den Angriff ebenfalls als schrecklich, laut AFP.",
+          "headline": "Ukrainische Beamte bezeichneten den Dnipro-Angriff als schrecklich"
+        },
+        "en": {
+          "body": "Ukrainian President Zelenskyy called the attack \"horrific\", according to DW. Kyiv also described the strike as horrific, according to AFP.",
+          "headline": "Ukrainian officials called the Dnipro strike horrific"
+        },
+        "es": {
+          "body": "El presidente ucraniano Zelenskyy llamó al ataque \"horrible\", según DW. Kyiv también describió el ataque como horrible, según AFP.",
+          "headline": "Los funcionarios ucranianos calificaron el ataque a Dnipro como horrible"
+        },
+        "fr": {
+          "body": "Le président ukrainien Zelenskyy a qualifié l'attaque de \"horrible\", selon DW. Kyiv a également décrit la frappe comme horrible, selon AFP.",
+          "headline": "Les responsables ukrainiens ont qualifié l'attaque sur le Dnipro de horrible"
+        },
+        "it": {
+          "body": "Il presidente ucraino Zelenskyy ha definito l’attacco \"orribile\", secondo DW. Kiev ha anche descritto l’attacco come orribile, secondo AFP.",
+          "headline": "I funzionari ucraini hanno definito l’attacco sul Dnipro orribile"
+        },
+        "ja": {
+          "body": "ウクライナ大統領ゼレンスキー氏は、DWによれば、攻撃を「恐ろしい」と呼んだ。キエフもAFPによれば、攻撃を恐ろしいと表現した。",
+          "headline": "ウクライナ当局、ドニプロ攻撃を恐ろしいと呼ぶ"
+        },
+        "ko": {
+          "body": "우크라이나 대통령 제레만스키가 이 공격을 \"끔찍하다\"라고 DW에 전했다. 키이프도 AFP에 따르면 이 공격을 끔찍하다고 묘사했다.",
+          "headline": "우크라이나 당국이 드니프로 공격을 끔찍하다고 부른다"
+        },
+        "pt": {
+          "body": "O Presidente ucraniano Zelenskyy chamou o ataque de \"horrível\", segundo a DW. Kyiv também descreveu o ataque como horrível, segundo a AFP.",
+          "headline": "Funcionários ucranianos chamaram o ataque a Dnipro de horrível"
+        },
+        "zh": {
+          "body": "乌克兰总统泽连斯基称此次袭击为“可怕”，据德国之声报道。基辅也称此次袭击为可怕，法新社报道。",
+          "headline": "乌克兰官员称顿河袭击可怕"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.dw.com/en/ukraine-14-killed-in-russian-drone-strike-on-crowded-dnipro-train-station/a-79795076?maca=en-rss-en-all-1573-rdf",
+          "title": "Ukraine: 14 killed in Russian drone strike on crowded Dnipro train station",
+          "outlet": "DW",
+          "publishedAt": "2026-10-29T11:33:00.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5KV0hfZVZ4R2pmRURaSFpWOEs3UGswWURsaC1WLVRQdVVYU0FDQnNyNDJGcW5INFNkSFVoRDhrWjBCTERBWkRWOHBjcw?oc=5",
+          "title": "'Horrific' Russian drone strike kills 13 at Ukraine train station: Kyiv",
+          "outlet": "AFP.com",
+          "publishedAt": "2026-10-29T13:41:06.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-29T13:39:11.000Z",
+      "id": "u-1793281151000-vz5l",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut Reuters und CNN starb bei dem Angriff mindestens 14 Personen. Andere Medien, darunter FAZ und Der Spiegel, berichten von 13 Todesfällen.",
+          "headline": "Russischer Drohnenangriff auf den Dnipro-Bahnhof tötet mindestens 14, einige sagen 13"
+        },
+        "en": {
+          "body": "According to Reuters and CNN, the strike killed at least 14 people. Other outlets, including FAZ and Der Spiegel, report 13 deaths.",
+          "headline": "Russian drone strike on Dnipro station kills at least 14, some say 13"
+        },
+        "es": {
+          "body": "Según Reuters y CNN, el ataque mató a al menos 14 personas. Otros medios, entre ellos FAZ y Der Spiegel, informan 13 fallecidos.",
+          "headline": "El ataque con dron ruso a la estación de Dnipro mata a al menos 14 personas, algunos dicen 13"
+        },
+        "fr": {
+          "body": "Selon Reuters et CNN, l'attaque a fait au moins 14 morts. D'autres médias, dont la FAZ et Der Spiegel, rapportent 13 décès.",
+          "headline": "Attaque de drone russe sur la gare de Dnipro tue au moins 14 personnes, certains disent 13"
+        },
+        "it": {
+          "body": "Secondo Reuters e CNN, l'attacco ha ucciso almeno 14 persone. Altri media, tra cui FAZ e Der Spiegel, riportano 13 morti.",
+          "headline": "Attacco aereo russo su stazione di Dnipro uccide almeno 14 persone, alcuni dicono 13"
+        },
+        "ja": {
+          "body": "ロイターとCNNによると、攻撃で少なくとも14人が死亡した。FAZやDer Spiegelを含む他の報道機関は13人の死亡と報じている。",
+          "headline": "ロシアのドローン攻撃でドニプロ駅に少なくとも14人死亡、別の報道では13人"
+        },
+        "ko": {
+          "body": "로이터와 CNN에 따르면 이번 공격으로 최소 14명이 사망했다고 한다. FAZ와 Der Spiegel 등 다른 매체는 13명 사망이라고 보도했다.",
+          "headline": "러시아 드론 공격이 드니프로 역에서 최소 14명 사망"
+        },
+        "pt": {
+          "body": "De acordo com a Reuters e a CNN, o ataque matou pelo menos 14 pessoas. Outras fontes, incluindo a FAZ e o Der Spiegel, registam 13 mortes.",
+          "headline": "Ataque de drone russo na estação Dnipro mata pelo menos 14, alguns dizem 13"
+        },
+        "zh": {
+          "body": "据路透社和CNN报道，此次袭击至少造成14人死亡。其他媒体，包括《法兰克福汇报》（FAZ）和《明镜周刊》（Der Spiegel），则称死亡人数为13人。",
+          "headline": "俄罗斯无人机袭击第聂伯罗站至少造成14人死亡，部分媒体称13人"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMVJMbm5Vb3NTVmNud01fMHc3WHJUWTNvWl8zSmJYZjVUUHhRbm5VWGZxVWZmbGpQdHZNZUlCQVFuLWxWb1FoR0xTZThVSmRTRVBlWUlLaWNKUTZzVnV1dTYyellibWN0XzFXNGpsUk45U2o1Z2hzUndOUEJYM0Q3WmUxSHFteS1WRXpyRk5JcmdTaEdyNVMzV2dwRGxCc0hGMlpQRElXQzMxZXdj?oc=5",
+          "title": "Russian drone strike kills at least 14 on Ukrainian rail platform",
+          "outlet": "Reuters",
+          "publishedAt": "2026-10-29T13:02:10.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUlQ1UWYtd0hPSWtJakxQc1ViaUlLYXMxNXd0aTZWekZ0QlFzZUVxalBEZHE5bkpXV3g5Mjdjd2p5OUNiLXM4R3pOM3RSUzRDNjBWTGdLWEdVcWdneFU0MHRlRzh2WjFlMWVVa3NGdm9BNjQ0ZGV6LWItX29Lekk4Zl9IT2hrTXFOT2NNNWhYWQ?oc=5",
+          "title": "Russia strikes Dnipro train station in central Ukraine, killing 14",
+          "outlet": "CNN",
+          "publishedAt": "2026-10-29T10:19:01.000Z"
+        },
+        {
+          "url": "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-nach-anschlag-auf-starlink-antennen-zwei-deutsche-vor-auslieferung-faz-110683325.html",
+          "title": "Liveblog Ukrainekrieg: Nach Anschlag auf Starlink-Antennen: Zwei Deutsche vor Auslieferung",
+          "outlet": "FAZ",
+          "publishedAt": "2026-10-29T13:39:11.000Z"
+        },
+        {
+          "url": "https://www.spiegel.de/ausland/dnipro-ukraine-meldet-13-tote-nach-russischem-angriff-auf-bahnhof-a-4e0f8d8c-d8bf-49fe-8eba-aed180035558#ref=rss",
+          "title": "Dnipro: Ukraine meldet 13 Tote nach russischem Angriff auf Bahnhof",
+          "outlet": "Der Spiegel",
+          "publishedAt": "2026-10-29T13:30:00.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "russia",
     "ukraine",
@@ -16,84 +569,6 @@
     "railway platform",
     "military",
     "conflict"
-  ],
-  "startedAt": "2026-10-29T13:50:09.564Z",
-  "endedAt": null,
-  "updatedAt": "2026-10-29T14:07:10.437Z",
-  "articleSlug": "russian-drone-strike-kills-at-least-14-on",
-  "sourceCount": 4,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1793281151000-vz5l",
-      "at": "2026-10-29T13:39:11.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Russian drone strike on Dnipro station kills at least 14, some say 13",
-          "body": "According to Reuters and CNN, the strike killed at least 14 people. Other outlets, including FAZ and Der Spiegel, report 13 deaths."
-        },
-        "fr": {
-          "headline": "Attaque de drone russe sur la gare de Dnipro tue au moins 14 personnes, certains disent 13",
-          "body": "Selon Reuters et CNN, l'attaque a fait au moins 14 morts. D'autres médias, dont la FAZ et Der Spiegel, rapportent 13 décès."
-        },
-        "de": {
-          "headline": "Russischer Drohnenangriff auf den Dnipro-Bahnhof tötet mindestens 14, einige sagen 13",
-          "body": "Laut Reuters und CNN starb bei dem Angriff mindestens 14 Personen. Andere Medien, darunter FAZ und Der Spiegel, berichten von 13 Todesfällen."
-        },
-        "it": {
-          "headline": "Attacco aereo russo su stazione di Dnipro uccide almeno 14 persone, alcuni dicono 13",
-          "body": "Secondo Reuters e CNN, l'attacco ha ucciso almeno 14 persone. Altri media, tra cui FAZ e Der Spiegel, riportano 13 morti."
-        },
-        "es": {
-          "headline": "El ataque con dron ruso a la estación de Dnipro mata a al menos 14 personas, algunos dicen 13",
-          "body": "Según Reuters y CNN, el ataque mató a al menos 14 personas. Otros medios, entre ellos FAZ y Der Spiegel, informan 13 fallecidos."
-        },
-        "ko": {
-          "headline": "러시아 드론 공격이 드니프로 역에서 최소 14명 사망",
-          "body": "로이터와 CNN에 따르면 이번 공격으로 최소 14명이 사망했다고 한다. FAZ와 Der Spiegel 등 다른 매체는 13명 사망이라고 보도했다."
-        },
-        "ja": {
-          "headline": "ロシアのドローン攻撃でドニプロ駅に少なくとも14人死亡、別の報道では13人",
-          "body": "ロイターとCNNによると、攻撃で少なくとも14人が死亡した。FAZやDer Spiegelを含む他の報道機関は13人の死亡と報じている。"
-        },
-        "zh": {
-          "headline": "俄罗斯无人机袭击第聂伯罗站至少造成14人死亡，部分媒体称13人",
-          "body": "据路透社和CNN报道，此次袭击至少造成14人死亡。其他媒体，包括《法兰克福汇报》（FAZ）和《明镜周刊》（Der Spiegel），则称死亡人数为13人。"
-        },
-        "pt": {
-          "headline": "Ataque de drone russo na estação Dnipro mata pelo menos 14, alguns dizem 13",
-          "body": "De acordo com a Reuters e a CNN, o ataque matou pelo menos 14 pessoas. Outras fontes, incluindo a FAZ e o Der Spiegel, registam 13 mortes."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Reuters",
-          "title": "Russian drone strike kills at least 14 on Ukrainian rail platform",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMVJMbm5Vb3NTVmNud01fMHc3WHJUWTNvWl8zSmJYZjVUUHhRbm5VWGZxVWZmbGpQdHZNZUlCQVFuLWxWb1FoR0xTZThVSmRTRVBlWUlLaWNKUTZzVnV1dTYyellibWN0XzFXNGpsUk45U2o1Z2hzUndOUEJYM0Q3WmUxSHFteS1WRXpyRk5JcmdTaEdyNVMzV2dwRGxCc0hGMlpQRElXQzMxZXdj?oc=5",
-          "publishedAt": "2026-10-29T13:02:10.000Z"
-        },
-        {
-          "outlet": "CNN",
-          "title": "Russia strikes Dnipro train station in central Ukraine, killing 14",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUlQ1UWYtd0hPSWtJakxQc1ViaUlLYXMxNXd0aTZWekZ0QlFzZUVxalBEZHE5bkpXV3g5Mjdjd2p5OUNiLXM4R3pOM3RSUzRDNjBWTGdLWEdVcWdneFU0MHRlRzh2WjFlMWVVa3NGdm9BNjQ0ZGV6LWItX29Lekk4Zl9IT2hrTXFOT2NNNWhYWQ?oc=5",
-          "publishedAt": "2026-10-29T10:19:01.000Z"
-        },
-        {
-          "outlet": "FAZ",
-          "title": "Liveblog Ukrainekrieg: Nach Anschlag auf Starlink-Antennen: Zwei Deutsche vor Auslieferung",
-          "url": "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-nach-anschlag-auf-starlink-antennen-zwei-deutsche-vor-auslieferung-faz-110683325.html",
-          "publishedAt": "2026-10-29T13:39:11.000Z"
-        },
-        {
-          "outlet": "Der Spiegel",
-          "title": "Dnipro: Ukraine meldet 13 Tote nach russischem Angriff auf Bahnhof",
-          "url": "https://www.spiegel.de/ausland/dnipro-ukraine-meldet-13-tote-nach-russischem-angriff-auf-bahnhof-a-4e0f8d8c-d8bf-49fe-8eba-aed180035558#ref=rss",
-          "publishedAt": "2026-10-29T13:30:00.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.nzz.ch/international/krieg-in-der-ukraine-die-neusten-entwicklungen-im-liveticker-ld.10021245",
@@ -152,211 +627,64 @@
     "https://www.semafor.com/article/10/29/2026/trump-weighs-post-midterms-iran-operations",
     "https://news.google.com/rss/articles/CBMiS0FVX3lxTE44UkJpQnUzQndLUWlaSkVYXzNCdDNIMTVSbktWaEhpRlM4V0hRSlhuem1YQ1E3ZVFwMkFzYi1aZkdfRnIybW5aczU5UQ?oc=5",
     "https://www.kyivpost.com/post/88515",
-    "https://allafrica.com/stories/202610290178.html"
+    "https://allafrica.com/stories/202610290178.html",
+    "https://www.kyivpost.com/post/88582",
+    "https://www.kyivpost.com/post/88580",
+    "https://www.kyivpost.com/post/88579",
+    "https://www.aljazeera.com/news/2026/10/29/israeli-strikes-hit-gaza-as-health-ministry-urges-rafah-opening?traffic_source=rss",
+    "https://www.euronews.com/2026/10/29/brussels-hopes-unspent-defence-loans-may-help-plug-ukraines-budget-hole",
+    "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOZ1pRUlJJejVRanphX3oxNkZsV3hxM2JFRFFDZkF3cnZqUEwxT3pUV1JfRm1WYklJMmUtWTJsU3UwLWFXTTF5THJWSHAxM1EtZjlXSXMxS0kwbHRGY0pGVXRGV0ozUG05SmF2c1VlbWFYLTNQVFEtYzgzd0tRd05LbHVORWx3dHg1S2N5dnJoNWpPU2E5Q0xnNlg2UGtrZ0dmREx2RnZFdmQ4VmtvWC03S1NwckplcFd3Sm9IeGZnM1lROENiSVpPY0lNcUtDVDg0?oc=5",
+    "https://www.faz.net/aktuell/politik/ausland/halt-die-klappe-mette-warum-die-nordeuropaeer-ueber-putin-streiten-201632176.html",
+    "https://www.thehindu.com/news/international/palestinian-president-says-hopes-for-peace-talks-with-new-israeli-government/article71641117.ece",
+    "https://www.straitstimes.com/world/middle-east/netanyahu-at-risk-of-losing-power-steps-up-attacks-on-israels-arab-parties",
+    "https://www.kyivpost.com/post/88575",
+    "https://www.kyivpost.com/post/88572",
+    "https://www.nytimes.com/2026/10/29/world/europe/france-shootings-suspect.html",
+    "https://www.politico.eu/article/russia-attacks-ukrainian-civilians-in-several-regions-killing-dozens-within-few-hours/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.kyivpost.com/post/88570",
+    "https://www.abc.net.au/news/2026-10-30/russian-drone-strike-kills-at-least-14-at-rail-platform/107325816",
+    "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPdF84TnBNRm8zNDZ6YURPcl9ZZFk0bXo0WFB1aFd4dlA1bW9ES01sUjdidmNIdlIxRXRuM0ltVnA0ZTlqa3N5UnJjUk40d3N4akV0bHFRektGaURMRTFUVjhta3Q1eHVrNjdoaUNoNWRJVkk1TlZmZ21ueF8wOHhwRkp2Rzd6VHZmUWtjY3ZXcnhPWUxKRUFXYlE0R3BiSENkbXd0Vll3Zmc3VkJUR0gxbzRLNFc4NFBaRFRrbHI3bmNsZnA4dkdyX0tuSW1tbG5lS0x2TFRhaC11TGY1eTNWSFdnSnlNZkdj?oc=5",
+    "https://www.aljazeera.com/features/2026/10/29/damascus-amman-contradict-each-other-on-attack-that-killed-civilians?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5KV0hfZVZ4R2pmRURaSFpWOEs3UGswWURsaC1WLVRQdVVYU0FDQnNyNDJGcW5INFNkSFVoRDhrWjBCTERBWkRWOHBjcw?oc=5",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVVhsUEMzMkFhQmRPZmlpMXhOUGdENW5CRW9OOWdrNm1YaXlEdXZoM19jMHNmVnNjcHB5dWx4ekVNV3k0aDVoN2RyTHNrNloyejN2ODJXU0VTcEU4R3JOU1ctZE5nS05LWWkzZHpsd2V3MUpRUUw2WXpHRUFoMHY5cFBBd05CV2ZjQUJsX0FVUUNtMzhSUDZEcldvZnlfZVNqSkVQRkFSZG9oQdIBqgFBVV95cUxNVVhsUEMzMkFhQmRPZmlpMXhOUGdENW5CRW9OOWdrNm1YaXlEdXZoM19jMHNmVnNjcHB5dWx4ekVNV3k0aDVoN2RyTHNrNloyejN2ODJXU0VTcEU4R3JOU1ctZE5nS05LWWkzZHpsd2V3MUpRUUw2WXpHRUFoMHY5cFBBd05CV2ZjQUJsX0FVUUNtMzhSUDZEcldvZnlfZVNqSkVQRkFSZG9oQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUW50cndHeXVheUItcnQ3dHJnRkUwN3lxczA0eFZ5SzgwaGpEdmdtWVYxa293RlZ3ZHpoUDBscVAyYnJoZlZVTzVncEdnQkxWZGJkOFBKXzloSmh4TmljQ19ueHhGZHRVaDMwN0EtclVjQU41Nm9kbVdfTUxoWWY2SExSbW9sSXhMbWhibXd6UlFzODhaR0IyN29JWko0RUlTVkZ3Vk1EY2Z4SzliU0JWVnZ3?oc=5",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-dnipro-14-tote-bei-russischem-drohnenangriff-auf-bahnhof",
+    "https://www.straitstimes.com/world/europe/spains-deadly-train-crash-adds-new-complication-to-sanchez-reelection-campaign",
+    "https://www.dw.com/en/ukraine-14-killed-in-russian-drone-strike-on-crowded-dnipro-train-station/a-79795076?maca=en-rss-en-all-1573-rdf",
+    "https://www.jpost.com/middle-east/iran-news/article-913265",
+    "https://news.google.com/rss/articles/CBMiUkFVX3lxTE96Q255cHViXzlxZGJJbXlwLWxVbkZSYk9Cc3BhbTJDQ2VPcEdtejhPbFlvSnpDM1loZjVISDgyWjUwd3ZMS2tuZ2VSRDUyQ0U1VVE?oc=5",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZWd0M0wwVlZvUTBQUGdrS3lzUE5iT09FOGJLWk5FdEgzTEozS0VTN1d6MF9EbGRtM1V0b1gwSDN0S29hTkJPN3FWRG9oVmtRXzdKeDVWUXAtVWtYbkljbmV0WGhNNG8wVkZmb1ExSGl2RnJ0RlFWaTAyM3F0X0UtNUJwRWNwNmRhODhYVVp2TjZWQmFOZl9xWg?oc=5",
+    "https://www.lemonde.fr/en/international/article/2026/10/29/behind-trump-s-shift-towards-russia-the-lucrative-business-promises-of-kirill-dmitriev-putin-s-dealmaker_6766894_4.html",
+    "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVzFDWk1GRENKX0VCQkZFMlE3ZldUNEkxZ1liUmZMYnlHNmZPOU8tU25sVkRNYnJQemg2M2VfYy1KRXNwLXdxMXE4YktKVzJjNnVraHc2SUNnc2VnV0dOdDdMRDVFQUJYTjN5TmU2dWFJRVYxZnFQQjVLLVM3QlMzcXQtRzVfUjNzaDdwaUhIX0tWajhoUGpiVGpHNjJjdTl1M3NoUGdPMDVwa2lCRk5yX1BkMFpRblNfOG5MY2dHN1FNTGNuX181dnRYX090TXdiYndQZkpESXkwMTdyX2dOQmJ1elVZWm01cmR5WVdERkJVSzFxeGpYZzdmMHU?oc=5",
+    "https://www.semafor.com/article/10/29/2026/african-nations-mobilize-against-widening-ebola-crisis",
+    "https://www.thehindu.com/news/international/ukraine-says-at-least-13-killed-in-russian-attack-on-train-station/article71641924.ece",
+    "https://www.france24.com/en/europe/20261029-aid-mission-set-to-enter-ukraine-s-oleshky-as-localised-ceasefire-holds-for-third-day",
+    "https://www.kyivpost.com/post/88584",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQN2h1S1dTWHZFSDZiWl8xRmRaMkdkZEd1b1owOXZaRFJIYWFWTHYxVm5PdWVQR1ZrZXF3UXdEelNjUnZrWTJOd1o1VUpRYUlMZjRJWE1GOWc5TWd2X3d2LVllOWhiOHM0YjV2d0NJWjFHdnRkSVZ3NXRweWZQTGRON2k1UzZkRGVhQWJWcUJMajg4d3ZBVGdUcmhsdVh6a01pYXNiQW1SMFAyNEtuamlLb1NB?oc=5",
+    "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRlVfajhTOVcxdnVXc0l0bTh6OFFyamt2el9ZalJiRnJTUzVncjlWaEl1ODZPbEJTdzlkZF9GV3NxUDNja0JFWm5qT3psVWQ2S25zZDA1bUV0bHBKVmtQd01tcDQwR1lwMzNfNkI2RFhVZDQ1SVdUSnVlcHNsUWd4NHoyUV9lUUpGWS1ZaktMVTJaWDhYZmE5ZTNSdUM2WU5tY3ZRcGd3NGRvcnVyTXY3QmdORktIOE5rZ0VuSS1IUTRhOWMwOHRKUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxNbUQyVHFBOVpJOHJOdXNsMWVZeno0S29wLWRMUmRHbmZaR2NHLTIzT2hwYXpiV194QnMxRk9jeGtIUl9wZnc5WWo0c3Bpc0dZMGdIYVl3b3FPR2locWVwQVZ4ZElBaE5Gd1dtRlUtb2lMTUt1aUJPeDZGVU1IQ2NGczVyWmI4WWoza29NY2JqWE5kdGQzV011S3RxcWZkeHljVnlNaXZPM1JZYjgtQ016VGsweGRBZ2dwLWNpNA?oc=5",
+    "https://www.kyivpost.com/post/88593",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxQV0djalJkLWJiYTdjWWhsa1dZeDNiNDN6aVJLZmFlNVowYUZ1OGhKNVBJUWFmWTFFbmcwdlhZS3I4cVpTcDNlZ3Q4WnZVaFY0cTloYmdSWFVpdTlaajhHX0UyTkNKVldtZUNTYTEtaG44NXdHZ2ZWdDBjTWxrTmZVV3VJdXNkYnUtanhUTEJ5eGpOLXNaR0NsZk9HN0lHXzVm?oc=5",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbGVIOFlzRng0WDVhQWMzZWMtTENTQ0M5Umx4NlFWN1JOem1pRWttdTM0Q3htVHByRDZ3Y05SU3RpZUJ3S09LZ3JWMjhMa3p3TllndzR2LXVOQTQ5VTdaajFzMUlxemtSWEJIdEh5R216SER3cjFHQm05MFhWZkVVX3F5c2VwRjV6OFVuNHdGd3o0LVNuZ3AydnhQdw?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxOZllYbFR0b3E0MU93R1U0dGUwUDE1d2ZZekZ2a0o2YWUwREIySUhEZE9IY2NrUVZfT2NlVVJwOG5oRlgzclRmVFlySC0yNEJFTVV1bFJtYlFGZ0E4Y1BoX3lQeHJwWGVzb3hweWZrTlFSS0RpN2hua0Z1dG9fdVlWeHJycjNHOGFBWThOTXFuemgxTjZWVm9LdUJBdVcyUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxNSC1hdGk4c0pPUHBfRkFJZGZYMmg4QzVSMGJQSGhqOTlabE9KdWsycjBrUDc5ZlBDZG1YTnRjR3lfSWZmcjlTOE4xeEh0cVlMS0ItVG95WmY2dU1NZVUtdWlfU1ZpaGJYWUt3Yy1wdElOSDdLempfTm5rNThGY3RkTjFiQjY1SFprN0dsc1BkQUJFWlZk?oc=5",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZmh2VE9Uc0RKZmJMbzVrbk01THVLb2VKbjh6M3VudFlsWlhiVllFeC1XZXgyMUtLd185Si1uS3ZWaEpHRGpjeE5LRWpabVNaRGhmUF9wd1dNTlJiUWVPMUhvR0lFdHhBb3RzbFFKcHEtQko4UGV4akJjZW0wS1ZBYmdVZEhQX2JWbVh3TzJwQ2x3cWhNdDZPQUVtYw?oc=5",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPNlZsNWJWVzN3a1gzWVU1Vll6ZmtrNWI4bnhDTkc5R012d01IeVdVNVdVTFBaUW9JSkVUY1BqWG5lN25aTHdiZlZtLWRQSFdfUVFmenhHX0lsSEdzUjVaWGRDYTFGSmxva3Bmb251aGR2TlptYjRhMVVfTXdvTWtpb2drSnpwS0xIZ0FtUXdVWERsTEYw?oc=5",
+    "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVmNvdmdMNDNubXk1VHA1WmZhU0FKTFJZVl9VcnZXYmdqLUNNUFlUYkJPMG1CWUVCOWYyVm5vcUJmUEVYWXpnY1REeXZyc0FqeC1VTlZCLUdUb0xxVGJOZzdyeXFYZGFRNmVMVUxhN185TDRubUlWREQzLUMwMWNOUVVXaFFxWUhibV93ekhFd25aeGRxR3pvUmc4WGw?oc=5",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxQN3hZcmJWU1BPRTAydXhMRHNFZHlrNV9qUUtWX1VMNUstRVdFd25kV2V5ZFpOZXZBeTBaeWtaQXRUaWduWkk5dHc5bnBOUy1qdk5JR0pYSWtwbWY1eWFZejZhTy1UckpQZXNsUF9hdlNTaFNtUk04Wk9PNFBfOFU4ZE5nMDd0SlE2ZEJZOFRGVUgxXzFt?oc=5",
+    "https://news.google.com/rss/articles/CBMilwFBVV95cUxOaXhGWDRQODJ1V05ZTTItUGFOX0tmdzJyOFRrNUFkTmxKcENqSFFnQnZfRzRsejM2NHdBQVJ0ZjIzWHV2RkxMV2xLcXRad1dnTUprb2NONVNNbmlkQlR4UjBHS0J1QXBBV2t1MnVoSnF0OEtkXzU5dkZ2NTZ6TzlSd0xCNUppcGk3SkJpdGZhRUlEdC1ndGlN?oc=5",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxNZm82TFB1VzhuSWFPR3U5bmxxdHdqNE04TUIzeW9vZi1GcFJVa09TTVZfQl9JalNlYzJFMzF0U3VkeV94blpJWmJKX0lSUHNCbTZYVXNielZsdi1wc2I0Rmd0c215bHZJWXA4ZHY2dkhnSEc3cXhrVmVRWEFNRU9fX0VlaDdnVUxHcmE0WHRVc2paRXpO?oc=5",
+    "https://news.google.com/rss/articles/CBMikwFBVV95cUxPVEJqdGw3bmpfMzdWb0pOMFZ3TUUxNF9RTmdHT2pmenpZTHBQaXhBdFNVcmFWcWw0cmZiTGVhWkhncnJWZ3JBdDdCN0dlMTF5cHZNU0J5ako0OV8yMWppRFJYNDhYRWFFSmR2NjIzTzVxYlc0RUJDZ3Q1dzRGeUYtV1V5Wk1Qd1p5QXg3LVRSNlhTb2s?oc=5",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxOekp1X2JkdnBuWDA5aFJibWN0ZU4xM1lUR3pobFgxblRPY285NXRmOGQ5XzFWb0JIVE5VSUtRZWZTZXZja25NcXdaLXl3RnVQbEZCRnZ6czdabFBnVjhuRVRFNXdvaFNvNWo0WjJrb2ZUZUhieVVuVE9QTzdnaVgyVVhHU1hTazhhRGlZRlAtVkFOdWlf0gGoAUFVX3lxTE1mbWZydzVKUFlINlpVYnFVS1hRR1paNmRYZ1FjeUtVXzZ5RWotN0ZQWmRKZW9hZUxCNm9zd1dBZnEtMTl3TVlVdzhBU2pXb3dEcWh2NVVqeTZRd09JNG5TMTZNczZYMTUtNE5SX0NueHgwWTdsd0dBRzhobF9kRjVtdmFtWkNpMUNGTkFma3JuWTNjeVVtczBIZks1SnhJc3dFbmZQZ21JaQ?oc=5",
+    "https://www.kyivpost.com/post/88589",
+    "https://english.elpais.com/international/2026-10-29/pablo-de-greiff-un-expert-russia-is-responsible-for-human-trafficking.html"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Russian drone strike kills at least 14 at Ukrainian train station",
-      "dek": "A Russian drone attack on a crowded train platform in Dnipro has caused multiple fatalities and injuries, prompting international condemnation and calls for an investigation."
-    },
-    "de": {
-      "title": "Russischer Drohnenangriff tötet mindestens 14 Personen an ukrainischer Bahnhofsplattform",
-      "dek": "Ein russischer Drohnenangriff auf eine stark frequentierte Bahnplattform in Dnipro hat mehrere Todesfälle und Verletzte verursacht, was internationale Verurteilung und Forderungen nach einer Untersuchung ausgelöst hat."
-    },
-    "fr": {
-      "title": "Attaque de drone russe tue au moins 14 à la gare ukrainienne",
-      "dek": "Une attaque de drone russe sur une plateforme de train très fréquentée à Dnipro a entraîné plusieurs décès et blessures, suscitant une condamnation internationale et des appels à une enquête."
-    },
-    "es": {
-      "title": "Ataque con dron ruso mata a al menos 14 en la estación de tren ucraniana",
-      "dek": "Un ataque con dron ruso a una plataforma de tren concurrida en Dnipro ha provocado varias víctimas mortales y heridas, provocando condena internacional y llamados a una investigación."
-    },
-    "it": {
-      "title": "Attacco a drone russo uccide almeno 14 a stazione ferroviaria ucraina",
-      "dek": "Un attacco a drone russo su una piattaforma ferroviaria affollata a Dnipro ha causato numerose vittime e feriti, suscitando condanne internazionali e richieste di indagine."
-    },
-    "ja": {
-      "title": "ロシアのドローン攻撃でウクライナの鉄道駅で少なくとも14人が死亡",
-      "dek": "ドニプロの混雑した駅のホームに対するロシアのドローン攻撃により、複数の死亡者と負傷者が出た。国際的な非難と調査要請が呼びかけられている。"
-    },
-    "zh": {
-      "title": "俄国无人机袭击乌克兰火车站至少造成14人死亡",
-      "dek": "俄国无人机袭击第聂伯罗市拥挤的火车站平台，导致多名人员死亡和受伤，引发国际谴责并呼吁展开调查。"
-    },
-    "pt": {
-      "title": "Ataque de drone russo mata pelo menos 14 na estação de comboios ucraniana",
-      "dek": "Um ataque de drone russo num pátio de comboios lotado em Dnipro resultou em múltiplas fatalidades e feridos, provocando condenação internacional e pedidos de investigação."
-    },
-    "ko": {
-      "title": "러시아 드론 공격, 우크라이나 기차역에서 최소 14명 사망",
-      "dek": "드니프로의 혼잡한 기차 승강장에서 러시아 드론이 공격을 가해 다수의 사망자와 부상자를 발생시켰으며, 이는 국제 사회의 비난과 조사를 촉구하는 목소리를 불러일으켰다"
-    }
-  },
-  "article": {
-    "slug": "russian-drone-strike-kills-at-least-14-on",
-    "updatedAt": "2026-10-29T14:10:15.732Z",
-    "reason": "1 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Russian drone strike kills at least 14 at Dnipro train station",
-        "dek": "A Russian drone attack on a Ukrainian rail platform in Dnipro on 29 October 2026 killed at least 14 people, with some reports citing 13 deaths.",
-        "facts": [
-          "Russian drone strike on Dnipro station on 29 October 2026.",
-          "At least 14 people were killed according to Reuters and CNN.",
-          "13 deaths were reported by FAZ and Der Spiegel.",
-          "The strike targeted a rail platform in central Ukraine.",
-          "The attack was carried out by a Russian drone."
-        ],
-        "body": [
-          "According to Reuters and CNN, a Russian drone strike on Dnipro station on 29 October 2026 killed at least 14 people. The strike targeted a rail platform in central Ukraine.",
-          "FAZ and Der Spiegel reported a death toll of 13. The discrepancy reflects differing reports from independent outlets.",
-          "The attack was carried out by a Russian drone. The drone was launched from Russian-controlled territory.",
-          "The incident occurred in Dnipro, a city in central Ukraine. Dnipro is a major rail hub in the region.",
-          "The strike is part of the ongoing conflict between Russia and Ukraine. No further details about the motive were provided by the outlets.",
-          "Ukrainian authorities have not issued a statement according to the reports. The incident has been reported by multiple independent news outlets."
-        ],
-        "context": "Dnipro is a city in central Ukraine.",
-        "imageCaption": ""
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "BBC",
-      "DW",
-      "France 24",
-      "Euronews",
-      "New York Times",
-      "The Japan Times",
-      "CNA",
-      "The Straits Times",
-      "The Kyiv Post",
-      "Reuters",
-      "The New York Times",
-      "CNN"
-    ],
-    "statsModel": "openai/gpt-oss-20b",
-    "lastUpdateModel": "openai/gpt-oss-20b"
-  },
-  "stats": {
-    "label": "Casualties",
-    "note": "Number of people killed and injured in the drone strike on the Dnipro train station.",
-    "unit": "",
-    "max": null,
-    "asOf": "2026-10-29T12:00:00.000Z",
-    "updatedAt": "2026-10-29T14:05:02.848Z",
-    "source": {
-      "outlet": "Reuters",
-      "title": "Russian drone strike kills at least 14 on Ukrainian rail platform",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMVJMbm5Vb3NTVmNud01fMHc3WHJUWTNvWl8zSmJYZjVUUHhRbm5VWGZxVWZmbGpQdHZNZUlCQVFuLWxWb1FoR0xTZThVSmRTRVBlWUlLaWNKUTZzVnV1dTYyellibWN0XzFXNGpsUk45U2o1Z2hzUndOUEJYM0Q3WmUxSHFteS1WRXpyRk5JcmdTaEdyNVMzV2dwRGxCc0hGMlpQRElXQzMxZXdj?oc=5",
-      "publishedAt": "2026-10-29T13:02:10.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "killed",
-        "label": "Killed",
-        "value": 14,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Tués"
-          },
-          "es": {
-            "label": "Muertos"
-          },
-          "de": {
-            "label": "Getötet"
-          },
-          "it": {
-            "label": "Uccisi"
-          },
-          "pt": {
-            "label": "Mortos"
-          },
-          "zh": {
-            "label": "死亡"
-          },
-          "ko": {
-            "label": "사망자"
-          },
-          "ja": {
-            "label": "死亡"
-          }
-        }
-      },
-      {
-        "key": "injured",
-        "label": "Injured",
-        "value": 14,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Blessés"
-          },
-          "es": {
-            "label": "Heridos"
-          },
-          "de": {
-            "label": "Verletzte"
-          },
-          "it": {
-            "label": "Feriti"
-          },
-          "pt": {
-            "label": "Feridos"
-          },
-          "zh": {
-            "label": "受伤"
-          },
-          "ko": {
-            "label": "부상자"
-          },
-          "ja": {
-            "label": "負傷"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Tote und Verletzte",
-        "note": "Anzahl der getöteten und verletzten Personen bei dem Drohnenangriff auf den Bahnhof Dnipro."
-      },
-      "fr": {
-        "label": "Victimes",
-        "note": "Nombre de personnes tuées et blessées lors de la frappe aérienne de drones sur la gare de Dnipro."
-      },
-      "es": {
-        "label": "Víctimas",
-        "note": "Número de personas asesinadas y heridas en el ataque con drones sobre la estación de tren de Dnipro."
-      },
-      "it": {
-        "label": "Persone coinvolte",
-        "note": "Numero di persone uccise e ferite nell'attacco con droni alla stazione ferroviaria di Dnipro."
-      },
-      "pt": {
-        "label": "Vítimas",
-        "note": "Número de pessoas mortas e feridas no ataque de drones na estação de comboios de Dnipro."
-      },
-      "zh": {
-        "label": "伤亡人数",
-        "note": "无人机袭击德涅普罗火车站造成的死亡和受伤人数。"
-      },
-      "ja": {
-        "label": "死傷者",
-        "note": "ドニプロ駅に対するドローン攻撃で死亡・負傷した人数。"
-      },
-      "ko": {
-        "label": "사상자",
-        "note": "드론 공격으로 디니프로 기차역에서 사망 및 부상한 인원 수."
-      }
-    }
-  },
+  "startedAt": "2026-10-29T13:50:09.564Z",
+  "updatedAt": "2026-10-29T18:22:28.156Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": "russian-drone-strike-kills-at-least-14-on",
+  "sourceCount": 10,
   "statsHistory": [
     {
       "at": "2026-10-29T12:00:00.000Z",
@@ -370,6 +698,59 @@
           "value": 14
         }
       ]
+    },
+    {
+      "at": "2026-10-29T12:00:00.000Z",
+      "rows": [
+        {
+          "key": "killed",
+          "value": 13
+        },
+        {
+          "key": "injured",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "at": "2026-10-29T12:00:00.000Z",
+      "rows": [
+        {
+          "key": "killed",
+          "value": 14
+        },
+        {
+          "key": "injured",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "at": "2026-10-29T12:00:00.000Z",
+      "rows": [
+        {
+          "key": "killed",
+          "value": 13
+        },
+        {
+          "key": "injured",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "at": "2026-10-29T12:00:00.000Z",
+      "rows": [
+        {
+          "key": "killed",
+          "value": 14
+        },
+        {
+          "key": "injured",
+          "value": 14
+        }
+      ]
     }
-  ]
+  ],
+  "seenHeadlines": []
 }
