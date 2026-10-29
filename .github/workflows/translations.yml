@@ -44,8 +44,28 @@ jobs:
         run: |
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
-          # Pick up stories the newsroom published while this run was busy.
-          git pull -q --rebase --autostash || true
+          # The newsroom and the live tickers push to content/ while this run is
+          # busy, so a rebase can stop on content/index.json. The old
+          # `git pull --rebase ... || true` then committed conflict markers and
+          # blanked the front page. Never continue while a rebase is in
+          # progress: abort it and merge instead, then repair the index.
+          sync_upstream() {
+            for attempt in 1 2 3 4 5; do
+              if git pull -q --rebase --autostash; then return 0; fi
+              git rebase --abort 2>/dev/null || true
+              if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
+                node scripts/sync-index.mjs --missing || true
+                node scripts/check-content.mjs --fix || return 1
+                git add content
+                git commit -q -m "translations: merge upstream" || true
+                return 0
+              fi
+              git merge --abort 2>/dev/null || true
+              sleep $((attempt * 10))
+            done
+            return 1
+          }
+          sync_upstream || { echo "could not sync with origin/main"; exit 1; }
           if [ -f translated-slugs.txt ]; then
             node scripts/sync-index.mjs --file translated-slugs.txt
           fi
@@ -53,5 +73,5 @@ jobs:
           git add content
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -q -m "translations: $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull -q --rebase --autostash || true
-          git push -q
+          sync_upstream || { echo "could not sync with origin/main"; exit 1; }
+          git push -q || { sleep 10; sync_upstream && git push -q; }

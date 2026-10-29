@@ -110,15 +110,32 @@ jobs:
 
             node scripts/sync-content.mjs || echo "supabase mirror skipped"
 
-            git add content
-            if git diff --cached --quiet; then
-              echo "No changes"
+            # Never commit while a rebase from the previous attempt is half
+            # resolved - that is how conflict markers reached index.json.
+            if ! node scripts/check-content.mjs --fix; then
+              echo "content/index.json is broken - not committing this cycle"
+              git reset -q
+              git rebase --abort 2>/dev/null || true
             else
-              git commit -q -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
-              for attempt in 1 2 3; do
-                git pull --rebase --autostash && git push && break
-                sleep $((attempt * 10))
-              done
+              git add content
+              if git diff --cached --quiet; then
+                echo "No changes"
+              else
+                git commit -q -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
+                for attempt in 1 2 3 4; do
+                  if git pull --rebase --autostash; then git push && break; fi
+                  git rebase --abort 2>/dev/null || true
+                  if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
+                    node scripts/sync-index.mjs --missing || true
+                    node scripts/check-content.mjs --fix || true
+                    git add content
+                    git commit -q -m "live: merge upstream" || true
+                    git push && break
+                  fi
+                  git merge --abort 2>/dev/null || true
+                  sleep $((attempt * 10))
+                done
+              fi
             fi
 
             # Keep a 10-minute cadence measured from the cycle start.

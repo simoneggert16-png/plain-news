@@ -8,9 +8,28 @@
 //   node scripts/sync-index.mjs slug-a slug-b
 //   node scripts/sync-index.mjs --file translated-slugs.txt
 import fs from 'node:fs';
-import { loadIndex, saveIndex, loadArticle, toIndexEntry } from '../bots/lib/store.mjs';
+import { loadIndex, saveIndex, loadArticle, toIndexEntry, listArticleFiles } from '../bots/lib/store.mjs';
 
 const args = process.argv.slice(2);
+
+// After a merge that kept one side of content/index.json, entries the other
+// side had added are gone although their article file is present. Rebuild them.
+if (args[0] === '--missing') {
+  const index = loadIndex();
+  const known = new Set(index.articles.map((a) => a.slug));
+  let added = 0;
+  for (const slug of listArticleFiles()) {
+    if (known.has(slug)) continue;
+    const article = loadArticle(slug);
+    if (!article?.locales) continue;
+    index.articles.push(toIndexEntry(article));
+    added++;
+  }
+  if (added) saveIndex(index);
+  console.log(`sync-index: ${added} missing entry/entries restored`);
+  process.exit(0);
+}
+
 let slugs = args;
 if (args[0] === '--file') {
   const file = args[1];

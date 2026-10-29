@@ -87,6 +87,32 @@ jobs:
           # depends on the scheduler: the next queued trigger continues after.
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
+          # The live tickers push to content/ every 10 minutes, so a rebase
+          # regularly stops on a content/index.json conflict and - worse - a
+          # half-resolved rebase then gets committed with conflict markers,
+          # which blanked the whole front page. On a conflict: abort the
+          # rebase, merge with our side winning (our fresh entries), rebuild
+          # the entries the other side had from their article files, verify,
+          # then push again.
+          push_cycle() {
+            for attempt in 1 2 3 4 5; do
+              if git pull -q --rebase --autostash; then
+                git push -q && return 0
+              fi
+              git rebase --abort 2>/dev/null || true
+              if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
+                node scripts/sync-index.mjs --missing || true
+                node scripts/check-content.mjs --fix || { echo "index unreadable after merge"; return 1; }
+                git add content
+                git commit -q -m "newsroom: merge upstream" || true
+                git push -q && return 0
+              fi
+              git merge --abort 2>/dev/null || true
+              echo "push attempt $attempt failed, retrying"
+              sleep $((attempt * 10))
+            done
+            return 1
+          }
           deadline=$(( $(date +%s) + 300 * 60 ))
           cycle=0
           published_total=0
@@ -96,21 +122,22 @@ jobs:
             echo "::group::Cycle $cycle ($(date -u +%H:%M) UTC)"
             node bots/newsroom.mjs || echo "cycle $cycle failed, continuing"
             node scripts/sync-content.mjs || echo "supabase mirror skipped"
-            node scripts/check-content.mjs --fix
-            git add content
-            if git diff --cached --quiet; then
-              echo "no new stories in cycle $cycle"
+            if ! node scripts/check-content.mjs --fix; then
+              echo "content/index.json is broken - keeping the cycle local, not committing"
+              git reset -q
             else
-              git commit -q -m "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC"
-              # The live tickers push to main every 10 minutes, so a push here
-              # regularly loses the race. Retry instead of dropping the cycle.
-              for attempt in 1 2 3 4; do
-                git pull -q --rebase --autostash && git push -q && break
-                echo "push attempt $attempt failed, retrying"
-                sleep $((attempt * 10))
-              done
-              published_total=$((published_total + 1))
-              echo "published in cycle $cycle"
+              git add content
+              if git diff --cached --quiet; then
+                echo "no new stories in cycle $cycle"
+              else
+                git commit -q -m "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC"
+                if push_cycle; then
+                  published_total=$((published_total + 1))
+                  echo "published in cycle $cycle"
+                else
+                  echo "cycle $cycle: commit kept, push failed after retries"
+                fi
+              fi
             fi
             echo "::endgroup::"
             # Aim for one publish cycle per ~55 min, but never sleep past the
