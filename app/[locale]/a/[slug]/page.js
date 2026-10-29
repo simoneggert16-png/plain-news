@@ -3,7 +3,7 @@ import { notFound, redirect } from 'next/navigation';
 import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mjs';
-import { getLiveTicker } from '@/lib/liveStore.mjs';
+import { getLiveIndex } from '@/lib/liveStore.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
@@ -79,9 +79,10 @@ export default async function ArticlePage({ params }) {
   if (!a) {
     // A ticker can use a slug before (or instead of) a written article. Old
     // links - bookmarks, search results - then landed on a 404; the ticker
-    // page is the right destination for them.
-    const ticker = await getLiveTicker(slug);
-    if (ticker) redirect(`/${locale}/live/${slug}`);
+    // page is the right destination for them. Only the committed archive is
+    // read here: the Supabase lookup is uncached and would turn this ISR page
+    // dynamic, which fails the render ("static to dynamic at runtime").
+    if (getLiveIndex().some((t) => t.slug === slug)) redirect(`/${locale}/live/${slug}`);
     notFound();
   }
   const t = getDict(locale);
