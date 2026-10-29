@@ -53,8 +53,10 @@ async function rest(pathAndQuery, { key = serviceKey, method = 'GET', body, pref
     signal: AbortSignal.timeout(30000),
   });
   if (!res.ok) throw new Error(`${method} ${pathAndQuery} -> ${res.status} ${(await res.text()).slice(0, 400)}`);
-  if (res.status === 204) return null;
-  return res.json();
+  // Upserts with `return=minimal` answer 201 with an empty body - res.json()
+  // throws "Unexpected end of JSON input" on that.
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
 }
 
 async function countRows(table) {
@@ -67,13 +69,13 @@ async function countRows(table) {
   return Number(range.split('/').pop() || 0);
 }
 
-async function verify(localIndexCount) {
+async function verify(localIndexCount, localArticleCount) {
   const indexRows = await rest('content_blobs?key=eq.index&select=data', { key: readKey });
   const remoteIndexCount = indexRows?.[0]?.data?.articles?.length || 0;
   const remoteArticles = await countRows('articles');
-  console.log(`local : index ${localIndexCount} entries, ${fs.readdirSync(ARTICLES_DIR).length} article files`);
+  console.log(`local : index ${localIndexCount} entries, ${localArticleCount} readable article files`);
   console.log(`remote: index ${remoteIndexCount} entries, ${remoteArticles} article rows`);
-  const ok = remoteIndexCount === localIndexCount && remoteArticles >= localIndexCount;
+  const ok = remoteIndexCount === localIndexCount && remoteArticles >= localArticleCount;
   console.log(ok ? 'OK – mirror is complete.' : 'MISMATCH – re-run the sync.');
   return ok;
 }
@@ -93,7 +95,7 @@ const articles = files
   .filter((a) => a && a.slug);
 
 if (verifyOnly) {
-  const ok = await verify(entries.length);
+  const ok = await verify(entries.length, articles.length);
   process.exit(ok ? 0 : 2);
 }
 
@@ -132,5 +134,5 @@ for (let i = 0; i < articles.length; i += batchSize) {
 }
 process.stdout.write('\n');
 
-const ok = await verify(entries.length);
+const ok = await verify(entries.length, articles.length);
 process.exit(ok ? 0 : 2);
