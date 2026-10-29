@@ -3806,3 +3806,27 @@ main.wrap { padding-top: 32px; padding-bottom: 80px; min-height: 60vh; }
   line-height: 1.4;
   margin-top: 3px;
 }
+
+/* ── SEO Breadcrumb ── */
+.breadcrumb {
+  grid-column: 1 / -1;
+  margin-bottom: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb li + li::before {
+  content: "›";
+  margin-right: 6px;
+  color: var(--muted);
+}
+.breadcrumb a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+.breadcrumb a:hover { color: var(--ink); }

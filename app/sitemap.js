@@ -7,6 +7,8 @@ const STATIC_PATHS = ['', '/about', '/markets', '/ticker', '/live', '/longreads'
 const alternatesFor = (path, base) =>
   Object.fromEntries(LOCALE_CODES.map((locale) => [locale, `${base}/${locale}${path}`]));
 
+export const revalidate = 3600;
+
 export default async function sitemap() {
   const base = SITE.url;
   const now = new Date();

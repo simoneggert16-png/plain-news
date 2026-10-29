@@ -28,9 +28,12 @@ export async function generateMetadata({ params }) {
   if (!a) return {};
   const l = localize(a, locale);
   const articleUrl = `${SITE.url}/${locale}/a/${slug}`;
+  const ogImage = a.image || `${SITE.url}/app-icon-1024.png`;
+  // Truncate description to ~155 chars for Google snippet compliance
+  const metaDesc = l.dek && l.dek.length > 155 ? l.dek.slice(0, 152) + '…' : l.dek;
   return {
     title: l.title,
-    description: l.dek,
+    description: metaDesc,
     keywords: [l.title, a.category, ...(l.facts || []).slice(0, 4)],
     authors: [{ name: 'PLAIN. Editorial Desk', url: `${SITE.url}/${locale}/about` }],
     creator: 'PLAIN. Editorial Desk',
@@ -55,20 +58,21 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: l.title,
-      description: l.dek,
+      description: metaDesc,
       url: articleUrl,
       type: 'article',
       publishedTime: a.publishedAt,
       modifiedTime: a.updatedAt || a.publishedAt,
       section: a.category,
       siteName: SITE.name,
-      images: a.image ? [{ url: a.image, alt: l.imageCaption || l.title }] : [],
+      locale: LOCALES.find((x) => x.code === locale)?.bcp47 || 'en-GB',
+      images: [{ url: ogImage, alt: l.imageCaption || l.title, width: a.image ? 1200 : 1024, height: a.image ? 630 : 1024 }],
     },
     twitter: {
       card: 'summary_large_image',
       title: l.title,
-      description: l.dek,
-      images: a.image ? [a.image] : [],
+      description: metaDesc,
+      images: [ogImage],
     },
   };
 }
@@ -121,6 +125,9 @@ export default async function ArticlePage({ params }) {
   // Long reads carry structured sections; normal reports a flat paragraph list.
   const isLongform = a.form === 'longform' && Array.isArray(l.sections) && l.sections.length > 0;
 
+  // Fallback image for Google Rich Results (requires ImageObject with dimensions)
+  const fallbackImage = `${SITE.url}/app-icon-1024.png`;
+  const primaryImage = a.image ? absolute(a.image) : fallbackImage;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -139,8 +146,14 @@ export default async function ArticlePage({ params }) {
         articleBody,
         wordCount,
         timeRequired: `PT${readingMinutes(a, locale)}M`,
-        image: a.image ? [absolute(a.image)] : undefined,
-        thumbnailUrl: a.image ? absolute(a.image) : undefined,
+        image: {
+          '@type': 'ImageObject',
+          url: primaryImage,
+          width: a.image ? 1200 : 1024,
+          height: a.image ? 630 : 1024,
+          caption: l.imageCaption || l.title,
+        },
+        thumbnailUrl: primaryImage,
         datePublished: a.publishedAt,
         dateModified: a.updatedAt || a.publishedAt,
         inLanguage: bcp,
@@ -156,6 +169,10 @@ export default async function ArticlePage({ params }) {
           '@type': 'Organization',
           name: 'PLAIN. Editorial Desk',
           url: `${SITE.url}/${locale}/about`,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE.url}/app-icon-1024.png`,
+          },
         },
         publisher: {
           '@type': 'NewsMediaOrganization',
@@ -170,6 +187,7 @@ export default async function ArticlePage({ params }) {
           },
         },
         copyrightHolder: { '@id': `${SITE.url}/#organization` },
+        copyrightYear: new Date(a.publishedAt).getFullYear(),
         license: `${SITE.url}/en/legal`,
         about: { '@type': 'Thing', name: l.title },
         keywords: [a.category, l.title, ...(l.facts || []).slice(0, 5)].join(', '),
@@ -208,6 +226,13 @@ export default async function ArticlePage({ params }) {
   return (
     <article className="article">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <nav aria-label="Breadcrumb" className="breadcrumb">
+        <ol>
+          <li><Link href={`/${locale}`}>{SITE.name}</Link></li>
+          <li><Link href={`/${locale}/c/${a.category}`}>{t.cat[a.category] || a.category}</Link></li>
+          <li aria-current="page">{l.title.slice(0, 80)}{l.title.length > 80 ? '…' : ''}</li>
+        </ol>
+      </nav>
       <header className="art-head">
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
           <Link href={`/${locale}/c/${a.category}`} className="label label-inv">{t.cat[a.category]}</Link>

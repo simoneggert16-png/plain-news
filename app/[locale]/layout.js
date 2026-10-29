@@ -92,6 +92,8 @@ export default async function LocaleLayout({ children, params }) {
         name: SITE.name,
         alternateName: 'PLAIN News',
         url: SITE.url,
+        description: `${SITE.name} — News without noise. Independent, ad-free, non-commercial news with two-source verification.`,
+        slogan: 'News without noise.',
         logo: {
           '@type': 'ImageObject',
           url: `${SITE.url}/app-icon-1024.png`,
@@ -100,12 +102,14 @@ export default async function LocaleLayout({ children, params }) {
         },
         image: `${SITE.url}/app-icon-1024.png`,
         foundingDate: '2026',
-        founder: { '@type': 'Person', name: 'Simon Eggert' },
+        founder: { '@type': 'Person', name: 'Simon Eggert', url: `${SITE.url}/en/about` },
         publishingPrinciples: `${SITE.url}/${locale}/about`,
         masthead: `${SITE.url}/${locale}/about`,
         ethicsPolicy: `${SITE.url}/${locale}/about`,
         correctionsPolicy: `${SITE.url}/${locale}/about#corrections`,
         ownershipFundingInfo: `${SITE.url}/${locale}/about#funding`,
+        actionableFeedbackPolicy: `${SITE.url}/${locale}/about#corrections`,
+        diversityPolicy: `${SITE.url}/${locale}/about`,
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'editorial',
@@ -142,6 +146,9 @@ export default async function LocaleLayout({ children, params }) {
         />
         <link rel="alternate" type="application/rss+xml" title={`${SITE.name} RSS`} href={`${SITE.url}/feed.xml`} />
         <link rel="alternate" type="text/plain" title="llms.txt" href={`${SITE.url}/llms.txt`} />
+        <link rel="alternate" type="text/plain" title="llms-full.txt" href={`${SITE.url}/llms-full.txt`} />
+        <meta name="author" content="PLAIN. Editorial Desk" />
+        <meta name="publisher" content="PLAIN." />
         <script
           dangerouslySetInnerHTML={{
             __html: `

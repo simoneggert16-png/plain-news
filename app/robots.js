@@ -53,15 +53,18 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/', '/admin/', '/confirm', '/register', '/reset-password'],
       },
       {
         userAgent: SEARCH_AND_AI_AGENTS,
         allow: '/',
+        disallow: ['/api/', '/admin/'],
       },
     ],
     sitemap: [
       `${SITE.url}/sitemap.xml`,
       `${SITE.url}/news-sitemap.xml`,
+      `${SITE.url}/feed.xml`,
     ],
     host: SITE.url,
   };
