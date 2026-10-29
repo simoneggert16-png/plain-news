@@ -30,14 +30,24 @@ export default async function SearchPage({ params, searchParams }) {
   // Full-text search runs in Postgres (fast); community search runs alongside.
   // A community backend that is briefly unavailable must not take the article
   // search down with it.
+  const started = Date.now();
+  const timeIt = async (label, promise) => {
+    const t0 = Date.now();
+    const value = await promise;
+    console.log(`[search-timing] ${label}=${Date.now() - t0}ms`);
+    return value;
+  };
   const [slugs, userResults] = q
     ? await Promise.all([
-        searchArticles(q).catch(() => []),
-        searchCommunity(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] })),
+        timeIt('rpc', searchArticles(q).catch(() => [])),
+        timeIt('community', searchCommunity(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] }))),
       ])
     : [[], { comments: [], submissions: [], chatMessages: [] }];
+  const afterQueries = Date.now();
 
   const results = await entriesForSlugs(slugs);
+  const afterEntries = Date.now();
+  console.log(`[search-timing] total-queries=${afterQueries - started}ms entries=${afterEntries - afterQueries}ms hits=${results.length}`);
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
