@@ -47,7 +47,15 @@ export default async function SearchPage({ params, searchParams }) {
   const tBeforeEntries = Date.now();
   const results = await entriesForSlugs(slugs);
   timings.entries = Date.now() - tBeforeEntries;
-  const timingLine = `rpc=${timings.rpc}ms community=${timings.community}ms entries=${timings.entries}ms hits=${results.length}`;
+  if (sp?.debug === 'timing') {
+    const t0 = Date.now();
+    await searchArticles(q).catch(() => []);
+    timings.rpc2 = Date.now() - t0;
+    const t1 = Date.now();
+    await searchCommunity(q).catch(() => ({}));
+    timings.community2 = Date.now() - t1;
+  }
+  const timingLine = `rpc1=${timings.rpc}ms rpc2=${timings.rpc2}ms comm1=${timings.community}ms comm2=${timings.community2}ms entries=${timings.entries}ms hits=${results.length}`;
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
