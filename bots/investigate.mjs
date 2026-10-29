@@ -42,6 +42,7 @@ import { LOCALES, SOURCE_LOCALE, SITE } from '../lib/config.mjs';
 import { terminologyFor } from './lib/terminology.mjs';
 import { INVESTIGATION_QUOTAS, weekKey } from '../lib/investigations.mjs';
 import {
+  addOutreach,
   listOutreach,
   listRequests,
   setInvestigationStatus,
@@ -49,6 +50,7 @@ import {
   setRequestStatus,
   upsertInvestigation,
 } from '../lib/investigationStore.mjs';
+import { listMessages, markMessages } from '../lib/inboxStore.mjs';
 
 // ─────────────────────────── config ───────────────────────────
 const DOSSIER_DIR = 'content/investigations';
@@ -67,6 +69,10 @@ const TRANSLATE_CONCURRENCY = Math.max(1, +(process.env.INVESTIGATE_TRANSLATE_CO
 const TRANSLATE_LOCALES = String(process.env.INVESTIGATE_LOCALES || 'en,de,fr,es,it,pt')
   .split(',').map((s) => s.trim()).filter((c) => LOCALES.some((l) => l.code === c));
 const EDITORIAL_EMAIL = process.env.INVESTIGATE_REPLY_TO || process.env.RESEND_FROM_EMAIL || 'simoneggert16@gmail.com';
+
+// The desk answers under its own threaded address, so a reply lands on the
+// right dossier instead of in the general editorial inbox.
+const deskAddress = (slug) => (process.env.DESK_EMAIL_DOMAIN ? `desk+${slug}@${process.env.DESK_EMAIL_DOMAIN}` : EDITORIAL_EMAIL);
 const ACTIVE_STATUSES = ['pitch', 'research', 'outreach', 'drafting', 'review', 'approved'];
 
 setDeadline(Date.now() + Math.max(10, +(process.env.INVESTIGATE_MINUTES || 50)) * 60000);
@@ -547,6 +553,140 @@ function hostOf(url) {
   }
 }
 
+// ─────────────────────────── 2b. INBOX ───────────────────────────
+// Replies come in under the desk's own address. Each one is read, turned into
+// claims and gaps, and — if it asks something — answered in a draft that still
+// needs the editor's approval before it leaves the building.
+function addEmailSource(d, msg) {
+  const url = `mailto:${msg.from_email}`;
+  const title = `Antwort: ${String(msg.subject || '(ohne Betreff)').slice(0, 160)}`;
+  const existing = d.sources.find((s) => s.kind === 'email' && s.url === url && s.title === title);
+  if (existing) return existing;
+  const src = {
+    id: `S${d.sources.length + 1}`,
+    url,
+    outlet: String(msg.from_email).split('@')[1] || msg.from_email,
+    title,
+    publishedAt: msg.received_at || nowISO(),
+    primary: true,
+    kind: 'email',
+    addedAt: nowISO(),
+    text: String(msg.body || '').slice(0, MAX_SOURCE_CHARS),
+    readAt: nowISO(),
+  };
+  d.sources.push(src);
+  return src;
+}
+
+async function classifyMessage(d, msg) {
+  const { data } = await chatJSON('desk', [
+    {
+      role: 'system',
+      content: `You read replies to a Swiss investigative desk. You record only what the sender wrote — never what you assume they meant. A denial is a finding, not an obstacle. Return JSON only.`,
+    },
+    {
+      role: 'user',
+      content: `WE ASKED: ${d.title}
+OUR QUESTION: ${d.angle}
+
+FROM: ${msg.from_email}
+SUBJECT: ${msg.subject || '(none)'}
+MESSAGE:
+${String(msg.body || '').slice(0, 4000)}
+
+TASK
+1. kind: one of answer | denial | question | auto-reply | unrelated.
+2. summary: two sentences, what the sender actually said.
+3. claims: facts the sender states that we can use, one per line, with their exact numbers and dates. Only what they wrote. If they deny something, phrase it as their denial.
+4. gaps: what they did not answer or what their reply makes newly unclear.
+5. needs_reply: true only if they ask us something or a short acknowledgement is due.
+6. reply: if needs_reply, a formal German or English answer in plain text, max 150 words, signed "PLAIN. Investigative desk", stating again that the research is AI-assisted and editor-reviewed. Otherwise empty.
+
+Return {"kind":"…","summary":"…","claims":["…"],"gaps":["…"],"needs_reply":false,"reply":""}`,
+    },
+  ], { temperature: 0.2, maxTokens: 1600 });
+
+  return {
+    kind: ['answer', 'denial', 'question', 'auto-reply', 'unrelated'].includes(data.kind) ? data.kind : 'answer',
+    summary: String(data.summary || '').slice(0, 1000),
+    claims: (Array.isArray(data.claims) ? data.claims : []).map(String).filter((s) => s.trim().length > 20).slice(0, 8),
+    gaps: (Array.isArray(data.gaps) ? data.gaps : []).map(String).filter(Boolean).slice(0, 5),
+    needsReply: Boolean(data.needs_reply),
+    reply: String(data.reply || '').trim(),
+  };
+}
+
+const replySubject = (subject) => {
+  const value = String(subject || '').trim() || 'Ihre Auskunft';
+  return /^re:/i.test(value) ? value.slice(0, 160) : `Re: ${value}`.slice(0, 160);
+};
+
+async function readInbox(d) {
+  let messages = [];
+  try {
+    messages = await listMessages({ slug: d.slug, status: 'new', limit: 5 });
+  } catch (err) {
+    log(`INBOX  ${d.slug}: ${err.message}`);
+    return 0;
+  }
+  if (!messages.length) return 0;
+
+  const rows = await outreachRows(d.slug).catch(() => []);
+  const handled = [];
+
+  for (const msg of messages) {
+    if (deadlineLeft() < 120_000) {
+      log('INBOX  deadline close — leaving the rest for the next run');
+      break;
+    }
+    const parsed = await classifyMessage(d, msg).catch((err) => {
+      log(`INBOX  classify failed (${msg.from_email}): ${err.message}`);
+      return null;
+    });
+    if (!parsed) continue;
+
+    const src = addEmailSource(d, msg);
+    for (const text of parsed.claims) {
+      if (d.claims.some((c) => c.text.toLowerCase() === text.toLowerCase())) continue;
+      d.claims.push({
+        id: `C${d.claims.length + 1}`,
+        text: text.slice(0, 600),
+        sources: [src.id],
+        status: parsed.kind === 'denial' ? 'contested' : 'verified',
+        weight: 3,
+        checkedAt: nowISO(),
+      });
+    }
+    for (const gap of parsed.gaps) {
+      if (!d.gaps.some((g) => g.toLowerCase() === gap.toLowerCase())) d.gaps.push(gap.slice(0, 300));
+    }
+
+    const row = rows.find((r) => String(r.to_email || '').toLowerCase() === String(msg.from_email).toLowerCase());
+    if (row) {
+      await setOutreach([row.id], { status: 'replied', reply_note: parsed.summary.slice(0, 1000) }).catch(() => {});
+    }
+
+    if (parsed.needsReply && parsed.reply.length > 80) {
+      await addOutreach([{
+        slug: d.slug,
+        toEmail: msg.from_email,
+        org: row?.org || msg.from_email,
+        subject: replySubject(msg.subject),
+        body: parsed.reply,
+      }]).catch((err) => log(`INBOX  reply draft failed: ${err.message}`));
+    }
+
+    note(d, null, `mail from ${msg.from_email} (${parsed.kind})`);
+    handled.push(msg.id);
+  }
+
+  if (handled.length) {
+    await markMessages(handled, { status: 'processed', processed_at: nowISO() }).catch(() => {});
+  }
+  log(`INBOX  ${handled.length}/${messages.length} message(s) processed`);
+  return handled.length;
+}
+
 async function research(d) {
   if (process.env.INVESTIGATE_AGENT !== '0') {
     const ok = await researchAgent(d).catch((err) => {
@@ -763,7 +903,7 @@ async function sendApproved(d) {
         body: JSON.stringify({
           from: process.env.RESEND_FROM_EMAIL,
           to: [row.to_email],
-          reply_to: EDITORIAL_EMAIL,
+          reply_to: deskAddress(d.slug),
           subject: row.subject,
           text: row.body,
         }),
@@ -1141,6 +1281,9 @@ async function main() {
         log('  waiting for human approval');
         d.nextStep = 'human approval in /admin/investigations';
       } else {
+        // Mail first: a reply from an authority is evidence, and it can change
+        // what the agent should look for next.
+        await readInbox(d);
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
         }
