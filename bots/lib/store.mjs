@@ -93,8 +93,8 @@ export function toIndexEntry(a) {
       },
     ])),
   };
-  // Only long reads carry a length marker; normal reports stay slim.
-  if (form === 'longform') {
+  // Long reads and investigations carry a length marker; normal reports stay slim.
+  if (form === 'longform' || form === 'investigation') {
     entry.readingMinutes = a.readingMinutes || minutesFor(a.locales?.[SOURCE_LOCALE]);
   }
   return entry;

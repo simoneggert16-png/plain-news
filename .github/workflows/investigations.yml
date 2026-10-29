@@ -1,0 +1,84 @@
+name: Investigations
+
+on:
+  schedule:
+    # One small step per day. Intake only happens when the ISO week changes, so
+    # this is the heartbeat of a desk that can work on a story for months.
+    - cron: '10 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Research and write, but publish/send nothing (logs only)'
+        type: boolean
+        default: true
+      slug:
+        description: 'Only advance this dossier slug (empty = all active)'
+        type: string
+        required: false
+      intake:
+        description: 'Force the weekly intake even if it already ran'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: investigations
+  cancel-in-progress: false
+
+jobs:
+  investigate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Rebase on main
+        run: git pull --rebase --autostash
+
+      - name: Advance the investigative desk
+        env:
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ vars.RESEND_FROM_EMAIL }}
+          INVESTIGATE_DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
+          INVESTIGATE_SLUG: ${{ inputs.slug || '' }}
+          INVESTIGATE_INTAKE: ${{ inputs.intake == true && '1' || '' }}
+          INVESTIGATE_MIN_SOURCES: '8'
+          INVESTIGATE_MIN_PRIMARY: '2'
+          INVESTIGATE_MIN_CLAIMS: '6'
+          INVESTIGATE_MIN_WORDS: '2500'
+          INVESTIGATE_REPLY_HOURS: '72'
+          INVESTIGATE_MAX_READS: '6'
+          INVESTIGATE_MINUTES: '55'
+          INVESTIGATE_LOCALES: 'en,de,fr,es,it,pt'
+          INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
+        run: node bots/investigate.mjs
+
+      - name: Mirror content to Supabase
+        if: always()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/sync-content.mjs || echo "supabase mirror skipped"
+
+      - name: Commit dossiers and published investigations
+        if: always()
+        run: |
+          git config user.name "simoneggert16-png"
+          git config user.email "simoneggert16@gmail.com"
+          git add content
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "investigations: $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase --autostash
+          git push

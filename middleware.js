@@ -120,7 +120,9 @@ function adminAuthorized(req) {
 export function middleware(req, event) {
   const { pathname } = req.nextUrl;
 
-  if (pathname.includes('/admin')) {
+  // The visitor log has no login of its own, so it keeps the Basic-auth gate.
+  // The investigations desk authorises through the Supabase session + ADMIN_EMAILS.
+  if (pathname.includes('/admin') && !pathname.includes('/admin/investigations')) {
     if (!adminAuthorized(req)) {
       return new NextResponse('Auth required', {
         status: 401,

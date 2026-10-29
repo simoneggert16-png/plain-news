@@ -120,6 +120,7 @@ export default async function ArticlePage({ params }) {
 
   // Long reads carry structured sections; normal reports a flat paragraph list.
   const isLongform = a.form === 'longform' && Array.isArray(l.sections) && l.sections.length > 0;
+  const isInvestigation = a.form === 'investigation';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -223,6 +224,11 @@ export default async function ArticlePage({ params }) {
               VIDEO
             </span>
           )}
+          {isInvestigation && (
+            <Link href={`/${locale}/investigations`} className="badge-form">
+              {t.investigations.badge}
+            </Link>
+          )}
           {isLongform && (
             <Link href={`/${locale}/longreads`} className="badge-form">
               {t.longreads.badge}
@@ -231,7 +237,7 @@ export default async function ArticlePage({ params }) {
         </div>
         <h1>{l.title}</h1>
         <p className="dek">{l.dek}</p>
-        {isLongform && l.standfirst && <p className="standfirst">{l.standfirst}</p>}
+        {(isLongform || isInvestigation) && l.standfirst && <p className="standfirst">{l.standfirst}</p>}
         <div className="art-meta meta">
           <span>{locale === 'de' ? 'Von' : 'By'} PLAIN. Editorial Desk</span>
           <span>
@@ -289,7 +295,7 @@ export default async function ArticlePage({ params }) {
             </section>
           )}
 
-          {isLongform ? (
+          {(isLongform || (isInvestigation && Array.isArray(l.sections) && l.sections.length > 0)) ? (
             <div className="body longform">
               {l.sections.map((s, i) => (
                 <section className="lf-section" key={i}>
