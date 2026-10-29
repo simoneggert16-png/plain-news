@@ -31,6 +31,9 @@ if (fs.existsSync('.env')) {
 import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { FEEDS } from './sources.mjs';
+import { googleNews, bingNews, webSearch } from './lib/search.mjs';
+import { openPage } from './lib/browse.mjs';
+import { runAgent } from './lib/agent.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
 import { collectImages, assignImages } from './lib/illustrate.mjs';
 import { loadIndex, saveIndex, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
@@ -92,9 +95,6 @@ async function safe(fn, fallback) {
     return fallback;
   }
 }
-
-const googleNews = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-US&gl=US&ceid=US:en`;
-const bingNews = (q) => `https://www.bing.com/news/search?q=${encodeURIComponent(q)}&format=RSS&setlang=de&cc=ch`;
 
 // Google News refuses most datacenter requests, so the search feeds come back
 // nearly empty on GitHub runners. The home-market outlets are always read in
@@ -372,7 +372,190 @@ async function ensureQueries(d) {
   if (!d.queries.length) throw new Error('no research queries');
 }
 
+// ─────────────────────────── 2a. AGENT ───────────────────────────
+// The desk works like a reporter with a browser and a phone: it searches,
+// opens documents, follows links, writes down what it can prove, and keeps a
+// list of who has to answer. One run per day, state on disk.
+async function researchAgent(d) {
+  const cache = new Map();
+  const startedSources = d.sources.length;
+  const startedClaims = d.claims.length;
+
+  const state = () =>
+    [
+      `SOURCES ON FILE (${d.sources.length})`,
+      d.sources.map((s) => `[${s.id}] ${s.outlet}${s.primary ? ' (primary)' : ''} — ${s.title} — ${s.url}`).join('\n') || '(none)',
+      '',
+      `CLAIMS ON FILE (${d.claims.length})`,
+      d.claims.map((c) => `[${c.id}] ${c.text} (${c.sources.join(',')})`).join('\n') || '(none)',
+      '',
+      `GAPS (${d.gaps.length})`,
+      d.gaps.map((g) => `- ${g}`).join('\n') || '(none)',
+    ].join('\n');
+
+  const tools = [
+    {
+      name: 'search',
+      args: '{"query": string}',
+      description: 'Search Google News and Bing News. Returns headlines with outlet, date and URL. Use short queries (2-4 words), in German for Swiss sources.',
+      run: async ({ query }) => {
+        const q = String(query || '').trim().slice(0, 120);
+        if (q.length < 3) return { error: 'query too short' };
+        const hits = await webSearch(q, { limit: 12 });
+        return hits.length ? { query: q, results: hits } : { query: q, results: [], note: 'no hits — try a shorter or different wording' };
+      },
+    },
+    {
+      name: 'open',
+      args: '{"url": string}',
+      description: 'Open a page or document and return its title, running text and the links that lead further. Only URLs seen in an earlier observation.',
+      run: async ({ url }) => {
+        const target = String(url || '').trim();
+        if (!/^https?:\/\//i.test(target)) return { error: 'not a URL' };
+        const page = await openPage(target, { maxChars: 7000 });
+        if (page.error && !page.text) return { url: target, error: page.error };
+        cache.set(target, page.text || '');
+        return {
+          url: target,
+          title: page.title,
+          text: page.text,
+          links: (page.links || []).slice(0, 20),
+          ...(page.pdf ? { note: 'PDF — cite by URL, quote only what the search snippet supports' } : {}),
+        };
+      },
+    },
+    {
+      name: 'save_source',
+      args: '{"url": string, "outlet": string, "title": string, "publishedAt": "YYYY-MM-DD"?}',
+      description: 'File a source in the dossier. Use for anything you rely on — articles, official pages, court decisions, tender notices.',
+      run: async ({ url, outlet, title, publishedAt }) => {
+        const target = String(url || '').trim();
+        if (!/^https?:\/\//i.test(target)) return { error: 'not a URL' };
+        const added = addSource(
+          d,
+          { url: target, outlet: String(outlet || hostOf(target)), title: String(title || target), publishedAt: publishedAt || null },
+        );
+        const src = d.sources.find((s) => s.url === target);
+        if (src && cache.has(target) && !src.text) {
+          src.text = cache.get(target).slice(0, MAX_SOURCE_CHARS);
+          src.readAt = nowISO();
+        }
+        return { added, id: src?.id || null, total: d.sources.length };
+      },
+    },
+    {
+      name: 'save_claim',
+      args: '{"text": string, "sources": ["S1"], "contested": boolean?}',
+      description: 'Record one verifiable finding that the cited sources directly support. One fact per claim: who, what, when, how much. Never a reading of motives.',
+      run: async ({ text, sources, contested }) => {
+        const value = String(text || '').trim().slice(0, 600);
+        const ids = [...new Set((Array.isArray(sources) ? sources : []).map((s) => String(s).trim()).filter(Boolean))];
+        const known = new Set(d.sources.map((s) => s.id));
+        const valid = ids.filter((id) => known.has(id));
+        if (value.length < 20) return { error: 'claim too short' };
+        if (!valid.length) return { error: `no valid source id — on file: ${[...known].join(', ') || 'none'}` };
+        const norm = value.toLowerCase().replace(/\W+/g, ' ').trim();
+        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm);
+        if (dup) return { duplicate: dup.id };
+        const claim = {
+          id: `C${d.claims.length + 1}`,
+          text: value,
+          sources: valid,
+          status: contested ? 'contested' : 'verified',
+          weight: 2,
+          checkedAt: nowISO(),
+        };
+        d.claims.push(claim);
+        return { id: claim.id, total: d.claims.length };
+      },
+    },
+    {
+      name: 'add_gap',
+      args: '{"text": string}',
+      description: 'Note an open question that still needs a document, a figure or an answer. Be concrete: which office, which file.',
+      run: async ({ text }) => {
+        const value = String(text || '').trim().slice(0, 300);
+        if (value.length < 15) return { error: 'gap too short' };
+        if (d.gaps.some((g) => g.toLowerCase() === value.toLowerCase())) return { duplicate: true };
+        d.gaps.push(value);
+        return { total: d.gaps.length };
+      },
+    },
+    {
+      name: 'contact',
+      args: '{"org": string, "role": string, "email"?: string, "sourceUrl"?: string}',
+      description: 'File an institution or person who must answer, with the address you found on their own website. Never guess an address; if you cannot find one, omit it.',
+      run: async ({ org, role, email, sourceUrl }) => {
+        const name = String(org || '').trim().slice(0, 160);
+        if (name.length < 3) return { error: 'org too short' };
+        const mail = String(email || '').trim();
+        if (mail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return { error: 'email looks invalid — drop it or find the published address' };
+        const existing = d.contacts.find((c) => c.org.toLowerCase() === name.toLowerCase());
+        if (existing) {
+          if (mail && !existing.email) {
+            existing.email = mail;
+            existing.emailSource = sourceUrl || null;
+          }
+          return { updated: true, total: d.contacts.length };
+        }
+        d.contacts.push({
+          org: name,
+          role: String(role || 'must be asked for comment').slice(0, 300),
+          ...(mail ? { email: mail, emailSource: sourceUrl || null } : {}),
+        });
+        return { added: true, total: d.contacts.length };
+      },
+    },
+  ];
+
+  const steps = Math.max(4, +(process.env.INVESTIGATE_AGENT_STEPS || 10));
+  const { final, steps: log2 } = await runAgent({
+    role: 'desk',
+    system: `You are the investigative desk of PLAIN., a Swiss news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. Your sources are mostly German; write your findings in English.`,
+    task: `INVESTIGATION: ${d.title}
+QUESTION: ${d.angle}
+DESK BRIEF: ${JSON.stringify(d.brief || {})}
+
+${state()}
+
+WHAT THIS RUN SHOULD ACHIEVE
+Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
+Priorities, in order: (1) find the primary documents — tender and award notices, audit reports (EFK), court rulings, parliamentary answers, official statistics; (2) file the sources you actually opened; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.`,
+    tools,
+    maxSteps: steps,
+    deadline: Number.isFinite(deadlineLeft()) ? Date.now() + deadlineLeft() : 0,
+    log,
+  });
+
+  if (final) d.nextStep = final.slice(0, 300);
+  d.agent = [...(d.agent || []), { at: nowISO(), steps: log2, final }].slice(-3);
+
+  const added = d.sources.length - startedSources;
+  const claims = d.claims.length - startedClaims;
+  log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
+
+  if (added === 0 && claims === 0) return false;
+  if (['pitch'].includes(d.status) && d.sources.length >= 3) note(d, 'research', `${d.sources.length} sources`);
+  return true;
+}
+
+function hostOf(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return 'unknown';
+  }
+}
+
 async function research(d) {
+  if (process.env.INVESTIGATE_AGENT !== '0') {
+    const ok = await researchAgent(d).catch((err) => {
+      log(`RESEARCH  agent failed: ${err.message}`);
+      return false;
+    });
+    if (ok) return;
+    log('RESEARCH  agent produced nothing — falling back to the feed pass');
+  }
   await ensureQueries(d);
 
   // Rotate the window so a dossier with more than five queries uses all of them

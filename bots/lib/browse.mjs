@@ -1,0 +1,95 @@
+// Read a page the way a reporter does: title, running text, and the links that
+// lead to the next document. Deliberately no headless browser — the desk runs
+// on a free CI runner and most of its sources are plain HTML or PDF.
+import { clean } from './feeds.mjs';
+
+const UA = 'Mozilla/5.0 (compatible; PlainDesk/1.0; +https://plain-news.ch)';
+
+function absolute(href, base) {
+  try {
+    return new URL(href, base).toString();
+  } catch {
+    return null;
+  }
+}
+
+function interesting(href, base) {
+  if (!href || /^(javascript:|mailto:|tel:|#)/i.test(href)) return false;
+  if (/\.(css|js|png|jpe?g|gif|svg|ico|woff2?)(\?|$)/i.test(href)) return false;
+  const url = absolute(href, base);
+  if (!url) return false;
+  try {
+    const host = new URL(url).hostname;
+    const here = new URL(base).hostname;
+    // Same host, or a document host the desk actually cites.
+    return (
+      host === here ||
+      /\.(admin\.ch|parlament\.ch|bger\.ch|bvger\.ch|efk\.admin\.ch|ch)$/i.test(host)
+    );
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * @returns {Promise<{url:string,title:string,text:string,links:{url:string,text:string}[],pdf?:boolean,error?:string}>}
+ */
+export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
+  let res;
+  try {
+    res = await fetch(url, {
+      headers: { 'User-Agent': UA, Accept: 'text/html,application/xhtml+xml,application/pdf;q=0.9' },
+      redirect: 'follow',
+      signal: AbortSignal.timeout(20000),
+    });
+  } catch (err) {
+    return { url, title: '', text: '', links: [], error: `fetch failed: ${err.message}` };
+  }
+
+  const type = res.headers.get('content-type') || '';
+  if (!res.ok) return { url, title: '', text: '', links: [], error: `HTTP ${res.status}` };
+
+  if (type.includes('pdf')) {
+    return {
+      url,
+      title: url.split('/').pop(),
+      text: '',
+      links: [],
+      pdf: true,
+      error: 'PDF: text extraction is not wired up yet — cite the document by URL and note what it is',
+    };
+  }
+
+  const html = await res.text().catch(() => '');
+  if (!html) return { url, title: '', text: '', links: [], error: 'empty response' };
+
+  const title = clean(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '');
+
+  const stripped = html
+    .replace(/<(script|style|noscript|svg|nav|footer|header|aside|form|iframe)[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ');
+
+  const blocks = [];
+  for (const m of stripped.matchAll(/<(h[1-3]|p|li)[^>]*>([\s\S]*?)<\/\1>/gi)) {
+    const text = clean(m[2]);
+    if (text.length < 40) continue;
+    if (/cookie|subscribe|newsletter|sign up|all rights reserved|javascript/i.test(text)) continue;
+    blocks.push(text);
+  }
+
+  const links = [];
+  const seen = new Set();
+  for (const m of stripped.matchAll(/<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)) {
+    const href = m[1];
+    const label = clean(m[2]);
+    if (!label || label.length < 4 || label.length > 90) continue;
+    if (!interesting(href, url)) continue;
+    const target = absolute(href, url);
+    if (!target || seen.has(target)) continue;
+    seen.add(target);
+    links.push({ url: target, text: label });
+    if (links.length >= maxLinks) break;
+  }
+
+  return { url, title, text: blocks.join('\n').slice(0, maxChars), links };
+}
