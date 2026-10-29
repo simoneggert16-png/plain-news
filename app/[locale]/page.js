@@ -41,6 +41,18 @@ export default async function Home({ params }) {
   const recent = displayArticles.filter((a) => Date.parse(a.publishedAt) >= dayAgo);
   const lead = rankArticles(recent.length ? recent : displayArticles)[0] || displayArticles[0];
   const rest = displayArticles.filter((a) => a.slug !== lead.slug);
+  // The brief may carry at most two election headlines, otherwise every vote in
+  // the world crowds out everything else. Stories about the same subject as the
+  // lead (e.g. a second Israel election item) are skipped so the front page
+  // never repeats itself.
+  const rankedRest = rankArticles(rest);
+  const electionPicks = [];
+  for (const a of rankedRest) {
+    if (electionPicks.length >= 2) break;
+    if (!isElectionHeadline(a) || sharesSubject(a, lead)) continue;
+    if (electionPicks.some((p) => sharesSubject(a, p))) continue;
+    electionPicks.push(a);
+  }
   const brief = [];
   const fillTarget = 5 - electionPicks.length;
   for (const a of rankedRest) {
