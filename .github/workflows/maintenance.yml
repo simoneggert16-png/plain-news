@@ -26,6 +26,7 @@ jobs:
       - name: Run maintenance bot
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
         run: node bots/maintenance.mjs
       - name: Verify the site still builds
         run: npm run build

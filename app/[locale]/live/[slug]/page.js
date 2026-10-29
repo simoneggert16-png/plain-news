@@ -3,6 +3,7 @@ import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import { liveLocalize, liveLastAt, liveUpdates } from '@/lib/live.mjs';
 import { getLiveTicker } from '@/lib/liveStore.mjs';
+import { getArticle } from '@/lib/content.mjs';
 import LiveTicker from '@/components/LiveTicker';
 
 // A ticker changes every few minutes, so this route must never be cached at
@@ -51,6 +52,11 @@ export default async function LiveTickerPage({ params }) {
   const url = `${SITE.url}/${locale}/live/${slug}`;
   const updates = liveUpdates(ticker);
   const modified = liveLastAt(ticker) || ticker.startedAt;
+
+  // A ticker can be open before its article exists (or after an article was
+  // dropped); the "read the whole article" link must not point into a 404.
+  const linkedArticle = ticker.articleSlug ? await getArticle(ticker.articleSlug) : null;
+  const displayTicker = linkedArticle ? ticker : { ...ticker, articleSlug: null };
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -117,7 +123,7 @@ export default async function LiveTickerPage({ params }) {
   return (
     <div className="live-page live-page-single">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <LiveTicker ticker={ticker} locale={locale} />
+      <LiveTicker ticker={displayTicker} locale={locale} />
     </div>
   );
 }

@@ -55,6 +55,7 @@ jobs:
       - name: Update live tickers
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

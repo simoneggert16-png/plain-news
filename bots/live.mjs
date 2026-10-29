@@ -35,6 +35,7 @@ import { chatJSON, setDeadline } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { loadIndex, saveIndex, loadArticle, saveArticle, toIndexEntry } from './lib/store.mjs';
 import { listLiveTickers, saveLiveTicker } from '../lib/liveStore.mjs';
+import { terminologyFor } from './lib/terminology.mjs';
 import { liveUpdates, liveLastAt, wantsStats } from '../lib/live.mjs';
 import { CATEGORIES, LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 import { distinctOutlets, importanceFromCoverage, isDuplicateStory } from '../lib/editorial.mjs';
@@ -398,7 +399,7 @@ async function translateBatch(items, lang, fields) {
   const { data } = await chatJSON('translator', [
     {
       role: 'system',
-      content: `You are a professional news translator. Translate every item into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact and keep length close to the original. Never add or remove information. Keep names, numbers, dates and quotes accurate, using the established local spelling. Reply with JSON only: {"items":[{"id":"...","...":"..."}]} with the same ids, the same keys and the same number of items.`,
+      content: `You are a professional news translator. Translate every item into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact and keep length close to the original. Never add or remove information. Keep names, numbers, dates and quotes accurate, using the established local spelling.${terminologyFor(lang.code)} Reply with JSON only: {"items":[{"id":"...","...":"..."}]} with the same ids, the same keys and the same number of items.`,
     },
     { role: 'user', content: JSON.stringify({ items: payload }) },
   ], { temperature: 0.2, maxTokens: 5000 });
@@ -598,7 +599,7 @@ async function refreshArticle(ticker, reason) {
       }
     : null;
 
-  const slug = ticker.articleSlug;
+  const slug = ticker.article?.slug || ticker.slug;
   const existing = loadArticle(slug);
   const history = [version, ...(ticker.article?.versions || existing?.history || [])]
     .filter(Boolean)
@@ -655,6 +656,9 @@ async function refreshArticle(ticker, reason) {
     locales: de ? { en, de } : { en },
     versions: history,
   };
+  // Only now does the "read the whole article" link have a target. Tickers
+  // without a written article kept a slug that 404'd on the site.
+  ticker.articleSlug = slug;
   log(`  ARTICLE updated (${history.length} versions kept, ${sources.length} sources, DE ${de ? de.title.slice(0, 40) + '…' : 'pending'})`);
 }
 
@@ -664,7 +668,7 @@ async function refreshArticle(ticker, reason) {
  * was confirmed — otherwise the election count would sit still for 25 minutes.
  */
 function syncArticleStats(ticker) {
-  const slug = ticker.articleSlug;
+  const slug = ticker.article?.slug || ticker.articleSlug;
   if (!slug || !ticker.stats) return false;
   const existing = loadArticle(slug);
   if (!existing) return false;
@@ -873,7 +877,6 @@ async function createTickerFromCluster(cluster, items) {
     article: null,
     meta: { createdBy: 'bots/live.mjs', outlets: outlets.slice(0, 12) },
   };
-  ticker.articleSlug = ticker.slug;
   log(`DETECT  new ticker "${title}" (${outlets.length} outlets, keywords: ${keywords.join(', ')})`);
 
   // First batch of updates + the initial article.
@@ -939,7 +942,6 @@ async function manualCreate(args) {
     article: null,
     meta: { createdBy: 'manual' },
   };
-  ticker.articleSlug = ticker.slug;
   log(`MANUAL creating "${title}" with keywords ${keywords.join(', ')}`);
   await updateTicker(ticker, items, { forceArticle: true });
   await translateUpdates([], ticker);

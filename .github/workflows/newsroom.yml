@@ -62,6 +62,7 @@ jobs:
         timeout-minutes: 350
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
           MAX_STORIES_PER_RUN: '12'
           MAX_PER_CATEGORY: '0'

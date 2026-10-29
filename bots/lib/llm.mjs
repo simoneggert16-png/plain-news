@@ -13,38 +13,35 @@ if (fs.existsSync('.env')) {
   }
 }
 
-// ─── NVIDIA-only pipeline (Ollama expired) ─────────────────────────────────
-// Verified live on NVIDIA build key: 550b + super-120b + gpt-oss-20b + gemma-4-31b = 200 OK.
-// NOT entitled on this key (404): nemotron-70b/51b/ultra-253b, mistral-large-2, kimi-k2.6.
-// Too slow (timeout): deepseek-v4.1-flash, glm-5.3-flash via NVIDIA.
-// (Ollama 'ollama/' routing kept below as fallback if resubscribed.)
+// ─── Ollama Cloud first, NVIDIA as the last resort ─────────────────────────
+// Probed 2026-10-29 with a German translation of "US midterm elections":
+//   ollama gpt-oss:120b    0.7 s  "US-Zwischenwahlen"            (good)
+//   ollama gemma4:31b      0.6 s  "Zwischenwahlen"               (good)
+//   ollama gpt-oss:20b     2.4 s  "Zwischenwahlen"               (good)
+//   ollama nemotron-3-super     "Mitteilebene-Wahlen"            (hallucinated)
+//   Ollama deepseek/glm/kimi/mistral -> 402, not on the free plan.
+// On NVIDIA only gpt-oss-20b answers: super-120b/gemma-4-31b return 404.
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
-// NVIDIA Build: Nemotron 550B primary, verified fallbacks only
-const NEMOTRON_550B  = 'nvidia/nemotron-3-ultra-550b-a55b';
-const NEMOTRON_120B  = 'nvidia/nemotron-3-super-120b-a12b';
-const GPT_OSS_20B    = 'openai/gpt-oss-20b';
-const GEMMA_31B      = 'google/gemma-4-31b-it';
+const OSS_120B = 'ollama/gpt-oss:120b';
+const GEMMA_31B = 'ollama/gemma4:31b';
+const OSS_20B = 'ollama/gpt-oss:20b';
+const NANO_30B = 'ollama/nemotron-3-nano:30b';
+const NVIDIA_OSS_20B = 'openai/gpt-oss-20b';
 
 export const MODELS = {
-  // Live probe 2026-10-13 ~18:10 UTC: gpt-oss-20b = 1s, super-120b = instant,
-  // gemma-4-31b = 35s, 550b = 503/timeout. 550B parked last, auto-rejoins when healthy.
-  // Desk: fast + clean JSON first
-  desk:       [process.env.DESK_MODEL || GPT_OSS_20B, NEMOTRON_120B, GEMMA_31B, NEMOTRON_550B],
-  // Writer: best neutral reporting available right now
-  writer:     [process.env.WRITER_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
-  // Translator: small + fast first (9 languages per story)
-  translator: [process.env.TRANSLATOR_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
-  // Editor: adversarial check
-  editor:     [process.env.EDITOR_MODEL || GPT_OSS_20B, GEMMA_31B, NEMOTRON_120B, NEMOTRON_550B],
-  // Live ticker: needs to be fast (every 10 min) and still write clean prose.
-  live:       [process.env.LIVE_MODEL || NEMOTRON_120B, GPT_OSS_20B, GEMMA_31B, NEMOTRON_550B],
+  desk:       [process.env.DESK_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B],
+  writer:     [process.env.WRITER_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B],
+  translator: [process.env.TRANSLATOR_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B],
+  editor:     [process.env.EDITOR_MODEL || OSS_120B, GEMMA_31B, NVIDIA_OSS_20B],
+  // Live ticker: small prompts every few minutes, still needs clean prose.
+  live:       [process.env.LIVE_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NANO_30B, NVIDIA_OSS_20B],
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function callOllama(model, messages, { temperature = 0.2, timeoutMs = 90000 } = {}) {
+async function callOllama(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90000 } = {}) {
   const key = process.env.OLLAMA_API_KEY;
   if (!key) throw new Error('OLLAMA_API_KEY missing');
   const res = await fetch(`${OLLAMA_BASE}/api/chat`, {
@@ -53,7 +50,9 @@ async function callOllama(model, messages, { temperature = 0.2, timeoutMs = 9000
     body: JSON.stringify({
       model,
       messages: messages.map((m) => ({ role: m.role, content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) })),
-      options: { temperature },
+      // Default num_ctx is small enough to cut long article bodies, and the
+      // reply needs room for a full 9-language JSON block.
+      options: { temperature, num_ctx: 32768, num_predict: maxTokens },
       stream: false,
     }),
     signal: AbortSignal.timeout(timeoutMs),

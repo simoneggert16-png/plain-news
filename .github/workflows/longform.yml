@@ -41,6 +41,7 @@ jobs:
       - name: Write long reads
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
           LONGFORM_PER_RUN: ${{ inputs.per_run || '3' }}
           LONGFORM_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}

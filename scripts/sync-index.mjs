@@ -7,10 +7,34 @@
 //
 //   node scripts/sync-index.mjs slug-a slug-b
 //   node scripts/sync-index.mjs --file translated-slugs.txt
+//   node scripts/sync-index.mjs --missing      # entries whose file vanished from the index
+//   node scripts/sync-index.mjs --all          # regenerate every entry from its article file
 import fs from 'node:fs';
 import { loadIndex, saveIndex, loadArticle, toIndexEntry, listArticleFiles } from '../bots/lib/store.mjs';
 
 const args = process.argv.slice(2);
+
+// Index entries are written once, when an article is published. Translations
+// added later never reach them, so the front page kept showing English titles
+// for stories whose German version existed all along. --all regenerates them.
+if (args[0] === '--all') {
+  const index = loadIndex();
+  const bySlug = new Map(index.articles.map((a) => [a.slug, a]));
+  let refreshed = 0;
+  let added = 0;
+  for (const slug of listArticleFiles()) {
+    const article = loadArticle(slug);
+    if (!article?.locales) continue;
+    const entry = toIndexEntry(article);
+    const prev = bySlug.get(slug);
+    if (prev && JSON.stringify(prev) !== JSON.stringify(entry)) refreshed++;
+    else if (!prev) added++;
+    bySlug.set(slug, entry);
+  }
+  if (refreshed || added) saveIndex({ articles: [...bySlug.values()] });
+  console.log(`sync-index: ${refreshed} refreshed, ${added} added`);
+  process.exit(0);
+}
 
 // After a merge that kept one side of content/index.json, entries the other
 // side had added are gone although their article file is present. Rebuild them.
