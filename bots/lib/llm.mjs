@@ -14,11 +14,15 @@ if (fs.existsSync('.env')) {
 }
 
 // ─── Ollama Cloud first, NVIDIA as the last resort ─────────────────────────
-// Probed 2026-10-29 with a German translation of "US midterm elections":
-//   ollama gpt-oss:120b    0.7 s  "US-Zwischenwahlen"            (good)
-//   ollama gemma4:31b      0.6 s  "Zwischenwahlen"               (good)
-//   ollama gpt-oss:20b     2.4 s  "Zwischenwahlen"               (good)
-//   ollama nemotron-3-super     "Mitteilebene-Wahlen"            (hallucinated)
+// Benchmarked 2026-10-29 on the production prompts (scripts/bench-models.mjs):
+//   translator, 24-paragraph longform, de/ja/fr:
+//     gemma4:31b     8-9 s   same paragraph/number fidelity as 120B
+//     gpt-oss:120b  14-19 s   cleanest phrasing, clearly slower
+//     gpt-oss:20b   40-63 s   merges paragraphs now and then
+//   desk/writer/editor: gpt-oss:120b writes the tightest English; gemma4 is
+//     equally correct but thins out long drafts.
+//   nemotron-3-super hallucinated terms, nemotron-3-ultra needs 2-3x the time,
+//     beam sometimes answers the desk prompt with prose instead of JSON.
 //   Ollama deepseek/glm/kimi/mistral -> 402, not on the free plan.
 // On NVIDIA only gpt-oss-20b answers: super-120b/gemma-4-31b return 404.
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
@@ -27,16 +31,21 @@ const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia
 const OSS_120B = 'ollama/gpt-oss:120b';
 const GEMMA_31B = 'ollama/gemma4:31b';
 const OSS_20B = 'ollama/gpt-oss:20b';
-const NANO_30B = 'ollama/nemotron-3-nano:30b';
 const NVIDIA_OSS_20B = 'openai/gpt-oss-20b';
 
+// A model without a key is not a fallback, it is six seconds of retry sleep
+// per call. Drop it from the chain up front.
+const usable = (list) => list.filter((m) => m.startsWith('ollama/') || process.env.NVIDIA_API_KEY);
+
 export const MODELS = {
-  desk:       [process.env.DESK_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B],
-  writer:     [process.env.WRITER_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B],
-  translator: [process.env.TRANSLATOR_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B],
-  editor:     [process.env.EDITOR_MODEL || OSS_120B, GEMMA_31B, NVIDIA_OSS_20B],
+  desk:       usable([process.env.DESK_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B]),
+  writer:     usable([process.env.WRITER_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B]),
+  // Translation is the highest-volume job: the fastest model that passes the
+  // language/terminology gates wins, with 120B as the second opinion.
+  translator: usable([process.env.TRANSLATOR_MODEL || GEMMA_31B, OSS_120B, OSS_20B, NVIDIA_OSS_20B]),
+  editor:     usable([process.env.EDITOR_MODEL || OSS_120B, GEMMA_31B, NVIDIA_OSS_20B]),
   // Live ticker: small prompts every few minutes, still needs clean prose.
-  live:       [process.env.LIVE_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NANO_30B, NVIDIA_OSS_20B],
+  live:       usable([process.env.LIVE_MODEL || GEMMA_31B, OSS_120B, OSS_20B, NVIDIA_OSS_20B]),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -115,9 +124,9 @@ let globalDeadline = 0;
 export function setDeadline(ts) { globalDeadline = ts || 0; }
 export function deadlineLeft() { return globalDeadline ? globalDeadline - Date.now() : Infinity; }
 
-/** Chat with fallback across a list of NVIDIA models. Returns { text, model }. */
+/** Chat with fallback across a list of models. Returns { text, model }. */
 export async function chat(role, messages, opts = {}) {
-  const models = MODELS[role] || [role];
+  const models = opts.models || MODELS[role] || [role];
   const deadline = opts.deadline || globalDeadline;
   let lastErr;
   const now = Date.now();
@@ -152,7 +161,7 @@ export async function chat(role, messages, opts = {}) {
     }
     console.warn(`  ↳ model ${model} failed: ${lastErr?.message}`);
   }
-  throw lastErr;
+  throw lastErr || new Error(`no usable model for role ${role}`);
 }
 
 /** Ask for JSON and parse robustly (strips <think>, code fences, prose). */

@@ -41,36 +41,52 @@ let fixed = 0;
 const fixedSlugs = new Set();
 const failures = [];
 
+// All locales of one article live in the same JSON file: translating them in
+// parallel workers made each worker save its own stale copy, so only the last
+// translation survived. One job per article, locales in sequence.
+const bySlug = new Map();
+for (const { entry, locale } of jobs) {
+  if (!bySlug.has(entry.slug)) bySlug.set(entry.slug, { entry, locales: [] });
+  bySlug.get(entry.slug).locales.push(locale);
+}
+const articleJobs = [...bySlug.values()];
+
 async function worker() {
-  while (cursor < jobs.length) {
-    const { entry, locale } = jobs[cursor++];
+  while (cursor < articleJobs.length) {
+    const { entry, locales } = articleJobs[cursor++];
     const article = loadArticle(entry.slug);
-    if (!article) { failures.push(`${entry.slug}/${locale}: article file missing`); continue; }
+    if (!article) { failures.push(`${entry.slug}: article file missing`); continue; }
     const source = article.locales?.[SOURCE_LOCALE];
-    if (!source?.title) { failures.push(`${entry.slug}/${locale}: no source text`); continue; }
-    for (let attempt = 1; attempt <= RETRIES; attempt++) {
-      try {
-        const t = await translate(source, locale);
-        article.locales[locale] = t;
-        article.updatedAt = new Date().toISOString();
-        saveArticle(article);
-        fixedSlugs.add(entry.slug);
-        fixed++;
-        console.log(`  ok    ${entry.slug} -> ${locale}`);
-        break;
-      } catch (err) {
-        const msg = err?.message || String(err);
-        if (attempt === RETRIES) failures.push(`${entry.slug}/${locale}: ${msg}`);
-        else {
-          console.log(`  retry ${entry.slug}/${locale} (${attempt}/${RETRIES}): ${msg}`);
-          await sleep(1500 * attempt);
+    if (!source?.title) { failures.push(`${entry.slug}: no source text`); continue; }
+    let changed = false;
+    for (const locale of locales) {
+      for (let attempt = 1; attempt <= RETRIES; attempt++) {
+        try {
+          const t = await translate(source, locale);
+          article.locales[locale] = t;
+          changed = true;
+          fixedSlugs.add(entry.slug);
+          fixed++;
+          console.log(`  ok    ${entry.slug} -> ${locale}`);
+          break;
+        } catch (err) {
+          const msg = err?.message || String(err);
+          if (attempt === RETRIES) failures.push(`${entry.slug}/${locale}: ${msg}`);
+          else {
+            console.log(`  retry ${entry.slug}/${locale} (${attempt}/${RETRIES}): ${msg}`);
+            await sleep(1500 * attempt);
+          }
         }
       }
+    }
+    if (changed) {
+      article.updatedAt = new Date().toISOString();
+      saveArticle(article);
     }
   }
 }
 
-await Promise.all(Array.from({ length: Math.min(CONCURRENCY, jobs.length) }, worker));
+await Promise.all(Array.from({ length: Math.min(CONCURRENCY, articleJobs.length) }, worker));
 
 // Only the article files are written here. The index is patched afterwards by
 // scripts/sync-index.mjs, which first pulls the newest content - so a long

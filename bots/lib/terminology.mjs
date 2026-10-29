@@ -14,3 +14,20 @@ const BY_LOCALE = {
 
 /** Extra instruction for the translation prompt, empty when nothing is known. */
 export const terminologyFor = (locale) => (BY_LOCALE[locale] ? ` ${BY_LOCALE[locale]}` : '');
+
+// Wrong renderings that show a model ignored the glossary. Only German is
+// enforced: the other languages have acceptable regional variants, so a hard
+// gate there would throw away fine translations.
+const FORBIDDEN = {
+  de: { source: /midterm/i, reject: /Mittlere[nr]? Wahlen?|Midterm-?Wahlen?|Halbzeitwahlen/i, require: /Zwischenwahlen/i },
+};
+
+/** Reasons the translation ignored the glossary; empty when it is fine. */
+export function terminologyProblems(locale, sourceText, translatedText) {
+  const rule = FORBIDDEN[locale];
+  if (!rule || !rule.source.test(String(sourceText))) return [];
+  const out = String(translatedText);
+  if (rule.reject.test(out)) return [`literal midterm rendering: ${out.match(rule.reject)[0]}`];
+  if (!rule.require.test(out)) return ['midterm elections not rendered as "Zwischenwahlen"'];
+  return [];
+}
