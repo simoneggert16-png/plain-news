@@ -96,43 +96,46 @@ const articles = files
 
 if (verifyOnly) {
   const ok = await verify(entries.length, articles.length);
-  process.exit(ok ? 0 : 2);
+  process.exitCode = ok ? 0 : 2;
+} else {
+  console.log(`index: ${entries.length} entries, articles: ${articles.length} files`);
+  if (dryRun) {
+    console.log('dry run – nothing written');
+  } else if (!serviceKey) {
+    console.error('SUPABASE_SERVICE_ROLE_KEY is missing; refusing to write.');
+    process.exitCode = 1;
+  } else {
+    await writeMirror();
+  }
 }
 
-console.log(`index: ${entries.length} entries, articles: ${articles.length} files`);
-if (dryRun) {
-  console.log('dry run – nothing written');
-  process.exit(0);
-}
-
-if (!serviceKey) {
-  console.error('SUPABASE_SERVICE_ROLE_KEY is missing; refusing to write.');
-  process.exit(1);
-}
-
-await rest('content_blobs?on_conflict=key', {
-  method: 'POST',
-  body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
-  prefer: 'resolution=merge-duplicates,return=minimal',
-});
-console.log('index uploaded');
-
-const batchSize = 25;
-for (let i = 0; i < articles.length; i += batchSize) {
-  const batch = articles.slice(i, i + batchSize).map((article) => ({
-    slug: article.slug,
-    published_at: article.publishedAt || null,
-    updated_at: new Date().toISOString(),
-    data: article,
-  }));
-  await rest('articles?on_conflict=slug', {
+// Set exitCode instead of calling process.exit(): exiting while the undici
+// connections are still closing has crashed Node 24 on Windows (libuv assert).
+async function writeMirror() {
+  await rest('content_blobs?on_conflict=key', {
     method: 'POST',
-    body: batch,
+    body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
     prefer: 'resolution=merge-duplicates,return=minimal',
   });
-  process.stdout.write(`\rarticles: ${Math.min(i + batchSize, articles.length)}/${articles.length}`);
-}
-process.stdout.write('\n');
+  console.log('index uploaded');
 
-const ok = await verify(entries.length, articles.length);
-process.exit(ok ? 0 : 2);
+  const batchSize = 25;
+  for (let i = 0; i < articles.length; i += batchSize) {
+    const batch = articles.slice(i, i + batchSize).map((article) => ({
+      slug: article.slug,
+      published_at: article.publishedAt || null,
+      updated_at: new Date().toISOString(),
+      data: article,
+    }));
+    await rest('articles?on_conflict=slug', {
+      method: 'POST',
+      body: batch,
+      prefer: 'resolution=merge-duplicates,return=minimal',
+    });
+    process.stdout.write(`\rarticles: ${Math.min(i + batchSize, articles.length)}/${articles.length}`);
+  }
+  process.stdout.write('\n');
+
+  const ok = await verify(entries.length, articles.length);
+  process.exitCode = ok ? 0 : 2;
+}
