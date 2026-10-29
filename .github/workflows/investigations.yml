@@ -2,9 +2,9 @@ name: Investigations
 
 on:
   schedule:
-    # One small step per day. Intake only happens when the ISO week changes, so
-    # this is the heartbeat of a desk that can work on a story for months.
-    - cron: '10 6 * * *'
+    # Morning and evening shift. Intake only happens when the ISO week changes,
+    # so this is the heartbeat of a desk that can work on a story for months.
+    - cron: '10 6,18 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
