@@ -697,6 +697,77 @@ async function readInbox(d) {
   return handled.length;
 }
 
+// A desk that publishes on trust is not a desk. Before anything is written or
+// asked, every claim is read back against the text it cites: what the document
+// does not say leaves the dossier.
+async function factcheck(d) {
+  const checkable = d.claims.filter(
+    (c) => !c.checked && (c.sources || []).some((id) => (d.sources.find((s) => s.id === id)?.text || '').length >= 300),
+  );
+  const unreadable = d.claims.filter((c) => !c.checked && !checkable.includes(c));
+  for (const c of unreadable) c.checked = 'unreadable'; // headline only — cannot be read back
+  if (!checkable.length) return;
+  if (deadlineLeft() < 6 * 60_000) {
+    log('CHECK  deadline close — claims left unchecked');
+    return;
+  }
+
+  const batch = checkable.slice(0, 8);
+  const pack = batch.map((c) => {
+    const texts = c.sources
+      .map((id) => d.sources.find((s) => s.id === id))
+      .filter((s) => s?.text)
+      .slice(0, 2)
+      .map((s) => `[${s.id}] ${s.outlet} — ${s.title}\n${s.text.slice(0, 1800)}`)
+      .join('\n\n');
+    return `[${c.id}] CLAIM: ${c.text}\n${texts}`;
+  }).join('\n\n────────\n\n');
+
+  let data;
+  try {
+    ({ data } = await chatJSON('desk', [
+      {
+        role: 'system',
+        content: 'You are the fact-checker of an investigative desk. You compare a claim with the source text it cites. You do not judge plausibility and you do not use outside knowledge: if the text does not carry the claim, the verdict is unsupported. Return JSON only.',
+      },
+      {
+        role: 'user',
+        content: `For each claim below, decide against the quoted source text:
+- supported: the text states it, including every number and date.
+- partial: the text supports the core but not all details, or only one of several citations carries it.
+- unsupported: the text does not say it, says something else, or is about a different entity.
+
+${pack}
+
+Return {"checks":[{"id":"C1","verdict":"supported|partial|unsupported","reason":"one sentence, quote the sentence that decides it"}]}`,
+      },
+    ], { temperature: 0, maxTokens: 1600 }));
+  } catch (err) {
+    log(`CHECK  failed: ${err.message}`);
+    return;
+  }
+
+  const verdicts = new Map((Array.isArray(data.checks) ? data.checks : []).map((c) => [String(c.id), c]));
+  const dropped = [];
+  for (const c of batch) {
+    const v = verdicts.get(c.id);
+    if (!v) continue;
+    const verdict = ['supported', 'partial', 'unsupported'].includes(v.verdict) ? v.verdict : 'partial';
+    c.checked = verdict;
+    if (verdict === 'partial') c.checkNote = String(v.reason || '').slice(0, 240);
+    if (verdict === 'unsupported') dropped.push(c);
+  }
+
+  if (dropped.length) {
+    const keep = new Set(dropped.map((c) => c.id));
+    d.claims = d.claims.filter((c) => !keep.has(c.id));
+    d.dropped = [...(d.dropped || []), ...dropped.map((c) => ({ text: c.text, why: c.checkNote || 'nicht belegt' }))].slice(-40);
+    for (const c of dropped) d.gaps.push(`Nicht belegt, deshalb gestrichen: ${c.text.slice(0, 200)}`);
+    log(`CHECK  ${dropped.length} claim(s) dropped — the cited text does not carry them`);
+  }
+  log(`CHECK  ${batch.length - dropped.length}/${batch.length} claim(s) stand`);
+}
+
 async function research(d) {
   if (process.env.INVESTIGATE_AGENT !== '0') {
     const ok = await researchAgent(d).catch((err) => {
@@ -963,7 +1034,7 @@ const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfi
 async function writeInvestigation(d, outreach) {
   const replies = outreach.filter((o) => o.status === 'replied' && o.reply_note);
   const sent = outreach.filter((o) => ['sent', 'replied'].includes(o.status));
-  const claims = d.claims.map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}] ${c.text} (sources: ${c.sources.join(', ')})`).join('\n');
+  const claims = d.claims.map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${c.text} (sources: ${c.sources.join(', ')})`).join('\n');
   const outreachLog = sent.length
     ? sent.map((o) => `- ${o.org || o.to_email}: requested ${day(o.sent_at || o.approved_at || o.created_at)}${o.status === 'replied' ? `\n  REPLY: ${o.reply_note}` : '\n  no reply so far'}`).join('\n')
     : '(no requests sent yet)';
@@ -1322,6 +1393,7 @@ async function main() {
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
         }
+        await factcheck(d);
         await queueOutreach(d);
         await draftOutreach(d);
         await sendApproved(d);
