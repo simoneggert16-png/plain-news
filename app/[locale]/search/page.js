@@ -54,8 +54,15 @@ export default async function SearchPage({ params, searchParams }) {
     const t1 = Date.now();
     await searchCommunity(q).catch(() => ({}));
     timings.community2 = Date.now() - t1;
+    const base = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '').replace(/\/+$/, '');
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+    for (const n of [1, 2]) {
+      const t2 = Date.now();
+      await fetch(`${base}/rest/v1/content_blobs?select=key&limit=1`, { headers: { apikey: key, Authorization: `Bearer ${key}` }, cache: 'no-store' }).catch(() => {});
+      timings[`net${n}`] = Date.now() - t2;
+    }
   }
-  const timingLine = `rpc1=${timings.rpc}ms rpc2=${timings.rpc2}ms comm1=${timings.community}ms comm2=${timings.community2}ms entries=${timings.entries}ms hits=${results.length}`;
+  const timingLine = `rpc1=${timings.rpc}ms rpc2=${timings.rpc2}ms comm1=${timings.community}ms comm2=${timings.community2}ms entries=${timings.entries}ms net1=${timings.net1}ms net2=${timings.net2}ms hits=${results.length}`;
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
