@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mjs';
+import { getLiveTicker } from '@/lib/liveStore.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
@@ -75,7 +76,14 @@ export async function generateMetadata({ params }) {
 export default async function ArticlePage({ params }) {
   const { locale, slug } = await params;
   const a = await getArticle(slug);
-  if (!a) notFound();
+  if (!a) {
+    // A ticker can use a slug before (or instead of) a written article. Old
+    // links - bookmarks, search results - then landed on a 404; the ticker
+    // page is the right destination for them.
+    const ticker = await getLiveTicker(slug);
+    if (ticker) redirect(`/${locale}/live/${slug}`);
+    notFound();
+  }
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
   const l = localize(a, locale);
