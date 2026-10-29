@@ -7,62 +7,110 @@
       "IMEMC News"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "openai/gpt-oss-20b"
+    "lastUpdateModel": "ollama/gemma4:31b"
   },
   "slug": "israel-s-gaza-strikes",
   "topic": "Israel's Gaza strikes",
   "status": "live",
   "article": {
     "slug": "israel-s-gaza-strikes",
+    "updatedAt": "2026-10-29T20:44:43.073Z",
     "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Israelische Luftangriffe trafen Gaza am 29. Oktober 2026; das Gesundheitsministerium forderte die Öffnung der Grenzübergang Rafah; Hilfsorganisationen berichten von zunehmender Nahrungsmittelunsicherheit aufgrund von WFP-Rationskürzungen.",
-        "body": [
-          "Al Jazeera berichtete, dass israelische Luftangriffe am 29. Oktober 2026 Gaza trafen.",
-          "Das israelische Gesundheitsministerium forderte die Öffnung des Grenzübergangs Rafah, um medizinische Evakuierungen zu ermöglichen.",
-          "Hilfsorganisationen sagen, dass das World Food Programme die Lebensmittelrationen in Gaza reduziert hat.",
-          "The New Humanitarian berichtete, dass die Kürzungen zur Wintermiserablen beitragen.",
-          "The Times of Israel berichtete, dass die Nahrungsmittelunsicherheit in Gaza sich verschärft, während die Operationen im vergangenen Monat stark gekürzt wurden.",
-          "Palestine Chronicle sagte, die Angriffe setzten trotz eines Waffenstillstands fort.",
-          "The Times of India berichtete, dass Netanyahus Block 53 Sitze bei der israelischen Wahl gewann, jedoch unter einer Mehrheitszahl blieb.",
-          "Das Wahlergebnis könnte zukünftige politische Entscheidungen beeinflussen, jedoch wird kein direkter Zusammenhang mit den aktuellen Angriffen angegeben."
-        ],
-        "facts": [
-          "Israelische Luftangriffe trafen Gaza am 29. Oktober 2026.",
-          "Das Gesundheitsministerium forderte die Öffnung des Grenzübergangs Rafah.",
-          "WFP-Rationskürzungen wurden von Hilfsorganisationen berichtet.",
-          "Die Nahrungsmittelunsicherheit verschärft sich in Gaza angesichts der Kürzungen.",
-          "Netanyahus Block gewann 53 Sitze bei der israelischen Wahl."
-        ],
-        "title": "Israelische Angriffe treffen Gaza, Gesundheitsministerium fordert Öffnung von Rafah",
-        "context": "Das World Food Programme hat die Lebensmittelrationen in Gaza gekürzt, was die Winterhärte erhöht. Netanyahus Block sicherte sich 53 Sitze bei der jüngsten israelischen Wahl."
-      },
       "en": {
-        "dek": "Israeli airstrikes hit Gaza on 29 Oct 2026; Health Ministry urged opening of Rafah crossing; aid groups report worsening food insecurity due to WFP ration cuts.",
-        "body": [
-          "Al Jazeera reported Israeli airstrikes hit Gaza on 29 Oct 2026.",
-          "The Israeli Health Ministry urged opening of the Rafah crossing to allow medical evacuation.",
-          "Aid groups say the World Food Programme has reduced food rations in Gaza.",
-          "The New Humanitarian reported that the cuts are contributing to winter misery.",
-          "The Times of Israel reported that food insecurity is worsening in Gaza amid sharp cuts to operations over the past month.",
-          "Palestine Chronicle said attacks continue despite a ceasefire.",
-          "The Times of India reported that Netanyahu's bloc won 53 seats in the Israeli election, falling short of a majority.",
-          "The election result may influence future policy decisions, but no direct link to current strikes is stated."
-        ],
-        "facts": [
-          "Israeli airstrikes hit Gaza on 29 Oct 2026.",
-          "Health Ministry urged opening of Rafah crossing.",
-          "WFP ration cuts reported by aid groups.",
-          "Food insecurity worsening in Gaza amid cuts.",
-          "Netanyahu's bloc won 53 seats in Israeli election."
-        ],
         "title": "Israeli strikes hit Gaza, Health Ministry urges Rafah opening",
-        "context": "The World Food Programme has cut food rations in Gaza, increasing winter hardship. Netanyahu's bloc secured 53 seats in the recent Israeli election.",
+        "dek": "Israeli airstrikes on Gaza continue as coalition talks begin and aid cuts deepen food insecurity.",
+        "facts": [
+          "Israeli airstrikes hit Gaza on 29 Oct 2026 (Al Jazeera).",
+          "Israel's Health Ministry urged opening the Rafah crossing for medical evacuation (Al Jazeera).",
+          "World Food Programme reduced food rations in Gaza, worsening food insecurity (Times of Israel, New Humanitarian).",
+          "Netanyahu's bloc won 53 seats in the Israeli election, short of a majority (Times of India).",
+          "Israeli parties began coalition talks after vote count completed (The National, 5 Towns Central)."
+        ],
+        "body": [
+          "Israeli parties have begun coalition talks after all votes were counted, according to The National. 5 Towns Central also reported that coalition negotiations are under way.",
+          "The Times of India reported that Prime Minister Benjamin Netanyahu's bloc won 53 seats in the recent election, falling short of a majority. The same outlet confirmed the seat count in a separate article.",
+          "Al Jazeera reported that Israeli airstrikes hit Gaza on 29 October 2026. The same report said Israel's Health Ministry urged the opening of the Rafah crossing to allow medical evacuation.",
+          "Palestine Chronicle said that attacks on Gaza continued despite a ceasefire. The outlet described the ongoing bombardment.",
+          "The Times of Israel reported that aid groups say food insecurity is worsening in Gaza amid sharp cuts to World Food Programme operations over the past month. The New Humanitarian added that the WFP's ration reductions are contributing to winter hardship.",
+          "The New Humanitarian warned that the reduced rations are leading to increased winter misery for Gaza residents. The report linked the cuts directly to deteriorating living conditions."
+        ],
+        "context": "The World Food Programme has cut food rations in Gaza, and Israel's Health Ministry says the Rafah crossing is needed for medical evacuation.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "Israelische Angriffe treffen Gaza, Gesundheitsministerium fordert Öffnung von Rafah",
+        "dek": "Israelische Luftangriffe auf Gaza dauern an, während Koalitionsgespräche beginnen und Hilfskürzungen die Ernährungsunsicherheit verschärfen.",
+        "facts": [
+          "Israelische Luftangriffe trafen Gaza am 29. Oktober 2026 (Al Jazeera).",
+          "Israels Gesundheitsministerium forderte die Öffnung des Rafah-Grenzübergangs für medizinische Evakuierungen (Al Jazeera).",
+          "Das Welternährungsprogramm reduzierte die Lebensmittelrationen in Gaza, was die Ernährungsunsicherheit verschlechterte (Times of Israel, New Humanitarian).",
+          "Netanyahus Block gewann 53 Sitze bei der israelischen Wahl, was nicht für eine Mehrheit ausreicht (Times of India).",
+          "Israelische Parteien begannen nach Abschluss der Stimmauszählung mit Koalitionsgesprächen (The National, 5 Towns Central)."
+        ],
+        "body": [
+          "Israelische Parteien haben nach der Auszählung aller Stimmen mit Koalitionsgesprächen begonnen, so The National. 5 Towns Central berichtete ebenfalls, dass Koalitionsverhandlungen im Gange sind.",
+          "Die Times of India berichtete, dass der Block von Premierminister Benjamin Netanyahu bei der jüngsten Wahl 53 Sitze gewann und damit eine Mehrheit verfehlte. Dieselbe Quelle bestätigte die Sitzverteilung in einem separaten Artikel.",
+          "Al Jazeera berichtete, dass israelische Luftangriffe Gaza am 29. Oktober 2026 trafen. Dem Bericht zufolge forderte Israels Gesundheitsministerium die Öffnung des Rafah-Grenzübergangs, um medizinische Evakuierungen zu ermöglichen.",
+          "Palestine Chronicle erklärte, dass die Angriffe auf Gaza trotz eines Waffenstillstands andauerten. Das Medium beschrieb das anhaltende Bombardement.",
+          "Die Times of Israel berichtete, dass Hilfsorganisationen eine Verschärfung der Ernährungsunsicherheit in Gaza aufgrund drastischer Kürzungen der Operationen des Welternährungsprogramms im vergangenen Monat melden. The New Humanitarian fügte hinzu, dass die Rationierung des WFP zu winterlichen Härten beitrage.",
+          "The New Humanitarian warnte, dass die reduzierten Rationen zu verstärktem winterlichem Elend für die Bewohner Gazas führen. Der Bericht brachte die Kürzungen direkt mit den sich verschlechternden Lebensbedingungen in Verbindung."
+        ],
+        "context": "Das Welternährungsprogramm hat die Lebensmittelrationen in Gaza gekürzt, und Israels Gesundheitsministerium erklärt, dass der Rafah-Grenzübergang für medizinische Evakuierungen benötigt wird."
       }
     },
     "versions": [
+      {
+        "at": "2026-10-29T18:45:57.965Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Israeli airstrikes hit Gaza on 29 Oct 2026; Health Ministry urged opening of Rafah crossing; aid groups report worsening food insecurity due to WFP ration cuts.",
+            "body": [
+              "Al Jazeera reported Israeli airstrikes hit Gaza on 29 Oct 2026.",
+              "The Israeli Health Ministry urged opening of the Rafah crossing to allow medical evacuation.",
+              "Aid groups say the World Food Programme has reduced food rations in Gaza.",
+              "The New Humanitarian reported that the cuts are contributing to winter misery.",
+              "The Times of Israel reported that food insecurity is worsening in Gaza amid sharp cuts to operations over the past month.",
+              "Palestine Chronicle said attacks continue despite a ceasefire.",
+              "The Times of India reported that Netanyahu's bloc won 53 seats in the Israeli election, falling short of a majority.",
+              "The election result may influence future policy decisions, but no direct link to current strikes is stated."
+            ],
+            "facts": [
+              "Israeli airstrikes hit Gaza on 29 Oct 2026.",
+              "Health Ministry urged opening of Rafah crossing.",
+              "WFP ration cuts reported by aid groups.",
+              "Food insecurity worsening in Gaza amid cuts.",
+              "Netanyahu's bloc won 53 seats in Israeli election."
+            ],
+            "title": "Israeli strikes hit Gaza, Health Ministry urges Rafah opening",
+            "context": "The World Food Programme has cut food rations in Gaza, increasing winter hardship. Netanyahu's bloc secured 53 seats in the recent Israeli election.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Israelische Luftangriffe trafen Gaza am 29. Oktober 2026; das Gesundheitsministerium forderte die Öffnung der Grenzübergang Rafah; Hilfsorganisationen berichten von zunehmender Nahrungsmittelunsicherheit aufgrund von WFP-Rationskürzungen.",
+            "body": [
+              "Al Jazeera berichtete, dass israelische Luftangriffe am 29. Oktober 2026 Gaza trafen.",
+              "Das israelische Gesundheitsministerium forderte die Öffnung des Grenzübergangs Rafah, um medizinische Evakuierungen zu ermöglichen.",
+              "Hilfsorganisationen sagen, dass das World Food Programme die Lebensmittelrationen in Gaza reduziert hat.",
+              "The New Humanitarian berichtete, dass die Kürzungen zur Wintermiserablen beitragen.",
+              "The Times of Israel berichtete, dass die Nahrungsmittelunsicherheit in Gaza sich verschärft, während die Operationen im vergangenen Monat stark gekürzt wurden.",
+              "Palestine Chronicle sagte, die Angriffe setzten trotz eines Waffenstillstands fort.",
+              "The Times of India berichtete, dass Netanyahus Block 53 Sitze bei der israelischen Wahl gewann, jedoch unter einer Mehrheitszahl blieb.",
+              "Das Wahlergebnis könnte zukünftige politische Entscheidungen beeinflussen, jedoch wird kein direkter Zusammenhang mit den aktuellen Angriffen angegeben."
+            ],
+            "facts": [
+              "Israelische Luftangriffe trafen Gaza am 29. Oktober 2026.",
+              "Das Gesundheitsministerium forderte die Öffnung des Grenzübergangs Rafah.",
+              "WFP-Rationskürzungen wurden von Hilfsorganisationen berichtet.",
+              "Die Nahrungsmittelunsicherheit verschärft sich in Gaza angesichts der Kürzungen.",
+              "Netanyahus Block gewann 53 Sitze bei der israelischen Wahl."
+            ],
+            "title": "Israelische Angriffe treffen Gaza, Gesundheitsministerium fordert Öffnung von Rafah",
+            "context": "Das World Food Programme hat die Lebensmittelrationen in Gaza gekürzt, was die Winterhärte erhöht. Netanyahus Block sicherte sich 53 Sitze bei der jüngsten israelischen Wahl."
+          }
+        }
+      },
       {
         "at": "2026-10-29T16:29:00.965Z",
         "reason": "1 new update(s)",
@@ -129,8 +177,7 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-10-29T18:45:57.965Z"
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -172,6 +219,64 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1793304279000-xwd7",
+      "at": "2026-10-29T20:04:39.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Israeli parties begin coalition talks",
+          "body": "Israeli parties have started coalition talks now that all votes are counted, according to The National and 5 Towns Central."
+        },
+        "de": {
+          "headline": "Israelische Parteien beginnen Koalitionsgespräche",
+          "body": "Nachdem alle Stimmen ausgezählt wurden, haben die israelischen Parteien Koalitionsgespräche aufgenommen, wie The National und 5 Towns Central berichten."
+        },
+        "fr": {
+          "headline": "Les partis israéliens entament des discussions de coalition",
+          "body": "Les partis israéliens ont commencé des discussions de coalition maintenant que tous les votes sont dépouillés, selon The National et 5 Towns Central."
+        },
+        "es": {
+          "headline": "Los partidos israelíes inician las negociaciones de coalición",
+          "body": "Los partidos israelíes han comenzado las negociaciones de coalición ahora que se han contabilizado todos los votos, según The National y 5 Towns Central."
+        },
+        "it": {
+          "headline": "I partiti israeliani avviano i colloqui per la coalizione",
+          "body": "I partiti israeliani hanno iniziato i colloqui per la coalizione ora che tutti i voti sono stati conteggiati, secondo The National e 5 Towns Central."
+        },
+        "pt": {
+          "headline": "Partidos israelitas iniciam negociações de coligação",
+          "body": "Os partidos israelitas iniciaram negociações de coligação agora que todos os votos foram contados, de acordo com The National e 5 Towns Central."
+        },
+        "zh": {
+          "headline": "以色列各政党开始组建联合政府谈判",
+          "body": "据《国家报》和 5 Towns Central 报道，在所有选票计完后，以色列各政党已开始组建联合政府的谈判。"
+        },
+        "ja": {
+          "headline": "イスラエルの各政党が連立交渉を開始",
+          "body": "ザ・ナショナルおよび5タウンズ・セントラルの報道によると、全票の集計が完了し、イスラエルの各政党が連立交渉を開始した。"
+        },
+        "ko": {
+          "headline": "이스라엘 정당들, 연정 협상 착수",
+          "body": "더 내셔널과 5 타운스 센트럴에 따르면, 모든 개표가 완료됨에 따라 이스라엘 정당들이 연립정부 구성을 위한 협상을 시작했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "5 Towns Central",
+          "title": "Israel Election Results Finalized: Netanyahu Bloc Falls Short of Majority as Coalition Talks Loom",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbF85dHQ0OC05ZGFINGNDdE82ejVYQzRmZ3pYNHp0cG5qX1d5TmcyY1JGa3pRUHFUVE5weGtFYTJTa1BlclpFbllIUWR2cUQ2LUgtX0JVSTRjMlU5Z3k2MG1IaTZSUEMwS2pFZl9WRnRJUlEwa0RTNENBNWNWQXNmOC1iRjB1UHRuYkFnMFhmU0JXcUVtZkZ2SGtPQ0hlSGF4aHl2cU4zVlVfRHVTUGo5dmt4X09oRnI1Sk5uVnpuUnAzbW5RQ0h5endOUGQzYnM?oc=5",
+          "publishedAt": "2026-10-29T20:04:39.000Z"
+        },
+        {
+          "outlet": "The National",
+          "title": "Israeli parties begin coalition talks with all votes counted",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSDBKNm9ZN1AwaUZROTgzS1hhaGdxT2JudklsSEpJX0p4cThjOVpMMmFqYlk4ZWhEdlFXNWRWb1pJZmNQdl9XWkExOHBxNmUydDlLMm9PN2JpZ1M5eEEtYmZ6Wms1VjMzdmpXOHZKZ2RYRlpEV0wyejBrbWZreDVOOUdqX3ZlNmxmUG9mdEpISHE3OHdoWGg3dktxQmJFM01iMENEWWloNGdLNWkxUEt5M1BNVkQ?oc=5",
+          "publishedAt": "2026-10-29T19:14:45.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-10-29T18:10:38.000Z",
       "id": "u-1793297438000-uvlb",
@@ -440,13 +545,32 @@
     "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVzFDWk1GRENKX0VCQkZFMlE3ZldUNEkxZ1liUmZMYnlHNmZPOU8tU25sVkRNYnJQemg2M2VfYy1KRXNwLXdxMXE4YktKVzJjNnVraHc2SUNnc2VnV0dOdDdMRDVFQUJYTjN5TmU2dWFJRVYxZnFQQjVLLVM3QlMzcXQtRzVfUjNzaDdwaUhIX0tWajhoUGpiVGpHNjJjdTl1M3NoUGdPMDVwa2lCRk5yX1BkMFpRblNfOG5MY2dHN1FNTGNuX181dnRYX090TXdiYndQZkpESXkwMTdyX2dOQmJ1elVZWm01cmR5WVdERkJVSzFxeGpYZzdmMHU?oc=5",
     "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkI4Q3pYUVhzX1QyeEpZLWcwZm94Z2hoV1BiU0pqWkhQM1JUZmhwakN6N0g3enoySWNaN2prWGVXRUZIXzRNMllwSFhxTWVWNFpjSWh4eEdiYzhhcUczdGRGZktZYnZNNzlCNVowVk44UlZLYXpLTlpqX215SEFMaHdkYUVRYU8zTkQ2NXRQbkswV3VpbG0ydmhsRldPUdIBowFBVV95cUxPeHFIS19GdjN0aTJpalJSdEp6SUVqazNvaEdlak5jYW5TRjlTS0RwYkRmaWRhM0FHd21qTGtHOENQUVNnekNRaEJlSHZTSVg1dnBDMHE1TVcxNGdSVGJNYW9WT0hOYzROWTJ0VGdwbXEwOUI4M3lCQWMwMm1kQy1NMGhfWkJBT0I5NGpLZ2kxWE5LaGMzZXBPVjMxNTFYV2lsSFVN?oc=5",
     "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVVhJaUhGRHA3a2hDRmNQYTVnOXZXeXM3aGRQMzF4eG92eWV5aThxZldjQnV4TXpPT1hKUHQtSmhDOGwycjkxaHpUR21sTEprYTA3b2o5S1FwN193UGRsQjdxYTNxZzVwMklodXM4SEZIa2NGQnhoQTdQRnlMVHZHZEs3SjN2Rlo4WDBhOUtSNjVTeFc5UVlOeWNnbHd6Y3FC?oc=5",
-    "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPbWxuTlFET0tnTDlYLVJZa2xKcm81SlRPQ2ZTcWxxY01iWW5GdDVDQ290SlhqMG1uUlY4TnVZS09hVUtJTmdFSG4td1RBbTNDX2FWemNZU0ZGeXhzb1gzNFhOeWVlLWVDNERkVFg2WXdEUXlRbElFbWpKOUo0TEVLVVhfYXB4WWZjOVd5ZXRXd1pMRk9BRzdTT1AxRFBMUDF6Nnl5VjFEdFQxMlJ2U3BrZFE5aGxtd3hBc2o1OFJ3Sl9xUENYWHN3cnJtc1ZhdkV0dHlYMFlicDdNSGJQMTFBbg?oc=5"
+    "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPbWxuTlFET0tnTDlYLVJZa2xKcm81SlRPQ2ZTcWxxY01iWW5GdDVDQ290SlhqMG1uUlY4TnVZS09hVUtJTmdFSG4td1RBbTNDX2FWemNZU0ZGeXhzb1gzNFhOeWVlLWVDNERkVFg2WXdEUXlRbElFbWpKOUo0TEVLVVhfYXB4WWZjOVd5ZXRXd1pMRk9BRzdTT1AxRFBMUDF6Nnl5VjFEdFQxMlJ2U3BrZFE5aGxtd3hBc2o1OFJ3Sl9xUENYWHN3cnJtc1ZhdkV0dHlYMFlicDdNSGJQMTFBbg?oc=5",
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oeHhfTnotN1N5OU1vQ1lzRHUwTm5QUEdQd0k1bGxEWXRORldPalZGbVktUzNrMTRPT1pGZk0zLWlvMFNRV3RoOUpfeWIwQ0dPNHM3Q0thX1R4SHlCOXlNYmZ4SWFsRWdW?oc=5",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdlRKcmM0b2Q5Q3I3YS1KejlBOUVUNGtpZ3k0NG0wRG1uZHlKWktycWtnd1JQLUh2dG1LWWxaTVJMRTZFTDB3OXpXaVVVQlBXQm1YUzFPeU16b2dQdDVjcU1yRWdzOXV5V0lqNVo2X0pNVFlYXzE2eEFrU3U3bEdwT1JnRmRHMlRrTW4tMDhvcVJIdHVqZEFOMjNmVXpNMWVrajhJNlRGcWh3SHljTVVHWG1EVdIBuAFBVV95cUxNTFNTejBtc3J6M1Q2aVJrVWpLSTBrNWo5RlFLUVh1a05kbFh0YUZRTTUwXzA5Wlh6WGlYUXNBbEVFVHAzMGd4c2JSSmpzZW1sdGkySThWb29DeDVteGpGbUJsMEtjTEEzY3pvMDZWSWJZQ2dITGkzUFdQWkhFR1lOZTd2TERVOW5XN1JHa0dHdWtwcEhQc3pTOENabXZESExtZnhIVy1DNFEwTlZtSm5YSWJya3lMdUZE?oc=5",
+    "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbF85dHQ0OC05ZGFINGNDdE82ejVYQzRmZ3pYNHp0cG5qX1d5TmcyY1JGa3pRUHFUVE5weGtFYTJTa1BlclpFbllIUWR2cUQ2LUgtX0JVSTRjMlU5Z3k2MG1IaTZSUEMwS2pFZl9WRnRJUlEwa0RTNENBNWNWQXNmOC1iRjB1UHRuYkFnMFhmU0JXcUVtZkZ2SGtPQ0hlSGF4aHl2cU4zVlVfRHVTUGo5dmt4X09oRnI1Sk5uVnpuUnAzbW5RQ0h5endOUGQzYnM?oc=5",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xVURzV0VGbkVPTktqUllWWkRpUWZCUWwtWmY1UUNaYXVYYzFtaVJQeG9rMjFCMUgxbW05Sk1hWjVESVkwdGxkTldtcDlxMzdyRmtCQ19DNWdOVXQtdXFlbFFmS0VmOGc?oc=5",
+    "https://www.artnews.com/art-news/news/house-republicans-demand-smithsonian-curatorial-process-1234804234/",
+    "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQU3pvZjM0T092Z2FnMjl4eGV5ZmVpWlp3R2N0ZG5vYi1NeDl5aUlKNDJFU181UmJPMlNYMU8zWHloTUtTRHB1RlBUTzE4RVdBdmgwY3JfbEs1dkxWSWxqN3EyU2VlMzZQcFZocVNkamtqTFBLNTBFb0dyalc1YmY5dEtJT3BoZkl6Mm1RU3Q1TVFCd3c5d01raC1jR2dhS1BVNW8xOGYtaDRpXzFUaktKSzVtbXNpRmYxNExSeUxUVTcwMzdveHRtWEZ3SWtjUnZaLTIzd2E0a1JwaEZrTmhXak1QS3hsX25DRnJ4MA?oc=5",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSDBKNm9ZN1AwaUZROTgzS1hhaGdxT2JudklsSEpJX0p4cThjOVpMMmFqYlk4ZWhEdlFXNWRWb1pJZmNQdl9XWkExOHBxNmUydDlLMm9PN2JpZ1M5eEEtYmZ6Wms1VjMzdmpXOHZKZ2RYRlpEV0wyejBrbWZreDVOOUdqX3ZlNmxmUG9mdEpISHE3OHdoWGg3dktxQmJFM01iMENEWWloNGdLNWkxUEt5M1BNVkQ?oc=5",
+    "https://news.google.com/rss/articles/CBMigwJBVV95cUxPTkJ0NUtOaFhxcWhJcDRKUmhaQnAweVJDb0ROM0VpeHRXSEhqNTA4cG9ySFJIS2hCcUI3YndMOVJkeU9NY0dmcWFnb01LVFF2TnNwQ2VZdTA2dUZFY21hLWFQMFFxMkhlb051dE1IazR6c3FPNXZUNDVEcXFlVXRXbTl6bk9mbngxd2NSeHZ5VHhoSWVvTDd3Mk1UUGQxd1g1Y3JNY19Iem5ZMFVDU3ZQcGlVakdLTm55RTl5MkNFeEhwYWhyQWl5UHRMZ285MWpIYnZ1QVpUeXlRbkNIVmN2djZURVc4LTZTbWM4c3V0dmpTQ2RHWmwyZ3lMSHJmQnZTZ1dN?oc=5",
+    "https://www.welt.de/politik/ausland/article6ae39702981b80c0b79861fe/wahl-endergebnis-netanjahu-und-eisenkot-verfehlen-mehrheit-nun-droht-israel-politischer-stillstand.html",
+    "https://news.google.com/rss/articles/CBMihAFBVV95cUxPX1BNZWJZUEdXWk82M0l4b1BOZTJ6YS1IVGtpNHQ2ZmRCVmxzekhLTmVFbS16eFpnZ2txbjBnMEoyN2JyQko4ZmxFMUN0MzdOV2xfZEl5MlhTQ0hFamptaUF2ZEN4WWJ0NUJ1czJVdFRabHNVTU1kX2NaRUc5aDJsNm1qRFk?oc=5",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4yUk1pWS1iN3cyTkU1WVFyLWRpYUxsWC0zTFA5dUh2VWoyVzAzV0RENzI0UXNXeTJrZmJmUnl2Y3BUaF81eVJXb3d3QkxTWU8tdTUzT3ZTMEdIY2VRRFZnR01NWkpMYlE?oc=5",
+    "http://www.africanews.com/2026/10/29/no-clear-majority-emerges-as-israel-counts-final-election-votes/",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxQLTJ4OTE2WHAwRFFUWWdiZjhEOXhudWFOMmVzQktQa3hhT1VDSUp5dG9WVm5EWVI0N0RzNjA4RTVuZkJjVVJoVjBmTmpHbjRPdmRvWXV3SXNGdmltRHE2RC03NEw0VEFGdFlEUjhVdks3d3JuN3RiRDFPQmQxN1ZEYTRBS1ViUnEwUDN3OFkyQzJNMWcwRjREMlVQLVFUcjdISzNrdk5n?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRWpUYUNlY3Vrd1FobzFxQjNhR0tIcHc3bEh4T0NJUV9adFlScVM0aGhQUUpWai1wdnJMZGJwQWtVY210ejRWangzNDFlaVNLSXV6OE1hV3N6SEhSSUt1UmFBNVRDZUY1QnR3VTg4SnhLUEhROV9xOGVlLVc2LXZURnhMaURnakY3eVUxa2pXWThHMU5NRFFZMWg2dDVoMGVTTWNfNVBCVWxBb3hrT3l0ZGlUVHVfQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMid0FVX3lxTE1kd3J2OFpQRDlNOWs0Rkg5aWRNNU1NYkZfVU9Yc0UxZUczSVVNRFJxa3RROTlHN2M1S0hLTk1nT1Jrd25JTHNidUxjUF9VX0JWd0xVRVhvMXY0UmNuUmM1Wko4MWkzU2tTUk1ZODlleXNBVkJ5a1dj?oc=5",
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8xeFVWSTdOMERKU0xNYWNLUWVSWm1YOTBWcVQzekg0Z2lLTjh2Q3lXOGtzTnpvend5TFJGMHJOYzFCMkRuVzZfX3pxamxsa1E3VlV1c3FxcG5Ua1JtT20xank0VVByVlY1?oc=5",
+    "https://news.google.com/rss/articles/CBMif0FVX3lxTE5CTDNTcm9qbXQ5TndiWmw1b0ljR3RuR3Njdm50a2Y4WmM1MTliZDhPd25uVVdVdldNNVBnOTNvRkt4NFgwcjJkNWNLNHBubUkyQWRIa3h6LVBvN0wyWDZVMFdJM05UZGNLNlV2M1BJUmRndUcxbG9WLVFIcVc3c2s?oc=5"
   ],
   "startedAt": "2026-10-29T15:23:12.055Z",
-  "updatedAt": "2026-10-29T18:44:10.596Z",
+  "updatedAt": "2026-10-29T20:44:34.748Z",
   "importance": 5,
   "wantsStats": false,
-  "articleSlug": null,
-  "sourceCount": 6,
-  "seenHeadlines": []
+  "articleSlug": "israel-s-gaza-strikes",
+  "sourceCount": 8,
+  "seenHeadlines": [
+    "Netanyahu bloc fails to secure majority in Israeli election"
+  ]
 }
