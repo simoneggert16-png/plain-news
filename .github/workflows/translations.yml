@@ -29,6 +29,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Drop fake translations (English text stored as a translation)
+        run: node scripts/repair-translations.mjs
       - name: Translate missing locales
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}

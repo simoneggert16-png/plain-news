@@ -390,8 +390,10 @@ async function refreshStats(ticker, candidates) {
   return true;
 }
 
-async function translateItems(items, locale, fields) {
-  const lang = LOCALES.find((l) => l.code === locale);
+const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim().toLowerCase();
+const untranslated = (target, source) => !String(target ?? '').trim() || norm(target) === norm(source);
+
+async function translateBatch(items, lang, fields) {
   const payload = items.map((it) => Object.fromEntries([['id', it.id], ...fields.map((f) => [f, it[f]])]));
   const { data } = await chatJSON('translator', [
     {
@@ -400,31 +402,76 @@ async function translateItems(items, locale, fields) {
     },
     { role: 'user', content: JSON.stringify({ items: payload }) },
   ], { temperature: 0.2, maxTokens: 5000 });
+  return new Map((data.items || []).map((i) => [String(i.id), i]));
+}
 
-  const byId = new Map((data.items || []).map((i) => [String(i.id), i]));
-  return Object.fromEntries(items.map((it) => {
-    const t = byId.get(String(it.id)) || {};
-    return [it.id, Object.fromEntries(fields.map((f) => [f, t[f] || it[f]]))];
-  }));
+/**
+ * Translate items and return ONLY the ones that really are translated.
+ *
+ * The old version fell back to the source string whenever the model dropped a
+ * field ("t[f] || it[f]"). That is how the biggest stories ended up with an
+ * English "German" version: the article was refreshed, the translation call
+ * hiccuped, and the English text was written into the de slot - where the
+ * translation backfill then never looked again. Missing translations are now
+ * simply absent, so the next run retries instead of freezing English in place.
+ */
+async function translateItems(items, locale, fields) {
+  const lang = LOCALES.find((l) => l.code === locale);
+  const done = new Map();
+  let pending = items;
+
+  for (let attempt = 0; attempt < 2 && pending.length; attempt++) {
+    let rows;
+    try {
+      rows = await translateBatch(pending, lang, fields);
+    } catch (e) {
+      log(`  TRANSLATE ${locale} attempt ${attempt + 1} failed: ${e.message}`);
+      continue;
+    }
+    const failed = [];
+    for (const src of pending) {
+      const t = rows.get(String(src.id));
+      const ok = t && fields.every((f) => !String(src[f] ?? '').trim() || !untranslated(t[f], src[f]));
+      if (ok) done.set(String(src.id), Object.fromEntries(fields.map((f) => [f, String(t[f] ?? '').trim()])));
+      else failed.push(src);
+    }
+    pending = failed;
+    if (pending.length) log(`  TRANSLATE ${locale}: ${pending.length} item(s) untranslated, retrying`);
+  }
+  if (pending.length) log(`  TRANSLATE ${locale}: giving up on ${pending.length} item(s) - will retry next cycle`);
+  return Object.fromEntries(done);
 }
 
 async function translateUpdates(updates, ticker) {
   const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
-  if (updates.length) {
+  // New lines plus a few older ones whose translation never landed (that is
+  // how an English headline stays on the German ticker forever).
+  const todo = [...updates];
+  for (const u of liveUpdates(ticker).slice(0, 8)) {
+    if (!todo.includes(u) && targets.some((c) => !u.locales?.[c]?.headline)) todo.push(u);
+  }
+  if (todo.length) {
     await pool(targets, TRANSLATE_CONCURRENCY, async (locale) => {
+      const missing = todo.filter((u) => !u.locales?.[locale]?.headline);
+      if (!missing.length) return locale;
       const map = await translateItems(
-        updates.map((u) => ({ id: u.id, headline: u.locales[SOURCE_LOCALE].headline, body: u.locales[SOURCE_LOCALE].body })),
+        missing.map((u) => ({ id: u.id, headline: u.locales[SOURCE_LOCALE].headline, body: u.locales[SOURCE_LOCALE].body })),
         locale,
         ['headline', 'body']
       );
-      for (const u of updates) {
-        u.locales[locale] = map[u.id] || { headline: u.locales[SOURCE_LOCALE].headline, body: u.locales[SOURCE_LOCALE].body };
+      for (const u of missing) {
+        const hit = map[u.id];
+        if (hit?.headline) u.locales[locale] = { headline: hit.headline, body: hit.body || '' };
       }
       return locale;
     });
   }
-  // Ticker title/dek for every language (only when missing).
-  const missing = LOCALES.map((l) => l.code).filter((c) => !ticker.locales?.[c]?.title);
+  // Ticker title/dek for every language (only when missing or untranslated).
+  const needsLabel = (c) => {
+    const l = ticker.locales?.[c];
+    return !l?.title || untranslated(l.title, ticker.locales[SOURCE_LOCALE].title);
+  };
+  const missing = LOCALES.map((l) => l.code).filter(needsLabel);
   if (missing.length) {
     await pool(missing, TRANSLATE_CONCURRENCY, async (locale) => {
       const map = await translateItems(
@@ -432,8 +479,8 @@ async function translateUpdates(updates, ticker) {
         locale,
         ['headline', 'body']
       );
-      const t = map.ticker || {};
-      ticker.locales[locale] = { title: t.headline || ticker.locales[SOURCE_LOCALE].title, dek: t.body || ticker.locales[SOURCE_LOCALE].dek || '' };
+      const t = map.ticker;
+      if (t?.headline) ticker.locales[locale] = { title: t.headline, dek: t.body || '' };
       return locale;
     });
   }
@@ -513,25 +560,35 @@ async function refreshArticle(ticker, reason) {
   if (!validArticle(en)) throw new Error('live article invalid');
   if (slopHits(en).length) throw new Error(`live article has banned phrases: ${slopHits(en).join(', ')}`);
 
-  const deMap = await translateItems(
-    [{ id: 'a', headline: en.title, body: JSON.stringify({ dek: en.dek, facts: en.facts, body: en.body, context: en.context }) }],
-    'de',
-    ['headline', 'body']
-  );
-  let de = { title: en.title, dek: en.dek, facts: en.facts, body: en.body, context: en.context };
+  // German must never be a copy of the English text: if the translation call
+  // fails we omit the de slot entirely so the backfill/next cycle picks it up
+  // again (an English "de" version is worse than a missing one).
+  let de = null;
   try {
-    const t = deMap.a || {};
-    const parsed = JSON.parse(t.body);
-    de = {
-      title: t.headline || en.title,
-      dek: parsed.dek || en.dek,
-      facts: Array.isArray(parsed.facts) && parsed.facts.length ? parsed.facts : en.facts,
-      body: Array.isArray(parsed.body) && parsed.body.length ? parsed.body : en.body,
-      context: parsed.context || en.context,
-    };
-  } catch {
-    log('  article translation to DE failed, keeping EN text in DE slot');
+    const deMap = await translateItems(
+      [{ id: 'a', headline: en.title, body: JSON.stringify({ dek: en.dek, facts: en.facts, body: en.body, context: en.context }) }],
+      'de',
+      ['headline', 'body']
+    );
+    const t = deMap.a;
+    if (t?.headline) {
+      let parsed = {};
+      try { parsed = JSON.parse(t.body.replace(/^```(?:json)?|```$/g, '').trim()); } catch { parsed = {}; }
+      de = {
+        title: t.headline,
+        dek: parsed.dek || '',
+        facts: Array.isArray(parsed.facts) && parsed.facts.length ? parsed.facts : [],
+        body: Array.isArray(parsed.body) && parsed.body.length ? parsed.body : [],
+        context: parsed.context || '',
+      };
+      if (!de.dek || !de.body.length) {
+        log(`  article DE incomplete (dek ${de.dek ? 'ok' : 'missing'}, body ${de.body.length} paragraphs)`);
+      }
+    }
+  } catch (e) {
+    log(`  article translation to DE failed: ${e.message}`);
   }
+  if (!de) log('  article written without DE - translation backfill will fill it');
 
   const version = ticker.article?.locales
     ? {
@@ -571,7 +628,7 @@ async function refreshArticle(ticker, reason) {
     liveSlug: ticker.slug,
     stats: ticker.stats || null,
     sources: sources.slice(0, 20),
-    locales: { en, de },
+    locales: de ? { en, de } : { en },
     history,
     meta: {
       writer: model,
@@ -595,10 +652,10 @@ async function refreshArticle(ticker, reason) {
     slug,
     updatedAt: doc.updatedAt,
     reason,
-    locales: { en, de },
+    locales: de ? { en, de } : { en },
     versions: history,
   };
-  log(`  ARTICLE updated (${history.length} versions kept, ${sources.length} sources, DE ${de.title.slice(0, 40)}…)`);
+  log(`  ARTICLE updated (${history.length} versions kept, ${sources.length} sources, DE ${de ? de.title.slice(0, 40) + '…' : 'pending'})`);
 }
 
 /**

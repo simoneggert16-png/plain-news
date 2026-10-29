@@ -29,13 +29,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Skip when the last publish cycle committed content recently. This
-          # measures the last commit that touched content/ (an actual publish),
-          # not the last run: with many triggers, skipped runs must not reset
-          # the clock or the workflow skips itself forever.
+          # Skip when the last publish cycle committed content recently.
+          #
+          # Only "newsroom:" commits count. The live-ticker workflow writes to
+          # content/ every 10 minutes, so measuring "the last commit touching
+          # content/" would keep the newsroom switched off forever - that is
+          # exactly what happened: the tickers ran, the desk never did.
           mins=999
-          last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=content&per_page=1" \
-            --jq '.[0].commit.committer.date' 2>/dev/null || true)
+          last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=content&per_page=40" \
+            --jq '[.[] | select(.commit.message | startswith("newsroom:"))][0].commit.committer.date' 2>/dev/null || true)
           if [ -n "$last" ]; then
             mins=$(( ( $(date -u +%s) - $(date -d "$last" +%s) ) / 60 ))
             echo "Last content commit ${mins} min ago ($last)"
@@ -99,7 +101,13 @@ jobs:
               echo "no new stories in cycle $cycle"
             else
               git commit -q -m "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC"
-              git pull -q --rebase --autostash && git push -q || echo "push failed, continuing"
+              # The live tickers push to main every 10 minutes, so a push here
+              # regularly loses the race. Retry instead of dropping the cycle.
+              for attempt in 1 2 3 4; do
+                git pull -q --rebase --autostash && git push -q && break
+                echo "push attempt $attempt failed, retrying"
+                sleep $((attempt * 10))
+              done
               published_total=$((published_total + 1))
               echo "published in cycle $cycle"
             fi
@@ -120,9 +128,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=content&per_page=1" \
-            --jq '.[0].commit.committer.date' 2>/dev/null || true)
-          if [ -z "$last" ]; then echo "No content commit found - not chaining."; exit 0; fi
+          last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=content&per_page=40" \
+            --jq '[.[] | select(.commit.message | startswith("newsroom:"))][0].commit.committer.date' 2>/dev/null || true)
+          if [ -z "$last" ]; then echo "No newsroom commit found - not chaining."; exit 0; fi
           mins=$(( ( $(date -u +%s) - $(date -d "$last" +%s) ) / 60 ))
           echo "Last content commit was ${mins} min ago."
           if [ "$mins" -ge 120 ]; then
