@@ -170,15 +170,21 @@ function addSource(d, item, extra = {}) {
   return true;
 }
 
-const STOPWORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'were', 'deutsch', 'thema']);
+const STOPWORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'were', 'deutsch', 'thema', 'einer', 'eines', 'einem', 'einen', 'diese', 'dieser', 'diesem', 'werden', 'wurde', 'wurden', 'nicht', 'auch', 'sowie', 'oder', 'aber', 'noch', 'nur', 'schon', 'sich', 'sind', 'dass', 'nach', 'ueber', 'über', 'beim', 'vom', 'zum', 'zur', 'durch', 'gegen', 'ohne', 'zwischen', 'immer', 'jeder', 'jede', 'jedes', 'keine', 'mehr', 'sowie']);
 
 function keywordsOf(d) {
-  const text = `${d.title} ${d.angle} ${d.brief?.topic || ''} ${d.brief?.region || ''} ${(d.brief?.hints || '')}`;
-  const set = new Set(String(text).toLowerCase()
-    .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
-    .split(/\s+/)
-    .filter((w) => w.length >= 5 && !STOPWORDS.has(w)));
-  return [...set].slice(0, 12);
+  // The brief comes first: it is where a Swiss desk names the German-language
+  // terms the primary sources actually use, so those must survive the cap.
+  const text = `${(d.brief?.hints || '')} ${d.brief?.topic || ''} ${d.brief?.region || ''} ${d.title} ${d.angle}`;
+  const seeded = (Array.isArray(d.keywords) ? d.keywords : []).map((k) => String(k).toLowerCase());
+  const set = new Set([
+    ...seeded,
+    ...String(text).toLowerCase()
+      .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w.length >= 5 && !STOPWORDS.has(w)),
+  ]);
+  return [...set].slice(0, 24);
 }
 
 function keywordHits(text, keywords) {
@@ -362,7 +368,13 @@ async function ensureQueries(d) {
 async function research(d) {
   await ensureQueries(d);
 
-  const feeds = d.queries.slice(0, 5).map((q) => ({ outlet: `Search: ${q}`, url: googleNews(q), kind: 'aggregator' }));
+  // Rotate the window so a dossier with more than five queries uses all of them
+  // over several days instead of hammering the same five every run.
+  const size = Math.min(5, d.queries.length);
+  const start = ((d.researchRuns || 0) * size) % d.queries.length;
+  const picked = Array.from({ length: size }, (_, i) => d.queries[(start + i) % d.queries.length]);
+  d.researchRuns = (d.researchRuns || 0) + 1;
+  const feeds = picked.map((q) => ({ outlet: `Search: ${q}`, url: googleNews(q), kind: 'aggregator' }));
   const { items, feedsOk } = await safe(() => fetchFeeds(feeds, { maxAgeHours: 24 * 45, perFeed: 25 }), { items: [], feedsOk: 0 });
   log(`RESEARCH  ${d.slug}: ${items.length} hits from ${feedsOk} search feed(s)`);
 
