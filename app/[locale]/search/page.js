@@ -30,11 +30,11 @@ export default async function SearchPage({ params, searchParams }) {
   // Full-text search runs in Postgres (fast); community search runs alongside.
   // A community backend that is briefly unavailable must not take the article
   // search down with it.
-  const started = Date.now();
+  const timings = {};
   const timeIt = async (label, promise) => {
     const t0 = Date.now();
     const value = await promise;
-    console.log(`[search-timing] ${label}=${Date.now() - t0}ms`);
+    timings[label] = Date.now() - t0;
     return value;
   };
   const [slugs, userResults] = q
@@ -43,15 +43,16 @@ export default async function SearchPage({ params, searchParams }) {
         timeIt('community', searchCommunity(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] }))),
       ])
     : [[], { comments: [], submissions: [], chatMessages: [] }];
-  const afterQueries = Date.now();
 
+  const tBeforeEntries = Date.now();
   const results = await entriesForSlugs(slugs);
-  const afterEntries = Date.now();
-  console.log(`[search-timing] total-queries=${afterQueries - started}ms entries=${afterEntries - afterQueries}ms hits=${results.length}`);
+  timings.entries = Date.now() - tBeforeEntries;
+  const timingLine = `rpc=${timings.rpc}ms community=${timings.community}ms entries=${timings.entries}ms hits=${results.length}`;
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
     <div className="search-page">
+      {sp?.debug === 'timing' && <div data-search-timing={timingLine} style={{ display: 'none' }} />}
       <header className="search-header">
         <div className="label" style={{ marginBottom: '8px' }}>ARCHIV, VOLLTEXT & COMMUNITY-RECHERCHE</div>
         <h1 className="page-title">{isDe ? 'Suche & Recherche' : 'Search & Archive'}</h1>
