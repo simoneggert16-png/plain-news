@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import { listFor, searchArticles } from '@/lib/content.mjs';
-import { listAllComments, listSubmissions, listChatMessages } from '@/lib/communityStore.mjs';
+import { searchCommunity } from '@/lib/communityStore.mjs';
 import Card from '@/components/Card';
 
 export async function generateMetadata({ params, searchParams }) {
@@ -16,24 +16,6 @@ export async function generateMetadata({ params, searchParams }) {
     robots: q
       ? { index: false, follow: true }
       : { index: true, follow: true },
-  };
-}
-
-async function searchCommunityByUsername(query) {
-  if (!query || query.length < 2) return { comments: [], submissions: [], chatMessages: [] };
-  const qLower = query.toLowerCase().replace(/^@+/, '');
-  const [commentsBySlug, submissions, chatMessages] = await Promise.all([
-    listAllComments(),
-    listSubmissions(),
-    listChatMessages(),
-  ]);
-  const comments = Object.entries(commentsBySlug).flatMap(([slug, list]) =>
-    list.filter((comment) => comment.author.toLowerCase().includes(qLower)).map((comment) => ({ ...comment, slug }))
-  );
-  return {
-    comments,
-    submissions: submissions.filter((item) => item.author.toLowerCase().includes(qLower)),
-    chatMessages: chatMessages.filter((message) => message.user.toLowerCase().includes(qLower)),
   };
 }
 
@@ -53,7 +35,7 @@ export default async function SearchPage({ params, searchParams }) {
   const [slugs, userResults] = q
     ? await Promise.all([
         searchArticles(q).catch(() => []),
-        searchCommunityByUsername(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] })),
+        searchCommunity(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] })),
       ])
     : [[], { comments: [], submissions: [], chatMessages: [] }];
 
