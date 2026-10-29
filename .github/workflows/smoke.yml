@@ -6,13 +6,37 @@ name: Smoke
 on:
   pull_request:
   workflow_dispatch:
+  schedule:
+    # Production check. The build stays green when a dynamic route starts
+    # throwing at runtime - the front page was 500 for two days that way.
+    - cron: '17 * * * *'
 
 concurrency:
   group: smoke-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  production:
+    # Scheduled runs only: check the live site, not the pull request.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check production routes
+        run: |
+          fail=0
+          for p in /de /en /de/live /de/ticker /de/c/politics /de/c/world /de/markets; do
+            code=$(curl -s -m 30 -o /dev/null -w '%{http_code}' "https://www.plain-news.ch$p" || echo 000)
+            echo "$p -> $code"
+            [ "$code" = "200" ] || fail=1
+          done
+          if [ "$fail" != "0" ]; then
+            echo "::error::plain-news.ch liefert keine 200 auf allen Haupt-Routen"
+            exit 1
+          fi
+
   routes:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:

@@ -89,9 +89,13 @@ export { isDuplicateStory };
 // A translation call can fail (rate limit, timeout, malformed JSON). The
 // article is already published at that point, so the German site silently fell
 // back to English - 28 of 817 articles were English-only after one bad batch.
-// Retry a few of those at the start of every cycle.
-async function backfillTranslations(index, limit = 8) {
+// Retry a few of those, but never at the price of the news cycle: the backfill
+// used to run first, and when the translation service was slow the whole
+// cycle budget went into repairing old articles - the desk never published
+// anything. It now runs after publishing and with its own deadline.
+async function backfillTranslations(index, limit = 8, deadlineMs = 0) {
   const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
+  const expired = () => deadlineMs > 0 && Date.now() > deadlineMs;
   // German first: /de is the edition readers actually see. Other languages are
   // filled afterwards by the same pool or by the translations workflow.
   const ordered = ['de', ...targets.filter((c) => c !== 'de')];
@@ -107,6 +111,7 @@ async function backfillTranslations(index, limit = 8) {
   const batch = Number.isFinite(budget) ? tasks.slice(0, budget) : tasks;
   let done = 0;
   await pool(batch, TRANSLATION_CONCURRENCY, async ({ entry, locale }) => {
+    if (expired()) return;
     const article = loadArticle(entry.slug);
     if (!article) return;
     try {
@@ -416,10 +421,14 @@ async function main() {
   const index = loadIndex();
   const seen = new Set(state.seenUrls);
 
-  // Fix articles that were published while a translation call was failing.
-  if (timeLeft() > 8 * 60e3) {
-    await backfillTranslations(index, 8).catch((err) => log(`TRANSLATOR backfill error: ${err?.message || err}`));
-  }
+  // Background repair of incomplete translations. Publishing always comes
+  // first (see the call after Phase 2), so a slow translation service can no
+  // longer swallow the cycle.
+  const repairTranslations = async (minutes) => {
+    if (timeLeft() < (minutes + 2) * 60e3) return;
+    await backfillTranslations(index, 8, Date.now() + minutes * 60e3)
+      .catch((err) => log(`TRANSLATOR backfill error: ${err?.message || err}`));
+  };
 
   // Daily budget guard: protects the LLM quota and the Vercel build limit.
   const dayAgo = Date.now() - 864e5;
@@ -444,7 +453,10 @@ async function main() {
   }
   const items = raw.filter((i) => !seen.has(i.url));
   log(`SCOUT  ${feedsOk}/${FEEDS.length} feeds ok, ${raw.length} items, ${items.length} unseen (${items.filter((i) => i.isLive).length} live, ${items.filter((i) => i.watch >= 2).length} watchlist)`);
-  if (!items.length) return log('Nothing new. Done.');
+  if (!items.length) {
+    await repairTranslations(10);
+    return log('Nothing new. Done.');
+  }
 
   // Deduplicate against the last 14 days (full archive is only ~140 stories, but
   // old titles caused false positives on recurring topics).
@@ -645,7 +657,9 @@ async function main() {
   if (!events.length) {
     state.runs = [{ at: new Date().toISOString(), feedsOk, items: items.length, events: 0, published: 0, reason: 'quota-or-no-events', durationMs: Date.now() - RUN_STARTED }, ...(state.runs || [])].slice(0, 100);
     saveState(state);
-    return log('No publishable events this run. Done.');
+    log('No publishable events this run. Done.');
+    await repairTranslations(8);
+    return;
   }
 
   // ── Phase 1: report + edit (English) in parallel ──
@@ -669,33 +683,38 @@ async function main() {
     log(`  ✓ SAVED ${article.slug} (${article.category}, ${article.sourcePolicy})`);
   }
 
-  // ── Phase 2: translate accepted articles with one global pool ──
+  // ── Phase 2: translate accepted articles, German first ──
   const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
-  // German first: it is the edition readers notice, and the cycle budget is
-  // better spent on one finished language than on nine half-done ones.
-  const orderedTargets = ['de', ...targets.filter((c) => c !== 'de')];
-  const tasks = orderedTargets.flatMap((locale) => accepted.map((article) => ({ article, locale })));
   let translated = 0;
-  if (tasks.length && timeLeft() > 2 * 60e3) {
-    log(`TRANSLATOR ${tasks.length} jobs (${accepted.length} articles × ${targets.length} languages)…`);
-    const out = await pool(tasks, TRANSLATION_CONCURRENCY, async ({ article, locale }) => {
+  const runWave = async (locale) => {
+    if (!accepted.length || timeLeft() < 2 * 60e3) return;
+    const todo = accepted.filter((a) => !a.locales?.[locale]?.title);
+    if (!todo.length) return;
+    log(`TRANSLATOR ${todo.length} job(s) → ${locale}`);
+    const out = await pool(todo, TRANSLATION_CONCURRENCY, async (article) => {
       const t = await translate(article.locales[SOURCE_LOCALE], locale);
       article.locales[locale] = t;
-      if (locale === 'de' && article.locales.en.imageCaption) {
+      if (locale === 'de' && article.locales.en.imageCaption && !t.imageCaption) {
         // Vision already returns a German caption when it can; translate fallback only if missing.
-        if (!t.imageCaption) t.imageCaption = article.locales.en.imageCaption;
+        t.imageCaption = article.locales.en.imageCaption;
       }
       saveArticle(article);
       return { article, locale };
     });
     for (const r of out) {
       if (r && !r.error) translated++;
-      else if (r?.error) log(`    ✗ translation: ${r.error.message}`);
+      else if (r?.error) log(`    ✗ translation ${locale}: ${r.error.message}`);
     }
     const bySlug = new Map(accepted.map((a) => [a.slug, a]));
     index.articles = index.articles.map((e) => (bySlug.has(e.slug) ? toIndexEntry(bySlug.get(e.slug)) : e));
     saveIndex(index);
-  }
+  };
+  // /de is the edition readers notice: finish it before touching the rest.
+  await runWave('de');
+  for (const locale of targets.filter((c) => c !== 'de')) await runWave(locale);
+
+  // Repair old gaps only with what is left of the budget.
+  if (timeLeft() > 8 * 60e3) await repairTranslations(6);
 
   state.seenUrls = [...seen].slice(-10000);
   state.runs = [{
