@@ -30,6 +30,7 @@ if (fs.existsSync('.env')) {
 
 import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
+import { FEEDS } from './sources.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
 import { collectImages, assignImages } from './lib/illustrate.mjs';
 import { loadIndex, saveIndex, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
@@ -93,6 +94,12 @@ async function safe(fn, fallback) {
 }
 
 const googleNews = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-US&gl=US&ceid=US:en`;
+const bingNews = (q) => `https://www.bing.com/news/search?q=${encodeURIComponent(q)}&format=RSS&setlang=de&cc=ch`;
+
+// Google News refuses most datacenter requests, so the search feeds come back
+// nearly empty on GitHub runners. The home-market outlets are always read in
+// addition; they are the sources a Swiss investigation needs anyway.
+const HOME_FEEDS = FEEDS.filter((f) => f.market === 'ch');
 
 // ─────────────────────────── dossier storage ───────────────────────────
 function loadDossiers() {
@@ -374,7 +381,13 @@ async function research(d) {
   const start = ((d.researchRuns || 0) * size) % d.queries.length;
   const picked = Array.from({ length: size }, (_, i) => d.queries[(start + i) % d.queries.length]);
   d.researchRuns = (d.researchRuns || 0) + 1;
-  const feeds = picked.map((q) => ({ outlet: `Search: ${q}`, url: googleNews(q), kind: 'aggregator' }));
+  const feeds = [
+    ...picked.flatMap((q) => [
+      { outlet: `Search: ${q}`, url: googleNews(q), kind: 'aggregator' },
+      { outlet: `Bing: ${q}`, url: bingNews(q), kind: 'bing' },
+    ]),
+    ...HOME_FEEDS,
+  ];
   const { items, feedsOk } = await safe(() => fetchFeeds(feeds, { maxAgeHours: 24 * 45, perFeed: 25 }), { items: [], feedsOk: 0 });
   log(`RESEARCH  ${d.slug}: ${items.length} hits from ${feedsOk} search feed(s)`);
 

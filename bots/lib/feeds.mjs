@@ -27,6 +27,43 @@ function publisherFromAggregator(title = '') {
   return { title: title.slice(0, m.index).trim(), publisher };
 }
 
+// Bing News links are apiClick redirects and carry no publisher element, so the
+// outlet has to come from the target host.
+const OUTLET_BY_HOST = {
+  'srf.ch': 'SRF',
+  'nzz.ch': 'NZZ',
+  'tagesanzeiger.ch': 'Tages-Anzeiger',
+  'letemps.ch': 'Le Temps',
+  'swissinfo.ch': 'SWI swissinfo',
+  'watson.ch': 'Watson',
+  'republik.ch': 'Republik',
+  'inside-it.ch': 'inside-it',
+  'netzwoche.ch': 'Netzwoche',
+  'blick.ch': 'Blick',
+  'aargauerzeitung.ch': 'Aargauer Zeitung',
+  'luzernerzeitung.ch': 'Luzerner Zeitung',
+  'bernerzeitung.ch': 'Berner Zeitung',
+  'tagblatt.ch': 'Tagblatt',
+  'bazonline.ch': 'Basler Zeitung',
+  'admin.ch': 'admin.ch',
+  'parlament.ch': 'parlament.ch',
+  'bger.ch': 'Bundesgericht',
+  'efk.admin.ch': 'EFK',
+  'newsd.admin.ch': 'admin.ch',
+};
+
+function outletFromUrl(url = '') {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, '');
+    for (const [suffix, outlet] of Object.entries(OUTLET_BY_HOST)) {
+      if (host === suffix || host.endsWith(`.${suffix}`)) return outlet;
+    }
+    return host || null;
+  } catch {
+    return null;
+  }
+}
+
 /** Fetch all feeds in parallel; return recent, de-junked items. */
 export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 20 } = {}) {
   const cutoff = Date.now() - maxAgeHours * 3600e3;
@@ -62,7 +99,16 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 20 } = {})
         outlet = parsed.publisher;
       }
 
-      const link = it.link?.trim();
+      let link = it.link?.trim();
+      if (f.kind === 'bing') {
+        const target = String(link || '').match(/[?&]url=([^&]+)/);
+        const real = target ? decodeURIComponent(target[1]) : link;
+        const hostOutlet = outletFromUrl(real);
+        if (!hostOutlet) continue;
+        link = real;
+        outlet = hostOutlet;
+      }
+
       if (!link || JUNK.test(title) || OPINION.test(title) || LINK_JUNK.test(link)) continue;
       const ts = Date.parse(it.isoDate || it.pubDate || '') || Date.now();
       if (ts < cutoff) continue;
@@ -76,8 +122,8 @@ export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 20 } = {})
         summary,
         publishedAt: new Date(ts).toISOString(),
         ...(f.positive ? { positive: true } : {}),
-        via: f.via || (f.kind === 'aggregator' ? 'Google News' : null),
-        aggregator: f.kind === 'aggregator',
+        via: f.via || (f.kind === 'aggregator' ? 'Google News' : f.kind === 'bing' ? 'Bing News' : null),
+        aggregator: f.kind === 'aggregator' || f.kind === 'bing',
         isLive: LIVE_RE.test(title) || /\/live\//i.test(link),
       });
     }
