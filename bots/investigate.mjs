@@ -632,7 +632,8 @@ async function readInbox(d) {
   }
   if (!messages.length) return 0;
 
-  const rows = await outreachRows(d.slug).catch(() => []);
+  const rows = (await outreachRows(d.slug).catch(() => []))
+    .filter((r) => ['sent', 'replied'].includes(r.status));
   const handled = [];
 
   for (const msg of messages) {
@@ -645,6 +646,17 @@ async function readInbox(d) {
       return null;
     });
     if (!parsed) continue;
+
+    // Anyone can write to the desk address. Only a reply to a request we
+    // actually sent counts as evidence; everything else is a lead.
+    const row = rows.find((r) => String(r.to_email || '').toLowerCase() === String(msg.from_email).toLowerCase());
+    if (!row) {
+      const gap = `Unverlangte Mail von ${msg.from_email}: ${parsed.summary.slice(0, 220)}`;
+      if (!d.gaps.some((g) => g.toLowerCase() === gap.toLowerCase())) d.gaps.push(gap);
+      note(d, null, `mail from ${msg.from_email} (lead, no request on file)`);
+      handled.push(msg.id);
+      continue;
+    }
 
     const src = addEmailSource(d, msg);
     for (const text of parsed.claims) {
@@ -662,10 +674,7 @@ async function readInbox(d) {
       if (!d.gaps.some((g) => g.toLowerCase() === gap.toLowerCase())) d.gaps.push(gap.slice(0, 300));
     }
 
-    const row = rows.find((r) => String(r.to_email || '').toLowerCase() === String(msg.from_email).toLowerCase());
-    if (row) {
-      await setOutreach([row.id], { status: 'replied', reply_note: parsed.summary.slice(0, 1000) }).catch(() => {});
-    }
+    await setOutreach([row.id], { status: 'replied', reply_note: parsed.summary.slice(0, 1000) }).catch(() => {});
 
     if (parsed.needsReply && parsed.reply.length > 80) {
       await addOutreach([{
