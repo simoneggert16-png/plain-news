@@ -30,44 +30,18 @@ export default async function SearchPage({ params, searchParams }) {
   // Full-text search runs in Postgres (fast); community search runs alongside.
   // A community backend that is briefly unavailable must not take the article
   // search down with it.
-  const timings = {};
-  const timeIt = async (label, promise) => {
-    const t0 = Date.now();
-    const value = await promise;
-    timings[label] = Date.now() - t0;
-    return value;
-  };
   const [slugs, userResults] = q
     ? await Promise.all([
-        timeIt('rpc', searchArticles(q).catch(() => [])),
-        timeIt('community', searchCommunity(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] }))),
+        searchArticles(q).catch(() => []),
+        searchCommunity(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] })),
       ])
     : [[], { comments: [], submissions: [], chatMessages: [] }];
 
-  const tBeforeEntries = Date.now();
   const results = await entriesForSlugs(slugs);
-  timings.entries = Date.now() - tBeforeEntries;
-  if (sp?.debug === 'timing') {
-    const t0 = Date.now();
-    await searchArticles(q).catch(() => []);
-    timings.rpc2 = Date.now() - t0;
-    const t1 = Date.now();
-    await searchCommunity(q).catch(() => ({}));
-    timings.community2 = Date.now() - t1;
-    const base = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '').replace(/\/+$/, '');
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
-    for (const n of [1, 2]) {
-      const t2 = Date.now();
-      await fetch(`${base}/rest/v1/content_blobs?select=key&limit=1`, { headers: { apikey: key, Authorization: `Bearer ${key}` }, cache: 'no-store' }).catch(() => {});
-      timings[`net${n}`] = Date.now() - t2;
-    }
-  }
-  const timingLine = `rpc1=${timings.rpc}ms rpc2=${timings.rpc2}ms comm1=${timings.community}ms comm2=${timings.community2}ms entries=${timings.entries}ms net1=${timings.net1}ms net2=${timings.net2}ms hits=${results.length}`;
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
     <div className="search-page">
-      {sp?.debug === 'timing' && <div data-search-timing={timingLine} style={{ display: 'none' }} />}
       <header className="search-header">
         <div className="label" style={{ marginBottom: '8px' }}>ARCHIV, VOLLTEXT & COMMUNITY-RECHERCHE</div>
         <h1 className="page-title">{isDe ? 'Suche & Recherche' : 'Search & Archive'}</h1>
