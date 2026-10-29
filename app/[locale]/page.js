@@ -4,6 +4,8 @@ import { LOCALES, CATEGORIES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
 import { rankArticles, isElectionHeadline, sharesSubject } from '@/lib/storyRank.mjs';
+import { listLiveTickers } from '@/lib/liveStore.mjs';
+import { liveLocalize, liveUpdates, updateLocalize, clock } from '@/lib/live.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
@@ -26,7 +28,6 @@ export default async function Home({ params }) {
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
   const rawAll = await listFor();
-
   if (!rawAll.length) return <div className="empty">{t.empty}</div>;
 
   // Filter articles based on user preferences (server-side personalized)
@@ -50,6 +51,13 @@ export default async function Home({ params }) {
     brief.push(a);
   }
   brief.unshift(...electionPicks);
+  // Live coverage of whatever is actually running (election night, war,
+  // disaster, central bank decision). The tickers already exist - without this
+  // they were only reachable via /live, which is why the running stories looked
+  // absent from the front page.
+  const liveNow = await listLiveTickers({ status: 'live', limit: 6 })
+    .then(({ tickers }) => (tickers || []).slice(0, 3))
+    .catch(() => []);
   // Long reads get their own band: they are the pieces we spent the day on.
   const longreads = rawAll.filter((a) => a.form === 'longform').slice(0, 3);
   const L = localize(lead, locale);
@@ -77,6 +85,35 @@ export default async function Home({ params }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
       <TopicFilter locale={locale} t={t} />
+
+      {liveNow.length > 0 && (
+        <section className="live-strip" aria-label={t.live.nav}>
+          <div className="live-strip-head">
+            <span className="live-dot" aria-hidden="true" />
+            <span className="live-strip-title">{t.live.nav}</span>
+            <Link href={`/${locale}/live`} className="live-strip-all">{t.live.all} →</Link>
+          </div>
+          <ul className="live-strip-list">
+            {liveNow.map((tk) => {
+              const TT = liveLocalize(tk, locale);
+              const last = liveUpdates(tk)[0];
+              const lastLine = last ? updateLocalize(last, locale).headline : '';
+              return (
+                <li key={tk.slug}>
+                  <Link href={`/${locale}/live/${tk.slug}`}>
+                    <span className="live-strip-topic">{TT.title}</span>
+                    {lastLine && (
+                      <span className="live-strip-latest">
+                        {clock(last.at, locale)} · {lastLine}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
 
       <section className="lead-grid">
         <article className="lead">
