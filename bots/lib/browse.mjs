@@ -31,6 +31,21 @@ function interesting(href, base) {
   }
 }
 
+// Audit reports and court rulings arrive as PDFs; the desk has to read them.
+// unpdf wraps pdf.js and works without a browser binary.
+async function pdfText(bytes) {
+  try {
+    const { extractText } = await import('unpdf');
+    const { text } = await extractText(bytes, { mergePages: true });
+    return String(text || '')
+      .replace(/[ \t]+/g, ' ')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  } catch {
+    return '';
+  }
+}
+
 /**
  * @returns {Promise<{url:string,title:string,text:string,links:{url:string,text:string}[],pdf?:boolean,error?:string}>}
  */
@@ -49,15 +64,18 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
   const type = res.headers.get('content-type') || '';
   if (!res.ok) return { url, title: '', text: '', links: [], error: `HTTP ${res.status}` };
 
-  if (type.includes('pdf')) {
-    return {
-      url,
-      title: url.split('/').pop(),
-      text: '',
-      links: [],
-      pdf: true,
-      error: 'PDF: text extraction is not wired up yet — cite the document by URL and note what it is',
-    };
+  // Many authority servers label PDFs as octet-stream, so sniff the bytes.
+  const looksPdf = type.includes('pdf') || /\.pdf(\?|$)/i.test(url);
+  if (looksPdf) {
+    const buf = new Uint8Array(await res.arrayBuffer().catch(() => new ArrayBuffer(0)));
+    const head = String.fromCharCode(...buf.slice(0, 5));
+    if (buf.length && head === '%PDF-') {
+      const text = await pdfText(buf);
+      if (!text) {
+        return { url, title: url.split('/').pop(), text: '', links: [], pdf: true, error: 'PDF ohne lesbaren Text (Scan?) — nur als Beleg zitieren' };
+      }
+      return { url, title: url.split('/').pop(), text: text.slice(0, maxChars), links: [], pdf: true };
+    }
   }
 
   const html = await res.text().catch(() => '');

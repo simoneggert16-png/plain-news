@@ -427,7 +427,7 @@ async function researchAgent(d) {
           title: page.title,
           text: page.text,
           links: (page.links || []).slice(0, 20),
-          ...(page.pdf ? { note: 'PDF — cite by URL, quote only what the search snippet supports' } : {}),
+          ...(page.pdf ? { document: 'PDF — text extracted, cite page-level detail only as printed' } : {}),
         };
       },
     },
