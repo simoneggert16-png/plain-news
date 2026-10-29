@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
-import { listFor, localize, getAllArticles } from '@/lib/content.mjs';
+import { listFor, searchArticles } from '@/lib/content.mjs';
 import { listAllComments, listSubmissions, listChatMessages } from '@/lib/communityStore.mjs';
 import Card from '@/components/Card';
 
@@ -46,33 +46,19 @@ export default async function SearchPage({ params, searchParams }) {
   const bcp = LOCALES.find((l) => l.code === locale)?.bcp47 || 'de-CH';
 
   const all = await listFor();
-  const queryLower = q.toLowerCase();
 
-  // 1. Search full article contents (Titles, Deks, Facts AND full body text)
-  const fullBySlug = q ? new Map((await getAllArticles()).map((a) => [a.slug, a])) : new Map();
-  const results = q
-    ? all.filter((a) => {
-        const l = localize(a, locale);
-        const titleMatch = l.title?.toLowerCase().includes(queryLower);
-        const dekMatch = l.dek?.toLowerCase().includes(queryLower);
-        const factsMatch = (l.facts || []).some((f) => f.toLowerCase().includes(queryLower));
+  // Full-text search runs in Postgres (fast); community search runs alongside.
+  // A community backend that is briefly unavailable must not take the article
+  // search down with it.
+  const [slugs, userResults] = q
+    ? await Promise.all([
+        searchArticles(q).catch(() => []),
+        searchCommunityByUsername(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] })),
+      ])
+    : [[], { comments: [], submissions: [], chatMessages: [] }];
 
-        if (titleMatch || dekMatch || factsMatch) return true;
-
-        // Check full article body
-        const fullArticle = fullBySlug.get(a.slug);
-        if (fullArticle) {
-          const fullLoc = fullArticle.locales?.[locale] || fullArticle.locales?.['en'] || {};
-          const bodyMatch = (fullLoc.body || []).some((p) => p.toLowerCase().includes(queryLower));
-          if (bodyMatch) return true;
-        }
-
-        return false;
-      })
-    : [];
-
-  // 2. Search community users & contributors by username / author
-  const userResults = q ? await searchCommunityByUsername(q) : { comments: [], submissions: [], chatMessages: [] };
+  const bySlug = new Map(all.map((a) => [a.slug, a]));
+  const results = slugs.map((slug) => bySlug.get(slug)).filter(Boolean);
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (
@@ -176,7 +162,7 @@ export default async function SearchPage({ params, searchParams }) {
 
       {/* RESULTS GRID */}
       {results.length > 0 && (
-        <section className="grid">
+        <section className="grid grid-top">
           {results.map((a) => (
             <Card key={a.slug} a={a} locale={locale} t={t} bcp={bcp} />
           ))}

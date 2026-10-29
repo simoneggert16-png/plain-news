@@ -30,7 +30,8 @@ if (fs.existsSync('.env')) {
 
 import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
-import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
+import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
+import { collectImages, assignImages } from './lib/illustrate.mjs';
 import { loadIndex, saveIndex, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
 import { distinctOutlets, isPrimaryOutlet } from '../lib/editorial.mjs';
 import { LOCALES, SOURCE_LOCALE, SITE } from '../lib/config.mjs';
@@ -388,6 +389,11 @@ async function research(d) {
     const details = await fetchArticleDetails(s.url, MAX_SOURCE_CHARS).catch(() => null);
     s.readAt = nowISO();
     if (details?.text) s.text = details.text.slice(0, MAX_SOURCE_CHARS);
+    if (details?.image) {
+      s.image = details.image;
+      s.imageCaption = details.imageCaption;
+      s.imageCredit = details.imageCredit;
+    }
   });
 
   if (d.sources.length) await extract(d);
@@ -617,6 +623,9 @@ RULES
 - Contested claims: name who says what. Never present one side as established fact.
 - No opinion, no prosecution rhetoric, no "shocking", no calls to resign. Show the facts; the reader draws the conclusion.
 - Long, specific paragraphs. No bullet lists. No "in conclusion".
+- Do not write four short declarative sentences in a row, and do not open consecutive sentences with the same subject. Each paragraph needs one longer sentence with two clauses.
+- Depth comes from documents, figures and chronology, never from restating a finding in new words.
+- No evaluative summary sentences ("This shows…", "The pattern underlines…"). End the paragraph on the last fact.
 - The claims array must list every load-bearing fact with the source ids that carry it.
 
 Return exactly:
@@ -626,7 +635,7 @@ ${DRAFT_SCHEMA}`,
   return { draft: data, model };
 }
 
-async function editInvestigation(d, outreach, draft) {
+async function editInvestigation(d, outreach, draft, styleIssues = []) {
   const { data, model } = await chatJSON('editor', [
     {
       role: 'system',
@@ -634,7 +643,9 @@ async function editInvestigation(d, outreach, draft) {
     },
     {
       role: 'user',
-      content: `SOURCES:\n${sourcePack(d, 20, 2500)}\n\nCLAIMS ON FILE:\n${d.claims.map((c) => `[${c.id}] ${c.text} — ${c.sources.join(', ')}`).join('\n')}\n\nDRAFT:\n${JSON.stringify(draft)}\n\nCheck every sentence that carries a fact, a number, a date, a name or a quote.\n- Delete or correct anything not supported by the listed sources.\n- Keep the right of reply honest: an unanswered request is not a denial, and "no comment" must be reported as such with the date.\n- Do not add new facts and do not shorten the piece below ${Math.round(MIN_WORDS * 0.9)} words.\n\nVerdict: "publish" if every claim holds, "revise" with the corrected article in "article", "reject" if the evidence cannot carry the piece.\n\nReturn {"verdict":"publish|revise|reject","problems":["…"],"article":${DRAFT_SCHEMA}}`,
+      content: `SOURCES:\n${sourcePack(d, 20, 2500)}\n\nCLAIMS ON FILE:\n${d.claims.map((c) => `[${c.id}] ${c.text} — ${c.sources.join(', ')}`).join('\n')}\n\nDRAFT:\n${JSON.stringify(draft)}
+${styleIssues.length ? `\nSTYLE PROBLEMS MEASURED IN THE DRAFT (fix all of them):\n${styleIssues.map((p) => `- ${p}`).join('\n')}\n` : ''}
+Check every sentence that carries a fact, a number, a date, a name or a quote.\n- Delete or correct anything not supported by the listed sources.\n- Keep the right of reply honest: an unanswered request is not a denial, and "no comment" must be reported as such with the date.\n- Rewrite monotonous prose: vary sentence length, remove repeated sentence openings, cut evaluative summary sentences.\n- Do not add new facts and do not shorten the piece below ${Math.round(MIN_WORDS * 0.9)} words.\n\nVerdict: "publish" if every claim holds, "revise" with the corrected article in "article", "reject" if the evidence cannot carry the piece.\n\nReturn {"verdict":"publish|revise|reject","problems":["…"],"article":${DRAFT_SCHEMA}}`,
     },
   ], { temperature: 0.1, maxTokens: 16000 });
   return { review: data, model };
@@ -700,10 +711,13 @@ async function maybeWrite(d, outreach) {
   let problem = draftProblem(d, draft);
   if (problem) throw new Error(`draft rejected: ${problem}`);
 
+  const styleIssues = styleProblems(draft);
+  if (styleIssues.length) log(`WRITE   style: ${styleIssues.join(' | ')}`);
+
   let editorModel = null;
   let verdict = 'skipped';
   try {
-    const { review, model: em } = await editInvestigation(d, outreach, draft);
+    const { review, model: em } = await editInvestigation(d, outreach, draft, styleIssues);
     editorModel = em;
     verdict = review?.verdict || 'unknown';
     log(`WRITE   editor ${verdict}${review?.problems?.length ? ` — ${review.problems.slice(0, 3).join(' | ')}` : ''}`);
@@ -726,11 +740,11 @@ async function maybeWrite(d, outreach) {
 }
 
 // ─────────────────────────── 5. PUBLISH ───────────────────────────
-function articleSections(draft) {
-  const sections = draft.sections.map((s) => ({
+function articleSections(draft, pictures = []) {
+  const sections = assignImages(draft.sections.map((s) => ({
     heading: String(s.heading || '').trim().slice(0, 90),
     paragraphs: (s.paragraphs || []).map((p) => String(p).trim()).filter(Boolean),
-  }));
+  })), pictures);
   if (draft.rightOfReply) {
     sections.push({ heading: 'Right of reply', paragraphs: String(draft.rightOfReply).split(/\n{2,}/).map((p) => p.trim()).filter(Boolean) });
   }
@@ -749,26 +763,42 @@ async function translateInvestigation(block, locale) {
     },
     {
       role: 'user',
-      content: `Translate into ${lang.label}. Keep the same number of sections and paragraphs.\n\n${JSON.stringify({ title: block.title, dek: block.dek, standfirst: block.standfirst, facts: block.facts, sections: block.sections, context: block.context })}`,
+      content: `Translate into ${lang.label}. Keep the same number of sections and paragraphs. If a section has an "image" object, keep "url" and "credit" unchanged and translate only "caption".\n\n${JSON.stringify({ title: block.title, dek: block.dek, standfirst: block.standfirst, facts: block.facts, sections: block.sections, context: block.context, imageCaption: block.imageCaption || '' })}`,
     },
   ], { temperature: 0.2, maxTokens: 14000 });
   if (!Array.isArray(data.sections) || data.sections.length !== block.sections.length) throw new Error('translation lost sections');
+  const sections = data.sections.map((s, i) => {
+    const source = block.sections?.[i];
+    const section = { heading: String(s.heading || ''), paragraphs: (s.paragraphs || []).map(String) };
+    if (source?.image?.url) {
+      section.image = {
+        url: source.image.url,
+        credit: source.image.credit || '',
+        caption: String(s?.image?.caption || source.image.caption || '').trim(),
+      };
+    }
+    return section;
+  });
+
   return {
     title: String(data.title || block.title).trim(),
     dek: String(data.dek || block.dek).trim(),
     standfirst: String(data.standfirst || block.standfirst).trim(),
     facts: Array.isArray(data.facts) && data.facts.length === block.facts.length ? data.facts.map(String) : block.facts,
-    body: data.sections.flatMap((s) => (s.paragraphs || []).map(String)),
-    sections: data.sections.map((s) => ({ heading: String(s.heading || ''), paragraphs: (s.paragraphs || []).map(String) })),
+    body: sections.flatMap((s) => s.paragraphs),
+    sections,
     context: String(data.context || block.context || '').trim(),
-    imageCaption: '',
+    imageCaption: String(data.imageCaption || block.imageCaption || '').trim(),
   };
 }
 
 async function publish(d) {
   if (!d.draft) throw new Error('no draft to publish');
   const draft = d.draft;
-  const sections = articleSections(draft);
+  const pictures = await collectImages(d.sources, { max: 3 });
+  const hero = pictures[0] || null;
+  log(`PUBLISH  ${d.slug}: ${pictures.length} usable image(s)${hero ? ` — hero from ${hero.outlet || 'source'}` : ''}`);
+  const sections = articleSections(draft, pictures);
   const body = sections.flatMap((s) => s.paragraphs);
   const wordCount = draftWords(draft);
   const usedIds = new Set((draft.claims || []).flatMap((c) => c.sources || []));
@@ -781,8 +811,8 @@ async function publish(d) {
     slug: slugify(draft.title),
     category: d.category,
     form: 'investigation',
-    image: null,
-    imageCredit: null,
+    image: hero?.url || null,
+    imageCredit: hero?.credit || null,
     video: null,
     importance: 5,
     publishedAt: nowISO(),
@@ -799,7 +829,7 @@ async function publish(d) {
         body,
         sections,
         context: '',
-        imageCaption: '',
+        imageCaption: hero?.caption || '',
       },
     },
     history: [],

@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
@@ -300,7 +301,25 @@ export default async function ArticlePage({ params }) {
               {l.sections.map((s, i) => (
                 <section className="lf-section" key={i}>
                   {s.heading && <h2>{s.heading}</h2>}
-                  {(s.paragraphs || []).map((p, j) => <p key={j}>{p}</p>)}
+                  {(s.paragraphs || []).map((p, j) => (
+                    <Fragment key={j}>
+                      <p>{p}</p>
+                      {j === 0 && s.image?.url && (
+                        <figure className="lf-figure">
+                          <div className="lf-figure-wrap">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={s.image.url} alt={s.image.caption || ''} loading="lazy" />
+                          </div>
+                          {(s.image.caption || s.image.credit) && (
+                            <figcaption>
+                              {s.image.caption && <span className="caption-text">{s.image.caption}</span>}
+                              {s.image.credit && <span className="caption-credit">Foto: {s.image.credit}</span>}
+                            </figcaption>
+                          )}
+                        </figure>
+                      )}
+                    </Fragment>
+                  ))}
                 </section>
               ))}
             </div>

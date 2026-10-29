@@ -45,7 +45,7 @@ export async function translate(src, locale) {
   const messages = [
     {
       role: 'system',
-      content: `You are a professional news translator. Translate into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact. Do not add or remove information. Keep names, numbers and quotes accurate; use the established local spelling of place and person names.${terminologyFor(locale)} Reply with JSON only, same keys and same array lengths.`,
+      content: `You are a professional news translator. Translate into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact. Do not add or remove information. Keep names, numbers and quotes accurate; use the established local spelling of place and person names. Translate the meaning, not the words: no literal renderings of English stock phrases, and keep the sentence rhythm of the target language rather than mirroring English syntax.${terminologyFor(locale)} Reply with JSON only, same keys and same array lengths.`,
     },
     { role: 'user', content: JSON.stringify(input) },
   ];
