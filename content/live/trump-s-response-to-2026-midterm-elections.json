@@ -7,61 +7,111 @@
       "Facebook"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "openai/gpt-oss-20b"
+    "lastUpdateModel": "ollama/gemma4:31b"
   },
   "slug": "trump-s-response-to-2026-midterm-elections",
   "topic": "Trump's response to 2026 midterm elections",
   "status": "live",
   "article": {
     "slug": "trump-s-response-to-2026-midterm-elections",
-    "reason": "2 new update(s)",
+    "updatedAt": "2026-10-29T21:45:22.117Z",
+    "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Der Ukraine-Konflikt hält an, während bei den israelischen Wahlen Likud voraussichtlich 53 Sitze gewinnen wird.",
-        "body": [
-          "Likud soll laut The Jerusalem Post und BBC 53 Sitze im 120-Sitzigen Knesset gewinnen.",
-          "Die Prognose macht Likud zur größten Partei im Knesset.",
-          "Die Prognose wurde am 29. Oktober 2026 auf Basis von Teilresultaten veröffentlicht.",
-          "Inzwischen geht der Krieg in der Ukraine weiter, berichten Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU und WIBW.",
-          "Trump hatte versprochen, den Krieg zu beenden, aber die Berichte weisen darauf hin, dass der Konflikt nicht beendet ist.",
-          "Der Konflikt dauert seit Beginn des Krieges an, jedoch geben die Berichte keine Details zu den aktuellen Frontlinien an.",
-          "Die Berichte stammen von mehreren lokalen Nachrichtenquellen, die alle den fortlaufenden Konflikt bestätigen."
-        ],
-        "facts": [
-          "Der Krieg in der Ukraine geht am 29. Oktober 2026 weiter.",
-          "Likud soll laut Prognose 53 Sitze im 120-Sitzigen Knesset gewinnen.",
-          "Likud ist die größte Partei in den prognostizierten Ergebnissen.",
-          "Auch die Verbündeten von Likud sind Teil der 53-Sitz-Prognose.",
-          "Die Prognose stammt von The Jerusalem Post und BBC."
-        ],
-        "title": "Krieg in der Ukraine geht weiter, obwohl Trump versprochen hat, ihn zu beenden",
-        "context": "The Jerusalem Post und BBC berichteten über die prognostizierte Sitzzahl von Likud. Fox5 Vegas und andere Medien berichteten, dass der Krieg weitergeht."
-      },
       "en": {
-        "dek": "Ukraine conflict persists while Israeli elections see Likud projected to win 53 seats.",
-        "body": [
-          "Likud projected to win 53 seats in Israel's 120-seat Knesset, according to The Jerusalem Post and BBC.",
-          "The projection makes Likud the largest party in the Knesset.",
-          "The projection was reported on 29 Oct 2026 based on partial results.",
-          "Meanwhile, the war in Ukraine continues, according to Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU, and WIBW.",
-          "Trump had promised to end the war, but the reports note that the conflict has not ended.",
-          "The conflict has continued since the start of the war, but the reports do not provide details on current front lines.",
-          "The reports come from multiple local news outlets, all confirming the ongoing conflict."
-        ],
-        "facts": [
-          "Ukraine war continues as of 29 Oct 2026.",
-          "Likud projected to win 53 seats in Israel's 120-seat Knesset.",
-          "Likud is the largest party in the projected results.",
-          "Likud's allies also part of the 53-seat projection.",
-          "The projection comes from The Jerusalem Post and BBC."
-        ],
         "title": "Ukraine war continues despite Trump’s promise to end it",
-        "context": "The Jerusalem Post and BBC reported Likud's projected seat count. Fox5 Vegas and other outlets reported the war continues.",
+        "dek": "Trump was briefed on Iran blockade, Vance contacted Iran, Ukraine war persists, and Likud projected to lead Israel's Knesset.",
+        "facts": [
+          "Ukraine war continues as of 29 Oct 2026 (Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU, WIBW).",
+          "Likud and its allies projected to win 53 seats in Israel's 120‑seat Knesset (The Jerusalem Post, BBC).",
+          "Vice President JD Vance wrote to a senior Iranian official; Trump said the outreach concerned medical supplies (The Straits Times, Euronews).",
+          "President Trump received a briefing on the Iran naval blockade from Adm. Brad Cooper (Axios, The Jerusalem Post)."
+        ],
+        "body": [
+          "President Trump was briefed on the Iran naval blockade by U.S. Central Command chief Adm. Brad Cooper on Thursday, according to Axios and The Jerusalem Post. The briefing covered the blockade’s status and possible military options.",
+          "The briefing occurred after the United States reviewed its regional strategy, the outlets reported. It was part of ongoing discussions about Iran’s maritime activities.",
+          "Vice President JD Vance wrote to a senior Iranian official, and Trump said the outreach related to medical supplies, according to The Straits Times and Euronews. The letter was described as an attempt to revive peace talks.",
+          "The same sources noted that Vance’s contact aimed to open diplomatic channels with Iran. No further details on the content of the letter were provided.",
+          "Multiple local stations reported that the war in Ukraine continues despite Trump’s earlier promise to end it, citing Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU, and WIBW. The reports gave no new information on front‑line movements.",
+          "The conflict has persisted since its 2022 start, and the outlets did not specify current front‑line locations. They only confirmed ongoing hostilities.",
+          "The Jerusalem Post and BBC projected that Likud and its allies would hold 53 seats in Israel’s 120‑seat Knesset, making it the largest party, based on partial results on 29 Oct 2026. The projection was released after vote counts were tallied.",
+          "The projection was reported as the latest indicator of Israel’s parliamentary composition ahead of coalition talks. No final results had been certified at the time of reporting."
+        ],
+        "context": "The United States is monitoring several foreign conflicts as the 2026 midterm elections approach. Sources for these updates include Axios, The Jerusalem Post, The Straits Times, Euronews, and multiple U.S. local news stations.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "Ukraine-Krieg dauert trotz Trumps Versprechen zur Beendigung an",
+        "dek": "Trump wurde über Iran-Blockade informiert, Vance kontaktierte Iran, Ukraine-Krieg hält an und Likud wird voraussichtlich die israelische Knesset anführen.",
+        "facts": [
+          "Der Ukraine-Krieg dauert zum 29. Oktober 2026 an (Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU, WIBW).",
+          "Likud und seine Verbündeten werden voraussichtlich 53 Sitze in der 120-sitzigen Knesset Israels gewinnen (The Jerusalem Post, BBC).",
+          "Vizepräsident JD Vance schrieb an einen hochrangigen iranischen Beamten; Trump gab an, dass es bei der Kontaktaufnahme um medizinische Hilfsgüter ging (The Straits Times, Euronews).",
+          "Präsident Trump erhielt von Admiral Brad Cooper eine Einweisung zur iranischen Seeblockade (Axios, The Jerusalem Post)."
+        ],
+        "body": [
+          "Präsident Trump wurde am Donnerstag vom Chef des U.S. Central Command, Admiral Brad Cooper, über die iranische Seeblockade informiert, so Axios und The Jerusalem Post. Die Einweisung behandelte den Status der Blockade und mögliche militärische Optionen.",
+          "Die Einweisung erfolgte, nachdem die Vereinigten Staaten ihre Regionalstrategie überprüft hatten, berichteten die Medien. Sie war Teil laufender Diskussionen über die maritimen Aktivitäten des Iran.",
+          "Vizepräsident JD Vance schrieb an einen hochrangigen iranischen Beamten, und Trump gab an, dass die Kontaktaufnahme im Zusammenhang mit medizinischen Hilfsgütern stand, laut The Straits Times und Euronews. Das Schreiben wurde als Versuch beschrieben, Friedensgespräche wieder aufzunehmen.",
+          "Dieselben Quellen merkten an, dass Vances Kontakt darauf abzielt, diplomatische Kanäle zum Iran zu öffnen. Weitere Einzelheiten zum Inhalt des Schreibens wurden nicht bekannt gegeben.",
+          "Mehrere lokale Sender berichteten, dass der Krieg in der Ukraine trotz Trumps früherem Versprechen, ihn zu beenden, andauert, unter Berufung auf Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU und WIBW. Die Berichte enthielten keine neuen Informationen zu Frontbewegungen.",
+          "Der Konflikt besteht seit seinem Beginn im Jahr 2022, und die Medien gaben keine aktuellen Frontverläufe an. Sie bestätigten lediglich die anhaltenden Feindseligkeiten.",
+          "The Jerusalem Post und die BBC prognostizierten, dass Likud und seine Verbündeten basierend auf Teilergebnissen vom 29. Oktober 2026 53 Sitze in der 120-sitzigen Knesset Israels halten würden, was sie zur größten Partei machen würde. Die Prognose wurde nach der Auszählung der Stimmen veröffentlicht.",
+          "Die Prognose wurde als neuester Indikator für die parlamentarische Zusammensetzung Israels vor den Koalitionsgesprächen gemeldet. Zum Zeitpunkt der Berichterstattung waren noch keine endgültigen Ergebnisse zertifiziert worden."
+        ],
+        "context": "Die Vereinigten Staaten beobachten mehrere Auslandskonflikte, während die Zwischenwahlen 2026 näher rücken. Quellen für diese Aktualisierungen sind Axios, The Jerusalem Post, The Straits Times, Euronews und mehrere lokale US-Nachrichtensender."
       }
     },
-    "versions": [],
-    "updatedAt": "2026-10-29T17:57:02.186Z"
+    "versions": [
+      {
+        "at": "2026-10-29T17:57:02.186Z",
+        "reason": "2 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Ukraine conflict persists while Israeli elections see Likud projected to win 53 seats.",
+            "body": [
+              "Likud projected to win 53 seats in Israel's 120-seat Knesset, according to The Jerusalem Post and BBC.",
+              "The projection makes Likud the largest party in the Knesset.",
+              "The projection was reported on 29 Oct 2026 based on partial results.",
+              "Meanwhile, the war in Ukraine continues, according to Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU, and WIBW.",
+              "Trump had promised to end the war, but the reports note that the conflict has not ended.",
+              "The conflict has continued since the start of the war, but the reports do not provide details on current front lines.",
+              "The reports come from multiple local news outlets, all confirming the ongoing conflict."
+            ],
+            "facts": [
+              "Ukraine war continues as of 29 Oct 2026.",
+              "Likud projected to win 53 seats in Israel's 120-seat Knesset.",
+              "Likud is the largest party in the projected results.",
+              "Likud's allies also part of the 53-seat projection.",
+              "The projection comes from The Jerusalem Post and BBC."
+            ],
+            "title": "Ukraine war continues despite Trump’s promise to end it",
+            "context": "The Jerusalem Post and BBC reported Likud's projected seat count. Fox5 Vegas and other outlets reported the war continues.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Der Ukraine-Konflikt hält an, während bei den israelischen Wahlen Likud voraussichtlich 53 Sitze gewinnen wird.",
+            "body": [
+              "Likud soll laut The Jerusalem Post und BBC 53 Sitze im 120-Sitzigen Knesset gewinnen.",
+              "Die Prognose macht Likud zur größten Partei im Knesset.",
+              "Die Prognose wurde am 29. Oktober 2026 auf Basis von Teilresultaten veröffentlicht.",
+              "Inzwischen geht der Krieg in der Ukraine weiter, berichten Fox5 Vegas, FOX Carolina, WJHG, WMTV, KTTC, KY3, WEAU und WIBW.",
+              "Trump hatte versprochen, den Krieg zu beenden, aber die Berichte weisen darauf hin, dass der Konflikt nicht beendet ist.",
+              "Der Konflikt dauert seit Beginn des Krieges an, jedoch geben die Berichte keine Details zu den aktuellen Frontlinien an.",
+              "Die Berichte stammen von mehreren lokalen Nachrichtenquellen, die alle den fortlaufenden Konflikt bestätigen."
+            ],
+            "facts": [
+              "Der Krieg in der Ukraine geht am 29. Oktober 2026 weiter.",
+              "Likud soll laut Prognose 53 Sitze im 120-Sitzigen Knesset gewinnen.",
+              "Likud ist die größte Partei in den prognostizierten Ergebnissen.",
+              "Auch die Verbündeten von Likud sind Teil der 53-Sitz-Prognose.",
+              "Die Prognose stammt von The Jerusalem Post und BBC."
+            ],
+            "title": "Krieg in der Ukraine geht weiter, obwohl Trump versprochen hat, ihn zu beenden",
+            "context": "The Jerusalem Post und BBC berichteten über die prognostizierte Sitzzahl von Likud. Fox5 Vegas und andere Medien berichteten, dass der Krieg weitergeht."
+          }
+        }
+      }
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -70,8 +120,8 @@
       "title": "Trumps Reaktion auf die Parlamentswahlen 2026"
     },
     "en": {
-      "dek": "President Trump intensifies rhetoric and tightens inner circle amid looming mid‑term elections.",
-      "title": "Trump's response to 2026 mid‑term elections"
+      "title": "Trump's response to 2026 mid-term elections",
+      "dek": "President Trump intensifies rhetoric and tightens inner circle amid looming mid-term elections."
     },
     "es": {
       "dek": "El presidente Trump intensifica su retórica y estrecha su círculo interno ante las próximas elecciones de mitad de mandato.",
@@ -103,6 +153,64 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1793310309185-echg",
+      "at": "2026-10-29T21:45:09.185Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Trump briefed on Iran naval blockade",
+          "body": "U.S. Central Command chief Adm. Brad Cooper briefed President Trump on Thursday regarding the state of the Iran war. The briefing focused on the ongoing naval blockade, according to Axios and The Jerusalem Post."
+        },
+        "fr": {
+          "headline": "Trump informé du blocus naval iranien",
+          "body": "Le chef du Commandement central des États-Unis, l'amiral Brad Cooper, a informé le président Trump jeudi de l'état de la guerre avec l'Iran. Le briefing a porté sur le blocus naval en cours, selon Axios et The Jerusalem Post."
+        },
+        "es": {
+          "headline": "Trump recibe un informe sobre el bloqueo naval de Irán",
+          "body": "El jefe del Comando Central de EE. UU., el almirante Brad Cooper, informó al presidente Trump el jueves sobre el estado de la guerra con Irán. Según Axios y The Jerusalem Post, la sesión se centró en el bloqueo naval en curso."
+        },
+        "de": {
+          "headline": "Trump über iranische Seeblockade informiert",
+          "body": "Der Chef des U.S. Central Command, Admiral Brad Cooper, informierte Präsident Trump am Donnerstag über den Stand des Krieges mit dem Iran. Laut Axios und The Jerusalem Post konzentrierte sich die Besprechung auf die anhaltende Seeblockade."
+        },
+        "pt": {
+          "headline": "Trump é informado sobre bloqueio naval do Irão",
+          "body": "O chefe do Comando Central dos EUA, Almirante Brad Cooper, informou o Presidente Trump na quinta-feira sobre o estado da guerra com o Irão. A sessão focou-se no bloqueio naval em curso, segundo o Axios e o The Jerusalem Post."
+        },
+        "zh": {
+          "headline": "特朗普获悉伊朗海军封锁情况",
+          "body": "美国中央司令部司令布拉德·库珀海军上将周四向特朗普总统汇报了伊朗战争的现状。据Axios和《耶路撒冷邮报》报道，此次汇报重点关注正在进行的海军封锁。"
+        },
+        "it": {
+          "headline": "Trump informato sul blocco navale dell'Iran",
+          "body": "Il capo del Comando Centrale degli Stati Uniti, l'ammiraglio Brad Cooper, ha informato giovedì il presidente Trump sullo stato della guerra con l'Iran. Il briefing si è concentrato sull'attuale blocco navale, secondo Axios e The Jerusalem Post."
+        },
+        "ja": {
+          "headline": "トランプ氏、イランによる海上封鎖について報告を受ける",
+          "body": "米中央軍司令官のブラッド・クーパー海軍大将は木曜日、イランとの戦争状況についてトランプ大統領に報告した。Axiosおよびエルサレム・ポストによると、報告は現在進行中の海上封鎖に焦点が当てられた。"
+        },
+        "ko": {
+          "headline": "트럼프, 이란 해상 봉쇄 관련 보고 받아",
+          "body": "브래드 쿠퍼 미 중앙사령관은 목요일 트럼프 대통령에게 이란 전쟁 상황에 대해 보고했다. 악시오스와 예루살렘 포스트에 따르면, 이번 보고는 현재 진행 중인 해상 봉쇄에 초점을 맞췄다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "CENTCOM chief briefs Trump on Iran military options in meeting with Hegseth, Caine - report",
+          "url": "https://www.jpost.com/middle-east/iran-news/article-913297",
+          "publishedAt": "2026-10-29T21:58:34.000Z"
+        },
+        {
+          "outlet": "Axios",
+          "title": "Top U.S. Middle East commander briefs Trump on Iran blockade",
+          "url": "https://www.axios.com/2026/10/29/brad-cooper-briefs-trump-iran-naval-blockade",
+          "publishedAt": "2026-10-29T21:37:53.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-10-29T15:41:26.000Z",
       "id": "u-1793288486000-pr5y",
@@ -448,13 +556,73 @@
     "https://news.google.com/rss/articles/CBMidEFVX3lxTFBxTFJ3SlIyelN5dlE3NXotWEpaR3g0LUhXaGJWaHIzS0ZJOHZWVU85dUhGUE8wRmJCVk9XR1Z2ZEgxRmU2ZHd6alJTRTVYLVF4UWxLWTRXamVLMGo3Z015RjYwUDljRVBBYUxEb2JoQUdDdUNH?oc=5",
     "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9PaEVEc3FOT2xxREhzYVZhYzdSZjlWeE9ydnlGQ1JqT2ZLaG14QzhFN0hZWWlqRWJQR09DMGVWMmkwUFl4SVo3T0tSREFvUmQ2MXhhVEFIbU5IYU5qVDZVVGFRd0xsbzZn?oc=5",
     "https://www.kyivpost.com/post/88563",
-    "https://www.aljazeera.com/news/2026/10/29/south-korean-prosecutors-press-for-death-sentence-in-yoon-martial-law-case?traffic_source=rss"
+    "https://www.aljazeera.com/news/2026/10/29/south-korean-prosecutors-press-for-death-sentence-in-yoon-martial-law-case?traffic_source=rss",
+    "https://www.jpost.com/middle-east/iran-news/article-913297",
+    "https://www.jpost.com/israel-election-2026/article-913296",
+    "https://www.scmp.com/news/world/americas/article/3372641/brazils-flavio-bolsonaro-mocked-home-after-self-exile-us",
+    "https://www.axios.com/2026/10/29/brad-cooper-briefs-trump-iran-naval-blockade",
+    "https://thehill.com/homenews/campaign/6182647-republicans-investigate-democratic-candidate-scheme/",
+    "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQzZIa2dyaG5SOXg4Wk1GYkg2VEFyeVRqTUhic2xOWEFnNHBvM0lYVlFmbDJiYWlTeGVPdU5VSndSRGFwQmRLTFhyNzZqc01yeXU3bVZ4VjZhdF9CbE8tTDlKTDJULWsxaHFGUmV6ZEtONFJsOHdxSXNqU1lFV0x5WW1TWjhBMjQ?oc=5",
+    "https://variety.com/2026/tv/news/byron-allen-sells-starz-stock-steven-mnuchin-1236934569/",
+    "https://g1.globo.com/economia/noticia/2026/10/29/petrobras-conclui-perfuracao-com-mais-uma-descoberta-de-petroleo-em-aguas-ultra-profundas-do-amapa.ghtml",
+    "https://g1.globo.com/tecnologia/noticia/2026/10/29/google-vai-colocar-anuncios-nas-respostas-da-inteligencia-artificial-no-brasil-ainda-em-2026.ghtml",
+    "https://www.jpost.com/israel-election-2026/article-913294",
+    "https://www.nytimes.com/2026/10/29/insider/midterm-elections-coverage-questions.html",
+    "https://www.nytimes.com/2026/10/29/world/americas/cuba-foreign-minister-trump.html",
+    "https://www.jpost.com/israel-election-2026/article-913293",
+    "https://www.france24.com/en/tv-shows/business/20261029-ecb-president-lagarde-steps-down-in-order-to-speak-out",
+    "https://www.faz.net/aktuell/politik/usa-unter-trump/us-midterms-2026-wem-gehoeren-die-stimmen-der-latinos-201620077.html",
+    "https://www.faz.net/aktuell/politik/usa-unter-trump/us-midterms-2026-benzin-ist-teuer-aber-sonst-liebe-alles-was-trump-gemacht-hat-201629075.html",
+    "https://thehill.com/homenews/6182502-trump-attacks-andrews-sc-race-graham/",
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA0U1dPeEpuLXM4Q0ZBSk5pNmotWTZBMXVpOUhMR2otQ24tNXZ3dEVrOHJnelh1bGxWMUdhOVJwNlpjYkFLRXBJZHM4TWVCNWJBbzYzajU3bnc?oc=5",
+    "https://www.scmp.com/news/us/us-elections/article/3372640/michigan-senate-race-trumps-softer-china-tone-gives-candidates-room-look-elsewhere",
+    "https://www.axios.com/2026/10/29/midterms-election-lawsuits-ballot-disputes",
+    "https://www.abc.net.au/news/2026-10-30/us-midterms-daily-news-briefing-trump-economy/107321896",
+    "https://www.nytimes.com/2026/10/29/us/politics/homeland-security-hack.html",
+    "https://thehill.com/policy/technology/6182500-senators-press-kalshi-polymarket/",
+    "https://www.nytimes.com/2026/10/29/world/americas/machado-trump-venezuela-return.html",
+    "https://www.foxnews.com/politics/dem-probes-torture-young-trump-officials-crushing-legal-bills-subpoenaed-conservative-warns",
+    "https://news.google.com/rss/articles/CBMivgFBVV95cUxNNzlzdlNsUFVzQ2hXa192b3ZScnJFY1lYRm1yZHZTa3d1dVdJT1FLcklVZ0Y2YjBJc1dOVUxCd2ctY3hwbTJ6X1FHOHFEbDlfbWEtZFhBdV9KV3hidHBhMU9JTzlBME9DVXJMcHZFbl9HaV9QUmdKY3QxaHRENWREX2k3V0ZTT2ZCSm5oeTd6LTZXRDVWS1ZITDJvYzQ0TjVKZDRKaG5YblVSbmFxTHBNbnZOV3J2YmRjZEFTcUp3?oc=5",
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oeHhfTnotN1N5OU1vQ1lzRHUwTm5QUEdQd0k1bGxEWXRORldPalZGbVktUzNrMTRPT1pGZk0zLWlvMFNRV3RoOUpfeWIwQ0dPNHM3Q0thX1R4SHlCOXlNYmZ4SWFsRWdW?oc=5",
+    "https://www.cnbc.com/2026/10/29/polymarket-reports-outage-on-international-exchange-halts-trading.html",
+    "https://www.npr.org/2026/10/29/nx-s1-6018572/on-the-campaign-trail-trump-delivers-his-greatest-political-hits-and-mourns-end-of-rallies",
+    "https://thehill.com/homenews/campaign/6182421-vance-texas-senate-paxton-talarico-midterms/",
+    "https://thehill.com/policy/defense/6182420-hegseth-mullin-trump-arch-military/",
+    "https://www.aljazeera.com/news/2026/10/29/israel-election-result-shows-no-overall-majority-as-vote-count-complete?traffic_source=rss",
+    "https://www.marketwatch.com/story/the-midterms-are-crucial-to-the-future-of-social-security-no-matter-how-old-you-are-0f080a9c?mod=mw_rss_topstories",
+    "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOcHJhRzl4VW9WT0w0RGZwVnAtQ0p5bjBlMVctcXhDX0RiV1VpNlBqajNuZ0oybXE1ZlZVWWNyNGlmcXhQLTAwM3I2eFgzOVZJZFRFUGhDcHVNUU1CQjZHNEsyXzRmMmZIS0o1eU93WThsaE1UMlRIalAxY29IUzhzVWV3TXBZVTVWc3kyN194NThVRWxTZ0dPSlQ2LTRDaXhDOTZfek5QZTlueFYyZ05uVVBmWHU3dDVzUlFPLWVNakZqSWRudEIydk4xaUpYOV9Pb0dnT9IB1AFBVV95cUxOcHJhRzl4VW9WT0w0RGZwVnAtQ0p5bjBlMVctcXhDX0RiV1VpNlBqajNuZ0oybXE1ZlZVWWNyNGlmcXhQLTAwM3I2eFgzOVZJZFRFUGhDcHVNUU1CQjZHNEsyXzRmMmZIS0o1eU93WThsaE1UMlRIalAxY29IUzhzVWV3TXBZVTVWc3kyN194NThVRWxTZ0dPSlQ2LTRDaXhDOTZfek5QZTlueFYyZ05uVVBmWHU3dDVzUlFPLWVNakZqSWRudEIydk4xaUpYOV9Pb0dnTw?oc=5",
+    "https://www.axios.com/2026/10/29/alaska-senate-race-dan-sullivan-trump",
+    "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbF85dHQ0OC05ZGFINGNDdE82ejVYQzRmZ3pYNHp0cG5qX1d5TmcyY1JGa3pRUHFUVE5weGtFYTJTa1BlclpFbllIUWR2cUQ2LUgtX0JVSTRjMlU5Z3k2MG1IaTZSUEMwS2pFZl9WRnRJUlEwa0RTNENBNWNWQXNmOC1iRjB1UHRuYkFnMFhmU0JXcUVtZkZ2SGtPQ0hlSGF4aHl2cU4zVlVfRHVTUGo5dmt4X09oRnI1Sk5uVnpuUnAzbW5RQ0h5endOUGQzYnM?oc=5",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRlpCRG9NcHVDQ0tyZU1oTW4zc0FveHBWQmdzLTFpZW1Cal9nVlpmVHlyeGZodTBaS29JVFRTNlNDUmhDbVlzUUttZ2VwTGxNX21RaWhQSlN2eDI3ZU1ZUWc4TGdoVkd4bzhSaEROVDNhUDZjWGs4TkhWaVdraU84Q3haaFkybDhPTTZsNVBZbm52LWpvUGpPUVFKRFNDWk5OZWs5SmNMZ0ZiUlU?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxOb2EwbjNPa3JGOFhNaGtLOVVQeXRaZGF2NWY5U1hxQ3I2dXV5b3JCV28wVkZNWVZFWHowbTN2YlJjUFNEellUVXAyTkdablRKemVqN2dzank5dEFmd0EzekttMFpmY3Q3MVVzR1hXTk9Mb2xocFh0dDJ4cTlyWE9MX2l4YVIydmtjUzl5UFRnSGNUVzBSNkZyUk16d3dIdFhETjJkci1KZ0k5bEUzczUtQlJoZEVFUQ?oc=5",
+    "https://thehill.com/homenews/state-watch/6179994-live-updates-trump-vance-peltola-midterm-elections/",
+    "https://www.straitstimes.com/world/bolsonaro-ally-blames-chatgpt-for-now-deleted-president-elect-of-brazil-claim",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLVlPVkVnYnAxQlg3WXpENjk5YlhnM1M5eXYwYm9hektFZjNEeHU5ZkI0NVZCVzBZR25jdmJSdVFnVW1jOUZnUVV6Tm1aVFpMdG9MVGpMYjNPeGxDX19RSWxEdFRQc3BXenktMkpMVUhPNHZHNURzek1sdmgxemwtYmtLTmduSzdlZTA0UG12YTFhc3ZOT0pmRjkyTXBNRXJyWTgxeFg3MnN2VmNN?oc=5",
+    "https://thehill.com/homenews/state-watch/6182189-washington-official-responds-doj-voter-order/",
+    "https://www.france24.com/en/tv-shows/the-debate/20261029-michigan-s-el-sayed-targeted-by-republicans-in-midterms-race-will-the-religion-card-work",
+    "https://www.nytimes.com/2026/10/29/us/politics/nvidia-china-jensen-huang-trump.html",
+    "https://www.semafor.com/article/10/29/2026/republicans-prep-for-slowdown-of-trumps-healthcare-agenda",
+    "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQU3pvZjM0T092Z2FnMjl4eGV5ZmVpWlp3R2N0ZG5vYi1NeDl5aUlKNDJFU181UmJPMlNYMU8zWHloTUtTRHB1RlBUTzE4RVdBdmgwY3JfbEs1dkxWSWxqN3EyU2VlMzZQcFZocVNkamtqTFBLNTBFb0dyalc1YmY5dEtJT3BoZkl6Mm1RU3Q1TVFCd3c5d01raC1jR2dhS1BVNW8xOGYtaDRpXzFUaktKSzVtbXNpRmYxNExSeUxUVTcwMzdveHRtWEZ3SWtjUnZaLTIzd2E0a1JwaEZrTmhXak1QS3hsX25DRnJ4MA?oc=5",
+    "https://www.nytimes.com/2026/10/28/us/politics/trump-midterms-white-house-mood.html",
+    "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-we-have-intelligence-of-new-russian-ballistic-missile-strikes",
+    "https://www.aljazeera.com/news/2026/10/29/trump-says-wont-take-sides-in-brazil-election-but-calls-it-a-disgrace?traffic_source=rss",
+    "https://www.foxnews.com/politics/report-alleged-second-dan-sullivan-effort-emerges-early-1-10-alaskans-voted",
+    "https://news.google.com/rss/articles/CBMickFVX3lxTE5Kem1zNEtLLXJhQndGWG1LTlI2UWtfWGlqdzJwTGFhV2c1ZUpYYTlNQnNaMW9HUGlHN281RzZpTktsSXVEVXhnS1diRndPbzQwYmtnM2NQSkY5VUstWFAta2ZuVlpRYkhMZk5hNEZrN0Vpdw?oc=5",
+    "https://www.kyivpost.com/post/88599",
+    "https://news.google.com/rss/articles/CBMigwJBVV95cUxPTkJ0NUtOaFhxcWhJcDRKUmhaQnAweVJDb0ROM0VpeHRXSEhqNTA4cG9ySFJIS2hCcUI3YndMOVJkeU9NY0dmcWFnb01LVFF2TnNwQ2VZdTA2dUZFY21hLWFQMFFxMkhlb051dE1IazR6c3FPNXZUNDVEcXFlVXRXbTl6bk9mbngxd2NSeHZ5VHhoSWVvTDd3Mk1UUGQxd1g1Y3JNY19Iem5ZMFVDU3ZQcGlVakdLTm55RTl5MkNFeEhwYWhyQWl5UHRMZ285MWpIYnZ1QVpUeXlRbkNIVmN2djZURVc4LTZTbWM4c3V0dmpTQ2RHWmwyZ3lMSHJmQnZTZ1dN?oc=5",
+    "https://arstechnica.com/gadgets/2026/10/trump-declares-robot-imports-a-national-security-threat/",
+    "https://www.theguardian.com/us-news/2026/oct/29/seven-oil-tankers-288000-tonnes-russian-diesel-sail-us-putin-trump",
+    "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQbmJUTEdXSTA5Rk1uSER2RlFmSWxzMjc0TFBNZ1k2YWJUa0NzVFhZc2NtNVdMa0xZWG9mN0FBeEVlNGxURnNWdU13Ukh3dnNIZ092c3Y3aUZ0MWhqckpLQjhmUE1MLUluTjMxQXN2Rld2cnl4RDlxcUl2c25sQkpTelVRMnhVQVRzczNmcDI0SDdJX3h1a2s0V1pSWkRJdlpCQUNXN25OUjNpejFuT2pzRHRvdTNjNkFvSjNrXzRjdHZOY0ZLS3lfWW4ybENwRkFyQVkw?oc=5",
+    "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNZ2laMWRIeVJVT1J3V3d5X1JhRW9kRXh3NHVrekxmb29wbnp2eURleEZpTGxKdVdOS3pycnpTUlRaMEZ5LTRaU0Z3amNIcHQ0cVUwV3ZfRGRZdndWT0ZnN3B3ZEMwakl4VllYOGtOWXdJNE1hc2FyTHRfVHY0SnQxYzJ4el93cU55R0wxLXlVWk41Ni1fVmcwbmVqTDZ5ekdTTDAzNEFFRVotaU41RHY2MnZPckI3SjVIYlVkRmZfRkVySG15akRBdXUxMUZHX0kwUXhyWVk4YWpMV3YyWE5KZC1PQ2NkbXdM?oc=5",
+    "https://www.space.com/space-exploration/artemis/see-nasas-artemis-iii-astronauts-meet-trump-at-the-white-house-as-they-train-for-a-critical-2027-moon-lander-test-flight-photos",
+    "http://www.africanews.com/2026/10/29/no-clear-majority-emerges-as-israel-counts-final-election-votes/"
   ],
   "startedAt": "2026-10-29T17:54:19.813Z",
-  "updatedAt": "2026-10-29T18:07:22.839Z",
+  "updatedAt": "2026-10-29T21:45:12.027Z",
   "importance": 5,
   "wantsStats": true,
-  "articleSlug": null,
-  "sourceCount": 12,
+  "articleSlug": "trump-s-response-to-2026-midterm-elections",
+  "sourceCount": 13,
   "seenHeadlines": []
 }
