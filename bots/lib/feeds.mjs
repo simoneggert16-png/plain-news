@@ -30,7 +30,20 @@ function publisherFromAggregator(title = '') {
 /** Fetch all feeds in parallel; return recent, de-junked items. */
 export async function fetchFeeds(feeds, { maxAgeHours = 30, perFeed = 20 } = {}) {
   const cutoff = Date.now() - maxAgeHours * 3600e3;
-  const results = await Promise.allSettled(feeds.map((f) => parser.parseURL(f.url).then((r) => ({ f, r }))));
+  // rss-parser's own timeout covers the HTTP request, not a stalled socket or
+  // a server that never finishes the body. One hung feed blocked the whole
+  // newsroom cycle, so every feed gets a hard deadline.
+  const FEED_TIMEOUT_MS = Number(process.env.FEED_TIMEOUT_MS || 25000);
+  const withDeadline = (f) => {
+    let timer;
+    const timeout = new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(`feed timeout: ${f.url}`)), FEED_TIMEOUT_MS);
+    });
+    return Promise.race([parser.parseURL(f.url), timeout])
+      .then((r) => ({ f, r }))
+      .finally(() => clearTimeout(timer));
+  };
+  const results = await Promise.allSettled(feeds.map(withDeadline));
   const items = [];
   let ok = 0;
   for (const res of results) {

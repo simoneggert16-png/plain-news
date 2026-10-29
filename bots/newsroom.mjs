@@ -27,7 +27,7 @@ if (fs.existsSync('.env')) {
 
 import { FEEDS } from './sources.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
-import { chatJSON } from './lib/llm.mjs';
+import { chatJSON, setDeadline } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
 import { loadIndex, saveIndex, loadState, saveState, saveArticle, loadArticle, toIndexEntry, slugify } from './lib/store.mjs';
@@ -417,6 +417,9 @@ async function processEvent(event, recentTitles, seen) {
 
 // ─────────────────────────── MAIN ───────────────────────────
 async function main() {
+  // No single model call may outlive the cycle budget (4 min reserved for
+  // saving and pushing).
+  setDeadline(RUN_STARTED + RUN_BUDGET_MS - 4 * 60e3);
   const state = loadState();
   const index = loadIndex();
   const seen = new Set(state.seenUrls);

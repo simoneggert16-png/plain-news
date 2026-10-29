@@ -31,7 +31,7 @@ if (fs.existsSync('.env')) {
 
 import { FEEDS } from './sources.mjs';
 import { fetchFeeds } from './lib/feeds.mjs';
-import { chatJSON } from './lib/llm.mjs';
+import { chatJSON, setDeadline } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits } from './lib/style.mjs';
 import { loadIndex, saveIndex, loadArticle, saveArticle, toIndexEntry } from './lib/store.mjs';
 import { listLiveTickers, saveLiveTicker } from '../lib/liveStore.mjs';
@@ -970,6 +970,10 @@ async function main() {
 
   if (args.end) return manualEnd(args.end);
   if (args.create) return manualCreate(args);
+
+  // One ticker cycle must stay well inside the loop's 10-minute rhythm; a
+  // stalled model call must not freeze the ticker for hours.
+  setDeadline(Date.now() + (Number(process.env.LIVE_CYCLE_BUDGET_MINUTES) || 20) * 60e3);
 
   log(`RADAR  fetching ${FEEDS.length} feeds (last ${WINDOW_HOURS}h)…`);
   const { items, feedsOk } = await fetchFeeds(FEEDS, { maxAgeHours: WINDOW_HOURS, perFeed: PER_FEED });
