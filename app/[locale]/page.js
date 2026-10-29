@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { LOCALES, CATEGORIES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
-import { rankArticles, isElectionHeadline, sharesSubject } from '@/lib/storyRank.mjs';
+import { rankArticles, storyScore, isElectionHeadline, sharesSubject } from '@/lib/storyRank.mjs';
 import { listLiveTickers } from '@/lib/liveStore.mjs';
 import { liveLocalize, liveUpdates, updateLocalize, clock } from '@/lib/live.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
@@ -37,6 +37,26 @@ export default async function Home({ params }) {
   // Lead = highest-impact story of the last 30h, not just the newest one.
   // Elections and wars stay on the front page for a day instead of being
   // buried by the next minor item that happens to publish at :26.
+  // Live coverage of whatever is actually running (election night, war,
+  // disaster, central bank decision). Needed before the lead is chosen: a
+  // running ticker is the best available signal for "this is big right now".
+  const liveNow = await listLiveTickers({ status: 'live', limit: 6 })
+    .then(({ tickers }) => (tickers || []))
+    .catch(() => []);
+  const liveBySlug = new Map();
+  for (const tk of liveNow) {
+    if (tk.articleSlug) liveBySlug.set(tk.articleSlug, tk);
+    if (tk.slug) liveBySlug.set(tk.slug, tk);
+  }
+  // Everything the desk scores gets importance 4-5, so the ranking degenerates
+  // to "newest first" and a ballot curiosity can outrank a national election.
+  // A running ticker carries two signals the score does not: the desk decided
+  // the event is big, and it keeps producing confirmed updates.
+  const liveBoost = (a) => {
+    const tk = liveBySlug.get(a.slug);
+    return tk ? 4 + Math.min(6, Number(tk.updateCount) || 0) : 0;
+  };
+
   const dayAgo = Date.now() - 30 * 36e5;
   const recent = displayArticles.filter((a) => Date.parse(a.publishedAt) >= dayAgo);
   // Nothing on the German front page may be English: prefer articles that
@@ -50,7 +70,8 @@ export default async function Home({ params }) {
     if (!t) return false;
     return normTitle(t) !== normTitle(a.locales?.en?.title);
   };
-  const rankedAll = rankArticles(recent.length ? recent : displayArticles);
+  const rankedAll = rankArticles(recent.length ? recent : displayArticles)
+    .sort((a, b) => (storyScore(b) + liveBoost(b)) - (storyScore(a) + liveBoost(a)));
   const lead = rankedAll.find(translated) || rankedAll[0] || displayArticles[0];
   const rest = displayArticles.filter((a) => a.slug !== lead.slug);
   // The brief may carry at most two election headlines, otherwise every vote in
@@ -88,13 +109,6 @@ export default async function Home({ params }) {
     }
   }
   brief.unshift(...electionPicks);
-  // Live coverage of whatever is actually running (election night, war,
-  // disaster, central bank decision). The tickers already exist - without this
-  // they were only reachable via /live, which is why the running stories looked
-  // absent from the front page.
-  const liveNow = await listLiveTickers({ status: 'live', limit: 6 })
-    .then(({ tickers }) => (tickers || []).slice(0, 3))
-    .catch(() => []);
   // Long reads get their own band: they are the pieces we spent the day on.
   const longreads = rawAll.filter((a) => a.form === 'longform').slice(0, 3);
   const L = localize(lead, locale);
@@ -131,7 +145,7 @@ export default async function Home({ params }) {
             <Link href={`/${locale}/live`} className="live-strip-all">{t.live.all} →</Link>
           </div>
           <ul className="live-strip-list">
-            {liveNow.map((tk) => {
+            {liveNow.slice(0, 3).map((tk) => {
               const TT = liveLocalize(tk, locale);
               const last = liveUpdates(tk)[0];
               const lastLine = last ? updateLocalize(last, locale).headline : '';
