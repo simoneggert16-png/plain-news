@@ -103,28 +103,47 @@ async function backfillTranslations(index, limit = 8, deadlineMs = 0) {
     .filter((e) => targets.some((c) => !e.locales?.[c]?.title))
     .slice(0, limit);
   if (!missing.length) return 0;
-  const tasks = ordered.flatMap((locale) =>
-    missing.filter((e) => !e.locales?.[locale]?.title).map((entry) => ({ entry, locale }))
-  );
-  // One cycle can only afford a slice - the German jobs sit at the front.
+  // One job per article: its locales all live in the same JSON file, so
+  // parallel jobs for the same slug used to overwrite each other and only the
+  // last translation survived. Budget counts translations, German first.
+  const byArticle = new Map();
+  for (const entry of missing) {
+    const locales = ordered.filter((l) => !entry.locales?.[l]?.title);
+    if (locales.length) byArticle.set(entry.slug, { entry, locales });
+  }
+  // One cycle can only afford a slice.
   const budget = Number(process.env.BACKFILL_MAX_JOBS || 24);
-  const batch = Number.isFinite(budget) ? tasks.slice(0, budget) : tasks;
+  const batch = [];
+  let planned = 0;
+  for (const job of byArticle.values()) {
+    if (planned >= budget) break;
+    const locales = Number.isFinite(budget) ? job.locales.slice(0, budget - planned) : job.locales;
+    if (!locales.length) continue;
+    batch.push({ entry: job.entry, locales });
+    planned += locales.length;
+  }
   let done = 0;
-  await pool(batch, TRANSLATION_CONCURRENCY, async ({ entry, locale }) => {
+  await pool(batch, TRANSLATION_CONCURRENCY, async ({ entry, locales }) => {
     if (expired()) return;
     const article = loadArticle(entry.slug);
     if (!article) return;
-    try {
-      const t = await translate(article.locales[SOURCE_LOCALE], locale);
-      if (!t?.title) return;
-      article.locales[locale] = t;
-      saveArticle(article);
-      const i = index.articles.findIndex((x) => x.slug === entry.slug);
-      if (i >= 0) index.articles[i] = toIndexEntry(article);
-      done++;
-    } catch (err) {
-      log(`TRANSLATOR backfill ${entry.slug}/${locale}: ${err?.message || err}`);
+    let changed = false;
+    for (const locale of locales) {
+      if (expired()) break;
+      try {
+        const t = await translate(article.locales[SOURCE_LOCALE], locale);
+        if (!t?.title) continue;
+        article.locales[locale] = t;
+        changed = true;
+        done++;
+      } catch (err) {
+        log(`TRANSLATOR backfill ${entry.slug}/${locale}: ${err?.message || err}`);
+      }
     }
+    if (!changed) return;
+    saveArticle(article);
+    const i = index.articles.findIndex((x) => x.slug === entry.slug);
+    if (i >= 0) index.articles[i] = toIndexEntry(article);
   });
   if (done) saveIndex(index);
   log(`TRANSLATOR backfill: ${done} of ${batch.length} queued (${tasks.length} missing) translation(s) fixed`);
