@@ -8,7 +8,7 @@
 // observation is real (a search result, a fetched page), never remembered.
 import { chatJSON } from './llm.mjs';
 
-const OBSERVATION_CHARS = 2600;
+const OBSERVATION_CHARS = 3200;
 const REPEAT_LIMIT = 2;
 
 function toolDocs(tools) {
@@ -46,6 +46,7 @@ export async function runAgent({
 } = {}) {
   const byName = new Map(tools.map((t) => [t.name, t]));
   const observations = [];
+  const history = [];
   const steps = [];
   const seen = new Map();
   let final = null;
@@ -68,7 +69,9 @@ ${PROTOCOL}`;
     const messages = [
       { role: 'system', content: system },
       { role: 'user', content: brief },
-      ...observations.map((text) => ({ role: 'user', content: text })),
+      // The model has to see its own earlier steps, otherwise it repeats
+      // searches and forgets which document it already opened.
+      ...history,
     ];
 
     const started = Date.now();
@@ -111,6 +114,8 @@ ${PROTOCOL}`;
 
     const observation = `OBSERVATION ${step} (${name || 'none'})\n${clip(result)}`;
     observations.push(observation);
+    history.push({ role: 'assistant', content: JSON.stringify(data) });
+    history.push({ role: 'user', content: observation });
     steps.push({
       step,
       thought,
