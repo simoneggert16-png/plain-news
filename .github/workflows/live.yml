@@ -86,7 +86,7 @@ jobs:
           fi
 
           if [ -n "$FORCED_CREATE" ] || [ -n "$FORCED_END" ]; then
-            node scripts/sync-content.mjs || echo "supabase mirror skipped"
+            timeout 600 node scripts/sync-content.mjs || echo "supabase mirror skipped"
             git add content
             git diff --cached --quiet || {
               git commit -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
@@ -109,7 +109,7 @@ jobs:
             # A failing cycle must not kill the loop: the next one may succeed.
             node bots/live.mjs || echo "live.mjs exited $?"
 
-            node scripts/sync-content.mjs || echo "supabase mirror skipped"
+            timeout 600 node scripts/sync-content.mjs || echo "supabase mirror skipped"
 
             # Never commit while a rebase from the previous attempt is half
             # resolved - that is how conflict markers reached index.json.

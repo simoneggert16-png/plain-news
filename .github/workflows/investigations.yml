@@ -87,13 +87,8 @@ jobs:
           INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
         run: node bots/investigate.mjs
 
-      - name: Mirror content to Supabase
-        if: always()
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: node scripts/sync-content.mjs || echo "supabase mirror skipped"
-
+      # The work is committed before the mirror runs. A slow upload must never
+      # cost the desk its findings.
       - name: Commit dossiers and published investigations
         if: always()
         run: |
@@ -104,3 +99,11 @@ jobs:
           git commit -m "investigations: $(date -u +'%Y-%m-%d %H:%M') UTC"
           git pull --rebase --autostash
           git push
+
+      - name: Mirror content to Supabase
+        if: always()
+        timeout-minutes: 12
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/sync-content.mjs || echo "supabase mirror skipped"

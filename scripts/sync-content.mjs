@@ -191,6 +191,9 @@ async function writeMirror() {
       });
       for (const { article, sum } of batch) nextArticles[article.slug] = sum;
       uploaded += batch.length;
+      // The map is written after every batch: a run that is cut short leaves
+      // behind what it managed to upload, and the next run continues there.
+      await writeHashMap(indexSum, nextListings, nextArticles);
     } catch (err) {
       // One bad batch must not cost the whole mirror.
       failed++;
@@ -212,18 +215,7 @@ async function writeMirror() {
     }
   }
 
-  // The hash map goes last: whatever failed above is simply tried again next
-  // time, because its hash was never recorded.
-  try {
-    await rest('content_blobs?on_conflict=key', {
-      method: 'POST',
-      body: [{ key: 'hashes', data: { index: indexSum, listings: nextListings, articles: nextArticles }, updated_at: new Date().toISOString() }],
-      prefer: 'resolution=merge-duplicates,return=minimal',
-      timeoutMs: 60000,
-    });
-  } catch (err) {
-    console.error(`hash map failed: ${err.message}`);
-  }
+  await writeHashMap(indexSum, nextListings, nextArticles);
 
   if (failed) console.error(`${failed} batch(es) failed`);
 
@@ -231,7 +223,21 @@ async function writeMirror() {
   process.exitCode = ok ? 0 : 2;
 }
 
-async function readHashes() {  try {
+async function writeHashMap(indexSum, listings, articles) {
+  try {
+    await rest('content_blobs?on_conflict=key', {
+      method: 'POST',
+      body: [{ key: 'hashes', data: { index: indexSum, listings, articles }, updated_at: new Date().toISOString() }],
+      prefer: 'resolution=merge-duplicates,return=minimal',
+      timeoutMs: 60000,
+    });
+  } catch (err) {
+    console.error(`hash map failed: ${err.message}`);
+  }
+}
+
+async function readHashes() {
+  try {
     const rows = await rest('content_blobs?key=eq.hashes&select=data', { key: readKey, timeoutMs: 30000 });
     const data = rows?.[0]?.data;
     if (data && typeof data === 'object' && data.articles) return data;

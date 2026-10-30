@@ -122,7 +122,7 @@ jobs:
             started=$(date +%s)
             echo "::group::Cycle $cycle ($(date -u +%H:%M) UTC)"
             node bots/newsroom.mjs || echo "cycle $cycle failed, continuing"
-            node scripts/sync-content.mjs || echo "supabase mirror skipped"
+            timeout 600 node scripts/sync-content.mjs || echo "supabase mirror skipped"
             if ! node scripts/check-content.mjs --fix; then
               echo "content/index.json is broken - keeping the cycle local, not committing"
               git reset -q
