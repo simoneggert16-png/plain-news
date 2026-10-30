@@ -44,7 +44,10 @@ jobs:
           else
             echo "Could not read last content commit; running anyway."
           fi
-          if [ "$mins" -lt 60 ]; then
+          # Two hours is the shortest distance between two newsroom publishes:
+          # every publish is a Vercel deployment, and the plan allows 100 of
+          # them a day for the whole account.
+          if [ "$mins" -lt 120 ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Skipping: published ${mins} min ago."
           fi
@@ -103,32 +106,11 @@ jobs:
           # depends on the scheduler: the next queued trigger continues after.
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
-          # The live tickers push to content/ every 10 minutes, so a rebase
-          # regularly stops on a content/index.json conflict and - worse - a
-          # half-resolved rebase then gets committed with conflict markers,
-          # which blanked the whole front page. On a conflict: abort the
-          # rebase, merge with our side winning (our fresh entries), rebuild
-          # the entries the other side had from their article files, verify,
-          # then push again.
-          push_cycle() {
-            for attempt in 1 2 3 4 5; do
-              if git pull -q --rebase --autostash; then
-                git push -q && return 0
-              fi
-              git rebase --abort 2>/dev/null || true
-              if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
-                node scripts/sync-index.mjs --missing || true
-                node scripts/check-content.mjs --fix || { echo "index unreadable after merge"; return 1; }
-                git add content
-                git commit -q -m "newsroom: merge upstream" || true
-                git push -q && return 0
-              fi
-              git merge --abort 2>/dev/null || true
-              echo "push attempt $attempt failed, retrying"
-              sleep $((attempt * 10))
-            done
-            return 1
-          }
+          # Every push to main is a Vercel deployment, and the plan allows 100
+          # a day. The newsroom alone asked for more than that. So the cycle
+          # publishes through bash scripts/push-content.sh, which counts the day's
+          # deployments and pushes exactly once - even when the other side
+          # wrote to content/ in the meantime.
           deadline=$(( $(date +%s) + 300 * 60 ))
           cycle=0
           published_total=0
@@ -142,26 +124,22 @@ jobs:
               echo "content/index.json is broken - keeping the cycle local, not committing"
               git reset -q
             else
-              git add content
-              if git diff --cached --quiet; then
-                echo "no new stories in cycle $cycle"
+              pushed=1
+              bash scripts/push-content.sh "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC" || pushed=0
+              if [ "$pushed" = 1 ]; then
+                published_total=$((published_total + 1))
+                echo "published in cycle $cycle"
               else
-                git commit -q -m "newsroom: $(date -u +'%Y-%m-%d %H:%M') UTC"
-                if push_cycle; then
-                  published_total=$((published_total + 1))
-                  echo "published in cycle $cycle"
-                else
-                  echo "cycle $cycle: commit kept, push failed after retries"
-                fi
+                echo "cycle $cycle: the content is committed but the push failed"
               fi
             fi
             echo "::endgroup::"
-            # Aim for one publish cycle per ~90 min. Every cycle that finds new
+            # Aim for one publish cycle per ~3 h. Every cycle that finds new
             # stories is a push, and every push is a Vercel deployment: at
-            # ~55 min the newsroom alone asked for more deployments than the
+            # ~90 min the newsroom alone asked for more deployments than the
             # plan allows in a day. Never sleep past the deadline - the step
             # timeout would kill the run before the handover.
-            pause=$(( 5400 - ($(date +%s) - started) ))
+            pause=$(( 10800 - ($(date +%s) - started) ))
             if [ "$pause" -gt 60 ] && [ $(( $(date +%s) + pause )) -lt "$deadline" ]; then
               sleep "$pause"
             fi

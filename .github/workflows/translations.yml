@@ -9,7 +9,9 @@ on:
         description: Max articles to repair (empty = all)
         default: ''
   schedule:
-    - cron: '40 */6 * * *'
+    # Twice a day. Every run ends in a push to main, and every push is a
+    # Vercel deployment - the plan allows 100 of them a day for the account.
+    - cron: '40 5,17 * * *'
 
 permissions:
   contents: write
@@ -45,42 +47,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "simoneggert16-png"
-          git config user.email "simoneggert16@gmail.com"
           # The newsroom and the live tickers push to content/ while this run is
           # busy, so a rebase can stop on content/index.json. The old
           # `git pull --rebase ... || true` then committed conflict markers and
-          # blanked the front page. Never continue while a rebase is in
-          # progress: abort it and merge instead, then repair the index.
-          sync_upstream() {
-            for attempt in 1 2 3 4 5; do
-              if git pull -q --rebase --autostash; then return 0; fi
-              git rebase --abort 2>/dev/null || true
-              if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
-                node scripts/sync-index.mjs --missing || true
-                node scripts/check-content.mjs --fix || return 1
-                git add content
-                git commit -q -m "translations: merge upstream" || true
-                return 0
-              fi
-              git merge --abort 2>/dev/null || true
-              sleep $((attempt * 10))
-            done
-            return 1
-          }
-          sync_upstream || { echo "could not sync with origin/main"; exit 1; }
+          # blanked the front page. The push script aborts such a rebase and
+          # merges instead, then rebuilds the index from the article files.
           if [ -f translated-slugs.txt ]; then
             node scripts/sync-index.mjs --file translated-slugs.txt
           fi
           node scripts/check-content.mjs --fix
-          git add content
-          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
-          git commit -q -m "translations: $(date -u +'%Y-%m-%d %H:%M') UTC"
-          sync_upstream || { echo "could not sync with origin/main"; exit 1; }
-          # Every push is a Vercel deployment. When the day's budget is spent
-          # the repairs stay in the commit and the next run tries again.
-          if ! node scripts/deploy-budget.mjs; then
-            echo "The day's deployments are spent - the translations wait."
-            exit 0
-          fi
-          git push -q || { sleep 10; sync_upstream && git push -q; }
+          bash scripts/push-content.sh "translations: $(date -u +'%Y-%m-%d %H:%M') UTC" || echo "the translations are committed but not published"
