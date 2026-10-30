@@ -149,15 +149,15 @@ const SOURCE = fs.readFileSync(new URL('../bots/investigate.mjs', import.meta.ur
 
 // The dossier file is a script, not a library: the function is taken out of
 // it as it stands, so the test cannot drift away from the code.
-function take(name) {
-  const at = SOURCE.indexOf(`function ${name}(`);
+function take(name, from = SOURCE) {
+  const at = from.indexOf(`function ${name}(`);
   assert.ok(at >= 0, `${name} not found`);
-  const start = SOURCE.slice(Math.max(0, at - 6), at) === 'async ' ? at - 6 : at;
+  const start = from.slice(Math.max(0, at - 6), at) === 'async ' ? at - 6 : at;
   let depth = 0;
   let opened = false;
-  for (let i = start; i < SOURCE.length; i++) {
-    if (SOURCE[i] === '{') { depth++; opened = true; }
-    else if (SOURCE[i] === '}' && --depth === 0 && opened) return SOURCE.slice(start, i + 1);
+  for (let i = start; i < from.length; i++) {
+    if (from[i] === '{') { depth++; opened = true; }
+    else if (from[i] === '}' && --depth === 0 && opened) return from.slice(start, i + 1);
   }
   throw new Error(`${name} unterminated`);
 }
@@ -278,6 +278,8 @@ test('a model whose quota is used up is not tried again', async () => {
 function desk({ shelf = [], approve = '' } = {}) {
   return new Function(`
     const DB_FIELDS = ${JSON.stringify(SOURCE.match(/const DB_FIELDS = \[([^\]]*)\];/)[1].split(',').map((s) => s.trim().replace(/^'|'$/g, '')).filter(Boolean))};
+    const REMINDER_AFTER_DAYS = ${SOURCE.match(/const REMINDER_AFTER_DAYS = (\d+)/)[1]};
+    const REMINDERS_PER_LETTER = ${SOURCE.match(/const REMINDERS_PER_LETTER = (\d+)/)[1]};
     const SENT_STATES = ['sent', 'replied'];
     const APPROVE_LETTERS = ${JSON.stringify(approve)};
     const REJECT_LETTERS = '';
@@ -295,9 +297,10 @@ function desk({ shelf = [], approve = '' } = {}) {
     ${take('saveLetter')}
     ${take('outreachRows')}
     ${take('queueOutreach')}
+    ${take('queueReminders')}
     ${take('parseLetterDecision')}
     ${take('applyLetterDecision')}
-    return { queueOutreach, outreachRows, applyLetterDecision, ledger };
+    return { queueOutreach, queueReminders, outreachRows, applyLetterDecision, ledger };
   `)();
 }
 
@@ -350,4 +353,74 @@ test('a decision for another dossier touches nothing', async () => {
   const d = { slug: 'a-story', letters: [{ id: 'L1', to_email: 'press@example.org', status: 'draft' }] };
   await applyLetterDecision(d);
   assert.equal(d.letters[0].status, 'draft');
+});
+
+// A letter that was sent and got no answer is an open question. A desk asks
+// again — and the reminder waits for the editor like every other letter.
+test('a letter without an answer is asked again', async () => {
+  const { queueReminders } = desk();
+  const longAgo = new Date(Date.now() - 20 * 864e5).toISOString();
+  const d = {
+    slug: 'a-story',
+    letters: [{ id: 'L1', to_email: 'press@example.org', org: 'Example Press', status: 'sent', sent_at: longAgo }],
+  };
+  assert.equal(await queueReminders(d), 1);
+  assert.equal(d.letters.length, 2);
+  assert.equal(d.letters[1].reminds, 'L1');
+  assert.equal(d.letters[1].status, 'requested');
+  assert.equal(d.letters[1].to_email, 'press@example.org');
+});
+
+test('a letter that was answered is not asked again', async () => {
+  const { queueReminders } = desk();
+  const longAgo = new Date(Date.now() - 20 * 864e5).toISOString();
+  const d = {
+    slug: 'a-story',
+    letters: [{ id: 'L1', to_email: 'press@example.org', org: 'Example Press', status: 'replied', sent_at: longAgo }],
+  };
+  assert.equal(await queueReminders(d), 0);
+  assert.equal(d.letters.length, 1);
+});
+
+test('the same letter is not chased over and over', async () => {
+  const { queueReminders } = desk();
+  const longAgo = new Date(Date.now() - 20 * 864e5).toISOString();
+  const d = {
+    slug: 'a-story',
+    letters: [
+      { id: 'L1', to_email: 'press@example.org', org: 'Example Press', status: 'sent', sent_at: longAgo },
+      { id: 'L2', to_email: 'press@example.org', org: 'Example Press', status: 'requested', reminds: 'L1' },
+    ],
+  };
+  await queueReminders(d);
+  assert.equal(d.letters.filter((l) => l.reminds === 'L1').length, 1);
+});
+
+// The editor's desk: a request and its reminder are two letters, even when
+// they go to the same address.
+const ADMIN = fs.readFileSync(new URL('../app/api/admin/investigations/route.js', import.meta.url), 'utf8');
+const mergeOutreach = new Function(`${take('mergeOutreach', ADMIN)}; return mergeOutreach;`)();
+
+test('a request and its reminder are two letters on the editor’s desk', () => {
+  const letters = [
+    { id: 'L1', dbId: 7, slug: 'a-story', to_email: 'press@example.org', subject: 'Request', body: 'the questions', status: 'sent' },
+    { id: 'L2', dbId: 8, slug: 'a-story', to_email: 'press@example.org', subject: 'Reminder', body: 'still waiting', status: 'draft' },
+  ];
+  const shelf = [
+    { id: 7, slug: 'a-story', to_email: 'press@example.org', subject: 'Request', body: '', status: 'sent' },
+    { id: 8, slug: 'a-story', to_email: 'press@example.org', subject: '', body: '', status: 'requested' },
+  ];
+  const rows = mergeOutreach(shelf, letters);
+  assert.equal(rows.length, 2);
+  assert.equal(rows.find((r) => r.id === 7).body, 'the questions');
+  assert.equal(rows.find((r) => r.id === 8).body, 'still waiting');
+});
+
+test('a letter the shelf does not know is still on the editor’s desk', () => {
+  const rows = mergeOutreach([], [
+    { id: 'L3', dbId: null, slug: 'a-story', to_email: 'press@example.org', subject: 'Request', body: 'the questions', status: 'draft' },
+  ]);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].id, 'L3');
+  assert.equal(rows[0].body, 'the questions');
 });

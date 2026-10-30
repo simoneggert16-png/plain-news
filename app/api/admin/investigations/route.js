@@ -93,6 +93,7 @@ function lettersFromDossiers(dossiers) {
     for (const l of d.letters || []) {
       out.push({
         id: String(l.id),
+        dbId: l.dbId ?? null,
         slug: d.slug,
         to_email: l.to_email || '',
         org: l.org || null,
@@ -104,6 +105,7 @@ function lettersFromDossiers(dossiers) {
         sent_at: l.sent_at || null,
         error: l.error || null,
         reply_note: l.reply_note || null,
+        reminds: l.reminds || null,
         created_at: l.created_at || null,
       });
     }
@@ -111,15 +113,32 @@ function lettersFromDossiers(dossiers) {
   return out;
 }
 
-/** One letter, one row: the shelf has the last word, the ledger the text. */
+/**
+ * One letter, one row: the shelf has the last word, the ledger the text.
+ *
+ * A desk may write to the same address twice — the request and the reminder.
+ * Those are two letters and two rows, so the row a letter belongs to is
+ * found by its own id and not by its address.
+ */
 function mergeOutreach(shelf, letters) {
   const out = [...shelf];
-  const seen = new Set(shelf.map((r) => String(r.to_email || '').toLowerCase()));
+  const taken = new Set();
   for (const l of letters) {
     const mail = String(l.to_email || '').toLowerCase();
-    if (!mail || seen.has(mail)) continue;
-    seen.add(mail);
-    out.push(l);
+    if (!mail) continue;
+    const row = (l.dbId != null && shelf.find((r) => r.id === l.dbId))
+      || shelf.find((r) => !taken.has(r.id) && String(r.to_email || '').toLowerCase() === mail);
+    if (!row) {
+      // A letter the desk knows and the shelf does not: it is still on the table.
+      out.push(l);
+      continue;
+    }
+    taken.add(row.id);
+    const mine = out.find((o) => o.id === row.id);
+    if (!mine) continue;
+    if (!mine.body && l.body) mine.body = l.body;
+    if (!mine.subject && l.subject) mine.subject = l.subject;
+    if (!mine.reply_note && l.reply_note) mine.reply_note = l.reply_note;
   }
   return out.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
 }

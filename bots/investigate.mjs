@@ -1704,6 +1704,7 @@ function letterRow(d, letter) {
     sent_at: letter.sent_at || null,
     error: letter.error || null,
     reply_note: letter.reply_note || null,
+    reminds: letter.reminds || null,
     created_at: letter.created_at || null,
   };
 }
@@ -1729,12 +1730,20 @@ async function outreachRows(d) {
   const rows = await safe(() => listOutreach({ limit: 300 }), []);
   const letters = ledger(d);
   const byMail = new Map();
-  for (const l of letters) byMail.set(String(l.to_email || '').toLowerCase(), l);
+  for (const l of letters) {
+    const mail = String(l.to_email || '').toLowerCase();
+    if (!byMail.has(mail)) byMail.set(mail, l);
+  }
   const out = letters.map((l) => letterRow(d, l));
 
   for (const row of rows.filter((r) => r.slug === d.slug)) {
     const mail = String(row.to_email || '').toLowerCase();
-    const known = byMail.get(mail);
+    // A shelf row belongs to the letter that wrote it. Two letters to the
+    // same address — the first request and the reminder — are two rows.
+    const known =
+      letters.find((l) => l.dbId != null && l.dbId === row.id) ||
+      letters.find((l) => l.dbId == null && String(l.to_email || '').toLowerCase() === mail) ||
+      byMail.get(mail);
     if (!known) {
       // A recipient the editor queued while the ledger did not know him.
       const letter = {
@@ -1791,9 +1800,24 @@ function withDisclosure(body) {
   return `${text}\n\n${DISCLOSURE}`;
 }
 
-async function draftEmail(d, { org, note: hint }) {
+async function draftEmail(d, { org, note: hint, reminder }) {
   const claims = [...d.claims].sort((a, b) => b.weight - a.weight).slice(0, 6)
     .map((c) => `- ${c.text}`).join('\n');
+  const rules = reminder
+    ? `- This is a reminder, not a new request: we wrote to ${org} on ${reminder.sentDay} with the subject "${reminder.subject || 'our request for comment'}" and have had no answer.
+- Two short paragraphs: what we are waiting for, and that we would still like to publish their reply.
+- Say once that the research is AI-assisted and editor-reviewed.
+- Ask for an answer by ${replyDeadline()}.
+- Sign: PLAIN. Investigative desk, ${EDITORIAL_EMAIL}
+- No accusations, no legal threats, no flattery, no emojis, no markdown. Plain text, at most 120 words.`
+    : `- Greeting: formal, to the organisation (no invented names).
+- One neutral paragraph: who we are (PLAIN., investigative desk, plain-news.ch), that this research is AI-assisted and editor-reviewed, and what we are looking into.
+- 3-5 numbered questions. Each must be answerable and about one specific fact, payment, decision or date from the list above.
+- Say we will publish their reply; they may choose full or summarized.
+- Offer to correct anything factually wrong.
+- Ask for an answer by ${replyDeadline()}.
+- Sign: PLAIN. Investigative desk, ${EDITORIAL_EMAIL}
+- No accusations, no legal threats, no flattery, no emojis, no markdown. Plain text, at most 280 words.`;
   const { data } = await chatJSON('writer', [
     {
       role: 'system',
@@ -1809,14 +1833,7 @@ ${claims}
 Write an email to: ${org}${hint ? `\nInternal note from the editor: ${hint}` : ''}
 
 RULES
-- Greeting: formal, to the organisation (no invented names).
-- One neutral paragraph: who we are (PLAIN., investigative desk, plain-news.ch), that this research is AI-assisted and editor-reviewed, and what we are looking into.
-- 3-5 numbered questions. Each must be answerable and about one specific fact, payment, decision or date from the list above.
-- Say we will publish their reply; they may choose full or summarized.
-- Offer to correct anything factually wrong.
-- Ask for an answer by ${replyDeadline()}.
-- Sign: PLAIN. Investigative desk, ${EDITORIAL_EMAIL}
-- No accusations, no legal threats, no flattery, no emojis, no markdown. Plain text, at most 280 words.
+${rules}
 
 Return {"subject":"…","body":"…"}`,
     },
@@ -1871,20 +1888,75 @@ async function queueOutreach(d) {
   return queued.length;
 }
 
+// A letter that was sent and got no answer is not a closed question. A real
+// desk asks again — once, politely — and the editor still holds the button.
+const REMINDER_AFTER_DAYS = 12;
+const REMINDERS_PER_LETTER = 1;
+
+async function queueReminders(d) {
+  const letters = ledger(d);
+  const counts = new Map();
+  for (const l of letters) if (l.reminds) counts.set(l.reminds, (counts.get(l.reminds) || 0) + 1);
+  const due = letters.filter((l) => {
+    if (l.status !== 'sent' || !l.sent_at) return false;
+    if ((counts.get(l.id) || 0) >= REMINDERS_PER_LETTER) return false;
+    const age = (Date.now() - new Date(l.sent_at).getTime()) / 864e5;
+    return Number.isFinite(age) && age >= REMINDER_AFTER_DAYS;
+  });
+  const queued = [];
+  for (const letter of due.slice(0, 2)) {
+    if (!letter.to_email) continue;
+    const sentDay = String(letter.sent_at).slice(0, 10);
+    const entry = {
+      id: nextLetterId(d),
+      to_email: letter.to_email,
+      org: letter.org || null,
+      contact_name: letter.contact_name || null,
+      status: 'requested',
+      reminds: letter.id,
+      subject: '',
+      reply_note: `Reminder: the letter of ${sentDay} is unanswered.`,
+      created_at: nowISO(),
+      updated_at: nowISO(),
+    };
+    letters.push(entry);
+    counts.set(letter.id, (counts.get(letter.id) || 0) + 1);
+    try {
+      const row = await requestOutreach({ slug: d.slug, toEmail: letter.to_email, org: letter.org, note: entry.reply_note });
+      if (row?.id) entry.dbId = row.id;
+    } catch (err) {
+      log(`OUTREACH  reminder not on the shelf: ${err.message}`);
+    }
+    queued.push(entry.org || entry.to_email);
+  }
+  if (queued.length) {
+    note(d, null, `reminder(s) prepared: ${queued.join(', ')}`);
+    log(`OUTREACH  ${queued.length} reminder(s) prepared for letters without an answer`);
+  }
+  return queued.length;
+}
+
 async function draftOutreach(d) {
   const rows = await outreachRows(d);
   const requested = rows.filter((r) => r.status === 'requested');
+  // A reminder is older than the new requests and easier to lose: it goes
+  // first.
+  const order = [...requested.filter((r) => r.reminds), ...requested.filter((r) => !r.reminds)];
   const drafted = [];
 
   // The desk writes the text; the editor decides whether it goes out. An
   // address that is not on file is never guessed.
-  for (const row of requested.slice(0, 3)) {
+  for (const row of order.slice(0, 3)) {
     const org = row.org || row.to_email;
     try {
-      const mail = await draftEmail(d, { org, note: row.reply_note || '' });
+      const original = row.reminds ? ledger(d).find((l) => l.id === row.reminds) : null;
+      const reminder = original
+        ? { sentDay: String(original.sent_at || '').slice(0, 10), subject: original.subject || '' }
+        : null;
+      const mail = await draftEmail(d, { org, note: row.reply_note || '', reminder });
       await saveLetter(d, row, { ...mail, status: 'draft', error: null });
       drafted.push(org);
-      log(`OUTREACH  drafted for ${org}`);
+      log(`OUTREACH  drafted for ${org}${reminder ? ' (reminder)' : ''}`);
     } catch (err) {
       log(`OUTREACH  draft failed for ${org}: ${err.message}`);
     }
@@ -2894,6 +2966,7 @@ async function main() {
         // A dead database must not take the shift with it. The requests are
         // prepared for the editor either way; the draft is the work product
         // and it does not need a single row in a table.
+        await queueReminders(d).catch((err) => log(`OUTREACH  reminder failed: ${err.message}`));
         await queueOutreach(d).catch((err) => log(`OUTREACH  queue failed: ${err.message}`));
         await draftOutreach(d).catch((err) => log(`OUTREACH  drafting failed: ${err.message}`));
         const fresh = await outreachRows(d).catch(() => []);
