@@ -3,6 +3,7 @@ import { LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
 import { entriesForSlugs, searchArticles } from '@/lib/content.mjs';
 import { searchCommunity } from '@/lib/communityStore.mjs';
+import { withDeadline } from '@/lib/cache.mjs';
 import Card from '@/components/Card';
 
 export async function generateMetadata({ params, searchParams }) {
@@ -33,7 +34,11 @@ export default async function SearchPage({ params, searchParams }) {
   const [slugs, userResults] = q
     ? await Promise.all([
         searchArticles(q).catch(() => []),
-        searchCommunity(q).catch(() => ({ comments: [], submissions: [], chatMessages: [] })),
+        withDeadline(searchCommunity(q), 4000, 'community search').catch(() => ({
+          comments: [],
+          submissions: [],
+          chatMessages: [],
+        })),
       ])
     : [[], { comments: [], submissions: [], chatMessages: [] }];
 

@@ -10,6 +10,7 @@
 // article JSON no longer has to travel inside every Vercel deployment.
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 import { LOCALES } from '../lib/config.mjs';
 import { buildListing, listingKey } from '../lib/listing.mjs';
@@ -61,6 +62,8 @@ async function rest(pathAndQuery, { key = serviceKey, method = 'GET', body, pref
   const text = await res.text();
   return text ? JSON.parse(text) : null;
 }
+
+const hash = (value) => crypto.createHash('sha1').update(value).digest('hex').slice(0, 16);
 
 async function countRows(table) {
   const res = await fetch(`${url}/rest/v1/${table}?select=*`, {
@@ -115,11 +118,23 @@ if (verifyOnly) {
 // Set exitCode instead of calling process.exit(): exiting while the undici
 // connections are still closing has crashed Node 24 on Windows (libuv assert).
 async function writeMirror() {
+  // Four workflows mirror the content into Supabase, and every one of them
+  // used to upload the whole archive again. 26 MB of upserts left the database
+  // so busy that the website had to wait seconds for every read. A hash of
+  // what is already there turns the mirror into a delta.
+  const known = await readHashes();
+  const nextArticles = { ...(known?.articles || {}) };
+  const nextListings = { ...(known?.listings || {}) };
+
   // The slim list indexes come first. They are small, they are what the
   // pages actually read, and a slow upload of the full index must never keep
   // the site waiting for megabytes.
   for (const locale of LOCALES) {
     const listing = buildListing(entries, locale.code);
+    const sum = hash(JSON.stringify(listing));
+    const unchanged = known && known.listings?.[locale.code] === sum;
+    nextListings[locale.code] = sum;
+    if (unchanged) continue;
     try {
       await rest('content_blobs?on_conflict=key', {
         method: 'POST',
@@ -134,44 +149,95 @@ async function writeMirror() {
   }
 
   // The full index is five megabytes. It needs a patient timeout.
-  try {
-    await rest('content_blobs?on_conflict=key', {
-      method: 'POST',
-      body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
-      prefer: 'resolution=merge-duplicates,return=minimal',
-      timeoutMs: 240000,
-    });
-    console.log('index uploaded');
-  } catch (err) {
-    console.error(`index upload failed: ${err.message}`);
+  const indexSum = hash(JSON.stringify(index));
+  if (!known || known.index !== indexSum) {
+    try {
+      await rest('content_blobs?on_conflict=key', {
+        method: 'POST',
+        body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
+        prefer: 'resolution=merge-duplicates,return=minimal',
+        timeoutMs: 240000,
+      });
+      console.log('index uploaded');
+    } catch (err) {
+      console.error(`index upload failed: ${err.message}`);
+    }
+  } else {
+    console.log('index unchanged');
   }
 
   const batchSize = 25;
   let failed = 0;
-  for (let i = 0; i < articles.length; i += batchSize) {
-    const batch = articles.slice(i, i + batchSize).map((article) => ({
-      slug: article.slug,
-      published_at: article.publishedAt || null,
-      updated_at: new Date().toISOString(),
-      data: article,
-    }));
+  let uploaded = 0;
+  const pending = [];
+  for (const article of articles) {
+    const sum = hash(JSON.stringify(article));
+    if (known && known.articles?.[article.slug] === sum) continue;
+    pending.push({ article, sum });
+  }
+  for (let i = 0; i < pending.length; i += batchSize) {
+    const batch = pending.slice(i, i + batchSize);
     try {
       await rest('articles?on_conflict=slug', {
         method: 'POST',
-        body: batch,
+        body: batch.map(({ article }) => ({
+          slug: article.slug,
+          published_at: article.publishedAt || null,
+          updated_at: new Date().toISOString(),
+          data: article,
+        })),
         prefer: 'resolution=merge-duplicates,return=minimal',
         timeoutMs: 90000,
       });
+      for (const { article, sum } of batch) nextArticles[article.slug] = sum;
+      uploaded += batch.length;
     } catch (err) {
       // One bad batch must not cost the whole mirror.
       failed++;
       console.error(`\narticles ${i}-${i + batch.length} failed: ${err.message}`);
     }
-    process.stdout.write(`\rarticles: ${Math.min(i + batchSize, articles.length)}/${articles.length}`);
   }
-  process.stdout.write('\n');
+  console.log(`\narticles: ${uploaded} uploaded, ${articles.length - uploaded} unchanged`);
+
+  // Stories that are no longer in the repository must leave the mirror too.
+  const localSlugs = new Set(articles.map((a) => a.slug));
+  const gone = Object.keys(nextArticles).filter((slug) => !localSlugs.has(slug));
+  for (const slug of gone) {
+    try {
+      await rest(`articles?slug=eq.${encodeURIComponent(slug)}`, { method: 'DELETE', timeoutMs: 30000 });
+      delete nextArticles[slug];
+      console.log(`removed ${slug}`);
+    } catch (err) {
+      console.error(`removing ${slug} failed: ${err.message}`);
+    }
+  }
+
+  // The hash map goes last: whatever failed above is simply tried again next
+  // time, because its hash was never recorded.
+  try {
+    await rest('content_blobs?on_conflict=key', {
+      method: 'POST',
+      body: [{ key: 'hashes', data: { index: indexSum, listings: nextListings, articles: nextArticles }, updated_at: new Date().toISOString() }],
+      prefer: 'resolution=merge-duplicates,return=minimal',
+      timeoutMs: 60000,
+    });
+  } catch (err) {
+    console.error(`hash map failed: ${err.message}`);
+  }
+
   if (failed) console.error(`${failed} batch(es) failed`);
 
   const ok = await verify(entries.length, articles.length);
   process.exitCode = ok ? 0 : 2;
+}
+
+async function readHashes() {  try {
+    const rows = await rest('content_blobs?key=eq.hashes&select=data', { key: readKey, timeoutMs: 30000 });
+    const data = rows?.[0]?.data;
+    if (data && typeof data === 'object' && data.articles) return data;
+    return null;
+  } catch (err) {
+    console.warn(`no hash map on file (${err.message}) - everything is written once`);
+    return null;
+  }
 }
