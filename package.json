@@ -19,7 +19,8 @@
     "content:verify": "node scripts/sync-content.mjs --verify",
     "test:desk": "node scripts/test-right-of-reply.mjs",
     "test:desk-work": "node --test scripts/desk-work.test.mjs",
-    "test:lookup": "node --test scripts/lookup.test.mjs"
+    "test:lookup": "node --test scripts/lookup.test.mjs",
+    "test:mailbox": "node --test scripts/mailbox.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.3.0",
