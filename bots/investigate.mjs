@@ -1486,7 +1486,7 @@ async function sendApproved(d) {
 }
 
 // ─────────────────────────── 4. WRITE ───────────────────────────
-const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfirst":"2-3 sentences that state what we found and how solid it is","facts":["5-8 key facts with numbers and dates"],"sections":[{"heading":"…","paragraphs":["…"]}],"claims":[{"text":"…","sources":["S1","S3"]}],"rightOfReply":"what the institutions answered, or that they did not answer despite repeated requests — with dates","methodology":"how we reported: documents read, data used, questions sent, what we could not verify"}`;
+const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfirst":"2-3 sentences that state what we found and how solid it is","facts":["5-8 key facts with numbers and dates"],"sections":[{"heading":"…","paragraphs":["…"]}],"claims":[{"text":"…","sources":["S1","S3"]}],"rightOfReply":"what the institutions actually answered us, or that our questions are still outstanding — only what the right-of-reply log says","methodology":"how we reported: documents read, data used, questions sent, what we could not verify"}`;
 
 // A long answer can arrive cut off: the model stops at its token limit and
 // the last fields are missing. The piece is still worth keeping - the desk
@@ -1525,16 +1525,12 @@ async function writeInvestigation(d, outreach, { attempt = 1 } = {}) {
   // no piece - but a piece under the gate is no piece at all.
   const ceiling = attempt === 1 ? 4000 : 2900;
   const sections = attempt === 1 ? '6-9' : '5-7';
-  const replies = outreach.filter((o) => o.status === 'replied' && o.reply_note);
-  const sent = outreach.filter((o) => ['sent', 'replied'].includes(o.status));
   // The window holds prompt and answer together. A pack that is too long
   // takes the room the piece needs, and the answer comes back cut off.
   const claims = d.claims
     .map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${String(c.text).slice(0, 420)} (sources: ${c.sources.join(', ')})`)
     .join('\n');
-  const outreachLog = sent.length
-    ? sent.map((o) => `- ${o.org || o.to_email}: requested ${day(o.sent_at || o.approved_at || o.created_at)}${o.status === 'replied' ? `\n  REPLY: ${o.reply_note}` : '\n  no reply so far'}`).join('\n')
-    : '(no requests sent yet)';
+  const outreachLog = rightOfReplyLog(outreach);
 
   const { data, model, text, doneReason } = await chatJSON('writer', [
     {
@@ -1565,13 +1561,14 @@ STRUCTURE (${sections} sections, each heading max 60 characters)
 2. Show the evidence: documents, figures, dates, decisions, who signed what.
 3. Show the pattern or the money trail across cases and institutions.
 4. State clearly what remains unknown, and why that matters.
-5. Include a section on the right of reply: what each institution answered, verbatim where possible, or that they did not answer and when we asked.
+5. Include a section on the right of reply. Take ONLY what the RIGHT-OF-REPLY LOG above says. If the log says no request has been sent yet, write exactly that: our questions have not gone out, so there is no answer to report. Never write a request date, a reply, a "no comment" or a confirmation that nobody gave us.
 6. Close with a section on how we reported: sources read, data sets, questions sent, what we could not verify.
 
 LENGTH: ${sections} sections, each with 4 to 6 paragraphs of 110 to 160 words. That is ${Math.round((sections === '6-9' ? 7.5 : 6) * 5 * 135)} words. Write until you reach it.
 
 RULES
 - Every factual sentence must rest on a claim above. If something is not in the claims, it is not in the piece.
+- Never invent a right of reply. A question we did not send has no answer, and a reply that did not arrive does not exist. If the log is empty, the right of reply says our questions are still outstanding.
 - Numbers, dates, names and titles exactly as in the sources. No rounding invented, no "about".
 - This is a piece about people, not about process. Name who is affected and what it costs them: the ones who lost money, work, land or freedom. A reader must be able to point at a person by the end of the first two sections.
 - Contested claims: name who says what. Never present one side as established fact.
@@ -1638,6 +1635,53 @@ ${DRAFT_SCHEMA}`,
   return { draft: repairDraft(d, data), model, text, doneReason };
 }
 
+/**
+ * What the right-of-reply log actually holds. A request we never sent has no
+ * answer, so the text has to say that instead of inventing a reply.
+ */
+function rightOfReplyLog(outreach) {
+  const asked = (outreach || []).filter((o) => ['sent', 'replied'].includes(o.status));
+  if (!asked.length) return '- We have not sent any request yet. Our questions are still outstanding.';
+  return asked.map((o) => `- ${o.org || o.to_email}: asked ${day(o.sent_at || o.approved_at || o.created_at)}, ${o.status === 'replied' ? `answered: ${o.reply_note || '(reply without note)'}` : 'no answer yet'}`).join('\n');
+}
+
+/**
+ * The draft reports answers that were never given. We have not sent a
+ * single letter, so every reply, request date and "no comment" in it is
+ * made up. Take them out and put the truth in their place.
+ */
+async function fixRightOfReply(d, draft, outreach) {
+  const truth = rightOfReplyLog(outreach);
+
+  const { data, model, text, doneReason } = await chatJSON('writer', [
+    {
+      role: 'system',
+      content: `You are a senior investigative reporter at PLAIN., an independent Swiss news site. You write from documents, not from impressions. ${STYLE_GUIDE} Return JSON only.`,
+    },
+    {
+      role: 'user',
+      content: `The draft below reports answers that were never given. Our letters have not gone out, so every reply, every request date and every "no comment" in it is made up. A newsroom that invents a reply does not get to publish.
+
+WHAT WE ACTUALLY DID:
+${truth}
+
+DRAFT TO CORRECT:
+${JSON.stringify(draft)}
+
+TASK: Return the corrected piece in the same shape.
+- The rightOfReply field must say exactly what WHAT WE ACTUALLY DID says, nothing more.
+- The methodology must not claim that questions were sent or answered.
+- Rewrite or cut every sentence, in the sections too, that reports a reply, a request date, a confirmation or a "no comment".
+- Keep every fact that rests on a source, keep the title, the standfirst, the headings and the length.
+- Do not add any new fact.
+
+Return exactly:
+${DRAFT_SCHEMA}`,
+    },
+  ], { temperature: 0.3, maxTokens: 26000, numCtx: 65536, think: false });
+  return { draft: repairDraft(d, data), model, text, doneReason };
+}
+
 async function editInvestigation(d, outreach, draft, styleIssues = []) {
   const { data, model } = await chatJSON('editor', [
     {
@@ -1646,9 +1690,9 @@ async function editInvestigation(d, outreach, draft, styleIssues = []) {
     },
     {
       role: 'user',
-      content: `SOURCES:\n${sourcePack(d, 20, 2500)}\n\nCLAIMS ON FILE:\n${d.claims.map((c) => `[${c.id}] ${c.text} — ${c.sources.join(', ')}`).join('\n')}\n\nDRAFT:\n${JSON.stringify(draft)}
+      content: `SOURCES:\n${sourcePack(d, 20, 2500)}\n\nCLAIMS ON FILE:\n${d.claims.map((c) => `[${c.id}] ${c.text} — ${c.sources.join(', ')}`).join('\n')}\n\nRIGHT-OF-REPLY LOG:\n${rightOfReplyLog(outreach)}\n\nDRAFT:\n${JSON.stringify(draft)}
 ${styleIssues.length ? `\nSTYLE PROBLEMS MEASURED IN THE DRAFT (fix all of them):\n${styleIssues.map((p) => `- ${p}`).join('\n')}\n` : ''}
-Check every sentence that carries a fact, a number, a date, a name or a quote.\n- Delete or correct anything not supported by the listed sources.\n- Keep the right of reply honest: an unanswered request is not a denial, and "no comment" must be reported as such with the date.\n- Rewrite monotonous prose: vary sentence length, remove repeated sentence openings, cut evaluative summary sentences.\n- Do not add new facts and do not shorten the piece below ${Math.round(MIN_WORDS * 0.9)} words.\n\nVerdict: "publish" if every claim holds, "revise" with the corrected article in "article", "reject" if the evidence cannot carry the piece.\n\nReturn {"verdict":"publish|revise|reject","problems":["…"],"article":${DRAFT_SCHEMA}}`,
+Check every sentence that carries a fact, a number, a date, a name or a quote.\n- Delete or correct anything not supported by the listed sources.\n- Keep the right of reply honest: an unanswered request is not a denial, and "no comment" must be reported as such with the date.\n- The right of reply may hold only what the RIGHT-OF-REPLY LOG holds. If the log says no request was sent, the draft must not report any reply, any request date, any confirmation or any "no comment". Cut those sentences in the sections too.\n- Rewrite monotonous prose: vary sentence length, remove repeated sentence openings, cut evaluative summary sentences.\n- Do not add new facts and do not shorten the piece below ${Math.round(MIN_WORDS * 0.9)} words.\n\nVerdict: "publish" if every claim holds, "revise" with the corrected article in "article", "reject" if the evidence cannot carry the piece.\n\nReturn {"verdict":"publish|revise|reject","problems":["…"],"article":${DRAFT_SCHEMA}}`,
     },
   ], { temperature: 0.1, maxTokens: 16000 });
   return { review: data, model };
@@ -1659,7 +1703,11 @@ function draftWords(draft) {
   return words([draft.standfirst, draft.dek, ...(draft.facts || []), ...body, draft.rightOfReply, draft.methodology].join(' '));
 }
 
-function draftProblem(d, draft) {
+// A draft that reports an answer we never got is the worst error a
+// newsroom can make. If no letter went out, no reply can be reported.
+const INVENTED_REPLY = /\b(replied|responded|declined to (?:comment|disclose|answer)|no comment\b|answered (?:us|our)|confirmed the accuracy|when (?:we|our desk|the desk) (?:asked|contacted|wrote|queried))/i;
+
+function draftProblem(d, draft, outreach = []) {
   if (!draft || typeof draft !== 'object') return 'no article';
   if (typeof draft.title !== 'string' || draft.title.trim().length < 15) return 'title';
   if (!draft.dek || !draft.standfirst) return 'dek/standfirst';
@@ -1675,6 +1723,16 @@ function draftProblem(d, draft) {
   }
   if (!draft.rightOfReply || words(draft.rightOfReply) < 15) return 'right of reply missing';
   if (!draft.methodology || words(draft.methodology) < 20) return 'methodology missing';
+  const asked = (outreach || []).filter((o) => ['sent', 'replied'].includes(o.status));
+  if (!asked.length) {
+    const replyText = [
+      String(draft.rightOfReply || ''),
+      String(draft.methodology || ''),
+      ...(draft.sections || []).flatMap((s) => s.paragraphs || []),
+    ].join('\n');
+    const invented = replyText.match(INVENTED_REPLY);
+    if (invented) return `right of reply invents an answer (${invented[0]})`;
+  }
   if (draftWords(draft) < MIN_WORDS * 0.9) return `only ${draftWords(draft)} words`;
   const slop = slopHits({ title: draft.title, dek: draft.dek, facts: draft.facts, body: draft.sections.flatMap((s) => s.paragraphs), context: draft.rightOfReply });
   if (slop.length) return `banned phrases: ${slop.join(', ')}`;
@@ -1711,19 +1769,24 @@ async function maybeWrite(d, outreach) {
 
   log(`WRITE   ${d.slug}: ${outlets} outlets, ${d.claims.length} claims, ${sent.length} request(s)`);
   let { draft, model, text, doneReason } = await writeInvestigation(d, outreach);
-  let problem = draftProblem(d, draft);
+  let problem = draftProblem(d, draft, outreach);
   if (problem && deadlineLeft() > 300000) {
     if (/^only \d+ words$/.test(problem)) {
       // The piece holds but is thin. Ask for depth, not for a new piece.
       log(`WRITE   too short (${problem}) — asking for depth, not a new piece`);
       ({ draft, model, text, doneReason } = await expandInvestigation(d, draft));
-      problem = draftProblem(d, draft);
+      problem = draftProblem(d, draft, outreach);
+    } else if (/right of reply invents/.test(problem)) {
+      // The piece claims answers we never got. Cut them out.
+      log(`WRITE   ${problem} — asking for the truth instead`);
+      ({ draft, model, text, doneReason } = await fixRightOfReply(d, draft, outreach));
+      problem = draftProblem(d, draft, outreach);
     } else {
       // The answer was cut off or came back empty. Ask once more and ask for
       // less - a shorter piece that holds is worth more than no piece.
       log(`WRITE   first answer unusable (${problem}) — asking again, shorter`);
       ({ draft, model, text, doneReason } = await writeInvestigation(d, outreach, { attempt: 2 }));
-      problem = draftProblem(d, draft);
+      problem = draftProblem(d, draft, outreach);
     }
   }
   if (problem) {
@@ -1747,9 +1810,17 @@ async function maybeWrite(d, outreach) {
       note(d, 'research', 'editor rejected the draft');
       return;
     }
-    if (verdict === 'revise' && review?.article && !draftProblem(d, review.article)) draft = review.article;
+    if (verdict === 'revise' && review?.article && !draftProblem(d, review.article, outreach)) draft = review.article;
   } catch (err) {
     log(`WRITE   editor failed (${err.message}); keeping writer draft`);
+  }
+
+  // The editor may have put an answer into the piece that nobody gave us.
+  const after = draftProblem(d, draft, outreach);
+  if (after) {
+    log(`WRITE   editor output still wrong (${after}) — keeping the writer draft`);
+    const { draft: fixed } = await fixRightOfReply(d, draft, outreach).catch(() => ({}));
+    if (fixed && !draftProblem(d, fixed, outreach)) draft = fixed;
   }
 
   d.draft = draft;
