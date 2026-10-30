@@ -53,27 +53,38 @@ export async function POST(request) {
     }
 
     const week = weekKey();
-    const usage = await weekUsage(week, user.id);
-    if (usage.siteLeft <= 0) {
+    // The quota lives in the same table as the wishes. If that table does not
+    // answer, the wish is still worth taking: the desk reads the wishes
+    // itself and the count only guards the week.
+    const usage = await weekUsage(week, user.id).catch(() => null);
+    if (usage?.siteLeft === 0) {
       return NextResponse.json({
         error: `Die Wunschliste für diese Woche ist voll (${INVESTIGATION_QUOTAS.wishesPerWeek} Wünsche). Nächste Woche wieder.`,
         quota: usage,
       }, { status: 429 });
     }
-    if (usage.mineLeft <= 0) {
+    if (usage?.mineLeft === 0) {
       return NextResponse.json({
         error: `Du hast diese Woche bereits ${INVESTIGATION_QUOTAS.wishesPerReaderPerWeek} Themen vorgeschlagen.`,
         quota: usage,
       }, { status: 429 });
     }
 
-    const created = await addRequest({
-      userId: user.id,
-      email: user.email.toLowerCase(),
-      ...input,
-      week,
-    });
-    const after = await weekUsage(week, user.id);
+    let created;
+    try {
+      created = await addRequest({
+        userId: user.id,
+        email: user.email.toLowerCase(),
+        ...input,
+        week,
+      });
+    } catch (err) {
+      console.error('Investigation request POST failed:', err.message);
+      return NextResponse.json({
+        error: 'Der Wunschzettel ist gerade nicht erreichbar. Der Desk nimmt diese Woche eigene Themen auf — bitte versuche es später noch einmal.',
+      }, { status: 503 });
+    }
+    const after = await weekUsage(week, user.id).catch(() => null);
     return NextResponse.json({ request: created, quota: after }, { status: 201 });
   } catch (err) {
     console.error('Investigation request POST failed:', err.message);
