@@ -111,7 +111,12 @@ ${PROTOCOL}`;
     if (typeof rawArgs === 'string') {
       try { rawArgs = JSON.parse(rawArgs); } catch { rawArgs = {}; }
     }
-    const args = rawArgs && typeof rawArgs === 'object' ? rawArgs : {};
+    let args = rawArgs && typeof rawArgs === 'object' ? { ...rawArgs } : {};
+    if (!Object.keys(args).length && data && typeof data === 'object') {
+      // Some replies put the arguments next to the action: {"action":"open","url":"…"}
+      const { thought, action, final, tool, tool_name, name, function: fn, ...rest } = data;
+      args = rest;
+    }
     const thought = String(data?.thought || '').slice(0, 400);
     const key = `${name}:${JSON.stringify(args)}`;
     const repeats = (seen.get(key) || 0) + 1;
