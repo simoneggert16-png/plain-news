@@ -24,6 +24,11 @@ MSG="${1:-$(date -u +'%Y-%m-%d %H:%M') UTC}"
 git config user.name "simoneggert16-png"
 git config user.email "simoneggert16@gmail.com"
 
+# The head of the index is what the site reads from the repository at runtime.
+# It has to describe the same stories as the index, so it is rebuilt from it
+# before every commit.
+node scripts/build-latest.mjs || echo "the index head could not be rebuilt"
+
 git add content
 if ! git diff --cached --quiet; then
   git commit -q -m "$MSG" || { echo "could not commit the content"; exit 1; }
@@ -57,6 +62,7 @@ for attempt in 1 2 3 4 5; do
   # index from them.
   if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
     node scripts/sync-index.mjs --all || true
+    node scripts/build-latest.mjs || true
     if ! node scripts/check-content.mjs --fix; then
       echo "the index is unreadable after the merge - the content stays local"
       exit 1
