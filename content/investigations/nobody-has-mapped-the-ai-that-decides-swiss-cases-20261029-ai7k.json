@@ -13,7 +13,7 @@
     "hints": "News peg: the Bundeskanzlei tendered IT services in the areas of data and artificial intelligence in March 2026, and the federal AI legal-framework report was published on 25 September 2026. German vocabulary the sources use: Bundesverwaltung, künstliche Intelligenz, automatisiert, Entscheidsystem, Asylverfahren, Invalidenversicherung, Steuerprüfung, Polizeiarbeit, Beschaffung, Vergabe, simap, EDÖB, Rechtsgrundlage, Aufsicht, Bundeskanzlei. Existing coverage is strategy-level (NZZ, Netzwoche) or advocacy-level (AlgorithmWatch Switzerland); no outlet has built a system-by-system inventory with vendors, contract values, decisions touched and oversight. Primary-source trail: simap tender and award notices, admin.ch media releases, the BK legal-framework report, EDÖB opinions, Federal Administrative Court and Federal Supreme Court rulings, the federal procurement statistics, and FOI requests to SEM, BSV, ESTV and fedpol. Every claim needs a document, not a think-tank quote. Avoid the generic 'AI in government' feature; the story is the gap between what is procured and what is disclosed."
   },
   "createdAt": "2026-10-29T21:38:43.000Z",
-  "updatedAt": "2026-10-30T07:12:08.916Z",
+  "updatedAt": "2026-10-30T07:13:53.815Z",
   "queries": [
     "KI Verwaltung Schweiz",
     "künstliche Intelligenz Verwaltung",
@@ -483,104 +483,6 @@
   "researchRuns": 3,
   "agent": [
     {
-      "at": "2026-10-29T21:56:32.066Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "",
-          "action": "none",
-          "args": {},
-          "ok": false,
-          "ms": 859
-        },
-        {
-          "step": 2,
-          "thought": "",
-          "action": "none",
-          "args": {},
-          "ok": false,
-          "ms": 4486
-        },
-        {
-          "step": 3,
-          "thought": "Search for March 2026 Bundeskanzlei KI tender simap",
-          "action": "search",
-          "args": {
-            "query": "Bundeskanzlei KI tender März 2026 simap"
-          },
-          "ok": true,
-          "ms": 832
-        },
-        {
-          "step": 4,
-          "thought": "Search for Bundeskanzlei AI tender March 2026 on Swiss procurement portal (simap)",
-          "action": "search",
-          "args": {
-            "query": "Bundeskanzlei KI tender 2026 simap"
-          },
-          "ok": true,
-          "ms": 1401
-        },
-        {
-          "step": 5,
-          "thought": "Search for simap tender March 2026 Bundeskanzlei KI to locate the procurement notice.",
-          "action": "search",
-          "args": {
-            "query": "simap Bundeskanzlei KI März 2026"
-          },
-          "ok": true,
-          "ms": 1443
-        },
-        {
-          "step": 6,
-          "thought": "",
-          "action": "none",
-          "args": {},
-          "ok": false,
-          "ms": 525
-        },
-        {
-          "step": 7,
-          "thought": "Search for Bundeskanzlei KI tender March 2026 on simap using German keywords",
-          "action": "search",
-          "args": {
-            "query": "Bundeskanzlei KI Ausschreibung 2026 simap"
-          },
-          "ok": true,
-          "ms": 1323
-        },
-        {
-          "step": 8,
-          "thought": "",
-          "action": "none",
-          "args": {},
-          "ok": false,
-          "ms": 582
-        },
-        {
-          "step": 9,
-          "thought": "The earlier searches for the March 2026 AI tender by the Bundeskanzlei returned no results. I will try a broader German query focusing on the Bundeskanzlei and KI Ausschreibung 2026, without specifying March, to locate the simap notice.",
-          "action": "search",
-          "args": {
-            "query": "Bundeskanzlei KI Ausschreibung 2026 simap"
-          },
-          "ok": true,
-          "ms": 1457
-        },
-        {
-          "step": 10,
-          "thought": "Search broader for Bundeskanzlei Ausschreibung KI 2026 site:simap.admin.ch",
-          "action": "search",
-          "args": {
-            "query": "site:simap.admin.ch Bundeskanzlei KI 2026"
-          },
-          "ok": true,
-          "ms": 789
-        }
-      ],
-      "final": null
-    },
-    {
       "at": "2026-10-30T06:48:29.986Z",
       "steps": [
         {
@@ -671,6 +573,132 @@
           },
           "ok": true,
           "ms": 6317
+        }
+      ],
+      "final": null
+    },
+    {
+      "at": "2026-10-30T07:13:53.815Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "Search for Bundeskanzlei tender AI March 2026 site:simap.ch",
+          "action": "search",
+          "args": {
+            "query": "Bundeskanzlei KI Ausschreibung März 2026 site:simap.ch"
+          },
+          "ok": true,
+          "ms": 978
+        },
+        {
+          "step": 2,
+          "thought": "The search returned no results, indicating that the specific tender notice may not be indexed publicly via standard search. Next step: query the official SIMAP procurement portal directly using its search parameters for 2026 and keywords KI (artificial intelligence).",
+          "action": "search",
+          "args": {
+            "query": "simap.ch KI Bundeskanzlei 2026"
+          },
+          "ok": true,
+          "ms": 1170
+        },
+        {
+          "step": 3,
+          "thought": "The search returned no results, suggesting the tender notice may not be indexed publicly via search engines or uses different terminology. Next step: search the Bundeskanzlei website for press releases in March 2026 mentioning KI or artificial intelligence procurement, using site:admin.ch.",
+          "action": "search",
+          "args": {
+            "query": "site:admin.ch Bundeskanzlei KI Beschaffung März 2026"
+          },
+          "ok": true,
+          "ms": 1176
+        },
+        {
+          "step": 4,
+          "thought": "Search returned no results, indicating the specific tender notice may not be indexed publicly via search engines or uses different terminology. Next step: search the Federal Chancellery (Bundeskanzlei) press releases archive for March 2026 for any mention of AI procurement, using the site admin.ch and keywords 'KI' and 'Beschaffung'.",
+          "action": "search",
+          "args": {
+            "query": "site:admin.ch \"KI\" \"Beschaffung\" \"2026\" \"Bundeskanzlei\""
+          },
+          "ok": true,
+          "ms": 1247
+        },
+        {
+          "step": 5,
+          "thought": "Direct search on simap.ch may require using its internal search interface; try opening the generic search page for 2026 procurement with keyword KI to see if results load.",
+          "action": "open",
+          "args": {
+            "url": "https://www.simap.ch/#/search?searchTerm=KI&year=2026"
+          },
+          "ok": true,
+          "ms": 2840
+        },
+        {
+          "step": 6,
+          "thought": "The search did not return any results, indicating that the specific tender notice may not be indexed publicly via search engines or uses different terminology. Next step: search the Federal Administration's procurement statistics portal for 2026 AI-related contracts, using site:admin.ch and keywords \"künstliche Intelligenz\" and \"Beschaffung\".",
+          "action": "search",
+          "args": {
+            "query": "site:admin.ch \"künstliche Intelligenz\" \"Beschaffung\" 2026"
+          },
+          "ok": true,
+          "ms": 1701
+        },
+        {
+          "step": 7,
+          "thought": "We have not yet located any primary source documents for the AI procurement. The next step is to broaden the search to include other federal agencies that handle IT procurement, such as the Federal Office of Information Technology (BIT) and the Federal Department of Finance (EFD). We'll search for \"künstliche Intelligenz\" and \"Ausschreibung\" on the simap.ch site without restricting the year, then ",
+          "action": "search",
+          "args": {
+            "query": "site:simap.ch \"künstliche Intelligenz\" \"Ausschreibung\""
+          },
+          "ok": true,
+          "ms": 1230
+        },
+        {
+          "step": 8,
+          "thought": "We still have not located any primary source documents for the AI procurement. The next step is to search the Federal Chancellery's news archive directly for March 2026 entries mentioning AI, using the admin.ch news portal with a date filter if possible. We'll try a broader search on admin.ch for 'KI' and 'Bundeskanzlei' without the year constraint to see any relevant pages that might include the ",
+          "action": "search",
+          "args": {
+            "query": "site:admin.ch \"Bundeskanzlei\" \"KI\""
+          },
+          "ok": true,
+          "ms": 1238
+        },
+        {
+          "step": 9,
+          "thought": "We have not yet located any primary source documents for the AI procurement. We need to locate at least one primary source to start building claims. The brief suggests using simap tender notices. Perhaps the tender reference number is known: the brief mentions 'Bundeskanzlei tendered IT services in the areas of data and artificial intelligence in March 2026'. Let's search for 'Bundeskanzlei' and '",
+          "action": "search",
+          "args": {
+            "query": "Bundeskanzlei Ausschreibung 2026 site:simap.ch"
+          },
+          "ok": true,
+          "ms": 4284
+        },
+        {
+          "step": 10,
+          "thought": "If the PDF is found, we will open it to extract details about AI procurement and oversight. If not, we may need to request the document via FOI, but that is beyond current step. Next, try searching the Federal Supreme Court for rulings mentioning AI decisions in asylum or tax. Use site:bger.ch AI 2026.",
+          "action": "search",
+          "args": {
+            "query": "site:bger.ch \"künstliche Intelligenz\" 2026"
+          },
+          "ok": true,
+          "ms": 4329
+        },
+        {
+          "step": 11,
+          "thought": "Search for the federal AI legal-framework report published 25 September 2026.",
+          "action": "search",
+          "args": {
+            "query": "\"KI\" \"Rechtsrahmen\" \"Bundesrat\" 25.09.2026"
+          },
+          "ok": true,
+          "ms": 815
+        },
+        {
+          "step": 12,
+          "thought": "We have not yet located any primary source documents for the AI procurement or the legal framework report. The next step is to search the official Federal Chancellery (Bundeskanzlei) publications page for September 2026 to locate the AI legal-framework report. We'll use the site admin.ch with a date filter for September 2026 and keywords \"KI\" and \"Bericht\".",
+          "action": "search",
+          "args": {
+            "query": "site:admin.ch \"KI\" \"Bericht\" \"September 2026\""
+          },
+          "ok": true,
+          "ms": 1128
         }
       ],
       "final": null
