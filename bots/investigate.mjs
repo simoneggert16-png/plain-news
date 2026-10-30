@@ -32,7 +32,7 @@ import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch } from './lib/search.mjs';
-import { filingCabinets, publishedEmail } from './lib/lookup.mjs';
+import { filingCabinets, pressAddressFor, publishedEmail } from './lib/lookup.mjs';
 import { institutionalDocuments } from './lib/documents.mjs';
 import { openPage } from './lib/browse.mjs';
 import { runAgent } from './lib/agent.mjs';
@@ -1143,26 +1143,24 @@ ${doorsAdded ? `The desk has already been to the institutions before you started
 
 /**
  * An institution that must answer but has no address yet gets one, read off
- * the pages of its own website — only if the dossier already holds a source
- * from that domain, so the desk never writes to a stranger.
+ * the pages of its own website: the site the story already cites, or the one
+ * the organisation's own name leads to. A letter without an address is a
+ * letter nobody can send.
  */
 async function fillContactAddresses(d) {
   const hosts = [...new Set(d.sources.map((s) => hostOf(s.url)))].filter((h) => h && h !== 'unknown');
   let filled = 0;
-  for (const contact of d.contacts || []) {
-    if (contact.email) continue;
-    const name = String(contact.org || '').toLowerCase();
-    for (const host of hosts) {
-      const label = host.split('.')[0];
-      if (!label || label.length < 4 || !name.includes(label)) continue;
-      const found = await publishedEmail(host).catch(() => null);
-      if (found) {
-        contact.email = found.email;
-        contact.emailSource = found.sourceUrl;
-        filled++;
-      }
+  const pending = (d.contacts || []).filter((c) => !c.email);
+  for (const contact of pending.slice(0, 8)) {
+    if (deadlineLeft() < 120_000) {
+      log('RESEARCH  deadline close - the rest of the addresses wait for the next shift');
       break;
     }
+    const found = await pressAddressFor(contact.org, { hosts }).catch(() => null);
+    if (!found) continue;
+    contact.email = found.email;
+    contact.emailSource = found.sourceUrl;
+    filled++;
   }
   if (filled) log(`RESEARCH  ${filled} contact address(es) read from the organisations' own pages`);
   return filled;

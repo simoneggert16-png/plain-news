@@ -49,6 +49,35 @@ test('an explicit action, a tool name and a bare link all work', async () => {
   assert.equal((await firstCall('https://example.org/b'))?.tool, 'open');
 });
 
+// The shape the model actually sent on 2026-10-30, twelve steps into the
+// Seoul story: the tool named by its key, the arguments inside it. The shift
+// was lost on it because the loop did not know the shape.
+test('a tool named by its key is still a call', async () => {
+  const call = await firstCall({
+    thought: 'We need to open the Yonhap article.',
+    open: { url: 'https://en.yna.co.kr/view/AEN20261030011500320' },
+  });
+  assert.equal(call?.tool, 'open');
+  assert.match(call.args.url, /yna\.co\.kr/);
+});
+
+test('a tool named by its key with a plain value is still a call', async () => {
+  const call = await firstCall({ open: 'https://example.org/e' });
+  assert.equal(call?.tool, 'open');
+  assert.equal(call.args.url, 'https://example.org/e');
+});
+
+test('a tool that carries its own name and arguments is still a call', async () => {
+  const call = await firstCall({ tool: { name: 'open', arguments: { url: 'https://example.org/f' } } });
+  assert.equal(call?.tool, 'open');
+  assert.equal(call.args.url, 'https://example.org/f');
+});
+
+test('a key that names no tool is not a call', async () => {
+  const call = await firstCall({ thought: 'I have nothing to do here.', note: { text: 'later' } });
+  assert.equal(call, null);
+});
+
 test('a flag the tool documents is kept', async () => {
   const call = await firstCall({ action: 'save_claim', text: 'The publisher used the footage without asking.', sources: ['S1'], contested: false });
   assert.equal(call?.tool, 'save_claim');

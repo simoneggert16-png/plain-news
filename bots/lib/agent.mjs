@@ -126,6 +126,56 @@ function firstObject(raw) {
   return null;
 }
 
+// Free models drift between the shapes we ask for and the shapes they
+// learned; accept the usual aliases instead of failing the step.
+const ALIASES = {
+  find: 'search', lookup: 'search', query: 'search', websearch: 'search', google: 'search',
+  read: 'open', browse: 'open', view: 'open', fetch: 'open', page: 'open', url: 'open',
+  source: 'save_source', savesource: 'save_source', addsource: 'save_source', cite: 'save_source',
+  claim: 'save_claim', saveclaim: 'save_claim', addclaim: 'save_claim', fact: 'save_claim',
+  gap: 'add_gap', addgap: 'add_gap', question: 'add_gap',
+  contacts: 'contact', addcontact: 'contact', source_contact: 'contact',
+  findcontact: 'find_contact', find_contact_address: 'find_contact', email: 'find_contact',
+};
+
+const flatName = (name) => String(name || '').toLowerCase().replace(/[\s_-]/g, '');
+
+function aliasFor(name) {
+  const alias = ALIASES[flatName(name)];
+  return alias || null;
+}
+
+/**
+ * A reply that names the tool as its key: {"open": {"url": "…"}}.
+ * The model learned this shape from the function calling it has seen before,
+ * and it is a call all the same. The desk must not lose a shift over the
+ * difference between asking and doing.
+ */
+function toolKeyedCall(data, byName) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return null;
+  for (const [key, value] of Object.entries(data)) {
+    if (NOISE_KEYS.has(key.toLowerCase())) continue;
+    const alias = aliasFor(key);
+    const tool =
+      byName.get(key) ||
+      (alias && byName.get(alias)) ||
+      byName.get(flatName(key));
+    if (!tool) continue;
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+      return { name: tool.name, args: { ...value } };
+    }
+    if (typeof value === 'string' && value.trim()) {
+      const spec = toolSpec(tool);
+      const text = value.trim();
+      if (spec.length === 1) return { name: tool.name, args: { [spec[0]]: text } };
+      if (/^https?:\/\//i.test(text) && spec.includes('url')) {
+        return { name: tool.name, args: { url: text } };
+      }
+    }
+  }
+  return null;
+}
+
 /**
  * Run the loop until the model finishes, the step budget is spent or the
  * deadline is close. `ask` is injectable so the loop can be tested without a
@@ -219,20 +269,30 @@ ${PROTOCOL}`;
 
     // Free models drift between the shapes we ask for and the shapes they
     // learned; accept the usual aliases instead of failing the step.
-    const call = data?.function && typeof data.function === 'object' ? data.function : data || {};
-    let name = String(data?.action || data?.tool || data?.tool_name || call.name || data?.name || '').trim();
+    const call =
+      data?.function && typeof data.function === 'object'
+        ? data.function
+        : data?.tool && typeof data.tool === 'object'
+          ? data.tool
+          : data || {};
+    let name = '';
+    if (typeof data?.action === 'string') name = data.action.trim();
+    else if (typeof data?.tool === 'string') name = data.tool.trim();
+    else if (typeof data?.tool_name === 'string') name = data.tool_name.trim();
+    else if (typeof call?.name === 'string') name = call.name.trim();
+    else if (typeof data?.name === 'string') name = data.name.trim();
+    // The tool named by its own key, with the arguments inside.
+    let keyedArgs = null;
+    if (!name) {
+      const keyed = toolKeyedCall(data, byName);
+      if (keyed) {
+        name = keyed.name;
+        keyedArgs = keyed.args;
+      }
+    }
     // The same drift in the action name itself. "find" means "search" here.
-    const ALIASES = {
-      find: 'search', lookup: 'search', query: 'search', websearch: 'search', google: 'search',
-      read: 'open', browse: 'open', view: 'open', fetch: 'open', page: 'open', url: 'open',
-      source: 'save_source', savesource: 'save_source', addsource: 'save_source', cite: 'save_source',
-      claim: 'save_claim', saveclaim: 'save_claim', addclaim: 'save_claim', fact: 'save_claim',
-      gap: 'add_gap', addgap: 'add_gap', question: 'add_gap',
-      contacts: 'contact', addcontact: 'contact', source_contact: 'contact',
-      findcontact: 'find_contact', find_contact_address: 'find_contact', email: 'find_contact',
-    };
     if (name && !byName.has(name)) {
-      const alias = ALIASES[name.toLowerCase().replace(/[\s-]/g, '')];
+      const alias = aliasFor(name);
       if (alias && byName.has(alias)) name = alias;
     }
     // Some models answer with the bare arguments, no action at all. If exactly
@@ -272,12 +332,12 @@ ${PROTOCOL}`;
       }
     }
     const tool = byName.get(name);
-    let rawArgs = data?.args ?? data?.arguments ?? data?.parameters ?? call.arguments ?? call.parameters ?? {};
+    let rawArgs = keyedArgs ?? data?.args ?? data?.arguments ?? data?.parameters ?? call.arguments ?? call.parameters ?? {};
     if (typeof rawArgs === 'string') {
       try { rawArgs = JSON.parse(rawArgs); } catch { rawArgs = {}; }
     }
     let args = rawArgs && typeof rawArgs === 'object' ? { ...rawArgs } : {};
-    if (!Object.keys(args).length && data && typeof data === 'object' && !Array.isArray(data)) {
+    if (!keyedArgs && !Object.keys(args).length && data && typeof data === 'object' && !Array.isArray(data)) {
       // Some replies put the arguments next to the action: {"action":"open","url":"…"}
       const { thought, action, final, tool, tool_name, name, function: fn, ...rest } = data;
       args = rest;
