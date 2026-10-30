@@ -34,6 +34,7 @@ git add content
 # in .gitignore; this is the belt to that pair of braces — the repository is
 # public and a private letter never belongs in it.
 git reset -q -- content/investigations/inbox.json 2>/dev/null || true
+git reset -q -- content/investigations/leads.json 2>/dev/null || true
 if ! git diff --cached --quiet; then
   git commit -q -m "$MSG" || { echo "could not commit the content"; exit 1; }
 fi
