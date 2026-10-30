@@ -19,6 +19,10 @@ on:
         description: 'Force the weekly intake even if it already ran'
         type: boolean
         default: false
+      agent_steps:
+        description: 'Agent steps per dossier (empty = 12, use small numbers to test)'
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -56,7 +60,7 @@ jobs:
           INVESTIGATE_DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
           INVESTIGATE_SLUG: ${{ inputs.slug || '' }}
           INVESTIGATE_INTAKE: ${{ inputs.intake == true && '1' || '' }}
-          INVESTIGATE_AGENT_STEPS: '12'
+          INVESTIGATE_AGENT_STEPS: ${{ inputs.agent_steps || '12' }}
           INVESTIGATE_MIN_SOURCES: '8'
           INVESTIGATE_MIN_PRIMARY: '2'
           INVESTIGATE_MIN_CLAIMS: '6'
