@@ -1558,7 +1558,7 @@ ${outreachLog}
 SOURCES:
 ${sourcePack(d, attempt === 1 ? 14 : 10, attempt === 1 ? 1200 : 800)}
 
-TASK: Write the investigation in English, ${MIN_WORDS}-${ceiling} words.
+TASK: Write the investigation in English, at least ${MIN_WORDS} words and at most ${ceiling}. Do not stop before ${MIN_WORDS} words.
 
 STRUCTURE (${sections} sections, each heading max 60 characters)
 1. Open with the single most concrete finding, not with background.
@@ -1567,6 +1567,8 @@ STRUCTURE (${sections} sections, each heading max 60 characters)
 4. State clearly what remains unknown, and why that matters.
 5. Include a section on the right of reply: what each institution answered, verbatim where possible, or that they did not answer and when we asked.
 6. Close with a section on how we reported: sources read, data sets, questions sent, what we could not verify.
+
+LENGTH: ${sections} sections, each with 4 to 6 paragraphs of 110 to 160 words. That is ${Math.round((sections === '6-9' ? 7.5 : 6) * 5 * 135)} words. Write until you reach it.
 
 RULES
 - Every factual sentence must rest on a claim above. If something is not in the claims, it is not in the piece.
@@ -1584,6 +1586,55 @@ Return exactly:
 ${DRAFT_SCHEMA}`,
     },
   ], { temperature: 0.35, maxTokens: attempt === 1 ? 26000 : 18000, numCtx: 65536, think: false });
+  return { draft: repairDraft(d, data), model, text, doneReason };
+}
+
+/**
+ * The piece came back complete but thin. A newsroom does not start over in
+ * that case - it sends the draft back with the request to go deeper: more
+ * chronology, more documents, more of the people it costs.
+ */
+async function expandInvestigation(d, draft) {
+  const claims = d.claims
+    .map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}] ${String(c.text).slice(0, 420)} (sources: ${c.sources.join(', ')})`)
+    .join('\n');
+  const current = (draft.sections || [])
+    .map((s) => `## ${s.heading}\n${(s.paragraphs || []).map((p) => p).join('\n\n')}`)
+    .join('\n\n');
+
+  const { data, model, text, doneReason } = await chatJSON('writer', [
+    {
+      role: 'system',
+      content: `You are a senior investigative reporter at PLAIN., an independent Swiss news site. You write from documents, not from impressions. ${STYLE_GUIDE} Return JSON only.`,
+    },
+    {
+      role: 'user',
+      content: `INVESTIGATION: ${d.title}
+QUESTION: ${d.angle}
+
+VERIFIED CLAIMS (every factual sentence must rest on one of these):
+${claims}
+
+SOURCES:
+${sourcePack(d, 8, 900)}
+
+DRAFT SO FAR (${draftWords(draft)} words, too short):
+${current}
+
+TASK: Rewrite the piece so that it reaches at least ${MIN_WORDS} words. Keep the headline, the standfirst and the section headings. Keep every fact that is already there. Do not add a fact that is not in the claims above.
+
+GO DEEPER, do not pad:
+- Give every section at least 4 paragraphs of 110 to 160 words.
+- Put the chronology in: which document, which date, which decision, in what order.
+- Name the people it costs and what it costs them: the ones who lost money, work, land or freedom.
+- Say what the institutions answered, and what they did not answer and when we asked.
+- Say how we reported: which sources, which documents, what we could not verify.
+- The claims array must list every load-bearing fact with the source ids that carry it.
+
+Return exactly:
+${DRAFT_SCHEMA}`,
+    },
+  ], { temperature: 0.35, maxTokens: 26000, numCtx: 65536, think: false });
   return { draft: repairDraft(d, data), model, text, doneReason };
 }
 
@@ -1662,11 +1713,18 @@ async function maybeWrite(d, outreach) {
   let { draft, model, text, doneReason } = await writeInvestigation(d, outreach);
   let problem = draftProblem(d, draft);
   if (problem && deadlineLeft() > 300000) {
-    // The answer was cut off or came back empty. Ask once more and ask for
-    // less - a shorter piece that holds is worth more than no piece.
-    log(`WRITE   first answer unusable (${problem}) — asking again, shorter`);
-    ({ draft, model, text, doneReason } = await writeInvestigation(d, outreach, { attempt: 2 }));
-    problem = draftProblem(d, draft);
+    if (/^only \d+ words$/.test(problem)) {
+      // The piece holds but is thin. Ask for depth, not for a new piece.
+      log(`WRITE   too short (${problem}) — asking for depth, not a new piece`);
+      ({ draft, model, text, doneReason } = await expandInvestigation(d, draft));
+      problem = draftProblem(d, draft);
+    } else {
+      // The answer was cut off or came back empty. Ask once more and ask for
+      // less - a shorter piece that holds is worth more than no piece.
+      log(`WRITE   first answer unusable (${problem}) — asking again, shorter`);
+      ({ draft, model, text, doneReason } = await writeInvestigation(d, outreach, { attempt: 2 }));
+      problem = draftProblem(d, draft);
+    }
   }
   if (problem) {
     log(`WRITE   draft rejected: ${problem} — model ${model || '?'}, stop reason ${doneReason || 'unknown'}, keys: ${Object.keys(draft || {}).join(', ') || 'none'}, answer ${text ? text.length : 0} characters`);

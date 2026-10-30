@@ -211,6 +211,20 @@ ${PROTOCOL}`;
     // learned; accept the usual aliases instead of failing the step.
     const call = data?.function && typeof data.function === 'object' ? data.function : data || {};
     let name = String(data?.action || data?.tool || data?.tool_name || call.name || data?.name || '').trim();
+    // The same drift in the action name itself. "find" means "search" here.
+    const ALIASES = {
+      find: 'search', lookup: 'search', query: 'search', websearch: 'search', google: 'search',
+      read: 'open', browse: 'open', view: 'open', fetch: 'open', page: 'open', url: 'open',
+      source: 'save_source', savesource: 'save_source', addsource: 'save_source', cite: 'save_source',
+      claim: 'save_claim', saveclaim: 'save_claim', addclaim: 'save_claim', fact: 'save_claim',
+      gap: 'add_gap', addgap: 'add_gap', question: 'add_gap',
+      contacts: 'contact', addcontact: 'contact', source_contact: 'contact',
+      findcontact: 'find_contact', find_contact_address: 'find_contact', email: 'find_contact',
+    };
+    if (name && !byName.has(name)) {
+      const alias = ALIASES[name.toLowerCase().replace(/[\s-]/g, '')];
+      if (alias && byName.has(alias)) name = alias;
+    }
     // Some models answer with the bare arguments, no action at all. If exactly
     // one tool takes exactly those arguments, that is the call.
     if (!name && data && typeof data === 'object' && !Array.isArray(data)) {
