@@ -1,0 +1,33 @@
+name: Mirror
+
+# Keeps the database copy of the content in step with the repository.
+#
+# The mirror is what the site reads while the runtime layer that reads git
+# directly is not deployed yet - and it is the fallback after that. It pushes
+# nothing, so it costs no deployment.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/20 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Mirror content to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/sync-content.mjs
