@@ -840,6 +840,16 @@ test('a notice the desk already keeps is not kept twice', async () => {
   assert.equal(state.leads.length, 1);
 });
 
+test('a desk with a full list does not lose the notice it just found', async () => {
+  const old = Array.from({ length: 20 }, (_, i) => ({
+    origin: 'scan', worth: true, title: `An older find ${i}`, url: `https://example.org/${i}`,
+  }));
+  const state = { leads: old };
+  await scanner({ leads: [WORLD_PICK] })(state, []);
+  assert.equal(state.leads.length, 20);
+  assert.equal(state.leads[0].title, WORLD_PICK.title, 'the newest find stays on the desk');
+});
+
 // ───────────────────── who the desk writes to ─────────────────────
 
 // The desk writes to the institution whose document it holds. A news site is

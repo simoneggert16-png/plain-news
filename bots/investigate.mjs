@@ -203,7 +203,7 @@ function loadPrivateLeads() {
 
 function savePrivateLeads(list) {
   fs.mkdirSync(DOSSIER_DIR, { recursive: true });
-  fs.writeFileSync(LEADS_FILE, `${JSON.stringify(list.slice(-20), null, 2)}\n`);
+  fs.writeFileSync(LEADS_FILE, `${JSON.stringify(list.slice(0, 20), null, 2)}\n`);
 }
 
 /**
@@ -1594,7 +1594,7 @@ Return {"summary":"…","worth":false,"story":{"title":"","angle":"","people":""
   };
   if (!lead.summary) return;
   state.leads = Array.isArray(state.leads) ? state.leads : [];
-  state.leads = [lead, ...state.leads.filter((l) => l.summary !== lead.summary)].slice(-20);
+  state.leads = [lead, ...state.leads.filter((l) => l.summary !== lead.summary)].slice(0, 20);
   log(`INBOX  tip ← ${msg.from} — ${lead.worth ? 'could be a story' : 'kept on the list'}`);
   await markMessages([letter?.id].filter(Boolean), { status: 'processed', processed_at: nowISO() }).catch(() => {});
 }
@@ -1680,7 +1680,7 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
     }
     state.leads = Array.isArray(state.leads) ? state.leads : [];
     if (state.leads.some((l) => l.url === lead.url)) continue;
-    state.leads = [lead, ...state.leads].slice(-20);
+    state.leads = [lead, ...state.leads].slice(0, 20);
     added++;
     log(`SCAN  ✓ ${lead.outlet}: ${lead.title}`);
   }
