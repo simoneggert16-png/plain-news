@@ -2117,6 +2117,9 @@ function withDisclosure(body) {
 async function draftEmail(d, { org, note: hint, reminder }) {
   const claims = [...d.claims].sort((a, b) => b.weight - a.weight).slice(0, 6)
     .map((c) => `- ${c.text}`).join('\n');
+  // The open questions are what the desk still cannot answer. A reporter
+  // writes to a party to close them — the letter has no other reason to exist.
+  const open = (d.gaps || []).slice(0, 8).map((g) => `- ${String(g).slice(0, 200)}`).join('\n');
   const rules = reminder
     ? `- This is a reminder, not a new request: we wrote to ${org} on ${reminder.sentDay} with the subject "${reminder.subject || 'our request for comment'}" and have had no answer.
 - Two short paragraphs: what we are waiting for, and that we would still like to publish their reply.
@@ -2126,7 +2129,8 @@ async function draftEmail(d, { org, note: hint, reminder }) {
 - No accusations, no legal threats, no flattery, no emojis, no markdown. Plain text, at most 120 words.`
     : `- Greeting: formal, to the organisation (no invented names).
 - One neutral paragraph: who we are (PLAIN., investigative desk, plain-news.ch), that this research is AI-assisted and editor-reviewed, and what we are looking into.
-- 3-5 numbered questions. Each must be answerable and about one specific fact, payment, decision or date from the list above.
+- 3-5 numbered questions. Each must be answerable and about one specific fact, payment, decision or date from the list above, or must close one of the open questions.
+- Do not ask the organisation whether it knows of the matter, whether it has received complaints, lawsuits or reports about it, or what its position on the matter is, unless the list above says so.
 - Say we will publish their reply; they may choose full or summarized.
 - Offer to correct anything factually wrong.
 - Ask for an answer by ${replyDeadline()}.
@@ -2142,7 +2146,7 @@ async function draftEmail(d, { org, note: hint, reminder }) {
       content: `We are investigating: ${d.title}
 Our question: ${d.angle}
 What our documents and reports currently show (each line is sourced, do not overstate):
-${claims}
+${claims}${open ? `\nWhat we could not find out and would like to ask about:\n${open}` : ''}
 
 Write an email to: ${org}${hint ? `\nInternal note from the editor: ${hint}` : ''}
 
