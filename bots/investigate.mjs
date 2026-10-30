@@ -1562,7 +1562,14 @@ async function main() {
   log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s.`);
 }
 
-main().catch((err) => {
+// Keep-alive sockets from fetch, rss-parser and pdf.js hold the event loop
+// open long after the work is done — a finished run once sat 20 minutes in CI
+// on that alone. Everything is on disk by now, so the process can go.
+function finish(code = 0) {
+  process.stdout.write('', () => process.exit(code));
+}
+
+main().then(() => finish(0)).catch((err) => {
   console.error(err);
-  process.exit(1);
+  finish(1);
 });
