@@ -218,6 +218,13 @@ const DESK_RADAR = [
   ['arms trade', 'arms export licence investigation'],
   ['lobbying', 'lobbying disclosure ministers meetings register'],
   ['courts', 'court ruling government secrecy documents access'],
+  // State crime and cyber theft: the money that moves is the trail, and the
+  // people who lose it are the reason to report it.
+  ['state hacking', 'state-sponsored cyber theft attribution North Korea Lazarus investigation'],
+  ['crypto theft', 'crypto exchange hack laundering sanctions evasion victims investigation'],
+  // People, not process: the desk also follows what is taken from people.
+  ['indigenous rights', 'indigenous peoples land rights eviction extraction investigation'],
+  ['natural resources', 'illegal fishing logging mining protected area biodiversity investigation'],
 ];
 
 async function intake(dossiers, state) {
@@ -293,7 +300,7 @@ async function pickRequests(requests, slots) {
     const { data, model } = await chatJSON('desk', [
       {
         role: 'system',
-        content: `You are the investigative editor of PLAIN., a small independent news site. The desk works internationally: prefer stories that cross borders or touch an international institution, and treat purely national affairs as a last resort. You commission at most two investigations per week and you would rather open one than open a weak one. Return JSON only.`,
+        content: `You are the investigative editor of PLAIN., a small independent news site. The desk works internationally: prefer stories that cross borders or touch an international institution, and treat purely national affairs as a last resort. You commission at most two investigations per week and you would rather open one than open a weak one. You write about people: a topic where nobody can be named as losing, profiting or living with the consequences is a process topic, not a story. Return JSON only.`,
       },
       {
         role: 'user',
@@ -304,7 +311,8 @@ A topic qualifies only if ALL of these hold:
 - a concrete, verifiable core: decisions, contracts, payments, appointments, court rulings, documents;
 - answerable with public records, data, court files and email questions to the institutions — no hidden sources are needed;
 - not already covered by our own archive as an investigation;
-- serious enough to justify weeks of work.
+- serious enough to justify weeks of work;
+- people are visible in it: the readers who asked for it, the people it is done to, the ones who profit from it. Preference goes to stories where ordinary people carry the consequences of what powerful actors decide.
 
 Reject speculation, conspiracy framing, "someone should look into X" without a specific institution or decision, and topics that are really opinion.
 
@@ -341,20 +349,20 @@ async function deskTopic() {
     ...picks.map(([label, query]) => ({ outlet: `Radar: ${label}`, url: googleNews(query), kind: 'aggregator' })),
     ...DESK_FEEDS,
   ];
-  const { items } = await safe(() => fetchFeeds(feeds, { maxAgeHours: 24 * 3, perFeed: 20 }), { items: [] });
+  const { items } = await safe(() => fetchFeeds(feeds, { maxAgeHours: 24 * 10, perFeed: 25 }), { items: [] });
   if (!items.length) return null;
 
   const newest = [...items].sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
-  const heads = newest.slice(0, 45).map((i) => `- ${i.outlet}: ${i.title}`).join('\n');
+  const heads = newest.slice(0, 60).map((i) => `- ${i.outlet}: ${i.title}`).join('\n');
   try {
     const { data } = await chatJSON('desk', [
       {
         role: 'system',
-        content: `You are the investigative editor of PLAIN. You look at the news of the last ten days and ask which development deserves documents, data and questions rather than another report. The desk works internationally; a story that only concerns one country must carry a cross-border institution, a shared pattern or money that crosses a border. Return JSON only.`,
+        content: `You are the investigative editor of PLAIN. You look at the news of the last ten days and ask which development deserves documents, data and questions rather than another report. The desk works internationally; a story that only concerns one country must carry a cross-border institution, a shared pattern or money that crosses a border. You write about people: a story without visible people behind it — without anyone who lost something, profits from it or lives with the consequences — is a process story, not a story. Return JSON only.`,
       },
       {
         role: 'user',
-        content: `Recent headlines:\n${heads}\n\nIs there ONE story here with an investigative core — public money, a decision, a contract, a court case, a pattern across institutions? It must be answerable with public records and email questions.\n\nReturn {"topic":{"title":"working headline, max 90 characters","angle":"the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["4-6 specific search queries"]}} or {"topic":null} if none qualifies.`,
+        content: `Recent headlines:\n${heads}\n\nIs there ONE story here with an investigative core — public money, a decision, a contract, a court case, a pattern across institutions? It must be answerable with public records and email questions. It must also have people in it: who loses, who profits, who is left to live with the consequences. Stories about people affected by power — by settlement, extraction, state crime, a hacked account, a taken land — beat stories about a procedure.\n\nReturn {"topic":{"title":"working headline, max 90 characters","angle":"the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["4-6 specific search queries"]}} or {"topic":null} if none qualifies.`,
       },
     ], { temperature: 0.4, maxTokens: 1500 });
     const t = data?.topic;
@@ -617,7 +625,7 @@ async function researchAgent(d) {
   const steps = Math.max(4, +(process.env.INVESTIGATE_AGENT_STEPS || 10));
   const { final, steps: log2 } = await runAgent({
     role: 'desk',
-    system: `You are the international investigative desk of PLAIN., an independent news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. Your beat is cross-border — Brussels, Washington, Geneva, Nairobi, Singapore — and a national story only matters if it connects to an institution, a programme or a pattern beyond one country. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. Write your findings in English.`,
+    system: `You are the international investigative desk of PLAIN., an independent news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. Your beat is cross-border — Brussels, Washington, Geneva, Nairobi, Singapore — and a national story only matters if it connects to an institution, a programme or a pattern beyond one country. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. You write about people: for every story you look for the ones who carry the consequences and the ones who profit from them, and you name them. Write your findings in English.`,
     task: `INVESTIGATION: ${d.title}
 QUESTION: ${d.angle}
 DESK BRIEF: ${JSON.stringify(d.brief || {})}
@@ -631,6 +639,7 @@ WHAT THIS RUN SHOULD ACHIEVE
 Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
 Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
 Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
+If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: site:trmlabs.com, site:chainalysis.com, site:ic3.gov, site:justice.gov, site:ofac.treasury.gov, site:cert.europa.eu, site:enisa.europa.eu, site:un.org, site:ohchr.org, site:sanctions.io. If the story is about land, extraction or settlement, name the people who live there and what they lost.
 Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.`,
 
     tools,
