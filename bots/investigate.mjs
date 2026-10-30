@@ -45,6 +45,7 @@ import { terminologyFor } from './lib/terminology.mjs';
 import { INVESTIGATION_QUOTAS, weekKey } from '../lib/investigations.mjs';
 import {
   addOutreach,
+  getInvestigationStatus,
   listOutreach,
   listRequests,
   requestOutreach,
@@ -812,7 +813,7 @@ async function researchAgent(d) {
         if (name.length < 3) return { error: 'org too short' };
         const mail = String(email || '').trim();
         if (mail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return { error: 'email looks invalid — drop it or find the published address' };
-        const existing = d.contacts.find((c) => c.org.toLowerCase() === name.toLowerCase());
+        const existing = d.contacts.find((c) => sameOrg(c.org, name));
         if (existing) {
           if (mail && !existing.email) {
             existing.email = mail;
@@ -1295,13 +1296,55 @@ Return exactly:
   d.gaps = [...new Set([...(d.gaps || []), ...(Array.isArray(data.gaps) ? data.gaps : []).map(String)])].slice(0, 12);
   for (const c of Array.isArray(data.contacts) ? data.contacts : []) {
     const org = String(c.org || '').trim();
-    if (!org || d.contacts.some((x) => x.org.toLowerCase() === org.toLowerCase())) continue;
+    if (!org || d.contacts.some((x) => sameOrg(x.org, org))) continue;
     d.contacts.push({ org, role: String(c.why || 'must be asked for comment').slice(0, 300) });
   }
   log(`RESEARCH  ${d.claims.length} claim(s), ${d.gaps.length} gap(s), ${d.contacts.length} contact(s) — ${model}`);
 }
 
 // ─────────────────────────── 3. OUTREACH ───────────────────────────
+// Two entries can name the same organisation: "Bitget Exchange" and
+// "Bitget - Security Team" are one desk, and a real one asks once.
+const ORG_NOISE = new Set([
+  'company', 'exchange', 'group', 'team', 'firm', 'labs', 'agency', 'security',
+  'media', 'press', 'office', 'department', 'center', 'centre', 'authority',
+  'authorities', 'commission', 'ministry', 'council', 'bank', 'united', 'nation',
+  'national', 'global', 'world', 'blockchain', 'crypto', 'digital', 'services',
+  'systems', 'technology', 'technologies', 'holdings', 'partners', 'associates',
+  'ltd', 'inc', 'gmbh', 'plc', 'corp', 'and', 'the', 'for', 'similar',
+  'relevant', 'must', 'asked', 'comment', 'organization', 'organisation',
+  'institution', 'official', 'response', 'investigation', 'unit', 'bureau',
+  'issuer', 'issuers',
+]);
+function orgTokens(name) {
+  return String(name || '')
+    .toLowerCase()
+    .replace(/[()[\]]/g, ' ')
+    .replace(/\b(e\.?g\.?|i\.?e\.?|etc\.?)\b/g, ' ')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .split(' ')
+    .filter((w) => w.length >= 4 && !ORG_NOISE.has(w))
+    .map(stem);
+}
+function stem(w) {
+  if (w.length > 5 && w.endsWith('ies')) return `${w.slice(0, -3)}y`;
+  if (w.length > 4 && w.endsWith('s')) return w.slice(0, -1);
+  return w;
+}
+function sameOrg(a, b) {
+  if (String(a || '').trim().toLowerCase() === String(b || '').trim().toLowerCase()) return true;
+  const ta = orgTokens(a);
+  const tb = orgTokens(b);
+  if (!ta.length || !tb.length) return false;
+  // The name an organisation is known by sits at the front. A shared word
+  // further back ("Bitget is registered in ...") is not the same desk.
+  const coreA = new Set([...ta].slice(0, 3));
+  const coreB = new Set([...tb].slice(0, 3));
+  for (const t of coreA) if (t.length >= 5 && coreB.has(t)) return true;
+  for (const t of coreB) if (t.length >= 5 && coreA.has(t)) return true;
+  return false;
+}
+
 async function outreachRows(slug) {
   const all = await safe(() => listOutreach({ limit: 300 }), []);
   return all.filter((o) => o.slug === slug);
@@ -1355,6 +1398,10 @@ async function queueOutreach(d) {
   const ready = (d.contacts || []).filter((c) => c.email && !known.has(String(c.email).toLowerCase()));
   const queued = [];
   for (const contact of ready.slice(0, 3)) {
+    const mail = String(contact.email).toLowerCase();
+    // Two entries can carry the same press address. One letter, one ask.
+    if (known.has(mail)) continue;
+    known.add(mail);
     try {
       await requestOutreach({
         slug: d.slug,
@@ -1441,7 +1488,23 @@ async function sendApproved(d) {
 // ─────────────────────────── 4. WRITE ───────────────────────────
 const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfirst":"2-3 sentences that state what we found and how solid it is","facts":["5-8 key facts with numbers and dates"],"sections":[{"heading":"…","paragraphs":["…"]}],"claims":[{"text":"…","sources":["S1","S3"]}],"rightOfReply":"what the institutions answered, or that they did not answer despite repeated requests — with dates","methodology":"how we reported: documents read, data used, questions sent, what we could not verify"}`;
 
-async function writeInvestigation(d, outreach) {
+// A long answer can arrive cut off: the model stops at its token limit and
+// the last fields are missing. The piece is still worth keeping - the desk
+// already wrote a headline for this dossier, and it can stand in for the one
+// the model did not finish.
+function repairDraft(d, draft) {
+  if (!draft || typeof draft !== 'object') return draft;
+  const body = draft.article && typeof draft.article === 'object' ? draft.article : draft;
+  if (!body.title || String(body.title).trim().length < 15) body.title = d.title;
+  if (!body.dek || String(body.dek).trim().length < 10) body.dek = String(d.angle || d.title).slice(0, 220);
+  if (!body.standfirst || String(body.standfirst).trim().length < 20) {
+    body.standfirst = `What we could establish about ${d.title}, and what we could not.`;
+  }
+  return body;
+}
+
+async function writeInvestigation(d, outreach, { attempt = 1 } = {}) {
+  const target = attempt === 1 ? MIN_WORDS : Math.round(MIN_WORDS * 0.8);
   const replies = outreach.filter((o) => o.status === 'replied' && o.reply_note);
   const sent = outreach.filter((o) => ['sent', 'replied'].includes(o.status));
   const claims = d.claims.map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${c.text} (sources: ${c.sources.join(', ')})`).join('\n');
@@ -1449,7 +1512,7 @@ async function writeInvestigation(d, outreach) {
     ? sent.map((o) => `- ${o.org || o.to_email}: requested ${day(o.sent_at || o.approved_at || o.created_at)}${o.status === 'replied' ? `\n  REPLY: ${o.reply_note}` : '\n  no reply so far'}`).join('\n')
     : '(no requests sent yet)';
 
-  const { data, model } = await chatJSON('writer', [
+  const { data, model, text, doneReason } = await chatJSON('writer', [
     {
       role: 'system',
       content: `You are a senior investigative reporter at PLAIN., an independent Swiss news site. You write from documents, not from impressions. ${STYLE_GUIDE} Return JSON only.`,
@@ -1471,7 +1534,7 @@ ${outreachLog}
 SOURCES:
 ${sourcePack(d, 20, 1500)}
 
-TASK: Write the investigation in English, ${MIN_WORDS}-4000 words.
+TASK: Write the investigation in English, ${target}-4000 words.
 
 STRUCTURE (6-9 sections, each heading max 60 characters)
 1. Open with the single most concrete finding, not with background.
@@ -1484,6 +1547,7 @@ STRUCTURE (6-9 sections, each heading max 60 characters)
 RULES
 - Every factual sentence must rest on a claim above. If something is not in the claims, it is not in the piece.
 - Numbers, dates, names and titles exactly as in the sources. No rounding invented, no "about".
+- This is a piece about people, not about process. Name who is affected and what it costs them: the ones who lost money, work, land or freedom. A reader must be able to point at a person by the end of the first two sections.
 - Contested claims: name who says what. Never present one side as established fact.
 - No opinion, no prosecution rhetoric, no "shocking", no calls to resign. Show the facts; the reader draws the conclusion.
 - Long, specific paragraphs. No bullet lists. No "in conclusion".
@@ -1495,8 +1559,8 @@ RULES
 Return exactly:
 ${DRAFT_SCHEMA}`,
     },
-  ], { temperature: 0.35, maxTokens: 14000 });
-  return { draft: data, model };
+  ], { temperature: 0.35, maxTokens: attempt === 1 ? 20000 : 14000, think: false });
+  return { draft: repairDraft(d, data), model, text, doneReason };
 }
 
 async function editInvestigation(d, outreach, draft, styleIssues = []) {
@@ -1571,9 +1635,19 @@ async function maybeWrite(d, outreach) {
   if (forced) log(`WRITE   ${d.slug} forced past: ${missing.join(', ') || 'all gates met'}`);
 
   log(`WRITE   ${d.slug}: ${outlets} outlets, ${d.claims.length} claims, ${sent.length} request(s)`);
-  let { draft, model } = await writeInvestigation(d, outreach);
+  let { draft, model, text, doneReason } = await writeInvestigation(d, outreach);
   let problem = draftProblem(d, draft);
-  if (problem) throw new Error(`draft rejected: ${problem}`);
+  if (problem && deadlineLeft() > 300000) {
+    // The answer was cut off or came back empty. Ask once more and ask for
+    // less - a shorter piece that holds is worth more than no piece.
+    log(`WRITE   first answer unusable (${problem}) — asking again, shorter`);
+    ({ draft, model, text, doneReason } = await writeInvestigation(d, outreach, { attempt: 2 }));
+    problem = draftProblem(d, draft);
+  }
+  if (problem) {
+    log(`WRITE   draft rejected: ${problem} — model ${model || '?'}, stop reason ${doneReason || 'unknown'}, keys: ${Object.keys(draft || {}).join(', ') || 'none'}, answer ${text ? text.length : 0} characters`);
+    throw new Error(`draft rejected: ${problem}`);
+  }
 
   const styleIssues = styleProblems(draft);
   if (styleIssues.length) log(`WRITE   style: ${styleIssues.join(' | ')}`);
@@ -1745,6 +1819,21 @@ async function publish(d) {
 }
 
 // ─────────────────────────── mirror ───────────────────────────
+// The editorial status lives in the database - that is where the editor
+// changes it. The file holds the research. Without reading the decision
+// back, an approval is seen as "review" on the next shift and then written
+// over by the mirror: nobody could ever publish anything.
+async function syncStatus(d) {
+  const row = await getInvestigationStatus(d.slug).catch(() => null);
+  if (!row?.status || row.status === d.status) return false;
+  if (d.status === 'published') return false;
+  d.status = row.status;
+  if (row.approved_at) d.approvedAt = row.approved_at;
+  note(d, null, `status from the editor's desk: ${row.status}`);
+  log(`DESK  ${d.slug}: status ${row.status} (editor's desk)`);
+  return true;
+}
+
 async function mirror(d) {
   if (DRY_RUN) return false;
   const rows = await outreachRows(d.slug);
@@ -1845,6 +1934,14 @@ async function main() {
     }
     try {
       log(`\n▶ ${d.slug} [${d.status}]`);
+      // The editor decides in the database. Read that decision before doing
+      // anything else with the dossier.
+      await syncStatus(d).catch((err) => log(`STATUS  unreachable: ${err.message}`));
+      if (!isActive(d)) {
+        log(`  ${d.status} - the editor closed this one; leaving it alone`);
+        await mirror(d);
+        continue;
+      }
       if (d.status === 'approved') {
         await publish(d);
       } else if (d.status === 'review') {

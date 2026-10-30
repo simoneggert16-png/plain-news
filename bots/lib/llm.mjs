@@ -50,31 +50,59 @@ export const MODELS = {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function callOllama(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90000 } = {}) {
+async function callOllama(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90000, think = null } = {}) {
   const key = process.env.OLLAMA_API_KEY;
   if (!key) throw new Error('OLLAMA_API_KEY missing');
-  const res = await fetch(`${OLLAMA_BASE}/api/chat`, {
+  const body = {
+    model,
+    messages: messages.map((m) => ({ role: m.role, content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) })),
+    // Default num_ctx is small enough to cut long article bodies, and the
+    // reply needs room for a full 9-language JSON block.
+    options: { temperature, num_ctx: 32768, num_predict: maxTokens },
+    stream: false,
+  };
+  // Hybrid models spend their token budget on reasoning. A 4000-word piece
+  // then arrives cut off with nothing but thinking in it. `think: false` tells
+  // Ollama to answer straight away.
+  if (think === false) body.think = false;
+
+  let res = await fetch(`${OLLAMA_BASE}/api/chat`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model,
-      messages: messages.map((m) => ({ role: m.role, content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) })),
-      // Default num_ctx is small enough to cut long article bodies, and the
-      // reply needs room for a full 9-language JSON block.
-      options: { temperature, num_ctx: 32768, num_predict: maxTokens },
-      stream: false,
-    }),
+    body: JSON.stringify(body),
     signal: AbortSignal.timeout(timeoutMs),
   });
+  if (!res.ok && body.think === false) {
+    // Older deployments do not know the parameter. Ask again without it.
+    delete body.think;
+    res = await fetch(`${OLLAMA_BASE}/api/chat`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+  }
   if (!res.ok) {
-    const body = await res.text().catch(() => '');
-    const err = new Error(`Ollama ${model} HTTP ${res.status}: ${body.slice(0, 200)}`);
+    const bodyText = await res.text().catch(() => '');
+    const err = new Error(`Ollama ${model} HTTP ${res.status}: ${bodyText.slice(0, 200)}`);
     err.status = res.status;
     throw err;
   }
   const json = await res.json();
   const msg = json.message || {};
-  return ((msg.content && msg.content.trim()) ? msg.content : (msg.thinking || '')).trim();
+  const content = (msg.content || '').trim();
+  const thinking = (msg.thinking || '').trim();
+  // Reasoning without an answer is not an answer. Passing the thinking text on
+  // only produced confusing "no valid JSON" failures further down.
+  if (!content && thinking) {
+    const err = new Error(`Ollama ${model} returned only reasoning (${thinking.length} characters), no answer`);
+    err.status = res.status;
+    throw err;
+  }
+  const out = (content || thinking).trim();
+  // "length" means the model was cut off at the token limit. A long answer
+  // that stops early is missing its last fields, and the caller has to know.
+  return { text: out, doneReason: json.done_reason || null };
 }
 
 async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 120_000 } = {}) {
@@ -111,7 +139,7 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
   if (msg.reasoning_content && msg.content && !msg.content.includes('{') && msg.reasoning_content.includes('{')) {
     out = msg.reasoning_content;
   }
-  return out.trim();
+  return { text: out.trim(), doneReason: choice?.finish_reason || null };
 }
 
 const disabledModels = new Map();
@@ -124,7 +152,7 @@ let globalDeadline = 0;
 export function setDeadline(ts) { globalDeadline = ts || 0; }
 export function deadlineLeft() { return globalDeadline ? globalDeadline - Date.now() : Infinity; }
 
-/** Chat with fallback across a list of models. Returns { text, model }. */
+/** Chat with fallback across a list of models. Returns { text, model, doneReason }. */
 export async function chat(role, messages, opts = {}) {
   const models = opts.models || MODELS[role] || [role];
   const deadline = opts.deadline || globalDeadline;
@@ -144,11 +172,11 @@ export async function chat(role, messages, opts = {}) {
         ? { ...opts, timeoutMs: Math.max(5000, Math.min(opts.timeoutMs || 120_000, remaining)) }
         : opts;
       try {
-        const text = model.startsWith('ollama/')
+        const answer = model.startsWith('ollama/')
           ? await callOllama(model.slice(7), messages, callOpts)
           : await callNvidia(model, messages, callOpts);
-        if (!text.trim()) throw new Error(`${model} returned empty output`);
-        return { text, model };
+        if (!answer.text.trim()) throw new Error(`${model} returned empty output`);
+        return { text: answer.text, model, doneReason: answer.doneReason || null };
       } catch (e) {
         lastErr = e;
         if (e.status === 402 || e.status === 401 || e.status === 403) {
@@ -172,9 +200,9 @@ export async function chatJSON(role, messages, opts = {}) {
     if (deadline && Date.now() > deadline) {
       throw lastErr || new Error('deadline reached before a valid JSON answer arrived');
     }
-    const { text, model } = await chat(role, messages, opts);
+    const { text, model, doneReason } = await chat(role, messages, opts);
     try {
-      return { data: extractJSON(text), model, text };
+      return { data: extractJSON(text), model, text, doneReason };
     } catch (e) {
       lastErr = e;
       messages = [
@@ -187,6 +215,69 @@ export async function chatJSON(role, messages, opts = {}) {
   throw lastErr;
 }
 
+/**
+ * Rebuild a JSON document that was cut off mid-answer.
+ * Scans for the last value that arrived complete, then closes every bracket
+ * that was still open at that point.
+ */
+export function repairTruncatedJSON(text) {
+  const start = text.indexOf('{');
+  if (start === -1) return null;
+  const s = text.slice(start);
+
+  const stack = [];
+  let inString = false;
+  let escaped = false;
+  let lastEnd = -1;
+  let lastClosers = '';
+
+  const closersFor = (open) => (open === '{' ? '}' : ']');
+  const snapshot = () => stack.map(closersFor).reverse().join('');
+
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i];
+
+    if (inString) {
+      if (escaped) { escaped = false; continue; }
+      if (ch === '\\') { escaped = true; continue; }
+      if (ch === '"') {
+        inString = false;
+        // A string followed by a colon is a key, anything else is a value.
+        let j = i + 1;
+        while (j < s.length && /\s/.test(s[j])) j++;
+        if (s[j] !== ':') {
+          lastEnd = i + 1;
+          lastClosers = snapshot();
+        }
+      }
+      continue;
+    }
+
+    if (ch === '"') { inString = true; continue; }
+
+    if (ch === '{' || ch === '[') { stack.push(ch); continue; }
+
+    if (ch === '}' || ch === ']') {
+      if (stack.pop() === undefined) return null; // more closers than openers
+      lastEnd = i + 1;
+      lastClosers = snapshot();
+      continue;
+    }
+
+    if (ch === ',' && stack.length > 0) {
+      // A comma ends a scalar value: 123, true, null
+      const before = s.slice(0, i).trimEnd();
+      if (/[:]\s*(-?\d[\d.eE+-]*|true|false|null)$/.test(before)) {
+        lastEnd = i;
+        lastClosers = snapshot();
+      }
+    }
+  }
+
+  if (lastEnd === -1) return null;
+  return s.slice(0, lastEnd) + lastClosers;
+}
+
 export function extractJSON(text) {
   let t = text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
   const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
@@ -196,6 +287,13 @@ export function extractJSON(text) {
   }
 
   try { return JSON.parse(t); } catch {}
+
+  // The answer was cut off mid-structure. Cut it back to the last value that
+  // arrived complete and close the open brackets - a half piece beats none.
+  const repaired = repairTruncatedJSON(t);
+  if (repaired) {
+    try { return JSON.parse(repaired); } catch {}
+  }
 
   let best = null;
   for (const openChar of ['{', '[']) {
