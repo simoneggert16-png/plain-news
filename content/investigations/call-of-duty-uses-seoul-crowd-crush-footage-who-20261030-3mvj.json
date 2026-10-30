@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-10-30T19:46:57.026Z",
+  "updatedAt": "2026-10-30T20:25:06.891Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -34,8 +34,122 @@
       "image": "https://img0.yna.co.kr/etc/inner/EN/2026/10/30/AEN20261030011500320_01_i_P4.jpg"
     }
   ],
-  "claims": [],
-  "gaps": [],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Activision Publishing used real footage of the 2022 Seoul Itaewon crowd crush in the opening moments of Call of Duty: Modern Warfare 4.",
+      "sources": [
+        "S1"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C2",
+      "text": "The footage depicted a paramedic performing CPR on a crowd crush victim and was used to portray civilian casualties during a fictional war with North Korea.",
+      "sources": [
+        "S1"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C3",
+      "text": "Activision Publishing apologized for the use of the footage and agreed to remove it in an update scheduled for November 12, 2026.",
+      "sources": [
+        "S1"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "partial",
+      "checkNote": "The source states, \"The footage will be removed in our update set to be rolled out on Nov. 12,\" but does not specify the year 2026."
+    },
+    {
+      "id": "C4",
+      "text": "Activision Publishing stated it had no plans to evoke tragic events, including the Itaewon crowd crush, when using news footage in its games.",
+      "sources": [
+        "S1"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C5",
+      "text": "The Itaewon crowd crush resulted in 159 deaths on October 29, 2022.",
+      "sources": [
+        "S1"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C6",
+      "text": "Bereaved families of the victims criticized the game publisher for lacking common sense and demanded complete removal of the clip.",
+      "sources": [
+        "S1"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C7",
+      "text": "Activision Blizzard, Inc. is an American video game holding company headquartered in Santa Monica, California.",
+      "sources": [
+        "S2"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "unreadable"
+    },
+    {
+      "id": "C8",
+      "text": "Activision Blizzard owns and publishes the Call of Duty franchise.",
+      "sources": [
+        "S2"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.882Z",
+      "checked": "unreadable"
+    },
+    {
+      "id": "C9",
+      "text": "Activision Publishing, Inc. is a subsidiary of Activision Blizzard and is responsible for publishing Call of Duty games.",
+      "sources": [
+        "S3"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-10-30T20:14:05.883Z",
+      "checked": "unreadable"
+    }
+  ],
+  "gaps": [
+    "What financial benefit, if any, did Activision Publishing derive from including the real footage in the game?",
+    "What internal decision-making process led to the inclusion of the footage?",
+    "Did Activision Publishing have a policy or guidelines regarding the use of real-world tragedy footage in games?",
+    "Were there any legal or regulatory actions taken against Activision Publishing for this use of footage?",
+    "What was the cost, if any, of acquiring or licensing the footage?",
+    "Did the removal of the footage affect game sales or revenue?",
+    "What statements, if any, did the game’s development studios (e.g., Infinity Ward, Treyarch, Sledgehammer Games) make regarding the use of the footage?",
+    "Has the Korean government or Seoul city issued any statements or actions related to the game's use of the footage?",
+    "Did the original news agency that provided the footage issue any statements or take any action?",
+    "What is the current status of the update that will remove the footage?",
+    "Are there any ongoing or planned lawsuits or settlements involving the footage?",
+    "What is the perspective of the victims’ families or advocacy groups on the removal and apology?"
+  ],
   "contacts": [],
   "outreach": [],
   "draft": null,
@@ -52,117 +166,27 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-10-30T19:21:40.203Z",
+      "at": "2026-10-30T20:13:36.650Z",
       "steps": [
         {
           "step": 1,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Activision Blizzard contract Korean media company crowd crush footage Call of Duty 2024"
+            "query": "Activision Blizzard contract Korean media company crowd crush footage Seoul Call of Duty 2024 lawsuit"
           },
           "ok": true,
-          "ms": 57509
+          "ms": 37688
         },
         {
           "step": 2,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "court ruling Activision Blizzard Seoul crowd crush footage lawsuit South Korea"
+            "query": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush Yonhap"
           },
           "ok": true,
-          "ms": 56261
-        },
-        {
-          "step": 3,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard contract Korean media company crowd crush footage"
-          },
-          "ok": true,
-          "ms": 58421
-        },
-        {
-          "step": 4,
-          "thought": "",
-          "action": "none",
-          "args": {
-            "query": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush",
-            "open": {
-              "url": "https://en.yna.co.kr/view/AEN20261030011500320"
-            }
-          },
-          "ok": false,
-          "ms": 39364
-        },
-        {
-          "step": 5,
-          "thought": "",
-          "action": "open",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
-          },
-          "ok": true,
-          "ms": 39286
-        },
-        {
-          "step": 6,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard contract Korean media company footage Itaewon"
-          },
-          "ok": true,
-          "ms": 59209
-        },
-        {
-          "step": 7,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard Korea media contract footage"
-          },
-          "ok": true,
-          "ms": 57527
-        },
-        {
-          "step": 8,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard Korean media company contract footage"
-          },
-          "ok": true,
-          "ms": 68383
-        }
-      ],
-      "final": null
-    },
-    {
-      "at": "2026-10-30T19:33:40.675Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard contract Korean media company crowd crush footage Call of Duty 2024 lawsuit South Korea"
-          },
-          "ok": true,
-          "ms": 64220
-        },
-        {
-          "step": 2,
-          "thought": "",
-          "action": "none",
-          "args": {
-            "query": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush Yonhap 2026-10-30",
-            "open": true
-          },
-          "ok": false,
-          "ms": 38355
+          "ms": 35640
         },
         {
           "step": 3,
@@ -172,210 +196,370 @@
             "url": "https://en.yna.co.kr/view/AEN20261030011500320"
           },
           "ok": true,
-          "ms": 39985
+          "ms": 11973
         },
         {
           "step": 4,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "court ruling Activision Blizzard Seoul crowd crush lawsuit 2026"
+            "query": "court ruling Activision Blizzard lawsuit crowd crush footage Seoul"
           },
           "ok": true,
-          "ms": 66630
+          "ms": 50193
         },
         {
           "step": 5,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Activision Blizzard contract Korean media company crowd crush footage press release"
+            "query": "서울 코리아 법원 Activision 블리자드 군중 붕괴 영상 소송"
           },
           "ok": true,
-          "ms": 67479
+          "ms": 97246
         },
         {
           "step": 6,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "court ruling Activision Blizzard Seoul crowd crush lawsuit 2026 Korean court"
+            "query": "Activision Blizzard 계약 한국 미디어 회사 군중 붕괴 영상"
           },
           "ok": true,
-          "ms": 57191
+          "ms": 24285
         },
         {
           "step": 7,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "서울고등법원 Call of Duty 2026"
+            "query": "Itaewon crowd crush footage lawsuit Activision"
           },
           "ok": true,
-          "ms": 57189
+          "ms": 19998
         },
         {
           "step": 8,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Activision Blizzard Itaewon footage lawsuit Korean court 2026"
+            "query": "Seoul Central District Court ruling Activision Blizzard"
           },
           "ok": true,
-          "ms": 59440
+          "ms": 21052
         },
         {
           "step": 9,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "court.go.kr Call of Duty Itaewon crowd crush lawsuit"
+            "query": "이태원 군중 붕괴 영상 소송 Activision",
+            "topn": 10
           },
           "ok": true,
-          "ms": 57849
+          "ms": 29779
         },
         {
           "step": 10,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "서울고등법원 Call of Duty 2026 소송"
+            "query": "Korean Ministry of Culture press release Call of Duty footage Itaewon",
+            "topn": 10
           },
           "ok": true,
-          "ms": 69546
+          "ms": 34876
         },
         {
           "step": 11,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "서울고등법원 Call of Duty Itaewon 소송 2026"
+            "query": "Activision Blizzard lawsuit Itaewon crowd crush",
+            "topn": 10
           },
           "ok": true,
-          "ms": 58594
+          "ms": 30429
+        },
+        {
+          "step": 12,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "서울중앙지방법원 Activision 이태원 군중 붕괴 소송",
+            "topn": 10
+          },
+          "ok": true,
+          "ms": 35314
         }
       ],
       "final": null
     },
     {
-      "at": "2026-10-30T19:45:46.643Z",
+      "at": "2026-10-30T20:20:46.232Z",
       "steps": [
         {
           "step": 1,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Call of Duty Seoul crowd crush footage lawsuit South Korea court ruling"
+            "query": "Activision Blizzard court case Seoul crowd crush footage lawsuit South Korea"
           },
           "ok": true,
-          "ms": 68223
+          "ms": 81602
         },
         {
           "step": 2,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush Yonhap 2026-10-30"
+            "query": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush court case",
+            "source": "news"
           },
           "ok": true,
-          "ms": 63213
+          "ms": 32105
         },
         {
           "step": 3,
           "thought": "",
-          "action": "open",
+          "action": "search",
           "args": {
             "query": "https://en.yna.co.kr/view/AEN20261030011500320",
-            "open": true,
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
+            "source": "news"
           },
           "ok": true,
-          "ms": 38962
+          "ms": 40620
         },
         {
           "step": 4,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Call of Duty lawsuit South Korea crowd crush"
+            "query": "서울 고소장 아이타원 군중 충돌 영상 Call of Duty 법원 판결",
+            "source": "news"
           },
           "ok": true,
-          "ms": 65379
+          "ms": 29180
         },
         {
           "step": 5,
           "thought": "",
-          "action": "none",
+          "action": "search",
           "args": {
-            "query": "court ruling Activision Blizzard Seoul crowd crush",
-            "open": true
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320",
+            "source": "news"
           },
-          "ok": false,
-          "ms": 38914
+          "ok": true,
+          "ms": 22243
         },
         {
           "step": 6,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Activision Blizzard contract Korean media company crowd crush footage"
+            "query": "court ruling Activision Blizzard Itaewon footage",
+            "source": "news"
           },
           "ok": true,
-          "ms": 57380
+          "ms": 98457
         },
         {
           "step": 7,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush Yonhap",
+            "source": "news"
+          },
+          "ok": true,
+          "ms": 27143
+        },
+        {
+          "step": 8,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320",
+            "source": "news"
+          },
+          "ok": false,
+          "ms": 1637
+        },
+        {
+          "step": 9,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320",
+            "source": "news"
+          },
+          "ok": false,
+          "ms": 2764
+        },
+        {
+          "step": 10,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320",
+            "source": "news"
+          },
+          "ok": false,
+          "ms": 35641
+        },
+        {
+          "step": 11,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320",
+            "source": "news"
+          },
+          "ok": false,
+          "ms": 3496
+        },
+        {
+          "step": 12,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320",
+            "source": "news"
+          },
+          "ok": false,
+          "ms": 7312
+        }
+      ],
+      "final": null
+    },
+    {
+      "at": "2026-10-30T20:24:31.848Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "Activision Blizzard contract Korean media company crowd crush footage"
+          },
+          "ok": true,
+          "ms": 31996
+        },
+        {
+          "step": 2,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320"
+          },
+          "ok": true,
+          "ms": 27239
+        },
+        {
+          "step": 3,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush Yonhap"
+          },
+          "ok": true,
+          "ms": 26967
+        },
+        {
+          "step": 4,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "New ‘Call of Duty’ Game Draws Criticism for Using Footage of Deadly Seoul Crowd Crush"
+          },
+          "ok": true,
+          "ms": 20723
+        },
+        {
+          "step": 5,
           "thought": "",
           "action": "search",
           "args": {
             "query": "Korean Ministry of Culture press release Call of Duty footage Itaewon"
           },
           "ok": true,
-          "ms": 58041
+          "ms": 30437
+        },
+        {
+          "step": 6,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "Activision Blizzard lawsuit South Korea crowd crush"
+          },
+          "ok": true,
+          "ms": 20584
+        },
+        {
+          "step": 7,
+          "thought": "",
+          "action": "search",
+          "args": {
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320"
+          },
+          "ok": true,
+          "ms": 21098
         },
         {
           "step": 8,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Activision Blizzard lawsuit Seoul crowd crush"
+            "query": "en.yna.co.kr view AEN20261030011500320"
           },
           "ok": true,
-          "ms": 67009
+          "ms": 19068
         },
         {
           "step": 9,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Itaewon crowd crush lawsuit Activision Blizzard"
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320"
           },
-          "ok": true,
-          "ms": 59120
+          "ok": false,
+          "ms": 2156
         },
         {
           "step": 10,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "Activision Blizzard Korean media company footage Call of Duty"
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320"
           },
-          "ok": true,
-          "ms": 63401
+          "ok": false,
+          "ms": 2577
         },
         {
           "step": 11,
           "thought": "",
           "action": "search",
           "args": {
-            "query": "이태원 붕괴 Call of Duty 소송"
+            "query": "https://en.yna.co.kr/view/AEN20261030011500320"
           },
-          "ok": true,
-          "ms": 58208
+          "ok": false,
+          "ms": 932
+        },
+        {
+          "step": 12,
+          "thought": "",
+          "action": "none",
+          "args": {
+            "open": {
+              "url": "https://en.yna.co.kr/view/AEN20261030011500320"
+            }
+          },
+          "ok": false,
+          "ms": 1347
         }
       ],
       "final": null
     }
   ],
-  "nextStep": "keep reporting: 1/8 outlets, 0/2 primary sources, 0/6 claims, no outreach sent"
+  "nextStep": "keep reporting: 1/8 outlets, 0/2 primary sources, no outreach sent"
 }
