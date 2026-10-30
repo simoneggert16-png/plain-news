@@ -33,6 +33,7 @@ import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch } from './lib/search.mjs';
 import { filingCabinets, publishedEmail } from './lib/lookup.mjs';
+import { institutionalDocuments } from './lib/documents.mjs';
 import { openPage } from './lib/browse.mjs';
 import { runAgent } from './lib/agent.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
@@ -229,6 +230,115 @@ function coreTermsOf(d) {
     .split(/\s+/)
     .filter((w) => w.length >= 4 && !STOPWORDS.has(w) && !GENERIC.has(w));
   return [...new Set(words)].slice(0, 12);
+}
+
+/**
+ * Walk to the institutions and read what they filed.
+ *
+ * The desk's filing cabinets are doors a reporter walks without asking a
+ * model for permission: each door is a public host that files primary
+ * documents, and the desk goes there on its own. The registry of doors and
+ * the wording they use live in lib/documents.mjs.
+ *
+ * The model chooses the questions; the documents themselves are the desk's
+ * responsibility. This does what a reporter does before writing: goes to the
+ * Justice Department, to the sanctions office, to the chain-analysis firms —
+ * and puts what it finds on file. Without this the desk keeps filing
+ * newspaper headlines and never reaches the paper that makes the story
+ * publishable.
+ */
+async function openPrimaryDoors(d, { maxDoors = 6, maxPerDoor = 2 } = {}) {
+  const subject = `${d.title || ''} ${d.angle || ''} ${d.brief?.topic || ''}`;
+  const docs = await institutionalDocuments(subject, {
+    context: d.brief?.hints || '',
+    maxInstitutions: maxDoors,
+    limit: 40,
+  }).catch(() => []);
+  if (!docs.length) return 0;
+
+  // Two documents per institution: enough to show the paper trail, not so
+  // much that one institution drowns the story.
+  const perDoor = new Map();
+  const shortlist = [];
+  for (const doc of docs) {
+    const n = perDoor.get(doc.outlet) || 0;
+    if (n >= maxPerDoor) continue;
+    perDoor.set(doc.outlet, n + 1);
+    shortlist.push(doc);
+  }
+
+  const pages = await Promise.all(
+    shortlist.map((doc) => openPage(doc.url, { maxChars: 4000 }).catch(() => null))
+  );
+
+  let added = 0;
+  for (let i = 0; i < shortlist.length; i++) {
+    const doc = shortlist[i];
+    const page = pages[i];
+    if (!page?.text) continue;
+    addSource(
+      d,
+      { url: doc.url, outlet: doc.outlet, title: page.title || doc.title, publishedAt: doc.publishedAt || null, primary: true },
+      { kind: 'document' }
+    );
+    const src = d.sources.find((s) => s.url === doc.url);
+    if (src && !src.text) {
+      src.text = page.text.slice(0, MAX_SOURCE_CHARS);
+      src.readAt = nowISO();
+    }
+    added++;
+  }
+  if (added) log(`DOORS  ${added} primary document(s) read at ${[...perDoor.keys()].join(', ')}`);
+  return added;
+}
+
+// A dossier that lists a wildfire next to a bank heist is a dossier nobody
+// can publish. A source whose headline shares no word with the story has
+// nothing to do with it — unless a claim already leans on it.
+const MONTHS = new Set(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']);
+// Words that belong to every story. They may not keep a source alive.
+const FILLER = new Set(['data', 'news', 'report', 'reports', 'story', 'stories', 'people', 'group', 'company', 'part', 'number', 'amount', 'value', 'source', 'sources', 'first', 'last', 'case', 'fact', 'facts', 'issue', 'issues', 'update', 'updates', 'information', 'details', 'detail', 'official', 'officials', 'latest', 'police', 'authorities']);
+
+function pruneOffTopic(d) {
+  const wordsOf = (s) =>
+    new Set(
+      String(s || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
+        .split(/\s+/)
+        .filter(Boolean)
+    );
+  const story = wordsOf(`${d.title || ''} ${d.angle || ''} ${d.brief?.topic || ''} ${d.brief?.hints || ''}`);
+  const terms = [...story].filter((w) => w.length >= 4 && !STOPWORDS.has(w) && !MONTHS.has(w) && !FILLER.has(w));
+  if (!terms.length) return 0;
+
+  const claimed = new Set((d.claims || []).flatMap((c) => c.sources || []));
+  const keep = [];
+  const dropped = [];
+  for (const s of d.sources) {
+    const words = wordsOf(s.title);
+    if (claimed.has(s.id) || terms.some((t) => words.has(t))) {
+      keep.push(s);
+      continue;
+    }
+    dropped.push(s);
+  }
+  if (!dropped.length) return 0;
+
+  // Renumber: the desk hands out S<count+1>, so a gap would collide later.
+  const idMap = new Map();
+  keep.forEach((s, i) => {
+    const next = `S${i + 1}`;
+    if (next !== s.id) idMap.set(s.id, next);
+    s.id = next;
+  });
+  for (const c of d.claims || []) {
+    if (!Array.isArray(c.sources)) continue;
+    c.sources = c.sources.map((id) => idMap.get(id) || id);
+  }
+  d.sources = keep;
+  log(`PRUNE  ${dropped.length} off-topic source(s) dropped: ${dropped.map((s) => s.outlet).join(', ')}`);
+  return dropped.length;
 }
 
 // ─────────────────────────── 1. INTAKE ───────────────────────────
@@ -429,6 +539,7 @@ async function researchAgent(d) {
   const cache = new Map();
   const startedSources = d.sources.length;
   const startedClaims = d.claims.length;
+  pruneOffTopic(d);
 
   // Google and Bing answer CI runners with empty feeds most of the time. The
   // desk's own watchlist — world broadcasters, wires and primary sources — is
@@ -441,6 +552,13 @@ async function researchAgent(d) {
   const wire = (wireRes.items || []).filter((it) => it.url);
   log(`WIRE  ${wire.length} headline(s) from ${DESK_FEEDS.length} desk feeds`);
 
+  // Before the model searches anything, the desk goes to the institutions
+  // itself. Whatever is filed here is on file before the agent writes a single
+  // claim, so the claims rest on documents instead of on headlines.
+  const doorsBefore = d.sources.filter((s) => s.primary).length;
+  await openPrimaryDoors(d).catch(() => 0);
+  const doorsAdded = d.sources.filter((s) => s.primary).length - doorsBefore;
+
   // Every search opens its first hits; the cap keeps a run with a slow or
   // hostile site from spending the whole budget in page fetches.
   let autoOpenBudget = 6;
@@ -452,7 +570,9 @@ async function researchAgent(d) {
     // A year matches every headline of that year - it is no evidence at all.
     .filter((w) => w.length > 2 && !/^\d+$/.test(w) && !/^(the|and|for|with|from|about|und|der|die|das|von|fuer|mit|auf)$/i.test(w));
   const wireMatches = (q, n = 8) => {
-    const terms = termsOf(q);
+    // Only the first terms count: a long angle would let a headline match on
+    // two incidental words.
+    const terms = termsOf(q).slice(0, 8);
     if (!terms.length) return [];
     // One shared word is not a match. Two terms, or one distinctive one
     // ("bitget", "lazarus"), before a headline may enter.
@@ -516,9 +636,11 @@ async function researchAgent(d) {
         collect(primary);
         collect(wide);
         if (hits.length < 3) collect(bare);
-        // Never answer with an empty page: hand over the newest wire headlines
-        // so there is always something to open and follow.
-        if (hits.length < 3) collect(wire.slice(0, 10));
+        // Never answer with an empty page: hand over the wire headlines that
+        // are about this story. Unrelated headlines are worse than none — a
+        // dossier that lists a wildfire next to a bank heist is a dossier
+        // nobody can publish.
+        if (hits.length < 3) collect(wireMatches(`${d.title} ${d.angle}`, 8));
 
         // The desk reads what it finds. Documents come first — a story needs
         // the papers, not only the headlines — and the first two hits are
@@ -698,7 +820,8 @@ For every institution that must answer, call find_contact with its domain — th
 Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
 If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: site:trmlabs.com, site:chainalysis.com, site:ic3.gov, site:justice.gov, site:ofac.treasury.gov, site:cert.europa.eu, site:enisa.europa.eu, site:un.org, site:ohchr.org, site:sanctions.io. If the story is about land, extraction or settlement, name the people who live there and what they lost.
 Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.
-Every search also goes through the desk's filing cabinets: the US Justice Department's press releases, the UN newsroom, the World Bank's procurement notices and the world archive. Results marked "primary" are documents — open them, they are what makes the story publishable. The wide web is searched too, but it is the least reliable of the four; when it returns nothing, name the institution and search its own portal instead.`,
+Every search also goes through the desk's filing cabinets: the US Justice Department's press releases, the UN newsroom, the World Bank's procurement notices and the world archive. Results marked "primary" are documents — open them, they are what makes the story publishable. The wide web is searched too, but it is the least reliable of the four; when it returns nothing, name the institution and search its own portal instead.
+${doorsAdded ? `The desk has already been to the institutions before you started: ${doorsAdded} document(s) from the filing cabinets are on file. Read their text above and write down what they prove, before you search for anything else. A story about an attack or a theft is carried by the indictment, the sanction and the attribution report — not by the headlines about it.` : ''}`,
 
     tools,
     maxSteps: steps,
@@ -715,8 +838,10 @@ Every search also goes through the desk's filing cabinets: the US Justice Depart
   // A weak model can gather the right documents and still forget to write the
   // claims down. The desk then does what a desk does: read the pages on file
   // and extract the facts itself.
-  if (claims === 0 && d.sources.some((s) => s.text)) {
-    log('RESEARCH  no claim on file — extracting from the pages the desk read');
+  const doorIds = new Set(d.sources.filter((s) => s.primary && s.kind === 'document').map((s) => s.id));
+  const doorsCited = d.claims.some((c) => (c.sources || []).some((id) => doorIds.has(id)));
+  if ((claims === 0 || (doorsAdded > 0 && !doorsCited)) && d.sources.some((s) => s.text)) {
+    log('RESEARCH  extracting from the documents on file');
     await safe(() => extract(d), null);
     claims = d.claims.length - startedClaims;
   }
@@ -980,6 +1105,7 @@ Return {"checks":[{"id":"C1","verdict":"supported|partial|unsupported","reason":
 }
 
 async function research(d) {
+  pruneOffTopic(d);
   if (process.env.INVESTIGATE_AGENT !== '0') {
     const ok = await researchAgent(d).catch((err) => {
       log(`RESEARCH  agent failed: ${err.message}`);
@@ -1048,7 +1174,15 @@ async function research(d) {
 }
 
 function sourcePack(d, limit = 8, chars = 3500) {
-  return d.sources.slice(0, limit).map((s) =>
+  // The documents first: a document that was opened carries facts, a headline
+  // that was not opened carries none. Without this order the pack fills up
+  // with unread headlines and the strongest material never reaches the model.
+  const ordered = [
+    ...d.sources.filter((s) => s.primary && s.text),
+    ...d.sources.filter((s) => !s.primary && s.text),
+    ...d.sources.filter((s) => !s.text),
+  ];
+  return ordered.slice(0, limit).map((s) =>
     `[${s.id}] ${s.outlet}${s.primary ? ' (official/primary)' : ''} — "${s.title}" (${String(s.publishedAt || '').slice(0, 10)})\nURL: ${s.url}\nTEXT: ${(s.text || '(not readable — headline only)').slice(0, chars)}`
   ).join('\n\n');
 }
@@ -1096,8 +1230,21 @@ Return exactly:
     log('RESEARCH  extraction produced no supported claims');
     return;
   }
-  d.claims = claims;
-  d.gaps = (Array.isArray(data.gaps) ? data.gaps : []).map(String).slice(0, 12);
+  // The extraction adds to what is on file; it never replaces a claim the
+  // agent already made. Identifiers stay stable so a draft keeps its grip.
+  const existingIds = new Set(d.claims.map((c) => c.id));
+  const merged = [...d.claims];
+  let next = d.claims.length + 1;
+  for (const c of claims) {
+    const norm = c.text.toLowerCase().replace(/\W+/g, ' ').trim();
+    if (merged.some((x) => x.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm)) continue;
+    let id = `C${next++}`;
+    while (existingIds.has(id)) id = `C${next++}`;
+    existingIds.add(id);
+    merged.push({ ...c, id });
+  }
+  d.claims = merged;
+  d.gaps = [...new Set([...(d.gaps || []), ...(Array.isArray(data.gaps) ? data.gaps : []).map(String)])].slice(0, 12);
   for (const c of Array.isArray(data.contacts) ? data.contacts : []) {
     const org = String(c.org || '').trim();
     if (!org || d.contacts.some((x) => x.org.toLowerCase() === org.toLowerCase())) continue;
@@ -1551,27 +1698,33 @@ async function publish(d) {
 
 // ─────────────────────────── mirror ───────────────────────────
 async function mirror(d) {
-  if (DRY_RUN) return;
+  if (DRY_RUN) return false;
   const rows = await outreachRows(d.slug);
   const pending = rows.filter((r) => ['draft', 'approved', 'requested'].includes(r.status)).length;
   const sent = rows.filter((r) => ['sent', 'replied'].includes(r.status)).length;
-  await safe(() => upsertInvestigation({
-    slug: d.slug,
-    title: d.title,
-    angle: d.angle,
-    category: d.category,
-    status: d.status,
-    priority: d.priority ?? 2,
-    origin: d.origin || 'desk',
-    request_id: d.requestId || null,
-    source_count: d.sources.length,
-    verified_claims: d.claims.length,
-    open_questions: (d.gaps || []).length,
-    outreach_pending: pending,
-    outreach_sent: sent,
-    next_step: d.nextStep || null,
-    published_at: d.published?.at || null,
-  }));
+  try {
+    await upsertInvestigation({
+      slug: d.slug,
+      title: d.title,
+      angle: d.angle,
+      category: d.category,
+      status: d.status,
+      priority: d.priority ?? 2,
+      origin: d.origin || 'desk',
+      request_id: d.requestId || null,
+      source_count: d.sources.length,
+      verified_claims: d.claims.length,
+      open_questions: (d.gaps || []).length,
+      outreach_pending: pending,
+      outreach_sent: sent,
+      next_step: d.nextStep || null,
+      published_at: d.published?.at || null,
+    });
+    return true;
+  } catch (err) {
+    log(`  ! ${err.message}`);
+    return false;
+  }
 }
 
 // ─────────────────────────── main ───────────────────────────
@@ -1594,12 +1747,29 @@ async function main() {
   // status is mirrored once so the UI does not keep it on the working list.
   for (const d of dossiers.filter((x) => x.status === 'archived' && x.mirroredStatus !== 'archived')) {
     if (DRY_RUN) break;
-    await mirror(d);
+    // Only a dossier that really reached the database counts as mirrored.
+    if (!(await mirror(d))) continue;
     d.mirroredStatus = 'archived';
     saveDossier(d);
   }
 
   // Diagnostic mode: only the agent, nothing else, so a test run ends fast.
+  if (process.env.INVESTIGATE_ONLY === 'doors') {
+    // Only the walk to the institutions: it shows whether the desk can still
+    // reach the documents, without a model and without touching the mail.
+    const only = FORCE_SLUG ? dossiers.filter((d) => d.slug === FORCE_SLUG) : dossiers.filter(isActive).slice(0, 1);
+    for (const d of only) {
+      log(`\n▶ ${d.slug} [${d.status}] — doors only`);
+      pruneOffTopic(d);
+      const added = await openPrimaryDoors(d).catch((err) => { log(`DOORS  failed: ${err.message}`); return 0; });
+      log(`DOORS  ${added} document(s) filed`);
+      for (const s of d.sources) log(`   [${s.id}] ${s.primary ? 'P' : ' '} ${s.outlet} — ${s.title.slice(0, 80)}\n       ${s.url}`);
+      saveDossier(d);
+    }
+    log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s.`);
+    return;
+  }
+
   if (process.env.INVESTIGATE_ONLY === 'agent') {
     // A forced intake still has to run first — with no active dossier there is
     // nothing for the agent to work on.

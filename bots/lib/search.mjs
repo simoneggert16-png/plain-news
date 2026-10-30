@@ -113,6 +113,10 @@ async function mojeek(query) {
 /**
  * The whole web, not only the news: primary documents, official statements,
  * company pages. Normalised like webSearch, with the host as the outlet.
+ *
+ * DuckDuckGo and Mojeek answer datacenter requests with an anti-bot page, so
+ * this usually ends at the document finder: the news index reaches every
+ * publisher with the address the document really lives at.
  */
 export async function wideSearch(query, { limit = 12 } = {}) {
   const q = String(query || '').trim().slice(0, 160);
@@ -145,6 +149,25 @@ export async function wideSearch(query, { limit = 12 } = {}) {
       }
       return { title: h.title, url: h.url, outlet: host, publishedAt: null, summary: h.summary || '' };
     });
+
+  if (!out.length) {
+    const { findDocuments } = await import('./documents.mjs');
+    const docs = await findDocuments(q, { limit }).catch(() => []);
+    for (const d of docs) {
+      out.push({
+        title: d.title,
+        url: d.url,
+        outlet: d.outlet,
+        publishedAt: d.publishedAt,
+        summary: '',
+        // The document finder knows where the document lives; the wide web
+        // does not make it primary.
+        primary: false,
+        kind: 'news',
+      });
+    }
+  }
+
   webCache.set(q, { value: out, at: Date.now() });
   return out.slice(0, limit);
 }

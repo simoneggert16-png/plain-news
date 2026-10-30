@@ -26,9 +26,16 @@ async function grab(url, { type = 'json', timeout = 12000 } = {}) {
 const termsOf = (query) =>
   [...new Set(String(query || '').toLowerCase().replace(/[^a-z0-9äöüßÀ-ÿ ]/g, ' ').split(/\s+/).filter((w) => w.length >= 4 && !STOP.has(w)))];
 
+// One shared word is not a match: the UN newsroom carries the word "new" in
+// every headline, and a cabinet that answers with one word answers with
+// everything. Two words, or one when the question has only one.
 const matches = (text, terms) => {
   const t = String(text || '').toLowerCase();
-  return terms.length ? terms.some((x) => t.includes(x)) : false;
+  if (!terms.length) return false;
+  const needed = Math.min(2, terms.length);
+  let hits = 0;
+  for (const x of terms) if (t.includes(x)) hits++;
+  return hits >= needed;
 };
 
 const hostOf = (url) => {
@@ -131,18 +138,24 @@ async function treasuryPress(query) {
 /** World Bank procurement notices: tenders, awards, contracts. */
 async function worldBank(query) {
   const terms = termsOf(query);
+  if (!terms.length) return [];
   const url = `https://search.worldbank.org/api/v2/procnotices?format=json&qterm=${encodeURIComponent(terms.join(' '))}&rows=15`;
   const data = await grab(url);
   const list = Array.isArray(data?.procnotices) ? data.procnotices : [];
-  return list.map((n) => ({
-    title: `${n.notice_type || 'Notice'}: ${n.title || n.description || ''}`.slice(0, 300),
-    url: `https://contracts.worldbank.org/ViewContractNotice/${n.id}`,
-    outlet: 'World Bank procurement',
-    publishedAt: n.posted_on || null,
-    summary: String(n.description || '').slice(0, 300),
-    kind: 'document',
-    primary: true,
-  }));
+  // The bank's search ignores the query, so the notice has to carry the
+  // words itself. A notice without a title carries nothing.
+  return list
+    .map((n) => ({
+      title: `${n.notice_type || 'Notice'}: ${n.title || n.description || ''}`.slice(0, 300),
+      url: `https://contracts.worldbank.org/ViewContractNotice/${n.id}`,
+      outlet: 'World Bank procurement',
+      publishedAt: n.posted_on || null,
+      summary: String(n.description || '').slice(0, 300),
+      kind: 'document',
+      primary: true,
+    }))
+    .filter((n) => n.title.replace(/^Notice:\s*/, '').trim().length > 12 && matches(`${n.title} ${n.summary}`, terms))
+    .slice(0, 10);
 }
 
 /** Background on the people and institutions in the story. */
