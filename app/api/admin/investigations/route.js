@@ -34,7 +34,8 @@ function dossiersFromFiles() {
       .map((f) => {
         try { return JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')); } catch { return null; }
       })
-      .filter(Boolean);
+      // Only a dossier is a dossier. The folder also holds the desk's mailbox.
+      .filter((d) => d && d.slug && d.title);
   } catch {
     return [];
   }

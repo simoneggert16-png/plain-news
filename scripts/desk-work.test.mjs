@@ -7,6 +7,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 
 process.env.OLLAMA_API_KEY ||= 'test-key';
 process.env.NVIDIA_API_KEY ||= 'test-key';
@@ -423,4 +425,23 @@ test('a letter the shelf does not know is still on the editor’s desk', () => {
   assert.equal(rows.length, 1);
   assert.equal(rows[0].id, 'L3');
   assert.equal(rows[0].body, 'the questions');
+});
+
+// ───────────────────────── the mailbox is not a dossier ─────────────────────────
+
+// The desk keeps its letters in the same folder as its dossiers. Only a
+// dossier has a slug and a title; anything else in the folder is not one.
+test('the desk’s mailbox is not a dossier', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'desk-files-'));
+  const folder = path.join(dir, 'content', 'investigations');
+  fs.mkdirSync(folder, { recursive: true });
+  fs.writeFileSync(path.join(folder, 'state.json'), '{}');
+  fs.writeFileSync(path.join(folder, 'index.json'), '{}');
+  fs.writeFileSync(path.join(folder, 'inbox.json'), '[{"id":"F1","from_email":"press@example.org","status":"new"}]');
+  fs.writeFileSync(path.join(folder, 'a-story.json'), JSON.stringify({ slug: 'a-story', title: 'A story' }));
+
+  const load = new Function('fs', 'path', 'DOSSIER_DIR', `${take('loadDossiers')}; return loadDossiers;`)(fs, path, folder);
+  const rows = load();
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].slug, 'a-story');
 });
