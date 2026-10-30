@@ -3,7 +3,7 @@
   "title": "North Korea's crypto machine: the Bitget heist, the Binance billions and the people who paid",
   "angle": "Who took the 387.5 million dollars from Bitget and the 6.3 billion from Binance, where did it go, who is behind it, and who loses when a state runs a crypto theft programme?",
   "category": "tech",
-  "status": "review",
+  "status": "published",
   "priority": 1,
   "origin": "desk",
   "requestId": null,
@@ -14,7 +14,7 @@
     "hints": "Bitget hot and warm wallet transfers of 387.5m USD detected 24/25 September 2026; cold wallets untouched; false transaction data inserted into the approval system; CEO Gracy Chen says IP addresses matched VPN choices of a DPRK-linked group and that Lazarus members had posed as a journalist to get a Zoom interview; TRM Labs: DPRK groups took 577m USD with Drift Protocol and KelpDAO and 76 per cent of all 2026 hack value through April; FBI attributed the 1.5bn USD Bybit theft to DPRK in February 2025; DPRK stole 2.02bn USD in 2025, all-time 6.75bn USD; user protection fund above 464m USD; UN Human Rights Office in Seoul and US Treasury OFAC run the counter-measures."
   },
   "createdAt": "2026-10-30T10:35:00.630Z",
-  "updatedAt": "2026-10-30T16:30:11.421Z",
+  "updatedAt": "2026-10-30T16:46:29.457Z",
   "queries": [
     "Bitget hack 387.5 million North Korea Lazarus CEO Gracy Chen",
     "TRM Labs North Korea 76% crypto hack value 2026 Drift Protocol KelpDAO",
@@ -1386,7 +1386,11 @@
     "writer": "ollama/gpt-oss:120b",
     "editor": "ollama/gpt-oss:120b"
   },
-  "published": null,
+  "published": {
+    "slug": "north-korea-s-lazarus-group-stole-6-75-billion-20261030-912o",
+    "at": "2026-10-30T16:43:49.637Z",
+    "translations": 6
+  },
   "history": [
     {
       "at": "2026-10-30T10:35:00.630Z",
@@ -1417,6 +1421,16 @@
       "at": "2026-10-30T16:30:11.421Z",
       "status": "review",
       "note": "draft ready: 3733 words, 20 claims"
+    },
+    {
+      "at": "2026-10-30T16:43:34.631Z",
+      "status": "approved",
+      "note": "approved by editor"
+    },
+    {
+      "at": "2026-10-30T16:44:52.440Z",
+      "status": "published",
+      "note": "published as north-korea-s-lazarus-group-stole-6-75-billion-20261030-912o (6 languages)"
     }
   ],
   "agent": [
@@ -1605,7 +1619,7 @@
       "final": null
     }
   ],
-  "nextStep": "human approval in /admin/investigations",
+  "nextStep": "published; monitor corrections and replies",
   "dropped": [
     {
       "text": "Circle and Tether froze one wallet tied to the hack, locking 218,023 USDT and 99,990 USDC (about $318,000).",
@@ -1882,5 +1896,7 @@
     ],
     "rightOfReply": "PLAIN. has not sent any questions to the organisations named in this report. Our questions are still outstanding. When the answers arrive, we will publish them in full or in summary, as the sender chooses, and this passage will be updated as soon as anything changes.",
     "methodology": "PLAIN. read 10 primary documents and reports from 17 outlets for this investigation. Every fact in this piece was checked against the text of the source that carries it: 40 claims stood, 10 rest on partial support and are marked as such. 13 questions could not be closed from the documents; they are published with the dossier. The desk publishes the sources, the claims and the open questions so that readers can check the work themselves."
-  }
+  },
+  "approvedAt": "2026-10-30T16:43:34.631Z",
+  "approvedBy": "editor"
 }
