@@ -201,25 +201,22 @@ async function writeMirror() {
   }
   console.log(`\narticles: ${uploaded} uploaded, ${articles.length - uploaded - skipped} unchanged${skipped ? `, ${skipped} deferred` : ''}`);
 
-  // The full index is five megabytes and it goes last: it is a convenience
-  // for the crawler routes, while the listings and the articles are what
-  // readers actually wait for.
+  // The full index is eight megabytes. Writing it made the database so busy
+  // that every page had to wait for it, and the site does not need it: the
+  // snapshot that ships with the deployment serves the crawler routes, and the
+  // list indexes plus the articles are what the pages actually read. The old
+  // row is removed once so the database keeps that memory for the articles.
   const fullSum = hash(JSON.stringify(index));
-  if (indexSum !== fullSum && !outOfTime()) {
+  if (!known?.indexRemoved) {
     try {
-      await rest('content_blobs?on_conflict=key', {
-        method: 'POST',
-        body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
-        prefer: 'resolution=merge-duplicates,return=minimal',
-        timeoutMs: 120000,
-      });
-      indexSum = fullSum;
-      console.log('index uploaded');
+      await rest('content_blobs?key=eq.index', { method: 'DELETE', timeoutMs: 30000 });
+      console.log('full index row removed');
     } catch (err) {
-      console.error(`index upload failed: ${err.message}`);
+      console.error(`removing the index row failed: ${err.message}`);
     }
-  } else {
-    console.log('index unchanged');
+    await writeHashMap(indexSum, nextListings, nextArticles, true);
+  } else if (indexSum !== known.index) {
+    console.log('index is local only - nothing to upload');
   }
 
   // Stories that are no longer in the repository must leave the mirror too.
@@ -244,11 +241,11 @@ async function writeMirror() {
   process.exitCode = ok ? 0 : 2;
 }
 
-async function writeHashMap(indexSum, listings, articles) {
+async function writeHashMap(indexSum, listings, articles, indexRemoved = false) {
   try {
     await rest('content_blobs?on_conflict=key', {
       method: 'POST',
-      body: [{ key: 'hashes', data: { index: indexSum, listings, articles }, updated_at: new Date().toISOString() }],
+      body: [{ key: 'hashes', data: { index: indexSum, listings, articles, indexRemoved }, updated_at: new Date().toISOString() }],
       prefer: 'resolution=merge-duplicates,return=minimal',
       timeoutMs: 60000,
     });
