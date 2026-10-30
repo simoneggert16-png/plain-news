@@ -106,7 +106,9 @@ jobs:
 
       - name: Mirror content to Supabase
         if: always()
-        timeout-minutes: 12
+        # A dead database must not hold the shift for twelve minutes. Four
+        # are enough for a slow mirror and short for an unreachable one.
+        timeout-minutes: 4
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
