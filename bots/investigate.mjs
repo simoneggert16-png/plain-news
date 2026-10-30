@@ -1657,7 +1657,8 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
   let added = 0;
   for (const pick of picks) {
     const item = items[Number(pick?.n) - 1];
-    if (!item || pick?.worth !== true || String(pick.title || '').length < 12) continue;
+    const worth = pick?.worth === true || pick?.worth === 'true' || pick?.worth === 1;
+    if (!item || !worth || String(pick.title || '').length < 12) continue;
     const lead = {
       at: nowISO(),
       origin: 'scan',
