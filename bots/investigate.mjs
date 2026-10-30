@@ -100,6 +100,10 @@ function addressedToDesk(address) {
   if (!raw) return false;
   const domain = String(process.env.DESK_EMAIL_DOMAIN || '').trim().toLowerCase();
   if (domain && !raw.includes(`@${domain}`)) return false;
+  // The desk writes from one address and reads at another. An answer that
+  // comes back to the sending address is still the desk's mail.
+  const from = String(process.env.RESEND_FROM_EMAIL || '').trim().toLowerCase();
+  if (from && raw.includes(from)) return true;
   return /desk(\+[a-z0-9-]+)?@/.test(raw);
 }
 const ACTIVE_STATUSES = ['pitch', 'research', 'outreach', 'drafting', 'review', 'approved'];
@@ -153,7 +157,8 @@ function loadDossiers() {
     .map((f) => {
       try { return JSON.parse(fs.readFileSync(path.join(DOSSIER_DIR, f), 'utf8')); } catch { return null; }
     })
-    .filter(Boolean);
+    // Only a dossier is a dossier. The folder also holds the desk's mailbox.
+    .filter((d) => d && d.slug && d.title);
 }
 
 function saveDossier(d) {
@@ -510,6 +515,7 @@ function deskMemory(dossiers, state) {
     open,
     beats: Array.isArray(state?.beats) ? state.beats : [],
     followups: Array.isArray(state?.followups) ? state.followups : [],
+    leads: (Array.isArray(state?.leads) ? state.leads : []).filter((l) => l?.summary),
   };
 }
 
@@ -530,6 +536,12 @@ function memoryBlock(mem) {
   if (mem.followups.length) {
     lines.push('Owed to our readers (open questions from what we published):');
     for (const f of mem.followups.slice(-6)) lines.push(`- ${f.title}: ${f.question}`);
+  }
+  if (mem.leads.length) {
+    lines.push('Letters that reached the desk without a story of their own (a tip the desk keeps):');
+    for (const l of mem.leads.slice(-6)) {
+      lines.push(`- ${l.worth && l.title ? `${l.title} — ${l.summary}` : l.summary}`);
+    }
   }
   return lines.join('\n');
 }
@@ -845,6 +857,10 @@ async function researchAgent(d) {
   // Every search opens its first hits; the cap keeps a run with a slow or
   // hostile site from spending the whole budget in page fetches.
   let autoOpenBudget = 6;
+  // How often the desk has looked for something and found nothing written
+  // down. A reporter who searches twelve times and writes nothing has not
+  // worked, and the desk says so.
+  let searches = 0;
 
   const termsOf = (q) => String(q).toLowerCase()
     .replace(/\bsite:\S+/gi, ' ')
@@ -893,6 +909,7 @@ async function researchAgent(d) {
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
+        searches += 1;
         const seen = new Set();
         const hits = [];
         const collect = (list) => {
@@ -950,7 +967,14 @@ async function researchAgent(d) {
         if (wireN) notes.push(`${wireN} hit(s) come from the desk wire`);
         if (docsN) notes.push(`${docsN} primary document(s) on file`);
         if (opened.length) notes.push(`${opened.length} page(s) were opened and filed — read their text and save the claims they support`);
+        // The desk opens the first hits itself. When that budget is used up
+        // the model has to open the page itself, and it has to be told.
+        else if (results.length) notes.push('nothing was opened for you — call open with one of these urls, read the text, then save_claim what it says');
         if (!results.length) notes.push('no hits — try 2-3 words, or a "site:" query for the institution\'s own portal');
+        // A desk that searches and writes nothing down has not worked. The
+        // shift is short; say what is missing instead of letting the model
+        // search the same story twelve times.
+        if (searches >= 3 && d.claims.length === startedClaims) notes.push(`you have searched ${searches} times and written down no claim — stop searching: open a result, read the text, save_claim what it says`);
         log(`SEARCH  "${q}" → ${results.length} hit(s) (wire ${wireN}, documents ${docsN}, opened ${opened.length})`);
         return {
           query: q,
@@ -1249,6 +1273,63 @@ const replySubject = (subject) => {
 };
 
 /**
+ * A letter that belongs to no dossier is a tip. The desk reads it in the
+ * shift it arrives and keeps what it learned — not the letter, not the
+ * address of the sender. A tip that points at something the desk can prove
+ * with documents becomes a story it can work on.
+ */
+async function readLead(state, letter, msg) {
+  const body = String(msg.text || letter?.body || '').slice(0, 4000);
+  if (!body.trim()) {
+    log('INBOX  a letter without a story and without a text — ignored');
+    return;
+  }
+  let parsed = null;
+  try {
+    const { data } = await chatJSON('desk', [
+      {
+        role: 'system',
+        content: `You read the letters that reach an investigative desk without belonging to a story on file. You write down only what the letter says, never what you assume. You do not repeat private names that are not part of a public matter. You return JSON only.`,
+      },
+      {
+        role: 'user',
+        content: `A letter reached the desk:
+SUBJECT: ${msg.subject || '(none)'}
+MESSAGE:
+${body}
+
+TASK
+1. summary: two sentences, what the letter is actually about.
+2. worth: true only if it points at something a newsroom can prove with public documents or by writing to an institution — a decision, a payment, a transfer, a settlement, a dismissal, an extraction, a breach.
+3. story: if worth is true, the story the letter could start — title (max 90 characters), the question it answers, who is affected and who profits, and 4-6 search queries that would find the documents. If worth is false, leave it empty.
+
+Return {"summary":"…","worth":false,"story":{"title":"","angle":"","people":"","queries":[]}}`,
+      },
+    ], { temperature: 0.2, maxTokens: 1200 });
+    parsed = data;
+  } catch (err) {
+    log(`INBOX  tip not read: ${err.message}`);
+    return;
+  }
+
+  const story = parsed?.story || {};
+  const lead = {
+    at: nowISO(),
+    summary: String(parsed?.summary || '').slice(0, 400),
+    worth: Boolean(parsed?.worth) && String(story.title || '').length > 10,
+    title: String(story.title || '').slice(0, 120),
+    angle: String(story.angle || '').slice(0, 300),
+    people: String(story.people || '').slice(0, 300),
+    queries: (Array.isArray(story.queries) ? story.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
+  };
+  if (!lead.summary) return;
+  state.leads = Array.isArray(state.leads) ? state.leads : [];
+  state.leads = [lead, ...state.leads.filter((l) => l.summary !== lead.summary)].slice(-20);
+  log(`INBOX  tip ← ${msg.from} — ${lead.worth ? 'could be a story' : 'kept on the list'}`);
+  await markMessages([letter?.id].filter(Boolean), { status: 'processed', processed_at: nowISO() }).catch(() => {});
+}
+
+/**
  * The desk opens its own mailbox at the start of the shift. What comes in is
  * filed against the dossier whose address it was sent to, so the replies are
  * evidence and not loose mail.
@@ -1298,7 +1379,7 @@ async function pollMailbox(dossiers, state) {
     // Only a reply that belongs to a dossier on file can be filed against one.
     const known = slug && dossiers.some((d) => d.slug === slug) ? slug : null;
     try {
-      await recordInbound({
+      const letter = await recordInbound({
         slug: known,
         from: msg.from,
         to: msg.to,
@@ -1306,10 +1387,17 @@ async function pollMailbox(dossiers, state) {
         text: msg.text,
         messageId: msg.messageId,
         inReplyTo: msg.inReplyTo,
+        // A letter that belongs to no dossier is not filed in the desk's
+        // mailbox: it is read right here, and the desk keeps what it learned.
+        store: Boolean(known),
       });
       filed += 1;
       lastUid = Math.max(lastUid, msg.uid);
-      log(`INBOX  ${known || 'lead'} ← ${msg.from} — ${msg.subject.slice(0, 70)}`);
+      if (known) {
+        log(`INBOX  ${known} ← ${msg.from} — ${msg.subject.slice(0, 70)}`);
+      } else {
+        await readLead(state, letter, msg);
+      }
     } catch (err) {
       // The message stays unfiled, so it is picked up again next shift.
       log(`INBOX  could not file ${msg.from}: ${err.message}`);
@@ -1377,13 +1465,32 @@ async function readInbox(d) {
     await setOutreach([row.id], { status: 'replied', reply_note: parsed.summary.slice(0, 1000) }).catch(() => {});
 
     if (parsed.needsReply && parsed.reply.length > 80) {
+      const subject = replySubject(msg.subject);
+      const body = withDisclosure(parsed.reply);
+      // The desk keeps its own copy of what it wants to answer. A reply that
+      // only lives on the shelf is lost on the day the shelf does not answer.
+      const letter = {
+        id: nextLetterId(d),
+        to_email: msg.from_email,
+        org: row?.org || msg.from_email,
+        status: 'draft',
+        subject,
+        body,
+        reply_note: `Reply to the mail of ${msg.subject}`.slice(0, 200),
+        created_at: nowISO(),
+        updated_at: nowISO(),
+      };
+      ledger(d).push(letter);
       await addOutreach([{
         slug: d.slug,
         toEmail: msg.from_email,
-        org: row?.org || msg.from_email,
-        subject: replySubject(msg.subject),
-        body: withDisclosure(parsed.reply),
-      }]).catch((err) => log(`INBOX  reply draft failed: ${err.message}`));
+        org: letter.org,
+        subject,
+        body,
+      }]).then((added) => {
+        const row2 = Array.isArray(added) ? added[0] : null;
+        if (row2?.id) letter.dbId = row2.id;
+      }).catch((err) => log(`INBOX  reply draft not on the shelf: ${err.message}`));
     }
 
     note(d, null, `mail from ${msg.from_email} (${parsed.kind})`);
@@ -1704,6 +1811,7 @@ function letterRow(d, letter) {
     sent_at: letter.sent_at || null,
     error: letter.error || null,
     reply_note: letter.reply_note || null,
+    reminds: letter.reminds || null,
     created_at: letter.created_at || null,
   };
 }
@@ -1729,12 +1837,20 @@ async function outreachRows(d) {
   const rows = await safe(() => listOutreach({ limit: 300 }), []);
   const letters = ledger(d);
   const byMail = new Map();
-  for (const l of letters) byMail.set(String(l.to_email || '').toLowerCase(), l);
+  for (const l of letters) {
+    const mail = String(l.to_email || '').toLowerCase();
+    if (!byMail.has(mail)) byMail.set(mail, l);
+  }
   const out = letters.map((l) => letterRow(d, l));
 
   for (const row of rows.filter((r) => r.slug === d.slug)) {
     const mail = String(row.to_email || '').toLowerCase();
-    const known = byMail.get(mail);
+    // A shelf row belongs to the letter that wrote it. Two letters to the
+    // same address — the first request and the reminder — are two rows.
+    const known =
+      letters.find((l) => l.dbId != null && l.dbId === row.id) ||
+      letters.find((l) => l.dbId == null && String(l.to_email || '').toLowerCase() === mail) ||
+      byMail.get(mail);
     if (!known) {
       // A recipient the editor queued while the ledger did not know him.
       const letter = {
@@ -1791,9 +1907,24 @@ function withDisclosure(body) {
   return `${text}\n\n${DISCLOSURE}`;
 }
 
-async function draftEmail(d, { org, note: hint }) {
+async function draftEmail(d, { org, note: hint, reminder }) {
   const claims = [...d.claims].sort((a, b) => b.weight - a.weight).slice(0, 6)
     .map((c) => `- ${c.text}`).join('\n');
+  const rules = reminder
+    ? `- This is a reminder, not a new request: we wrote to ${org} on ${reminder.sentDay} with the subject "${reminder.subject || 'our request for comment'}" and have had no answer.
+- Two short paragraphs: what we are waiting for, and that we would still like to publish their reply.
+- Say once that the research is AI-assisted and editor-reviewed.
+- Ask for an answer by ${replyDeadline()}.
+- Sign: PLAIN. Investigative desk, ${EDITORIAL_EMAIL}
+- No accusations, no legal threats, no flattery, no emojis, no markdown. Plain text, at most 120 words.`
+    : `- Greeting: formal, to the organisation (no invented names).
+- One neutral paragraph: who we are (PLAIN., investigative desk, plain-news.ch), that this research is AI-assisted and editor-reviewed, and what we are looking into.
+- 3-5 numbered questions. Each must be answerable and about one specific fact, payment, decision or date from the list above.
+- Say we will publish their reply; they may choose full or summarized.
+- Offer to correct anything factually wrong.
+- Ask for an answer by ${replyDeadline()}.
+- Sign: PLAIN. Investigative desk, ${EDITORIAL_EMAIL}
+- No accusations, no legal threats, no flattery, no emojis, no markdown. Plain text, at most 280 words.`;
   const { data } = await chatJSON('writer', [
     {
       role: 'system',
@@ -1809,14 +1940,7 @@ ${claims}
 Write an email to: ${org}${hint ? `\nInternal note from the editor: ${hint}` : ''}
 
 RULES
-- Greeting: formal, to the organisation (no invented names).
-- One neutral paragraph: who we are (PLAIN., investigative desk, plain-news.ch), that this research is AI-assisted and editor-reviewed, and what we are looking into.
-- 3-5 numbered questions. Each must be answerable and about one specific fact, payment, decision or date from the list above.
-- Say we will publish their reply; they may choose full or summarized.
-- Offer to correct anything factually wrong.
-- Ask for an answer by ${replyDeadline()}.
-- Sign: PLAIN. Investigative desk, ${EDITORIAL_EMAIL}
-- No accusations, no legal threats, no flattery, no emojis, no markdown. Plain text, at most 280 words.
+${rules}
 
 Return {"subject":"…","body":"…"}`,
     },
@@ -1871,20 +1995,75 @@ async function queueOutreach(d) {
   return queued.length;
 }
 
+// A letter that was sent and got no answer is not a closed question. A real
+// desk asks again — once, politely — and the editor still holds the button.
+const REMINDER_AFTER_DAYS = 12;
+const REMINDERS_PER_LETTER = 1;
+
+async function queueReminders(d) {
+  const letters = ledger(d);
+  const counts = new Map();
+  for (const l of letters) if (l.reminds) counts.set(l.reminds, (counts.get(l.reminds) || 0) + 1);
+  const due = letters.filter((l) => {
+    if (l.status !== 'sent' || !l.sent_at) return false;
+    if ((counts.get(l.id) || 0) >= REMINDERS_PER_LETTER) return false;
+    const age = (Date.now() - new Date(l.sent_at).getTime()) / 864e5;
+    return Number.isFinite(age) && age >= REMINDER_AFTER_DAYS;
+  });
+  const queued = [];
+  for (const letter of due.slice(0, 2)) {
+    if (!letter.to_email) continue;
+    const sentDay = String(letter.sent_at).slice(0, 10);
+    const entry = {
+      id: nextLetterId(d),
+      to_email: letter.to_email,
+      org: letter.org || null,
+      contact_name: letter.contact_name || null,
+      status: 'requested',
+      reminds: letter.id,
+      subject: '',
+      reply_note: `Reminder: the letter of ${sentDay} is unanswered.`,
+      created_at: nowISO(),
+      updated_at: nowISO(),
+    };
+    letters.push(entry);
+    counts.set(letter.id, (counts.get(letter.id) || 0) + 1);
+    try {
+      const row = await requestOutreach({ slug: d.slug, toEmail: letter.to_email, org: letter.org, note: entry.reply_note });
+      if (row?.id) entry.dbId = row.id;
+    } catch (err) {
+      log(`OUTREACH  reminder not on the shelf: ${err.message}`);
+    }
+    queued.push(entry.org || entry.to_email);
+  }
+  if (queued.length) {
+    note(d, null, `reminder(s) prepared: ${queued.join(', ')}`);
+    log(`OUTREACH  ${queued.length} reminder(s) prepared for letters without an answer`);
+  }
+  return queued.length;
+}
+
 async function draftOutreach(d) {
   const rows = await outreachRows(d);
   const requested = rows.filter((r) => r.status === 'requested');
+  // A reminder is older than the new requests and easier to lose: it goes
+  // first.
+  const order = [...requested.filter((r) => r.reminds), ...requested.filter((r) => !r.reminds)];
   const drafted = [];
 
   // The desk writes the text; the editor decides whether it goes out. An
   // address that is not on file is never guessed.
-  for (const row of requested.slice(0, 3)) {
+  for (const row of order.slice(0, 3)) {
     const org = row.org || row.to_email;
     try {
-      const mail = await draftEmail(d, { org, note: row.reply_note || '' });
+      const original = row.reminds ? ledger(d).find((l) => l.id === row.reminds) : null;
+      const reminder = original
+        ? { sentDay: String(original.sent_at || '').slice(0, 10), subject: original.subject || '' }
+        : null;
+      const mail = await draftEmail(d, { org, note: row.reply_note || '', reminder });
       await saveLetter(d, row, { ...mail, status: 'draft', error: null });
       drafted.push(org);
-      log(`OUTREACH  drafted for ${org}`);
+      log(`OUTREACH  drafted for ${org}${reminder ? ' (reminder)' : ''}`);
     } catch (err) {
       log(`OUTREACH  draft failed for ${org}: ${err.message}`);
     }
@@ -2894,6 +3073,7 @@ async function main() {
         // A dead database must not take the shift with it. The requests are
         // prepared for the editor either way; the draft is the work product
         // and it does not need a single row in a table.
+        await queueReminders(d).catch((err) => log(`OUTREACH  reminder failed: ${err.message}`));
         await queueOutreach(d).catch((err) => log(`OUTREACH  queue failed: ${err.message}`));
         await draftOutreach(d).catch((err) => log(`OUTREACH  drafting failed: ${err.message}`));
         const fresh = await outreachRows(d).catch(() => []);

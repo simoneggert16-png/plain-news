@@ -397,7 +397,11 @@ ${PROTOCOL}`;
 
     let result;
     if (!tool) {
-      result = { error: `unknown action "${name}"`, tools: [...byName.keys()] };
+      result = name
+        ? { error: `unknown action "${name}"`, tools: [...byName.keys()] }
+        // A reply that only explains is a lost step in a short budget. Say
+        // what a step has to look like.
+        : { error: 'your reply had no action — answer with one object: {"action":"tool_name","args":{…}}, or finish with {"final":"…"}', tools: [...byName.keys()] };
       log(`AGENT  step ${step}: reply had no usable action — ${raw.replace(/\s+/g, ' ').slice(0, 200)}`);
     } else if (repeats > REPEAT_LIMIT) {
       result = { error: `you called ${name} with the same arguments ${repeats} times — choose a different action` };
