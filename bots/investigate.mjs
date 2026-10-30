@@ -1504,7 +1504,11 @@ function repairDraft(d, draft) {
 }
 
 async function writeInvestigation(d, outreach, { attempt = 1 } = {}) {
-  const target = attempt === 1 ? MIN_WORDS : Math.round(MIN_WORDS * 0.8);
+  // The second attempt must still clear the word gate, so it asks for fewer
+  // sections, not fewer words. A shorter piece that holds is worth more than
+  // no piece - but a piece under the gate is no piece at all.
+  const ceiling = attempt === 1 ? 4000 : 2900;
+  const sections = attempt === 1 ? '6-9' : '5-7';
   const replies = outreach.filter((o) => o.status === 'replied' && o.reply_note);
   const sent = outreach.filter((o) => ['sent', 'replied'].includes(o.status));
   const claims = d.claims.map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${c.text} (sources: ${c.sources.join(', ')})`).join('\n');
@@ -1534,9 +1538,9 @@ ${outreachLog}
 SOURCES:
 ${sourcePack(d, 20, 1500)}
 
-TASK: Write the investigation in English, ${target}-4000 words.
+TASK: Write the investigation in English, ${MIN_WORDS}-${ceiling} words.
 
-STRUCTURE (6-9 sections, each heading max 60 characters)
+STRUCTURE (${sections} sections, each heading max 60 characters)
 1. Open with the single most concrete finding, not with background.
 2. Show the evidence: documents, figures, dates, decisions, who signed what.
 3. Show the pattern or the money trail across cases and institutions.
