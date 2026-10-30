@@ -560,7 +560,7 @@ test('an institution has its own domain', () => {
 // desk that writes twice to the same desk looks like a machine.
 function pressPass() {
   return new Function(
-    'publishedEmail', 'sameOrg', 'hostOf', 'institutionHost', 'log',
+    'publishedEmail', 'sameOrg', 'hostOf', 'institutionHost', 'log', 'deadlineLeft',
     `${take('fileContacts')}; return fileContacts;`,
   )(
     async (host) => ({ email: `press@${host}`, sourceUrl: `https://${host}/press` }),
@@ -568,6 +568,7 @@ function pressPass() {
     new Function(`${take('hostOf')}; return hostOf;`)(),
     new Function(`${take('institutionHost')}; return institutionHost;`)(),
     () => {},
+    () => 600_000,
   );
 }
 
@@ -618,4 +619,47 @@ test('the guidance and the urls come before the excerpts', () => {
   assert.ok(noteAt >= 0, 'the search result has no note');
   assert.ok(resultsAt > noteAt, 'the urls must come before the excerpts');
   assert.ok(openedAt > resultsAt, 'the excerpts come last');
+});
+
+// ───────────────────────── the shift has to be finished ─────────────────────────
+
+// The desk works in shifts, and a shift is not over when the model stops
+// talking. The reading back, the addresses and the letters come after the
+// model — so the model may not have all the time.
+const share = new Function(`${take('modelShare')}; return modelShare;`)();
+
+test('the model does not get the whole shift', () => {
+  assert.equal(share(18 * 60_000), 480_000, 'eight minutes for the model, the rest for the work behind it');
+  assert.ok(share(18 * 60_000) < 18 * 60_000, 'the model must leave time for the rest');
+  assert.equal(share(8 * 60_000), 264_000, 'a short shift is shared in the same way');
+  assert.equal(share(60_000), 150_000, 'a very short shift still gives the model a workable slice');
+  assert.equal(share(24 * 3600_000), 480_000, 'a long shift does not give the model endless time');
+  assert.equal(share(0), 0, 'without a budget there is no deadline to hand out');
+});
+
+test('the address hunt runs before the model spends the shift', () => {
+  const loop = SOURCE.slice(SOURCE.indexOf('for (const d of targets) {'));
+  const huntAt = loop.indexOf('fillContactAddresses(d)');
+  const modelAt = loop.indexOf('await research(d)');
+  assert.ok(huntAt > 0, 'the shift must look for the addresses');
+  assert.ok(modelAt > 0, 'the shift must run the model');
+  assert.ok(huntAt < modelAt, 'the addresses are found before the model takes the time');
+});
+
+test('a link in the search box is read, not searched for', () => {
+  const url = new Function(`${take('looksLikeUrl')}; return looksLikeUrl;`)();
+  assert.equal(url('https://en.yna.co.kr/view/AEN20261030011500320'), true);
+  assert.equal(url('Activision Blizzard crowd crush footage'), false);
+  const at = SOURCE.indexOf('if (looksLikeUrl(q)) {');
+  assert.ok(at > 0, 'the search must recognise a link');
+  assert.ok(SOURCE.slice(at, at + 400).includes('readPage(q)'), 'the link must be opened');
+});
+
+test('the address hunt does not need more time than the model leaves', () => {
+  // The hunt starts when the model is done. If its guard asked for more than
+  // the model ever leaves, the desk would never write a letter.
+  const guard = SOURCE.slice(SOURCE.indexOf('async function fillContactAddresses')).slice(0, 900);
+  const need = Number(guard.match(/deadlineLeft\(\) < (\d+)/)?.[1] || 0);
+  assert.ok(need > 0, 'the hunt needs a guard');
+  assert.ok(need <= 60_000, `the hunt waits for ${need} ms — the model leaves less`);
 });
