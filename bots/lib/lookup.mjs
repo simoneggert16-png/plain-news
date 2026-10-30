@@ -226,10 +226,32 @@ const CONTACT_PATHS = [
 
 const JUNK_MAIL = /^(example|your|name|someone|firstname|lastname|user|test|hello|xxx|abc|foo|bar)@|\.(png|jpg|jpeg|gif|webp|svg|css|js)$/i;
 
-// An address on another domain is only taken when it reads like the desk of
-// that organisation. A privacy officer, a support desk or a lawyer in the
-// footer is not the press office.
-const PRESS_LOCAL = /^(press|media|news|newsroom|contact|contacts|editorial|editors?|desk|communications|comms|inquir\w*|press-?office|press-?desk|press-?contact|media-?inquir\w*)/i;
+// The endings of a domain. They say nothing about who owns the site.
+const SUFFIX = new Set([
+  'com', 'org', 'net', 'gov', 'int', 'mil', 'edu', 'info', 'biz', 'io', 'co',
+  'uk', 'hk', 'eu', 'de', 'fr', 'jp', 'cn', 'ru', 'ch', 'be', 'at', 'nl',
+  'se', 'no', 'fi', 'dk', 'es', 'it', 'br', 'in', 'au', 'ca', 'nz', 'za',
+  'kr', 'sg', 'tw', 'th', 'vn', 'id', 'my', 'ph', 'mx', 'ar', 'cl', 'tr',
+  'ua', 'pl', 'cz', 'gr', 'pt', 'ie', 'il', 'ae', 'sa',
+]);
+
+// The name of a mailbox tells the desk what kind of desk it is: 3 is the
+// press desk, 2 the desk that takes every letter, 1 the rest.
+const deskScore = (local) => {
+  const l = String(local || '').toLowerCase();
+  if (/^(press|media|news|newsroom|editorial|editors?|comms?|communications|inquir\w*|media-?inquir\w*)/.test(l)) return 3;
+  if (/^(contact|contacts|desk|reach|write|impressum|enquir\w*)/.test(l)) return 2;
+  if (/^(info|office|hello|mail|admin|general|team|support|service)/.test(l)) return 1;
+  return 0;
+};
+
+// The page an address was published on says what kind of desk it belongs to.
+const pathScore = (url) => {
+  const p = String(url || '').toLowerCase();
+  if (/press|media|news-?room|enquir|public-?affair/.test(p)) return 2;
+  if (/career|job|vacanc|graduate|human-?resource|payroll|procure|supplier|tender/.test(p)) return -2;
+  return 0;
+};
 
 const bare = (value) =>
   String(value || '')
@@ -247,15 +269,29 @@ function ownAddress(email, host) {
   return false;
 }
 
-/** The address of the organisation, or of its press office on its own domain. */
+/**
+ * The mailbox the desk writes to. The press desk first, then the general desk
+ * of the organisation, then any address on its own domain. An address of a
+ * stranger is never taken - unless it reads like a press desk of a public
+ * body: justice.gov publishes press@usdoj.gov, and that is the desk.
+ */
+function chooseAddress(pool, host) {
+  const scored = pool
+    .map((p) => ({ ...p, score: deskScore(p.email.split('@')[0]) + pathScore(p.url) }))
+    .sort((a, b) => b.score - a.score);
+  const own = scored.find((p) => ownAddress(p.email, host));
+  if (own) return own.score >= 1 ? own : null;
+  // Another domain, but the name of a press desk of a public body.
+  const foreign = scored.find(
+    (p) => deskScore(p.email.split('@')[0]) >= 2 && /\.(gov|int|mil)(\.[a-z]{2})?$/.test(p.email.split('@')[1] || ''),
+  );
+  return foreign || null;
+}
+
 export function pickAddress(emails, host) {
-  const own = emails.filter((e) => ownAddress(e, host));
-  const press = own.find((e) => PRESS_LOCAL.test(e.split('@')[0]));
-  if (press) return press;
-  if (own.length) return own[0];
-  // Another domain, but the name of a press desk: justice.gov publishes
-  // press@usdoj.gov, and that is the address the desk has to write to.
-  return emails.find((e) => PRESS_LOCAL.test(e.split('@')[0])) || null;
+  const list = [...new Set((emails || []).map((e) => String(e).trim().toLowerCase()))].filter(Boolean);
+  const chosen = chooseAddress(list.map((email) => ({ email })), host);
+  return chosen ? chosen.email : null;
 }
 
 // The words on a link that promise a way to write to somebody.
@@ -272,7 +308,10 @@ async function fetchHtml(url, timeoutMs = 7000) {
     if (!res.ok) return null;
     const type = res.headers.get('content-type') || '';
     if (!/text\/html/i.test(type)) return null;
-    return { url, html: await res.text() };
+    // The address the page ended at, not the one that was asked for: a site
+    // that redirects to its "www" would otherwise send the desk back to the
+    // front page.
+    return { url: res.url || url, html: await res.text() };
   } catch {
     return null;
   }
@@ -291,16 +330,39 @@ async function hostPages(host, paths, timeoutMs) {
   return read(`www.${host}`);
 }
 
+/**
+ * Some sites hide the address behind a code that every browser solves, so
+ * that harvesters do not collect it. The desk solves it too: the address is
+ * published for the people who write to the press office.
+ */
+function cfEmails(html) {
+  const text = String(html || '');
+  const codes = [
+    ...[...text.matchAll(/data-cfemail=["']([0-9a-f]{4,})["']/gi)].map((m) => m[1]),
+    ...[...text.matchAll(/email-protection#([0-9a-f]{4,})/gi)].map((m) => m[1]),
+  ];
+  const out = [];
+  for (const hex of codes) {
+    if (hex.length % 2) continue;
+    const key = parseInt(hex.slice(0, 2), 16);
+    let decoded = '';
+    for (let i = 2; i < hex.length; i += 2) decoded += String.fromCharCode(parseInt(hex.slice(i, i + 2), 16) ^ key);
+    if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(decoded)) out.push(decoded);
+  }
+  return out;
+}
+
 const addressesOf = (html) =>
   [...new Set(
     [
       ...[...String(html || '').matchAll(/mailto:([^"'?>\s]+)/gi)].map((m) => m[1]),
       ...[...String(html || '').matchAll(/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/g)].map((m) => m[1]),
+      ...cfEmails(html),
     ].map((e) => e.trim().toLowerCase()),
   )].filter((e) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e) && !JUNK_MAIL.test(e));
 
 /** The links on a page that lead to the contact desk of the same site. */
-function contactLinks(html, host, limit = 8) {
+function contactLinks(html, host, base = `https://${host}/`, limit = 8) {
   const here = host.replace(/^www\./, '');
   const scored = [];
   const seen = new Set();
@@ -311,7 +373,7 @@ function contactLinks(html, host, limit = 8) {
     if (!CONTACT_HINT.test(hay)) continue;
     let url;
     try {
-      url = new URL(href, `https://${here}/`);
+      url = new URL(href, base);
     } catch {
       continue;
     }
@@ -321,12 +383,16 @@ function contactLinks(html, host, limit = 8) {
     const key = url.pathname.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    // A page called "contact" is the contact page.
-    const rank = /contact/i.test(hay) ? 3 : /media|press|enquir|news-?room|impressum/i.test(hay) ? 2 : 1;
-    scored.push({ url: url.toString(), rank });
+    // A page called "media centre" or "press office" is the desk that
+    // answers questions about the story; a page called "press releases" is
+    // only a list of articles.
+    const pressDesk = /^(press|media)\b.*(office|desk|centre|center|contact|enquir|team)|enquir|news-?room|impressum/i.test(text)
+      || /media-?cent|press-?(office|desk|enquir|team)|news-?room|impressum/i.test(url.pathname);
+    const contactDesk = /contact|enquir/i.test(text) || /contact|enquir/i.test(url.pathname);
+    scored.push({ url: url.toString(), rank: pressDesk ? 3 : contactDesk ? 2 : 1 });
   }
   scored.sort((a, b) => b.rank - a.rank);
-  return scored.slice(0, limit).map((s) => s.url);
+  return scored.slice(0, limit);
 }
 
 /**
@@ -341,25 +407,35 @@ export async function publishedEmail(domain, { paths = CONTACT_PATHS, timeoutMs 
   if (!/^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i.test(host)) return null;
 
   const pages = await hostPages(host, paths, timeoutMs);
+  // Every address the site publishes, and the page that publishes it.
+  const found = new Map();
+  const collect = (page) => {
+    for (const email of addressesOf(page.html)) {
+      if (!found.has(email)) found.set(email, page.url);
+    }
+  };
+  pages.forEach(collect);
+  const pool = () => [...found.entries()].map(([email, url]) => ({ email, url }));
 
-  for (const page of pages) {
-    const emails = addressesOf(page.html);
-    if (!emails.length) continue;
-    const pick = pickAddress(emails, host);
-    if (pick) return { email: pick, sourceUrl: page.url };
+  // A press desk on the organisation's own domain ends the hunt.
+  const first = chooseAddress(pool(), host);
+  if (first && first.score >= 3) return { email: first.email, sourceUrl: first.url };
+
+  // Otherwise the site itself points to its own contact page. The desk walks
+  // there - the press desk often lives only on that page, while the footer of
+  // every other page carries the address for regulated firms.
+  const links = pages
+    .flatMap((page) => contactLinks(page.html, host, page.url))
+    .sort((a, b) => b.rank - a.rank)
+    .filter((l, i, all) => all.findIndex((x) => x.url === l.url) === i)
+    .slice(0, 10)
+    .map((l) => l.url);
+  if (links.length) {
+    for (const page of (await Promise.all(links.map((url) => fetchHtml(url, timeoutMs)))).filter(Boolean)) collect(page);
   }
 
-  // No address on the usual paths: the site itself points to its own contact
-  // page. The desk walks there.
-  const links = pages.flatMap((page) => contactLinks(page.html, host)).slice(0, 6);
-  if (!links.length) return null;
-  for (const page of (await Promise.all(links.map((url) => fetchHtml(url, timeoutMs)))).filter(Boolean)) {
-    const emails = addressesOf(page.html);
-    if (!emails.length) continue;
-    const pick = pickAddress(emails, host);
-    if (pick) return { email: pick, sourceUrl: page.url };
-  }
-  return null;
+  const best = chooseAddress(pool(), host);
+  return best ? { email: best.email, sourceUrl: best.url } : null;
 }
 
 // ───────────────────── the organisation behind the name ─────────────────────
@@ -408,6 +484,10 @@ const FILLER = new Set([
   'the', 'and', 'for', 'with', 'from', 'that', 'this', 'its', 'their', 'our',
   'are', 'was', 'has', 'have', 'not', 'but', 'all', 'any', 'who', 'per', 'via',
 ]);
+
+// The words that join a name together and say nothing about it: the initials
+// of "Securities and Exchange Commission" are sec, not sae.
+const GLUE = new Set([...FILLER, 'of', 'a', 'an']);
 
 /** The organisation itself, without the team or the person that follows it. */
 export function organisationName(org) {
@@ -529,19 +609,62 @@ export function candidateHosts(org) {
   return [...out].slice(0, 10);
 }
 
+/**
+ * The forms a site may carry in its address: the words of the name, the name
+ * written as one word, the initials of the name and the tag in brackets.
+ *
+ * A site must carry one of them whole. "sec.gov" is the Securities and
+ * Exchange Commission, but "sec" is only a piece of "Securities" - the Hong
+ * Kong regulator must not be reached through the American one.
+ */
+function hostForms(org) {
+  const t = organisationTokens(org);
+  const forms = new Set();
+  const words = String(t.name || '')
+    .toLowerCase()
+    .replace(/\bu\.s\./g, 'us')
+    .replace(/\bu\.k\./g, 'uk')
+    .split(/[^a-z0-9]+/)
+    .filter(Boolean)
+    .filter((w) => !/^(a|an|the)$/.test(w));
+  // A country mark in front is not part of the name.
+  while (words.length >= 2 && /^(us|usa|uk|united)$/.test(words[0])) {
+    const pair = `${words[0]} ${words[1]}`;
+    if (/^(united states|united kingdom)$/.test(pair)) words.shift();
+    words.shift();
+  }
+  for (let i = 0; i < words.length; i++) {
+    forms.add(words[i]);
+    for (let n = 2; n <= 4 && i + n <= words.length; n++) forms.add(words.slice(i, i + n).join(''));
+  }
+  // The initials of the name without its glue: securities, exchange,
+  // commission is sec.
+  const content = words.filter((w) => !GLUE.has(w));
+  for (let i = 0; i < content.length; i++) {
+    for (let n = 2; n <= 4 && i + n <= content.length; n++) {
+      const initials = content.slice(i, i + n).map((w) => w[0]).join('');
+      if (initials.length >= 3) forms.add(initials);
+    }
+  }
+  // The tag in brackets is a mark of its own: SFC, FATF, IC3.
+  const tag = letters(t.qualifier);
+  if (tag) forms.add(tag);
+  return forms;
+}
+
 /** True when the host carries the organisation's name in it. */
 export function hostBelongsTo(host, org) {
-  const t = organisationTokens(org);
-  const hay = `${t.compact}${letters(t.qualifier)}`;
-  if (!hay) return false;
+  const forms = hostForms(org);
+  if (!forms.size) return false;
   // Every part of the name: home.treasury.gov is the Treasury, fatf-gafi.org
-  // is the task force.
+  // is the task force. The endings of a domain say nothing: "com" is inside
+  // "commission", and that would let any site pass for any commission.
   return bare(host)
     .split('.')
     .some((label) =>
       label
         .split(/[^a-z0-9]+/i)
-        .some((part) => part.length >= 3 && hay.includes(part)),
+        .some((part) => part.length >= 3 && !SUFFIX.has(part) && forms.has(part)),
     );
 }
 
@@ -661,11 +784,7 @@ async function addressFromHosts(hosts, org, timeoutMs, { strong = false } = {}) 
   // One organisation, one site: the desk writes to the address it found on
   // the site it is sure about, or to nobody.
   const host = pickHost(verified, org);
-  const page = pages[candidates.indexOf(host)];
-  const own = pickAddress(addressesOf(page.html), host);
-  if (own) return { email: own, sourceUrl: page.url };
-  const found = await publishedEmail(host, { timeoutMs }).catch(() => null);
-  return found;
+  return publishedEmail(host, { timeoutMs }).catch(() => null);
 }
 
 /**
@@ -759,25 +878,83 @@ async function officialSitesOf(title) {
 }
 
 /**
+ * The organisations a contact line names. A line like "Law enforcement
+ * (Interpol / national cybercrime units)" is a wish list, and the desk writes
+ * to the first name on it that it can reach.
+ */
+export function candidateOrganisations(org) {
+  const text = String(org || '').trim();
+  if (!text) return [];
+  const parts = [];
+  let depth = 0;
+  let current = '';
+  for (const ch of text) {
+    if (ch === '(') depth++;
+    if (ch === ')') depth--;
+    if (depth === 0 && /[/;,]/.test(ch)) {
+      parts.push(current);
+      current = '';
+      continue;
+    }
+    current += ch;
+  }
+  parts.push(current);
+
+  const out = [];
+  const add = (value) => {
+    const piece = String(value || '').trim().replace(/\s+/g, ' ').trim();
+    if (piece.length < 4) return;
+    if (/^e\.?g\.?|^i\.?e\.?|^etc\.?|^such as|^and others/i.test(piece)) return;
+    if (!out.includes(piece)) out.push(piece);
+  };
+
+  add(text);
+  for (const part of parts) {
+    for (const piece of part.split(/\s+or\s+/i)) add(piece);
+  }
+  // What the bracket names: Interpol is a name, "USDT Issuer" is not.
+  const bracket = text.match(/\(([^)]+)\)/);
+  if (bracket) {
+    for (const piece of bracket[1].split(/[/,]/)) add(piece);
+  }
+  return out.slice(0, 5);
+}
+
+/**
  * The address to write to, found the way a reporter finds it: from the
  * organisation's own name, on the organisation's own site - and only when the
  * site really is theirs.
  */
-export async function pressAddressFor(org, { hosts = [], timeoutMs = 7000, discover = true } = {}) {
+export async function pressAddressFor(org, { hosts = [], timeoutMs = 7000, discover = true, budgetMs = 45_000 } = {}) {
+  // One contact must not eat the shift: a site that answers slowly is worth
+  // less than the addresses that are still waiting.
+  const until = Date.now() + budgetMs;
+  for (const candidate of candidateOrganisations(org)) {
+    if (Date.now() > until) break;
+    const found = await addressForOne(candidate, { hosts, timeoutMs, discover, until });
+    if (found) return found;
+  }
+  return null;
+}
+
+async function addressForOne(org, { hosts = [], timeoutMs = 7000, discover = true, until = 0 } = {}) {
   const t = organisationTokens(org);
   if (!t.words.length && !t.qualifierWords.length) return null;
 
   // A host the desk already cited in this story: the address is then read off
   // a site the desk has already decided belongs to the story.
   for (const host of hosts) {
-    if (!hostBelongsTo(host, org)) continue;
-    const found = await publishedEmail(host, { timeoutMs }).catch(() => null);
-    if (found) return found;
+    if (hostBelongsTo(host, org)) {
+      const found = await publishedEmail(host, { timeoutMs }).catch(() => null);
+      if (found) return found;
+    }
+    if (Date.now() > until) return null;
   }
 
   // Otherwise the organisation's own site, found from its name and checked.
   const guessed = await addressFromHosts(candidateHosts(org), org, timeoutMs);
   if (guessed) return guessed;
+  if (Date.now() > until) return null;
 
   // Still nothing: the desk asks the encyclopaedia where this organisation's
   // contact page lives and reads the address there.

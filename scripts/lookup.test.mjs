@@ -58,6 +58,19 @@ test('a host belongs to the organisation when it carries its name', () => {
   assert.ok(!hostBelongsTo('circle.org', 'Circle (USDC Issuer)') === false, 'the circle domain carries the name');
 });
 
+test('a piece of a word is not the name', () => {
+  // The American regulator must not answer for the Hong Kong one: "sec" is
+  // only a piece of "Securities".
+  assert.ok(!hostBelongsTo('sec.gov', 'Hong Kong Securities and Futures Commission (SFC)'));
+  assert.ok(hostBelongsTo('sfc.hk', 'Hong Kong Securities and Futures Commission (SFC)'));
+  assert.ok(hostBelongsTo('sec.gov', 'U.S. Securities and Exchange Commission (SEC)'));
+  // The initials of the name without its glue: securities, exchange,
+  // commission is sec.
+  assert.ok(hostBelongsTo('ftc.gov', 'Federal Trade Commission'));
+  assert.ok(!hostBelongsTo('ftc.gov', 'Federal Trade Administration'));
+  assert.ok(hostBelongsTo('bankofengland.co.uk', 'Bank of England'));
+});
+
 test('a page belongs to the organisation when it says so', () => {
   const sfc = 'The Securities and Futures Commission of Hong Kong (SFC) is the regulator.';
   assert.ok(pageMatchesOrganisation(sfc, 'Hong Kong Securities and Futures Commission (SFC)'));
@@ -75,8 +88,12 @@ test('the whole name has to be on the page when the site is taken from the encyc
 test('the desk prefers the press office of the organisation it is writing to', () => {
   const emails = ['info@trmlabs.com', 'press@trmlabs.com', 'support@trmlabs.com'];
   assert.equal(pickAddress(emails, 'trmlabs.com'), 'press@trmlabs.com');
+  // The press office wins over the desk that takes every letter.
+  assert.equal(pickAddress(['contact@trmlabs.com', 'press@trmlabs.com'], 'trmlabs.com'), 'press@trmlabs.com');
   // A press office on a government domain is still the press office.
   assert.equal(pickAddress(['press@usdoj.gov'], 'justice.gov'), 'press@usdoj.gov');
   // An address of a stranger is never taken.
   assert.equal(pickAddress(['reporter@someblog.com'], 'justice.gov'), null);
+  // A mailbox that is no desk at all gets no letter.
+  assert.equal(pickAddress(['hr@sfc.hk'], 'sfc.hk'), null);
 });
