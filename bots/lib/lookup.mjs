@@ -107,31 +107,39 @@ async function gdelt(query, { limit = 12, timespan = '90d' } = {}) {
 }
 
 /** The US Justice Department: indictments, sentences, plea agreements. */
-async function dojPress(query) {
-  const terms = termsOf(query);
-  const names = namesOf(query);
+async function dojItems() {
   const xml = await grab('https://www.justice.gov/news/rss?type=press_release', { type: 'xml' });
   return rssItems(xml)
-    .filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms, names))
-    .slice(0, 10)
+    .filter((i) => i.url)
+    .slice(0, 12)
     .map((i) => ({ ...i, outlet: 'US Department of Justice', kind: 'document', primary: true }));
 }
 
-/** The UN newsroom: reports, statements, resolutions in the open. */
-async function unNews(query) {
+async function dojPress(query) {
   const terms = termsOf(query);
   const names = namesOf(query);
+  const items = await dojItems();
+  return items.filter((i) => matches(`${i.title} ${i.summary}`, terms, names)).slice(0, 10);
+}
+
+/** The UN newsroom: reports, statements, resolutions in the open. */
+async function unItems() {
   const xml = await grab('https://news.un.org/feed/subscribe/en/news/all/rss.xml', { type: 'xml' });
   return rssItems(xml)
-    .filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms, names))
-    .slice(0, 10)
+    .filter((i) => i.url)
+    .slice(0, 12)
     .map((i) => ({ ...i, outlet: 'UN News', kind: 'document', primary: true }));
 }
 
-/** US Treasury: sanctions and designations. */
-async function treasuryPress(query) {
+async function unNews(query) {
   const terms = termsOf(query);
   const names = namesOf(query);
+  const items = await unItems();
+  return items.filter((i) => matches(`${i.title} ${i.summary}`, terms, names)).slice(0, 10);
+}
+
+/** US Treasury: sanctions and designations. */
+async function treasuryItems() {
   const feeds = [
     ['US Treasury', 'https://home.treasury.gov/news/press-releases/rss'],
     ['US Treasury', 'https://home.treasury.gov/rss/press-releases.xml'],
@@ -139,8 +147,8 @@ async function treasuryPress(query) {
   for (const [outlet, url] of feeds) {
     try {
       const xml = await grab(url, { type: 'xml', timeout: 9000 });
-      const items = rssItems(xml).filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms, names));
-      if (items.length) return items.slice(0, 10).map((i) => ({ ...i, outlet, kind: 'document', primary: true }));
+      const items = rssItems(xml).filter((i) => i.url).slice(0, 12);
+      if (items.length) return items.map((i) => ({ ...i, outlet, kind: 'document', primary: true }));
     } catch {
       /* try the next feed */
     }
@@ -148,12 +156,16 @@ async function treasuryPress(query) {
   return [];
 }
 
-/** World Bank procurement notices: tenders, awards, contracts. */
-async function worldBank(query) {
+async function treasuryPress(query) {
   const terms = termsOf(query);
   const names = namesOf(query);
-  if (!terms.length) return [];
-  const url = `https://search.worldbank.org/api/v2/procnotices?format=json&qterm=${encodeURIComponent(terms.join(' '))}&rows=15`;
+  const items = await treasuryItems();
+  return items.filter((i) => matches(`${i.title} ${i.summary}`, terms, names)).slice(0, 10);
+}
+
+/** World Bank procurement notices: tenders, awards, contracts. */
+async function worldBankItems(qterm = 'procurement') {
+  const url = `https://search.worldbank.org/api/v2/procnotices?format=json&qterm=${encodeURIComponent(qterm)}&rows=15`;
   const data = await grab(url);
   const list = Array.isArray(data?.procnotices) ? data.procnotices : [];
   // The bank's search ignores the query, so the notice has to carry the
@@ -168,8 +180,41 @@ async function worldBank(query) {
       kind: 'document',
       primary: true,
     }))
-    .filter((n) => n.title.replace(/^Notice:\s*/, '').trim().length > 12 && matches(`${n.title} ${n.summary}`, terms, names))
-    .slice(0, 10);
+    .filter((n) => n.title.replace(/^Notice:\s*/, '').trim().length > 12)
+    .slice(0, 12);
+}
+
+async function worldBank(query) {
+  const terms = termsOf(query);
+  const names = namesOf(query);
+  if (!terms.length) return [];
+  const items = await worldBankItems(terms.join(' '));
+  return items.filter((n) => matches(`${n.title} ${n.summary}`, terms, names)).slice(0, 10);
+}
+
+/**
+ * The front pages of the cabinets, unfiltered. A desk that looks for a story
+ * of its own reads what the world's institutions publish today — it does not
+ * wait for a tip to tell it where to look.
+ */
+export async function cabinetFrontPage({ limit = 40 } = {}) {
+  // One cabinet that is down must not silence the others.
+  const groups = await Promise.all([
+    dojItems().then((hits) => ({ label: 'US Justice Department', hits })).catch(() => ({ label: 'US Justice Department', hits: [] })),
+    unItems().then((hits) => ({ label: 'UN newsroom', hits })).catch(() => ({ label: 'UN newsroom', hits: [] })),
+    treasuryItems().then((hits) => ({ label: 'US Treasury', hits })).catch(() => ({ label: 'US Treasury', hits: [] })),
+    worldBankItems().then((hits) => ({ label: 'World Bank procurement', hits })).catch(() => ({ label: 'World Bank procurement', hits: [] })),
+  ]);
+  const out = [];
+  const seen = new Set();
+  for (const group of groups) {
+    for (const hit of group.hits) {
+      if (!hit.url || seen.has(hit.url)) continue;
+      seen.add(hit.url);
+      out.push(hit);
+    }
+  }
+  return out.slice(0, limit);
 }
 
 /** Background on the people and institutions in the story. */

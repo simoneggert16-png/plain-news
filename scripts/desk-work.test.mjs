@@ -605,7 +605,41 @@ test('the desk’s mailbox is not a dossier', () => {
   assert.equal(rows[0].slug, 'a-story');
 });
 
+// The desk keeps two kinds of lead apart. What the world published is public
+// and may live in the repository; what a person wrote to the desk is not, and
+// it never reaches the file the repository carries.
+test('a tip that came by letter never reaches the public state file', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'desk-state-'));
+  const folder = path.join(dir, 'content', 'investigations');
+  fs.mkdirSync(folder, { recursive: true });
+  const state = new Function(
+    'fs', 'path', 'DOSSIER_DIR', 'STATE_FILE', 'LEADS_FILE',
+    `${take('loadState')} ${take('saveState')} ${take('loadPrivateLeads')} ${take('savePrivateLeads')}
+     return { loadState, saveState };`,
+  )(fs, path, folder, path.join(folder, 'state.json'), path.join(folder, 'leads.json'));
+
+  state.saveState({
+    lastIntake: '2026-W44',
+    leads: [
+      { origin: 'scan', worth: true, title: 'A notice from the World Bank', url: 'https://contracts.worldbank.org/x' },
+      { worth: true, title: 'A tip from a reader of the desk', summary: 'What the letter said' },
+    ],
+  });
+
+  const shared = fs.readFileSync(path.join(folder, 'state.json'), 'utf8');
+  assert.doesNotMatch(shared, /A tip from a reader of the desk/, 'the letter stays out of the repository');
+  assert.match(shared, /A notice from the World Bank/);
+
+  const priv = fs.readFileSync(path.join(folder, 'leads.json'), 'utf8');
+  assert.match(priv, /A tip from a reader of the desk/);
+
+  // The desk still knows both of them on the next shift.
+  const back = state.loadState();
+  assert.equal(back.leads.length, 2);
+});
+
 // ───────────────────── the editor frees a letter without the shelf ─────────────────────
+
 
 // When the shared shelf does not answer, the decision travels with the run.
 // The desk writes it into its own ledger, and the letter goes out from there.
@@ -697,6 +731,113 @@ test('a tip about Swiss domestic affairs stays a tip', () => {
 test('a Swiss story that crosses a border is the desk’s business', () => {
   const gate = leadGate();
   assert.equal(gate({ title: 'A Swiss bank moves money for a mining company', angle: 'international sanctions', queries: ['bank sanctions mining transfer'] }).ok, true);
+});
+
+// ───────────────────── the desk finds its own stories ─────────────────────
+
+// The desk does not wait for a tip: it reads the front pages of the cabinets
+// it follows and keeps the notices that deserve an investigation. The notice
+// is the first document of the story — a story of its own starts with paper.
+const NOTICES = [
+  {
+    outlet: 'US Department of Justice',
+    title: 'Indictment in the export of dual-use chips to a shell company in Singapore',
+    url: 'https://www.justice.gov/opa/pr/dual-use-chips',
+  },
+  {
+    outlet: 'World Bank procurement',
+    title: 'Notice: Contract award for the rehabilitation of a dam in Nigeria',
+    url: 'https://contracts.worldbank.org/ViewContractNotice/abc',
+  },
+];
+
+function scanner(reply) {
+  const marker = (name) => {
+    const line = SOURCE.split('\n').find((l) => l.startsWith(`const ${name} = `));
+    return line.slice(`const ${name} = `.length).replace(/;$/, '');
+  };
+  return new Function(
+    'chatJSON', 'cabinetFrontPage', 'log', 'nowISO', 'safe', 'deskMemory', 'memoryBlock',
+    `
+    const SWISS_MARKER = ${marker('SWISS_MARKER')};
+    const BORDER_MARKER = ${marker('BORDER_MARKER')};
+    const BORDER_ACRONYM = ${marker('BORDER_ACRONYM')};
+    const FOREIGN_MARKER = ${marker('FOREIGN_MARKER')};
+    ${take('leadInternational')}
+    ${take('scanForLeads')}
+    return scanForLeads;
+    `,
+  )(
+    async () => ({ data: reply }),
+    async () => NOTICES,
+    () => {},
+    () => '2026-10-31T08:00:00.000Z',
+    async (fn, fallback) => {
+      try {
+        return await fn();
+      } catch {
+        return fallback;
+      }
+    },
+    () => ({ published: [], open: [], beats: [], followups: [], leads: [], finds: [] }),
+    () => '',
+  );
+}
+
+const WORLD_PICK = {
+  n: 1,
+  worth: true,
+  summary: 'A shell company in Singapore bought chips that need an export licence.',
+  title: 'A shell company in Singapore bought the chips it was not allowed to ship',
+  angle: 'Who bought the dual-use chips and who signed the export licence',
+  centre: 'Singapore',
+  people: 'The buyers hide behind a shell company; the licences are on paper',
+  queries: ['dual-use chip export Singapore shell company indictment'],
+};
+
+test('the desk finds a story of its own in the front pages of the cabinets', async () => {
+  const state = { leads: [] };
+  const added = await scanner({ leads: [WORLD_PICK] })(state, []);
+  assert.equal(added, 1);
+  assert.equal(state.leads.length, 1);
+  assert.equal(state.leads[0].origin, 'scan');
+  assert.equal(state.leads[0].worth, true);
+  assert.equal(state.leads[0].url, NOTICES[0].url, 'the notice the desk found is kept with its address');
+  assert.match(state.leads[0].title, /shell company/i);
+});
+
+test('a notice about one country’s own business does not become a story', async () => {
+  const state = { leads: [] };
+  const added = await scanner({
+    leads: [{
+      n: 2,
+      worth: true,
+      summary: 'Der Kanton verschiebt das Asylheim.',
+      title: 'Der Kanton verschiebt das Asylheim',
+      angle: 'was kostet die Stadt',
+      centre: 'Switzerland',
+      people: 'die Bewohnerinnen',
+      queries: ['kanton asylheim kosten'],
+    }],
+  })(state, []);
+  assert.equal(added, 0);
+  assert.equal(state.leads.length, 0);
+});
+
+test('the desk reads the cabinets once a day', async () => {
+  const state = { leads: [] };
+  const scan = scanner({ leads: [WORLD_PICK] });
+  assert.equal(await scan(state, []), 1);
+  assert.equal(state.lastScan, '2026-10-31');
+  assert.equal(await scan(state, []), 0, 'the second run of the day reads nothing new');
+  assert.equal(state.leads.length, 1);
+});
+
+test('a notice the desk already keeps is not kept twice', async () => {
+  const state = { leads: [{ origin: 'scan', url: NOTICES[0].url, title: 'An older find', worth: true }] };
+  const added = await scanner({ leads: [WORLD_PICK] })(state, []);
+  assert.equal(added, 0);
+  assert.equal(state.leads.length, 1);
 });
 
 // ───────────────────── who the desk writes to ─────────────────────
