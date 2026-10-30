@@ -530,7 +530,8 @@ ${state()}
 WHAT THIS RUN SHOULD ACHIEVE
 Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
 Priorities, in order: (1) find the primary documents — tender and award notices, audit reports (EFK), court rulings, parliamentary answers, official statistics; (2) file the sources you actually opened; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
-When the news feeds run dry, ask for the document itself with "site:" queries in the search tool — site:simap.ch (Vergaben), site:admin.ch, site:parlament.ch (Interpellationen, Curia Vista), site:efk.admin.ch (Prüfberichte), site:bger.ch and site:bvger.ch (Urteile). A tender notice or a ruling that you opened is worth more than ten articles about it.`,
+When the news feeds run dry, ask for the document itself with "site:" queries in the search tool — site:simap.ch (Vergaben), site:admin.ch, site:parlament.ch (Interpellationen, Curia Vista), site:efk.admin.ch (Prüfberichte), site:bger.ch and site:bvger.ch (Urteile). A tender notice or a ruling that you opened is worth more than ten articles about it.
+Before you finish: every page you rely on must be on file with save_source, and every fact you would print must be a claim with save_claim and the source id that carries it. A run that only searches has produced nothing.`,
     tools,
     maxSteps: steps,
     deadline: Number.isFinite(deadlineLeft()) ? Date.now() + deadlineLeft() : 0,
