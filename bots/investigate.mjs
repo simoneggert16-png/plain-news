@@ -800,9 +800,13 @@ async function research(d) {
 
   const kw = keywordsOf(d);
   d.keywords = kw;
+  // One keyword is not a match: a German industry survey that mentions AI is
+  // not Swiss public administration. Two terms, or one term plus a Swiss state
+  // marker, before an item may enter the dossier.
+  const SWISS = /schweiz|schweizer|eidgen|bundes|kanton|verwaltung|admin\.ch|parlament\.ch|simap|edöb|fedpol|sem\b|bsv\b|estv\b/i;
   const relevant = items
     .map((it) => ({ it, hits: keywordHits(`${it.title} ${it.summary}`, kw) }))
-    .filter((x) => x.hits >= 1)
+    .filter((x) => x.hits >= 2 || (x.hits >= 1 && SWISS.test(`${x.it.title} ${x.it.summary}`)))
     .sort((a, b) => b.hits - a.hits)
     .map((x) => x.it);
 
