@@ -60,6 +60,7 @@ jobs:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
+          GITHUB_TOKEN: ${{ github.token }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           FORCED_CREATE: ${{ inputs.create }}
@@ -90,11 +91,7 @@ jobs:
 
           if [ -n "$FORCED_CREATE" ] || [ -n "$FORCED_END" ]; then
             timeout 600 node scripts/sync-content.mjs || echo "supabase mirror skipped"
-            git add content
-            git diff --cached --quiet || {
-              git commit -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
-              git pull --rebase --autostash && git push
-            }
+            bash scripts/push-content.sh "live: $(date -u +'%Y-%m-%d %H:%M') UTC" || echo "the ticker was not published"
             exit 0
           fi
 
@@ -102,27 +99,16 @@ jobs:
           DEADLINE=$(( $(date +%s) + $(python3 -c "print(int(float('$HOURS')*3600))") ))
 
           # Every push to main is a Vercel deployment, and the Hobby plan
-          # allows 100 per day. The push costs a build; the commit does not.
-          # So the loop keeps committing every cycle and pushes on a slower
+          # allows 100 of them per day. The push costs a build; the commit does
+          # not. So the loop keeps committing every cycle and pushes on a slower
           # cadence - the ticker text itself only refreshes every 25 minutes.
-          PUSH_EVERY=${LIVE_PUSH_EVERY_SEC:-3600}
+          PUSH_EVERY=${LIVE_PUSH_EVERY_SEC:-14400}
           LAST_PUSH=0
 
+          # The day's deployments are counted inside the push script: when they are
+          # gone, the ticker keeps its updates in the local commit and waits.
           push_now() {
-            for attempt in 1 2 3 4; do
-              if git pull --rebase --autostash; then git push && return 0; fi
-              git rebase --abort 2>/dev/null || true
-              if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
-                node scripts/sync-index.mjs --missing || true
-                node scripts/check-content.mjs --fix || true
-                git add content
-                git commit -q -m "live: merge upstream" || true
-                git push && return 0
-              fi
-              git merge --abort 2>/dev/null || true
-              sleep $((attempt * 10))
-            done
-            return 1
+            bash scripts/push-content.sh "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
           }
 
           echo "Loop for ${HOURS}h (until $(date -u -d @$DEADLINE +'%H:%M') UTC)"
@@ -168,8 +154,4 @@ jobs:
 
           # The window may still be open. What is committed has to go out now:
           # the run ends here, so nobody else will push it.
-          git add content
-          if ! git diff --cached --quiet; then
-            git commit -q -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
-          fi
           push_now || echo "push failed after retries"

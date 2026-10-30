@@ -35,6 +35,10 @@ on:
         description: 'Write the draft even if the gates are not met (a human still approves it)'
         type: boolean
         default: false
+      approve:
+        description: 'Approve this dossier slug and publish it (the editor approved it)'
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -58,7 +62,24 @@ jobs:
       - name: Rebase on main
         run: git pull --rebase --autostash
 
+      - name: Deployment budget
+        id: budget
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          # Every push to main is a Vercel deployment, and the Hobby plan
+          # allows 100 of them a day. The count is only a warning now: the
+          # dossiers live in the repository, and the site reads them from
+          # there. A refused build must not stop the desk from working.
+          if [ -n "${{ inputs.approve }}" ]; then
+            echo "A human approved a piece - it goes out."
+          else
+            node scripts/deploy-budget.mjs || echo "the day's deployments are spent - the dossier still goes to the repository"
+          fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
       - name: Advance the investigative desk
+        if: steps.budget.outputs.skip != 'true'
         timeout-minutes: 60
         env:
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
@@ -87,6 +108,8 @@ jobs:
           INVESTIGATE_MAX_READS: '6'
           INVESTIGATE_MINUTES: ${{ inputs.minutes || '55' }}
           INVESTIGATE_FORCE_DRAFT: ${{ inputs.force_draft == true && '1' || '' }}
+          INVESTIGATE_APPROVE: ${{ inputs.approve || '' }}
+          INVESTIGATE_APPROVED_BY: ${{ vars.INVESTIGATE_APPROVED_BY || 'editor' }}
           INVESTIGATE_LOCALES: 'en,de,fr,es,it,pt'
           INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
         run: node bots/investigate.mjs
@@ -94,15 +117,18 @@ jobs:
       # The work is committed before the mirror runs. A slow upload must never
       # cost the desk its findings.
       - name: Commit dossiers and published investigations
-        if: always()
+        if: always() && steps.budget.outputs.skip != 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "simoneggert16-png"
-          git config user.email "simoneggert16@gmail.com"
-          git add content
-          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
-          git commit -m "investigations: $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull --rebase --autostash
-          git push
+          # The live tickers write to content/ every few minutes as well. A
+          # push that races with them must not lose the piece: the push script
+          # keeps the commit, rebuilds the index from the article files and
+          # pushes exactly once.
+          bash scripts/push-content.sh "investigations: $(date -u +'%Y-%m-%d %H:%M') UTC" || {
+            echo "the dossiers are committed but not published"
+            exit 1
+          }
 
       - name: Mirror content to Supabase
         if: always()

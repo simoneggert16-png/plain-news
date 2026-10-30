@@ -63,6 +63,11 @@ const DOSSIER_DIR = 'content/investigations';
 const STATE_FILE = path.join(DOSSIER_DIR, 'state.json');
 const DRY_RUN = process.env.INVESTIGATE_DRY_RUN === '1';
 const FORCE_SLUG = String(process.env.INVESTIGATE_SLUG || '').trim();
+// The editor approves a piece from the desk page. While the database is
+// unreachable there is nowhere else to write that decision down, so the
+// approval comes in with the run and goes into the dossier file.
+const APPROVE_SLUG = String(process.env.INVESTIGATE_APPROVE || '').trim();
+const APPROVED_BY = String(process.env.INVESTIGATE_APPROVED_BY || 'editor').trim();
 const CAN_SEND = !DRY_RUN && (process.env.GITHUB_ACTIONS === 'true' || process.env.INVESTIGATE_SEND === '1');
 const MIN_SOURCES = Math.max(4, +(process.env.INVESTIGATE_MIN_SOURCES || 8));
 const MIN_PRIMARY = Math.max(0, +(process.env.INVESTIGATE_MIN_PRIMARY || 2));
@@ -202,6 +207,24 @@ function addSource(d, item, extra = {}) {
 
 const STOPWORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'were', 'deutsch', 'thema', 'einer', 'eines', 'einem', 'einen', 'diese', 'dieser', 'diesem', 'werden', 'wurde', 'wurden', 'nicht', 'auch', 'sowie', 'oder', 'aber', 'noch', 'nur', 'schon', 'sich', 'sind', 'dass', 'nach', 'ueber', 'über', 'beim', 'vom', 'zum', 'zur', 'durch', 'gegen', 'ohne', 'zwischen', 'immer', 'jeder', 'jede', 'jedes', 'keine', 'mehr', 'sowie']);
 
+/**
+ * What the desk read goes into the dossier: the text it can cite and the
+ * picture the page came with. Without the photo an investigation reaches
+ * the site without a lead image.
+ */
+function fileSourceRead(src, page) {
+  if (!src || !page) return;
+  if (!src.text && page.text) {
+    src.text = String(page.text).slice(0, MAX_SOURCE_CHARS);
+    src.readAt = nowISO();
+  }
+  if (!src.image && page.image) {
+    src.image = page.image;
+    if (page.imageCaption) src.imageCaption = String(page.imageCaption).slice(0, 300);
+    if (page.imageCredit) src.imageCredit = String(page.imageCredit).slice(0, 120);
+  }
+}
+
 function keywordsOf(d) {
   // The brief comes first: it is where the editor names the exact terms the
   // primary sources use, so those must survive the cap.
@@ -285,10 +308,7 @@ async function openPrimaryDoors(d, { maxDoors = 6, maxPerDoor = 2 } = {}) {
       { kind: 'document' }
     );
     const src = d.sources.find((s) => s.url === doc.url);
-    if (src && !src.text) {
-      src.text = page.text.slice(0, MAX_SOURCE_CHARS);
-      src.readAt = nowISO();
-    }
+    fileSourceRead(src, page);
     added++;
   }
   if (added) log(`DOORS  ${added} primary document(s) read at ${[...perDoor.keys()].join(', ')}`);
@@ -404,36 +424,138 @@ const DESK_RADAR = [
   ['natural resources', 'illegal fishing logging mining protected area biodiversity investigation'],
 ];
 
+// ─────────────────────────── desk memory ───────────────────────────
+// A real desk knows what it has already published, what it is working on and
+// which institutions it follows. Without that memory every run starts from
+// zero: it repeats old stories and forgets the people it owes an answer.
+function deskMemory(dossiers, state) {
+  const byDate = (a, b) => new Date(a.at || 0) - new Date(b.at || 0);
+  const published = dossiers
+    .filter((d) => d.status === 'published')
+    .map((d) => ({ title: d.title, centre: d.centre || '', at: d.published?.at || d.updatedAt || '' }))
+    .sort(byDate);
+  const open = dossiers
+    .filter((d) => !['archived', 'dropped', 'published'].includes(d.status))
+    .map((d) => ({ title: d.title, angle: d.angle || '', status: d.status, centre: d.centre || '' }));
+  return {
+    published,
+    open,
+    beats: Array.isArray(state?.beats) ? state.beats : [],
+    followups: Array.isArray(state?.followups) ? state.followups : [],
+  };
+}
+
+function memoryBlock(mem) {
+  const lines = [];
+  if (mem.published.length) {
+    lines.push('Our own published investigations (never repeat one):');
+    for (const p of mem.published.slice(-8)) lines.push(`- ${p.title}${p.centre ? ` — ${p.centre}` : ''}`);
+  }
+  if (mem.open.length) {
+    lines.push('Still on the desk (do not open a second story on the same subject):');
+    for (const o of mem.open) lines.push(`- ${o.title} (${o.status})`);
+  }
+  if (mem.beats.length) {
+    lines.push('Beats the desk follows:');
+    for (const b of mem.beats.slice(-10)) lines.push(`- ${b.name}${b.centre ? ` — ${b.centre}` : ''}`);
+  }
+  if (mem.followups.length) {
+    lines.push('Owed to our readers (open questions from what we published):');
+    for (const f of mem.followups.slice(-6)) lines.push(`- ${f.title}: ${f.question}`);
+  }
+  return lines.join('\n');
+}
+
+// The desk works internationally. Switzerland is the address of the paper,
+// not its beat: a story whose centre of gravity is Swiss domestic affairs
+// does not belong here, and a story that only looks domestic is not the
+// desk's job either.
+const SWISS_CENTRE = /(schweiz|swiss|schweizer|switz|suisse|svizzera|eidgen[oö]ssisch|^ch$)/i;
+const SWISS_MARKER = /(schweiz|swiss|schweizer|switzerland|eidgen[oö]ssisch|admin\.ch|seco\b|finma|bazg|fedpol|bl\.ch|\bbund\b|basel|zurich|zürich|geneva|genf|lausanne|bern\b)/i;
+const BORDER_MARKER = /(international|cross-border|cross border|transnational|global|worldwide|treaty|convention|protocol|\bun\b|\beu\b|european union|european commission|european court|europol|eurojust|echr|council of europe|nato|\bwto\b|\bimf\b|world bank|interpol|fatf|iaea|\bicj\b|\bicc\b|opec|asean|brics|oecd|\bg7\b|\bg20\b|african union|undp|unicef|unhcr|world health organisation|world health organization|sanction|money laundering|offshore shell|smuggl|traffick|refugee|migrant|embargo|export licen)/i;
+
+function internationalEnough(topic) {
+  const centre = String(topic.centre || '').trim();
+  if (!centre) return { ok: false, why: 'the topic names no centre' };
+  if (SWISS_CENTRE.test(centre)) return { ok: false, why: `the centre is ${centre}` };
+  const text = [topic.title, topic.angle, centre, topic.border, topic.people, ...(topic.queries || [])].join(' ');
+  if (SWISS_MARKER.test(text) && !BORDER_MARKER.test(text)) {
+    return { ok: false, why: 'a Swiss story without a cross-border angle' };
+  }
+  // A story that stays inside one country is a thin one for this desk, but it
+  // is not wrong — the desk flags it and keeps working.
+  return BORDER_MARKER.test(text) ? { ok: true } : { ok: true, thin: true };
+}
+
+/** True when a story is about Swiss domestic affairs and nothing else. */
+function swissOnly(topic) {
+  const centre = String(topic.centre || '').trim();
+  const text = [topic.title, topic.angle, centre, ...(topic.queries || [])].join(' ');
+  if (!SWISS_MARKER.test(text)) return false;
+  if (centre && SWISS_CENTRE.test(centre)) return true;
+  return !BORDER_MARKER.test(text);
+}
+
+/** What a published piece still owes its readers: the questions it could not close. */
+function rememberFollowups(state, d) {
+  const questions = (d.gaps || []).map((g) => String(g).trim()).filter((g) => g.length > 20).slice(0, 6);
+  if (!questions.length) return;
+  state.followups = Array.isArray(state.followups) ? state.followups : [];
+  for (const question of questions) {
+    if (state.followups.some((f) => f.slug === d.slug && f.question === question)) continue;
+    state.followups.push({ slug: d.slug, title: d.title, question, at: nowISO() });
+  }
+  state.followups = state.followups.slice(-40);
+}
+
+/** The desk keeps its beats: the institutions it follows, story after story. */
+function rememberBeat(state, dossier, topic) {
+  const name = String(topic?.beat || '').trim().slice(0, 90);
+  if (!name) return;
+  state.beats = Array.isArray(state.beats) ? state.beats : [];
+  const existing = state.beats.find((b) => String(b.name).toLowerCase() === name.toLowerCase());
+  if (existing) {
+    existing.topics = [...new Set([...(existing.topics || []), dossier.slug])].slice(-12);
+    existing.at = nowISO();
+  } else {
+    state.beats.push({ name, centre: String(topic.centre || '').slice(0, 80), topics: [dossier.slug], at: nowISO() });
+  }
+  state.beats = state.beats.slice(-30);
+}
+
 async function intake(dossiers, state) {
   const week = weekKey();
   if (FORCE_SLUG) return;
-  if (state.lastIntake === week && process.env.INVESTIGATE_INTAKE !== '1') {
-    log(`INTAKE  already done for ${week}`);
-    return;
-  }
 
+  // The desk keeps its own plate full within the editorial limits. Intake is
+  // not a once-a-week ceremony: it runs whenever the desk still has room for
+  // another investigation, so a quiet shift does not leave the board empty.
   const active = dossiers.filter(isActive);
-  if (active.length >= INVESTIGATION_QUOTAS.maxActive) {
-    log(`INTAKE  ${active.length} active dossiers (max ${INVESTIGATION_QUOTAS.maxActive}) — no new topic this week`);
-    state.lastIntake = week;
-    return;
-  }
   const openedThisWeek = dossiers.filter((d) => weekKey(new Date(d.createdAt)) === week && !['archived', 'dropped'].includes(d.status)).length;
   let slots = Math.min(INVESTIGATION_QUOTAS.newPerWeek - openedThisWeek, INVESTIGATION_QUOTAS.maxActive - active.length);
   if (slots <= 0) {
-    log(`INTAKE  ${openedThisWeek} dossier(s) opened this week (max ${INVESTIGATION_QUOTAS.newPerWeek})`);
+    log(`INTAKE  ${openedThisWeek} dossier(s) opened this week (max ${INVESTIGATION_QUOTAS.newPerWeek}), ${active.length} active — nothing to open`);
     state.lastIntake = week;
     return;
   }
 
   const requests = await safe(() => listRequests({ status: 'new', limit: 40 }), []);
-  log(`INTAKE  ${requests.length} open reader wish(es), ${slots} slot(s)`);
+  const memory = deskMemory(dossiers, state);
+  log(`INTAKE  ${requests.length} open reader wish(es), ${slots} slot(s), ${memory.published.length} piece(s) in the archive`);
 
   if (requests.length) {
-    const picks = await pickRequests(requests, slots);
+    const picks = await pickRequests(requests, slots, memory);
     for (const pick of picks) {
       const request = requests.find((r) => String(r.id) === String(pick.id));
       if (!request) continue;
+      // A wish for Swiss domestic affairs is a wish the desk does not take:
+      // it works internationally, and the slot goes to a story that crosses a
+      // border. The wish still counts against the week's quota.
+      if (swissOnly(pick)) {
+        await safe(() => setRequestStatus(request.id, 'declined', null));
+        log(`INTAKE  ✗ reader wish declined (domestic, not the desk's beat) — ${pick.title}`);
+        continue;
+      }
       const dossier = newDossier({
         title: pick.title || request.topic,
         angle: pick.angle,
@@ -453,12 +575,24 @@ async function intake(dossiers, state) {
   }
 
   if (slots > 0) {
-    const topic = await deskTopic();
+    const topic = await deskTopic(memory);
     if (topic) {
-      const dossier = newDossier({ ...topic, origin: 'desk', priority: 3 });
-      if (!dossiers.some((d) => d.slug === dossier.slug)) {
-        dossiers.push(dossier);
-        log(`INTAKE  ✓ own topic → ${dossier.slug}`);
+      // The desk is international. A topic that turns out to be one country's
+      // own affairs does not get filed: the slot is better left empty than
+      // filled with something the desk does not cover.
+      const gate = internationalEnough(topic);
+      if (!gate.ok) {
+        log(`INTAKE  ✗ own topic rejected: ${gate.why} — ${topic.title}`);
+      } else {
+        const dossier = newDossier({ ...topic, origin: 'desk', priority: 3 });
+        if (!dossiers.some((d) => d.slug === dossier.slug)) {
+          dossier.centre = topic.centre;
+          dossier.beat = topic.beat;
+          dossiers.push(dossier);
+          rememberBeat(state, dossier, topic);
+          log(`INTAKE  ✓ own topic → ${dossier.slug} (${topic.centre}${topic.beat ? `, beat: ${topic.beat}` : ''})`);
+          if (gate.thin) log(`INTAKE  … thin international angle — ${topic.title}`);
+        }
       }
     } else {
       log('INTAKE  no own topic met the bar this week');
@@ -468,7 +602,7 @@ async function intake(dossiers, state) {
   state.lastIntake = week;
 }
 
-async function pickRequests(requests, slots) {
+async function pickRequests(requests, slots, memory = {}) {
   const list = requests.slice(0, 25).map((r, i) => {
     return `#${i + 1} id=${r.id}\nTOPIC: ${r.topic}\nWHY: ${r.why || '-'}\nREGION: ${r.region || '-'}\nHINTS: ${r.hints || '-'}`;
   }).join('\n\n');
@@ -493,8 +627,11 @@ A topic qualifies only if ALL of these hold:
 
 Reject speculation, conspiracy framing, "someone should look into X" without a specific institution or decision, and topics that are really opinion.
 
+What the desk already has (this is its own memory — do not repeat it):
+${memoryBlock(memory) || '(nothing yet — this would be the first piece)'}
+
 Return exactly:
-{"picks":[{"id":"the id above","title":"working headline, max 90 characters, factual","angle":"one sentence: the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["4-6 search queries in the language of the primary sources, each with the specific institution, programme or decision"]}]}
+{"picks":[{"id":"the id above","title":"working headline, max 90 characters, factual","angle":"one sentence: the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","centre":"the country or region the story is really about","border":"what crosses a border in it: money, people, a treaty, an institution","people":"who is affected and who profits","queries":["4-6 search queries in the language of the primary sources, each with the specific institution, programme or decision"]}]}
 Return {"picks":[]} if nothing qualifies.`,
       },
     ], { temperature: 0.3, maxTokens: 2000 });
@@ -506,6 +643,9 @@ Return {"picks":[]} if nothing qualifies.`,
         title: String(p.title || '').trim().slice(0, 120),
         angle: String(p.angle || '').trim().slice(0, 300),
         category: String(p.category || 'politics'),
+        centre: String(p.centre || '').trim().slice(0, 80),
+        border: String(p.border || '').trim().slice(0, 300),
+        people: String(p.people || '').trim().slice(0, 300),
         queries: (Array.isArray(p.queries) ? p.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
       }));
     log(`INTAKE  desk model ${model} selected ${picks.length}`);
@@ -516,7 +656,7 @@ Return {"picks":[]} if nothing qualifies.`,
   }
 }
 
-async function deskTopic() {
+async function deskTopic(memory = {}) {
   const weekNum = Number(weekKey().split('-W')[1]) || 1;
   const picks = [DESK_RADAR[weekNum % DESK_RADAR.length], DESK_RADAR[(weekNum + 3) % DESK_RADAR.length]];
   // The radar queries go through Google News, which is close to empty on CI
@@ -535,19 +675,28 @@ async function deskTopic() {
     const { data } = await chatJSON('desk', [
       {
         role: 'system',
-        content: `You are the investigative editor of PLAIN. You look at the news of the last ten days and ask which development deserves documents, data and questions rather than another report. The desk works internationally; a story that only concerns one country must carry a cross-border institution, a shared pattern or money that crosses a border. You write about people: a story without visible people behind it — without anyone who lost something, profits from it or lives with the consequences — is a process story, not a story. Return JSON only.`,
+        content: `You are the investigative editor of PLAIN. You look at the news of the last ten days and ask which development deserves documents, data and questions rather than another report. The desk works internationally: a story that only concerns one country's own affairs must carry a cross-border institution, a shared pattern or money that crosses a border — and Switzerland is where the paper is published, not what it covers, so a story whose centre is Swiss domestic affairs is not this desk's story. You write about people: a story without visible people behind it — without anyone who lost something, profits from it or lives with the consequences — is a process story, not a story. Return JSON only.`,
       },
       {
         role: 'user',
-        content: `Recent headlines:\n${heads}\n\nIs there ONE story here with an investigative core — public money, a decision, a contract, a court case, a pattern across institutions? It must be answerable with public records and email questions. It must also have people in it: who loses, who profits, who is left to live with the consequences. Stories about people affected by power — by settlement, extraction, state crime, a hacked account, a taken land — beat stories about a procedure.\n\nReturn {"topic":{"title":"working headline, max 90 characters","angle":"the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["4-6 specific search queries"]}} or {"topic":null} if none qualifies.`,
+        content: `Recent headlines:\n${heads}\n\nIs there ONE story here with an investigative core — public money, a decision, a contract, a court case, a pattern across institutions? It must be answerable with public records and email questions. It must also have people in it: who loses, who profits, who is left to live with the consequences. Stories about people affected by power — by settlement, extraction, state crime, a hacked account, a taken land — beat stories about a procedure.
+
+What the desk already has (its own memory — a new piece must not repeat it, and the desk should not open two stories about the same country in a row):
+${memoryBlock(memory) || '(nothing yet — this would be the first piece)'}
+
+Return {"topic":{"title":"working headline, max 90 characters","angle":"the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","centre":"the country or region the story is really about","border":"what crosses a border in it: money, people, a treaty, an institution","people":"who is affected and who profits","beat":"the institution or body the desk would follow up on, e.g. an agency, a court, a fund","queries":["4-6 specific search queries"]}} or {"topic":null} if none qualifies.`,
       },
-    ], { temperature: 0.4, maxTokens: 1500 });
+    ], { temperature: 0.4, maxTokens: 1800 });
     const t = data?.topic;
     if (!t || !t.title || !Array.isArray(t.queries) || t.queries.length < 2) return null;
     return {
       title: String(t.title).slice(0, 120),
       angle: String(t.angle || '').slice(0, 300),
       category: String(t.category || 'politics'),
+      centre: String(t.centre || '').trim().slice(0, 80),
+      border: String(t.border || '').trim().slice(0, 300),
+      people: String(t.people || '').trim().slice(0, 300),
+      beat: String(t.beat || '').trim().slice(0, 90),
       queries: t.queries.map(String).filter((q) => q.length > 5).slice(0, 6),
     };
   } catch (err) {
@@ -696,10 +845,7 @@ async function researchAgent(d) {
           if (!page?.text) return null;
           addSource(d, { url: h.url, outlet: h.outlet || hostOf(h.url), title: page.title || h.title, publishedAt: h.publishedAt || null, primary: h.primary }, { kind: h.kind === 'document' ? 'document' : 'read' });
           const src = d.sources.find((s) => s.url === h.url);
-          if (src && !src.text) {
-            src.text = page.text.slice(0, MAX_SOURCE_CHARS);
-            src.readAt = nowISO();
-          }
+          fileSourceRead(src, page);
           return { outlet: h.outlet || hostOf(h.url), url: h.url, sourceId: src?.id || null, title: page.title || h.title, text: page.text.slice(0, 900) };
         }))).filter(Boolean);
 
@@ -725,15 +871,12 @@ async function researchAgent(d) {
         if (!/^https?:\/\//i.test(target)) return { error: 'not a URL' };
         const page = await openPage(target, { maxChars: 7000 });
         if (page.error && !page.text) return { url: target, error: page.error };
-        cache.set(target, page.text || '');
+        cache.set(target, page);
         // What the desk read is part of the dossier's paper trail. Filing it
         // here means a run cannot end with "I read a lot" and nothing on file.
         addSource(d, { url: target, outlet: hostOf(target), title: page.title || target, publishedAt: null }, { kind: 'read' });
         const src = d.sources.find((s) => s.url === target);
-        if (src && page.text && !src.text) {
-          src.text = page.text.slice(0, MAX_SOURCE_CHARS);
-          src.readAt = nowISO();
-        }
+        fileSourceRead(src, page);
         return {
           url: target,
           title: page.title,
@@ -756,10 +899,7 @@ async function researchAgent(d) {
           { url: target, outlet: String(outlet || hostOf(target)), title: String(title || target), publishedAt: publishedAt || null },
         );
         const src = d.sources.find((s) => s.url === target);
-        if (src && cache.has(target) && !src.text) {
-          src.text = cache.get(target).slice(0, MAX_SOURCE_CHARS);
-          src.readAt = nowISO();
-        }
+        if (src && cache.has(target)) fileSourceRead(src, cache.get(target));
         return { added, id: src?.id || null, total: d.sources.length };
       },
     },
@@ -2111,10 +2251,51 @@ async function maybeWrite(d, outreach) {
 }
 
 // ─────────────────────────── 5. PUBLISH ───────────────────────────
-function articleSections(draft, pictures = []) {
+// The dossier cites its claims and sources by number. A published article
+// names the outlet instead: "according to source S11" becomes "according to
+// TRM Labs", and the claim markers disappear.
+function attribute(text, d) {
+  const outlets = new Map(
+    (d.sources || []).map((s) => [String(s.id).toUpperCase(), s.outlet || s.title || 'the source']),
+  );
+  const name = (id) => outlets.get(String(id).toUpperCase()) || 'the source';
+  let out = String(text || '');
+  out = out.replace(/\s*\((?:C\d+)(?:\s*,\s*C\d+)*\)/g, '');
+  out = out.replace(/\b([Ss]ources?)\s+(S\d+(?:\s*(?:,|and|&)\s*S\d+)*)/g, (m, word, ids) => {
+    const names = ids.split(/\s*(?:,|and|&)\s*/).map(name).filter((v, i, a) => a.indexOf(v) === i);
+    if (names.length === 1) return names[0];
+    return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+  });
+  out = out.replace(/\bS\d+\b/g, (id) => name(id));
+  // A sentence that names the outlet itself does not need the attribution in
+  // front of it: "According to the FBI, the FBI reports ..." says it twice.
+  out = out.replace(/\b[Aa]ccording to\s+([^,]{2,60}?),\s*(.)/g, (match, names, first, offset, full) => {
+    const last = names.split(/\s*(?:,|and|&)\s*/).pop() || '';
+    const key = last.split(/\s+/).map((w) => w.replace(/[^A-Za-z]/g, '')).find((w) => w.length >= 3);
+    if (!key) return match;
+    const after = full.slice(offset + match.length, offset + match.length + 90).split('. ')[0];
+    if (!new RegExp(`\\b${key}\\b`, 'i').test(after)) return match;
+    return /[a-z]/.test(first) ? first.toUpperCase() : first;
+  });
+  return out.replace(/[ \t]{2,}/g, ' ').trim();
+}
+
+/**
+ * A heading cut in the middle of a word looks broken. Cut at the last word
+ * that fits instead.
+ */
+function clipHeading(text, max = 90) {
+  const value = String(text || '').trim();
+  if (value.length <= max) return value;
+  const cut = value.slice(0, max);
+  const space = cut.lastIndexOf(' ');
+  return (space > 20 ? cut.slice(0, space) : cut).replace(/[\s,;:.\-–—]+$/, '');
+}
+
+function articleSections(draft, pictures = [], d = { sources: [] }) {
   const sections = assignImages(draft.sections.map((s) => ({
-    heading: String(s.heading || '').trim().slice(0, 90),
-    paragraphs: (s.paragraphs || []).map((p) => String(p).trim()).filter(Boolean),
+    heading: clipHeading(attribute(s.heading, d)),
+    paragraphs: (s.paragraphs || []).map((p) => attribute(p, d)).filter(Boolean),
   })), pictures);
   if (draft.rightOfReply) {
     sections.push({ heading: 'Right of reply', paragraphs: String(draft.rightOfReply).split(/\n{2,}/).map((p) => p.trim()).filter(Boolean) });
@@ -2165,11 +2346,17 @@ async function translateInvestigation(block, locale) {
 
 async function publish(d) {
   if (!d.draft) throw new Error('no draft to publish');
+  // A draft the desk itself rejected is not published, however it was
+  // approved. The editor reads the text first; this only stops a broken one.
+  if (d.review?.verdict === 'rejected') throw new Error('the draft did not pass the check');
   const draft = d.draft;
-  const pictures = await collectImages(d.sources, { max: 3 });
+  const pictures = await collectImages(d.sources, {
+    max: 3,
+    terms: [draft.title, draft.dek, draft.standfirst].filter(Boolean),
+  });
   const hero = pictures[0] || null;
   log(`PUBLISH  ${d.slug}: ${pictures.length} usable image(s)${hero ? ` — hero from ${hero.outlet || 'source'}` : ''}`);
-  const sections = articleSections(draft, pictures);
+  const sections = articleSections(draft, pictures, d);
   const body = sections.flatMap((s) => s.paragraphs);
   const wordCount = draftWords(draft);
   const usedIds = new Set((draft.claims || []).flatMap((c) => c.sources || []));
@@ -2193,10 +2380,10 @@ async function publish(d) {
     sources,
     locales: {
       [SOURCE_LOCALE]: {
-        title: String(draft.title).trim(),
-        dek: String(draft.dek).trim(),
-        standfirst: String(draft.standfirst).trim(),
-        facts: (draft.facts || []).map(String).slice(0, 8),
+        title: attribute(draft.title, d).trim(),
+        dek: attribute(draft.dek, d).trim(),
+        standfirst: attribute(draft.standfirst, d).trim(),
+        facts: (draft.facts || []).map((f) => attribute(f, d)).slice(0, 8),
         body,
         sections,
         context: '',
@@ -2343,7 +2530,7 @@ async function main() {
   if (process.env.INVESTIGATE_ONLY === 'agent') {
     // A forced intake still has to run first — with no active dossier there is
     // nothing for the agent to work on.
-    if (!dossiers.some(isActive) && (process.env.INVESTIGATE_INTAKE === '1' || !state.lastIntake)) await intake(dossiers, state);
+    if (!dossiers.some(isActive)) await intake(dossiers, state);
     const only = FORCE_SLUG ? dossiers.filter((d) => d.slug === FORCE_SLUG) : dossiers.filter(isActive).slice(0, 1);
     for (const d of only) {
       log(`\n▶ ${d.slug} [${d.status}] — agent only`);
@@ -2376,6 +2563,19 @@ async function main() {
       // The editor decides in the database. Read that decision before doing
       // anything else with the dossier.
       await syncStatus(d).catch((err) => log(`STATUS  unreachable: ${err.message}`));
+      // The editor's approval comes in with the run. It is written into the
+      // dossier, so the next shift reads the same decision, and into the
+      // database if that one is reachable.
+      if (APPROVE_SLUG && APPROVE_SLUG === d.slug && d.status !== 'published') {
+        const at = nowISO();
+        d.status = 'approved';
+        d.approvedAt = at;
+        d.approvedBy = APPROVED_BY;
+        d.nextStep = 'approved by the editor; publishing';
+        note(d, null, `approved by ${APPROVED_BY}`);
+        await safe(() => setInvestigationStatus(d.slug, 'approved', { approved_at: at }));
+        log(`DESK  ${d.slug}: approved by ${APPROVED_BY}`);
+      }
       if (!isActive(d)) {
         log(`  ${d.status} - the editor closed this one; leaving it alone`);
         await mirror(d);
@@ -2383,6 +2583,7 @@ async function main() {
       }
       if (d.status === 'approved') {
         await publish(d);
+        if (d.status === 'published') rememberFollowups(state, d);
       } else if (d.status === 'review') {
         log('  waiting for human approval');
         d.nextStep = 'human approval in /admin/investigations';

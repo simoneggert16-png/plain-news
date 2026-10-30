@@ -2,6 +2,7 @@
 // lead to the next document. Deliberately no headless browser — the desk runs
 // on a free CI runner and most of its sources are plain HTML or PDF.
 import { clean } from './feeds.mjs';
+import { extractImagesFromHtml, cleanImageUrl, cleanCaptionText } from './media.mjs';
 
 const UA = 'Mozilla/5.0 (compatible; PlainDesk/1.0; +https://plain-news.ch)';
 
@@ -47,7 +48,7 @@ async function pdfText(bytes) {
 }
 
 /**
- * @returns {Promise<{url:string,title:string,text:string,links:{url:string,text:string}[],pdf?:boolean,error?:string}>}
+ * @returns {Promise<{url:string,title:string,text:string,links:{url:string,text:string}[],image?:string,imageCaption?:string,imageCredit?:string,pdf?:boolean,error?:string}>}
  */
 export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
   let res;
@@ -92,6 +93,17 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
 
   const title = clean(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '');
 
+  // The lead photo of the article. A report without a picture looks unfinished,
+  // and the desk already pays for the page - the photo comes with it.
+  const picture = extractImagesFromHtml(html)
+    .sort((a, b) => b.score - a.score)
+    .map((candidate) => ({
+      url: cleanImageUrl(candidate.url),
+      caption: cleanCaptionText(candidate.caption || ''),
+      credit: cleanCaptionText(candidate.credit || ''),
+    }))
+    .find((candidate) => candidate.url);
+
   const stripped = html
     .replace(/<(script|style|noscript|svg|nav|footer|header|aside|form|iframe)[\s\S]*?<\/\1>/gi, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ');
@@ -118,5 +130,11 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
     if (links.length >= maxLinks) break;
   }
 
-  return { url, title, text: blocks.join('\n').slice(0, maxChars), links };
+  return {
+    url,
+    title,
+    text: blocks.join('\n').slice(0, maxChars),
+    links,
+    ...(picture ? { image: picture.url, imageCaption: picture.caption, imageCredit: picture.credit } : {}),
+  };
 }

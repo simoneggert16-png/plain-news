@@ -90,6 +90,7 @@ export default function AdminInvestigations() {
   const [data, setData] = useState(null);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const [dispatch, setDispatch] = useState(null);
   const [selectedDrafts, setSelectedDrafts] = useState([]);
   const [noteDraft, setNoteDraft] = useState({});
   const [queue, setQueue] = useState({ slug: '', toEmail: '', org: '', note: '' });
@@ -143,6 +144,7 @@ export default function AdminInvestigations() {
     if (!token) return;
     setBusy(true);
     setError('');
+    setDispatch(null);
     try {
       const res = await fetch('/api/admin/investigations', {
         method: 'POST',
@@ -150,7 +152,12 @@ export default function AdminInvestigations() {
         body: JSON.stringify(payload),
       });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || 'Aktion fehlgeschlagen.');
+      if (!res.ok) {
+        // The database is unreachable. The approval goes to the desk as a run
+        // instead, and the editor gets a button for it.
+        if (body.dispatch) setDispatch({ url: body.dispatch, message: body.error });
+        throw new Error(body.error || 'Aktion fehlgeschlagen.');
+      }
       await load();
     } catch (err) {
       setError(err.message);
@@ -201,6 +208,15 @@ export default function AdminInvestigations() {
 
       {error && (
         <p style={{ ...mono, color: 'var(--down)', border: '1px solid var(--down)', padding: '8px 12px' }}>{error}</p>
+      )}
+
+      {dispatch && (
+        <p style={{ ...mono, border: '1px solid var(--ink)', padding: '8px 12px', marginBottom: '14px' }}>
+          <a href={dispatch.url} target="_blank" rel="noopener noreferrer">
+            Freigabe an den Desk senden
+          </a>{' '}
+          — der Lauf nimmt die Freigabe entgegen, hält sie im Dossier fest und veröffentlicht den Text.
+        </p>
       )}
 
       {busy && <p style={{ ...mono, color: 'var(--muted)' }}>Arbeite …</p>}

@@ -36,7 +36,9 @@ jobs:
       - run: npm ci
 
       - name: Rebase on main
-        run: git pull --rebase --autostash
+        # A rebase that stops on content/index.json must not kill the shift:
+        # the long reads of the day would be lost with it.
+        run: git pull --rebase --autostash || git rebase --abort || true
 
       - name: Write long reads
         env:
@@ -63,11 +65,10 @@ jobs:
 
       - name: Commit long reads
         if: always()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "simoneggert16-png"
-          git config user.email "simoneggert16@gmail.com"
-          git add content
-          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
-          git commit -m "longform: $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull --rebase --autostash
-          git push
+          # The push script counts the day's deployments, resolves the index
+          # conflict from the article files and pushes exactly once. A push
+          # that failed on the rebase used to lose the whole shift.
+          bash scripts/push-content.sh "longform: $(date -u +'%Y-%m-%d %H:%M') UTC" || echo "the long reads are committed but not published"
