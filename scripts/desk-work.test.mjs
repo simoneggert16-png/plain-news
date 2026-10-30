@@ -539,3 +539,18 @@ test('a Swiss story that crosses a border is the desk’s business', () => {
   const gate = leadGate();
   assert.equal(gate({ title: 'A Swiss bank moves money for a mining company', angle: 'international sanctions', queries: ['bank sanctions mining transfer'] }).ok, true);
 });
+
+// ───────────────────── who the desk writes to ─────────────────────
+
+// The desk writes to the institution whose document it holds. A news site is
+// not an institution, not even when its name carries a word like "court".
+test('an institution has its own domain', () => {
+  const isInstitution = new Function(`${take('institutionHost')}; return institutionHost;`)();
+  assert.equal(isInstitution('justice.gov'), true);
+  assert.equal(isInstitution('www.gov.uk'), true);
+  assert.equal(isInstitution('un.org'), true);
+  assert.equal(isInstitution('ec.europa.eu'), true);
+  assert.equal(isInstitution('courtnewsdaily.com'), false);
+  assert.equal(isInstitution('en.yna.co.kr'), false);
+  assert.equal(isInstitution('asia.nikkei.com'), false);
+});

@@ -1023,10 +1023,12 @@ async function researchAgent(d) {
         if (searches >= 3 && d.claims.length === startedClaims) notes.push(`you have searched ${searches} times and written down no claim — stop searching: open a result, read the text, save_claim what it says`);
         log(`SEARCH  "${q}" → ${results.length} hit(s) (wire ${wireN}, documents ${docsN}, opened ${opened.length})`);
         return {
+          // The note comes first: the observation is cut off at 3200
+          // characters, and the guidance is the part that must survive.
+          ...(notes.length ? { note: notes.join(' — ') } : {}),
           query: q,
           opened,
           results,
-          ...(notes.length ? { note: notes.join(' — ') } : {}),
         };
       },
     },
@@ -1996,6 +1998,53 @@ Return {"subject":"…","body":"…"}`,
   const body = withDisclosure(String(data.body || '').trim());
   if (!subject || body.length < 200) throw new Error('email draft too thin');
   return { subject, body };
+}
+
+/**
+ * The domains an institution publishes from. A news site is not one of them,
+ * even when its name carries a word like "court".
+ */
+function institutionHost(host) {
+  const h = String(host || '').toLowerCase().replace(/^www\./, '');
+  if (!h) return false;
+  if (/(^|\.)(gov|mil|int|edu|gouv)$/.test(h)) return true;
+  if (/(^|\.)(gov|gc)\.[a-z]{2}$/.test(h)) return true;
+  if (/(^|\.)europa\.eu$/.test(h)) return true;
+  return /(^|\.)(un|worldbank|imf|oecd|unicef|unido|icj-cij|icc-cpi|worldhealth)\.[a-z]{2,4}$/.test(h);
+}
+
+/**
+ * The desk knows who to write to: every document it holds comes from an
+ * institution, and an institution publishes its press address. The agent does
+ * not have to spend a step on it — a reporter who read the document knows
+ * whose desk to write to.
+ */
+async function fileContacts(d) {
+  const hosts = [];
+  for (const s of d.sources || []) {
+    const host = hostOf(s.url);
+    if (!host || hosts.includes(host)) continue;
+    if (s.kind !== 'document' && !institutionHost(host)) continue;
+    hosts.push(host);
+  }
+  const wanted = hosts.slice(0, 4);
+  if (!wanted.length) return 0;
+  let added = 0;
+  for (const host of wanted) {
+    if (d.contacts.some((c) => sameOrg(c.org, host) || String(c.email || '').toLowerCase().endsWith(`@${host}`))) continue;
+    const found = await publishedEmail(host).catch(() => null);
+    if (!found?.email) continue;
+    const source = (d.sources || []).find((s) => hostOf(s.url) === host);
+    d.contacts.push({
+      org: source?.outlet && source.outlet !== 'unknown' ? source.outlet : host,
+      role: 'the institution whose document is on file',
+      email: found.email,
+      emailSource: found.sourceUrl,
+    });
+    added++;
+  }
+  if (added) log(`OUTREACH  ${added} press address(es) read from the institutions' own pages`);
+  return added;
 }
 
 async function queueOutreach(d) {
@@ -3116,6 +3165,9 @@ async function main() {
         }
         log(`CHECK   ${d.claims.length} claim(s), ${d.sources.length} source(s) before reading back`);
         await factcheck(d);
+        // Who must answer is found on the institutions' own pages, not spent
+        // as a step of the model.
+        await fileContacts(d).catch((err) => log(`OUTREACH  press addresses not found: ${err.message}`));
         // A dead database must not take the shift with it. The requests are
         // prepared for the editor either way; the draft is the work product
         // and it does not need a single row in a table.

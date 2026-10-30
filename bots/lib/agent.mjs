@@ -435,7 +435,14 @@ ${PROTOCOL}`;
       ok: !result?.error,
       ms: Date.now() - started,
     });
-    log(`AGENT  step ${step}: ${name || '—'}${result?.error ? ` ✗ ${String(result.error).slice(0, 120)}` : ' ✓'} ${Math.round((Date.now() - started) / 100) / 10}s${thought ? ` — ${thought.replace(/\s+/g, ' ').slice(0, 110)}` : ''}`);
+    // The log is how a shift is read afterwards. What the agent asked for is
+    // the part that tells whether the desk or the model was at fault.
+    const asked = name === 'search' && args.query
+      ? ` "${String(args.query).replace(/\s+/g, ' ').slice(0, 70)}"`
+      : name === 'open' && args.url
+        ? ` "${String(args.url).replace(/\s+/g, ' ').slice(0, 70)}"`
+        : '';
+    log(`AGENT  step ${step}: ${name || '—'}${result?.error ? ` ✗ ${String(result.error).slice(0, 120)}` : ' ✓'} ${Math.round((Date.now() - started) / 100) / 10}s${asked}${thought ? ` — ${thought.replace(/\s+/g, ' ').slice(0, 110)}` : ''}`);
   }
 
   return { final, steps, observations };
