@@ -1377,13 +1377,32 @@ async function readInbox(d) {
     await setOutreach([row.id], { status: 'replied', reply_note: parsed.summary.slice(0, 1000) }).catch(() => {});
 
     if (parsed.needsReply && parsed.reply.length > 80) {
+      const subject = replySubject(msg.subject);
+      const body = withDisclosure(parsed.reply);
+      // The desk keeps its own copy of what it wants to answer. A reply that
+      // only lives on the shelf is lost on the day the shelf does not answer.
+      const letter = {
+        id: nextLetterId(d),
+        to_email: msg.from_email,
+        org: row?.org || msg.from_email,
+        status: 'draft',
+        subject,
+        body,
+        reply_note: `Reply to the mail of ${msg.subject}`.slice(0, 200),
+        created_at: nowISO(),
+        updated_at: nowISO(),
+      };
+      ledger(d).push(letter);
       await addOutreach([{
         slug: d.slug,
         toEmail: msg.from_email,
-        org: row?.org || msg.from_email,
-        subject: replySubject(msg.subject),
-        body: withDisclosure(parsed.reply),
-      }]).catch((err) => log(`INBOX  reply draft failed: ${err.message}`));
+        org: letter.org,
+        subject,
+        body,
+      }]).then((added) => {
+        const row2 = Array.isArray(added) ? added[0] : null;
+        if (row2?.id) letter.dbId = row2.id;
+      }).catch((err) => log(`INBOX  reply draft not on the shelf: ${err.message}`));
     }
 
     note(d, null, `mail from ${msg.from_email} (${parsed.kind})`);
