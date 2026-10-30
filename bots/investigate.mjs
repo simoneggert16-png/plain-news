@@ -100,6 +100,10 @@ function addressedToDesk(address) {
   if (!raw) return false;
   const domain = String(process.env.DESK_EMAIL_DOMAIN || '').trim().toLowerCase();
   if (domain && !raw.includes(`@${domain}`)) return false;
+  // The desk writes from one address and reads at another. An answer that
+  // comes back to the sending address is still the desk's mail.
+  const from = String(process.env.RESEND_FROM_EMAIL || '').trim().toLowerCase();
+  if (from && raw.includes(from)) return true;
   return /desk(\+[a-z0-9-]+)?@/.test(raw);
 }
 const ACTIVE_STATUSES = ['pitch', 'research', 'outreach', 'drafting', 'review', 'approved'];
@@ -511,6 +515,7 @@ function deskMemory(dossiers, state) {
     open,
     beats: Array.isArray(state?.beats) ? state.beats : [],
     followups: Array.isArray(state?.followups) ? state.followups : [],
+    leads: (Array.isArray(state?.leads) ? state.leads : []).filter((l) => l?.summary),
   };
 }
 
@@ -531,6 +536,12 @@ function memoryBlock(mem) {
   if (mem.followups.length) {
     lines.push('Owed to our readers (open questions from what we published):');
     for (const f of mem.followups.slice(-6)) lines.push(`- ${f.title}: ${f.question}`);
+  }
+  if (mem.leads.length) {
+    lines.push('Letters that reached the desk without a story of their own (a tip the desk keeps):');
+    for (const l of mem.leads.slice(-6)) {
+      lines.push(`- ${l.worth && l.title ? `${l.title} — ${l.summary}` : l.summary}`);
+    }
   }
   return lines.join('\n');
 }
@@ -846,6 +857,10 @@ async function researchAgent(d) {
   // Every search opens its first hits; the cap keeps a run with a slow or
   // hostile site from spending the whole budget in page fetches.
   let autoOpenBudget = 6;
+  // How often the desk has looked for something and found nothing written
+  // down. A reporter who searches twelve times and writes nothing has not
+  // worked, and the desk says so.
+  let searches = 0;
 
   const termsOf = (q) => String(q).toLowerCase()
     .replace(/\bsite:\S+/gi, ' ')
@@ -894,6 +909,7 @@ async function researchAgent(d) {
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
+        searches += 1;
         const seen = new Set();
         const hits = [];
         const collect = (list) => {
@@ -951,7 +967,14 @@ async function researchAgent(d) {
         if (wireN) notes.push(`${wireN} hit(s) come from the desk wire`);
         if (docsN) notes.push(`${docsN} primary document(s) on file`);
         if (opened.length) notes.push(`${opened.length} page(s) were opened and filed — read their text and save the claims they support`);
+        // The desk opens the first hits itself. When that budget is used up
+        // the model has to open the page itself, and it has to be told.
+        else if (results.length) notes.push('nothing was opened for you — call open with one of these urls, read the text, then save_claim what it says');
         if (!results.length) notes.push('no hits — try 2-3 words, or a "site:" query for the institution\'s own portal');
+        // A desk that searches and writes nothing down has not worked. The
+        // shift is short; say what is missing instead of letting the model
+        // search the same story twelve times.
+        if (searches >= 3 && d.claims.length === startedClaims) notes.push(`you have searched ${searches} times and written down no claim — stop searching: open a result, read the text, save_claim what it says`);
         log(`SEARCH  "${q}" → ${results.length} hit(s) (wire ${wireN}, documents ${docsN}, opened ${opened.length})`);
         return {
           query: q,
@@ -1250,6 +1273,63 @@ const replySubject = (subject) => {
 };
 
 /**
+ * A letter that belongs to no dossier is a tip. The desk reads it in the
+ * shift it arrives and keeps what it learned — not the letter, not the
+ * address of the sender. A tip that points at something the desk can prove
+ * with documents becomes a story it can work on.
+ */
+async function readLead(state, letter, msg) {
+  const body = String(msg.text || letter?.body || '').slice(0, 4000);
+  if (!body.trim()) {
+    log('INBOX  a letter without a story and without a text — ignored');
+    return;
+  }
+  let parsed = null;
+  try {
+    const { data } = await chatJSON('desk', [
+      {
+        role: 'system',
+        content: `You read the letters that reach an investigative desk without belonging to a story on file. You write down only what the letter says, never what you assume. You do not repeat private names that are not part of a public matter. You return JSON only.`,
+      },
+      {
+        role: 'user',
+        content: `A letter reached the desk:
+SUBJECT: ${msg.subject || '(none)'}
+MESSAGE:
+${body}
+
+TASK
+1. summary: two sentences, what the letter is actually about.
+2. worth: true only if it points at something a newsroom can prove with public documents or by writing to an institution — a decision, a payment, a transfer, a settlement, a dismissal, an extraction, a breach.
+3. story: if worth is true, the story the letter could start — title (max 90 characters), the question it answers, who is affected and who profits, and 4-6 search queries that would find the documents. If worth is false, leave it empty.
+
+Return {"summary":"…","worth":false,"story":{"title":"","angle":"","people":"","queries":[]}}`,
+      },
+    ], { temperature: 0.2, maxTokens: 1200 });
+    parsed = data;
+  } catch (err) {
+    log(`INBOX  tip not read: ${err.message}`);
+    return;
+  }
+
+  const story = parsed?.story || {};
+  const lead = {
+    at: nowISO(),
+    summary: String(parsed?.summary || '').slice(0, 400),
+    worth: Boolean(parsed?.worth) && String(story.title || '').length > 10,
+    title: String(story.title || '').slice(0, 120),
+    angle: String(story.angle || '').slice(0, 300),
+    people: String(story.people || '').slice(0, 300),
+    queries: (Array.isArray(story.queries) ? story.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
+  };
+  if (!lead.summary) return;
+  state.leads = Array.isArray(state.leads) ? state.leads : [];
+  state.leads = [lead, ...state.leads.filter((l) => l.summary !== lead.summary)].slice(-20);
+  log(`INBOX  tip ← ${msg.from} — ${lead.worth ? 'could be a story' : 'kept on the list'}`);
+  await markMessages([letter?.id].filter(Boolean), { status: 'processed', processed_at: nowISO() }).catch(() => {});
+}
+
+/**
  * The desk opens its own mailbox at the start of the shift. What comes in is
  * filed against the dossier whose address it was sent to, so the replies are
  * evidence and not loose mail.
@@ -1299,7 +1379,7 @@ async function pollMailbox(dossiers, state) {
     // Only a reply that belongs to a dossier on file can be filed against one.
     const known = slug && dossiers.some((d) => d.slug === slug) ? slug : null;
     try {
-      await recordInbound({
+      const letter = await recordInbound({
         slug: known,
         from: msg.from,
         to: msg.to,
@@ -1307,10 +1387,17 @@ async function pollMailbox(dossiers, state) {
         text: msg.text,
         messageId: msg.messageId,
         inReplyTo: msg.inReplyTo,
+        // A letter that belongs to no dossier is not filed in the desk's
+        // mailbox: it is read right here, and the desk keeps what it learned.
+        store: Boolean(known),
       });
       filed += 1;
       lastUid = Math.max(lastUid, msg.uid);
-      log(`INBOX  ${known || 'lead'} ← ${msg.from} — ${msg.subject.slice(0, 70)}`);
+      if (known) {
+        log(`INBOX  ${known} ← ${msg.from} — ${msg.subject.slice(0, 70)}`);
+      } else {
+        await readLead(state, letter, msg);
+      }
     } catch (err) {
       // The message stays unfiled, so it is picked up again next shift.
       log(`INBOX  could not file ${msg.from}: ${err.message}`);
