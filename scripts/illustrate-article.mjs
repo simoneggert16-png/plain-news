@@ -13,10 +13,13 @@ import path from 'node:path';
 import { openPage } from '../bots/lib/browse.mjs';
 import { collectImages, assignImages } from '../bots/lib/illustrate.mjs';
 import { isJunkImage } from '../bots/lib/media.mjs';
+import { chatJSON } from '../bots/lib/llm.mjs';
+import { LOCALES } from '../lib/config.mjs';
 import { loadIndex, saveIndex, loadArticle, saveArticle, toIndexEntry } from '../bots/lib/store.mjs';
 
 const CONTENT = path.join(process.cwd(), 'content');
 const DOSSIERS = path.join(CONTENT, 'investigations');
+const SOURCE_LOCALE = 'en';
 
 const slug = process.argv[2] || '';
 if (!slug) {
@@ -65,7 +68,10 @@ for (const source of dossier.sources || []) {
 }
 fs.writeFileSync(dossierFile, `${JSON.stringify(dossier, null, 2)}\n`);
 
-const pictures = await collectImages(dossier.sources || [], { max: 3 });
+const pictures = await collectImages(dossier.sources || [], {
+  max: 3,
+  terms: [dossier.title, article.locales?.en?.title, article.locales?.en?.dek].filter(Boolean),
+});
 if (!pictures.length) {
   console.log('no usable picture in the sources.');
   process.exit(0);
@@ -74,12 +80,50 @@ if (!pictures.length) {
 const hero = pictures[0];
 article.image = hero.url;
 article.imageCredit = hero.credit || null;
-for (const locale of Object.keys(article.locales || {})) {
+
+// The caption is written for the reader of the page, so it has to be in the
+// language of the page.
+async function translateCaptions(captions, locale) {
+  const texts = captions.filter(Boolean);
+  if (!texts.length) return captions;
+  const lang = LOCALES.find((l) => l.code === locale);
+  if (!lang) return captions;
+  try {
+    const { data } = await chatJSON('translator', [
+      {
+        role: 'system',
+        content: `You are a professional news translator. Translate photo captions into ${lang.label} (${lang.bcp47}), in the neutral register of a quality newspaper. Keep names, places and numbers exactly as they are. Return JSON only: {"captions": ["..."]} with the same number of captions in the same order.`,
+      },
+      { role: 'user', content: JSON.stringify({ captions: texts }) },
+    ], { temperature: 0.1, maxTokens: 600 });
+    const out = Array.isArray(data?.captions) ? data.captions : [];
+    if (out.length !== texts.length) return captions;
+    let cursor = 0;
+    return captions.map((caption) => (caption ? String(out[cursor++]).trim() || caption : caption));
+  } catch (err) {
+    console.log(`PHOTO   ${locale}: caption left in English (${err.message})`);
+    return captions;
+  }
+}
+
+const locales = Object.keys(article.locales || {});
+for (const locale of locales) {
   const loc = article.locales[locale];
-  loc.imageCaption = hero.caption || '';
-  if (Array.isArray(loc.sections)) {
-    const withImage = assignImages(loc.sections, pictures);
-    loc.sections = withImage;
+  const withImage = Array.isArray(loc.sections) ? assignImages(loc.sections, pictures) : loc.sections;
+  const inlineCaptions = (withImage || [])
+    .filter((section) => section.image)
+    .map((section) => section.image.caption || '');
+  const captions = locale === SOURCE_LOCALE
+    ? [hero.caption || '', ...inlineCaptions]
+    : await translateCaptions([hero.caption || '', ...inlineCaptions], locale);
+  loc.imageCaption = captions[0] || '';
+  if (Array.isArray(withImage)) {
+    let cursor = 1;
+    loc.sections = withImage.map((section) => {
+      if (!section.image) return section;
+      const caption = captions[cursor++] || '';
+      return { ...section, image: { ...section.image, caption } };
+    });
   }
 }
 saveArticle(article);

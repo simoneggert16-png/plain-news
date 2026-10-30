@@ -2221,7 +2221,10 @@ async function publish(d) {
   // approved. The editor reads the text first; this only stops a broken one.
   if (d.review?.verdict === 'rejected') throw new Error('the draft did not pass the check');
   const draft = d.draft;
-  const pictures = await collectImages(d.sources, { max: 3 });
+  const pictures = await collectImages(d.sources, {
+    max: 3,
+    terms: [draft.title, draft.dek, draft.standfirst].filter(Boolean),
+  });
   const hero = pictures[0] || null;
   log(`PUBLISH  ${d.slug}: ${pictures.length} usable image(s)${hero ? ` — hero from ${hero.outlet || 'source'}` : ''}`);
   const sections = articleSections(draft, pictures, d);
