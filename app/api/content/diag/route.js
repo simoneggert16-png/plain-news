@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import dns from 'node:dns/promises';
+import net from 'node:net';
 import { readRemoteListing, searchRemoteArticles, rest } from '@/lib/contentRemote.mjs';
 import { getAllArticles } from '@/lib/content.mjs';
 
@@ -18,6 +20,39 @@ async function measure(name, fn) {
   }
 }
 
+// Which layer of the connection dies: the name, the socket, or the answer.
+// The host name itself is not printed - only phases, durations and error
+// codes.
+async function measureNetwork() {
+  const base = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!base) return { name: 'db_network', ok: false, error: 'no database url configured' };
+  const host = new URL(base).hostname;
+
+  const start = Date.now();
+  let dnsResult;
+  try {
+    await dns.lookup(host);
+    dnsResult = { ok: true, ms: Date.now() - start };
+  } catch (err) {
+    dnsResult = { ok: false, ms: Date.now() - start, error: String(err?.code || err?.message || err).slice(0, 80) };
+  }
+
+  const tcpStart = Date.now();
+  const tcp = await new Promise((resolve) => {
+    const socket = net.connect({ host, port: 443 });
+    const finish = (ok, error) => {
+      socket.destroy();
+      resolve({ ok, ms: Date.now() - tcpStart, ...(error ? { error } : {}) });
+    };
+    socket.setTimeout(5000);
+    socket.on('connect', () => finish(true));
+    socket.on('timeout', () => finish(false, 'timeout'));
+    socket.on('error', (err) => finish(false, String(err?.code || err?.message || err).slice(0, 80)));
+  });
+
+  return { name: 'db_network', ok: dnsResult.ok && tcp.ok, dns: dnsResult, tcp };
+}
+
 export async function GET() {
   const results = await Promise.all([
     // A cheap query: if this one hangs as well, the database is not answering
@@ -26,6 +61,7 @@ export async function GET() {
     measure('mirror_listing', () => readRemoteListing('en')),
     measure('mirror_search', () => searchRemoteArticles('bitcoin', 10)),
     measure('local_archive', async () => (await getAllArticles()).length),
+    measureNetwork(),
   ]);
   return NextResponse.json({ at: new Date().toISOString(), results });
 }

@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import fs from 'node:fs';
+import path from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 import {
   getInvestigationStatus,
@@ -19,6 +21,38 @@ export const revalidate = 0;
 
 const ADMINS = String(process.env.ADMIN_EMAILS || 'simoneggert16@gmail.com')
   .split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
+
+// The dossiers also live in the repository. If the database does not answer,
+// the editor still gets to see what the desk has worked out - only the
+// approval itself needs the table.
+function dossiersFromFiles() {
+  const dir = path.join(process.cwd(), 'content', 'investigations');
+  try {
+    return fs.readdirSync(dir)
+      .filter((f) => f.endsWith('.json') && f !== 'state.json')
+      .map((f) => {
+        const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+        return {
+          slug: d.slug,
+          title: d.title,
+          angle: d.angle,
+          status: d.status,
+          priority: d.priority,
+          source_count: (d.sources || []).length,
+          verified_claims: (d.claims || []).length,
+          open_questions: (d.gaps || []).length,
+          outreach_pending: 0,
+          outreach_sent: 0,
+          next_step: d.nextStep || null,
+          updated_at: d.updatedAt || d.createdAt || null,
+          published_at: d.published?.at || null,
+        };
+      })
+      .sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
+  } catch {
+    return [];
+  }
+}
 
 async function requireAdmin(request) {
   const accessToken = request.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
@@ -41,10 +75,10 @@ export async function GET(request) {
     if (auth.error) return NextResponse.json({ error: auth.error }, { status: auth.status });
 
     const [requests, investigations, outreach, usage, messages] = await Promise.all([
-      listRequests({ limit: 80 }),
-      listInvestigations(),
-      listOutreach({ limit: 80 }),
-      weekUsage(weekKey()),
+      listRequests({ limit: 80 }).catch(() => []),
+      listInvestigations().catch(() => dossiersFromFiles()),
+      listOutreach({ limit: 80 }).catch(() => []),
+      weekUsage(weekKey()).catch(() => null),
       // The inbox table only exists after the migration ran; the page keeps
       // loading without it.
       listMessages({ limit: 60 }).catch(() => []),
@@ -113,7 +147,17 @@ export async function POST(request) {
 
     if (action === 'publish') {
       const slug = String(body.slug || '');
-      const current = await getInvestigationStatus(slug);
+      let current;
+      try {
+        current = await getInvestigationStatus(slug);
+      } catch (err) {
+        // Without the table the approval cannot be stored, and the desk would
+        // never see it. Say so instead of pretending it worked.
+        return NextResponse.json(
+          { error: 'Die Datenbank antwortet nicht. Die Freigabe braucht sie - bitte zuerst die Supabase-Verbindung prüfen.' },
+          { status: 503 }
+        );
+      }
       if (!current) return NextResponse.json({ error: 'Dossier nicht gefunden.' }, { status: 404 });
       if (current.status !== 'review') {
         return NextResponse.json({ error: `Nur geprüfte Dossiers können freigegeben werden (Status: ${current.status}).` }, { status: 409 });
