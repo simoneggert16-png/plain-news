@@ -40,6 +40,12 @@ export const JUNK_PATTERNS = [
   /w[=_:]?(?:100|150|200|300|337|400)\b/i,
   /badge|watermark|banner|ticker/i,
   /broadcast.*capture|capture-\d+/i,
+  // Charts, slide exports and the like are graphics, not photographs. A
+  // picture of a diagram is not the face of the people in the story.
+  /template/i,
+  /graph(?:ic)?[-_]?(?:template|placeholder|export)/i,
+  /metatag[-_]?image/i,
+  /\.pptx/i,
   /\b(?:340\/340|150\/150|100\/100|80\/80|64\/64|150x150|200x200|300x200|w[=_:]150|w[=_:]200|w[=_:]300|thumb|thumbnail)\b/i,
 ];
 
@@ -161,42 +167,77 @@ export function cleanCaptionText(value) {
     .trim();
 }
 
+// Parentheses in captions often hold a party name or a date, not a credit.
+const PHOTO_CREDIT = /\b(photo|photograph|foto|bild|getty|reuters|ap|afp|dpa|epa|keystone|shutterstock|imago|anadolu|zuma|bloomberg|flash90|laif|picture alliance|agency)\b|\//i;
+
+/**
+ * The caption that belongs to the picture at this place in the page.
+ *
+ * A page carries many pictures: the lead photo, charts, and the sidebar of
+ * related stories with a white alpaca in it. The caption of the first
+ * <figcaption> in the document often describes another picture entirely, so
+ * the caption has to be found next to the image - inside the same <figure>
+ * or within a few hundred characters of it.
+ */
+function captionNear(html, position) {
+  if (!Number.isFinite(position) || position < 0) return { caption: '', credit: '' };
+
+  let best = { caption: '', credit: '', distance: Infinity };
+  for (const m of html.matchAll(/<figcaption[^>]*>([\s\S]*?)<\/figcaption>/gi)) {
+    const at = m.index ?? -1;
+    const distance = Math.abs(at - position);
+    if (distance > 1200) continue;
+    const raw = cleanCaptionText(m[1].replace(/<[^>]+>/g, ' '));
+    if (!raw) continue;
+    if (distance < best.distance) {
+      const creditMatch = raw.match(/\[(?:File:?\s*)?([^\]]+)\]|\((?:Photo(?:\s+by)?:\s*)?([^\)]+)\)/i);
+      let credit = '';
+      if (creditMatch) {
+        const candidate = cleanCaptionText(creditMatch[1] || creditMatch[2]);
+        if (candidate && PHOTO_CREDIT.test(candidate)) credit = candidate;
+      }
+      best = {
+        caption: raw.replace(/\[[^\]]+\]|\([^\)]+\)/g, '').trim(),
+        credit,
+        distance,
+      };
+    }
+  }
+  return { caption: best.caption, credit: best.credit };
+}
+
 export function extractImagesFromHtml(html) {
   if (!html) return [];
   const list = [];
 
-  // Extract primary figcaption if present in the document
-  const fig = html.match(/<figcaption[^>]*>([\s\S]*?)<\/figcaption>/i);
-  let pageCaption = '';
-  let pageCredit = '';
-  if (fig && fig[1]) {
-    const raw = cleanCaptionText(fig[1].replace(/<[^>]+>/g, ' '));
-    const creditMatch = raw.match(/\[(?:File:?\s*)?([^\]]+)\]|\((?:Photo(?:\s+by)?:\s*)?([^\)]+)\)/i);
-    // Parentheses in captions often hold a party name or a date, not a credit.
-    const PHOTO_CREDIT = /\b(photo|photograph|foto|bild|getty|reuters|ap|afp|dpa|epa|keystone|shutterstock|imago|anadolu|zuma|bloomberg|flash90|laif|picture alliance|agency)\b|\//i;
-    if (creditMatch) {
-      const candidate = cleanCaptionText(creditMatch[1] || creditMatch[2]);
-      if (candidate && PHOTO_CREDIT.test(candidate)) pageCredit = candidate;
-    }
-    pageCaption = raw.replace(/\[[^\]]+\]|\([^\)]+\)/g, '').trim();
-  }
-
   // OpenGraph image
   const og = html.match(/<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]+content=["']([^"']+)["']/i) ||
              html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::secure_url)?["']/i);
-  if (og && og[1] && !isJunkImage(og[1])) list.push({ url: og[1], score: 8, caption: pageCaption, credit: pageCredit });
+
+  // Editorial article lead image
+  const articleImg = html.match(/<article[\s\S]*?<img[^>]+src=["']([^"']+)["'][^>]*>/i);
+  const articleUrl = articleImg?.[1] ? cleanImageUrl(articleImg[1]) : null;
+  const articleAt = articleImg ? html.indexOf(articleImg[0]) : -1;
+  const altMatch = articleImg?.[0].match(/alt=["']([^"']+)["']/i);
+  const altText = altMatch ? cleanCaptionText(altMatch[1]) : '';
+
+  const near = captionNear(html, articleAt);
+
+  // The caption belongs to the picture in the article. The og:image is often
+  // that same picture, but it can also be a logo, a diagram or a social card -
+  // then the caption would be a lie.
+  const ogIsTheArticle = Boolean(og?.[1] && articleUrl && cleanImageUrl(og[1]) === articleUrl);
+  const ogCaption = articleUrl && !ogIsTheArticle ? '' : near.caption;
+
+  if (og && og[1] && !isJunkImage(og[1])) list.push({ url: og[1], score: 8, caption: ogCaption, credit: near.credit });
 
   // Twitter image
   const tw = html.match(/<meta[^>]+name=["']twitter:image(?::src)?["'][^>]+content=["']([^"']+)["']/i) ||
              html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image(?::src)?["']/i);
-  if (tw && tw[1] && !isJunkImage(tw[1])) list.push({ url: tw[1], score: 7, caption: pageCaption, credit: pageCredit });
+  if (tw && tw[1] && !isJunkImage(tw[1])) list.push({ url: tw[1], score: 7, caption: ogCaption, credit: near.credit });
 
-  // Editorial article lead image
-  const articleImg = html.match(/<article[\s\S]*?<img[^>]+src=["']([^"']+)["'][^>]*>/i);
-  if (articleImg && articleImg[1] && !isJunkImage(articleImg[1])) {
-    const altMatch = articleImg[0].match(/alt=["']([^"']+)["']/i);
-    const altText = altMatch ? cleanCaptionText(altMatch[1]) : '';
-    list.push({ url: articleImg[1], score: 9, caption: pageCaption || altText, credit: pageCredit });
+  if (articleImg && articleUrl && !isJunkImage(articleUrl)) {
+    list.push({ url: articleUrl, score: 9, caption: near.caption || altText, credit: near.credit });
   }
 
   return list;

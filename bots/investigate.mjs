@@ -207,6 +207,24 @@ function addSource(d, item, extra = {}) {
 
 const STOPWORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'were', 'deutsch', 'thema', 'einer', 'eines', 'einem', 'einen', 'diese', 'dieser', 'diesem', 'werden', 'wurde', 'wurden', 'nicht', 'auch', 'sowie', 'oder', 'aber', 'noch', 'nur', 'schon', 'sich', 'sind', 'dass', 'nach', 'ueber', 'über', 'beim', 'vom', 'zum', 'zur', 'durch', 'gegen', 'ohne', 'zwischen', 'immer', 'jeder', 'jede', 'jedes', 'keine', 'mehr', 'sowie']);
 
+/**
+ * What the desk read goes into the dossier: the text it can cite and the
+ * picture the page came with. Without the photo an investigation reaches
+ * the site without a lead image.
+ */
+function fileSourceRead(src, page) {
+  if (!src || !page) return;
+  if (!src.text && page.text) {
+    src.text = String(page.text).slice(0, MAX_SOURCE_CHARS);
+    src.readAt = nowISO();
+  }
+  if (!src.image && page.image) {
+    src.image = page.image;
+    if (page.imageCaption) src.imageCaption = String(page.imageCaption).slice(0, 300);
+    if (page.imageCredit) src.imageCredit = String(page.imageCredit).slice(0, 120);
+  }
+}
+
 function keywordsOf(d) {
   // The brief comes first: it is where the editor names the exact terms the
   // primary sources use, so those must survive the cap.
@@ -290,10 +308,7 @@ async function openPrimaryDoors(d, { maxDoors = 6, maxPerDoor = 2 } = {}) {
       { kind: 'document' }
     );
     const src = d.sources.find((s) => s.url === doc.url);
-    if (src && !src.text) {
-      src.text = page.text.slice(0, MAX_SOURCE_CHARS);
-      src.readAt = nowISO();
-    }
+    fileSourceRead(src, page);
     added++;
   }
   if (added) log(`DOORS  ${added} primary document(s) read at ${[...perDoor.keys()].join(', ')}`);
@@ -701,10 +716,7 @@ async function researchAgent(d) {
           if (!page?.text) return null;
           addSource(d, { url: h.url, outlet: h.outlet || hostOf(h.url), title: page.title || h.title, publishedAt: h.publishedAt || null, primary: h.primary }, { kind: h.kind === 'document' ? 'document' : 'read' });
           const src = d.sources.find((s) => s.url === h.url);
-          if (src && !src.text) {
-            src.text = page.text.slice(0, MAX_SOURCE_CHARS);
-            src.readAt = nowISO();
-          }
+          fileSourceRead(src, page);
           return { outlet: h.outlet || hostOf(h.url), url: h.url, sourceId: src?.id || null, title: page.title || h.title, text: page.text.slice(0, 900) };
         }))).filter(Boolean);
 
@@ -730,15 +742,12 @@ async function researchAgent(d) {
         if (!/^https?:\/\//i.test(target)) return { error: 'not a URL' };
         const page = await openPage(target, { maxChars: 7000 });
         if (page.error && !page.text) return { url: target, error: page.error };
-        cache.set(target, page.text || '');
+        cache.set(target, page);
         // What the desk read is part of the dossier's paper trail. Filing it
         // here means a run cannot end with "I read a lot" and nothing on file.
         addSource(d, { url: target, outlet: hostOf(target), title: page.title || target, publishedAt: null }, { kind: 'read' });
         const src = d.sources.find((s) => s.url === target);
-        if (src && page.text && !src.text) {
-          src.text = page.text.slice(0, MAX_SOURCE_CHARS);
-          src.readAt = nowISO();
-        }
+        fileSourceRead(src, page);
         return {
           url: target,
           title: page.title,
@@ -761,10 +770,7 @@ async function researchAgent(d) {
           { url: target, outlet: String(outlet || hostOf(target)), title: String(title || target), publishedAt: publishedAt || null },
         );
         const src = d.sources.find((s) => s.url === target);
-        if (src && cache.has(target) && !src.text) {
-          src.text = cache.get(target).slice(0, MAX_SOURCE_CHARS);
-          src.readAt = nowISO();
-        }
+        if (src && cache.has(target)) fileSourceRead(src, cache.get(target));
         return { added, id: src?.id || null, total: d.sources.length };
       },
     },
@@ -2145,9 +2151,21 @@ function attribute(text, d) {
   return out.replace(/[ \t]{2,}/g, ' ').trim();
 }
 
+/**
+ * A heading cut in the middle of a word looks broken. Cut at the last word
+ * that fits instead.
+ */
+function clipHeading(text, max = 90) {
+  const value = String(text || '').trim();
+  if (value.length <= max) return value;
+  const cut = value.slice(0, max);
+  const space = cut.lastIndexOf(' ');
+  return (space > 20 ? cut.slice(0, space) : cut).replace(/[\s,;:.\-–—]+$/, '');
+}
+
 function articleSections(draft, pictures = [], d = { sources: [] }) {
   const sections = assignImages(draft.sections.map((s) => ({
-    heading: attribute(s.heading, d).slice(0, 90),
+    heading: clipHeading(attribute(s.heading, d)),
     paragraphs: (s.paragraphs || []).map((p) => attribute(p, d)).filter(Boolean),
   })), pictures);
   if (draft.rightOfReply) {

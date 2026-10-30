@@ -10,7 +10,9 @@
 import process from 'node:process';
 
 const LIMIT = Number(process.env.DEPLOY_BUDGET_LIMIT || 100);
-const MAX = Number(process.env.DEPLOY_BUDGET_MAX || 70);
+// The reserve is for the fixes that cannot wait: a broken page, a wrong
+// article, a hotfix. 15 of the 100 daily deployments stay free.
+const MAX = Number(process.env.DEPLOY_BUDGET_MAX || 85);
 const WINDOW_H = Number(process.env.DEPLOY_BUDGET_WINDOW_H || 24);
 
 const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
