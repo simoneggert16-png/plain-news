@@ -88,6 +88,61 @@ test('a reply with nothing to do calls no tool', async () => {
   assert.equal(await firstCall({ thought: 'I have nothing to do here.' }), null);
 });
 
+// A model that explains itself and then acts: the call hides behind the
+// prose, and the shift was lost on it because the loop only looked at the
+// parsed object.
+test('the call behind the prose is still a call', async () => {
+  const calls = [];
+  const text = 'We need to open the Yonhap article. The tool search was used repeatedly; we should use open directly. Let\'s try open. {"open":{"url":"https://en.yna.co.kr/view/AEN20261030011500320"}}';
+  await runAgent({
+    role: 'desk',
+    system: 'test',
+    task: 'test',
+    tools: TOOLS.map((t) => ({ ...t, run: async (a) => { calls.push({ tool: t.name, args: a }); return { ok: true }; } })),
+    maxSteps: 1,
+    ask: async () => ({ data: { thought: "We need to open the Yonhap article." }, text }),
+    log: () => {},
+  });
+  assert.equal(calls[0]?.tool, 'open');
+  assert.match(calls[0].args.url, /yna\.co\.kr/);
+});
+
+// The same question twice must not cost the shift a minute it cannot get
+// back: the desk answers from what it already has and tells the model to
+// change course.
+test('the same question twice does not run the tool again', async () => {
+  const calls = [];
+  const reply = { action: 'search', args: { query: 'yonhap itaewon publisher' } };
+  const out = await runAgent({
+    role: 'desk',
+    system: 'test',
+    task: 'test',
+    tools: TOOLS.map((t) => ({ ...t, run: async (a) => { calls.push({ tool: t.name, args: a }); return { items: ['one headline'] }; } })),
+    maxSteps: 2,
+    ask: async () => ({ data: reply, text: JSON.stringify(reply) }),
+    log: () => {},
+  });
+  assert.equal(calls.length, 1, 'the tool runs once');
+  assert.match(out.observations[1], /you already asked that/);
+  assert.match(out.observations[1], /one headline/, 'the answer the desk already has is handed back');
+});
+
+test('the third identical call is refused', async () => {
+  const calls = [];
+  const reply = { action: 'search', args: { query: 'yonhap itaewon publisher' } };
+  const out = await runAgent({
+    role: 'desk',
+    system: 'test',
+    task: 'test',
+    tools: TOOLS.map((t) => ({ ...t, run: async (a) => { calls.push({ tool: t.name, args: a }); return { items: [] }; } })),
+    maxSteps: 3,
+    ask: async () => ({ data: reply, text: JSON.stringify(reply) }),
+    log: () => {},
+  });
+  assert.equal(calls.length, 1, 'the tool does not run again');
+  assert.match(out.observations[2], /same arguments 3 times/);
+});
+
 // ───────────────────────── the desk keeps what it read ─────────────────────────
 
 const SOURCE = fs.readFileSync(new URL('../bots/investigate.mjs', import.meta.url), 'utf8');

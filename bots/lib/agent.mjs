@@ -177,6 +177,64 @@ function toolKeyedCall(data, byName) {
 }
 
 /**
+ * The tool whose own arguments are the reply: {"query": "…"}.
+ * Some models answer with the arguments alone; if exactly one tool takes
+ * exactly those arguments, that is the call.
+ */
+function toolFromArgs(data, tools) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return null;
+  const keys = Object.keys(data).filter((k) => !NOISE_KEYS.has(k.toLowerCase()));
+  if (!keys.length) return null;
+  const scored = tools.map((t) => {
+    // Tool arg specs are written for the model ("{url: string}"), not for
+    // JSON.parse, so read the keys loosely.
+    const spec = toolSpec(t);
+    const present = spec.filter((k) => keys.includes(k));
+    return {
+      tool: t,
+      matched: present.length,
+      covered: keys.every((k) => spec.includes(k)),
+      // The reply may carry a flag on top of the arguments ("open": true).
+      // A tool whose own arguments are all there is usable anyway.
+      complete: spec.length > 0 && present.length === spec.length,
+    };
+  });
+  const exact = scored.filter((x) => x.covered && x.matched > 0);
+  const usable = scored.filter((x) => x.complete && x.matched > 0);
+  const pool = exact.length ? exact : usable;
+  pool.sort((a, b) => b.matched - a.matched);
+  if (pool.length === 1 || (pool.length > 1 && pool[0].matched > pool[1].matched)) return pool[0].tool.name;
+  return null;
+}
+
+/** The first link in the reply, also inside an object. */
+function firstLink(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return null;
+  const flat = [];
+  for (const v of Object.values(data)) {
+    if (typeof v === 'string') flat.push(v);
+    else if (v && typeof v === 'object' && !Array.isArray(v)) {
+      for (const inner of Object.values(v)) if (typeof inner === 'string') flat.push(inner);
+    }
+  }
+  return flat.find((v) => /^https?:\/\/\S+$/i.test(v.trim())) || null;
+}
+
+/** Does this object name a tool at all? */
+function namesTool(data, byName, tools) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
+  for (const key of ['action', 'tool', 'tool_name', 'name']) {
+    const v = data[key];
+    if (typeof v === 'string' && v.trim()) return true;
+    if (v && typeof v === 'object' && typeof v.name === 'string' && v.name.trim()) return true;
+  }
+  if (toolKeyedCall(data, byName)) return true;
+  if (toolFromArgs(data, tools)) return true;
+  const link = firstLink(data);
+  return Boolean(link) && tools.some((t) => /["']?url["']?\s*:/.test(String(t.args || '')));
+}
+
+/**
  * Run the loop until the model finishes, the step budget is spent or the
  * deadline is close. `ask` is injectable so the loop can be tested without a
  * live model.
@@ -197,6 +255,7 @@ export async function runAgent({
   const history = [];
   const steps = [];
   const seen = new Map();
+  const cache = new Map();
   let final = null;
 
   if (!tools?.length) throw new Error('runAgent needs at least one tool');
@@ -244,12 +303,14 @@ ${PROTOCOL}`;
     // The reply did not parse into a call: take the first object in the text.
     const usable = data && typeof data === 'object' && (data.action || data.tool || data.tool_name || data.final);
     if (!usable) {
-      const call = firstCall(raw);
-      if (call) {
-        data = call;
-      } else {
-        const first = firstObject(raw);
-        if (first && (!data || typeof data !== 'object' || !Object.keys(data).length)) data = first;
+      // The call often hides behind the prose ("…Let's try open. {…}"), and the
+      // object that names a tool wins over the one that only explains.
+      const alternatives = [firstCall(raw), firstObject(raw)].filter((c) => c && typeof c === 'object');
+      const named = alternatives.find((c) => namesTool(c, byName, tools));
+      if (named) data = named;
+      else if (!data || !Object.keys(data).length) {
+        const first = alternatives[0];
+        if (first) data = first;
       }
     }
     if (data?.final && !data.action && !data.tool) {
@@ -297,38 +358,18 @@ ${PROTOCOL}`;
     }
     // Some models answer with the bare arguments, no action at all. If exactly
     // one tool takes exactly those arguments, that is the call.
-    if (!name && data && typeof data === 'object' && !Array.isArray(data)) {
-      const keys = Object.keys(data).filter((k) => !NOISE_KEYS.has(k.toLowerCase()));
-      const scored = tools.map((t) => {
-        // Tool arg specs are written for the model ("{url: string}"), not for
-        // JSON.parse, so read the keys loosely.
-        const spec = toolSpec(t);
-        const present = spec.filter((k) => keys.includes(k));
-        return {
-          tool: t,
-          matched: present.length,
-          covered: keys.length > 0 && keys.every((k) => spec.includes(k)),
-          // The reply may carry a flag on top of the arguments ("open": true).
-          // A tool whose own arguments are all there is usable anyway.
-          complete: spec.length > 0 && present.length === spec.length,
-        };
-      });
-      const exact = scored.filter((x) => x.covered && x.matched > 0);
-      const usable = scored.filter((x) => x.complete && x.matched > 0);
-      const pool = exact.length ? exact : usable;
-      pool.sort((a, b) => b.matched - a.matched);
-      if (pool.length === 1 || (pool.length > 1 && pool[0].matched > pool[1].matched)) {
-        name = pool[0].tool.name;
-      }
+    if (!name) {
+      const guess = toolFromArgs(data, tools);
+      if (guess) name = guess;
     }
     // A model that replies with a link under an unexpected key still means
     // "open this".
     if (!name && data && typeof data === 'object' && !Array.isArray(data)) {
-      const link = Object.values(data).find((v) => typeof v === 'string' && /^https?:\/\/\S+$/i.test(v.trim()));
+      const link = firstLink(data);
       const opener = link && tools.find((t) => /["']?url["']?\s*:/.test(String(t.args || '')));
       if (opener) {
         name = opener.name;
-        data = { ...data, url: link.trim() };
+        keyedArgs = { url: link.trim() };
       }
     }
     const tool = byName.get(name);
@@ -360,12 +401,22 @@ ${PROTOCOL}`;
       log(`AGENT  step ${step}: reply had no usable action — ${raw.replace(/\s+/g, ' ').slice(0, 200)}`);
     } else if (repeats > REPEAT_LIMIT) {
       result = { error: `you called ${name} with the same arguments ${repeats} times — choose a different action` };
+    } else if (repeats > 1 && cache.has(key)) {
+      // The same question twice. Hand back what the desk already has, with a
+      // word to change course: a flat refusal teaches the model nothing and
+      // costs the shift a minute it cannot get back.
+      const cached = cache.get(key);
+      const note = 'you already asked that — this is the answer you got. Open one of the results, or ask a different question.';
+      result = cached && typeof cached === 'object' && !Array.isArray(cached)
+        ? { ...cached, note }
+        : { result: cached, note };
     } else {
       try {
         result = await withTimeout(tool.run(args), TOOL_TIMEOUT_MS, name);
       } catch (err) {
         result = { error: String(err.message || err).slice(0, 300) };
       }
+      if (!result?.error) cache.set(key, result);
     }
 
     const observation = `OBSERVATION ${step} (${name || 'none'})\n${clip(result)}`;
@@ -386,4 +437,4 @@ ${PROTOCOL}`;
   return { final, steps, observations };
 }
 
-export const __test = { clip, toolDocs, PROTOCOL, firstCall, firstObject };
+export const __test = { clip, toolDocs, PROTOCOL, firstCall, firstObject, toolFromArgs, namesTool };

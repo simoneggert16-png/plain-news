@@ -944,13 +944,19 @@ async function researchAgent(d) {
         const results = order.slice(0, 10).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt, kind: h.kind || 'news', primary: !!h.primary }));
         const wireN = fromWire.filter((w) => seen.has(w.url)).length;
         const docsN = results.filter((r) => r.primary).length;
+        // One note, not three: the model reads the last value it gets, so the
+        // guidance about where the hits came from has to travel together.
+        const notes = [];
+        if (wireN) notes.push(`${wireN} hit(s) come from the desk wire`);
+        if (docsN) notes.push(`${docsN} primary document(s) on file`);
+        if (opened.length) notes.push(`${opened.length} page(s) were opened and filed — read their text and save the claims they support`);
+        if (!results.length) notes.push('no hits — try 2-3 words, or a "site:" query for the institution\'s own portal');
+        log(`SEARCH  "${q}" → ${results.length} hit(s) (wire ${wireN}, documents ${docsN}, opened ${opened.length})`);
         return {
           query: q,
           opened,
           results,
-          ...(wireN ? { note: `${wireN} hit(s) come from the desk wire; the first two are on file — record what their text proves` } : {}),
-          ...(docsN ? { note: `${docsN} primary document(s) on file — open the rest and quote what they say` } : {}),
-          ...(results.length ? {} : { note: 'no hits — try 2-3 words, or a "site:" query for the institution\'s own portal' }),
+          ...(notes.length ? { note: notes.join(' — ') } : {}),
         };
       },
     },
