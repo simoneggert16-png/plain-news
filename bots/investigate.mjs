@@ -404,12 +404,35 @@ async function researchAgent(d) {
     {
       name: 'search',
       args: '{"query": string}',
-      description: 'Search Google News and Bing News. Returns headlines with outlet, date and URL. Use short queries (2-4 words), in German for Swiss sources.',
+      description: 'Search Google News and Bing News. Returns headlines with outlet, date and URL. Use short queries (2-4 words), in German for Swiss sources; "site:domain.ch" also works. A long English query usually returns nothing.',
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
-        const hits = await webSearch(q, { limit: 12 });
-        return hits.length ? { query: q, results: hits } : { query: q, results: [], note: 'no hits — try a shorter or different wording' };
+        const seen = new Set();
+        const hits = [];
+        const collect = (list) => {
+          for (const h of list) {
+            if (seen.has(h.url)) continue;
+            seen.add(h.url);
+            hits.push(h);
+          }
+        };
+        collect(await webSearch(q, { limit: 12 }));
+        // The feeds are thin, not the topic: a shorter query without operators
+        // and with a German/Swiss angle finds what the long one misses.
+        if (hits.length < 3) {
+          const short = q.replace(/\bsite:\S+/gi, ' ').split(/\s+/).filter((w) => w.length > 2).slice(0, 4).join(' ').trim();
+          if (short && short.toLowerCase() !== q.toLowerCase()) {
+            collect(await webSearch(short, { limit: 12 }).catch(() => []));
+          }
+        }
+        if (hits.length < 3) {
+          const words = q.replace(/\bsite:\S+/gi, ' ').split(/\s+/).filter((w) => w.length > 2 && !/^(the|and|for|with|from|about)$/i.test(w));
+          const german = [...words.slice(0, 3), 'Schweiz'].join(' ').trim();
+          if (german && !seen.size) collect(await webSearch(german, { limit: 10 }).catch(() => []));
+        }
+        const results = hits.slice(0, 12).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt, summary: h.summary }));
+        return results.length ? { query: q, results } : { query: q, results: [], note: 'no hits — try 2-3 German words without site:, e.g. "KI Verwaltung" or "Beschaffung Bundeskanzlei"' };
       },
     },
     {
@@ -522,6 +545,7 @@ async function researchAgent(d) {
     task: `INVESTIGATION: ${d.title}
 QUESTION: ${d.angle}
 DESK BRIEF: ${JSON.stringify(d.brief || {})}
+SEARCHES THAT WORKED FOR THIS STORY: ${(d.queries || []).join(' · ') || '(none yet)'}
 ${d.nextStep ? `NOTE FROM THE LAST SHIFT: ${d.nextStep}` : ''}
 ${(d.dropped || []).length ? `ALREADY THROWN OUT (no source carries them):\n${d.dropped.slice(-6).map((x) => `- ${x.text}`).join('\n')}` : ''}
 
