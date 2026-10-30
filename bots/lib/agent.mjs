@@ -154,7 +154,22 @@ ${PROTOCOL}`;
     // Free models drift between the shapes we ask for and the shapes they
     // learned; accept the usual aliases instead of failing the step.
     const call = data?.function && typeof data.function === 'object' ? data.function : data || {};
-    const name = String(data?.action || data?.tool || data?.tool_name || call.name || data?.name || '').trim();
+    let name = String(data?.action || data?.tool || data?.tool_name || call.name || data?.name || '').trim();
+    // Some models answer with the bare arguments, no action at all. If exactly
+    // one tool takes exactly those arguments, that is the call.
+    if (!name && data && typeof data === 'object') {
+      const keys = Object.keys(data).filter((k) => k !== 'thought');
+      const match = tools.filter((t) => {
+        // Tool arg specs are written for the model ("{url: string}"), not for
+        // JSON.parse, so read the keys loosely.
+        let spec = [];
+        try { spec = Object.keys(JSON.parse(t.args || '{}')); } catch {
+          spec = [...String(t.args || '').matchAll(/["']?([a-zA-Z_]\w*)["']?\s*:/g)].map((m) => m[1]);
+        }
+        return keys.length > 0 && keys.every((k) => spec.includes(k));
+      });
+      if (match.length === 1) name = match[0].name;
+    }
     const tool = byName.get(name);
     let rawArgs = data?.args ?? data?.arguments ?? data?.parameters ?? call.arguments ?? call.parameters ?? {};
     if (typeof rawArgs === 'string') {

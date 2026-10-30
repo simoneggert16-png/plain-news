@@ -648,15 +648,15 @@ Every search already opens and files its first two hits. Read the text under "op
   // A weak model can gather the right documents and still forget to write the
   // claims down. The desk then does what a desk does: read the pages on file
   // and extract the facts itself.
-  if (added > 0 && claims === 0 && d.sources.some((s) => s.text)) {
-    log('RESEARCH  agent filed sources but no claims — extracting from the pages on file');
+  if (claims === 0 && d.sources.some((s) => s.text)) {
+    log('RESEARCH  no claim on file — extracting from the pages the desk read');
     await safe(() => extract(d), null);
     claims = d.claims.length - startedClaims;
   }
 
   log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
 
-  if (added === 0 && claims === 0) return false;
+  if (added === 0 && claims === 0 && d.sources.length === 0) return false;
   if (['pitch'].includes(d.status) && d.sources.length >= 3) note(d, 'research', `${d.sources.length} sources`);
   return true;
 }

@@ -29,6 +29,7 @@ const script = [
   { thought: 'same again', action: 'lookup', args: { term: 'simap' } },
   { thought: 'again', action: 'lookup', args: { term: 'simap' } },
   { __mixed: true },
+  { __bare: true },
   { thought: 'try broken', action: 'boom', args: {} },
   { thought: 'nonsense', action: 'teleport', args: {} },
   { thought: 'done', final: 'two hits, one tool broken' },
@@ -44,6 +45,8 @@ const ask = async () => {
       text: '{"thought":"read it","action":"lookup","args":{"term":"recovered"}}{"thought":"and then',
     };
   }
+  // A reply that is nothing but the arguments: only one tool takes "term".
+  if (entry.__bare) return { data: { term: 'bare-call' } };
   return { data: entry };
 };
 
@@ -59,13 +62,14 @@ const { final, steps, observations } = await runAgent({
 
 const checks = {
   finished: final === 'two hits, one tool broken',
-  steps: steps.length === 7,
-  toolRan: calls.length === 3,
+  steps: steps.length === 8,
+  toolRan: calls.length === 4,
   recoveredCall: calls[2] === 'recovered',
+  bareArgsCall: calls[3] === 'bare-call',
   repeatGuard: observations.some((o) => /same arguments 3 times/.test(o)),
   toolError: observations.some((o) => /kaputt/.test(o)),
   unknownAction: observations.some((o) => /unknown action/.test(o)),
-  logged: seen.filter((l) => l.startsWith('AGENT')).length === 8,
+  logged: seen.filter((l) => l.startsWith('AGENT')).length === 9,
   rawOnBadStep: seen.some((l) => /reply had no usable action/.test(l)),
 };
 
