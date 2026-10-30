@@ -1,0 +1,39 @@
+name: Desk tests
+
+# The desk's own tests.
+#
+# Every failure in this file cost the desk a shift: a reply that was read as
+# no call at all, a model whose quota was used up retried until the shift ran
+# out, a document thrown away because its headline did not repeat the story,
+# a letter that went to nobody because the institution had no address on file.
+#
+# They only ever ran on the machine that wrote them. A test that nobody runs
+# protects nothing.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: desk-tests-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  desk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: The desk keeps what it read, and writes what it sends
+        run: >-
+          node --test
+          scripts/desk-work.test.mjs
+          scripts/lookup.test.mjs
+          scripts/mailbox.test.mjs
+          scripts/desk-dispatch.test.mjs

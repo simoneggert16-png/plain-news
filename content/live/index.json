@@ -1,22 +1,634 @@
 {
-  "updatedAt": "2026-10-30T13:53:06.556Z",
+  "updatedAt": "2026-10-30T22:26:23.121Z",
   "tickers": [
+    {
+      "slug": "california-earthquake-sequence",
+      "status": "ended",
+      "category": "science",
+      "importance": 5,
+      "title": "California earthquake sequence",
+      "dek": "A series of earthquakes, ranging from magnitude 2.7 to 4.0, has struck Southern California and the San Joaquin Valley, prompting seismic monitoring and public advisories.",
+      "startedAt": "2026-10-29T15:02:50.620Z",
+      "updatedAt": "2026-10-30T22:26:22.894Z",
+      "endedAt": "2026-10-29T20:46:03.399Z",
+      "updateCount": 2,
+      "articleSlug": "california-earthquake-sequence",
+      "latest": {
+        "at": "2026-10-29T20:04:01.000Z",
+        "kind": "result",
+        "headline": "3.5 magnitude earthquake hits off Oregon Coast"
+      },
+      "locales": {
+        "de": {
+          "title": "Erdbebenfolge in Kalifornien",
+          "dek": "Eine Reihe von Erdbeben mit einer Magnitude von 2,7 bis 4,0 hat Südkalifornien und das San-Joaquin-Tal erschüttert, was seismische Überwachung und öffentliche Warnungen ausgelöst hat."
+        },
+        "en": {
+          "title": "California earthquake sequence",
+          "dek": "A series of earthquakes, ranging from magnitude 2.7 to 4.0, has struck Southern California and the San Joaquin Valley, prompting seismic monitoring and public advisories."
+        },
+        "es": {
+          "title": "Secuencia de terremotos en California",
+          "dek": "Una serie de terremotos, con magnitudes que van desde 2,7 hasta 4,0, ha sacudido el sur de California y el Valle de San Joaquín, lo que ha provocado la monitorización sísmica y avisos públicos."
+        },
+        "fr": {
+          "title": "Séquence sismique en Californie",
+          "dek": "Une série de tremblements de terre, d'une magnitude allant de 2,7 à 4,0, a frappé le sud de la Californie et la vallée de San Joaquin, entraînant une surveillance sismique et des avis publics."
+        },
+        "it": {
+          "title": "Sequenza di terremoti in California",
+          "dek": "Una serie di terremoti, con magnitudo compresa tra 2,7 e 4,0, ha colpito la California meridionale e la Valle di San Giacomo, provocando monitoraggio sismico e avvisi pubblici."
+        },
+        "ja": {
+          "title": "カリフォルニアで地震連続発生",
+          "dek": "マグニチュード2.7から4.0の地震が南カリフォルニアとサン・ホセ渓谷を襲い、地震監視と一般への注意喚起が行われた。"
+        },
+        "ko": {
+          "title": "캘리포니아 지진 시퀀스",
+          "dek": "2.7~4.0 규모의 일련의 지진이 남부 캘리포니아와 산호세 밸리에서 발생해 지진 모니터링과 공공 알림이 발령되었습니다."
+        },
+        "pt": {
+          "title": "Sequência de terremotos na Califórnia",
+          "dek": "Uma série de terremotos, com magnitudes que variam de 2,7 a 4,0, atingiu o sul da Califórnia e o Vale de San Joaquin, levando a monitorização sísmica e a avisos ao público."
+        },
+        "zh": {
+          "title": "加州地震序列",
+          "dek": "一系列震级在2.7至4.0之间的地震已发生在南加州和圣华金谷，促使进行地震监测并发布公众警示。"
+        }
+      }
+    },
+    {
+      "slug": "golden-state-valkyries-vs-atlanta-dream-wnba-finals",
+      "status": "ended",
+      "category": "sport",
+      "importance": 4,
+      "title": "Golden State Valkyries vs Atlanta Dream: WNBA finals 2026 Match 6 – live",
+      "dek": "Live coverage of the decisive sixth match of the WNBA finals between the Golden State Valkyries and the Atlanta Dream.",
+      "startedAt": "2026-10-29T16:03:22.895Z",
+      "updatedAt": "2026-10-30T22:26:22.640Z",
+      "endedAt": "2026-10-29T20:47:16.019Z",
+      "updateCount": 2,
+      "articleSlug": "golden-state-valkyries-vs-atlanta-dream-wnba-finals",
+      "latest": {
+        "at": "2026-10-29T19:12:04.000Z",
+        "kind": "result",
+        "headline": "Atlanta Dream defeat Golden State Valkyries 80-69"
+      },
+      "locales": {
+        "de": {
+          "title": "Golden State Valkyries gegen Atlanta Dream: WNBA-Finale 2026, Spiel 6 – Live",
+          "dek": "Live-Berichterstattung des entscheidenden sechsten Spiels des WNBA-Finales zwischen den Golden State Valkyries und den Atlanta Dream."
+        },
+        "en": {
+          "title": "Golden State Valkyries vs Atlanta Dream: WNBA finals 2026 Match 6 – live",
+          "dek": "Live coverage of the decisive sixth match of the WNBA finals between the Golden State Valkyries and the Atlanta Dream."
+        },
+        "es": {
+          "title": "Golden State Valkyries vs Atlanta Dream: finales de la WNBA 2026, Juego 6 – en directo",
+          "dek": "Cobertura en vivo del decisivo sexto partido de las finales de la WNBA entre las Golden State Valkyries y las Atlanta Dream."
+        },
+        "fr": {
+          "title": "Golden State Valkyries contre Atlanta Dream : finale de la WNBA 2026, match 6 – en direct",
+          "dek": "Couverture en direct du sixième match décisif des finales de la WNBA entre les Golden State Valkyries et les Atlanta Dream."
+        },
+        "it": {
+          "title": "Golden State Valkyries contro Atlanta Dream: finale WNBA 2026, Gioco 6 – in diretta",
+          "dek": "Copertura in diretta del sesto e decisivo incontro delle finali WNBA tra le Golden State Valkyries e le Atlanta Dream."
+        },
+        "ja": {
+          "title": "ゴールデンステート・ヴァルキリーズ対アトランタ・ドリーム：WNBAファイナル2026年 第6戦 – ライブ",
+          "dek": "ゴールデンステート・ヴァルキリーズとアトランタ・ドリームの間で行われるWNBAファイナルの決定的な第6戦をライブで報道します。"
+        },
+        "ko": {
+          "title": "골든 스테이트 발키리 vs 애틀란타 드림: WNBA 결승전 2026년 6번째 경기 – 생중계",
+          "dek": "골든 스테이트 발키리와 애틀란타 드림의 WNBA 결승전 결정적 여섯 번째 경기를 생중계합니다."
+        },
+        "pt": {
+          "title": "Golden State Valkyries vs Atlanta Dream: finais da WNBA 2026, jogo 6 – ao vivo",
+          "dek": "Cobertura ao vivo do decisivo sexto jogo das finais da WNBA entre as Golden State Valkyries e as Atlanta Dream."
+        },
+        "zh": {
+          "title": "金州瓦尔基里队 vs 亚特兰大梦之队：WNBA 2026年总决赛第六场 – 实时",
+          "dek": "实时报道金州瓦尔基里队与亚特兰大梦之队之间的WNBA总决赛第六场关键比赛。"
+        }
+      }
+    },
+    {
+      "slug": "alaska-senate-race-ballot-scheme-allegations",
+      "status": "ended",
+      "category": "politics",
+      "importance": 5,
+      "title": "Alaska Senate race faces investigation over ballot tampering and Trump pressure",
+      "dek": "Alaska's Senate race faces investigation amid allegations of ballot tampering and political pressure from Trump and state officials.",
+      "startedAt": "2026-10-29T14:10:54.380Z",
+      "updatedAt": "2026-10-30T22:26:22.289Z",
+      "endedAt": "2026-10-30T03:22:20.743Z",
+      "updateCount": 8,
+      "articleSlug": "alaska-senate-race-ballot-scheme-allegations",
+      "latest": {
+        "at": "2026-10-30T02:18:43.000Z",
+        "kind": "breaking",
+        "headline": "Justice Department issues subpoenas in Alaska Senate probe"
+      },
+      "locales": {
+        "de": {
+          "title": "Alaska: Anschuldigungen zu Wahlmanipulation bei Senatswahl",
+          "dek": "Die Senatswahl in Alaska steht vor einer Untersuchung, nachdem Vorwürfe wegen Stimmzettelmanipulation und politischem Druck von Trump und staatlichen Beamten lauteten."
+        },
+        "en": {
+          "title": "Alaska Senate race faces investigation over ballot tampering and Trump pressure",
+          "dek": "Alaska's Senate race faces investigation amid allegations of ballot tampering and political pressure from Trump and state officials."
+        },
+        "es": {
+          "title": "Alaska: alegaciones de esquema de votación en la carrera del Senado",
+          "dek": "La carrera del Senado de Alaska enfrenta una investigación tras alegaciones de manipulación de papeletas y presión política de Trump y funcionarios estatales."
+        },
+        "fr": {
+          "title": "Allégations de manipulation des bulletins dans la course au Sénat de l'Alaska",
+          "dek": "La course au Sénat de l'Alaska fait l'objet d'une enquête à la suite d'allégations de manipulation des bulletins et de pressions politiques de la part de Trump et des responsables de l'État."
+        },
+        "it": {
+          "title": "Allegazioni di frode elettorale nella corsa al Senato dell'Alaska",
+          "dek": "La corsa al Senato dell'Alaska è oggetto di indagine a seguito di accuse di manomissione dei voti e di pressione politica da parte di Trump e funzionari statali."
+        },
+        "ja": {
+          "title": "アラスカ州上院選挙で投票用紙改ざんと政治的圧力の疑惑",
+          "dek": "アラスカ州上院選挙は、投票用紙の改ざんとトランプ氏および州当局からの政治的圧力の主張を受け、調査対象となっている。"
+        },
+        "ko": {
+          "title": "알래스카 상원 선거 투표 조작 혐의",
+          "dek": "알래스카 상원 선거는 트럼프와 주 정부 관계자들의 정치적 압력과 투표 조작 혐의로 인해 조사를 받고 있다."
+        },
+        "pt": {
+          "title": "Acusações de esquema de alteração de votos na corrida ao Senado de Alaska",
+          "dek": "A corrida ao Senado de Alaska enfrenta investigação após alegações de alteração de votos e pressão política de Trump e autoridades estaduais."
+        },
+        "zh": {
+          "title": "阿拉斯加参议院竞选选票操纵指控",
+          "dek": "阿拉斯加参议院竞选正面临调查，因指控选票被篡改并受到特朗普及州官员的政治压力。"
+        }
+      }
+    },
+    {
+      "slug": "fed-holds-interest-rates-steady",
+      "status": "ended",
+      "category": "business",
+      "importance": 5,
+      "title": "Federal Reserve keeps interest rates unchanged",
+      "dek": "The Federal Reserve has kept interest rates unchanged amid inflation concerns, prompting market reactions.",
+      "startedAt": "2026-10-29T14:32:49.922Z",
+      "updatedAt": "2026-10-30T22:26:22.001Z",
+      "endedAt": "2026-10-30T04:01:32.859Z",
+      "updateCount": 6,
+      "articleSlug": "fed-holds-interest-rates-steady",
+      "latest": {
+        "at": "2026-10-30T00:54:46.000Z",
+        "kind": "result",
+        "headline": "Federal Reserve maintains interest rates between 3.75% and 4%"
+      },
+      "locales": {
+        "de": {
+          "title": "Fed hält Zinssätze konstant",
+          "dek": "Die US-Notenbank hält die aktuellen Zinssätze trotz Inflationsbedenken konstant, was Marktreaktionen auslöst."
+        },
+        "en": {
+          "title": "Federal Reserve keeps interest rates unchanged",
+          "dek": "The Federal Reserve has kept interest rates unchanged amid inflation concerns, prompting market reactions."
+        },
+        "es": {
+          "title": "La Fed mantiene las tasas de interés estables",
+          "dek": "La Reserva Federal mantiene las tasas de interés actuales ante preocupaciones de inflación, provocando reacciones en los mercados."
+        },
+        "fr": {
+          "title": "La Fed maintient les taux d'intérêt stables",
+          "dek": "La Réserve fédérale maintient les taux d'intérêt actuels malgré les inquiétudes inflationnistes, déclenchant des réactions sur les marchés."
+        },
+        "it": {
+          "title": "Fed mantiene i tassi di interesse invariate",
+          "dek": "La Federal Reserve mantiene i tassi di interesse attuali in mezzo alle preoccupazioni sull'inflazione, scatenando reazioni di mercato."
+        },
+        "ja": {
+          "title": "連邦準備制度、金利を据え置く",
+          "dek": "インフレ懸念の中、連邦準備制度は現在の金利を維持し、市場に反応を引き起こした。"
+        },
+        "ko": {
+          "title": "연준, 금리 동결",
+          "dek": "연방준비제도는 인플레이션 우려 속 현재 금리를 유지하며 시장 반응을 촉발했다."
+        },
+        "pt": {
+          "title": "Fed mantém as taxas de juro estáveis",
+          "dek": "O Federal Reserve mantém as taxas de juro atuais em meio a preocupações com a inflação, desencadeando reações no mercado."
+        },
+        "zh": {
+          "title": "美联储维持利率不变",
+          "dek": "联邦储备委员会在通胀担忧下维持现行利率，引发市场反应。"
+        }
+      }
+    },
+    {
+      "slug": "yoon-s-high-stakes-election-law-appellate-sentencing",
+      "status": "ended",
+      "category": "politics",
+      "importance": 4,
+      "title": "Yoon's high-stakes election-law appellate sentencing",
+      "dek": "Former South Korean president Yoon Suk-yeol faces appellate sentencing in his election-law case, with the proceedings broadcast live.",
+      "startedAt": "2026-10-30T04:21:21.555Z",
+      "updatedAt": "2026-10-30T22:26:21.777Z",
+      "endedAt": "2026-10-30T04:21:21.555Z",
+      "updateCount": 0,
+      "articleSlug": null,
+      "latest": null,
+      "locales": {
+        "de": {
+          "title": "Yoon: Urteil in Berufungsverfahren zu Wahlgesetzverstößen",
+          "dek": "Der ehemalige südkoreanische Präsident Yoon Suk-yeol erwartet das Urteil in seinem Berufungsverfahren wegen Verstößen gegen das Wahlgesetz; die Verhandlungen werden live übertragen."
+        },
+        "en": {
+          "title": "Yoon's high-stakes election-law appellate sentencing",
+          "dek": "Former South Korean president Yoon Suk-yeol faces appellate sentencing in his election-law case, with the proceedings broadcast live."
+        },
+        "es": {
+          "title": "Sentencia de apelación decisiva para Yoon por leyes electorales",
+          "dek": "El expresidente surcoreano Yoon Suk-yeol se enfrenta a la sentencia de apelación en su caso por leyes electorales, con el proceso transmitido en directo."
+        },
+        "fr": {
+          "title": "Verdict en appel à enjeux élevés pour Yoon dans l'affaire de la loi électorale",
+          "dek": "L'ancien président sud-coréen Yoon Suk-yeol attend son verdict en appel dans son procès pour violation de la loi électorale, avec des procédures diffusées en direct."
+        },
+        "it": {
+          "title": "Sentenza d'appello ad alto rischio per Yoon sul diritto elettorale",
+          "dek": "L'ex presidente sudcoreano Yoon Suk-yeol affronta la sentenza d'appello nel suo caso relativo alla legge elettorale, con i procedimenti trasmessi in diretta."
+        },
+        "ja": {
+          "title": "尹氏、公職選挙法違反で控訴審判決へ",
+          "dek": "韓国の尹錫悦（ユン・ソンニョル）前大統領は、公職選挙法違反事件の控訴審判決を控えており、手続きは生中継される。"
+        },
+        "ko": {
+          "title": "윤석열 전 대통령, 공직선거법 항소심 선고 앞둬",
+          "dek": "윤석열 전 한국 대통령이 공직선거법 위반 혐의로 항소심 선고를 앞두고 있으며, 재판 과정은 생중계될 예정이다."
+        },
+        "pt": {
+          "title": "Sentença de recurso de Yoon em caso de lei eleitoral",
+          "dek": "O ex-presidente sul-coreano Yoon Suk-yeol aguarda a sentença de recurso no seu processo relativo à lei eleitoral, com os procedimentos a serem transmitidos em direto."
+        },
+        "zh": {
+          "title": "尹锡悦选举法上诉案面临关键判决",
+          "dek": "韩国前总统尹锡悦在选举法案件中面临上诉判决，庭审过程将进行现场直播。"
+        }
+      }
+    },
+    {
+      "slug": "ecb-leaves-rates-unchanged",
+      "status": "ended",
+      "category": "business",
+      "importance": 5,
+      "title": "ECB keeps rates unchanged",
+      "dek": "The European Central Bank left interest rates unchanged at its latest policy meeting, citing inflationary pressures and energy shocks.",
+      "startedAt": "2026-10-29T15:33:10.946Z",
+      "updatedAt": "2026-10-30T22:26:20.999Z",
+      "endedAt": "2026-10-30T05:11:33.032Z",
+      "updateCount": 9,
+      "articleSlug": "ecb-leaves-rates-unchanged",
+      "latest": {
+        "at": "2026-10-30T05:00:46.000Z",
+        "kind": "context",
+        "headline": "Investigations report dangerous conditions at European data center sites"
+      },
+      "locales": {
+        "de": {
+          "title": "EZB hält Zinsen unverändert",
+          "dek": "Die Europäische Zentralbank hielt die Zinssätze in ihrer jüngsten geldpolitischen Sitzung konstant, wobei sie inflationsbedingte Druckfaktoren und Energieschocks erwähnte."
+        },
+        "en": {
+          "title": "ECB keeps rates unchanged",
+          "dek": "The European Central Bank left interest rates unchanged at its latest policy meeting, citing inflationary pressures and energy shocks."
+        },
+        "es": {
+          "title": "El BCE mantiene las tasas sin cambios",
+          "dek": "El Banco Central Europeo mantuvo las tasas de interés estables en su última reunión de política, citando presiones inflacionarias y choques energéticos."
+        },
+        "fr": {
+          "title": "La BCE maintient les taux inchangés",
+          "dek": "La Banque centrale européenne a maintenu les taux d'intérêt inchangés lors de sa dernière réunion de politique, invoquant des pressions inflationnistes et des chocs énergétiques."
+        },
+        "it": {
+          "title": "La BCE mantiene invariate i tassi",
+          "dek": "La Banca Centrale Europea ha mantenuto i tassi di interesse invariati nella sua ultima riunione di politica monetaria, citando pressioni inflazionistiche e shock energetici."
+        },
+        "ja": {
+          "title": "ECB、金利を据え置き",
+          "dek": "欧州中央銀行は最新の政策会合で金利を据え置き、インフレ圧力とエネルギーショックを理由にした。"
+        },
+        "ko": {
+          "title": "ECB, 금리 동결",
+          "dek": "유럽 중앙은행은 최근 정책 회의에서 인플레이션 압력과 에너지 충격을 이유로 금리를 동결했다."
+        },
+        "pt": {
+          "title": "O BCE mantém as taxas inalteradas",
+          "dek": "O Banco Central Europeu manteve as taxas de juro estáveis na sua última reunião de política, citando pressões inflacionárias e choques energéticos."
+        },
+        "zh": {
+          "title": "欧央行维持利率不变",
+          "dek": "欧洲央行在最新的政策会议上维持利率不变，理由是通胀压力和能源冲击。"
+        }
+      }
+    },
+    {
+      "slug": "israel-s-gaza-strikes",
+      "status": "ended",
+      "category": "world",
+      "importance": 5,
+      "title": "Israel's Gaza airstrikes",
+      "dek": "Israel carries out several airstrikes in Gaza, killing Palestinians amid ceasefire talks.",
+      "startedAt": "2026-10-29T15:23:12.055Z",
+      "updatedAt": "2026-10-30T22:26:20.478Z",
+      "endedAt": "2026-10-30T05:51:31.195Z",
+      "updateCount": 10,
+      "articleSlug": "israel-s-gaza-strikes",
+      "latest": {
+        "at": "2026-10-30T02:57:23.000Z",
+        "kind": "result",
+        "headline": "Opposition parties win 48 seats in Israeli election"
+      },
+      "locales": {
+        "de": {
+          "title": "Israels Angriffe auf Gaza",
+          "dek": "Israel führt mehrere Luftangriffe in Gaza durch, tötet Palästinenser im Zuge von Waffenstillstandsverhandlungen."
+        },
+        "en": {
+          "title": "Israel's Gaza airstrikes",
+          "dek": "Israel carries out several airstrikes in Gaza, killing Palestinians amid ceasefire talks."
+        },
+        "es": {
+          "title": "Ataques aéreos de Israel sobre Gaza",
+          "dek": "Israel lleva a cabo varios ataques aéreos en Gaza, matando a palestinos durante las conversaciones de alto el fuego."
+        },
+        "fr": {
+          "title": "Attaques israéliennes à Gaza",
+          "dek": "Israël lance plusieurs frappes aériennes à Gaza, tuant des Palestiniens au cours de négociations de cessez-le-feu."
+        },
+        "it": {
+          "title": "Attacchi israeliani a Gaza",
+          "dek": "Israele conduce numerosi attacchi aerei a Gaza, uccidendo palestinesi durante i negoziati di cessate il fuoco."
+        },
+        "ja": {
+          "title": "イスラエルによるガザ攻撃",
+          "dek": "イスラエルはガザで複数の空爆を実施し、停戦交渉中にパレスチナ人を殺害した。"
+        },
+        "ko": {
+          "title": "이스라엘의 가자 공습",
+          "dek": "이스라엘이 가자 지구에서 다수의 공습을 수행해 휴전 협상 중 팔레스타인인들을 사살했다."
+        },
+        "pt": {
+          "title": "Ataques de Israel em Gaza",
+          "dek": "Israel realiza vários ataques aéreos em Gaza, matando palestinos durante negociações de cessar-fogo."
+        },
+        "zh": {
+          "title": "以色列对加沙的空袭",
+          "dek": "以色列在加沙发动多次空袭，导致巴勒斯坦人死亡，正值停火谈判进行中。"
+        }
+      }
+    },
+    {
+      "slug": "trump-s-response-to-2026-midterm-elections",
+      "status": "ended",
+      "category": "politics",
+      "importance": 5,
+      "title": "Trump's response to 2026 mid-term elections",
+      "dek": "President Trump intensifies rhetoric and tightens inner circle amid looming mid-term elections.",
+      "startedAt": "2026-10-29T17:54:19.813Z",
+      "updatedAt": "2026-10-30T22:26:19.472Z",
+      "endedAt": "2026-10-30T07:31:34.635Z",
+      "updateCount": 13,
+      "articleSlug": "trump-s-response-to-2026-midterm-elections",
+      "latest": {
+        "at": "2026-10-30T07:12:49.000Z",
+        "kind": "statement",
+        "headline": "CENTCOM chief briefs Trump on Iran strike options"
+      },
+      "locales": {
+        "de": {
+          "title": "Trumps Reaktion auf die Parlamentswahlen 2026",
+          "dek": "Der Präsident Trump intensiviert seine Rhetorik und strafft seinen inneren Kreis angesichts der bevorstehenden Parlamentswahlen."
+        },
+        "en": {
+          "title": "Trump's response to 2026 mid-term elections",
+          "dek": "President Trump intensifies rhetoric and tightens inner circle amid looming mid-term elections."
+        },
+        "es": {
+          "title": "Respuesta de Trump a las elecciones de mitad de mandato de 2026",
+          "dek": "El presidente Trump intensifica su retórica y estrecha su círculo interno ante las próximas elecciones de mitad de mandato."
+        },
+        "fr": {
+          "title": "Réponse de Trump aux élections législatives de 2026",
+          "dek": "Le président Trump intensifie sa rhétorique et resserre son cercle interne face aux élections législatives imminentes."
+        },
+        "it": {
+          "title": "Reazione di Trump alle elezioni di metà mandato del 2026",
+          "dek": "Il presidente Trump intensifica la retorica e stringe il suo cerchio interno di fronte alle imminenti elezioni di metà mandato."
+        },
+        "ja": {
+          "title": "トランプ氏、2026年中間選挙への対応",
+          "dek": "迫り来る中間選挙を受けて、トランプ大統領は言説を強化し、内輪を厳格化している。"
+        },
+        "ko": {
+          "title": "트럼프의 2026년 중간선거에 대한 대응",
+          "dek": "트럼프 대통령은 중간선거가 임박한 가운데 수사적 강화를 하고 내부 인사를 단련한다"
+        },
+        "pt": {
+          "title": "Resposta de Trump às eleições de meio de mandato de 2026",
+          "dek": "O presidente Trump intensifica a retórica e aperta o seu círculo interno diante das iminentes eleições de meio de mandato."
+        },
+        "zh": {
+          "title": "特朗普对2026年中期选举的回应",
+          "dek": "特朗普总统在即将到来的中期选举中加大言辞力度并收紧内圈"
+        }
+      }
+    },
+    {
+      "slug": "russian-drone-strike-kills-at-least-14-on",
+      "status": "ended",
+      "category": "world",
+      "importance": 5,
+      "title": "Russian drone strike kills at least 14 at Ukrainian train station",
+      "dek": "A Russian drone attack on a crowded train platform in Dnipro has caused multiple fatalities and injuries, prompting international condemnation and calls for an investigation.",
+      "startedAt": "2026-10-29T13:50:09.564Z",
+      "updatedAt": "2026-10-30T22:26:18.495Z",
+      "endedAt": "2026-10-30T07:51:24.710Z",
+      "updateCount": 11,
+      "articleSlug": "russian-drone-strike-kills-at-least-14-on",
+      "latest": {
+        "at": "2026-10-30T07:06:11.000Z",
+        "kind": "result",
+        "headline": "Oleshky ceasefire enters fourth day"
+      },
+      "locales": {
+        "de": {
+          "title": "Russischer Drohnenangriff tötet mindestens 14 Personen an ukrainischer Bahnhofsplattform",
+          "dek": "Ein russischer Drohnenangriff auf eine stark frequentierte Bahnplattform in Dnipro hat mehrere Todesfälle und Verletzte verursacht, was internationale Verurteilung und Forderungen nach einer Untersuchung ausgelöst hat."
+        },
+        "en": {
+          "title": "Russian drone strike kills at least 14 at Ukrainian train station",
+          "dek": "A Russian drone attack on a crowded train platform in Dnipro has caused multiple fatalities and injuries, prompting international condemnation and calls for an investigation."
+        },
+        "es": {
+          "title": "Ataque con dron ruso mata a al menos 14 en la estación de tren ucraniana",
+          "dek": "Un ataque con dron ruso a una plataforma de tren concurrida en Dnipro ha provocado varias víctimas mortales y heridas, provocando condena internacional y llamados a una investigación."
+        },
+        "fr": {
+          "title": "Attaque de drone russe tue au moins 14 à la gare ukrainienne",
+          "dek": "Une attaque de drone russe sur une plateforme de train très fréquentée à Dnipro a entraîné plusieurs décès et blessures, suscitant une condamnation internationale et des appels à une enquête."
+        },
+        "it": {
+          "title": "Attacco a drone russo uccide almeno 14 a stazione ferroviaria ucraina",
+          "dek": "Un attacco a drone russo su una piattaforma ferroviaria affollata a Dnipro ha causato numerose vittime e feriti, suscitando condanne internazionali e richieste di indagine."
+        },
+        "ja": {
+          "title": "ロシアのドローン攻撃でウクライナの鉄道駅で少なくとも14人が死亡",
+          "dek": "ドニプロの混雑した駅のホームに対するロシアのドローン攻撃により、複数の死亡者と負傷者が出た。国際的な非難と調査要請が呼びかけられている。"
+        },
+        "ko": {
+          "title": "러시아 드론 공격, 우크라이나 기차역에서 최소 14명 사망",
+          "dek": "드니프로의 혼잡한 기차 승강장에서 러시아 드론이 공격을 가해 다수의 사망자와 부상자를 발생시켰으며, 이는 국제 사회의 비난과 조사를 촉구하는 목소리를 불러일으켰다"
+        },
+        "pt": {
+          "title": "Ataque de drone russo mata pelo menos 14 na estação de comboios ucraniana",
+          "dek": "Um ataque de drone russo num pátio de comboios lotado em Dnipro resultou em múltiplas fatalidades e feridos, provocando condenação internacional e pedidos de investigação."
+        },
+        "zh": {
+          "title": "俄国无人机袭击乌克兰火车站至少造成14人死亡",
+          "dek": "俄国无人机袭击第聂伯罗市拥挤的火车站平台，导致多名人员死亡和受伤，引发国际谴责并呼吁展开调查。"
+        }
+      }
+    },
+    {
+      "slug": "berlin-left-party-faces-hamas-allegations",
+      "status": "ended",
+      "category": "politics",
+      "importance": 5,
+      "title": "Berlin's Left Party Faces Hamas Allegations",
+      "dek": "The Berlin-based left‑wing party is under scrutiny following allegations that its members have links to Hamas, prompting investigations and political backlash.",
+      "startedAt": "2026-10-29T16:22:27.375Z",
+      "updatedAt": "2026-10-30T22:26:18.131Z",
+      "endedAt": "2026-10-30T07:51:41.852Z",
+      "updateCount": 9,
+      "articleSlug": "berlin-left-party-faces-hamas-allegations",
+      "latest": {
+        "at": "2026-10-30T07:13:16.000Z",
+        "kind": "statement",
+        "headline": "Franziska Giffey declines Berlin coalition negotiations"
+      },
+      "locales": {
+        "de": {
+          "title": "Linke Partei in Berlin sieht sich Hamas-Anschuldigungen gegenüber",
+          "dek": "Die in Berlin ansässige linke Partei steht unter Beobachtung, nachdem Anschuldigungen vorgebracht wurden, dass ihre Mitglieder Verbindungen zu Hamas haben, was Untersuchungen und politische Gegenreaktionen ausgelöst hat."
+        },
+        "en": {
+          "title": "Berlin's Left Party Faces Hamas Allegations",
+          "dek": "The Berlin-based left‑wing party is under scrutiny following allegations that its members have links to Hamas, prompting investigations and political backlash."
+        },
+        "es": {
+          "title": "El partido de izquierda de Berlín enfrenta acusaciones de vínculos con Hamas",
+          "dek": "El partido de izquierda con sede en Berlín está bajo escrutinio tras acusaciones de que sus miembros tienen vínculos con Hamas, lo que ha provocado investigaciones y reacciones políticas."
+        },
+        "fr": {
+          "title": "Le parti de gauche de Berlin fait face à des allégations de lien avec le Hamas",
+          "dek": "Le parti de gauche basé à Berlin est sous examen après des allégations de liens avec le Hamas, entraînant des enquêtes et une réaction politique."
+        },
+        "it": {
+          "title": "Partito di sinistra di Berlino affronta accuse di legami con Hamas",
+          "dek": "Il partito di sinistra con sede a Berlino è sotto scrutinio dopo accuse di legami dei suoi membri con Hamas, innescando indagini e reazioni politiche."
+        },
+        "ja": {
+          "title": "ベルリン左派政党、ハマス関係疑惑に直面",
+          "dek": "ベルリンを拠点とする左派政党は、メンバーがハマスと関係があるという疑惑を受け、調査と政治的反発を招いている。"
+        },
+        "ko": {
+          "title": "베를린 좌파당, 하마스 연계 혐의에 직면",
+          "dek": "베를린에 본부를 둔 좌파당은 당원들이 하마스와 연계돼 있다는 혐의로 조사를 받고 정치적 반발을 겪고 있다"
+        },
+        "pt": {
+          "title": "Partido de Esquerda de Berlim Enfrenta Acusações de Ligação ao Hamas",
+          "dek": "O partido de esquerda com sede em Berlim está sob escrutínio após alegações de que os seus membros têm ligações com o Hamas, o que provocou investigações e reação política."
+        },
+        "zh": {
+          "title": "柏林左翼党面临哈马斯指控",
+          "dek": "柏林总部的左翼政党因其成员与哈马斯有联系的指控而受到审查，导致调查和政治反弹。"
+        }
+      }
+    },
+    {
+      "slug": "2026-us-midterm-elections",
+      "status": "ended",
+      "category": "politics",
+      "importance": 5,
+      "title": "2026 us midterm elections",
+      "dek": "Coverage of the upcoming 2026 United States midterm elections and their potential impact on domestic and international politics.",
+      "startedAt": "2026-10-30T08:11:26.843Z",
+      "updatedAt": "2026-10-30T22:26:17.291Z",
+      "endedAt": "2026-10-30T08:11:34.226Z",
+      "updateCount": 2,
+      "articleSlug": "2026-us-midterm-elections",
+      "latest": {
+        "at": "2026-10-30T06:36:11.000Z",
+        "kind": "statement",
+        "headline": "Donald Trump cancels two campaign rallies"
+      },
+      "locales": {
+        "de": {
+          "title": "US-Zwischenwahlen 2026",
+          "dek": "Berichterstattung über die bevorstehenden US-Zwischenwahlen 2026 und deren potenzielle Auswirkungen auf die innen- und außenpolitischen Verhältnisse."
+        },
+        "en": {
+          "title": "2026 us midterm elections",
+          "dek": "Coverage of the upcoming 2026 United States midterm elections and their potential impact on domestic and international politics."
+        },
+        "es": {
+          "title": "Elecciones de mitad de mandato de EE. UU. 2026",
+          "dek": "Cobertura de las próximas elecciones de mitad de mandato de Estados Unidos de 2026 y su impacto potencial en la política nacional e internacional."
+        },
+        "fr": {
+          "title": "Élections de mi-mandat 2026 aux États-Unis",
+          "dek": "Couverture des prochaines élections de mi-mandat de 2026 aux États-Unis et de leur impact potentiel sur la politique intérieure et internationale."
+        },
+        "it": {
+          "title": "Elezioni di metà mandato USA 2026",
+          "dek": "Copertura delle prossime elezioni di metà mandato degli Stati Uniti del 2026 e del loro potenziale impatto sulla politica interna e internazionale."
+        },
+        "ja": {
+          "title": "2026年米国中間選挙",
+          "dek": "来たる2026年米国中間選挙の報道と、それが国内および国際政治に与え得る影響について。"
+        },
+        "ko": {
+          "title": "2026년 미국 중간선거",
+          "dek": "다가오는 2026년 미국 중간선거와 그것이 국내외 정치에 미칠 잠재적 영향에 대한 보도."
+        },
+        "pt": {
+          "title": "Eleições de meio de mandato dos EUA 2026",
+          "dek": "Cobertura das próximas eleições de meio de mandato dos Estados Unidos de 2026 e o seu impacto potencial na política interna e internacional."
+        },
+        "zh": {
+          "title": "2026年美国中期选举",
+          "dek": "关于即将到来的2026年美国中期选举及其对国内和国际政治潜在影响的报道。"
+        }
+      }
+    },
     {
       "slug": "us-and-allies-accelerate-talks-with-iran-after",
       "status": "live",
       "category": "politics",
       "importance": 5,
-      "title": "US and allies accelerate talks with Iran after elections",
-      "dek": "Following Iran's recent elections, the United States and its Middle East partners are intensifying diplomatic outreach to Tehran amid concerns over potential strikes and retaliation.",
+      "title": "US and allies speed up talks with Iran after elections",
+      "dek": "Following Iran's recent elections, the United States and its Middle Eastern partners are intensifying diplomatic outreach to Tehran amid concerns about possible strikes and retaliation.",
       "startedAt": "2026-10-29T08:24:06.527Z",
-      "updatedAt": "2026-10-30T13:52:50.787Z",
+      "updatedAt": "2026-10-30T22:21:35.429Z",
       "endedAt": null,
-      "updateCount": 19,
+      "updateCount": 22,
       "articleSlug": "us-and-allies-accelerate-talks-with-iran-after",
       "latest": {
-        "at": "2026-10-30T13:11:26.000Z",
-        "kind": "breaking",
-        "headline": "IRGC reports incidents involving oil tankers in Strait of Hormuz"
+        "at": "2026-10-30T21:53:20.000Z",
+        "kind": "result",
+        "headline": "Treasury report says Iran's economy is cratering, inflation at 90%"
       },
       "locales": {
         "de": {
@@ -24,8 +636,8 @@
           "dek": "Nach den jüngsten Wahlen im Iran intensivieren die Vereinigten Staaten und ihre Partner im Nahen Osten die diplomatische Kontaktaufnahme zu Teheran, da Bedenken hinsichtlich möglicher Angriffe und Vergeltungsmaßnahmen bestehen."
         },
         "en": {
-          "title": "US and allies accelerate talks with Iran after elections",
-          "dek": "Following Iran's recent elections, the United States and its Middle East partners are intensifying diplomatic outreach to Tehran amid concerns over potential strikes and retaliation."
+          "title": "US and allies speed up talks with Iran after elections",
+          "dek": "Following Iran's recent elections, the United States and its Middle Eastern partners are intensifying diplomatic outreach to Tehran amid concerns about possible strikes and retaliation."
         },
         "es": {
           "title": "EEUU y aliados aceleran conversaciones con Irán tras elecciones",
@@ -54,6 +666,62 @@
         "zh": {
           "title": "美国及盟友在伊朗选举后加速与伊朗谈判",
           "dek": "在伊朗最近的选举之后，美国及其中东伙伴正加强对德黑兰的外交接触，以应对潜在袭击和报复的担忧。"
+        }
+      }
+    },
+    {
+      "slug": "polish-president-aborts-flight-amid-court-coup-allegations",
+      "status": "live",
+      "category": "world",
+      "importance": 5,
+      "title": "Polish president cancels flight amid court coup allegations",
+      "dek": "President Andrzej Duda returns to Poland after the court alleged a coup d'état, sparking a constitutional crisis.",
+      "startedAt": "2026-10-30T22:06:45.851Z",
+      "updatedAt": "2026-10-30T22:10:29.859Z",
+      "endedAt": null,
+      "updateCount": 3,
+      "articleSlug": "polish-president-aborts-flight-amid-court-coup-allegations",
+      "latest": {
+        "at": "2026-10-30T22:07:22.688Z",
+        "kind": "result",
+        "headline": "Polish president cuts short Senegal trip"
+      },
+      "locales": {
+        "en": {
+          "title": "Polish president cancels flight amid court coup allegations",
+          "dek": "President Andrzej Duda returns to Poland after the court alleged a coup d'état, sparking a constitutional crisis."
+        },
+        "fr": {
+          "title": "Le président polonais annule son vol au milieu des allégations d'un coup d'État judiciaire",
+          "dek": "Le président Andrzej Duda revient en Pologne après que le tribunal ait affirmé un coup d'État, déclenchant une crise constitutionnelle."
+        },
+        "es": {
+          "title": "El presidente polaco cancela vuelo tras alegaciones de golpe de estado por parte del tribunal",
+          "dek": "El presidente Andrzej Duda regresa a Polonia tras que el tribunal alegó un golpe de estado, desencadenando una crisis constitucional."
+        },
+        "it": {
+          "title": "Il presidente polacco annulla il volo a fronte di accuse di colpo di stato da parte del tribunale",
+          "dek": "Il presidente Andrzej Duda torna in Polonia dopo che il tribunale ha affermato un colpo di stato, scatenando una crisi costituzionale."
+        },
+        "pt": {
+          "title": "Presidente polaco cancela voo em meio a alegações de golpe do tribunal",
+          "dek": "O presidente Andrzej Duda regressa à Polónia depois que o tribunal alegou um golpe de Estado, desencadeando uma crise constitucional."
+        },
+        "de": {
+          "title": "Polnischer Präsident stürzt Flug ab, während Gerichtsbehauptungen eines Staatsstreichs vorliegen",
+          "dek": "Präsident Andrzej Duda kehrt nach Polen zurück, nachdem das Gericht einen Staatsstreich behauptet hat, was eine Verfassungs­krise auslöst."
+        },
+        "zh": {
+          "title": "波兰总统因法院政变指控取消航班",
+          "dek": "安德烈·杜达总统在法院指控发生政变后返回波兰，导致宪法危机。"
+        },
+        "ja": {
+          "title": "ポーランド大統領、裁判所のクーデター疑惑でフライトを中止",
+          "dek": "裁判所がクーデターを主張した後、アンドレイ・ドゥダ大統領はポーランドへ帰国し、憲法危機を引き起こした。"
+        },
+        "ko": {
+          "title": "법원 쿠데타 혐의 속에 항공편 취소한 폴란드 대통령",
+          "dek": "안드레즈 두다 대통령이 법원이 쿠데타를 주장한 뒤 폴란드로 귀국하며 헌법 위기를 촉발했다."
         }
       }
     },
@@ -166,618 +834,6 @@
         "zh": {
           "title": "2026年中期选举",
           "dek": "美国中期选举临近：民调、关键竞赛与各党前景。"
-        }
-      }
-    },
-    {
-      "slug": "alaska-senate-race-ballot-scheme-allegations",
-      "status": "live",
-      "category": "politics",
-      "importance": 5,
-      "title": "Alaska Senate race faces investigation over ballot tampering and Trump pressure",
-      "dek": "Alaska's Senate race faces investigation amid allegations of ballot tampering and political pressure from Trump and state officials.",
-      "startedAt": "2026-10-29T14:10:54.380Z",
-      "updatedAt": "2026-10-30T13:51:22.828Z",
-      "endedAt": null,
-      "updateCount": 10,
-      "articleSlug": "alaska-senate-race-ballot-scheme-allegations",
-      "latest": {
-        "at": "2026-10-30T13:03:00.000Z",
-        "kind": "statement",
-        "headline": "Mary Peltola denies knowledge of Dan J. Sullivan recruitment"
-      },
-      "locales": {
-        "de": {
-          "title": "Alaska: Anschuldigungen zu Wahlmanipulation bei Senatswahl",
-          "dek": "Die Senatswahl in Alaska steht vor einer Untersuchung, nachdem Vorwürfe wegen Stimmzettelmanipulation und politischem Druck von Trump und staatlichen Beamten lauteten."
-        },
-        "en": {
-          "title": "Alaska Senate race faces investigation over ballot tampering and Trump pressure",
-          "dek": "Alaska's Senate race faces investigation amid allegations of ballot tampering and political pressure from Trump and state officials."
-        },
-        "es": {
-          "title": "Alaska: alegaciones de esquema de votación en la carrera del Senado",
-          "dek": "La carrera del Senado de Alaska enfrenta una investigación tras alegaciones de manipulación de papeletas y presión política de Trump y funcionarios estatales."
-        },
-        "fr": {
-          "title": "Allégations de manipulation des bulletins dans la course au Sénat de l'Alaska",
-          "dek": "La course au Sénat de l'Alaska fait l'objet d'une enquête à la suite d'allégations de manipulation des bulletins et de pressions politiques de la part de Trump et des responsables de l'État."
-        },
-        "it": {
-          "title": "Allegazioni di frode elettorale nella corsa al Senato dell'Alaska",
-          "dek": "La corsa al Senato dell'Alaska è oggetto di indagine a seguito di accuse di manomissione dei voti e di pressione politica da parte di Trump e funzionari statali."
-        },
-        "ja": {
-          "title": "アラスカ州上院選挙で投票用紙改ざんと政治的圧力の疑惑",
-          "dek": "アラスカ州上院選挙は、投票用紙の改ざんとトランプ氏および州当局からの政治的圧力の主張を受け、調査対象となっている。"
-        },
-        "ko": {
-          "title": "알래스카 상원 선거 투표 조작 혐의",
-          "dek": "알래스카 상원 선거는 트럼프와 주 정부 관계자들의 정치적 압력과 투표 조작 혐의로 인해 조사를 받고 있다."
-        },
-        "pt": {
-          "title": "Acusações de esquema de alteração de votos na corrida ao Senado de Alaska",
-          "dek": "A corrida ao Senado de Alaska enfrenta investigação após alegações de alteração de votos e pressão política de Trump e autoridades estaduais."
-        },
-        "zh": {
-          "title": "阿拉斯加参议院竞选选票操纵指控",
-          "dek": "阿拉斯加参议院竞选正面临调查，因指控选票被篡改并受到特朗普及州官员的政治压力。"
-        }
-      }
-    },
-    {
-      "slug": "trump-s-response-to-2026-midterm-elections",
-      "status": "live",
-      "category": "politics",
-      "importance": 5,
-      "title": "Trump's response to 2026 mid-term elections",
-      "dek": "President Trump intensifies rhetoric and tightens inner circle amid looming mid-term elections.",
-      "startedAt": "2026-10-29T17:54:19.813Z",
-      "updatedAt": "2026-10-30T12:33:09.141Z",
-      "endedAt": null,
-      "updateCount": 15,
-      "articleSlug": "trump-s-response-to-2026-midterm-elections",
-      "latest": {
-        "at": "2026-10-30T12:08:00.000Z",
-        "kind": "statement",
-        "headline": "Trump says US-Iran war will end soon"
-      },
-      "locales": {
-        "de": {
-          "title": "Trumps Reaktion auf die Parlamentswahlen 2026",
-          "dek": "Der Präsident Trump intensiviert seine Rhetorik und strafft seinen inneren Kreis angesichts der bevorstehenden Parlamentswahlen."
-        },
-        "en": {
-          "title": "Trump's response to 2026 mid-term elections",
-          "dek": "President Trump intensifies rhetoric and tightens inner circle amid looming mid-term elections."
-        },
-        "es": {
-          "title": "Respuesta de Trump a las elecciones de mitad de mandato de 2026",
-          "dek": "El presidente Trump intensifica su retórica y estrecha su círculo interno ante las próximas elecciones de mitad de mandato."
-        },
-        "fr": {
-          "title": "Réponse de Trump aux élections législatives de 2026",
-          "dek": "Le président Trump intensifie sa rhétorique et resserre son cercle interne face aux élections législatives imminentes."
-        },
-        "it": {
-          "title": "Reazione di Trump alle elezioni di metà mandato del 2026",
-          "dek": "Il presidente Trump intensifica la retorica e stringe il suo cerchio interno di fronte alle imminenti elezioni di metà mandato."
-        },
-        "ja": {
-          "title": "トランプ氏、2026年中間選挙への対応",
-          "dek": "迫り来る中間選挙を受けて、トランプ大統領は言説を強化し、内輪を厳格化している。"
-        },
-        "ko": {
-          "title": "트럼프의 2026년 중간선거에 대한 대응",
-          "dek": "트럼프 대통령은 중간선거가 임박한 가운데 수사적 강화를 하고 내부 인사를 단련한다"
-        },
-        "pt": {
-          "title": "Resposta de Trump às eleições de meio de mandato de 2026",
-          "dek": "O presidente Trump intensifica a retórica e aperta o seu círculo interno diante das iminentes eleições de meio de mandato."
-        },
-        "zh": {
-          "title": "特朗普对2026年中期选举的回应",
-          "dek": "特朗普总统在即将到来的中期选举中加大言辞力度并收紧内圈"
-        }
-      }
-    },
-    {
-      "slug": "israel-s-gaza-strikes",
-      "status": "live",
-      "category": "world",
-      "importance": 5,
-      "title": "Israel's Gaza airstrikes",
-      "dek": "Israel carries out several airstrikes in Gaza, killing Palestinians amid ceasefire talks.",
-      "startedAt": "2026-10-29T15:23:12.055Z",
-      "updatedAt": "2026-10-30T12:32:08.039Z",
-      "endedAt": null,
-      "updateCount": 12,
-      "articleSlug": "israel-s-gaza-strikes",
-      "latest": {
-        "at": "2026-10-30T12:07:01.000Z",
-        "kind": "result",
-        "headline": "Israeli bloc leaders hold coalition talks"
-      },
-      "locales": {
-        "de": {
-          "title": "Israels Angriffe auf Gaza",
-          "dek": "Israel führt mehrere Luftangriffe in Gaza durch, tötet Palästinenser im Zuge von Waffenstillstandsverhandlungen."
-        },
-        "en": {
-          "title": "Israel's Gaza airstrikes",
-          "dek": "Israel carries out several airstrikes in Gaza, killing Palestinians amid ceasefire talks."
-        },
-        "es": {
-          "title": "Ataques aéreos de Israel sobre Gaza",
-          "dek": "Israel lleva a cabo varios ataques aéreos en Gaza, matando a palestinos durante las conversaciones de alto el fuego."
-        },
-        "fr": {
-          "title": "Attaques israéliennes à Gaza",
-          "dek": "Israël lance plusieurs frappes aériennes à Gaza, tuant des Palestiniens au cours de négociations de cessez-le-feu."
-        },
-        "it": {
-          "title": "Attacchi israeliani a Gaza",
-          "dek": "Israele conduce numerosi attacchi aerei a Gaza, uccidendo palestinesi durante i negoziati di cessate il fuoco."
-        },
-        "ja": {
-          "title": "イスラエルによるガザ攻撃",
-          "dek": "イスラエルはガザで複数の空爆を実施し、停戦交渉中にパレスチナ人を殺害した。"
-        },
-        "ko": {
-          "title": "이스라엘의 가자 공습",
-          "dek": "이스라엘이 가자 지구에서 다수의 공습을 수행해 휴전 협상 중 팔레스타인인들을 사살했다."
-        },
-        "pt": {
-          "title": "Ataques de Israel em Gaza",
-          "dek": "Israel realiza vários ataques aéreos em Gaza, matando palestinos durante negociações de cessar-fogo."
-        },
-        "zh": {
-          "title": "以色列对加沙的空袭",
-          "dek": "以色列在加沙发动多次空袭，导致巴勒斯坦人死亡，正值停火谈判进行中。"
-        }
-      }
-    },
-    {
-      "slug": "russian-drone-strike-kills-at-least-14-on",
-      "status": "live",
-      "category": "world",
-      "importance": 5,
-      "title": "Russian drone strike kills at least 14 at Ukrainian train station",
-      "dek": "A Russian drone attack on a crowded train platform in Dnipro has caused multiple fatalities and injuries, prompting international condemnation and calls for an investigation.",
-      "startedAt": "2026-10-29T13:50:09.564Z",
-      "updatedAt": "2026-10-30T12:31:44.877Z",
-      "endedAt": null,
-      "updateCount": 16,
-      "articleSlug": "russian-drone-strike-kills-at-least-14-on",
-      "latest": {
-        "at": "2026-10-30T12:28:08.000Z",
-        "kind": "result",
-        "headline": "CAS lifts ban on Russian ice hockey teams"
-      },
-      "locales": {
-        "de": {
-          "title": "Russischer Drohnenangriff tötet mindestens 14 Personen an ukrainischer Bahnhofsplattform",
-          "dek": "Ein russischer Drohnenangriff auf eine stark frequentierte Bahnplattform in Dnipro hat mehrere Todesfälle und Verletzte verursacht, was internationale Verurteilung und Forderungen nach einer Untersuchung ausgelöst hat."
-        },
-        "en": {
-          "title": "Russian drone strike kills at least 14 at Ukrainian train station",
-          "dek": "A Russian drone attack on a crowded train platform in Dnipro has caused multiple fatalities and injuries, prompting international condemnation and calls for an investigation."
-        },
-        "es": {
-          "title": "Ataque con dron ruso mata a al menos 14 en la estación de tren ucraniana",
-          "dek": "Un ataque con dron ruso a una plataforma de tren concurrida en Dnipro ha provocado varias víctimas mortales y heridas, provocando condena internacional y llamados a una investigación."
-        },
-        "fr": {
-          "title": "Attaque de drone russe tue au moins 14 à la gare ukrainienne",
-          "dek": "Une attaque de drone russe sur une plateforme de train très fréquentée à Dnipro a entraîné plusieurs décès et blessures, suscitant une condamnation internationale et des appels à une enquête."
-        },
-        "it": {
-          "title": "Attacco a drone russo uccide almeno 14 a stazione ferroviaria ucraina",
-          "dek": "Un attacco a drone russo su una piattaforma ferroviaria affollata a Dnipro ha causato numerose vittime e feriti, suscitando condanne internazionali e richieste di indagine."
-        },
-        "ja": {
-          "title": "ロシアのドローン攻撃でウクライナの鉄道駅で少なくとも14人が死亡",
-          "dek": "ドニプロの混雑した駅のホームに対するロシアのドローン攻撃により、複数の死亡者と負傷者が出た。国際的な非難と調査要請が呼びかけられている。"
-        },
-        "ko": {
-          "title": "러시아 드론 공격, 우크라이나 기차역에서 최소 14명 사망",
-          "dek": "드니프로의 혼잡한 기차 승강장에서 러시아 드론이 공격을 가해 다수의 사망자와 부상자를 발생시켰으며, 이는 국제 사회의 비난과 조사를 촉구하는 목소리를 불러일으켰다"
-        },
-        "pt": {
-          "title": "Ataque de drone russo mata pelo menos 14 na estação de comboios ucraniana",
-          "dek": "Um ataque de drone russo num pátio de comboios lotado em Dnipro resultou em múltiplas fatalidades e feridos, provocando condenação internacional e pedidos de investigação."
-        },
-        "zh": {
-          "title": "俄国无人机袭击乌克兰火车站至少造成14人死亡",
-          "dek": "俄国无人机袭击第聂伯罗市拥挤的火车站平台，导致多名人员死亡和受伤，引发国际谴责并呼吁展开调查。"
-        }
-      }
-    },
-    {
-      "slug": "california-earthquake-sequence",
-      "status": "ended",
-      "category": "science",
-      "importance": 5,
-      "title": "California earthquake sequence",
-      "dek": "A series of earthquakes, ranging from magnitude 2.7 to 4.0, has struck Southern California and the San Joaquin Valley, prompting seismic monitoring and public advisories.",
-      "startedAt": "2026-10-29T15:02:50.620Z",
-      "updatedAt": "2026-10-30T10:36:39.378Z",
-      "endedAt": "2026-10-29T20:46:03.399Z",
-      "updateCount": 2,
-      "articleSlug": "california-earthquake-sequence",
-      "latest": {
-        "at": "2026-10-29T20:04:01.000Z",
-        "kind": "result",
-        "headline": "3.5 magnitude earthquake hits off Oregon Coast"
-      },
-      "locales": {
-        "de": {
-          "title": "Erdbebenfolge in Kalifornien",
-          "dek": "Eine Reihe von Erdbeben mit einer Magnitude von 2,7 bis 4,0 hat Südkalifornien und das San-Joaquin-Tal erschüttert, was seismische Überwachung und öffentliche Warnungen ausgelöst hat."
-        },
-        "en": {
-          "title": "California earthquake sequence",
-          "dek": "A series of earthquakes, ranging from magnitude 2.7 to 4.0, has struck Southern California and the San Joaquin Valley, prompting seismic monitoring and public advisories."
-        },
-        "es": {
-          "title": "Secuencia de terremotos en California",
-          "dek": "Una serie de terremotos, con magnitudes que van desde 2,7 hasta 4,0, ha sacudido el sur de California y el Valle de San Joaquín, lo que ha provocado la monitorización sísmica y avisos públicos."
-        },
-        "fr": {
-          "title": "Séquence sismique en Californie",
-          "dek": "Une série de tremblements de terre, d'une magnitude allant de 2,7 à 4,0, a frappé le sud de la Californie et la vallée de San Joaquin, entraînant une surveillance sismique et des avis publics."
-        },
-        "it": {
-          "title": "Sequenza di terremoti in California",
-          "dek": "Una serie di terremoti, con magnitudo compresa tra 2,7 e 4,0, ha colpito la California meridionale e la Valle di San Giacomo, provocando monitoraggio sismico e avvisi pubblici."
-        },
-        "ja": {
-          "title": "カリフォルニアで地震連続発生",
-          "dek": "マグニチュード2.7から4.0の地震が南カリフォルニアとサン・ホセ渓谷を襲い、地震監視と一般への注意喚起が行われた。"
-        },
-        "ko": {
-          "title": "캘리포니아 지진 시퀀스",
-          "dek": "2.7~4.0 규모의 일련의 지진이 남부 캘리포니아와 산호세 밸리에서 발생해 지진 모니터링과 공공 알림이 발령되었습니다."
-        },
-        "pt": {
-          "title": "Sequência de terremotos na Califórnia",
-          "dek": "Uma série de terremotos, com magnitudes que variam de 2,7 a 4,0, atingiu o sul da Califórnia e o Vale de San Joaquin, levando a monitorização sísmica e a avisos ao público."
-        },
-        "zh": {
-          "title": "加州地震序列",
-          "dek": "一系列震级在2.7至4.0之间的地震已发生在南加州和圣华金谷，促使进行地震监测并发布公众警示。"
-        }
-      }
-    },
-    {
-      "slug": "golden-state-valkyries-vs-atlanta-dream-wnba-finals",
-      "status": "ended",
-      "category": "sport",
-      "importance": 4,
-      "title": "Golden State Valkyries vs Atlanta Dream: WNBA finals 2026 Match 6 – live",
-      "dek": "Live coverage of the decisive sixth match of the WNBA finals between the Golden State Valkyries and the Atlanta Dream.",
-      "startedAt": "2026-10-29T16:03:22.895Z",
-      "updatedAt": "2026-10-30T10:36:31.905Z",
-      "endedAt": "2026-10-29T20:47:16.019Z",
-      "updateCount": 2,
-      "articleSlug": "golden-state-valkyries-vs-atlanta-dream-wnba-finals",
-      "latest": {
-        "at": "2026-10-29T19:12:04.000Z",
-        "kind": "result",
-        "headline": "Atlanta Dream defeat Golden State Valkyries 80-69"
-      },
-      "locales": {
-        "de": {
-          "title": "Golden State Valkyries gegen Atlanta Dream: WNBA-Finale 2026, Spiel 6 – Live",
-          "dek": "Live-Berichterstattung des entscheidenden sechsten Spiels des WNBA-Finales zwischen den Golden State Valkyries und den Atlanta Dream."
-        },
-        "en": {
-          "title": "Golden State Valkyries vs Atlanta Dream: WNBA finals 2026 Match 6 – live",
-          "dek": "Live coverage of the decisive sixth match of the WNBA finals between the Golden State Valkyries and the Atlanta Dream."
-        },
-        "es": {
-          "title": "Golden State Valkyries vs Atlanta Dream: finales de la WNBA 2026, Juego 6 – en directo",
-          "dek": "Cobertura en vivo del decisivo sexto partido de las finales de la WNBA entre las Golden State Valkyries y las Atlanta Dream."
-        },
-        "fr": {
-          "title": "Golden State Valkyries contre Atlanta Dream : finale de la WNBA 2026, match 6 – en direct",
-          "dek": "Couverture en direct du sixième match décisif des finales de la WNBA entre les Golden State Valkyries et les Atlanta Dream."
-        },
-        "it": {
-          "title": "Golden State Valkyries contro Atlanta Dream: finale WNBA 2026, Gioco 6 – in diretta",
-          "dek": "Copertura in diretta del sesto e decisivo incontro delle finali WNBA tra le Golden State Valkyries e le Atlanta Dream."
-        },
-        "ja": {
-          "title": "ゴールデンステート・ヴァルキリーズ対アトランタ・ドリーム：WNBAファイナル2026年 第6戦 – ライブ",
-          "dek": "ゴールデンステート・ヴァルキリーズとアトランタ・ドリームの間で行われるWNBAファイナルの決定的な第6戦をライブで報道します。"
-        },
-        "ko": {
-          "title": "골든 스테이트 발키리 vs 애틀란타 드림: WNBA 결승전 2026년 6번째 경기 – 생중계",
-          "dek": "골든 스테이트 발키리와 애틀란타 드림의 WNBA 결승전 결정적 여섯 번째 경기를 생중계합니다."
-        },
-        "pt": {
-          "title": "Golden State Valkyries vs Atlanta Dream: finais da WNBA 2026, jogo 6 – ao vivo",
-          "dek": "Cobertura ao vivo do decisivo sexto jogo das finais da WNBA entre as Golden State Valkyries e as Atlanta Dream."
-        },
-        "zh": {
-          "title": "金州瓦尔基里队 vs 亚特兰大梦之队：WNBA 2026年总决赛第六场 – 实时",
-          "dek": "实时报道金州瓦尔基里队与亚特兰大梦之队之间的WNBA总决赛第六场关键比赛。"
-        }
-      }
-    },
-    {
-      "slug": "ecb-leaves-rates-unchanged",
-      "status": "live",
-      "category": "business",
-      "importance": 5,
-      "title": "ECB keeps rates unchanged",
-      "dek": "The European Central Bank left interest rates unchanged at its latest policy meeting, citing inflationary pressures and energy shocks.",
-      "startedAt": "2026-10-29T15:33:10.946Z",
-      "updatedAt": "2026-10-30T10:36:10.058Z",
-      "endedAt": null,
-      "updateCount": 10,
-      "articleSlug": "ecb-leaves-rates-unchanged",
-      "latest": {
-        "at": "2026-10-30T10:08:05.000Z",
-        "kind": "statement",
-        "headline": "Pentagon urges Baltic states to moderate Russia warnings"
-      },
-      "locales": {
-        "de": {
-          "title": "EZB hält Zinsen unverändert",
-          "dek": "Die Europäische Zentralbank hielt die Zinssätze in ihrer jüngsten geldpolitischen Sitzung konstant, wobei sie inflationsbedingte Druckfaktoren und Energieschocks erwähnte."
-        },
-        "en": {
-          "title": "ECB keeps rates unchanged",
-          "dek": "The European Central Bank left interest rates unchanged at its latest policy meeting, citing inflationary pressures and energy shocks."
-        },
-        "es": {
-          "title": "El BCE mantiene las tasas sin cambios",
-          "dek": "El Banco Central Europeo mantuvo las tasas de interés estables en su última reunión de política, citando presiones inflacionarias y choques energéticos."
-        },
-        "fr": {
-          "title": "La BCE maintient les taux inchangés",
-          "dek": "La Banque centrale européenne a maintenu les taux d'intérêt inchangés lors de sa dernière réunion de politique, invoquant des pressions inflationnistes et des chocs énergétiques."
-        },
-        "it": {
-          "title": "La BCE mantiene invariate i tassi",
-          "dek": "La Banca Centrale Europea ha mantenuto i tassi di interesse invariati nella sua ultima riunione di politica monetaria, citando pressioni inflazionistiche e shock energetici."
-        },
-        "ja": {
-          "title": "ECB、金利を据え置き",
-          "dek": "欧州中央銀行は最新の政策会合で金利を据え置き、インフレ圧力とエネルギーショックを理由にした。"
-        },
-        "ko": {
-          "title": "ECB, 금리 동결",
-          "dek": "유럽 중앙은행은 최근 정책 회의에서 인플레이션 압력과 에너지 충격을 이유로 금리를 동결했다."
-        },
-        "pt": {
-          "title": "O BCE mantém as taxas inalteradas",
-          "dek": "O Banco Central Europeu manteve as taxas de juro estáveis na sua última reunião de política, citando pressões inflacionárias e choques energéticos."
-        },
-        "zh": {
-          "title": "欧央行维持利率不变",
-          "dek": "欧洲央行在最新的政策会议上维持利率不变，理由是通胀压力和能源冲击。"
-        }
-      }
-    },
-    {
-      "slug": "berlin-left-party-faces-hamas-allegations",
-      "status": "live",
-      "category": "politics",
-      "importance": 5,
-      "title": "Berlin's Left Party Faces Hamas Allegations",
-      "dek": "The Berlin-based left‑wing party is under scrutiny following allegations that its members have links to Hamas, prompting investigations and political backlash.",
-      "startedAt": "2026-10-29T16:22:27.375Z",
-      "updatedAt": "2026-10-30T10:33:45.445Z",
-      "endedAt": null,
-      "updateCount": 10,
-      "articleSlug": "berlin-left-party-faces-hamas-allegations",
-      "latest": {
-        "at": "2026-10-30T09:47:10.000Z",
-        "kind": "statement",
-        "headline": "Elif Eralp withdraws interview statements"
-      },
-      "locales": {
-        "de": {
-          "title": "Linke Partei in Berlin sieht sich Hamas-Anschuldigungen gegenüber",
-          "dek": "Die in Berlin ansässige linke Partei steht unter Beobachtung, nachdem Anschuldigungen vorgebracht wurden, dass ihre Mitglieder Verbindungen zu Hamas haben, was Untersuchungen und politische Gegenreaktionen ausgelöst hat."
-        },
-        "en": {
-          "title": "Berlin's Left Party Faces Hamas Allegations",
-          "dek": "The Berlin-based left‑wing party is under scrutiny following allegations that its members have links to Hamas, prompting investigations and political backlash."
-        },
-        "es": {
-          "title": "El partido de izquierda de Berlín enfrenta acusaciones de vínculos con Hamas",
-          "dek": "El partido de izquierda con sede en Berlín está bajo escrutinio tras acusaciones de que sus miembros tienen vínculos con Hamas, lo que ha provocado investigaciones y reacciones políticas."
-        },
-        "fr": {
-          "title": "Le parti de gauche de Berlin fait face à des allégations de lien avec le Hamas",
-          "dek": "Le parti de gauche basé à Berlin est sous examen après des allégations de liens avec le Hamas, entraînant des enquêtes et une réaction politique."
-        },
-        "it": {
-          "title": "Partito di sinistra di Berlino affronta accuse di legami con Hamas",
-          "dek": "Il partito di sinistra con sede a Berlino è sotto scrutinio dopo accuse di legami dei suoi membri con Hamas, innescando indagini e reazioni politiche."
-        },
-        "ja": {
-          "title": "ベルリン左派政党、ハマス関係疑惑に直面",
-          "dek": "ベルリンを拠点とする左派政党は、メンバーがハマスと関係があるという疑惑を受け、調査と政治的反発を招いている。"
-        },
-        "ko": {
-          "title": "베를린 좌파당, 하마스 연계 혐의에 직면",
-          "dek": "베를린에 본부를 둔 좌파당은 당원들이 하마스와 연계돼 있다는 혐의로 조사를 받고 정치적 반발을 겪고 있다"
-        },
-        "pt": {
-          "title": "Partido de Esquerda de Berlim Enfrenta Acusações de Ligação ao Hamas",
-          "dek": "O partido de esquerda com sede em Berlim está sob escrutínio após alegações de que os seus membros têm ligações com o Hamas, o que provocou investigações e reação política."
-        },
-        "zh": {
-          "title": "柏林左翼党面临哈马斯指控",
-          "dek": "柏林总部的左翼政党因其成员与哈马斯有联系的指控而受到审查，导致调查和政治反弹。"
-        }
-      }
-    },
-    {
-      "slug": "2026-us-midterm-elections",
-      "status": "live",
-      "category": "politics",
-      "importance": 5,
-      "title": "2026 us midterm elections",
-      "dek": "Coverage of the upcoming 2026 United States midterm elections and their potential impact on domestic and international politics.",
-      "startedAt": "2026-10-30T08:11:26.843Z",
-      "updatedAt": "2026-10-30T10:32:41.672Z",
-      "endedAt": null,
-      "updateCount": 4,
-      "articleSlug": "2026-us-midterm-elections",
-      "latest": {
-        "at": "2026-10-30T10:20:10.000Z",
-        "kind": "breaking",
-        "headline": "Trump administration increases legal actions against US states"
-      },
-      "locales": {
-        "en": {
-          "title": "2026 us midterm elections",
-          "dek": "Coverage of the upcoming 2026 United States midterm elections and their potential impact on domestic and international politics."
-        },
-        "fr": {
-          "title": "Élections de mi-mandat 2026 aux États-Unis",
-          "dek": "Couverture des prochaines élections de mi-mandat de 2026 aux États-Unis et de leur impact potentiel sur la politique intérieure et internationale."
-        },
-        "de": {
-          "title": "US-Zwischenwahlen 2026",
-          "dek": "Berichterstattung über die bevorstehenden US-Zwischenwahlen 2026 und deren potenzielle Auswirkungen auf die innen- und außenpolitischen Verhältnisse."
-        },
-        "es": {
-          "title": "Elecciones de mitad de mandato de EE. UU. 2026",
-          "dek": "Cobertura de las próximas elecciones de mitad de mandato de Estados Unidos de 2026 y su impacto potencial en la política nacional e internacional."
-        },
-        "it": {
-          "title": "Elezioni di metà mandato USA 2026",
-          "dek": "Copertura delle prossime elezioni di metà mandato degli Stati Uniti del 2026 e del loro potenziale impatto sulla politica interna e internazionale."
-        },
-        "pt": {
-          "title": "Eleições de meio de mandato dos EUA 2026",
-          "dek": "Cobertura das próximas eleições de meio de mandato dos Estados Unidos de 2026 e o seu impacto potencial na política interna e internacional."
-        },
-        "ja": {
-          "title": "2026年米国中間選挙",
-          "dek": "来たる2026年米国中間選挙の報道と、それが国内および国際政治に与え得る影響について。"
-        },
-        "zh": {
-          "title": "2026年美国中期选举",
-          "dek": "关于即将到来的2026年美国中期选举及其对国内和国际政治潜在影响的报道。"
-        },
-        "ko": {
-          "title": "2026년 미국 중간선거",
-          "dek": "다가오는 2026년 미국 중간선거와 그것이 국내외 정치에 미칠 잠재적 영향에 대한 보도."
-        }
-      }
-    },
-    {
-      "slug": "yoon-s-high-stakes-election-law-appellate-sentencing",
-      "status": "live",
-      "category": "politics",
-      "importance": 4,
-      "title": "Yoon's high-stakes election-law appellate sentencing",
-      "dek": "Former South Korean president Yoon Suk-yeol faces appellate sentencing in his election-law case, with the proceedings broadcast live.",
-      "startedAt": "2026-10-30T04:21:21.555Z",
-      "updatedAt": "2026-10-30T04:21:21.555Z",
-      "endedAt": null,
-      "updateCount": 0,
-      "articleSlug": null,
-      "latest": null,
-      "locales": {
-        "en": {
-          "title": "Yoon's high-stakes election-law appellate sentencing",
-          "dek": "Former South Korean president Yoon Suk-yeol faces appellate sentencing in his election-law case, with the proceedings broadcast live."
-        },
-        "fr": {
-          "title": "Verdict en appel à enjeux élevés pour Yoon dans l'affaire de la loi électorale",
-          "dek": "L'ancien président sud-coréen Yoon Suk-yeol attend son verdict en appel dans son procès pour violation de la loi électorale, avec des procédures diffusées en direct."
-        },
-        "de": {
-          "title": "Yoon: Urteil in Berufungsverfahren zu Wahlgesetzverstößen",
-          "dek": "Der ehemalige südkoreanische Präsident Yoon Suk-yeol erwartet das Urteil in seinem Berufungsverfahren wegen Verstößen gegen das Wahlgesetz; die Verhandlungen werden live übertragen."
-        },
-        "es": {
-          "title": "Sentencia de apelación decisiva para Yoon por leyes electorales",
-          "dek": "El expresidente surcoreano Yoon Suk-yeol se enfrenta a la sentencia de apelación en su caso por leyes electorales, con el proceso transmitido en directo."
-        },
-        "it": {
-          "title": "Sentenza d'appello ad alto rischio per Yoon sul diritto elettorale",
-          "dek": "L'ex presidente sudcoreano Yoon Suk-yeol affronta la sentenza d'appello nel suo caso relativo alla legge elettorale, con i procedimenti trasmessi in diretta."
-        },
-        "pt": {
-          "title": "Sentença de recurso de Yoon em caso de lei eleitoral",
-          "dek": "O ex-presidente sul-coreano Yoon Suk-yeol aguarda a sentença de recurso no seu processo relativo à lei eleitoral, com os procedimentos a serem transmitidos em direto."
-        },
-        "ja": {
-          "title": "尹氏、公職選挙法違反で控訴審判決へ",
-          "dek": "韓国の尹錫悦（ユン・ソンニョル）前大統領は、公職選挙法違反事件の控訴審判決を控えており、手続きは生中継される。"
-        },
-        "ko": {
-          "title": "윤석열 전 대통령, 공직선거법 항소심 선고 앞둬",
-          "dek": "윤석열 전 한국 대통령이 공직선거법 위반 혐의로 항소심 선고를 앞두고 있으며, 재판 과정은 생중계될 예정이다."
-        },
-        "zh": {
-          "title": "尹锡悦选举法上诉案面临关键判决",
-          "dek": "韩国前总统尹锡悦在选举法案件中面临上诉判决，庭审过程将进行现场直播。"
-        }
-      }
-    },
-    {
-      "slug": "fed-holds-interest-rates-steady",
-      "status": "live",
-      "category": "business",
-      "importance": 5,
-      "title": "Federal Reserve keeps interest rates unchanged",
-      "dek": "The Federal Reserve has kept interest rates unchanged amid inflation concerns, prompting market reactions.",
-      "startedAt": "2026-10-29T14:32:49.922Z",
-      "updatedAt": "2026-10-30T04:01:32.859Z",
-      "endedAt": null,
-      "updateCount": 6,
-      "articleSlug": "fed-holds-interest-rates-steady",
-      "latest": {
-        "at": "2026-10-30T00:54:46.000Z",
-        "kind": "result",
-        "headline": "Federal Reserve maintains interest rates between 3.75% and 4%"
-      },
-      "locales": {
-        "de": {
-          "title": "Fed hält Zinssätze konstant",
-          "dek": "Die US-Notenbank hält die aktuellen Zinssätze trotz Inflationsbedenken konstant, was Marktreaktionen auslöst."
-        },
-        "en": {
-          "title": "Federal Reserve keeps interest rates unchanged",
-          "dek": "The Federal Reserve has kept interest rates unchanged amid inflation concerns, prompting market reactions."
-        },
-        "es": {
-          "title": "La Fed mantiene las tasas de interés estables",
-          "dek": "La Reserva Federal mantiene las tasas de interés actuales ante preocupaciones de inflación, provocando reacciones en los mercados."
-        },
-        "fr": {
-          "title": "La Fed maintient les taux d'intérêt stables",
-          "dek": "La Réserve fédérale maintient les taux d'intérêt actuels malgré les inquiétudes inflationnistes, déclenchant des réactions sur les marchés."
-        },
-        "it": {
-          "title": "Fed mantiene i tassi di interesse invariate",
-          "dek": "La Federal Reserve mantiene i tassi di interesse attuali in mezzo alle preoccupazioni sull'inflazione, scatenando reazioni di mercato."
-        },
-        "ja": {
-          "title": "連邦準備制度、金利を据え置く",
-          "dek": "インフレ懸念の中、連邦準備制度は現在の金利を維持し、市場に反応を引き起こした。"
-        },
-        "ko": {
-          "title": "연준, 금리 동결",
-          "dek": "연방준비제도는 인플레이션 우려 속 현재 금리를 유지하며 시장 반응을 촉발했다."
-        },
-        "pt": {
-          "title": "Fed mantém as taxas de juro estáveis",
-          "dek": "O Federal Reserve mantém as taxas de juro atuais em meio a preocupações com a inflação, desencadeando reações no mercado."
-        },
-        "zh": {
-          "title": "美联储维持利率不变",
-          "dek": "联邦储备委员会在通胀担忧下维持现行利率，引发市场反应。"
         }
       }
     },

@@ -947,6 +947,25 @@ async function researchAgent(d) {
       d.gaps.map((g) => `- ${g}`).join('\n') || '(none)',
     ].join('\n');
 
+  // What the desk read is part of the dossier's paper trail. Filing it here
+  // means a run cannot end with "I read a lot" and nothing on file.
+  const readPage = async (target, maxChars = 7000) => {
+    const page = await openPage(target, { maxChars });
+    if (page.error && !page.text) return { url: target, error: page.error };
+    cache.set(target, page);
+    addSource(d, { url: target, outlet: hostOf(target), title: page.title || target, publishedAt: null }, { kind: 'read' });
+    const src = d.sources.find((s) => s.url === target);
+    fileSourceRead(src, page);
+    return {
+      url: target,
+      title: page.title,
+      text: page.text,
+      links: (page.links || []).slice(0, 20),
+      sourceId: src?.id || null,
+      ...(page.pdf ? { document: 'PDF — text extracted, cite page-level detail only as printed' } : {}),
+    };
+  };
+
   const tools = [
     {
       name: 'search',
@@ -955,6 +974,17 @@ async function researchAgent(d) {
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
+        // A search for a link means "read this page". The model puts the url
+        // into the search box because that is the field it is sure about; the
+        // desk opens the page instead of asking the whole world for it.
+        if (looksLikeUrl(q)) {
+          const page = await readPage(q);
+          if (page.error) return { note: 'that url could not be opened — try another one', ...page };
+          return {
+            note: 'the link was opened and filed — read the text and save_claim what it says',
+            ...page,
+          };
+        }
         searches += 1;
         const seen = new Set();
         const hits = [];
@@ -1004,7 +1034,7 @@ async function researchAgent(d) {
           return { outlet: h.outlet || hostOf(h.url), url: h.url, sourceId: src?.id || null, title: page.title || h.title, text: page.text.slice(0, 900) };
         }))).filter(Boolean);
 
-        const results = order.slice(0, 10).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt, kind: h.kind || 'news', primary: !!h.primary }));
+        const results = order.slice(0, 10).map((h) => ({ title: String(h.title || '').slice(0, 90), url: h.url, outlet: h.outlet, primary: !!h.primary }));
         const wireN = fromWire.filter((w) => seen.has(w.url)).length;
         const docsN = results.filter((r) => r.primary).length;
         // One note, not three: the model reads the last value it gets, so the
@@ -1027,8 +1057,11 @@ async function researchAgent(d) {
           // characters, and the guidance is the part that must survive.
           ...(notes.length ? { note: notes.join(' — ') } : {}),
           query: q,
-          opened,
+          // The list of urls comes before the excerpts. A model that only
+          // searches has to see first what it could open; the pages it read
+          // are already on file, and the desk writes down what they prove.
           results,
+          opened: opened.map((o) => ({ ...o, text: String(o.text || '').slice(0, 600) })),
         };
       },
     },
@@ -1039,22 +1072,7 @@ async function researchAgent(d) {
       run: async ({ url }) => {
         const target = String(url || '').trim();
         if (!/^https?:\/\//i.test(target)) return { error: 'not a URL' };
-        const page = await openPage(target, { maxChars: 7000 });
-        if (page.error && !page.text) return { url: target, error: page.error };
-        cache.set(target, page);
-        // What the desk read is part of the dossier's paper trail. Filing it
-        // here means a run cannot end with "I read a lot" and nothing on file.
-        addSource(d, { url: target, outlet: hostOf(target), title: page.title || target, publishedAt: null }, { kind: 'read' });
-        const src = d.sources.find((s) => s.url === target);
-        fileSourceRead(src, page);
-        return {
-          url: target,
-          title: page.title,
-          text: page.text,
-          links: (page.links || []).slice(0, 20),
-          sourceId: src?.id || null,
-          ...(page.pdf ? { document: 'PDF — text extracted, cite page-level detail only as printed' } : {}),
-        };
+        return readPage(target);
       },
     },
     {
@@ -1158,6 +1176,12 @@ async function researchAgent(d) {
   ];
 
   const steps = Math.max(4, +(process.env.INVESTIGATE_AGENT_STEPS || 10));
+  // The model gets part of the shift, not the whole of it. The rest belongs
+  // to the work that follows: reading the documents back, finding the press
+  // addresses, writing the letters. A desk that spends the whole shift
+  // asking questions has answered nobody.
+  const budget = Number.isFinite(deadlineLeft()) ? deadlineLeft() : 0;
+  const share = modelShare(budget);
   const { final, steps: log2 } = await runAgent({
     role: 'desk',
     system: `You are the international investigative desk of PLAIN., an independent news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. Your beat is cross-border — Brussels, Washington, Geneva, Nairobi, Singapore — and a national story only matters if it connects to an institution, a programme or a pattern beyond one country. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. You write about people: for every story you look for the ones who carry the consequences and the ones who profit from them, and you name them. Write your findings in English.`,
@@ -1182,7 +1206,7 @@ ${doorsAdded ? `The desk has already been to the institutions before you started
 
     tools,
     maxSteps: steps,
-    deadline: Number.isFinite(deadlineLeft()) ? Date.now() + deadlineLeft() : 0,
+    deadline: share > 0 ? Date.now() + share : 0,
     log,
   });
 
@@ -1229,12 +1253,15 @@ async function fillContactAddresses(d) {
   const hosts = [...new Set(d.sources.map((s) => hostOf(s.url)))].filter((h) => h && h !== 'unknown');
   let filled = 0;
   const pending = (d.contacts || []).filter((c) => !c.email);
-  for (const contact of pending.slice(0, 8)) {
-    if (deadlineLeft() < 120_000) {
+  for (const contact of pending.slice(0, 4)) {
+    // One address must not eat the shift. The hunt is worth more when it
+    // reaches four institutions than when it finishes one of them slowly,
+    // and the shift needs room for the letter that follows.
+    if (deadlineLeft() < 45_000) {
       log('RESEARCH  deadline close - the rest of the addresses wait for the next shift');
       break;
     }
-    const found = await pressAddressFor(contact.org, { hosts }).catch(() => null);
+    const found = await pressAddressFor(contact.org, { hosts, budgetMs: 25_000 }).catch(() => null);
     if (!found) continue;
     contact.email = found.email;
     contact.emailSource = found.sourceUrl;
@@ -1242,6 +1269,22 @@ async function fillContactAddresses(d) {
   }
   if (filled) log(`RESEARCH  ${filled} contact address(es) read from the organisations' own pages`);
   return filled;
+}
+
+/**
+ * The model gets part of the shift, not the whole of it. The rest belongs to
+ * the work that follows: reading the documents back, finding the press
+ * addresses, writing the letters. A desk that spends the whole shift asking
+ * questions has answered nobody.
+ */
+function modelShare(budget) {
+  if (!Number.isFinite(budget) || budget <= 0) return 0;
+  return Math.min(Math.max(Math.floor(budget * 0.55), 150_000), 480_000);
+}
+
+/** A link the model put into the search box is a page it wants to read. */
+function looksLikeUrl(text) {
+  return /^https?:\/\/\S+$/i.test(String(text || '').trim());
 }
 
 function hostOf(url) {
@@ -1562,7 +1605,7 @@ async function factcheck(d) {
   const unreadable = d.claims.filter((c) => !c.checked && !checkable.includes(c));
   for (const c of unreadable) c.checked = 'unreadable'; // headline only — cannot be read back
   if (!checkable.length) return;
-  if (deadlineLeft() < 6 * 60_000) {
+  if (deadlineLeft() < 150_000) {
     log('CHECK  deadline close — claims left unchecked');
     return;
   }
@@ -2023,24 +2066,40 @@ async function fileContacts(d) {
   const hosts = [];
   for (const s of d.sources || []) {
     const host = hostOf(s.url);
-    if (!host || hosts.includes(host)) continue;
+    if (!host || host === 'unknown' || hosts.includes(host)) continue;
     if (s.kind !== 'document' && !institutionHost(host)) continue;
     hosts.push(host);
   }
-  const wanted = hosts.slice(0, 4);
+  const wanted = hosts.slice(0, 6);
   if (!wanted.length) return 0;
   let added = 0;
   for (const host of wanted) {
-    if (d.contacts.some((c) => sameOrg(c.org, host) || String(c.email || '').toLowerCase().endsWith(`@${host}`))) continue;
+    // The addresses on file are worth more than a sixth one: the letter
+    // waits behind them.
+    if (deadlineLeft() < 30_000) {
+      log('OUTREACH  deadline close - the rest of the addresses wait for the next shift');
+      break;
+    }
+    const source = (d.sources || []).find((s) => hostOf(s.url) === host);
+    const org = source?.outlet && source.outlet !== 'unknown' ? source.outlet : host;
+    // The desk has usually filed the organisation already — without an
+    // address. The address is what is missing, not the name.
+    const filed = (d.contacts || []).find(
+      (c) => !c.email && (sameOrg(c.org, org) || sameOrg(c.org, host)),
+    );
     const found = await publishedEmail(host).catch(() => null);
     if (!found?.email) continue;
-    const source = (d.sources || []).find((s) => hostOf(s.url) === host);
-    d.contacts.push({
-      org: source?.outlet && source.outlet !== 'unknown' ? source.outlet : host,
-      role: 'the institution whose document is on file',
-      email: found.email,
-      emailSource: found.sourceUrl,
-    });
+    if (filed) {
+      filed.email = found.email;
+      filed.emailSource = found.sourceUrl;
+    } else {
+      d.contacts.push({
+        org,
+        role: 'the institution whose document is on file',
+        email: found.email,
+        emailSource: found.sourceUrl,
+      });
+    }
     added++;
   }
   if (added) log(`OUTREACH  ${added} press address(es) read from the institutions' own pages`);
@@ -3160,6 +3219,11 @@ async function main() {
         // Mail first: a reply from an authority is evidence, and it can change
         // what the agent should look for next.
         await readInbox(d).catch((err) => log(`INBOX  unreachable: ${err.message}`));
+        // Who must answer is found before the model spends the shift. The
+        // institutions the last shift filed are known; their addresses are
+        // what lets a letter leave the building, and the hunt is slow enough
+        // to be worth starting early.
+        await fillContactAddresses(d).catch((err) => log(`RESEARCH  addresses not found: ${err.message}`));
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
         }
