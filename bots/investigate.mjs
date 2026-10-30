@@ -1004,7 +1004,7 @@ async function researchAgent(d) {
           return { outlet: h.outlet || hostOf(h.url), url: h.url, sourceId: src?.id || null, title: page.title || h.title, text: page.text.slice(0, 900) };
         }))).filter(Boolean);
 
-        const results = order.slice(0, 10).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt, kind: h.kind || 'news', primary: !!h.primary }));
+        const results = order.slice(0, 10).map((h) => ({ title: String(h.title || '').slice(0, 90), url: h.url, outlet: h.outlet, primary: !!h.primary }));
         const wireN = fromWire.filter((w) => seen.has(w.url)).length;
         const docsN = results.filter((r) => r.primary).length;
         // One note, not three: the model reads the last value it gets, so the
@@ -1027,8 +1027,11 @@ async function researchAgent(d) {
           // characters, and the guidance is the part that must survive.
           ...(notes.length ? { note: notes.join(' — ') } : {}),
           query: q,
-          opened,
+          // The list of urls comes before the excerpts. A model that only
+          // searches has to see first what it could open; the pages it read
+          // are already on file, and the desk writes down what they prove.
           results,
+          opened: opened.map((o) => ({ ...o, text: String(o.text || '').slice(0, 600) })),
         };
       },
     },
@@ -2023,24 +2026,34 @@ async function fileContacts(d) {
   const hosts = [];
   for (const s of d.sources || []) {
     const host = hostOf(s.url);
-    if (!host || hosts.includes(host)) continue;
+    if (!host || host === 'unknown' || hosts.includes(host)) continue;
     if (s.kind !== 'document' && !institutionHost(host)) continue;
     hosts.push(host);
   }
-  const wanted = hosts.slice(0, 4);
+  const wanted = hosts.slice(0, 6);
   if (!wanted.length) return 0;
   let added = 0;
   for (const host of wanted) {
-    if (d.contacts.some((c) => sameOrg(c.org, host) || String(c.email || '').toLowerCase().endsWith(`@${host}`))) continue;
+    const source = (d.sources || []).find((s) => hostOf(s.url) === host);
+    const org = source?.outlet && source.outlet !== 'unknown' ? source.outlet : host;
+    // The desk has usually filed the organisation already — without an
+    // address. The address is what is missing, not the name.
+    const filed = (d.contacts || []).find(
+      (c) => !c.email && (sameOrg(c.org, org) || sameOrg(c.org, host)),
+    );
     const found = await publishedEmail(host).catch(() => null);
     if (!found?.email) continue;
-    const source = (d.sources || []).find((s) => hostOf(s.url) === host);
-    d.contacts.push({
-      org: source?.outlet && source.outlet !== 'unknown' ? source.outlet : host,
-      role: 'the institution whose document is on file',
-      email: found.email,
-      emailSource: found.sourceUrl,
-    });
+    if (filed) {
+      filed.email = found.email;
+      filed.emailSource = found.sourceUrl;
+    } else {
+      d.contacts.push({
+        org,
+        role: 'the institution whose document is on file',
+        email: found.email,
+        emailSource: found.sourceUrl,
+      });
+    }
     added++;
   }
   if (added) log(`OUTREACH  ${added} press address(es) read from the institutions' own pages`);

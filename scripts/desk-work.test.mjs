@@ -554,3 +554,68 @@ test('an institution has its own domain', () => {
   assert.equal(isInstitution('en.yna.co.kr'), false);
   assert.equal(isInstitution('asia.nikkei.com'), false);
 });
+
+// The desk files the organisation while it works and finds the address later.
+// When the address arrives, the organisation is not filed a second time — a
+// desk that writes twice to the same desk looks like a machine.
+function pressPass() {
+  return new Function(
+    'publishedEmail', 'sameOrg', 'hostOf', 'institutionHost', 'log',
+    `${take('fileContacts')}; return fileContacts;`,
+  )(
+    async (host) => ({ email: `press@${host}`, sourceUrl: `https://${host}/press` }),
+    (a, b) => String(a || '').trim().toLowerCase() === String(b || '').trim().toLowerCase(),
+    new Function(`${take('hostOf')}; return hostOf;`)(),
+    new Function(`${take('institutionHost')}; return institutionHost;`)(),
+    () => {},
+  );
+}
+
+test('the address fills the contact the desk already filed', async () => {
+  const fill = pressPass();
+  const d = {
+    sources: [{ url: 'https://www.trmlabs.com/report', outlet: 'TRM Labs', kind: 'document' }],
+    contacts: [{ org: 'TRM Labs', role: 'must be asked for comment' }],
+  };
+  assert.equal(await fill(d), 1);
+  assert.equal(d.contacts.length, 1, 'the organisation must not be filed twice');
+  assert.equal(d.contacts[0].email, 'press@trmlabs.com');
+  assert.equal(d.contacts[0].emailSource, 'https://trmlabs.com/press');
+});
+
+test('an institution the desk has not met yet is filed with its address', async () => {
+  const fill = pressPass();
+  const d = {
+    sources: [{ url: 'https://www.justice.gov/opa/pr/indictment', outlet: 'US Department of Justice', kind: 'document' }],
+    contacts: [],
+  };
+  assert.equal(await fill(d), 1);
+  assert.equal(d.contacts.length, 1);
+  assert.equal(d.contacts[0].org, 'US Department of Justice');
+  assert.equal(d.contacts[0].email, 'press@justice.gov');
+});
+
+test('a news site is not an institution, so no letter goes to it', async () => {
+  const fill = pressPass();
+  const d = {
+    sources: [{ url: 'https://en.yna.co.kr/view/AEN2026', outlet: 'Yonhap', kind: 'read' }],
+    contacts: [],
+  };
+  assert.equal(await fill(d), 0);
+  assert.equal(d.contacts.length, 0);
+});
+
+// The observation is cut off at 3200 characters. What has to survive the cut
+// is the guidance and the list of urls the model can still open — the pages
+// the desk read are on file already, and the desk writes down what they prove.
+test('the guidance and the urls come before the excerpts', () => {
+  const at = SOURCE.indexOf("...(notes.length ? { note: notes.join(' — ') } : {}),");
+  assert.ok(at > 0, 'the note must come first in the search result');
+  const block = SOURCE.slice(at, at + 700);
+  const noteAt = block.indexOf('note:');
+  const resultsAt = block.indexOf('results,');
+  const openedAt = block.indexOf('opened:');
+  assert.ok(noteAt >= 0, 'the search result has no note');
+  assert.ok(resultsAt > noteAt, 'the urls must come before the excerpts');
+  assert.ok(openedAt > resultsAt, 'the excerpts come last');
+});
