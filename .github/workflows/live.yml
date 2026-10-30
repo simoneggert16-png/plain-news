@@ -8,7 +8,10 @@ name: Live tickers
 # coverage stays continuous.
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    # Every 6 hours, and the loop below runs 5. Two runs must never overlap:
+    # an overlapping run has its own push counter and both push, which
+    # doubles the builds and eats the deployment budget.
+    - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
       create:
@@ -102,7 +105,7 @@ jobs:
           # allows 100 per day. The push costs a build; the commit does not.
           # So the loop keeps committing every cycle and pushes on a slower
           # cadence - the ticker text itself only refreshes every 25 minutes.
-          PUSH_EVERY=${LIVE_PUSH_EVERY_SEC:-2700}
+          PUSH_EVERY=${LIVE_PUSH_EVERY_SEC:-3600}
           LAST_PUSH=0
 
           push_now() {
