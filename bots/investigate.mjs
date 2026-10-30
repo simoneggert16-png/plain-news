@@ -408,6 +408,10 @@ async function researchAgent(d) {
   const wire = (wireRes.items || []).filter((it) => it.url);
   log(`WIRE  ${wire.length} headline(s) from ${DESK_FEEDS.length} desk feeds`);
 
+  // Every search opens its first hits; the cap keeps a run with a slow or
+  // hostile site from spending the whole budget in page fetches.
+  let autoOpenBudget = 6;
+
   const termsOf = (q) => String(q).toLowerCase()
     .replace(/\bsite:\S+/gi, ' ')
     .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
@@ -455,15 +459,17 @@ async function researchAgent(d) {
         };
         const fromWire = wireMatches(q);
         collect(fromWire);
-        collect(await webSearch(q, { limit: 12 }).catch(() => []));
-        // The aggregators are thin from CI, not the topic: retry with the bare
-        // words before telling the desk the story does not exist.
-        if (hits.length < 3) {
-          const short = termsOf(q).slice(0, 4).join(' ').trim();
-          if (short && short.toLowerCase() !== q.toLowerCase()) {
-            collect(await webSearch(short, { limit: 12 }).catch(() => []));
-          }
-        }
+        // The aggregators are thin from CI, not the topic, so the bare-words
+        // query goes out in parallel instead of after a 25-second timeout.
+        const short = termsOf(q).slice(0, 4).join(' ').trim();
+        const [primary, bare] = await Promise.all([
+          webSearch(q, { limit: 12 }).catch(() => []),
+          short && short.toLowerCase() !== q.toLowerCase()
+            ? webSearch(short, { limit: 12 }).catch(() => [])
+            : Promise.resolve([]),
+        ]);
+        collect(primary);
+        if (hits.length < 3) collect(bare);
         // Never answer with an empty page: hand over the newest wire headlines
         // so there is always something to open and follow.
         if (hits.length < 3) collect(wire.slice(0, 10));
@@ -471,7 +477,8 @@ async function researchAgent(d) {
         // The desk reads what it finds. The first two hits are opened and
         // filed right here — otherwise a run ends with "I searched" and an
         // empty dossier, which is exactly what happened with weak models.
-        const auto = hits.slice(0, 2).filter((h) => !d.sources.some((s) => s.url === h.url));
+        const auto = hits.slice(0, 2).filter((h) => autoOpenBudget > 0 && !d.sources.some((s) => s.url === h.url));
+        autoOpenBudget -= auto.length;
         const opened = (await Promise.all(auto.map(async (h) => {
           const page = await openPage(h.url, { maxChars: 4000 }).catch(() => null);
           if (!page?.text) return null;
@@ -636,7 +643,17 @@ Every search already opens and files its first two hits. Read the text under "op
   d.agent = [...(d.agent || []), { at: nowISO(), steps: log2, final }].slice(-3);
 
   const added = d.sources.length - startedSources;
-  const claims = d.claims.length - startedClaims;
+  let claims = d.claims.length - startedClaims;
+
+  // A weak model can gather the right documents and still forget to write the
+  // claims down. The desk then does what a desk does: read the pages on file
+  // and extract the facts itself.
+  if (added > 0 && claims === 0 && d.sources.some((s) => s.text)) {
+    log('RESEARCH  agent filed sources but no claims — extracting from the pages on file');
+    await safe(() => extract(d), null);
+    claims = d.claims.length - startedClaims;
+  }
+
   log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
 
   if (added === 0 && claims === 0) return false;
@@ -1008,7 +1025,7 @@ async function draftEmail(d, { org, note: hint }) {
   const { data } = await chatJSON('writer', [
     {
       role: 'system',
-      content: `You draft formal source requests for the investigative desk of PLAIN. (${SITE.url}), an independent, advertising-free Swiss news site. The research is AI-assisted and every text is reviewed by a human editor — say so openly. Never accuse. Never negotiate. Return JSON only.`,
+      content: `You draft formal source requests for the investigative desk of PLAIN. (${SITE.url}), an independent, advertising-free Swiss news site that reports internationally; write in the language of the recipient (English for international bodies). The research is AI-assisted and every text is reviewed by a human editor — say so openly. Never accuse. Never negotiate. Return JSON only.`,
     },
     {
       role: 'user',

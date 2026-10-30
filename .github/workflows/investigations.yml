@@ -27,6 +27,10 @@ on:
         description: 'Diagnostics: "agent" runs only the agent for one dossier'
         type: string
         required: false
+      minutes:
+        description: 'Time budget in minutes (empty = 55)'
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -72,7 +76,7 @@ jobs:
           INVESTIGATE_MIN_WORDS: '2500'
           INVESTIGATE_REPLY_HOURS: '72'
           INVESTIGATE_MAX_READS: '6'
-          INVESTIGATE_MINUTES: '55'
+          INVESTIGATE_MINUTES: ${{ inputs.minutes || '55' }}
           INVESTIGATE_LOCALES: 'en,de,fr,es,it,pt'
           INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
         run: node bots/investigate.mjs

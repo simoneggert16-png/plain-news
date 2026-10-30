@@ -67,7 +67,16 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
   // Many authority servers label PDFs as octet-stream, so sniff the bytes.
   const looksPdf = type.includes('pdf') || /\.pdf(\?|$)/i.test(url);
   if (looksPdf) {
+    // A 200-page scan can stall the run inside pdf.js; the desk only needs
+    // what a human would read in a few minutes.
+    const size = Number(res.headers.get('content-length') || 0);
+    if (size > 20 * 1024 * 1024) {
+      return { url, title: url.split('/').pop(), text: '', links: [], pdf: true, error: `PDF too large (${Math.round(size / 1e6)} MB) — cite the landing page instead` };
+    }
     const buf = new Uint8Array(await res.arrayBuffer().catch(() => new ArrayBuffer(0)));
+    if (buf.length > 20 * 1024 * 1024) {
+      return { url, title: url.split('/').pop(), text: '', links: [], pdf: true, error: 'PDF too large — cite the landing page instead' };
+    }
     const head = String.fromCharCode(...buf.slice(0, 5));
     if (buf.length && head === '%PDF-') {
       const text = await pdfText(buf);

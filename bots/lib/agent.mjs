@@ -10,6 +10,16 @@ import { chatJSON } from './llm.mjs';
 
 const OBSERVATION_CHARS = 3200;
 const REPEAT_LIMIT = 2;
+// One slow site must not eat the run: every tool call gets a hard deadline.
+const TOOL_TIMEOUT_MS = Number(process.env.AGENT_TOOL_TIMEOUT_MS || 90_000);
+
+function withTimeout(promise, ms, label) {
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
 
 function toolDocs(tools) {
   return tools.map((t) => `- ${t.name}${t.args ? `(${t.args})` : ''}: ${t.description}`).join('\n');
@@ -169,7 +179,7 @@ ${PROTOCOL}`;
       result = { error: `you called ${name} with the same arguments ${repeats} times — choose a different action` };
     } else {
       try {
-        result = await tool.run(args);
+        result = await withTimeout(tool.run(args), TOOL_TIMEOUT_MS, name);
       } catch (err) {
         result = { error: String(err.message || err).slice(0, 300) };
       }
