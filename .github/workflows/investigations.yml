@@ -55,6 +55,7 @@ jobs:
         run: git pull --rebase --autostash
 
       - name: Advance the investigative desk
+        timeout-minutes: 60
         env:
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
