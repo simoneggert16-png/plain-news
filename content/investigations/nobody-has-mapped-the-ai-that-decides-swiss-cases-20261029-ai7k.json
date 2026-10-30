@@ -13,7 +13,7 @@
     "hints": "News peg: the Bundeskanzlei tendered IT services in the areas of data and artificial intelligence in March 2026, and the federal AI legal-framework report was published on 25 September 2026. German vocabulary the sources use: Bundesverwaltung, künstliche Intelligenz, automatisiert, Entscheidsystem, Asylverfahren, Invalidenversicherung, Steuerprüfung, Polizeiarbeit, Beschaffung, Vergabe, simap, EDÖB, Rechtsgrundlage, Aufsicht, Bundeskanzlei. Existing coverage is strategy-level (NZZ, Netzwoche) or advocacy-level (AlgorithmWatch Switzerland); no outlet has built a system-by-system inventory with vendors, contract values, decisions touched and oversight. Primary-source trail: simap tender and award notices, admin.ch media releases, the BK legal-framework report, EDÖB opinions, Federal Administrative Court and Federal Supreme Court rulings, the federal procurement statistics, and FOI requests to SEM, BSV, ESTV and fedpol. Every claim needs a document, not a think-tank quote. Avoid the generic 'AI in government' feature; the story is the gap between what is procured and what is disclosed."
   },
   "createdAt": "2026-10-29T21:38:43.000Z",
-  "updatedAt": "2026-10-30T06:48:54.570Z",
+  "updatedAt": "2026-10-30T07:12:08.916Z",
   "queries": [
     "KI Verwaltung Schweiz",
     "künstliche Intelligenz Verwaltung",
@@ -625,6 +625,52 @@
           },
           "ok": true,
           "ms": 3847
+        }
+      ],
+      "final": null
+    },
+    {
+      "at": "2026-10-30T07:12:08.916Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "Search for the Bundeskanzlei tender on AI services in March 2026 using site:simap.ch and German keywords",
+          "action": "search",
+          "args": {
+            "query": "Bundeskanzlei KI Ausschreibung März 2026 site:simap.ch"
+          },
+          "ok": true,
+          "ms": 1867
+        },
+        {
+          "step": 2,
+          "thought": "If the above fails, search for PDF of simap tender with reference number maybe known from other sources. Use keywords \"künstliche Intelligenz\" \"Bundeskanzlei\" \"simap\"",
+          "action": "search",
+          "args": {
+            "query": "\"künstliche Intelligenz\" \"Bundeskanzlei\" \"simap\""
+          },
+          "ok": true,
+          "ms": 4224
+        },
+        {
+          "step": 3,
+          "thought": "The contact page lists a general email address: info@bk.admin.ch and a phone number. For procurement inquiries, there is likely a specific address: procurement@bk.admin.ch. Scan page for 'Beschaffung' or 'E‑Mail' containing 'beschaffung'.",
+          "action": "open",
+          "args": {
+            "url": "https://www.bk.admin.ch/bk/de/home/kontakt.html"
+          },
+          "ok": false,
+          "ms": 10974
+        },
+        {
+          "step": 4,
+          "thought": "Search for \"künstliche Intelligenz\" on the simap.ch domain without specifying Bundeskanzlei",
+          "action": "search",
+          "args": {
+            "query": "site:simap.ch \"künstliche Intelligenz\" 2026"
+          },
+          "ok": true,
+          "ms": 6317
         }
       ],
       "final": null
