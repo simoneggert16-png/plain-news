@@ -266,7 +266,11 @@ export async function POST(request) {
         // there.
         const dossiers = await currentDossiers();
         const letters = lettersFromDossiers(dossiers);
-        const slug = String(body.slug || '').trim() || letters.find((l) => ids.includes(l.id))?.slug || '';
+        // The editor picks the row it sees: a shelf number or the desk's own
+        // letter id. The desk knows both.
+        const letter = letters.find((l) => ids.includes(String(l.id))
+          || (l.dbId != null && ids.includes(String(l.dbId))));
+        const slug = String(body.slug || '').trim() || letter?.slug || '';
         const input = action === 'approve-outreach' ? 'approve_outreach' : 'reject_outreach';
         return NextResponse.json({
           error: 'Die Datenbank antwortet nicht. Die Freigabe geht stattdessen an den Desk: dort wird sie festgehalten und der Brief geht raus.',

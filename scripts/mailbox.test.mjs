@@ -173,3 +173,22 @@ test('a letter that belongs to no story is not kept in the desk’s mailbox', as
     store2.restore();
   }
 });
+
+// ───────────────────── the mailbox never reaches the public repository ─────────────────────
+
+// The repository is public. The letters of people who wrote to the desk are
+// not part of it — neither the file nor the commit that would carry it.
+test('the desk’s mailbox is not part of the public repository', () => {
+  const repo = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\//, '')), '..');
+  const gitignore = fs.readFileSync(path.join(repo, '.gitignore'), 'utf8');
+  assert.match(gitignore, /content\/investigations\/inbox\.json/,
+    'the mailbox file is ignored by git');
+
+  const push = fs.readFileSync(path.join(repo, 'scripts', 'push-content.sh'), 'utf8');
+  assert.match(push, /git reset -q -- content\/investigations\/inbox\.json/,
+    'the push script takes the mailbox back out');
+
+  const live = fs.readFileSync(path.join(repo, '.github', 'workflows', 'live.yml'), 'utf8');
+  assert.match(live, /git reset -q -- content\/investigations\/inbox\.json/,
+    'the live workflow takes the mailbox back out');
+});

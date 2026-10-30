@@ -30,6 +30,10 @@ git config user.email "simoneggert16@gmail.com"
 node scripts/build-latest.mjs || echo "the index head could not be rebuilt"
 
 git add content
+# The desk's mailbox holds the letters of people who wrote to the desk. It is
+# in .gitignore; this is the belt to that pair of braces — the repository is
+# public and a private letter never belongs in it.
+git reset -q -- content/investigations/inbox.json 2>/dev/null || true
 if ! git diff --cached --quiet; then
   git commit -q -m "$MSG" || { echo "could not commit the content"; exit 1; }
 fi
