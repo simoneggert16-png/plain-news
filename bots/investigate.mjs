@@ -1552,7 +1552,11 @@ async function sendApproved(d) {
 }
 
 // ─────────────────────────── 4. WRITE ───────────────────────────
-const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfirst":"2-3 sentences that state what we found and how solid it is","facts":["5-8 key facts with numbers and dates"],"sections":[{"heading":"…","paragraphs":["…"]}],"claims":[{"text":"…","sources":["S1","S3"]}]}`;
+// The text and the claim list are written in two calls. Asked for both in one
+// answer, the model spends its budget on the claim list and the piece arrives
+// cut off in the middle of its last section.
+const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfirst":"2-3 sentences that state what we found and how solid it is","facts":["5-8 key facts with numbers and dates"],"sections":[{"heading":"…","paragraphs":["…"]}]}`;
+const CLAIMS_SCHEMA = `{"claims":[{"text":"one fact, one sentence","sources":["S1","S3"]}]}`;
 
 // A long answer can arrive cut off: the model stops at its token limit and
 // the last fields are missing. The piece is still worth keeping - the desk
@@ -1588,6 +1592,15 @@ function repairDraft(d, draft) {
   if (!body.dek || String(body.dek).trim().length < 10) body.dek = String(d.angle || d.title).slice(0, 220);
   if (!body.standfirst || String(body.standfirst).trim().length < 20) {
     body.standfirst = `What we could establish about ${d.title}, and what we could not.`;
+  }
+  // A plan that lists too few key facts is filled from the dossier, so the
+  // piece keeps the figures the reader needs.
+  if (!Array.isArray(body.facts) || body.facts.length < 4) {
+    const onFile = (d.claims || [])
+      .filter((c) => c.checked === 'supported')
+      .slice(0, 8)
+      .map((c) => String(c.text).slice(0, 300));
+    body.facts = [...(Array.isArray(body.facts) ? body.facts : []), ...onFile].slice(0, 8);
   }
   // A model that lists every fact it knows writes hundreds of claims. The
   // article needs the load-bearing ones; the rest only make the JSON heavy
@@ -1627,18 +1640,62 @@ function repairDraft(d, draft) {
   return body;
 }
 
-async function writeInvestigation(d, outreach, { attempt = 1 } = {}) {
-  // The second attempt must still clear the word gate, so it asks for fewer
-  // sections, not fewer words. A shorter piece that holds is worth more than
-  // no piece - but a piece under the gate is no piece at all.
-  const ceiling = attempt === 1 ? 4000 : 2900;
-  const sections = attempt === 1 ? '6-9' : '5-7';
-  // The window holds prompt and answer together. A pack that is too long
-  // takes the room the piece needs, and the answer comes back cut off.
+/**
+ * The plan before the text. The desk decides what the piece shows and in
+ * which order, so that every section after it has one job and no repeats.
+ */
+async function planInvestigation(d, sectionCount) {
+  const claims = d.claims
+    .map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}] ${String(c.text).slice(0, 320)} (sources: ${c.sources.join(', ')})`)
+    .join('\n');
+  const { data, model, text, doneReason } = await chatJSON('writer', [
+    {
+      role: 'system',
+      content: `You are the chief reporter of PLAIN., an independent Swiss news site. You plan investigative pieces from documents. ${STYLE_GUIDE} Return JSON only.`,
+    },
+    {
+      role: 'user',
+      content: `INVESTIGATION: ${d.title}
+QUESTION: ${d.angle}
+
+VERIFIED CLAIMS (the piece must rest on these):
+${claims}
+
+GAPS WE COULD NOT CLOSE:
+${d.gaps.slice(0, 15).map((g) => `- ${String(g).slice(0, 180)}`).join('\n') || '(none)'}
+
+SOURCES:
+${sourcePack(d, 12, 900)}
+
+TASK: Plan the piece. Do not write the article yet.
+- ${sectionCount} sections, each with a heading of max 60 characters and a one-line brief saying what the section shows.
+- Section 1 opens with the single most concrete finding, not with background.
+- One section must name the people this costs: the ones who lost money, work, land or freedom.
+- The last section states what is still unknown and why that matters.
+- facts: 5 to 8 key facts with numbers and dates.
+- title: the finding. dek: one sentence, max 30 words, saying how solid the finding is.
+
+Return exactly:
+{"title":"…","dek":"one sentence, max 30 words","standfirst":"2-3 sentences that state what we found and how solid it is","facts":["5-8 key facts with numbers and dates"],"sections":[{"heading":"…","brief":"one line"}]}`,
+    },
+  ], { temperature: 0.3, maxTokens: 3000, numCtx: 65536, think: false, timeoutMs: 120000 });
+  return { plan: data, model, text, doneReason };
+}
+
+/**
+ * One section, one call. The section knows what the whole piece shows, so it
+ * does not repeat the background the earlier sections already carry.
+ */
+async function writeSection(d, plan, planned, previous, paragraphCount) {
   const claims = d.claims
     .map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${String(c.text).slice(0, 420)} (sources: ${c.sources.join(', ')})`)
     .join('\n');
-  const outreachLog = rightOfReplyLog(outreach);
+  const outline = (Array.isArray(plan.sections) ? plan.sections : [])
+    .map((s, i) => `${i + 1}. ${String(s.heading || '').trim()}${s.brief ? ` — ${String(s.brief).trim()}` : ''}`)
+    .join('\n');
+  const done = previous.length
+    ? previous.map((s, i) => `Section ${i + 1} "${s.heading}" is written.`).join('\n')
+    : 'Nothing is written yet.';
 
   const { data, model, text, doneReason } = await chatJSON('writer', [
     {
@@ -1647,51 +1704,153 @@ async function writeInvestigation(d, outreach, { attempt = 1 } = {}) {
     },
     {
       role: 'user',
-      content: `INVESTIGATION: ${d.title}
-QUESTION: ${d.angle}
+      content: `THE PIECE:
+${plan.title}
+${plan.dek || ''}
 
-VERIFIED CLAIMS (each is bound to sources; contested claims show both versions):
+THE PLAN:
+${outline}
+
+WHAT IS ALREADY WRITTEN:
+${done}
+
+YOU WRITE NOW: SECTION ${previous.length + 1} - "${String(planned.heading || '').trim()}"
+It must show: ${String(planned.brief || '').trim() || String(planned.heading || '').trim()}
+
+VERIFIED CLAIMS (every fact must rest on one of them):
 ${claims}
 
-GAPS WE COULD NOT CLOSE:
-${d.gaps.slice(0, 15).map((g) => `- ${String(g).slice(0, 180)}`).join('\n') || '(none)'}
-
-RIGHT-OF-REPLY LOG:
-${outreachLog}
-
-SOURCES:
-${sourcePack(d, attempt === 1 ? 14 : 10, attempt === 1 ? 1200 : 800)}
-
-TASK: Write the investigation in English, at least ${MIN_WORDS} words and at most ${ceiling}. Do not stop before ${MIN_WORDS} words.
-
-STRUCTURE (${sections} sections, each heading max 60 characters)
-1. Open with the single most concrete finding, not with background.
-2. Show the evidence: documents, figures, dates, decisions, who signed what.
-3. Show the pattern or the money trail across cases and institutions.
-4. State clearly what remains unknown, and why that matters.
-5. The desk writes the right of reply itself. Write no section about it, and never write a request date, a reply, a "no comment" or a confirmation that nobody gave us.
-6. Close with a section on how we reported: sources read, data sets, questions sent, what we could not verify.
-
-LENGTH: ${sections} sections, each with 4 to 6 paragraphs of 110 to 160 words. That is ${Math.round((sections === '6-9' ? 7.5 : 6) * 5 * 135)} words. Write until you reach it. A section of two paragraphs is too short: write four, and do not stop before the word count is reached.
-
 RULES
-- Every factual sentence must rest on a claim above. If something is not in the claims, it is not in the piece.
-- Never invent a right of reply. A question we did not send has no answer, and a reply that did not arrive does not exist. If the log is empty, the right of reply says our questions are still outstanding. Write no reply of your own into the body either: no "responded on", no "no comment", no date on which anybody answered us.
+- Write exactly ${paragraphCount} paragraphs of 110 to 150 words each. Nothing shorter, nothing longer.
+- Open with the concrete fact of this section, not with background and not with a summary of the whole piece.
+- Every factual sentence must rest on a claim above. If it is not in the claims, it is not in the text.
 - Numbers, dates, names and titles exactly as in the sources. No rounding invented, no "about".
-- This is a piece about people, not about process. Name who is affected and what it costs them: the ones who lost money, work, land or freedom. A reader must be able to point at a person by the end of the first two sections.
+- This is a piece about people, not about process. Name who is affected and what it costs them.
 - Contested claims: name who says what. Never present one side as established fact.
 - No opinion, no prosecution rhetoric, no "shocking", no calls to resign. Show the facts; the reader draws the conclusion.
 - Long, specific paragraphs. No bullet lists. No "in conclusion".
 - Do not write four short declarative sentences in a row, and do not open consecutive sentences with the same subject. Each paragraph needs one longer sentence with two clauses.
 - Depth comes from documents, figures and chronology, never from restating a finding in new words.
 - No evaluative summary sentences ("This shows…", "The pattern underlines…"). End the paragraph on the last fact.
-- The claims array must list at most 25 load-bearing facts with the source ids that carry them, one short sentence each. Do not list every fact you know: the claims are the facts the article cannot do without.
+- Write nothing about a right of reply, a request date, a reply, a "no comment" or a confirmation that nobody gave us. The desk writes that itself.
 
 Return exactly:
-${DRAFT_SCHEMA}`,
+{"heading":"…","paragraphs":["…","…"]}`,
     },
-  ], { temperature: 0.35, maxTokens: attempt === 1 ? 26000 : 18000, numCtx: 65536, think: false });
-  return { draft: applyMethodology(applyRightOfReply(repairDraft(d, data), outreach), d), model, text, doneReason };
+  ], { temperature: 0.35, maxTokens: 2600, numCtx: 65536, think: false, timeoutMs: 150000 });
+  const paragraphs = (Array.isArray(data?.paragraphs) ? data.paragraphs : [])
+    .map((p) => String(p || '').trim())
+    .filter(Boolean);
+  if (!paragraphs.length) throw new Error('the section came back empty');
+  return {
+    heading: String(data?.heading || planned.heading || '').trim() || `Section ${previous.length + 1}`,
+    paragraphs,
+  };
+}
+
+/**
+ * The claims a piece rests on. They are filed in their own call, because a
+ * model asked for body and claim list in one answer spends its budget on the
+ * claim list and the last section of the article never arrives.
+ */
+async function fileClaims(d, body) {
+  const sources = (d.sources || [])
+    .map((s) => `${s.id}: ${String(s.title || '').slice(0, 100)} (${s.outlet || 'unknown outlet'})`)
+    .join('\n');
+  const headings = (body.sections || []).map((s) => s.heading).filter(Boolean).join(' | ');
+
+  const claims = [];
+  try {
+    const { data } = await chatJSON('writer', [
+      {
+        role: 'system',
+        content: `You are the fact checker of PLAIN. You file the claims an investigation rests on, each with the sources that carry it. Return JSON only.`,
+      },
+      {
+        role: 'user',
+        content: `The article below is about ${d.title}.
+ITS HEADLINES: ${headings}
+
+SOURCES (use these ids only):
+${sources}
+
+CLAIMS ON FILE IN THE DOSSIER (the article must rest on these):
+${d.claims.map((c) => `[${c.id}] ${String(c.text).slice(0, 200)} (sources: ${c.sources.join(', ')})`).join('\n')}
+
+TASK: List the claims the article cannot do without - the facts a reader must see to trust it.
+- At most 20 claims. Fewer is better.
+- One fact per claim, one short sentence each.
+- Every claim needs the ids of the sources that carry it, taken from the list above.
+- Only use facts that are on file in the dossier. Do not invent anything.
+
+Return exactly:
+${CLAIMS_SCHEMA}`,
+      },
+    ], { temperature: 0.1, maxTokens: 3000, numCtx: 32768, think: false, timeoutMs: 120000 });
+    const ids = new Set((d.sources || []).map((x) => x.id));
+    const seen = new Set();
+    for (const c of (Array.isArray(data?.claims) ? data.claims : [])) {
+      const src = (Array.isArray(c?.sources) ? c.sources : []).filter((id) => ids.has(id));
+      const text = String(c?.text || '').trim();
+      if (!src.length || !text || seen.has(text.toLowerCase())) continue;
+      seen.add(text.toLowerCase());
+      claims.push({ text, sources: src });
+      if (claims.length >= 20) break;
+    }
+  } catch (err) {
+    log(`WRITE   claims not filed by the model (${err.message})`);
+  }
+  if (claims.length >= MIN_CLAIMS) return { claims };
+  // The model filed too little. The dossier's own verified claims are on file
+  // with their sources, so the piece still rests on something checked.
+  return {
+    claims: (d.claims || []).slice(0, 20).map((c) => ({ text: String(c.text).slice(0, 400), sources: c.sources })),
+  };
+}
+
+async function writeInvestigation(d, outreach, { attempt = 1 } = {}) {
+  // A model asked for a whole article at once writes a thousand words and
+  // spends the rest of its budget on a claim list. The desk plans the piece
+  // first and drafts it section by section: every call has one small job and
+  // a length the writer can hit.
+  const sectionCount = attempt === 1 ? 6 : 5;
+  const paragraphCount = attempt === 1 ? 5 : 4;
+
+  const planned = await planInvestigation(d, sectionCount);
+  const plan = planned.plan || {};
+  const planSections = (Array.isArray(plan.sections) ? plan.sections : [])
+    .filter((s) => s && (s.heading || s.brief))
+    .slice(0, sectionCount + 1);
+  if (planSections.length < 5) throw new Error(`the plan has only ${planSections.length} sections`);
+
+  const written = [];
+  for (const plannedSection of planSections) {
+    if (deadlineLeft() < 120000) {
+      log(`WRITE   out of time after ${written.length} section(s)`);
+      break;
+    }
+    try {
+      written.push(await writeSection(d, plan, plannedSection, written, paragraphCount));
+    } catch (err) {
+      log(`WRITE   a section failed: ${err.message}`);
+    }
+  }
+
+  const draft = {
+    title: plan.title,
+    dek: plan.dek,
+    standfirst: plan.standfirst,
+    facts: plan.facts,
+    sections: written,
+  };
+  const filed = await fileClaims(d, draft);
+  draft.claims = filed.claims;
+  return {
+    draft: applyMethodology(applyRightOfReply(repairDraft(d, draft), outreach), d),
+    model: planned.model,
+    text: planned.text,
+    doneReason: planned.doneReason,
+  };
 }
 
 /**
@@ -1734,13 +1893,15 @@ GO DEEPER, do not pad:
 - Name the people it costs and what it costs them: the ones who lost money, work, land or freedom.
 - Say what the institutions answered, and what they did not answer and when we asked.
 - Say how we reported: which sources, which documents, what we could not verify.
-- The claims array must list at most 25 load-bearing facts with the source ids that carry them, one short sentence each. Do not list every fact you know: the claims are the facts the article cannot do without.
+- Do not return a claim list. The desk files the claims separately.
 
 Return exactly:
 ${DRAFT_SCHEMA}`,
     },
-  ], { temperature: 0.35, maxTokens: 26000, numCtx: 65536, think: false });
-  return { draft: applyMethodology(applyRightOfReply(repairDraft(d, data), outreach), d), model, text, doneReason };
+  ], { temperature: 0.35, maxTokens: 14000, numCtx: 65536, think: false, timeoutMs: 180000 });
+  const body = applyMethodology(applyRightOfReply(repairDraft(d, data), outreach), d);
+  body.claims = (draft.claims || []).slice(0, 25);
+  return { draft: body, model, text, doneReason };
 }
 
 
@@ -1777,8 +1938,10 @@ TASK: Return the corrected piece in the same shape.
 Return exactly:
 ${DRAFT_SCHEMA}`,
     },
-  ], { temperature: 0.3, maxTokens: 26000, numCtx: 65536, think: false });
-  return { draft: applyMethodology(applyRightOfReply(repairDraft(d, data), outreach), d), model, text, doneReason };
+  ], { temperature: 0.3, maxTokens: 14000, numCtx: 65536, think: false, timeoutMs: 180000 });
+  const body = applyMethodology(applyRightOfReply(repairDraft(d, data), outreach), d);
+  body.claims = (draft.claims || []).slice(0, 25);
+  return { draft: body, model, text, doneReason };
 }
 
 async function editInvestigation(d, outreach, draft, styleIssues = []) {
@@ -1920,8 +2083,12 @@ async function maybeWrite(d, outreach) {
       note(d, 'research', 'editor rejected the draft');
       return;
     }
-    if (verdict === 'revise' && review?.article && !draftProblem(d, review.article, outreach)) {
-      draft = applyMethodology(applyRightOfReply(review.article, outreach), d);
+    if (verdict === 'revise' && review?.article) {
+      // The editor corrects the text. The claims stay the ones the desk filed.
+      const revised = { ...review.article, claims: (review.article.claims || draft.claims || []).slice(0, 25) };
+      if (!draftProblem(d, revised, outreach)) {
+        draft = applyMethodology(applyRightOfReply(revised, outreach), d);
+      }
     }
   } catch (err) {
     log(`WRITE   editor failed (${err.message}); keeping writer draft`);
