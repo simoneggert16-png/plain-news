@@ -189,6 +189,12 @@ export default function AdminInvestigations() {
   const outreach = data?.outreach || [];
   const messages = data?.messages || [];
   const quota = data?.quota;
+  const desk = data?.desk || {};
+  const deskBeats = desk.beats || [];
+  const deskFollowups = desk.followups || [];
+  const openQuestions = investigations
+    .filter((i) => i.status !== 'published' && i.status !== 'dropped' && (i.gaps || []).length)
+    .map((i) => ({ slug: i.slug, title: i.title, gaps: i.gaps }));
 
   const wishes = requests.filter((r) => r.status === 'new');
   const pending = outreach.filter((o) => o.status === 'draft');
@@ -334,6 +340,63 @@ export default function AdminInvestigations() {
               </table>
               {openDraft && (
                 <DraftReader draft={(investigations.find((i) => i.slug === openDraft) || {}).draft} />
+              )}
+            </div>
+          </section>
+
+          <section style={panel}>
+            <div style={panelHead}>
+              <strong style={mono}>WAS DAS TEAM NOCH SCHULDET</strong>
+              <span style={{ ...mono, color: 'var(--muted)' }}>
+                {openQuestions.reduce((n, d) => n + d.gaps.length, 0) + deskFollowups.length} offen
+              </span>
+            </div>
+            <div style={{ padding: '14px 16px', display: 'grid', gap: '16px' }}>
+              {deskBeats.length > 0 && (
+                <div>
+                  <div style={{ ...mono, color: 'var(--muted)', marginBottom: '6px' }}>
+                    Institutionen, denen das Team folgt
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                    {deskBeats.map((b) => (
+                      <span key={b.name} style={{ ...mono, border: '1px solid var(--line)', padding: '4px 10px' }}>
+                        {b.name}{b.centre ? ` — ${b.centre}` : ''}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {openQuestions.map((d) => (
+                <div key={d.slug}>
+                  <div style={{ fontWeight: 600 }}>{d.title}</div>
+                  <ul style={{ margin: '6px 0 0', paddingLeft: '20px', color: 'var(--ink-2)' }}>
+                    {d.gaps.map((g, idx) => (
+                      <li key={`${d.slug}-${idx}`} style={{ marginBottom: '4px' }}>{g}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              {deskFollowups.length > 0 && (
+                <div>
+                  <div style={{ ...mono, color: 'var(--muted)', marginBottom: '6px' }}>
+                    Offene Fragen aus veröffentlichten Stücken
+                  </div>
+                  <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--ink-2)' }}>
+                    {deskFollowups.map((f, idx) => (
+                      <li key={`${f.slug}-${idx}`} style={{ marginBottom: '4px' }}>
+                        {f.question} <span style={{ ...mono, color: 'var(--muted)' }}>({f.title})</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {!deskBeats.length && !openQuestions.length && !deskFollowups.length && (
+                <div style={{ ...mono, color: 'var(--muted)' }}>
+                  Das Team hat nichts offen. Es arbeitet die nächste Recherche aus.
+                </div>
               )}
             </div>
           </section>

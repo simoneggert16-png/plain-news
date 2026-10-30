@@ -2,8 +2,9 @@ name: Investigations
 
 on:
   schedule:
-    # Morning and evening shift. Intake only happens when the ISO week changes,
-    # so this is the heartbeat of a desk that can work on a story for months.
+    # Morning and evening shift. Every run works in three shifts, so a story
+    # moves on several times a day. The desk opens a new investigation only
+    # while it has room in its weekly quota.
     - cron: '10 6,18 * * *'
   workflow_dispatch:
     inputs:
@@ -50,7 +51,8 @@ concurrency:
 jobs:
   investigate:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    # Three shifts of about 18 minutes each, plus the commit and the mirror.
+    timeout-minutes: 160
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -80,7 +82,7 @@ jobs:
 
       - name: Advance the investigative desk
         if: steps.budget.outputs.skip != 'true'
-        timeout-minutes: 60
+        timeout-minutes: 140
         env:
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
@@ -112,7 +114,30 @@ jobs:
           INVESTIGATE_APPROVED_BY: ${{ vars.INVESTIGATE_APPROVED_BY || 'editor' }}
           INVESTIGATE_LOCALES: 'en,de,fr,es,it,pt'
           INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
-        run: node bots/investigate.mjs
+        run: |
+          # A desk works in shifts. Each shift reads the mailbox, takes up what
+          # is on the desk and writes down what it found. Several shifts per
+          # run let a story move on while nobody is watching; the commit comes
+          # after the last one, so a day still costs a single deployment.
+          TOTAL="${INVESTIGATE_MINUTES:-55}"
+          SHIFTS="${DESK_SHIFTS:-3}"
+          PER=$(( TOTAL / SHIFTS ))
+          [ "$PER" -lt 8 ] && PER=8
+          for i in $(seq 1 "$SHIFTS"); do
+            echo "──────── shift $i of $SHIFTS ($PER min) ────────"
+            INVESTIGATE_MINUTES="$PER" timeout $(( PER * 60 + 300 )) node bots/investigate.mjs || echo "shift $i ended with $?"
+            # The live tickers write to content/ between the shifts. Take their
+            # commits in now, so the desk never ends up in a rebase conflict
+            # at the end of the run. A conflict must not cost the shift its
+            # findings, so the fallback merges the other side in and rebuilds
+            # the index from the files of both sides.
+            if ! git pull -q --rebase --autostash; then
+              git rebase --abort 2>/dev/null || true
+              git fetch -q origin main && git merge -q --no-edit -X ours origin/main || true
+              git merge --abort 2>/dev/null || true
+              node scripts/sync-index.mjs --all >/dev/null 2>&1 || true
+            fi
+          done
 
       # The work is committed before the mirror runs. A slow upload must never
       # cost the desk its findings.

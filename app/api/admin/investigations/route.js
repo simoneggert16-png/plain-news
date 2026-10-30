@@ -41,6 +41,9 @@ function dossiersFromFiles() {
           source_count: (d.sources || []).length,
           verified_claims: (d.claims || []).length,
           open_questions: (d.gaps || []).length,
+          gaps: (d.gaps || []).slice(0, 5),
+          centre: d.centre || null,
+          beat: d.beat || null,
           outreach_pending: 0,
           outreach_sent: 0,
           next_step: d.nextStep || null,
@@ -65,8 +68,34 @@ function withDrafts(list) {
   const byslug = new Map(files.map((f) => [f.slug, f]));
   return list.map((row) => {
     const file = byslug.get(row.slug);
-    return file && file.draft ? { ...row, draft: file.draft } : row;
+    if (!file) return row;
+    return {
+      ...row,
+      draft: file.draft || null,
+      gaps: file.gaps || row.gaps || [],
+      centre: file.centre || row.centre || null,
+      beat: file.beat || row.beat || null,
+    };
   });
+}
+
+/**
+ * What the desk remembers between shifts: the institutions it follows and the
+ * questions it still owes its readers. It is the desk's own memory, so the
+ * editor can see what the team is working towards.
+ */
+function deskState() {
+  try {
+    const raw = fs.readFileSync(path.join(process.cwd(), 'content', 'investigations', 'state.json'), 'utf8');
+    const state = JSON.parse(raw);
+    return {
+      beats: Array.isArray(state.beats) ? state.beats.slice(-12) : [],
+      followups: Array.isArray(state.followups) ? state.followups.slice(-12) : [],
+      lastIntake: state.lastIntake || null,
+    };
+  } catch {
+    return { beats: [], followups: [], lastIntake: null };
+  }
 }
 
 async function requireAdmin(request) {
@@ -106,6 +135,7 @@ export async function GET(request) {
       investigations: withDrafts(investigations),
       outreach,
       messages,
+      desk: deskState(),
     }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (err) {
     console.error('Admin investigations GET failed:', err.message);
