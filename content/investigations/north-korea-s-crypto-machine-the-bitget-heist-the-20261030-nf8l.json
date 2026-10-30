@@ -14,7 +14,7 @@
     "hints": "Bitget hot and warm wallet transfers of 387.5m USD detected 24/25 September 2026; cold wallets untouched; false transaction data inserted into the approval system; CEO Gracy Chen says IP addresses matched VPN choices of a DPRK-linked group and that Lazarus members had posed as a journalist to get a Zoom interview; TRM Labs: DPRK groups took 577m USD with Drift Protocol and KelpDAO and 76 per cent of all 2026 hack value through April; FBI attributed the 1.5bn USD Bybit theft to DPRK in February 2025; DPRK stole 2.02bn USD in 2025, all-time 6.75bn USD; user protection fund above 464m USD; UN Human Rights Office in Seoul and US Treasury OFAC run the counter-measures."
   },
   "createdAt": "2026-10-30T10:35:00.630Z",
-  "updatedAt": "2026-10-30T13:07:48.603Z",
+  "updatedAt": "2026-10-30T13:20:08.172Z",
   "queries": [
     "Bitget hack 387.5 million North Korea Lazarus CEO Gracy Chen",
     "TRM Labs North Korea 76% crypto hack value 2026 Drift Protocol KelpDAO",
@@ -423,7 +423,8 @@
       ],
       "status": "verified",
       "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
+      "checkedAt": "2026-10-30T10:51:57.726Z",
+      "checked": "supported"
     },
     {
       "id": "C19",
@@ -433,7 +434,8 @@
       ],
       "status": "verified",
       "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
+      "checkedAt": "2026-10-30T10:51:57.726Z",
+      "checked": "supported"
     },
     {
       "id": "C20",
@@ -443,17 +445,8 @@
       ],
       "status": "verified",
       "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
-    },
-    {
-      "id": "C21",
-      "text": "Ethereum price fell 0.8% after the hack announcement.",
-      "sources": [
-        "S11"
-      ],
-      "status": "verified",
-      "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
+      "checkedAt": "2026-10-30T10:51:57.726Z",
+      "checked": "supported"
     },
     {
       "id": "C22",
@@ -463,17 +456,8 @@
       ],
       "status": "verified",
       "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
-    },
-    {
-      "id": "C23",
-      "text": "Binance has 335 million registered users globally.",
-      "sources": [
-        "S12"
-      ],
-      "status": "verified",
-      "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
+      "checkedAt": "2026-10-30T10:51:57.726Z",
+      "checked": "supported"
     },
     {
       "id": "C24",
@@ -483,7 +467,8 @@
       ],
       "status": "verified",
       "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
+      "checkedAt": "2026-10-30T10:51:57.726Z",
+      "checked": "supported"
     },
     {
       "id": "C25",
@@ -493,7 +478,8 @@
       ],
       "status": "verified",
       "weight": 1,
-      "checkedAt": "2026-10-30T10:51:57.726Z"
+      "checkedAt": "2026-10-30T10:51:57.726Z",
+      "checked": "supported"
     },
     {
       "id": "C26",
@@ -514,6 +500,26 @@
       "status": "verified",
       "weight": 2,
       "checkedAt": "2026-10-30T12:55:11.586Z"
+    },
+    {
+      "id": "C28",
+      "text": "The OFAC designation on October 28, 2022 listed several individuals linked to North Korea’s First Financial and Technical Development Center and provided their associated Ethereum and TRON digital currency addresses.",
+      "sources": [
+        "S6"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-10-30T13:14:45.474Z"
+    },
+    {
+      "id": "C29",
+      "text": "Binance temporarily suspended all withdrawals and deposits after a hack that affected an estimated $6.3 billion in assets and said it was working with law‑enforcement agencies, token issuers and blockchain‑intelligence firms to trace and freeze the stolen funds.",
+      "sources": [
+        "S5"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-10-30T13:14:48.785Z"
     }
   ],
   "gaps": [
@@ -544,7 +550,9 @@
     "Nicht belegt, deshalb gestrichen: Binance’s 2025 annual report listed $162.8 billion in assets under custody.",
     "Nicht belegt, deshalb gestrichen: Binance’s investigation found no evidence of private key leaks from wallets.",
     "Nicht belegt, deshalb gestrichen: Binance said it would share a detailed technical analysis once investigations are complete.",
-    "Nicht belegt, deshalb gestrichen: Binance publicly stated that user funds remain safe."
+    "Nicht belegt, deshalb gestrichen: Binance publicly stated that user funds remain safe.",
+    "Nicht belegt, deshalb gestrichen: Ethereum price fell 0.8% after the hack announcement.",
+    "Nicht belegt, deshalb gestrichen: Binance has 335 million registered users globally."
   ],
   "contacts": [
     {
@@ -634,157 +642,6 @@
     }
   ],
   "agent": [
-    {
-      "at": "2026-10-30T10:37:54.293Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Bitget hack September 2026 387.5 million"
-          },
-          "ok": true,
-          "ms": 1244
-        },
-        {
-          "step": 2,
-          "thought": "",
-          "action": "none",
-          "args": {
-            "cursor": 0,
-            "id": 8
-          },
-          "ok": false,
-          "ms": 570
-        },
-        {
-          "step": 3,
-          "thought": "",
-          "action": "open",
-          "args": {
-            "cursor": 0,
-            "id": 8
-          },
-          "ok": false,
-          "ms": 456
-        },
-        {
-          "step": 4,
-          "thought": "",
-          "action": "open",
-          "args": {
-            "url": "https://beincrypto.com/bitget-hack-timeline-north-korean-pattern/"
-          },
-          "ok": false,
-          "ms": 858
-        },
-        {
-          "step": 5,
-          "thought": "",
-          "action": "open",
-          "args": {
-            "url": "https://www.coingabbar.com/en/bitget-hack-update-total-loss-withdrawal-restart-september-2026"
-          },
-          "ok": true,
-          "ms": 3934
-        },
-        {
-          "step": 6,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Bitget security incident report September 2026 PDF"
-          },
-          "ok": true,
-          "ms": 1119
-        },
-        {
-          "step": 7,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "OFAC Bitget hack address 2026"
-          },
-          "ok": true,
-          "ms": 1387
-        },
-        {
-          "step": 8,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "OFAC Lazarus Bitget address 2026"
-          },
-          "ok": true,
-          "ms": 1882
-        },
-        {
-          "step": 9,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "site:ofac.treasury.gov Bitget hack"
-          },
-          "ok": true,
-          "ms": 1085
-        },
-        {
-          "step": 10,
-          "thought": "We have not yet located any primary documents (e.g., OFAC sanction list, Treasury press release, FBI indictment, TRM Labs attribution report, Bitget security incident report). The next step is to search official government domains for documents that mention Bitget, the September 2026 hack, and North Korean attribution. We'll target: ofac.treasury.gov, justice.gov, ic3.gov, fbi.gov, trmlabs.com (re",
-          "action": "search",
-          "args": {
-            "query": "site:ofac.treasury.gov Bitget"
-          },
-          "ok": true,
-          "ms": 1430
-        },
-        {
-          "step": 11,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "site:justice.gov Lazarus Bitget"
-          },
-          "ok": true,
-          "ms": 903
-        },
-        {
-          "step": 12,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "site:ic3.gov Bitget"
-          },
-          "ok": true,
-          "ms": 822
-        },
-        {
-          "step": 13,
-          "thought": "",
-          "action": "none",
-          "args": {
-            "search": {
-              "query": "Bitget security incident report PDF",
-              "topn": 10
-            }
-          },
-          "ok": false,
-          "ms": 1714
-        },
-        {
-          "step": 14,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "site:trmlabs.com Bitget 2026"
-          },
-          "ok": true,
-          "ms": 1150
-        }
-      ],
-      "final": null
-    },
     {
       "at": "2026-10-30T10:56:01.497Z",
       "steps": [
@@ -1086,6 +943,155 @@
         }
       ],
       "final": null
+    },
+    {
+      "at": "2026-10-30T13:15:37.958Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "Search for Chainalysis blog on Bitget theft to get primary source",
+          "action": "search",
+          "args": {
+            "query": "Chainalysis 387 million Bitget theft"
+          },
+          "ok": true,
+          "ms": 31600
+        },
+        {
+          "step": 2,
+          "thought": "Search specifically site:chainalysis.com Bitget 387 million",
+          "action": "search",
+          "args": {
+            "query": "site:chainalysis.com Bitget 387 million"
+          },
+          "ok": true,
+          "ms": 32633
+        },
+        {
+          "step": 3,
+          "thought": "",
+          "action": "open",
+          "args": {
+            "id": "open",
+            "source": "https://www.chainalysis.com/blog/387m-bitget-theft-2026/",
+            "url": "https://www.chainalysis.com/blog/387m-bitget-theft-2026/"
+          },
+          "ok": true,
+          "ms": 723
+        },
+        {
+          "step": 4,
+          "thought": "",
+          "action": "open",
+          "args": {
+            "id": "open",
+            "source": "https://www.trmlabs.com/resources/blog/bitget-loses-usd-3516-million-in-hot-wallet-breach-in-likely-north-korea-attack",
+            "url": "https://www.trmlabs.com/resources/blog/bitget-loses-usd-3516-million-in-hot-wallet-breach-in-likely-north-korea-attack"
+          },
+          "ok": true,
+          "ms": 1052
+        },
+        {
+          "step": 5,
+          "thought": "",
+          "action": "open",
+          "args": {
+            "id": "open",
+            "source": "https://asia.nikkei.com/spotlight/cryptocurrencies/binance-suspends-withdrawals-and-freezes-funds-amid-6.3bn-hack",
+            "url": "https://asia.nikkei.com/spotlight/cryptocurrencies/binance-suspends-withdrawals-and-freezes-funds-amid-6.3bn-hack"
+          },
+          "ok": true,
+          "ms": 1424
+        },
+        {
+          "step": 6,
+          "thought": "",
+          "action": "open",
+          "args": {
+            "id": "open",
+            "source": "https://ofac.treasury.gov/recent-actions/20261028",
+            "url": "https://ofac.treasury.gov/recent-actions/20261028"
+          },
+          "ok": true,
+          "ms": 9279
+        },
+        {
+          "step": 7,
+          "thought": "We have primary sources for Bitget (Chainalysis blog, TRM Labs blog) and Binance (Nikkei article). Need to capture claims: DPRK attribution for Bitget, percentages of chain distribution, method (backend system spoofing). For Binance, need claim of $6.3bn hack, suspension of withdrawals, amount frozen, and that law enforcement partners are involved. Also need OFAC designations showing digital curre",
+          "action": "save_source",
+          "args": {
+            "url": "https://www.chainalysis.com/blog/387m-bitget-theft-2026/",
+            "outlet": "Chainalysis",
+            "title": "How Chainalysis Used AI to Trace the $387M Bitget Theft",
+            "publishedAt": "2026-10-01"
+          },
+          "ok": true,
+          "ms": 4677
+        },
+        {
+          "step": 8,
+          "thought": "Save remaining primary sources to support claims",
+          "action": "save_source",
+          "args": {
+            "url": "https://www.trmlabs.com/resources/blog/bitget-loses-usd-3516-million-in-hot-wallet-breach-in-likely-north-korea-attack",
+            "outlet": "TRM Labs",
+            "title": "Bitget Loses USD 351.6 Million in Hot Wallet Breach in Likely North Korea Attack",
+            "publishedAt": "2026-09-25"
+          },
+          "ok": true,
+          "ms": 839
+        },
+        {
+          "step": 9,
+          "thought": "Record claim from OFAC that individuals linked to DPRK were designated with specific cryptocurrency addresses.",
+          "action": "save_claim",
+          "args": {
+            "text": "The OFAC designation on October 28, 2022 listed several individuals linked to North Korea’s First Financial and Technical Development Center and provided their associated Ethereum and TRON digital currency addresses.",
+            "sources": [
+              "S6"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 4353
+        },
+        {
+          "step": 10,
+          "thought": "Record claim that Binance suspended all withdrawals and deposits after a hack affecting an estimated $6.3 billion and that it is working with law‑enforcement agencies to trace and freeze assets.",
+          "action": "save_claim",
+          "args": {
+            "text": "Binance temporarily suspended all withdrawals and deposits after a hack that affected an estimated $6.3 billion in assets and said it was working with law‑enforcement agencies, token issuers and blockchain‑intelligence firms to trace and freeze the stolen funds.",
+            "sources": [
+              "S5"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 3311
+        },
+        {
+          "step": 11,
+          "thought": "Search TRM Labs Binance 6.3bn hack attribution North Korea",
+          "action": "search",
+          "args": {
+            "query": "TRM Labs Binance 6.3 billion North Korea"
+          },
+          "ok": true,
+          "ms": 48543
+        },
+        {
+          "step": 12,
+          "thought": "",
+          "action": "none",
+          "args": {
+            "query": "site:trmlabs.com Binance 6.3 billion",
+            "topn": 10
+          },
+          "ok": false,
+          "ms": 630
+        }
+      ],
+      "final": null
     }
   ],
   "nextStep": "keep reporting: 4/8 outlets, 0/2 primary sources, no outreach sent",
@@ -1112,6 +1118,14 @@
     },
     {
       "text": "Binance publicly stated that user funds remain safe.",
+      "why": "nicht belegt"
+    },
+    {
+      "text": "Ethereum price fell 0.8% after the hack announcement.",
+      "why": "nicht belegt"
+    },
+    {
+      "text": "Binance has 335 million registered users globally.",
       "why": "nicht belegt"
     }
   ]
