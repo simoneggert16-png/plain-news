@@ -46,6 +46,44 @@ const btn = {
 };
 const btnPrimary = { ...btn, background: 'var(--ink)', color: 'var(--paper)' };
 
+const draftWords = (draft) =>
+  [draft.standfirst, draft.dek, ...(draft.sections || []).flatMap((s) => [s.heading, ...(s.paragraphs || [])]), draft.rightOfReply, draft.methodology]
+    .filter(Boolean).join(' ').split(/\s+/).filter(Boolean).length;
+
+function DraftReader({ draft }) {
+  if (!draft) return null;
+  const heading = { fontFamily: 'var(--mono)', fontSize: '11px', letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--muted)', margin: '20px 0 6px' };
+  const body = { maxWidth: '68ch', fontSize: '14px', lineHeight: 1.6, margin: '0 0 10px' };
+  return (
+    <div style={{ padding: '16px', borderTop: '1px solid var(--ink)', background: 'var(--paper-2)' }}>
+      <div style={{ ...mono, color: 'var(--muted)', marginBottom: '8px' }}>
+        Entwurf — {draftWords(draft)} Wörter, {draft.sections?.length || 0} Abschnitte
+      </div>
+      <h3 style={{ fontSize: '22px', lineHeight: 1.25, margin: '0 0 6px', fontFamily: 'var(--serif, Georgia, serif)' }}>{draft.title}</h3>
+      {draft.dek && <p style={{ ...body, fontSize: '16px' }}>{draft.dek}</p>}
+      {draft.standfirst && <p style={{ ...body, fontWeight: 600 }}>{draft.standfirst}</p>}
+      {(draft.sections || []).map((s, i) => (
+        <div key={i}>
+          <div style={heading}>{s.heading}</div>
+          {(s.paragraphs || []).map((p, j) => <p key={j} style={body}>{p}</p>)}
+        </div>
+      ))}
+      {draft.rightOfReply && (
+        <div>
+          <div style={heading}>Rechte der Betroffenen</div>
+          <p style={body}>{draft.rightOfReply}</p>
+        </div>
+      )}
+      {draft.methodology && (
+        <div>
+          <div style={heading}>Wie wir berichtet haben</div>
+          <p style={body}>{draft.methodology}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function AdminInvestigations() {
   const [token, setToken] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
@@ -55,6 +93,7 @@ export default function AdminInvestigations() {
   const [selectedDrafts, setSelectedDrafts] = useState([]);
   const [noteDraft, setNoteDraft] = useState({});
   const [queue, setQueue] = useState({ slug: '', toEmail: '', org: '', note: '' });
+  const [openDraft, setOpenDraft] = useState(null);
 
   useEffect(() => {
     let supabase;
@@ -247,6 +286,11 @@ export default function AdminInvestigations() {
                       <td style={{ ...cell, color: 'var(--ink-2)', maxWidth: '240px' }}>{i.next_step || '—'}</td>
                       <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{fmtTime(i.updated_at)}</td>
                       <td style={{ ...cell, whiteSpace: 'nowrap' }}>
+                        {i.draft && (
+                          <button style={btn} onClick={() => setOpenDraft(openDraft === i.slug ? null : i.slug)}>
+                            {openDraft === i.slug ? 'Text schliessen' : 'Text lesen'}
+                          </button>
+                        )}{' '}
                         {i.status === 'review' && (
                           <button style={btnPrimary} disabled={busy} onClick={() => act({ action: 'publish', slug: i.slug })}>
                             Freigeben
@@ -272,6 +316,9 @@ export default function AdminInvestigations() {
                   )}
                 </tbody>
               </table>
+              {openDraft && (
+                <DraftReader draft={(investigations.find((i) => i.slug === openDraft) || {}).draft} />
+              )}
             </div>
           </section>
 

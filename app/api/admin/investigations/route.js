@@ -46,12 +46,27 @@ function dossiersFromFiles() {
           next_step: d.nextStep || null,
           updated_at: d.updatedAt || d.createdAt || null,
           published_at: d.published?.at || null,
+          draft: d.draft || null,
         };
       })
       .sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
   } catch {
     return [];
   }
+}
+
+/**
+ * The draft is not in the database - it is the work product in the repository.
+ * An editor who approves a piece has to be able to read it first.
+ */
+function withDrafts(list) {
+  const files = dossiersFromFiles();
+  if (!files.length) return list;
+  const byslug = new Map(files.map((f) => [f.slug, f]));
+  return list.map((row) => {
+    const file = byslug.get(row.slug);
+    return file && file.draft ? { ...row, draft: file.draft } : row;
+  });
 }
 
 async function requireAdmin(request) {
@@ -88,7 +103,7 @@ export async function GET(request) {
       week: weekKey(),
       quota: usage,
       requests,
-      investigations,
+      investigations: withDrafts(investigations),
       outreach,
       messages,
     }, { headers: { 'Cache-Control': 'no-store' } });
