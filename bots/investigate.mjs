@@ -472,19 +472,28 @@ function memoryBlock(mem) {
 // desk's job either.
 const SWISS_CENTRE = /(schweiz|swiss|schweizer|switz|suisse|svizzera|eidgen[oö]ssisch|^ch$)/i;
 const SWISS_MARKER = /(schweiz|swiss|schweizer|switzerland|eidgen[oö]ssisch|admin\.ch|seco\b|finma|bazg|fedpol|bl\.ch|\bbund\b|basel|zurich|zürich|geneva|genf|lausanne|bern\b)/i;
-const BORDER_MARKER = /(international|cross-border|cross border|transnational|global|worldwide|treaty|convention|protocol|\bun\b|\beu\b|european union|european commission|european court|europol|eurojust|echr|council of europe|nato|\bwto\b|\bimf\b|world bank|interpol|fatf|iaea|\bicj\b|\bicc\b|opec|asean|brics|oecd|\bg7\b|\bg20\b|african union|undp|unicef|unhcr|world health organisation|world health organization|sanction|money laundering|offshore shell|smuggl|traffick|refugee|migrant|embargo|export licen)/i;
+// The cross-border words. Names of institutions count, the word "who" does
+// not — that one is in every sentence about people who lose something.
+const BORDER_MARKER = /(international|cross-border|cross border|transnational|global|worldwide|treaty|convention|protocol|\bun\b|\beu\b|european union|european commission|european court|europol|eurojust|echr|council of europe|nato|\bwto\b|\bimf\b|world bank|interpol|fatf|iaea|\bicj\b|\bicc\b|opec|asean|brics|oecd|\bg7\b|\bg20\b|african union|undp|unicef|unhcr|world health organisation|world health organization|united nations|world trade organization|world economic forum|international labour organization|refugee|migrant|embargo|export licen|sanction|money laundering|offshore shell|smuggl|traffick)/i;
+// Acronyms are matched case-sensitively on purpose: "WHO" is an institution,
+// "who" is a pronoun.
+const BORDER_ACRONYM = /\b(US|EU|UN|WHO|WTO|UNCTAD|UNEP|WIPO|ILO|OCHA|ITU|BIS|UNHCR|UNICEF|UNDP|IAEA|INTERPOL|OPEC|ASEAN|NATO|IMF|ICAO|IMO|UNODC|UNDRR|WFP|UNESCO|FATF|ECHR|ICC|ICJ|CDC|FDA|SEC|DOJ|OFAC|FIFA|UEFA|ICRC|UNIDO|UNEP|UNCTAD|ICAO|GPA|CITES|ITU|WHO)\b/;
+// A country that is not Switzerland. A story that names one of them is not a
+// story about Swiss domestic affairs, whatever else it mentions.
+const FOREIGN_MARKER = /(russia|russian|ukraine|ukrainian|belarus|china|chinese|taiwan|sudan|south sudan|syria|syrian|yemen|iran|iraq|gaza|israel|israeli|palestin|west bank|afghan|myanmar|burma|ethiopia|eritrea|somalia|kenya|uganda|tanzania|ghana|nigeria|south africa|zimbabwe|zambia|mozambique|angola|senegal|mali|sudan|sahel|libya|algeria|tunisia|egypt|morocco|saudi|qatar|pakistan|bangladesh|india|nepal|sri lanka|philippines|indonesia|vietnam|thailand|cambodia|laos|myanmar|mongolia|kazakhstan|uzbekistan|turkmenistan|azerbaijan|armenia|georgia|turkey|lebanon|jordan|iraq|bahrain|kuwait|yemen|brazil|mexico|argentina|chile|peru|colombia|venezuela|bolivia|ecuador|guatemala|honduras|nicaragua|haiti|jamaica|cuba|dominican|trinidad|morocco|mauritania|senegal|cameroon|congo|zimbabwe|nicaragua|romania|bulgaria|serbia|hungary|poland|ukraine|moldova|belarus|lithuania|latvia|estonia|finland|norway|denmark|netherlands|belgium|austria|ireland|portugal|spain|italy|greece|croatia|albania|cyprus|malta)\b/i;
 
 function internationalEnough(topic) {
   const centre = String(topic.centre || '').trim();
   if (!centre) return { ok: false, why: 'the topic names no centre' };
   if (SWISS_CENTRE.test(centre)) return { ok: false, why: `the centre is ${centre}` };
   const text = [topic.title, topic.angle, centre, topic.border, topic.people, ...(topic.queries || [])].join(' ');
-  if (SWISS_MARKER.test(text) && !BORDER_MARKER.test(text)) {
+  const crosses = BORDER_MARKER.test(text) || BORDER_ACRONYM.test(text) || FOREIGN_MARKER.test(text);
+  if (SWISS_MARKER.test(text) && !crosses) {
     return { ok: false, why: 'a Swiss story without a cross-border angle' };
   }
   // A story that stays inside one country is a thin one for this desk, but it
   // is not wrong — the desk flags it and keeps working.
-  return BORDER_MARKER.test(text) ? { ok: true } : { ok: true, thin: true };
+  return crosses ? { ok: true } : { ok: true, thin: true };
 }
 
 /** True when a story is about Swiss domestic affairs and nothing else. */
@@ -493,7 +502,7 @@ function swissOnly(topic) {
   const text = [topic.title, topic.angle, centre, ...(topic.queries || [])].join(' ');
   if (!SWISS_MARKER.test(text)) return false;
   if (centre && SWISS_CENTRE.test(centre)) return true;
-  return !BORDER_MARKER.test(text);
+  return !(BORDER_MARKER.test(text) || BORDER_ACRONYM.test(text) || FOREIGN_MARKER.test(text));
 }
 
 /** What a published piece still owes its readers: the questions it could not close. */
@@ -584,7 +593,20 @@ async function intake(dossiers, state) {
       if (!gate.ok) {
         log(`INTAKE  ✗ own topic rejected: ${gate.why} — ${topic.title}`);
       } else {
-        const dossier = newDossier({ ...topic, origin: 'desk', priority: 3 });
+        const dossier = newDossier({
+          ...topic,
+          origin: 'desk',
+          priority: 3,
+          // The frame the desk picked — what crosses the border, who carries
+          // the consequences — belongs in the brief, because that is what the
+          // research agent reads before it opens the first document.
+          brief: {
+            centre: topic.centre,
+            border: topic.border,
+            people: topic.people,
+            beat: topic.beat,
+          },
+        });
         if (!dossiers.some((d) => d.slug === dossier.slug)) {
           dossier.centre = topic.centre;
           dossier.beat = topic.beat;
