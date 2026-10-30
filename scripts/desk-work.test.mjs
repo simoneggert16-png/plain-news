@@ -757,7 +757,7 @@ function scanner(reply) {
     return line.slice(`const ${name} = `.length).replace(/;$/, '');
   };
   return new Function(
-    'chatJSON', 'cabinetFrontPage', 'log', 'nowISO', 'safe', 'deskMemory', 'memoryBlock',
+    'chatJSON', 'cabinetFrontPage', 'log', 'nowISO', 'safe', 'deskMemory', 'memoryBlock', 'deadlineLeft',
     `
     const SWISS_MARKER = ${marker('SWISS_MARKER')};
     const BORDER_MARKER = ${marker('BORDER_MARKER')};
@@ -781,6 +781,7 @@ function scanner(reply) {
     },
     () => ({ published: [], open: [], beats: [], followups: [], leads: [], finds: [] }),
     () => '',
+    () => 600_000,
   );
 }
 

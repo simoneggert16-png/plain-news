@@ -1613,6 +1613,12 @@ Return {"summary":"…","worth":false,"story":{"title":"","angle":"","people":""
 async function scanForLeads(state, dossiers) {
   const today = nowISO().slice(0, 10);
   if (state.lastScan === today) return 0;
+  // A scan that eats the shift leaves the story on the desk unworked. The
+  // notices will be there tomorrow.
+  if (deadlineLeft() < 180000) {
+    log('SCAN  not enough time left in this shift');
+    return 0;
+  }
 
   const items = await safe(() => cabinetFrontPage({ limit: 36 }), []);
   if (!items.length) {
