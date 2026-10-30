@@ -202,6 +202,57 @@ const radarFeeds = RADAR_QUERIES.map(([label, query]) => ({
 
 FEEDS.push(...radarFeeds);
 
+// The investigative desk reads the world, not one country's home page. These
+// are the desks it actually checks every run: global wires and broadcasters,
+// the papers that break procurement and court stories, and official primary
+// sources. Marked here rather than in the list above so the newsroom keeps
+// its own feed set untouched.
+const WORLD_DESK_URLS = new Set([
+  'https://feeds.bbci.co.uk/news/world/rss.xml',
+  'https://feeds.bbci.co.uk/news/business/rss.xml',
+  'https://feeds.bbci.co.uk/news/technology/rss.xml',
+  'https://feeds.npr.org/1004/rss.xml',
+  'https://rss.dw.com/rdf/rss-en-all',
+  'https://www.france24.com/en/rss',
+  'https://www.aljazeera.com/xml/rss/all.xml',
+  'https://news.un.org/feed/subscribe/en/news/all/rss.xml',
+  'https://www.theguardian.com/world/rss',
+  'https://www.theguardian.com/politics/rss',
+  'https://rss.nytimes.com/services/xml/rss/nyt/World.xml',
+  'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+  'https://www.politico.eu/feed/',
+  'https://www.lemonde.fr/en/rss/une.xml',
+  'https://feeds.elpais.com/mrss-s/pages/ep/site/english.elpais.com/portada',
+  'https://www.scmp.com/rss/91/feed',
+  'https://mg.co.za/feed/',
+  'https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf',
+  'https://kyivindependent.com/feed/',
+  'https://www.timesofisrael.com/feed/',
+  'https://asia.nikkei.com/rss/feed/nar',
+  'https://www.ecb.europa.eu/rss/press.html',
+  'https://www.federalreserve.gov/feeds/press_all.xml',
+  'https://www.who.int/rss-feeds/news-english.xml',
+  'https://www.iaea.org/feeds/topstories',
+  // The blind spots of a European wire: Asia, Africa, Latin America and the
+  // regionals that actually file from the places the big desks skip.
+  'https://www.cbc.ca/webfeed/rss/rss-world',
+  'https://www.abc.net.au/news/feed/51120/rss.xml',
+  'https://www.euronews.com/rss',
+  'https://www.japantimes.co.jp/feed/',
+  'https://en.yna.co.kr/RSS/news.xml',
+  'https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml',
+  'https://www.africanews.com/feed/rss',
+  'https://www.batimes.com.ar/feed',
+  'https://www.dawn.com/feeds/home',
+  'https://www.haaretz.com/srv/htz---all-articles/rss',
+]);
+
+for (const feed of FEEDS) {
+  if (WORLD_DESK_URLS.has(feed.url)) feed.market = 'world';
+}
+
+export const DESK_FEEDS = FEEDS.filter((f, i) => f.market === 'world' && FEEDS.findIndex((x) => x.url === f.url) === i);
+
 /** Feeds that are not news outlets themselves (aggregators) â€” for logging only. */
 export const FEED_STATS = {
   outlets: new Set(FEEDS.map((f) => f.outlet)).size,

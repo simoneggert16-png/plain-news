@@ -30,7 +30,7 @@ if (fs.existsSync('.env')) {
 
 import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
-import { FEEDS } from './sources.mjs';
+import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch } from './lib/search.mjs';
 import { openPage } from './lib/browse.mjs';
 import { runAgent } from './lib/agent.mjs';
@@ -104,9 +104,9 @@ async function safe(fn, fallback) {
 }
 
 // Google News refuses most datacenter requests, so the search feeds come back
-// nearly empty on GitHub runners. The home-market outlets are always read in
-// addition; they are the sources a Swiss investigation needs anyway.
-const HOME_FEEDS = FEEDS.filter((f) => f.market === 'ch');
+// nearly empty on GitHub runners. The desk's own watchlist of world outlets and
+// primary sources is always read in addition.
+const HOME_FEEDS = DESK_FEEDS;
 
 // ─────────────────────────── dossier storage ───────────────────────────
 function loadDossiers() {
@@ -187,8 +187,8 @@ function addSource(d, item, extra = {}) {
 const STOPWORDS = new Set(['this', 'that', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'were', 'deutsch', 'thema', 'einer', 'eines', 'einem', 'einen', 'diese', 'dieser', 'diesem', 'werden', 'wurde', 'wurden', 'nicht', 'auch', 'sowie', 'oder', 'aber', 'noch', 'nur', 'schon', 'sich', 'sind', 'dass', 'nach', 'ueber', 'über', 'beim', 'vom', 'zum', 'zur', 'durch', 'gegen', 'ohne', 'zwischen', 'immer', 'jeder', 'jede', 'jedes', 'keine', 'mehr', 'sowie']);
 
 function keywordsOf(d) {
-  // The brief comes first: it is where a Swiss desk names the German-language
-  // terms the primary sources actually use, so those must survive the cap.
+  // The brief comes first: it is where the editor names the exact terms the
+  // primary sources use, so those must survive the cap.
   const text = `${(d.brief?.hints || '')} ${d.brief?.topic || ''} ${d.brief?.region || ''} ${d.title} ${d.angle}`;
   const seeded = (Array.isArray(d.keywords) ? d.keywords : []).map((k) => String(k).toLowerCase());
   const set = new Set([
@@ -211,9 +211,11 @@ const DESK_RADAR = [
   ['public procurement', 'public tender irregularities contract award audit'],
   ['audit office', 'court of auditors report misuse of public funds'],
   ['subsidies', 'subsidy recipients lobby register transparency'],
-  ['Swiss procurement', 'öffentliche Beschaffung Vergabe Schweiz Rechnungsprüfung'],
-  ['Swiss subsidies', 'Subventionen Landwirtschaft Schweiz Bericht Kontrolle'],
   ['EU funds', 'EU funds fraud OLAF investigation report'],
+  ['UN agencies', 'United Nations agency procurement internal audit misuse'],
+  ['development finance', 'World Bank project complaint inspection panel'],
+  ['sanctions', 'sanctions enforcement evasion investigation'],
+  ['arms trade', 'arms export licence investigation'],
   ['lobbying', 'lobbying disclosure ministers meetings register'],
   ['courts', 'court ruling government secrecy documents access'],
 ];
@@ -232,7 +234,7 @@ async function intake(dossiers, state) {
     state.lastIntake = week;
     return;
   }
-  const openedThisWeek = dossiers.filter((d) => weekKey(new Date(d.createdAt)) === week).length;
+  const openedThisWeek = dossiers.filter((d) => weekKey(new Date(d.createdAt)) === week && !['archived', 'dropped'].includes(d.status)).length;
   let slots = Math.min(INVESTIGATION_QUOTAS.newPerWeek - openedThisWeek, INVESTIGATION_QUOTAS.maxActive - active.length);
   if (slots <= 0) {
     log(`INTAKE  ${openedThisWeek} dossier(s) opened this week (max ${INVESTIGATION_QUOTAS.newPerWeek})`);
@@ -291,7 +293,7 @@ async function pickRequests(requests, slots) {
     const { data, model } = await chatJSON('desk', [
       {
         role: 'system',
-        content: `You are the investigative editor of PLAIN., a small independent Swiss news site. You commission at most two investigations per week and you would rather open one than open a weak one. Return JSON only.`,
+        content: `You are the investigative editor of PLAIN., a small independent news site. The desk works internationally: prefer stories that cross borders or touch an international institution, and treat purely national affairs as a last resort. You commission at most two investigations per week and you would rather open one than open a weak one. Return JSON only.`,
       },
       {
         role: 'user',
@@ -307,7 +309,7 @@ A topic qualifies only if ALL of these hold:
 Reject speculation, conspiracy framing, "someone should look into X" without a specific institution or decision, and topics that are really opinion.
 
 Return exactly:
-{"picks":[{"id":"the id above","title":"working headline, max 90 characters, factual","angle":"one sentence: the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["4-6 search queries, English or German, each with the specific institution, programme or decision"]}]}
+{"picks":[{"id":"the id above","title":"working headline, max 90 characters, factual","angle":"one sentence: the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["4-6 search queries in the language of the primary sources, each with the specific institution, programme or decision"]}]}
 Return {"picks":[]} if nothing qualifies.`,
       },
     ], { temperature: 0.3, maxTokens: 2000 });
@@ -332,16 +334,23 @@ Return {"picks":[]} if nothing qualifies.`,
 async function deskTopic() {
   const weekNum = Number(weekKey().split('-W')[1]) || 1;
   const picks = [DESK_RADAR[weekNum % DESK_RADAR.length], DESK_RADAR[(weekNum + 3) % DESK_RADAR.length]];
-  const feeds = picks.map(([label, query]) => ({ outlet: `Radar: ${label}`, url: googleNews(query), kind: 'aggregator' }));
-  const { items } = await safe(() => fetchFeeds(feeds, { maxAgeHours: 24 * 10, perFeed: 20 }), { items: [] });
+  // The radar queries go through Google News, which is close to empty on CI
+  // runners. The desk's own wires are what a reporter actually reads, so they
+  // carry the topic hunt and the radar feeds only add to it.
+  const feeds = [
+    ...picks.map(([label, query]) => ({ outlet: `Radar: ${label}`, url: googleNews(query), kind: 'aggregator' })),
+    ...DESK_FEEDS,
+  ];
+  const { items } = await safe(() => fetchFeeds(feeds, { maxAgeHours: 24 * 3, perFeed: 20 }), { items: [] });
   if (!items.length) return null;
 
-  const heads = items.slice(0, 40).map((i) => `- ${i.outlet}: ${i.title}`).join('\n');
+  const newest = [...items].sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
+  const heads = newest.slice(0, 45).map((i) => `- ${i.outlet}: ${i.title}`).join('\n');
   try {
     const { data } = await chatJSON('desk', [
       {
         role: 'system',
-        content: `You are the investigative editor of PLAIN. You look at the news of the last ten days and ask which development deserves documents, data and questions rather than another report. Return JSON only.`,
+        content: `You are the investigative editor of PLAIN. You look at the news of the last ten days and ask which development deserves documents, data and questions rather than another report. The desk works internationally; a story that only concerns one country must carry a cross-border institution, a shared pattern or money that crosses a border. Return JSON only.`,
       },
       {
         role: 'user',
@@ -372,7 +381,7 @@ async function ensureQueries(d) {
     },
     {
       role: 'user',
-      content: `Investigation: ${d.title}\nQuestion: ${d.angle}\nReader brief: ${JSON.stringify(d.brief || {})}\n\nWrite 4-6 search queries (English or German) that would surface: official documents, audit reports, court rulings, procurement notices and reporting by independent outlets. Each query must name a specific institution, programme or decision.\n\nReturn {"queries":["…"]}`,
+      content: `Investigation: ${d.title}\nQuestion: ${d.angle}\nReader brief: ${JSON.stringify(d.brief || {})}\n\nWrite 4-6 search queries in the language of the primary sources (English, French, Spanish, German) that would surface: official documents, audit reports, court rulings, procurement notices and reporting by independent outlets. Each query must name a specific institution, programme or decision.\n\nReturn {"queries":["…"]}`,
     },
   ], { temperature: 0.4, maxTokens: 800 });
   d.queries = (Array.isArray(data.queries) ? data.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6);
@@ -387,6 +396,33 @@ async function researchAgent(d) {
   const cache = new Map();
   const startedSources = d.sources.length;
   const startedClaims = d.claims.length;
+
+  // Google and Bing answer CI runners with empty feeds most of the time. The
+  // desk's own watchlist — world broadcasters, wires and primary sources — is
+  // the corpus a reporter actually reads in the morning, so searching starts
+  // there and the aggregators are only the second opinion.
+  const wireRes = await safe(
+    () => fetchFeeds(DESK_FEEDS, { maxAgeHours: 24 * 7, perFeed: 20 }),
+    { items: [] },
+  );
+  const wire = (wireRes.items || []).filter((it) => it.url);
+  log(`WIRE  ${wire.length} headline(s) from ${DESK_FEEDS.length} desk feeds`);
+
+  const termsOf = (q) => String(q).toLowerCase()
+    .replace(/\bsite:\S+/gi, ' ')
+    .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length > 2 && !/^(the|and|for|with|from|about|und|der|die|das|von|fuer|mit|auf)$/i.test(w));
+  const wireMatches = (q, n = 8) => {
+    const terms = termsOf(q);
+    if (!terms.length) return [];
+    return wire
+      .map((it) => ({ it, score: terms.filter((t) => `${it.title} ${it.summary}`.toLowerCase().includes(t)).length }))
+      .filter((x) => x.score > 0)
+      .sort((a, b) => b.score - a.score || new Date(b.it.publishedAt || 0) - new Date(a.it.publishedAt || 0))
+      .slice(0, n)
+      .map((x) => x.it);
+  };
 
   const state = () =>
     [
@@ -404,7 +440,7 @@ async function researchAgent(d) {
     {
       name: 'search',
       args: '{"query": string}',
-      description: 'Search Google News and Bing News. Returns headlines with outlet, date and URL. Use short queries (2-4 words), in German for Swiss sources; "site:domain.ch" also works. A long English query usually returns nothing.',
+      description: 'Search the desk wire (world broadcasters, wires, official sources) plus Google and Bing News. Returns headlines with outlet, date and URL. Use short queries (2-4 words). "site:domain" works on the aggregators; a long English query usually returns nothing.',
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
@@ -412,27 +448,30 @@ async function researchAgent(d) {
         const hits = [];
         const collect = (list) => {
           for (const h of list) {
-            if (seen.has(h.url)) continue;
+            if (!h.url || seen.has(h.url)) continue;
             seen.add(h.url);
             hits.push(h);
           }
         };
-        collect(await webSearch(q, { limit: 12 }));
-        // The feeds are thin, not the topic: a shorter query without operators
-        // and with a German/Swiss angle finds what the long one misses.
+        const fromWire = wireMatches(q);
+        collect(fromWire);
+        collect(await webSearch(q, { limit: 12 }).catch(() => []));
+        // The aggregators are thin from CI, not the topic: retry with the bare
+        // words before telling the desk the story does not exist.
         if (hits.length < 3) {
-          const short = q.replace(/\bsite:\S+/gi, ' ').split(/\s+/).filter((w) => w.length > 2).slice(0, 4).join(' ').trim();
+          const short = termsOf(q).slice(0, 4).join(' ').trim();
           if (short && short.toLowerCase() !== q.toLowerCase()) {
             collect(await webSearch(short, { limit: 12 }).catch(() => []));
           }
         }
-        if (hits.length < 3) {
-          const words = q.replace(/\bsite:\S+/gi, ' ').split(/\s+/).filter((w) => w.length > 2 && !/^(the|and|for|with|from|about)$/i.test(w));
-          const german = [...words.slice(0, 3), 'Schweiz'].join(' ').trim();
-          if (german && !seen.size) collect(await webSearch(german, { limit: 10 }).catch(() => []));
-        }
+        // Never answer with an empty page: hand over the newest wire headlines
+        // so there is always something to open and follow.
+        if (hits.length < 3) collect(wire.slice(0, 10));
         const results = hits.slice(0, 12).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt, summary: h.summary }));
-        return results.length ? { query: q, results } : { query: q, results: [], note: 'no hits — try 2-3 German words without site:, e.g. "KI Verwaltung" or "Beschaffung Bundeskanzlei"' };
+        const wireN = fromWire.filter((w) => seen.has(w.url)).length;
+        return results.length
+          ? { query: q, results, ...(wireN ? { note: `${wireN} hit(s) come from the desk wire — open them and follow their links` } : {}) }
+          : { query: q, results: [], note: 'no hits — try 2-3 words, or a "site:" query for the institution\'s own portal' };
       },
     },
     {
@@ -445,11 +484,20 @@ async function researchAgent(d) {
         const page = await openPage(target, { maxChars: 7000 });
         if (page.error && !page.text) return { url: target, error: page.error };
         cache.set(target, page.text || '');
+        // What the desk read is part of the dossier's paper trail. Filing it
+        // here means a run cannot end with "I read a lot" and nothing on file.
+        addSource(d, { url: target, outlet: hostOf(target), title: page.title || target, publishedAt: null }, { kind: 'read' });
+        const src = d.sources.find((s) => s.url === target);
+        if (src && page.text && !src.text) {
+          src.text = page.text.slice(0, MAX_SOURCE_CHARS);
+          src.readAt = nowISO();
+        }
         return {
           url: target,
           title: page.title,
           text: page.text,
           links: (page.links || []).slice(0, 20),
+          sourceId: src?.id || null,
           ...(page.pdf ? { document: 'PDF — text extracted, cite page-level detail only as printed' } : {}),
         };
       },
@@ -476,7 +524,7 @@ async function researchAgent(d) {
     {
       name: 'save_claim',
       args: '{"text": string, "sources": ["S1"], "contested": boolean?}',
-      description: 'Record one verifiable finding that the cited sources directly support. One fact per claim: who, what, when, how much. Never a reading of motives.',
+      description: 'Record one verifiable finding that the cited sources directly support. One fact per claim: who, what, when, how much. Never a reading of motives. Source ids come from save_source or the sourceId that open returned.',
       run: async ({ text, sources, contested }) => {
         const value = String(text || '').trim().slice(0, 600);
         const ids = [...new Set((Array.isArray(sources) ? sources : []).map((s) => String(s).trim()).filter(Boolean))];
@@ -541,7 +589,7 @@ async function researchAgent(d) {
   const steps = Math.max(4, +(process.env.INVESTIGATE_AGENT_STEPS || 10));
   const { final, steps: log2 } = await runAgent({
     role: 'desk',
-    system: `You are the investigative desk of PLAIN., a Swiss news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. Your sources are mostly German; write your findings in English.`,
+    system: `You are the international investigative desk of PLAIN., an independent news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. Your beat is cross-border — Brussels, Washington, Geneva, Nairobi, Singapore — and a national story only matters if it connects to an institution, a programme or a pattern beyond one country. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. Write your findings in English.`,
     task: `INVESTIGATION: ${d.title}
 QUESTION: ${d.angle}
 DESK BRIEF: ${JSON.stringify(d.brief || {})}
@@ -553,9 +601,9 @@ ${state()}
 
 WHAT THIS RUN SHOULD ACHIEVE
 Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
-Priorities, in order: (1) find the primary documents — tender and award notices, audit reports (EFK), court rulings, parliamentary answers, official statistics; (2) file the sources you actually opened; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
-When the news feeds run dry, ask for the document itself with "site:" queries in the search tool — site:simap.ch (Vergaben), site:admin.ch, site:parlament.ch (Interpellationen, Curia Vista), site:efk.admin.ch (Prüfberichte), site:bger.ch and site:bvger.ch (Urteile). A tender notice or a ruling that you opened is worth more than ten articles about it.
-Before you finish: every page you rely on must be on file with save_source, and every fact you would print must be a claim with save_claim and the source id that carries it. A run that only searches has produced nothing.`,
+Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
+Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
+Before you finish: every page you rely on must be on file, and every fact you would print must be a claim with the id of the source that carries it. Opening a page files it — a run that only searches has produced nothing.`,
     tools,
     maxSteps: steps,
     deadline: Number.isFinite(deadlineLeft()) ? Date.now() + deadlineLeft() : 0,
@@ -611,7 +659,7 @@ async function classifyMessage(d, msg) {
   const { data } = await chatJSON('desk', [
     {
       role: 'system',
-      content: `You read replies to a Swiss investigative desk. You record only what the sender wrote — never what you assume they meant. A denial is a finding, not an obstacle. Return JSON only.`,
+      content: `You read replies to an investigative desk. You record only what the sender wrote — never what you assume they meant. A denial is a finding, not an obstacle. Return JSON only.`,
     },
     {
       role: 'user',
@@ -825,13 +873,11 @@ async function research(d) {
 
   const kw = keywordsOf(d);
   d.keywords = kw;
-  // One keyword is not a match: a German industry survey that mentions AI is
-  // not Swiss public administration. Two terms, or one term plus a Swiss state
-  // marker, before an item may enter the dossier.
-  const SWISS = /schweiz|schweizer|eidgen|bundes|kanton|verwaltung|admin\.ch|parlament\.ch|simap|edöb|fedpol|sem\b|bsv\b|estv\b/i;
+  // One keyword is not a match: a passing mention is not the story. Two terms,
+  // or one term on a document from an official body, before an item may enter.
   const relevant = items
     .map((it) => ({ it, hits: keywordHits(`${it.title} ${it.summary}`, kw) }))
-    .filter((x) => x.hits >= 2 || (x.hits >= 1 && SWISS.test(`${x.it.title} ${x.it.summary}`)))
+    .filter((x) => x.hits >= 2 || (x.hits >= 1 && isPrimaryOutlet(x.it.outlet)))
     .sort((a, b) => b.hits - a.hits)
     .map((x) => x.it);
 
@@ -1407,8 +1453,20 @@ async function main() {
   const dossiers = loadDossiers();
   const state = loadState();
 
+  // A retired dossier leaves the active set but stays in the admin desk; the
+  // status is mirrored once so the UI does not keep it on the working list.
+  for (const d of dossiers.filter((x) => x.status === 'archived' && x.mirroredStatus !== 'archived')) {
+    if (DRY_RUN) break;
+    await mirror(d);
+    d.mirroredStatus = 'archived';
+    saveDossier(d);
+  }
+
   // Diagnostic mode: only the agent, nothing else, so a test run ends fast.
   if (process.env.INVESTIGATE_ONLY === 'agent') {
+    // A forced intake still has to run first — with no active dossier there is
+    // nothing for the agent to work on.
+    if (!dossiers.some(isActive) && (process.env.INVESTIGATE_INTAKE === '1' || !state.lastIntake)) await intake(dossiers, state);
     const only = FORCE_SLUG ? dossiers.filter((d) => d.slug === FORCE_SLUG) : dossiers.filter(isActive).slice(0, 1);
     for (const d of only) {
       log(`\n▶ ${d.slug} [${d.status}] — agent only`);
