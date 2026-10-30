@@ -551,7 +551,7 @@ function memoryBlock(mem) {
 // does not belong here, and a story that only looks domestic is not the
 // desk's job either.
 const SWISS_CENTRE = /(schweiz|swiss|schweizer|switz|suisse|svizzera|eidgen[oö]ssisch|^ch$)/i;
-const SWISS_MARKER = /(schweiz|swiss|schweizer|switzerland|eidgen[oö]ssisch|admin\.ch|seco\b|finma|bazg|fedpol|bl\.ch|\bbund\b|basel|zurich|zürich|geneva|genf|lausanne|bern\b)/i;
+const SWISS_MARKER = /(schweiz|swiss|schweizer|schweizerische|switzerland|eidgen[oö]ssisch|eidgenoessisch|admin\.ch|seco\b|finma|bazg|fedpol|bl\.ch|\bbund\b|bundesrat|bundesverwaltung|kanton\w*|gemeinde\w*|landeskanzlei|suisse|svizzera|basel|zurich|zürich|geneva|genf|lausanne|bern\b)/i;
 // The cross-border words. Names of institutions count, the word "who" does
 // not — that one is in every sentence about people who lose something.
 const BORDER_MARKER = /(international|cross-border|cross border|transnational|global|worldwide|treaty|convention|protocol|\bun\b|\beu\b|european union|european commission|european court|europol|eurojust|echr|council of europe|nato|\bwto\b|\bimf\b|world bank|interpol|fatf|iaea|\bicj\b|\bicc\b|opec|asean|brics|oecd|\bg7\b|\bg20\b|african union|undp|unicef|unhcr|world health organisation|world health organization|united nations|world trade organization|world economic forum|international labour organization|refugee|migrant|embargo|export licen|sanction|money laundering|offshore shell|smuggl|traffick)/i;
@@ -583,6 +583,20 @@ function swissOnly(topic) {
   if (!SWISS_MARKER.test(text)) return false;
   if (centre && SWISS_CENTRE.test(centre)) return true;
   return !(BORDER_MARKER.test(text) || BORDER_ACRONYM.test(text) || FOREIGN_MARKER.test(text));
+}
+
+/**
+ * A letter the desk kept is not a story yet. It becomes one when the desk
+ * takes it on — and the desk works internationally, so a tip that is really
+ * about Swiss domestic affairs stays a tip.
+ */
+function leadInternational(lead) {
+  const text = [lead.title, lead.angle, lead.people, ...(lead.queries || [])].join(' ');
+  if (!text.trim()) return { ok: false, why: 'the tip says nothing' };
+  if (SWISS_MARKER.test(text) && !(BORDER_MARKER.test(text) || BORDER_ACRONYM.test(text) || FOREIGN_MARKER.test(text))) {
+    return { ok: false, why: 'a Swiss story without a cross-border angle' };
+  }
+  return { ok: true };
 }
 
 /** What a published piece still owes its readers: the questions it could not close. */
@@ -660,6 +674,38 @@ async function intake(dossiers, state) {
       await safe(() => setRequestStatus(request.id, 'selected', dossier.slug));
       log(`INTAKE  ✓ reader wish → ${dossier.slug}`);
       slots--;
+    }
+  }
+
+  if (slots > 0) {
+    // A letter the desk kept can become a story. The tip is the desk's own,
+    // and it goes into the same quota as every other investigation.
+    const tips = (Array.isArray(state.leads) ? state.leads : [])
+      .filter((l) => l?.worth && l.title && !l.opened && l.tried !== week);
+    const tip = tips[tips.length - 1];
+    if (tip) {
+      const gate = leadInternational(tip);
+      if (!gate.ok) {
+        tip.tried = week;
+        log(`INTAKE  ✗ own tip not taken on: ${gate.why} — ${tip.title}`);
+      } else {
+        const dossier = newDossier({
+          title: tip.title,
+          angle: tip.angle,
+          category: tip.category || 'world',
+          queries: tip.queries,
+          origin: 'desk',
+          priority: 2,
+          brief: { people: tip.people, tip: tip.summary },
+        });
+        if (!dossiers.some((d) => d.slug === dossier.slug)) {
+          dossiers.push(dossier);
+          tip.opened = dossier.slug;
+          tip.tried = week;
+          log(`INTAKE  ✓ own tip → ${dossier.slug} — ${tip.title}`);
+          slots--;
+        }
+      }
     }
   }
 

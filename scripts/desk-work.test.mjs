@@ -445,3 +445,97 @@ test('the desk’s mailbox is not a dossier', () => {
   assert.equal(rows.length, 1);
   assert.equal(rows[0].slug, 'a-story');
 });
+
+// ───────────────────── the editor frees a letter without the shelf ─────────────────────
+
+// When the shared shelf does not answer, the decision travels with the run.
+// The desk writes it into its own ledger, and the letter goes out from there.
+function applyDecision(approve, reject = '') {
+  const shelf = [];
+  const apply = new Function(
+    'APPROVE_LETTERS', 'REJECT_LETTERS', 'APPROVED_BY', 'safe', 'setOutreach', 'note', 'log', 'nowISO',
+    `const parseLetterDecision = ${take('parseLetterDecision')};
+     const ledger = ${take('ledger')};
+     const applyLetterDecision = ${take('applyLetterDecision')};
+     return applyLetterDecision;`,
+  )(
+    approve, reject, 'editor@example.org',
+    async (fn) => { try { return await fn(); } catch { return null; } },
+    async (ids, patch) => { shelf.push({ ids, patch }); },
+    (d, status, message) => { d.history = [...(d.history || []), { status, note: message }]; },
+    () => {},
+    () => new Date().toISOString(),
+  );
+  return { apply, shelf };
+}
+
+test('an approval that comes with the run frees the letter in the desk’s ledger', async () => {
+  const { apply, shelf } = applyDecision('a-story:L1');
+  const d = {
+    slug: 'a-story',
+    letters: [{ id: 'L1', dbId: null, to_email: 'press@example.org', status: 'draft' }],
+  };
+  await apply(d);
+  assert.equal(d.letters[0].status, 'approved');
+  assert.equal(d.letters[0].approved_by, 'editor@example.org');
+  assert.ok(d.letters[0].approved_at, 'the decision is dated');
+  assert.equal(shelf.length, 0, 'a letter the shelf does not know is not written to it');
+});
+
+test('a letter the shelf knows by its number is freed too', async () => {
+  const { apply, shelf } = applyDecision('a-story:42');
+  const d = {
+    slug: 'a-story',
+    letters: [{ id: 'L2', dbId: 42, to_email: 'office@example.org', status: 'draft' }],
+  };
+  await apply(d);
+  assert.equal(d.letters[0].status, 'approved');
+  assert.equal(shelf.length, 1, 'the shelf is told when it is reachable');
+  assert.equal(shelf[0].patch.status, 'approved');
+});
+
+test('a decision for one dossier leaves the others alone', async () => {
+  const { apply } = applyDecision('a-story:L1');
+  const d = {
+    slug: 'another-story',
+    letters: [{ id: 'L1', dbId: null, to_email: 'press@example.org', status: 'draft' }],
+  };
+  await apply(d);
+  assert.equal(d.letters[0].status, 'draft');
+});
+
+// ───────────────────── a letter the desk kept becomes a story ─────────────────────
+
+// The desk works internationally: a tip that is really about Swiss domestic
+// affairs stays a tip.
+function leadGate() {
+  const marker = (name) => {
+    const line = SOURCE.split('\n').find((l) => l.startsWith(`const ${name} = `));
+    return line.slice(`const ${name} = `.length).replace(/;$/, '');
+  };
+  return new Function(`
+    const SWISS_MARKER = ${marker('SWISS_MARKER')};
+    const BORDER_MARKER = ${marker('BORDER_MARKER')};
+    const BORDER_ACRONYM = ${marker('BORDER_ACRONYM')};
+    const FOREIGN_MARKER = ${marker('FOREIGN_MARKER')};
+    ${take('leadInternational')}
+    return leadInternational;
+  `)();
+}
+
+test('a tip about the world is the desk’s business', () => {
+  const gate = leadGate();
+  assert.equal(gate({ title: 'A mine in Congo takes the village’s farmland', angle: 'who paid for the concession', queries: ['congo mining concession land'] }).ok, true);
+});
+
+test('a tip about Swiss domestic affairs stays a tip', () => {
+  const gate = leadGate();
+  const r = gate({ title: 'Der Kanton verschiebt das Asylheim', angle: 'was kostet die Stadt', queries: ['kanton asylheim kosten'] });
+  assert.equal(r.ok, false);
+  assert.match(r.why, /Swiss/);
+});
+
+test('a Swiss story that crosses a border is the desk’s business', () => {
+  const gate = leadGate();
+  assert.equal(gate({ title: 'A Swiss bank moves money for a mining company', angle: 'international sanctions', queries: ['bank sanctions mining transfer'] }).ok, true);
+});

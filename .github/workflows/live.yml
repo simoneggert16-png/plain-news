@@ -132,6 +132,8 @@ jobs:
               git rebase --abort 2>/dev/null || true
             else
               git add content
+              # The desk's mailbox is private and this repository is public.
+              git reset -q -- content/investigations/inbox.json 2>/dev/null || true
               if git diff --cached --quiet; then
                 echo "No changes"
               else
