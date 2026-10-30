@@ -41,7 +41,7 @@ export default async function InvestigationsPage({ params }) {
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
   const pageUrl = `${SITE.url}/${locale}/investigations`;
 
-  const items = (await getIndex()).filter((a) => a.form === 'investigation').slice(0, 40);
+  const items = (await getIndex(locale)).filter((a) => a.form === 'investigation').slice(0, 40);
 
   const jsonLd = {
     '@context': 'https://schema.org',

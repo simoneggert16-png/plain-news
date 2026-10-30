@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { cookies } from 'next/headers';
 import { LOCALES, CATEGORIES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
-import { listFor, localize } from '@/lib/content.mjs';
+import { listFor, localize, getArticle } from '@/lib/content.mjs';
 import { rankArticles, storyScore, isElectionHeadline, sharesSubject } from '@/lib/storyRank.mjs';
 import { listLiveTickers } from '@/lib/liveStore.mjs';
 import { liveLocalize, liveUpdates, updateLocalize, clock } from '@/lib/live.mjs';
@@ -27,7 +27,7 @@ export default async function Home({ params }) {
 
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
-  const rawAll = await listFor();
+  const rawAll = await listFor({ locale });
   if (!rawAll.length) return <div className="empty">{t.empty}</div>;
 
   // Filter articles based on user preferences (server-side personalized)
@@ -111,7 +111,11 @@ export default async function Home({ params }) {
   brief.unshift(...electionPicks);
   // Long reads get their own band: they are the pieces we spent the day on.
   const longreads = rawAll.filter((a) => a.form === 'longform').slice(0, 3);
-  const L = localize(lead, locale);
+  // The list index carries what a card needs. The lead is the one story that
+  // also shows its bullet points and its picture caption, so that single
+  // article is fetched on top - 25 KB instead of a second full index.
+  const leadFull = await getArticle(lead.slug).catch(() => null);
+  const L = { ...localize(lead, locale), ...(leadFull ? localize(leadFull, locale) : {}) };
   const homeUrl = `${SITE.url}/${locale}`;
   const homeJsonLd = {
     '@context': 'https://schema.org',

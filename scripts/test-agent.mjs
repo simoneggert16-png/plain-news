@@ -30,6 +30,9 @@ const script = [
   { thought: 'again', action: 'lookup', args: { term: 'simap' } },
   { __mixed: true },
   { __bare: true },
+  { __noisy: true },
+  { __many: true },
+  { __array: true },
   { thought: 'try broken', action: 'boom', args: {} },
   { thought: 'nonsense', action: 'teleport', args: {} },
   { thought: 'done', final: 'two hits, one tool broken' },
@@ -47,6 +50,15 @@ const ask = async () => {
   }
   // A reply that is nothing but the arguments: only one tool takes "term".
   if (entry.__bare) return { data: { term: 'bare-call' } };
+  // The arguments plus a key the model invented on the side.
+  if (entry.__noisy) return { data: { term: 'noisy-call', limit: 5, reasoning: 'because' } };
+  // Several calls in one reply: the first one counts.
+  if (entry.__many) {
+    const text = '{"term":"first-of-many"}{"term":"second-of-many"}{"term":"third-of-many"}';
+    return { data: null, text };
+  }
+  // A reply that is a list of calls.
+  if (entry.__array) return { data: [{ action: 'lookup', args: { term: 'from-array' } }] };
   return { data: entry };
 };
 
@@ -55,21 +67,24 @@ const { final, steps, observations } = await runAgent({
   system: 'test',
   task: 'test the loop',
   tools,
-  maxSteps: 10,
+  maxSteps: 12,
   log: (l) => seen.push(l),
   ask,
 });
 
 const checks = {
   finished: final === 'two hits, one tool broken',
-  steps: steps.length === 8,
-  toolRan: calls.length === 4,
+  steps: steps.length === 11,
+  toolRan: calls.length === 7,
   recoveredCall: calls[2] === 'recovered',
   bareArgsCall: calls[3] === 'bare-call',
+  noisyArgsCall: calls[4] === 'noisy-call',
+  firstOfManyCall: calls[5] === 'first-of-many',
+  arrayCall: calls[6] === 'from-array',
   repeatGuard: observations.some((o) => /same arguments 3 times/.test(o)),
   toolError: observations.some((o) => /kaputt/.test(o)),
   unknownAction: observations.some((o) => /unknown action/.test(o)),
-  logged: seen.filter((l) => l.startsWith('AGENT')).length === 9,
+  logged: seen.filter((l) => l.startsWith('AGENT')).length === 12,
   rawOnBadStep: seen.some((l) => /reply had no usable action/.test(l)),
 };
 

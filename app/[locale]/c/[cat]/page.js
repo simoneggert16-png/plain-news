@@ -54,7 +54,7 @@ export default async function CategoryPage({ params }) {
   if (!isCategory(cat)) notFound();
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
-  const items = await listFor({ category: cat, limit: 60 });
+  const items = await listFor({ category: cat, limit: 60, locale });
   const isDe = locale === 'de';
   const pageUrl = `${SITE.url}/${locale}/c/${cat}`;
   const catName = t.cat[cat] || cat;

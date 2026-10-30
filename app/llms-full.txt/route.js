@@ -10,7 +10,7 @@ const MAX_ARTICLES = 500;
 // to the canonical, server-rendered article page. The page itself contains the
 // full article text, byline, publication date and linked primary sources.
 export async function GET() {
-  const articles = (await getIndex()).slice(0, MAX_ARTICLES);
+  const articles = (await getIndex('en')).slice(0, MAX_ARTICLES);
   const lines = [];
 
   lines.push(`# ${SITE.name} — full article index for AI agents`);

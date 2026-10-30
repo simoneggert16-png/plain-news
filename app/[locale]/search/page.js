@@ -37,7 +37,7 @@ export default async function SearchPage({ params, searchParams }) {
       ])
     : [[], { comments: [], submissions: [], chatMessages: [] }];
 
-  const results = await entriesForSlugs(slugs);
+  const results = await entriesForSlugs(slugs, locale);
   const totalUserMatches = userResults.comments.length + userResults.submissions.length + userResults.chatMessages.length;
 
   return (

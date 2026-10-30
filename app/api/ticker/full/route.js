@@ -40,7 +40,7 @@ export async function GET() {
   }
 
   const seenNorm = new Set();
-  const articles = await getIndex();
+  const articles = await getIndex('en');
   const cutoff = now - WINDOW_MS;
 
   // 1. World / politics / business / tech / science + sport + constructive news

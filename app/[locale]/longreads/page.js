@@ -42,7 +42,7 @@ export default async function LongreadsPage({ params }) {
 
   // Long reads are the pieces the newsroom gave room to. Everything else is a
   // report; this page is deliberately only the slow stuff.
-  const items = (await getIndex()).filter((a) => a.form === 'longform').slice(0, 60);
+  const items = (await getIndex(locale)).filter((a) => a.form === 'longform').slice(0, 60);
 
   const jsonLd = {
     '@context': 'https://schema.org',

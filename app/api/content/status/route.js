@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 // it see? Used to decide whether content/ can be dropped from deployments.
 export async function GET() {
   try {
-    const index = await getIndex();
+    const index = await getIndex('en');
     return NextResponse.json({
       source: contentSource,
       remoteConfigured: remoteReadEnabled,

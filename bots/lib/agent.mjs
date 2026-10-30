@@ -12,6 +12,13 @@ const OBSERVATION_CHARS = 3200;
 const REPEAT_LIMIT = 2;
 // One slow site must not eat the run: every tool call gets a hard deadline.
 const TOOL_TIMEOUT_MS = Number(process.env.AGENT_TOOL_TIMEOUT_MS || 90_000);
+// Keys a model adds when it explains itself. They say nothing about which
+// tool is meant, so they must not confuse the argument matching.
+const NOISE_KEYS = new Set([
+  'thought', 'reasoning', 'reason', 'why', 'explanation', 'note', 'notes',
+  'comment', 'comments', 'limit', 'maxresults', 'max_results', 'count',
+  'context', 'background', 'summary',
+]);
 
 function withTimeout(promise, ms, label) {
   let timer;
@@ -64,6 +71,42 @@ function firstCall(raw) {
         try {
           const obj = JSON.parse(raw.slice(start, j + 1));
           if (obj && typeof obj === 'object' && (obj.action || obj.tool || obj.tool_name || obj.final)) return obj;
+        } catch {}
+        break;
+      }
+    }
+    start++;
+  }
+  return null;
+}
+
+/**
+ * The first complete JSON object in the text, whatever it contains.
+ * A model that answers with several objects in a row means the first one.
+ */
+function firstObject(raw) {
+  if (!raw) return null;
+  let start = 0;
+  while ((start = raw.indexOf('{', start)) !== -1) {
+    let depth = 0;
+    let inStr = false;
+    let esc = false;
+    for (let j = start; j < raw.length; j++) {
+      const c = raw[j];
+      if (inStr) {
+        if (esc) esc = false;
+        else if (c === '\\') esc = true;
+        else if (c === '"') inStr = false;
+        continue;
+      }
+      if (c === '"') inStr = true;
+      else if (c === '{') depth++;
+      else if (c === '}') {
+        depth--;
+        if (depth) continue;
+        try {
+          const obj = JSON.parse(raw.slice(start, j + 1));
+          if (obj && typeof obj === 'object' && !Array.isArray(obj)) return obj;
         } catch {}
         break;
       }
@@ -132,9 +175,18 @@ ${PROTOCOL}`;
     }
 
     if (typeof data === 'string') data = { final: data };
-    if (data && typeof data === 'object' && !data.action && !data.tool && !data.tool_name && !data.final) {
-      const alt = firstCall(raw);
-      if (alt) data = alt;
+    // A model that answers with a list of calls means the first one.
+    if (Array.isArray(data)) data = data[0] || null;
+    // The reply did not parse into a call: take the first object in the text.
+    const usable = data && typeof data === 'object' && (data.action || data.tool || data.tool_name || data.final);
+    if (!usable) {
+      const call = firstCall(raw);
+      if (call) {
+        data = call;
+      } else {
+        const first = firstObject(raw);
+        if (first && (!data || typeof data !== 'object' || !Object.keys(data).length)) data = first;
+      }
     }
     if (data?.final && !data.action && !data.tool) {
       final = String(data.final).slice(0, 2000);
@@ -157,18 +209,25 @@ ${PROTOCOL}`;
     let name = String(data?.action || data?.tool || data?.tool_name || call.name || data?.name || '').trim();
     // Some models answer with the bare arguments, no action at all. If exactly
     // one tool takes exactly those arguments, that is the call.
-    if (!name && data && typeof data === 'object') {
-      const keys = Object.keys(data).filter((k) => k !== 'thought');
-      const match = tools.filter((t) => {
+    if (!name && data && typeof data === 'object' && !Array.isArray(data)) {
+      const keys = Object.keys(data).filter((k) => !NOISE_KEYS.has(k.toLowerCase()));
+      const scored = tools.map((t) => {
         // Tool arg specs are written for the model ("{url: string}"), not for
         // JSON.parse, so read the keys loosely.
         let spec = [];
         try { spec = Object.keys(JSON.parse(t.args || '{}')); } catch {
           spec = [...String(t.args || '').matchAll(/["']?([a-zA-Z_]\w*)["']?\s*:/g)].map((m) => m[1]);
         }
-        return keys.length > 0 && keys.every((k) => spec.includes(k));
-      });
-      if (match.length === 1) name = match[0].name;
+        return {
+          tool: t,
+          matched: spec.filter((k) => keys.includes(k)).length,
+          covered: keys.length > 0 && keys.every((k) => spec.includes(k)),
+        };
+      }).filter((x) => x.covered && x.matched > 0);
+      scored.sort((a, b) => b.matched - a.matched);
+      if (scored.length === 1 || (scored.length > 1 && scored[0].matched > scored[1].matched)) {
+        name = scored[0].tool.name;
+      }
     }
     const tool = byName.get(name);
     let rawArgs = data?.args ?? data?.arguments ?? data?.parameters ?? call.arguments ?? call.parameters ?? {};
@@ -176,10 +235,14 @@ ${PROTOCOL}`;
       try { rawArgs = JSON.parse(rawArgs); } catch { rawArgs = {}; }
     }
     let args = rawArgs && typeof rawArgs === 'object' ? { ...rawArgs } : {};
-    if (!Object.keys(args).length && data && typeof data === 'object') {
+    if (!Object.keys(args).length && data && typeof data === 'object' && !Array.isArray(data)) {
       // Some replies put the arguments next to the action: {"action":"open","url":"…"}
       const { thought, action, final, tool, tool_name, name, function: fn, ...rest } = data;
       args = rest;
+    }
+    // The explaining keys are not arguments.
+    for (const key of Object.keys(args)) {
+      if (NOISE_KEYS.has(key.toLowerCase())) delete args[key];
     }
     const thought = String(data?.thought || '').slice(0, 400);
     const key = `${name}:${JSON.stringify(args)}`;
@@ -218,4 +281,4 @@ ${PROTOCOL}`;
   return { final, steps, observations };
 }
 
-export const __test = { clip, toolDocs, PROTOCOL, firstCall };
+export const __test = { clip, toolDocs, PROTOCOL, firstCall, firstObject };

@@ -11,6 +11,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { LOCALES } from '../lib/config.mjs';
+import { buildListing, listingKey } from '../lib/listing.mjs';
+
 if (fs.existsSync('.env')) {
   for (const line of fs.readFileSync('.env', 'utf8').split('\n')) {
     const trimmed = line.trim();
@@ -118,6 +121,19 @@ async function writeMirror() {
     prefer: 'resolution=merge-duplicates,return=minimal',
   });
   console.log('index uploaded');
+
+  // One slim list index per language. The site reads only the language it
+  // renders, and only the fields a card shows - a tenth of the full index,
+  // which is what made every page wait for megabytes from the database.
+  for (const locale of LOCALES) {
+    const listing = buildListing(entries, locale.code);
+    await rest('content_blobs?on_conflict=key', {
+      method: 'POST',
+      body: [{ key: listingKey(locale.code), data: { articles: listing }, updated_at: new Date().toISOString() }],
+      prefer: 'resolution=merge-duplicates,return=minimal',
+    });
+    console.log(`list index ${locale.code}: ${listing.length} entries`);
+  }
 
   const batchSize = 25;
   for (let i = 0; i < articles.length; i += batchSize) {

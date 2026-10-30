@@ -74,7 +74,7 @@ export async function GET() {
   }
 
   const tickerItems = [];
-  const articles = await getIndex();
+  const articles = await getIndex('en');
   const cutoff = now - WINDOW_MS;
 
   // 1. World / politics / business / tech wire â€” the part that was missing.
