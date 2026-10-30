@@ -84,6 +84,19 @@ const EDITORIAL_EMAIL = process.env.INVESTIGATE_REPLY_TO || process.env.EDITORIA
 // The desk answers under its own threaded address, so a reply lands on the
 // right dossier instead of in the general editorial inbox.
 const deskAddress = (slug) => (process.env.DESK_EMAIL_DOMAIN ? `desk+${slug}@${process.env.DESK_EMAIL_DOMAIN}` : EDITORIAL_EMAIL);
+
+/**
+ * True when a mail is addressed to the desk. The desk may share a mailbox
+ * with the person who owns the paper, and only the desk's own mail is the
+ * desk's business.
+ */
+function addressedToDesk(address) {
+  const raw = String(address || '').toLowerCase();
+  if (!raw) return false;
+  const domain = String(process.env.DESK_EMAIL_DOMAIN || '').trim().toLowerCase();
+  if (domain && !raw.includes(`@${domain}`)) return false;
+  return /desk(\+[a-z0-9-]+)?@/.test(raw);
+}
 const ACTIVE_STATUSES = ['pitch', 'research', 'outreach', 'drafting', 'review', 'approved'];
 
 setDeadline(Date.now() + Math.max(10, +(process.env.INVESTIGATE_MINUTES || 50)) * 60000);
@@ -1208,8 +1221,17 @@ async function pollMailbox(dossiers, state) {
   }
 
   let filed = 0;
+  let skipped = 0;
   let lastUid = since;
   for (const msg of batch.messages || []) {
+    // The desk may share a mailbox with the person who owns the paper. It
+    // reads only what is addressed to the desk — everything else is not the
+    // desk's mail and never reaches the database.
+    if (!addressedToDesk(msg.to)) {
+      skipped += 1;
+      lastUid = Math.max(lastUid, msg.uid);
+      continue;
+    }
     const slug = slugFromAddress(msg.to);
     // Only a reply that belongs to a dossier on file can be filed against one.
     const known = slug && dossiers.some((d) => d.slug === slug) ? slug : null;
@@ -1234,6 +1256,7 @@ async function pollMailbox(dossiers, state) {
   }
 
   state.mailbox = { lastUid, at: nowISO() };
+  if (skipped) log(`INBOX  ${skipped} message(s) not addressed to the desk — left alone`);
   return filed;
 }
 
