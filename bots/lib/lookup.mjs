@@ -175,8 +175,7 @@ const CABINETS = [
  * Everything the filing cabinets hold for this question: primary documents
  * first, then the world archive, then background.
  */
-export async function filingCabinets(query, { limit = 14 } = {}) {
-  const jobs = [
+export async function filingCabinets(query, { limit = 14 } = {}) {  const jobs = [
     ...CABINETS.map(([name, fn, label]) =>
       fn(query)
         .then((hits) => ({ name, label, hits }))
@@ -201,3 +200,58 @@ export async function filingCabinets(query, { limit = 14 } = {}) {
   out.sort((a, b) => (b.primary ? 1 : 0) - (a.primary ? 1 : 0));
   return out.slice(0, limit);
 }
+
+// ─────────────────────── published press addresses ───────────────────────
+// A desk that wants an answer writes to the address the organisation itself
+// publishes. This reads that address off their own pages - it never guesses
+// one, and it never collects a pattern like info@ or press@ out of thin air.
+const CONTACT_PATHS = [
+  '/contact', '/contact-us', '/about/contact', '/about', '/press', '/press-room',
+  '/media', '/media-enquiries', '/newsroom', '/company/contact', '/impressum',
+  '/kontakt', '/en/contact', '/about-us/contact',
+];
+
+const JUNK_MAIL = /^(example|your|name|someone|firstname|lastname|user|test|hello|xxx|abc|foo|bar)@|\.(png|jpg|jpeg|gif|webp|svg|css|js)$/i;
+
+export async function publishedEmail(domain) {
+  const host = String(domain || '')
+    .trim()
+    .replace(/^https?:\/\//i, '')
+    .replace(/^www\./i, '')
+    .split('/')[0]
+    .trim();
+  if (!/^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i.test(host)) return null;
+
+  for (const path of CONTACT_PATHS) {
+    let html = '';
+    try {
+      const res = await fetch(`https://${host}${path}`, {
+        headers: { 'user-agent': UA, accept: 'text/html' },
+        redirect: 'follow',
+        signal: AbortSignal.timeout(9000),
+      });
+      if (!res.ok) continue;
+      const type = res.headers.get('content-type') || '';
+      if (!/text\/html/i.test(type)) continue;
+      html = await res.text();
+    } catch {
+      continue;
+    }
+    if (!html) continue;
+    const found = [
+      ...[...html.matchAll(/mailto:([^"'?>\s]+)/gi)].map((m) => m[1]),
+      ...[...html.matchAll(/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/g)].map((m) => m[1]),
+    ];
+    const emails = [...new Set(found.map((e) => e.trim().toLowerCase()))].filter(
+      (e) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e) && !JUNK_MAIL.test(e),
+    );
+    if (!emails.length) continue;
+    const pick =
+      emails.find((e) => e.endsWith(`@${host}`)) ||
+      emails.find((e) => /press|media|news|contact|info|office|editorial|desk|communications/i.test(e)) ||
+      emails[0];
+    return { email: pick, sourceUrl: `https://${host}${path}` };
+  }
+  return null;
+}
+

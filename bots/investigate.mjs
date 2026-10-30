@@ -32,7 +32,7 @@ import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch } from './lib/search.mjs';
-import { filingCabinets } from './lib/lookup.mjs';
+import { filingCabinets, publishedEmail } from './lib/lookup.mjs';
 import { openPage } from './lib/browse.mjs';
 import { runAgent } from './lib/agent.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
@@ -662,6 +662,20 @@ async function researchAgent(d) {
         return { added: true, total: d.contacts.length };
       },
     },
+    {
+      name: 'find_contact',
+      args: '{"domain": string}',
+      description: 'Read the press address an organisation publishes on its own website. Give the domain you saw in a URL (for example "trmlabs.com"); it reads the contact, press and media pages and answers with the address and the page it was read from. Nothing is guessed.',
+      run: async ({ domain }) => {
+        const host = String(domain || '').trim();
+        if (!host) return { error: 'no domain given' };
+        const found = await publishedEmail(host).catch(() => null);
+        if (!found) {
+          return { found: false, domain: host, note: 'no published address on their own pages — file the contact without one' };
+        }
+        return { found: true, ...found };
+      },
+    },
   ];
 
   const steps = Math.max(4, +(process.env.INVESTIGATE_AGENT_STEPS || 10));
@@ -680,6 +694,7 @@ ${state()}
 WHAT THIS RUN SHOULD ACHIEVE
 Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
 Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
+For every institution that must answer, call find_contact with its domain — the host of a URL you have already seen, for example "trmlabs.com" — and file what it returns with contact, together with the page the address came from. An institution without an address is still worth filing, but with one the desk can actually write to.
 Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
 If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: site:trmlabs.com, site:chainalysis.com, site:ic3.gov, site:justice.gov, site:ofac.treasury.gov, site:cert.europa.eu, site:enisa.europa.eu, site:un.org, site:ohchr.org, site:sanctions.io. If the story is about land, extraction or settlement, name the people who live there and what they lost.
 Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.
@@ -708,9 +723,38 @@ Every search also goes through the desk's filing cabinets: the US Justice Depart
 
   log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
 
+  await fillContactAddresses(d);
+
   if (added === 0 && claims === 0 && d.sources.length === 0) return false;
   if (['pitch'].includes(d.status) && d.sources.length >= 3) note(d, 'research', `${d.sources.length} sources`);
   return true;
+}
+
+/**
+ * An institution that must answer but has no address yet gets one, read off
+ * the pages of its own website — only if the dossier already holds a source
+ * from that domain, so the desk never writes to a stranger.
+ */
+async function fillContactAddresses(d) {
+  const hosts = [...new Set(d.sources.map((s) => hostOf(s.url)))].filter((h) => h && h !== 'unknown');
+  let filled = 0;
+  for (const contact of d.contacts || []) {
+    if (contact.email) continue;
+    const name = String(contact.org || '').toLowerCase();
+    for (const host of hosts) {
+      const label = host.split('.')[0];
+      if (!label || label.length < 4 || !name.includes(label)) continue;
+      const found = await publishedEmail(host).catch(() => null);
+      if (found) {
+        contact.email = found.email;
+        contact.emailSource = found.sourceUrl;
+        filled++;
+      }
+      break;
+    }
+  }
+  if (filled) log(`RESEARCH  ${filled} contact address(es) read from the organisations' own pages`);
+  return filled;
 }
 
 function hostOf(url) {
