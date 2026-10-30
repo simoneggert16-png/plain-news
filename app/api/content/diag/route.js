@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readRemoteListing, searchRemoteArticles } from '@/lib/contentRemote.mjs';
+import { readRemoteListing, searchRemoteArticles, rest } from '@/lib/contentRemote.mjs';
 import { getAllArticles } from '@/lib/content.mjs';
 
 export const dynamic = 'force-dynamic';
@@ -20,6 +20,9 @@ async function measure(name, fn) {
 
 export async function GET() {
   const results = await Promise.all([
+    // A cheap query: if this one hangs as well, the database is not answering
+    // at all and the payload size is beside the point.
+    measure('db_ping', () => rest('articles?select=slug&limit=1')),
     measure('mirror_listing', () => readRemoteListing('en')),
     measure('mirror_search', () => searchRemoteArticles('bitcoin', 10)),
     measure('local_archive', async () => (await getAllArticles()).length),
