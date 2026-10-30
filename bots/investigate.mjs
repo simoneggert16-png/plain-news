@@ -298,6 +298,28 @@ async function openPrimaryDoors(d, { maxDoors = 6, maxPerDoor = 2 } = {}) {
 const MONTHS = new Set(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']);
 // Words that belong to every story. They may not keep a source alive.
 const FILLER = new Set(['data', 'news', 'report', 'reports', 'story', 'stories', 'people', 'group', 'company', 'part', 'number', 'amount', 'value', 'source', 'sources', 'first', 'last', 'case', 'fact', 'facts', 'issue', 'issues', 'update', 'updates', 'information', 'details', 'detail', 'official', 'officials', 'latest', 'police', 'authorities']);
+// Nobody cites these. A link to an encyclopedia or a social network is not a
+// document, whatever the headline says. Matched on the host, not on the whole
+// URL: "x.com" as a substring also kills "vox.com" and "tax.com".
+const NOT_A_SOURCE_HOSTS = new Set([
+  'wikipedia.org', 'fandom.com', 'reddit.com', 'twitter.com', 'x.com',
+  'facebook.com', 'instagram.com', 'linkedin.com', 'medium.com',
+  'blogspot.com', 'wordpress.com', 'tiktok.com', 'quora.com', 'youtube.com',
+]);
+function notASource(source) {
+  const host = hostOf(source?.url);
+  if (!host || host === 'unknown') return false;
+  return [...NOT_A_SOURCE_HOSTS].some((bad) => host === bad || host.endsWith(`.${bad}`));
+}
+// The same document behind two tracking links is still one document.
+function urlKey(url) {
+  try {
+    const u = new URL(String(url || ''));
+    return `${u.hostname.toLowerCase().replace(/^www\./, '')}${u.pathname.replace(/\/+$/, '')}`;
+  } catch {
+    return String(url || '').trim().toLowerCase();
+  }
+}
 
 function pruneOffTopic(d) {
   const wordsOf = (s) =>
@@ -315,9 +337,22 @@ function pruneOffTopic(d) {
   const claimed = new Set((d.claims || []).flatMap((c) => c.sources || []));
   const keep = [];
   const dropped = [];
+  const seenUrls = new Set();
+  const seenTitles = new Set();
+  const reasons = new Map();
   for (const s of d.sources) {
     const words = wordsOf(s.title);
-    if (claimed.has(s.id) || terms.some((t) => words.has(t))) {
+    const junk = notASource(s);
+    // A second copy of a document that is already on file is not a second
+    // source.
+    const url = urlKey(s.url);
+    const title = String(s.title || '').trim().toLowerCase().replace(/\W+/g, ' ').trim();
+    const duplicate = (url && seenUrls.has(url)) || (title && seenTitles.has(title));
+    if (url) seenUrls.add(url);
+    if (title) seenTitles.add(title);
+    const onTopic = claimed.has(s.id) || terms.some((t) => words.has(t));
+    reasons.set(s, junk ? 'not a source' : duplicate ? 'duplicate' : onTopic ? '' : 'off topic');
+    if (!junk && !duplicate && onTopic) {
       keep.push(s);
       continue;
     }
@@ -337,7 +372,11 @@ function pruneOffTopic(d) {
     c.sources = c.sources.map((id) => idMap.get(id) || id);
   }
   d.sources = keep;
-  log(`PRUNE  ${dropped.length} off-topic source(s) dropped: ${dropped.map((s) => s.outlet).join(', ')}`);
+  log(
+    `PRUNE  ${dropped.length} source(s) dropped: ${dropped
+      .map((s) => `${s.outlet || hostOf(s.url)} (${reasons.get(s)})`)
+      .join(', ')}`
+  );
   return dropped.length;
 }
 
@@ -735,8 +774,13 @@ async function researchAgent(d) {
         const norm = value.toLowerCase().replace(/\W+/g, ' ').trim();
         const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm);
         if (dup) return { duplicate: dup.id };
+        // The next free number, not the length plus one: a dossier that ever
+        // loses a claim would otherwise hand out an id that is already taken.
+        const used = new Set(d.claims.map((c) => c.id));
+        let number = 1;
+        while (used.has(`C${number}`)) number++;
         const claim = {
-          id: `C${d.claims.length + 1}`,
+          id: `C${number}`,
           text: value,
           sources: valid,
           status: contested ? 'contested' : 'verified',
@@ -847,6 +891,10 @@ ${doorsAdded ? `The desk has already been to the institutions before you started
   }
 
   log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
+
+  // The agent works with a wide net and brings home the neighbours too. The
+  // second sweep is what keeps the dossier readable.
+  pruneOffTopic(d);
 
   await fillContactAddresses(d);
 
@@ -1805,16 +1853,19 @@ async function main() {
       } else {
         // Mail first: a reply from an authority is evidence, and it can change
         // what the agent should look for next.
-        await readInbox(d);
+        await readInbox(d).catch((err) => log(`INBOX  unreachable: ${err.message}`));
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
         }
         log(`CHECK   ${d.claims.length} claim(s), ${d.sources.length} source(s) before reading back`);
         await factcheck(d);
-        await queueOutreach(d);
-        await draftOutreach(d);
-        await sendApproved(d);
-        const fresh = await outreachRows(d.slug);
+        // A dead database must not take the shift with it. The requests are
+        // prepared for the editor either way; the draft is the work product
+        // and it does not need a single row in a table.
+        await queueOutreach(d).catch((err) => log(`OUTREACH  queue failed: ${err.message}`));
+        await draftOutreach(d).catch((err) => log(`OUTREACH  drafting failed: ${err.message}`));
+        await sendApproved(d).catch((err) => log(`OUTREACH  sending failed: ${err.message}`));
+        const fresh = await outreachRows(d.slug).catch(() => []);
         await maybeWrite(d, fresh);
       }
       await mirror(d);
