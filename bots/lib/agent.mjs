@@ -174,7 +174,11 @@ ${PROTOCOL}`;
       break;
     }
 
-    if (typeof data === 'string') data = { final: data };
+    if (typeof data === 'string') {
+      // A reply that is nothing but a link means "open this", not "that is
+      // the answer".
+      data = /^https?:\/\/\S+$/i.test(data.trim()) ? { url: data.trim() } : { final: data };
+    }
     // A model that answers with a list of calls means the first one.
     if (Array.isArray(data)) data = data[0] || null;
     // The reply did not parse into a call: take the first object in the text.
@@ -227,6 +231,16 @@ ${PROTOCOL}`;
       scored.sort((a, b) => b.matched - a.matched);
       if (scored.length === 1 || (scored.length > 1 && scored[0].matched > scored[1].matched)) {
         name = scored[0].tool.name;
+      }
+    }
+    // A model that replies with a link under an unexpected key still means
+    // "open this".
+    if (!name && data && typeof data === 'object' && !Array.isArray(data)) {
+      const link = Object.values(data).find((v) => typeof v === 'string' && /^https?:\/\/\S+$/i.test(v.trim()));
+      const opener = link && tools.find((t) => /["']?url["']?\s*:/.test(String(t.args || '')));
+      if (opener) {
+        name = opener.name;
+        data = { ...data, url: link.trim() };
       }
     }
     const tool = byName.get(name);

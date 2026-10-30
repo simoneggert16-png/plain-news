@@ -31,7 +31,8 @@ if (fs.existsSync('.env')) {
 import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
-import { googleNews, bingNews, webSearch } from './lib/search.mjs';
+import { googleNews, bingNews, webSearch, wideSearch } from './lib/search.mjs';
+import { filingCabinets } from './lib/lookup.mjs';
 import { openPage } from './lib/browse.mjs';
 import { runAgent } from './lib/agent.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
@@ -101,6 +102,15 @@ async function safe(fn, fallback) {
     log(`  ! ${err.message}`);
     return fallback;
   }
+}
+
+// A stalled call must not eat the shift. The promise keeps running in the
+// background; the desk simply moves on.
+function withDeadline(promise, ms, label) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`${label} did not answer within ${Math.round(ms / 1000)}s`)), ms)),
+  ]);
 }
 
 // Google News refuses most datacenter requests, so the search feeds come back
@@ -176,7 +186,9 @@ function addSource(d, item, extra = {}) {
     outlet: item.outlet || 'unknown',
     title: String(item.title || '').slice(0, 300),
     publishedAt: item.publishedAt || null,
-    primary: Boolean(isPrimaryOutlet(item.outlet)) || /(^|\.)(gov|admin|int)(\.|$)|europa\.eu|parlament|bundesgericht|court/i.test(url),
+    // The filing cabinets know what they are; the feed path has to guess from
+    // the address.
+    primary: item.primary != null ? Boolean(item.primary) : Boolean(isPrimaryOutlet(item.outlet)) || /(^|\.)(gov|admin|int)(\.|$)|europa\.eu|parlament|bundesgericht|court|un\.org/i.test(url),
     kind: extra.kind || 'news',
     addedAt: nowISO(),
     text: null,
@@ -204,6 +216,19 @@ function keywordsOf(d) {
 function keywordHits(text, keywords) {
   const t = String(text).toLowerCase();
   return keywords.reduce((n, k) => (k && t.includes(k.toLowerCase()) ? n + 1 : n), 0);
+}
+
+// Words that describe any story at all. They may never carry a source on
+// their own, or every hack in the world matches this investigation.
+const GENERIC = new Set(['attack', 'attacks', 'breach', 'hack', 'hacks', 'hacked', 'hacker', 'theft', 'stolen', 'money', 'police', 'report', 'reports', 'reported', 'news', 'story', 'article', 'update', 'latest', 'first', 'last', 'year', 'years', 'said', 'says', 'told', 'after', 'before', 'people', 'group', 'case', 'file', 'files', 'work', 'works', 'world', 'official', 'officials', 'search', 'data', 'part', 'partners', 'investigation', 'investigations', 'business', 'company', 'companies']);
+
+function coreTermsOf(d) {
+  const text = `${d.title} ${d.angle} ${d.brief?.topic || ''}`;
+  const words = text.toLowerCase()
+    .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length >= 4 && !STOPWORDS.has(w) && !GENERIC.has(w));
+  return [...new Set(words)].slice(0, 12);
 }
 
 // ─────────────────────────── 1. INTAKE ───────────────────────────
@@ -424,13 +449,22 @@ async function researchAgent(d) {
     .replace(/\bsite:\S+/gi, ' ')
     .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
     .split(/\s+/)
-    .filter((w) => w.length > 2 && !/^(the|and|for|with|from|about|und|der|die|das|von|fuer|mit|auf)$/i.test(w));
+    // A year matches every headline of that year - it is no evidence at all.
+    .filter((w) => w.length > 2 && !/^\d+$/.test(w) && !/^(the|and|for|with|from|about|und|der|die|das|von|fuer|mit|auf)$/i.test(w));
   const wireMatches = (q, n = 8) => {
     const terms = termsOf(q);
     if (!terms.length) return [];
+    // One shared word is not a match. Two terms, or one distinctive one
+    // ("bitget", "lazarus"), before a headline may enter.
+    const distinctive = terms.filter((t) => t.length >= 6);
     return wire
-      .map((it) => ({ it, score: terms.filter((t) => `${it.title} ${it.summary}`.toLowerCase().includes(t)).length }))
-      .filter((x) => x.score > 0)
+      .map((it) => {
+        const text = `${it.title} ${it.summary}`.toLowerCase();
+        const hits = terms.filter((t) => text.includes(t));
+        const strong = hits.some((t) => distinctive.includes(t));
+        return { it, score: hits.length, strong };
+      })
+      .filter((x) => x.score >= 2 || x.strong)
       .sort((a, b) => b.score - a.score || new Date(b.it.publishedAt || 0) - new Date(a.it.publishedAt || 0))
       .slice(0, n)
       .map((x) => x.it);
@@ -452,7 +486,7 @@ async function researchAgent(d) {
     {
       name: 'search',
       args: '{"query": string}',
-      description: 'Search the desk wire (world broadcasters, wires, official sources) plus Google and Bing News. The first two hits are opened and filed automatically; their text comes back in "opened" with a source id. Read that text and record the claims it supports.',
+      description: 'Search the desk wire (world broadcasters, wires, official sources), the filing cabinets (US Justice Department, UN newsroom, World Bank procurement) and the wide web. The first two hits are opened and filed automatically; their text comes back in "opened" with a source id. Read that text and record the claims it supports.',
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
@@ -470,27 +504,33 @@ async function researchAgent(d) {
         // The aggregators are thin from CI, not the topic, so the bare-words
         // query goes out in parallel instead of after a 25-second timeout.
         const short = termsOf(q).slice(0, 4).join(' ').trim();
-        const [primary, bare] = await Promise.all([
+        const [primary, bare, cabinets, wide] = await Promise.all([
           webSearch(q, { limit: 12 }).catch(() => []),
           short && short.toLowerCase() !== q.toLowerCase()
             ? webSearch(short, { limit: 12 }).catch(() => [])
             : Promise.resolve([]),
+          filingCabinets(q, { limit: 10 }).catch(() => []),
+          wideSearch(q, { limit: 10 }).catch(() => []),
         ]);
+        collect(cabinets);
         collect(primary);
+        collect(wide);
         if (hits.length < 3) collect(bare);
         // Never answer with an empty page: hand over the newest wire headlines
         // so there is always something to open and follow.
         if (hits.length < 3) collect(wire.slice(0, 10));
 
-        // The desk reads what it finds. The first two hits are opened and
-        // filed right here — otherwise a run ends with "I searched" and an
-        // empty dossier, which is exactly what happened with weak models.
-        const auto = hits.slice(0, 2).filter((h) => autoOpenBudget > 0 && !d.sources.some((s) => s.url === h.url));
+        // The desk reads what it finds. Documents come first — a story needs
+        // the papers, not only the headlines — and the first two hits are
+        // opened and filed right here, because a run that only searches ends
+        // with an empty dossier.
+        const order = [...hits.filter((h) => h.primary), ...hits.filter((h) => !h.primary)];
+        const auto = order.slice(0, 2).filter((h) => autoOpenBudget > 0 && !d.sources.some((s) => s.url === h.url));
         autoOpenBudget -= auto.length;
         const opened = (await Promise.all(auto.map(async (h) => {
           const page = await openPage(h.url, { maxChars: 4000 }).catch(() => null);
           if (!page?.text) return null;
-          addSource(d, { url: h.url, outlet: h.outlet || hostOf(h.url), title: page.title || h.title, publishedAt: h.publishedAt || null }, { kind: 'read' });
+          addSource(d, { url: h.url, outlet: h.outlet || hostOf(h.url), title: page.title || h.title, publishedAt: h.publishedAt || null, primary: h.primary }, { kind: h.kind === 'document' ? 'document' : 'read' });
           const src = d.sources.find((s) => s.url === h.url);
           if (src && !src.text) {
             src.text = page.text.slice(0, MAX_SOURCE_CHARS);
@@ -499,13 +539,15 @@ async function researchAgent(d) {
           return { outlet: h.outlet || hostOf(h.url), url: h.url, sourceId: src?.id || null, title: page.title || h.title, text: page.text.slice(0, 900) };
         }))).filter(Boolean);
 
-        const results = hits.slice(0, 10).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt }));
+        const results = order.slice(0, 10).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt, kind: h.kind || 'news', primary: !!h.primary }));
         const wireN = fromWire.filter((w) => seen.has(w.url)).length;
+        const docsN = results.filter((r) => r.primary).length;
         return {
           query: q,
           opened,
           results,
           ...(wireN ? { note: `${wireN} hit(s) come from the desk wire; the first two are on file — record what their text proves` } : {}),
+          ...(docsN ? { note: `${docsN} primary document(s) on file — open the rest and quote what they say` } : {}),
           ...(results.length ? {} : { note: 'no hits — try 2-3 words, or a "site:" query for the institution\'s own portal' }),
         };
       },
@@ -640,7 +682,8 @@ Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_P
 Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
 Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
 If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: site:trmlabs.com, site:chainalysis.com, site:ic3.gov, site:justice.gov, site:ofac.treasury.gov, site:cert.europa.eu, site:enisa.europa.eu, site:un.org, site:ohchr.org, site:sanctions.io. If the story is about land, extraction or settlement, name the people who live there and what they lost.
-Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.`,
+Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.
+Every search also goes through the desk's filing cabinets: the US Justice Department's press releases, the UN newsroom, the World Bank's procurement notices and the world archive. Results marked "primary" are documents — open them, they are what makes the story publishable. The wide web is searched too, but it is the least reliable of the four; when it returns nothing, name the institution and search its own portal instead.`,
 
     tools,
     maxSteps: steps,
@@ -749,7 +792,7 @@ const replySubject = (subject) => {
 async function readInbox(d) {
   let messages = [];
   try {
-    messages = await listMessages({ slug: d.slug, status: 'new', limit: 5 });
+    messages = await withDeadline(listMessages({ slug: d.slug, status: 'new', limit: 5 }), 12_000, 'the desk mailbox');
   } catch (err) {
     log(`INBOX  ${d.slug}: ${err.message}`);
     return 0;
@@ -923,9 +966,11 @@ async function research(d) {
   d.keywords = kw;
   // One keyword is not a match: a passing mention is not the story. Two terms,
   // or one term on a document from an official body, before an item may enter.
+  // And it has to carry a word from this story's own title.
+  const core = coreTermsOf(d);
   const relevant = items
-    .map((it) => ({ it, hits: keywordHits(`${it.title} ${it.summary}`, kw) }))
-    .filter((x) => x.hits >= 2 || (x.hits >= 1 && isPrimaryOutlet(x.it.outlet)))
+    .map((it) => ({ it, hits: keywordHits(`${it.title} ${it.summary}`, kw), core: keywordHits(`${it.title} ${it.summary}`, core) }))
+    .filter((x) => x.core >= 1 && (x.hits >= 2 || (x.hits >= 1 && isPrimaryOutlet(x.it.outlet))))
     .sort((a, b) => b.hits - a.hits)
     .map((x) => x.it);
 

@@ -48,12 +48,12 @@ const headers = (key) => ({
   'Content-Type': 'application/json',
 });
 
-async function rest(pathAndQuery, { key = serviceKey, method = 'GET', body, prefer } = {}) {
+async function rest(pathAndQuery, { key = serviceKey, method = 'GET', body, prefer, timeoutMs = 30000 } = {}) {
   const res = await fetch(`${url}/rest/v1/${pathAndQuery}`, {
     method,
     headers: { ...headers(key), ...(prefer ? { Prefer: prefer } : {}) },
     body: body === undefined ? undefined : JSON.stringify(body),
-    signal: AbortSignal.timeout(30000),
+    signal: AbortSignal.timeout(timeoutMs),
   });
   if (!res.ok) throw new Error(`${method} ${pathAndQuery} -> ${res.status} ${(await res.text()).slice(0, 400)}`);
   // Upserts with `return=minimal` answer 201 with an empty body - res.json()
@@ -115,27 +115,39 @@ if (verifyOnly) {
 // Set exitCode instead of calling process.exit(): exiting while the undici
 // connections are still closing has crashed Node 24 on Windows (libuv assert).
 async function writeMirror() {
-  await rest('content_blobs?on_conflict=key', {
-    method: 'POST',
-    body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
-    prefer: 'resolution=merge-duplicates,return=minimal',
-  });
-  console.log('index uploaded');
-
-  // One slim list index per language. The site reads only the language it
-  // renders, and only the fields a card shows - a tenth of the full index,
-  // which is what made every page wait for megabytes from the database.
+  // The slim list indexes come first. They are small, they are what the
+  // pages actually read, and a slow upload of the full index must never keep
+  // the site waiting for megabytes.
   for (const locale of LOCALES) {
     const listing = buildListing(entries, locale.code);
+    try {
+      await rest('content_blobs?on_conflict=key', {
+        method: 'POST',
+        body: [{ key: listingKey(locale.code), data: { articles: listing }, updated_at: new Date().toISOString() }],
+        prefer: 'resolution=merge-duplicates,return=minimal',
+        timeoutMs: 60000,
+      });
+      console.log(`list index ${locale.code}: ${listing.length} entries`);
+    } catch (err) {
+      console.error(`list index ${locale.code} failed: ${err.message}`);
+    }
+  }
+
+  // The full index is five megabytes. It needs a patient timeout.
+  try {
     await rest('content_blobs?on_conflict=key', {
       method: 'POST',
-      body: [{ key: listingKey(locale.code), data: { articles: listing }, updated_at: new Date().toISOString() }],
+      body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
       prefer: 'resolution=merge-duplicates,return=minimal',
+      timeoutMs: 240000,
     });
-    console.log(`list index ${locale.code}: ${listing.length} entries`);
+    console.log('index uploaded');
+  } catch (err) {
+    console.error(`index upload failed: ${err.message}`);
   }
 
   const batchSize = 25;
+  let failed = 0;
   for (let i = 0; i < articles.length; i += batchSize) {
     const batch = articles.slice(i, i + batchSize).map((article) => ({
       slug: article.slug,
@@ -143,14 +155,22 @@ async function writeMirror() {
       updated_at: new Date().toISOString(),
       data: article,
     }));
-    await rest('articles?on_conflict=slug', {
-      method: 'POST',
-      body: batch,
-      prefer: 'resolution=merge-duplicates,return=minimal',
-    });
+    try {
+      await rest('articles?on_conflict=slug', {
+        method: 'POST',
+        body: batch,
+        prefer: 'resolution=merge-duplicates,return=minimal',
+        timeoutMs: 90000,
+      });
+    } catch (err) {
+      // One bad batch must not cost the whole mirror.
+      failed++;
+      console.error(`\narticles ${i}-${i + batch.length} failed: ${err.message}`);
+    }
     process.stdout.write(`\rarticles: ${Math.min(i + batchSize, articles.length)}/${articles.length}`);
   }
   process.stdout.write('\n');
+  if (failed) console.error(`${failed} batch(es) failed`);
 
   const ok = await verify(entries.length, articles.length);
   process.exitCode = ok ? 0 : 2;
