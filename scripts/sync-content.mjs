@@ -37,6 +37,13 @@ const DEADLINE_MS = Number(process.env.SYNC_DEADLINE_MS || 8 * 60 * 1000);
 const startedAt = Date.now();
 const outOfTime = () => Date.now() - startedAt > DEADLINE_MS;
 
+// The head of the list index: the newest stories, small enough to land in one
+// statement.
+const HEAD_ENTRIES = Number(process.env.SYNC_HEAD_ENTRIES || 150);
+// The full list index goes to the database in pieces - one statement with a
+// thousand entries ran into the statement timeout of the server.
+const LISTING_CHUNK = Number(process.env.SYNC_LISTING_CHUNK || 250);
+
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 const ARTICLES_DIR = path.join(CONTENT_DIR, 'articles');
 const INDEX_FILE = path.join(CONTENT_DIR, 'index.json');
@@ -86,9 +93,12 @@ async function verify(localIndexCount, localArticleCount) {
   const indexRows = await rest('content_blobs?key=eq.index&select=data', { key: readKey });
   const remoteIndexCount = indexRows?.[0]?.data?.articles?.length || 0;
   const remoteArticles = await countRows('articles');
+  const headRows = await rest('content_blobs?key=eq.index-lite-en&select=data', { key: readKey });
+  const remoteHead = headRows?.[0]?.data?.articles?.length || 0;
   console.log(`local : index ${localIndexCount} entries, ${localArticleCount} readable article files`);
-  console.log(`remote: index ${remoteIndexCount} entries, ${remoteArticles} article rows`);
-  const ok = remoteIndexCount === localIndexCount && remoteArticles >= localArticleCount;
+  console.log(`remote: index ${remoteIndexCount} entries, ${remoteArticles} article rows, ${remoteHead} in the list head`);
+  // The full index row is gone on purpose - the pages read the list indexes.
+  const ok = remoteArticles >= localArticleCount && remoteHead > 0;
   console.log(ok ? 'OK – mirror is complete.' : 'MISMATCH – re-run the sync.');
   return ok;
 }
@@ -132,30 +142,32 @@ async function writeMirror() {
   const known = await readHashes();
   const nextArticles = { ...(known?.articles || {}) };
   const nextListings = { ...(known?.listings || {}) };
+  const nextHeads = { ...(known?.heads || {}) };
   // The index is only "current" once it really landed in the database. A
   // failed upload has to be tried again in the next run.
   let indexSum = known?.index || null;
 
-  // The slim list indexes come first. They are small, they are what the
-  // pages actually read, and a slow upload of the full index must never keep
-  // the site waiting for megabytes.
+  // The head of the list index is what the pages show first. It goes in as a
+  // small row: a statement with a thousand entries ran into the server's
+  // statement timeout and left the table locked for the whole run - the
+  // front page then showed stories from hours ago.
   for (const locale of LOCALES) {
-    const listing = buildListing(entries, locale.code);
-    const sum = hash(JSON.stringify(listing));
-    const unchanged = known && known.listings?.[locale.code] === sum;
-    nextListings[locale.code] = sum;
-    if (unchanged) continue;
+    const head = buildListing(entries, locale.code).slice(0, HEAD_ENTRIES);
+    const headSum = hash(JSON.stringify(head));
+    if (known?.heads?.[locale.code] === headSum) {
+      nextHeads[locale.code] = headSum;
+      continue;
+    }
     try {
       await rest('content_blobs?on_conflict=key', {
         method: 'POST',
-        body: [{ key: listingKey(locale.code), data: { articles: listing }, updated_at: new Date().toISOString() }],
+        body: [{ key: listingKey(locale.code), data: { articles: head }, updated_at: new Date().toISOString() }],
         prefer: 'resolution=merge-duplicates,return=minimal',
-        timeoutMs: 60000,
+        timeoutMs: 20000,
       });
-      console.log(`list index ${locale.code}: ${listing.length} entries`);
+      nextHeads[locale.code] = headSum;
     } catch (err) {
-      console.error(`list index ${locale.code} failed: ${err.message}`);
-      delete nextListings[locale.code];
+      console.error(`list head ${locale.code} failed: ${err.message}`);
     }
   }
 
@@ -192,7 +204,7 @@ async function writeMirror() {
       uploaded += batch.length;
       // The map is written after every batch: a run that is cut short leaves
       // behind what it managed to upload, and the next run continues there.
-      await writeHashMap(indexSum, nextListings, nextArticles);
+      await writeHashMap(indexSum, nextListings, nextHeads, nextArticles);
     } catch (err) {
       // One bad batch must not cost the whole mirror.
       failed++;
@@ -201,20 +213,55 @@ async function writeMirror() {
   }
   console.log(`\narticles: ${uploaded} uploaded, ${articles.length - uploaded - skipped} unchanged${skipped ? `, ${skipped} deferred` : ''}`);
 
+  // The full archive of the list index, in pieces. One statement with every
+  // entry is what timed out; pieces of a few hundred entries land quickly.
+  for (const locale of LOCALES) {
+    const listing = buildListing(entries, locale.code);
+    const sum = hash(JSON.stringify(listing));
+    const chunkCount = Math.max(1, Math.ceil(listing.length / LISTING_CHUNK));
+    const knownEntry = known?.listings?.[locale.code];
+    const knownSum = typeof knownEntry === 'object' ? knownEntry.sum : knownEntry;
+    const knownChunks = typeof knownEntry === 'object' ? knownEntry.chunks : -1;
+    if (knownSum === sum && knownChunks === chunkCount) continue;
+    if (outOfTime()) {
+      console.log('budget spent: the list archive stays for the next run');
+      break;
+    }
+    let landed = true;
+    for (let i = 0; i < chunkCount; i++) {
+      const part = listing.slice(i * LISTING_CHUNK, (i + 1) * LISTING_CHUNK);
+      try {
+        await rest('content_blobs?on_conflict=key', {
+          method: 'POST',
+          body: [{ key: `${listingKey(locale.code)}-${i}`, data: { articles: part }, updated_at: new Date().toISOString() }],
+          prefer: 'resolution=merge-duplicates,return=minimal',
+          timeoutMs: 20000,
+        });
+      } catch (err) {
+        console.error(`list chunk ${locale.code}-${i} failed: ${err.message}`);
+        landed = false;
+        break;
+      }
+    }
+    if (landed) {
+      nextListings[locale.code] = { sum, chunks: chunkCount };
+      console.log(`list archive ${locale.code}: ${listing.length} entries in ${chunkCount} piece(s)`);
+    }
+  }
+
   // The full index is eight megabytes. Writing it made the database so busy
   // that every page had to wait for it, and the site does not need it: the
   // snapshot that ships with the deployment serves the crawler routes, and the
   // list indexes plus the articles are what the pages actually read. The old
   // row is removed once so the database keeps that memory for the articles.
-  const fullSum = hash(JSON.stringify(index));
   if (!known?.indexRemoved) {
     try {
-      await rest('content_blobs?key=eq.index', { method: 'DELETE', timeoutMs: 30000 });
+      await rest('content_blobs?key=eq.index', { method: 'DELETE', timeoutMs: 20000 });
       console.log('full index row removed');
     } catch (err) {
       console.error(`removing the index row failed: ${err.message}`);
     }
-    await writeHashMap(indexSum, nextListings, nextArticles, true);
+    await writeHashMap(indexSum, nextListings, nextHeads, nextArticles, true);
   } else if (indexSum !== known.index) {
     console.log('index is local only - nothing to upload');
   }
@@ -233,7 +280,7 @@ async function writeMirror() {
     }
   }
 
-  await writeHashMap(indexSum, nextListings, nextArticles);
+  await writeHashMap(indexSum, nextListings, nextHeads, nextArticles);
 
   if (failed) console.error(`${failed} batch(es) failed`);
 
@@ -241,13 +288,13 @@ async function writeMirror() {
   process.exitCode = ok ? 0 : 2;
 }
 
-async function writeHashMap(indexSum, listings, articles, indexRemoved = false) {
+async function writeHashMap(indexSum, listings, heads, articles, indexRemoved = false) {
   try {
     await rest('content_blobs?on_conflict=key', {
       method: 'POST',
-      body: [{ key: 'hashes', data: { index: indexSum, listings, articles, indexRemoved }, updated_at: new Date().toISOString() }],
+      body: [{ key: 'hashes', data: { index: indexSum, listings, heads, articles, indexRemoved }, updated_at: new Date().toISOString() }],
       prefer: 'resolution=merge-duplicates,return=minimal',
-      timeoutMs: 60000,
+      timeoutMs: 20000,
     });
   } catch (err) {
     console.error(`hash map failed: ${err.message}`);

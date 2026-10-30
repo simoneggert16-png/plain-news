@@ -68,18 +68,15 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           # Every push to main is a Vercel deployment, and the Hobby plan
-          # allows 100 of them per day. A human approval may spend one even
-          # when the day's budget is spent - the piece has been waiting.
+          # allows 100 of them a day. The count is only a warning now: the
+          # dossiers live in the repository, and the site reads them from
+          # there. A refused build must not stop the desk from working.
           if [ -n "${{ inputs.approve }}" ]; then
-            echo "A human approved a piece - the budget does not block it."
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          if node scripts/deploy-budget.mjs; then
-            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "A human approved a piece - it goes out."
           else
-            echo "skip=true" >> "$GITHUB_OUTPUT"
+            node scripts/deploy-budget.mjs || echo "the day's deployments are spent - the dossier still goes to the repository"
           fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
 
       - name: Advance the investigative desk
         if: steps.budget.outputs.skip != 'true'

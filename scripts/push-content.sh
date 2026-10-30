@@ -40,12 +40,12 @@ if git diff --quiet HEAD origin/main; then
   exit 0
 fi
 
-# The day's deployments are counted. When they are spent, the commit stays
-# local and the next run publishes it instead of pushing into a window that
-# only rejects builds.
+# The day's deployments are counted. When they are spent, Vercel refuses the
+# build - but the content is in the repository, and the site reads it from
+# there. Publication must not depend on the build quota: a story that waits
+# for a free build window is a story that never appears.
 if ! node scripts/deploy-budget.mjs; then
-  echo "the day's deployments are spent - '$MSG' waits for the next window"
-  exit 0
+  echo "the day's deployments are spent - the build will be refused, the content goes to the repository anyway"
 fi
 
 for attempt in 1 2 3 4 5; do

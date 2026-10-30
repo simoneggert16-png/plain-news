@@ -17,7 +17,13 @@ const WINDOW_H = Number(process.env.DEPLOY_BUDGET_WINDOW_H || 24);
 
 const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
 const repo = process.env.GITHUB_REPOSITORY || '';
-const since = new Date(Date.now() - WINDOW_H * 3600 * 1000).toISOString();
+// The plan counts a day, not a sliding window: the counter is emptied every
+// day. Measuring a sliding 24 hours instead muted the whole newsroom for
+// hours after a busy day, although the plan had room again.
+const dayStart = new Date();
+dayStart.setUTCHours(0, 0, 0, 0);
+const since = dayStart.toISOString();
+const rollingSince = new Date(Date.now() - WINDOW_H * 3600 * 1000).toISOString();
 
 async function api(path, query = {}) {
   const search = new URLSearchParams(query).toString();
@@ -51,14 +57,16 @@ async function pages(path, query = {}) {
 async function countDeployments() {
   const all = await pages(`/repos/${repo}/deployments`);
   const fresh = all.filter((d) => (d.created_at || '') >= since);
-  return fresh.filter((d) => !d.environment || d.environment === 'Production').length;
+  const rolling = all.filter((d) => (d.created_at || '') >= rollingSince).length;
+  const used = fresh.filter((d) => !d.environment || d.environment === 'Production').length;
+  return { used, rolling };
 }
 
 // A push to main produces at least one commit. This is the fallback for when
 // the deployment list is unavailable, and it never undercounts.
 async function countCommits() {
   const all = await pages(`/repos/${repo}/commits`, { sha: 'main', since });
-  return all.length;
+  return { used: all.length, rolling: 0 };
 }
 
 // Without a token the API refuses anonymous reads, so the budget cannot be
@@ -70,13 +78,14 @@ if (!token || !repo) {
 }
 
 let used = 0;
+let rolling = 0;
 let how = '';
 try {
-  used = await countDeployments();
+  ({ used, rolling } = await countDeployments());
   how = 'production deployments';
 } catch (err) {
   try {
-    used = await countCommits();
+    ({ used } = await countCommits());
     how = 'commits on main';
   } catch (err2) {
     console.warn(`[deploy-budget] could not read the budget (${err2.message}) - publishing anyway.`);
@@ -84,7 +93,9 @@ try {
   }
 }
 
-console.log(`[deploy-budget] ${used}/${LIMIT} used in the last ${WINDOW_H} h (${how}).`);
+console.log(
+  `[deploy-budget] ${used}/${LIMIT} used today (${how}); ${rolling} in the last ${WINDOW_H} h.`
+);
 
 if (used >= MAX) {
   console.log(`[deploy-budget] ${used} is at or above the threshold of ${MAX} - publishing is paused.`);

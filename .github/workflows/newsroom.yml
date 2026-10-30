@@ -56,18 +56,16 @@ jobs:
       - name: Deployment budget
         id: budget
         # Every push to main is a Vercel deployment. The Hobby plan allows 100
-        # of them per day; when the budget is spent the builds fail and the
-        # stories stay on main without reaching the site. The desk waits
-        # instead of writing into a rate-limited window.
+        # of them per day; when the budget is spent the builds fail - but the
+        # content is in the repository, and the site reads it from there. A
+        # refused build must not silence the newsroom, so this step only
+        # reports.
         if: steps.cadence.outputs.skip != 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          if node scripts/deploy-budget.mjs; then
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          fi
+          node scripts/deploy-budget.mjs || echo "the day's deployments are spent - the content still goes to the repository"
+          echo "skip=false" >> "$GITHUB_OUTPUT"
       - if: steps.cadence.outputs.skip != 'true' && steps.budget.outputs.skip != 'true'
         uses: actions/setup-node@v4
         with:
