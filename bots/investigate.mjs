@@ -1320,7 +1320,7 @@ async function readInbox(d) {
         toEmail: msg.from_email,
         org: row?.org || msg.from_email,
         subject: replySubject(msg.subject),
-        body: parsed.reply,
+        body: withDisclosure(parsed.reply),
       }]).catch((err) => log(`INBOX  reply draft failed: ${err.message}`));
     }
 
@@ -1608,6 +1608,18 @@ function replyDeadline() {
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
+// How the research was made belongs in every letter the desk sends. It is
+// not left to the model: a letter that goes out without it would hide how
+// the work was done.
+const DISCLOSURE = 'This research is AI-assisted. Every text is reviewed by a human editor before it is published.';
+
+function withDisclosure(body) {
+  const text = String(body || '').trim();
+  if (!text) return text;
+  if (/ai-assisted|ai assisted|ki-gestützt|editor-reviewed|machine-assisted/i.test(text)) return text;
+  return `${text}\n\n${DISCLOSURE}`;
+}
+
 async function draftEmail(d, { org, note: hint }) {
   const claims = [...d.claims].sort((a, b) => b.weight - a.weight).slice(0, 6)
     .map((c) => `- ${c.text}`).join('\n');
@@ -1640,7 +1652,7 @@ Return {"subject":"…","body":"…"}`,
   ], { temperature: 0.3, maxTokens: 1200 });
 
   const subject = String(data.subject || '').trim().slice(0, 160);
-  const body = String(data.body || '').trim();
+  const body = withDisclosure(String(data.body || '').trim());
   if (!subject || body.length < 200) throw new Error('email draft too thin');
   return { subject, body };
 }
