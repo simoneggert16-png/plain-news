@@ -681,12 +681,14 @@ async function deskTopic(memory = {}) {
         role: 'user',
         content: `Recent headlines:\n${heads}\n\nIs there ONE story here with an investigative core — public money, a decision, a contract, a court case, a pattern across institutions? It must be answerable with public records and email questions. It must also have people in it: who loses, who profits, who is left to live with the consequences. Stories about people affected by power — by settlement, extraction, state crime, a hacked account, a taken land — beat stories about a procedure.
 
+If one of the questions the desk still owes its readers has been answered in these headlines, that answer is the story to propose: a desk that comes back to its own reporting.
+
 What the desk already has (its own memory — a new piece must not repeat it, and the desk should not open two stories about the same country in a row):
 ${memoryBlock(memory) || '(nothing yet — this would be the first piece)'}
 
 Return {"topic":{"title":"working headline, max 90 characters","angle":"the question the investigation answers","category":"politics|business|world|tech|science|climate|health|culture|sport","centre":"the country or region the story is really about","border":"what crosses a border in it: money, people, a treaty, an institution","people":"who is affected and who profits","beat":"the institution or body the desk would follow up on, e.g. an agency, a court, a fund","queries":["4-6 specific search queries"]}} or {"topic":null} if none qualifies.`,
       },
-    ], { temperature: 0.4, maxTokens: 1800 });
+    ], { temperature: 0.4, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 });
     const t = data?.topic;
     if (!t || !t.title || !Array.isArray(t.queries) || t.queries.length < 2) return null;
     return {

@@ -195,27 +195,49 @@ export async function chat(role, messages, opts = {}) {
   throw lastErr || new Error(`no usable model for role ${role}`);
 }
 
-/** Ask for JSON and parse robustly (strips <think>, code fences, prose). */
+/**
+ * Ask for JSON and parse robustly (strips <think>, code fences, prose).
+ *
+ * A model that answers in prose is not an answer. Asking the same model
+ * again was the only way out, and one prose-prone model could hold up the
+ * whole desk for three rounds. The chain is now asked one by one until one
+ * of them holds the JSON shape, and a hybrid model spends no tokens on
+ * visible reasoning — the answer has to be a document, not a monologue.
+ */
 export async function chatJSON(role, messages, opts = {}) {
   let lastErr;
   const deadline = opts.deadline || globalDeadline;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    if (deadline && Date.now() > deadline) {
-      throw lastErr || new Error('deadline reached before a valid JSON answer arrived');
-    }
-    const { text, model, doneReason } = await chat(role, messages, opts);
-    try {
-      return { data: extractJSON(text), model, text, doneReason };
-    } catch (e) {
-      lastErr = e;
-      messages = [
-        ...messages,
-        { role: 'assistant', content: text.slice(0, 1500) },
-        { role: 'user', content: 'Output ONLY raw valid JSON starting with { and ending with }. No markdown, no explanations.' },
-      ];
+  const chain = [...new Set(opts.models || MODELS[role] || [role])];
+  let ask = messages;
+  const callOpts = opts.think === true ? opts : { ...opts, think: false };
+
+  for (const model of chain) {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      if (deadline && Date.now() > deadline) {
+        throw lastErr || new Error('deadline reached before a valid JSON answer arrived');
+      }
+      let text = '';
+      try {
+        const answer = await chat(role, ask, { ...callOpts, models: [model] });
+        text = answer.text;
+        return { data: extractJSON(text), model, text, doneReason: answer.doneReason };
+      } catch (e) {
+        lastErr = e;
+        // The model answered, but not in JSON. It gets one more try with a
+        // stricter instruction before the next model in the chain is asked.
+        if (String(e.message || '').startsWith('No valid JSON') && text) {
+          ask = [
+            ...ask,
+            { role: 'assistant', content: text.slice(0, 1500) },
+            { role: 'user', content: 'Output ONLY raw valid JSON starting with { and ending with }. No markdown, no explanations.' },
+          ];
+          continue;
+        }
+        break;
+      }
     }
   }
-  throw lastErr;
+  throw lastErr || new Error(`no model could answer role ${role} with JSON`);
 }
 
 /**
@@ -321,5 +343,5 @@ export function extractJSON(text) {
   }
 
   if (best) return best.parsed;
-  throw new Error('No valid JSON could be extracted from response');
+  throw new Error(`No valid JSON could be extracted from response: ${t.slice(0, 300).replace(/\s+/g, ' ')}`);
 }
