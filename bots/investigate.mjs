@@ -1500,6 +1500,22 @@ function repairDraft(d, draft) {
   if (!body.standfirst || String(body.standfirst).trim().length < 20) {
     body.standfirst = `What we could establish about ${d.title}, and what we could not.`;
   }
+  // A cut-off answer leaves its last section half written. Fold such a
+  // section into the one before it instead of throwing the piece away.
+  if (Array.isArray(body.sections)) {
+    const merged = [];
+    for (const s of body.sections) {
+      const paragraphs = Array.isArray(s?.paragraphs) ? s.paragraphs.filter((p) => String(p || '').trim()) : [];
+      const heading = String(s?.heading || '').trim();
+      if (paragraphs.length >= 2 || !merged.length) {
+        merged.push({ ...s, heading: heading || `Section ${merged.length + 1}`, paragraphs });
+      } else {
+        const previous = merged[merged.length - 1];
+        previous.paragraphs = [...previous.paragraphs, ...paragraphs];
+      }
+    }
+    body.sections = merged.filter((s) => s.paragraphs.length >= 2);
+  }
   return body;
 }
 
@@ -1511,7 +1527,11 @@ async function writeInvestigation(d, outreach, { attempt = 1 } = {}) {
   const sections = attempt === 1 ? '6-9' : '5-7';
   const replies = outreach.filter((o) => o.status === 'replied' && o.reply_note);
   const sent = outreach.filter((o) => ['sent', 'replied'].includes(o.status));
-  const claims = d.claims.map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${c.text} (sources: ${c.sources.join(', ')})`).join('\n');
+  // The window holds prompt and answer together. A pack that is too long
+  // takes the room the piece needs, and the answer comes back cut off.
+  const claims = d.claims
+    .map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}${c.checked === 'partial' ? ` — PARTIAL: ${c.checkNote || 'nur teilweise belegt'}` : ''}] ${String(c.text).slice(0, 420)} (sources: ${c.sources.join(', ')})`)
+    .join('\n');
   const outreachLog = sent.length
     ? sent.map((o) => `- ${o.org || o.to_email}: requested ${day(o.sent_at || o.approved_at || o.created_at)}${o.status === 'replied' ? `\n  REPLY: ${o.reply_note}` : '\n  no reply so far'}`).join('\n')
     : '(no requests sent yet)';
@@ -1530,13 +1550,13 @@ VERIFIED CLAIMS (each is bound to sources; contested claims show both versions):
 ${claims}
 
 GAPS WE COULD NOT CLOSE:
-${d.gaps.map((g) => `- ${g}`).join('\n') || '(none)'}
+${d.gaps.slice(0, 15).map((g) => `- ${String(g).slice(0, 180)}`).join('\n') || '(none)'}
 
 RIGHT-OF-REPLY LOG:
 ${outreachLog}
 
 SOURCES:
-${sourcePack(d, 20, 1500)}
+${sourcePack(d, attempt === 1 ? 14 : 10, attempt === 1 ? 1200 : 800)}
 
 TASK: Write the investigation in English, ${MIN_WORDS}-${ceiling} words.
 
@@ -1563,7 +1583,7 @@ RULES
 Return exactly:
 ${DRAFT_SCHEMA}`,
     },
-  ], { temperature: 0.35, maxTokens: attempt === 1 ? 20000 : 14000, think: false });
+  ], { temperature: 0.35, maxTokens: attempt === 1 ? 26000 : 18000, numCtx: 65536, think: false });
   return { draft: repairDraft(d, data), model, text, doneReason };
 }
 

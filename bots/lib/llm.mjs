@@ -50,15 +50,17 @@ export const MODELS = {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function callOllama(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90000, think = null } = {}) {
+async function callOllama(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 90000, think = null, numCtx = 32768 } = {}) {
   const key = process.env.OLLAMA_API_KEY;
   if (!key) throw new Error('OLLAMA_API_KEY missing');
   const body = {
     model,
     messages: messages.map((m) => ({ role: m.role, content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) })),
     // Default num_ctx is small enough to cut long article bodies, and the
-    // reply needs room for a full 9-language JSON block.
-    options: { temperature, num_ctx: 32768, num_predict: maxTokens },
+    // reply needs room for a full 9-language JSON block. The window holds
+    // prompt and answer together: a long source pack plus a long piece
+    // needs more than 32k, or the answer is cut off mid-sentence.
+    options: { temperature, num_ctx: numCtx, num_predict: maxTokens },
     stream: false,
   };
   // Hybrid models spend their token budget on reasoning. A 4000-word piece
@@ -66,22 +68,23 @@ async function callOllama(model, messages, { temperature = 0.2, maxTokens = 4096
   // Ollama to answer straight away.
   if (think === false) body.think = false;
 
-  let res = await fetch(`${OLLAMA_BASE}/api/chat`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-    signal: AbortSignal.timeout(timeoutMs),
-  });
-  if (!res.ok && body.think === false) {
-    // Older deployments do not know the parameter. Ask again without it.
-    delete body.think;
-    res = await fetch(`${OLLAMA_BASE}/api/chat`, {
+  const send = async () => {
+    const doFetch = () => fetch(`${OLLAMA_BASE}/api/chat`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
       signal: AbortSignal.timeout(timeoutMs),
     });
-  }
+    const res = await doFetch();
+    if (res.ok || res.status !== 400) return res;
+    // Older deployments do not know `think`, and some models do not take a
+    // window this large. Ask again with the smaller settings before giving up.
+    delete body.think;
+    body.options.num_ctx = 32768;
+    return doFetch();
+  };
+
+  const res = await send();
   if (!res.ok) {
     const bodyText = await res.text().catch(() => '');
     const err = new Error(`Ollama ${model} HTTP ${res.status}: ${bodyText.slice(0, 200)}`);
