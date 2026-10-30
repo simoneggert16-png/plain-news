@@ -28,6 +28,41 @@ When the run is finished:
 {"thought":"…","final":"what I found, what I could not find, what the next run should do"}
 One action per reply. Never invent a URL, a figure, a name or a date: every URL must come from a tool observation, everything else from a page you opened. If a tool returns a warning, change approach instead of repeating the call.`;
 
+// Free models sometimes emit two JSON objects back to back (a thought with a
+// call, then a second call). The extracted object can then be an inner args
+// blob with no action at all. Take the first complete object that is a call.
+function firstCall(raw) {
+  if (!raw) return null;
+  let start = 0;
+  while ((start = raw.indexOf('{', start)) !== -1) {
+    let depth = 0;
+    let inStr = false;
+    let esc = false;
+    for (let j = start; j < raw.length; j++) {
+      const c = raw[j];
+      if (inStr) {
+        if (esc) esc = false;
+        else if (c === '\\') esc = true;
+        else if (c === '"') inStr = false;
+        continue;
+      }
+      if (c === '"') inStr = true;
+      else if (c === '{') depth++;
+      else if (c === '}') {
+        depth--;
+        if (depth) continue;
+        try {
+          const obj = JSON.parse(raw.slice(start, j + 1));
+          if (obj && typeof obj === 'object' && (obj.action || obj.tool || obj.tool_name || obj.final)) return obj;
+        } catch {}
+        break;
+      }
+    }
+    start++;
+  }
+  return null;
+}
+
 /**
  * Run the loop until the model finishes, the step budget is spent or the
  * deadline is close. `ask` is injectable so the loop can be tested without a
@@ -87,6 +122,10 @@ ${PROTOCOL}`;
     }
 
     if (typeof data === 'string') data = { final: data };
+    if (data && typeof data === 'object' && !data.action && !data.tool && !data.tool_name && !data.final) {
+      const alt = firstCall(raw);
+      if (alt) data = alt;
+    }
     if (data?.final && !data.action && !data.tool) {
       final = String(data.final).slice(0, 2000);
       steps.push({ step, thought: String(data.thought || '').slice(0, 400), action: 'final', ms: Date.now() - started });
@@ -154,4 +193,4 @@ ${PROTOCOL}`;
   return { final, steps, observations };
 }
 
-export const __test = { clip, toolDocs, PROTOCOL };
+export const __test = { clip, toolDocs, PROTOCOL, firstCall };

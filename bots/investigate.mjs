@@ -440,7 +440,7 @@ async function researchAgent(d) {
     {
       name: 'search',
       args: '{"query": string}',
-      description: 'Search the desk wire (world broadcasters, wires, official sources) plus Google and Bing News. Returns headlines with outlet, date and URL. Use short queries (2-4 words). "site:domain" works on the aggregators; a long English query usually returns nothing.',
+      description: 'Search the desk wire (world broadcasters, wires, official sources) plus Google and Bing News. The first two hits are opened and filed automatically; their text comes back in "opened" with a source id. Read that text and record the claims it supports.',
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
@@ -467,11 +467,32 @@ async function researchAgent(d) {
         // Never answer with an empty page: hand over the newest wire headlines
         // so there is always something to open and follow.
         if (hits.length < 3) collect(wire.slice(0, 10));
-        const results = hits.slice(0, 12).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt, summary: h.summary }));
+
+        // The desk reads what it finds. The first two hits are opened and
+        // filed right here — otherwise a run ends with "I searched" and an
+        // empty dossier, which is exactly what happened with weak models.
+        const auto = hits.slice(0, 2).filter((h) => !d.sources.some((s) => s.url === h.url));
+        const opened = (await Promise.all(auto.map(async (h) => {
+          const page = await openPage(h.url, { maxChars: 4000 }).catch(() => null);
+          if (!page?.text) return null;
+          addSource(d, { url: h.url, outlet: h.outlet || hostOf(h.url), title: page.title || h.title, publishedAt: h.publishedAt || null }, { kind: 'read' });
+          const src = d.sources.find((s) => s.url === h.url);
+          if (src && !src.text) {
+            src.text = page.text.slice(0, MAX_SOURCE_CHARS);
+            src.readAt = nowISO();
+          }
+          return { outlet: h.outlet || hostOf(h.url), url: h.url, sourceId: src?.id || null, title: page.title || h.title, text: page.text.slice(0, 900) };
+        }))).filter(Boolean);
+
+        const results = hits.slice(0, 10).map((h) => ({ title: h.title, url: h.url, outlet: h.outlet, publishedAt: h.publishedAt }));
         const wireN = fromWire.filter((w) => seen.has(w.url)).length;
-        return results.length
-          ? { query: q, results, ...(wireN ? { note: `${wireN} hit(s) come from the desk wire — open them and follow their links` } : {}) }
-          : { query: q, results: [], note: 'no hits — try 2-3 words, or a "site:" query for the institution\'s own portal' };
+        return {
+          query: q,
+          opened,
+          results,
+          ...(wireN ? { note: `${wireN} hit(s) come from the desk wire; the first two are on file — record what their text proves` } : {}),
+          ...(results.length ? {} : { note: 'no hits — try 2-3 words, or a "site:" query for the institution\'s own portal' }),
+        };
       },
     },
     {
@@ -603,7 +624,8 @@ WHAT THIS RUN SHOULD ACHIEVE
 Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
 Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
 Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
-Before you finish: every page you rely on must be on file, and every fact you would print must be a claim with the id of the source that carries it. Opening a page files it — a run that only searches has produced nothing.`,
+Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.`,
+
     tools,
     maxSteps: steps,
     deadline: Number.isFinite(deadlineLeft()) ? Date.now() + deadlineLeft() : 0,

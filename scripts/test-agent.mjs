@@ -28,12 +28,24 @@ const script = [
   { thought: 'search first', action: 'lookup', args: { term: 'simap' } },
   { thought: 'same again', action: 'lookup', args: { term: 'simap' } },
   { thought: 'again', action: 'lookup', args: { term: 'simap' } },
+  { __mixed: true },
   { thought: 'try broken', action: 'boom', args: {} },
   { thought: 'nonsense', action: 'teleport', args: {} },
   { thought: 'done', final: 'two hits, one tool broken' },
 ];
 let i = 0;
-const ask = async () => ({ data: script[Math.min(i++, script.length - 1)] });
+const ask = async () => {
+  const entry = script[Math.min(i++, script.length - 1)];
+  // A reply with two JSON objects back to back: the extractor can hand back an
+  // inner blob without an action, the loop has to find the real call.
+  if (entry.__mixed) {
+    return {
+      data: { query: 'binance' },
+      text: '{"thought":"read it","action":"lookup","args":{"term":"recovered"}}{"thought":"and then',
+    };
+  }
+  return { data: entry };
+};
 
 const seen = [];
 const { final, steps, observations } = await runAgent({
@@ -47,12 +59,13 @@ const { final, steps, observations } = await runAgent({
 
 const checks = {
   finished: final === 'two hits, one tool broken',
-  steps: steps.length === 6,
-  toolRan: calls.length === 2,
+  steps: steps.length === 7,
+  toolRan: calls.length === 3,
+  recoveredCall: calls[2] === 'recovered',
   repeatGuard: observations.some((o) => /same arguments 3 times/.test(o)),
   toolError: observations.some((o) => /kaputt/.test(o)),
   unknownAction: observations.some((o) => /unknown action/.test(o)),
-  logged: seen.filter((l) => l.startsWith('AGENT')).length === 7,
+  logged: seen.filter((l) => l.startsWith('AGENT')).length === 8,
   rawOnBadStep: seen.some((l) => /reply had no usable action/.test(l)),
 };
 
