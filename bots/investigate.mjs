@@ -2191,6 +2191,78 @@ function sourceIsAboutStory(d, source) {
 }
 
 /**
+ * The domain an address belongs to. A letter to press@justice.gov goes to
+ * justice.gov — the institution that filed the document.
+ */
+function mailHost(email) {
+  const at = String(email || '').split('@')[1] || '';
+  return at.trim().toLowerCase().replace(/^www\./, '');
+}
+
+/**
+ * Is this organisation named in what the desk knows about the story? The
+ * frame the desk wrote, the claims it made, the questions it could not
+ * answer, and the documents it read that are about the story. An
+ * organisation that appears nowhere in it is not a party to the story.
+ */
+function orgIsInStory(d, org) {
+  const brief = d.brief || {};
+  const record = [
+    d.title,
+    d.angle,
+    brief.topic,
+    brief.why,
+    brief.centre,
+    brief.beat,
+    brief.people,
+    brief.border,
+    brief.hints,
+    ...(d.queries || []),
+    ...(d.claims || []).map((c) => c.text),
+    ...(d.gaps || []),
+    ...(d.sources || []).filter((s) => sourceIsAboutStory(d, s)).flatMap((s) => [s.title, s.text]),
+  ]
+    .filter(Boolean)
+    .join('\n');
+  // A desk that knows nothing yet does not judge: it waits.
+  if (!record.trim()) return true;
+  const tokens = [
+    ...new Set(
+      String(org || '')
+        .toLowerCase()
+        .replace(/[()[\]]/g, ' ')
+        .replace(/[^\p{L}\p{N}]+/gu, ' ')
+        .split(' ')
+        .filter((w) => w.length >= 5 && !BOILERPLATE.has(w) && !STOPWORDS.has(w) && !GENERIC.has(w))
+    ),
+  ];
+  if (!tokens.length) return false;
+  return tokens.some((w) => wordPattern(w).test(record));
+}
+
+/**
+ * Does the story call for a letter to this organisation? Either the desk
+ * holds a document from the organisation and that document is about the
+ * story, or the story names the organisation itself. A letter to anybody else
+ * is a letter to somebody the story does not concern.
+ */
+function contactIsAboutStory(d, contact) {
+  const org = String(contact?.org || '');
+  const email = String(contact?.email || '');
+  if (!org.trim() && !email.trim()) return false;
+  const hosts = new Set();
+  const mail = mailHost(email);
+  if (mail) hosts.add(mail);
+  const page = hostOf(contact?.emailSource || '');
+  if (page && page !== 'unknown') hosts.add(page);
+  const own = (d.sources || []).filter(
+    (s) => hosts.has(hostOf(s.url)) || (org.trim() && sameOrg(s.outlet, org)),
+  );
+  if (own.length) return own.some((s) => sourceIsAboutStory(d, s));
+  return orgIsInStory(d, org);
+}
+
+/**
  * The desk knows who to write to: every document it holds comes from an
  * institution, and an institution publishes its press address. The agent does
  * not have to spend a step on it — a reporter who read the document knows
@@ -2223,10 +2295,14 @@ async function fileContacts(d) {
     // The desk has usually filed the organisation already — without an
     // address. The address is what is missing, not the name.
     const filed = (d.contacts || []).find(
-      (c) => !c.email && (sameOrg(c.org, org) || sameOrg(c.org, host)),
+      (c) => !c.email && !c.withdrawn && (sameOrg(c.org, org) || sameOrg(c.org, host)),
     );
-    // An organisation the story is not about gets no letter.
-    if (!filed && source && !sourceIsAboutStory(d, source)) continue;
+    // An organisation the story is not about gets no address. The desk holds
+    // a document from it, and that document is about something else — a
+    // reporter does not write to the Justice Department about a game
+    // publisher's apology.
+    const own = (d.sources || []).filter((s) => hostOf(s.url) === host);
+    if (!own.some((s) => sourceIsAboutStory(d, s))) continue;
     const found = await publishedEmail(host).catch(() => null);
     if (!found?.email) continue;
     if (filed) {
@@ -2246,10 +2322,53 @@ async function fileContacts(d) {
   return added;
 }
 
+/**
+ * A letter goes to an organisation the story is about. When the desk finds
+ * out that it does not, the letter goes back off the editor's desk — before
+ * the editor can free it, and before it can be sent.
+ */
+async function withdrawLetters(d, mail, why) {
+  const text = `Withdrawn by the desk: ${why}`;
+  for (const l of ledger(d)) {
+    if (String(l.to_email || '').toLowerCase() !== mail) continue;
+    // A letter that already left the house cannot be taken back.
+    if (SENT_STATES.includes(l.status)) continue;
+    l.status = 'declined';
+    l.withdrawn = true;
+    l.error = text;
+    l.updated_at = nowISO();
+    if (l.dbId) {
+      await safe(() => setOutreach([l.dbId], { status: 'declined', error: text }), null);
+    }
+    log(`OUTREACH  letter ${l.id} to ${mail} withdrawn — ${why}`);
+  }
+}
+
+/**
+ * The recipients the story does not call for. A press address for an
+ * institution that filed a document about something else is a letter to
+ * somebody the story does not concern; the desk takes it back.
+ */
+async function pruneContacts(d) {
+  const doomed = (d.contacts || []).filter(
+    (c) => c.email && !c.withdrawn && !contactIsAboutStory(d, c),
+  );
+  if (!doomed.length) return 0;
+  for (const c of doomed) {
+    c.withdrawn = true;
+    c.withdrawnWhy = 'the desk holds no document from this organisation about the story, and the story does not name it';
+    await withdrawLetters(d, String(c.email || '').toLowerCase(), c.withdrawnWhy);
+  }
+  log(`OUTREACH  ${doomed.length} recipient(s) withdrawn — the story does not concern them`);
+  return doomed.length;
+}
+
 async function queueOutreach(d) {
   const rows = await outreachRows(d);
   const known = new Set(rows.map((r) => String(r.to_email || '').toLowerCase()).filter(Boolean));
-  const ready = (d.contacts || []).filter((c) => c.email && !known.has(String(c.email).toLowerCase()));
+  const ready = (d.contacts || []).filter(
+    (c) => c.email && !c.withdrawn && !known.has(String(c.email).toLowerCase()) && contactIsAboutStory(d, c),
+  );
   const queued = [];
   for (const contact of ready.slice(0, 3)) {
     const mail = String(contact.email).toLowerCase();
@@ -2436,6 +2555,13 @@ async function applyLetterDecision(d) {
       const letter = ledger(d).find((l) => l.id === id || (l.dbId != null && String(l.dbId) === id));
       if (!letter) {
         log(`DESK  ${d.slug}: letter ${id} is not on file`);
+        continue;
+      }
+      // A letter the desk has withdrawn does not go out, whatever the editor
+      // decides: the desk found out that the story does not concern this
+      // organisation.
+      if (letter.withdrawn) {
+        log(`DESK  ${d.slug}: letter ${id} was withdrawn by the desk - it does not go out`);
         continue;
       }
       const at = nowISO();
@@ -3346,7 +3472,11 @@ async function main() {
         continue;
       }
       // The editor frees a letter with the run. The letter goes out in this
-      // shift, whatever else the dossier is still short of.
+      // shift, whatever else the dossier is still short of. Before that, the
+      // desk takes back the letters the story does not call for: a letter to
+      // an organisation it has no question about must not reach the editor's
+      // desk, and must not go out if it is already there.
+      await pruneContacts(d).catch((err) => log(`OUTREACH  recipients not checked: ${err.message}`));
       await applyLetterDecision(d);
       await sendApproved(d).catch((err) => log(`OUTREACH  sending failed: ${err.message}`));
       if (d.status === 'approved') {

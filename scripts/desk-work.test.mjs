@@ -242,6 +242,38 @@ const addSource = new Function('isPrimaryOutlet', `
   return ${take('addSource')};
 `)(editorial.isPrimaryOutlet);
 
+// The desk takes a letter back when the story does not call for it. The
+// letter has to leave the editor's desk as well as the desk's own list.
+const withdraw = new Function('setOutreach', `
+  const STOPWORDS = new Set(${JSON.stringify(wordsOf(SOURCE, 'STOPWORDS'))});
+  const MONTHS = new Set(${JSON.stringify(wordsOf(SOURCE, 'MONTHS'))});
+  const FILLER = new Set(${JSON.stringify(wordsOf(SOURCE, 'FILLER'))});
+  const GENERIC = new Set(${JSON.stringify(wordsOf(SOURCE, 'GENERIC'))});
+  const ORG_NOISE = new Set(${JSON.stringify(wordsOf(SOURCE, 'ORG_NOISE'))});
+  const BOILERPLATE = new Set(${JSON.stringify([...documents.BOILERPLATE])});
+  const STOP = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'STOP'))});
+  const GENERIC_CAPS = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'GENERIC_CAPS'))});
+  const namedTerms = ${documents.namedTerms.toString()};
+  const SENT_STATES = ['sent', 'replied'];
+  const log = () => {};
+  const safe = async (fn, fallback) => { try { return await fn(); } catch { return fallback; } };
+  const nowISO = () => new Date().toISOString();
+  ${take('hostOf')}
+  ${take('wordPattern')}
+  ${take('storyVocabulary')}
+  ${take('sourceIsAboutStory')}
+  ${take('mailHost')}
+  ${take('orgIsInStory')}
+  ${take('contactIsAboutStory')}
+  ${take('stem')}
+  ${take('orgTokens')}
+  ${take('sameOrg')}
+  ${take('ledger')}
+  ${take('withdrawLetters')}
+  ${take('pruneContacts')}
+  return { pruneContacts, contactIsAboutStory };
+`)(async () => {});
+
 const STORY = {
   title: 'Call of Duty uses Seoul crowd crush footage',
   angle: 'Did the US game developer exploit a tragedy for profit?',
@@ -401,6 +433,25 @@ function desk({ shelf = [], approve = '' } = {}) {
     const listOutreach = async () => ${JSON.stringify(shelf)};
     const requestOutreach = async () => { throw new Error('no table'); };
     const setOutreach = async () => { throw new Error('no table'); };
+    const STOPWORDS = new Set(${JSON.stringify(wordsOf(SOURCE, 'STOPWORDS'))});
+    const MONTHS = new Set(${JSON.stringify(wordsOf(SOURCE, 'MONTHS'))});
+    const FILLER = new Set(${JSON.stringify(wordsOf(SOURCE, 'FILLER'))});
+    const GENERIC = new Set(${JSON.stringify(wordsOf(SOURCE, 'GENERIC'))});
+    const ORG_NOISE = new Set(${JSON.stringify(wordsOf(SOURCE, 'ORG_NOISE'))});
+    const BOILERPLATE = new Set(${JSON.stringify([...documents.BOILERPLATE])});
+    const STOP = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'STOP'))});
+    const GENERIC_CAPS = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'GENERIC_CAPS'))});
+    const namedTerms = ${documents.namedTerms.toString()};
+    ${take('hostOf')}
+    ${take('wordPattern')}
+    ${take('storyVocabulary')}
+    ${take('sourceIsAboutStory')}
+    ${take('mailHost')}
+    ${take('orgIsInStory')}
+    ${take('contactIsAboutStory')}
+    ${take('stem')}
+    ${take('orgTokens')}
+    ${take('sameOrg')}
     ${take('ledger')}
     ${take('nextLetterId')}
     ${take('letterRow')}
@@ -734,6 +785,53 @@ test('a news site is not an institution, so no letter goes to it', async () => {
   };
   assert.equal(await fill(d), 0);
   assert.equal(d.contacts.length, 0);
+});
+
+// The letter to the Justice Department was drafted and waiting on the editor's
+// desk. The desk has to take it back itself: the story does not concern the
+// Justice Department, so the editor should never have been offered that letter.
+test('a letter to an institution the story does not concern is taken back', async () => {
+  const d = {
+    title: 'Call of Duty uses Seoul crowd crush footage',
+    angle: 'Did the US game developer exploit a tragedy for profit?',
+    brief: { centre: 'South Korea', beat: 'Activision Blizzard' },
+    sources: [
+      {
+        id: 'S1',
+        url: 'https://en.yna.co.kr/view/AEN20261030011500320',
+        outlet: 'Yonhap',
+        kind: 'read',
+        title: 'Call of Duty publisher apologizes for using real footage of Itaewon crowd crush',
+        text: 'Activision Publishing apologized for using real footage of the 2022 Itaewon crowd crush in Call of Duty: Modern Warfare. The game was developed by Infinity Ward and Sledgehammer Games.',
+      },
+      {
+        id: 'S4',
+        url: 'https://www.justice.gov/opa/pr/botox-fraud-doctor-sentenced',
+        outlet: 'US Department of Justice',
+        kind: 'document',
+        title: 'Botox Fraud Doctor Sentenced to 15 Years in Prison for $45M Medicare Scheme',
+        text: 'The defendant prescribed Botox and other drugs to Medicare patients for $45 million. The case was prosecuted by the United States Attorney for the District.',
+      },
+    ],
+    claims: [
+      { id: 'C1', text: 'Activision Publishing used real footage of the 2022 Seoul Itaewon crowd crush.', sources: ['S1'] },
+    ],
+    gaps: ['What statements did Infinity Ward and Sledgehammer Games make about the footage?'],
+    contacts: [
+      { org: 'US Department of Justice', role: 'the institution whose document is on file', email: 'press@usdoj.gov', emailSource: 'https://www.justice.gov/opa/webform/media-inquiries' },
+      { org: 'Infinity Ward / Sledgehammer Games', role: 'To explain the creative decision-making process.', email: 'info@sledgehammergames.com', emailSource: 'https://www.sledgehammergames.com/' },
+    ],
+    letters: [
+      { id: 'L1', to_email: 'press@usdoj.gov', org: 'US Department of Justice', status: 'draft', dbId: 'row-1' },
+      { id: 'L2', to_email: 'info@sledgehammergames.com', org: 'Infinity Ward / Sledgehammer Games', status: 'draft', dbId: 'row-2' },
+    ],
+  };
+  assert.equal(await withdraw.pruneContacts(d), 1, 'only the Justice Department is not part of this story');
+  assert.equal(d.contacts[0].withdrawn, true);
+  assert.equal(d.letters[0].status, 'declined', 'the letter must not wait on the editor');
+  assert.equal(d.letters[0].withdrawn, true);
+  assert.equal(d.letters[1].status, 'draft', 'the letter to the studio stays');
+  assert.equal(d.contacts[1].withdrawn, undefined);
 });
 
 // The observation is cut off at 3200 characters. What has to survive the cut
