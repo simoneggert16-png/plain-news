@@ -44,21 +44,36 @@ jobs:
           else
             echo "Could not read last content commit; running anyway."
           fi
-          if [ "$mins" -lt 25 ]; then
+          if [ "$mins" -lt 60 ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Skipping: published ${mins} min ago."
           fi
       - if: steps.cadence.outputs.skip != 'true'
         uses: actions/checkout@v4
-      - if: steps.cadence.outputs.skip != 'true'
+      - name: Deployment budget
+        id: budget
+        # Every push to main is a Vercel deployment. The Hobby plan allows 100
+        # of them per day; when the budget is spent the builds fail and the
+        # stories stay on main without reaching the site. The desk waits
+        # instead of writing into a rate-limited window.
+        if: steps.cadence.outputs.skip != 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if node scripts/deploy-budget.mjs; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.cadence.outputs.skip != 'true' && steps.budget.outputs.skip != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - if: steps.cadence.outputs.skip != 'true'
+      - if: steps.cadence.outputs.skip != 'true' && steps.budget.outputs.skip != 'true'
         run: npm ci
       - name: Run AI newsroom (looping)
-        if: steps.cadence.outputs.skip != 'true'
+        if: steps.cadence.outputs.skip != 'true' && steps.budget.outputs.skip != 'true'
         timeout-minutes: 350
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
@@ -141,9 +156,12 @@ jobs:
               fi
             fi
             echo "::endgroup::"
-            # Aim for one publish cycle per ~55 min, but never sleep past the
-            # deadline - the step timeout would kill the run before the handover.
-            pause=$(( 3300 - ($(date +%s) - started) ))
+            # Aim for one publish cycle per ~90 min. Every cycle that finds new
+            # stories is a push, and every push is a Vercel deployment: at
+            # ~55 min the newsroom alone asked for more deployments than the
+            # plan allows in a day. Never sleep past the deadline - the step
+            # timeout would kill the run before the handover.
+            pause=$(( 5400 - ($(date +%s) - started) ))
             if [ "$pause" -gt 60 ] && [ $(( $(date +%s) + pause )) -lt "$deadline" ]; then
               sleep "$pause"
             fi

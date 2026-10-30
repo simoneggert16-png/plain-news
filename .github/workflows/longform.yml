@@ -63,6 +63,8 @@ jobs:
 
       - name: Commit long reads
         if: always()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
@@ -70,4 +72,10 @@ jobs:
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "longform: $(date -u +'%Y-%m-%d %H:%M') UTC"
           git pull --rebase --autostash
+          # Every push is a Vercel deployment. When the day's budget is spent
+          # the long reads wait for the next window.
+          if ! node scripts/deploy-budget.mjs; then
+            echo "The day's deployments are spent - the long reads wait."
+            exit 0
+          fi
           git push

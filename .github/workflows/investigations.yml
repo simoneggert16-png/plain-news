@@ -62,7 +62,27 @@ jobs:
       - name: Rebase on main
         run: git pull --rebase --autostash
 
+      - name: Deployment budget
+        id: budget
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          # Every push to main is a Vercel deployment, and the Hobby plan
+          # allows 100 of them per day. A human approval may spend one even
+          # when the day's budget is spent - the piece has been waiting.
+          if [ -n "${{ inputs.approve }}" ]; then
+            echo "A human approved a piece - the budget does not block it."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if node scripts/deploy-budget.mjs; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Advance the investigative desk
+        if: steps.budget.outputs.skip != 'true'
         timeout-minutes: 60
         env:
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
@@ -100,7 +120,7 @@ jobs:
       # The work is committed before the mirror runs. A slow upload must never
       # cost the desk its findings.
       - name: Commit dossiers and published investigations
-        if: always()
+        if: always() && steps.budget.outputs.skip != 'true'
         run: |
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"

@@ -60,6 +60,7 @@ jobs:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
+          GITHUB_TOKEN: ${{ github.token }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           FORCED_CREATE: ${{ inputs.create }}
@@ -102,11 +103,18 @@ jobs:
           DEADLINE=$(( $(date +%s) + $(python3 -c "print(int(float('$HOURS')*3600))") ))
 
           # Every push to main is a Vercel deployment, and the Hobby plan
-          # allows 100 per day. The push costs a build; the commit does not.
-          # So the loop keeps committing every cycle and pushes on a slower
+          # allows 100 of them per day. The push costs a build; the commit does
+          # not. So the loop keeps committing every cycle and pushes on a slower
           # cadence - the ticker text itself only refreshes every 25 minutes.
-          PUSH_EVERY=${LIVE_PUSH_EVERY_SEC:-3600}
+          PUSH_EVERY=${LIVE_PUSH_EVERY_SEC:-10800}
           LAST_PUSH=0
+
+          # The day's deployments are counted. When they are gone, the ticker
+          # keeps its updates in the local commit and waits for the budget.
+          budget_ok() {
+            GITHUB_TOKEN="${GITHUB_TOKEN:-}" GITHUB_REPOSITORY="${GITHUB_REPOSITORY:-}" \
+              node scripts/deploy-budget.mjs
+          }
 
           push_now() {
             for attempt in 1 2 3 4; do
@@ -152,7 +160,11 @@ jobs:
                 git commit -q -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
               fi
               if [ $(( $(date +%s) - LAST_PUSH )) -ge "$PUSH_EVERY" ]; then
-                if push_now; then LAST_PUSH=$(date +%s); fi
+                if budget_ok; then
+                  if push_now; then LAST_PUSH=$(date +%s); fi
+                else
+                  echo "The day's deployments are spent - holding the push."
+                fi
               else
                 echo "Holding the push until the window opens"
               fi
@@ -172,4 +184,8 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -q -m "live: $(date -u +'%Y-%m-%d %H:%M') UTC"
           fi
-          push_now || echo "push failed after retries"
+          if budget_ok; then
+            push_now || echo "push failed after retries"
+          else
+            echo "The day's deployments are spent - the ticker waits for the next window."
+          fi

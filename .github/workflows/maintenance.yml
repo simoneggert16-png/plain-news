@@ -31,6 +31,8 @@ jobs:
       - name: Verify the site still builds
         run: npm run build
       - name: Commit
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           git config user.name "simoneggert16-png"
           git config user.email "simoneggert16@gmail.com"
@@ -38,6 +40,12 @@ jobs:
           git add content
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "maintenance: $(date -u +'%Y-%m-%d') "
+          # Every push is a Vercel deployment. When the day's budget is spent
+          # the cleanup waits for the next window.
+          if ! node scripts/deploy-budget.mjs; then
+            echo "The day's deployments are spent - the cleanup waits."
+            exit 0
+          fi
           for attempt in 1 2 3 4; do
             if git pull -q --rebase; then git push -q && break; fi
             git rebase --abort 2>/dev/null || true
