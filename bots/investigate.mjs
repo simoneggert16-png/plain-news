@@ -2116,10 +2116,39 @@ async function maybeWrite(d, outreach) {
 }
 
 // ─────────────────────────── 5. PUBLISH ───────────────────────────
-function articleSections(draft, pictures = []) {
+// The dossier cites its claims and sources by number. A published article
+// names the outlet instead: "according to source S11" becomes "according to
+// TRM Labs", and the claim markers disappear.
+function attribute(text, d) {
+  const outlets = new Map(
+    (d.sources || []).map((s) => [String(s.id).toUpperCase(), s.outlet || s.title || 'the source']),
+  );
+  const name = (id) => outlets.get(String(id).toUpperCase()) || 'the source';
+  let out = String(text || '');
+  out = out.replace(/\s*\((?:C\d+)(?:\s*,\s*C\d+)*\)/g, '');
+  out = out.replace(/\b([Ss]ources?)\s+(S\d+(?:\s*(?:,|and|&)\s*S\d+)*)/g, (m, word, ids) => {
+    const names = ids.split(/\s*(?:,|and|&)\s*/).map(name).filter((v, i, a) => a.indexOf(v) === i);
+    if (names.length === 1) return names[0];
+    return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+  });
+  out = out.replace(/\bS\d+\b/g, (id) => name(id));
+  // A sentence that names the outlet itself does not need the attribution in
+  // front of it: "According to the FBI, the FBI reports ..." says it twice.
+  out = out.replace(/\b[Aa]ccording to\s+([^,]{2,60}?),\s*(.)/g, (match, names, first, offset, full) => {
+    const last = names.split(/\s*(?:,|and|&)\s*/).pop() || '';
+    const key = last.split(/\s+/).map((w) => w.replace(/[^A-Za-z]/g, '')).find((w) => w.length >= 3);
+    if (!key) return match;
+    const after = full.slice(offset + match.length, offset + match.length + 90).split('. ')[0];
+    if (!new RegExp(`\\b${key}\\b`, 'i').test(after)) return match;
+    return /[a-z]/.test(first) ? first.toUpperCase() : first;
+  });
+  return out.replace(/[ \t]{2,}/g, ' ').trim();
+}
+
+function articleSections(draft, pictures = [], d = { sources: [] }) {
   const sections = assignImages(draft.sections.map((s) => ({
-    heading: String(s.heading || '').trim().slice(0, 90),
-    paragraphs: (s.paragraphs || []).map((p) => String(p).trim()).filter(Boolean),
+    heading: attribute(s.heading, d).slice(0, 90),
+    paragraphs: (s.paragraphs || []).map((p) => attribute(p, d)).filter(Boolean),
   })), pictures);
   if (draft.rightOfReply) {
     sections.push({ heading: 'Right of reply', paragraphs: String(draft.rightOfReply).split(/\n{2,}/).map((p) => p.trim()).filter(Boolean) });
@@ -2177,7 +2206,7 @@ async function publish(d) {
   const pictures = await collectImages(d.sources, { max: 3 });
   const hero = pictures[0] || null;
   log(`PUBLISH  ${d.slug}: ${pictures.length} usable image(s)${hero ? ` — hero from ${hero.outlet || 'source'}` : ''}`);
-  const sections = articleSections(draft, pictures);
+  const sections = articleSections(draft, pictures, d);
   const body = sections.flatMap((s) => s.paragraphs);
   const wordCount = draftWords(draft);
   const usedIds = new Set((draft.claims || []).flatMap((c) => c.sources || []));
@@ -2201,10 +2230,10 @@ async function publish(d) {
     sources,
     locales: {
       [SOURCE_LOCALE]: {
-        title: String(draft.title).trim(),
-        dek: String(draft.dek).trim(),
-        standfirst: String(draft.standfirst).trim(),
-        facts: (draft.facts || []).map(String).slice(0, 8),
+        title: attribute(draft.title, d).trim(),
+        dek: attribute(draft.dek, d).trim(),
+        standfirst: attribute(draft.standfirst, d).trim(),
+        facts: (draft.facts || []).map((f) => attribute(f, d)).slice(0, 8),
         body,
         sections,
         context: '',
