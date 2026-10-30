@@ -174,7 +174,7 @@ export async function chatJSON(role, messages, opts = {}) {
     }
     const { text, model } = await chat(role, messages, opts);
     try {
-      return { data: extractJSON(text), model };
+      return { data: extractJSON(text), model, text };
     } catch (e) {
       lastErr = e;
       messages = [

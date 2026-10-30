@@ -76,24 +76,42 @@ ${PROTOCOL}`;
 
     const started = Date.now();
     let data;
+    let raw = '';
     try {
-      ({ data } = await ask(role, messages, { temperature: 0.2, maxTokens: 1200 }));
+      const reply = await ask(role, messages, { temperature: 0.2, maxTokens: 1200, timeoutMs: 75_000 });
+      data = reply.data;
+      raw = String(reply.text || '');
     } catch (err) {
       log(`AGENT  step ${step}: model failed — ${err.message}`);
       break;
     }
 
     if (typeof data === 'string') data = { final: data };
-    if (data?.final && !data.action) {
+    if (data?.final && !data.action && !data.tool) {
       final = String(data.final).slice(0, 2000);
       steps.push({ step, thought: String(data.thought || '').slice(0, 400), action: 'final', ms: Date.now() - started });
       log(`AGENT  step ${step}: final — ${final.slice(0, 160)}`);
       break;
     }
 
-    const name = String(data?.action || '').trim();
+    // Some models answer with an action named "finish".
+    if (['finish', 'done', 'stop'].includes(String(data?.action || data?.tool || '').trim().toLowerCase())) {
+      final = String(data?.args?.final || data?.args?.text || data?.args?.summary || data?.thought || '').slice(0, 2000);
+      steps.push({ step, thought: String(data?.thought || '').slice(0, 400), action: 'final', ms: Date.now() - started });
+      log(`AGENT  step ${step}: final — ${final.slice(0, 160)}`);
+      break;
+    }
+
+    // Free models drift between the shapes we ask for and the shapes they
+    // learned; accept the usual aliases instead of failing the step.
+    const call = data?.function && typeof data.function === 'object' ? data.function : data || {};
+    const name = String(data?.action || data?.tool || data?.tool_name || call.name || data?.name || '').trim();
     const tool = byName.get(name);
-    const args = data?.args && typeof data.args === 'object' ? data.args : {};
+    let rawArgs = data?.args ?? data?.arguments ?? data?.parameters ?? call.arguments ?? call.parameters ?? {};
+    if (typeof rawArgs === 'string') {
+      try { rawArgs = JSON.parse(rawArgs); } catch { rawArgs = {}; }
+    }
+    const args = rawArgs && typeof rawArgs === 'object' ? rawArgs : {};
     const thought = String(data?.thought || '').slice(0, 400);
     const key = `${name}:${JSON.stringify(args)}`;
     const repeats = (seen.get(key) || 0) + 1;
@@ -102,6 +120,7 @@ ${PROTOCOL}`;
     let result;
     if (!tool) {
       result = { error: `unknown action "${name}"`, tools: [...byName.keys()] };
+      log(`AGENT  step ${step}: reply had no usable action — ${raw.replace(/\s+/g, ' ').slice(0, 200)}`);
     } else if (repeats > REPEAT_LIMIT) {
       result = { error: `you called ${name} with the same arguments ${repeats} times — choose a different action` };
     } else {

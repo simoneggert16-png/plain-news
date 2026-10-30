@@ -1365,6 +1365,12 @@ async function mirror(d) {
 // ─────────────────────────── main ───────────────────────────
 async function main() {
   const started = Date.now();
+  // Last resort: a stalled request must never hold the job for its full timeout.
+  const budgetMin = Number(process.env.INVESTIGATE_MINUTES || 55);
+  setTimeout(() => {
+    log(`WATCHDOG  ${budgetMin + 3} min reached — stopping without saving`);
+    process.exit(0);
+  }, (budgetMin + 3) * 60_000).unref();
   const indexAvailable = (() => { try { loadIndex(); return true; } catch (e) { log(`FATAL ${e.message}`); return false; } })();
   if (!indexAvailable) process.exit(1);
 
@@ -1396,6 +1402,7 @@ async function main() {
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
         }
+        log(`CHECK   ${d.claims.length} claim(s), ${d.sources.length} source(s) before reading back`);
         await factcheck(d);
         await queueOutreach(d);
         await draftOutreach(d);
