@@ -34,7 +34,7 @@ export default async function SearchPage({ params, searchParams }) {
   const [slugs, userResults] = q
     ? await Promise.all([
         searchArticles(q).catch(() => []),
-        withDeadline(searchCommunity(q), 4000, 'community search').catch(() => ({
+        withDeadline(searchCommunity(q), 2000, 'community search').catch(() => ({
           comments: [],
           submissions: [],
           chatMessages: [],

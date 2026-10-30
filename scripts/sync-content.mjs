@@ -30,6 +30,13 @@ const args = new Set(process.argv.slice(2));
 const dryRun = args.has('--dry-run');
 const verifyOnly = args.has('--verify');
 
+// The whole mirror gets a budget of its own. A stalled upload must not eat
+// the step timeout: the work that matters (listings, new articles) is written
+// first, and whatever is left over simply continues in the next run.
+const DEADLINE_MS = Number(process.env.SYNC_DEADLINE_MS || 8 * 60 * 1000);
+const startedAt = Date.now();
+const outOfTime = () => Date.now() - startedAt > DEADLINE_MS;
+
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 const ARTICLES_DIR = path.join(CONTENT_DIR, 'articles');
 const INDEX_FILE = path.join(CONTENT_DIR, 'index.json');
@@ -125,6 +132,9 @@ async function writeMirror() {
   const known = await readHashes();
   const nextArticles = { ...(known?.articles || {}) };
   const nextListings = { ...(known?.listings || {}) };
+  // The index is only "current" once it really landed in the database. A
+  // failed upload has to be tried again in the next run.
+  let indexSum = known?.index || null;
 
   // The slim list indexes come first. They are small, they are what the
   // pages actually read, and a slow upload of the full index must never keep
@@ -145,30 +155,14 @@ async function writeMirror() {
       console.log(`list index ${locale.code}: ${listing.length} entries`);
     } catch (err) {
       console.error(`list index ${locale.code} failed: ${err.message}`);
+      delete nextListings[locale.code];
     }
-  }
-
-  // The full index is five megabytes. It needs a patient timeout.
-  const indexSum = hash(JSON.stringify(index));
-  if (!known || known.index !== indexSum) {
-    try {
-      await rest('content_blobs?on_conflict=key', {
-        method: 'POST',
-        body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
-        prefer: 'resolution=merge-duplicates,return=minimal',
-        timeoutMs: 240000,
-      });
-      console.log('index uploaded');
-    } catch (err) {
-      console.error(`index upload failed: ${err.message}`);
-    }
-  } else {
-    console.log('index unchanged');
   }
 
   const batchSize = 25;
   let failed = 0;
   let uploaded = 0;
+  let skipped = 0;
   const pending = [];
   for (const article of articles) {
     const sum = hash(JSON.stringify(article));
@@ -176,6 +170,11 @@ async function writeMirror() {
     pending.push({ article, sum });
   }
   for (let i = 0; i < pending.length; i += batchSize) {
+    if (outOfTime()) {
+      skipped = pending.length - i;
+      console.log(`budget spent: ${skipped} article(s) stay for the next run`);
+      break;
+    }
     const batch = pending.slice(i, i + batchSize);
     try {
       await rest('articles?on_conflict=slug', {
@@ -187,7 +186,7 @@ async function writeMirror() {
           data: article,
         })),
         prefer: 'resolution=merge-duplicates,return=minimal',
-        timeoutMs: 90000,
+        timeoutMs: 45000,
       });
       for (const { article, sum } of batch) nextArticles[article.slug] = sum;
       uploaded += batch.length;
@@ -200,12 +199,34 @@ async function writeMirror() {
       console.error(`\narticles ${i}-${i + batch.length} failed: ${err.message}`);
     }
   }
-  console.log(`\narticles: ${uploaded} uploaded, ${articles.length - uploaded} unchanged`);
+  console.log(`\narticles: ${uploaded} uploaded, ${articles.length - uploaded - skipped} unchanged${skipped ? `, ${skipped} deferred` : ''}`);
+
+  // The full index is five megabytes and it goes last: it is a convenience
+  // for the crawler routes, while the listings and the articles are what
+  // readers actually wait for.
+  const fullSum = hash(JSON.stringify(index));
+  if (indexSum !== fullSum && !outOfTime()) {
+    try {
+      await rest('content_blobs?on_conflict=key', {
+        method: 'POST',
+        body: [{ key: 'index', data: index, updated_at: new Date().toISOString() }],
+        prefer: 'resolution=merge-duplicates,return=minimal',
+        timeoutMs: 120000,
+      });
+      indexSum = fullSum;
+      console.log('index uploaded');
+    } catch (err) {
+      console.error(`index upload failed: ${err.message}`);
+    }
+  } else {
+    console.log('index unchanged');
+  }
 
   // Stories that are no longer in the repository must leave the mirror too.
   const localSlugs = new Set(articles.map((a) => a.slug));
   const gone = Object.keys(nextArticles).filter((slug) => !localSlugs.has(slug));
   for (const slug of gone) {
+    if (outOfTime()) break;
     try {
       await rest(`articles?slug=eq.${encodeURIComponent(slug)}`, { method: 'DELETE', timeoutMs: 30000 });
       delete nextArticles[slug];
