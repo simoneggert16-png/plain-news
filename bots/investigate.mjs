@@ -1672,7 +1672,7 @@ STRUCTURE (${sections} sections, each heading max 60 characters)
 5. The desk writes the right of reply itself. Write no section about it, and never write a request date, a reply, a "no comment" or a confirmation that nobody gave us.
 6. Close with a section on how we reported: sources read, data sets, questions sent, what we could not verify.
 
-LENGTH: ${sections} sections, each with 4 to 6 paragraphs of 110 to 160 words. That is ${Math.round((sections === '6-9' ? 7.5 : 6) * 5 * 135)} words. Write until you reach it.
+LENGTH: ${sections} sections, each with 4 to 6 paragraphs of 110 to 160 words. That is ${Math.round((sections === '6-9' ? 7.5 : 6) * 5 * 135)} words. Write until you reach it. A section of two paragraphs is too short: write four, and do not stop before the word count is reached.
 
 RULES
 - Every factual sentence must rest on a claim above. If something is not in the claims, it is not in the piece.
@@ -1869,24 +1869,24 @@ async function maybeWrite(d, outreach) {
   log(`WRITE   ${d.slug}: ${outlets} outlets, ${d.claims.length} claims, ${sent.length} request(s)`);
   let { draft, model, text, doneReason } = await writeInvestigation(d, outreach);
   let problem = draftProblem(d, draft, outreach);
-  if (problem && deadlineLeft() > 300000) {
-    if (/^only \d+ words$/.test(problem)) {
+  // Two chances, not one: a thin answer is sent back for depth, and if that
+  // is still thin the whole piece is asked for again, shorter.
+  for (let round = 1; problem && round <= 2 && deadlineLeft() > 300000; round += 1) {
+    if (/^only \d+ words$/.test(problem) && round === 1) {
       // The piece holds but is thin. Ask for depth, not for a new piece.
-      log(`WRITE   too short (${problem}) — asking for depth, not a new piece`);
+      log(`WRITE   too short (${problem}) — asking for depth, not for a new piece`);
       ({ draft, model, text, doneReason } = await expandInvestigation(d, draft, outreach));
-      problem = draftProblem(d, draft, outreach);
     } else if (/right of reply invents/.test(problem)) {
       // The piece claims answers we never got. Cut them out.
       log(`WRITE   ${problem} — asking for the truth instead`);
       ({ draft, model, text, doneReason } = await fixRightOfReply(d, draft, outreach));
-      problem = draftProblem(d, draft, outreach);
     } else {
       // The answer was cut off or came back empty. Ask once more and ask for
       // less - a shorter piece that holds is worth more than no piece.
-      log(`WRITE   first answer unusable (${problem}) — asking again, shorter`);
+      log(`WRITE   answer unusable (${problem}) — asking again, shorter`);
       ({ draft, model, text, doneReason } = await writeInvestigation(d, outreach, { attempt: 2 }));
-      problem = draftProblem(d, draft, outreach);
     }
+    problem = draftProblem(d, draft, outreach);
   }
   if (problem) {
     log(`WRITE   draft rejected: ${problem} — model ${model || '?'}, stop reason ${doneReason || 'unknown'}, keys: ${Object.keys(draft || {}).join(', ') || 'none'}, answer ${text ? text.length : 0} characters`);
