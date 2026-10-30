@@ -16,7 +16,8 @@
     "remotion:studio": "remotion studio remotion/index.js",
     "remotion:render": "remotion render remotion/index.js PlainNewsReel out/reel.mp4",
     "content:sync": "node scripts/sync-content.mjs",
-    "content:verify": "node scripts/sync-content.mjs --verify"
+    "content:verify": "node scripts/sync-content.mjs --verify",
+    "test:desk": "node scripts/test-right-of-reply.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.3.0",

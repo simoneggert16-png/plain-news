@@ -56,6 +56,7 @@ import {
 } from '../lib/investigationStore.mjs';
 import { listMessages, markMessages, recordInbound } from '../lib/inboxStore.mjs';
 import { fetchMail, slugFromAddress } from './lib/mailbox.mjs';
+import { applyRightOfReply, INVENTED_REPLY, rightOfReplyLog } from './lib/rightOfReply.mjs';
 
 // ─────────────────────────── config ───────────────────────────
 const DOSSIER_DIR = 'content/investigations';
@@ -1626,14 +1627,14 @@ STRUCTURE (${sections} sections, each heading max 60 characters)
 2. Show the evidence: documents, figures, dates, decisions, who signed what.
 3. Show the pattern or the money trail across cases and institutions.
 4. State clearly what remains unknown, and why that matters.
-5. Include a section on the right of reply. Take ONLY what the RIGHT-OF-REPLY LOG above says. If the log says no request has been sent yet, write exactly that: our questions have not gone out, so there is no answer to report. Never write a request date, a reply, a "no comment" or a confirmation that nobody gave us.
+5. Include a section on the right of reply only if the RIGHT-OF-REPLY LOG says a request was sent. If it says no request has been sent yet, write no such section: there is no answer to report, and the desk adds the note itself. Never write a request date, a reply, a "no comment" or a confirmation that nobody gave us.
 6. Close with a section on how we reported: sources read, data sets, questions sent, what we could not verify.
 
 LENGTH: ${sections} sections, each with 4 to 6 paragraphs of 110 to 160 words. That is ${Math.round((sections === '6-9' ? 7.5 : 6) * 5 * 135)} words. Write until you reach it.
 
 RULES
 - Every factual sentence must rest on a claim above. If something is not in the claims, it is not in the piece.
-- Never invent a right of reply. A question we did not send has no answer, and a reply that did not arrive does not exist. If the log is empty, the right of reply says our questions are still outstanding.
+- Never invent a right of reply. A question we did not send has no answer, and a reply that did not arrive does not exist. If the log is empty, the right of reply says our questions are still outstanding. Write no reply of your own into the body either: no "responded on", no "no comment", no date on which anybody answered us.
 - Numbers, dates, names and titles exactly as in the sources. No rounding invented, no "about".
 - This is a piece about people, not about process. Name who is affected and what it costs them: the ones who lost money, work, land or freedom. A reader must be able to point at a person by the end of the first two sections.
 - Contested claims: name who says what. Never present one side as established fact.
@@ -1648,7 +1649,7 @@ Return exactly:
 ${DRAFT_SCHEMA}`,
     },
   ], { temperature: 0.35, maxTokens: attempt === 1 ? 26000 : 18000, numCtx: 65536, think: false });
-  return { draft: repairDraft(d, data), model, text, doneReason };
+  return { draft: applyRightOfReply(repairDraft(d, data), outreach), model, text, doneReason };
 }
 
 /**
@@ -1656,7 +1657,7 @@ ${DRAFT_SCHEMA}`,
  * that case - it sends the draft back with the request to go deeper: more
  * chronology, more documents, more of the people it costs.
  */
-async function expandInvestigation(d, draft) {
+async function expandInvestigation(d, draft, outreach) {
   const claims = d.claims
     .map((c) => `[${c.id}${c.status === 'contested' ? ' — CONTESTED' : ''}] ${String(c.text).slice(0, 420)} (sources: ${c.sources.join(', ')})`)
     .join('\n');
@@ -1697,18 +1698,9 @@ Return exactly:
 ${DRAFT_SCHEMA}`,
     },
   ], { temperature: 0.35, maxTokens: 26000, numCtx: 65536, think: false });
-  return { draft: repairDraft(d, data), model, text, doneReason };
+  return { draft: applyRightOfReply(repairDraft(d, data), outreach), model, text, doneReason };
 }
 
-/**
- * What the right-of-reply log actually holds. A request we never sent has no
- * answer, so the text has to say that instead of inventing a reply.
- */
-function rightOfReplyLog(outreach) {
-  const asked = (outreach || []).filter((o) => ['sent', 'replied'].includes(o.status));
-  if (!asked.length) return '- We have not sent any request yet. Our questions are still outstanding.';
-  return asked.map((o) => `- ${o.org || o.to_email}: asked ${day(o.sent_at || o.approved_at || o.created_at)}, ${o.status === 'replied' ? `answered: ${o.reply_note || '(reply without note)'}` : 'no answer yet'}`).join('\n');
-}
 
 /**
  * The draft reports answers that were never given. We have not sent a
@@ -1744,7 +1736,7 @@ Return exactly:
 ${DRAFT_SCHEMA}`,
     },
   ], { temperature: 0.3, maxTokens: 26000, numCtx: 65536, think: false });
-  return { draft: repairDraft(d, data), model, text, doneReason };
+  return { draft: applyRightOfReply(repairDraft(d, data), outreach), model, text, doneReason };
 }
 
 async function editInvestigation(d, outreach, draft, styleIssues = []) {
@@ -1768,9 +1760,6 @@ function draftWords(draft) {
   return words([draft.standfirst, draft.dek, ...(draft.facts || []), ...body, draft.rightOfReply, draft.methodology].join(' '));
 }
 
-// A draft that reports an answer we never got is the worst error a
-// newsroom can make. If no letter went out, no reply can be reported.
-const INVENTED_REPLY = /\b(replied|responded|declined to (?:comment|disclose|answer)|no comment\b|answered (?:us|our)|confirmed the accuracy|when (?:we|our desk|the desk) (?:asked|contacted|wrote|queried))/i;
 
 function draftProblem(d, draft, outreach = []) {
   if (!draft || typeof draft !== 'object') return 'no article';
@@ -1839,7 +1828,7 @@ async function maybeWrite(d, outreach) {
     if (/^only \d+ words$/.test(problem)) {
       // The piece holds but is thin. Ask for depth, not for a new piece.
       log(`WRITE   too short (${problem}) — asking for depth, not a new piece`);
-      ({ draft, model, text, doneReason } = await expandInvestigation(d, draft));
+      ({ draft, model, text, doneReason } = await expandInvestigation(d, draft, outreach));
       problem = draftProblem(d, draft, outreach);
     } else if (/right of reply invents/.test(problem)) {
       // The piece claims answers we never got. Cut them out.
@@ -1856,6 +1845,17 @@ async function maybeWrite(d, outreach) {
   }
   if (problem) {
     log(`WRITE   draft rejected: ${problem} — model ${model || '?'}, stop reason ${doneReason || 'unknown'}, keys: ${Object.keys(draft || {}).join(', ') || 'none'}, answer ${text ? text.length : 0} characters`);
+    // Throwing the text away would throw the shift's work away. The copy is
+    // kept with the reason it failed; the dossier stays in research, so the
+    // editor can read it and nobody can publish it.
+    if (draft && typeof draft === 'object' && (draft.sections || []).length) {
+      d.draft = draft;
+      d.review = { verdict: 'rejected', problems: [problem], at: nowISO(), writer: model };
+      d.nextStep = `draft needs work before it can be approved: ${problem}`;
+      note(d, 'research', `draft did not pass the check: ${problem}`);
+      log(`WRITE   draft kept for the editor, not publishable (${problem})`);
+      return;
+    }
     throw new Error(`draft rejected: ${problem}`);
   }
 
@@ -1875,15 +1875,18 @@ async function maybeWrite(d, outreach) {
       note(d, 'research', 'editor rejected the draft');
       return;
     }
-    if (verdict === 'revise' && review?.article && !draftProblem(d, review.article, outreach)) draft = review.article;
+    if (verdict === 'revise' && review?.article && !draftProblem(d, review.article, outreach)) {
+      draft = applyRightOfReply(review.article, outreach);
+    }
   } catch (err) {
     log(`WRITE   editor failed (${err.message}); keeping writer draft`);
   }
 
   // The editor may have put an answer into the piece that nobody gave us.
+  draft = applyRightOfReply(draft, outreach);
   const after = draftProblem(d, draft, outreach);
   if (after) {
-    log(`WRITE   editor output still wrong (${after}) — keeping the writer draft`);
+    log(`WRITE   editor output still wrong (${after}) — asking for the truth instead`);
     const { draft: fixed } = await fixRightOfReply(d, draft, outreach).catch(() => ({}));
     if (fixed && !draftProblem(d, fixed, outreach)) draft = fixed;
   }
