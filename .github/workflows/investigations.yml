@@ -126,18 +126,9 @@ jobs:
           for i in $(seq 1 "$SHIFTS"); do
             echo "──────── shift $i of $SHIFTS ($PER min) ────────"
             INVESTIGATE_MINUTES="$PER" timeout $(( PER * 60 + 300 )) node bots/investigate.mjs || echo "shift $i ended with $?"
-            # The live tickers write to content/ between the shifts. Take their
-            # commits in now, so the desk never ends up in a rebase conflict
-            # at the end of the run. A conflict must not cost the shift its
-            # findings, so the fallback merges the other side in and rebuilds
-            # the index from the files of both sides.
-            if ! git pull -q --rebase --autostash; then
-              git rebase --abort 2>/dev/null || true
-              git fetch -q origin main && git merge -q --no-edit -X ours origin/main || true
-              git merge --abort 2>/dev/null || true
-              node scripts/sync-index.mjs --all >/dev/null 2>&1 || true
-            fi
           done
+          # What the live tickers wrote to content/ in the meantime is taken in
+          # by the commit below, which knows how to merge both sides.
 
       # The work is committed before the mirror runs. A slow upload must never
       # cost the desk its findings.
