@@ -33,7 +33,7 @@ import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch } from './lib/search.mjs';
 import { filingCabinets, pressAddressFor, publishedEmail } from './lib/lookup.mjs';
-import { institutionalDocuments } from './lib/documents.mjs';
+import { institutionalDocuments, namedTerms, BOILERPLATE } from './lib/documents.mjs';
 import { openPage } from './lib/browse.mjs';
 import { runAgent } from './lib/agent.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
@@ -232,8 +232,15 @@ function newDossier({ title, angle, category, queries, origin, requestId = null,
 function addSource(d, item, extra = {}) {
   const url = String(item.url || '').trim();
   if (!url || d.sources.some((s) => s.url === url)) return false;
+  // The number must not be one a claim already points at. A claim that
+  // cites S2 must keep citing that document, even after S2 was dropped:
+  // the number belongs to the claim as long as the claim is on file.
+  const taken = new Set(d.sources.map((s) => s.id));
+  for (const c of d.claims || []) for (const id of c.sources || []) taken.add(id);
+  let number = d.sources.length + 1;
+  while (taken.has(`S${number}`)) number++;
   d.sources.push({
-    id: `S${d.sources.length + 1}`,
+    id: `S${number}`,
     url,
     outlet: item.outlet || 'unknown',
     title: String(item.title || '').slice(0, 300),
@@ -260,6 +267,9 @@ function fileSourceRead(src, page) {
   if (!src.text && page.text) {
     src.text = String(page.text).slice(0, MAX_SOURCE_CHARS);
     src.readAt = nowISO();
+    // The length of the whole document, so the desk knows whether it read
+    // the whole thing or only the first pages of it.
+    if (Number.isFinite(page.length)) src.textLength = page.length;
   }
   if (!src.image && page.image) {
     src.image = page.image;
@@ -387,48 +397,122 @@ function urlKey(url) {
   }
 }
 
-function pruneOffTopic(d) {
-  const wordsOf = (s) =>
-    new Set(
-      String(s || '')
+// The words that stand in every institutional document. They say how a
+// document is written, not what it is about.
+function wordPattern(w) {
+  return new RegExp(`\\b${String(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+}
+
+/**
+ * The vocabulary of the story: the words the desk named it with, and the
+ * names it keeps coming back to. A document that shares only the words every
+ * press release has is about something else, however many of them it uses.
+ *
+ * The frame (title, angle, brief) is what the desk itself wrote. The names
+ * are the proper nouns and figures of that frame plus those the claims keep
+ * repeating: a name that shows up in a single sentence belongs to that
+ * sentence, not to the story.
+ */
+function storyVocabulary(d) {
+  const brief = d.brief || {};
+  const frame = [
+    d.title,
+    d.angle,
+    brief.topic,
+    brief.centre,
+    brief.people,
+    brief.beat,
+    brief.border,
+    brief.hints,
+  ]
+    .filter(Boolean)
+    .join(' ');
+  const words = new Set(
+    frame
+      .toLowerCase()
+      .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
+      .split(/\s+/)
+      .filter(
+        (w) =>
+          w.length >= 4 &&
+          !STOPWORDS.has(w) &&
+          !MONTHS.has(w) &&
+          !FILLER.has(w) &&
+          !GENERIC.has(w) &&
+          !BOILERPLATE.has(w)
+      )
+  );
+  const usableName = (n) => n.length >= 4 && !BOILERPLATE.has(n) && !STOPWORDS.has(n);
+  const names = new Set(namedTerms(frame).filter(usableName));
+  const claims = (d.claims || []).map((c) => String(c.text || '')).filter(Boolean);
+  const counts = new Map();
+  for (const c of claims) {
+    for (const n of namedTerms(c)) {
+      if (!usableName(n)) continue;
+      counts.set(n, (counts.get(n) || 0) + 1);
+    }
+  }
+  const repeated = claims.length >= 3 ? 2 : 1;
+  for (const [n, c] of counts) if (c >= repeated) names.add(n);
+  // A term that is both a word of the frame and a name of it is one term.
+  // Counted twice, a single mention would look like two.
+  const terms = [...new Set([...words, ...names])];
+  return {
+    words: [...words].map(wordPattern),
+    names: [...names].map(wordPattern),
+    terms: terms.map(wordPattern),
+  };
+}
+
+/**
+ * The vocabulary of a single claim: the names it mentions and the words
+ * that carry it. A document that shares neither with the claim does not
+ * support it — whatever the claim file says about it.
+ */
+function claimVocabulary(text) {
+  const src = String(text || '');
+  const usable = (n) => n.length >= 4 && !BOILERPLATE.has(n) && !STOPWORDS.has(n) && !GENERIC.has(n);
+  const names = [...new Set(namedTerms(src).filter(usable))];
+  const words = [
+    ...new Set(
+      src
         .toLowerCase()
         .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
         .split(/\s+/)
-        .filter(Boolean)
-    );
+        .filter((w) => w.length >= 5 && !STOPWORDS.has(w) && !MONTHS.has(w) && !FILLER.has(w) && !GENERIC.has(w) && !BOILERPLATE.has(w))
+    ),
+  ];
+  return { names: names.map(wordPattern), words: words.map(wordPattern) };
+}
+
+/**
+ * Does the document carry the claim? A name of the claim in the document, or
+ * two of its words, is enough. The check is a floor, not a proof: a claim
+ * the document does not mention at all is a claim about something else.
+ */
+function claimSupportedBy(claim, source) {
+  const hay = `${source?.title || ''}\n${source?.text || ''}`;
+  if (!hay.trim()) return false;
+  const { names, words } = claimVocabulary(claim?.text);
+  if (names.some((re) => re.test(hay))) return true;
+  return words.filter((re) => re.test(hay)).length >= 2;
+}
+
+function pruneOffTopic(d) {
   // The frame the desk wrote belongs to the story: what crosses the border,
   // who carries the consequences, which institution is being followed. A
   // dossier that only remembers the headline loses the reason it opened the
   // story in the first place.
-  const brief = d.brief || {};
-  const story = wordsOf(
-    [
-      d.title,
-      d.angle,
-      brief.topic,
-      brief.hints,
-      brief.centre,
-      brief.border,
-      brief.people,
-      brief.beat,
-      ...(Array.isArray(d.queries) ? d.queries : []),
-    ]
-      .filter(Boolean)
-      .join(' ')
-  );
-  const terms = [...story].filter(
-    (w) => w.length >= 4 && !STOPWORDS.has(w) && !MONTHS.has(w) && !FILLER.has(w) && !GENERIC.has(w)
-  );
-  if (!terms.length) return 0;
+  const { terms } = storyVocabulary(d);
+  const vocabulary = terms;
+  if (!vocabulary.length) return 0;
 
-  const claimed = new Set((d.claims || []).flatMap((c) => c.sources || []));
   const keep = [];
   const dropped = [];
   const seenUrls = new Set();
   const seenTitles = new Set();
   const reasons = new Map();
   for (const s of d.sources) {
-    const words = wordsOf(s.title);
     const junk = notASource(s);
     // A second copy of a document that is already on file is not a second
     // source.
@@ -437,16 +521,20 @@ function pruneOffTopic(d) {
     const duplicate = (url && seenUrls.has(url)) || (title && seenTitles.has(title));
     if (url) seenUrls.add(url);
     if (title) seenTitles.add(title);
-    // A headline is judged by its words. A document the desk has read is
-    // judged by what it says: two of the story's words in the text are
-    // enough, or one word that no other story uses. A reporter does not
-    // throw away the document they read because the headline was bland.
-    const text = String(s.text || '').toLowerCase();
-    const textHits = text ? terms.filter((t) => text.includes(t)) : [];
-    const onTopic =
-      claimed.has(s.id) ||
-      terms.some((t) => words.has(t)) ||
-      (text && (textHits.length >= 2 || textHits.some((t) => t.length >= 6)));
+    // A headline is judged by its words: if it names the story, the document
+    // is about the story. A document the desk has read is judged by what it
+    // says — two of the story's words, or one of its names. A reporter does
+    // not throw away the document they read because the headline was bland,
+    // and does not keep one that only repeats what every press release says.
+    //
+    // A claim does not keep a document alive: a claim that cites a document
+    // about another subject is not evidence for this story, and neither is
+    // the document it points at.
+    const text = String(s.text || '');
+    const titleText = String(s.title || '');
+    const titleHit = vocabulary.some((re) => re.test(titleText));
+    const textHits = vocabulary.filter((re) => re.test(text)).length;
+    const onTopic = titleHit || textHits >= 2;
     reasons.set(s, junk ? 'not a source' : duplicate ? 'duplicate' : onTopic ? '' : 'off topic');
     if (!junk && !duplicate && onTopic) {
       keep.push(s);
@@ -460,12 +548,40 @@ function pruneOffTopic(d) {
   const idMap = new Map();
   keep.forEach((s, i) => {
     const next = `S${i + 1}`;
-    if (next !== s.id) idMap.set(s.id, next);
+    idMap.set(s.id, next);
     s.id = next;
   });
+  // A claim that cited a document which just left the dossier has lost its
+  // evidence. It keeps the citations that survived and loses the claim
+  // itself when nothing is left: a claim without a document is not a claim.
+  const lost = [];
+  const byId = new Map(keep.map((s) => [s.id, s]));
   for (const c of d.claims || []) {
     if (!Array.isArray(c.sources)) continue;
-    c.sources = c.sources.map((id) => idMap.get(id) || id);
+    const had = c.sources.length;
+    c.sources = c.sources
+      .map((id) => idMap.get(id))
+      .filter(Boolean)
+      .filter((id) => {
+        const s = byId.get(id);
+        if (!s) return false;
+        const whole = Number.isFinite(s.textLength) ? s.textLength <= String(s.text || '').length : false;
+        if (!whole) return true;
+        return claimSupportedBy(c, s);
+      });
+    if (c.sources.length !== had) {
+      // The document behind the claim changed: the desk has to read it again.
+      delete c.checked;
+      delete c.checkNote;
+    }
+    if (!c.sources.length) lost.push(c);
+  }
+  if (lost.length) {
+    d.claims = d.claims.filter((c) => !lost.includes(c));
+    for (const c of lost) {
+      d.gaps = [...(d.gaps || []), `Nicht belegt, deshalb gestrichen: ${String(c.text || '').slice(0, 200)}`];
+    }
+    log(`PRUNE  ${lost.length} claim(s) lost their document`);
   }
   d.sources = keep;
   log(
@@ -2057,10 +2173,32 @@ function institutionHost(host) {
 }
 
 /**
+ * Is this source about the story? The desk asks the same question twice: once
+ * when it throws away a source it read, and once before it writes to the
+ * institution that filed it. A document that names the story, or says two of
+ * its words, is about it. A document nothing has been read from yet is left
+ * alone — the desk filed it for this story in the first place.
+ */
+function sourceIsAboutStory(d, source) {
+  const { terms } = storyVocabulary(d);
+  const vocabulary = terms;
+  if (!vocabulary.length) return true;
+  const title = String(source?.title || '');
+  const text = String(source?.text || '');
+  if (!title && !text) return true;
+  if (vocabulary.some((re) => re.test(title))) return true;
+  return vocabulary.filter((re) => re.test(text)).length >= 2;
+}
+
+/**
  * The desk knows who to write to: every document it holds comes from an
  * institution, and an institution publishes its press address. The agent does
  * not have to spend a step on it — a reporter who read the document knows
  * whose desk to write to.
+ *
+ * A letter goes to an institution the story is about. A document the desk
+ * opened and found to be about something else earns no letter: a reporter
+ * does not ask the Justice Department about a game publisher's apology.
  */
 async function fileContacts(d) {
   const hosts = [];
@@ -2087,6 +2225,8 @@ async function fileContacts(d) {
     const filed = (d.contacts || []).find(
       (c) => !c.email && (sameOrg(c.org, org) || sameOrg(c.org, host)),
     );
+    // An organisation the story is not about gets no letter.
+    if (!filed && source && !sourceIsAboutStory(d, source)) continue;
     const found = await publishedEmail(host).catch(() => null);
     if (!found?.email) continue;
     if (filed) {

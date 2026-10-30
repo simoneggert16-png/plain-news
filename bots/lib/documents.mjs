@@ -185,6 +185,38 @@ const GENERIC_CAPS = new Set([
 ]);
 
 /**
+ * The words that stand in every institutional document: press releases, court
+ * decisions, procurement notices, agency statements. They say how a document
+ * is written, not what it is about — a document that shares only these with a
+ * story is about something else, however many of them it happens to use.
+ */
+export const BOILERPLATE = new Set([
+  'court', 'courts', 'case', 'cases', 'law', 'laws', 'legal', 'lawsuit', 'lawsuits', 'judge', 'judges',
+  'jury', 'trial', 'hearing', 'attorney', 'attorneys', 'prosecutor', 'prosecutors', 'prosecution', 'charges',
+  'charged', 'indictment', 'indicted', 'plea', 'guilty', 'conviction', 'sentence', 'sentenced', 'appeal',
+  'evidence', 'witness', 'witnesses', 'victim', 'victims', 'plaintiff', 'defendant', 'injury', 'injuries',
+  'death', 'deaths', 'died', 'killed', 'injured', 'arrest', 'arrested', 'suspect', 'suspects', 'enforcement',
+  'investigation', 'investigations', 'investigative', 'investigators', 'allegation', 'allegations', 'civil',
+  'criminal', 'federal', 'state', 'district', 'ruling', 'order', 'orders', 'justice', 'inquiry', 'inquiries',
+  'probe', 'litigation', 'complaint', 'settlement', 'damages', 'verdict', 'subpoena', 'testimony', 'filing',
+  'department', 'agency', 'office', 'bureau', 'ministry', 'minister', 'ministers', 'commission', 'committee',
+  'council', 'authority', 'authorities', 'official', 'officials', 'government', 'administration', 'secretary',
+  'director', 'chairman', 'president', 'spokesperson', 'representative', 'organisation', 'organization',
+  'organizations', 'press', 'release', 'released', 'statement', 'statements', 'comment', 'comments',
+  'announcement', 'announced', 'media', 'news', 'newsroom', 'update', 'updates', 'report', 'reports',
+  'reported', 'according', 'including', 'include', 'includes', 'involving', 'involved', 'using', 'used',
+  'use', 'uses', 'making', 'made', 'make', 'calls', 'called', 'contact', 'contacts', 'email',
+  'website', 'page', 'pages', 'homepage', 'public', 'said', 'says', 'told', 'people', 'person',
+  'persons', 'individual', 'individuals', 'group', 'groups', 'family', 'families', 'company', 'companies',
+  'business', 'industry', 'market', 'money', 'dollar', 'dollars', 'million', 'billion', 'percent', 'year',
+  'years', 'month', 'months', 'week', 'weeks', 'day', 'days', 'hour', 'hours', 'today', 'level', 'levels',
+  'amount', 'value', 'number', 'part', 'work', 'works', 'world', 'national', 'international', 'global',
+  'regional', 'local', 'based', 'following', 'regarding', 'concerning', 'related', 'during', 'while', 'since',
+  'until', 'about', 'against', 'between', 'through', 'across', 'into', 'over', 'under', 'after', 'before',
+  'per', 'via',
+]);
+
+/**
  * Capitalised names and figures: the words a document has to use before it
  * belongs to a story. Lowercase words are the subject; they say what the
  * document is about, not who it is about.

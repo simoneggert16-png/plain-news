@@ -155,27 +155,92 @@ function take(name, from = SOURCE) {
   const at = from.indexOf(`function ${name}(`);
   assert.ok(at >= 0, `${name} not found`);
   const start = from.slice(Math.max(0, at - 6), at) === 'async ' ? at - 6 : at;
+  // Braces inside strings, comments and template literals are not code.
+  const scan = (from_, i, stop) => {
+    let quote = null;
+    for (; i < from_.length; i++) {
+      const c = from_[i];
+      if (quote) {
+        if (c === '\\') i++;
+        else if (c === quote) quote = null;
+        continue;
+      }
+      if (c === '"' || c === "'" || c === '`') { quote = c; continue; }
+      if (c === '/' && from_[i + 1] === '/') { i = from_.indexOf('\n', i); if (i < 0) return -1; continue; }
+      if (c === '/' && from_[i + 1] === '*') { i = from_.indexOf('*/', i) + 1; continue; }
+      if (stop(c)) return i;
+    }
+    return -1;
+  };
+  // The signature ends before the body begins.
+  let i = at;
   let depth = 0;
-  let opened = false;
-  for (let i = start; i < from.length; i++) {
-    if (from[i] === '{') { depth++; opened = true; }
-    else if (from[i] === '}' && --depth === 0 && opened) return from.slice(start, i + 1);
+  while (i < from.length) {
+    const c = from[i];
+    if (c === '(') depth++;
+    else if (c === ')') { depth--; if (!depth) { i++; break; } }
+    i++;
   }
-  throw new Error(`${name} unterminated`);
+  const body = scan(from, i, (c) => c === '{');
+  if (body < 0) throw new Error(`${name} has no body`);
+  let d = 0;
+  const end = scan(from, body, (c) => {
+    if (c === '{') { d++; return false; }
+    if (c === '}') { d--; return d === 0; }
+    return false;
+  });
+  if (end < 0) throw new Error(`${name} unterminated`);
+  return from.slice(start, end + 1);
 }
 
+const documents = await import('../bots/lib/documents.mjs');
+const DOC_SOURCE = fs.readFileSync(new URL('../bots/lib/documents.mjs', import.meta.url), 'utf8');
+const wordsOf = (source, name) =>
+  [...new Set(source.match(new RegExp(`const ${name} = new Set\\(\\[([\\s\\S]*?)\\]\\);`))[1].match(/'([^']+)'/g).map((w) => w.slice(1, -1)))];
+
+// The story's own vocabulary: the helpers both the topic test and the press
+// pass work with.
+const story = new Function(`
+  const STOPWORDS = new Set(${JSON.stringify(wordsOf(SOURCE, 'STOPWORDS'))});
+  const MONTHS = new Set(${JSON.stringify(wordsOf(SOURCE, 'MONTHS'))});
+  const FILLER = new Set(${JSON.stringify(wordsOf(SOURCE, 'FILLER'))});
+  const GENERIC = new Set(${JSON.stringify(wordsOf(SOURCE, 'GENERIC'))});
+  const BOILERPLATE = new Set(${JSON.stringify([...documents.BOILERPLATE])});
+  const STOP = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'STOP'))});
+  const GENERIC_CAPS = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'GENERIC_CAPS'))});
+  const namedTerms = ${documents.namedTerms.toString()};
+  ${take('wordPattern')}
+  ${take('storyVocabulary')}
+  ${take('sourceIsAboutStory')}
+  return { wordPattern, storyVocabulary, sourceIsAboutStory };
+`)();
+
 const prune = new Function(`
-  const STOPWORDS = new Set(${JSON.stringify([...new Set(SOURCE.match(/const STOPWORDS = new Set\(\[([\s\S]*?)\]\);/)[1].match(/'([^']+)'/g).map((w) => w.slice(1, -1)))])});
-  const MONTHS = new Set(${JSON.stringify([...new Set(SOURCE.match(/const MONTHS = new Set\(\[([\s\S]*?)\]\);/)[1].match(/'([^']+)'/g).map((w) => w.slice(1, -1)))])});
-  const FILLER = new Set(${JSON.stringify([...new Set(SOURCE.match(/const FILLER = new Set\(\[([\s\S]*?)\]\);/)[1].match(/'([^']+)'/g).map((w) => w.slice(1, -1)))])});
-  const GENERIC = new Set(${JSON.stringify([...new Set(SOURCE.match(/const GENERIC = new Set\(\[([\s\S]*?)\]\);/)[1].match(/'([^']+)'/g).map((w) => w.slice(1, -1)))])});
-  const NOT_A_SOURCE_HOSTS = new Set(${JSON.stringify([...new Set(SOURCE.match(/const NOT_A_SOURCE_HOSTS = new Set\(\[([\s\S]*?)\]\);/)[1].match(/'([^']+)'/g).map((w) => w.slice(1, -1)))])});
+  const STOPWORDS = new Set(${JSON.stringify(wordsOf(SOURCE, 'STOPWORDS'))});
+  const MONTHS = new Set(${JSON.stringify(wordsOf(SOURCE, 'MONTHS'))});
+  const FILLER = new Set(${JSON.stringify(wordsOf(SOURCE, 'FILLER'))});
+  const GENERIC = new Set(${JSON.stringify(wordsOf(SOURCE, 'GENERIC'))});
+  const NOT_A_SOURCE_HOSTS = new Set(${JSON.stringify(wordsOf(SOURCE, 'NOT_A_SOURCE_HOSTS'))});
+  const BOILERPLATE = new Set(${JSON.stringify([...documents.BOILERPLATE])});
+  const STOP = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'STOP'))});
+  const GENERIC_CAPS = new Set(${JSON.stringify(wordsOf(DOC_SOURCE, 'GENERIC_CAPS'))});
+  const namedTerms = ${documents.namedTerms.toString()};
   const notASource = ${take('notASource')};
   const urlKey = ${take('urlKey')};
   const hostOf = ${take('hostOf')};
   const log = () => {};
+  ${take('wordPattern')}
+  ${take('storyVocabulary')}
+  ${take('claimVocabulary')}
+  ${take('claimSupportedBy')}
   return ${take('pruneOffTopic')};
 `)();
+
+const editorial = await import('../lib/editorial.mjs');
+const addSource = new Function('isPrimaryOutlet', `
+  const nowISO = () => new Date().toISOString();
+  return ${take('addSource')};
+`)(editorial.isPrimaryOutlet);
 
 const STORY = {
   title: 'Call of Duty uses Seoul crowd crush footage',
@@ -220,16 +285,47 @@ test('a document about something else does not stay, even when it was read', () 
   assert.equal(d.sources.length, 0);
 });
 
-test('a claim keeps its source alive', () => {
+test('a claim carries its source alive', () => {
   const d = {
     ...STORY,
-    claims: [{ id: 'C1', text: 'The publisher used the footage without asking.', sources: ['S1'] }],
+    claims: [{ id: 'C1', text: 'The publisher used the Itaewon crowd crush footage.', sources: ['S1'] }],
     sources: [
-      { id: 'S1', url: 'https://example.org/c', outlet: 'Example', title: 'Statement', text: 'No relevant words here at all.' },
+      { id: 'S1', url: 'https://example.org/c', outlet: 'Example', title: 'Statement', text: 'The publisher used the Itaewon crowd crush footage in the game.' },
     ],
   };
   prune(d);
   assert.equal(d.sources.length, 1);
+});
+
+test('a claim the document does not carry leaves the dossier', () => {
+  const d = {
+    ...STORY,
+    claims: [{ id: 'C1', text: 'Activision Blizzard is an American video game holding company.', sources: ['S1'] }],
+    sources: [
+      { id: 'S1', url: 'https://example.org/c', outlet: 'Example', title: 'Statement', text: 'Foxconn unveils three electric vehicles to grow its contract manufacturing business.' },
+    ],
+  };
+  prune(d);
+  assert.equal(d.sources.length, 0, 'the document is about something else');
+  assert.equal(d.claims.length, 0, 'a claim without a document is not a claim');
+});
+
+test('a claim that cites a document which left loses its citation', () => {
+  const d = {
+    ...STORY,
+    claims: [
+      { id: 'C1', text: 'The publisher used the Itaewon crowd crush footage.', sources: ['S1', 'S2'] },
+      { id: 'C2', text: 'The publisher used the Itaewon crowd crush footage.', sources: ['S2'] },
+    ],
+    sources: [
+      { id: 'S1', url: 'https://example.org/e', outlet: 'Example', title: 'The publisher used the Itaewon crowd crush footage.', text: null },
+      { id: 'S2', url: 'https://example.org/f', outlet: 'Example', title: 'Unrelated fishing report', text: 'The council met about the harbour quota for sardines.' },
+    ],
+  };
+  prune(d);
+  assert.equal(d.sources.length, 1);
+  assert.deepEqual(d.claims.find((c) => c.id === 'C1').sources, ['S1']);
+  assert.equal(d.claims.find((c) => c.id === 'C2'), undefined, 'the claim without a document is gone');
 });
 
 test('an encyclopedia and a second copy of a document are not sources', () => {
@@ -245,6 +341,18 @@ test('an encyclopedia and a second copy of a document are not sources', () => {
   prune(d);
   assert.equal(d.sources.length, 1);
   assert.equal(d.sources[0].url, 'https://example.org/d');
+});
+
+test('a number a claim still holds is not handed out again', () => {
+  const d = {
+    ...STORY,
+    claims: [{ id: 'C1', text: 'The publisher used the Itaewon crowd crush footage.', sources: ['S2'] }],
+    sources: [
+      { id: 'S1', url: 'https://example.org/g', outlet: 'Example', title: 'First', text: null },
+    ],
+  };
+  addSource(d, { url: 'https://example.org/h', outlet: 'Example', title: 'Second' });
+  assert.equal(d.sources[1].id, 'S3', 'S2 still belongs to the claim');
 });
 
 // ───────────────────────── a spent quota is a spent quota ─────────────────────────
@@ -560,7 +668,7 @@ test('an institution has its own domain', () => {
 // desk that writes twice to the same desk looks like a machine.
 function pressPass() {
   return new Function(
-    'publishedEmail', 'sameOrg', 'hostOf', 'institutionHost', 'log', 'deadlineLeft',
+    'publishedEmail', 'sameOrg', 'hostOf', 'institutionHost', 'log', 'deadlineLeft', 'sourceIsAboutStory',
     `${take('fileContacts')}; return fileContacts;`,
   )(
     async (host) => ({ email: `press@${host}`, sourceUrl: `https://${host}/press` }),
@@ -569,6 +677,7 @@ function pressPass() {
     new Function(`${take('institutionHost')}; return institutionHost;`)(),
     () => {},
     () => 600_000,
+    story.sourceIsAboutStory,
   );
 }
 
@@ -594,6 +703,27 @@ test('an institution the desk has not met yet is filed with its address', async 
   assert.equal(d.contacts.length, 1);
   assert.equal(d.contacts[0].org, 'US Department of Justice');
   assert.equal(d.contacts[0].email, 'press@justice.gov');
+});
+
+test('a press release about something else earns no letter', async () => {
+  const fill = pressPass();
+  const d = {
+    title: 'Call of Duty uses Seoul crowd crush footage',
+    angle: 'Did the US game developer exploit a tragedy for profit?',
+    brief: { centre: 'South Korea', beat: 'Activision Blizzard' },
+    sources: [
+      {
+        url: 'https://www.justice.gov/opa/pr/botox-fraud-doctor-sentenced',
+        outlet: 'US Department of Justice',
+        kind: 'document',
+        title: 'Botox Fraud Doctor Sentenced to 15 Years in Prison for $45M Medicare Scheme',
+        text: 'The defendant prescribed Botox and other drugs to Medicare patients for $45 million. The case was prosecuted by the United States Attorney for the District.',
+      },
+    ],
+    contacts: [],
+  };
+  assert.equal(await fill(d), 0);
+  assert.equal(d.contacts.length, 0, 'a reporter does not ask the Justice Department about a game publisher');
 });
 
 test('a news site is not an institution, so no letter goes to it', async () => {

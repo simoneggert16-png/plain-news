@@ -6,6 +6,8 @@
 // Bank's procurement notices, the whole world's news archive in GDELT.
 // The desk can therefore file a primary document without a paid search engine.
 
+import { namedTerms, BOILERPLATE } from './documents.mjs';
+
 const UA = 'Mozilla/5.0 (compatible; PlainNewsBot/1.0; +https://plain-news.ch)';
 
 const STOP = new Set(['that', 'this', 'with', 'from', 'have', 'were', 'been', 'will', 'about', 'after', 'over', 'into', 'says', 'said', 'their', 'under', 'more', 'what', 'when', 'where', 'which', 'while', 'there', 'these', 'those', 'should', 'would', 'could', 'und', 'oder', 'aber', 'nicht', 'auch', 'für', 'mit', 'von', 'der', 'die', 'das', 'dem', 'den', 'des', 'ein', 'eine']);
@@ -23,19 +25,27 @@ async function grab(url, { type = 'json', timeout = 12000 } = {}) {
   return type === 'json' ? res.json() : res.text();
 }
 
+// The words of the question that say something about it. "Court", "case" and
+// "victims" stand in every press release of every institution, so a question
+// that is only made of them cannot tell one release from another.
 const termsOf = (query) =>
-  [...new Set(String(query || '').toLowerCase().replace(/[^a-z0-9äöüßÀ-ÿ ]/g, ' ').split(/\s+/).filter((w) => w.length >= 4 && !STOP.has(w)))];
+  [...new Set(String(query || '').toLowerCase().replace(/[^a-z0-9äöüßÀ-ÿ ]/g, ' ').split(/\s+/).filter((w) => w.length >= 4 && !STOP.has(w) && !BOILERPLATE.has(w)))];
+
+// The names of the question: what a document has to use to be about it.
+const namesOf = (query) => namedTerms(query).filter((n) => !BOILERPLATE.has(n));
 
 // One shared word is not a match: the UN newsroom carries the word "new" in
 // every headline, and a cabinet that answers with one word answers with
-// everything. Two words, or one when the question has only one.
-const matches = (text, terms) => {
+// everything. Two words, or one when the question has only one. A name of the
+// question counts on its own — "Activision" is not a word every release has.
+const matches = (text, terms, names = []) => {
   const t = String(text || '').toLowerCase();
   if (!terms.length) return false;
   const needed = Math.min(2, terms.length);
   let hits = 0;
   for (const x of terms) if (t.includes(x)) hits++;
-  return hits >= needed;
+  if (hits >= needed) return true;
+  return hits >= 1 && names.some((n) => t.includes(n));
 };
 
 const hostOf = (url) => {
@@ -99,9 +109,10 @@ async function gdelt(query, { limit = 12, timespan = '90d' } = {}) {
 /** The US Justice Department: indictments, sentences, plea agreements. */
 async function dojPress(query) {
   const terms = termsOf(query);
+  const names = namesOf(query);
   const xml = await grab('https://www.justice.gov/news/rss?type=press_release', { type: 'xml' });
   return rssItems(xml)
-    .filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms))
+    .filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms, names))
     .slice(0, 10)
     .map((i) => ({ ...i, outlet: 'US Department of Justice', kind: 'document', primary: true }));
 }
@@ -109,9 +120,10 @@ async function dojPress(query) {
 /** The UN newsroom: reports, statements, resolutions in the open. */
 async function unNews(query) {
   const terms = termsOf(query);
+  const names = namesOf(query);
   const xml = await grab('https://news.un.org/feed/subscribe/en/news/all/rss.xml', { type: 'xml' });
   return rssItems(xml)
-    .filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms))
+    .filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms, names))
     .slice(0, 10)
     .map((i) => ({ ...i, outlet: 'UN News', kind: 'document', primary: true }));
 }
@@ -119,6 +131,7 @@ async function unNews(query) {
 /** US Treasury: sanctions and designations. */
 async function treasuryPress(query) {
   const terms = termsOf(query);
+  const names = namesOf(query);
   const feeds = [
     ['US Treasury', 'https://home.treasury.gov/news/press-releases/rss'],
     ['US Treasury', 'https://home.treasury.gov/rss/press-releases.xml'],
@@ -126,7 +139,7 @@ async function treasuryPress(query) {
   for (const [outlet, url] of feeds) {
     try {
       const xml = await grab(url, { type: 'xml', timeout: 9000 });
-      const items = rssItems(xml).filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms));
+      const items = rssItems(xml).filter((i) => i.url && matches(`${i.title} ${i.summary}`, terms, names));
       if (items.length) return items.slice(0, 10).map((i) => ({ ...i, outlet, kind: 'document', primary: true }));
     } catch {
       /* try the next feed */
@@ -138,6 +151,7 @@ async function treasuryPress(query) {
 /** World Bank procurement notices: tenders, awards, contracts. */
 async function worldBank(query) {
   const terms = termsOf(query);
+  const names = namesOf(query);
   if (!terms.length) return [];
   const url = `https://search.worldbank.org/api/v2/procnotices?format=json&qterm=${encodeURIComponent(terms.join(' '))}&rows=15`;
   const data = await grab(url);
@@ -154,7 +168,7 @@ async function worldBank(query) {
       kind: 'document',
       primary: true,
     }))
-    .filter((n) => n.title.replace(/^Notice:\s*/, '').trim().length > 12 && matches(`${n.title} ${n.summary}`, terms))
+    .filter((n) => n.title.replace(/^Notice:\s*/, '').trim().length > 12 && matches(`${n.title} ${n.summary}`, terms, names))
     .slice(0, 10);
 }
 

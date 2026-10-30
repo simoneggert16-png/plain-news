@@ -130,10 +130,15 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
     if (links.length >= maxLinks) break;
   }
 
+  const body = blocks.join('\n');
   return {
     url,
     title,
-    text: blocks.join('\n').slice(0, maxChars),
+    text: body.slice(0, maxChars),
+    // How long the document really is. A reader who saw the first 4000
+    // characters of a 9000-character article cannot prove that the article
+    // does not say something — the desk has to know the difference.
+    length: body.length,
     links,
     ...(picture ? { image: picture.url, imageCaption: picture.caption, imageCredit: picture.credit } : {}),
   };
