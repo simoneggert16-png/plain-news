@@ -6,7 +6,7 @@
 // Bank's procurement notices, the whole world's news archive in GDELT.
 // The desk can therefore file a primary document without a paid search engine.
 
-import { namedTerms, BOILERPLATE } from './documents.mjs';
+import { namedTerms, BOILERPLATE, INSTITUTIONS, institutionDocuments } from './documents.mjs';
 
 const UA = 'Mozilla/5.0 (compatible; PlainNewsBot/1.0; +https://plain-news.ch)';
 
@@ -196,20 +196,31 @@ async function worldBank(query) {
  * The front pages of the cabinets, unfiltered. A desk that looks for a story
  * of its own reads what the world's institutions publish today — it does not
  * wait for a tip to tell it where to look.
+ *
+ * Every cabinet gets its say: the desk reads a few notices from each front
+ * page, not the whole of the first one it comes to.
  */
-export async function cabinetFrontPage({ limit = 40 } = {}) {
+export async function cabinetFrontPage({ limit = 40, perCabinet = 6 } = {}) {
   // One cabinet that is down must not silence the others.
+  const registry = INSTITUTIONS.map((inst) =>
+    institutionDocuments(inst, { limit: 10 })
+      .then((hits) => ({ label: inst.outlet, hits }))
+      .catch(() => ({ label: inst.outlet, hits: [] }))
+  );
   const groups = await Promise.all([
     dojItems().then((hits) => ({ label: 'US Justice Department', hits })).catch(() => ({ label: 'US Justice Department', hits: [] })),
     unItems().then((hits) => ({ label: 'UN newsroom', hits })).catch(() => ({ label: 'UN newsroom', hits: [] })),
     treasuryItems().then((hits) => ({ label: 'US Treasury', hits })).catch(() => ({ label: 'US Treasury', hits: [] })),
     worldBankItems().then((hits) => ({ label: 'World Bank procurement', hits })).catch(() => ({ label: 'World Bank procurement', hits: [] })),
+    ...registry,
   ]);
+  const queues = groups.map((g) => (g.hits || []).filter((h) => h?.url).slice(0, perCabinet));
   const out = [];
   const seen = new Set();
-  for (const group of groups) {
-    for (const hit of group.hits) {
-      if (!hit.url || seen.has(hit.url)) continue;
+  for (let i = 0; i < perCabinet; i++) {
+    for (const queue of queues) {
+      const hit = queue[i];
+      if (!hit || seen.has(hit.url)) continue;
       seen.add(hit.url);
       out.push(hit);
     }

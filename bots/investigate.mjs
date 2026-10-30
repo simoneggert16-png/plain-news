@@ -881,6 +881,8 @@ async function intake(dossiers, state) {
           dossiers.push(dossier);
           tip.opened = dossier.slug;
           tip.tried = week;
+          // The institution the notice came from is one the desk now follows.
+          if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
           log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
           slots--;
         }
