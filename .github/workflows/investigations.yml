@@ -31,6 +31,10 @@ on:
         description: 'Time budget in minutes (empty = 55)'
         type: string
         required: false
+      force_draft:
+        description: 'Write the draft even if the gates are not met (a human still approves it)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -78,6 +82,7 @@ jobs:
           INVESTIGATE_REPLY_HOURS: '72'
           INVESTIGATE_MAX_READS: '6'
           INVESTIGATE_MINUTES: ${{ inputs.minutes || '55' }}
+          INVESTIGATE_FORCE_DRAFT: ${{ inputs.force_draft == true && '1' || '' }}
           INVESTIGATE_LOCALES: 'en,de,fr,es,it,pt'
           INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
         run: node bots/investigate.mjs
