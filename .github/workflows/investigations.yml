@@ -35,6 +35,10 @@ on:
         description: 'Write the draft even if the gates are not met (a human still approves it)'
         type: boolean
         default: false
+      approve:
+        description: 'Approve this dossier slug and publish it (the editor approved it)'
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -87,6 +91,8 @@ jobs:
           INVESTIGATE_MAX_READS: '6'
           INVESTIGATE_MINUTES: ${{ inputs.minutes || '55' }}
           INVESTIGATE_FORCE_DRAFT: ${{ inputs.force_draft == true && '1' || '' }}
+          INVESTIGATE_APPROVE: ${{ inputs.approve || '' }}
+          INVESTIGATE_APPROVED_BY: ${{ vars.INVESTIGATE_APPROVED_BY || 'editor' }}
           INVESTIGATE_LOCALES: 'en,de,fr,es,it,pt'
           INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
         run: node bots/investigate.mjs
@@ -101,8 +107,28 @@ jobs:
           git add content
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "investigations: $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull --rebase --autostash
-          git push
+          # The live tickers write to content/ every few minutes as well. A
+          # push that races with them must not lose the piece: the commit
+          # stays, the base is refreshed and the push is tried again.
+          for attempt in 1 2 3 4 5; do
+            if git pull -q --rebase --autostash && git push -q; then
+              echo "pushed"
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            if git fetch -q origin main && git merge -q --no-edit -X ours origin/main; then
+              node scripts/sync-index.mjs --missing || true
+              node scripts/check-content.mjs --fix || { echo "index unreadable after merge"; exit 1; }
+              git add content
+              git commit -q -m "investigations: merge upstream" || true
+              git push -q && { echo "pushed after merge"; exit 0; }
+            fi
+            git merge --abort 2>/dev/null || true
+            echo "push attempt $attempt failed, retrying"
+            sleep $((attempt * 10))
+          done
+          echo "the dossiers are committed but not pushed"
+          exit 1
 
       - name: Mirror content to Supabase
         if: always()

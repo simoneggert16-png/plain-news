@@ -166,10 +166,17 @@ export async function POST(request) {
       try {
         current = await getInvestigationStatus(slug);
       } catch (err) {
-        // Without the table the approval cannot be stored, and the desk would
-        // never see it. Say so instead of pretending it worked.
+        // Without the table the approval cannot be stored there. The decision
+        // is still a human one, so it goes to the desk as a run: the desk
+        // writes it into the dossier and publishes. The editor gets a link
+        // instead of a dead end.
+        const repo = process.env.GITHUB_REPO || 'simoneggert16-png/plain-news';
+        const dispatch = `https://github.com/${repo}/actions/workflows/investigations.yml/dispatch?inputs%5Bapprove%5D=${encodeURIComponent(slug)}`;
         return NextResponse.json(
-          { error: 'Die Datenbank antwortet nicht. Die Freigabe braucht sie - bitte zuerst die Supabase-Verbindung prüfen.' },
+          {
+            error: 'Die Datenbank antwortet nicht. Die Freigabe geht stattdessen an den Desk: dort wird sie festgehalten und der Text veröffentlicht.',
+            dispatch,
+          },
           { status: 503 }
         );
       }

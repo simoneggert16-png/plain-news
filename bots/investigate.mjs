@@ -63,6 +63,11 @@ const DOSSIER_DIR = 'content/investigations';
 const STATE_FILE = path.join(DOSSIER_DIR, 'state.json');
 const DRY_RUN = process.env.INVESTIGATE_DRY_RUN === '1';
 const FORCE_SLUG = String(process.env.INVESTIGATE_SLUG || '').trim();
+// The editor approves a piece from the desk page. While the database is
+// unreachable there is nowhere else to write that decision down, so the
+// approval comes in with the run and goes into the dossier file.
+const APPROVE_SLUG = String(process.env.INVESTIGATE_APPROVE || '').trim();
+const APPROVED_BY = String(process.env.INVESTIGATE_APPROVED_BY || 'editor').trim();
 const CAN_SEND = !DRY_RUN && (process.env.GITHUB_ACTIONS === 'true' || process.env.INVESTIGATE_SEND === '1');
 const MIN_SOURCES = Math.max(4, +(process.env.INVESTIGATE_MIN_SOURCES || 8));
 const MIN_PRIMARY = Math.max(0, +(process.env.INVESTIGATE_MIN_PRIMARY || 2));
@@ -2165,6 +2170,9 @@ async function translateInvestigation(block, locale) {
 
 async function publish(d) {
   if (!d.draft) throw new Error('no draft to publish');
+  // A draft the desk itself rejected is not published, however it was
+  // approved. The editor reads the text first; this only stops a broken one.
+  if (d.review?.verdict === 'rejected') throw new Error('the draft did not pass the check');
   const draft = d.draft;
   const pictures = await collectImages(d.sources, { max: 3 });
   const hero = pictures[0] || null;
@@ -2376,6 +2384,19 @@ async function main() {
       // The editor decides in the database. Read that decision before doing
       // anything else with the dossier.
       await syncStatus(d).catch((err) => log(`STATUS  unreachable: ${err.message}`));
+      // The editor's approval comes in with the run. It is written into the
+      // dossier, so the next shift reads the same decision, and into the
+      // database if that one is reachable.
+      if (APPROVE_SLUG && APPROVE_SLUG === d.slug && d.status !== 'published') {
+        const at = nowISO();
+        d.status = 'approved';
+        d.approvedAt = at;
+        d.approvedBy = APPROVED_BY;
+        d.nextStep = 'approved by the editor; publishing';
+        note(d, null, `approved by ${APPROVED_BY}`);
+        await safe(() => setInvestigationStatus(d.slug, 'approved', { approved_at: at }));
+        log(`DESK  ${d.slug}: approved by ${APPROVED_BY}`);
+      }
       if (!isActive(d)) {
         log(`  ${d.status} - the editor closed this one; leaving it alone`);
         await mirror(d);
