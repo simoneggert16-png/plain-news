@@ -16,6 +16,7 @@ import {
 import { weekKey } from '@/lib/investigations.mjs';
 import { listMessages } from '@/lib/inboxStore.mjs';
 import { readGitDossierFast, readGitDossierIndex } from '@/lib/contentGit.mjs';
+import { dispatchDesk } from '@/lib/deskDispatch.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -199,17 +200,6 @@ async function requireAdmin(request) {
   return { user };
 }
 
-/**
- * A human decision reaches the desk as a run: the workflow takes the decision
- * with it, writes it into the dossier and does what was asked.
- */
-function deskDispatch(inputs) {
-  const repo = process.env.GITHUB_REPO || 'simoneggert16-png/plain-news';
-  const params = new URLSearchParams();
-  for (const [key, value] of Object.entries(inputs)) params.set('inputs[' + key + ']', String(value));
-  return `https://github.com/${repo}/actions/workflows/investigations.yml/dispatch?${params.toString()}`;
-}
-
 export async function GET(request) {
   try {
     const auth = await requireAdmin(request);
@@ -272,9 +262,17 @@ export async function POST(request) {
           || (l.dbId != null && ids.includes(String(l.dbId))));
         const slug = String(body.slug || '').trim() || letter?.slug || '';
         const input = action === 'approve-outreach' ? 'approve_outreach' : 'reject_outreach';
+        const run = await dispatchDesk({ [input]: `${slug}:${ids.join(',')}`, slug, dry_run: 'false' });
+        if (run.started) {
+          return NextResponse.json({
+            ok: true,
+            started: true,
+            message: 'Die Freigabe ist beim Desk. Er hält sie im Dossier fest und schickt den Brief in der nächsten Schicht.',
+          });
+        }
         return NextResponse.json({
           error: 'Die Datenbank antwortet nicht. Die Freigabe geht stattdessen an den Desk: dort wird sie festgehalten und der Brief geht raus.',
-          dispatch: deskDispatch({ [input]: `${slug}:${ids.join(',')}`, slug, dry_run: 'false' }),
+          dispatch: run.url,
         }, { status: 503 });
       }
     }
@@ -329,10 +327,18 @@ export async function POST(request) {
         // is still a human one, so it goes to the desk as a run: the desk
         // writes it into the dossier and publishes. The editor gets a link
         // instead of a dead end.
+        const run = await dispatchDesk({ approve: slug, dry_run: 'false' });
+        if (run.started) {
+          return NextResponse.json({
+            ok: true,
+            started: true,
+            message: 'Die Freigabe ist beim Desk. Er schreibt sie fest und veröffentlicht den Text.',
+          });
+        }
         return NextResponse.json(
           {
             error: 'Die Datenbank antwortet nicht. Die Freigabe geht stattdessen an den Desk: dort wird sie festgehalten und der Text veröffentlicht.',
-            dispatch: deskDispatch({ approve: slug, dry_run: 'false' }),
+            dispatch: run.url,
           },
           { status: 503 }
         );

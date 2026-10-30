@@ -152,6 +152,12 @@ export default function AdminInvestigations() {
         body: JSON.stringify(payload),
       });
       const body = await res.json().catch(() => ({}));
+      // The desk started the run itself — the decision is with it.
+      if (body.started) {
+        setDispatch({ url: null, message: body.message });
+        await load();
+        return;
+      }
       if (!res.ok) {
         // The database is unreachable. The approval goes to the desk as a run
         // instead, and the editor gets a button for it.
@@ -218,10 +224,16 @@ export default function AdminInvestigations() {
 
       {dispatch && (
         <p style={{ ...mono, border: '1px solid var(--ink)', padding: '8px 12px', marginBottom: '14px' }}>
-          <a href={dispatch.url} target="_blank" rel="noopener noreferrer">
-            Freigabe an den Desk senden
-          </a>{' '}
-          — der Lauf nimmt die Freigabe entgegen, hält sie im Dossier fest und veröffentlicht den Text.
+          {dispatch.url ? (
+            <>
+              <a href={dispatch.url} target="_blank" rel="noopener noreferrer">
+                Freigabe an den Desk senden
+              </a>{' '}
+              — der Lauf nimmt die Freigabe entgegen, hält sie im Dossier fest und veröffentlicht den Text.
+            </>
+          ) : (
+            dispatch.message
+          )}
         </p>
       )}
 
