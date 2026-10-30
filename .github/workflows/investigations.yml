@@ -23,6 +23,10 @@ on:
         description: 'Agent steps per dossier (empty = 12, use small numbers to test)'
         type: string
         required: false
+      only:
+        description: 'Diagnostics: "agent" runs only the agent for one dossier'
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -61,6 +65,7 @@ jobs:
           INVESTIGATE_SLUG: ${{ inputs.slug || '' }}
           INVESTIGATE_INTAKE: ${{ inputs.intake == true && '1' || '' }}
           INVESTIGATE_AGENT_STEPS: ${{ inputs.agent_steps || '12' }}
+          INVESTIGATE_ONLY: ${{ inputs.only || '' }}
           INVESTIGATE_MIN_SOURCES: '8'
           INVESTIGATE_MIN_PRIMARY: '2'
           INVESTIGATE_MIN_CLAIMS: '6'

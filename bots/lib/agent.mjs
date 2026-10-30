@@ -148,7 +148,7 @@ ${PROTOCOL}`;
       ok: !result?.error,
       ms: Date.now() - started,
     });
-    log(`AGENT  step ${step}: ${name || '—'}${result?.error ? ` ✗ ${String(result.error).slice(0, 120)}` : ' ✓'}`);
+    log(`AGENT  step ${step}: ${name || '—'}${result?.error ? ` ✗ ${String(result.error).slice(0, 120)}` : ' ✓'} ${Math.round((Date.now() - started) / 100) / 10}s`);
   }
 
   return { final, steps, observations };

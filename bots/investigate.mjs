@@ -1382,6 +1382,19 @@ async function main() {
   const dossiers = loadDossiers();
   const state = loadState();
 
+  // Diagnostic mode: only the agent, nothing else, so a test run ends fast.
+  if (process.env.INVESTIGATE_ONLY === 'agent') {
+    const only = FORCE_SLUG ? dossiers.filter((d) => d.slug === FORCE_SLUG) : dossiers.filter(isActive).slice(0, 1);
+    for (const d of only) {
+      log(`\n▶ ${d.slug} [${d.status}] — agent only`);
+      const ok = await researchAgent(d).catch((err) => { log(`AGENT  failed: ${err.message}`); return false; });
+      log(`AGENT  ${ok ? 'added' : 'added nothing'} — ${d.sources.length} source(s), ${d.claims.length} claim(s), ${d.contacts.length} contact(s)`);
+      saveDossier(d);
+    }
+    log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s.`);
+    return;
+  }
+
   await intake(dossiers, state);
 
   const targets = FORCE_SLUG ? dossiers.filter((d) => d.slug === FORCE_SLUG) : dossiers.filter(isActive);
