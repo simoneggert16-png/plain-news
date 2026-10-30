@@ -54,7 +54,8 @@ import {
   setRequestStatus,
   upsertInvestigation,
 } from '../lib/investigationStore.mjs';
-import { listMessages, markMessages } from '../lib/inboxStore.mjs';
+import { listMessages, markMessages, recordInbound } from '../lib/inboxStore.mjs';
+import { fetchMail, slugFromAddress } from './lib/mailbox.mjs';
 
 // ─────────────────────────── config ───────────────────────────
 const DOSSIER_DIR = 'content/investigations';
@@ -72,7 +73,7 @@ const MAX_SOURCE_CHARS = 6000;
 const TRANSLATE_CONCURRENCY = Math.max(1, +(process.env.INVESTIGATE_TRANSLATE_CONCURRENCY || 3));
 const TRANSLATE_LOCALES = String(process.env.INVESTIGATE_LOCALES || 'en,de,fr,es,it,pt')
   .split(',').map((s) => s.trim()).filter((c) => LOCALES.some((l) => l.code === c));
-const EDITORIAL_EMAIL = process.env.INVESTIGATE_REPLY_TO || process.env.RESEND_FROM_EMAIL || 'simoneggert16@gmail.com';
+const EDITORIAL_EMAIL = process.env.INVESTIGATE_REPLY_TO || process.env.EDITORIAL_EMAIL || process.env.RESEND_FROM_EMAIL || 'simoneggert16@gmail.com';
 
 // The desk answers under its own threaded address, so a reply lands on the
 // right dossier instead of in the general editorial inbox.
@@ -1006,6 +1007,70 @@ const replySubject = (subject) => {
   const value = String(subject || '').trim() || 'Ihre Auskunft';
   return /^re:/i.test(value) ? value.slice(0, 160) : `Re: ${value}`.slice(0, 160);
 };
+
+/**
+ * The desk opens its own mailbox at the start of the shift. What comes in is
+ * filed against the dossier whose address it was sent to, so the replies are
+ * evidence and not loose mail.
+ */
+async function pollMailbox(dossiers, state) {
+  const host = process.env.IMAP_HOST;
+  const user = process.env.IMAP_USER;
+  const password = process.env.IMAP_PASSWORD;
+  if (!host || !user || !password) {
+    log('INBOX  no mailbox configured (IMAP_HOST/IMAP_USER/IMAP_PASSWORD) — nothing to read');
+    return 0;
+  }
+
+  const since = Number(state.mailbox?.lastUid || 0);
+  let batch;
+  try {
+    batch = await withDeadline(
+      fetchMail({
+        host,
+        port: Number(process.env.IMAP_PORT || 993),
+        user,
+        password,
+        sinceUid: since,
+        limit: 40,
+      }),
+      60_000,
+      'the desk mailbox'
+    );
+  } catch (err) {
+    log(`INBOX  mailbox not reachable: ${err.message}`);
+    return 0;
+  }
+
+  let filed = 0;
+  let lastUid = since;
+  for (const msg of batch.messages || []) {
+    const slug = slugFromAddress(msg.to);
+    // Only a reply that belongs to a dossier on file can be filed against one.
+    const known = slug && dossiers.some((d) => d.slug === slug) ? slug : null;
+    try {
+      await recordInbound({
+        slug: known,
+        from: msg.from,
+        to: msg.to,
+        subject: msg.subject,
+        text: msg.text,
+        messageId: msg.messageId,
+        inReplyTo: msg.inReplyTo,
+      });
+      filed += 1;
+      lastUid = Math.max(lastUid, msg.uid);
+      log(`INBOX  ${known || 'lead'} ← ${msg.from} — ${msg.subject.slice(0, 70)}`);
+    } catch (err) {
+      // The message stays unfiled, so it is picked up again next shift.
+      log(`INBOX  could not file ${msg.from}: ${err.message}`);
+      break;
+    }
+  }
+
+  state.mailbox = { lastUid, at: nowISO() };
+  return filed;
+}
 
 async function readInbox(d) {
   let messages = [];
@@ -2076,6 +2141,12 @@ async function main() {
   }
 
   await intake(dossiers, state);
+
+  // The desk reads its own mailbox first: an answer that arrived overnight
+  // changes what the shift should look at.
+  const filed = await pollMailbox(dossiers, state);
+  if (filed) log(`INBOX  ${filed} message(s) filed`);
+  saveState(state);
 
   const targets = FORCE_SLUG ? dossiers.filter((d) => d.slug === FORCE_SLUG) : dossiers.filter(isActive);
   log(`DESK  ${targets.length} dossier(s) to advance`);

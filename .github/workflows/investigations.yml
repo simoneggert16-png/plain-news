@@ -70,6 +70,10 @@ jobs:
           RESEND_FROM_EMAIL: ${{ vars.RESEND_FROM_EMAIL }}
           DESK_EMAIL_DOMAIN: ${{ vars.DESK_EMAIL_DOMAIN }}
           EDITORIAL_EMAIL: ${{ vars.EDITORIAL_EMAIL }}
+          IMAP_HOST: ${{ vars.IMAP_HOST }}
+          IMAP_PORT: ${{ vars.IMAP_PORT }}
+          IMAP_USER: ${{ secrets.IMAP_USER }}
+          IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
           INVESTIGATE_DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
           INVESTIGATE_SLUG: ${{ inputs.slug || '' }}
           INVESTIGATE_INTAKE: ${{ inputs.intake == true && '1' || '' }}
