@@ -32,6 +32,16 @@ function toolDocs(tools) {
   return tools.map((t) => `- ${t.name}${t.args ? `(${t.args})` : ''}: ${t.description}`).join('\n');
 }
 
+/** The argument names a tool takes. The specs are written for the model, not
+ * for JSON.parse, so the keys are read loosely. */
+function toolSpec(tool) {
+  try {
+    return Object.keys(JSON.parse(tool?.args || '{}'));
+  } catch {
+    return [...String(tool?.args || '').matchAll(/["']?([a-zA-Z_]\w*)["']?\s*:/g)].map((m) => m[1]);
+  }
+}
+
 function clip(value, chars = OBSERVATION_CHARS) {
   const text = typeof value === 'string' ? value : JSON.stringify(value);
   return text.length > chars ? `${text.slice(0, chars)}… [truncated]` : text;
@@ -232,19 +242,23 @@ ${PROTOCOL}`;
       const scored = tools.map((t) => {
         // Tool arg specs are written for the model ("{url: string}"), not for
         // JSON.parse, so read the keys loosely.
-        let spec = [];
-        try { spec = Object.keys(JSON.parse(t.args || '{}')); } catch {
-          spec = [...String(t.args || '').matchAll(/["']?([a-zA-Z_]\w*)["']?\s*:/g)].map((m) => m[1]);
-        }
+        const spec = toolSpec(t);
+        const present = spec.filter((k) => keys.includes(k));
         return {
           tool: t,
-          matched: spec.filter((k) => keys.includes(k)).length,
+          matched: present.length,
           covered: keys.length > 0 && keys.every((k) => spec.includes(k)),
+          // The reply may carry a flag on top of the arguments ("open": true).
+          // A tool whose own arguments are all there is usable anyway.
+          complete: spec.length > 0 && present.length === spec.length,
         };
-      }).filter((x) => x.covered && x.matched > 0);
-      scored.sort((a, b) => b.matched - a.matched);
-      if (scored.length === 1 || (scored.length > 1 && scored[0].matched > scored[1].matched)) {
-        name = scored[0].tool.name;
+      });
+      const exact = scored.filter((x) => x.covered && x.matched > 0);
+      const usable = scored.filter((x) => x.complete && x.matched > 0);
+      const pool = exact.length ? exact : usable;
+      pool.sort((a, b) => b.matched - a.matched);
+      if (pool.length === 1 || (pool.length > 1 && pool[0].matched > pool[1].matched)) {
+        name = pool[0].tool.name;
       }
     }
     // A model that replies with a link under an unexpected key still means
@@ -268,9 +282,12 @@ ${PROTOCOL}`;
       const { thought, action, final, tool, tool_name, name, function: fn, ...rest } = data;
       args = rest;
     }
-    // The explaining keys are not arguments.
+    // The explaining keys are not arguments, and neither are the flags a model
+    // puts next to them ("open": true).
+    const spec = tool ? toolSpec(tool) : [];
     for (const key of Object.keys(args)) {
-      if (NOISE_KEYS.has(key.toLowerCase())) delete args[key];
+      if (NOISE_KEYS.has(key.toLowerCase())) { delete args[key]; continue; }
+      if (typeof args[key] === 'boolean' && !spec.includes(key)) delete args[key];
     }
     const thought = String(data?.thought || '').slice(0, 400);
     const key = `${name}:${JSON.stringify(args)}`;

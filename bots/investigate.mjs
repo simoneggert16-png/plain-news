@@ -366,8 +366,29 @@ function pruneOffTopic(d) {
         .split(/\s+/)
         .filter(Boolean)
     );
-  const story = wordsOf(`${d.title || ''} ${d.angle || ''} ${d.brief?.topic || ''} ${d.brief?.hints || ''}`);
-  const terms = [...story].filter((w) => w.length >= 4 && !STOPWORDS.has(w) && !MONTHS.has(w) && !FILLER.has(w));
+  // The frame the desk wrote belongs to the story: what crosses the border,
+  // who carries the consequences, which institution is being followed. A
+  // dossier that only remembers the headline loses the reason it opened the
+  // story in the first place.
+  const brief = d.brief || {};
+  const story = wordsOf(
+    [
+      d.title,
+      d.angle,
+      brief.topic,
+      brief.hints,
+      brief.centre,
+      brief.border,
+      brief.people,
+      brief.beat,
+      ...(Array.isArray(d.queries) ? d.queries : []),
+    ]
+      .filter(Boolean)
+      .join(' ')
+  );
+  const terms = [...story].filter(
+    (w) => w.length >= 4 && !STOPWORDS.has(w) && !MONTHS.has(w) && !FILLER.has(w) && !GENERIC.has(w)
+  );
   if (!terms.length) return 0;
 
   const claimed = new Set((d.claims || []).flatMap((c) => c.sources || []));
@@ -386,7 +407,16 @@ function pruneOffTopic(d) {
     const duplicate = (url && seenUrls.has(url)) || (title && seenTitles.has(title));
     if (url) seenUrls.add(url);
     if (title) seenTitles.add(title);
-    const onTopic = claimed.has(s.id) || terms.some((t) => words.has(t));
+    // A headline is judged by its words. A document the desk has read is
+    // judged by what it says: two of the story's words in the text are
+    // enough, or one word that no other story uses. A reporter does not
+    // throw away the document they read because the headline was bland.
+    const text = String(s.text || '').toLowerCase();
+    const textHits = text ? terms.filter((t) => text.includes(t)) : [];
+    const onTopic =
+      claimed.has(s.id) ||
+      terms.some((t) => words.has(t)) ||
+      (text && (textHits.length >= 2 || textHits.some((t) => t.length >= 6)));
     reasons.set(s, junk ? 'not a source' : duplicate ? 'duplicate' : onTopic ? '' : 'off topic');
     if (!junk && !duplicate && onTopic) {
       keep.push(s);
@@ -1064,8 +1094,11 @@ ${doorsAdded ? `The desk has already been to the institutions before you started
   // and extract the facts itself.
   const doorIds = new Set(d.sources.filter((s) => s.primary && s.kind === 'document').map((s) => s.id));
   const doorsCited = d.claims.some((c) => (c.sources || []).some((id) => doorIds.has(id)));
-  if ((claims === 0 || (doorsAdded > 0 && !doorsCited)) && d.sources.some((s) => s.text)) {
-    log('RESEARCH  extracting from the documents on file');
+  // A document that no claim leans on is a document nobody has read yet.
+  const cited = new Set((d.claims || []).flatMap((c) => c.sources || []));
+  const unread = d.sources.filter((s) => s.text && !cited.has(s.id));
+  if (unread.length && (claims === 0 || unread.length >= 2 || (doorsAdded > 0 && !doorsCited))) {
+    log(`RESEARCH  extracting from ${unread.length} document(s) on file`);
     await safe(() => extract(d), null);
     claims = d.claims.length - startedClaims;
   }
@@ -1514,7 +1547,15 @@ TASK: Build the evidence base.
 Return exactly:
 {"claims":[{"id":"C1","text":"…","sources":["S1","S2"],"status":"verified|contested","weight":1}],"gaps":["…"],"contacts":[{"org":"…","why":"why they must answer"}]}`,
     },
-  ], { temperature: 0.2, maxTokens: 8000 });
+  ], {
+    temperature: 0.2,
+    maxTokens: 8000,
+    // Writing down what was found must not wait for the next shift: the desk
+    // gets up to five minutes for it and may run two minutes past the end of
+    // its own shift. A finding nobody wrote down is a finding lost.
+    deadline: Date.now() + Math.min(Math.max(Number.isFinite(deadlineLeft()) ? deadlineLeft() : 240_000, 0) + 120_000, 300_000),
+    timeoutMs: 180_000,
+  });
 
   const validIds = new Set(d.sources.map((s) => s.id));
   const claims = (Array.isArray(data.claims) ? data.claims : [])
