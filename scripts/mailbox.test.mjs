@@ -148,13 +148,27 @@ test('a letter that only the shelf knows is still a letter', async () => {
 });
 
 test('the desk finds the last letter from an address', async () => {
-  clean();
   const store2 = shelf();
   try {
     await store.recordInbound(MAIL);
     const thread = await store.findThreadBySender(MAIL.from);
     assert.equal(thread.slug, MAIL.slug);
     assert.equal(thread.message_id, MAIL.messageId);
+  } finally {
+    store2.restore();
+  }
+});
+
+test('a letter that belongs to no story is not kept in the desk’s mailbox', async () => {
+  clean();
+  const store2 = shelf();
+  try {
+    // A tip is read in the shift it arrives. The desk keeps what it learned,
+    // not the letter of a stranger.
+    const letter = await store.recordInbound({ ...MAIL, slug: null, store: false });
+    assert.ok(letter.id);
+    assert.ok(!fs.existsSync(INBOX_FILE), 'the letter is not in the repository');
+    assert.equal(store2.rows.length, 1, 'the editor still sees it on the shelf');
   } finally {
     store2.restore();
   }
