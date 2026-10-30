@@ -445,3 +445,177 @@ test('the desk’s mailbox is not a dossier', () => {
   assert.equal(rows.length, 1);
   assert.equal(rows[0].slug, 'a-story');
 });
+
+// ───────────────────── the editor frees a letter without the shelf ─────────────────────
+
+// When the shared shelf does not answer, the decision travels with the run.
+// The desk writes it into its own ledger, and the letter goes out from there.
+function applyDecision(approve, reject = '') {
+  const shelf = [];
+  const apply = new Function(
+    'APPROVE_LETTERS', 'REJECT_LETTERS', 'APPROVED_BY', 'safe', 'setOutreach', 'note', 'log', 'nowISO',
+    `const parseLetterDecision = ${take('parseLetterDecision')};
+     const ledger = ${take('ledger')};
+     const applyLetterDecision = ${take('applyLetterDecision')};
+     return applyLetterDecision;`,
+  )(
+    approve, reject, 'editor@example.org',
+    async (fn) => { try { return await fn(); } catch { return null; } },
+    async (ids, patch) => { shelf.push({ ids, patch }); },
+    (d, status, message) => { d.history = [...(d.history || []), { status, note: message }]; },
+    () => {},
+    () => new Date().toISOString(),
+  );
+  return { apply, shelf };
+}
+
+test('an approval that comes with the run frees the letter in the desk’s ledger', async () => {
+  const { apply, shelf } = applyDecision('a-story:L1');
+  const d = {
+    slug: 'a-story',
+    letters: [{ id: 'L1', dbId: null, to_email: 'press@example.org', status: 'draft' }],
+  };
+  await apply(d);
+  assert.equal(d.letters[0].status, 'approved');
+  assert.equal(d.letters[0].approved_by, 'editor@example.org');
+  assert.ok(d.letters[0].approved_at, 'the decision is dated');
+  assert.equal(shelf.length, 0, 'a letter the shelf does not know is not written to it');
+});
+
+test('a letter the shelf knows by its number is freed too', async () => {
+  const { apply, shelf } = applyDecision('a-story:42');
+  const d = {
+    slug: 'a-story',
+    letters: [{ id: 'L2', dbId: 42, to_email: 'office@example.org', status: 'draft' }],
+  };
+  await apply(d);
+  assert.equal(d.letters[0].status, 'approved');
+  assert.equal(shelf.length, 1, 'the shelf is told when it is reachable');
+  assert.equal(shelf[0].patch.status, 'approved');
+});
+
+test('a decision for one dossier leaves the others alone', async () => {
+  const { apply } = applyDecision('a-story:L1');
+  const d = {
+    slug: 'another-story',
+    letters: [{ id: 'L1', dbId: null, to_email: 'press@example.org', status: 'draft' }],
+  };
+  await apply(d);
+  assert.equal(d.letters[0].status, 'draft');
+});
+
+// ───────────────────── a letter the desk kept becomes a story ─────────────────────
+
+// The desk works internationally: a tip that is really about Swiss domestic
+// affairs stays a tip.
+function leadGate() {
+  const marker = (name) => {
+    const line = SOURCE.split('\n').find((l) => l.startsWith(`const ${name} = `));
+    return line.slice(`const ${name} = `.length).replace(/;$/, '');
+  };
+  return new Function(`
+    const SWISS_MARKER = ${marker('SWISS_MARKER')};
+    const BORDER_MARKER = ${marker('BORDER_MARKER')};
+    const BORDER_ACRONYM = ${marker('BORDER_ACRONYM')};
+    const FOREIGN_MARKER = ${marker('FOREIGN_MARKER')};
+    ${take('leadInternational')}
+    return leadInternational;
+  `)();
+}
+
+test('a tip about the world is the desk’s business', () => {
+  const gate = leadGate();
+  assert.equal(gate({ title: 'A mine in Congo takes the village’s farmland', angle: 'who paid for the concession', queries: ['congo mining concession land'] }).ok, true);
+});
+
+test('a tip about Swiss domestic affairs stays a tip', () => {
+  const gate = leadGate();
+  const r = gate({ title: 'Der Kanton verschiebt das Asylheim', angle: 'was kostet die Stadt', queries: ['kanton asylheim kosten'] });
+  assert.equal(r.ok, false);
+  assert.match(r.why, /Swiss/);
+});
+
+test('a Swiss story that crosses a border is the desk’s business', () => {
+  const gate = leadGate();
+  assert.equal(gate({ title: 'A Swiss bank moves money for a mining company', angle: 'international sanctions', queries: ['bank sanctions mining transfer'] }).ok, true);
+});
+
+// ───────────────────── who the desk writes to ─────────────────────
+
+// The desk writes to the institution whose document it holds. A news site is
+// not an institution, not even when its name carries a word like "court".
+test('an institution has its own domain', () => {
+  const isInstitution = new Function(`${take('institutionHost')}; return institutionHost;`)();
+  assert.equal(isInstitution('justice.gov'), true);
+  assert.equal(isInstitution('www.gov.uk'), true);
+  assert.equal(isInstitution('un.org'), true);
+  assert.equal(isInstitution('ec.europa.eu'), true);
+  assert.equal(isInstitution('courtnewsdaily.com'), false);
+  assert.equal(isInstitution('en.yna.co.kr'), false);
+  assert.equal(isInstitution('asia.nikkei.com'), false);
+});
+
+// The desk files the organisation while it works and finds the address later.
+// When the address arrives, the organisation is not filed a second time — a
+// desk that writes twice to the same desk looks like a machine.
+function pressPass() {
+  return new Function(
+    'publishedEmail', 'sameOrg', 'hostOf', 'institutionHost', 'log',
+    `${take('fileContacts')}; return fileContacts;`,
+  )(
+    async (host) => ({ email: `press@${host}`, sourceUrl: `https://${host}/press` }),
+    (a, b) => String(a || '').trim().toLowerCase() === String(b || '').trim().toLowerCase(),
+    new Function(`${take('hostOf')}; return hostOf;`)(),
+    new Function(`${take('institutionHost')}; return institutionHost;`)(),
+    () => {},
+  );
+}
+
+test('the address fills the contact the desk already filed', async () => {
+  const fill = pressPass();
+  const d = {
+    sources: [{ url: 'https://www.trmlabs.com/report', outlet: 'TRM Labs', kind: 'document' }],
+    contacts: [{ org: 'TRM Labs', role: 'must be asked for comment' }],
+  };
+  assert.equal(await fill(d), 1);
+  assert.equal(d.contacts.length, 1, 'the organisation must not be filed twice');
+  assert.equal(d.contacts[0].email, 'press@trmlabs.com');
+  assert.equal(d.contacts[0].emailSource, 'https://trmlabs.com/press');
+});
+
+test('an institution the desk has not met yet is filed with its address', async () => {
+  const fill = pressPass();
+  const d = {
+    sources: [{ url: 'https://www.justice.gov/opa/pr/indictment', outlet: 'US Department of Justice', kind: 'document' }],
+    contacts: [],
+  };
+  assert.equal(await fill(d), 1);
+  assert.equal(d.contacts.length, 1);
+  assert.equal(d.contacts[0].org, 'US Department of Justice');
+  assert.equal(d.contacts[0].email, 'press@justice.gov');
+});
+
+test('a news site is not an institution, so no letter goes to it', async () => {
+  const fill = pressPass();
+  const d = {
+    sources: [{ url: 'https://en.yna.co.kr/view/AEN2026', outlet: 'Yonhap', kind: 'read' }],
+    contacts: [],
+  };
+  assert.equal(await fill(d), 0);
+  assert.equal(d.contacts.length, 0);
+});
+
+// The observation is cut off at 3200 characters. What has to survive the cut
+// is the guidance and the list of urls the model can still open — the pages
+// the desk read are on file already, and the desk writes down what they prove.
+test('the guidance and the urls come before the excerpts', () => {
+  const at = SOURCE.indexOf("...(notes.length ? { note: notes.join(' — ') } : {}),");
+  assert.ok(at > 0, 'the note must come first in the search result');
+  const block = SOURCE.slice(at, at + 700);
+  const noteAt = block.indexOf('note:');
+  const resultsAt = block.indexOf('results,');
+  const openedAt = block.indexOf('opened:');
+  assert.ok(noteAt >= 0, 'the search result has no note');
+  assert.ok(resultsAt > noteAt, 'the urls must come before the excerpts');
+  assert.ok(openedAt > resultsAt, 'the excerpts come last');
+});

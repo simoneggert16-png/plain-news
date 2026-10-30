@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
+import { fileURLToPath } from 'node:url';
 
 const workdir = fs.mkdtempSync(path.join(os.tmpdir(), 'desk-mailbox-'));
 process.chdir(workdir);
@@ -172,4 +173,25 @@ test('a letter that belongs to no story is not kept in the desk’s mailbox', as
   } finally {
     store2.restore();
   }
+});
+
+// ───────────────────── the mailbox never reaches the public repository ─────────────────────
+
+// The repository is public. The letters of people who wrote to the desk are
+// not part of it — neither the file nor the commit that would carry it.
+test('the desk’s mailbox is not part of the public repository', () => {
+  // The repository is where this file lives, not where the test runs: the
+  // tests above move the working directory into a scratch folder.
+  const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const gitignore = fs.readFileSync(path.join(repo, '.gitignore'), 'utf8');
+  assert.match(gitignore, /content\/investigations\/inbox\.json/,
+    'the mailbox file is ignored by git');
+
+  const push = fs.readFileSync(path.join(repo, 'scripts', 'push-content.sh'), 'utf8');
+  assert.match(push, /git reset -q -- content\/investigations\/inbox\.json/,
+    'the push script takes the mailbox back out');
+
+  const live = fs.readFileSync(path.join(repo, '.github', 'workflows', 'live.yml'), 'utf8');
+  assert.match(live, /git reset -q -- content\/investigations\/inbox\.json/,
+    'the live workflow takes the mailbox back out');
 });
