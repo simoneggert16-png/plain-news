@@ -68,6 +68,11 @@ const FORCE_SLUG = String(process.env.INVESTIGATE_SLUG || '').trim();
 // approval comes in with the run and goes into the dossier file.
 const APPROVE_SLUG = String(process.env.INVESTIGATE_APPROVE || '').trim();
 const APPROVED_BY = String(process.env.INVESTIGATE_APPROVED_BY || 'editor').trim();
+// A letter is freed the same way a piece is: the editor decides, and the
+// decision travels with the run when the shared shelf does not answer.
+// Format: <slug>:<letter ids, comma separated>.
+const APPROVE_LETTERS = String(process.env.INVESTIGATE_APPROVE_OUTREACH || '').trim();
+const REJECT_LETTERS = String(process.env.INVESTIGATE_REJECT_OUTREACH || '').trim();
 const CAN_SEND = !DRY_RUN && (process.env.GITHUB_ACTIONS === 'true' || process.env.INVESTIGATE_SEND === '1');
 const MIN_SOURCES = Math.max(4, +(process.env.INVESTIGATE_MIN_SOURCES || 8));
 const MIN_PRIMARY = Math.max(0, +(process.env.INVESTIGATE_MIN_PRIMARY || 2));
@@ -144,7 +149,7 @@ const HOME_FEEDS = DESK_FEEDS;
 function loadDossiers() {
   if (!fs.existsSync(DOSSIER_DIR)) return [];
   return fs.readdirSync(DOSSIER_DIR)
-    .filter((f) => f.endsWith('.json') && f !== 'state.json')
+    .filter((f) => f.endsWith('.json') && f !== 'state.json' && f !== 'index.json')
     .map((f) => {
       try { return JSON.parse(fs.readFileSync(path.join(DOSSIER_DIR, f), 'utf8')); } catch { return null; }
     })
@@ -164,6 +169,26 @@ function loadState() {
 function saveState(s) {
   fs.mkdirSync(DOSSIER_DIR, { recursive: true });
   fs.writeFileSync(STATE_FILE, `${JSON.stringify(s, null, 2)}\n`);
+}
+
+/**
+ * The list of dossiers the desk is working on. The editor reads it from the
+ * repository, so the desk page shows what the desk has on its desk even when
+ * no new deployment went out.
+ */
+function saveDossierIndex(dossiers) {
+  fs.mkdirSync(DOSSIER_DIR, { recursive: true });
+  const rows = dossiers
+    .filter((d) => d && d.slug)
+    .map((d) => ({
+      slug: d.slug,
+      title: d.title || '',
+      status: d.status || 'pitch',
+      updatedAt: d.updatedAt || d.createdAt || null,
+      letters: ledger(d).length,
+    }))
+    .sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || '')));
+  fs.writeFileSync(path.join(DOSSIER_DIR, 'index.json'), `${JSON.stringify({ at: nowISO(), dossiers: rows }, null, 2)}\n`);
 }
 
 function note(d, status, message) {
@@ -1303,7 +1328,7 @@ async function readInbox(d) {
   }
   if (!messages.length) return 0;
 
-  const rows = (await outreachRows(d.slug).catch(() => []))
+  const rows = (await outreachRows(d).catch(() => []))
     .filter((r) => ['sent', 'replied'].includes(r.status));
   const handled = [];
 
@@ -1639,9 +1664,110 @@ function sameOrg(a, b) {
   return false;
 }
 
-async function outreachRows(slug) {
-  const all = await safe(() => listOutreach({ limit: 300 }), []);
-  return all.filter((o) => o.slug === slug);
+// The desk's own ledger of the letters it owes.
+//
+// A letter lives in the dossier, not only in the database. The shared shelf
+// may be unreachable for days, and a desk that cannot write down its own
+// questions is not a desk. The row in the database is a mirror of the
+// ledger, not its memory.
+function ledger(d) {
+  if (!Array.isArray(d.letters)) d.letters = [];
+  return d.letters;
+}
+
+function nextLetterId(d) {
+  const used = new Set(ledger(d).map((l) => l.id));
+  let n = ledger(d).length + 1;
+  while (used.has(`L${n}`)) n += 1;
+  return `L${n}`;
+}
+
+const DB_FIELDS = ['subject', 'body', 'status', 'approved_by', 'approved_at', 'sent_at', 'error', 'reply_note'];
+
+function letterRow(d, letter) {
+  return {
+    id: letter.id,
+    dbId: letter.dbId ?? null,
+    slug: d.slug,
+    to_email: letter.to_email || '',
+    org: letter.org || null,
+    contact_name: letter.contact_name || null,
+    subject: letter.subject || '',
+    body: letter.body || '',
+    status: letter.status || 'requested',
+    approved_by: letter.approved_by || null,
+    approved_at: letter.approved_at || null,
+    sent_at: letter.sent_at || null,
+    error: letter.error || null,
+    reply_note: letter.reply_note || null,
+    created_at: letter.created_at || null,
+  };
+}
+
+/** Writes a change into the ledger and, where there is a row, into the shelf. */
+async function saveLetter(d, row, patch) {
+  const letter = ledger(d).find((l) => l.id === row.id);
+  if (letter) Object.assign(letter, patch, { updated_at: nowISO() });
+  if (row.dbId) {
+    const dbPatch = {};
+    for (const field of DB_FIELDS) if (patch[field] !== undefined) dbPatch[field] = patch[field];
+    if (Object.keys(dbPatch).length) {
+      await setOutreach([row.dbId], dbPatch).catch((err) => log(`OUTREACH  shelf not updated: ${err.message}`));
+    }
+  }
+}
+
+// A letter that went out stays out. Every other state may be taken back from
+// the shelf, because that is where the editor decides.
+const SENT_STATES = ['sent', 'replied'];
+
+async function outreachRows(d) {
+  const rows = await safe(() => listOutreach({ limit: 300 }), []);
+  const letters = ledger(d);
+  const byMail = new Map();
+  for (const l of letters) byMail.set(String(l.to_email || '').toLowerCase(), l);
+  const out = letters.map((l) => letterRow(d, l));
+
+  for (const row of rows.filter((r) => r.slug === d.slug)) {
+    const mail = String(row.to_email || '').toLowerCase();
+    const known = byMail.get(mail);
+    if (!known) {
+      // A recipient the editor queued while the ledger did not know him.
+      const letter = {
+        id: nextLetterId(d),
+        dbId: row.id,
+        to_email: row.to_email || '',
+        org: row.org || null,
+        contact_name: row.contact_name || null,
+        subject: row.subject || '',
+        body: row.body || '',
+        status: row.status || 'requested',
+        reply_note: row.reply_note || null,
+        approved_by: row.approved_by || null,
+        approved_at: row.approved_at || null,
+        sent_at: row.sent_at || null,
+        error: row.error || null,
+        created_at: row.created_at || null,
+      };
+      letters.push(letter);
+      byMail.set(mail, letter);
+      out.push(letterRow(d, letter));
+      continue;
+    }
+    // The editor's shelf has the last word, except for a letter that is
+    // already out of the house.
+    if (!known.dbId) known.dbId = row.id;
+    if (row.status && row.status !== known.status && !SENT_STATES.includes(known.status)) {
+      known.status = row.status;
+    }
+    for (const field of DB_FIELDS) {
+      if (field === 'status') continue;
+      if (row[field] != null && row[field] !== '') known[field] = row[field];
+    }
+    const mine = out.find((o) => o.id === known.id);
+    if (mine) Object.assign(mine, letterRow(d, known));
+  }
+  return out;
 }
 
 function replyDeadline() {
@@ -1699,7 +1825,7 @@ Return {"subject":"…","body":"…"}`,
 }
 
 async function queueOutreach(d) {
-  const rows = await outreachRows(d.slug).catch(() => []);
+  const rows = await outreachRows(d);
   const known = new Set(rows.map((r) => String(r.to_email || '').toLowerCase()).filter(Boolean));
   const ready = (d.contacts || []).filter((c) => c.email && !known.has(String(c.email).toLowerCase()));
   const queued = [];
@@ -1708,16 +1834,30 @@ async function queueOutreach(d) {
     // Two entries can carry the same press address. One letter, one ask.
     if (known.has(mail)) continue;
     known.add(mail);
+    const letter = {
+      id: nextLetterId(d),
+      to_email: contact.email,
+      org: contact.org || null,
+      contact_name: contact.name || null,
+      status: 'requested',
+      reply_note: contact.emailSource ? `Adresse gefunden auf ${contact.emailSource}` : null,
+      created_at: nowISO(),
+      updated_at: nowISO(),
+    };
+    ledger(d).push(letter);
+    queued.push(letter.org || letter.to_email);
+    // The shelf is where the editor works. If it does not answer, the desk
+    // keeps the letter in its own ledger.
     try {
-      await requestOutreach({
+      const row = await requestOutreach({
         slug: d.slug,
         toEmail: contact.email,
         org: contact.org,
-        note: contact.emailSource ? `Adresse gefunden auf ${contact.emailSource}` : null,
+        note: letter.reply_note,
       });
-      queued.push(contact.org);
+      letter.dbId = row.id;
     } catch (err) {
-      log(`OUTREACH  could not queue ${contact.org}: ${err.message}`);
+      log(`OUTREACH  ${contact.org}: no row in the shared shelf (${err.message}) - the desk keeps its own copy`);
     }
   }
   if (queued.length) {
@@ -1728,17 +1868,17 @@ async function queueOutreach(d) {
 }
 
 async function draftOutreach(d) {
-  const rows = await outreachRows(d.slug);
+  const rows = await outreachRows(d);
   const requested = rows.filter((r) => r.status === 'requested');
   const drafted = [];
 
-  // Every recipient is set by the editor in the admin desk; the bot only
-  // writes the text. That keeps an AI from ever guessing an address.
+  // The desk writes the text; the editor decides whether it goes out. An
+  // address that is not on file is never guessed.
   for (const row of requested.slice(0, 3)) {
     const org = row.org || row.to_email;
     try {
       const mail = await draftEmail(d, { org, note: row.reply_note || '' });
-      await setOutreach([row.id], { ...mail, status: 'draft' });
+      await saveLetter(d, row, { ...mail, status: 'draft', error: null });
       drafted.push(org);
       log(`OUTREACH  drafted for ${org}`);
     } catch (err) {
@@ -1757,12 +1897,12 @@ async function sendApproved(d) {
     log('OUTREACH  sending skipped: RESEND_API_KEY / RESEND_FROM_EMAIL missing');
     return 0;
   }
-  const rows = await outreachRows(d.slug);
+  const rows = await outreachRows(d);
   const approved = rows.filter((r) => r.status === 'approved').slice(0, 5);
   let sent = 0;
   for (const row of approved) {
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(row.to_email || '')) {
-      await setOutreach([row.id], { status: 'failed', error: 'invalid recipient address' });
+      await saveLetter(d, row, { status: 'failed', error: 'invalid recipient address' });
       continue;
     }
     try {
@@ -1778,21 +1918,64 @@ async function sendApproved(d) {
         }),
       });
       if (!res.ok) throw new Error(`Resend ${res.status}: ${(await res.text()).slice(0, 300)}`);
-      await setOutreach([row.id], { status: 'sent', sent_at: nowISO(), error: null });
+      await saveLetter(d, row, { status: 'sent', sent_at: nowISO(), error: null });
       d.outreach = [...(d.outreach || []), { org: row.org || row.to_email, email: row.to_email, at: nowISO(), status: 'sent' }].slice(-50);
       if (d.status === 'research' || d.status === 'pitch') note(d, 'outreach', `request sent to ${row.org || row.to_email}`);
       sent++;
       log(`OUTREACH  ✓ sent to ${row.org || row.to_email}`);
     } catch (err) {
-      await setOutreach([row.id], { status: 'failed', error: err.message.slice(0, 300) });
+      await saveLetter(d, row, { status: 'failed', error: err.message.slice(0, 300) });
       log(`OUTREACH  ✗ ${row.to_email}: ${err.message}`);
     }
   }
   return sent;
 }
 
-// ─────────────────────────── 4. WRITE ───────────────────────────
-// The text and the claim list are written in two calls. Asked for both in one
+/**
+ * The editor frees a letter from the desk page. When the shared shelf does
+ * not answer, the decision comes with the run instead: it is written into the
+ * ledger, the shelf is told when it is reachable, and the desk sends the
+ * letter in this same shift.
+ */
+function parseLetterDecision(value) {
+  const text = String(value || '').trim();
+  if (!text) return null;
+  const at = text.indexOf(':');
+  if (at < 0) return null;
+  const slug = text.slice(0, at).trim();
+  const ids = text.slice(at + 1).split(',').map((s) => s.trim()).filter(Boolean);
+  if (!slug || !ids.length) return null;
+  return { slug, ids };
+}
+
+async function applyLetterDecision(d) {
+  const decisions = [
+    { decision: parseLetterDecision(APPROVE_LETTERS), status: 'approved' },
+    { decision: parseLetterDecision(REJECT_LETTERS), status: 'rejected' },
+  ];
+  for (const { decision, status } of decisions) {
+    if (!decision || decision.slug !== d.slug) continue;
+    for (const id of decision.ids) {
+      const letter = ledger(d).find((l) => l.id === id || (l.dbId != null && String(l.dbId) === id));
+      if (!letter) {
+        log(`DESK  ${d.slug}: letter ${id} is not on file`);
+        continue;
+      }
+      const at = nowISO();
+      letter.status = status;
+      letter.approved_by = APPROVED_BY;
+      letter.approved_at = at;
+      letter.updated_at = at;
+      if (letter.dbId) {
+        await safe(() => setOutreach([letter.dbId], { status, approved_by: APPROVED_BY, approved_at: at }));
+      }
+      note(d, null, `letter ${id} ${status} by ${APPROVED_BY}`);
+      log(`DESK  ${d.slug}: letter ${id} ${status} by ${APPROVED_BY}`);
+    }
+  }
+}
+
+// ─────────────────────────── 4. WRITE ───────────────────────────// The text and the claim list are written in two calls. Asked for both in one
 // answer, the model spends its budget on the claim list and the piece arrives
 // cut off in the middle of its last section.
 const DRAFT_SCHEMA = `{"title":"…","dek":"one sentence, max 30 words","standfirst":"2-3 sentences that state what we found and how solid it is","facts":["5-8 key facts with numbers and dates"],"sections":[{"heading":"…","paragraphs":["…"]}]}`;
@@ -2556,7 +2739,7 @@ async function syncStatus(d) {
 
 async function mirror(d) {
   if (DRY_RUN) return false;
-  const rows = await outreachRows(d.slug);
+  const rows = await outreachRows(d);
   const pending = rows.filter((r) => ['draft', 'approved', 'requested'].includes(r.status)).length;
   const sent = rows.filter((r) => ['sent', 'replied'].includes(r.status)).length;
   try {
@@ -2642,7 +2825,10 @@ async function main() {
     return;
   }
 
-  await intake(dossiers, state);
+  // A run that only carries an editor's decision does not open a new dossier
+  // and does not hunt for new topics: it does what the editor asked.
+  const decisionSlug = parseLetterDecision(APPROVE_LETTERS)?.slug || parseLetterDecision(REJECT_LETTERS)?.slug || '';
+  if (!decisionSlug) await intake(dossiers, state);
 
   // The desk reads its own mailbox first: an answer that arrived overnight
   // changes what the shift should look at.
@@ -2650,7 +2836,8 @@ async function main() {
   if (filed) log(`INBOX  ${filed} message(s) filed`);
   saveState(state);
 
-  const targets = FORCE_SLUG ? dossiers.filter((d) => d.slug === FORCE_SLUG) : dossiers.filter(isActive);
+  const focus = FORCE_SLUG || decisionSlug;
+  const targets = focus ? dossiers.filter((d) => d.slug === focus) : dossiers.filter(isActive);
   log(`DESK  ${targets.length} dossier(s) to advance`);
 
   for (const d of targets) {
@@ -2681,6 +2868,10 @@ async function main() {
         await mirror(d);
         continue;
       }
+      // The editor frees a letter with the run. The letter goes out in this
+      // shift, whatever else the dossier is still short of.
+      await applyLetterDecision(d);
+      await sendApproved(d).catch((err) => log(`OUTREACH  sending failed: ${err.message}`));
       if (d.status === 'approved') {
         await publish(d);
         if (d.status === 'published') rememberFollowups(state, d);
@@ -2701,8 +2892,7 @@ async function main() {
         // and it does not need a single row in a table.
         await queueOutreach(d).catch((err) => log(`OUTREACH  queue failed: ${err.message}`));
         await draftOutreach(d).catch((err) => log(`OUTREACH  drafting failed: ${err.message}`));
-        await sendApproved(d).catch((err) => log(`OUTREACH  sending failed: ${err.message}`));
-        const fresh = await outreachRows(d.slug).catch(() => []);
+        const fresh = await outreachRows(d).catch(() => []);
         await maybeWrite(d, fresh);
       }
       await mirror(d);
@@ -2715,6 +2905,7 @@ async function main() {
 
   state.runs = [{ at: nowISO(), active: targets.length, ms: Date.now() - started }, ...(state.runs || [])].slice(0, 100);
   saveState(state);
+  saveDossierIndex(dossiers);
   log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s.`);
 }
 

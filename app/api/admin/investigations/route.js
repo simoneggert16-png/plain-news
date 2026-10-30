@@ -15,6 +15,7 @@ import {
 } from '@/lib/investigationStore.mjs';
 import { weekKey } from '@/lib/investigations.mjs';
 import { listMessages } from '@/lib/inboxStore.mjs';
+import { readGitDossierFast, readGitDossierIndex } from '@/lib/contentGit.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -29,33 +30,98 @@ function dossiersFromFiles() {
   const dir = path.join(process.cwd(), 'content', 'investigations');
   try {
     return fs.readdirSync(dir)
-      .filter((f) => f.endsWith('.json') && f !== 'state.json')
+      .filter((f) => f.endsWith('.json') && f !== 'state.json' && f !== 'index.json')
       .map((f) => {
-        const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-        return {
-          slug: d.slug,
-          title: d.title,
-          angle: d.angle,
-          status: d.status,
-          priority: d.priority,
-          source_count: (d.sources || []).length,
-          verified_claims: (d.claims || []).length,
-          open_questions: (d.gaps || []).length,
-          gaps: (d.gaps || []).slice(0, 5),
-          centre: d.centre || null,
-          beat: d.beat || null,
-          outreach_pending: 0,
-          outreach_sent: 0,
-          next_step: d.nextStep || null,
-          updated_at: d.updatedAt || d.createdAt || null,
-          published_at: d.published?.at || null,
-          draft: d.draft || null,
-        };
+        try { return JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')); } catch { return null; }
       })
-      .sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
+      .filter(Boolean);
   } catch {
     return [];
   }
+}
+
+/**
+ * The repository is the source of truth, so the desk page shows the dossiers
+ * as they are now - not the ones the last deployment happened to carry.
+ */
+async function dossiersFromGit() {
+  try {
+    const index = await readGitDossierIndex();
+    if (!index.length) return [];
+    const dossiers = await Promise.all(index.map((row) => readGitDossierFast(row.slug).catch(() => null)));
+    return dossiers.filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+async function currentDossiers() {
+  const fromGit = await dossiersFromGit();
+  if (fromGit.length) return fromGit;
+  return dossiersFromFiles();
+}
+
+function dossierRow(d) {
+  return {
+    slug: d.slug,
+    title: d.title,
+    angle: d.angle,
+    status: d.status,
+    priority: d.priority,
+    source_count: (d.sources || []).length,
+    verified_claims: (d.claims || []).length,
+    open_questions: (d.gaps || []).length,
+    gaps: (d.gaps || []).slice(0, 5),
+    centre: d.centre || null,
+    beat: d.beat || null,
+    outreach_pending: 0,
+    outreach_sent: 0,
+    next_step: d.nextStep || null,
+    updated_at: d.updatedAt || d.createdAt || null,
+    published_at: d.published?.at || null,
+    draft: d.draft || null,
+  };
+}
+
+/**
+ * The letters the desk wrote. They live in the dossier, so the editor sees
+ * them and can free them even while the shared shelf does not answer.
+ */
+function lettersFromDossiers(dossiers) {
+  const out = [];
+  for (const d of dossiers) {
+    for (const l of d.letters || []) {
+      out.push({
+        id: String(l.id),
+        slug: d.slug,
+        to_email: l.to_email || '',
+        org: l.org || null,
+        subject: l.subject || '',
+        body: l.body || '',
+        status: l.status || 'requested',
+        approved_by: l.approved_by || null,
+        approved_at: l.approved_at || null,
+        sent_at: l.sent_at || null,
+        error: l.error || null,
+        reply_note: l.reply_note || null,
+        created_at: l.created_at || null,
+      });
+    }
+  }
+  return out;
+}
+
+/** One letter, one row: the shelf has the last word, the ledger the text. */
+function mergeOutreach(shelf, letters) {
+  const out = [...shelf];
+  const seen = new Set(shelf.map((r) => String(r.to_email || '').toLowerCase()));
+  for (const l of letters) {
+    const mail = String(l.to_email || '').toLowerCase();
+    if (!mail || seen.has(mail)) continue;
+    seen.add(mail);
+    out.push(l);
+  }
+  return out.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
 }
 
 /**
@@ -113,27 +179,40 @@ async function requireAdmin(request) {
   return { user };
 }
 
+/**
+ * A human decision reaches the desk as a run: the workflow takes the decision
+ * with it, writes it into the dossier and does what was asked.
+ */
+function deskDispatch(inputs) {
+  const repo = process.env.GITHUB_REPO || 'simoneggert16-png/plain-news';
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(inputs)) params.set('inputs[' + key + ']', String(value));
+  return `https://github.com/${repo}/actions/workflows/investigations.yml/dispatch?${params.toString()}`;
+}
+
 export async function GET(request) {
   try {
     const auth = await requireAdmin(request);
     if (auth.error) return NextResponse.json({ error: auth.error }, { status: auth.status });
 
-    const [requests, investigations, outreach, usage, messages] = await Promise.all([
+    const [requests, investigations, outreach, usage, messages, dossiers] = await Promise.all([
       listRequests({ limit: 80 }).catch(() => []),
-      listInvestigations().catch(() => dossiersFromFiles()),
+      listInvestigations().catch(() => []),
       listOutreach({ limit: 80 }).catch(() => []),
       weekUsage(weekKey()).catch(() => null),
       // The inbox table only exists after the migration ran; the page keeps
       // loading without it.
       listMessages({ limit: 60 }).catch(() => []),
+      currentDossiers(),
     ]);
+    const rows = investigations.length ? investigations : dossiers.map(dossierRow);
     return NextResponse.json({
       admin: auth.user.email,
       week: weekKey(),
       quota: usage,
       requests,
-      investigations: withDrafts(investigations),
-      outreach,
+      investigations: withDrafts(rows),
+      outreach: mergeOutreach(outreach, lettersFromDossiers(dossiers)),
       messages,
       desk: deskState(),
     }, { headers: { 'Cache-Control': 'no-store' } });
@@ -154,12 +233,26 @@ export async function POST(request) {
     const now = new Date().toISOString();
 
     if (action === 'approve-outreach' || action === 'reject-outreach') {
-      const ids = Array.isArray(body.ids) ? body.ids.filter((id) => typeof id === 'string') : [];
+      const ids = Array.isArray(body.ids) ? body.ids.map((id) => String(id)).filter(Boolean) : [];
       if (!ids.length) return NextResponse.json({ error: 'Keine Entwürfe ausgewählt.' }, { status: 400 });
-      await setOutreach(ids, action === 'approve-outreach'
-        ? { status: 'approved', approved_by: by, approved_at: now }
-        : { status: 'rejected', approved_by: by, approved_at: now });
-      return NextResponse.json({ ok: true, updated: ids.length });
+      try {
+        await setOutreach(ids, action === 'approve-outreach'
+          ? { status: 'approved', approved_by: by, approved_at: now }
+          : { status: 'rejected', approved_by: by, approved_at: now });
+        return NextResponse.json({ ok: true, updated: ids.length });
+      } catch (err) {
+        // The shared shelf does not answer. The decision goes to the desk as a
+        // run: it is written into the ledger, and the letter goes out from
+        // there.
+        const dossiers = await currentDossiers();
+        const letters = lettersFromDossiers(dossiers);
+        const slug = String(body.slug || '').trim() || letters.find((l) => ids.includes(l.id))?.slug || '';
+        const input = action === 'approve-outreach' ? 'approve_outreach' : 'reject_outreach';
+        return NextResponse.json({
+          error: 'Die Datenbank antwortet nicht. Die Freigabe geht stattdessen an den Desk: dort wird sie festgehalten und der Brief geht raus.',
+          dispatch: deskDispatch({ [input]: `${slug}:${ids.join(',')}`, slug, dry_run: 'false' }),
+        }, { status: 503 });
+      }
     }
 
     if (action === 'request-outreach') {
@@ -169,18 +262,30 @@ export async function POST(request) {
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(toEmail)) {
         return NextResponse.json({ error: 'Bitte eine gültige E-Mail-Adresse angeben.' }, { status: 400 });
       }
-      const dossier = await getInvestigationStatus(slug);
-      if (!dossier) return NextResponse.json({ error: 'Dossier nicht gefunden.' }, { status: 404 });
-      if (dossier.status === 'published') {
+      const dossier = await getInvestigationStatus(slug).catch(() => null);
+      if (!dossier) {
+        const dossiers = await currentDossiers();
+        const known = dossiers.find((d) => d.slug === slug);
+        if (!known) return NextResponse.json({ error: 'Dossier nicht gefunden.' }, { status: 404 });
+      } else if (dossier.status === 'published') {
         return NextResponse.json({ error: 'Veröffentlichte Dossiers verschicken keine Anfragen mehr.' }, { status: 409 });
       }
-      await requestOutreach({
-        slug,
-        toEmail,
-        org: String(body.org || '').slice(0, 160),
-        note: String(body.note || '').slice(0, 1000),
-      });
-      return NextResponse.json({ ok: true, status: 'requested' }, { status: 201 });
+      try {
+        await requestOutreach({
+          slug,
+          toEmail,
+          org: String(body.org || '').slice(0, 160),
+          note: String(body.note || '').slice(0, 1000),
+        });
+        return NextResponse.json({ ok: true, status: 'requested' }, { status: 201 });
+      } catch (err) {
+        // The desk finds its recipients in the documents on its own. If the
+        // shelf does not answer, the editor gets that answer instead of an
+        // error page.
+        return NextResponse.json({
+          error: 'Die Datenbank antwortet nicht. Der Desk sucht die Empfänger selbst in den Dokumenten — der Brief geht dann über die Freigabe im Desk.',
+        }, { status: 503 });
+      }
     }
 
     if (action === 'mark-replied') {
@@ -200,12 +305,10 @@ export async function POST(request) {
         // is still a human one, so it goes to the desk as a run: the desk
         // writes it into the dossier and publishes. The editor gets a link
         // instead of a dead end.
-        const repo = process.env.GITHUB_REPO || 'simoneggert16-png/plain-news';
-        const dispatch = `https://github.com/${repo}/actions/workflows/investigations.yml/dispatch?inputs%5Bapprove%5D=${encodeURIComponent(slug)}`;
         return NextResponse.json(
           {
             error: 'Die Datenbank antwortet nicht. Die Freigabe geht stattdessen an den Desk: dort wird sie festgehalten und der Text veröffentlicht.',
-            dispatch,
+            dispatch: deskDispatch({ approve: slug, dry_run: 'false' }),
           },
           { status: 503 }
         );

@@ -68,11 +68,12 @@ const SOURCE = fs.readFileSync(new URL('../bots/investigate.mjs', import.meta.ur
 function take(name) {
   const at = SOURCE.indexOf(`function ${name}(`);
   assert.ok(at >= 0, `${name} not found`);
+  const start = SOURCE.slice(Math.max(0, at - 6), at) === 'async ' ? at - 6 : at;
   let depth = 0;
   let opened = false;
-  for (let i = at; i < SOURCE.length; i++) {
+  for (let i = start; i < SOURCE.length; i++) {
     if (SOURCE[i] === '{') { depth++; opened = true; }
-    else if (SOURCE[i] === '}' && --depth === 0 && opened) return SOURCE.slice(at, i + 1);
+    else if (SOURCE[i] === '}' && --depth === 0 && opened) return SOURCE.slice(start, i + 1);
   }
   throw new Error(`${name} unterminated`);
 }
@@ -183,4 +184,86 @@ test('a model whose quota is used up is not tried again', async () => {
   } finally {
     globalThis.fetch = original;
   }
+});
+
+// ───────────────────────── the desk keeps its own mailbox ─────────────────────────
+
+// The shelf in the database may be gone for days. The desk still has to be
+// able to write down a letter, read the editor's decision and know what it
+// has already sent.
+function desk({ shelf = [], approve = '' } = {}) {
+  return new Function(`
+    const DB_FIELDS = ${JSON.stringify(SOURCE.match(/const DB_FIELDS = \[([^\]]*)\];/)[1].split(',').map((s) => s.trim().replace(/^'|'$/g, '')).filter(Boolean))};
+    const SENT_STATES = ['sent', 'replied'];
+    const APPROVE_LETTERS = ${JSON.stringify(approve)};
+    const REJECT_LETTERS = '';
+    const APPROVED_BY = 'editor';
+    const log = () => {};
+    const nowISO = () => new Date().toISOString();
+    const note = () => {};
+    const safe = async (fn, fallback) => { try { return await fn(); } catch { return fallback; } };
+    const listOutreach = async () => ${JSON.stringify(shelf)};
+    const requestOutreach = async () => { throw new Error('no table'); };
+    const setOutreach = async () => { throw new Error('no table'); };
+    ${take('ledger')}
+    ${take('nextLetterId')}
+    ${take('letterRow')}
+    ${take('saveLetter')}
+    ${take('outreachRows')}
+    ${take('queueOutreach')}
+    ${take('parseLetterDecision')}
+    ${take('applyLetterDecision')}
+    return { queueOutreach, outreachRows, applyLetterDecision, ledger };
+  `)();
+}
+
+test('a letter the desk found in a document stays in its own ledger', async () => {
+  const { queueOutreach, ledger } = desk();
+  const d = { slug: 'a-story', contacts: [{ email: 'press@example.org', org: 'Example Press', emailSource: 'example.org' }] };
+  const queued = await queueOutreach(d);
+  assert.equal(queued, 1);
+  assert.equal(d.letters.length, 1);
+  assert.equal(d.letters[0].status, 'requested');
+  assert.equal(d.letters[0].to_email, 'press@example.org');
+});
+
+test('the same address is not asked twice', async () => {
+  const { queueOutreach } = desk();
+  const d = { slug: 'a-story', contacts: [{ email: 'press@example.org', org: 'Example Press' }] };
+  await queueOutreach(d);
+  await queueOutreach(d);
+  assert.equal(d.letters.length, 1);
+});
+
+test('the editor frees a letter on the shelf', async () => {
+  const { outreachRows } = desk({ shelf: [{ id: 7, slug: 'a-story', to_email: 'press@example.org', status: 'approved' }] });
+  const d = { slug: 'a-story', letters: [] };
+  const rows = await outreachRows(d);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].status, 'approved');
+});
+
+test('a letter that went out is not sent a second time', async () => {
+  const { outreachRows } = desk({ shelf: [{ id: 7, slug: 'a-story', to_email: 'press@example.org', status: 'approved' }] });
+  const d = {
+    slug: 'a-story',
+    letters: [{ id: 'L1', to_email: 'press@example.org', status: 'sent', sent_at: '2026-10-30T10:00:00Z' }],
+  };
+  const rows = await outreachRows(d);
+  assert.equal(rows[0].status, 'sent');
+});
+
+test('the editor frees a letter that only the desk knows about', async () => {
+  const { applyLetterDecision } = desk({ approve: 'a-story:L1' });
+  const d = { slug: 'a-story', letters: [{ id: 'L1', to_email: 'press@example.org', status: 'draft' }] };
+  await applyLetterDecision(d);
+  assert.equal(d.letters[0].status, 'approved');
+  assert.equal(d.letters[0].approved_by, 'editor');
+});
+
+test('a decision for another dossier touches nothing', async () => {
+  const { applyLetterDecision } = desk({ approve: 'another-story:L1' });
+  const d = { slug: 'a-story', letters: [{ id: 'L1', to_email: 'press@example.org', status: 'draft' }] };
+  await applyLetterDecision(d);
+  assert.equal(d.letters[0].status, 'draft');
 });

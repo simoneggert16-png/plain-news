@@ -40,6 +40,14 @@ on:
         description: 'Approve this dossier slug and publish it (the editor approved it)'
         type: string
         required: false
+      approve_outreach:
+        description: 'Free these letters for sending: <slug>:<letter ids, comma separated>'
+        type: string
+        required: false
+      reject_outreach:
+        description: 'Turn these letters down: <slug>:<letter ids, comma separated>'
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -73,7 +81,7 @@ jobs:
           # allows 100 of them a day. The count is only a warning now: the
           # dossiers live in the repository, and the site reads them from
           # there. A refused build must not stop the desk from working.
-          if [ -n "${{ inputs.approve }}" ]; then
+          if [ -n "${{ inputs.approve }}" ] || [ -n "${{ inputs.approve_outreach }}" ] || [ -n "${{ inputs.reject_outreach }}" ]; then
             echo "A human approved a piece - it goes out."
           else
             node scripts/deploy-budget.mjs || echo "the day's deployments are spent - the dossier still goes to the repository"
@@ -111,6 +119,8 @@ jobs:
           INVESTIGATE_MINUTES: ${{ inputs.minutes || '55' }}
           INVESTIGATE_FORCE_DRAFT: ${{ inputs.force_draft == true && '1' || '' }}
           INVESTIGATE_APPROVE: ${{ inputs.approve || '' }}
+          INVESTIGATE_APPROVE_OUTREACH: ${{ inputs.approve_outreach || '' }}
+          INVESTIGATE_REJECT_OUTREACH: ${{ inputs.reject_outreach || '' }}
           INVESTIGATE_APPROVED_BY: ${{ vars.INVESTIGATE_APPROVED_BY || 'editor' }}
           INVESTIGATE_LOCALES: 'en,de,fr,es,it,pt'
           INVESTIGATE_TRANSLATE_CONCURRENCY: '2'
