@@ -6,17 +6,17 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-29T17:37:50.922Z",
-  "updatedAt": "2026-10-31T15:00:58.734Z",
+  "updatedAt": "2026-10-31T15:19:15.892Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-midterm-elections",
   "stats": {
     "label": "2026 Midterm Financials & Sentiment",
-    "note": "Key financial contributions and public sentiment figures for the 2026 midterm elections.",
+    "note": "Key financial contributions and polling lead in the 2026 midterm elections.",
     "unit": "",
     "max": null,
-    "asOf": "2026-10-27T09:10:00.000Z",
-    "updatedAt": "2026-10-31T15:00:26.659Z",
+    "asOf": "2026-10-31T00:00:00.000Z",
+    "updatedAt": "2026-10-31T15:19:14.720Z",
     "source": {
       "outlet": "CNBC",
       "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
@@ -30,7 +30,7 @@
         "key": "super-pac-spending-million",
         "label": "Super PAC spending (million $)",
         "value": 637,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Ausgaben von Super PACs (in Millionen $)"
@@ -62,7 +62,7 @@
         "key": "elon-musk-spending-million",
         "label": "Elon Musk spending (million $)",
         "value": 446,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Ausgaben von Elon Musk (in Millionen $)"
@@ -91,102 +91,70 @@
         }
       },
       {
-        "key": "trump-disapproval",
-        "label": "Trump disapproval (%)",
-        "value": 82,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Trump-Unzufriedenheit (%)"
-          },
-          "fr": {
-            "label": "Incrédulité envers Trump (%)"
-          },
-          "es": {
-            "label": "Desaprobación de Trump (%)"
-          },
-          "it": {
-            "label": "Disapprovazione di Trump (%)"
-          },
-          "pt": {
-            "label": "Desaprovação de Trump (%)"
-          },
-          "zh": {
-            "label": "特朗普不满度（%）"
-          },
-          "ja": {
-            "label": "トランプ不承認率（％）"
-          },
-          "ko": {
-            "label": "트럼프 반대율 (%)"
-          }
-        }
-      },
-      {
         "key": "nebraska-senate-race-lead-points",
         "label": "Nebraska Senate race lead (points)",
         "value": 6,
-        "change": null,
+        "change": 0,
         "locales": {
-          "it": {
-            "label": "Vantaggio nella corsa al Senato del Nebraska (punti)"
-          },
           "de": {
             "label": "Nebraska-Senat-Wettbewerb: Vorsprung (Punkte)"
-          },
-          "es": {
-            "label": "Ventaja en la contienda del Senado de Nebraska (puntos)"
           },
           "fr": {
             "label": "Avantage en points de la course au Sénat du Nebraska"
           },
+          "es": {
+            "label": "Ventaja en la contienda del Senado de Nebraska (puntos)"
+          },
+          "it": {
+            "label": "Vantaggio nella corsa al Senato del Nebraska (punti)"
+          },
           "pt": {
             "label": "Vantagem na corrida pelo Senado de Nebraska (pontos)"
           },
-          "ko": {
-            "label": "네브래스카 상원 선거 리드 (포인트)"
+          "zh": {
+            "label": "内布拉斯加州参议院竞选领先（点数）"
           },
           "ja": {
             "label": "ネブラスカ州上院選挙のリード（ポイント）"
           },
-          "zh": {
-            "label": "内布拉斯加州参议院竞选领先（点数）"
+          "ko": {
+            "label": "네브래스카 상원 선거 리드 (포인트)"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "Finanzielle Beiträge und Stimmung zu den 2026er Zwischenwahlen",
-        "note": "Wichtige finanzielle Beiträge und öffentliche Stimmungsmesswerte für die 2026er Zwischenwahlen."
+        "note": "Wichtige finanzielle Beiträge und öffentliche Stimmungsmesswerte für die 2026er Zwischenwahlen.",
+        "label": "Finanzielle Beiträge und Stimmung zu den 2026er Zwischenwahlen"
       },
       "fr": {
-        "label": "Finances et sentiment des élections de mi-mandat 2026",
-        "note": "Principales contributions financières et indicateurs de sentiment public pour les élections de mi-mandat 2026."
+        "note": "Principales contributions financières et indicateurs de sentiment public pour les élections de mi-mandat 2026.",
+        "label": "Finances et sentiment des élections de mi-mandat 2026"
       },
       "es": {
-        "label": "Finanzas y Sentimiento de las Elecciones de Mitad de Mandato 2026",
-        "note": "Principales aportaciones financieras y cifras de sentimiento público para las elecciones de mitad de mandato de 2026."
+        "note": "Principales aportaciones financieras y cifras de sentimiento público para las elecciones de mitad de mandato de 2026.",
+        "label": "Finanzas y Sentimiento de las Elecciones de Mitad de Mandato 2026"
       },
       "it": {
-        "label": "Finanziamenti e Sentiment delle Elezioni di metà mandato 2026",
-        "note": "Principali contributi finanziari e dati sul sentiment pubblico per le elezioni di metà mandato 2026."
+        "note": "Principali contributi finanziari e dati sul sentiment pubblico per le elezioni di metà mandato 2026.",
+        "label": "Finanziamenti e Sentiment delle Elezioni di metà mandato 2026"
       },
       "pt": {
-        "label": "Finanças e Sentimento das Eleições de Meio de Mandato de 2026",
-        "note": "Principais contribuições financeiras e indicadores de sentimento público para as eleições de meio de mandato de 2026."
+        "note": "Principais contribuições financeiras e indicadores de sentimento público para as eleições de meio de mandato de 2026.",
+        "label": "Finanças e Sentimento das Eleições de Meio de Mandato de 2026"
       },
       "zh": {
-        "label": "2026 年中期选举财务与情绪",
-        "note": "2026 年中期选举的主要财政捐款与公众情绪数据"
+        "note": "2026 年中期选举的主要财政捐款与公众情绪数据",
+        "label": "2026 年中期选举财务与情绪"
       },
       "ja": {
-        "label": "2026年中間選挙の財務状況と世論",
-        "note": "2026年中間選挙における主要な財政寄付額と世論指標"
+        "note": "2026年中間選挙における主要な財政寄付額と世論指標",
+        "label": "2026年中間選挙の財務状況と世論"
       },
       "ko": {
-        "label": "2026년 중간선거 재정 및 정서",
-        "note": "2026년 중간선거를 위한 주요 재정 기여 및 대중 정서 지표."
+        "note": "2026년 중간선거를 위한 주요 재정 기여 및 대중 정서 지표.",
+        "label": "2026년 중간선거 재정 및 정서"
       }
     }
   },
