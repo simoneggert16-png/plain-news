@@ -3829,7 +3829,14 @@ async function main() {
   saveState(state);
 
   const focus = FORCE_SLUG || decisionSlug;
-  const targets = focus ? dossiers.filter((d) => d.slug === focus) : dossiers.filter(isActive);
+  // A shift's time goes to the dossier that has waited longest, not always to
+  // the first one in the file. With two stories on the desk the second used to
+  // get the leftovers of every shift; a real desk takes turns.
+  const targets = focus
+    ? dossiers.filter((d) => d.slug === focus)
+    : dossiers.filter(isActive).sort((a, b) =>
+        String(a.lastShiftAt || a.createdAt || '').localeCompare(String(b.lastShiftAt || b.createdAt || ''))
+      );
   log(`DESK  ${targets.length} dossier(s) to advance`);
 
   for (const d of targets) {
@@ -3839,6 +3846,7 @@ async function main() {
     }
     try {
       log(`\n▶ ${d.slug} [${d.status}]`);
+      d.lastShiftAt = nowISO();
       // The editor decides in the database. Read that decision before doing
       // anything else with the dossier.
       await syncStatus(d).catch((err) => log(`STATUS  unreachable: ${err.message}`));
