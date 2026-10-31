@@ -1,0 +1,54 @@
+{
+  "slug": "malicious-anthropic-vs-code-extension-distributed-to-thousands-of-20261031-74iz",
+  "category": "tech",
+  "image": "https://media.wired.com/photos/6ae4bfbc8b1b5cec21132f41/4:3/w_2560%2Cc_limit/103026-HACK_.jpg",
+  "imageCredit": "Ars Technica",
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-10-31T04:00:02.530Z",
+  "updatedAt": "2026-10-31T04:00:02.530Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Ars Technica",
+      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+      "publishedAt": "2026-10-30T21:09:54.000Z"
+    },
+    {
+      "outlet": "Wired",
+      "title": "A Supply Chain Attack Put Malicious Anthropic Claude Extensions on Thousands of Devices",
+      "url": "https://www.wired.com/story/trojan-malware-targets-thousands-of-anthropic-claude-developer-systems/",
+      "publishedAt": "2026-10-30T20:38:46.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Malicious Anthropic VS Code Extension Distributed to Thousands of Cursor Users",
+      "dek": "A backdoored VS Code extension for Anthropic’s Claude model was distributed via Cursor’s marketplace, affecting up to 5,000 developers before the vendor removed it.",
+      "facts": [
+        "The malicious version 2.1.313 was posted to the official Anthropic account on Cursor’s marketplace.",
+        "Up to 5,000 users downloaded or auto‑updated the extension between 5:27 am ET and 4:35 pm ET on Thursday.",
+        "The backdoor installed a persistent SSH key and opened a reverse SSH tunnel on Windows, macOS, and Linux.",
+        "Cursor shut down its extension marketplace for a brief period, removed the malicious package, and rotated keys to audit access controls."
+      ],
+      "body": [
+        "On Thursday, a backdoored VS Code extension for Anthropic’s Claude model appeared in Cursor’s marketplace. The malicious version 2.1.313 was posted to the official Anthropic account, and it was downloaded or auto‑updated by up to 5,000 users between 5:27 am ET and 4:35 pm ET. The extension was available for Windows, macOS, and Linux and was automatically updated for users who had enabled auto‑update in Cursor.",
+        "The malicious code installed a persistent SSH key and opened a reverse SSH tunnel, giving attackers remote access to the victim’s local SSH service. The code was written to work on Windows, macOS, and Linux and could potentially read local files, source code, and developer tooling once installed.",
+        "Cursor shut down its extension marketplace for a brief period, removed the backdoored package, and rotated keys to audit access controls. Personnel also worked with the cloud provider hosting the reverse shell to cut off infected devices, and the marketplace is now open.",
+        "Anthropic has not issued a public notice to customers, and staff said the malicious extension was not built or published by Anthropic. The cause of the supply‑chain compromise remains unclear, and Cursor did not answer WIRED’s request for comment about how the malicious upload happened or whether it was the result of a breach at Cursor."
+      ],
+      "context": "VS Code extensions run with the permissions of the integrated development environment, so a compromised extension can access local files and developer tooling. A supply‑chain compromise occurs when an attacker gains access to the official distribution channel.",
+      "imageCaption": "may contain Computer Electronics Laptop Pc Adult and Person"
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "openai/gpt-oss-20b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Repeated sentence openings with \"According to\"; filler and evaluative language; speculative statements about the cause; unnecessary emphasis on the importance of supply‑chain security; lack of varied sentence structure; paragraphs ending with evaluative summaries; omission of neutral background context"
+    ]
+  }
+}
