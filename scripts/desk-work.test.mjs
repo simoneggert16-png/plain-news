@@ -1234,4 +1234,59 @@ test('a story that three shifts could not grow past one report is parked', () =>
   assert.equal(park(dossier({ blankShifts: 2 })), false, 'two empty shifts are a normal week');
   assert.equal(park(dossier({ sources: [{ id: 'S1' }, { id: 'S2' }, { id: 'S3' }] })), false, 'a story with footing is not parked');
   assert.equal(park(dossier({ letters: [{ id: 'L1', status: 'draft', sentAt: '2026-10-31T10:00:00.000Z' }] })), false, 'a letter in flight is still a story');
+  assert.equal(park(dossier({ letters: [{ id: 'L2', status: 'draft', approvedAt: '2026-10-31T11:00:00.000Z' }] })), false, 'an editor approved the letter — the desk does not throw the story away behind their back');
+});
+
+test('the desk knows the doors in the country the story happens', () => {
+  // The Call of Duty story happens in Seoul, and the desk searched the same
+  // English phrase twelve times. A reporter there opens the court database
+  // and the media regulator first.
+  const map = SOURCE.match(/const COUNTRY_DOORS = (\{[\s\S]*?\n\});/)[1];
+  const doors = new Function(`const COUNTRY_DOORS = ${map}; ${take('countryDoors')}; return countryDoors;`)();
+  assert.match(doors('South Korea'), /scourt\.go\.kr/);
+  assert.match(doors('Seoul, South Korea'), /kcc\.go\.kr/);
+  assert.match(doors('Nairobi, Kenya'), /judiciary\.go\.ke/);
+  assert.match(doors('Brazil'), /stf\.jus\.br/);
+  // The desk writes about more than the English-speaking world and Western
+  // Europe. A story in Kyiv or Dhaka needs the doors there, not a second
+  // search of the English wire.
+  assert.match(doors('Kyiv, Ukraine'), /court\.gov\.ua/);
+  assert.match(doors('Dhaka, Bangladesh'), /supremecourt\.gov\.bd/);
+  assert.match(doors('Brussels, European Union'), /curia\.europa\.eu/);
+  assert.equal(doors('Switzerland'), '', 'the paper is Swiss, its beat is not');
+  assert.equal(doors(''), '');
+});
+
+test('the same wire story on msn and yahoo is one source, not two', () => {
+  // The Call of Duty dossier counted four sources; three were copies of one
+  // Yonhap story on aggregators. A story has as many sources as publishers.
+  const re = (() => {
+    const at = SOURCE.indexOf('const SYNDICATION_HOSTS = ');
+    return SOURCE.slice(at + 'const SYNDICATION_HOSTS = '.length, SOURCE.indexOf(';', at));
+  })();
+  const dedupe = new Function(`
+    ${take('hostOf')}
+    ${take('queryOverlap')}
+    const SYNDICATION_HOSTS = ${re};
+    ${take('titleTokens')}
+    ${take('dedupeSyndicated')}
+    return dedupeSyndicated;
+  `)();
+  const story = 'Call of Duty will cut Itaewon crush footage, Activision apologizes';
+  const other = 'Families of Seoul crush victims demand an independent inquiry';
+  const out = dedupe([
+    { title: story, url: 'https://www.msn.com/en-us/news/other/abc', outlet: 'msn.com' },
+    { title: story, url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'Yonhap' },
+    { title: other, url: 'https://www.bbc.com/news/world-asia-1', outlet: 'BBC' },
+  ]);
+  assert.equal(out.length, 2, 'the mirror is folded into the original');
+  assert.ok(out.some((h) => h.url.includes('yna.co.kr')), 'the publisher wins over the copy');
+
+  // The mirror may arrive first; the original still takes its place.
+  const reversed = dedupe([
+    { title: story, url: 'https://www.yahoo.com/news/abc.html', outlet: 'Yahoo' },
+    { title: story, url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'Yonhap' },
+  ]);
+  assert.equal(reversed.length, 1);
+  assert.ok(reversed[0].url.includes('yna.co.kr'));
 });
