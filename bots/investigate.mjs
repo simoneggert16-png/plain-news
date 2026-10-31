@@ -771,6 +771,34 @@ function scriptWords(q) {
   return String(q || '').toLowerCase().match(SCRIPT_WORD) || [];
 }
 
+/**
+ * Whether a wire headline is about the searched story. The outlet's own name
+ * is not one of the story's words: a query that started with "Yonhap" pulled
+ * a baseball headline from Yonhap into a dossier about a video game.
+ */
+function wireHit(item, terms, distinctive) {
+  const own = new Set(String(item.outlet || '').toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2));
+  const text = `${item.title} ${item.summary}`.toLowerCase();
+  const hits = terms.filter((t) => !own.has(t) && text.includes(t));
+  return { item, score: hits.length, strong: hits.some((t) => distinctive.includes(t)) };
+}
+
+/**
+ * The same finding written twice is one claim. The extraction runs every
+ * shift and phrases the same fact anew ("Activision Publishing apologized…" /
+ * "Activision apologized…"), so the file grows while the story does not.
+ * Two claims that differ in a figure are two claims, never one.
+ */
+function sameClaim(a, b) {
+  const figures = (text) => new Set(String(text || '').match(/\d+(?:[.,]\d+)?/g) || []);
+  const fa = figures(a);
+  const fb = figures(b);
+  if (fa.size !== fb.size || [...fa].some((f) => !fb.has(f))) return false;
+  const STOP = new Set('the and for with from that this was were has have had its his her their they not but are is of to in on at by as an it'.split(' '));
+  const words = (text) => new Set((String(text || '').toLowerCase().match(/[a-z0-9\u00c0-\u024f]{2,}/g) || []).filter((w) => !STOP.has(w)));
+  return queryOverlap(words(a), words(b)) >= 0.85;
+}
+
 /** What a published piece still owes its readers: the questions it could not close. */
 function rememberFollowups(state, d) {
   const questions = (d.gaps || []).map((g) => String(g).trim()).filter((g) => g.length > 20).slice(0, 6);
@@ -1135,12 +1163,7 @@ async function researchAgent(d) {
     // ("bitget", "lazarus"), before a headline may enter.
     const distinctive = terms.filter((t) => t.length >= 6);
     return wire
-      .map((it) => {
-        const text = `${it.title} ${it.summary}`.toLowerCase();
-        const hits = terms.filter((t) => text.includes(t));
-        const strong = hits.some((t) => distinctive.includes(t));
-        return { it, score: hits.length, strong };
-      })
+      .map((it) => wireHit(it, terms, distinctive))
       .filter((x) => x.score >= 2 || x.strong)
       .sort((a, b) => b.score - a.score || new Date(b.it.publishedAt || 0) - new Date(a.it.publishedAt || 0))
       .slice(0, n)
@@ -1343,7 +1366,7 @@ async function researchAgent(d) {
         if (value.length < 20) return { error: 'claim too short' };
         if (!valid.length) return { error: `no valid source id — on file: ${[...known].join(', ') || 'none'}` };
         const norm = value.toLowerCase().replace(/\W+/g, ' ').trim();
-        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm);
+        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm || sameClaim(c.text, value));
         if (dup) return { duplicate: dup.id };
         // The next free number, not the length plus one: a dossier that ever
         // loses a claim would otherwise hand out an id that is already taken.

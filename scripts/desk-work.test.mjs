@@ -885,6 +885,47 @@ test('the desk recognises the same search in another script', () => {
   assert.ok(queryOverlap(tokens('이태원 붕괴 영상 소송'), tokens('부산 항만 파업 노조')) < 0.3, 'another Korean story is not');
 });
 
+test('the outlet’s own name does not make a story match', () => {
+  // The dossier about Call of Duty held a Yonhap headline about baseball:
+  // the search started with "Yonhap", and the wire matched the agency's name.
+  const wireHit = new Function(`${take('wireHit')}; return wireHit;`)();
+  const terms = ['yonhap', 'call', 'duty', 'publisher', 'apologizes', 'using', 'real', 'footage'];
+  const distinctive = terms.filter((t) => t.length >= 6);
+  const baseball = {
+    outlet: 'Yonhap',
+    title: 'KBO asks MLB to post All-Star slugger Roh Si-hwan | Yonhap News Agency',
+    summary: 'SEOUL, Oct 31 (Yonhap) — The KBO asked MLB to post the slugger.',
+  };
+  const game = {
+    outlet: 'Yonhap',
+    title: 'Call of Duty publisher apologizes for using real footage of Itaewon crowd crush',
+    summary: 'SEOUL (Yonhap) — The publisher said it would remove the footage.',
+  };
+  assert.equal(wireHit(baseball, terms, distinctive).score, 0, 'only the agency name is shared');
+  assert.ok(wireHit(game, terms, distinctive).score >= 4, 'the game story shares the story’s words');
+});
+
+test('the same finding written twice is one claim — unless a figure differs', () => {
+  // Eleven claims on the Call of Duty dossier were seven facts: the
+  // extraction runs every shift and phrases the same sentence anew.
+  const sameClaim = new Function(`
+    ${take('queryOverlap')}
+    ${take('sameClaim')}
+    return sameClaim;
+  `)();
+  const apologized = 'Activision Publishing apologized for the use of the footage and agreed to remove it in an update scheduled for November 12, 2026.';
+  const apologizedAgain = 'Activision apologized for use of the footage and agreed to remove it in an update scheduled for November 12, 2026.';
+  const families = 'Bereaved families criticized the game publisher for lacking common sense and demanded complete removal of the clip.';
+  const familiesAgain = 'Bereaved families criticized the game publisher for lacking common sense and demanded a complete removal of the clip.';
+  assert.equal(sameClaim(apologized, apologizedAgain), true, 'the house name added is the same fact');
+  assert.equal(sameClaim(families, familiesAgain), true, 'an article added is the same fact');
+  assert.equal(sameClaim(
+    'The Itaewon crowd crush killed 159 people on 29 October 2022.',
+    'The Itaewon crowd crush killed 158 people on 29 October 2022.',
+  ), false, 'two figures are two claims');
+  assert.equal(sameClaim(apologized, families), false, 'two facts that share words are two claims');
+});
+
 test('a notice without a subject supports no story', async () => {
   // OP00478199 is a contract award for a road project in the Kyrgyz Republic.
   // Its feed title was "Contract Award: ", and the model turned it into
