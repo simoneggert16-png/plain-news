@@ -7,53 +7,394 @@
       "Tages-Anzeiger"
     ],
     "createdBy": "bots/live.mjs",
+    "statsModel": "openai/gpt-oss-20b",
     "lastUpdateModel": "openai/gpt-oss-20b"
   },
   "slug": "us-midterms-2026",
+  "stats": {
+    "max": null,
+    "asOf": "2026-10-31T09:10:00.000Z",
+    "note": "Key financial contributions and polling lead in the 2026 US midterm elections.",
+    "rows": [
+      {
+        "key": "elon-musk-donation",
+        "label": "Elon Musk donation",
+        "value": 446,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Spende von Elon Musk"
+          },
+          "es": {
+            "label": "Donación de Elon Musk"
+          },
+          "fr": {
+            "label": "Dons d'Elon Musk"
+          },
+          "it": {
+            "label": "Donazione di Elon Musk"
+          },
+          "ja": {
+            "label": "イーロン・マスクの寄付"
+          },
+          "ko": {
+            "label": "엘론 머스크 기부"
+          },
+          "pt": {
+            "label": "Doação de Elon Musk"
+          },
+          "zh": {
+            "label": "埃隆·马斯克捐款"
+          }
+        }
+      },
+      {
+        "key": "crypto-industry-donation",
+        "label": "Crypto industry donation",
+        "value": 200,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Spende der Kryptoindustrie"
+          },
+          "es": {
+            "label": "Donación de la industria cripto"
+          },
+          "fr": {
+            "label": "Dons de l'industrie crypto"
+          },
+          "it": {
+            "label": "Donazione dell'industria crypto"
+          },
+          "ja": {
+            "label": "暗号資産業界の寄付"
+          },
+          "ko": {
+            "label": "암호화폐 산업 기부"
+          },
+          "pt": {
+            "label": "Doação da indústria cripto"
+          },
+          "zh": {
+            "label": "加密行业捐款"
+          }
+        }
+      },
+      {
+        "key": "ricketts-lead-over-osborn",
+        "label": "Ricketts lead over Osborn",
+        "value": 6,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Ricketts führt über Osborn"
+          },
+          "es": {
+            "label": "Ricketts lidera sobre Osborn"
+          },
+          "fr": {
+            "label": "Avantage de Ricketts sur Osborn"
+          },
+          "it": {
+            "label": "Ricketts in vantaggio su Osborn"
+          },
+          "ja": {
+            "label": "リケットスがオズボーンに優位"
+          },
+          "ko": {
+            "label": "리켓츠가 오스본을 앞서고 있다"
+          },
+          "pt": {
+            "label": "Ricketts lidera sobre Osborn"
+          },
+          "zh": {
+            "label": "里克特斯领先奥斯本"
+          }
+        }
+      }
+    ],
+    "unit": "",
+    "label": "US 2026 Midterm Election Stats",
+    "source": {
+      "url": "https://www.cnbc.com/2026/10/31/crypto-industry-spends-more-than-200-million-to-sway-the-midterms.html",
+      "title": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-10-31T13:04:29.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Wichtige Kennzahlen zu öffentlicher Stimmung, Wahlkampffinanzierung und Umfragen für die US-Wahlen 2026.",
+        "label": "US 2026 Zwischenwahl-Statistiken"
+      },
+      "es": {
+        "note": "Estadísticas clave sobre el sentimiento público, la financiación de campañas y las encuestas para las elecciones de mitad de mandato de EE. UU. 2026.",
+        "label": "Estadísticas de las elecciones de mitad de mandato de EE. UU. 2026"
+      },
+      "fr": {
+        "note": "Statistiques clés sur le sentiment public, le financement des campagnes et les sondages pour les élections de mi-mandat américaines 2026.",
+        "label": "Statistiques des élections de mi-mandat américaines 2026"
+      },
+      "it": {
+        "note": "Statistiche chiave sul sentiment pubblico, la finanza delle campagne e i sondaggi per le elezioni di metà mandato del 2026 negli USA.",
+        "label": "Statistiche sulle elezioni di metà mandato del 2026 negli USA"
+      },
+      "ja": {
+        "note": "2026年米国中間選挙に関する世論、選挙資金、世論調査の主要統計データ",
+        "label": "米国2026年中間選挙統計"
+      },
+      "ko": {
+        "note": "2026년 미국 중간선거에 대한 여론, 캠페인 자금, 여론 조사에 관한 핵심 통계.",
+        "label": "미국 2026년 중간선거 통계"
+      },
+      "pt": {
+        "note": "Estatísticas chave sobre o sentimento público, financiamento de campanha e pesquisas para as eleições de meio de mandato dos EUA de 2026.",
+        "label": "Estatísticas das Eleições de Meio de Mandato dos EUA de 2026"
+      },
+      "zh": {
+        "note": "关于2026年美国中期选举的公众情绪、竞选融资和民意调查的关键统计数据。",
+        "label": "2026年美国中期选举统计"
+      }
+    },
+    "updatedAt": "2026-10-31T15:27:48.495Z",
+    "sourceCount": 1
+  },
   "topic": "us midterms 2026",
   "status": "live",
   "article": {
     "slug": "us-midterms-2026",
-    "updatedAt": "2026-10-31T09:57:40.773Z",
+    "updatedAt": "2026-10-31T16:07:21.126Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
         "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
-        "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
+        "dek": "A federal judge in California halted the Trump administration's threats to prosecute election officials over alleged noncitizen voting claims ahead of the 2026 midterms.",
         "facts": [
-          "US approved $2.1bn Patriot missile sale to Ukraine.",
-          "Federal judge in California blocked Trump DOJ threats against election workers.",
-          "Melaka state election campaign began on Saturday.",
-          "Trump may order major Iran strike after midterms.",
-          "Alaska Senate race features two candidates with same name.",
-          "More than 43 million Americans voted early in the 2026 midterms."
+          "US approves $2.1bn Patriot missile sale to Ukraine",
+          "Judge blocks Trump DOJ threats against election officials",
+          "Melaka state election campaign begins on Saturday",
+          "Trump may order major Iran strike after midterms",
+          "Alaska Senate race features two candidates with same name",
+          "More than 43 million Americans voted early"
         ],
         "body": [
-          "Al Jazeera reported that more than 43 million Americans voted early in the 2026 midterms, a figure that reflects high participation. The report was published on October 31, 2026, and it highlights the early voting trend.",
-          "The Times of India said a Democratic win could affect trade relations with India, according to its coverage. The article was released on the same day as the Al Jazeera report.",
-          "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News. The judge’s decision was also reported by The Hill.",
-          "The judge’s order was issued on October 31, 2026, and it may affect election officials in California, a state that will hold midterm elections.",
-          "The United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion, according to Al Jazeera. Dawn also reported the approval, confirming the transaction.",
-          "Melaka state election campaign began on Saturday, according to South China Morning Post. CNA also reported that the election is being used as a test for Anwar Ibrahim’s coalition.",
-          "Trump may order a major Iran strike after the midterms, according to Haaretz. Anadolu Ajansı reported that the strike could be ordered if Republicans suffer losses in the midterm election.",
-          "Alaska Senate race attracted attention when two candidates shared the same name, according to G1. Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in the race."
+          "Washington D.C. and Virginia filed a lawsuit to block the construction of President Trump's planned 250‑foot arch, according to Axios and The Hill, on 31 October 2026. The lawsuit seeks to prevent the arch from being erected on federal property.",
+          "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News and The Hill, on 31 October 2026. The ruling applies nationwide to all election officials.",
+          "The United States approved a $2.1 billion sale of Patriot missiles to Ukraine, according to Al Jazeera and Dawn, on 31 October 2026. The sale is part of ongoing U.S. support for Ukraine.",
+          "Melaka state election campaign began on Saturday, according to South China Morning Post and CNA, on 31 October 2026. The campaign covers 79 seats and is used as a test for Anwar Ibrahim’s coalition.",
+          "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms, and Anadolu Ajansı reports he may order a major strike if Republicans suffer losses, on 31 October 2026. The reports reflect concerns about post‑election foreign policy.",
+          "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race, and G1 reported that two candidates with the same name were contesting the seat, irritating Trump, on 31 October 2026. The report highlighted confusion among voters.",
+          "Al Jazeera said more than 43 million Americans voted early in the 2026 midterms, and Times of India said a Democratic win could affect trade relations with India, on 31 October 2026. The early voting trend reflects high participation and may influence international trade discussions."
         ],
         "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
         "imageCaption": ""
       },
       "de": {
-        "title": "Richter blockiert Drohungen des DOJ-Trump gegen Wahlbeamte",
-        "dek": "",
-        "facts": [],
-        "body": [],
-        "context": ""
+        "title": "Richter blockiert Drohungen der Trump-Administration gegen Wahlbeamte",
+        "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohungen der Trump-Administration, Wahlbeamte wegen angeblicher Nichtbürgerwahl zu verfolgen, vor den 2026-Zwischenwahlen.",
+        "facts": [
+          "USA genehmigt den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine",
+          "Richter blockiert die Drohungen des DOJ der Trump-Administration gegen Wahlbeamte",
+          "Die Wahlkampagne im Bundesstaat Melaka beginnt am Samstag",
+          "Trump könnte nach den Zwischenwahlen einen großen Angriff auf Iran befehlen",
+          "Im Senatswettbewerb Alaskas treten zwei Kandidaten mit demselben Namen an",
+          "Mehr als 43 Millionen Amerikaner haben vorzeitig gewählt"
+        ],
+        "body": [
+          "Washington D.C. und Virginia reichten eine Klage ein, um die Errichtung des geplanten 250-Fuß-Bogens von Präsident Trump zu verhindern, laut Axios und The Hill, am 31. Oktober 2026. Die Klage soll verhindern, dass der Bogen auf Bundesgrund errichtet wird.",
+          "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerwahl zu bedrohen, laut Fox News und The Hill, am 31. Oktober 2026. Das Urteil gilt landesweit für alle Wahlbeamten.",
+          "Die USA genehmigten den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine, laut Al Jazeera und Dawn, am 31. Oktober 2026. Der Verkauf ist Teil der fortlaufenden US-Unterstützung für die Ukraine.",
+          "Die Wahlkampagne im Bundesstaat Melaka begann am Samstag, laut South China Morning Post und CNA, am 31. Oktober 2026. Die Kampagne umfasst 79 Sitze und dient als Test für die Koalition von Anwar Ibrahim.",
+          "Laut Haaretz plant Trump, einen erneuten Angriff auf Iran einen Tag nach den Zwischenwahlen zu starten, und Anadolu Ajansı berichtet, er könne einen großen Angriff befehlen, wenn die Republikaner Verluste erleiden, am 31. Oktober 2026. Die Berichte spiegeln Bedenken hinsichtlich der Außenpolitik nach den Wahlen wider.",
+          "Fox News berichtete, dass demokratische Abgeordnete über ein angebliches Wahlverwirrungsschema im Senatswettbewerb Alaskas schweigen, und G1 meldete, dass zwei Kandidaten mit demselben Namen um den Sitz kämpfen, was Trump irritiert, am 31. Oktober 2026. Der Bericht hob die Verwirrung unter den Wählern hervor.",
+          "Al Jazeera berichtete, dass mehr als 43 Millionen Amerikaner bei den 2026-Zwischenwahlen vorzeitig gewählt haben, und Times of India sagte, ein demokratischer Sieg könnte die Handelsbeziehungen mit Indien beeinflussen, am 31. Oktober 2026. Der Trend zu vorzeitiger Wahl spiegelt hohe Beteiligung wider und könnte internationale Handelsverhandlungen beeinflussen."
+        ],
+        "context": "Die USA-Wahlen 2026 finden am 3. November 2026 statt und betreffen alle 435 Sitze im Repräsentantenhaus sowie 34 Sitze im Senat. Die Wahlen werden hinsichtlich möglicher Veränderungen in Politik und internationalen Beziehungen beobachtet."
       }
     },
     "versions": [
       {
+        "at": "2026-10-31T15:34:24.966Z",
+        "reason": "2 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "A federal judge in California halted the Trump administration's threats to prosecute election officials over alleged noncitizen voting claims ahead of the 2026 midterms.",
+            "body": [
+              "A poll by The Hill and MarketWatch reported that Senator Pete Ricketts leads independent challenger Dan Osborn by 6 points in Nebraska's Senate race, according to the same sources, on 31 October 2026. The poll was conducted in the final week before the November 3 election.",
+              "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News and The Hill, on 31 October 2026. The ruling was issued on 31 October and applies to all election officials nationwide.",
+              "According to Haaretz, President Trump is planning to resume Iran strikes as soon as one day after the midterms, and Anadolu Ajansı reported that he may order a major strike if Republicans suffer losses, both on 31 October 2026. The reports were published on 31 October and reflect concerns about post‑election foreign policy.",
+              "Fox News said Democratic lawmakers stayed silent on alleged voter confusion scheme in Alaska's Senate race, and G1 reported that two candidates with the same name were contesting the seat, irritating Trump, on 31 October 2026. The report highlighted confusion among voters and drew criticism from some officials.",
+              "Al Jazeera reported that more than 43 million Americans voted early in the 2026 midterms, and Times of India said a Democratic win could affect trade relations with India, both on 31 October 2026. The early voting trend reflects high participation and may influence international trade discussions.",
+              "Al Jazeera and Dawn reported that the United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion, on 31 October 2026. The approval was announced on 31 October and is part of ongoing U.S. support for Ukraine.",
+              "South China Morning Post reported that the Melaka state election campaign began on Saturday, and CNA said the election is being used as a test for Anwar Ibrahim’s coalition, both on 31 October 2026. The campaign covers 79 seats and is part of Malaysia's broader political landscape."
+            ],
+            "facts": [
+              "US approves $2.1bn Patriot missile sale to Ukraine",
+              "Judge blocks Trump DOJ threats against election officials",
+              "Ricketts leads Osborn poll by 6 points in Nebraska Senate race",
+              "Trump may order major Iran strike after midterms",
+              "Alaska Senate race features two candidates with same name",
+              "More than 43 million Americans voted early in 2026 midterms"
+            ],
+            "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+            "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Richter blockiert Drohungen des DOJ-Trumps gegen Wahlbeamte",
+            "context": ""
+          }
+        }
+      },
+      {
+        "at": "2026-10-31T14:28:35.098Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "Melaka-Wahl beginnt; Bundesrichter blockiert Trump-DOJ-Bedrohungen; USA genehmigen Raketenverkauf; Trump könnte Iran angreifen; Alaska-Wettbewerb hat doppelte Namen; Frühwahl erreicht 43 Millionen.",
+            "body": [
+              "Die Wahlkampagne begann am Samstag, laut South China Morning Post, und ist ein Test für die Koalition von Anwar Ibrahim, laut CNA. Die Wahl umfasst 79 Sitze.",
+              "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, Wahlbeamte nicht wegen angeblicher Nichtbürgerstimmen mit strafrechtlicher Verfolgung zu bedrohen, laut Fox News; das Urteil wurde ebenfalls von The Hill berichtet. Der Beschluss wurde am 31. Oktober erlassen.",
+              "Die USA genehmigten einen Verkauf von Patriot-Raketen an die Ukraine im Gesamtwert von 2,1 Mrd. USD, laut Al Jazeera; Dawn bestätigte die Transaktion ebenfalls. Die Genehmigung wurde am 31. Oktober bekannt gegeben.",
+              "Trump könnte einen großen Iranangriff einleiten, sobald ein Tag nach den Zwischenwahlen, laut Haaretz; Anadolu Ajansı berichtete, dass Trump einen großen Iranangriff einleiten könnte, wenn die Republikaner Verluste bei den Zwischenwahlen erleiden. Die Berichte wurden am 31. Oktober veröffentlicht.",
+              "Der Alaska-Senat-Wettbewerb umfasst zwei Kandidaten mit demselben Namen, laut Fox News; G1 sagte, die Kandidaten würden den Sitz anfechten, was Trump irritiert. Die Berichte wurden am 31. Oktober veröffentlicht.",
+              "Mehr als 43 Millionen Amerikaner haben bei den 2026‑Zwischenwahlen frühzeitig abgestimmt, laut Al Jazeera; die Times of India sagte, ein demokratischer Sieg könnte die Handelsbeziehungen mit Indien beeinflussen. Der Trend der Frühwahl spiegelt hohe Beteiligung wider."
+            ],
+            "facts": [
+              "USA genehmigen Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine",
+              "Bundesrichter blockiert Trump-DOJ-Bedrohungen gegen Wahlbeamte",
+              "Melaka-Wahlkampagne begann am Samstag",
+              "Trump könnte einen großen Iranangriff einleiten nach den Zwischenwahlen",
+              "Alaska-Senat-Wettbewerb umfasst zwei Kandidaten mit demselben Namen",
+              "Mehr als 43 Millionen Amerikaner haben bei den 2026‑Zwischenwahlen frühzeitig abgestimmt"
+            ],
+            "title": "Bundesrichter blockiert Trump-DOJ-Bedrohungen gegen Wahlbeamte",
+            "context": "Die USA‑Zwischenwahlen 2026 sind für den 3. November 2026 geplant und betreffen alle 435 Sitze im Repräsentantenhaus und 34 Sitze im Senat. Die Wahlen werden beobachtet, um mögliche Veränderungen in Politik und internationalen Beziehungen zu erkennen."
+          },
+          "en": {
+            "dek": "Melaka election begins; judge blocks DOJ threats; US approves missile sale; Trump may strike Iran; Alaska race has duplicate names; early voting hits 43 million.",
+            "body": [
+              "The campaign began Saturday, according to South China Morning Post, and it is a test for Anwar Ibrahim’s coalition, according to CNA. The election covers 79 seats.",
+              "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News, and the ruling was also reported by The Hill. The order was issued on October 31.",
+              "The United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion, according to Al Jazeera, and Dawn also confirmed the transaction. The approval was announced on October 31.",
+              "Trump may order a major Iran strike as soon as one day after the midterms, according to Haaretz, and Anadolu Ajansı reported that Trump may order a major Iran strike if Republicans suffer losses in the midterm election. The reports were published on October 31.",
+              "The Alaska Senate race features two candidates with the same name, according to Fox News, and G1 said the candidates were contesting the seat, irritating Trump. The reports were released on October 31.",
+              "More than 43 million Americans voted early in the 2026 midterms, according to Al Jazeera, and Times of India said a Democratic win could affect trade relations with India. The early voting trend reflects high participation."
+            ],
+            "facts": [
+              "US approves $2.1bn Patriot missile sale to Ukraine",
+              "Federal judge blocks Trump DOJ threats against election officials",
+              "Melaka state election campaign began Saturday",
+              "Trump may order major Iran strike after midterms",
+              "Alaska Senate race features two candidates with same name",
+              "More than 43 million Americans voted early in the 2026 midterms"
+            ],
+            "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+            "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-10-31T12:54:22.114Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Richter blockiert Drohungen des DOJ-Trump gegen Wahlbeamte",
+            "context": ""
+          },
+          "en": {
+            "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
+            "body": [
+              "According to the Times of India, a Democratic win in the 2026 U.S. midterm elections could affect trade relations with India. Al Jazeera reported that more than 43 million Americans voted early in the midterms. The early voting trend reflects high participation in the election scheduled for November 3, 2026.",
+              "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims. Fox News reported the ruling, and The Hill also covered the decision. The judge’s order was issued on October 31, 2026.",
+              "The United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion. Al Jazeera reported the approval, and Dawn also confirmed the transaction. The sale was announced on October 31, 2026.",
+              "Melaka state election campaign began on Saturday, according to South China Morning Post. The election is being used as a test for Anwar Ibrahim’s coalition, according to CNA. The campaign started on October 31, 2026.",
+              "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms. Anadolu Ajansı reported that Trump may order a major Iran strike if Republicans suffer losses in the midterm election. The reports were published on October 31, 2026.",
+              "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race. G1 reported that two candidates with the same name were contesting the seat, irritating Trump. The reports were released on October 31, 2026."
+            ],
+            "facts": [
+              "US approved $2.1bn Patriot missile sale to Ukraine",
+              "Federal judge in California blocked Trump DOJ threats against election officials",
+              "Melaka state election campaign began Saturday",
+              "Trump may order major Iran strike after midterms",
+              "Alaska Senate race features two candidates with same name",
+              "More than 43 million Americans voted early in the 2026 midterms"
+            ],
+            "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+            "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-10-31T09:57:40.773Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Richter blockiert Drohungen des DOJ-Trump gegen Wahlbeamte",
+            "context": ""
+          },
+          "en": {
+            "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
+            "body": [
+              "Al Jazeera reported that more than 43 million Americans voted early in the 2026 midterms, a figure that reflects high participation. The report was published on October 31, 2026, and it highlights the early voting trend.",
+              "The Times of India said a Democratic win could affect trade relations with India, according to its coverage. The article was released on the same day as the Al Jazeera report.",
+              "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News. The judge’s decision was also reported by The Hill.",
+              "The judge’s order was issued on October 31, 2026, and it may affect election officials in California, a state that will hold midterm elections.",
+              "The United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion, according to Al Jazeera. Dawn also reported the approval, confirming the transaction.",
+              "Melaka state election campaign began on Saturday, according to South China Morning Post. CNA also reported that the election is being used as a test for Anwar Ibrahim’s coalition.",
+              "Trump may order a major Iran strike after the midterms, according to Haaretz. Anadolu Ajansı reported that the strike could be ordered if Republicans suffer losses in the midterm election.",
+              "Alaska Senate race attracted attention when two candidates shared the same name, according to G1. Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in the race."
+            ],
+            "facts": [
+              "US approved $2.1bn Patriot missile sale to Ukraine.",
+              "Federal judge in California blocked Trump DOJ threats against election workers.",
+              "Melaka state election campaign began on Saturday.",
+              "Trump may order major Iran strike after midterms.",
+              "Alaska Senate race features two candidates with same name.",
+              "More than 43 million Americans voted early in the 2026 midterms."
+            ],
+            "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+            "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
         "at": "2026-10-31T08:31:42.356Z",
         "reason": "2 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohung der Trump-Administration, Wahlbeamte wegen angeblicher Nichtbürgerstimmen zu verfolgen.",
+            "body": [
+              "Die Wahlkampagne im Bundesstaat Melaka begann am Samstag, laut South China Morning Post. Die Kampagne umfasst 79 Sitze und wird als Test für die Koalition von Anwar Ibrahim genutzt, so CNA. Die Wahl ist Teil des politischen Zyklus Malaysias.",
+              "In den USA ordnete ein Bundesrichter in Kalifornien der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerstimmen zu bedrohen, laut Fox News. Das Urteil wurde auch von The Hill berichtet. Die Entscheidung des Richters bezieht sich auf die Drohungen der Administration.",
+              "Das Urteil wurde am 31. Oktober 2026 erlassen und könnte Wahlbeamte in Kalifornien betreffen, einem Staat, der Zwischenwahlen abhält. Die Entscheidung war Teil eines umfassenderen Versuchs, angebliche Nichtbürgerstimmen anzugehen. Das Urteil wurde als Unterbrechung der DOJ-Aktionen beschrieben.",
+              "Die USA genehmigten einen Verkauf von Patriot-Raketen an die Ukraine, laut Al Jazeera. Dawn berichtete ebenfalls die Genehmigung. Der Verkauf beläuft sich auf 2,1 Milliarden USD und ist Teil der fortlaufenden US-Unterstützung für die Ukraine.",
+              "In Alaska zog eine Senatswahl Aufmerksamkeit auf sich, als zwei Kandidaten denselben Namen trugen, laut G1. Fox News berichtete, dass demokratische Gesetzgeber über ein angebliches Wahlverwirrungsschema in der Wahl schweigend blieben. Die Situation irritierte Trump, laut Fox News.",
+              "Die frühzeitige Wahl bei den 2026 Zwischenwahlen stieg, mit mehr als 43 Millionen Amerikanern, die frühzeitig wählten, laut Al Jazeera. Die Times of India berichtete, dass ein demokratischer Sieg die Handelsbeziehungen mit Indien beeinflussen könnte. Der Trend zur frühzeitigen Wahl spiegelt hohe Beteiligung wider.",
+              "Die Zwischenwahlen sind für den 3. November 2026 geplant. Die Ergebnisse könnten die US-Inlands- und Außenpolitik beeinflussen. Die Ereignisse werden von mehreren Medien beobachtet."
+            ],
+            "facts": [
+              "USA genehmigte einen Patriot-Raketen-Verkauf von 2,1 Mrd. USD an die Ukraine",
+              "Bundesrichter in Kalifornien blockierte Trump-DOJ-Drohungen gegen Wahlbeamte",
+              "Die Wahlkampagne im Bundesstaat Melaka begann am Samstag",
+              "Alaska-Senatswahl mit zwei Kandidaten gleichen Namens",
+              "Mehr als 43 Millionen Amerikaner haben bei den 2026 Zwischenwahlen frühzeitig gewählt"
+            ],
+            "title": "Richter blockiert Trump-DOJ-Bedrohungen gegen Wahlbeamte",
+            "context": "Die 2026 US-Zwischenwahlen sind für den 3. November 2026 geplant und betreffen alle 435 Sitze im Repräsentantenhaus und 34 Sitze im Senat. Die Wahlen werden auf mögliche Verschiebungen in Politik und internationalen Beziehungen hin beobachtet."
+          },
           "en": {
             "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
             "body": [
@@ -75,27 +416,6 @@
             "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
             "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohung der Trump-Administration, Wahlbeamte wegen angeblicher Nichtbürgerstimmen zu verfolgen.",
-            "body": [
-              "Die Wahlkampagne im Bundesstaat Melaka begann am Samstag, laut South China Morning Post. Die Kampagne umfasst 79 Sitze und wird als Test für die Koalition von Anwar Ibrahim genutzt, so CNA. Die Wahl ist Teil des politischen Zyklus Malaysias.",
-              "In den USA ordnete ein Bundesrichter in Kalifornien der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerstimmen zu bedrohen, laut Fox News. Das Urteil wurde auch von The Hill berichtet. Die Entscheidung des Richters bezieht sich auf die Drohungen der Administration.",
-              "Das Urteil wurde am 31. Oktober 2026 erlassen und könnte Wahlbeamte in Kalifornien betreffen, einem Staat, der Zwischenwahlen abhält. Die Entscheidung war Teil eines umfassenderen Versuchs, angebliche Nichtbürgerstimmen anzugehen. Das Urteil wurde als Unterbrechung der DOJ-Aktionen beschrieben.",
-              "Die USA genehmigten einen Verkauf von Patriot-Raketen an die Ukraine, laut Al Jazeera. Dawn berichtete ebenfalls die Genehmigung. Der Verkauf beläuft sich auf 2,1 Milliarden USD und ist Teil der fortlaufenden US-Unterstützung für die Ukraine.",
-              "In Alaska zog eine Senatswahl Aufmerksamkeit auf sich, als zwei Kandidaten denselben Namen trugen, laut G1. Fox News berichtete, dass demokratische Gesetzgeber über ein angebliches Wahlverwirrungsschema in der Wahl schweigend blieben. Die Situation irritierte Trump, laut Fox News.",
-              "Die frühzeitige Wahl bei den 2026 Zwischenwahlen stieg, mit mehr als 43 Millionen Amerikanern, die frühzeitig wählten, laut Al Jazeera. Die Times of India berichtete, dass ein demokratischer Sieg die Handelsbeziehungen mit Indien beeinflussen könnte. Der Trend zur frühzeitigen Wahl spiegelt hohe Beteiligung wider.",
-              "Die Zwischenwahlen sind für den 3. November 2026 geplant. Die Ergebnisse könnten die US-Inlands- und Außenpolitik beeinflussen. Die Ereignisse werden von mehreren Medien beobachtet."
-            ],
-            "facts": [
-              "USA genehmigte einen Patriot-Raketen-Verkauf von 2,1 Mrd. USD an die Ukraine",
-              "Bundesrichter in Kalifornien blockierte Trump-DOJ-Drohungen gegen Wahlbeamte",
-              "Die Wahlkampagne im Bundesstaat Melaka begann am Samstag",
-              "Alaska-Senatswahl mit zwei Kandidaten gleichen Namens",
-              "Mehr als 43 Millionen Amerikaner haben bei den 2026 Zwischenwahlen frühzeitig gewählt"
-            ],
-            "title": "Richter blockiert Trump-DOJ-Bedrohungen gegen Wahlbeamte",
-            "context": "Die 2026 US-Zwischenwahlen sind für den 3. November 2026 geplant und betreffen alle 435 Sitze im Repräsentantenhaus und 34 Sitze im Senat. Die Wahlen werden auf mögliche Verschiebungen in Politik und internationalen Beziehungen hin beobachtet."
           }
         }
       },
@@ -191,62 +511,352 @@
   },
   "updates": [
     {
-      "id": "u-1793432160000-d8cb",
-      "at": "2026-10-31T07:36:00.000Z",
-      "kind": "statement",
+      "id": "u-1793461620000-g106",
+      "at": "2026-10-31T15:47:00.000Z",
+      "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Trump may order major Iran strike after midterms",
-          "body": "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms. Anadolu Ajansı reports that Trump may order a major Iran strike if Republicans suffer losses in the midterm election."
-        },
-        "fr": {
-          "headline": "Trump pourrait ordonner une importante frappe contre l'Iran après les élections de mi-mandat",
-          "body": "Selon Haaretz, Trump prévoit de reprendre les frappes contre l'Iran dès le lendemain des élections de mi-mandat. Anadolu Ajansı rapporte que Trump pourrait ordonner une importante frappe contre l'Iran si les Républicains subissent des pertes aux élections de mi-mandat."
+          "headline": "Evacuees from Oleshky reach Kyiv-controlled territory",
+          "body": "According to DW, evacuees from Oleshky crossed into Kyiv-controlled territory after a truce brokered by Melania Trump. France 24 reported that residents reunited with families following the evacuation."
         },
         "es": {
-          "headline": "Trump podría ordenar un gran ataque a Irán tras las elecciones de mitad de mandato",
-          "body": "Según Haaretz, Trump está planeando reanudar los ataques a Irán tan pronto como un día después de las elecciones de mitad de mandato. Anadolu Ajansı informa que Trump podría ordenar un gran ataque a Irán si los republicanos sufren pérdidas en las elecciones de mitad de mandato."
-        },
-        "pt": {
-          "headline": "Trump pode ordenar grande ataque ao Irão após eleições de meio de mandato",
-          "body": "Segundo a Haaretz, Trump planeia retomar ataques ao Irão assim que um dia após as eleições de meio de mandato. A Anadolu Ajansı relata que Trump pode ordenar um grande ataque ao Irão se os republicanos sofrerem perdas na eleição de meio de mandato."
-        },
-        "de": {
-          "headline": "Trump könnte nach den Zwischenwahlen einen großen Iranangriff anordnen",
-          "body": "Laut Haaretz plant Trump, die Iranangriffe bereits einen Tag nach den Zwischenwahlen wieder aufzunehmen. Anadolu Ajansı berichtet, dass Trump einen großen Iranangriff ausführen könnte, falls die Republikaner bei den Zwischenwahlen Verluste erleiden."
+          "headline": "Los evacuados de Oleshky llegan a territorio controlado por Kiev",
+          "body": "Según DW, los evacuados de Oleshky cruzaron al territorio controlado por Kiev tras un alto el fuego mediado por Melania Trump. France 24 informó que los residentes se reunieron con sus familias tras la evacuación."
         },
         "it": {
-          "headline": "Trump potrebbe ordinare un grande attacco contro l’Iran dopo le elezioni di metà mandato",
-          "body": "Secondo Haaretz, Trump intende riprendere gli attacchi contro l’Iran già il giorno successivo alle elezioni di metà mandato. Anadolu Ajansı riferisce che Trump potrebbe ordinare un grande attacco contro l’Iran se i repubblicani subissero perdite nelle elezioni di metà mandato."
+          "headline": "Evacuati da Oleshky raggiungono il territorio controllato da Kiev",
+          "body": "Secondo DW, gli evacuati da Oleshky sono passati nel territorio controllato da Kiev dopo una tregua mediata da Melania Trump. France 24 ha riferito che i residenti si sono riuniti con le famiglie dopo l'evacuazione."
+        },
+        "fr": {
+          "headline": "Les évacués d'Oleshky arrivent dans le territoire contrôlé par Kyiv",
+          "body": "Selon DW, les évacués d'Oleshky ont traversé dans le territoire contrôlé par Kyiv après une trêve négociée par Melania Trump. France 24 a rapporté que les résidents se sont réunis avec leurs familles après l'évacuation."
+        },
+        "de": {
+          "headline": "Evakuierte aus Oleshky erreichen von Kiew kontrolliertes Gebiet",
+          "body": "Laut DW sind die Evakuierten aus Oleshky nach einem von Melania Trump vermitteltem Waffenstillstand in das von Kiew kontrollierte Gebiet eingereist. France 24 berichtete, dass die Bewohner nach der Evakuierung wieder mit ihren Familien zusammenkamen."
         },
         "zh": {
-          "headline": "特朗普可能在中期选举后下令对伊朗发动大规模打击",
-          "body": "据《哈雷特》报称，特朗普计划在中期选举后第二天就恢复对伊朗的打击。阿纳多卢通讯社报道，如果共和党在中期选举中遭受损失，特朗普可能会下令对伊朗发动大规模打击。"
-        },
-        "ko": {
-          "headline": "트럼프, 중간선거 이후 이란에 대규모 공격 명령 가능",
-          "body": "하아레츠에 따르면 트럼프는 중간선거 직후 하루 이내에 이란에 대한 공격을 재개할 계획이라고 한다. 아나두르 아잔시가 보도한 바에 따르면, 공화당이 중간선거에서 손실을 입을 경우 트럼프는 대규모 이란 공격을 명령할 수 있다."
+          "headline": "来自奥列什基的疏散人员抵达基辅控制区",
+          "body": "据德国之声（DW）报道，奥列什基的疏散人员在梅拉尼娅·特朗普斡旋的停火后越过基辅控制区边界。法新社（France 24）报道称，居民在疏散后与家人团聚。"
         },
         "ja": {
-          "headline": "トランプ氏、中間選挙後にイランへの大規模攻撃を命じる可能性",
-          "body": "ハレツ報道によると、トランプ氏は中間選挙の翌日からイランへの攻撃を再開する計画だ。アナトルル・アジャンスィの報道では、共和党が中間選挙で敗北した場合、トランプ氏が大規模なイラン攻撃を命じる可能性があるとされている。"
+          "headline": "オレシキーの避難民がキエフ支配領域に到着",
+          "body": "DWによれば、オレシキーの避難民はメラニア・トランプが仲介した停戦後、キエフ支配領域に入った。フランス24は、避難後に住民が家族と再会したと報じた。"
+        },
+        "ko": {
+          "headline": "올레슈키에서 피난민들이 키이프 통제 지역에 도착",
+          "body": "DW에 따르면, 올레슈키의 피난민들은 멜라니아 트럼프가 중재한 휴전 이후 키이프 통제 지역으로 진입했다. 프랑스 24는 피난 이후 주민들이 가족과 재회했다고 보도했다."
+        },
+        "pt": {
+          "headline": "Os evacuados de Oleshky chegam ao território controlado por Kiev",
+          "body": "De acordo com a DW, os evacuados de Oleshky cruzaram para o território controlado por Kiev após um cessar-fogo mediado por Melania Trump. A France 24 informou que os residentes reuniram-se com as famílias após a evacuação."
         }
       },
       "sources": [
         {
-          "outlet": "Haaretz",
-          "title": "Report: Trump Planning to Resume Iran Strikes as Soon as One Day After Midterms",
+          "outlet": "DW",
+          "title": "Ukraine news: Evacuees from Russian-occupied Oleshky reach Kyiv-controlled territory",
+          "url": "https://www.dw.com/en/ukraine-news-evacuees-from-russian-occupied-oleshky-reach-kyiv-controlled-territory/live-79815409?maca=en-rss-en-all-1573-rdf",
+          "publishedAt": "2026-10-31T15:47:00.000Z"
+        },
+        {
+          "outlet": "France 24",
+          "title": "Residents from Russian-occupied Oleshky reunite with families after evacuation operation",
+          "url": "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine",
+          "publishedAt": "2026-10-31T12:45:49.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T15:21:02.000Z",
+      "id": "u-1793460062000-pzzd",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut Axios reichten Washington D.C. und Virginia eine Klage ein, um den Bau des geplanten 250‑Fuß‑Bogens von Präsident Trump zu blockieren. The Hill berichtete ebenfalls über die Klage.",
+          "headline": "D.C. und Virginia klagen, um Trumps geplanten Bogen zu blockieren"
+        },
+        "en": {
+          "body": "According to Axios, Washington D.C. and Virginia filed a lawsuit to block the construction of President Trump's planned 250‑foot arch. The Hill reported the same lawsuit.",
+          "headline": "D.C. and Virginia sue to block Trump's planned arch"
+        },
+        "es": {
+          "body": "Según Axios, Washington D.C. y Virginia presentaron una demanda para impedir la construcción del arco de 250 pies planeado por el presidente Trump. The Hill informó sobre la misma demanda.",
+          "headline": "Washington D.C. y Virginia demandan para bloquear el arco de 250 pies planeado por Trump"
+        },
+        "fr": {
+          "body": "Selon Axios, Washington D.C. et la Virginie ont déposé une plainte pour empêcher la construction de l'arc de 250 pieds prévu par le président Trump. The Hill a également rapporté la même affaire.",
+          "headline": "Washington D.C. et la Virginie intègrent une action en justice pour bloquer l'arc prévu par Trump"
+        },
+        "it": {
+          "body": "Secondo Axios, Washington D.C. e Virginia hanno presentato una causa per impedire la costruzione dell’arco di 250 piedi previsto dal presidente Trump. The Hill ha riportato la stessa causa.",
+          "headline": "Washington D.C. e Virginia intentano causa per bloccare l’arco di 250 piedi previsto da Trump"
+        },
+        "ja": {
+          "body": "Axiosによると、ワシントンD.C.とバージニア州は、トランプ大統領が計画した250フィート（約76メートル）のアーチ建設を阻止する訴訟を提起した。The Hillも同じ訴訟を報じた。",
+          "headline": "ワシントンD.C.とバージニア州、トランプ氏の計画アーチ建設を阻止する訴訟を提起"
+        },
+        "ko": {
+          "body": "Axios에 따르면 워싱턴 D.C.와 버지니아는 트럼프 대통령이 계획한 250피트(약 76미터) 아치 건설을 차단하기 위해 소송을 제기했다. Hill도 같은 소송을 보도했다.",
+          "headline": "워싱턴 D.C.와 버지니아가 트럼프 대통령이 계획한 250피트(약 76미터) 아치 건설을 차단하기 위해 소송 제기"
+        },
+        "pt": {
+          "body": "De acordo com o Axios, Washington D.C. e Virginia apresentaram uma ação judicial para impedir a construção do arco de 250 pés planeado pelo Presidente Trump. O Hill reportou a mesma ação.",
+          "headline": "Washington D.C. e Virginia processam para bloquear o arco de 250 pés planeado pelo Presidente Trump"
+        },
+        "zh": {
+          "body": "据Axios报道，华盛顿特区和弗吉尼亚州提起诉讼，阻止总统特朗普计划建造的250英尺拱门。Hill也报道了同一诉讼。",
+          "headline": "华盛顿特区和弗吉尼亚州提起诉讼，阻止特朗普计划建造的拱门"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.axios.com/2026/10/31/trump-arch-dc-virginia",
+          "title": "D.C., Virginia sue to block Trump's 250-foot arch",
+          "outlet": "Axios",
+          "publishedAt": "2026-10-31T15:21:02.000Z"
+        },
+        {
+          "url": "https://thehill.com/homenews/administration/6186090-trump-triumphal-arch-lawsuit/",
+          "title": "DC, Virginia sue to block Trump’s triumphal arch",
+          "outlet": "The Hill",
+          "publishedAt": "2026-10-31T14:43:19.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T15:28:33.409Z",
+      "id": "u-1793460513409-vp05",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut The Jerusalem Post erreichten ukrainische Evakuierte Belarus nach einem Waffenstillstand in Oleshky, vermittelt von Melania Trump. The New York Times berichtete, dass die Evakuierung in der ukrainischen Stadt Oleshky begann.",
+          "headline": "Melania Trump vermittelt Waffenstillstand in Oleshky, Evakuierungen beginnen"
+        },
+        "en": {
+          "body": "According to The Jerusalem Post, Ukrainian evacuees reached Belarus following a ceasefire in Oleshky mediated by Melania Trump. The New York Times reported that the evacuation began in the Ukrainian city of Oleshky.",
+          "headline": "Melania Trump mediates Oleshky ceasefire, evacuations begin"
+        },
+        "es": {
+          "body": "Según The Jerusalem Post, los evacuados ucranianos llegaron a Bielorrusia tras un alto el fuego en Oleshky mediatizado por Melania Trump. El New York Times informó que la evacuación comenzó en la ciudad ucraniana de Oleshky.",
+          "headline": "Melania Trump mediatiza el alto el fuego en Oleshky, comienzan evacuaciones"
+        },
+        "fr": {
+          "body": "Selon The Jerusalem Post, des évacués ukrainiens sont arrivés en Biélorussie après un cessez-le-feu à Oleshky, médié par Melania Trump. The New York Times a rapporté que l'évacuation avait commencé dans la ville ukrainienne d'Oleshky.",
+          "headline": "Melania Trump facilite un cessez-le-feu à Oleshky, les évacuations commencent"
+        },
+        "it": {
+          "body": "Secondo The Jerusalem Post, i rifugiati ucraini sono arrivati in Bielorussia dopo un cessate il fuoco a Oleshky mediato da Melania Trump. The New York Times ha riportato che l’evacuazione è iniziata nella città ucraina di Oleshky.",
+          "headline": "Melania Trump media il cessate il fuoco a Oleshky, iniziano le evacuazioni"
+        },
+        "ja": {
+          "body": "The Jerusalem Postによると、メラニア・トランプが仲介したオレシキの停戦後、ウクライナの避難民がベラルーシに到着した。The New York Timesは、避難がウクライナのオレシキ市で始まったと報じた。",
+          "headline": "メラニア・トランプ、オレシキ停戦を仲介、避難が始まる"
+        },
+        "ko": {
+          "body": "The Jerusalem Post에 따르면 멜라니아 트럼프가 중재한 오렐셰키 정전 이후 우크라이나 대피민이 벨라루스로 도착했다. New York Times는 대피가 우크라이나 오렐셰키 시에서 시작되었다고 보도했다.",
+          "headline": "멜라니아 트럼프가 오렐셰키에서 정전을 중재, 대피가 시작된다"
+        },
+        "pt": {
+          "body": "De acordo com o The Jerusalem Post, refugiados ucranianos chegaram à Bielorrússia após um cessar-fogo em Oleshky mediado por Melania Trump. O New York Times informou que a evacuação começou na cidade ucraniana de Oleshky.",
+          "headline": "Melania Trump media o cessar-fogo em Oleshky, começam evacuações"
+        },
+        "zh": {
+          "body": "据《耶路撒冷邮报》报道，乌克兰撤离人员在梅拉尼亚·特朗普调停的奥列什基停火后抵达白俄罗斯。《纽约时报》报道，撤离工作在乌克兰奥列什基市开始。",
+          "headline": "梅拉尼亚·特朗普调停奥列什基停火，撤离工作开始"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/international/internationalrussia-ukraine-war/article-913397",
+          "title": "Ukrainian evacuees reach Belarus as Melania Trump-brokered Oleshky ceasefire takes effect",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-10-31T16:16:37.000Z"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html",
+          "title": "Rare Evacuation Announced by Melania Trump Begins in Ukrainian City of Oleshky",
+          "outlet": "New York Times",
+          "publishedAt": "2026-10-31T15:00:37.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T14:03:52.000Z",
+      "id": "u-1793455432000-gws0",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut einer Umfrage von The Hill führt Senator Pete Ricketts den unabhängigen Herausforderer Dan Osborn um 6 Punkte. Dasselbe Ergebnis wurde von MarketWatch berichtet.",
+          "headline": "Ricketts führt Osborn um 6 Punkte in Nebraska-Senat-Umfrage"
+        },
+        "en": {
+          "body": "According to a poll by The Hill, Sen. Pete Ricketts leads independent challenger Dan Osborn by 6 points. The same result was reported by MarketWatch.",
+          "headline": "Ricketts leads Osborn by 6 points in Nebraska Senate poll"
+        },
+        "es": {
+          "body": "Según una encuesta de The Hill, el senador Pete Ricketts lidera al candidato independiente Dan Osborn por 6 puntos. El mismo resultado fue informado por MarketWatch.",
+          "headline": "Ricketts lidera a Osborn por 6 puntos en encuesta del Senado de Nebraska"
+        },
+        "fr": {
+          "body": "Selon un sondage réalisé par The Hill, le sénateur Pete Ricketts dépasse le candidat indépendant Dan Osborn de 6 points. Le même résultat a été rapporté par MarketWatch.",
+          "headline": "Ricketts devance Osborn de 6 points dans le sondage du Sénat du Nebraska"
+        },
+        "it": {
+          "body": "Secondo un sondaggio di The Hill, il senatore Pete Ricketts supera il candidato indipendente Dan Osborn di 6 punti. Lo stesso risultato è stato riportato da MarketWatch.",
+          "headline": "Ricketts supera Osborn di 6 punti nella sonda del Senato del Nebraska"
+        },
+        "ja": {
+          "body": "The Hillによる調査では、上院議員ピート・リケットス氏が独立候補ダン・オズボーン氏を6ポイント差でリードしていると報告されている。同じ結果はMarketWatchでも報じられている。",
+          "headline": "リケットス氏、ネブラスカ州上院選でオズボーン氏を6ポイント差でリード"
+        },
+        "ko": {
+          "body": "힐(The Hill)의 여론조사에 따르면, 상원의원 피트 리켓츠는 독립 후보 댄 오스본을 6점 차이로 앞서고 있다. 같은 결과가 마켓워치에서도 보도되었다.",
+          "headline": "리켓츠, 네브래스카 상원 여론조사에서 오스본을 6점 차이로 앞서다"
+        },
+        "pt": {
+          "body": "De acordo com uma enquete da The Hill, o Senador Pete Ricketts lidera o desafiador independente Dan Osborn por 6 pontos. O mesmo resultado foi reportado pela MarketWatch.",
+          "headline": "Ricketts lidera Osborn por 6 pontos na enquete do Senado de Nebraska"
+        },
+        "zh": {
+          "body": "根据《山丘报》的一项民调，参议员彼得·里克特斯以6个百分点领先独立候选人丹·奥斯本。MarketWatch 也报道了同样的结果。",
+          "headline": "里克特斯在内布拉斯加州参议院民调中领先奥斯本6个百分点"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://thehill.com/homenews/campaign/6186054-ricketts-osborn-nebraska-senate/",
+          "title": "Ricketts leads independent candidate Osborn by 6 points in latest Nebraska Senate poll",
+          "outlet": "The Hill",
+          "publishedAt": "2026-10-31T14:03:52.000Z"
+        },
+        {
+          "url": "https://www.marketwatch.com/story/your-stock-portfolio-increasingly-hinges-on-the-bond-market-and-the-midterm-elections-dc1abadb?mod=mw_rss_topstories",
+          "title": "Your stock portfolio increasingly hinges on the bond market — and the midterm elections",
+          "outlet": "MarketWatch",
+          "publishedAt": "2026-10-31T14:03:00.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T12:27:28.000Z",
+      "id": "u-1793449648000-a3i7",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Laut dem Jerusalem Post bereitet sich Frankreich auf erneute landesweite Proteste vor, während die Regierung von Macron eine harte Reaktion verspricht. Ein Bericht von France 24 vermerkt, dass rund 70.000 Sicherheitskräfte für das dritte aufeinanderfolgende Wochenende von Protesten eingesetzt wurden.",
+          "headline": "Frankreich bereitet sich auf Proteste mit verstärkter Sicherheitspräsenz vor"
+        },
+        "en": {
+          "body": "According to the Jerusalem Post, France is bracing for renewed nationwide protests as Macron's government vows a tough response. The France 24 report notes that around 70,000 security personnel have been deployed for the third consecutive weekend of protests.",
+          "headline": "France braces for protests amid security deployment"
+        },
+        "es": {
+          "body": "Según el Jerusalem Post, Francia se prepara para nuevas protestas a nivel nacional mientras el gobierno de Macron promete una respuesta dura. El informe de France 24 señala que alrededor de 70.000 agentes de seguridad han sido desplegados durante el tercer fin de semana consecutivo de protestas.",
+          "headline": "Francia se prepara ante protestas con despliegue de seguridad"
+        },
+        "fr": {
+          "body": "Selon le Jerusalem Post, la France se prépare à de nouvelles manifestations à l’échelle nationale alors que le gouvernement de Macron promet une réponse sévère. Le reportage France 24 note qu’environ 70 000 agents de sécurité ont été déployés pour le troisième week‑end consécutif de manifestations.",
+          "headline": "La France se prépare à des manifestations alors que la sécurité est renforcée"
+        },
+        "it": {
+          "body": "Secondo il Jerusalem Post, la Francia si prepara a proteste nazionali rinnovate mentre il governo di Macron promette una risposta dura. Il rapporto di France 24 segnala che circa 70.000 addetti alla sicurezza sono stati dispiegati per il terzo weekend consecutivo di proteste.",
+          "headline": "La Francia si prepara a proteste in mezzo allo svolgimento di sicurezza"
+        },
+        "ja": {
+          "body": "イェルサレム・ポストによると、フランスはマクロン政権が厳しい対応を誓う中、再び全国規模の抗議に備えている。フランス24の報告では、抗議の3連続週末に約70,000人の警備員が配置されていると述べられている。",
+          "headline": "フランス、警備配置の中で抗議に備える"
+        },
+        "ko": {
+          "body": "제레루살렘 포스트에 따르면, 프랑스는 마크롱 정부가 강경 대응을 약속함에 따라 재개된 전국 시위에 대비하고 있다. 프랑스 24는 이번이 세 번째 연속 주말 시위로 약 7만 명의 보안 인력이 배치됐다고 보도했다.",
+          "headline": "프랑스, 보안 배치 속 시위 대비"
+        },
+        "pt": {
+          "body": "De acordo com o Jerusalem Post, a França prepara-se para protestos renovados em todo o país, enquanto o governo de Macron promete uma resposta dura. O relatório da France 24 indica que cerca de 70.000 pessoas de segurança foram desdobradas para o terceiro fim de semana consecutivo de protestos.",
+          "headline": "França prepara-se para protestos num contexto de desdobramento de segurança"
+        },
+        "zh": {
+          "body": "根据《耶路撒冷邮报》的报道，法国正为再次全国范围内的抗议做准备，马克龙政府誓言采取强硬回应。法国24的报道指出，已部署约70,000名安全人员，已连续第三个周末进行抗议。",
+          "headline": "法国为安全部署下的抗议做准备"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/international/article-913388",
+          "title": "France braces for renewed nationwide protests as Macron's government vows tough response",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-10-31T12:27:28.000Z"
+        },
+        {
+          "url": "https://www.france24.com/en/france-s-nunez-warns-of-high-risk-during-protests",
+          "title": "France's Nunez warns of high risk during protests",
+          "outlet": "France 24",
+          "publishedAt": "2026-10-31T11:15:19.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T07:36:00.000Z",
+      "id": "u-1793432160000-d8cb",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Laut Haaretz plant Trump, die Iranangriffe bereits einen Tag nach den Zwischenwahlen wieder aufzunehmen. Anadolu Ajansı berichtet, dass Trump einen großen Iranangriff ausführen könnte, falls die Republikaner bei den Zwischenwahlen Verluste erleiden.",
+          "headline": "Trump könnte nach den Zwischenwahlen einen großen Iranangriff anordnen"
+        },
+        "en": {
+          "body": "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms. Anadolu Ajansı reports that Trump may order a major Iran strike if Republicans suffer losses in the midterm election.",
+          "headline": "Trump may order major Iran strike after midterms"
+        },
+        "es": {
+          "body": "Según Haaretz, Trump está planeando reanudar los ataques a Irán tan pronto como un día después de las elecciones de mitad de mandato. Anadolu Ajansı informa que Trump podría ordenar un gran ataque a Irán si los republicanos sufren pérdidas en las elecciones de mitad de mandato.",
+          "headline": "Trump podría ordenar un gran ataque a Irán tras las elecciones de mitad de mandato"
+        },
+        "fr": {
+          "body": "Selon Haaretz, Trump prévoit de reprendre les frappes contre l'Iran dès le lendemain des élections de mi-mandat. Anadolu Ajansı rapporte que Trump pourrait ordonner une importante frappe contre l'Iran si les Républicains subissent des pertes aux élections de mi-mandat.",
+          "headline": "Trump pourrait ordonner une importante frappe contre l'Iran après les élections de mi-mandat"
+        },
+        "it": {
+          "body": "Secondo Haaretz, Trump intende riprendere gli attacchi contro l’Iran già il giorno successivo alle elezioni di metà mandato. Anadolu Ajansı riferisce che Trump potrebbe ordinare un grande attacco contro l’Iran se i repubblicani subissero perdite nelle elezioni di metà mandato.",
+          "headline": "Trump potrebbe ordinare un grande attacco contro l’Iran dopo le elezioni di metà mandato"
+        },
+        "ja": {
+          "body": "ハレツ報道によると、トランプ氏は中間選挙の翌日からイランへの攻撃を再開する計画だ。アナトルル・アジャンスィの報道では、共和党が中間選挙で敗北した場合、トランプ氏が大規模なイラン攻撃を命じる可能性があるとされている。",
+          "headline": "トランプ氏、中間選挙後にイランへの大規模攻撃を命じる可能性"
+        },
+        "ko": {
+          "body": "하아레츠에 따르면 트럼프는 중간선거 직후 하루 이내에 이란에 대한 공격을 재개할 계획이라고 한다. 아나두르 아잔시가 보도한 바에 따르면, 공화당이 중간선거에서 손실을 입을 경우 트럼프는 대규모 이란 공격을 명령할 수 있다.",
+          "headline": "트럼프, 중간선거 이후 이란에 대규모 공격 명령 가능"
+        },
+        "pt": {
+          "body": "Segundo a Haaretz, Trump planeia retomar ataques ao Irão assim que um dia após as eleições de meio de mandato. A Anadolu Ajansı relata que Trump pode ordenar um grande ataque ao Irão se os republicanos sofrerem perdas na eleição de meio de mandato.",
+          "headline": "Trump pode ordenar grande ataque ao Irão após eleições de meio de mandato"
+        },
+        "zh": {
+          "body": "据《哈雷特》报称，特朗普计划在中期选举后第二天就恢复对伊朗的打击。阿纳多卢通讯社报道，如果共和党在中期选举中遭受损失，特朗普可能会下令对伊朗发动大规模打击。",
+          "headline": "特朗普可能在中期选举后下令对伊朗发动大规模打击"
+        }
+      },
+      "sources": [
+        {
           "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQbkF5TmFUUGdxazNiZVR1LXMyRUhBLTU1dkdfRm5UOUQ5TVV2SVlpbEpDdzh2MV95V0ZrYk9fVHdXY08wUHloVWdHc09BMTNsMnYxT0ExcjREVEhzdnNkNlpfeXJCQXQ1Q3h3MENyRWFnOWo3cmF4X1Q1dDg2RExBclVLQ0JxR2xGQW5WSTQ0ZG44eW5nYXB4cTlXTGtMNGxldF9DbV85WmRadnVoeU1fc2RzcF9EMl9IS2NIT0llc1dPck5fUzRyVUI4Qmo4VjdxVFdFbnNjU2JpUWgtUkluQmhfLVJEYW5MYjAweFNKN1ByckRSbmJMc01LOVFmNDU4LWJjaE9sRQ?oc=5",
+          "title": "Report: Trump Planning to Resume Iran Strikes as Soon as One Day After Midterms",
+          "outlet": "Haaretz",
           "publishedAt": "2026-10-31T07:36:00.000Z"
         },
         {
-          "outlet": "Anadolu Ajansı",
-          "title": "Trump may order major Iran strike if Republicans suffer losses in midterm election: Report",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVHVFQjEwa203MXhnTmJrTmNfVmF4MXV6M0xHbU5WR2NIeEtoTDd6ZW9NNXlsQTRadDVkckY3UjRoNzlWaDF0R3Bmc0Vtd3BQZS1CaWlEcUI2NUxZb2htcEZKMmpjbXJMQ1pzZUQwalJ5VUN0RjFiR1JYZWFoSmVBaTFyaURfcm1GaE5kWEhCT2xydnpKOTNDRjRuVThHYVM3U3lwbDNobUFrM3oyd0xuX1VGVmo1eFlyMUZtNTdidHpqdmdJMGhqYTMtNA?oc=5",
+          "title": "Trump may order major Iran strike if Republicans suffer losses in midterm election: Report",
+          "outlet": "Anadolu Ajansı",
           "publishedAt": "2026-10-31T05:09:40.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T08:04:23.000Z",
@@ -640,13 +1250,182 @@
     "https://news.google.com/rss/articles/CBMic0FVX3lxTE00UU9fRVdxT2xteEw3cWgwOTE4anNvdk1nZWt4OS1tNDdWLVBnY3U3aE54Sjlyb3R6YkR3dVAzUzhnWDhibzF3eVFoa0JhQWhTMTY3OG9GTVNYeEVJd0M4UFQ3eEdSbU1GQ2hyVlRiM1M0d1U?oc=5",
     "https://news.google.com/rss/articles/CBMibkFVX3lxTE1OZDZUMXpEeGtFVmVFVElveVJ0NlJaRXNoMkJGUXpmMjVWRlRKeG5aWmlpVEFjQzJjelBkeEthdHFGRE9IMk1WWWR6Ul9BNFhWWC1sXzM5T2dYVktKUnlBOTNyQ0JrLTk2Z2tqY21B?oc=5",
     "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVHVFQjEwa203MXhnTmJrTmNfVmF4MXV6M0xHbU5WR2NIeEtoTDd6ZW9NNXlsQTRadDVkckY3UjRoNzlWaDF0R3Bmc0Vtd3BQZS1CaWlEcUI2NUxZb2htcEZKMmpjbXJMQ1pzZUQwalJ5VUN0RjFiR1JYZWFoSmVBaTFyaURfcm1GaE5kWEhCT2xydnpKOTNDRjRuVThHYVM3U3lwbDNobUFrM3oyd0xuX1VGVmo1eFlyMUZtNTdidHpqdmdJMGhqYTMtNA?oc=5",
-    "https://news.google.com/rss/articles/CBMinAFBVV95cUxNSm1PTGFVcFVhdjRVdFlmUnRzMnZGX2dod1FMZkUyTWVwanUyOE9mdE1mRGt5NEt3R2R6VklUemNTcHV3d2tMUFBoaEdtclFjUDhIYjRJRnNZYkMza05ycjlwVU9oc29SbXpzcEZwX3paaXNOTmxtektjOWFBTjN5NE9Gc0N5VVBWTHpnY1BxZ3Q2N3o1MHl3S1cyWFY?oc=5"
+    "https://news.google.com/rss/articles/CBMinAFBVV95cUxNSm1PTGFVcFVhdjRVdFlmUnRzMnZGX2dod1FMZkUyTWVwanUyOE9mdE1mRGt5NEt3R2R6VklUemNTcHV3d2tMUFBoaEdtclFjUDhIYjRJRnNZYkMza05ycjlwVU9oc29SbXpzcEZwX3paaXNOTmxtektjOWFBTjN5NE9Gc0N5VVBWTHpnY1BxZ3Q2N3o1MHl3S1cyWFY?oc=5",
+    "https://www.jpost.com/international/article-913388",
+    "https://www.bbc.co.uk/news/articles/cqx2818elrnzo?at_medium=RSS&at_campaign=rss",
+    "https://www.marketwatch.com/story/these-10-megadonors-have-spent-a-total-of-1-billion-on-the-midterm-elections-0dc279cf?mod=mw_rss_topstories",
+    "https://www.theverge.com/policy/1023899/political-texts-midterm-elections",
+    "https://www.lemonde.fr/en/international/article/2026/10/31/political-crisis-turns-into-open-conflict-in-poland_6768148_4.html",
+    "https://news.google.com/rss/articles/CBMib0FVX3lxTE04bndyQXFlRXhUcGNhY09XakpUZGU5c0k1UUd2XzlhS3VKTnlCVno3MFNmRXF4WDFla3pCUnMwMVZQanljOFNETmlxQlFpWG9iZTkyaGlCd2ZnaDBtMUtTcjZIMUtDNHBiTXY4WFpIaw?oc=5",
+    "https://www.axios.com/2026/10/31/irans-supreme-leader-maximum-response-us-attack",
+    "https://www.npr.org/2026/10/31/nx-s1-5995422/the-healthcare-election-florida",
+    "https://www.npr.org/2026/10/31/nx-s1-6020974/politics-norms-and-the-dojs-unprecedented-pre-election-headlines",
+    "https://www.npr.org/2026/10/31/nx-s1-6019280/week-in-politics-trumps-midwest-pivot-sharper-democratic-messaging",
+    "https://timesofindia.indiatimes.com/india/guilty-of-centralising-electoral-rolls-mallikarjun-kharge-lists-6-charges-against-cec-gyanesh-kumar-makes-3-demands/articleshow/135398593.cms",
+    "https://www.nzz.ch/international/iran-krieg-jd-vance-soll-mit-iran-chance-auf-verhandlungen-ausloten-kaempfe-in-jemen-vertreiben-immer-mehr-menschen-ld.10021246",
+    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPUGxTb09DMmltVXZ2UXY1Rnlxd18wa1dFeUxpNVlqam5nTUxENmlHaEt6M3pub2lwRG1tZHVjeUVaOUxHR3JQOUZMUjBsS2V0UldxdDB1REx2RElINWtHUENsdUFsMUJMclh1RW44U0U2Wi1FTmxxXzBaNDlqbUh1ZDYzOEQ3Z01HaVNVNjBRVWk4ellnOVRFWUVrUWVwMWg0YktMdEtzUDF3dzhocmZmeXdWVzE2TmpmYzNaTzNsQVFOSm8?oc=5",
+    "https://www.france24.com/en/france-s-nunez-warns-of-high-risk-during-protests",
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1wSmg0TlVXdWZSRGdsWjBHT014VzlqeEYzRU1hY1pNQ0lxdHdsZ3BiWDRmZVl5Nmk3dmFES0pSVFFCSzRhUG94cWRSYUZfSTZwWVMxQWkzZHNaMnREWU13NXozVWZGZHQt?oc=5",
+    "https://www.france24.com/en/third-weekend-of-protests-in-france",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeGhzSDlORFZkUWtiYjZrb1MzSklWc1JfcUxxemdUT1l1a2NpTWRUbkRvVjRIZkhtVVRDY0VXZjRiZGpsSmFkN3hnQzBaLWZTSGJPZWNfaTR2YXpiYWZ6MWtndHM1V2Z5Y3BaUks1X1QtLWo0RzR3aXBjeDhvVzZPRTRpaE9ldWhzS2szQldMVFFSWUFaSzJCU0g5aHR4MVlURXc3QThWTXgyOWkwb1BEWVlkOA?oc=5",
+    "https://www.foxnews.com/politics/trump-admin-threatens-iran-consequences-allies-convene-amid-threats-post-election-escalation",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxOY1RmZFBsUGlmMDBheVNxMnI0cFJCYk1HY3JpRWNXa3dlSkFrenR2NVZVWU9Ka3FUTGZldUNjNjVlNmxjblo0NmV2ZlJTMUpoNW5OcjRxWFQ5aE1MUVNkVkM1c2V3N0dZeFpWQjRlbDQyVWc2LUtFdzVwSlF2dWxNQWZ3TVBFSEh6cWpDVFpCY3plNVpSUGo2T2VTWjJEdUZvV1Rj?oc=5",
+    "https://www.spiegel.de/ausland/donald-trump-junge-waehler-vor-den-midterms-es-geht-nur-um-ballsaele-und-bullshit-a-2d7e6688-1803-4360-be0e-6188d25ea23e#ref=rss",
+    "https://www.statnews.com/2026/10/31/midterm-election-tipping-point-healthcare-policy/?utm_campaign=rss",
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPS1Z6YXhOZ1lDTnVjYXhSTkdpbXJad2VoZEpNUTJCM05oWWE3bFdwbDZ3U1BlRll1NnBrNEVxTWVOUncyWHMtUGlVTEVZRVF0T1FVS1J0N096WDFwRWtqcTliRGFORkpMNGdQU2xpLTNLSmtEczJTM2lxb1BHUEF0bnRrMnotUHlN?oc=5",
+    "https://www.aljazeera.com/news/2026/10/31/can-democrats-win-the-us-senate-10-key-midterm-races-to-watch?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxOTGNkZmtpN0JNM2Rka3BLSE82ZWhYZ21OaG80U1g2Vy1mRVhoX2Y5SEFXNE96OEtUcFpPVnVPNHdRTmNEc2d2QXNUQkZiUHVBbDJNLVZoVkVYbXk4UHJvZS05b2U3OV9QNEo1WFNhU19pYTBOdkVMbFJKMzRQUm9tY2ZESnVhLXBWUlJNcnV0UF9LeW9IR1FXRGJfZmVHZw?oc=5",
+    "https://news.google.com/rss/articles/CBMidkFVX3lxTE5uREVmbVFza08xUlVkcmdQOTVEUDRYTUxJWFlHcXB0WnhDcnk4blFsd1JINEtQSUxRWnNhM0ljZDNiNWh1RDZPdXE0QUQtZVZwTnhiTUlpUnBlWlR0MlU0ZVJKM2ZxMmFhS3JiWkdIS3o0MjhiUmc?oc=5",
+    "https://www.aljazeera.com/news/2026/10/31/paycheck-to-paycheck-texas-border-voters-shed-parties-amid-economic-woes?traffic_source=rss",
+    "https://www.straitstimes.com/world/us-campaign-for-control-of-congress-enters-final-weekend",
+    "https://www.channelnewsasia.com/business/power-bills-and-data-centers-cast-rare-spotlight-utilities-in-us-midterms-6509406",
+    "https://www.theguardian.com/us-news/2026/oct/31/trump-government-corruption-midterms-voters",
+    "https://www.theguardian.com/us-news/ng-interactive/2026/oct/31/elon-musk-midterms-spending-visualized",
+    "https://www.foxnews.com/politics/trump-push-oust-omar-faces-historic-supreme-court-test-legal-experts-see-uncharted-twist",
+    "https://thehill.com/policy/defense/6185793-pete-hegseth-blackburn-tennessee-senate-seat/",
+    "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdl8wTFNCS1pYc3lYZEVEdWVjQjZHbW9vX1BaOThmSnBZOUZaV1I0T2J4YnBoVU9qOFdXV3l5ZDU5XzhEajVFSzJuLV9PYXJDSHREMmZFY3BLMjIwekNfWjFqWlFSUjgwSzJLM1FxRnplUkJiWGpaeUVpNTd5Q2prcUtqUFU4ZEpaaDRfdmViY2lEVUg1bXV2Vl92cVd3MmpjUl9wN2xzQ0M?oc=5",
+    "https://news.google.com/rss/articles/CBMickFVX3lxTE5Kem1zNEtLLXJhQndGWG1LTlI2UWtfWGlqdzJwTGFhV2c1ZUpYYTlNQnNaMW9HUGlHN281RzZpTktsSXVEVXhnS1diRndPbzQwYmtnM2NQSkY5VUstWFAta2ZuVlpRYkhMZk5hNEZrN0Vpdw?oc=5",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYktaLU9ndHRTeW11V3cwLWI1anZkMDJjeXNvZXVONEp2bXA0Z3o2N3BnSmRGM3ZCZURuS3phc2M0N3plU1JGeVN0amJYd21uS0NUNEFtUE1IMFNHaWVoZWpmd05CNkNfRUk4cE1EWjRKbjE2WWgtYUloczRMem1Ya1FIN0ZrMkprRHFHUnlTd000bFd1UE1JdndzamhTeFRWeVQ0?oc=5",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRFdIZ2JnbmVERmQtSG5OX2hLY3lwVk1CaEZ3TWl3VVVrelYtZlZ0b25Mdi1NOHdXOC1UUkU4eWpWN0RkQXhFcjdhc2VROGxlUnhxcElhRVVKTVBmSzZIR0JNYTJxQUcwalhabG1TLWwtblVWNFhEZGltQ3pBWWozVnV4VmtaaUl1MUtXc3JWaGY0ZEx1UXhVUkoxWTNraXJDQU5nNTNMTDNLYmdm0gGyAUFVX3lxTE9NcGNBS0dfQkMybmhHVWRfZ19KNVp1b3UyLTJvcXlWcmRiQjZraURBMG4tOEpBQXpnVmlGNlNaYUNHczhsS3lNVUtzb1FQNW5ieXFqQ0F4aE5jSGluNDlQXzg1VmwtLWVJRzNhd0VWSm1zLUtIc1FuY3R5aExZMDRUUGVQUzd6QlpFdkVHYWNIQkFUdTJ4UUpscDlCSmgxSlItZkQ0SWRDdC03RU1NOGNqSUE?oc=5",
+    "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOS1XMkJHOUJYOGFhWEpMWEIybDRreDdMakNzeHZjS0pDT3JQNTItMnZSTDNuUDJGN0dONTJuQWwzMXg2b0sxMklsX0FieWFEWF9WXy1HaUtBZFZ6ZVZDRHNxcUtSdU1FSHpweEJDQzhIRzR4cGgxYkNBNV93ZWF3N240blNJZmQ3cFdteHNKc1RET3lWdU5Zb2oxN2NCV3VtMGMtMGd3a21BeFlzS0xDeE9aYnRfVjVXWHNEOUx4ajlGN2NVSnRSb3k2WEM4bkpRWjF2bG5UWUdYZXA1ZXVnbHR5REM3TkY0OE4zYkJlVDJpZ2d6UjhWa2gzb2xWMnRRY2IydlljZ0tldw?oc=5",
+    "https://thehill.com/homenews/campaign/6186054-ricketts-osborn-nebraska-senate/",
+    "https://www.marketwatch.com/story/your-stock-portfolio-increasingly-hinges-on-the-bond-market-and-the-midterm-elections-dc1abadb?mod=mw_rss_topstories",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUkl2NzcxQzJaWTM4S0NiaXAzNkw1QWdLd1ZPa19tOTloZWRFQVZSR1FqVzZ3SGY1QTdILUU2NkJZcVBmWG84bmdoZEd6eHVxQTF1LTN2WUY5dExBWmFGSExDUDRzOXY3ZlN0eXBsSnNIa2JwdkNBODJVZWlrRjZnd2VaZy1UblpOYkw2NzF4ZGNpS2hQWWJYOVp5TVlQbF9CSnh6aVdPN1A4Zw?oc=5",
+    "https://www.aljazeera.com/news/2026/10/31/israel-voted-for-israel-why-gaza-wasnt-on-the-ballot?traffic_source=rss",
+    "https://www.nytimes.com/2026/10/31/arts/kennedy-center-trump-beatty.html",
+    "https://timesofindia.indiatimes.com/world/82-disapprove-of-trump-so-why-are-fewer-indian-americans-identifying-as-democrats/articleshow/135401389.cms",
+    "https://www.kyivpost.com/post/88745",
+    "https://www.cnbc.com/2026/10/31/crypto-industry-spends-more-than-200-million-to-sway-the-midterms.html",
+    "https://www.thehindu.com/news/international/how-can-pope-leo-vote-in-us-elections-while-serving-as-the-sovereign-of-vatican-city-explained/article71648983.ece",
+    "https://www.foxnews.com/politics/how-follow-2026-election-day-coverage-fox-news-platforms",
+    "https://thehill.com/homenews/administration/6185643-trump-tele-rally-midterm-elections-g20/",
+    "https://www.dawn.com/news/2041193/power-bills-and-data-centres-cast-rare-spotlight-on-utilities-in-us-midterms",
+    "https://www.axios.com/2026/10/31/your-election-night-cheat-sheet",
+    "https://www.spiegel.de/ausland/midterms-sie-haben-donald-trump-gewaehlt-damit-er-fuer-sie-kaempft-jetzt-fuehlen-sie-sich-verraten-a-3ccbf2a2-8ba3-4470-86bf-1a2bee5c44b7#ref=rss",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZEZYTEVkdVVlNVVUaGVZUGRaUml1czJycF9sWUhPRUs2ZlB2WGhDOW93VGRPZ2dZWUs3aDlsN3FNQ1JjT1NXNk5sQlQ5UTJHZ2ZvMlpjWjZCcGFPd3BVUnRjVzhtSy1RWXFNYnNhc3UwMGQ2Y1FhSnNtQ0x5YVN0Yzd5MDN2MVItRDc0NEstVzd5NnVlaTNYUFNWYzhndmY2Rk1QaW8tMWhsdnRMb0FZVWt3V1J3Zkx2S1AyVzNGem1PREp6cGRZ?oc=5",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMDdZU0djUk1fSWQ2LTBxNXRiUGhzZ3Z1UTNibzVOSG1NMEZ1TmtYLU5zUWNFQjEzd21ibTdxSHp0LVd4V1c4QVl4Sm9nelBMMVZmTFp3Rzc1MHdrdkktN1hQY1lDaTRxbmRUM3cxOG9zcVplaG55dmtsTVYxNU5oQ21qSk5MMElfMHQ3RTJTN1ItNGJJSzcxb0k0b3VhbHB3Q1d1WjhuemFGcDBuc3c?oc=5",
+    "https://www.scmp.com/news/world/russia-central-asia/article/3372828/russia-occupied-oleshky-evacuees-arrive-belarus-ukraine-next",
+    "https://www.jpost.com/international/internationalrussia-ukraine-war/article-913397",
+    "https://www.axios.com/2026/10/31/trump-arch-dc-virginia",
+    "https://www.straitstimes.com/world/rubio-and-brazils-foreign-minister-to-meet-after-election-tension-source-says",
+    "https://www.straitstimes.com/world/middle-east/iranian-envoys-meet-qatari-mediators-as-threat-looms-of-us-strikes-after-midterms",
+    "https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html",
+    "https://thehill.com/homenews/administration/6186090-trump-triumphal-arch-lawsuit/",
+    "https://www.kyivpost.com/post/88758",
+    "https://timesofindia.indiatimes.com/sports/more-sports/others/gagan-narang-pt-usha-saina-nehwal-among-27-names-in-draft-list-for-ioa-som-elections/articleshow/135403579.cms",
+    "https://thehill.com/regulation/court-battles/6186080-federal-appeals-court-lifts-idaho-abortion-ruling/",
+    "https://www.kyivpost.com/post/88761",
+    "https://timesofindia.indiatimes.com/world/us/from-asses-to-masses-republicans-wonder-if-trump-can-still-deliver-wins/articleshow/135403383.cms",
+    "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQZU1RSnFLYU5kcHdiLVdXTXpPM1h3NDhJTUZLTUJVNWY5Xy1LXzdURVFfMUNmYWtaSEdPeFl5UkJ6QkVSWHlVV0RUZWNvWmdiUjNfY1l0RnZVY2lQZXJYQlV2bnpWOFpTaC04dmdQTDI2a2M2eXM2cjVBUGRGYlNTSThkRnUtYUpMWTg4TXNfNkYtSFlENTYxdUZMUkhRWjJFOTJaeGJKZWpKbm4yOWpSQy1iUDROVFN1d2tQSGZ6V0s?oc=5",
+    "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWjZ3X1VYc3M0aUNLUWw4d3ZqWTFlN2hTODVpVzJ3TWJWOHZNZWxxVFcybWRfVG16bWx3a2VWZ1RGS2JxN2xIZjNkZjAtdU95R1NXOXNtZTE1OEJhSThPUjhIZTNBZVZSTWpMUFcweTdFdzR2ZE5wNTVnV2dCSmhSZS1oaEwxVGZ5OGY4bUcwOFBBWlRpdVRz?oc=5",
+    "https://news.google.com/rss/articles/CBMidEFVX3lxTE1GeXdnQ2xjSDlpSkNZNFBkSnF6b2NjeFFqU2s1alFZRlV0SGgtdzNEeXlVS294dzJOZC1FNlVseDFBUEktOEVpRk9OaS1welN6OHBkZ1lYblNQY1FjbkFCUmF2MGtlOEdGNERuTGVxN1ppaUxs?oc=5",
+    "https://www.jpost.com/israel-election-2026/article-913391",
+    "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2Fxd0pESXZIMXpYcW5RNGtCYUhIUW9BZ2JXb2hfUTdiSjRwX3FiWXVXeE1nVXJHRVk2SmVUSGZLQThHN2xrWm9PZzdvNG1sUWd1YkxTbjFtVHFpeGpUS3FNNkRRMWJJY0F0VDhtcGdZM0hQTGdpTzRhVERwN2tKeXR6MkVQczdWSkhZRzQ2cVVpb0NGV2tVV2FuaWNKWk1qNGQzZHp5UzdqLTJhdEtZNFNXbDlhODB1eURYdFJwVQ?oc=5",
+    "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSlZDTFVLeE81VG5SUUFUVkdZS05Ta2cyc2RGOTN6WjBDQ0NlbFhhMEtBUnFSWGYzclV1MXFFRlBoWUZCdHMxTmNuaGpVTE9yVHJjdDFaaE44dUZLWGM0VUp3Rm42VkVablg3YmZCaHlNZzVzdEkzaXdmZU1URjN4enVPQ19STmR5STFFajVkN21lRmVuM3FKeFZUcHA2QnNCMHZJZ0lrVkJIWTRtT1JVdS14aC1lS2hyWWVDZ0hR?oc=5",
+    "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeFBOYUw5LUNlYkFLZW8zblc2UlVHNFZXZjdlNFFvNm04YWVlTmRyVEp4c1Q1WDh1MzRLOGJQbk1LV2NBU29JUUtqdjA3LXJ3blBxZ3JhbWltcDhDM0k0S1Y0VXFIa1BuWDktaGFCYm5UOGV1bHhTZmc3dkV1VC1IRUZHYWgzLUFXVUNLQkF3?oc=5",
+    "https://www.thehindu.com/news/international/trump-admin-approves-potential-patriot-missiles-sale-to-ukraine/article71650369.ece",
+    "https://www.dw.com/en/ukraine-news-evacuees-from-russian-occupied-oleshky-reach-kyiv-controlled-territory/live-79815409?maca=en-rss-en-all-1573-rdf",
+    "https://www.lemonde.fr/en/politics/article/2026/10/31/is-a-beautiful-french-election-still-possible_6768247_5.html",
+    "https://news.google.com/rss/articles/CBMid0FVX3lxTE5oQVM0aWU3NzI5R0dOQUFPUUpKdTh1S0wydFBlbUpNNkVvRVhfYzdWWTdybmJycFpJSF82Y2d6QktBWFFEa1hvYnd5cWotXzBndlhVcko4ZmJYV3VOaDBMZ1NqcWZWMTM0V3AzZlRiU0JNQmJ1TGRz?oc=5",
+    "https://news.google.com/rss/articles/CBMib0FVX3lxTE5odEtoZExTeGQ2S21CMWN2bzFqREpSZ3E1dEtPUEotalozT1NRUFRsUThvOXVBNF8wMFpFeDhzMFBOdVdzcFdVLTZsWGxEMXNpb0poYXVuTG1YY1ZldW5iYzZ5R0w0amFwYmFCX0hhNA?oc=5",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZlM2U1pNYUpFdnBUSWdxWFY5MmhkRlVkVm14b1IzVVllR1FPQ3U0UWhYU1RSVzM3U1U4WlBJVW5WVnFFSEtCcVZjYk9ldGZkeElqVWtlcWMtLWtqQlRUOVF0LVI5Nnpkay1pRm9QYU9NckxLSGtKU0NFNGl6Q0N1dlZSLUlCOTloT1VReWNTT3dUSG9LRXlkeVFOa2lxLWx0dUNyYjBGNlhpemx0cXBNYXNORlg3QUJFWG5jSTRRdUVfZw?oc=5",
+    "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine"
   ],
   "startedAt": "2026-10-31T06:33:27.688Z",
-  "updatedAt": "2026-10-31T09:56:14.986Z",
+  "updatedAt": "2026-10-31T16:04:30.693Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "us-midterms-2026",
-  "sourceCount": 10,
+  "sourceCount": 16,
+  "statsHistory": [
+    {
+      "at": "2026-10-31T09:10:00.000Z",
+      "rows": [
+        {
+          "key": "elon-musk-donation",
+          "value": 446
+        },
+        {
+          "key": "crypto-industry-donation",
+          "value": 200
+        },
+        {
+          "key": "ricketts-lead-over-osborn",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T09:10:00.000Z",
+      "rows": [
+        {
+          "key": "disapproval-of-trump",
+          "value": 82
+        },
+        {
+          "key": "ricketts-lead-over-osborn",
+          "value": 6
+        },
+        {
+          "key": "elon-musk-donation",
+          "value": 446
+        },
+        {
+          "key": "crypto-industry-donation",
+          "value": 200
+        },
+        {
+          "key": "megadonors-total-donation",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T09:10:00.000Z",
+      "rows": [
+        {
+          "key": "disapproval-of-trump",
+          "value": 82
+        },
+        {
+          "key": "elon-musk-donation",
+          "value": 446
+        },
+        {
+          "key": "crypto-industry-donation",
+          "value": 200
+        },
+        {
+          "key": "megadonors-total-donation",
+          "value": 1000
+        },
+        {
+          "key": "ricketts-lead-over-osborn",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T09:10:00.000Z",
+      "rows": [
+        {
+          "key": "disapproval-of-trump",
+          "value": 82
+        },
+        {
+          "key": "elon-musk-donation",
+          "value": 446
+        },
+        {
+          "key": "crypto-industry-donation",
+          "value": 200
+        },
+        {
+          "key": "megadonors-total-donation",
+          "value": 1000
+        }
+      ]
+    }
+  ],
   "seenHeadlines": []
 }

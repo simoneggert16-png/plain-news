@@ -1,9 +1,336 @@
 {
+  "meta": {
+    "outlets": [
+      "Die Zeit",
+      "Die Welt",
+      "NZZ",
+      "Tages-Anzeiger"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "openai/gpt-oss-20b"
+  },
   "slug": "ebola-outbreak-in-congo-death-toll-rises",
-  "status": "live",
-  "category": "health",
-  "importance": 5,
   "topic": "Ebola outbreak in Congo: death toll rises",
+  "status": "live",
+  "article": {
+    "slug": "ebola-outbreak-in-congo-death-toll-rises",
+    "reason": "3 new update(s)",
+    "locales": {
+      "de": {
+        "dek": "Bestätigte Fälle übersteigen 10.000 und Todesfälle übersteigen 5.000, obwohl kein zugelassener Impfstoff oder keine zugelassene Behandlung existieren.",
+        "body": [
+          "Die Welt und Tages-Anzeiger berichteten, dass die bestätigten Ebola-Infektionen im Kongo 10.000 überschritten haben. Die Zahl der Todesfälle ist über 5.000 gestiegen.",
+          "Am selben Tag stellte Die Zeit fest, dass kein zugelassener Impfstoff für das Virus existiert. Al Jazeera ergänzte, dass keine zugelassenen Behandlungen verfügbar sind.",
+          "Der Ausbruch begann im Mai, so der Tages-Anzeiger. Seitdem ist die Zahl der Todesfälle stetig gestiegen.",
+          "Die Zeit identifizierte die Stämme als Bundibugyo, eine weniger verbreitete Form von Ebola. Bundibugyo ist für niedrigere Sterblichkeitsraten im Vergleich zu anderen Stämmen bekannt.",
+          "Ohne zugelassene medizinische Interventionen verlassen sich die Patienten auf unterstützende Pflege, so Die Zeit. Al Jazeera berichtete, dass das Fehlen von Behandlungsmöglichkeiten die Eindämmungsbemühungen erschwert.",
+          "Gesundheitsbehörden in der Demokratischen Republik Kongo haben keine neuen Richtlinien herausgegeben, so die Quellen. Die internationale Gemeinschaft überwacht die Situation weiterhin.",
+          "Die hohe Fallzahl und Sterblichkeit unterstreichen die Schwere des Ausbruchs, betonten Die Welt und Tages-Anzeiger. Die Situation bleibt kritisch, da sich das Virus über Regionen ausbreitet."
+        ],
+        "facts": [
+          "Bestätigte Ebola-Infektionen im Kongo übersteigen 10.000 (Die Welt, Tages-Anzeiger)",
+          "Todesfälle im Kongo übersteigen 5.000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
+          "Kein zugelassener Impfstoff für Ebola im Kongo (Die Zeit)",
+          "Keine zugelassenen Behandlungen für Ebola im Kongo (Al Jazeera)"
+        ],
+        "title": "Ebola-Ausbruch im Kongo: Todesfälle übersteigen 5.000, Infektionen über 10.000",
+        "context": "Der Ebola-Ausbruch in der Demokratischen Republik Kongo begann im Mai und hat sich über mehrere Provinzen ausgebreitet. Der identifizierte Virusstamm ist Bundibugyo, eine weniger verbreitete Form von Ebola. Der Ausbruch hat zu einer hohen Zahl bestätigter Fälle und Todesfälle geführt, wobei kein zugelassener Impfstoff oder keine zugelassene Behandlung verfügbar ist."
+      },
+      "en": {
+        "dek": "Confirmed cases surpass 10,000 and deaths exceed 5,000 amid no approved vaccine or treatment.",
+        "body": [
+          "Die Welt and Tages-Anzeiger reported that confirmed Ebola infections in Congo have surpassed 10,000. The death toll has risen above 5,000.",
+          "Earlier that day, Die Zeit noted that no approved vaccine exists for the virus. Al Jazeera added that no approved treatments are available.",
+          "The outbreak began in May, according to Tages-Anzeiger. Since then, the number of deaths has increased steadily.",
+          "Die Zeit identified the strain as Bundibugyo, a less common form of Ebola. Bundibugyo is known for lower mortality rates compared to other strains.",
+          "Without approved medical interventions, patients rely on supportive care, Die Zeit said. Al Jazeera reported that this lack of treatment options complicates containment efforts.",
+          "Health authorities in the Democratic Republic of Congo have not issued new guidelines, according to the sources. The international community continues to monitor the situation.",
+          "The high case count and mortality underscore the severity of the outbreak, Die Welt and Tages-Anzeiger emphasized. The situation remains critical as the virus spreads across regions."
+        ],
+        "facts": [
+          "Confirmed Ebola infections in Congo exceed 10,000 (Die Welt, Tages-Anzeiger)",
+          "Death toll in Congo exceeds 5,000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
+          "No approved vaccine for Ebola in Congo (Die Zeit)",
+          "No approved treatments for Ebola in Congo (Al Jazeera)"
+        ],
+        "title": "Ebola outbreak in Congo: death toll exceeds 5,000, infections over 10,000",
+        "context": "The Ebola outbreak in the Democratic Republic of Congo began in May and has spread across several provinces. The virus strain identified is Bundibugyo, a less common form of Ebola. The outbreak has led to a high number of confirmed cases and deaths, with no approved vaccine or treatment available.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [],
+    "updatedAt": "2026-10-31T08:21:56.714Z"
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die Zahl der bestätigten Ebola‑Todesfälle in der Demokratischen Republik Kongo ist über 5.000 gestiegen, während sich der Ausbruch ausweitert.",
+      "title": "Ebola-Ausbruch im Kongo: Todesfallzahl steigt"
+    },
+    "en": {
+      "dek": "The number of confirmed Ebola deaths in the Democratic Republic of Congo has climbed above 5,000 amid a growing outbreak.",
+      "title": "Ebola outbreak in Congo: death toll rises"
+    },
+    "es": {
+      "dek": "El número de fallecimientos confirmados por Ebola en la República Democrática del Congo ha superado los 5.000 en medio de un brote creciente.",
+      "title": "Brote de Ebola en el Congo: aumenta el número de fallecidos"
+    },
+    "fr": {
+      "dek": "Le nombre de décès confirmés par l'Ebola en République démocratique du Congo a dépassé 5 000, alors que l'épidémie s'aggrave.",
+      "title": "Épidémie d'Ebola au Congo : le bilan des morts augmente"
+    },
+    "it": {
+      "dek": "Il numero di morti confermati da Ebola nella Repubblica Democratica del Congo ha superato i 5.000 a causa di un'epidemia in crescita.",
+      "title": "Epidemia di Ebola in Congo: il numero di morti aumenta"
+    },
+    "ja": {
+      "dek": "コンゴ民主共和国で確認されたエボラ死亡者数が、拡大する発生の中で5,000人を超えた。",
+      "title": "コンゴでエボラ発生：死亡者数が増加"
+    },
+    "ko": {
+      "dek": "콩고 민주공화국에서 확인된 에볼라 사망자 수가 증가하는 발병 상황 속에서 5,000명을 넘어섰다",
+      "title": "콩고에서 에볼라 발생: 사망자 수 증가"
+    },
+    "pt": {
+      "dek": "O número de mortes confirmadas por Ebola na República Democrática do Congo ultrapassou os 5.000, num surto em crescimento.",
+      "title": "Surto de Ebola no Congo: número de mortos aumenta"
+    },
+    "zh": {
+      "dek": "在刚果民主共和国，已确认的埃博拉死亡人数已超过5,000人，疫情持续蔓延。",
+      "title": "刚果爆发埃博拉：死亡人数上升"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793459689000-801w",
+      "at": "2026-10-31T15:14:49.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Ebola cases recorded in other African countries",
+          "body": "The South China Morning Post and MedicalXpress reported that the Democratic Republic of Congo government data shows Ebola cases have been recorded in other African countries. The data was released on Saturday."
+        },
+        "es": {
+          "headline": "Se registran casos de Ebola en otros países africanos",
+          "body": "El South China Morning Post y MedicalXpress informaron que los datos del gobierno de la República Democrática del Congo indican que se han registrado casos de Ebola en otros países africanos. Los datos se publicaron el sábado."
+        },
+        "it": {
+          "headline": "Ebola: casi registrati in altri paesi africani",
+          "body": "Il South China Morning Post e MedicalXpress hanno riportato che i dati del governo della Repubblica Democratica del Congo indicano che sono stati registrati casi di Ebola in altri paesi africani. I dati sono stati pubblicati sabato."
+        },
+        "fr": {
+          "headline": "Des cas d'Ebola enregistrés dans d'autres pays africains",
+          "body": "Le South China Morning Post et MedicalXpress ont rapporté que les données du gouvernement de la République démocratique du Congo indiquent que des cas d'Ebola ont été enregistrés dans d'autres pays africains. Les données ont été publiées samedi."
+        },
+        "pt": {
+          "headline": "Casos de Ebola registados em outros países africanos",
+          "body": "O South China Morning Post e o MedicalXpress informaram que os dados do governo da República Democrática do Congo mostram que foram registados casos de Ebola em outros países africanos. Os dados foram divulgados no sábado."
+        },
+        "zh": {
+          "headline": "埃博拉病例在其他非洲国家被记录",
+          "body": "《南华早报》和MedicalXpress报道，刚果民主共和国政府数据显示，埃博拉病例已在其他非洲国家被记录。该数据于周六公布。"
+        },
+        "ja": {
+          "headline": "エボラ感染症が他のアフリカ諸国で報告された",
+          "body": "サウス・チベン・モーニング・ポストとMedicalXpressは、コンゴ民主共和国政府のデータが、エボラ感染症が他のアフリカ諸国で報告されていることを示していると報じた。データは土曜日に公開された。"
+        },
+        "ko": {
+          "headline": "아프리카 다른 국가에서 에볼라 사례 보고",
+          "body": "중국 상보와 MedicalXpress가 보도한 바에 따르면, 콩고 민주공화국 정부 데이터에 따라 다른 아프리카 국가에서도 에볼라 사례가 기록되었다. 이 데이터는 토요일에 공개되었다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "South China Morning Post",
+          "title": "DR Congo Ebola deaths top 5,000, cases recorded in other African nations",
+          "url": "https://www.scmp.com/news/world/africa/article/3372849/dr-congo-ebola-deaths-top-5000-cases-recorded-other-african-nations",
+          "publishedAt": "2026-10-31T15:14:49.000Z"
+        },
+        {
+          "outlet": "MedicalXpress",
+          "title": "Congo's Ebola deaths top 5,000 as fear of continent-wide spread mounts",
+          "url": "https://medicalxpress.com/news/2026-10-congo-ebola-deaths-continent-wide.html",
+          "publishedAt": "2026-10-31T11:00:02.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T08:05:59.000Z",
+      "id": "u-1793433959000-ef52",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut Die Welt und Tages-Anzeiger ist die Zahl der Todesfälle über 5.000 gestiegen. Beide Medien berichten von mehr als 10.000 bestätigten Infektionen.",
+          "headline": "Ebola‑Todesfälle im Kongo übersteigen 5.000"
+        },
+        "en": {
+          "body": "According to Die Welt and Tages-Anzeiger, the death toll has risen above 5,000. Both outlets report more than 10,000 confirmed infections.",
+          "headline": "Ebola death toll in Congo exceeds 5,000"
+        },
+        "es": {
+          "body": "Según Die Welt y Tages-Anzeiger, el número de fallecimientos ha superado los 5.000. Ambos medios informan que las infecciones confirmadas superan las 10.000.",
+          "headline": "La cifra de fallecimientos por Ebola en el Congo supera los 5.000"
+        },
+        "fr": {
+          "body": "Selon Die Welt et Tages-Anzeiger, le nombre de morts a dépassé 5 000. Les deux médias indiquent plus de 10 000 infections confirmées.",
+          "headline": "Taux de mortalité du Ebola au Congo dépasse 5 000"
+        },
+        "it": {
+          "body": "Secondo Die Welt e Tages-Anzeiger, il numero di morti è salito oltre i 5.000. Entrambi i quotidiani riportano più di 10.000 infezioni confermate.",
+          "headline": "Il numero di morti da Ebola in Congo supera i 5.000"
+        },
+        "ja": {
+          "body": "『Die Welt』と『Tages-Anzeiger』によると、死亡者数は5,000人を超えた。両紙は確認感染者数が10,000人を超えると報じている。",
+          "headline": "コンゴでエボラ死亡者数が5,000人を超える"
+        },
+        "ko": {
+          "body": "Die Welt과 Tages-Anzeiger에 따르면 사망자 수가 5,000명을 넘어섰다. 두 매체는 10,000건이 넘는 확진자가 있다고 보도했다.",
+          "headline": "콩고에서 에볼라 사망자 수가 5,000명을 초과"
+        },
+        "pt": {
+          "body": "De acordo com Die Welt e Tages-Anzeiger, o número de mortes ultrapassou 5.000. Ambos os veículos informam que existem mais de 10.000 infecções confirmadas.",
+          "headline": "Número de mortes por Ebola no Congo ultrapassa 5.000"
+        },
+        "zh": {
+          "body": "据《Die Welt》和《Tages-Anzeiger》报道，死亡人数已超过5,000人。两家媒体均报告确诊感染人数超过10,000人。",
+          "headline": "刚果埃博拉死亡人数超过5,000人"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.welt.de/gesundheit/article6ae59b644db6c62483ec2ec2/virale-infektionskrankheit-zahl-der-ebola-toten-im-kongo-steigt-auf-mehr-als-5000-ueber-10-000-bestaetigte-infektionen.html",
+          "title": "Zahl der Ebola-Toten im Kongo steigt auf mehr als 5000 – über 10.000 bestätigte Infektionen",
+          "outlet": "Die Welt",
+          "publishedAt": "2026-10-31T08:05:59.000Z"
+        },
+        {
+          "url": "https://www.tagesanzeiger.ch/ebola-im-kongo-mehr-als-5000-tote-seit-mai-458252934575",
+          "title": "Epidemie in Zentralafrika: Mehr als 5’000 Menschen sterben beim Ebola-Ausbruch im Kongo",
+          "outlet": "Tages-Anzeiger",
+          "publishedAt": "2026-10-31T07:20:42.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T08:05:59.000Z",
+      "id": "u-1793433959000-oov2",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut Die Welt und Tages-Anzeiger wurden mehr als 10.000 Personen bestätigt infiziert. Beide Medien berichten, dass die Zahl der Todesfälle über 5.000 gestiegen ist.",
+          "headline": "Bestätigte Ebola‑Infektionen im Kongo übersteigen 10.000"
+        },
+        "en": {
+          "body": "According to Die Welt and Tages-Anzeiger, more than 10,000 people have been confirmed infected. Both outlets report the death toll has risen above 5,000.",
+          "headline": "Confirmed Ebola infections in Congo surpass 10,000"
+        },
+        "es": {
+          "body": "Según Die Welt y Tages-Anzeiger, más de 10.000 personas han sido confirmadas infectadas. Ambos medios informan que el número de fallecimientos ha superado los 5.000.",
+          "headline": "Las infecciones confirmadas por Ebola en el Congo superan las 10.000"
+        },
+        "fr": {
+          "body": "Selon Die Welt et Tages-Anzeiger, plus de 10 000 personnes ont été confirmées infectées. Les deux médias signalent que le nombre de morts a dépassé 5 000.",
+          "headline": "Infections confirmées de Ebola au Congo dépassent 10 000"
+        },
+        "it": {
+          "body": "Secondo Die Welt e Tages-Anzeiger, più di 10.000 persone sono state confermate infette. Entrambi i quotidiani riportano che il numero di morti è salito oltre i 5.000.",
+          "headline": "Infezioni da Ebola confermate in Congo superano i 10.000"
+        },
+        "ja": {
+          "body": "『Die Welt』と『Tages-Anzeiger』によると、10,000人を超える人が感染と確認された。両紙は死亡者数が5,000人を超えたと報じている。",
+          "headline": "コンゴで確認されたエボラ感染者数が10,000人を超える"
+        },
+        "ko": {
+          "body": "Die Welt과 Tages-Anzeiger에 따르면 10,000명 이상의 사람이 확진되었다. 두 매체는 사망자 수가 5,000명을 넘어섰다고 보도했다.",
+          "headline": "콩고에서 확진된 에볼라 감염자가 10,000명을 초과"
+        },
+        "pt": {
+          "body": "De acordo com Die Welt e Tages-Anzeiger, mais de 10.000 pessoas foram confirmadas infectadas. Ambos os veículos relatam que o número de mortes ultrapassou 5.000.",
+          "headline": "Infecções confirmadas por Ebola no Congo ultrapassam 10.000"
+        },
+        "zh": {
+          "body": "据《Die Welt》和《Tages-Anzeiger》报道，确诊感染人数超过10,000人。两家媒体均报告死亡人数已超过5,000人。",
+          "headline": "刚果确诊埃博拉感染人数超过10,000人"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.welt.de/gesundheit/article6ae59b644db6c62483ec2ec2/virale-infektionskrankheit-zahl-der-ebola-toten-im-kongo-steigt-auf-mehr-als-5000-ueber-10-000-bestaetigte-infektionen.html",
+          "title": "Zahl der Ebola-Toten im Kongo steigt auf mehr als 5000 – über 10.000 bestätigte Infektionen",
+          "outlet": "Die Welt",
+          "publishedAt": "2026-10-31T08:05:59.000Z"
+        },
+        {
+          "url": "https://www.tagesanzeiger.ch/ebola-im-kongo-mehr-als-5000-tote-seit-mai-458252934575",
+          "title": "Epidemie in Zentralafrika: Mehr als 5’000 Menschen sterben beim Ebola-Ausbruch im Kongo",
+          "outlet": "Tages-Anzeiger",
+          "publishedAt": "2026-10-31T07:20:42.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T06:43:29.000Z",
+      "id": "u-1793429009000-ceab",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut Die Zeit gibt es keinen zugelassenen Impfstoff gegen das Virus. Laut Al Jazeera stehen keine zugelassenen Behandlungen zur Verfügung.",
+          "headline": "Keine zugelassenen Behandlungen oder Impfstoffe gegen Ebola im Kongo"
+        },
+        "en": {
+          "body": "According to Die Zeit, no approved vaccine exists for the virus. According to Al Jazeera, no approved treatments are available.",
+          "headline": "No approved treatments or vaccines for Ebola in Congo"
+        },
+        "es": {
+          "body": "Según Die Zeit, no existe una vacuna aprobada para el virus. Según Al Jazeera, no hay tratamientos aprobados disponibles.",
+          "headline": "No existen tratamientos ni vacunas aprobados para el Ebola en el Congo"
+        },
+        "fr": {
+          "body": "Selon Die Zeit, aucun vaccin approuvé n'existe pour le virus. Selon Al Jazeera, aucun traitement approuvé n'est disponible.",
+          "headline": "Aucun traitement ou vaccin approuvé pour le Ebola au Congo"
+        },
+        "it": {
+          "body": "Secondo Die Zeit, non esiste un vaccino approvato per il virus. Secondo Al Jazeera, non sono disponibili trattamenti approvati.",
+          "headline": "Nessun trattamento o vaccino approvato per l'Ebola in Congo"
+        },
+        "ja": {
+          "body": "『Die Zeit』によると、ウイルスに対する承認済みワクチンは存在しない。『Al Jazeera』によると、承認済み治療法も利用できない。",
+          "headline": "コンゴでエボラに対する承認済み治療法やワクチンはない"
+        },
+        "ko": {
+          "body": "Die Zeit에 따르면 바이러스에 대한 승인된 백신이 존재하지 않는다. Al Jazeera에 따르면 승인된 치료제도 제공되지 않는다.",
+          "headline": "콩고에서 에볼라에 대한 승인된 치료제나 백신이 없다"
+        },
+        "pt": {
+          "body": "De acordo com Die Zeit, não existe nenhuma vacina aprovada para o vírus. Segundo Al Jazeera, não há tratamentos aprovados disponíveis.",
+          "headline": "Não existem tratamentos ou vacinas aprovados para Ebola no Congo"
+        },
+        "zh": {
+          "body": "据《Die Zeit》报道，尚无获批的埃博拉疫苗。根据《Al Jazeera》报道，暂无获批的治疗方案。",
+          "headline": "刚果尚无获批的埃博拉疫苗或治疗方案"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.zeit.de/gesundheit/2026-10/ebola-ausbruch-kongo-bundibugyo-virus-impfstoff-gxe",
+          "title": "Ebola-Fieber: Zahl der Ebolatoten im Kongo steigt auf mehr als 5.000",
+          "outlet": "Die Zeit",
+          "publishedAt": "2026-10-31T06:43:29.000Z"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/31/ebola-death-toll-in-dr-congo-passes-5000?traffic_source=rss",
+          "title": "Ebola death toll in DR Congo passes 5,000",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-10-31T02:51:52.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "health",
   "keywords": [
     "ebola",
     "congo",
@@ -16,188 +343,6 @@
     "health authorities",
     "infection",
     "fatalities"
-  ],
-  "startedAt": "2026-10-31T08:16:00.645Z",
-  "endedAt": null,
-  "updatedAt": "2026-10-31T08:19:10.621Z",
-  "articleSlug": "ebola-outbreak-in-congo-death-toll-rises",
-  "sourceCount": 4,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1793433959000-ef52",
-      "at": "2026-10-31T08:05:59.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Ebola death toll in Congo exceeds 5,000",
-          "body": "According to Die Welt and Tages-Anzeiger, the death toll has risen above 5,000. Both outlets report more than 10,000 confirmed infections."
-        },
-        "es": {
-          "headline": "La cifra de fallecimientos por Ebola en el Congo supera los 5.000",
-          "body": "Según Die Welt y Tages-Anzeiger, el número de fallecimientos ha superado los 5.000. Ambos medios informan que las infecciones confirmadas superan las 10.000."
-        },
-        "de": {
-          "headline": "Ebola‑Todesfälle im Kongo übersteigen 5.000",
-          "body": "Laut Die Welt und Tages-Anzeiger ist die Zahl der Todesfälle über 5.000 gestiegen. Beide Medien berichten von mehr als 10.000 bestätigten Infektionen."
-        },
-        "it": {
-          "headline": "Il numero di morti da Ebola in Congo supera i 5.000",
-          "body": "Secondo Die Welt e Tages-Anzeiger, il numero di morti è salito oltre i 5.000. Entrambi i quotidiani riportano più di 10.000 infezioni confermate."
-        },
-        "fr": {
-          "headline": "Taux de mortalité du Ebola au Congo dépasse 5 000",
-          "body": "Selon Die Welt et Tages-Anzeiger, le nombre de morts a dépassé 5 000. Les deux médias indiquent plus de 10 000 infections confirmées."
-        },
-        "pt": {
-          "headline": "Número de mortes por Ebola no Congo ultrapassa 5.000",
-          "body": "De acordo com Die Welt e Tages-Anzeiger, o número de mortes ultrapassou 5.000. Ambos os veículos informam que existem mais de 10.000 infecções confirmadas."
-        },
-        "zh": {
-          "headline": "刚果埃博拉死亡人数超过5,000人",
-          "body": "据《Die Welt》和《Tages-Anzeiger》报道，死亡人数已超过5,000人。两家媒体均报告确诊感染人数超过10,000人。"
-        },
-        "ja": {
-          "headline": "コンゴでエボラ死亡者数が5,000人を超える",
-          "body": "『Die Welt』と『Tages-Anzeiger』によると、死亡者数は5,000人を超えた。両紙は確認感染者数が10,000人を超えると報じている。"
-        },
-        "ko": {
-          "headline": "콩고에서 에볼라 사망자 수가 5,000명을 초과",
-          "body": "Die Welt과 Tages-Anzeiger에 따르면 사망자 수가 5,000명을 넘어섰다. 두 매체는 10,000건이 넘는 확진자가 있다고 보도했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Die Welt",
-          "title": "Zahl der Ebola-Toten im Kongo steigt auf mehr als 5000 – über 10.000 bestätigte Infektionen",
-          "url": "https://www.welt.de/gesundheit/article6ae59b644db6c62483ec2ec2/virale-infektionskrankheit-zahl-der-ebola-toten-im-kongo-steigt-auf-mehr-als-5000-ueber-10-000-bestaetigte-infektionen.html",
-          "publishedAt": "2026-10-31T08:05:59.000Z"
-        },
-        {
-          "outlet": "Tages-Anzeiger",
-          "title": "Epidemie in Zentralafrika: Mehr als 5’000 Menschen sterben beim Ebola-Ausbruch im Kongo",
-          "url": "https://www.tagesanzeiger.ch/ebola-im-kongo-mehr-als-5000-tote-seit-mai-458252934575",
-          "publishedAt": "2026-10-31T07:20:42.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793433959000-oov2",
-      "at": "2026-10-31T08:05:59.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Confirmed Ebola infections in Congo surpass 10,000",
-          "body": "According to Die Welt and Tages-Anzeiger, more than 10,000 people have been confirmed infected. Both outlets report the death toll has risen above 5,000."
-        },
-        "es": {
-          "headline": "Las infecciones confirmadas por Ebola en el Congo superan las 10.000",
-          "body": "Según Die Welt y Tages-Anzeiger, más de 10.000 personas han sido confirmadas infectadas. Ambos medios informan que el número de fallecimientos ha superado los 5.000."
-        },
-        "de": {
-          "headline": "Bestätigte Ebola‑Infektionen im Kongo übersteigen 10.000",
-          "body": "Laut Die Welt und Tages-Anzeiger wurden mehr als 10.000 Personen bestätigt infiziert. Beide Medien berichten, dass die Zahl der Todesfälle über 5.000 gestiegen ist."
-        },
-        "it": {
-          "headline": "Infezioni da Ebola confermate in Congo superano i 10.000",
-          "body": "Secondo Die Welt e Tages-Anzeiger, più di 10.000 persone sono state confermate infette. Entrambi i quotidiani riportano che il numero di morti è salito oltre i 5.000."
-        },
-        "fr": {
-          "headline": "Infections confirmées de Ebola au Congo dépassent 10 000",
-          "body": "Selon Die Welt et Tages-Anzeiger, plus de 10 000 personnes ont été confirmées infectées. Les deux médias signalent que le nombre de morts a dépassé 5 000."
-        },
-        "pt": {
-          "headline": "Infecções confirmadas por Ebola no Congo ultrapassam 10.000",
-          "body": "De acordo com Die Welt e Tages-Anzeiger, mais de 10.000 pessoas foram confirmadas infectadas. Ambos os veículos relatam que o número de mortes ultrapassou 5.000."
-        },
-        "zh": {
-          "headline": "刚果确诊埃博拉感染人数超过10,000人",
-          "body": "据《Die Welt》和《Tages-Anzeiger》报道，确诊感染人数超过10,000人。两家媒体均报告死亡人数已超过5,000人。"
-        },
-        "ja": {
-          "headline": "コンゴで確認されたエボラ感染者数が10,000人を超える",
-          "body": "『Die Welt』と『Tages-Anzeiger』によると、10,000人を超える人が感染と確認された。両紙は死亡者数が5,000人を超えたと報じている。"
-        },
-        "ko": {
-          "headline": "콩고에서 확진된 에볼라 감염자가 10,000명을 초과",
-          "body": "Die Welt과 Tages-Anzeiger에 따르면 10,000명 이상의 사람이 확진되었다. 두 매체는 사망자 수가 5,000명을 넘어섰다고 보도했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Die Welt",
-          "title": "Zahl der Ebola-Toten im Kongo steigt auf mehr als 5000 – über 10.000 bestätigte Infektionen",
-          "url": "https://www.welt.de/gesundheit/article6ae59b644db6c62483ec2ec2/virale-infektionskrankheit-zahl-der-ebola-toten-im-kongo-steigt-auf-mehr-als-5000-ueber-10-000-bestaetigte-infektionen.html",
-          "publishedAt": "2026-10-31T08:05:59.000Z"
-        },
-        {
-          "outlet": "Tages-Anzeiger",
-          "title": "Epidemie in Zentralafrika: Mehr als 5’000 Menschen sterben beim Ebola-Ausbruch im Kongo",
-          "url": "https://www.tagesanzeiger.ch/ebola-im-kongo-mehr-als-5000-tote-seit-mai-458252934575",
-          "publishedAt": "2026-10-31T07:20:42.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793429009000-ceab",
-      "at": "2026-10-31T06:43:29.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "No approved treatments or vaccines for Ebola in Congo",
-          "body": "According to Die Zeit, no approved vaccine exists for the virus. According to Al Jazeera, no approved treatments are available."
-        },
-        "es": {
-          "headline": "No existen tratamientos ni vacunas aprobados para el Ebola en el Congo",
-          "body": "Según Die Zeit, no existe una vacuna aprobada para el virus. Según Al Jazeera, no hay tratamientos aprobados disponibles."
-        },
-        "de": {
-          "headline": "Keine zugelassenen Behandlungen oder Impfstoffe gegen Ebola im Kongo",
-          "body": "Laut Die Zeit gibt es keinen zugelassenen Impfstoff gegen das Virus. Laut Al Jazeera stehen keine zugelassenen Behandlungen zur Verfügung."
-        },
-        "it": {
-          "headline": "Nessun trattamento o vaccino approvato per l'Ebola in Congo",
-          "body": "Secondo Die Zeit, non esiste un vaccino approvato per il virus. Secondo Al Jazeera, non sono disponibili trattamenti approvati."
-        },
-        "fr": {
-          "headline": "Aucun traitement ou vaccin approuvé pour le Ebola au Congo",
-          "body": "Selon Die Zeit, aucun vaccin approuvé n'existe pour le virus. Selon Al Jazeera, aucun traitement approuvé n'est disponible."
-        },
-        "pt": {
-          "headline": "Não existem tratamentos ou vacinas aprovados para Ebola no Congo",
-          "body": "De acordo com Die Zeit, não existe nenhuma vacina aprovada para o vírus. Segundo Al Jazeera, não há tratamentos aprovados disponíveis."
-        },
-        "zh": {
-          "headline": "刚果尚无获批的埃博拉疫苗或治疗方案",
-          "body": "据《Die Zeit》报道，尚无获批的埃博拉疫苗。根据《Al Jazeera》报道，暂无获批的治疗方案。"
-        },
-        "ja": {
-          "headline": "コンゴでエボラに対する承認済み治療法やワクチンはない",
-          "body": "『Die Zeit』によると、ウイルスに対する承認済みワクチンは存在しない。『Al Jazeera』によると、承認済み治療法も利用できない。"
-        },
-        "ko": {
-          "headline": "콩고에서 에볼라에 대한 승인된 치료제나 백신이 없다",
-          "body": "Die Zeit에 따르면 바이러스에 대한 승인된 백신이 존재하지 않는다. Al Jazeera에 따르면 승인된 치료제도 제공되지 않는다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Die Zeit",
-          "title": "Ebola-Fieber: Zahl der Ebolatoten im Kongo steigt auf mehr als 5.000",
-          "url": "https://www.zeit.de/gesundheit/2026-10/ebola-ausbruch-kongo-bundibugyo-virus-impfstoff-gxe",
-          "publishedAt": "2026-10-31T06:43:29.000Z"
-        },
-        {
-          "outlet": "Al Jazeera",
-          "title": "Ebola death toll in DR Congo passes 5,000",
-          "url": "https://www.aljazeera.com/news/2026/10/31/ebola-death-toll-in-dr-congo-passes-5000?traffic_source=rss",
-          "publishedAt": "2026-10-31T02:51:52.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.healthline.com/health-news/rfk-jr-vaccine-schedule-changes-may-cause-surge-hepatitis-b",
@@ -212,104 +357,27 @@
     "https://www.nzz.ch/wissenschaft/ebola-ausbruch-in-zentralafrika-mehr-als-300-ebola-tote-in-kongo-erster-fall-in-frankreich-nachgewiesen-ld.10007509",
     "https://www.lemonde.fr/en/international/article/2026/10/31/flavio-bolsonaro-says-he-left-brazil-because-he-is-the-victim-of-persecution_6767920_4.html",
     "https://www.aljazeera.com/news/2026/10/31/ebola-death-toll-in-dr-congo-passes-5000?traffic_source=rss",
-    "https://www.abc.net.au/news/2026-10-31/israel-election-leaves-anti-netanyahu-arab-parties-kingmakers/107326622"
+    "https://www.abc.net.au/news/2026-10-31/israel-election-leaves-anti-netanyahu-arab-parties-kingmakers/107326622",
+    "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
+    "https://www.scmp.com/news/world/africa/article/3372849/dr-congo-ebola-deaths-top-5000-cases-recorded-other-african-nations",
+    "https://www.straitstimes.com/world/middle-east/iranian-envoys-meet-qatari-mediators-as-threat-looms-of-us-strikes-after-midterms",
+    "https://thehill.com/regulation/court-battles/6186080-federal-appeals-court-lifts-idaho-abortion-ruling/",
+    "https://www.kyivpost.com/post/88760",
+    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVFBwUjdwY3VkaVZ2VjZjRm40Z1p1Wk1YendZTGd0Nm9HVXdoaVdjOHZfQU9FVjA5YW5iWTJ0VDhCZ21qVkRzTWtfLWJ5SDFvLU5OQUtSelZEOElJSjhaZDZVMDAxUG9rNmlFNEhTVzF5NFVpZnNHRDg5THNEOVdPWV9pYjMxQ2lYSklz0gGLAUFVX3lxTE1UUHBSN3BjdWRpVnZWNmNGbjRnWnVaTVh6d1lMZ3Q2b0dVd2hpV2M4dl9BT0VWMDlhbmJZMnRUOEJnbWpWRHNNa18tYnlIMW8tTk5BS1J6VkQ4SUlKOFpkNlUwMDFQb2s2aUU0SFNXMXk0VWlmc0dEODlMc0Q5V09ZX2liMzFDaVhKSXM?oc=5",
+    "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2Fxd0pESXZIMXpYcW5RNGtCYUhIUW9BZ2JXb2hfUTdiSjRwX3FiWXVXeE1nVXJHRVk2SmVUSGZLQThHN2xrWm9PZzdvNG1sUWd1YkxTbjFtVHFpeGpUS3FNNkRRMWJJY0F0VDhtcGdZM0hQTGdpTzRhVERwN2tKeXR6MkVQczdWSkhZRzQ2cVVpb0NGV2tVV2FuaWNKWk1qNGQzZHp5UzdqLTJhdEtZNFNXbDlhODB1eURYdFJwVQ?oc=5",
+    "https://www.aljazeera.com/news/2026/10/31/new-yemen-fighting-displaces-290000-says-un-with-pregnant-women-at-risk?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZEZYTEVkdVVlNVVUaGVZUGRaUml1czJycF9sWUhPRUs2ZlB2WGhDOW93VGRPZ2dZWUs3aDlsN3FNQ1JjT1NXNk5sQlQ5UTJHZ2ZvMlpjWjZCcGFPd3BVUnRjVzhtSy1RWXFNYnNhc3UwMGQ2Y1FhSnNtQ0x5YVN0Yzd5MDN2MVItRDc0NEstVzd5NnVlaTNYUFNWYzhndmY2Rk1QaW8tMWhsdnRMb0FZVWt3V1J3Zkx2S1AyVzNGem1PREp6cGRZ?oc=5",
+    "https://timesofindia.indiatimes.com/india/keep-rahul-gandhi-mock-pm-for-life-bjps-dig-at-india-blocs-public-impeachment-of-cec/articleshow/135399919.cms",
+    "https://www.theverge.com/policy/1023899/political-texts-midterm-elections",
+    "https://medicalxpress.com/news/2026-10-congo-ebola-deaths-continent-wide.html",
+    "https://www.kyivpost.com/post/88746",
+    "https://thehill.com/policy/defense/6185793-pete-hegseth-blackburn-tennessee-senate-seat/"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Ebola outbreak in Congo: death toll rises",
-      "dek": "The number of confirmed Ebola deaths in the Democratic Republic of Congo has climbed above 5,000 amid a growing outbreak."
-    },
-    "fr": {
-      "title": "Épidémie d'Ebola au Congo : le bilan des morts augmente",
-      "dek": "Le nombre de décès confirmés par l'Ebola en République démocratique du Congo a dépassé 5 000, alors que l'épidémie s'aggrave."
-    },
-    "de": {
-      "title": "Ebola-Ausbruch im Kongo: Todesfallzahl steigt",
-      "dek": "Die Zahl der bestätigten Ebola‑Todesfälle in der Demokratischen Republik Kongo ist über 5.000 gestiegen, während sich der Ausbruch ausweitert."
-    },
-    "es": {
-      "title": "Brote de Ebola en el Congo: aumenta el número de fallecidos",
-      "dek": "El número de fallecimientos confirmados por Ebola en la República Democrática del Congo ha superado los 5.000 en medio de un brote creciente."
-    },
-    "it": {
-      "title": "Epidemia di Ebola in Congo: il numero di morti aumenta",
-      "dek": "Il numero di morti confermati da Ebola nella Repubblica Democratica del Congo ha superato i 5.000 a causa di un'epidemia in crescita."
-    },
-    "pt": {
-      "title": "Surto de Ebola no Congo: número de mortos aumenta",
-      "dek": "O número de mortes confirmadas por Ebola na República Democrática do Congo ultrapassou os 5.000, num surto em crescimento."
-    },
-    "zh": {
-      "title": "刚果爆发埃博拉：死亡人数上升",
-      "dek": "在刚果民主共和国，已确认的埃博拉死亡人数已超过5,000人，疫情持续蔓延。"
-    },
-    "ko": {
-      "title": "콩고에서 에볼라 발생: 사망자 수 증가",
-      "dek": "콩고 민주공화국에서 확인된 에볼라 사망자 수가 증가하는 발병 상황 속에서 5,000명을 넘어섰다"
-    },
-    "ja": {
-      "title": "コンゴでエボラ発生：死亡者数が増加",
-      "dek": "コンゴ民主共和国で確認されたエボラ死亡者数が、拡大する発生の中で5,000人を超えた。"
-    }
-  },
-  "article": {
-    "slug": "ebola-outbreak-in-congo-death-toll-rises",
-    "updatedAt": "2026-10-31T08:21:56.714Z",
-    "reason": "3 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Ebola outbreak in Congo: death toll exceeds 5,000, infections over 10,000",
-        "dek": "Confirmed cases surpass 10,000 and deaths exceed 5,000 amid no approved vaccine or treatment.",
-        "facts": [
-          "Confirmed Ebola infections in Congo exceed 10,000 (Die Welt, Tages-Anzeiger)",
-          "Death toll in Congo exceeds 5,000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
-          "No approved vaccine for Ebola in Congo (Die Zeit)",
-          "No approved treatments for Ebola in Congo (Al Jazeera)"
-        ],
-        "body": [
-          "Die Welt and Tages-Anzeiger reported that confirmed Ebola infections in Congo have surpassed 10,000. The death toll has risen above 5,000.",
-          "Earlier that day, Die Zeit noted that no approved vaccine exists for the virus. Al Jazeera added that no approved treatments are available.",
-          "The outbreak began in May, according to Tages-Anzeiger. Since then, the number of deaths has increased steadily.",
-          "Die Zeit identified the strain as Bundibugyo, a less common form of Ebola. Bundibugyo is known for lower mortality rates compared to other strains.",
-          "Without approved medical interventions, patients rely on supportive care, Die Zeit said. Al Jazeera reported that this lack of treatment options complicates containment efforts.",
-          "Health authorities in the Democratic Republic of Congo have not issued new guidelines, according to the sources. The international community continues to monitor the situation.",
-          "The high case count and mortality underscore the severity of the outbreak, Die Welt and Tages-Anzeiger emphasized. The situation remains critical as the virus spreads across regions."
-        ],
-        "context": "The Ebola outbreak in the Democratic Republic of Congo began in May and has spread across several provinces. The virus strain identified is Bundibugyo, a less common form of Ebola. The outbreak has led to a high number of confirmed cases and deaths, with no approved vaccine or treatment available.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Ebola-Ausbruch im Kongo: Todesfälle übersteigen 5.000, Infektionen über 10.000",
-        "dek": "Bestätigte Fälle übersteigen 10.000 und Todesfälle übersteigen 5.000, obwohl kein zugelassener Impfstoff oder keine zugelassene Behandlung existieren.",
-        "facts": [
-          "Bestätigte Ebola-Infektionen im Kongo übersteigen 10.000 (Die Welt, Tages-Anzeiger)",
-          "Todesfälle im Kongo übersteigen 5.000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
-          "Kein zugelassener Impfstoff für Ebola im Kongo (Die Zeit)",
-          "Keine zugelassenen Behandlungen für Ebola im Kongo (Al Jazeera)"
-        ],
-        "body": [
-          "Die Welt und Tages-Anzeiger berichteten, dass die bestätigten Ebola-Infektionen im Kongo 10.000 überschritten haben. Die Zahl der Todesfälle ist über 5.000 gestiegen.",
-          "Am selben Tag stellte Die Zeit fest, dass kein zugelassener Impfstoff für das Virus existiert. Al Jazeera ergänzte, dass keine zugelassenen Behandlungen verfügbar sind.",
-          "Der Ausbruch begann im Mai, so der Tages-Anzeiger. Seitdem ist die Zahl der Todesfälle stetig gestiegen.",
-          "Die Zeit identifizierte die Stämme als Bundibugyo, eine weniger verbreitete Form von Ebola. Bundibugyo ist für niedrigere Sterblichkeitsraten im Vergleich zu anderen Stämmen bekannt.",
-          "Ohne zugelassene medizinische Interventionen verlassen sich die Patienten auf unterstützende Pflege, so Die Zeit. Al Jazeera berichtete, dass das Fehlen von Behandlungsmöglichkeiten die Eindämmungsbemühungen erschwert.",
-          "Gesundheitsbehörden in der Demokratischen Republik Kongo haben keine neuen Richtlinien herausgegeben, so die Quellen. Die internationale Gemeinschaft überwacht die Situation weiterhin.",
-          "Die hohe Fallzahl und Sterblichkeit unterstreichen die Schwere des Ausbruchs, betonten Die Welt und Tages-Anzeiger. Die Situation bleibt kritisch, da sich das Virus über Regionen ausbreitet."
-        ],
-        "context": "Der Ebola-Ausbruch in der Demokratischen Republik Kongo begann im Mai und hat sich über mehrere Provinzen ausgebreitet. Der identifizierte Virusstamm ist Bundibugyo, eine weniger verbreitete Form von Ebola. Der Ausbruch hat zu einer hohen Zahl bestätigter Fälle und Todesfälle geführt, wobei kein zugelassener Impfstoff oder keine zugelassene Behandlung verfügbar ist."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Die Zeit",
-      "Die Welt",
-      "NZZ",
-      "Tages-Anzeiger"
-    ],
-    "lastUpdateModel": "openai/gpt-oss-20b"
-  }
+  "startedAt": "2026-10-31T08:16:00.645Z",
+  "updatedAt": "2026-10-31T16:19:17.916Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": "ebola-outbreak-in-congo-death-toll-rises",
+  "sourceCount": 6,
+  "seenHeadlines": []
 }
