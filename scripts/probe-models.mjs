@@ -10,17 +10,24 @@ const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 
 const CANDIDATES = (process.env.PROBE_MODELS || [
   'openai/gpt-oss-20b',
-  'openai/gpt-oss-120b',
-  'meta/llama-3.3-70b-instruct',
-  'meta/llama-3.1-405b-instruct',
-  'deepseek-ai/deepseek-v3.1',
-  'qwen/qwen3-235b-a22b',
-  'moonshotai/kimi-k2-instruct',
-  'nvidia/llama-3.3-nemotron-super-49b-v1.5',
-  'google/gemma-3-27b-it',
+  'deepseek-ai/deepseek-v4.1-flash',
+  'z-ai/glm-5.3-flash',
+  'minimaxai/minimax-m3.1-flash',
+  'nvidia/nemotron-3-super-120b-a12b',
+  'nvidia/nemotron-3.5-lightning-30b-a3b',
+  'moonshotai/kimi-k2.6',
+  'mistralai/mistral-large-4-1t-a52b',
+  'mistralai/mistral-large-2-instruct',
+  'google/gemma-4-31b-it',
+  'google/gemma-3-12b-it',
+  'nvidia/llama-3.1-nemotron-70b-instruct',
+  'meta/muse-glimmer-30b',
+  'stepfun-ai/step-5-preview',
 ].join(',')).split(',').map((s) => s.trim()).filter(Boolean);
 
-const prompt = 'Reply with the single word: ready';
+// The desk does not ask for prose, it asks for a document. A model that
+// cannot hold a JSON shape is no use however fast it answers.
+const prompt = 'Reply with only this JSON and nothing else: {"ok":true,"word":"bereit"}';
 
 async function askNvidia(model, key) {
   const started = Date.now();
@@ -28,15 +35,16 @@ async function askNvidia(model, key) {
     const res = await fetch(`${NVIDIA_BASE}/chat/completions`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model, messages: [{ role: 'user', content: prompt }], max_tokens: 24, temperature: 0, stream: false }),
-      signal: AbortSignal.timeout(60_000),
+      body: JSON.stringify({ model, messages: [{ role: 'user', content: prompt }], max_tokens: 96, temperature: 0, stream: false }),
+      signal: AbortSignal.timeout(90_000),
     });
     const ms = Date.now() - started;
     const body = await res.text();
     if (!res.ok) return { model, ok: false, status: res.status, ms, why: body.slice(0, 120) };
     const json = JSON.parse(body);
-    const text = json.choices?.[0]?.message?.content || '';
-    return { model, ok: Boolean(text.trim()), status: res.status, ms, text: text.trim().slice(0, 40) };
+    const choice = json.choices?.[0] || {};
+    const text = choice.message?.content || choice.message?.reasoning_content || '';
+    return { model, ok: Boolean(text.trim()), status: res.status, ms, text: text.trim().slice(0, 60), finish: choice.finish_reason };
   } catch (err) {
     return { model, ok: false, ms: Date.now() - started, why: err.message };
   }
@@ -77,7 +85,7 @@ if (nvidiaKey) {
   console.log(`NVIDIA ${await listNvidia(nvidiaKey)}`);
   for (const model of CANDIDATES) {
     const r = await askNvidia(model, nvidiaKey);
-    console.log(`NVIDIA ${r.ok ? 'OK  ' : 'FAIL'} ${String(r.ms).padStart(6)}ms ${model}${r.status ? ` HTTP ${r.status}` : ''}${r.text ? ` — "${r.text}"` : r.why ? ` — ${r.why}` : ''}`);
+    console.log(`NVIDIA ${r.ok ? 'OK  ' : 'FAIL'} ${String(r.ms).padStart(6)}ms ${model}${r.status ? ` HTTP ${r.status}` : ''}${r.finish ? ` [${r.finish}]` : ''}${r.text ? ` — "${r.text}"` : r.why ? ` — ${r.why}` : ''}`);
   }
 } else {
   console.log('NVIDIA_KEY missing');
