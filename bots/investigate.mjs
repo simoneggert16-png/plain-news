@@ -28,7 +28,7 @@ if (fs.existsSync('.env')) {
   }
 }
 
-import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
+import { chat, chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch, documentSearch, archivedCopy, NEWS_EDITIONS } from './lib/search.mjs';
@@ -135,6 +135,31 @@ async function safe(fn, fallback) {
   } catch (err) {
     log(`  ! ${err.message}`);
     return fallback;
+  }
+}
+
+/**
+ * A desk without a model can read its mail but cannot think. On 2026-10-31
+ * the Ollama account hit its monthly cap and the only other backend timed out
+ * on the full prompt: three shifts of the run burned eighteen minutes each,
+ * step by step, to learn the same thing. One cheap question at the start of
+ * the shift answers it in half a minute — and a shift that cannot think says
+ * so instead of pretending to work.
+ */
+async function modelReady() {
+  try {
+    // A hybrid model that spends a tiny token budget on reasoning returns no
+    // answer at all, and a working chain would look dead. `think: false` and
+    // a little room make the probe ask the same question a reader would.
+    const answer = await chat('desk', [{ role: 'user', content: 'Reply with the single word: ready' }], {
+      deadline: Date.now() + 60_000,
+      timeoutMs: 45_000,
+      maxTokens: 24,
+      think: false,
+    });
+    return { ok: true, model: answer.model };
+  } catch (err) {
+    return { ok: false, why: err.message };
   }
 }
 
@@ -3796,6 +3821,17 @@ async function main() {
     log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s.`);
     return;
   }
+
+  // Everything below asks a model something. When the whole chain is out of
+  // credit the shift must say so once, at the top, instead of failing every
+  // step of the way until the time budget is gone.
+  const ready = await modelReady();
+  if (!ready.ok) {
+    log(`MODELS  no model answers — ${ready.why}`);
+    log('MODELS  the shift ends here; nothing was read, written or sent');
+    return;
+  }
+  log(`MODELS  ${ready.model} answering`);
 
   if (process.env.INVESTIGATE_ONLY === 'agent') {
     // A forced intake still has to run first — with no active dossier there is
