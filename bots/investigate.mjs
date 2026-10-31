@@ -154,9 +154,11 @@ async function modelReady() {
     const answer = await chat('desk', [{ role: 'user', content: 'Reply with the single word: ready' }], {
       // Every model gets a short turn, not the whole preflight: a busy
       // provider holds the first one past forty-five seconds, and the chain
-      // then never reaches the model that would have answered in nine.
+      // then never reaches the model that would have answered in nine. Twenty
+      // seconds, because the models that answer in this catalogue need 15-16 s
+      // on a five-token question; fifteen declared them dead.
       deadline: Date.now() + 60_000,
-      timeoutMs: 15_000,
+      timeoutMs: 20_000,
       maxTokens: 24,
       think: false,
     });

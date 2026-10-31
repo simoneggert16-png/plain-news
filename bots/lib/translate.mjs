@@ -32,7 +32,7 @@ function translationProblems(src, data, locale) {
 }
 
 /** Translate one article (source-language fields) into `locale`. Validates the result. */
-export async function translate(src, locale) {
+export async function translate(src, locale, models = null) {
   const lang = LOCALES.find((l) => l.code === locale);
   const input = {
     title: src.title,
@@ -55,13 +55,16 @@ export async function translate(src, locale) {
   // NVIDIA model behind them is the only translator left. A failed check costs
   // one extra call per locale, and a 429 tells us the rest of that family is
   // out of quota too, so those are skipped.
-  const chain = [...new Set(MODELS.translator)];
+  const chain = [...new Set(models?.length ? models : MODELS.translator)];
+  // A whole article is a long answer. The probe raises this to find out
+  // whether a model finishes at all, instead of guessing from a timeout.
+  const perCall = Number(process.env.TRANSLATE_TIMEOUT_MS) || 120_000;
   let lastErr;
   let ollamaOutOfQuota = false;
   for (const model of chain) {
     if (ollamaOutOfQuota && model.startsWith('ollama/')) continue;
     try {
-      const { data } = await chatJSON('translator', messages, { temperature: 0.2, maxTokens: 10000, models: [model] });
+      const { data } = await chatJSON('translator', messages, { temperature: 0.2, maxTokens: 10000, models: [model], timeoutMs: perCall });
       const problems = translationProblems(src, data, locale);
       if (problems.length) throw new Error(`${model}: ${problems.join('; ')}`);
       return {
