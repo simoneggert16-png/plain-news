@@ -26,6 +26,9 @@ on:
       head:
         description: 'Any value = test which part of a translation request makes a model hang'
         default: ''
+      github:
+        description: 'Any value = test whether GitHub Models answers as a provider'
+        default: ''
 
 permissions:
   contents: read
@@ -48,7 +51,7 @@ jobs:
       # A model list is the question "what works today" and takes minutes; a
       # translation test with named models skips it.
       - name: Ask every candidate one small question
-        if: inputs.models == '' && inputs.size == '' && inputs.head == ''
+        if: inputs.models == '' && inputs.size == '' && inputs.head == '' && inputs.github == ''
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
@@ -63,7 +66,7 @@ jobs:
           PROBE_MAX_TOKENS: ${{ inputs.maxtokens }}
         run: node scripts/probe-size.mjs
       - name: Translate one whole article
-        if: always() && inputs.size == '' && inputs.head == ''
+        if: always() && inputs.size == '' && inputs.head == '' && inputs.github == ''
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
@@ -82,3 +85,8 @@ jobs:
           PROBE_MODELS: ${{ inputs.models }}
           PROBE_TIMEOUT_MS: ${{ fromJSON(inputs.budget) }}000
         run: node scripts/probe-head.mjs
+      - name: Ask GitHub Models whether it answers at all
+        if: inputs.github != ''
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/probe-github.mjs
