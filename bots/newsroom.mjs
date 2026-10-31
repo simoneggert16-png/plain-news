@@ -397,10 +397,19 @@ async function processEvent(event, recentTitles, seen) {
       } else if (vResult?.verified === false) {
         log(`  VISION rejected image: ${vResult.rejectionReason || 'not usable'}; removing.`);
         verifiedImage = null;
+      } else if (!media.caption) {
+        // Nobody said what this photo shows: the wire carried no caption and
+        // the model gave no verdict. That is how a photographed "Ebola alert"
+        // poster with pictogram figures became a hero - the reader saw a sign
+        // and nothing that explained it. A text-only report is better than a
+        // picture nobody can vouch for.
+        log(`  VISION no verdict (${vResult?.reason || 'none'}) and no caption; removing uncaptioned image.`);
+        verifiedImage = null;
       } else {
         // No usable verdict (provider down, quota, timeout, unsure model). The
-        // photo already cleared the technical gate, so keep it with the wire's
-        // own caption and credit instead of discarding every image of the run.
+        // photo already cleared the technical gate and carries the wire's own
+        // caption, so keep it with that caption and credit instead of
+        // discarding every image of the run.
         imageCaption = media.caption || '';
         imageCaptionDe = null;
         imageCredit = media.credit || event.sources[0]?.outlet || null;
@@ -713,8 +722,12 @@ async function main() {
   // ── Phase 2: translate accepted articles, German first ──
   const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
   let translated = 0;
-  const runWave = async (locale) => {
-    if (!accepted.length || timeLeft() < 2 * 60e3) return;
+  const runWave = async (locale, { force = false } = {}) => {
+    if (!accepted.length) return;
+    // German is the edition that must never be missing: a cycle that overran
+    // its reading budget still publishes, and an article without its German
+    // version shows up as an English headline on /de within minutes.
+    if (!force && timeLeft() < 2 * 60e3) return;
     const todo = accepted.filter((a) => !a.locales?.[locale]?.title);
     if (!todo.length) return;
     log(`TRANSLATOR ${todo.length} job(s) → ${locale}`);
@@ -736,8 +749,9 @@ async function main() {
     index.articles = index.articles.map((e) => (bySlug.has(e.slug) ? toIndexEntry(bySlug.get(e.slug)) : e));
     saveIndex(index);
   };
-  // /de is the edition readers notice: finish it before touching the rest.
-  await runWave('de');
+  // /de is the edition readers notice: finish it before touching the rest,
+  // and never skip it for the clock.
+  await runWave('de', { force: true });
   for (const locale of targets.filter((c) => c !== 'de')) await runWave(locale);
 
   // Repair old gaps only with what is left of the budget.
