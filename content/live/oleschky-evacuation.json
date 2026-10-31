@@ -7,26 +7,24 @@
       "SRF"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "openai/gpt-oss-20b"
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
   },
   "slug": "oleschky-evacuation",
   "topic": "Oleschky evacuation",
   "status": "live",
   "article": {
     "slug": "oleschky-evacuation",
-    "updatedAt": "2026-10-31T15:47:17.773Z",
     "reason": "2 new update(s)",
     "locales": {
+      "de": {
+        "dek": "",
+        "body": [],
+        "facts": [],
+        "title": "Evakuierung von Oleschky abgeschlossen nach Waffenstillstand",
+        "context": ""
+      },
       "en": {
-        "title": "Oleschky evacuation completed after ceasefire",
         "dek": "Hundreds of civilians from Russian‑occupied Oleschky landed in Belarus and are traveling to Ukraine.",
-        "facts": [
-          "Evacuation of civilians from Oleschky completed, according to NZZ.",
-          "Hundreds of civilians landed at Gomel airport in Belarus, according to Al Jazeera and CNA.",
-          "Evacuees are en route to Ukraine, according to WTOP News and SRF.",
-          "President Selenskyj thanked the United States for mediation, according to German and Austrian outlets.",
-          "Ceasefire brokered by US First Lady Melania Trump, according to BBC and Euronews."
-        ],
         "body": [
           "The evacuation of civilians from Oleschky was completed, according to NZZ. BBC also reported that hundreds were evacuated during a rare ceasefire.",
           "Hundreds of civilians landed at Gomel airport in Belarus, according to Al Jazeera and CNA. The arrivals were reported by several outlets on the same day.",
@@ -35,15 +33,16 @@
           "Ceasefire brokered by US First Lady Melania Trump, according to BBC and Euronews. The truce allowed the removal of remaining civilians from Oleschky, according to New York Times and France 24.",
           "President Selenskyj thanked the United States for mediating the evacuation, according to German and Austrian outlets. FAZ and Die Zeit reported that the thanks was given after the evacuees returned to Ukraine."
         ],
+        "facts": [
+          "Evacuation of civilians from Oleschky completed, according to NZZ.",
+          "Hundreds of civilians landed at Gomel airport in Belarus, according to Al Jazeera and CNA.",
+          "Evacuees are en route to Ukraine, according to WTOP News and SRF.",
+          "President Selenskyj thanked the United States for mediation, according to German and Austrian outlets.",
+          "Ceasefire brokered by US First Lady Melania Trump, according to BBC and Euronews."
+        ],
+        "title": "Oleschky evacuation completed after ceasefire",
         "context": "Oleschky is a town in the Kherson region of Ukraine that has been under Russian occupation since 2022. The evacuation was part of a broader effort to relocate civilians from conflict zones.",
         "imageCaption": ""
-      },
-      "de": {
-        "title": "Evakuierung von Oleschky abgeschlossen nach Waffenstillstand",
-        "dek": "",
-        "facts": [],
-        "body": [],
-        "context": ""
       }
     },
     "versions": [
@@ -51,6 +50,13 @@
         "at": "2026-10-31T14:57:47.092Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Evakuierung von Oleschky nach Waffenstillstand abgeschlossen",
+            "context": ""
+          },
           "en": {
             "dek": "Hundreds of civilians from Russian‑occupied Oleschky landed in Belarus after a brief ceasefire and will travel to Ukraine.",
             "body": [
@@ -71,13 +77,6 @@
             "title": "Oleschky evacuation completed after ceasefire",
             "context": "Oleschky is a town in the Kherson region of Ukraine that has been under Russian occupation since 2022. The evacuation was part of a broader effort to relocate civilians from conflict zones.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "",
-            "body": [],
-            "facts": [],
-            "title": "Evakuierung von Oleschky nach Waffenstillstand abgeschlossen",
-            "context": ""
           }
         }
       },
@@ -226,7 +225,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-10-31T15:47:17.773Z"
   },
   "endedAt": null,
   "locales": {
@@ -269,120 +269,170 @@
   },
   "updates": [
     {
-      "id": "u-1793460269000-15vc",
-      "at": "2026-10-31T15:24:29.000Z",
+      "id": "u-1793483014000-nxxi",
+      "at": "2026-10-31T21:43:34.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Evacuees cross into Ukrainian-held territory after Belarus transit",
-          "body": "According to New York Times and France 24, evacuees from Oleshky crossed into Ukrainian-held territory after traveling through Belarus during a rare truce. The transit occurred on Saturday."
+          "headline": "Oleshky evacuees reunite with families after crossing into Ukraine",
+          "body": "The Guardian reported that evacuees from Russian-occupied Oleshky were reunited with their families after crossing into Ukraine, and residents of nearby villages lined a highway waving flags to greet the convoy. The New York Times reported the civilians were safely out of Oleshky after a 24-hour journey and reunited with family and friends."
         },
         "fr": {
-          "headline": "Les évacués franchissent le territoire ukrainien après un transit par la Biélorussie",
-          "body": "Selon le New York Times et France 24, les évacués d’Oleshky ont franchi le territoire ukrainien après avoir traversé la Biélorussie pendant une trêve rare. Le transit a eu lieu samedi."
-        },
-        "es": {
-          "headline": "Los evacuados cruzan al territorio ucraniano tras transitar por Bielorrusia",
-          "body": "Según el New York Times y France 24, los evacuados de Oleshky cruzaron al territorio controlado por Ucrania tras viajar por Bielorrusia durante una rara tregua. El tránsito tuvo lugar el sábado."
+          "headline": "Les évacués d’Oleshky retrouvent leurs familles après être entrés en Ukraine",
+          "body": "The Guardian a rapporté que les évacués d’Oleshky, occupée par la Russie, avaient retrouvé leurs familles après être entrés en Ukraine, et que les habitants de villages voisins s’étaient alignés le long d’une route, agitant des drapeaux pour accueillir le convoi. The New York Times a rapporté que les civils avaient quitté Oleshky en toute sécurité après un trajet de 24 heures et avaient retrouvé leur famille et leurs amis."
         },
         "it": {
-          "headline": "I rifugiati attraversano il territorio controllato dall’Ucraina dopo il transito in Bielorussia",
-          "body": "Secondo il New York Times e France 24, i rifugiati provenienti da Oleshky sono passati nel territorio controllato dall’Ucraina dopo aver attraversato la Bielorussia durante una rara tregua. Il transito è avvenuto sabato."
+          "headline": "Gli evacuati di Oleshky ritrovano le famiglie dopo essere entrati in Ucraina",
+          "body": "Il Guardian ha riferito che gli evacuati da Oleshky, sotto occupazione russa, si sono ricongiunti con le loro famiglie dopo essere entrati in Ucraina e che gli abitanti dei villaggi vicini si sono disposti lungo un'autostrada sventolando bandiere per accogliere la colonna. Il New York Times ha riferito che i civili sono usciti in sicurezza da Oleshky dopo un viaggio di 24 ore e si sono ricongiunti con familiari e amici."
         },
-        "zh": {
-          "headline": "撤离者在白俄罗斯过境后进入乌克兰控制区",
-          "body": "据《纽约时报》和法国24报道，来自奥列什基的撤离者在罕见停火期间通过白俄罗斯后进入乌克兰控制区。此次过境发生在周六。"
+        "es": {
+          "headline": "Los evacuados de Oleshky se reencontran con sus familias tras cruzar hacia Ucrania",
+          "body": "The Guardian informó de que los evacuados de Oleshky, bajo ocupación rusa, se reencontraron con sus familias tras cruzar hacia Ucrania, y los residentes de las aldeas cercanas se等形式aron a lo largo de una carretera, agitando banderas para dar la bienvenida a la columna. The New York Times informó de que los civiles salieron ilesos de Oleshky tras un trayecto de 24 horas y se reencontraron con familiares y amigos."
         },
         "pt": {
-          "headline": "Pessoas evacuadas cruzam para território controlado pela Ucrânia após trânsito pela Bielorrússia",
-          "body": "Segundo o New York Times e o France 24, pessoas evacuadas de Oleshky cruzaram para o território controlado pela Ucrânia após atravessarem a Bielorrússia durante uma trégua rara. O trânsito ocorreu no sábado."
+          "headline": "Evacados de Oleshky reencontram-se com as famílias depois de atravessarem para a Ucrânia",
+          "body": "O Guardian informou que os evacados de Oleshky, sob ocupação russa, reencontraram-se com as suas famílias depois de atravessarem para a Ucrânia, e moradores de aldeias próximas alinharam-se ao longo de uma estrada, agitando bandeiras para saudar a comitiva. O New York Times informou que os civis saíram em segurança de Oleshky após uma viagem de 24 horas e reencontraram-se com familiares e amigos."
         },
         "de": {
-          "headline": "Evakuierte überschreiten ukrainisch kontrolliertes Gebiet nach Transit durch Belarus",
-          "body": "Laut New York Times und France 24 überschritten Evakuierte aus Oleshky das ukrainisch kontrollierte Gebiet, nachdem sie während einer seltenen Waffenruhe durch Belarus gereist waren. Der Transit fand am Samstag statt."
+          "headline": "Evakuierte aus Oleshky treffen nach dem Überschreiten der Grenze in die Ukraine wieder mit ihren Familien zusammen",
+          "body": "Der Guardian berichtete, dass Evakuierte aus dem russisch besetzten Oleshky nach dem Überschreiten der Grenze in die Ukraine wieder mit ihren Familien vereint wurden und Einwohner nahegelegener Dörfer sich entlang einer Fernstraße aufstellten und mit Fahnen winkten, um den Konvoi zu begrüßen. Die New York Times berichtete, dass die Zivilisten nach einer 24-stündigen Reise sicher aus Oleshky heraus waren und wieder mit Familie und Freunden vereint wurden."
         },
-        "ja": {
-          "headline": "避難民がベラルーシを経由してウクライナ占領地へ渡る",
-          "body": "ニューヨーク・タイムズとフランス24によれば、オレシキの避難民は、珍しい停戦中にベラルーシを通過した後、ウクライナ占領地へ渡った。通過は土曜日に行われた。"
-        },
-        "ko": {
-          "headline": "베라루스 경유 후 우크라이나 점령 지역으로 건너간 대피민",
-          "body": "뉴욕타임스와 프랑스24에 따르면, 오렐셰키에서 온 대피민은 드문 휴전 기간 동안 베라루스를 경유해 우크라이나 점령 지역으로 건너갔다. 이 경유는 토요일에 일어났다."
+        "zh": {
+          "headline": "奥列什基撤离人员进入乌克兰后与家人团聚",
+          "body": "据《卫报》报道，来自俄罗斯占领的奥列什基的撤离人员在进入乌克兰后与家人团聚，附近村庄的居民站在高速公路两旁挥舞旗帜迎接车队。《纽约时报》报道称，这些平民经过24小时的行程安全离开奥列什基，与家人和朋友团聚。"
         }
       },
       "sources": [
         {
           "outlet": "New York Times",
-          "title": "Rare Evacuation Announced by Melania Trump Begins in Ukrainian City of Oleshky",
-          "url": "https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html",
-          "publishedAt": "2026-10-31T15:24:29.000Z"
+          "title": "‘We Are Coming From Hell’: A Ukrainian City’s Evacuees Tell Survival Stories",
+          "url": "https://www.nytimes.com/2026/10/31/todayspaper/we-are-coming-from-hell-a-ukrainian-citys-evacuees-tell-survival-stories.html",
+          "publishedAt": "2026-10-31T21:43:34.000Z"
         },
         {
-          "outlet": "France 24",
-          "title": "Residents from Russian-occupied Oleshky reunite with families after evacuation operation",
-          "url": "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine",
-          "publishedAt": "2026-10-31T12:45:49.000Z"
+          "outlet": "The Guardian",
+          "title": "Oleshky evacuees reunite with families after truce allows crossing back into Ukraine",
+          "url": "https://www.theguardian.com/world/2026/oct/31/oleshky-evacuees-reunite-with-families-after-truce-allows-crossing-into-ukraine",
+          "publishedAt": "2026-10-31T19:17:22.000Z"
         }
       ]
     },
     {
-      "id": "u-1793460269000-j5ti",
       "at": "2026-10-31T15:24:29.000Z",
+      "id": "u-1793460269000-15vc",
       "kind": "result",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Truce allowed evacuation of civilians from Oleshky",
-          "body": "According to New York Times and France 24, a few days of truce allowed the removal of remaining civilians from Oleshky. The truce was brokered by US First Lady Melania Trump."
+        "de": {
+          "body": "Laut New York Times und France 24 überschritten Evakuierte aus Oleshky das ukrainisch kontrollierte Gebiet, nachdem sie während einer seltenen Waffenruhe durch Belarus gereist waren. Der Transit fand am Samstag statt.",
+          "headline": "Evakuierte überschreiten ukrainisch kontrolliertes Gebiet nach Transit durch Belarus"
         },
-        "fr": {
-          "headline": "La trêve a permis l’évacuation des civils d’Oleshky",
-          "body": "Selon le New York Times et France 24, quelques jours de trêve ont permis le retrait des civils restants d’Oleshky. La trêve a été négociée par la Première Dame américaine Melania Trump."
+        "en": {
+          "body": "According to New York Times and France 24, evacuees from Oleshky crossed into Ukrainian-held territory after traveling through Belarus during a rare truce. The transit occurred on Saturday.",
+          "headline": "Evacuees cross into Ukrainian-held territory after Belarus transit"
         },
         "es": {
-          "headline": "La tregua permitió la evacuación de civiles de Oleshky",
-          "body": "Según el New York Times y France 24, unos días de tregua permitieron la retirada de los civiles restantes de Oleshky. La tregua fue mediada por la Primera Dama de EE. UU., Melania Trump."
+          "body": "Según el New York Times y France 24, los evacuados de Oleshky cruzaron al territorio controlado por Ucrania tras viajar por Bielorrusia durante una rara tregua. El tránsito tuvo lugar el sábado.",
+          "headline": "Los evacuados cruzan al territorio ucraniano tras transitar por Bielorrusia"
+        },
+        "fr": {
+          "body": "Selon le New York Times et France 24, les évacués d’Oleshky ont franchi le territoire ukrainien après avoir traversé la Biélorussie pendant une trêve rare. Le transit a eu lieu samedi.",
+          "headline": "Les évacués franchissent le territoire ukrainien après un transit par la Biélorussie"
         },
         "it": {
-          "headline": "La tregua ha permesso l’evacuazione dei civili da Oleshky",
-          "body": "Secondo il New York Times e France 24, alcuni giorni di tregua hanno permesso l’evacuazione dei civili rimanenti da Oleshky. La tregua è stata mediata dalla First Lady degli Stati Uniti Melania Trump."
-        },
-        "zh": {
-          "headline": "停火使奥列什基平民得以撤离",
-          "body": "据《纽约时报》和法国24报道，几天的停火使得奥列什基剩余平民得以撤离。停火由美国第一夫人梅拉尼娅·特朗普斡旋。"
-        },
-        "pt": {
-          "headline": "Trégua permitiu a evacuação de civis de Oleshky",
-          "body": "Segundo o New York Times e o France 24, alguns dias de trégua permitiram a remoção dos civis restantes de Oleshky. A trégua foi mediada pela primeira-dama dos EUA, Melania Trump."
-        },
-        "de": {
-          "headline": "Waffenruhe ermöglichte die Evakuierung von Zivilisten aus Oleshky",
-          "body": "Laut New York Times und France 24 ermöglichte ein paar Tage Waffenruhe die Entfernung der verbleibenden Zivilisten aus Oleshky. Die Waffenruhe wurde von der US-First Lady Melania Trump vermittelt."
+          "body": "Secondo il New York Times e France 24, i rifugiati provenienti da Oleshky sono passati nel territorio controllato dall’Ucraina dopo aver attraversato la Bielorussia durante una rara tregua. Il transito è avvenuto sabato.",
+          "headline": "I rifugiati attraversano il territorio controllato dall’Ucraina dopo il transito in Bielorussia"
         },
         "ja": {
-          "headline": "停戦によりオレシキから民間人の避難が可能に",
-          "body": "ニューヨーク・タイムズとフランス24によれば、数日間の停戦によりオレシキから残留する民間人の除去が行われた。停戦は米国第一夫人メラニア・トランプが仲介した。"
+          "body": "ニューヨーク・タイムズとフランス24によれば、オレシキの避難民は、珍しい停戦中にベラルーシを通過した後、ウクライナ占領地へ渡った。通過は土曜日に行われた。",
+          "headline": "避難民がベラルーシを経由してウクライナ占領地へ渡る"
         },
         "ko": {
-          "headline": "휴전이 오렐셰키에서 민간인 대피를 허용했다",
-          "body": "뉴욕타임스와 프랑스24에 따르면, 휴전 몇 일 동안 오렐셰키에서 남은 민간인들을 대피시켰다. 휴전은 미국 부인 멜라니아 트럼프가 중재했다."
+          "body": "뉴욕타임스와 프랑스24에 따르면, 오렐셰키에서 온 대피민은 드문 휴전 기간 동안 베라루스를 경유해 우크라이나 점령 지역으로 건너갔다. 이 경유는 토요일에 일어났다.",
+          "headline": "베라루스 경유 후 우크라이나 점령 지역으로 건너간 대피민"
+        },
+        "pt": {
+          "body": "Segundo o New York Times e o France 24, pessoas evacuadas de Oleshky cruzaram para o território controlado pela Ucrânia após atravessarem a Bielorrússia durante uma trégua rara. O trânsito ocorreu no sábado.",
+          "headline": "Pessoas evacuadas cruzam para território controlado pela Ucrânia após trânsito pela Bielorrússia"
+        },
+        "zh": {
+          "body": "据《纽约时报》和法国24报道，来自奥列什基的撤离者在罕见停火期间通过白俄罗斯后进入乌克兰控制区。此次过境发生在周六。",
+          "headline": "撤离者在白俄罗斯过境后进入乌克兰控制区"
         }
       },
       "sources": [
         {
-          "outlet": "New York Times",
-          "title": "Rare Evacuation Announced by Melania Trump Begins in Ukrainian City of Oleshky",
           "url": "https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html",
+          "title": "Rare Evacuation Announced by Melania Trump Begins in Ukrainian City of Oleshky",
+          "outlet": "New York Times",
           "publishedAt": "2026-10-31T15:24:29.000Z"
         },
         {
-          "outlet": "France 24",
-          "title": "Residents from Russian-occupied Oleshky reunite with families after evacuation operation",
           "url": "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine",
+          "title": "Residents from Russian-occupied Oleshky reunite with families after evacuation operation",
+          "outlet": "France 24",
           "publishedAt": "2026-10-31T12:45:49.000Z"
         }
-      ]
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T15:24:29.000Z",
+      "id": "u-1793460269000-j5ti",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut New York Times und France 24 ermöglichte ein paar Tage Waffenruhe die Entfernung der verbleibenden Zivilisten aus Oleshky. Die Waffenruhe wurde von der US-First Lady Melania Trump vermittelt.",
+          "headline": "Waffenruhe ermöglichte die Evakuierung von Zivilisten aus Oleshky"
+        },
+        "en": {
+          "body": "According to New York Times and France 24, a few days of truce allowed the removal of remaining civilians from Oleshky. The truce was brokered by US First Lady Melania Trump.",
+          "headline": "Truce allowed evacuation of civilians from Oleshky"
+        },
+        "es": {
+          "body": "Según el New York Times y France 24, unos días de tregua permitieron la retirada de los civiles restantes de Oleshky. La tregua fue mediada por la Primera Dama de EE. UU., Melania Trump.",
+          "headline": "La tregua permitió la evacuación de civiles de Oleshky"
+        },
+        "fr": {
+          "body": "Selon le New York Times et France 24, quelques jours de trêve ont permis le retrait des civils restants d’Oleshky. La trêve a été négociée par la Première Dame américaine Melania Trump.",
+          "headline": "La trêve a permis l’évacuation des civils d’Oleshky"
+        },
+        "it": {
+          "body": "Secondo il New York Times e France 24, alcuni giorni di tregua hanno permesso l’evacuazione dei civili rimanenti da Oleshky. La tregua è stata mediata dalla First Lady degli Stati Uniti Melania Trump.",
+          "headline": "La tregua ha permesso l’evacuazione dei civili da Oleshky"
+        },
+        "ja": {
+          "body": "ニューヨーク・タイムズとフランス24によれば、数日間の停戦によりオレシキから残留する民間人の除去が行われた。停戦は米国第一夫人メラニア・トランプが仲介した。",
+          "headline": "停戦によりオレシキから民間人の避難が可能に"
+        },
+        "ko": {
+          "body": "뉴욕타임스와 프랑스24에 따르면, 휴전 몇 일 동안 오렐셰키에서 남은 민간인들을 대피시켰다. 휴전은 미국 부인 멜라니아 트럼프가 중재했다.",
+          "headline": "휴전이 오렐셰키에서 민간인 대피를 허용했다"
+        },
+        "pt": {
+          "body": "Segundo o New York Times e o France 24, alguns dias de trégua permitiram a remoção dos civis restantes de Oleshky. A trégua foi mediada pela primeira-dama dos EUA, Melania Trump.",
+          "headline": "Trégua permitiu a evacuação de civis de Oleshky"
+        },
+        "zh": {
+          "body": "据《纽约时报》和法国24报道，几天的停火使得奥列什基剩余平民得以撤离。停火由美国第一夫人梅拉尼娅·特朗普斡旋。",
+          "headline": "停火使奥列什基平民得以撤离"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html",
+          "title": "Rare Evacuation Announced by Melania Trump Begins in Ukrainian City of Oleshky",
+          "outlet": "New York Times",
+          "publishedAt": "2026-10-31T15:24:29.000Z"
+        },
+        {
+          "url": "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine",
+          "title": "Residents from Russian-occupied Oleshky reunite with families after evacuation operation",
+          "outlet": "France 24",
+          "publishedAt": "2026-10-31T12:45:49.000Z"
+        }
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T14:39:09.000Z",
@@ -1017,14 +1067,50 @@
     "https://news.google.com/rss/articles/CBMid0FVX3lxTE5oQVM0aWU3NzI5R0dOQUFPUUpKdTh1S0wydFBlbUpNNkVvRVhfYzdWWTdybmJycFpJSF82Y2d6QktBWFFEa1hvYnd5cWotXzBndlhVcko4ZmJYV3VOaDBMZ1NqcWZWMTM0V3AzZlRiU0JNQmJ1TGRz?oc=5",
     "https://news.google.com/rss/articles/CBMilwFBVV95cUxOazBuQTV3Qm1JNGlOYUNHcVVYRmhtZVIzZ3JQd0VmeEFxVVFYZWl6Z3lzMzBQUE90R0hMMUFIZmYyUjB5TDlQb3hLTDBsb3pHMmc4akZjT1RIZ0YyU2JRYzd0OGNmZWFIY2hrcGltaXIySG5QemdDZnhkN0NuVmNSVUhGcjFrejlvOS1EeHF4dFo5ekd4dXZJ0gGLAUFVX3lxTE1UUHBSN3BjdWRpVnZWNmNGbjRnWnVaTVh6d1lMZ3Q2b0dVd2hpV2M4dl9BT0VWMDlhbmJZMnRUOEJnbWpWRHNNa18tYnlIMW8tTk5BS1J6VkQ4SUlKOFpkNlUwMDFQb2s2aUU0SFNXMXk0VWlmc0dEODlMc0Q5V09ZX2liMzFDaVhKSXM?oc=5",
     "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine",
-    "https://news.google.com/rss/articles/CBMinAFBVV95cUxPY1ByTEN0cElTcjhKS1lSaThxWEJVNGVQdUdxSDJKMFlCTlNWLTJ1U0I3VExMQXlJQlNZYW44S2dIdURwRkdwY3BvRnZ4OURkRlpVeDBVcXpnRDFPTkxuclgxZkp3VG1jZUpVSXVmYTRfLWE5SENLbF9KS01BYjBBNlR3ems0X0QtRXB1VHZEVkJHUDVCY3lmQ1pHMFA?oc=5"
+    "https://news.google.com/rss/articles/CBMinAFBVV95cUxPY1ByTEN0cElTcjhKS1lSaThxWEJVNGVQdUdxSDJKMFlCTlNWLTJ1U0I3VExMQXlJQlNZYW44S2dIdURwRkdwY3BvRnZ4OURkRlpVeDBVcXpnRDFPTkxuclgxZkp3VG1jZUpVSXVmYTRfLWE5SENLbF9KS01BYjBBNlR3ems0X0QtRXB1VHZEVkJHUDVCY3lmQ1pHMFA?oc=5",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxNOElJdWJ2c1hDcTlpZl9rOTdWeEJ5bUVxLXZiUUJEODZ4NWtDRzdxR3A1RnhwS1JuWm5oUjk3VHNCcHRQY2liUHh0T0Q1OTNBaXIxalZXYXVDUHNucS04QmhJMlFHVzdxZjJVVkRxb05fc0liLVpUckRwVmRtaVlXa2YyQk1sUQ?oc=5",
+    "https://www.kicker.de/bvb-profis-schwaermen-von-kovacs-genialem-schachzug-1267271/artikel#omrss",
+    "https://www.nytimes.com/2026/10/31/todayspaper/we-are-coming-from-hell-a-ukrainian-citys-evacuees-tell-survival-stories.html",
+    "https://www.npr.org/2026/10/31/nx-s1-6019312/election-officials-worry-about-doj-monitoring-of-tuesdays-vote",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-selenski-denkt-ueber-patriot-tauschhandel-nach",
+    "https://thehill.com/homenews/sunday-talk-shows/6186417-sunday-shows-preview-candidates-make-last-minute-pitches-ahead-of-tuesdays-midterms-economy-weighs-heavily-on-voters-minds/",
+    "https://www.nzz.ch/schweiz/auterion-mitgruender-sartori-die-deutsche-drohnenbranche-hat-uns-links-und-rechts-ueberholt-ld.10046940",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxOc2JqUjlMOTRySzh4dDFBYlkzS0hIV0hlQ0J3VS0tM0I3dGVHQnROdjU3T0FmTXdCV1dCZlM0bzZCc2wta29kdW5jakZxUXRDWHQta3FNS0J4Ni1GYVFTcUg5bGlWejVGMEUwZlFWbkRnSkMyb0tRQm00QlppcHpQZ1ptSzRRTE5PaGdPUllxRXp6LXNVZ2xNMV9DZl93cXR6dW53YTFNd0h4UVlzSlFHY0pWSktHM2R4djc3LQ?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMlh3blo2SE1QQnFJbGY4ZzFVRzA2aWN5YnlTMUVUTEJ3OVdibkdrS0hkOVZWc3A3VHZUMkpVZU4ydDRLdDJpRUxFTzNzbXNRb1lGR3Y5UTd2ZFdZX0ZseGozcURkbnJpM3pkRmtvOS1DY0oxUE8zc2Z1anNaOURUZlRJcUVJU2d0Z1IwTkVrdnRmSnJ4NWFBeGxXV2Q2SjJFTU45Q0dKZw?oc=5",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQT25FMngxODhNU3hQUmwyX0ozanZObHJ4WC1sNV9LMjEzSUtxTGZrQWFmN0xpaXMxdU5nUEczRjUtaGd0dXpyZmI2bDRJemh4WU1rTEY1SmlEeGVSSTRpekNaRWVFb2xMdHI0OE9pUjJGR3VQd0tPeEhsRnE3eGh0bDV6THY4T3JHQnVONDJaajFiWThuZDJYZzg0c0FsNXhRc3RLR0NkTVF0UQ?oc=5",
+    "https://www.aljazeera.com/news/2026/10/31/turkiyes-erdogan-urges-russia-and-ukraine-to-stop-black-sea-attacks?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZFBVdG9vZnRUVVZsYUV1REtJWGNxcUhQNTlpZ3p0MWIySUtPWWxheUx2ODhtUTU3YkhSMzNkYkNQX2doZUozZEo5SW9Lc08yMFRROTAwaHlIQWNMaE5Ca0tkM0Ffd0RtakNrOEdVRGZqQ2ptWkltV0RPem92N3hJajk5bFVtbXo1NTF4ZGdrN0NzWnd2bzI4TjVRLUp4d3pVVFdXWTJmWXNNcmhLYl9QQnRIaXdsMy1o0gHMAUFVX3lxTE80MlJIVHdrcUE5dHZ1ZEhreENzN2RDeVlweTlkMlNaX0V4bUp0djladzlDYTlCWE5rTnpLYnkzZEYzSFFuVnhGUGcyVnlINy1DeUt5V3IxNVpFOThveU1WNWc0RmhjVHJWU1U2aHhvemZoWVl6bFZWaV9fTXJ6aGcwUFdrWVVCSDJxMTRkRzBSRTFLV1VUdy1HMW5sckM3d0tEdDhuUXRQRzlJLXoxODNLWEdwY3ZjenBlVnFPVV9qcXdncGhvNEt1ZUtQMw?oc=5",
+    "https://www.kicker.de/kein-sieger-im-topspiel-der-tabellenfuehrer-1266470/artikel#omrss",
+    "https://www.straitstimes.com/world/europe/us-canada-see-growing-interest-in-limited-ceasefire-in-black-sea",
+    "https://www.straitstimes.com/world/europe/ghana-says-russia-to-back-2000-mw-nuclear-plant-deepen-ties",
+    "https://www.tagesschau.de/tagesschau_20_uhr/video-1675900.html",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSW05UHQ5YjRDajJGVFZOdDRXWVM4YWZ0ZVZEakU1R2xFWk02Z1MwWHBic3Q0ZW1BUVk0YXFRLUpwd3d1MTAtdkxsNjVxenAtLVpJakpZTDJXOEVxSHFOYVotNjc3QWE4MEhEbWktZ3cycndLc0dERDJzaU01N1EyRGJwSU1pVXliOG13TmZUZllNU1c1ak00TWVoRDlFSFFEWXBuSlBYd1pnckJKdUJQTWNqa2Y2Zw?oc=5",
+    "https://www.tagesschau.de/tagesschau_20_uhr/video-1675886.html",
+    "https://www.theguardian.com/world/2026/oct/31/oleshky-evacuees-reunite-with-families-after-truce-allows-crossing-into-ukraine",
+    "https://www.srf.ch/news/international/russlands-kriselnde-wirtschaft-der-krieg-zieht-sibiriens-kohleregion-in-die-krise",
+    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQktnMnFudzQxRXJJU2NvcFZDb0Nta2lwamVqVTlrMzlnVVdpSEVRUHR6RHZMNTdiWUIwUUwwMld5QVhOZXpnMGJWMUVLUTRuX2hlMUtmRVdQLU5FQmk5c2Z2LUp2S0s4R0VGUE85ZFJXQmRkQjNTUlBMWVFnQzRRVW1nOEtjTjMySUZQTTliMVhTTUd2eUs3Tl9ZYzk5NkRGWV93aG9HZm5KQ0ZTTl85TmJtN1RHMWVzTVVzdXloaGhUbUk?oc=5",
+    "https://www.thehindu.com/news/international/russias-fsb-says-us-warned-russia-of-possible-moscow-attack/article71650748.ece",
+    "https://www.politico.com/news/2026/10/31/conservative-pastors-sermons-talarico-hamilton-christian-01143604",
+    "https://www.nytimes.com/2026/10/31/world/middleeast/syria-saudi-defense-pact.html",
+    "https://www.jpost.com/international/article-913403",
+    "https://www.straitstimes.com/world/europe/forced-to-eat-grass-oleshky-evacuees-say-russia-ukraine-truce-was-a-blessing",
+    "https://thehill.com/policy/international/6186192-oleshky-residents-return-ukraine/",
+    "https://www.foxnews.com/politics/who-ilhan-omars-lawyers-meet-high-powered-dem-attorneys-embattled-rep-hired",
+    "https://www.sportschau.de/regional/wdr/wdr-gladbach-wartet-weiter-auf-den-ersten-heimdreier-100.html",
+    "https://www.skysports.com/football/kilmarnock-vs-st-johnstone/report/558402",
+    "https://www.france24.com/en/middle-east/20261031-iran-s-khamenei-warns-us-and-israel-against-new-attacks",
+    "https://timesofindia.indiatimes.com/india/will-deal-with-modi-shah-rahul-gandhi-explains-why-cec-gyanesh-kumar-his-first-target/articleshow/135406884.cms",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxOcmhMOTFNUmI0VXNFU1VuMUlqV3RyU3RXdmhiNHpJZ1p6Qmh5YWcxcmNNLVFiRVo2V2d0OVJyM0JsUU9WRTZSMU5MMWw5UzVTdWlWcmI1Y2E5ZHJmWERPTWNfUkhJa0lQcEVqelQ4Vld5cnl6UGhYR3pIZVpUU0dHQ2RRY3dlZw?oc=5",
+    "https://news.google.com/rss/articles/CBMiekFVX3lxTFB6U0o2UHZCSFl5N1RfNzEzSWtrcXNFalpsV1htVUZYTHM5NVdyU05GQXloeW5JaXU1b1BlRU45WG1BRE5oZmhfN1JZMjRBM3pFZW5zRmpfdGpmMk42M2JvVFN0WmRhM1BtdFRYTWszS3lwNk1yMjRRZmd3?oc=5",
+    "https://www.straitstimes.com/world/europe/fsb-says-us-warned-russia-of-possible-moscow-attack",
+    "https://www.politico.eu/article/kaja-kallas-vladimir-putin-g20-return-risks-normalizing-russian-war-crimes/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
   ],
   "startedAt": "2026-10-31T09:24:30.505Z",
-  "updatedAt": "2026-10-31T15:46:29.433Z",
+  "updatedAt": "2026-10-31T22:58:11.736Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "oleschky-evacuation",
-  "sourceCount": 14,
+  "sourceCount": 15,
   "seenHeadlines": [
     "Oleschky evacuees arrive back in Ukraine"
   ]
