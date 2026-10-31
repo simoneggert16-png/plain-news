@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-10-31T16:49:14.549Z",
+  "updatedAt": "2026-10-31T17:46:58.604Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -228,18 +228,121 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-10-31T16:35:58.639Z",
-      "steps": [],
+      "at": "2026-10-31T17:32:27.383Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "I have one source (Yonhap) and six claims, all from that single wire report. The key open question that a document could answer first: who supplied the footage, under what licence/contract, and what did Activision pay or gain. That points to the Korean media company that provided the clip and to any procurement/licensing record. I will search for that contract trail first, then move to Korean prim",
+          "action": "search",
+          "args": {
+            "query": "Call of Duty Modern Warfare 4 Itaewon crowd crush footage licensed Korean media company contract Activision"
+          },
+          "ok": false,
+          "ms": 169581
+        },
+        {
+          "step": 2,
+          "thought": "The search tool errored on that query. I'll change approach and try a simpler, differently-phrased query rather than repeating it.",
+          "action": "search",
+          "args": {
+            "query": "Activision Itaewon crowd crush footage apology"
+          },
+          "ok": false,
+          "ms": 46448
+        },
+        {
+          "step": 3,
+          "thought": "The search tool is returning an internal error twice. I'll stop searching and instead open the source I already have on file to extract more detail and follow its links.",
+          "action": "open",
+          "args": {
+            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
+          },
+          "ok": true,
+          "ms": 29147
+        }
+      ],
       "final": null
     },
     {
-      "at": "2026-10-31T16:41:48.258Z",
-      "steps": [],
+      "at": "2026-10-31T17:38:42.205Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "One wire source on file (Yonhap). The gaps are all about documents: licensing of the footage, regulatory action in Korea, court filings, and who profited. I should start with the Korean regulatory doors (GRAC, KCC, FTC, scourt) and the Ministry of Culture, since the story happens in South Korea. First search: Korean regulator action on the Call of Duty footage.",
+          "action": "search",
+          "args": {
+            "query": "GRAC 게임물관리위원회 콜 오브 듀티 이태원 참사 영상"
+          },
+          "ok": true,
+          "ms": 53554
+        },
+        {
+          "step": 2,
+          "thought": "The GRAC search returned Wikipedia noise, not the regulator's own portal. The YTN article in the results is a Korean outlet that may carry the regulatory and family response. I'll open it before searching again.",
+          "action": "open",
+          "args": {
+            "url": "https://www.ytn.co.kr/_ln/0103_202610301323214235"
+          },
+          "ok": true,
+          "ms": 66520
+        },
+        {
+          "step": 3,
+          "thought": "The YTN page returned only navigation chrome, no article text — nothing to file as a claim. I need the regulator's own portal. GRAC's domain is grac.or.kr; the desk brief lists site:grac.or.kr as a door. Let me search that portal directly for the game and the footage.",
+          "action": "search",
+          "args": {
+            "query": "site:grac.or.kr 콜 오브 듀티 이태원"
+          },
+          "ok": true,
+          "ms": 131471
+        }
+      ],
       "final": null
     },
     {
-      "at": "2026-10-31T16:47:36.455Z",
-      "steps": [],
+      "at": "2026-10-31T17:45:20.497Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "One wire source on file (Yonhap). The gaps point to Korean regulators, courts and the original footage licensor. I should start by looking for primary documents: Korean court filings, the Korea Communications Commission, the Ministry of Culture, and the news agency that supplied the clip. First search: Korean regulator/government action.",
+          "action": "search",
+          "args": {
+            "query": "Korea Communications Commission Call of Duty Itaewon footage action"
+          },
+          "ok": false,
+          "ms": 11584
+        },
+        {
+          "step": 2,
+          "thought": "The search tool errored on that query. Change approach: search for the Korean government or Seoul city response, or the original news agency that licensed the footage.",
+          "action": "search",
+          "args": {
+            "query": "Seoul city government statement Call of Duty Itaewon crowd crush footage"
+          },
+          "ok": false,
+          "ms": 8073
+        },
+        {
+          "step": 3,
+          "thought": "Search is erroring repeatedly. Change approach: open the Yonhap article already on file to get its running text and the links that lead further (Korean ministry, KCC, the news agency that shot the footage).",
+          "action": "open",
+          "args": {
+            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
+          },
+          "ok": true,
+          "ms": 13202
+        },
+        {
+          "step": 4,
+          "thought": "The Yonhap text confirms the on-file claims and adds the apology wording and the Nov. 12 update. Now I need primary documents: Korean regulator action, the licensor of the footage, and any court case. Search errored twice; try a plain query again.",
+          "action": "search",
+          "args": {
+            "query": "Itaewon crowd crush footage Call of Duty Korea Media Rating Board"
+          },
+          "ok": false,
+          "ms": 44863
+        }
+      ],
       "final": null
     }
   ],
@@ -285,6 +388,6 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 6,
-  "blankShifts": 5
+  "shifts": 9,
+  "blankShifts": 1
 }
