@@ -952,7 +952,7 @@ async function intake(dossiers, state) {
     }
   }
 
-  if (slots > 0) {
+  while (slots > 0) {
     // A letter the desk kept can become a story, and so can a notice the desk
     // found by itself. Either way it goes into the same quota as every other
     // investigation.
@@ -962,55 +962,61 @@ async function intake(dossiers, state) {
     // scan. Within each group the oldest lead is taken first.
     const written = tips.filter((l) => l.origin !== 'scan');
     const scanned = tips.filter((l) => l.origin === 'scan');
+    // A slot is a slot. Two concrete notices on file beat one notice and a
+    // topic the model invented — the desk found those notices itself and
+    // someone published them; the invented topic has nothing behind it yet.
     const tip = written[written.length - 1] || scanned[0] || null;
-    if (tip) {
-      const gate = leadInternational(tip);
-      if (!gate.ok) {
-        tip.tried = week;
-        log(`INTAKE  ✗ own tip not taken on: ${gate.why} — ${tip.title}`);
-      } else {
-        const dossier = newDossier({
-          title: tip.title,
-          angle: tip.angle,
-          category: tip.category || 'world',
-          queries: tip.queries,
-          origin: 'desk',
-          priority: 2,
-          brief: {
-            people: tip.people,
-            tip: tip.summary,
-            centre: tip.centre,
-            // The notice itself. Its words are the vocabulary of the story,
-            // so the document the desk started from stays on file.
-            hints: tip.docTitle || '',
-          },
-        });
-        if (tip.centre) dossier.centre = tip.centre;
-        // The notice the desk found is the first document of the dossier: the
-        // story starts from a document, not from a headline.
-        if (tip.url) {
-          addSource(
-            dossier,
-            {
-              url: tip.url,
-              outlet: tip.outlet || 'unknown',
-              title: tip.docTitle || tip.title,
-              publishedAt: tip.publishedAt || null,
-              primary: true,
-            },
-            { kind: 'document' }
-          );
-        }
-        if (!dossiers.some((d) => d.slug === dossier.slug)) {
-          dossiers.push(dossier);
-          tip.opened = dossier.slug;
-          tip.tried = week;
-          // The institution the notice came from is one the desk now follows.
-          if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
-          log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
-          slots--;
-        }
-      }
+    if (!tip) break;
+    const gate = leadInternational(tip);
+    if (!gate.ok) {
+      tip.tried = week;
+      log(`INTAKE  ✗ own tip not taken on: ${gate.why} — ${tip.title}`);
+      continue;
+    }
+    const dossier = newDossier({
+      title: tip.title,
+      angle: tip.angle,
+      category: tip.category || 'world',
+      queries: tip.queries,
+      origin: 'desk',
+      priority: 2,
+      brief: {
+        people: tip.people,
+        tip: tip.summary,
+        centre: tip.centre,
+        // The notice itself. Its words are the vocabulary of the story,
+        // so the document the desk started from stays on file.
+        hints: tip.docTitle || '',
+      },
+    });
+    if (tip.centre) dossier.centre = tip.centre;
+    // The notice the desk found is the first document of the dossier: the
+    // story starts from a document, not from a headline.
+    if (tip.url) {
+      addSource(
+        dossier,
+        {
+          url: tip.url,
+          outlet: tip.outlet || 'unknown',
+          title: tip.docTitle || tip.title,
+          publishedAt: tip.publishedAt || null,
+          primary: true,
+        },
+        { kind: 'document' }
+      );
+    }
+    if (!dossiers.some((d) => d.slug === dossier.slug)) {
+      dossiers.push(dossier);
+      tip.opened = dossier.slug;
+      tip.tried = week;
+      // The institution the notice came from is one the desk now follows.
+      if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
+      log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
+      slots--;
+    } else {
+      // The same story is already on the desk. Not a slot spent, and the
+      // lead is done with.
+      tip.tried = week;
     }
   }
 
