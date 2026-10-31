@@ -68,25 +68,35 @@ export async function translate(src, locale, models = null) {
   // also what the probe raises when it wants to know whether a model finishes
   // at all, instead of guessing from a timeout.
   const perCall = Number(process.env.TRANSLATE_TIMEOUT_MS) || 90_000;
-  const maxTokens = Number(process.env.TRANSLATE_MAX_TOKENS) || 2000;
+  // A model that is given room rambles until the room is gone: on 2026-10-31 a
+  // model was handed a headline, a standfirst and five facts, and did not
+  // return within 300 s with a 10 000-token budget. The budget is now what the
+  // answer needs, three characters to the token, and the prompt says out loud
+  // that the answer is a document and not a monologue.
+  const maxTokens = Number(process.env.TRANSLATE_MAX_TOKENS) || 0;
+  const budgetFor = (chars) => maxTokens || Math.min(3000, Math.max(600, Math.ceil(chars / 2)));
+  const debug = Boolean(process.env.TRANSLATE_DEBUG);
 
   const register = `You are a professional news translator. Translate into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact. Do not add or remove information. Keep names, numbers and quotes accurate; use the established local spelling of place and person names. Translate the meaning, not the words: no literal renderings of English stock phrases, and keep the sentence rhythm of the target language rather than mirroring English syntax.${terminologyFor(locale)} Answer with the JSON document only: no reasoning, no explanation, no markdown.`;
 
   let ollamaOutOfQuota = false;
   /** Ask the chain until one model returns parseable JSON for this step. */
-  const ask = async (messages, what) => {
+  const ask = async (messages, what, chars) => {
     let lastErr;
     for (const model of chain) {
       if (ollamaOutOfQuota && model.startsWith('ollama/')) continue;
+      const started = Date.now();
       try {
         const { data } = await chatJSON('translator', messages, {
           temperature: 0.2,
-          maxTokens,
+          maxTokens: budgetFor(chars),
           models: [model],
           timeoutMs: perCall,
         });
+        if (debug) console.log(`  ${what}: ${model} in ${((Date.now() - started) / 1000).toFixed(1)}s`);
         return { data, model };
       } catch (e) {
+        if (debug) console.log(`  ${what}: ${model} failed after ${((Date.now() - started) / 1000).toFixed(1)}s — ${e.message}`);
         if (model.startsWith('ollama/') && /HTTP (402|429)/.test(String(e?.message || ''))) ollamaOutOfQuota = true;
         lastErr = e;
       }
@@ -111,6 +121,7 @@ export async function translate(src, locale, models = null) {
       },
     ],
     `${locale} head`,
+    [src.title, src.dek, ...(src.facts || []), src.context, src.imageCaption].join('').length,
   ).catch((e) => {
     throw new Error(`translation ${locale} failed — ${e.message}`);
   });
@@ -138,6 +149,7 @@ export async function translate(src, locale, models = null) {
         },
       ],
       `${locale} part ${i + 1}/${chunks.length}`,
+      part.join(' ').length,
     ).catch((e) => {
       throw new Error(`translation ${locale} failed — ${e.message}`);
     });

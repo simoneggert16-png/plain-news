@@ -59,4 +59,5 @@ jobs:
           PROBE_BUDGET_MS: ${{ fromJSON(inputs.budget) }}000
           TRANSLATE_TIMEOUT_MS: ${{ fromJSON(inputs.budget) }}000
           TRANSLATE_MAX_TOKENS: ${{ inputs.maxtokens }}
+          TRANSLATE_DEBUG: '1'
         run: node scripts/probe-translate.mjs
