@@ -277,7 +277,7 @@ function addSource(d, item, extra = {}) {
     publishedAt: item.publishedAt || null,
     // The filing cabinets know what they are; the feed path has to guess from
     // the address.
-    primary: item.primary != null ? Boolean(item.primary) : Boolean(isPrimaryOutlet(item.outlet)) || /(^|\.)(gov|admin|int)(\.|$)|europa\.eu|parlament|bundesgericht|court|un\.org/i.test(url),
+    primary: item.primary != null ? Boolean(item.primary) : Boolean(isPrimaryOutlet(item.outlet)) || institutionHost(hostOf(url)) || /parlament|bundesgericht|court|un\.org/i.test(url),
     kind: extra.kind || 'news',
     addedAt: nowISO(),
     text: null,
@@ -2441,8 +2441,12 @@ Return {"subject":"…","body":"…"}`,
 function institutionHost(host) {
   const h = String(host || '').toLowerCase().replace(/^www\./, '');
   if (!h) return false;
-  if (/(^|\.)(gov|mil|int|edu|gouv)$/.test(h)) return true;
-  if (/(^|\.)(gov|gc)\.[a-z]{2}$/.test(h)) return true;
+  // Public bodies outside Washington: a Korean court publishes from
+  // scourt.go.kr, a French ministry from gouv.fr, a Mexican ministry from
+  // gob.mx. A desk that only knows .gov reads only one country.
+  if (/(^|\.)(gov|mil|int|edu|gouv|gob|gv|gc)(\.[a-z]{2})?$/.test(h)) return true;
+  if (/(^|\.)(go|lg)\.(kr|jp|th|id|tw|hk|vn|ph|my|sg|in)$/.test(h)) return true;
+  if (/(^|\.)admin\.ch$/.test(h)) return true;
   if (/(^|\.)europa\.eu$/.test(h)) return true;
   return /(^|\.)(un|worldbank|imf|oecd|unicef|unido|icj-cij|icc-cpi|worldhealth)\.[a-z]{2,4}$/.test(h);
 }

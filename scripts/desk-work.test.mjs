@@ -240,6 +240,8 @@ const prune = new Function(`
 const editorial = await import('../lib/editorial.mjs');
 const addSource = new Function('isPrimaryOutlet', `
   const nowISO = () => new Date().toISOString();
+  ${take('hostOf')}
+  ${take('institutionHost')}
   return ${take('addSource')};
 `)(editorial.isPrimaryOutlet);
 
@@ -982,6 +984,28 @@ test('an institution has its own domain', () => {
   assert.equal(isInstitution('courtnewsdaily.com'), false);
   assert.equal(isInstitution('en.yna.co.kr'), false);
   assert.equal(isInstitution('asia.nikkei.com'), false);
+  // The desk reads the world: a Korean court, a French ministry, a Mexican
+  // ministry and the Swiss administration are institutions too.
+  assert.equal(isInstitution('scourt.go.kr'), true);
+  assert.equal(isInstitution('www.gouv.fr'), true);
+  assert.equal(isInstitution('www.gob.mx'), true);
+  assert.equal(isInstitution('admin.ch'), true);
+  assert.equal(isInstitution('go.com'), false, 'a portal is not a public body');
+});
+
+test('a ruling from a Korean court is a primary document', () => {
+  // Web hits come with the host as the outlet. A .go.kr address is an
+  // institution even though the name says nothing a pattern would know.
+  const d = { ...STORY, claims: [], sources: [] };
+  addSource(d, {
+    url: 'https://www.scourt.go.kr/board/news/123',
+    outlet: 'scourt.go.kr',
+    title: 'Seoul High Court ruling on the use of the footage',
+  });
+  assert.equal(d.sources[0].primary, true);
+  const news = { ...STORY, claims: [], sources: [] };
+  addSource(news, { url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'en.yna.co.kr', title: 'Yonhap report' });
+  assert.equal(news.sources[0].primary, false, 'a wire is not a primary document');
 });
 
 // The desk files the organisation while it works and finds the address later.
