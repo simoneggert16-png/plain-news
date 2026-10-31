@@ -194,6 +194,12 @@ export async function chat(role, messages, opts = {}) {
         return { text: answer.text, model, doneReason: answer.doneReason || null };
       } catch (e) {
         lastErr = e;
+        // A model that did not answer inside its timeout will not answer in
+        // the next two seconds either. Retrying it kept the whole chain
+        // waiting: on 2026-10-31 the desk's first model timed out three
+        // times, the deadline ran out, and no fallback was ever asked.
+        const timedOut = e.name === 'TimeoutError' || e.name === 'AbortError' || /aborted|timed? ?out/i.test(e.message || '');
+        if (timedOut) break;
         // A model that is out of credit does not answer in the next thirty
         // seconds either. Retrying it three times with a sleep in between
         // costs half a shift of desk time for nothing.
