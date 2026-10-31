@@ -8,6 +8,9 @@ on:
       limit:
         description: Max articles to repair (empty = all)
         default: ''
+      concurrency:
+        description: Articles translated in parallel (empty = 3)
+        default: '3'
   schedule:
     # Twice a day. Every run ends in a push to main, and every push is a
     # Vercel deployment - the plan allows 100 of them a day for the account.
@@ -39,7 +42,7 @@ jobs:
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
           LIMIT: ${{ inputs.limit }}
-          CONCURRENCY: '3'
+          CONCURRENCY: ${{ inputs.concurrency || '3' }}
           RETRIES: '3'
         run: node scripts/translate-missing.mjs
       - name: Commit repaired translations
