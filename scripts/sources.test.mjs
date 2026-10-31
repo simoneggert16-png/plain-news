@@ -144,7 +144,11 @@ test('a pulled document is still readable in the archive', async () => {
 
 test('the cabinets the desk reads are not all in Washington', () => {
   const ids = INSTITUTIONS.map((i) => i.id);
-  for (const id of ['ec', 'europol', 'nca', 'icc', 'icij']) assert.ok(ids.includes(id), `missing cabinet ${id}`);
+  for (const id of ['ec', 'europol', 'nca', 'icc', 'icij', 'hrw', 'amnesty']) assert.ok(ids.includes(id), `missing cabinet ${id}`);
+  // The UN rights office's public feed lists evergreen topic pages without a
+  // date; the desk read the same landing pages every morning. It is not a
+  // newswire and does not belong on a front-page scan.
+  assert.ok(!ids.includes('ohchr'), 'the rights office feed is topic pages, not news');
   const us = INSTITUTIONS.filter((i) => /^US |US Treasury|FBI|CISA/.test(i.outlet)).length;
   assert.ok(us < INSTITUTIONS.length / 2, 'most cabinets still answer only for the United States');
   for (const inst of INSTITUTIONS) {

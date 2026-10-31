@@ -28,7 +28,7 @@ if (fs.existsSync('.env')) {
   }
 }
 
-import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
+import { chat, chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch, documentSearch, archivedCopy, NEWS_EDITIONS } from './lib/search.mjs';
@@ -42,7 +42,7 @@ import { loadIndex, saveIndex, saveArticle, toIndexEntry, slugify } from './lib/
 import { distinctOutlets, isPrimaryOutlet } from '../lib/editorial.mjs';
 import { LOCALES, SOURCE_LOCALE, SITE } from '../lib/config.mjs';
 import { terminologyFor } from './lib/terminology.mjs';
-import { INVESTIGATION_QUOTAS, weekKey } from '../lib/investigations.mjs';
+import { INVESTIGATION_QUOTAS, weekKey, pickCategory } from '../lib/investigations.mjs';
 import {
   addOutreach,
   getInvestigationStatus,
@@ -135,6 +135,34 @@ async function safe(fn, fallback) {
   } catch (err) {
     log(`  ! ${err.message}`);
     return fallback;
+  }
+}
+
+/**
+ * A desk without a model can read its mail but cannot think. On 2026-10-31
+ * the Ollama account hit its monthly cap and the only other backend timed out
+ * on the full prompt: three shifts of the run burned eighteen minutes each,
+ * step by step, to learn the same thing. One cheap question at the start of
+ * the shift answers it in half a minute — and a shift that cannot think says
+ * so instead of pretending to work.
+ */
+async function modelReady() {
+  try {
+    // A hybrid model that spends a tiny token budget on reasoning returns no
+    // answer at all, and a working chain would look dead. `think: false` and
+    // a little room make the probe ask the same question a reader would.
+    const answer = await chat('desk', [{ role: 'user', content: 'Reply with the single word: ready' }], {
+      // Every model gets a short turn, not the whole preflight: a busy
+      // provider holds the first one past forty-five seconds, and the chain
+      // then never reaches the model that would have answered in nine.
+      deadline: Date.now() + 60_000,
+      timeoutMs: 15_000,
+      maxTokens: 24,
+      think: false,
+    });
+    return { ok: true, model: answer.model };
+  } catch (err) {
+    return { ok: false, why: err.message };
   }
 }
 
@@ -237,7 +265,7 @@ function newDossier({ title, angle, category, queries, origin, requestId = null,
     slug: slugify(title),
     title,
     angle,
-    category,
+    category: pickCategory(category),
     status: 'pitch',
     priority,
     origin,
@@ -277,7 +305,7 @@ function addSource(d, item, extra = {}) {
     publishedAt: item.publishedAt || null,
     // The filing cabinets know what they are; the feed path has to guess from
     // the address.
-    primary: item.primary != null ? Boolean(item.primary) : Boolean(isPrimaryOutlet(item.outlet)) || /(^|\.)(gov|admin|int)(\.|$)|europa\.eu|parlament|bundesgericht|court|un\.org/i.test(url),
+    primary: item.primary != null ? Boolean(item.primary) : Boolean(isPrimaryOutlet(item.outlet)) || institutionHost(hostOf(url)) || /parlament|bundesgericht|court|un\.org/i.test(url),
     kind: extra.kind || 'news',
     addedAt: nowISO(),
     text: null,
@@ -750,6 +778,130 @@ function leadInternational(lead) {
   return { ok: true };
 }
 
+/**
+ * How much two search queries share, as a fraction of the shorter one.
+ * "Activision Blizzard Itaewon court case South Korea 2024" and "Activision
+ * Blizzard Itaewon court ruling South Korea" are the same search.
+ */
+function queryOverlap(a, b) {
+  if (!a.size || !b.size) return 0;
+  let shared = 0;
+  for (const t of a) if (b.has(t)) shared++;
+  return shared / Math.min(a.size, b.size);
+}
+
+// The desk's tools are written for Latin letters; the story is often not.
+// Korean, Japanese, Chinese, Russian, Hebrew and Arabic words are what a
+// near-repeat in those languages shares, and termsOf throws all of them away.
+const SCRIPT_WORD = /[\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]{2,}/g;
+
+function scriptWords(q) {
+  return String(q || '').toLowerCase().match(SCRIPT_WORD) || [];
+}
+
+/**
+ * Whether a wire headline is about the searched story. The outlet's own name
+ * is not one of the story's words: a query that started with "Yonhap" pulled
+ * a baseball headline from Yonhap into a dossier about a video game.
+ */
+function wireHit(item, terms, distinctive) {
+  const own = new Set(String(item.outlet || '').toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2));
+  const text = `${item.title} ${item.summary}`.toLowerCase();
+  const hits = terms.filter((t) => !own.has(t) && text.includes(t));
+  return { item, score: hits.length, strong: hits.some((t) => distinctive.includes(t)) };
+}
+
+// A reporter in Seoul opens the court database and the media regulator, not
+// the English wire. The desk knows the Washington doors by heart; these are
+// the ones it kept forgetting, so they are written down where the shift can
+// read them.
+const COUNTRY_DOORS = {
+  'south korea': ['site:scourt.go.kr', 'site:ftc.go.kr', 'site:kcc.go.kr', 'site:grac.or.kr'],
+  japan: ['site:courts.go.jp', 'site:jftc.go.jp', 'site:soumu.go.jp'],
+  china: ['site:court.gov.cn', 'site:samr.gov.cn', 'site:cac.gov.cn'],
+  india: ['site:sci.gov.in', 'site:cci.gov.in', 'site:sebi.gov.in'],
+  brazil: ['site:stf.jus.br', 'site:cvm.gov.br', 'site:gov.br/cade'],
+  mexico: ['site:scjn.gob.mx', 'site:cofece.mx', 'site:gob.mx'],
+  nigeria: ['site:ncc.gov.ng', 'site:efcc.gov.ng'],
+  kenya: ['site:judiciary.go.ke', 'site:ca.go.ke', 'site:treasury.go.ke'],
+  'south africa': ['site:judiciary.org.za', 'site:compcom.co.za', 'site:icasa.org.za'],
+  indonesia: ['site:mahkamahagung.go.id', 'site:kppu.go.id', 'site:kominfo.go.id'],
+  philippines: ['site:sc.judiciary.gov.ph', 'site:pcc.gov.ph'],
+  germany: ['site:bundesgerichtshof.de', 'site:bundeskartellamt.de', 'site:bundesnetzagentur.de'],
+  france: ['site:courdecassation.fr', 'site:autoritedelaconcurrence.fr', 'site:arcom.fr'],
+  'united kingdom': ['site:supremecourt.uk', 'site:ofcom.org.uk', 'site:gov.uk/cma'],
+  'united states': ['site:courtlistener.com', 'site:sec.gov', 'site:govinfo.gov'],
+  canada: ['site:decisions.scc-csc.ca', 'site:competitionbureau.gc.ca'],
+  australia: ['site:highcourt.gov.au', 'site:accc.gov.au'],
+  netherlands: ['site:rechtspraak.nl', 'site:acm.nl'],
+  spain: ['site:poderjudicial.es', 'site:cnmc.es'],
+  italy: ['site:agcm.it', 'site:consob.it'],
+  poland: ['site:sn.pl', 'site:uokik.gov.pl'],
+  sweden: ['site:domstol.se', 'site:konkurrensverket.se'],
+  belgium: ['site:juportal.be', 'site:belgiancompetition.be'],
+  austria: ['site:ris.bka.gv.at', 'site:bwb.gv.at'],
+  ireland: ['site:courts.ie', 'site:ccpc.ie'],
+  russia: ['site:sudrf.ru', 'site:cbr.ru'],
+  ukraine: ['site:court.gov.ua', 'site:bank.gov.ua'],
+  turkey: ['site:rekabet.gov.tr'],
+  israel: ['site:court.gov.il', 'site:boi.org.il'],
+  bangladesh: ['site:supremecourt.gov.bd', 'site:btrc.gov.bd', 'site:bsec.gov.bd'],
+  malaysia: ['site:mycc.gov.my', 'site:sc.com.my'],
+  colombia: ['site:sic.gov.co'],
+  'european union': ['site:curia.europa.eu', 'site:ec.europa.eu/competition'],
+};
+
+/** The portals a reporter in the story's country would open first. */
+function countryDoors(centre) {
+  const key = String(centre || '').toLowerCase();
+  if (!key) return '';
+  const match = Object.keys(COUNTRY_DOORS).find((name) => key.includes(name));
+  return match ? `${match}: ${COUNTRY_DOORS[match].join(', ')}` : '';
+}
+
+// A wire story reappears as a copy on every aggregator. Counting msn.com and
+// yahoo.com separately does not give the desk two sources, it gives it one
+// story twice — the Call of Duty dossier "had" four sources and one of them
+// was Yonhap.
+const SYNDICATION_HOSTS = /(^|\.)(msn|yahoo|aol|flipboard)\.com$|(^|\.)news\.google\.com$/i;
+
+function titleTokens(title) {
+  return new Set(String(title || '').toLowerCase().match(/[a-z0-9\u00c0-\u024f]{2,}/g) || []);
+}
+
+/** One hit per story; the original publisher wins over the mirror. */
+function dedupeSyndicated(hits) {
+  const kept = [];
+  for (const hit of hits) {
+    const tokens = titleTokens(hit.title);
+    const twin = kept.findIndex((k) => queryOverlap(tokens, titleTokens(k.title)) >= 0.85);
+    if (twin === -1) {
+      kept.push(hit);
+      continue;
+    }
+    const mirror = SYNDICATION_HOSTS.test(hostOf(hit.url));
+    const twinMirror = SYNDICATION_HOSTS.test(hostOf(kept[twin].url));
+    if (twinMirror && !mirror) kept[twin] = hit;
+  }
+  return kept;
+}
+
+/**
+ * The same finding written twice is one claim. The extraction runs every
+ * shift and phrases the same fact anew ("Activision Publishing apologized…" /
+ * "Activision apologized…"), so the file grows while the story does not.
+ * Two claims that differ in a figure are two claims, never one.
+ */
+function sameClaim(a, b) {
+  const figures = (text) => new Set(String(text || '').match(/\d+(?:[.,]\d+)?/g) || []);
+  const fa = figures(a);
+  const fb = figures(b);
+  if (fa.size !== fb.size || [...fa].some((f) => !fb.has(f))) return false;
+  const STOP = new Set('the and for with from that this was were has have had its his her their they not but are is of to in on at by as an it'.split(' '));
+  const words = (text) => new Set((String(text || '').toLowerCase().match(/[a-z0-9\u00c0-\u024f]{2,}/g) || []).filter((w) => !STOP.has(w)));
+  return queryOverlap(words(a), words(b)) >= 0.85;
+}
+
 /** What a published piece still owes its readers: the questions it could not close. */
 function rememberFollowups(state, d) {
   const questions = (d.gaps || []).map((g) => String(g).trim()).filter((g) => g.length > 20).slice(0, 6);
@@ -828,7 +980,7 @@ async function intake(dossiers, state) {
     }
   }
 
-  if (slots > 0) {
+  while (slots > 0) {
     // A letter the desk kept can become a story, and so can a notice the desk
     // found by itself. Either way it goes into the same quota as every other
     // investigation.
@@ -838,55 +990,61 @@ async function intake(dossiers, state) {
     // scan. Within each group the oldest lead is taken first.
     const written = tips.filter((l) => l.origin !== 'scan');
     const scanned = tips.filter((l) => l.origin === 'scan');
+    // A slot is a slot. Two concrete notices on file beat one notice and a
+    // topic the model invented — the desk found those notices itself and
+    // someone published them; the invented topic has nothing behind it yet.
     const tip = written[written.length - 1] || scanned[0] || null;
-    if (tip) {
-      const gate = leadInternational(tip);
-      if (!gate.ok) {
-        tip.tried = week;
-        log(`INTAKE  ✗ own tip not taken on: ${gate.why} — ${tip.title}`);
-      } else {
-        const dossier = newDossier({
-          title: tip.title,
-          angle: tip.angle,
-          category: tip.category || 'world',
-          queries: tip.queries,
-          origin: 'desk',
-          priority: 2,
-          brief: {
-            people: tip.people,
-            tip: tip.summary,
-            centre: tip.centre,
-            // The notice itself. Its words are the vocabulary of the story,
-            // so the document the desk started from stays on file.
-            hints: tip.docTitle || '',
-          },
-        });
-        if (tip.centre) dossier.centre = tip.centre;
-        // The notice the desk found is the first document of the dossier: the
-        // story starts from a document, not from a headline.
-        if (tip.url) {
-          addSource(
-            dossier,
-            {
-              url: tip.url,
-              outlet: tip.outlet || 'unknown',
-              title: tip.docTitle || tip.title,
-              publishedAt: tip.publishedAt || null,
-              primary: true,
-            },
-            { kind: 'document' }
-          );
-        }
-        if (!dossiers.some((d) => d.slug === dossier.slug)) {
-          dossiers.push(dossier);
-          tip.opened = dossier.slug;
-          tip.tried = week;
-          // The institution the notice came from is one the desk now follows.
-          if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
-          log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
-          slots--;
-        }
-      }
+    if (!tip) break;
+    const gate = leadInternational(tip);
+    if (!gate.ok) {
+      tip.tried = week;
+      log(`INTAKE  ✗ own tip not taken on: ${gate.why} — ${tip.title}`);
+      continue;
+    }
+    const dossier = newDossier({
+      title: tip.title,
+      angle: tip.angle,
+      category: tip.category || 'world',
+      queries: tip.queries,
+      origin: 'desk',
+      priority: 2,
+      brief: {
+        people: tip.people,
+        tip: tip.summary,
+        centre: tip.centre,
+        // The notice itself. Its words are the vocabulary of the story,
+        // so the document the desk started from stays on file.
+        hints: tip.docTitle || '',
+      },
+    });
+    if (tip.centre) dossier.centre = tip.centre;
+    // The notice the desk found is the first document of the dossier: the
+    // story starts from a document, not from a headline.
+    if (tip.url) {
+      addSource(
+        dossier,
+        {
+          url: tip.url,
+          outlet: tip.outlet || 'unknown',
+          title: tip.docTitle || tip.title,
+          publishedAt: tip.publishedAt || null,
+          primary: true,
+        },
+        { kind: 'document' }
+      );
+    }
+    if (!dossiers.some((d) => d.slug === dossier.slug)) {
+      dossiers.push(dossier);
+      tip.opened = dossier.slug;
+      tip.tried = week;
+      // The institution the notice came from is one the desk now follows.
+      if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
+      log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
+      slots--;
+    } else {
+      // The same story is already on the desk. Not a slot spent, and the
+      // lead is done with.
+      tip.tried = week;
     }
   }
 
@@ -1089,12 +1247,22 @@ async function researchAgent(d) {
   // worked, and the desk says so.
   let searches = 0;
 
+  // A reporter who has already looked for something does not look for it
+  // again with one word changed. A shift that stalled on the Call of Duty
+  // story ran twelve searches, six of them the same query with a year or an
+  // outlet name added; each cost half a minute it could have spent reading.
+  // A near-repeat returns the earlier hits instead of hitting the wire again.
+  const issued = [];
+
   const termsOf = (q) => String(q).toLowerCase()
     .replace(/\bsite:\S+/gi, ' ')
     .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
     .split(/\s+/)
     // A year matches every headline of that year - it is no evidence at all.
     .filter((w) => w.length > 2 && !/^\d+$/.test(w) && !/^(the|and|for|with|from|about|und|der|die|das|von|fuer|mit|auf)$/i.test(w));
+  // termsOf only keeps Latin words, and a reporter in Seoul searches in
+  // Korean: without the script's words a near-repeat there is invisible.
+  const searchWordsOf = (q) => [...new Set([...termsOf(q), ...scriptWords(q)])];
   const wireMatches = (q, n = 8) => {
     // Only the first terms count: a long angle would let a headline match on
     // two incidental words.
@@ -1104,12 +1272,7 @@ async function researchAgent(d) {
     // ("bitget", "lazarus"), before a headline may enter.
     const distinctive = terms.filter((t) => t.length >= 6);
     return wire
-      .map((it) => {
-        const text = `${it.title} ${it.summary}`.toLowerCase();
-        const hits = terms.filter((t) => text.includes(t));
-        const strong = hits.some((t) => distinctive.includes(t));
-        return { it, score: hits.length, strong };
-      })
+      .map((it) => wireHit(it, terms, distinctive))
       .filter((x) => x.score >= 2 || x.strong)
       .sort((a, b) => b.score - a.score || new Date(b.it.publishedAt || 0) - new Date(a.it.publishedAt || 0))
       .slice(0, n)
@@ -1179,6 +1342,15 @@ async function researchAgent(d) {
             ...page,
           };
         }
+        const tokens = new Set(searchWordsOf(q));
+        const again = tokens.size ? issued.find((x) => queryOverlap(x.tokens, tokens) >= 0.8) : null;
+        if (again) {
+          log(`SEARCH  "${q}" → nearly the same as "${again.query}" — not searched again`);
+          return {
+            ...again.result,
+            note: `you already searched nearly this ("${again.query}") and got the same pages. Do not search again: call open with one of these urls, read the text and save_claim what it says.`,
+          };
+        }
         searches += 1;
         const seen = new Set();
         const hits = [];
@@ -1220,7 +1392,8 @@ async function researchAgent(d) {
         // the papers, not only the headlines — and the first two hits are
         // opened and filed right here, because a run that only searches ends
         // with an empty dossier.
-        const order = [...hits.filter((h) => h.primary), ...hits.filter((h) => !h.primary)];
+        const unique = dedupeSyndicated(hits);
+        const order = [...unique.filter((h) => h.primary), ...unique.filter((h) => !h.primary)];
         const auto = order.slice(0, 2).filter((h) => autoOpenBudget > 0 && !d.sources.some((s) => s.url === h.url));
         autoOpenBudget -= auto.length;
         const opened = (await Promise.all(auto.map(async (h) => {
@@ -1250,7 +1423,7 @@ async function researchAgent(d) {
         // search the same story twelve times.
         if (searches >= 3 && d.claims.length === startedClaims) notes.push(`you have searched ${searches} times and written down no claim — stop searching: open a result, read the text, save_claim what it says`);
         log(`SEARCH  "${q}" → ${results.length} hit(s) (wire ${wireN}, documents ${docsN}, opened ${opened.length})`);
-        return {
+        const payload = {
           // The note comes first: the observation is cut off at 3200
           // characters, and the guidance is the part that must survive.
           ...(notes.length ? { note: notes.join(' — ') } : {}),
@@ -1261,6 +1434,8 @@ async function researchAgent(d) {
           results,
           opened: opened.map((o) => ({ ...o, text: String(o.text || '').slice(0, 600) })),
         };
+        issued.push({ query: q, tokens, result: payload });
+        return payload;
       },
     },
     {
@@ -1301,7 +1476,7 @@ async function researchAgent(d) {
         if (value.length < 20) return { error: 'claim too short' };
         if (!valid.length) return { error: `no valid source id — on file: ${[...known].join(', ') || 'none'}` };
         const norm = value.toLowerCase().replace(/\W+/g, ' ').trim();
-        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm);
+        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm || sameClaim(c.text, value));
         if (dup) return { duplicate: dup.id };
         // The next free number, not the length plus one: a dossier that ever
         // loses a claim would otherwise hand out an id that is already taken.
@@ -1380,6 +1555,7 @@ async function researchAgent(d) {
   // asking questions has answered nobody.
   const budget = Number.isFinite(deadlineLeft()) ? deadlineLeft() : 0;
   const share = modelShare(budget);
+  const localDoors = countryDoors(d.centre || d.brief?.centre || d.brief?.region);
   const { final, steps: log2 } = await runAgent({
     role: 'desk',
     system: `You are the international investigative desk of PLAIN., an independent news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. Your beat is cross-border — Brussels, Washington, Geneva, Nairobi, Singapore — and a national story only matters if it connects to an institution, a programme or a pattern beyond one country. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. You write about people: for every story you look for the ones who carry the consequences and the ones who profit from them, and you name them. Write your findings in English.`,
@@ -1395,8 +1571,10 @@ ${state()}
 WHAT THIS RUN SHOULD ACHIEVE
 Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_PRIMARY} official/primary sources, ${MIN_CLAIMS} supported claims.
 Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
+Work the gaps, not the headline: take the first open question a document could answer, search for that document, and do not move on until it is on file or you have written down why it cannot be had. A shift that searches the same headline twelve times has not worked.
 For every institution that must answer, call find_contact with its domain — the host of a URL you have already seen, for example "trmlabs.com" — and file what it returns with contact, together with the page the address came from. An institution without an address is still worth filing, but with one the desk can actually write to.
 Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
+${localDoors ? `DOORS WHERE THIS STORY HAPPENS — ${localDoors}. A reporter there opens these first and searches them in the country's own language; the English wire is only the second opinion.` : ''}
 If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: site:trmlabs.com, site:chainalysis.com, site:ic3.gov, site:justice.gov, site:ofac.treasury.gov, site:cert.europa.eu, site:enisa.europa.eu, site:un.org, site:ohchr.org, site:sanctions.io. If the story is about land, extraction or settlement, name the people who live there and what they lost.
 Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.
 Every search also goes through the desk's filing cabinets: the US Justice Department's press releases, the UN newsroom, the World Bank's procurement notices and the world archive. Results marked "primary" are documents — open them, they are what makes the story publishable. The wide web is searched too, but it is the least reliable of the four; when it returns nothing, name the institution and search its own portal instead.
@@ -1429,6 +1607,11 @@ ${doorsAdded ? `The desk has already been to the institutions before you started
   }
 
   log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
+
+  // Shifts are counted, not claimed. Three in a row without a single new
+  // source is the desk's own answer: there is nothing behind this headline.
+  d.shifts = (d.shifts || 0) + 1;
+  d.blankShifts = added === 0 && claims === 0 ? (d.blankShifts || 0) + 1 : 0;
 
   // The agent works with a wide net and brings home the neighbours too. The
   // second sweep is what keeps the dossier readable.
@@ -1643,20 +1826,20 @@ async function scanForLeads(state, dossiers) {
     return 0;
   }
 
-  const list = items
-    .map((it, i) => `#${i + 1} [${it.outlet}] ${String(it.title || '').replace(/\s+/g, ' ').slice(0, 220)}\n${it.url}`)
-    .join('\n\n');
+  const noticesOf = (subset) =>
+    subset
+      .map((it, i) => `#${i + 1} [${it.outlet}] ${String(it.title || '').replace(/\s+/g, ' ').slice(0, 220)}\n${it.url}`)
+      .join('\n\n');
 
-  let data = null;
-  try {
-    ({ data } = await chatJSON('desk', [
+  const ask = async (subset, options) => {
+    const { data } = await chatJSON('desk', [
       {
         role: 'system',
         content: `You are the investigative editor of PLAIN. Every morning you read what the institutions you follow have published and you decide which of it deserves an investigation: documents, data and questions, weeks of work. The desk works internationally — a notice about one country's own affairs is not the desk's story unless a cross-border institution, money or people are involved, and Switzerland is where the paper is published, not what it covers. You write about people: a notice without anyone who loses something, profits or lives with the consequences is a procedure, not a story. Return JSON only.`,
       },
       {
         role: 'user',
-        content: `What the institutions published today:\n\n${list}\n\nPick at most three notices that could start an investigation. A notice qualifies only if ALL of these hold:
+        content: `What the institutions published today:\n\n${noticesOf(subset)}\n\nPick at most three notices that could start an investigation. A notice qualifies only if ALL of these hold:
 - it points at something concrete: a decision, a payment, an award, a charge, a settlement, a seizure, a sanction, a contract;
 - it is answerable with public documents and questions to the institutions — no hidden sources needed;
 - it has people in it: who is affected, who profits, who is left with the consequences;
@@ -1670,18 +1853,44 @@ ${memoryBlock(deskMemory(dossiers, state)) || '(nothing yet — this would be th
 
 Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth":true,"title":"…","angle":"…","centre":"…","people":"…","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["…"]}]}. "n" is the number of the notice in the list above. Return {"leads":[]} if nothing qualifies.`,
       },
-    ], { temperature: 0.35, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 }));
+    ], options);
+    return (Array.isArray(data?.leads) ? data.leads : []).slice(0, 3);
+  };
+
+  // The desk's whole day of leads hangs on one answer. A model that writes
+  // its reasoning into the reply instead of the JSON ("We need to output JSON
+  // with leads array…") cost the desk a scan in production — it does not get
+  // to cost the whole day: fewer notices, cooler, more room to answer.
+  let shelf = items;
+  let picks = [];
+  try {
+    picks = await ask(items, { temperature: 0.35, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 });
   } catch (err) {
     log(`SCAN  the desk could not read the front pages: ${err.message}`);
-    return 0;
+    shelf = items.slice(0, 12);
+    log(`SCAN  second pass over ${shelf.length} notice(s)`);
+    try {
+      picks = await ask(shelf, { temperature: 0.1, maxTokens: 3000, numCtx: 32768, timeoutMs: 120000 });
+    } catch (err2) {
+      log(`SCAN  second pass failed too: ${err2.message}`);
+      return 0;
+    }
   }
 
-  const picks = (Array.isArray(data?.leads) ? data.leads : []).slice(0, 3);
   let added = 0;
   for (const pick of picks) {
-    const item = items[Number(pick?.n) - 1];
+    const item = shelf[Number(pick?.n) - 1];
     const worth = pick?.worth === true || pick?.worth === 'true' || pick?.worth === 1;
     if (!item || !worth || String(pick.title || '').length < 12) continue;
+    // A notice that names nothing cannot support a story. The desk's first
+    // scan turned an empty "Contract Award: " into "$200M for renewable
+    // energy in Kenya" — the notice itself was a Kyrgyz road project. The
+    // pick is not filed: there is no document to check the story against.
+    const docTitle = String(item.title || '').replace(/\s+/g, ' ').trim();
+    if (docTitle.replace(/[^A-Za-z]/g, '').length < 20) {
+      log(`SCAN  ✗ notice names nothing: ${docTitle || '(no title)'}`);
+      continue;
+    }
     const lead = {
       at: nowISO(),
       origin: 'scan',
@@ -1691,11 +1900,11 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
       angle: String(pick.angle || '').slice(0, 300),
       centre: String(pick.centre || '').trim().slice(0, 80),
       people: String(pick.people || '').slice(0, 300),
-      category: String(pick.category || 'world').slice(0, 20),
+      category: pickCategory(pick.category),
       queries: (Array.isArray(pick.queries) ? pick.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
       url: item.url,
       outlet: item.outlet,
-      docTitle: String(item.title || '').replace(/\s+/g, ' ').slice(0, 300),
+      docTitle: docTitle.slice(0, 300),
     };
     // The desk works internationally. A notice that turns out to be one
     // country's own business is not filed: the slot is better left empty.
@@ -1961,6 +2170,22 @@ Return {"checks":[{"id":"C1","verdict":"supported|partial|unsupported","reason":
   log(`CHECK  ${batch.length - dropped.length}/${batch.length} claim(s) stand`);
 }
 
+/**
+ * A story that three shifts in a row could not grow past a headline is not an
+ * investigation. A human desk spikes it and writes down why, instead of
+ * spending the week's quota on the same search. Letters in flight protect the
+ * dossier: an answer still owed is still a story.
+ */
+function parkIfHopeless(d) {
+  if (d.sources.length >= 3 || (d.blankShifts || 0) < 3) return false;
+  if ((d.letters || []).some((l) => l.sentAt || l.approvedAt || l.status === 'approved')) return false;
+  d.parkReason = `three shifts without a new source — ${d.sources.length} source(s) cannot carry an investigation`;
+  d.parkedAt = nowISO();
+  note(d, 'dropped', d.parkReason);
+  log(`DESK  ${d.slug}: parked — ${d.parkReason}`);
+  return true;
+}
+
 async function research(d) {
   pruneOffTopic(d);
   if (process.env.INVESTIGATE_AGENT !== '0') {
@@ -2102,7 +2327,7 @@ Return exactly:
   let next = d.claims.length + 1;
   for (const c of claims) {
     const norm = c.text.toLowerCase().replace(/\W+/g, ' ').trim();
-    if (merged.some((x) => x.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm)) continue;
+    if (merged.some((x) => x.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm || sameClaim(x.text, c.text))) continue;
     let id = `C${next++}`;
     while (existingIds.has(id)) id = `C${next++}`;
     existingIds.add(id);
@@ -2349,8 +2574,12 @@ Return {"subject":"…","body":"…"}`,
 function institutionHost(host) {
   const h = String(host || '').toLowerCase().replace(/^www\./, '');
   if (!h) return false;
-  if (/(^|\.)(gov|mil|int|edu|gouv)$/.test(h)) return true;
-  if (/(^|\.)(gov|gc)\.[a-z]{2}$/.test(h)) return true;
+  // Public bodies outside Washington: a Korean court publishes from
+  // scourt.go.kr, a French ministry from gouv.fr, a Mexican ministry from
+  // gob.mx. A desk that only knows .gov reads only one country.
+  if (/(^|\.)(gov|mil|int|edu|gouv|gob|gv|gc)(\.[a-z]{2})?$/.test(h)) return true;
+  if (/(^|\.)(go|lg)\.(kr|jp|th|id|tw|hk|vn|ph|my|sg|in)$/.test(h)) return true;
+  if (/(^|\.)admin\.ch$/.test(h)) return true;
   if (/(^|\.)europa\.eu$/.test(h)) return true;
   return /(^|\.)(un|worldbank|imf|oecd|unicef|unido|icj-cij|icc-cpi|worldhealth)\.[a-z]{2,4}$/.test(h);
 }
@@ -3596,6 +3825,17 @@ async function main() {
     return;
   }
 
+  // Everything below asks a model something. When the whole chain is out of
+  // credit the shift must say so once, at the top, instead of failing every
+  // step of the way until the time budget is gone.
+  const ready = await modelReady();
+  if (!ready.ok) {
+    log(`MODELS  no model answers — ${ready.why}`);
+    log('MODELS  the shift ends here; nothing was read, written or sent');
+    return;
+  }
+  log(`MODELS  ${ready.model} answering`);
+
   if (process.env.INVESTIGATE_ONLY === 'agent') {
     // A forced intake still has to run first — with no active dossier there is
     // nothing for the agent to work on.
@@ -3628,7 +3868,14 @@ async function main() {
   saveState(state);
 
   const focus = FORCE_SLUG || decisionSlug;
-  const targets = focus ? dossiers.filter((d) => d.slug === focus) : dossiers.filter(isActive);
+  // A shift's time goes to the dossier that has waited longest, not always to
+  // the first one in the file. With two stories on the desk the second used to
+  // get the leftovers of every shift; a real desk takes turns.
+  const targets = focus
+    ? dossiers.filter((d) => d.slug === focus)
+    : dossiers.filter(isActive).sort((a, b) =>
+        String(a.lastShiftAt || a.createdAt || '').localeCompare(String(b.lastShiftAt || b.createdAt || ''))
+      );
   log(`DESK  ${targets.length} dossier(s) to advance`);
 
   for (const d of targets) {
@@ -3638,6 +3885,7 @@ async function main() {
     }
     try {
       log(`\n▶ ${d.slug} [${d.status}]`);
+      d.lastShiftAt = nowISO();
       // The editor decides in the database. Read that decision before doing
       // anything else with the dossier.
       await syncStatus(d).catch((err) => log(`STATUS  unreachable: ${err.message}`));
@@ -3684,6 +3932,13 @@ async function main() {
         await fillContactAddresses(d).catch((err) => log(`RESEARCH  addresses not found: ${err.message}`));
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
+        }
+        // A dossier whose research is going nowhere is closed here, before
+        // the desk spends the rest of the shift drafting letters about a
+        // story one wire report cannot carry.
+        if (parkIfHopeless(d)) {
+          await mirror(d);
+          continue;
         }
         log(`CHECK   ${d.claims.length} claim(s), ${d.sources.length} source(s) before reading back`);
         await factcheck(d);

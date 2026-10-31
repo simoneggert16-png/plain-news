@@ -89,12 +89,25 @@ export const INSTITUTIONS = [
     url: 'https://news.un.org/feed/subscribe/en/news/all/rss.xml',
     about: ['north korea', 'dprk', 'korea', 'human rights', 'war', 'conflict', 'sanction', 'hunger', 'climate', 'displacement', 'refugee', 'panel of experts', 'repression'],
   },
+  // The UN Human Rights Office was on this list with its /en/rss.xml feed.
+  // That feed is not a newswire: it lists evergreen topic pages ("Sport and
+  // human rights") without a date, so the desk read the same landing pages
+  // every morning. Its news feed sits behind a Cloudflare challenge. The two
+  // human-rights organisations below publish dated statements and reports
+  // instead, and their investigations name the people the desk writes about.
   {
-    id: 'ohchr',
-    outlet: 'UN Human Rights Office',
+    id: 'hrw',
+    outlet: 'Human Rights Watch',
     kind: 'rss',
-    url: 'https://www.ohchr.org/en/rss.xml',
-    about: ['human rights', 'detention', 'disappear', 'torture', 'migration', 'refugee', 'stateless', 'indigenous', 'minority', 'north korea', 'dprk', 'forced labour'],
+    url: 'https://www.hrw.org/rss/news',
+    about: ['human rights', 'detention', 'disappear', 'torture', 'migration', 'refugee', 'stateless', 'indigenous', 'minority', 'north korea', 'dprk', 'forced labour', 'war crime', 'journalist', 'protest', 'censorship'],
+  },
+  {
+    id: 'amnesty',
+    outlet: 'Amnesty International',
+    kind: 'rss',
+    url: 'https://www.amnesty.org/en/latest/feed/',
+    about: ['human rights', 'detention', 'disappear', 'torture', 'migration', 'refugee', 'stateless', 'indigenous', 'minority', 'north korea', 'dprk', 'forced labour', 'arms', 'surveillance', 'protest', 'censorship'],
   },
   {
     id: 'gao',
@@ -114,6 +127,24 @@ export const INSTITUTIONS = [
   // agencies is not the world. These cabinets answer from a runner and publish
   // in English: the commission that fines, the agency that hunts, the court
   // that indicted, the consortium that holds the papers.
+  {
+    id: 'who',
+    outlet: 'WHO',
+    kind: 'rss',
+    url: 'https://www.who.int/rss-feeds/news-english.xml',
+    timeout: 20000,
+    // "who" is a pronoun in every second sentence, so the initials alone would
+    // open this cabinet for every story. The words are the subjects instead.
+    about: ['world health', 'health', 'disease', 'outbreak', 'epidemic', 'pandemic', 'vaccine', 'vaccination', 'virus', 'measles', 'cholera', 'polio', 'ebola', 'mpox', 'malaria', 'tuberculosis', 'hospital', 'medicine', 'tobacco', 'obesity', 'air pollution', 'sanitation'],
+  },
+  {
+    id: 'icrc',
+    outlet: 'ICRC',
+    kind: 'rss',
+    url: 'https://www.icrc.org/en/rss/news',
+    timeout: 20000,
+    about: ['armed conflict', 'conflict', 'detention', 'detainee', 'prisoner', 'hostage', 'missing person', 'humanitarian', 'red cross', 'civilians', 'displaced', 'gaza', 'ukraine', 'sudan', 'yemen', 'syria', 'afghanistan', 'hospital', 'landmine', 'water'],
+  },
   {
     id: 'ec',
     outlet: 'European Commission',

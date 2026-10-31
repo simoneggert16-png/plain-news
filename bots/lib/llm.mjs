@@ -13,7 +13,7 @@ if (fs.existsSync('.env')) {
   }
 }
 
-// ─── Ollama Cloud first, NVIDIA as the last resort ─────────────────────────
+// ─── What answers today, measured — not what answered last week ───────────
 // Benchmarked 2026-10-29 on the production prompts (scripts/bench-models.mjs):
 //   translator, 24-paragraph longform, de/ja/fr:
 //     gemma4:31b     8-9 s   same paragraph/number fidelity as 120B
@@ -21,31 +21,43 @@ if (fs.existsSync('.env')) {
 //     gpt-oss:20b   40-63 s   merges paragraphs now and then
 //   desk/writer/editor: gpt-oss:120b writes the tightest English; gemma4 is
 //     equally correct but thins out long drafts.
-//   nemotron-3-super hallucinated terms, nemotron-3-ultra needs 2-3x the time,
-//     beam sometimes answers the desk prompt with prose instead of JSON.
-//   Ollama deepseek/glm/kimi/mistral -> 402, not on the free plan.
-// On NVIDIA only gpt-oss-20b answers: super-120b/gemma-4-31b return 404.
+//
+// Then the ground moved. On 2026-10-31 the Ollama free allowance was spent
+// (0 of $2.50 until 2026-11-16) and a probe of NVIDIA (scripts/probe-models.mjs,
+// "Model probe") found that nearly every model named here had been retired:
+// gpt-oss-120b, llama-3.3-70b, kimi-k2, gemma-3-27b-it answer 410 Gone,
+// gpt-oss-20b hangs past 90 s, and nemotron-super/kimi-k2.6/gemma-4-31b are
+// not enabled for this account (404). What did answer, with exact JSON and a
+// clean stop: deepseek-v4.1-flash 11 s, step-5-preview 9 s,
+// minimax-m3.1-flash 31 s. nemotron-3.5-lightning, mistral-large-4 and
+// muse-glimmer answered prose or echoed the prompt inside the token budget.
+//
+// So NVIDIA now carries the desk, Ollama stays behind it for the day the
+// allowance returns, and any provider decision is made by the probe, not by
+// what a comment said last week.
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 
 const OSS_120B = 'ollama/gpt-oss:120b';
 const GEMMA_31B = 'ollama/gemma4:31b';
 const OSS_20B = 'ollama/gpt-oss:20b';
-const NVIDIA_OSS_20B = 'openai/gpt-oss-20b';
+const NVIDIA_DEEPSEEK = 'deepseek-ai/deepseek-v4.1-flash';
+const NVIDIA_STEP = 'stepfun-ai/step-5-preview';
+const NVIDIA_MINIMAX = 'minimaxai/minimax-m3.1-flash';
 
 // A model without a key is not a fallback, it is six seconds of retry sleep
 // per call. Drop it from the chain up front.
 const usable = (list) => list.filter((m) => m.startsWith('ollama/') || process.env.NVIDIA_API_KEY);
 
 export const MODELS = {
-  desk:       usable([process.env.DESK_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B]),
-  writer:     usable([process.env.WRITER_MODEL || OSS_120B, GEMMA_31B, OSS_20B, NVIDIA_OSS_20B]),
+  desk:       usable([process.env.DESK_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B, NVIDIA_MINIMAX, OSS_20B]),
+  writer:     usable([process.env.WRITER_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B, NVIDIA_MINIMAX, OSS_20B]),
   // Translation is the highest-volume job: the fastest model that passes the
   // language/terminology gates wins, with 120B as the second opinion.
-  translator: usable([process.env.TRANSLATOR_MODEL || GEMMA_31B, OSS_120B, OSS_20B, NVIDIA_OSS_20B]),
-  editor:     usable([process.env.EDITOR_MODEL || OSS_120B, GEMMA_31B, NVIDIA_OSS_20B]),
+  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_DEEPSEEK, GEMMA_31B, NVIDIA_STEP, OSS_120B, OSS_20B, NVIDIA_MINIMAX]),
+  editor:     usable([process.env.EDITOR_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B]),
   // Live ticker: small prompts every few minutes, still needs clean prose.
-  live:       usable([process.env.LIVE_MODEL || GEMMA_31B, OSS_120B, OSS_20B, NVIDIA_OSS_20B]),
+  live:       usable([process.env.LIVE_MODEL || NVIDIA_STEP, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B, NVIDIA_MINIMAX]),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -182,11 +194,31 @@ export async function chat(role, messages, opts = {}) {
         return { text: answer.text, model, doneReason: answer.doneReason || null };
       } catch (e) {
         lastErr = e;
-        // A model that is out of credit or out of quota does not answer in
-        // the next thirty seconds either. Retrying it three times with a
-        // sleep in between costs half a shift of desk time for nothing.
-        if (e.status === 402 || e.status === 401 || e.status === 403 || e.status === 429) {
-          disabledModels.set(model, Date.now() + (e.status === 429 ? 6 * 3600 * 1000 : 15 * 60 * 1000));
+        // A model that did not answer inside its timeout will not answer in
+        // the next two seconds either. Retrying it kept the whole chain
+        // waiting: on 2026-10-31 the desk's first model timed out three
+        // times, the deadline ran out, and no fallback was ever asked.
+        const timedOut = e.name === 'TimeoutError' || e.name === 'AbortError' || /aborted|timed? ?out/i.test(e.message || '');
+        if (timedOut) break;
+        // A model that is out of credit does not answer in the next thirty
+        // seconds either. Retrying it three times with a sleep in between
+        // costs half a shift of desk time for nothing.
+        if (e.status === 402 || e.status === 401 || e.status === 403) {
+          disabledModels.set(model, Date.now() + 15 * 60 * 1000);
+          break;
+        }
+        // A 429 is usually a rate limit, not a verdict on the whole month: in
+        // the translation run the same account answered again two minutes
+        // later, but the six-hour ban then sent every remaining locale through
+        // the slowest backend. Ten minutes is long enough to stop hammering
+        // and short enough that a 55-minute job gets its models back.
+        // The monthly cap is the exception: it is announced as such, it does
+        // not lift in ten minutes, and on 2026-10-31 three dead Ollama models
+        // sat at the head of every chain while one slow NVIDIA model did the
+        // work. Park it for hours so the chain goes straight to what answers.
+        if (e.status === 429) {
+          const monthly = /monthly usage limit/i.test(e.message || '');
+          disabledModels.set(model, Date.now() + (monthly ? 6 : 10) * 60 * 1000);
           break;
         }
         if (e.status === 404 || e.status === 400) break;

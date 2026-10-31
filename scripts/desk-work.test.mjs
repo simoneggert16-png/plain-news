@@ -15,6 +15,7 @@ process.env.NVIDIA_API_KEY ||= 'test-key';
 
 const { runAgent } = await import('../bots/lib/agent.mjs');
 const llm = await import('../bots/lib/llm.mjs');
+const { pickCategory } = await import('../lib/investigations.mjs');
 
 // ───────────────────────── the agent reads the reply ─────────────────────────
 
@@ -239,6 +240,8 @@ const prune = new Function(`
 const editorial = await import('../lib/editorial.mjs');
 const addSource = new Function('isPrimaryOutlet', `
   const nowISO = () => new Date().toISOString();
+  ${take('hostOf')}
+  ${take('institutionHost')}
   return ${take('addSource')};
 `)(editorial.isPrimaryOutlet);
 
@@ -401,11 +404,14 @@ test('a model whose quota is used up is not tried again', async () => {
     return new Response(JSON.stringify({ choices: [{ message: { content: '{"ok":true}' } }] }), { status: 200 });
   };
   try {
-    const first = await llm.chatJSON('desk', [{ role: 'user', content: 'hello' }]);
+    // The chain is named here on purpose: this test is about the quota rule,
+    // not about which provider happens to be first this month.
+    const models = ['ollama/gpt-oss:120b', 'deepseek-ai/deepseek-v4.1-flash'];
+    const first = await llm.chatJSON('desk', [{ role: 'user', content: 'hello' }], { models });
     assert.equal(first.data.ok, true);
     assert.equal(asked.filter((m) => m === 'gpt-oss:120b').length, 1, 'the spent model is tried once, not three times');
     asked.length = 0;
-    await llm.chatJSON('desk', [{ role: 'user', content: 'again' }]);
+    await llm.chatJSON('desk', [{ role: 'user', content: 'again' }], { models });
     assert.deepEqual(asked.filter((m) => m.startsWith('gpt-oss')), [], 'the next call does not touch it at all');
   } finally {
     globalThis.fetch = original;
@@ -751,13 +757,13 @@ const NOTICES = [
   },
 ];
 
-function scanner(reply) {
+function scanner(reply, notices = NOTICES, chat = null) {
   const marker = (name) => {
     const line = SOURCE.split('\n').find((l) => l.startsWith(`const ${name} = `));
     return line.slice(`const ${name} = `.length).replace(/;$/, '');
   };
   return new Function(
-    'chatJSON', 'cabinetFrontPage', 'log', 'nowISO', 'safe', 'deskMemory', 'memoryBlock', 'deadlineLeft',
+    'chatJSON', 'cabinetFrontPage', 'log', 'nowISO', 'safe', 'deskMemory', 'memoryBlock', 'deadlineLeft', 'pickCategory',
     `
     const SWISS_MARKER = ${marker('SWISS_MARKER')};
     const BORDER_MARKER = ${marker('BORDER_MARKER')};
@@ -768,8 +774,8 @@ function scanner(reply) {
     return scanForLeads;
     `,
   )(
-    async () => ({ data: reply }),
-    async () => NOTICES,
+    chat || (async () => ({ data: reply })),
+    async () => notices,
     () => {},
     () => '2026-10-31T08:00:00.000Z',
     async (fn, fallback) => {
@@ -782,6 +788,7 @@ function scanner(reply) {
     () => ({ published: [], open: [], beats: [], followups: [], leads: [], finds: [] }),
     () => '',
     () => 600_000,
+    pickCategory,
   );
 }
 
@@ -851,6 +858,135 @@ test('a desk with a full list does not lose the notice it just found', async () 
   assert.equal(state.leads[0].title, WORLD_PICK.title, 'the newest find stays on the desk');
 });
 
+test('the desk does not search the same words twice', () => {
+  const overlap = new Function(`${take('queryOverlap')}; return queryOverlap;`)();
+  const t = (s) => new Set(s.toLowerCase().split(/\s+/));
+  // One shift searched this story twelve times; six of those were the same
+  // query with a year or an outlet name added.
+  assert.ok(overlap(
+    t('Activision Blizzard Itaewon court case South Korea 2024'),
+    t('Activision Blizzard Itaewon court ruling South Korea'),
+  ) > 0.8, 'a year added is the same search');
+  assert.ok(overlap(t('Call of Duty Itaewon lawsuit'), t('World Bank Kenya solar contract')) < 0.3, 'a different story is not a repeat');
+});
+
+test('the desk recognises the same search in another script', () => {
+  // A shift in Seoul searched five times in Korean. termsOf keeps only Latin
+  // letters, so all five looked new to the guard.
+  const src = SOURCE.slice(SOURCE.indexOf('const SCRIPT_WORD = ') + 'const SCRIPT_WORD = '.length);
+  const { scriptWords, queryOverlap } = new Function(`
+    const SCRIPT_WORD = ${src.split(';')[0]};
+    ${take('scriptWords')}
+    ${take('queryOverlap')}
+    return { scriptWords, queryOverlap };
+  `)();
+  assert.deepEqual(scriptWords('이태원 붕괴 사건 소송'), ['이태원', '붕괴', '사건', '소송']);
+  assert.deepEqual(scriptWords('World Bank Kenya'), [], 'Latin words are not duplicated');
+  const tokens = (q) => new Set([...scriptWords(q), ...(q.toLowerCase().match(/[a-z]{3,}/g) || [])]);
+  assert.ok(queryOverlap(
+    tokens('이태원 붕괴 영상 Call of Duty 소송'),
+    tokens('이태원 붕괴 영상 소송 판결'),
+  ) >= 0.8, 'the same Korean search with a word changed is a repeat');
+  assert.ok(queryOverlap(tokens('이태원 붕괴 영상 소송'), tokens('부산 항만 파업 노조')) < 0.3, 'another Korean story is not');
+});
+
+test('the outlet’s own name does not make a story match', () => {
+  // The dossier about Call of Duty held a Yonhap headline about baseball:
+  // the search started with "Yonhap", and the wire matched the agency's name.
+  const wireHit = new Function(`${take('wireHit')}; return wireHit;`)();
+  const terms = ['yonhap', 'call', 'duty', 'publisher', 'apologizes', 'using', 'real', 'footage'];
+  const distinctive = terms.filter((t) => t.length >= 6);
+  const baseball = {
+    outlet: 'Yonhap',
+    title: 'KBO asks MLB to post All-Star slugger Roh Si-hwan | Yonhap News Agency',
+    summary: 'SEOUL, Oct 31 (Yonhap) — The KBO asked MLB to post the slugger.',
+  };
+  const game = {
+    outlet: 'Yonhap',
+    title: 'Call of Duty publisher apologizes for using real footage of Itaewon crowd crush',
+    summary: 'SEOUL (Yonhap) — The publisher said it would remove the footage.',
+  };
+  assert.equal(wireHit(baseball, terms, distinctive).score, 0, 'only the agency name is shared');
+  assert.ok(wireHit(game, terms, distinctive).score >= 4, 'the game story shares the story’s words');
+});
+
+test('the same finding written twice is one claim — unless a figure differs', () => {
+  // Eleven claims on the Call of Duty dossier were seven facts: the
+  // extraction runs every shift and phrases the same sentence anew.
+  const sameClaim = new Function(`
+    ${take('queryOverlap')}
+    ${take('sameClaim')}
+    return sameClaim;
+  `)();
+  const apologized = 'Activision Publishing apologized for the use of the footage and agreed to remove it in an update scheduled for November 12, 2026.';
+  const apologizedAgain = 'Activision apologized for use of the footage and agreed to remove it in an update scheduled for November 12, 2026.';
+  const families = 'Bereaved families criticized the game publisher for lacking common sense and demanded complete removal of the clip.';
+  const familiesAgain = 'Bereaved families criticized the game publisher for lacking common sense and demanded a complete removal of the clip.';
+  assert.equal(sameClaim(apologized, apologizedAgain), true, 'the house name added is the same fact');
+  assert.equal(sameClaim(families, familiesAgain), true, 'an article added is the same fact');
+  assert.equal(sameClaim(
+    'The Itaewon crowd crush killed 159 people on 29 October 2022.',
+    'The Itaewon crowd crush killed 158 people on 29 October 2022.',
+  ), false, 'two figures are two claims');
+  assert.equal(sameClaim(apologized, families), false, 'two facts that share words are two claims');
+});
+
+test('a notice without a subject supports no story', async () => {
+  // OP00478199 is a contract award for a road project in the Kyrgyz Republic.
+  // Its feed title was "Contract Award: ", and the model turned it into
+  // "$200M for renewable energy in Kenya" — nothing in the notice says so.
+  const empty = [{ outlet: 'World Bank procurement', title: 'Contract Award: ', url: 'https://contracts.worldbank.org/ViewContractNotice/OP00478199' }];
+  const state = { leads: [] };
+  const added = await scanner({ leads: [{
+    n: 1,
+    worth: true,
+    summary: 'The bank awarded a contract for renewable energy in Kenya.',
+    title: 'World Bank awards $200M contract for renewable energy in Kenya',
+    angle: 'Who benefits from the contract',
+    centre: 'Kenya',
+    people: 'local communities',
+    queries: ['world bank kenya renewable contract award'],
+  }] }, empty)(state, []);
+  assert.equal(added, 0, 'a pick from a nameless notice is not filed');
+  assert.equal(state.leads.length, 0);
+});
+
+test('a model that answers with prose does not cost the desk the whole day', async () => {
+  // Production: "No valid JSON could be extracted from response: We need to
+  // output JSON with leads array…". The first shift lost its scan to that.
+  const many = Array.from({ length: 20 }, (_, i) => ({
+    outlet: `Cabinet ${i}`,
+    title: `Indictment in the export of dual-use chips to a shell company ${i}`,
+    url: `https://example.org/notice/${i}`,
+  }));
+  const calls = [];
+  const chat = async (_model, _messages, options) => {
+    calls.push(options);
+    if (calls.length === 1) throw new Error('No valid JSON could be extracted from response');
+    return { data: { leads: [WORLD_PICK] } };
+  };
+  const state = { leads: [] };
+  const added = await scanner(null, many, chat)(state, []);
+  assert.equal(calls.length, 2, 'the desk asks a second time');
+  assert.ok(calls[1].maxTokens > calls[0].maxTokens, 'the second answer has more room');
+  assert.ok(calls[1].temperature < calls[0].temperature, 'the second answer is cooler');
+  assert.equal(added, 1, 'the story found in the second pass is kept');
+  assert.equal(state.leads[0].url, many[0].url, 'the pick maps to the notices of the second pass');
+});
+
+test('a front page with few notices is asked again too', async () => {
+  const calls = [];
+  const chat = async (_model, _messages, options) => {
+    calls.push(options);
+    if (calls.length === 1) throw new Error('No valid JSON could be extracted from response');
+    return { data: { leads: [WORLD_PICK] } };
+  };
+  const state = { leads: [] };
+  const added = await scanner(null, NOTICES, chat)(state, []);
+  assert.equal(calls.length, 2, 'fewer notices is no reason to give the day up');
+  assert.equal(added, 1);
+});
+
 // ───────────────────── who the desk writes to ─────────────────────
 
 // The desk writes to the institution whose document it holds. A news site is
@@ -864,6 +1000,28 @@ test('an institution has its own domain', () => {
   assert.equal(isInstitution('courtnewsdaily.com'), false);
   assert.equal(isInstitution('en.yna.co.kr'), false);
   assert.equal(isInstitution('asia.nikkei.com'), false);
+  // The desk reads the world: a Korean court, a French ministry, a Mexican
+  // ministry and the Swiss administration are institutions too.
+  assert.equal(isInstitution('scourt.go.kr'), true);
+  assert.equal(isInstitution('www.gouv.fr'), true);
+  assert.equal(isInstitution('www.gob.mx'), true);
+  assert.equal(isInstitution('admin.ch'), true);
+  assert.equal(isInstitution('go.com'), false, 'a portal is not a public body');
+});
+
+test('a ruling from a Korean court is a primary document', () => {
+  // Web hits come with the host as the outlet. A .go.kr address is an
+  // institution even though the name says nothing a pattern would know.
+  const d = { ...STORY, claims: [], sources: [] };
+  addSource(d, {
+    url: 'https://www.scourt.go.kr/board/news/123',
+    outlet: 'scourt.go.kr',
+    title: 'Seoul High Court ruling on the use of the footage',
+  });
+  assert.equal(d.sources[0].primary, true);
+  const news = { ...STORY, claims: [], sources: [] };
+  addSource(news, { url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'en.yna.co.kr', title: 'Yonhap report' });
+  assert.equal(news.sources[0].primary, false, 'a wire is not a primary document');
 });
 
 // The desk files the organisation while it works and finds the address later.
@@ -1042,4 +1200,96 @@ test('the address hunt does not need more time than the model leaves', () => {
   const need = Number(guard.match(/deadlineLeft\(\) < (\d+)/)?.[1] || 0);
   assert.ok(need > 0, 'the hunt needs a guard');
   assert.ok(need <= 60_000, `the hunt waits for ${need} ms — the model leaves less`);
+});
+
+test('a category a model invents is not a section of the paper', () => {
+  // Two of the desk's first scan leads came back as "politics|business" and
+  // "business|world": two sections in one field, neither of them valid.
+  assert.equal(pickCategory('politics|business'), 'politics');
+  assert.equal(pickCategory('business|world'), 'business');
+  assert.equal(pickCategory('World / Politics'), 'world');
+  assert.equal(pickCategory('Law & Order'), 'world', 'no known section → the fallback');
+  assert.equal(pickCategory(undefined), 'world');
+  assert.equal(pickCategory('health'), 'health');
+});
+
+test('a story that three shifts could not grow past one report is parked', () => {
+  const park = new Function(`
+    const nowISO = () => '2026-10-31T00:00:00.000Z';
+    const log = () => {};
+    ${take('note')}
+    return ${take('parkIfHopeless')};
+  `)();
+  const dossier = (over = {}) => ({
+    slug: 'call-of-duty-uses-seoul-footage',
+    status: 'research',
+    sources: [{ id: 'S1' }],
+    blankShifts: 3,
+    ...over,
+  });
+
+  const stuck = dossier();
+  assert.equal(park(stuck), true);
+  assert.equal(stuck.status, 'dropped', 'the dossier leaves the active list');
+  assert.match(stuck.parkReason, /three shifts without a new source/);
+  assert.equal(stuck.history.at(-1).status, 'dropped', 'the reason is in the file, not only in the log');
+
+  assert.equal(park(dossier({ blankShifts: 2 })), false, 'two empty shifts are a normal week');
+  assert.equal(park(dossier({ sources: [{ id: 'S1' }, { id: 'S2' }, { id: 'S3' }] })), false, 'a story with footing is not parked');
+  assert.equal(park(dossier({ letters: [{ id: 'L1', status: 'draft', sentAt: '2026-10-31T10:00:00.000Z' }] })), false, 'a letter in flight is still a story');
+  assert.equal(park(dossier({ letters: [{ id: 'L2', status: 'draft', approvedAt: '2026-10-31T11:00:00.000Z' }] })), false, 'an editor approved the letter — the desk does not throw the story away behind their back');
+});
+
+test('the desk knows the doors in the country the story happens', () => {
+  // The Call of Duty story happens in Seoul, and the desk searched the same
+  // English phrase twelve times. A reporter there opens the court database
+  // and the media regulator first.
+  const map = SOURCE.match(/const COUNTRY_DOORS = (\{[\s\S]*?\n\});/)[1];
+  const doors = new Function(`const COUNTRY_DOORS = ${map}; ${take('countryDoors')}; return countryDoors;`)();
+  assert.match(doors('South Korea'), /scourt\.go\.kr/);
+  assert.match(doors('Seoul, South Korea'), /kcc\.go\.kr/);
+  assert.match(doors('Nairobi, Kenya'), /judiciary\.go\.ke/);
+  assert.match(doors('Brazil'), /stf\.jus\.br/);
+  // The desk writes about more than the English-speaking world and Western
+  // Europe. A story in Kyiv or Dhaka needs the doors there, not a second
+  // search of the English wire.
+  assert.match(doors('Kyiv, Ukraine'), /court\.gov\.ua/);
+  assert.match(doors('Dhaka, Bangladesh'), /supremecourt\.gov\.bd/);
+  assert.match(doors('Brussels, European Union'), /curia\.europa\.eu/);
+  assert.equal(doors('Switzerland'), '', 'the paper is Swiss, its beat is not');
+  assert.equal(doors(''), '');
+});
+
+test('the same wire story on msn and yahoo is one source, not two', () => {
+  // The Call of Duty dossier counted four sources; three were copies of one
+  // Yonhap story on aggregators. A story has as many sources as publishers.
+  const re = (() => {
+    const at = SOURCE.indexOf('const SYNDICATION_HOSTS = ');
+    return SOURCE.slice(at + 'const SYNDICATION_HOSTS = '.length, SOURCE.indexOf(';', at));
+  })();
+  const dedupe = new Function(`
+    ${take('hostOf')}
+    ${take('queryOverlap')}
+    const SYNDICATION_HOSTS = ${re};
+    ${take('titleTokens')}
+    ${take('dedupeSyndicated')}
+    return dedupeSyndicated;
+  `)();
+  const story = 'Call of Duty will cut Itaewon crush footage, Activision apologizes';
+  const other = 'Families of Seoul crush victims demand an independent inquiry';
+  const out = dedupe([
+    { title: story, url: 'https://www.msn.com/en-us/news/other/abc', outlet: 'msn.com' },
+    { title: story, url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'Yonhap' },
+    { title: other, url: 'https://www.bbc.com/news/world-asia-1', outlet: 'BBC' },
+  ]);
+  assert.equal(out.length, 2, 'the mirror is folded into the original');
+  assert.ok(out.some((h) => h.url.includes('yna.co.kr')), 'the publisher wins over the copy');
+
+  // The mirror may arrive first; the original still takes its place.
+  const reversed = dedupe([
+    { title: story, url: 'https://www.yahoo.com/news/abc.html', outlet: 'Yahoo' },
+    { title: story, url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'Yonhap' },
+  ]);
+  assert.equal(reversed.length, 1);
+  assert.ok(reversed[0].url.includes('yna.co.kr'));
 });
