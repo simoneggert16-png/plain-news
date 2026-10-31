@@ -2193,7 +2193,7 @@ Return exactly:
   let next = d.claims.length + 1;
   for (const c of claims) {
     const norm = c.text.toLowerCase().replace(/\W+/g, ' ').trim();
-    if (merged.some((x) => x.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm)) continue;
+    if (merged.some((x) => x.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm || sameClaim(x.text, c.text))) continue;
     let id = `C${next++}`;
     while (existingIds.has(id)) id = `C${next++}`;
     existingIds.add(id);
