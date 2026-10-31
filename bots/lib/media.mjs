@@ -188,6 +188,11 @@ const NOT_A_PHOTO = /\b(logos?|icons?|illustrations?|graphics?|charts?|diagrams?
 // sign the subject count; "protesters holding signs" is still a photo.
 const SIGNAGE_SUBJECT = /\b(?:sign|signboard|poster|placard|billboard|notice board|leaflet|flyer)\b[^.!?]{0,40}\b(?:reads|reading|says|saying|shows|showing|displays|displaying|warns|warning)\b|\b(?:sign|signboard|poster|placard|billboard|notice board)\b\s*(?:\(|:)?\s*["'„“]/i;
 
+/** True when the caption says the picture is a sign or poster, not a scene. */
+export function isSignageCaption(caption) {
+  return Boolean(caption) && SIGNAGE_SUBJECT.test(caption);
+}
+
 // Words that put a human being into the picture.
 const PEOPLE = /\b(men|man|woman|women|people|child|children|boy|girl|family|father|mother|parents|resident|victim|victims|worker|workers|employee|employees|soldier|soldiers|officer|officers|official|officials|minister|president|leader|protester|protesters|miner|miners|refugee|refugees|citizen|citizens|patient|patients|student|students|fisherman|farmer|neighbour|customer|investor|trader|engineer|defendant|accused|suspect|arrested|charged|convicted|sentenced|hearing|trial|court|parliament|senator|congress|governor|mayor|chief|founder|director|banker|migrant|tourist)\b/i;
 
@@ -348,7 +353,7 @@ function namedEntities(caption, html) {
 /** True when the caption describes a photograph and not a graphic. */
 export function isPhotograph(caption) {
   if (!caption) return false;
-  return !NOT_A_PHOTO.test(caption) && !SIGNAGE_SUBJECT.test(caption);
+  return !NOT_A_PHOTO.test(caption) && !isSignageCaption(caption);
 }
 
 /** True when the caption puts a human being into the picture. */
@@ -490,7 +495,7 @@ export function curateMedia(sources = []) {
       const credit = cleanCaptionText(s.imageCredit || s.credit);
       // The caption says the picture is a sign or a poster - that is a graphic
       // that happens to be photographed, not the face of the story.
-      if (caption && SIGNAGE_SUBJECT.test(caption)) continue;
+      if (isSignageCaption(caption)) continue;
       let score = 5;
       if (/aljazeera|spiegel|nytimes|reuters|apnews|gettyimages|afp|tagesschau/i.test(imageUrl)) score += 5;
       if (/1920|1440|1080|1200/i.test(imageUrl)) score += 3;
