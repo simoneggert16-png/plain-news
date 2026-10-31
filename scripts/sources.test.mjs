@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 
 import { NEWS_EDITIONS, bingNews, searchFeeds, wideSearch, documentSearch, archivedCopy } from '../bots/lib/search.mjs';
 import { isPhotograph, isSignageCaption, curateMedia } from '../bots/lib/media.mjs';
+import { INSTITUTIONS } from '../bots/lib/documents.mjs';
 
 const realFetch = globalThis.fetch;
 
@@ -139,6 +140,17 @@ test('a pulled document is still readable in the archive', async () => {
   assert.equal(copies.length, 1);
   assert.equal(copies[0].url, 'https://web.archive.org/web/20260101000000/https://example.org/doc');
   assert.equal(copies[0].primary, true);
+});
+
+test('the cabinets the desk reads are not all in Washington', () => {
+  const ids = INSTITUTIONS.map((i) => i.id);
+  for (const id of ['ec', 'europol', 'nca', 'icc', 'icij']) assert.ok(ids.includes(id), `missing cabinet ${id}`);
+  const us = INSTITUTIONS.filter((i) => /^US |US Treasury|FBI|CISA/.test(i.outlet)).length;
+  assert.ok(us < INSTITUTIONS.length / 2, 'most cabinets still answer only for the United States');
+  for (const inst of INSTITUTIONS) {
+    assert.match(inst.url, /^https:\/\//, `${inst.id} has no readable address`);
+    assert.ok(inst.about.length >= 5, `${inst.id} does not say what it is about`);
+  }
 });
 
 test('a poster is not the picture of the story, a protest photo is', () => {

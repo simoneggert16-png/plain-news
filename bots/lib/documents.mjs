@@ -110,6 +110,50 @@ export const INSTITUTIONS = [
     url: 'https://www.cisa.gov/cybersecurity-advisories/all.xml',
     about: ['cyber', 'hack', 'breach', 'ransom', 'vulnerab', 'malware', 'software', 'advisory'],
   },
+  // The desk works internationally, and a front page made only of Washington
+  // agencies is not the world. These cabinets answer from a runner and publish
+  // in English: the commission that fines, the agency that hunts, the court
+  // that indicted, the consortium that holds the papers.
+  {
+    id: 'ec',
+    outlet: 'European Commission',
+    kind: 'rss',
+    url: 'https://ec.europa.eu/commission/presscorner/api/rss?language=en&pagesize=40',
+    timeout: 20000,
+    about: ['antitrust', 'merger', 'state aid', 'competition', 'fine', 'sanction', 'tariff', 'trade', 'procurement', 'fraud', 'subsid', 'digital', 'data protection', 'migration', 'asylum', 'climate', 'energy', 'enlargement', 'rule of law', 'budget', 'euro', 'european union'],
+  },
+  {
+    id: 'europol',
+    outlet: 'Europol',
+    kind: 'rss',
+    url: 'https://www.europol.europa.eu/cms/api/rss/news',
+    timeout: 20000,
+    about: ['organised crime', 'organized crime', 'trafficking', 'smuggling', 'migrant', 'cybercrime', 'ransomware', 'fraud', 'money laundering', 'launder', 'drug', 'cocaine', 'cartel', 'arrest', 'seizure', 'most wanted', 'europol'],
+  },
+  {
+    id: 'nca',
+    outlet: 'UK National Crime Agency',
+    kind: 'rss',
+    url: 'https://www.nationalcrimeagency.gov.uk/news?format=feed&type=rss',
+    timeout: 20000,
+    about: ['money laundering', 'kleptocracy', 'bribery', 'corrupt', 'sanction', 'smuggling', 'trafficking', 'fraud', 'cyber', 'cocaine', 'migrant', 'arrest', 'asset', 'encrochat'],
+  },
+  {
+    id: 'icc',
+    outlet: 'International Criminal Court',
+    kind: 'rss',
+    url: 'https://www.icc-cpi.int/rss.xml',
+    timeout: 20000,
+    about: ['war crime', 'genocide', 'crimes against humanity', 'arrest warrant', 'prosecutor', 'trial', 'victim', 'reparations', 'jurisdiction', 'rome statute', 'duterte', 'indict'],
+  },
+  {
+    id: 'icij',
+    outlet: 'ICIJ',
+    kind: 'rss',
+    url: 'https://www.icij.org/feed/',
+    timeout: 20000,
+    about: ['offshore', 'leak', 'panama papers', 'pandora', 'paradise papers', 'tax', 'corruption', 'bribery', 'lobby', 'deforestation', 'investigation', 'shell company'],
+  },
 ];
 
 // ─────────────────────────── parsing ───────────────────────────
