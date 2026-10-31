@@ -75,3 +75,23 @@ test('a model that times out is left behind, not asked three times', async () =>
   assert.equal(answer.model, fast);
   assert.deepEqual(asked, [slow, fast]);
 });
+
+test('a model without a key fails at once instead of sleeping through three attempts', async () => {
+  delete process.env.NVIDIA_API_KEY;
+  const { chat } = await freshModule('nokey');
+  let calls = 0;
+  globalThis.fetch = async () => {
+    calls += 1;
+    return new Response('{}', { status: 200 });
+  };
+
+  // An explicit model list skips the key filter at import time. Without this
+  // rule the call slept two and then four seconds to learn nothing.
+  const started = Date.now();
+  await assert.rejects(
+    () => chat('desk', [{ role: 'user', content: 'hi' }], { models: ['deepseek-ai/deepseek-v4.1-flash'] }),
+    /API_KEY missing/,
+  );
+  assert.ok(Date.now() - started < 1000, `took ${Date.now() - started} ms`);
+  assert.equal(calls, 0, 'a model without a key was asked over the network');
+});

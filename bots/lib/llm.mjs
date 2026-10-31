@@ -44,20 +44,29 @@ const OSS_20B = 'ollama/gpt-oss:20b';
 const NVIDIA_DEEPSEEK = 'deepseek-ai/deepseek-v4.1-flash';
 const NVIDIA_STEP = 'stepfun-ai/step-5-preview';
 const NVIDIA_MINIMAX = 'minimaxai/minimax-m3.1-flash';
+const NVIDIA_MISTRAL = 'mistralai/mistral-large-4-1t-a52b';
 
 // A model without a key is not a fallback, it is six seconds of retry sleep
 // per call. Drop it from the chain up front.
 const usable = (list) => list.filter((m) => m.startsWith('ollama/') || process.env.NVIDIA_API_KEY);
 
+// Order is a measurement, not a preference. The probe on 2026-10-31 20:54,
+// with everything else idle, asked the same five-token JSON question and got:
+//   minimax-m3.1-flash 3.4 s, mistral-large-4 15.2 s, step-5 16.1 s (all three
+//   clean JSON), while deepseek-v4.1-flash, gemma-4-31b, glm-5.3-flash and
+//   gpt-oss-20b hung until the 90 s timeout. A model that hangs costs the whole
+//   per-call timeout on every single step of every shift; it goes behind the
+//   models that answer, not in front of them.
 export const MODELS = {
-  desk:       usable([process.env.DESK_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B, NVIDIA_MINIMAX, OSS_20B]),
-  writer:     usable([process.env.WRITER_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B, NVIDIA_MINIMAX, OSS_20B]),
-  // Translation is the highest-volume job: the fastest model that passes the
-  // language/terminology gates wins, with 120B as the second opinion.
-  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_DEEPSEEK, GEMMA_31B, NVIDIA_STEP, OSS_120B, OSS_20B, NVIDIA_MINIMAX]),
-  editor:     usable([process.env.EDITOR_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B]),
+  desk:       usable([process.env.DESK_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
+  writer:     usable([process.env.WRITER_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
+  // Translation is the highest-volume job and the one that needs the surest
+  // hand: mistral-large writes the register of a quality newspaper, minimax
+  // answers fastest, step-5 is the third opinion.
+  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_STEP, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B, OSS_20B]),
+  editor:     usable([process.env.EDITOR_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B]),
   // Live ticker: small prompts every few minutes, still needs clean prose.
-  live:       usable([process.env.LIVE_MODEL || NVIDIA_STEP, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B, NVIDIA_MINIMAX]),
+  live:       usable([process.env.LIVE_MODEL || NVIDIA_STEP, NVIDIA_MINIMAX, NVIDIA_MISTRAL, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B]),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -207,6 +216,10 @@ export async function chat(role, messages, opts = {}) {
           disabledModels.set(model, Date.now() + 15 * 60 * 1000);
           break;
         }
+        // No key means no answer, now or in six seconds. A caller that passes
+        // an explicit model list skips the `usable()` filter, and three
+        // attempts with a sleep in between then cost six seconds per call.
+        if (/API_KEY missing/i.test(e.message || '')) break;
         // A 429 is usually a rate limit, not a verdict on the whole month: in
         // the translation run the same account answered again two minutes
         // later, but the six-hour ban then sent every remaining locale through
