@@ -713,8 +713,12 @@ async function main() {
   // ── Phase 2: translate accepted articles, German first ──
   const targets = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
   let translated = 0;
-  const runWave = async (locale) => {
-    if (!accepted.length || timeLeft() < 2 * 60e3) return;
+  const runWave = async (locale, { force = false } = {}) => {
+    if (!accepted.length) return;
+    // German is the edition that must never be missing: a cycle that overran
+    // its reading budget still publishes, and an article without its German
+    // version shows up as an English headline on /de within minutes.
+    if (!force && timeLeft() < 2 * 60e3) return;
     const todo = accepted.filter((a) => !a.locales?.[locale]?.title);
     if (!todo.length) return;
     log(`TRANSLATOR ${todo.length} job(s) → ${locale}`);
@@ -736,8 +740,9 @@ async function main() {
     index.articles = index.articles.map((e) => (bySlug.has(e.slug) ? toIndexEntry(bySlug.get(e.slug)) : e));
     saveIndex(index);
   };
-  // /de is the edition readers notice: finish it before touching the rest.
-  await runWave('de');
+  // /de is the edition readers notice: finish it before touching the rest,
+  // and never skip it for the clock.
+  await runWave('de', { force: true });
   for (const locale of targets.filter((c) => c !== 'de')) await runWave(locale);
 
   // Repair old gaps only with what is left of the budget.
