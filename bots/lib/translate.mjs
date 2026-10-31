@@ -50,11 +50,16 @@ export async function translate(src, locale) {
     { role: 'user', content: JSON.stringify(input) },
   ];
 
-  // Two models at most: the fast default, then the strongest one as a second
-  // opinion. A failed check costs one extra call per locale, not a whole run.
-  const chain = MODELS.translator.slice(0, 2);
+  // The whole chain, not just the first two: when the Ollama account hits its
+  // monthly limit every Ollama model answers 429 within milliseconds, and the
+  // NVIDIA model behind them is the only translator left. A failed check costs
+  // one extra call per locale, and a 429 tells us the rest of that family is
+  // out of quota too, so those are skipped.
+  const chain = [...new Set(MODELS.translator)];
   let lastErr;
-  for (const model of [...new Set(chain)]) {
+  let ollamaOutOfQuota = false;
+  for (const model of chain) {
+    if (ollamaOutOfQuota && model.startsWith('ollama/')) continue;
     try {
       const { data } = await chatJSON('translator', messages, { temperature: 0.2, maxTokens: 10000, models: [model] });
       const problems = translationProblems(src, data, locale);
@@ -68,6 +73,7 @@ export async function translate(src, locale) {
         imageCaption: data.imageCaption || '',
       };
     } catch (e) {
+      if (model.startsWith('ollama/') && /HTTP (402|429)/.test(String(e?.message || ''))) ollamaOutOfQuota = true;
       lastErr = e;
     }
   }
