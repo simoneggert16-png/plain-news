@@ -6,17 +6,17 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-31T06:33:27.688Z",
-  "updatedAt": "2026-10-31T14:28:35.098Z",
+  "updatedAt": "2026-10-31T14:31:56.287Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "us-midterms-2026",
   "stats": {
     "label": "US 2026 Midterm Election Stats",
-    "note": "Key statistics on public sentiment, campaign finance, and polling for the 2026 US midterm elections.",
+    "note": "Key statistics on public sentiment, campaign donations, and candidate lead in the 2026 US midterm elections.",
     "unit": "",
     "max": null,
     "asOf": "2026-10-31T09:10:00.000Z",
-    "updatedAt": "2026-10-31T14:22:25.737Z",
+    "updatedAt": "2026-10-31T14:31:55.205Z",
     "source": {
       "outlet": "CNBC",
       "title": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
@@ -55,6 +55,38 @@
           },
           "ko": {
             "label": "트럼프에 대한 불인정"
+          }
+        }
+      },
+      {
+        "key": "ricketts-lead-over-osborn",
+        "label": "Ricketts lead over Osborn",
+        "value": 6,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Ricketts führt über Osborn"
+          },
+          "fr": {
+            "label": "Avantage de Ricketts sur Osborn"
+          },
+          "es": {
+            "label": "Ricketts lidera sobre Osborn"
+          },
+          "it": {
+            "label": "Ricketts in vantaggio su Osborn"
+          },
+          "pt": {
+            "label": "Ricketts lidera sobre Osborn"
+          },
+          "zh": {
+            "label": "里克特斯领先奥斯本"
+          },
+          "ja": {
+            "label": "リケットスがオズボーンに優位"
+          },
+          "ko": {
+            "label": "리켓츠가 오스본을 앞서고 있다"
           }
         }
       },
@@ -153,72 +185,40 @@
             "label": "메가 기부자 총 기부액"
           }
         }
-      },
-      {
-        "key": "ricketts-lead-over-osborn",
-        "label": "Ricketts lead over Osborn",
-        "value": 6,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Ricketts führt über Osborn"
-          },
-          "fr": {
-            "label": "Avantage de Ricketts sur Osborn"
-          },
-          "pt": {
-            "label": "Ricketts lidera sobre Osborn"
-          },
-          "zh": {
-            "label": "里克特斯领先奥斯本"
-          },
-          "ko": {
-            "label": "리켓츠가 오스본을 앞서고 있다"
-          },
-          "ja": {
-            "label": "リケットスがオズボーンに優位"
-          },
-          "it": {
-            "label": "Ricketts in vantaggio su Osborn"
-          },
-          "es": {
-            "label": "Ricketts lidera sobre Osborn"
-          }
-        }
       }
     ],
     "locales": {
       "de": {
-        "label": "US 2026 Zwischenwahl-Statistiken",
-        "note": "Wichtige Kennzahlen zu öffentlicher Stimmung, Wahlkampffinanzierung und Umfragen für die US-Wahlen 2026."
+        "note": "Wichtige Kennzahlen zu öffentlicher Stimmung, Wahlkampffinanzierung und Umfragen für die US-Wahlen 2026.",
+        "label": "US 2026 Zwischenwahl-Statistiken"
       },
       "fr": {
-        "label": "Statistiques des élections de mi-mandat américaines 2026",
-        "note": "Statistiques clés sur le sentiment public, le financement des campagnes et les sondages pour les élections de mi-mandat américaines 2026."
+        "note": "Statistiques clés sur le sentiment public, le financement des campagnes et les sondages pour les élections de mi-mandat américaines 2026.",
+        "label": "Statistiques des élections de mi-mandat américaines 2026"
       },
       "es": {
-        "label": "Estadísticas de las elecciones de mitad de mandato de EE. UU. 2026",
-        "note": "Estadísticas clave sobre el sentimiento público, la financiación de campañas y las encuestas para las elecciones de mitad de mandato de EE. UU. 2026."
+        "note": "Estadísticas clave sobre el sentimiento público, la financiación de campañas y las encuestas para las elecciones de mitad de mandato de EE. UU. 2026.",
+        "label": "Estadísticas de las elecciones de mitad de mandato de EE. UU. 2026"
       },
       "it": {
-        "label": "Statistiche sulle elezioni di metà mandato del 2026 negli USA",
-        "note": "Statistiche chiave sul sentiment pubblico, la finanza delle campagne e i sondaggi per le elezioni di metà mandato del 2026 negli USA."
+        "note": "Statistiche chiave sul sentiment pubblico, la finanza delle campagne e i sondaggi per le elezioni di metà mandato del 2026 negli USA.",
+        "label": "Statistiche sulle elezioni di metà mandato del 2026 negli USA"
       },
       "pt": {
-        "label": "Estatísticas das Eleições de Meio de Mandato dos EUA de 2026",
-        "note": "Estatísticas chave sobre o sentimento público, financiamento de campanha e pesquisas para as eleições de meio de mandato dos EUA de 2026."
+        "note": "Estatísticas chave sobre o sentimento público, financiamento de campanha e pesquisas para as eleições de meio de mandato dos EUA de 2026.",
+        "label": "Estatísticas das Eleições de Meio de Mandato dos EUA de 2026"
       },
       "zh": {
-        "label": "2026年美国中期选举统计",
-        "note": "关于2026年美国中期选举的公众情绪、竞选融资和民意调查的关键统计数据。"
+        "note": "关于2026年美国中期选举的公众情绪、竞选融资和民意调查的关键统计数据。",
+        "label": "2026年美国中期选举统计"
       },
       "ja": {
-        "label": "米国2026年中間選挙統計",
-        "note": "2026年米国中間選挙に関する世論、選挙資金、世論調査の主要統計データ"
+        "note": "2026年米国中間選挙に関する世論、選挙資金、世論調査の主要統計データ",
+        "label": "米国2026年中間選挙統計"
       },
       "ko": {
-        "label": "미국 2026년 중간선거 통계",
-        "note": "2026년 미국 중간선거에 대한 여론, 캠페인 자금, 여론 조사에 관한 핵심 통계."
+        "note": "2026년 미국 중간선거에 대한 여론, 캠페인 자금, 여론 조사에 관한 핵심 통계.",
+        "label": "미국 2026년 중간선거 통계"
       }
     }
   },
