@@ -783,6 +783,35 @@ function wireHit(item, terms, distinctive) {
   return { item, score: hits.length, strong: hits.some((t) => distinctive.includes(t)) };
 }
 
+// A reporter in Seoul opens the court database and the media regulator, not
+// the English wire. The desk knows the Washington doors by heart; these are
+// the ones it kept forgetting, so they are written down where the shift can
+// read them.
+const COUNTRY_DOORS = {
+  'south korea': ['site:scourt.go.kr', 'site:ftc.go.kr', 'site:kcc.go.kr', 'site:grac.or.kr'],
+  japan: ['site:courts.go.jp', 'site:jftc.go.jp', 'site:soumu.go.jp'],
+  china: ['site:court.gov.cn', 'site:samr.gov.cn', 'site:cac.gov.cn'],
+  india: ['site:sci.gov.in', 'site:cci.gov.in', 'site:sebi.gov.in'],
+  brazil: ['site:stf.jus.br', 'site:cvm.gov.br', 'site:gov.br/cade'],
+  mexico: ['site:scjn.gob.mx', 'site:cofece.mx', 'site:gob.mx'],
+  nigeria: ['site:ncc.gov.ng', 'site:efcc.gov.ng'],
+  kenya: ['site:judiciary.go.ke', 'site:ca.go.ke', 'site:treasury.go.ke'],
+  'south africa': ['site:judiciary.org.za', 'site:compcom.co.za', 'site:icasa.org.za'],
+  indonesia: ['site:mahkamahagung.go.id', 'site:kppu.go.id', 'site:kominfo.go.id'],
+  philippines: ['site:sc.judiciary.gov.ph', 'site:pcc.gov.ph'],
+  germany: ['site:bundesgerichtshof.de', 'site:bundeskartellamt.de', 'site:bundesnetzagentur.de'],
+  france: ['site:courdecassation.fr', 'site:autoritedelaconcurrence.fr', 'site:arcom.fr'],
+  'united kingdom': ['site:supremecourt.uk', 'site:ofcom.org.uk', 'site:gov.uk/cma'],
+};
+
+/** The portals a reporter in the story's country would open first. */
+function countryDoors(centre) {
+  const key = String(centre || '').toLowerCase();
+  if (!key) return '';
+  const match = Object.keys(COUNTRY_DOORS).find((name) => key.includes(name));
+  return match ? `${match}: ${COUNTRY_DOORS[match].join(', ')}` : '';
+}
+
 /**
  * The same finding written twice is one claim. The extraction runs every
  * shift and phrases the same fact anew ("Activision Publishing apologized…" /
@@ -1445,6 +1474,7 @@ async function researchAgent(d) {
   // asking questions has answered nobody.
   const budget = Number.isFinite(deadlineLeft()) ? deadlineLeft() : 0;
   const share = modelShare(budget);
+  const localDoors = countryDoors(d.centre || d.brief?.centre || d.brief?.region);
   const { final, steps: log2 } = await runAgent({
     role: 'desk',
     system: `You are the international investigative desk of PLAIN., an independent news site. You work with documents, not with impressions: you open the tender notice, the audit report, the court ruling and the press release, and you write down only what they say. Your beat is cross-border — Brussels, Washington, Geneva, Nairobi, Singapore — and a national story only matters if it connects to an institution, a programme or a pattern beyond one country. You never invent a URL, a figure, a name or a date, and you never describe what someone was thinking — only what they did and what a document proves. You write about people: for every story you look for the ones who carry the consequences and the ones who profit from them, and you name them. Write your findings in English.`,
@@ -1462,6 +1492,7 @@ Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_P
 Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
 For every institution that must answer, call find_contact with its domain — the host of a URL you have already seen, for example "trmlabs.com" — and file what it returns with contact, together with the page the address came from. An institution without an address is still worth filing, but with one the desk can actually write to.
 Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
+${localDoors ? `DOORS WHERE THIS STORY HAPPENS — ${localDoors}. A reporter there opens these first and searches them in the country's own language; the English wire is only the second opinion.` : ''}
 If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: site:trmlabs.com, site:chainalysis.com, site:ic3.gov, site:justice.gov, site:ofac.treasury.gov, site:cert.europa.eu, site:enisa.europa.eu, site:un.org, site:ohchr.org, site:sanctions.io. If the story is about land, extraction or settlement, name the people who live there and what they lost.
 Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.
 Every search also goes through the desk's filing cabinets: the US Justice Department's press releases, the UN newsroom, the World Bank's procurement notices and the world archive. Results marked "primary" are documents — open them, they are what makes the story publishable. The wide web is searched too, but it is the least reliable of the four; when it returns nothing, name the institution and search its own portal instead.

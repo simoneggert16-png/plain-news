@@ -1235,3 +1235,17 @@ test('a story that three shifts could not grow past one report is parked', () =>
   assert.equal(park(dossier({ sources: [{ id: 'S1' }, { id: 'S2' }, { id: 'S3' }] })), false, 'a story with footing is not parked');
   assert.equal(park(dossier({ letters: [{ id: 'L1', status: 'draft', sentAt: '2026-10-31T10:00:00.000Z' }] })), false, 'a letter in flight is still a story');
 });
+
+test('the desk knows the doors in the country the story happens', () => {
+  // The Call of Duty story happens in Seoul, and the desk searched the same
+  // English phrase twelve times. A reporter there opens the court database
+  // and the media regulator first.
+  const map = SOURCE.match(/const COUNTRY_DOORS = (\{[\s\S]*?\n\});/)[1];
+  const doors = new Function(`const COUNTRY_DOORS = ${map}; ${take('countryDoors')}; return countryDoors;`)();
+  assert.match(doors('South Korea'), /scourt\.go\.kr/);
+  assert.match(doors('Seoul, South Korea'), /kcc\.go\.kr/);
+  assert.match(doors('Nairobi, Kenya'), /judiciary\.go\.ke/);
+  assert.match(doors('Brazil'), /stf\.jus\.br/);
+  assert.equal(doors('Switzerland'), '', 'the paper is Swiss, its beat is not');
+  assert.equal(doors(''), '');
+});
