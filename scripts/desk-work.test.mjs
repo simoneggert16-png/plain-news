@@ -15,6 +15,7 @@ process.env.NVIDIA_API_KEY ||= 'test-key';
 
 const { runAgent } = await import('../bots/lib/agent.mjs');
 const llm = await import('../bots/lib/llm.mjs');
+const { pickCategory } = await import('../lib/investigations.mjs');
 
 // ───────────────────────── the agent reads the reply ─────────────────────────
 
@@ -757,7 +758,7 @@ function scanner(reply) {
     return line.slice(`const ${name} = `.length).replace(/;$/, '');
   };
   return new Function(
-    'chatJSON', 'cabinetFrontPage', 'log', 'nowISO', 'safe', 'deskMemory', 'memoryBlock', 'deadlineLeft',
+    'chatJSON', 'cabinetFrontPage', 'log', 'nowISO', 'safe', 'deskMemory', 'memoryBlock', 'deadlineLeft', 'pickCategory',
     `
     const SWISS_MARKER = ${marker('SWISS_MARKER')};
     const BORDER_MARKER = ${marker('BORDER_MARKER')};
@@ -782,6 +783,7 @@ function scanner(reply) {
     () => ({ published: [], open: [], beats: [], followups: [], leads: [], finds: [] }),
     () => '',
     () => 600_000,
+    pickCategory,
   );
 }
 
@@ -1042,4 +1044,15 @@ test('the address hunt does not need more time than the model leaves', () => {
   const need = Number(guard.match(/deadlineLeft\(\) < (\d+)/)?.[1] || 0);
   assert.ok(need > 0, 'the hunt needs a guard');
   assert.ok(need <= 60_000, `the hunt waits for ${need} ms — the model leaves less`);
+});
+
+test('a category a model invents is not a section of the paper', () => {
+  // Two of the desk's first scan leads came back as "politics|business" and
+  // "business|world": two sections in one field, neither of them valid.
+  assert.equal(pickCategory('politics|business'), 'politics');
+  assert.equal(pickCategory('business|world'), 'business');
+  assert.equal(pickCategory('World / Politics'), 'world');
+  assert.equal(pickCategory('Law & Order'), 'world', 'no known section → the fallback');
+  assert.equal(pickCategory(undefined), 'world');
+  assert.equal(pickCategory('health'), 'health');
 });

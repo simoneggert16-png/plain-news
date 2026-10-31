@@ -42,7 +42,7 @@ import { loadIndex, saveIndex, saveArticle, toIndexEntry, slugify } from './lib/
 import { distinctOutlets, isPrimaryOutlet } from '../lib/editorial.mjs';
 import { LOCALES, SOURCE_LOCALE, SITE } from '../lib/config.mjs';
 import { terminologyFor } from './lib/terminology.mjs';
-import { INVESTIGATION_QUOTAS, weekKey } from '../lib/investigations.mjs';
+import { INVESTIGATION_QUOTAS, weekKey, pickCategory } from '../lib/investigations.mjs';
 import {
   addOutreach,
   getInvestigationStatus,
@@ -237,7 +237,7 @@ function newDossier({ title, angle, category, queries, origin, requestId = null,
     slug: slugify(title),
     title,
     angle,
-    category,
+    category: pickCategory(category),
     status: 'pitch',
     priority,
     origin,
@@ -1691,7 +1691,7 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
       angle: String(pick.angle || '').slice(0, 300),
       centre: String(pick.centre || '').trim().slice(0, 80),
       people: String(pick.people || '').slice(0, 300),
-      category: String(pick.category || 'world').slice(0, 20),
+      category: pickCategory(pick.category),
       queries: (Array.isArray(pick.queries) ? pick.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
       url: item.url,
       outlet: item.outlet,
