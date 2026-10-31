@@ -31,55 +31,133 @@ function translationProblems(src, data, locale) {
   return terminologyProblems(locale, sourceText, flat);
 }
 
-/** Translate one article (source-language fields) into `locale`. Validates the result. */
+// A single answer of a whole article never arrives. Measured on 2026-10-31:
+// every model in the catalogue answers a sentence in 3-16 s, but a 1.9 kB
+// article with four paragraphs did not finish in 240 s on any of them, with a
+// 2 500 or a 10 000 token budget. The answer length is the wall, so the article
+// is translated the way a person would work through it: headline and facts
+// first, then two or three paragraphs at a time.
+const MAX_CHUNK_CHARS = Number(process.env.TRANSLATE_CHUNK_CHARS) || 900;
+
+function bodyChunks(body) {
+  const chunks = [];
+  let cur = [];
+  let size = 0;
+  for (const p of body) {
+    const len = String(p).length;
+    if (cur.length && size + len > MAX_CHUNK_CHARS) {
+      chunks.push(cur);
+      cur = [];
+      size = 0;
+    }
+    cur.push(p);
+    size += len;
+  }
+  if (cur.length) chunks.push(cur);
+  return chunks;
+}
+
+/**
+ * Translate one article (source-language fields) into `locale`. Validates the
+ * result. `models` overrides the chain, which only the probe needs.
+ */
 export async function translate(src, locale, models = null) {
   const lang = LOCALES.find((l) => l.code === locale);
-  const input = {
-    title: src.title,
-    dek: src.dek,
-    facts: src.facts || [],
-    body: src.body,
-    context: src.context || '',
-    imageCaption: src.imageCaption || '',
-  };
-  const messages = [
-    {
-      role: 'system',
-      content: `You are a professional news translator. Translate into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact. Do not add or remove information. Keep names, numbers and quotes accurate; use the established local spelling of place and person names. Translate the meaning, not the words: no literal renderings of English stock phrases, and keep the sentence rhythm of the target language rather than mirroring English syntax.${terminologyFor(locale)} Reply with JSON only, same keys and same array lengths.`,
-    },
-    { role: 'user', content: JSON.stringify(input) },
-  ];
-
-  // The whole chain, not just the first two: when the Ollama account hits its
-  // monthly limit every Ollama model answers 429 within milliseconds, and the
-  // NVIDIA model behind them is the only translator left. A failed check costs
-  // one extra call per locale, and a 429 tells us the rest of that family is
-  // out of quota too, so those are skipped.
   const chain = [...new Set(models?.length ? models : MODELS.translator)];
-  // A whole article is a long answer. The probe raises this to find out
-  // whether a model finishes at all, instead of guessing from a timeout.
-  const perCall = Number(process.env.TRANSLATE_TIMEOUT_MS) || 120_000;
-  const maxTokens = Number(process.env.TRANSLATE_MAX_TOKENS) || 10000;
-  let lastErr;
+  // A chunk is a small answer, and a small answer takes a short wait. This is
+  // also what the probe raises when it wants to know whether a model finishes
+  // at all, instead of guessing from a timeout.
+  const perCall = Number(process.env.TRANSLATE_TIMEOUT_MS) || 90_000;
+  const maxTokens = Number(process.env.TRANSLATE_MAX_TOKENS) || 2000;
+
+  const register = `You are a professional news translator. Translate into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact. Do not add or remove information. Keep names, numbers and quotes accurate; use the established local spelling of place and person names. Translate the meaning, not the words: no literal renderings of English stock phrases, and keep the sentence rhythm of the target language rather than mirroring English syntax.${terminologyFor(locale)} Answer with the JSON document only: no reasoning, no explanation, no markdown.`;
+
   let ollamaOutOfQuota = false;
-  for (const model of chain) {
-    if (ollamaOutOfQuota && model.startsWith('ollama/')) continue;
-    try {
-      const { data } = await chatJSON('translator', messages, { temperature: 0.2, maxTokens, models: [model], timeoutMs: perCall });
-      const problems = translationProblems(src, data, locale);
-      if (problems.length) throw new Error(`${model}: ${problems.join('; ')}`);
-      return {
-        title: data.title,
-        dek: data.dek || '',
-        facts: Array.isArray(data.facts) ? data.facts : [],
-        body: data.body,
-        context: data.context || '',
-        imageCaption: data.imageCaption || '',
-      };
-    } catch (e) {
-      if (model.startsWith('ollama/') && /HTTP (402|429)/.test(String(e?.message || ''))) ollamaOutOfQuota = true;
-      lastErr = e;
+  /** Ask the chain until one model returns parseable JSON for this step. */
+  const ask = async (messages, what) => {
+    let lastErr;
+    for (const model of chain) {
+      if (ollamaOutOfQuota && model.startsWith('ollama/')) continue;
+      try {
+        const { data } = await chatJSON('translator', messages, {
+          temperature: 0.2,
+          maxTokens,
+          models: [model],
+          timeoutMs: perCall,
+        });
+        return { data, model };
+      } catch (e) {
+        if (model.startsWith('ollama/') && /HTTP (402|429)/.test(String(e?.message || ''))) ollamaOutOfQuota = true;
+        lastErr = e;
+      }
     }
+    throw new Error(`${what} rejected by all models (${lastErr?.message})`);
+  };
+
+  // Headline, standfirst, facts and the closing context block: short answers,
+  // and they set the terms the paragraphs have to keep.
+  const head = await ask(
+    [
+      { role: 'system', content: register },
+      {
+        role: 'user',
+        content: JSON.stringify({
+          title: src.title,
+          dek: src.dek || '',
+          facts: src.facts || [],
+          context: src.context || '',
+          imageCaption: src.imageCaption || '',
+        }),
+      },
+    ],
+    `${locale} head`,
+  ).catch((e) => {
+    throw new Error(`translation ${locale} failed — ${e.message}`);
+  });
+  const h = head.data || {};
+  if (typeof h.title !== 'string' || !h.title.trim()) {
+    throw new Error(`translation ${locale} failed — head returned no title`);
   }
-  throw new Error(`translation ${locale} rejected by all models (${lastErr?.message})`);
+
+  const body = Array.isArray(src.body) ? src.body : [];
+  const chunks = bodyChunks(body);
+  const out = [];
+  for (let i = 0; i < chunks.length; i++) {
+    const part = chunks[i];
+    const { data } = await ask(
+      [
+        { role: 'system', content: `${register} This is part ${i + 1} of ${chunks.length} of one article. Keep the terms and the tone of the other parts. Return {"body":[…]}.` },
+        {
+          role: 'user',
+          content: JSON.stringify({
+            title: h.title,
+            part: `${i + 1}/${chunks.length}`,
+            previous: out.length ? String(out[out.length - 1]).slice(-240) : '',
+            paragraphs: part,
+          }),
+        },
+      ],
+      `${locale} part ${i + 1}/${chunks.length}`,
+    ).catch((e) => {
+      throw new Error(`translation ${locale} failed — ${e.message}`);
+    });
+    if (!Array.isArray(data?.body) || data.body.length !== part.length) {
+      throw new Error(
+        `translation ${locale} failed — part ${i + 1}/${chunks.length} returned ${data?.body?.length ?? 0} of ${part.length} paragraphs`,
+      );
+    }
+    out.push(...data.body.map(String));
+  }
+
+  const translated = {
+    title: h.title,
+    dek: h.dek || '',
+    facts: Array.isArray(h.facts) ? h.facts : [],
+    body: out,
+    context: h.context || '',
+    imageCaption: h.imageCaption || '',
+  };
+  const problems = translationProblems(src, translated, locale);
+  if (problems.length) throw new Error(`translation ${locale} failed — ${problems.join('; ')}`);
+  return translated;
 }
