@@ -971,6 +971,19 @@ test('a model that answers with prose does not cost the desk the whole day', asy
   assert.equal(state.leads[0].url, many[0].url, 'the pick maps to the notices of the second pass');
 });
 
+test('a front page with few notices is asked again too', async () => {
+  const calls = [];
+  const chat = async (_model, _messages, options) => {
+    calls.push(options);
+    if (calls.length === 1) throw new Error('No valid JSON could be extracted from response');
+    return { data: { leads: [WORLD_PICK] } };
+  };
+  const state = { leads: [] };
+  const added = await scanner(null, NOTICES, chat)(state, []);
+  assert.equal(calls.length, 2, 'fewer notices is no reason to give the day up');
+  assert.equal(added, 1);
+});
+
 // ───────────────────── who the desk writes to ─────────────────────
 
 // The desk writes to the institution whose document it holds. A news site is

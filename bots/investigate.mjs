@@ -1750,8 +1750,7 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
   } catch (err) {
     log(`SCAN  the desk could not read the front pages: ${err.message}`);
     shelf = items.slice(0, 12);
-    if (shelf.length === items.length) return 0;
-    log(`SCAN  second pass over ${shelf.length} notices`);
+    log(`SCAN  second pass over ${shelf.length} notice(s)`);
     try {
       picks = await ask(shelf, { temperature: 0.1, maxTokens: 3000, numCtx: 32768, timeoutMs: 120000 });
     } catch (err2) {
