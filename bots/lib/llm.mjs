@@ -248,7 +248,9 @@ export async function chat(role, messages, opts = {}) {
         // work. Park it for hours so the chain goes straight to what answers.
         if (e.status === 429) {
           const monthly = /monthly usage limit/i.test(e.message || '');
-          disabledModels.set(model, Date.now() + (monthly ? 6 : 1) * 60 * 1000);
+          // Six minutes was still a probe every six minutes: the German run of
+          // 2026-10-31 asked three dead Ollama models 94 times in 42 minutes.
+          disabledModels.set(model, Date.now() + (monthly ? 6 * 60 : 1) * 60 * 1000);
           break;
         }
         if (e.status === 404 || e.status === 400) break;
