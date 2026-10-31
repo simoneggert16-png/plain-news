@@ -10,6 +10,9 @@ import { setDeadline } from '../bots/lib/llm.mjs';
 
 const slug = process.env.PROBE_SLUG || 'iran-s-supreme-leader-warns-u-s-israel-of-20261031-k3p4';
 const locales = (process.env.PROBE_LOCALES || 'de').split(',').map((s) => s.trim()).filter(Boolean);
+// One model at a time when the question is "can this model do a whole
+// article"; the full chain when the question is "will tonight's run work".
+const models = (process.env.PROBE_MODELS || '').split(',').map((s) => s.trim()).filter(Boolean);
 const budget = Number(process.env.PROBE_BUDGET_MS) || 300_000;
 
 const article = loadArticle(slug);
@@ -22,13 +25,13 @@ if (!source?.title) {
   console.log(`${slug} has no English text`);
   process.exit(1);
 }
-console.log(`source: "${source.title}" body ${String(source.body || '').length} chars, locales ${locales.join(',')}`);
+console.log(`source: "${source.title}" body ${String(source.body || '').length} chars, locales ${locales.join(',')}, models ${models.join(',') || 'the whole chain'}`);
 
 for (const locale of locales) {
   setDeadline(Date.now() + budget);
   const started = Date.now();
   try {
-    const out = await translate(source, locale);
+    const out = await translate(source, locale, models);
     const seconds = ((Date.now() - started) / 1000).toFixed(1);
     console.log(`${locale}: ok in ${seconds}s — "${String(out.title).slice(0, 70)}", body ${String(out.body || '').length} chars`);
   } catch (err) {
