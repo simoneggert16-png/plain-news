@@ -6,7 +6,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { NEWS_EDITIONS, bingNews, searchFeeds, wideSearch, documentSearch, archivedCopy } from '../bots/lib/search.mjs';
-import { isPhotograph, curateMedia } from '../bots/lib/media.mjs';
+import { isPhotograph, isSignageCaption, curateMedia } from '../bots/lib/media.mjs';
 
 const realFetch = globalThis.fetch;
 
@@ -146,6 +146,9 @@ test('a poster is not the picture of the story, a protest photo is', () => {
   assert.equal(isPhotograph('A notice board showing the symptoms at the entrance'), false);
   assert.equal(isPhotograph('Protesters hold signs against the government during a rally'), true);
   assert.equal(isPhotograph('Health workers screen a man at the border post'), true);
+
+  assert.equal(isSignageCaption('An "Ebola alert" poster reading at the hospital gate'), true);
+  assert.equal(isSignageCaption('A nurse screens a traveller at the border'), false);
 
   const media = curateMedia([
     { image: 'https://example.org/poster.jpg', imageCaption: 'A poster saying "Ebola alert" hangs at the gate' },

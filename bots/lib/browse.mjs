@@ -2,7 +2,7 @@
 // lead to the next document. Deliberately no headless browser — the desk runs
 // on a free CI runner and most of its sources are plain HTML or PDF.
 import { clean } from './feeds.mjs';
-import { extractImagesFromHtml, cleanImageUrl, cleanCaptionText } from './media.mjs';
+import { extractImagesFromHtml, cleanImageUrl, cleanCaptionText, isSignageCaption } from './media.mjs';
 
 const UA = 'Mozilla/5.0 (compatible; PlainDesk/1.0; +https://plain-news.ch)';
 
@@ -123,6 +123,7 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
   // The lead photo of the article. A report without a picture looks unfinished,
   // and the desk already pays for the page - the photo comes with it.
   const picture = extractImagesFromHtml(html)
+    .filter((candidate) => !isSignageCaption(cleanCaptionText(candidate.caption || '')))
     .sort((a, b) => b.score - a.score)
     .map((candidate) => ({
       url: cleanImageUrl(candidate.url),
