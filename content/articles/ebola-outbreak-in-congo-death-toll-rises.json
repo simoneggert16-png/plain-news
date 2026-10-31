@@ -6,17 +6,17 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-31T08:16:00.645Z",
-  "updatedAt": "2026-10-31T17:27:18.066Z",
+  "updatedAt": "2026-10-31T19:27:00.500Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "ebola-outbreak-in-congo-death-toll-rises",
   "stats": {
     "label": "DR Congo Ebola outbreak",
-    "note": "Government data reports more than 5,000 deaths and more than 10,000 people infected in the DR Congo Ebola outbreak.",
+    "note": "Reports put Ebola deaths in DR Congo above 5,000 and cases above 10,000, with two suspected cases under investigation in Nigeria.",
     "unit": "",
     "max": null,
     "asOf": "2026-10-31T00:00:00.000Z",
-    "updatedAt": "2026-10-31T17:17:52.701Z",
+    "updatedAt": "2026-10-31T19:25:40.220Z",
     "source": {
       "outlet": "BBC",
       "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
@@ -30,8 +30,11 @@
         "key": "deaths-more-than",
         "label": "Deaths (more than)",
         "value": 5000,
-        "change": null,
+        "change": 0,
         "locales": {
+          "de": {
+            "label": "Todesfälle (mehr als)"
+          },
           "fr": {
             "label": "Décès (plus de)"
           },
@@ -40,9 +43,6 @@
           },
           "it": {
             "label": "Morti (più di)"
-          },
-          "de": {
-            "label": "Todesfälle (mehr als)"
           },
           "pt": {
             "label": "Mortes (mais de)"
@@ -62,8 +62,11 @@
         "key": "cases-more-than",
         "label": "Cases (more than)",
         "value": 10000,
-        "change": null,
+        "change": 0,
         "locales": {
+          "de": {
+            "label": "Fälle (mehr als)"
+          },
           "fr": {
             "label": "Cas (plus de)"
           },
@@ -72,9 +75,6 @@
           },
           "it": {
             "label": "Casi (più di)"
-          },
-          "de": {
-            "label": "Fälle (mehr als)"
           },
           "pt": {
             "label": "Casos (mais de)"
@@ -89,40 +89,72 @@
             "label": "감염 사례 수(초과)"
           }
         }
+      },
+      {
+        "key": "suspected-cases-in-nigeria",
+        "label": "Suspected cases in Nigeria",
+        "value": 2,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Cas suspects au Nigeria"
+          },
+          "it": {
+            "label": "Casi sospetti in Nigeria"
+          },
+          "pt": {
+            "label": "Casos suspeitos na Nigéria"
+          },
+          "de": {
+            "label": "Verdachtsfälle in Nigeria"
+          },
+          "es": {
+            "label": "Casos sospechosos en Nigeria"
+          },
+          "zh": {
+            "label": "尼日利亚疑似病例"
+          },
+          "ja": {
+            "label": "ナイジェリアで疑い例"
+          },
+          "ko": {
+            "label": "나이지리아 의심 사례"
+          }
+        }
       }
     ],
     "locales": {
       "de": {
         "label": "Ebola-Ausbruch in der DR Kongo",
-        "note": "Laut Regierungsdaten gab es bei dem Ebola-Ausbruch in der DR Kongo mehr als 5.000 Todesfälle und mehr als 10.000 Infizierte."
+        "note": "Berichten zufolge liegt die Zahl der Ebola-Toten in der DR Kongo bei über 5.000 und die Zahl der Fälle bei über 10.000; zwei Verdachtsfälle werden in Nigeria untersucht."
       },
       "fr": {
-        "label": "Éclosion d’Ebola en RDC",
-        "note": "Les données du gouvernement font état de plus de 5 000 décès et de plus de 10 000 personnes infectées par l’éclosion d’Ebola en RDC."
+        "label": "Épidémie d'Ebola en RD Congo",
+        "note": "Selon des rapports, le nombre de morts d'Ebola en RD Congo dépasse 5 000 et celui des cas dépasse 10 000, avec deux cas suspects faisant l'objet d'une enquête au Nigeria."
       },
       "es": {
-        "label": "Brote de Ébola en la República Democrática del Congo",
-        "note": "Los datos del Gobierno indican más de 5.000 muertos y más de 10.000 personas infectadas en el brote de Ébola de la República Democrática del Congo."
+        "label": "Brote de ébola en la RD del Congo",
+        "note": "Los informes cifran en más de 5.000 las muertes por ébola en la RD del Congo y en más de 10.000 los casos, con dos casos sospechosos bajo investigación en Nigeria."
       },
       "it": {
-        "label": "Focolaio di Ebola nella Repubblica Democratica del Congo",
-        "note": "I dati governativi riportano più di 5.000 morti e più di 10.000 persone infette nel focolaio di Ebola nella RDC."
+        "label": "Epidemia di Ebola nella RD Congo",
+        "note": "Secondo le segnalazioni, i decessi per Ebola nella RD Congo sono oltre 5.000 e i casi oltre 10.000, con due casi sospetti in corso di accertamento in Nigeria."
       },
       "pt": {
-        "label": "Surto de Ebola na RD Congo",
-        "note": "Dados governamentais registam mais de 5.000 mortes e mais de 10.000 pessoas infetadas no surto de Ebola na RD Congo."
+        "label": "Surto de Ébola na RD Congo",
+        "note": "Relatos indicam que as mortes por Ébola na RD Congo ultrapassam as 5.000 e os casos as 10.000, com dois casos suspeitos em investigação na Nigéria."
       },
       "zh": {
-        "label": "刚果（金）埃博拉疫情",
-        "note": "政府数据显示，刚果（金）埃博拉疫情死亡人数超过5,000人，感染人数超过10,000人。"
+        "label": "刚果民主共和国埃博拉疫情",
+        "note": "报道称，刚果民主共和国埃博拉死亡人数超过5000人，病例数超过1万例，尼日利亚有两例疑似病例正在调查中。"
       },
       "ja": {
-        "label": "コンゴ民主共和国でエボラ出血熱流行",
-        "note": "政府数据显示、コンゴ民主共和国のエボラ出血熱流行では、死亡者が5,000人超、感染者が10,000人超となっている。"
+        "label": "コンゴ民主共和国でエボラ出血熱が流行",
+        "note": "報告によると、コンゴ民主共和国のエボラ出血熱による死者は5,000人を超え、感染者は10,000人を超えており、ナイジェリアでは2件の疑い例が調査中である。"
       },
       "ko": {
-        "label": "드림카 공화국 에볼라 발생",
-        "note": "정부 자료에 따르면 드림카 공화국의 에볼라 발생으로 사망자는 5,000명 이상, 감염자는 10,000명 이상이다."
+        "label": "콩고민주공화국 에볼라 발병",
+        "note": "보고에 따르면 콩고민주공화국의 에볼라 사망자는 5,000명을 넘고 사례는 10,000건을 넘으며, 나이지리아에서는 의심 사례 2건이 조사 중이다."
       }
     }
   },
