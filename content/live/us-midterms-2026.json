@@ -1,9 +1,284 @@
 {
+  "meta": {
+    "outlets": [
+      "Tagesschau",
+      "Der Spiegel",
+      "NZZ",
+      "Tages-Anzeiger"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "openai/gpt-oss-20b"
+  },
   "slug": "us-midterms-2026",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "us midterms 2026",
+  "status": "live",
+  "article": {
+    "slug": "us-midterms-2026",
+    "reason": "2 new update(s)",
+    "locales": {
+      "de": {
+        "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohung der Trump-Administration, Wahlhelfer wegen angeblicher Nichtbürgerstimmen zu verfolgen.",
+        "body": [
+          "Ein Bundesrichter in Kalifornien verhinderte, dass die Trump-Administration Wahlbeamte mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerstimmen bedrohte. Der Beschluss wurde am 31. Oktober 2026 erlassen.",
+          "Laut Fox News entschied der Richter, dass das Justizministerium seine Befugnisse überschritten hatte. Das Urteil erschien ebenfalls in The Hill.",
+          "Die Entscheidung des Richters befasste sich mit Drohungen der Trump-Administration, laut dem Beschluss des Richters. Das Urteil war Teil eines umfassenderen Versuchs, angebliche Nichtbürgerstimmen zu adressieren.",
+          "Der Verkauf von Patriot-Missilen an die Ukraine wurde von den USA genehmigt, laut Al Jazeera. Der Verkauf beläuft sich auf 2,1 Milliarden US-Dollar.",
+          "Dawn berichtete ebenfalls über die Genehmigung des Missile-Verkaufs. Der Verkauf ist Teil der fortlaufenden US-Unterstützung für die Ukraine.",
+          "Beide Ereignisse wurden am selben Tag von mehreren Medien berichtet. Das Urteil des Richters wurde von Fox News und The Hill berichtet, während der Missile-Verkauf von Al Jazeera und Dawn berichtet wurde.",
+          "Der Beschluss des Richters wurde in Kalifornien erlassen, einem Bundesstaat, der Zwischenwahlen abhalten wird. Das Urteil könnte Wahlbeamte im Bundesstaat betreffen.",
+          "Der US-Verkauf von Patriot-Missilen ist eine Verteidigungsbeschaffung. Er folgt der Politik der Trump-Administration, die Ukraine zu unterstützen."
+        ],
+        "facts": [
+          "USA genehmigten Verkauf von Patriot-Missilen im Wert von 2,1 Milliarden US-Dollar an die Ukraine",
+          "Bundesrichter in Kalifornien blockierte Drohungen des Justizministeriums der Trump-Administration, Wahlhelfer zu verfolgen",
+          "Genehmigung des Verkaufs wurde von Al Jazeera und Dawn berichtet",
+          "Richterliche Entscheidung wurde von Fox News und The Hill berichtet"
+        ],
+        "title": "Richter blockiert Drohungen des Justizministeriums der Trump-Administration gegen Wahlbeamte",
+        "context": "Die Vereinigten Staaten haben Verteidigungsgeschäfte mit der Ukraine während des laufenden Konflikts genehmigt. Die Trump-Administration steht wegen wahlbezogener Behauptungen unter Kritik."
+      },
+      "en": {
+        "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
+        "body": [
+          "A federal judge in California blocked the Trump administration from threatening election officials with criminal prosecution over alleged noncitizen voting claims. The order was issued on October 31, 2026.",
+          "According to Fox News, the judge ruled that the Department of Justice had overstepped its authority. The ruling also appeared in The Hill.",
+          "The judge's decision addressed threats made by the Trump administration, according to the judge's order. The decision was part of a broader effort to address alleged noncitizen voting.",
+          "The sale of Patriot missiles to Ukraine was approved by the United States, according to Al Jazeera. The sale totals $2.1 billion.",
+          "Dawn also reported the approval of the missile sale. The sale is part of ongoing U.S. support for Ukraine.",
+          "Both events were reported by multiple outlets on the same day. The judge ruling was reported by Fox News and The Hill, while the missile sale was reported by Al Jazeera and Dawn.",
+          "The judge's order was issued in California, a state that will hold midterm elections. The ruling may affect election officials in the state.",
+          "The U.S. sale of Patriot missiles is a defense procurement decision. It follows the Trump administration's policy to support Ukraine."
+        ],
+        "facts": [
+          "US approved $2.1bn Patriot missile sale to Ukraine",
+          "Federal judge in California blocked Trump DOJ threats to prosecute election workers",
+          "Sale approval reported by Al Jazeera and Dawn",
+          "Judge ruling reported by Fox News and The Hill"
+        ],
+        "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+        "context": "The United States has approved defense sales to Ukraine during the ongoing conflict. The Trump administration has faced criticism over election-related claims.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [],
+    "updatedAt": "2026-10-31T06:41:43.462Z"
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die US-Zwischenwahlen 2026 entfalten sich im Spannungsfeld politischer Konflikte und rechtlicher Herausforderungen.",
+      "title": "US-Zwischenwahlen 2026"
+    },
+    "en": {
+      "dek": "The 2026 mid‑term elections in the United States are unfolding amid political tensions and legal challenges.",
+      "title": "2026 mid‑term elections"
+    },
+    "es": {
+      "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos se desarrollan en medio de tensiones políticas y desafíos legales.",
+      "title": "Elecciones de mitad de mandato 2026"
+    },
+    "fr": {
+      "dek": "Les élections de mi-mandat de 2026 aux États-Unis se déroulent dans un climat de tensions politiques et de défis juridiques.",
+      "title": "élections de mi-mandat 2026 aux États-Unis"
+    },
+    "it": {
+      "dek": "Le elezioni di metà mandato del 2026 negli Stati Uniti si svolgono in mezzo a tensioni politiche e sfide legali.",
+      "title": "elezioni di metà mandato 2026"
+    },
+    "ja": {
+      "dek": "2026年の米国中間選挙は、政治的緊張と法的挑戦の中で進行しています",
+      "title": "米国2026年中間選挙"
+    },
+    "ko": {
+      "dek": "2026년 미국 중간선거는 정치적 긴장과 법적 도전 속에서 진행되고 있다.",
+      "title": "미국 2026년 중간선거"
+    },
+    "pt": {
+      "dek": "As eleições de meio de mandato de 2026 nos Estados Unidos estão a desenrolar‑se em meio a tensões políticas e desafios legais.",
+      "title": "Eleições de meio de mandato 2026"
+    },
+    "zh": {
+      "dek": "2026年美国中期选举正处于政治紧张和法律挑战之中",
+      "title": "2026年美国中期选举"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793429823000-cjd5",
+      "at": "2026-10-31T06:57:03.000Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Melaka state election campaign begins",
+          "body": "Melaka state election campaign began on Saturday, according to South China Morning Post. The election is being used as a test for Anwar Ibrahim’s coalition, according to CNA."
+        },
+        "it": {
+          "headline": "Inizia la campagna elettorale dello stato di Melaka",
+          "body": "La campagna elettorale dello stato di Melaka è iniziata sabato, secondo il South China Morning Post. Le elezioni sono usate come prova per la coalizione di Anwar Ibrahim, secondo CNA."
+        },
+        "fr": {
+          "headline": "La campagne électorale de l'État de Melaka commence",
+          "body": "La campagne électorale de l'État de Melaka a commencé samedi, selon le South China Morning Post. L'élection est utilisée comme un test pour la coalition d'Anwar Ibrahim, selon CNA."
+        },
+        "es": {
+          "headline": "Comienza la campaña electoral del estado de Melaka",
+          "body": "La campaña electoral del estado de Melaka comenzó el sábado, según el South China Morning Post. La elección se está utilizando como prueba para la coalición de Anwar Ibrahim, según CNA."
+        },
+        "de": {
+          "headline": "Wahlkampf im Bundesstaat Melaka beginnt",
+          "body": "Der Wahlkampf im Bundesstaat Melaka begann am Samstag, so die South China Morning Post. Die Wahl wird laut CNA als Test für die Koalition von Anwar Ibrahim genutzt."
+        },
+        "pt": {
+          "headline": "Inicia a campanha eleitoral do estado de Melaka",
+          "body": "A campanha eleitoral do estado de Melaka começou no sábado, segundo o South China Morning Post. A eleição está a ser usada como um teste para a coalizão de Anwar Ibrahim, segundo a CNA."
+        },
+        "ko": {
+          "headline": "말라카 주 선거 캠페인 시작",
+          "body": "말라카 주 선거 캠페인은 토요일에 시작되었으며, 이는 사우스 차이나 모닝 포스트가 보도했다. 이 선거는 안와르 이브라힘 연합의 시험대가 되고 있다고 CNA가 전했다."
+        },
+        "zh": {
+          "headline": "马六甲州选举竞选活动于周六开始",
+          "body": "马六甲州选举竞选活动于周六开始，南华早报称。该选举被视为安瓦尔·易卜拉欣联盟的试金石，CNA 报道。"
+        },
+        "ja": {
+          "headline": "マラッカ州選挙キャンペーンが始まる",
+          "body": "マラッカ州選挙キャンペーンは土曜日に始まり、サウス・チュナン・モーニング・ポストによれば。選挙はアンワル・イブラヒムの連合を試す場として利用されているとCNAは述べている。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "South China Morning Post",
+          "title": "Malaysia’s Melaka poll begins as 79 cleared in test for Anwar’s coalition",
+          "url": "https://www.scmp.com/week-asia/politics/article/3372821/malaysias-melaka-poll-begins-79-cleared-test-anwars-coalition",
+          "publishedAt": "2026-10-31T06:57:03.000Z"
+        },
+        {
+          "outlet": "CNA",
+          "title": "Melaka state election: Anwar's PH, Muhyiddin's Bersatu avoid clashes in 4 seats as candidates confirmed",
+          "url": "https://www.channelnewsasia.com/asia/melaka-state-election-ph-bersatu-anwar-muhyiddin-6502106",
+          "publishedAt": "2026-10-31T06:47:41.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T05:57:05.000Z",
+      "id": "u-1793426225000-hzs8",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerstimmen zu bedrohen, so Fox News. Das Urteil wurde ebenfalls von The Hill berichtet.",
+          "headline": "Richter blockiert DOJ-Bedrohungen der Trump-Administration gegen Wahlbeamte"
+        },
+        "en": {
+          "body": "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News. The ruling was also reported by The Hill.",
+          "headline": "Judge blocks Trump DOJ threats against election officials"
+        },
+        "es": {
+          "body": "Un juez federal en California ordenó a la administración de Trump que dejara de amenazar a los funcionarios electorales con procesos penales por supuestas votaciones de no ciudadanos, según Fox News. La decisión también fue reportada por The Hill.",
+          "headline": "Juez bloquea amenazas del DOJ de Trump contra funcionarios electorales"
+        },
+        "fr": {
+          "body": "Un juge fédéral de Californie a ordonné à l'administration Trump d'arrêter de menacer les responsables électoraux d'une poursuite pénale pour des allégations de vote par des non-citoyens, selon Fox News. Le jugement a également été rapporté par The Hill.",
+          "headline": "Un juge bloque les menaces du DOJ de Trump contre les responsables électoraux"
+        },
+        "it": {
+          "body": "Un giudice federale in California ha ordinato all'amministrazione Trump di cessare di minacciare gli ufficiali elettorali con procedimenti penali per presunte votazioni da parte di non cittadini, secondo Fox News. La sentenza è stata riportata anche da The Hill.",
+          "headline": "Giudice blocca minacce del DOJ di Trump contro gli ufficiali elettorali"
+        },
+        "ja": {
+          "body": "カリフォルニア州の連邦裁判官が、トランプ政権に対し、非市民投票主張に関する刑事訴追の脅迫をやめるよう命じたとFox Newsは報じた。判決はThe Hillでも報じられた。",
+          "headline": "裁判官、トランプ大統領府の選挙管理者への脅迫を阻止"
+        },
+        "ko": {
+          "body": "캘리포니아의 연방 판사는 트럼프 행정부가 비시민 투표 주장에 대해 선거 관리자를 범죄 기소 위협하는 것을 중단하도록 명령했다. 이는 Fox News에 따르면이며, The Hill에서도 보도되었다.",
+          "headline": "판사, 트럼프 행정부가 선거 관리자를 위협한 것을 금지"
+        },
+        "pt": {
+          "body": "Um juiz federal na Califórnia ordenou que a administração Trump cessasse de ameaçar funcionários eleitorais com processos criminais por alegações de votação por não-cidadãos, segundo a Fox News. A decisão também foi reportada pelo The Hill.",
+          "headline": "Juiz bloqueia ameaças do DOJ de Trump contra funcionários eleitorais"
+        },
+        "zh": {
+          "body": "加利福尼亚一名联邦法官下令特朗普政府停止以涉嫌非公民投票为由威胁选举官员进行刑事起诉，福克斯新闻报道。该裁决亦被The Hill报道。",
+          "headline": "法官阻止特朗普政府对选举官员的威胁"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-doj-threats-against-election-workers-ahead-2026-midterms",
+          "title": "Federal judge blocks Trump DOJ threats against election workers ahead of 2026 midterms",
+          "outlet": "Fox News",
+          "publishedAt": "2026-10-31T05:57:05.000Z"
+        },
+        {
+          "url": "https://thehill.com/regulation/court-battles/6185891-judge-stops-trump-election-threats/",
+          "title": "Judge blocks DOJ from threatening election officials over noncitizen voting claims",
+          "outlet": "The Hill",
+          "publishedAt": "2026-10-31T03:01:46.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T04:51:25.000Z",
+      "id": "u-1793422285000-bc3p",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die Vereinigten Staaten haben laut Al Jazeera den Verkauf von Patriot-Missilen an die Ukraine genehmigt. Dawn berichtete ebenfalls über die Genehmigung.",
+          "headline": "USA genehmigt Patriot-Missil-Verkauf an die Ukraine"
+        },
+        "en": {
+          "body": "The United States approved a sale of Patriot missiles to Ukraine, according to Al Jazeera. Dawn also reported the approval.",
+          "headline": "US approves Patriot missile sale to Ukraine"
+        },
+        "es": {
+          "body": "Los Estados Unidos aprobaron la venta de misiles Patriot a Ucrania, según Al Jazeera. Dawn también informó sobre la aprobación.",
+          "headline": "EE. UU. aprueba venta de misiles Patriot a Ucrania"
+        },
+        "fr": {
+          "body": "Les États-Unis ont approuvé la vente de missiles Patriot à l'Ukraine, selon Al Jazeera. Dawn a également rapporté l'approbation.",
+          "headline": "Les États-Unis approuvent la vente de missiles Patriot à l'Ukraine"
+        },
+        "it": {
+          "body": "Gli Stati Uniti hanno approvato la vendita di missili Patriot all'Ucraina, secondo Al Jazeera. Anche Dawn ha riportato l'approvazione.",
+          "headline": "Gli Stati Uniti approvano la vendita di missili Patriot all'Ucraina"
+        },
+        "ja": {
+          "body": "米国がパトリオットミサイルのウクライナ販売を承認したとAl Jazeeraは報じた。Dawnも承認を報じた。",
+          "headline": "米国、パトリオットミサイルのウクライナ販売を承認"
+        },
+        "ko": {
+          "body": "미국은 알자지르에 따르면 파트리어트 미사일을 우크라이나에 판매하는 것을 승인했다. Dawn도 이 승인을 보도했다.",
+          "headline": "미국, 우크라이나에 파트리어트 미사일 판매 승인"
+        },
+        "pt": {
+          "body": "Os Estados Unidos aprovaram a venda de mísseis Patriot à Ucrânia, segundo a Al Jazeera. Dawn também reportou a aprovação.",
+          "headline": "Estados Unidos aprovam venda de míssil Patriot à Ucrânia"
+        },
+        "zh": {
+          "body": "据半岛电视台报道，美国已批准向乌克兰出售爱国者导弹。Dawn也报道了该批准。",
+          "headline": "美国批准向乌克兰出售爱国者导弹"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/31/us-greenlights-2-1bn-patriot-missile-sale-to-ukraine?traffic_source=rss",
+          "title": "US greenlights $2.1bn Patriot missile sale to Ukraine",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-10-31T04:51:25.000Z"
+        },
+        {
+          "url": "https://www.dawn.com/news/2041152/trump-admin-approves-potential-patriot-missiles-sale-to-ukraine",
+          "title": "Trump admin approves potential Patriot missiles sale to Ukraine",
+          "outlet": "Dawn",
+          "publishedAt": "2026-10-31T04:45:30.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "us midterms",
     "trump",
@@ -15,130 +290,6 @@
     "election",
     "midterm elections",
     "israel criticism"
-  ],
-  "startedAt": "2026-10-31T06:33:27.688Z",
-  "endedAt": null,
-  "updatedAt": "2026-10-31T06:36:41.577Z",
-  "articleSlug": "us-midterms-2026",
-  "sourceCount": 4,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1793426225000-hzs8",
-      "at": "2026-10-31T05:57:05.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Judge blocks Trump DOJ threats against election officials",
-          "body": "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News. The ruling was also reported by The Hill."
-        },
-        "fr": {
-          "headline": "Un juge bloque les menaces du DOJ de Trump contre les responsables électoraux",
-          "body": "Un juge fédéral de Californie a ordonné à l'administration Trump d'arrêter de menacer les responsables électoraux d'une poursuite pénale pour des allégations de vote par des non-citoyens, selon Fox News. Le jugement a également été rapporté par The Hill."
-        },
-        "es": {
-          "headline": "Juez bloquea amenazas del DOJ de Trump contra funcionarios electorales",
-          "body": "Un juez federal en California ordenó a la administración de Trump que dejara de amenazar a los funcionarios electorales con procesos penales por supuestas votaciones de no ciudadanos, según Fox News. La decisión también fue reportada por The Hill."
-        },
-        "it": {
-          "headline": "Giudice blocca minacce del DOJ di Trump contro gli ufficiali elettorali",
-          "body": "Un giudice federale in California ha ordinato all'amministrazione Trump di cessare di minacciare gli ufficiali elettorali con procedimenti penali per presunte votazioni da parte di non cittadini, secondo Fox News. La sentenza è stata riportata anche da The Hill."
-        },
-        "de": {
-          "headline": "Richter blockiert DOJ-Bedrohungen der Trump-Administration gegen Wahlbeamte",
-          "body": "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerstimmen zu bedrohen, so Fox News. Das Urteil wurde ebenfalls von The Hill berichtet."
-        },
-        "ja": {
-          "headline": "裁判官、トランプ大統領府の選挙管理者への脅迫を阻止",
-          "body": "カリフォルニア州の連邦裁判官が、トランプ政権に対し、非市民投票主張に関する刑事訴追の脅迫をやめるよう命じたとFox Newsは報じた。判決はThe Hillでも報じられた。"
-        },
-        "pt": {
-          "headline": "Juiz bloqueia ameaças do DOJ de Trump contra funcionários eleitorais",
-          "body": "Um juiz federal na Califórnia ordenou que a administração Trump cessasse de ameaçar funcionários eleitorais com processos criminais por alegações de votação por não-cidadãos, segundo a Fox News. A decisão também foi reportada pelo The Hill."
-        },
-        "ko": {
-          "headline": "판사, 트럼프 행정부가 선거 관리자를 위협한 것을 금지",
-          "body": "캘리포니아의 연방 판사는 트럼프 행정부가 비시민 투표 주장에 대해 선거 관리자를 범죄 기소 위협하는 것을 중단하도록 명령했다. 이는 Fox News에 따르면이며, The Hill에서도 보도되었다."
-        },
-        "zh": {
-          "headline": "法官阻止特朗普政府对选举官员的威胁",
-          "body": "加利福尼亚一名联邦法官下令特朗普政府停止以涉嫌非公民投票为由威胁选举官员进行刑事起诉，福克斯新闻报道。该裁决亦被The Hill报道。"
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Fox News",
-          "title": "Federal judge blocks Trump DOJ threats against election workers ahead of 2026 midterms",
-          "url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-doj-threats-against-election-workers-ahead-2026-midterms",
-          "publishedAt": "2026-10-31T05:57:05.000Z"
-        },
-        {
-          "outlet": "The Hill",
-          "title": "Judge blocks DOJ from threatening election officials over noncitizen voting claims",
-          "url": "https://thehill.com/regulation/court-battles/6185891-judge-stops-trump-election-threats/",
-          "publishedAt": "2026-10-31T03:01:46.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793422285000-bc3p",
-      "at": "2026-10-31T04:51:25.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "US approves Patriot missile sale to Ukraine",
-          "body": "The United States approved a sale of Patriot missiles to Ukraine, according to Al Jazeera. Dawn also reported the approval."
-        },
-        "fr": {
-          "headline": "Les États-Unis approuvent la vente de missiles Patriot à l'Ukraine",
-          "body": "Les États-Unis ont approuvé la vente de missiles Patriot à l'Ukraine, selon Al Jazeera. Dawn a également rapporté l'approbation."
-        },
-        "es": {
-          "headline": "EE. UU. aprueba venta de misiles Patriot a Ucrania",
-          "body": "Los Estados Unidos aprobaron la venta de misiles Patriot a Ucrania, según Al Jazeera. Dawn también informó sobre la aprobación."
-        },
-        "it": {
-          "headline": "Gli Stati Uniti approvano la vendita di missili Patriot all'Ucraina",
-          "body": "Gli Stati Uniti hanno approvato la vendita di missili Patriot all'Ucraina, secondo Al Jazeera. Anche Dawn ha riportato l'approvazione."
-        },
-        "de": {
-          "headline": "USA genehmigt Patriot-Missil-Verkauf an die Ukraine",
-          "body": "Die Vereinigten Staaten haben laut Al Jazeera den Verkauf von Patriot-Missilen an die Ukraine genehmigt. Dawn berichtete ebenfalls über die Genehmigung."
-        },
-        "ja": {
-          "headline": "米国、パトリオットミサイルのウクライナ販売を承認",
-          "body": "米国がパトリオットミサイルのウクライナ販売を承認したとAl Jazeeraは報じた。Dawnも承認を報じた。"
-        },
-        "pt": {
-          "headline": "Estados Unidos aprovam venda de míssil Patriot à Ucrânia",
-          "body": "Os Estados Unidos aprovaram a venda de mísseis Patriot à Ucrânia, segundo a Al Jazeera. Dawn também reportou a aprovação."
-        },
-        "ko": {
-          "headline": "미국, 우크라이나에 파트리어트 미사일 판매 승인",
-          "body": "미국은 알자지르에 따르면 파트리어트 미사일을 우크라이나에 판매하는 것을 승인했다. Dawn도 이 승인을 보도했다."
-        },
-        "zh": {
-          "headline": "美国批准向乌克兰出售爱国者导弹",
-          "body": "据半岛电视台报道，美国已批准向乌克兰出售爱国者导弹。Dawn也报道了该批准。"
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Al Jazeera",
-          "title": "US greenlights $2.1bn Patriot missile sale to Ukraine",
-          "url": "https://www.aljazeera.com/news/2026/10/31/us-greenlights-2-1bn-patriot-missile-sale-to-ukraine?traffic_source=rss",
-          "publishedAt": "2026-10-31T04:51:25.000Z"
-        },
-        {
-          "outlet": "Dawn",
-          "title": "Trump admin approves potential Patriot missiles sale to Ukraine",
-          "url": "https://www.dawn.com/news/2041152/trump-admin-approves-potential-patriot-missiles-sale-to-ukraine",
-          "publishedAt": "2026-10-31T04:45:30.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.jpost.com/israel-election-2026/article-913379",
@@ -189,106 +340,17 @@
     "https://www.aljazeera.com/news-analysis/2026/10/31/fake-polls-expose-vulnerabilities-in-us-elections-ahead-of-midterms?traffic_source=rss",
     "https://www.straitstimes.com/world/united-states/trump-administration-accelerates-criminal-probe-into-alaska-senate-race",
     "https://www.axios.com/local/phoenix/2026/10/31/doj-arizona-voter-registration-probe-election",
-    "https://thehill.com/newsletters/defense-national-security/6185817-us-approves-ukraine-patriot-missiles/"
+    "https://thehill.com/newsletters/defense-national-security/6185817-us-approves-ukraine-patriot-missiles/",
+    "https://www.scmp.com/week-asia/politics/article/3372821/malaysias-melaka-poll-begins-79-cleared-test-anwars-coalition",
+    "https://www.channelnewsasia.com/asia/melaka-state-election-ph-bersatu-anwar-muhyiddin-6502106",
+    "https://www.thehindu.com/news/international/trump-backtracks-on-rallies-in-turbulent-end-to-midterms-campaign/article71648419.ece",
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE85MHNYTkZFQzh2WWQ3VjB6cjlxcXlJMVI5dWphYUdicTB6bmc0RnlBbGZTY3hDREZwcExTbVNIVTJyVzl4aEI5SzdNcG9GdFNyaU5UQWJFM1hmVWpIcVd1VkdWcW1hRWpv?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "2026 mid‑term elections",
-      "dek": "The 2026 mid‑term elections in the United States are unfolding amid political tensions and legal challenges."
-    },
-    "de": {
-      "title": "US-Zwischenwahlen 2026",
-      "dek": "Die US-Zwischenwahlen 2026 entfalten sich im Spannungsfeld politischer Konflikte und rechtlicher Herausforderungen."
-    },
-    "es": {
-      "title": "Elecciones de mitad de mandato 2026",
-      "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos se desarrollan en medio de tensiones políticas y desafíos legales."
-    },
-    "fr": {
-      "title": "élections de mi-mandat 2026 aux États-Unis",
-      "dek": "Les élections de mi-mandat de 2026 aux États-Unis se déroulent dans un climat de tensions politiques et de défis juridiques."
-    },
-    "pt": {
-      "title": "Eleições de meio de mandato 2026",
-      "dek": "As eleições de meio de mandato de 2026 nos Estados Unidos estão a desenrolar‑se em meio a tensões políticas e desafios legais."
-    },
-    "it": {
-      "title": "elezioni di metà mandato 2026",
-      "dek": "Le elezioni di metà mandato del 2026 negli Stati Uniti si svolgono in mezzo a tensioni politiche e sfide legali."
-    },
-    "ko": {
-      "title": "미국 2026년 중간선거",
-      "dek": "2026년 미국 중간선거는 정치적 긴장과 법적 도전 속에서 진행되고 있다."
-    },
-    "ja": {
-      "title": "米国2026年中間選挙",
-      "dek": "2026年の米国中間選挙は、政治的緊張と法的挑戦の中で進行しています"
-    },
-    "zh": {
-      "title": "2026年美国中期选举",
-      "dek": "2026年美国中期选举正处于政治紧张和法律挑战之中"
-    }
-  },
-  "article": {
-    "slug": "us-midterms-2026",
-    "updatedAt": "2026-10-31T06:41:43.462Z",
-    "reason": "2 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
-        "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
-        "facts": [
-          "US approved $2.1bn Patriot missile sale to Ukraine",
-          "Federal judge in California blocked Trump DOJ threats to prosecute election workers",
-          "Sale approval reported by Al Jazeera and Dawn",
-          "Judge ruling reported by Fox News and The Hill"
-        ],
-        "body": [
-          "A federal judge in California blocked the Trump administration from threatening election officials with criminal prosecution over alleged noncitizen voting claims. The order was issued on October 31, 2026.",
-          "According to Fox News, the judge ruled that the Department of Justice had overstepped its authority. The ruling also appeared in The Hill.",
-          "The judge's decision addressed threats made by the Trump administration, according to the judge's order. The decision was part of a broader effort to address alleged noncitizen voting.",
-          "The sale of Patriot missiles to Ukraine was approved by the United States, according to Al Jazeera. The sale totals $2.1 billion.",
-          "Dawn also reported the approval of the missile sale. The sale is part of ongoing U.S. support for Ukraine.",
-          "Both events were reported by multiple outlets on the same day. The judge ruling was reported by Fox News and The Hill, while the missile sale was reported by Al Jazeera and Dawn.",
-          "The judge's order was issued in California, a state that will hold midterm elections. The ruling may affect election officials in the state.",
-          "The U.S. sale of Patriot missiles is a defense procurement decision. It follows the Trump administration's policy to support Ukraine."
-        ],
-        "context": "The United States has approved defense sales to Ukraine during the ongoing conflict. The Trump administration has faced criticism over election-related claims.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Richter blockiert Drohungen des Justizministeriums der Trump-Administration gegen Wahlbeamte",
-        "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohung der Trump-Administration, Wahlhelfer wegen angeblicher Nichtbürgerstimmen zu verfolgen.",
-        "facts": [
-          "USA genehmigten Verkauf von Patriot-Missilen im Wert von 2,1 Milliarden US-Dollar an die Ukraine",
-          "Bundesrichter in Kalifornien blockierte Drohungen des Justizministeriums der Trump-Administration, Wahlhelfer zu verfolgen",
-          "Genehmigung des Verkaufs wurde von Al Jazeera und Dawn berichtet",
-          "Richterliche Entscheidung wurde von Fox News und The Hill berichtet"
-        ],
-        "body": [
-          "Ein Bundesrichter in Kalifornien verhinderte, dass die Trump-Administration Wahlbeamte mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerstimmen bedrohte. Der Beschluss wurde am 31. Oktober 2026 erlassen.",
-          "Laut Fox News entschied der Richter, dass das Justizministerium seine Befugnisse überschritten hatte. Das Urteil erschien ebenfalls in The Hill.",
-          "Die Entscheidung des Richters befasste sich mit Drohungen der Trump-Administration, laut dem Beschluss des Richters. Das Urteil war Teil eines umfassenderen Versuchs, angebliche Nichtbürgerstimmen zu adressieren.",
-          "Der Verkauf von Patriot-Missilen an die Ukraine wurde von den USA genehmigt, laut Al Jazeera. Der Verkauf beläuft sich auf 2,1 Milliarden US-Dollar.",
-          "Dawn berichtete ebenfalls über die Genehmigung des Missile-Verkaufs. Der Verkauf ist Teil der fortlaufenden US-Unterstützung für die Ukraine.",
-          "Beide Ereignisse wurden am selben Tag von mehreren Medien berichtet. Das Urteil des Richters wurde von Fox News und The Hill berichtet, während der Missile-Verkauf von Al Jazeera und Dawn berichtet wurde.",
-          "Der Beschluss des Richters wurde in Kalifornien erlassen, einem Bundesstaat, der Zwischenwahlen abhalten wird. Das Urteil könnte Wahlbeamte im Bundesstaat betreffen.",
-          "Der US-Verkauf von Patriot-Missilen ist eine Verteidigungsbeschaffung. Er folgt der Politik der Trump-Administration, die Ukraine zu unterstützen."
-        ],
-        "context": "Die Vereinigten Staaten haben Verteidigungsgeschäfte mit der Ukraine während des laufenden Konflikts genehmigt. Die Trump-Administration steht wegen wahlbezogener Behauptungen unter Kritik."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Tagesschau",
-      "Der Spiegel",
-      "NZZ",
-      "Tages-Anzeiger"
-    ],
-    "lastUpdateModel": "openai/gpt-oss-20b"
-  }
+  "startedAt": "2026-10-31T06:33:27.688Z",
+  "updatedAt": "2026-10-31T07:03:54.706Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": "us-midterms-2026",
+  "sourceCount": 6,
+  "seenHeadlines": []
 }
