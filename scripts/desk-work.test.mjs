@@ -752,7 +752,7 @@ const NOTICES = [
   },
 ];
 
-function scanner(reply, notices = NOTICES) {
+function scanner(reply, notices = NOTICES, chat = null) {
   const marker = (name) => {
     const line = SOURCE.split('\n').find((l) => l.startsWith(`const ${name} = `));
     return line.slice(`const ${name} = `.length).replace(/;$/, '');
@@ -769,7 +769,7 @@ function scanner(reply, notices = NOTICES) {
     return scanForLeads;
     `,
   )(
-    async () => ({ data: reply }),
+    chat || (async () => ({ data: reply })),
     async () => notices,
     () => {},
     () => '2026-10-31T08:00:00.000Z',
@@ -883,6 +883,29 @@ test('a notice without a subject supports no story', async () => {
   }] }, empty)(state, []);
   assert.equal(added, 0, 'a pick from a nameless notice is not filed');
   assert.equal(state.leads.length, 0);
+});
+
+test('a model that answers with prose does not cost the desk the whole day', async () => {
+  // Production: "No valid JSON could be extracted from response: We need to
+  // output JSON with leads array…". The first shift lost its scan to that.
+  const many = Array.from({ length: 20 }, (_, i) => ({
+    outlet: `Cabinet ${i}`,
+    title: `Indictment in the export of dual-use chips to a shell company ${i}`,
+    url: `https://example.org/notice/${i}`,
+  }));
+  const calls = [];
+  const chat = async (_model, _messages, options) => {
+    calls.push(options);
+    if (calls.length === 1) throw new Error('No valid JSON could be extracted from response');
+    return { data: { leads: [WORLD_PICK] } };
+  };
+  const state = { leads: [] };
+  const added = await scanner(null, many, chat)(state, []);
+  assert.equal(calls.length, 2, 'the desk asks a second time');
+  assert.ok(calls[1].maxTokens > calls[0].maxTokens, 'the second answer has more room');
+  assert.ok(calls[1].temperature < calls[0].temperature, 'the second answer is cooler');
+  assert.equal(added, 1, 'the story found in the second pass is kept');
+  assert.equal(state.leads[0].url, many[0].url, 'the pick maps to the notices of the second pass');
 });
 
 // ───────────────────── who the desk writes to ─────────────────────

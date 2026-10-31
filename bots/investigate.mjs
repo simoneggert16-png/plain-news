@@ -1673,20 +1673,20 @@ async function scanForLeads(state, dossiers) {
     return 0;
   }
 
-  const list = items
-    .map((it, i) => `#${i + 1} [${it.outlet}] ${String(it.title || '').replace(/\s+/g, ' ').slice(0, 220)}\n${it.url}`)
-    .join('\n\n');
+  const noticesOf = (subset) =>
+    subset
+      .map((it, i) => `#${i + 1} [${it.outlet}] ${String(it.title || '').replace(/\s+/g, ' ').slice(0, 220)}\n${it.url}`)
+      .join('\n\n');
 
-  let data = null;
-  try {
-    ({ data } = await chatJSON('desk', [
+  const ask = async (subset, options) => {
+    const { data } = await chatJSON('desk', [
       {
         role: 'system',
         content: `You are the investigative editor of PLAIN. Every morning you read what the institutions you follow have published and you decide which of it deserves an investigation: documents, data and questions, weeks of work. The desk works internationally — a notice about one country's own affairs is not the desk's story unless a cross-border institution, money or people are involved, and Switzerland is where the paper is published, not what it covers. You write about people: a notice without anyone who loses something, profits or lives with the consequences is a procedure, not a story. Return JSON only.`,
       },
       {
         role: 'user',
-        content: `What the institutions published today:\n\n${list}\n\nPick at most three notices that could start an investigation. A notice qualifies only if ALL of these hold:
+        content: `What the institutions published today:\n\n${noticesOf(subset)}\n\nPick at most three notices that could start an investigation. A notice qualifies only if ALL of these hold:
 - it points at something concrete: a decision, a payment, an award, a charge, a settlement, a seizure, a sanction, a contract;
 - it is answerable with public documents and questions to the institutions — no hidden sources needed;
 - it has people in it: who is affected, who profits, who is left with the consequences;
@@ -1700,16 +1700,34 @@ ${memoryBlock(deskMemory(dossiers, state)) || '(nothing yet — this would be th
 
 Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth":true,"title":"…","angle":"…","centre":"…","people":"…","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["…"]}]}. "n" is the number of the notice in the list above. Return {"leads":[]} if nothing qualifies.`,
       },
-    ], { temperature: 0.35, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 }));
+    ], options);
+    return (Array.isArray(data?.leads) ? data.leads : []).slice(0, 3);
+  };
+
+  // The desk's whole day of leads hangs on one answer. A model that writes
+  // its reasoning into the reply instead of the JSON ("We need to output JSON
+  // with leads array…") cost the desk a scan in production — it does not get
+  // to cost the whole day: fewer notices, cooler, more room to answer.
+  let shelf = items;
+  let picks = [];
+  try {
+    picks = await ask(items, { temperature: 0.35, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 });
   } catch (err) {
     log(`SCAN  the desk could not read the front pages: ${err.message}`);
-    return 0;
+    shelf = items.slice(0, 12);
+    if (shelf.length === items.length) return 0;
+    log(`SCAN  second pass over ${shelf.length} notices`);
+    try {
+      picks = await ask(shelf, { temperature: 0.1, maxTokens: 3000, numCtx: 32768, timeoutMs: 120000 });
+    } catch (err2) {
+      log(`SCAN  second pass failed too: ${err2.message}`);
+      return 0;
+    }
   }
 
-  const picks = (Array.isArray(data?.leads) ? data.leads : []).slice(0, 3);
   let added = 0;
   for (const pick of picks) {
-    const item = items[Number(pick?.n) - 1];
+    const item = shelf[Number(pick?.n) - 1];
     const worth = pick?.worth === true || pick?.worth === 'true' || pick?.worth === 1;
     if (!item || !worth || String(pick.title || '').length < 12) continue;
     // A notice that names nothing cannot support a story. The desk's first
