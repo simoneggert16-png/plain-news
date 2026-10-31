@@ -52,9 +52,12 @@ const usable = (list) => list.filter((m) => m.startsWith('ollama/') || process.e
 export const MODELS = {
   desk:       usable([process.env.DESK_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B, NVIDIA_MINIMAX, OSS_20B]),
   writer:     usable([process.env.WRITER_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B, NVIDIA_MINIMAX, OSS_20B]),
-  // Translation is the highest-volume job: the fastest model that passes the
-  // language/terminology gates wins, with 120B as the second opinion.
-  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_DEEPSEEK, GEMMA_31B, NVIDIA_STEP, OSS_120B, OSS_20B, NVIDIA_MINIMAX]),
+  // Translation is the highest-volume job, and the models are shared with the
+  // newsroom, the ticker and the desk. On 2026-10-31 evening deepseek and
+  // step both sat past 90 seconds on a five-word question while minimax
+  // answered in 0.7 s - a slow first model is a lost job for a whole article.
+  // The fastest responder goes first; the rest stay as second opinions.
+  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, GEMMA_31B, NVIDIA_STEP, OSS_120B, OSS_20B]),
   editor:     usable([process.env.EDITOR_MODEL || NVIDIA_DEEPSEEK, NVIDIA_STEP, OSS_120B, GEMMA_31B]),
   // Live ticker: small prompts every few minutes, still needs clean prose.
   live:       usable([process.env.LIVE_MODEL || NVIDIA_STEP, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B, NVIDIA_MINIMAX]),
