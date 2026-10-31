@@ -1209,3 +1209,29 @@ test('a category a model invents is not a section of the paper', () => {
   assert.equal(pickCategory(undefined), 'world');
   assert.equal(pickCategory('health'), 'health');
 });
+
+test('a story that three shifts could not grow past one report is parked', () => {
+  const park = new Function(`
+    const nowISO = () => '2026-10-31T00:00:00.000Z';
+    const log = () => {};
+    ${take('note')}
+    return ${take('parkIfHopeless')};
+  `)();
+  const dossier = (over = {}) => ({
+    slug: 'call-of-duty-uses-seoul-footage',
+    status: 'research',
+    sources: [{ id: 'S1' }],
+    blankShifts: 3,
+    ...over,
+  });
+
+  const stuck = dossier();
+  assert.equal(park(stuck), true);
+  assert.equal(stuck.status, 'dropped', 'the dossier leaves the active list');
+  assert.match(stuck.parkReason, /three shifts without a new source/);
+  assert.equal(stuck.history.at(-1).status, 'dropped', 'the reason is in the file, not only in the log');
+
+  assert.equal(park(dossier({ blankShifts: 2 })), false, 'two empty shifts are a normal week');
+  assert.equal(park(dossier({ sources: [{ id: 'S1' }, { id: 'S2' }, { id: 'S3' }] })), false, 'a story with footing is not parked');
+  assert.equal(park(dossier({ letters: [{ id: 'L1', status: 'draft', sentAt: '2026-10-31T10:00:00.000Z' }] })), false, 'a letter in flight is still a story');
+});

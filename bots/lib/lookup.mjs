@@ -264,15 +264,30 @@ const CABINETS = [
  * Everything the filing cabinets hold for this question: primary documents
  * first, then the world archive, then background.
  */
-export async function filingCabinets(query, { limit = 14 } = {}) {  const jobs = [
+export async function filingCabinets(query, { limit = 14, budgetMs = 8000 } = {}) {
+  // One cabinet that hangs must not become the price of every search: the
+  // shift's twelve steps cost thirty seconds each because a single dead door
+  // never answered. Whatever has not arrived when the budget is up is not
+  // worth the wait — the desk can ask again with a site: query.
+  const within = (p, fallback) => Promise.race([
+    p,
+    new Promise((resolve) => { setTimeout(() => resolve(fallback), budgetMs).unref?.(); }),
+  ]);
+  const jobs = [
     ...CABINETS.map(([name, fn, label]) =>
-      fn(query)
-        .then((hits) => ({ name, label, hits }))
-        .catch(() => ({ name, label, hits: [] })),
+      within(
+        fn(query)
+          .then((hits) => ({ name, label, hits }))
+          .catch(() => ({ name, label, hits: [] })),
+        { name, label, hits: [] },
+      ),
     ),
-    gdelt(query, { limit: 12 })
-      .then((hits) => ({ name: 'gdelt', label: 'world archive', hits }))
-      .catch(() => ({ name: 'gdelt', label: 'world archive', hits: [] })),
+    within(
+      gdelt(query, { limit: 12 })
+        .then((hits) => ({ name: 'gdelt', label: 'world archive', hits }))
+        .catch(() => ({ name: 'gdelt', label: 'world archive', hits: [] })),
+      { name: 'gdelt', label: 'world archive', hits: [] },
+    ),
   ];
 
   const settled = await Promise.all(jobs);

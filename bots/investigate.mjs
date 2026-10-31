@@ -1495,6 +1495,11 @@ ${doorsAdded ? `The desk has already been to the institutions before you started
 
   log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
 
+  // Shifts are counted, not claimed. Three in a row without a single new
+  // source is the desk's own answer: there is nothing behind this headline.
+  d.shifts = (d.shifts || 0) + 1;
+  d.blankShifts = added === 0 && claims === 0 ? (d.blankShifts || 0) + 1 : 0;
+
   // The agent works with a wide net and brings home the neighbours too. The
   // second sweep is what keeps the dossier readable.
   pruneOffTopic(d);
@@ -2050,6 +2055,22 @@ Return {"checks":[{"id":"C1","verdict":"supported|partial|unsupported","reason":
     log(`CHECK  ${dropped.length} claim(s) dropped — the cited text does not carry them`);
   }
   log(`CHECK  ${batch.length - dropped.length}/${batch.length} claim(s) stand`);
+}
+
+/**
+ * A story that three shifts in a row could not grow past a headline is not an
+ * investigation. A human desk spikes it and writes down why, instead of
+ * spending the week's quota on the same search. Letters in flight protect the
+ * dossier: an answer still owed is still a story.
+ */
+function parkIfHopeless(d) {
+  if (d.sources.length >= 3 || (d.blankShifts || 0) < 3) return false;
+  if ((d.letters || []).some((l) => l.sentAt)) return false;
+  d.parkReason = `three shifts without a new source — ${d.sources.length} source(s) cannot carry an investigation`;
+  d.parkedAt = nowISO();
+  note(d, 'dropped', d.parkReason);
+  log(`DESK  ${d.slug}: parked — ${d.parkReason}`);
+  return true;
 }
 
 async function research(d) {
@@ -3779,6 +3800,13 @@ async function main() {
         await fillContactAddresses(d).catch((err) => log(`RESEARCH  addresses not found: ${err.message}`));
         if (['pitch', 'research'].includes(d.status) || d.sources.length < MIN_SOURCES || d.claims.length < MIN_CLAIMS) {
           await research(d);
+        }
+        // A dossier whose research is going nowhere is closed here, before
+        // the desk spends the rest of the shift drafting letters about a
+        // story one wire report cannot carry.
+        if (parkIfHopeless(d)) {
+          await mirror(d);
+          continue;
         }
         log(`CHECK   ${d.claims.length} claim(s), ${d.sources.length} source(s) before reading back`);
         await factcheck(d);
