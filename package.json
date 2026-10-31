@@ -23,7 +23,7 @@
     "test:mailbox": "node --test scripts/mailbox.test.mjs",
     "test:desk-dispatch": "node --test scripts/desk-dispatch.test.mjs",
     "test:sources": "node --test scripts/sources.test.mjs",
-    "test:desk-all": "node --test scripts/desk-work.test.mjs scripts/lookup.test.mjs scripts/mailbox.test.mjs scripts/desk-dispatch.test.mjs scripts/sources.test.mjs"
+    "test:desk-all": "node --test scripts/desk-work.test.mjs scripts/lookup.test.mjs scripts/mailbox.test.mjs scripts/desk-dispatch.test.mjs scripts/sources.test.mjs scripts/models.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.3.0",

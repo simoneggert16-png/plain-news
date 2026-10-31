@@ -28,7 +28,7 @@ if (fs.existsSync('.env')) {
   }
 }
 
-import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
+import { chat, chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch, documentSearch, archivedCopy, NEWS_EDITIONS } from './lib/search.mjs';
@@ -135,6 +135,31 @@ async function safe(fn, fallback) {
   } catch (err) {
     log(`  ! ${err.message}`);
     return fallback;
+  }
+}
+
+/**
+ * A desk without a model can read its mail but cannot think. On 2026-10-31
+ * the Ollama account hit its monthly cap and the only other backend timed out
+ * on the full prompt: three shifts of the run burned eighteen minutes each,
+ * step by step, to learn the same thing. One cheap question at the start of
+ * the shift answers it in half a minute — and a shift that cannot think says
+ * so instead of pretending to work.
+ */
+async function modelReady() {
+  try {
+    // A hybrid model that spends a tiny token budget on reasoning returns no
+    // answer at all, and a working chain would look dead. `think: false` and
+    // a little room make the probe ask the same question a reader would.
+    const answer = await chat('desk', [{ role: 'user', content: 'Reply with the single word: ready' }], {
+      deadline: Date.now() + 60_000,
+      timeoutMs: 45_000,
+      maxTokens: 24,
+      think: false,
+    });
+    return { ok: true, model: answer.model };
+  } catch (err) {
+    return { ok: false, why: err.message };
   }
 }
 
@@ -802,6 +827,25 @@ const COUNTRY_DOORS = {
   germany: ['site:bundesgerichtshof.de', 'site:bundeskartellamt.de', 'site:bundesnetzagentur.de'],
   france: ['site:courdecassation.fr', 'site:autoritedelaconcurrence.fr', 'site:arcom.fr'],
   'united kingdom': ['site:supremecourt.uk', 'site:ofcom.org.uk', 'site:gov.uk/cma'],
+  'united states': ['site:courtlistener.com', 'site:sec.gov', 'site:govinfo.gov'],
+  canada: ['site:decisions.scc-csc.ca', 'site:competitionbureau.gc.ca'],
+  australia: ['site:highcourt.gov.au', 'site:accc.gov.au'],
+  netherlands: ['site:rechtspraak.nl', 'site:acm.nl'],
+  spain: ['site:poderjudicial.es', 'site:cnmc.es'],
+  italy: ['site:agcm.it', 'site:consob.it'],
+  poland: ['site:sn.pl', 'site:uokik.gov.pl'],
+  sweden: ['site:domstol.se', 'site:konkurrensverket.se'],
+  belgium: ['site:juportal.be', 'site:belgiancompetition.be'],
+  austria: ['site:ris.bka.gv.at', 'site:bwb.gv.at'],
+  ireland: ['site:courts.ie', 'site:ccpc.ie'],
+  russia: ['site:sudrf.ru', 'site:cbr.ru'],
+  ukraine: ['site:court.gov.ua', 'site:bank.gov.ua'],
+  turkey: ['site:rekabet.gov.tr'],
+  israel: ['site:court.gov.il', 'site:boi.org.il'],
+  bangladesh: ['site:supremecourt.gov.bd', 'site:btrc.gov.bd', 'site:bsec.gov.bd'],
+  malaysia: ['site:mycc.gov.my', 'site:sc.com.my'],
+  colombia: ['site:sic.gov.co'],
+  'european union': ['site:curia.europa.eu', 'site:ec.europa.eu/competition'],
 };
 
 /** The portals a reporter in the story's country would open first. */
@@ -933,7 +977,7 @@ async function intake(dossiers, state) {
     }
   }
 
-  if (slots > 0) {
+  while (slots > 0) {
     // A letter the desk kept can become a story, and so can a notice the desk
     // found by itself. Either way it goes into the same quota as every other
     // investigation.
@@ -943,55 +987,61 @@ async function intake(dossiers, state) {
     // scan. Within each group the oldest lead is taken first.
     const written = tips.filter((l) => l.origin !== 'scan');
     const scanned = tips.filter((l) => l.origin === 'scan');
+    // A slot is a slot. Two concrete notices on file beat one notice and a
+    // topic the model invented — the desk found those notices itself and
+    // someone published them; the invented topic has nothing behind it yet.
     const tip = written[written.length - 1] || scanned[0] || null;
-    if (tip) {
-      const gate = leadInternational(tip);
-      if (!gate.ok) {
-        tip.tried = week;
-        log(`INTAKE  ✗ own tip not taken on: ${gate.why} — ${tip.title}`);
-      } else {
-        const dossier = newDossier({
-          title: tip.title,
-          angle: tip.angle,
-          category: tip.category || 'world',
-          queries: tip.queries,
-          origin: 'desk',
-          priority: 2,
-          brief: {
-            people: tip.people,
-            tip: tip.summary,
-            centre: tip.centre,
-            // The notice itself. Its words are the vocabulary of the story,
-            // so the document the desk started from stays on file.
-            hints: tip.docTitle || '',
-          },
-        });
-        if (tip.centre) dossier.centre = tip.centre;
-        // The notice the desk found is the first document of the dossier: the
-        // story starts from a document, not from a headline.
-        if (tip.url) {
-          addSource(
-            dossier,
-            {
-              url: tip.url,
-              outlet: tip.outlet || 'unknown',
-              title: tip.docTitle || tip.title,
-              publishedAt: tip.publishedAt || null,
-              primary: true,
-            },
-            { kind: 'document' }
-          );
-        }
-        if (!dossiers.some((d) => d.slug === dossier.slug)) {
-          dossiers.push(dossier);
-          tip.opened = dossier.slug;
-          tip.tried = week;
-          // The institution the notice came from is one the desk now follows.
-          if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
-          log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
-          slots--;
-        }
-      }
+    if (!tip) break;
+    const gate = leadInternational(tip);
+    if (!gate.ok) {
+      tip.tried = week;
+      log(`INTAKE  ✗ own tip not taken on: ${gate.why} — ${tip.title}`);
+      continue;
+    }
+    const dossier = newDossier({
+      title: tip.title,
+      angle: tip.angle,
+      category: tip.category || 'world',
+      queries: tip.queries,
+      origin: 'desk',
+      priority: 2,
+      brief: {
+        people: tip.people,
+        tip: tip.summary,
+        centre: tip.centre,
+        // The notice itself. Its words are the vocabulary of the story,
+        // so the document the desk started from stays on file.
+        hints: tip.docTitle || '',
+      },
+    });
+    if (tip.centre) dossier.centre = tip.centre;
+    // The notice the desk found is the first document of the dossier: the
+    // story starts from a document, not from a headline.
+    if (tip.url) {
+      addSource(
+        dossier,
+        {
+          url: tip.url,
+          outlet: tip.outlet || 'unknown',
+          title: tip.docTitle || tip.title,
+          publishedAt: tip.publishedAt || null,
+          primary: true,
+        },
+        { kind: 'document' }
+      );
+    }
+    if (!dossiers.some((d) => d.slug === dossier.slug)) {
+      dossiers.push(dossier);
+      tip.opened = dossier.slug;
+      tip.tried = week;
+      // The institution the notice came from is one the desk now follows.
+      if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
+      log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
+      slots--;
+    } else {
+      // The same story is already on the desk. Not a slot spent, and the
+      // lead is done with.
+      tip.tried = week;
     }
   }
 
@@ -2125,7 +2175,7 @@ Return {"checks":[{"id":"C1","verdict":"supported|partial|unsupported","reason":
  */
 function parkIfHopeless(d) {
   if (d.sources.length >= 3 || (d.blankShifts || 0) < 3) return false;
-  if ((d.letters || []).some((l) => l.sentAt)) return false;
+  if ((d.letters || []).some((l) => l.sentAt || l.approvedAt || l.status === 'approved')) return false;
   d.parkReason = `three shifts without a new source — ${d.sources.length} source(s) cannot carry an investigation`;
   d.parkedAt = nowISO();
   note(d, 'dropped', d.parkReason);
@@ -3772,6 +3822,17 @@ async function main() {
     return;
   }
 
+  // Everything below asks a model something. When the whole chain is out of
+  // credit the shift must say so once, at the top, instead of failing every
+  // step of the way until the time budget is gone.
+  const ready = await modelReady();
+  if (!ready.ok) {
+    log(`MODELS  no model answers — ${ready.why}`);
+    log('MODELS  the shift ends here; nothing was read, written or sent');
+    return;
+  }
+  log(`MODELS  ${ready.model} answering`);
+
   if (process.env.INVESTIGATE_ONLY === 'agent') {
     // A forced intake still has to run first — with no active dossier there is
     // nothing for the agent to work on.
@@ -3804,7 +3865,14 @@ async function main() {
   saveState(state);
 
   const focus = FORCE_SLUG || decisionSlug;
-  const targets = focus ? dossiers.filter((d) => d.slug === focus) : dossiers.filter(isActive);
+  // A shift's time goes to the dossier that has waited longest, not always to
+  // the first one in the file. With two stories on the desk the second used to
+  // get the leftovers of every shift; a real desk takes turns.
+  const targets = focus
+    ? dossiers.filter((d) => d.slug === focus)
+    : dossiers.filter(isActive).sort((a, b) =>
+        String(a.lastShiftAt || a.createdAt || '').localeCompare(String(b.lastShiftAt || b.createdAt || ''))
+      );
   log(`DESK  ${targets.length} dossier(s) to advance`);
 
   for (const d of targets) {
@@ -3814,6 +3882,7 @@ async function main() {
     }
     try {
       log(`\n▶ ${d.slug} [${d.status}]`);
+      d.lastShiftAt = nowISO();
       // The editor decides in the database. Read that decision before doing
       // anything else with the dossier.
       await syncStatus(d).catch((err) => log(`STATUS  unreachable: ${err.message}`));

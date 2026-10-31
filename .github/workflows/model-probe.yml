@@ -1,0 +1,28 @@
+name: Model probe
+
+# Read-only diagnostic: which model answers right now, and how fast. Run it
+# (Actions -> Model probe -> Run workflow) when the desk or the newsroom stops
+# writing. A chain can lose every member at once — a monthly cap on one
+# provider, a retired model on the other — and the logs then look like slow
+# work instead of a desk with no brain.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: model-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Ask every candidate one small question
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+        run: node scripts/probe-models.mjs

@@ -1234,6 +1234,7 @@ test('a story that three shifts could not grow past one report is parked', () =>
   assert.equal(park(dossier({ blankShifts: 2 })), false, 'two empty shifts are a normal week');
   assert.equal(park(dossier({ sources: [{ id: 'S1' }, { id: 'S2' }, { id: 'S3' }] })), false, 'a story with footing is not parked');
   assert.equal(park(dossier({ letters: [{ id: 'L1', status: 'draft', sentAt: '2026-10-31T10:00:00.000Z' }] })), false, 'a letter in flight is still a story');
+  assert.equal(park(dossier({ letters: [{ id: 'L2', status: 'draft', approvedAt: '2026-10-31T11:00:00.000Z' }] })), false, 'an editor approved the letter — the desk does not throw the story away behind their back');
 });
 
 test('the desk knows the doors in the country the story happens', () => {
@@ -1246,6 +1247,12 @@ test('the desk knows the doors in the country the story happens', () => {
   assert.match(doors('Seoul, South Korea'), /kcc\.go\.kr/);
   assert.match(doors('Nairobi, Kenya'), /judiciary\.go\.ke/);
   assert.match(doors('Brazil'), /stf\.jus\.br/);
+  // The desk writes about more than the English-speaking world and Western
+  // Europe. A story in Kyiv or Dhaka needs the doors there, not a second
+  // search of the English wire.
+  assert.match(doors('Kyiv, Ukraine'), /court\.gov\.ua/);
+  assert.match(doors('Dhaka, Bangladesh'), /supremecourt\.gov\.bd/);
+  assert.match(doors('Brussels, European Union'), /curia\.europa\.eu/);
   assert.equal(doors('Switzerland'), '', 'the paper is Swiss, its beat is not');
   assert.equal(doors(''), '');
 });

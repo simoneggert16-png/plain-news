@@ -128,6 +128,24 @@ export const INSTITUTIONS = [
   // in English: the commission that fines, the agency that hunts, the court
   // that indicted, the consortium that holds the papers.
   {
+    id: 'who',
+    outlet: 'WHO',
+    kind: 'rss',
+    url: 'https://www.who.int/rss-feeds/news-english.xml',
+    timeout: 20000,
+    // "who" is a pronoun in every second sentence, so the initials alone would
+    // open this cabinet for every story. The words are the subjects instead.
+    about: ['world health', 'health', 'disease', 'outbreak', 'epidemic', 'pandemic', 'vaccine', 'vaccination', 'virus', 'measles', 'cholera', 'polio', 'ebola', 'mpox', 'malaria', 'tuberculosis', 'hospital', 'medicine', 'tobacco', 'obesity', 'air pollution', 'sanitation'],
+  },
+  {
+    id: 'icrc',
+    outlet: 'ICRC',
+    kind: 'rss',
+    url: 'https://www.icrc.org/en/rss/news',
+    timeout: 20000,
+    about: ['armed conflict', 'conflict', 'detention', 'detainee', 'prisoner', 'hostage', 'missing person', 'humanitarian', 'red cross', 'civilians', 'displaced', 'gaza', 'ukraine', 'sudan', 'yemen', 'syria', 'afghanistan', 'hospital', 'landmine', 'water'],
+  },
+  {
     id: 'ec',
     outlet: 'European Commission',
     kind: 'rss',
