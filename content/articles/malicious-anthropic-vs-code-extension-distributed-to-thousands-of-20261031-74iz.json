@@ -6,7 +6,7 @@
   "video": null,
   "importance": 4,
   "publishedAt": "2026-10-31T04:00:02.530Z",
-  "updatedAt": "2026-10-31T04:00:02.530Z",
+  "updatedAt": "2026-10-31T11:06:21.510Z",
   "sourcePolicy": "two-source",
   "sources": [
     {
@@ -40,6 +40,150 @@
       ],
       "context": "VS Code extensions run with the permissions of the integrated development environment, so a compromised extension can access local files and developer tooling. A supply‑chain compromise occurs when an attacker gains access to the official distribution channel.",
       "imageCaption": "may contain Computer Electronics Laptop Pc Adult and Person"
+    },
+    "de": {
+      "title": "Bösartige Anthropic VS Code-Erweiterung an Tausende Cursor-Benutzer verteilt",
+      "dek": "Eine mit Hintertür versehene VS Code-Erweiterung für Anthropics Claude-Modell wurde über den Cursor-Marktplatz verbreitet und betraf bis zu 5.000 Entwickler, bevor der Anbieter sie entfernte.",
+      "facts": [
+        "Die bösartige Version 2.1.313 wurde im offiziellen Anthropic-Konto auf dem Cursor-Marktplatz veröffentlicht.",
+        "Bis zu 5.000 Nutzer haben die Erweiterung zwischen 5:27 Uhr ET und 16:35 Uhr ET am Donnerstag heruntergeladen oder automatisch aktualisiert.",
+        "Die Hintertür installierte einen dauerhaften SSH-Schlüssel und öffnete einen Reverse-SSH-Tunnel auf Windows, macOS und Linux.",
+        "Cursor schloss seinen Erweiterungsmarktplatz kurzzeitig, entfernte das bösartige Paket und rotiert die Schlüssel, um die Zugriffssteuerung zu prüfen."
+      ],
+      "body": [
+        "Am Donnerstag tauchte eine mit Hintertür versehene VS Code-Erweiterung für Anthropics Claude-Modell im Cursor-Marktplatz auf. Die bösartige Version 2.1.313 wurde im offiziellen Anthropic-Konto veröffentlicht und von bis zu 5.000 Nutzern zwischen 5:27 Uhr ET und 16:35 Uhr ET heruntergeladen oder automatisch aktualisiert. Die Erweiterung war für Windows, macOS und Linux verfügbar und wurde automatisch aktualisiert, wenn die Nutzer in Cursor die automatische Aktualisierung aktiviert hatten.",
+        "Der bösartige Code installierte einen dauerhaften SSH-Schlüssel und öffnete einen Reverse-SSH-Tunnel, wodurch Angreifer Fernzugriff auf den lokalen SSH-Dienst des Opfers erhielten. Der Code war so geschrieben, dass er auf Windows, macOS und Linux funktioniert und nach der Installation potenziell lokale Dateien, Quellcode und Entwicklerwerkzeuge auslesen konnte.",
+        "Cursor schloss seinen Erweiterungsmarktplatz kurzzeitig, entfernte das mit Hintertür versehene Paket und rotiert die Schlüssel, um die Zugriffssteuerung zu prüfen. Das Personal arbeitete zudem mit dem Cloud-Anbieter, der die Reverse-Shell hostete, zusammen, um infizierte Geräte zu isolieren, und der Marktplatz ist nun wieder geöffnet.",
+        "Anthropic hat keine öffentliche Mitteilung an Kunden herausgegeben, und das Personal erklärte, die bösartige Erweiterung sei weder von Anthropic gebaut noch veröffentlicht worden. Die Ursache des Lieferkettenkompromisses ist noch unklar, und Cursor hat auf WIREDs Anfrage nach Erläuterungen, wie die bösartige Hochladung zustande kam oder ob sie auf einen Sicherheitsverstoß bei Cursor zurückzuführen ist, nicht geantwortet."
+      ],
+      "context": "VS Code-Erweiterungen laufen mit den Berechtigungen der integrierten Entwicklungsumgebung, sodass eine kompromittierte Erweiterung lokale Dateien und Entwicklerwerkzeuge auslesen kann. Ein Lieferkettenkompromiss tritt ein, wenn ein Angreifer Zugang zum offiziellen Vertriebsweg erhält.",
+      "imageCaption": "kann Computer, Elektronik, Laptop, PC, Erwachsene und Personen enthalten"
+    },
+    "fr": {
+      "title": "Extension VS Code malveillante d'Anthropic diffusée auprès de milliers d'utilisateurs de Cursor",
+      "dek": "Une extension VS Code compromise pour le modèle Claude d'Anthropic a été diffusée via la place de marché de Cursor, touchant jusqu'à 5 000 développeurs avant que le fournisseur ne la retire.",
+      "facts": [
+        "La version malveillante 2.1.313 a été publiée sur le compte officiel d'Anthropic sur la place de marché de Cursor.",
+        "Jusqu'à 5 000 utilisateurs ont téléchargé ou mis à jour automatiquement l'extension entre 5 h 27 min et 16 h 35 min le jeudi.",
+        "Le backdoor installait une clé SSH persistante et ouvrait un tunnel SSH inversé sur Windows, macOS et Linux.",
+        "Cursor a fermé temporairement sa place de marché d'extensions, retiré le paquet malveillant et rotatif les clés pour auditer les contrôles d'accès."
+      ],
+      "body": [
+        "Le jeudi, une extension VS Code compromise pour le modèle Claude d'Anthropic est apparue sur la place de marché de Cursor. La version malveillante 2.1.313 a été publiée sur le compte officiel d'Anthropic, et a été téléchargée ou mise à jour automatiquement par jusqu'à 5 000 utilisateurs entre 5 h 27 min et 16 h 35 min (heure de l'Est). L'extension était disponible pour Windows, macOS et Linux et se mettait à jour automatiquement pour les utilisateurs ayant activé la mise à jour automatique dans Cursor.",
+        "Le code malveillant installait une clé SSH persistante et ouvrait un tunnel SSH inversé, donnant aux attaquants un accès à distance au service SSH local de la victime. Le code était conçu pour fonctionner sur Windows, macOS et Linux et pouvait potentiellement lire les fichiers locaux, le code source et les outils de développement une fois installé.",
+        "Cursor a fermé temporairement sa place de marché d'extensions, retiré le paquet compromis et rotatif les clés pour auditer les contrôles d'accès. Le personnel a également collaboré avec le fournisseur cloud hébergeant la shell inversée pour couper les appareils infectés, et la place de marché est désormais ouverte.",
+        "Anthropic n'a pas émis de notification publique aux clients, et le personnel a déclaré que l'extension malveillante n'avait pas été construite ou publiée par Anthropic. La cause de la compromission de la chaîne d'approvisionnement reste incertaine, et Cursor n'a pas répondu à la demande de WIRED de commentaire sur la façon dont le téléchargement malveillant s'est produit ou s'il résultait d'une violation chez Cursor."
+      ],
+      "context": "Les extensions VS Code s'exécutent avec les autorisations de l'environnement de développement intégré, de sorte qu'une extension compromise peut accéder aux fichiers locaux et aux outils de développement. Une compromission de la chaîne d'approvisionnement se produit lorsqu'un attaquant obtient l'accès au canal officiel de distribution.",
+      "imageCaption": "peut contenir ordinateur, électronique, ordinateur portable, PC, adulte et personne"
+    },
+    "es": {
+      "title": "Extensión maliciosa de Anthropic para VS Code distribuida a miles de usuarios de Cursor",
+      "dek": "Una extensión de VS Code con puerta trasera para el modelo Claude de Anthropic se distribuyó a través del mercado de Cursor, afectando a hasta 5.000 desarrolladores antes de que el proveedor la retirara.",
+      "facts": [
+        "La versión maliciosa 2.1.313 se publicó en la cuenta oficial de Anthropic en el mercado de Cursor.",
+        "Hasta 5.000 usuarios descargaron o actualizaron automáticamente la extensión entre las 5:27 a.m. ET y las 4:35 p.m. ET del jueves.",
+        "La puerta trasera instaló una clave SSH persistente y abrió un túnel SSH inverso en Windows, macOS y Linux.",
+        "Cursor cerró su mercado de extensiones durante un breve periodo, eliminó el paquete malicioso y rotó las claves para auditar los controles de acceso."
+      ],
+      "body": [
+        "El jueves apareció en el mercado de Cursor una extensión de VS Code con puerta trasera para el modelo Claude de Anthropic. La versión maliciosa 2.1.313 se publicó en la cuenta oficial de Anthropic y fue descargada o actualizada automáticamente por hasta 5.000 usuarios entre las 5:27 a.m. ET y las 4:35 p.m. ET. La extensión estaba disponible para Windows, macOS y Linux y se actualizaba automáticamente a los usuarios que habían activado la actualización automática en Cursor.",
+        "El código malicioso instaló una clave SSH persistente y abrió un túnel SSH inverso, otorgando a los atacantes acceso remoto al servicio SSH local de la víctima. El código estaba diseñado para funcionar en Windows, macOS y Linux y, una vez instalado, podría leer archivos locales, código fuente y herramientas de desarrollo.",
+        "Cursor cerró su mercado de extensiones durante un breve periodo, eliminó el paquete con puerta trasera y rotó las claves para auditar los controles de acceso. El personal también colaboró con el proveedor de la nube que alojaba la shell inversa para desconectar los dispositivos infectados, y el mercado ya está abierto.",
+        "Anthropic no ha emitido un aviso público a los clientes, y el personal indicó que la extensión maliciosa no fue creada ni publicada por Anthropic. La causa de la vulneración de la cadena de suministro sigue siendo incierta, y Cursor no respondió a la solicitud de WIRED de comentar cómo se produjo la carga maliciosa o si fue resultado de una brecha en Cursor."
+      ],
+      "context": "",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "Estensione VS Code di Anthropic con Backdoor Distribuita a Migliaia di Utenti di Cursor",
+      "dek": "Un’estensione VS Code con backdoor per il modello Claude di Anthropic è stata distribuita tramite il marketplace di Cursor, colpendo fino a 5.000 sviluppatori prima che il fornitore la rimuovesse.",
+      "facts": [
+        "La versione dannosa 2.1.313 è stata pubblicata sul profilo ufficiale di Anthropic nel marketplace di Cursor.",
+        "Fino a 5.000 utenti ha scaricato o aggiornato automaticamente l’estensione tra le 5:27 am ET e le 4:35 pm ET di giovedì.",
+        "Il backdoor ha installato una chiave SSH persistente e aperto un tunnel SSH inverso su Windows, macOS e Linux.",
+        "Cursor ha chiuso temporaneamente il suo marketplace di estensioni, rimosso il pacchetto dannoso e ruotato le chiavi per verificare i controlli di accesso."
+      ],
+      "body": [
+        "Giovedì, un’estensione VS Code con backdoor per il modello Claude di Anthropic è apparso nel marketplace di Cursor. La versione dannosa 2.1.313 è stata pubblicata sul profilo ufficiale di Anthropic e è stata scaricata o aggiornata automaticamente da fino a 5.000 utenti tra le 5:27 am ET e le 4:35 pm ET. L’estensione era disponibile per Windows, macOS e Linux e veniva aggiornata automaticamente per gli utenti che avevano abilitato l’auto‑aggiornamento in Cursor.",
+        "Il codice maligno installava una chiave SSH persistente e apriva un tunnel SSH inverso, consentendo agli aggressori di accedere in remoto al servizio SSH locale della vittima. Il codice era scritto per funzionare su Windows, macOS e Linux e poteva potenzialmente leggere file locali, codice sorgente e strumenti di sviluppo una volta installato.",
+        "Cursor ha chiuso temporaneamente il suo marketplace di estensioni, rimosso il pacchetto con backdoor e ruotato le chiavi per verificare i controlli di accesso. Il personale ha inoltre collaborato con il fornitore cloud che ospitava la shell inversa per disconnettere i dispositivi infetti, e il marketplace è ora riaperto.",
+        "Anthropic non ha emesso un avviso pubblico ai clienti, e il personale ha affermato che l’estensione dannosa non è stata creata o pubblicata da Anthropic. La causa della compromissione della catena di approvvigionamento rimane incerta, e Cursor non ha risposto alla richiesta di WIRED di commento su come sia avvenuto il caricamento dannoso o se fosse il risultato di una violazione a Cursor."
+      ],
+      "context": "Le estensioni VS Code operano con i permessi dell’ambiente di sviluppo integrato, quindi un’estensione compromessa può accedere a file locali e strumenti di sviluppo. Una compromissione della catena di approvvigionamento si verifica quando un aggressore ottiene accesso al canale di distribuzione ufficiale.",
+      "imageCaption": "potrebbe contenere Computer Electronics Laptop Pc Adult and Person"
+    },
+    "pt": {
+      "title": "Extensão maliciosa da Anthropic para VS Code distribuída a milhares de utilizadores do Cursor",
+      "dek": "Uma extensão do VS Code com backdoor para o modelo Claude da Anthropic foi distribuída através do marketplace do Cursor, afetando até 5.000 programadores antes da remoção pelo fornecedor.",
+      "facts": [
+        "A versão maliciosa 2.1.313 foi publicada na conta oficial da Anthropic no marketplace do Cursor.",
+        "Até 5.000 utilizadores descarregaram ou actualizaram automaticamente a extensão entre 5:27 am ET e 4:35 pm ET na quinta-feira.",
+        "O backdoor instalou uma chave SSH persistente e abriu um túnel SSH reverso em Windows, macOS e Linux.",
+        "O Cursor suspendeu temporariamente o seu marketplace de extensões, removeu o pacote malicioso e rotacionou as chaves para auditar os controlo de acesso."
+      ],
+      "body": [
+        "Na quinta-feira, apareceu no marketplace do Cursor uma extensão do VS Code com backdoor para o modelo Claude da Anthropic. A versão maliciosa 2.1.313 foi publicada na conta oficial da Anthropic e descarregou‑se ou actualizou‑se automaticamente por até 5.000 utilizadores entre 5:27 am ET e 4:35 pm ET. A extensão estava disponível para Windows, macOS e Linux e actualizava‑se automaticamente para os utilizadores que tinham activado a actualização automática no Cursor.",
+        "O código malicioso instalou uma chave SSH persistente e abriu um túnel SSH reverso, concedendo aos atacantes acesso remoto ao serviço SSH local da vítima. O código foi escrito para funcionar em Windows, macOS e Linux e poderia, potencialmente, ler ficheiros locais, código fonte e ferramentas de desenvolvimento uma vez instalado.",
+        "O Cursor suspendeu o seu marketplace de extensões por um breve período, removeu o pacote com backdoor e rotacionou as chaves para auditar os controlo de acesso. O pessoal também trabalhou com o provedor de cloud que hospedava o shell reverso para cortar dispositivos infectados, e o marketplace está agora aberto.",
+        "A Anthropic não emitiu um aviso público aos clientes, e o pessoal afirmou que a extensão maliciosa não foi construída nem publicada pela Anthropic. A causa da violação da cadeia de abastecimento permanece incerta, e o Cursor não respondeu ao pedido de comentário da WIRED sobre como a extensão maliciosa foi carregada ou se se tratava de uma violação no Cursor."
+      ],
+      "context": "As extensões do VS Code são executadas com as permissões do ambiente de desenvolvimento integrado, de modo que uma extensão comprometida pode aceder a ficheiros locais e ferramentas de desenvolvimento. Uma violação da cadeia de abastecimento ocorre quando um atacante obtém acesso ao canal de distribuição oficial.",
+      "imageCaption": "pode conter computador, eletrónica, portátil, PC, adulto e pessoa"
+    },
+    "zh": {
+      "title": "恶意 Anthropic VS Code 扩展已分发给数千名 Cursor 用户",
+      "dek": "一款被植入后门的 Anthropic Claude 模型 VS Code 扩展通过 Cursor 市场分发，影响了多达 5,000 名开发者，随后供应商已将其移除。",
+      "facts": [
+        "恶意版本 2.1.313 已发布在 Cursor 市场的官方 Anthropic 账号上。",
+        "截至周四 5:27 am ET 至 4:35 pm ET，最多 5,000 名用户下载或自动更新了该扩展。",
+        "后门在 Windows、macOS 和 Linux 上安装了持久 SSH 密钥，并开启了反向 SSH 隧道。",
+        "Cursor 暂停了其扩展市场，移除了恶意包，并轮换密钥以审计访问控制。"
+      ],
+      "body": [
+        "周四，一款植入后门的 Anthropic Claude 模型 VS Code 扩展出现在 Cursor 市场。恶意版本 2.1.313 已发布在官方 Anthropic 账号上，最多 5,000 名用户在 5:27 am ET 至 4:35 pm ET 期间下载或自动更新。该扩展支持 Windows、macOS 和 Linux，并为已开启 Cursor 自动更新的用户自动更新。",
+        "恶意代码安装了持久 SSH 密钥并开启了反向 SSH 隧道，使攻击者能够远程访问受害者本地的 SSH 服务。代码兼容 Windows、macOS 和 Linux，安装后可能读取本地文件、源代码及开发工具。",
+        "Cursor 暂停了扩展市场，移除了后门包，并轮换密钥以审计访问控制。相关人员还与托管反向 shell 的云服务商合作，切断受感染设备，市场现已重新开放。",
+        "Anthropic 尚未向客户发布公开通告，工作人员表示该恶意扩展并非由 Anthropic 开发或发布。供应链妥协的原因尚不清楚，Cursor 未回应 WIRED 关于恶意上传原因或是否源于 Cursor 内部泄露的询问。"
+      ],
+      "context": "VS Code 扩展以集成开发环境的权限运行，受损扩展可访问本地文件和开发工具。供应链妥协指攻击者获取官方分发渠道的访问权限。",
+      "imageCaption": "可能包含电脑、电子产品、笔记本电脑、个人电脑、成人和人物"
+    },
+    "ja": {
+      "title": "悪意あるAnthropic VS Code拡張機能が数千のCursorユーザーに配布",
+      "dek": "AnthropicのClaudeモデル向けのバックドア付きVS Code拡張機能がCursorのマーケットプレイスで配布され、最大5,000人の開発者に影響を与えた。",
+      "facts": [
+        "悪意あるバージョン2.1.313がCursorのマーケットプレイス上の公式Anthropicアカウントに投稿された。",
+        "木曜日の午前5時27分（ET）から午後4時35分（ET）までに、最大5,000人のユーザーが拡張機能をダウンロードまたは自動更新した。",
+        "バックドアは永続的なSSHキーをインストールし、Windows、macOS、Linux上でリバースSSHトンネルを開いた。",
+        "Cursorは拡張機能マーケットプレイスを一時的に停止し、悪意あるパッケージを削除し、アクセス制御を監査するためにキーをローテーションした。"
+      ],
+      "body": [
+        "木曜日、AnthropicのClaudeモデル向けのバックドア付きVS Code拡張機能がCursorのマーケットプレイスに登場した。悪意あるバージョン2.1.313が公式Anthropicアカウントに投稿され、最大5,000人のユーザーが午前5時27分（ET）から午後4時35分（ET）までにダウンロードまたは自動更新した。拡張機能はWindows、macOS、Linuxで利用可能で、Cursorで自動更新を有効にしているユーザーに対して自動的に更新された。",
+        "悪意あるコードは永続的なSSHキーをインストールし、リバースSSHトンネルを開くことで、攻撃者に被害者のローカルSSHサービスへのリモートアクセスを許可した。コードはWindows、macOS、Linuxで動作するように書かれており、インストール後にローカルファイル、ソースコード、開発ツールを読み取る可能性がある。",
+        "Cursorは拡張機能マーケットプレイスを一時的に停止し、バックドア付きパッケージを削除し、アクセス制御を監査するためにキーをローテーションした。担当者はリバースシェルをホストするクラウドプロバイダーと協力して感染デバイスを遮断し、現在マーケットプレイスは再開している。",
+        "Anthropicは顧客への公開通知を出しておらず、スタッフは悪意ある拡張機能がAnthropicによって作成または公開されたものではないと述べた。サプライチェーン侵害の原因は不明で、CursorはWIREDの「悪意あるアップロードがどのように行われたか、またCursorの侵害が原因かどうか」というコメント要請に回答しなかった。"
+      ],
+      "context": "VS Code拡張機能は統合開発環境の権限で実行されるため、侵害された拡張機能はローカルファイルや開発ツールにアクセスできる。サプライチェーン侵害は、攻撃者が公式配布チャネルにアクセスしたときに発生する。",
+      "imageCaption": "コンピュータ・電子機器・ノートパソコン・PC・成人・人物が含まれる可能性があります"
+    },
+    "ko": {
+      "title": "악성 Anthropic VS Code 확장 프로그램, 수천 Cursor 사용자에게 배포",
+      "dek": "Anthropic의 Claude 모델용 백도어가 삽입된 VS Code 확장 프로그램이 Cursor 마켓플레이스를 통해 배포되어 최대 5,000명의 개발자에게 영향을 미쳤으며, 공급업체는 이를 제거했다.",
+      "facts": [
+        "악성 버전 2.1.313이 Cursor 마켓플레이스의 공식 Anthropic 계정에 게시되었다.",
+        "5,000명까지의 사용자가 4월 26일 오전 5시 27분(ET)부터 오후 4시 35분(ET) 사이에 확장 프로그램을 다운로드하거나 자동 업데이트했다.",
+        "백도어는 지속적인 SSH 키를 설치하고 Windows, macOS, Linux에서 역방향 SSH 터널을 열었다.",
+        "Cursor는 확장 프로그램 마켓플레이스를 일시적으로 중단하고 악성 패키지를 제거했으며, 접근 제어를 감사하기 위해 키를 회전시켰다."
+      ],
+      "body": [
+        "4월 26일, Anthropic의 Claude 모델용 백도어가 삽입된 VS Code 확장 프로그램이 Cursor 마켓플레이스에 등장했다. 악성 버전 2.1.313이 공식 Anthropic 계정에 게시되었으며, 5시 27분(ET)부터 4시 35분(ET) 사이에 최대 5,000명의 사용자가 다운로드하거나 자동 업데이트했다. 이 확장 프로그램은 Windows, macOS, Linux에서 사용 가능했으며, Cursor에서 자동 업데이트를 활성화한 사용자에게 자동으로 적용되었다.",
+        "악성 코드는 지속적인 SSH 키를 설치하고 역방향 SSH 터널을 열어 공격자가 피해자의 로컬 SSH 서비스에 원격으로 접근할 수 있게 했다. 이 코드는 Windows, macOS, Linux에서 동작하도록 작성되었으며, 설치 후 로컬 파일, 소스 코드, 개발 도구를 읽을 수 있는 잠재력을 지녔다.",
+        "Cursor는 확장 프로그램 마켓플레이스를 일시적으로 중단하고 백도어가 삽입된 패키지를 제거했으며, 접근 제어를 감사하기 위해 키를 회전시켰다. 또한, 클라우드 제공업체와 협력해 역방향 쉘을 호스팅하는 서버를 차단하고 감염된 장치를 분리했다. 마켓플레이스는 현재 재개했다.",
+        "Anthropic은 고객에게 공개 알림을 내놓지 않았으며, 직원들은 악성 확장 프로그램이 Anthropic에 의해 제작되거나 게시되지 않았다고 밝혔다. 공급망 침해의 원인은 아직 불분명하며, Cursor는 악성 업로드가 어떻게 발생했는지 또는 Cursor에서의 침해 결과인지에 대해 WIRED의 요청에 응답하지 않았다."
+      ],
+      "context": "VS Code 확장 프로그램은 통합 개발 환경의 권한으로 실행되므로, 손상된 확장 프로그램은 로컬 파일 및 개발 도구에 접근할 수 있다. 공급망 침해는 공격자가 공식 배포 채널에 접근할 때 발생한다.",
+      "imageCaption": "컴퓨터, 전자제품, 노트북, PC, 성인 및 인물 포함 가능"
     }
   },
   "meta": {
