@@ -42,7 +42,7 @@ import { loadIndex, saveIndex, saveArticle, toIndexEntry, slugify } from './lib/
 import { distinctOutlets, isPrimaryOutlet } from '../lib/editorial.mjs';
 import { LOCALES, SOURCE_LOCALE, SITE } from '../lib/config.mjs';
 import { terminologyFor } from './lib/terminology.mjs';
-import { INVESTIGATION_QUOTAS, weekKey } from '../lib/investigations.mjs';
+import { INVESTIGATION_QUOTAS, weekKey, pickCategory } from '../lib/investigations.mjs';
 import {
   addOutreach,
   getInvestigationStatus,
@@ -237,7 +237,7 @@ function newDossier({ title, angle, category, queries, origin, requestId = null,
     slug: slugify(title),
     title,
     angle,
-    category,
+    category: pickCategory(category),
     status: 'pitch',
     priority,
     origin,
@@ -277,7 +277,7 @@ function addSource(d, item, extra = {}) {
     publishedAt: item.publishedAt || null,
     // The filing cabinets know what they are; the feed path has to guess from
     // the address.
-    primary: item.primary != null ? Boolean(item.primary) : Boolean(isPrimaryOutlet(item.outlet)) || /(^|\.)(gov|admin|int)(\.|$)|europa\.eu|parlament|bundesgericht|court|un\.org/i.test(url),
+    primary: item.primary != null ? Boolean(item.primary) : Boolean(isPrimaryOutlet(item.outlet)) || institutionHost(hostOf(url)) || /parlament|bundesgericht|court|un\.org/i.test(url),
     kind: extra.kind || 'news',
     addedAt: nowISO(),
     text: null,
@@ -750,6 +750,55 @@ function leadInternational(lead) {
   return { ok: true };
 }
 
+/**
+ * How much two search queries share, as a fraction of the shorter one.
+ * "Activision Blizzard Itaewon court case South Korea 2024" and "Activision
+ * Blizzard Itaewon court ruling South Korea" are the same search.
+ */
+function queryOverlap(a, b) {
+  if (!a.size || !b.size) return 0;
+  let shared = 0;
+  for (const t of a) if (b.has(t)) shared++;
+  return shared / Math.min(a.size, b.size);
+}
+
+// The desk's tools are written for Latin letters; the story is often not.
+// Korean, Japanese, Chinese, Russian, Hebrew and Arabic words are what a
+// near-repeat in those languages shares, and termsOf throws all of them away.
+const SCRIPT_WORD = /[\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]{2,}/g;
+
+function scriptWords(q) {
+  return String(q || '').toLowerCase().match(SCRIPT_WORD) || [];
+}
+
+/**
+ * Whether a wire headline is about the searched story. The outlet's own name
+ * is not one of the story's words: a query that started with "Yonhap" pulled
+ * a baseball headline from Yonhap into a dossier about a video game.
+ */
+function wireHit(item, terms, distinctive) {
+  const own = new Set(String(item.outlet || '').toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2));
+  const text = `${item.title} ${item.summary}`.toLowerCase();
+  const hits = terms.filter((t) => !own.has(t) && text.includes(t));
+  return { item, score: hits.length, strong: hits.some((t) => distinctive.includes(t)) };
+}
+
+/**
+ * The same finding written twice is one claim. The extraction runs every
+ * shift and phrases the same fact anew ("Activision Publishing apologized…" /
+ * "Activision apologized…"), so the file grows while the story does not.
+ * Two claims that differ in a figure are two claims, never one.
+ */
+function sameClaim(a, b) {
+  const figures = (text) => new Set(String(text || '').match(/\d+(?:[.,]\d+)?/g) || []);
+  const fa = figures(a);
+  const fb = figures(b);
+  if (fa.size !== fb.size || [...fa].some((f) => !fb.has(f))) return false;
+  const STOP = new Set('the and for with from that this was were has have had its his her their they not but are is of to in on at by as an it'.split(' '));
+  const words = (text) => new Set((String(text || '').toLowerCase().match(/[a-z0-9\u00c0-\u024f]{2,}/g) || []).filter((w) => !STOP.has(w)));
+  return queryOverlap(words(a), words(b)) >= 0.85;
+}
+
 /** What a published piece still owes its readers: the questions it could not close. */
 function rememberFollowups(state, d) {
   const questions = (d.gaps || []).map((g) => String(g).trim()).filter((g) => g.length > 20).slice(0, 6);
@@ -1089,12 +1138,22 @@ async function researchAgent(d) {
   // worked, and the desk says so.
   let searches = 0;
 
+  // A reporter who has already looked for something does not look for it
+  // again with one word changed. A shift that stalled on the Call of Duty
+  // story ran twelve searches, six of them the same query with a year or an
+  // outlet name added; each cost half a minute it could have spent reading.
+  // A near-repeat returns the earlier hits instead of hitting the wire again.
+  const issued = [];
+
   const termsOf = (q) => String(q).toLowerCase()
     .replace(/\bsite:\S+/gi, ' ')
     .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
     .split(/\s+/)
     // A year matches every headline of that year - it is no evidence at all.
     .filter((w) => w.length > 2 && !/^\d+$/.test(w) && !/^(the|and|for|with|from|about|und|der|die|das|von|fuer|mit|auf)$/i.test(w));
+  // termsOf only keeps Latin words, and a reporter in Seoul searches in
+  // Korean: without the script's words a near-repeat there is invisible.
+  const searchWordsOf = (q) => [...new Set([...termsOf(q), ...scriptWords(q)])];
   const wireMatches = (q, n = 8) => {
     // Only the first terms count: a long angle would let a headline match on
     // two incidental words.
@@ -1104,12 +1163,7 @@ async function researchAgent(d) {
     // ("bitget", "lazarus"), before a headline may enter.
     const distinctive = terms.filter((t) => t.length >= 6);
     return wire
-      .map((it) => {
-        const text = `${it.title} ${it.summary}`.toLowerCase();
-        const hits = terms.filter((t) => text.includes(t));
-        const strong = hits.some((t) => distinctive.includes(t));
-        return { it, score: hits.length, strong };
-      })
+      .map((it) => wireHit(it, terms, distinctive))
       .filter((x) => x.score >= 2 || x.strong)
       .sort((a, b) => b.score - a.score || new Date(b.it.publishedAt || 0) - new Date(a.it.publishedAt || 0))
       .slice(0, n)
@@ -1177,6 +1231,15 @@ async function researchAgent(d) {
           return {
             note: 'the link was opened and filed — read the text and save_claim what it says',
             ...page,
+          };
+        }
+        const tokens = new Set(searchWordsOf(q));
+        const again = tokens.size ? issued.find((x) => queryOverlap(x.tokens, tokens) >= 0.8) : null;
+        if (again) {
+          log(`SEARCH  "${q}" → nearly the same as "${again.query}" — not searched again`);
+          return {
+            ...again.result,
+            note: `you already searched nearly this ("${again.query}") and got the same pages. Do not search again: call open with one of these urls, read the text and save_claim what it says.`,
           };
         }
         searches += 1;
@@ -1250,7 +1313,7 @@ async function researchAgent(d) {
         // search the same story twelve times.
         if (searches >= 3 && d.claims.length === startedClaims) notes.push(`you have searched ${searches} times and written down no claim — stop searching: open a result, read the text, save_claim what it says`);
         log(`SEARCH  "${q}" → ${results.length} hit(s) (wire ${wireN}, documents ${docsN}, opened ${opened.length})`);
-        return {
+        const payload = {
           // The note comes first: the observation is cut off at 3200
           // characters, and the guidance is the part that must survive.
           ...(notes.length ? { note: notes.join(' — ') } : {}),
@@ -1261,6 +1324,8 @@ async function researchAgent(d) {
           results,
           opened: opened.map((o) => ({ ...o, text: String(o.text || '').slice(0, 600) })),
         };
+        issued.push({ query: q, tokens, result: payload });
+        return payload;
       },
     },
     {
@@ -1301,7 +1366,7 @@ async function researchAgent(d) {
         if (value.length < 20) return { error: 'claim too short' };
         if (!valid.length) return { error: `no valid source id — on file: ${[...known].join(', ') || 'none'}` };
         const norm = value.toLowerCase().replace(/\W+/g, ' ').trim();
-        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm);
+        const dup = d.claims.find((c) => c.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm || sameClaim(c.text, value));
         if (dup) return { duplicate: dup.id };
         // The next free number, not the length plus one: a dossier that ever
         // loses a claim would otherwise hand out an id that is already taken.
@@ -1643,20 +1708,20 @@ async function scanForLeads(state, dossiers) {
     return 0;
   }
 
-  const list = items
-    .map((it, i) => `#${i + 1} [${it.outlet}] ${String(it.title || '').replace(/\s+/g, ' ').slice(0, 220)}\n${it.url}`)
-    .join('\n\n');
+  const noticesOf = (subset) =>
+    subset
+      .map((it, i) => `#${i + 1} [${it.outlet}] ${String(it.title || '').replace(/\s+/g, ' ').slice(0, 220)}\n${it.url}`)
+      .join('\n\n');
 
-  let data = null;
-  try {
-    ({ data } = await chatJSON('desk', [
+  const ask = async (subset, options) => {
+    const { data } = await chatJSON('desk', [
       {
         role: 'system',
         content: `You are the investigative editor of PLAIN. Every morning you read what the institutions you follow have published and you decide which of it deserves an investigation: documents, data and questions, weeks of work. The desk works internationally — a notice about one country's own affairs is not the desk's story unless a cross-border institution, money or people are involved, and Switzerland is where the paper is published, not what it covers. You write about people: a notice without anyone who loses something, profits or lives with the consequences is a procedure, not a story. Return JSON only.`,
       },
       {
         role: 'user',
-        content: `What the institutions published today:\n\n${list}\n\nPick at most three notices that could start an investigation. A notice qualifies only if ALL of these hold:
+        content: `What the institutions published today:\n\n${noticesOf(subset)}\n\nPick at most three notices that could start an investigation. A notice qualifies only if ALL of these hold:
 - it points at something concrete: a decision, a payment, an award, a charge, a settlement, a seizure, a sanction, a contract;
 - it is answerable with public documents and questions to the institutions — no hidden sources needed;
 - it has people in it: who is affected, who profits, who is left with the consequences;
@@ -1670,18 +1735,44 @@ ${memoryBlock(deskMemory(dossiers, state)) || '(nothing yet — this would be th
 
 Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth":true,"title":"…","angle":"…","centre":"…","people":"…","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["…"]}]}. "n" is the number of the notice in the list above. Return {"leads":[]} if nothing qualifies.`,
       },
-    ], { temperature: 0.35, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 }));
+    ], options);
+    return (Array.isArray(data?.leads) ? data.leads : []).slice(0, 3);
+  };
+
+  // The desk's whole day of leads hangs on one answer. A model that writes
+  // its reasoning into the reply instead of the JSON ("We need to output JSON
+  // with leads array…") cost the desk a scan in production — it does not get
+  // to cost the whole day: fewer notices, cooler, more room to answer.
+  let shelf = items;
+  let picks = [];
+  try {
+    picks = await ask(items, { temperature: 0.35, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 });
   } catch (err) {
     log(`SCAN  the desk could not read the front pages: ${err.message}`);
-    return 0;
+    shelf = items.slice(0, 12);
+    log(`SCAN  second pass over ${shelf.length} notice(s)`);
+    try {
+      picks = await ask(shelf, { temperature: 0.1, maxTokens: 3000, numCtx: 32768, timeoutMs: 120000 });
+    } catch (err2) {
+      log(`SCAN  second pass failed too: ${err2.message}`);
+      return 0;
+    }
   }
 
-  const picks = (Array.isArray(data?.leads) ? data.leads : []).slice(0, 3);
   let added = 0;
   for (const pick of picks) {
-    const item = items[Number(pick?.n) - 1];
+    const item = shelf[Number(pick?.n) - 1];
     const worth = pick?.worth === true || pick?.worth === 'true' || pick?.worth === 1;
     if (!item || !worth || String(pick.title || '').length < 12) continue;
+    // A notice that names nothing cannot support a story. The desk's first
+    // scan turned an empty "Contract Award: " into "$200M for renewable
+    // energy in Kenya" — the notice itself was a Kyrgyz road project. The
+    // pick is not filed: there is no document to check the story against.
+    const docTitle = String(item.title || '').replace(/\s+/g, ' ').trim();
+    if (docTitle.replace(/[^A-Za-z]/g, '').length < 20) {
+      log(`SCAN  ✗ notice names nothing: ${docTitle || '(no title)'}`);
+      continue;
+    }
     const lead = {
       at: nowISO(),
       origin: 'scan',
@@ -1691,11 +1782,11 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
       angle: String(pick.angle || '').slice(0, 300),
       centre: String(pick.centre || '').trim().slice(0, 80),
       people: String(pick.people || '').slice(0, 300),
-      category: String(pick.category || 'world').slice(0, 20),
+      category: pickCategory(pick.category),
       queries: (Array.isArray(pick.queries) ? pick.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
       url: item.url,
       outlet: item.outlet,
-      docTitle: String(item.title || '').replace(/\s+/g, ' ').slice(0, 300),
+      docTitle: docTitle.slice(0, 300),
     };
     // The desk works internationally. A notice that turns out to be one
     // country's own business is not filed: the slot is better left empty.
@@ -2102,7 +2193,7 @@ Return exactly:
   let next = d.claims.length + 1;
   for (const c of claims) {
     const norm = c.text.toLowerCase().replace(/\W+/g, ' ').trim();
-    if (merged.some((x) => x.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm)) continue;
+    if (merged.some((x) => x.text.toLowerCase().replace(/\W+/g, ' ').trim() === norm || sameClaim(x.text, c.text))) continue;
     let id = `C${next++}`;
     while (existingIds.has(id)) id = `C${next++}`;
     existingIds.add(id);
@@ -2349,8 +2440,12 @@ Return {"subject":"…","body":"…"}`,
 function institutionHost(host) {
   const h = String(host || '').toLowerCase().replace(/^www\./, '');
   if (!h) return false;
-  if (/(^|\.)(gov|mil|int|edu|gouv)$/.test(h)) return true;
-  if (/(^|\.)(gov|gc)\.[a-z]{2}$/.test(h)) return true;
+  // Public bodies outside Washington: a Korean court publishes from
+  // scourt.go.kr, a French ministry from gouv.fr, a Mexican ministry from
+  // gob.mx. A desk that only knows .gov reads only one country.
+  if (/(^|\.)(gov|mil|int|edu|gouv|gob|gv|gc)(\.[a-z]{2})?$/.test(h)) return true;
+  if (/(^|\.)(go|lg)\.(kr|jp|th|id|tw|hk|vn|ph|my|sg|in)$/.test(h)) return true;
+  if (/(^|\.)admin\.ch$/.test(h)) return true;
   if (/(^|\.)europa\.eu$/.test(h)) return true;
   return /(^|\.)(un|worldbank|imf|oecd|unicef|unido|icj-cij|icc-cpi|worldhealth)\.[a-z]{2,4}$/.test(h);
 }

@@ -89,12 +89,25 @@ export const INSTITUTIONS = [
     url: 'https://news.un.org/feed/subscribe/en/news/all/rss.xml',
     about: ['north korea', 'dprk', 'korea', 'human rights', 'war', 'conflict', 'sanction', 'hunger', 'climate', 'displacement', 'refugee', 'panel of experts', 'repression'],
   },
+  // The UN Human Rights Office was on this list with its /en/rss.xml feed.
+  // That feed is not a newswire: it lists evergreen topic pages ("Sport and
+  // human rights") without a date, so the desk read the same landing pages
+  // every morning. Its news feed sits behind a Cloudflare challenge. The two
+  // human-rights organisations below publish dated statements and reports
+  // instead, and their investigations name the people the desk writes about.
   {
-    id: 'ohchr',
-    outlet: 'UN Human Rights Office',
+    id: 'hrw',
+    outlet: 'Human Rights Watch',
     kind: 'rss',
-    url: 'https://www.ohchr.org/en/rss.xml',
-    about: ['human rights', 'detention', 'disappear', 'torture', 'migration', 'refugee', 'stateless', 'indigenous', 'minority', 'north korea', 'dprk', 'forced labour'],
+    url: 'https://www.hrw.org/rss/news',
+    about: ['human rights', 'detention', 'disappear', 'torture', 'migration', 'refugee', 'stateless', 'indigenous', 'minority', 'north korea', 'dprk', 'forced labour', 'war crime', 'journalist', 'protest', 'censorship'],
+  },
+  {
+    id: 'amnesty',
+    outlet: 'Amnesty International',
+    kind: 'rss',
+    url: 'https://www.amnesty.org/en/latest/feed/',
+    about: ['human rights', 'detention', 'disappear', 'torture', 'migration', 'refugee', 'stateless', 'indigenous', 'minority', 'north korea', 'dprk', 'forced labour', 'arms', 'surveillance', 'protest', 'censorship'],
   },
   {
     id: 'gao',
