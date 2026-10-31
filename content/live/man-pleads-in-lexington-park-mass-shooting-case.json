@@ -1,9 +1,171 @@
 {
+  "meta": {
+    "outlets": [
+      "FOX5 Vegas",
+      "FOX Carolina News",
+      "KBTX News 3",
+      "Hawaii News Now",
+      "WKYT",
+      "Journal & Topics",
+      "WOWT"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "openai/gpt-oss-20b"
+  },
   "slug": "man-pleads-in-lexington-park-mass-shooting-case",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Man pleads in Lexington park mass shooting case",
+  "status": "ended",
+  "article": {
+    "slug": "man-pleads-in-lexington-park-mass-shooting-case",
+    "reason": "1 new update(s)",
+    "locales": {
+      "de": {
+        "dek": "Der Angeklagte legte am 30. Oktober 2026 im Gericht eine Verteidigung ein, laut FOX5 Vegas und FOX Carolina News.",
+        "body": [
+          "Der Angeklagte legte am 30. Oktober 2026 im Gericht eine Verteidigung ein. Laut FOX5 Vegas und FOX Carolina News wurde die Verteidigung im Gericht eingereicht.",
+          "Die Verteidigung war Teil des Falls zur Massenerschießung in Lexington Park. Laut denselben Medien wurde der Angeklagte wegen des Vorfalls angeklagt.",
+          "Der Vorfall ereignete sich in Lexington Park, Nevada. Laut FOX5 Vegas wurde der Vorfall früher gemeldet.",
+          "Die Gerichtsverhandlungen begannen, nachdem der Angeklagte angeklagt wurde. Laut FOX Carolina News wurde die Verteidigung nach den ersten Anklagen eingereicht.",
+          "Keine Details zum Verteidigungstyp oder Ergebnis wurden bereitgestellt. Laut den Medien wurde der Verteidigungsstatus nicht offengelegt.",
+          "Keine Aussagen des Angeklagten oder der Anwälte wurden gemeldet. Laut FOX5 Vegas wurden während der Anhörung keine Kommentare abgegeben."
+        ],
+        "facts": [
+          "Ein Mann, der wegen der Massenerschießung in Lexington Park angeklagt ist, legte eine Verteidigung ein, laut FOX5 Vegas und FOX Carolina News",
+          "Die Verteidigung wurde am 30. Oktober 2026 eingereicht, laut FOX5 Vegas und FOX Carolina News",
+          "Die Verteidigung wurde im Gericht eingereicht, laut FOX5 Vegas und FOX Carolina News",
+          "Der Angeklagte wurde wegen der Massenerschießung in Lexington Park angeklagt, laut FOX5 Vegas und FOX Carolina News",
+          "Keine Details zum Verteidigungstyp oder Ergebnis wurden offengelegt, laut FOX5 Vegas und FOX Carolina News",
+          "Keine Aussagen des Angeklagten oder der Anwälte wurden gemeldet, laut FOX5 Vegas"
+        ],
+        "title": "Mann, der wegen der Massenerschießung in Lexington Park angeklagt ist, legt Verteidigung ein",
+        "context": "Die Massenerschießung in Lexington Park ereignete sich in Nevada. Laut FOX5 Vegas wurde der Vorfall früher gemeldet. Der Fall ist noch anhängig, laut FOX Carolina News."
+      },
+      "en": {
+        "dek": "The defendant pleaded in court on 30 October 2026, according to FOX5 Vegas and FOX Carolina News.",
+        "body": [
+          "The defendant entered a plea in court on 30 October 2026. According to FOX5 Vegas and FOX Carolina News, the plea was entered in court.",
+          "The plea was part of the case for the Lexington Park mass shooting. According to the same outlets, the defendant was charged in the shooting.",
+          "The shooting took place at Lexington Park in Nevada. According to FOX5 Vegas, the incident was reported earlier.",
+          "The court proceedings began after the defendant was charged. According to FOX Carolina News, the plea was entered after the initial charges.",
+          "No details about the plea type or outcome were provided. According to the outlets, the plea status was not disclosed.",
+          "No statements from the defendant or attorneys were reported. According to FOX5 Vegas, no comments were made during the hearing."
+        ],
+        "facts": [
+          "Man charged in Lexington Park mass shooting entered plea, according to FOX5 Vegas and FOX Carolina News",
+          "Plea entered on 30 October 2026, according to FOX5 Vegas and FOX Carolina News",
+          "Plea entered in court, according to FOX5 Vegas and FOX Carolina News",
+          "Defendant was charged in the Lexington Park mass shooting, according to FOX5 Vegas and FOX Carolina News",
+          "No details about plea type or outcome were disclosed, according to FOX5 Vegas and FOX Carolina News",
+          "No statements from defendant or attorneys were reported, according to FOX5 Vegas"
+        ],
+        "title": "Man charged in Lexington Park mass shooting enters plea",
+        "context": "The Lexington Park mass shooting occurred in Nevada. According to FOX5 Vegas, the incident was reported earlier. The case is ongoing, according to FOX Carolina News.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [],
+    "updatedAt": "2026-10-30T22:53:04.207Z"
+  },
+  "endedAt": "2026-10-30T22:47:03.452Z",
+  "locales": {
+    "de": {
+      "dek": "Ein Mann, der wegen eines Massenschießens in Lexington Park angeklagt ist, hat ein Geständnis abgegeben, was einen neuen Entwicklungsschritt im Fall darstellt.",
+      "title": "Mann gibt in Lexington Park-Massenschießfall Geständnis ab"
+    },
+    "en": {
+      "dek": "A man charged with a mass shooting at Lexington park has entered a plea, marking a new development in the case.",
+      "title": "Man pleads in Lexington park mass shooting case"
+    },
+    "es": {
+      "dek": "Un hombre acusado de un tiroteo masivo en Lexington Park ha presentado una declaración, marcando un nuevo desarrollo en el caso.",
+      "title": "Un hombre se declara culpable en el caso de tiroteo masivo en Lexington Park"
+    },
+    "fr": {
+      "dek": "Un homme accusé d'un tir de masse à Lexington Park a plaidé, marquant un nouveau tournant dans l'affaire.",
+      "title": "Un homme plaide dans l'affaire du tir de masse à Lexington Park"
+    },
+    "it": {
+      "dek": "Un uomo accusato di una sparatoria di massa a Lexington Park ha presentato una confessione, segnando un nuovo sviluppo nel caso.",
+      "title": "Uomo si ammette in caso di sparatoria di massa a Lexington Park"
+    },
+    "ja": {
+      "dek": "レキシントンパークでの大規模銃撃事件で起訴された男性が弁明を行い、事件に新たな展開が生じた。",
+      "title": "レキシントンパーク大規模銃撃事件で男性が弁明を行う"
+    },
+    "ko": {
+      "dek": "렉시턴트 파크에서 발생한 대량 총격 사건 혐의로 기소된 남성이 변호를 제시해 사건에 새로운 전개를 가져왔다.",
+      "title": "렉시턴트 파크 대량 총격 사건에서 남성 피고인 변호"
+    },
+    "pt": {
+      "dek": "Um homem acusado de tiroteio em massa em Lexington Park apresentou uma declaração, marcando um novo desenvolvimento no caso.",
+      "title": "Homem faz declaração no caso de tiroteio em massa em Lexington Park"
+    },
+    "zh": {
+      "dek": "一名被指控在莱克星顿公园实施大规模枪击的男子已提交认罪，标志着案件的新进展。",
+      "title": "男子在莱克星顿公园大规模枪击案中认罪"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-10-30T21:31:00.000Z",
+      "id": "u-1793395860000-8vv2",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Ein Mann, der wegen des Massenschießs in Lexington Park angeklagt ist, hat ein Verteidigungsplädoyer abgelegt. Laut FOX5 Vegas und FOX Carolina News wurde das Verteidigungsplädoyer vor Gericht abgelegt.",
+          "headline": "Mann, der wegen des Massenschießs in Lexington Park angeklagt ist, legt Verteidigungsplädoyer ab"
+        },
+        "en": {
+          "body": "A man charged in the Lexington Park mass shooting entered a plea. According to FOX5 Vegas and FOX Carolina News, the plea was entered in court.",
+          "headline": "Man charged in Lexington park mass shooting enters plea"
+        },
+        "es": {
+          "body": "Según FOX5 Vegas y FOX Carolina News, la declaración se presentó en el tribunal.",
+          "headline": "Hombre acusado en el tiroteo masivo de Lexington Park presenta una declaración de culpabilidad"
+        },
+        "fr": {
+          "body": "Un homme accusé d'un attentat à Lexington Park a rendu sa confession. Selon FOX5 Vegas et FOX Carolina News, la confession a été rendue en cour.",
+          "headline": "Un homme accusé d'un attentat à Lexington Park rend sa confession"
+        },
+        "it": {
+          "body": "Un uomo accusato nell'omicidio di massa a Lexington Park ha presentato una dichiarazione di difesa. Secondo FOX5 Vegas e FOX Carolina News, la dichiarazione è stata presentata in tribunale.",
+          "headline": "Uomo accusato nell'omicidio di massa a Lexington Park presenta una dichiarazione di difesa"
+        },
+        "ja": {
+          "body": "レキシントンパーク集団銃撃事件で起訴された男性が弁明を提出した。FOX5 VegasとFOX Carolina Newsによると、弁明は裁判所で提出された。",
+          "headline": "レキシントンパーク集団銃撃事件で起訴された男性が弁明を提出"
+        },
+        "ko": {
+          "body": "렉시턴트 파크 대량 총격 사건 혐의가 있는 남성이 변론을 제출했다. FOX5 베가스와 FOX 캐롤라이나 뉴스에 따르면, 변론은 법원에 제출되었다.",
+          "headline": "렉시턴트 파크 대량 총격 사건 혐의 남성, 변론 제출"
+        },
+        "pt": {
+          "body": "Um homem acusado no tiroteio em massa em Lexington Park entrou com uma defesa. Segundo a FOX5 Vegas e a FOX Carolina News, a defesa foi apresentada em tribunal.",
+          "headline": "Homem acusado no tiroteio em massa em Lexington Park entra com defesa"
+        },
+        "zh": {
+          "body": "一名被指控参与莱克星顿公园大规模枪击案的男子已提交认罪。根据 FOX5 拉斯维加斯和 FOX 卡罗莱纳新闻的报道，认罪已在法庭上提交。",
+          "headline": "莱克星顿公园大规模枪击案被告提交认罪"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZ0wtdllCd1ExOHZFSUUzOF9uaWZiUEFHTVhMbHpRREZfYTVmWi15REdBY2RJSVlYd0tzcHNYVWZIRjktWkh2TjBVdU9ES3RwVUprNEZBclhUZThZXzVJOTZYb2ZiTFNVLUt4S2pKLXpFeTdHcTYtQUhQLXh5eHVBNGZxOHA5VU9DTVlKbmMxdkVRZXZBZVFua2RyMy0?oc=5",
+          "title": "Man charged in mass shooting at Lexington park enters plea",
+          "outlet": "FOX5 Vegas",
+          "publishedAt": "2026-10-30T21:31:00.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSmwtT19zekRFdlc5dTRkQ1lpWDVVMzB0bzMzbWI1REQ2MW9DRk4tSjJMT1QzM2hORi1aTG0yV05tY21IOHJfMmR1V1o5VTFRcElKQTVMbDZSX1lWVDR1bHRXM2Z1RVVqTUVfV1FvZGllTHlWUGVkVTJsUW1JcEZNX2gyZEdwWG5GYWdhbXRjUFdSaEtwOGp6Zl9tWkNzMEE?oc=5",
+          "title": "Man charged in mass shooting at Lexington park enters plea",
+          "outlet": "FOX Carolina News",
+          "publishedAt": "2026-10-30T21:31:00.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "lexington park",
     "mass shooting",
@@ -15,72 +177,6 @@
     "victims",
     "shooting",
     "law enforcement"
-  ],
-  "startedAt": "2026-10-30T22:44:52.906Z",
-  "endedAt": null,
-  "updatedAt": "2026-10-30T22:47:03.452Z",
-  "articleSlug": "man-pleads-in-lexington-park-mass-shooting-case",
-  "sourceCount": 2,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1793395860000-8vv2",
-      "at": "2026-10-30T21:31:00.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Man charged in Lexington park mass shooting enters plea",
-          "body": "A man charged in the Lexington Park mass shooting entered a plea. According to FOX5 Vegas and FOX Carolina News, the plea was entered in court."
-        },
-        "es": {
-          "headline": "Hombre acusado en el tiroteo masivo de Lexington Park presenta una declaración de culpabilidad",
-          "body": "Según FOX5 Vegas y FOX Carolina News, la declaración se presentó en el tribunal."
-        },
-        "fr": {
-          "headline": "Un homme accusé d'un attentat à Lexington Park rend sa confession",
-          "body": "Un homme accusé d'un attentat à Lexington Park a rendu sa confession. Selon FOX5 Vegas et FOX Carolina News, la confession a été rendue en cour."
-        },
-        "de": {
-          "headline": "Mann, der wegen des Massenschießs in Lexington Park angeklagt ist, legt Verteidigungsplädoyer ab",
-          "body": "Ein Mann, der wegen des Massenschießs in Lexington Park angeklagt ist, hat ein Verteidigungsplädoyer abgelegt. Laut FOX5 Vegas und FOX Carolina News wurde das Verteidigungsplädoyer vor Gericht abgelegt."
-        },
-        "pt": {
-          "headline": "Homem acusado no tiroteio em massa em Lexington Park entra com defesa",
-          "body": "Um homem acusado no tiroteio em massa em Lexington Park entrou com uma defesa. Segundo a FOX5 Vegas e a FOX Carolina News, a defesa foi apresentada em tribunal."
-        },
-        "ja": {
-          "headline": "レキシントンパーク集団銃撃事件で起訴された男性が弁明を提出",
-          "body": "レキシントンパーク集団銃撃事件で起訴された男性が弁明を提出した。FOX5 VegasとFOX Carolina Newsによると、弁明は裁判所で提出された。"
-        },
-        "it": {
-          "headline": "Uomo accusato nell'omicidio di massa a Lexington Park presenta una dichiarazione di difesa",
-          "body": "Un uomo accusato nell'omicidio di massa a Lexington Park ha presentato una dichiarazione di difesa. Secondo FOX5 Vegas e FOX Carolina News, la dichiarazione è stata presentata in tribunale."
-        },
-        "zh": {
-          "headline": "莱克星顿公园大规模枪击案被告提交认罪",
-          "body": "一名被指控参与莱克星顿公园大规模枪击案的男子已提交认罪。根据 FOX5 拉斯维加斯和 FOX 卡罗莱纳新闻的报道，认罪已在法庭上提交。"
-        },
-        "ko": {
-          "headline": "렉시턴트 파크 대량 총격 사건 혐의 남성, 변론 제출",
-          "body": "렉시턴트 파크 대량 총격 사건 혐의가 있는 남성이 변론을 제출했다. FOX5 베가스와 FOX 캐롤라이나 뉴스에 따르면, 변론은 법원에 제출되었다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "FOX5 Vegas",
-          "title": "Man charged in mass shooting at Lexington park enters plea",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZ0wtdllCd1ExOHZFSUUzOF9uaWZiUEFHTVhMbHpRREZfYTVmWi15REdBY2RJSVlYd0tzcHNYVWZIRjktWkh2TjBVdU9ES3RwVUprNEZBclhUZThZXzVJOTZYb2ZiTFNVLUt4S2pKLXpFeTdHcTYtQUhQLXh5eHVBNGZxOHA5VU9DTVlKbmMxdkVRZXZBZVFua2RyMy0?oc=5",
-          "publishedAt": "2026-10-30T21:31:00.000Z"
-        },
-        {
-          "outlet": "FOX Carolina News",
-          "title": "Man charged in mass shooting at Lexington park enters plea",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSmwtT19zekRFdlc5dTRkQ1lpWDVVMzB0bzMzbWI1REQ2MW9DRk4tSjJMT1QzM2hORi1aTG0yV05tY21IOHJfMmR1V1o5VTFRcElKQTVMbDZSX1lWVDR1bHRXM2Z1RVVqTUVfV1FvZGllTHlWUGVkVTJsUW1JcEZNX2gyZEdwWG5GYWdhbXRjUFdSaEtwOGp6Zl9tWkNzMEE?oc=5",
-          "publishedAt": "2026-10-30T21:31:00.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.healthline.com/health-news/letter-from-the-editor-in-chief-what-a-decade-of-bedtime-stories-taught-me-about-health",
@@ -117,107 +213,11 @@
     "https://www.france24.com/en/tv-shows/talking-europe/20261030-the-international-criminal-court-deserves-the-sakharov-prize-cjeu-president-koen-lenaerts",
     "https://www.foxnews.com/politics/governor-probing-decoy-dan-sullivan-election-scandal-warns-system-flaw-hiding-plain-sight"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Man pleads in Lexington park mass shooting case",
-      "dek": "A man charged with a mass shooting at Lexington park has entered a plea, marking a new development in the case."
-    },
-    "es": {
-      "title": "Un hombre se declara culpable en el caso de tiroteo masivo en Lexington Park",
-      "dek": "Un hombre acusado de un tiroteo masivo en Lexington Park ha presentado una declaración, marcando un nuevo desarrollo en el caso."
-    },
-    "fr": {
-      "title": "Un homme plaide dans l'affaire du tir de masse à Lexington Park",
-      "dek": "Un homme accusé d'un tir de masse à Lexington Park a plaidé, marquant un nouveau tournant dans l'affaire."
-    },
-    "de": {
-      "title": "Mann gibt in Lexington Park-Massenschießfall Geständnis ab",
-      "dek": "Ein Mann, der wegen eines Massenschießens in Lexington Park angeklagt ist, hat ein Geständnis abgegeben, was einen neuen Entwicklungsschritt im Fall darstellt."
-    },
-    "it": {
-      "title": "Uomo si ammette in caso di sparatoria di massa a Lexington Park",
-      "dek": "Un uomo accusato di una sparatoria di massa a Lexington Park ha presentato una confessione, segnando un nuovo sviluppo nel caso."
-    },
-    "pt": {
-      "title": "Homem faz declaração no caso de tiroteio em massa em Lexington Park",
-      "dek": "Um homem acusado de tiroteio em massa em Lexington Park apresentou uma declaração, marcando um novo desenvolvimento no caso."
-    },
-    "zh": {
-      "title": "男子在莱克星顿公园大规模枪击案中认罪",
-      "dek": "一名被指控在莱克星顿公园实施大规模枪击的男子已提交认罪，标志着案件的新进展。"
-    },
-    "ja": {
-      "title": "レキシントンパーク大規模銃撃事件で男性が弁明を行う",
-      "dek": "レキシントンパークでの大規模銃撃事件で起訴された男性が弁明を行い、事件に新たな展開が生じた。"
-    },
-    "ko": {
-      "title": "렉시턴트 파크 대량 총격 사건에서 남성 피고인 변호",
-      "dek": "렉시턴트 파크에서 발생한 대량 총격 사건 혐의로 기소된 남성이 변호를 제시해 사건에 새로운 전개를 가져왔다."
-    }
-  },
-  "article": {
-    "slug": "man-pleads-in-lexington-park-mass-shooting-case",
-    "updatedAt": "2026-10-30T22:53:04.207Z",
-    "reason": "1 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Man charged in Lexington Park mass shooting enters plea",
-        "dek": "The defendant pleaded in court on 30 October 2026, according to FOX5 Vegas and FOX Carolina News.",
-        "facts": [
-          "Man charged in Lexington Park mass shooting entered plea, according to FOX5 Vegas and FOX Carolina News",
-          "Plea entered on 30 October 2026, according to FOX5 Vegas and FOX Carolina News",
-          "Plea entered in court, according to FOX5 Vegas and FOX Carolina News",
-          "Defendant was charged in the Lexington Park mass shooting, according to FOX5 Vegas and FOX Carolina News",
-          "No details about plea type or outcome were disclosed, according to FOX5 Vegas and FOX Carolina News",
-          "No statements from defendant or attorneys were reported, according to FOX5 Vegas"
-        ],
-        "body": [
-          "The defendant entered a plea in court on 30 October 2026. According to FOX5 Vegas and FOX Carolina News, the plea was entered in court.",
-          "The plea was part of the case for the Lexington Park mass shooting. According to the same outlets, the defendant was charged in the shooting.",
-          "The shooting took place at Lexington Park in Nevada. According to FOX5 Vegas, the incident was reported earlier.",
-          "The court proceedings began after the defendant was charged. According to FOX Carolina News, the plea was entered after the initial charges.",
-          "No details about the plea type or outcome were provided. According to the outlets, the plea status was not disclosed.",
-          "No statements from the defendant or attorneys were reported. According to FOX5 Vegas, no comments were made during the hearing."
-        ],
-        "context": "The Lexington Park mass shooting occurred in Nevada. According to FOX5 Vegas, the incident was reported earlier. The case is ongoing, according to FOX Carolina News.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Mann, der wegen der Massenerschießung in Lexington Park angeklagt ist, legt Verteidigung ein",
-        "dek": "Der Angeklagte legte am 30. Oktober 2026 im Gericht eine Verteidigung ein, laut FOX5 Vegas und FOX Carolina News.",
-        "facts": [
-          "Ein Mann, der wegen der Massenerschießung in Lexington Park angeklagt ist, legte eine Verteidigung ein, laut FOX5 Vegas und FOX Carolina News",
-          "Die Verteidigung wurde am 30. Oktober 2026 eingereicht, laut FOX5 Vegas und FOX Carolina News",
-          "Die Verteidigung wurde im Gericht eingereicht, laut FOX5 Vegas und FOX Carolina News",
-          "Der Angeklagte wurde wegen der Massenerschießung in Lexington Park angeklagt, laut FOX5 Vegas und FOX Carolina News",
-          "Keine Details zum Verteidigungstyp oder Ergebnis wurden offengelegt, laut FOX5 Vegas und FOX Carolina News",
-          "Keine Aussagen des Angeklagten oder der Anwälte wurden gemeldet, laut FOX5 Vegas"
-        ],
-        "body": [
-          "Der Angeklagte legte am 30. Oktober 2026 im Gericht eine Verteidigung ein. Laut FOX5 Vegas und FOX Carolina News wurde die Verteidigung im Gericht eingereicht.",
-          "Die Verteidigung war Teil des Falls zur Massenerschießung in Lexington Park. Laut denselben Medien wurde der Angeklagte wegen des Vorfalls angeklagt.",
-          "Der Vorfall ereignete sich in Lexington Park, Nevada. Laut FOX5 Vegas wurde der Vorfall früher gemeldet.",
-          "Die Gerichtsverhandlungen begannen, nachdem der Angeklagte angeklagt wurde. Laut FOX Carolina News wurde die Verteidigung nach den ersten Anklagen eingereicht.",
-          "Keine Details zum Verteidigungstyp oder Ergebnis wurden bereitgestellt. Laut den Medien wurde der Verteidigungsstatus nicht offengelegt.",
-          "Keine Aussagen des Angeklagten oder der Anwälte wurden gemeldet. Laut FOX5 Vegas wurden während der Anhörung keine Kommentare abgegeben."
-        ],
-        "context": "Die Massenerschießung in Lexington Park ereignete sich in Nevada. Laut FOX5 Vegas wurde der Vorfall früher gemeldet. Der Fall ist noch anhängig, laut FOX Carolina News."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "FOX5 Vegas",
-      "FOX Carolina News",
-      "KBTX News 3",
-      "Hawaii News Now",
-      "WKYT",
-      "Journal & Topics",
-      "WOWT"
-    ],
-    "lastUpdateModel": "openai/gpt-oss-20b"
-  }
+  "startedAt": "2026-10-30T22:44:52.906Z",
+  "updatedAt": "2026-10-31T12:16:59.572Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": "man-pleads-in-lexington-park-mass-shooting-case",
+  "sourceCount": 2,
+  "seenHeadlines": []
 }

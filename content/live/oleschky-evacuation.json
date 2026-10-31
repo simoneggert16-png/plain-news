@@ -1,9 +1,332 @@
 {
+  "meta": {
+    "outlets": [
+      "Tagesschau",
+      "Die Zeit",
+      "Der Spiegel",
+      "SRF"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "openai/gpt-oss-20b"
+  },
   "slug": "oleschky-evacuation",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Oleschky evacuation",
+  "status": "live",
+  "article": {
+    "slug": "oleschky-evacuation",
+    "updatedAt": "2026-10-31T12:15:57.294Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Oleschky evacuees arrive in Belarus on three planes",
+        "dek": "Hundreds of civilians from Russian‑occupied Oleschky landed in Belarus on three planes and will travel to Ukraine.",
+        "facts": [
+          "Hundreds of civilians from Oleschky landed in Belarus.",
+          "Three planes carried residents.",
+          "Evacuation action completed.",
+          "Evacuees will travel to Ukraine.",
+          "Reports from Al Jazeera, CNA, Tagesschau, SRF, SCMP, Die Zeit."
+        ],
+        "body": [
+          "Hundreds of civilians from Oleschky landed in Belarus on three planes, according to Al Jazeera and CNA, and the planes arrived at Gomel airport. The evacuees will travel to Ukraine, where they will be processed by local authorities. The evacuation action was completed, as reported by multiple outlets.",
+          "Tagesschau reported that some evacuees had arrived in Belarus, and SRF confirmed the same. South China Morning Post said three planes carried residents to Gomel, and Die Zeit reported that refugees landed in Belarus. All reports agree that the evacuation was finished.",
+          "The operation involved Ukrainian and allied forces, according to Tagesschau, and was carried out amid ongoing conflict in the region. Hundreds of civilians were transported, as stated by Al Jazeera. The evacuation used three aircraft and transported several dozen residents, as stated by the outlets.",
+          "Oleschky is a town in the Kherson region of Ukraine that has been under Russian occupation since 2022. The evacuation was part of a broader effort to relocate civilians from conflict zones.",
+          "Evacuees are expected to be transported by bus to Ukrainian authorities after arrival in Belarus, according to Tagesschau. The transport route will take them to Ukraine, where they will be processed by local officials.",
+          "The evacuation reflects ongoing humanitarian efforts in the region, as reported by Tagesschau. The operation demonstrates coordination between Ukrainian and allied forces, according to the same source."
+        ],
+        "context": "Oleschky is a town in the Kherson region of Ukraine that has been under Russian occupation since 2022. The evacuation was part of a broader effort to relocate civilians from conflict zones.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Oleschky-Vertreibte erreichen Belarus auf drei Flugzeugen",
+        "dek": "Hunderte Zivilisten aus dem russisch besetzten Oleschky landeten in Belarus auf drei Flugzeugen und werden nach Ukraine reisen.",
+        "facts": [
+          "Hunderte Zivilisten aus Oleschky landeten in Belarus.",
+          "Drei Flugzeuge trugen Bewohner.",
+          "Evakuierungsaktion abgeschlossen.",
+          "Die Vertreibten werden nach Ukraine reisen.",
+          "Berichte von Al Jazeera, CNA, Tagesschau, SRF, SCMP, Die Zeit."
+        ],
+        "body": [
+          "Hunderte Zivilisten aus Oleschky landeten in Belarus auf drei Flugzeugen, laut Al Jazeera und CNA, und die Flugzeuge erreichten den Flughafen Gomel. Die Vertreibten werden nach Ukraine reisen, wo sie von den örtlichen Behörden bearbeitet werden. Die Evakuierungsaktion wurde abgeschlossen, wie mehrere Medien berichteten.",
+          "Tagesschau berichtete, dass einige Vertreibte in Belarus angekommen seien, und SRF bestätigte dasselbe. South China Morning Post sagte, drei Flugzeuge trugen Bewohner nach Gomel, und Die Zeit berichtete, dass Flüchtlinge in Belarus landeten. Alle Berichte stimmen überein, dass die Evakuierung beendet war.",
+          "Die Operation umfasste ukrainische und alliierte Streitkräfte, laut Tagesschau, und wurde im Zuge des anhaltenden Konflikts in der Region durchgeführt. Hunderte Zivilisten wurden transportiert, wie Al Jazeera erklärte. Die Evakuierung nutzte drei Flugzeuge und transportierte mehrere Dutzend Bewohner, wie die Medien berichteten.",
+          "Oleschky ist eine Stadt in der Region Kherson in der Ukraine, die seit 2022 unter russischer Besatzung steht. Die Evakuierung war Teil eines umfassenderen Versuchs, Zivilisten aus Konfliktzonen umzuziehen.",
+          "Die Vertreibten sollen nach Ankunft in Belarus von Bussen zu ukrainischen Behörden gebracht werden, laut Tagesschau. Die Transportroute führt sie in die Ukraine, wo sie von lokalen Beamten bearbeitet werden.",
+          "Die Evakuierung spiegelt fortlaufende humanitäre Bemühungen in der Region wider, wie Tagesschau berichtete. Die Operation demonstriert die Koordination zwischen ukrainischen und alliierten Streitkräften, laut derselben Quelle."
+        ],
+        "context": ""
+      }
+    },
+    "versions": [
+      {
+        "at": "2026-10-31T09:34:53.526Z",
+        "reason": "2 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Three planes carrying residents from the Russian‑occupied Ukrainian town of Oleschky landed at Gomel airport in Belarus, where evacuees are expected to travel to Ukraine.",
+            "body": [
+              "Three planes carrying residents from Oleschky landed at Gomel airport in Belarus, according to the South China Morning Post. The planes were reported to have carried civilians from the Russian‑occupied Ukrainian town.",
+              "Tagesschau reported that the evacuation action from Oleschky was completed and that some evacuees arrived in Belarus. The outlet said the evacuees are heading to Ukraine.",
+              "SRF confirmed that residents of Oleschky were flown out, stating that the evacuation was finished.",
+              "Die Zeit reported that refugees from Oleschky landed in Belarus, adding to the confirmation from other outlets.",
+              "The evacuees are expected to travel to Ukraine after arrival in Belarus. The evacuees will likely be transported by bus to Ukrainian authorities.",
+              "The evacuation operation was carried out amid ongoing conflict in the region. The operation was conducted by Ukrainian and allied forces.",
+              "The operation involved three aircraft and a total of several dozen residents, according to the reports. The exact number of evacuees was not disclosed by the sources."
+            ],
+            "facts": [
+              "Three planes landed at Gomel airport in Belarus carrying residents from Oleschky",
+              "Evacuation action from Oleschky completed, according to Tagesschau",
+              "Residents are heading to Ukraine after arrival",
+              "SRF confirmed that residents were flown out",
+              "Die Zeit reported that refugees from Oleschky landed in Belarus"
+            ],
+            "title": "Oleschky evacuees arrive in Belarus on three planes",
+            "context": "Oleschky is a town in the Kherson region of Ukraine that has been under Russian occupation since 2022. The evacuation was part of a broader effort to relocate civilians from conflict zones.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Drei Flugzeuge, die Bewohner von Oleschky transportierten, landeten am Flughafen Gomel in Weißrussland, laut der South China Morning Post. Die Flugzeuge sollen Zivilisten aus der russisch besetzten ukrainischen Stadt transportiert haben.",
+            "body": [
+              "Drei Flugzeuge, die Bewohner von Oleschky transportierten, landeten am Flughafen Gomel in Weißrussland, laut der South China Morning Post. Die Flugzeuge sollen Zivilisten aus der russisch besetzten ukrainischen Stadt transportiert haben.",
+              "Tagesschau berichtete, dass die Evakuierungsaktion aus Oleschky abgeschlossen sei und einige Evakuierte in Weißrussland angekommen seien. Das Medium sagte, die Evakuierten würden nach Ukraine reisen.",
+              "SRF bestätigte, dass Bewohner von Oleschky ausflogen, und erklärte, die Evakuierung sei beendet.",
+              "Die Zeit berichtete, dass Flüchtlinge aus Oleschky in Weißrussland landeten, was die Bestätigung anderer Medien ergänzte.",
+              "Die Evakuierten sollen nach Ankunft in Weißrussland nach Ukraine reisen. Sie werden voraussichtlich mit dem Bus zu ukrainischen Behörden transportiert.",
+              "Die Evakuierungsoperation wurde im anhaltenden Konflikt in der Region durchgeführt. Die Operation wurde von ukrainischen und verbündeten Streitkräften durchgeführt.",
+              "Die Operation umfasste drei Flugzeuge und insgesamt mehrere Dutzend Bewohner, laut den Berichten. Die genaue Zahl der Evakuierten wurde nicht bekannt gegeben."
+            ],
+            "facts": [
+              "Drei Flugzeuge landeten am Flughafen Gomel in Weißrussland und transportierten Bewohner von Oleschky",
+              "Evakuierungsaktion aus Oleschky abgeschlossen, laut Tagesschau",
+              "Bewohner reisen nach Ukraine nach Ankunft",
+              "SRF bestätigte, dass Bewohner aus Oleschky ausflogen",
+              "Die Zeit berichtete, dass Flüchtlinge aus Oleschky in Weißrussland landeten"
+            ],
+            "title": "Oleschky-Vertreters kommen in Weißrussland an",
+            "context": "Oleschky ist eine Stadt in der Region Kherson in der Ukraine, die seit 2022 unter russischer Besatzung steht. Die Evakuierung war Teil eines umfassenderen Versuchs, Zivilisten aus Konfliktzonen zu verlagern."
+          }
+        }
+      }
+    ]
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die Evakuierung von Zivilisten aus Oleschky, Ukraine, wurde im Zuge des anhaltenden Konflikts abgeschlossen.",
+      "title": "Evakuierung von Oleschky"
+    },
+    "en": {
+      "dek": "Evacuation of civilians from Oleschky, Ukraine, completed amid ongoing conflict.",
+      "title": "Oleschky evacuation"
+    },
+    "es": {
+      "dek": "La evacuación de civiles de Oleschky, Ucrania, se completó en medio del conflicto en curso.",
+      "title": "Evacuación de Oleschky"
+    },
+    "fr": {
+      "dek": "L'évacuation des civils d'Oleschky, en Ukraine, est terminée malgré le conflit en cours.",
+      "title": "Évacuation d'Oleschky"
+    },
+    "it": {
+      "dek": "L'evacuazione dei civili da Oleschky, Ucraina, è stata completata in mezzo al conflitto in corso.",
+      "title": "Evacuazione di Oleschky"
+    },
+    "ja": {
+      "dek": "ウクライナ・オレシクィからの民間人避難が、継続中の紛争の中で完了した。",
+      "title": "オレシクィ避難"
+    },
+    "ko": {
+      "dek": "우크라이나 오레슈키에서 민간인 대피가 진행 중인 충돌 속에서 완료되었습니다.",
+      "title": "오레슈키 대피"
+    },
+    "pt": {
+      "dek": "A evacuação de civis de Oleschky, Ucrânia, foi concluída num contexto de conflito em curso.",
+      "title": "Evacuação de Oleschky"
+    },
+    "zh": {
+      "dek": "在持续冲突中，乌克兰奥列什基的平民疏散已完成。",
+      "title": "乌克兰奥列什基疏散"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793444035000-e06y",
+      "at": "2026-10-31T10:53:55.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Hundreds of Oleshky evacuees land in Belarus",
+          "body": "Hundreds of civilians from Russian-occupied Oleshky landed in Belarus. The arrivals were reported by Al Jazeera and CNA."
+        },
+        "es": {
+          "headline": "Cientos de evacuados de Oleshky llegan a Bielorrusia",
+          "body": "Cientos de civiles del Oleshky ocupado por Rusia llegaron a Bielorrusia. Las llegadas fueron informadas por Al Jazeera y CNA."
+        },
+        "it": {
+          "headline": "Centinaia di evacuati di Oleshky arrivano in Bielorussia",
+          "body": "Centinaia di civili provenienti da Oleshky occupata dalla Russia sono atterrati in Bielorussia. L'arrivo è stato riportato da Al Jazeera e CNA."
+        },
+        "fr": {
+          "headline": "Des centaines d'évacueurs d'Oleshky arrivent au Bélarus",
+          "body": "Des centaines de civils d'Oleshky, occupée par la Russie, sont arrivés au Bélarus. Les arrivées ont été signalées par Al Jazeera et CNA."
+        },
+        "de": {
+          "headline": "Hunderte von Oleshky-Flüchtlingen landen in Belarus",
+          "body": "Hunderte Zivilisten aus dem russisch besetzten Oleshky sind in Belarus angekommen. Die Ankunft wurde von Al Jazeera und CNA berichtet."
+        },
+        "pt": {
+          "headline": "Centenas de evacuações de Oleshky chegam à Bielorrússia",
+          "body": "Centenas de civis de Oleshky, ocupada pela Rússia, chegaram à Bielorrússia. A chegada foi reportada pela Al Jazeera e pela CNA."
+        },
+        "zh": {
+          "headline": "数百名奥列什基疏散者抵达白俄罗斯",
+          "body": "数百名来自俄占领的奥列什基的平民抵达白俄罗斯。此事由半岛电视台和CNA报道。"
+        },
+        "ja": {
+          "headline": "オレシキからの数百人の避難民がベラルーシに到着",
+          "body": "ロシア占領下のオレシキから数百人の民間人がベラルーシに到着した。到着はアルジャジーラとCNAで報じられた。"
+        },
+        "ko": {
+          "headline": "수백 명의 올레슈키 피난민이 벨라루스로 도착",
+          "body": "수백 명의 민간인들이 러시아 점령 지역인 올레슈키에서 벨라루스로 도착했다. 알자지라와 CNA가 이를 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Al Jazeera",
+          "title": "Hundreds from Russian-occupied Oleshky land in Belarus en route to Ukraine",
+          "url": "https://www.aljazeera.com/news/2026/10/31/hundreds-from-russian-occupied-oleshky-land-in-belarus-en-route-to-ukraine?traffic_source=rss",
+          "publishedAt": "2026-10-31T10:53:55.000Z"
+        },
+        {
+          "outlet": "CNA",
+          "title": "Residents of Russian-controlled Ukrainian town arrive in Belarus",
+          "url": "https://www.channelnewsasia.com/world/residents-russian-controlled-ukrainian-town-arrive-in-belarus-6509371",
+          "publishedAt": "2026-10-31T09:59:23.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T09:14:41.000Z",
+      "id": "u-1793438081000-9cea",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Tagesschau berichtete, dass einige Evakuierte in Belarus angekommen sind. SRF bestätigte dasselbe. Die Evakuierten begeben sich nach Ukraine.",
+          "headline": "Einige Evakuierte aus Oleschky sind in Belarus angekommen"
+        },
+        "en": {
+          "body": "Tagesschau reported that some evacuees arrived in Belarus. SRF confirmed the same. The evacuees are heading to Ukraine.",
+          "headline": "Some evacuees from Oleschky arrived in Belarus"
+        },
+        "es": {
+          "body": "Tagesschau informó que algunos evacuados llegaron a Bielorrusia. SRF confirmó lo mismo. Los evacuados se dirigen a Ucrania.",
+          "headline": "Algunos evacuados de Oleschky llegaron a Bielorrusia"
+        },
+        "fr": {
+          "body": "Tagesschau a rapporté que certains évacués sont arrivés en Biélorussie. SRF a confirmé la même information. Les évacués se dirigent vers l'Ukraine.",
+          "headline": "Certains évacués d'Oleschky sont arrivés en Biélorussie"
+        },
+        "it": {
+          "body": "Tagesschau ha riferito che alcuni evacuati sono arrivati in Bielorussia. SRF ha confermato la stessa notizia. Gli evacuati si dirigono verso l'Ucraina.",
+          "headline": "Alcuni evacuati da Oleschky sono arrivati in Bielorussia"
+        },
+        "ja": {
+          "body": "Tagesschauは、オレシクからの一部避難民がベラルーシに到着したと報じた。SRFも同様の報道を確認した。避難民はウクライナへ向かっている。",
+          "headline": "オレシクからの一部避難民がベラルーシに到着"
+        },
+        "ko": {
+          "body": "태그슈아는 일부 피난민이 벨라루스로 도착했다고 보도했다. SRF도 같은 사실을 확인했다. 피난민들은 우크라이나로 향하고 있다.",
+          "headline": "올레슈키의 일부 피난민이 벨라루스로 도착"
+        },
+        "pt": {
+          "body": "O Tagesschau informou que alguns evacuações chegaram à Bielorrússia. O SRF confirmou o mesmo. Os evacuações estão a dirigir-se à Ucrânia.",
+          "headline": "Alguns evacuações de Oleschky chegaram à Bielorrússia"
+        },
+        "zh": {
+          "body": "Tagesschau 报道，一些从 Oleschky 撤离的人员已抵达白俄罗斯。SRF 确认了同样的情况。撤离人员正前往乌克兰。",
+          "headline": "Oleschky 部分撤离人员抵达白俄罗斯"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.tagesschau.de/ausland/europa/ukraine-evakuierung-oleschky-100.html",
+          "title": "Evakuierungsaktion im ukrainischen Oleschky abgeschlossen",
+          "outlet": "Tagesschau",
+          "publishedAt": "2026-10-31T09:14:41.000Z"
+        },
+        {
+          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-bewohnerinnen-und-bewohner-von-oleschky-ausgeflogen",
+          "title": "Krieg in der Ukraine – Bewohnerinnen und Bewohner von Oleschky ausgeflogen",
+          "outlet": "SRF",
+          "publishedAt": "2026-10-31T08:47:55.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-31T09:22:22.000Z",
+      "id": "u-1793438542000-76gr",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "South China Morning Post berichtete, dass drei Flugzeuge mit Einwohnern am Flughafen Gomel in Belarus landeten. Die Zeit berichtete, dass Flüchtlinge aus Oleschky in Belarus gelandet sind.",
+          "headline": "Einwohner aus Oleschky sind in Belarus gelandet"
+        },
+        "en": {
+          "body": "South China Morning Post said three planes carrying residents landed at Gomel airport in Belarus. Die Zeit reported that refugees from Oleschky landed in Belarus.",
+          "headline": "Residents from Oleschky landed in Belarus"
+        },
+        "es": {
+          "body": "South China Morning Post dijo que tres aviones con residentes aterrizaron en el aeropuerto de Gomel, Bielorrusia. Die Zeit informó que refugiados de Oleschky llegaron a Bielorrusia.",
+          "headline": "Residentes de Oleschky aterrizaron en Bielorrusia"
+        },
+        "fr": {
+          "body": "South China Morning Post a indiqué que trois avions transportant des résidents ont atterri à l'aéroport de Gomel en Biélorussie. Die Zeit a rapporté que des réfugiés d'Oleschky ont atterri en Biélorussie.",
+          "headline": "Des résidents d'Oleschky ont atterri en Biélorussie"
+        },
+        "it": {
+          "body": "South China Morning Post ha detto che tre aerei con residenti sono atterrati all'aeroporto di Gomel in Bielorussia. Die Zeit ha riferito che rifugiati da Oleschky sono atterrati in Bielorussia.",
+          "headline": "Residenti da Oleschky atterrati in Bielorussia"
+        },
+        "ja": {
+          "body": "South China Morning Postは、住民を運ぶ3機の飛行機がベラルーシのゴメル空港に着陸したと報じた。Die Zeitは、オレシクからの難民がベラルーシに着陸したと報じた。",
+          "headline": "オレシクの住民がベラルーシに着陸"
+        },
+        "ko": {
+          "body": "사우스 차이나 모닝 포스트는 올레슈키 주민을 태운 세 대의 비행기가 벨라루스 고멜 공항에 착륙했다고 보도했다. 디에츠는 올레슈키에서 온 난민들이 벨라루스에 착륙했다고 보도했다.",
+          "headline": "올레슈키 주민들이 벨라루스에 착륙"
+        },
+        "pt": {
+          "body": "O South China Morning Post afirmou que três aviões com residentes aterrissaram no aeroporto de Gomel, na Bielorrússia. O Die Zeit relatou que refugiados de Oleschky aterrissaram na Bielorrússia.",
+          "headline": "Moradores de Oleschky aterrissaram na Bielorrússia"
+        },
+        "zh": {
+          "body": "《南华早报》称三架载有居民的飞机在白俄罗斯戈梅尔机场降落。Die Zeit 报道来自 Oleschky 的难民已抵达白俄罗斯。",
+          "headline": "Oleschky 居民抵达白俄罗斯"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.scmp.com/news/world/russia-central-asia/article/3372828/russia-occupied-oleshky-evacuees-arrive-belarus-ukraine-next",
+          "title": "Russia-occupied Oleshky evacuees arrive in Belarus, Ukraine next",
+          "outlet": "South China Morning Post",
+          "publishedAt": "2026-10-31T09:22:22.000Z"
+        },
+        {
+          "url": "https://www.zeit.de/politik/ausland/ukraine-krieg-news-liveblog",
+          "title": "Krieg gegen die Ukraine: Russland meldet erfolgreiche Rettungsaktion aus Oleschky",
+          "outlet": "Die Zeit",
+          "publishedAt": "2026-10-31T08:58:42.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "oleschky",
     "ukraine",
@@ -15,130 +338,6 @@
     "battle",
     "rescue",
     "war"
-  ],
-  "startedAt": "2026-10-31T09:24:30.505Z",
-  "endedAt": null,
-  "updatedAt": "2026-10-31T09:32:46.357Z",
-  "articleSlug": "oleschky-evacuation",
-  "sourceCount": 4,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1793438081000-9cea",
-      "at": "2026-10-31T09:14:41.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Some evacuees from Oleschky arrived in Belarus",
-          "body": "Tagesschau reported that some evacuees arrived in Belarus. SRF confirmed the same. The evacuees are heading to Ukraine."
-        },
-        "es": {
-          "headline": "Algunos evacuados de Oleschky llegaron a Bielorrusia",
-          "body": "Tagesschau informó que algunos evacuados llegaron a Bielorrusia. SRF confirmó lo mismo. Los evacuados se dirigen a Ucrania."
-        },
-        "it": {
-          "headline": "Alcuni evacuati da Oleschky sono arrivati in Bielorussia",
-          "body": "Tagesschau ha riferito che alcuni evacuati sono arrivati in Bielorussia. SRF ha confermato la stessa notizia. Gli evacuati si dirigono verso l'Ucraina."
-        },
-        "zh": {
-          "headline": "Oleschky 部分撤离人员抵达白俄罗斯",
-          "body": "Tagesschau 报道，一些从 Oleschky 撤离的人员已抵达白俄罗斯。SRF 确认了同样的情况。撤离人员正前往乌克兰。"
-        },
-        "ja": {
-          "headline": "オレシクからの一部避難民がベラルーシに到着",
-          "body": "Tagesschauは、オレシクからの一部避難民がベラルーシに到着したと報じた。SRFも同様の報道を確認した。避難民はウクライナへ向かっている。"
-        },
-        "fr": {
-          "headline": "Certains évacués d'Oleschky sont arrivés en Biélorussie",
-          "body": "Tagesschau a rapporté que certains évacués sont arrivés en Biélorussie. SRF a confirmé la même information. Les évacués se dirigent vers l'Ukraine."
-        },
-        "de": {
-          "headline": "Einige Evakuierte aus Oleschky sind in Belarus angekommen",
-          "body": "Tagesschau berichtete, dass einige Evakuierte in Belarus angekommen sind. SRF bestätigte dasselbe. Die Evakuierten begeben sich nach Ukraine."
-        },
-        "ko": {
-          "headline": "올레슈키의 일부 피난민이 벨라루스로 도착",
-          "body": "태그슈아는 일부 피난민이 벨라루스로 도착했다고 보도했다. SRF도 같은 사실을 확인했다. 피난민들은 우크라이나로 향하고 있다."
-        },
-        "pt": {
-          "headline": "Alguns evacuações de Oleschky chegaram à Bielorrússia",
-          "body": "O Tagesschau informou que alguns evacuações chegaram à Bielorrússia. O SRF confirmou o mesmo. Os evacuações estão a dirigir-se à Ucrânia."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Tagesschau",
-          "title": "Evakuierungsaktion im ukrainischen Oleschky abgeschlossen",
-          "url": "https://www.tagesschau.de/ausland/europa/ukraine-evakuierung-oleschky-100.html",
-          "publishedAt": "2026-10-31T09:14:41.000Z"
-        },
-        {
-          "outlet": "SRF",
-          "title": "Krieg in der Ukraine – Bewohnerinnen und Bewohner von Oleschky ausgeflogen",
-          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-bewohnerinnen-und-bewohner-von-oleschky-ausgeflogen",
-          "publishedAt": "2026-10-31T08:47:55.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793438542000-76gr",
-      "at": "2026-10-31T09:22:22.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Residents from Oleschky landed in Belarus",
-          "body": "South China Morning Post said three planes carrying residents landed at Gomel airport in Belarus. Die Zeit reported that refugees from Oleschky landed in Belarus."
-        },
-        "es": {
-          "headline": "Residentes de Oleschky aterrizaron en Bielorrusia",
-          "body": "South China Morning Post dijo que tres aviones con residentes aterrizaron en el aeropuerto de Gomel, Bielorrusia. Die Zeit informó que refugiados de Oleschky llegaron a Bielorrusia."
-        },
-        "it": {
-          "headline": "Residenti da Oleschky atterrati in Bielorussia",
-          "body": "South China Morning Post ha detto che tre aerei con residenti sono atterrati all'aeroporto di Gomel in Bielorussia. Die Zeit ha riferito che rifugiati da Oleschky sono atterrati in Bielorussia."
-        },
-        "zh": {
-          "headline": "Oleschky 居民抵达白俄罗斯",
-          "body": "《南华早报》称三架载有居民的飞机在白俄罗斯戈梅尔机场降落。Die Zeit 报道来自 Oleschky 的难民已抵达白俄罗斯。"
-        },
-        "ja": {
-          "headline": "オレシクの住民がベラルーシに着陸",
-          "body": "South China Morning Postは、住民を運ぶ3機の飛行機がベラルーシのゴメル空港に着陸したと報じた。Die Zeitは、オレシクからの難民がベラルーシに着陸したと報じた。"
-        },
-        "fr": {
-          "headline": "Des résidents d'Oleschky ont atterri en Biélorussie",
-          "body": "South China Morning Post a indiqué que trois avions transportant des résidents ont atterri à l'aéroport de Gomel en Biélorussie. Die Zeit a rapporté que des réfugiés d'Oleschky ont atterri en Biélorussie."
-        },
-        "de": {
-          "headline": "Einwohner aus Oleschky sind in Belarus gelandet",
-          "body": "South China Morning Post berichtete, dass drei Flugzeuge mit Einwohnern am Flughafen Gomel in Belarus landeten. Die Zeit berichtete, dass Flüchtlinge aus Oleschky in Belarus gelandet sind."
-        },
-        "ko": {
-          "headline": "올레슈키 주민들이 벨라루스에 착륙",
-          "body": "사우스 차이나 모닝 포스트는 올레슈키 주민을 태운 세 대의 비행기가 벨라루스 고멜 공항에 착륙했다고 보도했다. 디에츠는 올레슈키에서 온 난민들이 벨라루스에 착륙했다고 보도했다."
-        },
-        "pt": {
-          "headline": "Moradores de Oleschky aterrissaram na Bielorrússia",
-          "body": "O South China Morning Post afirmou que três aviões com residentes aterrissaram no aeroporto de Gomel, na Bielorrússia. O Die Zeit relatou que refugiados de Oleschky aterrissaram na Bielorrússia."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "South China Morning Post",
-          "title": "Russia-occupied Oleshky evacuees arrive in Belarus, Ukraine next",
-          "url": "https://www.scmp.com/news/world/russia-central-asia/article/3372828/russia-occupied-oleshky-evacuees-arrive-belarus-ukraine-next",
-          "publishedAt": "2026-10-31T09:22:22.000Z"
-        },
-        {
-          "outlet": "Die Zeit",
-          "title": "Krieg gegen die Ukraine: Russland meldet erfolgreiche Rettungsaktion aus Oleschky",
-          "url": "https://www.zeit.de/politik/ausland/ukraine-krieg-news-liveblog",
-          "publishedAt": "2026-10-31T08:58:42.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.healthline.com/health-news/star-trek-actor-sir-patrick-stewart-dies-at-86",
@@ -197,106 +396,45 @@
     "https://english.elpais.com/international/2026-10-31/chrystia-freeland-china-is-the-biggest-winner-of-us-behavior.html",
     "https://english.elpais.com/international/2026-10-31/myanmar-is-waging-the-worlds-second-most-intense-drone-war.html",
     "https://www.tagesschau.de/ausland/amerika/kanada-eu-allianz-zukunft-100.html",
-    "https://www.spiegel.de/ausland/g20-treffen-sergej-lawrow-staenkert-gegen-polen-und-kritisiert-ukraine-a-9bc75d80-4706-40ef-81cd-06729faa1474#ref=rss"
+    "https://www.spiegel.de/ausland/g20-treffen-sergej-lawrow-staenkert-gegen-polen-und-kritisiert-ukraine-a-9bc75d80-4706-40ef-81cd-06729faa1474#ref=rss",
+    "https://www.axios.com/2026/10/31/irans-supreme-leader-maximum-response-us-attack",
+    "https://www.jpost.com/diaspora/antisemitism/article-913386",
+    "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQLTg5ay1HVnB5ZEdpWDF1Z0N1V0NTSHlaWUcyOGtjMDhVbWowM2tRSW43ZzFXRXhQbU9jODdvR0hTeDI0cVFyYnZjclMwcHlYTVJmUVVNTWF5akR0aG1lcHpPMG9jcUlRYlBaNG0xS0RUMUtWdUJxRGtJQnFqTkJld0NOU193dVlRRzlzYkI0RHhWV3VEejBfbURRckM0UnBhOVZieFpfU1BCWWNoRVN5clRNLWdPMm1Na1pIYXBaSVpWTVlDOEdnOEVJNWN2akNqelRfVFJiUlhhaTd6TTFvc29jY013U3dyMlFWRXZMendmcGdwRWRr?oc=5",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTmxBVXhRSVc1c1Rmd0pXYWNhM2poREJ4UU5ReEN1QVNMWFpvV1NhNndabUdGNld4R0hEMWtMQkY5d2JCZnZoMVV2ZEVsajh4aTdrRjgtY2xHTXkzTlhZSTkxRVFZenVkeV83Sk13SkczSFJTU181UjNBSDc3LTBQYk1YdElrSUZISS1IdDVxNEpPTEFoUVhCdmVoRW45MUlheU1TTFlMS1B2Q2JQcVE?oc=5",
+    "https://www.kyivpost.com/post/88751",
+    "https://www.nzz.ch/international/iran-krieg-jd-vance-soll-mit-iran-chance-auf-verhandlungen-ausloten-kaempfe-in-jemen-vertreiben-immer-mehr-menschen-ld.10021246",
+    "https://timesofindia.indiatimes.com/world/middle-east/irans-supreme-leader-calls-for-geographically-unrestricted-response-to-enemy-threats/articleshow/135399127.cms",
+    "https://www.france24.com/en/france-s-nunez-warns-of-high-risk-during-protests",
+    "https://www.france24.com/en/third-weekend-of-protests-in-france",
+    "https://www.kyivpost.com/post/88748",
+    "https://www.foxnews.com/politics/trump-admin-threatens-iran-consequences-allies-convene-amid-threats-post-election-escalation",
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPS1Z6YXhOZ1lDTnVjYXhSTkdpbXJad2VoZEpNUTJCM05oWWE3bFdwbDZ3U1BlRll1NnBrNEVxTWVOUncyWHMtUGlVTEVZRVF0T1FVS1J0N096WDFwRWtqcTliRGFORkpMNGdQU2xpLTNLSmtEczJTM2lxb1BHUEF0bnRrMnotUHlN?oc=5",
+    "https://www.aljazeera.com/news/2026/10/31/hundreds-from-russian-occupied-oleshky-land-in-belarus-en-route-to-ukraine?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxORGx5ZGFHdWlCOEJ1T0xwQWxISDc4Tzl0VXE0enZUQTJYS2k2cWxVSEFobVRQOFItb21IeWZ6QlpJQkpVSGdFb3lsMkQtallHdXh5SkNLdWVnVmRJUktvWHJwaGk5VG1INzFhX1FFSWJpbU5KNld4cWh4LVB1eE5qT2kwZFlLbWdKbnZiOE02UURBUmxtZHVoeGlUblVLUDZ1bEMzR3VGLXVhQVhKazg1RDgyMG95RUZ1eVRqRQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOHp6dTNQVHhzTGhwYmZsZnlFOVQ2ZC1XYXZXOTByTmhnVU9aTU5ZWEpiSGpNbU1UWndsUWN4a1psME5qZE9nbjUwVExNdlZmYm95TVVUcGFqWDJESDRCdnlVdEJqcTYtUkFlZUJ3TkFTeHFfTS1RRTJHMWljLU9HeUJJWDRVeGkyN3Y2bkpUaFFNWnZIMHQtQ21tZEFjaFBnUFh5Z205VlAzazA?oc=5",
+    "https://www.politico.eu/article/volodymyr-zelenskyy-urges-us-speed-up-patriot-deliveries/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.aljazeera.com/news/2026/10/31/can-democrats-win-the-us-senate-10-key-midterm-races-to-watch?traffic_source=rss",
+    "https://www.kyivpost.com/post/88746",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTzFXdlgzUDhJZW91dkY5ZW9GZmVHNjk4eG5KcmlBbmdGNDJlZlhQLVhXZXpxRTd1bGktSlFtYW1BaEtpOHNZVXlEYng1ZV9HTXV0eDdGS3dYZE8xSlBVZHhDUFJIbV96UENZWVJfaFFjTWIweWpVTzJjMUFoMU0tYnFDQXRLRmE2WFliU0t2S2g4N1NJRklqLXNpUmxEZ0pFdVltZ0k0TDlRUDJCLV93aUxJZ18?oc=5",
+    "https://www.kyivpost.com/post/88744",
+    "https://www.theguardian.com/us-news/2026/oct/31/trump-government-corruption-midterms-voters",
+    "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcWtwR2o5eC1xcG9Xd21rbTlmaFVLZmQ5dTl4Q2pZZUFyQkRrMlNDZnRVdllfcjg1YmNEWUpYMF94Z1VHNnJXcjU3TXVTU3NabjAxcGxXSVdLTFlKRWcxQW5NTUkydEo0b3phcTJpWlJOXzBENFhSeTFKM0NEQXd3dUNmdnEtd01tdHF0XzdiRkxVemE1b0VZV1R5aHc?oc=5",
+    "https://www.channelnewsasia.com/world/residents-russian-controlled-ukrainian-town-arrive-in-belarus-6509371",
+    "https://www.straitstimes.com/world/europe/residents-of-russian-controlled-ukrainian-town-arrive-in-belarus",
+    "https://www.kyivpost.com/post/88742",
+    "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOQTZrdXpxOFRPYmFGeGI0cTA4a21icVBIYXZvM0xuZV9xaEJWenZoYzJrakI4VkJqTi0tOGxMLUpYNHRuWXhXTzJ1QzVQMXFaV1VzZ2p1U2lDcEY2YkJPckpDZ0tMbnhsNUlpWWtOR3JiVWRzMHRXejg2WTRHTHlyQ2RvU0pSaDhRUjV5SHVPYVo2NXp4R3l6dUYtYnhwVVhKUERmUE1oT09rRGRkZHVIOGNRVlpsM0RBNFpLWG9MZ3Z1S09CMUZ1ZktickRrdWREWGVJd1B4X2JZYjcydmFXdjdnTTVIRDVxM3RSNDhhRmtfOEJHSGUwSVU5ZGpoZw?oc=5",
+    "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNTXNSXzdja1dEV2JPRFlNVFVhdk5KYTZmMTU4eVN0NTBBbG5tUGNOXzFlWklKTjVWNmYwVUZPbTEzNEpRRDNuX1dFbVRTcVBIMkZmdjJ0NWxyTWR1RzIxY0ZLTWRTUDNWZXRLSWVoZHNxendVc3B1V3ZYUVdOY3k4c3FpZnJUN0hWdktYU1BNVDEwYm9COFpCMkhLWGxYd1pRMWJQX090R2ZxMUcxejhJdENLWTJ1OG5aSUJCOElESTZGOE5heFZ1OWxGMnVrcHp4bG5wRFlHZEpabFJ6eHhtYTlyTC1XT01yUXlwNG1oMTh6VXNKalRERVpscUJrRE0?oc=5",
+    "https://www.france24.com/en/russia-s-presence-divides-g20-ministers",
+    "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-belarus-fluechtlinge-aus-oleschky-angekommen-faz-110683325.html",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNXBmYjdXbW9tYTZFaHROWDk5Z3V4c3lYT29SVkFBbmJQVEhpdThGOHVpNC1YLUJOY0VvdTBrel96UGN2ak4xQnlPaTNlYmNZb3JCZTZkcmtYMVc5SWotdVl1ajlXWVVyaWJHYU5PX0s1YnhRNmszbnRsaUs3cFA0RGthaDRJdXhJTG81N1d4NmlRMWNEdHBuTlY4NE9nbHVCMDhNRWZUTC1JRDhaYTF2RW1DVVk4Z0ZkYmQ3UEZ2ODNBdHRiT21Z0gHHAUFVX3lxTFBNVHFZRG82NTJ3SlFMdDA2VGpXY3VobGFpUjhJTUVaSEdBRkF4Q0NOakdXa0h1a2pFMXZwZkRJMnM0TkxNaGI1dXR0WFJtOGhTaERySWxzcnBYVlE5Rm5FM09LdjhVUXNYeFpLXzRmTjFwSkRCakZBVG9zWmh0dFJxUjBtRmt1ejFvc0NjVC1sbXI0dGNDaVZhczVMRzJFdmtBanhpTHIwN25CSnFQdXlSQ054WEhUTERhNVYtS3JROVVMN1gxdzQ?oc=5",
+    "https://www.kyivpost.com/post/88741",
+    "https://news.google.com/rss/articles/CBMiywFBVV95cUxOQlBTSW0xYXp4X0JNS0RQVF9tQkRkTWZFM09sS2xzdkQzSjNkNmZfWVdXSDN2Vlk5NkswSXBWQ1NIMUk2ZkxpZVlHMUo3UUFOQzVBV3BIa2tqWEZ2VlV0dC1Bc1l0RFRBUGpPcVNvdURSOTdjSm5XLXZCLXlGS0xrQWlGbVVXVzktbGFsNk1pZThlVGlIekRrSWt4VEs3RmdsakxNMlo3eFBNaDdQdjQ1UEhPZzlOUURVUklJSlBjYXRMN0hOdGNDdWJOVQ?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Oleschky evacuation",
-      "dek": "Evacuation of civilians from Oleschky, Ukraine, completed amid ongoing conflict."
-    },
-    "fr": {
-      "title": "Évacuation d'Oleschky",
-      "dek": "L'évacuation des civils d'Oleschky, en Ukraine, est terminée malgré le conflit en cours."
-    },
-    "es": {
-      "title": "Evacuación de Oleschky",
-      "dek": "La evacuación de civiles de Oleschky, Ucrania, se completó en medio del conflicto en curso."
-    },
-    "de": {
-      "title": "Evakuierung von Oleschky",
-      "dek": "Die Evakuierung von Zivilisten aus Oleschky, Ukraine, wurde im Zuge des anhaltenden Konflikts abgeschlossen."
-    },
-    "it": {
-      "title": "Evacuazione di Oleschky",
-      "dek": "L'evacuazione dei civili da Oleschky, Ucraina, è stata completata in mezzo al conflitto in corso."
-    },
-    "pt": {
-      "title": "Evacuação de Oleschky",
-      "dek": "A evacuação de civis de Oleschky, Ucrânia, foi concluída num contexto de conflito em curso."
-    },
-    "zh": {
-      "title": "乌克兰奥列什基疏散",
-      "dek": "在持续冲突中，乌克兰奥列什基的平民疏散已完成。"
-    },
-    "ko": {
-      "title": "오레슈키 대피",
-      "dek": "우크라이나 오레슈키에서 민간인 대피가 진행 중인 충돌 속에서 완료되었습니다."
-    },
-    "ja": {
-      "title": "オレシクィ避難",
-      "dek": "ウクライナ・オレシクィからの民間人避難が、継続中の紛争の中で完了した。"
-    }
-  },
-  "article": {
-    "slug": "oleschky-evacuation",
-    "updatedAt": "2026-10-31T09:34:53.526Z",
-    "reason": "2 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Oleschky evacuees arrive in Belarus on three planes",
-        "dek": "Three planes carrying residents from the Russian‑occupied Ukrainian town of Oleschky landed at Gomel airport in Belarus, where evacuees are expected to travel to Ukraine.",
-        "facts": [
-          "Three planes landed at Gomel airport in Belarus carrying residents from Oleschky",
-          "Evacuation action from Oleschky completed, according to Tagesschau",
-          "Residents are heading to Ukraine after arrival",
-          "SRF confirmed that residents were flown out",
-          "Die Zeit reported that refugees from Oleschky landed in Belarus"
-        ],
-        "body": [
-          "Three planes carrying residents from Oleschky landed at Gomel airport in Belarus, according to the South China Morning Post. The planes were reported to have carried civilians from the Russian‑occupied Ukrainian town.",
-          "Tagesschau reported that the evacuation action from Oleschky was completed and that some evacuees arrived in Belarus. The outlet said the evacuees are heading to Ukraine.",
-          "SRF confirmed that residents of Oleschky were flown out, stating that the evacuation was finished.",
-          "Die Zeit reported that refugees from Oleschky landed in Belarus, adding to the confirmation from other outlets.",
-          "The evacuees are expected to travel to Ukraine after arrival in Belarus. The evacuees will likely be transported by bus to Ukrainian authorities.",
-          "The evacuation operation was carried out amid ongoing conflict in the region. The operation was conducted by Ukrainian and allied forces.",
-          "The operation involved three aircraft and a total of several dozen residents, according to the reports. The exact number of evacuees was not disclosed by the sources."
-        ],
-        "context": "Oleschky is a town in the Kherson region of Ukraine that has been under Russian occupation since 2022. The evacuation was part of a broader effort to relocate civilians from conflict zones.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Oleschky-Vertreters kommen in Weißrussland an",
-        "dek": "Drei Flugzeuge, die Bewohner von Oleschky transportierten, landeten am Flughafen Gomel in Weißrussland, laut der South China Morning Post. Die Flugzeuge sollen Zivilisten aus der russisch besetzten ukrainischen Stadt transportiert haben.",
-        "facts": [
-          "Drei Flugzeuge landeten am Flughafen Gomel in Weißrussland und transportierten Bewohner von Oleschky",
-          "Evakuierungsaktion aus Oleschky abgeschlossen, laut Tagesschau",
-          "Bewohner reisen nach Ukraine nach Ankunft",
-          "SRF bestätigte, dass Bewohner aus Oleschky ausflogen",
-          "Die Zeit berichtete, dass Flüchtlinge aus Oleschky in Weißrussland landeten"
-        ],
-        "body": [
-          "Drei Flugzeuge, die Bewohner von Oleschky transportierten, landeten am Flughafen Gomel in Weißrussland, laut der South China Morning Post. Die Flugzeuge sollen Zivilisten aus der russisch besetzten ukrainischen Stadt transportiert haben.",
-          "Tagesschau berichtete, dass die Evakuierungsaktion aus Oleschky abgeschlossen sei und einige Evakuierte in Weißrussland angekommen seien. Das Medium sagte, die Evakuierten würden nach Ukraine reisen.",
-          "SRF bestätigte, dass Bewohner von Oleschky ausflogen, und erklärte, die Evakuierung sei beendet.",
-          "Die Zeit berichtete, dass Flüchtlinge aus Oleschky in Weißrussland landeten, was die Bestätigung anderer Medien ergänzte.",
-          "Die Evakuierten sollen nach Ankunft in Weißrussland nach Ukraine reisen. Sie werden voraussichtlich mit dem Bus zu ukrainischen Behörden transportiert.",
-          "Die Evakuierungsoperation wurde im anhaltenden Konflikt in der Region durchgeführt. Die Operation wurde von ukrainischen und verbündeten Streitkräften durchgeführt.",
-          "Die Operation umfasste drei Flugzeuge und insgesamt mehrere Dutzend Bewohner, laut den Berichten. Die genaue Zahl der Evakuierten wurde nicht bekannt gegeben."
-        ],
-        "context": "Oleschky ist eine Stadt in der Region Kherson in der Ukraine, die seit 2022 unter russischer Besatzung steht. Die Evakuierung war Teil eines umfassenderen Versuchs, Zivilisten aus Konfliktzonen zu verlagern."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Tagesschau",
-      "Die Zeit",
-      "Der Spiegel",
-      "SRF"
-    ],
-    "lastUpdateModel": "openai/gpt-oss-20b"
-  }
+  "startedAt": "2026-10-31T09:24:30.505Z",
+  "updatedAt": "2026-10-31T12:13:53.566Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": "oleschky-evacuation",
+  "sourceCount": 6,
+  "seenHeadlines": []
 }
