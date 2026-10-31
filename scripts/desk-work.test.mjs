@@ -1209,3 +1209,43 @@ test('a category a model invents is not a section of the paper', () => {
   assert.equal(pickCategory(undefined), 'world');
   assert.equal(pickCategory('health'), 'health');
 });
+
+test('a story that three shifts could not grow past one report is parked', () => {
+  const park = new Function(`
+    const nowISO = () => '2026-10-31T00:00:00.000Z';
+    const log = () => {};
+    ${take('note')}
+    return ${take('parkIfHopeless')};
+  `)();
+  const dossier = (over = {}) => ({
+    slug: 'call-of-duty-uses-seoul-footage',
+    status: 'research',
+    sources: [{ id: 'S1' }],
+    blankShifts: 3,
+    ...over,
+  });
+
+  const stuck = dossier();
+  assert.equal(park(stuck), true);
+  assert.equal(stuck.status, 'dropped', 'the dossier leaves the active list');
+  assert.match(stuck.parkReason, /three shifts without a new source/);
+  assert.equal(stuck.history.at(-1).status, 'dropped', 'the reason is in the file, not only in the log');
+
+  assert.equal(park(dossier({ blankShifts: 2 })), false, 'two empty shifts are a normal week');
+  assert.equal(park(dossier({ sources: [{ id: 'S1' }, { id: 'S2' }, { id: 'S3' }] })), false, 'a story with footing is not parked');
+  assert.equal(park(dossier({ letters: [{ id: 'L1', status: 'draft', sentAt: '2026-10-31T10:00:00.000Z' }] })), false, 'a letter in flight is still a story');
+});
+
+test('the desk knows the doors in the country the story happens', () => {
+  // The Call of Duty story happens in Seoul, and the desk searched the same
+  // English phrase twelve times. A reporter there opens the court database
+  // and the media regulator first.
+  const map = SOURCE.match(/const COUNTRY_DOORS = (\{[\s\S]*?\n\});/)[1];
+  const doors = new Function(`const COUNTRY_DOORS = ${map}; ${take('countryDoors')}; return countryDoors;`)();
+  assert.match(doors('South Korea'), /scourt\.go\.kr/);
+  assert.match(doors('Seoul, South Korea'), /kcc\.go\.kr/);
+  assert.match(doors('Nairobi, Kenya'), /judiciary\.go\.ke/);
+  assert.match(doors('Brazil'), /stf\.jus\.br/);
+  assert.equal(doors('Switzerland'), '', 'the paper is Swiss, its beat is not');
+  assert.equal(doors(''), '');
+});

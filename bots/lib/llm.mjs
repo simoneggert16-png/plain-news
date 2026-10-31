@@ -182,11 +182,20 @@ export async function chat(role, messages, opts = {}) {
         return { text: answer.text, model, doneReason: answer.doneReason || null };
       } catch (e) {
         lastErr = e;
-        // A model that is out of credit or out of quota does not answer in
-        // the next thirty seconds either. Retrying it three times with a
-        // sleep in between costs half a shift of desk time for nothing.
-        if (e.status === 402 || e.status === 401 || e.status === 403 || e.status === 429) {
-          disabledModels.set(model, Date.now() + (e.status === 429 ? 6 * 3600 * 1000 : 15 * 60 * 1000));
+        // A model that is out of credit does not answer in the next thirty
+        // seconds either. Retrying it three times with a sleep in between
+        // costs half a shift of desk time for nothing.
+        if (e.status === 402 || e.status === 401 || e.status === 403) {
+          disabledModels.set(model, Date.now() + 15 * 60 * 1000);
+          break;
+        }
+        // A 429 is a rate limit, not a verdict on the whole month: in the
+        // translation run the same account answered again two minutes later,
+        // but the six-hour ban then sent every remaining locale through the
+        // slowest backend. Ten minutes is long enough to stop hammering and
+        // short enough that a 55-minute job gets its models back.
+        if (e.status === 429) {
+          disabledModels.set(model, Date.now() + 10 * 60 * 1000);
           break;
         }
         if (e.status === 404 || e.status === 400) break;
