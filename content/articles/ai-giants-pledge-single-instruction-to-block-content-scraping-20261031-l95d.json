@@ -1,0 +1,56 @@
+{
+  "slug": "ai-giants-pledge-single-instruction-to-block-content-scraping-20261031-l95d",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-10-31T06:36:22.899Z",
+  "updatedAt": "2026-10-31T06:36:22.899Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "CNA",
+      "title": "AI giants promise publishers new way to block some scraping",
+      "url": "https://www.channelnewsasia.com/world/ai-giants-promise-publishers-new-way-block-some-scraping-6509181",
+      "publishedAt": "2026-10-31T05:47:00.000Z"
+    },
+    {
+      "outlet": "The Straits Times",
+      "title": "AI giants promise publishers new way to block some scraping",
+      "url": "https://www.straitstimes.com/world/ai-giants-promise-publishers-new-way-to-block-some-scraping",
+      "publishedAt": "2026-10-31T01:35:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "AI giants pledge single instruction to block content scraping",
+      "dek": "OpenAI, Google, Microsoft, Anthropic and Meta announced a protocol that lets publishers block AI training on their content with one standard command.",
+      "facts": [
+        "OpenAI, Google, Microsoft, Anthropic and Meta announced a protocol for a single blocking instruction.",
+        "Microsoft will implement the protocol on 1 February 2027; Google sometime in 2027; OpenAI in the coming months; Anthropic has already started.",
+        "The protocol applies only to future AI model training and does not stop bots from crawling content.",
+        "Publishers can opt out of AI training, potentially reducing the appearance of their content in AI apps.",
+        "The New York Times sued OpenAI and Microsoft in December 2023 over alleged unauthorized use of its articles."
+      ],
+      "body": [
+        "On 31 October 2026, OpenAI, Google, Microsoft, Anthropic and Meta announced a protocol that allows publishers to block AI training on their content with a single instruction, according to CNA. According to the Straits Times, the same announcement was made on 30 October 2026. The protocol will be recognised and honoured by any AI company that adopts it. Publishers currently must issue separate blocking commands for each bot that crawls the web, and the new solution reduces the number of commands to one.",
+        "Microsoft will implement the protocol on 1 February 2027. Google is expected to adopt it sometime in 2027. OpenAI said it will roll out the protocol in the coming months, while Anthropic has already started rolling it out. The rollout timeline varies across the companies.",
+        "The protocol applies only to future training of AI models. It does not prevent bots from crawling content otherwise. Content scraping remains allowed by default until a publisher changes the setting. Microsoft said the setting could reduce a publisher’s content appearing in AI apps, and Google said the same in a separate blog post.",
+        "Meta spokesperson Andy Stone wrote on X that the effort is important and that the industry should work together on the standards.",
+        "The announcement follows a lawsuit by the New York Times against OpenAI and Microsoft. The Times sued the companies in December 2023, alleging they used millions of its articles without authorization or payment. The companies invoked the fair‑use exception to copyright law."
+      ],
+      "context": "Publishers have reported a surge in bots scraping their articles to feed AI models. Cloudflare blocked AI bots by default on new customer sites in July 2025, and a standard called Really Simple Licensing allows publishers to charge bots that visit their pages.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "openai/gpt-oss-20b",
+    "editor": "openai/gpt-oss-20b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Date discrepancy between sources (Oct 31 vs Oct 30) – both dates must be noted; Meta’s support was omitted from the body; the last sentence of paragraph 4 contained evaluative framing and was removed; repeated opening of paragraphs with the same noun was avoided; all claims are now attributed; no speculative language remains."
+    ]
+  }
+}
