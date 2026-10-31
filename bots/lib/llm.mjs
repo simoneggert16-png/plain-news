@@ -210,15 +210,17 @@ export async function chat(role, messages, opts = {}) {
         // A 429 is usually a rate limit, not a verdict on the whole month: in
         // the translation run the same account answered again two minutes
         // later, but the six-hour ban then sent every remaining locale through
-        // the slowest backend. Ten minutes is long enough to stop hammering
-        // and short enough that a 55-minute job gets its models back.
+        // the slowest backend. Ten minutes was still too long when three
+        // workflows share one key: one 429 per model emptied every chain and
+        // the translations reported "no usable model" for the rest of the run.
+        // A minute is enough to stop hammering and keeps the model in play.
         // The monthly cap is the exception: it is announced as such, it does
-        // not lift in ten minutes, and on 2026-10-31 three dead Ollama models
+        // not lift in a minute, and on 2026-10-31 three dead Ollama models
         // sat at the head of every chain while one slow NVIDIA model did the
         // work. Park it for hours so the chain goes straight to what answers.
         if (e.status === 429) {
           const monthly = /monthly usage limit/i.test(e.message || '');
-          disabledModels.set(model, Date.now() + (monthly ? 6 : 10) * 60 * 1000);
+          disabledModels.set(model, Date.now() + (monthly ? 6 : 1) * 60 * 1000);
           break;
         }
         if (e.status === 404 || e.status === 400) break;

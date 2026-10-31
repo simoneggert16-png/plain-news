@@ -32,7 +32,7 @@ test('a monthly quota answer parks the model instead of asking again in ten minu
   assert.ok(Date.now() - started < 500);
 });
 
-test('a plain rate limit is still retried after ten minutes, not parked for the month', async () => {
+test('a plain rate limit parks the model for a minute, not for the month', async () => {
   const { chat } = await freshModule('ratelimit');
   let calls = 0;
   globalThis.fetch = async () => {
