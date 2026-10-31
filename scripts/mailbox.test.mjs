@@ -195,3 +195,20 @@ test('the desk’s mailbox is not part of the public repository', () => {
   assert.match(live, /git reset -q -- content\/investigations\/inbox\.json/,
     'the live workflow takes the mailbox back out');
 });
+
+// The tips that came by letter are what people wrote to the desk, in their
+// own words. They are not part of the public repository either.
+test('the tips that came by letter are not part of the public repository', () => {
+  const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const gitignore = fs.readFileSync(path.join(repo, '.gitignore'), 'utf8');
+  assert.match(gitignore, /content\/investigations\/leads\.json/,
+    'the file with the tips is ignored by git');
+
+  const push = fs.readFileSync(path.join(repo, 'scripts', 'push-content.sh'), 'utf8');
+  assert.match(push, /git reset -q -- content\/investigations\/leads\.json/,
+    'the push script takes the tips back out');
+
+  const live = fs.readFileSync(path.join(repo, '.github', 'workflows', 'live.yml'), 'utf8');
+  assert.match(live, /git reset -q -- content\/investigations\/leads\.json/,
+    'the live workflow takes the tips back out');
+});

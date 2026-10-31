@@ -32,7 +32,7 @@ import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
 import { googleNews, bingNews, webSearch, wideSearch } from './lib/search.mjs';
-import { filingCabinets, pressAddressFor, publishedEmail } from './lib/lookup.mjs';
+import { filingCabinets, pressAddressFor, publishedEmail, cabinetFrontPage } from './lib/lookup.mjs';
 import { institutionalDocuments, namedTerms, BOILERPLATE } from './lib/documents.mjs';
 import { openPage } from './lib/browse.mjs';
 import { runAgent } from './lib/agent.mjs';
@@ -61,6 +61,9 @@ import { applyRightOfReply, INVENTED_REPLY, rightOfReplyLog } from './lib/rightO
 // ─────────────────────────── config ───────────────────────────
 const DOSSIER_DIR = 'content/investigations';
 const STATE_FILE = path.join(DOSSIER_DIR, 'state.json');
+// The tips people wrote to the desk. Their file is private and never part of
+// the public repository, the way the mailbox itself is not.
+const LEADS_FILE = path.join(DOSSIER_DIR, 'leads.json');
 const DRY_RUN = process.env.INVESTIGATE_DRY_RUN === '1';
 const FORCE_SLUG = String(process.env.INVESTIGATE_SLUG || '').trim();
 // The editor approves a piece from the desk page. While the database is
@@ -168,12 +171,39 @@ function saveDossier(d) {
 }
 
 function loadState() {
-  try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); } catch { return {}; }
+  let s = {};
+  try { s = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); } catch { s = {}; }
+  // The tips people wrote to the desk are what they wrote, in their words.
+  // They live in their own file, outside the public repository.
+  const private_ = loadPrivateLeads();
+  if (private_.length) s.leads = [...private_, ...(Array.isArray(s.leads) ? s.leads : [])];
+  return s;
 }
 
 function saveState(s) {
   fs.mkdirSync(DOSSIER_DIR, { recursive: true });
-  fs.writeFileSync(STATE_FILE, `${JSON.stringify(s, null, 2)}\n`);
+  // The desk keeps two kinds of lead apart: what the world published, which
+  // is public, and what a person wrote to the desk, which is not. Only the
+  // first may go into the repository.
+  const leads = Array.isArray(s.leads) ? s.leads : [];
+  savePrivateLeads(leads.filter((l) => l?.origin !== 'scan'));
+  const out = { ...s, leads: leads.filter((l) => l?.origin === 'scan') };
+  fs.writeFileSync(STATE_FILE, `${JSON.stringify(out, null, 2)}\n`);
+}
+
+/** The tips that came by letter. Private: this file is never committed. */
+function loadPrivateLeads() {
+  try {
+    const list = JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8'));
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}
+
+function savePrivateLeads(list) {
+  fs.mkdirSync(DOSSIER_DIR, { recursive: true });
+  fs.writeFileSync(LEADS_FILE, `${JSON.stringify(list.slice(0, 20), null, 2)}\n`);
 }
 
 /**
@@ -631,7 +661,8 @@ function deskMemory(dossiers, state) {
     open,
     beats: Array.isArray(state?.beats) ? state.beats : [],
     followups: Array.isArray(state?.followups) ? state.followups : [],
-    leads: (Array.isArray(state?.leads) ? state.leads : []).filter((l) => l?.summary),
+    leads: (Array.isArray(state?.leads) ? state.leads : []).filter((l) => l?.summary && l.origin !== 'scan'),
+    finds: (Array.isArray(state?.leads) ? state.leads : []).filter((l) => l?.summary && l.origin === 'scan'),
   };
 }
 
@@ -658,6 +689,10 @@ function memoryBlock(mem) {
     for (const l of mem.leads.slice(-6)) {
       lines.push(`- ${l.worth && l.title ? `${l.title} — ${l.summary}` : l.summary}`);
     }
+  }
+  if (mem.finds?.length) {
+    lines.push('Notices the desk found by itself and kept for a later week:');
+    for (const f of mem.finds.slice(-6)) lines.push(`- ${f.title || f.summary}`);
   }
   return lines.join('\n');
 }
@@ -794,11 +829,16 @@ async function intake(dossiers, state) {
   }
 
   if (slots > 0) {
-    // A letter the desk kept can become a story. The tip is the desk's own,
-    // and it goes into the same quota as every other investigation.
+    // A letter the desk kept can become a story, and so can a notice the desk
+    // found by itself. Either way it goes into the same quota as every other
+    // investigation.
     const tips = (Array.isArray(state.leads) ? state.leads : [])
       .filter((l) => l?.worth && l.title && !l.opened && l.tried !== week);
-    const tip = tips[tips.length - 1];
+    // Someone who took the trouble to write in comes before the desk's own
+    // scan. Within each group the oldest lead is taken first.
+    const written = tips.filter((l) => l.origin !== 'scan');
+    const scanned = tips.filter((l) => l.origin === 'scan');
+    const tip = written[written.length - 1] || scanned[0] || null;
     if (tip) {
       const gate = leadInternational(tip);
       if (!gate.ok) {
@@ -812,13 +852,38 @@ async function intake(dossiers, state) {
           queries: tip.queries,
           origin: 'desk',
           priority: 2,
-          brief: { people: tip.people, tip: tip.summary },
+          brief: {
+            people: tip.people,
+            tip: tip.summary,
+            centre: tip.centre,
+            // The notice itself. Its words are the vocabulary of the story,
+            // so the document the desk started from stays on file.
+            hints: tip.docTitle || '',
+          },
         });
+        if (tip.centre) dossier.centre = tip.centre;
+        // The notice the desk found is the first document of the dossier: the
+        // story starts from a document, not from a headline.
+        if (tip.url) {
+          addSource(
+            dossier,
+            {
+              url: tip.url,
+              outlet: tip.outlet || 'unknown',
+              title: tip.docTitle || tip.title,
+              publishedAt: tip.publishedAt || null,
+              primary: true,
+            },
+            { kind: 'document' }
+          );
+        }
         if (!dossiers.some((d) => d.slug === dossier.slug)) {
           dossiers.push(dossier);
           tip.opened = dossier.slug;
           tip.tried = week;
-          log(`INTAKE  ✓ own tip → ${dossier.slug} — ${tip.title}`);
+          // The institution the notice came from is one the desk now follows.
+          if (tip.outlet) rememberBeat(state, dossier, { beat: tip.outlet, centre: tip.centre });
+          log(`INTAKE  ✓ own ${tip.origin === 'scan' ? 'find' : 'tip'} → ${dossier.slug} — ${tip.title}`);
           slots--;
         }
       }
@@ -1531,9 +1596,106 @@ Return {"summary":"…","worth":false,"story":{"title":"","angle":"","people":""
   };
   if (!lead.summary) return;
   state.leads = Array.isArray(state.leads) ? state.leads : [];
-  state.leads = [lead, ...state.leads.filter((l) => l.summary !== lead.summary)].slice(-20);
+  state.leads = [lead, ...state.leads.filter((l) => l.summary !== lead.summary)].slice(0, 20);
   log(`INBOX  tip ← ${msg.from} — ${lead.worth ? 'could be a story' : 'kept on the list'}`);
   await markMessages([letter?.id].filter(Boolean), { status: 'processed', processed_at: nowISO() }).catch(() => {});
+}
+
+/**
+ * The desk reads the front pages of the cabinets it follows. A reporter does
+ * not wait for a tip to open the day's notices — they look at what the world
+ * published and decide what deserves documents and questions. Once a day the
+ * desk does that and keeps the stories it can prove.
+ *
+ * The notices are the point: a story the desk starts on its own begins with a
+ * document it can read, not with a headline it has to hope for.
+ */
+async function scanForLeads(state, dossiers) {
+  const today = nowISO().slice(0, 10);
+  if (state.lastScan === today) return 0;
+  // A scan that eats the shift leaves the story on the desk unworked. The
+  // notices will be there tomorrow.
+  if (deadlineLeft() < 180000) {
+    log('SCAN  not enough time left in this shift');
+    return 0;
+  }
+
+  const items = await safe(() => cabinetFrontPage({ limit: 36 }), []);
+  if (!items.length) {
+    log('SCAN  nothing on the front pages of the cabinets today');
+    return 0;
+  }
+
+  const list = items
+    .map((it, i) => `#${i + 1} [${it.outlet}] ${String(it.title || '').replace(/\s+/g, ' ').slice(0, 220)}\n${it.url}`)
+    .join('\n\n');
+
+  let data = null;
+  try {
+    ({ data } = await chatJSON('desk', [
+      {
+        role: 'system',
+        content: `You are the investigative editor of PLAIN. Every morning you read what the institutions you follow have published and you decide which of it deserves an investigation: documents, data and questions, weeks of work. The desk works internationally — a notice about one country's own affairs is not the desk's story unless a cross-border institution, money or people are involved, and Switzerland is where the paper is published, not what it covers. You write about people: a notice without anyone who loses something, profits or lives with the consequences is a procedure, not a story. Return JSON only.`,
+      },
+      {
+        role: 'user',
+        content: `What the institutions published today:\n\n${list}\n\nPick at most three notices that could start an investigation. A notice qualifies only if ALL of these hold:
+- it points at something concrete: a decision, a payment, an award, a charge, a settlement, a seizure, a sanction, a contract;
+- it is answerable with public documents and questions to the institutions — no hidden sources needed;
+- it has people in it: who is affected, who profits, who is left with the consequences;
+- it crosses a border, or it involves an international institution, money or people moving between countries;
+- it is not a subject the desk already has.
+
+For each pick write the story it could start: a working headline (max 90 characters), the question the investigation answers, the country or region it is really about, who is affected and who profits, and 4-6 search queries in the language of the source that would find the documents around it. Never write about a notice that is not in the list.
+
+What the desk already has (its own memory — a new piece must not repeat it):
+${memoryBlock(deskMemory(dossiers, state)) || '(nothing yet — this would be the first piece)'}
+
+Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth":true,"title":"…","angle":"…","centre":"…","people":"…","category":"politics|business|world|tech|science|climate|health|culture|sport","queries":["…"]}]}. "n" is the number of the notice in the list above. Return {"leads":[]} if nothing qualifies.`,
+      },
+    ], { temperature: 0.35, maxTokens: 2400, numCtx: 32768, timeoutMs: 120000 }));
+  } catch (err) {
+    log(`SCAN  the desk could not read the front pages: ${err.message}`);
+    return 0;
+  }
+
+  const picks = (Array.isArray(data?.leads) ? data.leads : []).slice(0, 3);
+  let added = 0;
+  for (const pick of picks) {
+    const item = items[Number(pick?.n) - 1];
+    const worth = pick?.worth === true || pick?.worth === 'true' || pick?.worth === 1;
+    if (!item || !worth || String(pick.title || '').length < 12) continue;
+    const lead = {
+      at: nowISO(),
+      origin: 'scan',
+      summary: String(pick.summary || item.title || '').slice(0, 400),
+      worth: true,
+      title: String(pick.title || '').slice(0, 120),
+      angle: String(pick.angle || '').slice(0, 300),
+      centre: String(pick.centre || '').trim().slice(0, 80),
+      people: String(pick.people || '').slice(0, 300),
+      category: String(pick.category || 'world').slice(0, 20),
+      queries: (Array.isArray(pick.queries) ? pick.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
+      url: item.url,
+      outlet: item.outlet,
+      docTitle: String(item.title || '').replace(/\s+/g, ' ').slice(0, 300),
+    };
+    // The desk works internationally. A notice that turns out to be one
+    // country's own business is not filed: the slot is better left empty.
+    const gate = leadInternational(lead);
+    if (!gate.ok) {
+      log(`SCAN  ✗ notice not taken on: ${gate.why} — ${lead.title}`);
+      continue;
+    }
+    state.leads = Array.isArray(state.leads) ? state.leads : [];
+    if (state.leads.some((l) => l.url === lead.url)) continue;
+    state.leads = [lead, ...state.leads].slice(0, 20);
+    added++;
+    log(`SCAN  ✓ ${lead.outlet}: ${lead.title}`);
+  }
+  state.lastScan = today;
+  log(`SCAN  ${items.length} notice(s) read, ${added} kept for the desk`);
+  return added;
 }
 
 /**
@@ -3435,7 +3597,12 @@ async function main() {
   // A run that only carries an editor's decision does not open a new dossier
   // and does not hunt for new topics: it does what the editor asked.
   const decisionSlug = parseLetterDecision(APPROVE_LETTERS)?.slug || parseLetterDecision(REJECT_LETTERS)?.slug || '';
-  if (!decisionSlug) await intake(dossiers, state);
+  if (!decisionSlug) {
+    // The desk reads the cabinets before it opens anything: a story of its own
+    // begins with a document, not with a tip.
+    await scanForLeads(state, dossiers).catch((err) => log(`SCAN  failed: ${err.message}`));
+    await intake(dossiers, state);
+  }
 
   // The desk reads its own mailbox first: an answer that arrived overnight
   // changes what the shift should look at.
