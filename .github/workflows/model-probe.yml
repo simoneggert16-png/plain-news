@@ -7,6 +7,10 @@ name: Model probe
 # work instead of a desk with no brain.
 on:
   workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Article for the translation timing (empty = a default one)'
+        default: ''
 
 permissions:
   contents: read
@@ -20,7 +24,7 @@ concurrency:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,3 +36,11 @@ jobs:
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/probe-models.mjs
+      - name: Translate one whole article
+        if: always()
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          PROBE_SLUG: ${{ inputs.slug }}
+          PROBE_LOCALES: de
+        run: node scripts/probe-translate.mjs
