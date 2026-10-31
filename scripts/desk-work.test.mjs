@@ -1234,6 +1234,7 @@ test('a story that three shifts could not grow past one report is parked', () =>
   assert.equal(park(dossier({ blankShifts: 2 })), false, 'two empty shifts are a normal week');
   assert.equal(park(dossier({ sources: [{ id: 'S1' }, { id: 'S2' }, { id: 'S3' }] })), false, 'a story with footing is not parked');
   assert.equal(park(dossier({ letters: [{ id: 'L1', status: 'draft', sentAt: '2026-10-31T10:00:00.000Z' }] })), false, 'a letter in flight is still a story');
+  assert.equal(park(dossier({ letters: [{ id: 'L2', status: 'draft', approvedAt: '2026-10-31T11:00:00.000Z' }] })), false, 'an editor approved the letter — the desk does not throw the story away behind their back');
 });
 
 test('the desk knows the doors in the country the story happens', () => {

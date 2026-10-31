@@ -2150,7 +2150,7 @@ Return {"checks":[{"id":"C1","verdict":"supported|partial|unsupported","reason":
  */
 function parkIfHopeless(d) {
   if (d.sources.length >= 3 || (d.blankShifts || 0) < 3) return false;
-  if ((d.letters || []).some((l) => l.sentAt)) return false;
+  if ((d.letters || []).some((l) => l.sentAt || l.approvedAt || l.status === 'approved')) return false;
   d.parkReason = `three shifts without a new source — ${d.sources.length} source(s) cannot carry an investigation`;
   d.parkedAt = nowISO();
   note(d, 'dropped', d.parkReason);
