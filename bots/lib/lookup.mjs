@@ -206,18 +206,23 @@ async function worldBank(query) {
  * Every cabinet gets its say: the desk reads a few notices from each front
  * page, not the whole of the first one it comes to.
  */
-export async function cabinetFrontPage({ limit = 40, perCabinet = 6 } = {}) {
+export async function cabinetFrontPage({ limit = 40, perCabinet = 6, budgetMs = 25000 } = {}) {
+  // The morning scan is one shot a day. A feed that accepts the connection and
+  // then never answers must cost that feed its turn, not the whole scan: what
+  // has arrived when the budget is spent is what the editor reads.
+  const within = (p, fallback, label) => Promise.race([
+    p.catch(() => fallback),
+    new Promise((resolve) => { setTimeout(() => resolve({ ...fallback, late: label }), budgetMs).unref?.(); }),
+  ]);
   // One cabinet that is down must not silence the others.
   const registry = INSTITUTIONS.map((inst) =>
-    institutionDocuments(inst, { limit: 10 })
-      .then((hits) => ({ label: inst.outlet, hits }))
-      .catch(() => ({ label: inst.outlet, hits: [] }))
+    within(institutionDocuments(inst, { limit: 10 }).then((hits) => ({ label: inst.outlet, hits })), { label: inst.outlet, hits: [] }, inst.outlet)
   );
   const groups = await Promise.all([
-    dojItems().then((hits) => ({ label: 'US Justice Department', hits })).catch(() => ({ label: 'US Justice Department', hits: [] })),
-    unItems().then((hits) => ({ label: 'UN newsroom', hits })).catch(() => ({ label: 'UN newsroom', hits: [] })),
-    treasuryItems().then((hits) => ({ label: 'US Treasury', hits })).catch(() => ({ label: 'US Treasury', hits: [] })),
-    worldBankItems().then((hits) => ({ label: 'World Bank procurement', hits })).catch(() => ({ label: 'World Bank procurement', hits: [] })),
+    within(dojItems().then((hits) => ({ label: 'US Justice Department', hits })), { label: 'US Justice Department', hits: [] }, 'doj'),
+    within(unItems().then((hits) => ({ label: 'UN newsroom', hits })), { label: 'UN newsroom', hits: [] }, 'un'),
+    within(treasuryItems().then((hits) => ({ label: 'US Treasury', hits })), { label: 'US Treasury', hits: [] }, 'treasury'),
+    within(worldBankItems().then((hits) => ({ label: 'World Bank procurement', hits })), { label: 'World Bank procurement', hits: [] }, 'worldbank'),
     ...registry,
   ]);
   const queues = groups.map((g) => (g.hits || []).filter((h) => h?.url).slice(0, perCabinet));
