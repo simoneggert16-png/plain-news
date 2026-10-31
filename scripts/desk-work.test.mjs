@@ -752,7 +752,7 @@ const NOTICES = [
   },
 ];
 
-function scanner(reply) {
+function scanner(reply, notices = NOTICES) {
   const marker = (name) => {
     const line = SOURCE.split('\n').find((l) => l.startsWith(`const ${name} = `));
     return line.slice(`const ${name} = `.length).replace(/;$/, '');
@@ -770,7 +770,7 @@ function scanner(reply) {
     `,
   )(
     async () => ({ data: reply }),
-    async () => NOTICES,
+    async () => notices,
     () => {},
     () => '2026-10-31T08:00:00.000Z',
     async (fn, fallback) => {
@@ -851,6 +851,26 @@ test('a desk with a full list does not lose the notice it just found', async () 
   await scanner({ leads: [WORLD_PICK] })(state, []);
   assert.equal(state.leads.length, 20);
   assert.equal(state.leads[0].title, WORLD_PICK.title, 'the newest find stays on the desk');
+});
+
+test('a notice without a subject supports no story', async () => {
+  // OP00478199 is a contract award for a road project in the Kyrgyz Republic.
+  // Its feed title was "Contract Award: ", and the model turned it into
+  // "$200M for renewable energy in Kenya" — nothing in the notice says so.
+  const empty = [{ outlet: 'World Bank procurement', title: 'Contract Award: ', url: 'https://contracts.worldbank.org/ViewContractNotice/OP00478199' }];
+  const state = { leads: [] };
+  const added = await scanner({ leads: [{
+    n: 1,
+    worth: true,
+    summary: 'The bank awarded a contract for renewable energy in Kenya.',
+    title: 'World Bank awards $200M contract for renewable energy in Kenya',
+    angle: 'Who benefits from the contract',
+    centre: 'Kenya',
+    people: 'local communities',
+    queries: ['world bank kenya renewable contract award'],
+  }] }, empty)(state, []);
+  assert.equal(added, 0, 'a pick from a nameless notice is not filed');
+  assert.equal(state.leads.length, 0);
 });
 
 // ───────────────────── who the desk writes to ─────────────────────

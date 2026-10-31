@@ -1682,6 +1682,15 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
     const item = items[Number(pick?.n) - 1];
     const worth = pick?.worth === true || pick?.worth === 'true' || pick?.worth === 1;
     if (!item || !worth || String(pick.title || '').length < 12) continue;
+    // A notice that names nothing cannot support a story. The desk's first
+    // scan turned an empty "Contract Award: " into "$200M for renewable
+    // energy in Kenya" — the notice itself was a Kyrgyz road project. The
+    // pick is not filed: there is no document to check the story against.
+    const docTitle = String(item.title || '').replace(/\s+/g, ' ').trim();
+    if (docTitle.replace(/[^A-Za-z]/g, '').length < 20) {
+      log(`SCAN  ✗ notice names nothing: ${docTitle || '(no title)'}`);
+      continue;
+    }
     const lead = {
       at: nowISO(),
       origin: 'scan',
@@ -1695,7 +1704,7 @@ Return {"leads":[{"n":1,"summary":"one sentence on what the notice says","worth"
       queries: (Array.isArray(pick.queries) ? pick.queries : []).map(String).filter((q) => q.length > 5).slice(0, 6),
       url: item.url,
       outlet: item.outlet,
-      docTitle: String(item.title || '').replace(/\s+/g, ' ').slice(0, 300),
+      docTitle: docTitle.slice(0, 300),
     };
     // The desk works internationally. A notice that turns out to be one
     // country's own business is not filed: the slot is better left empty.
