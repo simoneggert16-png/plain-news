@@ -2,7 +2,7 @@
 // lead to the next document. Deliberately no headless browser — the desk runs
 // on a free CI runner and most of its sources are plain HTML or PDF.
 import { clean } from './feeds.mjs';
-import { extractImagesFromHtml, cleanImageUrl, cleanCaptionText } from './media.mjs';
+import { extractImagesFromHtml, cleanImageUrl, cleanCaptionText, isSignageCaption } from './media.mjs';
 
 const UA = 'Mozilla/5.0 (compatible; PlainDesk/1.0; +https://plain-news.ch)';
 
@@ -48,6 +48,26 @@ async function pdfText(bytes) {
 }
 
 /**
+ * Some pages refuse a runner: a captcha, a 403, a JavaScript wall. The
+ * archive's reader turns the page into text and answers where the direct
+ * fetch did not. It is the desk's way of reading a document that blocks it.
+ */
+async function readThroughArchive(url) {
+  const res = await fetch(`https://r.jina.ai/${encodeURIComponent(url)}`, {
+    headers: { 'User-Agent': UA, accept: 'text/plain' },
+    redirect: 'follow',
+    signal: AbortSignal.timeout(25000),
+  });
+  if (!res.ok) return null;
+  const text = (await res.text().catch(() => '')).trim();
+  if (text.length < 120) return null;
+  // The reader answers with the page as markdown; the first heading is its title.
+  const title = text.split('\n').find((line) => line.startsWith('Title:'))?.replace(/^Title:\s*/, '').trim() || '';
+  const body = text.replace(/^Title:.*$/m, '').trim();
+  return { title, text: body };
+}
+
+/**
  * @returns {Promise<{url:string,title:string,text:string,links:{url:string,text:string}[],image?:string,imageCaption?:string,imageCredit?:string,pdf?:boolean,error?:string}>}
  */
 export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
@@ -59,11 +79,18 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
       signal: AbortSignal.timeout(20000),
     });
   } catch (err) {
+    const via = await readThroughArchive(url);
+    if (via) return { url, title: via.title, text: via.text.slice(0, maxChars), links: [], viaArchive: true };
     return { url, title: '', text: '', links: [], error: `fetch failed: ${err.message}` };
   }
 
   const type = res.headers.get('content-type') || '';
-  if (!res.ok) return { url, title: '', text: '', links: [], error: `HTTP ${res.status}` };
+  if (!res.ok) {
+    // A page that says no may still say something to the reader.
+    const via = await readThroughArchive(url);
+    if (via) return { url, title: via.title, text: via.text.slice(0, maxChars), links: [], viaArchive: true };
+    return { url, title: '', text: '', links: [], error: `HTTP ${res.status}` };
+  }
 
   // Many authority servers label PDFs as octet-stream, so sniff the bytes.
   const looksPdf = type.includes('pdf') || /\.pdf(\?|$)/i.test(url);
@@ -96,6 +123,7 @@ export async function openPage(url, { maxChars = 7000, maxLinks = 30 } = {}) {
   // The lead photo of the article. A report without a picture looks unfinished,
   // and the desk already pays for the page - the photo comes with it.
   const picture = extractImagesFromHtml(html)
+    .filter((candidate) => !isSignageCaption(cleanCaptionText(candidate.caption || '')))
     .sort((a, b) => b.score - a.score)
     .map((candidate) => ({
       url: cleanImageUrl(candidate.url),

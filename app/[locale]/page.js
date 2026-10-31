@@ -66,14 +66,21 @@ export default async function Home({ params }) {
   const normTitle = (s) => String(s ?? '').replace(/\s+/g, ' ').trim().toLowerCase();
   const translated = (a) => {
     if (locale === 'en') return true;
-    const t = a.locales?.[locale]?.title;
-    if (!t) return false;
-    return normTitle(t) !== normTitle(a.locales?.en?.title);
+    const title = a.locales?.[locale]?.title;
+    if (!title) return false;
+    return normTitle(title) !== normTitle(a.locales?.en?.title);
   };
   const rankedAll = rankArticles(recent.length ? recent : displayArticles)
     .sort((a, b) => (storyScore(b) + liveBoost(b)) - (storyScore(a) + liveBoost(a)));
   const lead = rankedAll.find(translated) || rankedAll[0] || displayArticles[0];
-  const rest = displayArticles.filter((a) => a.slug !== lead.slug);
+  // The latest grid and the section grids are what readers scroll through, and
+  // an English headline between German ones looks like a broken page - the
+  // reader does not know that the translation is still being written. So a
+  // non-English edition shows only stories in its own language, unless there
+  // are too few of them to fill the page at all.
+  const translatedOnly = locale === 'en' ? displayArticles : displayArticles.filter(translated);
+  const pool = translatedOnly.length >= 3 ? translatedOnly : displayArticles;
+  const rest = pool.filter((a) => a.slug !== lead.slug);
   // The brief may carry at most two election headlines, otherwise every vote in
   // the world crowds out everything else. Stories about the same subject as the
   // lead (e.g. a second Israel election item) are skipped so the front page
@@ -274,7 +281,7 @@ export default async function Home({ params }) {
       )}
 
       {CATEGORIES.map((c) => {
-        const items = all.filter((a) => a.category === c);
+        const items = pool.filter((a) => a.category === c);
         if (items.length === 0) return null;
         return (
           <section key={c}>

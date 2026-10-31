@@ -54,7 +54,18 @@ export default async function CategoryPage({ params }) {
   if (!isCategory(cat)) notFound();
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
-  const items = await listFor({ category: cat, limit: 60, locale });
+  const all = await listFor({ category: cat, limit: 60, locale });
+  // An English headline in a German list reads like a broken page. The
+  // translation backfill needs a moment; until then the edition shows only
+  // what it can actually say in its own language.
+  const normTitle = (s) => String(s ?? '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const translated = (a) => {
+    if (locale === 'en') return true;
+    const title = a.locales?.[locale]?.title;
+    return Boolean(title) && normTitle(title) !== normTitle(a.locales?.en?.title);
+  };
+  const own = all.filter(translated);
+  const items = own.length >= 3 ? own : all;
   const isDe = locale === 'de';
   const pageUrl = `${SITE.url}/${locale}/c/${cat}`;
   const catName = t.cat[cat] || cat;
