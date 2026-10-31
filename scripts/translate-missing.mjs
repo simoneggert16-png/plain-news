@@ -13,7 +13,12 @@ import { loadIndex, loadArticle, saveArticle } from '../bots/lib/store.mjs';
 import { translate } from '../bots/lib/translate.mjs';
 import { LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 
-const TARGETS = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
+// A run can be limited to one edition. German is the edition readers see,
+// and a two-day backlog there costs two calls per article; translating all
+// eight languages of the same article at once spends that on editions nobody
+// is looking at yet.
+const ONLY = (process.env.TRANSLATE_LOCALES || '').split(',').map((s) => s.trim()).filter(Boolean);
+const TARGETS = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE && (!ONLY.length || ONLY.includes(c)));
 const LIMIT = Number(process.env.LIMIT) > 0 ? Number(process.env.LIMIT) : Infinity;
 const CONCURRENCY = Math.max(1, Number(process.env.CONCURRENCY) || 4);
 const RETRIES = Math.max(1, Number(process.env.RETRIES) || 3);
