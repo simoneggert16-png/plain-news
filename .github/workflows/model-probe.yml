@@ -57,6 +57,7 @@ jobs:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           PROBE_MODELS: ${{ inputs.models }}
           PROBE_SIZES: ${{ inputs.size }}
+          PROBE_MAX_TOKENS: ${{ inputs.maxtokens }}
         run: node scripts/probe-size.mjs
       - name: Translate one whole article
         if: always() && inputs.size == ''
