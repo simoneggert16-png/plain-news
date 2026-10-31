@@ -82,6 +82,13 @@ async function worker() {
         try {
           const t = await translate(source, locale);
           article.locales[locale] = t;
+          article.updatedAt = new Date().toISOString();
+          // Written the moment the edition is done. The whole article used to
+          // be saved after the last locale, and the budget guard ends the
+          // process mid-article: on 2026-10-31 a run printed "ok ... -> es"
+          // and "ok ... -> zh" and then published neither, because the ja
+          // edition was still running when the clock ran out.
+          saveArticle(article);
           changed = true;
           fixedSlugs.add(entry.slug);
           fixed++;
@@ -97,11 +104,7 @@ async function worker() {
         }
       }
     }
-    if (changed) {
-      article.updatedAt = new Date().toISOString();
-      saveArticle(article);
-      writeSlugFile();
-    }
+    if (changed) writeSlugFile();
   }
 }
 
