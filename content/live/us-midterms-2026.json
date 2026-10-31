@@ -8,7 +8,7 @@
     ],
     "createdBy": "bots/live.mjs",
     "statsModel": "openai/gpt-oss-20b",
-    "lastUpdateModel": "openai/gpt-oss-20b"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "us-midterms-2026",
   "stats": {
@@ -163,43 +163,10 @@
   "status": "live",
   "article": {
     "slug": "us-midterms-2026",
-    "updatedAt": "2026-10-31T16:07:21.126Z",
     "reason": "1 new update(s)",
     "locales": {
-      "en": {
-        "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
-        "dek": "A federal judge in California halted the Trump administration's threats to prosecute election officials over alleged noncitizen voting claims ahead of the 2026 midterms.",
-        "facts": [
-          "US approves $2.1bn Patriot missile sale to Ukraine",
-          "Judge blocks Trump DOJ threats against election officials",
-          "Melaka state election campaign begins on Saturday",
-          "Trump may order major Iran strike after midterms",
-          "Alaska Senate race features two candidates with same name",
-          "More than 43 million Americans voted early"
-        ],
-        "body": [
-          "Washington D.C. and Virginia filed a lawsuit to block the construction of President Trump's planned 250‑foot arch, according to Axios and The Hill, on 31 October 2026. The lawsuit seeks to prevent the arch from being erected on federal property.",
-          "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News and The Hill, on 31 October 2026. The ruling applies nationwide to all election officials.",
-          "The United States approved a $2.1 billion sale of Patriot missiles to Ukraine, according to Al Jazeera and Dawn, on 31 October 2026. The sale is part of ongoing U.S. support for Ukraine.",
-          "Melaka state election campaign began on Saturday, according to South China Morning Post and CNA, on 31 October 2026. The campaign covers 79 seats and is used as a test for Anwar Ibrahim’s coalition.",
-          "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms, and Anadolu Ajansı reports he may order a major strike if Republicans suffer losses, on 31 October 2026. The reports reflect concerns about post‑election foreign policy.",
-          "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race, and G1 reported that two candidates with the same name were contesting the seat, irritating Trump, on 31 October 2026. The report highlighted confusion among voters.",
-          "Al Jazeera said more than 43 million Americans voted early in the 2026 midterms, and Times of India said a Democratic win could affect trade relations with India, on 31 October 2026. The early voting trend reflects high participation and may influence international trade discussions."
-        ],
-        "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Richter blockiert Drohungen der Trump-Administration gegen Wahlbeamte",
         "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohungen der Trump-Administration, Wahlbeamte wegen angeblicher Nichtbürgerwahl zu verfolgen, vor den 2026-Zwischenwahlen.",
-        "facts": [
-          "USA genehmigt den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine",
-          "Richter blockiert die Drohungen des DOJ der Trump-Administration gegen Wahlbeamte",
-          "Die Wahlkampagne im Bundesstaat Melaka beginnt am Samstag",
-          "Trump könnte nach den Zwischenwahlen einen großen Angriff auf Iran befehlen",
-          "Im Senatswettbewerb Alaskas treten zwei Kandidaten mit demselben Namen an",
-          "Mehr als 43 Millionen Amerikaner haben vorzeitig gewählt"
-        ],
         "body": [
           "Washington D.C. und Virginia reichten eine Klage ein, um die Errichtung des geplanten 250-Fuß-Bogens von Präsident Trump zu verhindern, laut Axios und The Hill, am 31. Oktober 2026. Die Klage soll verhindern, dass der Bogen auf Bundesgrund errichtet wird.",
           "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerwahl zu bedrohen, laut Fox News und The Hill, am 31. Oktober 2026. Das Urteil gilt landesweit für alle Wahlbeamten.",
@@ -209,7 +176,39 @@
           "Fox News berichtete, dass demokratische Abgeordnete über ein angebliches Wahlverwirrungsschema im Senatswettbewerb Alaskas schweigen, und G1 meldete, dass zwei Kandidaten mit demselben Namen um den Sitz kämpfen, was Trump irritiert, am 31. Oktober 2026. Der Bericht hob die Verwirrung unter den Wählern hervor.",
           "Al Jazeera berichtete, dass mehr als 43 Millionen Amerikaner bei den 2026-Zwischenwahlen vorzeitig gewählt haben, und Times of India sagte, ein demokratischer Sieg könnte die Handelsbeziehungen mit Indien beeinflussen, am 31. Oktober 2026. Der Trend zu vorzeitiger Wahl spiegelt hohe Beteiligung wider und könnte internationale Handelsverhandlungen beeinflussen."
         ],
+        "facts": [
+          "USA genehmigt den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine",
+          "Richter blockiert die Drohungen des DOJ der Trump-Administration gegen Wahlbeamte",
+          "Die Wahlkampagne im Bundesstaat Melaka beginnt am Samstag",
+          "Trump könnte nach den Zwischenwahlen einen großen Angriff auf Iran befehlen",
+          "Im Senatswettbewerb Alaskas treten zwei Kandidaten mit demselben Namen an",
+          "Mehr als 43 Millionen Amerikaner haben vorzeitig gewählt"
+        ],
+        "title": "Richter blockiert Drohungen der Trump-Administration gegen Wahlbeamte",
         "context": "Die USA-Wahlen 2026 finden am 3. November 2026 statt und betreffen alle 435 Sitze im Repräsentantenhaus sowie 34 Sitze im Senat. Die Wahlen werden hinsichtlich möglicher Veränderungen in Politik und internationalen Beziehungen beobachtet."
+      },
+      "en": {
+        "dek": "A federal judge in California halted the Trump administration's threats to prosecute election officials over alleged noncitizen voting claims ahead of the 2026 midterms.",
+        "body": [
+          "Washington D.C. and Virginia filed a lawsuit to block the construction of President Trump's planned 250‑foot arch, according to Axios and The Hill, on 31 October 2026. The lawsuit seeks to prevent the arch from being erected on federal property.",
+          "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News and The Hill, on 31 October 2026. The ruling applies nationwide to all election officials.",
+          "The United States approved a $2.1 billion sale of Patriot missiles to Ukraine, according to Al Jazeera and Dawn, on 31 October 2026. The sale is part of ongoing U.S. support for Ukraine.",
+          "Melaka state election campaign began on Saturday, according to South China Morning Post and CNA, on 31 October 2026. The campaign covers 79 seats and is used as a test for Anwar Ibrahim’s coalition.",
+          "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms, and Anadolu Ajansı reports he may order a major strike if Republicans suffer losses, on 31 October 2026. The reports reflect concerns about post‑election foreign policy.",
+          "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race, and G1 reported that two candidates with the same name were contesting the seat, irritating Trump, on 31 October 2026. The report highlighted confusion among voters.",
+          "Al Jazeera said more than 43 million Americans voted early in the 2026 midterms, and Times of India said a Democratic win could affect trade relations with India, on 31 October 2026. The early voting trend reflects high participation and may influence international trade discussions."
+        ],
+        "facts": [
+          "US approves $2.1bn Patriot missile sale to Ukraine",
+          "Judge blocks Trump DOJ threats against election officials",
+          "Melaka state election campaign begins on Saturday",
+          "Trump may order major Iran strike after midterms",
+          "Alaska Senate race features two candidates with same name",
+          "More than 43 million Americans voted early"
+        ],
+        "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+        "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -217,6 +216,13 @@
         "at": "2026-10-31T15:34:24.966Z",
         "reason": "2 new update(s)",
         "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Richter blockiert Drohungen des DOJ-Trumps gegen Wahlbeamte",
+            "context": ""
+          },
           "en": {
             "dek": "A federal judge in California halted the Trump administration's threats to prosecute election officials over alleged noncitizen voting claims ahead of the 2026 midterms.",
             "body": [
@@ -239,13 +245,6 @@
             "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
             "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "",
-            "body": [],
-            "facts": [],
-            "title": "Richter blockiert Drohungen des DOJ-Trumps gegen Wahlbeamte",
-            "context": ""
           }
         }
       },
@@ -468,7 +467,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-10-31T16:07:21.126Z"
   },
   "endedAt": null,
   "locales": {
@@ -511,62 +511,88 @@
   },
   "updates": [
     {
-      "id": "u-1793461620000-g106",
-      "at": "2026-10-31T15:47:00.000Z",
-      "kind": "result",
+      "id": "u-1793466036000-frd0",
+      "at": "2026-10-31T17:00:36.000Z",
+      "kind": "statement",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Evacuees from Oleshky reach Kyiv-controlled territory",
-          "body": "According to DW, evacuees from Oleshky crossed into Kyiv-controlled territory after a truce brokered by Melania Trump. France 24 reported that residents reunited with families following the evacuation."
-        },
-        "es": {
-          "headline": "Los evacuados de Oleshky llegan a territorio controlado por Kiev",
-          "body": "Según DW, los evacuados de Oleshky cruzaron al territorio controlado por Kiev tras un alto el fuego mediado por Melania Trump. France 24 informó que los residentes se reunieron con sus familias tras la evacuación."
-        },
-        "it": {
-          "headline": "Evacuati da Oleshky raggiungono il territorio controllato da Kiev",
-          "body": "Secondo DW, gli evacuati da Oleshky sono passati nel territorio controllato da Kiev dopo una tregua mediata da Melania Trump. France 24 ha riferito che i residenti si sono riuniti con le famiglie dopo l'evacuazione."
-        },
-        "fr": {
-          "headline": "Les évacués d'Oleshky arrivent dans le territoire contrôlé par Kyiv",
-          "body": "Selon DW, les évacués d'Oleshky ont traversé dans le territoire contrôlé par Kyiv après une trêve négociée par Melania Trump. France 24 a rapporté que les résidents se sont réunis avec leurs familles après l'évacuation."
-        },
-        "de": {
-          "headline": "Evakuierte aus Oleshky erreichen von Kiew kontrolliertes Gebiet",
-          "body": "Laut DW sind die Evakuierten aus Oleshky nach einem von Melania Trump vermitteltem Waffenstillstand in das von Kiew kontrollierte Gebiet eingereist. France 24 berichtete, dass die Bewohner nach der Evakuierung wieder mit ihren Familien zusammenkamen."
-        },
-        "zh": {
-          "headline": "来自奥列什基的疏散人员抵达基辅控制区",
-          "body": "据德国之声（DW）报道，奥列什基的疏散人员在梅拉尼娅·特朗普斡旋的停火后越过基辅控制区边界。法新社（France 24）报道称，居民在疏散后与家人团聚。"
-        },
-        "ja": {
-          "headline": "オレシキーの避難民がキエフ支配領域に到着",
-          "body": "DWによれば、オレシキーの避難民はメラニア・トランプが仲介した停戦後、キエフ支配領域に入った。フランス24は、避難後に住民が家族と再会したと報じた。"
-        },
-        "ko": {
-          "headline": "올레슈키에서 피난민들이 키이프 통제 지역에 도착",
-          "body": "DW에 따르면, 올레슈키의 피난민들은 멜라니아 트럼프가 중재한 휴전 이후 키이프 통제 지역으로 진입했다. 프랑스 24는 피난 이후 주민들이 가족과 재회했다고 보도했다."
-        },
-        "pt": {
-          "headline": "Os evacuados de Oleshky chegam ao território controlado por Kiev",
-          "body": "De acordo com a DW, os evacuados de Oleshky cruzaram para o território controlado por Kiev após um cessar-fogo mediado por Melania Trump. A France 24 informou que os residentes reuniram-se com as famílias após a evacuação."
+          "headline": "Iran's Khamenei warns US and Israel against further strikes",
+          "body": "Iran's Supreme Leader Mojtaba Khamenei warned the United States and Israel against further strikes, according to France 24 and The Hill. The Hill reported that he threatened a response if the United States strikes Iran after the midterms."
         }
       },
       "sources": [
         {
-          "outlet": "DW",
-          "title": "Ukraine news: Evacuees from Russian-occupied Oleshky reach Kyiv-controlled territory",
+          "outlet": "France 24",
+          "title": "Iran's Khamenei warns US and Israel against new attacks",
+          "url": "https://www.france24.com/en/middle-east/20261031-iran-s-khamenei-warns-us-and-israel-against-new-attacks",
+          "publishedAt": "2026-10-31T17:00:36.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Iran’s Supreme Leader threatens US with response if strikes are launched after midterms",
+          "url": "https://thehill.com/policy/international/6186134-khamenei-warns-iran-strikes/",
+          "publishedAt": "2026-10-31T15:51:26.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T15:47:00.000Z",
+      "id": "u-1793461620000-g106",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut DW sind die Evakuierten aus Oleshky nach einem von Melania Trump vermitteltem Waffenstillstand in das von Kiew kontrollierte Gebiet eingereist. France 24 berichtete, dass die Bewohner nach der Evakuierung wieder mit ihren Familien zusammenkamen.",
+          "headline": "Evakuierte aus Oleshky erreichen von Kiew kontrolliertes Gebiet"
+        },
+        "en": {
+          "body": "According to DW, evacuees from Oleshky crossed into Kyiv-controlled territory after a truce brokered by Melania Trump. France 24 reported that residents reunited with families following the evacuation.",
+          "headline": "Evacuees from Oleshky reach Kyiv-controlled territory"
+        },
+        "es": {
+          "body": "Según DW, los evacuados de Oleshky cruzaron al territorio controlado por Kiev tras un alto el fuego mediado por Melania Trump. France 24 informó que los residentes se reunieron con sus familias tras la evacuación.",
+          "headline": "Los evacuados de Oleshky llegan a territorio controlado por Kiev"
+        },
+        "fr": {
+          "body": "Selon DW, les évacués d'Oleshky ont traversé dans le territoire contrôlé par Kyiv après une trêve négociée par Melania Trump. France 24 a rapporté que les résidents se sont réunis avec leurs familles après l'évacuation.",
+          "headline": "Les évacués d'Oleshky arrivent dans le territoire contrôlé par Kyiv"
+        },
+        "it": {
+          "body": "Secondo DW, gli evacuati da Oleshky sono passati nel territorio controllato da Kiev dopo una tregua mediata da Melania Trump. France 24 ha riferito che i residenti si sono riuniti con le famiglie dopo l'evacuazione.",
+          "headline": "Evacuati da Oleshky raggiungono il territorio controllato da Kiev"
+        },
+        "ja": {
+          "body": "DWによれば、オレシキーの避難民はメラニア・トランプが仲介した停戦後、キエフ支配領域に入った。フランス24は、避難後に住民が家族と再会したと報じた。",
+          "headline": "オレシキーの避難民がキエフ支配領域に到着"
+        },
+        "ko": {
+          "body": "DW에 따르면, 올레슈키의 피난민들은 멜라니아 트럼프가 중재한 휴전 이후 키이프 통제 지역으로 진입했다. 프랑스 24는 피난 이후 주민들이 가족과 재회했다고 보도했다.",
+          "headline": "올레슈키에서 피난민들이 키이프 통제 지역에 도착"
+        },
+        "pt": {
+          "body": "De acordo com a DW, os evacuados de Oleshky cruzaram para o território controlado por Kiev após um cessar-fogo mediado por Melania Trump. A France 24 informou que os residentes reuniram-se com as famílias após a evacuação.",
+          "headline": "Os evacuados de Oleshky chegam ao território controlado por Kiev"
+        },
+        "zh": {
+          "body": "据德国之声（DW）报道，奥列什基的疏散人员在梅拉尼娅·特朗普斡旋的停火后越过基辅控制区边界。法新社（France 24）报道称，居民在疏散后与家人团聚。",
+          "headline": "来自奥列什基的疏散人员抵达基辅控制区"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.dw.com/en/ukraine-news-evacuees-from-russian-occupied-oleshky-reach-kyiv-controlled-territory/live-79815409?maca=en-rss-en-all-1573-rdf",
+          "title": "Ukraine news: Evacuees from Russian-occupied Oleshky reach Kyiv-controlled territory",
+          "outlet": "DW",
           "publishedAt": "2026-10-31T15:47:00.000Z"
         },
         {
-          "outlet": "France 24",
-          "title": "Residents from Russian-occupied Oleshky reunite with families after evacuation operation",
           "url": "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine",
+          "title": "Residents from Russian-occupied Oleshky reunite with families after evacuation operation",
+          "outlet": "France 24",
           "publishedAt": "2026-10-31T12:45:49.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T15:21:02.000Z",
@@ -1329,10 +1355,27 @@
     "https://news.google.com/rss/articles/CBMid0FVX3lxTE5oQVM0aWU3NzI5R0dOQUFPUUpKdTh1S0wydFBlbUpNNkVvRVhfYzdWWTdybmJycFpJSF82Y2d6QktBWFFEa1hvYnd5cWotXzBndlhVcko4ZmJYV3VOaDBMZ1NqcWZWMTM0V3AzZlRiU0JNQmJ1TGRz?oc=5",
     "https://news.google.com/rss/articles/CBMib0FVX3lxTE5odEtoZExTeGQ2S21CMWN2bzFqREpSZ3E1dEtPUEotalozT1NRUFRsUThvOXVBNF8wMFpFeDhzMFBOdVdzcFdVLTZsWGxEMXNpb0poYXVuTG1YY1ZldW5iYzZ5R0w0amFwYmFCX0hhNA?oc=5",
     "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZlM2U1pNYUpFdnBUSWdxWFY5MmhkRlVkVm14b1IzVVllR1FPQ3U0UWhYU1RSVzM3U1U4WlBJVW5WVnFFSEtCcVZjYk9ldGZkeElqVWtlcWMtLWtqQlRUOVF0LVI5Nnpkay1pRm9QYU9NckxLSGtKU0NFNGl6Q0N1dlZSLUlCOTloT1VReWNTT3dUSG9LRXlkeVFOa2lxLWx0dUNyYjBGNlhpemx0cXBNYXNORlg3QUJFWG5jSTRRdUVfZw?oc=5",
-    "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine"
+    "https://www.france24.com/en/europe/20261031-evacuees-from-russian-occupied-oleshky-arrive-in-ukraine",
+    "https://www.straitstimes.com/world/europe/forced-to-eat-grass-oleshky-evacuees-say-russia-ukraine-truce-was-a-blessing",
+    "https://thehill.com/policy/international/6186192-oleshky-residents-return-ukraine/",
+    "https://www.foxnews.com/politics/who-ilhan-omars-lawyers-meet-high-powered-dem-attorneys-embattled-rep-hired",
+    "https://www.france24.com/en/middle-east/20261031-iran-s-khamenei-warns-us-and-israel-against-new-attacks",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQnN1SE9HNVFSSHE4S1VrZmVzM1R0N1UxRUNVMHBHbjBNZk5sWldDd1h2UHo2eFlvRTl5MFdQTURsZ1FzTW9vYWI2WWZVZGNrSThBS3dzeDZpakswMXAxOW5KVVdub1RwRnVzYU51UklFbHhiQkVKdkhSSXJWbUlES1duUzJGY2VWa2VnSk8xQjY?oc=5",
+    "https://timesofindia.indiatimes.com/india/will-deal-with-modi-shah-rahul-gandhi-explains-why-cec-gyanesh-kumar-his-first-target/articleshow/135406884.cms",
+    "https://www.lemonde.fr/en/international/article/2026/10/31/in-arizona-midterms-momentum-shifts-to-the-democrats-i-m-ashamed-i-voted-for-trump_6768280_4.html",
+    "https://www.dawn.com/news/2041212/india-opposition-parties-hold-mock-impeachment-of-poll-chief",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNkJnUVhENmgtUVZMQU9UZjFDMFRHaHRsUnFqMnhPYjB4c2RUZ1oyX0d1SmxXRFNZSUo3RW02OU15V193SlRWMTc3OU80TFhJZ2xLR0F6ckhRVURENGlqdV8xdjJmSlI2eVowc2o1eVhFSEVPcHNxN2xBTXI5SHdNNXAwLXpDb0I1STljNG9aaUdjaFh6X2xZX0Vsd0h5R2VpREJWY1BpcG16LWhKZHpFdEVLSQ?oc=5",
+    "https://www.spiegel.de/ausland/midterm-wahlkampf-in-alaska-trump-wird-so-lange-weitermachen-bis-ihn-jemand-stoppt-a-c8cd7822-3b01-44e3-ba79-3d0aae5c7322#ref=rss",
+    "https://thehill.com/homenews/campaign/6185470-senate-control-midterm-six-tossups/",
+    "https://thehill.com/policy/international/6186134-khamenei-warns-iran-strikes/",
+    "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSnpyczMyR1dkbDIxMXh2azBZY1F4bVFibVYzQTU1RnBHUEliYXhrZHc5bkxfYXJtNktNeVJnV3RCMzVhbFRHM3QxcS1NS0FHQ0dSSDc3aC03M3JraVRCajUzR0lzY0VVTWc4NzQ4elotVTBzc1hBckdsSmlZZFpNUU1EdV9HSlJlUzFkcHZHWVF2UURSWm03d1dJVS1BMGZ4RVJxbDRNY3VKRllrbDJPSW5hLU9BY1hwYkE?oc=5",
+    "https://news.google.com/rss/articles/CBMikAJBVV95cUxPM0hiOExMME1YRHpJYXB3LXFSSDFjVkJ1VC1oZFVJendVYVhsQWtnLTctaHdGRTBkVXZvREcxeDBNY1NpMzctZ3FXUlQxX19QY000WkJVbTVxcElCdzA4bGc0aGtuV3B6eTF5Q3pDeGlyQnpoTzg0NTJ0LWc2eU9fLXdnTjAxSTlEUHdsa2owMDd2YnZIS2xzNjR2Ukdrc0sxR2ZxTXM0SlpkQVZQbDZtVkN2T0pKWWJhcnFkTnkyRUlMaENZdGhkZkpheWd6MV9WbWJDR2dPM1FIQVhUTVRFeV9YOTVZaG45YkpGbG9aZkNsMC1TQ3F3THFYaXlJVnRKc0dnTkN2U0tNTTZaZHFXQg?oc=5",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWmlUSnFiZkJmcTRhTWtzNnQ1SERxa0pjczN1SGlkX3pQN0lYemtxaWdZajBQSUJCaEFLcTlSREpuejJkemJ6OEthTkxGcTRnUm9UWlFXYVJUVmd0UllqRkxqQy00a2s1OTVjWnlPdHFmOWF5NUlCYTlhdVd4VG1yRkppMnFSSTZGNUpmd2JjdVVDcWlCbE11SEJIeFBTMV93RHp6SDdBWXl4NEdK?oc=5",
+    "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPaGRMRmczR1k2ajhCcl9IanlrYnNobkExN2l2MlJ0OUo1NkdPLWx1QmpITkxsTVRsWGotSXNFdU9nSmhMQTBXTUtGZ1o4Rk9BWjRGS3lkb0JyVEd5eWUyYUxLV1VqcW1QQ0NhYWZtM0c1ODdmQldGYlBSVXQ1UTQ4NHczdGtzNC16TkR6UXJCU044cEZaRXo1WXZMZGxfWUYxeTk3LVJNMFhhbzc3RFFsd21ZV3dOeGVickptUjY1UTdrcmpGT3cyR3hUenAtYUE2QW1EOUZWT3NBQWNjbXJr0gHkAUFVX3lxTFBaSFBkRnhwaVFoUmMyZnRNRi1fcUd4eEtyMXdNS1NMSTZpeG4xdTlkU05zVFBsOGVyZC04ZlRSelZsaFdWMERXc21kNU00SkthbUtISDhCRXNsVjEzazB0Y3BscGhZcTc1MUJyb2pwZnFZYU5jY1RDZkN2YVBhZjFEbFJRTWw4R1Y5RHdvSzllOTFjUDJIdVNxV2ExalQ2UHdvN3ZHbWw5OHRNMWg0ZHdwbVUycHZHZ2szNjdRQUJXdG5ST1ZlSTNYdWVzUlJRSGtQaFpmUXZPS1A0SGpjb0JvLXE1Tg?oc=5",
+    "https://timesofindia.indiatimes.com/technology/tech-news/elon-musk-who-has-spent-446-million-on-us-midterms-reposts-2022-prediction-on-democrats-now-watch-their-/articleshow/135404541.cms"
   ],
   "startedAt": "2026-10-31T06:33:27.688Z",
-  "updatedAt": "2026-10-31T16:04:30.693Z",
+  "updatedAt": "2026-10-31T17:52:37.479Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "us-midterms-2026",
