@@ -17,6 +17,9 @@ on:
       budget:
         description: 'Seconds the whole translation may take'
         default: '300'
+      maxtokens:
+        description: 'Answer length the model may use'
+        default: '10000'
 
 permissions:
   contents: read
@@ -55,4 +58,5 @@ jobs:
           PROBE_MODELS: ${{ inputs.models }}
           PROBE_BUDGET_MS: ${{ fromJSON(inputs.budget) }}000
           TRANSLATE_TIMEOUT_MS: ${{ fromJSON(inputs.budget) }}000
+          TRANSLATE_MAX_TOKENS: ${{ inputs.maxtokens }}
         run: node scripts/probe-translate.mjs
