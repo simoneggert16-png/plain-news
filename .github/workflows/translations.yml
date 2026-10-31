@@ -44,6 +44,9 @@ jobs:
           LIMIT: ${{ inputs.limit }}
           CONCURRENCY: ${{ inputs.concurrency || '3' }}
           RETRIES: '3'
+          # The job is killed at 55 minutes and a killed job never commits.
+          # Leave room for the index rebuild and the push.
+          TIME_BUDGET_MIN: '42'
         run: node scripts/translate-missing.mjs
       - name: Commit repaired translations
         if: always()

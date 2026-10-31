@@ -152,8 +152,11 @@ async function modelReady() {
     // answer at all, and a working chain would look dead. `think: false` and
     // a little room make the probe ask the same question a reader would.
     const answer = await chat('desk', [{ role: 'user', content: 'Reply with the single word: ready' }], {
+      // Every model gets a short turn, not the whole preflight: a busy
+      // provider holds the first one past forty-five seconds, and the chain
+      // then never reaches the model that would have answered in nine.
       deadline: Date.now() + 60_000,
-      timeoutMs: 45_000,
+      timeoutMs: 15_000,
       maxTokens: 24,
       think: false,
     });
@@ -1271,9 +1274,9 @@ async function researchAgent(d) {
     return wire
       .map((it) => wireHit(it, terms, distinctive))
       .filter((x) => x.score >= 2 || x.strong)
-      .sort((a, b) => b.score - a.score || new Date(b.it.publishedAt || 0) - new Date(a.it.publishedAt || 0))
+      .sort((a, b) => b.score - a.score || new Date(b.item.publishedAt || 0) - new Date(a.item.publishedAt || 0))
       .slice(0, n)
-      .map((x) => x.it);
+      .map((x) => x.item);
   };
 
   const state = () =>

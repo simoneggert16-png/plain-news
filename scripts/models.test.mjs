@@ -54,3 +54,24 @@ test('a chain in which every model is parked fails fast and says so', async () =
   await assert.rejects(() => chat('desk', [{ role: 'user', content: 'hi' }], { models }), /no usable model/);
   assert.ok(Date.now() - started < 500);
 });
+
+test('a model that times out is left behind, not asked three times', async () => {
+  const { chat } = await freshModule('timeout');
+  process.env.NVIDIA_API_KEY = 'test-key';
+  const slow = 'deepseek-ai/deepseek-v4.1-flash';
+  const fast = 'stepfun-ai/step-5-preview';
+  const asked = [];
+  globalThis.fetch = async (url, init) => {
+    const model = JSON.parse(init.body).model;
+    asked.push(model);
+    if (model === slow) throw new DOMException('The operation was aborted due to timeout', 'TimeoutError');
+    return new Response(JSON.stringify({ choices: [{ message: { content: 'ready' }, finish_reason: 'stop' }] }), { status: 200 });
+  };
+
+  // On 2026-10-31 the first model timed out three times in a row, the shift's
+  // deadline ran out, and the preflight declared every model dead although
+  // the second one answered in nine seconds.
+  const answer = await chat('desk', [{ role: 'user', content: 'hi' }], { models: [slow, fast] });
+  assert.equal(answer.model, fast);
+  assert.deepEqual(asked, [slow, fast]);
+});

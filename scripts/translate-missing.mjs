@@ -17,6 +17,12 @@ const TARGETS = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
 const LIMIT = Number(process.env.LIMIT) > 0 ? Number(process.env.LIMIT) : Infinity;
 const CONCURRENCY = Math.max(1, Number(process.env.CONCURRENCY) || 4);
 const RETRIES = Math.max(1, Number(process.env.RETRIES) || 3);
+// The workflow kills the job at 55 minutes, and a killed job never reaches the
+// commit step: a long run then translated for an hour and published nothing,
+// which is why the backlog never shrank. Stop taking new articles early enough
+// that the finished ones get committed.
+const BUDGET_MS = (Number(process.env.TIME_BUDGET_MIN) || 42) * 60_000;
+const startedAt = Date.now();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const index = loadIndex();
@@ -52,7 +58,7 @@ for (const { entry, locale } of jobs) {
 const articleJobs = [...bySlug.values()];
 
 async function worker() {
-  while (cursor < articleJobs.length) {
+  while (cursor < articleJobs.length && Date.now() - startedAt < BUDGET_MS) {
     const { entry, locales } = articleJobs[cursor++];
     const article = loadArticle(entry.slug);
     if (!article) { failures.push(`${entry.slug}: article file missing`); continue; }
@@ -96,6 +102,8 @@ if (fixedSlugs.size) {
   fs.writeFileSync('translated-slugs.txt', [...fixedSlugs].join('\n') + '\n');
 }
 
+const left = Math.max(0, articleJobs.length - cursor);
+if (left) console.log(`time budget reached: ${left} article(s) wait for the next run`);
 console.log(`done: ${fixed} translation(s) written, ${failures.length} still failing`);
 for (const f of failures.slice(0, 20)) console.log(`  fail ${f}`);
 process.exitCode = failures.length ? 1 : 0;
