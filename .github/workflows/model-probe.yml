@@ -20,6 +20,15 @@ on:
       maxtokens:
         description: 'Answer length the model may use'
         default: '10000'
+      size:
+        description: 'Prompt sizes to test (words), e.g. 20,200,500 — empty skips'
+        default: ''
+      head:
+        description: 'Any value = test which part of a translation request makes a model hang'
+        default: ''
+      github:
+        description: 'Any value = test whether GitHub Models answers as a provider'
+        default: ''
 
 permissions:
   contents: read
@@ -42,14 +51,22 @@ jobs:
       # A model list is the question "what works today" and takes minutes; a
       # translation test with named models skips it.
       - name: Ask every candidate one small question
-        if: inputs.models == ''
+        if: inputs.models == '' && inputs.size == '' && inputs.head == '' && inputs.github == ''
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/probe-models.mjs
+      - name: Grow the prompt until the model stops answering
+        if: inputs.size != ''
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          PROBE_MODELS: ${{ inputs.models }}
+          PROBE_SIZES: ${{ inputs.size }}
+          PROBE_MAX_TOKENS: ${{ inputs.maxtokens }}
+        run: node scripts/probe-size.mjs
       - name: Translate one whole article
-        if: always()
+        if: always() && inputs.size == '' && inputs.head == '' && inputs.github == ''
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
@@ -59,4 +76,17 @@ jobs:
           PROBE_BUDGET_MS: ${{ fromJSON(inputs.budget) }}000
           TRANSLATE_TIMEOUT_MS: ${{ fromJSON(inputs.budget) }}000
           TRANSLATE_MAX_TOKENS: ${{ inputs.maxtokens }}
+          TRANSLATE_DEBUG: '1'
         run: node scripts/probe-translate.mjs
+      - name: Find the part of a translation request that hangs
+        if: inputs.head != ''
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          PROBE_MODELS: ${{ inputs.models }}
+          PROBE_TIMEOUT_MS: ${{ fromJSON(inputs.budget) }}000
+        run: node scripts/probe-head.mjs
+      - name: Ask GitHub Models whether it answers at all
+        if: inputs.github != ''
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/probe-github.mjs

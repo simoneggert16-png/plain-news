@@ -7,60 +7,236 @@
       "Tages-Anzeiger"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "openai/gpt-oss-20b",
-    "statsModel": "minimaxai/minimax-m3.1-flash"
+    "statsModel": "minimaxai/minimax-m3.1-flash",
+    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash"
   },
   "slug": "ebola-outbreak-in-congo-death-toll-rises",
+  "stats": {
+    "max": null,
+    "asOf": "2026-10-31T00:00:00.000Z",
+    "note": "Reports put Ebola deaths in DR Congo above 5,000 and cases above 10,000, with two suspected cases under investigation in Nigeria.",
+    "rows": [
+      {
+        "key": "deaths-more-than",
+        "label": "Deaths (more than)",
+        "value": 5000,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Todesfälle (mehr als)"
+          },
+          "es": {
+            "label": "Muertes (más de)"
+          },
+          "fr": {
+            "label": "Décès (plus de)"
+          },
+          "it": {
+            "label": "Morti (più di)"
+          },
+          "ja": {
+            "label": "死亡者数（超）"
+          },
+          "ko": {
+            "label": "사망자 수(초과)"
+          },
+          "pt": {
+            "label": "Mortes (mais de)"
+          },
+          "zh": {
+            "label": "死亡人数（超过）"
+          }
+        }
+      },
+      {
+        "key": "cases-more-than",
+        "label": "Cases (more than)",
+        "value": 10000,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Fälle (mehr als)"
+          },
+          "es": {
+            "label": "Casos (más de)"
+          },
+          "fr": {
+            "label": "Cas (plus de)"
+          },
+          "it": {
+            "label": "Casi (più di)"
+          },
+          "ja": {
+            "label": "感染者数（超）"
+          },
+          "ko": {
+            "label": "감염 사례 수(초과)"
+          },
+          "pt": {
+            "label": "Casos (mais de)"
+          },
+          "zh": {
+            "label": "病例数（超过）"
+          }
+        }
+      },
+      {
+        "key": "suspected-cases-in-nigeria",
+        "label": "Suspected cases in Nigeria",
+        "value": 2,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Verdachtsfälle in Nigeria"
+          },
+          "es": {
+            "label": "Casos sospechosos en Nigeria"
+          },
+          "fr": {
+            "label": "Cas suspects au Nigeria"
+          },
+          "it": {
+            "label": "Casi sospetti in Nigeria"
+          },
+          "ja": {
+            "label": "ナイジェリアで疑い例"
+          },
+          "ko": {
+            "label": "나이지리아 의심 사례"
+          },
+          "pt": {
+            "label": "Casos suspeitos na Nigéria"
+          },
+          "zh": {
+            "label": "尼日利亚疑似病例"
+          }
+        }
+      }
+    ],
+    "unit": "",
+    "label": "DR Congo Ebola outbreak",
+    "source": {
+      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
+      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+      "outlet": "BBC",
+      "trusted": true,
+      "publishedAt": "2026-10-31T15:16:20.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Berichten zufolge liegt die Zahl der Ebola-Toten in der DR Kongo bei über 5.000 und die Zahl der Fälle bei über 10.000; zwei Verdachtsfälle werden in Nigeria untersucht.",
+        "label": "Ebola-Ausbruch in der DR Kongo"
+      },
+      "es": {
+        "note": "Los informes cifran en más de 5.000 las muertes por ébola en la RD del Congo y en más de 10.000 los casos, con dos casos sospechosos bajo investigación en Nigeria.",
+        "label": "Brote de ébola en la RD del Congo"
+      },
+      "fr": {
+        "note": "Selon des rapports, le nombre de morts d'Ebola en RD Congo dépasse 5 000 et celui des cas dépasse 10 000, avec deux cas suspects faisant l'objet d'une enquête au Nigeria.",
+        "label": "Épidémie d'Ebola en RD Congo"
+      },
+      "it": {
+        "note": "Secondo le segnalazioni, i decessi per Ebola nella RD Congo sono oltre 5.000 e i casi oltre 10.000, con due casi sospetti in corso di accertamento in Nigeria.",
+        "label": "Epidemia di Ebola nella RD Congo"
+      },
+      "ja": {
+        "note": "報告によると、コンゴ民主共和国のエボラ出血熱による死者は5,000人を超え、感染者は10,000人を超えており、ナイジェリアでは2件の疑い例が調査中である。",
+        "label": "コンゴ民主共和国でエボラ出血熱が流行"
+      },
+      "ko": {
+        "note": "보고에 따르면 콩고민주공화국의 에볼라 사망자는 5,000명을 넘고 사례는 10,000건을 넘으며, 나이지리아에서는 의심 사례 2건이 조사 중이다.",
+        "label": "콩고민주공화국 에볼라 발병"
+      },
+      "pt": {
+        "note": "Relatos indicam que as mortes por Ébola na RD Congo ultrapassam as 5.000 e os casos as 10.000, com dois casos suspeitos em investigação na Nigéria.",
+        "label": "Surto de Ébola na RD Congo"
+      },
+      "zh": {
+        "note": "报道称，刚果民主共和国埃博拉死亡人数超过5000人，病例数超过1万例，尼日利亚有两例疑似病例正在调查中。",
+        "label": "刚果民主共和国埃博拉疫情"
+      }
+    },
+    "updatedAt": "2026-10-31T19:25:40.220Z",
+    "sourceCount": 1
+  },
   "topic": "Ebola outbreak in Congo: death toll rises",
   "status": "live",
   "article": {
     "slug": "ebola-outbreak-in-congo-death-toll-rises",
-    "reason": "3 new update(s)",
+    "updatedAt": "2026-10-31T21:36:02.345Z",
+    "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Bestätigte Fälle übersteigen 10.000 und Todesfälle übersteigen 5.000, obwohl kein zugelassener Impfstoff oder keine zugelassene Behandlung existieren.",
-        "body": [
-          "Die Welt und Tages-Anzeiger berichteten, dass die bestätigten Ebola-Infektionen im Kongo 10.000 überschritten haben. Die Zahl der Todesfälle ist über 5.000 gestiegen.",
-          "Am selben Tag stellte Die Zeit fest, dass kein zugelassener Impfstoff für das Virus existiert. Al Jazeera ergänzte, dass keine zugelassenen Behandlungen verfügbar sind.",
-          "Der Ausbruch begann im Mai, so der Tages-Anzeiger. Seitdem ist die Zahl der Todesfälle stetig gestiegen.",
-          "Die Zeit identifizierte die Stämme als Bundibugyo, eine weniger verbreitete Form von Ebola. Bundibugyo ist für niedrigere Sterblichkeitsraten im Vergleich zu anderen Stämmen bekannt.",
-          "Ohne zugelassene medizinische Interventionen verlassen sich die Patienten auf unterstützende Pflege, so Die Zeit. Al Jazeera berichtete, dass das Fehlen von Behandlungsmöglichkeiten die Eindämmungsbemühungen erschwert.",
-          "Gesundheitsbehörden in der Demokratischen Republik Kongo haben keine neuen Richtlinien herausgegeben, so die Quellen. Die internationale Gemeinschaft überwacht die Situation weiterhin.",
-          "Die hohe Fallzahl und Sterblichkeit unterstreichen die Schwere des Ausbruchs, betonten Die Welt und Tages-Anzeiger. Die Situation bleibt kritisch, da sich das Virus über Regionen ausbreitet."
-        ],
-        "facts": [
-          "Bestätigte Ebola-Infektionen im Kongo übersteigen 10.000 (Die Welt, Tages-Anzeiger)",
-          "Todesfälle im Kongo übersteigen 5.000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
-          "Kein zugelassener Impfstoff für Ebola im Kongo (Die Zeit)",
-          "Keine zugelassenen Behandlungen für Ebola im Kongo (Al Jazeera)"
-        ],
-        "title": "Ebola-Ausbruch im Kongo: Todesfälle übersteigen 5.000, Infektionen über 10.000",
-        "context": "Der Ebola-Ausbruch in der Demokratischen Republik Kongo begann im Mai und hat sich über mehrere Provinzen ausgebreitet. Der identifizierte Virusstamm ist Bundibugyo, eine weniger verbreitete Form von Ebola. Der Ausbruch hat zu einer hohen Zahl bestätigter Fälle und Todesfälle geführt, wobei kein zugelassener Impfstoff oder keine zugelassene Behandlung verfügbar ist."
-      },
       "en": {
-        "dek": "Confirmed cases surpass 10,000 and deaths exceed 5,000 amid no approved vaccine or treatment.",
-        "body": [
-          "Die Welt and Tages-Anzeiger reported that confirmed Ebola infections in Congo have surpassed 10,000. The death toll has risen above 5,000.",
-          "Earlier that day, Die Zeit noted that no approved vaccine exists for the virus. Al Jazeera added that no approved treatments are available.",
-          "The outbreak began in May, according to Tages-Anzeiger. Since then, the number of deaths has increased steadily.",
-          "Die Zeit identified the strain as Bundibugyo, a less common form of Ebola. Bundibugyo is known for lower mortality rates compared to other strains.",
-          "Without approved medical interventions, patients rely on supportive care, Die Zeit said. Al Jazeera reported that this lack of treatment options complicates containment efforts.",
-          "Health authorities in the Democratic Republic of Congo have not issued new guidelines, according to the sources. The international community continues to monitor the situation.",
-          "The high case count and mortality underscore the severity of the outbreak, Die Welt and Tages-Anzeiger emphasized. The situation remains critical as the virus spreads across regions."
-        ],
+        "title": "Ebola deaths in Congo pass 5,000 as Nigeria investigates two suspected cases",
+        "dek": "Congo has more than 10,000 confirmed Ebola infections and over 5,000 deaths, while Nigeria isolates two suspected cases and other African countries record infections.",
         "facts": [
-          "Confirmed Ebola infections in Congo exceed 10,000 (Die Welt, Tages-Anzeiger)",
-          "Death toll in Congo exceeds 5,000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
-          "No approved vaccine for Ebola in Congo (Die Zeit)",
-          "No approved treatments for Ebola in Congo (Al Jazeera)"
+          "More than 10,000 confirmed Ebola infections in Congo (Die Welt, Tages-Anzeiger)",
+          "Death toll in Congo above 5,000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
+          "No approved vaccine for the virus (Die Zeit) and no approved treatments (Al Jazeera)",
+          "Congo government data released on Saturday shows cases recorded in other African countries (South China Morning Post, MedicalXpress)",
+          "Nigeria's Centre for Disease Control and Prevention is investigating two suspected cases in the northeast; both individuals are isolated (The Straits Times, Al Jazeera)"
         ],
-        "title": "Ebola outbreak in Congo: death toll exceeds 5,000, infections over 10,000",
-        "context": "The Ebola outbreak in the Democratic Republic of Congo began in May and has spread across several provinces. The virus strain identified is Bundibugyo, a less common form of Ebola. The outbreak has led to a high number of confirmed cases and deaths, with no approved vaccine or treatment available.",
+        "body": [
+          "Nigeria's Centre for Disease Control and Prevention said on Saturday it is investigating two suspected Ebola cases in the country's northeast region, according to The Straits Times. Al Jazeera reported that the two individuals have been isolated while officials carry out contact tracing and laboratory testing.",
+          "Data released by Congo's government on Saturday shows Ebola cases have been recorded in other African countries, the South China Morning Post and MedicalXpress reported. Both outlets attributed the figures to the Congolese government.",
+          "More than 10,000 people in Congo have been confirmed infected, Die Welt and Tages-Anzeiger reported, and the death toll has risen above 5,000. Al Jazeera and Die Zeit also reported the toll passing 5,000.",
+          "Die Zeit reported that no approved vaccine exists for the virus, and Al Jazeera reported that no approved treatments are available. Without them, patients rely on supportive care, Die Zeit said.",
+          "The outbreak began in May, according to Tages-Anzeiger, and the number of deaths has risen steadily since then. The strain behind it is Bundibugyo, a less common form of Ebola, Die Zeit reported.",
+          "Die Zeit reported that Bundibugyo is known for lower mortality rates than other Ebola strains. Al Jazeera reported that the absence of approved treatments complicates efforts to contain the virus."
+        ],
+        "context": "The Ebola outbreak in the Democratic Republic of Congo began in May and has spread across several provinces. The Bundibugyo strain circulating in Congo has no approved vaccine or treatment, according to Die Zeit and Al Jazeera.",
         "imageCaption": ""
       }
     },
-    "versions": [],
-    "updatedAt": "2026-10-31T08:21:56.714Z"
+    "versions": [
+      {
+        "at": "2026-10-31T08:21:56.714Z",
+        "reason": "3 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Confirmed cases surpass 10,000 and deaths exceed 5,000 amid no approved vaccine or treatment.",
+            "body": [
+              "Die Welt and Tages-Anzeiger reported that confirmed Ebola infections in Congo have surpassed 10,000. The death toll has risen above 5,000.",
+              "Earlier that day, Die Zeit noted that no approved vaccine exists for the virus. Al Jazeera added that no approved treatments are available.",
+              "The outbreak began in May, according to Tages-Anzeiger. Since then, the number of deaths has increased steadily.",
+              "Die Zeit identified the strain as Bundibugyo, a less common form of Ebola. Bundibugyo is known for lower mortality rates compared to other strains.",
+              "Without approved medical interventions, patients rely on supportive care, Die Zeit said. Al Jazeera reported that this lack of treatment options complicates containment efforts.",
+              "Health authorities in the Democratic Republic of Congo have not issued new guidelines, according to the sources. The international community continues to monitor the situation.",
+              "The high case count and mortality underscore the severity of the outbreak, Die Welt and Tages-Anzeiger emphasized. The situation remains critical as the virus spreads across regions."
+            ],
+            "facts": [
+              "Confirmed Ebola infections in Congo exceed 10,000 (Die Welt, Tages-Anzeiger)",
+              "Death toll in Congo exceeds 5,000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
+              "No approved vaccine for Ebola in Congo (Die Zeit)",
+              "No approved treatments for Ebola in Congo (Al Jazeera)"
+            ],
+            "title": "Ebola outbreak in Congo: death toll exceeds 5,000, infections over 10,000",
+            "context": "The Ebola outbreak in the Democratic Republic of Congo began in May and has spread across several provinces. The virus strain identified is Bundibugyo, a less common form of Ebola. The outbreak has led to a high number of confirmed cases and deaths, with no approved vaccine or treatment available.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Bestätigte Fälle übersteigen 10.000 und Todesfälle übersteigen 5.000, obwohl kein zugelassener Impfstoff oder keine zugelassene Behandlung existieren.",
+            "body": [
+              "Die Welt und Tages-Anzeiger berichteten, dass die bestätigten Ebola-Infektionen im Kongo 10.000 überschritten haben. Die Zahl der Todesfälle ist über 5.000 gestiegen.",
+              "Am selben Tag stellte Die Zeit fest, dass kein zugelassener Impfstoff für das Virus existiert. Al Jazeera ergänzte, dass keine zugelassenen Behandlungen verfügbar sind.",
+              "Der Ausbruch begann im Mai, so der Tages-Anzeiger. Seitdem ist die Zahl der Todesfälle stetig gestiegen.",
+              "Die Zeit identifizierte die Stämme als Bundibugyo, eine weniger verbreitete Form von Ebola. Bundibugyo ist für niedrigere Sterblichkeitsraten im Vergleich zu anderen Stämmen bekannt.",
+              "Ohne zugelassene medizinische Interventionen verlassen sich die Patienten auf unterstützende Pflege, so Die Zeit. Al Jazeera berichtete, dass das Fehlen von Behandlungsmöglichkeiten die Eindämmungsbemühungen erschwert.",
+              "Gesundheitsbehörden in der Demokratischen Republik Kongo haben keine neuen Richtlinien herausgegeben, so die Quellen. Die internationale Gemeinschaft überwacht die Situation weiterhin.",
+              "Die hohe Fallzahl und Sterblichkeit unterstreichen die Schwere des Ausbruchs, betonten Die Welt und Tages-Anzeiger. Die Situation bleibt kritisch, da sich das Virus über Regionen ausbreitet."
+            ],
+            "facts": [
+              "Bestätigte Ebola-Infektionen im Kongo übersteigen 10.000 (Die Welt, Tages-Anzeiger)",
+              "Todesfälle im Kongo übersteigen 5.000 (Die Welt, Tages-Anzeiger, Al Jazeera, Die Zeit)",
+              "Kein zugelassener Impfstoff für Ebola im Kongo (Die Zeit)",
+              "Keine zugelassenen Behandlungen für Ebola im Kongo (Al Jazeera)"
+            ],
+            "title": "Ebola-Ausbruch im Kongo: Todesfälle übersteigen 5.000, Infektionen über 10.000",
+            "context": "Der Ebola-Ausbruch in der Demokratischen Republik Kongo begann im Mai und hat sich über mehrere Provinzen ausgebreitet. Der identifizierte Virusstamm ist Bundibugyo, eine weniger verbreitete Form von Ebola. Der Ausbruch hat zu einer hohen Zahl bestätigter Fälle und Todesfälle geführt, wobei kein zugelassener Impfstoff oder keine zugelassene Behandlung verfügbar ist."
+          }
+        }
+      }
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -103,6 +279,64 @@
   },
   "updates": [
     {
+      "id": "u-1793480479000-g5zf",
+      "at": "2026-10-31T21:01:19.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Nigeria investigates two suspected Ebola cases in northeast region",
+          "body": "Nigeria's Centre for Disease Control and Prevention said on Saturday it is investigating two suspected Ebola cases in the country's northeast region, according to The Straits Times. Al Jazeera reported that the two individuals have been isolated while officials carry out contact tracing and laboratory testing."
+        },
+        "es": {
+          "headline": "Nigeria investiga dos casos sospechosos de ébola en la región noreste",
+          "body": "El Centro de Control y Prevención de Enfermedades de Nigeria dijo el sábado que está investigando dos casos sospechosos de ébola en la región noreste del país, según The Straits Times. Al Jazeera informó de que las dos personas han sido aisladas mientras las autoridades llevan a cabo el rastreo de contactos y pruebas de laboratorio."
+        },
+        "de": {
+          "headline": "Nigeria untersucht zwei Ebola-Verdachtsfälle im Nordosten",
+          "body": "Nigerias Zentrum für Krankheitskontrolle und -prävention teilte am Samstag mit, dass es zwei Ebola-Verdachtsfälle im Nordosten des Landes untersucht, wie die Straits Times berichtet. Al Jazeera berichtete, dass die beiden Personen isoliert wurden, während Beamte Kontaktverfolgung und Labortests durchführen."
+        },
+        "fr": {
+          "headline": "Le Nigeria enquête sur deux cas suspects d'Ebola dans le nord-est",
+          "body": "Le Centre nigérian de contrôle et de prévention des maladies a déclaré samedi qu'il enquêtait sur deux cas suspects d'Ebola dans la région du nord-est du pays, selon The Straits Times. Al Jazeera a rapporté que les deux personnes ont été isolées tandis que les autorités procèdent à la recherche des contacts et à des tests de laboratoire."
+        },
+        "it": {
+          "headline": "La Nigeria indaga su due casi sospetti di Ebola nella regione nordorientale",
+          "body": "Il Centro per il controllo e la prevenzione delle malattie della Nigeria ha dichiarato sabato di stare indagando su due casi sospetti di Ebola nella regione nordorientale del paese, secondo quanto riportato dal The Straits Times. Al Jazeera ha riferito che i due individui sono stati isolati mentre le autorità svolgono il tracciamento dei contatti e test di laboratorio."
+        },
+        "zh": {
+          "headline": "尼日利亚调查东北地区两例疑似埃博拉病例",
+          "body": "据《海峡时报》报道，尼日利亚疾病控制与预防中心周六表示，正在调查该国东北地区的两例疑似埃博拉病例。半岛电视台报道称，这两名人员已被隔离，官员正在进行接触者追踪和实验室检测。"
+        },
+        "pt": {
+          "headline": "Nigéria investiga dois casos suspeitos de Ébola na região nordeste",
+          "body": "O Centro de Controlo e Prevenção de Doenças da Nigéria afirmou este sábado que está a investigar dois casos suspeitos de Ébola na região nordeste do país, segundo o The Straits Times. A Al Jazeera noticiou que as duas pessoas foram isoladas enquanto as autoridades realizam o rastreio de contactos e testes laboratoriais."
+        },
+        "ko": {
+          "headline": "나이지리아, 북동부 지역에서 에볼라 의심 사례 2건 조사",
+          "body": "나이지리아 질병통제예방센터는 토요일 자국 북동부 지역에서 에볼라 의심 사례 2건을 조사하고 있다고 밝혔다고 스트레이츠 타임스가 보도했다. 알자지라는 당국이 접촉자 추적과 실험실 검사를 실시하는 동안 이 두 사람이 격리됐다고 보도했다."
+        },
+        "ja": {
+          "headline": "ナイジェリア、北東部でエボラ疑い例2例を調査",
+          "body": "ナイジェリア疾病管理予防センターは土曜日、ストレーツ・タイムズによると、同国北東部でエボラの疑い例2例を調査していると述べた。アルジャジーラは、当局が接触者追跡と検査を実施する間、この2人は隔離されていると報じた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Al Jazeera",
+          "title": "Health authorities probe two suspected Ebola cases in northeast Nigeria",
+          "url": "https://www.aljazeera.com/news/2026/10/31/health-authorities-probe-two-suspected-ebola-cases-in-northeast-nigeria?traffic_source=rss",
+          "publishedAt": "2026-10-31T21:01:19.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Nigeria reports two suspected Ebola cases in northeast region",
+          "url": "https://www.straitstimes.com/world/nigeria-reports-two-suspected-ebola-cases-in-northeast-region",
+          "publishedAt": "2026-10-31T17:56:42.000Z"
+        }
+      ]
+    },
+    {
       "at": "2026-10-31T15:14:49.000Z",
       "id": "u-1793459689000-801w",
       "kind": "result",
@@ -138,6 +372,10 @@
         "zh": {
           "body": "《南华早报》和MedicalXpress报道，刚果民主共和国政府数据显示，埃博拉病例已在其他非洲国家被记录。该数据于周六公布。",
           "headline": "埃博拉病例在其他非洲国家被记录"
+        },
+        "de": {
+          "headline": "Ebola-Fälle in anderen afrikanischen Ländern registriert",
+          "body": "Die South China Morning Post und MedicalXpress berichteten, dass Regierungsdaten der Demokratischen Republik Kongo zeigen, dass Ebola-Fälle in anderen afrikanischen Ländern registriert wurden. Die Daten wurden am Samstag veröffentlicht."
         }
       },
       "sources": [
@@ -372,132 +610,44 @@
     "https://www.theverge.com/policy/1023899/political-texts-midterm-elections",
     "https://medicalxpress.com/news/2026-10-congo-ebola-deaths-continent-wide.html",
     "https://www.kyivpost.com/post/88746",
-    "https://thehill.com/policy/defense/6185793-pete-hegseth-blackburn-tennessee-senate-seat/"
+    "https://thehill.com/policy/defense/6185793-pete-hegseth-blackburn-tennessee-senate-seat/",
+    "https://www.jpost.com/israel-election-2026/article-913418",
+    "https://www.aljazeera.com/news/2026/10/31/health-authorities-probe-two-suspected-ebola-cases-in-northeast-nigeria?traffic_source=rss",
+    "https://thehill.com/homenews/campaign/6185332-state-supreme-court-races/",
+    "https://www.jpost.com/israel-election-2026/article-913413",
+    "https://www.thehindu.com/news/international/rubio-says-us-not-directly-involved-in-flavio-bolsonaros-flight-from-brazil/article71650788.ece",
+    "https://www.nytimes.com/2026/10/31/science/ukraine-soldiers-infection-treatment.html",
+    "https://news.google.com/rss/articles/CBMijAFBVV95cUxPSUJ2dWJFOHRtdHRNaFJvaV9NZ0REaXBOcFljLUxIOF9lOEJOOENQNDBJeHc2bHFNN3c4VXpUb2l6bGQ4TnNId2tFenM0NUh4UTZpQ3FiVFYzbktKSlpjZWZ0azladHUzdUI4Zk1xcE13b2pVNEprWWpoeE00UkFMVUF2MVl3YlEwWnpJXw?oc=5",
+    "https://www.jpost.com/israel-news/defense-news/article-913407",
+    "https://www.straitstimes.com/world/nigeria-reports-two-suspected-ebola-cases-in-northeast-region",
+    "https://www.foxnews.com/politics/who-ilhan-omars-lawyers-meet-high-powered-dem-attorneys-embattled-rep-hired",
+    "http://www.africanews.com/2026/10/31/ebola-deaths-top-5000-as-fear-of-continent-wide-spread-mounts/",
+    "https://www.lemonde.fr/en/international/article/2026/10/31/in-arizona-midterms-momentum-shifts-to-the-democrats-i-m-ashamed-i-voted-for-trump_6768280_4.html"
   ],
   "startedAt": "2026-10-31T08:16:00.645Z",
-  "updatedAt": "2026-10-31T16:19:17.916Z",
+  "updatedAt": "2026-10-31T21:31:07.432Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "ebola-outbreak-in-congo-death-toll-rises",
-  "sourceCount": 6,
-  "seenHeadlines": [],
-  "stats": {
-    "label": "DR Congo Ebola outbreak",
-    "note": "Government data reports more than 5,000 deaths and more than 10,000 people infected in the DR Congo Ebola outbreak.",
-    "unit": "",
-    "max": null,
-    "asOf": "2026-10-31T00:00:00.000Z",
-    "updatedAt": "2026-10-31T17:17:52.701Z",
-    "source": {
-      "outlet": "BBC",
-      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
-      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-10-31T15:16:20.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "deaths-more-than",
-        "label": "Deaths (more than)",
-        "value": 5000,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Décès (plus de)"
-          },
-          "es": {
-            "label": "Muertes (más de)"
-          },
-          "it": {
-            "label": "Morti (più di)"
-          },
-          "de": {
-            "label": "Todesfälle (mehr als)"
-          },
-          "pt": {
-            "label": "Mortes (mais de)"
-          },
-          "zh": {
-            "label": "死亡人数（超过）"
-          },
-          "ja": {
-            "label": "死亡者数（超）"
-          },
-          "ko": {
-            "label": "사망자 수(초과)"
-          }
-        }
-      },
-      {
-        "key": "cases-more-than",
-        "label": "Cases (more than)",
-        "value": 10000,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Cas (plus de)"
-          },
-          "es": {
-            "label": "Casos (más de)"
-          },
-          "it": {
-            "label": "Casi (più di)"
-          },
-          "de": {
-            "label": "Fälle (mehr als)"
-          },
-          "pt": {
-            "label": "Casos (mais de)"
-          },
-          "zh": {
-            "label": "病例数（超过）"
-          },
-          "ja": {
-            "label": "感染者数（超）"
-          },
-          "ko": {
-            "label": "감염 사례 수(초과)"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Ebola-Ausbruch in der DR Kongo",
-        "note": "Laut Regierungsdaten gab es bei dem Ebola-Ausbruch in der DR Kongo mehr als 5.000 Todesfälle und mehr als 10.000 Infizierte."
-      },
-      "fr": {
-        "label": "Éclosion d’Ebola en RDC",
-        "note": "Les données du gouvernement font état de plus de 5 000 décès et de plus de 10 000 personnes infectées par l’éclosion d’Ebola en RDC."
-      },
-      "es": {
-        "label": "Brote de Ébola en la República Democrática del Congo",
-        "note": "Los datos del Gobierno indican más de 5.000 muertos y más de 10.000 personas infectadas en el brote de Ébola de la República Democrática del Congo."
-      },
-      "it": {
-        "label": "Focolaio di Ebola nella Repubblica Democratica del Congo",
-        "note": "I dati governativi riportano più di 5.000 morti e più di 10.000 persone infette nel focolaio di Ebola nella RDC."
-      },
-      "pt": {
-        "label": "Surto de Ebola na RD Congo",
-        "note": "Dados governamentais registam mais de 5.000 mortes e mais de 10.000 pessoas infetadas no surto de Ebola na RD Congo."
-      },
-      "zh": {
-        "label": "刚果（金）埃博拉疫情",
-        "note": "政府数据显示，刚果（金）埃博拉疫情死亡人数超过5,000人，感染人数超过10,000人。"
-      },
-      "ja": {
-        "label": "コンゴ民主共和国でエボラ出血熱流行",
-        "note": "政府数据显示、コンゴ民主共和国のエボラ出血熱流行では、死亡者が5,000人超、感染者が10,000人超となっている。"
-      },
-      "ko": {
-        "label": "드림카 공화국 에볼라 발생",
-        "note": "정부 자료에 따르면 드림카 공화국의 에볼라 발생으로 사망자는 5,000명 이상, 감염자는 10,000명 이상이다."
-      }
-    }
-  },
+  "sourceCount": 7,
   "statsHistory": [
+    {
+      "at": "2026-10-31T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "deaths-more-than",
+          "value": 5000
+        },
+        {
+          "key": "cases-more-than",
+          "value": 10000
+        },
+        {
+          "key": "suspected-cases-in-nigeria",
+          "value": 2
+        }
+      ]
+    },
     {
       "at": "2026-10-31T00:00:00.000Z",
       "rows": [
@@ -511,5 +661,6 @@
         }
       ]
     }
-  ]
+  ],
+  "seenHeadlines": []
 }
