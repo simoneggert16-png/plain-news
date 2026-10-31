@@ -57,6 +57,13 @@ for (const { entry, locale } of jobs) {
 }
 const articleJobs = [...bySlug.values()];
 
+// Article files are saved one by one, so the list of finished slugs is written
+// the same way: a run that is cut off still commits what it did and the index
+// is rebuilt from that list.
+const writeSlugFile = () => {
+  if (fixedSlugs.size) fs.writeFileSync('translated-slugs.txt', [...fixedSlugs].join('\n') + '\n');
+};
+
 async function worker() {
   while (cursor < articleJobs.length && Date.now() - startedAt < BUDGET_MS) {
     const { entry, locales } = articleJobs[cursor++];
@@ -88,19 +95,30 @@ async function worker() {
     if (changed) {
       article.updatedAt = new Date().toISOString();
       saveArticle(article);
+      writeSlugFile();
     }
   }
 }
 
+// A worker inside an article with eight locales and retries can run far past
+// the budget, and the job's own timeout kills the commit step. Leave the step
+// by choice a few minutes before that happens.
+const guard = setTimeout(() => {
+  console.log(`time budget reached while translating: ${Math.max(0, articleJobs.length - cursor)} article(s) wait for the next run`);
+  console.log(`done: ${fixed} translation(s) written, ${failures.length} still failing`);
+  writeSlugFile();
+  process.exit(0);
+}, BUDGET_MS + 6 * 60_000);
+guard.unref?.();
+
 await Promise.all(Array.from({ length: Math.min(CONCURRENCY, articleJobs.length) }, worker));
+clearTimeout(guard);
 
 // Only the article files are written here. The index is patched afterwards by
 // scripts/sync-index.mjs, which first pulls the newest content - so a long
 // translation run can never overwrite stories the newsroom published meanwhile,
 // and a timeout cannot throw away finished work.
-if (fixedSlugs.size) {
-  fs.writeFileSync('translated-slugs.txt', [...fixedSlugs].join('\n') + '\n');
-}
+writeSlugFile();
 
 const left = Math.max(0, articleJobs.length - cursor);
 if (left) console.log(`time budget reached: ${left} article(s) wait for the next run`);
