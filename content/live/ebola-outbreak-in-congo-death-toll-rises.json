@@ -7,7 +7,8 @@
       "Tages-Anzeiger"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "openai/gpt-oss-20b"
+    "lastUpdateModel": "openai/gpt-oss-20b",
+    "statsModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "ebola-outbreak-in-congo-death-toll-rises",
   "topic": "Ebola outbreak in Congo: death toll rises",
@@ -102,58 +103,58 @@
   },
   "updates": [
     {
-      "id": "u-1793459689000-801w",
       "at": "2026-10-31T15:14:49.000Z",
+      "id": "u-1793459689000-801w",
       "kind": "result",
-      "importance": 3,
       "locales": {
         "en": {
-          "headline": "Ebola cases recorded in other African countries",
-          "body": "The South China Morning Post and MedicalXpress reported that the Democratic Republic of Congo government data shows Ebola cases have been recorded in other African countries. The data was released on Saturday."
+          "body": "The South China Morning Post and MedicalXpress reported that the Democratic Republic of Congo government data shows Ebola cases have been recorded in other African countries. The data was released on Saturday.",
+          "headline": "Ebola cases recorded in other African countries"
         },
         "es": {
-          "headline": "Se registran casos de Ebola en otros países africanos",
-          "body": "El South China Morning Post y MedicalXpress informaron que los datos del gobierno de la República Democrática del Congo indican que se han registrado casos de Ebola en otros países africanos. Los datos se publicaron el sábado."
-        },
-        "it": {
-          "headline": "Ebola: casi registrati in altri paesi africani",
-          "body": "Il South China Morning Post e MedicalXpress hanno riportato che i dati del governo della Repubblica Democratica del Congo indicano che sono stati registrati casi di Ebola in altri paesi africani. I dati sono stati pubblicati sabato."
+          "body": "El South China Morning Post y MedicalXpress informaron que los datos del gobierno de la República Democrática del Congo indican que se han registrado casos de Ebola en otros países africanos. Los datos se publicaron el sábado.",
+          "headline": "Se registran casos de Ebola en otros países africanos"
         },
         "fr": {
-          "headline": "Des cas d'Ebola enregistrés dans d'autres pays africains",
-          "body": "Le South China Morning Post et MedicalXpress ont rapporté que les données du gouvernement de la République démocratique du Congo indiquent que des cas d'Ebola ont été enregistrés dans d'autres pays africains. Les données ont été publiées samedi."
+          "body": "Le South China Morning Post et MedicalXpress ont rapporté que les données du gouvernement de la République démocratique du Congo indiquent que des cas d'Ebola ont été enregistrés dans d'autres pays africains. Les données ont été publiées samedi.",
+          "headline": "Des cas d'Ebola enregistrés dans d'autres pays africains"
         },
-        "pt": {
-          "headline": "Casos de Ebola registados em outros países africanos",
-          "body": "O South China Morning Post e o MedicalXpress informaram que os dados do governo da República Democrática do Congo mostram que foram registados casos de Ebola em outros países africanos. Os dados foram divulgados no sábado."
-        },
-        "zh": {
-          "headline": "埃博拉病例在其他非洲国家被记录",
-          "body": "《南华早报》和MedicalXpress报道，刚果民主共和国政府数据显示，埃博拉病例已在其他非洲国家被记录。该数据于周六公布。"
+        "it": {
+          "body": "Il South China Morning Post e MedicalXpress hanno riportato che i dati del governo della Repubblica Democratica del Congo indicano che sono stati registrati casi di Ebola in altri paesi africani. I dati sono stati pubblicati sabato.",
+          "headline": "Ebola: casi registrati in altri paesi africani"
         },
         "ja": {
-          "headline": "エボラ感染症が他のアフリカ諸国で報告された",
-          "body": "サウス・チベン・モーニング・ポストとMedicalXpressは、コンゴ民主共和国政府のデータが、エボラ感染症が他のアフリカ諸国で報告されていることを示していると報じた。データは土曜日に公開された。"
+          "body": "サウス・チベン・モーニング・ポストとMedicalXpressは、コンゴ民主共和国政府のデータが、エボラ感染症が他のアフリカ諸国で報告されていることを示していると報じた。データは土曜日に公開された。",
+          "headline": "エボラ感染症が他のアフリカ諸国で報告された"
         },
         "ko": {
-          "headline": "아프리카 다른 국가에서 에볼라 사례 보고",
-          "body": "중국 상보와 MedicalXpress가 보도한 바에 따르면, 콩고 민주공화국 정부 데이터에 따라 다른 아프리카 국가에서도 에볼라 사례가 기록되었다. 이 데이터는 토요일에 공개되었다."
+          "body": "중국 상보와 MedicalXpress가 보도한 바에 따르면, 콩고 민주공화국 정부 데이터에 따라 다른 아프리카 국가에서도 에볼라 사례가 기록되었다. 이 데이터는 토요일에 공개되었다.",
+          "headline": "아프리카 다른 국가에서 에볼라 사례 보고"
+        },
+        "pt": {
+          "body": "O South China Morning Post e o MedicalXpress informaram que os dados do governo da República Democrática do Congo mostram que foram registados casos de Ebola em outros países africanos. Os dados foram divulgados no sábado.",
+          "headline": "Casos de Ebola registados em outros países africanos"
+        },
+        "zh": {
+          "body": "《南华早报》和MedicalXpress报道，刚果民主共和国政府数据显示，埃博拉病例已在其他非洲国家被记录。该数据于周六公布。",
+          "headline": "埃博拉病例在其他非洲国家被记录"
         }
       },
       "sources": [
         {
-          "outlet": "South China Morning Post",
-          "title": "DR Congo Ebola deaths top 5,000, cases recorded in other African nations",
           "url": "https://www.scmp.com/news/world/africa/article/3372849/dr-congo-ebola-deaths-top-5000-cases-recorded-other-african-nations",
+          "title": "DR Congo Ebola deaths top 5,000, cases recorded in other African nations",
+          "outlet": "South China Morning Post",
           "publishedAt": "2026-10-31T15:14:49.000Z"
         },
         {
-          "outlet": "MedicalXpress",
-          "title": "Congo's Ebola deaths top 5,000 as fear of continent-wide spread mounts",
           "url": "https://medicalxpress.com/news/2026-10-congo-ebola-deaths-continent-wide.html",
+          "title": "Congo's Ebola deaths top 5,000 as fear of continent-wide spread mounts",
+          "outlet": "MedicalXpress",
           "publishedAt": "2026-10-31T11:00:02.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T08:05:59.000Z",
@@ -379,5 +380,136 @@
   "wantsStats": true,
   "articleSlug": "ebola-outbreak-in-congo-death-toll-rises",
   "sourceCount": 6,
-  "seenHeadlines": []
+  "seenHeadlines": [],
+  "stats": {
+    "label": "DR Congo Ebola outbreak",
+    "note": "Government data reports more than 5,000 deaths and more than 10,000 people infected in the DR Congo Ebola outbreak.",
+    "unit": "",
+    "max": null,
+    "asOf": "2026-10-31T00:00:00.000Z",
+    "updatedAt": "2026-10-31T17:17:52.701Z",
+    "source": {
+      "outlet": "BBC",
+      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-10-31T15:16:20.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "deaths-more-than",
+        "label": "Deaths (more than)",
+        "value": 5000,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Décès (plus de)"
+          },
+          "es": {
+            "label": "Muertes (más de)"
+          },
+          "it": {
+            "label": "Morti (più di)"
+          },
+          "de": {
+            "label": "Todesfälle (mehr als)"
+          },
+          "pt": {
+            "label": "Mortes (mais de)"
+          },
+          "zh": {
+            "label": "死亡人数（超过）"
+          },
+          "ja": {
+            "label": "死亡者数（超）"
+          },
+          "ko": {
+            "label": "사망자 수(초과)"
+          }
+        }
+      },
+      {
+        "key": "cases-more-than",
+        "label": "Cases (more than)",
+        "value": 10000,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Cas (plus de)"
+          },
+          "es": {
+            "label": "Casos (más de)"
+          },
+          "it": {
+            "label": "Casi (più di)"
+          },
+          "de": {
+            "label": "Fälle (mehr als)"
+          },
+          "pt": {
+            "label": "Casos (mais de)"
+          },
+          "zh": {
+            "label": "病例数（超过）"
+          },
+          "ja": {
+            "label": "感染者数（超）"
+          },
+          "ko": {
+            "label": "감염 사례 수(초과)"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Ebola-Ausbruch in der DR Kongo",
+        "note": "Laut Regierungsdaten gab es bei dem Ebola-Ausbruch in der DR Kongo mehr als 5.000 Todesfälle und mehr als 10.000 Infizierte."
+      },
+      "fr": {
+        "label": "Éclosion d’Ebola en RDC",
+        "note": "Les données du gouvernement font état de plus de 5 000 décès et de plus de 10 000 personnes infectées par l’éclosion d’Ebola en RDC."
+      },
+      "es": {
+        "label": "Brote de Ébola en la República Democrática del Congo",
+        "note": "Los datos del Gobierno indican más de 5.000 muertos y más de 10.000 personas infectadas en el brote de Ébola de la República Democrática del Congo."
+      },
+      "it": {
+        "label": "Focolaio di Ebola nella Repubblica Democratica del Congo",
+        "note": "I dati governativi riportano più di 5.000 morti e più di 10.000 persone infette nel focolaio di Ebola nella RDC."
+      },
+      "pt": {
+        "label": "Surto de Ebola na RD Congo",
+        "note": "Dados governamentais registam mais de 5.000 mortes e mais de 10.000 pessoas infetadas no surto de Ebola na RD Congo."
+      },
+      "zh": {
+        "label": "刚果（金）埃博拉疫情",
+        "note": "政府数据显示，刚果（金）埃博拉疫情死亡人数超过5,000人，感染人数超过10,000人。"
+      },
+      "ja": {
+        "label": "コンゴ民主共和国でエボラ出血熱流行",
+        "note": "政府数据显示、コンゴ民主共和国のエボラ出血熱流行では、死亡者が5,000人超、感染者が10,000人超となっている。"
+      },
+      "ko": {
+        "label": "드림카 공화국 에볼라 발생",
+        "note": "정부 자료에 따르면 드림카 공화국의 에볼라 발생으로 사망자는 5,000명 이상, 감염자는 10,000명 이상이다."
+      }
+    }
+  },
+  "statsHistory": [
+    {
+      "at": "2026-10-31T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "deaths-more-than",
+          "value": 5000
+        },
+        {
+          "key": "cases-more-than",
+          "value": 10000
+        }
+      ]
+    }
+  ]
 }
