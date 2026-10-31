@@ -171,6 +171,11 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
 
 const disabledModels = new Map();
 
+/** Milliseconds until `model` may be asked again; 0 when it is free. */
+export function parkedFor(model) {
+  return Math.max(0, (disabledModels.get(model) || 0) - Date.now());
+}
+
 // A cycle may not run forever. The model list (4 models × 3 attempts × 120 s)
 // allowed a single call to burn an hour, which is how the newsroom sat in one
 // cycle for four hours without publishing. Callers set an absolute deadline;
