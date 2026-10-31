@@ -20,6 +20,9 @@ on:
       maxtokens:
         description: 'Answer length the model may use'
         default: '10000'
+      size:
+        description: 'Prompt sizes to test (words), e.g. 20,200,500 — empty skips'
+        default: ''
 
 permissions:
   contents: read
@@ -42,14 +45,21 @@ jobs:
       # A model list is the question "what works today" and takes minutes; a
       # translation test with named models skips it.
       - name: Ask every candidate one small question
-        if: inputs.models == ''
+        if: inputs.models == '' && inputs.size == ''
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/probe-models.mjs
+      - name: Grow the prompt until the model stops answering
+        if: inputs.size != ''
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          PROBE_MODELS: ${{ inputs.models }}
+          PROBE_SIZES: ${{ inputs.size }}
+        run: node scripts/probe-size.mjs
       - name: Translate one whole article
-        if: always()
+        if: always() && inputs.size == ''
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
