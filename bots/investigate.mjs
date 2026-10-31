@@ -762,6 +762,15 @@ function queryOverlap(a, b) {
   return shared / Math.min(a.size, b.size);
 }
 
+// The desk's tools are written for Latin letters; the story is often not.
+// Korean, Japanese, Chinese, Russian, Hebrew and Arabic words are what a
+// near-repeat in those languages shares, and termsOf throws all of them away.
+const SCRIPT_WORD = /[\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]{2,}/g;
+
+function scriptWords(q) {
+  return String(q || '').toLowerCase().match(SCRIPT_WORD) || [];
+}
+
 /** What a published piece still owes its readers: the questions it could not close. */
 function rememberFollowups(state, d) {
   const questions = (d.gaps || []).map((g) => String(g).trim()).filter((g) => g.length > 20).slice(0, 6);
@@ -1114,6 +1123,9 @@ async function researchAgent(d) {
     .split(/\s+/)
     // A year matches every headline of that year - it is no evidence at all.
     .filter((w) => w.length > 2 && !/^\d+$/.test(w) && !/^(the|and|for|with|from|about|und|der|die|das|von|fuer|mit|auf)$/i.test(w));
+  // termsOf only keeps Latin words, and a reporter in Seoul searches in
+  // Korean: without the script's words a near-repeat there is invisible.
+  const searchWordsOf = (q) => [...new Set([...termsOf(q), ...scriptWords(q)])];
   const wireMatches = (q, n = 8) => {
     // Only the first terms count: a long angle would let a headline match on
     // two incidental words.
@@ -1198,7 +1210,7 @@ async function researchAgent(d) {
             ...page,
           };
         }
-        const tokens = new Set(termsOf(q));
+        const tokens = new Set(searchWordsOf(q));
         const again = tokens.size ? issued.find((x) => queryOverlap(x.tokens, tokens) >= 0.8) : null;
         if (again) {
           log(`SEARCH  "${q}" → nearly the same as "${again.query}" — not searched again`);

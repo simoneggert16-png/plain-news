@@ -865,6 +865,26 @@ test('the desk does not search the same words twice', () => {
   assert.ok(overlap(t('Call of Duty Itaewon lawsuit'), t('World Bank Kenya solar contract')) < 0.3, 'a different story is not a repeat');
 });
 
+test('the desk recognises the same search in another script', () => {
+  // A shift in Seoul searched five times in Korean. termsOf keeps only Latin
+  // letters, so all five looked new to the guard.
+  const src = SOURCE.slice(SOURCE.indexOf('const SCRIPT_WORD = ') + 'const SCRIPT_WORD = '.length);
+  const { scriptWords, queryOverlap } = new Function(`
+    const SCRIPT_WORD = ${src.split(';')[0]};
+    ${take('scriptWords')}
+    ${take('queryOverlap')}
+    return { scriptWords, queryOverlap };
+  `)();
+  assert.deepEqual(scriptWords('이태원 붕괴 사건 소송'), ['이태원', '붕괴', '사건', '소송']);
+  assert.deepEqual(scriptWords('World Bank Kenya'), [], 'Latin words are not duplicated');
+  const tokens = (q) => new Set([...scriptWords(q), ...(q.toLowerCase().match(/[a-z]{3,}/g) || [])]);
+  assert.ok(queryOverlap(
+    tokens('이태원 붕괴 영상 Call of Duty 소송'),
+    tokens('이태원 붕괴 영상 소송 판결'),
+  ) >= 0.8, 'the same Korean search with a word changed is a repeat');
+  assert.ok(queryOverlap(tokens('이태원 붕괴 영상 소송'), tokens('부산 항만 파업 노조')) < 0.3, 'another Korean story is not');
+});
+
 test('a notice without a subject supports no story', async () => {
   // OP00478199 is a contract award for a road project in the Kyrgyz Republic.
   // Its feed title was "Contract Award: ", and the model turned it into
