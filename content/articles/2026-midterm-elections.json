@@ -6,111 +6,26 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-29T17:37:50.922Z",
-  "updatedAt": "2026-10-31T06:59:33.329Z",
+  "updatedAt": "2026-10-31T12:42:03.326Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-midterm-elections",
   "stats": {
+    "label": "2026 Midterm Early Voting & Super PAC Spending",
+    "note": "Early voting totals and super PAC spending in the 2026 midterm elections",
+    "unit": "",
     "max": null,
     "asOf": "2026-10-27T09:10:00.000Z",
-    "note": "Key numbers reported in recent coverage of the 2026 midterm elections.",
+    "updatedAt": "2026-10-31T12:41:42.263Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
+      "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
+      "publishedAt": "2026-10-31T12:00:01.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
-      {
-        "key": "potential-gop-senate-seat-losses",
-        "label": "Potential GOP Senate seat losses",
-        "value": 8,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Mögliche GOP-Verluste bei Senatsmandaten"
-          },
-          "es": {
-            "label": "Posibles pérdidas de escaños en el Senado por parte del GOP"
-          },
-          "fr": {
-            "label": "Perte potentielle de sièges du Sénat pour le GOP"
-          },
-          "it": {
-            "label": "Possibili perdite di seggi del Senato da parte del Partito Repubblicano"
-          },
-          "ja": {
-            "label": "共和党上院議席の潜在的損失"
-          },
-          "ko": {
-            "label": "공화당 상원 의석 손실 가능성"
-          },
-          "pt": {
-            "label": "Possíveis perdas de assentos senatorialistas do GOP"
-          },
-          "zh": {
-            "label": "可能的共和党参议院席位损失"
-          }
-        }
-      },
-      {
-        "key": "senate-races-shifting-to-democrats",
-        "label": "Senate races shifting to Democrats",
-        "value": 2,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Senkatskämpfe verlagern sich zugunsten der Demokraten"
-          },
-          "es": {
-            "label": "Carreras del Senado se inclinan hacia los demócratas"
-          },
-          "fr": {
-            "label": "Les courses du Sénat penchent vers les démocrates"
-          },
-          "it": {
-            "label": "Le gare del Senato si spostano verso i Democratici"
-          },
-          "ja": {
-            "label": "上院選挙が民主党へシフト"
-          },
-          "ko": {
-            "label": "상원 경선이 민주당으로 전환되고 있다"
-          },
-          "pt": {
-            "label": "Corridas senatoriais a mudar para os Democratas"
-          },
-          "zh": {
-            "label": "参议院竞选转向民主党"
-          }
-        }
-      },
-      {
-        "key": "early-voters-concerned-about-economy",
-        "label": "Early voters concerned about economy",
-        "value": 80,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Frühzeitige Wähler besorgt über die Wirtschaft"
-          },
-          "es": {
-            "label": "Votantes anticipados preocupados por la economía"
-          },
-          "fr": {
-            "label": "Les électeurs anticipés préoccupés par l'économie"
-          },
-          "it": {
-            "label": "Elettori anticipati preoccupati per l'economia"
-          },
-          "ja": {
-            "label": "早期投票者の経済への懸念"
-          },
-          "ko": {
-            "label": "사전 투표자들의 경제 우려"
-          },
-          "pt": {
-            "label": "Eleitores antecipados preocupados com a economia"
-          },
-          "zh": {
-            "label": "提前投票者关注经济"
-          }
-        }
-      },
       {
         "key": "early-votes-millions",
         "label": "Early votes (millions)",
@@ -118,141 +33,98 @@
         "change": null,
         "locales": {
           "de": {
-            "label": "Frühstimmen (Millionen)"
-          },
-          "es": {
-            "label": "Votos tempranos (millones)"
+            "label": "Vorabwahlstimmen (Millionen)"
           },
           "fr": {
             "label": "Votes anticipés (millions)"
           },
+          "es": {
+            "label": "Votos anticipados (millones)"
+          },
           "it": {
-            "label": "Voti anticipati (milioni)"
-          },
-          "ja": {
-            "label": "早期投票（百万）"
-          },
-          "ko": {
-            "label": "선거일 이전 투표 (백만 명)"
+            "label": "Votazioni anticipate (milioni)"
           },
           "pt": {
             "label": "Votos antecipados (milhões)"
           },
           "zh": {
             "label": "提前投票（百万）"
+          },
+          "ja": {
+            "label": "早期投票（百万票）"
+          },
+          "ko": {
+            "label": "조기투표 (백만 명)"
           }
         }
       },
       {
-        "key": "early-votes-2022-record-millions",
-        "label": "Early votes 2022 record (millions)",
-        "value": 45.9,
+        "key": "super-pac-spending-million",
+        "label": "Super PAC spending (million $)",
+        "value": 637,
         "change": null,
         "locales": {
           "de": {
-            "label": "Frühstimmen 2022 Rekord (Millionen)"
-          },
-          "es": {
-            "label": "Votos tempranos 2022 récord (millones)"
-          },
-          "fr": {
-            "label": "Votes anticipés record 2022 (millions)"
+            "label": "Super PAC-Ausgaben (Millionen $)"
           },
           "it": {
-            "label": "Voti anticipati record 2022 (milioni)"
-          },
-          "ja": {
-            "label": "2022年の早期投票記録（百万）"
-          },
-          "ko": {
-            "label": "2022년 기록적인 선거일 이전 투표 (백만 명)"
-          },
-          "pt": {
-            "label": "Votos antecipados 2022 recorde (milhões)"
-          },
-          "zh": {
-            "label": "2022年提前投票纪录（百万）"
-          }
-        }
-      },
-      {
-        "key": "donation-to-wisconsin-dems-million",
-        "label": "Donation to Wisconsin Dems (million)",
-        "value": 8,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Spenden an die Wisconsin-Demokraten (Millionen)"
-          },
-          "es": {
-            "label": "Donación a los demócratas de Wisconsin (millones)"
+            "label": "Spesa dei Super PAC (milioni di dollari)"
           },
           "fr": {
-            "label": "Dons aux démocrates du Wisconsin (millions)"
+            "label": "Dépenses des super PAC (millions $)"
           },
-          "it": {
-            "label": "Donazioni ai Democratici del Wisconsin (milioni)"
-          },
-          "ja": {
-            "label": "ウィスコンシン州民主党への寄付（百万）"
-          },
-          "ko": {
-            "label": "위스콘신 민주당 기부금 (백만 달러)"
+          "es": {
+            "label": "Gasto de Super PAC (millones $)"
           },
           "pt": {
-            "label": "Doação aos Democratas de Wisconsin (milhões)"
+            "label": "Gastos de Super PAC (milhões de $)"
+          },
+          "ko": {
+            "label": "슈퍼 PAC 지출 (백만 달러)"
           },
           "zh": {
-            "label": "威斯康星州民主党捐款（百万）"
+            "label": "超级政治行动委员会支出（百万美元）"
+          },
+          "ja": {
+            "label": "スーパーPAC支出（百万ドル）"
           }
         }
       }
     ],
-    "unit": "",
-    "label": "2026 Midterm Election Snapshot",
-    "source": {
-      "url": "https://www.cnbc.com/2026/10/30/reid-hoffman-democrats-epstein-midterms-2026.html",
-      "title": "Reid Hoffman gives millions to Dems in late spending spree as Epstein fight spills into election",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-10-30T18:32:17.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Wichtige Zahlen, die in der aktuellen Berichterstattung zu den Zwischenwahlen 2026 genannt werden.",
-        "label": "Zwischenwahl-Übersicht 2026"
-      },
-      "es": {
-        "note": "Números clave reportados en la cobertura reciente de las elecciones de mitad de mandato 2026.",
-        "label": "Instantánea de las elecciones de mitad de mandato 2026"
+        "label": "2026 Zwischenwahlen: Vorabwahl und Super PAC-Ausgaben",
+        "note": "Gesamtzahlen der Vorabwahl und Super PAC-Ausgaben bei den Zwischenwahlen 2026"
       },
       "fr": {
-        "note": "Chiffres clés rapportés dans les récentes couvertures des élections de mi-mandat de 2026.",
-        "label": "État des élections de mi-mandat 2026"
+        "label": "Vote anticipé et dépenses des super PAC lors des élections de mi-mandat 2026",
+        "note": "Totaux des votes anticipés et dépenses des super PAC lors des élections de mi-mandat 2026"
+      },
+      "es": {
+        "label": "Votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026",
+        "note": "Totales de votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026"
       },
       "it": {
-        "note": "Numeri chiave riportati nelle ultime coperture delle elezioni di metà mandato 2026.",
-        "label": "Panoramica delle elezioni di metà mandato 2026"
-      },
-      "ja": {
-        "note": "2026年中間選挙に関する最近の報道で報告された主要数字。",
-        "label": "2026年中間選挙スナップショット"
-      },
-      "ko": {
-        "note": "2026년 중간선거에 대한 최근 보도에서 보고된 핵심 수치들.",
-        "label": "2026년 중간선거 스냅샷"
+        "label": "Votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026",
+        "note": "Totali delle votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026"
       },
       "pt": {
-        "note": "Números-chave reportados na cobertura recente das eleições de meio de mandato de 2026.",
-        "label": "Instantâneo das Eleições de Meio de Mandato de 2026"
+        "label": "Votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026",
+        "note": "Totais de votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026"
       },
       "zh": {
-        "note": "最近关于2026年中期选举的报道中提到的关键数字。",
-        "label": "2026年中期选举快照"
+        "label": "2026年中期选举提前投票与超级政治行动委员会支出",
+        "note": "2026年中期选举的提前投票总数与超级政治行动委员会支出"
+      },
+      "ja": {
+        "label": "2026年中間選挙の早期投票とスーパーPAC支出",
+        "note": "2026年中間選挙における早期投票総数とスーパーPAC支出"
+      },
+      "ko": {
+        "label": "2026년 중간선거 조기투표 및 슈퍼 PAC 지출",
+        "note": "2026년 중간선거에서의 조기투표 총수와 슈퍼 PAC 지출"
       }
-    },
-    "updatedAt": "2026-10-31T00:15:45.910Z",
-    "sourceCount": 1
+    }
   },
   "sources": [
     {
