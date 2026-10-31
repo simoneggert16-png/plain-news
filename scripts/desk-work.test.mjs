@@ -1246,6 +1246,12 @@ test('the desk knows the doors in the country the story happens', () => {
   assert.match(doors('Seoul, South Korea'), /kcc\.go\.kr/);
   assert.match(doors('Nairobi, Kenya'), /judiciary\.go\.ke/);
   assert.match(doors('Brazil'), /stf\.jus\.br/);
+  // The desk writes about more than the English-speaking world and Western
+  // Europe. A story in Kyiv or Dhaka needs the doors there, not a second
+  // search of the English wire.
+  assert.match(doors('Kyiv, Ukraine'), /court\.gov\.ua/);
+  assert.match(doors('Dhaka, Bangladesh'), /supremecourt\.gov\.bd/);
+  assert.match(doors('Brussels, European Union'), /curia\.europa\.eu/);
   assert.equal(doors('Switzerland'), '', 'the paper is Swiss, its beat is not');
   assert.equal(doors(''), '');
 });
