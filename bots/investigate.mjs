@@ -1461,6 +1461,22 @@ async function researchAgent(d) {
         );
         const src = d.sources.find((s) => s.url === target);
         if (src && cache.has(target)) fileSourceRead(src, cache.get(target));
+        // A wire result occasionally points at a page from another story, and
+        // a source the story is not about still counts toward the eight
+        // outlets. The same test the shift uses at its start applies here: the
+        // headline names the story, or the text carries two of its words.
+        if (added && src) {
+          const text = String(cache.get(target)?.text || src.text || '');
+          const { terms } = storyVocabulary(d);
+          if (text.length >= 200 && terms.length) {
+            const titleHit = terms.some((re) => re.test(String(src.title || '')));
+            const hits = terms.filter((re) => re.test(text)).length;
+            if (!titleHit && hits < 2) {
+              d.sources = d.sources.filter((s) => s !== src);
+              return { error: `off topic — this page is not about "${d.title}". File the document that carries the story, or search again.` };
+            }
+          }
+        }
         return { added, id: src?.id || null, total: d.sources.length };
       },
     },
