@@ -11,6 +11,9 @@ on:
       concurrency:
         description: Articles translated in parallel (empty = 2)
         default: '2'
+      locales:
+        description: 'Editions to fill, comma-separated (empty = all)'
+        default: ''
   schedule:
     # Twice a day. Every run ends in a push to main, and every push is a
     # Vercel deployment - the plan allows 100 of them a day for the account.
@@ -43,6 +46,7 @@ jobs:
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
           LIMIT: ${{ inputs.limit }}
           CONCURRENCY: ${{ inputs.concurrency || '2' }}
+          TRANSLATE_LOCALES: ${{ inputs.locales }}
           # A chain that timed out on the first attempt costs another 90 s per
           # model on the second. Two attempts per locale, then the next run.
           RETRIES: '2'
