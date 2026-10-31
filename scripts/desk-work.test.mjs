@@ -853,6 +853,18 @@ test('a desk with a full list does not lose the notice it just found', async () 
   assert.equal(state.leads[0].title, WORLD_PICK.title, 'the newest find stays on the desk');
 });
 
+test('the desk does not search the same words twice', () => {
+  const overlap = new Function(`${take('queryOverlap')}; return queryOverlap;`)();
+  const t = (s) => new Set(s.toLowerCase().split(/\s+/));
+  // One shift searched this story twelve times; six of those were the same
+  // query with a year or an outlet name added.
+  assert.ok(overlap(
+    t('Activision Blizzard Itaewon court case South Korea 2024'),
+    t('Activision Blizzard Itaewon court ruling South Korea'),
+  ) > 0.8, 'a year added is the same search');
+  assert.ok(overlap(t('Call of Duty Itaewon lawsuit'), t('World Bank Kenya solar contract')) < 0.3, 'a different story is not a repeat');
+});
+
 test('a notice without a subject supports no story', async () => {
   // OP00478199 is a contract award for a road project in the Kyrgyz Republic.
   // Its feed title was "Contract Award: ", and the model turned it into

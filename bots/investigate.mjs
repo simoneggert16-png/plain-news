@@ -750,6 +750,18 @@ function leadInternational(lead) {
   return { ok: true };
 }
 
+/**
+ * How much two search queries share, as a fraction of the shorter one.
+ * "Activision Blizzard Itaewon court case South Korea 2024" and "Activision
+ * Blizzard Itaewon court ruling South Korea" are the same search.
+ */
+function queryOverlap(a, b) {
+  if (!a.size || !b.size) return 0;
+  let shared = 0;
+  for (const t of a) if (b.has(t)) shared++;
+  return shared / Math.min(a.size, b.size);
+}
+
 /** What a published piece still owes its readers: the questions it could not close. */
 function rememberFollowups(state, d) {
   const questions = (d.gaps || []).map((g) => String(g).trim()).filter((g) => g.length > 20).slice(0, 6);
@@ -1089,6 +1101,13 @@ async function researchAgent(d) {
   // worked, and the desk says so.
   let searches = 0;
 
+  // A reporter who has already looked for something does not look for it
+  // again with one word changed. A shift that stalled on the Call of Duty
+  // story ran twelve searches, six of them the same query with a year or an
+  // outlet name added; each cost half a minute it could have spent reading.
+  // A near-repeat returns the earlier hits instead of hitting the wire again.
+  const issued = [];
+
   const termsOf = (q) => String(q).toLowerCase()
     .replace(/\bsite:\S+/gi, ' ')
     .replace(/[^a-z0-9\u00c0-\u024f ]/g, ' ')
@@ -1179,6 +1198,15 @@ async function researchAgent(d) {
             ...page,
           };
         }
+        const tokens = new Set(termsOf(q));
+        const again = tokens.size ? issued.find((x) => queryOverlap(x.tokens, tokens) >= 0.8) : null;
+        if (again) {
+          log(`SEARCH  "${q}" → nearly the same as "${again.query}" — not searched again`);
+          return {
+            ...again.result,
+            note: `you already searched nearly this ("${again.query}") and got the same pages. Do not search again: call open with one of these urls, read the text and save_claim what it says.`,
+          };
+        }
         searches += 1;
         const seen = new Set();
         const hits = [];
@@ -1250,7 +1278,7 @@ async function researchAgent(d) {
         // search the same story twelve times.
         if (searches >= 3 && d.claims.length === startedClaims) notes.push(`you have searched ${searches} times and written down no claim — stop searching: open a result, read the text, save_claim what it says`);
         log(`SEARCH  "${q}" → ${results.length} hit(s) (wire ${wireN}, documents ${docsN}, opened ${opened.length})`);
-        return {
+        const payload = {
           // The note comes first: the observation is cut off at 3200
           // characters, and the guidance is the part that must survive.
           ...(notes.length ? { note: notes.join(' — ') } : {}),
@@ -1261,6 +1289,8 @@ async function researchAgent(d) {
           results,
           opened: opened.map((o) => ({ ...o, text: String(o.text || '').slice(0, 600) })),
         };
+        issued.push({ query: q, tokens, result: payload });
+        return payload;
       },
     },
     {
