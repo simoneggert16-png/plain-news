@@ -7,105 +7,351 @@
       "CBS News"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "ollama/gemma4:31b"
+    "statsModel": "openai/gpt-oss-20b",
+    "lastUpdateModel": "openai/gpt-oss-20b"
   },
   "slug": "2026-midterm-elections",
+  "stats": {
+    "label": "2026 Midterm Election Snapshot",
+    "note": "Key numbers reported in recent coverage of the 2026 midterm elections.",
+    "unit": "",
+    "max": null,
+    "asOf": "2026-10-27T09:10:00.000Z",
+    "updatedAt": "2026-10-31T00:15:45.910Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Reid Hoffman gives millions to Dems in late spending spree as Epstein fight spills into election",
+      "url": "https://www.cnbc.com/2026/10/30/reid-hoffman-democrats-epstein-midterms-2026.html",
+      "publishedAt": "2026-10-30T18:32:17.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "potential-gop-senate-seat-losses",
+        "label": "Potential GOP Senate seat losses",
+        "value": 8,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Mögliche GOP-Verluste bei Senatsmandaten"
+          },
+          "fr": {
+            "label": "Perte potentielle de sièges du Sénat pour le GOP"
+          },
+          "es": {
+            "label": "Posibles pérdidas de escaños en el Senado por parte del GOP"
+          },
+          "it": {
+            "label": "Possibili perdite di seggi del Senato da parte del Partito Repubblicano"
+          },
+          "pt": {
+            "label": "Possíveis perdas de assentos senatorialistas do GOP"
+          },
+          "zh": {
+            "label": "可能的共和党参议院席位损失"
+          },
+          "ja": {
+            "label": "共和党上院議席の潜在的損失"
+          },
+          "ko": {
+            "label": "공화당 상원 의석 손실 가능성"
+          }
+        }
+      },
+      {
+        "key": "senate-races-shifting-to-democrats",
+        "label": "Senate races shifting to Democrats",
+        "value": 2,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Les courses du Sénat penchent vers les démocrates"
+          },
+          "it": {
+            "label": "Le gare del Senato si spostano verso i Democratici"
+          },
+          "de": {
+            "label": "Senkatskämpfe verlagern sich zugunsten der Demokraten"
+          },
+          "es": {
+            "label": "Carreras del Senado se inclinan hacia los demócratas"
+          },
+          "ja": {
+            "label": "上院選挙が民主党へシフト"
+          },
+          "zh": {
+            "label": "参议院竞选转向民主党"
+          },
+          "ko": {
+            "label": "상원 경선이 민주당으로 전환되고 있다"
+          },
+          "pt": {
+            "label": "Corridas senatoriais a mudar para os Democratas"
+          }
+        }
+      },
+      {
+        "key": "early-voters-concerned-about-economy",
+        "label": "Early voters concerned about economy",
+        "value": 80,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Frühzeitige Wähler besorgt über die Wirtschaft"
+          },
+          "fr": {
+            "label": "Les électeurs anticipés préoccupés par l'économie"
+          },
+          "es": {
+            "label": "Votantes anticipados preocupados por la economía"
+          },
+          "it": {
+            "label": "Elettori anticipati preoccupati per l'economia"
+          },
+          "pt": {
+            "label": "Eleitores antecipados preocupados com a economia"
+          },
+          "zh": {
+            "label": "提前投票者关注经济"
+          },
+          "ja": {
+            "label": "早期投票者の経済への懸念"
+          },
+          "ko": {
+            "label": "사전 투표자들의 경제 우려"
+          }
+        }
+      },
+      {
+        "key": "early-votes-millions",
+        "label": "Early votes (millions)",
+        "value": 47.9,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Votes anticipés (millions)"
+          },
+          "it": {
+            "label": "Voti anticipati (milioni)"
+          },
+          "de": {
+            "label": "Frühstimmen (Millionen)"
+          },
+          "es": {
+            "label": "Votos tempranos (millones)"
+          },
+          "ja": {
+            "label": "早期投票（百万）"
+          },
+          "zh": {
+            "label": "提前投票（百万）"
+          },
+          "ko": {
+            "label": "선거일 이전 투표 (백만 명)"
+          },
+          "pt": {
+            "label": "Votos antecipados (milhões)"
+          }
+        }
+      },
+      {
+        "key": "early-votes-2022-record-millions",
+        "label": "Early votes 2022 record (millions)",
+        "value": 45.9,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Votes anticipés record 2022 (millions)"
+          },
+          "it": {
+            "label": "Voti anticipati record 2022 (milioni)"
+          },
+          "de": {
+            "label": "Frühstimmen 2022 Rekord (Millionen)"
+          },
+          "es": {
+            "label": "Votos tempranos 2022 récord (millones)"
+          },
+          "ja": {
+            "label": "2022年の早期投票記録（百万）"
+          },
+          "zh": {
+            "label": "2022年提前投票纪录（百万）"
+          },
+          "ko": {
+            "label": "2022년 기록적인 선거일 이전 투표 (백만 명)"
+          },
+          "pt": {
+            "label": "Votos antecipados 2022 recorde (milhões)"
+          }
+        }
+      },
+      {
+        "key": "donation-to-wisconsin-dems-million",
+        "label": "Donation to Wisconsin Dems (million)",
+        "value": 8,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Dons aux démocrates du Wisconsin (millions)"
+          },
+          "it": {
+            "label": "Donazioni ai Democratici del Wisconsin (milioni)"
+          },
+          "de": {
+            "label": "Spenden an die Wisconsin-Demokraten (Millionen)"
+          },
+          "es": {
+            "label": "Donación a los demócratas de Wisconsin (millones)"
+          },
+          "ja": {
+            "label": "ウィスコンシン州民主党への寄付（百万）"
+          },
+          "zh": {
+            "label": "威斯康星州民主党捐款（百万）"
+          },
+          "ko": {
+            "label": "위스콘신 민주당 기부금 (백만 달러)"
+          },
+          "pt": {
+            "label": "Doação aos Democratas de Wisconsin (milhões)"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Zwischenwahl-Übersicht 2026",
+        "note": "Wichtige Zahlen, die in der aktuellen Berichterstattung zu den Zwischenwahlen 2026 genannt werden."
+      },
+      "fr": {
+        "label": "État des élections de mi-mandat 2026",
+        "note": "Chiffres clés rapportés dans les récentes couvertures des élections de mi-mandat de 2026."
+      },
+      "es": {
+        "label": "Instantánea de las elecciones de mitad de mandato 2026",
+        "note": "Números clave reportados en la cobertura reciente de las elecciones de mitad de mandato 2026."
+      },
+      "it": {
+        "label": "Panoramica delle elezioni di metà mandato 2026",
+        "note": "Numeri chiave riportati nelle ultime coperture delle elezioni di metà mandato 2026."
+      },
+      "pt": {
+        "label": "Instantâneo das Eleições de Meio de Mandato de 2026",
+        "note": "Números-chave reportados na cobertura recente das eleições de meio de mandato de 2026."
+      },
+      "zh": {
+        "label": "2026年中期选举快照",
+        "note": "最近关于2026年中期选举的报道中提到的关键数字。"
+      },
+      "ja": {
+        "label": "2026年中間選挙スナップショット",
+        "note": "2026年中間選挙に関する最近の報道で報告された主要数字。"
+      },
+      "ko": {
+        "label": "2026년 중간선거 스냅샷",
+        "note": "2026년 중간선거에 대한 최근 보도에서 보고된 핵심 수치들."
+      }
+    }
+  },
   "topic": "2026 midterm elections",
   "status": "live",
   "article": {
     "slug": "2026-midterm-elections",
-    "updatedAt": "2026-10-30T13:52:02.196Z",
     "reason": "1 new update(s)",
     "locales": {
-      "en": {
-        "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
-        "dek": "Governor Mike Dunleavy said Alaska could withhold certification of the U.S. Senate race if Democrat Mary Peltola wins, as state and federal probes examine alleged ballot‑stacking.",
-        "facts": [
-          "Governor Mike Dunleavy said on 30 Oct 2026 Alaska could withhold Senate election certification if Mary Peltola wins (Axios; The Hill).",
-          "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate (New York Times).",
-          "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into alleged spoiler candidates used by the Peltola campaign (The Hill).",
-          "Alaska Department of Law opened a probe on 29 Oct 2026 into alleged recruitment of a second Dan Sullivan to split Republican votes (CNBC; Alaska Public Media).",
-          "The Republican National Committee called the alleged ballot‑stacking strategy fraudulent on 30 Oct 2026 (Fox News; El País).",
-          "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Republican Party; Al Jazeera)."
-        ],
-        "body": [
-          "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins (Axios; The Hill). He added that the certification process could be “stopped or changed” because of the ballot‑stacking investigation.",
-          "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times). A House oversight committee also sought interviews with campaign officials as part of the same inquiry (New York Times).",
-          "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Mary Peltola’s campaign recruited “spoiler” candidates to affect Senator Dan Sullivan’s re‑election (The Hill). Republicans described the alleged scheme as an effort to siphon Republican votes (The Hill; New York Times).",
-          "Alaska Department of Law opened a probe on 29 Oct 2026 after Governor Dunleavy ordered an inquiry into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media). The state investigation focuses on potential violations of Alaska’s ballot‑stacking laws.",
-          "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País). The RNC linked the claim to the ongoing Department of Justice criminal probe.",
-          "President Donald Trump cancelled two of his final midterm election rallies on 30 Oct 2026, four days before voting (Republican Party; Al Jazeera). The cancellations were announced amid the investigations into the Alaska Senate race.",
-          "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections (New York Times; WHYY). The analysis did not include final results for the Alaska Senate contest.",
-          "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger (Alaska Public Media; The Hill). Allegations that a second Dan Sullivan was recruited to confuse voters have prompted the state and federal inquiries."
-        ],
-        "context": "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes. State and federal authorities have opened investigations into the matter (Alaska Public Media; The Hill).",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Gouverneur von Alaska: Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
-        "dek": "Gouverneur Mike Dunleavy erklärte, dass Alaska die Zertifizierung des US-Senatswahlkampfs zurückhalten könnte, falls die Demokratin Mary Peltola gewinnt, während staatliche und bundesstaatliche Ermittlungen mutmaßliche Manipulationen bei den Stimmzetteln untersuchen.",
-        "facts": [
-          "Gouverneur Mike Dunleavy sagte am 30. Okt. 2026, dass Alaska die Zertifizierung der Senatswahl zurückhalten könnte, falls Mary Peltola gewinnt (Axios; The Hill).",
-          "Das Justizministerium gab am 30. Okt. 2026 Vorladungen heraus, um einen Plan der Demokraten zur Rekrutierung eines Scheinbewerbers zu untersuchen (New York Times).",
-          "James Comer, Vorsitzender des House Oversight Committee, leitete am 29. Okt. 2026 eine Untersuchung zu mutmaßlichen Scheinbewerbern ein, die vom Peltola-Lager eingesetzt wurden (The Hill).",
-          "Das Justizministerium von Alaska eröffnete am 29. Okt. 2026 eine Untersuchung zur mutmaßlichen Rekrutierung eines zweiten Dan Sullivan, um die republikanischen Stimmen zu spalten (CNBC; Alaska Public Media).",
-          "Das Nationale Komitee der Republikaner bezeichnete die mutmaßliche Strategie der Stimmzettel-Manipulation am 30. Okt. 2026 als betrügerisch (Fox News; El País).",
-          "Präsident Donald Trump sagte am 30. Okt. 2026 zwei Kundgebungen zu den Zwischenwahlen ab, vier Tage vor der Abstimmung (Republikanische Partei; Al Jazeera)."
-        ],
+        "dek": "",
+        "body": [],
+        "facts": [],
+        "title": "Alaska-Gouverneur sagt, Staat könne Zertifizierung der Senatswahl zurückhalten, während Untersuchung läuft",
+        "context": ""
+      },
+      "en": {
+        "dek": "Alaska Governor Mike Dunleavy said the state could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins, amid investigations into alleged ballot‑stacking.",
         "body": [
-          "Gouverneur Mike Dunleavy sagte am 30. Okt. 2026, dass Alaska die Zertifizierung der US-Senatswahl zurückhalten könnte, falls die Demokratin Mary Peltola gewinnt (Axios; The Hill). Er fügte hinzu, dass der Zertifizierungsprozess aufgrund der Untersuchung zur Stimmzettel-Manipulation „gestoppt oder geändert“ werden könnte.",
-          "Das Justizministerium gab am 30. Okt. 2026 Vorladungen heraus, um einen Plan der Demokraten zur Rekrutierung eines Scheinbewerbers für den Senatswahlkampf in Alaska zu prüfen (New York Times). Ein Aufsichtsausschuss des Repräsentantenhauses strebte im Rahmen derselben Untersuchung zudem Gespräche mit Kampagnenmitarbeitern an (New York Times).",
-          "James Comer, Vorsitzender des House Oversight Committee, leitete am 29. Okt. 2026 eine Untersuchung zu Vorwürfen ein, wonach Mary Peltolas Kampagne „Scheinbewerber“ rekrutiert habe, um die Wiederwahl von Senator Dan Sullivan zu beeinflussen (The Hill). Republikaner bezeichneten das mutmaßliche Schema als Versuch, republikanische Stimmen abzuziehen (The Hill; New York Times).",
-          "Das Justizministerium von Alaska eröffnete am 29. Okt. 2026 eine Untersuchung, nachdem Gouverneur Dunleavy eine Prüfung von Berichten angeordnet hatte, wonach ein zweiter Kandidat namens Dan Sullivan rekrutiert wurde, um die republikanische Stimme zu spalten (CNBC; Alaska Public Media). Die staatliche Untersuchung konzentriert sich auf potenzielle Verstöße gegen Alaskas Gesetze zur Stimmzettel-Manipulation.",
-          "Das Nationale Komitee der Republikaner erklärte am 30. Okt. 2026, dass Demokraten einen zweiten Dan Sullivan für den Stimmzettel der Senatswahl in Alaska rekrutiert hätten, und bezeichnete die Taktik als betrügerisch (Fox News; El País). Das RNC verknüpfte die Behauptung mit der laufenden strafrechtlichen Untersuchung des Justizministeriums.",
-          "Präsident Donald Trump sagte am 30. Okt. 2026 zwei seiner letzten Kundgebungen zu den Zwischenwahlen ab, vier Tage vor der Abstimmung (Republikanische Partei; Al Jazeera). Die Absagen wurden inmitten der Untersuchungen zum Senatswahlkampf in Alaska bekannt gegeben.",
-          "Am 29. Okt. 2026 veröffentlichte nationale Umfragedaten deuteten darauf hin, dass die Demokraten bei den kommenden Zwischenwahlen im Vorteil seien (New York Times; WHYY). Die Analyse enthielt keine Endergebnisse für den Senatswahlkampf in Alaska.",
-          "Der amtierende republikanische Senator Dan Sullivan kandidiert für die Wiederwahl in Alaskas Senatssitz der Klasse III, während die demokratische Abgeordnete Mary Peltola seine Herausforderin ist (Alaska Public Media; The Hill). Vorwürfe, dass ein zweiter Dan Sullivan rekrutiert wurde, um Wähler zu verwirren, haben die staatlichen und bundesstaatlichen Untersuchungen ausgelöst."
+          "Governor Mike Dunleavy said on Thursday that Alaska could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins. He added that the certification process could be stopped or changed because of the ballot‑stacking investigation.",
+          "The Justice Department issued subpoenas on Thursday to assess a Democratic plan to recruit a spoiler candidate for the Alaska Senate race. The subpoenas target campaign officials and potential third‑party candidates.",
+          "House Oversight Committee Chair James Comer launched an investigation on Wednesday into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from incumbent Senator Dan Sullivan. Republicans described the alleged scheme as an effort to split Republican votes.",
+          "The Alaska Department of Law opened a probe on Wednesday after Governor Dunleavy ordered an inquiry into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote. The investigation focuses on potential violations of Alaska’s ballot‑stacking laws.",
+          "The Republican National Committee stated on Thursday that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent. The claim follows a criminal probe by the Department of Justice.",
+          "President Donald Trump cancelled two of his final midterm election rallies on Thursday, four days before voting. The cancellations were announced amid the investigations into the Alaska Senate race.",
+          "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Allegations that a second Dan Sullivan was recruited to confuse voters have prompted state and federal inquiries.",
+          "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections. The analysis did not include final results for the Alaska Senate contest."
         ],
-        "context": "Der US-Senatswahlkampf 2026 in Alaska lässt den republikanischen Amtsinhaber Dan Sullivan gegen die Demokratin Mary Peltola antreten. Vorwürfe der Stimmzettel-Manipulation beziehen sich auf einen berichteten Versuch, einen zweiten Kandidaten namens Dan Sullivan zu rekrutieren, um republikanische Stimmen zu spalten. Staatliche und bundesstaatliche Behörden haben Ermittlungen in dieser Angelegenheit eingeleitet (Alaska Public Media; The Hill)."
+        "facts": [
+          "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate election if Mary Peltola wins (Axios; The Hill).",
+          "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times).",
+          "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan (The Hill).",
+          "Alaska Department of Law opened a probe on 29 Oct 2026 into alleged recruitment of a second Dan Sullivan to split Republican votes (CNBC; Alaska Public Media).",
+          "The Republican National Committee called the alleged ballot‑stacking strategy fraudulent on 30 Oct 2026 (Fox News; El País)."
+        ],
+        "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
+        "context": "The 2026 Alaska U.S. Senate race is for a Class III seat. Incumbent Republican Senator Dan Sullivan is challenged by Democrat Mary Peltola. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes.",
+        "imageCaption": ""
       }
     },
     "versions": [
       {
+        "at": "2026-10-30T13:52:02.196Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "Gouverneur Mike Dunleavy erklärte, dass Alaska die Zertifizierung des US-Senatswahlkampfs zurückhalten könnte, falls die Demokratin Mary Peltola gewinnt, während staatliche und bundesstaatliche Ermittlungen mutmaßliche Manipulationen bei den Stimmzetteln untersuchen.",
+            "body": [
+              "Gouverneur Mike Dunleavy sagte am 30. Okt. 2026, dass Alaska die Zertifizierung der US-Senatswahl zurückhalten könnte, falls die Demokratin Mary Peltola gewinnt (Axios; The Hill). Er fügte hinzu, dass der Zertifizierungsprozess aufgrund der Untersuchung zur Stimmzettel-Manipulation „gestoppt oder geändert“ werden könnte.",
+              "Das Justizministerium gab am 30. Okt. 2026 Vorladungen heraus, um einen Plan der Demokraten zur Rekrutierung eines Scheinbewerbers für den Senatswahlkampf in Alaska zu prüfen (New York Times). Ein Aufsichtsausschuss des Repräsentantenhauses strebte im Rahmen derselben Untersuchung zudem Gespräche mit Kampagnenmitarbeitern an (New York Times).",
+              "James Comer, Vorsitzender des House Oversight Committee, leitete am 29. Okt. 2026 eine Untersuchung zu Vorwürfen ein, wonach Mary Peltolas Kampagne „Scheinbewerber“ rekrutiert habe, um die Wiederwahl von Senator Dan Sullivan zu beeinflussen (The Hill). Republikaner bezeichneten das mutmaßliche Schema als Versuch, republikanische Stimmen abzuziehen (The Hill; New York Times).",
+              "Das Justizministerium von Alaska eröffnete am 29. Okt. 2026 eine Untersuchung, nachdem Gouverneur Dunleavy eine Prüfung von Berichten angeordnet hatte, wonach ein zweiter Kandidat namens Dan Sullivan rekrutiert wurde, um die republikanische Stimme zu spalten (CNBC; Alaska Public Media). Die staatliche Untersuchung konzentriert sich auf potenzielle Verstöße gegen Alaskas Gesetze zur Stimmzettel-Manipulation.",
+              "Das Nationale Komitee der Republikaner erklärte am 30. Okt. 2026, dass Demokraten einen zweiten Dan Sullivan für den Stimmzettel der Senatswahl in Alaska rekrutiert hätten, und bezeichnete die Taktik als betrügerisch (Fox News; El País). Das RNC verknüpfte die Behauptung mit der laufenden strafrechtlichen Untersuchung des Justizministeriums.",
+              "Präsident Donald Trump sagte am 30. Okt. 2026 zwei seiner letzten Kundgebungen zu den Zwischenwahlen ab, vier Tage vor der Abstimmung (Republikanische Partei; Al Jazeera). Die Absagen wurden inmitten der Untersuchungen zum Senatswahlkampf in Alaska bekannt gegeben.",
+              "Am 29. Okt. 2026 veröffentlichte nationale Umfragedaten deuteten darauf hin, dass die Demokraten bei den kommenden Zwischenwahlen im Vorteil seien (New York Times; WHYY). Die Analyse enthielt keine Endergebnisse für den Senatswahlkampf in Alaska.",
+              "Der amtierende republikanische Senator Dan Sullivan kandidiert für die Wiederwahl in Alaskas Senatssitz der Klasse III, während die demokratische Abgeordnete Mary Peltola seine Herausforderin ist (Alaska Public Media; The Hill). Vorwürfe, dass ein zweiter Dan Sullivan rekrutiert wurde, um Wähler zu verwirren, haben die staatlichen und bundesstaatlichen Untersuchungen ausgelöst."
+            ],
+            "facts": [
+              "Gouverneur Mike Dunleavy sagte am 30. Okt. 2026, dass Alaska die Zertifizierung der Senatswahl zurückhalten könnte, falls Mary Peltola gewinnt (Axios; The Hill).",
+              "Das Justizministerium gab am 30. Okt. 2026 Vorladungen heraus, um einen Plan der Demokraten zur Rekrutierung eines Scheinbewerbers zu untersuchen (New York Times).",
+              "James Comer, Vorsitzender des House Oversight Committee, leitete am 29. Okt. 2026 eine Untersuchung zu mutmaßlichen Scheinbewerbern ein, die vom Peltola-Lager eingesetzt wurden (The Hill).",
+              "Das Justizministerium von Alaska eröffnete am 29. Okt. 2026 eine Untersuchung zur mutmaßlichen Rekrutierung eines zweiten Dan Sullivan, um die republikanischen Stimmen zu spalten (CNBC; Alaska Public Media).",
+              "Das Nationale Komitee der Republikaner bezeichnete die mutmaßliche Strategie der Stimmzettel-Manipulation am 30. Okt. 2026 als betrügerisch (Fox News; El País).",
+              "Präsident Donald Trump sagte am 30. Okt. 2026 zwei Kundgebungen zu den Zwischenwahlen ab, vier Tage vor der Abstimmung (Republikanische Partei; Al Jazeera)."
+            ],
+            "title": "Gouverneur von Alaska: Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
+            "context": "Der US-Senatswahlkampf 2026 in Alaska lässt den republikanischen Amtsinhaber Dan Sullivan gegen die Demokratin Mary Peltola antreten. Vorwürfe der Stimmzettel-Manipulation beziehen sich auf einen berichteten Versuch, einen zweiten Kandidaten namens Dan Sullivan zu rekrutieren, um republikanische Stimmen zu spalten. Staatliche und bundesstaatliche Behörden haben Ermittlungen in dieser Angelegenheit eingeleitet (Alaska Public Media; The Hill)."
+          },
+          "en": {
+            "dek": "Governor Mike Dunleavy said Alaska could withhold certification of the U.S. Senate race if Democrat Mary Peltola wins, as state and federal probes examine alleged ballot‑stacking.",
+            "body": [
+              "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins (Axios; The Hill). He added that the certification process could be “stopped or changed” because of the ballot‑stacking investigation.",
+              "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times). A House oversight committee also sought interviews with campaign officials as part of the same inquiry (New York Times).",
+              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Mary Peltola’s campaign recruited “spoiler” candidates to affect Senator Dan Sullivan’s re‑election (The Hill). Republicans described the alleged scheme as an effort to siphon Republican votes (The Hill; New York Times).",
+              "Alaska Department of Law opened a probe on 29 Oct 2026 after Governor Dunleavy ordered an inquiry into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media). The state investigation focuses on potential violations of Alaska’s ballot‑stacking laws.",
+              "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País). The RNC linked the claim to the ongoing Department of Justice criminal probe.",
+              "President Donald Trump cancelled two of his final midterm election rallies on 30 Oct 2026, four days before voting (Republican Party; Al Jazeera). The cancellations were announced amid the investigations into the Alaska Senate race.",
+              "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections (New York Times; WHYY). The analysis did not include final results for the Alaska Senate contest.",
+              "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger (Alaska Public Media; The Hill). Allegations that a second Dan Sullivan was recruited to confuse voters have prompted the state and federal inquiries."
+            ],
+            "facts": [
+              "Governor Mike Dunleavy said on 30 Oct 2026 Alaska could withhold Senate election certification if Mary Peltola wins (Axios; The Hill).",
+              "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate (New York Times).",
+              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into alleged spoiler candidates used by the Peltola campaign (The Hill).",
+              "Alaska Department of Law opened a probe on 29 Oct 2026 into alleged recruitment of a second Dan Sullivan to split Republican votes (CNBC; Alaska Public Media).",
+              "The Republican National Committee called the alleged ballot‑stacking strategy fraudulent on 30 Oct 2026 (Fox News; El País).",
+              "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Republican Party; Al Jazeera)."
+            ],
+            "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
+            "context": "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes. State and federal authorities have opened investigations into the matter (Alaska Public Media; The Hill).",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
         "at": "2026-10-30T12:32:54.670Z",
         "reason": "1 new update(s)",
         "locales": {
-          "en": {
-            "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
-            "dek": "State and federal investigations into alleged ballot‑stacking in Alaska’s Senate race have led the governor to say certification could be withheld if Democrat Mary Peltola wins.",
-            "facts": [
-              "Governor Mike Dunleavy said on 30 Oct 2026 Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
-              "Alaska Department of Law opened a probe on 29 Oct 2026 into alleged recruitment of a second Dan Sullivan to split the Republican vote (CNBC; Alaska Public Media).",
-              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into alleged spoiler candidates used by the Peltola campaign (The Hill; New York Times).",
-              "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate (New York Times).",
-              "The Republican National Committee called the alleged ballot‑stacking strategy fraudulent on 30 Oct 2026 (Fox News; El País).",
-              "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
-            ],
-            "body": [
-              "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins. He said the certification process could be stopped or changed because of the ballot‑stacking investigation (Axios; The Hill).",
-              "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate (New York Times). A House oversight committee also sought interviews with campaign officials as part of the same inquiry.",
-              "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País). The RNC linked the claim to the Department of Justice criminal probe.",
-              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Mary Peltola’s campaign used spoiler candidates to affect Senator Dan Sullivan’s re‑election (The Hill). Republicans described the alleged scheme as an effort to siphon Republican votes (The Hill; New York Times).",
-              "Alaska Department of Law began a probe on 29 Oct 2026 after Governor Dunleavy ordered an inquiry into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media). The state investigation focuses on potential ballot‑stacking violations.",
-              "Representative Robert Garcia (D‑CA) called on Alaskan officials to investigate the ballot‑stacking allegations on 29 Oct 2026 (The Hill). Garcia’s request coincided with the governor’s own probe.",
-              "President Donald Trump cancelled two of his final midterm election rallies on 30 Oct 2026, four days before voting (Republican Party; Al Jazeera). The cancellations were announced amid the ongoing investigations.",
-              "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections (The New York Times; WHYY). The analysis did not include final results for the Alaska Senate race.",
-              "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger (Alaska Public Media; The Hill). Allegations that a second Dan Sullivan was recruited to confuse voters have prompted the state and federal inquiries."
-            ],
-            "context": "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Allegations that a second candidate named Dan Sullivan was recruited to split the Republican vote have led to investigations by the Alaska Department of Law, the Justice Department and a House oversight committee.",
-            "imageCaption": ""
-          },
           "de": {
-            "title": "Gouverneur von Alaska sagt, Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
             "dek": "Staatliche und bundesweite Ermittlungen wegen mutmaßlicher Stimmzettel-Manipulationen im Senatswahlkampf in Alaska haben den Gouverneur dazu veranlasst zu erklären, dass die Zertifizierung zurückgehalten werden könnte, falls die Demokratin Mary Peltola gewinnt.",
-            "facts": [
-              "Gouverneur Mike Dunleavy erklärte am 30. Okt. 2026, dass Alaska die Zertifizierung der Ergebnisse für den US-Senat zurückhalten könnte, falls Mary Peltola gewinnt (Axios; The Hill).",
-              "Das Justizministerium von Alaska leitete am 29. Okt. 2026 eine Untersuchung wegen der mutmaßlichen Anwerbung eines zweiten Dan Sullivan ein, um die republikanischen Stimmen zu spalten (CNBC; Alaska Public Media).",
-              "James Comer, Vorsitzender des Aufsichtsausschusses des Repräsentantenhauses, leitete am 29. Okt. 2026 eine Untersuchung zu mutmaßlichen Scheinbewerbern ein, die vom Peltola-Lager eingesetzt wurden (The Hill; New York Times).",
-              "Das Justizministerium gab am 30. Okt. 2026 Vorladungen heraus, um einen demokratischen Plan zur Anwerbung eines Scheinbewerbers zu prüfen (New York Times).",
-              "Das Nationale Komitee der Republikaner bezeichnete die mutmaßliche Strategie der Stimmzettel-Manipulation am 30. Okt. 2026 als betrügerisch (Fox News; El País).",
-              "Präsident Donald Trump sagte zwei Kundgebungen zu den Zwischenwahlen am 30. Okt. 2026 ab, vier Tage vor der Wahl (Al Jazeera)."
-            ],
             "body": [
               "Gouverneur Mike Dunleavy erklärte am 30. Okt. 2026, dass Alaska die Zertifizierung der US-Senatswahl zurückhalten könnte, falls die Demokratin Mary Peltola gewinnt. Er sagte, dass der Zertifizierungsprozess aufgrund der Ermittlungen zu Stimmzettel-Manipulationen gestoppt oder geändert werden könnte (Axios; The Hill).",
               "Das Justizministerium gab am 30. Okt. 2026 Vorladungen heraus, um einen demokratischen Plan zur Anwerbung eines Scheinbewerbers zu prüfen (New York Times). Ein Aufsichtsausschuss des Repräsentantenhauses suchte im Rahmen derselben Untersuchung ebenfalls Gespräche mit Kampagnenmitarbeitern.",
@@ -117,7 +363,41 @@
               "Am 29. Okt. 2026 veröffentlichte nationale Umfragedaten deuteten darauf hin, dass die Demokraten bei den kommenden Zwischenwahlen im Vorteil seien (The New York Times; WHYY). Die Analyse enthielt keine Endergebnisse für den Senatswahlkampf in Alaska.",
               "Der amtierende republikanische Senator Dan Sullivan kandidiert für die Wiederwahl in Alaskas Senatssitz der Klasse III, während die demokratische Abgeordnete Mary Peltola seine Herausforderin ist (Alaska Public Media; The Hill). Vorwürfe, dass ein zweiter Dan Sullivan angeworben wurde, um die Wähler zu verwirren, haben die staatlichen und bundesweiten Ermittlungen ausgelöst."
             ],
+            "facts": [
+              "Gouverneur Mike Dunleavy erklärte am 30. Okt. 2026, dass Alaska die Zertifizierung der Ergebnisse für den US-Senat zurückhalten könnte, falls Mary Peltola gewinnt (Axios; The Hill).",
+              "Das Justizministerium von Alaska leitete am 29. Okt. 2026 eine Untersuchung wegen der mutmaßlichen Anwerbung eines zweiten Dan Sullivan ein, um die republikanischen Stimmen zu spalten (CNBC; Alaska Public Media).",
+              "James Comer, Vorsitzender des Aufsichtsausschusses des Repräsentantenhauses, leitete am 29. Okt. 2026 eine Untersuchung zu mutmaßlichen Scheinbewerbern ein, die vom Peltola-Lager eingesetzt wurden (The Hill; New York Times).",
+              "Das Justizministerium gab am 30. Okt. 2026 Vorladungen heraus, um einen demokratischen Plan zur Anwerbung eines Scheinbewerbers zu prüfen (New York Times).",
+              "Das Nationale Komitee der Republikaner bezeichnete die mutmaßliche Strategie der Stimmzettel-Manipulation am 30. Okt. 2026 als betrügerisch (Fox News; El País).",
+              "Präsident Donald Trump sagte zwei Kundgebungen zu den Zwischenwahlen am 30. Okt. 2026 ab, vier Tage vor der Wahl (Al Jazeera)."
+            ],
+            "title": "Gouverneur von Alaska sagt, Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
             "context": "Der US-Senatswahlkampf 2026 in Alaska lässt den republikanischen Amtsinhaber Dan Sullivan gegen die Demokratin Mary Peltola antreten. Vorwürfe, dass ein zweiter Kandidat namens Dan Sullivan angeworben wurde, um die republikanischen Stimmen zu spalten, haben zu Untersuchungen durch das Justizministerium von Alaska, das US-Justizministerium und einen Aufsichtsausschuss des Repräsentantenhauses geführt."
+          },
+          "en": {
+            "dek": "State and federal investigations into alleged ballot‑stacking in Alaska’s Senate race have led the governor to say certification could be withheld if Democrat Mary Peltola wins.",
+            "body": [
+              "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins. He said the certification process could be stopped or changed because of the ballot‑stacking investigation (Axios; The Hill).",
+              "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate (New York Times). A House oversight committee also sought interviews with campaign officials as part of the same inquiry.",
+              "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País). The RNC linked the claim to the Department of Justice criminal probe.",
+              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Mary Peltola’s campaign used spoiler candidates to affect Senator Dan Sullivan’s re‑election (The Hill). Republicans described the alleged scheme as an effort to siphon Republican votes (The Hill; New York Times).",
+              "Alaska Department of Law began a probe on 29 Oct 2026 after Governor Dunleavy ordered an inquiry into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media). The state investigation focuses on potential ballot‑stacking violations.",
+              "Representative Robert Garcia (D‑CA) called on Alaskan officials to investigate the ballot‑stacking allegations on 29 Oct 2026 (The Hill). Garcia’s request coincided with the governor’s own probe.",
+              "President Donald Trump cancelled two of his final midterm election rallies on 30 Oct 2026, four days before voting (Republican Party; Al Jazeera). The cancellations were announced amid the ongoing investigations.",
+              "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections (The New York Times; WHYY). The analysis did not include final results for the Alaska Senate race.",
+              "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger (Alaska Public Media; The Hill). Allegations that a second Dan Sullivan was recruited to confuse voters have prompted the state and federal inquiries."
+            ],
+            "facts": [
+              "Governor Mike Dunleavy said on 30 Oct 2026 Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
+              "Alaska Department of Law opened a probe on 29 Oct 2026 into alleged recruitment of a second Dan Sullivan to split the Republican vote (CNBC; Alaska Public Media).",
+              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into alleged spoiler candidates used by the Peltola campaign (The Hill; New York Times).",
+              "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate (New York Times).",
+              "The Republican National Committee called the alleged ballot‑stacking strategy fraudulent on 30 Oct 2026 (Fox News; El País).",
+              "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
+            ],
+            "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
+            "context": "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Allegations that a second candidate named Dan Sullivan was recruited to split the Republican vote have led to investigations by the Alaska Department of Law, the Justice Department and a House oversight committee.",
+            "imageCaption": ""
           }
         }
       },
@@ -125,17 +405,15 @@
         "at": "2026-10-30T10:35:10.081Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Gouverneur von Alaska sagt, Staat könnte Zertifizierung der Senatswahl angesichts von Ermittlungen zurückhalten",
+            "context": ""
+          },
           "en": {
-            "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
             "dek": "Alaska officials and federal agencies are investigating alleged ballot‑stacking in the Senate race as the governor warns certification could be halted if Democrat Mary Peltola wins.",
-            "facts": [
-              "Governor Mike Dunleavy said on 30 Oct 2026 Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
-              "The Alaska Department of Law began a probe on 29 Oct 2026 into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media).",
-              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into alleged spoiler candidates used by the Peltola campaign (The Hill).",
-              "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate (New York Times).",
-              "The Republican National Committee called the alleged ballot‑stacking strategy fraudulent on 30 Oct 2026 (Fox News; El País).",
-              "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
-            ],
             "body": [
               "The Republican National Committee said on 30 October 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and described the tactic as fraudulent, citing the Department of Justice criminal probe (Fox News; El País).",
               "Governor Mike Dunleavy said on 30 October 2026 that Alaska could withhold certification of the Senate results if Mary Peltola wins, noting the process may be stopped or changed because of the ballot‑stacking investigation (Axios; The Hill).",
@@ -146,15 +424,17 @@
               "National polling data released on 29 October 2026 indicated that Democrats held an advantage in the upcoming midterm elections, according to analyses by The New York Times and WHYY (New York Times; WHYY).",
               "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger; allegations of ballot‑stacking have prompted state and federal inquiries (Alaska Public Media; The Hill)."
             ],
+            "facts": [
+              "Governor Mike Dunleavy said on 30 Oct 2026 Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
+              "The Alaska Department of Law began a probe on 29 Oct 2026 into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media).",
+              "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into alleged spoiler candidates used by the Peltola campaign (The Hill).",
+              "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate (New York Times).",
+              "The Republican National Committee called the alleged ballot‑stacking strategy fraudulent on 30 Oct 2026 (Fox News; El País).",
+              "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
+            ],
+            "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
             "context": "Incumbent Republican Senator Dan Sullivan is running for re‑election to Alaska’s Class III Senate seat, and Democratic Representative Mary Peltola is his opponent. Allegations have emerged that a second candidate named Dan Sullivan was recruited to split the Republican vote, leading to investigations by state and federal authorities.",
             "imageCaption": ""
-          },
-          "de": {
-            "title": "Gouverneur von Alaska sagt, Staat könnte Zertifizierung der Senatswahl angesichts von Ermittlungen zurückhalten",
-            "dek": "",
-            "facts": [],
-            "body": [],
-            "context": ""
           }
         }
       },
@@ -162,38 +442,8 @@
         "at": "2026-10-30T06:51:47.767Z",
         "reason": "1 new update(s)",
         "locales": {
-          "en": {
-            "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
-            "dek": "Alaska officials launch investigations into ballot‑stacking allegations as the governor says certification could be halted if Democrat Mary Peltola wins.",
-            "facts": [
-              "Governor Mike Dunleavy said on 30 Oct 2026 the state could withhold certification of the Alaska Senate results if Mary Peltola wins (Axios; The Hill).",
-              "The Alaska governor ordered a probe into alleged recruitment of a second Dan Sullivan on 29 Oct 2026 (CNBC; Alaska Public Media).",
-              "House Oversight Committee Chair James Comer launched a federal investigation into the Peltola campaign on 29 Oct 2026 (The Hill).",
-              "The Justice Department issued subpoenas related to the Alaska Senate race on 30 Oct 2026 (New York Times).",
-              "National polls released on 29 Oct 2026 showed Democrats ahead in the 2026 midterm elections (New York Times; WHYY)."
-            ],
-            "body": [
-              "Governor Mike Dunleavy said on 30 October 2026 that Alaska could withhold certification of the U.S. Senate results if Democrat Mary Peltola wins, noting the process may be stopped or changed because of the ballot‑stacking investigation (Axios; The Hill).",
-              "The Alaska Department of Law began a probe on 29 October 2026 after the governor ordered an inquiry into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media).",
-              "House Oversight Committee Chair James Comer launched a federal investigation on 29 October 2026, focusing on whether the Peltola campaign used spoiler candidates to affect Senator Dan Sullivan’s re‑election bid (The Hill).",
-              "The Justice Department issued subpoenas on 30 October 2026 and a House oversight committee sought interviews with campaign officials to assess the alleged Democratic plan to recruit a spoiler candidate (New York Times).",
-              "Representative Robert Garcia (D‑CA) called on Alaska officials to investigate the ballot‑stacking allegations on 29 October 2026, stating the claims merit a thorough review (The Hill).",
-              "National polling data released on 29 October 2026 indicated that Democrats held an advantage in the upcoming midterm elections, according to analyses by The New York Times and WHYY (New York Times; WHYY).",
-              "The Republican Party reported that former President Donald Trump cancelled two of his final midterm election rallies on 30 October 2026, four days before voters go to the polls (Al Jazeera)."
-            ],
-            "context": "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger. Allegations have emerged that a second candidate named Dan Sullivan was recruited to split the Republican vote, prompting state and federal inquiries.",
-            "imageCaption": ""
-          },
           "de": {
-            "title": "Gouverneur von Alaska: Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
             "dek": "Alaskaanse Beamte leiten Untersuchungen zu Vorwürfen der Stimmzettel-Manipulation ein, während der Gouverneur erklärt, dass die Zertifizierung gestoppt werden könnte, falls die Demokratin Mary Peltola gewinnt.",
-            "facts": [
-              "Gouverneur Mike Dunleavy erklärte am 30. Oktober 2026, dass der Staat die Zertifizierung der Ergebnisse für den Senat von Alaska zurückhalten könnte, falls Mary Peltola gewinnt (Axios; The Hill).",
-              "Der Gouverneur von Alaska ordnete am 29. Oktober 2026 eine Untersuchung zur mutmaßlichen Rekrutierung eines zweiten Dan Sullivan an (CNBC; Alaska Public Media).",
-              "James Comer, Vorsitzender des House Oversight Committee, leitete am 29. Oktober 2026 eine Bundesuntersuchung gegen die Peltola-Kampagne ein (The Hill).",
-              "Das Justizministerium gab am 30. Oktober 2026 Vorladungen im Zusammenhang mit dem Senatswahlkampf in Alaska heraus (New York Times).",
-              "Am 29. Oktober 2026 veröffentlichte nationale Umfragen zeigten die Demokraten bei den Zwischenwahlen 2026 in Führung (New York Times; WHYY)."
-            ],
             "body": [
               "Gouverneur Mike Dunleavy erklärte am 30. Oktober 2026, dass Alaska die Zertifizierung der Ergebnisse für den US-Senat zurückhalten könnte, falls die Demokratin Mary Peltola gewinnt, und merkte an, dass der Prozess aufgrund der Untersuchung zur Stimmzettel-Manipulation gestoppt oder geändert werden könnte (Axios; The Hill).",
               "Das Justizministerium von Alaska begann am 29. Oktober 2026 mit einer Untersuchung, nachdem der Gouverneur eine Prüfung von Berichten angeordnet hatte, wonach ein zweiter Kandidat namens Dan Sullivan rekrutiert wurde, um die republikanischen Stimmen zu spalten (CNBC; Alaska Public Media).",
@@ -203,7 +453,37 @@
               "National veröffentlichte Umfragedaten vom 29. Oktober 2026 deuteten darauf hin, dass die Demokraten bei den bevorstehenden Zwischenwahlen im Vorteil seien, so Analysen der New York Times und von WHYY (New York Times; WHYY).",
               "Die Republikanische Partei berichtete, dass der ehemalige Präsident Donald Trump am 30. Oktober 2026 zwei seiner letzten Wahlkampfveranstaltungen zu den Zwischenwahlen absagte, vier Tage bevor die Wähler zu den Stimmzetteln gehen (Al Jazeera)."
             ],
+            "facts": [
+              "Gouverneur Mike Dunleavy erklärte am 30. Oktober 2026, dass der Staat die Zertifizierung der Ergebnisse für den Senat von Alaska zurückhalten könnte, falls Mary Peltola gewinnt (Axios; The Hill).",
+              "Der Gouverneur von Alaska ordnete am 29. Oktober 2026 eine Untersuchung zur mutmaßlichen Rekrutierung eines zweiten Dan Sullivan an (CNBC; Alaska Public Media).",
+              "James Comer, Vorsitzender des House Oversight Committee, leitete am 29. Oktober 2026 eine Bundesuntersuchung gegen die Peltola-Kampagne ein (The Hill).",
+              "Das Justizministerium gab am 30. Oktober 2026 Vorladungen im Zusammenhang mit dem Senatswahlkampf in Alaska heraus (New York Times).",
+              "Am 29. Oktober 2026 veröffentlichte nationale Umfragen zeigten die Demokraten bei den Zwischenwahlen 2026 in Führung (New York Times; WHYY)."
+            ],
+            "title": "Gouverneur von Alaska: Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
             "context": "Der amtierende republikanische Senator Dan Sullivan kandidiert für die Wiederwahl in Alaskas Senatssitz der Klasse III, während die demokratische Abgeordnete Mary Peltola seine Herausforderin ist. Es sind Vorwürfe laut geworden, dass ein zweiter Kandidat namens Dan Sullivan rekrutiert wurde, um die republikanischen Stimmen zu spalten, was staatliche und bundesweite Untersuchungen auslöste."
+          },
+          "en": {
+            "dek": "Alaska officials launch investigations into ballot‑stacking allegations as the governor says certification could be halted if Democrat Mary Peltola wins.",
+            "body": [
+              "Governor Mike Dunleavy said on 30 October 2026 that Alaska could withhold certification of the U.S. Senate results if Democrat Mary Peltola wins, noting the process may be stopped or changed because of the ballot‑stacking investigation (Axios; The Hill).",
+              "The Alaska Department of Law began a probe on 29 October 2026 after the governor ordered an inquiry into reports that a second candidate named Dan Sullivan was recruited to split the Republican vote (CNBC; Alaska Public Media).",
+              "House Oversight Committee Chair James Comer launched a federal investigation on 29 October 2026, focusing on whether the Peltola campaign used spoiler candidates to affect Senator Dan Sullivan’s re‑election bid (The Hill).",
+              "The Justice Department issued subpoenas on 30 October 2026 and a House oversight committee sought interviews with campaign officials to assess the alleged Democratic plan to recruit a spoiler candidate (New York Times).",
+              "Representative Robert Garcia (D‑CA) called on Alaska officials to investigate the ballot‑stacking allegations on 29 October 2026, stating the claims merit a thorough review (The Hill).",
+              "National polling data released on 29 October 2026 indicated that Democrats held an advantage in the upcoming midterm elections, according to analyses by The New York Times and WHYY (New York Times; WHYY).",
+              "The Republican Party reported that former President Donald Trump cancelled two of his final midterm election rallies on 30 October 2026, four days before voters go to the polls (Al Jazeera)."
+            ],
+            "facts": [
+              "Governor Mike Dunleavy said on 30 Oct 2026 the state could withhold certification of the Alaska Senate results if Mary Peltola wins (Axios; The Hill).",
+              "The Alaska governor ordered a probe into alleged recruitment of a second Dan Sullivan on 29 Oct 2026 (CNBC; Alaska Public Media).",
+              "House Oversight Committee Chair James Comer launched a federal investigation into the Peltola campaign on 29 Oct 2026 (The Hill).",
+              "The Justice Department issued subpoenas related to the Alaska Senate race on 30 Oct 2026 (New York Times).",
+              "National polls released on 29 Oct 2026 showed Democrats ahead in the 2026 midterm elections (New York Times; WHYY)."
+            ],
+            "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
+            "context": "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger. Allegations have emerged that a second candidate named Dan Sullivan was recruited to split the Republican vote, prompting state and federal inquiries.",
+            "imageCaption": ""
           }
         }
       },
@@ -211,6 +491,13 @@
         "at": "2026-10-30T03:22:13.932Z",
         "reason": "2 new update(s)",
         "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Gouverneur von Alaska sagt, Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
+            "context": ""
+          },
           "en": {
             "dek": "Governor Mike Dunleavy said Alaska may withhold certification of the Senate race while federal and state probes examine allegations that Mary Peltola's campaign recruited spoiler candidates.",
             "body": [
@@ -234,13 +521,6 @@
             "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
             "context": "Incumbent Republican Senator Dan Sullivan is seeking re‑election to Alaska’s Class III Senate seat, while Democratic Representative Mary Peltola is his challenger. Allegations have emerged that a second candidate named Dan Sullivan was recruited to split the Republican vote, prompting state and federal investigations.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "",
-            "body": [],
-            "facts": [],
-            "title": "Gouverneur von Alaska sagt, Staat könnte Zertifizierung der Senatswahl aufgrund von Ermittlungen zurückhalten",
-            "context": ""
           }
         }
       },
@@ -386,7 +666,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-10-30T22:43:48.381Z"
   },
   "endedAt": null,
   "locales": {
@@ -395,8 +676,8 @@
       "title": "Wahlen 2026"
     },
     "en": {
-      "dek": "United States mid-term elections approach: polls, key contests, and party prospects.",
-      "title": "United States mid-term elections approach"
+      "dek": "United States mid‑term elections approach: polls, key contests and party prospects.",
+      "title": "United States mid‑term elections approach: polls, key contests and party prospects."
     },
     "es": {
       "dek": "Se acercan las elecciones intermedias de EE. UU.: encuestas, carreras clave y perspectivas de los partidos.",
@@ -429,236 +710,294 @@
   },
   "updates": [
     {
-      "id": "u-1793367104000-g7pv",
-      "at": "2026-10-30T13:31:44.000Z",
-      "kind": "context",
-      "importance": 3,
+      "at": "2026-10-30T20:06:50.000Z",
+      "id": "u-1793390810000-8r5c",
+      "kind": "result",
       "locales": {
-        "en": {
-          "headline": "James Talarico leads in Texas Senate race",
-          "body": "James Talarico raised over $146 million for the Texas Senate race, according to Fox News. FAZ reported that Talarico leads in Senate polls in Texas."
-        },
         "de": {
-          "headline": "James Talarico führt im texanischen Senatswahlkampf",
-          "body": "James Talarico hat laut Fox News über 146 Millionen Dollar für den texanischen Senatswahlkampf gesammelt. Die FAZ berichtete, dass Talarico in den Umfragen zum Senat in Texas führt."
+          "body": "Das Election Lab der University of Florida meldete 47,9 Millionen frühzeitig abgegebene Wähler bei den US-Zwischenwahlen am 3. November, was den Rekord von 45,9 Millionen aus dem Jahr 2022 übertrifft, so die Kyiv Post. Die Zeit berichtete über dieselbe Rekordzahl an frühzeitig abgegebenen Stimmzetteln.",
+          "headline": "47,9 Millionen Amerikaner haben bei den US-Zwischenwahlen früh gewählt, Rekord"
         },
-        "it": {
-          "headline": "James Talarico in vantaggio nella corsa al Senato del Texas",
-          "body": "James Talarico ha raccolto oltre 146 milioni di dollari per la corsa al Senato del Texas, secondo Fox News. FAZ ha riferito che Talarico è in vantaggio nei sondaggi per il Senato in Texas."
+        "en": {
+          "body": "The University of Florida’s Election Lab reported 47.9 million early voters in the November 3 midterm elections, surpassing the 45.9 million record from 2022, according to the Kyiv Post. Die Zeit reported the same record early voting figure.",
+          "headline": "47.9 million Americans voted early in US midterms, record"
         },
         "es": {
-          "headline": "James Talarico lidera la contienda al Senado de Texas",
-          "body": "James Talarico recaudó más de 146 millones de dólares para la contienda al Senado de Texas, según Fox News. FAZ informó que Talarico lidera las encuestas al Senado en Texas."
+          "body": "El Laboratorio de Elecciones de la Universidad de Florida informó que 47,9 millones de votantes anticipados participaron en las elecciones de mitad de mandato del 3 de noviembre, superando el récord de 45,9 millones de 2022, según el Kyiv Post. Die Zeit informó la misma cifra récord de votación anticipada.",
+          "headline": "47,9 millones de estadounidenses votaron anticipadamente en las elecciones de mitad de mandato de EE. UU., récord"
         },
         "fr": {
-          "headline": "James Talarico en tête pour le Sénat du Texas",
-          "body": "James Talarico a récolté plus de 146 millions de dollars pour la course au Sénat du Texas, selon Fox News. Le FAZ a rapporté que Talarico mène les sondages pour le Sénat au Texas."
+          "body": "Le laboratoire d’élections de l’Université de Floride a déclaré que 47,9 millions de votants ont voté en avance lors des élections de mi‑mandat du 3 novembre, dépassant le record de 45,9 millions de 2022, selon le Kyiv Post. Die Zeit a rapporté le même chiffre record de vote anticipé.",
+          "headline": "47,9 millions d’Américains ont voté en avance lors des élections de mi‑mandat américaines, record"
         },
-        "pt": {
-          "headline": "James Talarico lidera corrida ao Senado do Texas",
-          "body": "James Talarico angariou mais de 146 milhões de dólares para a corrida ao Senado do Texas, segundo a Fox News. A FAZ reportou que Talarico lidera as sondagens para o Senado no Texas."
-        },
-        "zh": {
-          "headline": "詹姆斯·塔拉里科在德克萨斯州参议院选举中领先",
-          "body": "据福克斯新闻报道，詹姆斯·塔拉里科为德克萨斯州参议院选举筹集了超过1.46亿美元。法兰克福汇报报道称，塔拉里科在德克萨斯州的参议院民调中领先。"
+        "it": {
+          "body": "Il Laboratorio Elezioni dell'Università della Florida ha riferito 47,9 milioni di elettori anticipati nelle elezioni di metà mandato del 3 novembre, superando il record di 45,9 milioni del 2022, secondo il Kyiv Post. Die Zeit ha riportato lo stesso dato record di voto anticipato.",
+          "headline": "47,9 milioni di americani hanno votato anticipatamente nelle elezioni di metà mandato statunitensi, record"
         },
         "ja": {
-          "headline": "テキサス州上院選、ジェームズ・タラリコ氏がリード",
-          "body": "フォックスニュースによると、ジェームズ・タラリコ氏はテキサス州上院選に向けて1億4600万ドル以上の資金を集めた。FAZは、テキサス州の上院選世論調査でタラリコ氏がリードしていると報じた。"
+          "body": "フロリダ大学の選挙ラボは、11月3日の中間選挙で4,790万人の早期投票者があったと報告し、2022年の4,590万人の記録を上回ったとキエフポストが報じた。Die Zeitも同じ早期投票者数を報告した。",
+          "headline": "米国中間選挙で早期投票者数が4,790万人に達し、記録を更新"
         },
         "ko": {
-          "headline": "제임스 탈라리코, 텍사스 상원 선거 앞서",
-          "body": "폭스 뉴스에 따르면 제임스 탈라리코는 텍사스 상원 선거를 위해 1억 4,600만 달러 이상의 자금을 모금했다. FAZ는 탈라리코가 텍사스 상원 여론조사에서 앞서고 있다고 보도했다."
+          "body": "플로리다 대학교의 선거 연구소는 11월 3일 중간선거에서 4,790만 명이 사전 투표했다고 보고했으며, 이는 2022년의 4,590만 명 기록을 넘어섰다고 키이프 포스트가 보도했다. 디에츠는 같은 사전 투표 기록을 보도했다.",
+          "headline": "미국 중간선거에서 4,790만 명이 사전 투표, 기록"
+        },
+        "pt": {
+          "body": "O Laboratório de Eleições da Universidade da Flórida informou que 47,9 milhões de eleitores antecipados participaram nas eleições de meio de mandato de 3 de novembro, superando o recorde de 45,9 milhões de 2022, segundo o Kyiv Post. A Die Zeit reportou a mesma cifra recorde de votação antecipada.",
+          "headline": "47,9 milhões de americanos votaram antecipadamente nas eleições de meio de mandato dos EUA, recorde"
+        },
+        "zh": {
+          "body": "佛罗里达大学选举实验室报告称，11月3日中期选举中有 4790 万提前投票者，超过 2022 年创下的 4590 万记录，基辅邮报报道。德国《时代周报》亦报道相同的提前投票记录。",
+          "headline": "美国中期选举提前投票人数达 4790 万，创纪录"
         }
       },
       "sources": [
         {
-          "outlet": "Fox News",
-          "title": "The red wall facing its biggest threat in decades as Republicans scramble to defend Texas",
+          "url": "https://www.kyivpost.com/post/88710",
+          "title": "US Midterm Early Voting Hits Record 48 Million",
+          "outlet": "The Kyiv Post",
+          "publishedAt": "2026-10-30T20:06:50.000Z"
+        },
+        {
+          "url": "https://www.zeit.de/politik/ausland/2026-10/fruehwahl-usa-midterms-early-voting-texas-north-carolina-repraesentantenhaus-senat",
+          "title": "Midterms in den USA: Zahl vorzeitiger Wähler bei US-Kongresswahlen auf Rekordniveau",
+          "outlet": "Die Zeit",
+          "publishedAt": "2026-10-30T20:02:00.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-10-30T13:31:44.000Z",
+      "id": "u-1793367104000-g7pv",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "James Talarico hat laut Fox News über 146 Millionen Dollar für den texanischen Senatswahlkampf gesammelt. Die FAZ berichtete, dass Talarico in den Umfragen zum Senat in Texas führt.",
+          "headline": "James Talarico führt im texanischen Senatswahlkampf"
+        },
+        "en": {
+          "body": "James Talarico raised over $146 million for the Texas Senate race, according to Fox News. FAZ reported that Talarico leads in Senate polls in Texas.",
+          "headline": "James Talarico leads in Texas Senate race"
+        },
+        "es": {
+          "body": "James Talarico recaudó más de 146 millones de dólares para la contienda al Senado de Texas, según Fox News. FAZ informó que Talarico lidera las encuestas al Senado en Texas.",
+          "headline": "James Talarico lidera la contienda al Senado de Texas"
+        },
+        "fr": {
+          "body": "James Talarico a récolté plus de 146 millions de dollars pour la course au Sénat du Texas, selon Fox News. Le FAZ a rapporté que Talarico mène les sondages pour le Sénat au Texas.",
+          "headline": "James Talarico en tête pour le Sénat du Texas"
+        },
+        "it": {
+          "body": "James Talarico ha raccolto oltre 146 milioni di dollari per la corsa al Senato del Texas, secondo Fox News. FAZ ha riferito che Talarico è in vantaggio nei sondaggi per il Senato in Texas.",
+          "headline": "James Talarico in vantaggio nella corsa al Senato del Texas"
+        },
+        "ja": {
+          "body": "フォックスニュースによると、ジェームズ・タラリコ氏はテキサス州上院選に向けて1億4600万ドル以上の資金を集めた。FAZは、テキサス州の上院選世論調査でタラリコ氏がリードしていると報じた。",
+          "headline": "テキサス州上院選、ジェームズ・タラリコ氏がリード"
+        },
+        "ko": {
+          "body": "폭스 뉴스에 따르면 제임스 탈라리코는 텍사스 상원 선거를 위해 1억 4,600만 달러 이상의 자금을 모금했다. FAZ는 탈라리코가 텍사스 상원 여론조사에서 앞서고 있다고 보도했다.",
+          "headline": "제임스 탈라리코, 텍사스 상원 선거 앞서"
+        },
+        "pt": {
+          "body": "James Talarico angariou mais de 146 milhões de dólares para a corrida ao Senado do Texas, segundo a Fox News. A FAZ reportou que Talarico lidera as sondagens para o Senado no Texas.",
+          "headline": "James Talarico lidera corrida ao Senado do Texas"
+        },
+        "zh": {
+          "body": "据福克斯新闻报道，詹姆斯·塔拉里科为德克萨斯州参议院选举筹集了超过1.46亿美元。法兰克福汇报报道称，塔拉里科在德克萨斯州的参议院民调中领先。",
+          "headline": "詹姆斯·塔拉里科在德克萨斯州参议院选举中领先"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.foxnews.com/politics/red-wall-facing-its-biggest-threat-decades-republicans-scramble-defend-texas",
+          "title": "The red wall facing its biggest threat in decades as Republicans scramble to defend Texas",
+          "outlet": "Fox News",
           "publishedAt": "2026-10-30T13:31:44.000Z"
         },
         {
-          "outlet": "FAZ",
-          "title": "Midterms in Texas: Der Demokrat, der mit der Bibel um Texas kämpft",
           "url": "https://www.faz.net/aktuell/feuilleton/debatten/us-midterms-kann-ein-christlicher-demokrat-texas-gewinnen-201632214.html",
+          "title": "Midterms in Texas: Der Demokrat, der mit der Bibel um Texas kämpft",
+          "outlet": "FAZ",
           "publishedAt": "2026-10-30T12:59:40.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1793359226000-uwn9",
       "at": "2026-10-30T11:20:26.000Z",
+      "id": "u-1793359226000-uwn9",
       "kind": "statement",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Donald Trump calls for increased Alaska Senate probes",
-          "body": "Donald Trump is pushing to intensify investigations into the Alaska Senate race, according to NBC News. NPR reported that the governor of Alaska ordered a probe into claims that Democrats recruited a spoiler candidate to confuse voters."
-        },
         "de": {
-          "headline": "Donald Trump fordert verstärkte Untersuchungen zum Senatswahlkampf in Alaska",
-          "body": "Donald Trump drängt auf eine Intensivierung der Untersuchungen zum Senatswahlkampf in Alaska, so NBC News. NPR berichtete, dass der Gouverneur von Alaska eine Untersuchung zu Vorwürfen angeordnet habe, wonach Demokraten einen Scheinbewerber rekrutiert hätten, um die Wähler zu verwirren."
+          "body": "Donald Trump drängt auf eine Intensivierung der Untersuchungen zum Senatswahlkampf in Alaska, so NBC News. NPR berichtete, dass der Gouverneur von Alaska eine Untersuchung zu Vorwürfen angeordnet habe, wonach Demokraten einen Scheinbewerber rekrutiert hätten, um die Wähler zu verwirren.",
+          "headline": "Donald Trump fordert verstärkte Untersuchungen zum Senatswahlkampf in Alaska"
         },
-        "fr": {
-          "headline": "Donald Trump appelle à l'intensification des enquêtes sur le Sénat en Alaska",
-          "body": "Donald Trump pousse à l'intensification des enquêtes sur la course au Sénat en Alaska, selon NBC News. NPR a rapporté que le gouverneur de l'Alaska a ordonné une enquête sur des allégations selon lesquelles les Démocrates auraient recruté un candidat perturbateur pour confondre les électeurs."
+        "en": {
+          "body": "Donald Trump is pushing to intensify investigations into the Alaska Senate race, according to NBC News. NPR reported that the governor of Alaska ordered a probe into claims that Democrats recruited a spoiler candidate to confuse voters.",
+          "headline": "Donald Trump calls for increased Alaska Senate probes"
         },
         "es": {
-          "headline": "Donald Trump pide intensificar las investigaciones sobre el Senado de Alaska",
-          "body": "Donald Trump está presionando para intensificar las investigaciones sobre la contienda al Senado de Alaska, según NBC News. NPR informó que el gobernador de Alaska ordenó una indagación sobre las alegaciones de que los demócratas reclutaron a un candidato disruptor para confundir a los votantes."
+          "body": "Donald Trump está presionando para intensificar las investigaciones sobre la contienda al Senado de Alaska, según NBC News. NPR informó que el gobernador de Alaska ordenó una indagación sobre las alegaciones de que los demócratas reclutaron a un candidato disruptor para confundir a los votantes.",
+          "headline": "Donald Trump pide intensificar las investigaciones sobre el Senado de Alaska"
         },
-        "pt": {
-          "headline": "Donald Trump pede reforço de investigações ao Senado do Alasca",
-          "body": "Donald Trump está a pressionar para intensificar as investigações sobre a corrida ao Senado do Alasca, segundo a NBC News. A NPR relatou que o governador do Alasca ordenou um inquérito sobre alegações de que os Democratas recrutaram um candidato estratégico para confundir os eleitores."
-        },
-        "zh": {
-          "headline": "唐纳德·特朗普呼吁加强对阿拉斯加参议院选举的调查",
-          "body": "据NBC新闻报道，唐纳德·特朗普正推动加强对阿拉斯加参议院选举的调查。NPR报道称，阿拉斯加州州长已下令调查有关民主党招募“搅局候选人”以误导选民的指控。"
-        },
-        "ja": {
-          "headline": "ドナルド・トランプ氏、アラスカ州上院選の調査強化を要求",
-          "body": "NBCニュースによると、ドナルド・トランプ氏はアラスカ州の上院議員選挙に関する調査の強化を求めている。またNPRは、民主党が有権者を混乱させるために妨害候補者を擁立したという主張について、アラスカ州知事が調査を命じたと報じた。"
-        },
-        "ko": {
-          "headline": "도널드 트럼프, 알래스카 상원 선거 조사 확대 촉구",
-          "body": "NBC 뉴스에 따르면 도널드 트럼프 전 대통령이 알래스카 상원 의원 선거에 대한 조사를 강화하도록 압박하고 있다. NPR은 알래스카 주지사가 민주당이 유권자들에게 혼란을 주기 위해 제3의 후보를 섭외했다는 주장에 대해 조사를 명령했다고 보도했다."
+        "fr": {
+          "body": "Donald Trump pousse à l'intensification des enquêtes sur la course au Sénat en Alaska, selon NBC News. NPR a rapporté que le gouverneur de l'Alaska a ordonné une enquête sur des allégations selon lesquelles les Démocrates auraient recruté un candidat perturbateur pour confondre les électeurs.",
+          "headline": "Donald Trump appelle à l'intensification des enquêtes sur le Sénat en Alaska"
         },
         "it": {
-          "headline": "Donald Trump chiede l'intensificazione delle indagini sul Senato in Alaska",
-          "body": "Donald Trump sta spingendo per intensificare le indagini sulla corsa al Senato in Alaska, secondo NBC News. NPR ha riferito che il governatore dell'Alaska ha ordinato un'indagine sulle accuse secondo cui i Democratici avrebbero reclutato un candidato \"spoiler\" per confondere gli elettori."
+          "body": "Donald Trump sta spingendo per intensificare le indagini sulla corsa al Senato in Alaska, secondo NBC News. NPR ha riferito che il governatore dell'Alaska ha ordinato un'indagine sulle accuse secondo cui i Democratici avrebbero reclutato un candidato \"spoiler\" per confondere gli elettori.",
+          "headline": "Donald Trump chiede l'intensificazione delle indagini sul Senato in Alaska"
+        },
+        "ja": {
+          "body": "NBCニュースによると、ドナルド・トランプ氏はアラスカ州の上院議員選挙に関する調査の強化を求めている。またNPRは、民主党が有権者を混乱させるために妨害候補者を擁立したという主張について、アラスカ州知事が調査を命じたと報じた。",
+          "headline": "ドナルド・トランプ氏、アラスカ州上院選の調査強化を要求"
+        },
+        "ko": {
+          "body": "NBC 뉴스에 따르면 도널드 트럼프 전 대통령이 알래스카 상원 의원 선거에 대한 조사를 강화하도록 압박하고 있다. NPR은 알래스카 주지사가 민주당이 유권자들에게 혼란을 주기 위해 제3의 후보를 섭외했다는 주장에 대해 조사를 명령했다고 보도했다.",
+          "headline": "도널드 트럼프, 알래스카 상원 선거 조사 확대 촉구"
+        },
+        "pt": {
+          "body": "Donald Trump está a pressionar para intensificar as investigações sobre a corrida ao Senado do Alasca, segundo a NBC News. A NPR relatou que o governador do Alasca ordenou um inquérito sobre alegações de que os Democratas recrutaram um candidato estratégico para confundir os eleitores.",
+          "headline": "Donald Trump pede reforço de investigações ao Senado do Alasca"
+        },
+        "zh": {
+          "body": "据NBC新闻报道，唐纳德·特朗普正推动加强对阿拉斯加参议院选举的调查。NPR报道称，阿拉斯加州州长已下令调查有关民主党招募“搅局候选人”以误导选民的指控。",
+          "headline": "唐纳德·特朗普呼吁加强对阿拉斯加参议院选举的调查"
         }
       },
       "sources": [
         {
-          "outlet": "NPR",
-          "title": "Alaska's Senate race faces claims of spoiler candidate. And, Hegseth ousts Army general",
           "url": "https://www.npr.org/2026/10/30/g-s1-150889/up-first-newsletter-midterm-elections-iran-war-veteran-affairs-loans",
+          "title": "Alaska's Senate race faces claims of spoiler candidate. And, Hegseth ousts Army general",
+          "outlet": "NPR",
           "publishedAt": "2026-10-30T11:20:26.000Z"
         },
         {
-          "outlet": "NBC News",
-          "title": "Trump pushes to intensify Alaska Senate probes and Israel’s final election results released: Morning Rundown",
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPcmE5UmNqblNkRWRyMDNjQWs1VDhRb2xUNXh1YjJiM2ZNMnI5N0VzN29PUWJ4RktNU001ek9xWmU2a2VFQ3d3SE5rcEY1WnZ5NGZNemdVUmpyN0g2bEFrb1NZdi1XRVRPMTVMSl92c1UxcnhMMExxQlpqY3RrQUliUjZxdExYeVduNzhTa3VvTnB0UGZ2NTNtREdmV0NSN2M2NkRjZTlOckJXM21kakpuUlRPUQ?oc=5",
+          "title": "Trump pushes to intensify Alaska Senate probes and Israel’s final election results released: Morning Rundown",
+          "outlet": "NBC News",
           "publishedAt": "2026-10-30T11:03:31.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1793354443000-53j6",
       "at": "2026-10-30T10:00:43.000Z",
+      "id": "u-1793354443000-53j6",
       "kind": "statement",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "RNC calls Alaska Senate ballot strategy fraudulent",
-          "body": "The RNC stated that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot to confuse voters. This claim follows a criminal probe by the Department of Justice, according to Fox News and El País."
-        },
         "de": {
-          "headline": "RNC bezeichnet Strategie für Stimmzettel im US-Senat in Alaska als betrügerisch",
-          "body": "Das RNC erklärte, die Demokraten hätten einen zweiten Dan Sullivan für den Stimmzettel zur Senatswahl in Alaska rekrutiert, um die Wähler zu verwirren. Diese Behauptung folgt einer strafrechtlichen Untersuchung des Justizministeriums, so Fox News und El País."
+          "body": "Das RNC erklärte, die Demokraten hätten einen zweiten Dan Sullivan für den Stimmzettel zur Senatswahl in Alaska rekrutiert, um die Wähler zu verwirren. Diese Behauptung folgt einer strafrechtlichen Untersuchung des Justizministeriums, so Fox News und El País.",
+          "headline": "RNC bezeichnet Strategie für Stimmzettel im US-Senat in Alaska als betrügerisch"
         },
-        "fr": {
-          "headline": "Le RNC qualifie de frauduleuse la stratégie de vote pour le Sénat en Alaska",
-          "body": "Le RNC a affirmé que les démocrates ont recruté un second Dan Sullivan pour le scrutin du Sénat en Alaska afin de confondre les électeurs. Cette affirmation fait suite à une enquête criminelle du ministère de la Justice, selon Fox News et El País."
-        },
-        "it": {
-          "headline": "L'RNC definisce fraudolenta la strategia per le schede del Senato in Alaska",
-          "body": "L'RNC ha dichiarato che i Democratici hanno reclutato un secondo Dan Sullivan per le schede del Senato in Alaska al fine di confondere gli elettori. Tale affermazione segue un'indagine penale del Dipartimento di Giustizia, secondo quanto riportato da Fox News ed El País."
+        "en": {
+          "body": "The RNC stated that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot to confuse voters. This claim follows a criminal probe by the Department of Justice, according to Fox News and El País.",
+          "headline": "RNC calls Alaska Senate ballot strategy fraudulent"
         },
         "es": {
-          "headline": "El RNC califica de fraudulenta la estrategia de papeletas para el Senado en Alaska",
-          "body": "El RNC afirmó que los demócratas reclutaron a un segundo Dan Sullivan para la papeleta del Senado de Alaska con el fin de confundir a los votantes. Esta afirmación sigue a una investigación criminal del Departamento de Justicia, según Fox News y El País."
+          "body": "El RNC afirmó que los demócratas reclutaron a un segundo Dan Sullivan para la papeleta del Senado de Alaska con el fin de confundir a los votantes. Esta afirmación sigue a una investigación criminal del Departamento de Justicia, según Fox News y El País.",
+          "headline": "El RNC califica de fraudulenta la estrategia de papeletas para el Senado en Alaska"
+        },
+        "fr": {
+          "body": "Le RNC a affirmé que les démocrates ont recruté un second Dan Sullivan pour le scrutin du Sénat en Alaska afin de confondre les électeurs. Cette affirmation fait suite à une enquête criminelle du ministère de la Justice, selon Fox News et El País.",
+          "headline": "Le RNC qualifie de frauduleuse la stratégie de vote pour le Sénat en Alaska"
+        },
+        "it": {
+          "body": "L'RNC ha dichiarato che i Democratici hanno reclutato un secondo Dan Sullivan per le schede del Senato in Alaska al fine di confondere gli elettori. Tale affermazione segue un'indagine penale del Dipartimento di Giustizia, secondo quanto riportato da Fox News ed El País.",
+          "headline": "L'RNC definisce fraudolenta la strategia per le schede del Senato in Alaska"
         },
         "ja": {
-          "headline": "共和党全国委員会、アラスカ州上院選の投票戦略を「詐欺的」と非難",
-          "body": "共和党全国委員会（RNC）は、民主党が有権者を混乱させるため、アラスカ州上院選の投票用紙に2人目のダン・サリバンを擁立したと述べた。フォックスニュースとエル・パイスによると、この主張は司法省による刑事捜査に続くものである。"
-        },
-        "pt": {
-          "headline": "RNC classifica estratégia de boletim do Senado no Alasca como fraudulenta",
-          "body": "O RNC afirmou que os Democratas recrutaram um segundo Dan Sullivan para o boletim do Senado no Alasca para confundir os eleitores. Esta alegação segue-se a uma investigação criminal do Departamento de Justiça, segundo a Fox News e o El País."
-        },
-        "zh": {
-          "headline": "共和党全国委员会称阿拉斯加参议院选票策略涉嫌欺诈",
-          "body": "共和党全国委员会表示，民主党在阿拉斯加参议院选票中招募了第二位名为丹·萨利文的人员以误导选民。据福克斯新闻和《国家报》报道，这一指控是在司法部开展刑事调查之后提出的。"
+          "body": "共和党全国委員会（RNC）は、民主党が有権者を混乱させるため、アラスカ州上院選の投票用紙に2人目のダン・サリバンを擁立したと述べた。フォックスニュースとエル・パイスによると、この主張は司法省による刑事捜査に続くものである。",
+          "headline": "共和党全国委員会、アラスカ州上院選の投票戦略を「詐欺的」と非難"
         },
         "ko": {
-          "headline": "공화당 전국위원회, 알래스카 상원 투표 전략을 '사기'라고 비난",
-          "body": "공화당 전국위원회(RNC)는 민주당이 유권자들에게 혼란을 주기 위해 알래스카 상원 투표 용지에 두 번째 댄 설리번 후보를 영입했다고 밝혔다. 폭스 뉴스와 엘 파이스에 따르면, 이러한 주장은 법무부의 형사 조사가 진행 중인 가운데 제기되었다."
+          "body": "공화당 전국위원회(RNC)는 민주당이 유권자들에게 혼란을 주기 위해 알래스카 상원 투표 용지에 두 번째 댄 설리번 후보를 영입했다고 밝혔다. 폭스 뉴스와 엘 파이스에 따르면, 이러한 주장은 법무부의 형사 조사가 진행 중인 가운데 제기되었다.",
+          "headline": "공화당 전국위원회, 알래스카 상원 투표 전략을 '사기'라고 비난"
+        },
+        "pt": {
+          "body": "O RNC afirmou que os Democratas recrutaram um segundo Dan Sullivan para o boletim do Senado no Alasca para confundir os eleitores. Esta alegação segue-se a uma investigação criminal do Departamento de Justiça, segundo a Fox News e o El País.",
+          "headline": "RNC classifica estratégia de boletim do Senado no Alasca como fraudulenta"
+        },
+        "zh": {
+          "body": "共和党全国委员会表示，民主党在阿拉斯加参议院选票中招募了第二位名为丹·萨利文的人员以误导选民。据福克斯新闻和《国家报》报道，这一指控是在司法部开展刑事调查之后提出的。",
+          "headline": "共和党全国委员会称阿拉斯加参议院选票策略涉嫌欺诈"
         }
       },
       "sources": [
         {
-          "outlet": "Fox News",
-          "title": "RNC rejects narrative of spoiler candidates 'on both sides,' calls Alaska scheme 'fraudulent'",
           "url": "https://www.foxnews.com/politics/rnc-rejects-narrative-spoiler-candidates-both-sides-calls-alaska-scheme-fraudulent",
+          "title": "RNC rejects narrative of spoiler candidates 'on both sides,' calls Alaska scheme 'fraudulent'",
+          "outlet": "Fox News",
           "publishedAt": "2026-10-30T10:00:43.000Z"
         },
         {
-          "outlet": "El PaÃ­s",
-          "title": "Democratic maneuvers in Alaska give Trump ammunition to disregard election results",
           "url": "https://english.elpais.com/usa/2026-10-30/democratic-maneuvers-in-alaska-give-trump-ammunition-to-disregard-election-results.html",
+          "title": "Democratic maneuvers in Alaska give Trump ammunition to disregard election results",
+          "outlet": "El PaÃ­s",
           "publishedAt": "2026-10-30T09:51:30.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1793342319000-essg",
       "at": "2026-10-30T06:38:39.000Z",
+      "id": "u-1793342319000-essg",
       "kind": "statement",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Donald Trump cancels two midterm election rallies",
-          "body": "The Republican Party stated on 30 October that President Donald Trump is scrapping two of his final rallies. Al Jazeera reported the cancellations occurred four days before the midterm elections."
-        },
-        "fr": {
-          "headline": "Donald Trump annule deux meetings pour les élections de mi-mandat",
-          "body": "Le Parti républicain a déclaré le 30 octobre que le président Donald Trump supprime deux de ses derniers meetings. Al Jazeera a rapporté que ces annulations sont intervenues quatre jours avant les élections de mi-mandat."
-        },
         "de": {
-          "headline": "Donald Trump sagt zwei Wahlkampfveranstaltungen zu den Zwischenwahlen ab",
-          "body": "Die Republikanische Partei gab am 30. Oktober bekannt, dass Präsident Donald Trump zwei seiner letzten Kundgebungen streicht. Al Jazeera berichtete, dass die Absagen vier Tage vor den Zwischenwahlen erfolgten."
+          "body": "Die Republikanische Partei gab am 30. Oktober bekannt, dass Präsident Donald Trump zwei seiner letzten Kundgebungen streicht. Al Jazeera berichtete, dass die Absagen vier Tage vor den Zwischenwahlen erfolgten.",
+          "headline": "Donald Trump sagt zwei Wahlkampfveranstaltungen zu den Zwischenwahlen ab"
         },
-        "it": {
-          "headline": "Donald Trump annulla due rally per le elezioni di metà mandato",
-          "body": "Il Partito Repubblicano ha dichiarato il 30 ottobre che il presidente Donald Trump annullerà due dei suoi ultimi rally. Al Jazeera ha riferito che le cancellazioni sono avvenute quattro giorni prima delle elezioni di metà mandato."
-        },
-        "pt": {
-          "headline": "Donald Trump cancela dois comícios para as eleições de meio de mandato",
-          "body": "O Partido Republicano afirmou, a 30 de outubro, que o Presidente Donald Trump está a cancelar dois dos seus últimos comícios. A Al Jazeera reportou que os cancelamentos ocorreram quatro dias antes das eleições de meio de mandato."
+        "en": {
+          "body": "The Republican Party stated on 30 October that President Donald Trump is scrapping two of his final rallies. Al Jazeera reported the cancellations occurred four days before the midterm elections.",
+          "headline": "Donald Trump cancels two midterm election rallies"
         },
         "es": {
-          "headline": "Donald Trump cancela dos mítines de las elecciones de mitad de mandato",
-          "body": "El Partido Republicano declaró el 30 de octubre que el presidente Donald Trump cancela dos de sus últimos mítines. Al Jazeera informó que las cancelaciones ocurrieron cuatro días antes de las elecciones de mitad de mandato."
+          "body": "El Partido Republicano declaró el 30 de octubre que el presidente Donald Trump cancela dos de sus últimos mítines. Al Jazeera informó que las cancelaciones ocurrieron cuatro días antes de las elecciones de mitad de mandato.",
+          "headline": "Donald Trump cancela dos mítines de las elecciones de mitad de mandato"
         },
-        "zh": {
-          "headline": "唐纳德·特朗普取消两场中期选举集会",
-          "body": "共和党于10月30日表示，总统唐纳德·特朗普将取消最后两场集会。半岛电视台报道称，此次取消发生在中期选举前四天。"
+        "fr": {
+          "body": "Le Parti républicain a déclaré le 30 octobre que le président Donald Trump supprime deux de ses derniers meetings. Al Jazeera a rapporté que ces annulations sont intervenues quatre jours avant les élections de mi-mandat.",
+          "headline": "Donald Trump annule deux meetings pour les élections de mi-mandat"
         },
-        "ko": {
-          "headline": "도널드 트럼프, 중간선거 유세 집회 두 건 취소",
-          "body": "공화당은 10월 30일 도널드 트럼프 대통령이 마지막 유세 집회 중 두 건을 취소한다고 밝혔다. 알자지라는 이번 취소가 중간선거를 나흘 앞두고 발생했다고 보도했다."
+        "it": {
+          "body": "Il Partito Repubblicano ha dichiarato il 30 ottobre che il presidente Donald Trump annullerà due dei suoi ultimi rally. Al Jazeera ha riferito che le cancellazioni sono avvenute quattro giorni prima delle elezioni di metà mandato.",
+          "headline": "Donald Trump annulla due rally per le elezioni di metà mandato"
         },
         "ja": {
-          "headline": "ドナルド・トランプ氏、中間選挙に向けた集会2回を中止",
-          "body": "共和党は10月30日、ドナルド・トランプ大統領が最後となる集会のうち2回を中止すると発表した。アルジャジーラは、この中止が中間選挙の4日前に決定したと報じた。"
+          "body": "共和党は10月30日、ドナルド・トランプ大統領が最後となる集会のうち2回を中止すると発表した。アルジャジーラは、この中止が中間選挙の4日前に決定したと報じた。",
+          "headline": "ドナルド・トランプ氏、中間選挙に向けた集会2回を中止"
+        },
+        "ko": {
+          "body": "공화당은 10월 30일 도널드 트럼프 대통령이 마지막 유세 집회 중 두 건을 취소한다고 밝혔다. 알자지라는 이번 취소가 중간선거를 나흘 앞두고 발생했다고 보도했다.",
+          "headline": "도널드 트럼프, 중간선거 유세 집회 두 건 취소"
+        },
+        "pt": {
+          "body": "O Partido Republicano afirmou, a 30 de outubro, que o Presidente Donald Trump está a cancelar dois dos seus últimos comícios. A Al Jazeera reportou que os cancelamentos ocorreram quatro dias antes das eleições de meio de mandato.",
+          "headline": "Donald Trump cancela dois comícios para as eleições de meio de mandato"
+        },
+        "zh": {
+          "body": "共和党于10月30日表示，总统唐纳德·特朗普将取消最后两场集会。半岛电视台报道称，此次取消发生在中期选举前四天。",
+          "headline": "唐纳德·特朗普取消两场中期选举集会"
         }
       },
       "sources": [
         {
-          "outlet": "Al Jazeera",
-          "title": "US midterms: 4 days to go – What the polls say as Trump cancels two rallies",
           "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPYzZHYkc5SWNGUjZUWk9GOEN4WlpGR01QTGNzMnQ5c1BBSGxiTXZJRDRRR2RWbjhhc2VVaTNBbV9PaDZ4OWxTZThXdGN2LWFzYnN6NWFhb3FQWU5sZHhfSDFaZkZXYUttTmo0N3liM3Jwd3NvenNydjRUTmtNQzdUN19EcWYyYnhfLXY0TmFlNTQwaWREa0daOEdiWHFabEY3dlBwdTVmZE41OFRiRmVaYl9BSkbSAboBQVVfeXFMT1RTa1RLUTZsTUxra1FmcmRsajM3dnMweENFOTBDSG9HOHYzLW9QN0xzdEVxTVZmVUszRGVYQXViZ1BUaUtwYmNPY0xRYUd0T2l0NW4xd3BQRWRMVGRGQkJlT3p3UzZxUG03VmF5cml3SmVXS0U1NFZhX2RCLXV6Q3lNaFpSZHNGVGVqSkpCY0FtX01pMVI4RHlneEI5TUVTS0IwOGtPRU1TNDRiTUdncERYOFl5Q1pYQzFn?oc=5",
+          "title": "US midterms: 4 days to go – What the polls say as Trump cancels two rallies",
+          "outlet": "Al Jazeera",
           "publishedAt": "2026-10-30T06:38:39.000Z"
         },
         {
-          "outlet": "Dawn",
-          "title": "'You are disgusting': Trump lashes out at reporter as he cancels weekend rallies ahead of midterm polls",
           "url": "https://www.dawn.com/news/2040934/you-are-disgusting-trump-lashes-out-at-reporter-as-he-cancels-weekend-rallies-ahead-of-midterm-polls",
+          "title": "'You are disgusting': Trump lashes out at reporter as he cancels weekend rallies ahead of midterm polls",
+          "outlet": "Dawn",
           "publishedAt": "2026-10-30T06:35:43.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-30T01:30:46.000Z",
@@ -1160,14 +1499,91 @@
     "https://thehill.com/homenews/campaign/6181812-hamilton-marshall-kansas-senate-poll/",
     "https://www.faz.net/aktuell/feuilleton/debatten/us-midterms-kann-ein-christlicher-demokrat-texas-gewinnen-201632214.html",
     "https://www.axios.com/2026/10/30/2028-democrats-ai-hate-regulation-messaging",
-    "https://news.google.com/rss/articles/CBMib0FVX3lxTE5odEtoZExTeGQ2S21CMWN2bzFqREpSZ3E1dEtPUEotalozT1NRUFRsUThvOXVBNF8wMFpFeDhzMFBOdVdzcFdVLTZsWGxEMXNpb0poYXVuTG1YY1ZldW5iYzZ5R0w0amFwYmFCX0hhNA?oc=5"
+    "https://news.google.com/rss/articles/CBMib0FVX3lxTE5odEtoZExTeGQ2S21CMWN2bzFqREpSZ3E1dEtPUEotalozT1NRUFRsUThvOXVBNF8wMFpFeDhzMFBOdVdzcFdVLTZsWGxEMXNpb0poYXVuTG1YY1ZldW5iYzZ5R0w0amFwYmFCX0hhNA?oc=5",
+    "https://thehill.com/homenews/senate/6185545-ted-cruz-warns-gop-losses/",
+    "https://www.scmp.com/news/us/us-elections/article/3372799/us-democrats-prepare-counter-any-trump-claim-foreign-meddling-midterms",
+    "https://www.france24.com/en/first-youth-olympic-games-in-africa",
+    "https://www.nytimes.com/2026/10/30/us/politics/iowa-senate-race-josh-turek.html",
+    "https://thehill.com/homenews/6185126-2way-midterm-election-preview-the-hill/",
+    "https://www.bbc.co.uk/news/articles/cmwyq2gg1yzzo?at_medium=RSS&at_campaign=rss",
+    "https://www.jpost.com/israel-news/article-913360",
+    "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxPa2d4Xzdia2F3T3oxSmpXTHJkdEs0eWJwR0tyYV84aEZaRzNmTnU2Z1EzMGJ2dlZCV1dzQXpmMDlNTHl4WGlTRjJlQnFXZW1zazEwTC1IaDhqTXVCZlJhNmdpVWoyWHY5empZUDE5M0hDMGZiMHN6VGljUGl1dEYxNHZLbWtZR1plUnNLQTZUcVpzNGFUb3AxTnZpRk01M2FVakpBcA?oc=5",
+    "https://thehill.com/homenews/campaign/6185025-minnesota-louisiana-senate-race-democrats-chances/",
+    "https://www.zdfheute.de/politik/ausland/midterms-geld-musk-trump-republikaner-demokraten-100.html",
+    "https://www.kyivpost.com/post/88710",
+    "https://www.zeit.de/politik/ausland/2026-10/fruehwahl-usa-midterms-early-voting-texas-north-carolina-repraesentantenhaus-senat",
+    "https://www.nytimes.com/2026/10/30/us/politics/progressive-democrats-congress-2026.html",
+    "https://thehill.com/homenews/campaign/6185014-abdul-el-sayed-donald-trump-lie-detector-test-midterms-michigan/",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxQTlk4Z2E5YUVpeDlxTEV2WHBGY1pGOUJ4UUVFN1hTUkVZMUpRNFdtejQ4OF9RbURfdWNTTVRCY290U21SUnlCRDVmRzA0SG51aGFMWlhZNVNsU0xFTlE1TGh2cGdSSE9fLXJWblY4Rk9OLTRlb1VtTTRIdUdReUhQZGQwdUxsVi14T3JiWHdYaEdCSnVobzBUMDdMNGpqUQ?oc=5",
+    "https://www.cnbc.com/2026/10/30/reid-hoffman-democrats-epstein-midterms-2026.html",
+    "https://www.straitstimes.com/world/united-states/surging-cost-of-living-tops-us-voter-concerns",
+    "https://www.foxnews.com/politics/governor-probing-decoy-dan-sullivan-election-scandal-warns-system-flaw-hiding-plain-sight",
+    "https://news.google.com/rss/articles/CBMickFVX3lxTE9QdGZfOEhrT0VFWFJUX3R4bVNlTTFteUhzUUZkb0RZZWYwcnU5T2NTWTJhNHh0T1lzc3NLd0ctdkpsa3U1S1N1cjRrV0hCUTlBODFzUDJkamZKdlhLbWNDMWJLMmpodmstQk9hN3RuVXM5UQ?oc=5",
+    "https://thehill.com/homenews/campaign/6184277-gop-rep-calls-south-carolina-race-embarrassing/"
   ],
   "startedAt": "2026-10-29T17:37:50.922Z",
-  "updatedAt": "2026-10-30T13:51:51.594Z",
+  "updatedAt": "2026-10-30T22:41:01.952Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-midterm-elections",
-  "sourceCount": 15,
+  "sourceCount": 17,
+  "statsHistory": [
+    {
+      "at": "2026-10-27T09:10:00.000Z",
+      "rows": [
+        {
+          "key": "potential-gop-senate-seat-losses",
+          "value": 8
+        },
+        {
+          "key": "senate-races-shifting-to-democrats",
+          "value": 2
+        },
+        {
+          "key": "early-voters-concerned-about-economy",
+          "value": 80
+        },
+        {
+          "key": "early-votes-millions",
+          "value": 47.9
+        },
+        {
+          "key": "early-votes-2022-record-millions",
+          "value": 45.9
+        },
+        {
+          "key": "donation-to-wisconsin-dems-million",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T09:10:00.000Z",
+      "rows": [
+        {
+          "key": "potential-gop-senate-seat-losses",
+          "value": 8
+        },
+        {
+          "key": "early-votes-in-2026-midterms",
+          "value": 47.9
+        },
+        {
+          "key": "early-votes-2022-record",
+          "value": 45.9
+        },
+        {
+          "key": "early-voters-concerned-about-economy",
+          "value": 80
+        },
+        {
+          "key": "donation-to-wisconsin-democrats",
+          "value": 8
+        }
+      ]
+    }
+  ],
   "seenHeadlines": [
     "Vice President Vance campaigns for Ken Paxton in Texas"
   ]

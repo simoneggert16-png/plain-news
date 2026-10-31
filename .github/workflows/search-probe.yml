@@ -1,0 +1,33 @@
+name: Search probe
+
+# Which research backends answer from a runner?
+#
+# The desk researches on GitHub Actions, so from a datacenter address. A
+# search engine that answers a browser at home may refuse the runner, and the
+# desk then believes the world has nothing on the story. This workflow asks
+# every candidate the same question and prints what came back, so the desk is
+# wired to the backends that answer where it actually runs.
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: 'Search words to ask every backend for'
+        type: string
+        required: false
+        default: 'activision itaewon crowd crush footage'
+
+concurrency:
+  group: search-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Ask every backend the same question
+        run: node scripts/probe-search.mjs "${{ inputs.query || 'activision itaewon crowd crush footage' }}"
