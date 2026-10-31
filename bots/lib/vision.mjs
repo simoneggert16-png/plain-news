@@ -43,7 +43,7 @@ const BANNED_CAPTION_PATTERNS = [
 // unsure model, "identity not 100% certain", a timeout) keeps the image with
 // the original wire caption instead.
 const HARD_REJECT_PATTERNS =
-  /(screenshot|screen\s*capture|studio|anchor|talking\s*head|tv\s*graphic|lower[- ]third|logo|watermark|illustration|stock\s*(?:photo|image)|placeholder|banner|thumbnail|headshot|cartoon|diagram|no\s*image|not\s*an?\s*(?:photo|image))/i;
+  /(screenshot|screen\s*capture|studio|anchor|talking\s*head|tv\s*graphic|lower[- ]third|logo|watermark|illustration|stock\s*(?:photo|image)|placeholder|banner|thumbnail|headshot|cartoon|diagram|no\s*image|not\s*an?\s*(?:photo|image)|poster|placard|signboard|billboard|notice\s*board|leaflet|flyer)/i;
 
 function isDisqualifiedCaption(captionObj) {
   if (!captionObj) return true;
@@ -159,6 +159,7 @@ CRITICAL ACCURACY & IDENTITY RULES:
 2. If an ORIGINAL PHOTOJOURNALIST CAPTION is provided above, you MUST treat it as authoritative ground truth regarding WHO is depicted. Translate and adapt that caption cleanly into German and English.
 3. If no wire caption is available and you are not 100% certain of an individual's name, describe what is visibly happening (e.g. "AfD-Politiker auf einer Wahlbühne", "Abgeordnete im Plenarsaal", "Demonstranten vor dem Regierungsgebäude"). NEVER hallucinate or guess a politician's name from the headline!
 4. Automatic rejection: reject TV studio screenshots, news anchor talking heads, lower-third graphics, stock illustrations, or blurred logos.
+5. Automatic rejection: if the main subject of the picture is a sign, poster, placard or notice board (for example an "Ebola alert" poster with pictogram figures), reject it and name the reason "poster/sign". A reader wants to see the people, the place or the action - not a board that hangs in the scene. A photo of people holding signs at a protest is not that: it stays.
 
 If verified is true, write a calm, factual caption in German and English accurately describing what is depicted.
 Determine image credit (e.g. ${sourceCredit || 'Reuters / AP / AFP'}).

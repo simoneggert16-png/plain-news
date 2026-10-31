@@ -31,7 +31,7 @@ if (fs.existsSync('.env')) {
 import { chatJSON, setDeadline, deadlineLeft } from './lib/llm.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
 import { DESK_FEEDS } from './sources.mjs';
-import { googleNews, bingNews, webSearch, wideSearch } from './lib/search.mjs';
+import { googleNews, bingNews, webSearch, wideSearch, documentSearch, archivedCopy, NEWS_EDITIONS } from './lib/search.mjs';
 import { filingCabinets, pressAddressFor, publishedEmail, cabinetFrontPage } from './lib/lookup.mjs';
 import { institutionalDocuments, namedTerms, BOILERPLATE } from './lib/documents.mjs';
 import { openPage } from './lib/browse.mjs';
@@ -1131,7 +1131,19 @@ async function researchAgent(d) {
   // What the desk read is part of the dossier's paper trail. Filing it here
   // means a run cannot end with "I read a lot" and nothing on file.
   const readPage = async (target, maxChars = 7000) => {
-    const page = await openPage(target, { maxChars });
+    let page = await openPage(target, { maxChars });
+    // A document that has been taken down is not a document that does not
+    // exist: the archive kept a copy, and the desk can cite that.
+    if (page.error && !page.text) {
+      const copies = await archivedCopy(target, { limit: 1 }).catch(() => []);
+      const copy = copies[0];
+      if (copy?.url) {
+        const archived = await openPage(copy.url, { maxChars });
+        if (!archived.error && archived.text) {
+          page = { ...archived, title: archived.title || copy.title, viaArchive: true };
+        }
+      }
+    }
     if (page.error && !page.text) return { url: target, error: page.error };
     cache.set(target, page);
     addSource(d, { url: target, outlet: hostOf(target), title: page.title || target, publishedAt: null }, { kind: 'read' });
@@ -1143,6 +1155,7 @@ async function researchAgent(d) {
       text: page.text,
       links: (page.links || []).slice(0, 20),
       sourceId: src?.id || null,
+      ...(page.viaArchive ? { note: 'the page was gone; the text comes from the archive copy' } : {}),
       ...(page.pdf ? { document: 'PDF — text extracted, cite page-level detail only as printed' } : {}),
     };
   };
@@ -1151,7 +1164,7 @@ async function researchAgent(d) {
     {
       name: 'search',
       args: '{"query": string}',
-      description: 'Search the desk wire (world broadcasters, wires, official sources), the filing cabinets (US Justice Department, UN newsroom, World Bank procurement) and the wide web. The first two hits are opened and filed automatically; their text comes back in "opened" with a source id. Read that text and record the claims it supports.',
+      description: 'Search the desk wire (world broadcasters, wires, official sources), the news index in every country edition, the filing cabinets (US Justice Department, UN newsroom, World Bank procurement), the document registries (company filings, government notices, recorded crypto losses) and the wide web. The first two hits are opened and filed automatically; their text comes back in "opened" with a source id. Read that text and record the claims it supports.',
       run: async ({ query }) => {
         const q = String(query || '').trim().slice(0, 120);
         if (q.length < 3) return { error: 'query too short' };
@@ -1181,15 +1194,19 @@ async function researchAgent(d) {
         // The aggregators are thin from CI, not the topic, so the bare-words
         // query goes out in parallel instead of after a 25-second timeout.
         const short = termsOf(q).slice(0, 4).join(' ').trim();
-        const [primary, bare, cabinets, wide] = await Promise.all([
-          webSearch(q, { limit: 12 }).catch(() => []),
+        const [primary, bare, cabinets, wide, papers] = await Promise.all([
+          // The news index in every edition: a story is written where it
+          // happens, and the desk needs the outlets of that country.
+          webSearch(q, { limit: 12, editions: NEWS_EDITIONS }).catch(() => []),
           short && short.toLowerCase() !== q.toLowerCase()
             ? webSearch(short, { limit: 12 }).catch(() => [])
             : Promise.resolve([]),
           filingCabinets(q, { limit: 10 }).catch(() => []),
           wideSearch(q, { limit: 10 }).catch(() => []),
+          documentSearch(q, { limit: 8 }).catch(() => []),
         ]);
         collect(cabinets);
+        collect(papers);
         collect(primary);
         collect(wide);
         if (hits.length < 3) collect(bare);
@@ -1215,7 +1232,7 @@ async function researchAgent(d) {
           return { outlet: h.outlet || hostOf(h.url), url: h.url, sourceId: src?.id || null, title: page.title || h.title, text: page.text.slice(0, 900) };
         }))).filter(Boolean);
 
-        const results = order.slice(0, 10).map((h) => ({ title: String(h.title || '').slice(0, 90), url: h.url, outlet: h.outlet, primary: !!h.primary }));
+        const results = order.slice(0, 14).map((h) => ({ title: String(h.title || '').slice(0, 90), url: h.url, outlet: h.outlet, primary: !!h.primary }));
         const wireN = fromWire.filter((w) => seen.has(w.url)).length;
         const docsN = results.filter((r) => r.primary).length;
         // One note, not three: the model reads the last value it gets, so the
