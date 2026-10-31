@@ -6,17 +6,17 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-31T06:33:27.688Z",
-  "updatedAt": "2026-10-31T14:03:35.180Z",
+  "updatedAt": "2026-10-31T14:28:35.098Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "us-midterms-2026",
   "stats": {
     "label": "US 2026 Midterm Election Stats",
-    "note": "Key financial contributions and public opinion metrics for the 2026 US midterm elections.",
+    "note": "Key statistics on public sentiment, campaign finance, and polling for the 2026 US midterm elections.",
     "unit": "",
     "max": null,
     "asOf": "2026-10-31T09:10:00.000Z",
-    "updatedAt": "2026-10-31T14:01:55.016Z",
+    "updatedAt": "2026-10-31T14:22:25.737Z",
     "source": {
       "outlet": "CNBC",
       "title": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
@@ -32,14 +32,20 @@
         "value": 82,
         "change": null,
         "locales": {
+          "de": {
+            "label": "Ablehnung von Trump"
+          },
           "fr": {
             "label": "Incrédulité envers Trump"
+          },
+          "es": {
+            "label": "Desaprobación de Trump"
           },
           "it": {
             "label": "Disapprovazione di Trump"
           },
-          "de": {
-            "label": "Ablehnung von Trump"
+          "pt": {
+            "label": "Desaprovação de Trump"
           },
           "zh": {
             "label": "对特朗普的不满"
@@ -49,12 +55,6 @@
           },
           "ko": {
             "label": "트럼프에 대한 불인정"
-          },
-          "pt": {
-            "label": "Desaprovação de Trump"
-          },
-          "es": {
-            "label": "Desaprobación de Trump"
           }
         }
       },
@@ -64,14 +64,20 @@
         "value": 446,
         "change": null,
         "locales": {
+          "de": {
+            "label": "Spende von Elon Musk"
+          },
           "fr": {
             "label": "Dons d'Elon Musk"
+          },
+          "es": {
+            "label": "Donación de Elon Musk"
           },
           "it": {
             "label": "Donazione di Elon Musk"
           },
-          "de": {
-            "label": "Spende von Elon Musk"
+          "pt": {
+            "label": "Doação de Elon Musk"
           },
           "zh": {
             "label": "埃隆·马斯克捐款"
@@ -81,12 +87,6 @@
           },
           "ko": {
             "label": "엘론 머스크 기부"
-          },
-          "pt": {
-            "label": "Doação de Elon Musk"
-          },
-          "es": {
-            "label": "Donación de Elon Musk"
           }
         }
       },
@@ -96,14 +96,20 @@
         "value": 200,
         "change": null,
         "locales": {
+          "de": {
+            "label": "Spende der Kryptoindustrie"
+          },
           "fr": {
             "label": "Dons de l'industrie crypto"
+          },
+          "es": {
+            "label": "Donación de la industria cripto"
           },
           "it": {
             "label": "Donazione dell'industria crypto"
           },
-          "de": {
-            "label": "Spende der Kryptoindustrie"
+          "pt": {
+            "label": "Doação da indústria cripto"
           },
           "zh": {
             "label": "加密行业捐款"
@@ -113,12 +119,6 @@
           },
           "ko": {
             "label": "암호화폐 산업 기부"
-          },
-          "pt": {
-            "label": "Doação da indústria cripto"
-          },
-          "es": {
-            "label": "Donación de la industria cripto"
           }
         }
       },
@@ -128,14 +128,20 @@
         "value": 1000,
         "change": null,
         "locales": {
+          "de": {
+            "label": "Gesamtsumme der Spenden von Megadonnor*innen"
+          },
           "fr": {
             "label": "Dons totaux des mégadonateurs"
+          },
+          "es": {
+            "label": "Donación total de megadónantes"
           },
           "it": {
             "label": "Totale donazioni dei megadonnatori"
           },
-          "de": {
-            "label": "Gesamtsumme der Spenden von Megadonnor*innen"
+          "pt": {
+            "label": "Doação total dos megadoadores"
           },
           "zh": {
             "label": "巨额捐赠者总捐款"
@@ -145,52 +151,90 @@
           },
           "ko": {
             "label": "메가 기부자 총 기부액"
+          }
+        }
+      },
+      {
+        "key": "ricketts-lead-over-osborn",
+        "label": "Ricketts lead over Osborn",
+        "value": 6,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Ricketts führt über Osborn"
+          },
+          "fr": {
+            "label": "Avantage de Ricketts sur Osborn"
           },
           "pt": {
-            "label": "Doação total dos megadoadores"
+            "label": "Ricketts lidera sobre Osborn"
+          },
+          "zh": {
+            "label": "里克特斯领先奥斯本"
+          },
+          "ko": {
+            "label": "리켓츠가 오스본을 앞서고 있다"
+          },
+          "ja": {
+            "label": "リケットスがオズボーンに優位"
+          },
+          "it": {
+            "label": "Ricketts in vantaggio su Osborn"
           },
           "es": {
-            "label": "Donación total de megadónantes"
+            "label": "Ricketts lidera sobre Osborn"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "US 2026 Zwischenwahlen-Statistiken",
-        "note": "Wichtige finanzielle Beiträge und öffentliche Meinungskennzahlen für die US-Zwischenwahlen 2026."
+        "label": "US 2026 Zwischenwahl-Statistiken",
+        "note": "Wichtige Kennzahlen zu öffentlicher Stimmung, Wahlkampffinanzierung und Umfragen für die US-Wahlen 2026."
       },
       "fr": {
-        "label": "Statistiques des élections de mi-mandat 2026 aux États-Unis",
-        "note": "Contributions financières clés et indicateurs d'opinion publique pour les élections de mi-mandat 2026 aux États-Unis."
+        "label": "Statistiques des élections de mi-mandat américaines 2026",
+        "note": "Statistiques clés sur le sentiment public, le financement des campagnes et les sondages pour les élections de mi-mandat américaines 2026."
       },
       "es": {
-        "label": "Estadísticas de las elecciones de mitad de mandato de EE. UU. 2026",
-        "note": "Principales aportaciones financieras y métricas de opinión pública para las elecciones de mitad de mandato de EE. UU. 2026."
+        "label": "Estadísticas de las elecciones de mitad de mandato de EE. UU. 2026",
+        "note": "Estadísticas clave sobre el sentimiento público, la financiación de campañas y las encuestas para las elecciones de mitad de mandato de EE. UU. 2026."
       },
       "it": {
-        "label": "Statistiche Elezioni di metà mandato 2026 negli Stati Uniti",
-        "note": "Contributi finanziari chiave e metriche dell'opinione pubblica per le elezioni di metà mandato degli Stati Uniti del 2026."
+        "label": "Statistiche sulle elezioni di metà mandato del 2026 negli USA",
+        "note": "Statistiche chiave sul sentiment pubblico, la finanza delle campagne e i sondaggi per le elezioni di metà mandato del 2026 negli USA."
       },
       "pt": {
-        "label": "Eleições de meio de mandato dos EUA 2026",
-        "note": "Principais contribuições financeiras e métricas de opinião pública para as eleições de meio de mandato dos EUA de 2026."
+        "label": "Estatísticas das Eleições de Meio de Mandato dos EUA de 2026",
+        "note": "Estatísticas chave sobre o sentimento público, financiamento de campanha e pesquisas para as eleições de meio de mandato dos EUA de 2026."
       },
       "zh": {
-        "label": "美国2026年中期选举统计",
-        "note": "2026年美国中期选举的主要财政捐款和公众舆论指标。"
+        "label": "2026年美国中期选举统计",
+        "note": "关于2026年美国中期选举的公众情绪、竞选融资和民意调查的关键统计数据。"
       },
       "ja": {
         "label": "米国2026年中間選挙統計",
-        "note": "2026年米国中間選挙に関する主要な財政寄付と世論指標"
+        "note": "2026年米国中間選挙に関する世論、選挙資金、世論調査の主要統計データ"
       },
       "ko": {
         "label": "미국 2026년 중간선거 통계",
-        "note": "2026년 미국 중간선거를 위한 주요 재정 기여 및 여론 지표."
+        "note": "2026년 미국 중간선거에 대한 여론, 캠페인 자금, 여론 조사에 관한 핵심 통계."
       }
     }
   },
   "sources": [
+    {
+      "outlet": "The Hill",
+      "title": "Ricketts leads independent candidate Osborn by 6 points in latest Nebraska Senate poll",
+      "url": "https://thehill.com/homenews/campaign/6186054-ricketts-osborn-nebraska-senate/",
+      "publishedAt": "2026-10-31T14:03:52.000Z"
+    },
+    {
+      "outlet": "MarketWatch",
+      "title": "Your stock portfolio increasingly hinges on the bond market — and the midterm elections",
+      "url": "https://www.marketwatch.com/story/your-stock-portfolio-increasingly-hinges-on-the-bond-market-and-the-midterm-elections-dc1abadb?mod=mw_rss_topstories",
+      "publishedAt": "2026-10-31T14:03:00.000Z"
+    },
     {
       "outlet": "The Jerusalem Post",
       "title": "France braces for renewed nationwide protests as Macron's government vows tough response",
@@ -279,39 +323,95 @@
   "locales": {
     "en": {
       "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
-      "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
+      "dek": "Melaka election begins; judge blocks DOJ threats; US approves missile sale; Trump may strike Iran; Alaska race has duplicate names; early voting hits 43 million.",
       "facts": [
-        "US approved $2.1bn Patriot missile sale to Ukraine",
-        "Federal judge in California blocked Trump DOJ threats against election officials",
+        "US approves $2.1bn Patriot missile sale to Ukraine",
+        "Federal judge blocks Trump DOJ threats against election officials",
         "Melaka state election campaign began Saturday",
         "Trump may order major Iran strike after midterms",
         "Alaska Senate race features two candidates with same name",
         "More than 43 million Americans voted early in the 2026 midterms"
       ],
       "body": [
-        "According to the Times of India, a Democratic win in the 2026 U.S. midterm elections could affect trade relations with India. Al Jazeera reported that more than 43 million Americans voted early in the midterms. The early voting trend reflects high participation in the election scheduled for November 3, 2026.",
-        "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims. Fox News reported the ruling, and The Hill also covered the decision. The judge’s order was issued on October 31, 2026.",
-        "The United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion. Al Jazeera reported the approval, and Dawn also confirmed the transaction. The sale was announced on October 31, 2026.",
-        "Melaka state election campaign began on Saturday, according to South China Morning Post. The election is being used as a test for Anwar Ibrahim’s coalition, according to CNA. The campaign started on October 31, 2026.",
-        "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms. Anadolu Ajansı reported that Trump may order a major Iran strike if Republicans suffer losses in the midterm election. The reports were published on October 31, 2026.",
-        "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race. G1 reported that two candidates with the same name were contesting the seat, irritating Trump. The reports were released on October 31, 2026."
+        "The campaign began Saturday, according to South China Morning Post, and it is a test for Anwar Ibrahim’s coalition, according to CNA. The election covers 79 seats.",
+        "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News, and the ruling was also reported by The Hill. The order was issued on October 31.",
+        "The United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion, according to Al Jazeera, and Dawn also confirmed the transaction. The approval was announced on October 31.",
+        "Trump may order a major Iran strike as soon as one day after the midterms, according to Haaretz, and Anadolu Ajansı reported that Trump may order a major Iran strike if Republicans suffer losses in the midterm election. The reports were published on October 31.",
+        "The Alaska Senate race features two candidates with the same name, according to Fox News, and G1 said the candidates were contesting the seat, irritating Trump. The reports were released on October 31.",
+        "More than 43 million Americans voted early in the 2026 midterms, according to Al Jazeera, and Times of India said a Democratic win could affect trade relations with India. The early voting trend reflects high participation."
       ],
       "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
       "imageCaption": ""
     },
     "de": {
-      "title": "Richter blockiert Drohungen des DOJ-Trump gegen Wahlbeamte",
-      "dek": "",
-      "facts": [],
-      "body": [],
-      "context": ""
+      "title": "Bundesrichter blockiert Trump-DOJ-Bedrohungen gegen Wahlbeamte",
+      "dek": "Melaka-Wahl beginnt; Bundesrichter blockiert Trump-DOJ-Bedrohungen; USA genehmigen Raketenverkauf; Trump könnte Iran angreifen; Alaska-Wettbewerb hat doppelte Namen; Frühwahl erreicht 43 Millionen.",
+      "facts": [
+        "USA genehmigen Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine",
+        "Bundesrichter blockiert Trump-DOJ-Bedrohungen gegen Wahlbeamte",
+        "Melaka-Wahlkampagne begann am Samstag",
+        "Trump könnte einen großen Iranangriff einleiten nach den Zwischenwahlen",
+        "Alaska-Senat-Wettbewerb umfasst zwei Kandidaten mit demselben Namen",
+        "Mehr als 43 Millionen Amerikaner haben bei den 2026‑Zwischenwahlen frühzeitig abgestimmt"
+      ],
+      "body": [
+        "Die Wahlkampagne begann am Samstag, laut South China Morning Post, und ist ein Test für die Koalition von Anwar Ibrahim, laut CNA. Die Wahl umfasst 79 Sitze.",
+        "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, Wahlbeamte nicht wegen angeblicher Nichtbürgerstimmen mit strafrechtlicher Verfolgung zu bedrohen, laut Fox News; das Urteil wurde ebenfalls von The Hill berichtet. Der Beschluss wurde am 31. Oktober erlassen.",
+        "Die USA genehmigten einen Verkauf von Patriot-Raketen an die Ukraine im Gesamtwert von 2,1 Mrd. USD, laut Al Jazeera; Dawn bestätigte die Transaktion ebenfalls. Die Genehmigung wurde am 31. Oktober bekannt gegeben.",
+        "Trump könnte einen großen Iranangriff einleiten, sobald ein Tag nach den Zwischenwahlen, laut Haaretz; Anadolu Ajansı berichtete, dass Trump einen großen Iranangriff einleiten könnte, wenn die Republikaner Verluste bei den Zwischenwahlen erleiden. Die Berichte wurden am 31. Oktober veröffentlicht.",
+        "Der Alaska-Senat-Wettbewerb umfasst zwei Kandidaten mit demselben Namen, laut Fox News; G1 sagte, die Kandidaten würden den Sitz anfechten, was Trump irritiert. Die Berichte wurden am 31. Oktober veröffentlicht.",
+        "Mehr als 43 Millionen Amerikaner haben bei den 2026‑Zwischenwahlen frühzeitig abgestimmt, laut Al Jazeera; die Times of India sagte, ein demokratischer Sieg könnte die Handelsbeziehungen mit Indien beeinflussen. Der Trend der Frühwahl spiegelt hohe Beteiligung wider."
+      ],
+      "context": "Die USA‑Zwischenwahlen 2026 sind für den 3. November 2026 geplant und betreffen alle 435 Sitze im Repräsentantenhaus und 34 Sitze im Senat. Die Wahlen werden beobachtet, um mögliche Veränderungen in Politik und internationalen Beziehungen zu erkennen."
     }
   },
   "history": [
     {
+      "at": "2026-10-31T12:54:22.114Z",
+      "reason": "1 new update(s)",
+      "locales": {
+        "en": {
+          "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
+          "body": [
+            "According to the Times of India, a Democratic win in the 2026 U.S. midterm elections could affect trade relations with India. Al Jazeera reported that more than 43 million Americans voted early in the midterms. The early voting trend reflects high participation in the election scheduled for November 3, 2026.",
+            "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims. Fox News reported the ruling, and The Hill also covered the decision. The judge’s order was issued on October 31, 2026.",
+            "The United States approved a sale of Patriot missiles to Ukraine, totaling $2.1 billion. Al Jazeera reported the approval, and Dawn also confirmed the transaction. The sale was announced on October 31, 2026.",
+            "Melaka state election campaign began on Saturday, according to South China Morning Post. The election is being used as a test for Anwar Ibrahim’s coalition, according to CNA. The campaign started on October 31, 2026.",
+            "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms. Anadolu Ajansı reported that Trump may order a major Iran strike if Republicans suffer losses in the midterm election. The reports were published on October 31, 2026.",
+            "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race. G1 reported that two candidates with the same name were contesting the seat, irritating Trump. The reports were released on October 31, 2026."
+          ],
+          "facts": [
+            "US approved $2.1bn Patriot missile sale to Ukraine",
+            "Federal judge in California blocked Trump DOJ threats against election officials",
+            "Melaka state election campaign began Saturday",
+            "Trump may order major Iran strike after midterms",
+            "Alaska Senate race features two candidates with same name",
+            "More than 43 million Americans voted early in the 2026 midterms"
+          ],
+          "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+          "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
+          "imageCaption": ""
+        },
+        "de": {
+          "dek": "",
+          "body": [],
+          "facts": [],
+          "title": "Richter blockiert Drohungen des DOJ-Trump gegen Wahlbeamte",
+          "context": ""
+        }
+      }
+    },
+    {
       "at": "2026-10-31T09:57:40.773Z",
       "reason": "1 new update(s)",
       "locales": {
+        "de": {
+          "dek": "",
+          "body": [],
+          "facts": [],
+          "title": "Richter blockiert Drohungen des DOJ-Trump gegen Wahlbeamte",
+          "context": ""
+        },
         "en": {
           "dek": "A federal judge in California halted the Trump administration's threat to prosecute election workers over alleged noncitizen voting claims.",
           "body": [
@@ -335,13 +435,6 @@
           "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
           "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
           "imageCaption": ""
-        },
-        "de": {
-          "dek": "",
-          "body": [],
-          "facts": [],
-          "title": "Richter blockiert Drohungen des DOJ-Trump gegen Wahlbeamte",
-          "context": ""
         }
       }
     },
