@@ -210,6 +210,10 @@ export async function chat(role, messages, opts = {}) {
           disabledModels.set(model, Date.now() + 15 * 60 * 1000);
           break;
         }
+        // No key means no answer, now or in six seconds. A caller that passes
+        // an explicit model list skips the `usable()` filter, and three
+        // attempts with a sleep in between then cost six seconds per call.
+        if (/API_KEY missing/i.test(e.message || '')) break;
         // A 429 is usually a rate limit, not a verdict on the whole month: in
         // the translation run the same account answered again two minutes
         // later, but the six-hour ban then sent every remaining locale through
