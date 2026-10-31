@@ -8,6 +8,11 @@ name: Model probe
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  # GitHub Models needs no new key, only permission for the job token.
+  models: read
+
 concurrency:
   group: model-probe
   cancel-in-progress: true
@@ -25,4 +30,5 @@ jobs:
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/probe-models.mjs

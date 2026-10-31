@@ -404,11 +404,14 @@ test('a model whose quota is used up is not tried again', async () => {
     return new Response(JSON.stringify({ choices: [{ message: { content: '{"ok":true}' } }] }), { status: 200 });
   };
   try {
-    const first = await llm.chatJSON('desk', [{ role: 'user', content: 'hello' }]);
+    // The chain is named here on purpose: this test is about the quota rule,
+    // not about which provider happens to be first this month.
+    const models = ['ollama/gpt-oss:120b', 'deepseek-ai/deepseek-v4.1-flash'];
+    const first = await llm.chatJSON('desk', [{ role: 'user', content: 'hello' }], { models });
     assert.equal(first.data.ok, true);
     assert.equal(asked.filter((m) => m === 'gpt-oss:120b').length, 1, 'the spent model is tried once, not three times');
     asked.length = 0;
-    await llm.chatJSON('desk', [{ role: 'user', content: 'again' }]);
+    await llm.chatJSON('desk', [{ role: 'user', content: 'again' }], { models });
     assert.deepEqual(asked.filter((m) => m.startsWith('gpt-oss')), [], 'the next call does not touch it at all');
   } finally {
     globalThis.fetch = original;
