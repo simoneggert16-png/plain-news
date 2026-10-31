@@ -6,25 +6,14 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-29T17:37:50.922Z",
-  "updatedAt": "2026-10-31T12:42:03.326Z",
+  "updatedAt": "2026-10-31T13:22:04.943Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-midterm-elections",
   "stats": {
-    "label": "2026 Midterm Early Voting & Super PAC Spending",
-    "note": "Early voting totals and super PAC spending in the 2026 midterm elections",
-    "unit": "",
     "max": null,
     "asOf": "2026-10-27T09:10:00.000Z",
-    "updatedAt": "2026-10-31T12:41:42.263Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
-      "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
-      "publishedAt": "2026-10-31T12:00:01.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
+    "note": "Early voting totals and super PAC spending in the 2026 midterm elections",
     "rows": [
       {
         "key": "early-votes-millions",
@@ -35,26 +24,26 @@
           "de": {
             "label": "Vorabwahlstimmen (Millionen)"
           },
-          "fr": {
-            "label": "Votes anticipés (millions)"
-          },
           "es": {
             "label": "Votos anticipados (millones)"
           },
+          "fr": {
+            "label": "Votes anticipés (millions)"
+          },
           "it": {
             "label": "Votazioni anticipate (milioni)"
-          },
-          "pt": {
-            "label": "Votos antecipados (milhões)"
-          },
-          "zh": {
-            "label": "提前投票（百万）"
           },
           "ja": {
             "label": "早期投票（百万票）"
           },
           "ko": {
             "label": "조기투표 (백만 명)"
+          },
+          "pt": {
+            "label": "Votos antecipados (milhões)"
+          },
+          "zh": {
+            "label": "提前投票（百万）"
           }
         }
       },
@@ -67,66 +56,89 @@
           "de": {
             "label": "Super PAC-Ausgaben (Millionen $)"
           },
-          "it": {
-            "label": "Spesa dei Super PAC (milioni di dollari)"
+          "es": {
+            "label": "Gasto de Super PAC (millones $)"
           },
           "fr": {
             "label": "Dépenses des super PAC (millions $)"
           },
-          "es": {
-            "label": "Gasto de Super PAC (millones $)"
+          "it": {
+            "label": "Spesa dei Super PAC (milioni di dollari)"
           },
-          "pt": {
-            "label": "Gastos de Super PAC (milhões de $)"
+          "ja": {
+            "label": "スーパーPAC支出（百万ドル）"
           },
           "ko": {
             "label": "슈퍼 PAC 지출 (백만 달러)"
           },
+          "pt": {
+            "label": "Gastos de Super PAC (milhões de $)"
+          },
           "zh": {
             "label": "超级政治行动委员会支出（百万美元）"
-          },
-          "ja": {
-            "label": "スーパーPAC支出（百万ドル）"
           }
         }
       }
     ],
+    "unit": "",
+    "label": "2026 Midterm Early Voting & Super PAC Spending",
+    "source": {
+      "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
+      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-10-31T12:00:01.000Z"
+    },
     "locales": {
       "de": {
-        "label": "2026 Zwischenwahlen: Vorabwahl und Super PAC-Ausgaben",
-        "note": "Gesamtzahlen der Vorabwahl und Super PAC-Ausgaben bei den Zwischenwahlen 2026"
-      },
-      "fr": {
-        "label": "Vote anticipé et dépenses des super PAC lors des élections de mi-mandat 2026",
-        "note": "Totaux des votes anticipés et dépenses des super PAC lors des élections de mi-mandat 2026"
+        "note": "Gesamtzahlen der Vorabwahl und Super PAC-Ausgaben bei den Zwischenwahlen 2026",
+        "label": "2026 Zwischenwahlen: Vorabwahl und Super PAC-Ausgaben"
       },
       "es": {
-        "label": "Votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026",
-        "note": "Totales de votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026"
+        "note": "Totales de votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026",
+        "label": "Votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026"
+      },
+      "fr": {
+        "note": "Totaux des votes anticipés et dépenses des super PAC lors des élections de mi-mandat 2026",
+        "label": "Vote anticipé et dépenses des super PAC lors des élections de mi-mandat 2026"
       },
       "it": {
-        "label": "Votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026",
-        "note": "Totali delle votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026"
-      },
-      "pt": {
-        "label": "Votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026",
-        "note": "Totais de votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026"
-      },
-      "zh": {
-        "label": "2026年中期选举提前投票与超级政治行动委员会支出",
-        "note": "2026年中期选举的提前投票总数与超级政治行动委员会支出"
+        "note": "Totali delle votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026",
+        "label": "Votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026"
       },
       "ja": {
-        "label": "2026年中間選挙の早期投票とスーパーPAC支出",
-        "note": "2026年中間選挙における早期投票総数とスーパーPAC支出"
+        "note": "2026年中間選挙における早期投票総数とスーパーPAC支出",
+        "label": "2026年中間選挙の早期投票とスーパーPAC支出"
       },
       "ko": {
-        "label": "2026년 중간선거 조기투표 및 슈퍼 PAC 지출",
-        "note": "2026년 중간선거에서의 조기투표 총수와 슈퍼 PAC 지출"
+        "note": "2026년 중간선거에서의 조기투표 총수와 슈퍼 PAC 지출",
+        "label": "2026년 중간선거 조기투표 및 슈퍼 PAC 지출"
+      },
+      "pt": {
+        "note": "Totais de votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026",
+        "label": "Votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026"
+      },
+      "zh": {
+        "note": "2026年中期选举的提前投票总数与超级政治行动委员会支出",
+        "label": "2026年中期选举提前投票与超级政治行动委员会支出"
       }
-    }
+    },
+    "updatedAt": "2026-10-31T12:41:42.263Z",
+    "sourceCount": 1
   },
   "sources": [
+    {
+      "outlet": "Dawn",
+      "title": "Power bills and data centres cast rare spotlight on utilities in US midterms",
+      "url": "https://www.dawn.com/news/2041193/power-bills-and-data-centres-cast-rare-spotlight-on-utilities-in-us-midterms",
+      "publishedAt": "2026-10-31T12:59:33.000Z"
+    },
+    {
+      "outlet": "CNA",
+      "title": "Power bills and data centers cast rare spotlight on utilities in US midterms",
+      "url": "https://www.channelnewsasia.com/business/power-bills-and-data-centers-cast-rare-spotlight-utilities-in-us-midterms-6509406",
+      "publishedAt": "2026-10-31T10:08:54.000Z"
+    },
     {
       "outlet": "The Hindu",
       "title": "Trump backtracks on rallies in turbulent end to midterms campaign",
@@ -234,18 +246,6 @@
       "title": "Dunleavy calls for investigation into Democrats’ reported ballot-stacking effort in Alaska U.S. Senate race",
       "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOazAtZW5CVVQ4TE5sSHZ2bVVTZ0hESDF2RHJieHozX2NleWNWRnItQ3NLekpOS2JnWTV6OUdITkpLYXJVck9Id1FaeXhqQ3RxbXI1Xzl6c0FVbE51OVk4NDQtdVRCcGV4WlN1ajd0Ykxwc2dTZUZWQk5wMFg5YTNUUGhoNWM3M2drU2g1WW5OSGV5QmxKcmVVeU8wWlp0OXdZanVGV3BKYjhTOHZOMW5JTjlVUXVHalNGRnd1MmViZTNPV1doamowR2k4NVB4Qm10bkQ5ZmRGLWJGMkNZcUtYLXdhN2JfNGxRX1lTWXJBSEZsd2IzYUViUA?oc=5",
       "publishedAt": "2026-10-29T21:44:00.000Z"
-    },
-    {
-      "outlet": "New York Times",
-      "title": "Fallout in Alaska Senate Race Over Peltola’s Ballot Stacking Plot",
-      "url": "https://www.nytimes.com/2026/10/29/us/politics/alaska-senate-ballots-peltola-trump.html",
-      "publishedAt": "2026-10-29T22:55:34.000Z"
-    },
-    {
-      "outlet": "The Hill",
-      "title": "Republicans have knives out for Peltola as Democrats largely silent",
-      "url": "https://thehill.com/homenews/campaign/6182647-republicans-investigate-democratic-candidate-scheme/",
-      "publishedAt": "2026-10-29T21:33:08.000Z"
     }
   ],
   "locales": {
@@ -253,26 +253,26 @@
       "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
       "dek": "Alaska Governor Mike Dunleavy said the state could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins amid investigations into alleged ballot‑stacking.",
       "facts": [
-        "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
-        "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times).",
-        "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan (The Hill; New York Times).",
-        "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País).",
-        "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
+        "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
+        "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times).",
+        "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan (The Hill; New York Times).",
+        "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País).",
+        "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
       ],
       "body": [
-        "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Democrat Mary Peltola wins. He added that the certification process might be stopped or changed because of the ballot‑stacking investigation. The statement was reported by Axios and The Hill.",
-        "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate for the Alaska Senate race. The subpoenas target campaign officials and potential third‑party candidates. The New York Times reported the action.",
-        "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan. The investigation seeks interviews with campaign staff and potential candidates. The Hill and the New York Times reported the launch.",
-        "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent. The claim follows a criminal probe by the Department of Justice. Fox News and El País reported the statement.",
-        "President Donald Trump cancelled two of his final midterm election rallies on 30 Oct 2026, four days before voting. The cancellations were announced amid the investigations into the Alaska Senate race. Al Jazeera reported the cancellations.",
-        "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Allegations that a second Dan Sullivan was recruited to confuse voters have prompted state and federal inquiries. The Alaska Department of Law opened a probe on 29 Oct 2026.",
-        "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections. The analysis did not include final results for the Alaska Senate contest. The New York Times and WHYY reported the polling advantage."
+        "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Democrat Mary Peltola wins. He added that the certification process might be stopped or changed because of an investigation into ballot‑stacking allegations (Axios; The Hill).",
+        "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate for the Alaska Senate race. The subpoenas target campaign officials and potential third‑party candidates (New York Times).",
+        "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan. The investigation seeks interviews with campaign staff and potential candidates (The Hill; New York Times).",
+        "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent. The claim follows a criminal probe by the Department of Justice (Fox News; El País).",
+        "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting. The cancellations were announced amid the investigations into the Alaska Senate race (Al Jazeera).",
+        "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Alaska is a Class III seat (CNBC; The Guardian).",
+        "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections. The analysis did not include final results for the Alaska Senate contest (New York Times; WHYY)."
       ],
       "context": "The Alaska Senate race is for a Class III seat, according to The Hill. Incumbent Republican Senator Dan Sullivan is challenged by Democrat Mary Peltola, according to CNBC. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes, according to The Guardian.",
       "imageCaption": ""
     },
     "de": {
-      "title": "Alaska-Gouverneur sagt, der Staat könne die Zertifizierung der Senatswahl zurückhalten, während Untersuchung läuft",
+      "title": "Alaska-Gouverneur sagt, Staat könne Zertifizierung der US-Senat-Wahl bei einer Untersuchung zurückhalten",
       "dek": "",
       "facts": [],
       "body": [],
@@ -281,9 +281,51 @@
   },
   "history": [
     {
+      "at": "2026-10-31T06:59:33.329Z",
+      "reason": "1 new update(s)",
+      "locales": {
+        "en": {
+          "dek": "Alaska Governor Mike Dunleavy said the state could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins amid investigations into alleged ballot‑stacking.",
+          "body": [
+            "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Democrat Mary Peltola wins. He added that the certification process might be stopped or changed because of the ballot‑stacking investigation. The statement was reported by Axios and The Hill.",
+            "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate for the Alaska Senate race. The subpoenas target campaign officials and potential third‑party candidates. The New York Times reported the action.",
+            "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan. The investigation seeks interviews with campaign staff and potential candidates. The Hill and the New York Times reported the launch.",
+            "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent. The claim follows a criminal probe by the Department of Justice. Fox News and El País reported the statement.",
+            "President Donald Trump cancelled two of his final midterm election rallies on 30 Oct 2026, four days before voting. The cancellations were announced amid the investigations into the Alaska Senate race. Al Jazeera reported the cancellations.",
+            "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Allegations that a second Dan Sullivan was recruited to confuse voters have prompted state and federal inquiries. The Alaska Department of Law opened a probe on 29 Oct 2026.",
+            "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections. The analysis did not include final results for the Alaska Senate contest. The New York Times and WHYY reported the polling advantage."
+          ],
+          "facts": [
+            "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
+            "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times).",
+            "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan (The Hill; New York Times).",
+            "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País).",
+            "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
+          ],
+          "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
+          "context": "The Alaska Senate race is for a Class III seat, according to The Hill. Incumbent Republican Senator Dan Sullivan is challenged by Democrat Mary Peltola, according to CNBC. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes, according to The Guardian.",
+          "imageCaption": ""
+        },
+        "de": {
+          "dek": "",
+          "body": [],
+          "facts": [],
+          "title": "Alaska-Gouverneur sagt, der Staat könne die Zertifizierung der Senatswahl zurückhalten, während Untersuchung läuft",
+          "context": ""
+        }
+      }
+    },
+    {
       "at": "2026-10-30T22:43:48.381Z",
       "reason": "1 new update(s)",
       "locales": {
+        "de": {
+          "dek": "",
+          "body": [],
+          "facts": [],
+          "title": "Alaska-Gouverneur sagt, Staat könne Zertifizierung der Senatswahl zurückhalten, während Untersuchung läuft",
+          "context": ""
+        },
         "en": {
           "dek": "Alaska Governor Mike Dunleavy said the state could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins, amid investigations into alleged ballot‑stacking.",
           "body": [
@@ -306,13 +348,6 @@
           "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
           "context": "The 2026 Alaska U.S. Senate race is for a Class III seat. Incumbent Republican Senator Dan Sullivan is challenged by Democrat Mary Peltola. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes.",
           "imageCaption": ""
-        },
-        "de": {
-          "dek": "",
-          "body": [],
-          "facts": [],
-          "title": "Alaska-Gouverneur sagt, Staat könne Zertifizierung der Senatswahl zurückhalten, während Untersuchung läuft",
-          "context": ""
         }
       }
     },
