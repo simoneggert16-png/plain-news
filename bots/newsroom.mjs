@@ -397,10 +397,19 @@ async function processEvent(event, recentTitles, seen) {
       } else if (vResult?.verified === false) {
         log(`  VISION rejected image: ${vResult.rejectionReason || 'not usable'}; removing.`);
         verifiedImage = null;
+      } else if (!media.caption) {
+        // Nobody said what this photo shows: the wire carried no caption and
+        // the model gave no verdict. That is how a photographed "Ebola alert"
+        // poster with pictogram figures became a hero - the reader saw a sign
+        // and nothing that explained it. A text-only report is better than a
+        // picture nobody can vouch for.
+        log(`  VISION no verdict (${vResult?.reason || 'none'}) and no caption; removing uncaptioned image.`);
+        verifiedImage = null;
       } else {
         // No usable verdict (provider down, quota, timeout, unsure model). The
-        // photo already cleared the technical gate, so keep it with the wire's
-        // own caption and credit instead of discarding every image of the run.
+        // photo already cleared the technical gate and carries the wire's own
+        // caption, so keep it with that caption and credit instead of
+        // discarding every image of the run.
         imageCaption = media.caption || '';
         imageCaptionDe = null;
         imageCredit = media.credit || event.sources[0]?.outlet || null;
