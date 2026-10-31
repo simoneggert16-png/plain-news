@@ -812,6 +812,33 @@ function countryDoors(centre) {
   return match ? `${match}: ${COUNTRY_DOORS[match].join(', ')}` : '';
 }
 
+// A wire story reappears as a copy on every aggregator. Counting msn.com and
+// yahoo.com separately does not give the desk two sources, it gives it one
+// story twice — the Call of Duty dossier "had" four sources and one of them
+// was Yonhap.
+const SYNDICATION_HOSTS = /(^|\.)(msn|yahoo|aol|flipboard)\.com$|(^|\.)news\.google\.com$/i;
+
+function titleTokens(title) {
+  return new Set(String(title || '').toLowerCase().match(/[a-z0-9\u00c0-\u024f]{2,}/g) || []);
+}
+
+/** One hit per story; the original publisher wins over the mirror. */
+function dedupeSyndicated(hits) {
+  const kept = [];
+  for (const hit of hits) {
+    const tokens = titleTokens(hit.title);
+    const twin = kept.findIndex((k) => queryOverlap(tokens, titleTokens(k.title)) >= 0.85);
+    if (twin === -1) {
+      kept.push(hit);
+      continue;
+    }
+    const mirror = SYNDICATION_HOSTS.test(hostOf(hit.url));
+    const twinMirror = SYNDICATION_HOSTS.test(hostOf(kept[twin].url));
+    if (twinMirror && !mirror) kept[twin] = hit;
+  }
+  return kept;
+}
+
 /**
  * The same finding written twice is one claim. The extraction runs every
  * shift and phrases the same fact anew ("Activision Publishing apologized…" /
@@ -1312,7 +1339,8 @@ async function researchAgent(d) {
         // the papers, not only the headlines — and the first two hits are
         // opened and filed right here, because a run that only searches ends
         // with an empty dossier.
-        const order = [...hits.filter((h) => h.primary), ...hits.filter((h) => !h.primary)];
+        const unique = dedupeSyndicated(hits);
+        const order = [...unique.filter((h) => h.primary), ...unique.filter((h) => !h.primary)];
         const auto = order.slice(0, 2).filter((h) => autoOpenBudget > 0 && !d.sources.some((s) => s.url === h.url));
         autoOpenBudget -= auto.length;
         const opened = (await Promise.all(auto.map(async (h) => {

@@ -1249,3 +1249,37 @@ test('the desk knows the doors in the country the story happens', () => {
   assert.equal(doors('Switzerland'), '', 'the paper is Swiss, its beat is not');
   assert.equal(doors(''), '');
 });
+
+test('the same wire story on msn and yahoo is one source, not two', () => {
+  // The Call of Duty dossier counted four sources; three were copies of one
+  // Yonhap story on aggregators. A story has as many sources as publishers.
+  const re = (() => {
+    const at = SOURCE.indexOf('const SYNDICATION_HOSTS = ');
+    return SOURCE.slice(at + 'const SYNDICATION_HOSTS = '.length, SOURCE.indexOf(';', at));
+  })();
+  const dedupe = new Function(`
+    ${take('hostOf')}
+    ${take('queryOverlap')}
+    const SYNDICATION_HOSTS = ${re};
+    ${take('titleTokens')}
+    ${take('dedupeSyndicated')}
+    return dedupeSyndicated;
+  `)();
+  const story = 'Call of Duty will cut Itaewon crush footage, Activision apologizes';
+  const other = 'Families of Seoul crush victims demand an independent inquiry';
+  const out = dedupe([
+    { title: story, url: 'https://www.msn.com/en-us/news/other/abc', outlet: 'msn.com' },
+    { title: story, url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'Yonhap' },
+    { title: other, url: 'https://www.bbc.com/news/world-asia-1', outlet: 'BBC' },
+  ]);
+  assert.equal(out.length, 2, 'the mirror is folded into the original');
+  assert.ok(out.some((h) => h.url.includes('yna.co.kr')), 'the publisher wins over the copy');
+
+  // The mirror may arrive first; the original still takes its place.
+  const reversed = dedupe([
+    { title: story, url: 'https://www.yahoo.com/news/abc.html', outlet: 'Yahoo' },
+    { title: story, url: 'https://en.yna.co.kr/view/AEN20261030011500320', outlet: 'Yonhap' },
+  ]);
+  assert.equal(reversed.length, 1);
+  assert.ok(reversed[0].url.includes('yna.co.kr'));
+});
