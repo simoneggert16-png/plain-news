@@ -6,11 +6,126 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-31T08:16:00.645Z",
-  "updatedAt": "2026-10-31T11:13:01.764Z",
+  "updatedAt": "2026-10-31T17:27:18.066Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "ebola-outbreak-in-congo-death-toll-rises",
-  "stats": null,
+  "stats": {
+    "label": "DR Congo Ebola outbreak",
+    "note": "Government data reports more than 5,000 deaths and more than 10,000 people infected in the DR Congo Ebola outbreak.",
+    "unit": "",
+    "max": null,
+    "asOf": "2026-10-31T00:00:00.000Z",
+    "updatedAt": "2026-10-31T17:17:52.701Z",
+    "source": {
+      "outlet": "BBC",
+      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-10-31T15:16:20.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "deaths-more-than",
+        "label": "Deaths (more than)",
+        "value": 5000,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Décès (plus de)"
+          },
+          "es": {
+            "label": "Muertes (más de)"
+          },
+          "it": {
+            "label": "Morti (più di)"
+          },
+          "de": {
+            "label": "Todesfälle (mehr als)"
+          },
+          "pt": {
+            "label": "Mortes (mais de)"
+          },
+          "zh": {
+            "label": "死亡人数（超过）"
+          },
+          "ja": {
+            "label": "死亡者数（超）"
+          },
+          "ko": {
+            "label": "사망자 수(초과)"
+          }
+        }
+      },
+      {
+        "key": "cases-more-than",
+        "label": "Cases (more than)",
+        "value": 10000,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Cas (plus de)"
+          },
+          "es": {
+            "label": "Casos (más de)"
+          },
+          "it": {
+            "label": "Casi (più di)"
+          },
+          "de": {
+            "label": "Fälle (mehr als)"
+          },
+          "pt": {
+            "label": "Casos (mais de)"
+          },
+          "zh": {
+            "label": "病例数（超过）"
+          },
+          "ja": {
+            "label": "感染者数（超）"
+          },
+          "ko": {
+            "label": "감염 사례 수(초과)"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Ebola-Ausbruch in der DR Kongo",
+        "note": "Laut Regierungsdaten gab es bei dem Ebola-Ausbruch in der DR Kongo mehr als 5.000 Todesfälle und mehr als 10.000 Infizierte."
+      },
+      "fr": {
+        "label": "Éclosion d’Ebola en RDC",
+        "note": "Les données du gouvernement font état de plus de 5 000 décès et de plus de 10 000 personnes infectées par l’éclosion d’Ebola en RDC."
+      },
+      "es": {
+        "label": "Brote de Ébola en la República Democrática del Congo",
+        "note": "Los datos del Gobierno indican más de 5.000 muertos y más de 10.000 personas infectadas en el brote de Ébola de la República Democrática del Congo."
+      },
+      "it": {
+        "label": "Focolaio di Ebola nella Repubblica Democratica del Congo",
+        "note": "I dati governativi riportano più di 5.000 morti e più di 10.000 persone infette nel focolaio di Ebola nella RDC."
+      },
+      "pt": {
+        "label": "Surto de Ebola na RD Congo",
+        "note": "Dados governamentais registam mais de 5.000 mortes e mais de 10.000 pessoas infetadas no surto de Ebola na RD Congo."
+      },
+      "zh": {
+        "label": "刚果（金）埃博拉疫情",
+        "note": "政府数据显示，刚果（金）埃博拉疫情死亡人数超过5,000人，感染人数超过10,000人。"
+      },
+      "ja": {
+        "label": "コンゴ民主共和国でエボラ出血熱流行",
+        "note": "政府数据显示、コンゴ民主共和国のエボラ出血熱流行では、死亡者が5,000人超、感染者が10,000人超となっている。"
+      },
+      "ko": {
+        "label": "드림카 공화국 에볼라 발생",
+        "note": "정부 자료에 따르면 드림카 공화국의 에볼라 발생으로 사망자는 5,000명 이상, 감염자는 10,000명 이상이다."
+      }
+    }
+  },
   "sources": [
     {
       "outlet": "Die Welt",
