@@ -6,47 +6,26 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-10-29T17:37:50.922Z",
-  "updatedAt": "2026-10-31T13:22:04.943Z",
+  "updatedAt": "2026-10-31T13:43:00.912Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-midterm-elections",
   "stats": {
+    "label": "2026 Midterm Financials & Sentiment",
+    "note": "Financial contributions to the 2026 midterm races and public sentiment toward President Trump.",
+    "unit": "",
     "max": null,
     "asOf": "2026-10-27T09:10:00.000Z",
-    "note": "Early voting totals and super PAC spending in the 2026 midterm elections",
+    "updatedAt": "2026-10-31T13:41:05.623Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
+      "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
+      "publishedAt": "2026-10-31T12:00:01.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
-      {
-        "key": "early-votes-millions",
-        "label": "Early votes (millions)",
-        "value": 47.9,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Vorabwahlstimmen (Millionen)"
-          },
-          "es": {
-            "label": "Votos anticipados (millones)"
-          },
-          "fr": {
-            "label": "Votes anticipés (millions)"
-          },
-          "it": {
-            "label": "Votazioni anticipate (milioni)"
-          },
-          "ja": {
-            "label": "早期投票（百万票）"
-          },
-          "ko": {
-            "label": "조기투표 (백만 명)"
-          },
-          "pt": {
-            "label": "Votos antecipados (milhões)"
-          },
-          "zh": {
-            "label": "提前投票（百万）"
-          }
-        }
-      },
       {
         "key": "super-pac-spending-million",
         "label": "Super PAC spending (million $)",
@@ -54,77 +33,130 @@
         "change": null,
         "locales": {
           "de": {
-            "label": "Super PAC-Ausgaben (Millionen $)"
-          },
-          "es": {
-            "label": "Gasto de Super PAC (millones $)"
+            "label": "Ausgaben von Super PACs (in Millionen $)"
           },
           "fr": {
-            "label": "Dépenses des super PAC (millions $)"
+            "label": "Dépenses des Super PAC (millions $)"
+          },
+          "es": {
+            "label": "Gasto de Super PAC (millones €)"
           },
           "it": {
-            "label": "Spesa dei Super PAC (milioni di dollari)"
+            "label": "Spesa dei Super PAC (milioni di $)"
+          },
+          "pt": {
+            "label": "Despesas de Super PAC (milhões de $)"
+          },
+          "zh": {
+            "label": "超级政治行动委员会支出（百万美元）"
           },
           "ja": {
             "label": "スーパーPAC支出（百万ドル）"
           },
           "ko": {
             "label": "슈퍼 PAC 지출 (백만 달러)"
+          }
+        }
+      },
+      {
+        "key": "elon-musk-spending-million",
+        "label": "Elon Musk spending (million $)",
+        "value": 446,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Dépenses d'Elon Musk (millions $)"
           },
-          "pt": {
-            "label": "Gastos de Super PAC (milhões de $)"
+          "de": {
+            "label": "Ausgaben von Elon Musk (in Millionen $)"
+          },
+          "es": {
+            "label": "Gasto de Elon Musk (millones €)"
           },
           "zh": {
-            "label": "超级政治行动委员会支出（百万美元）"
+            "label": "埃隆·马斯克支出（百万美元）"
+          },
+          "pt": {
+            "label": "Despesas de Elon Musk (milhões de $)"
+          },
+          "ja": {
+            "label": "イーロン・マスクの支出（百万ドル）"
+          },
+          "ko": {
+            "label": "엘론 머스크 지출 (백만 달러)"
+          },
+          "it": {
+            "label": "Spesa di Elon Musk (milioni di $)"
+          }
+        }
+      },
+      {
+        "key": "trump-disapproval",
+        "label": "Trump disapproval (%)",
+        "value": 82,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Incrédulité envers Trump (%)"
+          },
+          "de": {
+            "label": "Trump-Unzufriedenheit (%)"
+          },
+          "es": {
+            "label": "Desaprobación de Trump (%)"
+          },
+          "zh": {
+            "label": "特朗普不满度（%）"
+          },
+          "pt": {
+            "label": "Desaprovação de Trump (%)"
+          },
+          "ja": {
+            "label": "トランプ不承認率（％）"
+          },
+          "ko": {
+            "label": "트럼프 반대율 (%)"
+          },
+          "it": {
+            "label": "Disapprovazione di Trump (%)"
           }
         }
       }
     ],
-    "unit": "",
-    "label": "2026 Midterm Early Voting & Super PAC Spending",
-    "source": {
-      "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
-      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-10-31T12:00:01.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Gesamtzahlen der Vorabwahl und Super PAC-Ausgaben bei den Zwischenwahlen 2026",
-        "label": "2026 Zwischenwahlen: Vorabwahl und Super PAC-Ausgaben"
-      },
-      "es": {
-        "note": "Totales de votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026",
-        "label": "Votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026"
+        "label": "Finanzierung und Stimmung der 2026er Zwischenwahlen",
+        "note": "Finanzielle Beiträge zu den Rennen der 2026er Zwischenwahlen und die öffentliche Stimmung gegenüber Präsident Trump."
       },
       "fr": {
-        "note": "Totaux des votes anticipés et dépenses des super PAC lors des élections de mi-mandat 2026",
-        "label": "Vote anticipé et dépenses des super PAC lors des élections de mi-mandat 2026"
+        "label": "Finances et sentiment des élections de mi-mandat 2026",
+        "note": "Contributions financières aux courses des élections de mi-mandat 2026 et sentiment public envers le président Trump."
+      },
+      "es": {
+        "label": "Finanzas y Sentimiento de las Elecciones de Mitad de Mandato 2026",
+        "note": "Contribuciones financieras a las carreras de las elecciones de mitad de mandato 2026 y el sentimiento público hacia el presidente Trump."
       },
       "it": {
-        "note": "Totali delle votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026",
-        "label": "Votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026"
-      },
-      "ja": {
-        "note": "2026年中間選挙における早期投票総数とスーパーPAC支出",
-        "label": "2026年中間選挙の早期投票とスーパーPAC支出"
-      },
-      "ko": {
-        "note": "2026년 중간선거에서의 조기투표 총수와 슈퍼 PAC 지출",
-        "label": "2026년 중간선거 조기투표 및 슈퍼 PAC 지출"
+        "label": "2026 Elezioni di metà mandato & Sentiment",
+        "note": "Contributi finanziari alle elezioni di metà mandato del 2026 e il sentimento pubblico verso il presidente Trump."
       },
       "pt": {
-        "note": "Totais de votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026",
-        "label": "Votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026"
+        "label": "Finanças e Sentimento das Eleições de Meio de Mandato de 2026",
+        "note": "Contribuições financeiras para as corridas das eleições de meio de mandato de 2026 e o sentimento público em relação ao Presidente Trump."
       },
       "zh": {
-        "note": "2026年中期选举的提前投票总数与超级政治行动委员会支出",
-        "label": "2026年中期选举提前投票与超级政治行动委员会支出"
+        "label": "2026年中期选举财务与情绪",
+        "note": "2026年中期选举的财务捐款及公众对特朗普总统的情绪。"
+      },
+      "ja": {
+        "label": "2026年中間選挙の財政と世論",
+        "note": "2026年中間選挙への財政支援とトランプ大統領に対する世論"
+      },
+      "ko": {
+        "label": "2026년 중간선거 재정 및 정서",
+        "note": "2026년 중간선거 경선에 대한 재정 기여와 트럼프 대통령에 대한 대중의 정서."
       }
-    },
-    "updatedAt": "2026-10-31T12:41:42.263Z",
-    "sourceCount": 1
+    }
   },
   "sources": [
     {

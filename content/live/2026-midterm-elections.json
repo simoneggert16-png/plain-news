@@ -12,42 +12,21 @@
   },
   "slug": "2026-midterm-elections",
   "stats": {
+    "label": "2026 Midterm Financials & Sentiment",
+    "note": "Financial contributions to the 2026 midterm races and public sentiment toward President Trump.",
+    "unit": "",
     "max": null,
     "asOf": "2026-10-27T09:10:00.000Z",
-    "note": "Early voting totals and super PAC spending in the 2026 midterm elections",
+    "updatedAt": "2026-10-31T13:41:05.623Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
+      "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
+      "publishedAt": "2026-10-31T12:00:01.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
-      {
-        "key": "early-votes-millions",
-        "label": "Early votes (millions)",
-        "value": 47.9,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Vorabwahlstimmen (Millionen)"
-          },
-          "es": {
-            "label": "Votos anticipados (millones)"
-          },
-          "fr": {
-            "label": "Votes anticipés (millions)"
-          },
-          "it": {
-            "label": "Votazioni anticipate (milioni)"
-          },
-          "ja": {
-            "label": "早期投票（百万票）"
-          },
-          "ko": {
-            "label": "조기투표 (백만 명)"
-          },
-          "pt": {
-            "label": "Votos antecipados (milhões)"
-          },
-          "zh": {
-            "label": "提前投票（百万）"
-          }
-        }
-      },
       {
         "key": "super-pac-spending-million",
         "label": "Super PAC spending (million $)",
@@ -55,95 +34,146 @@
         "change": null,
         "locales": {
           "de": {
-            "label": "Super PAC-Ausgaben (Millionen $)"
-          },
-          "es": {
-            "label": "Gasto de Super PAC (millones $)"
+            "label": "Ausgaben von Super PACs (in Millionen $)"
           },
           "fr": {
-            "label": "Dépenses des super PAC (millions $)"
+            "label": "Dépenses des Super PAC (millions $)"
+          },
+          "es": {
+            "label": "Gasto de Super PAC (millones €)"
           },
           "it": {
-            "label": "Spesa dei Super PAC (milioni di dollari)"
+            "label": "Spesa dei Super PAC (milioni di $)"
+          },
+          "pt": {
+            "label": "Despesas de Super PAC (milhões de $)"
+          },
+          "zh": {
+            "label": "超级政治行动委员会支出（百万美元）"
           },
           "ja": {
             "label": "スーパーPAC支出（百万ドル）"
           },
           "ko": {
             "label": "슈퍼 PAC 지출 (백만 달러)"
+          }
+        }
+      },
+      {
+        "key": "elon-musk-spending-million",
+        "label": "Elon Musk spending (million $)",
+        "value": 446,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Dépenses d'Elon Musk (millions $)"
           },
-          "pt": {
-            "label": "Gastos de Super PAC (milhões de $)"
+          "de": {
+            "label": "Ausgaben von Elon Musk (in Millionen $)"
+          },
+          "es": {
+            "label": "Gasto de Elon Musk (millones €)"
           },
           "zh": {
-            "label": "超级政治行动委员会支出（百万美元）"
+            "label": "埃隆·马斯克支出（百万美元）"
+          },
+          "pt": {
+            "label": "Despesas de Elon Musk (milhões de $)"
+          },
+          "ja": {
+            "label": "イーロン・マスクの支出（百万ドル）"
+          },
+          "ko": {
+            "label": "엘론 머스크 지출 (백만 달러)"
+          },
+          "it": {
+            "label": "Spesa di Elon Musk (milioni di $)"
+          }
+        }
+      },
+      {
+        "key": "trump-disapproval",
+        "label": "Trump disapproval (%)",
+        "value": 82,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Incrédulité envers Trump (%)"
+          },
+          "de": {
+            "label": "Trump-Unzufriedenheit (%)"
+          },
+          "es": {
+            "label": "Desaprobación de Trump (%)"
+          },
+          "zh": {
+            "label": "特朗普不满度（%）"
+          },
+          "pt": {
+            "label": "Desaprovação de Trump (%)"
+          },
+          "ja": {
+            "label": "トランプ不承認率（％）"
+          },
+          "ko": {
+            "label": "트럼프 반대율 (%)"
+          },
+          "it": {
+            "label": "Disapprovazione di Trump (%)"
           }
         }
       }
     ],
-    "unit": "",
-    "label": "2026 Midterm Early Voting & Super PAC Spending",
-    "source": {
-      "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
-      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-10-31T12:00:01.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Gesamtzahlen der Vorabwahl und Super PAC-Ausgaben bei den Zwischenwahlen 2026",
-        "label": "2026 Zwischenwahlen: Vorabwahl und Super PAC-Ausgaben"
-      },
-      "es": {
-        "note": "Totales de votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026",
-        "label": "Votación anticipada y gasto de Super PAC en las elecciones de mitad de mandato 2026"
+        "label": "Finanzierung und Stimmung der 2026er Zwischenwahlen",
+        "note": "Finanzielle Beiträge zu den Rennen der 2026er Zwischenwahlen und die öffentliche Stimmung gegenüber Präsident Trump."
       },
       "fr": {
-        "note": "Totaux des votes anticipés et dépenses des super PAC lors des élections de mi-mandat 2026",
-        "label": "Vote anticipé et dépenses des super PAC lors des élections de mi-mandat 2026"
+        "label": "Finances et sentiment des élections de mi-mandat 2026",
+        "note": "Contributions financières aux courses des élections de mi-mandat 2026 et sentiment public envers le président Trump."
+      },
+      "es": {
+        "label": "Finanzas y Sentimiento de las Elecciones de Mitad de Mandato 2026",
+        "note": "Contribuciones financieras a las carreras de las elecciones de mitad de mandato 2026 y el sentimiento público hacia el presidente Trump."
       },
       "it": {
-        "note": "Totali delle votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026",
-        "label": "Votazioni anticipate e spesa dei Super PAC nelle elezioni di metà mandato del 2026"
-      },
-      "ja": {
-        "note": "2026年中間選挙における早期投票総数とスーパーPAC支出",
-        "label": "2026年中間選挙の早期投票とスーパーPAC支出"
-      },
-      "ko": {
-        "note": "2026년 중간선거에서의 조기투표 총수와 슈퍼 PAC 지출",
-        "label": "2026년 중간선거 조기투표 및 슈퍼 PAC 지출"
+        "label": "2026 Elezioni di metà mandato & Sentiment",
+        "note": "Contributi finanziari alle elezioni di metà mandato del 2026 e il sentimento pubblico verso il presidente Trump."
       },
       "pt": {
-        "note": "Totais de votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026",
-        "label": "Votação antecipada e gastos de Super PAC nas eleições de meio de mandato de 2026"
+        "label": "Finanças e Sentimento das Eleições de Meio de Mandato de 2026",
+        "note": "Contribuições financeiras para as corridas das eleições de meio de mandato de 2026 e o sentimento público em relação ao Presidente Trump."
       },
       "zh": {
-        "note": "2026年中期选举的提前投票总数与超级政治行动委员会支出",
-        "label": "2026年中期选举提前投票与超级政治行动委员会支出"
+        "label": "2026年中期选举财务与情绪",
+        "note": "2026年中期选举的财务捐款及公众对特朗普总统的情绪。"
+      },
+      "ja": {
+        "label": "2026年中間選挙の財政と世論",
+        "note": "2026年中間選挙への財政支援とトランプ大統領に対する世論"
+      },
+      "ko": {
+        "label": "2026년 중간선거 재정 및 정서",
+        "note": "2026년 중간선거 경선에 대한 재정 기여와 트럼프 대통령에 대한 대중의 정서."
       }
-    },
-    "updatedAt": "2026-10-31T12:41:42.263Z",
-    "sourceCount": 1
+    }
   },
   "topic": "2026 midterm elections",
   "status": "live",
   "article": {
     "slug": "2026-midterm-elections",
-    "updatedAt": "2026-10-31T13:22:04.943Z",
     "reason": "1 new update(s)",
     "locales": {
+      "de": {
+        "dek": "",
+        "body": [],
+        "facts": [],
+        "title": "Alaska-Gouverneur sagt, Staat könne Zertifizierung der US-Senat-Wahl bei einer Untersuchung zurückhalten",
+        "context": ""
+      },
       "en": {
-        "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
         "dek": "Alaska Governor Mike Dunleavy said the state could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins amid investigations into alleged ballot‑stacking.",
-        "facts": [
-          "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
-          "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times).",
-          "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan (The Hill; New York Times).",
-          "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País).",
-          "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
-        ],
         "body": [
           "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Democrat Mary Peltola wins. He added that the certification process might be stopped or changed because of an investigation into ballot‑stacking allegations (Axios; The Hill).",
           "The Justice Department issued subpoenas on 30 Oct 2026 to assess a Democratic plan to recruit a spoiler candidate for the Alaska Senate race. The subpoenas target campaign officials and potential third‑party candidates (New York Times).",
@@ -153,15 +183,16 @@
           "The 2026 Alaska U.S. Senate race pits Republican incumbent Dan Sullivan against Democrat Mary Peltola. Alaska is a Class III seat (CNBC; The Guardian).",
           "National polling data released on 29 Oct 2026 indicated that Democrats held an advantage in the upcoming midterm elections. The analysis did not include final results for the Alaska Senate contest (New York Times; WHYY)."
         ],
+        "facts": [
+          "Governor Mike Dunleavy said on 30 Oct 2026 that Alaska could withhold certification of the U.S. Senate results if Mary Peltola wins (Axios; The Hill).",
+          "The Justice Department issued subpoenas on 30 Oct 2026 to investigate a Democratic plan to recruit a spoiler candidate for the Alaska Senate race (New York Times).",
+          "House Oversight Committee Chair James Comer launched an investigation on 29 Oct 2026 into allegations that Peltola’s campaign recruited spoiler candidates to siphon votes from Senator Dan Sullivan (The Hill; New York Times).",
+          "The Republican National Committee stated on 30 Oct 2026 that Democrats recruited a second Dan Sullivan for the Alaska Senate ballot and called the tactic fraudulent (Fox News; El País).",
+          "President Donald Trump cancelled two midterm election rallies on 30 Oct 2026, four days before voting (Al Jazeera)."
+        ],
+        "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
         "context": "The Alaska Senate race is for a Class III seat, according to The Hill. Incumbent Republican Senator Dan Sullivan is challenged by Democrat Mary Peltola, according to CNBC. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes, according to The Guardian.",
         "imageCaption": ""
-      },
-      "de": {
-        "title": "Alaska-Gouverneur sagt, Staat könne Zertifizierung der US-Senat-Wahl bei einer Untersuchung zurückhalten",
-        "dek": "",
-        "facts": [],
-        "body": [],
-        "context": ""
       }
     },
     "versions": [
@@ -169,6 +200,13 @@
         "at": "2026-10-31T06:59:33.329Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "Alaska-Gouverneur sagt, der Staat könne die Zertifizierung der Senatswahl zurückhalten, während Untersuchung läuft",
+            "context": ""
+          },
           "en": {
             "dek": "Alaska Governor Mike Dunleavy said the state could withhold certification of the U.S. Senate election if Democrat Mary Peltola wins amid investigations into alleged ballot‑stacking.",
             "body": [
@@ -190,13 +228,6 @@
             "title": "Alaska Governor Says State May Withhold Senate Election Certification Amid Probe",
             "context": "The Alaska Senate race is for a Class III seat, according to The Hill. Incumbent Republican Senator Dan Sullivan is challenged by Democrat Mary Peltola, according to CNBC. Allegations of ballot‑stacking involve a reported effort to recruit a second candidate named Dan Sullivan to split Republican votes, according to The Guardian.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "",
-            "body": [],
-            "facts": [],
-            "title": "Alaska-Gouverneur sagt, der Staat könne die Zertifizierung der Senatswahl zurückhalten, während Untersuchung läuft",
-            "context": ""
           }
         }
       },
@@ -609,7 +640,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-10-31T13:22:04.943Z"
   },
   "endedAt": null,
   "locales": {
@@ -652,62 +684,62 @@
   },
   "updates": [
     {
-      "id": "u-1793451573000-f5r5",
       "at": "2026-10-31T12:59:33.000Z",
+      "id": "u-1793451573000-f5r5",
       "kind": "statement",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Power bills and data centers spotlight utilities in US midterms",
-          "body": "Dawn reported that rising electricity prices and data center deals have become a major political issue in the 2026 midterms. CNA echoed the same observation. Both outlets say utilities are now a key campaign topic."
-        },
         "de": {
-          "headline": "Stromrechnungen und Datenzentren beleuchten Versorgungsunternehmen bei den US-Zwischenwahlen",
-          "body": "Dawn berichtete, dass steigende Strompreise und Datenzentren zu einem wichtigen politischen Thema bei den Zwischenwahlen 2026 geworden sind. CNA bestätigte die gleiche Beobachtung. Beide Medien sagen, dass Versorgungsunternehmen nun ein zentrales Kampagnen-Thema sind."
+          "body": "Dawn berichtete, dass steigende Strompreise und Datenzentren zu einem wichtigen politischen Thema bei den Zwischenwahlen 2026 geworden sind. CNA bestätigte die gleiche Beobachtung. Beide Medien sagen, dass Versorgungsunternehmen nun ein zentrales Kampagnen-Thema sind.",
+          "headline": "Stromrechnungen und Datenzentren beleuchten Versorgungsunternehmen bei den US-Zwischenwahlen"
+        },
+        "en": {
+          "body": "Dawn reported that rising electricity prices and data center deals have become a major political issue in the 2026 midterms. CNA echoed the same observation. Both outlets say utilities are now a key campaign topic.",
+          "headline": "Power bills and data centers spotlight utilities in US midterms"
         },
         "es": {
-          "headline": "Las facturas de energía y los centros de datos destacan a las compañías de servicios públicos en las elecciones de mitad de mandato de EE. UU.",
-          "body": "Dawn informó que el aumento de los precios de la electricidad y los acuerdos con centros de datos se han convertido en un tema político importante en las elecciones de mitad de mandato de 2026. CNA confirmó la misma observación. Ambos medios afirman que las compañías de servicios públicos son ahora un tema clave de la campaña."
-        },
-        "it": {
-          "headline": "Bollette elettriche e centri dati mettono in evidenza le utility nelle elezioni di metà mandato US",
-          "body": "Dawn ha riferito che l'aumento dei prezzi dell'elettricità e gli accordi con i centri dati sono diventati un tema politico principale nelle elezioni di metà mandato del 2026. CNA ha ribadito la stessa osservazione. Entrambi i media affermano che le utility sono ora un tema chiave della campagna."
+          "body": "Dawn informó que el aumento de los precios de la electricidad y los acuerdos con centros de datos se han convertido en un tema político importante en las elecciones de mitad de mandato de 2026. CNA confirmó la misma observación. Ambos medios afirman que las compañías de servicios públicos son ahora un tema clave de la campaña.",
+          "headline": "Las facturas de energía y los centros de datos destacan a las compañías de servicios públicos en las elecciones de mitad de mandato de EE. UU."
         },
         "fr": {
-          "headline": "Factures d'électricité et centres de données mettent en lumière les services publics aux élections de mi-mandat",
-          "body": "Dawn a rapporté que la hausse des prix de l'électricité et les accords sur les centres de données sont devenus un enjeu politique majeur lors des élections de mi-mandat de 2026 aux États-Unis. CNA a confirmé la même observation. Les deux médias affirment que les services publics sont désormais un sujet clé de la campagne."
+          "body": "Dawn a rapporté que la hausse des prix de l'électricité et les accords sur les centres de données sont devenus un enjeu politique majeur lors des élections de mi-mandat de 2026 aux États-Unis. CNA a confirmé la même observation. Les deux médias affirment que les services publics sont désormais un sujet clé de la campagne.",
+          "headline": "Factures d'électricité et centres de données mettent en lumière les services publics aux élections de mi-mandat"
         },
-        "pt": {
-          "headline": "Contas de eletricidade e centros de dados destacam utilidades nas eleições de meio de mandato dos EUA",
-          "body": "O Dawn relatou que o aumento dos preços da eletricidade e os acordos com centros de dados tornaram‑se uma grande questão política nas eleições de meio de mandato de 2026. O CNA ecoou a mesma observação. Ambos os meios afirmam que as utilidades são agora um tema chave de campanha."
-        },
-        "zh": {
-          "headline": "电费与数据中心聚焦美国中期选举中的公共事业",
-          "body": "《Dawn》报道称，电价上涨和数据中心交易已成为2026年中期选举中的主要政治议题。CNA也作出同样的观察。两家媒体表示，公共事业现在是竞选议题的关键。"
-        },
-        "ko": {
-          "headline": "전력 요금과 데이터 센터가 미국 중간선거에서 공공요금 이슈를 부각시켜",
-          "body": "Dawn은 2026년 중간선거에서 전기 요금 상승과 데이터 센터 계약이 주요 정치 이슈가 되었다고 보도했다. CNA도 같은 관찰을 반복했다. 두 매체는 공공요금이 이제 선거 캠페인의 핵심 주제라고 밝혔다."
+        "it": {
+          "body": "Dawn ha riferito che l'aumento dei prezzi dell'elettricità e gli accordi con i centri dati sono diventati un tema politico principale nelle elezioni di metà mandato del 2026. CNA ha ribadito la stessa osservazione. Entrambi i media affermano che le utility sono ora un tema chiave della campagna.",
+          "headline": "Bollette elettriche e centri dati mettono in evidenza le utility nelle elezioni di metà mandato US"
         },
         "ja": {
-          "headline": "電気料金とデータセンターが米国中間選挙で公共事業を注目させる",
-          "body": "Dawnは、電気料金の上昇とデータセンター契約が2026年の中間選挙で主要な政治課題となっていると報じた。CNAも同様の見解を示した。両メディアは、公共事業が現在の選挙キャンペーンの重要テーマであると述べている。"
+          "body": "Dawnは、電気料金の上昇とデータセンター契約が2026年の中間選挙で主要な政治課題となっていると報じた。CNAも同様の見解を示した。両メディアは、公共事業が現在の選挙キャンペーンの重要テーマであると述べている。",
+          "headline": "電気料金とデータセンターが米国中間選挙で公共事業を注目させる"
+        },
+        "ko": {
+          "body": "Dawn은 2026년 중간선거에서 전기 요금 상승과 데이터 센터 계약이 주요 정치 이슈가 되었다고 보도했다. CNA도 같은 관찰을 반복했다. 두 매체는 공공요금이 이제 선거 캠페인의 핵심 주제라고 밝혔다.",
+          "headline": "전력 요금과 데이터 센터가 미국 중간선거에서 공공요금 이슈를 부각시켜"
+        },
+        "pt": {
+          "body": "O Dawn relatou que o aumento dos preços da eletricidade e os acordos com centros de dados tornaram‑se uma grande questão política nas eleições de meio de mandato de 2026. O CNA ecoou a mesma observação. Ambos os meios afirmam que as utilidades são agora um tema chave de campanha.",
+          "headline": "Contas de eletricidade e centros de dados destacam utilidades nas eleições de meio de mandato dos EUA"
+        },
+        "zh": {
+          "body": "《Dawn》报道称，电价上涨和数据中心交易已成为2026年中期选举中的主要政治议题。CNA也作出同样的观察。两家媒体表示，公共事业现在是竞选议题的关键。",
+          "headline": "电费与数据中心聚焦美国中期选举中的公共事业"
         }
       },
       "sources": [
         {
-          "outlet": "Dawn",
-          "title": "Power bills and data centres cast rare spotlight on utilities in US midterms",
           "url": "https://www.dawn.com/news/2041193/power-bills-and-data-centres-cast-rare-spotlight-on-utilities-in-us-midterms",
+          "title": "Power bills and data centres cast rare spotlight on utilities in US midterms",
+          "outlet": "Dawn",
           "publishedAt": "2026-10-31T12:59:33.000Z"
         },
         {
-          "outlet": "CNA",
-          "title": "Power bills and data centers cast rare spotlight on utilities in US midterms",
           "url": "https://www.channelnewsasia.com/business/power-bills-and-data-centers-cast-rare-spotlight-utilities-in-us-midterms-6509406",
+          "title": "Power bills and data centers cast rare spotlight on utilities in US midterms",
+          "outlet": "CNA",
           "publishedAt": "2026-10-31T10:08:54.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T06:33:17.000Z",
@@ -1622,6 +1654,23 @@
   "articleSlug": "2026-midterm-elections",
   "sourceCount": 20,
   "statsHistory": [
+    {
+      "at": "2026-10-27T09:10:00.000Z",
+      "rows": [
+        {
+          "key": "super-pac-spending-million",
+          "value": 637
+        },
+        {
+          "key": "elon-musk-spending-million",
+          "value": 446
+        },
+        {
+          "key": "trump-disapproval",
+          "value": 82
+        }
+      ]
+    },
     {
       "at": "2026-10-27T09:10:00.000Z",
       "rows": [
