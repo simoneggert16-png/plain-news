@@ -1274,9 +1274,9 @@ async function researchAgent(d) {
     return wire
       .map((it) => wireHit(it, terms, distinctive))
       .filter((x) => x.score >= 2 || x.strong)
-      .sort((a, b) => b.score - a.score || new Date(b.it.publishedAt || 0) - new Date(a.it.publishedAt || 0))
+      .sort((a, b) => b.score - a.score || new Date(b.item.publishedAt || 0) - new Date(a.item.publishedAt || 0))
       .slice(0, n)
-      .map((x) => x.it);
+      .map((x) => x.item);
   };
 
   const state = () =>
