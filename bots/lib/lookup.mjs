@@ -180,7 +180,13 @@ async function worldBankItems(qterm = 'procurement') {
       kind: 'document',
       primary: true,
     }))
-    .filter((n) => n.title.replace(/^Notice:\s*/, '').trim().length > 12)
+    // The notice's subject sits behind the type, after the colon. A line like
+    // "General Procurement Notice: " names nothing, and a scan that reads it
+    // cannot pick it for a story.
+    .filter((n) => {
+      const subject = n.title.includes(':') ? n.title.slice(n.title.lastIndexOf(':') + 1) : n.title;
+      return subject.replace(/^Notice:\s*/, '').trim().length > 12;
+    })
     .slice(0, 12);
 }
 
