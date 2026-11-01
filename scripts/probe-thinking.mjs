@@ -27,12 +27,14 @@ const src = article?.locales?.en || {
   facts: ['A fund of 200 billion dollars was agreed.', 'Thirty percent of land and sea is to be protected by 2030.'],
 };
 
+// reasoning_effort is the one spelling the provider honoured on 2026-11-01: the
+// answer started with the marker instead of a plan. It arrived 15 characters
+// long, so the budget is part of the question — each effort is tried with the
+// room a full answer needs, and a plain request is the control.
+const efforts = (process.env.PROBE_EFFORT || 'none,minimal,low').split(',').map((s) => s.trim()).filter(Boolean);
 const variants = [
   ['plain', null],
-  ['chat_template_kwargs.enable_thinking', { chat_template_kwargs: { enable_thinking: false } }],
-  ['chat_template_kwargs.thinking', { chat_template_kwargs: { thinking: false } }],
-  ['reasoning_effort:none', { reasoning_effort: 'none' }],
-  ['thinking.type:disabled', { thinking: { type: 'disabled' } }],
+  ...efforts.map((e) => [`reasoning_effort:${e}`, { reasoning_effort: e }]),
 ];
 
 console.log(`article: ${article?.slug || '(sample)'}, ${src.facts?.length || 0} fact(s), maxTokens ${maxTokens}`);
