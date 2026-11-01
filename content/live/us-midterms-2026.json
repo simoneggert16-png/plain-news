@@ -8,7 +8,7 @@
     ],
     "createdBy": "bots/live.mjs",
     "statsModel": "openai/gpt-oss-20b",
-    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "us-midterms-2026",
   "stats": {
@@ -163,55 +163,87 @@
   "status": "live",
   "article": {
     "slug": "us-midterms-2026",
+    "updatedAt": "2026-11-01T00:31:38.146Z",
     "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohungen der Trump-Administration, Wahlbeamte wegen angeblicher Nichtbürgerwahl zu verfolgen, vor den 2026-Zwischenwahlen.",
-        "body": [
-          "Washington D.C. und Virginia reichten eine Klage ein, um die Errichtung des geplanten 250-Fuß-Bogens von Präsident Trump zu verhindern, laut Axios und The Hill, am 31. Oktober 2026. Die Klage soll verhindern, dass der Bogen auf Bundesgrund errichtet wird.",
-          "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerwahl zu bedrohen, laut Fox News und The Hill, am 31. Oktober 2026. Das Urteil gilt landesweit für alle Wahlbeamten.",
-          "Die USA genehmigten den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine, laut Al Jazeera und Dawn, am 31. Oktober 2026. Der Verkauf ist Teil der fortlaufenden US-Unterstützung für die Ukraine.",
-          "Die Wahlkampagne im Bundesstaat Melaka begann am Samstag, laut South China Morning Post und CNA, am 31. Oktober 2026. Die Kampagne umfasst 79 Sitze und dient als Test für die Koalition von Anwar Ibrahim.",
-          "Laut Haaretz plant Trump, einen erneuten Angriff auf Iran einen Tag nach den Zwischenwahlen zu starten, und Anadolu Ajansı berichtet, er könne einen großen Angriff befehlen, wenn die Republikaner Verluste erleiden, am 31. Oktober 2026. Die Berichte spiegeln Bedenken hinsichtlich der Außenpolitik nach den Wahlen wider.",
-          "Fox News berichtete, dass demokratische Abgeordnete über ein angebliches Wahlverwirrungsschema im Senatswettbewerb Alaskas schweigen, und G1 meldete, dass zwei Kandidaten mit demselben Namen um den Sitz kämpfen, was Trump irritiert, am 31. Oktober 2026. Der Bericht hob die Verwirrung unter den Wählern hervor.",
-          "Al Jazeera berichtete, dass mehr als 43 Millionen Amerikaner bei den 2026-Zwischenwahlen vorzeitig gewählt haben, und Times of India sagte, ein demokratischer Sieg könnte die Handelsbeziehungen mit Indien beeinflussen, am 31. Oktober 2026. Der Trend zu vorzeitiger Wahl spiegelt hohe Beteiligung wider und könnte internationale Handelsverhandlungen beeinflussen."
-        ],
-        "facts": [
-          "USA genehmigt den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine",
-          "Richter blockiert die Drohungen des DOJ der Trump-Administration gegen Wahlbeamte",
-          "Die Wahlkampagne im Bundesstaat Melaka beginnt am Samstag",
-          "Trump könnte nach den Zwischenwahlen einen großen Angriff auf Iran befehlen",
-          "Im Senatswettbewerb Alaskas treten zwei Kandidaten mit demselben Namen an",
-          "Mehr als 43 Millionen Amerikaner haben vorzeitig gewählt"
-        ],
-        "title": "Richter blockiert Drohungen der Trump-Administration gegen Wahlbeamte",
-        "context": "Die USA-Wahlen 2026 finden am 3. November 2026 statt und betreffen alle 435 Sitze im Repräsentantenhaus sowie 34 Sitze im Senat. Die Wahlen werden hinsichtlich möglicher Veränderungen in Politik und internationalen Beziehungen beobachtet."
-      },
       "en": {
-        "dek": "A federal judge in California halted the Trump administration's threats to prosecute election officials over alleged noncitizen voting claims ahead of the 2026 midterms.",
-        "body": [
-          "Washington D.C. and Virginia filed a lawsuit to block the construction of President Trump's planned 250‑foot arch, according to Axios and The Hill, on 31 October 2026. The lawsuit seeks to prevent the arch from being erected on federal property.",
-          "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News and The Hill, on 31 October 2026. The ruling applies nationwide to all election officials.",
-          "The United States approved a $2.1 billion sale of Patriot missiles to Ukraine, according to Al Jazeera and Dawn, on 31 October 2026. The sale is part of ongoing U.S. support for Ukraine.",
-          "Melaka state election campaign began on Saturday, according to South China Morning Post and CNA, on 31 October 2026. The campaign covers 79 seats and is used as a test for Anwar Ibrahim’s coalition.",
-          "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms, and Anadolu Ajansı reports he may order a major strike if Republicans suffer losses, on 31 October 2026. The reports reflect concerns about post‑election foreign policy.",
-          "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race, and G1 reported that two candidates with the same name were contesting the seat, irritating Trump, on 31 October 2026. The report highlighted confusion among voters.",
-          "Al Jazeera said more than 43 million Americans voted early in the 2026 midterms, and Times of India said a Democratic win could affect trade relations with India, on 31 October 2026. The early voting trend reflects high participation and may influence international trade discussions."
-        ],
+        "title": "Economy and Cost of Living Focus of Final Midterm Messages",
+        "dek": "Democrats focused on the cost of living in final midterm messages, while early voting passed 43 million and a Nebraska poll showed Ricketts leading by 6 points.",
         "facts": [
-          "US approves $2.1bn Patriot missile sale to Ukraine",
+          "More than 43 million Americans voted early",
           "Judge blocks Trump DOJ threats against election officials",
-          "Melaka state election campaign begins on Saturday",
-          "Trump may order major Iran strike after midterms",
-          "Alaska Senate race features two candidates with same name",
-          "More than 43 million Americans voted early"
+          "Ricketts leads Osborn by 6 points in Nebraska Senate poll",
+          "D.C. and Virginia sue to block Trump's planned arch",
+          "US approves $2.1bn Patriot missile sale to Ukraine",
+          "Judge dismisses Trump lawsuit against WSJ and Murdoch"
         ],
-        "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+        "body": [
+          "Le Monde reported that Democrats set aside social issues to focus on the cost of living in their final midterm messages. NPR said GDP growth and prices were both up while interest rates stayed unchanged, describing a mixed economic forecast. The Hill reported that the economy weighed heavily on voters’ minds as candidates made final pitches for the Nov. 3 election.",
+          "Al Jazeera reported that more than 43 million Americans have voted early in the 2026 midterms. A poll by The Hill showed Sen. Pete Ricketts leading independent challenger Dan Osborn by 6 points in Nebraska, and MarketWatch reported the same result.",
+          "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News and The Hill. The ruling applies nationwide to all election officials.",
+          "Fox News reported that Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska’s Senate race. G1 reported that two candidates with the same name were contesting the seat, which irritated Trump.",
+          "Washington D.C. and Virginia filed a lawsuit to block the construction of President Trump’s planned 250-foot arch, according to Axios and The Hill. The lawsuit seeks to prevent the arch from being erected on federal property.",
+          "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms. Anadolu Ajansı reports that Trump may order a major strike if Republicans suffer losses in the midterm election. Iran’s Supreme Leader Mojtaba Khamenei warned the United States and Israel against further strikes, according to France 24 and The Hill.",
+          "The United States approved a $2.1 billion sale of Patriot missiles to Ukraine, according to Al Jazeera and Dawn. According to The Jerusalem Post, Ukrainian evacuees reached Belarus following a ceasefire in Oleshky mediated by Melania Trump, and DW reported that they later crossed into Kyiv-controlled territory.",
+          "A federal judge on Saturday dismissed with prejudice President Trump’s lawsuit against the Wall Street Journal and Rupert Murdoch over the paper’s reporting on Trump’s ties to Jeffrey Epstein, according to Axios and CNBC. Trump’s legal team said the president plans to appeal.",
+          "The Melaka state election campaign began on Saturday, according to South China Morning Post and CNA, and it covers 79 seats. France deployed around 70,000 security personnel for a third consecutive weekend of protests, according to France 24 and The Jerusalem Post."
+        ],
         "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
         "imageCaption": ""
       }
     },
     "versions": [
+      {
+        "at": "2026-10-31T16:07:21.126Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "A federal judge in California halted the Trump administration's threats to prosecute election officials over alleged noncitizen voting claims ahead of the 2026 midterms.",
+            "body": [
+              "Washington D.C. and Virginia filed a lawsuit to block the construction of President Trump's planned 250‑foot arch, according to Axios and The Hill, on 31 October 2026. The lawsuit seeks to prevent the arch from being erected on federal property.",
+              "A federal judge in California ordered the Trump administration to stop threatening election officials with criminal prosecution over alleged noncitizen voting claims, according to Fox News and The Hill, on 31 October 2026. The ruling applies nationwide to all election officials.",
+              "The United States approved a $2.1 billion sale of Patriot missiles to Ukraine, according to Al Jazeera and Dawn, on 31 October 2026. The sale is part of ongoing U.S. support for Ukraine.",
+              "Melaka state election campaign began on Saturday, according to South China Morning Post and CNA, on 31 October 2026. The campaign covers 79 seats and is used as a test for Anwar Ibrahim’s coalition.",
+              "According to Haaretz, Trump is planning to resume Iran strikes as soon as one day after the midterms, and Anadolu Ajansı reports he may order a major strike if Republicans suffer losses, on 31 October 2026. The reports reflect concerns about post‑election foreign policy.",
+              "Fox News said Democratic lawmakers stayed silent on an alleged voter confusion scheme in Alaska's Senate race, and G1 reported that two candidates with the same name were contesting the seat, irritating Trump, on 31 October 2026. The report highlighted confusion among voters.",
+              "Al Jazeera said more than 43 million Americans voted early in the 2026 midterms, and Times of India said a Democratic win could affect trade relations with India, on 31 October 2026. The early voting trend reflects high participation and may influence international trade discussions."
+            ],
+            "facts": [
+              "US approves $2.1bn Patriot missile sale to Ukraine",
+              "Judge blocks Trump DOJ threats against election officials",
+              "Melaka state election campaign begins on Saturday",
+              "Trump may order major Iran strike after midterms",
+              "Alaska Senate race features two candidates with same name",
+              "More than 43 million Americans voted early"
+            ],
+            "title": "Judge Blocks Trump DOJ Threats Against Election Officials",
+            "context": "The 2026 U.S. midterm elections are scheduled for November 3, 2026, and involve all 435 House seats and 34 Senate seats. The elections are being watched for potential shifts in policy and international relations.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Ein Bundesrichter in Kalifornien stoppte die Drohungen der Trump-Administration, Wahlbeamte wegen angeblicher Nichtbürgerwahl zu verfolgen, vor den 2026-Zwischenwahlen.",
+            "body": [
+              "Washington D.C. und Virginia reichten eine Klage ein, um die Errichtung des geplanten 250-Fuß-Bogens von Präsident Trump zu verhindern, laut Axios und The Hill, am 31. Oktober 2026. Die Klage soll verhindern, dass der Bogen auf Bundesgrund errichtet wird.",
+              "Ein Bundesrichter in Kalifornien ordnete der Trump-Administration an, die Wahlbeamten nicht mehr mit strafrechtlicher Verfolgung wegen angeblicher Nichtbürgerwahl zu bedrohen, laut Fox News und The Hill, am 31. Oktober 2026. Das Urteil gilt landesweit für alle Wahlbeamten.",
+              "Die USA genehmigten den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine, laut Al Jazeera und Dawn, am 31. Oktober 2026. Der Verkauf ist Teil der fortlaufenden US-Unterstützung für die Ukraine.",
+              "Die Wahlkampagne im Bundesstaat Melaka begann am Samstag, laut South China Morning Post und CNA, am 31. Oktober 2026. Die Kampagne umfasst 79 Sitze und dient als Test für die Koalition von Anwar Ibrahim.",
+              "Laut Haaretz plant Trump, einen erneuten Angriff auf Iran einen Tag nach den Zwischenwahlen zu starten, und Anadolu Ajansı berichtet, er könne einen großen Angriff befehlen, wenn die Republikaner Verluste erleiden, am 31. Oktober 2026. Die Berichte spiegeln Bedenken hinsichtlich der Außenpolitik nach den Wahlen wider.",
+              "Fox News berichtete, dass demokratische Abgeordnete über ein angebliches Wahlverwirrungsschema im Senatswettbewerb Alaskas schweigen, und G1 meldete, dass zwei Kandidaten mit demselben Namen um den Sitz kämpfen, was Trump irritiert, am 31. Oktober 2026. Der Bericht hob die Verwirrung unter den Wählern hervor.",
+              "Al Jazeera berichtete, dass mehr als 43 Millionen Amerikaner bei den 2026-Zwischenwahlen vorzeitig gewählt haben, und Times of India sagte, ein demokratischer Sieg könnte die Handelsbeziehungen mit Indien beeinflussen, am 31. Oktober 2026. Der Trend zu vorzeitiger Wahl spiegelt hohe Beteiligung wider und könnte internationale Handelsverhandlungen beeinflussen."
+            ],
+            "facts": [
+              "USA genehmigt den Verkauf von Patriot-Raketen im Wert von 2,1 Mrd. USD an die Ukraine",
+              "Richter blockiert die Drohungen des DOJ der Trump-Administration gegen Wahlbeamte",
+              "Die Wahlkampagne im Bundesstaat Melaka beginnt am Samstag",
+              "Trump könnte nach den Zwischenwahlen einen großen Angriff auf Iran befehlen",
+              "Im Senatswettbewerb Alaskas treten zwei Kandidaten mit demselben Namen an",
+              "Mehr als 43 Millionen Amerikaner haben vorzeitig gewählt"
+            ],
+            "title": "Richter blockiert Drohungen der Trump-Administration gegen Wahlbeamte",
+            "context": "Die USA-Wahlen 2026 finden am 3. November 2026 statt und betreffen alle 435 Sitze im Repräsentantenhaus sowie 34 Sitze im Senat. Die Wahlen werden hinsichtlich möglicher Veränderungen in Politik und internationalen Beziehungen beobachtet."
+          }
+        }
+      },
       {
         "at": "2026-10-31T15:34:24.966Z",
         "reason": "2 new update(s)",
@@ -467,8 +499,7 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-10-31T16:07:21.126Z"
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -477,8 +508,8 @@
       "title": "US-Zwischenwahlen 2026"
     },
     "en": {
-      "title": "2026 mid-term elections",
-      "dek": "The 2026 mid-term elections in the United States are unfolding amid political tensions and legal challenges."
+      "dek": "The 2026 mid-term elections in the United States are unfolding amid political tensions and legal challenges.",
+      "title": "2026 mid-term elections"
     },
     "es": {
       "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos se desarrollan en medio de tensiones políticas y desafíos legales.",
@@ -511,103 +542,151 @@
   },
   "updates": [
     {
-      "id": "u-1793480048000-lx2r",
-      "at": "2026-10-31T20:54:08.000Z",
-      "kind": "result",
+      "id": "u-1793487421000-rupf",
+      "at": "2026-10-31T22:57:01.000Z",
+      "kind": "context",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Judge dismisses Trump lawsuit against WSJ and Murdoch over Epstein reporting",
-          "body": "A federal judge on Saturday dismissed with prejudice President Trump's lawsuit against the Wall Street Journal and Rupert Murdoch over the paper's reporting on Trump's ties to Jeffrey Epstein, according to Axios and CNBC. Dismissal with prejudice means Trump cannot file another amended version in district court, CNBC reported. Trump's legal team said the president plans to appeal."
-        },
-        "fr": {
-          "headline": "Un juge rejette la plainte de Trump contre le WSJ et Murdoch sur la couverture d'Epstein",
-          "body": "Un juge fédéral a rejeté samedi avec préjudice la plainte du président Trump contre le Wall Street Journal et Rupert Murdoch au sujet des articles du journal sur les liens de Trump avec Jeffrey Epstein, selon Axios et CNBC. Un rejet avec préjudice signifie que Trump ne peut pas déposer une autre version modifiée devant le tribunal de district, a rapporté CNBC. L'équipe juridique de Trump a déclaré que le président prévoit de faire appel."
-        },
-        "de": {
-          "headline": "Richter weist Trumps Klage gegen WSJ und Murdoch wegen Epstein-Berichterstattung ab",
-          "body": "Ein Bundesrichter wies am Samstag mit Präklusion die Klage von Präsident Trump gegen das Wall Street Journal und Rupert Murdoch wegen der Berichterstattung der Zeitung über Trumps Verbindungen zu Jeffrey Epstein ab, wie Axios und CNBC berichten. Eine Abweisung mit Präklusion bedeutet, dass Trump keine weitere geänderte Fassung beim Bezirksgericht einreichen kann, berichtete CNBC. Trumps Anwaltsteam erklärte, der Präsident plane Berufung einzulegen."
-        },
-        "it": {
-          "headline": "Un giudice rigetta in via definitiva la causa di Trump contro WSJ e Murdoch per i reportage sul caso Epstein",
-          "body": "Un giudice federale ha sabato rigettato in via definitiva la causa intentata dal presidente Trump contro il Wall Street Journal e Rupert Murdoch riguardo ai reportage del giornale sui legami di Trump con Jeffrey Epstein, secondo Axios e CNBC. La rigettazione in via definitiva significa che Trump non può presentare un'altra versione emendata in tribunale distrettuale, ha riferito CNBC. La squadra legale di Trump ha dichiarato che il presidente intende presentare appello."
+          "headline": "Economy and cost of living are central issues in final midterm messages",
+          "body": "Le Monde reported that Democrats set aside social issues to focus on the cost of living. NPR said GDP growth and prices were both up while interest rates stayed unchanged, describing a mixed economic forecast ahead of the midterms. The Hill said the economy weighed heavily on voters’ minds as candidates made final pitches for the Nov. 3 election."
         },
         "es": {
-          "headline": "Un juez desestima la demanda de Trump contra el WSJ y Murdoch por sus informaciones sobre Epstein",
-          "body": "Un juez federal desestimó el sábado de plano la demanda del presidente Trump contra el Wall Street Journal y Rupert Murdoch por las informaciones del periódico sobre los vínculos de Trump con Jeffrey Epstein, según Axios y CNBC. La desestimación de plano significa que Trump no puede presentar otra versión modificada de la demanda ante el tribunal de distrito, informó CNBC. El equipo jurídico de Trump afirmó que el presidente tiene previsto recurrir la decisión."
+          "headline": "La economía y el coste de la vida son cuestiones centrales en los últimos mensajes de las elecciones de mitad de mandato",
+          "body": "Le Monde informó de que los demócratas dejaron de lado las cuestiones sociales para centrarse en el coste de la vida. NPR señaló que el crecimiento del PIB y los precios estaban al alza, mientras que los tipos de interés se mantuvieron sin cambios, y describió un panorama económico mixto de cara a las elecciones de mitad de mandato. The Hill indicó que la economía preocupaba en gran medida a los votantes mientras los candidatos formulaban sus últimos discursos de campaña para las elecciones del 3 de noviembre."
         },
-        "pt": {
-          "headline": "Juiz rejeita ação de Trump contra o WSJ e Murdoch por reportagens sobre Epstein",
-          "body": "Um juiz federal rejeitou no sábado, sem ressalva, a ação do presidente Trump contra o Wall Street Journal e Rupert Murdoch por causa das reportagens do jornal sobre os vínculos de Trump com Jeffrey Epstein, segundo a Axios e a CNBC. A rejeição sem ressalva significa que Trump não pode apresentar uma nova versão alterada da ação no tribunal distrital, informou a CNBC. A equipa jurídica de Trump afirmou que o presidente tenciona recorrer."
+        "it": {
+          "headline": "Economia e costo della vita sono temi centrali nei messaggi finali per le elezioni di metà mandato",
+          "body": "Le Monde ha riportato che i democratici hanno accantonato le questioni sociali per concentrarsi sul costo della vita. NPR ha segnalato che sia la crescita del PIL sia i prezzi erano in aumento, mentre i tassi di interesse sono rimasti invariati, descrivendo un quadro economico contrastante in vista delle elezioni di metà mandato. The Hill ha riferito che l’economia era al primo piano tra le preoccupazioni degli elettori, mentre i candidati lanciavano i loro ultimi appelli per le elezioni del 3 novembre."
         },
-        "zh": {
-          "headline": "法官驳回特朗普就爱泼斯坦报道起诉《华尔街日报》和默多克的诉讼",
-          "body": "据 Axios 和 CNBC 报道，联邦法官周六驳回了特朗普总统针对《华尔街日报》和鲁珀特·默多克提起的诉讼，该诉讼涉及该报对特朗普与杰弗里·爱泼斯坦关系的报道。CNBC 报道称，此次驳回具有终局效力，意味着特朗普不能在地方法院再次提交修改后的诉状。特朗普的法律团队表示，总统计划提出上诉。"
+        "de": {
+          "headline": "Wirtschaft und Lebenshaltungskosten stehen im Mittelpunkt der abschließenden Botschaften vor den Zwischenwahlen",
+          "body": "Le Monde berichtete, dass die Demokraten soziale Themen zurückstellten, um sich auf die Lebenshaltungskosten zu konzentrieren. NPR erklärte, dass sowohl das BIP-Wachstum als auch die Preise gestiegen seien, während die Zinssätze unverändert blieben, und beschrieb damit eine gemischte Wirtschaftsprognose vor den Zwischenwahlen. The Hill schrieb, die Wirtschaft habe die Wähler stark beschäftigt, während die Kandidaten ihre letzte Wahlwerbung für die Wahl am 3. November machten."
         },
-        "ko": {
-          "headline": "판사, 엡스타인 보도 관련 WSJ·머독 상대 트럼프 소송 기각",
-          "body": "액시오스와 CNBC에 따르면, 연방 판사는 토요일 제프리 엡스타인과 트럼프의 관계에 관한 월스트리트저널의 보도를 둘러싸고 트럼프 대통령이 월스트리트저널과 루퍼트 머독을 상대로 제기한 소송을 재소 금지 효력이 있는 기각으로 처리했다. CNBC는 재소 금지 효력이 있는 기각은 트럼프가 지방법원에 수정된 소장을 다시 제출할 수 없다는 것을 의미한다고 보도했다. 트럼프 법률팀은 대통령이 항소할 계획이라고 밝혔다."
-        },
-        "ja": {
-          "headline": "判、エプスタイン報道をめぐるトランプのWSJとマドロックへの訴訟を却下",
-          "body": "連邦判事は土曜日、アキオスとCNBCによると、トランプ大統領がジェフリー・エプスタインとの関係に関する紙面報道をめぐって、ウォール・ストリート・ジャーナルとルパート・マドロックに提訴した訴訟を本案終結として却下した。本案終結の却下とは、トランプが地方裁判所にもう一度修正した訴状を提出できないことを指すと、CNBCは報じた。トランプの法律チームは、大統領が上诉を計画していると述べた。"
+        "fr": {
+          "headline": "L’économie et le coût de la vie sont au cœur des messages finaux de mi-mandat",
+          "body": "Le Monde a rapporté que les démocrates ont mis de côté les questions sociales pour se concentrer sur le coût de la vie. NPR a indiqué que la croissance du PIB et les prix étaient tous deux en hausse, tandis que les taux d’intérêt sont restés inchangés, décrivant des perspectives économiques contrastées à l’approche des élections de mi-mandat. The Hill a écrit que l’économie pesait lourd dans les préoccupations des électeurs, alors que les candidats formulaient leurs derniers appels à l’électorat pour l’élection du 3 novembre."
         }
       },
       "sources": [
         {
-          "outlet": "CNBC",
-          "title": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
+          "outlet": "Le Monde",
+          "title": "How Democrats moved away from 'woke' themes in the midterm campaign",
+          "url": "https://www.lemonde.fr/en/international/article/2026/10/31/how-democrats-moved-away-from-woke-themes-in-the-midterm-campaign_6768379_4.html",
+          "publishedAt": "2026-10-31T22:57:01.000Z"
+        },
+        {
+          "outlet": "NPR",
+          "title": "Mixed economic forecast weighs heavy ahead of midterms",
+          "url": "https://www.npr.org/2026/10/31/nx-s1-6022285/mixed-economic-forecast-weighs-heavy-ahead-of-midterms",
+          "publishedAt": "2026-10-31T21:14:35.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Sunday shows preview: Candidates make last-minute pitches ahead of Tuesday’s midterms; Economy weighs heavily on voters’ minds",
+          "url": "https://thehill.com/homenews/sunday-talk-shows/6186417-sunday-shows-preview-candidates-make-last-minute-pitches-ahead-of-tuesdays-midterms-economy-weighs-heavily-on-voters-minds/",
+          "publishedAt": "2026-10-31T20:54:41.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-31T20:54:08.000Z",
+      "id": "u-1793480048000-lx2r",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Ein Bundesrichter wies am Samstag mit Präklusion die Klage von Präsident Trump gegen das Wall Street Journal und Rupert Murdoch wegen der Berichterstattung der Zeitung über Trumps Verbindungen zu Jeffrey Epstein ab, wie Axios und CNBC berichten. Eine Abweisung mit Präklusion bedeutet, dass Trump keine weitere geänderte Fassung beim Bezirksgericht einreichen kann, berichtete CNBC. Trumps Anwaltsteam erklärte, der Präsident plane Berufung einzulegen.",
+          "headline": "Richter weist Trumps Klage gegen WSJ und Murdoch wegen Epstein-Berichterstattung ab"
+        },
+        "en": {
+          "body": "A federal judge on Saturday dismissed with prejudice President Trump's lawsuit against the Wall Street Journal and Rupert Murdoch over the paper's reporting on Trump's ties to Jeffrey Epstein, according to Axios and CNBC. Dismissal with prejudice means Trump cannot file another amended version in district court, CNBC reported. Trump's legal team said the president plans to appeal.",
+          "headline": "Judge dismisses Trump lawsuit against WSJ and Murdoch over Epstein reporting"
+        },
+        "es": {
+          "body": "Un juez federal desestimó el sábado de plano la demanda del presidente Trump contra el Wall Street Journal y Rupert Murdoch por las informaciones del periódico sobre los vínculos de Trump con Jeffrey Epstein, según Axios y CNBC. La desestimación de plano significa que Trump no puede presentar otra versión modificada de la demanda ante el tribunal de distrito, informó CNBC. El equipo jurídico de Trump afirmó que el presidente tiene previsto recurrir la decisión.",
+          "headline": "Un juez desestima la demanda de Trump contra el WSJ y Murdoch por sus informaciones sobre Epstein"
+        },
+        "fr": {
+          "body": "Un juge fédéral a rejeté samedi avec préjudice la plainte du président Trump contre le Wall Street Journal et Rupert Murdoch au sujet des articles du journal sur les liens de Trump avec Jeffrey Epstein, selon Axios et CNBC. Un rejet avec préjudice signifie que Trump ne peut pas déposer une autre version modifiée devant le tribunal de district, a rapporté CNBC. L'équipe juridique de Trump a déclaré que le président prévoit de faire appel.",
+          "headline": "Un juge rejette la plainte de Trump contre le WSJ et Murdoch sur la couverture d'Epstein"
+        },
+        "it": {
+          "body": "Un giudice federale ha sabato rigettato in via definitiva la causa intentata dal presidente Trump contro il Wall Street Journal e Rupert Murdoch riguardo ai reportage del giornale sui legami di Trump con Jeffrey Epstein, secondo Axios e CNBC. La rigettazione in via definitiva significa che Trump non può presentare un'altra versione emendata in tribunale distrettuale, ha riferito CNBC. La squadra legale di Trump ha dichiarato che il presidente intende presentare appello.",
+          "headline": "Un giudice rigetta in via definitiva la causa di Trump contro WSJ e Murdoch per i reportage sul caso Epstein"
+        },
+        "ja": {
+          "body": "連邦判事は土曜日、アキオスとCNBCによると、トランプ大統領がジェフリー・エプスタインとの関係に関する紙面報道をめぐって、ウォール・ストリート・ジャーナルとルパート・マドロックに提訴した訴訟を本案終結として却下した。本案終結の却下とは、トランプが地方裁判所にもう一度修正した訴状を提出できないことを指すと、CNBCは報じた。トランプの法律チームは、大統領が上诉を計画していると述べた。",
+          "headline": "判、エプスタイン報道をめぐるトランプのWSJとマドロックへの訴訟を却下"
+        },
+        "ko": {
+          "body": "액시오스와 CNBC에 따르면, 연방 판사는 토요일 제프리 엡스타인과 트럼프의 관계에 관한 월스트리트저널의 보도를 둘러싸고 트럼프 대통령이 월스트리트저널과 루퍼트 머독을 상대로 제기한 소송을 재소 금지 효력이 있는 기각으로 처리했다. CNBC는 재소 금지 효력이 있는 기각은 트럼프가 지방법원에 수정된 소장을 다시 제출할 수 없다는 것을 의미한다고 보도했다. 트럼프 법률팀은 대통령이 항소할 계획이라고 밝혔다.",
+          "headline": "판사, 엡스타인 보도 관련 WSJ·머독 상대 트럼프 소송 기각"
+        },
+        "pt": {
+          "body": "Um juiz federal rejeitou no sábado, sem ressalva, a ação do presidente Trump contra o Wall Street Journal e Rupert Murdoch por causa das reportagens do jornal sobre os vínculos de Trump com Jeffrey Epstein, segundo a Axios e a CNBC. A rejeição sem ressalva significa que Trump não pode apresentar uma nova versão alterada da ação no tribunal distrital, informou a CNBC. A equipa jurídica de Trump afirmou que o presidente tenciona recorrer.",
+          "headline": "Juiz rejeita ação de Trump contra o WSJ e Murdoch por reportagens sobre Epstein"
+        },
+        "zh": {
+          "body": "据 Axios 和 CNBC 报道，联邦法官周六驳回了特朗普总统针对《华尔街日报》和鲁珀特·默多克提起的诉讼，该诉讼涉及该报对特朗普与杰弗里·爱泼斯坦关系的报道。CNBC 报道称，此次驳回具有终局效力，意味着特朗普不能在地方法院再次提交修改后的诉状。特朗普的法律团队表示，总统计划提出上诉。",
+          "headline": "法官驳回特朗普就爱泼斯坦报道起诉《华尔街日报》和默多克的诉讼"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html",
+          "title": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
+          "outlet": "CNBC",
           "publishedAt": "2026-10-31T20:54:08.000Z"
         },
         {
-          "outlet": "Axios",
-          "title": "Judge tosses Trump lawsuit against WSJ, Murdoch over Epstein story",
           "url": "https://www.axios.com/2026/10/31/trump-epstein-wsj-murdoch",
+          "title": "Judge tosses Trump lawsuit against WSJ, Murdoch over Epstein story",
+          "outlet": "Axios",
           "publishedAt": "2026-10-31T20:22:31.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T17:00:36.000Z",
       "id": "u-1793466036000-frd0",
       "kind": "statement",
       "locales": {
+        "de": {
+          "body": "Irans Oberster Führer Mojtaba Chamenei warnte die Vereinigten Staaten und Israel vor weiteren Angriffen, wie France 24 und The Hill berichten. The Hill berichtete, er habe mit einer Reaktion gedroht, falls die Vereinigten Staaten Iran nach den Zwischenwahlen angreifen.",
+          "headline": "Irans Chamenei warnt USA und Israel vor weiteren Angriffen"
+        },
         "en": {
           "body": "Iran's Supreme Leader Mojtaba Khamenei warned the United States and Israel against further strikes, according to France 24 and The Hill. The Hill reported that he threatened a response if the United States strikes Iran after the midterms.",
           "headline": "Iran's Khamenei warns US and Israel against further strikes"
         },
-        "fr": {
-          "headline": "Khamenei, en Iran, met en garde les États-Unis et Israël contre de nouvelles frappes",
-          "body": "Le guide suprême iranien Mojtaba Khamenei a mis en garde les États-Unis et Israël contre de nouvelles frappes, selon France 24 et The Hill. The Hill a rapporté qu'il avait menacé de riposter si les États-Unis frappaient l'Iran après les élections de mi-mandat."
+        "es": {
+          "body": "El líder supremo iraní Mojtaba Khamenei advirtió a Estados Unidos e Israel de que no llevaran a cabo más ataques, según France 24 y The Hill. The Hill informó de que amenazó con responder si Estados Unidos ataca Irán después de las elecciones de mitad de mandato.",
+          "headline": "El Khamenei iraní advierte a Estados Unidos e Israel contra nuevos ataques"
         },
-        "de": {
-          "headline": "Irans Chamenei warnt USA und Israel vor weiteren Angriffen",
-          "body": "Irans Oberster Führer Mojtaba Chamenei warnte die Vereinigten Staaten und Israel vor weiteren Angriffen, wie France 24 und The Hill berichten. The Hill berichtete, er habe mit einer Reaktion gedroht, falls die Vereinigten Staaten Iran nach den Zwischenwahlen angreifen."
+        "fr": {
+          "body": "Le guide suprême iranien Mojtaba Khamenei a mis en garde les États-Unis et Israël contre de nouvelles frappes, selon France 24 et The Hill. The Hill a rapporté qu'il avait menacé de riposter si les États-Unis frappaient l'Iran après les élections de mi-mandat.",
+          "headline": "Khamenei, en Iran, met en garde les États-Unis et Israël contre de nouvelles frappes"
         },
         "it": {
-          "headline": "Il leader supremo iraniano Khamenei avverte Stati Uniti e Israele di non colpire ulteriormente",
-          "body": "Il leader supremo iraniano Mojtaba Khamenei ha avvertito gli Stati Uniti e Israele di non compiere ulteriori attacchi, secondo France 24 e The Hill. The Hill ha riferito che ha minacciato una risposta se gli Stati Uniti colpiranno l'Iran dopo le elezioni di metà mandato."
-        },
-        "es": {
-          "headline": "El Khamenei iraní advierte a Estados Unidos e Israel contra nuevos ataques",
-          "body": "El líder supremo iraní Mojtaba Khamenei advirtió a Estados Unidos e Israel de que no llevaran a cabo más ataques, según France 24 y The Hill. The Hill informó de que amenazó con responder si Estados Unidos ataca Irán después de las elecciones de mitad de mandato."
-        },
-        "pt": {
-          "headline": "Líder supremo do Irão, Mojtaba Khamenei, adverte Estados Unidos e Israel contra novos ataques",
-          "body": "O líder supremo do Irão, Mojtaba Khamenei, advertiu os Estados Unidos e Israel contra mais ataques, segundo a France 24 e o The Hill. O The Hill informou que ameaçou com uma resposta caso os Estados Unidos ataquem o Irão após as eleições de meio de mandato."
-        },
-        "zh": {
-          "headline": "伊朗最高领袖哈梅内伊警告美国和以色列勿再发动打击",
-          "body": "据法国24台和《国会山报》报道，伊朗最高领袖穆杰塔巴·哈梅内伊警告美国和以色列不要进一步发动打击。《国会山报》称，他威胁称，如果美国在中期选举后对伊朗发动打击，伊朗将予以回应。"
-        },
-        "ko": {
-          "headline": "이란 하메네이, 미국·이스라엘에 추가 공격 자제 경고",
-          "body": "프랑스24와 더힐에 따르면, 이란의 최고지도자 모즈타바 하메네이는 미국과 이스라엘에 추가 공격을 하지 말라고 경고했다. 더힐은 그가 중간선거 이후 미국이 이란을 공격하면 대응하겠다고 위협했다고 보도했다."
+          "body": "Il leader supremo iraniano Mojtaba Khamenei ha avvertito gli Stati Uniti e Israele di non compiere ulteriori attacchi, secondo France 24 e The Hill. The Hill ha riferito che ha minacciato una risposta se gli Stati Uniti colpiranno l'Iran dopo le elezioni di metà mandato.",
+          "headline": "Il leader supremo iraniano Khamenei avverte Stati Uniti e Israele di non colpire ulteriormente"
         },
         "ja": {
-          "headline": "イランのハメネイ、米とイスラエルにさらなる攻撃を警告",
-          "body": "イラン最高指導者のモクタバ・ハメネイは、フランス24とザ・ヒルによると、米国とイスラエルに対しさらなる攻撃を行うなと警告した。ザ・ヒルによると、彼は、中間選挙後に米国がイランを攻撃すれば報復すると脅迫した。"
+          "body": "イラン最高指導者のモクタバ・ハメネイは、フランス24とザ・ヒルによると、米国とイスラエルに対しさらなる攻撃を行うなと警告した。ザ・ヒルによると、彼は、中間選挙後に米国がイランを攻撃すれば報復すると脅迫した。",
+          "headline": "イランのハメネイ、米とイスラエルにさらなる攻撃を警告"
+        },
+        "ko": {
+          "body": "프랑스24와 더힐에 따르면, 이란의 최고지도자 모즈타바 하메네이는 미국과 이스라엘에 추가 공격을 하지 말라고 경고했다. 더힐은 그가 중간선거 이후 미국이 이란을 공격하면 대응하겠다고 위협했다고 보도했다.",
+          "headline": "이란 하메네이, 미국·이스라엘에 추가 공격 자제 경고"
+        },
+        "pt": {
+          "body": "O líder supremo do Irão, Mojtaba Khamenei, advertiu os Estados Unidos e Israel contra mais ataques, segundo a France 24 e o The Hill. O The Hill informou que ameaçou com uma resposta caso os Estados Unidos ataquem o Irão após as eleições de meio de mandato.",
+          "headline": "Líder supremo do Irão, Mojtaba Khamenei, adverte Estados Unidos e Israel contra novos ataques"
+        },
+        "zh": {
+          "body": "据法国24台和《国会山报》报道，伊朗最高领袖穆杰塔巴·哈梅内伊警告美国和以色列不要进一步发动打击。《国会山报》称，他威胁称，如果美国在中期选举后对伊朗发动打击，伊朗将予以回应。",
+          "headline": "伊朗最高领袖哈梅内伊警告美国和以色列勿再发动打击"
         }
       },
       "sources": [
@@ -1481,14 +1560,31 @@
     "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNT2VPUVBsX1c3VGFmWVQ4a2luNE03cW5OUjJ1eGdEWFp6S1BVdVJlZGIwVTJ0ZUpNdkJ4Vlg4djdiUF95T09xaDE5UmlZUmZkOXVZdzQwZE03d3Zyb0FLd2dXMkk5VjZyX2F3M2FaRWxiUGZqWXlyQXBCS19NTmRFQVhQcmhpSnNmUjVWZVUxWXgxWGtuTk1uZGRaZmJJWWhSNlU1ZmF0ZzRfTU1SSjhFenBHekIxYVpxalRtWnZlQUVOeXRqNGxEdnc3eWtFTG5rbmNOMVhHdDVvai16c1ZzTDNmUGpZVUlPa3c?oc=5",
     "https://www.aljazeera.com/news/longform/2026/10/31/a-cure-for-trump-why-democratic-doctors-are-running-in-the-2026-midterms?traffic_source=rss",
     "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUTZnamdIek1pLVdlWUdONEhMM0dtcU1RRHctMEwxR3hOcjFudU9hRTk5ellBY19GRUZ1SUVUdmFicWt3cWJYM3h6Rm5QMnlUcHFxenR2UmpmeWkxbk5YY0ZaeG5XeDNaMTVsN3ZsaWdzUXlmdTBINnlZQXRPU3VzVVNWaU1Rdm0wWEVPeXg1dWhGSl9oRzlNYTVkWk5RZDFmN05Mcl9UaUF5NnNBMEp1bjlUYWhFRHNRVnZ5NGtQME5pQdIBxwFBVV95cUxOU1ZGT0Q0bW9ha0dpWm5QQ1J2UG85bEJqZDRHUGlmNUhDZ25lRkJnb3ZTaUpReENRTFNKQkhQdko2bGctX2RfS0lNMUhwQnRwamxhbkIzZzQ2MFl6TDc1RGRMUnFkdjNUSkZoSnVwYXd5ZHBPYnNBYTAtNnRfdDFyRTVKVFJsQXpFYWZVUC1OZE5BUlB1NEcyMjdrYldNNk44SnkwTHYyb0hNX0VQZkZvRjRlQ3lETTJiWFJwZFBQcF9vOWpkcVNF?oc=5",
-    "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWmlUSnFiZkJmcTRhTWtzNnQ1SERxa0pjczN1SGlkX3pQN0lYemtxaWdZajBQSUJCaEFLcTlSREpuejJkemJ6OEthTkxGcTRnUm9UWlFXYVJUVmd0UllqRkxqQy00a2s1OTVjWnlPdHFmOWF5NUlCYTlhdVd4VG1yRkppMnFSSTZGNUpmd2JjdVVDcWlCbE11SEJIeFBTMV93RHp6SDdBWXl4NEdK0gGyAUFVX3lxTFBiUzNZemNXRElTRDRjeUpMVm9hTDVicnc0STNDSVlvVDF0ZDZZVHowaVU1OTNULV9vOWxUS0s0M2ttdHBLVzJuelNvOEM4VkJ1YTlOR29taGVLU29IMmwwTVhQNDZabFh3S2dlQmdDbUNkX3lHZHZ2NkJXeWhnT2Q5dkxkc2NhNXREdlNqbVI2Rks1OTRVblFHM3pNeVhtb0dQNE5oR2N5c0xWQUQ0NklmNnc?oc=5"
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWmlUSnFiZkJmcTRhTWtzNnQ1SERxa0pjczN1SGlkX3pQN0lYemtxaWdZajBQSUJCaEFLcTlSREpuejJkemJ6OEthTkxGcTRnUm9UWlFXYVJUVmd0UllqRkxqQy00a2s1OTVjWnlPdHFmOWF5NUlCYTlhdVd4VG1yRkppMnFSSTZGNUpmd2JjdVVDcWlCbE11SEJIeFBTMV93RHp6SDdBWXl4NEdK0gGyAUFVX3lxTFBiUzNZemNXRElTRDRjeUpMVm9hTDVicnc0STNDSVlvVDF0ZDZZVHowaVU1OTNULV9vOWxUS0s0M2ttdHBLVzJuelNvOEM4VkJ1YTlOR29taGVLU29IMmwwTVhQNDZabFh3S2dlQmdDbUNkX3lHZHZ2NkJXeWhnT2Q5dkxkc2NhNXREdlNqbVI2Rks1OTRVblFHM3pNeVhtb0dQNE5oR2N5c0xWQUQ0NklmNnc?oc=5",
+    "https://www.bbc.co.uk/news/articles/c60qk92dvlwgo?at_medium=RSS&at_campaign=rss",
+    "https://www.jpost.com/international/article-913423",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcURveHlpSm9oVnFDOU9GNXVZOUZBSUVJXzc1UVE0ZkJnc0xZNVZOcFJlR2xLb0NHcXpDUHItdnFJREprZ0pub012N3JZbHhfZWExZXh4TGtzSHJCYTlHTEY0aXJCNkR3LTJ0MXFUUnlnbUxWX0E2dm5jd1BPbjhFLVpJenA1aVFwM0p4OFd3VmEzQTZ0ZGxkRWN3VlZ3eUtYczNNVERQaHFHcVJJVTVB?oc=5",
+    "https://www.abc.net.au/news/2026-11-01/one-nation-melbourne-candidate-matthew-collins-steps-down/107333132",
+    "https://www.lemonde.fr/en/international/article/2026/10/31/how-democrats-moved-away-from-woke-themes-in-the-midterm-campaign_6768379_4.html",
+    "https://thehill.com/homenews/campaign/6186475-scott-colom-releases-sinners-themed-campaign-ad-as-mississippi-senate-race-heats-up/",
+    "https://www.npr.org/2026/10/31/nx-s1-6024694/virginia-dc-sue-trump-arch",
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxOXzJaRm5MS2ZPMVJSdlRURWRfUWM1VkdkX2k2ajN3NmJobWUzWnp2cFZicjBNY0NfTW1mVWRfbV83VktYVjI3eDdUVUtBaFJSeFdaRWw0V2xyR0E4a1NwNDF5eU9SU1R0S08xWE9GTTI2WUxLS2d6cjc2RW9oaktsS2JsWGJ2STdCUEJSQTVGVGg3N0FwX0VjUkN3?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSXgwdXVOUk9vbXNpeFljcnJ4ZjE5dVdtMVN2d3VFRjNxSktLaDdNRzAyT1RKS0hBSENta0EteWFGSmstS1lwRF81NTJOZG1Jb3J1SVhqMlhEdXZjalliRWVWTThfNWt4Zm0yWkw3UzU2X0xUN2ZERjF5ZnFtMjA3VU9wWUxSVTE0WC14dVhiQjB5d2ZVbzRldGNiOEQxSllrWVQ2OHBCeFJ1Q2VfMlhxbnBwS3lkd9IBuwFBVV95cUxORGpYYUhqTkgzZ29IUy1YRVJoWTRGU2UxMHEtR2dGM1VRZnpQdGR0aC04WERrVElOWGk5cmU5SGhQUjdaR0hXVHhXU0xNT2FHTTJaeTk2RE5FOHZnX1RWenUybG5YVW42RWNZMHdaazFFMWlFZ3ozNHdhMUtwNDdFWGlGTUpfMm5rSEU4NFFwaUtvZFRZVWg4NHRIWG9yLTUzNGZOUEdTTV80X3lHY2g1ZWN4Z1hIZVN1OF9F?oc=5",
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yUk5CNWJEY2I1amREdDIwYWN2VXNSU0ZwN2VJVlRoQVo5Qm5salJLR1g2cE5kN1I0dXYzNnAxSVJmRmxTT3JURWthWjhkOS1qME0tMEdPSWM?oc=5",
+    "https://www.foxnews.com/politics/house-democrats-deterrence-message-trump-jobs-could-backfire-former-federal-prosecutor-warns",
+    "https://www.npr.org/2026/10/31/nx-s1-6023294/what-a-midterm-race-in-kentucky-says-about-how-democrats-may-do-in-trump-strongholds",
+    "https://www.npr.org/2026/10/31/nx-s1-6022285/mixed-economic-forecast-weighs-heavy-ahead-of-midterms",
+    "https://www.npr.org/2026/10/31/nx-s1-6019312/election-officials-worry-about-doj-monitoring-of-tuesdays-vote",
+    "https://thehill.com/homenews/campaign/6185332-state-supreme-court-races/",
+    "https://thehill.com/homenews/sunday-talk-shows/6186417-sunday-shows-preview-candidates-make-last-minute-pitches-ahead-of-tuesdays-midterms-economy-weighs-heavily-on-voters-minds/",
+    "https://news.google.com/rss/articles/CBMif0FVX3lxTE1GWjFMc2tINlY1LWQ1RGZtUUJpZlZlN21hNF9iYU1TME9sSmhNclhGM3pmZW54a1JMX0F1TUZSeEtXWDlidVVDRWpUVUtoT0IzdEMyODhrWVRvSlRKd3pDdkdIOUpodHN5aHlJU2lZbWpweWt0a2ZScENITkJzdnc?oc=5"
   ],
   "startedAt": "2026-10-31T06:33:27.688Z",
-  "updatedAt": "2026-10-31T21:13:02.856Z",
+  "updatedAt": "2026-11-01T00:25:10.205Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "us-midterms-2026",
-  "sourceCount": 17,
+  "sourceCount": 19,
   "statsHistory": [
     {
       "at": "2026-10-31T09:10:00.000Z",
