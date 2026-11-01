@@ -19,54 +19,129 @@ const source = {
   imageCaption: '',
 };
 
-/** A stub that answers the head call and every paragraph chunk correctly. */
-function stubFetch() {
+const head = { dek: 'Die Dokumente zeigen ein Muster über die Grenze', facts: source.facts, context: '', imageCaption: '' };
+const HEAD_TITLE = 'Banken in drei Ländern versteckten denselben Zuschlag';
+
+const headText = (over = {}) => {
+  const h = { ...head, ...over, title: over.title ?? HEAD_TITLE };
+  return [
+    `@@TITLE@@ ${h.title}`,
+    `@@DEK@@ ${h.dek}`,
+    `@@FACTS@@ ${h.facts.join(' || ') || 'NOTHING'}`,
+    `@@CONTEXT@@ ${h.context || 'NOTHING'}`,
+    `@@CAPTION@@ ${h.imageCaption || 'NOTHING'}`,
+  ].join('\n');
+};
+const bodyText = (ps) => ps.map((p) => `@@P@@ ${p}`).join('\n');
+
+/** A stub that answers in markers and records what it was asked. */
+function stubFetch(render = (asked) => (asked.paragraphs ? bodyText(asked.paragraphs.map((_, i) => paragraph(i + 1))) : headText())) {
   const seen = [];
   globalThis.fetch = async (url, init) => {
     const messages = JSON.parse(init.body).messages;
     const asked = JSON.parse(messages[messages.length - 1].content);
     seen.push(asked);
-    const answer = asked.paragraphs
-      ? { body: asked.paragraphs.map((_, i) => paragraph(i + 1)) }
-      : { title: 'Banken in drei Ländern versteckten denselben Zuschlag', dek: 'Die Dokumente zeigen ein Muster über die Grenze', facts: source.facts, context: '', imageCaption: '' };
-    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(answer) }, finish_reason: 'stop' }] }), { status: 200 });
+    return new Response(
+      JSON.stringify({ choices: [{ message: { content: render(asked) }, finish_reason: 'stop' }] }),
+      { status: 200 },
+    );
   };
   return seen;
 }
 
-test('a long article is translated in small parts and keeps every paragraph', async () => {
+test('the whole body goes out as one answer and keeps every paragraph', async () => {
+  delete process.env.TRANSLATE_WHOLE_BODY_CHARS;
   const seen = stubFetch();
 
-  // On 2026-10-31 a whole 1.9 kB article did not finish in 240 s on any model,
-  // although each of them answers a sentence in seconds. Small answers arrive.
+  // Every call cost 65-100 s of queue time on 2026-10-31, so four chunks meant
+  // seven minutes per language for one article. One body answer is one wait.
   const out = await translate(source, 'de', [MODEL]);
 
-  const heads = seen.filter((a) => !a.paragraphs);
-  const chunks = seen.filter((a) => a.paragraphs);
-  assert.equal(heads.length, 1, 'the headline is asked once');
-  assert.ok(chunks.length >= 2, `the body was sent in ${chunks.length} part(s)`);
-  assert.equal(chunks.flatMap((c) => c.paragraphs).length, source.body.length, 'paragraphs went missing on the way');
-  for (const c of chunks) {
-    const chars = c.paragraphs.join(' ').length;
-    assert.ok(chars <= 1200, `one part carried ${chars} characters`);
-  }
+  assert.equal(seen.filter((a) => !a.paragraphs).length, 1, 'the headline is asked once');
+  const bodies = seen.filter((a) => a.paragraphs);
+  assert.equal(bodies.length, 1, 'the body is asked once');
+  assert.equal(bodies[0].paragraphs.length, source.body.length);
   assert.equal(out.body.length, source.body.length);
   assert.equal(out.body[0], paragraph(1));
   assert.match(out.title, /Banken/);
+  assert.deepEqual(out.facts, source.facts);
+});
+
+test('a body too long for one answer is split into parts', async () => {
+  process.env.TRANSLATE_WHOLE_BODY_CHARS = '700';
+  const seen = stubFetch();
+  try {
+    const out = await translate(source, 'de', [MODEL]);
+    const chunks = seen.filter((a) => a.paragraphs);
+    assert.ok(chunks.length >= 2, `the body was sent in ${chunks.length} part(s)`);
+    assert.equal(chunks.flatMap((c) => c.paragraphs).length, source.body.length, 'paragraphs went missing on the way');
+    assert.equal(out.body.length, source.body.length);
+  } finally {
+    delete process.env.TRANSLATE_WHOLE_BODY_CHARS;
+  }
+});
+
+test('an answer that merged paragraphs is split again, not published', async () => {
+  delete process.env.TRANSLATE_WHOLE_BODY_CHARS;
+  let wholeAsked = 0;
+  const seen = stubFetch((asked) => {
+    if (!asked.paragraphs) return headText();
+    if (asked.paragraphs.length === source.body.length) {
+      // The model answered the whole body with one paragraph fewer.
+      wholeAsked++;
+      return bodyText(asked.paragraphs.slice(1).map((_, i) => paragraph(i + 1)));
+    }
+    return bodyText(asked.paragraphs.map((_, i) => paragraph(i + 1)));
+  });
+
+  const out = await translate(source, 'de', [MODEL]);
+
+  assert.equal(wholeAsked, 1);
+  assert.ok(seen.filter((a) => a.paragraphs && a.paragraphs.length < source.body.length).length >= 1, 'the text was split');
+  assert.equal(out.body.length, source.body.length);
 });
 
 test('a part that returns the wrong number of paragraphs is refused, not stitched', async () => {
+  process.env.TRANSLATE_WHOLE_BODY_CHARS = '700';
   let chunkCount = 0;
-  globalThis.fetch = async (url, init) => {
-    const messages = JSON.parse(init.body).messages;
-    const asked = JSON.parse(messages[messages.length - 1].content);
-    const answer = asked.paragraphs
-      ? { body: (chunkCount++ === 0 ? asked.paragraphs.slice(1) : asked.paragraphs).map((_, i) => paragraph(i + 1)) }
-      : { title: 'Banken in drei Ländern versteckten denselben Zuschlag', dek: 'Die Dokumente zeigen ein Muster über die Grenze', facts: source.facts, context: '', imageCaption: '' };
-    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(answer) }, finish_reason: 'stop' }] }), { status: 200 });
-  };
+  stubFetch((asked) => {
+    if (!asked.paragraphs) return headText();
+    return bodyText((chunkCount++ === 0 ? asked.paragraphs.slice(1) : asked.paragraphs).map((_, i) => paragraph(i + 1)));
+  });
 
   // A merged paragraph is information that went missing. Stitching it in
   // would publish an article that silently dropped a fact.
-  await assert.rejects(() => translate(source, 'de', [MODEL]), /part 1\/\d+ returned \d+ of \d+ paragraphs/);
+  try {
+    await assert.rejects(() => translate(source, 'de', [MODEL]), /part 1\/\d+ returned \d+ of \d+ paragraphs/);
+  } finally {
+    delete process.env.TRANSLATE_WHOLE_BODY_CHARS;
+  }
+});
+
+test('a model that thinks out loud before the markers still yields the translation', async () => {
+  delete process.env.TRANSLATE_WHOLE_BODY_CHARS;
+  // This is the answer that cost the German run of 2026-10-31: the model
+  // narrates instead of answering. The narration is dropped, the markers count.
+  stubFetch((asked) => {
+    const thought = 'The user wants only raw valid JSON. I must translate carefully. Let me check each paragraph.';
+    return asked.paragraphs
+      ? `${thought}\n${bodyText(asked.paragraphs.map((_, i) => paragraph(i + 1)))}`
+      : `${thought}\n${headText()}`;
+  });
+
+  const out = await translate(source, 'de', [MODEL]);
+  assert.equal(out.body.length, source.body.length);
+  assert.match(out.title, /Banken/);
+});
+
+test('an answer that ignores the markers but sends JSON is still read', async () => {
+  delete process.env.TRANSLATE_WHOLE_BODY_CHARS;
+  stubFetch((asked) => {
+    if (!asked.paragraphs) return JSON.stringify({ ...head, title: HEAD_TITLE });
+    return JSON.stringify({ body: asked.paragraphs.map((_, i) => paragraph(i + 1)) });
+  });
+
+  const out = await translate(source, 'de', [MODEL]);
+  assert.equal(out.body.length, source.body.length);
+  assert.match(out.title, /Banken/);
 });

@@ -1221,6 +1221,7 @@ async function researchAgent(d) {
   const cache = new Map();
   const startedSources = d.sources.length;
   const startedClaims = d.claims.length;
+  const knownIds = new Set(d.sources.map((s) => s.id));
   pruneOffTopic(d);
 
   // Google and Bing answer CI runners with empty feeds most of the time. The
@@ -1591,9 +1592,9 @@ Target for a publishable investigation: ${MIN_SOURCES} distinct outlets, ${MIN_P
 Priorities, in order: (1) find the primary documents — court judgments, audit reports, procurement and award notices, agency decisions, sanctions lists, FOI releases, official statistics; (2) open them, so they land on file; (3) record claims the documents support, one fact each; (4) find who must respond and their published press address.
 Work the gaps, not the headline: take the first open question a document could answer, search for that document, and do not move on until it is on file or you have written down why it cannot be had. A shift that searches the same headline twelve times has not worked.
 For every institution that must answer, call find_contact with its domain — the host of a URL you have already seen, for example "trmlabs.com" — and file what it returns with contact, together with the page the address came from. An institution without an address is still worth filing, but with one the desk can actually write to.
-Ask for the document itself with "site:" queries: site:ungm.org (UN tenders), site:ted.europa.eu (EU tenders), site:sam.gov (US contracts), site:gao.gov, site:eca.europa.eu and site:nao.org.uk (audit reports), site:curia.europa.eu (EU judgments), site:icc-cpi.int (ICC), site:worldbank.org, site:oecd.org, site:reliefweb.int. When the trail leads into a country, add its audit office, its procurement portal and its court database.
+Ask for the document itself by naming the institution and the document in words — the index has no "site:" operator and answers it with unrelated pages: "UNGM tender notice <subject>", "TED Europa award notice <subject>", "sam.gov contract award <company>", "GAO report <subject>", "ECA special report <subject>", "NAO report <subject>", "Curia judgment <case name>", "ICC arrest warrant <name>", "World Bank project appraisal <country>". When the trail leads into a country, name its audit office, its procurement portal and its court database the same way, in the country's own language.
 ${localDoors ? `DOORS WHERE THIS STORY HAPPENS — ${localDoors}. A reporter there opens these first and searches them in the country's own language; the English wire is only the second opinion.` : ''}
-If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: site:trmlabs.com, site:chainalysis.com, site:ic3.gov, site:justice.gov, site:ofac.treasury.gov, site:cert.europa.eu, site:enisa.europa.eu, site:un.org, site:ohchr.org, site:sanctions.io. If the story is about land, extraction or settlement, name the people who live there and what they lost.
+If the story is an attack, a theft or a breach, the question behind it is always "who did it and where did the money go": find the attribution evidence (IP ranges, malware families, on-chain addresses, sanctions listings, indictments), the laundering route, and the people who lost what was taken. Useful doors for that class: trmlabs.com, chainalysis.com, ic3.gov, justice.gov, ofac.treasury.gov, cert.europa.eu, enisa.europa.eu, un.org, ohchr.org — go to them by naming them, not by filtering. If the story is about land, extraction or settlement, name the people who live there and what they lost.
 Every search already opens and files its first two hits. Read the text under "opened", record two or three facts per page with save_claim and the sourceId that came with it, and only then search again — a run that keeps searching without filing has produced nothing.
 Every search also goes through the desk's filing cabinets: the US Justice Department's press releases, the UN newsroom, the World Bank's procurement notices and the world archive. Results marked "primary" are documents — open them, they are what makes the story publishable. The wide web is searched too, but it is the least reliable of the four; when it returns nothing, name the institution and search its own portal instead.
 ${doorsAdded ? `The desk has already been to the institutions before you started: ${doorsAdded} document(s) from the filing cabinets are on file. Read their text above and write down what they prove, before you search for anything else. A story about an attack or a theft is carried by the indictment, the sanction and the attribution report — not by the headlines about it.` : ''}`,
@@ -1626,10 +1627,14 @@ ${doorsAdded ? `The desk has already been to the institutions before you started
 
   log(`RESEARCH  agent: ${added} source(s), ${claims} claim(s), ${d.contacts.length} contact(s)`);
 
-  // Shifts are counted, not claimed. Three in a row without a single new
-  // source is the desk's own answer: there is nothing behind this headline.
+  // Shifts are counted, not claimed. What the shift filed and then threw away
+  // again is not progress: on 2026-10-31 two shifts filed four sources each (a
+  // DOJ page, two Wikipedia articles, a SEC directory listing), pruned all
+  // four as off topic, and still counted as productive — so the third shift
+  // repeated the same searches. The count is taken after the prune.
+  const survived = d.sources.filter((s) => !knownIds.has(s.id)).length;
   d.shifts = (d.shifts || 0) + 1;
-  d.blankShifts = added === 0 && claims === 0 ? (d.blankShifts || 0) + 1 : 0;
+  d.blankShifts = survived === 0 && claims === 0 ? (d.blankShifts || 0) + 1 : 0;
 
   // The agent works with a wide net and brings home the neighbours too. The
   // second sweep is what keeps the dossier readable.
@@ -3895,6 +3900,16 @@ async function main() {
         String(a.lastShiftAt || a.createdAt || '').localeCompare(String(b.lastShiftAt || b.createdAt || ''))
       );
   log(`DESK  ${targets.length} dossier(s) to advance`);
+
+  // Two shifts in a row that kept nothing mean the searches are repeating, not
+  // advancing. The workflow runs three shifts per run; the third one then
+  // spends eighteen minutes and a share of the model quota to learn what the
+  // first two already knew. A desk moves on instead of asking again.
+  if (targets.length && targets.every((d) => (d.blankShifts || 0) >= 2)) {
+    for (const d of targets) log(`DESK  ${d.slug}: two shifts kept nothing new — the searches repeat`);
+    log('DESK  stopping here; the desk waits for a new document, a reply or the editor, not for another search');
+    return;
+  }
 
   for (const d of targets) {
     if (deadlineLeft() < 90000) {

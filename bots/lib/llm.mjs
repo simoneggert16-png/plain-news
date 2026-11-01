@@ -60,10 +60,13 @@ const usable = (list) => list.filter((m) => m.startsWith('ollama/') || process.e
 export const MODELS = {
   desk:       usable([process.env.DESK_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
   writer:     usable([process.env.WRITER_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
-  // Translation is the highest-volume job and the one that needs the surest
-  // hand: mistral-large writes the register of a quality newspaper, minimax
-  // answers fastest, step-5 is the third opinion.
-  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_STEP, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B, OSS_20B]),
+  // Translation is the highest-volume job and needs the surest hand. Measured
+  // on 2026-10-31: minimax returned a full German headline, standfirst and
+  // facts in 30.1 s, the fastest clean answer of the catalogue. step-5 is the
+  // second opinion. mistral-large is out of this chain: it answers with its
+  // reasoning trace ("The user wants me to reply with only a specific JS"), and
+  // deepseek hangs past 90 s — both cost a full timeout per chunk.
+  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_MINIMAX, NVIDIA_STEP, OSS_120B, GEMMA_31B, OSS_20B]),
   editor:     usable([process.env.EDITOR_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B]),
   // Live ticker: small prompts every few minutes, still needs clean prose.
   live:       usable([process.env.LIVE_MODEL || NVIDIA_STEP, NVIDIA_MINIMAX, NVIDIA_MISTRAL, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B]),
@@ -168,6 +171,11 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
 
 const disabledModels = new Map();
 
+/** Milliseconds until `model` may be asked again; 0 when it is free. */
+export function parkedFor(model) {
+  return Math.max(0, (disabledModels.get(model) || 0) - Date.now());
+}
+
 // A cycle may not run forever. The model list (4 models × 3 attempts × 120 s)
 // allowed a single call to burn an hour, which is how the newsroom sat in one
 // cycle for four hours without publishing. Callers set an absolute deadline;
@@ -208,7 +216,18 @@ export async function chat(role, messages, opts = {}) {
         // waiting: on 2026-10-31 the desk's first model timed out three
         // times, the deadline ran out, and no fallback was ever asked.
         const timedOut = e.name === 'TimeoutError' || e.name === 'AbortError' || /aborted|timed? ?out/i.test(e.message || '');
-        if (timedOut) break;
+        if (timedOut) {
+          // Two translation workers share this map. Without a park, every
+          // chunk of every article waited the full timeout on the same dead
+          // model: the run of 2026-10-31 20:40 spent 48 minutes on four
+          // articles and wrote none. Two minutes was still too short for the
+          // desk: a step that had to wait out two dead models took 198 s, so
+          // the park expired before the next step, and the same two models
+          // were asked and timed out again - four steps in an 18-minute
+          // shift. Ten minutes keeps a dead model out of the rest of it.
+          disabledModels.set(model, Date.now() + 10 * 60 * 1000);
+          break;
+        }
         // A model that is out of credit does not answer in the next thirty
         // seconds either. Retrying it three times with a sleep in between
         // costs half a shift of desk time for nothing.
@@ -233,7 +252,9 @@ export async function chat(role, messages, opts = {}) {
         // work. Park it for hours so the chain goes straight to what answers.
         if (e.status === 429) {
           const monthly = /monthly usage limit/i.test(e.message || '');
-          disabledModels.set(model, Date.now() + (monthly ? 6 : 1) * 60 * 1000);
+          // Six minutes was still a probe every six minutes: the German run of
+          // 2026-10-31 asked three dead Ollama models 94 times in 42 minutes.
+          disabledModels.set(model, Date.now() + (monthly ? 6 * 60 : 1) * 60 * 1000);
           break;
         }
         if (e.status === 404 || e.status === 400) break;

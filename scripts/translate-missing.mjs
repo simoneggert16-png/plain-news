@@ -13,7 +13,12 @@ import { loadIndex, loadArticle, saveArticle } from '../bots/lib/store.mjs';
 import { translate } from '../bots/lib/translate.mjs';
 import { LOCALES, SOURCE_LOCALE } from '../lib/config.mjs';
 
-const TARGETS = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE);
+// A run can be limited to one edition. German is the edition readers see,
+// and a two-day backlog there costs two calls per article; translating all
+// eight languages of the same article at once spends that on editions nobody
+// is looking at yet.
+const ONLY = (process.env.TRANSLATE_LOCALES || '').split(',').map((s) => s.trim()).filter(Boolean);
+const TARGETS = LOCALES.map((l) => l.code).filter((c) => c !== SOURCE_LOCALE && (!ONLY.length || ONLY.includes(c)));
 const LIMIT = Number(process.env.LIMIT) > 0 ? Number(process.env.LIMIT) : Infinity;
 const CONCURRENCY = Math.max(1, Number(process.env.CONCURRENCY) || 4);
 const RETRIES = Math.max(1, Number(process.env.RETRIES) || 3);
@@ -77,6 +82,13 @@ async function worker() {
         try {
           const t = await translate(source, locale);
           article.locales[locale] = t;
+          article.updatedAt = new Date().toISOString();
+          // Written the moment the edition is done. The whole article used to
+          // be saved after the last locale, and the budget guard ends the
+          // process mid-article: on 2026-10-31 a run printed "ok ... -> es"
+          // and "ok ... -> zh" and then published neither, because the ja
+          // edition was still running when the clock ran out.
+          saveArticle(article);
           changed = true;
           fixedSlugs.add(entry.slug);
           fixed++;
@@ -92,11 +104,7 @@ async function worker() {
         }
       }
     }
-    if (changed) {
-      article.updatedAt = new Date().toISOString();
-      saveArticle(article);
-      writeSlugFile();
-    }
+    if (changed) writeSlugFile();
   }
 }
 
