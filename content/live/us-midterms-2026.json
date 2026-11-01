@@ -8,7 +8,7 @@
     ],
     "createdBy": "bots/live.mjs",
     "statsModel": "openai/gpt-oss-20b",
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "us-midterms-2026",
   "stats": {
@@ -508,8 +508,8 @@
       "title": "US-Zwischenwahlen 2026"
     },
     "en": {
-      "title": "2026 midterm elections",
-      "dek": "The 2026 midterm elections in the United States are unfolding amid political tensions and legal challenges."
+      "dek": "The 2026 midterm elections in the United States are unfolding amid political tensions and legal challenges.",
+      "title": "2026 midterm elections"
     },
     "es": {
       "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos se desarrollan en medio de tensiones políticas y desafíos legales.",
@@ -542,62 +542,126 @@
   },
   "updates": [
     {
-      "id": "u-1793496493058-5vu1",
-      "at": "2026-11-01T01:28:13.058Z",
-      "kind": "context",
-      "importance": 3,
+      "id": "u-1793522054000-k52x",
+      "at": "2026-11-01T08:34:14.000Z",
+      "kind": "statement",
+      "importance": 4,
       "locales": {
         "en": {
-          "headline": "Reports differ on new US strikes on Iran after midterms",
-          "body": "The Jerusalem Post reported that the US and Israel have drawn up plans for renewed strikes on Iran after the midterms. Rubio said the US has yet to decide on new Iran strikes, according to The Hindu."
+          "headline": "Trump says US could strike Iran's remaining nuclear sites in 10 minutes",
+          "body": "President Donald Trump said the United States could strike Iran's remaining nuclear sites in '10 minutes,' according to Anadolu Ajansı, WION and The Jerusalem Post. Trump also said the US still had 'one or two targets' in Iran, The Hindu and Le Monde reported."
         },
         "es": {
-          "headline": "Los informes difieren sobre nuevos ataques estadounidenses contra Irán tras las elecciones de mitad de mandato",
-          "body": "The Jerusalem Post informó de que EE. UU. e Israel han elaborado planes para renewed ataques contra Irán tras las elecciones de mitad de mandato. Rubio dijo que EE. UU. todavía no ha decidido sobre nuevos ataques contra Irán, según The Hindu."
-        },
-        "it": {
-          "headline": "Le notizie divergono sui nuovi attacchi degli Stati Uniti all'Iran dopo le elezioni di metà mandato",
-          "body": "Il Jerusalem Post ha riferito che gli Stati Uniti e Israele hanno elaborato piani per nuovi attacchi all'Iran dopo le elezioni di metà mandato. Secondo The Hindu, Rubio ha dichiarato che gli Stati Uniti non hanno ancora deciso se sferrare nuovi attacchi all'Iran."
+          "headline": "Trump afirma que EE. UU. podría atacar en 10 minutos los restantes sitios nucleares de Irán",
+          "body": "El presidente Donald Trump dijo que Estados Unidos podría atacar en «10 minutos» los restantes sitios nucleares de Irán, según Anadolu Ajansı, WION y The Jerusalem Post. Trump también dijo que EE. UU. todavía tenía «uno o dos objetivos» en Irán, según The Hindu y Le Monde."
         },
         "fr": {
-          "headline": "Les informations divergent sur de nouvelles frappes américaines contre l’Iran après les élections de mi-mandat",
-          "body": "Le Jerusalem Post a rapporté que les États-Unis et Israël ont mis au point des plans pour de nouvelles frappes contre l’Iran après les élections de mi-mandat. Selon The Hindu, Rubio a déclaré que les États-Unis n’avaient pas encore pris de décision sur de nouvelles frappes contre l’Iran."
+          "headline": "Trump affirme que les États-Unis pourraient frapper les sites nucléaires restants de l’Iran en 10 minutes",
+          "body": "Le président Donald Trump a déclaré que les États-Unis pourraient frapper les sites nucléaires restants de l’Iran « en 10 minutes », selon Anadolu Ajansı, WION et The Jerusalem Post. Trump a également déclaré que les États-Unis avaient encore « une ou deux cibles » en Iran, ont rapporté The Hindu et Le Monde."
+        },
+        "it": {
+          "headline": "Trump: gli Stati Uniti potrebbero colpire in 10 minuti i siti nucleari iraniani rimasti",
+          "body": "Il presidente Donald Trump ha detto che gli Stati Uniti potrebbero colpire in «10 minuti» i siti nucleari iraniani rimasti, secondo Anadolu Ajansı, WION e The Jerusalem Post. Trump ha inoltre detto che gli Stati Uniti avevano ancora «uno o due obiettivi» in Iran, hanno riportato The Hindu e Le Monde."
         },
         "de": {
-          "headline": "Berichte widersprechen sich über neue US-Angriffe auf Iran nach den Zwischenwahlen",
-          "body": "Der Jerusalem Post berichtete, dass die USA und Israel Pläne für erneute Angriffe auf Iran nach den Zwischenwahlen ausgearbeitet hätten. Laut The Hindu sagte Rubio, die USA hätten noch nicht über neue Angriffe auf Iran entschieden."
-        },
-        "zh": {
-          "headline": "中期选举后美国是否对伊朗发动新一轮打击 报道不一",
-          "body": "《耶路撒冷邮报》报道称，美国和以色列已制定计划，将在中期选举后对伊朗发动新一轮打击。据《印度教徒报》报道，卢比奥表示，美国尚未决定是否对伊朗发动新一轮打击。"
-        },
-        "ko": {
-          "headline": "중간선거 이후 이란에 대한 미국 신규 공습 보도 엇갈려",
-          "body": "예루살렘 포스트는 미국과 이스라엘이 중간선거 이후 이란에 대한 공습 재개 계획을 수립했다고 보도했다. 더 힌두에 따르면 루비오는 미국이 이란에 대한 신규 공습을 아직 결정하지 않았다고 밝혔다."
+          "headline": "Trump sagt, die USA könnten Irans verbleibende Nuklearanlagen in 10 Minuten angreifen",
+          "body": "Präsident Donald Trump sagte laut Anadolu Ajansı, WION und The Jerusalem Post, die Vereinigten Staaten könnten Irans verbleibende Nuklearanlagen in „10 Minuten“ angreifen. The Hindu und Le Monde berichteten zudem, Trump habe gesagt, die USA hätten weiterhin „ein oder zwei Ziele“ in Iran."
         },
         "pt": {
-          "headline": "Informações divergem sobre novos ataques dos EUA ao Irão após as eleições de meio de mandato",
-          "body": "O Jerusalem Post noticiou que os EUA e Israel elaboraram planos para novos ataques ao Irão depois das eleições de meio de mandato. Rubio disse que os EUA ainda não decidiram sobre novos ataques ao Irão, segundo o The Hindu."
-        },
-        "ja": {
-          "headline": "中間選挙後のイランへの新たな米攻撃、報道に食い違い",
-          "body": "エルサレム・ポストは、米国とイスラエルが中間選挙後のイランへの再攻撃計画をまとめたと報じた。ザ・ヒンドゥーによると、ルビオ氏は米国がイランへの新たな攻撃をまだ決定していないと述べた。"
+          "headline": "Trump diz que os EUA poderiam atacar as restantes instalações nucleares do Irão em 10 minutos",
+          "body": "O presidente Donald Trump disse que os Estados Unidos poderiam atacar as restantes instalações nucleares do Irão em «10 minutos», segundo a Anadolu Ajansı, a WION e o The Jerusalem Post. Trump também disse que os EUA ainda tinham «um ou dois alvos» no Irão, noticiaram The Hindu e Le Monde."
         }
       },
       "sources": [
         {
-          "outlet": "The Jerusalem Post",
-          "title": "Trump speaks with Netanyahu shortly after discussing military operations with senior commanders",
-          "url": "https://www.jpost.com/middle-east/iran-news/article-913424",
-          "publishedAt": "2026-11-01T02:20:08.000Z"
+          "outlet": "Anadolu Ajansı",
+          "title": "Trump says US could strike Iran's remaining nuclear sites in '10 minutes'",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPclNtN1RfbEt4ajNpQzBGNnJxVkRmN3pQcHBnRHFPRlNrc3R0OFYzQS11RUNicmszR01JWEE4RFA4S3N1cEFObTRCY2xDNTJZcXR5Wms4UDk2ZTdFdjBwUUdYWjNkbm1zd2VTYndqOHdfbVNxSjdTaHdmZmoyQ1BjQXppY2g4MFV3bnpUNTlJT3VidWhwdDBBRWxVUDlFbjB3YmNkWnkxSnh3b2c4OHVxY2ZB?oc=5",
+          "publishedAt": "2026-11-01T08:34:14.000Z"
         },
         {
           "outlet": "The Hindu",
-          "title": "Rubio says U.S. yet to decide on new Iran strikes",
-          "url": "https://www.thehindu.com/news/international/rubio-says-us-yet-to-decide-on-new-iran-strikes/article71651951.ece",
-          "publishedAt": "2026-11-01T00:17:04.000Z"
+          "title": "President Trump says U.S. still has ‘one or two targets’ in Iran",
+          "url": "https://www.thehindu.com/news/international/president-trump-says-us-still-has-one-or-two-targets-in-iran/article71652262.ece",
+          "publishedAt": "2026-11-01T07:47:55.000Z"
+        },
+        {
+          "outlet": "WION",
+          "title": "'Can do it in 10 minutes': Trump says about remaining Iran nuclear sites",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQLXZ3M0RZeC1LMHlPcmxUSjM3X2ZuelhXa3d0VjZ3ZTZlaGZkWFh6dmQ0X24wRi1DbjZIZEZIS1NUZThRVDZTV3lUM2dDbThlMTduRlY0VXZwUUs5X0doZFRqeHdWU015aGlKZU9pRUYtMGVCRi1iZmtsc2t5MHVyb3VIZElTUUhHUGphRnhGVDNURk93NVR6RUl5SElBcnp4YjdZRjRJZkpXakpCaFNGTjFoNNIBuAFBVV95cUxQZlZvRG5GbVY0ZkVndHJaejZnZ284WGllTWtzTkZYOEpIOTJhMEFZZFF6eVlOT1VvbjJPTnROTldkdWJtV0NZZmw2OFJVbjB6THlMQ1gwN0JkdXA3aWc1SW1YVmFjY1RjRUJldW5NV3psbVNBb2lzdjI0Wk1MTHlkLXhsbThTWGZiVVotazJDNFkzUmFUT19oZUptUW1rd3lIUGdXS0MxVy00M1p5dHVKZEVLRmY0WjIx?oc=5",
+          "publishedAt": "2026-11-01T05:50:00.000Z"
+        },
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "Trump says US ready to hit Iran's nuclear program 'in ten minutes' after speaking with Netanyahu",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE05X2U2Mk1Bam5YMkkzSGxWVW9MMXJESXI5dHo3QllKSXhSbmpweEEzNWs1cE9ZamF0QTBYN0RGNElDWGN0d3Y4R2xFdk1UT3g2ek40TGxreW1GQmV4OGNWZFMwSXpQZlFncXc?oc=5",
+          "publishedAt": "2026-11-01T05:44:43.000Z"
+        },
+        {
+          "outlet": "Le Monde",
+          "title": "Trump says US still has 'to take care of' one or two targets in Iran",
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/01/trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran_6768610_4.html",
+          "publishedAt": "2026-11-01T04:49:44.000Z"
         }
       ]
+    },
+    {
+      "at": "2026-11-01T01:28:13.058Z",
+      "id": "u-1793496493058-5vu1",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Der Jerusalem Post berichtete, dass die USA und Israel Pläne für erneute Angriffe auf Iran nach den Zwischenwahlen ausgearbeitet hätten. Laut The Hindu sagte Rubio, die USA hätten noch nicht über neue Angriffe auf Iran entschieden.",
+          "headline": "Berichte widersprechen sich über neue US-Angriffe auf Iran nach den Zwischenwahlen"
+        },
+        "en": {
+          "body": "The Jerusalem Post reported that the US and Israel have drawn up plans for renewed strikes on Iran after the midterms. Rubio said the US has yet to decide on new Iran strikes, according to The Hindu.",
+          "headline": "Reports differ on new US strikes on Iran after midterms"
+        },
+        "es": {
+          "body": "The Jerusalem Post informó de que EE. UU. e Israel han elaborado planes para renewed ataques contra Irán tras las elecciones de mitad de mandato. Rubio dijo que EE. UU. todavía no ha decidido sobre nuevos ataques contra Irán, según The Hindu.",
+          "headline": "Los informes difieren sobre nuevos ataques estadounidenses contra Irán tras las elecciones de mitad de mandato"
+        },
+        "fr": {
+          "body": "Le Jerusalem Post a rapporté que les États-Unis et Israël ont mis au point des plans pour de nouvelles frappes contre l’Iran après les élections de mi-mandat. Selon The Hindu, Rubio a déclaré que les États-Unis n’avaient pas encore pris de décision sur de nouvelles frappes contre l’Iran.",
+          "headline": "Les informations divergent sur de nouvelles frappes américaines contre l’Iran après les élections de mi-mandat"
+        },
+        "it": {
+          "body": "Il Jerusalem Post ha riferito che gli Stati Uniti e Israele hanno elaborato piani per nuovi attacchi all'Iran dopo le elezioni di metà mandato. Secondo The Hindu, Rubio ha dichiarato che gli Stati Uniti non hanno ancora deciso se sferrare nuovi attacchi all'Iran.",
+          "headline": "Le notizie divergono sui nuovi attacchi degli Stati Uniti all'Iran dopo le elezioni di metà mandato"
+        },
+        "ja": {
+          "body": "エルサレム・ポストは、米国とイスラエルが中間選挙後のイランへの再攻撃計画をまとめたと報じた。ザ・ヒンドゥーによると、ルビオ氏は米国がイランへの新たな攻撃をまだ決定していないと述べた。",
+          "headline": "中間選挙後のイランへの新たな米攻撃、報道に食い違い"
+        },
+        "ko": {
+          "body": "예루살렘 포스트는 미국과 이스라엘이 중간선거 이후 이란에 대한 공습 재개 계획을 수립했다고 보도했다. 더 힌두에 따르면 루비오는 미국이 이란에 대한 신규 공습을 아직 결정하지 않았다고 밝혔다.",
+          "headline": "중간선거 이후 이란에 대한 미국 신규 공습 보도 엇갈려"
+        },
+        "pt": {
+          "body": "O Jerusalem Post noticiou que os EUA e Israel elaboraram planos para novos ataques ao Irão depois das eleições de meio de mandato. Rubio disse que os EUA ainda não decidiram sobre novos ataques ao Irão, segundo o The Hindu.",
+          "headline": "Informações divergem sobre novos ataques dos EUA ao Irão após as eleições de meio de mandato"
+        },
+        "zh": {
+          "body": "《耶路撒冷邮报》报道称，美国和以色列已制定计划，将在中期选举后对伊朗发动新一轮打击。据《印度教徒报》报道，卢比奥表示，美国尚未决定是否对伊朗发动新一轮打击。",
+          "headline": "中期选举后美国是否对伊朗发动新一轮打击 报道不一"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/middle-east/iran-news/article-913424",
+          "title": "Trump speaks with Netanyahu shortly after discussing military operations with senior commanders",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-01T02:20:08.000Z"
+        },
+        {
+          "url": "https://www.thehindu.com/news/international/rubio-says-us-yet-to-decide-on-new-iran-strikes/article71651951.ece",
+          "title": "Rubio says U.S. yet to decide on new Iran strikes",
+          "outlet": "The Hindu",
+          "publishedAt": "2026-11-01T00:17:04.000Z"
+        }
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T22:57:01.000Z",
@@ -624,21 +688,21 @@
           "body": "Le Monde ha riportato che i democratici hanno accantonato le questioni sociali per concentrarsi sul costo della vita. NPR ha segnalato che sia la crescita del PIL sia i prezzi erano in aumento, mentre i tassi di interesse sono rimasti invariati, descrivendo un quadro economico contrastante in vista delle elezioni di metà mandato. The Hill ha riferito che l’economia era al primo piano tra le preoccupazioni degli elettori, mentre i candidati lanciavano i loro ultimi appelli per le elezioni del 3 novembre.",
           "headline": "Economia e costo della vita sono temi centrali nei messaggi finali per le elezioni di metà mandato"
         },
-        "zh": {
-          "headline": "经济与生活成本成中期选举最后阶段核心议题",
-          "body": "《世界报》报道称，民主党人搁置社会议题，聚焦生活成本。NPR称，GDP增长与物价双双上升，利率维持不变，并形容中期选举前的经济预期喜忧参半。《国会山报》称，在候选人为11月3日选举做最后拉票之际，经济问题沉重地压在选民心头。"
+        "ja": {
+          "body": "ル・モンドは、民主党が社会問題を脇に置き、生活費に焦点を当てたと報じた。NPRは、GDP成長率と物価がともに上昇する一方、金利は不変で、中間選挙を前にした経済見通しには明暗が混在すると述べた。ザ・ヒルは、11月3日の選挙に向けて候補者が最後の訴えを展開する中、経済が有権者の関心に重くのしかかっていたと報じた。",
+          "headline": "中間選挙終盤の訴えで経済と生活費が中心争点に"
         },
         "ko": {
-          "headline": "중간선거 막판 메시지에서 경제와 생활비가 핵심 쟁점으로 부각",
-          "body": "르 몽드는 민주당이 사회 문제를 제쳐두고 생활비에 집중하고 있다고 보도했다. NPR은 GDP 성장과 물가가 모두 상승하는 가운데 금리는 변동이 없어 중간선거를 앞두고 혼조의 경제 전망을 보이고 있다고 전했다. 더 힐은 후보들이 11월 3일 선거를 앞두고 막판 유세를 벌이는 가운데 경제가 유권자들의 마음속에서 큰 비중을 차지했다고 밝혔다."
+          "body": "르 몽드는 민주당이 사회 문제를 제쳐두고 생활비에 집중하고 있다고 보도했다. NPR은 GDP 성장과 물가가 모두 상승하는 가운데 금리는 변동이 없어 중간선거를 앞두고 혼조의 경제 전망을 보이고 있다고 전했다. 더 힐은 후보들이 11월 3일 선거를 앞두고 막판 유세를 벌이는 가운데 경제가 유권자들의 마음속에서 큰 비중을 차지했다고 밝혔다.",
+          "headline": "중간선거 막판 메시지에서 경제와 생활비가 핵심 쟁점으로 부각"
         },
         "pt": {
-          "headline": "Economia e custo de vida são questões centrais nas mensagens finais das eleições de meio de mandato",
-          "body": "O Le Monde noticiou que os democratas deixaram de lado as questões sociais para se concentrarem no custo de vida. A NPR afirmou que o crescimento do PIB e os preços estavam ambos em alta, enquanto as taxas de juro permaneciam inalteradas, descrevendo uma previsão económica mista antes das eleições de meio de mandato. O The Hill disse que a economia pesava muito no espírito dos eleitores, enquanto os candidatos faziam os últimos apelos para a eleição de 3 de novembro."
+          "body": "O Le Monde noticiou que os democratas deixaram de lado as questões sociais para se concentrarem no custo de vida. A NPR afirmou que o crescimento do PIB e os preços estavam ambos em alta, enquanto as taxas de juro permaneciam inalteradas, descrevendo uma previsão económica mista antes das eleições de meio de mandato. O The Hill disse que a economia pesava muito no espírito dos eleitores, enquanto os candidatos faziam os últimos apelos para a eleição de 3 de novembro.",
+          "headline": "Economia e custo de vida são questões centrais nas mensagens finais das eleições de meio de mandato"
         },
-        "ja": {
-          "headline": "中間選挙終盤の訴えで経済と生活費が中心争点に",
-          "body": "ル・モンドは、民主党が社会問題を脇に置き、生活費に焦点を当てたと報じた。NPRは、GDP成長率と物価がともに上昇する一方、金利は不変で、中間選挙を前にした経済見通しには明暗が混在すると述べた。ザ・ヒルは、11月3日の選挙に向けて候補者が最後の訴えを展開する中、経済が有権者の関心に重くのしかかっていたと報じた。"
+        "zh": {
+          "body": "《世界报》报道称，民主党人搁置社会议题，聚焦生活成本。NPR称，GDP增长与物价双双上升，利率维持不变，并形容中期选举前的经济预期喜忧参半。《国会山报》称，在候选人为11月3日选举做最后拉票之际，经济问题沉重地压在选民心头。",
+          "headline": "经济与生活成本成中期选举最后阶段核心议题"
         }
       },
       "sources": [
@@ -1657,14 +1721,49 @@
     "https://timesofindia.indiatimes.com/world/us/a-california-real-estate-ceo-concealed-his-firms-financial-troubles-while-collecting-investments-that-left-more-than-20-people-2-2-million-poorer-a-federal-judge-has-sentenced-him-to-18-months-in-prison/articleshow/135397883.cms",
     "https://www.thehindu.com/news/international/rubio-says-us-yet-to-decide-on-new-iran-strikes/article71651951.ece",
     "https://news.google.com/rss/articles/CBMifkFVX3lxTFB2dDYtNzJZY0lKaENGbWZfb0VMY3ppWEJMcDFjV3Jsd005NThaaXpiVEV6TzBDeHI3aUFnMUdBTWtWa0JISXkxVjB3bmFRcFBtZEVwdzVYT2dXTmdoLW82TVBKWUpjeDhIdWd3ek5KcnNTOFVJNG5CMEdwRllwUQ?oc=5",
-    "https://news.google.com/rss/articles/CBMijgFBVV95cUxNa2p3cmtINEoyakxpRFRhdHk2SklwSzA2S2Z4MlhiRjI1S2VzN2RpTTFHdDAwWDRCZGtzZnFVelBldU1xdVZjc255SDRWVW9hMnlvR1dab0Y0QUdncFpna2Rwc3lEQU1Canh2RWY1OW5SLVl0QU5uWldZVE5samtPQXF4RVkteEp4RGpWNEFn?oc=5"
+    "https://news.google.com/rss/articles/CBMijgFBVV95cUxNa2p3cmtINEoyakxpRFRhdHk2SklwSzA2S2Z4MlhiRjI1S2VzN2RpTTFHdDAwWDRCZGtzZnFVelBldU1xdVZjc255SDRWVW9hMnlvR1dab0Y0QUdncFpna2Rwc3lEQU1Canh2RWY1OW5SLVl0QU5uWldZVE5samtPQXF4RVkteEp4RGpWNEFn?oc=5",
+    "https://www.jpost.com/israel-election-2026/article-913432",
+    "https://asia.nikkei.com/spotlight/your-week-in-asia/indonesia-gdp-us-midterm-elections-hong-kong-financial-summit",
+    "https://asia.nikkei.com/spotlight/comment/after-us-midterms-democracy-will-face-test-of-ability-to-self-correct",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxOc1FzaVh5OC1rNlI3QnlLQ3FZb2VIUl9LLXg5UXpZWlFHdUN4V0pXOVNGT2lvZzl2WVh1bWpYekdhVE93MDlWeUtBeWlWVG1tMjRnbFNHbXhWcUFBeFRUMEszWTlWRFp5ckM1SEdWcjNCNHE5ajVsNUUzUFJGdFBfekd5b2tOaFFockNVM2RNaDluNTVIWW5wLWRmb2hKQm1ha1hQRHJ2MW51OXZEU3VxUUx30gG3AUFVX3lxTE9mUmVNQXF5SmM3enFMT2hKamRpZzZnejk5aFNNdG1ydEtCb0pQNGNVUVZRQWNDXzV2dUlLT3RVdkFzemFOWk83UUxpeTVTZkphanFBSFBpTk1tTUxVdnRZZ1ZWRjlrZVhWNmNKVHpBbENXR016VWsxWUR6bzFPNGZZUXpjXzNuNmxFTkZ3YWpRLVZrNl9fMlJ5eEZkQWZxSTB6NGVua21IcVhnY2tSMFZhYkgxVUpQVQ?oc=5",
+    "https://www.spiegel.de/ausland/us-midterms-2026-donald-trump-nennt-das-wahlsystem-kaputt-und-beschaedigt-es-selbst-a-1b8312cd-9089-4dfa-83ce-55bc3ed2e505#ref=rss",
+    "https://timesofindia.indiatimes.com/india/why-do-you-challenge-democracy-bjp-chief-nitin-nabin-accuses-rahul-gandhi-of-acting-on-behest-of-foreign-powers/articleshow/135421577.cms",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxPclNtN1RfbEt4ajNpQzBGNnJxVkRmN3pQcHBnRHFPRlNrc3R0OFYzQS11RUNicmszR01JWEE4RFA4S3N1cEFObTRCY2xDNTJZcXR5Wms4UDk2ZTdFdjBwUUdYWjNkbm1zd2VTYndqOHdfbVNxSjdTaHdmZmoyQ1BjQXppY2g4MFV3bnpUNTlJT3VidWhwdDBBRWxVUDlFbjB3YmNkWnkxSnh3b2c4OHVxY2ZB?oc=5",
+    "http://www.africanews.com/2026/11/01/cape-verde-president-rallies-supporters-as-campaigns-kick-off/",
+    "https://www.dw.com/en/donald-trump-loses-allies-after-elections-in-serbia-and-brazil/a-79812075?maca=en-rss-en-all-1573-rdf",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTFBBa19zZ0x1aU1rQjFMQ09LQVZueWxPTkpJcF9vZlN1Uzc3d28zUHl4WHlKU3BLTkM1OWpNYmRmcm5vX1JDR0Q4WGtUaWRXTmlsM3o5N2QzUlNIeGVEOHRSdTJDQXZKQnNsMURqWnpZODhIRTlWRjF4WHpoX3lzZw?oc=5",
+    "https://www.kyivpost.com/post/88776",
+    "https://www.thehindu.com/news/international/president-trump-says-us-still-has-one-or-two-targets-in-iran/article71652262.ece",
+    "https://www.thehindu.com/news/international/donald-trump-says-flavio-bolsonaro-can-stay-in-us-as-long-as-he-wants-amid-brazilian-probes/article71652154.ece",
+    "https://www.thehindu.com/news/international/israeli-protesters-demand-opposition-ally-with-arab-parties-to-oust-netanyahu/article71652323.ece",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxOM1c5MjRnVGJLVzFLN05fSW41ZXlWc2hxUl9acDRuaUszSy0tendzcGFXTXM2SmE3cmZXOXhuMkFzOGItR3FvVng3dHNENmNNcFp3bVZ3NzJhTENqOHoxdEhoazd2bmJJMEFJbl9jUXJFNmVIM21hNmlFeHN2Skg5d00zckhCLU54emJ1UFBianFac05BSHBPM1NfbUtoR2xCamlEeEdlaw?oc=5",
+    "https://www.scmp.com/news/world/united-states-canada/article/3372874/us-midterms-near-trump-administration-ramps-rhetoric-bigoted-racist-memes",
+    "https://www.spiegel.de/politik/deutschland/news-midterms-in-den-usa-elif-eralp-und-die-terrorsympathisanten-a-fbaf820a-69d7-4935-860f-2affe2fc94bd#ref=rss",
+    "https://www.france24.com/en/asia-pacific/20261101-india-tightens-security-as-opposition-holds-mega-rally-demanding-election-chief-s-resignation",
+    "https://www.bbc.co.uk/news/articles/cmy0r2y6zeddo?at_medium=RSS&at_campaign=rss",
+    "https://www.scmp.com/news/china/politics/article/3372865/could-taipeis-unexpectedly-tight-mayoral-race-add-cross-strait-tensions",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxQLXZ3M0RZeC1LMHlPcmxUSjM3X2ZuelhXa3d0VjZ3ZTZlaGZkWFh6dmQ0X24wRi1DbjZIZEZIS1NUZThRVDZTV3lUM2dDbThlMTduRlY0VXZwUUs5X0doZFRqeHdWU015aGlKZU9pRUYtMGVCRi1iZmtsc2t5MHVyb3VIZElTUUhHUGphRnhGVDNURk93NVR6RUl5SElBcnp4YjdZRjRJZkpXakpCaFNGTjFoNNIBuAFBVV95cUxQZlZvRG5GbVY0ZkVndHJaejZnZ284WGllTWtzTkZYOEpIOTJhMEFZZFF6eVlOT1VvbjJPTnROTldkdWJtV0NZZmw2OFJVbjB6THlMQ1gwN0JkdXA3aWc1SW1YVmFjY1RjRUJldW5NV3psbVNBb2lzdjI0Wk1MTHlkLXhsbThTWGZiVVotazJDNFkzUmFUT19oZUptUW1rd3lIUGdXS0MxVy00M1p5dHVKZEVLRmY0WjIx?oc=5",
+    "https://news.google.com/rss/articles/CBMiakFVX3lxTE05X2U2Mk1Bam5YMkkzSGxWVW9MMXJESXI5dHo3QllKSXhSbmpweEEzNWs1cE9ZamF0QTBYN0RGNElDWGN0d3Y4R2xFdk1UT3g2ek40TGxreW1GQmV4OGNWZFMwSXpQZlFncXc?oc=5",
+    "https://news.google.com/rss/articles/CBMie0FVX3lxTFBWTVR1eXFmRTNJaGhKLVg2UkFjc0V0cEg0WFItdnZ4NFU0d0djLWVWMnFWYUo1bDFyTW10RHdZZ1E2Xzc0WnA0QmZsdlM5Y0ZSTU9oRzNZZU50Yi1MZG5qWUhkMTRkWURjTVdIMjkyOENfQXJDUXY1T1Z3bw?oc=5",
+    "https://www.rollingstone.com/tv-movies/tv-movie-news/snl-weekend-update-mock-trump-midterm-plea-butt-fixation-1235650882/",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxONGt1VEFnclBZMFdFcEhWb1FETEVRaGx1ZUJsRmNYakdIeWNyakVOVVBsYnRYXy12OWg5RnFsQ2Q2UzBWMGotcHBQLU56bWxTNGdPcHZXTW9iY2V5b0pGa29Gai1DWkVQZE9GRldJUFNjNXI0d09ISXlJbTAxNWpILWRrbFRySm5Kd2FXR0UtQjFxbHlt?oc=5",
+    "https://www.lemonde.fr/en/international/article/2026/11/01/trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran_6768610_4.html",
+    "https://www.channelnewsasia.com/asia/indian-authorities-tighten-security-ahead-big-opposition-march-in-delhi-6510591",
+    "https://news.google.com/rss/articles/CBMibEFVX3lxTFBUM0VmeFZ2SjF1RGJlVENLazFvbHZxWjRIYUlNMFlKal9sRW1ySS1UQWo4djh3cWpLcXJLWWFuWXBmdkllMTd2aVRhWF9YZFM5ZGRmN3pxZW5nWERXMjREbTVDeGF2RXRfM3ZTUw?oc=5",
+    "https://www.nzz.ch/international/trump-wirkt-als-praesident-erratisch-doch-bei-der-selbstbereicherung-ist-er-konsequent-ld.10048586",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE40QzF6VWVSbVp6Zkx1Q0I1OGU4aG5UVTdmMDM5UTdIVTNDd0t5RmJ1RHUxVW9DMmVialI4TWxCMERpUy1pTk1la01IS1ZVdFJJUnJGNmdBX29GU2M5ZlVqaDJ5VFctbUZtRXpLbVlpNGlYNDdkdkM0UEhod0Jmdw?oc=5",
+    "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ycUhlZzZ2V1lhd2pzVExlRFNUOVV5M0N6VHB5a2FuNFU2NDNaV0dSTV9hUVZTZHZCeVRjeWRWMnh0NUVIRW1vbmhfNFRsSVRqSWIwM21iUmMxTE4zYzhocm81ajd4U0x2R0R0Q1Bn?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxPQnRsdHlNMmtCcHRIaEtEZjN6MlJYazl2LVUxR1dSa1F6THJZQmoyMGNxT093bGFvakhja0k5QjZ5VFVua0VORXVWeGxRLS1INERuLV90VWNEVFlad3dyenVJaXZtdGtXVEhPLWhJejNUMjNsTkREWS1UX21WbkVkeVpXMTBIR2hRZ3dWNDhGNHR1SzBmZjgtUks4Yllmdw?oc=5",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOM0FQcDBZVThGLUs3ZVlrWHJJTkdMM1RSYUZNVlRQbzFnY0VIQktWRkhoeV85N0dYaEg4MllmTXhyTGYtMkM4Z19fdkF1UndHbFl5RlFBSG4xVkpmS2NfOWVNdWlYS1ZBcjNIYUpKTk5nendlS2M4TmRaR0RRQ3BpMFVQLTJkR245QlhfaThISExBRHVuX19MNUFxVEhkYXBKT0Uwb0ZQNjlMekE?oc=5",
+    "https://www.dawn.com/news/2041307/uncertain-local-governments",
+    "https://www.japantimes.co.jp/news/2026/11/01/world/politics/ai-chatbots-us-election-scrutiny/"
   ],
   "startedAt": "2026-10-31T06:33:27.688Z",
-  "updatedAt": "2026-11-01T01:30:32.726Z",
+  "updatedAt": "2026-11-01T09:05:34.381Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "us-midterms-2026",
-  "sourceCount": 20,
+  "sourceCount": 21,
   "statsHistory": [
     {
       "at": "2026-10-31T09:10:00.000Z",
