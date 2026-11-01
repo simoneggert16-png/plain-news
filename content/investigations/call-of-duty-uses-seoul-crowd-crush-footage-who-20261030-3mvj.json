@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-10-31T22:14:33.551Z",
+  "updatedAt": "2026-11-01T13:32:48.701Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -282,151 +282,6 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-10-31T21:35:14.901Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "I have three sources on file, none primary, and 14 open gaps. The first priority is to open the Yonhap piece myself to verify what it actually says (including the footage provider, the apology wording, and whether the removal date is in the text), and to collect the links it exposes. Then I will chase primary documents: the footage licensor's own statement, Korean government/court records, and Act",
-          "action": "open",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
-          },
-          "ok": true,
-          "ms": 198745
-        },
-        {
-          "step": 2,
-          "thought": "Yonhap article opened and confirms the apology, the CPR footage in the opening of Modern Warfare 4, the Nov. 12 update (no year stated in text), 159 deaths, and families' criticism. Still no primary source. Next gap to work: legal/regulatory action and the footage's origin — search Korean court database and government portals for any case or statement, plus who licensed the footage.",
-          "action": "search",
-          "args": {
-            "query": "site:scourt.go.kr 이태원 군중사고 콜오브듀티 footage 소송"
-          },
-          "ok": true,
-          "ms": 127766
-        },
-        {
-          "step": 3,
-          "thought": "The site: query on the Korean Supreme Court returned nothing relevant — the search tool appears to treat site: loosely. I need to pivot: find which news agency's footage was used (Yonhap's own screen capture suggests Yonhap footage), and whether Korean broadcasters or the Game Rating and Administration Committee responded. I'll search Korean-language terms for the footage source and any regulatory",
-          "action": "search",
-          "args": {
-            "query": "콜오브듀티 모던워페어4 이태원 압사 사고 영상 사용 사과 출처 방송사"
-          },
-          "ok": true,
-          "ms": 19383
-        },
-        {
-          "step": 4,
-          "thought": "Two Korean-language MSN articles surfaced about the apology and Nov 12 removal. Opening the first to see whether it names the footage source or adds new facts beyond Yonhap.",
-          "action": "open",
-          "args": {
-            "url": "https://www.msn.com/ko-kr/news/other/%EC%BD%9C%EC%98%A4%EB%B8%8C%EB%93%80%ED%8B%B0-%EB%AA%A8%EB%8D%98-%EC%9B%8C%ED%8E%98%EC%96%B44-%EC%9D%B4%ED%83%9C%EC%9B%90-%EC%B0%B8%EC%82%AC-%EC%98%81%EC%83%81-%EC%82%AC%EC%9A%A9-%EC%82%AC%EA%B3%BC-11%EC%9B%9412%EC%9D%BC-%EC%82%AD%EC%A0%9C-%EC%98%88%EA%B3%A0/ar-AA2goEPo"
-          },
-          "ok": true,
-          "ms": 107173
-        }
-      ],
-      "final": null
-    },
-    {
-      "at": "2026-10-31T21:51:36.153Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "site:go.kr Call of Duty Itaewon crowd crush footage"
-          },
-          "ok": true,
-          "ms": 183080
-        },
-        {
-          "step": 2,
-          "thought": "The site:go.kr search returned irrelevant DOJ hits. I need Korean-language and institution-specific searches: the Ministry of Culture (MCST) which regulates games in Korea, the Korea Communications Commission (KCC) which handles game content, and Activision's own investor/SEC filings for the profit question. Next: search MCST press releases in Korean about the game footage.",
-          "action": "search",
-          "args": {
-            "query": "문화체육관광부 콜오브듀티 이태원 참사 footage 게임 문화부 입장발표 site:mcst.go.kr"
-          },
-          "ok": true,
-          "ms": 94016
-        },
-        {
-          "step": 3,
-          "thought": "The site: query returned irrelevant results. I should open the Yonhap article S1 that is already on file to read its full text and record claims, then pursue the profit question via Activision Blizzard's own filings (SEC) and the Korean regulator GRAC.",
-          "action": "open",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
-          },
-          "ok": true,
-          "ms": 19229
-        },
-        {
-          "step": 4,
-          "thought": "S1 is now fully read. It supports C1, C2, C4, C5, C6, C8. C3's removal date is already flagged as thrown out (Nov 12, 2026 — actually the article says Nov. 12, but the desk note says the claim 'update scheduled for November 12, 2026' was thrown out; the article says 'update set to be rolled out on Nov. 12' without a year — I should record the claim as the article states it, without inventing the y",
-          "action": "search",
-          "args": {
-            "query": "Microsoft 10-K Call of Duty revenue fiscal 2026 Activision Blizzard segment"
-          },
-          "ok": true,
-          "ms": 16324
-        },
-        {
-          "step": 5,
-          "thought": "SEC EDGAR has Activision Blizzard filings. The most recent standalone 10-Q (2023-07-31) would be the last before Microsoft's acquisition closed in October 2023. But for the profit question about Modern Warfare 4 (2026), Microsoft's filings are the relevant primary source. Let me open the Activision Blizzard 10-Q from 2023-07-31 to see what it says about Call of Duty revenue and content sourcing — ",
-          "action": "open",
-          "args": {
-            "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023026269/"
-          },
-          "ok": true,
-          "ms": 6677
-        },
-        {
-          "step": 6,
-          "thought": "That was a directory listing, not the document. I need the actual filing document. Let me search for Microsoft's 10-K which now contains Activision's results — Microsoft's fiscal 2026 10-K would report Xbox content and services revenue including Call of Duty. Search for it.",
-          "action": "search",
-          "args": {
-            "query": "Microsoft Corporation 10-K fiscal year 2026 Xbox content and services revenue Call of Duty sec.gov"
-          },
-          "ok": true,
-          "ms": 17556
-        },
-        {
-          "step": 7,
-          "thought": "The search index isn't returning Microsoft's 10-K. I have already searched 4 times without filing claims — the desk is warning me. I must open a result and save claims. The Motorsport Games 10-K is irrelevant. Better: open the Activision Blizzard 10-Q (2023-07-31) actual document. The directory listing URL was a folder; the actual filing document would be at a different path. Let me instead open t",
-          "action": "save_claim",
-          "args": {
-            "text": "Activision Publishing Inc. used real footage of the 2022 Seoul Itaewon crowd crush in the opening moments of Call of Duty: Modern Warfare 4, according to Yonhap.",
-            "sources": [
-              "S1"
-            ]
-          },
-          "ok": true,
-          "ms": 4485
-        },
-        {
-          "step": 8,
-          "thought": "C1 is already on file. Let me save the other claims from S1 that may not be recorded yet — C2, C4, C5, C6, C8 are listed as on file. So all S1 claims are already recorded. I need new claims from new documents. The desk wants primary documents. Let me open the SEC EDGAR filing for Activision Blizzard — I need the actual document URL. The directory listing didn't give the file. Let me search EDGAR f",
-          "action": "search",
-          "args": {
-            "query": "게임물관리위원회 콜오브듀티 모던워페어4 이태원 참사 영상 사용 site:grac.or.kr"
-          },
-          "ok": true,
-          "ms": 16170
-        },
-        {
-          "step": 9,
-          "thought": "The site: operator isn't working in this index. Let me search the plain news angle: which Korean broadcaster or media company licensed the Itaewon footage to Activision — that is the 'who profits' question.",
-          "action": "search",
-          "args": {
-            "query": "Korean broadcaster licensed Itaewon crowd crush footage to Activision Call of Duty news footage deal payment"
-          },
-          "ok": true,
-          "ms": 86394
-        }
-      ],
-      "final": null
-    },
-    {
       "at": "2026-10-31T22:07:51.791Z",
       "steps": [
         {
@@ -484,6 +339,16 @@
         }
       ],
       "final": null
+    },
+    {
+      "at": "2026-11-01T13:20:50.540Z",
+      "steps": [],
+      "final": null
+    },
+    {
+      "at": "2026-11-01T13:31:10.934Z",
+      "steps": [],
+      "final": null
     }
   ],
   "nextStep": "keep reporting: 3/8 outlets, 0/2 primary sources, no outreach sent",
@@ -528,7 +393,7 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 15,
-  "blankShifts": 0,
-  "lastShiftAt": "2026-10-31T21:58:28.854Z"
+  "shifts": 17,
+  "blankShifts": 2,
+  "lastShiftAt": "2026-11-01T13:29:16.707Z"
 }
