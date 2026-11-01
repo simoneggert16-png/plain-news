@@ -1,9 +1,191 @@
 {
+  "meta": {
+    "outlets": [
+      "BBC",
+      "France 24",
+      "Al Jazeera",
+      "The Guardian",
+      "South China Morning Post",
+      "CNA",
+      "The Straits Times",
+      "AP News",
+      "Radio Free Europe/Radio Liberty"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash"
+  },
   "slug": "kherson-ceasefire-ends-as-evacuations-conclude",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Kherson ceasefire ends as evacuations conclude",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Der örtlich begrenzte Waffenstillstand in der ukrainischen Region Cherson läuft ab, was zivile Evakuierungen aus Oleschky sowie die Wiederaufnahme russischer Angriffe und ukrainischer Attacken auslöst.",
+      "title": "Waffenruhe in Cherson endet, Evakuierungen werden abgeschlossen"
+    },
+    "en": {
+      "dek": "The localized truce in Ukraine's Kherson region expires, prompting civilian evacuations from Oleshky and a resumption of Russian strikes and Ukrainian attacks.",
+      "title": "Kherson ceasefire ends as evacuations conclude"
+    },
+    "es": {
+      "dek": "La tregua localizada en la región de Jersón, en Ucrania, caduca, lo que provoca la evacuación de civiles desde Oleshki y la reanudación de los ataques rusos y ucranianos.",
+      "title": "Termina el alto el fuego en Jersón al concluir las evacuaciones"
+    },
+    "fr": {
+      "dek": "La trêve locale dans la région de Kherson, en Ukraine, expire, entraînant l'évacuation de civils depuis Oleshky et la reprise des frappes russes et des attaques ukrainiennes.",
+      "title": "Le cessez-le-feu de Kherson prend fin alors que s'achèvent les évacuations"
+    },
+    "it": {
+      "dek": "La tregua localizzata nella regione ucraina di Kherson è giunta al termine, determinando le evacuazioni dei civili da Oleshky e la ripresa degli attacchi russi e ucraini.",
+      "title": "Fine della tregua a Kherson con la conclusione delle evacuazioni"
+    },
+    "ja": {
+      "dek": "ウクライナ・ヘルソン地方の限定的な停戦が失効し、オレシキからの民間人避難が行われ、ロシアの攻撃とウクライナの攻撃が再開された。",
+      "title": "ヘルソンの停戦終了、避難完了で"
+    },
+    "ko": {
+      "dek": "우크라이나 헤르손 지역의 국지적 휴전이 만료되면서 올레시키에서 민간인 대피가 이뤄지고 러시아의 공습과 우크라이나의 공격이 재개됐다.",
+      "title": "헤르손 휴전 종료, 대피도 마무리"
+    },
+    "pt": {
+      "dek": "A trégua localizada na região ucraniana de Kherson expirou, levando à evacuação de civis de Oleshky e à retoma dos ataques russos e ucranianos.",
+      "title": "Cessar-fogo em Kherson termina com o fim das evacuações"
+    },
+    "zh": {
+      "dek": "乌克兰赫尔松地区的局部停火到期，促使奥列什基平民撤离，俄罗斯打击与乌克兰攻击恢复。",
+      "title": "赫尔松局部停火结束，平民撤离完成"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793571314000-nz1j",
+      "at": "2026-11-01T22:15:14.000Z",
+      "kind": "breaking",
+      "importance": 4,
+      "locales": {
+        "en": {
+          "headline": "Kherson ceasefire ends after six days as evacuations conclude",
+          "body": "The localised truce in the Kherson region ended on Sunday evening after neither side announced an extension, the South China Morning Post reported. Outlets including the BBC, Le Monde and Der Spiegel described it as the longest local pause in fighting since Russia's full-scale invasion in 2022. Al Jazeera reported no violations in the Kherson region during the six-day ceasefire, while Moscow and Kyiv continued strikes elsewhere."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Al Jazeera",
+          "title": "Kherson braces for return of war as localised Russia-Ukraine truce ends",
+          "url": "https://www.aljazeera.com/news/2026/11/1/ukraine-evacuates-civilians-in-kherson-region-as-localised-ceasefire-ends?traffic_source=rss",
+          "publishedAt": "2026-11-01T22:15:14.000Z"
+        },
+        {
+          "outlet": "BBC",
+          "title": "Russian strikes cut power to thousands in Ukraine as Kherson ceasefire ends",
+          "url": "https://www.bbc.co.uk/news/articles/c64g1y90p71eo?at_medium=RSS&at_campaign=rss",
+          "publishedAt": "2026-11-01T21:55:01.000Z"
+        },
+        {
+          "outlet": "CNA",
+          "title": "Ukraine evacuates civilians from parts of Kherson region as expiry of Oleshky ceasefire nears",
+          "url": "https://www.channelnewsasia.com/world/ukraine-evacuates-civilians-parts-kherson-region-expiry-oleshky-ceasefire-nears-6511466",
+          "publishedAt": "2026-11-01T21:40:24.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Longest truce of Ukraine war ends in Kherson",
+          "url": "https://www.straitstimes.com/world/longest-truce-of-ukraine-war-ends-in-kherson",
+          "publishedAt": "2026-11-01T21:26:39.000Z"
+        },
+        {
+          "outlet": "Der Spiegel",
+          "title": "Ukraine bringt kurz vor Ende der lokalen Waffenruhe fast 200 Zivilisten aus Cherson in Sicherheit",
+          "url": "https://www.spiegel.de/ausland/ukraine-bringt-kurz-vor-ende-der-lokalen-waffenruhe-fast-200-zivilisten-aus-cherson-in-sicherheit-a-324fe676-4168-4ff1-a2f5-7234d6544bd6#ref=rss",
+          "publishedAt": "2026-11-01T20:39:00.000Z"
+        },
+        {
+          "outlet": "Le Monde.fr",
+          "title": "Longest truce of Ukraine war, in Oleshky, set to end",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSF80d3VnYnBDV253SUhUZ2xDbGl0SGp1MlN5cTJkcDhocmlyQ1VvVml2cVFqZnFiUzlNOXhQNkxNLXN4eHR4OF9VRzZCYjlGblVyUGZSVUdSelA5ODJySDc4a3dFTFA0MUJzbHZ4RWIxNFRFUHhXZUk0ODFWU1doeUtxTkdoWUs1dEJQcF8tcHNsLU1LZnk3S0ZNREdkaHlXWElqeDdmUnFhSGhNd2JlZmRaaWdSR0FOLUoxaWRpUkNaQQ?oc=5",
+          "publishedAt": "2026-11-01T19:10:25.000Z"
+        },
+        {
+          "outlet": "South China Morning Post",
+          "title": "Longest truce of Ukraine war, in Kherson region, set to end",
+          "url": "https://www.scmp.com/news/world/russia-central-asia/article/3372908/longest-truce-ukraine-war-kherson-region-set-end",
+          "publishedAt": "2026-11-01T18:25:28.000Z"
+        },
+        {
+          "outlet": "AP News",
+          "title": "Civilians in Ukraine’s Kherson prepare for the return of war as localized ceasefire ends",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSmJHM1BrS0RMNk5BS0hac0VyQjZTSkdPbmlGdkZ6bGJiUGF2dkJuZVFhNzNTaUNhNU0yOXRyUGVKZU42dE1PZzBMWjNFY3hOVTBfSFRkc0lCclpXZ0xCLVhrRi02REF4b25JVEZFeTFDc2tQSnVsTDNuNVVjeHlEdG5zaXB4ODRDSUYwcWtQZFF2THR6eVNjQUZvUElmd1VwdWNDbVZjVQ?oc=5",
+          "publishedAt": "2026-11-01T17:46:00.000Z"
+        },
+        {
+          "outlet": "Radio Free Europe/Radio Liberty",
+          "title": "'We Escaped Hell': Oleshky Residents Reach Ukraine After Years In War-Torn City",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE4yam1lT3RtcDBwbkhmYmFyZmp0Wkpsd3p3LTMxbl9hWHBNM1A5eUkzX1ZPbFFiRXB1Z1NYaDBTbnJqUkRSRGFfeDFqN1V5ZmcxNm9vRzNkeUNsM1hhZmhXWkd2NTdENXlCSU12QW0zbUlQbTk0dnc2clkyS3VPd9IBfkFVX3lxTE4yam1lT3RtcDBwbkhmYmFyZmp0Wkpsd3p3LTMxbl9hWHBNM1A5eUkzX1ZPbFFiRXB1Z1NYaDBTbnJqUkRSRGFfeDFqN1V5ZmcxNm9vRzNkeUNsM1hhZmhXWkd2NTdENXlCSU12QW0zbUlQbTk0dnc2clkyS3VPdw?oc=5",
+          "publishedAt": "2026-11-01T16:59:27.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793565540000-9hhd",
+      "at": "2026-11-01T20:39:00.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Ukraine says it evacuated 167 people from southern Kherson region",
+          "body": "Ukraine's military said it evacuated 167 people from threatened areas of the southern Kherson region on Sunday, according to The Straits Times. Der Spiegel reported that nearly 200 civilians were brought to safety shortly before the local truce expired. France 24 reported that residents of Oleshky who had requested evacuation were reunited with relatives in Ukraine on Saturday, 31 October."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Der Spiegel",
+          "title": "Ukraine bringt kurz vor Ende der lokalen Waffenruhe fast 200 Zivilisten aus Cherson in Sicherheit",
+          "url": "https://www.spiegel.de/ausland/ukraine-bringt-kurz-vor-ende-der-lokalen-waffenruhe-fast-200-zivilisten-aus-cherson-in-sicherheit-a-324fe676-4168-4ff1-a2f5-7234d6544bd6#ref=rss",
+          "publishedAt": "2026-11-01T20:39:00.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Ukraine evacuates civilians from parts of Kherson region as expiry of Oleshky ceasefire nears",
+          "url": "https://www.straitstimes.com/world/europe/ukraine-evacuates-civilians-from-parts-of-kherson-region-as-expiry-of-oleshky-ceasefire-nears",
+          "publishedAt": "2026-11-01T19:11:58.000Z"
+        },
+        {
+          "outlet": "France 24",
+          "title": "Oleshky: Evacuations during first humanitarian truce of war end",
+          "url": "https://www.france24.com/en/oleshky-evacuations-during-first-humanitarian-truce-of-war-end",
+          "publishedAt": "2026-11-01T17:44:51.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793566500000-glib",
+      "at": "2026-11-01T20:55:00.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Ukraine says Russia suffered record 54,400 casualties in October",
+          "body": "Ukraine's military reported 54,400 Russian casualties in October, the highest monthly figure since the war began, according to the New York Post and TVP World. The New York Post reported the total since the war began at 2.1 million."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "New York Post",
+          "title": "Russia suffers record 54,400 casualties in October, Ukraine says — and 2.1M since war began",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeXlsUnNEbjVDNExHdUNqZ3ZfaTFBOWdwekkyaTNxV2dMOG9VU2hPa0tQMzJ4MWotdVdQSzJjekt0THFXdk92aHh5WUdIMXlCa0V6b21SSEt6QTNFbGhLcFVUbWFDUlRZSE1JdmE2YzNsQWFfZ1k4VmdaRjlrTk1jVjJJOVgwVnRjRFlVd3VGZy02UnJ0VjlvdlVxU0otQkVEVTNPOElGUQ?oc=5",
+          "publishedAt": "2026-11-01T20:55:00.000Z"
+        },
+        {
+          "outlet": "TVP World",
+          "title": "Russia suffers highest monthly combat losses since war began, Ukraine says",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOYU4wM29uX0JBZ2ZDZUlTakhhTlJrRVlLaEtDcEFyUmZHV0FBeU1LQXZkT1JBMDJsMHZjWEdwMXB3OWhoaXdDSmZvakY1MklLNDFfNVNIVDhUSElOamduWVA4MEtibHM4bHNQMklKYmtMWHJtaGgwcVJNY0Y4V3Fya1ZvaEZRT210OFh0cw?oc=5",
+          "publishedAt": "2026-11-01T20:22:08.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "kherson",
     "oleshky",
@@ -17,66 +199,44 @@
     "power outage",
     "refineries"
   ],
+  "seenUrls": [
+    "https://www.semafor.com/article/11/01/2026/us-approves-sale-of-500-patriot-missiles-to-ukraine",
+    "https://www.straitstimes.com/world/europe/zelensky-says-ukraine-will-stop-hitting-russias-refineries-if-us-provides-missiles",
+    "https://www.aljazeera.com/news/2026/11/1/ukraine-evacuates-civilians-in-kherson-region-as-localised-ceasefire-ends?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSVVsWnZSS0VmNXEzZlJOSWVhSTNRaFRZcHVNOU9NNXltTGxZd1h0MUlVNDMtSU8tc0ZFYk5WeVBJMm13TW9jYXhra2o1eE5nTzZOX182VkRnbWRUZ0hKZ1RFa291cWU3NEVsYWRkRFFQNEw0R2txYXRzS3I0UmRFNDUtUVNmT2QtWlJOeVg0aVBtQ01JMEtnN3NZSVdmQk1hMUpR?oc=5",
+    "https://www.bbc.co.uk/news/articles/c64g1y90p71eo?at_medium=RSS&at_campaign=rss",
+    "https://www.channelnewsasia.com/world/ukraine-evacuates-civilians-parts-kherson-region-expiry-oleshky-ceasefire-nears-6511466",
+    "https://www.straitstimes.com/world/longest-truce-of-ukraine-war-ends-in-kherson",
+    "https://www.abc.net.au/news/2026-11-02/israeli-strikes-kill-eight-people-in-gaza-medics-say/107334984",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeXlsUnNEbjVDNExHdUNqZ3ZfaTFBOWdwekkyaTNxV2dMOG9VU2hPa0tQMzJ4MWotdVdQSzJjekt0THFXdk92aHh5WUdIMXlCa0V6b21SSEt6QTNFbGhLcFVUbWFDUlRZSE1JdmE2YzNsQWFfZ1k4VmdaRjlrTk1jVjJJOVgwVnRjRFlVd3VGZy02UnJ0VjlvdlVxU0otQkVEVTNPOElGUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxOb1pYOFFtaHRxNG5OYUkwaWgwajFGSFpKd1JkNHRHUVZtelZETmtrNTE1QXlQM0hyMmxacnBMVXFsR0szNmM2SDVNdEl1U0JQYjMtak9oRzJOZFJRdHUxQXU2MHk5cGFpSGd5VGFqcWNhbUtCb2ZPaFpGaHUyVlhSRGpWNGtUSnhnS2RmUGJ2ZG5XNVhQUWw4ZTNSem9HX254WFJIT0ZXbVFJendoMDlN0gG0AUFVX3lxTE5Sem1MS2N5OWZIaWxvWVlYbmdBZllJTHRiTjJHb1d3eHJGUWJwVWw2Q0o3VjFkSXVNU0xtcDdGN25ERWZvN3RUbWhZdUE0T2FmY1FCb1UyanpoOFNSSmFSdzEtSGxXbldERW93a0pRTGpXUkxyeVk0dG54VXNPQnIxR1ZZSmJLYm1HMFZrOXNTbW5taVRqN1VwLXpXeHhDdmRHS0l0Y3g4QTcwbzVFOGFoQjlkdg?oc=5",
+    "https://www.nytimes.com/2026/11/01/world/germany-russia-putin-deals-us-midterms.html",
+    "https://www.spiegel.de/ausland/ukraine-bringt-kurz-vor-ende-der-lokalen-waffenruhe-fast-200-zivilisten-aus-cherson-in-sicherheit-a-324fe676-4168-4ff1-a2f5-7234d6544bd6#ref=rss",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSW05UHQ5YjRDajJGVFZOdDRXWVM4YWZ0ZVZEakU1R2xFWk02Z1MwWHBic3Q0ZW1BUVk0YXFRLUpwd3d1MTAtdkxsNjVxenAtLVpJakpZTDJXOEVxSHFOYVotNjc3QWE4MEhEbWktZ3cycndLc0dERDJzaU01N1EyRGJwSU1pVXliOG13TmZUZllNU1c1ak00TWVoRDlFSFFEWXBuSlBYd1pnckJKdUJQTWNqa2Y2Zw?oc=5",
+    "https://news.google.com/rss/articles/CBMijAFBVV95cUxOYU4wM29uX0JBZ2ZDZUlTakhhTlJrRVlLaEtDcEFyUmZHV0FBeU1LQXZkT1JBMDJsMHZjWEdwMXB3OWhoaXdDSmZvakY1MklLNDFfNVNIVDhUSElOamduWVA4MEtibHM4bHNQMklKYmtMWHJtaGgwcVJNY0Y4V3Fya1ZvaEZRT210OFh0cw?oc=5",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaXRpYUlFN0hIc3VLSWlSZEhmVFVyLVQycWVhaEdnVnQ1bjBBRGk2SVFiSDVXcHhqT3ZSUmd4MG1SX2JJMGdLcjRuTjd1eFdESWtZbXZCUWw5VU93S1VleXBYWUdBZnc5VkpFOFlfbXdLWGhITDZySUJlX2YycW81YTBJTG1uNmEzS3pKY1JodVlyZzJTYnN4dXhMOFBLQjFSRU5vNW5qMzhMdw?oc=5",
+    "https://www.tagesschau.de/tagesschau_20_uhr/video-1676354.html",
+    "https://www.scmp.com/news/world/europe/article/3372909/bulgarian-acting-president-iliana-iotova-wins-run-election-exit-polls-show",
+    "https://www.tagesschau.de/tagesschau_20_uhr/video-1676340.html",
+    "https://www.straitstimes.com/world/europe/ukraine-evacuates-civilians-from-parts-of-kherson-region-as-expiry-of-oleshky-ceasefire-nears",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSF80d3VnYnBDV253SUhUZ2xDbGl0SGp1MlN5cTJkcDhocmlyQ1VvVml2cVFqZnFiUzlNOXhQNkxNLXN4eHR4OF9VRzZCYjlGblVyUGZSVUdSelA5ODJySDc4a3dFTFA0MUJzbHZ4RWIxNFRFUHhXZUk0ODFWU1doeUtxTkdoWUs1dEJQcF8tcHNsLU1LZnk3S0ZNREdkaHlXWElqeDdmUnFhSGhNd2JlZmRaaWdSR0FOLUoxaWRpUkNaQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTnc4UUdxUWk0SDk3RWZxS0lsSmdfTjR0X29QSWNVNjdZS01nRVJoY3padE9NTXJwM0pBVjNNZkpTTlVzSTdiVXFBc2NDS1RaVDVZX00tYXRVelRuTlVqZlpVZ3Q0c2dEQWhnWlFjcUhSNjNqek1zbEhleDc3OVlTb0FBWUlUTm1BMHFHeXM0dzloTkpYR2FVNHNDdEdyVE1lSUk1SHZnM0RaU3dmZ25hc1l6LTdUYmVIdklUTzhJbzI1SXNQ?oc=5",
+    "https://www.scmp.com/news/world/russia-central-asia/article/3372908/longest-truce-ukraine-war-kherson-region-set-end",
+    "https://news.google.com/rss/articles/CBMibkFVX3lxTFBxNDR0N2pjcDljbnUxUmhfSjlzczBiclpiR1JqUkhaeXdEanJlUTVKYW41M2pTSk11Yl9PdmV1ZTl3VDY4VGhGeGZ3TlY3amlJMF9TNURFcHNRZ1RlNFdQdkJWVkFoM2pKS3lJQVhB?oc=5",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSTJiYU5lWjNHbW9ORjFDSWxPTXR4OWVGbVA4UDVXMzhFZ3p4VTJxRUpBS1lubVZ0MmNBVzVIWWRtdWxxcHFWUHVQRlprVGQ5ZElCeUF4VEpVSFJQX3RPN3dnVGxvbWxvQjRKZzljbFV1VVlwYmFKOEl6NV9QNl9qVHZTQUJobE5lVW9Hcno1OTNjRGFmdE5NaG4tLW0za1BvSXFHY1c0bm5tb2Q0NFBxNzlWQ2QxcFhkMTJMaw?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSmJHM1BrS0RMNk5BS0hac0VyQjZTSkdPbmlGdkZ6bGJiUGF2dkJuZVFhNzNTaUNhNU0yOXRyUGVKZU42dE1PZzBMWjNFY3hOVTBfSFRkc0lCclpXZ0xCLVhrRi02REF4b25JVEZFeTFDc2tQSnVsTDNuNVVjeHlEdG5zaXB4ODRDSUYwcWtQZFF2THR6eVNjQUZvUElmd1VwdWNDbVZjVQ?oc=5",
+    "https://www.france24.com/en/oleshky-evacuations-during-first-humanitarian-truce-of-war-end",
+    "https://www.theguardian.com/world/2026/nov/01/ukraine-defies-trump-resumes-attacks-russian-oil",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxQcWF6blktd1BhZ3VuWjRWRkhTcEFJYzRhMEtXeTNWeHBMZzFaOVpkb1BseUYyblFENmpGUGM1ZEQyd214Wk5mWWc1RHNEUFVXbGx5MWpqdmZ1WTRSNGVZTDByTl9GODNEQmFjZ2h2WlJoSG5OTjd4Q2RQMXh6VzU2aFJFNXhRYTktU1FJQkNYSnpxLW9UUTZhag?oc=5",
+    "https://www.bbc.co.uk/news/articles/cmqln14rrzxvo?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQeHVwclhUTkx5SDdyeWdiUHRaQm1nc0N3d094cDBwZ1BBLWQzNTA4WWtDTTQ1ck9PSzJTVjFxTmtaVWotYl9VV3dMTHJkN24xZnlkamZubi1xZmNiZVdzRDBkU0NMM0h4Y1NseGdRbVNSZnVYMmFkbE5zaXY3S2Y5TUZOUjJVNG55TV8zWnIxeEs1dFBtR09IZ3F2aE5CUkJZMlVJRkZ2OXdyMFc5SklSMkVwUUhOLVRhem1xSi1ldVY?oc=5",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE4yam1lT3RtcDBwbkhmYmFyZmp0Wkpsd3p3LTMxbl9hWHBNM1A5eUkzX1ZPbFFiRXB1Z1NYaDBTbnJqUkRSRGFfeDFqN1V5ZmcxNm9vRzNkeUNsM1hhZmhXWkd2NTdENXlCSU12QW0zbUlQbTk0dnc2clkyS3VPd9IBfkFVX3lxTE4yam1lT3RtcDBwbkhmYmFyZmp0Wkpsd3p3LTMxbl9hWHBNM1A5eUkzX1ZPbFFiRXB1Z1NYaDBTbnJqUkRSRGFfeDFqN1V5ZmcxNm9vRzNkeUNsM1hhZmhXWkd2NTdENXlCSU12QW0zbUlQbTk0dnc2clkyS3VPdw?oc=5"
+  ],
   "startedAt": "2026-11-01T22:42:28.188Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-01T22:42:28.188Z",
-  "articleSlug": null,
-  "sourceCount": 9,
+  "updatedAt": "2026-11-01T22:59:06.445Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Kherson ceasefire ends as evacuations conclude",
-      "dek": "The localized truce in Ukraine's Kherson region expires, prompting civilian evacuations from Oleshky and a resumption of Russian strikes and Ukrainian attacks."
-    },
-    "fr": {
-      "title": "Le cessez-le-feu de Kherson prend fin alors que s'achèvent les évacuations",
-      "dek": "La trêve locale dans la région de Kherson, en Ukraine, expire, entraînant l'évacuation de civils depuis Oleshky et la reprise des frappes russes et des attaques ukrainiennes."
-    },
-    "it": {
-      "title": "Fine della tregua a Kherson con la conclusione delle evacuazioni",
-      "dek": "La tregua localizzata nella regione ucraina di Kherson è giunta al termine, determinando le evacuazioni dei civili da Oleshky e la ripresa degli attacchi russi e ucraini."
-    },
-    "de": {
-      "title": "Waffenruhe in Cherson endet, Evakuierungen werden abgeschlossen",
-      "dek": "Der örtlich begrenzte Waffenstillstand in der ukrainischen Region Cherson läuft ab, was zivile Evakuierungen aus Oleschky sowie die Wiederaufnahme russischer Angriffe und ukrainischer Attacken auslöst."
-    },
-    "pt": {
-      "title": "Cessar-fogo em Kherson termina com o fim das evacuações",
-      "dek": "A trégua localizada na região ucraniana de Kherson expirou, levando à evacuação de civis de Oleshky e à retoma dos ataques russos e ucranianos."
-    },
-    "zh": {
-      "title": "赫尔松局部停火结束，平民撤离完成",
-      "dek": "乌克兰赫尔松地区的局部停火到期，促使奥列什基平民撤离，俄罗斯打击与乌克兰攻击恢复。"
-    },
-    "ja": {
-      "title": "ヘルソンの停戦終了、避難完了で",
-      "dek": "ウクライナ・ヘルソン地方の限定的な停戦が失効し、オレシキからの民間人避難が行われ、ロシアの攻撃とウクライナの攻撃が再開された。"
-    },
-    "es": {
-      "title": "Termina el alto el fuego en Jersón al concluir las evacuaciones",
-      "dek": "La tregua localizada en la región de Jersón, en Ucrania, caduca, lo que provoca la evacuación de civiles desde Oleshki y la reanudación de los ataques rusos y ucranianos."
-    },
-    "ko": {
-      "title": "헤르손 휴전 종료, 대피도 마무리",
-      "dek": "우크라이나 헤르손 지역의 국지적 휴전이 만료되면서 올레시키에서 민간인 대피가 이뤄지고 러시아의 공습과 우크라이나의 공격이 재개됐다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "BBC",
-      "France 24",
-      "Al Jazeera",
-      "The Guardian",
-      "South China Morning Post",
-      "CNA",
-      "The Straits Times",
-      "AP News",
-      "Radio Free Europe/Radio Liberty"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 12,
+  "seenHeadlines": []
 }
