@@ -139,8 +139,55 @@ const exclusive = (model, run) => {
  * Translate one article (source-language fields) into `locale`. Validates the
  * result. `models` overrides the chain, which only the probe needs.
  */
-export async function translate(src, locale, models = null) {
+const registerFor = (locale) => {
   const lang = LOCALES.find((l) => l.code === locale);
+  return `You are a professional news translator. Translate into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact. Do not add or remove information. Keep names, numbers and quotes accurate; use the established local spelling of place and person names. Translate the meaning, not the words: no literal renderings of English stock phrases, and keep the sentence rhythm of the target language rather than mirroring English syntax.${terminologyFor(locale)} Write the translation itself; do not explain, comment on or plan the work.`;
+};
+
+/** The head request exactly as a translation run sends it — the probe needs it. */
+export function headMessages(src, locale) {
+  return [
+    {
+      role: 'system',
+      content: `${registerFor(locale)}
+
+Reply with these five blocks, in this order, and nothing else. Each block starts on its own line with its marker, exactly as written here:
+@@TITLE@@ the translated headline
+@@DEK@@ the translated standfirst
+@@FACTS@@ the translated facts, separated by " || ", in the same order, or NOTHING
+@@CONTEXT@@ the translated closing context, or NOTHING
+@@CAPTION@@ the translated image caption, or NOTHING`,
+    },
+    {
+      role: 'user',
+      content: JSON.stringify({
+        title: src.title,
+        dek: src.dek || '',
+        facts: src.facts || [],
+        context: src.context || '',
+        imageCaption: src.imageCaption || '',
+      }),
+    },
+  ];
+}
+
+/** The body request exactly as a translation run sends it. */
+export function bodyMessages(src, paragraphs, locale, title = src.title) {
+  return [
+    {
+      role: 'system',
+      content: `${registerFor(locale)}
+
+This is the body of one article. Translate every paragraph. Write a line containing exactly @@P@@ before each translated paragraph, keep exactly ${paragraphs.length} paragraphs in the same order, never merge or split one, and write nothing before the first @@P@@.`,
+    },
+    {
+      role: 'user',
+      content: JSON.stringify({ title, paragraphs }),
+    },
+  ];
+}
+
+export async function translate(src, locale, models = null) {
   const chain = [...new Set(models?.length ? models : MODELS.translator)];
   // A chunk is a small answer, and a small answer takes a short wait. This is
   // also what the probe raises when it wants to know whether a model finishes
@@ -153,7 +200,7 @@ export async function translate(src, locale, models = null) {
   const budgetFor = (chars) => maxTokens || Math.min(2500, Math.max(700, Math.ceil(chars / 2) + 400));
   const debug = Boolean(process.env.TRANSLATE_DEBUG);
 
-  const register = `You are a professional news translator. Translate into ${lang.label} (${lang.bcp47}) in the neutral register of a quality newspaper in that language. Keep meaning exact. Do not add or remove information. Keep names, numbers and quotes accurate; use the established local spelling of place and person names. Translate the meaning, not the words: no literal renderings of English stock phrases, and keep the sentence rhythm of the target language rather than mirroring English syntax.${terminologyFor(locale)} Write the translation itself; do not explain, comment on or plan the work.`;
+  const register = registerFor(locale);
 
   let ollamaOutOfQuota = false;
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -199,29 +246,7 @@ export async function translate(src, locale, models = null) {
   // Headline, standfirst, facts and the closing context block: short answers,
   // and they set the terms the paragraphs have to keep.
   const headAnswer = await ask(
-    [
-      {
-        role: 'system',
-        content: `${register}
-
-Reply with these five blocks, in this order, and nothing else. Each block starts on its own line with its marker, exactly as written here:
-@@TITLE@@ the translated headline
-@@DEK@@ the translated standfirst
-@@FACTS@@ the translated facts, separated by " || ", in the same order, or NOTHING
-@@CONTEXT@@ the translated closing context, or NOTHING
-@@CAPTION@@ the translated image caption, or NOTHING`,
-      },
-      {
-        role: 'user',
-        content: JSON.stringify({
-          title: src.title,
-          dek: src.dek || '',
-          facts: src.facts || [],
-          context: src.context || '',
-          imageCaption: src.imageCaption || '',
-        }),
-      },
-    ],
+    headMessages(src, locale),
     `${locale} head`,
     [src.title, src.dek, ...(src.facts || []), src.context, src.imageCaption].join('').length,
   ).catch((e) => {
@@ -238,19 +263,6 @@ Reply with these five blocks, in this order, and nothing else. Each block starts
   // for the article whose single answer does not keep its paragraph count.
   const body = Array.isArray(src.body) ? src.body : [];
   const wholeBodyLimit = Number(process.env.TRANSLATE_WHOLE_BODY_CHARS) || 6000;
-
-  const bodyMessages = (paragraphs, title) => [
-    {
-      role: 'system',
-      content: `${register}
-
-This is the body of one article. Translate every paragraph. Write a line containing exactly @@P@@ before each translated paragraph, keep exactly ${paragraphs.length} paragraphs in the same order, never merge or split one, and write nothing before the first @@P@@.`,
-    },
-    {
-      role: 'user',
-      content: JSON.stringify({ title, paragraphs }),
-    },
-  ];
 
   const chunked = async () => {
     const chunks = bodyChunks(body);
@@ -294,7 +306,7 @@ This is part ${i + 1} of ${chunks.length} of one article. Keep the terms and the
   const whole = async () => {
     if (!body.length) return [];
     if (body.join(' ').length > wholeBodyLimit) throw new Error(`${body.join(' ').length} characters is too much for one answer`);
-    const { text } = await ask(bodyMessages(body, h.title), `${locale} body`, body.join(' ').length);
+    const { text } = await ask(bodyMessages(src, body, locale, h.title), `${locale} body`, body.join(' ').length);
     const parts = parseParagraphs(text);
     if (parts.length !== body.length) {
       throw new Error(`one answer returned ${parts.length} of ${body.length} paragraphs`);
