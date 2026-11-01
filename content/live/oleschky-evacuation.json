@@ -7,7 +7,7 @@
       "SRF"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "oleschky-evacuation",
   "topic": "Oleschky evacuation",
@@ -269,54 +269,120 @@
   },
   "updates": [
     {
-      "id": "u-1793483014000-nxxi",
-      "at": "2026-10-31T21:43:34.000Z",
-      "kind": "result",
+      "id": "u-1793523120000-934b",
+      "at": "2026-11-01T08:52:00.000Z",
+      "kind": "statement",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Oleshky evacuees reunite with families after crossing into Ukraine",
-          "body": "The Guardian reported that evacuees from Russian-occupied Oleshky were reunited with their families after crossing into Ukraine, and residents of nearby villages lined a highway waving flags to greet the convoy. The New York Times reported the civilians were safely out of Oleshky after a 24-hour journey and reunited with family and friends."
-        },
-        "fr": {
-          "headline": "Les évacués d’Oleshky retrouvent leurs familles après être entrés en Ukraine",
-          "body": "The Guardian a rapporté que les évacués d’Oleshky, occupée par la Russie, avaient retrouvé leurs familles après être entrés en Ukraine, et que les habitants de villages voisins s’étaient alignés le long d’une route, agitant des drapeaux pour accueillir le convoi. The New York Times a rapporté que les civils avaient quitté Oleshky en toute sécurité après un trajet de 24 heures et avaient retrouvé leur famille et leurs amis."
+          "headline": "Zelenskyy and Sybiha say Oleshky truce shows de-escalation is possible",
+          "body": "President Volodymyr Zelenskyy said the Oleshky truce shows de-escalation is possible, according to The Guardian. Foreign Minister Andrii Sybiha said the evacuation of civilians from Russian-occupied Oleshky proves active hostilities can be halted and can serve as a confidence-building measure, The Kyiv Post reported."
         },
         "it": {
-          "headline": "Gli evacuati di Oleshky ritrovano le famiglie dopo essere entrati in Ucraina",
-          "body": "Il Guardian ha riferito che gli evacuati da Oleshky, sotto occupazione russa, si sono ricongiunti con le loro famiglie dopo essere entrati in Ucraina e che gli abitanti dei villaggi vicini si sono disposti lungo un'autostrada sventolando bandiere per accogliere la colonna. Il New York Times ha riferito che i civili sono usciti in sicurezza da Oleshky dopo un viaggio di 24 ore e si sono ricongiunti con familiari e amici."
+          "headline": "Zelenskyj e Sybiha: il cessate il fuoco a Oleshky mostra che la de-escalation è possibile",
+          "body": "Il presidente Volodymyr Zelenskyj ha dichiarato che il cessate il fuoco a Oleshky mostra che la de-escalation è possibile, secondo The Guardian. Il ministro degli Esteri Andrii Sybiha ha dichiarato che l'evacuazione dei civili da Oleshky, occupata dai russi, dimostra che è possibile fermare le ostilità in corso e che può servire come misura per il rafforzamento della fiducia, ha riportato The Kyiv Post."
         },
-        "es": {
-          "headline": "Los evacuados de Oleshky se reencontran con sus familias tras cruzar hacia Ucrania",
-          "body": "The Guardian informó de que los evacuados de Oleshky, bajo ocupación rusa, se reencontraron con sus familias tras cruzar hacia Ucrania, y los residentes de las aldeas cercanas se等形式aron a lo largo de una carretera, agitando banderas para dar la bienvenida a la columna. The New York Times informó de que los civiles salieron ilesos de Oleshky tras un trayecto de 24 horas y se reencontraron con familiares y amigos."
-        },
-        "pt": {
-          "headline": "Evacados de Oleshky reencontram-se com as famílias depois de atravessarem para a Ucrânia",
-          "body": "O Guardian informou que os evacados de Oleshky, sob ocupação russa, reencontraram-se com as suas famílias depois de atravessarem para a Ucrânia, e moradores de aldeias próximas alinharam-se ao longo de uma estrada, agitando bandeiras para saudar a comitiva. O New York Times informou que os civis saíram em segurança de Oleshky após uma viagem de 24 horas e reencontraram-se com familiares e amigos."
+        "fr": {
+          "headline": "Zelensky et Sybiha affirment que le cessez-le-feu à Oleshky montre qu’une désescalade est possible",
+          "body": "Le président Volodymyr Zelensky a déclaré, selon The Guardian, que le cessez-le-feu à Oleshky montre qu’une désescalade est possible. Le ministre des Affaires étrangères Andrii Sybiha a déclaré que l’évacuation des civils d’Oleshky, occupé par la Russie, prouve qu’il est possible de suspendre les hostilités actives et qu’elle peut servir de mesure de confiance, a rapporté The Kyiv Post."
         },
         "de": {
-          "headline": "Evakuierte aus Oleshky treffen nach dem Überschreiten der Grenze in die Ukraine wieder mit ihren Familien zusammen",
-          "body": "Der Guardian berichtete, dass Evakuierte aus dem russisch besetzten Oleshky nach dem Überschreiten der Grenze in die Ukraine wieder mit ihren Familien vereint wurden und Einwohner nahegelegener Dörfer sich entlang einer Fernstraße aufstellten und mit Fahnen winkten, um den Konvoi zu begrüßen. Die New York Times berichtete, dass die Zivilisten nach einer 24-stündigen Reise sicher aus Oleshky heraus waren und wieder mit Familie und Freunden vereint wurden."
+          "headline": "Selenskyj und Sybiha sagen, die Waffenruhe in Oleschki zeige, dass eine Deeskalation möglich sei",
+          "body": "Präsident Wolodymyr Selenskyj erklärte laut „The Guardian“, die Waffenruhe in Oleschki zeige, dass eine Deeskalation möglich sei. Außenminister Andrii Sybiha sagte laut „The Kyiv Post“, die Evakuierung von Zivilisten aus dem russisch besetzten Oleschki beweise, dass aktive Feindseligkeiten gestoppt werden können und die Evakuierung als vertrauensbildende Maßnahme dienen könne."
+        },
+        "es": {
+          "headline": "Zelenskiy y Sybiha afirman que la tregua de Oleshky muestra que la desescalada es posible",
+          "body": "El presidente Volodímir Zelenskiy afirmó que la tregua de Oleshky muestra que la desescalada es posible, según The Guardian. El ministro de Exteriores Andrii Sybiha dijo que la evacuación de civiles de Oleshky, ocupado por Rusia, demuestra que las hostilidades activas pueden detenerse y que la evacuación puede servir como medida de generación de confianza, según informó The Kyiv Post."
+        },
+        "pt": {
+          "headline": "Zelenskyy e Sybiha afirmam que a trégua de Oleshky mostra que a desescalada é possível",
+          "body": "O presidente Volodymyr Zelenskyy afirmou que a trégua de Oleshky mostra que a desescalada é possível, de acordo com o Guardian. O ministro dos Negócios Estrangeiros Andrii Sybiha afirmou que a evacuação de civis de Oleshky, ocupada pela Rússia, prova que é possível suspender as hostilidades ativas e que pode servir como medida de construção de confiança, noticiou o Kyiv Post."
         },
         "zh": {
-          "headline": "奥列什基撤离人员进入乌克兰后与家人团聚",
-          "body": "据《卫报》报道，来自俄罗斯占领的奥列什基的撤离人员在进入乌克兰后与家人团聚，附近村庄的居民站在高速公路两旁挥舞旗帜迎接车队。《纽约时报》报道称，这些平民经过24小时的行程安全离开奥列什基，与家人和朋友团聚。"
+          "headline": "泽连斯基与西比哈称奥列什基停火表明局势缓和是可能的",
+          "body": "据《卫报》报道，总统弗拉基米尔·泽连斯基表示，奥列什基停火表明局势缓和是可能的。外交部长安德烈·西比哈称，从俄罗斯占领的奥列什基疏散平民证明现行敌对行动可以停止，并可成为建立信任的措施，《基辅邮报》报道。"
+        },
+        "ko": {
+          "headline": "젤렌스키와 시비하, 오레슈키 휴전은 긴장 완화가 가능함을 보여준다고 말해",
+          "body": "《가디안》에 따르면 볼로디미르 젤렌스키 대통령은 오레슈키 휴전이 긴장 완화가 가능하다는 것을 보여준다고 말했다. 《키이브 포스트》는 안드리 시비하 외교部长이 러시아가 점령한 오레슈키에서 민간인들을 대피시킨 것은 진행 중인 무력 충돌을 중단할 수 있으며 신뢰 구축 조치로 활용될 수 있음을 입증한다고 보도했다."
+        },
+        "ja": {
+          "headline": "ゼenskyー大統領とシヴィハ外相、オレシュキの停戦は緊張緩和が可能と示す",
+          "body": "『ガーディアン』紙によると、ヴォロディミル・ゼenskyー大統領は、オレシュキの停戦が緊張緩和が可能であることを示していると述べた。『キイヴ・ポスト』紙によると、外務大臣アンドリー・シヴィハは、ロシア占領下のオレシュキからの民間人の避難が、実際の交戦を停止できることを証明し、信頼構築の措置として役立つと述べた。"
         }
       },
       "sources": [
         {
-          "outlet": "New York Times",
-          "title": "‘We Are Coming From Hell’: A Ukrainian City’s Evacuees Tell Survival Stories",
-          "url": "https://www.nytimes.com/2026/10/31/todayspaper/we-are-coming-from-hell-a-ukrainian-citys-evacuees-tell-survival-stories.html",
-          "publishedAt": "2026-10-31T21:43:34.000Z"
+          "outlet": "The Kyiv Post",
+          "title": "Sybiha: Oleshky Success Proves War Can Be Stopped Everywhere",
+          "url": "https://www.kyivpost.com/post/88779",
+          "publishedAt": "2026-11-01T08:52:00.000Z"
         },
         {
           "outlet": "The Guardian",
-          "title": "Oleshky evacuees reunite with families after truce allows crossing back into Ukraine",
-          "url": "https://www.theguardian.com/world/2026/oct/31/oleshky-evacuees-reunite-with-families-after-truce-allows-crossing-into-ukraine",
-          "publishedAt": "2026-10-31T19:17:22.000Z"
+          "title": "Ukraine war briefing: Oleshky truce shows de-escalation is possible, says Zelenskyy",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPYzh1ZFludjdBZGphNlBMM09jOFpiaTBrWWxjMkV2TmphTWItT2pxcXlxQzNmMWZadUFYUi1kdEktZWxZQVpoNFN6R1d1WFJlS2RHNWlwSlBNaXhOM3RyWnc3dnkxWFdfTmpQNi0xM2lZdDFkdmVBNDZnUzhveDVBb0xUeXJUTkVrNW5Fa1dhZ2oyWEFYVmw1dUtFSF9iS1MtSlBnQUxYNE5xRlhfQ3lpNTRQVDZvRXA4c1A3NDhlYTN4UDBicVE?oc=5",
+          "publishedAt": "2026-11-01T07:55:00.000Z"
         }
       ]
+    },
+    {
+      "at": "2026-10-31T21:43:34.000Z",
+      "id": "u-1793483014000-nxxi",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Der Guardian berichtete, dass Evakuierte aus dem russisch besetzten Oleshky nach dem Überschreiten der Grenze in die Ukraine wieder mit ihren Familien vereint wurden und Einwohner nahegelegener Dörfer sich entlang einer Fernstraße aufstellten und mit Fahnen winkten, um den Konvoi zu begrüßen. Die New York Times berichtete, dass die Zivilisten nach einer 24-stündigen Reise sicher aus Oleshky heraus waren und wieder mit Familie und Freunden vereint wurden.",
+          "headline": "Evakuierte aus Oleshky treffen nach dem Überschreiten der Grenze in die Ukraine wieder mit ihren Familien zusammen"
+        },
+        "en": {
+          "body": "The Guardian reported that evacuees from Russian-occupied Oleshky were reunited with their families after crossing into Ukraine, and residents of nearby villages lined a highway waving flags to greet the convoy. The New York Times reported the civilians were safely out of Oleshky after a 24-hour journey and reunited with family and friends.",
+          "headline": "Oleshky evacuees reunite with families after crossing into Ukraine"
+        },
+        "es": {
+          "body": "The Guardian informó de que los evacuados de Oleshky, bajo ocupación rusa, se reencontraron con sus familias tras cruzar hacia Ucrania, y los residentes de las aldeas cercanas se等形式aron a lo largo de una carretera, agitando banderas para dar la bienvenida a la columna. The New York Times informó de que los civiles salieron ilesos de Oleshky tras un trayecto de 24 horas y se reencontraron con familiares y amigos.",
+          "headline": "Los evacuados de Oleshky se reencontran con sus familias tras cruzar hacia Ucrania"
+        },
+        "fr": {
+          "body": "The Guardian a rapporté que les évacués d’Oleshky, occupée par la Russie, avaient retrouvé leurs familles après être entrés en Ukraine, et que les habitants de villages voisins s’étaient alignés le long d’une route, agitant des drapeaux pour accueillir le convoi. The New York Times a rapporté que les civils avaient quitté Oleshky en toute sécurité après un trajet de 24 heures et avaient retrouvé leur famille et leurs amis.",
+          "headline": "Les évacués d’Oleshky retrouvent leurs familles après être entrés en Ukraine"
+        },
+        "it": {
+          "body": "Il Guardian ha riferito che gli evacuati da Oleshky, sotto occupazione russa, si sono ricongiunti con le loro famiglie dopo essere entrati in Ucraina e che gli abitanti dei villaggi vicini si sono disposti lungo un'autostrada sventolando bandiere per accogliere la colonna. Il New York Times ha riferito che i civili sono usciti in sicurezza da Oleshky dopo un viaggio di 24 ore e si sono ricongiunti con familiari e amici.",
+          "headline": "Gli evacuati di Oleshky ritrovano le famiglie dopo essere entrati in Ucraina"
+        },
+        "pt": {
+          "body": "O Guardian informou que os evacados de Oleshky, sob ocupação russa, reencontraram-se com as suas famílias depois de atravessarem para a Ucrânia, e moradores de aldeias próximas alinharam-se ao longo de uma estrada, agitando bandeiras para saudar a comitiva. O New York Times informou que os civis saíram em segurança de Oleshky após uma viagem de 24 horas e reencontraram-se com familiares e amigos.",
+          "headline": "Evacados de Oleshky reencontram-se com as famílias depois de atravessarem para a Ucrânia"
+        },
+        "zh": {
+          "body": "据《卫报》报道，来自俄罗斯占领的奥列什基的撤离人员在进入乌克兰后与家人团聚，附近村庄的居民站在高速公路两旁挥舞旗帜迎接车队。《纽约时报》报道称，这些平民经过24小时的行程安全离开奥列什基，与家人和朋友团聚。",
+          "headline": "奥列什基撤离人员进入乌克兰后与家人团聚"
+        },
+        "ko": {
+          "headline": "오레슈키 대피민들, 우크라이나 국경 넘어 가족과 재회",
+          "body": "《가디안》은 러시아가 점령한 오레슈키에서 대피한 사람들이 우크라이나 국경을 넘어온 뒤 가족과 다시 만났다고 보도했다. 또한 인근 마을 주민들이 도로변에 서서 깃발을 흔들며 대피 차량 행렬을 환영했다. 《뉴욕타임스》는 민간인들이 24시간의 여정 끝에 오레슈키를 안전하게 벗어나 가족과 친구들과 재회했다고 보도했다."
+        },
+        "ja": {
+          "headline": "オレシュキからの避難者、ウクライナ領内へ越えた後家族と再会",
+          "body": "『ガーディアン』紙は、ロシア占領下のオレシュキからの避難者がウクライナ領内へ越えた後、家族と再会したと報じた。また、近くの村の住民たちは旗を振って車列を歓迎するため、道路沿いに並んだ。『ニューヨーク・タイムズ』紙によると、民間人たちは24時間の旅を経てオレシュキから安全に出た後、家族や友人と再会した。"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/10/31/todayspaper/we-are-coming-from-hell-a-ukrainian-citys-evacuees-tell-survival-stories.html",
+          "title": "‘We Are Coming From Hell’: A Ukrainian City’s Evacuees Tell Survival Stories",
+          "outlet": "New York Times",
+          "publishedAt": "2026-10-31T21:43:34.000Z"
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/oct/31/oleshky-evacuees-reunite-with-families-after-truce-allows-crossing-into-ukraine",
+          "title": "Oleshky evacuees reunite with families after truce allows crossing back into Ukraine",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-10-31T19:17:22.000Z"
+        }
+      ],
+      "importance": 3
     },
     {
       "at": "2026-10-31T15:24:29.000Z",
@@ -1103,14 +1169,48 @@
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxOcmhMOTFNUmI0VXNFU1VuMUlqV3RyU3RXdmhiNHpJZ1p6Qmh5YWcxcmNNLVFiRVo2V2d0OVJyM0JsUU9WRTZSMU5MMWw5UzVTdWlWcmI1Y2E5ZHJmWERPTWNfUkhJa0lQcEVqelQ4Vld5cnl6UGhYR3pIZVpUU0dHQ2RRY3dlZw?oc=5",
     "https://news.google.com/rss/articles/CBMiekFVX3lxTFB6U0o2UHZCSFl5N1RfNzEzSWtrcXNFalpsV1htVUZYTHM5NVdyU05GQXloeW5JaXU1b1BlRU45WG1BRE5oZmhfN1JZMjRBM3pFZW5zRmpfdGpmMk42M2JvVFN0WmRhM1BtdFRYTWszS3lwNk1yMjRRZmd3?oc=5",
     "https://www.straitstimes.com/world/europe/fsb-says-us-warned-russia-of-possible-moscow-attack",
-    "https://www.politico.eu/article/kaja-kallas-vladimir-putin-g20-return-risks-normalizing-russian-war-crimes/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
+    "https://www.politico.eu/article/kaja-kallas-vladimir-putin-g20-return-risks-normalizing-russian-war-crimes/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.jpost.com/israel-election-2026/article-913432",
+    "https://www.kyivpost.com/post/88779",
+    "https://www.tagesschau.de/ausland/europa/ukraine-erholung-soldaten-100.html",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZVdhZHBKbHYtcWJUWUlZTnYyZ2pfQ1EwalpZSjhGdmV0X3BnWFlhemdzRmpSZmZHQVBNY2FTeXR1S2NnczB0UlE0T0ktUmdoYng0VzNqYS1vNmVfam43YWhLdzhtN1lwV0tyOE83VXBZWmpndG1Lcmd6Z2VpMkxBb0s5NGdIbmpiVnJvLThFSFVfcU1xMnVPaHltVEItZ3BDeURTVGVUWQ?oc=5",
+    "https://www.kyivpost.com/post/88777",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxOb2wtT2hqRmp4d0Zab2hVZ0hYQ3ZDUjIzcVp6NHlKLTl4SFRMS3hSVk12Z2dwb1NOZWZIVkp0Vy1wanduVWNnZXdkd3FkX1o2dHNwS0JFX0NvMndJNXRKVThaWGQwQWZQNEdfbkpaRjJtZDl2eXZuWlFkaENMZzI3ZUN2RnFpdEtGcERRZ1Q2a2REX3p4THpPVkhNck9VLWx0VUxrZ2YtNXdmNUdOZHZTMHN4Ykd5dGpRbHJVcg?oc=5",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQWh2d28yT19lNFdXaERyVTdaX2pDSXVuT2NNcFdRdXhxbGpkYklmWC00X3NqQ1Z2ejdvX3NMNTAwWFUyc0tHZS1tNFl6d3lsWkdQbXNYd2JycERYUmxBMmFtaWRyb2FPeUxqXzlGQTdOM2NrOUNXR1lmaGNjbWd2OUFiVGtwUDNEcmIzVUdVN3BXZERTYXJZVXY5LTVSd01ZVjhfOA?oc=5",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTlBKLWZIb3JIS2ZHSThkRnVfM0t5eDBlZ3hmNWppNW0zZ1g3Z2o1c2w3QVhmZDhrUlAzMXFoRkVFdWItWThJZS1NdzI3QTh4dUQ3UDJjVDNiTU9uRUsxaG53aHg1bWw3VXpIRzhDWFFYcWpRNkc1YmJUaFZEaU9taEJJdlI5clJBQnBFMDRJTGE0NzVHTmtKeWM3TjFBeFdQTTVoWGtXbnBVNk5yT2c?oc=5",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxOV3RROEFBcm9JdDJOdjliX1A4MWpfTmxyazBQUDk2WFFRVkU4THN4R2stVkRPVklxRDNWTG81UzQ3c1FuTjJiOHJjdUdUb0NHUXVNMERadlhCYUhZRnJVcC1ZUjhGM1ZKemluMWFSTy1UQ2FhZDhVV3hYTnZMdThYc0RfY0FYQXJVU0pDc29LTTE1Ukt4dzJiVUZobENmQ3FhVW82VzdTSm5yNG9PSU5ndVR3?oc=5",
+    "https://www.thehindu.com/news/national/indian-tourists-stranded-in-nepal-rescue-efforts/article71652398.ece",
+    "https://news.google.com/rss/articles/CBMibkFVX3lxTFBxNDR0N2pjcDljbnUxUmhfSjlzczBiclpiR1JqUkhaeXdEanJlUTVKYW41M2pTSk11Yl9PdmV1ZTl3VDY4VGhGeGZ3TlY3amlJMF9TNURFcHNRZ1RlNFdQdkJWVkFoM2pKS3lJQVhB?oc=5",
+    "https://www.kyivpost.com/post/88776",
+    "https://news.google.com/rss/articles/CBMixgFBVV95cUxPYzh1ZFludjdBZGphNlBMM09jOFpiaTBrWWxjMkV2TmphTWItT2pxcXlxQzNmMWZadUFYUi1kdEktZWxZQVpoNFN6R1d1WFJlS2RHNWlwSlBNaXhOM3RyWnc3dnkxWFdfTmpQNi0xM2lZdDFkdmVBNDZnUzhveDVBb0xUeXJUTkVrNW5Fa1dhZ2oyWEFYVmw1dUtFSF9iS1MtSlBnQUxYNE5xRlhfQ3lpNTRQVDZvRXA4c1A3NDhlYTN4UDBicVE?oc=5",
+    "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQcDk3cWZITTlPNjQ5R290a1dwMElpTzBxbFJ3UTlCRktTckNSakRpNGF0NElVd1BJSGM5ei1Lck10SzJ5VndLR093S3VfWWJ0X2JsOFI5YUhfc0k0a0FjYTRXTG9PZUpMaDBfS2JXQzUxUDU5aW1faWpuYUprdnFiVC1SMk5sLVYtV2VOSlVwUlotel81ZnRIWDRjT1JSQXo3SDJTYVpmN2lxMC02OHUwRmtqU1JSa1NkM2t4VzMwNWM?oc=5",
+    "https://www.thehindu.com/news/international/president-trump-says-us-still-has-one-or-two-targets-in-iran/article71652262.ece",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxOQ2hlRlY5RFh4YWgtOFBHaFNnc1dKRXh6Q243VXU0bUFUWk5TeThyVFM2Yk1jWUpnYWRUQkV6eGhZM3YzNzBzY296NXNwRlRXbWl1eFFVb0dvckZ4aUhsVHctOERRMkJJRTNZbVo1ZjVqejViYWxuaDRIY2Q0STZ2al9EVHlXVlgtbE9lSVhQbjZCSzZwTmtpM01uUWdxS2tPLWRj0gGoAUFVX3lxTE1wUUM0QkFNelExVzUzcVBxdnM2c1l4bklTdndFT3pzcEZVQXZkOVA0VHFRYXREZjAtcVhXcktBVi12VEZ6dVFRcEpVSEJZb0thLUs3NGY1d2pBV3BJOXdBS2NkWnJ1T0RrTWpzNm8yS2R5Q3ZnaDYyYmRMejdKYm5kd2RNZmhZOE9BdHRrU1NfdmlicXJUR3hZMDVTQldmN3lCWUFFYWIxdw?oc=5",
+    "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1kdXEyWGhkR052dFZXclRLcnhoWHR0MzJIRmdjeE5lVVdIa1IzdFZRaWg2SUpsNGx1RGVxcW5yRGlONFN2NHVsM1RFQQ?oc=5",
+    "https://www.aljazeera.com/features/longform/2026/11/1/israels-war-on-homes-from-hebron-to-gaza-and-southern-lebanon?traffic_source=rss",
+    "https://www.kyivpost.com/post/88775",
+    "https://www.aljazeera.com/news/2026/11/1/gaza-doctors-struggle-with-bereavement-overwork-trauma-amid-genocidal-war?traffic_source=rss",
+    "https://www.euronews.com/2026/11/01/russia-says-massive-drone-attack-targeted-industrial-enterprise-amid-reports-oil-refinery-",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxOSUZmRUtxNkpoUktZRUQ3TnFOY3d5NzFxTW94MXhpM0hPX1lhbUExcDV3NnlyU1ZOaEtmZXk2b182VmVQM2wzSEtfbVFnVDJNQ19ILXhQbHdERjJfb1NOSHR1akR0Z1pVVXdWYXo4Z19XNjlxb0VjX1Q4LTBPZEtjTnYtTldCM0dURFp3RFhhelNJOURjZmJRTDJmVncxTEpUSkJEajJSZDc4cUZDemRNcGFVTTdITzDSAbcBQVVfeXFMTklGZkVLcTZKaFJLWUVEN05xTmN3eTcxcU1veDF4aTNIT19ZYW1BMXA1dzZ5clNWTmhLZmV5Nm9fNlZlUDNsM0hLX21RZ1QyTUNfSC14UGx3REYyX29TTkh0dWpEdGdaVVV3VmF6OGdfVzY5cW9FY19UOC0wT2RLY052LU5XQjNHVERad0RYYXpTSTlEY2ZiUUwyZlZ3MUxKVEpCRGoyUmQ3OHFGQ3pkTXBhVU03SE8w?oc=5",
+    "https://www.dw.com/en/bulgarians-vote-in-highly-polarized-presidential-runoff-overshadowed-by-ukraine-war/a-79820449?maca=en-rss-en-all-1573-rdf",
+    "https://www.theguardian.com/sport/2026/nov/01/australia-jillaroos-wales-womens-rugby-league-world-cup-match-report",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxNR0dZNXFySUJRQjA0U2NyLU1rV1VzOS1Od3RVWEFoVGlLSzZxYnVicHJEbU9BWFB0ZEtBXzJDazctQWNGM3RQWW5RSmgtQnU3aW9iSHNTTzEtRzkzTnNTYzc5eWN0ekhfZ0xUQ19SazVVZUtjQzVkVlJZSkMxNGRsMXkzX1FidWM3Y1FSWklCMHBFMEJiczN6Vm9HOVEzc3ltYjhzUEhzcl9JbXZW?oc=5",
+    "https://www.kyivpost.com/post/88772",
+    "https://timesofindia.indiatimes.com/world/us/in-2021-an-ohio-couple-signed-a-deal-to-share-house-sale-proceeds-if-they-split-after-their-breakup-and-a-71897-dispute-judges-upheld-the-agreement-giving-the-woman-41466-despite-a-fight-over-renovation-spending/articleshow/135418736.cms",
+    "https://www.kyivpost.com/post/88765",
+    "https://www.japantimes.co.jp/sports/2026/11/01/more-sports/cas-russia-world-championships/",
+    "https://news.google.com/rss/articles/CBMihAFBVV95cUxOT2FwbHJUMEpmcWp1Zy1WVWZ1eXlrSTMxNk81UmFDaDNtV01BS0xLZlFyc09mU1Vxdk1JVjJwaFhFSU5qWEdlYTZMRnZyY0RGeDBBWjM3VFJ3Y0tzNkluUW55ZjBQVHlhUDNKLUd6MXRibGs3eWV3VWVuMVloclJtTnM3UUs?oc=5",
+    "https://www.lemonde.fr/en/international/article/2026/11/01/trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran_6768610_4.html",
+    "https://www.abc.net.au/news/2026-11-01/powerhouse-ceo-lisa-havilah-statement-conflict-of-interests/107325552",
+    "https://www.japantimes.co.jp/news/2026/11/01/japan/politics/japan-russia-g20-meeting/",
+    "https://www.aljazeera.com/news/2026/11/1/ukrainian-evacuees-from-russian-occupied-oleshky-reunite-with-family?traffic_source=rss"
   ],
   "startedAt": "2026-10-31T09:24:30.505Z",
-  "updatedAt": "2026-10-31T22:58:11.736Z",
+  "updatedAt": "2026-11-01T09:38:00.632Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "oleschky-evacuation",
-  "sourceCount": 15,
+  "sourceCount": 16,
   "seenHeadlines": [
     "Oleschky evacuees arrive back in Ukraine"
   ]
