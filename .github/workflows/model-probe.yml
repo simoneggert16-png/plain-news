@@ -26,6 +26,9 @@ on:
       head:
         description: 'Any value = test which part of a translation request makes a model hang'
         default: ''
+      thinking:
+        description: 'Any value = find the switch that stops a model thinking out loud'
+        default: ''
       github:
         description: 'Any value = test whether GitHub Models answers as a provider'
         default: ''
@@ -86,6 +89,15 @@ jobs:
           PROBE_SLUG: ${{ inputs.slug }}
           PROBE_TIMEOUT_MS: ${{ fromJSON(inputs.budget) }}000
         run: node scripts/probe-head.mjs
+      - name: Find the switch that stops a model from thinking out loud
+        if: inputs.thinking != ''
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          PROBE_MODELS: ${{ inputs.models }}
+          PROBE_SLUG: ${{ inputs.slug }}
+          PROBE_MAX_TOKENS: ${{ inputs.maxtokens }}
+          PROBE_TIMEOUT_MS: ${{ fromJSON(inputs.budget) }}000
+        run: node scripts/probe-thinking.mjs
       - name: Ask GitHub Models whether it answers at all
         if: inputs.github != ''
         env:

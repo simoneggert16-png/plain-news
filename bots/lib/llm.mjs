@@ -132,7 +132,7 @@ async function callOllama(model, messages, { temperature = 0.2, maxTokens = 4096
   return { text: out, doneReason: json.done_reason || null };
 }
 
-async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 120_000 } = {}) {
+async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 120_000, extra = null } = {}) {
   const key = process.env.NVIDIA_API_KEY;
   if (!key) throw new Error('NVIDIA_API_KEY missing');
 
@@ -146,6 +146,10 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
       top_p: 0.9,
       max_tokens: maxTokens,
       stream: false,
+      // A reasoning model that narrates its plan burns the answer budget
+      // before the answer starts. Providers spell the switch differently, so
+      // the probe decides which spelling works instead of a guess here.
+      ...(extra || {}),
     }),
     signal: AbortSignal.timeout(timeoutMs),
   });
