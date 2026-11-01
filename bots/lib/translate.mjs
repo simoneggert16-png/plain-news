@@ -223,6 +223,13 @@ export async function translate(src, locale, models = null) {
             maxTokens: budgetFor(chars),
             models: [model],
             timeoutMs: perCall,
+            // Measured on 2026-11-01 with the article that kept failing: the
+            // same request without a hint narrated for 123 s and 7 900
+            // characters and never wrote a marker ("We need produce exactly
+            // five blocks ..."), while `reasoning_effort: low` answered the
+            // five blocks in 39 s. `none` and `minimal` also work and take
+            // 122 s and 82 s. Providers that do not know the field ignore it.
+            extra: { reasoning_effort: process.env.TRANSLATE_REASONING_EFFORT || 'low' },
           }));
           if (debug) console.log(`  ${what}: ${model} in ${((Date.now() - started) / 1000).toFixed(1)}s`);
           return { text, model };
