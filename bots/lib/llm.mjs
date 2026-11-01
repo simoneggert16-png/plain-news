@@ -220,8 +220,12 @@ export async function chat(role, messages, opts = {}) {
           // Two translation workers share this map. Without a park, every
           // chunk of every article waited the full timeout on the same dead
           // model: the run of 2026-10-31 20:40 spent 48 minutes on four
-          // articles and wrote none.
-          disabledModels.set(model, Date.now() + 2 * 60 * 1000);
+          // articles and wrote none. Two minutes was still too short for the
+          // desk: a step that had to wait out two dead models took 198 s, so
+          // the park expired before the next step, and the same two models
+          // were asked and timed out again - four steps in an 18-minute
+          // shift. Ten minutes keeps a dead model out of the rest of it.
+          disabledModels.set(model, Date.now() + 10 * 60 * 1000);
           break;
         }
         // A model that is out of credit does not answer in the next thirty
