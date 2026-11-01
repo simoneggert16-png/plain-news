@@ -269,7 +269,10 @@ export async function translate(src, locale, models = null) {
   // minutes per language for one article. The chunk path stays as the fallback
   // for the article whose single answer does not keep its paragraph count.
   const body = Array.isArray(src.body) ? src.body : [];
-  const wholeBodyLimit = Number(process.env.TRANSLATE_WHOLE_BODY_CHARS) || 6000;
+  // Nine paragraphs is too many for one answer: both such articles answered
+  // "1 of 9 paragraphs" on 2026-11-01, and the failed call cost more than the
+  // two or three parts that follow it. Four paragraphs arrive whole.
+  const wholeBodyLimit = Number(process.env.TRANSLATE_WHOLE_BODY_CHARS) || 4200;
 
   const chunked = async () => {
     const chunks = bodyChunks(body);
