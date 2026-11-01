@@ -1,9 +1,115 @@
 {
+  "meta": {
+    "outlets": [
+      "Al Jazeera",
+      "CNA",
+      "The Straits Times",
+      "Arab News",
+      "Inquirer.net",
+      "China Daily Global Edition",
+      "CGTN"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "bolivia-declares-el-nino-state-of-emergency",
-  "status": "live",
-  "category": "climate",
-  "importance": 5,
   "topic": "Bolivia declares El Niño state of emergency",
+  "status": "ended",
+  "article": null,
+  "endedAt": "2026-11-01T05:24:02.454Z",
+  "locales": {
+    "en": {
+      "dek": "Bolivia’s government has declared a state of emergency as the El Niño weather pattern brings severe conditions across the country.",
+      "title": "Bolivia declares El Niño state of emergency"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-11-01T04:04:40.000Z",
+      "id": "u-1793505880000-2q6g",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Bolivien hat wegen des Wetterphänomens El Niño den Notstand erklärt, wie Al Jazeera, CNA und The Straits Times berichten. Die Dürre hat nach Angaben von Al Jazeera und CNA 78.000 Familien betroffen.",
+          "headline": "Bolivien erklärt wegen El Niño den Notstand"
+        },
+        "en": {
+          "body": "Bolivia declared a state of emergency over the El Niño weather pattern, according to Al Jazeera, CNA, and The Straits Times. The drought has affected 78,000 families, according to Al Jazeera and CNA.",
+          "headline": "Bolivia declares state of emergency over El Niño"
+        },
+        "es": {
+          "body": "Bolivia declaró el estado de emergencia por el patrón climático El Niño, según Al Jazeera, CNA y The Straits Times. La sequía ha afectado a 78.000 familias, según Al Jazeera y CNA.",
+          "headline": "Bolivia declara el estado de emergencia por El Niño"
+        },
+        "fr": {
+          "body": "La Bolivie a déclaré l’état d’urgence en raison du phénomène météorologique El Niño, selon Al Jazeera, CNA et The Straits Times. La sécheresse a touché 78 000 familles, selon Al Jazeera et CNA.",
+          "headline": "La Bolivie déclare l’état d’urgence en raison du phénomène El Niño"
+        },
+        "it": {
+          "body": "La Bolivia ha dichiarato lo stato di emergenza a causa del fenomeno meteorologico El Niño, secondo Al Jazeera, CNA e The Straits Times. La siccità ha colpito 78.000 famiglie, secondo Al Jazeera e CNA.",
+          "headline": "La Bolivia dichiara lo stato di emergenza per El Niño"
+        },
+        "ja": {
+          "body": "アルジャazeera、CNAおよびストレイツ・タイムズによると、ボリビアはエルニーニョ気象現象を理由に非常事態を宣言した。アルジャazeeraとCNAによると、干ばつにより7万8千の家族に影響が及んでいる。",
+          "headline": "ボリビア、エルニーニョ現象で非常事態宣言"
+        },
+        "pt": {
+          "body": "A Bolívia declarou estado de emergência devido ao padrão meteorológico El Niño, de acordo com a Al Jazeera, a CNA e o The Straits Times. A seca afetou 78 mil famílias, de acordo com a Al Jazeera e a CNA.",
+          "headline": "Bolívia declara estado de emergência devido ao El Niño"
+        },
+        "zh": {
+          "body": "据半岛电视台、CNA和《海峡时报》报道，玻利维亚因厄尔尼诺天气现象宣布进入紧急状态。半岛电视台和CNA报道称，旱灾已影响7.8万户家庭。",
+          "headline": "玻利维亚因厄尔尼诺宣布进入紧急状态"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/1/bolivia-declares-state-of-emergency-over-el-nino-weather-pattern?traffic_source=rss",
+          "title": "Bolivia declares state of emergency over El Nino weather pattern",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-11-01T04:04:40.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdUdMS1dJWXlCQXBWMXp2NWdtejU3YWRvaUpnVW9uMEV6LTdfdEN1Tlo5bjYyd0VKTXhoNkxKSGhNenAtc0hIaVNQUXVacUtJUmdvZ21xTGhHMEFtM25KTFlsZ2Q2UGVDVXRNa2dfM1Q3RExnQ2JCT2dBbDZnV1VMSFg3TDA0Mmw1NUViYUk4LWE?oc=5",
+          "title": "Bolivia declares state of emergency over El Nino",
+          "outlet": "Arab News",
+          "publishedAt": "2026-11-01T03:34:56.000Z"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/world/bolivia-state-emergency-el-nino-climate-change-6510571",
+          "title": "Bolivia declares state of emergency over El Nino",
+          "outlet": "CNA",
+          "publishedAt": "2026-11-01T03:33:02.000Z"
+        },
+        {
+          "url": "https://www.straitstimes.com/world/bolivia-declares-state-of-emergency-over-el-nino",
+          "title": "Bolivia declares state of emergency over El Nino",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-01T03:15:00.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWHpvM2xEenNicGltajUycllRMFR3OGhSLV9lNmZ1YVBOTHBVUFk4Ulo2VENXYWVBd1QyMUdPUXE5dDlXMTNuak5LRVFCQ211T1lENmVEc1VPcThwa3cxcTc0X0lQSXMtSkhrWF8xOEQ5anFzbzJWMDFic2UzaDIyaDBOaVQwdndUcFJxei1aUmcwdTjSAZgBQVVfeXFMUGxudjlWX0cxVVFHMXg3clg0YUVSUWdsdnZUNE9HLWdSQ19YNGJLRC1ZdmNvalg2UHFjSlltckVhbkhBeXRkcDVCMl9BMTRaTWtvaGdic1BvMVRGdktGbUpvY1dRRkJheVhkZ1FiWWVsQkwxN1FnOWd1NEdpemlQWEFnYUJvZHVZRF9UQjdvSzZLOEEyOS1peEE?oc=5",
+          "title": "Bolivia declares state of emergency over El Niño",
+          "outlet": "Inquirer.net",
+          "publishedAt": "2026-11-01T01:45:00.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTGFhRTBHNlk0SUt2cnhZdWtybnQ4dFdQcEFTV2NrazZaSWRmS05mQ2JQZUUxb3JfSVFXUWxlWURMRER3LXp1MnFndTJzcEtBT2g4U2Q0NGstT2JqRk9pRnNxd1lzRUJ1bnhCZkRwajVaWkRZYUVmeW1HNEN2R0NfeFVB?oc=5",
+          "title": "Bolivia declares state of emergency over El Nino",
+          "outlet": "China Daily Global Edition",
+          "publishedAt": "2026-11-01T01:01:15.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE96eTV1QklPRWwyQjE3cVljc0RXcy02YmhUSXlvSUpEdHh3Rm4yQ1d0Xy1KV1BLN1pGQ2pZWFdmUnI0blB0VTltZW5oMUxmNG96TVFwcVJlUFVGMTJoalRfMWFTRWxGd01kMEE1X3ZB?oc=5",
+          "title": "Bolivia declares state of emergency over El Nino weather pattern - president",
+          "outlet": "CGTN",
+          "publishedAt": "2026-11-01T00:40:01.000Z"
+        }
+      ],
+      "importance": 4
+    }
+  ],
+  "category": "climate",
   "keywords": [
     "bolivia",
     "el nino",
@@ -17,98 +123,6 @@
     "emergency decree",
     "disaster",
     "government"
-  ],
-  "startedAt": "2026-11-01T05:19:42.630Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-01T05:24:02.454Z",
-  "articleSlug": null,
-  "sourceCount": 7,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1793505880000-2q6g",
-      "at": "2026-11-01T04:04:40.000Z",
-      "kind": "breaking",
-      "importance": 4,
-      "locales": {
-        "en": {
-          "headline": "Bolivia declares state of emergency over El Niño",
-          "body": "Bolivia declared a state of emergency over the El Niño weather pattern, according to Al Jazeera, CNA, and The Straits Times. The drought has affected 78,000 families, according to Al Jazeera and CNA."
-        },
-        "es": {
-          "headline": "Bolivia declara el estado de emergencia por El Niño",
-          "body": "Bolivia declaró el estado de emergencia por el patrón climático El Niño, según Al Jazeera, CNA y The Straits Times. La sequía ha afectado a 78.000 familias, según Al Jazeera y CNA."
-        },
-        "it": {
-          "headline": "La Bolivia dichiara lo stato di emergenza per El Niño",
-          "body": "La Bolivia ha dichiarato lo stato di emergenza a causa del fenomeno meteorologico El Niño, secondo Al Jazeera, CNA e The Straits Times. La siccità ha colpito 78.000 famiglie, secondo Al Jazeera e CNA."
-        },
-        "fr": {
-          "headline": "La Bolivie déclare l’état d’urgence en raison du phénomène El Niño",
-          "body": "La Bolivie a déclaré l’état d’urgence en raison du phénomène météorologique El Niño, selon Al Jazeera, CNA et The Straits Times. La sécheresse a touché 78 000 familles, selon Al Jazeera et CNA."
-        },
-        "de": {
-          "headline": "Bolivien erklärt wegen El Niño den Notstand",
-          "body": "Bolivien hat wegen des Wetterphänomens El Niño den Notstand erklärt, wie Al Jazeera, CNA und The Straits Times berichten. Die Dürre hat nach Angaben von Al Jazeera und CNA 78.000 Familien betroffen."
-        },
-        "pt": {
-          "headline": "Bolívia declara estado de emergência devido ao El Niño",
-          "body": "A Bolívia declarou estado de emergência devido ao padrão meteorológico El Niño, de acordo com a Al Jazeera, a CNA e o The Straits Times. A seca afetou 78 mil famílias, de acordo com a Al Jazeera e a CNA."
-        },
-        "zh": {
-          "headline": "玻利维亚因厄尔尼诺宣布进入紧急状态",
-          "body": "据半岛电视台、CNA和《海峡时报》报道，玻利维亚因厄尔尼诺天气现象宣布进入紧急状态。半岛电视台和CNA报道称，旱灾已影响7.8万户家庭。"
-        },
-        "ja": {
-          "headline": "ボリビア、エルニーニョ現象で非常事態宣言",
-          "body": "アルジャazeera、CNAおよびストレイツ・タイムズによると、ボリビアはエルニーニョ気象現象を理由に非常事態を宣言した。アルジャazeeraとCNAによると、干ばつにより7万8千の家族に影響が及んでいる。"
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Al Jazeera",
-          "title": "Bolivia declares state of emergency over El Nino weather pattern",
-          "url": "https://www.aljazeera.com/news/2026/11/1/bolivia-declares-state-of-emergency-over-el-nino-weather-pattern?traffic_source=rss",
-          "publishedAt": "2026-11-01T04:04:40.000Z"
-        },
-        {
-          "outlet": "Arab News",
-          "title": "Bolivia declares state of emergency over El Nino",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdUdMS1dJWXlCQXBWMXp2NWdtejU3YWRvaUpnVW9uMEV6LTdfdEN1Tlo5bjYyd0VKTXhoNkxKSGhNenAtc0hIaVNQUXVacUtJUmdvZ21xTGhHMEFtM25KTFlsZ2Q2UGVDVXRNa2dfM1Q3RExnQ2JCT2dBbDZnV1VMSFg3TDA0Mmw1NUViYUk4LWE?oc=5",
-          "publishedAt": "2026-11-01T03:34:56.000Z"
-        },
-        {
-          "outlet": "CNA",
-          "title": "Bolivia declares state of emergency over El Nino",
-          "url": "https://www.channelnewsasia.com/world/bolivia-state-emergency-el-nino-climate-change-6510571",
-          "publishedAt": "2026-11-01T03:33:02.000Z"
-        },
-        {
-          "outlet": "The Straits Times",
-          "title": "Bolivia declares state of emergency over El Nino",
-          "url": "https://www.straitstimes.com/world/bolivia-declares-state-of-emergency-over-el-nino",
-          "publishedAt": "2026-11-01T03:15:00.000Z"
-        },
-        {
-          "outlet": "Inquirer.net",
-          "title": "Bolivia declares state of emergency over El Niño",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWHpvM2xEenNicGltajUycllRMFR3OGhSLV9lNmZ1YVBOTHBVUFk4Ulo2VENXYWVBd1QyMUdPUXE5dDlXMTNuak5LRVFCQ211T1lENmVEc1VPcThwa3cxcTc0X0lQSXMtSkhrWF8xOEQ5anFzbzJWMDFic2UzaDIyaDBOaVQwdndUcFJxei1aUmcwdTjSAZgBQVVfeXFMUGxudjlWX0cxVVFHMXg3clg0YUVSUWdsdnZUNE9HLWdSQ19YNGJLRC1ZdmNvalg2UHFjSlltckVhbkhBeXRkcDVCMl9BMTRaTWtvaGdic1BvMVRGdktGbUpvY1dRRkJheVhkZ1FiWWVsQkwxN1FnOWd1NEdpemlQWEFnYUJvZHVZRF9UQjdvSzZLOEEyOS1peEE?oc=5",
-          "publishedAt": "2026-11-01T01:45:00.000Z"
-        },
-        {
-          "outlet": "China Daily Global Edition",
-          "title": "Bolivia declares state of emergency over El Nino",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTGFhRTBHNlk0SUt2cnhZdWtybnQ4dFdQcEFTV2NrazZaSWRmS05mQ2JQZUUxb3JfSVFXUWxlWURMRER3LXp1MnFndTJzcEtBT2g4U2Q0NGstT2JqRk9pRnNxd1lzRUJ1bnhCZkRwajVaWkRZYUVmeW1HNEN2R0NfeFVB?oc=5",
-          "publishedAt": "2026-11-01T01:01:15.000Z"
-        },
-        {
-          "outlet": "CGTN",
-          "title": "Bolivia declares state of emergency over El Nino weather pattern - president",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE96eTV1QklPRWwyQjE3cVljc0RXcy02YmhUSXlvSUpEdHh3Rm4yQ1d0Xy1KV1BLN1pGQ2pZWFdmUnI0blB0VTltZW5oMUxmNG96TVFwcVJlUFVGMTJoalRfMWFTRWxGd01kMEE1X3ZB?oc=5",
-          "publishedAt": "2026-11-01T00:40:01.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.rollingstone.com/tv-movies/tv-movie-news/snl-weekend-update-mock-trump-midterm-plea-butt-fixation-1235650882/",
@@ -132,25 +146,11 @@
     "https://news.google.com/rss/articles/CBMibkFVX3lxTE96eTV1QklPRWwyQjE3cVljc0RXcy02YmhUSXlvSUpEdHh3Rm4yQ1d0Xy1KV1BLN1pGQ2pZWFdmUnI0blB0VTltZW5oMUxmNG96TVFwcVJlUFVGMTJoalRfMWFTRWxGd01kMEE1X3ZB?oc=5",
     "https://www.jpost.com/international/article-913423"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Bolivia declares El Niño state of emergency",
-      "dek": "Bolivia’s government has declared a state of emergency as the El Niño weather pattern brings severe conditions across the country."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Al Jazeera",
-      "CNA",
-      "The Straits Times",
-      "Arab News",
-      "Inquirer.net",
-      "China Daily Global Edition",
-      "CGTN"
-    ],
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
-  }
+  "startedAt": "2026-11-01T05:19:42.630Z",
+  "updatedAt": "2026-11-01T17:33:44.739Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": null,
+  "sourceCount": 7,
+  "seenHeadlines": []
 }
