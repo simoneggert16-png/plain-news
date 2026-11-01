@@ -1,6 +1,118 @@
 {
-  "updatedAt": "2026-11-01T01:20:55.300Z",
+  "updatedAt": "2026-11-01T01:41:38.552Z",
   "tickers": [
+    {
+      "slug": "us-midterm-election",
+      "status": "ended",
+      "category": "politics",
+      "importance": 5,
+      "title": "U.S. mid‑term election",
+      "dek": "U.S. mid‑term elections draw record early voting and historic participation, including Pope Leo's vote.",
+      "startedAt": "2026-10-31T01:50:39.464Z",
+      "updatedAt": "2026-11-01T01:41:37.883Z",
+      "endedAt": "2026-10-31T13:36:24.673Z",
+      "updateCount": 3,
+      "articleSlug": "us-midterm-election",
+      "latest": {
+        "at": "2026-10-31T13:02:43.000Z",
+        "kind": "statement",
+        "headline": "Pope Leo holds American citizenship"
+      },
+      "locales": {
+        "de": {
+          "title": "US-Zwischenwahlen",
+          "dek": "US-Zwischenwahlen verzeichnen Rekord bei Frühwahlen und historische Beteiligung, darunter auch die Stimme des Papstes Leo."
+        },
+        "en": {
+          "title": "U.S. mid‑term election",
+          "dek": "U.S. mid‑term elections draw record early voting and historic participation, including Pope Leo's vote."
+        },
+        "es": {
+          "title": "Elección de mitad de mandato en EE. UU.",
+          "dek": "Las elecciones de mitad de mandato en EE. UU. registran un voto anticipado récord y una participación histórica, incluyendo el voto del Papa Leo."
+        },
+        "fr": {
+          "title": "Élections de mi-mandat américaines",
+          "dek": "Les élections de mi-mandat américaines enregistrent un taux de vote anticipé record et une participation historique, incluant le vote du pape Léon."
+        },
+        "it": {
+          "title": "Elezioni di metà mandato negli Stati Uniti",
+          "dek": "Le elezioni di metà mandato negli Stati Uniti registrano un record di voto anticipato e una partecipazione storica, incluso il voto del Papa Leo."
+        },
+        "ja": {
+          "title": "米国中間選挙",
+          "dek": "米国中間選挙は、投票率が過去最高の早期投票と歴史的な参加を記録し、ローマ教皇レオの投票も含まれた。"
+        },
+        "ko": {
+          "title": "미국 중간선거",
+          "dek": "미국 중간선거는 사전투표 기록과 역사적인 참여를 이끌어냈으며, 레오 교황의 투표도 포함된다."
+        },
+        "pt": {
+          "title": "Eleições de meio de mandato dos EUA",
+          "dek": "As eleições de meio de mandato dos EUA registam voto antecipado recorde e participação histórica, incluindo o voto do Papa Leão."
+        },
+        "zh": {
+          "title": "美国中期选举",
+          "dek": "美国中期选举吸引了创纪录的提前投票和历史性参与，包括利奥教皇的投票。"
+        }
+      }
+    },
+    {
+      "slug": "us-midterms-2026",
+      "status": "live",
+      "category": "politics",
+      "importance": 5,
+      "title": "2026 midterm elections",
+      "dek": "The 2026 midterm elections in the United States are unfolding amid political tensions and legal challenges.",
+      "startedAt": "2026-10-31T06:33:27.688Z",
+      "updatedAt": "2026-11-01T01:30:32.726Z",
+      "endedAt": null,
+      "updateCount": 15,
+      "articleSlug": "us-midterms-2026",
+      "latest": {
+        "at": "2026-11-01T01:28:13.058Z",
+        "kind": "context",
+        "headline": "Reports differ on new US strikes on Iran after midterms"
+      },
+      "locales": {
+        "de": {
+          "title": "US-Zwischenwahlen 2026",
+          "dek": "Die US-Zwischenwahlen 2026 entfalten sich im Spannungsfeld politischer Konflikte und rechtlicher Herausforderungen."
+        },
+        "en": {
+          "title": "2026 midterm elections",
+          "dek": "The 2026 midterm elections in the United States are unfolding amid political tensions and legal challenges."
+        },
+        "es": {
+          "title": "Elecciones de mitad de mandato 2026",
+          "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos se desarrollan en medio de tensiones políticas y desafíos legales."
+        },
+        "fr": {
+          "title": "élections de mi-mandat 2026 aux États-Unis",
+          "dek": "Les élections de mi-mandat de 2026 aux États-Unis se déroulent dans un climat de tensions politiques et de défis juridiques."
+        },
+        "it": {
+          "title": "elezioni di metà mandato 2026",
+          "dek": "Le elezioni di metà mandato del 2026 negli Stati Uniti si svolgono in mezzo a tensioni politiche e sfide legali."
+        },
+        "ja": {
+          "title": "米国2026年中間選挙",
+          "dek": "2026年の米国中間選挙は、政治的緊張と法的挑戦の中で進行しています"
+        },
+        "ko": {
+          "title": "미국 2026년 중간선거",
+          "dek": "2026년 미국 중간선거는 정치적 긴장과 법적 도전 속에서 진행되고 있다."
+        },
+        "pt": {
+          "title": "Eleições de meio de mandato 2026",
+          "dek": "As eleições de meio de mandato de 2026 nos Estados Unidos estão a desenrolar‑se em meio a tensões políticas e desafios legais."
+        },
+        "zh": {
+          "title": "2026年美国中期选举",
+          "dek": "2026年美国中期选举正处于政治紧张和法律挑战之中"
+        }
+      }
+    },
     {
       "slug": "2026-midterm-elections",
       "status": "ended",
@@ -222,62 +334,6 @@
         "zh": {
           "title": "以色列选举僵局持续，内塔尼亚胡阵营未能获得多数席位",
           "dek": "以色列2026年选举仍未得出明确结果，内塔尼亚胡的联盟未能获得多数席位，阿拉伯党派成为潜在的关键投票者。"
-        }
-      }
-    },
-    {
-      "slug": "us-midterms-2026",
-      "status": "live",
-      "category": "politics",
-      "importance": 5,
-      "title": "2026 mid-term elections",
-      "dek": "The 2026 mid-term elections in the United States are unfolding amid political tensions and legal challenges.",
-      "startedAt": "2026-10-31T06:33:27.688Z",
-      "updatedAt": "2026-11-01T00:25:10.205Z",
-      "endedAt": null,
-      "updateCount": 14,
-      "articleSlug": "us-midterms-2026",
-      "latest": {
-        "at": "2026-10-31T22:57:01.000Z",
-        "kind": "context",
-        "headline": "Economy and cost of living are central issues in final midterm messages"
-      },
-      "locales": {
-        "de": {
-          "title": "US-Zwischenwahlen 2026",
-          "dek": "Die US-Zwischenwahlen 2026 entfalten sich im Spannungsfeld politischer Konflikte und rechtlicher Herausforderungen."
-        },
-        "en": {
-          "title": "2026 mid-term elections",
-          "dek": "The 2026 mid-term elections in the United States are unfolding amid political tensions and legal challenges."
-        },
-        "es": {
-          "title": "Elecciones de mitad de mandato 2026",
-          "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos se desarrollan en medio de tensiones políticas y desafíos legales."
-        },
-        "fr": {
-          "title": "élections de mi-mandat 2026 aux États-Unis",
-          "dek": "Les élections de mi-mandat de 2026 aux États-Unis se déroulent dans un climat de tensions politiques et de défis juridiques."
-        },
-        "it": {
-          "title": "elezioni di metà mandato 2026",
-          "dek": "Le elezioni di metà mandato del 2026 negli Stati Uniti si svolgono in mezzo a tensioni politiche e sfide legali."
-        },
-        "ja": {
-          "title": "米国2026年中間選挙",
-          "dek": "2026年の米国中間選挙は、政治的緊張と法的挑戦の中で進行しています"
-        },
-        "ko": {
-          "title": "미국 2026년 중간선거",
-          "dek": "2026년 미국 중간선거는 정치적 긴장과 법적 도전 속에서 진행되고 있다."
-        },
-        "pt": {
-          "title": "Eleições de meio de mandato 2026",
-          "dek": "As eleições de meio de mandato de 2026 nos Estados Unidos estão a desenrolar‑se em meio a tensões políticas e desafios legais."
-        },
-        "zh": {
-          "title": "2026年美国中期选举",
-          "dek": "2026年美国中期选举正处于政治紧张和法律挑战之中"
         }
       }
     },
@@ -558,62 +614,6 @@
         "zh": {
           "title": "阿拉斯加州参议院竞选案受刑事调查",
           "dek": "特朗普政府已加大对涉嫌选票操纵的刑事调查力度，该调查涉及阿拉斯加州参议院竞选中的两名丹·沙利文。"
-        }
-      }
-    },
-    {
-      "slug": "us-midterm-election",
-      "status": "live",
-      "category": "politics",
-      "importance": 5,
-      "title": "U.S. mid‑term election",
-      "dek": "U.S. mid‑term elections draw record early voting and historic participation, including Pope Leo's vote.",
-      "startedAt": "2026-10-31T01:50:39.464Z",
-      "updatedAt": "2026-10-31T13:36:24.673Z",
-      "endedAt": null,
-      "updateCount": 3,
-      "articleSlug": "us-midterm-election",
-      "latest": {
-        "at": "2026-10-31T13:02:43.000Z",
-        "kind": "statement",
-        "headline": "Pope Leo holds American citizenship"
-      },
-      "locales": {
-        "de": {
-          "title": "US-Zwischenwahlen",
-          "dek": "US-Zwischenwahlen verzeichnen Rekord bei Frühwahlen und historische Beteiligung, darunter auch die Stimme des Papstes Leo."
-        },
-        "en": {
-          "title": "U.S. mid‑term election",
-          "dek": "U.S. mid‑term elections draw record early voting and historic participation, including Pope Leo's vote."
-        },
-        "es": {
-          "title": "Elección de mitad de mandato en EE. UU.",
-          "dek": "Las elecciones de mitad de mandato en EE. UU. registran un voto anticipado récord y una participación histórica, incluyendo el voto del Papa Leo."
-        },
-        "fr": {
-          "title": "Élections de mi-mandat américaines",
-          "dek": "Les élections de mi-mandat américaines enregistrent un taux de vote anticipé record et une participation historique, incluant le vote du pape Léon."
-        },
-        "it": {
-          "title": "Elezioni di metà mandato negli Stati Uniti",
-          "dek": "Le elezioni di metà mandato negli Stati Uniti registrano un record di voto anticipato e una partecipazione storica, incluso il voto del Papa Leo."
-        },
-        "ja": {
-          "title": "米国中間選挙",
-          "dek": "米国中間選挙は、投票率が過去最高の早期投票と歴史的な参加を記録し、ローマ教皇レオの投票も含まれた。"
-        },
-        "ko": {
-          "title": "미국 중간선거",
-          "dek": "미국 중간선거는 사전투표 기록과 역사적인 참여를 이끌어냈으며, 레오 교황의 투표도 포함된다."
-        },
-        "pt": {
-          "title": "Eleições de meio de mandato dos EUA",
-          "dek": "As eleições de meio de mandato dos EUA registam voto antecipado recorde e participação histórica, incluindo o voto do Papa Leão."
-        },
-        "zh": {
-          "title": "美国中期选举",
-          "dek": "美国中期选举吸引了创纪录的提前投票和历史性参与，包括利奥教皇的投票。"
         }
       }
     },
