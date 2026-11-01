@@ -11,11 +11,21 @@
 import { chat } from '../bots/lib/llm.mjs';
 import { headMessages, bodyMessages } from '../bots/lib/translate.mjs';
 
+import fs from 'node:fs';
+
 const models = (process.env.PROBE_MODELS || 'minimaxai/minimax-m3.1-flash').split(',').map((m) => m.trim()).filter(Boolean);
 const timeoutMs = Number(process.env.PROBE_TIMEOUT_MS) || 120_000;
 const maxTokens = Number(process.env.PROBE_MAX_TOKENS) || 900;
 
-const src = {
+// The article that failed in the run, so the probe sees the same input the run
+// saw — a sample headline is not the one the model narrates over.
+const slug = process.env.PROBE_SLUG || '';
+const picked = slug && fs.existsSync(`content/articles/${slug}.json`)
+  ? JSON.parse(fs.readFileSync(`content/articles/${slug}.json`, 'utf8'))
+  : null;
+if (picked) console.log(`article: ${picked.slug} (${picked.locales?.en?.body?.length || 0} paragraphs)`);
+
+const src = picked?.locales?.en || {
   title: 'COP17 Nations Agree on New Nature Targets, Finance Commitments',
   dek: 'Delegates in Cali closed the summit with a fund and a promise to protect thirty percent of land and sea by 2030.',
   facts: [
@@ -44,7 +54,8 @@ for (const model of models) {
     try {
       const answer = await chat('translator', messages, { models: [model], timeoutMs, maxTokens, temperature: 0.2 });
       const seconds = ((Date.now() - started) / 1000).toFixed(1);
-      console.log(`\n=== ${model} — ${label}: ${answer.doneReason || 'stop'} in ${seconds}s, ${answer.text.length} chars`);
+      const marks = (answer.text.match(/@@\s*(?:TITLE|DEK|FACTS|CONTEXT|CAPTION|P)\s*@@/gi) || []).length;
+      console.log(`\n=== ${model} — ${label}: ${answer.doneReason || 'stop'} in ${seconds}s, ${answer.text.length} chars, ${marks} marker(s)`);
       console.log(answer.text.slice(0, 1600));
     } catch (e) {
       const seconds = ((Date.now() - started) / 1000).toFixed(1);
