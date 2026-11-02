@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-11-01T13:32:48.701Z",
+  "updatedAt": "2026-11-02T16:11:34.588Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -282,71 +282,17 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-10-31T22:07:51.791Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "I have 3 sources (one irrelevant ABC piece), 8 claims, and 14 gaps. The desk needs primary/official sources (0/2 so far) and more outlets (3/8). The most valuable next step is finding primary documents: Activision's own official statement, Korean regulator (GRAC) or Ministry of Culture response, and any legal action. I'll work the gaps in priority order, starting with official/regulatory documents",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard official statement apology Itaewon crowd crush footage Call of Duty Modern Warfare"
-          },
-          "ok": true,
-          "ms": 35938
-        },
-        {
-          "step": 2,
-          "thought": "The search returned mostly irrelevant hits; the last result (MSN) is on-topic but its URL is truncated so I cannot open it. I need primary/official sources. The desk brief lists Korean regulator doors: site:grac.or.kr (Game Rating and Administration Committee), site:kcc.go.kr, site:ftc.go.kr, site:scourt.go.kr. I'll search the Korean regulator in Korean for its response to the game footage — that ",
-          "action": "search",
-          "args": {
-            "query": "게임관리위원회 이태론 참사 콜오브듀티 모던워페어 영상 사용"
-          },
-          "ok": true,
-          "ms": 77324
-        },
-        {
-          "step": 3,
-          "thought": "S5 (inven.co.kr) supports a concrete fact: Call of Duty: Modern Warfare 4 is published by Activision and developed by Infinity Ward, with global release on October 23 (2026), campaign early access October 17 and DMZ early access October 21. I'll file that claim, then continue hunting primary sources — the Korean Ministry of Culture (mcst.go.kr) and GRAC (grac.or.kr) statements are the official doo",
-          "action": "save_claim",
-          "args": {
-            "text": "Call of Duty: Modern Warfare 4 is published by Activision and developed by Infinity Ward; global release was October 23 (2026), with campaign early access from October 17 and DMZ mode early access from October 21 for pre-purchasers.",
-            "sources": [
-              "S5"
-            ]
-          },
-          "ok": true,
-          "ms": 120134
-        },
-        {
-          "step": 4,
-          "thought": "Claim C9 filed. Now I need official/primary sources (target 2). The Korean Ministry of Culture, Sports and Tourism (mcst.go.kr) and the Game Rating and Administration Committee (grac.or.kr) are the institutions that would issue statements or decisions on this. I'll search their portals directly.",
-          "action": "search",
-          "args": {
-            "query": "site:mcst.go.kr 이태원 참사 영상 게임 콜오브듀티"
-          },
-          "ok": true,
-          "ms": 108412
-        },
-        {
-          "step": 5,
-          "thought": "The site: query failed. I'll search for the Korean game regulator GRAC's official position on the footage, in Korean, via the news index.",
-          "action": "search",
-          "args": {
-            "query": "게임물관리위원회 콜오브듀티 모던워페어4 이태원 참사 실제 영상 등급 심의 입장 발표"
-          },
-          "ok": true,
-          "ms": 106419
-        }
-      ],
-      "final": null
-    },
-    {
-      "at": "2026-11-01T13:20:50.540Z",
+      "at": "2026-11-02T15:43:59.822Z",
       "steps": [],
       "final": null
     },
     {
-      "at": "2026-11-01T13:31:10.934Z",
+      "at": "2026-11-02T15:56:18.951Z",
+      "steps": [],
+      "final": null
+    },
+    {
+      "at": "2026-11-02T16:07:52.170Z",
       "steps": [],
       "final": null
     }
@@ -393,7 +339,7 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 17,
-  "blankShifts": 2,
-  "lastShiftAt": "2026-11-01T13:29:16.707Z"
+  "shifts": 20,
+  "blankShifts": 5,
+  "lastShiftAt": "2026-11-02T16:06:02.904Z"
 }

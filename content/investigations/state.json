@@ -1,6 +1,21 @@
 {
-  "lastIntake": "2026-W44",
+  "lastIntake": "2026-W45",
   "runs": [
+    {
+      "at": "2026-11-02T16:13:57.180Z",
+      "active": 3,
+      "ms": 887980
+    },
+    {
+      "at": "2026-11-02T15:59:09.064Z",
+      "active": 3,
+      "ms": 592757
+    },
+    {
+      "at": "2026-11-02T15:49:16.177Z",
+      "active": 3,
+      "ms": 838242
+    },
     {
       "at": "2026-11-01T13:32:48.702Z",
       "active": 1,
@@ -235,6 +250,22 @@
         "call-of-duty-uses-seoul-crowd-crush-footage-who-20261030-3mvj"
       ],
       "at": "2026-10-30T19:14:08.446Z"
+    },
+    {
+      "name": "US Treasury (OFAC)",
+      "centre": "Iran",
+      "topics": [
+        "us-ofac-amends-iran-sanctions-license-expanding-trade-restrictions-20261102-abj0"
+      ],
+      "at": "2026-11-02T15:41:59.014Z"
+    },
+    {
+      "name": "UN News",
+      "centre": "Somalia",
+      "topics": [
+        "un-mission-in-somalia-closes-leaving-300-000-displaced-20261102-4yab"
+      ],
+      "at": "2026-11-02T15:41:59.015Z"
     }
   ],
   "leads": [
@@ -257,7 +288,9 @@
       ],
       "url": "https://ofac.treasury.gov/recent-actions/20261029",
       "outlet": "US Treasury (OFAC)",
-      "docTitle": "Issuance of Amended Iran-related General License"
+      "docTitle": "Issuance of Amended Iran-related General License",
+      "opened": "us-ofac-amends-iran-sanctions-license-expanding-trade-restrictions-20261102-abj0",
+      "tried": "2026-W45"
     },
     {
       "at": "2026-10-31T12:26:30.121Z",
@@ -277,7 +310,9 @@
       ],
       "url": "https://news.un.org/feed/view/en/story/2026/10/1168714",
       "outlet": "UN News",
-      "docTitle": "Somalia looks to the future as the UN&#039;s political mission closes"
+      "docTitle": "Somalia looks to the future as the UN&#039;s political mission closes",
+      "opened": "un-mission-in-somalia-closes-leaving-300-000-displaced-20261102-4yab",
+      "tried": "2026-W45"
     }
   ],
   "lastScan": "2026-10-31"
