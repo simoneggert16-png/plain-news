@@ -4014,6 +4014,15 @@
   ],
   "runs": [
     {
+      "at": "2026-11-02T03:18:04.060Z",
+      "feedsOk": 133,
+      "items": 586,
+      "events": 0,
+      "published": 0,
+      "reason": "quota-or-no-events",
+      "durationMs": 495893
+    },
+    {
       "at": "2026-11-02T03:09:38.810Z",
       "feedsOk": 133,
       "items": 577,
@@ -5947,33 +5956,6 @@
         "primary": 0
       },
       "durationMs": 1865107
-    },
-    {
-      "at": "2026-10-26T07:04:19.345Z",
-      "feedsOk": 97,
-      "items": 323,
-      "events": 22,
-      "published": 19,
-      "translated": 152,
-      "targetPerCategoryPerCycle": null,
-      "recentWindowHours": 1,
-      "byCategory": {
-        "world": 3,
-        "politics": 13,
-        "business": 0,
-        "tech": 0,
-        "science": 0,
-        "climate": 1,
-        "health": 0,
-        "culture": 1,
-        "sport": 1,
-        "community": 0
-      },
-      "sourcePolicies": {
-        "two-source": 19,
-        "primary": 0
-      },
-      "durationMs": 2905804
     }
   ]
 }
