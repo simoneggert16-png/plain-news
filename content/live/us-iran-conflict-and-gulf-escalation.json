@@ -1,9 +1,266 @@
 {
+  "meta": {
+    "outlets": [
+      "France 24",
+      "Al Jazeera",
+      "Dawn",
+      "NZZ",
+      "The Japan Times",
+      "Times of India",
+      "CNA",
+      "AllAfrica",
+      "The Straits Times",
+      "The Jerusalem Post",
+      "CNBC",
+      "Variety"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "us-iran-conflict-and-gulf-escalation",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "US-Iran conflict and Gulf escalation",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die Spannungen zwischen den Vereinigten Staaten und Iran verschärfen sich durch Angriffe auf Tanker in der Straße von Hormus und Drohungen mit erneuerten Militärschlägen.",
+      "title": "US-Iran-Konflikt und Eskalation am Golf"
+    },
+    "en": {
+      "dek": "Tensions between the United States and Iran are escalating with tanker attacks in the Strait of Hormuz and threats of renewed military strikes.",
+      "title": "US-Iran conflict and Gulf escalation"
+    },
+    "es": {
+      "dek": "Las tensiones entre Estados Unidos e Irán se intensifican con ataques contra petroleros en el estrecho de Ormuz y amenazas de nuevos ataques militares.",
+      "title": "Conflicto entre EE. UU. e Irán y escalada en el Golfo"
+    },
+    "fr": {
+      "dek": "Les tensions entre les États-Unis et l’Iran s’intensifient, avec des attaques contre des pétroliers dans le détroit d’Ormuz et des menaces de reprise des frappes militaires.",
+      "title": "Conflit entre les États-Unis et l’Iran et escalade dans le Golfe"
+    },
+    "it": {
+      "dek": "Le tensioni tra gli Stati Uniti e l'Iran si stanno aggravando, con attacchi a petroliere nello Stretto di Hormuz e minacce di riprendere i raid militari.",
+      "title": "Conflitto USA-Iran ed escalation nel Golfo"
+    },
+    "ja": {
+      "dek": "米国とイランの緊張が、ホルムズ海峡でのタンカー攻撃と新たな軍事攻撃の脅威を背景に高まっている。",
+      "title": "米・イラン対立と湾岸情勢の緊迫化"
+    },
+    "ko": {
+      "dek": "미국과 이란의 긴장이 호르무즈 해협에서의 유조선 공격과 재차 군사 공격을 가하겠다는 위협으로 고조되고 있다.",
+      "title": "미국-이란 갈등과 걸프 해역 격화"
+    },
+    "pt": {
+      "dek": "As tensões entre os Estados Unidos e o Irão estão a escalar com ataques a navios-tanque no Estreito de Ormuz e ameaças de novos ataques militares.",
+      "title": "Conflito EUA-Irão e escalada no Golfo"
+    },
+    "zh": {
+      "dek": "美国与伊朗之间的紧张关系因霍尔木兹海峡油轮遇袭事件以及重启军事打击的威胁而持续升级。",
+      "title": "美伊冲突与海湾局势升级"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793598058000-36d0",
+      "at": "2026-11-02T05:40:58.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Two tankers hit mines and caught fire in the Strait of Hormuz",
+          "body": "Al Jazeera reported that Iran's IRGC said two tankers hit mines and caught fire in the Strait of Hormuz. FAZ reported that no one had claimed responsibility for the attack, and NZZ also reported a tanker attack in the Persian Gulf."
+        },
+        "es": {
+          "headline": "Dos petroleros chocaron con minas y se incendiaron en el estrecho de Ormuz",
+          "body": "Al Jazeera informó de que la CGRI de Irán dijo que dos petroleros chocaron con minas y se incendiaron en el estrecho de Ormuz. FAZ informó de que nadie había asumido la responsabilidad del ataque, y NZZ también informó de un ataque contra un petrolero en el golfo Pérsico."
+        },
+        "fr": {
+          "headline": "Deux pétroliers ont heurté des mines et pris feu dans le détroit d'Ormuz",
+          "body": "Al Jazeera a rapporté que les Gardiens de la révolution iraniens (IRGC) ont déclaré que deux pétroliers avaient heurté des mines et pris feu dans le détroit d'Ormuz. FAZ a rapporté que personne n'avait revendiqué la responsabilité de l'attaque, et NZZ a également fait état d'une attaque contre un pétrolier dans le golfe Persique."
+        },
+        "it": {
+          "headline": "Due petroliere colpite da mine e in fiamme nello Stretto di Hormuz",
+          "body": "Al Jazeera ha riportato che l'IRGC iraniano ha dichiarato che due petroliere sono state colpite da mine e hanno preso fuoco nello Stretto di Hormuz. FAZ ha riportato che nessuno aveva rivendicato la responsabilità dell'attacco e NZZ ha riportato anch'esso un attacco a una petroliera nel Golfo Persiano."
+        },
+        "de": {
+          "headline": "Zwei Tanker gerieten in der Straße von Hormus auf Minen und fingen Feuer",
+          "body": "Al Jazeera berichtete, die Revolutionswache Irans (IRGC) habe mitgeteilt, dass zwei Tanker in der Straße von Hormus auf Minen gestoßen seien und in Brand geraten seien. Die FAZ berichtete, dass niemand die Verantwortung für den Angriff beansprucht habe, und die NZZ berichtete ebenfalls von einem Tankerangriff im Persischen Golf."
+        },
+        "pt": {
+          "headline": "Dois petroleiros atingem minas e incendiam-se no Estreito de Ormuz",
+          "body": "A Al Jazeera informou que a CGRI iraniana afirmou que dois petroleiros embateram em minas e incendiaram-se no Estreito de Ormuz. A FAZ informou que ninguém tinha assumido a responsabilidade pelo ataque, e a NZZ também informou de um ataque contra um petroleiro no Golfo Pérsico."
+        },
+        "ja": {
+          "headline": "ホルムズ海峡で2隻のタンカーが機雷に接触して炎上",
+          "body": "アルジャズーラによると、イランの革命防衛隊（IRGC）は、ホルムズ海峡で2隻のタンカーが機雷に接触して炎上したと述べた。FAZは、攻撃の責任を認めた者はいないと報じた。NZZも、ペルシャ湾でタンカー攻撃が発生したと報じた。"
+        },
+        "zh": {
+          "headline": "两艘油轮在霍尔木兹海峡触雷起火",
+          "body": "半岛电视台报道称，伊朗伊斯兰革命卫队（IRGC）表示，两艘油轮在霍尔木兹海峡触雷起火。FAZ报道称，尚无人声称对此次袭击负责，NZZ也报道了波斯湾的一起油轮袭击事件。"
+        },
+        "ko": {
+          "headline": "호르무즈 해협에서 유조선 두 척이 기뢰를 맞고 화재",
+          "body": "알자지라는 이란의 IRGC가 호르무즈 해협에서 유조선 두 척이 기뢰를 맞고 불타고 있다고 보도했다. FAZ는 이 공격에 대해 아무도 책임을 인정하지 않았다고 보도했으며, NZZ도 페르시아만에서 유조선이 공격당하는 사건을 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "FAZ",
+          "title": "Liveblog Nahost: Tanker im Persischen Golf attackiert",
+          "url": "https://www.faz.net/aktuell/politik/ausland/liveblog-nahost-tanker-laut-bericht-im-persischen-golf-attackiert-faz-200583539.html",
+          "publishedAt": "2026-11-02T05:40:58.000Z"
+        },
+        {
+          "outlet": "NZZ",
+          "title": "LIVE-TICKER - Iran-Krieg: Tanker im Persischen Golf attackiert +++ Mojtaba Khamenei weist die iranischen Streitkräfte an, auf jede Bedrohung zu reagieren",
+          "url": "https://www.nzz.ch/international/iran-krieg-jd-vance-soll-mit-iran-chance-auf-verhandlungen-ausloten-kaempfe-in-jemen-vertreiben-immer-mehr-menschen-ld.10021246",
+          "publishedAt": "2026-11-02T05:09:57.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Iran war live: Tankers hit in Hormuz; Trump again says conflict to end soon",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/11/2/iran-war-live-tankers-hit-in-hormuz-trump-again-says-conflict-to-end-soon?traffic_source=rss",
+          "publishedAt": "2026-11-02T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793592871000-d7p1",
+      "at": "2026-11-02T04:14:31.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Netanyahu urged Trump to attack Iran, report says",
+          "body": "The Jerusalem Post reported that Benjamin Netanyahu urged Donald Trump to attack Iran as the US pursued further negotiations before the midterms. Trump confirmed on Sunday that he had spoken to Netanyahu and that they discussed Iran, without sharing further details, the Jerusalem Post reported. The Times of India reported that the two leaders discussed possible military action after the upcoming US midterm elections."
+        },
+        "es": {
+          "headline": "Netanyahu pidió a Trump que atacara Irán, según un informe",
+          "body": "The Jerusalem Post informó de que Benjamin Netanyahu pidió a Donald Trump que atacara Irán mientras EE. UU. proseguía con nuevas negociaciones antes de las elecciones de mitad de mandato. Trump confirmó el domingo que había hablado con Netanyahu y que habían hablado de Irán, sin ofrecer más detalles, informó The Jerusalem Post. The Times of India informó de que ambos líderes conversaron sobre una posible acción militar después de las próximas elecciones de mitad de mandato de EE. UU."
+        },
+        "fr": {
+          "headline": "Selon un rapport, Netanyahou a exhorté Trump à attaquer l'Iran",
+          "body": "Le Jerusalem Post a rapporté que Benjamin Netanyahou avait exhorté Donald Trump à attaquer l'Iran, alors que les États-Unis poursuivaient de nouvelles négociations avant les élections de mi-mandat. Dimanche, Trump a confirmé avoir parlé à Netanyahou et qu'ils avaient discuté de l'Iran, sans fournir de détails supplémentaires, a rapporté le Jerusalem Post. The Times of India a rapporté que les deux dirigeants avaient discuté d'une éventuelle action militaire après les prochaines élections de mi-mandat américaines."
+        },
+        "it": {
+          "headline": "Netanyahu avrebbe esortato Trump ad attaccare l'Iran, secondo un report",
+          "body": "Il Jerusalem Post ha riportato che Benjamin Netanyahu ha esortato Donald Trump ad attaccare l'Iran mentre gli Stati Uniti proseguivano ulteriori negoziati prima delle elezioni di metà mandato. Trump ha confermato domenica di aver parlato con Netanyahu e che avevano discusso dell'Iran, senza condividere ulteriori dettagli, ha riportato il Jerusalem Post. The Times of India ha riportato che i due leader hanno discusso di possibili azioni militari dopo le prossime elezioni di metà mandato negli Stati Uniti."
+        },
+        "de": {
+          "headline": "Netanyahu drängte Trump laut Bericht zum Angriff auf Iran",
+          "body": "Die Jerusalem Post berichtete, Benjamin Netanyahu habe Donald Trump gedrängt, Iran anzugreifen, während die USA vor den Zwischenwahlen weitere Verhandlungen führten. Trump bestätigte am Sonntag, er habe mit Netanyahu gesprochen und sie hätten über Iran gesprochen, ohne weitere Einzelheiten preiszugeben, berichtete die Jerusalem Post. Die Times of India berichtete, die beiden Politiker hätten nach den bevorstehenden US-Zwischenwahlen über mögliche militärische Maßnahmen gesprochen."
+        },
+        "pt": {
+          "headline": "Relatório diz que Netanyahu instou Trump a atacar o Irã",
+          "body": "O Jerusalem Post informou que Benjamin Netanyahu instou Donald Trump a atacar o Irã, enquanto os EUA prosseguiam com negociações adicionais antes das eleições de meio de mandato. Trump confirmou no domingo que tinha falado com Netanyahu e que discutiram o Irã, sem revelar mais detalhes, informou o Jerusalem Post. O Times of India informou que os dois líderes discutiram uma possível ação militar após as próximas eleições de meio de mandato dos EUA."
+        },
+        "ja": {
+          "headline": "報道によると、ネタニyahフはトランプにイラン攻撃を要請した",
+          "body": "エルサレム・ポストによると、ベンヤミン・ネタニyahフは、米国が中間選挙を前に追加交渉を進める中、ドナルド・トランプにイランを攻撃するよう要請した。エルサレム・ポストによると、トランプは日曜日にネタニyahフと話があり、イランについて協議したと認めたが、詳細は明かさなかった。タイムズ・オブ・インドによると、両首脳は即将される米国中間選挙後の軍事的行動の可能性について協議した。"
+        },
+        "zh": {
+          "headline": "报道称，内塔尼亚胡敦促特朗普攻击伊朗",
+          "body": "《耶路撒冷邮报》报道称，在美国中期选举前推进进一步谈判之际，本雅明·内塔尼亚胡敦促唐纳德·特朗普攻击伊朗。《耶路撒冷邮报》报道称，特朗普周日证实自己曾与内塔尼亚胡通话，双方讨论了伊朗问题，但未透露更多细节。《印度时报》报道称，两位领导人讨论了即将举行的美国中期选举之后可能采取的军事行动。"
+        },
+        "ko": {
+          "headline": "보도자에 따르면 넷냐후는 트럼프에게 이란을 공격하라고 재촉했다",
+          "body": "예루살렘 포스트는 미국이 중간선거를 앞두고 추가 협상을 추진하는 가운데 베냐민 넷냐후가 도널드 트럼프에게 이란을 공격하라고 재촉했다고 보도했다. 예루살렘 포스트가 보도한 바에 따르면 트럼프는 일요일에 넷냐후와 대화하고 이란에 대해 논의했으며, 그 이상의 세부는 공개하지 않았다. 인도 타임스는 두 지도자가 예정된 미국 중간선거 이후 가능한 군사 행동에 대해 논의했다고 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "Netanyahu urges Trump to attack Iran as US pursues further negotiations before midterms - report",
+          "url": "https://www.jpost.com/middle-east/iran-news/article-913522",
+          "publishedAt": "2026-11-02T04:14:31.000Z"
+        },
+        {
+          "outlet": "Times of India",
+          "title": "Fresh Iran strikes after US midterms? Details of Trump-Netanyahu's 'tough' phone call",
+          "url": "https://timesofindia.indiatimes.com/world/us/netanyahu-pushes-donald-trump-for-fresh-iran-strikes-after-us-midterms-report/articleshow/135441723.cms",
+          "publishedAt": "2026-11-02T01:57:51.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793596938000-684h",
+      "at": "2026-11-02T05:22:18.000Z",
+      "kind": "statement",
+      "importance": 4,
+      "locales": {
+        "en": {
+          "headline": "Tucker Carlson said Netanyahu is pressuring Trump over Iran",
+          "body": "Tucker Carlson said Benjamin Netanyahu is pressuring Donald Trump to launch a nuclear strike on Iran's Pickaxe Mountain, according to Firstpost and NewsCord. Firstpost reported that Carlson warned Trump could attack Iran with nuclear weapons within days, while investingLive reported that he said Trump was weighing the strike."
+        },
+        "es": {
+          "headline": "Tucker Carlson dijo que Netanyahu está presionando a Trump en relación con Irán",
+          "body": "Tucker Carlson dijo que Benjamin Netanyahu está presionando a Donald Trump para que lance un ataque nuclear contra la montaña Pickaxe de Irán, según Firstpost y NewsCord. Firstpost informó de que Carlson advirtió a Trump de que podía atacar Irán con armas nucleares en pocos días, mientras que investingLive informó de que dijo que Trump estaba considerando el ataque."
+        },
+        "fr": {
+          "headline": "Tucker Carlson a déclaré que Netanyahou fait pression sur Trump au sujet de l'Iran",
+          "body": "Selon Firstpost et NewsCord, Tucker Carlson a déclaré que Benjamin Netanyahou fait pression sur Donald Trump pour lancer une frappe nucléaire sur la montagne Pickaxe, en Iran. Firstpost a rapporté que Carlson a averti Trump qu'il pourrait attaquer l'Iran avec des armes nucléaires dans les quelques jours, tandis qu'investingLive a rapporté qu'il avait déclaré que Trump envisageait la frappe."
+        },
+        "it": {
+          "headline": "Tucker Carlson ha detto che Netanyahu sta facendo pressione su Trump riguardo all'Iran",
+          "body": "Secondo Firstpost e NewsCord, Tucker Carlson ha detto che Benjamin Netanyahu sta facendo pressione su Donald Trump affinché lanci un attacco nucleare sulla Pickaxe Mountain iraniana. Firstpost ha riportato che Carlson ha avvertito Trump che potrebbe attaccare l'Iran con armi nucleari entro pochi giorni, mentre investingLive ha riportato che Carlson ha detto che Trump sta valutando l'attacco."
+        },
+        "de": {
+          "headline": "Tucker Carlson sagte, Netanyahu setze Trump wegen Iran unter Druck",
+          "body": "Tucker Carlson sagte, Benjamin Netanyahu setze Donald Trump unter Druck, einen Atomangriff auf Pickaxe Mountain im Iran zu starten, berichteten Firstpost und NewsCord. Firstpost berichtete, Carlson habe Trump gewarnt, er könne Iran innerhalb von Tagen mit Atomwaffen angreifen, während investingLive berichtete, er habe gesagt, Trump erwäge den Angriff."
+        },
+        "pt": {
+          "headline": "Tucker Carlson disse que Netanyahu está a pressionar Trump sobre o Irã",
+          "body": "Tucker Carlson disse que Benjamin Netanyahu está a pressionar Donald Trump para lançar um ataque nuclear contra a montanha Pickaxe do Irã, de acordo com a Firstpost e a NewsCord. A Firstpost informou que Carlson avisou Trump de que este poderia atacar o Irã com armas nucleares dentro de poucos dias, enquanto a investingLive informou que ele disse que Trump estava a ponderar o ataque."
+        },
+        "ja": {
+          "headline": "タッカー・カールソンは、イラン問題でネタニyahフがトランプに圧力をかけていると述べた",
+          "body": "ファーストポストとニュースコードによると、タッカー・カールソンは、ベンヤミン・ネタニyahフがトランプに、イランのピックアクス山への核攻撃を実施するよう圧力をかけていると述べた。ファーストポストによると、カールソンは、トランプが数日以内に核兵器でイランを攻撃する可能性がある、と警告した。一方、インベスティングライブによると、同氏は、トランプが攻撃を検討していると述べた。"
+        },
+        "zh": {
+          "headline": "塔克·卡尔森称，内塔尼亚胡正就伊朗问题向特朗普施压",
+          "body": "据Firstpost和NewsCord报道，塔克·卡尔森称，本雅明·内塔尼亚胡正就伊朗问题向唐纳德·特朗普施压，要求其对伊朗的镐山（Pickaxe Mountain）发动核打击。Firstpost报道称，卡尔森警告特朗普可能在数日内使用核武器攻击伊朗；investingLive报道称，他表示特朗普正在权衡是否发动打击。"
+        },
+        "ko": {
+          "headline": "터커 칼슨은 넷냐후가 이란 문제로 트럼프를 압박하고 있다고 말했다",
+          "body": "퍼스트포스트와 뉴스코드에 따르면 터커 칼슨은 베냐민 넷냐후가 도널드 트럼프에게 이란의 픽스마운틴에 대한 핵타격을 개시하도록 압박하고 있다고 말했다. 퍼스트포스트는 칼슨이 트럼프가 며칠 안에 핵무기로 이란을 공격할 수 있다고 경고했다고 보도했으며, 인베스팅라이브는 칼슨이 트럼프가 그 타격을 검토하고 있다고 말했다고 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "NewsCord",
+          "title": "Tucker Carlson Says Netanyahu Pressures Trump Toward Nuclear Strike on Iran’s Pickaxe Mountain",
+          "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOZ2prc2tOay1UemRhNFRGTGFlelduX2tnaS13SVVMTHZOUXpQM05lUkZ0b3pMMkJtbHREYzNRWjg0emFDQ0tlUHk4OU14RVZIWnltUGE1Q2NhdTV4MXQxUTlFeTNqa0k0NWR5U0habllqMGpHbEUxbnhyUUtSZEhjU0xRdUc4bXl4cElhMnlOVHJwclZWSklYZGlCS0hzNkthRFlZeFNVTVZ3eHF6dVFYRUtyUV9BS2NBRnZMTHBkaTcxX0FmTENEQWRtZEFwSjUya1ZjNDdDczNtUWVoTDVFRmVQMXdyaUgwaVE?oc=5",
+          "publishedAt": "2026-11-02T05:22:18.000Z"
+        },
+        {
+          "outlet": "Firstpost",
+          "title": "Trump may attack Iran with nuclear weapons within days, Tucker Carlson warns",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQUmN6VjlKWUpFMVFXMjluNTdJOGh1QlIzcGxmR2NEQURBUEVtVjRMRF9kc0ZXR3IxZExxaFRnVXhPdXRRazhWLVRJcXJfdkZPN3UtZXZpVFNDakM3OVZsUnpvLTFQZ3VKQl9iek43MzVMYzRtUURUc3Y4UDVOT3NzZWpPVzE1Y0NyQS1KUlJvcHJRM1lOa0Zod3FidXVWdlRsNUNFUjgxYjFMNGl6cXFwaWtHLTkyRWp0RTlYbjBHdFA0T1B4ZW1vZU1acTZJeEMxU21xUFJfcFdzdU5EYzJ2ZmtBUlhrRFVKSkJfSFBfZWxLUGhk0gH6AUFVX3lxTE16eDQ5UHRIRXNiSHZ2Q0ZRaDZVQ2hpYTNxbll2cTNBXzdXSU1xNTU1TTktZEwxaWZpcFJHSlVVTEJwNHRtSFhaaWhDU3dyVzZ5NjQzYnJSczczRXBMRWk2SGlJcUF0dWJJN3ppOE15dzc4UzJHbTB1MGtGcmdvc1RJSktnWmZybXBXSXVpR0VlNWpoYVFhOHl3Z1pON1dsdnZ3MHJzd2RQa2o3UDFRTmgxc3hWT195RklWUll3VENnaU9aSjhGSkcxd25mekVhMjh5a0JsQUx3aVVacTdCdTl1Y0JGVU11ekNfTU1RQWUyM2taWkN4MHJ2Q1E?oc=5",
+          "publishedAt": "2026-11-02T05:17:02.000Z"
+        },
+        {
+          "outlet": "Times of India",
+          "title": "Netanyahu pushing Trump for nuclear strike on Iran? US commentator makes big claim",
+          "url": "https://timesofindia.indiatimes.com/world/us/netanyahu-pushing-donald-trump-for-nuclear-strike-on-iran-us-commentator-makes-big-claim/articleshow/135444652.cms",
+          "publishedAt": "2026-11-02T04:11:52.000Z"
+        },
+        {
+          "outlet": "The Times of India",
+          "title": "Netanyahu pushing Donald Trump for nuclear strike on Iran? US commentator makes big claim",
+          "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNMVZhcGxWam4zYmRvMEhnNFBYbVd5S2NLTU4tMGFjYnEzRFlvZHh0Ym5jcXAwcExabFBsVUg1MUxyTVI5VU9WRExNZkFnZTI2dExPSnhEdm9IN2I3TTNxc0xHQWctZl9kRmNCUHJWcGh1eVlELVpGSnlVTFVmSDVtOHJuSTU4VjFCUEJEbmh2eENyY2ZTWnYzcVlPNFlhbkJJd3l3M2k0UUR1cTE1QXZYbi1PaGdndW50WDdONDVnWDJXWDVRcGxLSks5blBWa2NXeGl1bl9McDh3Rk5mdGs3QWN0c2w4Q0RVMVNQS3V3cEzSAfYBQVVfeXFMTXFkOERUYzFxSm1neERBblNZLUtjZjd6eWxReWFhY2VQU2RxRE1BeWk3bGtVTzFjbHpRaEFkRElnMlZRbzUyNUNaZmFvdmFiNTk4Y2h4N2Frd3VGMmhWV281RFZXZDBEMlcwYU9kQUFXSVFmUkdzRjdkZUtydzZ5YjdOcEZUY0VuS3N4MFZ6ZWllX2c5NkFGTm9oQkdWY054bFA4eEFzVjZsYktLNFMxWFdGQi1nTmZyQUJMT0tXcmVQVzAyNHZ6RVk2blBfblo3RWM3RVlUQnR1bElqRkxCenlhR3BIUVdDalJVdGJlNXFwMWF1MUNn?oc=5",
+          "publishedAt": "2026-11-02T04:11:00.000Z"
+        },
+        {
+          "outlet": "investingLive",
+          "title": "Tucker Carlson claims Trump weighing nuclear strike on Iran’s Pickaxe Mountain",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdmo4UUZFQ0xjWWR6RWZGampDejY0OU9LMGJIVmtGcGtPR09WZ2Zwa2cxeTd2LS1Tc2R5N0lreFZ2Tkt3dVBybFg4Q0l1QV9iQUVGdEFGa3l4NFVfM2dWcjRMa1NQTjhWOGdFNTZXM09qXzYzWmg0clVUS2xEZzNhNmdoMTh2YUprTFFXMGYyVGRLV2tyUDZHSW1mVTRIb1ltWEFBaTZUeWRwT1hMQWtSa0lxVnhCalFh?oc=5",
+          "publishedAt": "2026-11-02T03:25:34.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "iran",
     "united states",
@@ -18,69 +275,51 @@
     "tanker",
     "gulf"
   ],
+  "seenUrls": [
+    "https://www.welt.de/politik/ausland/plus6ae70da64b901a24d5d47b49/nahost-waere-noch-zerstoererischer-als-bisher-wo-die-angst-vor-einem-neuen-grossen-krieg-um-sich-greift.html",
+    "https://www.faz.net/aktuell/politik/ausland/liveblog-nahost-tanker-laut-bericht-im-persischen-golf-attackiert-faz-200583539.html",
+    "https://www.nytimes.com/2026/11/01/world/germany-russia-putin-deals-us-midterms.html",
+    "https://variety.com/2026/politics/columns/haley-stevens-anderson-cooper-interview-column-1236937200/",
+    "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOZ2prc2tOay1UemRhNFRGTGFlelduX2tnaS13SVVMTHZOUXpQM05lUkZ0b3pMMkJtbHREYzNRWjg0emFDQ0tlUHk4OU14RVZIWnltUGE1Q2NhdTV4MXQxUTlFeTNqa0k0NWR5U0habllqMGpHbEUxbnhyUUtSZEhjU0xRdUc4bXl4cElhMnlOVHJwclZWSklYZGlCS0hzNkthRFlZeFNVTVZ3eHF6dVFYRUtyUV9BS2NBRnZMTHBkaTcxX0FmTENEQWRtZEFwSjUya1ZjNDdDczNtUWVoTDVFRmVQMXdyaUgwaVE?oc=5",
+    "https://allafrica.com/stories/202611020031.html",
+    "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQUmN6VjlKWUpFMVFXMjluNTdJOGh1QlIzcGxmR2NEQURBUEVtVjRMRF9kc0ZXR3IxZExxaFRnVXhPdXRRazhWLVRJcXJfdkZPN3UtZXZpVFNDakM3OVZsUnpvLTFQZ3VKQl9iek43MzVMYzRtUURUc3Y4UDVOT3NzZWpPVzE1Y0NyQS1KUlJvcHJRM1lOa0Zod3FidXVWdlRsNUNFUjgxYjFMNGl6cXFwaWtHLTkyRWp0RTlYbjBHdFA0T1B4ZW1vZU1acTZJeEMxU21xUFJfcFdzdU5EYzJ2ZmtBUlhrRFVKSkJfSFBfZWxLUGhk0gH6AUFVX3lxTE16eDQ5UHRIRXNiSHZ2Q0ZRaDZVQ2hpYTNxbll2cTNBXzdXSU1xNTU1TTktZEwxaWZpcFJHSlVVTEJwNHRtSFhaaWhDU3dyVzZ5NjQzYnJSczczRXBMRWk2SGlJcUF0dWJJN3ppOE15dzc4UzJHbTB1MGtGcmdvc1RJSktnWmZybXBXSXVpR0VlNWpoYVFhOHl3Z1pON1dsdnZ3MHJzd2RQa2o3UDFRTmgxc3hWT195RklWUll3VENnaU9aSjhGSkcxd25mekVhMjh5a0JsQUx3aVVacTdCdTl1Y0JGVU11ekNfTU1RQWUyM2taWkN4MHJ2Q1E?oc=5",
+    "https://www.nzz.ch/international/iran-krieg-jd-vance-soll-mit-iran-chance-auf-verhandlungen-ausloten-kaempfe-in-jemen-vertreiben-immer-mehr-menschen-ld.10021246",
+    "https://news.google.com/rss/articles/CBMickFVX3lxTE4tN1JJM1RNMFBHU1RhdHExRUNRRzJmRmNIN2lPTU1HY1NveWlBdE5HbjA1dl92dEdhWDRaUURtdTRnZ2M0ZjhMdTZtNHJtZ1pUTVlDN3ZoeXRaeVVxeFB0OVY2aU5jbmZXWGVWQTdZeWs4QQ?oc=5",
+    "https://g1.globo.com/economia/noticia/2026/11/02/midterms-nos-eua-eleicoes-podem-mudar-planos-de-trump-e-mexer-com-dolar-e-juros-no-brasil.ghtml",
+    "https://g1.globo.com/mundo/noticia/2026/11/02/eua-senado-midterms.ghtml",
+    "https://variety.com/2026/tv/news/john-oliver-you-can-see-everything-elizabeth-holmes-billy-evans-lunatics-1236937192/",
+    "https://www.faz.net/aktuell/politik/ausland/us-midterms-2026-auf-diese-demokraten-kommt-es-an-accg-201624859.html",
+    "https://www.jpost.com/middle-east/iran-news/article-913522",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbXB4dTNiTWNuQ2RCY1NjZ2lLS3VVZFZSQ19BLUYyOFc0dGcwRXRKWWsta3Y0UXZGUDdRY0ZPc1dreGJCc3Jic2ljdHRWNTREbnhSTTlMZUZUSExyZ3ByMDRMY3VwcWRJQV90eVJtaHdCNDdMT3BrTVdYMXg0dFAydWZOSF82enB3TkpOQlluYm5iUWY0WFowR1BiR1dIWkx5ck9LTG1R?oc=5",
+    "https://timesofindia.indiatimes.com/world/us/netanyahu-pushing-donald-trump-for-nuclear-strike-on-iran-us-commentator-makes-big-claim/articleshow/135444652.cms",
+    "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNMVZhcGxWam4zYmRvMEhnNFBYbVd5S2NLTU4tMGFjYnEzRFlvZHh0Ym5jcXAwcExabFBsVUg1MUxyTVI5VU9WRExNZkFnZTI2dExPSnhEdm9IN2I3TTNxc0xHQWctZl9kRmNCUHJWcGh1eVlELVpGSnlVTFVmSDVtOHJuSTU4VjFCUEJEbmh2eENyY2ZTWnYzcVlPNFlhbkJJd3l3M2k0UUR1cTE1QXZYbi1PaGdndW50WDdONDVnWDJXWDVRcGxLSks5blBWa2NXeGl1bl9McDh3Rk5mdGs3QWN0c2w4Q0RVMVNQS3V3cEzSAfYBQVVfeXFMTXFkOERUYzFxSm1neERBblNZLUtjZjd6eWxReWFhY2VQU2RxRE1BeWk3bGtVTzFjbHpRaEFkRElnMlZRbzUyNUNaZmFvdmFiNTk4Y2h4N2Frd3VGMmhWV281RFZXZDBEMlcwYU9kQUFXSVFmUkdzRjdkZUtydzZ5YjdOcEZUY0VuS3N4MFZ6ZWllX2c5NkFGTm9oQkdWY054bFA4eEFzVjZsYktLNFMxWFdGQi1nTmZyQUJMT0tXcmVQVzAyNHZ6RVk2blBfblo3RWM3RVlUQnR1bElqRkxCenlhR3BIUVdDalJVdGJlNXFwMWF1MUNn?oc=5",
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5XWk1MRUxCS3ZaWXBGX1lDb1dCZ0YxUjVnQlRoSGxHaTNuNkpSODEyOWpBMnNuRlU0YjVtTG00Z0dOdTVJVXlZNWEzUHBnM0ZHVC1xT2htWHJoWUE?oc=5",
+    "https://g1.globo.com/mundo/noticia/2026/11/02/os-principais-numeros-das-eleicoes-de-meio-de-mandato-nos-eua.ghtml",
+    "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1KRGFHVjhuU1FqNTZFb2tVTlV3bGQwUXZtVXQ1OGE5MHlXTlFneGhMV0szd0FJZ05NWVoyX3BMNVRXUkttMDZtbU53TjUxbG5WLVVVdlJwSQ?oc=5",
+    "https://www.thehindu.com/news/international/trumps-republicans-scramble-to-stop-democratic-midterms-wave/article71655246.ece",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdmo4UUZFQ0xjWWR6RWZGampDejY0OU9LMGJIVmtGcGtPR09WZ2Zwa2cxeTd2LS1Tc2R5N0lreFZ2Tkt3dVBybFg4Q0l1QV9iQUVGdEFGa3l4NFVfM2dWcjRMa1NQTjhWOGdFNTZXM09qXzYzWmg0clVUS2xEZzNhNmdoMTh2YUprTFFXMGYyVGRLV2tyUDZHSW1mVTRIb1ltWEFBaTZUeWRwT1hMQWtSa0lxVnhCalFh?oc=5",
+    "https://www.channelnewsasia.com/world/cyber-attacks-russia-ukraine-6512066",
+    "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQWWNTaTBQX3lzczRqaUtfX2hCRFpKTnZmR3Boa1ZRWUswODVsMVk3Y1lfYWI5UGtsX3FuT1RVazdndkZoMHZxVjAwNmVMaDV1YjNkc2w2NWRJMjNkR0ZzUTNlYVdYWWwwYnkySHZ6Q1JsY214U3QyU1U4UVhYQWhRTWlOVkNUaXRHdUdHdWhXWXJXbDFaWjgxT3IzcW95U1JXQnpweFNSWXVOZ0dhWlZGVHdYWDZTd0pKNnBvZFlDZUxxU3drdHFCZy04ZUZZM2dtdkZTbTR1alJDX3F5RWxSXw?oc=5",
+    "https://news.google.com/rss/articles/CBMijgJBVV95cUxNNUt1YjhyMnZnVkZ6M0xmTnFXbjE1b0lZWjhOUFpIMUw2SUxYRmFnR1N0djlOZ1plVS14OXEwMTNVZUg3YzJqM1lneUt4VEJHdTNVd3RRT2xJTWpYLVgzenBMMFhYbnA3S1IwNzh3VFIzanVVNXhxeE0xLU91YW8wWlBoWklWalRRZ2dBQ2FjbExQWXd2bl9kZlRYTmJpWmowdUlqRU9BWEU4djQ1OEctT1lxbGFKZEdoU2lYMnlveDh0akdCcWNGWkNabThiWUdzcmc5Ylc3bWVHR3ZlWnk3YW5BcXJtNXFubHRXYkFTZmNmOU5DbDIxTURIeThxVUpHNjFsdnNKMFhQeTQ3SHfSAZMCQVVfeXFMUG42QVg4NDk0bFJzVFh6Wi1oMDNLV0pFaE5RUElCMEZLamFkbW1nWU5XSUVLZHp4aHhhYU81N3VsdGo0d1RiMFl6NGtybnRmb3NjVTJGS2VFaWw4RExOS0tVQTBnRUtuLUh5Nk12NERkbE1BRjFkMEFGNTJkVnZIUHlvaG1tWjJNRUxFdXRmby0wSGNPdHRMV0dqVzBQT2lGeW50VG5oVktsSlowZkVRaDZtU2UyZmhISEdZN01ZbFN4X3lVbXBfQWpZdDI2VGlWczlhaDktUjdhcDVVeGZwQXpJR1FoclBIYTdoTk5EOFBabWZmQUNodjVBM3JGTlA4eHExSWhyb2pWQUR6bHlhbHBSQ0E?oc=5",
+    "https://www.cnbc.com/2026/11/02/us-iran-war-trump-hormuz-rubio.html",
+    "https://timesofindia.indiatimes.com/world/us/netanyahu-pushes-donald-trump-for-fresh-iran-strikes-after-us-midterms-report/articleshow/135441723.cms",
+    "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPeDdYLWpvX250QWIwS2UxVU9OLXFfU3V0S1hCOWltTDJQQVMwbzl5OFBNTkhpd3ExYW9ma3hKd0VONkVQd1FuN3BJRVUtRWViNl9WMGY4ZjhaSnZ5VUIzUkxKbEF5RVUwM2hqTkFtVklzYXlaRjFuOEo0cEFvT0wxUUxPV29QSlZucFQyb3M4M1lUVU1udzRqVHN5djdiQVAyTjNLbldwbDN1VUtYbmsyWXFJZV85SG4zSW5qUThMdkhUN2Zzd0txQmplb3NDYUxKMmwyYTBpWThfaWtxN2NmaVNaUmtYMXpXeXJZZnhJSUhxUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQLUJ2eUx2ekxlenJCallsY0ZFQi1OeW51dERMMWxCODlpREdmTWk5MzllOTVUSE5KYzI2bW9Jd3FhMG9wMnVWTmZycmZGdEd5TEtWamdmMF9wbEZHWDljdTJkX3I5dk5xQU91bVBNZHhRSE4tQ0pYdXJ6MmZQazlIQ0dBejlXbnMyd0tKbWNabmlTZk9hRVhpWEkwTUxLWkJoSnRvWDEwQkxteE81bVF2QXJn?oc=5",
+    "https://www.straitstimes.com/world/united-states/trump-says-he-may-be-mr-veto-if-democrats-win-midterms",
+    "https://www.dawn.com/news/2041438/pakistan-outperforms-vietnam-in-rice-exports",
+    "https://www.japantimes.co.jp/news/2026/11/02/world/trump-noncitizen-voter-lists-midterms/",
+    "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5ncU5lU042bEhlZ2RxWkFMeFl3TFdqeHoyU045dTlPQ3EzTHpBRU1lOHBWblNBdGtFbEpQbEFZS3hRUmlfVzl5V2hxZm1VZEpyZWc?oc=5",
+    "https://www.aljazeera.com/news/2026/11/2/israeli-officials-say-results-stand-as-netanyahu-claims-election-stolen?traffic_source=rss",
+    "https://www.france24.com/en/middle-east/20261102-iran-warns-renewed-war-with-us-could-outlast-previous-conflict",
+    "https://www.straitstimes.com/world/united-states/how-a-blue-wave-could-test-trump-in-his-final-two-years",
+    "https://www.scmp.com/news/us/us-elections/article/3372795/will-losing-us-midterms-see-trump-double-down-or-signal-beginning-end",
+    "https://www.aljazeera.com/news/liveblog/2026/11/2/iran-war-live-tankers-hit-in-hormuz-trump-again-says-conflict-to-end-soon?traffic_source=rss"
+  ],
   "startedAt": "2026-11-02T05:31:06.274Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-02T05:31:06.274Z",
-  "articleSlug": null,
-  "sourceCount": 17,
+  "updatedAt": "2026-11-02T06:00:25.162Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "US-Iran conflict and Gulf escalation",
-      "dek": "Tensions between the United States and Iran are escalating with tanker attacks in the Strait of Hormuz and threats of renewed military strikes."
-    },
-    "de": {
-      "title": "US-Iran-Konflikt und Eskalation am Golf",
-      "dek": "Die Spannungen zwischen den Vereinigten Staaten und Iran verschärfen sich durch Angriffe auf Tanker in der Straße von Hormus und Drohungen mit erneuerten Militärschlägen."
-    },
-    "es": {
-      "title": "Conflicto entre EE. UU. e Irán y escalada en el Golfo",
-      "dek": "Las tensiones entre Estados Unidos e Irán se intensifican con ataques contra petroleros en el estrecho de Ormuz y amenazas de nuevos ataques militares."
-    },
-    "fr": {
-      "title": "Conflit entre les États-Unis et l’Iran et escalade dans le Golfe",
-      "dek": "Les tensions entre les États-Unis et l’Iran s’intensifient, avec des attaques contre des pétroliers dans le détroit d’Ormuz et des menaces de reprise des frappes militaires."
-    },
-    "zh": {
-      "title": "美伊冲突与海湾局势升级",
-      "dek": "美国与伊朗之间的紧张关系因霍尔木兹海峡油轮遇袭事件以及重启军事打击的威胁而持续升级。"
-    },
-    "it": {
-      "title": "Conflitto USA-Iran ed escalation nel Golfo",
-      "dek": "Le tensioni tra gli Stati Uniti e l'Iran si stanno aggravando, con attacchi a petroliere nello Stretto di Hormuz e minacce di riprendere i raid militari."
-    },
-    "pt": {
-      "title": "Conflito EUA-Irão e escalada no Golfo",
-      "dek": "As tensões entre os Estados Unidos e o Irão estão a escalar com ataques a navios-tanque no Estreito de Ormuz e ameaças de novos ataques militares."
-    },
-    "ja": {
-      "title": "米・イラン対立と湾岸情勢の緊迫化",
-      "dek": "米国とイランの緊張が、ホルムズ海峡でのタンカー攻撃と新たな軍事攻撃の脅威を背景に高まっている。"
-    },
-    "ko": {
-      "title": "미국-이란 갈등과 걸프 해역 격화",
-      "dek": "미국과 이란의 긴장이 호르무즈 해협에서의 유조선 공격과 재차 군사 공격을 가하겠다는 위협으로 고조되고 있다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "France 24",
-      "Al Jazeera",
-      "Dawn",
-      "NZZ",
-      "The Japan Times",
-      "Times of India",
-      "CNA",
-      "AllAfrica",
-      "The Straits Times",
-      "The Jerusalem Post",
-      "CNBC",
-      "Variety"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 9,
+  "seenHeadlines": []
 }
