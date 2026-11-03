@@ -1,9 +1,95 @@
 {
+  "meta": {
+    "outlets": [
+      "The Guardian",
+      "The Hill",
+      "Ars Technica",
+      "STAT News",
+      "ABC7 WWSB"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "bird-flu-outbreak-in-u-s-cattle",
-  "status": "live",
-  "category": "health",
-  "importance": 5,
   "topic": "Bird flu outbreak in U.S. cattle",
+  "status": "ended",
+  "article": null,
+  "endedAt": "2026-11-03T02:24:22.610Z",
+  "locales": {
+    "de": {
+      "dek": "Ein Einwohner des Bundesstaates Washington ist nach Kontakt mit infizierten Rindern gestorben – der dritte Todesfall in den USA, der mit dem Virus in Verbindung gebracht wird, seit es sich unter Nutztieren ausbreitet.",
+      "title": "Vogelgrippe-Ausbruch bei US-Rindern"
+    },
+    "en": {
+      "dek": "A Washington state resident has died after exposure to infected cattle, the third U.S. death linked to the virus since it began spreading among livestock.",
+      "title": "Bird flu outbreak in U.S. cattle"
+    },
+    "fr": {
+      "dek": "Un résident de l’État de Washington est mort après avoir été exposé à des bovins infectés. Il s’agit du troisième décès américain lié au virus depuis le début de sa propagation parmi le bétail.",
+      "title": "Foyer de grippe aviaire dans le bétail américain"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-11-02T21:59:02.000Z",
+      "id": "u-1793656742000-3arq",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Ein Einwohner des Bundesstaates Washington ist laut The Guardian und STAT News an den Komplikationen der Vogelgrippe gestorben, nachdem er Kontakt mit infizierten Rindern hatte. Beide Medien berichteten am 2. November 2026 über den Tod.",
+          "headline": "Einwohner des Bundesstaates Washington stirbt nach Kontakt mit infizierten Rindern an Vogelgrippe"
+        },
+        "en": {
+          "body": "A Washington state resident died from complications of bird flu after exposure to infected cattle, according to The Guardian and STAT News. Both outlets reported the death on 2 November 2026.",
+          "headline": "Washington resident dies from bird flu after exposure to infected cattle"
+        },
+        "es": {
+          "body": "Un residente del estado de Washington falleció por complicaciones de la gripe aviar tras exponerse a ganado infectado, según The Guardian y STAT News. Ambos medios informaron del fallecimiento el 2 de noviembre de 2026.",
+          "headline": "Un residente de Washington fallece de gripe aviar tras exponerse a ganado infectado"
+        },
+        "fr": {
+          "body": "Un habitant de l’État de Washington est mort de complications de la grippe aviaire après exposition à des bovins infectés, selon The Guardian et STAT News. Les deux médias ont rapporté ce décès le 2 novembre 2026.",
+          "headline": "Un habitant de l’État de Washington meurt de la grippe aviaire après exposition à des bovins infectés"
+        },
+        "it": {
+          "body": "Un residente dello Stato di Washington è morto a causa delle complicanze dell'influenza aviaria dopo l'esposizione a bovini infetti, secondo The Guardian e STAT News. Entrambi i media hanno riportato il decesso il 2 novembre 2026.",
+          "headline": "Un residente di Washington muore di influenza aviaria dopo l'esposizione a bovini infetti"
+        },
+        "ja": {
+          "body": "「The Guardian」と「STAT News」によると、ワシントン州民は感染した牛に接触した後、鳥インフルエンザの合併症で死亡した。両媒体は2026年11月2日に死亡を報じた。",
+          "headline": "感染した牛に接触後、鳥インフルエンザでワシントン州民が死亡"
+        },
+        "ko": {
+          "body": "가디언과 STAT 뉴스에 따르면, 워싱턴주 주민이 감염된 소에 노출된 뒤 조류인플루엔자의 합병증으로 사망했다. 두 매체 모두 2026년 11월 2일에 이 사망 사실을 보도했다.",
+          "headline": "감염된 소에 노출된 뒤 조류인플루엔자로 사망한 워싱턴주 주민"
+        },
+        "pt": {
+          "body": "Um residente do estado de Washington morreu de complicações de gripe aviária após exposição a gado infetado, segundo o Guardian e a STAT News. Ambos os veículos reportaram a morte em 2 de novembro de 2026.",
+          "headline": "Residente de Washington morre de gripe aviária após exposição a gado infetado"
+        },
+        "zh": {
+          "body": "据《卫报》和 STAT News 报道，华盛顿州一名居民接触感染奶牛后，因禽流感并发症死亡。两家媒体于2026年11月2日报道了这一死亡事件。",
+          "headline": "华盛顿州居民接触感染奶牛后死于禽流感"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/us-news/2026/nov/02/bird-flu-death-washington",
+          "title": "Washington state resident dies from ‘severe illness’ after contracting bird flu",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-02T21:59:02.000Z"
+        },
+        {
+          "url": "https://www.statnews.com/2026/11/02/bird-flu-washington-state-resident-dies-infected-cattle-exposure/?utm_campaign=rss",
+          "title": "Washington state resident dies from bird flu following exposure to infected cattle",
+          "outlet": "STAT News",
+          "publishedAt": "2026-11-02T20:44:40.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "health",
   "keywords": [
     "bird flu",
     "h5n1",
@@ -15,72 +101,6 @@
     "usda",
     "poultry",
     "outbreak"
-  ],
-  "startedAt": "2026-11-03T02:22:12.578Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-03T02:24:22.610Z",
-  "articleSlug": null,
-  "sourceCount": 2,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1793656742000-3arq",
-      "at": "2026-11-02T21:59:02.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Washington resident dies from bird flu after exposure to infected cattle",
-          "body": "A Washington state resident died from complications of bird flu after exposure to infected cattle, according to The Guardian and STAT News. Both outlets reported the death on 2 November 2026."
-        },
-        "it": {
-          "headline": "Un residente di Washington muore di influenza aviaria dopo l'esposizione a bovini infetti",
-          "body": "Un residente dello Stato di Washington è morto a causa delle complicanze dell'influenza aviaria dopo l'esposizione a bovini infetti, secondo The Guardian e STAT News. Entrambi i media hanno riportato il decesso il 2 novembre 2026."
-        },
-        "de": {
-          "headline": "Einwohner des Bundesstaates Washington stirbt nach Kontakt mit infizierten Rindern an Vogelgrippe",
-          "body": "Ein Einwohner des Bundesstaates Washington ist laut The Guardian und STAT News an den Komplikationen der Vogelgrippe gestorben, nachdem er Kontakt mit infizierten Rindern hatte. Beide Medien berichteten am 2. November 2026 über den Tod."
-        },
-        "es": {
-          "headline": "Un residente de Washington fallece de gripe aviar tras exponerse a ganado infectado",
-          "body": "Un residente del estado de Washington falleció por complicaciones de la gripe aviar tras exponerse a ganado infectado, según The Guardian y STAT News. Ambos medios informaron del fallecimiento el 2 de noviembre de 2026."
-        },
-        "fr": {
-          "headline": "Un habitant de l’État de Washington meurt de la grippe aviaire après exposition à des bovins infectés",
-          "body": "Un habitant de l’État de Washington est mort de complications de la grippe aviaire après exposition à des bovins infectés, selon The Guardian et STAT News. Les deux médias ont rapporté ce décès le 2 novembre 2026."
-        },
-        "zh": {
-          "headline": "华盛顿州居民接触感染奶牛后死于禽流感",
-          "body": "据《卫报》和 STAT News 报道，华盛顿州一名居民接触感染奶牛后，因禽流感并发症死亡。两家媒体于2026年11月2日报道了这一死亡事件。"
-        },
-        "pt": {
-          "headline": "Residente de Washington morre de gripe aviária após exposição a gado infetado",
-          "body": "Um residente do estado de Washington morreu de complicações de gripe aviária após exposição a gado infetado, segundo o Guardian e a STAT News. Ambos os veículos reportaram a morte em 2 de novembro de 2026."
-        },
-        "ko": {
-          "headline": "감염된 소에 노출된 뒤 조류인플루엔자로 사망한 워싱턴주 주민",
-          "body": "가디언과 STAT 뉴스에 따르면, 워싱턴주 주민이 감염된 소에 노출된 뒤 조류인플루엔자의 합병증으로 사망했다. 두 매체 모두 2026년 11월 2일에 이 사망 사실을 보도했다."
-        },
-        "ja": {
-          "headline": "感染した牛に接触後、鳥インフルエンザでワシントン州民が死亡",
-          "body": "「The Guardian」と「STAT News」によると、ワシントン州民は感染した牛に接触した後、鳥インフルエンザの合併症で死亡した。両媒体は2026年11月2日に死亡を報じた。"
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Guardian",
-          "title": "Washington state resident dies from ‘severe illness’ after contracting bird flu",
-          "url": "https://www.theguardian.com/us-news/2026/nov/02/bird-flu-death-washington",
-          "publishedAt": "2026-11-02T21:59:02.000Z"
-        },
-        {
-          "outlet": "STAT News",
-          "title": "Washington state resident dies from bird flu following exposure to infected cattle",
-          "url": "https://www.statnews.com/2026/11/02/bird-flu-washington-state-resident-dies-infected-cattle-exposure/?utm_campaign=rss",
-          "publishedAt": "2026-11-02T20:44:40.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.jpost.com/health-and-wellness/article-913642",
@@ -94,31 +114,11 @@
     "https://www.statnews.com/2026/11/02/bird-flu-washington-state-resident-dies-infected-cattle-exposure/?utm_campaign=rss",
     "https://medicalxpress.com/news/2026-11-ebola-outbreak-people-africa-cdc.html"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Bird flu outbreak in U.S. cattle",
-      "dek": "A Washington state resident has died after exposure to infected cattle, the third U.S. death linked to the virus since it began spreading among livestock."
-    },
-    "fr": {
-      "title": "Foyer de grippe aviaire dans le bétail américain",
-      "dek": "Un résident de l’État de Washington est mort après avoir été exposé à des bovins infectés. Il s’agit du troisième décès américain lié au virus depuis le début de sa propagation parmi le bétail."
-    },
-    "de": {
-      "title": "Vogelgrippe-Ausbruch bei US-Rindern",
-      "dek": "Ein Einwohner des Bundesstaates Washington ist nach Kontakt mit infizierten Rindern gestorben – der dritte Todesfall in den USA, der mit dem Virus in Verbindung gebracht wird, seit es sich unter Nutztieren ausbreitet."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "The Guardian",
-      "The Hill",
-      "Ars Technica",
-      "STAT News",
-      "ABC7 WWSB"
-    ],
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
-  }
+  "startedAt": "2026-11-03T02:22:12.578Z",
+  "updatedAt": "2026-11-03T14:29:08.811Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": null,
+  "sourceCount": 2,
+  "seenHeadlines": []
 }

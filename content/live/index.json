@@ -1,6 +1,38 @@
 {
-  "updatedAt": "2026-11-03T14:09:39.729Z",
+  "updatedAt": "2026-11-03T14:29:09.422Z",
   "tickers": [
+    {
+      "slug": "bird-flu-outbreak-in-u-s-cattle",
+      "status": "ended",
+      "category": "health",
+      "importance": 5,
+      "title": "Bird flu outbreak in U.S. cattle",
+      "dek": "A Washington state resident has died after exposure to infected cattle, the third U.S. death linked to the virus since it began spreading among livestock.",
+      "startedAt": "2026-11-03T02:22:12.578Z",
+      "updatedAt": "2026-11-03T14:29:08.811Z",
+      "endedAt": "2026-11-03T02:24:22.610Z",
+      "updateCount": 1,
+      "articleSlug": null,
+      "latest": {
+        "at": "2026-11-02T21:59:02.000Z",
+        "kind": "result",
+        "headline": "Washington resident dies from bird flu after exposure to infected cattle"
+      },
+      "locales": {
+        "de": {
+          "title": "Vogelgrippe-Ausbruch bei US-Rindern",
+          "dek": "Ein Einwohner des Bundesstaates Washington ist nach Kontakt mit infizierten Rindern gestorben – der dritte Todesfall in den USA, der mit dem Virus in Verbindung gebracht wird, seit es sich unter Nutztieren ausbreitet."
+        },
+        "en": {
+          "title": "Bird flu outbreak in U.S. cattle",
+          "dek": "A Washington state resident has died after exposure to infected cattle, the third U.S. death linked to the virus since it began spreading among livestock."
+        },
+        "fr": {
+          "title": "Foyer de grippe aviaire dans le bétail américain",
+          "dek": "Un résident de l’État de Washington est mort après avoir été exposé à des bovins infectés. Il s’agit du troisième décès américain lié au virus depuis le début de sa propagation parmi le bétail."
+        }
+      }
+    },
     {
       "slug": "u-s-midterm-elections",
       "status": "ended",
@@ -162,38 +194,6 @@
         "zh": {
           "title": "以色列组阁谈判",
           "dek": "以色列反对党正在磋商组建联合政府，加迪·艾森科特正获得出任总理的支持，而本雅明·内塔尼亚胡则在寻求组阁伙伴。"
-        }
-      }
-    },
-    {
-      "slug": "bird-flu-outbreak-in-u-s-cattle",
-      "status": "live",
-      "category": "health",
-      "importance": 5,
-      "title": "Bird flu outbreak in U.S. cattle",
-      "dek": "A Washington state resident has died after exposure to infected cattle, the third U.S. death linked to the virus since it began spreading among livestock.",
-      "startedAt": "2026-11-03T02:22:12.578Z",
-      "updatedAt": "2026-11-03T02:24:22.610Z",
-      "endedAt": null,
-      "updateCount": 1,
-      "articleSlug": null,
-      "latest": {
-        "at": "2026-11-02T21:59:02.000Z",
-        "kind": "result",
-        "headline": "Washington resident dies from bird flu after exposure to infected cattle"
-      },
-      "locales": {
-        "en": {
-          "title": "Bird flu outbreak in U.S. cattle",
-          "dek": "A Washington state resident has died after exposure to infected cattle, the third U.S. death linked to the virus since it began spreading among livestock."
-        },
-        "fr": {
-          "title": "Foyer de grippe aviaire dans le bétail américain",
-          "dek": "Un résident de l’État de Washington est mort après avoir été exposé à des bovins infectés. Il s’agit du troisième décès américain lié au virus depuis le début de sa propagation parmi le bétail."
-        },
-        "de": {
-          "title": "Vogelgrippe-Ausbruch bei US-Rindern",
-          "dek": "Ein Einwohner des Bundesstaates Washington ist nach Kontakt mit infizierten Rindern gestorben – der dritte Todesfall in den USA, der mit dem Virus in Verbindung gebracht wird, seit es sich unter Nutztieren ausbreitet."
         }
       }
     },
