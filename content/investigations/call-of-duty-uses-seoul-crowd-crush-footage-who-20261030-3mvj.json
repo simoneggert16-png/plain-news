@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-11-03T01:16:37.542Z",
+  "updatedAt": "2026-11-03T14:47:43.946Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -62,6 +62,21 @@
       "textLength": 5791,
       "image": "https://live-production.wcms.abc-cdn.net.au/6ddf7f7f8d84c5a05244fb2101952a73?impolicy=wcms_crop_resize&cropH=783&cropW=1392&xPos=78&yPos=148&width=862&height=485",
       "imageCaption": "Upstage Theatre Company co-founder Scott Hili says they fell victim to a catfish incident during their production of Jesus Christ Superstar. ( Supplied: Norrington Media )"
+    },
+    {
+      "id": "S4",
+      "url": "https://mjengohub.co.ke/articles/world/activision-removes-seoul-crush-footage-from-call-of-duty-after-backlash",
+      "outlet": "mjengohub.co.ke",
+      "title": "Activision removes Seoul crush footage from Call of Duty after backlash - Mjengo Hub",
+      "publishedAt": null,
+      "primary": false,
+      "kind": "read",
+      "addedAt": "2026-11-03T14:13:55.136Z",
+      "text": "Video clips showing the aftermath of a deadly crowd crush in Seoul will be removed from the latest Call of Duty video game after an angry reaction from victims' families.\nActivision and developer Infinity Ward face criticism after real-life news coverage from a fatal crowd crush in Seoul appeared in Call of Duty: Modern Warfare 4. The video clips, taken from the 2022 Itaewon district disaster in South Korea, were used in the game to illustrate a fictional invasion scenario.\nThe 10.29 Itaewon Disaster Bereaved Families Association expressed strong disapproval of the footage being included in an entertainment product, calling the choice senseless. Relatives of those who lost their lives in the tragedy, which claimed nearly 160 lives, stated that using actual footage of emergency personnel responding to the scene caused significant distress.\nIn a public statement, publisher Activision clarified that the opening cinematic utilises real-world news broadcasts to set up the fictional narrative of the title. The company stated that the inclusion was not intended to reference or trivialise the Itaewon disaster or any other real-world event. Activision extended condolences to the victims and confirmed that a game update scheduled for November 12 will permanently remove the clips from the game.\nThe association welcomed Activision's decision to remove the archived footage, but noted that the publisher had not contacted the group directly to issue a direct apology. The development team has previously faced scrutiny regarding how real-world historical conflicts and locations are referenced in video game campaigns.\nWe would like to send you breaking news, alerts, latest updates and expert insights.",
+      "readAt": "2026-11-03T14:13:55.136Z",
+      "textLength": 1712,
+      "image": "https://mjengohub.co.ke/static/images/articles/a8c22633e8464ef4b5e159f2409ac148_IMG-20261030-WA0006.jpg",
+      "imageCaption": "A soldier wearing tactical headgear and armor standing in front of promotional artwork for Call of Duty Modern Warfare 4"
     }
   ],
   "claims": [
@@ -152,6 +167,26 @@
       "status": "verified",
       "weight": 2,
       "checkedAt": "2026-10-31T18:40:23.389Z"
+    },
+    {
+      "id": "C9",
+      "text": "The 10.29 Itaewon Disaster Bereaved Families Association said the inclusion of the Itaewon crowd crush footage in Call of Duty: Modern Warfare 4 was senseless and that relatives of those who died suffered significant distress from seeing actual footage of emergency personnel responding to the scene.",
+      "sources": [
+        "S4"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-03T14:14:42.989Z"
+    },
+    {
+      "id": "C10",
+      "text": "The 10.29 Itaewon Disaster Bereaved Families Association welcomed Activision's decision to remove the footage but said the publisher had not contacted the group directly to issue a direct apology.",
+      "sources": [
+        "S4"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-03T14:16:06.675Z"
     }
   ],
   "gaps": [
@@ -282,22 +317,84 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-11-02T16:07:52.170Z",
+      "at": "2026-11-03T14:16:06.675Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "I have 3 outlets, 0 primary sources, 8 claims already filed, and 15 open gaps. The most document-shaped gap is the licensing of the footage: a contract between Activision and the Korean broadcaster that supplied the Itaewon clip would answer both the cost of acquisition and the financial benefit question. I will start there, then move to the Korean regulator/court doors (KCC, FTC, Seoul courts), t",
+          "action": "search",
+          "args": {
+            "query": "Activision Blizzard contract with Korean media company for crowd crush footage"
+          },
+          "ok": true,
+          "ms": 51817
+        },
+        {
+          "step": 2,
+          "thought": "The headline search returned mostly irrelevant wire hits; the two auto-opened pages are The Guardian (Reddit/Australia — irrelevant) and mjengohub.co.ke, which appears to cover the Activision removal. I need to read the mjengohub text in full before filing claims, and then pivot to the Korean primary doors (KCC, Seoul courts, Ministry of Culture) and the licensing contract rather than repeating th",
+          "action": "open",
+          "args": {
+            "url": "https://mjengohub.co.ke/articles/world/activision-removes-seoul-crush-footage-from-call-of-duty-after-backlash"
+          },
+          "ok": true,
+          "ms": 17389
+        },
+        {
+          "step": 3,
+          "thought": "The mjengohub.co.ke article is a genuine second outlet on the story and adds facts not in Yonhap: the name of the bereaved group (10.29 Itaewon Disaster Bereaved Families Association), that the group welcomed the removal but said Activision had not contacted it directly with an apology, and that the opening cinematic uses real-world news broadcasts to set up the fictional narrative. I will file th",
+          "action": "save_source",
+          "args": {
+            "url": "https://mjengohub.co.ke/articles/world/activision-removes-seoul-crush-footage-from-call-of-duty-after-backlash",
+            "outlet": "mjengohub.co.ke",
+            "title": "Activision removes Seoul crush footage from Call of Duty after backlash - Mjengo Hub",
+            "publishedAt": "2026-11-03"
+          },
+          "ok": true,
+          "ms": 17923
+        },
+        {
+          "step": 4,
+          "thought": "Source S6 (mjengohub.co.ke) is filed. It supports several facts not yet on file: the name of the bereaved group, its reaction to the removal, and Activision's explanation that the cinematic uses real-world news broadcasts to set up the fictional narrative. I will record these one fact per claim, starting with the bereaved families' association's named position.",
+          "action": "save_claim",
+          "args": {
+            "text": "The 10.29 Itaewon Disaster Bereaved Families Association said the inclusion of the Itaewon crowd crush footage in Call of Duty: Modern Warfare 4 was senseless and that relatives of those who died suffered significant distress from seeing actual footage of emergency personnel responding to the scene.",
+            "sources": [
+              "S6"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 29930
+        },
+        {
+          "step": 5,
+          "thought": "C9 is filed. Next fact from S6: the association welcomed the removal but said Activision had not contacted the group directly to issue a direct apology — this is a distinct, checkable fact and answers part of the gap on families' perspective.",
+          "action": "save_claim",
+          "args": {
+            "text": "The 10.29 Itaewon Disaster Bereaved Families Association welcomed Activision's decision to remove the footage but said the publisher had not contacted the group directly to issue a direct apology.",
+            "sources": [
+              "S6"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 83686
+        }
+      ],
+      "final": null
+    },
+    {
+      "at": "2026-11-03T14:38:14.197Z",
       "steps": [],
       "final": null
     },
     {
-      "at": "2026-11-03T01:00:42.047Z",
-      "steps": [],
-      "final": null
-    },
-    {
-      "at": "2026-11-03T01:15:02.453Z",
+      "at": "2026-11-03T14:46:05.156Z",
       "steps": [],
       "final": null
     }
   ],
-  "nextStep": "keep reporting: 3/8 outlets, 0/2 primary sources, no outreach sent",
+  "nextStep": "keep reporting: 4/8 outlets, 0/2 primary sources, no outreach sent",
   "letters": [
     {
       "id": "L1",
@@ -339,7 +436,7 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 22,
-  "blankShifts": 7,
-  "lastShiftAt": "2026-11-03T01:13:12.516Z"
+  "shifts": 25,
+  "blankShifts": 2,
+  "lastShiftAt": "2026-11-03T14:44:12.020Z"
 }
