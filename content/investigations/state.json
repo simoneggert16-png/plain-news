@@ -2,6 +2,21 @@
   "lastIntake": "2026-W45",
   "runs": [
     {
+      "at": "2026-11-03T14:48:10.889Z",
+      "active": 3,
+      "ms": 579203
+    },
+    {
+      "at": "2026-11-03T14:38:31.561Z",
+      "active": 3,
+      "ms": 1042583
+    },
+    {
+      "at": "2026-11-03T14:21:08.855Z",
+      "active": 3,
+      "ms": 1131514
+    },
+    {
       "at": "2026-11-03T01:18:39.863Z",
       "active": 2,
       "ms": 934656
@@ -276,9 +291,105 @@
         "un-mission-in-somalia-closes-leaving-300-000-displaced-20261102-4yab"
       ],
       "at": "2026-11-02T15:41:59.015Z"
+    },
+    {
+      "name": "UK National Crime Agency",
+      "centre": "English Channel and the UK–France smuggling routes",
+      "topics": [
+        "84-years-in-jail-who-financed-the-people-smuggling-20261103-imwr"
+      ],
+      "at": "2026-11-03T14:10:52.389Z"
+    },
+    {
+      "name": "Europol",
+      "centre": "Cross-border European and global online investment fraud",
+      "topics": [
+        "100-servers-seized-who-runs-the-investment-scam-networks-20261103-hywq"
+      ],
+      "at": "2026-11-03T14:21:34.681Z"
+    },
+    {
+      "name": "ICIJ",
+      "centre": "Russia, with international pharmaceutical companies and the global cancer drug m",
+      "topics": [
+        "cancer-drug-deals-how-pharma-giants-paid-a-russian-20261103-icql"
+      ],
+      "at": "2026-11-03T14:38:54.069Z"
     }
   ],
   "leads": [
+    {
+      "at": "2026-11-03T14:10:51.625Z",
+      "origin": "scan",
+      "summary": "The UK National Crime Agency announced final sentencing in a people-smuggling case, with combined jail terms of more than 84 years for the network's remaining members.",
+      "worth": true,
+      "title": "84 Years in Jail: Who Financed the People-Smuggling Network Behind the Channel",
+      "angle": "The sentences close a criminal case, but the investigation would trace who financed and organised the smuggling network, which routes and ports were used, how migrants were moved and paid for, and what happens to the people left on the French side of the Channel.",
+      "centre": "English Channel and the UK–France smuggling routes",
+      "people": "Migrants risking their lives on the Channel; the convicted organisers, drivers and boat owners; people smugglers' financiers and business partners; border and coastguard agencies; families of those who died or went missing on the route.",
+      "category": "world",
+      "queries": [
+        "National Crime Agency people smuggling network 84 years sentenced",
+        "Channel smuggling network organisers financing court documents",
+        "people smuggling English Channel routes investigation NCA France",
+        "migrant smuggling Channel deaths inquiry report",
+        "Channel smugglers business model profit investigation",
+        "Royaume-Uni contrebande immigration sentences réseau organisation"
+      ],
+      "url": "https://www.nationalcrimeagency.gov.uk/news/people-smuggling-network-get-combined-jail-terms-of-more-than-84-years-as-final-members-sentenced",
+      "outlet": "UK National Crime Agency",
+      "docTitle": "People smuggling network get combined jail terms of more than 84 years as final members sentenced",
+      "opened": "84-years-in-jail-who-financed-the-people-smuggling-20261103-imwr",
+      "tried": "2026-W45"
+    },
+    {
+      "at": "2026-11-03T14:10:51.624Z",
+      "origin": "scan",
+      "summary": "Europol and partners seized over 100 servers linked to investment scams with potential victims in at least 50 countries.",
+      "worth": true,
+      "title": "100 Servers Seized: Who Runs the Investment Scam Networks Behind 50-Country Fraud",
+      "angle": "The seizure of more than 100 servers is a documented action, but the investigation would ask who set up and still operates the scam infrastructure, which payment processors, hosting providers and cryptocurrency services enabled it, how victims in at least 50 countries were targeted, and where the mo",
+      "centre": "Cross-border European and global online investment fraud",
+      "people": "Retired and first-time investors defrauded across at least 50 countries; the operators and affiliates behind the scam sites; payment and hosting providers that enabled the network; law enforcement agencies in participating countries; regulators who failed to warn the public.",
+      "category": "tech",
+      "queries": [
+        "Europol investment scams 100 servers seized 50 countries",
+        "Eurojust investment fraud servers seized press release",
+        "investment scam call centres servers seized national police",
+        "online investment fraud victims 50 countries money laundering cryptocurrency",
+        "Anlagebetrug Server beschlagnahmt Europol Ermittlungen",
+        "investment fraud platform payment processor merchant accounts investigation"
+      ],
+      "url": "https://www.europol.europa.eu/media-press/newsroom/news/investment-scams-potential-victims-in-least-50-countries-over-100-servers-seized",
+      "outlet": "Europol",
+      "docTitle": "Investment scams with potential victims in at least 50 countries: over 100 servers seized",
+      "opened": "100-servers-seized-who-runs-the-investment-scam-networks-20261103-hywq",
+      "tried": "2026-W45"
+    },
+    {
+      "at": "2026-11-03T14:10:51.624Z",
+      "origin": "scan",
+      "summary": "ICIJ reports that major pharmaceutical companies paid millions to a Russian pharmaceutical distributor with corruption allegations to secure cancer drug business in Russia.",
+      "worth": true,
+      "title": "Cancer Drug Deals: How Pharma Giants Paid a Russian Distributor Under Corruption Cloud",
+      "angle": "Pharmaceutical companies paid millions to a Russian distributor with corruption allegations to win cancer drug business. The investigation would trace the payments, the contracts and beneficial ownership behind the distributor, the role of state-linked actors, and what patients and legitimate distri",
+      "centre": "Russia, with international pharmaceutical companies and the global cancer drug m",
+      "people": "Patients in Russia and elsewhere who depend on cancer medicines; the Russian distributor and its owners; pharmaceutical executives and sales agents; competing distributors and importers; officials alleged to be involved in corruption.",
+      "category": "business",
+      "queries": [
+        "ICIJ cancer calculus Russian distributor pharmaceutical payments",
+        "фармдистрибьютор рак препараты выплаты миллионы коррупция",
+        "лекарства для онкологических больных тендеры дистрибьютор Россия",
+        "pharmaceutical company contract Russian cancer drug distributor beneficial ownership",
+        "Росздравнадзор онкологические препараты закупки дистрибьюторы",
+        "декларации о доходах владельцы фармдистрибьютора рак препараты"
+      ],
+      "url": "https://www.icij.org/investigations/cancer-calculus/pharma-giants-pay-millions-to-russian-distributor-entangled-in-corruption-allegations-to-win-cancer-drug-business/",
+      "outlet": "ICIJ",
+      "docTitle": "Pharma giants pay millions to Russian distributor entangled in corruption allegations to win cancer drug business",
+      "opened": "cancer-drug-deals-how-pharma-giants-paid-a-russian-20261103-icql",
+      "tried": "2026-W45"
+    },
     {
       "at": "2026-10-31T12:26:30.122Z",
       "origin": "scan",
@@ -325,5 +436,5 @@
       "tried": "2026-W45"
     }
   ],
-  "lastScan": "2026-10-31"
+  "lastScan": "2026-11-03"
 }
