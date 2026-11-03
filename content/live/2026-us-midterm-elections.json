@@ -1,9 +1,126 @@
 {
+  "meta": {
+    "outlets": [
+      "DW",
+      "ABC Australia",
+      "New York Times",
+      "Axios",
+      "Semafor",
+      "Politico Europe",
+      "Dawn",
+      "Der Spiegel",
+      "El PaÃ­s",
+      "Africanews",
+      "NZZ",
+      "Times of India"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash"
+  },
   "slug": "2026-us-midterm-elections",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "2026 US midterm elections",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "en": {
+      "dek": "Voters across the United States cast ballots in the 2026 midterms, with control of Congress and implications for President Trump's agenda and the Iran conflict in view.",
+      "title": "2026 US midterm elections"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793746893000-wgii",
+      "at": "2026-11-03T23:01:33.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "First polls close in Indiana and Kentucky in 2026 midterms",
+          "body": "Polling places closed in parts of Indiana and Kentucky on 3 November, the first closures of the midterm elections, according to The Hill and Die Zeit. Voters are electing the House of Representatives and part of the Senate, ZDF reported. Die Zeit reported that counting has begun in those states."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Hill",
+          "title": "Live updates: Polls begin to close in Indiana, Kentucky as battle for Congress heats up",
+          "url": "https://thehill.com/homenews/campaign/6190941-live-updates-trump-midterm-elections-2026/",
+          "publishedAt": "2026-11-03T23:01:33.000Z"
+        },
+        {
+          "outlet": "Die Zeit",
+          "title": "Midterms live: Wahllokale schließen in weiten Teilen Indianas und Kentuckys",
+          "url": "https://www.zeit.de/politik/ausland/2026-10/midterms-usa-kongresswahlen-liveblog",
+          "publishedAt": "2026-11-03T23:00:20.000Z"
+        },
+        {
+          "outlet": "ZDF heute",
+          "title": "Midterms in den USA: Spannung vor Schließung erster Wahllokale",
+          "url": "https://www.zdfheute.de/politik/ausland/midterms-usa-wahl-kongress-liveticker-100.html",
+          "publishedAt": "2026-11-03T22:51:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793742757000-lhal",
+      "at": "2026-11-03T21:52:37.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Trump says US will end $4 billion in aid to Israel at end of year",
+          "body": "President Donald Trump said on 3 November that the United States will stop $4 billion in military aid to Israel at the end of the year, according to the New York Times and Reuters. Le Monde reported the annual support is $3.8 billion and that Trump gave no apparent detail or consultation. Trump said the move was part of an agreement reached months ago, the New York Times reported."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "New York Times",
+          "title": "Trump Says U.S. to End $4 Billion in Aid to Israel at End of Year",
+          "url": "https://www.nytimes.com/2026/11/03/us/politics/trump-israel-aid-netanyahu.html",
+          "publishedAt": "2026-11-03T21:52:37.000Z"
+        },
+        {
+          "outlet": "Reuters",
+          "title": "As Americans vote, Trump says US will stop $4 billion in aid to Israel",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTnAzZzVDS3N1RTJJdnkxYUJPQkl1X3h4d3hZaC1MX0RwXzRHOGRybmM3QjEzR1kybkJIUmNYcnVPbkNPMkt6TFBnTEdOYWFJemJkelBhVXZsRDQ5VG4wc1lSS0Q2dlRlUmV0VHI2Y3YxNWstRWVPUV95Y2pNUVp5TUlES3pCMC1GUzNTTXVfWWlGd1JlQ3p1XzJUWmJmbzlWUmtYTFlXNDFlZw?oc=5",
+          "publishedAt": "2026-11-03T21:24:37.000Z"
+        },
+        {
+          "outlet": "Le Monde",
+          "title": "Trump says US military aid to Israel will be 'cut off at the end of the year'",
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/03/trump-says-us-military-aid-to-israel-will-be-cut-off-at-the-end-of-the-year_6770788_4.html",
+          "publishedAt": "2026-11-03T21:08:17.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793747607280-txm0",
+      "at": "2026-11-03T23:13:27.280Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Justice Department sends election monitors for 2026 midterms",
+          "body": "The US Justice Department said it is sending election monitors to jurisdictions for the midterm elections, according to The Jerusalem Post and Der Spiegel. The Jerusalem Post reported the department is sending 1,000 monitors and observers across all 50 states. Der Spiegel reported the monitors were sent mainly to Democratic-dominated voting districts."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "US DOJ sends election monitors to all 50 states, expands Alaska Senate race probe",
+          "url": "https://www.jpost.com/american-politics/article-913759",
+          "publishedAt": "2026-11-03T23:43:43.000Z"
+        },
+        {
+          "outlet": "Der Spiegel",
+          "title": "Midterms 2026 in den USA: Donald Trumps Justizministerium schickt Wahlbeobachter vor allem in demokratisch dominierte Wahlbezirke",
+          "url": "https://www.spiegel.de/ausland/midterms-2026-in-den-usa-kippen-die-machtverhaeltnisse-so-laufen-die-zwischenwahlen-a-c6a7c5b3-24a1-4e70-a78e-067745ed4103#ref=rss",
+          "publishedAt": "2026-11-03T21:39:00.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "midterms",
     "midterm elections",
@@ -18,37 +135,73 @@
     "republicans",
     "iran"
   ],
+  "seenUrls": [
+    "https://www.jpost.com/american-politics/article-913759",
+    "https://www.healthline.com/health-news/rfk-jr-vaccine-schedule-changes-may-cause-surge-hepatitis-b",
+    "https://asia.nikkei.com/politics/u.s.-midterm-elections/us-midterms-live-first-polls-close-in-battle-for-congress",
+    "https://asia.nikkei.com/politics/u.s.-midterm-elections/5-things-to-know-about-the-us-midterms-and-what-they-mean-for-asia",
+    "https://www1.folha.uol.com.br/mundo/2026/11/na-disputa-das-midterms-trump-implora-por-votos-manda-cheques-e-promete-recompensa-para-eleitores.shtml",
+    "https://www1.folha.uol.com.br/mundo/2026/11/eua-encerram-campanha-para-midterms-eleicao-e-a-mais-importante-de-nossas-vidas-diz-trump.shtml",
+    "https://thehill.com/homenews/campaign/6190941-live-updates-trump-midterm-elections-2026/",
+    "https://www.scmp.com/news/us/us-elections/article/3373188/trumps-fate-balance-us-midterm-elections-put-house-senate-grabs",
+    "https://www.zeit.de/politik/ausland/2026-10/midterms-usa-kongresswahlen-liveblog",
+    "https://www.npr.org/2026/11/03/nx-s1-6027957/results-voter-id-citizenship-ballot-measures",
+    "https://www.zdfheute.de/politik/ausland/midterms-usa-wahl-kongress-liveticker-100.html",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQTdXajQzMm1waFMwZ0E5c0l0cjdUWF8xcWh5V1ZNS0FfT2hIb0RjSkxDb2FZYndleXpFVkRQZERkU1JObC1YT2oyT29mVE9mQndkbEdOWktUSTFISXhWM2tTYm1BQUI0WU1xVTB4SG1oMDhXNG51cDN5RDllOWp0Z21wSFB2MXA1RVR1N2ljVWNaaGUxYkpzbHYzOXNQOEkycXJUUjZFQ0QxRDhPUTZGYkVMSQ?oc=5",
+    "https://variety.com/2026/film/news/jennifer-lawrence-hunger-games-election-day-voting-1236938876/",
+    "https://www.straitstimes.com/world/united-states/prediction-markets-face-us-midterms-test-as-election-bets-soar",
+    "https://www.srf.ch/news/international/midterms-2026-erste-wahllokale-schliessen-in-kuerze",
+    "https://www.semafor.com/article/11/03/2026/us-gas-prices-hit-election-day-record",
+    "https://www.straitstimes.com/world/united-states/americans-vote-in-election-that-could-reshape-trump-presidency",
+    "https://www.faz.net/aktuell/politik/usa-unter-trump/midterms-welche-folgen-fruehere-zwischenwahlen-hatten-201647840.html",
+    "https://www.rollingstone.com/music/music-news/tinashe-democrat-support-midterm-elections-1235652177/",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxON2Z2cndTU3p6QU10MW0tZngtWk5vOHBzS2lWajFxQ21kTlAyTTdqT2R1N2lSOWtPLXdHQzA1ZUR5T18xRE1KTDZNZFdsUEN1WVgxNE1pZXpnSjY5NFJkeEMydWIyLXJZUUNxMlR0c0FtTlI1QjRZYTRDS18wS0hxVlhWZ21XSTRVdk96RWNBbm9RRUxqLVRRMmlqdEpGaldCWDY4?oc=5",
+    "https://www.npr.org/2026/11/03/nx-s1-6026494/election-cake-bake-off-hartford-connecticut",
+    "https://www.semafor.com/article/11/03/2026/us-voters-are-set-to-deliver-their-verdict-on-trump-20",
+    "https://news.google.com/rss/articles/CBMie0FVX3lxTE1aTDJPYWhvdmYtVlFmRmFfX0gxb1lxWi1PeVpDUXhtdTJBam56LTl0RVhhelMtYzRPM2gyWFpYSlB4ZmhUeXMxSmlFUzBKQ3hwRUVmckhfQ0Ftak02eFNSSXZPUjB2aDZSS3dkc2podXBjQ201RXJ4RGxuaw?oc=5",
+    "https://thehill.com/newsletters/business-economy/6194251-how-does-inflation-compare-to-past-midterm-cycles/",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTExKZC1fOW4wWG5kOGhWVXpEc2drQUpoTlI0emxIWGVYOXQ2RXlEd3hOZXJRNFJlV2xWN0lmY2w1NzRXeVA2RktYZ2NYdzd5SmRHVWFUck1zbm1XaXJPRDk1QXdNWkMtWHR6STBqU2tpUmdiZ0o4Zld1ZkNRdC05TDh6clhBbXVJLVlidFdJcHktc1dqb2pfX3k1Q0RYN3BqWVg4?oc=5",
+    "https://thehill.com/homenews/6194223-iowa-senate-josh-turek-ticket-splitting/",
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxPT29aUFVNbXVpR3pJbHNiYUhrMXZ5TERfTnR0LXBZWjRqNTY0blZyN1ZPVUlwT3ZXVjR6RG51VmN5cVZSOFFYRjQ5RkRCLWxFaEZwRF9mMjUxLUhTOFBtSnFHcTdJZ3Nmd0F3cjM4ZTdpTWpGNktUTU9ycHVyQjcxR2d4SEFta05SUUlXWjlwbzhGNW90LUZ6RUd6X2RZc2pfVWNTenZ1U250cHpNSGc5RWVsa2VSSWZqbVVPellhU2xuX19v?oc=5",
+    "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNYnhwNW1Nb3o4NWdJYUdKRUk4NTNmRmNhV0ZOcW9oOVk5NGNhbmpEeldEeDNTUlRLNWlSckNFeHFFb3ROcHAzVWZCbzdrdXRKOGE4Wm5vMHFySzk3TDd3MVF3OGdsN1ZqR19FZ2pOelE2dFp4VFhNam13S1drM1FxTVdXQjdwbnFlSjFtUU5vMTlZUU9WaGtlcFdsSGdsWHd6TEViRVNuWFVQRFo5TEsxQWN5ek1sTzdlY2J4VTR4UUtERHk0S1Z4NWlsWEtNTTdYbXlaZ2NjaC1hZ9IB3wFBVV95cUxQUlJDNmRSc0tTLTI3bWFnR2tKTkZsZDRJZzkxR1BzYTl2ZEQ0bDY1aHUtby1FUkplYmQ0WGxYLVpWb2Y3cThxZEZUVjJGSl9nOWpIcXJGZ2VYcFVLS1RjaEFVV1NyczM5M3g2VW9zN08yMWMxbmRSR2Q0Z3BiMnRzV2M0d3hfMVYwMVp2UjJKU2NRQTlRckNyUFRRUDBEaTdRNEhUcDlnWXFvek83ckZQdnFWdzY3eWNyeXFxdUJ2Tk9ybEhvUzVqek94aDYtQW1WbXhjd1hqVy1VQUtvTGNR?oc=5",
+    "https://www.srf.ch/news/international/usa/midterms-in-den-usa-wer-kontrolliert-kuenftig-den-us-kongress-die-neuesten-umfragen",
+    "https://www.nzz.ch/international/midterms-2026-der-kampf-um-die-macht-in-den-usa-ld.10045181",
+    "https://www.japantimes.co.jp/news/2026/11/04/world/politics/america-us-midterms-vote-congress/",
+    "https://www.zeit.de/politik/ausland/2026-11/midterms-us-kongresswahlen-ergebnisse-live",
+    "https://thehill.com/homenews/house/6194215-republicans-accuse-apa-antisemitism/",
+    "https://www.marketwatch.com/story/ais-control-over-the-bond-market-is-growing-even-rivaling-war-and-elections-5d727b35?mod=mw_rss_topstories",
+    "https://thehill.com/homenews/campaign/6194159-crockett-says-stevens-boosted-el-sayed/",
+    "https://thehill.com/homenews/senate/6194191-warnock-democrats-midterm-risks/",
+    "https://www.nytimes.com/2026/11/03/us/politics/midterm-elections-polls-early-results-senate-house.html",
+    "https://www.nytimes.com/2026/11/03/us/politics/trump-israel-aid-netanyahu.html",
+    "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaFFTTmYxUjNPTVJndC1JaXozeXZHcnA4N2xVMHlzT1VyVEtNUHY1T3lxRkpZaUdleGFZSlBXRHo5cENINUJ5cEYzN1BEalRmdENMRFpsREpyUjVtdG9GcUxmTVh0aTY5NHRUbDNxcVJwZGZNc3E2azZMQ1NOSTRoR3BYZHNxRElrT3pxOVhWaHhJb2hVRFpFXzVCQ3oyTy1iU1Rlb3F6ZmNLcDl4cFVEUWQtOUdVRDJGSnNySWVpajA0UWc1RzBwb2txM05mRUIyUFVmTDhPQXpEd9IB3wFBVV95cUxPMUltU0MxaGpKZ2Zid3VLencyQjhnMW9QZ1N1V25HTHRRcEVfc2R0eDJtc3RQXzFQZDVEeUNrUTV5ZWhXNGExOTFPbDdZVkp2Ml9qb1ZOajY4UkRkUi1vZmJOZDFyYTUtWjNEbnI1cG5CZ3VQdHNibTVmYXd5NzJDWmNLdmVPZDhUOG1FbjN3R3EzWFZHakRmam5OY1RIMW5uYUpoWE1lV3JkU3FVVWNUdGRtTjhTcmo4RVE0QldVRVBLc196alBlLVBMNFdoQmtmUGE4ZDQtYlg2NVZXX1BR?oc=5",
+    "https://www.nytimes.com/2026/11/03/world/europe/iran-nuclear-weapons-war.html",
+    "https://news.google.com/rss/articles/CBMivgFBVV95cUxOS01GdlcwQXNlbzFsNHlMZXpyWDlvVUhhREwwdVIwaml1cGRfOWNKZUJrRDFPcWJod0VtNVdGMlI2UlU2WnN2a291UmlPNUk1bXBqcXhtSDFDNmtOaVI3TmlfRVVKc0ZXWkdMamhZT1hDdS0tcDZWdGdBdmZ3VkQ2aHA4YUxmbmJOOGNmd2RuMURpTFRiNnNqSVR4OVd5YjdGTVBBUFU2elAwNnJueDNxRmd5ZkNFZG1IZmVOZlBR?oc=5",
+    "https://www.france24.com/en/tv-shows/business/20261103-trump-tariffs-hitting-small-businesses",
+    "https://thehill.com/policy/technology/6194056-openai-chatgpt-democracy-works-election-info/",
+    "https://thehill.com/homenews/campaign/6194071-gop-organizes-alaska-recount-fund/",
+    "https://www.spiegel.de/ausland/midterms-2026-in-den-usa-kippen-die-machtverhaeltnisse-so-laufen-die-zwischenwahlen-a-c6a7c5b3-24a1-4e70-a78e-067745ed4103#ref=rss",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZFE2MnhLMmZSZVptb3p4TlhDQzBUMEpZWERVaHN2dG1YbTJZWGRKZWZvM1laTzRubG5WLXdkMW93bW80VEhOcjhFRm92TTdJNlQtSGF5bWFkZWZDak54ZVdCYmdrS3dEQ2hvT0dpaGtJQ0tVbnNENFNtRHpDQWhfN3dFZlpaY2NucHBaSFN1NU4xWGpLdXBhMkxBU0tMSDluQ3NET0FQcDdabExT?oc=5",
+    "https://www.jpost.com/middle-east/article-913748",
+    "https://www.nytimes.com/2026/11/03/world/middleeast/trump-iran-war-election-strategy.html",
+    "https://www.tagesschau.de/tagesthemen/video-1677634.html",
+    "https://www.tagesschau.de/tagesthemen/video-1677632.html",
+    "https://www.straitstimes.com/world/united-states/ballot-machine-glitch-hits-new-york-county-in-tight-race-for-us-house",
+    "https://thehill.com/homenews/6193992-idaho-voters-choose-official-firearm/",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPQlpGendXNHN3ZHhHTU81eWRXeHZ2aW5ORXVkTlByQ0sxWS1yeGFZMEhEVDJ2UmFWOHZZQWg0VFFNbG80VFBLQkpSc2Z1T2F5VGswTU1VcjZMVDVsaXdEa2wyb0YyM0VJWndwYVhuSUE1aXNtSE1HdmJ6MmRDT25WcXk4Y0JYa0swdkxncDBpaFk?oc=5",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTnAzZzVDS3N1RTJJdnkxYUJPQkl1X3h4d3hZaC1MX0RwXzRHOGRybmM3QjEzR1kybkJIUmNYcnVPbkNPMkt6TFBnTEdOYWFJemJkelBhVXZsRDQ5VG4wc1lSS0Q2dlRlUmV0VHI2Y3YxNWstRWVPUV95Y2pNUVp5TUlES3pCMC1GUzNTTXVfWWlGd1JlQ3p1XzJUWmJmbzlWUmtYTFlXNDFlZw?oc=5",
+    "https://news.google.com/rss/articles/CBMieEFVX3lxTE0xTXdXT1EtNzR6OE9mdHlVRFQzRW9xeW5aWlBkdkkyYV8xaTh3R3VrekFHUTJxMk9YbDBfY08xSVZzY0pibC1lb0ZSM2F1TVhJYjZhdlFMRUt3YXIzT2N2V0FLQmFZU0RFRDkwUFNtQjg3ckYyZjZ1RA?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOE1OU3ZVQUtUbjlNRmpkd1Rsdll3ZUhLcWVZSVVES1hQb0dqOTRtYjhuUzNfOEc3OWdIODA5ZFZlZEUzb0FhZmFQQTRETEtkT2ZvVFlJY3pyaXRkMFZsNWpoMVNQTWZDQnJhVHNxVnRjNGJYOGxvRWJJZmY0ZEFBWWRHZEFwcnNuMXRvUzhUelJvQ3FZMGlub0JlZU5oeF9vMjBEZnBDVQ?oc=5",
+    "https://www.jpost.com/israel-news/defense-news/article-913745",
+    "https://www.semafor.com/article/11/03/2026/midterms-raise-new-election-security-questions",
+    "https://www.lemonde.fr/en/international/article/2026/11/03/trump-says-us-military-aid-to-israel-will-be-cut-off-at-the-end-of-the-year_6770788_4.html",
+    "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQM1ZXZnZHZ3o4R2V3aDhMS1ZocnRJS01KdWMwWk04ZFV4WThzcUwwX3QydkJaZm54dTluU1lYMXAydVlHY0ROWl96dDQ2RWhtcGVpYzJkWnd2Sk1yYWd4V3VHNVJva3J6WGJ4VnBXMjBPR2QtUDJpUVR6WGxZWG9JbkZUejg1QndrNC1DR1d4N1c3TDZnMkVTMy1qUWUxYjBrOFRlX3lkUVlDUUo1aHpLTFMtWE9PSW10QmdaVVJsNmVQY3VpanJwbFA5SlE1S0RWQ05lNnFVak1OZw?oc=5"
+  ],
   "startedAt": "2026-11-03T18:27:16.925Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-03T18:27:16.925Z",
-  "articleSlug": null,
-  "sourceCount": 26,
+  "updatedAt": "2026-11-03T23:13:27.933Z",
+  "importance": 5,
   "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "2026 US midterm elections",
-      "dek": "Voters across the United States cast ballots in the 2026 midterms, with control of Congress and implications for President Trump's agenda and the Iran conflict in view."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "DW",
-      "ABC Australia",
-      "New York Times",
-      "Axios",
-      "Semafor",
-      "Politico Europe",
-      "Dawn",
-      "Der Spiegel",
-      "El PaÃ­s",
-      "Africanews",
-      "NZZ",
-      "Times of India"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 8,
+  "seenHeadlines": []
 }
