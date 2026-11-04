@@ -1,9 +1,144 @@
 {
+  "meta": {
+    "outlets": [
+      "WRAL",
+      "Audacy",
+      "Newsday",
+      "Click2Houston",
+      "The Killeen Daily Herald",
+      "WV News"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "israeli-election-results-and-fraud-review",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Israeli Election Results and Fraud Review",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die israelische Wahlkommission erklärt, bei der Wahl in der vergangenen Woche sei kein Wahlbetrug festgestellt worden, während die Verantwortlichen die Beglaubigung der Ergebnisse und die Bildung einer neuen Regierung vorantreiben.",
+      "title": "Israelische Wahlergebnisse und Prüfung auf Wahlbetrug"
+    },
+    "en": {
+      "dek": "Israel's election commission says it found no fraud in last week's vote as officials move toward certifying results and the formation of a new government.",
+      "title": "Israeli Election Results and Fraud Review"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793771104000-m43c",
+      "at": "2026-11-04T05:45:04.000Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Israel's president weighs who will receive the mandate to form the next government",
+          "body": "Fox News reported on 4 November that Benjamin Netanyahu faces a coalition showdown as rivals seek to form Israel's next government, and that President Isaac Herzog is deciding who receives the mandate. EWN reported that the talks include unlikely alliances and political horse-trading."
+        },
+        "it": {
+          "headline": "Il presidente di Israele valuta chi riceverà l'incarico di formare il prossimo governo",
+          "body": "Fox News ha riferito il 4 novembre che Benjamin Netanyahu è alle prese con uno scontro per la coalizione mentre i rivali cercano di formare il prossimo governo di Israele, e che il presidente Isaac Herzog sta decidendo chi riceverà l'incarico. EWN ha riferito che i colloqui includono alleanze improbabili e baratti politici."
+        },
+        "de": {
+          "headline": "Israels Präsident erwägt, wer das Mandat zur Bildung der nächsten Regierung erhält",
+          "body": "Fox News berichtete am 4. November, dass sich Benjamin Netanyahu einem Koalitionsshowdown stellen muss, während Rivalen versuchen, Israels nächste Regierung zu bilden, und dass Präsident Isaac Herzog entscheidet, wer das Mandat erhält. EWN berichtete, dass die Gespräche auch unwahrscheinliche Bündnisse und politisches Tauschgeschäft umfassen."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Fox News",
+          "title": "Netanyahu faces coalition showdown as rivals maneuver to form Israel's next government",
+          "url": "https://www.foxnews.com/world/netanyahu-faces-coalition-showdown-rivals-maneuver-form-israels-next-government",
+          "publishedAt": "2026-11-04T05:45:04.000Z"
+        },
+        {
+          "outlet": "EWN",
+          "title": "Coalition talks: Unlikely alliances and political horse-trading loom",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTXFJWEszTC1EVnk1cW9vOFhXYWRVbWFfdHN6dzJUX3E5TWVnUlU1SXFYWHpwcGwxTU9pZ1VJZENwUHhBbWtxWkJEXy1lT0ZNU0VlUTlDMndzak5wWk5BUEtHcFAyel96YjJBUEVVTkRTUXZYS1psU1dPbnRHbVJQb0ptMm1lWVJHdFRGZ3R2Q183TnZWcV96Y0xqcjF1UUV6WGc?oc=5",
+          "publishedAt": "2026-11-04T04:42:30.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-04T07:09:17.403Z",
+      "id": "u-1793776157403-lud8",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Israels Zentrales Wahlkomitee erklärte laut WRAL, Newsday und The Jerusalem Post, es habe keine Hinweise auf Wahlbetrug bei der Wahl von letzter Woche gefunden. The Jerusalem Post und Haaretz berichteten, das Komitee habe auch keine Hinweise darauf gefunden, dass die Wahlintegrität beeinträchtigt worden sei.",
+          "headline": "Israels Wahlkommission findet keine Hinweise auf Wahlbetrug bei der Wahl von letzter Woche"
+        },
+        "en": {
+          "body": "Israel's Central Elections Committee said it found no evidence of fraud in last week's vote, according to WRAL, Newsday and The Jerusalem Post. The Jerusalem Post and Haaretz reported that the committee also found no evidence that election integrity had been compromised.",
+          "headline": "Israel's election commission finds no evidence of fraud in last week's vote"
+        },
+        "es": {
+          "body": "La Comisión Electoral Central de Israel afirmó que no encontró pruebas de fraude en la votación de la semana pasada, según WRAL, Newsday y The Jerusalem Post. The Jerusalem Post y Haaretz informó de que el comité tampoco halló pruebas de que la integridad electoral se hubiera visto comprometida.",
+          "headline": "La comisión electoral de Israel no encuentra pruebas de fraude en la votación de la semana pasada"
+        },
+        "fr": {
+          "body": "Le comité central des élections d’Israël a déclaré n’avoir trouvé aucune preuve de fraude lors du scrutin de la semaine dernière, selon WRAL, Newsday et The Jerusalem Post. The Jerusalem Post et Haaretz ont rapporté que le comité avait également trouvé aucune preuve que l’intégrité des élections avait été compromise.",
+          "headline": "La commission électorale israélienne ne trouve aucune preuve de fraude lors du vote de la semaine dernière"
+        },
+        "it": {
+          "body": "Il Comitato centrale elettorale di Israele ha dichiarato di non aver trovato prove di brogli nel voto della scorsa settimana, secondo WRAL, Newsday e The Jerusalem Post. The Jerusalem Post e Haaretz hanno riportato che il comitato ha inoltre rilevato di non trovare prove che l'integrità delle elezioni fosse stata compromessa.",
+          "headline": "La commissione elettorale israeliana non trova prove di brogli nel voto della scorsa settimana"
+        },
+        "ja": {
+          "body": "WRAL、ニュースデイ、エルサレム・ポストによると、イスラエル中央選挙委員会は、先週の投票に不正の証拠はなかったと発表した。エルサレム・ポストとハアレツは、委員会が選挙の公正性が損なわれたとする証拠もなかったと報じた。",
+          "headline": "イスラエル中央選挙委員会、先週の投票に不正の証拠なしと認定"
+        },
+        "ko": {
+          "body": "WRAL, 뉴스데이, 예루살렘 포스트에 따르면 이스라엘 중앙선거위원회는 지난 주 투표에서 부패의 증거를 찾지 못했다. 예루살렘 포스트와 하아레츠는 위원회가 선거의 공정성이 훼손됐다는 증거도 찾지 못했다고 보도했다.",
+          "headline": "이스라엘 선거위, 지난 주 투표에서 부패 증거 없다고 판명"
+        },
+        "pt": {
+          "body": "A Comissão Central de Eleições de Israel afirmou que não encontrou provas de fraude na votação da semana passada, de acordo com a WRAL, o Newsday e o Jerusalem Post. O Jerusalem Post e o Haaretz|km informaram que a comissão também não encontrou provas de que a integridade das eleições tivesse sido comprometida.",
+          "headline": "Comissão eleitoral de Israel não encontra provas de fraude na votação da semana passada"
+        },
+        "zh": {
+          "body": "据WRAL、《新闻日报》和《耶路撒冷邮报》报道，以色列中央选举委员会表示，未发现上周投票存在舞弊证据。《耶路撒冷邮报》和《国土报》报道称，该委员会还发现，没有证据表明选举的公正性遭到破坏。",
+          "headline": "以色列选举委员会称未发现上周投票存在舞弊证据"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913780",
+          "title": "CEC finds no evidence of compromised election integrity as Likud prepares to file appeal on results",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-04T07:55:42.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNeWpfb181RnlYdW1IbXdNaTFvdWRxbEVUc01XSENaUTctZ2VUd3NxcXRxY1YtVTJ0VHFDbVZKaW1rUHpid0ZGUk56WW14aWFHdm12N0FtUFhqOEZKbF9iaGk3UmR1NVdCNHMyUG5xQ255MUpaOE9aUmdJN2pzZ0JPbDVJdnZKWDhFek01bjZPa3FBT2ZkNUwyNnUtVWtZYTZwUFZFbw?oc=5",
+          "title": "Israel's election commission says no fraud found in last week's vote",
+          "outlet": "WRAL",
+          "publishedAt": "2026-11-04T06:56:59.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxNbW9raVFnak1ZUGZUbXBLVEluZWJEaEE2S3ptOFR5RFg1VWtpRmlxLWxXT1U4eXpHNnBtdXo0RHAyZkJSVVJVTUhFQWFOcW1pYjFJQXR6cEU4bzRaMUI4OV92OXd1NGF2VWJfck03U01JZUpOa293VXNYeVRNZ21JVHRqSWxESVpWY09mbkFYNEdnRWQzUHlkSWNXWmJpaGNzbTVwNnExdHdqYUx0eV8wdGRjLUN0czhfMFlpTEhPdG92UVlMNUlCLS01MkJVT0NadFdIY2FDQ3d6dWtieHY0YmlUaS1lbDAySHJoVDdsWm9UaXh3ZEkxdkZoX1NKSVh6M0REUHFaeVk2WnFkYlRNTDhpMkJ2LWtPNGZj?oc=5",
+          "title": "Israel's election commission finds no evidence of fraud amid Netanyahu's claims",
+          "outlet": "Haaretz",
+          "publishedAt": "2026-11-04T06:51:00.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nREN0bnFKMmZsSm1VY2Ffb0xYdVRXNURPbFJMaXRIOVJ3a0h0Q2RXeGxteThKLXlPd1dQM3ZZaVdwckh5NGFPNXBQS05QOTdhcHVfZlVycnhCU19BOTVySWZTaEk1R0p0SndkR2tjclpfS3JCNHZN?oc=5",
+          "title": "Israel's election commission says no fraud found in last week's vote",
+          "outlet": "Newsday",
+          "publishedAt": "2026-11-04T06:33:02.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBWdmdvcHJsRUhzM2hRVk9XU3ByYzVzTGNQc0pCVzZOQ2wzWFRVdkJSbG9RT0FLdHlQUFdZTzNyVnhlVFh6NTBCQ3JkcWQ1WkoyM0tiX3Fic2hjQmhfcFFlRmhJTDlsd0NS?oc=5",
+          "title": "CEC finds no evidence that Israel's election integrity was compromised, to submit results to Herzog",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-04T05:55:42.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "israel",
     "election",
@@ -16,90 +151,6 @@
     "knesset",
     "netanyahu",
     "coalition"
-  ],
-  "startedAt": "2026-11-04T07:08:20.032Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-04T07:09:28.565Z",
-  "articleSlug": null,
-  "sourceCount": 4,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1793776157403-lud8",
-      "at": "2026-11-04T07:09:17.403Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Israel's election commission finds no evidence of fraud in last week's vote",
-          "body": "Israel's Central Elections Committee said it found no evidence of fraud in last week's vote, according to WRAL, Newsday and The Jerusalem Post. The Jerusalem Post and Haaretz reported that the committee also found no evidence that election integrity had been compromised."
-        },
-        "es": {
-          "headline": "La comisión electoral de Israel no encuentra pruebas de fraude en la votación de la semana pasada",
-          "body": "La Comisión Electoral Central de Israel afirmó que no encontró pruebas de fraude en la votación de la semana pasada, según WRAL, Newsday y The Jerusalem Post. The Jerusalem Post y Haaretz informó de que el comité tampoco halló pruebas de que la integridad electoral se hubiera visto comprometida."
-        },
-        "it": {
-          "headline": "La commissione elettorale israeliana non trova prove di brogli nel voto della scorsa settimana",
-          "body": "Il Comitato centrale elettorale di Israele ha dichiarato di non aver trovato prove di brogli nel voto della scorsa settimana, secondo WRAL, Newsday e The Jerusalem Post. The Jerusalem Post e Haaretz hanno riportato che il comitato ha inoltre rilevato di non trovare prove che l'integrità delle elezioni fosse stata compromessa."
-        },
-        "de": {
-          "headline": "Israels Wahlkommission findet keine Hinweise auf Wahlbetrug bei der Wahl von letzter Woche",
-          "body": "Israels Zentrales Wahlkomitee erklärte laut WRAL, Newsday und The Jerusalem Post, es habe keine Hinweise auf Wahlbetrug bei der Wahl von letzter Woche gefunden. The Jerusalem Post und Haaretz berichteten, das Komitee habe auch keine Hinweise darauf gefunden, dass die Wahlintegrität beeinträchtigt worden sei."
-        },
-        "zh": {
-          "headline": "以色列选举委员会称未发现上周投票存在舞弊证据",
-          "body": "据WRAL、《新闻日报》和《耶路撒冷邮报》报道，以色列中央选举委员会表示，未发现上周投票存在舞弊证据。《耶路撒冷邮报》和《国土报》报道称，该委员会还发现，没有证据表明选举的公正性遭到破坏。"
-        },
-        "fr": {
-          "headline": "La commission électorale israélienne ne trouve aucune preuve de fraude lors du vote de la semaine dernière",
-          "body": "Le comité central des élections d’Israël a déclaré n’avoir trouvé aucune preuve de fraude lors du scrutin de la semaine dernière, selon WRAL, Newsday et The Jerusalem Post. The Jerusalem Post et Haaretz ont rapporté que le comité avait également trouvé aucune preuve que l’intégrité des élections avait été compromise."
-        },
-        "ja": {
-          "headline": "イスラエル中央選挙委員会、先週の投票に不正の証拠なしと認定",
-          "body": "WRAL、ニュースデイ、エルサレム・ポストによると、イスラエル中央選挙委員会は、先週の投票に不正の証拠はなかったと発表した。エルサレム・ポストとハアレツは、委員会が選挙の公正性が損なわれたとする証拠もなかったと報じた。"
-        },
-        "pt": {
-          "headline": "Comissão eleitoral de Israel não encontra provas de fraude na votação da semana passada",
-          "body": "A Comissão Central de Eleições de Israel afirmou que não encontrou provas de fraude na votação da semana passada, de acordo com a WRAL, o Newsday e o Jerusalem Post. O Jerusalem Post e o Haaretz|km informaram que a comissão também não encontrou provas de que a integridade das eleições tivesse sido comprometida."
-        },
-        "ko": {
-          "headline": "이스라엘 선거위, 지난 주 투표에서 부패 증거 없다고 판명",
-          "body": "WRAL, 뉴스데이, 예루살렘 포스트에 따르면 이스라엘 중앙선거위원회는 지난 주 투표에서 부패의 증거를 찾지 못했다. 예루살렘 포스트와 하아레츠는 위원회가 선거의 공정성이 훼손됐다는 증거도 찾지 못했다고 보도했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Jerusalem Post",
-          "title": "CEC finds no evidence of compromised election integrity as Likud prepares to file appeal on results",
-          "url": "https://www.jpost.com/israel-election-2026/article-913780",
-          "publishedAt": "2026-11-04T07:55:42.000Z"
-        },
-        {
-          "outlet": "WRAL",
-          "title": "Israel's election commission says no fraud found in last week's vote",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNeWpfb181RnlYdW1IbXdNaTFvdWRxbEVUc01XSENaUTctZ2VUd3NxcXRxY1YtVTJ0VHFDbVZKaW1rUHpid0ZGUk56WW14aWFHdm12N0FtUFhqOEZKbF9iaGk3UmR1NVdCNHMyUG5xQ255MUpaOE9aUmdJN2pzZ0JPbDVJdnZKWDhFek01bjZPa3FBT2ZkNUwyNnUtVWtZYTZwUFZFbw?oc=5",
-          "publishedAt": "2026-11-04T06:56:59.000Z"
-        },
-        {
-          "outlet": "Haaretz",
-          "title": "Israel's election commission finds no evidence of fraud amid Netanyahu's claims",
-          "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxNbW9raVFnak1ZUGZUbXBLVEluZWJEaEE2S3ptOFR5RFg1VWtpRmlxLWxXT1U4eXpHNnBtdXo0RHAyZkJSVVJVTUhFQWFOcW1pYjFJQXR6cEU4bzRaMUI4OV92OXd1NGF2VWJfck03U01JZUpOa293VXNYeVRNZ21JVHRqSWxESVpWY09mbkFYNEdnRWQzUHlkSWNXWmJpaGNzbTVwNnExdHdqYUx0eV8wdGRjLUN0czhfMFlpTEhPdG92UVlMNUlCLS01MkJVT0NadFdIY2FDQ3d6dWtieHY0YmlUaS1lbDAySHJoVDdsWm9UaXh3ZEkxdkZoX1NKSVh6M0REUHFaeVk2WnFkYlRNTDhpMkJ2LWtPNGZj?oc=5",
-          "publishedAt": "2026-11-04T06:51:00.000Z"
-        },
-        {
-          "outlet": "Newsday",
-          "title": "Israel's election commission says no fraud found in last week's vote",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nREN0bnFKMmZsSm1VY2Ffb0xYdVRXNURPbFJMaXRIOVJ3a0h0Q2RXeGxteThKLXlPd1dQM3ZZaVdwckh5NGFPNXBQS05QOTdhcHVfZlVycnhCU19BOTVySWZTaEk1R0p0SndkR2tjclpfS3JCNHZN?oc=5",
-          "publishedAt": "2026-11-04T06:33:02.000Z"
-        },
-        {
-          "outlet": "The Jerusalem Post",
-          "title": "CEC finds no evidence that Israel's election integrity was compromised, to submit results to Herzog",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBWdmdvcHJsRUhzM2hRVk9XU3ByYzVzTGNQc0pCVzZOQ2wzWFRVdkJSbG9RT0FLdHlQUFdZTzNyVnhlVFh6NTBCQ3JkcWQ1WkoyM0tiX3Fic2hjQmhfcFFlRmhJTDlsd0NS?oc=5",
-          "publishedAt": "2026-11-04T05:55:42.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.jpost.com/american-politics/article-913770",
@@ -161,30 +212,73 @@
     "https://news.google.com/rss/articles/CBMif0FVX3lxTFBFNWlxTHRRMGVWNVJ4dkdiZ0hHbzhKWVk1WmNtbDBPNXhya1RteGhHdk1XN1hZMWUyQWRvVmJoZVlmcUxCbmRhOWJhWjFaSENuQTQtZFQwYjk0UDZ3LVNPX0pxQTBKV1ZSTXBHQWxFaldoZzF5c1d1SFE5dWdpaU0?oc=5",
     "https://www.dw.com/en/india-news-election-body-opens-door-for-voter-reinclusion/live-79849888?maca=en-rss-en-all-1573-rdf",
     "https://news.sky.com/story/expect-the-worst-what-results-mean-for-the-world-dominic-waghorn-13607794",
-    "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBWdmdvcHJsRUhzM2hRVk9XU3ByYzVzTGNQc0pCVzZOQ2wzWFRVdkJSbG9RT0FLdHlQUFdZTzNyVnhlVFh6NTBCQ3JkcWQ1WkoyM0tiX3Fic2hjQmhfcFFlRmhJTDlsd0NS?oc=5"
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBWdmdvcHJsRUhzM2hRVk9XU3ByYzVzTGNQc0pCVzZOQ2wzWFRVdkJSbG9RT0FLdHlQUFdZTzNyVnhlVFh6NTBCQ3JkcWQ1WkoyM0tiX3Fic2hjQmhfcFFlRmhJTDlsd0NS?oc=5",
+    "https://www.scmp.com/news/china/diplomacy/article/3373236/fake-democracy-or-plus-beijing-chinese-internet-users-us-midterms",
+    "https://en.yna.co.kr/view/AEN20261104004551315",
+    "https://thehill.com/homenews/state-watch/6194323-dc-approves-foie-gras-ban/",
+    "https://en.yna.co.kr/view/AEN20261104006851320",
+    "https://www.euronews.com/2026/11/04/europe-today-democrats-win-senate-in-rebuke-of-trump-as-polands-crisis-drags-on",
+    "https://thehill.com/homenews/campaign/6179014-massachusetts-question-3-ballot-measure-defeated/",
+    "https://www.straitstimes.com/world/united-states/us-midterms-historic-leadership-firsts-for-minorities-across-us-in-midterm-vote",
+    "https://timesofindia.indiatimes.com/world/us/us-mid-term-elections/news/abdul-el-sayed-wasnt-supposed-to-be-a-politician-now-hes-americas-1st-muslim-senator/articleshow/135528069.cms",
+    "https://timesofindia.indiatimes.com/technology/tech-news/hours-after-mid-term-election-results-elon-musk-sends-lets-go-to-space-message-to-google-amazon-meta-and-other-companies-building-data-centres-says-right-now-/articleshow/135528409.cms",
+    "https://timesofindia.indiatimes.com/world/us/us-mid-term-elections/news/445m-down-the-drain-elon-musks-republican-gamble-fails-guess-my-election-interfering-space-lasers-didnt-work/articleshow/135528105.cms",
+    "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMFMyWVA4MThqMWhrYm1VeVZNTFNJSzJjOGFOZHliaVZSWEdTV1JkTWdNMEdacDRwZ1I3dURLcC02eEJDbXY0RFVOUDFwQVhDUzlFRnZqYmNjV1I4MC1WeDdwRlhSUHE5ZFVyOGthQ3RBNXhvU295aHV3SnRsVUo3aUtXOTVwVG8?oc=5",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaUFRb0VTSkZJVXZWMUFPbTl1YW10M0hMRzZ2SGNFOF9UdlBXcTUzLXhuUFdsVlYxRmVVaHhKX196c3BMZVF2TDNBbXRBZERtN1Fnam1DN2Y5ZnhhRE9CZFhCTDBReDFYTy1tWjYyQnU3THN5dUZHSG9wU25vQlQxQWRsaUhrQ00tdTd0WEpland4X2NnZk9nSG1iNA?oc=5",
+    "https://news.google.com/rss/articles/CBMijgFBVV95cUxQeE5oQXFGa09VUTdRT0VxOFYxN1FyMkI2MWlzZzVpaEpINjZzcVFjdnlxb18zOENiQXJaaDFvVG5CWkM5V1JhaTA4Y1VJM3R6QkFxQjgzTGhRUHBSMjl2SkxJTktVX19CbjBLRnFxc0d4NWNKQ0xLU1RlU3dMYjdMeVRYT1BvcEF6WVRsTHN3?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxPODJ1N0owNU5rWjVaUEQ3UlA3WEVVTDRIQUJraFp2dVZhVGMtdVNDQVRtU280czZ0WktNbWp0RVVNS0xUaktJeUh2MGdNUVZqWXZlS2lQeUVqcjdvb0Rocl9oRDJnRXVvNXVXeTM5Z2ZZckswYmNGM3czdnNIa3RQZFlDRlI5MkJKTGx5dGtXLTZDZFVXQU9iaDNXSWZrQQ?oc=5",
+    "http://www.africanews.com/2026/11/04/south-africans-vote-amid-growing-discontent-over-failing-services-and-infrastructure/",
+    "https://www.scmp.com/news/china/diplomacy/article/3373226/i-wasnt-ballot-trump-deflects-blame-democrats-track-control-congress",
+    "https://www.foxnews.com/world/netanyahu-faces-coalition-showdown-rivals-maneuver-form-israels-next-government",
+    "https://www.npr.org/2026/11/04/nx-s1-6028080/voter-polls-midterms-demographics",
+    "https://en.yna.co.kr/view/AEN20261104006500315",
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1xeWRlcjJ5d2pNaXpaRkpuWURxSzZVdEJuSzVndGgtYzlNenVpd0xpZmE5V0hGQUljYzVUMUI2Y1dZM1FWUkdWYlJRVmNxd3Byb2EzUkpR?oc=5",
+    "https://www.nytimes.com/2026/11/04/business/midterm-elections-stock-market.html",
+    "https://www.hollywoodreporter.com/news/politics-news/ben-shapiro-2026-midterms-wipeout-republicans-president-ballot-1236747358/",
+    "https://www.straitstimes.com/world/united-states/us-midterm-elections-top-house-democrat-vows-to-go-after-those-enriching-themselves",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxObG1XTURJVGNKc2l4UU94MXl4dDYweWlyQ3ZlRW1xdUY3TGp5a2VrMm90WXFvajFyUGFKdmdwLU5wcFZtSF9qZEdKdmllREJiZVRDQUx4WGpiOHlNN2FYYURfWHNRdDMyMXB6RjNjNTgtVTREejBia3YwZ0YyQWFfb2N6bFREbWJrOGhBNTQtaTBYVVE0RV9rNW11WV9RYWg3bVRlQ0d1c0RiUjVPdTJfZFNWdmFNdw?oc=5",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxQRkNMODNza2VBZERxcDFBc1A1MkxmQTBzbzdSOXFLeUNKRk5SNTNTSjJBQWpLSmZqVlBmU1ZDOUdsWUNPYXFxcnN4QnVHRmUxRHFHQ3I1TW5mUktzc2ROcDBOaHNvaVFoRWJibzgtZGxmTE0ybTAwZ3l3S2JmSV9MdkI0YTAyR3A2QllsZ0lBSnZmTUtrY3hVWnp0ZFlhLXV0?oc=5",
+    "https://allafrica.com/stories/202611040137.html",
+    "https://www.scmp.com/news/us/politics/article/3373224/us-voters-unleash-blue-wave-handing-congress-democrats-and-rebuking-trump",
+    "https://www.abc.net.au/news/2026-11-04/donald-trump-no-lame-duck-despite-us-midterm-results/107339272",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPS1FsTkh6UzBMdXY3MnNJdHB3WlF4MExfLTRST1dMU3NWWVNTUnNHWTBYNUdqQ1M2SG9yWUZKTWdqb3FMd0FNUVIzbmo5dFkzT0RMR0tCMnpvZDNKbmlfSU95ZF9NeFRPZW5FRnFRblpSVlRjTmROOFY4QkZrcE9nUkJHN2xnWk5hb0lGRlNjQmU?oc=5",
+    "https://www.semafor.com/article/11/03/2026/buckle-up-a-defiant-white-house-pins-blame-elsewhere",
+    "https://www.kyivpost.com/post/89065",
+    "https://www.straitstimes.com/world/united-states/kansas-sends-democrat-to-us-senate-for-first-time-since-1932",
+    "https://timesofindia.indiatimes.com/business/india-business/what-will-trump-losing-us-midterm-elections-mean-for-sensex-nifty-explained/articleshow/135520940.cms",
+    "https://insideclimatenews.org/news/04112026/democrats-seize-congress-statehouses-in-referendum-on-the-economy/",
+    "https://www.japantimes.co.jp/business/2026/11/04/markets/japan-stocks-sink/",
+    "https://www.politico.eu/article/five-things-europe-monitor-democrats-blitz-donald-trump-us-midterms/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.axios.com/2026/11/04/trump-fox-news-posts-election-night",
+    "https://www.thehindu.com/news/international/in-huge-blow-to-republicans-democrat-talarico-flips-us-senate-seat-in-texas/article71663939.ece",
+    "https://www.axios.com/2026/11/04/trump-republicans-midterms-2026-landslide-blue-wave",
+    "https://www.axios.com/2026/11/04/republicans-midterms-johnson-trump-scalise",
+    "https://www.nytimes.com/2026/11/03/us/politics/trump-midterm-election-results.html",
+    "https://www.foxnews.com/politics/scandal-plagued-ilhan-omar-easily-secures-5th-term-deep-blue-minnesota-despite-immigration-fraud-probe",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdlU3N2txZF9iNnMtNGVYbVJzS3l0dEkxRjRGdXpOTVBDWHQtWmIyQnpGeHRtUW94Q2dMMXhXeXJkSXR5S3IzeENfam9TUnZFeXg5bWhkMVdXQ251V1hOSjBhb2ZXVnNTUlVDNTRkWkdfRzhwUkNMaXlaQnZqZEg0ZzhiRjdfTVpLcHAxZDNYNWRPOUdkZDZfNm55V0FPZ0lfN1dOYUE4WFFYbC0t?oc=5",
+    "https://allafrica.com/stories/202611040075.html",
+    "https://variety.com/2026/politics/news/karen-bass-nithya-raman-l-a-mayor-1236938860/",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNWhoMGVibXRyYWtzb3FfZTVOWTdfTEJVSVVBSGZjbG8xXzluWmQ2YldaREhvQkw5a3hsTkp3U3UtR2d4UXJDbWpyRi1qTnljMm9ldVdQMVZ6a1VaZjdzenNRN01mb3pya1ZQblRJc1Y4MjIyR2lUdUdGS1VOd3JJNXFIMjdJWnNlZUxBa2t0NllCdzk5c3A1QjlIUXhmTmY5ZHFfRHhPelVPVWJ6cnkyRzBxNNIBuAFBVV95cUxOV18xMlVKNmRudkxXYjFESzVHMVNHdl9nc3ZTcFAyNmpjQm42NFlia2hFWTMtQ25aV2RNNXJtVDVHLWJFT2xGRGE4VXhtUk02TVFvTWVzV1k4bWNiQ1hUOEIzS3VkV0FNV1ZXN2tLektRbWd1R0Fscm9hMng4eU1XZ2tXSkRNZEdra3MxMFBMZkFiVVQ5Qlg1dHQ2YnFuZnljcDdJZi1jQ3ZKTTZkWGNuWUJvc0pPb1ha?oc=5",
+    "https://www.bbc.co.uk/news/articles/cm4g1j0n92qdo?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE83M2VOTWh3QjVSY2RGd3NfYUxyY0FxS3J5UGduMFFkcjFWTmdEVHlPdFlDMEhWWEcwV3Nab3NSYnNXTkJmTml6b1FkQWRScHpPQmRBdmUxY3NwUVk?oc=5",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTXFJWEszTC1EVnk1cW9vOFhXYWRVbWFfdHN6dzJUX3E5TWVnUlU1SXFYWHpwcGwxTU9pZ1VJZENwUHhBbWtxWkJEXy1lT0ZNU0VlUTlDMndzak5wWk5BUEtHcFAyel96YjJBUEVVTkRTUXZYS1psU1dPbnRHbVJQb0ptMm1lWVJHdFRGZ3R2Q183TnZWcV96Y0xqcjF1UUV6WGc?oc=5",
+    "https://www.npr.org/2026/11/03/nx-s1-6028105/on-a-historic-night-for-democratic-socialists-mamdani-says-midterms-show-power-of-working-class-voters",
+    "https://variety.com/2026/politics/news/midterm-election-results-democrats-win-house-senate-1236938473/",
+    "https://www.aljazeera.com/news/2026/11/4/democratic-party-flips-us-senate-in-2026-midterm-elections?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTk5rcnY4OE9zSVY2eV83ZW5IbFdVeGpZZnVyQVg4dV9hZlRIUnpFc3JCQnpSV2NHLXBmeVdSRUpyMGZRQmQxSHhpM1MzQ1lFa09RLUNfRXpYZG5UbGxEZGx5UDRqZzRzcU5LMlAwTzNBQXdXVnRPcl9LSkFCSHhic3QzQl9abV9wVjJaNVlvbjBNT2hQU0FOa1k3SjcxenR5TDUyQzRxVF9yRjRBYzNmT3BSZG5wZEtqNFdBTG5kMlYzNFNFRUoxOU42dkxkSnc?oc=5",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZFE2MnhLMmZSZVptb3p4TlhDQzBUMEpZWERVaHN2dG1YbTJZWGRKZWZvM1laTzRubG5WLXdkMW93bW80VEhOcjhFRm92TTdJNlQtSGF5bWFkZWZDak54ZVdCYmdrS3dEQ2hvT0dpaGtJQ0tVbnNENFNtRHpDQWhfN3dFZlpaY2NucHBaSFN1NU4xWGpLdXBhMkxBU0tMSDluQ3NET0FQcDdabExT?oc=5",
+    "https://www.straitstimes.com/world/united-states/trump-says-he-will-accept-results-of-us-midterm-elections",
+    "https://news.google.com/rss/articles/CBMihwFBVV95cUxPVS1mMWRlZ18wVENidVdlX0QxR3FIV2NqWGctbVJfclJXc2UwY0dqT29USGt6MGRzbjN4dkNKMTZ1ZzBNVkt4M2VBT3lkV2ZvQ1lyRXRIVWpVT1ZVSXphRDRIMmNTLWZ2RTEzanY3WHJVZ3ZZYXA4WUZGTGVEZjJycU1nNjRsbXc?oc=5",
+    "https://www.npr.org/2026/11/03/g-s1-151063/missouri-abortion-ban-transgender",
+    "https://www.euronews.com/2026/11/04/thousands-join-czech-protest-against-public-media-financing-plan",
+    "https://www.foxnews.com/politics/trump-backed-ex-nfl-reporter-loses-senate-race-progressive-who-vowed-rip-ice-apart",
+    "https://www.politico.com/news/2026/11/03/midterms-blue-wave-gop-wipeout-01147461"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Israeli Election Results and Fraud Review",
-      "dek": "Israel's election commission says it found no fraud in last week's vote as officials move toward certifying results and the formation of a new government."
-    },
-    "de": {
-      "title": "Israelische Wahlergebnisse und Prüfung auf Wahlbetrug",
-      "dek": "Die israelische Wahlkommission erklärt, bei der Wahl in der vergangenen Woche sei kein Wahlbetrug festgestellt worden, während die Verantwortlichen die Beglaubigung der Ergebnisse und die Bildung einer neuen Regierung vorantreiben."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "WRAL",
-      "Audacy",
-      "Newsday",
-      "Click2Houston",
-      "The Killeen Daily Herald",
-      "WV News"
-    ],
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
-  }
+  "startedAt": "2026-11-04T07:08:20.032Z",
+  "updatedAt": "2026-11-04T07:16:59.363Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": null,
+  "sourceCount": 6,
+  "seenHeadlines": []
 }
