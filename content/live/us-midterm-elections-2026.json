@@ -1,9 +1,269 @@
 {
+  "meta": {
+    "outlets": [
+      "Tagesschau",
+      "ZDF heute",
+      "Die Zeit",
+      "Die Welt",
+      "SRF",
+      "Tages-Anzeiger"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "us-midterm-elections-2026",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "US Midterm Elections 2026",
+  "status": "live",
+  "article": {
+    "slug": "us-midterm-elections-2026",
+    "updatedAt": "2026-11-04T06:10:59.487Z",
+    "reason": "3 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Democrats win House and Senate control in 2026 US midterms",
+        "dek": "NBC News and AP News reported Democratic wins in the House and Senate, while President Donald Trump said he would accept the results.",
+        "facts": [
+          "NBC News reported that Democrats won control of the House of Representatives.",
+          "AP News reported that Democrats won the Senate, giving the party control of both chambers.",
+          "Adam Hamilton won the Kansas Senate seat, the state's first Democratic senator since 1932.",
+          "Trump said he would accept the midterm results and blamed Republican candidates for the losses.",
+          "Trump said Democrats 'did a good job' in a call with CBS News.",
+          "The Hindu reported that Trump claimed Republicans would have won in a 'landslide' if he had been contesting."
+        ],
+        "body": [
+          "NBC News reported that Democrats won control of the House of Representatives, and AP News reported that Democrats won the Senate. Media projections put the party in control of both chambers of Congress.",
+          "Adam Hamilton won the Kansas Senate seat, according to The Hindu and The Straits Times. Kansas had not sent a Democrat to the Senate since 1932, and Times of India reported that the result ended 94 years of Republican control of the seat.",
+          "President Donald Trump said he would accept the midterm election results, according to Tagesschau and Die Zeit. In a call with CBS News, Trump said Democrats 'did a good job' and blamed Republican candidates for the losses, according to PBS and The Hill.",
+          "The Hill reported that Trump congratulated Democrats after the midterm results. The South China Morning Post reported that Trump said he was not on the ballot, and described his remarks as deflecting blame.",
+          "AP News described the Senate result as ending Republican dominance and said it came from harnessing voters' frustration with Trump. The Hindu reported that Trump claimed Republicans would have won in a 'landslide' if he had been contesting.",
+          "Semafor reported that the White House pinned blame elsewhere after the results. DW reported that Democrats gained control of the Senate from Republicans, and Nikkei Asia reported the same Senate result."
+        ],
+        "context": "According to The Hindu and The Straits Times, Kansas had not sent a Democrat to the Senate since 1932. AP News described the Senate result as ending Republican dominance, and The Hindu reported that Trump claimed Republicans would have won in a 'landslide' if he had been contesting.",
+        "imageCaption": ""
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "en": {
+      "dek": "Live results and analysis as voters decide control of the US Congress in the 2026 midterm elections.",
+      "title": "US Midterm Elections 2026"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1793771775745-v9jq",
+      "at": "2026-11-04T05:56:15.745Z",
+      "kind": "result",
+      "importance": 4,
+      "locales": {
+        "en": {
+          "headline": "Democrats win control of the House and Senate",
+          "body": "Democrats won control of the House of Representatives, according to NBC News, and the Senate, according to AP News. Media projections put the party in control of both chambers of Congress."
+        },
+        "fr": {
+          "headline": "Les démocrates prennent le contrôle de la Chambre et du Sénat",
+          "body": "Les démocrates ont pris le contrôle de la Chambre des représentants, selon NBC News, et du Sénat, selon AP News. Les projections des médias placent le parti aux commandes des deux chambres du Congrès."
+        },
+        "it": {
+          "headline": "I Democratici conquistano il controllo della Camera e del Senato",
+          "body": "I Democratici hanno conquistato il controllo della Camera di rappresentanti, secondo NBC News, e del Senato, secondo AP News. Le proiezioni dei media indicano che il partito è al controllo di entrambe le camere del Congresso."
+        },
+        "de": {
+          "headline": "Demokraten gewinnen Kontrolle über Repräsentantenhaus und Senat",
+          "body": "Demokraten gewannen laut NBC News die Kontrolle über das Repräsentantenhaus und laut AP News über den Senat. Medienprognosen zufolge hat die Partei damit die Kontrolle über beide Kammern des Kongresses."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Nikkei Asia",
+          "title": "US midterms live: Democrats take control of Senate in blow to Trump",
+          "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/us-midterms-live-democrats-take-control-of-senate-in-blow-to-trump",
+          "publishedAt": "2026-11-04T05:56:15.745Z"
+        },
+        {
+          "outlet": "DW",
+          "title": "US midterms: Democrats gain control of Senate from Republicans",
+          "url": "https://www.dw.com/en/us-midterms-democrats-gain-control-of-senate-from-republicans/live-79829440?maca=en-rss-en-all-1573-rdf",
+          "publishedAt": "2026-11-04T05:54:00.000Z"
+        },
+        {
+          "outlet": "NBC News",
+          "title": "Democrats win control of the House of Representatives, with a vow to combat Trump",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOa1ZqY0FVeG9ya00wNFNpdktGOHd0b1RiZko5ZVNUdWNZX25IR29NNC16NnhMbVBUbWNUd1VOLVBiVWtpMW1pa2pGekZTY2xwSTQ2MmpNSjNRY2ZJMWhPcnBlREZCcUpGYlZSUHZnVUJPZnZLQ2VEaXgzWlIzS3REakdhcTB3dXNFM1RZWTVDNVh6Qk1pLWRSVEZMdEFJUWZMUExULUs1Y2VOYmRxQkk3SmdLVV90UQ?oc=5",
+          "publishedAt": "2026-11-04T05:48:06.000Z"
+        },
+        {
+          "outlet": "AP News",
+          "title": "Democrats win US Senate, ending Republican dominance by harnessing voters' frustration with Trump",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRFA3Qk9sWVFFclA5aUMzTVlKenJNX25YTU5oenBmQXVqWjlneGxXUWRyZ3FSNE43TmRRcjJnbVEzLXJFazZJTVVMeDVUSE9FRktPQXh6b1FpeWtrbzYyMmFtYThKN3Y2NE9nTUV4a2RQaXpGblMxM2JycTVkTFQ5cG9hV3NObHpnMnFUQ0lxNlVuaHpOR1lUWkxPZ2NZcUctRnNnNjE1NjZEeUZBTWZaYVg4V2lBaDM0?oc=5",
+          "publishedAt": "2026-11-04T05:43:00.000Z"
+        },
+        {
+          "outlet": "Dawn",
+          "title": "US midterms: Democrats projected to win Congress in major setback for Trump",
+          "url": "https://www.dawn.com/news/2042019/us-midterms-democrats-projected-to-win-congress-in-major-setback-for-trump",
+          "publishedAt": "2026-11-04T05:37:39.000Z"
+        },
+        {
+          "outlet": "South China Morning Post",
+          "title": "US voters unleash blue wave, handing Congress to Democrats and rebuking Trump",
+          "url": "https://www.scmp.com/news/us/politics/article/3373224/us-voters-unleash-blue-wave-handing-congress-democrats-and-rebuking-trump",
+          "publishedAt": "2026-11-04T05:33:25.000Z"
+        },
+        {
+          "outlet": "Die Zeit",
+          "title": "Midterms: Demokraten gewinnen laut Prognosen beide US-Kongresskammern",
+          "url": "https://www.zeit.de/politik/ausland/2026-10/midterms-usa-kongresswahlen-liveblog",
+          "publishedAt": "2026-11-04T05:29:44.000Z"
+        },
+        {
+          "outlet": "SRF",
+          "title": "Midterms in den USA – Blaue Welle im US-Kongress: Die neuesten Resultate",
+          "url": "https://www.srf.ch/news/international/usa/midterms-in-den-usa-blaue-welle-im-us-kongress-die-neuesten-resultate",
+          "publishedAt": "2026-11-04T05:28:52.000Z"
+        },
+        {
+          "outlet": "The Kyiv Post",
+          "title": "Democrats Sweep Both Chambers of US Congress as Trump Suffers Major Midterm Defeat",
+          "url": "https://www.kyivpost.com/post/89065",
+          "publishedAt": "2026-11-04T05:28:29.000Z"
+        },
+        {
+          "outlet": "New York Times",
+          "title": "Winning the Senate, Democrats Secure a Platform to Check Trump",
+          "url": "https://www.nytimes.com/2026/11/03/us/politics/senate-election-control.html",
+          "publishedAt": "2026-11-04T05:28:09.000Z"
+        },
+        {
+          "outlet": "InsideClimate News",
+          "title": "Democrats Seize Congress, Statehouses in Referendum on the Economy",
+          "url": "https://insideclimatenews.org/news/04112026/democrats-seize-congress-statehouses-in-referendum-on-the-economy/",
+          "publishedAt": "2026-11-04T05:25:10.000Z"
+        },
+        {
+          "outlet": "Axios",
+          "title": "GOP LOSES SENATE IN MIDTERMS DEBACLE",
+          "url": "https://www.axios.com/2026/11/03/election-day-midterm-trump-democrats-republicans",
+          "publishedAt": "2026-11-04T05:23:42.000Z"
+        },
+        {
+          "outlet": "The Hindu",
+          "title": "Democrats win U.S. Congress in midterm rout of U.S. President Donald Trump",
+          "url": "https://www.thehindu.com/news/international/us-midterm-elections-2026-senate-governor-races-winners-losers-trump-republicans-democrats-news/article71663818.ece",
+          "publishedAt": "2026-11-04T05:16:59.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793771634000-03rn",
+      "at": "2026-11-04T05:53:54.000Z",
+      "kind": "statement",
+      "importance": 4,
+      "locales": {
+        "en": {
+          "headline": "Trump says he will accept the results and blames Republican candidates",
+          "body": "President Donald Trump said he would accept the midterm election results, according to Tagesschau and Die Zeit. In a call with CBS News, Trump said Democrats \"did a good job\" and blamed Republican candidates for the losses, according to PBS and The Hill."
+        },
+        "fr": {
+          "headline": "Trump dit qu’il acceptera les résultats et en impute la faute aux candidats républicains",
+          "body": "Le président Donald Trump a déclaré qu’il accepterait les résultats des élections de mi-mandat, selon Tagesschau et Die Zeit. Lors d’un appel avec CBS News, Trump a déclaré que les démocrates « ont bien fait leur travail » et a imputé les défaites aux candidats républicains, selon PBS et The Hill."
+        },
+        "it": {
+          "headline": "Trump afferma che accetterà i risultati e incolpa i candidati repubblicani",
+          "body": "Il presidente Donald Trump ha detto che accetterà i risultati delle elezioni di metà mandato, secondo Tagesschau e Die Zeit. In un colloquio telefonico con CBS News, Trump ha detto che i Democratici «hanno fatto un buon lavoro» e ha incolpato i candidati repubblicani per le sconfitte, secondo PBS e The Hill."
+        },
+        "de": {
+          "headline": "Trump sagt, er werde die Ergebnisse akzeptieren, und gibt republikanischen Kandidaten die Schuld",
+          "body": "Präsident Donald Trump sagte laut Tagesschau und Die Zeit, er werde die Ergebnisse der Zwischenwahlen akzeptieren. In einem Telefonat mit CBS News sagte Trump, die Demokraten hätten „gute Arbeit geleistet“, und gab den republikanischen Kandidaten die Schuld für die Niederlagen, so PBS und The Hill."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Tagesschau",
+          "title": "Liveblog zu den Midterms: ++ Trump will Wahlergebnisse anerkennen ++",
+          "url": "https://www.tagesschau.de/newsticker/liveblog-midterms-2026-100.html",
+          "publishedAt": "2026-11-04T05:53:54.000Z"
+        },
+        {
+          "outlet": "South China Morning Post",
+          "title": "‘I wasn’t on the ballot’: Trump deflects blame as Democrats on track to control Congress",
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3373226/i-wasnt-ballot-trump-deflects-blame-democrats-track-control-congress",
+          "publishedAt": "2026-11-04T05:48:42.000Z"
+        },
+        {
+          "outlet": "PBS",
+          "title": "Trump says Democrats 'did a good job,' blames Republican candidates for midterm losses",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMUVwQ2o3NU9vaHBzWmd5UTZ4aURWYzNPcURhbDhtNG0xSHd1NVRZQzFnamhhcks0WXZYbmdkSV90X0VCXy1ud2VraXRxVF9UQU9aaEFpeXlaVEhEcFl5R1Z2Q0kwUjNGcklOSlhucHR6OUZUWFNfSnpNZTdCdi05R0tKcDJDUHh0bkxSRzB6VklTUXJhQWxETFMyREZ3TDE4bHpqbFUyVVQwZlgtN0Y2bVRnc1NPbW9YZlg4QWVB0gHDAUFVX3lxTFBJUVBlUGZFMUU3dFQ0Z1hmWUhhN2pEelBYeDlyRTlWdENjTGZDMW13YTVISU02RkwwOEhwcFpWcXlGRUQwSFJvbDEyY2lNNVVEeWRZOEJuYWQwWmZvUzE3Y0twYlZRVXNjc0NsLWF1dU9FRHAwZVVlZnBoRkRKaEpYWV9UeVR1eVY0NG9EN1dlVVBoRjM0ekpFdW9fejZVT3lUMFFUUE42M29Sdl9MZmRPSGpPelR3QVo1Tm10UHBwUG85UQ?oc=5",
+          "publishedAt": "2026-11-04T05:34:43.000Z"
+        },
+        {
+          "outlet": "Die Zeit",
+          "title": "Kongresswahlen in den USA: Trump will Kongresswahlergebnisse anerkennen",
+          "url": "https://www.zeit.de/politik/ausland/2026-11/kongresswahlen-usa-donald-trump-ergebnisse-demokraten",
+          "publishedAt": "2026-11-04T05:32:14.000Z"
+        },
+        {
+          "outlet": "Semafor",
+          "title": "‘Buckle up’: A defiant White House pins blame elsewhere",
+          "url": "https://www.semafor.com/article/11/03/2026/buckle-up-a-defiant-white-house-pins-blame-elsewhere",
+          "publishedAt": "2026-11-04T05:28:51.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Trump congratulates Democrats after midterm romp",
+          "url": "https://thehill.com/homenews/administration/6196392-trump-congratulates-democrats-midterm-wins/",
+          "publishedAt": "2026-11-04T05:24:44.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793770955000-89p6",
+      "at": "2026-11-04T05:42:35.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Adam Hamilton wins Kansas Senate seat, first for a Democrat since 1932",
+          "body": "Democrat Adam Hamilton won the Kansas Senate seat, according to The Hindu and The Straits Times. It is the first time Kansas has sent a Democrat to the Senate since 1932."
+        },
+        "fr": {
+          "headline": "Adam Hamilton remporte le siège du Sénat du Kansas, une première pour un démocrate depuis 1932",
+          "body": "Le démocrate Adam Hamilton a remporté le siège du Sénat du Kansas, selon The Hindu et The Straits Times. C’est la première fois que le Kansas envoie un démocrate au Sénat depuis 1932."
+        },
+        "it": {
+          "headline": "Adam Hamilton vince il seggio al Senato del Kansas, prima vittoria per un Democratico dal 1932",
+          "body": "Il Democratico Adam Hamilton ha vinto il seggio al Senato del Kansas, secondo The Hindu e The Straits Times. È la prima volta che il Kansas manda un Democratico al Senato dal 1932."
+        },
+        "de": {
+          "headline": "Adam Hamilton gewinnt Senatssitz in Kansas – erster Demokrat seit 1932",
+          "body": "Der Demokrat Adam Hamilton gewann laut The Hindu und The Straits Times den Senatssitz in Kansas. Seit 1932 hat Kansas erstmals wieder einen Demokraten in den Senat entsendet."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Hindu",
+          "title": "U.S. midterm elections 2026 LIVE: Kansas sends Democrat to Senate for first time since 1932; Trump claims Republicans would have won in ‘landslide’ if he was contesting",
+          "url": "https://www.thehindu.com/news/international/us-midterm-elections-2026-senate-governor-races-winners-lossers-live-updates-trump-republicans-democrats-news/article71660811.ece",
+          "publishedAt": "2026-11-04T05:42:35.000Z"
+        },
+        {
+          "outlet": "Times of India",
+          "title": "Historic win for Democrats in Kansas, Hamilton flips Senate seat after 94 yrs",
+          "url": "https://timesofindia.indiatimes.com/world/us/us-mid-term-elections/news/adam-hamiltons-blue-breakthrough-flips-94-years-of-red-in-kansas-senate-seat/articleshow/135524832.cms",
+          "publishedAt": "2026-11-04T05:28:35.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "US midterm elections: Kansas sends Democrat to Senate for first time since 1932",
+          "url": "https://www.straitstimes.com/world/united-states/kansas-sends-democrat-to-us-senate-for-first-time-since-1932",
+          "publishedAt": "2026-11-04T05:28:00.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "midterms",
     "usa",
@@ -18,31 +278,73 @@
     "andrews",
     "2026"
   ],
+  "seenUrls": [
+    "https://asia.nikkei.com/politics/u.s.-midterm-elections/us-midterms-live-democrats-take-control-of-senate-in-blow-to-trump",
+    "https://asia.nikkei.com/business/markets/japan-south-korea-stocks-fall-over-4-as-democrats-lead-in-us-midterms",
+    "https://asia.nikkei.com/politics/u.s.-midterm-elections/5-things-to-know-about-the-us-midterms-and-what-they-mean-for-asia",
+    "https://www.dw.com/en/us-midterms-democrats-gain-control-of-senate-from-republicans/live-79829440?maca=en-rss-en-all-1573-rdf",
+    "https://www.tagesschau.de/newsticker/liveblog-midterms-2026-100.html",
+    "https://www.semafor.com/article/11/03/2026/democrats-take-senate-seats-as-republicans-underperform-in-midterm",
+    "https://www.zdfheute.de/politik/ausland/midterms-2026-usa-ergebnisse-live-grafik-karte-102.html",
+    "https://www.nzz.ch/international/midterms-2026-die-resultate-der-us-wahlen-im-ueberblick-ld.10047365",
+    "https://thehill.com/homenews/campaign/6188792-jim-kingston-wins-georgia-district/",
+    "https://www.scmp.com/news/china/diplomacy/article/3373226/i-wasnt-ballot-trump-deflects-blame-democrats-track-control-congress",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxOa1ZqY0FVeG9ya00wNFNpdktGOHd0b1RiZko5ZVNUdWNZX25IR29NNC16NnhMbVBUbWNUd1VOLVBiVWtpMW1pa2pGekZTY2xwSTQ2MmpNSjNRY2ZJMWhPcnBlREZCcUpGYlZSUHZnVUJPZnZLQ2VEaXgzWlIzS3REakdhcTB3dXNFM1RZWTVDNVh6Qk1pLWRSVEZMdEFJUWZMUExULUs1Y2VOYmRxQkk3SmdLVV90UQ?oc=5",
+    "https://www.tagesschau.de/ausland/amerika/eilmeldung-midterms-usa-100.html",
+    "https://www.euronews.com/2026/11/04/asian-stocks-and-dollar-fall-as-democrats-gain-ground-in-us-midterms",
+    "https://www.zeit.de/politik/ausland/2026-11/midterms-us-kongresswahlen-ergebnisse-live",
+    "https://www.straitstimes.com/world/united-states/us-midterms-trump-acknowledges-iran-role-in-democratic-sweep",
+    "https://www.npr.org/2026/11/04/nx-s1-6028080/voter-polls-midterms-demographics",
+    "https://www.axios.com/2026/11/04/senate-republicans-trump-midterm-elections",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRFA3Qk9sWVFFclA5aUMzTVlKenJNX25YTU5oenBmQXVqWjlneGxXUWRyZ3FSNE43TmRRcjJnbVEzLXJFazZJTVVMeDVUSE9FRktPQXh6b1FpeWtrbzYyMmFtYThKN3Y2NE9nTUV4a2RQaXpGblMxM2JycTVkTFQ5cG9hV3NObHpnMnFUQ0lxNlVuaHpOR1lUWkxPZ2NZcUctRnNnNjE1NjZEeUZBTWZaYVg4V2lBaDM0?oc=5",
+    "https://www.thehindu.com/news/international/us-midterm-elections-2026-senate-governor-races-winners-lossers-live-updates-trump-republicans-democrats-news/article71660811.ece",
+    "https://thehill.com/homenews/campaign/6137223-johnny-garcia-texas-35th-district/",
+    "https://thehill.com/homenews/campaign/6184942-north-carolina-voters-approve-photo-id/",
+    "https://www.hollywoodreporter.com/news/politics-news/ben-shapiro-2026-midterms-wipeout-republicans-president-ballot-1236747358/",
+    "https://g1.globo.com/mundo/noticia/2026/11/04/brasileiro-de-duque-de-caxias-e-eleito-deputado-estadual-na-florida.ghtml",
+    "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUElPREdhRlZaRW56NXM5aHV3SUVCdHpSVTBPQ0FFaVBmVmdCcFF5YWgybDhYamlMbzBYVERkY25ucVJnSGllWWJrOXVFdXNmMGNXbDE1YkNLXzNhcjNsaG5TT0ZxbFVhMFV6dl9hcUFHeGN3b1VTMkJ0U2RINjAwajlR?oc=5",
+    "https://www.thehindu.com/news/international/us-mid-term-election-poll-results-2026-full-list-of-winners/article71663723.ece",
+    "https://www.dawn.com/news/2042019/us-midterms-democrats-projected-to-win-congress-in-major-setback-for-trump",
+    "https://www.semafor.com/article/11/03/2026/senate-goes-democratic-in-a-generational-wipeout-of-trumps-party",
+    "https://thehill.com/homenews/campaign/6182825-republican-julia-letlow-wins-senate-seat-louisiana-2026-midterms/",
+    "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMUVwQ2o3NU9vaHBzWmd5UTZ4aURWYzNPcURhbDhtNG0xSHd1NVRZQzFnamhhcks0WXZYbmdkSV90X0VCXy1ud2VraXRxVF9UQU9aaEFpeXlaVEhEcFl5R1Z2Q0kwUjNGcklOSlhucHR6OUZUWFNfSnpNZTdCdi05R0tKcDJDUHh0bkxSRzB6VklTUXJhQWxETFMyREZ3TDE4bHpqbFUyVVQwZlgtN0Y2bVRnc1NPbW9YZlg4QWVB0gHDAUFVX3lxTFBJUVBlUGZFMUU3dFQ0Z1hmWUhhN2pEelBYeDlyRTlWdENjTGZDMW13YTVISU02RkwwOEhwcFpWcXlGRUQwSFJvbDEyY2lNNVVEeWRZOEJuYWQwWmZvUzE3Y0twYlZRVXNjc0NsLWF1dU9FRHAwZVVlZnBoRkRKaEpYWV9UeVR1eVY0NG9EN1dlVVBoRjM0ekpFdW9fejZVT3lUMFFUUE42M29Sdl9MZmRPSGpPelR3QVo1Tm10UHBwUG85UQ?oc=5",
+    "https://thehill.com/homenews/campaign/6165643-risch-wins-idaho-senate/",
+    "https://g1.globo.com/mundo/ao-vivo/eleicoes-nos-eua-2026-acompanhe-as-ultimas-noticias-sobre-as-midterms.ghtml",
+    "https://allafrica.com/stories/202611040137.html",
+    "https://www.scmp.com/news/us/politics/article/3373224/us-voters-unleash-blue-wave-handing-congress-democrats-and-rebuking-trump",
+    "https://www.abc.net.au/news/2026-11-04/donald-trump-no-lame-duck-despite-us-midterm-results/107339272",
+    "https://www.zeit.de/politik/ausland/2026-11/kongresswahlen-usa-donald-trump-ergebnisse-demokraten",
+    "https://www.abc.net.au/news/2026-11-04/us-midterms-democrats-win-majority-what-happens-next/107335330",
+    "https://www.zdfheute.de/politik/ausland/midterms-usa-wahl-kongress-liveticker-100.html",
+    "https://www.zeit.de/politik/ausland/2026-10/midterms-usa-kongresswahlen-liveblog",
+    "https://www.zdfheute.de/politik/ausland/midterms-demokraten-trump-usa-wahl-kongress-100.html",
+    "https://www.srf.ch/news/international/usa/midterms-in-den-usa-blaue-welle-im-us-kongress-die-neuesten-resultate",
+    "https://www.semafor.com/article/11/03/2026/buckle-up-a-defiant-white-house-pins-blame-elsewhere",
+    "https://timesofindia.indiatimes.com/world/us/us-mid-term-elections/news/adam-hamiltons-blue-breakthrough-flips-94-years-of-red-in-kansas-senate-seat/articleshow/135524832.cms",
+    "https://www.kyivpost.com/post/89065",
+    "https://www.nytimes.com/2026/11/03/us/politics/senate-election-control.html",
+    "https://www.nzz.ch/international/iran-krieg-jd-vance-soll-mit-iran-chance-auf-verhandlungen-ausloten-kaempfe-in-jemen-vertreiben-immer-mehr-menschen-ld.10021246",
+    "https://www.straitstimes.com/world/united-states/kansas-sends-democrat-to-us-senate-for-first-time-since-1932",
+    "https://www.straitstimes.com/world/democrat-troy-jackson-ousts-republican-senator-susan-collins-in-maine",
+    "https://timesofindia.indiatimes.com/business/india-business/what-will-trump-losing-us-midterm-elections-mean-for-sensex-nifty-explained/articleshow/135520940.cms",
+    "https://www.politico.eu/podcast/berlin-playbook-podcast/schockwahl-fur-trump-demokraten-erobern-den-kongress/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://insideclimatenews.org/news/04112026/democrats-seize-congress-statehouses-in-referendum-on-the-economy/",
+    "https://www.straitstimes.com/world/united-states/us-midterms-democrat-gina-hinojosa-defeats-texas-governor-abbott-in-a-stunning-upset",
+    "https://thehill.com/homenews/administration/6196392-trump-congratulates-democrats-midterm-wins/",
+    "https://www.axios.com/2026/11/03/election-day-midterm-trump-democrats-republicans",
+    "https://thehill.com/homenews/campaign/6152295-davis-wins-north-carolina-house-race/",
+    "https://www.politico.eu/article/five-things-europe-monitor-democrats-blitz-donald-trump-us-midterms/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.dw.com/en/us-midterm-election-results-democrats-win-crucial-seats-here-s-what-else-the-data-tells-us/a-79841886?maca=en-rss-en-all-1573-rdf",
+    "https://www.zeit.de/news/2026-11/04/blaue-welle-die-erkenntnisse-des-midterms-ausgangs",
+    "https://www.thehindu.com/news/international/us-midterm-elections-2026-senate-governor-races-winners-losers-trump-republicans-democrats-news/article71663818.ece",
+    "https://www.zdfheute.de/politik/ausland/midterms-usa-wahl-kongress-100.html",
+    "https://www.nytimes.com/2026/11/03/us/politics/chris-pappas-first-openly-gay-male-senator.html"
+  ],
   "startedAt": "2026-11-04T03:18:34.063Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-04T03:18:34.063Z",
-  "articleSlug": null,
-  "sourceCount": 6,
+  "updatedAt": "2026-11-04T06:03:43.337Z",
+  "importance": 5,
   "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "US Midterm Elections 2026",
-      "dek": "Live results and analysis as voters decide control of the US Congress in the 2026 midterm elections."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Tagesschau",
-      "ZDF heute",
-      "Die Zeit",
-      "Die Welt",
-      "SRF",
-      "Tages-Anzeiger"
-    ]
-  }
+  "articleSlug": "us-midterm-elections-2026",
+  "sourceCount": 19,
+  "seenHeadlines": []
 }
