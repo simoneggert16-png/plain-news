@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-11-03T14:47:43.946Z",
+  "updatedAt": "2026-11-04T00:09:32.067Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -317,79 +317,28 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-11-03T14:16:06.675Z",
+      "at": "2026-11-03T23:30:03.638Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I have 3 outlets, 0 primary sources, 8 claims already filed, and 15 open gaps. The most document-shaped gap is the licensing of the footage: a contract between Activision and the Korean broadcaster that supplied the Itaewon clip would answer both the cost of acquisition and the financial benefit question. I will start there, then move to the Korean regulator/court doors (KCC, FTC, Seoul courts), t",
+          "thought": "I have 4 outlets on file but 0 primary sources, and the target is 8 outlets / 2 primary / 6 supported claims. The biggest gaps are: (1) any official/primary document — Activision's own statement, an SEC filing, a Korean court or ministry document; (2) the money question — what Activision earned and what the footage cost. The thrown-out items (Nov 12 2026 date, publisher naming) mean I must not rel",
           "action": "search",
           "args": {
-            "query": "Activision Blizzard contract with Korean media company for crowd crush footage"
+            "query": "Activision Blizzard investor relations SEC filing 10-K Call of Duty annual revenue Microsoft acquisition annual report investor.activision.com press release Itaewon Seoul crowd crush footage Call of Duty apology statement"
           },
           "ok": true,
-          "ms": 51817
-        },
-        {
-          "step": 2,
-          "thought": "The headline search returned mostly irrelevant wire hits; the two auto-opened pages are The Guardian (Reddit/Australia — irrelevant) and mjengohub.co.ke, which appears to cover the Activision removal. I need to read the mjengohub text in full before filing claims, and then pivot to the Korean primary doors (KCC, Seoul courts, Ministry of Culture) and the licensing contract rather than repeating th",
-          "action": "open",
-          "args": {
-            "url": "https://mjengohub.co.ke/articles/world/activision-removes-seoul-crush-footage-from-call-of-duty-after-backlash"
-          },
-          "ok": true,
-          "ms": 17389
-        },
-        {
-          "step": 3,
-          "thought": "The mjengohub.co.ke article is a genuine second outlet on the story and adds facts not in Yonhap: the name of the bereaved group (10.29 Itaewon Disaster Bereaved Families Association), that the group welcomed the removal but said Activision had not contacted it directly with an apology, and that the opening cinematic uses real-world news broadcasts to set up the fictional narrative. I will file th",
-          "action": "save_source",
-          "args": {
-            "url": "https://mjengohub.co.ke/articles/world/activision-removes-seoul-crush-footage-from-call-of-duty-after-backlash",
-            "outlet": "mjengohub.co.ke",
-            "title": "Activision removes Seoul crush footage from Call of Duty after backlash - Mjengo Hub",
-            "publishedAt": "2026-11-03"
-          },
-          "ok": true,
-          "ms": 17923
-        },
-        {
-          "step": 4,
-          "thought": "Source S6 (mjengohub.co.ke) is filed. It supports several facts not yet on file: the name of the bereaved group, its reaction to the removal, and Activision's explanation that the cinematic uses real-world news broadcasts to set up the fictional narrative. I will record these one fact per claim, starting with the bereaved families' association's named position.",
-          "action": "save_claim",
-          "args": {
-            "text": "The 10.29 Itaewon Disaster Bereaved Families Association said the inclusion of the Itaewon crowd crush footage in Call of Duty: Modern Warfare 4 was senseless and that relatives of those who died suffered significant distress from seeing actual footage of emergency personnel responding to the scene.",
-            "sources": [
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 29930
-        },
-        {
-          "step": 5,
-          "thought": "C9 is filed. Next fact from S6: the association welcomed the removal but said Activision had not contacted the group directly to issue a direct apology — this is a distinct, checkable fact and answers part of the gap on families' perspective.",
-          "action": "save_claim",
-          "args": {
-            "text": "The 10.29 Itaewon Disaster Bereaved Families Association welcomed Activision's decision to remove the footage but said the publisher had not contacted the group directly to issue a direct apology.",
-            "sources": [
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 83686
+          "ms": 122508
         }
       ],
       "final": null
     },
     {
-      "at": "2026-11-03T14:38:14.197Z",
+      "at": "2026-11-03T23:51:17.273Z",
       "steps": [],
       "final": null
     },
     {
-      "at": "2026-11-03T14:46:05.156Z",
+      "at": "2026-11-04T00:08:43.722Z",
       "steps": [],
       "final": null
     }
@@ -436,7 +385,7 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 25,
+  "shifts": 28,
   "blankShifts": 2,
-  "lastShiftAt": "2026-11-03T14:44:12.020Z"
+  "lastShiftAt": "2026-11-04T00:06:51.944Z"
 }
