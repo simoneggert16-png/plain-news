@@ -7,7 +7,7 @@
       "The Indian Express"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
   },
   "slug": "israel-2026-election-fraud-allegations",
   "topic": "Israel 2026 Election Fraud Allegations",
@@ -22,42 +22,102 @@
   },
   "updates": [
     {
-      "id": "u-1793776876000-4my4",
-      "at": "2026-11-04T07:21:16.000Z",
-      "kind": "result",
+      "id": "u-1793781540000-e7gn",
+      "at": "2026-11-04T08:39:00.000Z",
+      "kind": "statement",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Israel's election commission finds no evidence of fraud in last week's vote",
-          "body": "Euronews and Haaretz reported that Israel's election commission found no evidence of fraud in last week's vote. Haaretz said the finding came amid claims by Prime Minister Benjamin Netanyahu."
-        },
-        "it": {
-          "headline": "La commissione elettorale israeliana non trova prove di brogli nel voto della scorsa settimana",
-          "body": "Euronews e Haaretz hanno riferito che la commissione elettorale israeliana non ha trovato prove di brogli nel voto della scorsa settimana. Haaretz ha detto che la conclusione è emersa in concomitanza con le accuse del primo ministro Benjamin Netanyahu."
-        },
-        "es": {
-          "headline": "La comisión electoral de Israel no encuentra pruebas de fraude en la votación de la semana pasada",
-          "body": "Euronews y Haaretz informaron de que la comisión electoral de Israel no encontró pruebas de fraude en la votación de la semana pasada. Haaretz dijo que la conclusión se produjo en medio de las afirmaciones del primer ministro Benjamín Netanyahu."
+          "headline": "Netanyahu accused Arab-led parties of stealing the election",
+          "body": "ABC Australia reported that Netanyahu accused Arab-led parties of stealing the election. Dawn reported that Netanyahu promoted allegations of fraud by Arab parties."
         },
         "de": {
-          "headline": "Israels Wahlkommission findet keine Hinweise auf Betrug bei der Wahl von letzter Woche",
-          "body": "Euronews und Haaretz berichteten, dass Israels Wahlkommission keine Hinweise auf Betrug bei der Wahl von letzter Woche gefunden habe. Laut Haaretz kam der Befund vor dem Hintergrund von Behauptungen von Ministerpräsident Benjamin Netanjahu."
+          "headline": "Netanyahu warf arabisch geführten Parteien vor, die Wahl zu stehlen",
+          "body": "ABC Australia berichtete, dass Netanyahu arabisch geführte Parteien beschuldigte, die Wahl zu stehlen. Dawn berichtete, dass Netanyahu Vorwürfe des Betrugs durch arabische Parteien befeuerte."
         }
       },
       "sources": [
         {
-          "outlet": "Euronews",
-          "title": "Israel's election commission says no fraud found in last week's vote",
+          "outlet": "ABC Australia",
+          "title": "No evidence of fraud in Israeli election, commission finds",
+          "url": "https://www.abc.net.au/news/2026-11-04/israeli-election-commission-fraud-investigation/107347454",
+          "publishedAt": "2026-11-04T08:39:00.000Z"
+        },
+        {
+          "outlet": "Dawn",
+          "title": "Israel election commission rejects Netanyahu charges of fraud",
+          "url": "https://www.dawn.com/news/2042064/israel-election-commission-rejects-netanyahu-charges-of-fraud",
+          "publishedAt": "2026-11-04T08:27:43.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793781540000-jae8",
+      "at": "2026-11-04T08:39:00.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Neither major bloc earned a parliamentary majority in Israel's vote",
+          "body": "ABC Australia reported that neither major bloc earned a parliamentary majority. The Straits Times reported that neither Netanyahu nor Gadi Eisenkot commands enough votes alone to form a government."
+        },
+        "de": {
+          "headline": "Keines der großen Lager errang bei der Wahl in Israel eine parlamentarische Mehrheit",
+          "body": "ABC Australia berichtete, dass keines der großen Lager eine parlamentarische Mehrheit errang. The Straits Times berichtete, dass weder Netanyahu noch Gadi Eisenkot allein über genügend Stimmen verfügt, um eine Regierung zu bilden."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "ABC Australia",
+          "title": "No evidence of fraud in Israeli election, commission finds",
+          "url": "https://www.abc.net.au/news/2026-11-04/israeli-election-commission-fraud-investigation/107347454",
+          "publishedAt": "2026-11-04T08:39:00.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Israel election commission rejects Netanyahu’s charges of fraud",
+          "url": "https://www.straitstimes.com/world/middle-east/israel-election-commission-rejects-netanyahu-charges-of-fraud",
+          "publishedAt": "2026-11-04T08:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-04T07:21:16.000Z",
+      "id": "u-1793776876000-4my4",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Euronews und Haaretz berichteten, dass Israels Wahlkommission keine Hinweise auf Betrug bei der Wahl von letzter Woche gefunden habe. Laut Haaretz kam der Befund vor dem Hintergrund von Behauptungen von Ministerpräsident Benjamin Netanjahu.",
+          "headline": "Israels Wahlkommission findet keine Hinweise auf Betrug bei der Wahl von letzter Woche"
+        },
+        "en": {
+          "body": "Euronews and Haaretz reported that Israel's election commission found no evidence of fraud in last week's vote. Haaretz said the finding came amid claims by Prime Minister Benjamin Netanyahu.",
+          "headline": "Israel's election commission finds no evidence of fraud in last week's vote"
+        },
+        "es": {
+          "body": "Euronews y Haaretz informaron de que la comisión electoral de Israel no encontró pruebas de fraude en la votación de la semana pasada. Haaretz dijo que la conclusión se produjo en medio de las afirmaciones del primer ministro Benjamín Netanyahu.",
+          "headline": "La comisión electoral de Israel no encuentra pruebas de fraude en la votación de la semana pasada"
+        },
+        "it": {
+          "body": "Euronews e Haaretz hanno riferito che la commissione elettorale israeliana non ha trovato prove di brogli nel voto della scorsa settimana. Haaretz ha detto che la conclusione è emersa in concomitanza con le accuse del primo ministro Benjamin Netanyahu.",
+          "headline": "La commissione elettorale israeliana non trova prove di brogli nel voto della scorsa settimana"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.euronews.com/2026/11/04/israels-election-commission-says-no-fraud-found-in-last-weeks-vote",
+          "title": "Israel's election commission says no fraud found in last week's vote",
+          "outlet": "Euronews",
           "publishedAt": "2026-11-04T07:21:16.000Z"
         },
         {
-          "outlet": "Haaretz",
-          "title": "Israel's election commission finds no evidence of fraud amid Netanyahu's claims",
           "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxNbW9raVFnak1ZUGZUbXBLVEluZWJEaEE2S3ptOFR5RFg1VWtpRmlxLWxXT1U4eXpHNnBtdXo0RHAyZkJSVVJVTUhFQWFOcW1pYjFJQXR6cEU4bzRaMUI4OV92OXd1NGF2VWJfck03U01JZUpOa293VXNYeVRNZ21JVHRqSWxESVpWY09mbkFYNEdnRWQzUHlkSWNXWmJpaGNzbTVwNnExdHdqYUx0eV8wdGRjLUN0czhfMFlpTEhPdG92UVlMNUlCLS01MkJVT0NadFdIY2FDQ3d6dWtieHY0YmlUaS1lbDAySHJoVDdsWm9UaXh3ZEkxdkZoX1NKSVh6M0REUHFaeVk2WnFkYlRNTDhpMkJ2LWtPNGZj?oc=5",
+          "title": "Israel's election commission finds no evidence of fraud amid Netanyahu's claims",
+          "outlet": "Haaretz",
           "publishedAt": "2026-11-04T06:51:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-04T06:31:10.000Z",
@@ -187,13 +247,18 @@
     "https://www.welt.de/politik/ausland/plus6ae44f72aacefa08f5b9900a/midterms-blaue-welle-in-amerika-das-haben-die-demokraten-jetzt-vor.html",
     "https://www.foxnews.com/world/netanyahu-faces-coalition-showdown-rivals-maneuver-form-israels-next-government",
     "https://www.euronews.com/2026/11/04/israels-election-commission-says-no-fraud-found-in-last-weeks-vote",
-    "https://news.google.com/rss/articles/CBMimwJBVV95cUxNbW9raVFnak1ZUGZUbXBLVEluZWJEaEE2S3ptOFR5RFg1VWtpRmlxLWxXT1U4eXpHNnBtdXo0RHAyZkJSVVJVTUhFQWFOcW1pYjFJQXR6cEU4bzRaMUI4OV92OXd1NGF2VWJfck03U01JZUpOa293VXNYeVRNZ21JVHRqSWxESVpWY09mbkFYNEdnRWQzUHlkSWNXWmJpaGNzbTVwNnExdHdqYUx0eV8wdGRjLUN0czhfMFlpTEhPdG92UVlMNUlCLS01MkJVT0NadFdIY2FDQ3d6dWtieHY0YmlUaS1lbDAySHJoVDdsWm9UaXh3ZEkxdkZoX1NKSVh6M0REUHFaeVk2WnFkYlRNTDhpMkJ2LWtPNGZj?oc=5"
+    "https://news.google.com/rss/articles/CBMimwJBVV95cUxNbW9raVFnak1ZUGZUbXBLVEluZWJEaEE2S3ptOFR5RFg1VWtpRmlxLWxXT1U4eXpHNnBtdXo0RHAyZkJSVVJVTUhFQWFOcW1pYjFJQXR6cEU4bzRaMUI4OV92OXd1NGF2VWJfck03U01JZUpOa293VXNYeVRNZ21JVHRqSWxESVpWY09mbkFYNEdnRWQzUHlkSWNXWmJpaGNzbTVwNnExdHdqYUx0eV8wdGRjLUN0czhfMFlpTEhPdG92UVlMNUlCLS01MkJVT0NadFdIY2FDQ3d6dWtieHY0YmlUaS1lbDAySHJoVDdsWm9UaXh3ZEkxdkZoX1NKSVh6M0REUHFaeVk2WnFkYlRNTDhpMkJ2LWtPNGZj?oc=5",
+    "https://www.dawn.com/news/2042019/us-midterms-democrats-win-us-congress-in-midterm-rout-of-trump",
+    "https://www.abc.net.au/news/2026-11-04/israeli-election-commission-fraud-investigation/107347454",
+    "https://www.straitstimes.com/world/middle-east/israel-election-commission-rejects-netanyahu-charges-of-fraud",
+    "https://www.dawn.com/news/2042064/israel-election-commission-rejects-netanyahu-charges-of-fraud",
+    "https://english.elpais.com/usa/2026-11-04/four-key-victories-and-two-surprises-a-review-of-the-democratic-wins-in-the-elections.html"
   ],
   "startedAt": "2026-11-04T01:27:05.922Z",
-  "updatedAt": "2026-11-04T07:28:49.527Z",
+  "updatedAt": "2026-11-04T09:17:19.550Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": null,
-  "sourceCount": 6,
+  "sourceCount": 9,
   "seenHeadlines": []
 }
