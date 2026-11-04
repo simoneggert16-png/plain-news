@@ -14,7 +14,7 @@
     "hints": "Issuance of Amended Iran-related General License"
   },
   "createdAt": "2026-11-02T15:41:59.014Z",
-  "updatedAt": "2026-11-03T14:44:12.019Z",
+  "updatedAt": "2026-11-04T00:06:51.765Z",
   "queries": [
     "OFAC amended Iran-related General License 2026",
     "OFAC Iran sanctions 2026",
@@ -76,7 +76,55 @@
       "readAt": "2026-11-03T14:23:32.856Z"
     }
   ],
-  "claims": [],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "On October 29, 2026, OFAC issued Iran General License FF-1, signed by Director Bradley T. Smith, authorizing the wind down of transactions prohibited by the Iranian Transactions and Sanctions Regulations (31 CFR part 560) that involve International Development Bank for Investment and Finance (a.k.a. Iraq Development Bank) or any entity in which it owns, directly or indirectly, a 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026.",
+      "sources": [
+        "S1",
+        "S4"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-03T23:17:56.438Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C2",
+      "text": "Effective October 29, 2026, Iran General License FF-1 replaced and superseded in its entirety General License No. FF dated October 15, 2026; under FF-1 any payment to a blocked person must be made into a blocked account in accordance with the ITSR, and the license does not authorize transactions involving any person blocked under the ITSR other than the bank and its 50-percent-or-greater-owned entities.",
+      "sources": [
+        "S4"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-03T23:18:16.967Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C3",
+      "text": "On October 21, 2026, OFAC issued Iran General License GG authorizing the wind down of transactions involving Karnakis and Karnakis, and Iran General License HH authorizing wind-down activities, limited safety and environmental transactions, and the offloading of cargo involving certain persons or vessels blocked on October 21, 2026.",
+      "sources": [
+        "S2"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-03T23:19:23.355Z",
+      "checked": "partial",
+      "checkNote": "S2 states \"OFAC is issuing Iran General License GG, 'Authorizing the Wind Down of Transactions Involving Karnakis and Karnakis;' and Iran General License HH, 'Authorizing Wind Down Activities, Limited Safety and Environmental Transactions, "
+    },
+    {
+      "id": "C4",
+      "text": "On October 21, 2026, OFAC added to the SDN List under Executive Order 13902 (IRAN-EO13902) five individuals — Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, and Ortega Jones Roberto, all Panama nationals — and two entities, Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, Singapore) and Karnakis and Karnakis (Panama City, Panama and Piraeus, Greece), each listed as linked to Karnakis and Karnakis.",
+      "sources": [
+        "S2"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-03T23:19:39.395Z",
+      "checked": "partial",
+      "checkNote": "S2 shows only two of the five individuals, \"KARNAKIS KOSMAS, Ioanis\" and \"KARNAKIS KOSMAS, Konstantinos,\" each with \"nationality Panama\" and \"[IRAN-EO13902] (Linked To: KARNAKIS AND KARNAKIS),\" and the text is truncated before the other thr"
+    }
+  ],
   "gaps": [],
   "contacts": [
     {
@@ -120,9 +168,33 @@
       "role": "the institution whose document is on file",
       "email": "press@usdoj.gov",
       "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
+    },
+    {
+      "org": "US Department of Justice",
+      "role": "the institution whose document is on file",
+      "email": "press@usdoj.gov",
+      "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
+    },
+    {
+      "org": "US Department of Justice",
+      "role": "the institution whose document is on file",
+      "email": "press@usdoj.gov",
+      "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
+    },
+    {
+      "org": "US Department of Justice",
+      "role": "the institution whose document is on file",
+      "email": "press@usdoj.gov",
+      "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
     }
   ],
-  "outreach": [],
+  "outreach": [
+    {
+      "org": "US Department of Justice",
+      "at": "2026-11-03T23:26:08.658Z",
+      "status": "draft"
+    }
+  ],
   "draft": null,
   "review": null,
   "published": null,
@@ -144,140 +216,175 @@
     }
   ],
   "centre": "Iran",
-  "lastShiftAt": "2026-11-03T14:38:54.078Z",
+  "lastShiftAt": "2026-11-04T00:06:03.913Z",
   "letters": [
     {
       "id": "L1",
       "to_email": "press@usdoj.gov",
       "org": "US Department of Justice",
       "contact_name": null,
-      "status": "requested",
+      "status": "draft",
       "reply_note": "Adresse gefunden auf https://www.justice.gov/opa/webform/media-inquiries",
       "created_at": "2026-11-02T15:47:42.140Z",
-      "updated_at": "2026-11-02T15:47:42.140Z",
-      "dbId": "0b3c791b-fe2e-46d6-bef6-805ad415ab28"
+      "updated_at": "2026-11-03T23:26:07.966Z",
+      "dbId": "0b3c791b-fe2e-46d6-bef6-805ad415ab28",
+      "subject": "Source request: OFAC Iran General License FF-1 and related designations",
+      "body": "Dear US Department of Justice,\n\nWe are PLAIN., an independent, advertising-free Swiss news site reporting internationally (plain-news.ch). Our investigative desk is examining US OFAC amendments to Iran sanctions licensing, including Iran General License FF-1 of October 29, 2026, and the designations and wind-down licenses issued on October 21, 2026. This research is AI-assisted and every text is reviewed by a human editor. We would appreciate your help in clarifying the following specific points.\n\n1. Under General License FF-1, which Iranian entities are now restricted, and does the license cover only the International Development Bank for Investment and Finance (also known as Iraq Development Bank) and entities in which it holds a direct or indirect 50 percent or greater interest?\n\n2. How does FF-1's requirement that any payment to a blocked person be made into a blocked account in accordance with the ITSR affect international trade transactions that would otherwise fall within the authorized wind-down through 12:01 a.m. eastern standard time on December 1, 2026?\n\n3. What specific transactions remain prohibited under FF-1, given that it does not authorize transactions involving any person blocked under the ITSR other than the bank and its 50-percent-or-greater-owned entities?\n\n4. What is the stated basis for the October 21, 2026 SDN additions under Executive Order 13902 of Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto, Amigoz Singapore Pte. Ltd. and Karnakis and Karnakis, and how do General Licenses GG and HH relate to those designations?\n\n5. What was the specific effect of FF-1 replacing and superseding General License FF of October 15, 2026 in its entirety on transactions already underway?\n\nWe will publish your reply, either in full or as a summary, as you prefer. If anything we have stated is factually wrong, please tell us so that we can correct it. We would be grateful for an answer by 8 November 2026.\n\nSincerely,\n\nPLAIN. Investigative desk\ndesk@plain-news.ch",
+      "error": null
     }
   ],
   "agent": [
     {
-      "at": "2026-11-03T01:18:30.602Z",
-      "steps": [],
-      "final": null
-    },
-    {
-      "at": "2026-11-03T14:29:00.520Z",
+      "at": "2026-11-03T23:22:02.542Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I have one primary source on file: OFAC's 2026-10-29 action on an amended Iran-related General License. I need to open it and read what it actually says — which license, which entities, what restrictions — before searching anything else.",
+          "thought": "The desk has two OFAC primary sources on file (S1: amended Iran-related General License, 20261029; S2: 20261021 designations/licenses) plus a media download (S4). No claims filed yet. First step: open the primary documents so their text lands on file, then record claims from what they actually say.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261029"
           },
           "ok": true,
-          "ms": 23275
+          "ms": 111417
         },
         {
           "step": 2,
-          "thought": "The OFAC recent-action page names Iran General License FF-1, authorizing wind-down of transactions involving International Development Bank for Investment and Finance. I need the full license text to see what it authorizes, its expiry, and any conditions, plus the 2026-10-21 action which may contain the designations context.",
+          "thought": "S1 confirms OFAC issued Iran General License FF-1 authorizing wind-down of transactions involving International Development Bank for Investment and Finance. The license text itself is at the media download URL (S4). Open it to read the actual license terms, expiry date, and scope.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/media/937311/download?inline"
           },
           "ok": true,
-          "ms": 57337
+          "ms": 37501
         },
         {
           "step": 3,
-          "thought": "GL FF-1 text is on file (S4). Now I need the October 21 OFAC action (S2) which likely contains the underlying designations of the bank and related entities, plus the press release describing who was designated.",
+          "thought": "The license text is now on file (S4). I can record the first claims: GL FF-1, dated October 29, 2026, signed by OFAC Director Bradley T. Smith, authorizes wind-down of transactions involving International Development Bank for Investment and Finance (a.k.a. Iraq Development Bank) and entities it owns 50%+ through December 1, 2026, and supersedes GL FF of October 15, 2026. Next I need S2 (the Octobe",
+          "action": "save_claim",
+          "args": {
+            "text": "On October 29, 2026, OFAC issued Iran General License FF-1, signed by Director Bradley T. Smith, authorizing the wind down of transactions prohibited by the Iranian Transactions and Sanctions Regulations (31 CFR part 560) that involve International Development Bank for Investment and Finance (a.k.a. Iraq Development Bank) or any entity in which it owns, directly or indirectly, a 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026.",
+            "sources": [
+              "S1",
+              "S4"
+            ]
+          },
+          "ok": true,
+          "ms": 24459
+        },
+        {
+          "step": 4,
+          "thought": "S4 gives more verifiable facts: GL FF-1 supersedes GL FF dated October 15, 2026 effective October 29, 2026; payments to blocked persons must go into blocked accounts; paragraph (b) excludes transactions involving other blocked persons. Record these as claims, then open S2 for the designations.",
+          "action": "save_claim",
+          "args": {
+            "text": "Effective October 29, 2026, Iran General License FF-1 replaced and superseded in its entirety General License No. FF dated October 15, 2026; under FF-1 any payment to a blocked person must be made into a blocked account in accordance with the ITSR, and the license does not authorize transactions involving any person blocked under the ITSR other than the bank and its 50-percent-or-greater-owned entities.",
+            "sources": [
+              "S4"
+            ]
+          },
+          "ok": true,
+          "ms": 20528
+        },
+        {
+          "step": 5,
+          "thought": "Two claims filed from the license text (S4). Now I need S2, the October 21, 2026 OFAC action with Iran-related designations, to establish which Iranian entities were designated and what licenses were issued alongside.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261021"
           },
           "ok": true,
-          "ms": 38770
-        },
-        {
-          "step": 4,
-          "thought": "The Oct 21 OFAC action lists many designations (Karnakis shipping network, Amigoz Singapore, individuals) and I need the Treasury press release naming the full network including the International Development Bank for Investment and Finance. Searching for the official press release text.",
-          "action": "search",
-          "args": {
-            "query": "Treasury Department press release October 21 2026 Iran-related designations International Development Bank for Investment and Finance IRGC sanctions network"
-          },
-          "ok": true,
-          "ms": 43469
-        },
-        {
-          "step": 5,
-          "thought": "The previous search returned unrelated wire hits. I need the Treasury press release for the October 21, 2026 Iran designations — searching with the specific entity names from the OFAC action (Karnakis, Amigoz) and the bank name.",
-          "action": "search",
-          "args": {
-            "query": "home.treasury.gov press release October 2026 OFAC designates Karnakis Amigoz Singapore Iran sanctions IRGC shadow banking network International Development Bank for Investment and Finance"
-          },
-          "ok": true,
-          "ms": 66096
+          "ms": 47661
         },
         {
           "step": 6,
-          "thought": "Wire searches are returning unrelated hits. I need the Treasury press release for the Oct 21, 2026 designations and the SDN entry for International Development Bank for Investment and Finance. Let me search the OFAC SDN list / press release directly by naming the bank.",
-          "action": "search",
+          "thought": "S2 (Oct 21, 2026 OFAC action) shows Iran-related designations under IRAN-EO13902: Karnakis and Karnakis (Panama/Greece), Amigoz Singapore Pte. Ltd., and five individuals linked to Karnakis and Karnakis, plus issuance of Iran GL GG (wind down of Karnakis and Karnakis) and GL HH (wind-down, safety/environmental transactions, cargo offloading for persons/vessels blocked Oct 21, 2026). Record these as",
+          "action": "save_claim",
           "args": {
-            "query": "OFAC SDN list International Development Bank for Investment and Finance Iraq Development Bank designation IRAN-EO13902 October 2026 press release Treasury sanctions IRGC oil revenue network"
+            "text": "On October 21, 2026, OFAC issued Iran General License GG authorizing the wind down of transactions involving Karnakis and Karnakis, and Iran General License HH authorizing wind-down activities, limited safety and environmental transactions, and the offloading of cargo involving certain persons or vessels blocked on October 21, 2026.",
+            "sources": [
+              "S2"
+            ]
           },
           "ok": true,
-          "ms": 54504
+          "ms": 18727
         },
         {
           "step": 7,
-          "thought": "Wire searches for the Treasury press release returned unrelated hits. I'll search for newswire coverage of the October 21, 2026 OFAC Iran designations naming the Karnakis network and the bank, which should surface Reuters/AP/Bloomberg reporting and possibly the Treasury release.",
-          "action": "search",
+          "thought": "S2 lists SDN designations under IRAN-EO13902: five individuals (Karnakis Kosmas Ioanis, Konstantinos, Sofianos; Ortega Jones Pedro, Roberto) and entities Amigoz Singapore Pte. Ltd. and Karnakis and Karnakis, all linked to Karnakis and Karnakis. Record that claim, then search for the OFAC designation action against International Development Bank for Investment and Finance itself, which GL FF-1 wind",
+          "action": "save_claim",
           "args": {
-            "query": "US Treasury sanctions October 2026 Iran shadow banking shipping network Karnakis Amigoz Singapore International Development Bank for Investment and Finance designated Reuters AP Bloomberg"
+            "text": "On October 21, 2026, OFAC added to the SDN List under Executive Order 13902 (IRAN-EO13902) five individuals — Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, and Ortega Jones Roberto, all Panama nationals — and two entities, Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, Singapore) and Karnakis and Karnakis (Panama City, Panama and Piraeus, Greece), each listed as linked to Karnakis and Karnakis.",
+            "sources": [
+              "S2"
+            ]
           },
           "ok": true,
-          "ms": 66788
+          "ms": 16039
         },
         {
           "step": 8,
-          "thought": "Wire searches keep returning unrelated hits. I'll try naming the document directly: the Treasury press release for the October 21, 2026 Iran designations, and also look for the OFAC FAQ amendments 1224/1225 which may explain the license changes.",
+          "thought": "GL FF-1 winds down transactions involving International Development Bank for Investment and Finance (a.k.a. Iraq Development Bank), so there must be a designation action against it. Search OFAC recent actions for that entity name to find the primary designation notice and its stated basis.",
           "action": "search",
           "args": {
-            "query": "Treasury Department press release October 21 2026 sanctions Iran IRGC oil revenue shadow banking designated entities wind down general license GG HH FF"
+            "query": "OFAC designation International Development Bank for Investment and Finance Iraq Development Bank SDN List recent action"
           },
           "ok": true,
-          "ms": 58036
+          "ms": 24550
+        },
+        {
+          "step": 9,
+          "thought": "The previous search returned unrelated results. I need to find the OFAC designation action for International Development Bank for Investment and Finance (Iraq Development Bank) itself. Let me search OFAC recent actions directly with the exact entity name.",
+          "action": "search",
+          "args": {
+            "query": "OFAC recent actions \"International Development Bank for Investment and Finance\" designation Treasury October 2026"
+          },
+          "ok": true,
+          "ms": 21940
+        },
+        {
+          "step": 10,
+          "thought": "The general web search isn't surfacing the OFAC designation notice for the bank. Let me search the desk wire for the Treasury press release naming the bank's designation, using the executive order angle (IRAN-EO13846 targets Iran's financial sector).",
+          "action": "search",
+          "args": {
+            "query": "Treasury OFAC press release designates International Development Bank for Investment and Finance Iran financial sector executive order 13846 SDN"
+          },
+          "ok": true,
+          "ms": 38493
+        },
+        {
+          "step": 11,
+          "thought": "GL FF was dated October 15, 2026, so the bank's designation likely appears in an OFAC recent action around that date. Search the desk wire for the October 15, 2026 OFAC action naming the bank.",
+          "action": "search",
+          "args": {
+            "query": "OFAC Iran-related designations October 15 2026 General License FF wind down bank Treasury recent action SDN List additions"
+          },
+          "ok": true,
+          "ms": 24683
+        },
+        {
+          "step": 12,
+          "thought": "The desk wire isn't surfacing the bank's designation notice directly. Let me search for news coverage of the designation of International Development Bank for Investment and Finance / Iraq Development Bank by OFAC in October 2026, which should lead to the primary action.",
+          "action": "search",
+          "args": {
+            "query": "OFAC designates Iraq Development Bank International Development Bank for Investment and Finance sanctions October 2026 news Reuters Treasury press release"
+          },
+          "ok": true,
+          "ms": 33481
         }
       ],
       "final": null
     },
     {
-      "at": "2026-11-03T14:43:59.397Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "The dossier has four sources but zero claims. The primary document to open first is S1, the OFAC recent action dated 29 October 2026, which should describe the amended Iran-related General License. I need to read it, then open the actual license/FAQ document (S4) and the 21 October action (S2) for context. From there I can record one-fact claims naming the restricted entities and the trade effects",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261029"
-          },
-          "ok": true,
-          "ms": 97692
-        },
-        {
-          "step": 2,
-          "thought": "S1 confirms OFAC issued Iran General License FF-1, titled \"Authorizing the Wind Down of Transactions Involving International Development Bank for Investment and Finance.\" The actual license text is the linked PDF (S4). I need to open it to identify the named entities, the transactions covered, the wind-down deadlines and any restrictions.",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/media/937311/download?inline"
-          },
-          "ok": true,
-          "ms": 19088
-        }
-      ],
+      "at": "2026-11-03T23:49:14.395Z",
+      "steps": [],
+      "final": null
+    },
+    {
+      "at": "2026-11-04T00:06:41.661Z",
+      "steps": [],
       "final": null
     }
   ],
-  "shifts": 7,
-  "blankShifts": 1,
-  "nextStep": "keep reporting: 3/8 outlets, 0/6 claims, no outreach sent"
+  "shifts": 10,
+  "blankShifts": 2,
+  "nextStep": "keep reporting: 3/8 outlets, 4/6 claims, no outreach sent"
 }
