@@ -1,9 +1,238 @@
 {
+  "meta": {
+    "outlets": [
+      "New York Times",
+      "Buenos Aires Times",
+      "The Kyiv Post",
+      "InsideClimate News",
+      "Rolling Stone"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "stepfun-ai/step-5-preview",
+    "statsModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "2026-u-s-midterm-elections",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "2026 U.S. Midterm Elections",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Amerikaner wählen bei den Zwischenwahlen 2026, bei denen die Kontrolle über den Kongress und wichtige Ämter auf Bundesstaatenebene auf dem Spiel steht.",
+      "title": "Zwischenwahlen in den USA 2026"
+    },
+    "en": {
+      "dek": "Americans vote in the 2026 midterm elections, with control of Congress and key statewide offices at stake.",
+      "title": "2026 U.S. Midterm Elections"
+    },
+    "es": {
+      "dek": "Los estadounidenses votan en las elecciones de mitad de mandato de 2026, con el control del Congreso y de importantes cargos estatales en juego.",
+      "title": "Elecciones de mitad de mandato de 2026 en EE. UU."
+    },
+    "fr": {
+      "dek": "Les Américains votent lors des élections de mi-mandat de 2026, le contrôle du Congrès et des postes étatiques clés étant en jeu.",
+      "title": "Élections de mi-mandat de 2026 aux États-Unis"
+    },
+    "ja": {
+      "dek": "米国民は2026年の中間選挙で投票する。連邦議会の支配権と主要な州レベルの役職が争点となっている。",
+      "title": "2026年米国中間選挙"
+    },
+    "ko": {
+      "dek": "미국 유권자들이 2026년 중간선거에서 투표한다. 의회 장악권과 주요 주(州) 요직이 걸려 있다.",
+      "title": "2026년 미국 중간선거"
+    },
+    "pt": {
+      "dek": "Os americanos votam nas eleições de meio de mandato de 2026, com o controlo do Congresso e cargos estaduais importantes em causa.",
+      "title": "Eleições de meio de mandato nos EUA em 2026"
+    },
+    "zh": {
+      "dek": "美国人参加2026年中期选举投票，国会控制权和关键州级职位的归属面临争夺。",
+      "title": "2026年美国中期选举"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-11-05T00:08:06.074Z",
+      "id": "u-1793837286074-4ehr",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut Nikkei Asia und DW gewannen die Demokraten die Kontrolle über das Repräsentantenhaus und den Senat. CNBC berichtete, die Demokraten hätten sieben Sitze im Senat und fast 30 Wahlkreise im Repräsentantenhaus erobert, während die Republikaner keinen einzigen davon gewonnen hätten.",
+          "headline": "Demokraten gewinnen bei US-Zwischenwahlen die Kontrolle über den Kongress"
+        },
+        "en": {
+          "body": "Democrats won control of the House and Senate, according to Nikkei Asia and DW. CNBC reported Democrats flipped seven Senate seats and nearly 30 House districts, and that Republicans had not flipped a single one.",
+          "headline": "Democrats win control of Congress in US midterms"
+        },
+        "es": {
+          "body": "Los demócratas ganaron el control de la Cámara de Representantes y del Senado, según Nikkei Asia y DW. CNBC informó de que los demócratas se hicieron con siete escaños del Senado y casi 30 distritos de la Cámara, y de que los republicanos no se hicieron con ninguno.",
+          "headline": "Los demócratas conquistan el control del Congreso en las elecciones de mitad de mandato de EE. UU."
+        },
+        "fr": {
+          "body": "Les démocrates ont pris le contrôle de la Chambre et du Sénat, selon Nikkei Asia et DW. CNBC a rapporté que les démocrates avaient fait basculer sept sièges au Sénat et près de 30 circonscriptions à la Chambre, et que les républicains n'en avaient pas fait basculer un seul.",
+          "headline": "Les démocrates prennent le contrôle du Congrès aux élections de mi-mandat américaines"
+        },
+        "it": {
+          "body": "I democratici hanno conquistato il controllo della Camera e del Senato, secondo Nikkei Asia e DW. CNBC ha riferito che i democratici hanno ribaltato sette seggi al Senato e quasi 30 distretti alla Camera, mentre i repubblicani non ne hanno ribaltato nessuno.",
+          "headline": "I democratici vincono il controllo del Congresso alle elezioni di metà mandato negli Stati Uniti"
+        },
+        "ja": {
+          "body": "ニッケイアジアとDWによると、民主党は下院と上院を掌握した。CNBCは、民主党が上院7議席と下院約30選挙区を奪い、共和党は一つも奪えなかったと報じた。",
+          "headline": "米国中間選挙、民主党が国会を掌握"
+        },
+        "ko": {
+          "body": "Nikkei Asia와 DW에 따르면 민주당은 하원과 상원의 장악권을 확보했다. CNBC는 민주당이 상원 의석 7곳과 하원 선거구 약 30곳을 탈환했으며, 공화당은 단 한 곳도 탈환하지 못했다고 보도했다.",
+          "headline": "미국 중간선거에서 민주당이 의회 장악권 확보"
+        },
+        "pt": {
+          "body": "Os Democratas conquistaram o controlo da Câmara dos Deputados e do Senado, de acordo com a Nikkei Asia e a DW. A CNBC informou que os Democratas conquistaram sete lugares no Senado e quase 30 distritos na Câmara dos Deputados, e que os Republicanos não conquistaram nenhum.",
+          "headline": "Democratas conquistam o controlo do Congresso nas eleições de meio de mandato nos EUA"
+        },
+        "zh": {
+          "body": "据《日经亚洲》和德国之声报道，民主党赢得了众议院和参议院的控制权。CNBC报道称，民主党翻盘了7个参议院席位和近30个众议院选区，而共和党一个也没有翻盘。",
+          "headline": "民主党在美国中期选举中赢得国会控制权"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-win-control-of-congress-in-sharp-rebuke-to-trump",
+          "title": "Democrats win control of Congress in sharp rebuke to Trump",
+          "outlet": "Nikkei Asia",
+          "publishedAt": "2026-11-05T00:08:06.074Z"
+        },
+        {
+          "url": "https://www.dw.com/en/democrats-take-house-and-senate-from-republicans-in-us-midterm-rout/a-79859416?maca=en-rss-en-all-1573-rdf",
+          "title": "Democrats take House and Senate from Republicans in US midterm rout",
+          "outlet": "DW",
+          "publishedAt": "2026-11-04T23:04:00.000Z"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
+          "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
+          "outlet": "CNBC",
+          "publishedAt": "2026-11-04T23:44:18.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-04T23:26:48.000Z",
+      "id": "u-1793834808000-auu4",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Präsident Donald Trump erklärte laut The Hindu, es sei „weitgehend zutreffend“, dass der Iran-Krieg eine Ursache der Wahlniederlage sei. The New York Times berichtete, Vizepräsident Vance habe den Iran-Krieg für die Niederlagen der Republikaner verantwortlich gemacht, wobei seine Kritik als Bruch mit Trump beschrieben wurde.",
+          "headline": "Trump und Vance machen den Iran-Krieg für die Niederlagen der Republikaner verantwortlich"
+        },
+        "en": {
+          "body": "President Donald Trump said the Iran war was 'largely true' as a cause of the election loss, according to The Hindu. The New York Times reported that Vice President Vance blamed the Iran war for Republican losses, describing his critique as a break with Trump.",
+          "headline": "Trump and Vance blame Iran war for Republican losses"
+        },
+        "es": {
+          "body": "El presidente Donald Trump dijo que la guerra con Irán era «en gran medida cierta» como causa de la derrota electoral, según The Hindu. The New York Times informó de que el vicepresidente Vance culpó a la guerra con Irán de las pérdidas republicanas, describiendo su crítica como una ruptura con Trump.",
+          "headline": "Trump y Vance culpan a la guerra con Irán de las pérdidas republicanas"
+        },
+        "fr": {
+          "body": "Le président Donald Trump a déclaré qu'il était « largement vrai » que la guerre en Iran était une cause de la défaite électorale, selon The Hindu. Le New York Times a rapporté que le vice-président Vance avait imputé les défaites républicaines à la guerre en Iran, décrivant sa critique comme une rupture avec Trump.",
+          "headline": "Trump et Vance imputent les défaites républicaines à la guerre en Iran"
+        },
+        "it": {
+          "body": "Il presidente Donald Trump ha detto che la guerra con l'Iran era «in gran parte vera» come causa della sconfitta elettorale, secondo The Hindu. Il New York Times ha riferito che il vice presidente Vance ha attribuito la guerra con l'Iran alle perdite repubblicane, descrivendo la sua critica come una rottura con Trump.",
+          "headline": "Trump e Vance attribuiscono la guerra con l'Iran alle perdite repubblicane"
+        },
+        "ja": {
+          "body": "ヒンドゥー紙によると、トランプ大統領は、選挙敗北の原因としてイラン戦争が「ほぼ正しい」と述べた。ニューヨーク・タイムズは、バンス副大統領が共和党の敗北をイラン戦争のせいだとし、その批判をトランプとの決裂として説明した。",
+          "headline": "トランプとバンス、共和党の敗北をイラン戦争のせいに"
+        },
+        "ko": {
+          "body": "The Hindu에 따르면 도널드 트럼프 대통령은 이란 전쟁이 선거 패배의 원인이라는 것이 ‘largely true’라고 말했다. The New York Times는 밴스 부통령이 공화당의 패배를 이란 전쟁 탓으로 돌렸다고 보도했으며, 그의 비판을 트럼프와의 결별로 묘사했다.",
+          "headline": "트럼프와 밴스, 공화당 패배의 원인으로 이란 전쟁 지목"
+        },
+        "pt": {
+          "body": "O Presidente Donald Trump disse que a guerra com o Irão era «em grande medida verdadeira» como causa da derrota eleitoral, de acordo com o The Hindu. O The New York Times informou que o vice-presidente Vance responsabilizou a guerra com o Irão pelas perdas dos Republicanos, descrevendo a sua crítica como uma rutura com Trump.",
+          "headline": "Trump e Vance atribuem as perdas republicanas à guerra com o Irão"
+        },
+        "zh": {
+          "body": "据《印度教徒报》报道，总统唐纳德·特朗普称，伊朗战争是此次选举失利原因这一说法“基本属实”。《纽约时报》报道，副总统万斯将共和党的失利归咎于伊朗战争，并称他的批评与特朗普的主张分道扬镳。",
+          "headline": "特朗普和万斯将共和党的失利归咎于伊朗战争"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/11/04/us/politics/vance-iran-war-midterms-trump.html",
+          "title": "Vance, in Break With Trump, Blames Iran War for Republicans’ 2026 Midterm Losses",
+          "outlet": "New York Times",
+          "publishedAt": "2026-11-04T23:26:48.000Z"
+        },
+        {
+          "url": "https://www.thehindu.com/news/international/us-midterm-elections-2026-senate-governor-races-winners-lossers-live-updates-trump-republicans-democrats-news/article71660811.ece",
+          "title": "U.S. midterm elections 2026 LIVE: Trump says 'largely true' Iran war caused election loss",
+          "outlet": "The Hindu",
+          "publishedAt": "2026-11-04T23:02:54.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-05T00:10:35.752Z",
+      "id": "u-1793837435752-37v3",
+      "kind": "reaction",
+      "locales": {
+        "de": {
+          "body": "Selenskyj erklärte laut The Jerusalem Post und KFGO, er hoffe, dass das Ergebnis der US-Wahlen mehr Hilfe für die Ukraine bringen werde. Er hoffe, dass die Folgen der Übernahme beider Kammern des Kongresses durch die Demokraten im nächsten Jahr Kiew zugutekommen würden, berichtete The Jerusalem Post.",
+          "headline": "Selenskyj hofft, dass das Ergebnis der US-Wahlen mehr Hilfe für die Ukraine bringen wird"
+        },
+        "en": {
+          "body": "Zelensky said he hoped the US election outcome would generate more help for Ukraine, according to The Jerusalem Post and KFGO. He said he hoped changes from Democrats taking control of both chambers of Congress next year would benefit Kyiv, The Jerusalem Post reported.",
+          "headline": "Zelensky hopes US election outcome will generate more help for Ukraine"
+        },
+        "es": {
+          "body": "Zelensky dijo que esperaba que el resultado de las elecciones estadounidenses generara más ayuda para Ucrania, según The Jerusalem Post y KFGO. Dijo que esperaba que los cambios derivados de que los demócratas asumieran el control de ambas cámaras del Congreso el próximo año beneficiaran a Kiev, informó The Jerusalem Post.",
+          "headline": "Zelensky espera que el resultado de las elecciones estadounidenses genere más ayuda para Ucrania"
+        },
+        "fr": {
+          "body": "Zelensky a déclaré qu'il espérait que l'issue des élections américaines générerait davantage d'aide pour l'Ukraine, selon The Jerusalem Post et KFGO. Il a dit qu'il espérait que les changements résultant de la prise de contrôle des deux chambres du Congrès par les démocrates l'année prochaine profiteraient à Kyiv, a rapporté The Jerusalem Post.",
+          "headline": "Zelensky espère que le résultat des élections américaines générera davantage d'aide pour l'Ukraine"
+        },
+        "it": {
+          "body": "Zelensky ha detto che spera che l'esito delle elezioni negli Stati Uniti porti più aiuti all'Ucraina, secondo The Jerusalem Post e KFGO. Ha aggiunto che spera che i cambiamenti derivanti dall'assunzione del controllo di entrambe le camere del Congresso da parte dei democratici il prossimo anno possano giovare a Kiev, ha riferito The Jerusalem Post.",
+          "headline": "Zelensky spera che l'esito delle elezioni negli Stati Uniti porti più aiuti all'Ucraina"
+        },
+        "ja": {
+          "body": "エルサレム・ポストとKFGOによると、ゼensky斯基は、米国選挙の結果がウクライナへのさらなる支援につながることを期待すると述べた。エルサレム・ポストは、ゼensky斯基が、来年に民主党が国会両院を掌握することで生じる変化がキーウに好处をもたらすことを期待していると報じた。",
+          "headline": "ゼensky斯基、米選挙の結果がウクライナへの支援増加につながることに期待"
+        },
+        "ko": {
+          "body": "The Jerusalem Post와 KFGO에 따르면 젤렌스키는 미국 선거 결과가 우크라이나에 대한 지원 확대를 가져오기를 바랐다고 말했다. 그는 내년 의회 양쪽 chamber의 장악권을 민주당이 차지하게 되면서 생기는 변화가 키우에 이익이 될 것이라고 기대했다고 The Jerusalem Post는 보도했다.",
+          "headline": "젤렌스키, 미국 선거 결과가 우크라이나에 더 많은 지원으로 이어지기를 기대"
+        },
+        "pt": {
+          "body": "Zelensky disse que esperava que o resultado das eleições nos EUA trouxesse mais ajuda para a Ucrânia, de acordo com o The Jerusalem Post e a KFGO. Disse que esperava que as alterações decorrentes de os Democratas tomarem o controlo de ambas as câmaras do Congresso no próximo ano beneficiassem Kyiv, informou o The Jerusalem Post.",
+          "headline": "Zelensky espera que o resultado das eleições nos EUA traga mais ajuda para a Ucrânia"
+        },
+        "zh": {
+          "body": "据《耶路撒冷邮报》和KFGO报道，泽连斯基表示，希望美国选举结果能够为乌克兰带来更多援助。他希望明年民主党掌控国会两院所带来的变化将有利于基辅，《耶路撒冷邮报》报道。",
+          "headline": "泽连斯基希望美国选举结果将带来更多对乌援助"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/international/article-913873",
+          "title": "Zelensky hopes US election outcome will generate more help for Ukraine",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-05T00:46:34.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdDQyREs4RWJLS1NrODBUMTNxcTNxQmk3YjZUa05kcFlldXo0cGI0MWJITlF1dUxDWVhqTGhYVFhqUDFKZFRZNm81elFOSmkxSWxNcDFsdmJQd2JiMklQc1hrVTBVSUcwbmhqVTY3RkFzYUs0U2E5dWF0MHJjdjdUVzlTaE9lQmhBbVdjcWp2b1lJcm16YXJaeGx5Y3FpN0JLWkE?oc=5",
+          "title": "Zelenskiy hopes US election outcome will generate more help for Ukraine",
+          "outlet": "The Mighty 790 KFGO",
+          "publishedAt": "2026-11-04T23:03:45.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "election",
     "midterms",
@@ -19,194 +248,6 @@
     "texas",
     "maine",
     "collins"
-  ],
-  "startedAt": "2026-11-05T00:08:32.452Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-05T00:16:27.594Z",
-  "articleSlug": null,
-  "sourceCount": 7,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1793837286074-4ehr",
-      "at": "2026-11-05T00:08:06.074Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Democrats win control of Congress in US midterms",
-          "body": "Democrats won control of the House and Senate, according to Nikkei Asia and DW. CNBC reported Democrats flipped seven Senate seats and nearly 30 House districts, and that Republicans had not flipped a single one."
-        },
-        "es": {
-          "headline": "Los demócratas conquistan el control del Congreso en las elecciones de mitad de mandato de EE. UU.",
-          "body": "Los demócratas ganaron el control de la Cámara de Representantes y del Senado, según Nikkei Asia y DW. CNBC informó de que los demócratas se hicieron con siete escaños del Senado y casi 30 distritos de la Cámara, y de que los republicanos no se hicieron con ninguno."
-        },
-        "it": {
-          "headline": "I democratici vincono il controllo del Congresso alle elezioni di metà mandato negli Stati Uniti",
-          "body": "I democratici hanno conquistato il controllo della Camera e del Senato, secondo Nikkei Asia e DW. CNBC ha riferito che i democratici hanno ribaltato sette seggi al Senato e quasi 30 distretti alla Camera, mentre i repubblicani non ne hanno ribaltato nessuno."
-        },
-        "de": {
-          "headline": "Demokraten gewinnen bei US-Zwischenwahlen die Kontrolle über den Kongress",
-          "body": "Laut Nikkei Asia und DW gewannen die Demokraten die Kontrolle über das Repräsentantenhaus und den Senat. CNBC berichtete, die Demokraten hätten sieben Sitze im Senat und fast 30 Wahlkreise im Repräsentantenhaus erobert, während die Republikaner keinen einzigen davon gewonnen hätten."
-        },
-        "zh": {
-          "headline": "民主党在美国中期选举中赢得国会控制权",
-          "body": "据《日经亚洲》和德国之声报道，民主党赢得了众议院和参议院的控制权。CNBC报道称，民主党翻盘了7个参议院席位和近30个众议院选区，而共和党一个也没有翻盘。"
-        },
-        "pt": {
-          "headline": "Democratas conquistam o controlo do Congresso nas eleições de meio de mandato nos EUA",
-          "body": "Os Democratas conquistaram o controlo da Câmara dos Deputados e do Senado, de acordo com a Nikkei Asia e a DW. A CNBC informou que os Democratas conquistaram sete lugares no Senado e quase 30 distritos na Câmara dos Deputados, e que os Republicanos não conquistaram nenhum."
-        },
-        "ja": {
-          "headline": "米国中間選挙、民主党が国会を掌握",
-          "body": "ニッケイアジアとDWによると、民主党は下院と上院を掌握した。CNBCは、民主党が上院7議席と下院約30選挙区を奪い、共和党は一つも奪えなかったと報じた。"
-        },
-        "ko": {
-          "headline": "미국 중간선거에서 민주당이 의회 장악권 확보",
-          "body": "Nikkei Asia와 DW에 따르면 민주당은 하원과 상원의 장악권을 확보했다. CNBC는 민주당이 상원 의석 7곳과 하원 선거구 약 30곳을 탈환했으며, 공화당은 단 한 곳도 탈환하지 못했다고 보도했다."
-        },
-        "fr": {
-          "headline": "Les démocrates prennent le contrôle du Congrès aux élections de mi-mandat américaines",
-          "body": "Les démocrates ont pris le contrôle de la Chambre et du Sénat, selon Nikkei Asia et DW. CNBC a rapporté que les démocrates avaient fait basculer sept sièges au Sénat et près de 30 circonscriptions à la Chambre, et que les républicains n'en avaient pas fait basculer un seul."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Nikkei Asia",
-          "title": "Democrats win control of Congress in sharp rebuke to Trump",
-          "url": "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-win-control-of-congress-in-sharp-rebuke-to-trump",
-          "publishedAt": "2026-11-05T00:08:06.074Z"
-        },
-        {
-          "outlet": "DW",
-          "title": "Democrats take House and Senate from Republicans in US midterm rout",
-          "url": "https://www.dw.com/en/democrats-take-house-and-senate-from-republicans-in-us-midterm-rout/a-79859416?maca=en-rss-en-all-1573-rdf",
-          "publishedAt": "2026-11-04T23:04:00.000Z"
-        },
-        {
-          "outlet": "CNBC",
-          "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
-          "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
-          "publishedAt": "2026-11-04T23:44:18.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793834808000-auu4",
-      "at": "2026-11-04T23:26:48.000Z",
-      "kind": "statement",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Trump and Vance blame Iran war for Republican losses",
-          "body": "President Donald Trump said the Iran war was 'largely true' as a cause of the election loss, according to The Hindu. The New York Times reported that Vice President Vance blamed the Iran war for Republican losses, describing his critique as a break with Trump."
-        },
-        "es": {
-          "headline": "Trump y Vance culpan a la guerra con Irán de las pérdidas republicanas",
-          "body": "El presidente Donald Trump dijo que la guerra con Irán era «en gran medida cierta» como causa de la derrota electoral, según The Hindu. The New York Times informó de que el vicepresidente Vance culpó a la guerra con Irán de las pérdidas republicanas, describiendo su crítica como una ruptura con Trump."
-        },
-        "it": {
-          "headline": "Trump e Vance attribuiscono la guerra con l'Iran alle perdite repubblicane",
-          "body": "Il presidente Donald Trump ha detto che la guerra con l'Iran era «in gran parte vera» come causa della sconfitta elettorale, secondo The Hindu. Il New York Times ha riferito che il vice presidente Vance ha attribuito la guerra con l'Iran alle perdite repubblicane, descrivendo la sua critica come una rottura con Trump."
-        },
-        "de": {
-          "headline": "Trump und Vance machen den Iran-Krieg für die Niederlagen der Republikaner verantwortlich",
-          "body": "Präsident Donald Trump erklärte laut The Hindu, es sei „weitgehend zutreffend“, dass der Iran-Krieg eine Ursache der Wahlniederlage sei. The New York Times berichtete, Vizepräsident Vance habe den Iran-Krieg für die Niederlagen der Republikaner verantwortlich gemacht, wobei seine Kritik als Bruch mit Trump beschrieben wurde."
-        },
-        "zh": {
-          "headline": "特朗普和万斯将共和党的失利归咎于伊朗战争",
-          "body": "据《印度教徒报》报道，总统唐纳德·特朗普称，伊朗战争是此次选举失利原因这一说法“基本属实”。《纽约时报》报道，副总统万斯将共和党的失利归咎于伊朗战争，并称他的批评与特朗普的主张分道扬镳。"
-        },
-        "pt": {
-          "headline": "Trump e Vance atribuem as perdas republicanas à guerra com o Irão",
-          "body": "O Presidente Donald Trump disse que a guerra com o Irão era «em grande medida verdadeira» como causa da derrota eleitoral, de acordo com o The Hindu. O The New York Times informou que o vice-presidente Vance responsabilizou a guerra com o Irão pelas perdas dos Republicanos, descrevendo a sua crítica como uma rutura com Trump."
-        },
-        "ja": {
-          "headline": "トランプとバンス、共和党の敗北をイラン戦争のせいに",
-          "body": "ヒンドゥー紙によると、トランプ大統領は、選挙敗北の原因としてイラン戦争が「ほぼ正しい」と述べた。ニューヨーク・タイムズは、バンス副大統領が共和党の敗北をイラン戦争のせいだとし、その批判をトランプとの決裂として説明した。"
-        },
-        "ko": {
-          "headline": "트럼프와 밴스, 공화당 패배의 원인으로 이란 전쟁 지목",
-          "body": "The Hindu에 따르면 도널드 트럼프 대통령은 이란 전쟁이 선거 패배의 원인이라는 것이 ‘largely true’라고 말했다. The New York Times는 밴스 부통령이 공화당의 패배를 이란 전쟁 탓으로 돌렸다고 보도했으며, 그의 비판을 트럼프와의 결별로 묘사했다."
-        },
-        "fr": {
-          "headline": "Trump et Vance imputent les défaites républicaines à la guerre en Iran",
-          "body": "Le président Donald Trump a déclaré qu'il était « largement vrai » que la guerre en Iran était une cause de la défaite électorale, selon The Hindu. Le New York Times a rapporté que le vice-président Vance avait imputé les défaites républicaines à la guerre en Iran, décrivant sa critique comme une rupture avec Trump."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "New York Times",
-          "title": "Vance, in Break With Trump, Blames Iran War for Republicans’ 2026 Midterm Losses",
-          "url": "https://www.nytimes.com/2026/11/04/us/politics/vance-iran-war-midterms-trump.html",
-          "publishedAt": "2026-11-04T23:26:48.000Z"
-        },
-        {
-          "outlet": "The Hindu",
-          "title": "U.S. midterm elections 2026 LIVE: Trump says 'largely true' Iran war caused election loss",
-          "url": "https://www.thehindu.com/news/international/us-midterm-elections-2026-senate-governor-races-winners-lossers-live-updates-trump-republicans-democrats-news/article71660811.ece",
-          "publishedAt": "2026-11-04T23:02:54.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793837435752-37v3",
-      "at": "2026-11-05T00:10:35.752Z",
-      "kind": "reaction",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Zelensky hopes US election outcome will generate more help for Ukraine",
-          "body": "Zelensky said he hoped the US election outcome would generate more help for Ukraine, according to The Jerusalem Post and KFGO. He said he hoped changes from Democrats taking control of both chambers of Congress next year would benefit Kyiv, The Jerusalem Post reported."
-        },
-        "es": {
-          "headline": "Zelensky espera que el resultado de las elecciones estadounidenses genere más ayuda para Ucrania",
-          "body": "Zelensky dijo que esperaba que el resultado de las elecciones estadounidenses generara más ayuda para Ucrania, según The Jerusalem Post y KFGO. Dijo que esperaba que los cambios derivados de que los demócratas asumieran el control de ambas cámaras del Congreso el próximo año beneficiaran a Kiev, informó The Jerusalem Post."
-        },
-        "it": {
-          "headline": "Zelensky spera che l'esito delle elezioni negli Stati Uniti porti più aiuti all'Ucraina",
-          "body": "Zelensky ha detto che spera che l'esito delle elezioni negli Stati Uniti porti più aiuti all'Ucraina, secondo The Jerusalem Post e KFGO. Ha aggiunto che spera che i cambiamenti derivanti dall'assunzione del controllo di entrambe le camere del Congresso da parte dei democratici il prossimo anno possano giovare a Kiev, ha riferito The Jerusalem Post."
-        },
-        "de": {
-          "headline": "Selenskyj hofft, dass das Ergebnis der US-Wahlen mehr Hilfe für die Ukraine bringen wird",
-          "body": "Selenskyj erklärte laut The Jerusalem Post und KFGO, er hoffe, dass das Ergebnis der US-Wahlen mehr Hilfe für die Ukraine bringen werde. Er hoffe, dass die Folgen der Übernahme beider Kammern des Kongresses durch die Demokraten im nächsten Jahr Kiew zugutekommen würden, berichtete The Jerusalem Post."
-        },
-        "zh": {
-          "headline": "泽连斯基希望美国选举结果将带来更多对乌援助",
-          "body": "据《耶路撒冷邮报》和KFGO报道，泽连斯基表示，希望美国选举结果能够为乌克兰带来更多援助。他希望明年民主党掌控国会两院所带来的变化将有利于基辅，《耶路撒冷邮报》报道。"
-        },
-        "pt": {
-          "headline": "Zelensky espera que o resultado das eleições nos EUA traga mais ajuda para a Ucrânia",
-          "body": "Zelensky disse que esperava que o resultado das eleições nos EUA trouxesse mais ajuda para a Ucrânia, de acordo com o The Jerusalem Post e a KFGO. Disse que esperava que as alterações decorrentes de os Democratas tomarem o controlo de ambas as câmaras do Congresso no próximo ano beneficiassem Kyiv, informou o The Jerusalem Post."
-        },
-        "ja": {
-          "headline": "ゼensky斯基、米選挙の結果がウクライナへの支援増加につながることに期待",
-          "body": "エルサレム・ポストとKFGOによると、ゼensky斯基は、米国選挙の結果がウクライナへのさらなる支援につながることを期待すると述べた。エルサレム・ポストは、ゼensky斯基が、来年に民主党が国会両院を掌握することで生じる変化がキーウに好处をもたらすことを期待していると報じた。"
-        },
-        "ko": {
-          "headline": "젤렌스키, 미국 선거 결과가 우크라이나에 더 많은 지원으로 이어지기를 기대",
-          "body": "The Jerusalem Post와 KFGO에 따르면 젤렌스키는 미국 선거 결과가 우크라이나에 대한 지원 확대를 가져오기를 바랐다고 말했다. 그는 내년 의회 양쪽 chamber의 장악권을 민주당이 차지하게 되면서 생기는 변화가 키우에 이익이 될 것이라고 기대했다고 The Jerusalem Post는 보도했다."
-        },
-        "fr": {
-          "headline": "Zelensky espère que le résultat des élections américaines générera davantage d'aide pour l'Ukraine",
-          "body": "Zelensky a déclaré qu'il espérait que l'issue des élections américaines générerait davantage d'aide pour l'Ukraine, selon The Jerusalem Post et KFGO. Il a dit qu'il espérait que les changements résultant de la prise de contrôle des deux chambres du Congrès par les démocrates l'année prochaine profiteraient à Kyiv, a rapporté The Jerusalem Post."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Jerusalem Post",
-          "title": "Zelensky hopes US election outcome will generate more help for Ukraine",
-          "url": "https://www.jpost.com/international/article-913873",
-          "publishedAt": "2026-11-05T00:46:34.000Z"
-        },
-        {
-          "outlet": "The Mighty 790 KFGO",
-          "title": "Zelenskiy hopes US election outcome will generate more help for Ukraine",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdDQyREs4RWJLS1NrODBUMTNxcTNxQmk3YjZUa05kcFlldXo0cGI0MWJITlF1dUxDWVhqTGhYVFhqUDFKZFRZNm81elFOSmkxSWxNcDFsdmJQd2JiMklQc1hrVTBVSUcwbmhqVTY3RkFzYUs0U2E5dWF0MHJjdjdUVzlTaE9lQmhBbVdjcWp2b1lJcm16YXJaeGx5Y3FpN0JLWkE?oc=5",
-          "publishedAt": "2026-11-04T23:03:45.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.jpost.com/international/article-913873",
@@ -270,51 +311,340 @@
     "https://www.scmp.com/news/us/us-elections/article/3373322/costs-above-competition-why-us-voters-arent-buying-trumps-china-ai-pitch",
     "https://www.tagesschau.de/tagesthemen/video-1678322.html"
   ],
+  "startedAt": "2026-11-05T00:08:32.452Z",
+  "updatedAt": "2026-11-05T00:16:27.594Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": null,
+  "sourceCount": 7,
   "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "2026 U.S. Midterm Elections",
-      "dek": "Americans vote in the 2026 midterm elections, with control of Congress and key statewide offices at stake."
+  "stats": {
+    "label": "2026 U.S. Midterm Election Results",
+    "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
+    "unit": "",
+    "max": null,
+    "asOf": "2026-11-05T00:00:00.000Z",
+    "updatedAt": "2026-11-05T00:47:07.376Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
+      "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
+      "publishedAt": "2026-11-04T23:44:18.000Z",
+      "trusted": true
     },
-    "de": {
-      "title": "Zwischenwahlen in den USA 2026",
-      "dek": "Amerikaner wählen bei den Zwischenwahlen 2026, bei denen die Kontrolle über den Kongress und wichtige Ämter auf Bundesstaatenebene auf dem Spiel steht."
-    },
-    "es": {
-      "title": "Elecciones de mitad de mandato de 2026 en EE. UU.",
-      "dek": "Los estadounidenses votan en las elecciones de mitad de mandato de 2026, con el control del Congreso y de importantes cargos estatales en juego."
-    },
-    "pt": {
-      "title": "Eleições de meio de mandato nos EUA em 2026",
-      "dek": "Os americanos votam nas eleições de meio de mandato de 2026, com o controlo do Congresso e cargos estaduais importantes em causa."
-    },
-    "fr": {
-      "title": "Élections de mi-mandat de 2026 aux États-Unis",
-      "dek": "Les Américains votent lors des élections de mi-mandat de 2026, le contrôle du Congrès et des postes étatiques clés étant en jeu."
-    },
-    "zh": {
-      "title": "2026年美国中期选举",
-      "dek": "美国人参加2026年中期选举投票，国会控制权和关键州级职位的归属面临争夺。"
-    },
-    "ko": {
-      "title": "2026년 미국 중간선거",
-      "dek": "미국 유권자들이 2026년 중간선거에서 투표한다. 의회 장악권과 주요 주(州) 요직이 걸려 있다."
-    },
-    "ja": {
-      "title": "2026年米国中間選挙",
-      "dek": "米国民は2026年の中間選挙で投票する。連邦議会の支配権と主要な州レベルの役職が争点となっている。"
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "senate-seats-flipped-by-democrats",
+        "label": "Senate seats flipped by Democrats",
+        "value": 7,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Escaños del Senado cambiados de manos por los demócratas"
+          },
+          "fr": {
+            "label": "Sièges au Sénat remportés par les démocrates"
+          },
+          "it": {
+            "label": "Seggi al Senato conquistati dai Democratici"
+          },
+          "de": {
+            "label": "Von Demokraten umgewonnene Sitze im Senat"
+          },
+          "zh": {
+            "label": "民主党翻转的参议院席位"
+          },
+          "pt": {
+            "label": "Lugares no Senado conquistados pelos democratas"
+          }
+        }
+      },
+      {
+        "key": "house-districts-flipped-by-democrats",
+        "label": "House districts flipped by Democrats",
+        "value": 30,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Distritos de la Cámara de Representantes cambiados de manos por los demócratas"
+          },
+          "fr": {
+            "label": "Circonscriptions à la Chambre des représentants remportées par les démocrates"
+          },
+          "it": {
+            "label": "Collegi alla Camera conquistati dai Democratici"
+          },
+          "de": {
+            "label": "Von Demokraten umgewonnene Wahlkreise im Repräsentantenhaus"
+          },
+          "zh": {
+            "label": "民主党翻转的众议院选区"
+          },
+          "pt": {
+            "label": "Distritos da Câmara de Deputados conquistados pelos democratas"
+          }
+        }
+      },
+      {
+        "key": "governorships-flipped-by-democrats",
+        "label": "Governorships flipped by Democrats",
+        "value": 5,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Gubernaturas cambiadas de manos por los demócratas"
+          },
+          "fr": {
+            "label": "Postes de gouverneur remportés par les démocrates"
+          },
+          "it": {
+            "label": "Governatorati conquistati dai Democratici"
+          },
+          "de": {
+            "label": "Von Demokraten umgewonnene Gouverneursposten"
+          },
+          "zh": {
+            "label": "民主党翻转的州长职位"
+          },
+          "pt": {
+            "label": "Cargos de governador conquistados pelos democratas"
+          }
+        }
+      },
+      {
+        "key": "state-legislative-chambers-flipped",
+        "label": "State legislative chambers flipped",
+        "value": 12,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Cámaras legislativas de los estados cambiadas de manos"
+          },
+          "fr": {
+            "label": "Chambres législatives des États basculées"
+          },
+          "it": {
+            "label": "Camere legislative degli Stati cambiate di mano"
+          },
+          "de": {
+            "label": "Umgewonnene Kammern der Landesparlamente"
+          },
+          "zh": {
+            "label": "归属翻转的州议会两院"
+          },
+          "pt": {
+            "label": "Câmaras legislativas estaduais conquistadas"
+          }
+        }
+      },
+      {
+        "key": "expected-democratic-house-seats",
+        "label": "Expected Democratic House seats",
+        "value": 255,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Número previsto de escaños de la Cámara de Representantes para los demócratas"
+          },
+          "fr": {
+            "label": "Sièges à la Chambre des représentants attendus pour les démocrates"
+          },
+          "it": {
+            "label": "Numero previsto di seggi dei Democratici alla Camera"
+          },
+          "de": {
+            "label": "Erwartete Sitze der Demokraten im Repräsentantenhaus"
+          },
+          "zh": {
+            "label": "预计民主党将获得的众议院席位"
+          },
+          "pt": {
+            "label": "Lugares previstos para os democratas na Câmara de Deputados"
+          }
+        }
+      },
+      {
+        "key": "musk-election-spending",
+        "label": "Musk election spending",
+        "value": 500,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Gasto electoral de Musk"
+          },
+          "fr": {
+            "label": "Dépenses électorales de Musk"
+          },
+          "it": {
+            "label": "Spese elettorali di Musk"
+          },
+          "de": {
+            "label": "Musks Wahlkampfausgaben"
+          },
+          "zh": {
+            "label": "马斯克的选举支出"
+          },
+          "pt": {
+            "label": "Gastos de Musk nas eleições"
+          }
+        }
+      },
+      {
+        "key": "musk-backed-spending",
+        "label": "Musk-backed spending",
+        "value": 440,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Gasto respaldado por Musk"
+          },
+          "fr": {
+            "label": "Dépenses soutenues par Musk"
+          },
+          "it": {
+            "label": "Spese con il sostegno di Musk"
+          },
+          "de": {
+            "label": "Von Musk unterstützte Ausgaben"
+          },
+          "zh": {
+            "label": "马斯克支持的支出"
+          },
+          "pt": {
+            "label": "Gastos apoiados por Musk"
+          }
+        }
+      },
+      {
+        "key": "trump-media-stock-daily-change",
+        "label": "Trump Media stock daily change",
+        "value": -24,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Variación diaria de la acción de Trump Media"
+          },
+          "fr": {
+            "label": "Variation quotidienne de l’action Trump Media"
+          },
+          "it": {
+            "label": "Variazione giornaliera del titolo di Trump Media"
+          },
+          "de": {
+            "label": "Tagesveränderung der Trump-Media-Aktie"
+          },
+          "zh": {
+            "label": "特朗普媒体公司股价每日变动"
+          },
+          "pt": {
+            "label": "Variação diária da ação da Trump Media"
+          }
+        }
+      },
+      {
+        "key": "crude-oil-price-threshold",
+        "label": "Crude oil price threshold",
+        "value": 90,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Umbral del precio del petróleo crudo"
+          },
+          "fr": {
+            "label": "Seuil de prix du pétrole brut"
+          },
+          "it": {
+            "label": "Soglia del prezzo del petrolio greggio"
+          },
+          "de": {
+            "label": "Schwellenwert für den Rohölpreis"
+          },
+          "zh": {
+            "label": "原油价格阈值"
+          },
+          "pt": {
+            "label": "Limiar do preço do petróleo bruto"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Ergebnisse der Zwischenwahlen in den USA 2026",
+        "note": "Berichtete Sitzgewinne sowie Angaben zu Ausgaben, Aktien- und Rohölpreisen aus der Berichterstattung über die Zwischenwahlen in den USA 2026."
+      },
+      "fr": {
+        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis",
+        "note": "Gains de sièges rapportés, chiffres des dépenses, des actions et des prix du pétrole issus de la couverture des élections de mi-mandat de 2026 aux États-Unis."
+      },
+      "es": {
+        "label": "Resultados de las elecciones de mitad de mandato de EE. UU. de 2026",
+        "note": "Cifras comunicadas de ganancias de escaños, gasto, cotizaciones bursátiles y precios del petróleo procedentes de la cobertura de las elecciones de mitad de mandato de EE. UU. de 2026."
+      },
+      "it": {
+        "label": "Risultati delle elezioni di metà mandato negli Stati Uniti 2026",
+        "note": "Incrementi di seggi, spese, quotazioni azionarie e prezzi del petrolio riportati nei resoconti delle elezioni di metà mandato negli Stati Uniti del 2026."
+      },
+      "pt": {
+        "label": "Resultados das eleições de meio de mandato nos EUA em 2026",
+        "note": "Ganhos de lugares, gastos, ações e preços do petróleo reportados na cobertura das eleições de meio de mandato dos EUA em 2026."
+      },
+      "zh": {
+        "label": "2026年美国中期选举结果",
+        "note": "有关2026年美国中期选举的报道中公布的席位增减、支出、股价和油价数据。"
+      },
+      "ja": {
+        "label": "2026 U.S. Midterm Election Results",
+        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections."
+      },
+      "ko": {
+        "label": "2026 U.S. Midterm Election Results",
+        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections."
+      }
     }
   },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "New York Times",
-      "Buenos Aires Times",
-      "The Kyiv Post",
-      "InsideClimate News",
-      "Rolling Stone"
-    ],
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
-  }
+  "statsHistory": [
+    {
+      "at": "2026-11-05T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "senate-seats-flipped-by-democrats",
+          "value": 7
+        },
+        {
+          "key": "house-districts-flipped-by-democrats",
+          "value": 30
+        },
+        {
+          "key": "governorships-flipped-by-democrats",
+          "value": 5
+        },
+        {
+          "key": "state-legislative-chambers-flipped",
+          "value": 12
+        },
+        {
+          "key": "expected-democratic-house-seats",
+          "value": 255
+        },
+        {
+          "key": "musk-election-spending",
+          "value": 500
+        },
+        {
+          "key": "musk-backed-spending",
+          "value": 440
+        },
+        {
+          "key": "trump-media-stock-daily-change",
+          "value": -24
+        },
+        {
+          "key": "crude-oil-price-threshold",
+          "value": 90
+        }
+      ]
+    }
+  ]
 }
