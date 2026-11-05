@@ -8,7 +8,12 @@ on:
     # routinely hours old. Many triggers plus the cadence guard below yield a
     # real publish cycle roughly every 30-60 min without publishing more often.
     - cron: '*/10 * * * *'
-  workflow_dispatch: {}       # manual "Run workflow" button
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Ignore the two-hour cadence guard (after a fix, or when the desk was silent)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -29,6 +34,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # A manual run after a fix must not wait two hours for the guard.
+          if [ "${{ inputs.force }}" = "true" ]; then
+            echo "Forced run - ignoring the cadence guard."
+            exit 0
+          fi
           # Skip when the last publish cycle committed content recently.
           #
           # Only "newsroom:" commits count. The live-ticker workflow writes to
