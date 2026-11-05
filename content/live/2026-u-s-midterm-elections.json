@@ -8,10 +8,296 @@
       "Rolling Stone"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "stepfun-ai/step-5-preview",
-    "statsModel": "minimaxai/minimax-m3.1-flash"
+    "statsModel": "minimaxai/minimax-m3.1-flash",
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
   },
   "slug": "2026-u-s-midterm-elections",
+  "stats": {
+    "max": null,
+    "asOf": "2026-11-05T00:00:00.000Z",
+    "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
+    "rows": [
+      {
+        "key": "senate-seats-flipped-by-democrats",
+        "label": "Senate seats flipped by Democrats",
+        "value": 7,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Von Demokraten umgewonnene Sitze im Senat"
+          },
+          "es": {
+            "label": "Escaños del Senado cambiados de manos por los demócratas"
+          },
+          "fr": {
+            "label": "Sièges au Sénat remportés par les démocrates"
+          },
+          "it": {
+            "label": "Seggi al Senato conquistati dai Democratici"
+          },
+          "pt": {
+            "label": "Lugares no Senado conquistados pelos democratas"
+          },
+          "zh": {
+            "label": "民主党翻转的参议院席位"
+          }
+        }
+      },
+      {
+        "key": "house-districts-flipped-by-democrats",
+        "label": "House districts flipped by Democrats",
+        "value": 30,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Von Demokraten umgewonnene Wahlkreise im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Distritos de la Cámara de Representantes cambiados de manos por los demócratas"
+          },
+          "fr": {
+            "label": "Circonscriptions à la Chambre des représentants remportées par les démocrates"
+          },
+          "it": {
+            "label": "Collegi alla Camera conquistati dai Democratici"
+          },
+          "pt": {
+            "label": "Distritos da Câmara de Deputados conquistados pelos democratas"
+          },
+          "zh": {
+            "label": "民主党翻转的众议院选区"
+          }
+        }
+      },
+      {
+        "key": "governorships-flipped-by-democrats",
+        "label": "Governorships flipped by Democrats",
+        "value": 5,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Von Demokraten umgewonnene Gouverneursposten"
+          },
+          "es": {
+            "label": "Gubernaturas cambiadas de manos por los demócratas"
+          },
+          "fr": {
+            "label": "Postes de gouverneur remportés par les démocrates"
+          },
+          "it": {
+            "label": "Governatorati conquistati dai Democratici"
+          },
+          "pt": {
+            "label": "Cargos de governador conquistados pelos democratas"
+          },
+          "zh": {
+            "label": "民主党翻转的州长职位"
+          }
+        }
+      },
+      {
+        "key": "state-legislative-chambers-flipped",
+        "label": "State legislative chambers flipped",
+        "value": 12,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Umgewonnene Kammern der Landesparlamente"
+          },
+          "es": {
+            "label": "Cámaras legislativas de los estados cambiadas de manos"
+          },
+          "fr": {
+            "label": "Chambres législatives des États basculées"
+          },
+          "it": {
+            "label": "Camere legislative degli Stati cambiate di mano"
+          },
+          "pt": {
+            "label": "Câmaras legislativas estaduais conquistadas"
+          },
+          "zh": {
+            "label": "归属翻转的州议会两院"
+          }
+        }
+      },
+      {
+        "key": "expected-democratic-house-seats",
+        "label": "Expected Democratic House seats",
+        "value": 255,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Erwartete Sitze der Demokraten im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Número previsto de escaños de la Cámara de Representantes para los demócratas"
+          },
+          "fr": {
+            "label": "Sièges à la Chambre des représentants attendus pour les démocrates"
+          },
+          "it": {
+            "label": "Numero previsto di seggi dei Democratici alla Camera"
+          },
+          "pt": {
+            "label": "Lugares previstos para os democratas na Câmara de Deputados"
+          },
+          "zh": {
+            "label": "预计民主党将获得的众议院席位"
+          }
+        }
+      },
+      {
+        "key": "musk-election-spending",
+        "label": "Musk election spending",
+        "value": 500,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Musks Wahlkampfausgaben"
+          },
+          "es": {
+            "label": "Gasto electoral de Musk"
+          },
+          "fr": {
+            "label": "Dépenses électorales de Musk"
+          },
+          "it": {
+            "label": "Spese elettorali di Musk"
+          },
+          "pt": {
+            "label": "Gastos de Musk nas eleições"
+          },
+          "zh": {
+            "label": "马斯克的选举支出"
+          }
+        }
+      },
+      {
+        "key": "musk-backed-spending",
+        "label": "Musk-backed spending",
+        "value": 440,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Von Musk unterstützte Ausgaben"
+          },
+          "es": {
+            "label": "Gasto respaldado por Musk"
+          },
+          "fr": {
+            "label": "Dépenses soutenues par Musk"
+          },
+          "it": {
+            "label": "Spese con il sostegno di Musk"
+          },
+          "pt": {
+            "label": "Gastos apoiados por Musk"
+          },
+          "zh": {
+            "label": "马斯克支持的支出"
+          }
+        }
+      },
+      {
+        "key": "trump-media-stock-daily-change",
+        "label": "Trump Media stock daily change",
+        "value": -24,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Tagesveränderung der Trump-Media-Aktie"
+          },
+          "es": {
+            "label": "Variación diaria de la acción de Trump Media"
+          },
+          "fr": {
+            "label": "Variation quotidienne de l’action Trump Media"
+          },
+          "it": {
+            "label": "Variazione giornaliera del titolo di Trump Media"
+          },
+          "pt": {
+            "label": "Variação diária da ação da Trump Media"
+          },
+          "zh": {
+            "label": "特朗普媒体公司股价每日变动"
+          }
+        }
+      },
+      {
+        "key": "crude-oil-price-threshold",
+        "label": "Crude oil price threshold",
+        "value": 90,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Schwellenwert für den Rohölpreis"
+          },
+          "es": {
+            "label": "Umbral del precio del petróleo crudo"
+          },
+          "fr": {
+            "label": "Seuil de prix du pétrole brut"
+          },
+          "it": {
+            "label": "Soglia del prezzo del petrolio greggio"
+          },
+          "pt": {
+            "label": "Limiar do preço do petróleo bruto"
+          },
+          "zh": {
+            "label": "原油价格阈值"
+          }
+        }
+      }
+    ],
+    "unit": "",
+    "label": "2026 U.S. Midterm Election Results",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
+      "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-04T23:44:18.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Berichtete Sitzgewinne sowie Angaben zu Ausgaben, Aktien- und Rohölpreisen aus der Berichterstattung über die Zwischenwahlen in den USA 2026.",
+        "label": "Ergebnisse der Zwischenwahlen in den USA 2026"
+      },
+      "es": {
+        "note": "Cifras comunicadas de ganancias de escaños, gasto, cotizaciones bursátiles y precios del petróleo procedentes de la cobertura de las elecciones de mitad de mandato de EE. UU. de 2026.",
+        "label": "Resultados de las elecciones de mitad de mandato de EE. UU. de 2026"
+      },
+      "fr": {
+        "note": "Gains de sièges rapportés, chiffres des dépenses, des actions et des prix du pétrole issus de la couverture des élections de mi-mandat de 2026 aux États-Unis.",
+        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis"
+      },
+      "it": {
+        "note": "Incrementi di seggi, spese, quotazioni azionarie e prezzi del petrolio riportati nei resoconti delle elezioni di metà mandato negli Stati Uniti del 2026.",
+        "label": "Risultati delle elezioni di metà mandato negli Stati Uniti 2026"
+      },
+      "ja": {
+        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
+        "label": "2026 U.S. Midterm Election Results"
+      },
+      "ko": {
+        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
+        "label": "2026 U.S. Midterm Election Results"
+      },
+      "pt": {
+        "note": "Ganhos de lugares, gastos, ações e preços do petróleo reportados na cobertura das eleições de meio de mandato dos EUA em 2026.",
+        "label": "Resultados das eleições de meio de mandato nos EUA em 2026"
+      },
+      "zh": {
+        "note": "有关2026年美国中期选举的报道中公布的席位增减、支出、股价和油价数据。",
+        "label": "2026年美国中期选举结果"
+      }
+    },
+    "updatedAt": "2026-11-05T00:47:07.376Z",
+    "sourceCount": 1
+  },
   "topic": "2026 U.S. Midterm Elections",
   "status": "live",
   "article": null,
@@ -51,6 +337,168 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1793839980000-uwx1",
+      "at": "2026-11-05T00:53:00.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Trump says he 'had to' pursue Iran war despite election losses",
+          "body": "Al Jazeera reported that Trump said the war 'largely' caused Republicans' losses but that he 'had to do it.' Der Spiegel reported that he said he would act the same way again."
+        },
+        "fr": {
+          "headline": "Trump dit avoir « dû » poursuivre la guerre contre l’Iran malgré les défaites électorales",
+          "body": "Al Jazeera a rapporté que Trump a déclaré que la guerre avait « largement » causé les défaites des républicains, mais qu’il « devait le faire ». Der Spiegel a rapporté qu’il a dit qu’ilReferait exactement de même."
+        },
+        "es": {
+          "headline": "Trump afirma que «tuvo que» llevar adelante la guerra contra Irán pese a las derrotas electorales",
+          "body": "Al Jazeera informó de que Trump dijo que la guerra «en gran medida» causó las derrotas de los republicanos, pero que «tuve que hacerlo». Der Spiegel informó de que dijo que actuaría de la misma manera de nuevo."
+        },
+        "it": {
+          "headline": "Trump dice di aver dovuto portare avanti la guerra con l'Iran nonostante le sconfitte elettorali",
+          "body": "Al Jazeera ha riportato che Trump ha detto che la guerra ha \"in gran parte\" causato le sconfitte dei repubblicani, ma che \"doveva farlo\". Der Spiegel ha riportato che ha detto che avrebbe agito allo stesso modo."
+        },
+        "ja": {
+          "headline": "トランプ氏、選挙敗北にもかかわらずイラン戦争「やらざるを得なかった」",
+          "body": "アルジャジーラによれば、トランプ氏はこの戦争が共和党の敗北を「主に」引き起こしたが、「やらざるを得なかった」と述べた。デア・シュピーゲルによれば、同氏は再び同じように行動すると語った。"
+        },
+        "de": {
+          "headline": "Trump sagt, er „musste“ den Iran-Krieg trotz der Wahlverluste weiterführen",
+          "body": "Al Jazeera berichtete, Trump habe gesagt, der Krieg habe „größtenteils“ zu den Niederlagen der Republikaner geführt, aber er habe es „tun müssen“. Der Spiegel berichtete, er habe gesagt, er würde wieder genauso vorgehen."
+        },
+        "pt": {
+          "headline": "Trump afirma que foi «obrigado» a prosseguir a guerra com o Irã apesar das derrotas nas eleições",
+          "body": "A Al Jazeera informou que Trump afirmou que a guerra causou «em grande medida» as perdas dos republicanos, mas que «teve de o fazer». A Der Spiegel informou que disse que voltaria a agir da mesma forma."
+        },
+        "zh": {
+          "headline": "特朗普称尽管选举失利，他\"不得不\"对伊朗开战",
+          "body": "半岛电视台报道称，特朗普表示这场战争\"在很大程度上\"导致共和党失利，但他\"不得不这么做\"。《明镜》周刊报道称，他表示自己还会采取同样的行动。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Der Spiegel",
+          "title": "Midterms: So erklären Donald Trump und JD Vance die Republikaner-Schlappe",
+          "url": "https://www.spiegel.de/ausland/midterms-so-erklaeren-donald-trump-und-jd-vance-die-republikaner-schlappe-a-3e8133a3-3402-412d-b1cd-67762eca3bb0#ref=rss",
+          "publishedAt": "2026-11-05T00:53:00.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Iran war live: Trump says war caused election wipeout but he ‘had to do it’",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/11/5/iran-war-live-trump-admits-war-caused-election-loss-but-had-to-do-it?traffic_source=rss",
+          "publishedAt": "2026-11-05T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793833183000-0anc",
+      "at": "2026-11-04T22:59:43.000Z",
+      "kind": "reaction",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Republicans call for Trump to change course after midterm defeats",
+          "body": "Reuters reported that Republicans called for Trump to change course after the defeats. The New York Times reported that some in his party dismissed his explanation and pinned blame on him."
+        },
+        "fr": {
+          "headline": "Les républicains appellent Trump à changer de cap après les défaites de mi-mandat",
+          "body": "Reuters a rapporté que des républicains ont appelé Trump à changer de cap après les défaites. Le New York Times a rapporté que certains membres de son parti ont rejeté ses explications et l’ont tenu pour responsable."
+        },
+        "es": {
+          "headline": "Los republicanos piden a Trump que cambie de rumbo tras las derrotas en las elecciones de mitad de mandato",
+          "body": "Reuters informó de que los republicanos pidieron a Trump que cambiara de rumbo tras las derrotas. The New York Times informó de que algunos miembros de su partido descartaron su explicación y le atribuyeron la culpa."
+        },
+        "it": {
+          "headline": "I repubblicani chiedono a Trump di cambiare rotta dopo le sconfitte alle elezioni di metà mandato",
+          "body": "Reuters ha riportato che i repubblicani hanno chiesto a Trump di cambiare rotta dopo le sconfitte. The New York Times ha riportato che alcuni esponenti del suo partito hanno liquidato la sua spiegazione e gli hanno attribuito la colpa."
+        },
+        "ja": {
+          "headline": "共和党員、中間選挙での敗北受けトランプ氏に方針転換を求める",
+          "body": "ロイターによれば、共和党員は敗北を受けてトランプ氏に方針転換を求めた。ニューヨーク・タイムズによれば、党内の一部は同氏の説明を退け、同氏に責任を帰した。"
+        },
+        "de": {
+          "headline": "Republikaner fordern Trump nach Niederlagen bei den Zwischenwahlen auf, seinen Kurs zu ändern",
+          "body": "Reuters berichtete, Republikaner hätten Trump nach den Niederlagen aufgefordert, seinen Kurs zu ändern. The New York Times berichtete, einige in seiner Partei hätten seine Erklärung zurückgewiesen und ihm die Schuld gegeben."
+        },
+        "pt": {
+          "headline": "Republicanos pedem que Trump mude de rumo após derrotas nas eleições de meio de mandato",
+          "body": "A Reuters informou que os republicanos pediram a Trump que mudasse de rumo após as derrotas. O The New York Times informou que alguns elementos do seu partido rejeitaram a sua explicação e lhe atribuíram a culpa."
+        },
+        "zh": {
+          "headline": "共和党人在中期选举失利后呼吁特朗普改变路线",
+          "body": "路透社报道称，共和党人在遭遇失利后呼吁特朗普改变路线。《纽约时报》报道称，党内一些人否认他的解释，并将责任归咎于他。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Reuters",
+          "title": "Republicans call for Trump to change course after midterm drubbing",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQamFhVEozSjRLb3lJNlFlTTZ4dmtZbjBGdTJHOGNXdmZqXzh6VGhqN3Z2czQ5VUdTaE5KeTMwdHNtUWhVRldhb2hhbGJMNUhDR3NfbF9sOWYyWHVFZHdPeU43OElBMzhnQnQzenpkdzJlQWVya0tMQUhaV1pPN1UwWlVlMXZpMXQxa191LVN5SEZSdWh5T21jcXRycHpOUkI5ZWhhZm4xSktCQnRfRnFhcDZn?oc=5",
+          "publishedAt": "2026-11-04T22:59:43.000Z"
+        },
+        {
+          "outlet": "New York Times",
+          "title": "Trump and Republicans Begin Pointing Fingers After Sweeping Midterms Losses",
+          "url": "https://www.nytimes.com/2026/11/04/us/politics/trump-republicans-blame-midterms.html",
+          "publishedAt": "2026-11-04T22:26:37.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793839967000-du0k",
+      "at": "2026-11-05T00:52:47.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Voters rejected data centers in every ballot measure except one",
+          "body": "CNBC reported that voters in states at the heart of the AI data center boom pushed back on the buildout on Election Night. Semafor reported that anti-data center measures passed."
+        },
+        "fr": {
+          "headline": "Les électeurs ont rejeté les centres de données dans toutes les propositions de vote, sauf une",
+          "body": "CNBC a rapporté que, le soir des élections, des électeurs dans des États au cœur du boom des centres de données consacrés à l’IA se sont opposés au développement de ces infrastructures. Semafor a rapporté que les mesures contre les centres de données ont été adoptées."
+        },
+        "es": {
+          "headline": "Los votantes rechazaron los centros de datos en todas las consultas populares salvo una",
+          "body": "CNBC informó de que los votantes de los estados situados en el centro del auge de los centros de datos de IA se opusieron a su expansión la noche de las elecciones. Semafor informó de que se aprobaron las medidas contra los centros de datos."
+        },
+        "it": {
+          "headline": "Gli elettori hanno respinto i data center in tutte le questioni referendarie tranne una",
+          "body": "CNBC ha riportato che gli elettori degli stati al centro del boom dei data center per l'intelligenza artificiale si sono opposti alla loro costruzione nella notte delle elezioni. Semafor ha riportato che le misure anti-data center sono state approvate."
+        },
+        "ja": {
+          "headline": "有権者はデータセンターをめぐる住民投票で1件を除き全て否決",
+          "body": "CNBCによれば、AIデータセンター急成長の中心にある州の有権者は、投票日の夜に建設拡大に反対した。セマフォーによれば、データセンター反対措置は可決された。"
+        },
+        "de": {
+          "headline": "Wähler lehnten Rechenzentren bei allen Abstimmungsvorhaben außer einem ab",
+          "body": "CNBC berichtete, Wähler in den Bundesstaaten im Zentrum des Booms bei KI-Rechenzentren hätten sich in der Wahlnacht dem Ausbau widersetzt. Semafor berichtete, dass Maßnahmen gegen Rechenzentren angenommen wurden."
+        },
+        "pt": {
+          "headline": "Os eleitores rejeitaram centros de dados em todas as medidas submetidas a votação, exceto uma",
+          "body": "A CNBC informou que os eleitores de estados no centro da expansão dos centros de dados de IA se opuseram à construção na noite das eleições. A Semafor informou que as medidas contra os centros de dados foram aprovadas."
+        },
+        "zh": {
+          "headline": "除一项投票措施外，选民在所有投票措施中都否决了数据中心",
+          "body": "CNBC报道称，在人工智能数据中心热潮核心州的选民在选举夜反对大规模建设。Semafor报道称，反对数据中心的措施获得通过。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Semafor",
+          "title": "Voters' data center rebuke hits some tech companies harder than others",
+          "url": "https://www.semafor.com/article/11/04/2026/data-center-ballot-measures-hit-home-for-tech-giants",
+          "publishedAt": "2026-11-05T00:52:47.000Z"
+        },
+        {
+          "outlet": "CNBC",
+          "title": "Voters rebuff data centers in every ballot measure except one during the 2026 midterms",
+          "url": "https://www.cnbc.com/2026/11/04/data-center-ballot-measures-2026-midterm.html",
+          "publishedAt": "2026-11-04T22:29:51.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-11-05T00:08:06.074Z",
       "id": "u-1793837286074-4ehr",
@@ -309,301 +757,74 @@
     "https://www.foxnews.com/politics/erika-kirk-channels-charlie-blunt-message-conservatives-after-gop-midterm-losses",
     "https://news.google.com/rss/articles/CBMitAFBVV95cUxOaFRoeFhBeVVTNjJackRiLUpTSkNBRVZZUS0xRXVxVGh4UEtEenhqTGdwSVhOalFiZklxeXlrWEpYalgyT29aMEc0WW9faHhfR2FiTU5rcjI5SFQ1UmY3R1FvMjFJbDlPa2FVNU5LaHBUV0RQQjVKbW9CdF91Ty1yRUpVZHlYOVNfLW1Uemllc0hmT1BfNHlHS0xhWWdoZUpHQzFSbUpyeUVuSmNMQ3NGaFVETkE?oc=5",
     "https://www.scmp.com/news/us/us-elections/article/3373322/costs-above-competition-why-us-voters-arent-buying-trumps-china-ai-pitch",
-    "https://www.tagesschau.de/tagesthemen/video-1678322.html"
+    "https://www.tagesschau.de/tagesthemen/video-1678322.html",
+    "https://www.jpost.com/international/article-913874",
+    "https://www.jpost.com/us-elections/article-913872",
+    "https://www.axios.com/2026/11/05/trump-iran-war-midterm-defeat-bad-options",
+    "https://www.spiegel.de/ausland/midterms-so-erklaeren-donald-trump-und-jd-vance-die-republikaner-schlappe-a-3e8133a3-3402-412d-b1cd-67762eca3bb0#ref=rss",
+    "https://www.semafor.com/article/11/04/2026/data-center-ballot-measures-hit-home-for-tech-giants",
+    "https://www.nytimes.com/2026/11/04/us/politics/susan-collins-defeat-donald-trump.html",
+    "https://www.axios.com/2026/11/05/house-democrats-jeffries-centrists-majority-left",
+    "https://thehill.com/homenews/state-watch/6199864-eric-armstrong-iowa-house-win/",
+    "https://www.channelnewsasia.com/world/israel-president-herzog-accepts-election-results-netanyahu-eisenkot-6525906",
+    "https://thehill.com/homenews/house/6199833-trump-impeachment-vote-republicans-exit/",
+    "https://www.nytimes.com/2026/11/04/climate/trump-fossil-fuel-energy-policy-election.html",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeTh5RWxGcGhVVWVDa2J4QzlYTnJ1MXA0Ukl6UkxaaUU0UWFaQkZybHlWMURPQU5XXzZrU1o0MS1HZW9kSXJzMWtzRkg2a1cyTW9BWmtMZnBjYXNzV3FBTkc4b3lhTy1aS3p1bHhMYzk1cElMNFJKUGs5MVZYaXhqTGNSWW5qN2tYVlZOS2kwMEJpQm1TT0tkXw?oc=5",
+    "https://en.yna.co.kr/view/AEN20261105001451320",
+    "https://www.aljazeera.com/news/2026/11/5/democrats-won-congress-but-can-they-deliver-on-their-promises?traffic_source=rss",
+    "https://www.abc.net.au/news/2026-11-05/us-midterm-election-results-swing-maps/107347894",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxOb3QwdjV0RU9FejhJUm9tRjZNNGVobHZKaGhONTFISjFOUUNqaDV0c2E1SEwwY0NpSGtCanNFUFRQc1BOeWQyMWx1emJvWkdxM0w3dlJHckpQeU4tOUhJS0lHZGV6RG1rUU5ZZXh2X19fSFJRaTJBU2M5UkxCRTFpWUJ3d3dGTWpNYjlaUEs1TWU2NDJYMkZlWGdKNG1nSDRqaW5rRVNTWnVQMjBlVVlZ?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUHAwUDUyTjRRMWtHQlU0X085MkNwSTdBNUVZc2hZX0JUTUdSb005WkFFbERjNGtWTy0zZHA2eGNhaDhXbkNvOUxJOElmRWVaclpNcGxNdjZaUVdUWlFMQkpxWjZOZ0dLS2xwb3drY2ZmTzVrdVVCeENsLVZWRUhJWEFmWHdwNVlNakNPckFES1FaVFVoa29fZThWZ095RndiLWFzalJILWpuX0s2eGhldUhaRDBydw?oc=5",
+    "https://www.tagesschau.de/ausland/europa/ukraine-usa-zwischenwahl-100.html",
+    "https://www.welt.de/politik/ausland/article6ae86c76b3f0fa60211d5fd2/midterms-2026-die-iran-sache-mussten-wir-tun-und-wir-tun-es-weiter-sagt-trump-nach-dem-wahl-debakel-liveticker.html",
+    "https://www.straitstimes.com/world/united-states/trump-says-hegseth-doing-a-very-good-job-as-questions-swirl-about-defense-secretarys-future",
+    "https://en.yna.co.kr/view/AEN20261105001400320",
+    "https://en.yna.co.kr/view/AEN20261105001300320",
+    "https://www.aljazeera.com/news/liveblog/2026/11/5/iran-war-live-trump-admits-war-caused-election-loss-but-had-to-do-it?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxQSTdPTGVjTXpqTmFpREcxMDNyTlIyckZZUFVYczZkN1dZUjk3M0M4elE2c2dXUEtkdXBjTkk4a1VYc1VRbkt5N2VyZXJJY0xQbE8xSVNQSm1GelgtQkowOGptcEVhOEVlYXc2czhzMkdnMjZhbVNfZGpvQ3VPSnpIVG8yejV0MUVZUXE5cGJYYlRqMVdFSV9YeGR0X2ZCUWlLYWdUSjBYODJ0NDFfRS1xd3hENnE?oc=5",
+    "https://g1.globo.com/jornal-nacional/noticia/2026/11/04/resumao-diario-do-jn-partido-democrata-conquista-maioria-no-congresso-e-redefine-poder-politico-nos-eua-banco-central-mantem-taxa-de-juros-em-1375percent-apos-cinco-cortes-seguidos.ghtml",
+    "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX1JGaW1aSkZVdGJzRTlDczNObmVRN0xjNGpuMXpQZHdrWWRRTk9GZ2pkbGVjaWdPVUNGOWNKTUlIQXJiVkg3ejNISEY2Z1JCVzdHOWFYYW1WMldISWFYNE9hS25XUGZSWnBEbHdobWFKSEJ2dVJnTTlvbzNmaHhZN1FGM3RPWHpLVXVaMVZrYWlqYThLdmZZM29DZGtTM1E3M3k4bkZ5cl8?oc=5",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZEFUME9sYnFseThMNGczNTU1OGwtT1ZzWk5yNXpVWGpfZWpFbjVYcHJ0NS1iRjNVNGcyQnZ4cXp3WkRuVTJ3UF8takxXTnV6ZjZ5RXFsVkVGazQwbkdkZ3czRTZ1QXp6RVo4eVZxRGpJSkN0dXhzSWZ6V0N4RGwzdTVsTF9vYlFHdUlrakdlZGF4bnFPYzlNZ1dUT2FHTnlJZTlYSWlYZ1psV2NQSHB2RExDZUg?oc=5",
+    "https://news.google.com/rss/articles/CBMikwJBVV95cUxPTVNHNnVQSElOX1BuVWs0S1RpMWNOY2c4NTJEY0wxX2dDbDBpb1ZnUHN0bThlNElYcmdNZnhWNVpWWmVnd3l5ckJEYlFsMEFsVmViLUpNNmxLTGhiX2JnLVpmTW1zVFV5RzZINzYwelVkY3l0UjI1NTFLaGRxWVlza1JJQ0M1STlVUFREQ1BIal96UGtRb2JSajZtLXFRLXM2SFphcGVlRUVuYnMxdmMxZlU5NjJZdE5jZC1nZm5PLTFQZHE4NDBhb3JRMXpyQ1ZzRXU0MVJqbVU2RmdPV1gyTGlhS01RYjhGNDB5Z0NwbjdKeURsYjhtbzlHdG8wNjZ0UVVfbTNoTFpsc1ZtM3NZa2c3Yw?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxOQjNiTDV1RGJXeTYtWWc2NnRMLU1kOFFvYjFtWTZ3aXJMZWh6NDJ4Z2NHbHBiZnNTMDBVY2NPdWMydGxtQlVjNzBxa3A1Z0wtRHBKSV94elZBbHNKNlFGaFVPdEVCTkI4THd3RUxlRUcydks1UmVBbnduVkN2V1B5TlZ3em1uVERjdWgydVZKSGZqSGl4MWR5b0pqalNGdw?oc=5",
+    "https://www.cnbc.com/2026/11/04/cramer-midterms-ai-stocks.html",
+    "https://www.straitstimes.com/world/united-states/after-republicans-routed-trump-devotes-first-post-midterm-event-to-white-house-ballroom",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQamFhVEozSjRLb3lJNlFlTTZ4dmtZbjBGdTJHOGNXdmZqXzh6VGhqN3Z2czQ5VUdTaE5KeTMwdHNtUWhVRldhb2hhbGJMNUhDR3NfbF9sOWYyWHVFZHdPeU43OElBMzhnQnQzenpkdzJlQWVya0tMQUhaV1pPN1UwWlVlMXZpMXQxa191LVN5SEZSdWh5T21jcXRycHpOUkI5ZWhhZm4xSktCQnRfRnFhcDZn?oc=5",
+    "https://www.nytimes.com/2026/11/04/business/trump-lisa-cook-fed-governor.html",
+    "https://www.cnbc.com/2026/11/04/stock-market-rally-trump-midterms.html",
+    "https://news.google.com/rss/articles/CBMijgFBVV95cUxOd3VXNFdJVVAzaDVNb3g1VGI2QWxUOUQ0cG0yZjkwMnpSRGRHbHlwS091MV9zc1hLd0FsLWthSGcyd2JRN0FmNGhrTDlqVVNfZ3VvZkc2TERib2o0YkZvMEl5bkdtQ19VQmU1ZmZERnRiekxfZ0Vfb1ROMGxmR1NDSy11TG0wTnE5dGJRLTJB?oc=5",
+    "https://www.cnbc.com/2026/11/04/democrats-trump-debt-ceiling-fight.html",
+    "https://www.tagesschau.de/tagesthemen/video-1678318.html",
+    "https://www.aljazeera.com/news/2026/11/4/democratic-socialists-of-america-see-record-wins-in-us-midterm-elections?traffic_source=rss",
+    "https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/",
+    "https://www.straitstimes.com/world/united-states/us-midterms-spending-binge-by-musk-crypto-and-ai-hit-voter-wall",
+    "https://insideclimatenews.org/news/04112026/georgia-public-service-commission-democrat-majority/",
+    "https://www.tagesschau.de/tagesthemen/video-1678314.html",
+    "https://www.lemonde.fr/en/le-monde-africa/article/2026/11/04/cholera-killed-1-800-in-2026-in-democratic-republic-of-congo-according-to-who_6772273_124.html",
+    "https://www.nytimes.com/2026/11/04/business/trump-media-truth-social-midterm-elections.html",
+    "https://www.nytimes.com/2026/11/04/us/elections/midterms-mood.html",
+    "https://timesofindia.indiatimes.com/world/us/who-is-hakeem-jeffries-democratic-leader-poised-to-become-first-black-us-house-speaker/articleshow/135554337.cms",
+    "https://timesofindia.indiatimes.com/world/us/us-mid-term-elections/news/for-me-its-relaxing-trump-boasts-white-house-ballroom-after-republican-wipeout-in-midterms/articleshow/135553698.cms",
+    "https://www.thehindu.com/business/Economy/us-midterm-elections-an-economy-under-pressure-political-shift-and-the-road-ahead/article71667011.ece",
+    "https://thehill.com/homenews/senate/6199541-indivisible-calls-schumer-replacement/",
+    "https://thehill.com/homenews/administration/6199555-trump-midterm-losses-legacy/",
+    "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/sete-brasileiros-sao-eleitos-para-assembleias-estaduais-nos-eua",
+    "https://www.cnbc.com/2026/11/04/data-center-ballot-measures-2026-midterm.html",
+    "https://www.semafor.com/article/11/04/2026/midterm-defeat-deals-death-blow-to-trump-coalition",
+    "https://www.semafor.com/article/11/04/2026/iran-takes-credit-for-handing-trump-a-midterm-defeat",
+    "https://www.nytimes.com/2026/11/04/us/politics/trump-republicans-blame-midterms.html",
+    "https://www.semafor.com/article/11/04/2026/republicans-trade-blame-for-historic-midterm-loss",
+    "https://www.artnews.com/art-news/news/trump-ballroom-midterm-elections-democrat-victory-1234804697/",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdFgxREQxeERUbzdjZHhMUk1iZXNlRnhwTlBSUjR4b2R0WlQzS0lRb2poLW1IZy1PQV9sTGVGN0pzQ0h3N2EzaDBudndRZVJDU0w1a0w4WXF6SEFmZUVHeGt5ZnlyM25YUjVhMEJQTkM3VlNWakNNYUlXV1F5R0ZvUmtVUi1DZW9ZZ3VheWg5SGtGLXVsYlV5R21nQTdXUEViZ1E?oc=5",
+    "https://www.straitstimes.com/world/europe/zelenskiy-hopes-us-election-outcome-will-generate-more-help-for-ukraine",
+    "https://www.japantimes.co.jp/news/2026/11/05/world/politics/texas-midterms-trump-musk-gop/"
   ],
   "startedAt": "2026-11-05T00:08:32.452Z",
-  "updatedAt": "2026-11-05T00:16:27.594Z",
+  "updatedAt": "2026-11-05T01:21:41.205Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": null,
-  "sourceCount": 7,
-  "seenHeadlines": [],
-  "stats": {
-    "label": "2026 U.S. Midterm Election Results",
-    "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
-    "unit": "",
-    "max": null,
-    "asOf": "2026-11-05T00:00:00.000Z",
-    "updatedAt": "2026-11-05T00:47:07.376Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
-      "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
-      "publishedAt": "2026-11-04T23:44:18.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "senate-seats-flipped-by-democrats",
-        "label": "Senate seats flipped by Democrats",
-        "value": 7,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Escaños del Senado cambiados de manos por los demócratas"
-          },
-          "fr": {
-            "label": "Sièges au Sénat remportés par les démocrates"
-          },
-          "it": {
-            "label": "Seggi al Senato conquistati dai Democratici"
-          },
-          "de": {
-            "label": "Von Demokraten umgewonnene Sitze im Senat"
-          },
-          "zh": {
-            "label": "民主党翻转的参议院席位"
-          },
-          "pt": {
-            "label": "Lugares no Senado conquistados pelos democratas"
-          }
-        }
-      },
-      {
-        "key": "house-districts-flipped-by-democrats",
-        "label": "House districts flipped by Democrats",
-        "value": 30,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Distritos de la Cámara de Representantes cambiados de manos por los demócratas"
-          },
-          "fr": {
-            "label": "Circonscriptions à la Chambre des représentants remportées par les démocrates"
-          },
-          "it": {
-            "label": "Collegi alla Camera conquistati dai Democratici"
-          },
-          "de": {
-            "label": "Von Demokraten umgewonnene Wahlkreise im Repräsentantenhaus"
-          },
-          "zh": {
-            "label": "民主党翻转的众议院选区"
-          },
-          "pt": {
-            "label": "Distritos da Câmara de Deputados conquistados pelos democratas"
-          }
-        }
-      },
-      {
-        "key": "governorships-flipped-by-democrats",
-        "label": "Governorships flipped by Democrats",
-        "value": 5,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Gubernaturas cambiadas de manos por los demócratas"
-          },
-          "fr": {
-            "label": "Postes de gouverneur remportés par les démocrates"
-          },
-          "it": {
-            "label": "Governatorati conquistati dai Democratici"
-          },
-          "de": {
-            "label": "Von Demokraten umgewonnene Gouverneursposten"
-          },
-          "zh": {
-            "label": "民主党翻转的州长职位"
-          },
-          "pt": {
-            "label": "Cargos de governador conquistados pelos democratas"
-          }
-        }
-      },
-      {
-        "key": "state-legislative-chambers-flipped",
-        "label": "State legislative chambers flipped",
-        "value": 12,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Cámaras legislativas de los estados cambiadas de manos"
-          },
-          "fr": {
-            "label": "Chambres législatives des États basculées"
-          },
-          "it": {
-            "label": "Camere legislative degli Stati cambiate di mano"
-          },
-          "de": {
-            "label": "Umgewonnene Kammern der Landesparlamente"
-          },
-          "zh": {
-            "label": "归属翻转的州议会两院"
-          },
-          "pt": {
-            "label": "Câmaras legislativas estaduais conquistadas"
-          }
-        }
-      },
-      {
-        "key": "expected-democratic-house-seats",
-        "label": "Expected Democratic House seats",
-        "value": 255,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Número previsto de escaños de la Cámara de Representantes para los demócratas"
-          },
-          "fr": {
-            "label": "Sièges à la Chambre des représentants attendus pour les démocrates"
-          },
-          "it": {
-            "label": "Numero previsto di seggi dei Democratici alla Camera"
-          },
-          "de": {
-            "label": "Erwartete Sitze der Demokraten im Repräsentantenhaus"
-          },
-          "zh": {
-            "label": "预计民主党将获得的众议院席位"
-          },
-          "pt": {
-            "label": "Lugares previstos para os democratas na Câmara de Deputados"
-          }
-        }
-      },
-      {
-        "key": "musk-election-spending",
-        "label": "Musk election spending",
-        "value": 500,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Gasto electoral de Musk"
-          },
-          "fr": {
-            "label": "Dépenses électorales de Musk"
-          },
-          "it": {
-            "label": "Spese elettorali di Musk"
-          },
-          "de": {
-            "label": "Musks Wahlkampfausgaben"
-          },
-          "zh": {
-            "label": "马斯克的选举支出"
-          },
-          "pt": {
-            "label": "Gastos de Musk nas eleições"
-          }
-        }
-      },
-      {
-        "key": "musk-backed-spending",
-        "label": "Musk-backed spending",
-        "value": 440,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Gasto respaldado por Musk"
-          },
-          "fr": {
-            "label": "Dépenses soutenues par Musk"
-          },
-          "it": {
-            "label": "Spese con il sostegno di Musk"
-          },
-          "de": {
-            "label": "Von Musk unterstützte Ausgaben"
-          },
-          "zh": {
-            "label": "马斯克支持的支出"
-          },
-          "pt": {
-            "label": "Gastos apoiados por Musk"
-          }
-        }
-      },
-      {
-        "key": "trump-media-stock-daily-change",
-        "label": "Trump Media stock daily change",
-        "value": -24,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Variación diaria de la acción de Trump Media"
-          },
-          "fr": {
-            "label": "Variation quotidienne de l’action Trump Media"
-          },
-          "it": {
-            "label": "Variazione giornaliera del titolo di Trump Media"
-          },
-          "de": {
-            "label": "Tagesveränderung der Trump-Media-Aktie"
-          },
-          "zh": {
-            "label": "特朗普媒体公司股价每日变动"
-          },
-          "pt": {
-            "label": "Variação diária da ação da Trump Media"
-          }
-        }
-      },
-      {
-        "key": "crude-oil-price-threshold",
-        "label": "Crude oil price threshold",
-        "value": 90,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Umbral del precio del petróleo crudo"
-          },
-          "fr": {
-            "label": "Seuil de prix du pétrole brut"
-          },
-          "it": {
-            "label": "Soglia del prezzo del petrolio greggio"
-          },
-          "de": {
-            "label": "Schwellenwert für den Rohölpreis"
-          },
-          "zh": {
-            "label": "原油价格阈值"
-          },
-          "pt": {
-            "label": "Limiar do preço do petróleo bruto"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Ergebnisse der Zwischenwahlen in den USA 2026",
-        "note": "Berichtete Sitzgewinne sowie Angaben zu Ausgaben, Aktien- und Rohölpreisen aus der Berichterstattung über die Zwischenwahlen in den USA 2026."
-      },
-      "fr": {
-        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis",
-        "note": "Gains de sièges rapportés, chiffres des dépenses, des actions et des prix du pétrole issus de la couverture des élections de mi-mandat de 2026 aux États-Unis."
-      },
-      "es": {
-        "label": "Resultados de las elecciones de mitad de mandato de EE. UU. de 2026",
-        "note": "Cifras comunicadas de ganancias de escaños, gasto, cotizaciones bursátiles y precios del petróleo procedentes de la cobertura de las elecciones de mitad de mandato de EE. UU. de 2026."
-      },
-      "it": {
-        "label": "Risultati delle elezioni di metà mandato negli Stati Uniti 2026",
-        "note": "Incrementi di seggi, spese, quotazioni azionarie e prezzi del petrolio riportati nei resoconti delle elezioni di metà mandato negli Stati Uniti del 2026."
-      },
-      "pt": {
-        "label": "Resultados das eleições de meio de mandato nos EUA em 2026",
-        "note": "Ganhos de lugares, gastos, ações e preços do petróleo reportados na cobertura das eleições de meio de mandato dos EUA em 2026."
-      },
-      "zh": {
-        "label": "2026年美国中期选举结果",
-        "note": "有关2026年美国中期选举的报道中公布的席位增减、支出、股价和油价数据。"
-      },
-      "ja": {
-        "label": "2026 U.S. Midterm Election Results",
-        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections."
-      },
-      "ko": {
-        "label": "2026 U.S. Midterm Election Results",
-        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections."
-      }
-    }
-  },
+  "sourceCount": 11,
   "statsHistory": [
     {
       "at": "2026-11-05T00:00:00.000Z",
@@ -646,5 +867,6 @@
         }
       ]
     }
-  ]
+  ],
+  "seenHeadlines": []
 }
