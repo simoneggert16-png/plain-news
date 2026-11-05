@@ -9,12 +9,149 @@
       "Tages-Anzeiger"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash",
-    "statsModel": "minimaxai/minimax-m3.1-flash"
+    "statsModel": "minimaxai/minimax-m3.1-flash",
+    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash"
   },
   "slug": "us-midterm-elections-2026",
+  "stats": {
+    "max": null,
+    "asOf": "2026-11-05T00:00:00.000Z",
+    "note": "Reported seat flips and chamber results from the 2026 US midterm elections.",
+    "rows": [
+      {
+        "key": "senate-seats-flipped-by-democrats",
+        "label": "Senate seats flipped by Democrats",
+        "value": 7,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Escaños del Senado ganados por los demócratas"
+          },
+          "fr": {
+            "label": "Sièges du Sénat basculés par les démocrates"
+          },
+          "it": {
+            "label": "Seggi al Senato conquistati dai Democratici"
+          }
+        }
+      },
+      {
+        "key": "house-districts-flipped-by-democrats",
+        "label": "House districts flipped by Democrats",
+        "value": 30,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Distritos de la Cámara de Representantes ganados por los demócratas"
+          },
+          "fr": {
+            "label": "Circonscriptions de la Chambre des représentants basculées par les démocrates"
+          },
+          "it": {
+            "label": "Collegi della Camera conquistati dai Democratici"
+          }
+        }
+      },
+      {
+        "key": "governorships-flipped-by-democrats",
+        "label": "Governorships flipped by Democrats",
+        "value": 5,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Gubernaturas ganadas por los demócratas"
+          },
+          "fr": {
+            "label": "Gouvernorats basculés par les démocrates"
+          },
+          "it": {
+            "label": "Governi statali conquistati dai Democratici"
+          }
+        }
+      },
+      {
+        "key": "state-legislative-chambers-flipped",
+        "label": "State legislative chambers flipped",
+        "value": 12,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Cámaras legislativas estatales cambiadas de manos"
+          },
+          "fr": {
+            "label": "Chambres législatives des États basculées"
+          },
+          "it": {
+            "label": "Camere legislative statali cambiate di mano"
+          }
+        }
+      },
+      {
+        "key": "brazil-born-candidates-elected-to-state",
+        "label": "Brazil-born candidates elected to state ",
+        "value": 7,
+        "change": null,
+        "locales": {
+          "es": {
+            "label": "Candidatos nacidos en Brasil elegidos para el estado \""
+          },
+          "fr": {
+            "label": "Candidats nés au Brésil élus au niveau de l’État"
+          },
+          "it": {
+            "label": "Candidati nati in Brasile eletti a livello statale"
+          }
+        }
+      }
+    ],
+    "unit": "seats",
+    "label": "US Midterm Elections 2026",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
+      "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-04T23:44:18.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Reported seat flips and chamber results from the 2026 US midterm elections.",
+        "label": "US Midterm Elections 2026"
+      },
+      "es": {
+        "note": "Cambios de manos en los escaños y resultados de las cámaras en las elecciones de mitad de mandato de EE. UU. de 2026.",
+        "label": "Elecciones de mitad de mandato de EE. UU. 2026"
+      },
+      "fr": {
+        "note": "Bascules de sièges signalées et résultats des chambres lors des élections de mi-mandat de 2026 aux États-Unis.",
+        "label": "Élections de mi-mandat de 2026 aux États-Unis"
+      },
+      "it": {
+        "note": "Cambiamenti di seggio e risultati delle camere legislative riportati dalle elezioni di metà mandato negli Stati Uniti del 2026.",
+        "label": "Elezioni di metà mandato negli Stati Uniti 2026"
+      },
+      "ja": {
+        "note": "Reported seat flips and chamber results from the 2026 US midterm elections.",
+        "label": "US Midterm Elections 2026"
+      },
+      "ko": {
+        "note": "Reported seat flips and chamber results from the 2026 US midterm elections.",
+        "label": "US Midterm Elections 2026"
+      },
+      "pt": {
+        "note": "Reported seat flips and chamber results from the 2026 US midterm elections.",
+        "label": "US Midterm Elections 2026"
+      },
+      "zh": {
+        "note": "Reported seat flips and chamber results from the 2026 US midterm elections.",
+        "label": "US Midterm Elections 2026"
+      }
+    },
+    "updatedAt": "2026-11-05T00:51:26.920Z",
+    "sourceCount": 1
+  },
   "topic": "US Midterm Elections 2026",
-  "status": "live",
+  "status": "ended",
   "article": {
     "slug": "us-midterm-elections-2026",
     "reason": "3 new update(s)",
@@ -45,7 +182,7 @@
     "versions": [],
     "updatedAt": "2026-11-04T06:10:59.487Z"
   },
-  "endedAt": null,
+  "endedAt": "2026-11-05T01:00:02.210Z",
   "locales": {
     "en": {
       "dek": "Live results and analysis as voters decide control of the US Congress in the 2026 midterm elections.",
@@ -54,148 +191,148 @@
   },
   "updates": [
     {
-      "id": "u-1793839272390-av6r",
       "at": "2026-11-05T00:41:12.390Z",
+      "id": "u-1793839272390-av6r",
       "kind": "statement",
-      "importance": 3,
       "locales": {
         "en": {
-          "headline": "Vance blames Iran war for Republicans' midterm losses",
-          "body": "Vice President JD Vance said the Iran war was the \"real reason\" for the Republicans' losses in Tuesday's midterms, Semafor reported. The New York Times reported that Vance made the criticism in a lengthy social media post, in a break with the administration's agenda and messaging. President Trump answered reporters' questions about the post on Wednesday, according to the New York Times."
-        },
-        "fr": {
-          "headline": "Vance accuse la guerre contre l’Iran d’être à l’origine des pertes républicaines aux élections de mi-mandat",
-          "body": "Le vice-président JD Vance a déclaré que la guerre contre l’Iran était la « vraie raison » des pertes des républicains aux élections de mi-mandat de mardi, a rapporté Semafor. Le New York Times a rapporté que Vance a formulé cette critique dans une longue publication sur les réseaux sociaux, en contradiction avec les priorités et le discours de l’administration. Le président Trump a répondu mercredi aux questions des journalistes sur cette publication, selon le New York Times."
+          "body": "Vice President JD Vance said the Iran war was the \"real reason\" for the Republicans' losses in Tuesday's midterms, Semafor reported. The New York Times reported that Vance made the criticism in a lengthy social media post, in a break with the administration's agenda and messaging. President Trump answered reporters' questions about the post on Wednesday, according to the New York Times.",
+          "headline": "Vance blames Iran war for Republicans' midterm losses"
         },
         "es": {
-          "headline": "Vance culpa a la guerra con Irán de las pérdidas republicanas en las elecciones de mitad de mandato",
-          "body": "El vicepresidente JD Vance afirmó que la guerra con Irán fue la «razón real» de las pérdidas de los republicanos en las elecciones de mitad de mandato del martes, según Semafor. The New York Times informó de que Vance hizo esa crítica en una extensa publicación en redes sociales, lo que supone una ruptura con la agenda y el mensaje de la administración. El presidente Trump respondió el miércoles a las preguntas de los periodistas sobre la publicación, según The New York Times."
+          "body": "El vicepresidente JD Vance afirmó que la guerra con Irán fue la «razón real» de las pérdidas de los republicanos en las elecciones de mitad de mandato del martes, según Semafor. The New York Times informó de que Vance hizo esa crítica en una extensa publicación en redes sociales, lo que supone una ruptura con la agenda y el mensaje de la administración. El presidente Trump respondió el miércoles a las preguntas de los periodistas sobre la publicación, según The New York Times.",
+          "headline": "Vance culpa a la guerra con Irán de las pérdidas republicanas en las elecciones de mitad de mandato"
+        },
+        "fr": {
+          "body": "Le vice-président JD Vance a déclaré que la guerre contre l’Iran était la « vraie raison » des pertes des républicains aux élections de mi-mandat de mardi, a rapporté Semafor. Le New York Times a rapporté que Vance a formulé cette critique dans une longue publication sur les réseaux sociaux, en contradiction avec les priorités et le discours de l’administration. Le président Trump a répondu mercredi aux questions des journalistes sur cette publication, selon le New York Times.",
+          "headline": "Vance accuse la guerre contre l’Iran d’être à l’origine des pertes républicaines aux élections de mi-mandat"
         },
         "it": {
-          "headline": "Vance attribuisce la guerra con l'Iran alle sconfitte dei repubblicani nelle elezioni di metà mandato",
-          "body": "Il vice presidente JD Vance ha dichiarato che la guerra con l'Iran era la «vera ragione» delle sconfitte dei repubblicani nelle elezioni di metà mandato di martedì, ha riferito Semafor. Il New York Times ha riportato che Vance ha formulato la critica in un lungo post sui social media, in contrasto con l'agenda e la linea di comunicazione dell'amministrazione. Il presidente Trump ha risposto mercoledì alle domande dei giornalisti sul post, secondo il New York Times."
+          "body": "Il vice presidente JD Vance ha dichiarato che la guerra con l'Iran era la «vera ragione» delle sconfitte dei repubblicani nelle elezioni di metà mandato di martedì, ha riferito Semafor. Il New York Times ha riportato che Vance ha formulato la critica in un lungo post sui social media, in contrasto con l'agenda e la linea di comunicazione dell'amministrazione. Il presidente Trump ha risposto mercoledì alle domande dei giornalisti sul post, secondo il New York Times.",
+          "headline": "Vance attribuisce la guerra con l'Iran alle sconfitte dei repubblicani nelle elezioni di metà mandato"
         },
         "zh": {
-          "headline": "万斯将共和党中期选举失利归咎于伊朗战争",
-          "body": "据Semafor报道，副总统JD·万斯表示，伊朗战争是共和党在周二中期选举中失利的“真正原因”。《纽约时报》报道称，万斯在一篇篇幅较长的社交媒体帖子中提出了这一批评，这与政府的议程和宣传口径不一致。据《纽约时报》报道，特朗普总统周三回应了记者有关该帖子的提问。"
+          "body": "据Semafor报道，副总统JD·万斯表示，伊朗战争是共和党在周二中期选举中失利的“真正原因”。《纽约时报》报道称，万斯在一篇篇幅较长的社交媒体帖子中提出了这一批评，这与政府的议程和宣传口径不一致。据《纽约时报》报道，特朗普总统周三回应了记者有关该帖子的提问。",
+          "headline": "万斯将共和党中期选举失利归咎于伊朗战争"
         }
       },
       "sources": [
         {
-          "outlet": "Folha",
-          "title": "Vance se afasta de Trump e atribui derrota nas midterms � guerra no Ir�",
           "url": "https://www1.folha.uol.com.br/mundo/2026/11/vance-se-distancia-de-trump-atribui-derrota-nas-midterms-a-guerra-no-ira-e-admite-perda-de-eleitores.shtml",
+          "title": "Vance se afasta de Trump e atribui derrota nas midterms � guerra no Ir�",
+          "outlet": "Folha",
           "publishedAt": "2026-11-05T00:41:12.390Z"
         },
         {
-          "outlet": "Facebook",
-          "title": "The New York Times. . President Trump answered questions on Wednesday from reporters about the election results. He also commented on Vice President JD Vance’s lengthy social media post that largely blamed the Republican losses on the war in Iran. Fo",
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUHAwUDUyTjRRMWtHQlU0X085MkNwSTdBNUVZc2hZX0JUTUdSb005WkFFbERjNGtWTy0zZHA2eGNhaDhXbkNvOUxJOElmRWVaclpNcGxNdjZaUVdUWlFMQkpxWjZOZ0dLS2xwb3drY2ZmTzVrdVVCeENsLVZWRUhJWEFmWHdwNVlNakNPckFES1FaVFVoa29fZThWZ095RndiLWFzalJILWpuX0s2eGhldUhaRDBydw?oc=5",
+          "title": "The New York Times. . President Trump answered questions on Wednesday from reporters about the election results. He also commented on Vice President JD Vance’s lengthy social media post that largely blamed the Republican losses on the war in Iran. Fo",
+          "outlet": "Facebook",
           "publishedAt": "2026-11-05T00:10:19.000Z"
         },
         {
-          "outlet": "New York Times",
-          "title": "Vance, in Break With Trump, Blames Iran War for Republicans’ 2026 Midterm Losses",
           "url": "https://www.nytimes.com/2026/11/04/us/politics/vance-iran-war-midterms-trump.html",
+          "title": "Vance, in Break With Trump, Blames Iran War for Republicans’ 2026 Midterm Losses",
+          "outlet": "New York Times",
           "publishedAt": "2026-11-04T23:26:48.000Z"
         },
         {
-          "outlet": "Semafor",
-          "title": "Republicans trade blame for historic midterm loss",
           "url": "https://www.semafor.com/article/11/04/2026/republicans-trade-blame-for-historic-midterm-loss",
+          "title": "Republicans trade blame for historic midterm loss",
+          "outlet": "Semafor",
           "publishedAt": "2026-11-04T22:24:54.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1793836500000-ssjd",
       "at": "2026-11-04T23:55:00.000Z",
+      "id": "u-1793836500000-ssjd",
       "kind": "reaction",
-      "importance": 3,
       "locales": {
         "en": {
-          "headline": "Republicans call on Trump to change course after midterm losses",
-          "body": "Republicans called for Trump to change course after the party's midterm losses, Reuters and The Straits Times reported. Trump showed little indication that he viewed the election outcome as a reason to change direction, according to The Straits Times."
-        },
-        "fr": {
-          "headline": "Les républicains appellent Trump à changer de cap après les pertes aux élections de mi-mandat",
-          "body": "Les républicains ont appelé Trump à changer de cap après les pertes du parti aux élections de mi-mandat, ont rapporté Reuters et The Straits Times. Trump n’a montré que peu de signes indiquant qu’il considérait le résultat de l’élection comme une raison de changer de direction, selon The Straits Times."
+          "body": "Republicans called for Trump to change course after the party's midterm losses, Reuters and The Straits Times reported. Trump showed little indication that he viewed the election outcome as a reason to change direction, according to The Straits Times.",
+          "headline": "Republicans call on Trump to change course after midterm losses"
         },
         "es": {
-          "headline": "Los republicanos piden a Trump que cambie de rumbo tras sus pérdidas en las elecciones de mitad de mandato",
-          "body": "Los republicanos pidieron a Trump que cambiara de rumbo tras las pérdidas del partido en las elecciones de mitad de mandato, según Reuters y The Straits Times. Trump mostró pocos indicios de considerar el resultado electoral una razón para cambiar de dirección, según The Straits Times."
+          "body": "Los republicanos pidieron a Trump que cambiara de rumbo tras las pérdidas del partido en las elecciones de mitad de mandato, según Reuters y The Straits Times. Trump mostró pocos indicios de considerar el resultado electoral una razón para cambiar de dirección, según The Straits Times.",
+          "headline": "Los republicanos piden a Trump que cambie de rumbo tras sus pérdidas en las elecciones de mitad de mandato"
+        },
+        "fr": {
+          "body": "Les républicains ont appelé Trump à changer de cap après les pertes du parti aux élections de mi-mandat, ont rapporté Reuters et The Straits Times. Trump n’a montré que peu de signes indiquant qu’il considérait le résultat de l’élection comme une raison de changer de direction, selon The Straits Times.",
+          "headline": "Les républicains appellent Trump à changer de cap après les pertes aux élections de mi-mandat"
         },
         "it": {
-          "headline": "I repubblicani chiedono a Trump di cambiare rotta dopo le sconfitte nelle elezioni di metà mandato",
-          "body": "I repubblicani hanno chiesto a Trump di cambiare rotta dopo le sconfitte del partito nelle elezioni di metà mandato, hanno riferito Reuters e The Straits Times. Secondo The Straits Times, Trump ha dato pochi segnali di considerare l'esito elettorale un motivo per cambiare direzione."
+          "body": "I repubblicani hanno chiesto a Trump di cambiare rotta dopo le sconfitte del partito nelle elezioni di metà mandato, hanno riferito Reuters e The Straits Times. Secondo The Straits Times, Trump ha dato pochi segnali di considerare l'esito elettorale un motivo per cambiare direzione.",
+          "headline": "I repubblicani chiedono a Trump di cambiare rotta dopo le sconfitte nelle elezioni di metà mandato"
         },
         "zh": {
-          "headline": "共和党人在中期选举失利后呼吁特朗普改变路线",
-          "body": "据路透社和《海峡时报》报道，共和党人在该党中期选举失利后呼吁特朗普改变方针。据《海峡时报》报道，特朗普几乎没有表现出将选举结果视为改变方向的理由的迹象。"
+          "body": "据路透社和《海峡时报》报道，共和党人在该党中期选举失利后呼吁特朗普改变方针。据《海峡时报》报道，特朗普几乎没有表现出将选举结果视为改变方向的理由的迹象。",
+          "headline": "共和党人在中期选举失利后呼吁特朗普改变路线"
         }
       },
       "sources": [
         {
-          "outlet": "The Straits Times",
-          "title": "US midterms: Republicans call for Trump to change course after midterm drubbing",
           "url": "https://www.straitstimes.com/world/united-states/us-midterms-republicans-call-for-trump-to-change-course-after-midterm-drubbing",
+          "title": "US midterms: Republicans call for Trump to change course after midterm drubbing",
+          "outlet": "The Straits Times",
           "publishedAt": "2026-11-04T23:55:00.000Z"
         },
         {
-          "outlet": "Reuters",
-          "title": "Republicans call for Trump to change course after midterm drubbing",
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQamFhVEozSjRLb3lJNlFlTTZ4dmtZbjBGdTJHOGNXdmZqXzh6VGhqN3Z2czQ5VUdTaE5KeTMwdHNtUWhVRldhb2hhbGJMNUhDR3NfbF9sOWYyWHVFZHdPeU43OElBMzhnQnQzenpkdzJlQWVya0tMQUhaV1pPN1UwWlVlMXZpMXQxa191LVN5SEZSdWh5T21jcXRycHpOUkI5ZWhhZm4xSktCQnRfRnFhcDZn?oc=5",
+          "title": "Republicans call for Trump to change course after midterm drubbing",
+          "outlet": "Reuters",
           "publishedAt": "2026-11-04T22:59:43.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1793839594000-aka8",
       "at": "2026-11-05T00:46:34.000Z",
+      "id": "u-1793839594000-aka8",
       "kind": "reaction",
-      "importance": 3,
       "locales": {
         "en": {
-          "headline": "Zelensky says he hopes US midterm result brings more help for Ukraine",
-          "body": "Ukrainian President Volodymyr Zelensky said in an interview on Wednesday that he hoped the Democratic gains in the US midterms would generate more help for Ukraine in its war with Russia, The Straits Times and The Jerusalem Post reported. Tagesschau reported that many in Ukraine hope for a change in US policy but doubt changes will come quickly."
-        },
-        "fr": {
-          "headline": "Zelensky dit espérer que le résultat des élections de mi-mandat américaines apporte davantage d’aide à l’Ukraine",
-          "body": "Le président ukrainien Volodymyr Zelensky a déclaré mercredi dans une interview qu’il Hopefully la progression des démocrates aux élections de mi-mandat américaines entraînerait une aide accrue pour l’Ukraine dans sa guerre contre la Russie, ont rapporté The Straits Times et The Jerusalem Post. Tagesschau a rapporté que de nombreux Ukrainiens espèrent un changement dans la politique américaine, mais doutent que les changements viendront rapidement."
+          "body": "Ukrainian President Volodymyr Zelensky said in an interview on Wednesday that he hoped the Democratic gains in the US midterms would generate more help for Ukraine in its war with Russia, The Straits Times and The Jerusalem Post reported. Tagesschau reported that many in Ukraine hope for a change in US policy but doubt changes will come quickly.",
+          "headline": "Zelensky says he hopes US midterm result brings more help for Ukraine"
         },
         "es": {
-          "headline": "Zelensky dice que espera que el resultado de las elecciones de mitad de mandato en EE. UU. aporte más ayuda a Ucrania",
-          "body": "El presidente de Ucrania, Volodymyr Zelensky, declaró en una entrevista el miércoles que esperaba que los avances de los demócratas en las elecciones de mitad de mandato de EE. UU. generaran más ayuda para Ucrania en su guerra contra Rusia, según The Straits Times y The Jerusalem Post. Tagesschau informó de que muchos en Ucrania esperan un cambio en la política estadounidense, pero dudan de que los cambios lleguen rápidamente."
+          "body": "El presidente de Ucrania, Volodymyr Zelensky, declaró en una entrevista el miércoles que esperaba que los avances de los demócratas en las elecciones de mitad de mandato de EE. UU. generaran más ayuda para Ucrania en su guerra contra Rusia, según The Straits Times y The Jerusalem Post. Tagesschau informó de que muchos en Ucrania esperan un cambio en la política estadounidense, pero dudan de que los cambios lleguen rápidamente.",
+          "headline": "Zelensky dice que espera que el resultado de las elecciones de mitad de mandato en EE. UU. aporte más ayuda a Ucrania"
+        },
+        "fr": {
+          "body": "Le président ukrainien Volodymyr Zelensky a déclaré mercredi dans une interview qu’il Hopefully la progression des démocrates aux élections de mi-mandat américaines entraînerait une aide accrue pour l’Ukraine dans sa guerre contre la Russie, ont rapporté The Straits Times et The Jerusalem Post. Tagesschau a rapporté que de nombreux Ukrainiens espèrent un changement dans la politique américaine, mais doutent que les changements viendront rapidement.",
+          "headline": "Zelensky dit espérer que le résultat des élections de mi-mandat américaines apporte davantage d’aide à l’Ukraine"
         },
         "it": {
-          "headline": "Zelensky dice di sperare che l'esito delle elezioni di metà mandato negli Stati Uniti porti più aiuti all'Ucraina",
-          "body": "Il presidente ucraino Volodymyr Zelensky ha detto in un'intervista mercoledì di sperare che i progressi dei democratici nelle elezioni di metà mandato negli Stati Uniti portino più aiuti all'Ucraina nella sua guerra contro la Russia, hanno riferito The Straits Times e The Jerusalem Post. Tagesschau ha riportato che molti in Ucraina sperano in un cambiamento della politica degli Stati Uniti, ma dubitano che i cambiamenti arriveranno presto."
+          "body": "Il presidente ucraino Volodymyr Zelensky ha detto in un'intervista mercoledì di sperare che i progressi dei democratici nelle elezioni di metà mandato negli Stati Uniti portino più aiuti all'Ucraina nella sua guerra contro la Russia, hanno riferito The Straits Times e The Jerusalem Post. Tagesschau ha riportato che molti in Ucraina sperano in un cambiamento della politica degli Stati Uniti, ma dubitano che i cambiamenti arriveranno presto.",
+          "headline": "Zelensky dice di sperare che l'esito delle elezioni di metà mandato negli Stati Uniti porti più aiuti all'Ucraina"
         },
         "zh": {
-          "headline": "泽连斯基称希望美国中期选举结果为乌克兰带来更多援助",
-          "body": "据《海峡时报》和《耶路撒冷邮报》报道，乌克兰总统弗拉基米尔·泽连斯基周三在接受采访时表示，他希望民主党在美国中期选举中的进展能为乌克兰对抗俄罗斯的战争带来更多帮助。Tagesschau报道称，乌克兰许多人希望美国政策发生变化，但怀疑变化不会很快到来。"
+          "body": "据《海峡时报》和《耶路撒冷邮报》报道，乌克兰总统弗拉基米尔·泽连斯基周三在接受采访时表示，他希望民主党在美国中期选举中的进展能为乌克兰对抗俄罗斯的战争带来更多帮助。Tagesschau报道称，乌克兰许多人希望美国政策发生变化，但怀疑变化不会很快到来。",
+          "headline": "泽连斯基称希望美国中期选举结果为乌克兰带来更多援助"
         }
       },
       "sources": [
         {
-          "outlet": "The Jerusalem Post",
-          "title": "Zelensky hopes US election outcome will generate more help for Ukraine",
           "url": "https://www.jpost.com/international/article-913873",
+          "title": "Zelensky hopes US election outcome will generate more help for Ukraine",
+          "outlet": "The Jerusalem Post",
           "publishedAt": "2026-11-05T00:46:34.000Z"
         },
         {
-          "outlet": "Tagesschau",
-          "title": "Midterms in den USA: Verhaltener Optimismus in der Ukraine nach US-Wahl",
           "url": "https://www.tagesschau.de/ausland/europa/ukraine-usa-zwischenwahl-100.html",
+          "title": "Midterms in den USA: Verhaltener Optimismus in der Ukraine nach US-Wahl",
+          "outlet": "Tagesschau",
           "publishedAt": "2026-11-05T00:10:07.000Z"
         },
         {
-          "outlet": "The Straits Times",
-          "title": "Zelenskiy hopes US election outcome will generate more help for Ukraine",
           "url": "https://www.straitstimes.com/world/europe/zelenskiy-hopes-us-election-outcome-will-generate-more-help-for-ukraine",
+          "title": "Zelenskiy hopes US election outcome will generate more help for Ukraine",
+          "outlet": "The Straits Times",
           "publishedAt": "2026-11-04T22:18:01.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-04T15:32:21.000Z",
@@ -219,8 +356,8 @@
           "headline": "Mike Johnson non si candiderà alla carica di leader dei repubblicani alla Camera nel prossimo Congresso"
         },
         "zh": {
-          "headline": "迈克·约翰逊将不在下届国会竞选众议院共和党领袖",
-          "body": "据The Hill引述两名共和党幕僚称，众议院议长迈克·约翰逊周三告诉幕僚，他将不在下届国会竞选少数党领袖。Axios报道称，他计划辞去众议院共和党高层职务。Semafor表示，他私下告诉幕僚，他不打算竞选领导职务。"
+          "body": "据The Hill引述两名共和党幕僚称，众议院议长迈克·约翰逊周三告诉幕僚，他将不在下届国会竞选少数党领袖。Axios报道称，他计划辞去众议院共和党高层职务。Semafor表示，他私下告诉幕僚，他不打算竞选领导职务。",
+          "headline": "迈克·约翰逊将不在下届国会竞选众议院共和党领袖"
         }
       },
       "sources": [
@@ -273,8 +410,8 @@
           "headline": "Il Dow Jones sale di 1.104 punti dopo che i democratici hanno preso il controllo del Congresso"
         },
         "zh": {
-          "headline": "民主党控制国会后道琼斯指数上涨1,104点",
-          "body": "据The Hill报道，道琼斯工业平均指数在周三开盘近30分钟后上涨1,104点。《日经亚洲》报道称，随着民主党控制国会，股市攀升。《纽约时报》表示，随着投资者评估政策前景，全球市场随后走高。"
+          "body": "据The Hill报道，道琼斯工业平均指数在周三开盘近30分钟后上涨1,104点。《日经亚洲》报道称，随着民主党控制国会，股市攀升。《纽约时报》表示，随着投资者评估政策前景，全球市场随后走高。",
+          "headline": "民主党控制国会后道琼斯指数上涨1,104点"
         }
       },
       "sources": [
@@ -327,8 +464,8 @@
           "headline": "Il principale negoziatore iraniano afferma che gli americani hanno rifiutato la guerra nei risultati delle elezioni di metà mandato"
         },
         "zh": {
-          "headline": "伊朗首席谈判代表称美国民众在中期选举中拒绝战争",
-          "body": "据The Hill报道，伊朗首席谈判代表表示，中期选举结果表明美国人对战争说“不”。半岛电视台报道称，德黑兰认为这些结果是对特朗普“对伊朗战争”及该冲突经济负担的拒绝。"
+          "body": "据The Hill报道，伊朗首席谈判代表表示，中期选举结果表明美国人对战争说“不”。半岛电视台报道称，德黑兰认为这些结果是对特朗普“对伊朗战争”及该冲突经济负担的拒绝。",
+          "headline": "伊朗首席谈判代表称美国民众在中期选举中拒绝战争"
         }
       },
       "sources": [
@@ -1220,149 +1357,11 @@
     "https://news.google.com/rss/articles/CBMilgFBVV95cUxQR0hzZmliMUEzNHQzZ2xoa0FBRFMxSEt0UEVuOFRyc2pobW5yOGVob0NnSXhFcTFUb0MyaG5NY25WZndBVC0teGhNZ25NN1FQTzVya21SbzNzQkQwZVdZNi1QQ0swWWRpdWtSTGZqRzl2RGFwTktGQ19mSVBGbUY4ek9BLW43bkpPR1plNEk2MFRwWXM1d0E?oc=5"
   ],
   "startedAt": "2026-11-04T03:18:34.063Z",
-  "updatedAt": "2026-11-05T01:00:02.210Z",
+  "updatedAt": "2026-11-05T14:43:05.967Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "us-midterm-elections-2026",
   "sourceCount": 30,
-  "seenHeadlines": [],
-  "stats": {
-    "label": "US Midterm Elections 2026",
-    "note": "Reported seat flips and chamber results from the 2026 US midterm elections.",
-    "unit": "seats",
-    "max": null,
-    "asOf": "2026-11-05T00:00:00.000Z",
-    "updatedAt": "2026-11-05T00:51:26.920Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
-      "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
-      "publishedAt": "2026-11-04T23:44:18.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "senate-seats-flipped-by-democrats",
-        "label": "Senate seats flipped by Democrats",
-        "value": 7,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Seggi al Senato conquistati dai Democratici"
-          },
-          "es": {
-            "label": "Escaños del Senado ganados por los demócratas"
-          },
-          "fr": {
-            "label": "Sièges du Sénat basculés par les démocrates"
-          }
-        }
-      },
-      {
-        "key": "house-districts-flipped-by-democrats",
-        "label": "House districts flipped by Democrats",
-        "value": 30,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Collegi della Camera conquistati dai Democratici"
-          },
-          "es": {
-            "label": "Distritos de la Cámara de Representantes ganados por los demócratas"
-          },
-          "fr": {
-            "label": "Circonscriptions de la Chambre des représentants basculées par les démocrates"
-          }
-        }
-      },
-      {
-        "key": "governorships-flipped-by-democrats",
-        "label": "Governorships flipped by Democrats",
-        "value": 5,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Governi statali conquistati dai Democratici"
-          },
-          "es": {
-            "label": "Gubernaturas ganadas por los demócratas"
-          },
-          "fr": {
-            "label": "Gouvernorats basculés par les démocrates"
-          }
-        }
-      },
-      {
-        "key": "state-legislative-chambers-flipped",
-        "label": "State legislative chambers flipped",
-        "value": 12,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Camere legislative statali cambiate di mano"
-          },
-          "es": {
-            "label": "Cámaras legislativas estatales cambiadas de manos"
-          },
-          "fr": {
-            "label": "Chambres législatives des États basculées"
-          }
-        }
-      },
-      {
-        "key": "brazil-born-candidates-elected-to-state",
-        "label": "Brazil-born candidates elected to state ",
-        "value": 7,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Candidati nati in Brasile eletti a livello statale"
-          },
-          "es": {
-            "label": "Candidatos nacidos en Brasil elegidos para el estado \""
-          },
-          "fr": {
-            "label": "Candidats nés au Brésil élus au niveau de l’État"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "US Midterm Elections 2026",
-        "note": "Reported seat flips and chamber results from the 2026 US midterm elections."
-      },
-      "fr": {
-        "label": "Élections de mi-mandat de 2026 aux États-Unis",
-        "note": "Bascules de sièges signalées et résultats des chambres lors des élections de mi-mandat de 2026 aux États-Unis."
-      },
-      "es": {
-        "label": "Elecciones de mitad de mandato de EE. UU. 2026",
-        "note": "Cambios de manos en los escaños y resultados de las cámaras en las elecciones de mitad de mandato de EE. UU. de 2026."
-      },
-      "it": {
-        "label": "Elezioni di metà mandato negli Stati Uniti 2026",
-        "note": "Cambiamenti di seggio e risultati delle camere legislative riportati dalle elezioni di metà mandato negli Stati Uniti del 2026."
-      },
-      "pt": {
-        "label": "US Midterm Elections 2026",
-        "note": "Reported seat flips and chamber results from the 2026 US midterm elections."
-      },
-      "zh": {
-        "label": "US Midterm Elections 2026",
-        "note": "Reported seat flips and chamber results from the 2026 US midterm elections."
-      },
-      "ja": {
-        "label": "US Midterm Elections 2026",
-        "note": "Reported seat flips and chamber results from the 2026 US midterm elections."
-      },
-      "ko": {
-        "label": "US Midterm Elections 2026",
-        "note": "Reported seat flips and chamber results from the 2026 US midterm elections."
-      }
-    }
-  },
   "statsHistory": [
     {
       "at": "2026-11-05T00:00:00.000Z",
@@ -1389,5 +1388,6 @@
         }
       ]
     }
-  ]
+  ],
+  "seenHeadlines": []
 }
