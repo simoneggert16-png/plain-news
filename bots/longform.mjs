@@ -27,7 +27,7 @@ if (fs.existsSync('.env')) {
 
 import { FEEDS } from './sources.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
-import { chatJSON } from './lib/llm.mjs';
+import { chatJSON, warmUp } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
 import { collectImages, assignImages } from './lib/illustrate.mjs';
 import { loadIndex, saveIndex, loadArticle, saveArticle, toIndexEntry, slugify } from './lib/store.mjs';
@@ -477,6 +477,14 @@ function saveLedger(l) {
 
 async function main() {
   const started = Date.now();
+  // A long read needs the longest answers of the day, so the models that
+  // answer a small question right now go first (see warmUp in lib/llm.mjs).
+  const health = await warmUp();
+  if (health.good.length) {
+    log(`MODELS ${health.good.length} of ${health.good.length + health.failed.length} answering, fastest ${health.good[0]}`);
+  } else {
+    throw new Error('no model answered the health check - every provider is out of quota or hanging');
+  }
   const index = loadIndex();
   const ledger = loadLedger();
 
@@ -557,7 +565,11 @@ async function main() {
   process.exit(0);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// An early return (no cluster, no theme) must not leave the process hanging on
+// open fetch sockets - the step would sit there until its timeout.
+main()
+  .then(() => process.exit(0))
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });

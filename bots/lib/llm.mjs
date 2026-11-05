@@ -279,6 +279,47 @@ export async function chat(role, messages, opts = {}) {
  * of them holds the JSON shape, and a hybrid model spends no tokens on
  * visible reasoning — the answer has to be a document, not a monologue.
  */
+/**
+ * Ask every model in the chain one small question and put what answers first.
+ *
+ * On 2026-11-05 the desk spent eight minutes per batch on four NVIDIA models
+ * that had all started to hang, then found Ollama empty and published nothing
+ * for a day - while the same NVIDIA key answered a live-ticker call in under a
+ * second. The difference is not the provider, it is the minute: a free tier
+ * that is saturated refuses long answers first. A cycle that measures once
+ * (twenty seconds for the whole chain) spends its budget on models that talk
+ * instead of discovering dead ones batch by batch.
+ *
+ * Failures are parked by chat() itself, so a second call does not pay for them
+ * again. The returned list lets a caller say out loud when nothing answered.
+ */
+export async function warmUp({ timeoutMs = 20_000 } = {}) {
+  // Every model the table knows about, not just the roles this bot uses: a
+  // model missing from the ranking would otherwise sort to the front (-1).
+  const chain = [...new Set(Object.values(MODELS).flat())];
+  const measured = await Promise.all(chain.map(async (model) => {
+    const started = Date.now();
+    try {
+      const answer = await chat('probe', [{ role: 'user', content: 'Reply with only this JSON and nothing else: {"ok":true,"n":3}' }], {
+        models: [model],
+        timeoutMs,
+        maxTokens: 40,
+        temperature: 0,
+      });
+      return { model, ok: /\{/.test(answer.text), ms: Date.now() - started };
+    } catch (err) {
+      return { model, ok: false, ms: Infinity, why: err?.message };
+    }
+  }));
+
+  const good = measured.filter((m) => m.ok).sort((a, b) => a.ms - b.ms);
+  const rank = [...good.map((m) => m.model), ...measured.filter((m) => !m.ok).map((m) => m.model)];
+  for (const role of Object.keys(MODELS)) {
+    MODELS[role] = [...MODELS[role]].sort((a, b) => rank.indexOf(a) - rank.indexOf(b));
+  }
+  return { good: good.map((m) => m.model), slowest: good.at(-1)?.ms ?? 0, failed: measured.filter((m) => !m.ok) };
+}
+
 export async function chatJSON(role, messages, opts = {}) {
   let lastErr;
   const deadline = opts.deadline || globalDeadline;

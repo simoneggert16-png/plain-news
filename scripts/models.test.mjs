@@ -95,3 +95,26 @@ test('a model without a key fails at once instead of sleeping through three atte
   assert.ok(Date.now() - started < 1000, `took ${Date.now() - started} ms`);
   assert.equal(calls, 0, 'a model without a key was asked over the network');
 });
+
+test('a cycle asks which model answers and puts it in front of the chain', async () => {
+  delete process.env.NVIDIA_API_KEY;
+  const { warmUp, MODELS } = await freshModule('warmup');
+  const good = 'ollama/gemma4:31b';
+  globalThis.fetch = async (url, init) => {
+    // callOllama strips the "ollama/" prefix before it reaches the provider.
+    const model = JSON.parse(init.body).model;
+    if (model === good.slice('ollama/'.length)) {
+      return new Response(JSON.stringify({ message: { content: '{"ok":true}' } }), { status: 200 });
+    }
+    return new Response('{"error":"you have reached your monthly usage limit"}', { status: 429 });
+  };
+
+  // 2026-11-05: four NVIDIA models hung for two minutes each while the desk
+  // burned its whole shift, and every batch after that saw only Ollama, which
+  // was out of quota. One measurement per cycle ends the guessing.
+  const health = await warmUp({ timeoutMs: 2000 });
+  assert.deepEqual(health.good, [good]);
+  assert.equal(MODELS.desk[0], good, 'the desk still starts with a dead model');
+  assert.equal(MODELS.translator[0], good);
+  assert.equal(MODELS.live[0], good);
+});

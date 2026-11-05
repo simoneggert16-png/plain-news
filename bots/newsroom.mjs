@@ -27,7 +27,7 @@ if (fs.existsSync('.env')) {
 
 import { FEEDS } from './sources.mjs';
 import { fetchFeeds, fetchArticleDetails } from './lib/feeds.mjs';
-import { chatJSON, setDeadline } from './lib/llm.mjs';
+import { chatJSON, setDeadline, warmUp } from './lib/llm.mjs';
 import { STYLE_GUIDE, slopHits, styleProblems } from './lib/style.mjs';
 import { translate } from './lib/translate.mjs';
 import { loadIndex, saveIndex, loadState, saveState, saveArticle, loadArticle, toIndexEntry, slugify } from './lib/store.mjs';
@@ -453,6 +453,18 @@ async function main() {
   // No single model call may outlive the cycle budget (4 min reserved for
   // saving and pushing).
   setDeadline(RUN_STARTED + RUN_BUDGET_MS - 4 * 60e3);
+
+  // Which model answers *now*. Without this the first desk batch discovers the
+  // dead ones one 120-second timeout at a time (see warmUp in lib/llm.mjs).
+  const health = await warmUp();
+  if (health.good.length) {
+    log(`MODELS ${health.good.length} of ${health.good.length + health.failed.length} answering, fastest ${health.good[0]} (${health.slowest} ms max)`);
+  } else {
+    // No brain, no shift: say it once and let the workflow go red. A run that
+    // silently publishes nothing looks like a quiet news day.
+    throw new Error('no model answered the health check - every provider is out of quota or hanging');
+  }
+
   const state = loadState();
   const index = loadIndex();
   const seen = new Set(state.seenUrls);
