@@ -3,6 +3,8 @@ import { getIndex, localize } from '@/lib/content.mjs';
 import { getLiveIndex } from '@/lib/liveStore.mjs';
 
 export const dynamic = 'force-static';
+// Same reason as the RSS feed: content-only commits do not trigger a build.
+export const revalidate = 1800;
 
 const MAX_ARTICLES = 500;
 

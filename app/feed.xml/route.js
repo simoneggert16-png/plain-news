@@ -2,6 +2,9 @@ import { SITE } from '@/lib/config.mjs';
 import { getIndex, localize } from '@/lib/content.mjs';
 
 export const dynamic = 'force-static';
+// Builds are skipped for content-only commits (vercel.json), so a feed that
+// only refreshes on a deployment would miss every story published in between.
+export const revalidate = 1800;
 
 const esc = (s = '') => String(s).replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' }[c]));
 

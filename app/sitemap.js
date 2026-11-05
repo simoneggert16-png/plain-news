@@ -4,6 +4,11 @@ import { getLiveIndex } from '@/lib/liveStore.mjs';
 
 const STATIC_PATHS = ['', '/about', '/markets', '/ticker', '/live', '/longreads', '/investigations', '/sources', '/search', '/legal', '/privacy'];
 
+// Content-only commits skip the build now (vercel.json), so the sitemap needs
+// its own clock or it would point at yesterday's archive until the next code
+// change.
+export const revalidate = 1800;
+
 const alternatesFor = (path, base) =>
   Object.fromEntries(LOCALE_CODES.map((locale) => [locale, `${base}/${locale}${path}`]));
 
