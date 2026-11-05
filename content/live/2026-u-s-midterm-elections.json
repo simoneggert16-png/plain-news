@@ -14,11 +14,11 @@
   "slug": "2026-u-s-midterm-elections",
   "stats": {
     "label": "2026 U.S. Midterm Election Results",
-    "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms.",
+    "note": "Reported figures for Democratic seat flips, Musk-linked spending, Trump Media's daily stock change, crude oil price levels, and Brazil-born state lawmakers elected.",
     "unit": "",
     "max": null,
     "asOf": "2026-11-05T00:00:00.000Z",
-    "updatedAt": "2026-11-05T02:31:43.488Z",
+    "updatedAt": "2026-11-05T03:04:55.108Z",
     "source": {
       "outlet": "CNBC",
       "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
@@ -51,6 +51,9 @@
           },
           "zh": {
             "label": "民主党翻转的参议院席位"
+          },
+          "ja": {
+            "label": "民主党が奪取した上院議席"
           }
         }
       },
@@ -77,6 +80,9 @@
           },
           "zh": {
             "label": "民主党翻转的众议院选区"
+          },
+          "ja": {
+            "label": "民主党が奪取した下院選挙区"
           }
         }
       },
@@ -103,6 +109,9 @@
           },
           "zh": {
             "label": "民主党翻转的州长职位"
+          },
+          "ja": {
+            "label": "民主党が奪取した州知事職"
           }
         }
       },
@@ -129,6 +138,9 @@
           },
           "zh": {
             "label": "归属翻转的州议会两院"
+          },
+          "ja": {
+            "label": "政党掌握が入れ替わった州議会"
           }
         }
       },
@@ -155,6 +167,9 @@
           },
           "zh": {
             "label": "马斯克的选举支出"
+          },
+          "ja": {
+            "label": "マスクの選挙支出"
           }
         }
       },
@@ -162,7 +177,7 @@
         "key": "musk-backed-spending",
         "label": "Musk-backed spending",
         "value": 446,
-        "change": 6,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Von Musk unterstützte Ausgaben"
@@ -181,6 +196,9 @@
           },
           "zh": {
             "label": "马斯克支持的支出"
+          },
+          "ja": {
+            "label": "マスク支援の支出"
           }
         }
       },
@@ -190,6 +208,9 @@
         "value": -24,
         "change": 0,
         "locales": {
+          "de": {
+            "label": "Tägliche Kursänderung von Trump Media"
+          },
           "fr": {
             "label": "Variation quotidienne du cours de l’action de Trump Media"
           },
@@ -199,8 +220,14 @@
           "it": {
             "label": "Variazione giornaliera del prezzo delle azioni di Trump Media"
           },
-          "de": {
-            "label": "Tägliche Kursänderung von Trump Media"
+          "ja": {
+            "label": "トランプ・メディアの1日株価変動"
+          },
+          "pt": {
+            "label": "Variação diária da ação da Trump Media"
+          },
+          "zh": {
+            "label": "特朗普媒体公司股价每日涨跌幅"
           }
         }
       },
@@ -208,8 +235,11 @@
         "key": "brent-crude-price-threshold",
         "label": "Brent crude price threshold",
         "value": 95,
-        "change": null,
+        "change": 0,
         "locales": {
+          "de": {
+            "label": "Preisschwelle für Brent-Rohöl"
+          },
           "fr": {
             "label": "Seuil de prix du pétrole brut Brent"
           },
@@ -219,8 +249,14 @@
           "it": {
             "label": "Soglia del prezzo del greggio Brent"
           },
-          "de": {
-            "label": "Preisschwelle für Brent-Rohöl"
+          "ja": {
+            "label": "ブレント原油価格のしきい値"
+          },
+          "pt": {
+            "label": "Limiar de preço do petróleo bruto Brent"
+          },
+          "zh": {
+            "label": "布伦特原油价格阈值"
           }
         }
       },
@@ -230,6 +266,9 @@
         "value": 90,
         "change": 0,
         "locales": {
+          "de": {
+            "label": "Preisschwelle für WTI-Rohöl"
+          },
           "fr": {
             "label": "Seuil de prix du pétrole brut WTI"
           },
@@ -239,8 +278,14 @@
           "it": {
             "label": "Soglia del prezzo del greggio WTI"
           },
-          "de": {
-            "label": "Preisschwelle für WTI-Rohöl"
+          "ja": {
+            "label": "WTI原油価格のしきい値"
+          },
+          "pt": {
+            "label": "Limiar de preço do petróleo bruto WTI"
+          },
+          "zh": {
+            "label": "WTI原油价格阈值"
           }
         }
       },
@@ -248,8 +293,11 @@
         "key": "brazil-born-state-lawmakers-elected",
         "label": "Brazil-born state lawmakers elected",
         "value": 7,
-        "change": null,
+        "change": 0,
         "locales": {
+          "de": {
+            "label": "Gewählte Abgeordnete der Bundesstaaten, die in Brasilien geboren wurden"
+          },
           "fr": {
             "label": "Législateurs des États-Unis nés au Brésil élus"
           },
@@ -259,64 +307,50 @@
           "it": {
             "label": "Legislatori statali nati in Brasile eletti"
           },
-          "de": {
-            "label": "Gewählte Abgeordnete der Bundesstaaten, die in Brasilien geboren wurden"
-          }
-        }
-      },
-      {
-        "key": "leading-the-future-pac-spending",
-        "label": "Leading the Future PAC spending",
-        "value": 100,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Dépenses du PAC Leading the Future"
+          "ja": {
+            "label": "当選したブラジル生まれの州議会議員"
           },
-          "es": {
-            "label": "Gasto del PAC Leading the Future"
+          "pt": {
+            "label": "Deputados estaduais nascidos no Brasil eleitos"
           },
-          "it": {
-            "label": "Spese del PAC Leading the Future"
-          },
-          "de": {
-            "label": "Ausgaben der PAC Leading the Future"
+          "zh": {
+            "label": "当选的巴西出生州议员"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "Ergebnisse der US-Zwischenwahlen 2026",
-        "note": "Berichtete Mandatsgewinne der Demokraten, Wahlkampfausgaben, Marktbewegungen und Ölpreisschwellen nach den US-Zwischenwahlen 2026."
+        "note": "Berichtete Mandatsgewinne der Demokraten, Wahlkampfausgaben, Marktbewegungen und Ölpreisschwellen nach den US-Zwischenwahlen 2026.",
+        "label": "Ergebnisse der US-Zwischenwahlen 2026"
       },
       "fr": {
-        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis",
-        "note": "Bascules de sièges en faveur des démocrates signalées, dépenses électorales, mouvements des marchés et seuils de prix du pétrole à la suite des élections de mi-mandat de 2026 aux États-Unis."
+        "note": "Bascules de sièges en faveur des démocrates signalées, dépenses électorales, mouvements des marchés et seuils de prix du pétrole à la suite des élections de mi-mandat de 2026 aux États-Unis.",
+        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis"
       },
       "es": {
-        "label": "Resultados de las elecciones de mitad de mandato de EE. UU. de 2026",
-        "note": "Cambios de signo en favour de los民主党, gasto electoral, movimientos de los mercados y umbrales de precios del petróleo tras las elecciones de mitad de mandato de EE. UU. de 2026."
+        "note": "Cambios de signo en favour de los民主党, gasto electoral, movimientos de los mercados y umbrales de precios del petróleo tras las elecciones de mitad de mandato de EE. UU. de 2026.",
+        "label": "Resultados de las elecciones de mitad de mandato de EE. UU. de 2026"
       },
       "it": {
-        "label": "Risultati delle elezioni di metà mandato negli Stati Uniti 2026",
-        "note": "Cambi di seggio democristiani, spese elettorali, movimenti dei mercati e soglie dei prezzi del petrolio riportati dopo le elezioni di metà mandato negli Stati Uniti del 2026."
+        "note": "Cambi di seggio democristiani, spese elettorali, movimenti dei mercati e soglie dei prezzi del petrolio riportati dopo le elezioni di metà mandato negli Stati Uniti del 2026.",
+        "label": "Risultati delle elezioni di metà mandato negli Stati Uniti 2026"
       },
       "pt": {
-        "label": "2026 U.S. Midterm Election Results",
-        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
+        "label": "Resultados das eleições de meio de mandato dos EUA em 2026",
+        "note": "Números comunicados sobre a conquista de lugares pelos Democratas, os gastos relacionados com Musk, a variação diária da ação da Trump Media, os níveis de preço do petróleo bruto e os deputados estaduais nascidos no Brasil eleitos."
       },
       "zh": {
-        "label": "2026 U.S. Midterm Election Results",
-        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
+        "label": "2026年美国中期选举结果",
+        "note": "有关民主党席位易手、与马斯克相关的支出、特朗普媒体公司股价每日涨跌幅、原油价格水平以及当选的巴西出生州议员的已报道数据。"
       },
       "ja": {
-        "label": "2026 U.S. Midterm Election Results",
-        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
+        "label": "2026年米国中間選挙結果",
+        "note": "民主党による議席奪取、マスク関連支出、トランプ・メディアの1日株価変動、原油価格水準、ブラジル生まれの州議会議員の当選に関する報道数値。"
       },
       "ko": {
         "label": "2026 U.S. Midterm Election Results",
-        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
+        "note": "Reported figures for Democratic seat flips, Musk-linked spending, Trump Media's daily stock change, crude oil price levels, and Brazil-born state lawmakers elected."
       }
     }
   },
@@ -848,6 +882,51 @@
   "articleSlug": null,
   "sourceCount": 11,
   "statsHistory": [
+    {
+      "at": "2026-11-05T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "senate-seats-flipped-by-democrats",
+          "value": 7
+        },
+        {
+          "key": "house-districts-flipped-by-democrats",
+          "value": 30
+        },
+        {
+          "key": "governorships-flipped-by-democrats",
+          "value": 5
+        },
+        {
+          "key": "state-legislative-chambers-flipped",
+          "value": 12
+        },
+        {
+          "key": "musk-election-spending",
+          "value": 500
+        },
+        {
+          "key": "musk-backed-spending",
+          "value": 446
+        },
+        {
+          "key": "trump-media-daily-stock-change",
+          "value": -24
+        },
+        {
+          "key": "brent-crude-price-threshold",
+          "value": 95
+        },
+        {
+          "key": "wti-crude-price-threshold",
+          "value": 90
+        },
+        {
+          "key": "brazil-born-state-lawmakers-elected",
+          "value": 7
+        }
+      ]
+    },
     {
       "at": "2026-11-05T00:00:00.000Z",
       "rows": [
