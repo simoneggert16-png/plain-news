@@ -13,24 +13,35 @@
   },
   "slug": "2026-u-s-midterm-elections",
   "stats": {
+    "label": "2026 U.S. Midterm Election Results",
+    "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms.",
+    "unit": "",
     "max": null,
     "asOf": "2026-11-05T00:00:00.000Z",
-    "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
+    "updatedAt": "2026-11-05T02:31:43.488Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
+      "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
+      "publishedAt": "2026-11-04T23:44:18.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
       {
         "key": "senate-seats-flipped-by-democrats",
         "label": "Senate seats flipped by Democrats",
         "value": 7,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Von Demokraten umgewonnene Sitze im Senat"
           },
-          "es": {
-            "label": "Escaños del Senado cambiados de manos por los demócratas"
-          },
           "fr": {
             "label": "Sièges au Sénat remportés par les démocrates"
+          },
+          "es": {
+            "label": "Escaños del Senado cambiados de manos por los demócratas"
           },
           "it": {
             "label": "Seggi al Senato conquistati dai Democratici"
@@ -47,16 +58,16 @@
         "key": "house-districts-flipped-by-democrats",
         "label": "House districts flipped by Democrats",
         "value": 30,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Von Demokraten umgewonnene Wahlkreise im Repräsentantenhaus"
           },
-          "es": {
-            "label": "Distritos de la Cámara de Representantes cambiados de manos por los demócratas"
-          },
           "fr": {
             "label": "Circonscriptions à la Chambre des représentants remportées par les démocrates"
+          },
+          "es": {
+            "label": "Distritos de la Cámara de Representantes cambiados de manos por los demócratas"
           },
           "it": {
             "label": "Collegi alla Camera conquistati dai Democratici"
@@ -73,16 +84,16 @@
         "key": "governorships-flipped-by-democrats",
         "label": "Governorships flipped by Democrats",
         "value": 5,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Von Demokraten umgewonnene Gouverneursposten"
           },
-          "es": {
-            "label": "Gubernaturas cambiadas de manos por los demócratas"
-          },
           "fr": {
             "label": "Postes de gouverneur remportés par les démocrates"
+          },
+          "es": {
+            "label": "Gubernaturas cambiadas de manos por los demócratas"
           },
           "it": {
             "label": "Governatorati conquistati dai Democratici"
@@ -99,16 +110,16 @@
         "key": "state-legislative-chambers-flipped",
         "label": "State legislative chambers flipped",
         "value": 12,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Umgewonnene Kammern der Landesparlamente"
           },
-          "es": {
-            "label": "Cámaras legislativas de los estados cambiadas de manos"
-          },
           "fr": {
             "label": "Chambres législatives des États basculées"
+          },
+          "es": {
+            "label": "Cámaras legislativas de los estados cambiadas de manos"
           },
           "it": {
             "label": "Camere legislative degli Stati cambiate di mano"
@@ -122,45 +133,19 @@
         }
       },
       {
-        "key": "expected-democratic-house-seats",
-        "label": "Expected Democratic House seats",
-        "value": 255,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Erwartete Sitze der Demokraten im Repräsentantenhaus"
-          },
-          "es": {
-            "label": "Número previsto de escaños de la Cámara de Representantes para los demócratas"
-          },
-          "fr": {
-            "label": "Sièges à la Chambre des représentants attendus pour les démocrates"
-          },
-          "it": {
-            "label": "Numero previsto di seggi dei Democratici alla Camera"
-          },
-          "pt": {
-            "label": "Lugares previstos para os democratas na Câmara de Deputados"
-          },
-          "zh": {
-            "label": "预计民主党将获得的众议院席位"
-          }
-        }
-      },
-      {
         "key": "musk-election-spending",
         "label": "Musk election spending",
         "value": 500,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Musks Wahlkampfausgaben"
           },
-          "es": {
-            "label": "Gasto electoral de Musk"
-          },
           "fr": {
             "label": "Dépenses électorales de Musk"
+          },
+          "es": {
+            "label": "Gasto electoral de Musk"
           },
           "it": {
             "label": "Spese elettorali di Musk"
@@ -176,17 +161,17 @@
       {
         "key": "musk-backed-spending",
         "label": "Musk-backed spending",
-        "value": 440,
-        "change": null,
+        "value": 446,
+        "change": 6,
         "locales": {
           "de": {
             "label": "Von Musk unterstützte Ausgaben"
           },
-          "es": {
-            "label": "Gasto respaldado por Musk"
-          },
           "fr": {
             "label": "Dépenses soutenues par Musk"
+          },
+          "es": {
+            "label": "Gasto respaldado por Musk"
           },
           "it": {
             "label": "Spese con il sostegno di Musk"
@@ -200,103 +185,140 @@
         }
       },
       {
-        "key": "trump-media-stock-daily-change",
-        "label": "Trump Media stock daily change",
+        "key": "trump-media-daily-stock-change",
+        "label": "Trump Media daily stock change",
         "value": -24,
-        "change": null,
+        "change": 0,
         "locales": {
-          "de": {
-            "label": "Tagesveränderung der Trump-Media-Aktie"
+          "fr": {
+            "label": "Variation quotidienne du cours de l’action de Trump Media"
           },
           "es": {
-            "label": "Variación diaria de la acción de Trump Media"
-          },
-          "fr": {
-            "label": "Variation quotidienne de l’action Trump Media"
+            "label": "Variación diaria de las acciones de Trump Media"
           },
           "it": {
-            "label": "Variazione giornaliera del titolo di Trump Media"
+            "label": "Variazione giornaliera del prezzo delle azioni di Trump Media"
           },
-          "pt": {
-            "label": "Variação diária da ação da Trump Media"
-          },
-          "zh": {
-            "label": "特朗普媒体公司股价每日变动"
+          "de": {
+            "label": "Tägliche Kursänderung von Trump Media"
           }
         }
       },
       {
-        "key": "crude-oil-price-threshold",
-        "label": "Crude oil price threshold",
-        "value": 90,
+        "key": "brent-crude-price-threshold",
+        "label": "Brent crude price threshold",
+        "value": 95,
         "change": null,
         "locales": {
-          "de": {
-            "label": "Schwellenwert für den Rohölpreis"
+          "fr": {
+            "label": "Seuil de prix du pétrole brut Brent"
           },
           "es": {
-            "label": "Umbral del precio del petróleo crudo"
-          },
-          "fr": {
-            "label": "Seuil de prix du pétrole brut"
+            "label": "Umbral de precio del crudo Brent"
           },
           "it": {
-            "label": "Soglia del prezzo del petrolio greggio"
+            "label": "Soglia del prezzo del greggio Brent"
           },
-          "pt": {
-            "label": "Limiar do preço do petróleo bruto"
+          "de": {
+            "label": "Preisschwelle für Brent-Rohöl"
+          }
+        }
+      },
+      {
+        "key": "wti-crude-price-threshold",
+        "label": "WTI crude price threshold",
+        "value": 90,
+        "change": 0,
+        "locales": {
+          "fr": {
+            "label": "Seuil de prix du pétrole brut WTI"
           },
-          "zh": {
-            "label": "原油价格阈值"
+          "es": {
+            "label": "Umbral de precio del crudo WTI"
+          },
+          "it": {
+            "label": "Soglia del prezzo del greggio WTI"
+          },
+          "de": {
+            "label": "Preisschwelle für WTI-Rohöl"
+          }
+        }
+      },
+      {
+        "key": "brazil-born-state-lawmakers-elected",
+        "label": "Brazil-born state lawmakers elected",
+        "value": 7,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Législateurs des États-Unis nés au Brésil élus"
+          },
+          "es": {
+            "label": "Legisladores autonómicos elegidos, nacidos en Brasil"
+          },
+          "it": {
+            "label": "Legislatori statali nati in Brasile eletti"
+          },
+          "de": {
+            "label": "Gewählte Abgeordnete der Bundesstaaten, die in Brasilien geboren wurden"
+          }
+        }
+      },
+      {
+        "key": "leading-the-future-pac-spending",
+        "label": "Leading the Future PAC spending",
+        "value": 100,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Dépenses du PAC Leading the Future"
+          },
+          "es": {
+            "label": "Gasto del PAC Leading the Future"
+          },
+          "it": {
+            "label": "Spese del PAC Leading the Future"
+          },
+          "de": {
+            "label": "Ausgaben der PAC Leading the Future"
           }
         }
       }
     ],
-    "unit": "",
-    "label": "2026 U.S. Midterm Election Results",
-    "source": {
-      "url": "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
-      "title": "Democrats flip dozens of GOP seats. Republicans haven't flipped a single one",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-11-04T23:44:18.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Berichtete Sitzgewinne sowie Angaben zu Ausgaben, Aktien- und Rohölpreisen aus der Berichterstattung über die Zwischenwahlen in den USA 2026.",
-        "label": "Ergebnisse der Zwischenwahlen in den USA 2026"
-      },
-      "es": {
-        "note": "Cifras comunicadas de ganancias de escaños, gasto, cotizaciones bursátiles y precios del petróleo procedentes de la cobertura de las elecciones de mitad de mandato de EE. UU. de 2026.",
-        "label": "Resultados de las elecciones de mitad de mandato de EE. UU. de 2026"
+        "label": "Ergebnisse der US-Zwischenwahlen 2026",
+        "note": "Berichtete Mandatsgewinne der Demokraten, Wahlkampfausgaben, Marktbewegungen und Ölpreisschwellen nach den US-Zwischenwahlen 2026."
       },
       "fr": {
-        "note": "Gains de sièges rapportés, chiffres des dépenses, des actions et des prix du pétrole issus de la couverture des élections de mi-mandat de 2026 aux États-Unis.",
-        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis"
+        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis",
+        "note": "Bascules de sièges en faveur des démocrates signalées, dépenses électorales, mouvements des marchés et seuils de prix du pétrole à la suite des élections de mi-mandat de 2026 aux États-Unis."
+      },
+      "es": {
+        "label": "Resultados de las elecciones de mitad de mandato de EE. UU. de 2026",
+        "note": "Cambios de signo en favour de los民主党, gasto electoral, movimientos de los mercados y umbrales de precios del petróleo tras las elecciones de mitad de mandato de EE. UU. de 2026."
       },
       "it": {
-        "note": "Incrementi di seggi, spese, quotazioni azionarie e prezzi del petrolio riportati nei resoconti delle elezioni di metà mandato negli Stati Uniti del 2026.",
-        "label": "Risultati delle elezioni di metà mandato negli Stati Uniti 2026"
-      },
-      "ja": {
-        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
-        "label": "2026 U.S. Midterm Election Results"
-      },
-      "ko": {
-        "note": "Reported seat gains, spending, stock and oil-price figures from coverage of the 2026 U.S. midterm elections.",
-        "label": "2026 U.S. Midterm Election Results"
+        "label": "Risultati delle elezioni di metà mandato negli Stati Uniti 2026",
+        "note": "Cambi di seggio democristiani, spese elettorali, movimenti dei mercati e soglie dei prezzi del petrolio riportati dopo le elezioni di metà mandato negli Stati Uniti del 2026."
       },
       "pt": {
-        "note": "Ganhos de lugares, gastos, ações e preços do petróleo reportados na cobertura das eleições de meio de mandato dos EUA em 2026.",
-        "label": "Resultados das eleições de meio de mandato nos EUA em 2026"
+        "label": "2026 U.S. Midterm Election Results",
+        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
       },
       "zh": {
-        "note": "有关2026年美国中期选举的报道中公布的席位增减、支出、股价和油价数据。",
-        "label": "2026年美国中期选举结果"
+        "label": "2026 U.S. Midterm Election Results",
+        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
+      },
+      "ja": {
+        "label": "2026 U.S. Midterm Election Results",
+        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
+      },
+      "ko": {
+        "label": "2026 U.S. Midterm Election Results",
+        "note": "Reported Democratic seat flips, election spending, market moves and oil-price thresholds following the 2026 U.S. midterms."
       }
-    },
-    "updatedAt": "2026-11-05T00:47:07.376Z",
-    "sourceCount": 1
+    }
   },
   "topic": "2026 U.S. Midterm Elections",
   "status": "live",
@@ -338,166 +360,166 @@
   },
   "updates": [
     {
-      "id": "u-1793839980000-uwx1",
       "at": "2026-11-05T00:53:00.000Z",
+      "id": "u-1793839980000-uwx1",
       "kind": "statement",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Trump says he 'had to' pursue Iran war despite election losses",
-          "body": "Al Jazeera reported that Trump said the war 'largely' caused Republicans' losses but that he 'had to do it.' Der Spiegel reported that he said he would act the same way again."
+        "de": {
+          "body": "Al Jazeera berichtete, Trump habe gesagt, der Krieg habe „größtenteils“ zu den Niederlagen der Republikaner geführt, aber er habe es „tun müssen“. Der Spiegel berichtete, er habe gesagt, er würde wieder genauso vorgehen.",
+          "headline": "Trump sagt, er „musste“ den Iran-Krieg trotz der Wahlverluste weiterführen"
         },
-        "fr": {
-          "headline": "Trump dit avoir « dû » poursuivre la guerre contre l’Iran malgré les défaites électorales",
-          "body": "Al Jazeera a rapporté que Trump a déclaré que la guerre avait « largement » causé les défaites des républicains, mais qu’il « devait le faire ». Der Spiegel a rapporté qu’il a dit qu’ilReferait exactement de même."
+        "en": {
+          "body": "Al Jazeera reported that Trump said the war 'largely' caused Republicans' losses but that he 'had to do it.' Der Spiegel reported that he said he would act the same way again.",
+          "headline": "Trump says he 'had to' pursue Iran war despite election losses"
         },
         "es": {
-          "headline": "Trump afirma que «tuvo que» llevar adelante la guerra contra Irán pese a las derrotas electorales",
-          "body": "Al Jazeera informó de que Trump dijo que la guerra «en gran medida» causó las derrotas de los republicanos, pero que «tuve que hacerlo». Der Spiegel informó de que dijo que actuaría de la misma manera de nuevo."
+          "body": "Al Jazeera informó de que Trump dijo que la guerra «en gran medida» causó las derrotas de los republicanos, pero que «tuve que hacerlo». Der Spiegel informó de que dijo que actuaría de la misma manera de nuevo.",
+          "headline": "Trump afirma que «tuvo que» llevar adelante la guerra contra Irán pese a las derrotas electorales"
+        },
+        "fr": {
+          "body": "Al Jazeera a rapporté que Trump a déclaré que la guerre avait « largement » causé les défaites des républicains, mais qu’il « devait le faire ». Der Spiegel a rapporté qu’il a dit qu’ilReferait exactement de même.",
+          "headline": "Trump dit avoir « dû » poursuivre la guerre contre l’Iran malgré les défaites électorales"
         },
         "it": {
-          "headline": "Trump dice di aver dovuto portare avanti la guerra con l'Iran nonostante le sconfitte elettorali",
-          "body": "Al Jazeera ha riportato che Trump ha detto che la guerra ha \"in gran parte\" causato le sconfitte dei repubblicani, ma che \"doveva farlo\". Der Spiegel ha riportato che ha detto che avrebbe agito allo stesso modo."
+          "body": "Al Jazeera ha riportato che Trump ha detto che la guerra ha \"in gran parte\" causato le sconfitte dei repubblicani, ma che \"doveva farlo\". Der Spiegel ha riportato che ha detto che avrebbe agito allo stesso modo.",
+          "headline": "Trump dice di aver dovuto portare avanti la guerra con l'Iran nonostante le sconfitte elettorali"
         },
         "ja": {
-          "headline": "トランプ氏、選挙敗北にもかかわらずイラン戦争「やらざるを得なかった」",
-          "body": "アルジャジーラによれば、トランプ氏はこの戦争が共和党の敗北を「主に」引き起こしたが、「やらざるを得なかった」と述べた。デア・シュピーゲルによれば、同氏は再び同じように行動すると語った。"
-        },
-        "de": {
-          "headline": "Trump sagt, er „musste“ den Iran-Krieg trotz der Wahlverluste weiterführen",
-          "body": "Al Jazeera berichtete, Trump habe gesagt, der Krieg habe „größtenteils“ zu den Niederlagen der Republikaner geführt, aber er habe es „tun müssen“. Der Spiegel berichtete, er habe gesagt, er würde wieder genauso vorgehen."
+          "body": "アルジャジーラによれば、トランプ氏はこの戦争が共和党の敗北を「主に」引き起こしたが、「やらざるを得なかった」と述べた。デア・シュピーゲルによれば、同氏は再び同じように行動すると語った。",
+          "headline": "トランプ氏、選挙敗北にもかかわらずイラン戦争「やらざるを得なかった」"
         },
         "pt": {
-          "headline": "Trump afirma que foi «obrigado» a prosseguir a guerra com o Irã apesar das derrotas nas eleições",
-          "body": "A Al Jazeera informou que Trump afirmou que a guerra causou «em grande medida» as perdas dos republicanos, mas que «teve de o fazer». A Der Spiegel informou que disse que voltaria a agir da mesma forma."
+          "body": "A Al Jazeera informou que Trump afirmou que a guerra causou «em grande medida» as perdas dos republicanos, mas que «teve de o fazer». A Der Spiegel informou que disse que voltaria a agir da mesma forma.",
+          "headline": "Trump afirma que foi «obrigado» a prosseguir a guerra com o Irã apesar das derrotas nas eleições"
         },
         "zh": {
-          "headline": "特朗普称尽管选举失利，他\"不得不\"对伊朗开战",
-          "body": "半岛电视台报道称，特朗普表示这场战争\"在很大程度上\"导致共和党失利，但他\"不得不这么做\"。《明镜》周刊报道称，他表示自己还会采取同样的行动。"
+          "body": "半岛电视台报道称，特朗普表示这场战争\"在很大程度上\"导致共和党失利，但他\"不得不这么做\"。《明镜》周刊报道称，他表示自己还会采取同样的行动。",
+          "headline": "特朗普称尽管选举失利，他\"不得不\"对伊朗开战"
         }
       },
       "sources": [
         {
-          "outlet": "Der Spiegel",
-          "title": "Midterms: So erklären Donald Trump und JD Vance die Republikaner-Schlappe",
           "url": "https://www.spiegel.de/ausland/midterms-so-erklaeren-donald-trump-und-jd-vance-die-republikaner-schlappe-a-3e8133a3-3402-412d-b1cd-67762eca3bb0#ref=rss",
+          "title": "Midterms: So erklären Donald Trump und JD Vance die Republikaner-Schlappe",
+          "outlet": "Der Spiegel",
           "publishedAt": "2026-11-05T00:53:00.000Z"
         },
         {
-          "outlet": "Al Jazeera",
-          "title": "Iran war live: Trump says war caused election wipeout but he ‘had to do it’",
           "url": "https://www.aljazeera.com/news/liveblog/2026/11/5/iran-war-live-trump-admits-war-caused-election-loss-but-had-to-do-it?traffic_source=rss",
+          "title": "Iran war live: Trump says war caused election wipeout but he ‘had to do it’",
+          "outlet": "Al Jazeera",
           "publishedAt": "2026-11-05T00:00:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1793833183000-0anc",
       "at": "2026-11-04T22:59:43.000Z",
+      "id": "u-1793833183000-0anc",
       "kind": "reaction",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Republicans call for Trump to change course after midterm defeats",
-          "body": "Reuters reported that Republicans called for Trump to change course after the defeats. The New York Times reported that some in his party dismissed his explanation and pinned blame on him."
+        "de": {
+          "body": "Reuters berichtete, Republikaner hätten Trump nach den Niederlagen aufgefordert, seinen Kurs zu ändern. The New York Times berichtete, einige in seiner Partei hätten seine Erklärung zurückgewiesen und ihm die Schuld gegeben.",
+          "headline": "Republikaner fordern Trump nach Niederlagen bei den Zwischenwahlen auf, seinen Kurs zu ändern"
         },
-        "fr": {
-          "headline": "Les républicains appellent Trump à changer de cap après les défaites de mi-mandat",
-          "body": "Reuters a rapporté que des républicains ont appelé Trump à changer de cap après les défaites. Le New York Times a rapporté que certains membres de son parti ont rejeté ses explications et l’ont tenu pour responsable."
+        "en": {
+          "body": "Reuters reported that Republicans called for Trump to change course after the defeats. The New York Times reported that some in his party dismissed his explanation and pinned blame on him.",
+          "headline": "Republicans call for Trump to change course after midterm defeats"
         },
         "es": {
-          "headline": "Los republicanos piden a Trump que cambie de rumbo tras las derrotas en las elecciones de mitad de mandato",
-          "body": "Reuters informó de que los republicanos pidieron a Trump que cambiara de rumbo tras las derrotas. The New York Times informó de que algunos miembros de su partido descartaron su explicación y le atribuyeron la culpa."
+          "body": "Reuters informó de que los republicanos pidieron a Trump que cambiara de rumbo tras las derrotas. The New York Times informó de que algunos miembros de su partido descartaron su explicación y le atribuyeron la culpa.",
+          "headline": "Los republicanos piden a Trump que cambie de rumbo tras las derrotas en las elecciones de mitad de mandato"
+        },
+        "fr": {
+          "body": "Reuters a rapporté que des républicains ont appelé Trump à changer de cap après les défaites. Le New York Times a rapporté que certains membres de son parti ont rejeté ses explications et l’ont tenu pour responsable.",
+          "headline": "Les républicains appellent Trump à changer de cap après les défaites de mi-mandat"
         },
         "it": {
-          "headline": "I repubblicani chiedono a Trump di cambiare rotta dopo le sconfitte alle elezioni di metà mandato",
-          "body": "Reuters ha riportato che i repubblicani hanno chiesto a Trump di cambiare rotta dopo le sconfitte. The New York Times ha riportato che alcuni esponenti del suo partito hanno liquidato la sua spiegazione e gli hanno attribuito la colpa."
+          "body": "Reuters ha riportato che i repubblicani hanno chiesto a Trump di cambiare rotta dopo le sconfitte. The New York Times ha riportato che alcuni esponenti del suo partito hanno liquidato la sua spiegazione e gli hanno attribuito la colpa.",
+          "headline": "I repubblicani chiedono a Trump di cambiare rotta dopo le sconfitte alle elezioni di metà mandato"
         },
         "ja": {
-          "headline": "共和党員、中間選挙での敗北受けトランプ氏に方針転換を求める",
-          "body": "ロイターによれば、共和党員は敗北を受けてトランプ氏に方針転換を求めた。ニューヨーク・タイムズによれば、党内の一部は同氏の説明を退け、同氏に責任を帰した。"
-        },
-        "de": {
-          "headline": "Republikaner fordern Trump nach Niederlagen bei den Zwischenwahlen auf, seinen Kurs zu ändern",
-          "body": "Reuters berichtete, Republikaner hätten Trump nach den Niederlagen aufgefordert, seinen Kurs zu ändern. The New York Times berichtete, einige in seiner Partei hätten seine Erklärung zurückgewiesen und ihm die Schuld gegeben."
+          "body": "ロイターによれば、共和党員は敗北を受けてトランプ氏に方針転換を求めた。ニューヨーク・タイムズによれば、党内の一部は同氏の説明を退け、同氏に責任を帰した。",
+          "headline": "共和党員、中間選挙での敗北受けトランプ氏に方針転換を求める"
         },
         "pt": {
-          "headline": "Republicanos pedem que Trump mude de rumo após derrotas nas eleições de meio de mandato",
-          "body": "A Reuters informou que os republicanos pediram a Trump que mudasse de rumo após as derrotas. O The New York Times informou que alguns elementos do seu partido rejeitaram a sua explicação e lhe atribuíram a culpa."
+          "body": "A Reuters informou que os republicanos pediram a Trump que mudasse de rumo após as derrotas. O The New York Times informou que alguns elementos do seu partido rejeitaram a sua explicação e lhe atribuíram a culpa.",
+          "headline": "Republicanos pedem que Trump mude de rumo após derrotas nas eleições de meio de mandato"
         },
         "zh": {
-          "headline": "共和党人在中期选举失利后呼吁特朗普改变路线",
-          "body": "路透社报道称，共和党人在遭遇失利后呼吁特朗普改变路线。《纽约时报》报道称，党内一些人否认他的解释，并将责任归咎于他。"
+          "body": "路透社报道称，共和党人在遭遇失利后呼吁特朗普改变路线。《纽约时报》报道称，党内一些人否认他的解释，并将责任归咎于他。",
+          "headline": "共和党人在中期选举失利后呼吁特朗普改变路线"
         }
       },
       "sources": [
         {
-          "outlet": "Reuters",
-          "title": "Republicans call for Trump to change course after midterm drubbing",
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQamFhVEozSjRLb3lJNlFlTTZ4dmtZbjBGdTJHOGNXdmZqXzh6VGhqN3Z2czQ5VUdTaE5KeTMwdHNtUWhVRldhb2hhbGJMNUhDR3NfbF9sOWYyWHVFZHdPeU43OElBMzhnQnQzenpkdzJlQWVya0tMQUhaV1pPN1UwWlVlMXZpMXQxa191LVN5SEZSdWh5T21jcXRycHpOUkI5ZWhhZm4xSktCQnRfRnFhcDZn?oc=5",
+          "title": "Republicans call for Trump to change course after midterm drubbing",
+          "outlet": "Reuters",
           "publishedAt": "2026-11-04T22:59:43.000Z"
         },
         {
-          "outlet": "New York Times",
-          "title": "Trump and Republicans Begin Pointing Fingers After Sweeping Midterms Losses",
           "url": "https://www.nytimes.com/2026/11/04/us/politics/trump-republicans-blame-midterms.html",
+          "title": "Trump and Republicans Begin Pointing Fingers After Sweeping Midterms Losses",
+          "outlet": "New York Times",
           "publishedAt": "2026-11-04T22:26:37.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1793839967000-du0k",
       "at": "2026-11-05T00:52:47.000Z",
+      "id": "u-1793839967000-du0k",
       "kind": "result",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Voters rejected data centers in every ballot measure except one",
-          "body": "CNBC reported that voters in states at the heart of the AI data center boom pushed back on the buildout on Election Night. Semafor reported that anti-data center measures passed."
+        "de": {
+          "body": "CNBC berichtete, Wähler in den Bundesstaaten im Zentrum des Booms bei KI-Rechenzentren hätten sich in der Wahlnacht dem Ausbau widersetzt. Semafor berichtete, dass Maßnahmen gegen Rechenzentren angenommen wurden.",
+          "headline": "Wähler lehnten Rechenzentren bei allen Abstimmungsvorhaben außer einem ab"
         },
-        "fr": {
-          "headline": "Les électeurs ont rejeté les centres de données dans toutes les propositions de vote, sauf une",
-          "body": "CNBC a rapporté que, le soir des élections, des électeurs dans des États au cœur du boom des centres de données consacrés à l’IA se sont opposés au développement de ces infrastructures. Semafor a rapporté que les mesures contre les centres de données ont été adoptées."
+        "en": {
+          "body": "CNBC reported that voters in states at the heart of the AI data center boom pushed back on the buildout on Election Night. Semafor reported that anti-data center measures passed.",
+          "headline": "Voters rejected data centers in every ballot measure except one"
         },
         "es": {
-          "headline": "Los votantes rechazaron los centros de datos en todas las consultas populares salvo una",
-          "body": "CNBC informó de que los votantes de los estados situados en el centro del auge de los centros de datos de IA se opusieron a su expansión la noche de las elecciones. Semafor informó de que se aprobaron las medidas contra los centros de datos."
+          "body": "CNBC informó de que los votantes de los estados situados en el centro del auge de los centros de datos de IA se opusieron a su expansión la noche de las elecciones. Semafor informó de que se aprobaron las medidas contra los centros de datos.",
+          "headline": "Los votantes rechazaron los centros de datos en todas las consultas populares salvo una"
+        },
+        "fr": {
+          "body": "CNBC a rapporté que, le soir des élections, des électeurs dans des États au cœur du boom des centres de données consacrés à l’IA se sont opposés au développement de ces infrastructures. Semafor a rapporté que les mesures contre les centres de données ont été adoptées.",
+          "headline": "Les électeurs ont rejeté les centres de données dans toutes les propositions de vote, sauf une"
         },
         "it": {
-          "headline": "Gli elettori hanno respinto i data center in tutte le questioni referendarie tranne una",
-          "body": "CNBC ha riportato che gli elettori degli stati al centro del boom dei data center per l'intelligenza artificiale si sono opposti alla loro costruzione nella notte delle elezioni. Semafor ha riportato che le misure anti-data center sono state approvate."
+          "body": "CNBC ha riportato che gli elettori degli stati al centro del boom dei data center per l'intelligenza artificiale si sono opposti alla loro costruzione nella notte delle elezioni. Semafor ha riportato che le misure anti-data center sono state approvate.",
+          "headline": "Gli elettori hanno respinto i data center in tutte le questioni referendarie tranne una"
         },
         "ja": {
-          "headline": "有権者はデータセンターをめぐる住民投票で1件を除き全て否決",
-          "body": "CNBCによれば、AIデータセンター急成長の中心にある州の有権者は、投票日の夜に建設拡大に反対した。セマフォーによれば、データセンター反対措置は可決された。"
-        },
-        "de": {
-          "headline": "Wähler lehnten Rechenzentren bei allen Abstimmungsvorhaben außer einem ab",
-          "body": "CNBC berichtete, Wähler in den Bundesstaaten im Zentrum des Booms bei KI-Rechenzentren hätten sich in der Wahlnacht dem Ausbau widersetzt. Semafor berichtete, dass Maßnahmen gegen Rechenzentren angenommen wurden."
+          "body": "CNBCによれば、AIデータセンター急成長の中心にある州の有権者は、投票日の夜に建設拡大に反対した。セマフォーによれば、データセンター反対措置は可決された。",
+          "headline": "有権者はデータセンターをめぐる住民投票で1件を除き全て否決"
         },
         "pt": {
-          "headline": "Os eleitores rejeitaram centros de dados em todas as medidas submetidas a votação, exceto uma",
-          "body": "A CNBC informou que os eleitores de estados no centro da expansão dos centros de dados de IA se opuseram à construção na noite das eleições. A Semafor informou que as medidas contra os centros de dados foram aprovadas."
+          "body": "A CNBC informou que os eleitores de estados no centro da expansão dos centros de dados de IA se opuseram à construção na noite das eleições. A Semafor informou que as medidas contra os centros de dados foram aprovadas.",
+          "headline": "Os eleitores rejeitaram centros de dados em todas as medidas submetidas a votação, exceto uma"
         },
         "zh": {
-          "headline": "除一项投票措施外，选民在所有投票措施中都否决了数据中心",
-          "body": "CNBC报道称，在人工智能数据中心热潮核心州的选民在选举夜反对大规模建设。Semafor报道称，反对数据中心的措施获得通过。"
+          "body": "CNBC报道称，在人工智能数据中心热潮核心州的选民在选举夜反对大规模建设。Semafor报道称，反对数据中心的措施获得通过。",
+          "headline": "除一项投票措施外，选民在所有投票措施中都否决了数据中心"
         }
       },
       "sources": [
         {
-          "outlet": "Semafor",
-          "title": "Voters' data center rebuke hits some tech companies harder than others",
           "url": "https://www.semafor.com/article/11/04/2026/data-center-ballot-measures-hit-home-for-tech-giants",
+          "title": "Voters' data center rebuke hits some tech companies harder than others",
+          "outlet": "Semafor",
           "publishedAt": "2026-11-05T00:52:47.000Z"
         },
         {
-          "outlet": "CNBC",
-          "title": "Voters rebuff data centers in every ballot measure except one during the 2026 midterms",
           "url": "https://www.cnbc.com/2026/11/04/data-center-ballot-measures-2026-midterm.html",
+          "title": "Voters rebuff data centers in every ballot measure except one during the 2026 midterms",
+          "outlet": "CNBC",
           "publishedAt": "2026-11-04T22:29:51.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-05T00:08:06.074Z",
@@ -826,6 +848,55 @@
   "articleSlug": null,
   "sourceCount": 11,
   "statsHistory": [
+    {
+      "at": "2026-11-05T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "senate-seats-flipped-by-democrats",
+          "value": 7
+        },
+        {
+          "key": "house-districts-flipped-by-democrats",
+          "value": 30
+        },
+        {
+          "key": "governorships-flipped-by-democrats",
+          "value": 5
+        },
+        {
+          "key": "state-legislative-chambers-flipped",
+          "value": 12
+        },
+        {
+          "key": "musk-election-spending",
+          "value": 500
+        },
+        {
+          "key": "musk-backed-spending",
+          "value": 446
+        },
+        {
+          "key": "trump-media-daily-stock-change",
+          "value": -24
+        },
+        {
+          "key": "brent-crude-price-threshold",
+          "value": 95
+        },
+        {
+          "key": "wti-crude-price-threshold",
+          "value": 90
+        },
+        {
+          "key": "brazil-born-state-lawmakers-elected",
+          "value": 7
+        },
+        {
+          "key": "leading-the-future-pac-spending",
+          "value": 100
+        }
+      ]
+    },
     {
       "at": "2026-11-05T00:00:00.000Z",
       "rows": [
