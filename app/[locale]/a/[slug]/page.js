@@ -11,12 +11,20 @@ import ArticleActions from '@/components/ArticleActions';
 import ArticleComments from '@/components/ArticleComments';
 import LiveArticle from '@/components/LiveArticle';
 
-// Article pages are rendered on demand and cached by ISR (1h). Pre-rendering
-// every story in every language produced ~7,000 HTML files per deployment
-// (~700 MB and growing), which exhausted Vercel's 10 GB deployment storage.
-// The latest stories stay pre-rendered by generateStaticParams below.
+// Article pages are rendered on demand and then cached for good.
+//
+// Two Vercel limits shaped this:
+//  - Deployment storage: pre-rendering every story in every language produced
+//    ~7,000 HTML files per deployment (~700 MB and growing), which filled the
+//    10 GB. Only the latest stories are pre-rendered now (see below).
+//  - ISR writes: an hourly revalidate made every one of those ~8,000 pages
+//    count as a write as soon as it was read again. At 200,000 writes/month the
+//    project got paused. An article is immutable once published (corrections
+//    and live stats are patched into the JSON, the live ticker polls the API),
+//    so a page is generated once and then left alone. The next deployment -
+//    every publish is one - rebuilds it with the current content.
 export const dynamicParams = true;
-export const revalidate = 3600;
+export const revalidate = false;
 
 export async function generateStaticParams() {
   const slugs = (await getIndex()).slice(0, 40).map((a) => a.slug);

@@ -146,7 +146,7 @@ async function backfillTranslations(index, limit = 8, deadlineMs = 0) {
     if (i >= 0) index.articles[i] = toIndexEntry(article);
   });
   if (done) saveIndex(index);
-  log(`TRANSLATOR backfill: ${done} of ${batch.length} queued (${tasks.length} missing) translation(s) fixed`);
+  log(`TRANSLATOR backfill: ${done} of ${batch.length} queued (${missing.length} missing) translation(s) fixed`);
   return done;
 }
 
@@ -776,7 +776,14 @@ async function main() {
   process.exit(0);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// An early `return` (no events, no new headlines) used to leave the process
+// alive: the fetch keep-alive sockets held the event loop open, the step sat
+// there until its 350-minute timeout, and the run that should have handed
+// over after 35 minutes blocked the next shift instead - which is how the
+// newsroom went quiet for days without a single error in the log.
+main()
+  .then(() => process.exit(0))
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });

@@ -11,6 +11,12 @@ import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
 import TopicFilter from '@/components/TopicFilter';
 
+// No ISR setting on purpose: the topic filter reads a cookie, so this page is
+// rendered per request already (the index comes from Supabase, cached for 30 s
+// in lib/content.mjs). A new story appears on the front page without waiting
+// for a deployment - and it costs no ISR writes, which is what used to exhaust
+// the plan's 200,000 a month.
+
 export default async function Home({ params }) {
   const { locale } = await params;
   const cookieStore = await cookies();

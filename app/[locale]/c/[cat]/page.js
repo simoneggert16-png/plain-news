@@ -7,7 +7,11 @@ import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import SportsLiveSidebar from '@/components/SportsLiveSidebar';
 import CommunitySubmitSection from '@/components/CommunitySubmitSection';
 
+// New stories reach this list through ISR, not through a deployment: builds
+// are skipped for content-only pushes so Vercel's 100 builds/day and 10 GB
+// deployment storage stay intact. One hour is cheap here (72 list pages).
 export const dynamicParams = false;
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return LOCALE_CODES.flatMap((locale) => CATEGORIES.map((cat) => ({ locale, cat })));

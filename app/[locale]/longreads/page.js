@@ -5,6 +5,7 @@ import { getIndex, localize } from '@/lib/content.mjs';
 import { fmtDate } from '@/lib/format.mjs';
 
 export const dynamicParams = false;
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return LOCALE_CODES.map((locale) => ({ locale }));

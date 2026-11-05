@@ -6,6 +6,7 @@ import { fmtDate } from '@/lib/format.mjs';
 import InvestigationRequestForm from '@/components/InvestigationRequestForm';
 
 export const dynamicParams = false;
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return LOCALE_CODES.map((locale) => ({ locale }));
