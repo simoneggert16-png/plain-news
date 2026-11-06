@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-11-05T15:03:07.497Z",
+  "updatedAt": "2026-11-06T00:11:09.986Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -346,7 +346,8 @@
       ],
       "status": "verified",
       "weight": 2,
-      "checkedAt": "2026-11-05T14:54:03.747Z"
+      "checkedAt": "2026-11-05T14:54:03.747Z",
+      "checked": "supported"
     },
     {
       "id": "C16",
@@ -356,7 +357,8 @@
       ],
       "status": "verified",
       "weight": 2,
-      "checkedAt": "2026-11-05T14:55:05.399Z"
+      "checkedAt": "2026-11-05T14:55:05.399Z",
+      "checked": "supported"
     },
     {
       "id": "C17",
@@ -366,7 +368,20 @@
       ],
       "status": "verified",
       "weight": 2,
-      "checkedAt": "2026-11-05T14:56:22.899Z"
+      "checkedAt": "2026-11-05T14:56:22.899Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C18",
+      "text": "South Korean Minister of Interior and Safety Yun Ho-jung said on 29 October 2026, at a briefing for correspondents at the Government Sejong Complex marking the fourth anniversary of the disaster, that the use of Itaewon disaster footage in Call of Duty: Modern Warfare 4 constituted 'secondary harm' (2차 가해) and that 'appropriate sanctions should be imposed' (적절한 제재가 있어야 한다고 생각한다), adding that using such a thing as material for a game or business should be refrained from as a matter of human ethics.",
+      "sources": [
+        "S7"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-05T23:37:44.503Z",
+      "checked": "partial",
+      "checkNote": "The source supports the core that \"its minister of interior and safety Yun Ho-jung saying 'I believe appropriate sanctions should be imposed' as the footage causes 'secondary harm,'\" but it gives no date, no Government Sejong Complex briefi"
     }
   ],
   "gaps": [
@@ -384,7 +399,11 @@
     "What is the perspective of the victims’ families or advocacy groups on the removal and apology?",
     "Nicht belegt, deshalb gestrichen: Call of Duty: Modern Warfare 4 was released on October 23, 2026, and the Itaewon footage appeared in its cinematic opening sequence.",
     "Nicht belegt, deshalb gestrichen: The game's opening cinematic depicts a fictional war on the Korean peninsula in which North Korea invades South Korea, and real news broadcast footage was used to depict civilian casualties.",
-    "Nicht belegt, deshalb gestrichen: Call of Duty: Modern Warfare 4 is published by Activision and developed by Infinity Ward; global release was October 23 (2026), with campaign early access from October 17 and DMZ mode early access fro"
+    "Nicht belegt, deshalb gestrichen: Call of Duty: Modern Warfare 4 is published by Activision and developed by Infinity Ward; global release was October 23 (2026), with campaign early access from October 17 and DMZ mode early access fro",
+    "Nicht belegt, deshalb gestrichen: At a National Assembly audit held about a week before 30 October 2026, South Korean Minister of Culture, Sports and Tourism Choi Hwi-young answered that 'games are not subject to prior censorship' (게임",
+    "Nicht belegt, deshalb gestrichen: On 30 October 2026, People Power Party lawmaker Joo Jin-woo objected to the suggestion of blocking Call of Duty: Modern Warfare 4 outright, arguing that blocking a game is censorship prohibited under ",
+    "Nicht belegt, deshalb gestrichen: The trailer for Call of Duty: Modern Warfare 4 opens with South Korean soldiers on what appears to be a routine patrol mission before a North Korean missile attack plunges the Korean peninsula into fu",
+    "Nicht belegt, deshalb gestrichen: Some critics accused the makers of Call of Duty: Modern Warfare 4 of turning an unresolved real-world conflict on the Korean peninsula into entertainment."
   ],
   "contacts": [
     {
@@ -497,197 +516,6 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-11-04T23:56:33.016Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "I have 4 sources and 10 claims on file. The target is 8 distinct outlets, 2 official/primary sources, 6 supported claims. The biggest gaps are: legal/regulatory actions, Korean government statements, the original news agency, and financial benefit. The Korean doors are scourt.go.kr, ftc.go.kr, kcc.go.kr, grac.or.kr. I should search in Korean for the regulatory response to the Call of Duty Itaewon ",
-          "action": "search",
-          "args": {
-            "query": "게임물관리위원회 콜오브듀티 이태원 압사 참사 영상"
-          },
-          "ok": true,
-          "ms": 72467
-        },
-        {
-          "step": 2,
-          "thought": "The Korean search returned unrelated MSN articles about the Game Rating committee. I need to search more specifically. Let me try searching for the Call of Duty Itaewon footage controversy in Korean with different terms, focusing on the legal action or the bereaved families' petition.",
-          "action": "search",
-          "args": {
-            "query": "콜오브듀티 이태ON 이태원 영상 사용 논란 유족"
-          },
-          "ok": true,
-          "ms": 11227
-        },
-        {
-          "step": 3,
-          "thought": "The search returned irrelevant results. The Korean-language search isn't working well with the index. Let me try a different approach — search for the specific legal or regulatory angle in English, focusing on the Korean government response or the news agency that provided the footage. I should also try searching for the specific Korean institutions.",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard Itaewon crowd crush footage Korea government response lawsuit"
-          },
-          "ok": true,
-          "ms": 12185
-        },
-        {
-          "step": 4,
-          "thought": "I found two new relevant sources: MSN and GosuGamers. Let me open the MSN article and the GosuGamers article to get more details. The MSN article seems to be a wire story about Activision removing the footage. Let me open both.",
-          "action": "open",
-          "args": {
-            "url": "https://www.msn.com/en-gb/news/other/activision-to-remove-itaewon-crowd-crush-footage-from-call-of-duty-modern-warfare-4-and-apologises-to-victims-families/ar-AA2gtWHW"
-          },
-          "ok": true,
-          "ms": 4214
-        },
-        {
-          "step": 5,
-          "thought": "The MSN page returned empty text. Let me try the GosuGamers article instead, which may have more content.",
-          "action": "open",
-          "args": {
-            "url": "https://www.gosugamers.net/entertainment/news/79462-activision-is-removing-call-of-duty-modern-warfare-4-s-controversial-itaewon-crush-footage"
-          },
-          "ok": true,
-          "ms": 1928
-        },
-        {
-          "step": 6,
-          "thought": "Excellent! The GosuGamers article gives me several new facts: (1) South Korean Minister of Interior and Safety Yun Ho-jung commented, saying 'I believe appropriate sanctions should be imposed' and that using such a tragedy as material for a game should be refrained from as a matter of human ethics. (2) The game caused 160 deaths (note: S1 says 159, this says 160 - I should note this discrepancy). ",
-          "action": "save_claim",
-          "args": {
-            "text": "South Korean Minister of Interior and Safety Yun Ho-jung said 'I believe appropriate sanctions should be imposed' over the use of Itaewon crowd crush footage in Call of Duty: Modern Warfare 4, stating it causes 'secondary harm' and that using such a tragedy as material for a game should be refrained from as a matter of human ethics.",
-            "sources": [
-              "S10"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 3606
-        },
-        {
-          "step": 7,
-          "thought": "Good, C11 saved. Now let me save more claims from the GosuGamers article. I need to save the source first. Let me save the GosuGamers source.",
-          "action": "save_source",
-          "args": {
-            "url": "https://www.gosugamers.net/entertainment/news/79462-activision-is-removing-call-of-duty-modern-warfare-4-s-controversial-itaewon-crush-footage",
-            "outlet": "gosugamers.net",
-            "title": "Activision is removing Call of Duty: Modern Warfare 4's controversial Itaewon crush footage",
-            "publishedAt": "2026-11-05"
-          },
-          "ok": true,
-          "ms": 1744
-        },
-        {
-          "step": 8,
-          "thought": "The source was already filed as S10. Now let me save more claims from the GosuGamers article. Key facts: (1) The game was released 23 October 2026, developed by Infinity Ward. (2) The opening cinematic uses news clips to depict North Korea's invasion of South Korea. (3) The footage will be removed in a 12 November 2026 update. (4) Activision's statement was issued via Inven Global. Let me save the",
-          "action": "save_claim",
-          "args": {
-            "text": "Call of Duty: Modern Warfare 4 was released on 23 October 2026 and was developed by Infinity Ward.",
-            "sources": [
-              "S10"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2496
-        },
-        {
-          "step": 9,
-          "thought": "Good. Now let me save the claim about the opening cinematic depicting North Korea's invasion.",
-          "action": "save_claim",
-          "args": {
-            "text": "Call of Duty: Modern Warfare 4's opening cinematic uses news clips and archive footage to depict North Korea's sudden invasion of South Korea in-game.",
-            "sources": [
-              "S10"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 5782
-        },
-        {
-          "step": 10,
-          "thought": "Now let me save the claim about the removal update date and the Activision statement via Inven Global.",
-          "action": "save_claim",
-          "args": {
-            "text": "Activision stated via Inven Global that the Itaewon crowd crush footage would be 'completely removed' following a 12 November 2026 game update.",
-            "sources": [
-              "S10"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1340
-        },
-        {
-          "step": 11,
-          "thought": "Now I have 14 claims. I need to find the Inven Global source, which is a Korean gaming media outlet that published Activision's statement. This could be a primary source. Let me search for it. I also need to find the Korean government's official statement. Let me search for the Inven Global article.",
-          "action": "search",
-          "args": {
-            "query": "Inven Global Activision Call of Duty Modern Warfare 4 Itaewon statement"
-          },
-          "ok": true,
-          "ms": 9611
-        },
-        {
-          "step": 12,
-          "thought": "The search didn't return the Inven Global article directly. There's a Korea Times editorial from Nov 5 on Yonhap. Let me open that — it might be relevant. Also, I should search for the Inven Global article directly. Let me open the Korea Times editorial first since it's on Yonhap and might contain relevant commentary.",
-          "action": "open",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261105000400320"
-          },
-          "ok": true,
-          "ms": 3187
-        }
-      ],
-      "final": null
-    },
-    {
-      "at": "2026-11-05T14:38:07.190Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "I have 8 outlets but zero primary sources. The first gap a document can answer is the financial one: what did Activision derive from the game that used the footage? The primary document for that is Activision Blizzard's own SEC filing (10-Q for the quarter ending Sept 30, 2026, and/or the Q3 2026 earnings release) which discloses Call of Duty net bookings, segment operating income, and MAUs. I sho",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard 10-Q September 30 2026 SEC filing Call of Duty net bookings segment operating income"
-          },
-          "ok": true,
-          "ms": 155222
-        },
-        {
-          "step": 2,
-          "thought": "The search returned unrelated results — the index did not match the SEC filing. I need to change approach and name the document differently: Activision Blizzard's own investor-relations earnings release for the third quarter of 2026, and the SEC EDGAR filing index for the company. Let me try a query phrased around the company's investor relations page and the filing itself.",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard third quarter 2026 results Call of Duty net bookings investor relations earnings release"
-          },
-          "ok": true,
-          "ms": 42439
-        },
-        {
-          "step": 3,
-          "thought": "The index is not surfacing Activision's financial documents. I have a seen URL (Wikipedia's Activision Blizzard page) that typically links to the company's SEC filings and investor relations site. Opening it gives me legitimate URLs I can then open directly, which is the way to reach the primary financial document.",
-          "action": "open",
-          "args": {
-            "url": "https://en.wikipedia.org/wiki/Activision_Blizzard"
-          },
-          "ok": true,
-          "ms": 22443
-        },
-        {
-          "step": 4,
-          "thought": "Key structural fact from the Wikipedia page: Activision Blizzard was acquired by Microsoft in 2023 and is now a subsidiary of Xbox/Microsoft, so it no longer files its own SEC reports. The primary financial document for Call of Duty revenue is therefore Microsoft's own SEC filing (10-Q for the quarter ended September 30, 2026) and its quarterly earnings release, which disclose gaming revenue and i",
-          "action": "search",
-          "args": {
-            "query": "Microsoft 10-Q quarterly report September 30 2026 gaming revenue SEC filing More Personal Computing"
-          },
-          "ok": true,
-          "ms": 36533
-        }
-      ],
-      "final": null
-    },
-    {
       "at": "2026-11-05T14:56:22.899Z",
       "steps": [
         {
@@ -781,6 +609,162 @@
         }
       ],
       "final": null
+    },
+    {
+      "at": "2026-11-05T23:38:57.653Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "I have 11 sources and 17 claims on file, but 0/2 primary sources and no outreach sent. The first open question a document could answer is whether any legal or regulatory action was taken against Activision in South Korea. The desk names South Korean doors: scourt.go.kr, ftc.go.kr, kcc.go.kr, grac.or.kr. I will search in Korean for the Game Rating and Administration Committee (GRAC) action on the C",
+          "action": "search",
+          "args": {
+            "query": "게임물관리위원회 콜오브듀티 이태원"
+          },
+          "ok": true,
+          "ms": 83846
+        },
+        {
+          "step": 2,
+          "thought": "S12 is a Korean-language trade article (gamey.kr) that documents a split between two ministries: Minister of Interior and Safety Yun Ho-jung (행안부) called the footage 'secondary harm' and said punishment or blocking should be decided by relevant agencies, while Minister of Culture, Sports and Tourism Choi Hwi-young (문체부) said at a National Assembly audit that games are not subject to prior censorsh",
+          "action": "save_source",
+          "args": {
+            "url": "https://www.gamey.kr/news/articleView.html?idxno=3019428",
+            "outlet": "gamey.kr",
+            "title": "문체부 \"검열X\", 행안부 \"처벌, 차단\"...콜 오브 듀티 엇박자",
+            "publishedAt": "2026-10-30"
+          },
+          "ok": true,
+          "ms": 4336
+        },
+        {
+          "step": 3,
+          "thought": "S12 is filed. Now I record the claims it directly supports: Yun Ho-jung's remarks at the October 29 briefing (secondary harm, appropriate sanctions, human ethics), Choi Hwi-young's National Assembly audit answer that games are not subject to prior censorship, and lawmaker Joo Jin-woo's objection that blocking the game would be unconstitutional censorship.",
+          "action": "save_claim",
+          "args": {
+            "text": "South Korean Minister of Interior and Safety Yun Ho-jung said on 29 October 2026, at a briefing for correspondents at the Government Sejong Complex marking the fourth anniversary of the disaster, that the use of Itaewon disaster footage in Call of Duty: Modern Warfare 4 constituted 'secondary harm' (2차 가해) and that 'appropriate sanctions should be imposed' (적절한 제재가 있어야 한다고 생각한다), adding that using such a thing as material for a game or business should be refrained from as a matter of human ethics.",
+            "sources": [
+              "S12",
+              "S7"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 8979
+        },
+        {
+          "step": 4,
+          "thought": "C18 filed. Next claim from S12: the Ministry of Culture, Sports and Tourism position that games are not subject to prior censorship, and the lawmaker's objection.",
+          "action": "save_claim",
+          "args": {
+            "text": "At a National Assembly audit held about a week before 30 October 2026, South Korean Minister of Culture, Sports and Tourism Choi Hwi-young answered that 'games are not subject to prior censorship' (게임은 사전 검열 대상이 아니다), a position that conflicts with the Interior Ministry's call for punishment or blocking of Call of Duty: Modern Warfare 4.",
+            "sources": [
+              "S12"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 2248
+        },
+        {
+          "step": 5,
+          "thought": "",
+          "action": "none",
+          "args": {},
+          "ok": false,
+          "ms": 979
+        },
+        {
+          "step": 6,
+          "thought": "I need to continue filing claims from S12 and then move to primary documents. Next: lawmaker Joo Jin-woo's objection that blocking the game would be unconstitutional censorship.",
+          "action": "save_claim",
+          "args": {
+            "text": "On 30 October 2026, People Power Party lawmaker Joo Jin-woo objected to the suggestion of blocking Call of Duty: Modern Warfare 4 outright, arguing that blocking a game is censorship prohibited under the Constitution.",
+            "sources": [
+              "S12"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 10506
+        },
+        {
+          "step": 7,
+          "thought": "Now I need the primary documents. The South Korean regulator for game content is the Game Rating and Administration Committee (grac.or.kr). I will search for its decision or statement on the Itaewon footage in Call of Duty: Modern Warfare 4, in Korean.",
+          "action": "search",
+          "args": {
+            "query": "게임물관리위원회 이태원 참사 영상 콜 오브 듀티 모던 워페어 4 조치"
+          },
+          "ok": true,
+          "ms": 17670
+        },
+        {
+          "step": 8,
+          "thought": "S13 (BBC Korean) and S14 (YTN) are filed. S13 confirms the trailer premise (North Korean invasion, Korean peninsula conflict) and the release date of 23 October. S14's text is mostly navigation. I should save claims from S13: the trailer's premise and view counts, and the criticism that the game turns an unresolved real conflict into entertainment. Then I need to open the Hani or Chosun article fo",
+          "action": "save_source",
+          "args": {
+            "url": "https://www.bbc.com/korean/articles/ckpdg26vq3x8o",
+            "outlet": "bbc.com",
+            "title": "북한의 남침 소재로 한 ‘콜 오브 듀티’ 신작 … 현실에서도 벌어질 수 있을까",
+            "publishedAt": "2026-10-19"
+          },
+          "ok": true,
+          "ms": 4109
+        },
+        {
+          "step": 9,
+          "thought": "S13 filed. Now save claims from S13: the trailer premise, view counts, and the criticism.",
+          "action": "save_claim",
+          "args": {
+            "text": "The trailer for Call of Duty: Modern Warfare 4 opens with South Korean soldiers on what appears to be a routine patrol mission before a North Korean missile attack plunges the Korean peninsula into full-scale war; the trailer recorded 22 million views on its release day in May 2026 and 61 million cumulative views.",
+            "sources": [
+              "S13"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 18266
+        },
+        {
+          "step": 10,
+          "thought": "Next claim from S13: the criticism that the game turns an unresolved real conflict into entertainment.",
+          "action": "save_claim",
+          "args": {
+            "text": "Some critics accused the makers of Call of Duty: Modern Warfare 4 of turning an unresolved real-world conflict on the Korean peninsula into entertainment.",
+            "sources": [
+              "S13"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 1335
+        },
+        {
+          "step": 11,
+          "thought": "Now I need the primary documents. The key open questions: (1) GRAC decision/action, (2) whether any legal action was taken, (3) the financial benefit. Let me search the GRAC portal directly in Korean for the game's rating classification and any post-release action. Also the Korea Communications Standards Commission (KCSC) could have received a complaint. Let me search for the GRAC's rating record ",
+          "action": "search",
+          "args": {
+            "query": "게임물관리위원회 콜 오브 듀티 모던 워페어 4 등급 분류 이태원"
+          },
+          "ok": true,
+          "ms": 11809
+        },
+        {
+          "step": 12,
+          "thought": "The first result is highly relevant: an MSN article titled '모던워페어4, 이태원 참사 영상 삭제 결정… 게임위 “GCRB와 재발 방지 협의”' — it says the Game Rating and Administration Committee (게임위) decided on removal of the Itaewon footage and will consult with GCRB (Game Content Rating Board? Actually GCRB is likely the self-rating body — Game Content Rating Board, 자체등급분류) on recurrence prevention. This is the regulator's act",
+          "action": "open",
+          "args": {
+            "url": "https://www.msn.com/ko-kr/entertainment/%EC%9D%BC%EB%B0%98/%EB%AA%A8%EB%8D%98%EC%9B%8C%ED%8E%98%EC%96%B44-%EC%9D%B4%ED%83%9C%EC%9B%90-%EC%B0%B8%EC%82%AC-%EC%98%81%EC%83%81-%EC%82%AD%EC%A0%9C-%EA%B2%B0%EC%A0%95-%EA%B2%8C%EC%9E%84%EC%9C%84-gcrb%EC%99%80-%EC%9E%AC%EB%B0%9C-%EB%B0%A9%EC%A7%80-%ED%98%91%EC%9D%98/ar-AA2goPsK"
+          },
+          "ok": true,
+          "ms": 6226
+        }
+      ],
+      "final": null
+    },
+    {
+      "at": "2026-11-06T00:11:08.304Z",
+      "steps": [],
+      "final": null
     }
   ],
   "nextStep": "keep reporting: 0/2 primary sources, no outreach sent",
@@ -825,7 +809,7 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 33,
-  "blankShifts": 0,
-  "lastShiftAt": "2026-11-05T14:47:52.302Z"
+  "shifts": 35,
+  "blankShifts": 1,
+  "lastShiftAt": "2026-11-06T00:09:10.865Z"
 }
