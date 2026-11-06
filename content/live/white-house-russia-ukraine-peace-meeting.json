@@ -15,7 +15,7 @@
       "PBS"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "white-house-russia-ukraine-peace-meeting",
   "topic": "White House Russia-Ukraine Peace Meeting",
@@ -62,126 +62,288 @@
   },
   "updates": [
     {
-      "id": "u-1793951413000-pgaa",
-      "at": "2026-11-06T07:50:13.000Z",
-      "kind": "context",
+      "id": "u-1793976360000-f0ex",
+      "at": "2026-11-06T14:46:00.000Z",
+      "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Ukraine, Russia and US representatives to meet in Abu Dhabi next week",
-          "body": "Die Welt reported that representatives of Ukraine, Russia and the United States are to meet in Abu Dhabi next week. Euronews also reported that Ukraine talks are heading to Abu Dhabi next week, and The Kyiv Post described the negotiations as trilateral peace talks."
-        },
-        "fr": {
-          "headline": "Les représentants de l’Ukraine, de la Russie et des États-Unis se réuniront à Abu Dhabi la semaine prochaine",
-          "body": "Die Welt a rapporté que les représentants de l’Ukraine, de la Russie et des États-Unis se réuniront à Abu Dhabi la semaine prochaine. Euronews a également rapporté que les négociations avec l’Ukraine sont prévues à Abu Dhabi la semaine prochaine, et The Kyiv Post a présenté les négociations comme des pourparlers de paix trilatéraux."
+          "headline": "Democrats won the 2026 US midterms",
+          "body": "Le Monde reported that Democrats won the 2026 US midterms, and Der Spiegel reported that Donald Trump lost the midterms. Both outlets published their reports on 6 November 2026."
         },
         "de": {
-          "headline": "Vertreter der Ukraine, Russlands und der USA treffen sich nächste Woche in Abu Dhabi",
-          "body": "Die Welt berichtete, dass Vertreter der Ukraine, Russlands und der Vereinigten Staaten nächste Woche in Abu Dhabi zusammenkommen. Euronews berichtete ebenfalls, dass die Ukraine-Gespräche nächste Woche in Abu Dhabi stattfinden sollen, und The Kyiv Post bezeichnete die Verhandlungen als trilaterale Friedensgespräche."
-        },
-        "es": {
-          "headline": "Representantes de Ucrania, Rusia y EE. UU. se reunirán en Abu Dabi la próxima semana",
-          "body": "Die Welt informó de que representantes de Ucrania, Rusia y Estados Unidos se reunirán en Abu Dabi la próxima semana. Euronews también informó de que las conversaciones sobre Ucrania se celebrarán en Abu Dabi la próxima semana, y The Kyiv Post describió las negociaciones como conversaciones de paz trilaterales."
+          "headline": "Demokraten gewannen die US-Zwischenwahlen 2026",
+          "body": "Le Monde berichtete, dass die Demokraten die US-Zwischenwahlen 2026 gewannen, und Der Spiegel berichtete, dass Donald Trump die Zwischenwahlen verlor. Beide Medien veröffentlichten ihre Berichte am 6. November 2026."
         },
         "it": {
-          "headline": "I rappresentanti di Ucraina, Russia e Stati Uniti si incontreranno ad Abu Dhabi la prossima settimana",
-          "body": "Die Welt ha riportato che i rappresentanti di Ucraina, Russia e Stati Uniti si incontreranno ad Abu Dhabi la prossima settimana. Anche Euronews ha riportato che i colloqui sull'Ucraina si terranno ad Abu Dhabi la prossima settimana, mentre The Kyiv Post ha descritto i negoziati come colloqui di pace trilaterali."
+          "headline": "I democratici hanno vinto le elezioni di metà mandato negli Stati Uniti nel 2026",
+          "body": "Le Monde ha riportato che i democratici hanno vinto le elezioni di metà mandato negli Stati Uniti nel 2026, e Der Spiegel ha riportato che Donald Trump ha perso le elezioni di metà mandato. Entrambe le testate hanno pubblicato i loro articoli il 6 novembre 2026."
         },
-        "zh": {
-          "headline": "乌克兰、俄罗斯和美国代表下周将在阿布扎比会面",
-          "body": "《世界报》报道，乌克兰、俄罗斯和美国的代表下周将在阿布扎比会面。欧洲新闻台也报道称，乌克兰问题谈判下周将在阿布扎比举行，《基辅邮报》则将这些谈判描述为三方和平会谈。"
+        "fr": {
+          "headline": "Les Démocrates ont remporté les élections de mi-mandat de 2026 aux États-Unis",
+          "body": "Le Monde a rapporté que les Démocrates ont remporté les élections de mi-mandat de 2026 aux États-Unis, et Der Spiegel a rapporté que Donald Trump a perdu les élections de mi-mandat. Les deux médias ont publié leurs articles le 6 novembre 2026."
         },
-        "ja": {
-          "headline": "ウクライナ、ロシア、米国の代表が来週アブダビで会合へ",
-          "body": "ディー・ウェルトは、ウクライナ、ロシアおよび米国の代表が来週アブダビで会合すると報じた。ユロニュースも、ウクライナとの交渉を来週アブダビで行うと報じ、キヴ・ポストは交渉を三者間の和平交渉と説明した。"
-        },
-        "ko": {
-          "headline": "우크라이나·러시아·미국 대표들이 다음 주 아부다비에서 만난다",
-          "body": "《디르 빌트》는 우크라이나, 러시아 및 미국 대표들이 다음 주 아부다비에서 만날 예정이라고 보도했다. 유로뉴스도 우크라이나 협상이 다음 주 아부다비로 열린다고 보도했으며, 《키이프 포스트》는 이번 협상을 3자 평화 협상으로 설명했다."
+        "es": {
+          "headline": "Los demócratas ganaron las elecciones de mitad de mandato de 2026 en Estados Unidos",
+          "body": "Le Monde informó de que los demócratas ganaron las elecciones de mitad de mandato de 2026 en Estados Unidos, y Der Spiegel informó de que Donald Trump perdió las elecciones de mitad de mandato. Ambos medios publicaron sus informes el 6 de noviembre de 2026."
         },
         "pt": {
-          "headline": "Representantes da Ucrânia, da Rússia e dos EUA vão reunir-se em Abu Dhabi na próxima semana",
-          "body": "A Die Welt informou que representantes da Ucrânia, da Rússia e dos Estados Unidos vão reunir-se em Abu Dhabi na próxima semana. A Euronews também informou que as conversas sobre a Ucrânia deslocam-se para Abu Dhabi na próxima semana, e o The Kyiv Post descreveu as negociações como negociações de paz trilaterais."
+          "headline": "Os Democratas venceram as eleições de meio de mandato de 2026 nos EUA",
+          "body": "O Le Monde informou que os Democratas venceram as eleições de meio de mandato de 2026 nos EUA, e o Der Spiegel informou que Donald Trump perdeu as eleições de meio de mandato. Ambos os veículos publicaram as suas reportagens em 6 de novembro de 2026."
         }
       },
       "sources": [
         {
-          "outlet": "Die Welt",
-          "title": "„Den großen Durchbruch, so wie Trump ihn verkündet hat, da gehe ich nicht von aus“",
-          "url": "https://www.welt.de/politik/ausland/video6aed7f9d1d9d38d6d601ae2c/ukraine-gespraeche-in-abu-dhabi-den-grossen-durchbruch-so-wie-trump-ihn-verkuendet-hat-da-gehe-ich-nicht-von-aus.html",
-          "publishedAt": "2026-11-06T07:50:13.000Z"
+          "outlet": "Der Spiegel",
+          "title": "USA: Donald Trump hat die Midterms verloren, nun platzt offenbar auch sein Diesel-Deal",
+          "url": "https://www.spiegel.de/ausland/usa-donald-trump-hat-die-midterms-verloren-nun-platzt-offenbar-auch-sein-diesel-deal-a-80a6f6a6-88dc-4e4c-a5cc-d4651e06ca73#ref=rss",
+          "publishedAt": "2026-11-06T14:46:00.000Z"
         },
         {
-          "outlet": "Euronews",
-          "title": "Europe Today: Trump weighs Iran strikes as Ukraine talks head to Abu Dhabi",
-          "url": "https://www.euronews.com/2026/11/06/europe-today-trump-weighs-iran-strikes-as-ukraine-talks-head-to-abu-dhabi",
-          "publishedAt": "2026-11-06T07:01:47.000Z"
-        },
-        {
-          "outlet": "The Kyiv Post",
-          "title": "Kushner Unveils 5-Point European Security Plan Ahead of Peace Talks",
-          "url": "https://www.kyivpost.com/post/89289",
-          "publishedAt": "2026-11-06T03:52:47.000Z"
+          "outlet": "Le Monde",
+          "title": "2026 midterms: Russia hopes Trump continues 'peace efforts' despite Democrats' victory",
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/06/2026-midterms-russia-hopes-trump-continues-peace-efforts-despite-democrats-victory_6773534_4.html",
+          "publishedAt": "2026-11-06T14:36:01.000Z"
         }
       ]
     },
     {
-      "id": "u-1793950622000-mp1d",
-      "at": "2026-11-06T07:37:02.000Z",
-      "kind": "context",
-      "importance": 3,
+      "at": "2026-11-06T14:23:00.000Z",
+      "id": "u-1793974980000-rofa",
+      "kind": "reaction",
       "locales": {
-        "en": {
-          "headline": "Kushner outlines five-point European security plan ahead of peace talks",
-          "body": "The Kyiv Post reported that US presidential adviser Jared Kushner outlined five objectives for a new European security framework. Radio Free Europe/Radio Liberty reported that the White House outlined a broader European security plan ahead of Ukraine peace talks."
-        },
-        "fr": {
-          "headline": "Kushner expose un plan européen de sécurité en cinq points à la veille des pourparlers de paix",
-          "body": "The Kyiv Post a rapporté que le conseiller présidentiel américain Jared Kushner a défini cinq objectifs pour un nouveau cadre de sécurité européen. Radio Free Europe/Radio Liberty a rapporté que la Maison-Blanche a présenté un plan plus large de sécurité européenne avant les pourparlers de paix sur l’Ukraine."
-        },
         "de": {
-          "headline": "Kushner skizziert vor Friedensgesprächen Fünf-Punkte-Plan für europäische Sicherheit",
-          "body": "The Kyiv Post berichtete, dass der US-Präsidialberater Jared Kushner fünf Ziele für einen neuen europäischen Sicherheitsrahmen skizzierte. Radio Free Europe/Radio Liberty berichtete, dass das Weiße Haus vor den Friedensgesprächen über die Ukraine einen breiter gefassten europäischen Sicherheitsplan skizzierte."
+          "body": "Bundeskanzler Friedrich Merz sprach laut Der Spiegel und FAZ mit Donald Trump am Telefon. Der Spiegel berichtete, das Gespräch habe nach Trumps Ankündigung einer Vereinbarung stattgefunden.",
+          "headline": "Bundeskanzler Merz sprach mit Trump am Telefon"
+        },
+        "en": {
+          "body": "German Chancellor Friedrich Merz spoke by phone with Donald Trump, according to Der Spiegel and FAZ. Der Spiegel reported the call came after Trump's announcement of a deal.",
+          "headline": "German Chancellor Merz spoke with Trump by phone"
         },
         "es": {
-          "headline": "Kushner delinea un plan europeo de seguridad de cinco puntos antes de las conversaciones de paz",
-          "body": "The Kyiv Post informó de que el asesor presidencial estadounidense Jared Kushner delineó cinco objetivos para un nuevo marco de seguridad europeo. Radio Free Europe/Radio Liberty informó de que la Casa Blanca delineó un plan más amplio de seguridad europea antes de las conversaciones de paz sobre Ucrania."
+          "body": "El canciller alemán Friedrich Merz habló por teléfono con Donald Trump, según Der Spiegel y FAZ. Der Spiegel informó de que la llamada se produjo tras el anuncio de Trump de un acuerdo.",
+          "headline": "El canciller alemán Merz habló por teléfono con Trump"
+        },
+        "fr": {
+          "body": "Le chancelier allemand Friedrich Merz s’est entretenu par téléphone avec Donald Trump, selon Der Spiegel et FAZ. Der Spiegel a indiqué que l’appel a eu lieu après l’annonce par Trump d’un accord.",
+          "headline": "Le chancelier allemand Merz s’est entretenu avec Trump par téléphone"
         },
         "it": {
-          "headline": "Kushner delinea un piano in cinque punti per la sicurezza europea prima dei colloqui di pace",
-          "body": "The Kyiv Post ha riportato che il consulente presidenziale statunitense Jared Kushner ha delineato cinque obiettivi per un nuovo quadro europeo di sicurezza. Radio Free Europe/Radio Liberty ha riportato che la Casa Bianca ha delineato un piano più ampio per la sicurezza europea prima dei colloqui di pace per l'Ucraina."
-        },
-        "zh": {
-          "headline": "库什纳在和平会谈前阐述五点欧洲安全计划",
-          "body": "《基辅邮报》报道称，美国总统顾问贾里德·库什纳提出了欧洲新安全框架的五项目标。自由欧洲电台/自由之声报道称，在乌克兰和平会谈之前，白宫阐述了一项更广泛的欧洲安全计划。"
+          "body": "Il cancelliere tedesco Friedrich Merz ha parlato al telefono con Donald Trump, secondo Der Spiegel e FAZ. Der Spiegel ha riferito che la chiamata è avvenuta dopo l'annuncio, da parte di Trump, di un accordo.",
+          "headline": "Il cancelliere tedesco Merz ha parlato al telefono con Trump"
         },
         "ja": {
-          "headline": "クシュナー、和平交渉を前に5項目からなる欧州安全保障案を提示",
-          "body": "キヴ・ポストは、米国大統領顧問ジャレッド・クシュナーが新たな欧州安全保障の枠組みに向けた5つの目標を提示したと報じた。ラジオ・フリー・ヨーロッパ／ラジオ・リバティは、白宮がウクライナ和平交渉を前に、より広範な欧州安全保障案を提示したと報じた。"
+          "body": "デア・シュピーゲルとFAZによると、ドイツのフリードリヒ・メルツ首相がドナルド・トランプ氏と电话で会谈した。デア・シュピーゲルは、この电话がトランプ氏の合意発表後に行われたと报じた。",
+          "headline": "メルツ独首相、トランプ氏と电话会谈"
         },
         "ko": {
-          "headline": "쿠스너, 평화 협상 앞두고 5개 항목 유럽 안보 계획 제시",
-          "body": "《키이프 포스트》는 미국 대통령 고문 재러드 쿠스너가 새로운 유럽 안전 보장 체계를 위한 다섯 가지 목표를 제시했다고 보도했다. 라디오 프리예프스/라디오 리버티는 백악관이 우크라이나 평화 협상 전에 더 광범위한 유럽 안보 계획을 제시했다고 보도했다."
+          "body": "슈피겔과 FAZ에 따르면 독일 총리 프리드리히 머츠는 도널드 트럼프와 전화로 대화했다. 슈피겔은 이 통화가 트럼프의 합의 발표 이후에 이루어졌다고 보도했다.",
+          "headline": "독일 총리 머츠가 트럼프와 전화 통화"
         },
         "pt": {
-          "headline": "Kushner esboça plano de segurança europeu de cinco pontos antes das negociações de paz",
-          "body": "O The Kyiv Post informou que o assessor presidencial dos EUA Jared Kushner esboçou cinco objetivos para um novo quadro de segurança europeu. A Rádio Free Europe/Rádio Liberdade informou que a Casa Branca esboçou um plano de segurança europeu mais abrangente antes das negociações de paz sobre a Ucrânia."
+          "body": "O chanceler alemão Friedrich Merz falou por telefone com Donald Trump, de acordo com o Der Spiegel e o FAZ. O Der Spiegel informou que a chamada ocorreu após o anúncio de um acordo por parte de Trump.",
+          "headline": "O chanceler alemão Merz falou com Trump por telefone"
+        },
+        "zh": {
+          "body": "据《明镜》和《法兰克福汇报报》报道，德国总理弗里德里希·默茨与唐纳德·特朗普通话。《明镜》报道称，此次通话发生在特朗普宣布达成协议之后。",
+          "headline": "德国总理默茨与特朗普通话"
         }
       },
       "sources": [
         {
-          "outlet": "Radio Free Europe/Radio Liberty",
-          "title": "White House Outlines Broader European Security Plan Ahead Of Ukraine Peace Talks",
+          "url": "https://www.spiegel.de/ausland/ukrainekrieg-russland-will-ordnung-in-europa-mitbestimmen-und-sieht-wenig-bereitschaft-a-dfcd9c16-4324-4952-bed1-ca8cd4983a46#ref=rss",
+          "title": "Ukraine-Krieg: Friedrich Merz telefoniert mit Donald Trump, Kreml dämpft Erwartungen nach Ukraine-Ankündigung",
+          "outlet": "Der Spiegel",
+          "publishedAt": "2026-11-06T14:23:00.000Z"
+        },
+        {
+          "url": "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-merz-friedensvereinbarung-muss-konsens-der-nato-partner-haben-faz-110683325.html",
+          "title": "Liveblog Ukrainekrieg: Kommission: Es ist Sache der EU, über ihre Sicherheit zu entscheiden",
+          "outlet": "FAZ",
+          "publishedAt": "2026-11-06T11:55:39.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-06T14:23:00.000Z",
+      "id": "u-1793974980000-a8pn",
+      "kind": "reaction",
+      "locales": {
+        "de": {
+          "body": "Das Kremlin dämpfte laut Der Spiegel und SRF die Erwartungen im Anschluss an Trumps Ankündigung. SRF berichtete, Kremlin-Sprecher Dmitri Peskow habe gesagt, Europa zeige keine Bereitschaft, über eine künftige Sicherheitsarchitektur zu sprechen.",
+          "headline": "Kremlin dämpft Erwartungen nach Ankündigung einer Vereinbarung mit Trump"
+        },
+        "en": {
+          "body": "The Kremlin dampened expectations following Trump's announcement, according to Der Spiegel and SRF. SRF reported Kremlin spokesman Dmitri Peskow said Europe shows no willingness to discuss a future security architecture.",
+          "headline": "Kremlin dampens expectations after Trump deal announcement"
+        },
+        "es": {
+          "body": "El Kremlin temperó sus expectativas tras el anuncio de Trump, según Der Spiegel y SRF. SRF informó de que el porta-voz del Kremlin, Dmitri Peskow, dijo que Europa no muestra disposición a discutir una futura arquitectura de seguridad.",
+          "headline": "El Kremlin tempera sus expectativas tras el anuncio del acuerdo de Trump"
+        },
+        "fr": {
+          "body": "Le Kremlin a tempéré les attentes à la suite de l’annonce de Trump, selon Der Spiegel et SRF. SRF a indiqué que Dmitri Peskow, porte-parole du Kremlin, a déclaré que l’Europe ne montre aucune volonté de discuter d’une future architecture de sécurité.",
+          "headline": "Le Kremlin tempère les attentes après l’annonce de l’accord de Trump"
+        },
+        "it": {
+          "body": "Il Cremlino ha ridimensionato le aspettative dopo l'annuncio di Trump, secondo Der Spiegel e SRF. SRF ha riferito che il portavoce del Cremlino Dmitri Peskow ha detto che l'Europa non mostra volontà di discutere un'architettura di sicurezza per il futuro.",
+          "headline": "Il Cremlino ridimensiona le aspettative dopo l'annuncio dell'accordo con Trump"
+        },
+        "ja": {
+          "body": "デア・シュピーゲルとSRFによると、クレムリンはトランプ氏の発表を受けて期待を抑制した。SRFは、クレムリン报道官ドミトリー・ペスコフ氏が、欧州は将来の安全保障架构について议论する意思を示していないと述べたと报じた。",
+          "headline": "クレムリン、トランプ氏の合意発表後に期待を抑制"
+        },
+        "ko": {
+          "body": "슈피겔과 SRF에 따르면 크렘린은 트럼프의 발표 이후 기대를 낮췄다. SRF는 크렘린itchen发言人 드미트리 페스카우가 유럽은 미래 안전 구조를 논의할 의사를 보이지 않는다고 말했다고 보도했다.",
+          "headline": "트럼프 합의 발표 이후 크렘린이 기대를 낮춤"
+        },
+        "pt": {
+          "body": "O Kremlin arrefeceu as expectativas após o anúncio de Trump, de acordo com o Der Spiegel e a SRF. A SRF informou que o porta-voz do Kremlin, Dmitri Peskow, afirmou que a Europa não mostra disponibilidade para discutir uma futura arquitetura de segurança.",
+          "headline": "O Kremlin arrefece as expectativas após o anúncio de um acordo por Trump"
+        },
+        "zh": {
+          "body": "据《明镜》和瑞士广播公司SRF报道，在特朗普宣布达成协议后，克里姆林宫降低了预期。SRF报道称，克里姆林宫发言人德米特里·佩斯科夫表示，欧洲没有意愿讨论未来的安全架构。",
+          "headline": "特朗普宣布达成协议后，克里姆林宫降低预期"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.spiegel.de/ausland/ukrainekrieg-russland-will-ordnung-in-europa-mitbestimmen-und-sieht-wenig-bereitschaft-a-dfcd9c16-4324-4952-bed1-ca8cd4983a46#ref=rss",
+          "title": "Ukraine-Krieg: Friedrich Merz telefoniert mit Donald Trump, Kreml dämpft Erwartungen nach Ukraine-Ankündigung",
+          "outlet": "Der Spiegel",
+          "publishedAt": "2026-11-06T14:23:00.000Z"
+        },
+        {
+          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-trump-kuendigt-ukraine-abkommen-an-kreml-daempft-erwartungen",
+          "title": "Krieg in der Ukraine – Trump kündigt Ukraine-Abkommen an – Kreml dämpft Erwartungen",
+          "outlet": "SRF",
+          "publishedAt": "2026-11-06T13:42:06.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-06T07:50:13.000Z",
+      "id": "u-1793951413000-pgaa",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Die Welt berichtete, dass Vertreter der Ukraine, Russlands und der Vereinigten Staaten nächste Woche in Abu Dhabi zusammenkommen. Euronews berichtete ebenfalls, dass die Ukraine-Gespräche nächste Woche in Abu Dhabi stattfinden sollen, und The Kyiv Post bezeichnete die Verhandlungen als trilaterale Friedensgespräche.",
+          "headline": "Vertreter der Ukraine, Russlands und der USA treffen sich nächste Woche in Abu Dhabi"
+        },
+        "en": {
+          "body": "Die Welt reported that representatives of Ukraine, Russia and the United States are to meet in Abu Dhabi next week. Euronews also reported that Ukraine talks are heading to Abu Dhabi next week, and The Kyiv Post described the negotiations as trilateral peace talks.",
+          "headline": "Ukraine, Russia and US representatives to meet in Abu Dhabi next week"
+        },
+        "es": {
+          "body": "Die Welt informó de que representantes de Ucrania, Rusia y Estados Unidos se reunirán en Abu Dabi la próxima semana. Euronews también informó de que las conversaciones sobre Ucrania se celebrarán en Abu Dabi la próxima semana, y The Kyiv Post describió las negociaciones como conversaciones de paz trilaterales.",
+          "headline": "Representantes de Ucrania, Rusia y EE. UU. se reunirán en Abu Dabi la próxima semana"
+        },
+        "fr": {
+          "body": "Die Welt a rapporté que les représentants de l’Ukraine, de la Russie et des États-Unis se réuniront à Abu Dhabi la semaine prochaine. Euronews a également rapporté que les négociations avec l’Ukraine sont prévues à Abu Dhabi la semaine prochaine, et The Kyiv Post a présenté les négociations comme des pourparlers de paix trilatéraux.",
+          "headline": "Les représentants de l’Ukraine, de la Russie et des États-Unis se réuniront à Abu Dhabi la semaine prochaine"
+        },
+        "it": {
+          "body": "Die Welt ha riportato che i rappresentanti di Ucraina, Russia e Stati Uniti si incontreranno ad Abu Dhabi la prossima settimana. Anche Euronews ha riportato che i colloqui sull'Ucraina si terranno ad Abu Dhabi la prossima settimana, mentre The Kyiv Post ha descritto i negoziati come colloqui di pace trilaterali.",
+          "headline": "I rappresentanti di Ucraina, Russia e Stati Uniti si incontreranno ad Abu Dhabi la prossima settimana"
+        },
+        "ja": {
+          "body": "ディー・ウェルトは、ウクライナ、ロシアおよび米国の代表が来週アブダビで会合すると報じた。ユロニュースも、ウクライナとの交渉を来週アブダビで行うと報じ、キヴ・ポストは交渉を三者間の和平交渉と説明した。",
+          "headline": "ウクライナ、ロシア、米国の代表が来週アブダビで会合へ"
+        },
+        "ko": {
+          "body": "《디르 빌트》는 우크라이나, 러시아 및 미국 대표들이 다음 주 아부다비에서 만날 예정이라고 보도했다. 유로뉴스도 우크라이나 협상이 다음 주 아부다비로 열린다고 보도했으며, 《키이프 포스트》는 이번 협상을 3자 평화 협상으로 설명했다.",
+          "headline": "우크라이나·러시아·미국 대표들이 다음 주 아부다비에서 만난다"
+        },
+        "pt": {
+          "body": "A Die Welt informou que representantes da Ucrânia, da Rússia e dos Estados Unidos vão reunir-se em Abu Dhabi na próxima semana. A Euronews também informou que as conversas sobre a Ucrânia deslocam-se para Abu Dhabi na próxima semana, e o The Kyiv Post descreveu as negociações como negociações de paz trilaterais.",
+          "headline": "Representantes da Ucrânia, da Rússia e dos EUA vão reunir-se em Abu Dhabi na próxima semana"
+        },
+        "zh": {
+          "body": "《世界报》报道，乌克兰、俄罗斯和美国的代表下周将在阿布扎比会面。欧洲新闻台也报道称，乌克兰问题谈判下周将在阿布扎比举行，《基辅邮报》则将这些谈判描述为三方和平会谈。",
+          "headline": "乌克兰、俄罗斯和美国代表下周将在阿布扎比会面"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.welt.de/politik/ausland/video6aed7f9d1d9d38d6d601ae2c/ukraine-gespraeche-in-abu-dhabi-den-grossen-durchbruch-so-wie-trump-ihn-verkuendet-hat-da-gehe-ich-nicht-von-aus.html",
+          "title": "„Den großen Durchbruch, so wie Trump ihn verkündet hat, da gehe ich nicht von aus“",
+          "outlet": "Die Welt",
+          "publishedAt": "2026-11-06T07:50:13.000Z"
+        },
+        {
+          "url": "https://www.euronews.com/2026/11/06/europe-today-trump-weighs-iran-strikes-as-ukraine-talks-head-to-abu-dhabi",
+          "title": "Europe Today: Trump weighs Iran strikes as Ukraine talks head to Abu Dhabi",
+          "outlet": "Euronews",
+          "publishedAt": "2026-11-06T07:01:47.000Z"
+        },
+        {
+          "url": "https://www.kyivpost.com/post/89289",
+          "title": "Kushner Unveils 5-Point European Security Plan Ahead of Peace Talks",
+          "outlet": "The Kyiv Post",
+          "publishedAt": "2026-11-06T03:52:47.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-06T07:37:02.000Z",
+      "id": "u-1793950622000-mp1d",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "The Kyiv Post berichtete, dass der US-Präsidialberater Jared Kushner fünf Ziele für einen neuen europäischen Sicherheitsrahmen skizzierte. Radio Free Europe/Radio Liberty berichtete, dass das Weiße Haus vor den Friedensgesprächen über die Ukraine einen breiter gefassten europäischen Sicherheitsplan skizzierte.",
+          "headline": "Kushner skizziert vor Friedensgesprächen Fünf-Punkte-Plan für europäische Sicherheit"
+        },
+        "en": {
+          "body": "The Kyiv Post reported that US presidential adviser Jared Kushner outlined five objectives for a new European security framework. Radio Free Europe/Radio Liberty reported that the White House outlined a broader European security plan ahead of Ukraine peace talks.",
+          "headline": "Kushner outlines five-point European security plan ahead of peace talks"
+        },
+        "es": {
+          "body": "The Kyiv Post informó de que el asesor presidencial estadounidense Jared Kushner delineó cinco objetivos para un nuevo marco de seguridad europeo. Radio Free Europe/Radio Liberty informó de que la Casa Blanca delineó un plan más amplio de seguridad europea antes de las conversaciones de paz sobre Ucrania.",
+          "headline": "Kushner delinea un plan europeo de seguridad de cinco puntos antes de las conversaciones de paz"
+        },
+        "fr": {
+          "body": "The Kyiv Post a rapporté que le conseiller présidentiel américain Jared Kushner a défini cinq objectifs pour un nouveau cadre de sécurité européen. Radio Free Europe/Radio Liberty a rapporté que la Maison-Blanche a présenté un plan plus large de sécurité européenne avant les pourparlers de paix sur l’Ukraine.",
+          "headline": "Kushner expose un plan européen de sécurité en cinq points à la veille des pourparlers de paix"
+        },
+        "it": {
+          "body": "The Kyiv Post ha riportato che il consulente presidenziale statunitense Jared Kushner ha delineato cinque obiettivi per un nuovo quadro europeo di sicurezza. Radio Free Europe/Radio Liberty ha riportato che la Casa Bianca ha delineato un piano più ampio per la sicurezza europea prima dei colloqui di pace per l'Ucraina.",
+          "headline": "Kushner delinea un piano in cinque punti per la sicurezza europea prima dei colloqui di pace"
+        },
+        "ja": {
+          "body": "キヴ・ポストは、米国大統領顧問ジャレッド・クシュナーが新たな欧州安全保障の枠組みに向けた5つの目標を提示したと報じた。ラジオ・フリー・ヨーロッパ／ラジオ・リバティは、白宮がウクライナ和平交渉を前に、より広範な欧州安全保障案を提示したと報じた。",
+          "headline": "クシュナー、和平交渉を前に5項目からなる欧州安全保障案を提示"
+        },
+        "ko": {
+          "body": "《키이프 포스트》는 미국 대통령 고문 재러드 쿠스너가 새로운 유럽 안전 보장 체계를 위한 다섯 가지 목표를 제시했다고 보도했다. 라디오 프리예프스/라디오 리버티는 백악관이 우크라이나 평화 협상 전에 더 광범위한 유럽 안보 계획을 제시했다고 보도했다.",
+          "headline": "쿠스너, 평화 협상 앞두고 5개 항목 유럽 안보 계획 제시"
+        },
+        "pt": {
+          "body": "O The Kyiv Post informou que o assessor presidencial dos EUA Jared Kushner esboçou cinco objetivos para um novo quadro de segurança europeu. A Rádio Free Europe/Rádio Liberdade informou que a Casa Branca esboçou um plano de segurança europeu mais abrangente antes das negociações de paz sobre a Ucrânia.",
+          "headline": "Kushner esboça plano de segurança europeu de cinco pontos antes das negociações de paz"
+        },
+        "zh": {
+          "body": "《基辅邮报》报道称，美国总统顾问贾里德·库什纳提出了欧洲新安全框架的五项目标。自由欧洲电台/自由之声报道称，在乌克兰和平会谈之前，白宫阐述了一项更广泛的欧洲安全计划。",
+          "headline": "库什纳在和平会谈前阐述五点欧洲安全计划"
+        }
+      },
+      "sources": [
+        {
           "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVHkxVHdpNVBGbUMxeUxMSTdScUNJZmRCd1hrbjJoalZQeGhQM3A3UllodE1hR0ZLRy10RlpFOVh0LUJOY3hEUk94cnlLVW9TSFQwVFFORmw0MEJkMzZ2VUhCV0U5OXIxUW5YYXpIUGpFRURMVjhOM1RjZzRvQnhnd25hZHhtTU9XeFJwdWZjOUlsbFdIYjFsbnczNmw4U2RmMk43ampqdW5ZU3VXWkpWd1VvTVo4ZlhsM0HSAbwBQVVfeXFMTjFnZ2ZIYUFZelRDZGJJREtFVC04ekJKV3ZEcHlTZEE4UldNQmdxWFJadkx2S0pqWlRCb0JaUi1FY3FmT1EySXhmakdOc0tZS2RqZkdScV92c1djaUtJTTZYRi1VaEFDdFVTaUp6MTl5dWZBYTV5dHIzMXVYbDBSTVEwZHI4UVpSdy1oS21pNVhzQ1NjaVl2WUc5blFNSjluQ2VzNGpFVzJlY0NwVDRROEpkVzFDYUliTHZnc1A?oc=5",
+          "title": "White House Outlines Broader European Security Plan Ahead Of Ukraine Peace Talks",
+          "outlet": "Radio Free Europe/Radio Liberty",
           "publishedAt": "2026-11-06T07:37:02.000Z"
         },
         {
-          "outlet": "The Kyiv Post",
-          "title": "Kushner Unveils 5-Point European Security Plan Ahead of Peace Talks",
           "url": "https://www.kyivpost.com/post/89289",
+          "title": "Kushner Unveils 5-Point European Security Plan Ahead of Peace Talks",
+          "outlet": "The Kyiv Post",
           "publishedAt": "2026-11-06T03:52:47.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-05T23:47:03.000Z",
@@ -476,15 +638,72 @@
     "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNWDVXRi0wTjdXVjlkV0xXZmlLVi1ZRjRLNDk4MWZpZjRiQU80WVJoaHgycjVHc2NMMEJrdnJmUE8tS2l0eVBSbW9DcmZwamtoYXktWVRLMDFFR3BSMTBmazhXdjhsZVlFQjhUQXpHMXAxX0xsMWZyd1F4TUZxWXFnSzFKeGlWN2dXcmctbU5qVlptcENvbDNnaTlZVmItNnRQVzNnbjZGTDNraHc?oc=5",
     "https://www.scmp.com/news/world/united-states-canada/article/3373484/canada-budget-charts-economic-independence-decisive-shift-us",
     "https://www.politico.eu/podcast/brussels-playbook-podcast/us-voters-warning-to-european-politicians/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeVdfY1VZdDJHQ1BwVHpvTWlBT1Z3dTJfYWEzNlFzZ0I2Mm1NZFVEUjdBX3VGVjJPT1JOZXl0NTZBSFQ3MVhqMGtjd3VKMGFJUHp0ZFFSZHR3YmdLUnFBMU1QNURmbVhMSjVHa0NKZExiNG9BYk9VTm8xWjVvSWczMm9aZ2Jld2NlWXVNSnUwVTk4SXVIYVNUbkRZTGNCdS1HOVF0X09LUkdkRXZ4cFlQaklWQ1Nfc1HSAbwBQVVfeXFMTUh3dVBBbS1CN2ZSQVpGMVB3MWxqNFMtUW5BMEFOOHg3ZEs0VkFkU0dOc1g2MnhsOUpjbHUyd254V2p4UWhUa1p4ZU94V2duQ3RTbVhTdUNKcFpZYmxCVjNrRFhlTk5aRlpXbzI4QjVmMy1LYUpZdXBFTW43Z2dGSGlCUEQ3MktGYnpBakhrekJQS0FybzZaSlgzZ1hhakJVd1hTeVZUdThNbXQ5WXZZME85YnA5MFFrMWJsWEM?oc=5"
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeVdfY1VZdDJHQ1BwVHpvTWlBT1Z3dTJfYWEzNlFzZ0I2Mm1NZFVEUjdBX3VGVjJPT1JOZXl0NTZBSFQ3MVhqMGtjd3VKMGFJUHp0ZFFSZHR3YmdLUnFBMU1QNURmbVhMSjVHa0NKZExiNG9BYk9VTm8xWjVvSWczMm9aZ2Jld2NlWXVNSnUwVTk4SXVIYVNUbkRZTGNCdS1HOVF0X09LUkdkRXZ4cFlQaklWQ1Nfc1HSAbwBQVVfeXFMTUh3dVBBbS1CN2ZSQVpGMVB3MWxqNFMtUW5BMEFOOHg3ZEs0VkFkU0dOc1g2MnhsOUpjbHUyd254V2p4UWhUa1p4ZU94V2duQ3RTbVhTdUNKcFpZYmxCVjNrRFhlTk5aRlpXbzI4QjVmMy1LYUpZdXBFTW43Z2dGSGlCUEQ3MktGYnpBakhrekJQS0FybzZaSlgzZ1hhakJVd1hTeVZUdThNbXQ5WXZZME85YnA5MFFrMWJsWEM?oc=5",
+    "https://www.straitstimes.com/world/europe/russia-using-own-version-of-starlink-for-military-comms-over-ukraine-kyiv-says",
+    "https://www.spiegel.de/ausland/ukrainekrieg-russland-will-ordnung-in-europa-mitbestimmen-und-sieht-wenig-bereitschaft-a-dfcd9c16-4324-4952-bed1-ca8cd4983a46#ref=rss",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxQQ2pwUVhkZWk0TUgxWllPLVNRT2U0c2VVZnpLYnVaVmc2aVJxWXJLZ3RQM1JKQnFSQ3BjbVpsMlhwRFJHbUQteXFWTERLWkVLWEhXQ2RTLXd2eXFTUzY3REVtbHRUZ2VablpoUlh1WnVmN2ZKQ2NDekl0RUIzSmNUVlZsZjJzQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMWZYelZjR21iZEc1Q2dPeGhEM2dNYngxOG1XWnEzR0FRTEwwR0VlUUhxNjFJdWhiVkthbE9xQjJDRGt6Y0FFMW1uSkwzZE5DQ25fMjNzYkstaUlPU0NQOVQxeXNMMFRxUjNEU09yWnZnaGpvYlFRV2JmUGxIODF4N3l2X1FNSlpJT19memhDUVBHcUU?oc=5",
+    "https://www.dw.com/en/czech-arms-makers-set-sights-on-space-defense-in-bid-to-sustain-ukraine-driven-arms-boom/a-79876035?maca=en-rss-en-all-1573-rdf",
+    "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUFlmbHJLeFZiRHY2Wjd4WHA1YVp6bWlyOE5CaWV2YmtqTVRsNTBVMUhWdTEzV1gtM1ZBNVExMXJKYkZSZFNiWjhxV2lOTDF6aG0wWE5WT183U0xBdnd0bnVKbzRJNjJpb1BwRTVKYW1JYmp6cW1heUxZbzdOS29lNkYxUQ?oc=5",
+    "https://www.euronews.com/2026/11/06/azerbaijan-and-ukraine-forge-new-energy-defence-and-trade-agreements",
+    "https://www.aljazeera.com/news/2026/11/6/what-a-trump-xi-putin-summit-would-mean-and-what-it-wouldnt?traffic_source=rss",
+    "https://www.thehindu.com/news/international/eu-says-a-lot-of-work-still-needed-to-reach-ukraine-peace-deal/article71674795.ece",
+    "https://www.kyivpost.com/post/89365",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-trump-kuendigt-ukraine-abkommen-an-kreml-daempft-erwartungen",
+    "https://www.france24.com/en/americas/20261106-trump-stillborn-diesel-deal-why-russian-oil-tankers-are-not-heading-to-the-us",
+    "https://www.aljazeera.com/news/2026/11/6/ukraine-raises-zaporizhia-aid-strike-death-toll-to-at-least-50?traffic_source=rss",
+    "https://www.nytimes.com/2026/11/06/style/melania-trump-white-suit-russia-ukraine-cease-fire.html",
+    "https://www.kyivpost.com/post/89360",
+    "https://www.france24.com/en/will-democratic-party-introduce-a-new-new-deal-key-narrative-must-be-focused-on-economic-issues",
+    "https://news.google.com/rss/articles/CBMivwFBVV95cUxPUk5VelRVMXMtakcxdUVaQUR1dVlSdlZPdTdDX1Z3X3EyNUxVRGh2NEJBcUxuZFZzM0U4eFFiVktDaHZnUW1XNlRlWGpOUTJNaE1xSUZVWWtSMzV2Z0M4ZVFNQ0dBM0FFeldoMmQyQkE4Z19STGFmZjNSYV92bExVeENhblpZMDZEMnk5Rk5qY3hGVDlxelJlelItVThYOWRDQVJFeENSUlF2OWNWWjRlaWpDNUtBWFFMVU5YSTU4bw?oc=5",
+    "https://www.france24.com/en/tv-shows/spotlight/20261106-period-of-uncertainty-trump-is-tormented-he-s-unstoppable-and-he-s-desperate-for-immortality",
+    "https://www.scmp.com/news/china/diplomacy/article/3373593/family-business-summit-day-2-tackles-us-china-ties-asean-and-geopolitical-shifts",
+    "https://www.welt.de/politik/ausland/plus6aed981847b5fce02f879d6e/neue-sicherheitsarchitektur-ein-grosses-wunderschoenes-abkommen-mit-einem-einzigen-satz-versetzt-trump-europa-in-panik.html",
+    "https://www.kyivpost.com/post/89354",
+    "https://www.kyivpost.com/editorial/89352",
+    "https://www.dawn.com/news/2042565/global-tech-stocks-suffer-bloodbath-as-us-midterms-fuel-ai-fears",
+    "https://www.straitstimes.com/world/europe/russian-security-council-says-starlinkoneweb-satellite-services-pose-risk-to-sovereign-countries-ria",
+    "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPN0lMT1c5ZTJ2QTB3YkEtS2Vid2pRZVVMdVhXWHh3UGVJWkk1OERxUGtlU25md243cVJZVURRR3NfanctX0xwaEpmTDFPanA4SFVXM0syWXVVT1J5bF9PNTJOU1NnZzZHVVJHVGhfcDJrUFNiSXp3TU5ITExMMXl1ZGN3Sm95RW1RRmM2VlJrMVdjN0JETHFhTnVOZTJTb2RQUEJwWGVRTkg?oc=5",
+    "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-merz-friedensvereinbarung-muss-konsens-der-nato-partner-haben-faz-110683325.html",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSUlCRnhXUUxLU0EwelVOdThCN1pOUlJwQ1hZdk0yNldENVU2dlZsb2JPTVZ3WWgyRURjUWtZWmUyYjNNY2E3WXhtNzEtRHJhdVE4MTJRdmE1dXoxOXo3MkZMX1FEQTl3eEt3RmpzaVdJaXdJaFBTRl9sWUhPeU82YnhtSnM4eER1MlNLbDh5NklvYWZWWFFaSVBfdG4zMEE1b0FnOWxIcXdoZDQ?oc=5",
+    "https://www.semafor.com/article/11/06/2026/gop-eyes-2028-presidential-bids-after-midterm-rebuke",
+    "https://www.kyivpost.com/post/89351",
+    "https://www.semafor.com/article/11/06/2026/midterms-spark-calls-for-white-house-policy-and-personnel-shakeups",
+    "https://www.semafor.com/article/11/06/2026/oil-prices-up-after-days-long-selloff-on-revived-us-iran-war-fears",
+    "https://www.faz.net/aktuell/politik/ukraine/donald-trump-verhandelt-mit-putins-vertrautem-ueber-die-ukraine-201658190.html",
+    "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWTJneFRDTXhvQTFoX2F6d0I0ZWtzRkNzVXFnWC1ULXo3aV9nVEFaN09idXlNMmZCT3JpX3hqRmNyNk1yTEVMUzNncmlJVjJNZjgwM3FhU0REQVBnWG14SzN6UmlteWNFZUtYdVpzUUFaQnZCWi1KaFpWdXpnTUc1cXZKcTdHSWFvdk84ajNvaUhWd05SNnZVUS11Vmo2ejB0cHY0Z1VNdUxITWFydnE0WHdGSVRNUlduZ2VONFpB?oc=5",
+    "http://www.africanews.com/2026/11/06/trump-denounces-crooked-us-midterms-after-republican-debacle/",
+    "https://www.straitstimes.com/world/europe/can-the-us-democrats-blue-wave-election-sweep-buoy-ukraine",
+    "https://english.elpais.com/usa/2026-11-06/pete-hegseth-under-fire-from-republicans-over-his-role-in-the-iran-war.html",
+    "http://www.africanews.com/2026/11/06/russia-ukraine-escalate-mutual-strikes-in-black-sea-ahead-of-abu-dhabi-talks/",
+    "https://www.semafor.com/article/11/05/2026/republicans-worry-that-trumps-successor-cant-come-from-his-white-house",
+    "https://www.kyivpost.com/post/89344",
+    "https://www.nytimes.com/2026/11/06/world/europe/russia-ukraine-trump-midterms.html",
+    "https://www.kyivpost.com/post/89335",
+    "https://www.france24.com/en/europe/20261106-death-toll-rises-to-50-in-russian-attack-on-aid-distribution-point-in-ukraine",
+    "https://www.politico.eu/article/donald-trump-europe-ukraine-deal-vladimir-putin-envoy-kirill-dmitriev/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.nytimes.com/2026/11/06/science/scientists-election-congress.html",
+    "https://www.straitstimes.com/world/europe/kremlin-accuses-europe-of-struggling-to-decide-who-will-speak-for-it-at-future-ukraine-security",
+    "https://www.nytimes.com/2026/11/06/world/europe/europe-trump-midterms.html",
+    "https://www.foxnews.com/politics/one-industry-faces-multi-trillion-dollar-reckoning-after-historic-midterm-election-reshuffle",
+    "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5YYm1xRmJ4THc4YXpoR0pISkoyS0RBZDh5ajItVkJSM0k0RE1oTGE0NVBKYWFYS0J2WmxLc1BKeENUNVM0V241LVVIMA?oc=5",
+    "https://www.thehindu.com/news/international/after-trumps-midterm-poll-rout-south-america-breathes-easy-as-far-right-feels-the-heat/article71673628.ece",
+    "https://www.kyivpost.com/post/89332",
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxNOXJsQmZUbjREMUxPZUZwOUZGTm9pOVhXZDl5STI0MlkybXhDemF4ZWY2RzdKam4yWmFuVkczR2dXWWlLcUJucEJVMWNpZkQxeEkxZTAxc3JjVW55T1FfVFM2RjRseWVhVHhTQTRCclY4ZmlrcDVDZm9SZVNRSHZDNEhTU2VQMjNMa0tUbmlJSWloMl9NRmI4OUJB?oc=5",
+    "https://www.faz.net/aktuell/wirtschaft/mehr-wirtschaft/donald-trumps-zoelle-wie-ein-verliererthema-den-freihandel-neu-belebt-201654859.html",
+    "https://www.kyivpost.com/post/89329",
+    "https://www.straitstimes.com/world/europe/us-midterms-gave-new-urgency-to-ukraine-war-talks-germany-says",
+    "https://www.spiegel.de/ausland/usa-donald-trump-hat-die-midterms-verloren-nun-platzt-offenbar-auch-sein-diesel-deal-a-80a6f6a6-88dc-4e4c-a5cc-d4651e06ca73#ref=rss",
+    "https://www.lemonde.fr/en/international/article/2026/11/06/2026-midterms-russia-hopes-trump-continues-peace-efforts-despite-democrats-victory_6773534_4.html"
   ],
   "startedAt": "2026-11-06T00:35:29.023Z",
-  "updatedAt": "2026-11-06T09:10:01.288Z",
+  "updatedAt": "2026-11-06T15:00:00.976Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": null,
-  "sourceCount": 10,
+  "sourceCount": 13,
   "seenHeadlines": [
+    "Trump says Ukraine deal would cover all of Europe",
     "Trump predicts Russia deal covering Ukraine and 'all of Europe'"
   ]
 }
