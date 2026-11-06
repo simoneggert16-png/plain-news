@@ -14,7 +14,7 @@
     "hints": "Pharma giants pay millions to Russian distributor entangled in corruption allegations to win cancer drug business"
   },
   "createdAt": "2026-11-03T14:38:54.069Z",
-  "updatedAt": "2026-11-06T00:29:14.253Z",
+  "updatedAt": "2026-11-06T14:59:04.107Z",
   "queries": [
     "ICIJ cancer calculus Russian distributor pharmaceutical payments",
     "фармдистрибьютор рак препараты выплаты миллионы коррупция",
@@ -424,6 +424,30 @@
       "role": "the institution whose document is on file",
       "email": "media@gao.gov",
       "emailSource": "https://www.gao.gov/press-center"
+    },
+    {
+      "org": "ICIJ",
+      "role": "the institution whose document is on file",
+      "email": "contact@icij.org",
+      "emailSource": "https://www.icij.org/"
+    },
+    {
+      "org": "US Government Accountability Office",
+      "role": "the institution whose document is on file",
+      "email": "media@gao.gov",
+      "emailSource": "https://www.gao.gov/press-center"
+    },
+    {
+      "org": "ICIJ",
+      "role": "the institution whose document is on file",
+      "email": "contact@icij.org",
+      "emailSource": "https://www.icij.org/"
+    },
+    {
+      "org": "US Government Accountability Office",
+      "role": "the institution whose document is on file",
+      "email": "media@gao.gov",
+      "emailSource": "https://www.gao.gov/press-center"
     }
   ],
   "outreach": [],
@@ -448,7 +472,7 @@
     }
   ],
   "centre": "Russia, with international pharmaceutical companies and the global cancer drug m",
-  "lastShiftAt": "2026-11-06T00:17:50.243Z",
+  "lastShiftAt": "2026-11-06T14:58:38.770Z",
   "letters": [
     {
       "id": "L1",
@@ -474,27 +498,6 @@
     }
   ],
   "agent": [
-    {
-      "at": "2026-11-05T15:04:40.678Z",
-      "steps": [],
-      "final": null
-    },
-    {
-      "at": "2026-11-05T23:50:23.191Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "The dossier already holds the ICIJ investigation (S1) and five claims drawn from it, but no primary documents have been filed: no Federal Antimonopoly Service decision, no procurement/award notice for Keytruda, no sanctions listing, no court judgment, and no outreach contacts. The first open question a document could answer is what the FAS actually decided against R-Pharm and on what dates. I need",
-          "action": "open",
-          "args": {
-            "url": "https://www.icij.org/investigations/cancer-calculus/pharma-giants-pay-millions-to-russian-distributor-entangled-in-corruption-allegations-to-win-cancer-drug-business/"
-          },
-          "ok": true,
-          "ms": 34840
-        }
-      ],
-      "final": null
-    },
     {
       "at": "2026-11-06T00:20:23.967Z",
       "steps": [
@@ -638,9 +641,30 @@
         }
       ],
       "final": null
+    },
+    {
+      "at": "2026-11-06T14:39:32.255Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "The dossier already contains the ICIJ primary investigation (S1) and a Moscow Times summary (S8), plus ten claims drawn from them. My first job is to open the primary ICIJ page and read its full text and outbound links, because the desk brief prioritises primary documents: the Russian Federal Antimonopoly Service (FAS) decisions against R-Pharm, procurement award records, sanctions listings, and b",
+          "action": "open",
+          "args": {
+            "url": "https://www.icij.org/investigations/cancer-calculus/pharma-giants-pay-millions-to-russian-distributor-entangled-in-corruption-allegations-to-win-cancer-drug-business/"
+          },
+          "ok": true,
+          "ms": 14952
+        }
+      ],
+      "final": null
+    },
+    {
+      "at": "2026-11-06T14:58:57.245Z",
+      "steps": [],
+      "final": null
     }
   ],
-  "shifts": 11,
-  "blankShifts": 0,
+  "shifts": 13,
+  "blankShifts": 2,
   "nextStep": "keep reporting: no outreach sent"
 }
