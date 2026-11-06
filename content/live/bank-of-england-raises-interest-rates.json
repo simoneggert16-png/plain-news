@@ -1,9 +1,310 @@
 {
+  "meta": {
+    "outlets": [
+      "Euronews",
+      "The Guardian",
+      "New York Times",
+      "Dawn",
+      "The New York Times",
+      "Morningstar",
+      "Yahoo Finance Singapore",
+      "Yahoo! Finance Canada"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "bank-of-england-raises-interest-rates",
-  "status": "live",
-  "category": "business",
-  "importance": 5,
   "topic": "Bank of England raises interest rates",
+  "status": "ended",
+  "article": {
+    "slug": "bank-of-england-raises-interest-rates",
+    "reason": "3 new update(s)",
+    "locales": {
+      "de": {
+        "dek": "Die erste Erhöhung seit 2023 kam, als die Bank davor warnte, dass die Inflation bis Mitte 2027 nahe 5 % betragen würde, während die mit dem Irankrieg verbundenen Energiekosten die Preise in die Höhe trieben.",
+        "body": [
+          "Die Bank of England erhöhte ihren Leitzins am 5. November 2026 um einen Viertelprozentpunkt auf 4 % – ihre erste Erhöhung seit mehr als drei Jahren. Euronews berichtete über die Anhebung auf 4 %, Morningstar bezeichnete sie als erste Zinserhöhung seit 2023.",
+          "Die Bank erklärte, die Inflation werde bis Mitte 2027 nahe 5 % erreichen und damit weit über ihrem Ziel liegen. The New York Times berichtete über die Warnung der Bank, dass die Inflation im nächsten Jahr auf etwa 5 % steigen werde, und The Guardian berichtete über dieselbe Prognose für Mitte 2027.",
+          "Euronews berichtete, die Bank of England habe die Zinsen erhöht, um die durch den Irankrieg angeheizten Preise zu dämpfen. Yahoo Finance Canada brachte die Erhöhung um einen Viertelprozentpunkt mit der durch denselben Konflikt geschürten Inflation in Verbindung, während Dawn die stark gestiegenen Energiekosten als Treiber der weltweiten Inflation anführte.",
+          "The Guardian berichtete, die Zinserhöhung sei unwahrscheinlich die letzte, sofern der Irankrieg nicht endet. Die Wirtschaftsredaktion desselben Mediums verfolgte am Entscheidungstag außerdem das Pfund, die Ölpreise, die Inflationsdaten und die Aktienmärkte.",
+          "The Guardian untersuchte gesondert, was die Erhöhung für Wohneigentümer und Sparer bedeutet, einschließlich der Auswirkungen auf Hypotheken- und Sparzinsen. Der Leitzins bestimmt die Kreditkosten für viele Haushalte und Unternehmen, und die Banken können Änderungen an ihre eigenen Kunden weitergeben.",
+          "Die Entscheidung fiel in einer Situation, in der die Bank warnte, dass die Inflation auch 2027 weit über ihrem Ziel bleiben werde. The New York Times berichtete über die Prognose der Bank von rund 5 % für das nächste Jahr, die laut The Guardian bis Mitte 2027 erreicht würde."
+        ],
+        "facts": [
+          "Die Bank of England erhöhte ihren Leitzins am 5. November 2026 um einen Viertelprozentpunkt auf 4 %.",
+          "Es war die erste Zinserhöhung der Bank seit 2023.",
+          "Die Bank erklärte, die Inflation werde bis Mitte 2027 nahe 5 % erreichen.",
+          "Euronews, Yahoo Finance Canada und Dawn brachten die Entscheidung mit den Energiekosten und der Inflation infolge des Irankriegs in Verbindung.",
+          "The Guardian berichtete, die Zinserhöhung sei unwahrscheinlich die letzte, sofern der Irankrieg nicht endet."
+        ],
+        "title": "Bank of England hebt Leitzins um einen Viertelprozentpunkt auf 4 %",
+        "context": "Die Bank of England setzt den Leitzins, der die Kreditkosten in der gesamten britischen Wirtschaft beeinflusst. Ihr Inflationsziel liegt bei 2 %."
+      },
+      "en": {
+        "dek": "The first increase since 2023 came as the bank warned inflation would approach 5% by mid-2027 and energy costs linked to the Iran war pushed up prices.",
+        "body": [
+          "The Bank of England raised its benchmark interest rate by a quarter point to 4% on 5 November 2026, its first increase in more than three years. Euronews reported the move to 4%, and Morningstar described it as the first hike since 2023.",
+          "The bank said inflation would approach 5% by the middle of 2027, far above its target. The New York Times reported the bank's warning that inflation would climb to about 5% next year, and The Guardian reported the same mid-2027 forecast.",
+          "Euronews reported that the Bank of England raised rates to curb rising prices fuelled by the Iran war. Yahoo Finance Canada linked the quarter-point increase to inflation stoked by the same conflict, while Dawn cited soaring energy costs pushing up global inflation.",
+          "The Guardian reported that the rate rise was unlikely to be the last unless the Iran war ends. The same outlet's business coverage also tracked the pound, oil prices, inflation data and stock markets on the decision day.",
+          "The Guardian separately examined what the rise means for homeowners and savers, including the effect on mortgage and savings rates. The benchmark rate sets the cost of borrowing for many households and businesses, and banks can pass changes on to their own customers.",
+          "The decision came as the bank warned that inflation would remain far above its target into 2027. The New York Times reported the bank's forecast of about 5% next year, which The Guardian said would be reached by the middle of 2027."
+        ],
+        "facts": [
+          "The Bank of England raised its benchmark rate by a quarter point to 4% on 5 November 2026.",
+          "It was the bank's first rate increase since 2023.",
+          "The bank said inflation would approach 5% by the middle of 2027.",
+          "Euronews, Yahoo Finance Canada and Dawn linked the decision to energy costs and inflation connected to the Iran war.",
+          "The Guardian reported that the rate rise was unlikely to be the last unless the Iran war ends."
+        ],
+        "title": "Bank of England raises benchmark rate by a quarter point to 4%",
+        "context": "The Bank of England sets the benchmark rate that influences borrowing costs across the UK economy. Its target for inflation is 2%.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [],
+    "updatedAt": "2026-11-05T17:40:05.714Z"
+  },
+  "endedAt": "2026-11-05T17:34:55.612Z",
+  "locales": {
+    "de": {
+      "dek": "Die Bank of England erhöhte ihren Leitzins erstmals seit mehr als drei Jahren auf 4 %, da der Inflationsdruck zunimmt.",
+      "title": "Bank of England erhöht Leitzins"
+    },
+    "en": {
+      "dek": "The Bank of England lifted its key interest rate to 4% for the first time in over three years as inflation pressures mount.",
+      "title": "Bank of England raises interest rates"
+    },
+    "es": {
+      "dek": "El Banco de Inglaterra elevó su tipo de interés clave al 4% por primera vez en más de tres años, en medio de la presión inflacionaria.",
+      "title": "El Banco de Inglaterra sube los tipos de interés"
+    },
+    "fr": {
+      "dek": "La Banque d’Angleterre a relevé son taux directeur à 4 % pour la première fois depuis plus de trois ans, alors que les pressions inflationnistes s’accentuent.",
+      "title": "La Banque d’Angleterre relève ses taux d’intérêt"
+    },
+    "it": {
+      "dek": "La Bank of England ha portato il tasso di riferimento al 4% per la prima volta in oltre tre anni, mentre crescono le pressioni inflationistiche.",
+      "title": "La Bank of England alza i tassi di interesse"
+    },
+    "ja": {
+      "dek": "イングランド銀行は、インフレ圧力が高まる中、3年以上ぶりとなる主要政策金利を4%に引き上げた。",
+      "title": "イングランド銀行が利上げ"
+    },
+    "ko": {
+      "dek": "영국중앙은행은 물가 압력이 커지는 가운데 3년 만에 처음으로 핵심 금리를 4%로 인상했다.",
+      "title": "영국중앙은행, 금리 인상"
+    },
+    "pt": {
+      "dek": "O Banco de Inglaterra elevou a taxa de juro de referência para 4% pela primeira vez em mais de três anos, à medida que a pressão inflacionária se intensifica.",
+      "title": "Banco de Inglaterra sobe os juros"
+    },
+    "zh": {
+      "dek": "通胀压力加剧之际，英格兰银行将关键利率上调至4%，为三年多来首次。",
+      "title": "英格兰银行加息"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-11-05T14:00:12.000Z",
+      "id": "u-1793887212000-89b0",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die Bank of England erhöhte ihren Leitzins am 5. November 2026 um 0,25 Prozentpunkte auf 4 % – die erste Erhöhung seit mehr als drei Jahren. Euronews berichtete über die Anhebung auf 4 %, Morningstar bezeichnete sie als erste Anhebung seit 2023.",
+          "headline": "Bank of England hebt Leitzins um 0,25 Prozentpunkte auf 4 %"
+        },
+        "en": {
+          "body": "The Bank of England raised its benchmark rate by a quarter point to 4% on 5 November 2026, its first increase in more than three years. Euronews reported the move to 4%, and Morningstar described it as the first hike since 2023.",
+          "headline": "Bank of England raises benchmark rate by a quarter point to 4%"
+        },
+        "es": {
+          "body": "El Banco de Inglaterra elevó su tipo de interés rector en 25 puntos básicos hasta el 4% el 5 de noviembre de 2026, su primera subida en más de tres años. Euronews informó del ajuste al 4%, y Morningstar lo describió como la primera subida desde 2023.",
+          "headline": "El Banco de Inglaterra sube el tipo rector en 25 puntos básicos hasta el 4%"
+        },
+        "fr": {
+          "body": "La Banque d’Angleterre a relevé son taux directeur d’un quart de point, à 4 %, le 5 novembre 2026, sa première hausse depuis plus de trois ans. Euronews a fait état de cette hausse à 4 %, et Morningstar l’a décrite comme la première depuis 2023.",
+          "headline": "La Banque d’Angleterre relève son taux directeur d’un quart de point, à 4 %"
+        },
+        "it": {
+          "body": "La Bank of England ha alzato il proprio tasso di riferimento di un quarto di punto al 4% il 5 novembre 2026, il primo aumento da oltre tre anni. Euronews ha riportato il rialzo al 4% e Morningstar lo ha descritto come il primo aumento dal 2023.",
+          "headline": "La Bank of England alza il tasso di riferimento di un quarto di punto al 4%"
+        },
+        "ja": {
+          "body": "イングランド銀行は2026年11月5日、基準金利を0.25ポイント引き上げ4%とした。3年以上ぶりの引き上げとなる。ユロニュースは4%への引き上げを報じ、モーニングスターは2023年以来初の利上げだと説明した。",
+          "headline": "イングランド銀行、基準金利を0.25ポイント引き上げ4%に　3年ぶり初の利上げ"
+        },
+        "ko": {
+          "body": "영란은행은 2026년 11월 5일 기준금리를 0.25%포인트 인상해 4%로 조정했으며, 3년 넘게 만난 첫 인상이다. 유로뉴스는 4%로의 조정을 보도했고, 모닝스타는 2023년 이후 첫 인상이라고 설명했다.",
+          "headline": "영란은행, 기준금리 0.25%포인트 인상해 4%로 조정"
+        },
+        "pt": {
+          "body": "O Banco de Inglaterra elevou a sua taxa de referência em 0,25 pontos para 4% a 5 de novembro de 2026, a primeira subida em mais de três anos. A Euronews reportou a subida para 4%, e a Morningstar descreveu-a como a primeira alta desde 2023.",
+          "headline": "Banco de Inglaterra eleva taxa de referência em 0,25 pontos para 4%"
+        },
+        "zh": {
+          "body": "英格兰银行于2026年11月5日将基准利率上调25个基点至4%，这是三年多来的首次加息。欧洲新闻台报道称此次加息后利率达到4%，晨星公司则称这是自2023年以来首次加息。",
+          "headline": "英格兰银行将基准利率上调25个基点至4%"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/business/2026/nov/05/what-does-interest-rate-rise-mean-for-homeowners-and-savers-mortgages",
+          "title": "What does the UK interest rate rise mean for homeowners and savers?",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-05T14:00:12.000Z"
+        },
+        {
+          "url": "https://www.dawn.com/news/2042350/bank-of-england-lifts-rate-for-first-time-since-2023-to-fight-inflation",
+          "title": "Bank of England lifts rate for first time since 2023 to fight inflation",
+          "outlet": "Dawn",
+          "publishedAt": "2026-11-05T13:06:10.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQM004UTBkVExrNHE0TVBfMU12Qm9vaU9LZUpFNGdzWHF5Yzc2MFZtZjJ2V0RZcUdha0ZhS2tzMTdVWTcwMFlaV2tfUDVid2JUYzhvSzZ0ZkoxdGJMNWZQa2diWUFUOVRJd0huaXBkM2tXcmU0ZktpdDRDdmM2Tms1dFY5Ym5fRDdJeEJsMzZtRW9uX3JuR1R6XzlrNFNRQ2h1UmpmdmZR?oc=5",
+          "title": "Bank of England Raises Interest Rates to 4% in First Hike Since 2023",
+          "outlet": "Morningstar",
+          "publishedAt": "2026-11-05T12:51:10.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd3hvMGQ2aF8yN0FXckZVeDV2SHhDN05nUG0yakFnY0N4ZEhRZWM5dXZJTXhQNnNKcmVmZGc4ckFPMjNWX2JscE5tYUR6UUZZenVDMGg5QWFBc2RCSU4zUHdHb1d0QTg2RzNhVkY1VGxlZ3pTOVIxY2VVSW5veEN3WnAyN0lJUQ?oc=5",
+          "title": "Bank of England raises main interest rate a quarter point to 4% as Iran war stokes inflation",
+          "outlet": "Yahoo! Finance Canada",
+          "publishedAt": "2026-11-05T12:40:55.000Z"
+        },
+        {
+          "url": "https://www.euronews.com/2026/11/05/bank-of-england-raises-key-interest-rate-for-first-time-in-over-3-years",
+          "title": "Bank of England raises key interest rate for first time in over 3 years",
+          "outlet": "Euronews",
+          "publishedAt": "2026-11-05T12:32:38.000Z"
+        }
+      ],
+      "importance": 4
+    },
+    {
+      "at": "2026-11-05T17:03:36.000Z",
+      "id": "u-1793898216000-au89",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Die New York Times berichtete, dass die Bank davor warnte, dass die Inflation im nächsten Jahr auf etwa 5 % steigen würde, weit über ihr Ziel hinaus. Der Guardian schrieb, die Bank of England prognostiziere, dass sich die Inflation bis Mitte 2027 der 5-Prozent-Marke annähern werde.",
+          "headline": "Bank of England: Inflation nähert sich bis Mitte 2027 der 5-Prozent-Marke"
+        },
+        "en": {
+          "body": "The New York Times reported that the bank warned inflation would climb to about 5% next year, far above its target. The Guardian said the Bank of England predicts inflation will approach 5% by the middle of 2027.",
+          "headline": "Bank of England says inflation will approach 5% by mid-2027"
+        },
+        "es": {
+          "body": "The New York Times informó de que el banco advirtió de que la inflación subiría hasta alrededor del 5% el próximo año, muy por encima de su objetivo. The Guardian señaló que el Banco de Inglaterra prevé que la inflación se acerque al 5% a mediados de 2027.",
+          "headline": "El Banco de Inglaterra afirma que la inflación se acercará al 5% a mediados de 2027"
+        },
+        "fr": {
+          "body": "The New York Times a rapporté que la banque avait averti que l’inflation grimperait à environ 5 % l’année prochaine, bien au-dessus de sa cible. The Guardian a indiqué que la Banque d’Angleterre prévoyait une inflation approchant 5 % au milieu de 2027.",
+          "headline": "La Banque d’Angleterre indique que l’inflation approchera 5 % à la mi-2027"
+        },
+        "it": {
+          "body": "Il New York Times ha riportato che la banca ha avvertito che l’inflazione salirà a circa il 5% il prossimo anno, ben al di sopra del suo obiettivo. The Guardian ha detto che la Bank of England prevede che l’inflazione si avvicinerà al 5% entro metà 2027.",
+          "headline": "La Bank of England prevede che l’inflazione si avvicinerà al 5% entro metà 2027"
+        },
+        "ja": {
+          "body": "ニューヨーク・タイムズは、同行が 来年のインフレ率は約5%まで上昇し、目標を大幅に上回ると警告したと報じた。ガーディアンは、イングランド銀行は2027年年中までにインフレ率が5%近傍に達すると予測していると報じた。",
+          "headline": "イングランド銀行、2027年年中までにインフレ率は5%近傍へと予測"
+        },
+        "ko": {
+          "body": "뉴욕타임스는 영란은행이 다음 해 물가상승률이 약 5%까지 오를 것으로 경고했다고 보도했다. 가디언은 영란은행이 2027년 중반까지 물가상승률이 5%에 근접할 것으로 예측한다고 말했다.",
+          "headline": "영란은행, 2027년 중반까지 물가상승률 5%에 근접할 것으로 전망"
+        },
+        "pt": {
+          "body": "O New York Times informou que o banco alertou que a inflação subiria para cerca de 5% no próximo ano, muito acima da sua meta. O Guardian afirmou que o Banco de Inglaterra prevê que a inflação se aproxime dos 5% até meados de 2027.",
+          "headline": "Banco de Inglaterra prevê que a inflação se aproxime dos 5% até meados de 2027"
+        },
+        "zh": {
+          "body": "《纽约时报》报道称，该行警告通胀明年将升至约5%，远高于其目标。《卫报》称，英格兰银行预计通胀到2027年年中将接近5%。",
+          "headline": "英格兰银行称通胀到2027年年中将接近5%"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/business/live/2026/nov/05/bank-of-england-interest-rate-decision-pound-inflation-oil-iran-stock-markets-latest-news-updates",
+          "title": "Today’s UK interest rate rise unlikely to be the last unless Iran war ends; Wall Street slides on AI fears – business live",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-05T17:03:36.000Z"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/11/05/business/bank-of-england-interest-rates-inflation.html",
+          "title": "Bank of England Raises Rates for First Time in Three Years",
+          "outlet": "New York Times",
+          "publishedAt": "2026-11-05T16:53:44.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-05T13:06:10.000Z",
+      "id": "u-1793883970000-zp05",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Euronews berichtete, dass die Bank of England die Zinsen erhöhte, um die durch den Iran-Krieg angeheizten Preise zu dämpfen, und Yahoo Finance Canada brachte die Anhebung um 0,25 Prozentpunkte mit der Inflation in Verbindung, die durch denselben Konflikt geschürt wurde. Dawn nannte stark gestiegene Energiekosten, die die weltweite Inflation nach oben trieben.",
+          "headline": "Iran-Krieg und Energiekosten als Treiber der britischen Inflation genannt"
+        },
+        "en": {
+          "body": "Euronews reported that the Bank of England raised rates to curb rising prices fuelled by the Iran war, and Yahoo Finance Canada linked the quarter-point increase to inflation stoked by the same conflict. Dawn cited soaring energy costs pushing up global inflation.",
+          "headline": "Iran war and energy costs cited as drivers of UK inflation"
+        },
+        "es": {
+          "body": "Euronews informó de que el Banco de Inglaterra subió los tipos para frenar el alza de los precios alimentada por la guerra de Irán, y Yahoo Finance Canada relacionó la subida de 25 puntos básicos con la inflación avivada por el mismo conflicto. Dawn señaló el enorme aumento de los costes energéticos como un factor que impulsa al alza la inflación mundial.",
+          "headline": "La guerra de Irán y los costes energéticos se citan como factores de la inflación en el Reino Unido"
+        },
+        "fr": {
+          "body": "Euronews a rapporté que la Banque d’Angleterre avait relevé ses taux pour freiner la hausse des prix alimentée par la guerre en Iran, tandis que Yahoo Finance Canada a relié la hausse d’un quart de point à l’inflation ravivée par le même conflit. Dawn a cité l’envolée des coûts de l’énergie comme facteur de la hausse de l’inflation mondiale.",
+          "headline": "La guerre en Iran et les coûts de l’énergie cités comme facteurs de l’inflation britannique"
+        },
+        "it": {
+          "body": "Euronews ha riportato che la Bank of England ha alzato i tassi per frenare l’aumento dei prezzi alimentato dalla guerra in Iran, e Yahoo Finance Canada ha collegato l’aumento di un quarto di punto all’inflazione alimentata dallo stesso conflitto. Dawn ha indicato i costi energetici in rialzo come fattori che spingono al rialzo l’inflazione globale.",
+          "headline": "Guerra in Iran e costi energetici indicati come cause dell’inflazione britannica"
+        },
+        "ja": {
+          "body": "ユロニュースは、イラン戦争によって上昇した物価を抑えるためイングランド銀行が金利を引き上げたと報じた。Yahoo Finance Canadaは、同じ戦争が煽ったインフレが0.25ポイントの利上げにつながったとした。ドーンは、エネルギーコストの高騰が世界のインフレを押し上げているとした。",
+          "headline": "イラン戦争とエネルギーコスト、英国インフレの押し上げ要因として指摘"
+        },
+        "ko": {
+          "body": "유로뉴스는 이란 전쟁으로 촉발된 물가 상승을 억제하기 위해 영란은행이 금리를 인상했다고 보도했다. 야후 파이낸스 캐나다는 같은 분쟁이 자극한 물가상승률과 0.25%포인트 인상을 연결해 언급했다. 데인은 급등하는 에너지비가 세계 물가상승률을 끌어올리고 있다고 말했다.",
+          "headline": "이란 전쟁과 에너지비, 영국 물가상승률의 요인으로 지목"
+        },
+        "pt": {
+          "body": "A Euronews informou que o Banco de Inglaterra elevou as taxas para conter a subida dos preços, impulsionada pela guerra no Irão, e a Yahoo Finance Canada associou a subida de 0,25 pontos à inflação avigorada pelo mesmo conflito. A Dawn mencionou a disparada dos custos da energia a empurrar a inflação global.",
+          "headline": "Guerra no Irão e custos da energia apontados como fatores da inflação no Reino Unido"
+        },
+        "zh": {
+          "body": "欧洲新闻台报道称，英格兰银行加息是为了抑制受伊朗战争推高的物价；雅虎财经加拿大将此次上调25个基点与同一冲突加剧的通胀联系起来。《黎明报》称，飙升的能源成本推高了全球通胀。",
+          "headline": "伊朗战争和能源成本被视为英国通胀的推动因素"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.dawn.com/news/2042350/bank-of-england-lifts-rate-for-first-time-since-2023-to-fight-inflation",
+          "title": "Bank of England lifts rate for first time since 2023 to fight inflation",
+          "outlet": "Dawn",
+          "publishedAt": "2026-11-05T13:06:10.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd3hvMGQ2aF8yN0FXckZVeDV2SHhDN05nUG0yakFnY0N4ZEhRZWM5dXZJTXhQNnNKcmVmZGc4ckFPMjNWX2JscE5tYUR6UUZZenVDMGg5QWFBc2RCSU4zUHdHb1d0QTg2RzNhVkY1VGxlZ3pTOVIxY2VVSW5veEN3WnAyN0lJUQ?oc=5",
+          "title": "Bank of England raises main interest rate a quarter point to 4% as Iran war stokes inflation",
+          "outlet": "Yahoo! Finance Canada",
+          "publishedAt": "2026-11-05T12:40:55.000Z"
+        },
+        {
+          "url": "https://www.euronews.com/2026/11/05/bank-of-england-raises-key-interest-rate-for-first-time-in-over-3-years",
+          "title": "Bank of England raises key interest rate for first time in over 3 years",
+          "outlet": "Euronews",
+          "publishedAt": "2026-11-05T12:32:38.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "business",
   "keywords": [
     "bank of england",
     "interest rate",
@@ -15,212 +316,6 @@
     "andrew bailey",
     "sterling",
     "mortgage"
-  ],
-  "startedAt": "2026-11-05T17:27:20.099Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-05T17:34:55.612Z",
-  "articleSlug": "bank-of-england-raises-interest-rates",
-  "sourceCount": 6,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1793887212000-89b0",
-      "at": "2026-11-05T14:00:12.000Z",
-      "kind": "result",
-      "importance": 4,
-      "locales": {
-        "en": {
-          "headline": "Bank of England raises benchmark rate by a quarter point to 4%",
-          "body": "The Bank of England raised its benchmark rate by a quarter point to 4% on 5 November 2026, its first increase in more than three years. Euronews reported the move to 4%, and Morningstar described it as the first hike since 2023."
-        },
-        "es": {
-          "headline": "El Banco de Inglaterra sube el tipo rector en 25 puntos básicos hasta el 4%",
-          "body": "El Banco de Inglaterra elevó su tipo de interés rector en 25 puntos básicos hasta el 4% el 5 de noviembre de 2026, su primera subida en más de tres años. Euronews informó del ajuste al 4%, y Morningstar lo describió como la primera subida desde 2023."
-        },
-        "fr": {
-          "headline": "La Banque d’Angleterre relève son taux directeur d’un quart de point, à 4 %",
-          "body": "La Banque d’Angleterre a relevé son taux directeur d’un quart de point, à 4 %, le 5 novembre 2026, sa première hausse depuis plus de trois ans. Euronews a fait état de cette hausse à 4 %, et Morningstar l’a décrite comme la première depuis 2023."
-        },
-        "it": {
-          "headline": "La Bank of England alza il tasso di riferimento di un quarto di punto al 4%",
-          "body": "La Bank of England ha alzato il proprio tasso di riferimento di un quarto di punto al 4% il 5 novembre 2026, il primo aumento da oltre tre anni. Euronews ha riportato il rialzo al 4% e Morningstar lo ha descritto come il primo aumento dal 2023."
-        },
-        "de": {
-          "headline": "Bank of England hebt Leitzins um 0,25 Prozentpunkte auf 4 %",
-          "body": "Die Bank of England erhöhte ihren Leitzins am 5. November 2026 um 0,25 Prozentpunkte auf 4 % – die erste Erhöhung seit mehr als drei Jahren. Euronews berichtete über die Anhebung auf 4 %, Morningstar bezeichnete sie als erste Anhebung seit 2023."
-        },
-        "pt": {
-          "headline": "Banco de Inglaterra eleva taxa de referência em 0,25 pontos para 4%",
-          "body": "O Banco de Inglaterra elevou a sua taxa de referência em 0,25 pontos para 4% a 5 de novembro de 2026, a primeira subida em mais de três anos. A Euronews reportou a subida para 4%, e a Morningstar descreveu-a como a primeira alta desde 2023."
-        },
-        "zh": {
-          "headline": "英格兰银行将基准利率上调25个基点至4%",
-          "body": "英格兰银行于2026年11月5日将基准利率上调25个基点至4%，这是三年多来的首次加息。欧洲新闻台报道称此次加息后利率达到4%，晨星公司则称这是自2023年以来首次加息。"
-        },
-        "ja": {
-          "headline": "イングランド銀行、基準金利を0.25ポイント引き上げ4%に　3年ぶり初の利上げ",
-          "body": "イングランド銀行は2026年11月5日、基準金利を0.25ポイント引き上げ4%とした。3年以上ぶりの引き上げとなる。ユロニュースは4%への引き上げを報じ、モーニングスターは2023年以来初の利上げだと説明した。"
-        },
-        "ko": {
-          "headline": "영란은행, 기준금리 0.25%포인트 인상해 4%로 조정",
-          "body": "영란은행은 2026년 11월 5일 기준금리를 0.25%포인트 인상해 4%로 조정했으며, 3년 넘게 만난 첫 인상이다. 유로뉴스는 4%로의 조정을 보도했고, 모닝스타는 2023년 이후 첫 인상이라고 설명했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Guardian",
-          "title": "What does the UK interest rate rise mean for homeowners and savers?",
-          "url": "https://www.theguardian.com/business/2026/nov/05/what-does-interest-rate-rise-mean-for-homeowners-and-savers-mortgages",
-          "publishedAt": "2026-11-05T14:00:12.000Z"
-        },
-        {
-          "outlet": "Dawn",
-          "title": "Bank of England lifts rate for first time since 2023 to fight inflation",
-          "url": "https://www.dawn.com/news/2042350/bank-of-england-lifts-rate-for-first-time-since-2023-to-fight-inflation",
-          "publishedAt": "2026-11-05T13:06:10.000Z"
-        },
-        {
-          "outlet": "Morningstar",
-          "title": "Bank of England Raises Interest Rates to 4% in First Hike Since 2023",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQM004UTBkVExrNHE0TVBfMU12Qm9vaU9LZUpFNGdzWHF5Yzc2MFZtZjJ2V0RZcUdha0ZhS2tzMTdVWTcwMFlaV2tfUDVid2JUYzhvSzZ0ZkoxdGJMNWZQa2diWUFUOVRJd0huaXBkM2tXcmU0ZktpdDRDdmM2Tms1dFY5Ym5fRDdJeEJsMzZtRW9uX3JuR1R6XzlrNFNRQ2h1UmpmdmZR?oc=5",
-          "publishedAt": "2026-11-05T12:51:10.000Z"
-        },
-        {
-          "outlet": "Yahoo! Finance Canada",
-          "title": "Bank of England raises main interest rate a quarter point to 4% as Iran war stokes inflation",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd3hvMGQ2aF8yN0FXckZVeDV2SHhDN05nUG0yakFnY0N4ZEhRZWM5dXZJTXhQNnNKcmVmZGc4ckFPMjNWX2JscE5tYUR6UUZZenVDMGg5QWFBc2RCSU4zUHdHb1d0QTg2RzNhVkY1VGxlZ3pTOVIxY2VVSW5veEN3WnAyN0lJUQ?oc=5",
-          "publishedAt": "2026-11-05T12:40:55.000Z"
-        },
-        {
-          "outlet": "Euronews",
-          "title": "Bank of England raises key interest rate for first time in over 3 years",
-          "url": "https://www.euronews.com/2026/11/05/bank-of-england-raises-key-interest-rate-for-first-time-in-over-3-years",
-          "publishedAt": "2026-11-05T12:32:38.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793898216000-au89",
-      "at": "2026-11-05T17:03:36.000Z",
-      "kind": "statement",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Bank of England says inflation will approach 5% by mid-2027",
-          "body": "The New York Times reported that the bank warned inflation would climb to about 5% next year, far above its target. The Guardian said the Bank of England predicts inflation will approach 5% by the middle of 2027."
-        },
-        "es": {
-          "headline": "El Banco de Inglaterra afirma que la inflación se acercará al 5% a mediados de 2027",
-          "body": "The New York Times informó de que el banco advirtió de que la inflación subiría hasta alrededor del 5% el próximo año, muy por encima de su objetivo. The Guardian señaló que el Banco de Inglaterra prevé que la inflación se acerque al 5% a mediados de 2027."
-        },
-        "fr": {
-          "headline": "La Banque d’Angleterre indique que l’inflation approchera 5 % à la mi-2027",
-          "body": "The New York Times a rapporté que la banque avait averti que l’inflation grimperait à environ 5 % l’année prochaine, bien au-dessus de sa cible. The Guardian a indiqué que la Banque d’Angleterre prévoyait une inflation approchant 5 % au milieu de 2027."
-        },
-        "it": {
-          "headline": "La Bank of England prevede che l’inflazione si avvicinerà al 5% entro metà 2027",
-          "body": "Il New York Times ha riportato che la banca ha avvertito che l’inflazione salirà a circa il 5% il prossimo anno, ben al di sopra del suo obiettivo. The Guardian ha detto che la Bank of England prevede che l’inflazione si avvicinerà al 5% entro metà 2027."
-        },
-        "de": {
-          "headline": "Bank of England: Inflation nähert sich bis Mitte 2027 der 5-Prozent-Marke",
-          "body": "Die New York Times berichtete, dass die Bank davor warnte, dass die Inflation im nächsten Jahr auf etwa 5 % steigen würde, weit über ihr Ziel hinaus. Der Guardian schrieb, die Bank of England prognostiziere, dass sich die Inflation bis Mitte 2027 der 5-Prozent-Marke annähern werde."
-        },
-        "pt": {
-          "headline": "Banco de Inglaterra prevê que a inflação se aproxime dos 5% até meados de 2027",
-          "body": "O New York Times informou que o banco alertou que a inflação subiria para cerca de 5% no próximo ano, muito acima da sua meta. O Guardian afirmou que o Banco de Inglaterra prevê que a inflação se aproxime dos 5% até meados de 2027."
-        },
-        "zh": {
-          "headline": "英格兰银行称通胀到2027年年中将接近5%",
-          "body": "《纽约时报》报道称，该行警告通胀明年将升至约5%，远高于其目标。《卫报》称，英格兰银行预计通胀到2027年年中将接近5%。"
-        },
-        "ja": {
-          "headline": "イングランド銀行、2027年年中までにインフレ率は5%近傍へと予測",
-          "body": "ニューヨーク・タイムズは、同行が 来年のインフレ率は約5%まで上昇し、目標を大幅に上回ると警告したと報じた。ガーディアンは、イングランド銀行は2027年年中までにインフレ率が5%近傍に達すると予測していると報じた。"
-        },
-        "ko": {
-          "headline": "영란은행, 2027년 중반까지 물가상승률 5%에 근접할 것으로 전망",
-          "body": "뉴욕타임스는 영란은행이 다음 해 물가상승률이 약 5%까지 오를 것으로 경고했다고 보도했다. 가디언은 영란은행이 2027년 중반까지 물가상승률이 5%에 근접할 것으로 예측한다고 말했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Guardian",
-          "title": "Today’s UK interest rate rise unlikely to be the last unless Iran war ends; Wall Street slides on AI fears – business live",
-          "url": "https://www.theguardian.com/business/live/2026/nov/05/bank-of-england-interest-rate-decision-pound-inflation-oil-iran-stock-markets-latest-news-updates",
-          "publishedAt": "2026-11-05T17:03:36.000Z"
-        },
-        {
-          "outlet": "New York Times",
-          "title": "Bank of England Raises Rates for First Time in Three Years",
-          "url": "https://www.nytimes.com/2026/11/05/business/bank-of-england-interest-rates-inflation.html",
-          "publishedAt": "2026-11-05T16:53:44.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793883970000-zp05",
-      "at": "2026-11-05T13:06:10.000Z",
-      "kind": "context",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Iran war and energy costs cited as drivers of UK inflation",
-          "body": "Euronews reported that the Bank of England raised rates to curb rising prices fuelled by the Iran war, and Yahoo Finance Canada linked the quarter-point increase to inflation stoked by the same conflict. Dawn cited soaring energy costs pushing up global inflation."
-        },
-        "es": {
-          "headline": "La guerra de Irán y los costes energéticos se citan como factores de la inflación en el Reino Unido",
-          "body": "Euronews informó de que el Banco de Inglaterra subió los tipos para frenar el alza de los precios alimentada por la guerra de Irán, y Yahoo Finance Canada relacionó la subida de 25 puntos básicos con la inflación avivada por el mismo conflicto. Dawn señaló el enorme aumento de los costes energéticos como un factor que impulsa al alza la inflación mundial."
-        },
-        "fr": {
-          "headline": "La guerre en Iran et les coûts de l’énergie cités comme facteurs de l’inflation britannique",
-          "body": "Euronews a rapporté que la Banque d’Angleterre avait relevé ses taux pour freiner la hausse des prix alimentée par la guerre en Iran, tandis que Yahoo Finance Canada a relié la hausse d’un quart de point à l’inflation ravivée par le même conflit. Dawn a cité l’envolée des coûts de l’énergie comme facteur de la hausse de l’inflation mondiale."
-        },
-        "it": {
-          "headline": "Guerra in Iran e costi energetici indicati come cause dell’inflazione britannica",
-          "body": "Euronews ha riportato che la Bank of England ha alzato i tassi per frenare l’aumento dei prezzi alimentato dalla guerra in Iran, e Yahoo Finance Canada ha collegato l’aumento di un quarto di punto all’inflazione alimentata dallo stesso conflitto. Dawn ha indicato i costi energetici in rialzo come fattori che spingono al rialzo l’inflazione globale."
-        },
-        "de": {
-          "headline": "Iran-Krieg und Energiekosten als Treiber der britischen Inflation genannt",
-          "body": "Euronews berichtete, dass die Bank of England die Zinsen erhöhte, um die durch den Iran-Krieg angeheizten Preise zu dämpfen, und Yahoo Finance Canada brachte die Anhebung um 0,25 Prozentpunkte mit der Inflation in Verbindung, die durch denselben Konflikt geschürt wurde. Dawn nannte stark gestiegene Energiekosten, die die weltweite Inflation nach oben trieben."
-        },
-        "pt": {
-          "headline": "Guerra no Irão e custos da energia apontados como fatores da inflação no Reino Unido",
-          "body": "A Euronews informou que o Banco de Inglaterra elevou as taxas para conter a subida dos preços, impulsionada pela guerra no Irão, e a Yahoo Finance Canada associou a subida de 0,25 pontos à inflação avigorada pelo mesmo conflito. A Dawn mencionou a disparada dos custos da energia a empurrar a inflação global."
-        },
-        "zh": {
-          "headline": "伊朗战争和能源成本被视为英国通胀的推动因素",
-          "body": "欧洲新闻台报道称，英格兰银行加息是为了抑制受伊朗战争推高的物价；雅虎财经加拿大将此次上调25个基点与同一冲突加剧的通胀联系起来。《黎明报》称，飙升的能源成本推高了全球通胀。"
-        },
-        "ja": {
-          "headline": "イラン戦争とエネルギーコスト、英国インフレの押し上げ要因として指摘",
-          "body": "ユロニュースは、イラン戦争によって上昇した物価を抑えるためイングランド銀行が金利を引き上げたと報じた。Yahoo Finance Canadaは、同じ戦争が煽ったインフレが0.25ポイントの利上げにつながったとした。ドーンは、エネルギーコストの高騰が世界のインフレを押し上げているとした。"
-        },
-        "ko": {
-          "headline": "이란 전쟁과 에너지비, 영국 물가상승률의 요인으로 지목",
-          "body": "유로뉴스는 이란 전쟁으로 촉발된 물가 상승을 억제하기 위해 영란은행이 금리를 인상했다고 보도했다. 야후 파이낸스 캐나다는 같은 분쟁이 자극한 물가상승률과 0.25%포인트 인상을 연결해 언급했다. 데인은 급등하는 에너지비가 세계 물가상승률을 끌어올리고 있다고 말했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Dawn",
-          "title": "Bank of England lifts rate for first time since 2023 to fight inflation",
-          "url": "https://www.dawn.com/news/2042350/bank-of-england-lifts-rate-for-first-time-since-2023-to-fight-inflation",
-          "publishedAt": "2026-11-05T13:06:10.000Z"
-        },
-        {
-          "outlet": "Yahoo! Finance Canada",
-          "title": "Bank of England raises main interest rate a quarter point to 4% as Iran war stokes inflation",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd3hvMGQ2aF8yN0FXckZVeDV2SHhDN05nUG0yakFnY0N4ZEhRZWM5dXZJTXhQNnNKcmVmZGc4ckFPMjNWX2JscE5tYUR6UUZZenVDMGg5QWFBc2RCSU4zUHdHb1d0QTg2RzNhVkY1VGxlZ3pTOVIxY2VVSW5veEN3WnAyN0lJUQ?oc=5",
-          "publishedAt": "2026-11-05T12:40:55.000Z"
-        },
-        {
-          "outlet": "Euronews",
-          "title": "Bank of England raises key interest rate for first time in over 3 years",
-          "url": "https://www.euronews.com/2026/11/05/bank-of-england-raises-key-interest-rate-for-first-time-in-over-3-years",
-          "publishedAt": "2026-11-05T12:32:38.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.lemonde.fr/en/international/article/2026/11/05/paraguay-s-president-resigns-amid-banking-scandal_6772834_4.html",
@@ -245,106 +340,11 @@
     "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZ0E0NnMxbFZGWXZlNnN5bW5lZ1JHdXlHaF82aG5XcjBFQnhVR3hZdVpTT1NoWGgzbmhqdXJpak51SXJWQVowNjMtOTZCUjdfaFhjLTlEeVE4SldKb1FNM0RXQUlHOTlxaTkxYnkwUjlRRkNxMVNOS1hfX3BESVlsWnB2UEpWejU2TnJJVXk4azkyc3IzSVNraFMwNUxKbGV2Z3lUNTJPY282NGhjTDRyU1k1dU90TnNUb1RoV3dn?oc=5",
     "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNXFiWE5sMHpSWTZBdVpnb0F4X3IyQTlKS2V2bzl5anpxTTJxYjFCeEFlM3hFeldYd3RHNFVfaHJ6WXpUeFFraVdYaklEYVlMajlHWF92WGEtMUpkYWpnYzRqdUJEOWRGRUotdlpkVmhUdGl0eS11MmMwcENSWVN5WTU4U1J5Z3g4WDkydmpuYjBqc2F2eGx1eFlXcHV6WTBWOVdpVGxkQk53a0c1SE13N1EwMUQ3WnRPc20w?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Bank of England raises interest rates",
-      "dek": "The Bank of England lifted its key interest rate to 4% for the first time in over three years as inflation pressures mount."
-    },
-    "es": {
-      "title": "El Banco de Inglaterra sube los tipos de interés",
-      "dek": "El Banco de Inglaterra elevó su tipo de interés clave al 4% por primera vez en más de tres años, en medio de la presión inflacionaria."
-    },
-    "de": {
-      "title": "Bank of England erhöht Leitzins",
-      "dek": "Die Bank of England erhöhte ihren Leitzins erstmals seit mehr als drei Jahren auf 4 %, da der Inflationsdruck zunimmt."
-    },
-    "fr": {
-      "title": "La Banque d’Angleterre relève ses taux d’intérêt",
-      "dek": "La Banque d’Angleterre a relevé son taux directeur à 4 % pour la première fois depuis plus de trois ans, alors que les pressions inflationnistes s’accentuent."
-    },
-    "zh": {
-      "title": "英格兰银行加息",
-      "dek": "通胀压力加剧之际，英格兰银行将关键利率上调至4%，为三年多来首次。"
-    },
-    "ja": {
-      "title": "イングランド銀行が利上げ",
-      "dek": "イングランド銀行は、インフレ圧力が高まる中、3年以上ぶりとなる主要政策金利を4%に引き上げた。"
-    },
-    "pt": {
-      "title": "Banco de Inglaterra sobe os juros",
-      "dek": "O Banco de Inglaterra elevou a taxa de juro de referência para 4% pela primeira vez em mais de três anos, à medida que a pressão inflacionária se intensifica."
-    },
-    "ko": {
-      "title": "영국중앙은행, 금리 인상",
-      "dek": "영국중앙은행은 물가 압력이 커지는 가운데 3년 만에 처음으로 핵심 금리를 4%로 인상했다."
-    },
-    "it": {
-      "title": "La Bank of England alza i tassi di interesse",
-      "dek": "La Bank of England ha portato il tasso di riferimento al 4% per la prima volta in oltre tre anni, mentre crescono le pressioni inflationistiche."
-    }
-  },
-  "article": {
-    "slug": "bank-of-england-raises-interest-rates",
-    "updatedAt": "2026-11-05T17:40:05.714Z",
-    "reason": "3 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Bank of England raises benchmark rate by a quarter point to 4%",
-        "dek": "The first increase since 2023 came as the bank warned inflation would approach 5% by mid-2027 and energy costs linked to the Iran war pushed up prices.",
-        "facts": [
-          "The Bank of England raised its benchmark rate by a quarter point to 4% on 5 November 2026.",
-          "It was the bank's first rate increase since 2023.",
-          "The bank said inflation would approach 5% by the middle of 2027.",
-          "Euronews, Yahoo Finance Canada and Dawn linked the decision to energy costs and inflation connected to the Iran war.",
-          "The Guardian reported that the rate rise was unlikely to be the last unless the Iran war ends."
-        ],
-        "body": [
-          "The Bank of England raised its benchmark interest rate by a quarter point to 4% on 5 November 2026, its first increase in more than three years. Euronews reported the move to 4%, and Morningstar described it as the first hike since 2023.",
-          "The bank said inflation would approach 5% by the middle of 2027, far above its target. The New York Times reported the bank's warning that inflation would climb to about 5% next year, and The Guardian reported the same mid-2027 forecast.",
-          "Euronews reported that the Bank of England raised rates to curb rising prices fuelled by the Iran war. Yahoo Finance Canada linked the quarter-point increase to inflation stoked by the same conflict, while Dawn cited soaring energy costs pushing up global inflation.",
-          "The Guardian reported that the rate rise was unlikely to be the last unless the Iran war ends. The same outlet's business coverage also tracked the pound, oil prices, inflation data and stock markets on the decision day.",
-          "The Guardian separately examined what the rise means for homeowners and savers, including the effect on mortgage and savings rates. The benchmark rate sets the cost of borrowing for many households and businesses, and banks can pass changes on to their own customers.",
-          "The decision came as the bank warned that inflation would remain far above its target into 2027. The New York Times reported the bank's forecast of about 5% next year, which The Guardian said would be reached by the middle of 2027."
-        ],
-        "context": "The Bank of England sets the benchmark rate that influences borrowing costs across the UK economy. Its target for inflation is 2%.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Bank of England hebt Leitzins um einen Viertelprozentpunkt auf 4 %",
-        "dek": "Die erste Erhöhung seit 2023 kam, als die Bank davor warnte, dass die Inflation bis Mitte 2027 nahe 5 % betragen würde, während die mit dem Irankrieg verbundenen Energiekosten die Preise in die Höhe trieben.",
-        "facts": [
-          "Die Bank of England erhöhte ihren Leitzins am 5. November 2026 um einen Viertelprozentpunkt auf 4 %.",
-          "Es war die erste Zinserhöhung der Bank seit 2023.",
-          "Die Bank erklärte, die Inflation werde bis Mitte 2027 nahe 5 % erreichen.",
-          "Euronews, Yahoo Finance Canada und Dawn brachten die Entscheidung mit den Energiekosten und der Inflation infolge des Irankriegs in Verbindung.",
-          "The Guardian berichtete, die Zinserhöhung sei unwahrscheinlich die letzte, sofern der Irankrieg nicht endet."
-        ],
-        "body": [
-          "Die Bank of England erhöhte ihren Leitzins am 5. November 2026 um einen Viertelprozentpunkt auf 4 % – ihre erste Erhöhung seit mehr als drei Jahren. Euronews berichtete über die Anhebung auf 4 %, Morningstar bezeichnete sie als erste Zinserhöhung seit 2023.",
-          "Die Bank erklärte, die Inflation werde bis Mitte 2027 nahe 5 % erreichen und damit weit über ihrem Ziel liegen. The New York Times berichtete über die Warnung der Bank, dass die Inflation im nächsten Jahr auf etwa 5 % steigen werde, und The Guardian berichtete über dieselbe Prognose für Mitte 2027.",
-          "Euronews berichtete, die Bank of England habe die Zinsen erhöht, um die durch den Irankrieg angeheizten Preise zu dämpfen. Yahoo Finance Canada brachte die Erhöhung um einen Viertelprozentpunkt mit der durch denselben Konflikt geschürten Inflation in Verbindung, während Dawn die stark gestiegenen Energiekosten als Treiber der weltweiten Inflation anführte.",
-          "The Guardian berichtete, die Zinserhöhung sei unwahrscheinlich die letzte, sofern der Irankrieg nicht endet. Die Wirtschaftsredaktion desselben Mediums verfolgte am Entscheidungstag außerdem das Pfund, die Ölpreise, die Inflationsdaten und die Aktienmärkte.",
-          "The Guardian untersuchte gesondert, was die Erhöhung für Wohneigentümer und Sparer bedeutet, einschließlich der Auswirkungen auf Hypotheken- und Sparzinsen. Der Leitzins bestimmt die Kreditkosten für viele Haushalte und Unternehmen, und die Banken können Änderungen an ihre eigenen Kunden weitergeben.",
-          "Die Entscheidung fiel in einer Situation, in der die Bank warnte, dass die Inflation auch 2027 weit über ihrem Ziel bleiben werde. The New York Times berichtete über die Prognose der Bank von rund 5 % für das nächste Jahr, die laut The Guardian bis Mitte 2027 erreicht würde."
-        ],
-        "context": "Die Bank of England setzt den Leitzins, der die Kreditkosten in der gesamten britischen Wirtschaft beeinflusst. Ihr Inflationsziel liegt bei 2 %."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Euronews",
-      "The Guardian",
-      "New York Times",
-      "Dawn",
-      "The New York Times",
-      "Morningstar",
-      "Yahoo Finance Singapore",
-      "Yahoo! Finance Canada"
-    ],
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
-  }
+  "startedAt": "2026-11-05T17:27:20.099Z",
+  "updatedAt": "2026-11-06T06:08:16.527Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": "bank-of-england-raises-interest-rates",
+  "sourceCount": 6,
+  "seenHeadlines": []
 }
