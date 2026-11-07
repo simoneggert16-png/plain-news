@@ -12,7 +12,7 @@
       "STAT News"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash"
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
   },
   "slug": "2026-us-midterm-elections-aftermath",
   "topic": "2026 US midterm elections aftermath",
@@ -25,8 +25,8 @@
       "title": "Folgen der US-Zwischenwahlen 2026"
     },
     "en": {
-      "dek": "The 2026 US mid-term elections delivered a Democratic congressional majority and major GOP losses, prompting shake-ups and policy shifts in the Trump administration.",
-      "title": "Aftermath of the 2026 US mid-term elections"
+      "title": "Aftermath of the 2026 US midterm elections",
+      "dek": "The 2026 US midterm elections delivered a Democratic congressional majority and major GOP losses, prompting shake-ups and policy shifts in the Trump administration."
     },
     "es": {
       "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos dieron lugar a una mayoría democrats en el Congreso y a importantes pérdidas para el Partido Republicano, lo que provocó reorganizaciones y cambios de política en la administración de Trump.",
@@ -59,56 +59,178 @@
   },
   "updates": [
     {
-      "id": "u-1794010100000-ujz7",
-      "at": "2026-11-07T00:08:20.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Mississippi Senate race margin razor-thin between Hyde-Smith and Colom",
-          "body": "Republican Sen. Cindy Hyde-Smith and Democrat Scott Colom are separated by a razor-thin margin in Mississippi's Senate race, according to NPR. The Hill reported Hyde-Smith is fighting for her seat as Colom threatens an upset. NPR reported that the number of outstanding ballots in the race is not known."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Hill",
-          "title": "How Scott Colom turned his Mississippi Senate race into a nail-biter",
-          "url": "https://thehill.com/homenews/senate/6205607-hyde-smith-colom-mississippi-senate/",
-          "publishedAt": "2026-11-07T00:08:20.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "No one knows how many ballots are outstanding in Mississippi's Senate race",
-          "url": "https://www.npr.org/2026/11/06/nx-s1-6030645/mississippi-senate-results-provisional-ballots",
-          "publishedAt": "2026-11-06T19:50:14.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1793997490000-6s5l",
-      "at": "2026-11-06T20:38:10.000Z",
+      "id": "u-1794012997000-kh5l",
+      "at": "2026-11-07T00:56:37.000Z",
       "kind": "statement",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Zelensky says intelligence shows Russia planning new strikes on energy grid",
-          "body": "Ukrainian President Volodymyr Zelensky said on Friday that intelligence shows Russian forces are preparing new strikes on energy infrastructure and bridges across the Dnipro River, according to The Kyiv Post. The Straits Times reported Zelensky said the Ukrainian military is braced for a tough mission."
+          "headline": "Trump announced Ukraine agreement; Zelensky and Kremlin responded",
+          "body": "SRF reported that Trump announced a Ukraine agreement and that Kremlin spokesman Dmitri Peskow said Europe shows no willingness to discuss a future security architecture. Kyiv Post reported that Zelensky warned Washington’s proposed Europe-Russia security framework could be dangerous and risks dividing the continent."
+        },
+        "fr": {
+          "headline": "Trump annonce un accord sur l’Ukraine ; Zelensky et le Kremlin réagissent",
+          "body": "SRF a rapporté que Trump a annoncé un accord concernant l’Ukraine et que Dmitri Peskov, porte-parole du Kremlin, a déclaré que l’Europe ne montre aucune volonté de discuter d’une future architecture de sécurité. Kyiv Post a rapporté que Zelensky a averti que le cadre de sécurité Europe-Russie proposé par Washington pourrait être dangereux et risquerait de diviser le continent."
+        },
+        "it": {
+          "headline": "Trump ha annunciato un accordo per l'Ucraina; Zelensky e il Cremlino hanno risposto",
+          "body": "SRF ha riportato che Trump ha annunciato un accordo per l'Ucraina e che il portavoce del Cremlino Dmitri Peskow ha detto che l'Europa non mostra disponibilità a discutere una futura architettura di sicurezza. Kyiv Post ha riportato che Zelensky ha avvertito che il quadro di sicurezza Europa-Russia proposto da Washington potrebbe essere pericoloso e rischia di dividere il continente."
+        },
+        "es": {
+          "headline": "Trump anunció un acuerdo sobre Ucrania; Zelenski y el Kremlin respondieron",
+          "body": "SRF informó de que Trump anunció un acuerdo sobre Ucrania y que el porta-voz del Kremlin, Dmitri Peskov, afirmó que Europa no muestra voluntad de discutir una futura arquitectura de seguridad. Kyiv Post informó de que Zelenski advirtió de que el marco de seguridad entre Europa y Rusia propuesto por Washington podría ser peligroso y arriesga dividir el continente."
+        },
+        "de": {
+          "headline": "Trump kündigt Ukraine-Abkommen an; Zelensky und Kreml reagieren",
+          "body": "Die SRF berichtete, Trump habe ein Abkommen zur Ukraine angekündigt und Kreml-Sprecher Dmitri Peskow habe gesagt, Europa zeige keine Bereitschaft, über eine künftige Sicherheitsarchitektur zu sprechen. Die Kyiv Post berichtete, Zelensky habe gewarnt, dass Washingtons vorgeschlagener Sicherheitsrahmen für Europa und Russland gefährlich sei und das Risiko berge, den Kontinent zu spalten."
+        },
+        "pt": {
+          "headline": "Trump anunciou um acordo sobre a Ucrânia; Zelensky e o Kremlin responderam",
+          "body": "A SRF informou que Trump anunciou um acordo sobre a Ucrânia e que o porta-voz do Kremlin, Dmitri Peskov, afirmou que a Europa não manifesta disponibilidade para discutir uma futura arquitetura de segurança. O Kyiv Post informou que Zelensky advertiu que o quadro de segurança proposto por Washington para a Europa e a Rússia pode ser perigoso e traz o risco de dividir o continente."
+        },
+        "zh": {
+          "headline": "特朗普宣布达成乌克兰协议；泽连斯基与克里姆林宫回应",
+          "body": "SRF报道称，特朗普宣布达成一项乌克兰协议，克里姆林宫发言人德米特里·佩斯科夫表示，欧洲方面不愿讨论未来的安全架构。《基辅邮报》报道称，泽连斯基警告说，华盛顿提出的欧俄安全框架可能十分危险，并有可能导致欧洲分裂。"
+        },
+        "ko": {
+          "headline": "트럼프, 우크라이나 합의 발표…젤렌스키와 크렘린은 반응",
+          "body": "SRF는 트럼프가 우크라이나 합의를 발표했으며, 크렘린 스포크스맨 드미트리 페스코프는 유럽이 향후 안전 구조를 논의하려는 의사를 보이지 않는다고 말했다고 보도했다. 키우 포스트는 젤렌스키가 워싱턴이 제안한 유럽-러시아 안전 구상이 위험할 수 있으며 대륙을 분할할 위험이 있다고 경고했다고 보도했다."
+        },
+        "ja": {
+          "headline": "トランプがウクライナ合意を発表、ゼenskyと克里ミリンが反応",
+          "body": "SRFによると、トランプはウクライナ合意を発表した。克里ミリンの发言人ドミトリー・ペスコフは、ヨーロッパは将来の安全保障アーキテクチャについて協議する意思を示していないと述べた。Kyiv Postによると、ゼenskyは、ワシントンが提案した欧州とロシアの安全保障の枠組みは危険であり、欧州大陸を分断する恐れがあると警告した。"
         }
       },
       "sources": [
         {
-          "outlet": "The Straits Times",
-          "title": "Ukraine's Zelenskiy: Russian forces plan new strikes on energy targets, bridges, infrastructure",
+          "outlet": "The Kyiv Post",
+          "title": "‘We Don’t Want Yalta 2.0’: Zelensky Warns Trump’s Russia-Europe Security Deal Could Be ‘Dangerous’",
+          "url": "https://www.kyivpost.com/post/89405",
+          "publishedAt": "2026-11-07T00:56:37.000Z"
+        },
+        {
+          "outlet": "SRF",
+          "title": "Krieg in der Ukraine – Trump kündigt Ukraine-Abkommen an – Kreml dämpft Erwartungen",
+          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-trump-kuendigt-ukraine-abkommen-an-kreml-daempft-erwartungen",
+          "publishedAt": "2026-11-06T19:32:55.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-07T00:08:20.000Z",
+      "id": "u-1794010100000-ujz7",
+      "kind": "result",
+      "locales": {
+        "en": {
+          "body": "Republican Sen. Cindy Hyde-Smith and Democrat Scott Colom are separated by a razor-thin margin in Mississippi's Senate race, according to NPR. The Hill reported Hyde-Smith is fighting for her seat as Colom threatens an upset. NPR reported that the number of outstanding ballots in the race is not known.",
+          "headline": "Mississippi Senate race margin razor-thin between Hyde-Smith and Colom"
+        },
+        "fr": {
+          "headline": "Élections au Sénat du Mississippi : Hyde-Smith et Colom séparés par une marge infime",
+          "body": "La sénatrice républicaine Cindy Hyde-Smith et le sénateur démocrate Scott Colom sont séparés par une marge infime dans la course au Sénat du Mississippi, selon NPR. The Hill a rapporté que Hyde-Smith se bat pour conserver son siège, tandis que Colom menace de provoquer une surprise. NPR a rapporté que le nombre de bulletins restant à dépouiller dans cette course est inconnu."
+        },
+        "it": {
+          "headline": "Scarto minimo nella corsa al Senato del Mississippi tra Hyde-Smith e Colom",
+          "body": "Secondo NPR, la senatrice repubblicana Cindy Hyde-Smith e il democratico Scott Colom sono separati da uno scarto minimo nella corsa al Senato del Mississippi. The Hill ha riportato che Hyde-Smith combatte per difendere il suo seggio, mentre Colom minaccia di portare a una sorpresa elettorale. NPR ha riportato che non è noto il numero di schede non ancora scrutinizzate nella corsa."
+        },
+        "es": {
+          "headline": "La carrera al Senado de Misisipi se decide por un margen mínimo entre Hyde-Smith y Colom",
+          "body": "Según NPR, la senatora republicana Cindy Hyde-Smith y eltails democratico Scott Colom están separados por un margen mínimo en la carrera al Senado de Misisipi. The Hill informó de que Hyde-Smith lucha por conservar su asiento mientras Colom amenaza conFZar una sorpresa electoral. NPR informó de que no se conoce el número de papeletas pendientes de contabilizar en la carrera."
+        },
+        "de": {
+          "headline": "Senatsrennen in Mississippi: hauchdünner Abstand zwischen Hyde-Smith und Colom",
+          "body": "Laut NPR liegen die republikanische Senatorin Cindy Hyde-Smith und der demokratische Scott Colom im Senatsrennen in Mississippi nur einen hauchdünnen Abstand auseinander. The Hill berichtete, Hyde-Smith kämpfe um ihren Sitz, während Colom mit einem Überraschungssieg drohe. NPR berichtete, die Zahl der noch nicht ausgezählten Stimmzettel im Rennen sei nicht bekannt."
+        },
+        "pt": {
+          "headline": "Margem mínima na disputa pelo Senado do Mississippi entre Hyde-Smith e Colom",
+          "body": "A senatora republicana Cindy Hyde-Smith e o democrata Scott Colom estão separados por uma margem mínima na disputa pelo Senado do Mississippi, segundo a NPR. O The Hill informou que Hyde-Smith está a lutar pelo seu lugar, enquanto Colom ameaça provocar uma surpresa. A NPR informou que não se sabe o número de votos por contabilizar na disputa."
+        },
+        "zh": {
+          "headline": "密西西比州参议员选举中，海德-史密斯与科洛姆差距微乎其微",
+          "body": "据NPR报道，共和党参议员辛迪·海德-史密斯与民主党人斯科特·科洛姆在密西西比州参议员选举中的差距微乎其微。《国会山报》报道称，海德-史密斯正为保住席位而奋力一搏，而科洛姆则有可能爆冷取胜。NPR报道称，目前尚不清楚此次选举中尚未统计的选票数量。"
+        },
+        "ko": {
+          "headline": "하이드-스미스와 콜롬 사이 미시시피주 상원 선거 격차, 극히 좁음",
+          "body": "NPR 보도에 따르면 공화당 상원 의원 신디 하이드-스미스와 дем크라트 당 스콧 콜롬은 미시시피주 상원 선거에서 극히 좁은 격차를 두고 있다. 더 힐은 콜롬의 당선 가능성에 직면해 하이드-스미스가 의석을 지키기 위해 분투하고 있다고 보도했다. NPR은 해당 선거에서 아직 집계되지 않은 투표지 수를 알 수 없다고 보도했다."
+        },
+        "ja": {
+          "headline": "ミシシッピ州上院選、ハイド・スミスとコロムが僅差",
+          "body": "NPRによると、共和党の上院議員シンディ・ハイド・スミスと民主党のスコット・コロムは、ミシシッピ州上院選で僅差の争夺を続けている。The Hillによると、ハイド・スミスは議席を守って戦っており、コロムは波乱の勝利を狙っている。NPRによると、この選挙で集計されていない票数は不明である。"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://thehill.com/homenews/senate/6205607-hyde-smith-colom-mississippi-senate/",
+          "title": "How Scott Colom turned his Mississippi Senate race into a nail-biter",
+          "outlet": "The Hill",
+          "publishedAt": "2026-11-07T00:08:20.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/06/nx-s1-6030645/mississippi-senate-results-provisional-ballots",
+          "title": "No one knows how many ballots are outstanding in Mississippi's Senate race",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-06T19:50:14.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-06T20:38:10.000Z",
+      "id": "u-1793997490000-6s5l",
+      "kind": "statement",
+      "locales": {
+        "en": {
+          "body": "Ukrainian President Volodymyr Zelensky said on Friday that intelligence shows Russian forces are preparing new strikes on energy infrastructure and bridges across the Dnipro River, according to The Kyiv Post. The Straits Times reported Zelensky said the Ukrainian military is braced for a tough mission.",
+          "headline": "Zelensky says intelligence shows Russia planning new strikes on energy grid"
+        },
+        "fr": {
+          "headline": "Zelensky affirme que les renseignements indiquent que la Russie prépare de nouvelles frappes sur le réseau énergétique",
+          "body": "Le président ukrainien Volodymyr Zelensky a déclaré vendredi que les renseignements montrent que les forces russes préparent de nouvelles frappes contre les infrastructures énergétiques et les ponts traversant le Dniepr, selon The Kyiv Post. The Straits Times a rapporté que Zelensky a déclaré que l’armée ukrainienne est préparée à une mission difficile."
+        },
+        "it": {
+          "headline": "Zelensky: le informazioni indicano che la Russia prepara nuovi attacchi alla rete energetica",
+          "body": "Il presidente ucraino Volodymyr Zelensky ha detto venerdì che le informazioni indicano che le forze russe si stanno preparando per nuovi attacchi alle infrastrutture energetiche e ai ponti sul Dnepr, secondo The Kyiv Post. The Straits Times ha riportato che Zelensky ha detto che l'esercito ucraino è pronto ad affrontare una missione impegnativa."
+        },
+        "es": {
+          "headline": "Zelenski afirma que la inteligencia muestra que Rusia planea nuevos ataques contra la red energética",
+          "body": "El presidente ucraniano Volodímir Zelenski declaró el viernes que la inteligencia muestra que las fuerzas russias se preparan para nuevos ataques contra infraestructuras energéticas y puentes del río Dniéper, según The Kyiv Post. The Straits Times informó de que Zelenski dijo que el ejército ucraniano está preparado para una misión difícil."
+        },
+        "de": {
+          "headline": "Zelensky: Geheimdienstdaten zeigen neue Angriffe Russlands auf das Stromnetz geplant",
+          "body": "Der ukrainische Präsident Wolodymyr Zelensky sagte am Freitag nach Angaben der Kyiv Post, Geheimdienstinformationen zeigten, dass die russischen Streitkräfte neue Angriffe auf die Energieinfrastruktur und Brücken über dem Dnipro vorbereiteten. The Straits Times berichtete, Zelensky habe gesagt, die ukrainische Armee sei auf eine schwierige Mission vorbereitet."
+        },
+        "pt": {
+          "headline": "Zelensky afirma que os serviços de inteligência indicam que a Rússia prepara novos ataques à rede energética",
+          "body": "O presidente ucraniano Volodymyr Zelensky disse sexta-feira que os serviços de inteligência indicam que as forças russas se estão a preparar para novos ataques contra infraestruturas energéticas e pontes sobre o rio Dnipro, segundo o The Kyiv Post. O The Straits Times informou que Zelensky disse que o militar ucraniano está preparado para uma missão difícil."
+        },
+        "zh": {
+          "headline": "泽连斯基称，情报显示俄罗斯正计划再次袭击能源电网",
+          "body": "据《基辅邮报》报道，乌克兰总统弗拉基米尔·泽连斯基周五表示，情报显示俄军正准备再次袭击能源基础设施以及横跨第聂伯河的桥梁。《海峡时报》报道称，泽连斯基表示，乌克兰军方已为执行艰巨任务做好充分准备。"
+        },
+        "ko": {
+          "headline": "젤렌스키, 정보기관 자료에 따르면 러시아가 에너지망에 대한 새 공격 준비 중",
+          "body": "우크라이나 대통령 볼로디미르 젤렌스키는 금요일 정보기관 자료에 따르면 러시아군이 에너지 기반시설과 드니프로강을 건너는 다리에 대한 새로운 공격을 준비하고 있다고 말했다. 키우 포스트 보도다. 스트레이트스 타임스는 젤렌스키가 우크라이나 군이 어려운 임무에 대비하고 있다고 말했다고 보도했다."
+        },
+        "ja": {
+          "headline": "ゼensky大統領、諜報がロシアのエネルギー網への新たな攻撃計画を示す",
+          "body": "The Kyiv Postによると、ウクライナ大統領ヴォロディミル・ゼenskyは金曜日、諜報によりロシア軍がエネルギーインフラとドニプロ川を横断する橋への新たな攻撃を準備していることが示されたと述べた。The Straits Timesによると、ゼenskyは、ウクライナ軍が厳しい任務に備えていると述べた。"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-russian-forces-plan-new-strikes-on-energy-targets-bridges-infrastructure",
+          "title": "Ukraine's Zelenskiy: Russian forces plan new strikes on energy targets, bridges, infrastructure",
+          "outlet": "The Straits Times",
           "publishedAt": "2026-11-06T20:38:10.000Z"
         },
         {
-          "outlet": "The Kyiv Post",
-          "title": "Zelensky Warns of Fresh Russian Strikes on Bridges, Energy Grid",
           "url": "https://www.kyivpost.com/post/89396",
+          "title": "Zelensky Warns of Fresh Russian Strikes on Bridges, Energy Grid",
+          "outlet": "The Kyiv Post",
           "publishedAt": "2026-11-06T20:11:37.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-06T23:34:00.000Z",
@@ -420,13 +542,24 @@
     "https://www.france24.com/en/tv-shows/spotlight/20261106-a-homegrown-georgia-moderate-and-pragmatist-is-senator-ossoff-the-future-of-the-democratic-party",
     "https://www.cnbc.com/2026/11/06/robert-garcia-trump-congress-oversight-investigations.html",
     "https://www.thehindu.com/news/international/trump-replaces-susie-wiles-with-stephen-miller-as-chief-of-staff-after-gops-midterm-defeat/article71676063.ece",
-    "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRXlidTk1LWNhQmxic2tIaHg2eEZEVm0wUl8tdFhFNUZtUTEzSkh5b0gxVEkycy1ZYkZBaG96b25VU2RSb1p5RVhCdVpMV0F1SEF0UnBRYmZKclVjdGNRdGZkemdxNHpKMDZYUFZ5OWtNUGdyempIcUFUM1VZQ0tUdEQyZDk0RXVZdFVIMzQ1dWdFbDZreWdmWlJCdml1Z2RJSGxCaTNBZC11b3ZLRU5NQTRPWlpHejA?oc=5"
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRXlidTk1LWNhQmxic2tIaHg2eEZEVm0wUl8tdFhFNUZtUTEzSkh5b0gxVEkycy1ZYkZBaG96b25VU2RSb1p5RVhCdVpMV0F1SEF0UnBRYmZKclVjdGNRdGZkemdxNHpKMDZYUFZ5OWtNUGdyempIcUFUM1VZQ0tUdEQyZDk0RXVZdFVIMzQ1dWdFbDZreWdmWlJCdml1Z2RJSGxCaTNBZC11b3ZLRU5NQTRPWlpHejA?oc=5",
+    "https://www.kyivpost.com/post/89405",
+    "https://www.straitstimes.com/world/united-states/trump-touts-plan-for-us-air-show-seeks-to-turn-page-on-midterm",
+    "https://timesofindia.indiatimes.com/world/us/stephen-miller-key-architect-of-trumps-immigration-crackdown-appointed-white-house-chief-of-staff/articleshow/135623862.cms",
+    "https://www.cbssports.com/betting/news/ucla-minnesota-prediction-odds-time-2026-college-football-week-10-picks/",
+    "https://www.channelnewsasia.com/world/data-centre-protesters-microsoft-amsterdam-europe-6531886",
+    "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcy1TbzYwaC1KY0t3Z0ZMc0wweDVSQllCUEpVWGhSU0lqZUZCRUVQS1d2LWg2WFFibnFtZHRhQWUtTG9yM3l5UDhBQXNKdGFFVGtwdExBajBnNDlVMkpqLVRuaVVXSEh3TzZDcGxYSmRqZ2EwdmUyYW1neGpvdm9IWjRHY0JMZFVRUm1xWg?oc=5",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTFQ1MTY0ZlRnWjJEbjB6aEFRVVlKeGVyOEQwUHpDOG1RYjJNbjRXQTYwdXpDaXo5dk5RYnhOdjN6MFpWRnk0NDBZR0F0aG5PVW56OFl0cUI0WExsWUJfVzhUVEEzNm9kOGVCQUJnS2sxZGUxZWpEVjBUZlhuUG53R3g1LU5OMjZzb0pZaUY4bWl4QlRuQzNST19OSWtxc1hPV0hJRg?oc=5",
+    "https://timesofindia.indiatimes.com/world/middle-east/israel-middle-east-wouldnt-exist-today-trump-boasts-of-stopping-irans-nuclear-ambitions/articleshow/135619986.cms",
+    "https://www.straitstimes.com/world/europe/pope-leo-voted-in-us-midterms-because-im-proud-to-be-an-american",
+    "https://www.tagesschau.de/tagesschau_20_uhr/video-1679490.html",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-trump-kuendigt-ukraine-abkommen-an-kreml-daempft-erwartungen"
   ],
   "startedAt": "2026-11-06T23:59:48.446Z",
-  "updatedAt": "2026-11-07T00:45:55.864Z",
+  "updatedAt": "2026-11-07T01:33:32.896Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": null,
-  "sourceCount": 8,
+  "sourceCount": 9,
   "seenHeadlines": []
 }
