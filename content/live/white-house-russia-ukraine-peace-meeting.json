@@ -15,7 +15,7 @@
       "PBS"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
   },
   "slug": "white-house-russia-ukraine-peace-meeting",
   "topic": "White House Russia-Ukraine Peace Meeting",
@@ -62,102 +62,242 @@
   },
   "updates": [
     {
-      "id": "u-1794014892000-ck1f",
-      "at": "2026-11-07T01:28:12.000Z",
+      "id": "u-1794035183000-pyo1",
+      "at": "2026-11-07T07:06:23.000Z",
       "kind": "breaking",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Russian missile attack on Kyiv damaged residential building, mayor says",
-          "body": "Russian forces launched a missile attack on Kyiv, and debris damaged a residential building, Mayor Vitali Klitschko said. The Kyiv Post reported that at least six ballistic missiles were fired toward the capital late on 6 November, triggering explosions across Kyiv."
+          "headline": "Reports differ on number injured in Russian strikes on Kyiv",
+          "body": "Euronews reported five people injured and damage to a bridge and energy facilities. Al Jazeera reported two civilians injured and buildings damaged."
         },
         "it": {
-          "headline": "L'attacco missilistico russo a Kyiv ha danneggiato un edificio residenziale, dichiara il sindaco",
-          "body": "Le forze russe hanno lanciato un attacco missilistico a Kyiv e i detriti hanno danneggiato un edificio residenziale, ha dichiarato il sindaco Vitali Klitschko. Kyiv Post ha riportato che almeno sei missili balistici sono stati lanciati verso la capitale nella tarda serata del 6 novembre, provocando esplosioni in tutta la città."
-        },
-        "es": {
-          "headline": "El ataque ruso con misiles a Kyiv dañó un edificio residencial, según el alcalde",
-          "body": "Las fuerzas russas lanzaron un ataque con misiles contra Kyiv, y los escombros dañaron un edificio residencial, dijo el alcalde Vitali Klitschko. Kyiv Post informó de que al menos seis misiles balísticos fueron lanzados hacia la capital a última hora del 6 de noviembre, provocando explosiones en toda la ciudad."
-        },
-        "pt": {
-          "headline": "Ataque de míssil russo em Kyiv danificou edifício residencial, diz o presidente da Câmara",
-          "body": "As forças russas lançaram um ataque de mísseis contra Kyiv, e os destroços danificaram um edifício residencial, disse Vitali Klitschko, presidente da Câmara. O Kyiv Post informou que pelo menos seis mísseis balísticos foram lançados na direção da capital no final do dia 6 de novembro, provocando explosões por toda a cidade."
+          "headline": "Le notizie divergono sul numero di feriti negli attacchi russi a Kyiv",
+          "body": "Euronews ha riportato cinque feriti e danni a un ponte e a infrastrutture energetiche. Al Jazeera ha riportato due civili feriti ed edifici danneggiati."
         },
         "fr": {
-          "headline": "L’attaque de missiles russes sur Kyiv a endommagé un immeuble résidentiel, selon le maire",
-          "body": "Les forces russes ont lancé une attaque de missiles contre Kyiv et des débris ont endommagé un immeuble résidentiel, a déclaré le maire Vitali Klitschko. Le Kyiv Post a rapporté qu’au moins six missiles balistiques ont été tirés en direction de la capitale dans la soirée du 6 novembre, provoquant des explosions à Kyiv."
+          "headline": "Les informations divergent sur le nombre de blessés lors des frappes russes sur Kyiv",
+          "body": "Euronews a rapporté que cinq personnes avaient été blessées et qu’un pont et des installations énergétiques avaient subi des dommages. Al Jazeera a rapporté que deux civils avaient été blessés et que des bâtiments avaient été endommagés."
+        },
+        "es": {
+          "headline": "Los informes difieren sobre el número de heridos en los ataques rusos contra Kyiv",
+          "body": "Euronews informó de cinco heridos y de daños en un puente y en instalaciones energéticas. Al Jazeera informó de dos civiles heridos y de edificios dañados."
         },
         "de": {
-          "headline": "Russischer Raketenangriff auf Kiew beschädigt Wohngebäude, sagt Bürgermeister",
-          "body": "Russische Streitkräfte haben Kiew mit Raketen angegriffen, wobei Trümmer ein Wohngebäude beschädigten, sagte Bürgermeister Vitali Klitschko. Die Kyiv Post berichtete, dass spät am 6. November mindestens sechs ballistische Raketen in Richtung der Hauptstadt abgefeuert wurden, was Explosionen in ganz Kiew auslöste."
+          "headline": "Berichte weichen bei der Zahl der Verletzten durch russische Angriffe auf Kiew voneinander ab",
+          "body": "Euronews berichtete, dass fünf Menschen verletzt wurden und eine Brücke sowie Energieanlagen beschädigt wurden. Al Jazeera berichtete, dass zwei Zivilisten verletzt und Gebäude beschädigt wurden."
+        },
+        "ja": {
+          "headline": "ロシアのキーウ攻撃、負傷者数に報道により違い",
+          "body": "ユーロニュースは5人が負傷し、橋とエネルギー施設に被害が出たと報じた。アルジャジーラは市民2人が負傷し、建物が損傷したと報じた。"
+        },
+        "zh": {
+          "headline": "关于俄罗斯袭击基辅致伤人数，各方报道不一",
+          "body": "欧洲新闻台报道称五人受伤，一座桥梁和能源设施受损。半岛电视台报道称两名平民受伤，建筑物受损。"
+        },
+        "ko": {
+          "headline": "러시아의 키이우 공격에서 부상자 수에 관한 보도 엇갈림",
+          "body": "유로뉴스는 5명이 부상하고 다리와 에너지 시설이 피해를 입었다고 보도했다. 알자지라는 민간인 2명이 부상하고 건물이 피해를 입었다고 보도했다."
+        },
+        "pt": {
+          "headline": "Os relatos divergem sobre o número de feridos nos ataques russos a Kyiv",
+          "body": "A Euronews informou que cinco pessoas ficaram feridas e que houve danos numa ponte e em instalações energéticas. A Al Jazeera informou que dois civis ficaram feridos e que houve danos em edifícios."
         }
       },
       "sources": [
         {
-          "outlet": "The Straits Times",
-          "title": "Russian forces launch missile attack on Ukrainian capital Kyiv, mayor says",
-          "url": "https://www.straitstimes.com/world/europe/russian-forces-launch-missile-attack-on-ukrainian-capital-kyiv-mayor-says",
-          "publishedAt": "2026-11-07T01:28:12.000Z"
+          "outlet": "Euronews",
+          "title": "Russian strikes on Kyiv injure five and damage bridge and energy facilities",
+          "url": "https://www.euronews.com/2026/11/07/russian-strikes-on-kyiv-injure-five-and-damage-bridge-and-energy-facilities",
+          "publishedAt": "2026-11-07T07:06:23.000Z"
         },
         {
-          "outlet": "The Kyiv Post",
-          "title": "Explosions Rock Kyiv as Russia Launches at Least Six Ballistic Missiles",
-          "url": "https://www.kyivpost.com/post/89404",
-          "publishedAt": "2026-11-06T23:54:55.000Z"
+          "outlet": "Al Jazeera",
+          "title": "Russia launches missile attack on Kyiv, injuring residents",
+          "url": "https://www.aljazeera.com/news/2026/11/7/russia-launches-missile-attack-on-kyiv-injuring-residents?traffic_source=rss",
+          "publishedAt": "2026-11-07T05:11:03.000Z"
         }
       ]
     },
     {
-      "id": "u-1794003773000-zpov",
-      "at": "2026-11-06T22:22:53.000Z",
-      "kind": "result",
+      "id": "u-1794035183000-1kps",
+      "at": "2026-11-07T07:06:23.000Z",
+      "kind": "statement",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Trump replaces White House chief of staff Susie Wiles with Stephen Miller",
-          "body": "President Donald Trump said on 6 November that Stephen Miller would replace Susie Wiles as White House chief of staff. CNBC reported the announcement came three days after the midterm elections."
+          "headline": "Zelensky warned of further strikes on Ukraine, outlets report",
+          "body": "Euronews reported that he warned on Friday night of further strikes against Ukraine's energy sector and civilian infrastructure. Al Jazeera reported that he warned of the potential for new attacks."
         },
         "it": {
-          "headline": "Trump sostituisce il capo di staff della Casa Bianca Susie Wiles con Stephen Miller",
-          "body": "Il presidente Donald Trump ha dichiarato il 6 novembre che Stephen Miller sostituirà Susie Wiles come capo di staff della Casa Bianca. CNBC ha riportato che l'annuncio è arrivato tre giorni dopo le elezioni di metà mandato."
-        },
-        "es": {
-          "headline": "Trump sustituye a la jefa de personal de la Casa Blanca Susie Wiles por Stephen Miller",
-          "body": "El presidente Donald Trump dijo el 6 de noviembre que Stephen Miller sustituiría a Susie Wiles como jefa de personal de la Casa Blanca. CNBC informó de que el anuncio se produjo tres días después de las elecciones de mitad de mandato."
-        },
-        "pt": {
-          "headline": "Trump substitui chefe de gabinete da Casa Branca Susie Wiles por Stephen Miller",
-          "body": "O presidente Donald Trump disse a 6 de novembro que Stephen Miller substituiria Susie Wiles como chefe de gabinete da Casa Branca. A CNBC informou que o anúncio ocorreu três dias após as eleições de meio de mandato."
+          "headline": "Zelensky ha avvertito di ulteriori attacchi all'Ucraina, riportano i media",
+          "body": "Euronews ha riportato che venerdì sera ha avvertito di ulteriori attacchi contro il settore energetico e le infrastrutture civili dell'Ucraina. Al Jazeera ha riportato che ha avvertito della possibilità di nuovi attacchi."
         },
         "fr": {
-          "headline": "Trump remplace Susie Wiles, cheffe de cabinet de la Maison-Blanche, par Stephen Miller",
-          "body": "Le président Donald Trump a déclaré, le 6 novembre, que Stephen Miller remplacerait Susie Wiles au poste de cheffe de cabinet de la Maison-Blanche. CNBC a rapporté que l’annonce était intervenue trois jours après les élections de mi-mandat."
+          "headline": "Zelensky a averti de nouvelles frappes contre l’Ukraine, selon les médias",
+          "body": "Euronews a rapporté qu’il avait averti, vendredi soir, de nouvelles frappes contre le secteur énergétique et les infrastructures civiles de l’Ukraine. Al Jazeera a rapporté qu’il avait averti de la possibilité de nouvelles attaques."
+        },
+        "es": {
+          "headline": "Zelenski advirtió de nuevos ataques contra Ucrania, según los medios",
+          "body": "Euronews informó de que el viernes por la noche advirtió de nuevos ataques contra el sector energético y las infraestructuras civiles de Ucrania. Al Jazeera informó de que advirtió de la posibilidad de nuevos ataques."
         },
         "de": {
-          "headline": "Trump ersetzt Susie Wiles als Stabschefin des Weißen Hauses durch Stephen Miller",
-          "body": "Präsident Donald Trump sagte am 6. November, dass Stephen Miller Susie Wiles als Stabschef des Weißen Hauses ersetzen werde. CNBC berichtete, dass die Ankündigung drei Tage nach den Zwischenwahlen erfolgte."
+          "headline": "Medien berichten: Zelensky warnt vor weiteren Angriffen auf die Ukraine",
+          "body": "Euronews berichtete, dass er am Freitagabend vor weiteren Angriffen auf den Energiesektor und die zivile Infrastruktur der Ukraine warnte. Al Jazeera berichtete, dass er vor der Möglichkeit neuer Angriffe warnte."
+        },
+        "ja": {
+          "headline": "ゼレンスキー氏、ウクライナへのさらなる攻撃を警告 各報道",
+          "body": "ユーロニュースによると、同氏は金曜夜、ウクライナのエネルギー部門と民間インフラに対するさらなる攻撃を警告した。アルジャジーラによると、同氏は新たな攻撃の可能性について警告した。"
+        },
+        "zh": {
+          "headline": "媒体报道，泽连斯基警告乌克兰将面临更多袭击",
+          "body": "欧洲新闻台报道称，他周五晚警告称，针对乌克兰能源部门和平民基础设施的袭击将继续。半岛电视台报道称，他警告可能出现新的袭击。"
+        },
+        "ko": {
+          "headline": "보도들에 따르면 젤렌스키, 우크라이나에 대한 추가 공격 경고",
+          "body": "유로뉴스는 그가 금요일 밤 우크라이나의 에너지 산업과 민간 인프라를 대상으로 한 추가 공격을 경고했다고 보도했다. 알자지라는 그가 새로운 공격 가능성을 경고했다고 보도했다."
+        },
+        "pt": {
+          "headline": "Zelensky advertiu sobre novos ataques contra a Ucrânia, segundo os veículos de comunicação",
+          "body": "A Euronews informou que ele advertiu, na sexta-feira à noite, sobre novos ataques contra o setor energético e as infraestruturas civis da Ucrânia. A Al Jazeera informou que ele advertiu sobre a possibilidade de novos ataques."
         }
       },
       "sources": [
         {
-          "outlet": "CNBC",
-          "title": "Trump says Stephen Miller to replace Susie Wiles as White House chief of staff",
+          "outlet": "Euronews",
+          "title": "Russian strikes on Kyiv injure five and damage bridge and energy facilities",
+          "url": "https://www.euronews.com/2026/11/07/russian-strikes-on-kyiv-injure-five-and-damage-bridge-and-energy-facilities",
+          "publishedAt": "2026-11-07T07:06:23.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Russia launches missile attack on Kyiv, injuring residents",
+          "url": "https://www.aljazeera.com/news/2026/11/7/russia-launches-missile-attack-on-kyiv-injuring-residents?traffic_source=rss",
+          "publishedAt": "2026-11-07T05:11:03.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-07T01:28:12.000Z",
+      "id": "u-1794014892000-ck1f",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Russische Streitkräfte haben Kiew mit Raketen angegriffen, wobei Trümmer ein Wohngebäude beschädigten, sagte Bürgermeister Vitali Klitschko. Die Kyiv Post berichtete, dass spät am 6. November mindestens sechs ballistische Raketen in Richtung der Hauptstadt abgefeuert wurden, was Explosionen in ganz Kiew auslöste.",
+          "headline": "Russischer Raketenangriff auf Kiew beschädigt Wohngebäude, sagt Bürgermeister"
+        },
+        "en": {
+          "body": "Russian forces launched a missile attack on Kyiv, and debris damaged a residential building, Mayor Vitali Klitschko said. The Kyiv Post reported that at least six ballistic missiles were fired toward the capital late on 6 November, triggering explosions across Kyiv.",
+          "headline": "Russian missile attack on Kyiv damaged residential building, mayor says"
+        },
+        "es": {
+          "body": "Las fuerzas russas lanzaron un ataque con misiles contra Kyiv, y los escombros dañaron un edificio residencial, dijo el alcalde Vitali Klitschko. Kyiv Post informó de que al menos seis misiles balísticos fueron lanzados hacia la capital a última hora del 6 de noviembre, provocando explosiones en toda la ciudad.",
+          "headline": "El ataque ruso con misiles a Kyiv dañó un edificio residencial, según el alcalde"
+        },
+        "fr": {
+          "body": "Les forces russes ont lancé une attaque de missiles contre Kyiv et des débris ont endommagé un immeuble résidentiel, a déclaré le maire Vitali Klitschko. Le Kyiv Post a rapporté qu’au moins six missiles balistiques ont été tirés en direction de la capitale dans la soirée du 6 novembre, provoquant des explosions à Kyiv.",
+          "headline": "L’attaque de missiles russes sur Kyiv a endommagé un immeuble résidentiel, selon le maire"
+        },
+        "it": {
+          "body": "Le forze russe hanno lanciato un attacco missilistico a Kyiv e i detriti hanno danneggiato un edificio residenziale, ha dichiarato il sindaco Vitali Klitschko. Kyiv Post ha riportato che almeno sei missili balistici sono stati lanciati verso la capitale nella tarda serata del 6 novembre, provocando esplosioni in tutta la città.",
+          "headline": "L'attacco missilistico russo a Kyiv ha danneggiato un edificio residenziale, dichiara il sindaco"
+        },
+        "pt": {
+          "body": "As forças russas lançaram um ataque de mísseis contra Kyiv, e os destroços danificaram um edifício residencial, disse Vitali Klitschko, presidente da Câmara. O Kyiv Post informou que pelo menos seis mísseis balísticos foram lançados na direção da capital no final do dia 6 de novembro, provocando explosões por toda a cidade.",
+          "headline": "Ataque de míssil russo em Kyiv danificou edifício residencial, diz o presidente da Câmara"
+        },
+        "ja": {
+          "headline": "ロシアのキーウへのミサイル攻撃で住宅が損傷、市長が発表",
+          "body": "ロシア軍がキーウにミサイル攻撃を行い、破片で住宅が損傷したと、ビタリ・クリチコ市長が述べた。キーウ・ポストによると、少なくとも6発の弾道ミサイルが11月6日遅く首都に向けて発射され、キーウ各地で爆発が起きた。"
+        },
+        "zh": {
+          "headline": "市长称，俄罗斯对基辅的导弹袭击致一栋住宅楼受损",
+          "body": "维塔利·克利奇科市长表示，俄罗斯军队对基辅发动导弹袭击，残骸致一栋住宅楼受损。《基辅邮报》报道称，11月6日深夜，至少六枚弹道导弹射向首都，在基辅多地引发爆炸。"
+        },
+        "ko": {
+          "headline": "시장에 따르면 러시아의 미사일 공격으로 키이우 주거 건물 피해",
+          "body": "비탈리 클리치코 시장은 러시아군이 키이우에 미사일 공격을 개시했고 잔해가 주거 건물을 훼손했다고 말했다. 《키이우 포스트》는 11월 6일 늦은 시간 최소 6발의 탄도미사일이 수도 방향으로 발사돼 키이우 전역에서 폭발이 발생했다고 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.straitstimes.com/world/europe/russian-forces-launch-missile-attack-on-ukrainian-capital-kyiv-mayor-says",
+          "title": "Russian forces launch missile attack on Ukrainian capital Kyiv, mayor says",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-07T01:28:12.000Z"
+        },
+        {
+          "url": "https://www.kyivpost.com/post/89404",
+          "title": "Explosions Rock Kyiv as Russia Launches at Least Six Ballistic Missiles",
+          "outlet": "The Kyiv Post",
+          "publishedAt": "2026-11-06T23:54:55.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-06T22:22:53.000Z",
+      "id": "u-1794003773000-zpov",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Präsident Donald Trump sagte am 6. November, dass Stephen Miller Susie Wiles als Stabschef des Weißen Hauses ersetzen werde. CNBC berichtete, dass die Ankündigung drei Tage nach den Zwischenwahlen erfolgte.",
+          "headline": "Trump ersetzt Susie Wiles als Stabschefin des Weißen Hauses durch Stephen Miller"
+        },
+        "en": {
+          "body": "President Donald Trump said on 6 November that Stephen Miller would replace Susie Wiles as White House chief of staff. CNBC reported the announcement came three days after the midterm elections.",
+          "headline": "Trump replaces White House chief of staff Susie Wiles with Stephen Miller"
+        },
+        "es": {
+          "body": "El presidente Donald Trump dijo el 6 de noviembre que Stephen Miller sustituiría a Susie Wiles como jefa de personal de la Casa Blanca. CNBC informó de que el anuncio se produjo tres días después de las elecciones de mitad de mandato.",
+          "headline": "Trump sustituye a la jefa de personal de la Casa Blanca Susie Wiles por Stephen Miller"
+        },
+        "fr": {
+          "body": "Le président Donald Trump a déclaré, le 6 novembre, que Stephen Miller remplacerait Susie Wiles au poste de cheffe de cabinet de la Maison-Blanche. CNBC a rapporté que l’annonce était intervenue trois jours après les élections de mi-mandat.",
+          "headline": "Trump remplace Susie Wiles, cheffe de cabinet de la Maison-Blanche, par Stephen Miller"
+        },
+        "it": {
+          "body": "Il presidente Donald Trump ha dichiarato il 6 novembre che Stephen Miller sostituirà Susie Wiles come capo di staff della Casa Bianca. CNBC ha riportato che l'annuncio è arrivato tre giorni dopo le elezioni di metà mandato.",
+          "headline": "Trump sostituisce il capo di staff della Casa Bianca Susie Wiles con Stephen Miller"
+        },
+        "pt": {
+          "body": "O presidente Donald Trump disse a 6 de novembro que Stephen Miller substituiria Susie Wiles como chefe de gabinete da Casa Branca. A CNBC informou que o anúncio ocorreu três dias após as eleições de meio de mandato.",
+          "headline": "Trump substitui chefe de gabinete da Casa Branca Susie Wiles por Stephen Miller"
+        },
+        "ja": {
+          "headline": "トランプ氏、ホワイトハウス首席補佐官のスージー・ワイルズをスティーブン・ミラーと交代",
+          "body": "ドナルド・トランプ大統領は11月6日、スティーブン・ミラーがスージー・ワイルズの後任としてホワイトハウス首席補佐官に就くと述べた。CNBCによると、この発表は中間選挙から3日後に行われた。"
+        },
+        "zh": {
+          "headline": "特朗普任命斯蒂芬·米勒接替苏西·威尔斯出任白宫办公厅主任",
+          "body": "唐纳德·特朗普总统11月6日表示，斯蒂芬·米勒将接替苏西·威尔斯出任白宫办公厅主任。CNBC报道称，该宣布是在中期选举三天后作出的。"
+        },
+        "ko": {
+          "headline": "트럼프, 백악관办公室主任 수시 와일즈를 스티븐 밀러로 교체",
+          "body": "도널드 트럼프 대통령은 11월 6일 스티븐 밀러가 백악관办公室主任 수시 와일즈를 대체할 것이라고 말했다. CNBC는 이 발표가 중간선거 3일 뒤에 나왔다고 보도했다."
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.cnbc.com/2026/11/06/trump-stephen-miller-wiles-chief-of-staff.html",
+          "title": "Trump says Stephen Miller to replace Susie Wiles as White House chief of staff",
+          "outlet": "CNBC",
           "publishedAt": "2026-11-06T22:22:53.000Z"
         },
         {
-          "outlet": "NPR",
-          "title": "Stephen Miller replaces Susie Wiles as White House chief of staff",
           "url": "https://www.npr.org/2026/11/06/nx-s1-6032810/stephen-miller-replaces-susie-wiles-as-white-house-chief-of-staff",
+          "title": "Stephen Miller replaces Susie Wiles as White House chief of staff",
+          "outlet": "NPR",
           "publishedAt": "2026-11-06T22:21:35.000Z"
         },
         {
-          "outlet": "Axios",
-          "title": "Trump replaces chief of staff Susie Wiles with Stephen Miller",
           "url": "https://www.axios.com/2026/11/06/susie-wiles-trump-stephen-miller-chief-of-staff",
+          "title": "Trump replaces chief of staff Susie Wiles with Stephen Miller",
+          "outlet": "Axios",
           "publishedAt": "2026-11-06T22:16:01.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-06T14:46:00.000Z",
@@ -187,6 +327,18 @@
         "pt": {
           "body": "O Le Monde informou que os Democratas venceram as eleições de meio de mandato de 2026 nos EUA, e o Der Spiegel informou que Donald Trump perdeu as eleições de meio de mandato. Ambos os veículos publicaram as suas reportagens em 6 de novembro de 2026.",
           "headline": "Os Democratas venceram as eleições de meio de mandato de 2026 nos EUA"
+        },
+        "ja": {
+          "headline": "民主党、2026年米中間選挙で勝利",
+          "body": "ル・モンドは民主党が2026年米中間選挙で勝利したと報じ、デア・シュピーゲルはドナルド・トランプ氏が中間選挙で敗れたと報じた。両メディアは2026年11月6日に報道した。"
+        },
+        "zh": {
+          "headline": "民主党赢得2026年美国中期选举",
+          "body": "《世界报》报道称，民主党赢得了2026年美国中期选举；《明镜》周刊报道称，唐纳德·特朗普输掉了中期选举。两家媒体均于2026年11月6日发布报道。"
+        },
+        "ko": {
+          "headline": "2026년 미국 중간선거에서 демokrat당 승리",
+          "body": "《르 몽드》는 2026년 미국 중간선거에서 демokrat당이 승리했다고 보도했고, 《슈피겔》은 도널드 트럼프가 중간선거에서 패배했다고 보도했다. 두 매체 모두 2026년 11월 6일에 이 보도를 게재했다."
         }
       },
       "sources": [
@@ -818,10 +970,27 @@
     "https://news.google.com/rss/articles/CBMijwFBVV95cUxNTlNUS3o1cEwyRjZaM1lmN2I1bS1qVGRKR250TWRUWWU4TF9YVVFRaEJxM0J3NmFhY1g1MnRfWEhYU0JseGFaTmMxcGF1aFFKYkQ2M2tSaWJZazFFTmlvUWNXOFRZUHY1ZktzZVZmNEItWG1hTW82QlZTQzBVUHBzOTlnWkZvZkJ5QjVBSDRTVdIBkgFBVV95cUxPT3VFNGVKSWFDZlFONUdDUkZxQ2xGRUxZUklyUUFzbERTbUdKdjFlM2NqaHN3U3ZjRC1xZnJodExjUm41UWlpMldDY0FhSXFSdzVpTE5JNUxmZlJ4QjhyRHFBdTdyS2xoVmJwNzRfR1pZSTlYclh3RkFwUU9kM2FYbzA4MEdpRTdfdDRQOGZDQ2VKZw?oc=5",
     "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaTZ2X2NMb3UwZGZCazRwNkNiX09FQ3VuUDUxYnpSZEVkcGRDZU42NU9NQl9udDhaX0kxVkx6WEdsTVN6cHZvaFZxdEFLYzhqM0N6N1NyMmt5R0g3WXg2UWNfamJQRThhUmpQVWh3SmxNTUF6djNoQU85N3BLWTlPT1hrbkJ3Q0xEVlo4SlQwckVWdkJFSU9kWnNFaWhPcUZhNlptM3Rqcw?oc=5",
     "https://www.dw.com/en/tankers-carrying-russian-diesel-to-the-us-change-course/a-79870807?maca=en-rss-en-all-1573-rdf",
-    "https://www.spiegel.de/ausland/ukraine-wolodymyr-selenskyj-macht-vitali-klitschko-fuer-stromausfaelle-in-kyjiw-verantwortlich-a-2e10ce20-7817-46f2-89f1-34bb45cb346f#ref=rss"
+    "https://www.spiegel.de/ausland/ukraine-wolodymyr-selenskyj-macht-vitali-klitschko-fuer-stromausfaelle-in-kyjiw-verantwortlich-a-2e10ce20-7817-46f2-89f1-34bb45cb346f#ref=rss",
+    "https://www.jpost.com/international/article-914111",
+    "https://www.euronews.com/2026/11/07/russian-strikes-on-kyiv-injure-five-and-damage-bridge-and-energy-facilities",
+    "https://www.kyivpost.com/post/89411",
+    "https://www.kyivpost.com/post/89410",
+    "https://www.dawn.com/news/2042803/democratic-victories-bring-historic-breakthroughs-for-women-and-minorities",
+    "https://www.dawn.com/news/2042801/making-the-most-of-americas-midterm-tsunami",
+    "https://www.kyivpost.com/post/89399",
+    "https://www.aljazeera.com/news/2026/11/7/russia-launches-missile-attack-on-kyiv-injuring-residents?traffic_source=rss",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-kiew-und-umland-wieder-ziel-russischer-raketenangriffe",
+    "https://www.scmp.com/news/world/middle-east/article/3373633/trump-confirms-fresh-iran-strikes-days-after-voters-punish-war-polls",
+    "https://www.kyivpost.com/post/89408",
+    "https://www.lemonde.fr/en/international/article/2026/11/07/midterms-2026-us-democrats-victory-and-lula-s-win-in-brazil-expose-far-right-s-limits-in-the-americas_6774055_4.html",
+    "https://techcrunch.com/2026/11/06/from-the-front-row-to-the-hot-seat-what-the-midterms-mean-for-big-tech/",
+    "https://www.welt.de/wirtschaft/article6aede7e6320931eb80f5c710/hilfszahlungen-geringe-ertraege-aus-russischem-vermoegen-eu-muss-wohl-neue-schulden-fuer-ukraine-aufnehmen.html",
+    "https://www.kyivpost.com/post/89407",
+    "https://news.google.com/rss/articles/CBMizAFBVV95cUxObHRCcDhuX0lWbVJuNHA2TFVfMzd0dTFhd21WZWR6Zlc1bm5YaTR1enFmQnJGSWtRVnAxdHN0eWhjY0I2bDVfcHFmMFRYV3pILVBQeTFPVDdCVm41dG15ZkZjS29oUzRpSFY5WWpLLXZZREVkOV9RbTJsbVZhMC1UMTNPQ3k3LXN2MThOZG5MRTdpVUFRRUZWbWZ4SEhrbmF1UjFhT1dGU3NWUkhvT2k2c2dKZF9TckV0d2JCVUhTaDBkaEFsWlhfeDhyRFY?oc=5",
+    "https://variety.com/2026/tv/news/bill-maher-trump-midterms-loss-real-time-hbo-lindsey-graham-1236941912/"
   ],
   "startedAt": "2026-11-06T00:35:29.023Z",
-  "updatedAt": "2026-11-07T03:02:26.654Z",
+  "updatedAt": "2026-11-07T07:13:00.662Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": null,
