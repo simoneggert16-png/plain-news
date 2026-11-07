@@ -8,7 +8,7 @@
       "The Jerusalem Post"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "paraguay-president-pena-impeached-over-ueno-bank-scandal",
   "topic": "Paraguay President Peña Impeached Over Ueno Bank Scandal",
@@ -55,62 +55,104 @@
   },
   "updates": [
     {
-      "id": "u-1794015960000-86jf",
-      "at": "2026-11-07T01:46:00.000Z",
+      "id": "u-1794016511000-dk1t",
+      "at": "2026-11-07T01:55:11.000Z",
       "kind": "context",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Peña removal followed bank collapse, CNA and Times of India report",
-          "body": "CNA described ueno as a collapsed digital bank. Times of India reported that the bank collapse came before Peña was impeached."
+          "headline": "Paraguay banking crisis left customer accounts frozen",
+          "body": "The Guardian reported that 60% of the country was unable to access accounts after the banking crisis. DW reported that millions of customer accounts were frozen."
         },
         "fr": {
-          "headline": "La destitution de Peña a suivi l’effondrement de la banque, selon CNA et Times of India",
-          "body": "CNA a décrit Ueno comme une banque numérique effondrée. Times of India a rapporté que l’effondrement de la banque avait précédé la destitution de Peña."
+          "headline": "La crise bancaire au Paraguay a laissé gelés les comptes des clients",
+          "body": "The Guardian a rapporté que 60 % de la population ne pouvaient plus accéder à leurs comptes après la crise bancaire. DW a rapporté que des millions de comptes clients ont été gelés."
         },
         "es": {
-          "headline": "La destitución de Peña se produjo tras el colapso del banco, según CNA y Times of India",
-          "body": "CNA describió a Ueno como un banco digital colapsado. Times of India informó de que el colapso del banco se produjo antes de que Peña fuera destituido."
+          "headline": "La crisis bancaria de Paraguay dejó congeladas las cuentas de los clientes",
+          "body": "The Guardian informó de que el 60 % del país no podía acceder a sus cuentas tras la crisis bancaria. DW informó de que millones de cuentas de clientes quedaron congeladas."
         },
         "de": {
-          "headline": "Peñas Entlassung folgte auf den Bankenzusammenbruch, CNA und Times of India berichten",
-          "body": "CNA bezeichnete Ueno als kollabierte digitale Bank. Laut Times of India ging der Bankenzusammenbruch Peñas Amtsenthebung voraus."
-        },
-        "zh": {
-          "headline": "CNA和《印度时报》报道：银行倒闭后佩尼亚被免职",
-          "body": "CNA将Ueno描述为一家倒闭的数字银行。《印度时报》报道称，银行倒闭发生在佩尼亚遭弹劾之前。"
-        },
-        "ja": {
-          "headline": "CNAとタイムズ・オブ・インドが報じた、ペーニャの解任は銀行破綻の後にあった",
-          "body": "CNAはuenoを破綻したデジタル銀行と説明した。タイムズ・オブ・インドは、銀行の破綻はペーニャが弾劾される前に起きたと報じた。"
+          "headline": "Paraguays Bankenkrise ließ Kundenkonten einfrieren",
+          "body": "The Guardian berichtete, dass nach der Bankenkrise 60 % der Bevölkerung des Landes nicht auf ihre Konten zugreifen konnten. DW berichtete, dass Millionen von Kundenkonten eingefroren waren."
         },
         "it": {
-          "headline": "La rimozione di Peña è seguita al collasso della banca, riferiscono CNA e Times of India",
-          "body": "CNA ha descritto ueno come una banca digitale in fallimento. Times of India ha riferito che il collasso della banca è avvenuto prima che Peña fosse destituito."
-        },
-        "pt": {
-          "headline": "A remoção de Peña foi posterior ao colapso do banco, segundo a CNA e o Times of India",
-          "body": "A CNA descreveu a Ueno como um banco digital em colapso. O Times of India informou que o colapso do banco ocorreu antes de Peña ter sido deposto."
-        },
-        "ko": {
-          "headline": "은행 붕괴 이후 페냐 해임—CNA와 타임스 오브 인디아 보도",
-          "body": "CNA는 ueno를 붕괴한 디지털 은행으로 설명했다. 타임스 오브 인디아는 은행 붕괴가 페냐의 탄핵보다 먼저 발생했다고 보도했다."
+          "headline": "La crisi bancaria in Paraguay ha lasciato congelati i conti dei clienti",
+          "body": "The Guardian ha riportato che il 60% del Paese non riusciva ad accedere ai conti dopo la crisi bancaria. DW ha riportato che milioni di conti dei clienti sono rimasti congelati."
         }
       },
       "sources": [
         {
-          "outlet": "CNA",
-          "title": "Paraguay president ousted and placed under house arrest, successor sworn in",
+          "outlet": "The Guardian",
+          "title": "Ousted Paraguay president under house arrest after banking crisis leaves 60% of country unable to access accounts",
+          "url": "https://www.theguardian.com/world/2026/nov/07/ousted-paraguay-president-under-house-arrest-after-banking-crisis-leaves-60-of-country-unable-to-access-accounts",
+          "publishedAt": "2026-11-07T01:55:11.000Z"
+        },
+        {
+          "outlet": "DW",
+          "title": "Paraguay: President Santiago Pena under house arrest over bank crisis",
+          "url": "https://www.dw.com/en/paraguay-president-santiago-pena-under-house-arrest-over-bank-crisis/a-79868484?maca=en-rss-en-all-1573-rdf",
+          "publishedAt": "2026-11-06T23:23:00.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-07T01:46:00.000Z",
+      "id": "u-1794015960000-86jf",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "CNA bezeichnete Ueno als kollabierte digitale Bank. Laut Times of India ging der Bankenzusammenbruch Peñas Amtsenthebung voraus.",
+          "headline": "Peñas Entlassung folgte auf den Bankenzusammenbruch, CNA und Times of India berichten"
+        },
+        "en": {
+          "body": "CNA described ueno as a collapsed digital bank. Times of India reported that the bank collapse came before Peña was impeached.",
+          "headline": "Peña removal followed bank collapse, CNA and Times of India report"
+        },
+        "es": {
+          "body": "CNA describió a Ueno como un banco digital colapsado. Times of India informó de que el colapso del banco se produjo antes de que Peña fuera destituido.",
+          "headline": "La destitución de Peña se produjo tras el colapso del banco, según CNA y Times of India"
+        },
+        "fr": {
+          "body": "CNA a décrit Ueno comme une banque numérique effondrée. Times of India a rapporté que l’effondrement de la banque avait précédé la destitution de Peña.",
+          "headline": "La destitution de Peña a suivi l’effondrement de la banque, selon CNA et Times of India"
+        },
+        "it": {
+          "body": "CNA ha descritto ueno come una banca digitale in fallimento. Times of India ha riferito che il collasso della banca è avvenuto prima che Peña fosse destituito.",
+          "headline": "La rimozione di Peña è seguita al collasso della banca, riferiscono CNA e Times of India"
+        },
+        "ja": {
+          "body": "CNAはuenoを破綻したデジタル銀行と説明した。タイムズ・オブ・インドは、銀行の破綻はペーニャが弾劾される前に起きたと報じた。",
+          "headline": "CNAとタイムズ・オブ・インドが報じた、ペーニャの解任は銀行破綻の後にあった"
+        },
+        "ko": {
+          "body": "CNA는 ueno를 붕괴한 디지털 은행으로 설명했다. 타임스 오브 인디아는 은행 붕괴가 페냐의 탄핵보다 먼저 발생했다고 보도했다.",
+          "headline": "은행 붕괴 이후 페냐 해임—CNA와 타임스 오브 인디아 보도"
+        },
+        "pt": {
+          "body": "A CNA descreveu a Ueno como um banco digital em colapso. O Times of India informou que o colapso do banco ocorreu antes de Peña ter sido deposto.",
+          "headline": "A remoção de Peña foi posterior ao colapso do banco, segundo a CNA e o Times of India"
+        },
+        "zh": {
+          "body": "CNA将Ueno描述为一家倒闭的数字银行。《印度时报》报道称，银行倒闭发生在佩尼亚遭弹劾之前。",
+          "headline": "CNA和《印度时报》报道：银行倒闭后佩尼亚被免职"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.channelnewsasia.com/world/paraguay-president-ousted-and-placed-under-house-arrest-successor-sworn-in-6532536",
+          "title": "Paraguay president ousted and placed under house arrest, successor sworn in",
+          "outlet": "CNA",
           "publishedAt": "2026-11-07T01:46:00.000Z"
         },
         {
-          "outlet": "Times of India",
-          "title": "Impeached Paraguay President Peña placed under house arrest after bank collapse",
           "url": "https://timesofindia.indiatimes.com/world/rest-of-world/impeached-paraguay-president-pea-placed-under-house-arrest-after-bank-collapse/articleshow/135624172.cms",
+          "title": "Impeached Paraguay President Peña placed under house arrest after bank collapse",
+          "outlet": "Times of India",
           "publishedAt": "2026-11-07T01:35:29.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-07T01:08:23.482Z",
@@ -342,13 +384,18 @@
     "https://www.dw.com/en/critics-say-democrats-should-look-into-trump-s-middle-east-deals-in-future-corruption-investigations/a-79877104?maca=en-rss-en-all-1573-rdf",
     "https://www.kyivpost.com/post/89390",
     "https://www.channelnewsasia.com/world/paraguay-president-ousted-and-placed-under-house-arrest-successor-sworn-in-6532536",
-    "https://timesofindia.indiatimes.com/world/rest-of-world/impeached-paraguay-president-pea-placed-under-house-arrest-after-bank-collapse/articleshow/135624172.cms"
+    "https://timesofindia.indiatimes.com/world/rest-of-world/impeached-paraguay-president-pea-placed-under-house-arrest-after-bank-collapse/articleshow/135624172.cms",
+    "https://www.scmp.com/news/world/united-states-canada/article/3373625/irans-nuclear-programme-us-offers-us20-million-reward-information",
+    "https://www.nzz.ch/international/nach-bankenskandal-paraguays-praesident-pena-tritt-zurueck-ld.10055610",
+    "https://www.theguardian.com/world/2026/nov/07/ousted-paraguay-president-under-house-arrest-after-banking-crisis-leaves-60-of-country-unable-to-access-accounts",
+    "https://www.japantimes.co.jp/business/2026/11/07/economy/trump-congress-tariffs-clash/",
+    "https://www.dw.com/en/paraguay-president-santiago-pena-under-house-arrest-over-bank-crisis/a-79868484?maca=en-rss-en-all-1573-rdf"
   ],
   "startedAt": "2026-11-07T01:08:55.498Z",
-  "updatedAt": "2026-11-07T02:02:39.233Z",
+  "updatedAt": "2026-11-07T02:42:02.052Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": null,
-  "sourceCount": 10,
+  "sourceCount": 11,
   "seenHeadlines": []
 }
