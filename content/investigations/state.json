@@ -2,6 +2,21 @@
   "lastIntake": "2026-W45",
   "runs": [
     {
+      "at": "2026-11-07T22:40:47.181Z",
+      "active": 3,
+      "ms": 1203016
+    },
+    {
+      "at": "2026-11-07T22:20:44.077Z",
+      "active": 3,
+      "ms": 1177914
+    },
+    {
+      "at": "2026-11-07T22:01:06.068Z",
+      "active": 3,
+      "ms": 1081832
+    },
+    {
       "at": "2026-11-07T13:48:18.973Z",
       "active": 3,
       "ms": 1087147
@@ -439,6 +454,28 @@
   ],
   "leads": [
     {
+      "at": "2026-11-07T21:47:08.318Z",
+      "origin": "scan",
+      "summary": "OFAC designated eight Canadian money services businesses under Operation Economic Outcast, restricting their access to US dollar markets.",
+      "worth": true,
+      "title": "Eight Canadian Money Services Businesses Cut Off From the US Dollar",
+      "angle": "Trace the ownership, customers and transaction flows behind the eight Canadian money services businesses sanctioned under Operation Economic Outcast: who sent money to whom, which jurisdictions hosted the payment rails, and what happened to the clients and workers whose transfers were frozen.",
+      "centre": "Canada and the United States, with money moving to and from sanctioned jurisdict",
+      "people": "Small businesses and their employees who lose the ability to move US dollars; the owners and directors who profited from processing those transactions; and the customers whose remittances, savings and trade payments were disrupted.",
+      "category": "business",
+      "queries": [
+        "OFAC \"Operation Economic Outcast\" designation Canadian money services businesses",
+        "site:ofac.treasury.gov \"Operation Economic Outcast\" Canada designation",
+        "\"Operation Economic Outcast\" money transmitter Canada settlement records",
+        "FINTRAC \"Operation Economic Outcast\" suspicious transaction report",
+        "\"Economic Outcast\" designated entity Canada beneficial owner",
+        "Canada money services business OFAC settlement agreement penalty"
+      ],
+      "url": "https://www.trmlabs.com/resources/blog/ofac-designates-eight-canadian-money-services-businesses-under-operation-economic-outcast",
+      "outlet": "TRM Labs",
+      "docTitle": "OFAC Designates Eight Canadian Money Services Businesses Under Operation Economic Outcast | TRM Labs"
+    },
+    {
       "at": "2026-11-06T00:17:50.236Z",
       "origin": "scan",
       "summary": "US Treasury designated entities linked to cyber-enabled and transnational criminal activity and took further Cuba-related measures, publishing a related determination.",
@@ -688,5 +725,5 @@
       "tried": "2026-W45"
     }
   ],
-  "lastScan": "2026-11-06"
+  "lastScan": "2026-11-07"
 }

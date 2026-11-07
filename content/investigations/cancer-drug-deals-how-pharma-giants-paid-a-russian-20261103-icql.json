@@ -14,7 +14,7 @@
     "hints": "Pharma giants pay millions to Russian distributor entangled in corruption allegations to win cancer drug business"
   },
   "createdAt": "2026-11-03T14:38:54.069Z",
-  "updatedAt": "2026-11-07T13:48:18.972Z",
+  "updatedAt": "2026-11-07T22:20:44.076Z",
   "queries": [
     "ICIJ cancer calculus Russian distributor pharmaceutical payments",
     "фармдистрибьютор рак препараты выплаты миллионы коррупция",
@@ -725,7 +725,7 @@
     }
   ],
   "centre": "Russia, with international pharmaceutical companies and the global cancer drug m",
-  "lastShiftAt": "2026-11-07T13:42:25.030Z",
+  "lastShiftAt": "2026-11-07T22:12:57.965Z",
   "letters": [
     {
       "id": "L1",
@@ -768,141 +768,6 @@
     }
   ],
   "agent": [
-    {
-      "at": "2026-11-06T23:21:51.116Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "I have 13 sources on file and 10 claims already recorded. The primary source is the ICIJ article (S1) about pharma giants paying R-Pharm. I need to open it to read the full text, record verifiable claims, then hunt for primary documents (Russian procurement notices, FAS antimonopoly decisions, sanctions lists, court rulings) and find press contacts for institutions that must respond. Let me start ",
-          "action": "open",
-          "args": {
-            "url": "https://www.icij.org/investigations/cancer-calculus/pharma-giants-pay-millions-to-russian-distributor-entangled-in-corruption-allegations-to-win-cancer-drug-business/"
-          },
-          "ok": true,
-          "ms": 5024
-        },
-        {
-          "step": 2,
-          "thought": "The ICIJ article text is truncated but confirms several claims already on file (C1-C5). I need the rest of the article and the whistleblower details. The Moscow Times article (S8) appears to carry the whistleblower specifics. Let me open it to capture the payment figures, contract values and distributor names, then record new claims.",
-          "action": "open",
-          "args": {
-            "url": "https://www.themoscowtimes.com/2026/11/02/western-pharma-giants-paid-millions-to-russian-distributors-linked-to-fraud-whistleblower-report-says-a94158"
-          },
-          "ok": true,
-          "ms": 55762
-        },
-        {
-          "step": 3,
-          "thought": "The Moscow Times article confirms claims C6-C10 and adds new facts: R-Pharm CEO Vasily Ignatyev denied involvement; Novartis identified bid-rigging examples for Kisqali by Pharmimex and affiliated front companies; the whistleblower reports were submitted to U.S. financial regulators (likely SEC). I should save these new claims. Then I need to find primary documents: the whistleblower submission to",
-          "action": "save_claim",
-          "args": {
-            "text": "R-Pharm CEO Vasily Ignatyev denied any involvement in improper payments or non-competitive practices, telling ICIJ that its commercial rebates were legitimate and defending Russia's state auction procedures as transparent.",
-            "sources": [
-              "S8"
-            ]
-          },
-          "ok": true,
-          "ms": 6593
-        },
-        {
-          "step": 4,
-          "thought": "Claim C11 saved. Now let me save the Novartis/Kisqali bid-rigging claim and the whistleblower submission to US regulators claim.",
-          "action": "save_claim",
-          "args": {
-            "text": "Novartis was alleged to have identified examples of bid-rigging in government auctions for the drug Kisqali by distributors like Pharmimex and their affiliated front companies; a Novartis representative said the company conducted an internal investigation without disclosing its findings.",
-            "sources": [
-              "S8"
-            ]
-          },
-          "ok": true,
-          "ms": 1002
-        },
-        {
-          "step": 5,
-          "thought": "C12 saved. Now save the claim about whistleblower documents submitted to US financial regulators.",
-          "action": "save_claim",
-          "args": {
-            "text": "Whistleblower documents alleging that Merck, Eli Lilly, Novartis and AstraZeneca paid excessive sales bonuses and rebates of 15% to 35% to Russian distributors were submitted to U.S. financial regulators.",
-            "sources": [
-              "S8"
-            ]
-          },
-          "ok": true,
-          "ms": 801
-        },
-        {
-          "step": 6,
-          "thought": "C13 saved. Now I need to find primary documents. The key gaps: (1) the actual whistleblower submission to US regulators (SEC), (2) Russian procurement data/award notices, (3) FAS antimonopoly decisions against R-Pharm, (4) sanctions listings for Repik/R-Pharm, (5) beneficial ownership of R-Pharm and the offshore company owning the Bombardier jet. Let me search for the SEC whistleblower submission ",
-          "action": "search",
-          "args": {
-            "query": "OFAC sanctions Alexey Repik R-Pharm Treasury designation"
-          },
-          "ok": true,
-          "ms": 16413
-        },
-        {
-          "step": 7,
-          "thought": "",
-          "action": "search",
-          "args": {
-            "query": "Repik sanctioned oligarch pharmaceutical R-Pharm OFAC EU sanctions list"
-          },
-          "ok": true,
-          "ms": 34067
-        },
-        {
-          "step": 8,
-          "thought": "The search index isn't returning the OFAC sanctions listing for Repik directly. The ICIJ article says Repik is 'now-sanctioned' but doesn't specify which list. Let me search the OFAC recent actions page or search for the specific designation. Let me try searching for the EU sanctions or the specific OFAC action. Actually, let me search for the ICIJ full investigation page which may have more detai",
-          "action": "search",
-          "args": {
-            "query": "SEC whistleblower pharmaceutical Russia cancer drugs rebates Merck AstraZeneca Novartis Eli Lilly"
-          },
-          "ok": true,
-          "ms": 55942
-        },
-        {
-          "step": 9,
-          "thought": "The SEC EDGAR results are old filings (2012-2022) not directly relevant to the whistleblower report. The whistleblower submission itself is confidential and unlikely to be public. Let me focus on what IS obtainable: (1) the OFAC/EU sanctions listing for Repik, (2) Russian procurement data, (3) FAS antimonopoly decisions. Let me search for the OFAC recent actions page directly, or search for Repik'",
-          "action": "search",
-          "args": {
-            "query": "ICIJ cancer calculus R-Pharm Repik sanctioned Putin daughter Bombardier offshore"
-          },
-          "ok": true,
-          "ms": 38547
-        },
-        {
-          "step": 10,
-          "thought": "The search index is dominated by current news (Pope Leo, etc.) and isn't surfacing the specific documents I need. The ICIJ article is the main source. Let me try to open the ICIJ article again to get the full text - it was truncated before. Actually, I already have the key facts from it. Let me instead focus on finding primary documents through the doors mentioned in the brief: Russian court datab",
-          "action": "search",
-          "args": {
-            "query": "ФАС антимонопольный служба Р-Фарм решение картельный сговор тендеры лекарства"
-          },
-          "ok": true,
-          "ms": 10414
-        },
-        {
-          "step": 11,
-          "thought": "The search index is not returning Russian-language results or the specific documents I need. It seems the index is heavily weighted toward current English-language news. Let me try a different approach and search for the ICIJ investigation's related articles or the Proekt/Republik investigation which may have more details. Let me also try searching for the specific procurement data or the Russian ",
-          "action": "search",
-          "args": {
-            "query": "Proekt Republik ICIJ investigation Russian pharmaceutical distributors cancer drugs whistleblower"
-          },
-          "ok": true,
-          "ms": 13470
-        },
-        {
-          "step": 12,
-          "thought": "I see a new result: 'Cancer Drugs: Overpayments to Russian Distributors' from notizie.it. Let me open that. Also, the search index seems limited. Let me open the notizie.it article which may have additional details. But first, let me think about what primary documents I can realistically obtain. The brief says to prioritize primary documents. The ICIJ article and Moscow Times are secondary. Key pr",
-          "action": "open",
-          "args": {
-            "url": "https://www.notizie.it/en/Overpayments-to-Russian-distributors-for-cancer-drugs/"
-          },
-          "ok": true,
-          "ms": 5942
-        }
-      ],
-      "final": null
-    },
     {
       "at": "2026-11-06T23:53:09.482Z",
       "steps": [
@@ -1002,9 +867,35 @@
       "at": "2026-11-07T13:44:28.447Z",
       "steps": [],
       "final": null
+    },
+    {
+      "at": "2026-11-07T22:15:42.022Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "I have 16 sources and 23 claims on file, but the gaps are the priority: primary documents (FAS decisions, procurement/award notices, sanctions listings, court judgments, ownership records) and the exact payment amounts. The ICIJ investigation (S1) is the anchor and its page should contain links to the underlying documents, partner investigations (Proekt, Republik), and named agencies. First step: ",
+          "action": "open",
+          "args": {
+            "url": "https://www.icij.org/investigations/cancer-calculus/pharma-giants-pay-millions-to-russian-distributor-entangled-in-corruption-allegations-to-win-cancer-drug-business/"
+          },
+          "ok": true,
+          "ms": 32755
+        },
+        {
+          "step": 2,
+          "thought": "S1 opened and confirms the anchor facts already on file (Repik founded R-Pharm in 2001 with $15,000 from his mother; 2009 Merck alliance; FAS investigations into coordinated bidding and anticompetitive conduct; joint manufacturing; Bombardier jet link; 2015 denial quote). The text was truncated before the payment details and links. The first open gap a document could answer is the outcome of the F",
+          "action": "search",
+          "args": {
+            "query": "Федеральная антимонопольная служба решение Р-Фарм координация торгов фармацевтической продукцией"
+          },
+          "ok": true,
+          "ms": 57160
+        }
+      ],
+      "final": null
     }
   ],
-  "shifts": 16,
-  "blankShifts": 1,
+  "shifts": 17,
+  "blankShifts": 0,
   "nextStep": "keep reporting: no outreach sent"
 }
