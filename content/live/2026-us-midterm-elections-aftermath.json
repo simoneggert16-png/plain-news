@@ -1,9 +1,291 @@
 {
+  "meta": {
+    "outlets": [
+      "NPR",
+      "France 24",
+      "New York Times",
+      "The Hill",
+      "Axios",
+      "Dawn",
+      "South China Morning Post",
+      "The Jerusalem Post",
+      "STAT News"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "deepseek-ai/deepseek-v4.1-flash"
+  },
   "slug": "2026-us-midterm-elections-aftermath",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "2026 US midterm elections aftermath",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die US-Zwischenwahlen 2026 brachten eine demokratische Mehrheit im Kongress und erhebliche Verluste für die Republikaner, was Umbesetzungen und politische Kursänderungen in der Trump-Regierung nach sich zog.",
+      "title": "Folgen der US-Zwischenwahlen 2026"
+    },
+    "en": {
+      "dek": "The 2026 US mid-term elections delivered a Democratic congressional majority and major GOP losses, prompting shake-ups and policy shifts in the Trump administration.",
+      "title": "Aftermath of the 2026 US mid-term elections"
+    },
+    "es": {
+      "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos dieron lugar a una mayoría democrats en el Congreso y a importantes pérdidas para el Partido Republicano, lo que provocó reorganizaciones y cambios de política en la administración de Trump.",
+      "title": "Consecuencias de las elecciones de mitad de mandato de 2026 en Estados Unidos"
+    },
+    "fr": {
+      "dek": "Les élections de mi-mandat de 2026 aux États-Unis ont abouti à une majorité démocratique au Congrès et à d’importantes défaites du Parti républicain, entraînant des remaniements et des réorientations politiques dans l’administration Trump.",
+      "title": "Conséquences des élections de mi-mandat de 2026 aux États-Unis"
+    },
+    "it": {
+      "dek": "Le elezioni di metà mandato negli Stati Uniti del 2026 hanno portato a una maggioranza democratica al Congresso e a gravi perdite per il GOP, provocando rimescolamenti e cambiamenti di politica nell'amministrazione Trump.",
+      "title": "Dopo le elezioni di metà mandato negli Stati Uniti del 2026"
+    },
+    "ja": {
+      "dek": "2026年の米国中間選挙では民主党が国会で多数派となり、共和党は大幅な敗北を被った。これを機に、トランプ政権では人事の刷新と政策の転換が行われた。",
+      "title": "2026年米国中間選挙後の状況"
+    },
+    "ko": {
+      "dek": "2026년 미국 중간선거에서 민주당이 의회 다수당을 차지하고 공화당이 큰 타격을 입으면서 트럼프 행정부의 인적 쇄신과 정책 기조 전환을 촉발했다.",
+      "title": "2026년 미국 중간선거의 여파"
+    },
+    "pt": {
+      "dek": "As eleições de meio de mandato nos EUA em 2026 resultaram numa maioria congressional democrata e em perdas importantes para o GOP, levando a reorganizações e mudanças de política na administração Trump.",
+      "title": "Consequências das eleições de meio de mandato nos EUA em 2026"
+    },
+    "zh": {
+      "dek": "2026年美国中期选举使民主党在国会中取得多数席位，并令共和党遭受重大损失，进而促使特朗普政府进行人事调整和政策转向。",
+      "title": "2026年美国中期选举余波"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794010100000-ujz7",
+      "at": "2026-11-07T00:08:20.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Mississippi Senate race margin razor-thin between Hyde-Smith and Colom",
+          "body": "Republican Sen. Cindy Hyde-Smith and Democrat Scott Colom are separated by a razor-thin margin in Mississippi's Senate race, according to NPR. The Hill reported Hyde-Smith is fighting for her seat as Colom threatens an upset. NPR reported that the number of outstanding ballots in the race is not known."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Hill",
+          "title": "How Scott Colom turned his Mississippi Senate race into a nail-biter",
+          "url": "https://thehill.com/homenews/senate/6205607-hyde-smith-colom-mississippi-senate/",
+          "publishedAt": "2026-11-07T00:08:20.000Z"
+        },
+        {
+          "outlet": "NPR",
+          "title": "No one knows how many ballots are outstanding in Mississippi's Senate race",
+          "url": "https://www.npr.org/2026/11/06/nx-s1-6030645/mississippi-senate-results-provisional-ballots",
+          "publishedAt": "2026-11-06T19:50:14.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1793997490000-6s5l",
+      "at": "2026-11-06T20:38:10.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Zelensky says intelligence shows Russia planning new strikes on energy grid",
+          "body": "Ukrainian President Volodymyr Zelensky said on Friday that intelligence shows Russian forces are preparing new strikes on energy infrastructure and bridges across the Dnipro River, according to The Kyiv Post. The Straits Times reported Zelensky said the Ukrainian military is braced for a tough mission."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Straits Times",
+          "title": "Ukraine's Zelenskiy: Russian forces plan new strikes on energy targets, bridges, infrastructure",
+          "url": "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-russian-forces-plan-new-strikes-on-energy-targets-bridges-infrastructure",
+          "publishedAt": "2026-11-06T20:38:10.000Z"
+        },
+        {
+          "outlet": "The Kyiv Post",
+          "title": "Zelensky Warns of Fresh Russian Strikes on Bridges, Energy Grid",
+          "url": "https://www.kyivpost.com/post/89396",
+          "publishedAt": "2026-11-06T20:11:37.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-06T23:34:00.000Z",
+      "id": "u-1794008040000-yolg",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "CNBC berichtete, dass die Demokraten bei den Zwischenwahlen die Mehrheitskontrolle über das Repräsentantenhaus und den Senat gewonnen haben. The Japan Times schrieb, das Ergebnis habe Präsident Donald Trump mit einem von den Demokraten geführten Repräsentantenhaus und Senat konfrontiert.",
+          "headline": "Demokraten gewinnen Mehrheiten im Repräsentantenhaus und Senat bei US-Zwischenwahlen"
+        },
+        "en": {
+          "body": "CNBC reported that Democrats won majority control of the House and Senate in the midterm elections. The Japan Times said the result left President Donald Trump facing a Democratic-led House and Senate.",
+          "headline": "Democrats win House and Senate majorities in US midterms"
+        },
+        "es": {
+          "body": "CNBC informó de que los democrátas ganaron el control mayoritario de la Cámara y el Senado en las elecciones de mitad de mandato. The Japan Times señaló que el resultado dejó al presidente Donald Trump frente a una Cámara y un Senado dirigidos por los democrátas.",
+          "headline": "Los democrátas ganan las mayorías en la Cámara y el Senado en las elecciones de mitad de mandato de EE. UU."
+        },
+        "fr": {
+          "body": "CNBC a rapporté que les démocrates ont remporté le contrôle majoritaire de la Chambre et du Sénat lors des élections de mi-mandat. The Japan Times a indiqué que ce résultat plaçait le président Donald Trump face à une Chambre et un Sénat dirigés par les démocrates.",
+          "headline": "Les démocrates remportent les majorités à la Chambre et au Sénat lors des élections de mi-mandat aux États-Unis"
+        },
+        "it": {
+          "body": "La CNBC ha riportato che i democratici hanno conquistato il controllo maggioritario della Camera e del Senato nelle elezioni di metà mandato. Il Japan Times ha detto che il risultato ha lasciato il presidente Donald Trump di fronte a una Camera e a un Senato guidati dai democratici.",
+          "headline": "I democratici conquistano le maggioranze alla Camera e al Senato nelle elezioni di metà mandato negli Stati Uniti"
+        },
+        "ja": {
+          "body": "CNBCは、民主党が中間選挙で下院と上院の多数派を掌握したと報じた。ジャパン・タイムズは、その結果により、ドナルド・トランプ大統領が民主党主導の下院と上院に対応attenedする状況となったと報じた。",
+          "headline": "米国中間選挙で民主党が下院と上院の多数派を獲得"
+        },
+        "ko": {
+          "body": "CNBC는 중간선거에서 민주당이 하원과 상원의 과반수 지배권을 확보했다고 보도했다. 일본 타임즈는 그 결과로 도널드 트럼프 대통령이 민주당이 주도하는 하원과 상원을 상대하게 되었다고 말했다.",
+          "headline": "미국 중간선거에서 민주당, 하원·상원 과반수 확보"
+        },
+        "pt": {
+          "body": "A CNBC informou que os Democratas conquistaram o controlo maioria da Câmara e do Senado nas eleições de meio de mandato. O Japan Times disse que o resultado deixou o presidente Donald Trump perante uma Câmara e um Senado dirigidos pelos Democratas.",
+          "headline": "Democratas conquistam maiorias na Câmara e no Senado nas eleições de meio de mandato dos EUA"
+        },
+        "zh": {
+          "body": "美国消费者新闻与商业频道（CNBC）报道称，民主党在中期选举中赢得众议院和参议院的多数控制权。《日本时报》称，这一结果使唐纳德·特朗普总统面对由民主党主导的众议院和参议院。",
+          "headline": "民主党在美国中期选举中赢得众议院和参议院多数席位"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.japantimes.co.jp/news/2026/11/07/world/politics/trump-stephen-miller-chief-of-staff/",
+          "title": "Trump makes hard-liner Stephen Miller his chief of staff after midterm defeat",
+          "outlet": "The Japan Times",
+          "publishedAt": "2026-11-06T23:34:00.000Z"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/06/trump-stephen-miller-wiles-chief-of-staff.html",
+          "title": "Trump says Stephen Miller to replace Susie Wiles as White House chief of staff",
+          "outlet": "CNBC",
+          "publishedAt": "2026-11-06T22:22:53.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-06T22:58:18.000Z",
+      "id": "u-1794005898000-ercc",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Präsident Donald Trump erklärte am Freitag, dass Stephen Miller Susie Wiles als Stabschef des Weißen Hauses ablösen werde. Reuters berichtete, die Ernennung sei nach Trumps Niederlage bei den Zwischenwahlen erfolgt.",
+          "headline": "Trump ernennt Stephen Miller zum Stabschef des Weißen Hauses"
+        },
+        "en": {
+          "body": "President Donald Trump said on Friday that Stephen Miller will replace Susie Wiles as White House chief of staff. Reuters reported the appointment came after Trump's midterm defeat.",
+          "headline": "Trump names Stephen Miller as White House chief of staff"
+        },
+        "es": {
+          "body": "El presidente Donald Trump dijo el viernes que Stephen Miller sustituirá a Susie Wiles como jefe de la Casa Blanca. Reuters informó de que el nominate se produjo tras la derrota de Trump en las elecciones de mitad de mandato.",
+          "headline": "Trump nombra a Stephen Miller jefe de la Casa Blanca"
+        },
+        "fr": {
+          "body": "Le président Donald Trump a déclaré vendredi que Stephen Miller remplacerait Susie Wiles au poste de chef de la Maison-Blanche. Reuters a rapporté que cette nomination est intervenue après la défaite de Trump aux élections de mi-mandat.",
+          "headline": "Trump désigne Stephen Miller comme chef de la Maison-Blanche"
+        },
+        "it": {
+          "body": "Il presidente Donald Trump ha detto venerdì che Stephen Miller sostituirà Susie Wiles come capo di staff della Casa Bianca. Reuters ha riportato che la nomina è avvenuta dopo la sconfitta di Trump alle elezioni di metà mandato.",
+          "headline": "Trump nomina Stephen Miller capo di staff della Casa Bianca"
+        },
+        "ja": {
+          "body": "ドナルド・トランプ大統領は金曜日、スティphen・ミラーが白宮長官としてスーシー・ワイルズを後任すると述べた。ロイター通信は、この任命はトランプ大統領の中間選挙での敗北後に決まったと報じた。",
+          "headline": "トランプ大統領、スティphen・ミラーを白宮長官に指名"
+        },
+        "ko": {
+          "body": "도널드 트럼프 대통령은 금요일 스티븐 밀러가 수시 와일스를 백악관장으로 대체할 것이라고 밝혔다. 로이터는 이번 임명이 트럼프의 중간선거 패배 이후에 이뤄졌다고 보도했다.",
+          "headline": "트럼프, 스티븐 밀러를 백악관장으로 지명"
+        },
+        "pt": {
+          "body": "O presidente Donald Trump disse na sexta-feira que Stephen Miller substituirá Susie Wiles como chefe de gabinete da Casa Branca. A Reuters informou que a nomeação veio após a derrota de Trump nas eleições de meio de mandato.",
+          "headline": "Trump nomeia Stephen Miller como chefe de gabinete da Casa Branca"
+        },
+        "zh": {
+          "body": "唐纳德·特朗普总统周五表示，斯蒂芬·米勒将接替苏西·威尔斯担任白宫幕僚长。路透社报道称，此次任命是在特朗普于中期选举中败选后作出的。",
+          "headline": "特朗普任命斯蒂芬·米勒为白宫幕僚长"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPRW9VOFJHVC05elRKeHJYaUVfalhSNTJYS0dhNkJobGVIaGU1ZVlLaUNlakI2SURhTHNqc2c2ODFYcWpVaE5uUXpoNEI1d1h3MjFxbTlqNHQwVVJmNEFyUl9uRWktTWdRMGs1Z05GUXRxU2FwVC0wV19JSExCbi1DM1pPNHZVUzFZcVB3ak93TWM4MUk?oc=5",
+          "title": "Trump makes hardliner Stephen Miller his chief of staff after midterm defeat",
+          "outlet": "Reuters",
+          "publishedAt": "2026-11-06T22:58:18.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/06/nx-s1-6032810/stephen-miller-replaces-susie-wiles-as-white-house-chief-of-staff",
+          "title": "Stephen Miller replaces Susie Wiles as White House chief of staff",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-06T22:21:35.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-06T21:58:09.000Z",
+      "id": "u-1794002289000-f5mb",
+      "kind": "reaction",
+      "locales": {
+        "de": {
+          "body": "Der Guardian berichtete, dass die asiatischen und europäischen Aktienmärkte am Freitag nach dem Sieg der Demokraten bei den Zwischenwahlen stark einbrachen. NPR berichtete von großen Verlusten bei Aktien im Bereich der künstlichen Intelligenz (KI), nachdem die Demokraten die Zwischenwahlen gewonnen hatten.",
+          "headline": "Globale Aktienmärkte fallen nach dem Sieg der Demokraten bei den US-Zwischenwahlen"
+        },
+        "en": {
+          "body": "The Guardian reported that Asian and European stock markets fell sharply on Friday after the Democrats' midterm victory. NPR reported big losses by artificial intelligence (AI) shares after Democrats won the midterm elections.",
+          "headline": "Global stocks fall after Democrats' US midterm victory"
+        },
+        "es": {
+          "body": "The Guardian informó de que los mercados de acciones asiáticos y europeos cayeron bruscamente el viernes tras la victoria de los democrátas en las elecciones de mitad de mandato. NPR informó de las fuertes pérdidas de las acciones de inteligencia artificial (IA) después de que los democrátas ganaran las elecciones de mitad de mandato.",
+          "headline": "Las bolsas mundiales caen tras la victoria de los democrátas en las elecciones de mitad de mandato de EE. UU."
+        },
+        "fr": {
+          "body": "Le Guardian a rapporté que les marchés actions asiatiques et européens ont fortement reculé vendredi après la victoire des démocrates aux élections de mi-mandat. NPR a rapporté de fortes baisses des actions liées à l’intelligence artificielle (IA) après la victoire des démocrates aux élections de mi-mandat.",
+          "headline": "Les actions mondiales reculent après la victoire des démocrates aux élections de mi-mandat aux États-Unis"
+        },
+        "it": {
+          "body": "Il Guardian ha riportato che venerdì i mercati azionari asiatici ed europei sono scesi nettamente dopo la vittoria dei democratici nelle elezioni di metà mandato. NPR ha riportato che i titoli dell'intelligenza artificiale (IA) hanno subito pesanti perdite dopo che i democratici hanno vinto le elezioni di metà mandato.",
+          "headline": "I titoli globali scendono dopo la vittoria dei democratici nelle elezioni di metà mandato negli Stati Uniti"
+        },
+        "ja": {
+          "body": "ガーディアンは、民主党の中間選挙での勝利を受け、金曜日にアジアと欧州の株式市場が急落したと報じた。NPRは、民主党が中間選挙で勝利した後、人工知能（AI）関連株が大きく下落したと報じた。",
+          "headline": "民主党の米国中間選挙での勝利を受け世界株が下落"
+        },
+        "ko": {
+          "body": "가디언은 민주당이 중간선거에서 승리한 뒤 금요일 아시아와 유럽 주식시장이 급락했다고 보도했다. NPR은 민주당이 중간선거에서 승리한 뒤 인공지능(AI) 관련 주식이 크게 하락했다고 보도했다.",
+          "headline": "미국 중간선거에서 민주당 승리 뒤 세계 증시 하락"
+        },
+        "pt": {
+          "body": "O Guardian informou que os mercados de ações asiáticos e europeus caíram fortemente na sexta-feira após a vitória dos Democratas nas eleições de meio de mandato. A NPR informou que as ações de inteligência artificial (IA) registaram grandes perdas depois de os Democratas vencerem as eleições de meio de mandato.",
+          "headline": "Bolsas globais caem após vitória dos Democratas nas eleições de meio de mandato dos EUA"
+        },
+        "zh": {
+          "body": "《卫报》报道称，民主党在中期选举中获胜后，亚洲和欧洲股市周五大幅下跌。美国公共广播公司（NPR）报道称，民主党赢得中期选举后，人工智能（AI）板块股价大幅下挫。",
+          "headline": "民主党在美国中期选举中获胜后全球股市下跌"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.npr.org/2026/11/06/nx-s1-6032695/this-was-the-week-the-ai-trade-cracked-so-whats-next",
+          "title": "This was the week the AI trade cracked. So what's next?",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-06T21:58:09.000Z"
+        },
+        {
+          "url": "https://www.theguardian.com/business/2026/nov/06/global-stocks-plunge-amid-ai-slowdown-fears-after-democrats-midterm-triumph",
+          "title": "Global stocks fall amid ‘big worries over AI’ after Democrats’ midterms triumph",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-06T21:23:54.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "trump",
     "midterms",
@@ -17,188 +299,6 @@
     "susie wiles",
     "ukraine",
     "blue tsunami"
-  ],
-  "startedAt": "2026-11-06T23:59:48.446Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-07T00:04:30.278Z",
-  "articleSlug": null,
-  "sourceCount": 5,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1794008040000-yolg",
-      "at": "2026-11-06T23:34:00.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Democrats win House and Senate majorities in US midterms",
-          "body": "CNBC reported that Democrats won majority control of the House and Senate in the midterm elections. The Japan Times said the result left President Donald Trump facing a Democratic-led House and Senate."
-        },
-        "fr": {
-          "headline": "Les démocrates remportent les majorités à la Chambre et au Sénat lors des élections de mi-mandat aux États-Unis",
-          "body": "CNBC a rapporté que les démocrates ont remporté le contrôle majoritaire de la Chambre et du Sénat lors des élections de mi-mandat. The Japan Times a indiqué que ce résultat plaçait le président Donald Trump face à une Chambre et un Sénat dirigés par les démocrates."
-        },
-        "it": {
-          "headline": "I democratici conquistano le maggioranze alla Camera e al Senato nelle elezioni di metà mandato negli Stati Uniti",
-          "body": "La CNBC ha riportato che i democratici hanno conquistato il controllo maggioritario della Camera e del Senato nelle elezioni di metà mandato. Il Japan Times ha detto che il risultato ha lasciato il presidente Donald Trump di fronte a una Camera e a un Senato guidati dai democratici."
-        },
-        "de": {
-          "headline": "Demokraten gewinnen Mehrheiten im Repräsentantenhaus und Senat bei US-Zwischenwahlen",
-          "body": "CNBC berichtete, dass die Demokraten bei den Zwischenwahlen die Mehrheitskontrolle über das Repräsentantenhaus und den Senat gewonnen haben. The Japan Times schrieb, das Ergebnis habe Präsident Donald Trump mit einem von den Demokraten geführten Repräsentantenhaus und Senat konfrontiert."
-        },
-        "pt": {
-          "headline": "Democratas conquistam maiorias na Câmara e no Senado nas eleições de meio de mandato dos EUA",
-          "body": "A CNBC informou que os Democratas conquistaram o controlo maioria da Câmara e do Senado nas eleições de meio de mandato. O Japan Times disse que o resultado deixou o presidente Donald Trump perante uma Câmara e um Senado dirigidos pelos Democratas."
-        },
-        "es": {
-          "headline": "Los democrátas ganan las mayorías en la Cámara y el Senado en las elecciones de mitad de mandato de EE. UU.",
-          "body": "CNBC informó de que los democrátas ganaron el control mayoritario de la Cámara y el Senado en las elecciones de mitad de mandato. The Japan Times señaló que el resultado dejó al presidente Donald Trump frente a una Cámara y un Senado dirigidos por los democrátas."
-        },
-        "ja": {
-          "headline": "米国中間選挙で民主党が下院と上院の多数派を獲得",
-          "body": "CNBCは、民主党が中間選挙で下院と上院の多数派を掌握したと報じた。ジャパン・タイムズは、その結果により、ドナルド・トランプ大統領が民主党主導の下院と上院に対応attenedする状況となったと報じた。"
-        },
-        "zh": {
-          "headline": "民主党在美国中期选举中赢得众议院和参议院多数席位",
-          "body": "美国消费者新闻与商业频道（CNBC）报道称，民主党在中期选举中赢得众议院和参议院的多数控制权。《日本时报》称，这一结果使唐纳德·特朗普总统面对由民主党主导的众议院和参议院。"
-        },
-        "ko": {
-          "headline": "미국 중간선거에서 민주당, 하원·상원 과반수 확보",
-          "body": "CNBC는 중간선거에서 민주당이 하원과 상원의 과반수 지배권을 확보했다고 보도했다. 일본 타임즈는 그 결과로 도널드 트럼프 대통령이 민주당이 주도하는 하원과 상원을 상대하게 되었다고 말했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Japan Times",
-          "title": "Trump makes hard-liner Stephen Miller his chief of staff after midterm defeat",
-          "url": "https://www.japantimes.co.jp/news/2026/11/07/world/politics/trump-stephen-miller-chief-of-staff/",
-          "publishedAt": "2026-11-06T23:34:00.000Z"
-        },
-        {
-          "outlet": "CNBC",
-          "title": "Trump says Stephen Miller to replace Susie Wiles as White House chief of staff",
-          "url": "https://www.cnbc.com/2026/11/06/trump-stephen-miller-wiles-chief-of-staff.html",
-          "publishedAt": "2026-11-06T22:22:53.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794005898000-ercc",
-      "at": "2026-11-06T22:58:18.000Z",
-      "kind": "statement",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Trump names Stephen Miller as White House chief of staff",
-          "body": "President Donald Trump said on Friday that Stephen Miller will replace Susie Wiles as White House chief of staff. Reuters reported the appointment came after Trump's midterm defeat."
-        },
-        "fr": {
-          "headline": "Trump désigne Stephen Miller comme chef de la Maison-Blanche",
-          "body": "Le président Donald Trump a déclaré vendredi que Stephen Miller remplacerait Susie Wiles au poste de chef de la Maison-Blanche. Reuters a rapporté que cette nomination est intervenue après la défaite de Trump aux élections de mi-mandat."
-        },
-        "it": {
-          "headline": "Trump nomina Stephen Miller capo di staff della Casa Bianca",
-          "body": "Il presidente Donald Trump ha detto venerdì che Stephen Miller sostituirà Susie Wiles come capo di staff della Casa Bianca. Reuters ha riportato che la nomina è avvenuta dopo la sconfitta di Trump alle elezioni di metà mandato."
-        },
-        "de": {
-          "headline": "Trump ernennt Stephen Miller zum Stabschef des Weißen Hauses",
-          "body": "Präsident Donald Trump erklärte am Freitag, dass Stephen Miller Susie Wiles als Stabschef des Weißen Hauses ablösen werde. Reuters berichtete, die Ernennung sei nach Trumps Niederlage bei den Zwischenwahlen erfolgt."
-        },
-        "pt": {
-          "headline": "Trump nomeia Stephen Miller como chefe de gabinete da Casa Branca",
-          "body": "O presidente Donald Trump disse na sexta-feira que Stephen Miller substituirá Susie Wiles como chefe de gabinete da Casa Branca. A Reuters informou que a nomeação veio após a derrota de Trump nas eleições de meio de mandato."
-        },
-        "es": {
-          "headline": "Trump nombra a Stephen Miller jefe de la Casa Blanca",
-          "body": "El presidente Donald Trump dijo el viernes que Stephen Miller sustituirá a Susie Wiles como jefe de la Casa Blanca. Reuters informó de que el nominate se produjo tras la derrota de Trump en las elecciones de mitad de mandato."
-        },
-        "ja": {
-          "headline": "トランプ大統領、スティphen・ミラーを白宮長官に指名",
-          "body": "ドナルド・トランプ大統領は金曜日、スティphen・ミラーが白宮長官としてスーシー・ワイルズを後任すると述べた。ロイター通信は、この任命はトランプ大統領の中間選挙での敗北後に決まったと報じた。"
-        },
-        "zh": {
-          "headline": "特朗普任命斯蒂芬·米勒为白宫幕僚长",
-          "body": "唐纳德·特朗普总统周五表示，斯蒂芬·米勒将接替苏西·威尔斯担任白宫幕僚长。路透社报道称，此次任命是在特朗普于中期选举中败选后作出的。"
-        },
-        "ko": {
-          "headline": "트럼프, 스티븐 밀러를 백악관장으로 지명",
-          "body": "도널드 트럼프 대통령은 금요일 스티븐 밀러가 수시 와일스를 백악관장으로 대체할 것이라고 밝혔다. 로이터는 이번 임명이 트럼프의 중간선거 패배 이후에 이뤄졌다고 보도했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Reuters",
-          "title": "Trump makes hardliner Stephen Miller his chief of staff after midterm defeat",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPRW9VOFJHVC05elRKeHJYaUVfalhSNTJYS0dhNkJobGVIaGU1ZVlLaUNlakI2SURhTHNqc2c2ODFYcWpVaE5uUXpoNEI1d1h3MjFxbTlqNHQwVVJmNEFyUl9uRWktTWdRMGs1Z05GUXRxU2FwVC0wV19JSExCbi1DM1pPNHZVUzFZcVB3ak93TWM4MUk?oc=5",
-          "publishedAt": "2026-11-06T22:58:18.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "Stephen Miller replaces Susie Wiles as White House chief of staff",
-          "url": "https://www.npr.org/2026/11/06/nx-s1-6032810/stephen-miller-replaces-susie-wiles-as-white-house-chief-of-staff",
-          "publishedAt": "2026-11-06T22:21:35.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794002289000-f5mb",
-      "at": "2026-11-06T21:58:09.000Z",
-      "kind": "reaction",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Global stocks fall after Democrats' US midterm victory",
-          "body": "The Guardian reported that Asian and European stock markets fell sharply on Friday after the Democrats' midterm victory. NPR reported big losses by artificial intelligence (AI) shares after Democrats won the midterm elections."
-        },
-        "fr": {
-          "headline": "Les actions mondiales reculent après la victoire des démocrates aux élections de mi-mandat aux États-Unis",
-          "body": "Le Guardian a rapporté que les marchés actions asiatiques et européens ont fortement reculé vendredi après la victoire des démocrates aux élections de mi-mandat. NPR a rapporté de fortes baisses des actions liées à l’intelligence artificielle (IA) après la victoire des démocrates aux élections de mi-mandat."
-        },
-        "it": {
-          "headline": "I titoli globali scendono dopo la vittoria dei democratici nelle elezioni di metà mandato negli Stati Uniti",
-          "body": "Il Guardian ha riportato che venerdì i mercati azionari asiatici ed europei sono scesi nettamente dopo la vittoria dei democratici nelle elezioni di metà mandato. NPR ha riportato che i titoli dell'intelligenza artificiale (IA) hanno subito pesanti perdite dopo che i democratici hanno vinto le elezioni di metà mandato."
-        },
-        "de": {
-          "headline": "Globale Aktienmärkte fallen nach dem Sieg der Demokraten bei den US-Zwischenwahlen",
-          "body": "Der Guardian berichtete, dass die asiatischen und europäischen Aktienmärkte am Freitag nach dem Sieg der Demokraten bei den Zwischenwahlen stark einbrachen. NPR berichtete von großen Verlusten bei Aktien im Bereich der künstlichen Intelligenz (KI), nachdem die Demokraten die Zwischenwahlen gewonnen hatten."
-        },
-        "pt": {
-          "headline": "Bolsas globais caem após vitória dos Democratas nas eleições de meio de mandato dos EUA",
-          "body": "O Guardian informou que os mercados de ações asiáticos e europeus caíram fortemente na sexta-feira após a vitória dos Democratas nas eleições de meio de mandato. A NPR informou que as ações de inteligência artificial (IA) registaram grandes perdas depois de os Democratas vencerem as eleições de meio de mandato."
-        },
-        "es": {
-          "headline": "Las bolsas mundiales caen tras la victoria de los democrátas en las elecciones de mitad de mandato de EE. UU.",
-          "body": "The Guardian informó de que los mercados de acciones asiáticos y europeos cayeron bruscamente el viernes tras la victoria de los democrátas en las elecciones de mitad de mandato. NPR informó de las fuertes pérdidas de las acciones de inteligencia artificial (IA) después de que los democrátas ganaran las elecciones de mitad de mandato."
-        },
-        "ja": {
-          "headline": "民主党の米国中間選挙での勝利を受け世界株が下落",
-          "body": "ガーディアンは、民主党の中間選挙での勝利を受け、金曜日にアジアと欧州の株式市場が急落したと報じた。NPRは、民主党が中間選挙で勝利した後、人工知能（AI）関連株が大きく下落したと報じた。"
-        },
-        "zh": {
-          "headline": "民主党在美国中期选举中获胜后全球股市下跌",
-          "body": "《卫报》报道称，民主党在中期选举中获胜后，亚洲和欧洲股市周五大幅下跌。美国公共广播公司（NPR）报道称，民主党赢得中期选举后，人工智能（AI）板块股价大幅下挫。"
-        },
-        "ko": {
-          "headline": "미국 중간선거에서 민주당 승리 뒤 세계 증시 하락",
-          "body": "가디언은 민주당이 중간선거에서 승리한 뒤 금요일 아시아와 유럽 주식시장이 급락했다고 보도했다. NPR은 민주당이 중간선거에서 승리한 뒤 인공지능(AI) 관련 주식이 크게 하락했다고 보도했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "NPR",
-          "title": "This was the week the AI trade cracked. So what's next?",
-          "url": "https://www.npr.org/2026/11/06/nx-s1-6032695/this-was-the-week-the-ai-trade-cracked-so-whats-next",
-          "publishedAt": "2026-11-06T21:58:09.000Z"
-        },
-        {
-          "outlet": "The Guardian",
-          "title": "Global stocks fall amid ‘big worries over AI’ after Democrats’ midterms triumph",
-          "url": "https://www.theguardian.com/business/2026/nov/06/global-stocks-plunge-amid-ai-slowdown-fears-after-democrats-midterm-triumph",
-          "publishedAt": "2026-11-06T21:23:54.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.healthline.com/health-news/rfk-jr-vaccine-schedule-changes-may-cause-surge-hepatitis-b",
@@ -260,61 +360,73 @@
     "https://www.nytimes.com/2026/11/06/us/politics/hegseth-trump-iran-war.html",
     "https://www.euronews.com/2026/11/06/us-measles-cases-exceed-5000-in-2026-reaching-their-highest-level-in-35-years",
     "https://www.theguardian.com/business/2026/nov/06/global-stocks-plunge-amid-ai-slowdown-fears-after-democrats-midterm-triumph",
-    "https://www.aljazeera.com/news/2026/11/6/who-is-stephen-miller-trumps-new-white-house-chief-of-staff?traffic_source=rss"
+    "https://www.aljazeera.com/news/2026/11/6/who-is-stephen-miller-trumps-new-white-house-chief-of-staff?traffic_source=rss",
+    "https://www.jpost.com/american-politics/article-914100",
+    "https://www.nytimes.com/2026/11/06/us/politics/susie-wiles-chief-of-staff-trump.html",
+    "https://www.straitstimes.com/world/europe/europe-insists-putin-end-ukraine-war-before-discussing-russias-concerns",
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxNeFpiZnNZOGUyeXlVazBweDhUVFdxX2FQMk0wRW1xLV9HeC03cnBIT25TcHBTVXNfT2hZdDRkcER2QmtWS3Ftekc0VWJEVG5xZm8zSmV4bk9tMlg3VzJ2Z2Fla1BFbHZpWjlTaTNLbmpINUhTdEFPeGhfQ0h5VTFscW92MXI2eG1aOUk0aGxOdnF2YW8yTVE?oc=5",
+    "https://thehill.com/homenews/senate/6205607-hyde-smith-colom-mississippi-senate/",
+    "https://g1.globo.com/jornal-nacional/noticia/2026/11/06/presidente-destituido-do-paraguai-santiago-pena-e-preso-em-assuncao.ghtml",
+    "https://www.straitstimes.com/world/united-states/before-his-promotion-stephen-miller-designed-trumps-immigration-crackdown",
+    "https://arstechnica.com/gadgets/2026/11/ships-loiter-near-subsea-cables-amid-irans-warnings-to-trump/",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZFUySWVDTnljNnZ4THFIbGNmeEZibFFqQ0s2TE1oMFBoVW9oS25iT250enZDa2dLcS1HSmhXbDhSa3pWd2FyVEF0T1Z6dlVGdzZIZ3NOLVNYb2VpMm9xV2JUZzhHMkFESEZPdkZNcUlPaU5WTHd6WnVlb0N2VnJSSjJLRWhQcmE3dW9HWmJRdFZCMmdp?oc=5",
+    "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPeTczSExzNTc4Qm9DWE1tVE5RcTVIWTNranZyV2RIc2t5WUlrRk5SemcwbzA5QlF4X1JzMWtNNFBOR2RJZkdqNXhQWkNVWUtlQ2h2aF9hNFFlRXhrQzBVVHZRTEtOY2dDbzBjVkVmSFdyMVFlakZJU2NuSWRVbHI1UTR0YzU3QVJ5eVNaTmxuNVgtM1NQaXU0RVZSaV9xQ0pVNUo3d240MU9URmJDVENRZ0hmMG5uVDhQNkEyQnFEaF9XSGZNZWtkZ29nSVIybURUSDhLajljdUVYRktkSVI4UE5YZEs?oc=5",
+    "https://www.axios.com/2026/11/06/trump-midterms-arch-felony-appea",
+    "https://thehill.com/homenews/administration/6205195-jeffries-blasts-trump-miller-pick/",
+    "https://news.google.com/rss/articles/CBMiakFVX3lxTE5EYXd6WXBKSXZTSEg1WkprRGVjRDBuWTJpZVBFNlUwSjM5S0hkREI5VC1LX2E4NWQzT3I4Y3Z4eGhEU3g0VmFlUUVZT0FsWW1BdEVYRFJLSDFjNm1EaS1oeHNGalNzY01pVHc?oc=5",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxNTlNUS3o1cEwyRjZaM1lmN2I1bS1qVGRKR250TWRUWWU4TF9YVVFRaEJxM0J3NmFhY1g1MnRfWEhYU0JseGFaTmMxcGF1aFFKYkQ2M2tSaWJZazFFTmlvUWNXOFRZUHY1ZktzZVZmNEItWG1hTW82QlZTQzBVUHBzOTlnWkZvZkJ5QjVBSDRTVdIBkgFBVV95cUxPT3VFNGVKSWFDZlFONUdDUkZxQ2xGRUxZUklyUUFzbERTbUdKdjFlM2NqaHN3U3ZjRC1xZnJodExjUm41UWlpMldDY0FhSXFSdzVpTE5JNUxmZlJ4QjhyRHFBdTdyS2xoVmJwNzRfR1pZSTlYclh3RkFwUU9kM2FYbzA4MEdpRTdfdDRQOGZDQ2VKZw?oc=5",
+    "https://www.jpost.com/international/article-914089",
+    "https://www.wired.com/story/how-stephen-miller-schemed-his-way-to-the-top/",
+    "https://www.zdfheute.de/politik/ausland/usa-midterms-susie-wiles-stephen-miller-trump-100.html",
+    "https://www.bbc.co.uk/news/articles/c35ynnpzdq51o?at_medium=RSS&at_campaign=rss",
+    "https://www.channelnewsasia.com/world/stephen-miller-trump-new-chief-staff-immigration-6532261",
+    "https://www.nytimes.com/2026/11/06/us/politics/musk-trump-midterm-election-spending.html",
+    "https://www.scmp.com/news/china/diplomacy/article/3373619/californias-first-asian-lieutenant-governor-has-ties-esteemed-chinese-military-family",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRjlLa1EzbDRTajlSeXdPMmZOMmFaM0I3OC1pMnd5Tmx2Y0R1elpySzhtRHNPeWNWY1EybnhRU3JSRFQ2eS1HSjB1all2V0Y4YjdmWDVDRndhbTdBUjBmcUtRdGFpdl9RVzV0ZzAtalRRbG9nYzBtOG1GM3lEQUlFWklBYlM4VWxpLUxhSy0zUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaTZ2X2NMb3UwZGZCazRwNkNiX09FQ3VuUDUxYnpSZEVkcGRDZU42NU9NQl9udDhaX0kxVkx6WEdsTVN6cHZvaFZxdEFLYzhqM0N6N1NyMmt5R0g3WXg2UWNfamJQRThhUmpQVWh3SmxNTUF6djNoQU85N3BLWTlPT1hrbkJ3Q0xEVlo4SlQwckVWdkJFSU9kWnNFaWhPcUZhNlptM3Rqcw?oc=5",
+    "https://www.france24.com/en/americas/20261106-trump-announces-immigration-hardliner-stephen-miller-as-new-chief-of-staff",
+    "https://www.spiegel.de/ausland/ukraine-wolodymyr-selenskyj-macht-vitali-klitschko-fuer-stromausfaelle-in-kyjiw-verantwortlich-a-2e10ce20-7817-46f2-89f1-34bb45cb346f#ref=rss",
+    "https://www.cbssports.com/soccer/news/steve-cherundolo-names-first-u-s-u-23-roster-on-road-to-2028-los-angeles-olympic-games/",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTWdmVmdCYTJOMGRZNUR6ajRTTVNqOVB1X0FjOXVfck5hWGxaQ2g4Y0JMVmViQzlkbFVyQTI3QTBiTVhwRkx5Y3FBNERLbGdTSzMxU1Eyclc5S1lHaDcwa3RURzhLSVFwZzNVM2tBcjI0WnlIQ1FiQk9EZEdUS01ZSGRMdC1OOGJoR2R2U3JQd001cENzVXBJUy1ieWItdGNxRkJHeEs4NXpfWUFGMVFiZ01PMWh6V0RxZDJDcw?oc=5",
+    "https://www.npr.org/2026/11/06/g-s1-152138/israel-election-palestinian-arab-parties",
+    "https://www.dw.com/en/stephen-miller-named-by-trump-as-new-white-house-chief-of-staff/a-79881571?maca=en-rss-en-all-1573-rdf",
+    "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-russian-forces-plan-new-strikes-on-energy-targets-bridges-infrastructure",
+    "https://www.lemonde.fr/en/international/article/2026/11/06/trump-appoints-immigration-hardliner-stephen-miller-as-new-chief-of-staff_6773758_4.html",
+    "https://www.foxnews.com/politics/trumps-move-wiles-miller-signals-major-tactical-shift-governing-without-congress",
+    "https://www.kyivpost.com/post/89398",
+    "https://thehill.com/homenews/campaign/6204997-chris-christie-2028-presidential-election/",
+    "https://en.yna.co.kr/view/AEN20261107000251315",
+    "https://www.zdfheute.de/politik/ausland/trump-wiles-entlassung-miller-stabschef-100.html",
+    "https://en.yna.co.kr/view/AEN20261107000200315",
+    "https://english.elpais.com/usa/2026-11-06/trump-names-architect-of-his-immigration-policy-stephen-miller-as-white-house-chief-of-staff.html",
+    "https://www.tagesschau.de/ausland/amerika/trump-wiles-100.html",
+    "https://www.spiegel.de/ausland/usa-donald-trump-ersetzt-stabschefin-susie-wiles-stephen-miller-soll-nachfolgen-a-2c11d3f6-4f4d-43d3-923a-c17f6695c082#ref=rss",
+    "https://www.dawn.com/news/2042647/trump-promotes-stephen-miller-to-chief-of-staff-replacing-susie-wiles",
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5GSGxvMGpyeHRHclh1TkRqeHRETzBOMGxUVU5sRklrT3JmSEJlM3p2bmt2c1RPUUhsYURLYmZibDVsUzFpZlVuLTg2NDR2WWhNY3E2WHNOZzlleGM?oc=5",
+    "https://www.kyivpost.com/post/89396",
+    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdzFpR25CbmRpRnptM2FBTTVySnhOaUNob3oyTXZmcVQtTFY1cUVxRVhXdGNTakxhWlJHaDFVMFFWRzk4SGZaM0F1bnBEa2M0ZXgwLTlOT3owRXdBZmlEM2RSa2dldmh4Y3JROXY5VXFOb0l3RWNNZzJNVkZ5aU8tLWw3RkNfTU1rWnllaDcwN1JLeHJ5cUtqVWpkSTJscU5lcWc0SzJSY193b3A5WkpwWmFXWU5KSURqdW5WUE9TdlFLTVE?oc=5",
+    "https://www.npr.org/2026/11/06/nx-s1-6028828/global-health-usaid-trump-democrats-congress",
+    "https://www.france24.com/en/tv-shows/the-world-this-week/20261106-midterms-a-maga-postmortem-europe-s-shape-shifting-protests",
+    "https://www.nytimes.com/2026/11/06/business/farmers-election-trump-democrats.html",
+    "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+    "https://www.srf.ch/news/international/midterms-2026-trump-ersetzt-seine-stabschefin-durch-stephen-miller",
+    "https://thehill.com/homenews/senate/6204900-ron-johnson-senate-gop-leadership-election-midterm-election-losses/",
+    "https://www.axios.com/2026/11/06/navajo-nation-first-woman-president-tribe",
+    "https://www.rollingstone.com/politics/politics-news/houston-mayor-rolls-back-cooperation-ice-midterms-1235654184/",
+    "https://www.semafor.com/article/11/06/2026/trump-elevates-stephen-miller-after-midterms-disaster",
+    "https://www.euronews.com/2026/11/06/trump-appoints-immigration-hardliner-stephen-miller-as-new-chief-of-staff",
+    "https://www.nytimes.com/2026/11/06/science/scientists-election-congress.html",
+    "https://www.npr.org/2026/11/06/nx-s1-6030645/mississippi-senate-results-provisional-ballots",
+    "https://www.france24.com/en/tv-shows/spotlight/20261106-a-homegrown-georgia-moderate-and-pragmatist-is-senator-ossoff-the-future-of-the-democratic-party",
+    "https://www.cnbc.com/2026/11/06/robert-garcia-trump-congress-oversight-investigations.html",
+    "https://www.thehindu.com/news/international/trump-replaces-susie-wiles-with-stephen-miller-as-chief-of-staff-after-gops-midterm-defeat/article71676063.ece",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRXlidTk1LWNhQmxic2tIaHg2eEZEVm0wUl8tdFhFNUZtUTEzSkh5b0gxVEkycy1ZYkZBaG96b25VU2RSb1p5RVhCdVpMV0F1SEF0UnBRYmZKclVjdGNRdGZkemdxNHpKMDZYUFZ5OWtNUGdyempIcUFUM1VZQ0tUdEQyZDk0RXVZdFVIMzQ1dWdFbDZreWdmWlJCdml1Z2RJSGxCaTNBZC11b3ZLRU5NQTRPWlpHejA?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Aftermath of the 2026 US mid-term elections",
-      "dek": "The 2026 US mid-term elections delivered a Democratic congressional majority and major GOP losses, prompting shake-ups and policy shifts in the Trump administration."
-    },
-    "de": {
-      "title": "Folgen der US-Zwischenwahlen 2026",
-      "dek": "Die US-Zwischenwahlen 2026 brachten eine demokratische Mehrheit im Kongress und erhebliche Verluste für die Republikaner, was Umbesetzungen und politische Kursänderungen in der Trump-Regierung nach sich zog."
-    },
-    "fr": {
-      "title": "Conséquences des élections de mi-mandat de 2026 aux États-Unis",
-      "dek": "Les élections de mi-mandat de 2026 aux États-Unis ont abouti à une majorité démocratique au Congrès et à d’importantes défaites du Parti républicain, entraînant des remaniements et des réorientations politiques dans l’administration Trump."
-    },
-    "it": {
-      "title": "Dopo le elezioni di metà mandato negli Stati Uniti del 2026",
-      "dek": "Le elezioni di metà mandato negli Stati Uniti del 2026 hanno portato a una maggioranza democratica al Congresso e a gravi perdite per il GOP, provocando rimescolamenti e cambiamenti di politica nell'amministrazione Trump."
-    },
-    "pt": {
-      "title": "Consequências das eleições de meio de mandato nos EUA em 2026",
-      "dek": "As eleições de meio de mandato nos EUA em 2026 resultaram numa maioria congressional democrata e em perdas importantes para o GOP, levando a reorganizações e mudanças de política na administração Trump."
-    },
-    "zh": {
-      "title": "2026年美国中期选举余波",
-      "dek": "2026年美国中期选举使民主党在国会中取得多数席位，并令共和党遭受重大损失，进而促使特朗普政府进行人事调整和政策转向。"
-    },
-    "ja": {
-      "title": "2026年米国中間選挙後の状況",
-      "dek": "2026年の米国中間選挙では民主党が国会で多数派となり、共和党は大幅な敗北を被った。これを機に、トランプ政権では人事の刷新と政策の転換が行われた。"
-    },
-    "ko": {
-      "title": "2026년 미국 중간선거의 여파",
-      "dek": "2026년 미국 중간선거에서 민주당이 의회 다수당을 차지하고 공화당이 큰 타격을 입으면서 트럼프 행정부의 인적 쇄신과 정책 기조 전환을 촉발했다."
-    },
-    "es": {
-      "title": "Consecuencias de las elecciones de mitad de mandato de 2026 en Estados Unidos",
-      "dek": "Las elecciones de mitad de mandato de 2026 en Estados Unidos dieron lugar a una mayoría democrats en el Congreso y a importantes pérdidas para el Partido Republicano, lo que provocó reorganizaciones y cambios de política en la administración de Trump."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "NPR",
-      "France 24",
-      "New York Times",
-      "The Hill",
-      "Axios",
-      "Dawn",
-      "South China Morning Post",
-      "The Jerusalem Post",
-      "STAT News"
-    ],
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
-  }
+  "startedAt": "2026-11-06T23:59:48.446Z",
+  "updatedAt": "2026-11-07T00:45:55.864Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": null,
+  "sourceCount": 8,
+  "seenHeadlines": []
 }
