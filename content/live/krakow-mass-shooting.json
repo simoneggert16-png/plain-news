@@ -1,9 +1,207 @@
 {
+  "meta": {
+    "outlets": [
+      "Reuters",
+      "CBS News",
+      "LiveNOW from FOX",
+      "Yahoo News Canada",
+      "Fox News",
+      "CP24",
+      "The News International"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
+  },
   "slug": "krakow-mass-shooting",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Krakow mass shooting",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Ein Massenschießen auf einem Markt in Krakau, Polen, hat mindestens sechs Menschen getötet und mehr als ein Dutzend verletzt. Die Behörden ermitteln den Tatverdächtigen und das Motiv.",
+      "title": "Massenschießen in Krakau"
+    },
+    "en": {
+      "dek": "A mass shooting at a market in Kraków, Poland, has killed at least six people and injured more than a dozen, with authorities investigating the suspect and motive.",
+      "title": "Kraków mass shooting"
+    },
+    "es": {
+      "dek": "Un tiroteo masivo en un mercado de Cracovia, Polonia, ha causado la muerte de al menos seis personas y ha herido a más de una docena, mientras las autoridades investigan al sospechoso y el móvil.",
+      "title": "Tiroteo masivo en Cracovia"
+    },
+    "fr": {
+      "dek": "Une fusillade sur un marché à Cracovie, en Pologne, a fait au moins six morts et plus d’une douzaine de blessés, les autorités enquêtant sur le suspect et le mobile.",
+      "title": "Fusillade à Cracovie"
+    },
+    "it": {
+      "dek": "Una sparatoria di massa in un mercato a Cracovia, in Polonia, ha ucciso almeno sei persone e ne ha ferite oltre una dozzina, mentre le autorità indagano sull'indiziato e sul movente.",
+      "title": "Sparatoria di massa a Cracovia"
+    },
+    "ja": {
+      "dek": "ポーランドのクラクフにある市場で発生した銃乱射事件で、少なくとも6人が死亡し、10人以上が負傷した。当局が容疑者と動機を調べている。",
+      "title": "クラクフで銃乱射事件"
+    },
+    "ko": {
+      "dek": "폴란드 크라쿠프의 한 시장에서 발생한 총기 난사로 최소 6명이 숨지고 12명 이상이 다쳤다. 당국이 용의자와 범행 동기를 조사하고 있다.",
+      "title": "크라쿠프 총기 난사"
+    },
+    "pt": {
+      "dek": "Um tiro de massa num mercado em Kraków, Polónia, matou pelo menos seis pessoas e feriu mais de uma dúzia, enquanto as autoridades investigam o suspeito e o motivo.",
+      "title": "Tiro de massa em Kraków"
+    },
+    "zh": {
+      "dek": "波兰克拉科夫一处市场发生大规模枪击事件，已造成至少六人死亡，十余人受伤。当局正在调查嫌疑人及其作案动机。",
+      "title": "克拉科夫大规模枪击事件"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794087240000-n5at",
+      "at": "2026-11-07T21:34:00.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Six killed, 15 injured in Krakow market square shooting",
+          "body": "Six people were killed and 15 wounded in Krakow's main square, according to NPR and ABC7. The gunman fired from a car and was shot by police, according to DW and NPR."
+        },
+        "de": {
+          "headline": "Sechs Tote und 15 Verletzte bei Schussincident auf dem Marktplatz in Krakau",
+          "body": "Laut NPR und ABC7 wurden auf dem Hauptplatz in Krakau sechs Menschen getötet und 15 verletzt. Laut DW und NPR feuerte der Täter aus einem Auto und wurde von der Polizei erschossen."
+        },
+        "es": {
+          "headline": "Seis muertos y 15 heridos en un tiroteo en la plaza del mercado de Cracovia",
+          "body": "Seis personas murieron y 15 resultaron heridas en la plaza principal de Cracovia, según NPR y ABC7. El tirador abrió fuego desde un coche y recibió disparos de la policía, según DW y NPR."
+        },
+        "zh": {
+          "headline": "克拉科夫市场广场枪击案致6死15伤",
+          "body": "据NPR和ABC7报道，克拉科夫主广场发生枪击事件，造成6人死亡、15人受伤。据德国之声（DW）和NPR报道，枪手从车内开枪，随后被警方开枪击中。"
+        },
+        "pt": {
+          "headline": "Seis mortos e 15 feridos em tiroteio na praça do mercado de Cracóvia",
+          "body": "Seis pessoas foram mortas e 15 ficaram feridas na praça principal de Cracóvia, segundo a NPR e a ABC7. O atirador disparou de um carro e foi alvejado pela polícia, segundo a DW e a NPR."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "DW",
+          "title": "Poland: Gunman kills 6 in Krakow main square",
+          "url": "https://www.dw.com/en/poland-gunman-kills-6-in-krakow-main-square/a-79886489?maca=en-rss-en-all-1573-rdf",
+          "publishedAt": "2026-11-07T21:34:00.000Z"
+        },
+        {
+          "outlet": "ABC7 Los Angeles",
+          "title": "6 killed, 15 injured in shooting in Polish city of Krakow, police say",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQc0RIYzBob0hhRVdGc3ZxRjJueGhJNUxfY1lFcVBmd2E1Rmw2cnJvRTY5bVdkeW5MWUV6RFg5TEtYaC1YWi00cE1Wa2Ria01NdmU0RjdQMHpOUmgycXhxY3RHcVB1NDl4ZzgzenFLUllJd3BqeHBKX2pZSXpxS3luR3lDa3ZubGVMa3RvMGREeXB1Vk1SSUxrWlNHbElhWmJjbU02Z0tHUVRSLTA5MmJPTUNhSGlLWjdCUTFxTkdqOWJRZEI4?oc=5",
+          "publishedAt": "2026-11-07T20:18:58.000Z"
+        },
+        {
+          "outlet": "NPR",
+          "title": "Gunman opens fire in Polish city of Krakow, killing 6 people and injuring 15",
+          "url": "https://www.npr.org/2026/11/07/g-s1-152532/gunman-opens-fire-in-polish-city-of-krakow-killing-6-people-and-injuring-15",
+          "publishedAt": "2026-11-07T18:37:36.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794087720000-amue",
+      "at": "2026-11-07T21:42:00.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Three bodies found at home of Krakow shooting suspect",
+          "body": "Polish Prime Minister Donald Tusk said footage showed three bodies at the suspect's home. The Guardian and BBC reported that three bodies were found at the home."
+        },
+        "de": {
+          "headline": "Drei Leichen im Haus des Tatverdächtigen der Schießerei in Krakau gefunden",
+          "body": "Der polnische Ministerpräsident Donald Tusk erklärte, Videoaufnahmen zeigten drei Leichen im Haus des Tatverdächtigen. The Guardian und die BBC berichteten, dass im Haus drei Leichen gefunden wurden."
+        },
+        "es": {
+          "headline": "Hallan tres cadáveres en el domicilio del sospechoso del tiroteo de Cracovia",
+          "body": "El primer ministro polaco Donald Tusk afirmó que las imágenes mostraban tres cadáveres en el domicilio del sospechoso. The Guardian y la BBC informaron de que se hallaron tres cadáveres en la vivienda."
+        },
+        "zh": {
+          "headline": "克拉科夫枪击案嫌犯家中发现三具尸体",
+          "body": "波兰总理唐纳德·图斯克表示，录像画面显示嫌犯家中有三具尸体。《卫报》和BBC报道称，在该住所发现三具尸体。"
+        },
+        "pt": {
+          "headline": "Três corpos encontrados na casa do suspeito do tiroteio em Cracóvia",
+          "body": "O primeiro-ministro polaco, Donald Tusk, disse que as filmagens mostravam três corpos na casa do suspeito. O The Guardian e a BBC relataram que três corpos foram encontrados na casa."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Times of India",
+          "title": "Poland mass shooting: PM says footage shows 3 bodies at suspect’s home; minister cites far-right influenc",
+          "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPZ29taG5xazRVcXJzMXVNdUEtT0JtSXljUGFqRVljUDU3a3pDWlQ3aWNFRDRaTloySkRiWS1uUFpWMHhkTHJxWUtyWkhwZkNla2RtVXpJc2FkREw5aDViTWg3c2FZTDNKaURnY3daZ2pIa2R4dEJkVnlxWnlSOVVJX0J3ZXY4MmNSeU1oWldONkpyckNXem9uTHctd05OMUFLOVFyT05YRGphT0R1UWFrTjB6RDdqR3ZXT192N2Q3X0V1OWZROUFTSVpXM2VWamZpQWpqRmZBTnFsR0QyanI3cWwzVTJIdVZDQWFkWldpLVlsZWV4dkFaUk91U3ZGUGF2UVFkb1pQaDBLZ9IBjwJBVV95cUxOclQzUFFveUxFR21peDBhQ3lCZWRrdDJsSHVuRXhpSTdGZDRGN0NkMlRwM1ptUWxwak9TZExOZ2s4OEM2enMyN0Q0WlBSSE1YOTZvLTd1ZlF1QmxxcmZRbk03Q214NmdYS0tudXdMVjJ3bm5kWlI1LUZEYXRNdzZGWkpaeXNnQktUMEZBeUoxaGNUQm9Rb2tvQmt2b3pRZm9wRXRPd2JDdldIYktzajdNWmFTTVRtRjZlZHUwQlBjWmhRZndtd1ZXRDNmX0dKVmZWZ2lnb1lxdUZVbk1EbG5FMTFYWEt4X3JaMWQxUXdWWlNtclhYNF9rQ2tSMFgtMjVEYlpoRW5paDZJNWtIcUFr?oc=5",
+          "publishedAt": "2026-11-07T21:42:00.000Z"
+        },
+        {
+          "outlet": "The Guardian",
+          "title": "Six dead after gunman opens fire in Kraków market square, with three more victims found at suspect’s home",
+          "url": "https://www.theguardian.com/world/2026/nov/07/krakow-poland-shooting-market-square-deaths-gunman",
+          "publishedAt": "2026-11-07T21:19:01.000Z"
+        },
+        {
+          "outlet": "BBC",
+          "title": "What we know so far after Krakow gun attack",
+          "url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
+          "publishedAt": "2026-11-07T21:13:24.000Z"
+        },
+        {
+          "outlet": "Upper Michigan's Source",
+          "title": "Footage shows bodies at the home of the man behind mass shooting in Polish city, prime minister says",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTXlaZDlZS2RKUG9UNzRNamtoaFU2TGZqR09WYXVHTU1zSTNGNTVhVUlFWnRzNkZIUWhiY2JXRUlwajZqOVNGUldHM2xoZjRzWTROY0NMbEpiMWJVa2VaaEE5eE45WDdNNFRNZ1ZkYXI3Z3RYLU5zdHB4d01MRjZ5UGpOYVZMUkpQOU5EaFhjRjhjN0lTbWNGM1o2em9uZmZncGJ1T1owR0hyVzTSAb8BQVVfeXFMTmlrVy1wWDlVc3JYNnNhZzFUVVVwbDRXUnNGa25PNUpFUEtMZG1OWHVGR2xWS1dGampzTlR3c2RGd2FfTGpsc0lFLVdmanYwMHJjZHp6SnhyS1EyWlhlN3FQMnl4dmZITkd3UEI1TDJCUkZ2bmhhTEwySzlSNWR1c0Z5MVM2QVo0al9hdEh5SkROeEh5Y3Y4X1l4dnJEM0Y0cGRvNUFCXzFqYlpMNVY2U2ZFYndFX2RoeHVSa2FMZ3c?oc=5",
+          "publishedAt": "2026-11-07T18:21:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794086341000-r8b4",
+      "at": "2026-11-07T21:19:01.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Polish minister says Krakow gunman was influenced by far-right ideology",
+          "body": "Polish Interior Minister Marcin Kierwinski said the gunman was influenced by far-right ideology, according to The Guardian. Le Monde reported that Kierwinski said the gunman appeared to be 'fascinated by far-right ideologies'."
+        },
+        "de": {
+          "headline": "Polnischer Minister: Täter der Schießerei in Krakau von rechtsideologischer Ideologie beeinflusst",
+          "body": "Der polnische Innenminister Marcin Kierwinski erklärte laut The Guardian, der Täter sei von rechtsideologischer Ideologie beeinflusst gewesen. Le Monde berichtete, Kierwinski habe gesagt, der Täter scheine von „rechtsideologischen Ideologien fasziniert“ gewesen zu sein."
+        },
+        "es": {
+          "headline": "El ministro polaco afirma que el tirador de Cracovia estaba influenciado por la ideología de extrema derecha",
+          "body": "El ministro polaco de Interior, Marcin Kierwinski, afirmó que el tirador estaba influenciado por la ideología de extrema derecha, según The Guardian. Le Monde informó de que Kierwinski dijo que el tirador parecía estar «fascinado por las ideologías de extrema derecha»."
+        },
+        "zh": {
+          "headline": "波兰部长称克拉科夫枪手受极右翼意识形态影响",
+          "body": "据《卫报》报道，波兰内政部长马尔钦·基尔温斯基称，枪手受极右翼意识形态影响。《世界报》报道称，基尔温斯基表示，这名枪手似乎“对极右翼意识形态着迷”。"
+        },
+        "pt": {
+          "headline": "Ministro polaco diz que atirador de Cracóvia foi influenciado pela ideologia de extrema-direita",
+          "body": "O ministro do Interior polaco, Marcin Kierwiński, disse que o atirador foi influenciado pela ideologia de extrema-direita, segundo o The Guardian. O Le Monde relatou que Kierwiński disse que o atirador parecia estar 'fascinado por ideologias de extrema-direita'."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Guardian",
+          "title": "Six dead after gunman opens fire in Kraków market square, with three more victims found at suspect’s home",
+          "url": "https://www.theguardian.com/world/2026/nov/07/krakow-poland-shooting-market-square-deaths-gunman",
+          "publishedAt": "2026-11-07T21:19:01.000Z"
+        },
+        {
+          "outlet": "Le Monde",
+          "title": "Poland says six killed in shooting in Krakow's historic center",
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/07/poland-says-at-least-five-killed-in-shooting-in-krakow-s-historic-center_6774485_4.html",
+          "publishedAt": "2026-11-07T17:12:53.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "krakow",
     "poland",
@@ -16,64 +214,50 @@
     "victims",
     "injured"
   ],
+  "seenUrls": [
+    "https://asia.nikkei.com/business/markets/taiwan-south-korea-japan-stock-markets-hit-hard-by-ai-sell-off",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxNR2ZlVWlpbklBM0xKZmZKTC1WQXpEVC13LUVlZlpUU1ZNcFYySklnRURfX1FQOU8tNTFQckxiWUJGMWF6YnFBY1VMVFBBamFCeU1wUENrbnpPbnkyZEVhaGg2Mk9Rdk9mNlNvVFRXNUdMSnlBQXVLb0FxdGdKaEVlTUtnT1dJS1FLbkhJQ19kMlhrZnctZ1BFWm1KVTZsV3FC?oc=5",
+    "https://news.google.com/rss/articles/CBMiigJBVV95cUxPZ29taG5xazRVcXJzMXVNdUEtT0JtSXljUGFqRVljUDU3a3pDWlQ3aWNFRDRaTloySkRiWS1uUFpWMHhkTHJxWUtyWkhwZkNla2RtVXpJc2FkREw5aDViTWg3c2FZTDNKaURnY3daZ2pIa2R4dEJkVnlxWnlSOVVJX0J3ZXY4MmNSeU1oWldONkpyckNXem9uTHctd05OMUFLOVFyT05YRGphT0R1UWFrTjB6RDdqR3ZXT192N2Q3X0V1OWZROUFTSVpXM2VWamZpQWpqRmZBTnFsR0QyanI3cWwzVTJIdVZDQWFkWldpLVlsZWV4dkFaUk91U3ZGUGF2UVFkb1pQaDBLZ9IBjwJBVV95cUxOclQzUFFveUxFR21peDBhQ3lCZWRrdDJsSHVuRXhpSTdGZDRGN0NkMlRwM1ptUWxwak9TZExOZ2s4OEM2enMyN0Q0WlBSSE1YOTZvLTd1ZlF1QmxxcmZRbk03Q214NmdYS0tudXdMVjJ3bm5kWlI1LUZEYXRNdzZGWkpaeXNnQktUMEZBeUoxaGNUQm9Rb2tvQmt2b3pRZm9wRXRPd2JDdldIYktzajdNWmFTTVRtRjZlZHUwQlBjWmhRZndtd1ZXRDNmX0dKVmZWZ2lnb1lxdUZVbk1EbG5FMTFYWEt4X3JaMWQxUXdWWlNtclhYNF9rQ2tSMFgtMjVEYlpoRW5paDZJNWtIcUFr?oc=5",
+    "https://www.theguardian.com/world/live/2026/nov/07/krakow-shooting-poland-latest-news-updates",
+    "https://www.dw.com/en/poland-gunman-kills-6-in-krakow-main-square/a-79886489?maca=en-rss-en-all-1573-rdf",
+    "https://www.theguardian.com/world/2026/nov/07/krakow-poland-shooting-market-square-deaths-gunman",
+    "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
+    "https://thehill.com/policy/international/6206234-herzog-appoints-eisenkot-form-government/",
+    "https://www.dawn.com/news/2042866/israeli-president-picks-netanyahus-rival-gadi-eisenkot-to-try-to-form-government",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRTFhVC1uNVB5TFlvcHRtb2h6RmJPdjY0SDZjdWRJSUw0RlVLUUtnbkFlNGtZRlczbE5RU1U0NEhIRG9Ya3ZmNVlRb243YWQ5OTNkNThoaG1ZYUxONkZsaDJTeTctek9yX3hidk5lVU9qRUJidG5PNkczQVhKcEJKMG5nZzdGSVhUZUJ0S3RwWFJqbmVzSFU5YmE3dDgtRllhUVpDNkxxdnN6Q21MQ1A1cjFPNjc4cUdx?oc=5",
+    "https://www.axios.com/2026/11/07/israel-eisenkot-netanyahu-government-herzog",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMGlUOVFiY3VQbE45aTFBR0dreGstd2NGbTBwSWFUNTR5Y0Y1VV9kTmxIbFNMdTVRZlVkb3N2QVhzcFZCU2dhNzVnMTJ4ckZZV0s0Vk15Q0tmMzJJWG9YNGxPeS1UZjVwcVA5V2t0TXdwTHNpc1kxY2NMaG9zQXotVmtpUkhfR2dtSXN4UmlzeGROalpIZnRmaG95eWM4bEZmOUg3V3Q2eHA2S0w1OENr?oc=5",
+    "https://www.channelnewsasia.com/world/gunman-fascinated-far-right-kills-six-in-krakow-poland-6533446",
+    "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPemhXRHA1Yy1XbENDY2Y2ajBnU3VUZEdDN2thcGxMaHVqak53WFYtS05TUTU3NzRnalFYWjVRNVNXTGU0Q0I5M252SkNmbW05d0hnS2ZScHA3WGlEV0lNYnFmNW1WWFFBSTBwYS1rZjJ5ajNhUVRocGZ2TFhFRTV3RXFhZW82al9xV0xBeDJrRDI4TUYycEdWa0RRU1FiRGtuUGxvUVc4TVpRVERva0ptdnAxWnpXaHBLQVFtcUVTUTRJR01vYmpBN05JbHlkZWZsajBB?oc=5",
+    "https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxQc0RIYzBob0hhRVdGc3ZxRjJueGhJNUxfY1lFcVBmd2E1Rmw2cnJvRTY5bVdkeW5MWUV6RFg5TEtYaC1YWi00cE1Wa2Ria01NdmU0RjdQMHpOUmgycXhxY3RHcVB1NDl4ZzgzenFLUllJd3BqeHBKX2pZSXpxS3luR3lDa3ZubGVMa3RvMGREeXB1Vk1SSUxrWlNHbElhWmJjbU02Z0tHUVRSLTA5MmJPTUNhSGlLWjdCUTFxTkdqOWJRZEI4?oc=5",
+    "https://www.npr.org/2026/11/07/g-s1-152536/netanyahu-israel-government-eisenkot-herzog",
+    "https://www.scmp.com/news/world/middle-east/article/3373671/israels-president-taps-eisenkot-form-government-setback-netanyahu",
+    "https://www.straitstimes.com/world/middle-east/israeli-president-picks-gadi-eisenkot-netanyahu-rival-to-try-to-form-government",
+    "https://www.nytimes.com/2026/11/07/world/middleeast/israel-eisenkot-government.html",
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAxQUZ1aE5XRlNwWjBtU3NkclVzNkhtUEY3allvdk1jWTZIWmNlbkhkcUJocTlYVnA4MHB6cjZTMTlaNUNfQ2IwLVdsTkk4UTROSEhPZy1R?oc=5",
+    "https://www.nytimes.com/2026/11/07/world/europe/krakow-poland-shooting.html",
+    "https://www.dawn.com/news/2042857/poland-says-6-killed-in-shooting-in-central-krakow",
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE83RHVsRjI3Y2dzX1BvanJmaXFzSXM4WERneWhyeXM5dXUwSzZpX1NKUTBKQ0dNZXFENEpOS0E4TGI1cHFJZmNmX2VhTHNZc3ExSk5HNFoyVUZzQVZ3dHfSAVxBVV95cUxPUmFydWtNb0dRMVNsY2NkYnVDNGFEcUlXWHZjNnR3QlB0dU5RMkd1a21NZWpWdnRUQTBGVy1yYlNzZl95ZzMtb1BtNklUcWN0T3dvWFZSS3FSa3VqVw?oc=5",
+    "https://www.npr.org/2026/11/07/g-s1-152532/gunman-opens-fire-in-polish-city-of-krakow-killing-6-people-and-injuring-15",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTXlaZDlZS2RKUG9UNzRNamtoaFU2TGZqR09WYXVHTU1zSTNGNTVhVUlFWnRzNkZIUWhiY2JXRUlwajZqOVNGUldHM2xoZjRzWTROY0NMbEpiMWJVa2VaaEE5eE45WDdNNFRNZ1ZkYXI3Z3RYLU5zdHB4d01MRjZ5UGpOYVZMUkpQOU5EaFhjRjhjN0lTbWNGM1o2em9uZmZncGJ1T1owR0hyVzTSAb8BQVVfeXFMTmlrVy1wWDlVc3JYNnNhZzFUVVVwbDRXUnNGa25PNUpFUEtMZG1OWHVGR2xWS1dGampzTlR3c2RGd2FfTGpsc0lFLVdmanYwMHJjZHp6SnhyS1EyWlhlN3FQMnl4dmZITkd3UEI1TDJCUkZ2bmhhTEwySzlSNWR1c0Z5MVM2QVo0al9hdEh5SkROeEh5Y3Y4X1l4dnJEM0Y0cGRvNUFCXzFqYlpMNVY2U2ZFYndFX2RoeHVSa2FMZ3c?oc=5",
+    "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOFRjUERVcEV0OW54SXRHSjhaQWpJNDdfRHZjUDFDYk5yWmgybkl5Rmg5ZDVTX2NSZVVpV1pnUU55WjNNTlZObzhsangzbFpxX2lvOERIRkdRaHljWjl6ei14Ri16bW95UlhDX0FQcldqbXpxQWlDdkYtbzRWV1JDaUFPRDQ3a3J4NTdHWWN0ZmtMSzVQV082TFgzY0tQZmN2VHZ5d3lBZm5vVTZCcUYxSGZLeUxPc19oRjNJT3NfSS1yXzJVTGfSAcsBQVVfeXFMTlBGRVNvZE9VZzBtbHNrZUkyU0U3MHRrZ29XcHZWX1NPd29Hekc0aXgzellNMDJhb29ISm5iQXFsZGtvTWFCdF9oVkJCWFZWTFN0R1VhOGl5bndzZVdpUWdCNWFoMkp3WU0tNnk2V3dYT29XMlVSVWZ2bkEycndfc0tvOW1OcC1uaDAzZXVBUDRfMmlHc3NROTRMRU4ySTY2cHhHRVFySkZVa0JTbjNXRjVyWE1IQkV0M2IyRl83YW1jbUoxXzFoazVJNGc?oc=5",
+    "https://news.google.com/rss/articles/CBMiekFVX3lxTE5VVkN2NHFua002TGVQX0FHSkprWXZWOWZSdl9EcmJNZ0FTeTdDLWt1ZDRLMUJhaGFPMWZxTmdoelNDUm5UNWZyQ2VlNmdkRTQteXNLa255SjZfZUhpZXJ2NjJrV3d4aE5majhmSVJLenpfeGpKZkw1S2dn?oc=5",
+    "https://www.foxnews.com/world/gunman-opens-fire-moving-car-european-tourist-hotspot-leaving-5-dead-12-wounded",
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA4aXFXZlE5dnBhbFlUT1hxeE43RDJkM2xkWDh3Zm51TV9haVpCZ2toa3pncTM5eXcxcGgtMDRLbUhfeEZ2OVJzdEZraEJYV3pGXzZ1Y0h3?oc=5",
+    "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0wSlgtUVgwd1BQVTVFdXBrOHNpMjhyajk2bm5DVFhQaHBVQ0lGZFpva2dLRkUyY19XeVhpY2MzX3BDUGVsN1pmdzJ3MUJNRGRLVnYwUXRaNlhoN0xCZ2NGaE8yZ9IBaEFVX3lxTE9UX0pNc2hhN3VIazFRYi14OHd0bmVNRDdtYXpLcDZaWUotendxVFpCRjZVMGROSUVnSFAza1l1QTZGY3hwdGJKaFJRQkpqT2V3aFBxamx5REx4MEpOVlkyUHBCdHZRTGVk?oc=5",
+    "https://www.lemonde.fr/en/international/article/2026/11/07/poland-says-at-least-five-killed-in-shooting-in-krakow-s-historic-center_6774485_4.html",
+    "https://www.jpost.com/international/article-914135",
+    "https://www.thehindu.com/news/international/gunman-kills-5-injures-12-in-polands-krakow-shooting-attack/article71679139.ece",
+    "https://news.google.com/rss/articles/CBMinAFBVV95cUxPb1B1eWpLOWMtUGNPUVk2Mk85TUNvdm9QeTI3VkdHVFZUOTA1SXBKS1JkN1VTOE5NUlpvQ1doSWVYUjBSelhTck1lYnRPUWV2QUtfUHE0RmRONDZKcGxSc3Ata3BpTkM1TzNya2xPSzZSNjB5cTR3YWtPcHcxMXF5ZjhwWU01R09ON01VWHRNTDNFODBoUklxQnVzVUM?oc=5",
+    "https://www.scmp.com/news/world/europe/article/3373667/5-killed-shooting-tourist-heart-krakow-poland",
+    "https://www.cnbc.com/investingclub/2026/11/07/decisive-election-dramatic-stock-swings-how-we-handled-the-market-last-week.html"
+  ],
   "startedAt": "2026-11-07T21:38:57.443Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-07T21:38:57.443Z",
-  "articleSlug": null,
-  "sourceCount": 7,
+  "updatedAt": "2026-11-07T22:16:36.467Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Kraków mass shooting",
-      "dek": "A mass shooting at a market in Kraków, Poland, has killed at least six people and injured more than a dozen, with authorities investigating the suspect and motive."
-    },
-    "fr": {
-      "title": "Fusillade à Cracovie",
-      "dek": "Une fusillade sur un marché à Cracovie, en Pologne, a fait au moins six morts et plus d’une douzaine de blessés, les autorités enquêtant sur le suspect et le mobile."
-    },
-    "es": {
-      "title": "Tiroteo masivo en Cracovia",
-      "dek": "Un tiroteo masivo en un mercado de Cracovia, Polonia, ha causado la muerte de al menos seis personas y ha herido a más de una docena, mientras las autoridades investigan al sospechoso y el móvil."
-    },
-    "de": {
-      "title": "Massenschießen in Krakau",
-      "dek": "Ein Massenschießen auf einem Markt in Krakau, Polen, hat mindestens sechs Menschen getötet und mehr als ein Dutzend verletzt. Die Behörden ermitteln den Tatverdächtigen und das Motiv."
-    },
-    "it": {
-      "title": "Sparatoria di massa a Cracovia",
-      "dek": "Una sparatoria di massa in un mercato a Cracovia, in Polonia, ha ucciso almeno sei persone e ne ha ferite oltre una dozzina, mentre le autorità indagano sull'indiziato e sul movente."
-    },
-    "ja": {
-      "title": "クラクフで銃乱射事件",
-      "dek": "ポーランドのクラクフにある市場で発生した銃乱射事件で、少なくとも6人が死亡し、10人以上が負傷した。当局が容疑者と動機を調べている。"
-    },
-    "pt": {
-      "title": "Tiro de massa em Kraków",
-      "dek": "Um tiro de massa num mercado em Kraków, Polónia, matou pelo menos seis pessoas e feriu mais de uma dúzia, enquanto as autoridades investigam o suspeito e o motivo."
-    },
-    "ko": {
-      "title": "크라쿠프 총기 난사",
-      "dek": "폴란드 크라쿠프의 한 시장에서 발생한 총기 난사로 최소 6명이 숨지고 12명 이상이 다쳤다. 당국이 용의자와 범행 동기를 조사하고 있다."
-    },
-    "zh": {
-      "title": "克拉科夫大规模枪击事件",
-      "dek": "波兰克拉科夫一处市场发生大规模枪击事件，已造成至少六人死亡，十余人受伤。当局正在调查嫌疑人及其作案动机。"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Reuters",
-      "CBS News",
-      "LiveNOW from FOX",
-      "Yahoo News Canada",
-      "Fox News",
-      "CP24",
-      "The News International"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 8,
+  "seenHeadlines": []
 }
