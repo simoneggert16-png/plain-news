@@ -14,7 +14,7 @@
     "hints": "Pharma giants pay millions to Russian distributor entangled in corruption allegations to win cancer drug business"
   },
   "createdAt": "2026-11-03T14:38:54.069Z",
-  "updatedAt": "2026-11-06T23:55:47.461Z",
+  "updatedAt": "2026-11-07T13:48:18.972Z",
   "queries": [
     "ICIJ cancer calculus Russian distributor pharmaceutical payments",
     "фармдистрибьютор рак препараты выплаты миллионы коррупция",
@@ -646,7 +646,9 @@
     },
     {
       "org": "Merck & Co.",
-      "role": "Must answer whether it authorized excessive bonuses or rebates to R-Pharm, what due diligence it performed on Repik's corruption allegations, and the terms of its 2009 strategic alliance and joint manufacturing."
+      "role": "Must answer whether it authorized excessive bonuses or rebates to R-Pharm, what due diligence it performed on Repik's corruption allegations, and the terms of its 2009 strategic alliance and joint manufacturing.",
+      "email": "mediarelations@merck.com",
+      "emailSource": "https://www.merck.com/contact-us/"
     },
     {
       "org": "Eli Lilly",
@@ -715,10 +717,15 @@
       "at": "2026-11-03T14:48:10.099Z",
       "status": "research",
       "note": "queued 2 request(s): ICIJ, US Government Accountability Office"
+    },
+    {
+      "at": "2026-11-07T13:48:18.147Z",
+      "status": "research",
+      "note": "queued 1 request(s): Merck & Co."
     }
   ],
   "centre": "Russia, with international pharmaceutical companies and the global cancer drug m",
-  "lastShiftAt": "2026-11-06T23:51:35.095Z",
+  "lastShiftAt": "2026-11-07T13:42:25.030Z",
   "letters": [
     {
       "id": "L1",
@@ -747,14 +754,20 @@
       "subject": "Source request: pharmaceutical payments to Russian distributor R-Pharm",
       "body": "Dear US Government Accountability Office,\n\nPLAIN. is an independent, advertising-free Swiss news site that reports internationally. Our investigative desk is examining how pharmaceutical companies paid millions to a Russian distributor with corruption allegations to win cancer drug business, including payments, contracts, beneficial ownership, and the role of state-linked actors. This research is AI-assisted and every text is reviewed by a human editor.\n\n1. Can you confirm the date and terms of the strategic alliance between Merck and R-Pharm announced in 2009 for the sale of Keytruda to the Russian government?\n2. What records does your office hold regarding the Federal Antimonopoly Service investigations into R-Pharm for coordinated bidding or anticompetitive conduct between 2015 and 2020?\n3. Can you provide any audit or oversight findings concerning sales bonuses or rebates paid by Merck, Eli Lilly, Novartis, or AstraZeneca to Russian distributors that exceeded 10 percent?\n4. What information do you have on the beneficial ownership of the offshore company linked to Alexey Repik that owned a Bombardier business jet?\n5. Are there any GAO reports or congressional testimony that document U.S. pharmaceutical company payments to R-Pharm or its affiliates?\n\nWe will publish your reply in full or summarized, as you prefer. If any statement above is factually wrong, we will correct it. Please send your answer by 11 November 2026.\n\nPLAIN. Investigative desk\ndesk@plain-news.ch",
       "error": null
+    },
+    {
+      "id": "L3",
+      "to_email": "mediarelations@merck.com",
+      "org": "Merck & Co.",
+      "contact_name": null,
+      "status": "requested",
+      "reply_note": "Adresse gefunden auf https://www.merck.com/contact-us/",
+      "created_at": "2026-11-07T13:48:17.618Z",
+      "updated_at": "2026-11-07T13:48:17.618Z",
+      "dbId": "c20e504a-c5f9-4f23-b4a6-ce0d8b3426a3"
     }
   ],
   "agent": [
-    {
-      "at": "2026-11-06T14:58:57.245Z",
-      "steps": [],
-      "final": null
-    },
     {
       "at": "2026-11-06T23:21:51.116Z",
       "steps": [
@@ -984,9 +997,14 @@
         }
       ],
       "final": null
+    },
+    {
+      "at": "2026-11-07T13:44:28.447Z",
+      "steps": [],
+      "final": null
     }
   ],
-  "shifts": 15,
-  "blankShifts": 0,
+  "shifts": 16,
+  "blankShifts": 1,
   "nextStep": "keep reporting: no outreach sent"
 }

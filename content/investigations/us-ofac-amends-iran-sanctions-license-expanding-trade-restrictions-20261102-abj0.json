@@ -14,7 +14,7 @@
     "hints": "Issuance of Amended Iran-related General License"
   },
   "createdAt": "2026-11-02T15:41:59.014Z",
-  "updatedAt": "2026-11-06T23:36:33.070Z",
+  "updatedAt": "2026-11-07T13:12:11.014Z",
   "queries": [
     "OFAC amended Iran-related General License 2026",
     "OFAC Iran sanctions 2026",
@@ -661,7 +661,7 @@
     }
   ],
   "centre": "Iran",
-  "lastShiftAt": "2026-11-06T23:27:55.264Z",
+  "lastShiftAt": "2026-11-07T13:04:33.518Z",
   "letters": [
     {
       "id": "L1",
@@ -690,152 +690,6 @@
     }
   ],
   "agent": [
-    {
-      "at": "2026-11-06T14:47:15.431Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "I have 13 sources and 17 claims on file, but the core document — the amended Iran General License FF-1 text — is only referenced (S4 download link). I need to open it to verify the exact authorization language, the entities covered, the deadline, and the blocked-account condition. I also need to confirm which entities are restricted. Let me open the primary license document first.",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/media/937311/download?inline"
-          },
-          "ok": true,
-          "ms": 21942
-        },
-        {
-          "step": 2,
-          "thought": "I now have the full text of General License FF-1. It authorizes wind-down of transactions involving International Development Bank for Investment and Finance (a.k.a. Iraq Development Bank) and its 50%-or-greater-owned entities through 12:01 a.m. EST December 1, 2026, with payments to blocked persons going into blocked accounts. It supersedes General License No. FF dated October 15, 2026. Now I nee",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261029"
-          },
-          "ok": true,
-          "ms": 16408
-        },
-        {
-          "step": 3,
-          "thought": "Primary license text confirmed. Now I need the October 21, 2026 OFAC action page (S2), which carries the designations and the companion General Licenses GG and HH — this is where the restricted entities and the wider trade impact live.",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261021"
-          },
-          "ok": true,
-          "ms": 23047
-        },
-        {
-          "step": 4,
-          "thought": "The October 21 page confirms the SDN entries and the two Iran General Licenses GG and HH. The text is truncated, so I should open the Treasury press release for Operation Economic Outcast (S13) to get the full designation narrative — who was sanctioned, for what, and the vessels involved. That is the document that names the people and the trade route.",
-          "action": "open",
-          "args": {
-            "url": "https://home.treasury.gov/news/press-releases/sb0681/"
-          },
-          "ok": true,
-          "ms": 17377
-        },
-        {
-          "step": 5,
-          "thought": "The Treasury press release confirms the Sharma/Shahid network and Fugo Ground Services Inc, and the false-flag alert. The text is truncated before the vessel list and the Karnakis details. I need the full designation narrative. Let me open the gCaptain article (S11), which the claims file says identifies Roxette Maritime and the seven Panama-flagged vessels — that gives me the trade route and the ",
-          "action": "open",
-          "args": {
-            "url": "https://gcaptain.com/u-s-sanctions-law-firm-shipping-agents-and-nine-vessels-in-iran-shadow-fleet-crackdown/"
-          },
-          "ok": true,
-          "ms": 3322
-        },
-        {
-          "step": 6,
-          "thought": "I now have the vessel names, the Roxette Maritime link, the Karnakis law firm role, and the Amigoz Singapore port-agency role. The gCaptain text is truncated at the Amigoz detail. I should open the Lloyd's List piece (S9) for the fleet-scale figures (80 million dwt, 16% of global fleet, 1,470 tankers) which quantify the trade impact, and then the November 4 OFAC action (S6) for the latest designat",
-          "action": "open",
-          "args": {
-            "url": "https://www.lloydslist.com/LL1158721/The-Daily-View-Sanctions-pragmatism-collides-with-shadow-fleet-reality"
-          },
-          "ok": true,
-          "ms": 5639
-        },
-        {
-          "step": 7,
-          "thought": "Lloyd's List gives the fleet-scale figures: ~80m dwt US-sanctioned crude tanker tonnage (16% of global fleet), 1,470 tankers facilitating sanctioned Iranian/Russian/Venezuelan trades, and fewer than 25 sanctioned VLCCs realistically returnable. Now I need the November 4, 2026 OFAC action (S6) — the most recent designations and the false-flag alert — to complete the picture of who is now restricted",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261104"
-          },
-          "ok": true,
-          "ms": 12128
-        },
-        {
-          "step": 8,
-          "thought": "I have opened and verified the primary documents. Three claims previously discarded as unverifiable are now directly supported by primary sources I have opened: the Amigoz Singapore listing (S2), the Karnakis and Karnakis addresses (S2), and the Sharma SDN entry (S6). I will record these as claims, then file press contacts for OFAC and Treasury.",
-          "action": "save_claim",
-          "args": {
-            "text": "OFAC's October 21, 2026 SDN listing identifies AMIGOZ SINGAPORE PTE. LTD. at 2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086, with website https://amigozsg.com, organization established date 27 Nov 2019 and Singapore business number 201940121Z, designated under IRAN-EO13902.",
-            "sources": [
-              "S2"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 57970
-        },
-        {
-          "step": 9,
-          "thought": "C7 saved. Now the Karnakis and Karnakis addresses claim.",
-          "action": "save_claim",
-          "args": {
-            "text": "OFAC's October 21, 2026 SDN listing gives KARNAKIS AND KARNAKIS two addresses: Global Plaza Building, Calle 50, Floor 21, Panama City, Panama, and 158 II Merachias and Alkiviadou, Piraeus 185 35, Greece, with the website karnakiskarnakis.com.",
-            "sources": [
-              "S2"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 22751
-        },
-        {
-          "step": 10,
-          "thought": "C8 saved. Now the Sharma SDN entry claim.",
-          "action": "save_claim",
-          "args": {
-            "text": "OFAC's November 4, 2026 SDN listing designates SHARMA, Suniel Kumar (Chandigarh, India; DOB 07 Oct 1979; Passport Z5925452 expires 27 Jul 2030) under IRAN-EO13902 with secondary sanctions risk under Section 2 of E.O. 13902, listing websites amaocr.org, epnicaragua.org, ema.org.sz, msta-registry.com, mstaregistry.com, imsagregistry.wordpress.com, smmrm.com and timorleste-registry.org.",
-            "sources": [
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 4363
-        },
-        {
-          "step": 11,
-          "thought": "C10 saved. Now I should record the key facts from the primary license document (S4) and the OFAC recent-actions pages that I have opened but not yet captured as claims. The most important new facts: the exact scope of FF-1 (wind-down authorization, deadline, blocked-account condition, supersession of GL FF), and the fact that OFAC issued GG and HH on October 21. Several of these are already on fil",
-          "action": "save_claim",
-          "args": {
-            "text": "According to Treasury as reported by gCaptain, the law firm Karnakis and Karnakis played a key role in establishing the corporate network behind Iranian liquefied petroleum gas magnate Seyed Asadoollah Emamjomeh, whose shipping operations transported hundreds of millions of dollars' worth of Iranian LPG and crude oil.",
-            "sources": [
-              "S11"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 4452
-        },
-        {
-          "step": 12,
-          "thought": "",
-          "action": "save_claim",
-          "args": {
-            "text": "Lloyd's List reports that fewer than 25 sanctioned VLCCs could realistically return to trade without further waivers or overcoming age-related barriers, despite US-sanctioned crude tanker tonnage amounting to almost 80m dwt.",
-            "sources": [
-              "S9"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 13189
-        }
-      ],
-      "final": null
-    },
     {
       "at": "2026-11-06T23:07:19.781Z",
       "steps": [
@@ -992,10 +846,46 @@
         }
       ],
       "final": null
+    },
+    {
+      "at": "2026-11-07T13:07:15.151Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "I have 14 sources and 22 claims on file. The story centres on OFAC's amended Iran-related General License. The key primary documents are S1 (OFAC recent actions 20261029) and S4 (the actual license download). I need to open these to read the actual text of the amended license, identify which entities are restricted, and understand the trade impact. Let me start with the primary source S1.",
+          "action": "open",
+          "args": {
+            "url": "https://ofac.treasury.gov/recent-actions/20261029"
+          },
+          "ok": true,
+          "ms": 25923
+        },
+        {
+          "step": 2,
+          "thought": "S1 confirms OFAC issued Iran General License FF-1 on October 29, 2026, titled 'Authorizing the Wind Down of Transactions Involving International Development Bank for Investment and Finance.' The link to the actual license document is https://ofac.treasury.gov/media/937311/download?inline which is S4. I need to open S4 to read the full text of the license and identify the specific entities restrict",
+          "action": "open",
+          "args": {
+            "url": "https://ofac.treasury.gov/media/937311/download?inline"
+          },
+          "ok": true,
+          "ms": 26829
+        },
+        {
+          "step": 3,
+          "thought": "I now have the full text of General License FF-1. Key facts: issued Oct 29, 2026 by Bradley T. Smith; authorizes wind-down of transactions involving International Development Bank for Investment and Finance (a.k.a. Iraq Development Bank) and its 50%+ owned entities through 12:01 a.m. EST Dec 1, 2026; payments to blocked persons must go into blocked accounts; does not authorize other blocked person",
+          "action": "open",
+          "args": {
+            "url": "https://ofac.treasury.gov/recent-actions/20261021"
+          },
+          "ok": true,
+          "ms": 34583
+        }
+      ],
+      "final": null
     }
   ],
-  "shifts": 21,
-  "blankShifts": 1,
+  "shifts": 22,
+  "blankShifts": 2,
   "nextStep": "keep reporting: no outreach sent",
   "dropped": [
     {
