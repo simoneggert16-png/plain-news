@@ -1,9 +1,121 @@
 {
+  "meta": {
+    "outlets": [
+      "DW",
+      "France 24",
+      "Al Jazeera",
+      "The Hindu",
+      "The Straits Times"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "yemen-airstrikes",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Yemen airstrikes",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "en": {
+      "dek": "Airstrikes near Sanaa and in Taiz reportedly killed dozens of people as the long-running Yemen war deepens the country's humanitarian crisis.",
+      "title": "Yemen airstrikes"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794079106000-59j4",
+      "at": "2026-11-07T19:18:26.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Houthis say 27 killed in strikes on village in Sanaa province",
+          "body": "The Houthi-run Saba news agency said airstrikes it blamed on Saudi Arabia killed at least 27 people in a village near Sanaa on 7 November. Al Jazeera also reported 27 deaths in strikes in Sanaa province."
+        },
+        "es": {
+          "headline": "Los hutíes afirman que 27 personas murieron en ataques contra una aldea en la provincia de Sanaa",
+          "body": "La agencia de noticias Saba, controlada por los hutíes, señaló que ataques aéreos que atribuyó a Arabia Saudí mataron al menos a 27 personas en una aldea cercana a Sanaa el 7 de noviembre. Al Jazeera también informó de 27 muertes en ataques en la provincia de Sanaa."
+        },
+        "de": {
+          "headline": "Huthi: Bei Angriffen auf Dorf in Provinz Sanaa 27 getötet",
+          "body": "Die von den Huthi betriebene Nachrichtenagentur Saba erklärte, bei Luftangriffen, die sie Saudi-Arabien zuschrieben, seien am 7. November in einem Dorf nahe Sanaa mindestens 27 Menschen getötet worden. Al Jazeera berichtete ebenfalls von 27 Todesopfern bei Angriffen in der Provinz Sanaa."
+        },
+        "it": {
+          "headline": "Gli Houthi dicono che 27 sono morti in attacchi aerei su un villaggio nella provincia di Sanaa",
+          "body": "L'agenzia di stampa Saba, controllata dagli Houthi, ha riferito che attacchi aerei, di cui accusa l'Arabia Saudita, hanno ucciso almeno 27 persone in un villaggio vicino a Sanaa il 7 novembre. Al Jazeera ha riportato anch'essa 27 decessi in attacchi aerei nella provincia di Sanaa."
+        },
+        "fr": {
+          "headline": "Les Houthis affirment que 27 personnes ont été tuées lors de frappes contre un village de la province de Sanaa",
+          "body": "L’agence de presse yéménite Saba, contrôlée par les Houthis, a indiqué que des frappes aériennes qu’elle attribue à l’Arabie saoudite avaient fait au moins 27 morts dans un village près de Sanaa le 7 novembre. Al Jazeera a également fait état de 27 morts lors de frappes dans la province de Sanaa."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Straits Times",
+          "title": "Houthi-run health ministry says airstrikes it blames on Saudi Arabia kill 27 near Yemen capital",
+          "url": "https://www.straitstimes.com/world/middle-east/houthi-run-health-ministry-says-airstrikes-it-blames-on-saudi-arabia-kill-27-near-yemen-capital",
+          "publishedAt": "2026-11-07T19:18:26.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Yemeni gov’t forces report advances as Houthis say deadly strikes hit Sanaa",
+          "url": "https://www.aljazeera.com/news/2026/11/7/yemeni-govt-forces-report-advances-as-houthis-say-deadly-strikes-hit-sanaa?traffic_source=rss",
+          "publishedAt": "2026-11-07T19:06:31.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-07T13:52:03.000Z",
+      "id": "u-1794059523000-zb0y",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Laut The Hindu und DW erklärten die Huthis, dass bei einem Luftangreiff nahe der Hauptstadt Jemens 22 Menschen getötet worden seien. The Hindu zitierte einen Huthi-Vertreter, während DW die Zahl von der Huthi-Gruppe meldete.",
+          "headline": "Huthis sagen, dass am 7. November bei einem Angriff nahe Sanaa 22 Menschen getötet wurden"
+        },
+        "en": {
+          "body": "The Houthis said 22 people were killed in an airstrike near Yemen's capital, according to The Hindu and DW. The Hindu cited a Houthi official, while DW reported the figure from the Houthi group.",
+          "headline": "Houthis say 22 people were killed in a strike near Sanaa on 7 November"
+        },
+        "es": {
+          "body": "Los hutíes afirmaron que 22 personas murieron en un ataque aéreo cerca de la capital yemení, según The Hindu y DW. The Hindu citando a un responsable hutí, mientras DW informó de la cifra por parte del grupo hutí.",
+          "headline": "Los hutíes afirmaron que 22 personas murieron en un ataque aéreo cerca de Saná el 7 de noviembre"
+        },
+        "fr": {
+          "body": "Les Houthis ont indiqué que 22 personnes ont été tuées lors d’une frappe aérienne près de la capitale du Yémen, selon The Hindu et DW. The Hindu a cité un responsable houthi, tandis que DW a rapporté ce chiffre communiqué par le groupe houthi.",
+          "headline": "Les Houthis indiquent que 22 personnes ont été tuées lors d’une frappe près de Sanaa le 7 novembre"
+        },
+        "it": {
+          "body": "Gli Houthi hanno dichiarato che 22 persone sono state uccise in un attacco aereo vicino alla capitale dello Yemen, secondo The Hindu e DW. The Hindu ha citato un funzionario houthi, mentre DW ha riportato il dato fornito dal gruppo houthi.",
+          "headline": "Gli Houthi dicono che 22 persone sono state uccise in un attacco vicino a Sanaa il 7 novembre"
+        },
+        "ja": {
+          "body": "『The Hindu』およびDWによると、フーシ派はイエメンの首都近郊への空爆で22人死亡したと発表した。『The Hindu』はフーシ派の当局者の话来伝え、DWはフーシ派が発表した数字として報じた。",
+          "headline": "フーシ派、11月7日にサナア近郊の攻撃で22人死亡と発表"
+        },
+        "zh": {
+          "body": "据《印度教徒报》和德国之声报道，胡塞武装称，也门首都附近一次空袭造成22人死亡。《印度教徒报》援引了胡塞武装一名官员的话，德国之声则报道称，这一数字来自胡塞武装。",
+          "headline": "胡塞武装称，11月7日萨那附近一次袭击造成22人死亡"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.thehindu.com/news/international/airstrike-kills-22-people-near-yemens-capital-houthi-official-says/article71678473.ece",
+          "title": "Airstrike kills 22 people near Yemen's capital, Houthi official says",
+          "outlet": "The Hindu",
+          "publishedAt": "2026-11-07T13:52:03.000Z"
+        },
+        {
+          "url": "https://www.dw.com/en/yemen-22-killed-in-strike-near-sanaa-houthis-say/a-79885177?maca=en-rss-en-all-1573-rdf",
+          "title": "Yemen: 22 killed in strike near Sanaa, Houthis say",
+          "outlet": "DW",
+          "publishedAt": "2026-11-07T13:50:00.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "yemen",
     "sanaa",
@@ -12,64 +124,6 @@
     "houthis",
     "airstrike"
   ],
-  "startedAt": "2026-11-07T14:08:56.207Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-07T14:10:50.873Z",
-  "articleSlug": null,
-  "sourceCount": 2,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1794059523000-zb0y",
-      "at": "2026-11-07T13:52:03.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Houthis say 22 people were killed in a strike near Sanaa on 7 November",
-          "body": "The Houthis said 22 people were killed in an airstrike near Yemen's capital, according to The Hindu and DW. The Hindu cited a Houthi official, while DW reported the figure from the Houthi group."
-        },
-        "de": {
-          "headline": "Huthis sagen, dass am 7. November bei einem Angriff nahe Sanaa 22 Menschen getötet wurden",
-          "body": "Laut The Hindu und DW erklärten die Huthis, dass bei einem Luftangreiff nahe der Hauptstadt Jemens 22 Menschen getötet worden seien. The Hindu zitierte einen Huthi-Vertreter, während DW die Zahl von der Huthi-Gruppe meldete."
-        },
-        "it": {
-          "headline": "Gli Houthi dicono che 22 persone sono state uccise in un attacco vicino a Sanaa il 7 novembre",
-          "body": "Gli Houthi hanno dichiarato che 22 persone sono state uccise in un attacco aereo vicino alla capitale dello Yemen, secondo The Hindu e DW. The Hindu ha citato un funzionario houthi, mentre DW ha riportato il dato fornito dal gruppo houthi."
-        },
-        "fr": {
-          "headline": "Les Houthis indiquent que 22 personnes ont été tuées lors d’une frappe près de Sanaa le 7 novembre",
-          "body": "Les Houthis ont indiqué que 22 personnes ont été tuées lors d’une frappe aérienne près de la capitale du Yémen, selon The Hindu et DW. The Hindu a cité un responsable houthi, tandis que DW a rapporté ce chiffre communiqué par le groupe houthi."
-        },
-        "es": {
-          "headline": "Los hutíes afirmaron que 22 personas murieron en un ataque aéreo cerca de Saná el 7 de noviembre",
-          "body": "Los hutíes afirmaron que 22 personas murieron en un ataque aéreo cerca de la capital yemení, según The Hindu y DW. The Hindu citando a un responsable hutí, mientras DW informó de la cifra por parte del grupo hutí."
-        },
-        "zh": {
-          "headline": "胡塞武装称，11月7日萨那附近一次袭击造成22人死亡",
-          "body": "据《印度教徒报》和德国之声报道，胡塞武装称，也门首都附近一次空袭造成22人死亡。《印度教徒报》援引了胡塞武装一名官员的话，德国之声则报道称，这一数字来自胡塞武装。"
-        },
-        "ja": {
-          "headline": "フーシ派、11月7日にサナア近郊の攻撃で22人死亡と発表",
-          "body": "『The Hindu』およびDWによると、フーシ派はイエメンの首都近郊への空爆で22人死亡したと発表した。『The Hindu』はフーシ派の当局者の话来伝え、DWはフーシ派が発表した数字として報じた。"
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Hindu",
-          "title": "Airstrike kills 22 people near Yemen's capital, Houthi official says",
-          "url": "https://www.thehindu.com/news/international/airstrike-kills-22-people-near-yemens-capital-houthi-official-says/article71678473.ece",
-          "publishedAt": "2026-11-07T13:52:03.000Z"
-        },
-        {
-          "outlet": "DW",
-          "title": "Yemen: 22 killed in strike near Sanaa, Houthis say",
-          "url": "https://www.dw.com/en/yemen-22-killed-in-strike-near-sanaa-houthis-say/a-79885177?maca=en-rss-en-all-1573-rdf",
-          "publishedAt": "2026-11-07T13:50:00.000Z"
-        }
-      ]
-    }
-  ],
   "seenUrls": [
     "https://www.thehindu.com/news/international/airstrike-kills-22-people-near-yemens-capital-houthi-official-says/article71678473.ece",
     "https://www.dw.com/en/yemen-22-killed-in-strike-near-sanaa-houthis-say/a-79885177?maca=en-rss-en-all-1573-rdf",
@@ -77,25 +131,17 @@
     "https://www.euronews.com/2026/11/07/us-launches-new-targeted-strikes-on-iran-as-trump-claims-progress-in-talks-with-tehran",
     "https://www.france24.com/en/yemen-30-dead-in-strikes-on-taiz-market",
     "https://www.dw.com/en/ukraine-russia-hits-kyiv-with-airstrikes-ahead-of-trilateral-talks/a-79883851?maca=en-rss-en-all-1573-rdf",
-    "https://www.kyivpost.com/post/89419"
+    "https://www.kyivpost.com/post/89419",
+    "https://www.straitstimes.com/world/middle-east/houthi-run-health-ministry-says-airstrikes-it-blames-on-saudi-arabia-kill-27-near-yemen-capital",
+    "https://www.aljazeera.com/news/2026/11/7/yemeni-govt-forces-report-advances-as-houthis-say-deadly-strikes-hit-sanaa?traffic_source=rss",
+    "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss",
+    "https://www.thehindu.com/news/international/houthis-say-saudi-oil-sites-troops-and-riyadh-airport-targeted-updates/article71679324.ece"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Yemen airstrikes",
-      "dek": "Airstrikes near Sanaa and in Taiz reportedly killed dozens of people as the long-running Yemen war deepens the country's humanitarian crisis."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "DW",
-      "France 24",
-      "Al Jazeera",
-      "The Hindu",
-      "The Straits Times"
-    ],
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
-  }
+  "startedAt": "2026-11-07T14:08:56.207Z",
+  "updatedAt": "2026-11-07T22:50:29.260Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": null,
+  "sourceCount": 4,
+  "seenHeadlines": []
 }
