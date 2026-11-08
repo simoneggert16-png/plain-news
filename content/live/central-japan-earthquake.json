@@ -8,7 +8,7 @@
       "Newsday"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "central-japan-earthquake",
   "topic": "Central Japan earthquake",
@@ -55,62 +55,138 @@
   },
   "updates": [
     {
-      "id": "u-1794098739000-1gur",
-      "at": "2026-11-08T00:45:39.000Z",
-      "kind": "result",
+      "id": "u-1794116569000-iz25",
+      "at": "2026-11-08T05:42:49.000Z",
+      "kind": "context",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "At least 22 people injured in central Japan earthquake",
-          "body": "RochesterFirst and The Times of Israel reported at least 22 people were injured. Both outlets tied the injuries to an earthquake in central Japan."
-        },
-        "fr": {
-          "headline": "Au moins 22 personnes blessées dans un séisme au centre du Japon",
-          "body": "RochesterFirst et The Times of Israel ont signalé qu’au moins 22 personnes avaient été blessées. Les deux médias ont attribué ces blessures à un séisme survenu au centre du Japon."
-        },
-        "de": {
-          "headline": "Mindestens 22 Menschen bei Erdbeben in Zentraljapan verletzt",
-          "body": "RochesterFirst und The Times of Israel berichteten, dass mindestens 22 Menschen verletzt wurden. Beide Medien führten die Verletzungen auf ein Erdbeben in Zentraljapan zurück."
+          "headline": "Japan earthquake struck at 1:04 a.m. about 40 km below Shizuoka",
+          "body": "The earthquake occurred at 1:04 a.m. in Shizuoka Prefecture, about 40 kilometres below the earth's surface, according to The Hindu and The Japan Times. Aichi and Shizuoka are neighbouring regions, The Hindu reported."
         },
         "it": {
-          "headline": "Almeno 22 persone ferite nel terremoto nel centro del Giappone",
-          "body": "RochesterFirst e The Times of Israel hanno riferito che almeno 22 persone sono state ferite. Entrambe le testate hanno attribuito i ferimenti a un terremoto nel centro del Giappone."
+          "headline": "Il terremoto in Giappone si è verificato alle 1:04, a circa 40 km sotto Shizuoka",
+          "body": "Il terremoto si è verificato alle 1:04 nella prefettura di Shizuoka, a circa 40 chilometri sotto la superficie terrestre, secondo The Hindu e The Japan Times. Aichi e Shizuoka sono regioni confinanti, ha riportato The Hindu."
         },
-        "es": {
-          "headline": "Al menos 22 personas heridas en un terremoto en el centro de Japón",
-          "body": "RochesterFirst y The Times of Israel informaron de que al menos 22 personas resultaron heridas. Ambos medios atribuyeron las heridas a un terremoto en el centro de Japón."
+        "de": {
+          "headline": "Erdbeben in Japan um 1:04 Uhr rund 40 Kilometer unterhalb von Shizuoka",
+          "body": "Das Erdbeben ereignete sich laut The Hindu und The Japan Times um 1:04 Uhr in der Präfektur Shizuoka, etwa 40 Kilometer unter der Erdoberfläche. Aichi und Shizuoka sind Nachbarregionen, berichtete The Hindu."
         },
-        "zh": {
-          "headline": "日本中部地震致至少22人受伤",
-          "body": "RochesterFirst和《以色列时报》报道称，至少22人受伤。两家媒体均将这些受伤情况与日本中部发生的一场地震联系起来。"
-        },
-        "ko": {
-          "headline": "일본 중부 지진으로 최소 22명 부상",
-          "body": "RochesterFirst와 The Times of Israel가 최소 22명이 부상했다고 보도했다. 두 매체는 이 부상이 일본 중부에서 발생한 지진과 관련이 있다고 전했다."
-        },
-        "pt": {
-          "headline": "Pelo menos 22 pessoas feridas em sismo no centro do Japão",
-          "body": "O RochesterFirst e o The Times of Israel noticiaram que pelo menos 22 pessoas ficaram feridas. Ambos os meios de comunicação associaram os ferimentos a um sismo no centro do Japão."
-        },
-        "ja": {
-          "headline": "日本中部の地震で少なくとも22人が負傷",
-          "body": "RochesterFirstとThe Times of Israelは、少なくとも22人が負傷したと報じた。両メディアは、この負傷を日本中部の地震と関連付けた。"
+        "fr": {
+          "headline": "Le séisme au Japon s'est produit à 1 h 04, à environ 40 km sous Shizuoka",
+          "body": "Le séisme s'est produit à 1 h 04 dans la préfecture de Shizuoka, à environ 40 kilomètres sous la surface terrestre, selon The Hindu et The Japan Times. Aichi et Shizuoka sont des régions voisines, a rapporté The Hindu."
         }
       },
       "sources": [
         {
-          "outlet": "RochesterFirst",
-          "title": "Strong earthquake shakes central Japan, shattering store windows and injuring at least 22",
+          "outlet": "The Hindu",
+          "title": "Strong earthquake shakes central Japan, shattering store windows, injuring at least 22",
+          "url": "https://www.thehindu.com/news/international/strong-earthquake-strikes-japan/article71680450.ece",
+          "publishedAt": "2026-11-08T05:42:49.000Z"
+        },
+        {
+          "outlet": "The Japan Times",
+          "title": "Magnitude 5.7 quake injures dozens in central Japan",
+          "url": "https://www.japantimes.co.jp/news/2026/11/08/japan/earthquake-aichi-sunday/",
+          "publishedAt": "2026-11-08T03:35:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794111657000-gqvl",
+      "at": "2026-11-08T04:20:57.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "No tsunami warning issued after central Japan earthquake",
+          "body": "No tsunami warning was issued after the earthquake, according to The Japan Times and Al Jazeera. Authorities warned of possible strong aftershocks in the coming days, Al Jazeera reported."
+        },
+        "it": {
+          "headline": "Nessun avviso di tsunami dopo il terremoto nel centro del Giappone",
+          "body": "Dopo il terremoto non è stato emesso alcun avviso di tsunami, secondo The Japan Times e Al Jazeera. Le autorità hanno avvertito della possibilità di forti scosse di assestamento nei giorni successivi, ha riportato Al Jazeera."
+        },
+        "de": {
+          "headline": "Nach Erdbeben in Zentraljapan keine Tsunamiwarnung ausgegeben",
+          "body": "Nach dem Erdbeben wurde laut The Japan Times und Al Jazeera keine Tsunamiwarnung ausgegeben. Die Behörden warnten vor möglichen starken Nachbeben in den kommenden Tagen, berichtete Al Jazeera."
+        },
+        "fr": {
+          "headline": "Aucune alerte au tsunami après le séisme au centre du Japon",
+          "body": "Aucune alerte au tsunami n'a été émise après le séisme, selon The Japan Times et Al Jazeera. Les autorités ont averti que de fortes répliques étaient possibles dans les jours à venir, a rapporté Al Jazeera."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Al Jazeera",
+          "title": "Earthquake hits central Japan, injuring more than 20 people",
+          "url": "https://www.aljazeera.com/news/2026/11/8/earthquake-hits-central-japan-injuring-more-than-20-people?traffic_source=rss",
+          "publishedAt": "2026-11-08T04:20:57.000Z"
+        },
+        {
+          "outlet": "The Japan Times",
+          "title": "Magnitude 5.7 quake injures dozens in central Japan",
+          "url": "https://www.japantimes.co.jp/news/2026/11/08/japan/earthquake-aichi-sunday/",
+          "publishedAt": "2026-11-08T03:35:00.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-08T00:45:39.000Z",
+      "id": "u-1794098739000-1gur",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "RochesterFirst und The Times of Israel berichteten, dass mindestens 22 Menschen verletzt wurden. Beide Medien führten die Verletzungen auf ein Erdbeben in Zentraljapan zurück.",
+          "headline": "Mindestens 22 Menschen bei Erdbeben in Zentraljapan verletzt"
+        },
+        "en": {
+          "body": "RochesterFirst and The Times of Israel reported at least 22 people were injured. Both outlets tied the injuries to an earthquake in central Japan.",
+          "headline": "At least 22 people injured in central Japan earthquake"
+        },
+        "es": {
+          "body": "RochesterFirst y The Times of Israel informaron de que al menos 22 personas resultaron heridas. Ambos medios atribuyeron las heridas a un terremoto en el centro de Japón.",
+          "headline": "Al menos 22 personas heridas en un terremoto en el centro de Japón"
+        },
+        "fr": {
+          "body": "RochesterFirst et The Times of Israel ont signalé qu’au moins 22 personnes avaient été blessées. Les deux médias ont attribué ces blessures à un séisme survenu au centre du Japon.",
+          "headline": "Au moins 22 personnes blessées dans un séisme au centre du Japon"
+        },
+        "it": {
+          "body": "RochesterFirst e The Times of Israel hanno riferito che almeno 22 persone sono state ferite. Entrambe le testate hanno attribuito i ferimenti a un terremoto nel centro del Giappone.",
+          "headline": "Almeno 22 persone ferite nel terremoto nel centro del Giappone"
+        },
+        "ja": {
+          "body": "RochesterFirstとThe Times of Israelは、少なくとも22人が負傷したと報じた。両メディアは、この負傷を日本中部の地震と関連付けた。",
+          "headline": "日本中部の地震で少なくとも22人が負傷"
+        },
+        "ko": {
+          "body": "RochesterFirst와 The Times of Israel가 최소 22명이 부상했다고 보도했다. 두 매체는 이 부상이 일본 중부에서 발생한 지진과 관련이 있다고 전했다.",
+          "headline": "일본 중부 지진으로 최소 22명 부상"
+        },
+        "pt": {
+          "body": "O RochesterFirst e o The Times of Israel noticiaram que pelo menos 22 pessoas ficaram feridas. Ambos os meios de comunicação associaram os ferimentos a um sismo no centro do Japão.",
+          "headline": "Pelo menos 22 pessoas feridas em sismo no centro do Japão"
+        },
+        "zh": {
+          "body": "RochesterFirst和《以色列时报》报道称，至少22人受伤。两家媒体均将这些受伤情况与日本中部发生的一场地震联系起来。",
+          "headline": "日本中部地震致至少22人受伤"
+        }
+      },
+      "sources": [
+        {
           "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNmxwdHdkbkhRWGxGVmg3azFoT0QydTI5NFZud0EyZjFOVHpIblN0MkZQUXJTNFQ1eWQyclI0Y0hqSGJLWXhWcmh3cDhxemVQOENTMjF3M0hVaDlST2dEc0h5M3JlZ1dqelc4cjN0cDBhNzl6QlY2Z2dNZkMyMmxOdlRYdEk1SDJLSHNoMTVFa0hiSnJLYkVOTHJ1VVNCZGFkRDdsQ0t1cDl4Y2ZRVjVodzMwbmVFaWhoOVhubDdrNUxFdkIzWFJn0gHMAUFVX3lxTFBJRElpdENQWlNTNXd0TEJXbmtHSU5TOEdzUHBMVEd0NlFOUzBEb3VTbzRaRmlhU0dObGNDamR1YzloakZoWERKVFVWWHN3TlhldEc5dEFqSzU5N1c0NlRVVHVRc0VJd0s3WXlMZGp3MnV1TG5qenlkTU44dGJHdVlCcTd1MzVEbjBWOXhKZjA5WDBfX0I1ZUNYN1lXUmNFeG4zcjRGYUxNT1FLQWRYQm92Y29rSGtOemdfTi1PcWRfemtENVBhZlBXdDJvbQ?oc=5",
+          "title": "Strong earthquake shakes central Japan, shattering store windows and injuring at least 22",
+          "outlet": "RochesterFirst",
           "publishedAt": "2026-11-08T00:45:39.000Z"
         },
         {
-          "outlet": "The Times of Israel",
-          "title": "At least 22 hurt after 5.5 magnitude earthquake strikes central Japan",
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRFRWbl9JNi0wT2wwR215MGM5a3Bkd2lqOHh1WnJQaW43bXFKQXM2NHRfV01iZ1dGXzZmT3JMb0MzSjl2czhEVjVvUTdWanFPTnpKQmtPS1BBUDFtYmdla21lQ0dQb09TTktCZEd0eVlxeHhPZVprRVhyOEdqUDUtdlRCaHUxS1Z4X0RNbkRqMTlrRmU3UEw4R3hzMDg0blVBY2xvUENnX2F2OGs5TnRSSWd2cFJJUQ?oc=5",
+          "title": "At least 22 hurt after 5.5 magnitude earthquake strikes central Japan",
+          "outlet": "The Times of Israel",
           "publishedAt": "2026-11-08T00:20:01.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-07T23:57:41.000Z",
@@ -208,13 +284,30 @@
     "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWV9OLWV2QVR2dDEzenprandzczBTQ1hNZ3NhRkxTWFFBNDJiWnVDUWd4RmY4c1FvMzctOTFxWjhjOG1WZEticlRUZURFU2lIY2xjNlA0VC1JSU5ORzRNcENRSzdBSTNKejh4RkZUYzdJSldtQm1Bd2IyT2hmU3ZoWldoQTZyYkJvVWtEVFJaWFA1MFlfQ3htNy1HVVBfa3AyTF81bDE2WXZGY1VVOC02X0RkekhUNHdYLVpPeWMtMFB3R0c2b3F4bnl3?oc=5",
     "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMUtCX2U1Q0RCYmJJR2FIMFRIYm10c0RWZkMwa3c4SWpCNkZQVUFpNW1DOTdoWFV4cUg3dFpBWGdad193YktDZnhNQ0FheEMxN0lCcUVyekZITF9hWWxuZUh2TnNEQnZVdHdGekxwaHNERUEwaURTdUFmV0VfalJmSUktUFNGTi1JMF9PbXdKV3ZzS19mVkE?oc=5",
     "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNmxwdHdkbkhRWGxGVmg3azFoT0QydTI5NFZud0EyZjFOVHpIblN0MkZQUXJTNFQ1eWQyclI0Y0hqSGJLWXhWcmh3cDhxemVQOENTMjF3M0hVaDlST2dEc0h5M3JlZ1dqelc4cjN0cDBhNzl6QlY2Z2dNZkMyMmxOdlRYdEk1SDJLSHNoMTVFa0hiSnJLYkVOTHJ1VVNCZGFkRDdsQ0t1cDl4Y2ZRVjVodzMwbmVFaWhoOVhubDdrNUxFdkIzWFJn0gHMAUFVX3lxTFBJRElpdENQWlNTNXd0TEJXbmtHSU5TOEdzUHBMVEd0NlFOUzBEb3VTbzRaRmlhU0dObGNDamR1YzloakZoWERKVFVWWHN3TlhldEc5dEFqSzU5N1c0NlRVVHVRc0VJd0s3WXlMZGp3MnV1TG5qenlkTU44dGJHdVlCcTd1MzVEbjBWOXhKZjA5WDBfX0I1ZUNYN1lXUmNFeG4zcjRGYUxNT1FLQWRYQm92Y29rSGtOemdfTi1PcWRfemtENVBhZlBXdDJvbQ?oc=5",
-    "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRFRWbl9JNi0wT2wwR215MGM5a3Bkd2lqOHh1WnJQaW43bXFKQXM2NHRfV01iZ1dGXzZmT3JMb0MzSjl2czhEVjVvUTdWanFPTnpKQmtPS1BBUDFtYmdla21lQ0dQb09TTktCZEd0eVlxeHhPZVprRVhyOEdqUDUtdlRCaHUxS1Z4X0RNbkRqMTlrRmU3UEw4R3hzMDg0blVBY2xvUENnX2F2OGs5TnRSSWd2cFJJUQ?oc=5"
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRFRWbl9JNi0wT2wwR215MGM5a3Bkd2lqOHh1WnJQaW43bXFKQXM2NHRfV01iZ1dGXzZmT3JMb0MzSjl2czhEVjVvUTdWanFPTnpKQmtPS1BBUDFtYmdla21lQ0dQb09TTktCZEd0eVlxeHhPZVprRVhyOEdqUDUtdlRCaHUxS1Z4X0RNbkRqMTlrRmU3UEw4R3hzMDg0blVBY2xvUENnX2F2OGs5TnRSSWd2cFJJUQ?oc=5",
+    "https://www.thehindu.com/news/international/strong-earthquake-strikes-japan/article71680450.ece",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxOV0ZFeVI5N2c0RV9rbEhnMG5seEtLR0VydlVWRXhGYlUwbU05WFNIVEgxU0FLNU43VWZxS1g3SHNYc1htTUtlQzQ1Wi1FcHZWWGF6dWllVjlDVzMtMkpVd1ZfTVlRNG52R2RqWlh6a1k2WTk0SmhUQmRIN2xlRE1BTG1Ob1VrRmpEd0owMlFnankyc2JJNGlxaw?oc=5",
+    "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5laTJOYVJrSHEwb2FVQzk4Njg2dndOZ3M0andSaGRQRGRyWi1vUlFLUk1ZVGNnaFk0YjliTVp5OUE4aElnMVV6cjV5TzVzTDJTbjdCTlpKWUJpRnZCMW1aMzVhUQ?oc=5",
+    "https://www.aljazeera.com/news/2026/11/8/earthquake-hits-central-japan-injuring-more-than-20-people?traffic_source=rss",
+    "https://www.channelnewsasia.com/east-asia/japan-magnitude-57-earthquake-injures-dozens-6533811",
+    "https://www.japantimes.co.jp/news/2026/11/08/japan/earthquake-aichi-sunday/",
+    "https://news.google.com/rss/articles/CBMiigFBVV95cUxQNy1QM1F1cDc3c1M4YV9XODNwWDdfWUdnWGVodjVjZ1laTGc2aWpSc3dKdHY0WXI2cG8xTkJ3OVhqRkFNX0N6bGFtaFNDYmhNVVRXV3J1TVdmZmVwa1l6UTQ5M05QT2pjUTRyWUlSRGliQ09vdjVTRzdZcGpleDMzQVZ6b051S3dJaUE?oc=5",
+    "https://www.japantimes.co.jp/news/2026/11/08/japan/nuclear-disaster-drill-tomari-plant/",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdnhfSHFxOEZXQXkzVVN3YmZfd1RIcV9KZ2Z2d1J2YkM4Zm1mYUlBcE8yV1pqQ29FUGVfXzNMU1ZhV3lhN3FKUnIyMnJlbURwQXNTV3psb005ekk1VC1EY1VhRHRkVHlrc0UtLVNpV3VIdUZ6ejhVaUF4M2Vvd2hBMFFpOXdvWWs4WTAxTkRKXzJjbmpZX3ptMmdqS3ltZ0xaRWw3OGplQzFKTUk1RFJJQUF4aw?oc=5",
+    "https://news.google.com/rss/articles/CBMifEFVX3lxTE1tY01qRlZPNDJRM3pGbzBaM1FqUVBZYWJuRlF4b3FOak1vT3RxV3ZwZGZ1ZkJZN00zejc4SnBKRnZrTkpMNXNmN2pRb3BLRXZXWDI1U3N2VTh2SHFBb0Y0WGpGalQxTHRGRlFEeGZMeHFiWUYtNzhMZUZFYWw?oc=5",
+    "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1NT0lNUW5QcWM5Z0hqMEZaRXVtZ3pUaFFkeW5abU82dHcyYkVTLTVqbFVGMldzTllCUk1kLWFKSzlxeEdLQWJmcnNnUlNtakUtanZpNjFOVGx4QQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTXZuZmtERWV0VG91UjB6NEhpMlNzZGswSWxZMUdYdzI1el80UVRraFBCRXduVVIwckRva090WWI0NjZYT2pJRTR4eW5hUFhWZXNVUXZBaU1wLWpxckUtM25rZDZ0RlVRQ3VPMGVpNWV5SGYxWk1SWFRJeVloa0dvNDd4WVFxQ2FjU3FN?oc=5",
+    "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQmxBQU9PX3NoaEtKNXlTTDRlV1pfN1BrLU1MUEQtdWxUajg0OGZQc3dHSDRfbHhaRmdHYVNXaFpBcWVCYWh6ZlVueG9QSy1iWXFJYzkzNmwzODNUcUYzT29JUWF2VlhZaWNTTlhVcjZNYXo5QVAxUV9YbmU0WHRkTlZR?oc=5",
+    "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9ZX3dXUFM1QmtyMkY3Z0R1dEs5M3pCSUdRUW15eC1WZlNZTlpqU3U3YU95M0MtSWZISDRySlQ0VC01ZFlWNkNyVnRJNF8?oc=5",
+    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPaE5qTjNubERTdHVBSWNjc0JST3doQy1iMDVsOUc5c2NXYWdCaFdlWldEZl9xVWJpcUs1VGYyajQwN1ViVTNMU1NrME9pNFVVMUVlel91enBUbXRXTGg1dEt5a2FFelJBSldRMTg1TW9HVjB1SnZsVDdMZTNFY2RCaXpkdVFnX2hTd3FZ?oc=5",
+    "https://www.scmp.com/news/china/politics/article/3373512/grief-china-rare-snow-leopard-cub-ling-xiaohan-loses-26-day-fight-life",
+    "https://news.google.com/rss/articles/CBMizAFBVV95cUxQZWdWbFpLQXE4TmF2Mi00VG1Ud2ZJYUFRMk1SWUxBdGNjaDdvZ1hieXl1NVR1WUN4cldJazN2MEl2WFdZQWVwVHRmeEtCc0RMWGNXZ0R3aUtRUU9tTDFEVXhtUGlFbFpRLUtFeTEwZVpmRkJOUHRmdzhrakF2VzBXQ1Q3bmNHN1cxYzV5Q0U2OHg3Y1FTajh5WE5yYngwaEh4U3czSzBZbERtS2w1WFNzVlQ2a2JoQVNpLUlnRGdodXlLdVkyV0d1Y2RwYjI?oc=5"
   ],
   "startedAt": "2026-11-08T00:18:24.944Z",
-  "updatedAt": "2026-11-08T01:03:11.334Z",
+  "updatedAt": "2026-11-08T06:08:10.640Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": null,
-  "sourceCount": 5,
+  "sourceCount": 8,
   "seenHeadlines": []
 }
