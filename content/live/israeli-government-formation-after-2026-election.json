@@ -15,7 +15,7 @@
       "Le Monde"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
   },
   "slug": "israeli-government-formation-after-2026-election",
   "topic": "Israeli government formation after 2026 election",
@@ -27,81 +27,131 @@
       "dek": "Israeli President Isaac Herzog has tasked opposition leader Gadi Eisenkot with forming a new government, setting off coalition talks that will determine the country's next prime minister.",
       "title": "Israeli government formation after 2026 election"
     },
+    "es": {
+      "dek": "El presidente israelí Isaac Herzog ha encargado al líder de la oposición Gadi Eisenkot formar un nuevo gobierno, lo que ha puesto en marcha las conversaciones de coalición que determinarán quién será el próximo primer ministro del país.",
+      "title": "Formación del gobierno israelí tras las elecciones de 2026"
+    },
     "fr": {
-      "title": "Formation du gouvernement israélien après les élections de 2026",
-      "dek": "Le président israélien Isaac Herzog a chargé le chef de l'opposition Gadi Eisenkot de former un nouveau gouvernement, déclenchant des négociations de coalition qui détermineront qui sera le prochain Premier ministre du pays."
+      "dek": "Le président israélien Isaac Herzog a chargé le chef de l'opposition Gadi Eisenkot de former un nouveau gouvernement, déclenchant des négociations de coalition qui détermineront qui sera le prochain Premier ministre du pays.",
+      "title": "Formation du gouvernement israélien après les élections de 2026"
     },
     "it": {
-      "title": "Formazione del governo israeliano dopo le elezioni del 2026",
-      "dek": "Il presidente israeliano Isaac Herzog ha incaricato il leader dell'opposizione Gadi Eisenkot di formare un nuovo governo, avviando i negoziati di coalizione che determineranno il prossimo primo ministro del Paese."
+      "dek": "Il presidente israeliano Isaac Herzog ha incaricato il leader dell'opposizione Gadi Eisenkot di formare un nuovo governo, avviando i negoziati di coalizione che determineranno il prossimo primo ministro del Paese.",
+      "title": "Formazione del governo israeliano dopo le elezioni del 2026"
     },
     "pt": {
-      "title": "Formação do governo israelita após as eleições de 2026",
-      "dek": "O presidente israelita Isaac Herzog incumbiu o líder da oposição Gadi Eisenkot de formar um novo governo, dando início a negociações de coligação que determinarão o próximo primeiro-ministro de Israel."
-    },
-    "es": {
-      "title": "Formación del gobierno israelí tras las elecciones de 2026",
-      "dek": "El presidente israelí Isaac Herzog ha encargado al líder de la oposición Gadi Eisenkot formar un nuevo gobierno, lo que ha puesto en marcha las conversaciones de coalición que determinarán quién será el próximo primer ministro del país."
+      "dek": "O presidente israelita Isaac Herzog incumbiu o líder da oposição Gadi Eisenkot de formar um novo governo, dando início a negociações de coligação que determinarão o próximo primeiro-ministro de Israel.",
+      "title": "Formação do governo israelita após as eleições de 2026"
     }
   },
   "updates": [
     {
-      "id": "u-1794096722000-h72n",
-      "at": "2026-11-08T00:12:02.000Z",
+      "id": "u-1794101400000-pvcp",
+      "at": "2026-11-08T01:30:00.000Z",
       "kind": "context",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Eisenkot described as opposition leader and anti-Netanyahu coalition head",
-          "body": "G1 describes Gadi Eisenkot as the opposition leader, while DW.com describes him as the leader of an anti-Netanyahu coalition. The two outlets published their reports on 8 November and 7 November, respectively."
-        },
-        "de": {
-          "headline": "Eisenkot als Oppositionsführer und Kopf einer Koalition gegen Netanjahu beschrieben",
-          "body": "G1 beschreibt Gadi Eisenkot als Oppositionsführer, während DW.com ihn als Anführer einer Koalition gegen Netanjahu beschreibt. Die beiden Medien veröffentlichten ihre Berichte am 8. beziehungsweise am 7. November."
-        },
-        "it": {
-          "headline": "Eisenkot descritto come leader dell'opposizione e capo della coalizione anti-Netanyahu",
-          "body": "G1 descrive Gadi Eisenkot come leader dell'opposizione, mentre DW.com lo descrive come leader di una coalizione anti-Netanyahu. Le due testate hanno pubblicato i loro report l'8 novembre e il 7 novembre, rispettivamente."
-        },
-        "pt": {
-          "headline": "Eisenkot descrito como líder da oposição e chefe de coligação anti-Netanyahu",
-          "body": "O G1 descreve Gadi Eisenkot como líder da oposição, enquanto a DW.com o descreve como líder de uma coligação anti-Netanyahu. Os dois órgãos de comunicação publicaram as reportagens em 8 e 7 de novembro, respetivamente."
-        },
-        "fr": {
-          "headline": "Eisenkot présenté comme chef de l’opposition et dirigeant d’une coalition anti-Netanyahu",
-          "body": "G1 décrit Gadi Eisenkot comme le chef de l’opposition, tandis que DW.com le décrit comme le dirigeant d’une coalition anti-Netanyahu. Les deux médias ont publié leurs reportages les 8 et 7 novembre, respectivement."
-        },
-        "ko": {
-          "headline": "에이젠코트, 야당 대표이자 반네타냐후 연합 대표로 묘사돼",
-          "body": "G1은 가디 에이젠코트를 야당 대표로, DW.com은 그를 반네타냐후 연합의 대표로 묘사했다. 두 매체는 각각 11월 8일과 11월 7일에 관련 보도를 게재했다."
+          "headline": "Israel's election was held on 27 October",
+          "body": "CNA and The Economist reported that the election took place on 27 October. Neither Netanyahu's bloc nor Eisenkot's secured a majority."
         },
         "es": {
-          "headline": "Eisenkot descrito como líder de la oposición y de una coalición anti-Netanyahu",
-          "body": "G1 describe a Gadi Eisenkot como líder de la oposición, mientras que DW.com lo describe como líder de una coalición anti-Netanyahu. Los dos medios publicaron sus informes el 8 y el 7 de noviembre, respectivamente."
+          "headline": "Las elecciones de Israel se celebraron el 27 de octubre",
+          "body": "CNA y The Economist informaron que las elecciones se celebraron el 27 de octubre. Ni el bloque de Netanyahu ni el de Eisenkot obtuvieron una mayoría."
+        },
+        "it": {
+          "headline": "Le elezioni in Israele si sono svolte il 27 ottobre",
+          "body": "CNA e The Economist hanno riportato che le elezioni si sono svolte il 27 ottobre. Né il blocco di Netanyahu né quello di Eisenkot hanno ottenuto una maggioranza."
+        },
+        "de": {
+          "headline": "Israels Wahl fand am 27. Oktober statt",
+          "body": "CNA und The Economist berichteten, dass die Wahl am 27. Oktober stattfand. Weder Netanyahus Block noch Eisenkots Block sicherte eine Mehrheit."
+        },
+        "pt": {
+          "headline": "As eleições em Israel ocorreram a 27 de outubro",
+          "body": "A CNA e The Economist informaram que as eleições ocorreram a 27 de outubro. Nem o bloco de Netanyahu nem o de Eisenkot obtiveram maioria."
+        },
+        "fr": {
+          "headline": "Les élections en Israël ont eu lieu le 27 octobre",
+          "body": "CNA et The Economist ont rapporté que les élections se sont déroulées le 27 octobre. Ni le bloc de Netanyahou ni celui d’Eizenkot n’ont obtenu de majorité."
         },
         "zh": {
-          "headline": "艾曾科特被描述为反对派领袖、反内塔尼亚胡联盟领导人",
-          "body": "G1将加迪·艾曾科特描述为反对派领袖，德国之声网站则称他是反内塔尼亚胡联盟的领导人。两家媒体分别于11月8日和11月7日发布报道。"
-        },
-        "ja": {
-          "headline": "アイゼンコトは野党首脳、ネタニヤフ反連立の首脳と称される",
-          "body": "G1はガディ・アイゼンコトを野党首脳と説明し、DW.comは同氏をネタニヤフ反連立の首脳と説明している。両メディアはそれぞれ11月8日と11月7日に報道を掲載した。"
+          "headline": "以色列选举于10月27日举行",
+          "body": "中央社和《经济学人》报道称，选举于10月27日举行。内塔尼亚胡阵营与艾森科特阵营均未取得过半席位。"
         }
       },
       "sources": [
         {
-          "outlet": "G1",
-          "title": "Israel: Líder da oposição tem chance de formar governo e substituir Netanyahu",
+          "outlet": "CNA",
+          "title": "Israel president taps Eisenkot to form new government",
+          "url": "https://www.channelnewsasia.com/world/israel-president-taps-eisenkot-form-new-government-6533711",
+          "publishedAt": "2026-11-08T01:30:00.000Z"
+        },
+        {
+          "outlet": "The Economist",
+          "title": "World in Brief: Israel’s Eisenkot gets first crack at forming government; gunman kills six in Krakow",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNR0lOTUhjMFh2OGZscUFFYnRpNlYxSGVvcERWTzlmTG5hTnUwQ0E3VG1vX0x4bjdja2hvSlZjTk1lLWNfNjRRYUFyZk45SjF2UmQzd2Y4LXdUdFpGNDU0ZjBkbWx6NFNnSDFqVXY1YjdJbnJwaVp0UlFaQ0xDWHNtalBFa2UxRDFZcmR5ZW1IOFdGVWJvbE5B?oc=5",
+          "publishedAt": "2026-11-08T01:05:51.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-08T00:12:02.000Z",
+      "id": "u-1794096722000-h72n",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "G1 beschreibt Gadi Eisenkot als Oppositionsführer, während DW.com ihn als Anführer einer Koalition gegen Netanjahu beschreibt. Die beiden Medien veröffentlichten ihre Berichte am 8. beziehungsweise am 7. November.",
+          "headline": "Eisenkot als Oppositionsführer und Kopf einer Koalition gegen Netanjahu beschrieben"
+        },
+        "en": {
+          "body": "G1 describes Gadi Eisenkot as the opposition leader, while DW.com describes him as the leader of an anti-Netanyahu coalition. The two outlets published their reports on 8 November and 7 November, respectively.",
+          "headline": "Eisenkot described as opposition leader and anti-Netanyahu coalition head"
+        },
+        "es": {
+          "body": "G1 describe a Gadi Eisenkot como líder de la oposición, mientras que DW.com lo describe como líder de una coalición anti-Netanyahu. Los dos medios publicaron sus informes el 8 y el 7 de noviembre, respectivamente.",
+          "headline": "Eisenkot descrito como líder de la oposición y de una coalición anti-Netanyahu"
+        },
+        "fr": {
+          "body": "G1 décrit Gadi Eisenkot comme le chef de l’opposition, tandis que DW.com le décrit comme le dirigeant d’une coalition anti-Netanyahu. Les deux médias ont publié leurs reportages les 8 et 7 novembre, respectivement.",
+          "headline": "Eisenkot présenté comme chef de l’opposition et dirigeant d’une coalition anti-Netanyahu"
+        },
+        "it": {
+          "body": "G1 descrive Gadi Eisenkot come leader dell'opposizione, mentre DW.com lo descrive come leader di una coalizione anti-Netanyahu. Le due testate hanno pubblicato i loro report l'8 novembre e il 7 novembre, rispettivamente.",
+          "headline": "Eisenkot descritto come leader dell'opposizione e capo della coalizione anti-Netanyahu"
+        },
+        "ja": {
+          "body": "G1はガディ・アイゼンコトを野党首脳と説明し、DW.comは同氏をネタニヤフ反連立の首脳と説明している。両メディアはそれぞれ11月8日と11月7日に報道を掲載した。",
+          "headline": "アイゼンコトは野党首脳、ネタニヤフ反連立の首脳と称される"
+        },
+        "ko": {
+          "body": "G1은 가디 에이젠코트를 야당 대표로, DW.com은 그를 반네타냐후 연합의 대표로 묘사했다. 두 매체는 각각 11월 8일과 11월 7일에 관련 보도를 게재했다.",
+          "headline": "에이젠코트, 야당 대표이자 반네타냐후 연합 대표로 묘사돼"
+        },
+        "pt": {
+          "body": "O G1 descreve Gadi Eisenkot como líder da oposição, enquanto a DW.com o descreve como líder de uma coligação anti-Netanyahu. Os dois órgãos de comunicação publicaram as reportagens em 8 e 7 de novembro, respetivamente.",
+          "headline": "Eisenkot descrito como líder da oposição e chefe de coligação anti-Netanyahu"
+        },
+        "zh": {
+          "body": "G1将加迪·艾曾科特描述为反对派领袖，德国之声网站则称他是反内塔尼亚胡联盟的领导人。两家媒体分别于11月8日和11月7日发布报道。",
+          "headline": "艾曾科特被描述为反对派领袖、反内塔尼亚胡联盟领导人"
+        }
+      },
+      "sources": [
+        {
           "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/07/israel-lider-da-oposicao-tem-chance-de-formar-governo-e-substituir-netanyahu.ghtml",
+          "title": "Israel: Líder da oposição tem chance de formar governo e substituir Netanyahu",
+          "outlet": "G1",
           "publishedAt": "2026-11-08T00:12:02.000Z"
         },
         {
-          "outlet": "DW.com",
-          "title": "Israeli president tasks Gadi Eisenkot, leader of anti-Netanyahu coalition, with forming government",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcTMySGhNcUYza2MzM2lxVlltRWdmQk1iR291OUN5WVBJUHdXU0hhQ3FlS0lBT2kzZC1MbW10NDk3c2NhUWJOV0dxWEI3a3Bzc1dhLTloV2I1S0hieFczYTdOdVFRcl80S1RwYzRGOHJpVTBpVWFJVkZfZnRnNnNmdWdTMVhOMWNvYy1oRWJ2RzJVT0hlQTc3WFl30gGaAUFVX3lxTE51NjVOSWhrMDZOdUdOTmZaOU04VC1DOENSSU9ibm5uNVMxMjg4S3FublZ6VlNJNm1HcDJWWWpVcGNMRF9nNkJOYjNQS3Q5RzNkTnhEY1ZoNFNtZm9COWFQdk9sQjdqMzF2N2FxTlp2WDlGWlVjVV9TU2NEcmhRWTdqcE9wQ055eUtMTy1aNGFXOVplQ0NyTjhMY2c?oc=5",
+          "title": "Israeli president tasks Gadi Eisenkot, leader of anti-Netanyahu coalition, with forming government",
+          "outlet": "DW.com",
           "publishedAt": "2026-11-07T22:28:05.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-07T23:44:00.000Z",
@@ -128,6 +178,10 @@
           "body": "The Straits Times ha descritto Eisenkot come un ex generale. Il Washington Post lo ha descritto come ex capo militare.",
           "headline": "Gadi Eisenkot è un ex capo militare"
         },
+        "ja": {
+          "body": "ストレイツ・タイムズはアイゼンコトを元将軍と説明した。ワシントン・ポストは同氏を元軍首脳と説明した。",
+          "headline": "ガディ・アイゼンコトは元軍首脳"
+        },
         "ko": {
           "body": "스트레이트스 타임즈는 아이젠코트를 전직中将이라고 설명했다. 워싱턴 포스트는 그를 전직 군 수장이라고 설명했다.",
           "headline": "가디 아이젠코트는 전직 군 수장이다"
@@ -139,10 +193,6 @@
         "zh": {
           "body": "《海峡时报》称埃曾科特是前将军。《华盛顿邮报》称他是前军事首长。",
           "headline": "加迪·埃曾科特是前军事首长"
-        },
-        "ja": {
-          "headline": "ガディ・アイゼンコトは元軍首脳",
-          "body": "ストレイツ・タイムズはアイゼンコトを元将軍と説明した。ワシントン・ポストは同氏を元軍首脳と説明した。"
         }
       },
       "sources": [
@@ -186,6 +236,10 @@
           "body": "Il presidente Isaac Herzog ha detto sabato di aver concesso al capo dell'opposizione Gadi Eisenkot la prima possibilità di formare un governo. Eisenkot è un ex capo militare che guida il partito Yashar, secondo The Guardian e Axios.",
           "headline": "Il presidente israeliano incarica Gadi Eisenkot di formare un governo"
         },
+        "ja": {
+          "body": "イスラエル大統領イサーク・ヘルツォグは土曜日、野党首脳ガディ・アイゼンコトに政府を結成する最初の機会を与えたと述べた。ガーディアンとアクシオスによると、アイゼンコトはヤシャル党を率いる元軍首脳である。",
+          "headline": "イスラエル大統領、ガディ・アイゼンコトに政府結成を任せる"
+        },
         "ko": {
           "body": "이삭 헤르조그 대통령은 토요일에 반대당 지도자인 가디 아이젠코트에게 정부를 구성할 첫 기회를 줬다고 말했다. 가디언과 악시오스에 따르면 아이젠코트는 야샤르당을 이끄는 전직 군 수장이다.",
           "headline": "이스라엘 대통령, 가디 아이젠코트에 정부 구성 지시"
@@ -197,10 +251,6 @@
         "zh": {
           "body": "总统艾萨克·赫尔佐格周六表示，他已给予反对党领袖加迪·埃曾科特首次组阁机会。据《卫报》和Axios报道，埃曾科特是前军事首长，领导Yashar党。",
           "headline": "以色列总统授权加迪·埃曾科特组阁"
-        },
-        "ja": {
-          "headline": "イスラエル大統領、ガディ・アイゼンコトに政府結成を任せる",
-          "body": "イスラエル大統領イサーク・ヘルツォグは土曜日、野党首脳ガディ・アイゼンコトに政府を結成する最初の機会を与えたと述べた。ガーディアンとアクシオスによると、アイゼンコトはヤシャル党を率いる元軍首脳である。"
         }
       },
       "sources": [
@@ -298,6 +348,10 @@
           "body": "Le Monde ha riportato che Eisenkot avrà 28 giorni per formare un governo. Al Jazeera e The Straits Times hanno riportato anch'essi il termine di 28 giorni.",
           "headline": "Eisenkot ha 28 giorni per formare un governo"
         },
+        "ja": {
+          "body": "ル・モンドによると、アイゼンコトには政府結成のために28日間が与えられる。アルジャazeeraとストレイツ・タイムズも28日間の期限を報じた。",
+          "headline": "アイゼンコト、政府結成に28日"
+        },
         "ko": {
           "body": "르 몽드는 아이젠코트에게 정부를 구성할 28일이 주어진다고 보도했다. 알자지라와 스트레이트스 타임즈도 28일 기한을 보도했다.",
           "headline": "아이젠코트, 정부 구성에 28일의 기한"
@@ -309,10 +363,6 @@
         "zh": {
           "body": "《世界报》报道称，埃曾科特将有28天时间来组建政府。半岛电视台和《海峡时报》也报道了这一28天的期限。",
           "headline": "埃曾科特有28天时间组阁"
-        },
-        "ja": {
-          "headline": "アイゼンコト、政府結成に28日",
-          "body": "ル・モンドによると、アイゼンコトには政府結成のために28日間が与えられる。アルジャazeeraとストレイツ・タイムズも28日間の期限を報じた。"
         }
       },
       "sources": [
@@ -362,6 +412,10 @@
           "body": "La BBC ha riportato che né il blocco del primo ministro Benjamin Netanyahu né quello del capo dell'opposizione Gadi Eisenkot hanno ottenuto una maggioranza alle elezioni. NPR e ABC Australia hanno descritto il voto come bloccato.",
           "headline": "Né il blocco di Netanyahu né quello di Eisenkot hanno ottenuto una maggioranza"
         },
+        "ja": {
+          "body": "BBCによると、首相ベンヤミン・ネタニヤフの陣営も野党首脳ガディ・アイゼンコトの陣営も、選挙で過半数を獲得できなかった。NPRとABCオーストラリアは、投票は膠着状態だったと説明した。",
+          "headline": "ネタニヤフ陣営もアイゼンコト陣営も過半数を獲得せず"
+        },
         "ko": {
           "body": "BBC는 선거에서 벤야민 네타냐후首相의 연합도 반대당 지도자 가디 아이젠코트의 연합도 과반수를 확보하지 못했다고 보도했다. NPR과 호주 ABC는 투표가 막힌 상황이라고 설명했다.",
           "headline": "네타냐후의 연합도 아이젠코트의 연합도 과반수를 확보하지 못했다"
@@ -373,10 +427,6 @@
         "zh": {
           "body": "BBC报道称，本雅明·内塔尼亚胡总理的阵营和反对党领袖加迪·埃曾科特的阵营均未在选举中获得多数。NPR和澳大利亚广播公司将此次投票描述为陷入僵局。",
           "headline": "内塔尼亚胡阵营与埃曾科特阵营均未获多数"
-        },
-        "ja": {
-          "headline": "ネタニヤフ陣営もアイゼンコト陣営も過半数を獲得せず",
-          "body": "BBCによると、首相ベンヤミン・ネタニヤフの陣営も野党首脳ガディ・アイゼンコトの陣営も、選挙で過半数を獲得できなかった。NPRとABCオーストラリアは、投票は膠着状態だったと説明した。"
         }
       },
       "sources": [
@@ -498,13 +548,21 @@
     "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRFRWbl9JNi0wT2wwR215MGM5a3Bkd2lqOHh1WnJQaW43bXFKQXM2NHRfV01iZ1dGXzZmT3JMb0MzSjl2czhEVjVvUTdWanFPTnpKQmtPS1BBUDFtYmdla21lQ0dQb09TTktCZEd0eVlxeHhPZVprRVhyOEdqUDUtdlRCaHUxS1Z4X0RNbkRqMTlrRmU3UEw4R3hzMDg0blVBY2xvUENnX2F2OGs5TnRSSWd2cFJJUQ?oc=5",
     "https://g1.globo.com/jornal-nacional/noticia/2026/11/07/israel-lider-da-oposicao-tem-chance-de-formar-governo-e-substituir-netanyahu.ghtml",
     "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPV1lCLWlybkp5QWlYRFJ1VWtlVGZMTS1MZmZKb0J6Y2pQeEVuR21JeHpYNmpjYmdfVGRPT3V1bE83YWZJV2pKQzRmbGI3emJHZEl5VkhsTWs3X0I4V3NoVE5hUUhPVzlmbUVkMGhtaUNNdDE4YTZxcU9UbnpJRVN5cjRybnRnakpmZkVpckdLX1JvR09YTnlkeTQyX3VjUEVxcV8yNnBXb3hram95VndfWi1WbDZsa0RSZTlCSTJYUlNPcnI3S3ROc0tiNk9uT0I1VDNlTw?oc=5",
-    "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcTMySGhNcUYza2MzM2lxVlltRWdmQk1iR291OUN5WVBJUHdXU0hhQ3FlS0lBT2kzZC1MbW10NDk3c2NhUWJOV0dxWEI3a3Bzc1dhLTloV2I1S0hieFczYTdOdVFRcl80S1RwYzRGOHJpVTBpVWFJVkZfZnRnNnNmdWdTMVhOMWNvYy1oRWJ2RzJVT0hlQTc3WFl30gGaAUFVX3lxTE51NjVOSWhrMDZOdUdOTmZaOU04VC1DOENSSU9ibm5uNVMxMjg4S3FublZ6VlNJNm1HcDJWWWpVcGNMRF9nNkJOYjNQS3Q5RzNkTnhEY1ZoNFNtZm9COWFQdk9sQjdqMzF2N2FxTlp2WDlGWlVjVV9TU2NEcmhRWTdqcE9wQ055eUtMTy1aNGFXOVplQ0NyTjhMY2c?oc=5"
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcTMySGhNcUYza2MzM2lxVlltRWdmQk1iR291OUN5WVBJUHdXU0hhQ3FlS0lBT2kzZC1MbW10NDk3c2NhUWJOV0dxWEI3a3Bzc1dhLTloV2I1S0hieFczYTdOdVFRcl80S1RwYzRGOHJpVTBpVWFJVkZfZnRnNnNmdWdTMVhOMWNvYy1oRWJ2RzJVT0hlQTc3WFl30gGaAUFVX3lxTE51NjVOSWhrMDZOdUdOTmZaOU04VC1DOENSSU9ibm5uNVMxMjg4S3FublZ6VlNJNm1HcDJWWWpVcGNMRF9nNkJOYjNQS3Q5RzNkTnhEY1ZoNFNtZm9COWFQdk9sQjdqMzF2N2FxTlp2WDlGWlVjVV9TU2NEcmhRWTdqcE9wQ055eUtMTy1aNGFXOVplQ0NyTjhMY2c?oc=5",
+    "https://timesofindia.indiatimes.com/world/middle-east/can-netanyahu-stage-a-comeback-in-israel-what-if-eisenkot-fails-to-form-govt/articleshow/135649553.cms",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZlBnYTk3SHVncDBYejNmYmxMUWxLMWNGaTlYNjBkUy1KVWFrS0JlZVNKSEFmYU9sQS1VX0pIaGk4enBzVHNZbWVOYU1CRHNCMTZjT2FkQ2wtYW1BT3piQTV3Nmk4UVphUlhrMXRSUUgxUEV3SE9ReGRMRmMxX1FGZnVrY3IzbFI5bzcyMVpkSUkyX3hHNldKaWFteHMtRHNrb3c?oc=5",
+    "https://www.channelnewsasia.com/world/israel-president-taps-eisenkot-form-new-government-6533711",
+    "https://news.google.com/rss/articles/CBMilwFBVV95cUxNR0lOTUhjMFh2OGZscUFFYnRpNlYxSGVvcERWTzlmTG5hTnUwQ0E3VG1vX0x4bjdja2hvSlZjTk1lLWNfNjRRYUFyZk45SjF2UmQzd2Y4LXdUdFpGNDU0ZjBkbWx6NFNnSDFqVXY1YjdJbnJwaVp0UlFaQ0xDWHNtalBFa2UxRDFZcmR5ZW1IOFdGVWJvbE5B?oc=5",
+    "https://www.theguardian.com/world/2026/nov/07/new-zealand-election-too-close-to-call-vote-count",
+    "https://www.japantimes.co.jp/news/2026/11/08/world/politics/israel-president-gadi-eisenkot-government/",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNEhYQ2dKeFg3NU5aSXY3My1zUTlIanJZMERucFFwa0Z6NDZVb2hBWlRCTWpEb01jQlROR1F1VTFOMWt0ZnZEcHZoalgtZ0FYRm9Fa1ZFdS1UWWRfR0xEUVNFTllDNFFjNURaMnhnV2NtWENjNERDWXFPZVZxcGtZaTB2cTAyS2MtUjZrQnpQbHJzaURyQW84elEzcDFqWEg5cWxCVzNNZzJiS1dGYWJfd2FzSVpHQmpObmNFdg?oc=5",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxPOEhHMGplUjRkTWp3ZFp2VFRoRXlzal9mclM5RGJUZmh1LUNoZGU0MC1iVFFGbzB4dWNVOV9tZ29MUWwxdkJXazJRVGxua2tmQjdzdHFReHZ0TGZaVldOanJXLTh0YVVTQ25GcDZvUks3NzF1U0tNQTExLUhPcEIzT2I2VVJSVDFUWWM2N0YzZ3p1cThQNm1mU2tZbXlsVXgzUTdXT0dQTHVyTXlOQXfSAcIBQVVfeXFMT0lPaDlFQVN5R3g1NUIyck9KNjRPWUhkRGNxeHV5WXZfaGRvOERmbHlvV3g5RkQ4UVBZZVd4VWJaaDk5UldNWGdCaVRadl9LOURycXh1bDlzbG1NOWs4MGl4aG4yZnBqNGh2WnA5anh0X3RiMDFnaWNJNjhteW11Nlp3LW0xa0tXZWJWZFd5WjVsVmc0cGFWUFBCRC1EZ0Vob041Nlh0Zk5VU1pkYVJRd2lZMWJWWDY1S3poZW9Gd3hZR1E?oc=5"
   ],
   "startedAt": "2026-11-07T22:58:27.341Z",
-  "updatedAt": "2026-11-08T00:52:04.323Z",
+  "updatedAt": "2026-11-08T02:30:08.013Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": null,
-  "sourceCount": 19,
+  "sourceCount": 21,
   "seenHeadlines": []
 }
