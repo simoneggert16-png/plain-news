@@ -8,7 +8,7 @@
       "Newsday"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+    "lastUpdateModel": "gemini/gemini-3.6-flash"
   },
   "slug": "central-japan-earthquake",
   "topic": "Central Japan earthquake",
@@ -21,8 +21,8 @@
       "title": "Erdbeben in Zentraljapan"
     },
     "en": {
-      "dek": "A magnitude 5.7 earthquake struck central Japan, injuring dozens, with rescue and damage assessment efforts underway.",
-      "title": "Central Japan earthquake"
+      "title": "Earthquake in central Japan",
+      "dek": "A magnitude 5.7 earthquake struck central Japan, injuring dozens, with rescue and damage assessment efforts under way."
     },
     "es": {
       "dek": "Un terremoto de magnitud 5,7 sacudió el centro de Japón, hiriendo a decenas de personas, con esfuerzos de rescate y evaluación de daños en marcha.",
@@ -55,42 +55,120 @@
   },
   "updates": [
     {
-      "id": "u-1794122904000-hnyn",
-      "at": "2026-11-08T07:28:24.000Z",
-      "kind": "result",
+      "id": "u-1794132625000-h8mq",
+      "at": "2026-11-08T10:10:25.000Z",
+      "kind": "context",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Earthquake shattered windows in central Japan",
-          "body": "Windows broke during the central Japan earthquake, according to AP News and The Seattle Times. Neither report gave a count of damaged buildings or broken windows."
-        },
-        "de": {
-          "headline": "Erdbeben zerstörte Fenster in Zentraljapan",
-          "body": "Bei dem Erdbeben in Zentraljapan zerbrachen Fenster, wie AP News und The Seattle Times berichteten. Keiner der beiden Berichte nannte die Anzahl beschädigter Gebäude oder zerbrochener Fenster."
-        },
-        "it": {
-          "headline": "Il terremoto ha infranto i vetri nel centro del Giappone",
-          "body": "I vetri si sono rotti durante il terremoto che ha colpito il centro del Giappone, secondo AP News e The Seattle Times. Né l'uno né l'altro dei report ha indicato il numero di edifici danneggiati o di vetri infranti."
+          "headline": "Officials warn of potential strong quakes following central Japan tremor",
+          "body": "Authorities issued warnings about potential strong earthquakes following the magnitude 5.7 tremor in central Japan. ABC Australia reported that officials expect the risk of subsequent quakes to be especially high over the next two to three days."
         },
         "es": {
-          "headline": "El terremoto rompió los vidrios en el centro de Japón",
-          "body": "Se rompieron ventanas durante el terremoto registrado en el centro de Japón, según AP News y The Seattle Times. Ninguno de los dos informes indicó el número de edificios dañados ni de ventanas rotas."
+          "headline": "Las autoridades advierten de posibles terremotos fuertes tras el temblor en el centro de Japón",
+          "body": "Las autoridades emitieron avisos sobre posibles terremotos fuertes tras el temblor de magnitud 5,7 en el centro de Japón. ABC Australia informó de que las autoridades esperan que el riesgo de terremotos posteriores sea especialmente alto durante los próximos dos o tres días."
+        },
+        "it": {
+          "headline": "Le autorità avvertono di possibili forti terremoti dopo la scossa nel centro del Giappone",
+          "body": "Le autorità hanno emesso avvisi sulla possibilità di forti terremoti in seguito alla scossa di magnitudo 5,7 nel centro del Giappone. ABC Australia ha riportato che le autorità prevedono che il rischio di terremoti successivi sarà particolarmente elevato nei prossimi due o tre giorni."
+        },
+        "de": {
+          "headline": "Beamte warnen vor möglichen schweren Erdbeben nach Erschütterung in Zentraljapan",
+          "body": "Die Behörden warnten vor möglichen schweren Erdbeben nach der Erschütterung der Stärke 5,7 in Zentraljapan. ABC Australia berichtete, dass die Beamten das Risiko weiterer Erdbeben in den nächsten zwei bis drei Tagen als besonders hoch einschätzen."
+        },
+        "fr": {
+          "headline": "Les autorités alertent sur la possibilité de forts séismes après la secousse au centre du Japon",
+          "body": "Les autorités ont émis des alertes sur la possibilité de forts séismes après la secousse de magnitude 5,7 au centre du Japon. ABC Australia a rapporté que les autorités estiment que le risque de séismes ultérieurs sera particulièrement élevé au cours des deux à trois prochains jours."
+        },
+        "ja": {
+          "headline": "官方、日本中部の地震後に強い地震の可能性を警戒",
+          "body": "authoritiesは、日本中部で発生したマグニチュード5.7の地震後、強い地震が発生する可能性について警告を出した。ABCオーストラリアによると、officialsは今後2～3日にかけて、その後の地震のリスクが特に高くなる見込みとしている。"
+        },
+        "pt": {
+          "headline": "Autoridades alertam para a possibilidade de terramotos fortes após tremor no centro do Japão",
+          "body": "As autoridades emitiram alertas sobre a possibilidade de terramotos fortes após o tremor de magnitude 5,7 no centro do Japão. A ABC Australia informou que as autoridades prevêem que o risco de novos terramotos seja particularmente elevado nos próximos dois a três dias."
+        },
+        "zh": {
+          "headline": "官员警告日本中部地震后可能发生强震",
+          "body": "日本中部发生5.7级地震后，当局就可能发生的强震发出警告。澳大利亚ABC报道称，官员预计未来两至三天发生后续地震的风险尤其高。"
+        },
+        "ko": {
+          "headline": "중부 일본 지진 이후 강한 지진 가능성에 경고한 당국",
+          "body": "중부 일본에서 규모 5.7의 지진이 발생한 뒤 당국은 강한 지진이 발생할 가능성에 대해 경고를 내렸다. ABC 호주에 따르면 당국은 앞으로 2~3일 동안 후속 지진의 위험이 특히 높을 것으로 예상하고 있다."
         }
       },
       "sources": [
         {
-          "outlet": "The Seattle Times",
-          "title": "Strong earthquake shakes central Japan, shattering store windows and injuring at least 22",
+          "outlet": "ABC Australia",
+          "title": "Strong earthquake rocks central Japan, injuring at least 22",
+          "url": "https://www.abc.net.au/news/2026-11-08/japan-earthquake-aichi-prefecture-at-least-22-injured/107361392",
+          "publishedAt": "2026-11-08T10:10:25.000Z"
+        },
+        {
+          "outlet": "TRT World",
+          "title": "5.7-magnitude earthquake hits central Japan, injuring at least 20",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9hTDFkckppZmZkTkRDa0ZWbFJ3R19JVkYzRVBLNmJ5V1BDMGZOalljcXBVZ3laWjdPUlVSSW1zUEJBUExCTW5QcDdpaVpuUVJ0VDJCd0UyNG8?oc=5",
+          "publishedAt": "2026-11-08T08:00:54.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-08T07:28:24.000Z",
+      "id": "u-1794122904000-hnyn",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Bei dem Erdbeben in Zentraljapan zerbrachen Fenster, wie AP News und The Seattle Times berichteten. Keiner der beiden Berichte nannte die Anzahl beschädigter Gebäude oder zerbrochener Fenster.",
+          "headline": "Erdbeben zerstörte Fenster in Zentraljapan"
+        },
+        "en": {
+          "body": "Windows broke during the central Japan earthquake, according to AP News and The Seattle Times. Neither report gave a count of damaged buildings or broken windows.",
+          "headline": "Earthquake shattered windows in central Japan"
+        },
+        "es": {
+          "body": "Se rompieron ventanas durante el terremoto registrado en el centro de Japón, según AP News y The Seattle Times. Ninguno de los dos informes indicó el número de edificios dañados ni de ventanas rotas.",
+          "headline": "El terremoto rompió los vidrios en el centro de Japón"
+        },
+        "it": {
+          "body": "I vetri si sono rotti durante il terremoto che ha colpito il centro del Giappone, secondo AP News e The Seattle Times. Né l'uno né l'altro dei report ha indicato il numero di edifici danneggiati o di vetri infranti.",
+          "headline": "Il terremoto ha infranto i vetri nel centro del Giappone"
+        },
+        "fr": {
+          "headline": "Le séisme a brisé des vitres au centre du Japon",
+          "body": "Des vitres se sont brisées lors du séisme survenu au centre du Japon, selon AP News et The Seattle Times. Aucun des deux articles n'a indiqué le nombre de bâtiments endommagés ou de vitres brisées."
+        },
+        "ja": {
+          "headline": "日本中部の地震で窓が割れる",
+          "body": "AP通信とSeattle Timesによると、日本中部の地震で窓が割れた。どちらの報道も、損壊した建物数や割れた窓の数については示していない。"
+        },
+        "pt": {
+          "headline": "Terramoto partiu janelas no centro do Japão",
+          "body": "Janelas partiram-se durante o terramoto no centro do Japão, segundo a AP News e o The Seattle Times. Nenhum dos relatórios indicou o número de edifícios danificados ou de janelas partidas."
+        },
+        "zh": {
+          "headline": "地震震碎日本中部多扇窗户",
+          "body": "据美联社和《西雅图时报》报道，日本中部地震期间窗户破裂。两篇报道均未提供受损建筑或破裂窗户的数量。"
+        },
+        "ko": {
+          "headline": "중부 일본 지진으로 유리창 깨져",
+          "body": "AP 뉴스와 더 시애 타임스에 따르면 중부 일본 지진 당시 유리창이 깨졌다. 두 보도 모두 손상된 건물이나 깨진 유리창의 수를 밝히지 않았다."
+        }
+      },
+      "sources": [
+        {
           "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOa28xQnR5QllmdFFfdnU1SVBNajhXUDZtN1Ryb2QzeGJCOUVzdmd0bnJMa1JSNmlseWdLWlpmZWd0d3paYzNGQm9LNnYwN3BHYk5MTkJSUDdyTjNlTU9OdTBuRl8wQjdhM2k0eEtadjBwanpfN1V0aDR1Q0lhLVBidHpSMjNEcG5EdVdIc1JMVW9GMUdOVTVrS3ZTb0FQc2tYWmZENFByUEdyR3lPMnJsMG9BdG5IaFVlc1Z0S1NUTEdqTjliSTl2UlNEOC04V2dQNGNGaDV3?oc=5",
+          "title": "Strong earthquake shakes central Japan, shattering store windows and injuring at least 22",
+          "outlet": "The Seattle Times",
           "publishedAt": "2026-11-08T07:28:24.000Z"
         },
         {
-          "outlet": "AP News",
-          "title": "Earthquake hits central Japan, shattering windows and injuring at least 22",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOd1ZzNEtyM0RKeGYwd0dUUjRQWkhCOERlc1NMMURnYXZUcm0wYklvNDFmTG9EVTZ6SzRmVkRuYjQxY0pwcXlURkh2ZUlvdkZQcTZoNDRkd1Z3NzRQV2dINkcwQ0VnYXJrMGN1bmVmc3NaRHdNSmtyNk9rR1djOE5xNUxDVHRTUWM2SmFmUFF2RWszT2tncEg2ZUlLOExvY2dPX3c3eVFXaXNnWWE5X29PSDN1eXFEQnl1S1g4NkV1dXVJVkhZczRtODJkOA?oc=5",
+          "title": "Earthquake hits central Japan, shattering windows and injuring at least 22",
+          "outlet": "AP News",
           "publishedAt": "2026-11-08T07:12:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-08T05:42:49.000Z",
@@ -105,6 +183,10 @@
           "body": "The earthquake occurred at 1:04 a.m. in Shizuoka Prefecture, about 40 kilometres below the earth's surface, according to The Hindu and The Japan Times. Aichi and Shizuoka are neighbouring regions, The Hindu reported.",
           "headline": "Japan earthquake struck at 1:04 a.m. about 40 km below Shizuoka"
         },
+        "es": {
+          "body": "El terremoto ocurrió a la 1:04 h. en la prefectura de Shizuoka, a unos 40 kilómetros bajo la superficie terrestre, según The Hindu y The Japan Times. Aichi y Shizuoka son regiones vecinas, informó The Hindu.",
+          "headline": "El terremoto de Japón se produjo a la 1:04 h. a unos 40 km bajo Shizuoka"
+        },
         "fr": {
           "body": "Le séisme s'est produit à 1 h 04 dans la préfecture de Shizuoka, à environ 40 kilomètres sous la surface terrestre, selon The Hindu et The Japan Times. Aichi et Shizuoka sont des régions voisines, a rapporté The Hindu.",
           "headline": "Le séisme au Japon s'est produit à 1 h 04, à environ 40 km sous Shizuoka"
@@ -113,9 +195,21 @@
           "body": "Il terremoto si è verificato alle 1:04 nella prefettura di Shizuoka, a circa 40 chilometri sotto la superficie terrestre, secondo The Hindu e The Japan Times. Aichi e Shizuoka sono regioni confinanti, ha riportato The Hindu.",
           "headline": "Il terremoto in Giappone si è verificato alle 1:04, a circa 40 km sotto Shizuoka"
         },
-        "es": {
-          "headline": "El terremoto de Japón se produjo a la 1:04 h. a unos 40 km bajo Shizuoka",
-          "body": "El terremoto ocurrió a la 1:04 h. en la prefectura de Shizuoka, a unos 40 kilómetros bajo la superficie terrestre, según The Hindu y The Japan Times. Aichi y Shizuoka son regiones vecinas, informó The Hindu."
+        "ja": {
+          "headline": "日本地震、静岡県下約40キロで午前1時4分に発生",
+          "body": "The Hinduとジャパン・タイムズによると、地震は静岡県で午前1時4分に発生し、地下約40キロの深さだった。The Hinduは、愛知県と静岡県は隣接する地域だと報じた。"
+        },
+        "pt": {
+          "headline": "Terramoto no Japão ocorreu às 1:04 da manhã, cerca de 40 km abaixo de Shizuoka",
+          "body": "O terramoto ocorreu às 1:04 da manhã na Prefeitura de Shizuoka, cerca de 40 quilómetros abaixo da superfície terrestre, segundo o The Hindu e o The Japan Times. Aichi e Shizuoka são regiões vizinhas, informou o The Hindu."
+        },
+        "zh": {
+          "headline": "日本静冈县地下约40公里处凌晨1时04分发生地震",
+          "body": "据《印度教徒报》和《日本时报》报道，地震于凌晨1时04分发生在静冈县，震源位于地下约40公里。《印度教徒报》报道，爱知和静冈是相邻地区。"
+        },
+        "ko": {
+          "headline": "일본 지진, 1시 4분 쇼주오카 지하 약 40km에서 발생",
+          "body": "더 힌두와 더 재팬 타임스에 따르면 지진은 1시 4분에 쇼주오카현에서 지표면 아래 약 40킬로미터 깊이에서 발생했다. 더 힌두는 아이치와 쇼주오카가 서로 인접한 지역이라고 보도했다."
         }
       },
       "sources": [
@@ -147,6 +241,10 @@
           "body": "No tsunami warning was issued after the earthquake, according to The Japan Times and Al Jazeera. Authorities warned of possible strong aftershocks in the coming days, Al Jazeera reported.",
           "headline": "No tsunami warning issued after central Japan earthquake"
         },
+        "es": {
+          "body": "No se emitió ninguna alerta de tsunami tras el terremoto, según The Japan Times y Al Jazeera. Las autoridades advirtió de la posibilidad de fuertes réplicas durante los próximos días, informó Al Jazeera.",
+          "headline": "No se emitió ninguna alerta de tsunami tras el terremoto del centro de Japón"
+        },
         "fr": {
           "body": "Aucune alerte au tsunami n'a été émise après le séisme, selon The Japan Times et Al Jazeera. Les autorités ont averti que de fortes répliques étaient possibles dans les jours à venir, a rapporté Al Jazeera.",
           "headline": "Aucune alerte au tsunami après le séisme au centre du Japon"
@@ -155,9 +253,21 @@
           "body": "Dopo il terremoto non è stato emesso alcun avviso di tsunami, secondo The Japan Times e Al Jazeera. Le autorità hanno avvertito della possibilità di forti scosse di assestamento nei giorni successivi, ha riportato Al Jazeera.",
           "headline": "Nessun avviso di tsunami dopo il terremoto nel centro del Giappone"
         },
-        "es": {
-          "headline": "No se emitió ninguna alerta de tsunami tras el terremoto del centro de Japón",
-          "body": "No se emitió ninguna alerta de tsunami tras el terremoto, según The Japan Times y Al Jazeera. Las autoridades advirtió de la posibilidad de fuertes réplicas durante los próximos días, informó Al Jazeera."
+        "ja": {
+          "headline": "日本中部の地震後、津波警報は出されず",
+          "body": "ジャパン・タイムズとAl Jazeeraによると、地震後には津波警報が出されなかった。Al Jazeeraは、当局が今後数日内に強い余震の可能性があると警告したと報じた。"
+        },
+        "pt": {
+          "headline": "Não foi emitido alerta de tsunami após terramoto no centro do Japão",
+          "body": "Não foi emitido qualquer alerta de tsunami após o terramoto, segundo o The Japan Times e a Al Jazeera. As autoridades alertaram para a possibilidade de fortes réplicas nos próximos dias, informou a Al Jazeera."
+        },
+        "zh": {
+          "headline": "日本中部地震后未发布海啸警报",
+          "body": "据《日本时报》和半岛电视台报道，地震后未发布海啸警告。半岛电视台报道称，当局警告未来几天可能发生强烈余震。"
+        },
+        "ko": {
+          "headline": "중부 일본 지진 뒤 쓰나미 경보 발령 없음",
+          "body": "더 재팬 타임스와 알자지라에 따르면 지진 이후 쓰나미 경보는 발령되지 않았다. 알자지라는 당국이 앞으로 며칠 동안 강한 여진이 발생할 가능성에 대해 경고했다고 보도했다."
         }
       },
       "sources": [
@@ -357,13 +467,35 @@
     "https://g1.globo.com/mundo/noticia/2026/11/08/japao-alerta-para-novos-tremores-apos-terremoto.ghtml",
     "https://news.google.com/rss/articles/CBMinAFBVV95cUxQXzFyc1lSTV8ySHRtOUppZEtmQVhMWE1zM2x5TElMQ2FLRFRHajUyT3dGY1JBcjQxbE1rUWhfU3hYb19OcnBUNnZuTEo5RmYyQ09BN0l4WWEtaDNCTFpUVWpQeHY3WGtlSHZIVFNzZlVySnZxMmZWS1hTUGVvOUp2aG5jc3hzNTRxVDJnRDFFWlFLMUVlWFoxbjVoVDI?oc=5",
     "https://www.kyivpost.com/post/89456",
-    "https://news.google.com/rss/articles/CBMimgFBVV95cUxNYnN5OU1mLUpBdkVHS2JONG1hbXl2b1JXSHM3VFZmdHl2cVlFWXkxX1hWUUZDZlFzZlByRy0yTjllSmhsWkYydWJIRmszdnZtejkycy1zUW5lWDc1czBmc2p4U2gyNmxHV3haSkdURFRwUjg2RzhXTXhyZHpGSDE0bm84dEUwUktVS0ctOXVMeVRxQUdDSGE3akxB0gGuAUFVX3lxTFA5TldfanROa01mS1dYdFJDU3cyUWdPaThYRUlBdmZENFByeEpsWFVtb0VHRk8wMHpPSUlhZDlPWFBSRGpUQTJKOUhzNy10Ym02Y3hoVVhxT0FKaUN5dlRQaW5OazFIREcyMkZ5QlFMTXZHVk9pWURyR2xubmVRWDhBYUk0N3pVNlU0Zm5vb0dBaHNpcnNnbWNnQ1NfRktqdGM2XzVfejJvU1Q5NTZvUQ?oc=5"
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxNYnN5OU1mLUpBdkVHS2JONG1hbXl2b1JXSHM3VFZmdHl2cVlFWXkxX1hWUUZDZlFzZlByRy0yTjllSmhsWkYydWJIRmszdnZtejkycy1zUW5lWDc1czBmc2p4U2gyNmxHV3haSkdURFRwUjg2RzhXTXhyZHpGSDE0bm84dEUwUktVS0ctOXVMeVRxQUdDSGE3akxB0gGuAUFVX3lxTFA5TldfanROa01mS1dYdFJDU3cyUWdPaThYRUlBdmZENFByeEpsWFVtb0VHRk8wMHpPSUlhZDlPWFBSRGpUQTJKOUhzNy10Ym02Y3hoVVhxT0FKaUN5dlRQaW5OazFIREcyMkZ5QlFMTXZHVk9pWURyR2xubmVRWDhBYUk0N3pVNlU0Zm5vb0dBaHNpcnNnbWNnQ1NfRktqdGM2XzVfejJvU1Q5NTZvUQ?oc=5",
+    "https://www.nytimes.com/2026/11/08/world/middleeast/saudi-aramco-tower-riyadh-hit.html",
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxONmpUNS1BdDJoTUZEazJzRkxaajZGYmNtTmhyZzdzUlo2b2lCTjdtTUszWlRqOVg5OU9SSVVQR1JhZ1VRbG0wd083Rm9La3plRHRXX09Cdk9xVjY2djBiRW1Zcno2SVMtWGJ4NWZxajBMMm5mdmhDemx6cHlFUWRfTE1PSGIxekhzYXIwVnlPSHZLQjAwNlItNnMxV1BydFBFcVFQZE8wU01tRWVKcWhjejItUHFjY3JKNmhXMjRUcF9DZXV0?oc=5",
+    "https://news.google.com/rss/articles/CBMifEFVX3lxTE05Ni1NRjQ3cHZxcXhlTzVJTkxPVldWaEZ2NkFjMVdEcG5qclgtOUpSdGFuLTNxMEg5V1RBaHpXZ0ZRdXVuSzRmWnJTcmYyRUFHLWxiNnVVUGRnS1prS3BtRVJaZXVkc01vazRmc3g3YTVmeVNGd3RMZnNVeGw?oc=5",
+    "https://news.google.com/rss/articles/CBMifEFVX3lxTE95aUdMaXh4Vnh3ODBJSFlPX2Q3a2pXdTNxMGxJOVN3dnktWFRXaDlkWkFyQUdCZWRheG1rQmx3ekdGaHJzclhxTFVUdkxkcjhXSjFoWGJLR3pBY0ZfUTR4bXp2NHhyMl9BU3RWaFVBLWtSdEowX2lMZWI2c0Q?oc=5",
+    "https://www.nytimes.com/2026/11/08/world/europe/poland-krakow-mass-shooting.html",
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE95U0ZtQmdNa0ZLb1ZDczdBNHVhcXJEdTRNLThfVWpPZW1WSjRwY0RERFEwTzFlOVJyb09UZ1h0aUh5OG1PNWI0YVFQeXhzbkdxOU0yX25yaDVwUFlHVWc?oc=5",
+    "https://www.channelnewsasia.com/sport/japans-tashima-rates-fifa-election-chances-20-30-in-challenge-infantino-6534166",
+    "https://timesofindia.indiatimes.com/world/europe/cynicism-and-brutality-russia-targets-ukrainian-rescue-workers-at-site-of-zaporizhzhia-bombing-that-killed-55/articleshow/135657241.cms",
+    "https://www.dw.com/en/gaza-rains-add-misery-to-humanitarian-catastrophe/a-79889580?maca=en-rss-en-all-1573-rdf",
+    "https://www.kyivpost.com/post/89470",
+    "https://news.google.com/rss/articles/CBMid0FVX3lxTE0xVXVjbUFNS01TQWs5dlJFdU9pNTZmd2gwVHFQZ0hqeWJ1TWZNZjNsVTVmU3p4Rm5tY01vbm80UnRCcXNZbE1OYlNpWmFlX1dkalBwY2FPYXRBTlFfZTUwbXFnY2YxR3ZTZUx1NVBfTXF0a3ZvQ09r?oc=5",
+    "https://www.sciencedaily.com/releases/2026/11/261106174532.htm",
+    "https://www.abc.net.au/news/2026-11-08/japan-earthquake-aichi-prefecture-at-least-22-injured/107361392",
+    "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOekRoQlV3Z2VaZE9HX3VGaTUxcVNwaTVCTDkxd3ZXZmljNzl0OGkxZjdYNGFaU1FtXzlVbnFVT3JDWDJWNC1qVnpxcWh5aEpqeVV0NmR2MUh3QWNOMGdzSmpQcTRkajJEM0k3SzJ1Wk00bzUtWlVPQkwxSDlSbUdRRHFQNlhLMFZTSzBlY3NEYXczdWJ4Y0s0YUwyQkx2UlpYMUI1M2FnSkl2QzdEODZaenAzeU9neG5GTENLMlpzN0NoRVhwSHdVN283T0FLa0o1UmNn?oc=5",
+    "https://www.nytimes.com/2026/11/08/us/walrus-alaska-rescue.html",
+    "https://insideclimatenews.org/news/08112026/maui-wildfire-exposure-study-public-health/",
+    "https://www.france24.com/en/middle-east/20261108-middle-east-live-riyadh-financial-district-targeted-deadly-strikes-yemen-israel-eisenkot-netanyahu-coalition-government-elections",
+    "https://www.lemonde.fr/en/international/article/2026/11/08/russian-strikes-cut-power-to-hundreds-of-thousands-in-ukraine_6774748_4.html",
+    "https://www.abc.net.au/news/2026-11-08/indonesia-helicopter-crash-borneo-australians/107361384",
+    "https://www.france24.com/en/europe/20261108-poland-launches-terrorism-probe-into-krakow-mass-shooting",
+    "https://www.kyivpost.com/post/89463",
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9hTDFkckppZmZkTkRDa0ZWbFJ3R19JVkYzRVBLNmJ5V1BDMGZOalljcXBVZ3laWjdPUlVSSW1zUEJBUExCTW5QcDdpaVpuUVJ0VDJCd0UyNG8?oc=5"
   ],
   "startedAt": "2026-11-08T00:18:24.944Z",
-  "updatedAt": "2026-11-08T08:03:52.944Z",
+  "updatedAt": "2026-11-08T13:16:29.494Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": null,
-  "sourceCount": 9,
+  "sourceCount": 11,
   "seenHeadlines": []
 }
