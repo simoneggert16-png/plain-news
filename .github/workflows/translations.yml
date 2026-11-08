@@ -62,6 +62,8 @@ jobs:
         if: always()
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           # The newsroom and the live tickers push to content/ while this run is
           # busy, so a rebase can stop on content/index.json. The old
@@ -73,3 +75,4 @@ jobs:
           fi
           node scripts/check-content.mjs --fix
           bash scripts/push-content.sh "translations: $(date -u +'%Y-%m-%d %H:%M') UTC" || echo "the translations are committed but not published"
+          node scripts/sync-content.mjs || echo "Supabase mirror sync deferred"

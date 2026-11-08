@@ -118,7 +118,12 @@ export default async function Home({ params }) {
   // also shows its bullet points and its picture caption, so that single
   // article is fetched on top - 25 KB instead of a second full index.
   const leadFull = await getArticle(lead.slug).catch(() => null);
-  const L = { ...localize(lead, locale), ...(leadFull ? localize(leadFull, locale) : {}) };
+  const leadLocal = localize(lead, locale);
+  const leadFullLocal = leadFull && translated(leadFull) ? localize(leadFull, locale) : null;
+  const L = {
+    ...leadLocal,
+    ...(leadFullLocal || (leadLocal.isFallback && leadFull ? localize(leadFull, locale) : {})),
+  };
   const homeUrl = `${SITE.url}/${locale}`;
   const homeJsonLd = {
     '@context': 'https://schema.org',
