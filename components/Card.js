@@ -5,7 +5,7 @@ import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 export default function Card({ a, locale, t, bcp }) {
   const l = localize(a, locale);
   return (
-    <Link href={`/${locale}/a/${a.slug}`} className="card">
+    <Link href={`/${locale}/a/${a.slug}`} className="card" data-topic={a.category}>
       {a.image && (
         <div className="card-thumb-wrap">
           {/* eslint-disable-next-line @next/next/no-img-element */}

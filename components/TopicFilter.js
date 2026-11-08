@@ -1,10 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { CATEGORIES } from '@/lib/config.mjs';
 
 export default function TopicFilter({ locale, t }) {
-  const router = useRouter();
   const [selectedTopics, setSelectedTopics] = useState(CATEGORIES);
   const [isCustom, setIsCustom] = useState(false);
 
@@ -33,18 +31,22 @@ export default function TopicFilter({ locale, t }) {
     setSelectedTopics(next);
     setIsCustom(next.length !== CATEGORIES.length);
     document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(next))};path=/;max-age=31536000;samesite=lax`;
-    router.refresh();
   }
 
   function selectAll() {
     setSelectedTopics(CATEGORIES);
     setIsCustom(false);
     document.cookie = `plain_topics=;path=/;max-age=0;expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-    router.refresh();
   }
+
+  const hiddenTopics = isCustom ? CATEGORIES.filter((c) => !selectedTopics.includes(c)) : [];
+  const filterCss = hiddenTopics.length
+    ? hiddenTopics.map((c) => `[data-topic="${c}"] { display: none !important; }`).join('\n')
+    : '';
 
   return (
     <div className="topic-filter-bar">
+      {filterCss && <style dangerouslySetInnerHTML={{ __html: filterCss }} />}
       <div className="topic-filter-label">
         <span className="label">{locale === 'de' ? 'FEED-FILTER:' : 'YOUR TOPICS:'}</span>
       </div>

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { cookies } from 'next/headers';
 import { LOCALES, CATEGORIES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { listFor, localize, getArticle } from '@/lib/content.mjs';
@@ -11,34 +10,25 @@ import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
 import TopicFilter from '@/components/TopicFilter';
 
-// No ISR setting on purpose: the topic filter reads a cookie, so this page is
-// rendered per request already (the index comes from Supabase, cached for 30 s
-// in lib/content.mjs). A new story appears on the front page without waiting
-// for a deployment - and it costs no ISR writes, which is what used to exhaust
-// the plan's 200,000 a month.
+// Cached at the CDN via ISR (5 min) across all 9 locales (~860 ISR writes/day,
+// well within the 200k/month Hobby budget) while eliminating per-request SSR
+// Fluid CPU consumption. Topic filtering happens client-side via TopicFilter.
+export const dynamicParams = false;
+export const revalidate = 300;
+
+export function generateStaticParams() {
+  return LOCALES.map((l) => ({ locale: l.code }));
+}
 
 export default async function Home({ params }) {
   const { locale } = await params;
-  const cookieStore = await cookies();
-  const topicsCookie = cookieStore.get('plain_topics')?.value;
-  let allowedTopics = CATEGORIES;
-  if (topicsCookie) {
-    try {
-      const parsed = JSON.parse(decodeURIComponent(topicsCookie));
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        allowedTopics = parsed;
-      }
-    } catch (e) {}
-  }
 
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
   const rawAll = await listFor({ locale });
   if (!rawAll.length) return <div className="empty">{t.empty}</div>;
 
-  // Filter articles based on user preferences (server-side personalized)
-  const all = rawAll.filter((a) => allowedTopics.includes(a.category));
-  const displayArticles = all.length > 0 ? all : rawAll;
+  const displayArticles = rawAll;
 
   // Lead = highest-impact story of the last 30h, not just the newest one.
   // Elections and wars stay on the front page for a day instead of being
@@ -290,7 +280,7 @@ export default async function Home({ params }) {
         const items = pool.filter((a) => a.category === c);
         if (items.length === 0) return null;
         return (
-          <section key={c}>
+          <section key={c} data-topic={c}>
             <div className="sec-head">
               <h2>{t.cat[c]}</h2>
               <Link href={`/${locale}/c/${c}`}>{t.more} →</Link>
