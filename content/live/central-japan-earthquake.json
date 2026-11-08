@@ -1,9 +1,183 @@
 {
+  "meta": {
+    "outlets": [
+      "Times of India",
+      "Breaking News, Latest News and Videos",
+      "KGW",
+      "AP News",
+      "Newsday"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
+  },
   "slug": "central-japan-earthquake",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Central Japan earthquake",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Ein Erdbeben der Stärke 5,7 hat Zentraljapan erschüttert und Dutzende Menschen verletzt. Rettungs- und Schadensaufnahmearbeiten sind im Gange.",
+      "title": "Erdbeben in Zentraljapan"
+    },
+    "en": {
+      "dek": "A magnitude 5.7 earthquake struck central Japan, injuring dozens, with rescue and damage assessment efforts underway.",
+      "title": "Central Japan earthquake"
+    },
+    "es": {
+      "dek": "Un terremoto de magnitud 5,7 sacudió el centro de Japón, hiriendo a decenas de personas, con esfuerzos de rescate y evaluación de daños en marcha.",
+      "title": "Terremoto en el centro de Japón"
+    },
+    "fr": {
+      "dek": "Un séisme de magnitude 5,7 a frappé le centre du Japon, faisant des dizaines de blessés, tandis que les opérations de sauvetage et d'évaluation des dégâts sont en cours.",
+      "title": "Séisme au centre du Japon"
+    },
+    "it": {
+      "dek": "Un terremoto di magnitudo 5.7 ha colpito il Giappone centrale, provocando decine di feriti, mentre sono in corso le operazioni di soccorso e di valutazione dei danni.",
+      "title": "Terremoto nel Giappone centrale"
+    },
+    "ja": {
+      "dek": "マグニチュード5.7の地震が中部地方で発生し、数十人が負傷した。救援活動や被害状況の確認作業が続いている。",
+      "title": "中部地方で地震"
+    },
+    "ko": {
+      "dek": "일본 중부에서 규모 5.7의 지진이 발생해 수십 명이 부상했으며, 구조 및 피해 규모 조사 작업이 진행되고 있다.",
+      "title": "일본 중부 지진"
+    },
+    "pt": {
+      "dek": "Um sismo de magnitude 5,7 atingiu o centro do Japão, ferindo dezenas de pessoas, com operações de resgate e avaliação de danos em curso.",
+      "title": "Sismo no centro do Japão"
+    },
+    "zh": {
+      "dek": "日本中部发生5.7级地震，造成数十人受伤，救援及灾情评估工作正在展开。",
+      "title": "日本中部发生地震"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794098739000-1gur",
+      "at": "2026-11-08T00:45:39.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "At least 22 people injured in central Japan earthquake",
+          "body": "RochesterFirst and The Times of Israel reported at least 22 people were injured. Both outlets tied the injuries to an earthquake in central Japan."
+        },
+        "fr": {
+          "headline": "Au moins 22 personnes blessées dans un séisme au centre du Japon",
+          "body": "RochesterFirst et The Times of Israel ont signalé qu’au moins 22 personnes avaient été blessées. Les deux médias ont attribué ces blessures à un séisme survenu au centre du Japon."
+        },
+        "de": {
+          "headline": "Mindestens 22 Menschen bei Erdbeben in Zentraljapan verletzt",
+          "body": "RochesterFirst und The Times of Israel berichteten, dass mindestens 22 Menschen verletzt wurden. Beide Medien führten die Verletzungen auf ein Erdbeben in Zentraljapan zurück."
+        },
+        "it": {
+          "headline": "Almeno 22 persone ferite nel terremoto nel centro del Giappone",
+          "body": "RochesterFirst e The Times of Israel hanno riferito che almeno 22 persone sono state ferite. Entrambe le testate hanno attribuito i ferimenti a un terremoto nel centro del Giappone."
+        },
+        "es": {
+          "headline": "Al menos 22 personas heridas en un terremoto en el centro de Japón",
+          "body": "RochesterFirst y The Times of Israel informaron de que al menos 22 personas resultaron heridas. Ambos medios atribuyeron las heridas a un terremoto en el centro de Japón."
+        },
+        "zh": {
+          "headline": "日本中部地震致至少22人受伤",
+          "body": "RochesterFirst和《以色列时报》报道称，至少22人受伤。两家媒体均将这些受伤情况与日本中部发生的一场地震联系起来。"
+        },
+        "ko": {
+          "headline": "일본 중부 지진으로 최소 22명 부상",
+          "body": "RochesterFirst와 The Times of Israel가 최소 22명이 부상했다고 보도했다. 두 매체는 이 부상이 일본 중부에서 발생한 지진과 관련이 있다고 전했다."
+        },
+        "pt": {
+          "headline": "Pelo menos 22 pessoas feridas em sismo no centro do Japão",
+          "body": "O RochesterFirst e o The Times of Israel noticiaram que pelo menos 22 pessoas ficaram feridas. Ambos os meios de comunicação associaram os ferimentos a um sismo no centro do Japão."
+        },
+        "ja": {
+          "headline": "日本中部の地震で少なくとも22人が負傷",
+          "body": "RochesterFirstとThe Times of Israelは、少なくとも22人が負傷したと報じた。両メディアは、この負傷を日本中部の地震と関連付けた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "RochesterFirst",
+          "title": "Strong earthquake shakes central Japan, shattering store windows and injuring at least 22",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNmxwdHdkbkhRWGxGVmg3azFoT0QydTI5NFZud0EyZjFOVHpIblN0MkZQUXJTNFQ1eWQyclI0Y0hqSGJLWXhWcmh3cDhxemVQOENTMjF3M0hVaDlST2dEc0h5M3JlZ1dqelc4cjN0cDBhNzl6QlY2Z2dNZkMyMmxOdlRYdEk1SDJLSHNoMTVFa0hiSnJLYkVOTHJ1VVNCZGFkRDdsQ0t1cDl4Y2ZRVjVodzMwbmVFaWhoOVhubDdrNUxFdkIzWFJn0gHMAUFVX3lxTFBJRElpdENQWlNTNXd0TEJXbmtHSU5TOEdzUHBMVEd0NlFOUzBEb3VTbzRaRmlhU0dObGNDamR1YzloakZoWERKVFVWWHN3TlhldEc5dEFqSzU5N1c0NlRVVHVRc0VJd0s3WXlMZGp3MnV1TG5qenlkTU44dGJHdVlCcTd1MzVEbjBWOXhKZjA5WDBfX0I1ZUNYN1lXUmNFeG4zcjRGYUxNT1FLQWRYQm92Y29rSGtOemdfTi1PcWRfemtENVBhZlBXdDJvbQ?oc=5",
+          "publishedAt": "2026-11-08T00:45:39.000Z"
+        },
+        {
+          "outlet": "The Times of Israel",
+          "title": "At least 22 hurt after 5.5 magnitude earthquake strikes central Japan",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRFRWbl9JNi0wT2wwR215MGM5a3Bkd2lqOHh1WnJQaW43bXFKQXM2NHRfV01iZ1dGXzZmT3JMb0MzSjl2czhEVjVvUTdWanFPTnpKQmtPS1BBUDFtYmdla21lQ0dQb09TTktCZEd0eVlxeHhPZVprRVhyOEdqUDUtdlRCaHUxS1Z4X0RNbkRqMTlrRmU3UEw4R3hzMDg0blVBY2xvUENnX2F2OGs5TnRSSWd2cFJJUQ?oc=5",
+          "publishedAt": "2026-11-08T00:20:01.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-07T23:57:41.000Z",
+      "id": "u-1794095861000-9mas",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Ein starkes Erdbeben der vorläufigen Stärke 5.7 erschütterte Japan, wie die meteorologische Behörde mitteilte. KGW und die Times of India berichteten über das Beben in Zentraljapan, AP News über die vorläufige Stärkeangabe der Behörde.",
+          "headline": "Erdbeben der Stärke 5.7 erschüttert Zentraljapan, meteorologische Behörde meldet"
+        },
+        "en": {
+          "body": "A strong earthquake with a preliminary magnitude of 5.7 struck Japan, the meteorological agency said. KGW and the Times of India reported the quake in central Japan, and AP News reported the agency's preliminary magnitude figure.",
+          "headline": "Magnitude 5.7 earthquake strikes central Japan, meteorological agency says"
+        },
+        "es": {
+          "body": "Un fuerte terremoto de magnitud preliminar 5,7 sacudió Japón, según la agencia meteorológica. KGW y The Times of India informaron del temblor en el centro de Japón, y AP News publicó la cifra de magnitud preliminar de la agencia.",
+          "headline": "Un terremoto de magnitud 5,7 sacude el centro de Japón, según la agencia meteorológica"
+        },
+        "fr": {
+          "body": "Un fort séisme d'une magnitude préliminaire de 5,7 a frappé le Japon, selon l'agence météorologique. KGW et le Times of India ont rapporté le séisme au centre du Japon, et AP News a rapporté le chiffre de magnitude préliminaire de l'agence.",
+          "headline": "Un séisme de magnitude 5,7 frappe le centre du Japon, selon l'agence météorologique"
+        },
+        "it": {
+          "body": "Un forte terremoto di magnitudo preliminare 5,7 ha colpito il Giappone, ha comunicato l'agenzia meteorologica. KGW e il Times of India hanno riportato il sisma nel centro del Giappone, mentre AP News ha riportato la cifra preliminare della magnitudo indicata dall'agenzia.",
+          "headline": "Un terremoto di magnitudo 5,7 colpisce il centro del Giappone, secondo l'agenzia meteorologica"
+        },
+        "ja": {
+          "body": "気象庁によると、暫定マグニチュード5.7の強い地震が日本を襲った。KGWとタイムズ・オブ・インディアは中部日本での地震を報じ、APニュースは気象庁の暫定マグニチュードを伝えた。",
+          "headline": "中部日本でマグニチュード5.7の地震、気象庁が発表"
+        },
+        "ko": {
+          "body": "기상청은 예상 규모 5.7의 강한 지진이 일본을 강타했다고 밝혔다. KGW와 타임스 오브 인디아는 일본 중부에서 발생한 지진을 보도했으며, AP뉴스는 기상청의 예상 규모 수치를 전했다.",
+          "headline": "일본 중부서 규모 5.7 지진 발생…기상청 발표"
+        },
+        "pt": {
+          "body": "Um forte sismo com uma magnitude preliminar de 5.7 atingiu o Japão, disse a agência meteorológica. A KGW e o Times of India relataram o sismo no Japão central, e a AP News relatou a magnitude preliminar da agência.",
+          "headline": "Sismo de magnitude 5.7 atinge o Japão central, diz agência meteorológica"
+        },
+        "zh": {
+          "body": "日本气象厅称，日本发生一次初步测定震级为5.7级的强震。KGW和《印度时报》报道了此次发生在日本中部的地震，美联社则报道了气象厅给出的初步震级数据。",
+          "headline": "日本气象厅称日本中部发生5.7级地震"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://timesofindia.indiatimes.com/world/rest-of-world/magnitude-5-7-earthquake-hits-central-japan-dozens-reportedly-injured/articleshow/135648927.cms",
+          "title": "Magnitude 5.7 earthquake hits central Japan, dozens injured",
+          "outlet": "Times of India",
+          "publishedAt": "2026-11-07T23:57:41.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWUdHZWFQdzh4U25aT0hXNC16czN1X1NmMzFMYXZleGZ6SWU1bWswdzktZ0pFbXRXQTBTajJTRGg3MFhMMzE5Q1NzMHIwU1dKMW1vUE5LTGdBU2dZa2NqN2J4TjN2aVU0ZDZaLWRaVjhqTjFqMXl3M0dRNUJrY3NSNnhB?oc=5",
+          "title": "A strong earthquake with a preliminary magnitude of 5.7 strikes Japan, meteorological agency says",
+          "outlet": "AP News",
+          "publishedAt": "2026-11-07T23:31:00.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxNVG8taVI5QlNWNEw2VlZoWUViZ3duZXAyOXpRbG83aUR2eUpaWjlJbTFwdjUzWFFjNlFuaEpnV2JqbTQzV19ONGVBVHZzazZnQkdTbU1ETEdkdy1wdGZxQ2Jtb2RYdlNIMGk0dXJXQlZlMmluUWZHVmtlTFgyUlZseU5ZN1Z2bXRzUjB6dEhLcm1jUXhVMnBkYzRMNmFuUGxVNkZKTkhweGpYQko0UVFiUlZOMV9OSmZab0otaldXWmdVOG9FODZSbTk3NGRlZ25COUZTejcxWkxDdVJ5UV94cUxybWIyVHFjelF2UzB4U1Jra3YtdlRSd3R5SExtS3RWc25MQ2pVM3hrSzVoOFpfRnRDSU9HY1QzZnJJUm1reGxCbnBaLTJF?oc=5",
+          "title": "A strong earthquake with a preliminary magnitude of 5.7 strikes central Japan, meteorological agency says",
+          "outlet": "KGW",
+          "publishedAt": "2026-11-07T23:24:00.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "earthquake",
     "japan",
@@ -17,78 +191,6 @@
     "disaster",
     "seismic",
     "damage"
-  ],
-  "startedAt": "2026-11-08T00:18:24.944Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-08T00:23:02.227Z",
-  "articleSlug": null,
-  "sourceCount": 3,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1794095861000-9mas",
-      "at": "2026-11-07T23:57:41.000Z",
-      "kind": "breaking",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Magnitude 5.7 earthquake strikes central Japan, meteorological agency says",
-          "body": "A strong earthquake with a preliminary magnitude of 5.7 struck Japan, the meteorological agency said. KGW and the Times of India reported the quake in central Japan, and AP News reported the agency's preliminary magnitude figure."
-        },
-        "fr": {
-          "headline": "Un séisme de magnitude 5,7 frappe le centre du Japon, selon l'agence météorologique",
-          "body": "Un fort séisme d'une magnitude préliminaire de 5,7 a frappé le Japon, selon l'agence météorologique. KGW et le Times of India ont rapporté le séisme au centre du Japon, et AP News a rapporté le chiffre de magnitude préliminaire de l'agence."
-        },
-        "es": {
-          "headline": "Un terremoto de magnitud 5,7 sacude el centro de Japón, según la agencia meteorológica",
-          "body": "Un fuerte terremoto de magnitud preliminar 5,7 sacudió Japón, según la agencia meteorológica. KGW y The Times of India informaron del temblor en el centro de Japón, y AP News publicó la cifra de magnitud preliminar de la agencia."
-        },
-        "pt": {
-          "headline": "Sismo de magnitude 5.7 atinge o Japão central, diz agência meteorológica",
-          "body": "Um forte sismo com uma magnitude preliminar de 5.7 atingiu o Japão, disse a agência meteorológica. A KGW e o Times of India relataram o sismo no Japão central, e a AP News relatou a magnitude preliminar da agência."
-        },
-        "it": {
-          "headline": "Un terremoto di magnitudo 5,7 colpisce il centro del Giappone, secondo l'agenzia meteorologica",
-          "body": "Un forte terremoto di magnitudo preliminare 5,7 ha colpito il Giappone, ha comunicato l'agenzia meteorologica. KGW e il Times of India hanno riportato il sisma nel centro del Giappone, mentre AP News ha riportato la cifra preliminare della magnitudo indicata dall'agenzia."
-        },
-        "ja": {
-          "headline": "中部日本でマグニチュード5.7の地震、気象庁が発表",
-          "body": "気象庁によると、暫定マグニチュード5.7の強い地震が日本を襲った。KGWとタイムズ・オブ・インディアは中部日本での地震を報じ、APニュースは気象庁の暫定マグニチュードを伝えた。"
-        },
-        "zh": {
-          "headline": "日本气象厅称日本中部发生5.7级地震",
-          "body": "日本气象厅称，日本发生一次初步测定震级为5.7级的强震。KGW和《印度时报》报道了此次发生在日本中部的地震，美联社则报道了气象厅给出的初步震级数据。"
-        },
-        "ko": {
-          "headline": "일본 중부서 규모 5.7 지진 발생…기상청 발표",
-          "body": "기상청은 예상 규모 5.7의 강한 지진이 일본을 강타했다고 밝혔다. KGW와 타임스 오브 인디아는 일본 중부에서 발생한 지진을 보도했으며, AP뉴스는 기상청의 예상 규모 수치를 전했다."
-        },
-        "de": {
-          "headline": "Erdbeben der Stärke 5.7 erschüttert Zentraljapan, meteorologische Behörde meldet",
-          "body": "Ein starkes Erdbeben der vorläufigen Stärke 5.7 erschütterte Japan, wie die meteorologische Behörde mitteilte. KGW und die Times of India berichteten über das Beben in Zentraljapan, AP News über die vorläufige Stärkeangabe der Behörde."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Times of India",
-          "title": "Magnitude 5.7 earthquake hits central Japan, dozens injured",
-          "url": "https://timesofindia.indiatimes.com/world/rest-of-world/magnitude-5-7-earthquake-hits-central-japan-dozens-reportedly-injured/articleshow/135648927.cms",
-          "publishedAt": "2026-11-07T23:57:41.000Z"
-        },
-        {
-          "outlet": "AP News",
-          "title": "A strong earthquake with a preliminary magnitude of 5.7 strikes Japan, meteorological agency says",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWUdHZWFQdzh4U25aT0hXNC16czN1X1NmMzFMYXZleGZ6SWU1bWswdzktZ0pFbXRXQTBTajJTRGg3MFhMMzE5Q1NzMHIwU1dKMW1vUE5LTGdBU2dZa2NqN2J4TjN2aVU0ZDZaLWRaVjhqTjFqMXl3M0dRNUJrY3NSNnhB?oc=5",
-          "publishedAt": "2026-11-07T23:31:00.000Z"
-        },
-        {
-          "outlet": "KGW",
-          "title": "A strong earthquake with a preliminary magnitude of 5.7 strikes central Japan, meteorological agency says",
-          "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxNVG8taVI5QlNWNEw2VlZoWUViZ3duZXAyOXpRbG83aUR2eUpaWjlJbTFwdjUzWFFjNlFuaEpnV2JqbTQzV19ONGVBVHZzazZnQkdTbU1ETEdkdy1wdGZxQ2Jtb2RYdlNIMGk0dXJXQlZlMmluUWZHVmtlTFgyUlZseU5ZN1Z2bXRzUjB6dEhLcm1jUXhVMnBkYzRMNmFuUGxVNkZKTkhweGpYQko0UVFiUlZOMV9OSmZab0otaldXWmdVOG9FODZSbTk3NGRlZ25COUZTejcxWkxDdVJ5UV94cUxybWIyVHFjelF2UzB4U1Jra3YtdlRSd3R5SExtS3RWc25MQ2pVM3hrSzVoOFpfRnRDSU9HY1QzZnJJUm1reGxCbnBaLTJF?oc=5",
-          "publishedAt": "2026-11-07T23:24:00.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://asia.nikkei.com/politics/u.s.-midterm-elections/democrats-midterm-gains-hang-over-data-centers-japanese-us-investment",
@@ -104,57 +206,15 @@
     "http://www.africanews.com/2026/11/07/poland-footage-shows-people-taking-cover-as-a-gunman-opens-fire-in-krakow/",
     "http://www.africanews.com/2026/11/07/ukraine-russian-strikes-hit-kyiv-region-damaging-infrastructure/",
     "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWV9OLWV2QVR2dDEzenprandzczBTQ1hNZ3NhRkxTWFFBNDJiWnVDUWd4RmY4c1FvMzctOTFxWjhjOG1WZEticlRUZURFU2lIY2xjNlA0VC1JSU5ORzRNcENRSzdBSTNKejh4RkZUYzdJSldtQm1Bd2IyT2hmU3ZoWldoQTZyYkJvVWtEVFJaWFA1MFlfQ3htNy1HVVBfa3AyTF81bDE2WXZGY1VVOC02X0RkekhUNHdYLVpPeWMtMFB3R0c2b3F4bnl3?oc=5",
-    "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMUtCX2U1Q0RCYmJJR2FIMFRIYm10c0RWZkMwa3c4SWpCNkZQVUFpNW1DOTdoWFV4cUg3dFpBWGdad193YktDZnhNQ0FheEMxN0lCcUVyekZITF9hWWxuZUh2TnNEQnZVdHdGekxwaHNERUEwaURTdUFmV0VfalJmSUktUFNGTi1JMF9PbXdKV3ZzS19mVkE?oc=5"
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMUtCX2U1Q0RCYmJJR2FIMFRIYm10c0RWZkMwa3c4SWpCNkZQVUFpNW1DOTdoWFV4cUg3dFpBWGdad193YktDZnhNQ0FheEMxN0lCcUVyekZITF9hWWxuZUh2TnNEQnZVdHdGekxwaHNERUEwaURTdUFmV0VfalJmSUktUFNGTi1JMF9PbXdKV3ZzS19mVkE?oc=5",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNmxwdHdkbkhRWGxGVmg3azFoT0QydTI5NFZud0EyZjFOVHpIblN0MkZQUXJTNFQ1eWQyclI0Y0hqSGJLWXhWcmh3cDhxemVQOENTMjF3M0hVaDlST2dEc0h5M3JlZ1dqelc4cjN0cDBhNzl6QlY2Z2dNZkMyMmxOdlRYdEk1SDJLSHNoMTVFa0hiSnJLYkVOTHJ1VVNCZGFkRDdsQ0t1cDl4Y2ZRVjVodzMwbmVFaWhoOVhubDdrNUxFdkIzWFJn0gHMAUFVX3lxTFBJRElpdENQWlNTNXd0TEJXbmtHSU5TOEdzUHBMVEd0NlFOUzBEb3VTbzRaRmlhU0dObGNDamR1YzloakZoWERKVFVWWHN3TlhldEc5dEFqSzU5N1c0NlRVVHVRc0VJd0s3WXlMZGp3MnV1TG5qenlkTU44dGJHdVlCcTd1MzVEbjBWOXhKZjA5WDBfX0I1ZUNYN1lXUmNFeG4zcjRGYUxNT1FLQWRYQm92Y29rSGtOemdfTi1PcWRfemtENVBhZlBXdDJvbQ?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRFRWbl9JNi0wT2wwR215MGM5a3Bkd2lqOHh1WnJQaW43bXFKQXM2NHRfV01iZ1dGXzZmT3JMb0MzSjl2czhEVjVvUTdWanFPTnpKQmtPS1BBUDFtYmdla21lQ0dQb09TTktCZEd0eVlxeHhPZVprRVhyOEdqUDUtdlRCaHUxS1Z4X0RNbkRqMTlrRmU3UEw4R3hzMDg0blVBY2xvUENnX2F2OGs5TnRSSWd2cFJJUQ?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Central Japan earthquake",
-      "dek": "A magnitude 5.7 earthquake struck central Japan, injuring dozens, with rescue and damage assessment efforts underway."
-    },
-    "de": {
-      "title": "Erdbeben in Zentraljapan",
-      "dek": "Ein Erdbeben der Stärke 5,7 hat Zentraljapan erschüttert und Dutzende Menschen verletzt. Rettungs- und Schadensaufnahmearbeiten sind im Gange."
-    },
-    "es": {
-      "title": "Terremoto en el centro de Japón",
-      "dek": "Un terremoto de magnitud 5,7 sacudió el centro de Japón, hiriendo a decenas de personas, con esfuerzos de rescate y evaluación de daños en marcha."
-    },
-    "fr": {
-      "title": "Séisme au centre du Japon",
-      "dek": "Un séisme de magnitude 5,7 a frappé le centre du Japon, faisant des dizaines de blessés, tandis que les opérations de sauvetage et d'évaluation des dégâts sont en cours."
-    },
-    "pt": {
-      "title": "Sismo no centro do Japão",
-      "dek": "Um sismo de magnitude 5,7 atingiu o centro do Japão, ferindo dezenas de pessoas, com operações de resgate e avaliação de danos em curso."
-    },
-    "zh": {
-      "title": "日本中部发生地震",
-      "dek": "日本中部发生5.7级地震，造成数十人受伤，救援及灾情评估工作正在展开。"
-    },
-    "ja": {
-      "title": "中部地方で地震",
-      "dek": "マグニチュード5.7の地震が中部地方で発生し、数十人が負傷した。救援活動や被害状況の確認作業が続いている。"
-    },
-    "ko": {
-      "title": "일본 중부 지진",
-      "dek": "일본 중부에서 규모 5.7의 지진이 발생해 수십 명이 부상했으며, 구조 및 피해 규모 조사 작업이 진행되고 있다."
-    },
-    "it": {
-      "title": "Terremoto nel Giappone centrale",
-      "dek": "Un terremoto di magnitudo 5.7 ha colpito il Giappone centrale, provocando decine di feriti, mentre sono in corso le operazioni di soccorso e di valutazione dei danni."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Times of India",
-      "Breaking News, Latest News and Videos",
-      "KGW",
-      "AP News",
-      "Newsday"
-    ],
-    "lastUpdateModel": "stepfun-ai/step-5-preview"
-  }
+  "startedAt": "2026-11-08T00:18:24.944Z",
+  "updatedAt": "2026-11-08T01:03:11.334Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": null,
+  "sourceCount": 5,
+  "seenHeadlines": []
 }
