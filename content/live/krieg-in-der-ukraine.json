@@ -1,9 +1,374 @@
 {
+  "meta": {
+    "outlets": [
+      "Tagesschau",
+      "Die Welt",
+      "SRF",
+      "Kicker"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+  },
   "slug": "krieg-in-der-ukraine",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Krieg in der Ukraine",
+  "status": "live",
+  "article": {
+    "slug": "krieg-in-der-ukraine",
+    "updatedAt": "2026-11-08T15:06:46.634Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "European nations to join Russia-Ukraine talks in Abu Dhabi",
+        "dek": "European representatives will participate in United States-mediated negotiations between Russia and Ukraine scheduled for November 10 and 11.",
+        "facts": [
+          "European nations confirmed to join Abu Dhabi talks.",
+          "Russian strikes left 600,000 to 850,000 people without power.",
+          "Zaporizhzhia nuclear plant forced to use backup power.",
+          "President Zelenskyy reported a drone strike on emergency workers in Komyshuvakha."
+        ],
+        "body": [
+          "Ukrainian President Volodymyr Zelenskyy stated that Russian forces launched a drone strike on emergency workers in Komyshuvakha. According to Sky News, the attack occurred while rescuers were conducting search operations at the site of a previous bombing.",
+          "European representatives will join United States-mediated talks between Russia and Ukraine in Abu Dhabi. French Foreign Minister Jean-Noël Barrot announced the participation on November 8, confirming the meetings are scheduled for November 10 and 11.",
+          "Russian military strikes targeted energy infrastructure in eastern Ukraine on November 8. Authorities reported that the attacks left between 600,000 and 850,000 people without electricity.",
+          "The Zaporizhzhia nuclear power plant lost its primary connection to the grid during the strikes. Officials stated that the facility is currently relying on backup power sources to maintain operations.",
+          "Energy officials in Ukraine are working to restore power to the affected regions. The strikes caused significant damage to the regional electrical grid, according to local reports.",
+          "The Abu Dhabi talks represent a diplomatic effort to engage multiple international stakeholders. The United States is facilitating the dialogue, with European nations now confirmed to attend."
+        ],
+        "context": "The Zaporizhzhia nuclear power plant has frequently faced power supply disruptions since the start of the full-scale Russian invasion of Ukraine. Diplomatic efforts to reach a ceasefire or peace agreement have continued intermittently throughout the conflict.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Europäische Staaten nehmen an Russland-Ukraine-Gesprächen in Abu Dhabi teil",
+        "dek": "Europäische Vertreter werden an den von den Vereinigten Staaten vermittelten Verhandlungen zwischen Russland und der Ukraine teilnehmen, die für den 10. und 11. November angesetzt sind.",
+        "facts": [
+          "Europäische Staaten bestätigen Teilnahme an Gesprächen in Abu Dhabi.",
+          "Russische Angriffe ließen 600.000 bis 850.000 Menschen ohne Strom.",
+          "Kernkraftwerk Saporischschja muss auf Notstromversorgung zurückgreifen.",
+          "Präsident Selenskyj meldete Drohnenangriff auf Rettungskräfte in Komyschuwacha."
+        ],
+        "body": [
+          "Der ukrainische Präsident Wolodymyr Selenskyj erklärte, dass russische Streitkräfte einen Drohnenangriff auf Rettungskräfte in Komyschuwacha verübt hätten. Laut Sky News ereignete sich der Angriff, während die Rettungskräfte Sucharbeiten am Ort einer früheren Bombardierung durchführten.",
+          "Europäische Vertreter werden an den von den Vereinigten Staaten vermittelten Gesprächen zwischen Russland und der Ukraine in Abu Dhabi teilnehmen. Der französische Außenminister Jean-Noël Barrot kündigte die Teilnahme am 8. November an und bestätigte, dass die Treffen für den 10. und 11. November geplant sind.",
+          "Russische Militärschläge zielten am 8. November auf die Energieinfrastruktur in der Ostukraine. Behörden berichteten, dass die Angriffe zwischen 600.000 und 850.000 Menschen ohne Strom ließen.",
+          "Das Kernkraftwerk Saporischschja verlor während der Angriffe seine Hauptverbindung zum Stromnetz. Beamte erklärten, dass die Anlage derzeit auf Notstromquellen angewiesen ist, um den Betrieb aufrechtzuerhalten.",
+          "Energiebehörden in der Ukraine arbeiten daran, die Stromversorgung in den betroffenen Regionen wiederherzustellen. Die Angriffe verursachten laut lokalen Berichten erhebliche Schäden am regionalen Stromnetz.",
+          "Die Gespräche in Abu Dhabi stellen eine diplomatische Bemühung dar, mehrere internationale Akteure einzubeziehen. Die Vereinigten Staaten vermitteln den Dialog, wobei die Teilnahme europäischer Staaten nun bestätigt ist."
+        ],
+        "context": "Das Kernkraftwerk Saporischschja war seit Beginn der russischen Vollinvasion in der Ukraine häufig von Unterbrechungen der Stromversorgung betroffen. Diplomatische Bemühungen um einen Waffenstillstand oder ein Friedensabkommen wurden während des gesamten Konflikts immer wieder unternommen."
+      }
+    },
+    "versions": [
+      {
+        "at": "2026-11-08T14:37:08.235Z",
+        "reason": "2 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "European representatives will participate in upcoming United States-mediated negotiations between Russia and Ukraine scheduled for November 10 and 11.",
+            "body": [
+              "European representatives will join United States-mediated talks between Russia and Ukraine in Abu Dhabi. French Foreign Minister Jean-Noël Barrot announced the participation on November 8.",
+              "The meetings are scheduled to take place from November 10 to November 11. These discussions aim to address the ongoing conflict between the two nations.",
+              "Russian military strikes targeted energy infrastructure in eastern Ukraine on November 8. Authorities reported that the attacks left between 600,000 and 850,000 people without electricity.",
+              "The Zaporizhzhia nuclear power plant lost its primary connection to the grid during the strikes. Officials stated that the facility is currently relying on backup power sources to maintain operations.",
+              "Energy officials in Ukraine are working to restore power to the affected regions. The strikes caused significant damage to the regional electrical grid, according to local reports.",
+              "The Abu Dhabi talks represent a diplomatic effort to engage multiple international stakeholders. The United States is facilitating the dialogue, with European nations now confirmed to attend."
+            ],
+            "facts": [
+              "European nations confirmed to join Abu Dhabi talks.",
+              "Negotiations scheduled for November 10 to November 11.",
+              "Russian strikes left 600,000 to 850,000 people without power.",
+              "Zaporizhzhia nuclear plant forced to use backup power."
+            ],
+            "title": "European nations to join Russia-Ukraine talks in Abu Dhabi",
+            "context": "The Zaporizhzhia nuclear power plant has frequently faced power supply disruptions since the start of the full-scale Russian invasion of Ukraine. Diplomatic efforts to reach a ceasefire or peace agreement have continued intermittently throughout the conflict.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Europäische Vertreter werden an den bevorstehenden, von den Vereinigten Staaten vermittelten Verhandlungen zwischen Russland und der Ukraine teilnehmen, die für den 10. und 11. November angesetzt sind.",
+            "body": [
+              "Europäische Vertreter werden an den von den Vereinigten Staaten vermittelten Gesprächen zwischen Russland und der Ukraine in Abu Dhabi teilnehmen. Der französische Außenminister Jean-Noël Barrot kündigte die Teilnahme am 8. November an.",
+              "Die Treffen sind für den 10. bis 11. November geplant. Diese Diskussionen zielen darauf ab, den anhaltenden Konflikt zwischen den beiden Nationen zu adressieren.",
+              "Russische Militärschläge zielten am 8. November auf die Energieinfrastruktur in der Ostukraine ab. Behörden berichteten, dass die Angriffe zwischen 600.000 und 850.000 Menschen ohne Elektrizität ließen.",
+              "Das Kernkraftwerk Saporischschja verlor während der Angriffe seine primäre Verbindung zum Stromnetz. Beamte erklärten, dass die Anlage derzeit auf Notstromquellen angewiesen ist, um den Betrieb aufrechtzuerhalten.",
+              "Energiebehörden in der Ukraine arbeiten daran, die Stromversorgung in den betroffenen Regionen wiederherzustellen. Den Berichten vor Ort zufolge verursachten die Angriffe erhebliche Schäden am regionalen Stromnetz.",
+              "Die Gespräche in Abu Dhabi stellen ein diplomatisches Bemühen dar, mehrere internationale Akteure einzubinden. Die Vereinigten Staaten moderieren den Dialog, wobei die Teilnahme europäischer Staaten nun bestätigt ist."
+            ],
+            "facts": [
+              "Europäische Staaten bestätigen Teilnahme an Gesprächen in Abu Dhabi.",
+              "Verhandlungen für den 10. bis 11. November angesetzt.",
+              "Russische Angriffe ließen 600.000 bis 850.000 Menschen ohne Strom.",
+              "Kernkraftwerk Saporischschja muss auf Notstromversorgung zurückgreifen."
+            ],
+            "title": "Europäische Staaten nehmen an Russland-Ukraine-Gesprächen in Abu Dhabi teil",
+            "context": "Das Kernkraftwerk Saporischschja war seit Beginn der russischen Vollinvasion in die Ukraine häufig mit Unterbrechungen der Stromversorgung konfrontiert. Diplomatische Bemühungen um einen Waffenstillstand oder ein Friedensabkommen wurden während des gesamten Konflikts sporadisch fortgesetzt."
+          }
+        }
+      }
+    ]
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Nach massiven russischen Luftangriffen hat die Ukraine von flächendeckenden Stromausfällen und kritischen Schäden an ihrer Energieinfrastruktur berichtet.",
+      "title": "Krieg in der Ukraine"
+    },
+    "en": {
+      "dek": "Following massive Russian air strikes, Ukraine has reported widespread power cuts and critical damage to its energy infrastructure.",
+      "title": "War in Ukraine"
+    },
+    "es": {
+      "dek": "Tras los masivos ataques aéreos rusos, Ucrania informa de cortes generalizados de electricidad y daños críticos en las infraestructuras energéticas.",
+      "title": "Guerra en Ucrania"
+    },
+    "fr": {
+      "dek": "À la suite d'attaques aériennes russes massives, l'Ukraine signale des pannes de courant généralisées et des dommages critiques sur son infrastructure énergétique.",
+      "title": "Guerre en Ukraine"
+    },
+    "it": {
+      "dek": "A seguito di massicci attacchi aerei russi, l'Ucraina segnala blackout diffusi e danni critici alle infrastrutture energetiche.",
+      "title": "Guerra in Ucraina"
+    },
+    "ja": {
+      "dek": "ロシアによる大規模な空爆を受け、ウクライナ全土で停電が発生し、エネルギーインフラに深刻な被害が出ていると報告された。",
+      "title": "ウクライナ情勢"
+    },
+    "ko": {
+      "dek": "러시아의 대규모 공습 이후 우크라이나는 광범위한 정전 사태와 에너지 기반 시설의 심각한 피해를 보고했다.",
+      "title": "우크라이나 전쟁"
+    },
+    "pt": {
+      "dek": "Na sequência de ataques aéreos russos maciços, a Ucrânia relatou cortes generalizados de eletricidade e danos críticos na sua infraestrutura energética.",
+      "title": "Guerra na Ucrânia"
+    },
+    "zh": {
+      "dek": "继俄罗斯发动大规模空袭后，乌克兰报告称全国多地出现大范围停电，能源基础设施遭到严重破坏。",
+      "title": "乌克兰战争"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794149298000-lpyn",
+      "at": "2026-11-08T14:48:18.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Emergency workers struck by Moscow during rescue missions in Ukraine",
+          "body": "Moscow has struck emergency workers on rescue missions, according to Sky News. Ukrainian President Volodymyr Zelenskyy stated that Russia launched a drone strike on the site of a recent attack in Komyshuvakha, where rescuers were carrying out search operations following a previous bombing."
+        },
+        "fr": {
+          "headline": "Moscou vise des secouristes en mission en Ukraine",
+          "body": "Moscou a pris pour cible des équipes de secours lors de missions d'intervention, selon Sky News. Le président ukrainien Volodymyr Zelensky a déclaré que la Russie avait mené une attaque de drone sur le site d'une frappe récente à Komyshuvakha, où des secouristes menaient des opérations de recherche à la suite d'un précédent bombardement."
+        },
+        "de": {
+          "headline": "Moskau attackiert Rettungskräfte bei Einsätzen in der Ukraine",
+          "body": "Moskau hat Berichten von Sky News zufolge Rettungskräfte bei Hilfseinsätzen angegriffen. Der ukrainische Präsident Wolodymyr Selenskyj erklärte, Russland habe einen Drohnenangriff auf den Schauplatz eines jüngsten Angriffs in Komyschuwacha verübt, wo Rettungskräfte nach einer früheren Bombardierung Sucharbeiten durchführten."
+        },
+        "it": {
+          "headline": "Soccorritori colpiti da Mosca durante le missioni di salvataggio in Ucraina",
+          "body": "Mosca ha colpito operatori di soccorso durante le missioni di emergenza, secondo quanto riferito da Sky News. Il presidente ucraino Volodymyr Zelenskyy ha dichiarato che la Russia ha lanciato un attacco con droni sul luogo di un recente bombardamento a Komyshuvakha, dove i soccorritori stavano conducendo operazioni di ricerca in seguito a una precedente esplosione."
+        },
+        "pt": {
+          "headline": "Moscovo atinge equipas de emergência durante missões de resgate na Ucrânia",
+          "body": "Moscovo atingiu equipas de emergência em missões de resgate, segundo a Sky News. O Presidente ucraniano, Volodymyr Zelenskyy, afirmou que a Rússia lançou um ataque com drones no local de um ataque recente em Komyshuvakha, onde os socorristas realizavam operações de busca na sequência de um bombardeamento anterior."
+        },
+        "zh": {
+          "headline": "乌克兰救援任务中的应急人员遭莫斯科袭击",
+          "body": "据天空新闻网报道，莫斯科袭击了正在执行救援任务的应急人员。乌克兰总统泽连斯基表示，俄罗斯对科米舒瓦哈此前遭袭的地点发动了无人机袭击，救援人员当时正在该处进行此前轰炸后的搜救工作。"
+        },
+        "es": {
+          "headline": "Moscú ataca a los equipos de emergencia durante sus labores de rescate en Ucrania",
+          "body": "Moscú ha atacado a los equipos de emergencia durante sus labores de rescate, según informaciones de Sky News. El presidente ucraniano, Volodímir Zelenski, declaró que Rusia lanzó un ataque con drones contra el lugar de una agresión reciente en Komyshuvakha, donde los socorristas llevaban a cabo operaciones de búsqueda tras un bombardeo previo."
+        },
+        "ko": {
+          "headline": "러시아, 우크라이나 구조 작업 중인 구급대원 공격",
+          "body": "스카이뉴스에 따르면 러시아가 구조 임무를 수행 중이던 구급대원들을 공격했다. 볼로디미르 젤렌스키 우크라이나 대통령은 러시아가 코미슈바하의 최근 피격 현장에 드론 공격을 감행했으며, 당시 구조대원들이 이전 폭격 이후 수색 작업을 벌이고 있었다고 밝혔다."
+        },
+        "ja": {
+          "headline": "ロシア軍、ウクライナで救助活動中の隊員を攻撃",
+          "body": "スカイニュースによると、ロシア軍が救助活動中の緊急対応要員を攻撃した。ウクライナのウォロディミル・ゼレンスキー大統領は、コミシュバハで先に爆撃を受けた現場において、救助隊が捜索活動を行っていたところ、ロシアがドローン攻撃を仕掛けたと述べた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Euronews",
+          "title": "Russian strikes on Ukraine leave 850,000 without power as Zelenskyy reports drone attack on Komyshuvakha",
+          "url": "https://www.euronews.com/2026/11/08/russian-strikes-on-ukraine-leave-850000-without-power-as-zelenskyy-reports-drone-attack-on",
+          "publishedAt": "2026-11-08T14:48:18.000Z"
+        },
+        {
+          "outlet": "Sky News",
+          "title": "One dead in Russia after Ukraine drone attack - as emergency workers struck by Moscow",
+          "url": "https://news.sky.com/story/one-dead-in-russia-after-ukraine-drone-attack-as-emergency-workers-struck-by-moscow-13609678",
+          "publishedAt": "2026-11-08T12:09:00.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-08T14:22:45.000Z",
+      "id": "u-1794147765000-2pti",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Nach Angaben des französischen Außenministers Jean-Noël Barrot werden sich europäische Vertreter den bevorstehenden, von den Vereinigten Staaten vermittelten Gesprächen zwischen Russland und der Ukraine in Abu Dhabi anschließen. Die Treffen sind für den 10. bis 11. November angesetzt.",
+          "headline": "Europäische Staaten nehmen an Gesprächen in Abu Dhabi teil"
+        },
+        "en": {
+          "body": "According to French Foreign Minister Jean-Noël Barrot, European representatives will join upcoming United States-mediated talks between Russia and Ukraine in Abu Dhabi. The meetings are scheduled for November 10 to November 11.",
+          "headline": "European nations will take part in Abu Dhabi talks"
+        },
+        "es": {
+          "body": "Según el ministro francés de Asuntos Exteriores, Jean-Noël Barrot, representantes europeos se sumarán a las próximas conversaciones entre Rusia y Ucrania en Abu Dabi, mediadas por Estados Unidos. Los encuentros están previstos del 10 al 11 de noviembre.",
+          "headline": "Naciones europeas participarán en las conversaciones de Abu Dabi"
+        },
+        "fr": {
+          "body": "Selon le ministre français des Affaires étrangères, Jean-Noël Barrot, des représentants européens participeront aux prochaines discussions entre la Russie et l'Ukraine à Abou Dhabi, sous la médiation des États-Unis. Ces réunions sont prévues les 10 et 11 novembre.",
+          "headline": "Des pays européens participeront aux discussions d'Abou Dhabi"
+        },
+        "it": {
+          "body": "Secondo il ministro degli Esteri francese Jean-Noël Barrot, i rappresentanti europei prenderanno parte ai prossimi colloqui tra Russia e Ucraina mediati dagli Stati Uniti ad Abu Dhabi. Gli incontri sono in programma dal 10 all'11 novembre.",
+          "headline": "Le nazioni europee parteciperanno ai colloqui di Abu Dhabi"
+        },
+        "ja": {
+          "body": "フランスのジャン＝ノエル・バロ外相によれば、欧州の代表団が、米国が仲介するロシアとウクライナの間でアブダビにて行われる今後の協議に参加する見通しである。会合は11月10日から11日にかけて予定されている。",
+          "headline": "欧州諸国、アブダビでの協議に参加へ"
+        },
+        "ko": {
+          "body": "장노엘 바로 프랑스 외무장관에 따르면, 유럽 대표들이 아부다비에서 열리는 미국 중재의 러시아·우크라이나 간 예정된 회담에 합류할 예정이다. 회의는 11월 10일부터 11일까지로 예정되어 있다.",
+          "headline": "유럽 국가들, 아부다비 회담 참가 예정"
+        },
+        "pt": {
+          "body": "Segundo o ministro dos Negócios Estrangeiros francês, Jean-Noël Barrot, representantes europeus vão juntar-se às próximas conversações entre a Rússia e a Ucrânia mediadas pelos Estados Unidos em Abu Dhabi. As reuniões estão agendadas para 10 a 11 de novembro.",
+          "headline": "Países europeus vão participar em conversações em Abu Dhabi"
+        },
+        "zh": {
+          "body": "据法国外交部长让-诺埃尔·巴罗称，欧洲代表将参加即将举行的、由美国斡旋的俄罗斯与乌克兰阿布扎比会谈。会议计划于11月10日至11日举行。",
+          "headline": "欧洲国家将参加阿布扎比会谈"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.euronews.com/2026/11/08/europeans-to-join-russia-ukraine-talks-in-abu-dhabi-says-french-fm-barrot",
+          "title": "Europeans to join Russia-Ukraine talks in Abu Dhabi, says French FM Barrot",
+          "outlet": "Euronews",
+          "publishedAt": "2026-11-08T14:22:45.000Z"
+        },
+        {
+          "url": "https://www.france24.com/en/europe/20261108-europe-will-take-part-us-mediated-ukraine-peace-talks-abu-dhabi-french-fm-says",
+          "title": "Europe will take part in US-mediated Ukraine talks in Abu Dhabi, French FM says",
+          "outlet": "France 24",
+          "publishedAt": "2026-11-08T14:16:31.000Z"
+        },
+        {
+          "url": "https://www.politico.eu/article/europe-will-be-represented-in-abu-dhabi-talks-on-ukraine-french-foreign-minister-jean-noel-barrot-says/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "title": "Europe will be represented in Abu Dhabi talks on Ukraine, French foreign minister says",
+          "outlet": "Politico Europe",
+          "publishedAt": "2026-11-08T14:03:28.000Z"
+        },
+        {
+          "url": "https://www.kyivpost.com/post/89489",
+          "title": "France Confirms European Role at Abu Dhabi Talks",
+          "outlet": "The Kyiv Post",
+          "publishedAt": "2026-11-08T13:41:00.000Z"
+        },
+        {
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/08/europe-will-be-represented-at-us-mediated-ukraine-talks-in-abu-dhabi_6774979_4.html",
+          "title": "Europe will be represented at US-mediated Ukraine talks in Abu Dhabi",
+          "outlet": "Le Monde",
+          "publishedAt": "2026-11-08T13:12:08.000Z"
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/europeans-will-join-ukraine-talks-in-abu-dhabi-french-foreign-minister-says",
+          "title": "Europeans will join Ukraine talks in Abu Dhabi, French foreign minister says",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-08T12:08:39.000Z"
+        }
+      ],
+      "importance": 4
+    },
+    {
+      "at": "2026-11-08T14:36:16.814Z",
+      "id": "u-1794148576814-rvaq",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Jüngste russische Angriffe auf die Energieinfrastruktur in der Ostukraine haben schätzungsweise 600.000 bis 850.000 Menschen von der Stromversorgung abgeschnitten. Behörden erklärten, das Kernkraftwerk Saporischschja habe erneut auf Notstromquellen zurückgreifen müssen.",
+          "headline": "Russische Angriffe lassen Hunderttausende ohne Strom zurück"
+        },
+        "en": {
+          "body": "Recent Russian attacks on energy infrastructure in eastern Ukraine left approximately 600,000 to 850,000 people without electricity. Authorities stated that the Zaporizhzhia nuclear power plant once again had to rely on backup power sources.",
+          "headline": "Russian strikes leave hundreds of thousands without power"
+        },
+        "es": {
+          "body": "Los recientes ataques rusos contra las infraestructuras energéticas en el este de Ucrania dejaron a entre 600.000 y 850.000 personas sin suministro eléctrico. Las autoridades señalaron que la central nuclear de Zaporiyia tuvo que recurrir de nuevo a fuentes de energía de emergencia.",
+          "headline": "Los ataques rusos dejan a cientos de miles de personas sin electricidad"
+        },
+        "fr": {
+          "body": "De récentes attaques russes contre les infrastructures énergétiques dans l'est de l'Ukraine ont laissé environ 600 000 à 850 000 personnes sans électricité. Les autorités ont indiqué que la centrale nucléaire de Zaporijjia avait dû de nouveau recourir à des sources d'alimentation de secours.",
+          "headline": "Des frappes russes privent des centaines de milliers de personnes d'électricité"
+        },
+        "it": {
+          "body": "I recenti attacchi russi contro le infrastrutture energetiche nell'Ucraina orientale hanno lasciato circa 600.000-850.000 persone senza energia elettrica. Le autorità hanno dichiarato che la centrale nucleare di Zaporizhzhia ha dovuto nuovamente fare affidamento su fonti di alimentazione di riserva.",
+          "headline": "I raid russi lasciano centinaia di migliaia di persone senza elettricità"
+        },
+        "ja": {
+          "body": "ウクライナ東部のエネルギーインフラを狙った最近のロシアによる攻撃により、およそ60万から85万人が電気のない生活を強いられている。当局によると、ザポリージャ原子力発電所は再びバックアップ電源への依存を余儀なくされたという。",
+          "headline": "ロシアの攻撃により数十万人が停電に"
+        },
+        "ko": {
+          "body": "우크라이나 동부의 에너지 기반 시설을 겨냥한 최근의 러시아 공격으로 약 60만 명에서 85만 명이 전기를 쓰지 못하게 되었다. 당국은 자포리자 원자력발전소가 또다시 비상 전력원에 의존해야 했다고 밝혔다.",
+          "headline": "러시아 공습으로 수십만 명 정전 피해"
+        },
+        "pt": {
+          "body": "Recentes ataques russos contra infraestruturas energéticas no leste da Ucrânia deixaram aproximadamente 600.000 a 850.000 pessoas sem eletricidade. As autoridades indicaram que a central nuclear de Zaporíjia teve de recorrer mais uma vez a fontes de energia de recurso.",
+          "headline": "Ataques russos deixam centenas de milhares de pessoas sem eletricidade"
+        },
+        "zh": {
+          "body": "近期俄罗斯对乌克兰东部能源基础设施的袭击导致大约60万至85万人陷入断电状态。有关部门表示，扎波罗热核电站不得不再次依赖备用电源。",
+          "headline": "俄罗斯袭击导致数十万人断电"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power",
+          "title": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
+          "outlet": "Nikkei Asia",
+          "publishedAt": "2026-11-08T14:36:16.814Z"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/8/russian-strikes-on-ukraine-leave-hundreds-of-thousands-without-electricity?traffic_source=rss",
+          "title": "Russian strikes on Ukraine leave hundreds of thousands without electricity",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-11-08T12:20:17.000Z"
+        },
+        {
+          "url": "https://www.tagesschau.de/ausland/europa/ukraine-stromausfall-120.html",
+          "title": "Russische Luftangriffe: Erneut Hunderttausende Ukrainer ohne Strom",
+          "outlet": "Tagesschau",
+          "publishedAt": "2026-11-08T12:05:57.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9JV3lDUVpZVXY0aUs3R2NtUDdKV1RTczJUaFRqdzkwZElYclVQMkRPeFdkcmdoRmhrSDFMU2xUTWZLdUItaC0yb0JWeVpjQm81cjdZMlBJdllHTHYycktHdUlFdEZTdHlHdklLdDZn?oc=5",
+          "title": "Hundreds of thousands left without power in Ukraine after Russian strikes, authorities say",
+          "outlet": "CBS News",
+          "publishedAt": "2026-11-08T11:20:29.000Z"
+        },
+        {
+          "url": "https://www.politico.eu/article/russian-strikes-leave-600000-in-the-dark-in-eastern-ukraine-dnipropetrovsk/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "title": "Russian strikes leave 600,000 in the dark in eastern Ukraine",
+          "outlet": "Politico Europe",
+          "publishedAt": "2026-11-08T11:09:52.000Z"
+        },
+        {
+          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-ukraine-meldet-massive-stromausfaelle-nach-russischem-angriff",
+          "title": "Krieg in der Ukraine – Ukraine meldet massive Stromausfälle nach russischem Angriff",
+          "outlet": "SRF",
+          "publishedAt": "2026-11-08T09:37:26.000Z"
+        }
+      ],
+      "importance": 4
+    }
+  ],
+  "category": "world",
   "keywords": [
     "ukraine",
     "russland",
@@ -12,178 +377,6 @@
     "stromausfall",
     "energie",
     "front"
-  ],
-  "startedAt": "2026-11-08T14:36:18.642Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-08T14:36:48.602Z",
-  "articleSlug": "krieg-in-der-ukraine",
-  "sourceCount": 11,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1794147765000-2pti",
-      "at": "2026-11-08T14:22:45.000Z",
-      "kind": "statement",
-      "importance": 4,
-      "locales": {
-        "en": {
-          "headline": "European nations will take part in Abu Dhabi talks",
-          "body": "According to French Foreign Minister Jean-Noël Barrot, European representatives will join upcoming United States-mediated talks between Russia and Ukraine in Abu Dhabi. The meetings are scheduled for November 10 to November 11."
-        },
-        "it": {
-          "headline": "Le nazioni europee parteciperanno ai colloqui di Abu Dhabi",
-          "body": "Secondo il ministro degli Esteri francese Jean-Noël Barrot, i rappresentanti europei prenderanno parte ai prossimi colloqui tra Russia e Ucraina mediati dagli Stati Uniti ad Abu Dhabi. Gli incontri sono in programma dal 10 all'11 novembre."
-        },
-        "es": {
-          "headline": "Naciones europeas participarán en las conversaciones de Abu Dabi",
-          "body": "Según el ministro francés de Asuntos Exteriores, Jean-Noël Barrot, representantes europeos se sumarán a las próximas conversaciones entre Rusia y Ucrania en Abu Dabi, mediadas por Estados Unidos. Los encuentros están previstos del 10 al 11 de noviembre."
-        },
-        "fr": {
-          "headline": "Des pays européens participeront aux discussions d'Abou Dhabi",
-          "body": "Selon le ministre français des Affaires étrangères, Jean-Noël Barrot, des représentants européens participeront aux prochaines discussions entre la Russie et l'Ukraine à Abou Dhabi, sous la médiation des États-Unis. Ces réunions sont prévues les 10 et 11 novembre."
-        },
-        "de": {
-          "headline": "Europäische Staaten nehmen an Gesprächen in Abu Dhabi teil",
-          "body": "Nach Angaben des französischen Außenministers Jean-Noël Barrot werden sich europäische Vertreter den bevorstehenden, von den Vereinigten Staaten vermittelten Gesprächen zwischen Russland und der Ukraine in Abu Dhabi anschließen. Die Treffen sind für den 10. bis 11. November angesetzt."
-        },
-        "zh": {
-          "headline": "欧洲国家将参加阿布扎比会谈",
-          "body": "据法国外交部长让-诺埃尔·巴罗称，欧洲代表将参加即将举行的、由美国斡旋的俄罗斯与乌克兰阿布扎比会谈。会议计划于11月10日至11日举行。"
-        },
-        "pt": {
-          "headline": "Países europeus vão participar em conversações em Abu Dhabi",
-          "body": "Segundo o ministro dos Negócios Estrangeiros francês, Jean-Noël Barrot, representantes europeus vão juntar-se às próximas conversações entre a Rússia e a Ucrânia mediadas pelos Estados Unidos em Abu Dhabi. As reuniões estão agendadas para 10 a 11 de novembro."
-        },
-        "ja": {
-          "headline": "欧州諸国、アブダビでの協議に参加へ",
-          "body": "フランスのジャン＝ノエル・バロ外相によれば、欧州の代表団が、米国が仲介するロシアとウクライナの間でアブダビにて行われる今後の協議に参加する見通しである。会合は11月10日から11日にかけて予定されている。"
-        },
-        "ko": {
-          "headline": "유럽 국가들, 아부다비 회담 참가 예정",
-          "body": "장노엘 바로 프랑스 외무장관에 따르면, 유럽 대표들이 아부다비에서 열리는 미국 중재의 러시아·우크라이나 간 예정된 회담에 합류할 예정이다. 회의는 11월 10일부터 11일까지로 예정되어 있다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Euronews",
-          "title": "Europeans to join Russia-Ukraine talks in Abu Dhabi, says French FM Barrot",
-          "url": "https://www.euronews.com/2026/11/08/europeans-to-join-russia-ukraine-talks-in-abu-dhabi-says-french-fm-barrot",
-          "publishedAt": "2026-11-08T14:22:45.000Z"
-        },
-        {
-          "outlet": "France 24",
-          "title": "Europe will take part in US-mediated Ukraine talks in Abu Dhabi, French FM says",
-          "url": "https://www.france24.com/en/europe/20261108-europe-will-take-part-us-mediated-ukraine-peace-talks-abu-dhabi-french-fm-says",
-          "publishedAt": "2026-11-08T14:16:31.000Z"
-        },
-        {
-          "outlet": "Politico Europe",
-          "title": "Europe will be represented in Abu Dhabi talks on Ukraine, French foreign minister says",
-          "url": "https://www.politico.eu/article/europe-will-be-represented-in-abu-dhabi-talks-on-ukraine-french-foreign-minister-jean-noel-barrot-says/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-          "publishedAt": "2026-11-08T14:03:28.000Z"
-        },
-        {
-          "outlet": "The Kyiv Post",
-          "title": "France Confirms European Role at Abu Dhabi Talks",
-          "url": "https://www.kyivpost.com/post/89489",
-          "publishedAt": "2026-11-08T13:41:00.000Z"
-        },
-        {
-          "outlet": "Le Monde",
-          "title": "Europe will be represented at US-mediated Ukraine talks in Abu Dhabi",
-          "url": "https://www.lemonde.fr/en/international/article/2026/11/08/europe-will-be-represented-at-us-mediated-ukraine-talks-in-abu-dhabi_6774979_4.html",
-          "publishedAt": "2026-11-08T13:12:08.000Z"
-        },
-        {
-          "outlet": "The Straits Times",
-          "title": "Europeans will join Ukraine talks in Abu Dhabi, French foreign minister says",
-          "url": "https://www.straitstimes.com/world/europe/europeans-will-join-ukraine-talks-in-abu-dhabi-french-foreign-minister-says",
-          "publishedAt": "2026-11-08T12:08:39.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794148576814-rvaq",
-      "at": "2026-11-08T14:36:16.814Z",
-      "kind": "result",
-      "importance": 4,
-      "locales": {
-        "en": {
-          "headline": "Russian strikes leave hundreds of thousands without power",
-          "body": "Recent Russian attacks on energy infrastructure in eastern Ukraine left approximately 600,000 to 850,000 people without electricity. Authorities stated that the Zaporizhzhia nuclear power plant once again had to rely on backup power sources."
-        },
-        "it": {
-          "headline": "I raid russi lasciano centinaia di migliaia di persone senza elettricità",
-          "body": "I recenti attacchi russi contro le infrastrutture energetiche nell'Ucraina orientale hanno lasciato circa 600.000-850.000 persone senza energia elettrica. Le autorità hanno dichiarato che la centrale nucleare di Zaporizhzhia ha dovuto nuovamente fare affidamento su fonti di alimentazione di riserva."
-        },
-        "es": {
-          "headline": "Los ataques rusos dejan a cientos de miles de personas sin electricidad",
-          "body": "Los recientes ataques rusos contra las infraestructuras energéticas en el este de Ucrania dejaron a entre 600.000 y 850.000 personas sin suministro eléctrico. Las autoridades señalaron que la central nuclear de Zaporiyia tuvo que recurrir de nuevo a fuentes de energía de emergencia."
-        },
-        "fr": {
-          "headline": "Des frappes russes privent des centaines de milliers de personnes d'électricité",
-          "body": "De récentes attaques russes contre les infrastructures énergétiques dans l'est de l'Ukraine ont laissé environ 600 000 à 850 000 personnes sans électricité. Les autorités ont indiqué que la centrale nucléaire de Zaporijjia avait dû de nouveau recourir à des sources d'alimentation de secours."
-        },
-        "de": {
-          "headline": "Russische Angriffe lassen Hunderttausende ohne Strom zurück",
-          "body": "Jüngste russische Angriffe auf die Energieinfrastruktur in der Ostukraine haben schätzungsweise 600.000 bis 850.000 Menschen von der Stromversorgung abgeschnitten. Behörden erklärten, das Kernkraftwerk Saporischschja habe erneut auf Notstromquellen zurückgreifen müssen."
-        },
-        "zh": {
-          "headline": "俄罗斯袭击导致数十万人断电",
-          "body": "近期俄罗斯对乌克兰东部能源基础设施的袭击导致大约60万至85万人陷入断电状态。有关部门表示，扎波罗热核电站不得不再次依赖备用电源。"
-        },
-        "pt": {
-          "headline": "Ataques russos deixam centenas de milhares de pessoas sem eletricidade",
-          "body": "Recentes ataques russos contra infraestruturas energéticas no leste da Ucrânia deixaram aproximadamente 600.000 a 850.000 pessoas sem eletricidade. As autoridades indicaram que a central nuclear de Zaporíjia teve de recorrer mais uma vez a fontes de energia de recurso."
-        },
-        "ja": {
-          "headline": "ロシアの攻撃により数十万人が停電に",
-          "body": "ウクライナ東部のエネルギーインフラを狙った最近のロシアによる攻撃により、およそ60万から85万人が電気のない生活を強いられている。当局によると、ザポリージャ原子力発電所は再びバックアップ電源への依存を余儀なくされたという。"
-        },
-        "ko": {
-          "headline": "러시아 공습으로 수십만 명 정전 피해",
-          "body": "우크라이나 동부의 에너지 기반 시설을 겨냥한 최근의 러시아 공격으로 약 60만 명에서 85만 명이 전기를 쓰지 못하게 되었다. 당국은 자포리자 원자력발전소가 또다시 비상 전력원에 의존해야 했다고 밝혔다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Nikkei Asia",
-          "title": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
-          "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power",
-          "publishedAt": "2026-11-08T14:36:16.814Z"
-        },
-        {
-          "outlet": "Al Jazeera",
-          "title": "Russian strikes on Ukraine leave hundreds of thousands without electricity",
-          "url": "https://www.aljazeera.com/news/2026/11/8/russian-strikes-on-ukraine-leave-hundreds-of-thousands-without-electricity?traffic_source=rss",
-          "publishedAt": "2026-11-08T12:20:17.000Z"
-        },
-        {
-          "outlet": "Tagesschau",
-          "title": "Russische Luftangriffe: Erneut Hunderttausende Ukrainer ohne Strom",
-          "url": "https://www.tagesschau.de/ausland/europa/ukraine-stromausfall-120.html",
-          "publishedAt": "2026-11-08T12:05:57.000Z"
-        },
-        {
-          "outlet": "CBS News",
-          "title": "Hundreds of thousands left without power in Ukraine after Russian strikes, authorities say",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9JV3lDUVpZVXY0aUs3R2NtUDdKV1RTczJUaFRqdzkwZElYclVQMkRPeFdkcmdoRmhrSDFMU2xUTWZLdUItaC0yb0JWeVpjQm81cjdZMlBJdllHTHYycktHdUlFdEZTdHlHdklLdDZn?oc=5",
-          "publishedAt": "2026-11-08T11:20:29.000Z"
-        },
-        {
-          "outlet": "Politico Europe",
-          "title": "Russian strikes leave 600,000 in the dark in eastern Ukraine",
-          "url": "https://www.politico.eu/article/russian-strikes-leave-600000-in-the-dark-in-eastern-ukraine-dnipropetrovsk/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-          "publishedAt": "2026-11-08T11:09:52.000Z"
-        },
-        {
-          "outlet": "SRF",
-          "title": "Krieg in der Ukraine – Ukraine meldet massive Stromausfälle nach russischem Angriff",
-          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-ukraine-meldet-massive-stromausfaelle-nach-russischem-angriff",
-          "publishedAt": "2026-11-08T09:37:26.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power",
@@ -234,102 +427,17 @@
     "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNOFhRcVN6LS1mZnM2TU90RlFSMzBkQTNWX2owLXdJeDJ2U1djSHU5WlR0UVhrWUdZdDZCUklQUlFBYmg0LS0wa3lMSDdPVmxSM0Y0ejFhZ0U5Z1QzRHFFYzlTQzQ4YW1xVHhWQmVVWGh3MEp5YnlKLXhraDhpUDFUUFB6cURsek5mOEtOUUd5YTNBWDN5WWtxdF92RnVLT2V4N2p0NUt6QWgzeVNoa09jTXV0U3hQeVNwdzQ0QTBpYlpkRFlITWZGTGFneUZ6WU8tWVJmLXJLVEROV0k?oc=5",
     "https://www.kyivpost.com/post/89466",
     "https://www.thehindu.com/news/international/kremlin-hopes-us-election-shake-up-wont-shift-trumps-negotiations-on-ukraine/article71680679.ece",
-    "https://www.kyivpost.com/post/89463"
+    "https://www.kyivpost.com/post/89463",
+    "https://www.dawn.com/news/2043072/with-stephen-miller-at-the-helm-trump-charts-a-course-for-confrontation",
+    "https://www.theguardian.com/world/2026/nov/08/two-police-officers-heroes-confronting-krakow-gunman-poland",
+    "https://www.euronews.com/2026/11/08/russian-strikes-on-ukraine-leave-850000-without-power-as-zelenskyy-reports-drone-attack-on",
+    "https://news.sky.com/story/one-dead-in-russia-after-ukraine-drone-attack-as-emergency-workers-struck-by-moscow-13609678"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "War in Ukraine",
-      "dek": "Following massive Russian air strikes, Ukraine has reported widespread power cuts and critical damage to its energy infrastructure."
-    },
-    "fr": {
-      "title": "Guerre en Ukraine",
-      "dek": "À la suite d'attaques aériennes russes massives, l'Ukraine signale des pannes de courant généralisées et des dommages critiques sur son infrastructure énergétique."
-    },
-    "es": {
-      "title": "Guerra en Ucrania",
-      "dek": "Tras los masivos ataques aéreos rusos, Ucrania informa de cortes generalizados de electricidad y daños críticos en las infraestructuras energéticas."
-    },
-    "it": {
-      "title": "Guerra in Ucraina",
-      "dek": "A seguito di massicci attacchi aerei russi, l'Ucraina segnala blackout diffusi e danni critici alle infrastrutture energetiche."
-    },
-    "pt": {
-      "title": "Guerra na Ucrânia",
-      "dek": "Na sequência de ataques aéreos russos maciços, a Ucrânia relatou cortes generalizados de eletricidade e danos críticos na sua infraestrutura energética."
-    },
-    "zh": {
-      "title": "乌克兰战争",
-      "dek": "继俄罗斯发动大规模空袭后，乌克兰报告称全国多地出现大范围停电，能源基础设施遭到严重破坏。"
-    },
-    "ko": {
-      "title": "우크라이나 전쟁",
-      "dek": "러시아의 대규모 공습 이후 우크라이나는 광범위한 정전 사태와 에너지 기반 시설의 심각한 피해를 보고했다."
-    },
-    "ja": {
-      "title": "ウクライナ情勢",
-      "dek": "ロシアによる大規模な空爆を受け、ウクライナ全土で停電が発生し、エネルギーインフラに深刻な被害が出ていると報告された。"
-    },
-    "de": {
-      "title": "Krieg in der Ukraine",
-      "dek": "Nach massiven russischen Luftangriffen hat die Ukraine von flächendeckenden Stromausfällen und kritischen Schäden an ihrer Energieinfrastruktur berichtet."
-    }
-  },
-  "article": {
-    "slug": "krieg-in-der-ukraine",
-    "updatedAt": "2026-11-08T14:37:08.235Z",
-    "reason": "2 new update(s)",
-    "locales": {
-      "en": {
-        "title": "European nations to join Russia-Ukraine talks in Abu Dhabi",
-        "dek": "European representatives will participate in upcoming United States-mediated negotiations between Russia and Ukraine scheduled for November 10 and 11.",
-        "facts": [
-          "European nations confirmed to join Abu Dhabi talks.",
-          "Negotiations scheduled for November 10 to November 11.",
-          "Russian strikes left 600,000 to 850,000 people without power.",
-          "Zaporizhzhia nuclear plant forced to use backup power."
-        ],
-        "body": [
-          "European representatives will join United States-mediated talks between Russia and Ukraine in Abu Dhabi. French Foreign Minister Jean-Noël Barrot announced the participation on November 8.",
-          "The meetings are scheduled to take place from November 10 to November 11. These discussions aim to address the ongoing conflict between the two nations.",
-          "Russian military strikes targeted energy infrastructure in eastern Ukraine on November 8. Authorities reported that the attacks left between 600,000 and 850,000 people without electricity.",
-          "The Zaporizhzhia nuclear power plant lost its primary connection to the grid during the strikes. Officials stated that the facility is currently relying on backup power sources to maintain operations.",
-          "Energy officials in Ukraine are working to restore power to the affected regions. The strikes caused significant damage to the regional electrical grid, according to local reports.",
-          "The Abu Dhabi talks represent a diplomatic effort to engage multiple international stakeholders. The United States is facilitating the dialogue, with European nations now confirmed to attend."
-        ],
-        "context": "The Zaporizhzhia nuclear power plant has frequently faced power supply disruptions since the start of the full-scale Russian invasion of Ukraine. Diplomatic efforts to reach a ceasefire or peace agreement have continued intermittently throughout the conflict.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Europäische Staaten nehmen an Russland-Ukraine-Gesprächen in Abu Dhabi teil",
-        "dek": "Europäische Vertreter werden an den bevorstehenden, von den Vereinigten Staaten vermittelten Verhandlungen zwischen Russland und der Ukraine teilnehmen, die für den 10. und 11. November angesetzt sind.",
-        "facts": [
-          "Europäische Staaten bestätigen Teilnahme an Gesprächen in Abu Dhabi.",
-          "Verhandlungen für den 10. bis 11. November angesetzt.",
-          "Russische Angriffe ließen 600.000 bis 850.000 Menschen ohne Strom.",
-          "Kernkraftwerk Saporischschja muss auf Notstromversorgung zurückgreifen."
-        ],
-        "body": [
-          "Europäische Vertreter werden an den von den Vereinigten Staaten vermittelten Gesprächen zwischen Russland und der Ukraine in Abu Dhabi teilnehmen. Der französische Außenminister Jean-Noël Barrot kündigte die Teilnahme am 8. November an.",
-          "Die Treffen sind für den 10. bis 11. November geplant. Diese Diskussionen zielen darauf ab, den anhaltenden Konflikt zwischen den beiden Nationen zu adressieren.",
-          "Russische Militärschläge zielten am 8. November auf die Energieinfrastruktur in der Ostukraine ab. Behörden berichteten, dass die Angriffe zwischen 600.000 und 850.000 Menschen ohne Elektrizität ließen.",
-          "Das Kernkraftwerk Saporischschja verlor während der Angriffe seine primäre Verbindung zum Stromnetz. Beamte erklärten, dass die Anlage derzeit auf Notstromquellen angewiesen ist, um den Betrieb aufrechtzuerhalten.",
-          "Energiebehörden in der Ukraine arbeiten daran, die Stromversorgung in den betroffenen Regionen wiederherzustellen. Den Berichten vor Ort zufolge verursachten die Angriffe erhebliche Schäden am regionalen Stromnetz.",
-          "Die Gespräche in Abu Dhabi stellen ein diplomatisches Bemühen dar, mehrere internationale Akteure einzubinden. Die Vereinigten Staaten moderieren den Dialog, wobei die Teilnahme europäischer Staaten nun bestätigt ist."
-        ],
-        "context": "Das Kernkraftwerk Saporischschja war seit Beginn der russischen Vollinvasion in die Ukraine häufig mit Unterbrechungen der Stromversorgung konfrontiert. Diplomatische Bemühungen um einen Waffenstillstand oder ein Friedensabkommen wurden während des gesamten Konflikts sporadisch fortgesetzt."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Tagesschau",
-      "Die Welt",
-      "SRF",
-      "Kicker"
-    ],
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
-  }
+  "startedAt": "2026-11-08T14:36:18.642Z",
+  "updatedAt": "2026-11-08T15:06:43.349Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": "krieg-in-der-ukraine",
+  "sourceCount": 12,
+  "seenHeadlines": []
 }
