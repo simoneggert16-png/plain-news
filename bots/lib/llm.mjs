@@ -38,43 +38,25 @@ if (fs.existsSync('.env')) {
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
 const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
+const GEMINI_35_FLASH_LITE = 'gemini/gemini-3.5-flash-lite';
+const GEMINI_31_FLASH_LITE = 'gemini/gemini-3.1-flash-lite';
 const GEMINI_35_FLASH = 'gemini/gemini-3.5-flash';
 const GEMINI_36_FLASH = 'gemini/gemini-3.6-flash';
 let geminiCallsThisRun = 0;
-const GEMINI_MAX_CALLS = Number(process.env.GEMINI_MAX_CALLS_PER_RUN || 80);
+const GEMINI_MAX_CALLS = Number(process.env.GEMINI_MAX_CALLS_PER_RUN || 240);
 
-const OSS_120B = 'ollama/gpt-oss:120b';
-const GEMMA_31B = 'ollama/gemma4:31b';
-const OSS_20B = 'ollama/gpt-oss:20b';
-const NVIDIA_DEEPSEEK = 'deepseek-ai/deepseek-v4.1-flash';
+const NVIDIA_LIGHTNING = 'nvidia/nemotron-3.5-lightning-30b-a3b';
+const NVIDIA_BOLT = 'nvidia/nemotron-3.5-bolt-e4b';
 const NVIDIA_STEP = 'stepfun-ai/step-5-preview';
-const NVIDIA_MINIMAX = 'minimaxai/minimax-m3.1-flash';
-const NVIDIA_MISTRAL = 'mistralai/mistral-large-4-1t-a52b';
 
-// A model without a key is not a fallback, it is six seconds of retry sleep
-// per call. Drop it from the chain up front.
-const usable = (list) => list.filter((m) => (m.startsWith('gemini/') && process.env.GEMINI_API_KEY) || m.startsWith('ollama/') || (!m.startsWith('gemini/') && process.env.NVIDIA_API_KEY));
+const usable = (list) => list.filter((m) => (m.startsWith('gemini/') && process.env.GEMINI_API_KEY) || (m.startsWith('ollama/') && process.env.OLLAMA_API_KEY) || (!m.startsWith('gemini/') && !m.startsWith('ollama/') && process.env.NVIDIA_API_KEY));
 
-// Order is a measurement, not a preference. The probe on 2026-10-31 20:54,
-// with everything else idle, asked the same five-token JSON question and got:
-//   minimax-m3.1-flash 3.4 s, mistral-large-4 15.2 s, step-5 16.1 s (all three
-//   clean JSON), while deepseek-v4.1-flash, gemma-4-31b, glm-5.3-flash and
-//   gpt-oss-20b hung until the 90 s timeout. A model that hangs costs the whole
-//   per-call timeout on every single step of every shift; it goes behind the
-//   models that answer, not in front of them.
 export const MODELS = {
-  desk:       usable([process.env.DESK_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
-  writer:     usable([process.env.WRITER_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
-  // Translation is the highest-volume job and needs the surest hand. Measured
-  // on 2026-10-31: minimax returned a full German headline, standfirst and
-  // facts in 30.1 s, the fastest clean answer of the catalogue. step-5 is the
-  // second opinion. mistral-large is out of this chain: it answers with its
-  // reasoning trace ("The user wants me to reply with only a specific JS"), and
-  // deepseek hangs past 90 s — both cost a full timeout per chunk.
-  translator: usable([process.env.TRANSLATOR_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_MINIMAX, NVIDIA_STEP, OSS_120B, GEMMA_31B, OSS_20B]),
-  editor:     usable([process.env.EDITOR_MODEL || GEMINI_36_FLASH, GEMINI_35_FLASH, NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B]),
-  // Live ticker: small prompts every few minutes, still needs clean prose.
-  live:       usable([process.env.LIVE_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_STEP, NVIDIA_MINIMAX, NVIDIA_MISTRAL, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B]),
+  desk:       usable([process.env.DESK_MODEL || GEMINI_35_FLASH_LITE, GEMINI_31_FLASH_LITE, NVIDIA_LIGHTNING, NVIDIA_BOLT, NVIDIA_STEP, GEMINI_35_FLASH, GEMINI_36_FLASH]),
+  writer:     usable([process.env.WRITER_MODEL || GEMINI_35_FLASH_LITE, GEMINI_31_FLASH_LITE, NVIDIA_LIGHTNING, NVIDIA_BOLT, NVIDIA_STEP, GEMINI_35_FLASH, GEMINI_36_FLASH]),
+  translator: usable([process.env.TRANSLATOR_MODEL || GEMINI_35_FLASH_LITE, GEMINI_31_FLASH_LITE, NVIDIA_BOLT, NVIDIA_LIGHTNING, NVIDIA_STEP]),
+  editor:     usable([process.env.EDITOR_MODEL || GEMINI_31_FLASH_LITE, GEMINI_35_FLASH_LITE, NVIDIA_LIGHTNING, NVIDIA_BOLT, NVIDIA_STEP, GEMINI_36_FLASH]),
+  live:       usable([process.env.LIVE_MODEL || GEMINI_35_FLASH_LITE, GEMINI_31_FLASH_LITE, NVIDIA_BOLT, NVIDIA_LIGHTNING, NVIDIA_STEP]),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -154,6 +136,7 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
       // A reasoning model that narrates its plan burns the answer budget
       // before the answer starts. Providers spell the switch differently, so
       // the probe decides which spelling works instead of a guess here.
+      chat_template_kwargs: { enable_thinking: false },
       ...(extra || {}),
     }),
     signal: AbortSignal.timeout(timeoutMs),
@@ -198,7 +181,9 @@ async function callGemini(model, messages, { temperature = 0.2, maxTokens = 4096
     generationConfig: {
       temperature,
       maxOutputTokens: maxTokens,
-      thinkingConfig: { thinkingBudget: 0 },
+      ...(model === 'gemini-3.1-flash-lite' || model === 'gemini-3.5-flash' || model === 'gemini-3.6-flash'
+        ? { thinkingConfig: { thinkingBudget: 0 } }
+        : {}),
     },
   };
   if (sys && messages.some((m) => m.role !== 'system')) {

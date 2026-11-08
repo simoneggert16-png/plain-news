@@ -2,10 +2,21 @@ import React from 'react';
 import { Composition } from 'remotion';
 import { PlainNewsReel } from './PlainNewsReel';
 import { PlainMotionAd } from './PlainMotionAd';
+import { PlainFlowAd } from './PlainFlowAd';
 
 export const RemotionRoot = () => {
   return (
     <>
+      {/* 0. Google Flow Live-Action + Real UI + Motion Graphics Ad (30s) */}
+      <Composition
+        id="PlainFlowAd"
+        component={PlainFlowAd}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
       {/* 1. Viral Premium Motion Ad (30 seconds, 900 frames @ 30fps, 5 principles + hook + CTA) */}
       <Composition
         id="PlainMotionAd"
