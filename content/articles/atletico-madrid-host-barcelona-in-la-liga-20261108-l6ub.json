@@ -1,0 +1,90 @@
+{
+  "slug": "atletico-madrid-host-barcelona-in-la-liga-20261108-l6ub",
+  "category": "sport",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-08T19:50:09.198Z",
+  "updatedAt": "2026-11-08T19:50:09.198Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Al Jazeera",
+      "title": "LIVE: Atletico Madrid vs Barcelona – La Liga",
+      "url": "https://www.aljazeera.com/sports/liveblog/2026/11/8/atletico-madrid-vs-barcelona-la-liga-live?traffic_source=rss",
+      "publishedAt": "2026-11-08T17:00:00.000Z"
+    },
+    {
+      "outlet": "Kicker",
+      "title": "LIVE! Nach Bayern-Pleite: Atletico gegen Spitzenreiter Barcelona gefordert",
+      "url": "https://www.kicker.de/atl-madrid-gegen-barcelona-2026-la-liga-5223903/spielbericht#omrss",
+      "publishedAt": "2026-11-08T18:57:17.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Atletico Madrid host Barcelona in La Liga",
+      "dek": "Atletico Madrid host Barcelona following Bayern defeat",
+      "facts": [
+        "Atletico Madrid face Barcelona in a La Liga fixture on 8 November 2026.",
+        "Barcelona are the La Liga table leaders entering the match.",
+        "Atletico Madrid lost 0-2 to Bayern Munich in the Champions League prior to this fixture.",
+        "Al Jazeera provides live text updates and team news for the game."
+      ],
+      "body": [
+        "Atletico Madrid host Barcelona in a La Liga fixture on 8 November 2026. Barcelona enter the match as the table leaders.",
+        "Atletico Madrid suffered a 0-2 defeat to Bayern Munich in the Champions League before this La Liga encounter.",
+        "Al Jazeera provides live text updates and team news for the match.",
+        "Kicker reports on the fixture as a La Liga top-of-the-table clash."
+      ],
+      "context": "Barcelona lead the La Liga table ahead of the match at the Civitas Metropolitano.",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Atletico Madrid recebe Barcelona na Liga espanhola",
+      "dek": "Atletico Madrid recebe Barcelona após derrota para o Bayern",
+      "facts": [
+        "Atletico Madrid enfrenta Barcelona num jogo da Liga espanhola em 8 de Novembro de 2026",
+        "Barcelona lidera a tabela da Liga espanhola antes do encontro",
+        "Atletico Madrid perdeu por 0-2 ao Bayern Munich na Liga dos Campeões antes deste jogo",
+        "A Al Jazeera fornece actualizações em direto e notícias das equipas para o jogo"
+      ],
+      "body": [
+        "Atletico Madrid recebe Barcelona num jogo da Liga espanhola em 8 de novembro de 2026. Barcelona entra no encontro como líder da tabela.",
+        "Atletico Madrid sofreu uma derrota por 0-2 para o Bayern Munique na Liga dos Campeões antes deste encontro da Liga espanhola.",
+        "A Al Jazeera fornece atualizações em direto por texto e notícias das equipas para o jogo.",
+        "O Kicker reporta o encontro como um confronto da Liga espanhola entre os primeiros classificados."
+      ],
+      "context": "Barcelona lidera a tabela da Liga espanhola antes do jogo no Civitas Metropolitano",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "アトレティコ・マドリードがバルセロナをホームに迎える",
+      "dek": "バイエルン戦敗北のバルセロナ、アトレティコ・マドリードがホームで挑む",
+      "facts": [
+        "アトレティコ・マドリードが2026年11月8日にバルセロナとラ・リーガで対戦",
+        "バルセロラが試合前にラ・リーガ首位",
+        "アトレティコ・マドリードはチャンピオンズリーグでバイエルン・ミュンヘンに0-2で敗戦",
+        "アルジャジーラがライブテキスト更新とチーム情報を提供"
+      ],
+      "body": [
+        "アトレティコ・マドリードがホームでバルセロナを迎えるラ・リーガの一戦は、2026年11月8日に行われる。バルセロナはリーグ首位で試合に臨む。",
+        "アトレティコ・マドリードはチャンピオンズリーグでバイエルン・ミュンヘンに0-2で敗れた後、このラ・リーガの対戦に臨む。",
+        "アルジャジーラがライブのテキスト更新とチーム情報を提供する。",
+        "キッカーはこの試合をラ・リーガの首位対決として報じている。"
+      ],
+      "context": "バルセロナはシビタス・メトロポリターノでの試合前にラ・リーガ首位を守る",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Sports & Fair Play Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts 4 and 5 are unsupported or over-interpreted. Fact 4 claims Kicker calls the match a 'high-profile test', which is not in the source text. Fact 5 claims the match 'represents a key fixture', which is an evaluative summary. The body contains repeated sentence openings ('Atletico Madrid' starts two consecutive sentences). The 'context' section contains an evaluative summary ('two of Spain's most prominent football clubs'). The dek is overly long at 32 words, exceeding the 30-word limit. The headline is 55 characters, which is acceptable but could be tightened."
+    ]
+  }
+}
