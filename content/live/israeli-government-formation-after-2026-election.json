@@ -1,9 +1,336 @@
 {
+  "meta": {
+    "outlets": [
+      "BBC",
+      "NPR",
+      "DW",
+      "France 24",
+      "Al Jazeera",
+      "ABC Australia",
+      "New York Times",
+      "Fox News",
+      "The Hill",
+      "Axios",
+      "Dawn",
+      "Le Monde"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
+  },
   "slug": "israeli-government-formation-after-2026-election",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "Israeli government formation after 2026 election",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "en": {
+      "dek": "Israeli President Isaac Herzog has tasked opposition leader Gadi Eisenkot with forming a new government, setting off coalition talks that will determine the country's next prime minister.",
+      "title": "Israeli government formation after 2026 election"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794095040000-4fwd",
+      "at": "2026-11-07T23:44:00.000Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Gadi Eisenkot is a former military chief",
+          "body": "The Straits Times described Eisenkot as an ex-general. The Washington Post described him as an ex-military chief."
+        },
+        "fr": {
+          "headline": "Gadi Eisenkot est un ancien chef militaire",
+          "body": "The Straits Times a décrit Eisenkot comme un ex-général. The Washington Post l’a décrit comme un ancien chef militaire."
+        },
+        "de": {
+          "headline": "Gadi Eisenkot ist ein ehemaliger militärischer Chef",
+          "body": "Die Straits Times bezeichnete Eisenkot als Ex-General. Die Washington Post bezeichnete ihn als ehemaligen militärischen Chef."
+        },
+        "it": {
+          "headline": "Gadi Eisenkot è un ex capo militare",
+          "body": "The Straits Times ha descritto Eisenkot come un ex generale. Il Washington Post lo ha descritto come ex capo militare."
+        },
+        "es": {
+          "headline": "Gadi Eisenkot es un exjefe militar",
+          "body": "The Straits Times describió a Eisenkot como exgeneral. The Washington Post lo describió como exjefe militar."
+        },
+        "pt": {
+          "headline": "Gadi Eisenkot é um antigo chefe militar",
+          "body": "O Straits Times descreveu Eisenkot como um ex-general. O Washington Post descreveu-o como um antigo chefe militar."
+        },
+        "zh": {
+          "headline": "加迪·埃曾科特是前军事首长",
+          "body": "《海峡时报》称埃曾科特是前将军。《华盛顿邮报》称他是前军事首长。"
+        },
+        "ko": {
+          "headline": "가디 아이젠코트는 전직 군 수장이다",
+          "body": "스트레이트스 타임즈는 아이젠코트를 전직中将이라고 설명했다. 워싱턴 포스트는 그를 전직 군 수장이라고 설명했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Straits Times",
+          "title": "Who is Gadi Eisenkot, the ex-general tasked with forming new Israeli government",
+          "url": "https://www.straitstimes.com/world/middle-east/who-is-gadi-eisenkot-the-ex-general-tasked-with-forming-new-israeli-government",
+          "publishedAt": "2026-11-07T23:44:00.000Z"
+        },
+        {
+          "outlet": "The Washington Post",
+          "title": "Ex-military chief Gadi Eisenkot, opponent of Netanyahu, tapped to form government",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPNkNJbUh4ZFl6NzBHZjJZVU85UGhmUnIzSnBXZUhrczJyNldvUWNHYndxc293NGFwOG1Yb2JaeEdmVW1nYWU1dmdrYVJXU2NVdFZERGN6TjZSUFk3WmhzTjdHd2RZdWx5OFZQOEx6V3lOeVY5dTlwV0pidXZ6RWN3MVlPU20xQWJmcjlPdzJtSlZWMld0QkpESFVkbEpfa3k4ZzJhc2Z1QzR2OGdEdlFfQ3VBWjZvZWtDSXhuN0taZFNFU1E4?oc=5",
+          "publishedAt": "2026-11-07T23:13:19.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-07T22:19:59.000Z",
+      "id": "u-1794089999000-qped",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Präsident Isaac Herzog erklärte am Samstag, er habe dem Oppositionsführer Gadi Eisenkot die erste Chance zur Regierungsbildung gegeben. Eisenkot ist ein ehemaliger Militärchef und führt laut The Guardian und Axios die Partei Yashar.",
+          "headline": "Israelischer Präsident beauftragt Gadi Eisenkot mit der Regierungsbildung"
+        },
+        "en": {
+          "body": "President Isaac Herzog said on Saturday that he had given opposition leader Gadi Eisenkot the first chance to form a government. Eisenkot is a former military chief who leads the Yashar party, according to The Guardian and Axios.",
+          "headline": "Israeli president tasks Gadi Eisenkot with forming a government"
+        },
+        "fr": {
+          "body": "Le président Isaac Herzog a déclaré samedi avoir donné au chef de l’opposition Gadi Eisenkot la première chance de former un gouvernement. Eisenkot est un ancien chef militaire qui dirige le parti Yashar, selon The Guardian et Axios.",
+          "headline": "Le président israélien charge Gadi Eisenkot de former un gouvernement"
+        },
+        "it": {
+          "body": "Il presidente Isaac Herzog ha detto sabato di aver concesso al capo dell'opposizione Gadi Eisenkot la prima possibilità di formare un governo. Eisenkot è un ex capo militare che guida il partito Yashar, secondo The Guardian e Axios.",
+          "headline": "Il presidente israeliano incarica Gadi Eisenkot di formare un governo"
+        },
+        "pt": {
+          "body": "O presidente Isaac Herzog disse no sábado que havia dado ao líder da oposição Gadi Eisenkot a primeira oportunidade de formar um governo. Eisenkot é um antigo chefe militar que lidera o partido Yashar, segundo o The Guardian e o Axios.",
+          "headline": "Presidente israelita incumbe Gadi Eisenkot de formar um governo"
+        },
+        "es": {
+          "headline": "El presidente israelí encarga a Gadi Eisenkot formar un gobierno",
+          "body": "El presidente Isaac Herzog dijo el sábado que había dado al líder de la oposición Gadi Eisenkot la primera oportunidad de formar un gobierno. Eisenkot es un exjefe militar que dirige el partido Yashar, según The Guardian y Axios."
+        },
+        "zh": {
+          "headline": "以色列总统授权加迪·埃曾科特组阁",
+          "body": "总统艾萨克·赫尔佐格周六表示，他已给予反对党领袖加迪·埃曾科特首次组阁机会。据《卫报》和Axios报道，埃曾科特是前军事首长，领导Yashar党。"
+        },
+        "ko": {
+          "headline": "이스라엘 대통령, 가디 아이젠코트에 정부 구성 지시",
+          "body": "이삭 헤르조그 대통령은 토요일에 반대당 지도자인 가디 아이젠코트에게 정부를 구성할 첫 기회를 줬다고 말했다. 가디언과 악시오스에 따르면 아이젠코트는 야샤르당을 이끄는 전직 군 수장이다."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
+          "title": "Israel's president tasks opposition leader Eisenkot with forming government",
+          "outlet": "BBC",
+          "publishedAt": "2026-11-07T22:19:59.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQ2hLdHByWTZwTzZfZ1oxdmpTcXltazRXS3hxcEczRm1taGhHd0JJSW9KVEdmMDlUMjRsai02SzdkbkNwWFRwZnBXelM5TldhSG10anV2dE1tSGVXbFRERHdBSWI3bkN3bC1pTDkySGZEakxPUWd0X2xsa011SWxYcFFR?oc=5",
+          "title": "Israel’s president taps opposition candidate Eisenkot to form a government, in setback for Netanyahu",
+          "outlet": "AP News",
+          "publishedAt": "2026-11-07T21:09:00.000Z"
+        },
+        {
+          "url": "https://www.axios.com/2026/11/07/israel-eisenkot-netanyahu-government-herzog",
+          "title": "Netanyahu rival Eisenkot tapped to form Israeli government",
+          "outlet": "Axios",
+          "publishedAt": "2026-11-07T20:48:32.000Z"
+        },
+        {
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/07/israeli-president-tasks-eisenkot-netanyahu-s-main-opponent-with-forming-government_6774550_4.html",
+          "title": "Israeli president tasks Eisenkot, Netanyahu's main opponent, with forming government",
+          "outlet": "Le Monde",
+          "publishedAt": "2026-11-07T20:34:18.000Z"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government?traffic_source=rss",
+          "title": "Israel’s president picks Eisenkot over Netanyahu to form next government",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-11-07T20:26:58.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYTZjUWtqZE5xNi1MSGprM2UxMzFpWml5MFNDakFiclhwN0VERnNudk9reHJaVm1LcmN0VXNUcy1yTWNQREVFd0JkQTd0WDk5aFBiZm5ZQTI3bWYzMXFjc2RxX2FFZnIyRi01UkhoNkxBbm1FT3FjYTJPaU9TRExzby1oS24?oc=5",
+          "title": "Israel’s president gives Gadi Eisenkot first shot at forming a government",
+          "outlet": "Financial Times",
+          "publishedAt": "2026-11-07T20:20:57.000Z"
+        },
+        {
+          "url": "https://www.scmp.com/news/world/middle-east/article/3373671/israels-president-taps-eisenkot-form-government-setback-netanyahu",
+          "title": "Israel’s president taps Eisenkot to form government, in setback for Netanyahu",
+          "outlet": "South China Morning Post",
+          "publishedAt": "2026-11-07T20:05:19.000Z"
+        },
+        {
+          "url": "https://www.dw.com/en/israeli-president-tasks-gadi-eisenkot-with-forming-government/a-79888288?maca=en-rss-en-all-1573-rdf",
+          "title": "Israeli president tasks Gadi Eisenkot with forming government",
+          "outlet": "DW",
+          "publishedAt": "2026-11-07T19:56:00.000Z"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/11/07/world/middleeast/israel-eisenkot-government.html",
+          "title": "Eisenkot, Netanyahu Rival and Opposition Leader, Tapped to Try to Form Government",
+          "outlet": "New York Times",
+          "publishedAt": "2026-11-07T19:50:21.000Z"
+        },
+        {
+          "url": "https://www.abc.net.au/news/2026-11-08/israel-president-prime-minister-government-picked-eisenkot/107360472",
+          "title": "Israeli president picks Gadi Eisenkot, Netanyahu rival, to form government",
+          "outlet": "ABC Australia",
+          "publishedAt": "2026-11-07T19:41:50.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQNmMzQUdtcVdKUXdTZGU4RUR2UW5ZMzlSMGRBMGRCcEFicnVlRFFtV1JNZWlTeVZ6c1MxWmRfOThPNVZpVEoySzdhZGhiUHN4cGItTkU1eW1JcXIyWGVhZDhNQ3k5LTVGeVgwWWYwZTNCR1hsaWtyMVJXWk9LMkszblY4bmRzWS1IbzVBaVFuVTVaaUUxa2tKVk9BYTA0NEJxRVRQRVUyVmxWa3ZSX24tNXNjQnVXQlVBQU8zSmJxOHlqb3NsVTdsUF83R0h2SmRFUllnWHRldEZHU1Bla2VZcG5zS1QzV21fNnlGUTRlMWJzQV9iZnlNdVNWeDRDdzc3S0NHazF3eDR6Sm9nakpUSkVB?oc=5",
+          "title": "Israeli President to Task Gadi Eisenkot With Forming Governing Coalition",
+          "outlet": "Haaretz",
+          "publishedAt": "2026-11-07T19:28:00.000Z"
+        }
+      ],
+      "importance": 4
+    },
+    {
+      "at": "2026-11-07T20:34:18.000Z",
+      "id": "u-1794083658000-b991",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Le Monde berichtete, dass Eisenkot 28 Tage Zeit hat, eine Regierung zu bilden. Al Jazeera und The Straits Times berichteten ebenfalls von der 28-Tage-Frist.",
+          "headline": "Eisenkot hat 28 Tage Zeit, eine Regierung zu bilden"
+        },
+        "en": {
+          "body": "Le Monde reported that Eisenkot will have 28 days to form a government. Al Jazeera and The Straits Times also reported the 28-day deadline.",
+          "headline": "Eisenkot has 28 days to form a government"
+        },
+        "fr": {
+          "body": "Le Monde a rapporté qu’Eisenkot disposera de 28 jours pour former un gouvernement. Al Jazeera et The Straits Times ont également fait état de ce délai de 28 jours.",
+          "headline": "Eisenkot dispose de 28 jours pour former un gouvernement"
+        },
+        "it": {
+          "body": "Le Monde ha riportato che Eisenkot avrà 28 giorni per formare un governo. Al Jazeera e The Straits Times hanno riportato anch'essi il termine di 28 giorni.",
+          "headline": "Eisenkot ha 28 giorni per formare un governo"
+        },
+        "pt": {
+          "body": "O Le Monde informou que Eisenkot terá 28 dias para formar um governo. A Al Jazeera e o The Straits Times também deram conta do prazo de 28 dias.",
+          "headline": "Eisenkot tem 28 dias para formar um governo"
+        },
+        "es": {
+          "headline": "Eisenkot tiene 28 días para formar un gobierno",
+          "body": "Le Monde informó de que Eisenkot tendrá 28 días para formar un gobierno. Al Jazeera y The Straits Times también informaron del plazo de 28 días."
+        },
+        "zh": {
+          "headline": "埃曾科特有28天时间组阁",
+          "body": "《世界报》报道称，埃曾科特将有28天时间来组建政府。半岛电视台和《海峡时报》也报道了这一28天的期限。"
+        },
+        "ko": {
+          "headline": "아이젠코트, 정부 구성에 28일의 기한",
+          "body": "르 몽드는 아이젠코트에게 정부를 구성할 28일이 주어진다고 보도했다. 알자지라와 스트레이트스 타임즈도 28일 기한을 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/07/israeli-president-tasks-eisenkot-netanyahu-s-main-opponent-with-forming-government_6774550_4.html",
+          "title": "Israeli president tasks Eisenkot, Netanyahu's main opponent, with forming government",
+          "outlet": "Le Monde",
+          "publishedAt": "2026-11-07T20:34:18.000Z"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government?traffic_source=rss",
+          "title": "Israel’s president picks Eisenkot over Netanyahu to form next government",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-11-07T20:26:58.000Z"
+        },
+        {
+          "url": "https://www.straitstimes.com/world/middle-east/israeli-president-picks-gadi-eisenkot-netanyahu-rival-to-try-to-form-government",
+          "title": "Israeli president picks Netanyahu’s rival Gadi Eisenkot to try to form government",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-07T19:53:24.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-07T22:19:59.000Z",
+      "id": "u-1794089999000-pjbm",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Die BBC berichtete, dass weder der Block von Ministerpräsident Benjamin Netanyahu noch der von Oppositionsführer Gadi Eisenkot in der Wahl eine Mehrheit erreichte. NPR und ABC Australia bezeichneten die Wahl als festgefahren.",
+          "headline": "Weder Netanyahus Block noch Eisenkots Block sicherte eine Mehrheit"
+        },
+        "en": {
+          "body": "BBC reported that neither Prime Minister Benjamin Netanyahu's bloc nor opposition leader Gadi Eisenkot's secured a majority in the election. NPR and ABC Australia described the vote as deadlocked.",
+          "headline": "Neither Netanyahu's bloc nor Eisenkot's secured a majority"
+        },
+        "fr": {
+          "body": "La BBC a rapporté que ni le bloc du Premier ministre Benjamin Netanyahou ni celui du chef de l’opposition Gadi Eisenkot n’a obtenu de majorité lors de l’élection. NPR et ABC Australia ont décrit le scrutin comme étant bloqué.",
+          "headline": "Ni le bloc de Netanyahou ni celui d’Eisenkot n’ont obtenu de majorité"
+        },
+        "it": {
+          "body": "La BBC ha riportato che né il blocco del primo ministro Benjamin Netanyahu né quello del capo dell'opposizione Gadi Eisenkot hanno ottenuto una maggioranza alle elezioni. NPR e ABC Australia hanno descritto il voto come bloccato.",
+          "headline": "Né il blocco di Netanyahu né quello di Eisenkot hanno ottenuto una maggioranza"
+        },
+        "pt": {
+          "body": "A BBC informou que nem o bloco do primeiro-ministro Benjamin Netanyahu nem o do líder da oposição Gadi Eisenkot obtiveram maioria nas eleições. A NPR e a ABC Australia descreveram a votação como estando em impasse.",
+          "headline": "Nem o bloco de Netanyahu nem o de Eisenkot obtiveram maioria"
+        },
+        "es": {
+          "headline": "Ni el bloque de Netanyahu ni el de Eisenkot obtuvieron una mayoría",
+          "body": "BBC informó de que ni el bloque del primer ministro Benjamín Netanyahu ni el del líder de la oposición Gadi Eisenkot obtuvieron una mayoría en las elecciones. NPR y ABC Australia describieron la votación como bloqueada."
+        },
+        "zh": {
+          "headline": "内塔尼亚胡阵营与埃曾科特阵营均未获多数",
+          "body": "BBC报道称，本雅明·内塔尼亚胡总理的阵营和反对党领袖加迪·埃曾科特的阵营均未在选举中获得多数。NPR和澳大利亚广播公司将此次投票描述为陷入僵局。"
+        },
+        "ko": {
+          "headline": "네타냐후의 연합도 아이젠코트의 연합도 과반수를 확보하지 못했다",
+          "body": "BBC는 선거에서 벤야민 네타냐후首相의 연합도 반대당 지도자 가디 아이젠코트의 연합도 과반수를 확보하지 못했다고 보도했다. NPR과 호주 ABC는 투표가 막힌 상황이라고 설명했다."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
+          "title": "Israel's president tasks opposition leader Eisenkot with forming government",
+          "outlet": "BBC",
+          "publishedAt": "2026-11-07T22:19:59.000Z"
+        },
+        {
+          "url": "https://www.dawn.com/news/2042866/israeli-president-picks-netanyahus-rival-gadi-eisenkot-to-try-to-form-government",
+          "title": "Israeli president picks Netanyahu's rival Gadi Eisenkot to try to form government",
+          "outlet": "Dawn",
+          "publishedAt": "2026-11-07T21:07:14.000Z"
+        },
+        {
+          "url": "https://www.faz.net/aktuell/politik/ausland/israel-staatspraesident-herzog-beauftragt-gadi-eisenkot-mit-regierungsbildung-201662006.html",
+          "title": "Nach der Israel-Wahl: Gadi Eisenkot wird mit Regierungsbildung beauftragt",
+          "outlet": "FAZ",
+          "publishedAt": "2026-11-07T20:28:45.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/07/g-s1-152536/netanyahu-israel-government-eisenkot-herzog",
+          "title": "Israel's president taps opposition candidate, not Netanyahu, to form a government",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-07T20:18:18.000Z"
+        },
+        {
+          "url": "https://news.sky.com/story/blow-for-netanyahu-as-opposition-rival-asked-to-form-government-by-israels-president-13609540",
+          "title": "Blow for Netanyahu as opposition rival asked to form government by Israel's president",
+          "outlet": "Sky News",
+          "publishedAt": "2026-11-07T20:10:00.000Z"
+        },
+        {
+          "url": "https://www.abc.net.au/news/2026-11-08/israel-president-prime-minister-government-picked-eisenkot/107360472",
+          "title": "Israeli president picks Gadi Eisenkot, Netanyahu rival, to form government",
+          "outlet": "ABC Australia",
+          "publishedAt": "2026-11-07T19:41:50.000Z"
+        }
+      ],
+      "importance": 4
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "israel",
     "gadi eisenkot",
@@ -16,224 +343,6 @@
     "election 2026",
     "yashar",
     "mandate"
-  ],
-  "startedAt": "2026-11-07T22:58:27.341Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-07T23:05:48.285Z",
-  "articleSlug": null,
-  "sourceCount": 16,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1794089999000-qped",
-      "at": "2026-11-07T22:19:59.000Z",
-      "kind": "result",
-      "importance": 4,
-      "locales": {
-        "en": {
-          "headline": "Israeli president tasks Gadi Eisenkot with forming a government",
-          "body": "President Isaac Herzog said on Saturday that he had given opposition leader Gadi Eisenkot the first chance to form a government. Eisenkot is a former military chief who leads the Yashar party, according to The Guardian and Axios."
-        },
-        "fr": {
-          "headline": "Le président israélien charge Gadi Eisenkot de former un gouvernement",
-          "body": "Le président Isaac Herzog a déclaré samedi avoir donné au chef de l’opposition Gadi Eisenkot la première chance de former un gouvernement. Eisenkot est un ancien chef militaire qui dirige le parti Yashar, selon The Guardian et Axios."
-        },
-        "it": {
-          "headline": "Il presidente israeliano incarica Gadi Eisenkot di formare un governo",
-          "body": "Il presidente Isaac Herzog ha detto sabato di aver concesso al capo dell'opposizione Gadi Eisenkot la prima possibilità di formare un governo. Eisenkot è un ex capo militare che guida il partito Yashar, secondo The Guardian e Axios."
-        },
-        "de": {
-          "headline": "Israelischer Präsident beauftragt Gadi Eisenkot mit der Regierungsbildung",
-          "body": "Präsident Isaac Herzog erklärte am Samstag, er habe dem Oppositionsführer Gadi Eisenkot die erste Chance zur Regierungsbildung gegeben. Eisenkot ist ein ehemaliger Militärchef und führt laut The Guardian und Axios die Partei Yashar."
-        },
-        "pt": {
-          "headline": "Presidente israelita incumbe Gadi Eisenkot de formar um governo",
-          "body": "O presidente Isaac Herzog disse no sábado que havia dado ao líder da oposição Gadi Eisenkot a primeira oportunidade de formar um governo. Eisenkot é um antigo chefe militar que lidera o partido Yashar, segundo o The Guardian e o Axios."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "BBC",
-          "title": "Israel's president tasks opposition leader Eisenkot with forming government",
-          "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
-          "publishedAt": "2026-11-07T22:19:59.000Z"
-        },
-        {
-          "outlet": "AP News",
-          "title": "Israel’s president taps opposition candidate Eisenkot to form a government, in setback for Netanyahu",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQ2hLdHByWTZwTzZfZ1oxdmpTcXltazRXS3hxcEczRm1taGhHd0JJSW9KVEdmMDlUMjRsai02SzdkbkNwWFRwZnBXelM5TldhSG10anV2dE1tSGVXbFRERHdBSWI3bkN3bC1pTDkySGZEakxPUWd0X2xsa011SWxYcFFR?oc=5",
-          "publishedAt": "2026-11-07T21:09:00.000Z"
-        },
-        {
-          "outlet": "Axios",
-          "title": "Netanyahu rival Eisenkot tapped to form Israeli government",
-          "url": "https://www.axios.com/2026/11/07/israel-eisenkot-netanyahu-government-herzog",
-          "publishedAt": "2026-11-07T20:48:32.000Z"
-        },
-        {
-          "outlet": "Le Monde",
-          "title": "Israeli president tasks Eisenkot, Netanyahu's main opponent, with forming government",
-          "url": "https://www.lemonde.fr/en/international/article/2026/11/07/israeli-president-tasks-eisenkot-netanyahu-s-main-opponent-with-forming-government_6774550_4.html",
-          "publishedAt": "2026-11-07T20:34:18.000Z"
-        },
-        {
-          "outlet": "Al Jazeera",
-          "title": "Israel’s president picks Eisenkot over Netanyahu to form next government",
-          "url": "https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government?traffic_source=rss",
-          "publishedAt": "2026-11-07T20:26:58.000Z"
-        },
-        {
-          "outlet": "Financial Times",
-          "title": "Israel’s president gives Gadi Eisenkot first shot at forming a government",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYTZjUWtqZE5xNi1MSGprM2UxMzFpWml5MFNDakFiclhwN0VERnNudk9reHJaVm1LcmN0VXNUcy1yTWNQREVFd0JkQTd0WDk5aFBiZm5ZQTI3bWYzMXFjc2RxX2FFZnIyRi01UkhoNkxBbm1FT3FjYTJPaU9TRExzby1oS24?oc=5",
-          "publishedAt": "2026-11-07T20:20:57.000Z"
-        },
-        {
-          "outlet": "South China Morning Post",
-          "title": "Israel’s president taps Eisenkot to form government, in setback for Netanyahu",
-          "url": "https://www.scmp.com/news/world/middle-east/article/3373671/israels-president-taps-eisenkot-form-government-setback-netanyahu",
-          "publishedAt": "2026-11-07T20:05:19.000Z"
-        },
-        {
-          "outlet": "DW",
-          "title": "Israeli president tasks Gadi Eisenkot with forming government",
-          "url": "https://www.dw.com/en/israeli-president-tasks-gadi-eisenkot-with-forming-government/a-79888288?maca=en-rss-en-all-1573-rdf",
-          "publishedAt": "2026-11-07T19:56:00.000Z"
-        },
-        {
-          "outlet": "New York Times",
-          "title": "Eisenkot, Netanyahu Rival and Opposition Leader, Tapped to Try to Form Government",
-          "url": "https://www.nytimes.com/2026/11/07/world/middleeast/israel-eisenkot-government.html",
-          "publishedAt": "2026-11-07T19:50:21.000Z"
-        },
-        {
-          "outlet": "ABC Australia",
-          "title": "Israeli president picks Gadi Eisenkot, Netanyahu rival, to form government",
-          "url": "https://www.abc.net.au/news/2026-11-08/israel-president-prime-minister-government-picked-eisenkot/107360472",
-          "publishedAt": "2026-11-07T19:41:50.000Z"
-        },
-        {
-          "outlet": "Haaretz",
-          "title": "Israeli President to Task Gadi Eisenkot With Forming Governing Coalition",
-          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQNmMzQUdtcVdKUXdTZGU4RUR2UW5ZMzlSMGRBMGRCcEFicnVlRFFtV1JNZWlTeVZ6c1MxWmRfOThPNVZpVEoySzdhZGhiUHN4cGItTkU1eW1JcXIyWGVhZDhNQ3k5LTVGeVgwWWYwZTNCR1hsaWtyMVJXWk9LMkszblY4bmRzWS1IbzVBaVFuVTVaaUUxa2tKVk9BYTA0NEJxRVRQRVUyVmxWa3ZSX24tNXNjQnVXQlVBQU8zSmJxOHlqb3NsVTdsUF83R0h2SmRFUllnWHRldEZHU1Bla2VZcG5zS1QzV21fNnlGUTRlMWJzQV9iZnlNdVNWeDRDdzc3S0NHazF3eDR6Sm9nakpUSkVB?oc=5",
-          "publishedAt": "2026-11-07T19:28:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794083658000-b991",
-      "at": "2026-11-07T20:34:18.000Z",
-      "kind": "context",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Eisenkot has 28 days to form a government",
-          "body": "Le Monde reported that Eisenkot will have 28 days to form a government. Al Jazeera and The Straits Times also reported the 28-day deadline."
-        },
-        "fr": {
-          "headline": "Eisenkot dispose de 28 jours pour former un gouvernement",
-          "body": "Le Monde a rapporté qu’Eisenkot disposera de 28 jours pour former un gouvernement. Al Jazeera et The Straits Times ont également fait état de ce délai de 28 jours."
-        },
-        "it": {
-          "headline": "Eisenkot ha 28 giorni per formare un governo",
-          "body": "Le Monde ha riportato che Eisenkot avrà 28 giorni per formare un governo. Al Jazeera e The Straits Times hanno riportato anch'essi il termine di 28 giorni."
-        },
-        "de": {
-          "headline": "Eisenkot hat 28 Tage Zeit, eine Regierung zu bilden",
-          "body": "Le Monde berichtete, dass Eisenkot 28 Tage Zeit hat, eine Regierung zu bilden. Al Jazeera und The Straits Times berichteten ebenfalls von der 28-Tage-Frist."
-        },
-        "pt": {
-          "headline": "Eisenkot tem 28 dias para formar um governo",
-          "body": "O Le Monde informou que Eisenkot terá 28 dias para formar um governo. A Al Jazeera e o The Straits Times também deram conta do prazo de 28 dias."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Le Monde",
-          "title": "Israeli president tasks Eisenkot, Netanyahu's main opponent, with forming government",
-          "url": "https://www.lemonde.fr/en/international/article/2026/11/07/israeli-president-tasks-eisenkot-netanyahu-s-main-opponent-with-forming-government_6774550_4.html",
-          "publishedAt": "2026-11-07T20:34:18.000Z"
-        },
-        {
-          "outlet": "Al Jazeera",
-          "title": "Israel’s president picks Eisenkot over Netanyahu to form next government",
-          "url": "https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government?traffic_source=rss",
-          "publishedAt": "2026-11-07T20:26:58.000Z"
-        },
-        {
-          "outlet": "The Straits Times",
-          "title": "Israeli president picks Netanyahu’s rival Gadi Eisenkot to try to form government",
-          "url": "https://www.straitstimes.com/world/middle-east/israeli-president-picks-gadi-eisenkot-netanyahu-rival-to-try-to-form-government",
-          "publishedAt": "2026-11-07T19:53:24.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794089999000-pjbm",
-      "at": "2026-11-07T22:19:59.000Z",
-      "kind": "context",
-      "importance": 4,
-      "locales": {
-        "en": {
-          "headline": "Neither Netanyahu's bloc nor Eisenkot's secured a majority",
-          "body": "BBC reported that neither Prime Minister Benjamin Netanyahu's bloc nor opposition leader Gadi Eisenkot's secured a majority in the election. NPR and ABC Australia described the vote as deadlocked."
-        },
-        "fr": {
-          "headline": "Ni le bloc de Netanyahou ni celui d’Eisenkot n’ont obtenu de majorité",
-          "body": "La BBC a rapporté que ni le bloc du Premier ministre Benjamin Netanyahou ni celui du chef de l’opposition Gadi Eisenkot n’a obtenu de majorité lors de l’élection. NPR et ABC Australia ont décrit le scrutin comme étant bloqué."
-        },
-        "it": {
-          "headline": "Né il blocco di Netanyahu né quello di Eisenkot hanno ottenuto una maggioranza",
-          "body": "La BBC ha riportato che né il blocco del primo ministro Benjamin Netanyahu né quello del capo dell'opposizione Gadi Eisenkot hanno ottenuto una maggioranza alle elezioni. NPR e ABC Australia hanno descritto il voto come bloccato."
-        },
-        "de": {
-          "headline": "Weder Netanyahus Block noch Eisenkots Block sicherte eine Mehrheit",
-          "body": "Die BBC berichtete, dass weder der Block von Ministerpräsident Benjamin Netanyahu noch der von Oppositionsführer Gadi Eisenkot in der Wahl eine Mehrheit erreichte. NPR und ABC Australia bezeichneten die Wahl als festgefahren."
-        },
-        "pt": {
-          "headline": "Nem o bloco de Netanyahu nem o de Eisenkot obtiveram maioria",
-          "body": "A BBC informou que nem o bloco do primeiro-ministro Benjamin Netanyahu nem o do líder da oposição Gadi Eisenkot obtiveram maioria nas eleições. A NPR e a ABC Australia descreveram a votação como estando em impasse."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "BBC",
-          "title": "Israel's president tasks opposition leader Eisenkot with forming government",
-          "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
-          "publishedAt": "2026-11-07T22:19:59.000Z"
-        },
-        {
-          "outlet": "Dawn",
-          "title": "Israeli president picks Netanyahu's rival Gadi Eisenkot to try to form government",
-          "url": "https://www.dawn.com/news/2042866/israeli-president-picks-netanyahus-rival-gadi-eisenkot-to-try-to-form-government",
-          "publishedAt": "2026-11-07T21:07:14.000Z"
-        },
-        {
-          "outlet": "FAZ",
-          "title": "Nach der Israel-Wahl: Gadi Eisenkot wird mit Regierungsbildung beauftragt",
-          "url": "https://www.faz.net/aktuell/politik/ausland/israel-staatspraesident-herzog-beauftragt-gadi-eisenkot-mit-regierungsbildung-201662006.html",
-          "publishedAt": "2026-11-07T20:28:45.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "Israel's president taps opposition candidate, not Netanyahu, to form a government",
-          "url": "https://www.npr.org/2026/11/07/g-s1-152536/netanyahu-israel-government-eisenkot-herzog",
-          "publishedAt": "2026-11-07T20:18:18.000Z"
-        },
-        {
-          "outlet": "Sky News",
-          "title": "Blow for Netanyahu as opposition rival asked to form government by Israel's president",
-          "url": "https://news.sky.com/story/blow-for-netanyahu-as-opposition-rival-asked-to-form-government-by-israels-president-13609540",
-          "publishedAt": "2026-11-07T20:10:00.000Z"
-        },
-        {
-          "outlet": "ABC Australia",
-          "title": "Israeli president picks Gadi Eisenkot, Netanyahu rival, to form government",
-          "url": "https://www.abc.net.au/news/2026-11-08/israel-president-prime-minister-government-picked-eisenkot/107360472",
-          "publishedAt": "2026-11-07T19:41:50.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus",
@@ -290,32 +399,18 @@
     "https://news.google.com/rss/articles/CBMijwFBVV95cUxOOW5VeUVjRFBvLVVWeFZZcVBGZ3lzc1hjOGNaSFowRWJYczBiakRwclNZTjNZM2ZxTkJIMVJ4SHhObzB6THN5M3pSdW9UMVk0YXR4QnVIMUdXb0JUejRMTU9KNkZsNldQbWlXd1hFZ1N4WDV0UEtBZVZzaFFKZHo5MWlKQkk1eUtMbDNRSDVuWQ?oc=5",
     "https://news.google.com/rss/articles/CBMikwFBVV95cUxObFIwcHhGNjNNV2pMQUlKN3Z5U2FxNzdEa1NZWTFxVm11NW9obE1DQ29jUEdOZWppVjJzZjdzSEpoc0VIZlVpTkNoeE5wNmlkRi1hV3c5ODVJYktOc3liaDhNZ3VBYkdqdFdqRzMxU28xeFktOTkyak5hSHc0bjRYeDJKMGlBMUJXZTRMMm5wc2czVHc?oc=5",
     "https://news.google.com/rss/articles/CBMiakFVX3lxTE5TeUNiSDFDMjdhOHNsX0RPeTdBNVZZcU43eG80SXFaWXdJY1YzTXlDZjdBdjV3MHNQZG12WFo5OGhGOU1kWGdjWjY0b0tuYmhHV05LWENZdWc1NHdyV1B0ZklTaHo1RWFUZ3c?oc=5",
-    "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdkhpYmVmdFdGSG02aHY3SnpoZ0FOWE1EVG1NWXRFdmhCVlRWdUwyUUJrNUdVUERqcDZ1ZHJoYkNnNWRSaUQweUtMSloyVUZkY1JZM2V5TmVoSVFUT1Y1R3hyMUcxZngxZmd6ZW5VMEhYMkloZGpvd3pXT1ZKcWF2N1B1QnY2SlBKTU5TNlBFTVJJdmZCLVpDZHZYYXdxRkpkb3c4TUxMdmFDcjVfNlJSMG1Ub0pRYWpYZnZzR0tQbWpjRnZndExOMVZrYWhEVmpDRlczNTUwZVh5dHJFY0VaTGFueFBfdFg0ejFmbg?oc=5"
+    "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdkhpYmVmdFdGSG02aHY3SnpoZ0FOWE1EVG1NWXRFdmhCVlRWdUwyUUJrNUdVUERqcDZ1ZHJoYkNnNWRSaUQweUtMSloyVUZkY1JZM2V5TmVoSVFUT1Y1R3hyMUcxZngxZmd6ZW5VMEhYMkloZGpvd3pXT1ZKcWF2N1B1QnY2SlBKTU5TNlBFTVJJdmZCLVpDZHZYYXdxRkpkb3c4TUxMdmFDcjVfNlJSMG1Ub0pRYWpYZnZzR0tQbWpjRnZndExOMVZrYWhEVmpDRlczNTUwZVh5dHJFY0VaTGFueFBfdFg0ejFmbg?oc=5",
+    "https://www.straitstimes.com/world/middle-east/netanyahu-says-coalition-with-arab-parties-would-dismantle-state-of-israel",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRzgyY1k3SHJDVUdNam55ZS1yUGdGQXpHZ0U5bjdxVGM4NHpHTkwyOXl0TmF1WVFzd3k2c1V6VjRsVEtDVjRmcGNRckw5VlgzelJHbjRVS01EOWhpYU9hYUZlbmZLNDVQMlJiekFLYlZvR2dsbHBSUWlIa2dWODljSzlqUDN5WGVRV05KaU5YN3ZqZ2lnYk1qcXVST19Sa2E4aG94SFFQSjNDTGZnU1VhVmw4c9IBuAFBVV95cUxNT1JOR1dsMWJXV0lSYjg0NDBPSndPQU5sLXZZOHlzLVlBMmRZMWVKZ1NZcjN1eGlVU2diNDdEdWwzakdYU2NKeWpOa2N0d2E3OWs1Y2RQRTd1aXVoY0hBM3NUTnJMZEkwTHhGZ0Z4TGhXRkw5c1FuZkdYOW9PLUh4NzJTWEU4MXNMdzg3R2NzR1JpakZFeHRMZU12VDhCbmIzU08zbnlySGJfTUVZWHA1d3pKZmdKeWpI?oc=5",
+    "https://www.straitstimes.com/world/middle-east/who-is-gadi-eisenkot-the-ex-general-tasked-with-forming-new-israeli-government",
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxPNkNJbUh4ZFl6NzBHZjJZVU85UGhmUnIzSnBXZUhrczJyNldvUWNHYndxc293NGFwOG1Yb2JaeEdmVW1nYWU1dmdrYVJXU2NVdFZERGN6TjZSUFk3WmhzTjdHd2RZdWx5OFZQOEx6V3lOeVY5dTlwV0pidXZ6RWN3MVlPU20xQWJmcjlPdzJtSlZWMld0QkpESFVkbEpfa3k4ZzJhc2Z1QzR2OGdEdlFfQ3VBWjZvZWtDSXhuN0taZFNFU1E4?oc=5",
+    "https://news.google.com/rss/articles/CBMi2AFBVV95cUxObWhqX3VPQWJ2OWhudFNOOWRXZmZSMmt4c28tQ1Y0ZTZxbEN5LUpiVlpVR09Fc2tNRlJPaF91dVozbTZ0WUNvXzluenQyQXFqbkh5Tjk5SEhuRlRWT2MtTExfTVZlYUVaakktTG0zbC1sYUpwQndSeXJWaHlQMmg3bnNXNXZrYVpEOGR3djJDYmJKNFM4MmNnT3VIdVFNazh5dHRONmszcG1ZT2JWWkdlVnNhNDlKT05hOG1hbHFXLVBabUNpaGZxWUJlQ0FFM28yYkd5MFFvSC0?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Israeli government formation after 2026 election",
-      "dek": "Israeli President Isaac Herzog has tasked opposition leader Gadi Eisenkot with forming a new government, setting off coalition talks that will determine the country's next prime minister."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "BBC",
-      "NPR",
-      "DW",
-      "France 24",
-      "Al Jazeera",
-      "ABC Australia",
-      "New York Times",
-      "Fox News",
-      "The Hill",
-      "Axios",
-      "Dawn",
-      "Le Monde"
-    ],
-    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
-  }
+  "startedAt": "2026-11-07T22:58:27.341Z",
+  "updatedAt": "2026-11-08T00:13:16.976Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": null,
+  "sourceCount": 17,
+  "seenHeadlines": []
 }
