@@ -93,6 +93,7 @@ jobs:
         timeout-minutes: 140
         env:
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

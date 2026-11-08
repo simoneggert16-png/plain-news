@@ -37,6 +37,11 @@ if (fs.existsSync('.env')) {
 // what a comment said last week.
 const OLLAMA_BASE = process.env.OLLAMA_BASE_URL || 'https://api.ollama.com';
 const NVIDIA_BASE = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
+const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
+const GEMINI_35_FLASH = 'gemini/gemini-3.5-flash';
+const GEMINI_36_FLASH = 'gemini/gemini-3.6-flash';
+let geminiCallsThisRun = 0;
+const GEMINI_MAX_CALLS = Number(process.env.GEMINI_MAX_CALLS_PER_RUN || 80);
 
 const OSS_120B = 'ollama/gpt-oss:120b';
 const GEMMA_31B = 'ollama/gemma4:31b';
@@ -48,7 +53,7 @@ const NVIDIA_MISTRAL = 'mistralai/mistral-large-4-1t-a52b';
 
 // A model without a key is not a fallback, it is six seconds of retry sleep
 // per call. Drop it from the chain up front.
-const usable = (list) => list.filter((m) => m.startsWith('ollama/') || process.env.NVIDIA_API_KEY);
+const usable = (list) => list.filter((m) => (m.startsWith('gemini/') && process.env.GEMINI_API_KEY) || m.startsWith('ollama/') || (!m.startsWith('gemini/') && process.env.NVIDIA_API_KEY));
 
 // Order is a measurement, not a preference. The probe on 2026-10-31 20:54,
 // with everything else idle, asked the same five-token JSON question and got:
@@ -58,18 +63,18 @@ const usable = (list) => list.filter((m) => m.startsWith('ollama/') || process.e
 //   per-call timeout on every single step of every shift; it goes behind the
 //   models that answer, not in front of them.
 export const MODELS = {
-  desk:       usable([process.env.DESK_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
-  writer:     usable([process.env.WRITER_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
+  desk:       usable([process.env.DESK_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
+  writer:     usable([process.env.WRITER_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B, OSS_20B]),
   // Translation is the highest-volume job and needs the surest hand. Measured
   // on 2026-10-31: minimax returned a full German headline, standfirst and
   // facts in 30.1 s, the fastest clean answer of the catalogue. step-5 is the
   // second opinion. mistral-large is out of this chain: it answers with its
   // reasoning trace ("The user wants me to reply with only a specific JS"), and
   // deepseek hangs past 90 s — both cost a full timeout per chunk.
-  translator: usable([process.env.TRANSLATOR_MODEL || NVIDIA_MINIMAX, NVIDIA_STEP, OSS_120B, GEMMA_31B, OSS_20B]),
-  editor:     usable([process.env.EDITOR_MODEL || NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B]),
+  translator: usable([process.env.TRANSLATOR_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_MINIMAX, NVIDIA_STEP, OSS_120B, GEMMA_31B, OSS_20B]),
+  editor:     usable([process.env.EDITOR_MODEL || GEMINI_36_FLASH, GEMINI_35_FLASH, NVIDIA_STEP, NVIDIA_MISTRAL, NVIDIA_MINIMAX, NVIDIA_DEEPSEEK, OSS_120B, GEMMA_31B]),
   // Live ticker: small prompts every few minutes, still needs clean prose.
-  live:       usable([process.env.LIVE_MODEL || NVIDIA_STEP, NVIDIA_MINIMAX, NVIDIA_MISTRAL, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B]),
+  live:       usable([process.env.LIVE_MODEL || GEMINI_35_FLASH, GEMINI_36_FLASH, NVIDIA_STEP, NVIDIA_MINIMAX, NVIDIA_MISTRAL, NVIDIA_DEEPSEEK, GEMMA_31B, OSS_120B]),
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -173,6 +178,50 @@ async function callNvidia(model, messages, { temperature = 0.2, maxTokens = 4096
   return { text: out.trim(), doneReason: choice?.finish_reason || null };
 }
 
+async function callGemini(model, messages, { temperature = 0.2, maxTokens = 4096, timeoutMs = 60_000 } = {}) {
+  const key = process.env.GEMINI_API_KEY;
+  if (!key) throw new Error('GEMINI_API_KEY missing');
+  if (geminiCallsThisRun >= GEMINI_MAX_CALLS) {
+    const err = new Error(`Gemini per-run cap (${GEMINI_MAX_CALLS}) reached`);
+    err.status = 429;
+    throw err;
+  }
+  geminiCallsThisRun++;
+  const sys = messages.filter((m) => m.role === 'system').map((m) => (typeof m.content === 'string' ? m.content : JSON.stringify(m.content))).join('\n\n');
+  const contents = messages.filter((m) => m.role !== 'system').map((m) => ({
+    role: m.role === 'assistant' ? 'model' : 'user',
+    parts: [{ text: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) }],
+  }));
+  if (!contents.length) contents.push({ role: 'user', parts: [{ text: sys || 'Hello' }] });
+  const body = {
+    contents,
+    generationConfig: {
+      temperature,
+      maxOutputTokens: maxTokens,
+      thinkingConfig: { thinkingBudget: 0 },
+    },
+  };
+  if (sys && messages.some((m) => m.role !== 'system')) {
+    body.systemInstruction = { parts: [{ text: sys }] };
+  }
+  const res = await fetch(`${GEMINI_BASE}/${model}:generateContent`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(timeoutMs),
+  });
+  if (!res.ok) {
+    const txt = await res.text().catch(() => '');
+    const err = new Error(`Gemini ${model} HTTP ${res.status}: ${txt.slice(0, 200)}`);
+    err.status = res.status;
+    throw err;
+  }
+  const json = await res.json();
+  const cand = json.candidates?.[0];
+  const out = (cand?.content?.parts || []).map((p) => p?.text || '').join('').trim();
+  return { text: out, doneReason: cand?.finishReason || null };
+}
+
 const disabledModels = new Map();
 
 /** Milliseconds until `model` may be asked again; 0 when it is free. */
@@ -208,9 +257,11 @@ export async function chat(role, messages, opts = {}) {
         ? { ...opts, timeoutMs: Math.max(5000, Math.min(opts.timeoutMs || 120_000, remaining)) }
         : opts;
       try {
-        const answer = model.startsWith('ollama/')
-          ? await callOllama(model.slice(7), messages, callOpts)
-          : await callNvidia(model, messages, callOpts);
+        const answer = model.startsWith('gemini/')
+          ? await callGemini(model.slice(7), messages, callOpts)
+          : model.startsWith('ollama/')
+            ? await callOllama(model.slice(7), messages, callOpts)
+            : await callNvidia(model, messages, callOpts);
         if (!answer.text.trim()) throw new Error(`${model} returned empty output`);
         return { text: answer.text, model, doneReason: answer.doneReason || null };
       } catch (e) {
