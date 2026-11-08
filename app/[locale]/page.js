@@ -53,8 +53,10 @@ export default async function Home({ params }) {
     return tk ? 4 + Math.min(6, Number(tk.updateCount) || 0) : 0;
   };
 
+  const freshCutoff = Date.now() - 12 * 36e5;
   const dayAgo = Date.now() - 30 * 36e5;
-  const recent = displayArticles.filter((a) => Date.parse(a.publishedAt) >= dayAgo);
+  const freshWindow = displayArticles.filter((a) => Date.parse(a.publishedAt) >= freshCutoff);
+  const recent = freshWindow.length >= 2 ? freshWindow : displayArticles.filter((a) => Date.parse(a.publishedAt) >= dayAgo);
   // Nothing on the German front page may be English: prefer articles that
   // actually have this locale. The most important story wins among those.
   // A "translation" that is byte-identical to the English title is a failed

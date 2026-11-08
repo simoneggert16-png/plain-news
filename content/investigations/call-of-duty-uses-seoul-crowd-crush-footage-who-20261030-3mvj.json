@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-11-07T22:40:47.180Z",
+  "updatedAt": "2026-11-08T13:40:03.817Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -265,6 +265,21 @@
       "readAt": "2026-11-07T22:38:10.303Z",
       "textLength": 1364,
       "image": "https://images.ft.com/v3/image/raw/https%3A%2F%2Fcms-image-bucket-productionv3-ap-northeast-1-a7d2.s3.ap-northeast-1.amazonaws.com%2Fimages%2F5%2F4%2F7%2F8%2F13388745-5-eng-GB%2Fd0551b4bea7b-photo_SXM2026110100007278.jpg?fit=cover&gravity=faces&dpr=2&quality=medium&source=nar-cms&format=jpg&width=1260&height=630"
+    },
+    {
+      "id": "S18",
+      "url": "https://www.theguardian.com/world/2026/nov/07/new-zealand-election-too-close-to-call-vote-count",
+      "outlet": "The Guardian",
+      "title": "New Zealand faces weeks of uncertainty with election ‘too close to call’ | New Zealand election 2026 | The Guardian",
+      "publishedAt": "2026-11-08T01:00:48.000Z",
+      "primary": false,
+      "kind": "read",
+      "addedAt": "2026-11-08T13:33:25.506Z",
+      "text": "Skip to main content Skip to navigation New Zealand’s prime minister and National party leader Christopher Luxon speaks at the election night function at the Viaduct events centre in Auckland on Saturday. Photograph: Bianca de Marchi/AAP View image in fullscreen New Zealand’s prime minister and National party leader Christopher Luxon speaks at the election night function at the Viaduct events centre in Auckland on Saturday. Photograph: Bianca de Marchi/AAP New Zealand faces weeks of uncertainty with election ‘too close to call’ National party will be largest in parliament but ultimate shape of next government won’t be settled for some time New Zealand could be facing a weeks-long wait to know the shape of its next government, after its nail-biting election failed to hand a decisive victory to either the incumbent rightwing coalition or opposition left bloc. On preliminary results, the centre-right National party, led by the prime minister, Christopher Luxon , managed to secure enough seats to govern alongside its traditional coalition partners, the libertarian Act and populist New Zealand First parties. But with some seats won by very slim margins, and special votes yet to be counted, that success is precarious, resulting in an election too close to call until official results are released on 27 November. Special votes include overseas votes and ballots cast outside a voter’s electorate. In 2023, 600,000 such votes were made, 21% of the total. These votes tend to favour the left – in 2023, special votes resulted in Te Pāti Māori (the Māori party) and the Greens gaining three seats between them. With nearly 100% of the regular votes counted on Saturday night, National secured 42 seats, Act 13 and New Zealand First 12. The combined 67-seat majority is wafer thin, with the left bloc just three seats behind. Speaking to a room full of the party faithful at Auckland’s Viaduct events centre just before midnight, Luxon said the results were “too close to call” and the special votes would need to be counted before negotiations could begin. National was still the largest party in parliament, he said, and had “a pathway to forming the next government”. National pipped Labour by 0.02% in the party vote. Labour, led by Chris Hipkins , secured 35 seats, while its traditional coalition partners the Greens won 16 and Te Pāti Māori five. Even with the seven seats from the centrist newcomer party, Opportunity, the left bloc is three seats short of forming a government. View image in fullscreen Labour leader, Chris Hipkins, speaks to supporters at the Cosmopolitan Club in Upper Hutt on Saturday. Photograph: Hollie Adams/Reuters Before a rowdy crowd of supporters at the Cosmopolitan Club in Upper Hutt, north of Wellington, Hipkins joked that New Zealand had spoken but “it may take a bit longer to work out what they’ve said”. “As things stand tonight, it is clear that we are not going to know the shape of our next government for a little while longer yet,” Hipkins said, promising that Labour would get “straight to work” should the final count land in its favour. The collapse of the two major parties, amid a sluggish economy and stubbornly high ⁠inflation, is feeding record support for the smaller parties, including Act, New Zealand First and the Greens. It is also helped propel Opportunity into parliament for the first time. Opinion polls in the lead-up to the election had Opportunity placed to become the kingmaker. At this stage, the right bloc does not need the party to govern, but if special votes change the landscape, its predicted role could come to fruition. Currently at 5.9%, the centrist party has met the threshold needed to enter parliament, a historic first. Since New Zealand adopted the mixed-member proportional (MMP) electoral system in 1996, no new party has been able to meet that threshold – all the other minor parties have been born from MPs or groups splintering from larger parties. The party’s leader, Qiulae Wong, told her suppor",
+      "readAt": "2026-11-08T13:33:25.506Z",
+      "textLength": 6603,
+      "image": "https://i.guim.co.uk/img/media/7fcb32a817f834d2911af2cc72d2a3a7d313ee0e/688_0_6880_5504/master/6880.jpg?width=465&dpr=1&s=none&crop=none",
+      "imageCaption": "New Zealand’s prime minister and National party leader Christopher Luxon speaks at the election night function at the Viaduct events centre in Auckland on Saturday. Photograph: Bianca de Marchi/AAP"
     }
   ],
   "claims": [
@@ -620,11 +635,6 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-11-07T13:40:47.655Z",
-      "steps": [],
-      "final": null
-    },
-    {
       "at": "2026-11-07T22:05:43.421Z",
       "steps": [
         {
@@ -791,6 +801,42 @@
         }
       ],
       "final": null
+    },
+    {
+      "at": "2026-11-08T13:35:26.578Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "The dossier has 17 sources but only five outlets actually carry claims (Yonhap, ChosunBiz, Mjengo Hub, GosuGamers, Herald Business) and no primary documents. The first gap a document can answer is the profit question: Activision Blizzard's own financial filings (SEC 10-Q/10-K) would show Call of Duty net bookings and whether the release performed. That is a primary document and also names the enti",
+          "action": "search",
+          "args": {
+            "query": "Activision Blizzard 10-Q third quarter 2026 SEC filing Call of Duty net bookings"
+          },
+          "ok": true,
+          "ms": 41107
+        },
+        {
+          "step": 2,
+          "thought": "The search returned one irrelevant opened page (Guardian NZ election) and no SEC filing. The desk wire does not appear to index EDGAR directly. I will name the institution and document explicitly: SEC EDGAR full-text search for Activision Blizzard quarterly report. If that fails, I can open the SEC EDGAR company filing index for Activision Blizzard (CIK 0001548772) — but I must only use URLs retur",
+          "action": "search",
+          "args": {
+            "query": "SEC EDGAR Activision Blizzard Inc quarterly report on Form 10-Q 2026 net revenues Call of Duty"
+          },
+          "ok": true,
+          "ms": 17365
+        },
+        {
+          "step": 3,
+          "thought": "SEC EDGAR is in the index and returned Activision Blizzard filings (CIK 0000718877), but only a 2023 10-Q. I need the most recent quarterly report covering the October 2026 Modern Warfare 4 release. Opening the EDGAR filing index page should expose links to the company's full filing history, from which I can reach the 2026 10-Q.",
+          "action": "open",
+          "args": {
+            "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023026269/"
+          },
+          "ok": true,
+          "ms": 27471
+        }
+      ],
+      "final": null
     }
   ],
   "nextStep": "keep reporting: 1/2 primary sources, no outreach sent",
@@ -835,7 +881,7 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 42,
+  "shifts": 43,
   "blankShifts": 0,
-  "lastShiftAt": "2026-11-07T22:36:06.725Z"
+  "lastShiftAt": "2026-11-08T13:30:52.595Z"
 }

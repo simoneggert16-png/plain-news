@@ -57,7 +57,7 @@ jobs:
           # Two hours is the shortest distance between two newsroom publishes:
           # every publish is a Vercel deployment, and the plan allows 100 of
           # them a day for the whole account.
-          if [ "$mins" -lt 120 ]; then
+          if [ "$mins" -lt 25 ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Skipping: published ${mins} min ago."
           fi
@@ -91,7 +91,7 @@ jobs:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           NVIDIA_BASE_URL: https://integrate.api.nvidia.com/v1
-          MAX_STORIES_PER_RUN: '12'
+          MAX_STORIES_PER_RUN: '18'
           MAX_PER_CATEGORY: '0'
           MIN_PER_CATEGORY_PER_CYCLE: '1'
           TARGET_PER_CATEGORY_PER_CYCLE: '0'
@@ -99,7 +99,7 @@ jobs:
           TRANSLATION_CONCURRENCY: ${{ vars.TRANSLATION_CONCURRENCY || '8' }}
           RUN_BUDGET_MINUTES: '35'
           RECENT_WINDOW_HOURS: '1'
-          MAX_ARTICLES_PER_DAY: '120'
+          MAX_ARTICLES_PER_DAY: '300'
           MAX_AGE_HOURS: '8'
           PER_FEED: '20'
           DESK_BATCH_SIZE: '60'
@@ -148,7 +148,7 @@ jobs:
             # ~90 min the newsroom alone asked for more deployments than the
             # plan allows in a day. Never sleep past the deadline - the step
             # timeout would kill the run before the handover.
-            pause=$(( 10800 - ($(date +%s) - started) ))
+            pause=$(( 1800 - ($(date +%s) - started) ))
             if [ "$pause" -gt 60 ] && [ $(( $(date +%s) + pause )) -lt "$deadline" ]; then
               sleep "$pause"
             fi
