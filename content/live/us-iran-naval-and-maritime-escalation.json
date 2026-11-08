@@ -1,9 +1,182 @@
 {
+  "meta": {
+    "outlets": [
+      "DW",
+      "The Hindu",
+      "The Straits Times",
+      "The Jerusalem Post"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+  },
   "slug": "us-iran-naval-and-maritime-escalation",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "US-Iran Naval and Maritime Escalation",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die Vereinigten Staaten entsenden eine neue Marineeinheit und attackieren ein iranisches Schiff nach einem Blockadebruch in der Straße von Hormus, während sich die Zwischenfälle zur See in der Region häufen.",
+      "title": "Eskalation zwischen den USA und dem Iran auf See"
+    },
+    "en": {
+      "dek": "The United States launches a new transit task force and strikes an Iranian ship following a blockade breach in the Strait of Hormuz, while regional maritime incidents multiply.",
+      "title": "US-Iran Naval and Maritime Escalation"
+    },
+    "es": {
+      "dek": "Estados Unidos pone en marcha una nueva fuerza de tarea de tránsito y ataca un buque iraní tras una violación del bloqueo en el estrecho de Ormuz, mientras se multiplican los incidentes marítimos regionales.",
+      "title": "Escalada naval y marítima entre Estados Unidos e Irán"
+    },
+    "fr": {
+      "dek": "Les États-Unis lancent une nouvelle force opérationnelle de transit et frappent un navire iranien à la suite d'une violation du blocus dans le détroit d'Hormuz, tandis que les incidents maritimes régionaux se multiplient.",
+      "title": "Escalade navale et maritime entre les États-Unis et l'Iran"
+    },
+    "it": {
+      "dek": "Gli Stati Uniti lanciano una nuova task force di transito e colpiscono una nave iraniana a seguito di una violazione del blocco nello Stretto di Hormuz, mentre si moltiplicano gli incidenti marittimi nella regione.",
+      "title": "Escalation navale e marittima tra Stati Uniti e Iran"
+    },
+    "ja": {
+      "dek": "ホルムズ海峡での封鎖突破を受け、米国は新たな輸送タスクフォースを発足させてイラン船を攻撃した一方、地域における海上での偶発的事件が相次いでいる。",
+      "title": "米・イラン、海上で緊張激化"
+    },
+    "ko": {
+      "dek": "미국이 호르무즈 해협에서의 봉쇄 돌파 사건 이후 새로운 통항 태스크포스를 창설하고 이란 선박을 타격한 가운데, 지역 내 해상 사건이 급증하고 있다.",
+      "title": "미·이란 해군 및 해상 긴장 고조"
+    },
+    "pt": {
+      "dek": "Os Estados Unidos lançam uma nova força-tarefa de trânsito e atacam um navio iraniano na sequência de uma rutura de bloqueio no Estreito de Ormuz, enquanto se multiplicam os incidentes marítimos regionais.",
+      "title": "Escalada naval e marítima entre os EUA e o Irão"
+    },
+    "zh": {
+      "dek": "在美国与伊朗在霍尔木兹海峡发生封锁突破事件后，美国成立了一个新的过境特遣部队并打击了一艘伊朗船只，同时地区海上事件不断增加。",
+      "title": "美伊海军与海上局势升级"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794147818000-9wy6",
+      "at": "2026-11-08T14:23:38.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "US and Iran report maritime incidents in Strait of Hormuz",
+          "body": "The US military reported striking a vessel attempting to leave an Iranian port, citing a naval blockade. Iranian media stated that three oil tankers caught fire in the Strait of Hormuz."
+        },
+        "it": {
+          "headline": "USA e Iran riferiscono di incidenti marittimi nello Stretto di Hormuz",
+          "body": "L'esercito statunitense ha riferito di aver colpito un'imbarcazione che tentava di lasciare un porto iraniano, citando un blocco navale. I media iraniani hanno dichiarato che tre petroliere hanno preso fuoco nello Stretto di Hormuz."
+        },
+        "de": {
+          "headline": "USA und Iran melden maritime Zwischenfälle in der Straße von Hormus",
+          "body": "Das US-Militär berichtete von einem Angriff auf ein Schiff, das versuchte, einen iranischen Hafen zu verlassen, und verwies dabei auf eine Seeblockade. Iranische Medien meldeten, dass in der Straße von Hormus drei Öltanker in Brand geraten seien."
+        },
+        "fr": {
+          "headline": "Les États-Unis et l'Iran font état d'incidents maritimes dans le détroit d'Ormuz",
+          "body": "L'armée américaine a rapporté avoir frappé un navire tentant de quitter un port iranien, invoquant un blocus naval. Les médias iraniens ont déclaré que trois pétroliers avaient pris feu dans le détroit d'Ormuz."
+        },
+        "es": {
+          "headline": "EE. UU. e Irán informan de incidentes marítimos en el estrecho de Ormuz",
+          "body": "El ejército estadounidense informó de un ataque a una embarcación que intentaba salir de un puerto iraní, citando un bloqueo naval. Los medios iraníes declararon que tres petroleros se incendiaron en el estrecho de Ormuz."
+        },
+        "zh": {
+          "headline": "美伊两国报告霍尔木兹海峡发生海上事件",
+          "body": "美国军方报告称，其打击了一艘试图离开伊朗港口的船只，并援引了海上封锁作为理由。伊朗媒体则称，霍尔木兹海峡有三艘油轮起火。"
+        },
+        "ja": {
+          "headline": "米とイラン、ホルムズ海峡での海上事案を報告",
+          "body": "米軍は、海上封鎖を理由にイランの港から出港しようとした船舶を攻撃したと報告した。一方、イランのメディアは、ホルムズ海峡で石油タンカー3隻が炎上したと報じた。"
+        },
+        "pt": {
+          "headline": "EUA e Irão reportam incidentes marítimos no Estreito de Ormuz",
+          "body": "Os militares dos EUA reportaram ter atingido uma embarcação que tentava sair de um porto iraniano, citando um bloqueio naval. A comunicação social iraniana afirmou que três petroleiros se incendiaram no Estreito de Ormuz."
+        },
+        "ko": {
+          "headline": "미국과 이란, 호르무즈 해협서 해상 사건 보고",
+          "body": "미군은 해상 봉쇄를 이유로 이란 항구를 떠나려던 선박을 타격했다고 밝혔다. 이란 언론은 호르무즈 해협에서 유조선 3척에 화재가 발생했다고 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Straits Times",
+          "title": "Iran suggests blasts are not US attacks as both sides report ships hit",
+          "url": "https://www.straitstimes.com/world/middle-east/iran-suggests-blasts-are-not-us-attacks-as-both-sides-report-ships-hit",
+          "publishedAt": "2026-11-08T14:23:38.000Z"
+        },
+        {
+          "outlet": "DW",
+          "title": "Iran: US strikes ship after Hormuz blockade breach",
+          "url": "https://www.dw.com/en/iran-us-strikes-ship-after-hormuz-blockade-breach/a-79890434?maca=en-rss-en-all-1573-rdf",
+          "publishedAt": "2026-11-08T13:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794142839000-hdyu",
+      "at": "2026-11-08T13:00:39.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Israel Defence Minister says Iran mission not complete",
+          "body": "Israeli Defence Minister Israel Katz stated that Iran is attempting to renew efforts to obtain nuclear weapons. Katz said the mission regarding Iran is not yet complete."
+        },
+        "it": {
+          "headline": "Il Ministro della Difesa israeliano afferma che la missione contro l'Iran non è conclusa",
+          "body": "Il Ministro della Difesa israeliano Israel Katz ha dichiarato che l'Iran sta tentando di rinnovare gli sforzi per ottenere armi nucleari. Katz ha affermato che la missione riguardante l'Iran non è ancora conclusa."
+        },
+        "de": {
+          "headline": "Israelischer Verteidigungsminister: Mission gegen Iran nicht abgeschlossen",
+          "body": "Der israelische Verteidigungsminister Israel Katz erklärte, der Iran unternehme neue Anstrengungen, um in den Besitz von Atomwaffen zu gelangen. Katz sagte, die Mission in Bezug auf den Iran sei noch nicht abgeschlossen."
+        },
+        "fr": {
+          "headline": "Le ministre israélien de la Défense affirme que la mission contre l'Iran n'est pas terminée",
+          "body": "Le ministre israélien de la Défense, Israël Katz, a déclaré que l'Iran tentait de renouveler ses efforts pour obtenir l'arme nucléaire. M. Katz a affirmé que la mission concernant l'Iran n'était pas encore achevée."
+        },
+        "es": {
+          "headline": "El ministro de Defensa de Israel afirma que la misión contra Irán no ha concluido",
+          "body": "El ministro de Defensa israelí, Israel Katz, declaró que Irán está intentando renovar sus esfuerzos para obtener armas nucleares. Katz afirmó que la misión respecto a Irán aún no ha finalizado."
+        },
+        "zh": {
+          "headline": "以色列国防部长称针对伊朗的任务尚未完成",
+          "body": "以色列国防部长伊斯雷尔·卡茨表示，伊朗正试图重启获取核武器的努力。卡茨称，针对伊朗的任务尚未完成。"
+        },
+        "ja": {
+          "headline": "イスラエル国防相、対イラン任務は「完了していない」と発言",
+          "body": "イスラエルのイスラエル・カッツ国防相は、イランが核兵器獲得に向けた取り組みを再開しようとしていると述べた。カッツ氏は、イランに関する任務はまだ完了していないと語った。"
+        },
+        "pt": {
+          "headline": "Ministro da Defesa de Israel diz que missão sobre o Irão não está concluída",
+          "body": "O ministro da Defesa de Israel, Israel Katz, declarou que o Irão está a tentar renovar os esforços para obter armas nucleares. Katz afirmou que a missão relativa ao Irão ainda não está concluída."
+        },
+        "ko": {
+          "headline": "이스라엘 국방장관, 이란 관련 임무 끝나지 않았다고 밝혀",
+          "body": "이스라엘 카츠 이스라엘 국방장관은 이란이 핵무기 확보를 위한 노력을 재개하려 한다고 밝혔다. 카츠 장관은 이란과 관련된 임무가 아직 끝나지 않았다고 말했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Hindu",
+          "title": "Israel Defence Minister says 'mission not complete' on Iran",
+          "url": "https://www.thehindu.com/news/international/israel-defence-minister-says-mission-not-complete-on-iran/article71680896.ece",
+          "publishedAt": "2026-11-08T13:00:39.000Z"
+        },
+        {
+          "outlet": "NDTV",
+          "title": "'Trying To Obtain Nuclear Weapons': Israel Says 'Iran Mission' Not Complete",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQaU1RYjBnenp0Uml2cEtUWlZGbkZxQkt1Wk45OGZ0TWsyMldRMTYydHMzelJDWVhJOS10VWtxcjVVTEJLb0hZZHF1T2Y2YXhTcDJhUUFDU2gwS2MyVjhJQjJVel8xQkxTNll3M215d2FUeEhZdkVDZnFvY2Z0SFIyVjBuRUtXTWxZQ1NDWDlBQVQ4clFCWkM0SUZHaDFhaXB0T0hKbFk4QkhVTFd2T3AxeERkc3hpR25uSTVCd0xVTkVEaXJqb1FBcEJn0gHSAUFVX3lxTE1FSlc3VFE5RGI0R3lpMW81Ym80bkl4TF85SWxHaTR3Y0F4dEhtVy1LTFhIeDBZQUt6NHQ0WFVHYjd1OUoxdEVYaFRHVW1UU0Ryb29zay1NQk1YY1ByaHJNU3k3cE1ZdEVZZ2xRa05kOExhV0hObEhXN3Fscy1Ga3VkR09oUTktaWhieUwzelFZZ3hvaGQ0M2lPSEZqLWFfVzdGVDV6NHQ0QjlSRmpJNDV2a1R5ZWFVWUJQc1ZRMjVIOTljUnh6eWNPb2NPRkdjbVZDQQ?oc=5",
+          "publishedAt": "2026-11-08T11:50:02.000Z"
+        },
+        {
+          "outlet": "i24NEWS",
+          "title": "DM Katz Says Iran Renewing Pursuit Of Nuclear Weapons, Warns Mission ‘not Yet Complete’",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQNTBVY0ZOOUhkQk1mYnpSX0p0VHpYbFRrRzRoSnNndmxlSU9samZYZG9aWmR4YkxaMHFHV3VWa2lqNWVWenlFNUV2YjNvRjZNa0psaVRfeGhMUDJhUDVwLW1DTnkxVkpROUhRR0ZUSGtkdHZ3X3htcWc5UUhTZEdrRXNzSlFHSjhMY0dPbl9GaFZVLUUxSWtuM19GdEM3emVJYU54Rmwycm04OXJ0dnB4bXAtQVRxN2NqUHBJYW45YzVwdTRaZER1R3lSVUJqSkxu?oc=5",
+          "publishedAt": "2026-11-08T10:11:47.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "iran",
     "united states",
@@ -15,61 +188,39 @@
     "maritime",
     "military"
   ],
+  "seenUrls": [
+    "https://www.jpost.com/middle-east/iran-news/article-914212",
+    "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack",
+    "https://www.straitstimes.com/world/middle-east/iran-suggests-blasts-are-not-us-attacks-as-both-sides-report-ships-hit",
+    "https://www.scmp.com/news/world/united-states-canada/article/3373129/donald-trump-elected-45th-president-united-states-2016-scmp-archive",
+    "https://www.channelnewsasia.com/world/europe-us-mediated-ukraine-russia-talks-abu-dhabi-6534261",
+    "https://www.jpost.com/middle-east/iran-news/article-914199",
+    "https://www.theguardian.com/us-news/2026/nov/08/datacenters-fossil-fuel-pipelines-regulations",
+    "https://www.thehindu.com/news/international/israel-defence-minister-says-mission-not-complete-on-iran/article71680896.ece",
+    "https://www.dw.com/en/iran-us-strikes-ship-after-hormuz-blockade-breach/a-79890434?maca=en-rss-en-all-1573-rdf",
+    "https://www.axios.com/2026/11/08/pete-hegseth-impeachment-house-republicans-massie",
+    "https://www.jpost.com/middle-east/iran-news/article-914189",
+    "https://www.theguardian.com/business/2026/nov/08/us-midterms-ai-datacentres-broligarchy-voter-backlash",
+    "https://news.google.com/rss/articles/CBMiygFBVV95cUxQaU1RYjBnenp0Uml2cEtUWlZGbkZxQkt1Wk45OGZ0TWsyMldRMTYydHMzelJDWVhJOS10VWtxcjVVTEJLb0hZZHF1T2Y2YXhTcDJhUUFDU2gwS2MyVjhJQjJVel8xQkxTNll3M215d2FUeEhZdkVDZnFvY2Z0SFIyVjBuRUtXTWxZQ1NDWDlBQVQ4clFCWkM0SUZHaDFhaXB0T0hKbFk4QkhVTFd2T3AxeERkc3hpR25uSTVCd0xVTkVEaXJqb1FBcEJn0gHSAUFVX3lxTE1FSlc3VFE5RGI0R3lpMW81Ym80bkl4TF85SWxHaTR3Y0F4dEhtVy1LTFhIeDBZQUt6NHQ0WFVHYjd1OUoxdEVYaFRHVW1UU0Ryb29zay1NQk1YY1ByaHJNU3k3cE1ZdEVZZ2xRa05kOExhV0hObEhXN3Fscy1Ga3VkR09oUTktaWhieUwzelFZZ3hvaGQ0M2lPSEZqLWFfVzdGVDV6NHQ0QjlSRmpJNDV2a1R5ZWFVWUJQc1ZRMjVIOTljUnh6eWNPb2NPRkdjbVZDQQ?oc=5",
+    "https://www.thehindu.com/news/international/iran-says-two-tankers-caught-fire-in-hormuz-after-hitting-mines/article71680557.ece",
+    "https://www.thehindu.com/news/international/us-launches-task-force-to-disrupt-land-transit-routes-into-iran/article71680871.ece",
+    "https://en.yna.co.kr/view/AEN20261108003800315",
+    "https://www.euronews.com/2026/11/08/us-forces-strike-commercial-vessel-in-gulf-of-oman-after-crew-ignored-repeated-warnings",
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE95U0ZtQmdNa0ZLb1ZDczdBNHVhcXJEdTRNLThfVWpPZW1WSjRwY0RERFEwTzFlOVJyb09UZ1h0aUh5OG1PNWI0YVFQeXhzbkdxOU0yX25yaDVwUFlHVWc?oc=5",
+    "https://www.lemonde.fr/en/international/article/2026/11/08/gadi-eisenkot-the-political-newcomer-tasked-with-forming-israel-s-government_6774913_4.html",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeDg0QW4wUFZWQjVteTZRLTB6Y3VpSUx4WUJOSGFnRGdGRWV2WGozTmFwNVdnWUFKbWpBZFVUSWZxQ2p1NEE4MVcwVGNyX3lnWnFGNEp4dkJlVXhyMFhEaU85OGxjVnQyWVQ5alBQQkZ3d3BteVNtaVAwQ0JmcHlNdnFjaFVDZGlUaVQ0eTg3UTVETmx0REgwYU9xTHM1aXpXdzhZSnJHdVJFM29hb2c?oc=5",
+    "https://www.kyivpost.com/post/89469",
+    "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQNTBVY0ZOOUhkQk1mYnpSX0p0VHpYbFRrRzRoSnNndmxlSU9samZYZG9aWmR4YkxaMHFHV3VWa2lqNWVWenlFNUV2YjNvRjZNa0psaVRfeGhMUDJhUDVwLW1DTnkxVkpROUhRR0ZUSGtkdHZ3X3htcWc5UUhTZEdrRXNzSlFHSjhMY0dPbl9GaFZVLUUxSWtuM19GdEM3emVJYU54Rmwycm04OXJ0dnB4bXAtQVRxN2NqUHBJYW45YzVwdTRaZER1R3lSVUJqSkxu?oc=5",
+    "https://www.france24.com/en/middle-east/20261108-middle-east-live-riyadh-financial-district-targeted-deadly-strikes-yemen-israel-eisenkot-netanyahu-coalition-government-elections",
+    "https://www.nytimes.com/2026/11/07/world/middleeast/israel-eisenkot-government.html",
+    "https://www.aljazeera.com/news/2026/11/8/democrats-congressional-win-could-strengthen-ukraines-hand-against-russia?traffic_source=rss",
+    "https://www.kyivpost.com/post/89466"
+  ],
   "startedAt": "2026-11-08T14:26:18.521Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-08T14:26:18.521Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-08T14:37:32.850Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "US-Iran Naval and Maritime Escalation",
-      "dek": "The United States launches a new transit task force and strikes an Iranian ship following a blockade breach in the Strait of Hormuz, while regional maritime incidents multiply."
-    },
-    "es": {
-      "title": "Escalada naval y marítima entre Estados Unidos e Irán",
-      "dek": "Estados Unidos pone en marcha una nueva fuerza de tarea de tránsito y ataca un buque iraní tras una violación del bloqueo en el estrecho de Ormuz, mientras se multiplican los incidentes marítimos regionales."
-    },
-    "de": {
-      "title": "Eskalation zwischen den USA und dem Iran auf See",
-      "dek": "Die Vereinigten Staaten entsenden eine neue Marineeinheit und attackieren ein iranisches Schiff nach einem Blockadebruch in der Straße von Hormus, während sich die Zwischenfälle zur See in der Region häufen."
-    },
-    "fr": {
-      "title": "Escalade navale et maritime entre les États-Unis et l'Iran",
-      "dek": "Les États-Unis lancent une nouvelle force opérationnelle de transit et frappent un navire iranien à la suite d'une violation du blocus dans le détroit d'Hormuz, tandis que les incidents maritimes régionaux se multiplient."
-    },
-    "pt": {
-      "title": "Escalada naval e marítima entre os EUA e o Irão",
-      "dek": "Os Estados Unidos lançam uma nova força-tarefa de trânsito e atacam um navio iraniano na sequência de uma rutura de bloqueio no Estreito de Ormuz, enquanto se multiplicam os incidentes marítimos regionais."
-    },
-    "zh": {
-      "title": "美伊海军与海上局势升级",
-      "dek": "在美国与伊朗在霍尔木兹海峡发生封锁突破事件后，美国成立了一个新的过境特遣部队并打击了一艘伊朗船只，同时地区海上事件不断增加。"
-    },
-    "it": {
-      "title": "Escalation navale e marittima tra Stati Uniti e Iran",
-      "dek": "Gli Stati Uniti lanciano una nuova task force di transito e colpiscono una nave iraniana a seguito di una violazione del blocco nello Stretto di Hormuz, mentre si moltiplicano gli incidenti marittimi nella regione."
-    },
-    "ja": {
-      "title": "米・イラン、海上で緊張激化",
-      "dek": "ホルムズ海峡での封鎖突破を受け、米国は新たな輸送タスクフォースを発足させてイラン船を攻撃した一方、地域における海上での偶発的事件が相次いでいる。"
-    },
-    "ko": {
-      "title": "미·이란 해군 및 해상 긴장 고조",
-      "dek": "미국이 호르무즈 해협에서의 봉쇄 돌파 사건 이후 새로운 통항 태스크포스를 창설하고 이란 선박을 타격한 가운데, 지역 내 해상 사건이 급증하고 있다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "DW",
-      "The Hindu",
-      "The Straits Times",
-      "The Jerusalem Post"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 5,
+  "seenHeadlines": []
 }

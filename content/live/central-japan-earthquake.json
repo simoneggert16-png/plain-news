@@ -8,12 +8,60 @@
       "Newsday"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.6-flash"
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
   },
   "slug": "central-japan-earthquake",
   "topic": "Central Japan earthquake",
   "status": "live",
-  "article": null,
+  "article": {
+    "slug": "central-japan-earthquake",
+    "updatedAt": "2026-11-08T14:38:42.210Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Magnitude 5.7 earthquake injures 24 people in central Japan",
+        "dek": "A magnitude 5.7 earthquake struck Shizuoka Prefecture early Sunday, resulting in 24 injuries and property damage.",
+        "facts": [
+          "The earthquake reached a magnitude of 5.7.",
+          "At least 24 people sustained injuries.",
+          "The tremor occurred at 1:04 a.m. at a depth of 40 kilometres.",
+          "No tsunami warning was issued by authorities.",
+          "Officials warned of potential strong aftershocks for the next two to three days."
+        ],
+        "body": [
+          "The number of people injured in the magnitude 5.7 earthquake in Shizuoka has risen to 24, according to Beinsure. CCTV footage captured the movement of streets during the tremor, Al Jazeera reported.",
+          "The earthquake occurred at 1:04 a.m. in Shizuoka Prefecture, about 40 kilometres below the earth's surface, according to The Hindu and The Japan Times. Aichi and Shizuoka are neighbouring regions, The Hindu reported.",
+          "Windows broke during the central Japan earthquake, according to AP News and The Seattle Times. The reports did not provide a total count of damaged buildings or broken windows.",
+          "No tsunami warning was issued after the earthquake, according to The Japan Times and Al Jazeera. Authorities warned of possible strong aftershocks in the coming days, Al Jazeera reported.",
+          "Officials issued warnings about potential strong earthquakes following the magnitude 5.7 tremor in central Japan. ABC Australia reported that officials expect the risk of subsequent quakes to be especially high over the next two to three days.",
+          "The meteorological agency initially reported the earthquake with a preliminary magnitude of 5.7, according to AP News. KGW and the Times of India reported the quake in central Japan."
+        ],
+        "context": "Shizuoka and Aichi are located in central Japan. The region is frequently monitored for seismic activity by the Japan Meteorological Agency.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Erdbeben der Stärke 5,7 verletzt 24 Menschen in Zentraljapan",
+        "dek": "Ein Erdbeben der Stärke 5,7 erschütterte am frühen Sonntagmorgen die Präfektur Shizuoka und forderte 24 Verletzte sowie Sachschäden.",
+        "facts": [
+          "Das Erdbeben erreichte eine Stärke von 5,7.",
+          "Mindestens 24 Menschen wurden verletzt.",
+          "Das Beben ereignete sich um 1:04 Uhr in einer Tiefe von 40 Kilometern.",
+          "Es wurde keine Tsunami-Warnung durch die Behörden herausgegeben.",
+          "Beamte warnten vor möglichen starken Nachbeben in den kommenden zwei bis drei Tagen."
+        ],
+        "body": [
+          "Die Zahl der Verletzten bei dem Erdbeben der Stärke 5,7 in Shizuoka ist laut Beinsure auf 24 gestiegen. Wie Al Jazeera berichtete, hielten Überwachungskameras die Erschütterungen der Straßen während des Bebens fest.",
+          "Das Erdbeben ereignete sich laut The Hindu und The Japan Times um 1:04 Uhr in der Präfektur Shizuoka in einer Tiefe von etwa 40 Kilometern unter der Erdoberfläche. Aichi und Shizuoka sind benachbarte Regionen, berichtete The Hindu.",
+          "Während des Erdbebens in Zentraljapan gingen Fensterscheiben zu Bruch, so AP News und The Seattle Times. Die Berichte nannten keine Gesamtzahl der beschädigten Gebäude oder zerbrochenen Fenster.",
+          "Nach dem Erdbeben wurde laut The Japan Times und Al Jazeera keine Tsunami-Warnung herausgegeben. Die Behörden warnten vor möglichen starken Nachbeben in den kommenden Tagen, berichtete Al Jazeera.",
+          "Beamte gaben Warnungen vor potenziell starken Erdbeben nach dem Beben der Stärke 5,7 in Zentraljapan heraus. ABC Australia berichtete, dass die Behörden das Risiko für nachfolgende Beben in den nächsten zwei bis drei Tagen als besonders hoch einstufen.",
+          "Die meteorologische Behörde gab das Erdbeben zunächst mit einer vorläufigen Stärke von 5,7 an, so AP News. KGW und die Times of India berichteten über das Beben in Zentraljapan."
+        ],
+        "context": "Shizuoka und Aichi liegen in Zentraljapan. Die Region wird von der Japanischen Meteorologischen Behörde regelmäßig auf seismische Aktivitäten überwacht."
+      }
+    },
+    "versions": []
+  },
   "endedAt": null,
   "locales": {
     "de": {
@@ -21,8 +69,8 @@
       "title": "Erdbeben in Zentraljapan"
     },
     "en": {
-      "title": "Earthquake in central Japan",
-      "dek": "A magnitude 5.7 earthquake struck central Japan, injuring dozens, with rescue and damage assessment efforts under way."
+      "dek": "A magnitude 5.7 earthquake struck central Japan, injuring dozens, with rescue and damage assessment efforts under way.",
+      "title": "Earthquake in central Japan"
     },
     "es": {
       "dek": "Un terremoto de magnitud 5,7 sacudió el centro de Japón, hiriendo a decenas de personas, con esfuerzos de rescate y evaluación de daños en marcha.",
@@ -55,62 +103,120 @@
   },
   "updates": [
     {
-      "id": "u-1794132625000-h8mq",
-      "at": "2026-11-08T10:10:25.000Z",
-      "kind": "context",
+      "id": "u-1794147939000-p5ei",
+      "at": "2026-11-08T14:25:39.000Z",
+      "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Officials warn of potential strong quakes following central Japan tremor",
-          "body": "Authorities issued warnings about potential strong earthquakes following the magnitude 5.7 tremor in central Japan. ABC Australia reported that officials expect the risk of subsequent quakes to be especially high over the next two to three days."
-        },
-        "es": {
-          "headline": "Las autoridades advierten de posibles terremotos fuertes tras el temblor en el centro de Japón",
-          "body": "Las autoridades emitieron avisos sobre posibles terremotos fuertes tras el temblor de magnitud 5,7 en el centro de Japón. ABC Australia informó de que las autoridades esperan que el riesgo de terremotos posteriores sea especialmente alto durante los próximos dos o tres días."
-        },
-        "it": {
-          "headline": "Le autorità avvertono di possibili forti terremoti dopo la scossa nel centro del Giappone",
-          "body": "Le autorità hanno emesso avvisi sulla possibilità di forti terremoti in seguito alla scossa di magnitudo 5,7 nel centro del Giappone. ABC Australia ha riportato che le autorità prevedono che il rischio di terremoti successivi sarà particolarmente elevato nei prossimi due o tre giorni."
-        },
-        "de": {
-          "headline": "Beamte warnen vor möglichen schweren Erdbeben nach Erschütterung in Zentraljapan",
-          "body": "Die Behörden warnten vor möglichen schweren Erdbeben nach der Erschütterung der Stärke 5,7 in Zentraljapan. ABC Australia berichtete, dass die Beamten das Risiko weiterer Erdbeben in den nächsten zwei bis drei Tagen als besonders hoch einschätzen."
+          "headline": "Injury toll rises to 24 following Shizuoka earthquake",
+          "body": "The number of people injured in the magnitude 5.7 earthquake in Shizuoka has risen to 24, according to Beinsure. Al Jazeera reported that CCTV footage captured the movement of streets during the tremor."
         },
         "fr": {
-          "headline": "Les autorités alertent sur la possibilité de forts séismes après la secousse au centre du Japon",
-          "body": "Les autorités ont émis des alertes sur la possibilité de forts séismes après la secousse de magnitude 5,7 au centre du Japon. ABC Australia a rapporté que les autorités estiment que le risque de séismes ultérieurs sera particulièrement élevé au cours des deux à trois prochains jours."
-        },
-        "ja": {
-          "headline": "官方、日本中部の地震後に強い地震の可能性を警戒",
-          "body": "authoritiesは、日本中部で発生したマグニチュード5.7の地震後、強い地震が発生する可能性について警告を出した。ABCオーストラリアによると、officialsは今後2～3日にかけて、その後の地震のリスクが特に高くなる見込みとしている。"
+          "headline": "Le bilan des blessés s'élève à 24 après le séisme de Shizuoka",
+          "body": "Le nombre de personnes blessées lors du séisme de magnitude 5,7 à Shizuoka est passé à 24, selon Beinsure. Al Jazeera a rapporté que des images de vidéosurveillance ont capturé le mouvement des rues pendant la secousse."
         },
         "pt": {
-          "headline": "Autoridades alertam para a possibilidade de terramotos fortes após tremor no centro do Japão",
-          "body": "As autoridades emitiram alertas sobre a possibilidade de terramotos fortes após o tremor de magnitude 5,7 no centro do Japão. A ABC Australia informou que as autoridades prevêem que o risco de novos terramotos seja particularmente elevado nos próximos dois a três dias."
+          "headline": "Sobe para 24 o número de feridos após sismo em Shizuoka",
+          "body": "O número de pessoas feridas no sismo de magnitude 5,7 em Shizuoka subiu para 24, segundo a Beinsure. A Al Jazeera noticiou que imagens de videovigilância captaram o movimento das ruas durante o tremor."
+        },
+        "de": {
+          "headline": "Zahl der Verletzten nach Erdbeben in Shizuoka auf 24 gestiegen",
+          "body": "Die Zahl der bei dem Erdbeben der Stärke 5,7 in Shizuoka verletzten Personen ist laut Beinsure auf 24 gestiegen. Wie Al Jazeera berichtete, hielten Überwachungskameras die Erschütterungen der Straßen während des Bebens fest."
         },
         "zh": {
-          "headline": "官员警告日本中部地震后可能发生强震",
-          "body": "日本中部发生5.7级地震后，当局就可能发生的强震发出警告。澳大利亚ABC报道称，官员预计未来两至三天发生后续地震的风险尤其高。"
+          "headline": "静冈地震受伤人数升至24人",
+          "body": "据Beinsure报道，静冈5.7级地震的受伤人数已升至24人。半岛电视台报道称，监控录像记录下了地震发生时街道晃动的画面。"
+        },
+        "ja": {
+          "headline": "静岡地震の負傷者、24人に増加",
+          "body": "Beinsureによると、静岡県で発生したマグニチュード5.7の地震による負傷者は24人に増加した。アルジャジーラは、地震発生時の街の揺れが監視カメラの映像に捉えられていたと報じている。"
         },
         "ko": {
-          "headline": "중부 일본 지진 이후 강한 지진 가능성에 경고한 당국",
-          "body": "중부 일본에서 규모 5.7의 지진이 발생한 뒤 당국은 강한 지진이 발생할 가능성에 대해 경고를 내렸다. ABC 호주에 따르면 당국은 앞으로 2~3일 동안 후속 지진의 위험이 특히 높을 것으로 예상하고 있다."
+          "headline": "시즈오카 지진 부상자 24명으로 증가",
+          "body": "베인슈어(Beinsure)에 따르면 시즈오카에서 발생한 규모 5.7의 지진으로 인한 부상자 수가 24명으로 늘어났다. 알자지라는 CCTV 영상에 지진 당시 거리가 흔들리는 모습이 포착됐다고 보도했다."
+        },
+        "es": {
+          "headline": "Asciende a 24 el número de heridos tras el terremoto en Shizuoka",
+          "body": "El número de personas heridas en el terremoto de magnitud 5,7 en Shizuoka ha ascendido a 24, según Beinsure. Al Jazeera informó que las cámaras de seguridad captaron el movimiento de las calles durante el temblor."
+        },
+        "it": {
+          "headline": "Sale il bilancio dei feriti dopo il terremoto a Shizuoka",
+          "body": "Il numero delle persone rimaste ferite nel terremoto di magnitudo 5.7 a Shizuoka è salito a 24, secondo quanto riportato da Beinsure. Al Jazeera ha riferito che le telecamere a circuito chiuso hanno ripreso il movimento delle strade durante la scossa."
         }
       },
       "sources": [
         {
-          "outlet": "ABC Australia",
-          "title": "Strong earthquake rocks central Japan, injuring at least 22",
+          "outlet": "Beinsure",
+          "title": "Japan earthquake 2026: Magnitude 5.7 quake injures 24 in Shizuoka",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMXIyYjktbEtRNnFON1NSbm1CMlk0WXBvcnliUnRZcDdhZTROUGR0SGtfMXJ6NkNEa0lqTVNxSlk5Zkl1Y2ppbTZIcmdVQXF0Uk9zYzRrTUZtcUV4TXM5MHU4Z2JfUUhFMWNYSGlOZ1ZxOS1UVi1veW5seTd3VDljOTlyRkxLcmppQVZlNy1BV2NoSHVYTnc?oc=5",
+          "publishedAt": "2026-11-08T14:25:39.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "CCTV captures streets shaking as 5.7-magnitude earthquake hits Japan",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPU0VFbnQyZThaQmNzb2J4RDRCSkZINGVjUU1TSUVUdzh6aEJPWkptUDJfaG12R3dTOWRmV2Y2UnlFLTJKbXVZWERRYnlPVmNFNkFXbEpqdlJpS2tFNll3YnA3VUlVZFRZdU52bVYtdG53VFA3bXlYOTBvRGVZem5pbVBQOEgwb3ZlTVdsNDVaRnFtTTJRU0lMX0ZhR3cwVDhxcmpaeVloYVc4WHJScjhhTUVtSnRiT2FBSVNR0gHAAUFVX3lxTE0xalJBTTJYXzdudHh1WUgxdEt4S1lqWWp5X3dFQkp3dzhNc19zbGJUOFVOaFBZYWEzTmw2QWpRM1lERnBBM0lVQ3dNWWl0QV9LNWIxVzVTN3hGM2xEY1l2N09hQ2tVX0dQdWo1amZhTHMwTW52NVRoRmVlX1NIR3hoTW1PQ28xMmZkUmJQbnZIQnF6T0p1REI1UE42eWF2ZU9WWFFKODNORmZtY2VWWDJ0NDhkSi13aXVuM2l0eVFEbA?oc=5",
+          "publishedAt": "2026-11-08T13:13:04.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-08T10:10:25.000Z",
+      "id": "u-1794132625000-h8mq",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Die Behörden warnten vor möglichen schweren Erdbeben nach der Erschütterung der Stärke 5,7 in Zentraljapan. ABC Australia berichtete, dass die Beamten das Risiko weiterer Erdbeben in den nächsten zwei bis drei Tagen als besonders hoch einschätzen.",
+          "headline": "Beamte warnen vor möglichen schweren Erdbeben nach Erschütterung in Zentraljapan"
+        },
+        "en": {
+          "body": "Authorities issued warnings about potential strong earthquakes following the magnitude 5.7 tremor in central Japan. ABC Australia reported that officials expect the risk of subsequent quakes to be especially high over the next two to three days.",
+          "headline": "Officials warn of potential strong quakes following central Japan tremor"
+        },
+        "es": {
+          "body": "Las autoridades emitieron avisos sobre posibles terremotos fuertes tras el temblor de magnitud 5,7 en el centro de Japón. ABC Australia informó de que las autoridades esperan que el riesgo de terremotos posteriores sea especialmente alto durante los próximos dos o tres días.",
+          "headline": "Las autoridades advierten de posibles terremotos fuertes tras el temblor en el centro de Japón"
+        },
+        "fr": {
+          "body": "Les autorités ont émis des alertes sur la possibilité de forts séismes après la secousse de magnitude 5,7 au centre du Japon. ABC Australia a rapporté que les autorités estiment que le risque de séismes ultérieurs sera particulièrement élevé au cours des deux à trois prochains jours.",
+          "headline": "Les autorités alertent sur la possibilité de forts séismes après la secousse au centre du Japon"
+        },
+        "it": {
+          "body": "Le autorità hanno emesso avvisi sulla possibilità di forti terremoti in seguito alla scossa di magnitudo 5,7 nel centro del Giappone. ABC Australia ha riportato che le autorità prevedono che il rischio di terremoti successivi sarà particolarmente elevato nei prossimi due o tre giorni.",
+          "headline": "Le autorità avvertono di possibili forti terremoti dopo la scossa nel centro del Giappone"
+        },
+        "ja": {
+          "body": "authoritiesは、日本中部で発生したマグニチュード5.7の地震後、強い地震が発生する可能性について警告を出した。ABCオーストラリアによると、officialsは今後2～3日にかけて、その後の地震のリスクが特に高くなる見込みとしている。",
+          "headline": "官方、日本中部の地震後に強い地震の可能性を警戒"
+        },
+        "ko": {
+          "body": "중부 일본에서 규모 5.7의 지진이 발생한 뒤 당국은 강한 지진이 발생할 가능성에 대해 경고를 내렸다. ABC 호주에 따르면 당국은 앞으로 2~3일 동안 후속 지진의 위험이 특히 높을 것으로 예상하고 있다.",
+          "headline": "중부 일본 지진 이후 강한 지진 가능성에 경고한 당국"
+        },
+        "pt": {
+          "body": "As autoridades emitiram alertas sobre a possibilidade de terramotos fortes após o tremor de magnitude 5,7 no centro do Japão. A ABC Australia informou que as autoridades prevêem que o risco de novos terramotos seja particularmente elevado nos próximos dois a três dias.",
+          "headline": "Autoridades alertam para a possibilidade de terramotos fortes após tremor no centro do Japão"
+        },
+        "zh": {
+          "body": "日本中部发生5.7级地震后，当局就可能发生的强震发出警告。澳大利亚ABC报道称，官员预计未来两至三天发生后续地震的风险尤其高。",
+          "headline": "官员警告日本中部地震后可能发生强震"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.abc.net.au/news/2026-11-08/japan-earthquake-aichi-prefecture-at-least-22-injured/107361392",
+          "title": "Strong earthquake rocks central Japan, injuring at least 22",
+          "outlet": "ABC Australia",
           "publishedAt": "2026-11-08T10:10:25.000Z"
         },
         {
-          "outlet": "TRT World",
-          "title": "5.7-magnitude earthquake hits central Japan, injuring at least 20",
           "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9hTDFkckppZmZkTkRDa0ZWbFJ3R19JVkYzRVBLNmJ5V1BDMGZOalljcXBVZ3laWjdPUlVSSW1zUEJBUExCTW5QcDdpaVpuUVJ0VDJCd0UyNG8?oc=5",
+          "title": "5.7-magnitude earthquake hits central Japan, injuring at least 20",
+          "outlet": "TRT World",
           "publishedAt": "2026-11-08T08:00:54.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-08T07:28:24.000Z",
@@ -129,29 +235,29 @@
           "body": "Se rompieron ventanas durante el terremoto registrado en el centro de Japón, según AP News y The Seattle Times. Ninguno de los dos informes indicó el número de edificios dañados ni de ventanas rotas.",
           "headline": "El terremoto rompió los vidrios en el centro de Japón"
         },
+        "fr": {
+          "body": "Des vitres se sont brisées lors du séisme survenu au centre du Japon, selon AP News et The Seattle Times. Aucun des deux articles n'a indiqué le nombre de bâtiments endommagés ou de vitres brisées.",
+          "headline": "Le séisme a brisé des vitres au centre du Japon"
+        },
         "it": {
           "body": "I vetri si sono rotti durante il terremoto che ha colpito il centro del Giappone, secondo AP News e The Seattle Times. Né l'uno né l'altro dei report ha indicato il numero di edifici danneggiati o di vetri infranti.",
           "headline": "Il terremoto ha infranto i vetri nel centro del Giappone"
         },
-        "fr": {
-          "headline": "Le séisme a brisé des vitres au centre du Japon",
-          "body": "Des vitres se sont brisées lors du séisme survenu au centre du Japon, selon AP News et The Seattle Times. Aucun des deux articles n'a indiqué le nombre de bâtiments endommagés ou de vitres brisées."
-        },
         "ja": {
-          "headline": "日本中部の地震で窓が割れる",
-          "body": "AP通信とSeattle Timesによると、日本中部の地震で窓が割れた。どちらの報道も、損壊した建物数や割れた窓の数については示していない。"
-        },
-        "pt": {
-          "headline": "Terramoto partiu janelas no centro do Japão",
-          "body": "Janelas partiram-se durante o terramoto no centro do Japão, segundo a AP News e o The Seattle Times. Nenhum dos relatórios indicou o número de edifícios danificados ou de janelas partidas."
-        },
-        "zh": {
-          "headline": "地震震碎日本中部多扇窗户",
-          "body": "据美联社和《西雅图时报》报道，日本中部地震期间窗户破裂。两篇报道均未提供受损建筑或破裂窗户的数量。"
+          "body": "AP通信とSeattle Timesによると、日本中部の地震で窓が割れた。どちらの報道も、損壊した建物数や割れた窓の数については示していない。",
+          "headline": "日本中部の地震で窓が割れる"
         },
         "ko": {
-          "headline": "중부 일본 지진으로 유리창 깨져",
-          "body": "AP 뉴스와 더 시애 타임스에 따르면 중부 일본 지진 당시 유리창이 깨졌다. 두 보도 모두 손상된 건물이나 깨진 유리창의 수를 밝히지 않았다."
+          "body": "AP 뉴스와 더 시애 타임스에 따르면 중부 일본 지진 당시 유리창이 깨졌다. 두 보도 모두 손상된 건물이나 깨진 유리창의 수를 밝히지 않았다.",
+          "headline": "중부 일본 지진으로 유리창 깨져"
+        },
+        "pt": {
+          "body": "Janelas partiram-se durante o terramoto no centro do Japão, segundo a AP News e o The Seattle Times. Nenhum dos relatórios indicou o número de edifícios danificados ou de janelas partidas.",
+          "headline": "Terramoto partiu janelas no centro do Japão"
+        },
+        "zh": {
+          "body": "据美联社和《西雅图时报》报道，日本中部地震期间窗户破裂。两篇报道均未提供受损建筑或破裂窗户的数量。",
+          "headline": "地震震碎日本中部多扇窗户"
         }
       },
       "sources": [
@@ -196,20 +302,20 @@
           "headline": "Il terremoto in Giappone si è verificato alle 1:04, a circa 40 km sotto Shizuoka"
         },
         "ja": {
-          "headline": "日本地震、静岡県下約40キロで午前1時4分に発生",
-          "body": "The Hinduとジャパン・タイムズによると、地震は静岡県で午前1時4分に発生し、地下約40キロの深さだった。The Hinduは、愛知県と静岡県は隣接する地域だと報じた。"
-        },
-        "pt": {
-          "headline": "Terramoto no Japão ocorreu às 1:04 da manhã, cerca de 40 km abaixo de Shizuoka",
-          "body": "O terramoto ocorreu às 1:04 da manhã na Prefeitura de Shizuoka, cerca de 40 quilómetros abaixo da superfície terrestre, segundo o The Hindu e o The Japan Times. Aichi e Shizuoka são regiões vizinhas, informou o The Hindu."
-        },
-        "zh": {
-          "headline": "日本静冈县地下约40公里处凌晨1时04分发生地震",
-          "body": "据《印度教徒报》和《日本时报》报道，地震于凌晨1时04分发生在静冈县，震源位于地下约40公里。《印度教徒报》报道，爱知和静冈是相邻地区。"
+          "body": "The Hinduとジャパン・タイムズによると、地震は静岡県で午前1時4分に発生し、地下約40キロの深さだった。The Hinduは、愛知県と静岡県は隣接する地域だと報じた。",
+          "headline": "日本地震、静岡県下約40キロで午前1時4分に発生"
         },
         "ko": {
-          "headline": "일본 지진, 1시 4분 쇼주오카 지하 약 40km에서 발생",
-          "body": "더 힌두와 더 재팬 타임스에 따르면 지진은 1시 4분에 쇼주오카현에서 지표면 아래 약 40킬로미터 깊이에서 발생했다. 더 힌두는 아이치와 쇼주오카가 서로 인접한 지역이라고 보도했다."
+          "body": "더 힌두와 더 재팬 타임스에 따르면 지진은 1시 4분에 쇼주오카현에서 지표면 아래 약 40킬로미터 깊이에서 발생했다. 더 힌두는 아이치와 쇼주오카가 서로 인접한 지역이라고 보도했다.",
+          "headline": "일본 지진, 1시 4분 쇼주오카 지하 약 40km에서 발생"
+        },
+        "pt": {
+          "body": "O terramoto ocorreu às 1:04 da manhã na Prefeitura de Shizuoka, cerca de 40 quilómetros abaixo da superfície terrestre, segundo o The Hindu e o The Japan Times. Aichi e Shizuoka são regiões vizinhas, informou o The Hindu.",
+          "headline": "Terramoto no Japão ocorreu às 1:04 da manhã, cerca de 40 km abaixo de Shizuoka"
+        },
+        "zh": {
+          "body": "据《印度教徒报》和《日本时报》报道，地震于凌晨1时04分发生在静冈县，震源位于地下约40公里。《印度教徒报》报道，爱知和静冈是相邻地区。",
+          "headline": "日本静冈县地下约40公里处凌晨1时04分发生地震"
         }
       },
       "sources": [
@@ -254,20 +360,20 @@
           "headline": "Nessun avviso di tsunami dopo il terremoto nel centro del Giappone"
         },
         "ja": {
-          "headline": "日本中部の地震後、津波警報は出されず",
-          "body": "ジャパン・タイムズとAl Jazeeraによると、地震後には津波警報が出されなかった。Al Jazeeraは、当局が今後数日内に強い余震の可能性があると警告したと報じた。"
-        },
-        "pt": {
-          "headline": "Não foi emitido alerta de tsunami após terramoto no centro do Japão",
-          "body": "Não foi emitido qualquer alerta de tsunami após o terramoto, segundo o The Japan Times e a Al Jazeera. As autoridades alertaram para a possibilidade de fortes réplicas nos próximos dias, informou a Al Jazeera."
-        },
-        "zh": {
-          "headline": "日本中部地震后未发布海啸警报",
-          "body": "据《日本时报》和半岛电视台报道，地震后未发布海啸警告。半岛电视台报道称，当局警告未来几天可能发生强烈余震。"
+          "body": "ジャパン・タイムズとAl Jazeeraによると、地震後には津波警報が出されなかった。Al Jazeeraは、当局が今後数日内に強い余震の可能性があると警告したと報じた。",
+          "headline": "日本中部の地震後、津波警報は出されず"
         },
         "ko": {
-          "headline": "중부 일본 지진 뒤 쓰나미 경보 발령 없음",
-          "body": "더 재팬 타임스와 알자지라에 따르면 지진 이후 쓰나미 경보는 발령되지 않았다. 알자지라는 당국이 앞으로 며칠 동안 강한 여진이 발생할 가능성에 대해 경고했다고 보도했다."
+          "body": "더 재팬 타임스와 알자지라에 따르면 지진 이후 쓰나미 경보는 발령되지 않았다. 알자지라는 당국이 앞으로 며칠 동안 강한 여진이 발생할 가능성에 대해 경고했다고 보도했다.",
+          "headline": "중부 일본 지진 뒤 쓰나미 경보 발령 없음"
+        },
+        "pt": {
+          "body": "Não foi emitido qualquer alerta de tsunami após o terramoto, segundo o The Japan Times e a Al Jazeera. As autoridades alertaram para a possibilidade de fortes réplicas nos próximos dias, informou a Al Jazeera.",
+          "headline": "Não foi emitido alerta de tsunami após terramoto no centro do Japão"
+        },
+        "zh": {
+          "body": "据《日本时报》和半岛电视台报道，地震后未发布海啸警告。半岛电视台报道称，当局警告未来几天可能发生强烈余震。",
+          "headline": "日本中部地震后未发布海啸警报"
         }
       },
       "sources": [
@@ -489,13 +595,22 @@
     "https://www.abc.net.au/news/2026-11-08/indonesia-helicopter-crash-borneo-australians/107361384",
     "https://www.france24.com/en/europe/20261108-poland-launches-terrorism-probe-into-krakow-mass-shooting",
     "https://www.kyivpost.com/post/89463",
-    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9hTDFkckppZmZkTkRDa0ZWbFJ3R19JVkYzRVBLNmJ5V1BDMGZOalljcXBVZ3laWjdPUlVSSW1zUEJBUExCTW5QcDdpaVpuUVJ0VDJCd0UyNG8?oc=5"
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9hTDFkckppZmZkTkRDa0ZWbFJ3R19JVkYzRVBLNmJ5V1BDMGZOalljcXBVZ3laWjdPUlVSSW1zUEJBUExCTW5QcDdpaVpuUVJ0VDJCd0UyNG8?oc=5",
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMXIyYjktbEtRNnFON1NSbm1CMlk0WXBvcnliUnRZcDdhZTROUGR0SGtfMXJ6NkNEa0lqTVNxSlk5Zkl1Y2ppbTZIcmdVQXF0Uk9zYzRrTUZtcUV4TXM5MHU4Z2JfUUhFMWNYSGlOZ1ZxOS1UVi1veW5seTd3VDljOTlyRkxLcmppQVZlNy1BV2NoSHVYTnc?oc=5",
+    "https://www.france24.com/en/poland-in-shock-after-6-killed-in-krakow-far-right-shooting",
+    "https://www.france24.com/en/mourning-in-poland-after-mass-shooting",
+    "https://www.kyivpost.com/post/89480",
+    "https://www.theguardian.com/technology/2026/nov/09/weakening-ai-copyright-law-will-spell-disaster-for-creativity-australia",
+    "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9iZXZjR2dRUmlEcDd2UlpsSWNLaTdWdlVNTl9ycDUtTDUzQXNUc3Z0VEVCb0dLYmVwb3VSYmZJNnhJcXBJelJ6Vkxia3h2N1NzSFlKclAxUFctcFY0cDJr?oc=5",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPU0VFbnQyZThaQmNzb2J4RDRCSkZINGVjUU1TSUVUdzh6aEJPWkptUDJfaG12R3dTOWRmV2Y2UnlFLTJKbXVZWERRYnlPVmNFNkFXbEpqdlJpS2tFNll3YnA3VUlVZFRZdU52bVYtdG53VFA3bXlYOTBvRGVZem5pbVBQOEgwb3ZlTVdsNDVaRnFtTTJRU0lMX0ZhR3cwVDhxcmpaeVloYVc4WHJScjhhTUVtSnRiT2FBSVNR0gHAAUFVX3lxTE0xalJBTTJYXzdudHh1WUgxdEt4S1lqWWp5X3dFQkp3dzhNc19zbGJUOFVOaFBZYWEzTmw2QWpRM1lERnBBM0lVQ3dNWWl0QV9LNWIxVzVTN3hGM2xEY1l2N09hQ2tVX0dQdWo1amZhTHMwTW52NVRoRmVlX1NIR3hoTW1PQ28xMmZkUmJQbnZIQnF6T0p1REI1UE42eWF2ZU9WWFFKODNORmZtY2VWWDJ0NDhkSi13aXVuM2l0eVFEbA?oc=5",
+    "https://www.theguardian.com/us-news/2026/nov/08/datacenters-fossil-fuel-pipelines-regulations",
+    "https://timesofindia.indiatimes.com/city/lucknow/2-wheeler-carrying-firecrackers-explodes-in-bahraich-injures-2-riders-2-bystanders/articleshow/135658402.cms"
   ],
   "startedAt": "2026-11-08T00:18:24.944Z",
-  "updatedAt": "2026-11-08T13:16:29.494Z",
+  "updatedAt": "2026-11-08T14:38:19.773Z",
   "importance": 5,
   "wantsStats": true,
-  "articleSlug": null,
-  "sourceCount": 11,
+  "articleSlug": "central-japan-earthquake",
+  "sourceCount": 12,
   "seenHeadlines": []
 }
