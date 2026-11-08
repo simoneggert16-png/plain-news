@@ -1,9 +1,200 @@
 {
+  "meta": {
+    "outlets": [
+      "Al Jazeera",
+      "Times of India",
+      "The Straits Times",
+      "The Kyiv Post"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "minimaxai/minimax-m3.1-flash"
+  },
   "slug": "houthi-missile-attacks-on-saudi-arabia",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Houthi missile attacks on Saudi Arabia",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Huthi-Kräfte feuerten Raketen in Richtung Riad, der Ostprovinz und Aramco-Einrichtungen ab, wobei die von Saudi-Arabien geführte Koalition mehrere Geschosse abfing.",
+      "title": "Raketenangriffe der Huthi auf Saudi-Arabien"
+    },
+    "en": {
+      "dek": "Houthi forces fired missiles toward Riyadh, the Eastern Province, and Aramco facilities, with the Saudi-led coalition intercepting several projectiles.",
+      "title": "Houthi missile attacks on Saudi Arabia"
+    },
+    "es": {
+      "dek": "Las fuerzas hutíes dispararon misiles hacia Riad, la Provincia Oriental e instalaciones de Aramco, mientras la coalición liderada por Arabia Saudí interceptaba varios proyectiles.",
+      "title": "Ataques hutíes con misiles contra Arabia Saudí"
+    },
+    "fr": {
+      "dek": "Les forces houthies ont tiré des missiles vers Riyad, la Province de l’Est et des installations d’Aramco, la coalition menée par l’Arabie saoudite ayant intercepté plusieurs projectiles.",
+      "title": "Attaques de missiles houthies contre l’Arabie saoudite"
+    },
+    "it": {
+      "dek": "Le forze houthi hanno lanciato missili verso Riad, la Provincia orientale e strutture di Aramco, con la coalizione guidata dall'Arabia Saudita che ha intercettato diversi proiettili.",
+      "title": "Attacchi missilistici degli Houthi contro l'Arabia Saudita"
+    },
+    "ja": {
+      "dek": "フーシ派の部隊がリヤド、東部州、アラムコの施設に向けてミサイルを発射し、サウジ主導の連合が複数の飛翔体を迎撃した。",
+      "title": "サウジアラビアへのフーシ派ミサイル攻撃"
+    },
+    "ko": {
+      "dek": "후티 군이 리야드와 동부 주, 아람코 시설을 향해 미사일을 발사했으며, 사우디 주도 연합군이 여러 발을 요격했다.",
+      "title": "사우디아라비아에 대한 후티 미사일 공격"
+    },
+    "pt": {
+      "dek": "As forças houthi lançaram mísseis na direção de Riade, da Província Oriental e de instalações da Aramco, tendo a coligação liderada pela Arábia Saudita interceptado vários projéteis.",
+      "title": "Ataques de mísseis houthi contra a Arábia Saudita"
+    },
+    "zh": {
+      "dek": "胡塞武装向利雅得、东部省以及沙特阿美设施发射导弹，沙特领导的多国联军拦截了数枚弹体。",
+      "title": "胡塞武装对沙特阿拉伯发动导弹袭击"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794130339000-2q2r",
+      "at": "2026-11-08T09:32:19.000Z",
+      "kind": "breaking",
+      "importance": 4,
+      "locales": {
+        "en": {
+          "headline": "Houthi missiles targeted Riyadh financial district, Aramco building damaged",
+          "body": "Missiles targeted the King Abdullah Financial District in Riyadh on 8 November, according to The Hindu, CNA, The Straits Times and Times of India. A Saudi ministry said an administrative building belonging to Saudi Aramco was damaged by falling debris after an attempted attack, The Straits Times reported, while witnesses described shattered glass and damage to several floors of an Aramco tower."
+        },
+        "de": {
+          "headline": "Huthi-Raketen griffen Riads Finanzviertel an – Aramco-Gebäude beschädigt",
+          "body": "Laut The Hindu, CNA, The Straits Times und Times of India zielten Raketen am 8. November auf das King Abdullah Financial District in Riad. Ein saudisches Ministerium erklärte laut The Straits Times, ein Verwaltungsgebäude von Saudi Aramco sei nach einem versuchten Angriff durch herabfallende Trümmer beschädigt worden. Zeugen berichteten von zersplittertem Glas und Schäden an mehreren Etagen eines Aramco-Turms."
+        },
+        "it": {
+          "headline": "Missili houthi hanno preso di mira il distretto finanziario di Riad, edificio di Aramco danneggiato",
+          "body": "Missili hanno preso di mira il King Abdullah Financial District di Riad l'8 novembre, secondo The Hindu, CNA, The Straits Times e Times of India. Un ministero saudita ha riferito che un edificio amministrativo di Saudi Aramco è stato danneggiato da detriti caduti dopo un tentato attacco, ha scritto The Straits Times, mentre i testimoni hanno descritto vetri infranti e danni a diversi piani di una torre di Aramco."
+        },
+        "fr": {
+          "headline": "Des missiles houthies ont visé le quartier financier de Riyad, un bâtiment d’Aramco endommagé",
+          "body": "Des missiles ont visé le King Abdullah Financial District à Riyad le 8 novembre, selon The Hindu, CNA, The Straits Times et Times of India. Un ministère saoudien a indiqué qu’un bâtiment administratif appartenant à Saudi Aramco avait été endommagé par des débris tombés après une tentative d’attaque, a rapporté The Straits Times, tandis que des témoins ont décrit du verre brisé et des dégâts sur plusieurs étages d’une tour d’Aramco."
+        },
+        "es": {
+          "headline": "Misiles hutíes contra el distrito financiero de Riad; un edificio de Aramco sufre daños",
+          "body": "El 8 de noviembre se dirigieron misiles contra el Distrito Financiero del Rey Abdullah en Riad, según The Hindu, CNA, The Straits Times y Times of India. Un ministerio saudí declaró que un edificio administrativo perteneciente a Saudi Aramco había sufrido daños por los escombros caídos tras un intento de ataque, informó The Straits Times, mientras testigos describieron cristales rotos y daños en varios pisos de una torre de Aramco."
+        },
+        "pt": {
+          "headline": "Mísseis dos Houthis visaram distrito financeiro de Riade; edifício da Aramco danificado",
+          "body": "Os mísseis visaram o Distrito Financeiro do Rei Abdullah, em Riade, a 8 de novembro, segundo The Hindu, CNA, The Straits Times e Times of India. Um ministério saudita informou que um edifício administrativo pertencente à Saudi Aramco foi danificado por destroços caídos após uma tentativa de ataque, de acordo com The Straits Times, enquanto testemunhas descreveram vidros estilhaçados e danos em vários andares de uma torre da Aramco."
+        },
+        "zh": {
+          "headline": "胡塞武装导弹袭击利雅得金融区，沙特阿美大楼受损",
+          "body": "据《印度教徒报》、新加坡通讯社、《海峡时报》和《印度时报》报道，导弹于11月8日瞄准利雅得的阿卜杜拉国王金融区。《海峡时报》报道，沙特阿美所属的一座行政大楼在一次袭击未遂后因坠落碎片而受损；目击者则称，阿美一座塔楼的玻璃碎裂，多个楼层受损。"
+        },
+        "ja": {
+          "headline": "フーシ派のミサイル、リヤドの金融地区が標的　アラムコ建物が被害",
+          "body": "『The Hindu』紙、CNA、『The Straits Times』紙、『Times of India』紙によると、11月8日、リヤドのキング・アブドゥラ金融地区がミサイルの標的となった。『The Straits Times』紙が報じたところでは、サウジの省庁は、攻撃未遂の後に落下した破片によって、サウジアラムコ所属の管理棟が被害を受けたと発表した。目撃者は、割れたガラスやアラムコ・タワーの数階に及んだ損傷をdescribed。"
+        },
+        "ko": {
+          "headline": "후티 미사일, 리야드 금융지구 겨냥…아람코 건물 훼손",
+          "body": "더 힌드, CNA, 스트레이트스 타임즈와 타임스 오브 인디아에 따르면 미사일들이 11월 8일 리야드의 킹 압둘라 금융지구를 겨냥했다. 스트레이트스 타임즈는 사우디 당국이 공격 시도 이후 낙하한 파편으로 사우디 아람코 소속 행정동 건물이 훼손됐다고 보도했다. 目撃자들은 깨진 유리와 아람코 타워 여러 층의 피해를GMO 목격자들은 깨진 유리와 아람코 타워 여러 층의 피해를 목격했다고 말했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Hindu",
+          "title": "Riyadh financial district targeted in missile attack, Aramco tower damaged: witnesses",
+          "url": "https://www.thehindu.com/news/international/riyadh-financial-district-targeted-in-missile-attack-aramco-tower-damaged-witnesses/article71680790.ece",
+          "publishedAt": "2026-11-08T09:32:19.000Z"
+        },
+        {
+          "outlet": "CNA",
+          "title": "Riyadh financial district targeted, Aramco tower damaged",
+          "url": "https://www.channelnewsasia.com/world/saudi-arabia-houthis-riyadh-financial-district-aramco-tower-6534071",
+          "publishedAt": "2026-11-08T09:14:00.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Riyadh financial district targeted, Aramco tower damaged: Witnesses",
+          "url": "https://www.straitstimes.com/world/middle-east/riyadh-financial-district-targeted-aramco-tower-damaged-witnesses",
+          "publishedAt": "2026-11-08T08:38:00.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Saudi Arabia intercepts Houthi missiles targeting Riyadh, Eastern province",
+          "url": "https://www.aljazeera.com/news/2026/11/8/saudi-arabia-intercepts-houthi-missiles-targeting-riyadh-eastern-province?traffic_source=rss",
+          "publishedAt": "2026-11-08T07:40:07.000Z"
+        },
+        {
+          "outlet": "Times of India",
+          "title": "Houthi attacks target Aramco facilities in Saudi Arabia as explosions rock Riyadh",
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/houthi-attacks-target-aramco-facilities-in-saudi-arabia-as-explosions-rock-riyadh/articleshow/135653867.cms",
+          "publishedAt": "2026-11-08T07:21:47.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Saudi Aramco building in Riyadh damaged by falling debris after attempted attack, ministry says",
+          "url": "https://www.straitstimes.com/world/middle-east/saudi-led-coalition-intercepts-two-houthi-missiles-fired-towards-riyadh",
+          "publishedAt": "2026-11-08T06:18:24.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794123607000-kmhc",
+      "at": "2026-11-08T07:40:07.000Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Houthis report at least 33 killed in Saudi air strike near Sanaa",
+          "body": "The Houthis said at least 33 people were killed in a Saudi coalition air strike on a village near Sanaa, according to the BBC and Al Jazeera. Saudi Arabia, which leads the coalition fighting the Houthis in Yemen, has not commented on the claim, the BBC reported."
+        },
+        "de": {
+          "headline": "Huthis melden mindestens 33 Todesopfer bei saudischem Luftangriff nahe Sanaa",
+          "body": "Die Huthis erklärten, bei einem Luftangriff der saudischen Koalition auf ein Dorf nahe Sanaa seien mindestens 33 Menschen getötet worden, berichteten BBC und Al Jazeera. Saudi-Arabien, das die Koalition anführt, die in Jemen gegen die Huthis kämpft, hat sich laut BBC zu der Behauptung nicht geäußert."
+        },
+        "it": {
+          "headline": "Gli Houthi riferiscono di almeno 33 morti in un attacco aereo saudita vicino a Sanaa",
+          "body": "Gli Houthi hanno dichiarato che almeno 33 persone sono state uccise in un attacco aereo della coalizione saudita su un villaggio vicino a Sanaa, secondo BBC e Al Jazeera. L'Arabia Saudita, che guida la coalizione che combatte gli Houthi in Yemen, non ha commentato l'affermazione, ha riportato la BBC."
+        },
+        "fr": {
+          "headline": "Les Houthis font état d’au moins 33 morts dans une frappe aérienne saoudienne près de Sanaa",
+          "body": "Les Houthis ont indiqué qu’au moins 33 personnes avaient été tuées lors d’une frappe aérienne de la coalition saoudienne sur un village près de Sanaa, selon la BBC et Al Jazeera. L’Arabie saoudite, qui dirige la coalition combattant les Houthis au Yémen, n’a pas commenté cette affirmation, a rapporté la BBC."
+        },
+        "es": {
+          "headline": "Los hutíes informan de al menos 33 muertos en un ataque aéreo saudí cerca de Sanaa",
+          "body": "Los hutíes dijeron que al menos 33 personas murieron en un ataque aéreo de la coalición saudí contra una aldea cercana a Sanaa, según la BBC y Al Jazeera. Arabia Saudí, que dirige la coalición que combate a los hutíes en Yemen, no ha comentado la afirmación, informó la BBC."
+        },
+        "pt": {
+          "headline": "Houthis reportam pelo menos 33 mortos em ataque aéreo saudita perto de Sanaa",
+          "body": "Os Houthis afirmaram que pelo menos 33 pessoas foram mortas num ataque aéreo da coalizão saudita numa aldeia perto de Sanaa, segundo a BBC e a Al Jazeera. A Arábia Saudita, que lidera a coalizão que combate os Houthis no Iémen, não se pronunciou sobre a alegação, informou a BBC."
+        },
+        "zh": {
+          "headline": "胡塞武装称，沙特空袭萨那附近造成至少33人死亡",
+          "body": "据英国广播公司和半岛电视台报道，胡塞武装称，沙特联军对萨那附近一个村庄发动空袭，造成至少33人死亡。英国广播公司报道称，领导在也门与胡塞武装作战的联军的沙特阿拉伯尚未对此说法置评。"
+        },
+        "ja": {
+          "headline": "フーシ派、サナア近郊のサウジ空爆で少なくとも33人死亡と報告",
+          "body": "BBCとAl Jazeeraによると、フーシ派は、サナア近郊の村に対するサウジ連合の空爆で少なくとも33人が死亡したと発表した。イエメンでフーシ派と戦う連合を主導するサウジアラビアは、この主張についてコメントしていないとBBCが報じた。"
+        },
+        "ko": {
+          "headline": "후티, 사나아 인근 사우디 연합군 공습으로 최소 33명 사망 보고",
+          "body": "후티는 BBC와 알자지라에 따르면 사나아 인근 마을에 대한 사우디 연합군 공습으로 최소 33명이 사망했다고 밝혔다. BBC 보도에 따르면 예멘에서 후티와 싸우는 연합군을 이끄는 사우디阿拉伯국은 이 주장에 대해 아무런 코멘트를 하지 않았다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Al Jazeera",
+          "title": "Saudi Arabia intercepts Houthi missiles targeting Riyadh, Eastern province",
+          "url": "https://www.aljazeera.com/news/2026/11/8/saudi-arabia-intercepts-houthi-missiles-targeting-riyadh-eastern-province?traffic_source=rss",
+          "publishedAt": "2026-11-08T07:40:07.000Z"
+        },
+        {
+          "outlet": "BBC",
+          "title": "Houthis say at least 33 killed in Saudi air strike",
+          "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss",
+          "publishedAt": "2026-11-08T04:03:12.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "houthi",
     "saudi arabia",
@@ -18,61 +209,39 @@
     "dammam",
     "abqaiq"
   ],
+  "seenUrls": [
+    "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-s-hormuz-agreement-with-iran-faces-test-after-lng-tanker-attack",
+    "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus",
+    "https://www.france24.com/en/israel-s-arab-led-parties-gain-influence",
+    "https://www.nytimes.com/2026/11/07/world/middleeast/israel-eisenkot-government.html",
+    "https://www.thehindu.com/news/international/riyadh-financial-district-targeted-in-missile-attack-aramco-tower-damaged-witnesses/article71680790.ece",
+    "https://www.channelnewsasia.com/world/saudi-arabia-houthis-riyadh-financial-district-aramco-tower-6534071",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE5sTERUNFBwNG1SUXh6UHdqZDNrbDZSdW0zMjJDU0tVTElvT3FGcl9HZGNRU0F2TTBDLU52X2VBSVg2bFpLSDNJVW9vejROSEtKcEJBcW1nSjJ0aWEwSXNJVS1WNFZHMmJCOFFpd2h2LV9GREFJV2pGYkNHNGZlQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiygFBVV95cUxPbzJUcDhMRFpuY3FtLThPWV9DNHJka2h0dE5JTGZwbjBoZzdpckwxaW84UERuQXNZYkVxakNGUzNkQmNxdksxdkl1d0w0Wm51Y2UtNGdqNGNMTERjQUV6d0dibWwyYjJGRFRIdmlSbUFKNkM2bGVVRGFETktIYzFlbGRkR3RmVlNKOUZYUGp1WW5wN0JmcVE0LVM2MjlnWDgyQWMtWjkzRWdvVmdNU3pJMklRLUthc1pzcmFBRWtuWE0tcllrR3dKREZn?oc=5",
+    "https://www.straitstimes.com/world/south-africas-anc-battered-by-local-election-losses-ahead-of-coalition-talks",
+    "https://www.kyivpost.com/post/89463",
+    "https://www.straitstimes.com/world/middle-east/riyadh-financial-district-targeted-aramco-tower-damaged-witnesses",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxQQ1JyRkNiRHZvQkJ2eW1fRHNieDRsdENyckdudWE3LW9BbnBhNHJzRUhNLTV6U25SaXBQRUJUZFZTbENrRVZtX0FCbE0tdHRmTzgzMjRhMHU2NDFzcWRtWTBFc3dhdWFveDJyc2x3SlBIdjRUOUZBeVJnU2Jndk5Kd2c2VS1oMklrQnlIUnlpeFgyMERyTlJSTDdBejRlQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxPVHlxVkkya2JyOVRaNW1nUktRVmNjMkYya282X09CYTFnYVdxM2pYcVBackh0cFpDX0ZFSTNtT3Q0YV8teTk5M2tnZENReUoyTmVoN1hwcjNCUUFWMzRTWEVldXV5RlYybG1mOUw5M1ZBdVVrMDRMZkw0eVVmWkl1SVFvZkNiYnhWXy1ERFNQTm82WklVNHc?oc=5",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxQV0doM0FMWnRUR1BySmRyeW9LR054azJIWjhTMHdsLVROZ0JjYmdtSVN0VDFWMHVyWU95M0NOdVhFbUNxUkxwVDBpa3o2bVJSSWtFOHZfSHpMZmRYWHZHcXowbGI1OGF1RmU4TGFLcFV3cElCOW92eFhtUmU0Qm5UUHFVOEtleUFsellSWkpVMTRzOWtCdVJkZjdORlF0MDA4UHFBYnZB?oc=5",
+    "https://www.kyivpost.com/post/89461",
+    "https://www.aljazeera.com/news/2026/11/8/saudi-arabia-intercepts-houthi-missiles-targeting-riyadh-eastern-province?traffic_source=rss",
+    "http://www.africanews.com/2026/11/08/gambias-opposition-leader-bensouda-files-for-presidential-election-despite-abuse-allegatio/",
+    "https://timesofindia.indiatimes.com/world/middle-east/houthi-attacks-target-aramco-facilities-in-saudi-arabia-as-explosions-rock-riyadh/articleshow/135653867.cms",
+    "https://www.welt.de/politik/ausland/video6af0185080d3a1c6aa66cc09/ukraine-krieg-all-diese-attacken-haben-nicht-dazu-gefuehrt-dass-die-russen-sich-zurueckziehen.html",
+    "https://www.straitstimes.com/world/middle-east/saudi-led-coalition-intercepts-two-houthi-missiles-fired-towards-riyadh",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdXZEQXZwUVYxd0tmTDNFOEl6R1VlS3NRSUhzZVFnWU9oYjJ3UHNkekhPcjUxVmtHbnFxbWFKVHByX0tWTlJNZXBGalk1UzlRU3U4SERZSUMtOVRncmRHbnc2U0o4YV9mc0l3U3hyODRUVzAzZUoxeTloNV9ZMkJqZlNqdHpfaWZvX2RkM0I1SHNCREJnQjBmTWR1X2VSYzQ4bGowRXA0QQ?oc=5",
+    "https://www.thehindu.com/news/international/gunman-kills-5-injures-12-in-polands-krakow-shooting-attack/article71679139.ece",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZERaeTY2OFA1THJoX2Niek1RbmpOemJScmEtUVpOVTU3Z1FscmVWRE1Gd3JfSDBHR01yZmZWbUhEbGhENDFLRXBiQ1ZBa2ZpWEtoNFZyVURYaFE1QXcxWXZRcURTaFVBYVNLb2g4U1VGYklKWW1KZW1QR3R0d3ZwUEM5b2dMNExWZmYxbnlRRlgteXBTV2RRZjBaYUJKbTN6VVNST0NWb193My1TLWtQMmNB0gG6AUFVX3lxTE5fSXIyN3hCeDluV0Y1ZWx2SS1MeWlWd2JiQW9Db1BPZDRHMkZxQVZUdDdWYmJSS0t6bXA0RWFlZXZVNmlSN09vanVXaGtlSG1pMWUtYUxkazR1dTZybWdVVEJReWY2QTZRb3hhaWlGOTkwUktyZEp2bXRPaXNrYml0eHFhVmdMdVJ3VkxQN0pKTWFvblZmYTFUaHlWNUJpSW42cXIyVHhyRXZVRWowNHl3X0NCZjFMaGtYZw?oc=5",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQU0h3M3F0dnhxT1NfaEhnOVJPRGhiVk1qUTNUVFVYNFU3ZUNlTHlQVVFrSnBJMWRLdi1YMXloYk9UdDFHRVhkRS1NT1ZKM1l5Y2Y0WEJHY1lOR2xOd1VrclpYN3dYUHBMbXJNcjRhTk5xWlpCa1V0SHhPZ0VGMmNVX18zZzA4dDZqd3RnZU14VV9oTURna0V3ZzdoX0xrVDdTUHRnM1puNDlhMGhvQ052TEY1VllMU28t?oc=5",
+    "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcUNkN1dXbGpGRnRSY193SHRBd3FtbHY4LTVJcy1Uc1c4d2J2Z2RhckRyajA3ZjBNbkduNC14RGc4UWN3THZmT1V2ekQ0VV9WTHF3RHp1Q19uODVyV2xEMjhYYzMtMVg1X0M2aHh3cXhrOGc5Rld3T0piSUxEa1JnOWFBNnlZbGFCbDRzanA5M3ZhQU9DczVVenV5c2syZzBLY05OUEZlVXVDcDBsUGNTbUFhaTRuV0FEZlUyd2dTV0dNcGZDSG9IOUc1QmVRZ3RuWFkwdjRicmxLbUFG?oc=5",
+    "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss"
+  ],
   "startedAt": "2026-11-08T08:51:33.781Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-08T08:51:33.781Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-08T09:54:38.511Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Houthi missile attacks on Saudi Arabia",
-      "dek": "Houthi forces fired missiles toward Riyadh, the Eastern Province, and Aramco facilities, with the Saudi-led coalition intercepting several projectiles."
-    },
-    "es": {
-      "title": "Ataques hutíes con misiles contra Arabia Saudí",
-      "dek": "Las fuerzas hutíes dispararon misiles hacia Riad, la Provincia Oriental e instalaciones de Aramco, mientras la coalición liderada por Arabia Saudí interceptaba varios proyectiles."
-    },
-    "fr": {
-      "title": "Attaques de missiles houthies contre l’Arabie saoudite",
-      "dek": "Les forces houthies ont tiré des missiles vers Riyad, la Province de l’Est et des installations d’Aramco, la coalition menée par l’Arabie saoudite ayant intercepté plusieurs projectiles."
-    },
-    "it": {
-      "title": "Attacchi missilistici degli Houthi contro l'Arabia Saudita",
-      "dek": "Le forze houthi hanno lanciato missili verso Riad, la Provincia orientale e strutture di Aramco, con la coalizione guidata dall'Arabia Saudita che ha intercettato diversi proiettili."
-    },
-    "de": {
-      "title": "Raketenangriffe der Huthi auf Saudi-Arabien",
-      "dek": "Huthi-Kräfte feuerten Raketen in Richtung Riad, der Ostprovinz und Aramco-Einrichtungen ab, wobei die von Saudi-Arabien geführte Koalition mehrere Geschosse abfing."
-    },
-    "zh": {
-      "title": "胡塞武装对沙特阿拉伯发动导弹袭击",
-      "dek": "胡塞武装向利雅得、东部省以及沙特阿美设施发射导弹，沙特领导的多国联军拦截了数枚弹体。"
-    },
-    "pt": {
-      "title": "Ataques de mísseis houthi contra a Arábia Saudita",
-      "dek": "As forças houthi lançaram mísseis na direção de Riade, da Província Oriental e de instalações da Aramco, tendo a coligação liderada pela Arábia Saudita interceptado vários projéteis."
-    },
-    "ko": {
-      "title": "사우디아라비아에 대한 후티 미사일 공격",
-      "dek": "후티 군이 리야드와 동부 주, 아람코 시설을 향해 미사일을 발사했으며, 사우디 주도 연합군이 여러 발을 요격했다."
-    },
-    "ja": {
-      "title": "サウジアラビアへのフーシ派ミサイル攻撃",
-      "dek": "フーシ派の部隊がリヤド、東部州、アラムコの施設に向けてミサイルを発射し、サウジ主導の連合が複数の飛翔体を迎撃した。"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Al Jazeera",
-      "Times of India",
-      "The Straits Times",
-      "The Kyiv Post"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 6,
+  "seenHeadlines": []
 }
