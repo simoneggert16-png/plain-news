@@ -7,26 +7,17 @@
       "Kicker"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
   },
   "slug": "krieg-in-der-ukraine",
   "topic": "Krieg in der Ukraine",
   "status": "live",
   "article": {
     "slug": "krieg-in-der-ukraine",
-    "updatedAt": "2026-11-09T09:24:52.262Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
-        "title": "European nations to join Russia-Ukraine talks in Abu Dhabi",
         "dek": "European representatives confirmed to join US-mediated talks in Abu Dhabi on November 10-11.",
-        "facts": [
-          "European nations confirmed to join Abu Dhabi talks",
-          "Russian strikes left 600,000 to 850,000 people without power",
-          "Zaporizhzhia nuclear plant forced to use backup power",
-          "Russian military reported strikes on three cargo ships and two power substations",
-          "President Zelenskyy reported a drone strike on emergency workers in Komyshuvakha"
-        ],
         "body": [
           "French Foreign Minister Jean-Noël Barrot announced on November 8 that European representatives will join United States-mediated talks between Russia and Ukraine in Abu Dhabi, scheduled for November 10 and 11, according to Euronews, France 24 and Politico Europe.",
           "Russian forces reported striking three cargo vessels carrying military goods for Ukraine and two electricity substations overnight, according to statements from the Russian military, as reported by Politico Europe and TASS.",
@@ -37,6 +28,14 @@
           "The Abu Dhabi talks represent a diplomatic effort to engage multiple international stakeholders, with the United States facilitating the dialogue and European nations now confirmed to attend, according to Semafor and NPR.",
           "Moscow has struck emergency workers on rescue missions, according to Sky News, with Ukrainian President Volodymyr Zelenskyy stating that Russia launched a drone strike on the site of a recent attack in Komyshuvakha where rescuers were carrying out search operations following a previous bombing."
         ],
+        "facts": [
+          "European nations confirmed to join Abu Dhabi talks",
+          "Russian strikes left 600,000 to 850,000 people without power",
+          "Zaporizhzhia nuclear plant forced to use backup power",
+          "Russian military reported strikes on three cargo ships and two power substations",
+          "President Zelenskyy reported a drone strike on emergency workers in Komyshuvakha"
+        ],
+        "title": "European nations to join Russia-Ukraine talks in Abu Dhabi",
         "context": "The Zaporizhzhia nuclear power plant has frequently faced power supply disruptions since the start of the full-scale Russian invasion of Ukraine. Diplomatic efforts to reach a ceasefire or peace agreement have continued intermittently throughout the conflict, with the Abu Dhabi meetings marking the first direct three-way round of talks between the parties since February, according to Semafor and NPR.",
         "imageCaption": ""
       }
@@ -320,7 +319,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-09T09:24:52.262Z"
   },
   "endedAt": null,
   "locales": {
@@ -363,62 +363,120 @@
   },
   "updates": [
     {
-      "id": "u-1794215839000-oy93",
-      "at": "2026-11-09T09:17:19.000Z",
+      "id": "u-1794216914000-aqao",
+      "at": "2026-11-09T09:35:14.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "EU to join peace talks in Abu Dhabi",
-          "body": "The European Union will send a joint team to the upcoming peace talks in Abu Dhabi, according to Euronews. France, Germany, and the UK will also participate in the discussions alongside the EU representatives."
+          "headline": "Cease-fire excluded from upcoming Abu Dhabi talks",
+          "body": "United States-led talks to end the war between Russia and Ukraine will resume this week in Abu Dhabi after a nine-month lull, according to the New York Times. A cease-fire will not be on the table during the meetings, which will also examine security guarantees for both sides, according to the New York Times and the Killeen Daily Herald."
         },
         "de": {
-          "headline": "EU nimmt an Friedensgesprächen in Abu Dhabi teil",
-          "body": "Die Europäische Union wird laut Euronews ein gemeinsames Team zu den bevorstehenden Friedensgesprächen in Abu Dhabi entsenden. Frankreich, Deutschland und das Vereinigte Königreich werden ebenfalls neben den EU-Vertretern an den Diskussionen teilnehmen."
-        },
-        "fr": {
-          "headline": "L'UE participera aux pourparlers de paix à Abou Dabi",
-          "body": "L'Union européenne enverra une délégation commune aux prochains pourparlers de paix à Abou Dabi, selon Euronews. La France, l'Allemagne et le Royaume-Uni participeront également aux discussions aux côtés des représentants de l'UE."
-        },
-        "it": {
-          "headline": "L'UE parteciperà ai colloqui di pace ad Abu Dhabi",
-          "body": "L'Unione Europea invierà una delegazione congiunta ai prossimi colloqui di pace ad Abu Dhabi, secondo quanto riportato da Euronews. Anche Francia, Germania e Regno Unito prenderanno parte alle discussioni insieme ai rappresentanti dell'UE."
-        },
-        "pt": {
-          "headline": "UE vai participar nas conversações de paz em Abu Dhabi",
-          "body": "A União Europeia enviará uma equipa conjunta para as próximas conversações de paz em Abu Dhabi, segundo a Euronews. A França, a Alemanha e o Reino Unido também participarão nas discussões, a par dos representantes da UE."
-        },
-        "zh": {
-          "headline": "欧盟将参加在阿布扎比举行的和平谈判",
-          "body": "据欧洲新闻台报道，欧盟将派遣一个联合代表团参加即将于阿布扎比举行的和平谈判。法国、德国和英国也将与欧盟代表一同参与讨论。"
-        },
-        "ko": {
-          "headline": "EU, 아부다비 평화 회담 참여",
-          "body": "유로뉴스에 따르면 유럽연합(EU)은 아부다비에서 열릴 예정인 평화 회담에 공동 대표단을 파견할 예정이다. 프랑스, 독일, 영국도 EU 대표들과 함께 이번 논의에 참여한다."
+          "headline": "Waffenruhe bei bevorstehenden Gesprächen in Abu Dhabi ausgeschlossen",
+          "body": "Unter Führung der Vereinigten Staaten werden in dieser Woche nach einer neunmonatigen Pause in Abu Dhabi wieder Gespräche zur Beendigung des Krieges zwischen Russland und der Ukraine aufgenommen, wie die New York Times berichtet. Eine Waffenruhe stehe bei den Treffen, bei denen auch Sicherheitsgarantien für beide Seiten erörtert werden sollen, nicht zur Debatte, so die New York Times und das Killeen Daily Herald."
         },
         "es": {
-          "headline": "La UE se unirá a las conversaciones de paz en Abu Dabi",
-          "body": "La Unión Europea enviará un equipo conjunto a las próximas conversaciones de paz en Abu Dabi, según Euronews. Francia, Alemania y el Reino Unido también participarán en las discusiones junto a los representantes de la UE."
+          "headline": "El alto el fuego queda excluido de las próximas conversaciones en Abu Dabi",
+          "body": "Las conversaciones lideradas por Estados Unidos para poner fin a la guerra entre Rusia y Ucrania se reanudarán esta semana en Abu Dabi tras un paréntesis de nueve meses, según informa The New York Times. El alto el fuego no estará sobre la mesa durante las reuniones, que también examinarán garantías de seguridad para ambas partes, según The New York Times y el Killeen Daily Herald."
+        },
+        "fr": {
+          "headline": "Le cessez-le-feu exclu des prochaines discussions d'Abou Dhabi",
+          "body": "Les pourparlers menés par les États-Unis pour mettre fin à la guerre entre la Russie et l'Ukraine reprendront cette semaine à Abou Dhabi après une interruption de neuf mois, selon le New York Times. Un cessez-le-feu ne sera pas à l'ordre du jour de ces réunions, qui examineront également les garanties de sécurité pour les deux parties, selon le New York Times et le Killeen Daily Herald."
+        },
+        "it": {
+          "headline": "Escluso il cessate il fuoco dai prossimi colloqui di Abu Dhabi",
+          "body": "I colloqui guidati dagli Stati Uniti per porre fine alla guerra tra Russia e Ucraina riprenderanno questa settimana ad Abu Dhabi dopo una pausa di nove mesi, secondo quanto riportato dal New York Times. Un cessate il fuoco non sarà sul tavolo durante gli incontri, che esamineranno anche le garanzie di sicurezza per entrambe le parti, secondo quanto riferito dal New York Times e dal Killeen Daily Herald."
+        },
+        "zh": {
+          "headline": "阿布扎比即将举行的会谈将不讨论停火",
+          "body": "据《纽约时报》报道，由美国主导的旨在结束俄乌冲突的会谈在中断九个月后，将于本周在阿布扎比恢复。据《纽约时报》和《基林每日先驱报》报道，在这些还将探讨双方安全保障的会议上，停火将不会被提上议事日程。"
+        },
+        "pt": {
+          "headline": "Trégua excluída das próximas negociações em Abu Dhabi",
+          "body": "As negociações lideradas pelos Estados Unidos para pôr fim à guerra entre a Rússia e a Ucrânia serão retomadas esta semana em Abu Dhabi, após uma pausa de nove meses, de acordo com o The New York Times. Um cessar-fogo não estará em cima da mesa durante os encontros, que também examinarão garantias de segurança para ambas as partes, segundo o The New York Times e o Killeen Daily Herald."
         },
         "ja": {
-          "headline": "EU、アブダビでの和平協議に参加へ",
-          "body": "ユーロニュースによると、欧州連合（EU）はアブダビで近日開催される和平協議に合同チームを派遣する。フランス、ドイツ、英国もEU代表団と共に協議に参加する予定である。"
+          "headline": "アブダビでの次回会談、停戦は除外",
+          "body": "ニューヨーク・タイムズ紙によると、ロシアとウクライナの戦争終結に向けた米国主導の会談が9カ月の休止期間を経て、今週アブダビで再開される。ニューヨーク・タイムズ紙およびキリーン・デイリー・ヘラルド紙によれば、双方に対する安全保障の保証についても検討される今回の会談において、停戦は議題に含まれないという。"
+        },
+        "ko": {
+          "headline": "아부다비에서 열릴 예정인 회담서 휴전은 제외돼",
+          "body": "뉴욕타임스에 따르면 러시아와 우크라이나 간의 전쟁을 종식하기 위한 미국 주도의 회담이 9개월의 소강상태 끝에 이번 주 아부다비에서 재개된다. 뉴욕타임스와 킬린 데일리 헤럴드는 이번 회담에서 양측에 대한 안보 보장을 논의할 예정이나 휴전은 안건에 포함되지 않는다고 보도했다."
         }
       },
       "sources": [
         {
-          "outlet": "Euronews",
-          "title": "EU to send joint team to Ukraine-Russia peace talks in Abu Dhabi",
+          "outlet": "New York Times",
+          "title": "Ukraine Peace Talks Resume This Week in Abu Dhabi",
+          "url": "https://www.nytimes.com/2026/11/09/world/europe/ukraine-russia-peace-talks.html",
+          "publishedAt": "2026-11-09T09:35:14.000Z"
+        },
+        {
+          "outlet": "The Killeen Daily Herald",
+          "title": "US-led peace talks for Russia and Ukraine will look at security guarantees for both sides",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQQ0VQTmM4VUZzLTMxY3R3dlJtVldUdGZ0d1ZuSHB5X0JkTmN5aVlBSS1UR01aUnlZQ1pEci1XeTdxX3JfaGp1SWFmWElubGxpQi1McTJFQnd1bXh3TDQtU2pqTTdKV21uZUlUM0xYVmctVzkxLU9RUXIxZy1VWFUybExva3RNU05nR3ZVa1VVelBFRVpIZklTM2dQdUFTeVhkaUpuMlJ5dEt3amE5VEZ3VVA2dWdGdGQ3cVJ5aU0zSXRkTmhJc05FTWlsYlVodWxFZ3pCRW1melRKSTMtYVkxRXBmVUczc3dBTHJSZi1rVkMtdkd1UUNzNA?oc=5",
+          "publishedAt": "2026-11-09T09:17:39.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-09T09:17:19.000Z",
+      "id": "u-1794215839000-oy93",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die Europäische Union wird laut Euronews ein gemeinsames Team zu den bevorstehenden Friedensgesprächen in Abu Dhabi entsenden. Frankreich, Deutschland und das Vereinigte Königreich werden ebenfalls neben den EU-Vertretern an den Diskussionen teilnehmen.",
+          "headline": "EU nimmt an Friedensgesprächen in Abu Dhabi teil"
+        },
+        "en": {
+          "body": "The European Union will send a joint team to the upcoming peace talks in Abu Dhabi, according to Euronews. France, Germany, and the UK will also participate in the discussions alongside the EU representatives.",
+          "headline": "EU to join peace talks in Abu Dhabi"
+        },
+        "es": {
+          "body": "La Unión Europea enviará un equipo conjunto a las próximas conversaciones de paz en Abu Dabi, según Euronews. Francia, Alemania y el Reino Unido también participarán en las discusiones junto a los representantes de la UE.",
+          "headline": "La UE se unirá a las conversaciones de paz en Abu Dabi"
+        },
+        "fr": {
+          "body": "L'Union européenne enverra une délégation commune aux prochains pourparlers de paix à Abou Dabi, selon Euronews. La France, l'Allemagne et le Royaume-Uni participeront également aux discussions aux côtés des représentants de l'UE.",
+          "headline": "L'UE participera aux pourparlers de paix à Abou Dabi"
+        },
+        "it": {
+          "body": "L'Unione Europea invierà una delegazione congiunta ai prossimi colloqui di pace ad Abu Dhabi, secondo quanto riportato da Euronews. Anche Francia, Germania e Regno Unito prenderanno parte alle discussioni insieme ai rappresentanti dell'UE.",
+          "headline": "L'UE parteciperà ai colloqui di pace ad Abu Dhabi"
+        },
+        "ja": {
+          "body": "ユーロニュースによると、欧州連合（EU）はアブダビで近日開催される和平協議に合同チームを派遣する。フランス、ドイツ、英国もEU代表団と共に協議に参加する予定である。",
+          "headline": "EU、アブダビでの和平協議に参加へ"
+        },
+        "ko": {
+          "body": "유로뉴스에 따르면 유럽연합(EU)은 아부다비에서 열릴 예정인 평화 회담에 공동 대표단을 파견할 예정이다. 프랑스, 독일, 영국도 EU 대표들과 함께 이번 논의에 참여한다.",
+          "headline": "EU, 아부다비 평화 회담 참여"
+        },
+        "pt": {
+          "body": "A União Europeia enviará uma equipa conjunta para as próximas conversações de paz em Abu Dhabi, segundo a Euronews. A França, a Alemanha e o Reino Unido também participarão nas discussões, a par dos representantes da UE.",
+          "headline": "UE vai participar nas conversações de paz em Abu Dhabi"
+        },
+        "zh": {
+          "body": "据欧洲新闻台报道，欧盟将派遣一个联合代表团参加即将于阿布扎比举行的和平谈判。法国、德国和英国也将与欧盟代表一同参与讨论。",
+          "headline": "欧盟将参加在阿布扎比举行的和平谈判"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.euronews.com/2026/11/09/eu-to-send-joint-team-to-ukraine-russia-peace-talks-in-abu-dhabi",
+          "title": "EU to send joint team to Ukraine-Russia peace talks in Abu Dhabi",
+          "outlet": "Euronews",
           "publishedAt": "2026-11-09T09:17:19.000Z"
         },
         {
-          "outlet": "AP News",
-          "title": "US-led peace talks for Russia and Ukraine will look at security guarantees for both sides",
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOVRvYUFQbS0za2RfNkk2T0xkYnVrcFVoNXZ3SzgwN2RpcTlMWDBha3lINTR1X0JSM0JkaldZMjB2SHFVYzJ2Mi1vcV9vamlQd1pOaWNtLV9aYjFlY1prMFh0ME1tZzdFa194dTJVSG1aU0c5bmZnU1BGWHdvbGhIakk1ekxVcjluRTZtQzJIQ19vSF91bHJsbVV4T1dWa1U?oc=5",
+          "title": "US-led peace talks for Russia and Ukraine will look at security guarantees for both sides",
+          "outlet": "AP News",
           "publishedAt": "2026-11-09T05:01:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-09T07:05:00.000Z",
@@ -1079,13 +1137,20 @@
     "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZEJQOWFoVGtqVEFKazdTLXNTUVhodjNwd1o3bTc1RVZmUFVWa0VxNWFtNWxNSnhQeXJtSnVURUhnN0tIRW5mVDdNb1JjNjYwS29jZGxnMEVFSGc5Ri0tNGtnSUJLTnNWOFhjNVdOMmI2ZW9ldnhpRUhwWV96VnNIMEFVYlhRMml0eU1FVjRTZ0l3a3hmVTBENml2aXM0NlVJOHk2ZlgtV0lEZUtsdzBNWDczUW5PNV9WWHc?oc=5",
     "https://news.google.com/rss/articles/CBMiogFBVV95cUxNblY4cE5mOGFyVnpPRXk4V2xRWS1uRWt1alVZbG1qVUxKSmVTaWVodDljU1pMMTJjUlhUZTQyYjNGVFNCbFJCSTdUUWh5OWxwbGl3cGExanhPYVVkenY5VFVrdnhseW5XR3EtTEZOQWt4S2FqVTRpUlhBV2c0eU1EVnhycFRyNGQ5X2ZfY1lFOHpUbkJlUGt3OFVLbTZ6dFU5cnfSAacBQVVfeXFMUG9qYWNOMHk5cElwVEVaRkZfV1duR0JZdk9kWTdueDVUby1qM3hvekowcnBnWmFsdWU5aHlJU0hVY2lGOGlKMElYSUVrdHZDNDBkOXV6eGhPQmRvRUxBMzlJNEU3QkllUWszeHB1YS1sWTJYWWpXRTRkMUdmd2lrUFN5MzcwTTl2b01oR0tKRW9UWGZmVXRvM1pvYXRjTTB4STBVNDZCU00?oc=5",
     "https://www.spiegel.de/ausland/ukraine-donald-trump-deutet-etwas-andere-form-an-a-a9973bbc-b103-4162-89d1-d76dd743ab3b#ref=rss",
-    "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOVRvYUFQbS0za2RfNkk2T0xkYnVrcFVoNXZ3SzgwN2RpcTlMWDBha3lINTR1X0JSM0JkaldZMjB2SHFVYzJ2Mi1vcV9vamlQd1pOaWNtLV9aYjFlY1prMFh0ME1tZzdFa194dTJVSG1aU0c5bmZnU1BGWHdvbGhIakk1ekxVcjluRTZtQzJIQ19vSF91bHJsbVV4T1dWa1U?oc=5"
+    "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOVRvYUFQbS0za2RfNkk2T0xkYnVrcFVoNXZ3SzgwN2RpcTlMWDBha3lINTR1X0JSM0JkaldZMjB2SHFVYzJ2Mi1vcV9vamlQd1pOaWNtLV9aYjFlY1prMFh0ME1tZzdFa194dTJVSG1aU0c5bmZnU1BGWHdvbGhIakk1ekxVcjluRTZtQzJIQ19vSF91bHJsbVV4T1dWa1U?oc=5",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxOY3V0T2NkOHc2b2treEl4QkdiZ3hkWUxFbUdLZmlfM3M4QWhPTVNEUS1ESEliLWgzd3lDZG1rdDhHZkZmUFBoanc1R2dkSGV1VFV3VHhIRmd5ay1wMzNMUE5ETnl2aHB3VFhxR0xpYjN4dDlIMTY1eEcweVJfMUZ2d3BPWmFjSXljSHRveW1FNA?oc=5",
+    "https://www.welt.de/politik/ausland/video6af18aa353650a498f207c45/ukraine-krieg-es-scheint-so-dass-die-territoriale-frage-fuer-die-usa-und-russland-entschieden-ist.html",
+    "https://news.google.com/rss/articles/CBMizAFBVV95cUxORHhrRVktNHFJd2k2MmxWd0VaS1hvOG4xT2Vmc1o2WHVEUFpJYzlQczhhWEdtSUVVbVRWdnZHeVFJVzNLMnpKRjdmYVZPTGgxWEs1LW9xOWZoUzlLcllTTjJpNzJXVnBTSHR3QkI4d0l3ZVVaS3VrZmNwUEdYRmVPWmhDSEwtVDF1TUh0N0ZIWTBaZlZIc1pEX3F5dGFOd0JCSmU4UFBoU3ZXV0J1cEU0UndDb2Y1UnBMbXZlZmFkUVhyM2RiWngwUG5hZng?oc=5",
+    "https://www.nytimes.com/2026/11/09/world/europe/ukraine-russia-peace-talks.html",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxQOE9NUS1DRlJBNF9FaU1BcU5LNjFfX2I2eHRaRkYwOXdLWmdyLU5aUjdLeVJ1WV9nTUQtYVhXNkFfTjQ5dk5hdzJneTJxS0FmNHZKODR0cHpiUTVBanU5S0JGbk5ZTXBjaWNXWGFXN2hRRy13UGZEUWZkUGR4SEl6ODduQXNjQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQQ0VQTmM4VUZzLTMxY3R3dlJtVldUdGZ0d1ZuSHB5X0JkTmN5aVlBSS1UR01aUnlZQ1pEci1XeTdxX3JfaGp1SWFmWElubGxpQi1McTJFQnd1bXh3TDQtU2pqTTdKV21uZUlUM0xYVmctVzkxLU9RUXIxZy1VWFUybExva3RNU05nR3ZVa1VVelBFRVpIZklTM2dQdUFTeVhkaUpuMlJ5dEt3amE5VEZ3VVA2dWdGdGQ3cVJ5aU0zSXRkTmhJc05FTWlsYlVodWxFZ3pCRW1melRKSTMtYVkxRXBmVUczc3dBTHJSZi1rVkMtdkd1UUNzNA?oc=5",
+    "https://news.google.com/rss/articles/CBMigwJBVV95cUxNTkxVRHJyZHZLcHB6WGlGX1F5SndCMTZ4b0ttd0g4TTBxSkhMRXB1SmdVSEotX09PZTVySE11MHlvQXVIWTlXVXJOalRYMDhWT2ttZEJwRHRGQVIxM29QbWozTU9qN0Y0Wm85OE5HODBhMmVTTDktUjdUZkJVLWVLeFNjdFhVRmk2ZTI5dF9BZ0lFekdpbEFmQmkzZ2hGQmF2THBJYjlPSHlhVW9RanBseXhQNXRhU3hDb3BRdGQyeE90aFVhajZOMW9jaFhHVzMwUzdVNUY5M0Rsb0dFRXhuSkMwRm51cEY0ZElvX2RTS1JZMHBWa0swOE1jVGhxVkpMQ0dn?oc=5"
   ],
   "startedAt": "2026-11-08T14:36:18.642Z",
-  "updatedAt": "2026-11-09T09:24:28.649Z",
+  "updatedAt": "2026-11-09T09:55:38.040Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "krieg-in-der-ukraine",
-  "sourceCount": 21,
+  "sourceCount": 23,
   "seenHeadlines": []
 }
