@@ -8,26 +8,17 @@
       "The Lufkin Daily News"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
   },
   "slug": "poland-mass-shooting",
   "topic": "Poland Mass Shooting",
   "status": "live",
   "article": {
     "slug": "poland-mass-shooting",
-    "updatedAt": "2026-11-09T06:54:26.089Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
-        "title": "Poland begins national mourning following Krakow mass shooting",
         "dek": "Authorities have opened a terrorism investigation after a shooting in Krakow's main square resulted in nine total deaths.",
-        "facts": [
-          "Six people were killed in the Krakow market square attack.",
-          "Three relatives of the suspect were found dead at his home.",
-          "Fifteen people were wounded in the shooting.",
-          "Poland began two days of national mourning on 8 November.",
-          "A British national was among those killed in the shooting."
-        ],
         "body": [
           "Polish prosecutors have opened a terrorism investigation into the shooting, according to government officials. Authorities stated the 24-year-old suspect was likely influenced by far-right ideology.",
           "Police discovered the bodies of the suspect's parents and sister at his home following the attack. These three deaths are in addition to the six people killed in the Krakow market square.",
@@ -38,6 +29,14 @@
           "Professor Michal Pędziwiatr provided medical aid to the wounded officers at the scene, according to the BBC. A colleague stated that the surgeon's actions saved the life of one officer.",
           "The investigation into the suspect's background remains ongoing, according to prosecutors. Officials have not released further details regarding the suspect's identity or specific motives."
         ],
+        "facts": [
+          "Six people were killed in the Krakow market square attack.",
+          "Three relatives of the suspect were found dead at his home.",
+          "Fifteen people were wounded in the shooting.",
+          "Poland began two days of national mourning on 8 November.",
+          "A British national was among those killed in the shooting."
+        ],
+        "title": "Poland begins national mourning following Krakow mass shooting",
         "context": "The shooting occurred in Krakow's main square, a central public space in the city. The government declared a period of national mourning to honor the victims of the attack.",
         "imageCaption": ""
       }
@@ -227,7 +226,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-09T06:54:26.089Z"
   },
   "endedAt": null,
   "locales": {
@@ -270,68 +270,126 @@
   },
   "updates": [
     {
-      "id": "u-1794207009000-yrgi",
-      "at": "2026-11-09T06:50:09.000Z",
-      "kind": "result",
+      "id": "u-1794207854000-0wcg",
+      "at": "2026-11-09T07:04:14.000Z",
+      "kind": "statement",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Krakow shooting suspect died in hospital police say",
-          "body": "Polish police said the gunman died in hospital according to BBC and Reuters. The suspect was wounded in a shootout with police according to The Hindu."
-        },
-        "es": {
-          "headline": "Sospechoso del tiroteo en Cracovia muere en el hospital, según la policía",
-          "body": "La policía polaca informó que el tirador murió en el hospital, según la BBC y Reuters. El sospechoso resultó herido en un tiroteo con la policía, según The Hindu."
-        },
-        "fr": {
-          "headline": "Le suspect du tir à Cracovie est décédé à l'hôpital selon la police",
-          "body": "La police polonaise a déclaré que le tireur était décédé à l'hôpital, selon la BBC et Reuters. Le suspect a été blessé lors d'un échange de tirs avec la police, selon The Hindu."
+          "headline": "Polish Prime Minister Donald Tusk termed Krakow shooting terrorism",
+          "body": "Prime Minister Donald Tusk called the weekend shooting in Krakow's Main Market Square an act of terrorism, according to Euronews. Six people were killed in the attack before the gunman died in hospital on Monday morning following a shootout with police."
         },
         "it": {
-          "headline": "Sospettato dello sparo a Cracovia morto in ospedale, dicono le forze di polizia",
-          "body": "La polizia polacca ha dichiarato che l'uomo armato è deceduto in ospedale, secondo BBC e Reuters. Lo sospettato era stato ferito in uno scontro a fuoco con la polizia, secondo The Hindu."
+          "headline": "Il primo ministro polacco Donald Tusk ha definito terrorismo la sparatoria di Cracovia",
+          "body": "Il primo ministro Donald Tusk ha definito la sparatoria avvenuta nel fine settimana nella Piazza del Mercato Principale di Cracovia un atto di terrorismo, secondo quanto riportato da Euronews. Nell'attacco sono morte sei persone, prima che l'aggressore decedesse in ospedale lunedì mattina in seguito a un conflitto a fuoco con la polizia."
+        },
+        "fr": {
+          "headline": "Le Premier ministre polonais Donald Tusk qualifie le tir à Cracovie de terrorisme",
+          "body": "Le Premier ministre Donald Tusk a qualifié le tir du week-end sur la place du marché principale de Cracovie d'acte de terrorisme, selon Euronews. Six personnes ont été tuées lors de l'attaque avant que l'assaillant ne décède à l'hôpital lundi matin après un échange de tirs avec la police."
+        },
+        "es": {
+          "headline": "El primer ministro polaco Donald Tusk calificó el tiroteo de Cracovia como terrorismo",
+          "body": "El primer ministro Donald Tusk calificó el tiroteo del fin de semana en la Plaza del Mercado Principal de Cracovia como un acto de terrorismo, según Euronews. Seis personas murieron en el ataque antes de que el tirador falleciera en el hospital el lunes por la mañana tras un tiroteo con la policía."
         },
         "de": {
-          "headline": "Krakauer Schusswaffentäter starb im Krankenhaus, so Polizei",
-          "body": "Die polnische Polizei teilte BBC und Reuters mit, dass der Schütze im Krankenhaus gestorben sei. Laut The Hindu wurde der Verdächtige bei einem Schusswechsel mit der Polizei verletzt."
-        },
-        "zh": {
-          "headline": "波兰警方称克拉科夫枪击嫌犯在医院死亡",
-          "body": "据BBC和路透社报道，波兰警方称该枪手在医院死亡。据《印度时报》报道，该嫌犯在与警方交火中受伤。"
+          "headline": "Polens Premierminister Donald Tusk bezeichnet Schießerei in Krakau als Terrorismus",
+          "body": "Wie Euronews berichtet, hat Premierminister Donald Tusk die Schießerei am Wochenende auf dem Krakauer Hauptmarkt als terroristischen Akt bezeichnet. Bei dem Angriff kamen sechs Menschen ums Leben, bevor der Schütze am Montagmorgen nach einem Schusswechsel mit der Polizei im Krankenhaus verstarb."
         },
         "pt": {
-          "headline": "Suspeito do tiroteio em Cracóvia morreu no hospital, diz a polícia",
-          "body": "A polícia polaca informou que o atirador morreu no hospital, segundo a BBC e a Reuters. O suspeito foi ferido num tiroteio com a polícia, de acordo com The Hindu."
+          "headline": "Primeiro-Ministro Polaco Donald Tusk classificou o tiroteio em Cracóvia como terrorismo",
+          "body": "O Primeiro-Ministro Donald Tusk classificou o tiroteio no Mercado Principal de Cracóvia no fim de semana como um ato de terrorismo, segundo a Euronews. Seis pessoas morreram no ataque antes do atirador falecer no hospital na manhã de segunda-feira, após um tiroteio com a polícia."
+        },
+        "zh": {
+          "headline": "波兰总理唐纳德·图斯克称克拉科夫枪击案为恐怖主义行为",
+          "body": "据Euronews报道，总理唐纳德·图斯克称周末发生在克拉科夫主市场广场的枪击案是恐怖主义行为。枪击案造成六人死亡，枪手在周一早晨与警方交火后于医院死亡。"
         },
         "ko": {
-          "headline": "크라쿠프 총격 용의자 병원 내 사망 확인",
-          "body": "폴란드 경찰은 BBC와 로이터 통신에 따르면 총격범이 병원에서 사망했다고 밝혔다. 힌두 신문에 따르면 이 용의자는 경찰과의 총격전에서 부상을 입었다."
+          "headline": "폴란드 총리 도날드 투스크, 크라쿠프 총격 사건을 테러로 규정",
+          "body": "유로뉴스에 따르면 도날드 투스크 폴란드 총리는 크라쿠프 중앙 시장 광장에서 발생한 주말 총격 사건을 테러 행위로 규정했다. 이 공격으로 6명이 사망했으며, 총격범은 월요일 아침 경찰과의 교전 끝에 병원에서 사망했다."
         },
         "ja": {
-          "headline": "クラクフの銃撃事件容疑者が病院で死亡、警察が発表",
-          "body": "ポーランド警察によると、銃撃犯は病院で死亡したとBBCとロイターが報じた。ヒンドゥー紙によれば、容疑者は警察との銃撃戦で負傷していた。"
+          "headline": "ポーランド首相ドナルド・トゥスク、クラクフ銃撃事件をテロと断定",
+          "body": "Euronewsによると、ドナルド・トゥスク首相はクラクフのメインマーケット広場での週末の銃撃事件をテロ行為と呼びました。この攻撃で6人が死亡し、犯人は月曜日の朝、警察との銃撃戦の末に病院で死亡しました。"
         }
       },
       "sources": [
         {
-          "outlet": "BBC",
-          "title": "Krakow shooting suspect has died in hospital, police say",
+          "outlet": "Euronews",
+          "title": "Europe Today: Poland in shock after deadly Krakow attack, Ukraine peace talks in Abu Dhabi near",
+          "url": "https://www.euronews.com/2026/11/09/europe-today-poland-in-shock-after-deadly-krakow-attack-ukraine-peace-talks-in-abu-dhabi",
+          "publishedAt": "2026-11-09T07:04:14.000Z"
+        },
+        {
+          "outlet": "DW",
+          "title": "Krakow mass shooting suspect has died in hospital, police in Poland say",
+          "url": "https://www.dw.com/en/krakow-mass-shooting-suspect-has-died-in-hospital-police-in-poland-say/a-79895626?maca=en-rss-en-all-1573-rdf",
+          "publishedAt": "2026-11-09T06:53:00.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-09T06:50:09.000Z",
+      "id": "u-1794207009000-yrgi",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die polnische Polizei teilte BBC und Reuters mit, dass der Schütze im Krankenhaus gestorben sei. Laut The Hindu wurde der Verdächtige bei einem Schusswechsel mit der Polizei verletzt.",
+          "headline": "Krakauer Schusswaffentäter starb im Krankenhaus, so Polizei"
+        },
+        "en": {
+          "body": "Polish police said the gunman died in hospital according to BBC and Reuters. The suspect was wounded in a shootout with police according to The Hindu.",
+          "headline": "Krakow shooting suspect died in hospital police say"
+        },
+        "es": {
+          "body": "La policía polaca informó que el tirador murió en el hospital, según la BBC y Reuters. El sospechoso resultó herido en un tiroteo con la policía, según The Hindu.",
+          "headline": "Sospechoso del tiroteo en Cracovia muere en el hospital, según la policía"
+        },
+        "fr": {
+          "body": "La police polonaise a déclaré que le tireur était décédé à l'hôpital, selon la BBC et Reuters. Le suspect a été blessé lors d'un échange de tirs avec la police, selon The Hindu.",
+          "headline": "Le suspect du tir à Cracovie est décédé à l'hôpital selon la police"
+        },
+        "it": {
+          "body": "La polizia polacca ha dichiarato che l'uomo armato è deceduto in ospedale, secondo BBC e Reuters. Lo sospettato era stato ferito in uno scontro a fuoco con la polizia, secondo The Hindu.",
+          "headline": "Sospettato dello sparo a Cracovia morto in ospedale, dicono le forze di polizia"
+        },
+        "ja": {
+          "body": "ポーランド警察によると、銃撃犯は病院で死亡したとBBCとロイターが報じた。ヒンドゥー紙によれば、容疑者は警察との銃撃戦で負傷していた。",
+          "headline": "クラクフの銃撃事件容疑者が病院で死亡、警察が発表"
+        },
+        "ko": {
+          "body": "폴란드 경찰은 BBC와 로이터 통신에 따르면 총격범이 병원에서 사망했다고 밝혔다. 힌두 신문에 따르면 이 용의자는 경찰과의 총격전에서 부상을 입었다.",
+          "headline": "크라쿠프 총격 용의자 병원 내 사망 확인"
+        },
+        "pt": {
+          "body": "A polícia polaca informou que o atirador morreu no hospital, segundo a BBC e a Reuters. O suspeito foi ferido num tiroteio com a polícia, de acordo com The Hindu.",
+          "headline": "Suspeito do tiroteio em Cracóvia morreu no hospital, diz a polícia"
+        },
+        "zh": {
+          "body": "据BBC和路透社报道，波兰警方称该枪手在医院死亡。据《印度时报》报道，该嫌犯在与警方交火中受伤。",
+          "headline": "波兰警方称克拉科夫枪击嫌犯在医院死亡"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.bbc.co.uk/news/articles/c6y434dw8319o?at_medium=RSS&at_campaign=rss",
+          "title": "Krakow shooting suspect has died in hospital, police say",
+          "outlet": "BBC",
           "publishedAt": "2026-11-09T06:50:09.000Z"
         },
         {
-          "outlet": "Reuters",
-          "title": "Krakow mass shooting assailant died in hospital, Polish police say",
           "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd2JCSWlLOUNwYXJVdFZDNkd6QndqWm4tVGxvT2piU202T3NWeXV5VkxEcjVIclV3cG9aa1Yxa1BMUmlSeHVuV1lvc0FYVzRZQXBrVE16Q19uVXJPNWZPbTRKdjcwNWIwNFhxeXRCS19wSEVPU2xoWk51dGdmU0p3U1VZeWRDUFFxUi1ZcmxUenBFdE05cm5iQU5hWjJhLWRDZFkydU9rRlZGNG1qbFhOag?oc=5",
+          "title": "Krakow mass shooting assailant died in hospital, Polish police say",
+          "outlet": "Reuters",
           "publishedAt": "2026-11-09T06:38:00.000Z"
         },
         {
-          "outlet": "The Hindu",
-          "title": "Krakow shooting suspect dies: Poland police",
           "url": "https://www.thehindu.com/news/international/krakow-shooting-suspect-dies-poland-police/article71681652.ece",
+          "title": "Krakow shooting suspect dies: Poland police",
+          "outlet": "The Hindu",
           "publishedAt": "2026-11-09T06:35:39.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-08T22:06:35.000Z",
@@ -982,13 +1040,21 @@
     "https://www.japantimes.co.jp/news/2026/11/09/world/crime-legal/poland-krakow-victims-security/",
     "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMkVkbW9MS0pGUjRVNTZEUFI4N0VmT2lCTzV5QXlQZmpnMlR1Wnc4XzlMMzRYOTRXdjFUaDVQT2RQSHpNaDhkVXp3ZW9EeTVyTkhvcTk4Y3lTZUtVVlBJNTFEY2hUQVB3YThndzhEcUJ5b0h4RWs1THVIUVZKdXFnenB4eG5nM0pjQVpBNk1ZbkxjblJnNXdwbEJqenhVLXBNemZLTC1teUphMElWVjk0dlU0WTlDNFc1eHpIQ3Z6QnBIZ3l6dTFkNm1mLTJCRzBxcThtd0VUd19pcTUzZFlGSWwwOG5fcEF3c1hwYUpHZmZienRNRUpB?oc=5",
     "https://www.jpost.com/israel-news/article-914281",
-    "https://www.theguardian.com/australia-news/2026/nov/09/beau-lamarre-condon-trial-reenacts-shooting-jesse-baird-ntwnfb"
+    "https://www.theguardian.com/australia-news/2026/nov/09/beau-lamarre-condon-trial-reenacts-shooting-jesse-baird-ntwnfb",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxQcEswNTVndFBZRXRYRDNuR3R2VEk2N1o1V2pFLWpOTWJfWXhrWlMwVk40bXB4Wm5xc2tIdDNiX1dieHlBRTVRbTZTV3BHYzRDT2lFODBROUMwQXdBMHpuUlBSOEI2RnBNVERJbXJiWDRHVWd6azhTSnZTYldseGJ6RVlHYjNsZEdyRk03NmZkcEdadHVQTWliRE9MSnRvRENn0gGmAUFVX3lxTE5lRl9GS2paeUhLY2hnVUNYOG80TjRDeFhiVzFSWTNHb3c0Vmw2UWpJT0tVMGdVSmQwNWtuWFlTeFhJbDFLTktlTzVnMWpEU1lBaS05M3ZKcm5zaGtKeS1pZzdydV82T0xmYzVoUGlSRE4tbUdOTWdDRUJYdV92U2t3dmdnU0pkVHhsenI3N3Rjd3J5MHVXYUJXVU9FaVlFVkYyMXlwc1E?oc=5",
+    "https://www.euronews.com/2026/11/09/europe-today-poland-in-shock-after-deadly-krakow-attack-ukraine-peace-talks-in-abu-dhabi",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVThnaFZKWUloX1luc1FQVE5DOF94UVZlZEQ3aFdHUWFndVprVUh2d0dCd3pnaEg4ZVA4eXFrcmNuNU03OWNuZ3RrTGl5X2pwd1hhTVdRUnN3bWg5d005WHpYLTh3UU51SFF0VHJpbzRCZURsNVB0SXFFcFZsaXdRUVpaMHRFbmE3VXJTcTNTS0JFQjJPZUR4RHJGdHhaVXVJX2t0anViYWY4WXNjWTRvdHd6cTlWSm5LT3lha3FUdHBMQQ?oc=5",
+    "https://www.euronews.com/2026/11/09/krakow-main-square-shooting-suspect-dies-in-hospital-police-say",
+    "https://www.dw.com/en/krakow-mass-shooting-suspect-has-died-in-hospital-police-in-poland-say/a-79895626?maca=en-rss-en-all-1573-rdf",
+    "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9Mc2VZdzRPb2gzTHBOUjBudEhfVld1MHMwYU14Q1Vkc25CazRjWlVJTUEzN015VnZ4cDY2MkZoUDQ0Skt4MmJVUWJaWkpVeWJyTFZTeW4xTzJ1SzR5UDNN?oc=5",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxPME5vLXhiU2ZIaXl3clh1RGtjdnpjYnpKV0tKU2ZNZ3UtUUJub0NCQVhrSnBzSW9xaWFYRFA2cHFQcXQyc3FILUtMTXR0NTJmTWUzVzc3cDBYZ3pfZHVFVmhlWHNWNlVOYkJmS1Z4SWN2Q1loeVpya0lTSnVxLUJYZmJRRkMtRGN3c05JOGNWRGNqNHdhTm1iREc0eHdJZDdDOEZB?oc=5",
+    "http://www.africanews.com/2026/11/09/completely-mangled-survivors-recount-deadly-egypt-train-crash/"
   ],
   "startedAt": "2026-11-08T14:16:19.194Z",
-  "updatedAt": "2026-11-09T06:54:03.367Z",
+  "updatedAt": "2026-11-09T07:14:01.176Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "poland-mass-shooting",
-  "sourceCount": 15,
+  "sourceCount": 16,
   "seenHeadlines": []
 }
