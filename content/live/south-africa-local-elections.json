@@ -1,206 +1,73 @@
 {
-  "meta": {
-    "outlets": [
-      "Al Jazeera",
-      "Africanews",
-      "The Straits Times",
-      "SRN News",
-      "Newswav"
-    ],
-    "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
-  },
   "slug": "south-africa-local-elections",
-  "topic": "South Africa Local Elections",
-  "status": "ended",
-  "article": {
-    "slug": "south-africa-local-elections",
-    "reason": "1 new update(s)",
-    "locales": {
-      "de": {
-        "dek": "Der African National Congress sicherte sich die meisten Stimmen bei den Kommunalwahlen, verzeichnete jedoch sein bisher schlechtestes nationales Ergebnis.",
-        "body": [
-          "Der African National Congress (ANC) belegte bei den Kommunalwahlen mit Stand vom 8. November 2026 den ersten Platz. Laut Africanews und Al Jazeera deuten die Endergebnisse darauf hin, dass die Partei 31 Prozent der nationalen Stimmen erhielt.",
-          "Wahlbeamte erreichten diese Summe nach der Auszählung von 99 Prozent der Stimmzettel. Die Auszählung bestätigt die Position der Partei als führende politische Kraft im Land.",
-          "Die Partei von Präsident Cyril Ramaphosa erlitt laut Al Jazeera den schwersten Rückschlag seit dem Ende der Apartheid. Das Ergebnis spiegelt einen Rückgang der Unterstützung im Vergleich zu früheren Wahlzyklen wider.",
-          "Africanews berichtete, dass die Partei trotz der historisch niedrigen Zahlen ihre Führung behaupten konnte. Das Ergebnis folgt auf eine Phase nationaler Wahlen, die Anfang dieser Woche endete.",
-          "Der ANC regiert Südafrika seit 1994. Historisch gesehen hat er eine dominante Mehrheit in den lokalen und nationalen Regierungsstrukturen gehalten.",
-          "Politische Analysten und Parteifunktionäre haben noch keine offiziellen Stellungnahmen zu den spezifischen Auswirkungen dieser Prozentzahlen abgegeben. Die endgültige Auszählung bestätigt die Verschiebung in der nationalen politischen Verteilung."
-        ],
-        "facts": [
-          "Der African National Congress gewann 31 Prozent der nationalen Stimmen.",
-          "Die Ergebnisse basieren auf 99 Prozent der ausgezählten Stimmen.",
-          "Die Wahlergebnisse wurden am 8. November 2026 finalisiert.",
-          "Dieses Ergebnis stellt das niedrigste Wahlergebnis für die Partei dar."
-        ],
-        "title": "ANC gewinnt Kommunalwahlen in Südafrika mit historisch niedrigem Ergebnis",
-        "context": "Der African National Congress hält seit dem Übergang zur Demokratie im Jahr 1994 die Macht in Südafrika. Kommunalwahlen bestimmen die Führung der Gemeinderäte im ganzen Land."
-      },
-      "en": {
-        "dek": "The African National Congress secured the most votes in the local elections while recording its lowest national performance to date.",
-        "body": [
-          "The African National Congress (ANC) placed first in the local elections as of 8 November 2026. Final results indicate the party received 31 percent of the national vote, according to Africanews and Al Jazeera.",
-          "Election officials reached this total after counting 99 percent of the ballots. The count confirms the party's position as the leading political force in the country.",
-          "President Cyril Ramaphosa’s party experienced its worst electoral setback since the end of apartheid, according to Al Jazeera. The result reflects a decline in support compared to previous cycles.",
-          "Africanews reported that the party maintained its lead despite the record-low figures. The outcome follows a period of national voting that concluded earlier this week.",
-          "The ANC has governed South Africa since 1994. It has historically maintained a dominant majority in local and national government structures.",
-          "Political analysts and party officials have not yet released formal statements regarding the specific implications of these percentages. The final tally confirms the shift in the national political distribution."
-        ],
-        "facts": [
-          "The African National Congress won 31 percent of the national vote.",
-          "Results are based on 99 percent of the votes counted.",
-          "The election results were finalized on 8 November 2026.",
-          "This result represents the lowest electoral outcome for the party."
-        ],
-        "title": "ANC wins South Africa local elections with record low result",
-        "context": "The African National Congress has held power in South Africa since the transition to democracy in 1994. Local elections determine the leadership of municipal councils across the country.",
-        "imageCaption": ""
-      }
-    },
-    "versions": [],
-    "updatedAt": "2026-11-08T14:46:27.150Z"
-  },
-  "endedAt": "2026-11-08T14:46:23.685Z",
-  "locales": {
-    "de": {
-      "dek": "Südafrikas regierende ANC verzeichnet bei den Kommunalwahlen ein historisch schlechtes Ergebnis und leitet Koalitionsgespräche ein.",
-      "title": "Kommunalwahlen in Südafrika"
-    },
-    "en": {
-      "dek": "South Africa's governing ANC records an all-time low in local election results, triggering coalition talks.",
-      "title": "South Africa Local Elections"
-    },
-    "es": {
-      "dek": "El partido gobernante de Sudáfrica, el ANC, registra su mínimo histórico en los resultados de las elecciones municipales, lo que desencadena negociaciones para formar coaliciones.",
-      "title": "Elecciones municipales en Sudáfrica"
-    },
-    "fr": {
-      "dek": "L'ANC, au pouvoir en Afrique du Sud, enregistre son plus bas score historique lors des élections municipales, ouvrant la voie à des négociations en vue de coalitions.",
-      "title": "Élections municipales en Afrique du Sud"
-    },
-    "it": {
-      "dek": "L'ANC, il partito al governo in Sudafrica, registra il risultato più basso di sempre nelle elezioni amministrative, dando via a negoziati per la formazione di coalizioni.",
-      "title": "Elezioni amministrative in Sudafrica"
-    },
-    "ja": {
-      "dek": "南アフリカの与党ANCは地方選挙で過去最低の得票率を記録し、連立協議を開始した。",
-      "title": "南アフリカ地方選挙"
-    },
-    "ko": {
-      "dek": "남아프리카공화국의 집권당인 ANC가 지방선거에서 역대 최저 득표율을 기록하며 연립정부 구성을 위한 협상에 돌입했다.",
-      "title": "남아프리카공화국 지방선거"
-    },
-    "pt": {
-      "dek": "O ANC, partido no poder na África do Sul, regista o resultado mais baixo de sempre em eleições autárquicas, desencadeando negociações para a formação de coligações.",
-      "title": "Eleições autárquicas na África do Sul"
-    },
-    "zh": {
-      "dek": "南非执政党非国大（ANC）在地方选举中遭遇历史性最低得票率，引发了关于组建联合政府的谈判。",
-      "title": "南非地方选举"
-    }
-  },
-  "updates": [
-    {
-      "at": "2026-11-08T14:07:48.000Z",
-      "id": "u-1794146868000-6pph",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Der African National Congress hat bei den südafrikanischen Kommunalwahlen den ersten Platz belegt, aber nach den am Samstag vorliegenden Endergebnissen den schwersten Rückschlag seiner Geschichte erlitten. Die Partei von Präsident Cyril Ramaphosa errang nach Angaben von Al Jazeera und Africanews bei einem Auszählungsstand von 99 Prozent landesweit 31 Prozent der Stimmen.",
-          "headline": "ANC gewinnt Kommunalwahlen in Südafrika mit historisch niedrigem Ergebnis"
-        },
-        "en": {
-          "body": "The African National Congress placed first in South Africa's local elections but recorded its worst-ever electoral setback, according to final results on Saturday. President Cyril Ramaphosa's party won 31 percent nationally with 99 percent of votes counted, according to Al Jazeera and Africanews.",
-          "headline": "ANC wins South Africa local elections with record low result"
-        },
-        "es": {
-          "body": "El Congreso Nacional Africano se situó en primer lugar en las elecciones locales de Sudáfrica, pero registró su peor revés electoral histórico, según los resultados finales publicados el sábado. El partido del presidente Cyril Ramaphosa obtuvo un 31 por ciento a nivel nacional con el 99 por ciento de los votos escrutados, según Al Jazeera y Africanews.",
-          "headline": "El CNA gana las elecciones locales en Sudáfrica con un resultado históricamente bajo"
-        },
-        "fr": {
-          "body": "Le Congrès national africain est arrivé en tête des élections locales en Afrique du Sud, tout en enregistrant son pire recul électoral historique, selon les résultats définitifs publiés samedi. Le parti du président Cyril Ramaphosa a obtenu 31 % des suffrages au niveau national, avec 99 % des votes dépouillés, d'après Al Jazeera et Africanews.",
-          "headline": "L'ANC remporte les élections locales en Afrique du Sud avec un résultat historiquement bas"
-        },
-        "it": {
-          "body": "L'African National Congress si è classificato al primo posto nelle elezioni locali in Sudafrica, registrando tuttavia la peggiore battuta d'arresto elettorale della sua storia, secondo i risultati definitivi diffusi sabato. Il partito del presidente Cyril Ramaphosa ha ottenuto il 31% a livello nazionale con il 99% dei voti scrutinati, secondo quanto riportato da Al Jazeera e Africanews.",
-          "headline": "L'ANC vince le elezioni locali in Sudafrica con un risultato storicamente basso"
-        },
-        "ja": {
-          "body": "アルジャジーラおよびアフリカニュースによると、南アフリカの地方選でアフリカ民族会議（ANC）が第一党となったものの、得票率は過去最低の落ち込みを記録したことが、土曜日の最終結果で判明した。99%の開票を終えた時点で、シリル・ラマポーザ大統領率いる同党は全国で31%を獲得した。",
-          "headline": "ANCが南アフリカ地方選挙で勝利するも、得票率は過去最低を記録"
-        },
-        "ko": {
-          "body": "토요일 최종 개표 결과에 따르면 아프리카민족회의(ANC)가 남아프리카공화국 지방선거에서 1위를 차지했으나 사상 최악의 선거 부진을 기록했다. 알자지라와 아프리카뉴스에 따르면 시릴 라마포사 대통령이 이끄는 ANC는 99% 개표가 진행된 가운데 전국 득표율 31%를 기록했다.",
-          "headline": "아프리카민족회의(ANC), 역대 최저 지지율로 남아공 지방선거 승리"
-        },
-        "pt": {
-          "body": "O Congresso Nacional Africano ficou em primeiro lugar nas eleições locais na África do Sul, mas registou o seu pior revés eleitoral de sempre, de acordo com os resultados finais divulgados este sábado. O partido do Presidente Cyril Ramaphosa obteve 31 por cento a nível nacional, com 99 por cento dos votos escrutinados, segundo a Al Jazeera e a Africanews.",
-          "headline": "ANC vence eleições locais na África do Sul com resultado historicamente baixo"
-        },
-        "zh": {
-          "body": "据半岛电视台和非洲新闻台报道，根据周六公布的最终计票结果，在已统计完99%的选票后，南非总统西里尔·拉马福萨领导的非洲人国民大会（非国大）在南非地方选举中名列第一，但遭遇了该党有史以来最严重的选举挫折，全国得票率为31%。",
-          "headline": "非国大赢得南非地方选举，但得票率创历史新低"
-        }
-      },
-      "sources": [
-        {
-          "url": "http://www.africanews.com/2026/11/08/anc-leads-south-africas-local-polls-but-records-all-time-election-low-final-results/",
-          "title": "ANC leads South Africa's local polls but records all-time election low: final results",
-          "outlet": "Africanews",
-          "publishedAt": "2026-11-08T14:07:48.000Z"
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/11/8/south-africas-anc-suffers-setback-in-local-elections?traffic_source=rss",
-          "title": "South Africa’s ANC suffers setback in local elections",
-          "outlet": "Al Jazeera",
-          "publishedAt": "2026-11-08T12:19:14.000Z"
-        }
-      ],
-      "importance": 3
-    }
-  ],
+  "status": "live",
   "category": "politics",
+  "importance": 5,
+  "topic": "South Africa Local Elections",
   "keywords": [
     "south africa",
     "anc",
     "local elections",
-    "election results",
-    "coalition talks"
+    "coalition",
+    "local government",
+    "electoral losses"
   ],
-  "seenUrls": [
-    "https://www.jpost.com/israel-news/crime-in-israel/article-914213",
-    "https://asia.nikkei.com/politics/new-zealand-s-knife-edge-election-puts-coalition-talks-in-focus",
-    "https://www.france24.com/en/poland-in-shock-after-6-killed-in-krakow-far-right-shooting",
-    "https://www.france24.com/en/europe/20261108-europe-will-take-part-us-mediated-ukraine-peace-talks-abu-dhabi-french-fm-says",
-    "https://www.jpost.com/israel-election-2026/article-914209",
-    "http://www.africanews.com/2026/11/08/anc-leads-south-africas-local-polls-but-records-all-time-election-low-final-results/",
-    "https://www.thehindu.com/news/international/europe-will-be-represented-at-us-mediated-ukraine-talks-in-abu-dhabi-france/article71681017.ece",
-    "https://thehill.com/blogs/in-the-know/6206531-talarico-makes-saturday-night-live-appearance/",
-    "https://www.kyivpost.com/post/89489",
-    "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdjMyVElRY0NPZ09qQk1YZnRxOW5kWlBoOXZVMDF5V2xEbjYtSjFzVUhUWjQwdU5Od3lrSlQ2RmpIX2dVNmpIUFc5MUpwcEp2SURTQTBvNmxBNU1Venl0NmctMWlKdEVnaGVyaFRMOS1aSEZYSkFPQXFMWEZuVzcwMVRlNE1TMEdrbHNrSXYyYjhUQl9jZU9qdTQwN0QyeGwwMFpaUllB?oc=5",
-    "https://www.channelnewsasia.com/world/europe-us-mediated-ukraine-russia-talks-abu-dhabi-6534261",
-    "https://news.google.com/rss/articles/CBMihAFBVV95cUxPOC1xcnVFb0p6VGo5WGdxZHNnZEhkaHdoVExaY2FtOTQzLVl3X3AxNmZVQlFGQVpycEpicDI0dHlzeWp2RUl2ZHRELUNzN29tTUJOdjZIV0hhemJ0WnB0MXAzWnRtTkZ0cXBlT2xoMFp1SGlZblZ4N182djJINTltakxIZTI?oc=5",
-    "https://www.euronews.com/2026/11/08/condolences-and-solidarity-european-and-world-leaders-react-to-krakow-shooting",
-    "https://www.kyivpost.com/post/89479",
-    "https://www.aljazeera.com/news/2026/11/8/south-africas-anc-suffers-setback-in-local-elections?traffic_source=rss",
-    "https://www.theguardian.com/business/2026/nov/08/us-midterms-ai-datacentres-broligarchy-voter-backlash",
-    "https://www.foxnews.com/politics/maga-voters-reveal-who-they-want-see-lead-gop-2028",
-    "https://www.channelnewsasia.com/sport/japans-tashima-rates-fifa-election-chances-20-30-in-challenge-infantino-6534166",
-    "https://www.politico.eu/article/russian-strikes-leave-600000-in-the-dark-in-eastern-ukraine-dnipropetrovsk/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZkRwLWg5TE4tS2NRS0JlMERmQmNUMk05X3k5LUJacUhONi0zckNjUXpiT3pBaFc0NGhQa2U5SUJYelFaZXcwbF9Vc041Nk1aeHZHem55WlB1Ny1Dbm94bTQ4ajZxa282dTVmWmZ4SUFRLTRTMmIzNjFBSkt1d1d5bmlacVU5V054Q1VjZDA5aXZtUUYzMmZBemdMeDM1eGJ1UEpUVkI3U0Vidw?oc=5",
-    "https://www.kyivpost.com/post/89469",
-    "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNlZyejl5MWNaeHpfeFNURGpDdnFrUmxjVG5SbFBQQVMxMXEzRVphSmFjR011ajFDWTRWY2ppeFlKeW9MOURKYUd1SWVNZ3Nnb0p4T1FET2h1dHktSVczWHF1Q3RuV1pybmJIOGtfOTNhS1Q1NlV6MTJWTUstLWtzeWVIU2h3bHc3UW1ua2s3blY4bmFQTS1DdW1pVWRRbDlxSXpnVnpDMFJMVlFuQ1hRUVBvZllwRTA?oc=5",
-    "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPalRWQlNzbi1pZXp1ZDA5X0hBbUFjRkgwamdpYXROUFE1SkFnekYxdFJtTFpWZDlkbmdZYjBqQk1xRFFfVUlpMUFFTHNFSjFmQVJuMmJURWpvRmp0VXFLUnVkVWcwSmdMV203cndPclZvSFpHMTdibkJ3UGlNbFd3RXpsTTkydHRGYzdmVVd5b2ZiV3hfWXB4Y3lDSHZvRzRiWXNkMVF1OWpVYTBLM3F0YmNRSzU5ZjAyTEVuMW9TNGJISFh2V0g2N2dtLTM4X0tMdGNyUnA5aw?oc=5",
-    "https://www.france24.com/en/middle-east/20261108-middle-east-live-riyadh-financial-district-targeted-deadly-strikes-yemen-israel-eisenkot-netanyahu-coalition-government-elections",
-    "https://www.france24.com/en/israel-s-arab-led-parties-gain-influence",
-    "https://news.google.com/rss/articles/CBMingFBVV95cUxOblBXMWoxRE9qU3prLVpXdHVkQjZxdGVhYVpLRFEtRWdMaDVBN2xaRzVGZFRRbG0xZFVWcTlJb2U0VmFhRDJPV09WZWFDZGFRM2RQN2plV2NmSGIxYkN1cVdPTHMwWFp5OXBqbjVKdUVkYUR0ZUJEV2F5RXVjRVRsTktoX2FVSm9ITmFqeHRNZ1lLVUN6ZVhaWEcxSW1OZw?oc=5",
-    "https://www.straitstimes.com/world/south-africas-anc-battered-by-local-election-losses-ahead-of-coalition-talks"
-  ],
-  "startedAt": "2026-11-08T14:46:18.022Z",
-  "updatedAt": "2026-11-09T05:34:11.075Z",
-  "importance": 4,
+  "startedAt": "2026-11-09T09:23:54.137Z",
+  "endedAt": null,
+  "updatedAt": "2026-11-09T09:23:54.137Z",
+  "articleSlug": null,
+  "sourceCount": 5,
   "wantsStats": true,
-  "articleSlug": "south-africa-local-elections",
-  "sourceCount": 2,
-  "seenHeadlines": []
+  "updates": [],
+  "seenUrls": [],
+  "seenHeadlines": [],
+  "locales": {
+    "en": {
+      "title": "South Africa Local Elections",
+      "dek": "The African National Congress faces complex coalition talks after suffering significant losses in South Africa's local elections."
+    },
+    "es": {
+      "title": "Elecciones municipales en Sudáfrica",
+      "dek": "El Congreso Nacional Africano se enfrenta a complejas negociaciones para formar coalición tras sufrir importantes pérdidas en las elecciones municipales de Sudáfrica."
+    },
+    "de": {
+      "title": "Kommunalwahlen in Südafrika",
+      "dek": "Der Afrikanische Nationalkongress steht nach herben Verlusten bei den südafrikanischen Kommunalwahlen vor schwierigen Koalitionsverhandlungen."
+    },
+    "fr": {
+      "title": "Élections municipales en Afrique du Sud",
+      "dek": "L'ANC fait face à de complex péripéties de coalition après avoir subi des pertes significatives lors des élections municipales sud-africaines."
+    },
+    "it": {
+      "title": "Elezioni locali in Sudafrica",
+      "dek": "L'African National Congress affronta complessi negoziati per la formazione di una coalizione dopo aver subito perdite significative nelle elezioni locali in Sudafrica."
+    },
+    "pt": {
+      "title": "Eleições autárquicas na África do Sul",
+      "dek": "O Congresso Nacional Africano enfrenta negociações complexas para a formação de coligações, após ter sofrido perdas significativas nas eleições autárquicas da África do Sul."
+    },
+    "zh": {
+      "title": "南非地方选举",
+      "dek": "在南非地方选举中遭遇重大失利后，非洲人国民大会面临复杂的联合政府组阁谈判。"
+    },
+    "ja": {
+      "title": "南アフリカ地方選挙",
+      "dek": "アフリカ民族会議（ANC）は、南アフリカの地方選挙で大幅な議席減を喫した後、複雑な連立協議に直面している。"
+    },
+    "ko": {
+      "title": "남아프리카공화국 지방선거",
+      "dek": "아프리카민족회의(ANC)가 남아공 지방선거에서 상당한 의석을 잃은 후 복잡한 연정 협상에 직면했다."
+    }
+  },
+  "article": null,
+  "meta": {
+    "createdBy": "bots/live.mjs",
+    "outlets": [
+      "The Guardian",
+      "Africanews",
+      "The Straits Times",
+      "NBC News",
+      "Business News Nigeria"
+    ]
+  }
 }
