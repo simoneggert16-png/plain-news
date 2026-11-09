@@ -6,11 +6,318 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-09T16:53:31.035Z",
-  "updatedAt": "2026-11-09T16:53:47.140Z",
+  "updatedAt": "2026-11-09T19:13:42.055Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "izmir-steel-plant-explosion",
-  "stats": null,
+  "stats": {
+    "label": "Casualty Counts",
+    "note": "Reports provide varying casualty counts for the Izmir steel plant explosion.",
+    "unit": "",
+    "max": null,
+    "asOf": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2026-11-09T19:13:36.529Z",
+    "source": {
+      "outlet": "BBC",
+      "title": "Turkey steel factory blast kills at least 16 people",
+      "url": "https://www.bbc.co.uk/news/articles/cq2d6d5z9y5jo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-09T18:04:01.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "killed-dawn",
+        "label": "Killed (Dawn)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (Dawn)"
+          },
+          "it": {
+            "label": "Morti (Dawn)"
+          },
+          "es": {
+            "label": "Fallecidos (Dawn)"
+          },
+          "de": {
+            "label": "Tote (Dawn)"
+          },
+          "pt": {
+            "label": "Mortos (Dawn)"
+          },
+          "zh": {
+            "label": "死亡人数（Dawn）"
+          },
+          "ja": {
+            "label": "死亡者数（Dawn）"
+          },
+          "ko": {
+            "label": "사망자 수 (Dawn)"
+          }
+        }
+      },
+      {
+        "key": "injured-dawn",
+        "label": "Injured (Dawn)",
+        "value": 13,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Blessés (Dawn)"
+          },
+          "it": {
+            "label": "Feriti (Dawn)"
+          },
+          "es": {
+            "label": "Heridos (Dawn)"
+          },
+          "de": {
+            "label": "Verletzte (Dawn)"
+          },
+          "pt": {
+            "label": "Feridos (Dawn)"
+          },
+          "zh": {
+            "label": "受伤人数（Dawn）"
+          },
+          "ja": {
+            "label": "負傷者数（Dawn）"
+          },
+          "ko": {
+            "label": "부상자 수 (Dawn)"
+          }
+        }
+      },
+      {
+        "key": "killed-dw",
+        "label": "Killed (DW)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (DW)"
+          },
+          "it": {
+            "label": "Morti (DW)"
+          },
+          "es": {
+            "label": "Fallecidos (DW)"
+          },
+          "de": {
+            "label": "Tote (DW)"
+          },
+          "pt": {
+            "label": "Mortos (DW)"
+          },
+          "zh": {
+            "label": "死亡人数（DW）"
+          },
+          "ja": {
+            "label": "死亡者数（DW）"
+          },
+          "ko": {
+            "label": "사망자 수 (DW)"
+          }
+        }
+      },
+      {
+        "key": "killed-bbc",
+        "label": "Killed (BBC)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (BBC)"
+          },
+          "it": {
+            "label": "Morti (BBC)"
+          },
+          "es": {
+            "label": "Fallecidos (BBC)"
+          },
+          "de": {
+            "label": "Tote (BBC)"
+          },
+          "pt": {
+            "label": "Mortos (BBC)"
+          },
+          "zh": {
+            "label": "死亡人数（BBC）"
+          },
+          "ja": {
+            "label": "死亡者数（BBC）"
+          },
+          "ko": {
+            "label": "사망자 수 (BBC)"
+          }
+        }
+      },
+      {
+        "key": "killed-die-zeit",
+        "label": "Killed (Die Zeit)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (Die Zeit)"
+          },
+          "it": {
+            "label": "Morti (Die Zeit)"
+          },
+          "es": {
+            "label": "Fallecidos (Die Zeit)"
+          },
+          "de": {
+            "label": "Tote (Die Zeit)"
+          },
+          "pt": {
+            "label": "Mortos (Die Zeit)"
+          },
+          "zh": {
+            "label": "死亡人数（Die Zeit）"
+          },
+          "ja": {
+            "label": "死亡者数（Die Zeit）"
+          },
+          "ko": {
+            "label": "사망자 수 (Die Zeit)"
+          }
+        }
+      },
+      {
+        "key": "killed-der-spiegel",
+        "label": "Killed (Der Spiegel)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (Der Spiegel)"
+          },
+          "it": {
+            "label": "Morti (Der Spiegel)"
+          },
+          "es": {
+            "label": "Fallecidos (Der Spiegel)"
+          },
+          "de": {
+            "label": "Tote (Der Spiegel)"
+          },
+          "pt": {
+            "label": "Mortos (Der Spiegel)"
+          },
+          "zh": {
+            "label": "死亡人数（Der Spiegel）"
+          },
+          "ja": {
+            "label": "死亡者数（Der Spiegel）"
+          },
+          "ko": {
+            "label": "사망자 수 (Der Spiegel)"
+          }
+        }
+      },
+      {
+        "key": "killed-cna",
+        "label": "Killed (CNA)",
+        "value": 10,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (CNA)"
+          },
+          "it": {
+            "label": "Morti (CNA)"
+          },
+          "es": {
+            "label": "Fallecidos (CNA)"
+          },
+          "de": {
+            "label": "Tote (CNA)"
+          },
+          "pt": {
+            "label": "Mortos (CNA)"
+          },
+          "zh": {
+            "label": "死亡人数（CNA）"
+          },
+          "ja": {
+            "label": "死亡者数（CNA）"
+          },
+          "ko": {
+            "label": "사망자 수 (CNA)"
+          }
+        }
+      },
+      {
+        "key": "injured-cna",
+        "label": "Injured (CNA)",
+        "value": 15,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Blessés (CNA)"
+          },
+          "it": {
+            "label": "Feriti (CNA)"
+          },
+          "es": {
+            "label": "Heridos (CNA)"
+          },
+          "de": {
+            "label": "Verletzte (CNA)"
+          },
+          "pt": {
+            "label": "Feridos (CNA)"
+          },
+          "zh": {
+            "label": "受伤人数（CNA）"
+          },
+          "ja": {
+            "label": "負傷者数（CNA）"
+          },
+          "ko": {
+            "label": "부상자 수 (CNA)"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Todesopferzahlen",
+        "note": "Berichte liefern unterschiedliche Opferzahlen für die Explosion im Stahlwerk Izmir."
+      },
+      "fr": {
+        "label": "Nombre de victimes",
+        "note": "Les rapports fournissent des chiffres de victimes variables concernant l'explosion de l'usine sidérurgique d'Izmir."
+      },
+      "es": {
+        "label": "Cifras de víctimas",
+        "note": "Los informes presentan cifras de víctimas variables por la explosión de la planta siderúrgica de Izmir."
+      },
+      "it": {
+        "label": "Conteggi delle vittime",
+        "note": "I rapporti forniscono conteggi delle vittime variabili per l'esplosione dell'impianto siderurgico di Izmir."
+      },
+      "pt": {
+        "label": "Contagens de Vítimas",
+        "note": "Relatórios fornecem contagens de vítimas variáveis para a explosão na fábrica de aço de Izmir."
+      },
+      "zh": {
+        "label": "伤亡人数",
+        "note": "各报道对伊兹密尔钢铁厂爆炸的伤亡人数有所不同。"
+      },
+      "ja": {
+        "label": "死傷者数",
+        "note": "イズミル製鉄所爆発に関する報告では、死傷者数にばらつきが見られる。"
+      },
+      "ko": {
+        "label": "사상자 수",
+        "note": "이즈미르 제철소 폭발에 대한 보고서들은 상이한 사상자 수를 보이고 있습니다."
+      }
+    }
+  },
   "sources": [
     {
       "outlet": "DW",

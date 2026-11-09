@@ -1,9 +1,165 @@
 {
+  "meta": {
+    "outlets": [
+      "DW",
+      "Sky News",
+      "South China Morning Post",
+      "The Hindu"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b",
+    "statsModel": "nvidia/nemotron-3.5-bolt-e4b"
+  },
   "slug": "izmir-steel-plant-explosion",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Izmir steel plant explosion",
+  "status": "live",
+  "article": {
+    "slug": "izmir-steel-plant-explosion",
+    "reason": "1 new update(s)",
+    "locales": {
+      "de": {
+        "dek": "Präsident Tayyip Erdogan bestätigte 16 Todesfälle nach einer Explosion in einem Stahl- und Eisenwerk in Westtürkei.",
+        "body": [
+          "Eine Explosion in einem Stahl- und Eisenwerk in Westtürkei tötete am 9. November 2026 16 Menschen.",
+          "Präsident Tayyip Erdogan erklärte, dass bei der Explosion in dem Werk in Westtürkei 16 Menschen starben.",
+          "DW berichtete, dass mindestens 16 Arbeiter bei der Explosion im Stahlwerk in Izmir ums Leben kamen.",
+          "The Straits Times berichtete, dass die Explosion in Westtürkei 16 Menschen tötete, wobei drei weitere vermisst werden.",
+          "Rettungseinsätze liefen nach der Explosion im Stahlwerk.",
+          "Die Ursache der Explosion wurde in den bestätigten Aktualisierungen nicht sofort angegeben."
+        ],
+        "facts": [
+          "16 Tote bei Stahlwerkexplosion in Westtürkei",
+          "Präsident Tayyip Erdogan bestätigte den Todesopferstand von 16",
+          "DW berichtete von mindestens 16 Todesopfern in der Explosion",
+          "The Straits Times berichtete von 16 Todesopfern bei der Explosion"
+        ],
+        "title": "Explosion in Stahlwerk in Westtürkei tötet 16 Menschen",
+        "context": "Ein Stahl- und Eisenwerk in Westtürkei erlitt am 9. November 2026 eine tödliche Explosion mit mehreren Todesopfern und Verletzten."
+      },
+      "en": {
+        "dek": "President Tayyip Erdogan confirmed 16 deaths following a blast at a steel and iron manufacturing plant in western Turkey.",
+        "body": [
+          "A steel and iron manufacturing plant explosion in western Turkey killed 16 people on 9 November 2026.",
+          "President Tayyip Erdogan stated that 16 people died in the blast at the plant in western Turkey.",
+          "DW reported that at least 16 workers lost their lives in the Izmir steel plant explosion.",
+          "The Straits Times reported the blast killed 16 people in western Turkey, with three others left missing.",
+          "Rescue operations were underway following the explosion at the steel plant.",
+          "The cause of the blast was not immediately specified in the confirmed updates."
+        ],
+        "facts": [
+          "16 people killed in steel plant blast in western Turkey",
+          "President Tayyip Erdogan confirmed the death toll of 16",
+          "DW reported at least 16 workers lost their lives in the explosion",
+          "The Straits Times reported 16 people died in the blast"
+        ],
+        "title": "Steel plant blast in western Turkey kills 16 people",
+        "context": "A steel and iron manufacturing plant in western Turkey experienced a deadly blast on 9 November 2026, resulting in multiple fatalities and injuries.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [],
+    "updatedAt": "2026-11-09T16:53:47.140Z"
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Rettungsdienste führen nach einer tödlichen Explosion in einem Stahlwerk in der Türkei Such- und Rettungsoperationen durch.",
+      "title": "Explosion in Izmir Stahlwerk"
+    },
+    "en": {
+      "dek": "Emergency services are conducting search and rescue operations following a deadly blast at a steel facility in Turkey.",
+      "title": "Izmir steel plant explosion"
+    },
+    "es": {
+      "dek": "Los servicios de emergencia están llevando a cabo operaciones de búsqueda y rescate tras una explosión mortal en una instalación siderúrgica en Turquía.",
+      "title": "Explosión en planta siderúrgica de Izmir"
+    },
+    "fr": {
+      "dek": "Les services d'urgence mènent des opérations de recherche et de sauvetage suite à une explosion mortelle dans une installation sidérurgique en Turquie.",
+      "title": "Explosion dans une aciérie d'Izmir"
+    },
+    "it": {
+      "dek": "I servizi di emergenza stanno conducendo operazioni di ricerca e soccorso dopo un'esplosione mortale in un impianto siderurgico in Turchia.",
+      "title": "Esplosione in acciaieria di Izmir"
+    },
+    "ja": {
+      "dek": "トルコの製鉄施設で発生した致命的な爆発を受け、緊急サービスが捜索救助活動を実施している。",
+      "title": "イズミル製鉄所で爆発"
+    },
+    "ko": {
+      "dek": "터키의 한 제철소에서 발생한 치명적인 폭발 이후 응급 서비스가 수색 및 구조 작업을 진행 중이다.",
+      "title": "이즈미르 제철소 폭발"
+    },
+    "pt": {
+      "dek": "Os serviços de emergência estão a realizar operações de busca e salvamento após uma explosão fatal numa instalação siderúrgica na Turquia.",
+      "title": "Explosão numa fábrica de aço em Izmir"
+    },
+    "zh": {
+      "dek": "在土耳其一家钢铁设施发生致命爆炸后，紧急服务正在进行搜救行动。",
+      "title": "伊兹密尔钢铁厂爆炸"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-11-09T15:52:00.000Z",
+      "id": "u-1794239520000-efq0",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Präsident Tayyip Erdogan teilte laut The Straits Times mit, dass bei einer Explosion in einem Stahl- und Eisenwerk in West-Türkei 16 Menschen ums Leben kamen. DW berichtete, dass mindestens 16 Arbeiter bei der Explosion im Stahlwerk in Izmir ums Leben kamen.",
+          "headline": "Explosion in Stahlwerk in West-Türkei tötet 16 Menschen"
+        },
+        "en": {
+          "body": "President Tayyip Erdogan said 16 people died in a blast at a steel and iron manufacturing plant in western Turkey according to The Straits Times. DW reported at least 16 workers lost their lives in the Izmir steel plant explosion according to DW.",
+          "headline": "Steel plant blast in western Turkey killed 16 people"
+        },
+        "es": {
+          "body": "El presidente Tayyip Erdogan dijo que 16 personas murieron en una explosión en una planta de fabricación de acero y hierro en el oeste de Turquía, según The Straits Times. DW informó que al menos 16 trabajadores perdieron la vida en la explosión de la acería de Izmir, según DW.",
+          "headline": "Explosión en acería del oeste de Turquía mata a 16 personas"
+        },
+        "fr": {
+          "body": "Le président Tayyip Erdogan a déclaré que 16 personnes sont mortes dans une explosion dans une usine de fabrication d'acier et de fer dans l'ouest de la Turquie, selon The Straits Times. DW a rapporté qu'au moins 16 travailleurs ont perdu la vie dans l'explosion de l'aciérie d'Izmir, selon DW.",
+          "headline": "Explosion dans une aciérie de l'ouest de la Turquie fait 16 morts"
+        },
+        "it": {
+          "body": "Il presidente Tayyip Erdogan ha dichiarato che 16 persone sono morte in un'esplosione presso un impianto di produzione di acciaio e ferro nell'ovest della Turchia, secondo The Straits Times. DW ha riportato che almeno 16 lavoratori hanno perso la vita nell'esplosione dell'acciaieria di Izmir, secondo DW.",
+          "headline": "Esplosione in acciaieria occidentale della Turchia uccide 16 persone"
+        },
+        "ja": {
+          "body": "タイイップ・エルドアン大統領は、ストレイツ・タイムズによると、トルコ西部の鉄鋼・鉄製造工場での爆発で16人が死亡したと述べた。DWは、DWによると、イズミル製鉄所爆発で少なくとも16人の作業員が命を落としたと報じた。",
+          "headline": "トルコ西部製鉄所爆発で16人死亡"
+        },
+        "ko": {
+          "body": "타이이프 에르도안 대통령은 스트레이츠 타임스에 따르면 터키 서부의 철강 및 철강 제조 공장에서 발생한 폭발로 16명이 사망했다고 밝혔다. DW는 DW 보도에 따르면 이즈미르 제철소 폭발로 최소 16명의 근로자가 목숨을 잃었다고 보도했다.",
+          "headline": "터키 서부 제철소 폭발로 16명 사망"
+        },
+        "pt": {
+          "body": "O Presidente Tayyip Erdogan afirmou que 16 pessoas morreram numa explosão numa fábrica de aço e ferro no oeste da Turquia, segundo The Straits Times. A DW reportou que pelo menos 16 trabalhadores perderam a vida na explosão da siderúrgica de Izmir, segundo a DW.",
+          "headline": "Explosão numa siderúrgica ocidental da Turquia mata 16 pessoas"
+        },
+        "zh": {
+          "body": "根据《海峡时报》，总统雷杰普·塔伊普·埃尔多安表示，土耳其西部一家钢铁和铁制品制造厂的爆炸造成16人死亡。德国之声报道称，根据德国之声的消息，伊兹密尔钢铁厂爆炸至少造成16名工人丧生。",
+          "headline": "土耳其西部钢铁厂爆炸造成16人死亡"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.dw.com/en/turkey-workers-killed-in-izmir-steel-plant-blast/a-79900748?maca=en-rss-en-all-1573-rdf",
+          "title": "Turkey: Workers killed in Izmir steel plant blast",
+          "outlet": "DW",
+          "publishedAt": "2026-11-09T15:52:00.000Z"
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/steel-plant-blast-kills-3-leaves-10-missing-in-western-turkey",
+          "title": "Steel plant blast kills 16 in western Turkey",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-09T11:53:43.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "izmir",
     "turkey",
@@ -13,72 +169,6 @@
     "casualties",
     "rescue operations"
   ],
-  "startedAt": "2026-11-09T16:53:31.035Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-09T16:53:39.109Z",
-  "articleSlug": "izmir-steel-plant-explosion",
-  "sourceCount": 2,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1794239520000-efq0",
-      "at": "2026-11-09T15:52:00.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Steel plant blast in western Turkey killed 16 people",
-          "body": "President Tayyip Erdogan said 16 people died in a blast at a steel and iron manufacturing plant in western Turkey according to The Straits Times. DW reported at least 16 workers lost their lives in the Izmir steel plant explosion according to DW."
-        },
-        "de": {
-          "headline": "Explosion in Stahlwerk in West-Türkei tötet 16 Menschen",
-          "body": "Präsident Tayyip Erdogan teilte laut The Straits Times mit, dass bei einer Explosion in einem Stahl- und Eisenwerk in West-Türkei 16 Menschen ums Leben kamen. DW berichtete, dass mindestens 16 Arbeiter bei der Explosion im Stahlwerk in Izmir ums Leben kamen."
-        },
-        "es": {
-          "headline": "Explosión en acería del oeste de Turquía mata a 16 personas",
-          "body": "El presidente Tayyip Erdogan dijo que 16 personas murieron en una explosión en una planta de fabricación de acero y hierro en el oeste de Turquía, según The Straits Times. DW informó que al menos 16 trabajadores perdieron la vida en la explosión de la acería de Izmir, según DW."
-        },
-        "fr": {
-          "headline": "Explosion dans une aciérie de l'ouest de la Turquie fait 16 morts",
-          "body": "Le président Tayyip Erdogan a déclaré que 16 personnes sont mortes dans une explosion dans une usine de fabrication d'acier et de fer dans l'ouest de la Turquie, selon The Straits Times. DW a rapporté qu'au moins 16 travailleurs ont perdu la vie dans l'explosion de l'aciérie d'Izmir, selon DW."
-        },
-        "it": {
-          "headline": "Esplosione in acciaieria occidentale della Turchia uccide 16 persone",
-          "body": "Il presidente Tayyip Erdogan ha dichiarato che 16 persone sono morte in un'esplosione presso un impianto di produzione di acciaio e ferro nell'ovest della Turchia, secondo The Straits Times. DW ha riportato che almeno 16 lavoratori hanno perso la vita nell'esplosione dell'acciaieria di Izmir, secondo DW."
-        },
-        "pt": {
-          "headline": "Explosão numa siderúrgica ocidental da Turquia mata 16 pessoas",
-          "body": "O Presidente Tayyip Erdogan afirmou que 16 pessoas morreram numa explosão numa fábrica de aço e ferro no oeste da Turquia, segundo The Straits Times. A DW reportou que pelo menos 16 trabalhadores perderam a vida na explosão da siderúrgica de Izmir, segundo a DW."
-        },
-        "zh": {
-          "headline": "土耳其西部钢铁厂爆炸造成16人死亡",
-          "body": "根据《海峡时报》，总统雷杰普·塔伊普·埃尔多安表示，土耳其西部一家钢铁和铁制品制造厂的爆炸造成16人死亡。德国之声报道称，根据德国之声的消息，伊兹密尔钢铁厂爆炸至少造成16名工人丧生。"
-        },
-        "ja": {
-          "headline": "トルコ西部製鉄所爆発で16人死亡",
-          "body": "タイイップ・エルドアン大統領は、ストレイツ・タイムズによると、トルコ西部の鉄鋼・鉄製造工場での爆発で16人が死亡したと述べた。DWは、DWによると、イズミル製鉄所爆発で少なくとも16人の作業員が命を落としたと報じた。"
-        },
-        "ko": {
-          "headline": "터키 서부 제철소 폭발로 16명 사망",
-          "body": "타이이프 에르도안 대통령은 스트레이츠 타임스에 따르면 터키 서부의 철강 및 철강 제조 공장에서 발생한 폭발로 16명이 사망했다고 밝혔다. DW는 DW 보도에 따르면 이즈미르 제철소 폭발로 최소 16명의 근로자가 목숨을 잃었다고 보도했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "DW",
-          "title": "Turkey: Workers killed in Izmir steel plant blast",
-          "url": "https://www.dw.com/en/turkey-workers-killed-in-izmir-steel-plant-blast/a-79900748?maca=en-rss-en-all-1573-rdf",
-          "publishedAt": "2026-11-09T15:52:00.000Z"
-        },
-        {
-          "outlet": "The Straits Times",
-          "title": "Steel plant blast kills 16 in western Turkey",
-          "url": "https://www.straitstimes.com/world/europe/steel-plant-blast-kills-3-leaves-10-missing-in-western-turkey",
-          "publishedAt": "2026-11-09T11:53:43.000Z"
-        }
-      ]
-    }
-  ],
   "seenUrls": [
     "https://www.dw.com/en/turkey-workers-killed-in-izmir-steel-plant-blast/a-79900748?maca=en-rss-en-all-1573-rdf",
     "https://www.euronews.com/2026/11/09/climate-crisis-now-a-health-emergency-of-pandemic-scale-un-climate-chief-warns",
@@ -86,100 +176,358 @@
     "https://news.sky.com/story/explosion-at-steel-plant-in-turkey-kills-at-least-six-officials-say-13610161",
     "https://www.straitstimes.com/world/europe/steel-plant-blast-kills-3-leaves-10-missing-in-western-turkey"
   ],
+  "startedAt": "2026-11-09T16:53:31.035Z",
+  "updatedAt": "2026-11-09T16:53:39.109Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": "izmir-steel-plant-explosion",
+  "sourceCount": 2,
   "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Izmir steel plant explosion",
-      "dek": "Emergency services are conducting search and rescue operations following a deadly blast at a steel facility in Turkey."
+  "stats": {
+    "label": "Casualty Counts",
+    "note": "Reports provide varying casualty counts for the Izmir steel plant explosion.",
+    "unit": "",
+    "max": null,
+    "asOf": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2026-11-09T19:13:36.529Z",
+    "source": {
+      "outlet": "BBC",
+      "title": "Turkey steel factory blast kills at least 16 people",
+      "url": "https://www.bbc.co.uk/news/articles/cq2d6d5z9y5jo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-09T18:04:01.000Z",
+      "trusted": true
     },
-    "de": {
-      "title": "Explosion in Izmir Stahlwerk",
-      "dek": "Rettungsdienste führen nach einer tödlichen Explosion in einem Stahlwerk in der Türkei Such- und Rettungsoperationen durch."
-    },
-    "es": {
-      "title": "Explosión en planta siderúrgica de Izmir",
-      "dek": "Los servicios de emergencia están llevando a cabo operaciones de búsqueda y rescate tras una explosión mortal en una instalación siderúrgica en Turquía."
-    },
-    "fr": {
-      "title": "Explosion dans une aciérie d'Izmir",
-      "dek": "Les services d'urgence mènent des opérations de recherche et de sauvetage suite à une explosion mortelle dans une installation sidérurgique en Turquie."
-    },
-    "zh": {
-      "title": "伊兹密尔钢铁厂爆炸",
-      "dek": "在土耳其一家钢铁设施发生致命爆炸后，紧急服务正在进行搜救行动。"
-    },
-    "pt": {
-      "title": "Explosão numa fábrica de aço em Izmir",
-      "dek": "Os serviços de emergência estão a realizar operações de busca e salvamento após uma explosão fatal numa instalação siderúrgica na Turquia."
-    },
-    "it": {
-      "title": "Esplosione in acciaieria di Izmir",
-      "dek": "I servizi di emergenza stanno conducendo operazioni di ricerca e soccorso dopo un'esplosione mortale in un impianto siderurgico in Turchia."
-    },
-    "ja": {
-      "title": "イズミル製鉄所で爆発",
-      "dek": "トルコの製鉄施設で発生した致命的な爆発を受け、緊急サービスが捜索救助活動を実施している。"
-    },
-    "ko": {
-      "title": "이즈미르 제철소 폭발",
-      "dek": "터키의 한 제철소에서 발생한 치명적인 폭발 이후 응급 서비스가 수색 및 구조 작업을 진행 중이다."
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "killed-dawn",
+        "label": "Killed (Dawn)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (Dawn)"
+          },
+          "it": {
+            "label": "Morti (Dawn)"
+          },
+          "es": {
+            "label": "Fallecidos (Dawn)"
+          },
+          "de": {
+            "label": "Tote (Dawn)"
+          },
+          "pt": {
+            "label": "Mortos (Dawn)"
+          },
+          "zh": {
+            "label": "死亡人数（Dawn）"
+          },
+          "ja": {
+            "label": "死亡者数（Dawn）"
+          },
+          "ko": {
+            "label": "사망자 수 (Dawn)"
+          }
+        }
+      },
+      {
+        "key": "injured-dawn",
+        "label": "Injured (Dawn)",
+        "value": 13,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Blessés (Dawn)"
+          },
+          "it": {
+            "label": "Feriti (Dawn)"
+          },
+          "es": {
+            "label": "Heridos (Dawn)"
+          },
+          "de": {
+            "label": "Verletzte (Dawn)"
+          },
+          "pt": {
+            "label": "Feridos (Dawn)"
+          },
+          "zh": {
+            "label": "受伤人数（Dawn）"
+          },
+          "ja": {
+            "label": "負傷者数（Dawn）"
+          },
+          "ko": {
+            "label": "부상자 수 (Dawn)"
+          }
+        }
+      },
+      {
+        "key": "killed-dw",
+        "label": "Killed (DW)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (DW)"
+          },
+          "it": {
+            "label": "Morti (DW)"
+          },
+          "es": {
+            "label": "Fallecidos (DW)"
+          },
+          "de": {
+            "label": "Tote (DW)"
+          },
+          "pt": {
+            "label": "Mortos (DW)"
+          },
+          "zh": {
+            "label": "死亡人数（DW）"
+          },
+          "ja": {
+            "label": "死亡者数（DW）"
+          },
+          "ko": {
+            "label": "사망자 수 (DW)"
+          }
+        }
+      },
+      {
+        "key": "killed-bbc",
+        "label": "Killed (BBC)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (BBC)"
+          },
+          "it": {
+            "label": "Morti (BBC)"
+          },
+          "es": {
+            "label": "Fallecidos (BBC)"
+          },
+          "de": {
+            "label": "Tote (BBC)"
+          },
+          "pt": {
+            "label": "Mortos (BBC)"
+          },
+          "zh": {
+            "label": "死亡人数（BBC）"
+          },
+          "ja": {
+            "label": "死亡者数（BBC）"
+          },
+          "ko": {
+            "label": "사망자 수 (BBC)"
+          }
+        }
+      },
+      {
+        "key": "killed-die-zeit",
+        "label": "Killed (Die Zeit)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (Die Zeit)"
+          },
+          "it": {
+            "label": "Morti (Die Zeit)"
+          },
+          "es": {
+            "label": "Fallecidos (Die Zeit)"
+          },
+          "de": {
+            "label": "Tote (Die Zeit)"
+          },
+          "pt": {
+            "label": "Mortos (Die Zeit)"
+          },
+          "zh": {
+            "label": "死亡人数（Die Zeit）"
+          },
+          "ja": {
+            "label": "死亡者数（Die Zeit）"
+          },
+          "ko": {
+            "label": "사망자 수 (Die Zeit)"
+          }
+        }
+      },
+      {
+        "key": "killed-der-spiegel",
+        "label": "Killed (Der Spiegel)",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (Der Spiegel)"
+          },
+          "it": {
+            "label": "Morti (Der Spiegel)"
+          },
+          "es": {
+            "label": "Fallecidos (Der Spiegel)"
+          },
+          "de": {
+            "label": "Tote (Der Spiegel)"
+          },
+          "pt": {
+            "label": "Mortos (Der Spiegel)"
+          },
+          "zh": {
+            "label": "死亡人数（Der Spiegel）"
+          },
+          "ja": {
+            "label": "死亡者数（Der Spiegel）"
+          },
+          "ko": {
+            "label": "사망자 수 (Der Spiegel)"
+          }
+        }
+      },
+      {
+        "key": "killed-cna",
+        "label": "Killed (CNA)",
+        "value": 10,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Tués (CNA)"
+          },
+          "it": {
+            "label": "Morti (CNA)"
+          },
+          "es": {
+            "label": "Fallecidos (CNA)"
+          },
+          "de": {
+            "label": "Tote (CNA)"
+          },
+          "pt": {
+            "label": "Mortos (CNA)"
+          },
+          "zh": {
+            "label": "死亡人数（CNA）"
+          },
+          "ja": {
+            "label": "死亡者数（CNA）"
+          },
+          "ko": {
+            "label": "사망자 수 (CNA)"
+          }
+        }
+      },
+      {
+        "key": "injured-cna",
+        "label": "Injured (CNA)",
+        "value": 15,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Blessés (CNA)"
+          },
+          "it": {
+            "label": "Feriti (CNA)"
+          },
+          "es": {
+            "label": "Heridos (CNA)"
+          },
+          "de": {
+            "label": "Verletzte (CNA)"
+          },
+          "pt": {
+            "label": "Feridos (CNA)"
+          },
+          "zh": {
+            "label": "受伤人数（CNA）"
+          },
+          "ja": {
+            "label": "負傷者数（CNA）"
+          },
+          "ko": {
+            "label": "부상자 수 (CNA)"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Todesopferzahlen",
+        "note": "Berichte liefern unterschiedliche Opferzahlen für die Explosion im Stahlwerk Izmir."
+      },
+      "fr": {
+        "label": "Nombre de victimes",
+        "note": "Les rapports fournissent des chiffres de victimes variables concernant l'explosion de l'usine sidérurgique d'Izmir."
+      },
+      "es": {
+        "label": "Cifras de víctimas",
+        "note": "Los informes presentan cifras de víctimas variables por la explosión de la planta siderúrgica de Izmir."
+      },
+      "it": {
+        "label": "Conteggi delle vittime",
+        "note": "I rapporti forniscono conteggi delle vittime variabili per l'esplosione dell'impianto siderurgico di Izmir."
+      },
+      "pt": {
+        "label": "Contagens de Vítimas",
+        "note": "Relatórios fornecem contagens de vítimas variáveis para a explosão na fábrica de aço de Izmir."
+      },
+      "zh": {
+        "label": "伤亡人数",
+        "note": "各报道对伊兹密尔钢铁厂爆炸的伤亡人数有所不同。"
+      },
+      "ja": {
+        "label": "死傷者数",
+        "note": "イズミル製鉄所爆発に関する報告では、死傷者数にばらつきが見られる。"
+      },
+      "ko": {
+        "label": "사상자 수",
+        "note": "이즈미르 제철소 폭발에 대한 보고서들은 상이한 사상자 수를 보이고 있습니다."
+      }
     }
   },
-  "article": {
-    "slug": "izmir-steel-plant-explosion",
-    "updatedAt": "2026-11-09T16:53:47.140Z",
-    "reason": "1 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Steel plant blast in western Turkey kills 16 people",
-        "dek": "President Tayyip Erdogan confirmed 16 deaths following a blast at a steel and iron manufacturing plant in western Turkey.",
-        "facts": [
-          "16 people killed in steel plant blast in western Turkey",
-          "President Tayyip Erdogan confirmed the death toll of 16",
-          "DW reported at least 16 workers lost their lives in the explosion",
-          "The Straits Times reported 16 people died in the blast"
-        ],
-        "body": [
-          "A steel and iron manufacturing plant explosion in western Turkey killed 16 people on 9 November 2026.",
-          "President Tayyip Erdogan stated that 16 people died in the blast at the plant in western Turkey.",
-          "DW reported that at least 16 workers lost their lives in the Izmir steel plant explosion.",
-          "The Straits Times reported the blast killed 16 people in western Turkey, with three others left missing.",
-          "Rescue operations were underway following the explosion at the steel plant.",
-          "The cause of the blast was not immediately specified in the confirmed updates."
-        ],
-        "context": "A steel and iron manufacturing plant in western Turkey experienced a deadly blast on 9 November 2026, resulting in multiple fatalities and injuries.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Explosion in Stahlwerk in Westtürkei tötet 16 Menschen",
-        "dek": "Präsident Tayyip Erdogan bestätigte 16 Todesfälle nach einer Explosion in einem Stahl- und Eisenwerk in Westtürkei.",
-        "facts": [
-          "16 Tote bei Stahlwerkexplosion in Westtürkei",
-          "Präsident Tayyip Erdogan bestätigte den Todesopferstand von 16",
-          "DW berichtete von mindestens 16 Todesopfern in der Explosion",
-          "The Straits Times berichtete von 16 Todesopfern bei der Explosion"
-        ],
-        "body": [
-          "Eine Explosion in einem Stahl- und Eisenwerk in Westtürkei tötete am 9. November 2026 16 Menschen.",
-          "Präsident Tayyip Erdogan erklärte, dass bei der Explosion in dem Werk in Westtürkei 16 Menschen starben.",
-          "DW berichtete, dass mindestens 16 Arbeiter bei der Explosion im Stahlwerk in Izmir ums Leben kamen.",
-          "The Straits Times berichtete, dass die Explosion in Westtürkei 16 Menschen tötete, wobei drei weitere vermisst werden.",
-          "Rettungseinsätze liefen nach der Explosion im Stahlwerk.",
-          "Die Ursache der Explosion wurde in den bestätigten Aktualisierungen nicht sofort angegeben."
-        ],
-        "context": "Ein Stahl- und Eisenwerk in Westtürkei erlitt am 9. November 2026 eine tödliche Explosion mit mehreren Todesopfern und Verletzten."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "DW",
-      "Sky News",
-      "South China Morning Post",
-      "The Hindu"
-    ],
-    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
-  }
+  "statsHistory": [
+    {
+      "at": "2024-01-01T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "killed-dawn",
+          "value": 16
+        },
+        {
+          "key": "injured-dawn",
+          "value": 13
+        },
+        {
+          "key": "killed-dw",
+          "value": 16
+        },
+        {
+          "key": "killed-bbc",
+          "value": 16
+        },
+        {
+          "key": "killed-die-zeit",
+          "value": 16
+        },
+        {
+          "key": "killed-der-spiegel",
+          "value": 16
+        },
+        {
+          "key": "killed-cna",
+          "value": 10
+        },
+        {
+          "key": "injured-cna",
+          "value": 15
+        }
+      ]
+    }
+  ]
 }
