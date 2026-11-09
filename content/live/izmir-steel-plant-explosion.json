@@ -13,11 +13,11 @@
   "slug": "izmir-steel-plant-explosion",
   "stats": {
     "label": "Casualty Counts",
-    "note": "Casualty counts from various news reports regarding the Izmir steel plant explosion.",
+    "note": "Casualty counts reported by various sources regarding the Izmir steel plant explosion.",
     "unit": "",
     "max": null,
     "asOf": "2024-01-01T00:00:00.000Z",
-    "updatedAt": "2026-11-09T20:23:42.147Z",
+    "updatedAt": "2026-11-09T20:33:38.422Z",
     "source": {
       "outlet": "BBC",
       "title": "Turkey steel factory blast kills at least 16 people",
@@ -154,40 +154,296 @@
             "label": "부상자 수 (CNA)"
           }
         }
+      },
+      {
+        "key": "killed-bbc",
+        "label": "Killed (BBC)",
+        "value": 16,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (BBC)"
+          },
+          "fr": {
+            "label": "Morts (BBC)"
+          },
+          "es": {
+            "label": "Fallecidos (BBC)"
+          },
+          "it": {
+            "label": "Morti (BBC)"
+          },
+          "pt": {
+            "label": "Mortos (BBC)"
+          },
+          "ja": {
+            "label": "死亡者数（BBC）"
+          },
+          "ko": {
+            "label": "사망자 수 (BBC)"
+          },
+          "zh": {
+            "label": "死亡人数 (BBC)"
+          }
+        }
+      },
+      {
+        "key": "killed-dw",
+        "label": "Killed (DW)",
+        "value": 16,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (DW)"
+          },
+          "fr": {
+            "label": "Morts (DW)"
+          },
+          "es": {
+            "label": "Fallecidos (DW)"
+          },
+          "it": {
+            "label": "Morti (DW)"
+          },
+          "pt": {
+            "label": "Mortos (DW)"
+          },
+          "ja": {
+            "label": "死亡者数（DW）"
+          },
+          "ko": {
+            "label": "사망자 수 (DW)"
+          },
+          "zh": {
+            "label": "死亡人数 (DW)"
+          }
+        }
+      },
+      {
+        "key": "killed-euronews",
+        "label": "Killed (Euronews)",
+        "value": 17,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (Euronews)"
+          },
+          "fr": {
+            "label": "Morts (Euronews)"
+          },
+          "es": {
+            "label": "Fallecidos (Euronews)"
+          },
+          "it": {
+            "label": "Morti (Euronews)"
+          },
+          "pt": {
+            "label": "Mortos (Euronews)"
+          },
+          "ja": {
+            "label": "死亡者数（Euronews）"
+          },
+          "ko": {
+            "label": "사망자 수 (Euronews)"
+          },
+          "zh": {
+            "label": "死亡人数 (Euronews)"
+          }
+        }
+      },
+      {
+        "key": "killed-al-jazeera",
+        "label": "Killed (Al Jazeera)",
+        "value": 16,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (Al Jazeera)"
+          },
+          "fr": {
+            "label": "Morts (Al Jazeera)"
+          },
+          "es": {
+            "label": "Fallecidos (Al Jazeera)"
+          },
+          "it": {
+            "label": "Morti (Al Jazeera)"
+          },
+          "pt": {
+            "label": "Mortos (Al Jazeera)"
+          },
+          "ja": {
+            "label": "死亡者数（アルジャジーラ）"
+          },
+          "ko": {
+            "label": "사망자 수 (알자지라)"
+          },
+          "zh": {
+            "label": "死亡人数 (Al Jazeera)"
+          }
+        }
+      },
+      {
+        "key": "killed-die-zeit",
+        "label": "Killed (Die Zeit)",
+        "value": 16,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (Die Zeit)"
+          },
+          "fr": {
+            "label": "Morts (Die Zeit)"
+          },
+          "es": {
+            "label": "Fallecidos (Die Zeit)"
+          },
+          "it": {
+            "label": "Morti (Die Zeit)"
+          },
+          "pt": {
+            "label": "Mortos (Die Zeit)"
+          },
+          "ja": {
+            "label": "死亡者数（ディエ・ツァイト）"
+          },
+          "ko": {
+            "label": "사망자 수 (디 차이트)"
+          },
+          "zh": {
+            "label": "死亡人数 (Die Zeit)"
+          }
+        }
+      },
+      {
+        "key": "killed-dawn-report",
+        "label": "Killed (Dawn Report)",
+        "value": 16,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (Dawn Report)"
+          },
+          "fr": {
+            "label": "Morts (Dawn Report)"
+          },
+          "es": {
+            "label": "Fallecidos (Dawn Report)"
+          },
+          "it": {
+            "label": "Morti (Dawn Report)"
+          },
+          "pt": {
+            "label": "Mortos (Dawn Report)"
+          },
+          "ja": {
+            "label": "死亡者数（ドーン・レポート）"
+          },
+          "ko": {
+            "label": "사망자 수 (Dawn 보고서)"
+          },
+          "zh": {
+            "label": "死亡人数 (Dawn Report)"
+          }
+        }
+      },
+      {
+        "key": "killed-der-spiegel",
+        "label": "Killed (Der Spiegel)",
+        "value": 16,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (Der Spiegel)"
+          },
+          "fr": {
+            "label": "Morts (Der Spiegel)"
+          },
+          "es": {
+            "label": "Fallecidos (Der Spiegel)"
+          },
+          "it": {
+            "label": "Morti (Der Spiegel)"
+          },
+          "pt": {
+            "label": "Mortos (Der Spiegel)"
+          },
+          "ja": {
+            "label": "死亡者数（デア・シュピゲル）"
+          },
+          "ko": {
+            "label": "사망자 수 (디 슈피겔)"
+          },
+          "zh": {
+            "label": "死亡人数 (Der Spiegel)"
+          }
+        }
+      },
+      {
+        "key": "killed-cna-report",
+        "label": "Killed (CNA Report)",
+        "value": 10,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Tote (CNA Report)"
+          },
+          "fr": {
+            "label": "Morts (Rapport CNA)"
+          },
+          "es": {
+            "label": "Fallecidos (Informe CNA)"
+          },
+          "it": {
+            "label": "Morti (CNA Report)"
+          },
+          "pt": {
+            "label": "Mortos (CNA Report)"
+          },
+          "ja": {
+            "label": "死亡者数（CNAレポート）"
+          },
+          "ko": {
+            "label": "사망자 수 (CNA 보고서)"
+          },
+          "zh": {
+            "label": "死亡人数 (CNA Report)"
+          }
+        }
       }
     ],
     "locales": {
       "de": {
-        "note": "Berichte liefern unterschiedliche Opferzahlen für die Explosion im Stahlwerk Izmir.",
-        "label": "Todesopferzahlen"
+        "label": "Todesopferzahlen",
+        "note": "Todesopferzahlen, die verschiedene Quellen bezüglich der Explosion im Stahlwerk Izmir berichten."
       },
       "fr": {
-        "note": "Les rapports fournissent des chiffres de victimes variables concernant l'explosion de l'usine sidérurgique d'Izmir.",
-        "label": "Nombre de victimes"
+        "label": "Nombre de victimes",
+        "note": "Nombre de victimes rapporté par diverses sources concernant l'explosion de l'usine sidérurgique d'Izmir."
       },
       "es": {
-        "note": "Los informes presentan cifras de víctimas variables por la explosión de la planta siderúrgica de Izmir.",
-        "label": "Cifras de víctimas"
+        "label": "Cifras de víctimas",
+        "note": "Cifras de víctimas reportadas por diversas fuentes sobre la explosión de la acería de Izmir."
       },
       "it": {
-        "note": "I rapporti forniscono conteggi delle vittime variabili per l'esplosione dell'impianto siderurgico di Izmir.",
-        "label": "Conteggi delle vittime"
+        "label": "Conteggi delle vittime",
+        "note": "Conteggi delle vittime riportati da varie fonti riguardo all'esplosione dell'impianto siderurgico di Izmir."
       },
       "pt": {
-        "note": "Relatórios fornecem contagens de vítimas variáveis para a explosão na fábrica de aço de Izmir.",
-        "label": "Contagens de Vítimas"
+        "label": "Contagem de Vítimas",
+        "note": "Contagens de vítimas reportadas por várias fontes relativas à explosão da fábrica de aço de Izmir."
       },
       "zh": {
-        "note": "各报道对伊兹密尔钢铁厂爆炸的伤亡人数有所不同。",
-        "label": "伤亡人数"
+        "label": "伤亡人数",
+        "note": "各来源报告的关于伊兹密尔钢铁厂爆炸的伤亡人数。"
       },
       "ja": {
-        "note": "イズミル製鉄所爆発に関する報告では、死傷者数にばらつきが見られる。",
-        "label": "死傷者数"
+        "label": "死傷者数",
+        "note": "イズミル製鉄所爆発に関する各種情報源による死傷者数。"
       },
       "ko": {
-        "note": "이즈미르 제철소 폭발에 대한 보고서들은 상이한 사상자 수를 보이고 있습니다.",
-        "label": "사상자 수"
+        "label": "사상자 수",
+        "note": "이즈미르 제철소 폭발과 관련하여 다양한 출처에서 보고된 사상자 수."
       }
     }
   },
@@ -363,6 +619,59 @@
   "articleSlug": "izmir-steel-plant-explosion",
   "sourceCount": 2,
   "statsHistory": [
+    {
+      "at": "2024-01-01T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "killed-dawn",
+          "value": 16
+        },
+        {
+          "key": "injured-dawn",
+          "value": 13
+        },
+        {
+          "key": "killed-cna",
+          "value": 10
+        },
+        {
+          "key": "injured-cna",
+          "value": 15
+        },
+        {
+          "key": "killed-bbc",
+          "value": 16
+        },
+        {
+          "key": "killed-dw",
+          "value": 16
+        },
+        {
+          "key": "killed-euronews",
+          "value": 17
+        },
+        {
+          "key": "killed-al-jazeera",
+          "value": 16
+        },
+        {
+          "key": "killed-die-zeit",
+          "value": 16
+        },
+        {
+          "key": "killed-dawn-report",
+          "value": 16
+        },
+        {
+          "key": "killed-der-spiegel",
+          "value": 16
+        },
+        {
+          "key": "killed-cna-report",
+          "value": 10
+        }
+      ]
+    },
     {
       "at": "2024-01-01T00:00:00.000Z",
       "rows": [
