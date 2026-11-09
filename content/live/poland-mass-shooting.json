@@ -8,14 +8,14 @@
       "The Lufkin Daily News"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
   },
   "slug": "poland-mass-shooting",
   "topic": "Poland Mass Shooting",
   "status": "live",
   "article": {
     "slug": "poland-mass-shooting",
-    "updatedAt": "2026-11-08T22:42:40.515Z",
+    "updatedAt": "2026-11-09T06:54:26.089Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
@@ -43,6 +43,35 @@
       }
     },
     "versions": [
+      {
+        "at": "2026-11-08T22:42:40.515Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Authorities have opened a terrorism investigation after a shooting in Krakow's main square resulted in nine total deaths.",
+            "body": [
+              "Polish prosecutors have opened a terrorism investigation into the shooting, according to government officials. Authorities stated the 24-year-old suspect was likely influenced by far-right ideology.",
+              "Police discovered the bodies of the suspect's parents and sister at his home following the attack. These three deaths are in addition to the six people killed in the Krakow market square.",
+              "An Interior Ministry spokeswoman reported that 15 people were wounded during the rampage. The injured include nationals from Austria, Britain, Germany, Portugal, and Russia.",
+              "A British national was among the six people killed in the market square, according to police reports. Officials confirmed the identity of the deceased as they began the mourning period.",
+              "Poland began two days of national mourning on 8 November, according to government announcements. Flags across the country were lowered to mark the event.",
+              "Two Polish police officers were injured as they pursued and detained the gunman in Kraków, according to The Guardian. Jakub Kulik was critically injured and Artur Morański was also wounded during the confrontation.",
+              "Professor Michal Pędziwiatr provided medical aid to the wounded officers at the scene, according to the BBC. A colleague stated that the surgeon's actions saved the life of one officer.",
+              "The investigation into the suspect's background remains ongoing, according to prosecutors. Officials have not released further details regarding the suspect's identity or specific motives."
+            ],
+            "facts": [
+              "Six people were killed in the Krakow market square attack.",
+              "Three relatives of the suspect were found dead at his home.",
+              "Fifteen people were wounded in the shooting.",
+              "Poland began two days of national mourning on 8 November.",
+              "A British national was among those killed in the shooting."
+            ],
+            "title": "Poland begins national mourning following Krakow mass shooting",
+            "context": "The shooting occurred in Krakow's main square, a central public space in the city. The government declared a period of national mourning to honor the victims of the attack.",
+            "imageCaption": ""
+          }
+        }
+      },
       {
         "at": "2026-11-08T21:52:44.895Z",
         "reason": "1 new update(s)",
@@ -241,62 +270,126 @@
   },
   "updates": [
     {
-      "id": "u-1794175595000-32j7",
-      "at": "2026-11-08T22:06:35.000Z",
+      "id": "u-1794207009000-yrgi",
+      "at": "2026-11-09T06:50:09.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Krakow main square reopens to public",
-          "body": "Krakow's main square reopened to the public on 8 November. The site reopened approximately 24 hours after the shooting occurred, according to Africanews and AP News."
-        },
-        "fr": {
-          "headline": "La place principale de Cracovie rouverte au public",
-          "body": "La place principale de Cracovie a rouvert au public le 8 novembre. Le site a rouvert environ 24 heures après la fusillade, selon Africanews et AP News."
+          "headline": "Krakow shooting suspect died in hospital police say",
+          "body": "Polish police said the gunman died in hospital according to BBC and Reuters. The suspect was wounded in a shootout with police according to The Hindu."
         },
         "es": {
-          "headline": "La plaza principal de Cracovia reabre al público",
-          "body": "La plaza principal de Cracovia reabrió al público el 8 de noviembre. El sitio se reabrió aproximadamente 24 horas después del tiroteo, según Africanews y AP News."
+          "headline": "Sospechoso del tiroteo en Cracovia muere en el hospital, según la policía",
+          "body": "La policía polaca informó que el tirador murió en el hospital, según la BBC y Reuters. El sospechoso resultó herido en un tiroteo con la policía, según The Hindu."
+        },
+        "fr": {
+          "headline": "Le suspect du tir à Cracovie est décédé à l'hôpital selon la police",
+          "body": "La police polonaise a déclaré que le tireur était décédé à l'hôpital, selon la BBC et Reuters. Le suspect a été blessé lors d'un échange de tirs avec la police, selon The Hindu."
         },
         "it": {
-          "headline": "Piazza principale di Cracovia riaperta al pubblico",
-          "body": "La piazza principale di Cracovia è stata riaperta al pubblico l'8 novembre. Il sito è stato riaperto circa 24 ore dopo l'attentato, secondo Africanews e AP News."
+          "headline": "Sospettato dello sparo a Cracovia morto in ospedale, dicono le forze di polizia",
+          "body": "La polizia polacca ha dichiarato che l'uomo armato è deceduto in ospedale, secondo BBC e Reuters. Lo sospettato era stato ferito in uno scontro a fuoco con la polizia, secondo The Hindu."
         },
         "de": {
-          "headline": "Hauptplatz Krakau für die Öffentlichkeit wieder geöffnet",
-          "body": "Der Hauptplatz Krakau wurde am 8. November für die Öffentlichkeit wiedereröffnet. Demnach wurde die Stätte etwa 24 Stunden nach dem Schießvorfall wieder geöffnet, berichten Africanews und AP News."
+          "headline": "Krakauer Schusswaffentäter starb im Krankenhaus, so Polizei",
+          "body": "Die polnische Polizei teilte BBC und Reuters mit, dass der Schütze im Krankenhaus gestorben sei. Laut The Hindu wurde der Verdächtige bei einem Schusswechsel mit der Polizei verletzt."
         },
         "zh": {
-          "headline": "克拉科夫主广场对公众重新开放",
-          "body": "克拉科夫主广场于11月8日对公众重新开放。据Africanews和AP News报道，该场地在枪击事件发生约24小时后重新开放。"
+          "headline": "波兰警方称克拉科夫枪击嫌犯在医院死亡",
+          "body": "据BBC和路透社报道，波兰警方称该枪手在医院死亡。据《印度时报》报道，该嫌犯在与警方交火中受伤。"
         },
         "pt": {
-          "headline": "Praça principal de Cracóvia reabre ao público",
-          "body": "A praça principal de Cracóvia reabriu ao público a 8 de novembro. O local reabriu aproximadamente 24 horas após o tiroteio, segundo a Africanews e a AP News."
-        },
-        "ja": {
-          "headline": "クラクフのメイン広場が一般に再開",
-          "body": "クラクフのメイン広場は11月8日に一般に再開された。アフリカニュースおよびAP通信によると、この場所は銃撃事件から約24時間後に再開された。"
+          "headline": "Suspeito do tiroteio em Cracóvia morreu no hospital, diz a polícia",
+          "body": "A polícia polaca informou que o atirador morreu no hospital, segundo a BBC e a Reuters. O suspeito foi ferido num tiroteio com a polícia, de acordo com The Hindu."
         },
         "ko": {
-          "headline": "크라쿠프 중앙 광장 대중에게 재개방",
-          "body": "크라쿠프의 중앙 광장이 11월 8일 대중에게 재개방되었다. 아프리카뉴스 및 AP 통신에 따르면, 이 부지는 총격 사건 발생 약 24시간 후에 재개방되었다."
+          "headline": "크라쿠프 총격 용의자 병원 내 사망 확인",
+          "body": "폴란드 경찰은 BBC와 로이터 통신에 따르면 총격범이 병원에서 사망했다고 밝혔다. 힌두 신문에 따르면 이 용의자는 경찰과의 총격전에서 부상을 입었다."
+        },
+        "ja": {
+          "headline": "クラクフの銃撃事件容疑者が病院で死亡、警察が発表",
+          "body": "ポーランド警察によると、銃撃犯は病院で死亡したとBBCとロイターが報じた。ヒンドゥー紙によれば、容疑者は警察との銃撃戦で負傷していた。"
         }
       },
       "sources": [
         {
-          "outlet": "Africanews",
-          "title": "Poland: Kraków mourns six victims as shooting site reopens",
+          "outlet": "BBC",
+          "title": "Krakow shooting suspect has died in hospital, police say",
+          "url": "https://www.bbc.co.uk/news/articles/c6y434dw8319o?at_medium=RSS&at_campaign=rss",
+          "publishedAt": "2026-11-09T06:50:09.000Z"
+        },
+        {
+          "outlet": "Reuters",
+          "title": "Krakow mass shooting assailant died in hospital, Polish police say",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd2JCSWlLOUNwYXJVdFZDNkd6QndqWm4tVGxvT2piU202T3NWeXV5VkxEcjVIclV3cG9aa1Yxa1BMUmlSeHVuV1lvc0FYVzRZQXBrVE16Q19uVXJPNWZPbTRKdjcwNWIwNFhxeXRCS19wSEVPU2xoWk51dGdmU0p3U1VZeWRDUFFxUi1ZcmxUenBFdE05cm5iQU5hWjJhLWRDZFkydU9rRlZGNG1qbFhOag?oc=5",
+          "publishedAt": "2026-11-09T06:38:00.000Z"
+        },
+        {
+          "outlet": "The Hindu",
+          "title": "Krakow shooting suspect dies: Poland police",
+          "url": "https://www.thehindu.com/news/international/krakow-shooting-suspect-dies-poland-police/article71681652.ece",
+          "publishedAt": "2026-11-09T06:35:39.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-08T22:06:35.000Z",
+      "id": "u-1794175595000-32j7",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Der Hauptplatz Krakau wurde am 8. November für die Öffentlichkeit wiedereröffnet. Demnach wurde die Stätte etwa 24 Stunden nach dem Schießvorfall wieder geöffnet, berichten Africanews und AP News.",
+          "headline": "Hauptplatz Krakau für die Öffentlichkeit wieder geöffnet"
+        },
+        "en": {
+          "body": "Krakow's main square reopened to the public on 8 November. The site reopened approximately 24 hours after the shooting occurred, according to Africanews and AP News.",
+          "headline": "Krakow main square reopens to public"
+        },
+        "es": {
+          "body": "La plaza principal de Cracovia reabrió al público el 8 de noviembre. El sitio se reabrió aproximadamente 24 horas después del tiroteo, según Africanews y AP News.",
+          "headline": "La plaza principal de Cracovia reabre al público"
+        },
+        "fr": {
+          "body": "La place principale de Cracovie a rouvert au public le 8 novembre. Le site a rouvert environ 24 heures après la fusillade, selon Africanews et AP News.",
+          "headline": "La place principale de Cracovie rouverte au public"
+        },
+        "it": {
+          "body": "La piazza principale di Cracovia è stata riaperta al pubblico l'8 novembre. Il sito è stato riaperto circa 24 ore dopo l'attentato, secondo Africanews e AP News.",
+          "headline": "Piazza principale di Cracovia riaperta al pubblico"
+        },
+        "ja": {
+          "body": "クラクフのメイン広場は11月8日に一般に再開された。アフリカニュースおよびAP通信によると、この場所は銃撃事件から約24時間後に再開された。",
+          "headline": "クラクフのメイン広場が一般に再開"
+        },
+        "ko": {
+          "body": "크라쿠프의 중앙 광장이 11월 8일 대중에게 재개방되었다. 아프리카뉴스 및 AP 통신에 따르면, 이 부지는 총격 사건 발생 약 24시간 후에 재개방되었다.",
+          "headline": "크라쿠프 중앙 광장 대중에게 재개방"
+        },
+        "pt": {
+          "body": "A praça principal de Cracóvia reabriu ao público a 8 de novembro. O local reabriu aproximadamente 24 horas após o tiroteio, segundo a Africanews e a AP News.",
+          "headline": "Praça principal de Cracóvia reabre ao público"
+        },
+        "zh": {
+          "body": "克拉科夫主广场于11月8日对公众重新开放。据Africanews和AP News报道，该场地在枪击事件发生约24小时后重新开放。",
+          "headline": "克拉科夫主广场对公众重新开放"
+        }
+      },
+      "sources": [
+        {
           "url": "http://www.africanews.com/2026/11/08/poland-krakow-mourns-six-victims-as-shooting-site-reopens/",
+          "title": "Poland: Kraków mourns six victims as shooting site reopens",
+          "outlet": "Africanews",
           "publishedAt": "2026-11-08T22:06:35.000Z"
         },
         {
-          "outlet": "AP News",
-          "title": "Photos of Krakow’s Main Square as Poland mourns victims of a mass shooting",
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOVmFBcnZVUVFiX1k2Rmd6aFUyR3Nab1lXNjA2emx4M1U4UHF6MGtkU1U0X2JiV09wb1h0U0F6RXJmNl9qbzFIWFhXTWNtZEJrV0Z1SmZNV2hjNTd6SE1Jek85ZHF2TkhpZjQ2LW5vVGV2ZnFDdmFQQUxscjNsTE9DUjdqMzlCakJsMFhQNzVNWFg4d0ZPUE5TWlFicGthNHZQTHV4dTN5TnVuNzducU8zQTVTcmdqdEpVUU5Eck5fSlBNV2lMbVpDWA?oc=5",
+          "title": "Photos of Krakow’s Main Square as Poland mourns victims of a mass shooting",
+          "outlet": "AP News",
           "publishedAt": "2026-11-08T20:33:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-08T21:43:22.000Z",
@@ -875,13 +968,27 @@
     "http://www.africanews.com/2026/11/08/poland-krakow-mourns-six-victims-as-shooting-site-reopens/",
     "https://www.nytimes.com/2026/11/08/world/europe/poland-shooting-suspect-family.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZExjM19SbDVZQmRpOW1jc3ZIaDRMaG1VaW52VHN5YmZjbTA2YzBYY3VTWXk2Z1NHMG9Ma2VMMGExMjF0N1NTWjhNR21aQUpTS19KQ2lZYjRMeWNXd3BTVjQ3YUxZMF84V2Q2eC1UQ3V1dW9BT0hLQlh6QmpEMXFBQXU1S1p1SEdWcEw0?oc=5",
-    "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOVmFBcnZVUVFiX1k2Rmd6aFUyR3Nab1lXNjA2emx4M1U4UHF6MGtkU1U0X2JiV09wb1h0U0F6RXJmNl9qbzFIWFhXTWNtZEJrV0Z1SmZNV2hjNTd6SE1Jek85ZHF2TkhpZjQ2LW5vVGV2ZnFDdmFQQUxscjNsTE9DUjdqMzlCakJsMFhQNzVNWFg4d0ZPUE5TWlFicGthNHZQTHV4dTN5TnVuNzducU8zQTVTcmdqdEpVUU5Eck5fSlBNV2lMbVpDWA?oc=5"
+    "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOVmFBcnZVUVFiX1k2Rmd6aFUyR3Nab1lXNjA2emx4M1U4UHF6MGtkU1U0X2JiV09wb1h0U0F6RXJmNl9qbzFIWFhXTWNtZEJrV0Z1SmZNV2hjNTd6SE1Jek85ZHF2TkhpZjQ2LW5vVGV2ZnFDdmFQQUxscjNsTE9DUjdqMzlCakJsMFhQNzVNWFg4d0ZPUE5TWlFicGthNHZQTHV4dTN5TnVuNzducU8zQTVTcmdqdEpVUU5Eck5fSlBNV2lMbVpDWA?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMWpKQ1Z3dEJJYy0xb3JtWHhsSWdDVEtVWmk0MldhTTNiMGZDQlZOVTJzUHNsdjlQOFgwNjhUY200djZJTU1YeWdLVGFjMHdreWFSTE9CNEJ4ajhFMndScTZCUmF2d2hic2ZfTG1weW5sMURnR1RwSXVyeFRHdlgzeGh6ZzVnN3ByMXNvemk3c0JmcWxxMW5ISERWQlB1VDNnWFo3NHhPMNIBrAFBVV95cUxOa3h6eVBHaGI4dFY1dE03aVNaZGg0U0QyRGRSUkFHOE1rU1dYbmhDQUFuOUU0RmhoYkpVRklIdEVZT1l0bndvMXRVYkp0OWVPbE9pOFZSZGQtNDZLNVBOYW04OW9yN1Qyanh4X05SOGk5X0QtX003aUpHeUk1WVdkQWRENUFBamdyR1E4QzJ1cTlxRWhnc2kxVUdXWlA1b2xZdDh3Q3lWUERGUjl3?oc=5",
+    "https://www.bbc.co.uk/news/articles/c6y434dw8319o?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWFRHbER1YlpWODJVeFpGYWJfMGJSbnJWVFdycDhQWmplUWt4UGE0c1RJSnoxVjRjQmtzSmMxU3k1QnVhMUlOTkpiOTlmb1FobnNhWWNUS3M2Q2szRVhmNXNTWF9PRkpzNEdBYVItcTdoWGoyTXR6eGtQVHpoQjZ4Rl9JN0RWcHNxY01JT19QXzBFVmpzR3hVT3FDZHQ0RDlCMUVMVnh2Ukp4SUlaN2xaZg?oc=5",
+    "https://www.straitstimes.com/world/europe/krakow-mass-shooting-assailant-died-in-hospital-polish-police-say",
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd2JCSWlLOUNwYXJVdFZDNkd6QndqWm4tVGxvT2piU202T3NWeXV5VkxEcjVIclV3cG9aa1Yxa1BMUmlSeHVuV1lvc0FYVzRZQXBrVE16Q19uVXJPNWZPbTRKdjcwNWIwNFhxeXRCS19wSEVPU2xoWk51dGdmU0p3U1VZeWRDUFFxUi1ZcmxUenBFdE05cm5iQU5hWjJhLWRDZFkydU9rRlZGNG1qbFhOag?oc=5",
+    "https://www.thehindu.com/news/international/krakow-shooting-suspect-dies-poland-police/article71681652.ece",
+    "https://www.theguardian.com/world/2026/nov/09/krakow-shooting-suspected-gunman-dead",
+    "https://en.yna.co.kr/view/AEN20261109006200315",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQXlfZ3RnN3hYVUlyNUpySV9abkZlQzM5aEJiNk1Ja3RzNEtOVjBpODUtOTJZZk1vQ1JIWFFjY1hxT3BTaFB3QWhRSjdRdWhpbFNMRzlvdHhtWEROZWhTS1l2YkFLbkZpNzcyMDFRX185VUxQTW5icVpVTGRWb0tHX284UDRBODdma2NKNDlpZUNYQTRiN0lDOVJwT2I0YUktdGN3VkRzOUhhSUlCemVhMEZrZWx6Z2JCbjFn?oc=5",
+    "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOWFp3ZXM3SzhoZDFSS0xTcDdBZUZRV0FWTUVlSFk1bWJWQnQ4cWgyeTVpd1VjOXJlLWpMTTZmV3Q2UU9GbnZoUFhYT3lXaFhneWlUSkhHd1RkMnAzcEtvTi1EcmVVTkV6Z1JuQkM2YTcwMVRHajJFN2RsUEZwdE9YS192QlhZeFlwNmZPZlV0OE5fZFpVQ1V1UEtEbDdmRUpjbzhSWThzekcwd0NRZjlvaUIzX3FDRjR2VHg4Sm0tY3c3QmRXOGNJa00zYkdjbGZON0Ita1VBaHlwVHZHR2ktWA?oc=5",
+    "https://www.japantimes.co.jp/news/2026/11/09/world/crime-legal/poland-krakow-victims-security/",
+    "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMkVkbW9MS0pGUjRVNTZEUFI4N0VmT2lCTzV5QXlQZmpnMlR1Wnc4XzlMMzRYOTRXdjFUaDVQT2RQSHpNaDhkVXp3ZW9EeTVyTkhvcTk4Y3lTZUtVVlBJNTFEY2hUQVB3YThndzhEcUJ5b0h4RWs1THVIUVZKdXFnenB4eG5nM0pjQVpBNk1ZbkxjblJnNXdwbEJqenhVLXBNemZLTC1teUphMElWVjk0dlU0WTlDNFc1eHpIQ3Z6QnBIZ3l6dTFkNm1mLTJCRzBxcThtd0VUd19pcTUzZFlGSWwwOG5fcEF3c1hwYUpHZmZienRNRUpB?oc=5",
+    "https://www.jpost.com/israel-news/article-914281",
+    "https://www.theguardian.com/australia-news/2026/nov/09/beau-lamarre-condon-trial-reenacts-shooting-jesse-baird-ntwnfb"
   ],
   "startedAt": "2026-11-08T14:16:19.194Z",
-  "updatedAt": "2026-11-08T22:42:23.038Z",
+  "updatedAt": "2026-11-09T06:54:03.367Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "poland-mass-shooting",
-  "sourceCount": 14,
+  "sourceCount": 15,
   "seenHeadlines": []
 }
