@@ -8,6 +8,7 @@ export default function Footer({ locale, t }) {
         <div className="footer-logo">PLAIN<span className="logo-dot">.</span></div>
         <p className="footer-claim">{t.footer}</p>
         <nav className="footer-links">
+          <Link href={`/${locale}/maven`}>◆ {t.maven?.nav || 'Maven 3D'}</Link>
           <Link href={`/${locale}/search`}>{locale === 'de' ? 'Suche' : 'Search'}</Link>
           <Link href={`/${locale}/longreads`}>{t.longreads.nav}</Link>
           <Link href={`/${locale}/live`}>{t.live.nav}</Link>
@@ -18,7 +19,11 @@ export default function Footer({ locale, t }) {
           <a href="/feed.xml">RSS</a>
         </nav>
         <p className="footer-small">
-           {new Date().getFullYear()} {SITE.name} · Gegründet von <strong>Simon Eggert</strong> · Unabhängig & Werbefrei.
+          {new Date().getFullYear()} {SITE.name} · Gegründet von <strong>Simon Eggert</strong> · Unabhängig &amp; Werbefrei · 3D Spatial Engine:{' '}
+          <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" rel="noopener noreferrer">
+            God&rsquo;s Eye View von <strong>Bilawal Sidhu</strong>
+          </a>{' '}
+          (MIT).
         </p>
       </div>
     </footer>

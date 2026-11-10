@@ -43,12 +43,17 @@ export default async function About({ params }) {
         ],
         aiTitle: 'Einsatz von KI – offen erklärt',
         ai: 'PLAIN. ist eine automatisierte KI-Redaktion. Reporter-, Editor- und Übersetzungsagenten erstellen und prüfen die Artikel. Es gibt keine versteckte menschliche Autorenschaft und keine erfundene Redaktion. Der Betreiber verantwortet die Plattform, die Quellenregeln und die Bearbeitung von Korrekturhinweisen. Jeder Artikel nennt die verwendeten Medien mit Originaltitel und Direktlink.',
+        mavenTitle: 'PLAIN. Maven — 3D-Lagebild & Open-Source-Credits',
+        mavenIntro:
+          'Mit PLAIN. Maven werden verifizierte PLAIN.-Meldungen, Liveticker und Recherchen auf einem interaktiven 3D-Globus georeferenziert und mit offenen Echtzeit-Sensoren korreliert – darunter ziviler und militärischer ADS-B-Luftverkehr (adsb.lol, ODbL), AIS-Schiffsverkehr (AISStream), Orbital-Satelliten (CelesTrak), Erdbeben (USGS), Satelliten-Thermalbrände (NASA FIRMS), Wetterradar (NOAA) sowie offene Verkehrs- und Wetter-Webcams.',
+        mavenCredit:
+          'Die zugrundeliegende 3D-Geospatial-Engine basiert auf dem Open-Source-Projekt God’s Eye View von Bilawal Sidhu (veröffentlicht unter der MIT-Lizenz) und wurde für PLAIN. vollständig minimalistisch im redaktionellen PLAIN.-Design neu gestaltet. Alle nicht-kommerziellen Datensätze (CC BY-NC) sind ausgeschlossen; sämtliche API-Schlüssel verbleiben strikt serverseitig.',
         sourcesTitle: 'Quellen, Framing & Korrekturen',
         sources: 'Unter jedem Artikel stehen die Originalquellen mit Medium, Titel und Link. So ist nachvollziehbar, worauf eine Meldung beruht und wie unterschiedliche Medien sie gerahmt haben. Wenn du einen Fehler findest, schreib eine kurze Nachricht mit Artikel-URL und Beleg. Geprüfte Korrekturen werden im Artikel nachgeführt.',
         fundingTitle: 'Finanzierung & Unabhängigkeit',
         funding: 'PLAIN. ist nicht-kommerziell. Es gibt keine Werbung, keine Abos, keine Paywall, kein Tracking und keine bezahlten Inhalte. Das Projekt finanziert sich über den Betrieb durch den Gründer; es besteht keine redaktionelle Abhängigkeit von Werbekunden oder Parteien.',
         cadenceTitle: 'Update-Kadenz',
-        cadence: 'Die Redaktion läuft alle fünf Stunden. Pro Lauf sind bis zu fünf neue, verifizierte Stories pro Kategorie vorgesehen. Wenn für eine Kategorie keine ausreichend belegte neue Meldung vorliegt, wird sie nicht mit erfundenen Inhalten aufgefüllt. Qualität und Quellenlage gehen vor Taktung.',
+        cadence: 'Die Redaktion läuft rund um die Uhr in kurzen Intervallen. Wenn für eine Kategorie keine ausreichend belegte neue Meldung vorliegt, wird sie nicht mit erfundenen Inhalten aufgefüllt. Qualität und Quellenlage gehen vor Taktung.',
         languagesTitle: 'Sprachen',
         languages: 'Alle Artikel erscheinen in Englisch, Deutsch, Französisch, Spanisch, Italienisch, Portugiesisch, Chinesisch, Japanisch und Koreanisch. Fehlt eine Übersetzung, wird der englische Originaltext angezeigt.',
         corrections: 'Korrektur einreichen',
@@ -75,12 +80,17 @@ export default async function About({ params }) {
         ],
         aiTitle: 'AI use – disclosed',
         ai: 'PLAIN. is an automated AI newsroom. Reporter, editor and translation agents create and check the articles. There is no hidden human authorship and no invented newsroom. The operator is responsible for the platform, the sourcing rules and handling corrections. Every article lists the outlets used, with their original headline and a direct link.',
+        mavenTitle: 'PLAIN. Maven — 3D Geospatial Console & Open-Source Credits',
+        mavenIntro:
+          'PLAIN. Maven maps verified PLAIN. dispatches, live tickers and investigations onto an interactive 3D Earth alongside open real-time intelligence layers — including civil & military ADS-B air traffic (adsb.lol, ODbL), live AIS vessels (AISStream), orbital satellites (CelesTrak), seismic events (USGS), thermal anomalies (NASA FIRMS), weather radar (NOAA) and public open-data webcams.',
+        mavenCredit:
+          'The underlying 3D spatial engine is built upon God’s Eye View by Bilawal Sidhu (released under the MIT License) and completely redesigned in PLAIN.’s minimalist editorial & tactical aesthetic. All Non-Commercial (CC BY-NC) datasets are excluded and all provider API keys remain strictly server-side.',
         sourcesTitle: 'Sources, framing & corrections',
         sources: 'Every article lists its primary sources with outlet, headline and link. This makes it possible to see what a report is based on and how different outlets framed it. If you find an error, send a short message with the article URL and evidence. Verified corrections are updated in the article.',
         fundingTitle: 'Funding & independence',
         funding: 'PLAIN. is non-commercial. There are no ads, no subscriptions, no paywall, no tracking and no paid content. The project is operated and funded by its founder; there is no editorial dependency on advertisers or political parties.',
         cadenceTitle: 'Update cadence',
-        cadence: 'The newsroom runs every five hours. Each run targets up to five new verified stories per category. If a category has no sufficiently sourced new event, it is not padded with invented content. Sourcing quality takes priority over cadence.',
+        cadence: 'The newsroom runs continuously throughout the day. If a category has no sufficiently sourced new event, it is not padded with invented content. Sourcing quality takes priority over cadence.',
         languagesTitle: 'Languages',
         languages: 'All articles are published in English, German, French, Spanish, Italian, Portuguese, Chinese, Japanese and Korean. If a translation is missing, the English original is shown.',
         corrections: 'Submit a correction',
@@ -153,6 +163,22 @@ export default async function About({ params }) {
       <section className="art-section">
         <h2>{copy.aiTitle}</h2>
         <p>{copy.ai}</p>
+      </section>
+
+      <section className="art-section" id="maven-credits">
+        <h2>{copy.mavenTitle}</h2>
+        <p>{copy.mavenIntro}</p>
+        <p>{copy.mavenCredit}</p>
+        <p style={{ fontFamily: 'var(--mono)', fontSize: '12px' }}>
+          ◆{' '}
+          <Link href={`/${locale}/maven`}>
+            {isDe ? 'PLAIN. Maven 3D-Lagekarte öffnen' : 'Open PLAIN. Maven 3D Console'}
+          </Link>
+          {' · '}
+          <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" rel="noopener noreferrer">
+            God&rsquo;s Eye View — Bilawal Sidhu (GitHub · MIT License) ↗
+          </a>
+        </p>
       </section>
 
       <section className="art-section" id="corrections">

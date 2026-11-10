@@ -1,28 +1,17 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
-import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
+import { LOCALES, LOCALE_CODES, SITE, SOURCE_LOCALE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mjs';
 import { getLiveIndex } from '@/lib/liveStore.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
+import { geolocateStory } from '@/lib/geo.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
 import ArticleComments from '@/components/ArticleComments';
 import LiveArticle from '@/components/LiveArticle';
 
-// Article pages are rendered on demand and then cached for good.
-//
-// Two Vercel limits shaped this:
-//  - Deployment storage: pre-rendering every story in every language produced
-//    ~7,000 HTML files per deployment (~700 MB and growing), which filled the
-//    10 GB. Only the latest stories are pre-rendered now (see below).
-//  - ISR writes: an hourly revalidate made every one of those ~8,000 pages
-//    count as a write as soon as it was read again. At 200,000 writes/month the
-//    project got paused. An article is immutable once published (corrections
-//    and live stats are patched into the JSON, the live ticker polls the API),
-//    so a page is generated once and then left alone. The next deployment -
-//    every publish is one - rebuilds it with the current content.
 export const dynamicParams = true;
 export const revalidate = false;
 
@@ -86,17 +75,23 @@ export default async function ArticlePage({ params }) {
   const { locale, slug } = await params;
   const a = await getArticle(slug);
   if (!a) {
-    // A ticker can use a slug before (or instead of) a written article. Old
-    // links - bookmarks, search results - then landed on a 404; the ticker
-    // page is the right destination for them. Only the committed archive is
-    // read here: the Supabase lookup is uncached and would turn this ISR page
-    // dynamic, which fails the render ("static to dynamic at runtime").
     if (getLiveIndex().some((t) => t.slug === slug)) redirect(`/${locale}/live/${slug}`);
     notFound();
   }
   const t = getDict(locale);
   const bcp = LOCALES.find((l) => l.code === locale).bcp47;
   const l = localize(a, locale);
+  const enLoc = a.locales?.[SOURCE_LOCALE] || {};
+  const geo = geolocateStory({
+    slug: a.slug,
+    title: l.title,
+    dek: l.dek,
+    facts: l.facts || [],
+    enTitle: enLoc.title || '',
+    enDek: enLoc.dek || '',
+    locale,
+  });
+
   const outlets = new Set(a.sources.map((s) => s.outlet)).size;
   const articleUrl = `${SITE.url}/${locale}/a/${slug}`;
   const categoryUrl = `${SITE.url}/${locale}/c/${a.category}`;
@@ -111,8 +106,6 @@ export default async function ArticlePage({ params }) {
     .join('\n\n');
   const wordCount = articleBody.split(/\s+/).filter(Boolean).length;
 
-  // Articles that belong to a live ticker keep their body in sync with the
-  // ticker (client-side), while the committed version stays server-rendered.
   const isLive = Boolean(a.live);
   const liveInitial = {
     title: l.title,
@@ -127,7 +120,6 @@ export default async function ArticlePage({ params }) {
     ? a.history.filter((v) => v?.locales?.en || v?.locales?.de)
     : [];
 
-  // Long reads carry structured sections; normal reports a flat paragraph list.
   const isLongform = a.form === 'longform' && Array.isArray(l.sections) && l.sections.length > 0;
   const isInvestigation = a.form === 'investigation';
 
@@ -260,6 +252,19 @@ export default async function ArticlePage({ params }) {
           <span>{sourceLabel({ ...a, sourceCount: outlets }, t)}</span>
         </div>
         <ArticleActions slug={a.slug} title={l.title} locale={locale} isDe={locale === 'de'} />
+
+        {geo && (
+          <Link href={`/${locale}/maven?story=${encodeURIComponent(a.slug)}`} className="geoint-strip">
+            <span className="geoint-strip-meta">
+              <span className="maven-diamond">◆</span>
+              <strong>MAVEN GEOINT</strong> // {geo.placeName}, {geo.country} · <span className="geoint-coord">{geo.tacticalCoord}</span>
+            </span>
+            <span className="geoint-strip-cta">
+              {t.maven?.openOnGlobe || 'Auf 3D-Lagekarte & Live-Sensoren öffnen'} →
+            </span>
+          </Link>
+        )}
+
         {a.video ? (
           <VideoPlayer
             video={a.video}

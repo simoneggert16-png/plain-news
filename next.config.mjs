@@ -7,6 +7,9 @@ const nextConfig = {
   outputFileTracingIncludes: {
     '/**': ['./content/**/*'],
   },
+  outputFileTracingExcludes: {
+    '/**': ['./maven/**/*', './remotion/**/*', './social_content/**/*', './public/footage/**/*'],
+  },
 };
 
 export default nextConfig;

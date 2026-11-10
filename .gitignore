@@ -18,3 +18,11 @@ content/investigations/inbox.json
 # The tips that came by letter, in the words of the people who wrote them.
 # The desk keeps them next to the mailbox, for the same reason.
 content/investigations/leads.json
+
+# Embedded PLAIN. Maven (God's Eye View MIT build artifacts)
+maven/node_modules
+maven/dist
+maven/.vercel
+maven/.gev-cache
+maven/.gev-logs
+maven/.env*

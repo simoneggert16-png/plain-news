@@ -6,6 +6,7 @@ import NavLinks from './NavLinks';
 export default function Header({ locale, t }) {
   const items = [
     { href: `/${locale}`, label: t.latest },
+    { href: `/${locale}/maven`, label: `◆ ${t.maven?.nav || 'Maven 3D'}` },
     { href: `/${locale}/ticker`, label: locale === 'de' ? 'Ticker' : 'Wire' },
     ...CATEGORIES.map((c) => ({ href: `/${locale}/c/${c}`, label: t.cat[c] })),
     { href: `/${locale}/longreads`, label: t.longreads.nav },

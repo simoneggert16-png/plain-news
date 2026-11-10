@@ -1,0 +1,1042 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PLAIN. × MAVEN — Minimalist Editorial & Palantir Maven Tactical Theme
+   Zero-radius geometry · Hairline rules · Instrument Serif + JetBrains Mono
+   Spatial Engine: God's Eye View by Bilawal Sidhu (MIT License)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root,
+html[data-maven-theme='obsidian'] {
+  --pm-bg: #0d0d0b;
+  --pm-surface: rgba(15, 15, 13, 0.94);
+  --pm-surface-solid: #11110f;
+  --pm-surface-2: #191916;
+  --pm-surface-hover: #23221d;
+  --pm-ink: #eae3d2;
+  --pm-ink-2: #c8c0ad;
+  --pm-muted: #8a8372;
+  --pm-border: #2f2d27;
+  --pm-border-strong: #eae3d2;
+  --pm-accent: #d97706;
+  --pm-accent-soft: rgba(217, 119, 6, 0.16);
+  --pm-live: #dc2626;
+  --pm-live-soft: rgba(220, 38, 38, 0.18);
+  --pm-ok: #2e8b57;
+  --pm-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --pm-sans: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --pm-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Override upstream God's Eye View tokens globally */
+  --bg-dark: #0d0d0b !important;
+  --glass-bg: rgba(15, 15, 13, 0.94) !important;
+  --glass-border: #2f2d27 !important;
+  --glass-border-hover: #eae3d2 !important;
+  --accent: #d97706 !important;
+  --accent-dim: rgba(217, 119, 6, 0.16) !important;
+  --accent-glow: transparent !important;
+  --scroll-thumb: #595448 !important;
+  --scroll-track: #151512 !important;
+  --text-primary: #eae3d2 !important;
+  --text-secondary: #a9a18f !important;
+  --text-dim: #736c5d !important;
+  --menu-bg: #141411 !important;
+  --font-mono: var(--pm-mono) !important;
+  --font-sans: var(--pm-sans) !important;
+  --panel-radius: 0px !important;
+  --btn-radius: 0px !important;
+  --dock-label-color: #c8c0ad !important;
+}
+
+html[data-maven-theme='paper'] {
+  --pm-bg: #eae3d2;
+  --pm-surface: rgba(234, 227, 210, 0.95);
+  --pm-surface-solid: #eae3d2;
+  --pm-surface-2: #e1d8c3;
+  --pm-surface-hover: #d6ccb4;
+  --pm-ink: #0d0d0b;
+  --pm-ink-2: #34312a;
+  --pm-muted: #6e6656;
+  --pm-border: #b8ae99;
+  --pm-border-strong: #0d0d0b;
+  --pm-accent: #a3321f;
+  --pm-accent-soft: rgba(163, 50, 31, 0.12);
+  --pm-live: #c5221f;
+  --pm-live-soft: rgba(197, 34, 31, 0.12);
+  --pm-ok: #2c6a3d;
+
+  --bg-dark: #eae3d2 !important;
+  --glass-bg: rgba(234, 227, 210, 0.95) !important;
+  --glass-border: #0d0d0b !important;
+  --glass-border-hover: #a3321f !important;
+  --accent: #a3321f !important;
+  --accent-dim: rgba(163, 50, 31, 0.12) !important;
+  --accent-glow: transparent !important;
+  --scroll-thumb: #776f5f !important;
+  --scroll-track: #e1d8c3 !important;
+  --text-primary: #0d0d0b !important;
+  --text-secondary: #34312a !important;
+  --text-dim: #6e6656 !important;
+  --menu-bg: #e1d8c3 !important;
+  --dock-label-color: #0d0d0b !important;
+}
+
+/* ── Strict PLAIN. Zero-Radius & Zero-Glow Enforcement ─────────────────── */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+.panel-glow,
+.title-glow,
+.first-run-scanline {
+  display: none !important;
+}
+
+/* Hide upstream sci-fi masthead, first-run popup & omitted NC layer rows */
+#title-bar,
+#first-run-launcher,
+[data-layer-id='bhote-koshi-2026'],
+[data-layer-id='bhote-koshi-locator'],
+[data-layer-id='s2-ghostmaps'],
+[data-layer-id='telegeography-submarine-cables'],
+.data-toggle-item[data-layer='bhote-koshi-2026'],
+.data-toggle-item[data-layer='bhote-koshi-locator'],
+.data-toggle-item[data-layer='s2-ghostmaps'],
+.data-toggle-item[data-layer='telegeography-submarine-cables'] {
+  display: none !important;
+}
+
+/* Restyle native GEV surfaces with PLAIN. architectural rules */
+#data-panel,
+#utilities-panel,
+#scene-panel,
+#cctv-panel,
+#street-level-panel,
+#display-panel,
+#control-panel,
+#location-bar,
+#cockpit-radio-panel,
+.rail-panel,
+.panel-collapsible {
+  background: var(--pm-surface) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid var(--pm-border) !important;
+  border-top: 2px solid var(--pm-border-strong) !important;
+  box-shadow: none !important;
+}
+
+/* Shift GEV's left sensor stack & top actions below PLAIN. Maven top bar */
+#globe-actions {
+  top: 52px !important;
+}
+
+#style-indicator {
+  top: 52px !important;
+  right: 16px !important;
+  border: 1px solid var(--pm-border) !important;
+  background: var(--pm-surface) !important;
+  padding: 4px 8px !important;
+}
+
+/* When PLAIN. Dispatches rail is open, push native GEV left-panel-stack & rail right of it so both can coexist */
+.ui-rail {
+  border: 1px solid var(--pm-border) !important;
+  background: var(--pm-surface) !important;
+  border-radius: 0 !important;
+}
+
+.ui-rail__item {
+  border-radius: 0 !important;
+}
+
+body.pm-rail-open .ui-rail--left,
+body.pm-rail-open #left-panel-rail,
+body.pm-rail-open .panel-rail-left {
+  left: 368px !important;
+  inset-inline-start: 368px !important;
+  top: 54px !important;
+}
+
+body.pm-rail-open #left-panel-stack {
+  left: 414px !important;
+  inset-inline-start: 414px !important;
+  top: 54px !important;
+  max-height: calc(100vh - 130px) !important;
+}
+
+body.pm-rail-open #intel-hud .hud-left-edge,
+body.pm-rail-open #intel-hud .hud-top-left {
+  display: none !important;
+}
+
+body:not(.pm-rail-open) .ui-rail--left,
+body:not(.pm-rail-open) #left-panel-rail,
+body:not(.pm-rail-open) .panel-rail-left {
+  left: 12px !important;
+  inset-inline-start: 12px !important;
+  top: 90px !important;
+}
+
+body:not(.pm-rail-open) #left-panel-stack {
+  left: 58px !important;
+  inset-inline-start: 58px !important;
+  top: 54px !important;
+}
+
+/* Keep right GEV rail & context panels clear of the open Target Dossier */
+.ui-rail--right,
+#right-panel-rail,
+.panel-rail-right {
+  top: 54px !important;
+}
+
+body.pm-dossier-open #style-indicator {
+  display: none !important;
+}
+
+body.pm-dossier-open .ui-rail--right,
+body.pm-dossier-open #right-panel-rail,
+body.pm-dossier-open .panel-rail-right {
+  top: 54px !important;
+  right: 404px !important;
+  inset-inline-end: 404px !important;
+}
+
+body.pm-dossier-open #right-context-rail {
+  top: 54px !important;
+  right: 450px !important;
+  inset-inline-end: 450px !important;
+}
+
+/* Hide unused OpenAI Realtime voice mic box & re-tone cyan intel HUD to PLAIN. monochrome/amber */
+#voice-control,
+#voice-provider-bar,
+[data-gev-view='command-dock'] .voice-cluster,
+#command-dock .dock-voice-center,
+#voice-ptt-btn,
+#voice-settings-cluster {
+  display: none !important;
+}
+
+[data-gev-view='intel-hud'],
+[data-gev-view='intel-hud'] *,
+#intel-hud,
+#intel-hud * {
+  color: var(--pm-muted) !important;
+  border-color: var(--pm-border) !important;
+  text-shadow: none !important;
+  font-family: var(--pm-mono) !important;
+}
+
+#intel-hud {
+  bottom: 30px !important;
+}
+
+#locale-switcher,
+.locale-pill {
+  bottom: 30px !important;
+  border: 1px solid var(--pm-border) !important;
+  background: var(--pm-surface-solid) !important;
+  color: var(--pm-ink-2) !important;
+}
+
+#command-dock {
+  bottom: 28px !important;
+}
+
+/* ── Boot / Loading Screen ─────────────────────────────────────────────── */
+#loading-screen {
+  background: var(--pm-bg) !important;
+}
+
+.pm-loader-box {
+  border: 1px solid var(--pm-border) !important;
+  border-top: 3px solid var(--pm-border-strong) !important;
+  background: var(--pm-surface-solid) !important;
+  padding: 32px 40px !important;
+  max-width: 460px;
+  text-align: left !important;
+}
+
+.pm-loader-kicker {
+  font-family: var(--pm-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--pm-accent);
+  margin-bottom: 10px;
+}
+
+.pm-loader-logo {
+  font-family: var(--pm-serif) !important;
+  font-size: 44px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--pm-ink) !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+}
+
+.pm-loader-dot {
+  color: var(--pm-live);
+}
+
+.pm-loader-sub {
+  font-family: var(--pm-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  vertical-align: middle;
+  margin-left: 8px;
+  padding: 3px 7px;
+  border: 1px solid var(--pm-border-strong);
+}
+
+.pm-loader-rule {
+  height: 1px;
+  background: var(--pm-border);
+  margin: 16px 0 12px;
+}
+
+#loading-screen .loader-status {
+  font-family: var(--pm-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.06em !important;
+  color: var(--pm-ink-2) !important;
+  text-transform: uppercase;
+}
+
+.pm-loader-credit {
+  margin-top: 18px;
+  font-family: var(--pm-mono);
+  font-size: 10px;
+  color: var(--pm-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── PLAIN. × MAVEN Top Tactical Command Bar ───────────────────────────── */
+#pm-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 12px;
+  background: var(--pm-surface-solid);
+  border-bottom: 1px solid var(--pm-border);
+  border-top: 3px solid var(--pm-border-strong);
+  font-family: var(--pm-mono);
+  color: var(--pm-ink);
+  user-select: none;
+}
+
+.pm-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.pm-brand-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--pm-ink);
+}
+
+.pm-wordmark {
+  font-family: var(--pm-serif);
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--pm-ink);
+}
+
+.pm-wordmark-dot {
+  color: var(--pm-live);
+}
+
+.pm-system-tag {
+  font-family: var(--pm-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  padding: 2px 6px;
+  border: 1px solid var(--pm-border);
+  color: var(--pm-accent);
+  background: var(--pm-surface-2);
+}
+
+.pm-zulu {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--pm-muted);
+  padding-left: 8px;
+  border-left: 1px solid var(--pm-border);
+}
+
+.pm-sensors-strip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pm-sensors-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.pm-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 26px;
+  padding: 0 8px;
+  background: transparent;
+  border: 1px solid var(--pm-border);
+  color: var(--pm-ink-2);
+  font-family: var(--pm-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+
+.pm-chip:hover {
+  background: var(--pm-surface-hover);
+  color: var(--pm-ink);
+  border-color: var(--pm-border-strong);
+}
+
+.pm-chip.is-active {
+  background: var(--pm-ink);
+  color: var(--pm-bg);
+  border-color: var(--pm-ink);
+  font-weight: 600;
+}
+
+.pm-chip.pm-chip-news.is-active {
+  background: var(--pm-live);
+  color: #ffffff;
+  border-color: var(--pm-live);
+}
+
+.pm-chip-dot {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+.pm-chip-count {
+  opacity: 0.82;
+  font-size: 9.5px;
+}
+
+.pm-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.pm-theater-select {
+  height: 26px;
+  padding: 0 6px;
+  background: var(--pm-surface-2);
+  border: 1px solid var(--pm-border);
+  color: var(--pm-ink);
+  font-family: var(--pm-mono);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ── Left PLAIN. Dispatches Intelligence Rail ──────────────────────────── */
+#pm-rail {
+  position: fixed;
+  top: 52px;
+  left: 10px;
+  bottom: 32px;
+  width: 348px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  background: var(--pm-surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--pm-border);
+  border-top: 3px solid var(--pm-border-strong);
+  color: var(--pm-ink);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+#pm-rail.is-collapsed {
+  transform: translateX(calc(-100% - 16px));
+  pointer-events: none;
+  opacity: 0;
+}
+
+#pm-rail-reopen {
+  position: fixed;
+  top: 52px;
+  left: 10px;
+  z-index: 1099;
+  height: 30px;
+  padding: 0 10px;
+  background: var(--pm-surface-solid);
+  border: 1px solid var(--pm-border-strong);
+  color: var(--pm-ink);
+  font-family: var(--pm-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: none;
+}
+
+body:not(.pm-rail-open) #pm-rail-reopen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-rail-head {
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid var(--pm-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pm-rail-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pm-rail-kicker {
+  font-family: var(--pm-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--pm-accent);
+  text-transform: uppercase;
+}
+
+.pm-rail-title {
+  font-family: var(--pm-serif);
+  font-size: 21px;
+  line-height: 1.05;
+  color: var(--pm-ink);
+}
+
+.pm-icon-btn {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--pm-border);
+  color: var(--pm-ink-2);
+  font-family: var(--pm-mono);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.pm-icon-btn:hover {
+  background: var(--pm-surface-hover);
+  color: var(--pm-ink);
+  border-color: var(--pm-border-strong);
+}
+
+.pm-rail-filters {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--pm-border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pm-search-input {
+  width: 100%;
+  height: 28px;
+  padding: 0 8px;
+  background: var(--pm-surface-2);
+  border: 1px solid var(--pm-border);
+  color: var(--pm-ink);
+  font-family: var(--pm-mono);
+  font-size: 11px;
+}
+
+.pm-search-input::placeholder {
+  color: var(--pm-muted);
+}
+
+.pm-cat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.pm-mini-pill {
+  padding: 2px 6px;
+  background: transparent;
+  border: 1px solid var(--pm-border);
+  color: var(--pm-muted);
+  font-family: var(--pm-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.pm-mini-pill:hover {
+  color: var(--pm-ink);
+  border-color: var(--pm-ink-2);
+}
+
+.pm-mini-pill.is-active {
+  background: var(--pm-ink);
+  color: var(--pm-bg);
+  border-color: var(--pm-ink);
+  font-weight: 600;
+}
+
+.pm-feed-list {
+  flex: 1;
+  overflow-y: auto;
+  divide-y: 1px solid var(--pm-border);
+}
+
+.pm-story-row {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--pm-border);
+  color: var(--pm-ink);
+  cursor: pointer;
+  transition: background 100ms ease;
+}
+
+.pm-story-row:hover {
+  background: var(--pm-surface-hover);
+}
+
+.pm-story-row.is-selected {
+  background: var(--pm-accent-soft);
+  border-left: 3px solid var(--pm-accent);
+  padding-left: 9px;
+}
+
+.pm-story-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-family: var(--pm-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.07em;
+  color: var(--pm-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.pm-story-place {
+  color: var(--pm-accent);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pm-live-tag {
+  background: var(--pm-live);
+  color: #ffffff;
+  padding: 1px 4px;
+  font-weight: 700;
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  margin-right: 4px;
+}
+
+.pm-story-headline {
+  font-family: var(--pm-serif);
+  font-size: 17px;
+  line-height: 1.18;
+  color: var(--pm-ink);
+  margin-bottom: 5px;
+}
+
+.pm-story-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--pm-mono);
+  font-size: 9px;
+  color: var(--pm-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Right Target Ontology Dossier ─────────────────────────────────────── */
+#pm-dossier {
+  position: fixed;
+  top: 52px;
+  right: 10px;
+  width: 384px;
+  max-height: calc(100vh - 88px);
+  z-index: 1150;
+  display: flex;
+  flex-direction: column;
+  background: var(--pm-surface-solid);
+  border: 1px solid var(--pm-border);
+  border-top: 3px solid var(--pm-accent);
+  color: var(--pm-ink);
+}
+
+#pm-dossier[hidden] {
+  display: none !important;
+}
+
+.pm-dossier-head {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--pm-border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pm-dossier-lock {
+  font-family: var(--pm-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  color: var(--pm-accent);
+  text-transform: uppercase;
+}
+
+.pm-dossier-coords {
+  font-family: var(--pm-mono);
+  font-size: 10px;
+  color: var(--pm-muted);
+  margin-top: 3px;
+}
+
+.pm-dossier-body {
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pm-dossier-title {
+  font-family: var(--pm-serif);
+  font-size: 25px;
+  line-height: 1.12;
+  color: var(--pm-ink);
+  font-weight: 400;
+}
+
+.pm-dossier-dek {
+  font-family: var(--pm-sans);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--pm-ink-2);
+}
+
+.pm-dossier-section-label {
+  font-family: var(--pm-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pm-muted);
+  border-bottom: 1px solid var(--pm-border);
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.pm-facts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pm-facts-list li {
+  position: relative;
+  padding-left: 14px;
+  font-family: var(--pm-sans);
+  font-size: 12.5px;
+  line-height: 1.42;
+  color: var(--pm-ink);
+}
+
+.pm-facts-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 8px;
+  color: var(--pm-accent);
+}
+
+.pm-sources-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.pm-source-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 7px;
+  border: 1px solid var(--pm-border);
+  background: var(--pm-surface-2);
+  color: var(--pm-ink-2);
+  font-family: var(--pm-mono);
+  font-size: 9.5px;
+  text-decoration: none;
+}
+
+.pm-source-chip:hover {
+  border-color: var(--pm-border-strong);
+  color: var(--pm-ink);
+}
+
+.pm-dossier-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--pm-border);
+  background: var(--pm-surface-2);
+}
+
+.pm-btn-primary,
+.pm-btn-secondary {
+  height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--pm-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pm-btn-primary {
+  background: var(--pm-ink);
+  color: var(--pm-bg);
+  border: 1px solid var(--pm-ink);
+}
+
+.pm-btn-primary:hover {
+  background: var(--pm-accent);
+  border-color: var(--pm-accent);
+  color: #ffffff;
+}
+
+.pm-btn-secondary {
+  background: transparent;
+  color: var(--pm-ink);
+  border: 1px solid var(--pm-border-strong);
+}
+
+.pm-btn-secondary:hover {
+  background: var(--pm-surface-hover);
+}
+
+/* ── Palantir Maven 3D Screen-Space Target Lock Reticle ────────────────── */
+#pm-reticle {
+  position: fixed;
+  width: 58px;
+  height: 58px;
+  margin-left: -29px;
+  margin-top: -29px;
+  pointer-events: none;
+  z-index: 850;
+}
+
+#pm-reticle[hidden] {
+  display: none !important;
+}
+
+.pm-reticle-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--pm-accent);
+  border-style: solid;
+}
+
+.pm-reticle-corner.tl { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.pm-reticle-corner.tr { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.pm-reticle-corner.bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.pm-reticle-corner.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+.pm-reticle-label {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--pm-surface-solid);
+  border: 1px solid var(--pm-accent);
+  color: var(--pm-ink);
+  font-family: var(--pm-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 1px 5px;
+}
+
+/* ── Permanent Attribution & Bilawal Sidhu Credit Strip ────────────────── */
+#pm-credit-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background: var(--pm-surface-solid);
+  border-top: 1px solid var(--pm-border);
+  font-family: var(--pm-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  color: var(--pm-muted);
+}
+
+#pm-credit-bar a,
+#pm-credit-bar button {
+  color: var(--pm-ink-2);
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+#pm-credit-bar a:hover,
+#pm-credit-bar button:hover {
+  color: var(--pm-ink);
+  text-decoration: underline;
+}
+
+/* Push Cesium native credits slightly above #pm-credit-bar */
+#cesium-credits {
+  bottom: 26px !important;
+}
+
+/* ── Legal & Credits Modal ─────────────────────────────────────────────── */
+#pm-credits-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(10, 10, 9, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#pm-credits-modal[hidden] {
+  display: none !important;
+}
+
+.pm-modal-card {
+  width: 100%;
+  max-width: 680px;
+  max-height: 84vh;
+  overflow-y: auto;
+  background: var(--pm-surface-solid);
+  border: 1px solid var(--pm-border-strong);
+  border-top: 4px solid var(--pm-border-strong);
+  padding: 24px 28px;
+  color: var(--pm-ink);
+}
+
+.pm-modal-card h2 {
+  font-family: var(--pm-serif);
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.pm-modal-card p,
+.pm-modal-card li {
+  font-family: var(--pm-sans);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--pm-ink-2);
+}
+
+.pm-modal-card ul {
+  padding-left: 18px;
+  margin: 10px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pm-modal-card a {
+  color: var(--pm-accent);
+  text-decoration: underline;
+}
+
+.pm-credit-highlight {
+  padding: 12px 14px;
+  margin: 12px 0 16px;
+  background: var(--pm-surface-2);
+  border: 1px solid var(--pm-border);
+  border-left: 3px solid var(--pm-accent);
+}
+
+/* ── Mobile Responsiveness ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .pm-zulu {
+    display: none;
+  }
+  #pm-rail {
+    width: calc(100vw - 20px);
+    max-width: 360px;
+    bottom: auto;
+    max-height: 46vh;
+  }
+  #pm-dossier {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    top: auto;
+    bottom: 30px;
+    max-height: 54vh;
+  }
+  body.pm-rail-open #left-panel-stack {
+    left: 10px !important;
+  }
+}

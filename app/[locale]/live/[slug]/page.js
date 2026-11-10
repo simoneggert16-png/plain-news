@@ -1,13 +1,13 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
+import { LOCALES, LOCALE_CODES, SITE, SOURCE_LOCALE } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
-import { liveLocalize, liveLastAt, liveUpdates } from '@/lib/live.mjs';
+import { liveLocalize, liveLastAt, liveUpdates, updateLocalize } from '@/lib/live.mjs';
 import { getLiveTicker } from '@/lib/liveStore.mjs';
 import { getArticle } from '@/lib/content.mjs';
+import { geolocateStory } from '@/lib/geo.mjs';
 import LiveTicker from '@/components/LiveTicker';
 
-// A ticker changes every few minutes, so this route must never be cached at
-// build time. It also has to work before the bot's next deploy.
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }) {
@@ -48,13 +48,22 @@ export default async function LiveTickerPage({ params }) {
 
   const t = getDict(locale);
   const l = liveLocalize(ticker, locale);
+  const enLoc = liveLocalize(ticker, SOURCE_LOCALE);
   const bcp = LOCALES.find((x) => x.code === locale)?.bcp47 || 'de_CH';
   const url = `${SITE.url}/${locale}/live/${slug}`;
   const updates = liveUpdates(ticker);
   const modified = liveLastAt(ticker) || ticker.startedAt;
 
-  // A ticker can be open before its article exists (or after an article was
-  // dropped); the "read the whole article" link must not point into a 404.
+  const geo = geolocateStory({
+    slug: ticker.slug,
+    title: l.title,
+    dek: l.dek,
+    facts: updates.slice(0, 4).map((u) => updateLocalize(u, locale).headline).filter(Boolean),
+    enTitle: enLoc.title,
+    enDek: enLoc.dek,
+    locale,
+  });
+
   const linkedArticle = ticker.articleSlug ? await getArticle(ticker.articleSlug) : null;
   const displayTicker = linkedArticle ? ticker : { ...ticker, articleSlug: null };
 
@@ -123,6 +132,17 @@ export default async function LiveTickerPage({ params }) {
   return (
     <div className="live-page live-page-single">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {geo && (
+        <Link href={`/${locale}/maven?story=${encodeURIComponent(ticker.slug)}`} className="geoint-strip" style={{ marginBottom: '20px' }}>
+          <span className="geoint-strip-meta">
+            <span className="maven-diamond">◆</span>
+            <strong>MAVEN LIVE GEOINT</strong> // {geo.placeName}, {geo.country} · <span className="geoint-coord">{geo.tacticalCoord}</span>
+          </span>
+          <span className="geoint-strip-cta">
+            {t.maven?.openOnGlobe || 'Auf 3D-Lagekarte & Live-Sensoren öffnen'} →
+          </span>
+        </Link>
+      )}
       <LiveTicker ticker={displayTicker} locale={locale} />
     </div>
   );
