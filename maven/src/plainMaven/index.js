@@ -1013,8 +1013,220 @@ export async function initPlainMavenExperience({
     }
   }
 
+  let zuluTapCount = 0;
+  let zuluTapResetTimer = 0;
+  let activeSyncBackdrop = null;
+
+  function closeSyncDialog() {
+    if (activeSyncBackdrop) {
+      activeSyncBackdrop.remove();
+      activeSyncBackdrop = null;
+    }
+  }
+
+  function openSyncDialog() {
+    if (activeSyncBackdrop) {
+      closeSyncDialog();
+      return;
+    }
+
+    const backdrop = document.createElement('div');
+    backdrop.className = 'pm-sync-backdrop';
+    activeSyncBackdrop = backdrop;
+
+    const isUnlocked = globalThis.__PM_EXT__ === true;
+    if (isUnlocked) {
+      backdrop.innerHTML = `
+        <div class="pm-sync-card" role="dialog" aria-modal="true">
+          <div class="pm-sync-head">
+            <span>◆ KONSOLE // SYNC AKTIV</span>
+            <button type="button" class="pm-icon-btn" data-sync-close>✕</button>
+          </div>
+          <button type="button" class="pm-btn-secondary" style="width:100%;" data-sync-clear>
+            <span>SITZUNG TRENNEN</span>
+            <span>→</span>
+          </button>
+        </div>
+      `;
+      backdrop.addEventListener('click', async (e) => {
+        if (e.target === backdrop || e.target.closest('[data-sync-close]')) {
+          closeSyncDialog();
+          return;
+        }
+        if (e.target.closest('[data-sync-clear]')) {
+          try {
+            await fetch('/api/ui/sync', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ clear: 1 }),
+            });
+          } catch {
+            // ignore
+          }
+          try {
+            localStorage.removeItem('_pm_s');
+          } catch {
+            // ignore
+          }
+          window.location.reload();
+        }
+      });
+      document.body.appendChild(backdrop);
+      return;
+    }
+
+    backdrop.innerHTML = `
+      <div class="pm-sync-card" role="dialog" aria-modal="true">
+        <div class="pm-sync-head">
+          <span>◆ KONSOLE // SYNC</span>
+          <button type="button" class="pm-icon-btn" data-sync-close>✕</button>
+        </div>
+        <div class="pm-sync-digits">
+          <input type="password" inputmode="numeric" maxlength="6" class="pm-sync-digit" autocomplete="off" />
+          <input type="password" inputmode="numeric" maxlength="1" class="pm-sync-digit" autocomplete="off" />
+          <input type="password" inputmode="numeric" maxlength="1" class="pm-sync-digit" autocomplete="off" />
+          <input type="password" inputmode="numeric" maxlength="1" class="pm-sync-digit" autocomplete="off" />
+          <input type="password" inputmode="numeric" maxlength="1" class="pm-sync-digit" autocomplete="off" />
+          <input type="password" inputmode="numeric" maxlength="1" class="pm-sync-digit" autocomplete="off" />
+        </div>
+        <div class="pm-sync-pad">
+          <button type="button" class="pm-sync-key" data-k="1">1</button>
+          <button type="button" class="pm-sync-key" data-k="2">2</button>
+          <button type="button" class="pm-sync-key" data-k="3">3</button>
+          <button type="button" class="pm-sync-key" data-k="4">4</button>
+          <button type="button" class="pm-sync-key" data-k="5">5</button>
+          <button type="button" class="pm-sync-key" data-k="6">6</button>
+          <button type="button" class="pm-sync-key" data-k="7">7</button>
+          <button type="button" class="pm-sync-key" data-k="8">8</button>
+          <button type="button" class="pm-sync-key" data-k="9">9</button>
+          <button type="button" class="pm-sync-key" data-k="C">C</button>
+          <button type="button" class="pm-sync-key" data-k="0">0</button>
+          <button type="button" class="pm-sync-key" data-k="B">⌫</button>
+        </div>
+      </div>
+    `;
+
+    const card = backdrop.querySelector('.pm-sync-card');
+    const boxes = Array.from(backdrop.querySelectorAll('.pm-sync-digit'));
+    let submitting = false;
+
+    async function tryVerify() {
+      const code = boxes.map((b) => b.value).join('');
+      if (code.length !== 6 || submitting) return;
+      submitting = true;
+      try {
+        const res = await fetch('/api/ui/sync', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ c: code }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data?.ok === 1 && data?.t) {
+            try {
+              localStorage.setItem('_pm_s', String(data.t));
+            } catch {
+              // ignore
+            }
+            window.location.reload();
+            return;
+          }
+        }
+      } catch {
+        // ignore
+      }
+      submitting = false;
+      card.classList.remove('pm-sync-shake');
+      void card.offsetWidth;
+      card.classList.add('pm-sync-shake');
+      boxes.forEach((b) => {
+        b.value = '';
+      });
+      boxes[0]?.focus();
+    }
+
+    boxes.forEach((box, idx) => {
+      box.addEventListener('input', () => {
+        const digits = box.value.replace(/\D/g, '');
+        if (digits.length > 1) {
+          for (let k = 0; k < digits.length && idx + k < 6; k += 1) {
+            boxes[idx + k].value = digits[k];
+          }
+          boxes[Math.min(5, idx + digits.length)]?.focus();
+          void tryVerify();
+          return;
+        }
+        box.value = digits;
+        if (digits && idx < 5) boxes[idx + 1]?.focus();
+        void tryVerify();
+      });
+      box.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !box.value && idx > 0) {
+          boxes[idx - 1].value = '';
+          boxes[idx - 1].focus();
+        }
+      });
+      box.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = (e.clipboardData?.getData('text') || '')
+          .replace(/\D/g, '')
+          .slice(0, 6);
+        for (let k = 0; k < text.length; k += 1) boxes[k].value = text[k];
+        if (text.length) boxes[Math.min(5, text.length - 1)]?.focus();
+        void tryVerify();
+      });
+    });
+
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop || e.target.closest('[data-sync-close]')) {
+        closeSyncDialog();
+        return;
+      }
+      const keyBtn = e.target.closest('[data-k]');
+      if (!keyBtn || submitting) return;
+      const k = keyBtn.getAttribute('data-k');
+      if (k === 'C') {
+        boxes.forEach((b) => {
+          b.value = '';
+        });
+        boxes[0]?.focus();
+      } else if (k === 'B') {
+        for (let i = 5; i >= 0; i -= 1) {
+          if (boxes[i].value) {
+            boxes[i].value = '';
+            boxes[i].focus();
+            break;
+          }
+        }
+      } else if (k) {
+        const emptyIdx = boxes.findIndex((b) => !b.value);
+        if (emptyIdx >= 0) {
+          boxes[emptyIdx].value = k;
+          if (emptyIdx < 5) boxes[emptyIdx + 1]?.focus();
+          void tryVerify();
+        }
+      }
+    });
+
+    document.body.appendChild(backdrop);
+    window.setTimeout(() => boxes[0]?.focus(), 20);
+  }
+
   // Event delegation across our chrome
   topbar.addEventListener('click', (event) => {
+    if (event.target.closest('#pm-zulu-clock')) {
+      zuluTapCount += 1;
+      window.clearTimeout(zuluTapResetTimer);
+      if (zuluTapCount >= 5) {
+        zuluTapCount = 0;
+        openSyncDialog();
+      } else {
+        zuluTapResetTimer = window.setTimeout(() => {
+          zuluTapCount = 0;
+        }, 2500);
+      }
+      return;
+    }
     const sensorBtn = event.target.closest('[data-sensor-id]');
     if (sensorBtn) {
       const layerId = sensorBtn.getAttribute('data-sensor-id');
@@ -1159,8 +1371,20 @@ export async function initPlainMavenExperience({
   });
 
   window.addEventListener('keydown', (event) => {
+    const isSyncChord =
+      ((event.ctrlKey || event.metaKey) &&
+        event.shiftKey &&
+        (event.code === 'Period' || event.key === '.' || event.key === ':')) ||
+      (event.altKey && event.shiftKey && event.code === 'KeyP');
+    if (isSyncChord) {
+      event.preventDefault();
+      openSyncDialog();
+      return;
+    }
     if (event.key === 'Escape') {
-      if (!creditsModal.hidden) {
+      if (activeSyncBackdrop) {
+        closeSyncDialog();
+      } else if (!creditsModal.hidden) {
         creditsModal.hidden = true;
       } else if (!dossier.hidden) {
         void selectStory(null);
@@ -1171,7 +1395,9 @@ export async function initPlainMavenExperience({
   window.addEventListener('message', (event) => {
     const msg = event.data;
     if (!msg || typeof msg !== 'object') return;
-    if (msg.type === 'plain-maven:set-theme' && msg.theme) {
+    if (msg.type === 'plain-maven:chord') {
+      openSyncDialog();
+    } else if (msg.type === 'plain-maven:set-theme' && msg.theme) {
       applyTheme(msg.theme, { notifyParent: false });
     } else if (msg.type === 'plain-maven:focus-story' && msg.slug) {
       void selectStory(String(msg.slug), { fly: true });
