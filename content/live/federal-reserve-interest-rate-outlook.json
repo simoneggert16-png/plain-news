@@ -1,9 +1,61 @@
 {
+  "meta": {
+    "outlets": [
+      "New York Times",
+      "The Kyiv Post",
+      "MarketWatch",
+      "Politico",
+      "Yahoo Finance",
+      "Reuters"
+    ],
+    "createdBy": "bots/live.mjs",
+    "statsModel": "nvidia/nemotron-3.5-bolt-e4b"
+  },
   "slug": "federal-reserve-interest-rate-outlook",
-  "status": "live",
-  "category": "business",
-  "importance": 5,
   "topic": "Federal Reserve Interest Rate Outlook",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Märkte reagieren auf anhaltende Inflationsdaten, da Analysten eine letzte Zinserhöhung im Dezember erwarten.",
+      "title": "Zinssicht der Federal Reserve"
+    },
+    "en": {
+      "dek": "Markets react to persistent inflation data as analysts anticipate a final interest rate hike in December.",
+      "title": "Federal Reserve Interest Rate Outlook"
+    },
+    "es": {
+      "dek": "Los mercados reaccionan a datos persistentes de inflación mientras los analistas anticipan una última subida de tipos en diciembre.",
+      "title": "Perspectiva de tipos de interés de la Reserva Federal"
+    },
+    "fr": {
+      "dek": "Les marchés réagissent aux données d'inflation persistantes tandis que les analystes anticipent une dernière hausse des taux d'intérêt en décembre.",
+      "title": "Perspectives sur les taux d'intérêt de la Réserve fédérale"
+    },
+    "it": {
+      "dek": "I mercati reagiscono ai dati persistenti sull'inflazione mentre gli analisti anticipano un ultimo aumento dei tassi di interesse a dicembre.",
+      "title": "Prospettive sui Tassi di Interesse della Federal Reserve"
+    },
+    "ja": {
+      "dek": "市場は根強いインフレデータに反応しており、アナリストは12月に最終的な利上げを予測している。",
+      "title": "連邦準備制度理事会（FRB）の金利見通し"
+    },
+    "ko": {
+      "dek": "분석가들이 12월에 마지막 금리 인상을 예상함에 따라 시장은 지속적인 인플레이션 데이터에 반응하고 있다.",
+      "title": "연방준비제도 이자율 전망"
+    },
+    "pt": {
+      "dek": "Mercados reagem a dados persistentes de inflação enquanto analistas antecipam um último aumento da taxa de juro em dezembro.",
+      "title": "Perspetivas da Taxa de Juro da Reserva Federal"
+    },
+    "zh": {
+      "dek": "市场对持续的通胀数据做出反应，分析师预计12月将进行最后一次加息。",
+      "title": "美联储利率展望"
+    }
+  },
+  "updates": [],
+  "category": "business",
   "keywords": [
     "federal reserve",
     "inflation",
@@ -14,63 +66,179 @@
     "consumer price index",
     "fed"
   ],
+  "seenUrls": [],
   "startedAt": "2026-11-10T17:28:44.711Z",
-  "endedAt": null,
   "updatedAt": "2026-11-10T17:28:44.711Z",
+  "importance": 5,
+  "wantsStats": true,
   "articleSlug": null,
   "sourceCount": 6,
-  "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
   "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Federal Reserve Interest Rate Outlook",
-      "dek": "Markets react to persistent inflation data as analysts anticipate a final interest rate hike in December."
+  "stats": {
+    "label": "Credit card balances",
+    "note": "Reported credit card balances and HELOC increase counts",
+    "unit": "",
+    "max": null,
+    "asOf": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2026-11-10T23:21:31.913Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Homeowners tap equity as HELOC balances post biggest jump since 2005: New York Fed report",
+      "url": "https://www.cnbc.com/2026/11/10/heloc-balances-new-york-fed.html",
+      "publishedAt": "2026-11-10T21:37:43.000Z",
+      "trusted": true
     },
-    "de": {
-      "title": "Zinssicht der Federal Reserve",
-      "dek": "Märkte reagieren auf anhaltende Inflationsdaten, da Analysten eine letzte Zinserhöhung im Dezember erwarten."
-    },
-    "es": {
-      "title": "Perspectiva de tipos de interés de la Reserva Federal",
-      "dek": "Los mercados reaccionan a datos persistentes de inflación mientras los analistas anticipan una última subida de tipos en diciembre."
-    },
-    "fr": {
-      "title": "Perspectives sur les taux d'intérêt de la Réserve fédérale",
-      "dek": "Les marchés réagissent aux données d'inflation persistantes tandis que les analystes anticipent une dernière hausse des taux d'intérêt en décembre."
-    },
-    "zh": {
-      "title": "美联储利率展望",
-      "dek": "市场对持续的通胀数据做出反应，分析师预计12月将进行最后一次加息。"
-    },
-    "it": {
-      "title": "Prospettive sui Tassi di Interesse della Federal Reserve",
-      "dek": "I mercati reagiscono ai dati persistenti sull'inflazione mentre gli analisti anticipano un ultimo aumento dei tassi di interesse a dicembre."
-    },
-    "pt": {
-      "title": "Perspetivas da Taxa de Juro da Reserva Federal",
-      "dek": "Mercados reagem a dados persistentes de inflação enquanto analistas antecipam um último aumento da taxa de juro em dezembro."
-    },
-    "ko": {
-      "title": "연방준비제도 이자율 전망",
-      "dek": "분석가들이 12월에 마지막 금리 인상을 예상함에 따라 시장은 지속적인 인플레이션 데이터에 반응하고 있다."
-    },
-    "ja": {
-      "title": "連邦準備制度理事会（FRB）の金利見通し",
-      "dek": "市場は根強いインフレデータに反応しており、アナリストは12月に最終的な利上げを予測している。"
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "credit-card-balance-increase",
+        "label": "Credit card balance increase",
+        "value": 22,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Augmentation du solde de carte de crédit"
+          },
+          "de": {
+            "label": "Zunahme des Kreditkarten-Saldos"
+          },
+          "es": {
+            "label": "Aumento del saldo de la tarjeta de crédito"
+          },
+          "it": {
+            "label": "Aumento del saldo della carta di credito"
+          },
+          "zh": {
+            "label": "信用卡余额增加"
+          },
+          "pt": {
+            "label": "Aumento do saldo do cartão de crédito"
+          },
+          "ja": {
+            "label": "クレジットカード残高の増加"
+          },
+          "ko": {
+            "label": "신용카드 잔액 증가"
+          }
+        }
+      },
+      {
+        "key": "credit-card-balance-total",
+        "label": "Credit card balance total",
+        "value": 1.29,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Total des soldes de cartes de crédit"
+          },
+          "de": {
+            "label": "Gesamtsaldo der Kreditkarten"
+          },
+          "es": {
+            "label": "Total del saldo de la tarjeta de crédito"
+          },
+          "it": {
+            "label": "Totale saldo della carta di credito"
+          },
+          "zh": {
+            "label": "信用卡余额总额"
+          },
+          "pt": {
+            "label": "Total do saldo do cartão de crédito"
+          },
+          "ja": {
+            "label": "クレジットカード残高合計"
+          },
+          "ko": {
+            "label": "신용카드 잔액 총계"
+          }
+        }
+      },
+      {
+        "key": "heloc-quarterly-increase-count",
+        "label": "HELOC quarterly increase count",
+        "value": 18,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Nombre d'augmentations trimestrielles de HELOC"
+          },
+          "de": {
+            "label": "Anzahl der vierteljährlichen HELOC-Zunahmen"
+          },
+          "es": {
+            "label": "Recuento de aumento trimestral de HELOC"
+          },
+          "it": {
+            "label": "Conteggio dell'aumento trimestrale HELOC"
+          },
+          "zh": {
+            "label": "HELOC季度增幅计数"
+          },
+          "pt": {
+            "label": "Contagem de aumento trimestral do HELOC"
+          },
+          "ja": {
+            "label": "HELOCの四半期ごとの増加件数"
+          },
+          "ko": {
+            "label": "HELOC 분기별 증가 건수"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Kreditkarten-Salden",
+        "note": "Gemeldete Kreditkarten-Salden und HELOC-Zunahme-Anzahlen"
+      },
+      "fr": {
+        "label": "Soldes de cartes de crédit",
+        "note": "Comptes des soldes de cartes de crédit et des augmentations de HELOC signalés"
+      },
+      "es": {
+        "label": "Saldos de tarjetas de crédito",
+        "note": "Recuento de saldos de tarjetas de crédito reportados y aumento de HELOC"
+      },
+      "it": {
+        "label": "Saldi delle carte di credito",
+        "note": "Conteggi di saldi delle carte di credito segnalati e aumento HELOC"
+      },
+      "pt": {
+        "label": "Saldos de cartões de crédito",
+        "note": "Contagens de saldos de cartões de crédito reportados e aumento de HELOC"
+      },
+      "zh": {
+        "label": "信用卡余额",
+        "note": "报告的信用卡余额和房屋净值信用额度（HELOC）增幅计数"
+      },
+      "ja": {
+        "label": "クレジットカード残高",
+        "note": "報告されたクレジットカード残高とHELOCの増加件数"
+      },
+      "ko": {
+        "label": "신용카드 잔액",
+        "note": "보고된 신용카드 잔액 및 HELOC 증가 건수"
+      }
     }
   },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "New York Times",
-      "The Kyiv Post",
-      "MarketWatch",
-      "Politico",
-      "Yahoo Finance",
-      "Reuters"
-    ]
-  }
+  "statsHistory": [
+    {
+      "at": "2024-01-01T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "credit-card-balance-increase",
+          "value": 22
+        },
+        {
+          "key": "credit-card-balance-total",
+          "value": 1.29
+        },
+        {
+          "key": "heloc-quarterly-increase-count",
+          "value": 18
+        }
+      ]
+    }
+  ]
 }
