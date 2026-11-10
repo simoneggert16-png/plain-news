@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getIndex } from '@/lib/content.mjs';
 import { fetchTickerFeeds } from '@/lib/tickerFeeds.mjs';
 import { rankArticles, isTopStory } from '@/lib/storyRank.mjs';
@@ -23,6 +23,7 @@ const LABELS = {
   business: 'WIRTSCHAFT',
   tech: 'TECH',
   science: 'WISSEN',
+  wissen: 'WISSEN',
   culture: 'KULTUR',
   health: 'GESUNDHEIT',
   sport: 'SPORT',
@@ -40,10 +41,10 @@ function toLiveItem(item) {
   return { ...item, type, label, text: item.title };
 }
 
-const SALIENT = /election|runoff|presidential|wins|won|victory|resigns|ceasefire|invasion|earthquake|killed|dies|death toll|verdict|ruling|coup|referendum|wÃ¤hlt|stichwahl|siegt|gewinnt|RÃ¼cktritt|Erdbeben|Urteil|Gipfel/i;
+const SALIENT = /election|runoff|presidential|wins|won|victory|resigns|ceasefire|invasion|earthquake|killed|dies|death toll|verdict|ruling|coup|referendum|wählt|stichwahl|siegt|gewinnt|übernimmt|Rücktritt|Erdbeben|Urteil|Gipfel/i;
 
 // Actual votes outrank other impact stories in the three reserved slots.
-const ELECTION = /election|\bwahl|stichwahl|president|prÃ¤sident|referendum/i;
+const ELECTION = /election|\bwahl|stichwahl|president|präsident|referendum/i;
 
 /** Diversity-aware pick: no desk and no outlet may dominate the short wire. */
 function pick(items, limit, { perDesk = 2, perOutlet = 1, seen = new Set() } = {}) {
@@ -77,7 +78,7 @@ export async function GET() {
   const articles = await getIndex('en');
   const cutoff = now - WINDOW_MS;
 
-  // 1. World / politics / business / tech wire â€” the part that was missing.
+  // 1. World / politics / business / tech wire — the part that was missing.
   //    A Brazilian election belongs here just as much as a Bundesliga result.
   try {
     const wire = await fetchTickerFeeds({ maxAgeHours: 30, perFeed: 6, now });
@@ -126,24 +127,24 @@ export async function GET() {
     if (!picked.some((x) => x.slug === a.slug)) picked.push(a);
   }
   picked.forEach((a) => {
-      const deTitle = a.locales?.de?.title || a.locales?.en?.title;
-      if (!deTitle) return;
-      const isRecent = a.publishedAt && (now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS);
-      const isEilmeldung = a.importance >= 4 && isRecent;
+    const deTitle = a.locales?.de?.title || a.locales?.en?.title;
+    if (!deTitle) return;
+    const isRecent = a.publishedAt && (now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS);
+    const isEilmeldung = a.importance >= 4 && isRecent;
 
-      tickerItems.push({
-        id: `plain-${a.slug}`,
-        type: FILTER_TYPE[a.category] || a.category,
-        label: isEilmeldung ? 'EILMELDUNG' : LABELS[a.category] || 'WELT',
-        text: deTitle,
-        title: deTitle,
-        badge: isEilmeldung ? 'EILMELDUNG' : LABELS[a.category] || 'WELT',
-        slug: a.slug,
-        source: 'PLAIN.',
-        important: isTopStory(a) || (a.importance || 0) >= 4,
-        time: a.publishedAt,
-      });
+    tickerItems.push({
+      id: `plain-${a.slug}`,
+      type: FILTER_TYPE[a.category] || a.category,
+      label: isEilmeldung ? 'EILMELDUNG' : LABELS[a.category] || 'WELT',
+      text: deTitle,
+      title: deTitle,
+      badge: isEilmeldung ? 'EILMELDUNG' : LABELS[a.category] || 'WELT',
+      slug: a.slug,
+      source: 'PLAIN.',
+      important: isTopStory(a) || (a.importance || 0) >= 4,
+      time: a.publishedAt,
     });
+  });
 
   tickerItems.sort(
     (a, b) => (b.important ? 1 : 0) - (a.important ? 1 : 0) || Date.parse(b.time) - Date.parse(a.time),

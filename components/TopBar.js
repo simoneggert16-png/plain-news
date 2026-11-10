@@ -7,6 +7,10 @@ import { fmtNum, fmtPct } from '@/lib/format.mjs';
 import Link from 'next/link';
 import UserMenu from './UserMenu';
 
+function secureCookieSuffix() {
+  return typeof window !== 'undefined' && window.location.protocol === 'https:' ? '; Secure' : '';
+}
+
 export default function TopBar({ locale }) {
   const [now, setNow] = useState(null);
   const [quotes, setQuotes] = useState([]);
@@ -46,7 +50,7 @@ export default function TopBar({ locale }) {
   }, [open]);
 
   function switchLang(next) {
-    document.cookie = `lang=${next};path=/;max-age=31536000;samesite=lax`;
+    document.cookie = `lang=${next};path=/;max-age=31536000;samesite=lax${secureCookieSuffix()}`;
     setOpen(false);
     router.push(path.replace(/^\/[a-z]{2}/, `/${next}`));
   }

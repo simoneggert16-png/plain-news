@@ -575,6 +575,19 @@ export const BHOTE_KOSHI_LOCATOR_CREDIT = {
     '(CC BY-NC 4.0)',
 };
 
+/** @type {Set<string>} Keys of non-commercial / personal-only data credits excluded in public mode. */
+export const PERSONAL_ONLY_CREDIT_KEYS = new Set([
+  'florida-cctv',
+  'bhote-koshi-2026',
+  'bhote-koshi-locator',
+]);
+
+export function getPublicDataCredits(unlocked = globalThis.__PM_EXT__ === true) {
+  return unlocked
+    ? DATA_CREDITS
+    : DATA_CREDITS.filter((entry) => !PERSONAL_ONLY_CREDIT_KEYS.has(entry.key));
+}
+
 /** @type {Set<string>} Keys of dynamic credits already registered this session. */
 const _dynamicCreditKeys = new Set();
 
@@ -592,6 +605,12 @@ export function registerDynamicCredit(viewer, credit) {
     return false;
   }
   if (!credit?.key || !credit?.html) return false;
+  if (
+    PERSONAL_ONLY_CREDIT_KEYS.has(credit.key) &&
+    globalThis.__PM_EXT__ !== true
+  ) {
+    return false;
+  }
   if (_dynamicCreditKeys.has(credit.key)) return true;
   creditDisplay.addStaticCredit(new Cesium.Credit(credit.html, false));
   _dynamicCreditKeys.add(credit.key);
@@ -604,7 +623,7 @@ export function registerDynamicCredit(viewer, credit) {
  * present in the "Data attribution" popover.
  * @param {Cesium.Viewer} viewer — the initialized Cesium viewer
  */
-export function registerDataCredits(viewer, credits = DATA_CREDITS) {
+export function registerDataCredits(viewer, credits = getPublicDataCredits()) {
   const creditDisplay = viewer?.creditDisplay;
   if (!creditDisplay || typeof creditDisplay.addStaticCredit !== 'function') {
     return;

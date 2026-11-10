@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { liveUpdates, updateLocalize, kindLabel, clock, dayLabel, liveLocalize, liveStats } from '@/lib/live.mjs';
 import { getDict } from '@/lib/i18n.mjs';
+import { safeHttpUrl } from '@/lib/safeUrl.mjs';
 import LiveStats from './LiveStats';
 
 const POLL_MS = 20000;
@@ -53,8 +54,9 @@ export default function LiveTicker({ ticker: initial, locale = 'de' }) {
     const seen = new Set();
     const list = [];
     for (const u of updates) for (const s of u.sources || []) {
-      if (seen.has(s.url)) continue;
-      seen.add(s.url);
+      const key = s?.url || `${s?.outlet || ''}:${s?.title || ''}`;
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
       list.push(s);
     }
     return list;
@@ -86,11 +88,16 @@ export default function LiveTicker({ ticker: initial, locale = 'de' }) {
           {l.body && <p className="live-update-text">{l.body}</p>}
           {u.sources?.length > 0 && (
             <div className="live-update-sources">
-              {u.sources.slice(0, 4).map((s, n) => (
-                <a key={n} href={s.url} target="_blank" rel="noopener noreferrer nofollow" className="live-source">
-                  {s.outlet}
-                </a>
-              ))}
+              {u.sources.slice(0, 4).map((s, n) => {
+                const safeUrl = safeHttpUrl(s?.url, '');
+                return safeUrl ? (
+                  <a key={n} href={safeUrl} target="_blank" rel="noopener noreferrer nofollow" className="live-source">
+                    {s.outlet}
+                  </a>
+                ) : (
+                  <span key={n} className="live-source">{s.outlet}</span>
+                );
+              })}
             </div>
           )}
         </div>
@@ -153,14 +160,24 @@ export default function LiveTicker({ ticker: initial, locale = 'de' }) {
         <section className="live-sources-block">
           <div className="live-section-label">{t.sources} ({outletCount})</div>
           <ul className="live-sources-list">
-            {sources.slice(0, 40).map((s, i) => (
-              <li key={i}>
-                <a href={s.url} target="_blank" rel="noopener noreferrer nofollow">
-                  <span className="outlet">{s.outlet}</span>
-                  <span className="live-source-title">{s.title}</span>
-                </a>
-              </li>
-            ))}
+            {sources.slice(0, 40).map((s, i) => {
+              const safeUrl = safeHttpUrl(s?.url, '');
+              return (
+                <li key={i}>
+                  {safeUrl ? (
+                    <a href={safeUrl} target="_blank" rel="noopener noreferrer nofollow">
+                      <span className="outlet">{s.outlet}</span>
+                      <span className="live-source-title">{s.title}</span>
+                    </a>
+                  ) : (
+                    <span>
+                      <span className="outlet">{s.outlet}</span>
+                      <span className="live-source-title">{s.title}</span>
+                    </span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}

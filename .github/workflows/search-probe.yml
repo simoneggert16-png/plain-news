@@ -30,4 +30,6 @@ jobs:
         with:
           node-version: 22
       - name: Ask every backend the same question
-        run: node scripts/probe-search.mjs "${{ inputs.query || 'activision itaewon crowd crush footage' }}"
+        env:
+          PROBE_QUERY: ${{ inputs.query || 'activision itaewon crowd crush footage' }}
+        run: node scripts/probe-search.mjs "$PROBE_QUERY"

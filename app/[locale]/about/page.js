@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SITE, LOCALES } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
+import { safeJsonLd } from '@/lib/safeUrl.mjs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -118,7 +119,7 @@ export default async function About({ params }) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(aboutJsonLd) }} />
       <h1 className="page-title">{t.about}</h1>
       <ol className="principles">
         {t.principles.map(([h, p]) => (

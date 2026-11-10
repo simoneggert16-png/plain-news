@@ -95,7 +95,7 @@ test('the fast model is asked first', async () => {
   const model = stubbed.seen.find((call) =>
     call.target.includes('generativelanguage'),
   ).target;
-  assert.match(model, /models\/gemini-3\.5-flash-lite:generateContent/);
+  assert.match(model, /models\/gemini-2\.5-flash-lite:generateContent/);
 });
 
 test('a 503 falls back and is retried on the next look-up', async () => {

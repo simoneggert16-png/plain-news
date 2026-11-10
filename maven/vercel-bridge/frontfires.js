@@ -202,7 +202,7 @@ export function frontFiresFrom(fires, snapshot) {
     });
   }
   for (const b of baselineBombardmentFires()) {
-    near.push(b);
+    near.push({ ...b, simulated: true });
   }
   near.sort((a, b) => b.frp - a.frp);
   return {

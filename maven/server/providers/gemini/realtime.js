@@ -17,17 +17,22 @@ const UPSTREAM_RESPONSE_BYTES = 32 * 1024;
 const MINT_FAILURE = 'Gemini voice could not connect. Try again.';
 let _geminiKeyRotationIndex = Math.floor(Math.random() * 1000);
 
-function expandGeminiApiKeyPool(primaryRaw, useEnvExtras = false) {
+function expandGeminiApiKeyPool(
+  primaryRaw,
+  useEnvExtras = false,
+  environment = process.env,
+) {
   const rawParts = [
     ...String(primaryRaw || '').split(/[,;\s]+/),
     ...(useEnvExtras
       ? [
-          ...String(process.env.GEMINI_API_KEYS || '').split(/[,;\s]+/),
-          process.env.GEMINI_API_KEY_2,
-          process.env.GEMINI_API_KEY_3,
-          process.env.GEMINI_API_KEY_4,
-          process.env.GEMINI_API_KEY_5,
-          process.env.GEMINI_API_KEY_6,
+          ...String(environment?.GEMINI_API_KEYS || '').split(/[,;\s]+/),
+          environment?.GEMINI_API_KEY_1,
+          environment?.GEMINI_API_KEY_2,
+          environment?.GEMINI_API_KEY_3,
+          environment?.GEMINI_API_KEY_4,
+          environment?.GEMINI_API_KEY_5,
+          environment?.GEMINI_API_KEY_6,
         ]
       : []),
   ]
@@ -39,17 +44,19 @@ function expandGeminiApiKeyPool(primaryRaw, useEnvExtras = false) {
 export function createGeminiTokenHandler({
   annotationGuidance,
   tools,
+  environment = process.env,
   fetchImpl = (...args) => fetch(...args),
-  resolveApiKey = () => process.env.GEMINI_API_KEY,
+  resolveApiKey,
   resolveModel = () =>
-    process.env.GEMINI_LIVE_MODEL || GEMINI_LIVE_MODEL_DEFAULT,
-  resolveHost = () => process.env.HOST,
-  resolveAllowedHosts = () => process.env.GEV_ALLOWED_HOSTS,
-  resolveRateLimit = () => process.env.GEV_RATELIMIT_GEMINI_PER_MIN ?? '240',
+    environment?.GEMINI_LIVE_MODEL || GEMINI_LIVE_MODEL_DEFAULT,
+  resolveHost = () => environment?.HOST,
+  resolveAllowedHosts = () => environment?.GEV_ALLOWED_HOSTS,
+  resolveRateLimit = () => environment?.GEV_RATELIMIT_GEMINI_PER_MIN,
   now = Date.now,
   timeoutMs = 15_000,
 } = {}) {
   const isDefaultKeyResolver = resolveApiKey === undefined;
+  const getApiKey = resolveApiKey ?? (() => environment?.GEMINI_API_KEY);
   let limiter;
   return async (req, res) => {
     if (req.aborted || res.destroyed || res.writableEnded) return;
@@ -80,10 +87,12 @@ export function createGeminiTokenHandler({
         !isGeminiRequestOriginAllowed(req, resolveHost(), resolveAllowedHosts())
       )
         return reply(403, 'Gemini voice requires a same-origin app request');
-      const rawKey = String(resolveApiKey() || '').trim();
+      const rawKey = String(getApiKey() || '').trim();
       apiKeyPool = expandGeminiApiKeyPool(
         rawKey,
-        isDefaultKeyResolver || rawKey === String(process.env.GEMINI_API_KEY || '').trim(),
+        isDefaultKeyResolver ||
+          rawKey === String(environment?.GEMINI_API_KEY || '').trim(),
+        environment,
       );
       apiKey =
         apiKeyPool.length > 1
@@ -95,7 +104,7 @@ export function createGeminiTokenHandler({
       if (!model)
         return reply(503, 'The Gemini Live model configuration is invalid');
       if (limiter === undefined)
-        limiter = makeCostRateLimiter(resolveRateLimit(), 240);
+        limiter = makeCostRateLimiter(resolveRateLimit(), 30);
       if (limiter && !limiter(clientKey(req))) {
         res.setHeader('Retry-After', '60');
         return reply(

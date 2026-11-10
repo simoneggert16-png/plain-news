@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server';
-import { addComment, listAllComments, listComments } from '@/lib/communityStore.mjs';
+import {
+  addComment,
+  checkCommunityRateLimit,
+  isVerifiedCommunityUser,
+  listAllComments,
+  listComments,
+} from '@/lib/communityStore.mjs';
+import { moderateContent } from '@/lib/nvidia.mjs';
 import { visitorMeta } from '@/lib/visitorMeta.mjs';
 
 export const dynamic = 'force-dynamic';
@@ -9,16 +16,23 @@ export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
     const slug = searchParams.get('slug');
+    const requestedLimit = Number(searchParams.get('limit') || 200);
+    const limit = Number.isFinite(requestedLimit) && requestedLimit > 0
+      ? Math.min(Math.floor(requestedLimit), 200)
+      : 200;
 
     if (!slug) {
-      const all = await listAllComments();
-      return NextResponse.json({ comments: [], all });
+      const all = await listAllComments({ limit });
+      return NextResponse.json(
+        { comments: [], all },
+        { headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' } }
+      );
     }
     if (slug.length > 200) {
       return NextResponse.json({ error: 'Invalid article slug.' }, { status: 400 });
     }
 
-    const list = await listComments(slug);
+    const list = await listComments(slug, { limit });
     return NextResponse.json({
       comments: list,
       timestamp: new Date().toISOString(),
@@ -35,32 +49,64 @@ export async function GET(request) {
 
 export async function POST(request) {
   try {
-    const body = await request.json();
-    const { slug, author, content, parentId } = body || {};
-
-    if (typeof slug !== 'string' || !slug.trim() || slug.length > 200
-      || typeof content !== 'string' || !content.trim() || content.length > 1000
-      || (author !== undefined && (typeof author !== 'string' || author.length > 50))
-      || (parentId !== undefined && (typeof parentId !== 'string' || !parentId.trim() || parentId.length > 100))) {
-      return NextResponse.json({ error: 'Slug and content are required' }, { status: 400 });
+    if (!checkCommunityRateLimit(request, { scope: 'comments', max: 10, windowMs: 60_000 })) {
+      return NextResponse.json(
+        { error: 'Zu viele Beiträge in kurzer Zeit. Bitte kurz warten.' },
+        { status: 429 }
+      );
     }
 
-    const newComment = {
+    const body = await request.json().catch(() => null);
+    const { slug, author, content, parentId, locale } = body || {};
+
+    const validParentId =
+      parentId === undefined ||
+      parentId === null ||
+      (typeof parentId === 'string' && parentId.trim().length > 0 && parentId.length <= 100);
+
+    if (
+      typeof slug !== 'string' || !slug.trim() || slug.length > 200 ||
+      typeof content !== 'string' || !content.trim() || content.length > 3000 ||
+      (author !== undefined && author !== null && (typeof author !== 'string' || author.length > 60)) ||
+      !validParentId
+    ) {
+      return NextResponse.json({ error: 'Slug and valid content are required' }, { status: 400 });
+    }
+
+    const cleanSlug = slug.trim();
+    const cleanAuthor = (typeof author === 'string' && author.trim()) ? author.trim() : 'Anonym';
+    const cleanContent = content.trim();
+
+    const mod = await moderateContent({
+      text: cleanContent,
+      author: cleanAuthor,
+      type: 'comment',
+      locale: typeof locale === 'string' ? locale : 'de',
+    });
+    if (!mod.approved) {
+      return NextResponse.json(
+        { error: mod.reason || 'Der Kommentar entspricht nicht den Moderationsrichtlinien.', reason: mod.reason },
+        { status: 400 }
+      );
+    }
+
+    const verified = await isVerifiedCommunityUser(request);
+
+    const publicComment = {
       id: 'c_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
-      author: (author && author.trim()) || 'Anonym',
+      author: cleanAuthor,
       date: new Date().toISOString(),
-      content: content.trim(),
-      parentId: parentId?.trim() || null,
-      verified: true,
+      content: cleanContent,
+      parentId: typeof parentId === 'string' ? parentId.trim() : null,
+      verified,
     };
 
-    Object.assign(newComment, await visitorMeta(request));
-
-    const updatedComments = await addComment(slug.trim(), newComment);
+    const meta = await visitorMeta(request);
+    const updatedComments = await addComment(cleanSlug, publicComment, meta);
 
     return NextResponse.json({
       success: true,
-      comment: newComment,
+      comment: publicComment,
       comments: updatedComments,
     }, {
       headers: {

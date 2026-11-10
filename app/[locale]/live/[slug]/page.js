@@ -6,6 +6,7 @@ import { liveLocalize, liveLastAt, liveUpdates, updateLocalize } from '@/lib/liv
 import { getLiveTicker } from '@/lib/liveStore.mjs';
 import { getArticle } from '@/lib/content.mjs';
 import { geolocateStory } from '@/lib/geo.mjs';
+import { safeHttpUrl, safeJsonLd } from '@/lib/safeUrl.mjs';
 import LiveTicker from '@/components/LiveTicker';
 
 export const dynamic = 'force-dynamic';
@@ -106,12 +107,15 @@ export default async function LiveTickerPage({ params }) {
             author: { '@id': `${SITE.url}/#organization` },
             ...(u.sources?.length
               ? {
-                  citation: u.sources.map((s) => ({
-                    '@type': 'CreativeWork',
-                    name: s.title,
-                    url: s.url,
-                    publisher: { '@type': 'Organization', name: s.outlet },
-                  })),
+                  citation: u.sources.map((s) => {
+                    const validUrl = safeHttpUrl(s?.url, '');
+                    return {
+                      '@type': 'CreativeWork',
+                      name: s.title,
+                      ...(validUrl ? { url: validUrl } : {}),
+                      publisher: { '@type': 'Organization', name: s.outlet },
+                    };
+                  }),
                 }
               : {}),
           };
@@ -131,7 +135,7 @@ export default async function LiveTickerPage({ params }) {
 
   return (
     <div className="live-page live-page-single">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }} />
       {geo && (
         <Link href={`/${locale}/maven?story=${encodeURIComponent(ticker.slug)}`} className="geoint-strip" style={{ marginBottom: '20px' }}>
           <span className="geoint-strip-meta">

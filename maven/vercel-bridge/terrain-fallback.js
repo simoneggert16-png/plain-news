@@ -53,7 +53,7 @@ export const TERRAIN_UPSTREAM_MAX_POINTS = 64;
  * point of splitting oversized batches is that Open-Meteo takes a long
  * coordinate list — but finite, so a runaway caller cannot pin a function.
  */
-const MAX_FALLBACK_POINTS = 1024;
+const MAX_FALLBACK_POINTS = 256;
 /** Open-Meteo accepts a long coordinate list; chunk anyway to bound latency. */
 const OPEN_METEO_CHUNK = 64;
 const REQUEST_TIMEOUT_MS = Number(process.env.GEV_TERRAIN_FALLBACK_MS || 8_000);

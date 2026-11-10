@@ -92,18 +92,20 @@ export function buildKeylessFirmsPayload(nowMs = Date.now()) {
       acqDate: `${yyyy}-${mm}-${dd}`,
       acqTime: `${hh}${min}`,
       satellite: seed.sat,
+      simulated: true,
     };
   });
 
   return {
     fetchedAt: nowMs,
     stale: false,
+    simulated: true,
     ttlMs: FIRMS_TTL_MS,
     sources: [
-      { source: 'VIIRS_NOAA20_NRT', count: 29, ok: true },
-      { source: 'VIIRS_NOAA21_NRT', count: 19, ok: true },
-      { source: 'VIIRS_SNPP_NRT', count: 12, ok: true },
-      { source: 'MODIS_NRT', count: 0, ok: true },
+      { source: 'VIIRS_NOAA20_NRT', count: 29, ok: true, simulated: true },
+      { source: 'VIIRS_NOAA21_NRT', count: 19, ok: true, simulated: true },
+      { source: 'VIIRS_SNPP_NRT', count: 12, ok: true, simulated: true },
+      { source: 'MODIS_NRT', count: 0, ok: true, simulated: true },
     ],
     count: fires.length,
     fires,
@@ -113,6 +115,7 @@ export function buildKeylessFirmsPayload(nowMs = Date.now()) {
 export function buildKeylessFirmsStatusPayload(nowMs = Date.now()) {
   return {
     hasKey: true,
+    simulated: true,
     lastFetch: nowMs,
     count: CURATED_FIRMS_SEEDS.length,
     stale: false,
@@ -1564,7 +1567,13 @@ export function mergeRadioStationsPayload(upstreamBody) {
     ? upstreamBody.stations
     : [];
   const seen = new Set(existing.map((s) => s.id));
-  const merged = [...CURATED_RADIO_STATIONS.filter((s) => !seen.has(s.id)), ...existing];
+  const merged = [
+    ...CURATED_RADIO_STATIONS.filter((s) => !seen.has(s.id)).map((s) => ({
+      ...s,
+      simulated: true,
+    })),
+    ...existing,
+  ];
   return {
     stations: merged,
     updatedAt: upstreamBody?.updatedAt || new Date().toISOString(),
@@ -2698,7 +2707,7 @@ export function buildCuratedLaunches(nowMs = Date.now()) {
         { type: { abbrev: 'DEPLOY' }, relative_time: 'PT58M15S' },
       ],
     },
-  ];
+  ].map((item) => ({ ...item, simulated: true }));
 }
 
 export function mergeLaunchesPayload(upstreamBody, nowMs = Date.now()) {
@@ -2728,6 +2737,7 @@ export function buildCyclonesFallbackSnapshot(nowMs = Date.now()) {
     coverage: 'Atlantic and eastern/central North Pacific',
     fetchedAt: nowMs,
     stale: false,
+    simulated: true,
     unavailable: false,
     reason: null,
     storms: [
@@ -2953,14 +2963,14 @@ export function buildCyclonesFallbackSnapshot(nowMs = Date.now()) {
               [-83.8, 25.4],
               [-89.4, 28.2],
               [-91.4, 25.5],
-              [-85.8, 23.2],
+               [-85.8, 23.2],
               [-82.8, 21.2],
               [-82.0, 21.3],
             ],
           ],
         },
       },
-    ],
+    ].map((storm) => ({ ...storm, simulated: true })),
   };
 }
 
@@ -3561,7 +3571,7 @@ export function buildCuratedFirePerimeterRows(nowMs = Date.now()) {
       complexName: 'RHODES INTERIOR PINE',
       polygons: makeOctagonPolygon(27.938, 36.142, 0.048, 0.034),
     },
-  ];
+  ].map((row) => ({ ...row, simulated: true }));
 }
 
 export function mergeFirePerimeterPayload(upstreamBody, nowMs = Date.now()) {
@@ -4042,6 +4052,7 @@ export function mergeInciwebIndexPayload(upstreamRows) {
     lat: item.lat,
     lng: item.lng,
     size: item.size,
+    simulated: true,
   }));
   return [...curated, ...existing];
 }
@@ -4060,6 +4071,7 @@ export function resolveInciwebPublicationFallback(id, nowMs = Date.now()) {
     lat: match.lat,
     lng: match.lng,
     size: match.size,
+    simulated: true,
     percent_of_perimeter_contained: match.percentContained,
     changed: changedSec,
     incident_info: {

@@ -35,6 +35,10 @@ function escapeHtml(value = '') {
   })[char]);
 }
 
+function redactEmails(text = '') {
+  return String(text).replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[redacted]');
+}
+
 function unsubscribeToken(email) {
   const secret = process.env.NEWSLETTER_UNSUBSCRIBE_SECRET || process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!secret) throw new Error('Newsletter unsubscribe signing secret is not configured.');
@@ -128,6 +132,7 @@ async function main() {
   }
   console.log(`Sending a ${recent.length}-article digest to ${subscribers.length} ${isDirectSend ? 'requested recipient(s)' : 'subscriber(s)'}.`);
 
+  let sentCount = 0;
   let failed = 0;
   for (const subscriber of subscribers) {
     const locale = locales.has(subscriber.locale) ? subscriber.locale : 'de';
@@ -186,19 +191,20 @@ async function main() {
           .eq('email', subscriber.email);
         if (updateError) throw updateError;
       }
-      console.log(isDirectSend ? 'Sent one-time newsletter to a requested recipient.' : `Sent newsletter to ${subscriber.email}`);
+      sentCount++;
     } catch (sendError) {
       failed++;
-      const errorMessage = isDirectSend
-        ? sendError.message.replaceAll(subscriber.email, '[redacted]')
-        : sendError.message;
-      console.error(`Newsletter delivery failed${isDirectSend ? ' for a requested recipient' : ` for ${subscriber.email}`}: ${errorMessage}`);
+      const errorMessage = redactEmails(
+        String(sendError?.message || 'Unknown error').replaceAll(subscriber.email, '[redacted]')
+      );
+      console.error(`Newsletter delivery failed for ${isDirectSend ? 'a requested recipient' : 'a subscriber'}: ${errorMessage}`);
     }
   }
+  console.log(`Newsletter digest complete: ${sentCount} sent, ${failed} failed.`);
   if (failed) throw new Error(`${failed} newsletter email(s) failed.`);
 }
 
 main().catch((error) => {
-  console.error(error.message);
+  console.error(redactEmails(error?.message || String(error)));
   process.exitCode = 1;
 });

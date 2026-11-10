@@ -47,16 +47,28 @@ const SEARCH_AND_AI_AGENTS = [
   'Google-Extended',
 ];
 
+const DISALLOW_PATHS = [
+  '/api/',
+  '/admin/',
+  '/*/admin/',
+  '/auth/',
+  '/*/auth/',
+  '/reset-password',
+  '/*/reset-password',
+];
+
 export default function robots() {
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
+        disallow: DISALLOW_PATHS,
       },
       {
         userAgent: SEARCH_AND_AI_AGENTS,
         allow: '/',
+        disallow: DISALLOW_PATHS,
       },
     ],
     sitemap: [

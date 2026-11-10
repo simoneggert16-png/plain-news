@@ -19,11 +19,25 @@ create table if not exists public.community_comments (
   content text not null,
   parent_id text,
   created_at timestamptz not null default now(),
-  verified boolean not null default true
+  verified boolean not null default false,
+  ip text,
+  ip_masked text,
+  ip_hash text,
+  country text,
+  region text,
+  city text,
+  ua text
 );
 
 alter table public.community_comments
-  add column if not exists parent_id text;
+  add column if not exists parent_id text,
+  add column if not exists ip text,
+  add column if not exists ip_masked text,
+  add column if not exists ip_hash text,
+  add column if not exists country text,
+  add column if not exists region text,
+  add column if not exists city text,
+  add column if not exists ua text;
 
 create index if not exists community_comments_article_created_idx
   on public.community_comments (article_slug, created_at desc);
@@ -39,7 +53,7 @@ create table if not exists public.community_submissions (
   summary text not null,
   author text not null,
   created_at timestamptz not null default now(),
-  verified boolean not null default true
+  verified boolean not null default false
 );
 
 create index if not exists community_submissions_created_idx
@@ -50,7 +64,7 @@ create table if not exists public.community_chat_messages (
   username text not null,
   content text not null,
   created_at timestamptz not null default now(),
-  verified boolean not null default true
+  verified boolean not null default false
 );
 
 create index if not exists community_chat_created_idx
@@ -100,14 +114,21 @@ grant all on public.visits to service_role;
 -- Keeps ~25 MB of article JSON out of every Vercel deployment.
 -- Content is public by definition, so anon may SELECT; writes stay service-role.
 -- ---------------------------------------------------------------------------
+create extension if not exists pg_trgm;
+
 create table if not exists public.articles (
   slug text primary key,
   published_at timestamptz,
   updated_at timestamptz not null default now(),
-  data jsonb not null
+  data jsonb not null,
+  search_text text
 );
 
+alter table public.articles
+  add column if not exists search_text text;
+
 create index if not exists articles_published_idx on public.articles (published_at desc);
+create index if not exists articles_search_trgm on public.articles using gin (search_text gin_trgm_ops);
 
 create table if not exists public.content_blobs (
   key text primary key,
@@ -131,6 +152,35 @@ create policy articles_public_read on public.articles for select using (true);
 
 drop policy if exists content_blobs_public_read on public.content_blobs;
 create policy content_blobs_public_read on public.content_blobs for select using (true);
+
+create or replace function public.search_articles(q text, lim integer default 40)
+returns table (slug text)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  v_clean text := lower(left(trim(coalesce(q, '')), 120));
+  v_escaped text;
+  v_limit integer := greatest(1, least(coalesce(lim, 40), 100));
+begin
+  if length(v_clean) < 2 then
+    return;
+  end if;
+
+  v_escaped := replace(replace(replace(v_clean, '\', '\\'), '%', '\%'), '_', '\_');
+
+  return query
+    select a.slug
+    from public.articles a
+    where a.search_text like '%' || v_escaped || '%' escape '\'
+    order by a.published_at desc nulls last
+    limit v_limit;
+end;
+$$;
+
+grant execute on function public.search_articles(text, integer) to anon, authenticated, service_role;
 
 -- ---------------------------------------------------------------------------
 -- Inbound correspondence of the investigative desk.

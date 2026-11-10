@@ -103,8 +103,66 @@ async function verify(localIndexCount, localArticleCount) {
   return ok;
 }
 
-const index = JSON.parse(fs.readFileSync(INDEX_FILE, 'utf8'));
-const entries = Array.isArray(index.articles) ? index.articles : [];
+function cleanupStaleLocalChunks(localeCode, chunkCount) {
+  try {
+    const prefix = `${listingKey(localeCode)}-`;
+    for (const file of fs.readdirSync(CONTENT_DIR)) {
+      if (!file.startsWith(prefix) || !file.endsWith('.json')) continue;
+      const numStr = file.slice(prefix.length, -5);
+      if (/^\d+$/.test(numStr) && Number(numStr) >= chunkCount) {
+        fs.unlinkSync(path.join(CONTENT_DIR, file));
+        console.log(`removed stale local chunk ${file}`);
+      }
+    }
+  } catch {
+    // ignore local fs cleanup errors
+  }
+}
+
+async function cleanupStaleRemoteChunks(localeCode, chunkCount, knownChunks) {
+  const prefix = `${listingKey(localeCode)}-`;
+  const staleKeys = new Set();
+
+  if (knownChunks > chunkCount) {
+    for (let i = chunkCount; i < knownChunks; i++) {
+      staleKeys.add(`${prefix}${i}`);
+    }
+  }
+
+  try {
+    const existing = await rest(`content_blobs?key=like.${encodeURIComponent(prefix)}*&select=key`, {
+      key: readKey,
+      timeoutMs: 20000,
+    });
+    for (const row of existing || []) {
+      const k = String(row?.key || '');
+      if (!k.startsWith(prefix)) continue;
+      const suffix = k.slice(prefix.length);
+      if (/^\d+$/.test(suffix) && Number(suffix) >= chunkCount) {
+        staleKeys.add(k);
+      }
+    }
+  } catch {
+    // ignore listing lookup failures; knownChunks still covers normal shrinkage
+  }
+
+  for (const staleKey of staleKeys) {
+    try {
+      await rest(`content_blobs?key=eq.${encodeURIComponent(staleKey)}`, {
+        method: 'DELETE',
+        timeoutMs: 20000,
+      });
+      console.log(`removed stale remote chunk ${staleKey}`);
+    } catch (err) {
+      console.error(`removing stale chunk ${staleKey} failed: ${err.message}`);
+    }
+  }
+}
+
+const rawIndex = JSON.parse(fs.readFileSync(INDEX_FILE, 'utf8'));
+const entries = Array.isArray(rawIndex.articles)
+  ? rawIndex.articles.map((a) => (typeof a?.indexRemoved === 'boolean' ? { ...a, indexRemoved: a.indexRemoved } : a))
+  : [];
 const files = fs.readdirSync(ARTICLES_DIR).filter((f) => f.endsWith('.json'));
 const articles = files
   .map((file) => {
@@ -146,6 +204,7 @@ async function writeMirror() {
   // The index is only "current" once it really landed in the database. A
   // failed upload has to be tried again in the next run.
   let indexSum = known?.index || null;
+  let indexRemoved = Boolean(known?.indexRemoved);
 
   // The head of the list index is what the pages show first. It goes in as a
   // small row: a statement with a thousand entries ran into the server's
@@ -204,7 +263,7 @@ async function writeMirror() {
       uploaded += batch.length;
       // The map is written after every batch: a run that is cut short leaves
       // behind what it managed to upload, and the next run continues there.
-      await writeHashMap(indexSum, nextListings, nextHeads, nextArticles);
+      await writeHashMap(indexSum, nextListings, nextHeads, nextArticles, indexRemoved);
     } catch (err) {
       // One bad batch must not cost the whole mirror.
       failed++;
@@ -219,6 +278,7 @@ async function writeMirror() {
     const listing = buildListing(entries, locale.code);
     const sum = hash(JSON.stringify(listing));
     const chunkCount = Math.max(1, Math.ceil(listing.length / LISTING_CHUNK));
+    cleanupStaleLocalChunks(locale.code, chunkCount);
     const knownEntry = known?.listings?.[locale.code];
     const knownSum = typeof knownEntry === 'object' ? knownEntry.sum : knownEntry;
     const knownChunks = typeof knownEntry === 'object' ? knownEntry.chunks : -1;
@@ -244,6 +304,7 @@ async function writeMirror() {
       }
     }
     if (landed) {
+      await cleanupStaleRemoteChunks(locale.code, chunkCount, knownChunks);
       nextListings[locale.code] = { sum, chunks: chunkCount };
       console.log(`list archive ${locale.code}: ${listing.length} entries in ${chunkCount} piece(s)`);
     }
@@ -254,15 +315,16 @@ async function writeMirror() {
   // snapshot that ships with the deployment serves the crawler routes, and the
   // list indexes plus the articles are what the pages actually read. The old
   // row is removed once so the database keeps that memory for the articles.
-  if (!known?.indexRemoved) {
+  if (!indexRemoved) {
     try {
       await rest('content_blobs?key=eq.index', { method: 'DELETE', timeoutMs: 20000 });
+      indexRemoved = true;
       console.log('full index row removed');
     } catch (err) {
       console.error(`removing the index row failed: ${err.message}`);
     }
-    await writeHashMap(indexSum, nextListings, nextHeads, nextArticles, true);
-  } else if (indexSum !== known.index) {
+    await writeHashMap(indexSum, nextListings, nextHeads, nextArticles, indexRemoved);
+  } else if (indexSum !== known?.index) {
     console.log('index is local only - nothing to upload');
   }
 
@@ -280,7 +342,7 @@ async function writeMirror() {
     }
   }
 
-  await writeHashMap(indexSum, nextListings, nextHeads, nextArticles);
+  await writeHashMap(indexSum, nextListings, nextHeads, nextArticles, indexRemoved);
 
   if (failed) console.error(`${failed} batch(es) failed`);
 
@@ -288,11 +350,15 @@ async function writeMirror() {
   process.exitCode = ok ? 0 : 2;
 }
 
-async function writeHashMap(indexSum, listings, heads, articles, indexRemoved = false) {
+async function writeHashMap(indexSum, listings, heads, articlesMap, indexRemoved = false) {
   try {
     await rest('content_blobs?on_conflict=key', {
       method: 'POST',
-      body: [{ key: 'hashes', data: { index: indexSum, listings, heads, articles, indexRemoved }, updated_at: new Date().toISOString() }],
+      body: [{
+        key: 'hashes',
+        data: { index: indexSum, listings, heads, articles: articlesMap, indexRemoved: Boolean(indexRemoved) },
+        updated_at: new Date().toISOString(),
+      }],
       prefer: 'resolution=merge-duplicates,return=minimal',
       timeoutMs: 20000,
     });

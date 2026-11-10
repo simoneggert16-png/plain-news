@@ -5,14 +5,34 @@ import { listLiveTickers } from '@/lib/liveStore.mjs';
 import { liveLocalize, liveUpdates, updateLocalize } from '@/lib/live.mjs';
 import { geolocateStory } from '@/lib/geo.mjs';
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
+const PROD_ALLOWED_ORIGINS = new Set([
+  'https://plain-maven.vercel.app',
+  'https://www.plain-news.ch',
+  'https://plain-news.ch',
+]);
 
-export async function OPTIONS() {
-  return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
+const DEV_ALLOWED_ORIGINS = new Set([
+  ...PROD_ALLOWED_ORIGINS,
+  'http://localhost:5173',
+  'http://localhost:3000',
+]);
+
+function corsHeaders(request) {
+  const origin = request?.headers?.get('origin') || '';
+  const allowed = process.env.NODE_ENV !== 'production' ? DEV_ALLOWED_ORIGINS : PROD_ALLOWED_ORIGINS;
+  const headers = {
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    Vary: 'Origin',
+  };
+  if (origin && allowed.has(origin)) {
+    headers['Access-Control-Allow-Origin'] = origin;
+  }
+  return headers;
+}
+
+export async function OPTIONS(request) {
+  return new NextResponse(null, { status: 204, headers: corsHeaders(request) });
 }
 
 export async function GET(request) {
@@ -148,7 +168,7 @@ export async function GET(request) {
     {
       status: 200,
       headers: {
-        ...CORS_HEADERS,
+        ...corsHeaders(request),
         'Cache-Control': 'public, s-maxage=180, stale-while-revalidate=600',
       },
     }

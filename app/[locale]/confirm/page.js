@@ -4,6 +4,10 @@ import Link from 'next/link';
 import { useSearchParams, useParams } from 'next/navigation';
 import { getSupabaseBrowserClient } from '@/lib/supabase-browser';
 
+function secureCookieSuffix() {
+  return typeof window !== 'undefined' && window.location.protocol === 'https:' ? '; Secure' : '';
+}
+
 function ConfirmContent() {
   const searchParams = useSearchParams();
   const params = useParams();
@@ -56,19 +60,12 @@ function ConfirmContent() {
         }
 
         const user = session.user;
-        const username = user.user_metadata?.username || user.email.split('@')[0];
-        const userInfoCookie = {
-          v: 2,
-          name: username,
-          username,
-          email: user.email,
-          provider: user.app_metadata?.provider || 'email',
-          avatar: username.charAt(0).toUpperCase(),
-          verified: true,
-        };
-        document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(userInfoCookie))};path=/;max-age=2592000;samesite=lax`;
+        const displayName = user.user_metadata?.username || user.email?.split('@')[0] || 'Reader';
+        const sessionHint = { ok: 1, name: displayName };
+        const secure = secureCookieSuffix();
+        document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionHint))};path=/;max-age=2592000;samesite=lax${secure}`;
         if (Array.isArray(user.user_metadata?.topics)) {
-          document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(user.user_metadata.topics))};path=/;max-age=31536000;samesite=lax`;
+          document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(user.user_metadata.topics))};path=/;max-age=31536000;samesite=lax${secure}`;
         }
 
         if (user.user_metadata?.newsletter === true) {
@@ -83,7 +80,7 @@ function ConfirmContent() {
         }
 
         if (active) {
-          setUserInfo({ username, email: user.email });
+          setUserInfo({ username: displayName, email: user.email || '' });
           setSuccess(true);
         }
       } catch (err) {

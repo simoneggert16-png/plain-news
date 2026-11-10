@@ -3888,12 +3888,44 @@ export const ROUND_SHOT_BACKUP_URLS = Object.freeze({
 });
 
 const byId = new Map(CAMERAS.map((camera) => [camera.id, camera]));
+const MAX_LIST_CACHE_ENTRIES = 500;
+const MAX_FRAME_CACHE_ENTRIES = 40;
+const MAX_FRAME_CACHE_BYTES = 48 * 1024 * 1024;
+const MAX_HEAD_TIMES_ENTRIES = 1000;
 /** @type {Map<string, {at:number,image:string,time:number}>} */
 const listCache = new Map();
 /** @type {Map<string, {at:number,type:string,bytes:Buffer,capturedAt:number}>} */
 const frameCache = new Map();
+let frameCacheBytes = 0;
 /** @type {Map<string, {at:number, time:number}>} Capture time learned without the picture. */
 const headTimes = new Map();
+
+function deleteFrameCache(id) {
+  const existing = frameCache.get(id);
+  if (!existing) return false;
+  frameCache.delete(id);
+  frameCacheBytes = Math.max(
+    0,
+    frameCacheBytes - (existing.bytes?.byteLength || existing.bytes?.length || 0),
+  );
+  return true;
+}
+
+function setFrameCache(id, entry) {
+  const byteLen = entry?.bytes?.byteLength || entry?.bytes?.length || 0;
+  deleteFrameCache(id);
+  if (byteLen > MAX_FRAME_CACHE_BYTES) return;
+  frameCache.set(id, entry);
+  frameCacheBytes += byteLen;
+  while (
+    frameCache.size > MAX_FRAME_CACHE_ENTRIES ||
+    (frameCacheBytes > MAX_FRAME_CACHE_BYTES && frameCache.size > 0)
+  ) {
+    const oldestKey = frameCache.keys().next().value;
+    if (oldestKey === undefined) break;
+    deleteFrameCache(oldestKey);
+  }
+}
 
 function resolveGoogleKey() {
   return String(
@@ -4036,7 +4068,13 @@ async function newestAvisecPicture(camera, { fresh = false } = {}) {
   const image = String(newest?.image || '');
   if (!/^https:\/\//.test(image)) throw new Error('feed has no picture');
   const entry = { at: Date.now(), image, time: Date.parse(newest?.time) || 0 };
+  if (listCache.has(camera.id)) listCache.delete(camera.id);
   listCache.set(camera.id, entry);
+  while (listCache.size > MAX_LIST_CACHE_ENTRIES) {
+    const oldestKey = listCache.keys().next().value;
+    if (oldestKey === undefined) break;
+    listCache.delete(oldestKey);
+  }
   return entry;
 }
 
@@ -4051,7 +4089,15 @@ async function stillLastModified(camera) {
   });
   if (!response.ok) return 0;
   const time = Date.parse(response.headers.get('last-modified') || '') || 0;
-  if (time) headTimes.set(camera.id, { at: Date.now(), time });
+  if (time) {
+    if (headTimes.has(camera.id)) headTimes.delete(camera.id);
+    headTimes.set(camera.id, { at: Date.now(), time });
+    while (headTimes.size > MAX_HEAD_TIMES_ENTRIES) {
+      const oldestKey = headTimes.keys().next().value;
+      if (oldestKey === undefined) break;
+      headTimes.delete(oldestKey);
+    }
+  }
   return time;
 }
 
@@ -4121,7 +4167,7 @@ export async function pinnedCameraFrame(camera, { bust = false } = {}) {
   if (camera.kind === 'streetview') {
     const sv = await fetchStreetViewFrame(camera);
     if (sv) {
-      frameCache.set(camera.id, { at: Date.now(), ...sv });
+      setFrameCache(camera.id, { at: Date.now(), ...sv });
       return sv;
     }
     throw new Error('streetview frame unavailable');
@@ -4153,13 +4199,13 @@ export async function pinnedCameraFrame(camera, { bust = false } = {}) {
       lastModified ||
       headTimes.get(camera.id)?.time ||
       Date.now();
-    frameCache.set(camera.id, { at: Date.now(), type, bytes, capturedAt });
+    setFrameCache(camera.id, { at: Date.now(), type, bytes, capturedAt });
     return { type, bytes, capturedAt };
   } catch (err) {
     // Fallback to Google Street View so the camera never shows a broken image
     const sv = await fetchStreetViewFrame(camera).catch(() => null);
     if (sv) {
-      frameCache.set(camera.id, { at: Date.now(), ...sv });
+      setFrameCache(camera.id, { at: Date.now(), ...sv });
       return sv;
     }
     throw err;

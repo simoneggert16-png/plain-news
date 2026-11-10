@@ -35,13 +35,20 @@ export function wallEnabled() {
   return wallPin().length > 0;
 }
 
-function pinKey() {
-  return crypto.createHash('sha256').update(wallPin(), 'utf8').digest();
+function hmacKey() {
+  const secret = String(process.env.GEV_WALL_SECRET || '').trim();
+  return crypto
+    .createHmac(
+      'sha256',
+      secret || 'local-dev-fallback-secret-override-in-prod',
+    )
+    .update('pm-wall-v2:' + wallPin(), 'utf8')
+    .digest();
 }
 
 function sign(expirySeconds) {
   return crypto
-    .createHmac('sha256', pinKey())
+    .createHmac('sha256', hmacKey())
     .update(String(expirySeconds), 'utf8')
     .digest('hex');
 }
@@ -98,10 +105,14 @@ export function requestHasStealthAccess(req) {
   const legacyCookie = cookieValue(req, WALL_COOKIE);
   if (legacyCookie && verifyWallToken(legacyCookie)) return true;
   try {
-    const qToken = new URL(req.url || '/', 'http://localhost').searchParams.get(
-      '_s',
+    const parsedUrl = new URL(
+      req.originalUrl || req.url || '/',
+      'http://localhost',
     );
-    if (qToken && verifyWallToken(qToken)) return true;
+    if (parsedUrl.pathname === '/api/ghostmaps/events') {
+      const qToken = parsedUrl.searchParams.get('_s');
+      if (qToken && verifyWallToken(qToken)) return true;
+    }
   } catch {
     /* ignore malformed query */
   }
@@ -131,14 +142,23 @@ export async function handleWallRequest(_req, res) {
 }
 
 // --- Brute-force brake (8 attempts / 15 min per IP + constant delay) --------
-/** @type {Map<string, {count: number, lockedUntil: number}>} */
+/** @type {Map<string, {count: number, lockedUntil: number, updatedAt: number}>} */
 const attempts = new Map();
 
-function clientIp(req) {
+export function extractClientIp(req) {
+  const realIp = String(req.headers?.['x-real-ip'] || '').trim();
+  if (realIp) return realIp;
+  const vercelFwd = String(req.headers?.['x-vercel-forwarded-for'] || '')
+    .split(',')
+    .pop()
+    ?.trim();
+  if (vercelFwd) return vercelFwd;
   if (req._clientIp) return String(req._clientIp);
-  const forwarded = String(req.headers?.['x-forwarded-for'] || '');
-  const first = forwarded.split(',')[0].trim();
-  return first || req.socket?.remoteAddress || 'unknown';
+  return req.socket?.remoteAddress || 'unknown';
+}
+
+function clientIp(req) {
+  return extractClientIp(req);
 }
 
 export function attemptLockRemainingMs(req, now = Date.now()) {
@@ -148,23 +168,44 @@ export function attemptLockRemainingMs(req, now = Date.now()) {
 }
 
 export function registerFailedAttempt(req) {
+  const now = Date.now();
   const ip = clientIp(req);
   const max = intFromEnv('GEV_WALL_MAX_ATTEMPTS', 8);
   const lockMs = intFromEnv('GEV_WALL_LOCK_MS', 15 * 60 * 1000);
-  const record = attempts.get(ip) || { count: 0, lockedUntil: 0 };
+  const existing = attempts.get(ip);
+  const record =
+    existing &&
+    (existing.lockedUntil > now || now - existing.updatedAt <= 15 * 60 * 1000)
+      ? existing
+      : { count: 0, lockedUntil: 0, updatedAt: now };
   record.count += 1;
+  record.updatedAt = now;
   if (record.count >= max) {
-    record.lockedUntil = Date.now() + lockMs;
+    record.lockedUntil = now + lockMs;
     record.count = 0;
   }
+  attempts.delete(ip);
   attempts.set(ip, record);
   if (attempts.size > 500) {
     for (const [key, value] of attempts) {
-      if (value.lockedUntil < Date.now()) attempts.delete(key);
+      if (
+        (value.lockedUntil > 0 && value.lockedUntil < now) ||
+        now - value.updatedAt > 15 * 60 * 1000
+      ) {
+        attempts.delete(key);
+      }
+    }
+    if (attempts.size > 500) {
+      for (const key of attempts.keys()) {
+        if (attempts.size <= 500) break;
+        attempts.delete(key);
+      }
     }
   }
   return new Promise((resolve) => setTimeout(resolve, 350));
 }
+
+export const recordAttempt = registerFailedAttempt;
 
 function clearFailedAttempts(req) {
   attempts.delete(clientIp(req));
@@ -244,10 +285,14 @@ export async function handleStealthSync(req, res) {
   }
 
   const body = await readSmallJson(req);
-  if (body?.clear === 1) {
+  if (body?.clear) {
     res.writeHead(204, {
       'Cache-Control': 'no-store',
-      'Set-Cookie': `${STEALTH_COOKIE}=; Path=/; HttpOnly; Secure; SameSite=None; Partitioned; Max-Age=0`,
+      'Set-Cookie': [
+        `${STEALTH_COOKIE}=; Path=/; HttpOnly; Secure; SameSite=None; Partitioned; Max-Age=0`,
+        `${WALL_COOKIE}=; Path=/; HttpOnly; Secure; SameSite=None; Partitioned; Max-Age=0`,
+        `${WALL_COOKIE}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`,
+      ],
     });
     res.end();
     return;
@@ -270,7 +315,10 @@ export async function handleStealthSync(req, res) {
     .createHash('sha256')
     .update(submitted, 'utf8')
     .digest();
-  const digestExpected = pinKey();
+  const digestExpected = crypto
+    .createHash('sha256')
+    .update(wallPin(), 'utf8')
+    .digest();
   const matched =
     digestSubmitted.length === digestExpected.length &&
     crypto.timingSafeEqual(digestSubmitted, digestExpected);
@@ -296,3 +344,5 @@ export async function handleStealthSync(req, res) {
     },
   );
 }
+
+export const handleSyncRequest = handleStealthSync;

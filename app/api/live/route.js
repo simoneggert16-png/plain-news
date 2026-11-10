@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { LOCALE_CODES } from '@/lib/config.mjs';
 import { listLiveSummaries } from '@/lib/liveStore.mjs';
 
 export const dynamic = 'force-dynamic';
@@ -6,7 +7,8 @@ export const dynamic = 'force-dynamic';
 /** Active tickers for the banner and the /live overview. */
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const locale = searchParams.get('locale') || 'de';
+  const rawLocale = String(searchParams.get('locale') || 'de').toLowerCase();
+  const locale = LOCALE_CODES.includes(rawLocale) ? rawLocale : 'de';
   const status = searchParams.get('status') === 'ended' ? 'ended' : 'live';
 
   try {
@@ -16,6 +18,10 @@ export async function GET(request) {
       { headers: { 'Cache-Control': 'public, s-maxage=10, stale-while-revalidate=30' } }
     );
   } catch (err) {
-    return NextResponse.json({ tickers: [], error: err.message }, { status: 200 });
+    console.error('Live tickers GET failed:', err?.message || err);
+    return NextResponse.json(
+      { tickers: [], error: 'Live tickers temporarily unavailable.' },
+      { status: 500, headers: { 'Cache-Control': 'no-store' } }
+    );
   }
 }

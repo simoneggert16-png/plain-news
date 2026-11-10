@@ -3,6 +3,7 @@ import { LOCALES, LOCALE_CODES, SITE } from '@/lib/config.mjs';
 import { getDict, fmt } from '@/lib/i18n.mjs';
 import { getIndex, localize } from '@/lib/content.mjs';
 import { fmtDate } from '@/lib/format.mjs';
+import { safeJsonLd } from '@/lib/safeUrl.mjs';
 import InvestigationRequestForm from '@/components/InvestigationRequestForm';
 
 export const dynamicParams = false;
@@ -67,7 +68,7 @@ export default async function InvestigationsPage({ params }) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }} />
 
       <header className="lr-head">
         <p className="lr-kicker">{t.investigations.kicker}</p>

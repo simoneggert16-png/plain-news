@@ -202,6 +202,7 @@ function buildStrategicMilContacts(nowMs = Date.now()) {
       lon: Number((p.lon + Math.sin(rad) * distDeg).toFixed(4)),
       seen: 1.2,
       seen_pos: 1.2,
+      simulated: true,
     };
   });
 }

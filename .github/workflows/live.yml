@@ -97,7 +97,7 @@ jobs:
           fi
 
           HOURS="${LOOP_HOURS:-5}"
-          DEADLINE=$(( $(date +%s) + $(python3 -c "print(int(float('$HOURS')*3600))") ))
+          DEADLINE=$(( $(date +%s) + $(HOURS_VAL="$HOURS" python3 -c "import os; h = max(0.1, min(5.5, float(os.environ.get('HOURS_VAL') or '5'))); print(int(h * 3600))") ))
 
           # Every push to main is a Vercel deployment, and the Hobby plan
           # allows 100 of them per day. The push costs a build; the commit does

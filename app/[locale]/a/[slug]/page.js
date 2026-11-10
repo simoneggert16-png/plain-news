@@ -7,6 +7,7 @@ import { getArticle, getIndex, localize, readingMinutes } from '@/lib/content.mj
 import { getLiveIndex } from '@/lib/liveStore.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
 import { geolocateStory } from '@/lib/geo.mjs';
+import { safeHttpUrl, safeJsonLd } from '@/lib/safeUrl.mjs';
 import VideoPlayer from '@/components/VideoPlayer';
 import ArticleActions from '@/components/ArticleActions';
 import ArticleComments from '@/components/ArticleComments';
@@ -147,13 +148,16 @@ export default async function ArticlePage({ params }) {
         dateModified: a.updatedAt || a.publishedAt,
         inLanguage: bcp,
         isAccessibleForFree: true,
-        isBasedOn: a.sources.map((s) => s.url),
-        citation: a.sources.map((s) => ({
-          '@type': 'CreativeWork',
-          name: s.title,
-          url: s.url,
-          publisher: { '@type': 'Organization', name: s.outlet },
-        })),
+        isBasedOn: a.sources.map((s) => safeHttpUrl(s?.url, '')).filter(Boolean),
+        citation: a.sources.map((s) => {
+          const validUrl = safeHttpUrl(s?.url, '');
+          return {
+            '@type': 'CreativeWork',
+            name: s.title,
+            ...(validUrl ? { url: validUrl } : {}),
+            publisher: { '@type': 'Organization', name: s.outlet },
+          };
+        }),
         author: {
           '@type': 'Organization',
           name: 'PLAIN. Editorial Desk',
@@ -209,7 +213,7 @@ export default async function ArticlePage({ params }) {
 
   return (
     <article className="article">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }} />
       <header className="art-head">
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
           <Link href={`/${locale}/c/${a.category}`} className="label label-inv">{t.cat[a.category]}</Link>
@@ -354,19 +358,26 @@ export default async function ArticlePage({ params }) {
       <section className="art-section">
         <h2>{t.framing}</h2>
         <ul className="framing">
-          {a.sources.map((s, i) => (
-            <li key={i}>
-              <span className="outlet">{s.outlet}</span>
-              <a href={s.url} target="_blank" rel="noopener noreferrer nofollow">
-                <span>{s.title}</span>
-                <span className="ext-arrow" aria-hidden="true">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-                    <path d="M7 17L17 7M17 7H8M17 7V16" />
-                  </svg>
-                </span>
-              </a>
-            </li>
-          ))}
+          {a.sources.map((s, i) => {
+            const safeUrl = safeHttpUrl(s?.url, '');
+            return (
+              <li key={i}>
+                <span className="outlet">{s.outlet}</span>
+                {safeUrl ? (
+                  <a href={safeUrl} target="_blank" rel="noopener noreferrer nofollow">
+                    <span>{s.title}</span>
+                    <span className="ext-arrow" aria-hidden="true">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
+                        <path d="M7 17L17 7M17 7H8M17 7V16" />
+                      </svg>
+                    </span>
+                  </a>
+                ) : (
+                  <span>{s.title || s.outlet}</span>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </section>
 

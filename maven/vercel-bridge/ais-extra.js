@@ -265,6 +265,7 @@ function buildGlobalCorridorRows(nowMs = Date.now()) {
       draught: v.draught ?? null,
       last_position_epoch: Math.round(nowMs / 1000),
       last_position_UTC: new Date(nowMs).toISOString(),
+      simulated: true,
     };
   });
 }
@@ -457,7 +458,7 @@ export function synthesizeVesselTrack(
     const lat = Number((lat0 + northM / 111_320).toFixed(5));
     const lon = Number((lon0 + eastM / (111_320 * cosLat)).toFixed(5));
     const t = nowSec - dtSec;
-    samples.push({ lat, lon, t });
+    samples.push({ lat, lon, t, simulated: true });
   }
   return samples;
 }

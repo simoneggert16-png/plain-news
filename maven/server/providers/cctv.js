@@ -160,7 +160,21 @@ export function cctvProxy({ sourceRoot = process.cwd() } = {}) {
         // keyless gate keeps the routes reachable behind a reverse proxy; the
         // key-bearing Street View fallback below has its own check.
         if (admitSameSiteKeyless(req, res)) return;
-        const sources = await getCctvSources();
+        const rawSources = await getCctvSources();
+        const restrictPersonalCctv =
+          (Boolean(req._isReverseProxied) || Boolean(process.env.GEV_WALL_PIN)) &&
+          !req._stealthUnlocked;
+        const isPersonalOnlySource = (s) =>
+          s?.cityId === 'florida' ||
+          s?.pack === 'florida' ||
+          s?.provider === 'FL511' ||
+          s?.sourceKind === 'fl511-open-data' ||
+          /bhote[-_\s]?koshi/i.test(
+            `${s?.id || ''} ${s?.name || ''} ${s?.provider || ''}`,
+          );
+        const sources = restrictPersonalCctv
+          ? rawSources.filter((s) => !isPersonalOnlySource(s))
+          : rawSources;
         const sourceById = new Map(
           sources.map((source) => [source.id, source]),
         );
@@ -203,6 +217,7 @@ export function cctvProxy({ sourceRoot = process.cwd() } = {}) {
             const seenIds = new Set(baseSources.map((s) => s.id));
             for (const item of [...(pinnedList || []), ...(windyList || [])]) {
               if (!item?.id || seenIds.has(item.id)) continue;
+              if (restrictPersonalCctv && isPersonalOnlySource(item)) continue;
               seenIds.add(item.id);
               baseSources.push(toCatalogEntry(item));
             }
@@ -678,9 +693,9 @@ export function cctvProxy({ sourceRoot = process.cwd() } = {}) {
         // request (whose client this server cannot see) gets the placeholder,
         // as if no key were configured. Any forwarding header counts, even an
         // empty one.
-        const forwarded = PROXY_SIGNALS.some(
-          (name) => req.headers?.[name] !== undefined,
-        );
+        const forwarded =
+          Boolean(req._isReverseProxied) ||
+          PROXY_SIGNALS.some((name) => req.headers?.[name] !== undefined);
         const sv = forwarded
           ? null
           : await streetViewFallback({

@@ -4,6 +4,7 @@ import { LOCALES, LOCALE_CODES, CATEGORIES, SITE, isCategory } from '@/lib/confi
 import { getDict } from '@/lib/i18n.mjs';
 import { listFor, localize } from '@/lib/content.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
+import { safeJsonLd } from '@/lib/safeUrl.mjs';
 import SportsLiveSidebar from '@/components/SportsLiveSidebar';
 import CommunitySubmitSection from '@/components/CommunitySubmitSection';
 
@@ -96,7 +97,7 @@ export default async function CategoryPage({ params }) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(categoryJsonLd) }} />
       <div className="category-header-wrap">
         <h1 className="page-title">{t.cat[cat]}</h1>
         {cat === 'sport' && (

@@ -3,6 +3,7 @@ import dns from 'node:dns/promises';
 import net from 'node:net';
 import { readRemoteListing, searchRemoteArticles, rest } from '@/lib/contentRemote.mjs';
 import { getAllArticles } from '@/lib/content.mjs';
+import { isInternalDiagAuthorized } from '@/lib/visitsAuth.mjs';
 
 export const dynamic = 'force-dynamic';
 
@@ -53,7 +54,20 @@ async function measureNetwork() {
   return { name: 'db_network', ok: dnsResult.ok && tcp.ok, dns: dnsResult, tcp };
 }
 
-export async function GET() {
+export async function GET(request) {
+  if (!isInternalDiagAuthorized(request)) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      {
+        status: 401,
+        headers: {
+          'WWW-Authenticate': 'Basic realm="PLAIN. diag"',
+          'Cache-Control': 'private, no-store',
+        },
+      }
+    );
+  }
+
   const results = await Promise.all([
     // A cheap query: if this one hangs as well, the database is not answering
     // at all and the payload size is beside the point.
@@ -63,5 +77,8 @@ export async function GET() {
     measure('local_archive', async () => (await getAllArticles()).length),
     measureNetwork(),
   ]);
-  return NextResponse.json({ at: new Date().toISOString(), results });
+  return NextResponse.json(
+    { at: new Date().toISOString(), results },
+    { headers: { 'Cache-Control': 'private, no-store' } }
+  );
 }

@@ -2,6 +2,7 @@
 
 import { clock, liveStats } from '@/lib/live.mjs';
 import { getDict } from '@/lib/i18n.mjs';
+import { safeHttpUrl } from '@/lib/safeUrl.mjs';
 
 function fmtNumber(value, locale) {
   const n = Number(value);
@@ -30,6 +31,7 @@ export default function LiveStats({ stats, locale = 'de', compact = false }) {
   const s = liveStats({ stats }, locale);
   if (!s) return null;
   const t = getDict(locale).live;
+  const safeSourceUrl = s.source ? safeHttpUrl(s.source.url, '') : '';
 
   return (
     <section className={`live-stats ${compact ? 'is-compact' : ''}`}>
@@ -71,9 +73,13 @@ export default function LiveStats({ stats, locale = 'de', compact = false }) {
       {s.source && (
         <footer className="live-stats-source">
           <span>{t.statSource}</span>
-          <a href={s.source.url} target="_blank" rel="noopener noreferrer nofollow">
-            {s.source.outlet}
-          </a>
+          {safeSourceUrl ? (
+            <a href={safeSourceUrl} target="_blank" rel="noopener noreferrer nofollow">
+              {s.source.outlet}
+            </a>
+          ) : (
+            <span>{s.source.outlet}</span>
+          )}
           {s.source.title && <span className="live-stats-source-title">{s.source.title}</span>}
         </footer>
       )}

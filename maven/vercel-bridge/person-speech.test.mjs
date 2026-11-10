@@ -92,7 +92,7 @@ test('speak uses the free Gemini key and does not send it back', async () => {
     fetchImpl,
   });
   assert.equal(audio.bytes.toString(), 'RIFFok');
-  assert.match(calls[0].url, /gemini-3\.8-flash-lite-tts:generateContent/);
+  assert.match(calls[0].url, /gemini-2\.5-flash-preview-tts:generateContent/);
   assert.equal(calls[0].options.headers['x-goog-api-key'], 'free-test-key');
   const sent = JSON.parse(calls[0].options.body);
   assert.equal(sent.contents[0].parts[0].text, 'Kurze Zusammenfassung.');

@@ -1,31 +1,54 @@
-function installSessionTransport(sessionToken) {
-  if (!sessionToken || globalThis.__pmTransportWrapped) return;
+function readSessionToken() {
+  try {
+    return String(sessionStorage.getItem('_pm_s') || '').trim();
+  } catch {
+    return '';
+  }
+}
+
+function clearStoredTokens() {
+  try {
+    sessionStorage.removeItem('_pm_s');
+  } catch {
+    // ignore
+  }
+  try {
+    localStorage.removeItem('_pm_s');
+  } catch {
+    // ignore
+  }
+}
+
+function installSessionTransport(sessionToken = '') {
+  if (globalThis.__pmTransportWrapped) return;
   globalThis.__pmTransportWrapped = true;
 
   const nativeFetch = window.fetch.bind(window);
   window.fetch = (input, init) => {
     try {
-      const token = localStorage.getItem('_pm_s') || sessionToken;
-      if (token) {
-        const rawUrl =
-          typeof input === 'string'
-            ? input
-            : input instanceof URL
-              ? input.href
-              : input?.url || '';
-        if (rawUrl) {
-          const resolved = new URL(rawUrl, window.location.origin);
-          if (
-            resolved.origin === window.location.origin &&
-            resolved.pathname.startsWith('/api/')
-          ) {
-            const headers = new Headers(
-              init?.headers ||
-                (input instanceof Request ? input.headers : undefined),
-            );
-            if (!headers.has('x-pm-s')) headers.set('x-pm-s', token);
-            return nativeFetch(input, { ...init, headers });
-          }
+      const token = readSessionToken() || sessionToken;
+      const rawUrl =
+        typeof input === 'string'
+          ? input
+          : input instanceof URL
+            ? input.href
+            : input?.url || '';
+      if (rawUrl) {
+        const resolved = new URL(rawUrl, window.location.origin);
+        if (
+          resolved.origin === window.location.origin &&
+          resolved.pathname.startsWith('/api/')
+        ) {
+          const headers = new Headers(
+            init?.headers ||
+              (input instanceof Request ? input.headers : undefined),
+          );
+          if (token && !headers.has('x-pm-s')) headers.set('x-pm-s', token);
+          return nativeFetch(input, {
+            credentials: init?.credentials || 'include',
+            ...init,
+            headers,
+          });
         }
       }
     } catch {
@@ -38,16 +61,19 @@ function installSessionTransport(sessionToken) {
     const NativeEventSource = window.EventSource;
     window.EventSource = function PatchedEventSource(url, config) {
       try {
-        const token = localStorage.getItem('_pm_s') || sessionToken;
+        const token = readSessionToken() || sessionToken;
         if (token) {
           const resolved = new URL(String(url), window.location.origin);
           if (
             resolved.origin === window.location.origin &&
-            resolved.pathname.startsWith('/api/') &&
+            resolved.pathname === '/api/ghostmaps/events' &&
             !resolved.searchParams.has('_s')
           ) {
             resolved.searchParams.set('_s', token);
-            return new NativeEventSource(resolved.toString(), config);
+            return new NativeEventSource(resolved.toString(), {
+              withCredentials: true,
+              ...config,
+            });
           }
         }
       } catch {
@@ -60,29 +86,27 @@ function installSessionTransport(sessionToken) {
 }
 
 async function resolveSessionConfig() {
-  let savedToken = '';
   try {
-    savedToken = String(localStorage.getItem('_pm_s') || '').trim();
+    localStorage.removeItem('_pm_s');
   } catch {
-    savedToken = '';
+    // ignore storage restrictions
   }
-  if (!savedToken) return { cesiumToken: '' };
-
+  const savedToken = readSessionToken();
   installSessionTransport(savedToken);
+
   const controller = new AbortController();
   const timer = window.setTimeout(() => controller.abort(), 2500);
   try {
+    const headers = savedToken ? { 'x-pm-s': savedToken } : {};
     const res = await window.fetch('/api/ui/sync', {
       method: 'GET',
+      credentials: 'include',
       cache: 'no-store',
+      headers,
       signal: controller.signal,
     });
     if (!res.ok) {
-      try {
-        localStorage.removeItem('_pm_s');
-      } catch {
-        // ignore
-      }
+      clearStoredTokens();
       return { cesiumToken: '' };
     }
     const data = await res.json();

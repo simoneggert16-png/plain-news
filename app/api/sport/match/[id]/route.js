@@ -4,6 +4,10 @@ import { resolvePlayerPhoto } from '@/lib/sport/photoResolver';
 export const dynamic = 'force-dynamic';
 export const revalidate = 15;
 
+const MATCH_ID_RE = /^\d{1,12}$/;
+const MAX_REMOTE_PHOTO_LOOKUPS_PER_REQUEST = 6;
+const PHOTO_RESOLVE_CONCURRENCY = 4;
+
 function parseFormationString(displayFormation, roster = []) {
   if (displayFormation && typeof displayFormation === 'string') {
     return displayFormation;
@@ -18,21 +22,55 @@ function parseFormationString(displayFormation, roster = []) {
   return '4-3-3';
 }
 
+function parseIntStat(raw) {
+  if (raw === null || raw === undefined || raw === '') return null;
+  const parsed = Number.parseInt(String(raw).trim(), 10);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function formatIntStat(raw) {
+  const val = parseIntStat(raw) ?? 0;
+  return { display: String(val), raw: val };
+}
+
+function formatPercentStat(raw) {
+  if (raw === null || raw === undefined || raw === '') {
+    return { display: '0%', raw: 0 };
+  }
+  const str = String(raw).trim();
+  const hasPercent = str.includes('%');
+  const parsed = Number.parseFloat(str.replace(/%/g, '').trim());
+  if (!Number.isFinite(parsed)) {
+    return { display: '0%', raw: 0 };
+  }
+  // If string already contains '%' or numeric value > 1 (e.g. 85), do NOT multiply by 100 again.
+  const pct = (hasPercent || parsed > 1 || parsed === 0) ? parsed : parsed * 100;
+  const clamped = Math.max(0, Math.min(100, pct));
+  return {
+    display: `${Math.round(clamped)}%`,
+    raw: Math.round(clamped * 10) / 10,
+  };
+}
+
 export async function GET(request, { params }) {
   try {
     const { id: rawId } = await params;
-    const eventId = rawId;
+    const eventId = String(rawId || '').trim();
+    if (!MATCH_ID_RE.test(eventId)) {
+      return NextResponse.json({ error: 'Invalid match ID' }, { status: 400 });
+    }
 
     const leaguesToTry = ['fifa.friendly', 'uefa.champions', 'eng.1', 'esp.1', 'ger.1', 'ita.1'];
     let sum = null;
 
     for (const league of leaguesToTry) {
       try {
-        const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/summary?event=${eventId}`;
+        const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/summary?event=${encodeURIComponent(eventId)}`;
         const res = await fetch(url, {
           headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
           },
+          signal: AbortSignal.timeout(3500),
           next: { revalidate: 15 },
         });
         if (res.ok) {
@@ -42,7 +80,9 @@ export async function GET(request, { params }) {
             break;
           }
         }
-      } catch (e) {}
+      } catch {
+        // try next league
+      }
     }
 
     if (!sum) {
@@ -61,7 +101,7 @@ export async function GET(request, { params }) {
     const homeRosterRaw = sum.rosters?.[0]?.roster || [];
     const awayRosterRaw = sum.rosters?.[1]?.roster || [];
 
-    const homeFormation = homeComp?.formation || parseFormationString(null, homeRosterRaw.filter(p => p.starter));
+    const homeFormation = homeComp?.formation || parseFormationString(null, homeRosterRaw.filter((p) => p.starter));
     const awayFormation = awayComp?.formation || (homeFormation === '4-3-3' ? '4-2-3-1' : '4-4-2');
 
     const matchHeader = {
@@ -78,21 +118,21 @@ export async function GET(request, { params }) {
         id: homeComp?.id,
         name: homeComp?.team?.displayName || 'Home Team',
         shortName: homeComp?.team?.shortDisplayName || 'HOME',
-        score: homeComp?.score || '0',
+        score: homeComp?.score ?? '0',
         logo: homeComp?.team?.logos?.[0]?.href || 'https://a.espncdn.com/i/teamlogos/countries/500/arg.png',
         color: homeComp?.team?.color || '75AADB',
         formation: homeFormation,
-        coach: sum.gameInfo?.coaches?.find(c => c.team?.id === homeComp?.id)?.displayName || '',
+        coach: sum.gameInfo?.coaches?.find((c) => c.team?.id === homeComp?.id)?.displayName || '',
       },
       awayTeam: {
         id: awayComp?.id,
         name: awayComp?.team?.displayName || 'Away Team',
         shortName: awayComp?.team?.shortDisplayName || 'AWAY',
-        score: awayComp?.score || '0',
+        score: awayComp?.score ?? '0',
         logo: awayComp?.team?.logos?.[0]?.href || 'https://a.espncdn.com/i/teamlogos/countries/500/ben.png',
         color: awayComp?.team?.color || '008751',
         formation: awayFormation,
-        coach: sum.gameInfo?.coaches?.find(c => c.team?.id === awayComp?.id)?.displayName || '',
+        coach: sum.gameInfo?.coaches?.find((c) => c.team?.id === awayComp?.id)?.displayName || '',
       },
     };
 
@@ -152,7 +192,7 @@ export async function GET(request, { params }) {
     });
 
     // Fallback if goals were missing in keyEvents but present in commentary
-    if (goals.length === 0 && Number(homeComp?.score || 0) + Number(awayComp?.score || 0) > 0) {
+    if (goals.length === 0 && Number(homeComp?.score ?? 0) + Number(awayComp?.score ?? 0) > 0) {
       (sum.commentary || []).forEach((c) => {
         const t = c.text || '';
         if (t.startsWith('Goal!')) {
@@ -173,134 +213,188 @@ export async function GET(request, { params }) {
       });
     }
 
-    // Boxscore / Team Statistics
+    // Boxscore / Team Statistics (strictly factual, no fabricated fallback numbers)
     const boxTeams = sum.boxscore?.teams || [];
     const getStat = (teamIdx, label) => {
       const t = boxTeams[teamIdx];
       if (!t?.statistics) return null;
       const found = t.statistics.find((s) => s.label?.toLowerCase() === label.toLowerCase());
-      return found?.displayValue || '0';
+      if (!found) return null;
+      return found.displayValue ?? (found.value !== undefined ? String(found.value) : null);
     };
+
+    const homePossession = formatPercentStat(getStat(0, 'Possession'));
+    const awayPossession = formatPercentStat(getStat(1, 'Possession'));
+    const homeShots = formatIntStat(getStat(0, 'SHOTS'));
+    const awayShots = formatIntStat(getStat(1, 'SHOTS'));
+    const homeOnGoal = formatIntStat(getStat(0, 'ON GOAL'));
+    const awayOnGoal = formatIntStat(getStat(1, 'ON GOAL'));
+    const homeCorners = formatIntStat(getStat(0, 'Corner Kicks'));
+    const awayCorners = formatIntStat(getStat(1, 'Corner Kicks'));
+    const homeFouls = formatIntStat(getStat(0, 'Fouls'));
+    const awayFouls = formatIntStat(getStat(1, 'Fouls'));
+    const homePasses = formatIntStat(getStat(0, 'Passes'));
+    const awayPasses = formatIntStat(getStat(1, 'Passes'));
+    const homePassPct = formatPercentStat(getStat(0, 'Pass Completion %'));
+    const awayPassPct = formatPercentStat(getStat(1, 'Pass Completion %'));
 
     const stats = [
       {
         label: 'Ballbesitz',
-        home: `${getStat(0, 'Possession') || '68'}%`,
-        away: `${getStat(1, 'Possession') || '32'}%`,
-        homeRaw: parseFloat(getStat(0, 'Possession')) || 68,
-        awayRaw: parseFloat(getStat(1, 'Possession')) || 32,
+        home: homePossession.display,
+        away: awayPossession.display,
+        homeRaw: homePossession.raw,
+        awayRaw: awayPossession.raw,
       },
       {
         label: 'Torschüsse gesamt',
-        home: getStat(0, 'SHOTS') || '8',
-        away: getStat(1, 'SHOTS') || '4',
-        homeRaw: parseInt(getStat(0, 'SHOTS')) || 8,
-        awayRaw: parseInt(getStat(1, 'SHOTS')) || 4,
+        home: homeShots.display,
+        away: awayShots.display,
+        homeRaw: homeShots.raw,
+        awayRaw: awayShots.raw,
       },
       {
         label: 'Schüsse aufs Tor',
-        home: getStat(0, 'ON GOAL') || '5',
-        away: getStat(1, 'ON GOAL') || '0',
-        homeRaw: parseInt(getStat(0, 'ON GOAL')) || 5,
-        awayRaw: parseInt(getStat(1, 'ON GOAL')) || 0,
+        home: homeOnGoal.display,
+        away: awayOnGoal.display,
+        homeRaw: homeOnGoal.raw,
+        awayRaw: awayOnGoal.raw,
       },
       {
         label: 'Eckbälle',
-        home: getStat(0, 'Corner Kicks') || '4',
-        away: getStat(1, 'Corner Kicks') || '1',
-        homeRaw: parseInt(getStat(0, 'Corner Kicks')) || 4,
-        awayRaw: parseInt(getStat(1, 'Corner Kicks')) || 1,
+        home: homeCorners.display,
+        away: awayCorners.display,
+        homeRaw: homeCorners.raw,
+        awayRaw: awayCorners.raw,
       },
       {
         label: 'Gefoulte Aktionen',
-        home: getStat(0, 'Fouls') || '3',
-        away: getStat(1, 'Fouls') || '5',
-        homeRaw: parseInt(getStat(0, 'Fouls')) || 3,
-        awayRaw: parseInt(getStat(1, 'Fouls')) || 5,
+        home: homeFouls.display,
+        away: awayFouls.display,
+        homeRaw: homeFouls.raw,
+        awayRaw: awayFouls.raw,
       },
       {
         label: 'Gespielte Pässe',
-        home: getStat(0, 'Passes') || '380',
-        away: getStat(1, 'Passes') || '142',
-        homeRaw: parseInt(getStat(0, 'Passes')) || 380,
-        awayRaw: parseInt(getStat(1, 'Passes')) || 142,
+        home: homePasses.display,
+        away: awayPasses.display,
+        homeRaw: homePasses.raw,
+        awayRaw: awayPasses.raw,
       },
       {
         label: 'Passquote',
-        home: `${Math.round((parseFloat(getStat(0, 'Pass Completion %')) || 0.92) * 100)}%`,
-        away: `${Math.round((parseFloat(getStat(1, 'Pass Completion %')) || 0.78) * 100)}%`,
-        homeRaw: (parseFloat(getStat(0, 'Pass Completion %')) || 0.92) * 100,
-        awayRaw: (parseFloat(getStat(1, 'Pass Completion %')) || 0.78) * 100,
+        home: homePassPct.display,
+        away: awayPassPct.display,
+        homeRaw: homePassPct.raw,
+        awayRaw: awayPassPct.raw,
       },
     ];
 
     // Dynamic Roster (Pure Facts: Goals, Assists, Cards, Subs)
     const rosters = sum.rosters || [];
+    const remoteBudget = { remaining: MAX_REMOTE_PHOTO_LOOKUPS_PER_REQUEST };
+
     const parseRoster = async (teamRoster, teamLogo) => {
       if (!teamRoster?.roster) return { starters: [], bench: [] };
       const starters = [];
       const bench = [];
 
-      for (const p of teamRoster.roster) {
-        const rawName = p.athlete?.displayName || p.athlete?.shortName || '';
+      // Prioritize starters first so limited remote lookup budget serves starting XI
+      const ordered = [
+        ...teamRoster.roster.filter((p) => p.starter),
+        ...teamRoster.roster.filter((p) => !p.starter),
+      ];
 
-        // Check if player scored
-        const goalsScored = goals.filter((g) => g.scorer?.toLowerCase().includes(rawName.toLowerCase()) || rawName.toLowerCase().includes(g.scorer?.toLowerCase())).length;
+      const resolvedPlayers = [];
+      for (let i = 0; i < ordered.length; i += PHOTO_RESOLVE_CONCURRENCY) {
+        const chunk = ordered.slice(i, i + PHOTO_RESOLVE_CONCURRENCY);
+        const batch = await Promise.all(
+          chunk.map(async (p) => {
+            const rawName = p.athlete?.displayName || p.athlete?.shortName || '';
+            const lowerName = rawName.toLowerCase();
 
-        // Check if player assisted
-        let assistsCount = 0;
-        for (const [astName, count] of Object.entries(assistersMap)) {
-          if (astName.toLowerCase().includes(rawName.toLowerCase()) || rawName.toLowerCase().includes(astName.toLowerCase())) {
-            assistsCount = count;
-            break;
-          }
-        }
+            // Check if player scored
+            const goalsScored = lowerName
+              ? goals.filter((g) => {
+                  const s = g.scorer?.toLowerCase();
+                  return s && (s.includes(lowerName) || lowerName.includes(s));
+                }).length
+              : 0;
 
-        // Check cards
-        let cardInfo = null;
-        for (const [cName, info] of Object.entries(cardsMap)) {
-          if (cName.toLowerCase().includes(rawName.toLowerCase()) || rawName.toLowerCase().includes(cName.toLowerCase())) {
-            cardInfo = info;
-            break;
-          }
-        }
+            // Check if player assisted
+            let assistsCount = 0;
+            if (lowerName) {
+              for (const [astName, count] of Object.entries(assistersMap)) {
+                const aLower = astName.toLowerCase();
+                if (aLower && (aLower.includes(lowerName) || lowerName.includes(aLower))) {
+                  assistsCount = count;
+                  break;
+                }
+              }
+            }
 
-        // Check sub
-        let subInfo = null;
-        for (const [sName, sData] of Object.entries(subsMap)) {
-          if (sName.toLowerCase().includes(rawName.toLowerCase()) || rawName.toLowerCase().includes(sName.toLowerCase())) {
-            subInfo = sData;
-            break;
-          }
-        }
+            // Check cards
+            let cardInfo = null;
+            if (lowerName) {
+              for (const [cName, info] of Object.entries(cardsMap)) {
+                const cLower = cName.toLowerCase();
+                if (cLower && (cLower.includes(lowerName) || lowerName.includes(cLower))) {
+                  cardInfo = info;
+                  break;
+                }
+              }
+            }
 
-        // Dynamically resolve photo
-        const photoUrl = await resolvePlayerPhoto({
-          name: rawName,
-          athlete: p.athlete,
-          teamLogo,
-        });
+            // Check sub
+            let subInfo = null;
+            if (lowerName) {
+              for (const [sName, sData] of Object.entries(subsMap)) {
+                const sLower = sName.toLowerCase();
+                if (sLower && (sLower.includes(lowerName) || lowerName.includes(sLower))) {
+                  subInfo = sData;
+                  break;
+                }
+              }
+            }
 
-        const playerObj = {
-          id: p.athlete?.id || rawName,
-          name: rawName,
-          shortName: p.athlete?.shortName || rawName,
-          jersey: p.jersey || '',
-          position: p.position?.displayName || '',
-          posAbbr: p.position?.abbreviation || '',
-          headshot: photoUrl,
-          isCaptain: Boolean(p.captain),
-          goals: goalsScored,
-          assists: assistsCount,
-          card: cardInfo,
-          sub: subInfo,
-          stats: (p.stats || []).reduce((acc, s) => {
-            acc[s.name] = s.value !== undefined ? s.value : s.displayValue;
-            return acc;
-          }, {}),
-        };
+            const photoUrl = await resolvePlayerPhoto(
+              {
+                name: rawName,
+                slug: p.athlete?.slug,
+                athlete: p.athlete,
+                teamLogo,
+              },
+              { remoteBudget }
+            );
 
-        if (p.starter) starters.push(playerObj);
+            return {
+              starter: Boolean(p.starter),
+              playerObj: {
+                id: p.athlete?.id || rawName,
+                name: rawName,
+                shortName: p.athlete?.shortName || rawName,
+                jersey: p.jersey ?? '',
+                position: p.position?.displayName || '',
+                posAbbr: p.position?.abbreviation || '',
+                headshot: photoUrl,
+                isCaptain: Boolean(p.captain),
+                goals: goalsScored,
+                assists: assistsCount,
+                card: cardInfo,
+                sub: subInfo,
+                stats: (p.stats || []).reduce((acc, s) => {
+                  acc[s.name] = s.value !== undefined ? s.value : s.displayValue;
+                  return acc;
+                }, {}),
+              },
+            };
+          })
+        );
+        resolvedPlayers.push(...batch);
+      }
+
+      for (const { starter, playerObj } of resolvedPlayers) {
+        if (starter) starters.push(playerObj);
         else bench.push(playerObj);
       }
 

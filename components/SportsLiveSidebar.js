@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { safeHttpUrl } from '@/lib/safeUrl.mjs';
 
 const SPORT_FILTERS = [
   { id: 'all', de: 'Alle Sportarten', en: 'All Sports' },
@@ -174,9 +175,10 @@ export default function SportsLiveSidebar({ locale = 'de' }) {
                 </Link>
               );
             }
-            if (item.url) {
+            const externalUrl = safeHttpUrl(item.url, '');
+            if (externalUrl) {
               return (
-                <a key={item.id} href={item.url} target="_blank" rel="noopener noreferrer" className="sport-ticker-card-link">
+                <a key={item.id} href={externalUrl} target="_blank" rel="noopener noreferrer" className="sport-ticker-card-link">
                   {card}
                 </a>
               );

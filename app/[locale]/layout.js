@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { LOCALES, LOCALE_CODES, SITE, isLocale } from '@/lib/config.mjs';
 import { getDict } from '@/lib/i18n.mjs';
+import { safeJsonLd } from '@/lib/safeUrl.mjs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LiveBanner from '@/components/LiveBanner';
@@ -138,7 +139,7 @@ export default async function LocaleLayout({ children, params }) {
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(siteJsonLd) }}
         />
         <link rel="alternate" type="application/rss+xml" title={`${SITE.name} RSS`} href={`${SITE.url}/feed.xml`} />
         <link rel="alternate" type="text/plain" title="llms.txt" href={`${SITE.url}/llms.txt`} />

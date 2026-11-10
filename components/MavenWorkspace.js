@@ -2,9 +2,18 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+import { safeHref, safeHttpUrl } from '@/lib/safeUrl.mjs';
 
 const MAVEN_CONSOLE_URL =
   process.env.NEXT_PUBLIC_PLAIN_MAVEN_URL || 'https://plain-maven.vercel.app';
+
+const MAVEN_ORIGIN = (() => {
+  try {
+    return new URL(MAVEN_CONSOLE_URL).origin;
+  } catch {
+    return 'https://plain-maven.vercel.app';
+  }
+})();
 
 export default function MavenWorkspace({
   locale = 'de',
@@ -21,7 +30,12 @@ export default function MavenWorkspace({
   const [readerData, setReaderData] = useState(null);
 
   const iframeSrc = useMemo(() => {
-    const url = new URL(MAVEN_CONSOLE_URL);
+    let url;
+    try {
+      url = new URL(MAVEN_CONSOLE_URL);
+    } catch {
+      url = new URL('https://plain-maven.vercel.app');
+    }
     url.searchParams.set('locale', locale);
     url.searchParams.set('theme', 'obsidian');
     if (initialStory) url.searchParams.set('story', initialStory);
@@ -29,11 +43,13 @@ export default function MavenWorkspace({
       url.searchParams.set('lat', String(initialLat));
       url.searchParams.set('lon', String(initialLon));
     }
-    return url.toString();
+    return safeHttpUrl(url.toString(), 'https://plain-maven.vercel.app');
   }, [locale, initialStory, initialLat, initialLon]);
 
   useEffect(() => {
     function onMessage(event) {
+      if (event.origin !== MAVEN_ORIGIN || event.source !== iframeRef.current?.contentWindow) return;
+
       const msg = event.data;
       if (!msg || typeof msg !== 'object') return;
 
@@ -77,7 +93,7 @@ export default function MavenWorkspace({
         e.preventDefault();
         iframeRef.current?.contentWindow?.postMessage(
           { type: 'plain-maven:chord' },
-          '*',
+          MAVEN_ORIGIN,
         );
         return;
       }
@@ -95,9 +111,11 @@ export default function MavenWorkspace({
     setMavenTheme(next);
     iframeRef.current?.contentWindow?.postMessage(
       { type: 'plain-maven:set-theme', theme: next },
-      '*',
+      MAVEN_ORIGIN,
     );
   }
+
+  const safeReaderPath = readerData?.path ? safeHref(readerData.path, '') : '';
 
   return (
     <div className={`maven-workspace ${fullscreen ? 'is-fullscreen' : ''}`}>
@@ -156,6 +174,7 @@ export default function MavenWorkspace({
           title={labels.title || 'PLAIN. Maven 3D Geospatial Intelligence'}
           className="maven-iframe"
           allow="fullscreen; clipboard-write"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
         />
 
         {readerOpen && (
@@ -165,8 +184,8 @@ export default function MavenWorkspace({
                 ◆ PLAIN. {locale === 'de' ? 'VOLLTEXT-BERICHT' : 'FULL DISPATCH'}
               </span>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                {readerData?.path && (
-                  <Link href={readerData.path} className="maven-bar-btn">
+                {safeReaderPath && (
+                  <Link href={safeReaderPath} className="maven-bar-btn">
                     ↗ {locale === 'de' ? 'Artikelseite' : 'Article Page'}
                   </Link>
                 )}
@@ -234,18 +253,25 @@ export default function MavenWorkspace({
                     <div className="maven-reader-sources">
                       <h3>{locale === 'de' ? 'Primärquellen' : 'Sources'}</h3>
                       <ul>
-                        {readerData.sources.map((src, idx) => (
-                          <li key={idx}>
-                            <strong>{src.outlet}:</strong>{' '}
-                            <a
-                              href={src.url}
-                              target="_blank"
-                              rel="noopener noreferrer nofollow"
-                            >
-                              {src.title || src.outlet} ↗
-                            </a>
-                          </li>
-                        ))}
+                        {readerData.sources.map((src, idx) => {
+                          const safeUrl = safeHttpUrl(src?.url, '');
+                          return (
+                            <li key={idx}>
+                              <strong>{src.outlet}:</strong>{' '}
+                              {safeUrl ? (
+                                <a
+                                  href={safeUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer nofollow"
+                                >
+                                  {src.title || src.outlet} ↗
+                                </a>
+                              ) : (
+                                <span>{src.title || src.outlet}</span>
+                              )}
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   )}

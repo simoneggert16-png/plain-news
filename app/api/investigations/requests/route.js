@@ -36,7 +36,7 @@ export async function GET(request) {
     }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (err) {
     console.error('Investigation request GET failed:', err.message);
-    return NextResponse.json({ error: 'Wünsche konnten nicht geladen werden.' }, { status: 500 });
+    return NextResponse.json({ error: 'Wünsche konnten nicht geladen werden.' }, { status: 503 });
   }
 }
 
@@ -53,17 +53,28 @@ export async function POST(request) {
     }
 
     const week = weekKey();
-    // The quota lives in the same table as the wishes. If that table does not
-    // answer, the wish is still worth taking: the desk reads the wishes
-    // itself and the count only guards the week.
-    const usage = await weekUsage(week, user.id).catch(() => null);
-    if (usage?.siteLeft === 0) {
+    let usage;
+    try {
+      usage = await weekUsage(week, user.id);
+    } catch (err) {
+      console.error('Investigation quota verification failed:', err.message);
+      return NextResponse.json({
+        error: 'Das Wochenkontingent kann derzeit nicht geprüft werden. Bitte versuche es später noch einmal.',
+      }, { status: 503 });
+    }
+    if (!usage || typeof usage.siteLeft !== 'number' || typeof usage.mineLeft !== 'number') {
+      return NextResponse.json({
+        error: 'Das Wochenkontingent kann derzeit nicht geprüft werden. Bitte versuche es später noch einmal.',
+      }, { status: 503 });
+    }
+
+    if (usage.siteLeft <= 0) {
       return NextResponse.json({
         error: `Die Wunschliste für diese Woche ist voll (${INVESTIGATION_QUOTAS.wishesPerWeek} Wünsche). Nächste Woche wieder.`,
         quota: usage,
       }, { status: 429 });
     }
-    if (usage?.mineLeft === 0) {
+    if (usage.mineLeft <= 0) {
       return NextResponse.json({
         error: `Du hast diese Woche bereits ${INVESTIGATION_QUOTAS.wishesPerReaderPerWeek} Themen vorgeschlagen.`,
         quota: usage,
@@ -84,7 +95,7 @@ export async function POST(request) {
         error: 'Der Wunschzettel ist gerade nicht erreichbar. Der Desk nimmt diese Woche eigene Themen auf — bitte versuche es später noch einmal.',
       }, { status: 503 });
     }
-    const after = await weekUsage(week, user.id).catch(() => null);
+    const after = await weekUsage(week, user.id).catch(() => usage);
     return NextResponse.json({ request: created, quota: after }, { status: 201 });
   } catch (err) {
     console.error('Investigation request POST failed:', err.message);

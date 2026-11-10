@@ -1,6 +1,17 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { safeHref, safeHttpUrl } from '@/lib/safeUrl.mjs';
+
+function sanitizeMediaUrl(raw) {
+  if (typeof raw !== 'string') return '';
+  const trimmed = raw.trim();
+  if (!trimmed) return '';
+  if (trimmed.startsWith('/') && !trimmed.startsWith('//')) {
+    return safeHref(trimmed, '');
+  }
+  return safeHttpUrl(trimmed, '');
+}
 
 export default function VideoPlayer({ video, src, poster, title, caption }) {
   const videoRef = useRef(null);
@@ -8,14 +19,21 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
   const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [showControls, setShowControls] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Check if it's a YouTube video
-  const ytId = video?.id || (typeof src === 'string' && src.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/)?.[1]);
-  const isYouTube = video?.type === 'youtube' || Boolean(ytId) || (typeof src === 'string' && src.includes('youtube'));
-  const embedUrl = video?.embedUrl || (ytId ? `https://www.youtube-nocookie.com/embed/${ytId}` : src);
+  const rawSrc = typeof src === 'string' ? src : '';
+  const matchedYtId = rawSrc.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/)?.[1];
+  const ytId = typeof video?.id === 'string' && /^[\w-]{11}$/.test(video.id) ? video.id : matchedYtId;
+  const isYouTube = video?.type === 'youtube' || Boolean(ytId) || rawSrc.includes('youtube');
 
   // If YouTube video, render direct responsive iframe for seamless one-click playback
   if (isYouTube) {
+    const rawEmbedUrl = video?.embedUrl || (ytId ? `https://www.youtube-nocookie.com/embed/${ytId}` : rawSrc);
+    const embedUrl = safeHttpUrl(rawEmbedUrl, '');
+    if (!embedUrl) return null;
+
     return (
       <figure className="clip-player-wrap">
         <div className="clip-player">
@@ -37,8 +55,11 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
     );
   }
 
-  const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const videoUrl = sanitizeMediaUrl(src || video?.url);
+  if (!videoUrl) return null;
+
+  const safePoster = poster ? sanitizeMediaUrl(poster) : '';
+  const sourceUrl = safeHttpUrl(video?.sourceUrl, '') || videoUrl;
 
   const togglePlay = (e) => {
     if (e && typeof e.stopPropagation === 'function') {
@@ -113,8 +134,6 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
     }
   };
 
-  const videoUrl = src || video?.url;
-
   return (
     <figure className="clip-player-wrap">
       <div
@@ -125,7 +144,7 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
         <video
           ref={videoRef}
           src={videoUrl}
-          poster={poster}
+          poster={safePoster || undefined}
           playsInline
           muted={isMuted}
           preload="metadata"
@@ -172,9 +191,9 @@ export default function VideoPlayer({ video, src, poster, title, caption }) {
         {hasError && (
           <div className="clip-error-fallback" onClick={(e) => e.stopPropagation()}>
             <p>Clip kann im Browser nicht direkt gestreamt werden.</p>
-            {videoUrl && (
+            {sourceUrl && (
               <a
-                href={videoUrl}
+                href={sourceUrl}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="clip-external-link"

@@ -4,7 +4,7 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   return {
     title: locale === 'de' ? 'Datenschutzerklärung | PLAIN.' : 'Privacy Policy | PLAIN.',
-    description: 'Privacy Policy for PLAIN. News �?" no ads, no third-party tracking, no data monetization.',
+    description: 'Privacy Policy for PLAIN. News — no ads, no third-party tracking, no data monetization.',
     alternates: {
       canonical: `${SITE.url}/${locale}/privacy`,
       languages: Object.fromEntries(LOCALES.map((l) => [l.code, `${SITE.url}/${l.code}/privacy`])),
@@ -68,7 +68,7 @@ export default async function PrivacyPage({ params }) {
         </h2>
         <p style={{ lineHeight: 1.6 }}>
           {isDe
-            ? 'Wenn Sie mit unseren Inhalten auf Drittplattformen (wie TikTok, Instagram, Facebook oder YouTube) interagieren, unterliegt diese Nutzung den Datenschutzrichtlinien der jeweiligen Plattformbetreiber. Bei der Nutzung von API-Schnittstellen zur Inhaltsverteilung werden ausschlie�Ylich von Entwicklern autorisierte API-Tokens verwendet; es werden keine personenbezogenen Daten von Endnutzern an Dritte übertragen.'
+            ? 'Wenn Sie mit unseren Inhalten auf Drittplattformen (wie TikTok, Instagram, Facebook oder YouTube) interagieren, unterliegt diese Nutzung den Datenschutzrichtlinien der jeweiligen Plattformbetreiber. Bei der Nutzung von API-Schnittstellen zur Inhaltsverteilung werden ausschliesslich von Entwicklern autorisierte API-Tokens verwendet; es werden keine personenbezogenen Daten von Endnutzern an Dritte übertragen.'
             : 'When interacting with our content on third-party networks (such as TikTok, Instagram, Facebook, or YouTube), data processing is governed by the respective platform policies. Automated publishing integrations only utilize developer-authorized API credentials; no personal end-user data is collected or transmitted.'}
         </p>
       </section>
@@ -90,11 +90,10 @@ export default async function PrivacyPage({ params }) {
         </h2>
         <p style={{ lineHeight: 1.6 }}>
           {isDe
-            ? 'Gemä�Y Schweizer Datenschutzgesetz (DSG) sowie der DSGVO haben Sie jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten. Kontaktieren Sie uns jederzeit unter simoneggert16@gmail.com.'
+            ? 'Gemäss Schweizer Datenschutzgesetz (DSG) sowie der DSGVO haben Sie jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten. Kontaktieren Sie uns jederzeit unter simoneggert16@gmail.com.'
             : 'Under Swiss Federal Data Protection Act (FADP) and GDPR, you have the right to access, rectify, or request deletion of any personal data. Contact us directly at simoneggert16@gmail.com.'}
         </p>
       </section>
     </div>
   );
 }
-

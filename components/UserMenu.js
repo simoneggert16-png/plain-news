@@ -15,6 +15,64 @@ const PALETTES = [
   { id: 'sepia-print', name: 'Warm Sepia', desc: 'Historischer Bleisatz & NZZ-Stil', bg: '#f6efe1', ink: '#2b1f13', accent: '#7c6249' },
 ];
 
+const LEGACY_BEAT_ALIASES = {
+  world: 'welt',
+  politics: 'politik',
+  business: 'wirtschaft',
+  science: 'wissen',
+  climate: 'klima',
+  health: 'gesundheit',
+  culture: 'kultur',
+  welt: 'world',
+  politik: 'politics',
+  wirtschaft: 'business',
+  wissen: 'science',
+  klima: 'climate',
+  gesundheit: 'health',
+  kultur: 'culture',
+};
+
+function secureCookieSuffix() {
+  return typeof window !== 'undefined' && window.location.protocol === 'https:' ? '; Secure' : '';
+}
+
+function writeSessionHintCookie(displayName) {
+  if (typeof document === 'undefined') return;
+  const secure = secureCookieSuffix();
+  if (!displayName) {
+    document.cookie = `plain_session=;path=/;max-age=0;samesite=lax${secure}`;
+    return;
+  }
+  const hint = { ok: 1, name: String(displayName) };
+  document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(hint))};path=/;max-age=2592000;samesite=lax${secure}`;
+}
+
+function readSessionHintCookie() {
+  if (typeof document === 'undefined') return null;
+  try {
+    const match = document.cookie.match(/(?:^|;\s*)plain_session=([^;]+)/);
+    if (!match) return null;
+    const parsed = JSON.parse(decodeURIComponent(match[1]));
+    if (!parsed || typeof parsed !== 'object') return null;
+    const displayName = String(parsed.name || parsed.username || '').trim();
+    if (!displayName) return null;
+    // Migrate any legacy cookie that still contained raw email / PII
+    if ('email' in parsed) {
+      writeSessionHintCookie(displayName);
+    }
+    return {
+      name: displayName,
+      username: displayName,
+      email: '',
+      provider: parsed.provider || 'email',
+      avatar: displayName.charAt(0).toUpperCase(),
+      verified: true,
+    };
+  } catch {
+    return null;
+  }
+}
+
 export default function UserMenu({ locale, isDe }) {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -43,25 +101,31 @@ export default function UserMenu({ locale, isDe }) {
   const [activeTopics, setActiveTopics] = useState(DEFAULT_ACTIVE_TOPICS);
   const [tickerSound, setTickerSound] = useState(false);
 
-  // Initialize from cookies / localStorage
+  // Initialize from cookies / localStorage / Supabase Auth
   useEffect(() => {
+    // 1a. Hydrate display hint compatibly from plain_session cookie (supports { ok: 1, name } and legacy shape)
+    const cookieHint = readSessionHintCookie();
+    if (cookieHint) {
+      setUser(cookieHint);
+      setUsernameInput(cookieHint.username);
+    }
+
     const updateUser = (authUser) => {
       if (!authUser) {
         setUser(null);
-        document.cookie = 'plain_session=;path=/;max-age=0';
+        writeSessionHintCookie(null);
         return;
       }
       const username = authUser.user_metadata?.username || authUser.email?.split('@')[0] || 'Reader';
       const profile = {
-        v: 2,
         name: username,
         username,
-        email: authUser.email,
+        email: authUser.email || '',
         provider: authUser.app_metadata?.provider || 'email',
         avatar: username.charAt(0).toUpperCase(),
         verified: Boolean(authUser.email_confirmed_at),
       };
-      document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(profile))};path=/;max-age=2592000;samesite=lax`;
+      writeSessionHintCookie(username);
       setUser(profile);
       setUsernameInput(username);
     };
@@ -69,9 +133,19 @@ export default function UserMenu({ locale, isDe }) {
     let subscription;
     try {
       const supabase = getSupabaseBrowserClient();
-      supabase.auth.getSession().then(({ data, error }) => {
-        if (error) console.error('Could not load auth session:', error.message);
-        updateUser(data?.session?.user || null);
+      supabase.auth.getUser().then(async ({ data, error }) => {
+        if (data?.user) {
+          updateUser(data.user);
+          return;
+        }
+        if (error) {
+          const { data: sessionData } = await supabase.auth.getSession();
+          if (sessionData?.session?.user) {
+            updateUser(sessionData.session.user);
+            return;
+          }
+        }
+        updateUser(null);
       });
       const { data } = supabase.auth.onAuthStateChange((_event, session) => updateUser(session?.user || null));
       subscription = data.subscription;
@@ -127,7 +201,13 @@ export default function UserMenu({ locale, isDe }) {
       if (matchTopics) {
         const parsed = JSON.parse(decodeURIComponent(matchTopics[1]));
         if (Array.isArray(parsed) && parsed.length > 0) {
-          setActiveTopics(parsed);
+          const beatIds = new Set(ALL_BEATS.map((b) => b.id));
+          const normalized = [...new Set(parsed.map((id) => {
+            if (beatIds.has(id)) return id;
+            const alias = LEGACY_BEAT_ALIASES[id];
+            return alias && beatIds.has(alias) ? alias : id;
+          }))];
+          setActiveTopics(normalized);
         }
       }
     } catch (e) {}
@@ -146,7 +226,7 @@ export default function UserMenu({ locale, isDe }) {
       setNotice(error.message || 'Sign out failed.');
       return;
     }
-    document.cookie = 'plain_session=;path=/;max-age=0';
+    writeSessionHintCookie(null);
     setUser(null);
     setOpen(false);
     window.location.reload();
@@ -169,10 +249,12 @@ export default function UserMenu({ locale, isDe }) {
         setNotice(error.message);
         return;
       }
-      document.cookie = 'plain_session=;path=/;max-age=0';
+      writeSessionHintCookie(null);
       try {
         localStorage.removeItem('plain_saved_articles');
         localStorage.removeItem('plain_notes');
+        localStorage.removeItem('plain_saved_notes');
+        localStorage.removeItem('plain_scratchpad_notes');
       } catch (e) {}
       setUser(null);
       setOpen(false);
@@ -206,8 +288,7 @@ export default function UserMenu({ locale, isDe }) {
         throw new Error(isDe ? 'Bitte bestätige zuerst deine E-Mail-Adresse.' : 'Please verify your email address first.');
       }
       const cleanUser = data.user.user_metadata?.username || usernameInput.trim() || cleanEmail.split('@')[0];
-      const sessionPayload = {
-        v: 2,
+      const profile = {
         name: cleanUser,
         username: cleanUser,
         email: cleanEmail,
@@ -215,8 +296,8 @@ export default function UserMenu({ locale, isDe }) {
         avatar: cleanUser.charAt(0).toUpperCase(),
         verified: true,
       };
-      document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(sessionPayload))};path=/;max-age=2592000;samesite=lax`;
-      setUser(sessionPayload);
+      writeSessionHintCookie(cleanUser);
+      setUser(profile);
       setNotice(isDe ? 'Erfolgreich angemeldet!' : 'Signed in successfully!');
 
       setTimeout(() => {
@@ -240,7 +321,7 @@ export default function UserMenu({ locale, isDe }) {
       return;
     }
     const updated = { ...user, name: clean, username: clean, avatar: clean.charAt(0).toUpperCase() };
-    document.cookie = `plain_session=${encodeURIComponent(JSON.stringify(updated))};path=/;max-age=2592000;samesite=lax`;
+    writeSessionHintCookie(clean);
     setUser(updated);
     setNotice(data.user ? (isDe ? 'Benutzername aktualisiert!' : 'Username updated!') : '');
     setTimeout(() => setNotice(''), 2500);
@@ -278,7 +359,7 @@ export default function UserMenu({ locale, isDe }) {
     document.documentElement.setAttribute('data-palette', palId);
     try {
       localStorage.setItem('plain_palette', palId);
-      document.cookie = `plain_palette=${palId};path=/;max-age=31536000;samesite=lax`;
+      document.cookie = `plain_palette=${palId};path=/;max-age=31536000;samesite=lax${secureCookieSuffix()}`;
     } catch (e) {}
   }
 
@@ -288,7 +369,7 @@ export default function UserMenu({ locale, isDe }) {
     document.documentElement.setAttribute('data-font-size', size);
     try {
       localStorage.setItem('plain_font_size', size);
-      document.cookie = `plain_font_size=${size};path=/;max-age=31536000;samesite=lax`;
+      document.cookie = `plain_font_size=${size};path=/;max-age=31536000;samesite=lax${secureCookieSuffix()}`;
     } catch (e) {}
   }
 
@@ -298,7 +379,7 @@ export default function UserMenu({ locale, isDe }) {
     document.documentElement.setAttribute('data-font-family', font);
     try {
       localStorage.setItem('plain_font_family', font);
-      document.cookie = `plain_font_family=${font};path=/;max-age=31536000;samesite=lax`;
+      document.cookie = `plain_font_family=${font};path=/;max-age=31536000;samesite=lax${secureCookieSuffix()}`;
     } catch (e) {}
   }
 
@@ -339,7 +420,7 @@ export default function UserMenu({ locale, isDe }) {
 
     setActiveTopics(updated);
     try {
-      document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(updated))};path=/;max-age=31536000;samesite=lax`;
+      document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(updated))};path=/;max-age=31536000;samesite=lax${secureCookieSuffix()}`;
     } catch (e) {}
   }
 
@@ -362,6 +443,8 @@ export default function UserMenu({ locale, isDe }) {
     return () => window.removeEventListener('click', close);
   }, [open]);
 
+  const displayFirstName = (user?.name || 'Reader').split(' ')[0];
+
   return (
     <div className="user-menu-wrap">
       {user ? (
@@ -374,7 +457,7 @@ export default function UserMenu({ locale, isDe }) {
           {user.avatar && (user.avatar.startsWith('http') || user.avatar.startsWith('/')) ? (
             <img
               src={user.avatar}
-              alt={user.name}
+              alt={user.name || 'Reader'}
               className="user-badge-avatar"
               referrerPolicy="no-referrer"
               style={{ objectFit: 'cover' }}
@@ -382,7 +465,7 @@ export default function UserMenu({ locale, isDe }) {
           ) : (
             <span className="user-badge-avatar">{user.avatar || user.name?.charAt(0) || '●'}</span>
           )}
-          <span className="user-btn-label">{user.name.split(' ')[0]}</span>
+          <span className="user-btn-label">{displayFirstName}</span>
           <span className="lang-arrow" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▾</span>
         </button>
       ) : (
@@ -633,7 +716,7 @@ export default function UserMenu({ locale, isDe }) {
                       {user.avatar && (user.avatar.startsWith('http') || user.avatar.startsWith('/')) ? (
                         <img
                           src={user.avatar}
-                          alt={user.name}
+                          alt={user.name || 'Reader'}
                           className="user-badge-avatar"
                           style={{ width: '32px', height: '32px', objectFit: 'cover' }}
                           referrerPolicy="no-referrer"
@@ -648,11 +731,11 @@ export default function UserMenu({ locale, isDe }) {
                           @{user.username || user.name}
                         </strong>
                         <div style={{ fontSize: '11px', color: 'var(--muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                          {user.email || 'Angemeldet'}
+                          {user.email || (isDe ? 'Angemeldet' : 'Signed in')}
                         </div>
                       </div>
                     </div>
-                    <span className="user-provider-tag">{user.provider.toUpperCase()}</span>
+                    <span className="user-provider-tag">{(user.provider || 'email').toUpperCase()}</span>
                   </div>
 
                   {/* Edit Username Feature */}

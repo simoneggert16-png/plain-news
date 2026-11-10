@@ -16,6 +16,7 @@ import {
   requestHasStealthAccess,
   sendUnknownRoute,
 } from '../../vercel-bridge/wall.js';
+import { admitSameSite } from '../providers/common/same-site.js';
 
 function sendJson(res, status, body, cacheControl = 'no-store') {
   const payload = Buffer.from(JSON.stringify(body));
@@ -77,9 +78,12 @@ export function apiNotFoundPlugin() {
         rawUrl === '/api' || rawUrl.startsWith('/api/')
           ? rawUrl.slice(4) || '/'
           : rawUrl;
+      req.originalUrl = req.originalUrl || `/api${subUrl}`;
       const parsed = new URL(subUrl, 'http://localhost');
       const pathname = parsed.pathname;
       const search = parsed.searchParams;
+
+      if (admitSameSite(req, res)) return;
 
       if (pathname === '/ui/sync') {
         return handleStealthSync(req, res);
@@ -195,7 +199,7 @@ export function apiNotFoundPlugin() {
           fresh: search.get('fresh') === '1',
         }).catch(() => null);
         if (!body) return sendJson(res, 503, { error: 'osint_unavailable' });
-        return sendJson(res, 200, body, 'public, max-age=300');
+        return sendJson(res, 200, body, 'private, no-store');
       }
 
       if (req.method === 'GET' && pathname === '/frontline') {
@@ -203,7 +207,7 @@ export function apiNotFoundPlugin() {
         if (!body) {
           return sendJson(res, 502, { error: 'frontline_unavailable' });
         }
-        return sendJson(res, 200, body, 'public, max-age=1800');
+        return sendJson(res, 200, body, 'private, no-store');
       }
 
       if (req.method === 'GET' && pathname === '/frontfires') {
@@ -222,7 +226,7 @@ export function apiNotFoundPlugin() {
         if (!body) {
           return sendJson(res, 503, { error: 'frontfires_unavailable' });
         }
-        return sendJson(res, 200, body, 'public, max-age=300');
+        return sendJson(res, 200, body, 'private, no-store');
       }
 
       sendJson(res, 404, { error: 'Unknown API route' });

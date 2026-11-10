@@ -1,4 +1,6 @@
+import { headers } from 'next/headers';
 import { getSupabaseAdminClient } from '@/lib/supabase-admin.mjs';
+import { isVisitsAdminAuthorized } from '@/lib/visitsAuth.mjs';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,7 +60,7 @@ function hostOf(url) {
   try {
     return new URL(url).hostname;
   } catch {
-    return '�?"';
+    return '—';
   }
 }
 
@@ -77,6 +79,18 @@ const head = { ...cell, fontFamily: 'var(--mono)', fontSize: '11px', textTransfo
 const mono = { fontFamily: 'var(--mono)', fontSize: '12px' };
 
 export default async function VisitsPage({ searchParams }) {
+  const hdrs = await headers();
+  if (!isVisitsAdminAuthorized(hdrs.get('authorization'))) {
+    return (
+      <div className="wrap" style={{ paddingTop: '40px', paddingBottom: '80px' }}>
+        <h1 className="page-title" style={{ fontSize: 'clamp(32px, 6vw, 64px)' }}>401 — Nicht autorisiert</h1>
+        <p style={{ ...mono, color: 'var(--muted)' }}>
+          Zugriff verweigert. Gültige Administrator-Authentifizierung erforderlich.
+        </p>
+      </div>
+    );
+  }
+
   const sp = (await searchParams) || {};
   const days = Math.min(Math.max(Number.parseInt(sp.days, 10) || 7, 1), 90);
   const country = String(sp.country || '').toUpperCase().slice(0, 2);
@@ -119,7 +133,7 @@ export default async function VisitsPage({ searchParams }) {
 
     const key = r.ip || `${r.ip_masked || '?'}·${r.ip_hash || ''}`;
     const v = byVisitor.get(key) || {
-      ip: r.ip || r.ip_masked || '�?"',
+      ip: r.ip || r.ip_masked || '—',
       hash: r.ip_hash || '',
       country: r.country || '??',
       city: place(r.city),
@@ -191,7 +205,7 @@ export default async function VisitsPage({ searchParams }) {
               ['Unique (Hash)', new Set(rows.map((r) => r.ip_hash)).size],
               ['Länder', countries.length],
               ['aus CH', chCount],
-              ['CH-Anteil', rows.length ? `${Math.round((chCount / rows.length) * 100)} %` : '�?"'],
+              ['CH-Anteil', rows.length ? `${Math.round((chCount / rows.length) * 100)} %` : '—'],
             ].map(([label, value]) => (
               <div key={label} style={{ background: 'var(--paper)', padding: '14px 16px' }}>
                 <div className="label" style={{ color: 'var(--muted)', fontSize: '10px' }}>{label}</div>
@@ -234,7 +248,7 @@ export default async function VisitsPage({ searchParams }) {
                       <td style={{ ...cell, ...mono }}>{v.ip}</td>
                       <td style={{ ...cell, ...mono, color: 'var(--muted)' }}>{(v.hash || '').slice(0, 10)}</td>
                       <td style={cell}>{v.country}</td>
-                      <td style={cell}>{v.city || '�?"'}</td>
+                      <td style={cell}>{v.city || '—'}</td>
                       <td style={{ ...cell, ...mono }}>{v.visits}</td>
                       <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{timeAgo(v.last)}</td>
                       <td style={{ ...cell, ...mono, maxWidth: '260px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{topPath?.[0]}</td>
@@ -289,7 +303,7 @@ export default async function VisitsPage({ searchParams }) {
                     <td style={{ ...cell, ...mono, whiteSpace: 'nowrap' }}>{new Date(r.ts).toLocaleString('de-CH', { timeZone: 'Europe/Zurich' })}</td>
                     <td style={{ ...cell, ...mono }}>{r.ip || r.ip_masked}</td>
                     <td style={cell}>{r.country || '??'}</td>
-                    <td style={cell}>{place(r.city) || '�?"'}</td>
+                    <td style={cell}>{place(r.city) || '—'}</td>
                     <td style={{ ...cell, ...mono }}>{r.path}</td>
                     <td style={{ ...cell, ...mono, color: 'var(--muted)' }}>{hostOf(r.referrer)}</td>
                   </tr>
@@ -307,6 +321,3 @@ export default async function VisitsPage({ searchParams }) {
     </div>
   );
 }
-
-
-

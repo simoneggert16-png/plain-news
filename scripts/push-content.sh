@@ -73,6 +73,8 @@ for attempt in 1 2 3 4 5; do
       exit 1
     fi
     git add content
+    git reset -q -- content/investigations/inbox.json 2>/dev/null || true
+    git reset -q -- content/investigations/leads.json 2>/dev/null || true
     git commit -q -m "$MSG (upstream merged)" || true
     if git push -q; then
       echo "pushed after the merge: $MSG"

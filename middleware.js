@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 import { LOCALE_CODES, DEFAULT_LOCALE } from './lib/config.mjs';
+import { isVisitsAdminAuthorized } from './lib/visitsAuth.mjs';
+
+const LOCALES = LOCALE_CODES;
 
 const CRAWLER_RE =
   /bot|crawler|spider|slurp|OAI-SearchBot|ChatGPT|GPTBot|Perplexity|Claude|Google-Extended|Applebot|Amazonbot|meta-externalagent|CCBot|cohere-ai|YouBot|Diffbot/i;
@@ -24,9 +27,13 @@ function decodeHeader(value) {
 /* ------------------------------------------------------------------ */
 
 function clientIp(req) {
+  const realIp = (req.headers.get('x-real-ip') || '').trim();
+  if (realIp) return realIp;
+  const vercelFwd = req.headers.get('x-vercel-forwarded-for');
+  if (vercelFwd) return vercelFwd.split(',').pop().trim();
   const xff = req.headers.get('x-forwarded-for');
   if (xff) return xff.split(',')[0].trim();
-  return req.headers.get('x-real-ip') || '';
+  return '';
 }
 
 function maskIp(ip) {
@@ -39,18 +46,29 @@ function maskIp(ip) {
   return p.length === 4 ? `${p[0]}.${p[1]}.${p[2]}.0` : null;
 }
 
+function visitorHashSalt() {
+  return (
+    process.env.VISIT_HASH_SALT ||
+    process.env.VISITOR_HASH_SALT ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(0, 24) ||
+    'plain-news-v2-salt'
+  );
+}
+
 async function hashIp(ip) {
-  const salt = process.env.VISIT_HASH_SALT || 'plain-news';
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${ip}|${salt}`));
+  const fullIp = String(ip || '').trim();
+  if (!fullIp) return null;
+  const salt = visitorHashSalt();
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${fullIp}|${salt}`));
   return Array.from(new Uint8Array(buf))
     .slice(0, 8)
     .map((b) => b.toString(16).padStart(2, '0'))
     .join('');
 }
 
-function shouldTrack(req, pathname) {
+function shouldTrack(req, decodedPath, isAdminRoute) {
   if (req.method !== 'GET') return false;
-  if (pathname.includes('/admin')) return false;
+  if (isAdminRoute || decodedPath.includes('/admin')) return false;
   if (req.headers.get('next-router-prefetch') || req.headers.get('purpose') === 'prefetch') return false;
   if (req.headers.get('sec-purpose') === 'prefetch') return false;
   if (req.nextUrl.searchParams.has('_rsc')) return false;
@@ -97,54 +115,65 @@ async function trackVisit(req, pathname) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Admin gate                                                          */
-/* ------------------------------------------------------------------ */
-
-function adminAuthorized(req) {
-  const user = process.env.VISITS_ADMIN_USER;
-  const pass = process.env.VISITS_ADMIN_PASS;
-  if (!user || !pass) return false;
-  const header = req.headers.get('authorization') || '';
-  if (!header.startsWith('Basic ')) return false;
-  try {
-    return atob(header.slice(6)) === `${user}:${pass}`;
-  } catch {
-    return false;
-  }
-}
-
-/* ------------------------------------------------------------------ */
 /* Middleware                                                          */
 /* ------------------------------------------------------------------ */
 
 export function middleware(req, event) {
   const { pathname } = req.nextUrl;
 
+  let decodedPath;
+  try {
+    decodedPath = decodeURIComponent(pathname);
+  } catch {
+    return new NextResponse('Bad Request', { status: 400 });
+  }
+
+  if (decodedPath.includes('\0') || decodedPath.includes('\\')) {
+    return new NextResponse('Bad Request', { status: 400 });
+  }
+
+  const rawSegs = decodedPath.split('/');
+  if (rawSegs.some((s) => s === '..' || s === '.')) {
+    return new NextResponse('Bad Request', { status: 400 });
+  }
+
+  const segs = rawSegs.filter(Boolean);
+  const hasLocalePrefix = LOCALES.includes(segs[0]);
+  const isAdminRoute = segs[0] === 'admin' || (hasLocalePrefix && segs[1] === 'admin');
+  const adminSubSegs = segs[0] === 'admin'
+    ? segs.slice(1)
+    : (hasLocalePrefix && segs[1] === 'admin' ? segs.slice(2) : []);
+  const isInvestigationsAdmin = isAdminRoute && adminSubSegs[0] === 'investigations';
+
   // The visitor log has no login of its own, so it keeps the Basic-auth gate.
   // The investigations desk authorises through the Supabase session + ADMIN_EMAILS.
-  if (pathname.includes('/admin') && !pathname.includes('/admin/investigations')) {
-    if (!adminAuthorized(req)) {
+  if (isAdminRoute && !isInvestigationsAdmin) {
+    if (!isVisitsAdminAuthorized(req.headers.get('authorization'))) {
       return new NextResponse('Auth required', {
         status: 401,
         headers: { 'WWW-Authenticate': 'Basic realm="PLAIN. visits", charset="UTF-8"' },
       });
     }
+    if (!hasLocalePrefix) {
+      const redirectUrl = req.nextUrl.clone();
+      redirectUrl.pathname = segs.length === 1 ? '/de/admin/visits' : `/de/${segs.join('/')}`;
+      return NextResponse.redirect(redirectUrl);
+    }
     return NextResponse.next();
   }
 
-  if (shouldTrack(req, pathname)) {
-    const pending = trackVisit(req, pathname).catch(() => {});
+  if (shouldTrack(req, decodedPath, isAdminRoute)) {
+    const pending = trackVisit(req, decodedPath).catch(() => {});
     if (event && typeof event.waitUntil === 'function') event.waitUntil(pending);
   }
 
-  const first = pathname.split('/')[1];
-  if (LOCALE_CODES.includes(first)) return;
+  if (hasLocalePrefix) return;
 
   const saved = req.cookies.get('lang')?.value;
   const accept = (req.headers.get('accept-language') || '')
     .split(',')
     .map((p) => p.split(';')[0].trim().slice(0, 2).toLowerCase());
-  const locale = [saved, ...accept].find((l) => LOCALE_CODES.includes(l)) || DEFAULT_LOCALE;
+  const locale = [saved, ...accept].find((l) => LOCALES.includes(l)) || DEFAULT_LOCALE;
 
   const url = req.nextUrl.clone();
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;

@@ -1,5 +1,5 @@
 import * as Cesium from 'cesium';
-import { DATA_CREDITS } from '../data/dataCredits.js';
+import { getPublicDataCredits } from '../data/dataCredits.js';
 import {
   governorRequestRender,
   holdContinuousRender,
@@ -132,12 +132,51 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
+function isLocalhostRuntime() {
+  const host = window.location.hostname;
+  return host === 'localhost' || host === '127.0.0.1';
+}
+
+function buildTrustedParentOrigins() {
+  const allowed = new Set([
+    'https://www.plain-news.ch',
+    'https://plain-news.ch',
+  ]);
+  if (isLocalhostRuntime()) {
+    allowed.add('http://localhost:3000');
+    allowed.add('http://127.0.0.1:3000');
+  }
+  return allowed;
+}
+
+function safeHttpUrl(raw, fallback = '') {
+  const text = String(raw ?? '').trim();
+  if (!text) return fallback;
+  try {
+    const u = new URL(text, 'https://www.plain-news.ch');
+    if (u.protocol === 'https:' || u.protocol === 'http:') {
+      return u.href;
+    }
+  } catch {
+    // ignore malformed URL
+  }
+  return fallback;
+}
+
 function resolvePlainApiBases() {
   const params = new URLSearchParams(window.location.search);
   const explicitOrigin = params.get('plainOrigin');
+  const allowedOrigins = buildTrustedParentOrigins();
   const candidates = [];
-  if (explicitOrigin && /^https:\/\//i.test(explicitOrigin)) {
-    candidates.push(explicitOrigin.replace(/\/+$/, ''));
+  if (explicitOrigin) {
+    try {
+      const origin = new URL(explicitOrigin).origin;
+      if (allowedOrigins.has(origin)) {
+        candidates.push(origin);
+      }
+    } catch {
+      // ignore untrusted or malformed plainOrigin
+    }
   }
   candidates.push(PLAIN_PROD_ORIGIN);
   return [...new Set(candidates)];
@@ -248,6 +287,25 @@ export async function initPlainMavenExperience({
   const dataManager = data?.dataManager;
   if (!viewer || !dataManager) return null;
 
+  try {
+    localStorage.removeItem('_pm_s');
+  } catch {
+    // ignore storage restrictions
+  }
+
+  const TRUSTED_PARENT_ORIGINS = buildTrustedParentOrigins();
+  let verifiedParentOrigin = null;
+  if (document.referrer) {
+    try {
+      const refOrigin = new URL(document.referrer).origin;
+      if (TRUSTED_PARENT_ORIGINS.has(refOrigin)) {
+        verifiedParentOrigin = refOrigin;
+      }
+    } catch {
+      // ignore malformed referrer
+    }
+  }
+
   const params = new URLSearchParams(window.location.search);
   const rawLocale = (params.get('locale') || params.get('lang') || document.documentElement.lang || 'de')
     .slice(0, 2)
@@ -345,7 +403,10 @@ export async function initPlainMavenExperience({
       return `<option value="${th.key}">${escapeHtml(label)}</option>`;
     }).join('');
 
-    const brandHref = `${PLAIN_PROD_ORIGIN}/${currentLocale}`;
+    const brandHref = safeHttpUrl(
+      `${PLAIN_PROD_ORIGIN}/${encodeURIComponent(currentLocale)}`,
+      PLAIN_PROD_ORIGIN,
+    );
     const isEmbedded = window.parent && window.parent !== window;
 
     topbar.innerHTML = `
@@ -456,9 +517,9 @@ export async function initPlainMavenExperience({
       </div>
     `;
 
-    const creditsListHtml = DATA_CREDITS.map(
-      (entry) => `<li>${entry.html}</li>`,
-    ).join('');
+    const creditsListHtml = getPublicDataCredits(globalThis.__PM_EXT__ === true)
+      .map((entry) => `<li>${entry.html}</li>`)
+      .join('');
     const complianceHtml = copy.compliancePoints
       .map((pt) => `<li>${escapeHtml(pt)}</li>`)
       .join('');
@@ -782,10 +843,11 @@ export async function initPlainMavenExperience({
       .filter(Boolean)
       .join(', ')
       .toUpperCase();
-    const articleUrl =
-      detail?.url ||
-      story.url ||
-      `${PLAIN_PROD_ORIGIN}/${currentLocale}/${story.kind === 'live' ? 'live' : 'a'}/${story.slug}`;
+    const defaultArticleUrl = `${PLAIN_PROD_ORIGIN}/${encodeURIComponent(currentLocale)}/${story.kind === 'live' ? 'live' : 'a'}/${encodeURIComponent(story.slug || '')}`;
+    const articleUrl = safeHttpUrl(
+      detail?.url || story.url || defaultArticleUrl,
+      defaultArticleUrl,
+    );
 
     const factsHtml = facts.length
       ? `
@@ -807,8 +869,9 @@ export async function initPlainMavenExperience({
               .slice(0, 8)
               .map((src) => {
                 const label = src.outlet || 'Source';
-                if (src.url && /^https?:\/\//i.test(src.url)) {
-                  return `<a class="pm-source-chip" href="${escapeHtml(src.url)}" target="_blank" rel="noopener">↗ ${escapeHtml(label)}</a>`;
+                const safeSrcUrl = src.url ? safeHttpUrl(src.url, '') : '';
+                if (safeSrcUrl) {
+                  return `<a class="pm-source-chip" href="${escapeHtml(safeSrcUrl)}" target="_blank" rel="noopener">↗ ${escapeHtml(label)}</a>`;
                 }
                 return `<span class="pm-source-chip">${escapeHtml(label)}</span>`;
               })
@@ -920,7 +983,7 @@ export async function initPlainMavenExperience({
           lon: story.lon,
           path: story.path,
         },
-        '*',
+        verifiedParentOrigin || PLAIN_PROD_ORIGIN,
       );
     }
 
@@ -998,7 +1061,7 @@ export async function initPlainMavenExperience({
     if (notifyParent && window.parent && window.parent !== window) {
       window.parent.postMessage(
         { type: 'plain-maven:theme-changed', theme: currentTheme },
-        '*',
+        verifiedParentOrigin || PLAIN_PROD_ORIGIN,
       );
     }
   }
@@ -1057,9 +1120,15 @@ export async function initPlainMavenExperience({
           try {
             await fetch('/api/ui/sync', {
               method: 'POST',
+              credentials: 'include',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ clear: 1 }),
             });
+          } catch {
+            // ignore
+          }
+          try {
+            sessionStorage.removeItem('_pm_s');
           } catch {
             // ignore
           }
@@ -1117,6 +1186,7 @@ export async function initPlainMavenExperience({
       try {
         const res = await fetch('/api/ui/sync', {
           method: 'POST',
+          credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ c: code }),
         });
@@ -1124,7 +1194,12 @@ export async function initPlainMavenExperience({
           const data = await res.json();
           if (data?.ok === 1 && data?.t) {
             try {
-              localStorage.setItem('_pm_s', String(data.t));
+              sessionStorage.setItem('_pm_s', String(data.t));
+            } catch {
+              // ignore
+            }
+            try {
+              localStorage.removeItem('_pm_s');
             } catch {
               // ignore
             }
@@ -1348,9 +1423,9 @@ export async function initPlainMavenExperience({
           kind: story.kind,
           locale: currentLocale,
           path: story.path,
-          url: openLink.getAttribute('href'),
+          url: safeHttpUrl(openLink.getAttribute('href'), ''),
         },
-        '*',
+        verifiedParentOrigin || PLAIN_PROD_ORIGIN,
       );
     }
   });
@@ -1393,6 +1468,13 @@ export async function initPlainMavenExperience({
   });
 
   window.addEventListener('message', (event) => {
+    if (
+      event.source !== window.parent ||
+      !TRUSTED_PARENT_ORIGINS.has(event.origin)
+    ) {
+      return;
+    }
+    verifiedParentOrigin = event.origin;
     const msg = event.data;
     if (!msg || typeof msg !== 'object') return;
     if (msg.type === 'plain-maven:chord') {

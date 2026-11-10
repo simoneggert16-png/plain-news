@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getIndex } from '@/lib/content.mjs';
 import { fetchTickerFeeds } from '@/lib/tickerFeeds.mjs';
 import { rankArticles, isTopStory } from '@/lib/storyRank.mjs';
@@ -21,7 +21,7 @@ const SPORT_QUOTA = 40;
 const POSITIVE_QUOTA = 15;
 const ARTICLE_QUOTA = 10;
 
-const FILTER_TYPE = { science: 'tech', culture: 'world', health: 'world' };
+const FILTER_TYPE = { science: 'wissen', culture: 'world', health: 'world' };
 
 const normalizeTitle = (str) =>
   (str || '')
@@ -43,7 +43,7 @@ export async function GET() {
   const articles = await getIndex('en');
   const cutoff = now - WINDOW_MS;
 
-  // 1. World / politics / business / tech / science + sport + constructive news
+  // 1. World / politics / business / tech / wissen + sport + constructive news
   const wire = [];
   try {
     const fetched = await fetchTickerFeeds({
@@ -84,45 +84,45 @@ export async function GET() {
     if (!editorialCandidates.some((x) => x.slug === a.slug)) editorialCandidates.push(a);
   }
   editorialCandidates.forEach((a) => {
-      const de = a.locales?.de;
-      const en = a.locales?.en;
-      const title = de?.title || en?.title || a.slug;
-      const norm = normalizeTitle(title);
-      if (seenNorm.has(norm)) return;
-      seenNorm.add(norm);
+    const de = a.locales?.de;
+    const en = a.locales?.en;
+    const title = de?.title || en?.title || a.slug;
+    const norm = normalizeTitle(title);
+    if (seenNorm.has(norm)) return;
+    seenNorm.add(norm);
 
-      const isRecent = a.publishedAt && now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS;
-      const isEilmeldung = a.importance >= 4 && isRecent;
+    const isRecent = a.publishedAt && now - Date.parse(a.publishedAt) < BREAKING_WINDOW_MS;
+    const isEilmeldung = a.importance >= 4 && isRecent;
 
-      let sportType = 'football';
-      if (a.category === 'sport') {
-        const t = title.toLowerCase();
-        if (/tennis|djokovic|zverev|sinner|atp|wta/i.test(t)) sportType = 'tennis';
-        else if (/nfl|super bowl|quarterback/i.test(t)) sportType = 'nfl';
-        else if (/f1|formel|verstappen|hamilton|ferrari|grand prix/i.test(t)) sportType = 'f1';
-        else if (/nba|basketball|lakers|celtics/i.test(t)) sportType = 'basketball';
-        else if (/eishockey|nhl/i.test(t)) sportType = 'eishockey';
-        else if (/golf|ryder cup/i.test(t)) sportType = 'golf';
-      }
+    let sportType = 'football';
+    if (a.category === 'sport') {
+      const t = title.toLowerCase();
+      if (/tennis|djokovic|zverev|sinner|atp|wta/i.test(t)) sportType = 'tennis';
+      else if (/nfl|super bowl|quarterback/i.test(t)) sportType = 'nfl';
+      else if (/f1|formel|verstappen|hamilton|ferrari|grand prix/i.test(t)) sportType = 'f1';
+      else if (/nba|basketball|lakers|celtics/i.test(t)) sportType = 'basketball';
+      else if (/eishockey|nhl/i.test(t)) sportType = 'eishockey';
+      else if (/golf|ryder cup/i.test(t)) sportType = 'golf';
+    }
 
-      plainItems.push({
-        id: `plain-${a.slug}`,
-        time: a.publishedAt,
-        type: FILTER_TYPE[a.category] || a.category,
-        sportType: a.category === 'sport' ? sportType : null,
-        badge: isEilmeldung
-          ? 'EILMELDUNG'
-          : a.category === 'sport'
-            ? sportType.toUpperCase()
-            : a.category.toUpperCase(),
-        title,
-        detail: de?.dek || en?.dek || null,
-        slug: a.slug,
-        source: 'PLAIN.',
-        importance: a.importance,
-        important: isTopStory(a) || (a.importance || 0) >= 4,
-      });
+    plainItems.push({
+      id: `plain-${a.slug}`,
+      time: a.publishedAt,
+      type: FILTER_TYPE[a.category] || a.category,
+      sportType: a.category === 'sport' ? sportType : null,
+      badge: isEilmeldung
+        ? 'EILMELDUNG'
+        : a.category === 'sport'
+          ? sportType.toUpperCase()
+          : (a.category === 'science' ? 'WISSEN' : a.category.toUpperCase()),
+      title,
+      detail: de?.dek || en?.dek || null,
+      slug: a.slug,
+      source: 'PLAIN.',
+      importance: a.importance,
+      important: isTopStory(a) || (a.importance || 0) >= 4,
     });
+  });
 
   // 3. Quotas keep every filter useful, then the whole wire is sorted by time.
   //    Without desk shares the world feed floods everything and /ticker shows
@@ -142,7 +142,7 @@ export async function GET() {
     ['politics', 0.24],
     ['business', 0.14],
     ['tech', 0.08],
-    ['science', 0.04],
+    ['wissen', 0.04],
   ];
   const news = [];
   for (const [desk, share] of SHARES) {

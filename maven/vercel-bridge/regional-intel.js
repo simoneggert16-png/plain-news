@@ -9,6 +9,17 @@ import { greatCircleMeters } from '../src/geoDistance.js';
 const PLACE_CACHE = new Map();
 const BRIEF_CACHE = new Map();
 const BRIEF_TTL_MS = 5 * 60_000;
+const MAX_REGIONAL_CACHE_ENTRIES = 500;
+
+function setBoundedCache(map, key, value, maxEntries = MAX_REGIONAL_CACHE_ENTRIES) {
+  if (map.has(key)) map.delete(key);
+  while (map.size >= maxEntries) {
+    const oldestKey = map.keys().next().value;
+    if (oldestKey === undefined) break;
+    map.delete(oldestKey);
+  }
+  map.set(key, value);
+}
 
 const CURATED_REGIONAL_GAZETTEER = [
   // St. Galler Rheintal, Liechtenstein & Vorarlberg (high precision)
@@ -2750,7 +2761,7 @@ export async function resolveRegionalPlaceWithFallback(point) {
           source: 'Nominatim',
           kind: 'administrative',
         };
-        PLACE_CACHE.set(cacheKey, { at: Date.now(), place });
+        setBoundedCache(PLACE_CACHE, cacheKey, { at: Date.now(), place });
         return place;
       }
     }
@@ -2928,7 +2939,7 @@ export async function buildResilientRegionalBrief(point) {
     newsSource: news.source,
     articles: news.articles,
   };
-  BRIEF_CACHE.set(key, { at: Date.now(), payload });
+  setBoundedCache(BRIEF_CACHE, key, { at: Date.now(), payload });
   return payload;
 }
 

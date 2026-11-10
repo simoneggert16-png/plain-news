@@ -58,5 +58,7 @@ export function makeCostRateLimiter(envValue, defaultPerMin) {
  * address is the real client.
  */
 export function clientKey(req) {
-  return String(req.socket?.remoteAddress || 'local');
+  return String(
+    req._clientIp || req.headers?.['x-real-ip'] || req.socket?.remoteAddress || 'local',
+  );
 }

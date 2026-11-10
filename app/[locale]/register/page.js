@@ -85,7 +85,8 @@ export default function RegisterPage() {
       });
       if (signUpError) throw signUpError;
       if (data.session) {
-        document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(selectedTopics))};path=/;max-age=31536000;samesite=lax`;
+        const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+        document.cookie = `plain_topics=${encodeURIComponent(JSON.stringify(selectedTopics))};path=/;max-age=31536000;samesite=lax${secure}`;
       }
 
       setEmailDetails({ email: cleanEmail, newsletter });

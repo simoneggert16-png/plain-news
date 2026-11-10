@@ -4,12 +4,15 @@ import { getDict } from '@/lib/i18n.mjs';
 import { entriesForSlugs, searchArticles } from '@/lib/content.mjs';
 import { searchCommunity } from '@/lib/communityStore.mjs';
 import { withDeadline } from '@/lib/cache.mjs';
+import { safeHttpUrl } from '@/lib/safeUrl.mjs';
 import Card from '@/components/Card';
 
+const MAX_QUERY_LEN = 120;
+
 export async function generateMetadata({ params, searchParams }) {
-  const { locale } = await params;
+  await params;
   const sp = await searchParams;
-  const q = sp?.q || '';
+  const q = String(sp?.q || '').trim().slice(0, MAX_QUERY_LEN);
   return {
     title: q ? `${q} – Suche & Recherche | PLAIN.` : 'Suche & Recherche | PLAIN.',
     // Search result pages are useful to humans but should not compete with the
@@ -23,7 +26,7 @@ export async function generateMetadata({ params, searchParams }) {
 export default async function SearchPage({ params, searchParams }) {
   const { locale } = await params;
   const sp = await searchParams;
-  const q = (sp?.q || '').trim();
+  const q = String(sp?.q || '').trim().slice(0, MAX_QUERY_LEN);
   const t = getDict(locale);
   const isDe = locale === 'de';
   const bcp = LOCALES.find((l) => l.code === locale)?.bcp47 || 'de-CH';
@@ -61,6 +64,7 @@ export default async function SearchPage({ params, searchParams }) {
               type="search"
               name="q"
               defaultValue={q}
+              maxLength={MAX_QUERY_LEN}
               placeholder={isDe ? 'Artikelinhalt, Thema oder Benutzername suchen (z. B. SNB, KI, @Alex, Bern)…' : 'Search article body, topic or username (e.g. SNB, AI, @Alex)…'}
               className="search-input"
               autoFocus
@@ -103,18 +107,23 @@ export default async function SearchPage({ params, searchParams }) {
               </div>
             ))}
 
-            {userResults.submissions.map((s) => (
-              <div key={s.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
-                <div className="comment-meta">
-                  <span className="comment-author"> Primärquelle eingereicht von <strong>{s.author}</strong></span>
-                  <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
-                     {isDe ? 'Quelle öffnen' : 'Open Source'}
-                  </a>
+            {userResults.submissions.map((s) => {
+              const safeUrl = safeHttpUrl(s.sourceUrl, '');
+              return (
+                <div key={s.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>
+                  <div className="comment-meta">
+                    <span className="comment-author"> Primärquelle eingereicht von <strong>{s.author}</strong></span>
+                    {safeUrl && (
+                      <a href={safeUrl} target="_blank" rel="noopener noreferrer nofollow" style={{ textDecoration: 'underline' }}>
+                         {isDe ? 'Quelle öffnen' : 'Open Source'}
+                      </a>
+                    )}
+                  </div>
+                  <h4 style={{ margin: '4px 0 2px' }}>{s.title}</h4>
+                  <p className="comment-content">{s.summary}</p>
                 </div>
-                <h4 style={{ margin: '4px 0 2px' }}>{s.title}</h4>
-                <p className="comment-content">{s.summary}</p>
-              </div>
-            ))}
+              );
+            })}
 
             {userResults.chatMessages.map((m) => (
               <div key={m.id} className="comment-card" style={{ background: 'var(--paper-2)' }}>

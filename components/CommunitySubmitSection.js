@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { safeHttpUrl } from '@/lib/safeUrl.mjs';
 
 export default function CommunitySubmitSection({ locale, isDe }) {
   // Navigation tabs: 'submissions' (Quellen & Beiträge) or 'chatroom' (Live-Chat & Debatte)
@@ -312,6 +313,7 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                 const trans = translations[item.id];
                 const isShowingTranslated = trans?.showTranslated && trans?.translated;
                 const displaySummary = isShowingTranslated ? trans.translated : item.summary;
+                const safeUrl = safeHttpUrl(item.sourceUrl, '');
 
                 return (
                   <div key={item.id} className="row community-card">
@@ -333,9 +335,11 @@ export default function CommunitySubmitSection({ locale, isDe }) {
                       )}
 
                       <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-                        <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="community-source-link">
-                           {isDe ? 'Primärquelle öffnen' : 'View Primary Source'}
-                        </a>
+                        {safeUrl && (
+                          <a href={safeUrl} target="_blank" rel="noopener noreferrer nofollow" className="community-source-link">
+                             {isDe ? 'Primärquelle öffnen' : 'View Primary Source'}
+                          </a>
+                        )}
 
                         <button
                           type="button"

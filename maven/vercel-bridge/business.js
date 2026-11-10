@@ -1830,6 +1830,7 @@ export async function businessSearch({ query, place, fetchImpl = fetch } = {}) {
       fetchedAt: Date.now(),
     };
     cache.set(key, { at: Date.now(), body });
+    if (cache.size > CACHE_LIMIT) cache.delete(cache.keys().next().value);
     return body;
   }
 

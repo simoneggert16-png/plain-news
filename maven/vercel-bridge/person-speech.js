@@ -7,12 +7,15 @@
  * The key stays on the server.
  */
 
-const MODELS = [
+export const DEFAULT_SPEECH_MODELS = [
+  'gemini-2.5-flash-preview-tts',
+  'gemini-3.1-flash-tts-preview',
   'gemini-3.8-flash-lite-tts',
   'gemini-3.8-flash-tts',
-  'gemini-3.1-flash-tts-preview',
-  'gemini-2.5-flash-preview-tts',
 ];
+const MODELS = DEFAULT_SPEECH_MODELS;
+/** @type {Set<string>} */
+const missingModels = new Set();
 const MAX_CHARS = 900;
 const CACHE_LIMIT = 12;
 /** @type {Map<string, {mimeType: string, bytes: Buffer}>} */
@@ -119,8 +122,11 @@ async function postJson(fetchImpl, url, apiKey, payload) {
     body: JSON.stringify(payload),
     signal: AbortSignal.timeout(20_000),
   });
-  if (!response.ok) return null;
-  return audioFromGeminiBody(await response.json());
+  if (!response.ok) return { audio: null, status: response.status };
+  return {
+    audio: audioFromGeminiBody(await response.json()),
+    status: response.status,
+  };
 }
 
 async function synthesize(transcript, lang, keys, fetchImpl) {
@@ -128,52 +134,68 @@ async function synthesize(transcript, lang, keys, fetchImpl) {
   const keyList = Array.isArray(keys) ? keys : [keys].filter(Boolean);
   if (!keyList.length) return null;
   for (const model of MODELS) {
+    if (missingModels.has(model)) continue;
     const activeKey = keyList[speechKeyCursor++ % keyList.length];
-    const generated = await postJson(
-      fetchImpl,
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
-      activeKey,
-      {
-        contents: [
-          {
-            role: 'user',
-            parts: [{ text: transcript, speechMetadata: { style } }],
-          },
-        ],
-        generationConfig: {
-          responseModalities: ['AUDIO'],
-          speechConfig: {
-            voiceConfig: {
-              prebuiltVoiceConfig: { voiceName: 'Kore' },
+    let generate404 = missingModels.has(`gen:${model}`);
+    if (!generate404) {
+      const generated = await postJson(
+        fetchImpl,
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        activeKey,
+        {
+          contents: [
+            {
+              role: 'user',
+              parts: [{ text: transcript, speechMetadata: { style } }],
+            },
+          ],
+          generationConfig: {
+            responseModalities: ['AUDIO'],
+            speechConfig: {
+              voiceConfig: {
+                prebuiltVoiceConfig: { voiceName: 'Kore' },
+              },
             },
           },
         },
-      },
-    );
-    if (generated) return generated;
-    const interaction = await postJson(
-      fetchImpl,
-      'https://generativelanguage.googleapis.com/v1beta/interactions',
-      activeKey,
-      {
-        model,
-        input: [
-          {
-            type: 'user_input',
-            content: [
-              {
-                type: 'text',
-                text: transcript,
-                annotations: [{ type: 'speech_metadata', style }],
-              },
-            ],
-          },
-        ],
-        response_format: { type: 'audio' },
-        generation_config: { speech_config: [{ voice: 'Kore' }] },
-      },
-    );
-    if (interaction) return interaction;
+      );
+      if (generated.audio) return generated.audio;
+      if (generated.status === 404) {
+        missingModels.add(`gen:${model}`);
+        generate404 = true;
+      }
+    }
+    if (!missingModels.has(`int:${model}`)) {
+      const interaction = await postJson(
+        fetchImpl,
+        'https://generativelanguage.googleapis.com/v1beta/interactions',
+        activeKey,
+        {
+          model,
+          input: [
+            {
+              type: 'user_input',
+              content: [
+                {
+                  type: 'text',
+                  text: transcript,
+                  annotations: [{ type: 'speech_metadata', style }],
+                },
+              ],
+            },
+          ],
+          response_format: { type: 'audio' },
+          generation_config: { speech_config: [{ voice: 'Kore' }] },
+        },
+      );
+      if (interaction.audio) return interaction.audio;
+      if (interaction.status === 404) {
+        missingModels.add(`int:${model}`);
+        if (generate404) missingModels.add(model);
+      }
+    } else if (generate404) {
+      missingModels.add(model);
+    }
   }
   return null;
 }

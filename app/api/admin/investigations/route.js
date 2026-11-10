@@ -16,7 +16,7 @@ import {
 import { weekKey } from '@/lib/investigations.mjs';
 import { listMessages } from '@/lib/inboxStore.mjs';
 import { readGitDossierFast, readGitDossierIndex } from '@/lib/contentGit.mjs';
-import { dispatchDesk } from '@/lib/deskDispatch.mjs';
+import { dispatchDesk, isValidDeskId, isValidDossierSlug } from '@/lib/deskDispatch.mjs';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -243,8 +243,15 @@ export async function POST(request) {
     const now = new Date().toISOString();
 
     if (action === 'approve-outreach' || action === 'reject-outreach') {
-      const ids = Array.isArray(body.ids) ? body.ids.map((id) => String(id)).filter(Boolean) : [];
+      const ids = Array.isArray(body.ids) ? body.ids.map((id) => String(id).trim()).filter(Boolean) : [];
       if (!ids.length) return NextResponse.json({ error: 'Keine Entwürfe ausgewählt.' }, { status: 400 });
+      if (!ids.every(isValidDeskId)) {
+        return NextResponse.json({ error: 'Ungültige Entwurfs-ID.' }, { status: 400 });
+      }
+      const explicitSlug = String(body.slug || '').trim();
+      if (explicitSlug && !isValidDossierSlug(explicitSlug)) {
+        return NextResponse.json({ error: 'Ungültiges Dossier-Kürzel.' }, { status: 400 });
+      }
       try {
         await setOutreach(ids, action === 'approve-outreach'
           ? { status: 'approved', approved_by: by, approved_at: now }
@@ -260,7 +267,10 @@ export async function POST(request) {
         // letter id. The desk knows both.
         const letter = letters.find((l) => ids.includes(String(l.id))
           || (l.dbId != null && ids.includes(String(l.dbId))));
-        const slug = String(body.slug || '').trim() || letter?.slug || '';
+        const slug = explicitSlug || String(letter?.slug || '').trim();
+        if (!isValidDossierSlug(slug)) {
+          return NextResponse.json({ error: 'Ungültiges Dossier-Kürzel.' }, { status: 400 });
+        }
         const input = action === 'approve-outreach' ? 'approve_outreach' : 'reject_outreach';
         const run = await dispatchDesk({ [input]: `${slug}:${ids.join(',')}`, slug, dry_run: 'false' });
         if (run.started) {
@@ -281,6 +291,9 @@ export async function POST(request) {
       const slug = String(body.slug || '').trim();
       const toEmail = String(body.toEmail || '').trim().toLowerCase();
       if (!slug) return NextResponse.json({ error: 'Kein Dossier ausgewählt.' }, { status: 400 });
+      if (!isValidDossierSlug(slug)) {
+        return NextResponse.json({ error: 'Ungültiges Dossier-Kürzel.' }, { status: 400 });
+      }
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(toEmail)) {
         return NextResponse.json({ error: 'Bitte eine gültige E-Mail-Adresse angeben.' }, { status: 400 });
       }
@@ -311,14 +324,20 @@ export async function POST(request) {
     }
 
     if (action === 'mark-replied') {
-      const id = String(body.id || '');
+      const id = String(body.id || '').trim();
       if (!id) return NextResponse.json({ error: 'Kein Eintrag ausgewählt.' }, { status: 400 });
+      if (!isValidDeskId(id)) {
+        return NextResponse.json({ error: 'Ungültige Eintrags-ID.' }, { status: 400 });
+      }
       await setOutreach([id], { status: 'replied', reply_note: String(body.note || '').slice(0, 2000) });
       return NextResponse.json({ ok: true });
     }
 
     if (action === 'publish') {
-      const slug = String(body.slug || '');
+      const slug = String(body.slug || '').trim();
+      if (!isValidDossierSlug(slug)) {
+        return NextResponse.json({ error: 'Ungültiges Dossier-Kürzel.' }, { status: 400 });
+      }
       let current;
       try {
         current = await getInvestigationStatus(slug);
@@ -352,15 +371,21 @@ export async function POST(request) {
     }
 
     if (action === 'drop' || action === 'reopen') {
-      const slug = String(body.slug || '');
+      const slug = String(body.slug || '').trim();
       if (!slug) return NextResponse.json({ error: 'Kein Dossier ausgewählt.' }, { status: 400 });
+      if (!isValidDossierSlug(slug)) {
+        return NextResponse.json({ error: 'Ungültiges Dossier-Kürzel.' }, { status: 400 });
+      }
       await setInvestigationStatus(slug, action === 'drop' ? 'dropped' : 'research');
       return NextResponse.json({ ok: true });
     }
 
     if (action === 'decline-request' || action === 'accept-request') {
-      const id = String(body.id || '');
+      const id = String(body.id || '').trim();
       if (!id) return NextResponse.json({ error: 'Kein Wunsch ausgewählt.' }, { status: 400 });
+      if (!isValidDeskId(id)) {
+        return NextResponse.json({ error: 'Ungültige Anfrage-ID.' }, { status: 400 });
+      }
       await setRequestStatus(id, action === 'decline-request' ? 'declined' : 'selected');
       return NextResponse.json({ ok: true });
     }

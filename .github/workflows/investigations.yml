@@ -76,12 +76,15 @@ jobs:
         id: budget
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          INPUT_APPROVE: ${{ inputs.approve || '' }}
+          INPUT_APPROVE_OUTREACH: ${{ inputs.approve_outreach || '' }}
+          INPUT_REJECT_OUTREACH: ${{ inputs.reject_outreach || '' }}
         run: |
           # Every push to main is a Vercel deployment, and the Hobby plan
           # allows 100 of them a day. The count is only a warning now: the
           # dossiers live in the repository, and the site reads them from
           # there. A refused build must not stop the desk from working.
-          if [ -n "${{ inputs.approve }}" ] || [ -n "${{ inputs.approve_outreach }}" ] || [ -n "${{ inputs.reject_outreach }}" ]; then
+          if [ -n "$INPUT_APPROVE" ] || [ -n "$INPUT_APPROVE_OUTREACH" ] || [ -n "$INPUT_REJECT_OUTREACH" ]; then
             echo "A human approved a piece - it goes out."
           else
             node scripts/deploy-budget.mjs || echo "the day's deployments are spent - the dossier still goes to the repository"
@@ -131,7 +134,15 @@ jobs:
           # run let a story move on while nobody is watching; the commit comes
           # after the last one, so a day still costs a single deployment.
           TOTAL="${INVESTIGATE_MINUTES:-55}"
+          case "$TOTAL" in
+            ''|*[!0-9]*) TOTAL=55 ;;
+          esac
+          [ "$TOTAL" -lt 1 ] && TOTAL=55
           SHIFTS="${DESK_SHIFTS:-3}"
+          case "$SHIFTS" in
+            ''|*[!0-9]*) SHIFTS=3 ;;
+          esac
+          [ "$SHIFTS" -lt 1 ] && SHIFTS=3
           PER=$(( TOTAL / SHIFTS ))
           [ "$PER" -lt 8 ] && PER=8
           for i in $(seq 1 "$SHIFTS"); do

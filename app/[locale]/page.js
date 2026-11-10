@@ -6,6 +6,7 @@ import { rankArticles, storyScore, isElectionHeadline, sharesSubject } from '@/l
 import { listLiveTickers } from '@/lib/liveStore.mjs';
 import { liveLocalize, liveUpdates, updateLocalize, clock } from '@/lib/live.mjs';
 import { fmtDate, sourceLabel } from '@/lib/format.mjs';
+import { safeJsonLd } from '@/lib/safeUrl.mjs';
 import MarketStrip from '@/components/MarketStrip';
 import Card from '@/components/Card';
 import TopicFilter from '@/components/TopicFilter';
@@ -148,7 +149,7 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(homeJsonLd) }} />
       <TopicFilter locale={locale} t={t} />
 
       {liveNow.length > 0 && (

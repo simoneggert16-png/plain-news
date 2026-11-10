@@ -110,14 +110,17 @@ import {
   widenRadiusNm,
 } from './adsb-widener.js';
 import {
+  countTerrainPoints,
   createBodyCapturingResponse,
   resolveTerrainFallback,
   splitTerrainPoints,
 } from './terrain-fallback.js';
 import {
+  extractClientIp,
   handleStealthSync,
   requestHasStealthAccess,
   sendUnknownRoute,
+  verifyWallToken,
 } from './wall.js';
 
 /**
@@ -203,14 +206,14 @@ async function readJsonObject(req) {
  * @param {unknown} value
  * @returns {{payload: Buffer, headers: Record<string,string>}}
  */
-function encodeJson(req, value) {
-  const raw = Buffer.from(JSON.stringify(value));
+function encodeBuffer(req, raw) {
+  const buf = Buffer.isBuffer(raw) ? raw : Buffer.from(raw);
   const accepts = /\bgzip\b/i.test(
     String(req?.headers?.['accept-encoding'] || ''),
   );
-  if (!accepts || raw.length < 32 * 1024)
-    return { payload: raw, headers: { 'Content-Length': String(raw.length) } };
-  const compressed = gzipSync(raw);
+  if (!accepts || buf.length < 32 * 1024)
+    return { payload: buf, headers: { 'Content-Length': String(buf.length) } };
+  const compressed = gzipSync(buf);
   return {
     payload: compressed,
     headers: {
@@ -219,6 +222,10 @@ function encodeJson(req, value) {
       'Content-Length': String(compressed.length),
     },
   };
+}
+
+function encodeJson(req, value) {
+  return encodeBuffer(req, Buffer.from(JSON.stringify(value)));
 }
 
 /**
@@ -268,59 +275,115 @@ function isTrustedPlainMavenHost(hostname) {
   if (
     h === 'www.plain-news.ch' ||
     h === 'plain-news.ch' ||
-    h === 'plain-maven.vercel.app' ||
-    h === 'localhost' ||
-    h === '127.0.0.1'
+    h === 'plain-maven.vercel.app'
   ) {
     return true;
   }
+  const vercelUrl = String(process.env.VERCEL_URL || '')
+    .split(':')[0]
+    .trim()
+    .toLowerCase();
+  if (vercelUrl && h === vercelUrl) return true;
+  const vercelBranchUrl = String(process.env.VERCEL_BRANCH_URL || '')
+    .split(':')[0]
+    .trim()
+    .toLowerCase();
+  if (vercelBranchUrl && h === vercelBranchUrl) return true;
   if (
-    h.endsWith('.vercel.app') &&
-    (h.startsWith('plain-maven') || h.startsWith('plain-news') || h.includes('gods21'))
+    (!process.env.VERCEL_ENV || process.env.VERCEL_ENV === 'development') &&
+    (h === 'localhost' || h === '127.0.0.1')
   ) {
     return true;
   }
   return false;
 }
 
-function verifyCallerAuthorized(req) {
+function verifyCallerAuthorized(req, pathname = '/') {
   const headers = req?.headers || {};
   const origin = String(headers.origin || '').trim();
   const referer = String(headers.referer || '').trim();
+  const sfs = String(headers['sec-fetch-site'] || '').trim().toLowerCase();
+
+  let originTrusted = false;
   if (origin) {
     try {
-      if (!isTrustedPlainMavenHost(new URL(origin).hostname)) return false;
+      const u = new URL(origin);
+      if (
+        (u.protocol !== 'https:' && u.protocol !== 'http:') ||
+        !isTrustedPlainMavenHost(u.hostname)
+      ) {
+        return false;
+      }
+      originTrusted = true;
     } catch {
       return false;
     }
   }
+
+  let refererTrusted = false;
   if (referer) {
     try {
-      if (!isTrustedPlainMavenHost(new URL(referer).hostname)) return false;
+      const u = new URL(referer);
+      if (
+        (u.protocol !== 'https:' && u.protocol !== 'http:') ||
+        !isTrustedPlainMavenHost(u.hostname)
+      ) {
+        return false;
+      }
+      refererTrusted = true;
     } catch {
       return false;
     }
   }
-  const sfs = String(headers['sec-fetch-site'] || '').trim().toLowerCase();
-  if (sfs === 'cross-site' && !origin && !referer) {
+
+  if (sfs === 'cross-site' && !originTrusted && !refererTrusted) {
     return false;
   }
+
+  const hasStealth = requestHasStealthAccess(req);
+  if (!origin && !referer && !sfs && !hasStealth) {
+    return false;
+  }
+
+  const isPaidOrStateChangingPost =
+    req?.method === 'POST' &&
+    (pathname.startsWith('/api/gemini/') ||
+      pathname === '/api/realtime/token' ||
+      pathname.startsWith('/api/openai/') ||
+      pathname === '/api/person/speak');
+  if (isPaidOrStateChangingPost) {
+    const headerToken = headers['x-pm-s'];
+    const hasVerifiedHeaderToken = Boolean(
+      headerToken && verifyWallToken(headerToken),
+    );
+    if (!hasVerifiedHeaderToken && !originTrusted) {
+      return false;
+    }
+  }
+
   return true;
 }
 
 function stripProxySignals(req) {
+  req._isReverseProxied = true;
   const headers = req.headers;
   if (!headers) return;
   const fwdHost = String(headers['x-forwarded-host'] || '')
     .split(',')[0]
     .trim();
-  if (fwdHost) {
+  if (fwdHost && isTrustedPlainMavenHost(fwdHost)) {
     headers.host = fwdHost;
   }
   const activeHostFull = String(headers.host || 'plain-maven.vercel.app').trim();
   const activeHost = activeHostFull.split(':')[0].trim().toLowerCase();
   const isLocal = activeHost === 'localhost' || activeHost === '127.0.0.1';
-  const canonicalOrigin = `${isLocal ? 'http' : 'https'}://${activeHostFull}`;
+  const fwdProto = String(headers['x-forwarded-proto'] || '')
+    .split(',')[0]
+    .trim()
+    .toLowerCase();
+  const useHttps = fwdProto ? fwdProto === 'https' : !isLocal;
+  req._tlsTerminated = useHttps;
+  const canonicalOrigin = `${useHttps ? 'https' : 'http'}://${activeHostFull}`;
 
   // When embedded inside https://www.plain-news.ch/[locale]/maven, Chromium sets
   // Sec-Fetch-Site: cross-site on iframe fetches because the top-level ancestor
@@ -332,17 +395,15 @@ function stripProxySignals(req) {
   if (headers['sec-fetch-site']) {
     headers['sec-fetch-site'] = 'same-origin';
   }
-  if (activeHost) {
+  if (activeHost && isTrustedPlainMavenHost(activeHost)) {
     const existing = String(process.env.GEV_ALLOWED_HOSTS || '')
       .split(',')
       .map((s) => s.trim().toLowerCase())
       .filter(Boolean);
-    if (!existing.includes(activeHost)) {
+    if (!existing.includes(activeHost) && existing.length < 16) {
       process.env.GEV_ALLOWED_HOSTS = [...existing, activeHost].join(',');
     }
   }
-  process.env.GEV_RATELIMIT_GEMINI_PER_MIN = '0';
-  process.env.GEV_RATELIMIT_GOOGLE_PER_MIN = '0';
   for (const name of PROXY_SIGNALS) delete headers[name];
 }
 
@@ -357,7 +418,50 @@ function stripProxySignals(req) {
  */
 function markTlsTerminated(req) {
   if (!req.socket) req.socket = {};
-  req.socket.encrypted = true;
+  req.socket.encrypted = req._tlsTerminated !== false;
+}
+
+function sanitizePrivateCacheControl(value) {
+  const str = String(value ?? '');
+  if (/\b(public|s-maxage)\b/i.test(str)) {
+    return 'private, no-store';
+  }
+  return value;
+}
+
+function installPrivateCacheGuard(res) {
+  if (res._pmPrivateCacheGuardInstalled) return;
+  res._pmPrivateCacheGuardInstalled = true;
+  const origSetHeader = res.setHeader?.bind(res);
+  if (typeof origSetHeader === 'function') {
+    res.setHeader = (name, value) => {
+      if (String(name).toLowerCase() === 'cache-control') {
+        return origSetHeader(name, sanitizePrivateCacheControl(value));
+      }
+      return origSetHeader(name, value);
+    };
+  }
+  const origWriteHead = res.writeHead?.bind(res);
+  if (typeof origWriteHead === 'function') {
+    res.writeHead = (statusCode, statusMessage, headers) => {
+      const hdrs =
+        typeof statusMessage === 'object' && statusMessage !== null
+          ? statusMessage
+          : headers;
+      if (hdrs && typeof hdrs === 'object') {
+        for (const key of Object.keys(hdrs)) {
+          if (key.toLowerCase() === 'cache-control') {
+            hdrs[key] = sanitizePrivateCacheControl(hdrs[key]);
+          }
+        }
+      }
+      const existingCc = res.getHeader?.('cache-control');
+      if (existingCc !== undefined && typeof origSetHeader === 'function') {
+        origSetHeader('Cache-Control', sanitizePrivateCacheControl(existingCc));
+      }
+      return origWriteHead(statusCode, statusMessage, headers);
+    };
+  }
 }
 
 /**
@@ -501,7 +605,15 @@ function routes() {
  * @returns {Promise<void>}
  */
 export async function handleApiRequest(req, res) {
-  if (!verifyCallerAuthorized(req)) {
+  const originalUrl0 = String(req.url || '/');
+  let originalUrl = originalUrl0.replace(
+    /^\/api\/ais-live(?=\/|\?|$)/,
+    '/api/vessels',
+  );
+  req.url = originalUrl;
+  let pathname = originalUrl.split('?')[0] || '/';
+
+  if (!verifyCallerAuthorized(req, pathname)) {
     const payload = Buffer.from(JSON.stringify({ error: 'origin_not_allowed' }));
     res.writeHead(403, {
       'Content-Type': 'application/json',
@@ -511,22 +623,9 @@ export async function handleApiRequest(req, res) {
     res.end(payload);
     return;
   }
-  req._clientIp =
-    String(req.headers?.['x-forwarded-for'] || '')
-      .split(',')[0]
-      .trim() ||
-    req.socket?.remoteAddress ||
-    'unknown';
+  req._clientIp = extractClientIp(req);
   stripProxySignals(req);
   markTlsTerminated(req);
-
-  const originalUrl0 = String(req.url || '/');
-  let originalUrl = originalUrl0.replace(
-    /^\/api\/ais-live(?=\/|\?|$)/,
-    '/api/vessels',
-  );
-  req.url = originalUrl;
-  let pathname = originalUrl.split('?')[0] || '/';
 
   if (pathname === '/api/ui/sync') {
     await handleStealthSync(req, res);
@@ -549,6 +648,7 @@ export async function handleApiRequest(req, res) {
    *    `404 {"error":"Unknown API route"}` as any nonexistent endpoint.
    */
   const unlocked = requestHasStealthAccess(req);
+  req._stealthUnlocked = unlocked;
   const requiresStealth =
     pathname.startsWith('/api/person/') ||
     pathname.startsWith('/api/business/') ||
@@ -560,7 +660,12 @@ export async function handleApiRequest(req, res) {
     pathname.startsWith('/api/s2-ghostmaps') ||
     pathname === '/api/gemini/token' ||
     pathname.startsWith('/api/gemini/') ||
-    pathname === '/api/realtime/token';
+    pathname === '/api/realtime/token' ||
+    pathname.startsWith('/api/openai/') ||
+    pathname.startsWith('/api/google/');
+  if (requiresStealth || unlocked) {
+    installPrivateCacheGuard(res);
+  }
   if (requiresStealth && !unlocked) {
     sendUnknownRoute(res);
     return;
@@ -944,48 +1049,25 @@ export async function handleApiRequest(req, res) {
    */
   if (req.method === 'GET' && pathname === '/api/cctv/sources') {
     const capture = createBodyCapturingResponse();
-    const extraPromise = windyWebcams();
-    const pinnedPromise = pinnedCameras().catch(() => []);
     await dispatch(capture, reportError);
     req.url = originalUrl;
     const answer = capture.captured();
-    // Camera lists only. The military relay belongs to /api/military; mixing it
-    // in here replaced the camera array with an aircraft payload, and every
-    // Windy camera silently vanished from the catalog.
-    const extra = [...((await extraPromise) || []), ...(await pinnedPromise)];
-    /** @type {any} */
-    let body = null;
-    if (answer.status >= 200 && answer.status < 300) {
-      try {
-        body = JSON.parse(answer.body.toString('utf8'));
-      } catch {
-        body = null;
-      }
-    }
-    if (!body || !Array.isArray(body.sources)) {
+    if (
+      answer.status < 200 ||
+      answer.status >= 300 ||
+      res.writableEnded ||
+      res.headersSent
+    ) {
       sendCaptured(answer);
       return;
     }
-    const seen = new Set(body.sources.map((source) => source.id));
-    let added = 0;
-    for (const item of extra) {
-      if (seen.has(item.id)) continue;
-      seen.add(item.id);
-      body.sources.push(toCatalogEntry(item));
-      added += 1;
-    }
-    if (res.writableEnded || res.headersSent) {
-      sendCaptured(answer);
-      return;
-    }
-    const encoded = encodeJson(req, body);
+    const encoded = encodeBuffer(req, answer.body);
     const headers = { ...answer.headers };
     delete headers['content-length'];
     delete headers['transfer-encoding'];
-    res.writeHead(200, {
+    res.writeHead(answer.status, {
       ...headers,
       'Content-Type': 'application/json',
-      'X-CCTV-Bridge': `+${added}/${extra.length} extra cams (${body.sources.length} total)`,
       ...encoded.headers,
     });
     res.end(encoded.payload);
@@ -1204,6 +1286,21 @@ export async function handleApiRequest(req, res) {
       return true;
     };
 
+    const rawPoints = pointsOf();
+    if (rawPoints !== null && rawPoints.length > 16384) {
+      sendFallback({ status: 413, body: { error: 'too many points' } });
+      return;
+    }
+    const parsedPointsCount = countTerrainPoints(rawPoints);
+    if (!rawPoints || parsedPointsCount === null) {
+      sendFallback({ status: 400, body: { error: 'Invalid or missing points' } });
+      return;
+    }
+    if (parsedPointsCount > 256) {
+      sendFallback({ status: 413, body: { error: 'too many points' } });
+      return;
+    }
+
     /**
      * On Vercel, `terrain.reearth.land` frequently rate-limits shared egress
      * or takes >=1.2s on cold requests (exceeding `FLOOR_RESOLVE_DEADLINE_MS`).
@@ -1212,7 +1309,7 @@ export async function handleApiRequest(req, res) {
      */
     const forced = process.env.GEV_TERRAIN_FORCE_FALLBACK !== '0';
     if (forced) {
-      const answer = await resolveTerrainFallback(pointsOf()).catch((err) => {
+      const answer = await resolveTerrainFallback(rawPoints).catch((err) => {
         console.warn(
           '[gev-bridge] terrain fallback failed:',
           err?.message || err,
@@ -1224,7 +1321,6 @@ export async function handleApiRequest(req, res) {
       // something honest, so fall through to upstream below.
     }
 
-    const rawPoints = pointsOf();
     const chunks = forced ? null : splitTerrainPoints(rawPoints);
 
     if (chunks && chunks.length > 1) {
@@ -1694,7 +1790,7 @@ export async function handleApiRequest(req, res) {
     const encoded = encodeJson(req, body);
     res.writeHead(200, {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=300',
+      'Cache-Control': 'private, no-store',
       ...encoded.headers,
     });
     res.end(encoded.payload);
@@ -1715,19 +1811,6 @@ export async function handleApiRequest(req, res) {
     req.method === 'POST' &&
     /^\/api\/radio\/click\/[0-9a-f-]{36}$/i.test(pathname)
   ) {
-    res.writeHead(204, { 'Cache-Control': 'no-store' });
-    res.end();
-    return;
-  }
-  if (pathname === '/api/realtime/debug-log') {
-    if (req.method !== 'POST') {
-      res.writeHead(405, {
-        'Content-Type': 'application/json',
-        Allow: 'POST',
-      });
-      res.end(JSON.stringify({ error: 'Method Not Allowed' }));
-      return;
-    }
     res.writeHead(204, { 'Cache-Control': 'no-store' });
     res.end();
     return;
@@ -2051,7 +2134,17 @@ export async function handleApiRequest(req, res) {
   if (req.method === 'GET' && pathname === '/api/geocode') {
     const search = new URL(req.url, 'http://localhost').searchParams;
     const q = String(search.get('q') || '').trim();
-    const strategic = q ? matchStrategicFacility(q) : null;
+    if (!q) {
+      const payload = Buffer.from(JSON.stringify({ error: 'q is required' }));
+      res.writeHead(400, {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store',
+        'Content-Length': String(payload.length),
+      });
+      res.end(payload);
+      return;
+    }
+    const strategic = matchStrategicFacility(q);
     if (strategic?.results?.[0]) {
       const encoded = encodeJson(req, {
         status: 'OK',
@@ -2291,7 +2384,7 @@ export async function handleApiRequest(req, res) {
     const encoded = encodeJson(req, body);
     res.writeHead(200, {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=300',
+      'Cache-Control': 'private, no-store',
       ...encoded.headers,
     });
     res.end(encoded.payload);
@@ -2308,7 +2401,7 @@ export async function handleApiRequest(req, res) {
     const encoded = encodeJson(req, body);
     res.writeHead(200, {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=1800',
+      'Cache-Control': 'private, no-store',
       ...encoded.headers,
     });
     res.end(encoded.payload);
@@ -2532,6 +2625,12 @@ export async function handleApiRequest(req, res) {
     // see both the upstream count and the merged one.
     for (const name of Object.keys(headers)) {
       if (name.toLowerCase().startsWith('x-flight-')) delete headers[name];
+      if (unlocked && name.toLowerCase() === 'cache-control') {
+        delete headers[name];
+      }
+    }
+    if (unlocked) {
+      headers['cache-control'] = 'private, no-store';
     }
     const coverage = widened
       ? globalMode
