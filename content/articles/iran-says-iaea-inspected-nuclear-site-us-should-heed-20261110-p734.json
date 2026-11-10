@@ -1,0 +1,72 @@
+{
+  "slug": "iran-says-iaea-inspected-nuclear-site-us-should-heed-20261110-p734",
+  "category": "world",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-10T01:48:40.537Z",
+  "updatedAt": "2026-11-10T01:48:40.537Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Sacramento Bee",
+      "title": "Breaking: New wildfire reported in Los Angeles County on Nov. 9",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBGR1pkTXlubHhHM2xoM0pUUlZPamhJTjJ5al9qaVNCU0p5Wi1NemJqU08wTHk3WFJGUE5NbzdlV0VhZGRldFpFWGEwa203eW9CeGdMMVRIWEZkcjgwQmhWc201d0FPcnRYMHNQY2JKYkJUM0xs?oc=5",
+      "publishedAt": "2026-11-10T00:03:07.000Z"
+    },
+    {
+      "outlet": "The Times of Israel",
+      "title": "Iran says IAEA inspected nuclear site, US should heed public sentiment and end war",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZHJFVEtCSTJxZW83SzRidUdDODRqcFVFQi1GdHdycHVwWFZEUk1TNmVrUkxPRDZPSkV4bTFObVpYNC1LUHFvaFo3WUJHaEhEMW1tX2ZhSlhRU2N6YmViUlhxVXg5Q2NtYlhTYUt1WnFfM1BUYUQzWlJYS3A2VEQ5d2hPYmZyR0tmUDhOemRZZFFURFphX2Jkakk3VG5ScTVic3BjclEzOEZncjh3SzNlakpn0gG3AUFVX3lxTFBtajU3S1FYdS1iTFBXbXNxYV8wX1FWYlptQ0lhLWVtVzBDN0lfdE9rYjNVdTROc0oyVFN0azVsSnNUMDJkT21HbDVHUzV4RHJ2RDktT0IxX1NBd2tyM3gybTIwYkRfTnRDRmtLeUo2cFhnS21PcFM5N2lqVFQydEJHRGpwWjZPbmpHUk9NbzRhRTYzWGFvbUdQa0ZackJXWGZ0NV9DUGdYaF9XTXdIbU9HTGxUcnFTVQ?oc=5",
+      "publishedAt": "2026-11-09T18:24:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Iran says IAEA inspected nuclear site, US should heed public sentiment and end war",
+      "dek": "Iran reports IAEA inspection of nuclear site and urges US to end war based on public sentiment",
+      "facts": [
+        "Iran announced that the International Atomic Energy Agency inspected a nuclear site",
+        "The Times of Israel reported Iran stating US should heed public sentiment and end war",
+        "Iran linked the inspection to broader calls for ending conflict based on public sentiment"
+      ],
+      "body": [
+        "Iran stated that the International Atomic Energy Agency inspected a nuclear site, according to The Times of Israel.",
+        "Iran called on the US to heed public sentiment and end the war, the outlet reported."
+      ],
+      "context": "The Times of Israel reported Iran's statement that the US should heed public sentiment and end the war following an IAEA inspection of a nuclear site.",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "Irán afirma que la Agencia Internacional de Energía Atómica inspeccionó un sitio nuclear, y EE. UU. debería atender el sentimiento público y terminar la guerra",
+      "dek": "Irán informa inspección de la AIEA a un sitio nuclear y urge a EE. UU. a terminar la guerra atendiendo el sentimiento público",
+      "facts": [
+        "Irán anunció que la Agencia Internacional de Energía Atómica inspeccionó un sitio nuclear",
+        "El Times of Israel informó que Irán insta a EE. UU. a atender el sentimiento público y terminar la guerra",
+        "Irán vincula la inspección a llamadas más amplias por terminar el conflicto basándose en el sentimiento público"
+      ],
+      "body": [
+        "Irán afirmó que la Agencia Internacional de Energía Atómica inspeccionó un sitio nuclear, según The Times of Israel.",
+        "Irán instó a EE. UU. a atender el sentimiento público y poner fin a la guerra, informó el medio."
+      ],
+      "context": "El Times of Israel informó la declaración de Irán de que EE. UU. debería atender el sentimiento público y terminar la guerra tras la inspección de la AIEA a un sitio nuclear.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Body sentences contain claims not directly supported by sources (e.g. 'ongoing scrutiny', 'peace efforts', 'complex nature of diplomatic efforts'). Sources only state Iran's statements, not analysis of intent or context beyond the report.",
+      "Headline is a near-verbatim copy of source text; needs to be a factual statement of what happened.",
+      "Body ends with an evaluative summary sentence ('...reflects the complex nature...'), which violates style guide rule 14.",
+      "Context section contains vague phrasing ('long been at odds', 'ongoing for years') without specific sourced details.",
+      "Four short declarative sentences in the first paragraph violate rule 10 (no four short sentences in a row).",
+      "Repetitive opening structure: both paragraphs start with 'Iran' or 'The report'.",
+      "Dek exceeds 30-word limit and contains analysis not in sources."
+    ]
+  }
+}
