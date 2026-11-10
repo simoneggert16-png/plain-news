@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de" data-maven-theme="obsidian">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLAIN. MAVEN — Geospatial News &amp; Live Intelligence</title>
+  <script>
+    (function () {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var qTheme = p.get('theme');
+        var saved = localStorage.getItem('plain-maven:theme');
+        var theme = qTheme === 'paper' || qTheme === 'obsidian' ? qTheme : (saved === 'paper' ? 'paper' : 'obsidian');
+        document.documentElement.setAttribute('data-maven-theme', theme);
+        var qLang = p.get('locale') || p.get('lang');
+        if (qLang) document.documentElement.setAttribute('lang', qLang.slice(0, 2));
+        sessionStorage.setItem('gev:first-run-mission-session:v1', '1');
+        localStorage.setItem('gev:first-run-mission:v1', '1');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0d0d0b" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="PLAIN. Maven" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=adjust,arrow_drop_down,arrow_forward,arrow_left,arrow_right,bolt,chevron_left,chevron_right,close,close_fullscreen,dark_mode,draw,east,flare,flight,handyman,info,label,label_off,layers,layers_clear,light_mode,local_fire_department,location_on,more_horiz,movie,my_location,navigation,normal,on,open_in_full,partly_cloudy_day,pentagon,public,radar,radio,right_panel_close,right_panel_open,rocket_launch,satellite_alt,search,settings,skip_next,skip_previous,stop_circle,storefront,streetview,timeline,tune,upload_file,videocam,view_in_ar,visibility,visibility_off,volume_up" rel="stylesheet" />
+</head>
+<body>
+  <div class="gev-view" data-gev-view="scene-chrome"></div>
+  <div class="gev-view" data-gev-view="cockpit"></div>
+  <div class="gev-view" data-gev-view="display-controls"></div>
+  <div class="gev-view" data-gev-view="command-dock"></div>
+  <div class="gev-view" data-gev-view="layer-panels"></div>
+  <div class="gev-view" data-gev-view="context"></div>
+  <div class="gev-view" data-gev-view="welcome"></div>
+  <div class="gev-view" data-gev-view="provider-settings"></div>
+  <div class="gev-view" data-gev-view="intel-hud"></div>
+
+  <!-- PLAIN. × MAVEN Minimalist Boot Screen -->
+  <div id="loading-screen">
+    <div class="loader-content pm-loader-box">
+      <div class="pm-loader-kicker">GEOINT // OPEN-SOURCE INTELLIGENCE SYSTEM</div>
+      <h2 translate="no" class="pm-loader-logo">PLAIN<span class="pm-loader-dot">.</span> <span class="pm-loader-sub">MAVEN</span></h2>
+      <div class="pm-loader-rule"></div>
+      <p class="loader-status" data-i18n>Initializing global sensor grid...</p>
+      <div class="pm-loader-credit">3D Spatial Engine: God&rsquo;s Eye View by Bilawal Sidhu (MIT License)</div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
