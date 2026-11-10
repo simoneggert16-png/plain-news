@@ -4,21 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PLAIN. MAVEN — Geospatial News &amp; Live Intelligence</title>
-  <script>
-    (function () {
-      try {
-        var p = new URLSearchParams(window.location.search);
-        var qTheme = p.get('theme');
-        var saved = localStorage.getItem('plain-maven:theme');
-        var theme = qTheme === 'paper' || qTheme === 'obsidian' ? qTheme : (saved === 'paper' ? 'paper' : 'obsidian');
-        document.documentElement.setAttribute('data-maven-theme', theme);
-        var qLang = p.get('locale') || p.get('lang');
-        if (qLang) document.documentElement.setAttribute('lang', qLang.slice(0, 2));
-        sessionStorage.setItem('gev:first-run-mission-session:v1', '1');
-        localStorage.setItem('gev:first-run-mission:v1', '1');
-      } catch (e) {}
-    })();
-  </script>
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png" />
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png" />

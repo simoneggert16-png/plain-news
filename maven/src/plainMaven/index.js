@@ -136,14 +136,8 @@ function resolvePlainApiBases() {
   const params = new URLSearchParams(window.location.search);
   const explicitOrigin = params.get('plainOrigin');
   const candidates = [];
-  if (explicitOrigin && /^https?:\/\//i.test(explicitOrigin)) {
+  if (explicitOrigin && /^https:\/\//i.test(explicitOrigin)) {
     candidates.push(explicitOrigin.replace(/\/+$/, ''));
-  }
-  if (
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1'
-  ) {
-    candidates.push('http://localhost:3000');
   }
   candidates.push(PLAIN_PROD_ORIGIN);
   return [...new Set(candidates)];
@@ -547,7 +541,15 @@ export async function initPlainMavenExperience({
       : Cesium.Color.fromCssColorString('#eae3d2');
     const labelBg = isPaper
       ? Cesium.Color.fromCssColorString('#eae3d2').withAlpha(0.92)
-      : Cesium.Color.fromCssColorString('#0d0d0b').withAlpha(0.88);
+      : Cesium.Color.fromCssColorString('#0d0d0b').withAlpha(0.9);
+
+    // Count co-located dispatches per place so only ONE clean callout renders per city
+    const placeCounts = new Map();
+    for (const story of state.stories) {
+      const pKey = story.canonicalPlace || story.placeName || story.country || story.slug;
+      placeCounts.set(pKey, (placeCounts.get(pKey) || 0) + 1);
+    }
+    const labeledPlaces = new Set();
 
     for (const story of state.stories) {
       if (!Number.isFinite(story.lat) || !Number.isFinite(story.lon)) continue;
@@ -555,11 +557,18 @@ export async function initPlainMavenExperience({
       const selected = story.slug === state.selectedSlug;
       const worldPos = Cesium.Cartesian3.fromDegrees(story.lon, story.lat, 1800);
 
+      const pKey = story.canonicalPlace || story.placeName || story.country || story.slug;
+      const totalAtPlace = placeCounts.get(pKey) || 1;
+      const isFirstLabelAtPlace = !labeledPlaces.has(pKey);
       const showCallout =
-        selected || variant === 'live' || story.importance >= 4;
+        selected ||
+        (isFirstLabelAtPlace && (variant === 'live' || story.importance >= 4));
+      if (showCallout && !selected) labeledPlaces.add(pKey);
+
       const shortHeadline =
-        story.title.length > 44 ? `${story.title.slice(0, 42)}…` : story.title;
-      const labelText = `${(story.placeName || story.country || '').toUpperCase()}\n${shortHeadline}`;
+        story.title.length > 38 ? `${story.title.slice(0, 36)}…` : story.title;
+      const placeBadge = `${(story.placeName || story.country || '').toUpperCase()}${totalAtPlace > 1 && !selected ? ` (+${totalAtPlace - 1})` : ''}`;
+      const labelText = `${placeBadge}\n${shortHeadline}`;
 
       const entity = newsDataSource.entities.add({
         id: `plain-story:${story.slug}`,
@@ -753,10 +762,12 @@ export async function initPlainMavenExperience({
   function renderDossier(story, detail = null) {
     if (!story) {
       dossier.hidden = true;
+      document.body.classList.remove('pm-dossier-open');
       return;
     }
     const copy = ui();
     dossier.hidden = false;
+    document.body.classList.add('pm-dossier-open');
 
     const facts =
       detail?.facts?.length > 0
@@ -876,32 +887,17 @@ export async function initPlainMavenExperience({
     if (!slug || !state.bySlug.has(slug)) {
       state.selectedSlug = null;
       dossier.hidden = true;
+      document.body.classList.remove('pm-dossier-open');
       reticle.hidden = true;
       rebuildGlobeEntities();
       renderFeedList();
       return;
     }
 
-    const prevSlug = state.selectedSlug;
     state.selectedSlug = slug;
     const story = state.bySlug.get(slug);
 
-    // Update icon scale/highlight on previous & new entity without rebuilding everything
-    for (const targetSlug of [prevSlug, slug]) {
-      if (!targetSlug) continue;
-      const ent = state.entitiesBySlug.get(targetSlug);
-      if (!ent) continue;
-      const st = ent._plainStory;
-      const sel = targetSlug === slug;
-      ent.billboard.image = buildMavenDiamondIcon({
-        variant: storyVariant(st),
-        theme: currentTheme,
-        selected: sel,
-      });
-      ent.billboard.width = sel ? 38 : 28;
-      ent.billboard.height = sel ? 38 : 28;
-    }
-
+    rebuildGlobeEntities();
     renderFeedList();
     renderDossier(story, null);
     updateHorizonVisibility();

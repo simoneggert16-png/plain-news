@@ -43,7 +43,7 @@ export function createApplicationTools({
   });
   dataManager.layers
     .get('bhote-koshi-2026')
-    ?.module.attachSceneController(sceneDirector);
+    ?.module?.attachSceneController?.(sceneDirector);
   defer(() => sceneDirector.destroy());
   onSceneDirector?.(sceneDirector);
   const annotations = initAnnotations({

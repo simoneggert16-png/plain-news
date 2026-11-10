@@ -138,8 +138,10 @@ html[data-maven-theme='paper'] {
   padding: 4px 8px !important;
 }
 
-/* When PLAIN. Dispatches rail is open, push native GEV left-panel-stack right of it so both can coexist */
-body.pm-rail-open #left-panel-stack {
+/* When PLAIN. Dispatches rail is open, push native GEV left-panel-stack & rail right of it so both can coexist */
+body.pm-rail-open #left-panel-stack,
+body.pm-rail-open #left-panel-rail,
+body.pm-rail-open .panel-rail-left {
   left: 368px !important;
   top: 54px !important;
   max-height: calc(100vh - 130px) !important;
@@ -150,10 +152,54 @@ body:not(.pm-rail-open) #left-panel-stack {
   top: 54px !important;
 }
 
-/* Position native floating rail below topbar */
-#left-panel-rail,
-.panel-rail-left {
+body:not(.pm-rail-open) #left-panel-rail,
+body:not(.pm-rail-open) .panel-rail-left {
+  left: 10px !important;
+  top: 90px !important;
+}
+
+/* Keep right GEV rail clear of the open Target Dossier */
+#right-panel-rail,
+.panel-rail-right {
   top: 54px !important;
+}
+
+body.pm-dossier-open #right-panel-rail,
+body.pm-dossier-open .panel-rail-right {
+  top: auto !important;
+  bottom: 72px !important;
+}
+
+/* Hide unused OpenAI Realtime voice mic box & re-tone cyan intel HUD to PLAIN. monochrome/amber */
+#voice-control,
+#voice-provider-bar,
+[data-gev-view='command-dock'] .voice-cluster,
+#command-dock .dock-voice-center,
+#voice-ptt-btn,
+#voice-settings-cluster {
+  display: none !important;
+}
+
+[data-gev-view='intel-hud'],
+[data-gev-view='intel-hud'] *,
+#intel-hud,
+#intel-hud * {
+  color: var(--pm-muted) !important;
+  border-color: var(--pm-border) !important;
+  text-shadow: none !important;
+  font-family: var(--pm-mono) !important;
+}
+
+#intel-hud {
+  bottom: 30px !important;
+}
+
+#locale-switcher,
+.locale-pill {
+  bottom: 30px !important;
+  border: 1px solid var(--pm-border) !important;
+  background: var(--pm-surface-solid) !important;
+  color: var(--pm-ink-2) !important;
 }
 
 #command-dock {
