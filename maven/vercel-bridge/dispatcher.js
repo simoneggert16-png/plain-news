@@ -114,7 +114,11 @@ import {
   resolveTerrainFallback,
   splitTerrainPoints,
 } from './terrain-fallback.js';
-import { requestIsUnlocked, wallEnabled } from './wall.js';
+import {
+  handleStealthSync,
+  requestHasStealthAccess,
+  sendUnknownRoute,
+} from './wall.js';
 
 /**
  * The reverse-proxy/CDN header names that `src/localRequestGate.mjs` treats as
@@ -507,6 +511,12 @@ export async function handleApiRequest(req, res) {
     res.end(payload);
     return;
   }
+  req._clientIp =
+    String(req.headers?.['x-forwarded-for'] || '')
+      .split(',')[0]
+      .trim() ||
+    req.socket?.remoteAddress ||
+    'unknown';
   stripProxySignals(req);
   markTlsTerminated(req);
 
@@ -518,30 +528,41 @@ export async function handleApiRequest(req, res) {
   req.url = originalUrl;
   let pathname = originalUrl.split('?')[0] || '/';
 
+  if (pathname === '/api/ui/sync') {
+    await handleStealthSync(req, res);
+    return;
+  }
+  if (
+    pathname === '/api/wall' ||
+    pathname.startsWith('/api/wall/') ||
+    pathname === '/api/wall-shell'
+  ) {
+    sendUnknownRoute(res);
+    return;
+  }
+
   /**
-   * PIN gate for every data endpoint.
-   *
-   * The deployment proxies live OSINT and spends Simon's paid quotas, and Vercel
-   * Hobby has no password protection (it is a Pro feature) while legacy `routes`
-   * — which this deployment needs for the multi-segment `/api/*` catch-all — does
-   * not compose with edge Middleware. So the gate is a cookie check here plus
-   * `api/wall.js`/`api/wall-shell.js` for the unlock form and the document.
-   * Disabled (and therefore inert) whenever `GEV_WALL_PIN` is unset, so a missing
-   * secret can never brick the site. See `vercel-bridge/wall.js`.
+   * Two-tier access:
+   *  - Public visitors get all $0, open-license Tier-1 endpoints without any gate.
+   *  - Personal / non-commercial / quota-sensitive Tier-2 routes require a valid
+   *    stealth session token (`_pm_s`); otherwise they answer the exact same
+   *    `404 {"error":"Unknown API route"}` as any nonexistent endpoint.
    */
-  const wallBlocks =
-    !pathname.startsWith('/api/wall') &&
-    wallEnabled() &&
-    !requestIsUnlocked(req);
-  if (wallBlocks) {
-    const payload = Buffer.from(JSON.stringify({ error: 'pin_required' }));
-    res.writeHead(401, {
-      'Content-Type': 'application/json',
-      'Cache-Control': 'no-store',
-      'X-Wall': 'locked',
-      'Content-Length': String(payload.length),
-    });
-    res.end(payload);
+  const unlocked = requestHasStealthAccess(req);
+  const requiresStealth =
+    pathname.startsWith('/api/person/') ||
+    pathname.startsWith('/api/business/') ||
+    pathname === '/api/parcel' ||
+    pathname === '/api/osint/reports' ||
+    pathname === '/api/frontline' ||
+    pathname === '/api/frontfires' ||
+    pathname.startsWith('/api/ghostmaps') ||
+    pathname.startsWith('/api/s2-ghostmaps') ||
+    pathname === '/api/gemini/token' ||
+    pathname.startsWith('/api/gemini/') ||
+    pathname === '/api/realtime/token';
+  if (requiresStealth && !unlocked) {
+    sendUnknownRoute(res);
     return;
   }
 
@@ -2073,23 +2094,25 @@ export async function handleApiRequest(req, res) {
       return;
     }
   }
-  if (
-    !String(process.env.OPENAI_API_KEY || '').trim() &&
-    hasGeminiApiKeyPool() &&
-    (pathname === '/api/openai/hud-summary/status' ||
-      pathname === '/api/openai/hud-summary')
-  ) {
-    if (req.method === 'GET' && pathname === '/api/openai/hud-summary/status') {
-      const encoded = encodeJson(req, { configured: true });
-      res.writeHead(200, {
-        'Content-Type': 'application/json; charset=utf-8',
-        'Cache-Control': 'no-store',
-        ...encoded.headers,
-      });
-      res.end(encoded.payload);
+  if (req.method === 'GET' && pathname === '/api/openai/hud-summary/status') {
+    const encoded = encodeJson(req, { configured: false });
+    res.writeHead(200, {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      ...encoded.headers,
+    });
+    res.end(encoded.payload);
+    return;
+  }
+  if (req.method === 'POST' && pathname === '/api/openai/hud-summary') {
+    if (!unlocked) {
+      sendUnknownRoute(res);
       return;
     }
-    if (req.method === 'POST' && pathname === '/api/openai/hud-summary') {
+    if (
+      !String(process.env.OPENAI_API_KEY || '').trim() &&
+      hasGeminiApiKeyPool()
+    ) {
       const context = (await readJsonObject(req)) || {};
       const result = await summarizeHudContext(context);
       const encoded = encodeJson(req, {
@@ -2411,9 +2434,10 @@ export async function handleApiRequest(req, res) {
         ? globalFlightsSnapshot()
         : wideFlightsSnapshot(searchParams)
       : Promise.resolve(null);
-    const relayPromise = process.env.FLIGHTS_RELAY_URL
-      ? relayJson(process.env.FLIGHTS_RELAY_URL).catch(() => null)
-      : Promise.resolve(null);
+    const relayPromise =
+      unlocked && process.env.FLIGHTS_RELAY_URL
+        ? relayJson(process.env.FLIGHTS_RELAY_URL).catch(() => null)
+        : Promise.resolve(null);
     await upstream;
     req.url = originalUrl;
     const answer = capture.captured();

@@ -27,14 +27,15 @@ const { panel: bhotePanel } = storeToRefs(useBhoteKoshiPanelStore());
 // The Scene runtime chip SceneControls presents while a scene plays.
 const { panel: scenePanel } = storeToRefs(useSceneStore());
 const sceneRuntime = computed(() => scenePanel.value?.runtime ?? '');
+const extMode = Boolean(globalThis.__PM_EXT__);
 </script>
 
 <template>
   <!-- Global Context is deliberately independent from the left layer accordion. -->
   <aside id="right-context-rail" class="ui-scroll" v-class-toggle="{ 'bhote-event-active': !!bhotePanel }">
     <LegendPanel />
-    <PersonPanel />
-    <BusinessPanel />
+    <PersonPanel v-if="extMode" />
+    <BusinessPanel v-if="extMode" />
     <RailPanel id="weather-panel" hidden :title="t('WEATHER')" sideways rail-scroller>
       <template #badge><span id="weather-panel-count" :aria-label="t('Active weather products')">0</span></template>
       <div id="weather-panel-body" class="ui-scroll" data-rail-scroller></div>

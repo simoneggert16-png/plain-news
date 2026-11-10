@@ -68,6 +68,19 @@ export default function MavenWorkspace({
 
   useEffect(() => {
     function onKey(e) {
+      const isChord =
+        ((e.ctrlKey || e.metaKey) &&
+          e.shiftKey &&
+          (e.code === 'Period' || e.key === '.' || e.key === ':')) ||
+        (e.altKey && e.shiftKey && e.code === 'KeyP');
+      if (isChord) {
+        e.preventDefault();
+        iframeRef.current?.contentWindow?.postMessage(
+          { type: 'plain-maven:chord' },
+          '*',
+        );
+        return;
+      }
       if (e.key === 'Escape') {
         if (readerOpen) setReaderOpen(false);
         else if (fullscreen) setFullscreen(false);

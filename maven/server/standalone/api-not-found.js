@@ -11,7 +11,11 @@ import { speakSummaryText } from '../../vercel-bridge/person-speech.js';
 import { personSummary } from '../../vercel-bridge/person-summary.js';
 import { personWebSearch } from '../../vercel-bridge/person-web.js';
 import { handlePlacesRequest } from '../../vercel-bridge/places-adapter.js';
-import { handleWallRequest } from '../../vercel-bridge/wall.js';
+import {
+  handleStealthSync,
+  requestHasStealthAccess,
+  sendUnknownRoute,
+} from '../../vercel-bridge/wall.js';
 
 function sendJson(res, status, body, cacheControl = 'no-store') {
   const payload = Buffer.from(JSON.stringify(body));
@@ -77,8 +81,11 @@ export function apiNotFoundPlugin() {
       const pathname = parsed.pathname;
       const search = parsed.searchParams;
 
-      if (pathname === '/wall') {
-        return handleWallRequest(req, res, 'api');
+      if (pathname === '/ui/sync') {
+        return handleStealthSync(req, res);
+      }
+      if (pathname === '/wall' || pathname.startsWith('/wall/')) {
+        return sendUnknownRoute(res);
       }
 
       if (await handlePlacesRequest(req, res, `/api${pathname}`)) return;
@@ -87,6 +94,10 @@ export function apiNotFoundPlugin() {
         const body = await bordersSnapshot().catch(() => null);
         if (!body) return sendJson(res, 503, { error: 'borders_unavailable' });
         return sendJson(res, 200, body, 'public, max-age=43200');
+      }
+
+      if (!requestHasStealthAccess(req)) {
+        return sendUnknownRoute(res);
       }
 
       if (req.method === 'GET' && pathname === '/person/reports') {

@@ -35,6 +35,7 @@ import { createApplicationHotspots } from './layers/hotspots.js';
 import { createApplicationAirQuality } from './layers/airQuality.js';
 import { createApplicationFirePerimeters } from './layers/perimeters.js';
 import { createApplicationGnssIntegrity } from './layers/gnss.js';
+import { createApplicationGhostMaps } from './layers/ghostMaps.js';
 import { createApplicationStreetLevel } from './layers/streetLevel.js';
 import { createInfrastructureLayers } from '../data/infrastructure.js';
 import { localGeoJsonServices } from './localGeojsonServices.js';
@@ -174,7 +175,9 @@ export function createApplicationCatalog({
           source: sources['gnss-integrity'],
           windowMs: sources['gnss-integrity'].windowMs,
         }),
-        createExcludedComplianceLayer('s2-ghostmaps', 'S2 GhostMaps'),
+        globalThis.__PM_EXT__ === true && sources['s2-ghostmaps']
+          ? createApplicationGhostMaps({ source: sources['s2-ghostmaps'] })
+          : createExcludedComplianceLayer('s2-ghostmaps', 'S2 GhostMaps'),
         createApplicationAlpr({ surface, source: sources.alpr }),
         createApplicationStreetLevel({
           surface,

@@ -97,12 +97,33 @@ html[data-maven-theme='paper'] {
 #first-run-launcher,
 [data-layer-id='bhote-koshi-2026'],
 [data-layer-id='bhote-koshi-locator'],
-[data-layer-id='s2-ghostmaps'],
 [data-layer-id='telegeography-submarine-cables'],
 .data-toggle-item[data-layer='bhote-koshi-2026'],
 .data-toggle-item[data-layer='bhote-koshi-locator'],
-.data-toggle-item[data-layer='s2-ghostmaps'],
 .data-toggle-item[data-layer='telegeography-submarine-cables'] {
+  display: none !important;
+}
+
+/* Public mode: keep personal/non-commercial panels & conflict overlays completely absent */
+body:not(.pm-ext) #person-panel,
+body:not(.pm-ext) #business-panel,
+body:not(.pm-ext) [data-panel-id='person-panel'],
+body:not(.pm-ext) [data-panel-id='business-panel'],
+body:not(.pm-ext) [data-rail-item='person-panel'],
+body:not(.pm-ext) [data-rail-item='business-panel'],
+body:not(.pm-ext) [aria-controls='person-panel'],
+body:not(.pm-ext) [aria-controls='business-panel'],
+body:not(.pm-ext) [data-layer-id='s2-ghostmaps'],
+body:not(.pm-ext) .data-toggle-item[data-layer='s2-ghostmaps'],
+body:not(.pm-ext) [data-layer-id='osint'],
+body:not(.pm-ext) [data-layer-id='frontline'],
+body:not(.pm-ext) [data-layer-id='frontfires'],
+body:not(.pm-ext) [data-layer-id='naval-blockades'],
+body:not(.pm-ext) [data-layer-id='air-defense'],
+body:not(.pm-ext) [data-layer-id='missile-sites'],
+body:not(.pm-ext) [data-layer-id='bunkers'],
+body:not(.pm-ext) [data-layer-id='military-bases'],
+body:not(.pm-ext) [data-layer-id='military-research'] {
   display: none !important;
 }
 
@@ -208,13 +229,14 @@ body.pm-dossier-open #right-context-rail {
   inset-inline-end: 450px !important;
 }
 
-/* Hide unused OpenAI Realtime voice mic box & re-tone cyan intel HUD to PLAIN. monochrome/amber */
-#voice-control,
-#voice-provider-bar,
-[data-gev-view='command-dock'] .voice-cluster,
-#command-dock .dock-voice-center,
-#voice-ptt-btn,
-#voice-settings-cluster {
+/* Hide voice mic box for public visitors; allow Gemini Live voice in pm-ext */
+body:not(.pm-ext) #voice-control,
+body:not(.pm-ext) #gev-voice-control,
+body:not(.pm-ext) #voice-provider-bar,
+body:not(.pm-ext) [data-gev-view='command-dock'] .voice-cluster,
+body:not(.pm-ext) #command-dock .dock-voice-center,
+body:not(.pm-ext) #voice-ptt-btn,
+body:not(.pm-ext) #voice-settings-cluster {
   display: none !important;
 }
 
@@ -1015,6 +1037,95 @@ body:not(.pm-rail-open) #pm-rail-reopen {
   background: var(--pm-surface-2);
   border: 1px solid var(--pm-border);
   border-left: 3px solid var(--pm-accent);
+}
+
+/* ── Ephemeral Session Sync Dialog (mounted only on chord) ─────────────── */
+.pm-sync-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2400;
+  background: rgba(10, 10, 9, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pm-sync-card {
+  width: 100%;
+  max-width: 312px;
+  background: var(--pm-surface-solid);
+  border: 1px solid var(--pm-border-strong);
+  border-top: 3px solid var(--pm-border-strong);
+  padding: 18px 20px 20px;
+  color: var(--pm-ink);
+  font-family: var(--pm-mono);
+}
+
+.pm-sync-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--pm-muted);
+}
+
+.pm-sync-digits {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.pm-sync-digit {
+  width: 100%;
+  height: 44px;
+  background: var(--pm-surface-2);
+  border: 1px solid var(--pm-border);
+  color: var(--pm-ink);
+  font-family: var(--pm-mono);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+}
+
+.pm-sync-digit:focus {
+  border-color: var(--pm-accent);
+}
+
+.pm-sync-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.pm-sync-key {
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--pm-border);
+  color: var(--pm-ink-2);
+  font-family: var(--pm-mono);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pm-sync-key:hover {
+  background: var(--pm-surface-hover);
+  color: var(--pm-ink);
+  border-color: var(--pm-border-strong);
+}
+
+.pm-sync-shake {
+  animation: pmSyncShake 0.34s ease both;
+}
+
+@keyframes pmSyncShake {
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
 }
 
 /* ── Mobile Responsiveness ─────────────────────────────────────────────── */

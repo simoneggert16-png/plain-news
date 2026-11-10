@@ -59,15 +59,19 @@ const PANEL_GROUPS = [
   {
     label: msg('Conflict'),
     ids: [
-      'frontline',
-      'naval-blockades',
-      'air-defense',
-      'missile-sites',
-      'bunkers',
-      'military-bases',
-      'military-research',
-      'frontfires',
-      'osint',
+      ...(globalThis.__PM_EXT__ === true
+        ? [
+            'frontline',
+            'naval-blockades',
+            'air-defense',
+            'missile-sites',
+            'bunkers',
+            'military-bases',
+            'military-research',
+            'frontfires',
+            'osint',
+          ]
+        : []),
       'gnss-integrity',
       'hotspots',
     ],
@@ -93,7 +97,7 @@ const PANEL_GROUPS = [
       'earthquakes',
       'local-firms',
       'fire-perimeters',
-      's2-ghostmaps',
+      ...(globalThis.__PM_EXT__ === true ? ['s2-ghostmaps'] : []),
     ],
   },
   {
