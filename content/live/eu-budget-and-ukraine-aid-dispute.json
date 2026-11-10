@@ -8,25 +8,24 @@
       "The Kyiv Post"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "eu-budget-and-ukraine-aid-dispute",
   "topic": "EU Budget and Ukraine Aid Dispute",
   "status": "live",
   "article": {
     "slug": "eu-budget-and-ukraine-aid-dispute",
-    "updatedAt": "2026-11-10T15:25:35.013Z",
     "reason": "2 new update(s)",
     "locales": {
+      "de": {
+        "dek": "",
+        "body": [],
+        "facts": [],
+        "title": "EU-Haushaltsstreit eskaliert, da vier Länder Ablehnung der Verknüpfung von Hilfsgeldern mit Ukraine-Finanzierung",
+        "context": ""
+      },
       "en": {
-        "title": "EU budget dispute escalates as four countries resist linking aid to Ukraine funding",
         "dek": "Slovak PM Fico calls German Chancellor Merz's demand 'blackmail' over EU budget and Ukraine aid",
-        "facts": [
-          "Slovak PM Fico calls German Chancellor Merz's demand 'blackmail' over EU budget and Ukraine aid,Politico Europe, Euronews, The Straits Times",
-          "Four EU countries resist German demand to tie budget approval to Ukraine funding,Politico Europe, Euronews",
-          "Russian drone attack kills two in Ladyzhyn, western Ukraine on 10 November,The Kyiv Post, NZZ",
-          "Negotiators from Russia, Ukraine and US begin two-day peace talks in Abu Dhabi on 10 November,NPR, Fox News"
-        ],
         "body": [
           "Slovak Prime Minister Robert Fico accused German Chancellor Friedrich Merz of \"blackmail\" over the German demand to link approval of the European Union's next long-term budget to fresh financial support for Ukraine, according to Politico Europe and Euronews.",
           "Four EU countries are reportedly resisting the German demand, Euronews reported, while The Straits Times cited Fico's statement that the demand constituted blackmail.",
@@ -35,18 +34,19 @@
           "The Abu Dhabi talks follow earlier rounds of U.S.-mediated negotiations, including sessions involving Jared Kushner and Steve Witkoff, as reported by NPR.",
           "The dispute over the EU budget comes as Germany pushes for conditions on Ukraine aid, with Chancellor Merz arguing that budget approval should be contingent on continued support for Ukraine."
         ],
+        "facts": [
+          "Slovak PM Fico calls German Chancellor Merz's demand 'blackmail' over EU budget and Ukraine aid,Politico Europe, Euronews, The Straits Times",
+          "Four EU countries resist German demand to tie budget approval to Ukraine funding,Politico Europe, Euronews",
+          "Russian drone attack kills two in Ladyzhyn, western Ukraine on 10 November,The Kyiv Post, NZZ",
+          "Negotiators from Russia, Ukraine and US begin two-day peace talks in Abu Dhabi on 10 November,NPR, Fox News"
+        ],
+        "title": "EU budget dispute escalates as four countries resist linking aid to Ukraine funding",
         "context": "German Chancellor Friedrich Merz has sought to tie approval of the EU's next long-term budget to fresh financial support for Ukraine, a position that has drawn resistance from several member states including Slovakia.",
         "imageCaption": ""
-      },
-      "de": {
-        "title": "EU-Haushaltsstreit eskaliert, da vier Länder Ablehnung der Verknüpfung von Hilfsgeldern mit Ukraine-Finanzierung",
-        "dek": "",
-        "facts": [],
-        "body": [],
-        "context": ""
       }
     },
-    "versions": []
+    "versions": [],
+    "updatedAt": "2026-11-10T15:25:35.013Z"
   },
   "endedAt": null,
   "locales": {
@@ -89,144 +89,318 @@
   },
   "updates": [
     {
-      "id": "u-1794322333000-wdnj",
-      "at": "2026-11-10T14:52:13.000Z",
-      "kind": "breaking",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Russia, Ukraine and US officials hold peace talks in Abu Dhabi",
-          "body": "Negotiators from Russia, Ukraine and the United States began a two-day session in Abu Dhabi on 10 November. According to NPR and Fox News, the talks focus on security guarantees and territory disputes."
-        },
-        "it": {
-          "headline": "Russia, Ucraina e funzionari statunitensi tengono colloqui di pace ad Abu Dhabi",
-          "body": "I negoziatori di Russia, Ucraina e Stati Uniti hanno iniziato una sessione di due giorni ad Abu Dhabi il 10 novembre. Secondo NPR e Fox News, i colloqui si concentrano sulle garanzie di sicurezza e sulle dispute territoriali."
-        },
-        "fr": {
-          "headline": "Des responsables russes, ukrainiens et américains tiennent des pourparlers de paix à Abou Dabi",
-          "body": "Des négociateurs russes, ukrainiens et américains ont entamé une session de deux jours à Abou Dabi le 10 novembre. Selon NPR et Fox News, les discussions portent sur les garanties de sécurité et les différends territoriaux."
-        },
-        "zh": {
-          "headline": "俄罗斯、乌克兰和美国官员在阿布扎比举行和平谈判",
-          "body": "来自俄罗斯、乌克兰和美国的谈判代表于11月10日在阿布扎比开始了为期两天的会议。据美国国家公共电台（NPR）和福克斯新闻报道，会谈重点在于安全保障和领土争端。"
-        },
-        "pt": {
-          "headline": "Responsáveis da Rússia, Ucrânia e EUA realizam conversações de paz em Abu Dhabi",
-          "body": "Negociadores da Rússia, Ucrânia e Estados Unidos iniciaram uma sessão de dois dias em Abu Dhabi a 10 de novembro. Segundo a NPR e a Fox News, as conversações centram-se em garantias de segurança e disputas territoriais."
-        },
-        "ja": {
-          "headline": "ロシア、ウクライナ、米国の当局者がアブダビで和平協議",
-          "body": "ロシア、ウクライナ、米国の交渉担当者は11月10日、アブダビで2日間の協議を開始した。NPRおよびフォックスニュースによると、協議は安全保障上の保証と領土問題を焦点としている。"
-        },
-        "ko": {
-          "headline": "러시아, 우크라이나, 미국 당국자들 아부다비서 평화 회담 개최",
-          "body": "러시아, 우크라이나, 미국의 협상단이 11월 10일 아부다비에서 이틀간의 회담을 시작했다. NPR과 폭스 뉴스에 따르면 이번 회담은 안보 보장과 영토 분쟁 문제에 초점을 맞추고 있다."
-        },
-        "de": {
-          "headline": "Russland, Ukraine und US-Vertreter führen Friedensgespräche in Abu Dhabi",
-          "body": "Unterhändler aus Russland, der Ukraine und den Vereinigten Staaten begannen am 10. November eine zweitägige Sitzung in Abu Dhabi. Laut NPR und Fox News konzentrieren sich die Gespräche auf Sicherheitsgarantien und Gebietsstreitigkeiten."
-        },
-        "es": {
-          "headline": "Funcionarios de Rusia, Ucrania y EE. UU. mantienen conversaciones de paz en Abu Dabi",
-          "body": "Negociadores de Rusia, Ucrania y Estados Unidos comenzaron una sesión de dos días en Abu Dabi el 10 de noviembre. Según NPR y Fox News, las conversaciones se centran en garantías de seguridad y disputas territoriales."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Al Jazeera",
-          "title": "Russia, Ukraine and US officials hold talks in Abu Dhabi",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSGhONWNmUnBCZjBHMWNrSU5JYjRDbVZ2UVZkcjFaNWVfZEJJS2dSQVd4NTdITjhZaHdUbHFQbDQ1VmhHVXVVLTd4UENvTXNxZUhBZTVsUTExYmJTaktacjUwQ0lpcUY3UU0yMGVSanVodTJYLVJjeERfVUxfTjlhSy12YkRnQ2Qwclp5RnJrRU5BY25wV1NZYlpKaHdZWHF4VnJfajc2ZV9qOXBmMmFCMEtmQdIBuAFBVV95cUxOZWZVY2FpTk0xWS1GSEkwUThabWJYMmQyeVBqWWlLUzh2ZFJOTzhoWEFXRHh1WmxQbE5BaHQyeTEycnlUUFJselphQ2dWVFJMcUdxblYzZ1JOd1VZdmQ2NFRESzRJUVRUWmlLeFZBalVhcHMweXNncnFQcFRLUDhOd2pkLVVMMWdwUDQyZDRiSUtaUWxCQW93TkdJZUdZX1Q1RUlaZzRHRW82OGNNS0EzejVvcTMxeGpL?oc=5",
-          "publishedAt": "2026-11-10T14:52:13.000Z"
-        },
-        {
-          "outlet": "Fox News",
-          "title": "Kushner enters Ukraine peace talks as Trump eyes securing safeguards against another Russian invasion",
-          "url": "https://www.foxnews.com/politics/kushner-enters-ukraine-peace-talks-trump-eyes-securing-safeguards-against-another-russian-invasion",
-          "publishedAt": "2026-11-10T11:24:53.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "Russia and Ukraine hold nearly 4 hours of U.S.-mediated talks in Abu Dhabi",
-          "url": "https://www.npr.org/2026/11/10/g-s1-152773/russia-ukraine-war-talks",
-          "publishedAt": "2026-11-10T10:58:18.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "U.S.-mediated talks on ending Russia-Ukraine war begin in Abu Dhabi",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBTMVQyQVdJaG5fZmtRMENRcFBfcmN2bVJFdnJKRy12QmlPZEZoSThoZDBGRnBkTGxMY3ZmVTZDN3BQZkdrSWdJa1RQUElKbnNZYmo0S3VTX1JweVRqajBIM0lKa0hJcDQzVWM3N0lCYXpNOG9Td2c?oc=5",
-          "publishedAt": "2026-11-10T10:58:18.000Z"
-        },
-        {
-          "outlet": "The Hindu",
-          "title": "U.S.-mediated talks on ending war between Russia, Ukraine begin in Abu Dhabi",
-          "url": "https://www.thehindu.com/news/international/us-brokered-talks-are-set-to-start-in-abu-dhabi-to-discuss-ukraine-russia-peace-deal/article71685183.ece",
-          "publishedAt": "2026-11-10T10:05:16.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "Kushner and Witkoff renew peace talks to end war between Russia and Ukraine",
-          "url": "https://www.npr.org/2026/11/10/nx-s1-6034616/kushner-and-witkoff-renew-peace-talks-to-end-war-between-russia-and-ukraine",
-          "publishedAt": "2026-11-10T09:38:34.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794312074000-dgqj",
-      "at": "2026-11-10T12:01:14.000Z",
+      "id": "u-1794335759000-5vzz",
+      "at": "2026-11-10T18:35:59.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Russian drone attack kills two in Ladyzhyn",
-          "body": "Russian drones killed two people in the city of Ladyzhyn in western Ukraine on 10 November, according to The Kyiv Post. The attack damaged civilian infrastructure and energy facilities in the Vinnytsia region."
-        },
-        "it": {
-          "headline": "Attacco di droni russi uccide due persone a Ladyzhyn",
-          "body": "I droni russi hanno ucciso due persone nella città di Ladyzhyn, nell'Ucraina occidentale, il 10 novembre, secondo il Kyiv Post. L'attacco ha danneggiato le infrastrutture civili e gli impianti energetici nella regione di Vinnytsia."
+          "headline": "Denmark allocates 20 million euros for Kherson power restoration",
+          "body": "Denmark will provide an energy package worth 20 million euros for Ukraine's Kherson region, President Volodymyr Zelensky announced on Tuesday following a meeting with Danish Prime Minister Mette Frederiksen. The aid aims to restore power supply in the region damaged by Russian attacks. According to Zelensky, the package includes funding for energy infrastructure repair."
         },
         "fr": {
-          "headline": "Une attaque de drones russes fait deux morts à Ladyjyn",
-          "body": "Des drones russes ont tué deux personnes dans la ville de Ladyjyn, dans l'ouest de l'Ukraine, le 10 novembre, selon le Kyiv Post. L'attaque a endommagé des infrastructures civiles et des installations énergétiques dans la région de Vinnytsia."
-        },
-        "zh": {
-          "headline": "俄罗斯无人机袭击导致拉德任市两人死亡",
-          "body": "据《基辅邮报》报道，11月10日，俄罗斯无人机在乌克兰西部的拉德任市造成两人死亡。此次袭击破坏了文尼察地区的民用基础设施和能源设施。"
-        },
-        "pt": {
-          "headline": "Ataque de drones russos mata duas pessoas em Ladyzhyn",
-          "body": "Drones russos mataram duas pessoas na cidade de Ladyzhyn, no oeste da Ucrânia, a 10 de novembro, segundo o The Kyiv Post. O ataque danificou infraestruturas civis e instalações energéticas na região de Vinnytsia."
-        },
-        "ja": {
-          "headline": "ロシアのドローン攻撃、ラディジンの2人が死亡",
-          "body": "キーウ・ポスト紙によると、11月10日、ウクライナ西部の都市ラディジンでロシアのドローン攻撃により2人が死亡した。この攻撃により、ヴィーンヌィツャ州の民間インフラとエネルギー施設が損傷した。"
-        },
-        "ko": {
-          "headline": "러시아 드론 공격으로 라디진에서 2명 사망",
-          "body": "키이우 포스트에 따르면 11월 10일 우크라이나 서부 라디진시에서 러시아 드론 공격으로 2명이 사망했다. 이번 공격으로 빈니차 지역의 민간 기반 시설과 에너지 시설이 파손되었다."
+          "headline": "Le Danemark alloue 20 millions d'euros à la restauration de l'énergie à Kherson",
+          "body": "Le Danemark fournira un paquet énergétique de 20 millions d'euros à la région ukrainienne de Kherson, a annoncé le président Volodymyr Zelensky mardi à la suite d'une rencontre avec le Premier ministre danois Mette Frederiksen. L'aide vise à restaurer l'approvisionnement en énergie dans la région endommagée par les attaques russes. Selon Zelensky, le paquet comprend des fonds pour la réparation des infrastructures énergétiques."
         },
         "de": {
-          "headline": "Russischer Drohnenangriff tötet zwei Menschen in Ladyschyn",
-          "body": "Bei einem russischen Drohnenangriff auf die Stadt Ladyschyn in der Westukraine kamen am 10. November zwei Menschen ums Leben, wie die Kyiv Post berichtet. Der Angriff beschädigte zivile Infrastruktur und Energieanlagen in der Region Winnyzja."
+          "headline": "Danemark stellt 20 Millionen Euro für Kherson-Stromwiederherstellung bereit",
+          "body": "Danemark stellt ein Energiepaket in Höhe von 20 Millionen Euro für die Ukraine-Region Cherson bereit, wie Präsident Wolodymyr Selenski am Dienstag nach einem Treffen mit Dänemarks Ministerpräsidentin Mette Frederiksen bekannt gab. Die Hilfe soll die Stromversorgung in der Region wiederherstellen, die durch russische Angriffe beschädigt wurde. Nach Selenski umfasst das Paket Finanzmittel für die Reparatur von Energieinfrastruktur."
         },
         "es": {
-          "headline": "Un ataque con drones rusos mata a dos personas en Ladyzhyn",
-          "body": "Drones rusos mataron a dos personas en la ciudad de Ladyzhyn, en el oeste de Ucrania, el 10 de noviembre, según The Kyiv Post. El ataque dañó infraestructura civil e instalaciones energéticas en la región de Vínnytsia."
+          "headline": "Dinamarca destina 20 millones de euros a la restauración energética de Jersón",
+          "body": "Dinamarca proporcionará un paquete energético de 20 millones de euros para la región ucraniana de Jersón, anunció el presidente Volodímir Zelenski el martes tras una reunión con la primera ministra danesa Mette Frederiksen. La ayuda tiene como objetivo restablecer el suministro eléctrico en la zona dañada por los ataques rusos. Según Zelenski, el paquete incluye financiación para la reparación de infraestructuras energéticas."
+        },
+        "pt": {
+          "headline": "Dinamarca aloca 20 milhões de euros para restauro da energia em Kherson",
+          "body": "Dinamarca vai fornecer um pacote de energia no valor de 20 milhões de euros para a região de Kherson na Ucrânia, anunciou o presidente Volodymyr Zelensky na terça-feira, após uma reunião com a primeira-ministra dinamarquesa Mette Frederiksen. O auxílio visa restabelecer o fornecimento de energia na região danificada por ataques russos. Segundo Zelensky, o pacote inclui financiamento para a reparação de infraestruturas energéticas."
+        },
+        "zh": {
+          "headline": "丹麦拨款2000万欧元用于赫尔松电力恢复",
+          "body": "丹麦总统弗拉基米尔·泽伦斯基周二在与丹麦总理梅特·弗雷德里克森会晤后宣布，将向乌克兰赫尔松地区提供价值2000万欧元的能源援助。这项援助旨在恢复该地区因俄罗斯袭击而受损的电力供应。根据泽伦斯基的说法，该包包括能源基础设施维修的资金。"
+        },
+        "ja": {
+          "headline": "デンマーク、ヘルソンの電力復旧に2000万ユーロを拠出",
+          "body": "ウクライナのヘルソン州に対し、デンマークが2000万ユーロのエネルギーパッケージを提供する。ウクライナのゼレンスキー大統領は火曜日にメッテ・フレデリクセン首相との会談の後、これを発表した。この支援はロシアの攻撃で被害を受けた同地域の電力供給復旧を目指す。ゼレンスキーによると、パッケージにはエネルギーインフラの修復に関する資金が含まれている。"
+        },
+        "ko": {
+          "headline": "덴마크, 헤르손 전력 복구에 2000만 유로 지원",
+          "body": "볼로디미르 젤렌스키 우크라이나 대통령이 마르테 프레데릭센 덴마크 총리와 회담한 뒤 화요일, 우크라이나 헤르손 지역에 러시아 공격으로 피해를 입은 전력 공급을 복구하기 위해 2000만 유로 규모의 에너지 패키지를 지원한다고 발표했다. 젤렌스키에 따르면 이 패키지는 에너지 인프라 수리 비용을 포함한다."
+        },
+        "it": {
+          "headline": "La Danimarca destina 20 milioni di euro al ripristino dell'energia a Kherson",
+          "body": "La Danimarca fornirà un pacco energetico da 20 milioni di euro alla regione ucraina di Kherson, ha annunciato il presidente Volodymyr Zelensky martedì dopo un incontro con la premier danese Mette Frederiksen. L'aiuto mira a ripristinare l'approvvigionamento energetico nella regione danneggiata dagli attacchi russi. Secondo Zelensky, il pacco include fondi per la riparazione delle infrastrutture energetiche."
         }
       },
       "sources": [
         {
           "outlet": "The Kyiv Post",
-          "title": "Russian Drone Attack Kills 2 in Western Ukraine’s Ladyzhyn",
+          "title": "Denmark Allocates €20M to Restore Kherson Region’s Power Supply",
+          "url": "https://www.kyivpost.com/post/89721",
+          "publishedAt": "2026-11-10T18:35:59.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Swedish PM Kristersson given another week to try to form new government",
+          "url": "https://www.straitstimes.com/world/europe/swedish-pm-kristersson-given-another-week-to-try-to-form-new-government",
+          "publishedAt": "2026-11-10T16:03:40.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794327810000-6a0g",
+      "at": "2026-11-10T16:23:30.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Italian aid package stalls awaiting Giorgetti signature",
+          "body": "Italy's 13th Ukraine aid package is awaiting Economy Minister Giancarlo Giorgetti's signature, preventing publication of the decree and dispatch of assistance, ANSA reported. Foreign Minister Antonio Tajani confirmed the package was ready but blocked by the minister's delay. The split in the Italian government coalition over military aid to Ukraine preceded this signature hold."
+        },
+        "fr": {
+          "headline": "Le paquet d'aide italien bloqué en attendant la signature de Giorgetti",
+          "body": "Le 13e paquet d'aide italien à l'Ukraine attend la signature du ministre de l'Économie Giancarlo Giorgetti, empêchant la publication du décret et l'envoi de l'aide, a rapporté ANSA. Le ministre des Affaires étrangères Antonio Tajani a confirmé que le paquet était prêt mais bloqué par le retard du ministre. La scission au sein de la coalition gouvernementale italienne sur l'aide militaire à l'Ukraine a précédé cette suspension de signature."
+        },
+        "de": {
+          "headline": "Italienisches Hilfspaket steht unter Giancarlo Giorgetti Unterschrift",
+          "body": "Das 13. Ukraine-Hilfspaket Italiens wartet auf die Unterschrift von Wirtschaftsminister Giancarlo Giorgetti, was die Veröffentlichung des Dekrets und die Entsendung von Hilfe verhindert. Nachrichtenagentur ANSA berichtete. Außenminister Antonio Tajani bestätigte, dass das Paket fertig sei, aber durch die Ministerverzögerung blockiert sei. Die Spaltung in der italienischen Regierungsmehrheit über Militärhilfen an die Ukraine ging dieser Signaturverzögerung voraus."
+        },
+        "es": {
+          "headline": "El paquete de ayuda italiano se estanca a la espera de la firma de Giorgetti",
+          "body": "El decimotercer paquete de ayuda italiano a Ucrania está a la espera de la firma del ministro de Economía Giancarlo Giorgetti, lo que impide la publicación del decreto y el envío de la ayuda, informó ANSA. El ministro de Exteriores, Antonio Tajani, confirmó que el paquete estaba listo pero bloqueado por la demora del ministro. La división en la coalición gubernamental italiana sobre la ayuda militar a Ucrania precedió a esta retención de firma."
+        },
+        "pt": {
+          "headline": "Pacote de ajuda italiano adia assinatura de Giorgetti",
+          "body": "O 13.º pacote de ajuda da Itália à Ucrânia está à espera da assinatura do ministro da Economia, Giancarlo Giorgetti, impedindo a publicação do decreto e o envio de assistência, segundo a ANSA. O ministro dos Negócios Estrangeiros, Antonio Tajani, confirmou que o pacote estava pronto, mas bloqueado pelo atraso do ministro. A cisão no Governo italiano sobre a ajuda militar à Ucrânia antecedeu esta retenção de assinatura."
+        },
+        "zh": {
+          "headline": "意大利援助包待吉奥吉蒂签字卡滞",
+          "body": "意大利第13批乌克兰援助包正等待经济部长詹卡洛·乔吉蒂签字，这阻止了法令的发布和援助的派发，安莎社报道。外交部长安东尼奥·塔吉尼确认该包已准备就绪，但被部长的延误所阻挠。此前意大利政府联盟就向乌克兰提供军事援助出现分歧，此次签字受阻即源于此。"
+        },
+        "ja": {
+          "headline": "イタリア支援パッケージ、ジョルジッティ署名待ちで停滞",
+          "body": "イタリアの第13回ウクライナ支援パッケージは、ジョルジッティ経済相の署名を待っているため、告示と支援の発送が阻止されている。ANSA報道。外相のアントニオ・タジャーニはパッケージは準備が整っていたが、相の署名遅延によって阻まれていると述べた。イタリア連立与党内の軍事支援に関する対立がこの署名保留につながった。"
+        },
+        "ko": {
+          "headline": "조르지티 서명 대기 중인 이탈리아 지원 패키지",
+          "body": "안사 통신에 따르면 이탈리아의 우크라이나 13차 지원 패키지가 조르지오 지오르게티 경제장관의 서명을 기다리고 있어 공포와 지원금 지급이 지연되고 있다. 안토니오 타자니 외무장관은 패키지가 준비된 상태였으나 장관의 지연으로 인해 서명이 보류된다고 확인했다. 우크라이나에 대한 군사 지원에 대한 이탈리아 연정 내부의 갈등이 이 서명 보류를 앞섰다."
+        },
+        "it": {
+          "headline": "Il pacco di aiuti italiano in stallo in attesa della firma di Giorgetti",
+          "body": "Il pacco di aiuti n. 13 dell'Italia per l'Ucraina è in attesa della firma del ministro dell'Economia Giancarlo Giorgetti, che ne blocca la pubblicazione del decreto e la consegna dell'assistenza, ha riferito l'ANSA. Il ministro degli Esteri Antonio Tajani ha confermato che il pacco era pronto ma bloccato dal ritardo del collega. La divisione nella maggioranza di governo italiana sugli aiuti militari all'Ucraina ha preceduto questa sospensione della firma."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Euronews",
+          "title": "Italian government debates aid to Kyiv while Abu Dhabi holds talks on Ukraine's future",
+          "url": "https://www.euronews.com/2026/11/10/italian-government-debates-aid-to-kyiv-while-abu-dhabi-holds-talks-on-ukraines-future",
+          "publishedAt": "2026-11-10T16:23:30.000Z"
+        },
+        {
+          "outlet": "The Kyiv Post",
+          "title": "Italy’s 13th Ukraine Aid Package Stalls Over 1 Signature",
+          "url": "https://www.kyivpost.com/post/89703",
+          "publishedAt": "2026-11-10T15:18:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794327668000-wofp",
+      "at": "2026-11-10T16:21:08.000Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "G7 foreign ministers meet in Paris to discuss Ukraine support",
+          "body": "Group of Seven foreign ministers gathered in Paris on Nov. 10 to discuss continued support for Ukraine, including military assistance and peace efforts. Ukrainian Foreign Minister Andrii Sybiha joined the talks where Marco Rubio hailed the 'very productive' Russia-Ukraine talks in Abu Dhabi. The ministers emphasized the importance of Europe being directly involved in US-mediated negotiations."
+        },
+        "fr": {
+          "headline": "Les ministres des Affaires étrangères du G7 se réunissent à Paris pour discuter du soutien à l'Ukraine",
+          "body": "Les ministres des Affaires étrangères du Groupe des sept se sont réunis à Paris le 10 novembre pour discuter du soutien continu à l'Ukraine, incluant l'aide militaire et les efforts de paix. Le ministre des Affaires étrangères ukrainien Andrii Sybiha a participé aux pourparlers où Marco Rubio a salué les 'pourparlers très productifs' Russie-Ukraine à Abu Dhabi. Les ministres ont souligné l'importance de l'implication directe de l'Europe dans les négociations médiatisées par les États-Unis."
+        },
+        "de": {
+          "headline": "G7-Außenminister treffen sich in Paris über Ukraine-Support",
+          "body": "Die Außenminister der Gruppe Sieben trafen sich am 10. November in Paris, um über weitere Unterstützung für die Ukraine zu beraten, einschließlich militärischer Hilfe und Friedensbemühungen. Ukrainischer Außenminister Andrij Sybiha nahm an den Gesprächen teil, wo Marco Rubio die 'sehr produktiven' Russland-Ukraine-Gespräche in Abu Dhabi lobte. Die Minister betonten die Wichtigkeit, dass Europa direkt an US-vermittelten Verhandlungen beteiligt ist."
+        },
+        "es": {
+          "headline": "Los ministros de Exteriores del G7 se reúnen en París para debatir el apoyo a Ucrania",
+          "body": "Los ministros de Exteriores del Grupo de los Siete se reunieron el 10 de noviembre en París para debatir el apoyo continuo a Ucrania, incluida la asistencia militar y los esfuerzos de paz. El ministro de Exteriores ucraniano, Andrii Sybiha, participó en las conversaciones, donde Marco Rubio elogió los 'muy productivos' diálogos Rusia-Ucrania en Abu Dabi. Los ministros subrayaron la importancia de que Europa esté directamente involucrada en las negociaciones mediadas por EE. UU."
+        },
+        "pt": {
+          "headline": "Ministros dos G7 reúnem-se em Paris para discutir apoio à Ucrânia",
+          "body": "Os ministros dos Negócios Estrangeiros do Grupo dos Sete reuniram-se em Paris a 10 de novembro para discutir o apoio contínuo à Ucrânia, incluindo assistência militar e esforços de paz. O ministro ucraniano dos Negócios Estrangeiros, Andrii Sybiha, participou nas conversas, onde Marco Rubio saudou as 'muito produtivas' conversações Rússia-Ucrânia em Abu Dhabi. Os ministros enfatizaram a importância da Europa estar diretamente envolvida nas negociações mediadas pelos EUA."
+        },
+        "zh": {
+          "headline": "七国外长在巴黎会谈乌克兰支持事宜",
+          "body": "七国外长于11月10日在巴黎聚会，讨论对乌克兰的持续支持，包括军事援助和和平努力。乌克兰外长安德里·西比哈参加了会谈，马可·鲁比奥称赞了阿布扎比的‘非常高效’的俄乌谈判。各国外长强调欧洲必须直接参与美方斡旋的谈判。"
+        },
+        "ja": {
+          "headline": "仏パリでG7外相会合、ウクライナ支援議論",
+          "body": "七カ国外相は11月10日にパリで集まり、ウクライナ支援の継続について議論した。軍事支援と平和努力が議題となった。ウクライナのアンドリーイ・シビハ外相が参加し、ルビオ氏がアブダビでの「非常に生産的だった」ロシア・ウクライナ協議を称賛した。外相は欧州が米国主導の交渉に直接関与することの重要性を強調した。"
+        },
+        "ko": {
+          "headline": "파리서 열리는 G7 외상 회의, 우크라이나 지원 논의",
+          "body": "조 바이든 행정부와 협의하는 중러 협상 중요성을 강조하며, 11월 10일 파리에서 G7 외상 회의가 열려 우크라이나 지원, 군사 지원 및 평화 노력에 대해 논의했다. 우크라이나 외교장관 안드레이 시비하가 참석했으며, 마르코 루비오는 아부다비에서의 ‘생산적인’ 러시아-우크라이나 회담을 언급했다. 각국 장관들은 유럽이 미·러 협상에서 직접적으로 관여하는 것이 중요하다고 강조했다."
+        },
+        "it": {
+          "headline": "I ministri degli Esteri del G7 si incontrano a Parigi per discutere il sostegno all'Ucraina",
+          "body": "I ministri degli Esteri dei paesi del G7 si sono riuniti a Parigi il 10 novembre per discutere il sostegno continuo all'Ucraina, incluso l'aiuto militare e gli sforzi di pace. Il ministro degli Esteri ucraino Andrii Sybiha ha partecipato ai colloqui, dove Marco Rubio ha definito 'molto produttivi' i colloqui Russia-Ucraina ad Abu Dhabi. I ministri hanno sottolineato l'importanza del coinvolgimento diretto dell'Europa nelle negoziazioni mediate dagli Stati Uniti."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Kyiv Post",
+          "title": "G7 Foreign Ministers Meet in Paris to Discuss Ukraine Support",
+          "url": "https://www.kyivpost.com/post/89706",
+          "publishedAt": "2026-11-10T15:52:00.000Z"
+        },
+        {
+          "outlet": "Le Monde",
+          "title": "Rubio hails 'very productive' Russia-Ukraine talks, wants Europe 'at the table'",
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/10/rubio-hails-very-productive-russia-ukraine-talks-wants-europe-at-the-table_6777026_4.html",
+          "publishedAt": "2026-11-10T16:21:08.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-10T14:52:13.000Z",
+      "id": "u-1794322333000-wdnj",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Unterhändler aus Russland, der Ukraine und den Vereinigten Staaten begannen am 10. November eine zweitägige Sitzung in Abu Dhabi. Laut NPR und Fox News konzentrieren sich die Gespräche auf Sicherheitsgarantien und Gebietsstreitigkeiten.",
+          "headline": "Russland, Ukraine und US-Vertreter führen Friedensgespräche in Abu Dhabi"
+        },
+        "en": {
+          "body": "Negotiators from Russia, Ukraine and the United States began a two-day session in Abu Dhabi on 10 November. According to NPR and Fox News, the talks focus on security guarantees and territory disputes.",
+          "headline": "Russia, Ukraine and US officials hold peace talks in Abu Dhabi"
+        },
+        "es": {
+          "body": "Negociadores de Rusia, Ucrania y Estados Unidos comenzaron una sesión de dos días en Abu Dabi el 10 de noviembre. Según NPR y Fox News, las conversaciones se centran en garantías de seguridad y disputas territoriales.",
+          "headline": "Funcionarios de Rusia, Ucrania y EE. UU. mantienen conversaciones de paz en Abu Dabi"
+        },
+        "fr": {
+          "body": "Des négociateurs russes, ukrainiens et américains ont entamé une session de deux jours à Abou Dabi le 10 novembre. Selon NPR et Fox News, les discussions portent sur les garanties de sécurité et les différends territoriaux.",
+          "headline": "Des responsables russes, ukrainiens et américains tiennent des pourparlers de paix à Abou Dabi"
+        },
+        "it": {
+          "body": "I negoziatori di Russia, Ucraina e Stati Uniti hanno iniziato una sessione di due giorni ad Abu Dhabi il 10 novembre. Secondo NPR e Fox News, i colloqui si concentrano sulle garanzie di sicurezza e sulle dispute territoriali.",
+          "headline": "Russia, Ucraina e funzionari statunitensi tengono colloqui di pace ad Abu Dhabi"
+        },
+        "ja": {
+          "body": "ロシア、ウクライナ、米国の交渉担当者は11月10日、アブダビで2日間の協議を開始した。NPRおよびフォックスニュースによると、協議は安全保障上の保証と領土問題を焦点としている。",
+          "headline": "ロシア、ウクライナ、米国の当局者がアブダビで和平協議"
+        },
+        "ko": {
+          "body": "러시아, 우크라이나, 미국의 협상단이 11월 10일 아부다비에서 이틀간의 회담을 시작했다. NPR과 폭스 뉴스에 따르면 이번 회담은 안보 보장과 영토 분쟁 문제에 초점을 맞추고 있다.",
+          "headline": "러시아, 우크라이나, 미국 당국자들 아부다비서 평화 회담 개최"
+        },
+        "pt": {
+          "body": "Negociadores da Rússia, Ucrânia e Estados Unidos iniciaram uma sessão de dois dias em Abu Dhabi a 10 de novembro. Segundo a NPR e a Fox News, as conversações centram-se em garantias de segurança e disputas territoriais.",
+          "headline": "Responsáveis da Rússia, Ucrânia e EUA realizam conversações de paz em Abu Dhabi"
+        },
+        "zh": {
+          "body": "来自俄罗斯、乌克兰和美国的谈判代表于11月10日在阿布扎比开始了为期两天的会议。据美国国家公共电台（NPR）和福克斯新闻报道，会谈重点在于安全保障和领土争端。",
+          "headline": "俄罗斯、乌克兰和美国官员在阿布扎比举行和平谈判"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSGhONWNmUnBCZjBHMWNrSU5JYjRDbVZ2UVZkcjFaNWVfZEJJS2dSQVd4NTdITjhZaHdUbHFQbDQ1VmhHVXVVLTd4UENvTXNxZUhBZTVsUTExYmJTaktacjUwQ0lpcUY3UU0yMGVSanVodTJYLVJjeERfVUxfTjlhSy12YkRnQ2Qwclp5RnJrRU5BY25wV1NZYlpKaHdZWHF4VnJfajc2ZV9qOXBmMmFCMEtmQdIBuAFBVV95cUxOZWZVY2FpTk0xWS1GSEkwUThabWJYMmQyeVBqWWlLUzh2ZFJOTzhoWEFXRHh1WmxQbE5BaHQyeTEycnlUUFJselphQ2dWVFJMcUdxblYzZ1JOd1VZdmQ2NFRESzRJUVRUWmlLeFZBalVhcHMweXNncnFQcFRLUDhOd2pkLVVMMWdwUDQyZDRiSUtaUWxCQW93TkdJZUdZX1Q1RUlaZzRHRW82OGNNS0EzejVvcTMxeGpL?oc=5",
+          "title": "Russia, Ukraine and US officials hold talks in Abu Dhabi",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-11-10T14:52:13.000Z"
+        },
+        {
+          "url": "https://www.foxnews.com/politics/kushner-enters-ukraine-peace-talks-trump-eyes-securing-safeguards-against-another-russian-invasion",
+          "title": "Kushner enters Ukraine peace talks as Trump eyes securing safeguards against another Russian invasion",
+          "outlet": "Fox News",
+          "publishedAt": "2026-11-10T11:24:53.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/10/g-s1-152773/russia-ukraine-war-talks",
+          "title": "Russia and Ukraine hold nearly 4 hours of U.S.-mediated talks in Abu Dhabi",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-10T10:58:18.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBTMVQyQVdJaG5fZmtRMENRcFBfcmN2bVJFdnJKRy12QmlPZEZoSThoZDBGRnBkTGxMY3ZmVTZDN3BQZkdrSWdJa1RQUElKbnNZYmo0S3VTX1JweVRqajBIM0lKa0hJcDQzVWM3N0lCYXpNOG9Td2c?oc=5",
+          "title": "U.S.-mediated talks on ending Russia-Ukraine war begin in Abu Dhabi",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-10T10:58:18.000Z"
+        },
+        {
+          "url": "https://www.thehindu.com/news/international/us-brokered-talks-are-set-to-start-in-abu-dhabi-to-discuss-ukraine-russia-peace-deal/article71685183.ece",
+          "title": "U.S.-mediated talks on ending war between Russia, Ukraine begin in Abu Dhabi",
+          "outlet": "The Hindu",
+          "publishedAt": "2026-11-10T10:05:16.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/10/nx-s1-6034616/kushner-and-witkoff-renew-peace-talks-to-end-war-between-russia-and-ukraine",
+          "title": "Kushner and Witkoff renew peace talks to end war between Russia and Ukraine",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-10T09:38:34.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-10T12:01:14.000Z",
+      "id": "u-1794312074000-dgqj",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Bei einem russischen Drohnenangriff auf die Stadt Ladyschyn in der Westukraine kamen am 10. November zwei Menschen ums Leben, wie die Kyiv Post berichtet. Der Angriff beschädigte zivile Infrastruktur und Energieanlagen in der Region Winnyzja.",
+          "headline": "Russischer Drohnenangriff tötet zwei Menschen in Ladyschyn"
+        },
+        "en": {
+          "body": "Russian drones killed two people in the city of Ladyzhyn in western Ukraine on 10 November, according to The Kyiv Post. The attack damaged civilian infrastructure and energy facilities in the Vinnytsia region.",
+          "headline": "Russian drone attack kills two in Ladyzhyn"
+        },
+        "es": {
+          "body": "Drones rusos mataron a dos personas en la ciudad de Ladyzhyn, en el oeste de Ucrania, el 10 de noviembre, según The Kyiv Post. El ataque dañó infraestructura civil e instalaciones energéticas en la región de Vínnytsia.",
+          "headline": "Un ataque con drones rusos mata a dos personas en Ladyzhyn"
+        },
+        "fr": {
+          "body": "Des drones russes ont tué deux personnes dans la ville de Ladyjyn, dans l'ouest de l'Ukraine, le 10 novembre, selon le Kyiv Post. L'attaque a endommagé des infrastructures civiles et des installations énergétiques dans la région de Vinnytsia.",
+          "headline": "Une attaque de drones russes fait deux morts à Ladyjyn"
+        },
+        "it": {
+          "body": "I droni russi hanno ucciso due persone nella città di Ladyzhyn, nell'Ucraina occidentale, il 10 novembre, secondo il Kyiv Post. L'attacco ha danneggiato le infrastrutture civili e gli impianti energetici nella regione di Vinnytsia.",
+          "headline": "Attacco di droni russi uccide due persone a Ladyzhyn"
+        },
+        "ja": {
+          "body": "キーウ・ポスト紙によると、11月10日、ウクライナ西部の都市ラディジンでロシアのドローン攻撃により2人が死亡した。この攻撃により、ヴィーンヌィツャ州の民間インフラとエネルギー施設が損傷した。",
+          "headline": "ロシアのドローン攻撃、ラディジンの2人が死亡"
+        },
+        "ko": {
+          "body": "키이우 포스트에 따르면 11월 10일 우크라이나 서부 라디진시에서 러시아 드론 공격으로 2명이 사망했다. 이번 공격으로 빈니차 지역의 민간 기반 시설과 에너지 시설이 파손되었다.",
+          "headline": "러시아 드론 공격으로 라디진에서 2명 사망"
+        },
+        "pt": {
+          "body": "Drones russos mataram duas pessoas na cidade de Ladyzhyn, no oeste da Ucrânia, a 10 de novembro, segundo o The Kyiv Post. O ataque danificou infraestruturas civis e instalações energéticas na região de Vinnytsia.",
+          "headline": "Ataque de drones russos mata duas pessoas em Ladyzhyn"
+        },
+        "zh": {
+          "body": "据《基辅邮报》报道，11月10日，俄罗斯无人机在乌克兰西部的拉德任市造成两人死亡。此次袭击破坏了文尼察地区的民用基础设施和能源设施。",
+          "headline": "俄罗斯无人机袭击导致拉德任市两人死亡"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.kyivpost.com/post/89668",
+          "title": "Russian Drone Attack Kills 2 in Western Ukraine’s Ladyzhyn",
+          "outlet": "The Kyiv Post",
           "publishedAt": "2026-11-10T10:55:41.000Z"
         },
         {
-          "outlet": "NZZ",
-          "title": "LIVE-TICKER - Krieg in der Ukraine: Zwei Tote bei russischem Angriff in der Zentralukraine +++ USA bekräftigen Sicherheitsgarantien",
           "url": "https://www.nzz.ch/international/krieg-in-der-ukraine-die-neusten-entwicklungen-im-liveticker-ld.10021245",
+          "title": "LIVE-TICKER - Krieg in der Ukraine: Zwei Tote bei russischem Angriff in der Zentralukraine +++ USA bekräftigen Sicherheitsgarantien",
+          "outlet": "NZZ",
           "publishedAt": "2026-11-10T12:01:14.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-10T14:44:38.000Z",
@@ -392,13 +566,53 @@
     "https://www.euronews.com/2026/11/10/trump-says-iran-war-effectively-over-as-tehran-denies-planned-talks",
     "https://www.lemonde.fr/en/international/article/2026/11/10/vladimir-medinsky-the-kremlin-negotiator-obsessed-with-incorporating-ukraine-into-russia_6776829_4.html",
     "https://www.npr.org/2026/11/10/nx-s1-6034616/kushner-and-witkoff-renew-peace-talks-to-end-war-between-russia-and-ukraine",
-    "https://www.kyivpost.com/post/89649"
+    "https://www.kyivpost.com/post/89649",
+    "https://www.jpost.com/middle-east/article-914494",
+    "https://www.kyivpost.com/post/89721",
+    "https://www.welt.de/politik/ausland/video6af358cf42c2bfde5b9934ce/us-diplomatie-das-ist-im-wesentlichen-privatinteresse.html",
+    "https://www.euronews.com/2026/11/10/costa-seeks-to-reassure-merz-after-eu-budget-ultimatum",
+    "https://www.srf.ch/news/international/ukraine/hackerangriff-in-russland-sind-im-ukraine-krieg-eine-halbe-million-russen-gefallen",
+    "https://www.zeit.de/politik/ausland/2026-11/tschernobyl-schutzhuelle-atomruine-reparatur-drohnenangriff",
+    "https://www.politico.eu/podcast/playbook-paris-podcast/ukraine-melenchon-embarrasse/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.straitstimes.com/world/europe/spains-election-contender-pp-pledges-tighter-borders-slower-climate-goals",
+    "https://thehill.com/homenews/administration/6211073-oreilly-blasts-mullin-immigration/",
+    "https://www.axios.com/2026/11/10/hegseth-impeachment-iran-jd-vance",
+    "https://www.marketwatch.com/story/why-stocks-are-falling-and-10-year-yields-are-climbing-back-near-5-after-tuesdays-inflation-report-389b8392?mod=mw_rss_topstories",
+    "https://www.jpost.com/middle-east/iran-news/article-914484",
+    "https://www.straitstimes.com/world/europe/ukraine-urges-united-states-to-speed-up-interceptor-deliveries-as-russia-targets-power-grid",
+    "https://www.spiegel.de/ausland/ukraine-friedensgespraeche-in-abu-dhabi-bisher-glaubt-nur-donald-trump-an-den-grossen-deal-zwischen-russland-ukraine-und-europa-a-904ecc1a-9c94-493a-9f1f-5ea1a9bbdca3#ref=rss",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcDg4YnlleDFlcjZKTmlsQmRrVS02T25XRUVvMUpVVWdoUnptcG56a1hPSjlYNU43c21GYVhYVGZQZUtlVnU4MGRGSDFvejBiMFZ1cTJxM3hFUUJRRi12elQ0Y3hoOEtwcF9iV0xuZW1ZWTdoVG82b01FbXZOOU9LQlVXYmlIcjFzQmJsNFhiQWwtejVVeDVHeXdJSFZQc2c5QS1CNkVDSnlsaTk0Z3UycTA0aU4?oc=5",
+    "https://www.faz.net/aktuell/politik/ausland/friedensgespraeche-in-abu-dhabi-putin-muss-sich-bewegen-201669660.html",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZ2ZpbkdNTFk2WGVZUC1CcFg1VDNNSDEtZDVKN0lYdnY0ZHEyb01RT3puTmpOek0ydjJ0TEhhMUpLRmlISkVQZThmcDRJd3p0M0xXd0x6NlpYNHRma1JIOWlIRzF1QW56OEptRWRiandnWkctUHU5ME5ZVzhjUkh3UWJVcGdyVm9LbWdIQ0xBdkcwRm9KS3pjcjdkbWhRWlRySmlRaHN5MGxjdw?oc=5",
+    "https://www.straitstimes.com/world/middle-east/irans-top-security-official-says-no-talks-underway-with-us",
+    "https://www.thehindu.com/news/international/israeli-forces-shoot-dead-14-year-old-in-west-bank-palestinian-officials/article71687248.ece",
+    "https://www.theguardian.com/world/2026/nov/10/friedrich-merz-accused-blackmail-ukraine-aid-eu-budget",
+    "https://thehill.com/homenews/house/6210923-bacon-opposes-hegseth-impeachment/",
+    "https://www.kyivpost.com/post/89712",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVkU4V2o1U3lxN0F5ZldsYlpvQW5QbTF1ODZ1U1M5LTZtOC0tT1JWcmNpakdKa0gtMzJscktJNGFoU0l3UWZvdm1odWptUVBYV3YtZVE2OVJhRFZtVjJLeVhNOUYzR3BsWHZCVmkwTGg3bzdpNkMxNHY5Nk1wQW5GaFVKMHpwMmxBd0pZZnJlR3ZGMXF5Z01XVg?oc=5",
+    "https://www.kyivpost.com/post/89711",
+    "https://www.euronews.com/2026/11/10/italian-government-debates-aid-to-kyiv-while-abu-dhabi-holds-talks-on-ukraines-future",
+    "https://www.kyivpost.com/post/89710",
+    "https://www.lemonde.fr/en/international/article/2026/11/10/rubio-hails-very-productive-russia-ukraine-talks-wants-europe-at-the-table_6777026_4.html",
+    "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-kiew-und-moskau-vereinbaren-offenbar-gefangenenaustausch-faz-110683325.html",
+    "https://www.straitstimes.com/world/europe/swedish-pm-kristersson-given-another-week-to-try-to-form-new-government",
+    "https://www.tagesanzeiger.ch/10-november-2026-das-wichtigste-des-tages-610052340345",
+    "https://www.dw.com/en/iran-denies-role-in-fridge-hack-france-summons-ambassador/a-79910206?maca=en-rss-en-all-1573-rdf",
+    "https://www.kyivpost.com/post/89706",
+    "https://www.faz.net/aktuell/politik/ukraine/gespraeche-in-abu-dhabi-die-europaeer-sitzen-nicht-am-tisch-201668806.html",
+    "https://www.scmp.com/news/world/africa/article/3373991/over-3000-already-dead-cholera-year-says-who",
+    "https://www.theguardian.com/world/2026/nov/10/lewis-hamilton-egypt-rafah-crossing-gaza-aid-facilities",
+    "https://www.tagesanzeiger.ch/abu-dhabi-so-laufen-die-ukraine-gespraeche-618694829395",
+    "https://www.lemonde.fr/culture/article/2026/11/10/izolyatsia-l-histoire-de-l-ukraine-a-travers-une-usine-sovietique-devenue-centre-d-art-puis-de-torture_6808863_3246.html",
+    "https://www.bbc.co.uk/news/articles/cw4g1g4ll5m1o?at_medium=RSS&at_campaign=rss",
+    "https://www.kyivpost.com/post/89703",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxNQ2xfc2wxcHF1YjFKWmhuNkY4QUtkNlRyZDYxUmo3WkJwY2xaUGRzeEZoRl95MXBZZHNXeHZHNnY4ZURxRV92c3NLTVl0aTM2ZDlSQk5ST2hqLUkyNTBBcy1kd1VTdEVaa3ZlZ2pMVVBXLVBtdDBTVlBURUhGelAzSjZ2UzNlb2FjdXdESXBuamRJeDFvTlJiVFV5bzhhUlpOUWdRbWt3?oc=5"
   ],
   "startedAt": "2026-11-10T14:58:06.833Z",
-  "updatedAt": "2026-11-10T15:25:22.401Z",
+  "updatedAt": "2026-11-10T18:58:49.202Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "eu-budget-and-ukraine-aid-dispute",
-  "sourceCount": 9,
+  "sourceCount": 10,
   "seenHeadlines": []
 }
