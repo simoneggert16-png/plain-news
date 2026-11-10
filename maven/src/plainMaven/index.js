@@ -545,9 +545,11 @@ export async function initPlainMavenExperience({
 
     // Count co-located dispatches per place so only ONE clean callout renders per city
     const placeCounts = new Map();
+    let selectedPlaceKey = null;
     for (const story of state.stories) {
       const pKey = story.canonicalPlace || story.placeName || story.country || story.slug;
       placeCounts.set(pKey, (placeCounts.get(pKey) || 0) + 1);
+      if (story.slug === state.selectedSlug) selectedPlaceKey = pKey;
     }
     const labeledPlaces = new Set();
 
@@ -559,15 +561,15 @@ export async function initPlainMavenExperience({
 
       const pKey = story.canonicalPlace || story.placeName || story.country || story.slug;
       const totalAtPlace = placeCounts.get(pKey) || 1;
-      const isFirstLabelAtPlace = !labeledPlaces.has(pKey);
+      const isFirstLabelAtPlace = !labeledPlaces.has(pKey) && pKey !== selectedPlaceKey;
       const showCallout =
         selected ||
         (isFirstLabelAtPlace && (variant === 'live' || story.importance >= 4));
-      if (showCallout && !selected) labeledPlaces.add(pKey);
+      if (showCallout) labeledPlaces.add(pKey);
 
       const shortHeadline =
         story.title.length > 38 ? `${story.title.slice(0, 36)}…` : story.title;
-      const placeBadge = `${(story.placeName || story.country || '').toUpperCase()}${totalAtPlace > 1 && !selected ? ` (+${totalAtPlace - 1})` : ''}`;
+      const placeBadge = `${(story.placeName || story.country || '').toUpperCase()}${totalAtPlace > 1 ? ` (+${totalAtPlace - 1})` : ''}`;
       const labelText = `${placeBadge}\n${shortHeadline}`;
 
       const entity = newsDataSource.entities.add({

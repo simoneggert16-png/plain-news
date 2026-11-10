@@ -139,35 +139,73 @@ html[data-maven-theme='paper'] {
 }
 
 /* When PLAIN. Dispatches rail is open, push native GEV left-panel-stack & rail right of it so both can coexist */
-body.pm-rail-open #left-panel-stack,
+.ui-rail {
+  border: 1px solid var(--pm-border) !important;
+  background: var(--pm-surface) !important;
+  border-radius: 0 !important;
+}
+
+.ui-rail__item {
+  border-radius: 0 !important;
+}
+
+body.pm-rail-open .ui-rail--left,
 body.pm-rail-open #left-panel-rail,
 body.pm-rail-open .panel-rail-left {
   left: 368px !important;
+  inset-inline-start: 368px !important;
+  top: 54px !important;
+}
+
+body.pm-rail-open #left-panel-stack {
+  left: 414px !important;
+  inset-inline-start: 414px !important;
   top: 54px !important;
   max-height: calc(100vh - 130px) !important;
 }
 
-body:not(.pm-rail-open) #left-panel-stack {
-  left: 56px !important;
-  top: 54px !important;
+body.pm-rail-open #intel-hud .hud-left-edge,
+body.pm-rail-open #intel-hud .hud-top-left {
+  display: none !important;
 }
 
+body:not(.pm-rail-open) .ui-rail--left,
 body:not(.pm-rail-open) #left-panel-rail,
 body:not(.pm-rail-open) .panel-rail-left {
-  left: 10px !important;
+  left: 12px !important;
+  inset-inline-start: 12px !important;
   top: 90px !important;
 }
 
-/* Keep right GEV rail clear of the open Target Dossier */
+body:not(.pm-rail-open) #left-panel-stack {
+  left: 58px !important;
+  inset-inline-start: 58px !important;
+  top: 54px !important;
+}
+
+/* Keep right GEV rail & context panels clear of the open Target Dossier */
+.ui-rail--right,
 #right-panel-rail,
 .panel-rail-right {
   top: 54px !important;
 }
 
+body.pm-dossier-open #style-indicator {
+  display: none !important;
+}
+
+body.pm-dossier-open .ui-rail--right,
 body.pm-dossier-open #right-panel-rail,
 body.pm-dossier-open .panel-rail-right {
-  top: auto !important;
-  bottom: 72px !important;
+  top: 54px !important;
+  right: 404px !important;
+  inset-inline-end: 404px !important;
+}
+
+body.pm-dossier-open #right-context-rail {
+  top: 54px !important;
+  right: 450px !important;
+  inset-inline-end: 450px !important;
 }
 
 /* Hide unused OpenAI Realtime voice mic box & re-tone cyan intel HUD to PLAIN. monochrome/amber */
