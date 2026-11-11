@@ -1,9 +1,209 @@
 {
+  "meta": {
+    "outlets": [
+      "New York Times",
+      "The Kyiv Post",
+      "MarketWatch",
+      "Politico",
+      "Yahoo Finance",
+      "Reuters"
+    ],
+    "createdBy": "bots/live.mjs",
+    "statsModel": "nvidia/nemotron-3.5-bolt-e4b"
+  },
   "slug": "federal-reserve-interest-rate-outlook",
-  "status": "live",
-  "category": "business",
-  "importance": 5,
+  "stats": {
+    "label": "Credit Card & HELOC Data",
+    "note": "Statistics on credit card balances and HELOC increases from the Federal Reserve Bank of New York",
+    "unit": "",
+    "max": null,
+    "asOf": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2026-11-11T00:21:30.167Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Homeowners tap equity as HELOC balances post biggest jump since 2005: New York Fed report",
+      "url": "https://www.cnbc.com/2026/11/10/heloc-balances-new-york-fed.html",
+      "publishedAt": "2026-11-10T21:37:43.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "credit-card-balance-increase",
+        "label": "Credit card balance increase",
+        "value": 22,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Zunahme des Kreditkarten-Saldes"
+          },
+          "fr": {
+            "label": "Augmentation du solde des cartes de crédit"
+          },
+          "es": {
+            "label": "Aumento del saldo de tarjetas de crédito"
+          },
+          "it": {
+            "label": "Aumento del saldo delle carte di credito"
+          },
+          "pt": {
+            "label": "Aumento do saldo de cartão de crédito"
+          },
+          "zh": {
+            "label": "信用卡余额增长"
+          },
+          "ja": {
+            "label": "クレジットカード残高の増加"
+          },
+          "ko": {
+            "label": "신용카드 잔액 증가"
+          }
+        }
+      },
+      {
+        "key": "credit-card-balance-total",
+        "label": "Credit card balance total",
+        "value": 1.29,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Gesamtkreditkarten-Saldo"
+          },
+          "fr": {
+            "label": "Total des soldes des cartes de crédit"
+          },
+          "es": {
+            "label": "Saldo total de tarjetas de crédito"
+          },
+          "it": {
+            "label": "Totale del saldo delle carte di credito"
+          },
+          "pt": {
+            "label": "Total do saldo de cartão de crédito"
+          },
+          "zh": {
+            "label": "信用卡余额总额"
+          },
+          "ja": {
+            "label": "クレジットカード残高合計"
+          },
+          "ko": {
+            "label": "신용카드 잔액 총계"
+          }
+        }
+      },
+      {
+        "key": "heloc-quarterly-increase-count",
+        "label": "HELOC quarterly increase count",
+        "value": 18,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Anzahl der vierteljährlichen HELOC-Zunahmen"
+          },
+          "fr": {
+            "label": "Nombre d'augmentations trimestrielles des HELOC"
+          },
+          "es": {
+            "label": "Recuento de aumentos trimestrales de HELOC"
+          },
+          "it": {
+            "label": "Conteggio degli aumenti trimestrali HELOC"
+          },
+          "pt": {
+            "label": "Contagem de aumento trimestral de HELOC"
+          },
+          "zh": {
+            "label": "房屋净值信用额度季度增长计数"
+          },
+          "ja": {
+            "label": "HELOCの四半期ごとの増加件数"
+          },
+          "ko": {
+            "label": "HELOC 분기별 증가 건수"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Kreditkarten- und HELOC-Daten",
+        "note": "Statistiken zu Kreditkarten-Salden und HELOC-Zunahmen von der Federal Reserve Bank of New York"
+      },
+      "fr": {
+        "label": "Données sur les cartes de crédit et les HELOC",
+        "note": "Statistiques sur les soldes de cartes de crédit et les augmentations de HELOC de la Federal Reserve Bank de New York"
+      },
+      "es": {
+        "label": "Datos de tarjetas de crédito y HELOC",
+        "note": "Estadísticas sobre saldos de tarjetas de crédito y aumentos de HELOC del Banco de la Reserva Federal de Nueva York"
+      },
+      "it": {
+        "label": "Dati su carte di credito e HELOC",
+        "note": "Statistiche sui saldi delle carte di credito e sugli aumenti HELOC della Federal Reserve Bank of New York"
+      },
+      "pt": {
+        "label": "Dados de Cartão de Crédito e HELOC",
+        "note": "Estatísticas sobre saldos de cartões de crédito e aumentos de HELOC do Federal Reserve Bank de Nova Iorque"
+      },
+      "zh": {
+        "label": "信用卡和房屋净值信用额度数据",
+        "note": "纽约联邦储备银行关于信用卡余额和房屋净值信用额度增长的统计数据"
+      },
+      "ja": {
+        "label": "クレジットカードおよびHELOCデータ",
+        "note": "ニューヨーク連邦準備銀行によるクレジットカード残高およびHELOC増加の統計"
+      },
+      "ko": {
+        "label": "신용카드 및 HELOC 데이터",
+        "note": "뉴욕 연방준비은행의 신용카드 잔액 및 HELOC 증가 통계"
+      }
+    }
+  },
   "topic": "Federal Reserve Interest Rate Outlook",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Märkte reagieren auf anhaltende Inflationsdaten, da Analysten eine letzte Zinserhöhung im Dezember erwarten.",
+      "title": "Zinssicht der Federal Reserve"
+    },
+    "en": {
+      "dek": "Markets react to persistent inflation data as analysts anticipate a final interest rate hike in December.",
+      "title": "Federal Reserve Interest Rate Outlook"
+    },
+    "es": {
+      "dek": "Los mercados reaccionan a datos persistentes de inflación mientras los analistas anticipan una última subida de tipos en diciembre.",
+      "title": "Perspectiva de tipos de interés de la Reserva Federal"
+    },
+    "fr": {
+      "dek": "Les marchés réagissent aux données d'inflation persistantes tandis que les analystes anticipent une dernière hausse des taux d'intérêt en décembre.",
+      "title": "Perspectives sur les taux d'intérêt de la Réserve fédérale"
+    },
+    "it": {
+      "dek": "I mercati reagiscono ai dati persistenti sull'inflazione mentre gli analisti anticipano un ultimo aumento dei tassi di interesse a dicembre.",
+      "title": "Prospettive sui Tassi di Interesse della Federal Reserve"
+    },
+    "ja": {
+      "dek": "市場は根強いインフレデータに反応しており、アナリストは12月に最終的な利上げを予測している。",
+      "title": "連邦準備制度理事会（FRB）の金利見通し"
+    },
+    "ko": {
+      "dek": "분석가들이 12월에 마지막 금리 인상을 예상함에 따라 시장은 지속적인 인플레이션 데이터에 반응하고 있다.",
+      "title": "연방준비제도 이자율 전망"
+    },
+    "pt": {
+      "dek": "Mercados reagem a dados persistentes de inflação enquanto analistas antecipam um último aumento da taxa de juro em dezembro.",
+      "title": "Perspetivas da Taxa de Juro da Reserva Federal"
+    },
+    "zh": {
+      "dek": "市场对持续的通胀数据做出反应，分析师预计12月将进行最后一次加息。",
+      "title": "美联储利率展望"
+    }
+  },
+  "updates": [],
+  "category": "business",
   "keywords": [
     "federal reserve",
     "inflation",
@@ -14,63 +214,31 @@
     "consumer price index",
     "fed"
   ],
+  "seenUrls": [],
   "startedAt": "2026-11-10T17:28:44.711Z",
-  "endedAt": null,
   "updatedAt": "2026-11-10T17:28:44.711Z",
+  "importance": 5,
+  "wantsStats": true,
   "articleSlug": null,
   "sourceCount": 6,
-  "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Federal Reserve Interest Rate Outlook",
-      "dek": "Markets react to persistent inflation data as analysts anticipate a final interest rate hike in December."
-    },
-    "de": {
-      "title": "Zinssicht der Federal Reserve",
-      "dek": "Märkte reagieren auf anhaltende Inflationsdaten, da Analysten eine letzte Zinserhöhung im Dezember erwarten."
-    },
-    "es": {
-      "title": "Perspectiva de tipos de interés de la Reserva Federal",
-      "dek": "Los mercados reaccionan a datos persistentes de inflación mientras los analistas anticipan una última subida de tipos en diciembre."
-    },
-    "fr": {
-      "title": "Perspectives sur les taux d'intérêt de la Réserve fédérale",
-      "dek": "Les marchés réagissent aux données d'inflation persistantes tandis que les analystes anticipent une dernière hausse des taux d'intérêt en décembre."
-    },
-    "zh": {
-      "title": "美联储利率展望",
-      "dek": "市场对持续的通胀数据做出反应，分析师预计12月将进行最后一次加息。"
-    },
-    "it": {
-      "title": "Prospettive sui Tassi di Interesse della Federal Reserve",
-      "dek": "I mercati reagiscono ai dati persistenti sull'inflazione mentre gli analisti anticipano un ultimo aumento dei tassi di interesse a dicembre."
-    },
-    "pt": {
-      "title": "Perspetivas da Taxa de Juro da Reserva Federal",
-      "dek": "Mercados reagem a dados persistentes de inflação enquanto analistas antecipam um último aumento da taxa de juro em dezembro."
-    },
-    "ko": {
-      "title": "연방준비제도 이자율 전망",
-      "dek": "분석가들이 12월에 마지막 금리 인상을 예상함에 따라 시장은 지속적인 인플레이션 데이터에 반응하고 있다."
-    },
-    "ja": {
-      "title": "連邦準備制度理事会（FRB）の金利見通し",
-      "dek": "市場は根強いインフレデータに反応しており、アナリストは12月に最終的な利上げを予測している。"
+  "statsHistory": [
+    {
+      "at": "2024-01-01T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "credit-card-balance-increase",
+          "value": 22
+        },
+        {
+          "key": "credit-card-balance-total",
+          "value": 1.29
+        },
+        {
+          "key": "heloc-quarterly-increase-count",
+          "value": 18
+        }
+      ]
     }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "New York Times",
-      "The Kyiv Post",
-      "MarketWatch",
-      "Politico",
-      "Yahoo Finance",
-      "Reuters"
-    ]
-  }
+  ],
+  "seenHeadlines": []
 }
