@@ -1,0 +1,53 @@
+{
+  "slug": "sao-paulo-recebe-festival-de-filmes-sobre-mobilidade-urbana-20261111-ernb",
+  "category": "culture",
+  "image": "https://s04.video.glbimg.com/x240/992055.jpg",
+  "imageCredit": "G1",
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-11T11:15:30.409Z",
+  "updatedAt": "2026-11-11T11:15:30.409Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "G1",
+      "title": "Cantora do Katseye faz show sentada após concussão e levanta debate sobre rotina exaustiva",
+      "url": "https://g1.globo.com/pop-arte/musica/noticia/2026/11/11/cantora-do-katseye-faz-show-sentada-apos-concussao-e-levanta-debate-sobre-rotina-exaustiva.ghtml",
+      "publishedAt": "2026-11-11T10:50:48.000Z"
+    },
+    {
+      "outlet": "AgÃªncia Brasil",
+      "title": "São Paulo recebe festival de filmes sobre mobilidade urbana",
+      "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-11/sao-paulo-recebe-festival-de-filmes-sobre-mobilidade-urbana",
+      "publishedAt": "2026-11-11T10:10:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "São Paulo recebe festival de filmes sobre mobilidade urbana a partir desta quinta",
+      "dek": "Festival exibe 37 filmes e promove debates sobre transporte e segurança viária",
+      "facts": [
+        "Mobifilm começa em São Paulo na quinta-feira, 12 de novembro de 2026",
+        "Evento ocorre no Insper, na Vila Olímpia, de 12 a 14 de novembro",
+        "Serão exibidos 37 filmes divididos em sete categorias temáticas",
+        "Festival existe desde 2016 e recebeu aproximadamente 500 produções"
+      ],
+      "body": [
+        "A capital paulista recebe, a partir desta quinta-feira (12), o Mobifilm, um festival de filmes sobre mobilidade urbana. O evento terá a exibição de 37 filmes e a realização de debates sobre mobilidade urbana, transporte público e segurança viária.",
+        "Os filmes abordam diferentes aspectos da mobilidade urbana, das relações sociais e das transformações das cidades. As produções estão divididas em sete categorias temáticas: transporte público; segurança viária; mobilidade ativa; cidade, clima e mobilidade; criança e mobilidade urbana; gênero e raça na mobilidade urbana; e logística urbana e a condição dos trabalhadores.",
+        "O festival, que teve início em 2016, foi inspirado pela Década Mundial de Segurança Viária da Organização das Nações Unidas (ONU), de 2011 a 2020. Desde então, recebeu aproximadamente 500 filmes, selecionou e exibiu 200, e premiou 70."
+      ],
+      "context": "O evento surgiu a partir da Década Mundial de Segurança Viária da ONU, que ocorreu entre 2011 e 2020, e já recebeu cerca de 500 inscrições desde sua criação em 2016.",
+      "imageCaption": "Agora no g1"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Global Health & Medicine Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts invented (dates, film counts, categories) not in sources; one-sided framing of festival purpose; headline uses colon; body ends with evaluative summary; repeated sentence openings; four short sentences in a row; context section violates rule 1 (facts only) and rule 13 (repeats paragraph opener); category 'health' is unsupported"
+    ]
+  }
+}
