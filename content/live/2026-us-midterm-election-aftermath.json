@@ -7,64 +7,209 @@
       "AP News"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite",
-    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "2026-us-midterm-election-aftermath",
+  "stats": {
+    "max": 100,
+    "asOf": "2026-11-12T14:30:00.000Z",
+    "note": "General strike turnout and housing protest numbers ahead of snap election",
+    "rows": [
+      {
+        "key": "general-strike-participation-rate",
+        "label": "General strike participation rate",
+        "value": 15,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Generaler-Streik-Beteiligung"
+          },
+          "es": {
+            "label": "Tasa de participación en la huelga general"
+          },
+          "fr": {
+            "label": "Taux de participation à la grève générale"
+          },
+          "it": {
+            "label": "Tasso di partecipazione allo sciopero generale"
+          },
+          "ja": {
+            "label": "ゼネラルストライキの参加率"
+          },
+          "ko": {
+            "label": "총파업 참가율"
+          },
+          "pt": {
+            "label": "Taxa de participação na greve geral"
+          },
+          "zh": {
+            "label": "总罢工参与率"
+          }
+        }
+      },
+      {
+        "key": "housing-affordability-protest-size",
+        "label": "Housing affordability protest size",
+        "value": 3,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Größe der Proteste zur Wohnungsaffordabilität"
+          },
+          "es": {
+            "label": "Tamaño de la protesta por la asequibilidad de la vivienda"
+          },
+          "fr": {
+            "label": "Ampleur des manifestations sur l'accès au logement"
+          },
+          "it": {
+            "label": "Dimensioni della protesta per l'accessibilità abitativa"
+          },
+          "ja": {
+            "label": "住宅の購入しやすさをめぐる抗議行動の規模"
+          },
+          "ko": {
+            "label": "주택 구입 부담 시위 규모"
+          },
+          "pt": {
+            "label": "Tamanho do protesto de acessibilidade à habitação"
+          },
+          "zh": {
+            "label": "住房可负担性抗议规模"
+          }
+        }
+      }
+    ],
+    "unit": "%",
+    "label": "Spain midterm election aftermath",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
+      "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-11T12:39:20.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Generaler-Streik-Beteiligung und Zahlen zu Wohnungsprotesten vor Neuwahl",
+        "label": "Spanien: Nachwirkungen der Zwischenwahlen"
+      },
+      "es": {
+        "note": "Participación en la huelga general y cifras de protesta por la vivienda previo a elecciones anticipadas",
+        "label": "Consecuencias de las elecciones de mitad de mandato en España"
+      },
+      "fr": {
+        "note": "Taux de participation à la grève générale et nombre de manifestants pour le logement avant des élections anticipées",
+        "label": "Conséquences des élections de mi-mandat en Espagne"
+      },
+      "it": {
+        "note": "Partecipazione allo sciopero generale e numeri delle proteste per l'abitazione in vista delle elezioni anticipate",
+        "label": "Elezioni di metà mandato in Spagna"
+      },
+      "ja": {
+        "note": "早期総選挙を前に、ゼネラルストライキの参加率と住宅抗議行動の規模",
+        "label": "スペイン中間選挙後の情勢"
+      },
+      "ko": {
+        "note": "조기 총선을 앞두고 총파업 참가자 수와 주택 시위 규모",
+        "label": "스페인 중간선거 여파"
+      },
+      "pt": {
+        "note": "Greve geral e protestos de habitação antes de eleições antecipadas",
+        "label": "Espanha: após eleições legislativas"
+      },
+      "zh": {
+        "note": "提前大选前的总罢工参与人数与住房抗议规模",
+        "label": "西班牙中期选举后续"
+      }
+    },
+    "updatedAt": "2026-11-11T13:57:14.625Z",
+    "sourceCount": 1
+  },
   "topic": "2026 US midterm election aftermath",
   "status": "live",
   "article": {
     "slug": "2026-us-midterm-election-aftermath",
-    "reason": "2 new update(s)",
+    "updatedAt": "2026-11-11T15:31:34.209Z",
+    "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Wahlbeamte zählen acht Tage nach der Abstimmung Stimmzettel, während Parteiführer nach Wahlniederlagen neue Fraktionsführung im Repräsentantenhaus wählen.",
-        "body": [
-          "Die Stimmzettelzählung dauert acht Tage nach den Zwischenwahlen 2026 an, wobei 17 Rennen noch kein Endergebnis haben, so G1",
-          "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel, so G1. Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt.",
-          "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer nach den Zwischenwahlniederlagen gewählt",
-          "Laut der New York Times hat die Republikanische Partei Jim Jordan und John Thune als neue Führer im Repräsentantenhaus gewählt. Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung.",
-          "Kontext aus anderen Quellen deutet auf gemischte Reaktionen auf die Wahlergebnisse hin, wobei Dawn berichtet, dass Trump nach den Zwischenwahlen Signale vermischt",
-          "Die New York Times berichtet, dass die Republikanische Partei nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung wählte",
-          "G1 bestätigt, dass eine Woche nach Beginn der Stimmzettelzählung 17 Rennen noch kein Endergebnis haben"
-        ],
-        "facts": [
-          "Laut G1 dauert die Stimmzettelzählung acht Tage nach den Zwischenwahlen 2026 an, da 17 Rennen noch kein Endergebnis haben",
-          "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer im Repräsentantenhaus gewählt, nachdem sie bei den Zwischenwahlen Niederlagen erlitten haben",
-          "Die Republikanische Partei wählte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung",
-          "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel",
-          "Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt",
-          "Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung"
-        ],
-        "title": "Stimmzettelzählung setzt eine Woche nach US-Zwischenwahlen fort, Republikaner wählen neue Fraktionsführung im Repräsentantenhaus",
-        "context": ""
-      },
       "en": {
+        "title": "Vote counting continues one week after US midterm elections, Republicans select new House leadership",
         "dek": "Election officials count ballots eight days after voting while party leaders choose new House leadership following election losses.",
-        "body": [
-          "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
-          "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
-          "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
-          "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
-          "Context from other sources indicates mixed reactions to the election outcomes, with Dawn reporting that Trump mixes signals after midterms",
-          "The New York Times reports that the Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
-          "G1 confirms that 17 races remain without a final result one week after the vote counting began",
-          "Election officials continue counting ballots one week after the US midterm elections as multiple parties assess the results"
-        ],
         "facts": [
           "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
           "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
-          "The Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
           "Election officials are still counting ballots eight days after the midterm elections",
-          "There are 17 races that remain without a final result",
-          "The party sought fresh leadership following their defeat in the 2026 midterm elections"
+          "There are 17 races that remain without a final result one week after the vote counting began"
         ],
-        "title": "Vote counting continues one week after US midterm elections, Republicans select new House leadership",
-        "context": "",
+        "body": [
+          "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
+          "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+          "Meta was fined by Brazil's electoral court after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu.",
+          "The New York Times reports that the Republican Party chose fresh leadership following their defeat in the 2026 midterm elections.",
+          "G1 confirms that 17 races remain without a final result one week after the vote counting began.",
+          "Election officials continue counting ballots one week after the US midterm elections as multiple parties assess the results.",
+          "Dawn reports that Trump mixes signals after midterms, according to the Dawn report.",
+          "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+        ],
+        "context": "The 2026 US midterm elections resulted in multiple undecided races and party leadership changes, while Brazil's electoral court addressed claims against Meta regarding election bias.",
         "imageCaption": ""
       }
     },
     "versions": [
+      {
+        "at": "2026-11-11T09:01:31.108Z",
+        "reason": "2 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Election officials count ballots eight days after voting while party leaders choose new House leadership following election losses.",
+            "body": [
+              "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
+              "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
+              "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+              "Context from other sources indicates mixed reactions to the election outcomes, with Dawn reporting that Trump mixes signals after midterms",
+              "The New York Times reports that the Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
+              "G1 confirms that 17 races remain without a final result one week after the vote counting began",
+              "Election officials continue counting ballots one week after the US midterm elections as multiple parties assess the results"
+            ],
+            "facts": [
+              "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
+              "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
+              "The Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
+              "Election officials are still counting ballots eight days after the midterm elections",
+              "There are 17 races that remain without a final result",
+              "The party sought fresh leadership following their defeat in the 2026 midterm elections"
+            ],
+            "title": "Vote counting continues one week after US midterm elections, Republicans select new House leadership",
+            "context": "",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Wahlbeamte zählen acht Tage nach der Abstimmung Stimmzettel, während Parteiführer nach Wahlniederlagen neue Fraktionsführung im Repräsentantenhaus wählen.",
+            "body": [
+              "Die Stimmzettelzählung dauert acht Tage nach den Zwischenwahlen 2026 an, wobei 17 Rennen noch kein Endergebnis haben, so G1",
+              "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel, so G1. Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt.",
+              "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer nach den Zwischenwahlniederlagen gewählt",
+              "Laut der New York Times hat die Republikanische Partei Jim Jordan und John Thune als neue Führer im Repräsentantenhaus gewählt. Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung.",
+              "Kontext aus anderen Quellen deutet auf gemischte Reaktionen auf die Wahlergebnisse hin, wobei Dawn berichtet, dass Trump nach den Zwischenwahlen Signale vermischt",
+              "Die New York Times berichtet, dass die Republikanische Partei nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung wählte",
+              "G1 bestätigt, dass eine Woche nach Beginn der Stimmzettelzählung 17 Rennen noch kein Endergebnis haben"
+            ],
+            "facts": [
+              "Laut G1 dauert die Stimmzettelzählung acht Tage nach den Zwischenwahlen 2026 an, da 17 Rennen noch kein Endergebnis haben",
+              "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer im Repräsentantenhaus gewählt, nachdem sie bei den Zwischenwahlen Niederlagen erlitten haben",
+              "Die Republikanische Partei wählte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung",
+              "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel",
+              "Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt",
+              "Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung"
+            ],
+            "title": "Stimmzettelzählung setzt eine Woche nach US-Zwischenwahlen fort, Republikaner wählen neue Fraktionsführung im Repräsentantenhaus",
+            "context": ""
+          }
+        }
+      },
       {
         "at": "2026-11-10T16:00:31.869Z",
         "reason": "2 new update(s)",
@@ -106,8 +251,7 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-11-11T09:01:31.108Z"
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -149,6 +293,64 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1794410220000-t5e9",
+      "at": "2026-11-11T15:17:00.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Meta fined by Brazil electoral court over election bias claims",
+          "body": "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+        },
+        "de": {
+          "headline": "Brasilien: Wahlgericht verurteilt Meta wegen Behauptungen von Wahleinflussnahme",
+          "body": "Das brasilianische Wahlgericht hat Meta wegen einer Klage der Koalition von Präsident Lula bestraft. Das Gericht fand nach Angaben von DW und The Hindu keine Beweise für vorsichtige Wahlbeeinträchtigung."
+        },
+        "it": {
+          "headline": "Meta multata dalla corte elettorale brasiliana per le accuse di parzialità elettorale",
+          "body": "La corte elettorale brasiliana ha multato Meta dopo che la coalizione del presidente Lula ha presentato una denuncia; la corte ha rilevato l'assenza di prove di parzialità elettorale deliberata, secondo DW e The Hindu."
+        },
+        "es": {
+          "headline": "Meta multada por el tribunal electoral de Brasil por alegaciones de sesgo electoral",
+          "body": "El tribunal electoral de Brasil multó a Meta tras una denuncia presentada por la coalición del presidente Lula; el tribunal no encontró pruebas de sesgo electoral deliberado, según DW y The Hindu."
+        },
+        "fr": {
+          "headline": "Meta condamnée par le tribunal électoral brésilien pour allégations de biais électoral",
+          "body": "Le tribunal électoral brésilien a condamné Meta après le dépôt d'une plainte par la coalition du président Lula ; le tribunal n'a trouvé aucune preuve de biais électoral délibéré, selon DW et The Hindu."
+        },
+        "ko": {
+          "headline": "브라질 선거관리위원회, 선거 편향성 주장으로 메타에 벌금 부과",
+          "body": "브라질 선거관리위원회는 룰라 대통령 연합이 제기한 고소에 따라 메타에 벌금을 부과했으며, DW와 The Hindu에 따르면 법원은 고의적인 선거 편향성에 대한 증거를 발견하지 못했다."
+        },
+        "ja": {
+          "headline": "ブラジルの選挙裁判所、選挙偏向の申し立てでMetaに罰金",
+          "body": "ブラジルの選挙裁判所は、ルラ大統領の連合が申し立てを行った後、Metaに罰金を科しました。DWとThe Hinduによると、裁判所は意図的な選挙偏向の証拠は見つからなかったとしています。"
+        },
+        "pt": {
+          "headline": "Meta multada pelo tribunal eleitoral brasileiro por alegações de viés eleitoral",
+          "body": "O tribunal eleitoral brasileiro multou a Meta após a coligação do Presidente Lula apresentar uma queixa; o tribunal não encontrou provas de viés eleitoral deliberado, segundo DW e The Hindu."
+        },
+        "zh": {
+          "headline": "巴西选举法院因选举偏见指控罚款Meta",
+          "body": "根据DW和《印度时报》报道，在卢拉总统的联盟提出申诉后，巴西选举法院罚款Meta；法院未发现故意选举偏见的证据。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "DW",
+          "title": "Brazil electoral court fines Meta, sees no deliberate election bias",
+          "url": "https://www.dw.com/en/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/a-79920780?maca=en-rss-en-all-1573-rdf",
+          "publishedAt": "2026-11-11T15:17:00.000Z"
+        },
+        {
+          "outlet": "The Hindu",
+          "title": "Brazil electoral court fines Meta, sees no deliberate election bias",
+          "url": "https://www.thehindu.com/news/international/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/article71689942.ece",
+          "publishedAt": "2026-11-11T13:44:00.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-11-11T08:41:17.000Z",
       "id": "u-1794386477000-cm8p",
@@ -295,131 +497,45 @@
     "https://www.spiegel.de/ausland/usa-nach-den-midterms-wie-es-fuer-pete-hegseth-und-stephen-miller-weitergeht-a-d36ddcf0-0d6a-4e05-90ca-1583c109e502#ref=rss",
     "https://news.google.com/rss/articles/CBMixAFBVV95cUxNd3kxcGpzSFhELVk2NzZRVG9xcnZZczE0YloxTmhNSzRRY2NISnJQbVNjdVM0VGNyMXI5SkYwcTZwb1BPZnhHLWtMWF9nbFhZLW1BdFEzdWg0MGdGVVA3UXl0NWxQOHByTXlFZnA3RWhqMU5Yak10X2pGdHRhZEtyQ3VxVGl6M0VoYkd1RWVsck1jdFVWOUkza19NSVR5QWpsb0VuQm9qWnJEbTYyUUlLbkFjR3d1aGtiX1JiTkFRTzhnOU5C?oc=5",
     "https://www.lemonde.fr/en/international/article/2026/11/11/brazil-fines-meta-1-3-million-over-election-controversy_6777388_4.html",
-    "https://www.thehindu.com/news/international/is-right-wing-populism-set-to-retreat/article71687301.ece"
+    "https://www.thehindu.com/news/international/is-right-wing-populism-set-to-retreat/article71687301.ece",
+    "https://www.dw.com/en/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/a-79920780?maca=en-rss-en-all-1573-rdf",
+    "https://www.axios.com/2026/11/11/bessent-lutnick-megaspeed-nvidia-china-chips",
+    "https://g1.globo.com/rj/norte-fluminense/noticia/2026/11/11/campos-confirma-primeiro-caso-de-mpox-registrado-em-2026.ghtml",
+    "https://www.foxnews.com/politics/he-blamed-jews-gop-congressman-levels-explosive-accusation-against-jd-vance-election-postmortem",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTFBNbXIzd3ZGU2ZLYXExNHJ6ZmxoRm1xc2ZhTXVaZ1B5Q29QUnFFamM3eFNaWC14RlB6NWNJaHVkMUctbzBoMTlNQ09GU0JUUEprUzJfU195N2VlYlNXQi13Z043UGo3dW5FLXRJOHRxX2JDU3JZRFBRaTJPdHZtZw?oc=5",
+    "https://www.npr.org/2026/11/11/nx-s1-6036790/swing-voters-swing-states-democrats-congress",
+    "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWjF0cmpoaVllMVJheTNxYklTOUhpVjRaS3M1NUxoTDVVWklMMzdNZV9YVnh0dlEzVTI0Zk4tTVRkSzFtbXlWMThLcXI2X0F4M2lRRkZXZ0tEV2FOS1ZLeVZ5Q0x5czRRSExneER0REFDYVI5ZFdVWjd3V3hyNHpuV2NkdUpTN1dMUUlBbktiNzYzOGtFT1NQZzFvTTFLa2V5SWkwUDVpSEZQNlZjNVNxeE50cEFveFE?oc=5",
+    "https://www.theguardian.com/world/2026/nov/11/spain-general-strike-housing-costs",
+    "https://www.dawn.com/news/2043794/ji-announces-nationwide-protests-lahore-rally-against-inflation-and-delays-in-lg-polls",
+    "https://www.thehindu.com/news/international/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/article71689942.ece",
+    "https://www.rollingstone.com/politics/politics-news/hegseth-impeachment-effort-blocked-democrats-absent-1235655731/",
+    "https://www.kyivpost.com/post/89810",
+    "https://www.channelnewsasia.com/asia/indonesia-vice-president-gibran-rakabuming-raka-6543171",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qM2xEd3lHR1dpU2xwT1JLcDEyUXlVS0xaeGptQzlscXNJSHc1VVVXQnZpY2FfN0NYdlFLMGZfWW9SSDFLT3NQVEF5cDlKZUlaVGNmZW5VUlR6LXI1MGtGeHJZWU1icGs?oc=5",
+    "https://thehill.com/homenews/campaign/6212685-mississippi-senate-race-scott-colom-cindy-hyde-smith-update/",
+    "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+    "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
+    "https://www.channelnewsasia.com/business/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias-6542956",
+    "https://allafrica.com/stories/202611110492.html",
+    "https://allafrica.com/stories/202611110489.html",
+    "https://www.wired.com/story/michigan-voters-want-utility-money-out-of-politics-lawsuit/",
+    "https://thehill.com/the-120/6212145-jim-jordan-house-gop-future-midterms/",
+    "https://www.france24.com/en/americas/20261111-pope-leo-to-end-argentina-tour-with-large-outdoor-mass-before-emotional-peru-homecoming",
+    "https://www.aljazeera.com/news/2026/11/11/spains-first-general-strike-in-14-years-begins?traffic_source=rss",
+    "https://www.axios.com/2026/11/11/jim-jordan-house-minority-leader-republicans",
+    "https://www.axios.com/2026/11/11/stephen-miller-focus-men-maga",
+    "https://www.scmp.com/news/world/europe/article/3374082/spanish-workers-stage-huge-general-strike-1st-14-years-angry-over-housing",
+    "https://www.npr.org/2026/11/11/nx-s1-6037314/spain-general-strike",
+    "https://www.theguardian.com/film/2026/nov/11/naza-documentary-on-gaza-killings-becomes-one-of-years-most-watched",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxNcEVCUG1uajI3MTRqS3JQX0w0YktlX05WVjdRanFrblFCWTZaZllnVjByYjZvMGxtZzVxb1VfWEFOc2NYVklHd0NqVVp5UmRkdmI3d1U5QVFURFE2Nmo5NGtQemIxTGtzRV80aFFQLTFXdEpneTVMbnRiZl9Pckx6SE5CeFJyWmhBX3lBbTJqV255VGRoQVRNazdBTFBBQQ?oc=5"
   ],
   "startedAt": "2026-11-11T07:30:47.904Z",
-  "updatedAt": "2026-11-11T09:01:19.938Z",
+  "updatedAt": "2026-11-11T15:31:18.362Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-us-midterm-election-aftermath",
-  "sourceCount": 4,
-  "seenHeadlines": [],
-  "stats": {
-    "label": "Spain midterm election aftermath",
-    "note": "General strike turnout and housing protest numbers ahead of snap election",
-    "unit": "%",
-    "max": 100,
-    "asOf": "2026-11-12T14:30:00.000Z",
-    "updatedAt": "2026-11-11T13:57:14.625Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
-      "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
-      "publishedAt": "2026-11-11T12:39:20.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "general-strike-participation-rate",
-        "label": "General strike participation rate",
-        "value": 15,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Generaler-Streik-Beteiligung"
-          },
-          "it": {
-            "label": "Tasso di partecipazione allo sciopero generale"
-          },
-          "pt": {
-            "label": "Taxa de participação na greve geral"
-          },
-          "es": {
-            "label": "Tasa de participación en la huelga general"
-          },
-          "zh": {
-            "label": "总罢工参与率"
-          },
-          "ko": {
-            "label": "총파업 참가율"
-          },
-          "ja": {
-            "label": "ゼネラルストライキの参加率"
-          },
-          "fr": {
-            "label": "Taux de participation à la grève générale"
-          }
-        }
-      },
-      {
-        "key": "housing-affordability-protest-size",
-        "label": "Housing affordability protest size",
-        "value": 3,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Größe der Proteste zur Wohnungsaffordabilität"
-          },
-          "it": {
-            "label": "Dimensioni della protesta per l'accessibilità abitativa"
-          },
-          "pt": {
-            "label": "Tamanho do protesto de acessibilidade à habitação"
-          },
-          "es": {
-            "label": "Tamaño de la protesta por la asequibilidad de la vivienda"
-          },
-          "zh": {
-            "label": "住房可负担性抗议规模"
-          },
-          "ko": {
-            "label": "주택 구입 부담 시위 규모"
-          },
-          "ja": {
-            "label": "住宅の購入しやすさをめぐる抗議行動の規模"
-          },
-          "fr": {
-            "label": "Ampleur des manifestations sur l'accès au logement"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Spanien: Nachwirkungen der Zwischenwahlen",
-        "note": "Generaler-Streik-Beteiligung und Zahlen zu Wohnungsprotesten vor Neuwahl"
-      },
-      "fr": {
-        "label": "Conséquences des élections de mi-mandat en Espagne",
-        "note": "Taux de participation à la grève générale et nombre de manifestants pour le logement avant des élections anticipées"
-      },
-      "es": {
-        "label": "Consecuencias de las elecciones de mitad de mandato en España",
-        "note": "Participación en la huelga general y cifras de protesta por la vivienda previo a elecciones anticipadas"
-      },
-      "it": {
-        "label": "Elezioni di metà mandato in Spagna",
-        "note": "Partecipazione allo sciopero generale e numeri delle proteste per l'abitazione in vista delle elezioni anticipate"
-      },
-      "pt": {
-        "label": "Espanha: após eleições legislativas",
-        "note": "Greve geral e protestos de habitação antes de eleições antecipadas"
-      },
-      "zh": {
-        "label": "西班牙中期选举后续",
-        "note": "提前大选前的总罢工参与人数与住房抗议规模"
-      },
-      "ja": {
-        "label": "スペイン中間選挙後の情勢",
-        "note": "早期総選挙を前に、ゼネラルストライキの参加率と住宅抗議行動の規模"
-      },
-      "ko": {
-        "label": "스페인 중간선거 여파",
-        "note": "조기 총선을 앞두고 총파업 참가자 수와 주택 시위 규모"
-      }
-    }
-  },
+  "sourceCount": 6,
   "statsHistory": [
     {
       "at": "2026-11-12T14:30:00.000Z",
@@ -434,5 +550,6 @@
         }
       ]
     }
-  ]
+  ],
+  "seenHeadlines": []
 }

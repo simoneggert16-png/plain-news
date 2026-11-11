@@ -6,25 +6,14 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-10T15:28:03.354Z",
-  "updatedAt": "2026-11-11T13:58:08.609Z",
+  "updatedAt": "2026-11-11T15:31:34.209Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-us-midterm-election-aftermath",
   "stats": {
-    "label": "Spain midterm election aftermath",
-    "note": "General strike turnout and housing protest numbers ahead of snap election",
-    "unit": "%",
     "max": 100,
     "asOf": "2026-11-12T14:30:00.000Z",
-    "updatedAt": "2026-11-11T13:57:14.625Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
-      "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
-      "publishedAt": "2026-11-11T12:39:20.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
+    "note": "General strike turnout and housing protest numbers ahead of snap election",
     "rows": [
       {
         "key": "general-strike-participation-rate",
@@ -35,26 +24,26 @@
           "de": {
             "label": "Generaler-Streik-Beteiligung"
           },
-          "it": {
-            "label": "Tasso di partecipazione allo sciopero generale"
-          },
-          "pt": {
-            "label": "Taxa de participação na greve geral"
-          },
           "es": {
             "label": "Tasa de participación en la huelga general"
           },
-          "zh": {
-            "label": "总罢工参与率"
+          "fr": {
+            "label": "Taux de participation à la grève générale"
           },
-          "ko": {
-            "label": "총파업 참가율"
+          "it": {
+            "label": "Tasso di partecipazione allo sciopero generale"
           },
           "ja": {
             "label": "ゼネラルストライキの参加率"
           },
-          "fr": {
-            "label": "Taux de participation à la grève générale"
+          "ko": {
+            "label": "총파업 참가율"
+          },
+          "pt": {
+            "label": "Taxa de participação na greve geral"
+          },
+          "zh": {
+            "label": "总罢工参与率"
           }
         }
       },
@@ -67,66 +56,89 @@
           "de": {
             "label": "Größe der Proteste zur Wohnungsaffordabilität"
           },
-          "it": {
-            "label": "Dimensioni della protesta per l'accessibilità abitativa"
-          },
-          "pt": {
-            "label": "Tamanho do protesto de acessibilidade à habitação"
-          },
           "es": {
             "label": "Tamaño de la protesta por la asequibilidad de la vivienda"
           },
-          "zh": {
-            "label": "住房可负担性抗议规模"
+          "fr": {
+            "label": "Ampleur des manifestations sur l'accès au logement"
           },
-          "ko": {
-            "label": "주택 구입 부담 시위 규모"
+          "it": {
+            "label": "Dimensioni della protesta per l'accessibilità abitativa"
           },
           "ja": {
             "label": "住宅の購入しやすさをめぐる抗議行動の規模"
           },
-          "fr": {
-            "label": "Ampleur des manifestations sur l'accès au logement"
+          "ko": {
+            "label": "주택 구입 부담 시위 규모"
+          },
+          "pt": {
+            "label": "Tamanho do protesto de acessibilidade à habitação"
+          },
+          "zh": {
+            "label": "住房可负担性抗议规模"
           }
         }
       }
     ],
+    "unit": "%",
+    "label": "Spain midterm election aftermath",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
+      "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-11T12:39:20.000Z"
+    },
     "locales": {
       "de": {
-        "label": "Spanien: Nachwirkungen der Zwischenwahlen",
-        "note": "Generaler-Streik-Beteiligung und Zahlen zu Wohnungsprotesten vor Neuwahl"
-      },
-      "fr": {
-        "label": "Conséquences des élections de mi-mandat en Espagne",
-        "note": "Taux de participation à la grève générale et nombre de manifestants pour le logement avant des élections anticipées"
+        "note": "Generaler-Streik-Beteiligung und Zahlen zu Wohnungsprotesten vor Neuwahl",
+        "label": "Spanien: Nachwirkungen der Zwischenwahlen"
       },
       "es": {
-        "label": "Consecuencias de las elecciones de mitad de mandato en España",
-        "note": "Participación en la huelga general y cifras de protesta por la vivienda previo a elecciones anticipadas"
+        "note": "Participación en la huelga general y cifras de protesta por la vivienda previo a elecciones anticipadas",
+        "label": "Consecuencias de las elecciones de mitad de mandato en España"
+      },
+      "fr": {
+        "note": "Taux de participation à la grève générale et nombre de manifestants pour le logement avant des élections anticipées",
+        "label": "Conséquences des élections de mi-mandat en Espagne"
       },
       "it": {
-        "label": "Elezioni di metà mandato in Spagna",
-        "note": "Partecipazione allo sciopero generale e numeri delle proteste per l'abitazione in vista delle elezioni anticipate"
-      },
-      "pt": {
-        "label": "Espanha: após eleições legislativas",
-        "note": "Greve geral e protestos de habitação antes de eleições antecipadas"
-      },
-      "zh": {
-        "label": "西班牙中期选举后续",
-        "note": "提前大选前的总罢工参与人数与住房抗议规模"
+        "note": "Partecipazione allo sciopero generale e numeri delle proteste per l'abitazione in vista delle elezioni anticipate",
+        "label": "Elezioni di metà mandato in Spagna"
       },
       "ja": {
-        "label": "スペイン中間選挙後の情勢",
-        "note": "早期総選挙を前に、ゼネラルストライキの参加率と住宅抗議行動の規模"
+        "note": "早期総選挙を前に、ゼネラルストライキの参加率と住宅抗議行動の規模",
+        "label": "スペイン中間選挙後の情勢"
       },
       "ko": {
-        "label": "스페인 중간선거 여파",
-        "note": "조기 총선을 앞두고 총파업 참가자 수와 주택 시위 규모"
+        "note": "조기 총선을 앞두고 총파업 참가자 수와 주택 시위 규모",
+        "label": "스페인 중간선거 여파"
+      },
+      "pt": {
+        "note": "Greve geral e protestos de habitação antes de eleições antecipadas",
+        "label": "Espanha: após eleições legislativas"
+      },
+      "zh": {
+        "note": "提前大选前的总罢工参与人数与住房抗议规模",
+        "label": "西班牙中期选举后续"
       }
-    }
+    },
+    "updatedAt": "2026-11-11T13:57:14.625Z",
+    "sourceCount": 1
   },
   "sources": [
+    {
+      "outlet": "DW",
+      "title": "Brazil electoral court fines Meta, sees no deliberate election bias",
+      "url": "https://www.dw.com/en/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/a-79920780?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-11-11T15:17:00.000Z"
+    },
+    {
+      "outlet": "The Hindu",
+      "title": "Brazil electoral court fines Meta, sees no deliberate election bias",
+      "url": "https://www.thehindu.com/news/international/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/article71689942.ece",
+      "publishedAt": "2026-11-11T13:44:00.000Z"
+    },
     {
       "outlet": "New York Times",
       "title": "Stung by Losses, G.O.P. Chooses Jordan and Thune as Leaders",
@@ -159,52 +171,97 @@
       "facts": [
         "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
         "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
-        "The Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
         "Election officials are still counting ballots eight days after the midterm elections",
-        "There are 17 races that remain without a final result",
-        "The party sought fresh leadership following their defeat in the 2026 midterm elections"
+        "There are 17 races that remain without a final result one week after the vote counting began"
       ],
       "body": [
-        "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
         "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
-        "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
         "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
-        "Context from other sources indicates mixed reactions to the election outcomes, with Dawn reporting that Trump mixes signals after midterms",
-        "The New York Times reports that the Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
-        "G1 confirms that 17 races remain without a final result one week after the vote counting began",
-        "Election officials continue counting ballots one week after the US midterm elections as multiple parties assess the results"
+        "Meta was fined by Brazil's electoral court after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu.",
+        "The New York Times reports that the Republican Party chose fresh leadership following their defeat in the 2026 midterm elections.",
+        "G1 confirms that 17 races remain without a final result one week after the vote counting began.",
+        "Election officials continue counting ballots one week after the US midterm elections as multiple parties assess the results.",
+        "Dawn reports that Trump mixes signals after midterms, according to the Dawn report.",
+        "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
       ],
-      "context": "",
+      "context": "The 2026 US midterm elections resulted in multiple undecided races and party leadership changes, while Brazil's electoral court addressed claims against Meta regarding election bias.",
       "imageCaption": ""
-    },
-    "de": {
-      "title": "Stimmzettelzählung setzt eine Woche nach US-Zwischenwahlen fort, Republikaner wählen neue Fraktionsführung im Repräsentantenhaus",
-      "dek": "Wahlbeamte zählen acht Tage nach der Abstimmung Stimmzettel, während Parteiführer nach Wahlniederlagen neue Fraktionsführung im Repräsentantenhaus wählen.",
-      "facts": [
-        "Laut G1 dauert die Stimmzettelzählung acht Tage nach den Zwischenwahlen 2026 an, da 17 Rennen noch kein Endergebnis haben",
-        "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer im Repräsentantenhaus gewählt, nachdem sie bei den Zwischenwahlen Niederlagen erlitten haben",
-        "Die Republikanische Partei wählte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung",
-        "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel",
-        "Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt",
-        "Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung"
-      ],
-      "body": [
-        "Die Stimmzettelzählung dauert acht Tage nach den Zwischenwahlen 2026 an, wobei 17 Rennen noch kein Endergebnis haben, so G1",
-        "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel, so G1. Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt.",
-        "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer nach den Zwischenwahlniederlagen gewählt",
-        "Laut der New York Times hat die Republikanische Partei Jim Jordan und John Thune als neue Führer im Repräsentantenhaus gewählt. Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung.",
-        "Kontext aus anderen Quellen deutet auf gemischte Reaktionen auf die Wahlergebnisse hin, wobei Dawn berichtet, dass Trump nach den Zwischenwahlen Signale vermischt",
-        "Die New York Times berichtet, dass die Republikanische Partei nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung wählte",
-        "G1 bestätigt, dass eine Woche nach Beginn der Stimmzettelzählung 17 Rennen noch kein Endergebnis haben"
-      ],
-      "context": ""
     }
   },
   "history": [
     {
+      "at": "2026-11-11T09:01:31.108Z",
+      "reason": "2 new update(s)",
+      "locales": {
+        "en": {
+          "dek": "Election officials count ballots eight days after voting while party leaders choose new House leadership following election losses.",
+          "body": [
+            "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
+            "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
+            "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
+            "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+            "Context from other sources indicates mixed reactions to the election outcomes, with Dawn reporting that Trump mixes signals after midterms",
+            "The New York Times reports that the Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
+            "G1 confirms that 17 races remain without a final result one week after the vote counting began",
+            "Election officials continue counting ballots one week after the US midterm elections as multiple parties assess the results"
+          ],
+          "facts": [
+            "Vote counting continues eight days after the 2026 midterm elections with 17 races still without a final result, according to G1",
+            "Republicans have selected Jim Jordan and John Thune as their new House leaders following midterm defeats, according to the New York Times",
+            "The Republican Party chose fresh leadership following their defeat in the 2026 midterm elections",
+            "Election officials are still counting ballots eight days after the midterm elections",
+            "There are 17 races that remain without a final result",
+            "The party sought fresh leadership following their defeat in the 2026 midterm elections"
+          ],
+          "title": "Vote counting continues one week after US midterm elections, Republicans select new House leadership",
+          "context": "",
+          "imageCaption": ""
+        },
+        "de": {
+          "dek": "Wahlbeamte zählen acht Tage nach der Abstimmung Stimmzettel, während Parteiführer nach Wahlniederlagen neue Fraktionsführung im Repräsentantenhaus wählen.",
+          "body": [
+            "Die Stimmzettelzählung dauert acht Tage nach den Zwischenwahlen 2026 an, wobei 17 Rennen noch kein Endergebnis haben, so G1",
+            "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel, so G1. Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt.",
+            "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer nach den Zwischenwahlniederlagen gewählt",
+            "Laut der New York Times hat die Republikanische Partei Jim Jordan und John Thune als neue Führer im Repräsentantenhaus gewählt. Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung.",
+            "Kontext aus anderen Quellen deutet auf gemischte Reaktionen auf die Wahlergebnisse hin, wobei Dawn berichtet, dass Trump nach den Zwischenwahlen Signale vermischt",
+            "Die New York Times berichtet, dass die Republikanische Partei nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung wählte",
+            "G1 bestätigt, dass eine Woche nach Beginn der Stimmzettelzählung 17 Rennen noch kein Endergebnis haben"
+          ],
+          "facts": [
+            "Laut G1 dauert die Stimmzettelzählung acht Tage nach den Zwischenwahlen 2026 an, da 17 Rennen noch kein Endergebnis haben",
+            "Laut der New York Times haben die Republikaner Jim Jordan und John Thune als neue Fraktionsführer im Repräsentantenhaus gewählt, nachdem sie bei den Zwischenwahlen Niederlagen erlitten haben",
+            "Die Republikanische Partei wählte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung",
+            "Wahlbeamte zählen acht Tage nach den Zwischenwahlen noch Stimmzettel",
+            "Es gibt 17 Rennen, für die noch kein Endergebnis vorliegt",
+            "Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung"
+          ],
+          "title": "Stimmzettelzählung setzt eine Woche nach US-Zwischenwahlen fort, Republikaner wählen neue Fraktionsführung im Repräsentantenhaus",
+          "context": ""
+        }
+      }
+    },
+    {
       "at": "2026-11-10T16:00:31.869Z",
       "reason": "2 new update(s)",
       "locales": {
+        "de": {
+          "dek": "Verteidigungsminister Pete Hegseth bezeichnete Amtsenthebungsbemühungen als Farce, während Republikaner nach den Zwischenwahlen Führungsabstimmungen abhielten.",
+          "body": [
+            "Verteidigungsminister Pete Hegseth bezeichnete den von Rep. Thomas Massie geführten Amtsenthebungsversuch auf einer Pressekonferenz am Dienstag als \"Farce\" (El Pais, Dawn)",
+            "Hegseth verteidigte seine Bilanz bezüglich militärischer Operationen im Iran während derselben Pressekonferenz (El Pais, Dawn)",
+            "Repräsentanten- und Senatsmitglieder der Republik führen am Dienstag Führungsabstimmungen durch (Reuters, The Hill)",
+            "Diese Abstimmungen finden eine Woche nach den Verlusten der Partei bei den Zwischenwahlen statt (Reuters, The Hill)"
+          ],
+          "facts": [
+            "Verteidigungsminister Pete Hegseth bezeichnete den von Rep. Thomas Massie geführten Amtsenthebungsversuch auf einer Pressekonferenz am Dienstag als \"Farce\" (El Pais, Dawn)",
+            "Repräsentanten- und Senatsmitglieder der Republik führen am Dienstag Führungsabstimmungen durch (Reuters, The Hill)",
+            "Diese Abstimmungen finden eine Woche nach den Verlusten der Partei bei den Zwischenwahlen statt (Reuters, The Hill)",
+            "Hegseth verteidigte seine Bilanz bezüglich militärischer Operationen im Iran (El Pais, Dawn)"
+          ],
+          "title": "Hegseth bezeichnet Amtsenthebungsversuch als Farce, während Republikaner Führungsabstimmungen abhalten",
+          "context": "Nach den Zwischenwahlen 2026 unterziehen sich republikanische Parteiführer im Kongress Führungsabstimmungen, während Verteidigungsminister Pete Hegseth Kritik wegen eines von Abgeordnetem Thomas Massie geführten Amtsenthebungsversuchs ausgesetzt war."
+        },
         "en": {
           "dek": "Defense Secretary Pete Hegseth dismissed impeachment efforts as a farce while Republicans convened leadership elections following midterm losses.",
           "body": [
@@ -222,23 +279,6 @@
           "title": "Hegseth calls impeachment push a farce as Republicans hold leadership votes",
           "context": "Following the 2026 midterm elections, Republican Party leaders are undergoing leadership votes in Congress while Defense Secretary Pete Hegseth faced criticism over an impeachment effort led by Representative Thomas Massie.",
           "imageCaption": ""
-        },
-        "de": {
-          "dek": "Verteidigungsminister Pete Hegseth bezeichnete Amtsenthebungsbemühungen als Farce, während Republikaner nach den Zwischenwahlen Führungsabstimmungen abhielten.",
-          "body": [
-            "Verteidigungsminister Pete Hegseth bezeichnete den von Rep. Thomas Massie geführten Amtsenthebungsversuch auf einer Pressekonferenz am Dienstag als \"Farce\" (El Pais, Dawn)",
-            "Hegseth verteidigte seine Bilanz bezüglich militärischer Operationen im Iran während derselben Pressekonferenz (El Pais, Dawn)",
-            "Repräsentanten- und Senatsmitglieder der Republik führen am Dienstag Führungsabstimmungen durch (Reuters, The Hill)",
-            "Diese Abstimmungen finden eine Woche nach den Verlusten der Partei bei den Zwischenwahlen statt (Reuters, The Hill)"
-          ],
-          "facts": [
-            "Verteidigungsminister Pete Hegseth bezeichnete den von Rep. Thomas Massie geführten Amtsenthebungsversuch auf einer Pressekonferenz am Dienstag als \"Farce\" (El Pais, Dawn)",
-            "Repräsentanten- und Senatsmitglieder der Republik führen am Dienstag Führungsabstimmungen durch (Reuters, The Hill)",
-            "Diese Abstimmungen finden eine Woche nach den Verlusten der Partei bei den Zwischenwahlen statt (Reuters, The Hill)",
-            "Hegseth verteidigte seine Bilanz bezüglich militärischer Operationen im Iran (El Pais, Dawn)"
-          ],
-          "title": "Hegseth bezeichnet Amtsenthebungsversuch als Farce, während Republikaner Führungsabstimmungen abhalten",
-          "context": "Nach den Zwischenwahlen 2026 unterziehen sich republikanische Parteiführer im Kongress Führungsabstimmungen, während Verteidigungsminister Pete Hegseth Kritik wegen eines von Abgeordnetem Thomas Massie geführten Amtsenthebungsversuchs ausgesetzt war."
         }
       }
     }
@@ -249,6 +289,6 @@
     "desk": "Live Desk",
     "verdict": "live-update",
     "problemsFixed": [],
-    "updatedReason": "2 new update(s)"
+    "updatedReason": "1 new update(s)"
   }
 }
