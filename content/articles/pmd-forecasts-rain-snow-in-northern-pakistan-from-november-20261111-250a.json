@@ -1,0 +1,74 @@
+{
+  "slug": "pmd-forecasts-rain-snow-in-northern-pakistan-from-november-20261111-250a",
+  "category": "climate",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-11T05:03:58.933Z",
+  "updatedAt": "2026-11-11T05:03:58.933Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "MarketWatch",
+      "title": "Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?",
+      "url": "https://www.marketwatch.com/story/she-can-always-change-her-mind-should-a-widow-leave-the-family-home-to-her-stepchildren-649b06af?mod=mw_rss_topstories",
+      "publishedAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "outlet": "Dawn",
+      "title": "Rain, snow in northern parts of the country from today",
+      "url": "https://www.dawn.com/news/2043674/rain-snow-in-northern-parts-of-the-country-from-today",
+      "publishedAt": "2026-11-11T02:27:10.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "PMD forecasts rain snow in northern Pakistan from November 11",
+      "dek": "The Pakistan Meteorological Department forecasts rain wind and thunderstorms with snowfall in northern parts of the country over the next two to three days",
+      "facts": [
+        "The Pakistan Meteorological Department forecast rain wind and thunderstorms with snowfall over hills in upper parts of the country",
+        "The weather system is likely to intensify on November 12 and may persist until November 14",
+        "MarketWatch published a story on November 11 regarding a widow leaving a late partner's home to stepchildren"
+      ],
+      "body": [
+        "The Pakistan Meteorological Department forecast rain wind and thunderstorms with snowfall over the hills in the upper parts of the country, and the forecast covers the next two to three days. A shallow westerly wave is approaching the western and northern parts of the country, according to the Met Office.",
+        "The system is likely to intensify on November 12 and may persist over the upper regions until the morning of November 14. In Khyber Pakhtunkhwa, the weather system will bring rain wind and thunderstorms with isolated heavy falls and hailstones.",
+        "MarketWatch published a story on November 11 asking whether a widow should leave her late partner's home to her stepchildren or cut off contact with them. The article stated that leaving the home to stepchildren would be a less drastic step than selling the home and splitting the proceeds."
+      ],
+      "context": "The Pakistan Meteorological Department issued the forecast, and MarketWatch published the article on November 11.",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Prédictions de pluie et de neige au Pakistan du Nord à partir du 11 novembre",
+      "dek": "Le Département météorologique du Pakistan prévoit pluie, vent et orages avec chutes de neige dans les parties septentrionales du pays au cours des deux à trois prochains jours",
+      "facts": [
+        "Le Département météorologique du Pakistan a annoncé pluie, vent et orages avec chutes de neige sur les collines des parties supérieures du pays",
+        "Le système météorologique devrait s'intensifier le 12 novembre et pourrait se poursuivre jusqu'au 14 novembre",
+        "MarketWatch a publié une histoire le 11 novembre concernant une veuve quittant la maison d'un défunt au profit de beaux-enfants"
+      ],
+      "body": [
+        "Le département météorologique du Pakistan prévoit des pluies, des vents et des orages avec des chutes de neige sur les collines des parties supérieures du pays, et cette prévision couvre les deux à trois prochains jours. Une onde ouest peu profonde approche les parties ouest et nord du pays, selon le Met Office.",
+        "Ce système devrait s'intensifier le 12 novembre et pourrait persister sur les régions supérieures jusqu'au matin du 14 novembre. Dans le Khyber Pakhtunkhwa, le système météorologique apportera des pluies, des vents et des orages avec des averses intenses isolées et de la grêle.",
+        "MarketWatch a publié un article le 11 novembre demandant si une veuve devait quitter le domicile de son défunt conjoint pour ses beaux-enfants ou rompre tout contact avec eux. L'article indiquait que laisser le domicile aux beaux-enfants serait une mesure moins drastique que de vendre la maison et de partager le produit de la vente."
+      ],
+      "context": "Le Département météorologique du Pakistan a publié la prévision, et MarketWatch a publié l'article le 11 novembre.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "stepfun-ai/step-5-preview",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Global Health & Medicine Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline is not a factual statement of what happened and contains unnecessary elements.",
+      "Dek is not a single-sentence summary under 30 words.",
+      "Facts list contains non-essential framing and needs tightening.",
+      "Body paragraphs contain repetitive phrasing and violate rhythm rules (e.g., four short declarative sentences).",
+      "Body paragraphs contain evaluative framing and summary sentences.",
+      "Context is too long and includes attribution that should be integrated into the body.",
+      "The structure does not adhere to the required paragraph opening rules (actor/number/date first)."
+    ]
+  }
+}
