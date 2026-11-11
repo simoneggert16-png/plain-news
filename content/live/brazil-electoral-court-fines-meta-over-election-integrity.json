@@ -1,9 +1,146 @@
 {
+  "meta": {
+    "outlets": [
+      "DW",
+      "France 24",
+      "Fox News",
+      "The Hindu",
+      "CNA"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "brazil-electoral-court-fines-meta-over-election-integrity",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Brazil electoral court fines Meta over election integrity",
+  "status": "live",
+  "article": {
+    "slug": "brazil-electoral-court-fines-meta-over-election-integrity",
+    "updatedAt": "2026-11-11T17:37:59.888Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Brazil electoral court fines Meta sees no deliberate election bias",
+        "dek": "The Brazil electoral court fined Meta but reported no deliberate election bias during the election period.",
+        "facts": [
+          "The Brazil electoral court fined Meta on 11 November 2026.",
+          "The court reported no deliberate election bias according to The Hindu and CNA.",
+          "Meta informed the court last month it adopted measures for equal campaign treatment according to The Hindu and CNA."
+        ],
+        "body": [
+          "The Brazil electoral court fined Meta on 11 November 2026, according to The Hindu and CNA.",
+          "The court stated it saw no deliberate election bias during the election period, according to The Hindu and CNA.",
+          "Meta informed the court last month that it adopted measures to ensure equal treatment of the two campaigns, according to The Hindu and CNA.",
+          "The Hindu reported the court fined Meta while noting the lack of deliberate election bias.",
+          "CNA reported the same finding regarding the fine and the absence of deliberate bias.",
+          "Meta stated to the court that it adopted measures for equal campaign treatment.",
+          "The court's decision was reported by both The Hindu and CNA."
+        ],
+        "context": "The Brazil electoral court issued a fine to Meta. Meta informed the court last month about measures adopted for equal campaign treatment.",
+        "imageCaption": ""
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Das Gericht stellte fest, dass die Plattformmanipulation von Meta Bedenken aufwarf, fand jedoch keinen vorsätzlichen parteiischen Einfluss auf die Wahl.",
+      "title": "Brasilianisches Wahlgericht verhängt Bußgeld gegen Meta wegen Wahlintegrität"
+    },
+    "en": {
+      "dek": "The court found Meta's platform manipulation raised concerns but stopped short of finding deliberate election bias.",
+      "title": "Brazil electoral court fines Meta over election integrity"
+    },
+    "es": {
+      "dek": "El tribunal determinó que la manipulación de la plataforma de Meta suscitó preocupaciones, pero no encontró un sesgo electoral deliberado.",
+      "title": "Tribunal electoral brasileño multa a Meta por integridad electoral"
+    },
+    "fr": {
+      "dek": "La cour a estimé que la manipulation de la plateforme par Meta suscitait des préoccupations, mais n'a pas conclu à un biais électoral délibéré.",
+      "title": "La cour électorale brésilienne inflige une amende à Meta concernant l'intégrité des élections"
+    },
+    "it": {
+      "dek": "Il tribunale ha riscontrato che la manipolazione della piattaforma da parte di Meta ha sollevato preoccupazioni, ma non ha stabilito un pregiudizio elettorale deliberato.",
+      "title": "Il tribunale elettorale brasiliano multa Meta per integrità elettorale"
+    },
+    "ja": {
+      "dek": "同裁判所はメタのプラットフォーム操作が懸念を引き起こしたと判断したが、意図的な選挙バイアスの存在は認めなかった。",
+      "title": "ブラジル選挙裁判所、メタに選挙公正違反で制裁"
+    },
+    "ko": {
+      "dek": "법원은 메타 플랫폼의 조작이 우려된다고 판단했으나 고의적인 선거 편향이라고 단정하진 않았다.",
+      "title": "브라질 선거법원, 메타에 선거 무결성 위반으로 벌금 부과"
+    },
+    "pt": {
+      "dek": "O tribunal considerou manipulação da plataforma como motivo de preocupação, mas não chegou a encontrar viés eleitoral deliberado.",
+      "title": "Tribunal eleitoral brasileiro multa Meta por integridade eleitoral"
+    },
+    "zh": {
+      "dek": "法院认定Meta平台的操纵引发了担忧，但未认定存在蓄意的选举偏见。",
+      "title": "巴西选举法院因选举完整性问题罚款Meta"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794408423000-co3j",
+      "at": "2026-11-11T14:47:03.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Meta told court it adopted measures for equal campaign treatment",
+          "body": "Meta informed the court last month it had adopted measures to ensure equal treatment of the two campaigns, according to The Hindu and CNA."
+        },
+        "es": {
+          "headline": "Meta informó al tribunal que adoptó medidas para un trato igualitario de las campañas",
+          "body": "Meta informó al tribunal el mes pasado que había adoptado medidas para garantizar un trato igualitario de las dos campañas, según The Hindu y CNA."
+        },
+        "it": {
+          "headline": "Meta ha informato il tribunale di aver adottato misure per un trattamento paritario delle campagne elettorali",
+          "body": "Meta ha informato il tribunale lo scorso mese di aver adottato misure per garantire un trattamento paritario delle due campagne, secondo The Hindu e CNA."
+        },
+        "fr": {
+          "headline": "Meta a informé le tribunal avoir adopté des mesures pour un traitement égal des deux campagnes",
+          "body": "Meta a informé le tribunal le mois dernier avoir adopté des mesures afin d'assurer un traitement égal des deux campagnes, selon The Hindu et CNA."
+        },
+        "pt": {
+          "headline": "Meta disse ao tribunal que adotou medidas para tratamento igual das campanhas",
+          "body": "A Meta informou o tribunal no mês passado de que tinha adotado medidas para garantir tratamento igualitário das duas campanhas, segundo o The Hindu e a CNA."
+        },
+        "zh": {
+          "headline": "Meta告知法院已采取措施平等对待竞选活动",
+          "body": "据《印度教徒报》和CNA报道，Meta上个月告知法院，其已采取措施确保两场竞选活动受到平等对待。"
+        },
+        "ko": {
+          "headline": "메타, 법원에 캠페인 공정 대응 조치를 도입했다고 밝혀",
+          "body": "메타가 지난달 법원에 두 캠페인의 공정한 대우를 보장하기 위한 조치를 도입했다고 알린 것으로 더힌두와 CNA가 전했다."
+        },
+        "de": {
+          "headline": "Meta sagte vor Gericht, Maßnahmen zur Gleichbehandlung von Wahlkampagnen ergriffen zu haben",
+          "body": "Meta informierte das Gericht im vergangenen Monat, es habe Maßnahmen ergriffen, um eine gleichberechtigte Behandlung der beiden Wahlkampagnen sicherzustellen, wie The Hindu und CNA berichteten."
+        },
+        "ja": {
+          "headline": "メタ、2陣営の平等な扱い確保へ対策採用と裁判所に説明",
+          "body": "メタは先月、2つの選挙運動を平等に扱うための対策を採用したと裁判所に伝えた。The HinduとCNAが報じた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Hindu",
+          "title": "Brazil electoral court fines Meta, sees no deliberate election bias",
+          "url": "https://www.thehindu.com/news/international/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/article71689942.ece",
+          "publishedAt": "2026-11-11T14:47:03.000Z"
+        },
+        {
+          "outlet": "CNA",
+          "title": "Brazil electoral court fines Meta, sees no deliberate election bias",
+          "url": "https://www.channelnewsasia.com/business/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias-6542956",
+          "publishedAt": "2026-11-11T12:15:43.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "brazil",
     "electoral court",
@@ -16,62 +153,17 @@
     "disinformation",
     "tech policy"
   ],
+  "seenUrls": [
+    "https://www.france24.com/en/brazil-electoral-court-fines-meta-1-3-mn-sees-no-deliberate-election-bias",
+    "https://www.dw.com/en/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/a-79920780?maca=en-rss-en-all-1573-rdf",
+    "https://www.thehindu.com/news/international/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias/article71689942.ece",
+    "https://www.channelnewsasia.com/business/brazil-electoral-court-fines-meta-sees-no-deliberate-election-bias-6542956"
+  ],
   "startedAt": "2026-11-11T17:16:23.400Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-11T17:16:23.400Z",
-  "articleSlug": null,
-  "sourceCount": 5,
+  "updatedAt": "2026-11-11T17:37:25.930Z",
+  "importance": 5,
   "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Brazil electoral court fines Meta over election integrity",
-      "dek": "The court found Meta's platform manipulation raised concerns but stopped short of finding deliberate election bias."
-    },
-    "de": {
-      "title": "Brasilianisches Wahlgericht verhängt Bußgeld gegen Meta wegen Wahlintegrität",
-      "dek": "Das Gericht stellte fest, dass die Plattformmanipulation von Meta Bedenken aufwarf, fand jedoch keinen vorsätzlichen parteiischen Einfluss auf die Wahl."
-    },
-    "es": {
-      "title": "Tribunal electoral brasileño multa a Meta por integridad electoral",
-      "dek": "El tribunal determinó que la manipulación de la plataforma de Meta suscitó preocupaciones, pero no encontró un sesgo electoral deliberado."
-    },
-    "fr": {
-      "title": "La cour électorale brésilienne inflige une amende à Meta concernant l'intégrité des élections",
-      "dek": "La cour a estimé que la manipulation de la plateforme par Meta suscitait des préoccupations, mais n'a pas conclu à un biais électoral délibéré."
-    },
-    "it": {
-      "title": "Il tribunale elettorale brasiliano multa Meta per integrità elettorale",
-      "dek": "Il tribunale ha riscontrato che la manipolazione della piattaforma da parte di Meta ha sollevato preoccupazioni, ma non ha stabilito un pregiudizio elettorale deliberato."
-    },
-    "pt": {
-      "title": "Tribunal eleitoral brasileiro multa Meta por integridade eleitoral",
-      "dek": "O tribunal considerou manipulação da plataforma como motivo de preocupação, mas não chegou a encontrar viés eleitoral deliberado."
-    },
-    "ko": {
-      "title": "브라질 선거법원, 메타에 선거 무결성 위반으로 벌금 부과",
-      "dek": "법원은 메타 플랫폼의 조작이 우려된다고 판단했으나 고의적인 선거 편향이라고 단정하진 않았다."
-    },
-    "zh": {
-      "title": "巴西选举法院因选举完整性问题罚款Meta",
-      "dek": "法院认定Meta平台的操纵引发了担忧，但未认定存在蓄意的选举偏见。"
-    },
-    "ja": {
-      "title": "ブラジル選挙裁判所、メタに選挙公正違反で制裁",
-      "dek": "同裁判所はメタのプラットフォーム操作が懸念を引き起こしたと判断したが、意図的な選挙バイアスの存在は認めなかった。"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "DW",
-      "France 24",
-      "Fox News",
-      "The Hindu",
-      "CNA"
-    ]
-  }
+  "articleSlug": "brazil-electoral-court-fines-meta-over-election-integrity",
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
