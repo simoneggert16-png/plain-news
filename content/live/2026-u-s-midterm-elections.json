@@ -7,57 +7,305 @@
       "The Hindu"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "lastUpdateModel": "stepfun-ai/step-5-preview"
   },
   "slug": "2026-u-s-midterm-elections",
+  "stats": {
+    "max": 100,
+    "asOf": "2026-11-05T00:00:00.000Z",
+    "note": "Vote share percentages for major parties in the 2026 U.S. Midterm Elections as reported by news outlets",
+    "rows": [
+      {
+        "key": "republican-senate-vote-share",
+        "label": "Republican Senate vote share",
+        "value": 54.2,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los republicanos"
+          },
+          "fr": {
+            "label": "Score républicain au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato repubblicano"
+          },
+          "ja": {
+            "label": "共和党の上院得票率"
+          },
+          "ko": {
+            "label": "공화당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos no Senado"
+          },
+          "zh": {
+            "label": "共和党参议院得票率"
+          }
+        }
+      },
+      {
+        "key": "democratic-senate-vote-share",
+        "label": "Democratic Senate vote share",
+        "value": 44.8,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los demócratas"
+          },
+          "fr": {
+            "label": "Score démocrate au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato democratico"
+          },
+          "ja": {
+            "label": "民主党の上院得票率"
+          },
+          "ko": {
+            "label": "민주당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas no Senado"
+          },
+          "zh": {
+            "label": "民主党参议院得票率"
+          }
+        }
+      },
+      {
+        "key": "republican-house-vote-share",
+        "label": "Republican House vote share",
+        "value": 51.5,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los republicanos"
+          },
+          "fr": {
+            "label": "Score républicain à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti repubblicana"
+          },
+          "ja": {
+            "label": "共和党の下院得票率"
+          },
+          "ko": {
+            "label": "공화당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos na Câmara dos Representantes"
+          },
+          "zh": {
+            "label": "共和党众议院得票率"
+          }
+        }
+      },
+      {
+        "key": "democratic-house-vote-share",
+        "label": "Democratic House vote share",
+        "value": 47.2,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los demócratas"
+          },
+          "fr": {
+            "label": "Score démocrate à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti democratica"
+          },
+          "ja": {
+            "label": "民主党の下院得票率"
+          },
+          "ko": {
+            "label": "민주당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas na Câmara dos Representantes"
+          },
+          "zh": {
+            "label": "民主党众议院得票率"
+          }
+        }
+      }
+    ],
+    "unit": "%",
+    "label": "Vote share comparison between parties",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+      "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-11T12:42:09.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Stimmenanteile in Prozent für die großen Parteien bei den US-Zwischenwahlen 2026, wie von Nachrichtenmedien berichtet",
+        "label": "Vergleich der Stimmenanteile zwischen den Parteien"
+      },
+      "es": {
+        "note": "Porcentajes de participación electoral para los partidos principales en las elecciones de mitad de mandato de EE. UU. de 2026, según medios de comunicación",
+        "label": "Comparación de la participación electoral entre partidos"
+      },
+      "fr": {
+        "note": "Pourcentages de scores électoraux pour les grands partis dans les élections de mi-mandat américaines de 2026, selon les médias",
+        "label": "Comparaison des scores électoraux entre les partis"
+      },
+      "it": {
+        "note": "Quote di voto percentuale per i principali partiti nelle elezioni di metà mandato statunitensi del 2026 come riportate dai media",
+        "label": "Confronto di quote di voto tra partiti"
+      },
+      "ja": {
+        "note": "報道機関が報じた2026年米国中間選挙における主要政党の得票率",
+        "label": "政党別得票率比較"
+      },
+      "ko": {
+        "note": "뉴스 매체가 보도한 2026년 미국 중간선거에서 주요 정당의 득표율",
+        "label": "정당 간 득표율 비교"
+      },
+      "pt": {
+        "note": "Percentagens de votos dos principais partidos nas eleições de meio de mandato norte-americanas de 2026, conforme noticiado pelos meios de comunicação social",
+        "label": "Comparação da percentagem de votos entre partidos"
+      },
+      "zh": {
+        "note": "新闻媒体报道的2026年美国中期选举主要政党得票率百分比",
+        "label": "各党派得票率对比"
+      }
+    },
+    "updatedAt": "2026-11-11T14:03:21.546Z",
+    "sourceCount": 1
+  },
   "topic": "2026 U.S. Midterm Elections",
   "status": "live",
   "article": {
     "slug": "2026-u-s-midterm-elections",
-    "updatedAt": "2026-11-11T10:11:05.597Z",
+    "updatedAt": "2026-11-11T17:40:16.485Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
-        "title": "House Republicans select Jim Jordan as leader amid ongoing vote counts",
-        "dek": "House Republicans chose Jim Jordan as their leader for the next Congress while election officials continue counting ballots eight days after the midterm elections.",
+        "title": "Democrats win US midterms as Republicans lose both chambers",
+        "dek": "Democrats won the 2026 midterms and Republicans lost control of both chambers, while House Republicans chose Jim Jordan as their next leader and vote counting continues in 17 races.",
         "facts": [
-          "House Republicans selected Jim Jordan as their leader for the upcoming term.",
-          "Seventeen election races remain undecided across the United States.",
-          "The U.S. House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee.",
-          "Eleven Democrats were absent during the impeachment resolution vote."
+          "Democrats won the 2026 midterms and Republicans lost control of both chambers of Congress.",
+          "House Republicans selected Ohio representative Jim Jordan to lead the party starting in January.",
+          "Election officials are still counting ballots eight days after the 3 November election, with 17 races undecided.",
+          "The House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee.",
+          "The White House warned that Democratic investigations could \"cross the line into blatant criminality.\"",
+          "House Democrats are preparing new impeachment articles over Ukraine military aid."
         ],
         "body": [
+          "Democrats won the 2026 midterms, and Republican losses cost the party control of both chambers of Congress, according to The Hill and the USC Price School. The result ends Republican control of the House and Senate.",
           "House Republicans selected Ohio representative Jim Jordan to lead the party in Congress starting in January. According to NPR and the New York Times, Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
-          "Election officials are continuing to process outstanding ballots eight days after the 3 November midterm elections. G1 and The Japan Times reported that 17 races remain undecided across the country.",
-          "The U.S. House of Representatives voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee. This vote halted the immediate impeachment effort, according to The Hindu.",
-          "Al Jazeera reported that 11 Democrats missed the vote on the impeachment resolution. The measure was moved to the committee level rather than proceeding to an immediate floor vote."
+          "Election officials are continuing to process outstanding ballots eight days after the 3 November midterm elections, and G1 and The Japan Times reported that 17 races remain undecided across the country.",
+          "The U.S. House of Representatives voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee, and according to The Hindu, this vote halted the immediate impeachment effort.",
+          "Eleven Democrats missed the vote on the impeachment resolution, according to Al Jazeera, and the measure moved to the committee level rather than proceeding to an immediate floor vote.",
+          "Representative Madeleine Dean said Defense Secretary Hegseth's days are numbered after Republicans blocked the impeachment effort, and House Democrats are preparing new articles over Ukraine military aid, according to The Hill.",
+          "The White House wrote to the House Oversight Committee saying Democratic probes may \"cross the line into blatant criminality,\" according to The New York Times and The Hill, and Democrats prepared to begin oversight inquiries."
         ],
         "context": "The midterm elections occurred on 3 November 2026. The House of Representatives holds the constitutional authority to initiate impeachment proceedings against federal officials.",
         "imageCaption": ""
       },
       "de": {
-        "title": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef während laufender Stimmenauszählung",
-        "dek": "Die Republikaner im Repräsentantenhaus haben Jim Jordan zu ihrem Anführer für den nächsten Kongress gewählt, während Wahlbeamte acht Tage nach den Zwischenwahlen weiterhin Stimmzettel auszählen.",
+        "title": "Demokraten gewinnen US-Zwischenwahlen, Republikaner verlieren beide Kammern",
+        "dek": "Die Demokraten haben die Zwischenwahlen 2026 gewonnen und die Republikaner haben die Kontrolle über beide Kammern verloren, während die Republikaner im Repräsentantenhaus Jim Jordan als ihren nächsten Anführer wählten und die Stimmenauszählung in 17 Wahlkreisen andauert.",
         "facts": [
-          "Die Republikaner im Repräsentantenhaus wählten Jim Jordan zu ihrem Anführer für die kommende Legislaturperiode.",
-          "Siebzehn Wahlrennen in den Vereinigten Staaten sind weiterhin unentschieden.",
-          "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
-          "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
+          "Die Demokraten gewannen die Zwischenwahlen 2026 und die Republikaner verloren die Kontrolle über beide Kammern des Kongresses.",
+          "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Parteiführer ab Januar.",
+          "Wahlbeamte zählen acht Tage nach der Wahl vom 3. November immer noch Stimmzettel; 17 Rennen sind noch unentschieden.",
+          "Das Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
+          "Das Weiße Haus warnte, dass demokratische Untersuchungen \"die Grenze zur offensichtlichen Kriminalität überschreiten\" könnten.",
+          "Die Demokraten im Repräsentantenhaus bereiten neue Amtsenthebungsartikel wegen Militärhilfe für die Ukraine vor."
         ],
         "body": [
-          "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Anführer der Partei im Kongress ab Januar. Laut NPR und der New York Times ist Jordan Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
-          "Wahlbeamte verarbeiten acht Tage nach den Zwischenwahlen vom 3. November weiterhin ausstehende Stimmzettel. G1 und die Japan Times berichteten, dass landesweit 17 Rennen unentschieden sind.",
-          "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen. Diese Abstimmung stoppte das unmittelbare Amtsenthebungsverfahren, so The Hindu.",
-          "Al Jazeera berichtete, dass 11 Demokraten bei der Abstimmung über die Amtsenthebungsresolution fehlten. Die Maßnahme wurde auf die Ausschussebene verwiesen, anstatt direkt zur Abstimmung im Plenum zu gelangen."
+          "Die Demokraten haben die Zwischenwahlen 2026 gewonnen, und die Verluste der Republikaner kosteten die Partei die Kontrolle über beide Kammern des Kongresses, so The Hill und die USC Price School. Das Ergebnis beendet die republikanische Kontrolle über das Repräsentantenhaus und den Senat.",
+          "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Parteiführer im Kongress ab Januar. Laut NPR und der New York Times ist Jordan Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
+          "Wahlbeamte verarbeiten acht Tage nach den Zwischenwahlen vom 3. November weiterhin ausstehende Stimmzettel; G1 und The Japan Times berichteten, dass landesweit 17 Rennen noch unentschieden sind.",
+          "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen; laut The Hindu stoppte diese Abstimmung das unmittelbare Amtsenthebungsverfahren.",
+          "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution, so Al Jazeera, und die Maßnahme wurde auf die Ausschussebene verlagert, anstatt direkt zur Abstimmung im Plenum zu gelangen.",
+          "Die Abgeordnete Madeleine Dean sagte, die Tage von Verteidigungsminister Hegseth seien gezählt, nachdem die Republikaner das Amtsenthebungsverfahren blockiert hatten, und die Demokraten im Repräsentantenhaus bereiten laut The Hill neue Artikel wegen Militärhilfe für die Ukraine vor.",
+          "Das Weiße Haus schrieb an den Aufsichtsausschuss des Repräsentantenhauses, dass demokratische Untersuchungen \"die Grenze zur offensichtlichen Kriminalität überschreiten\" könnten, so The New York Times und The Hill, während die Demokraten sich darauf vorbereiteten, Aufsichtsuntersuchungen einzuleiten."
         ],
         "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
       }
     },
     "versions": [
       {
+        "at": "2026-11-11T10:11:05.597Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "House Republicans chose Jim Jordan as their leader for the next Congress while election officials continue counting ballots eight days after the midterm elections.",
+            "body": [
+              "House Republicans selected Ohio representative Jim Jordan to lead the party in Congress starting in January. According to NPR and the New York Times, Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
+              "Election officials are continuing to process outstanding ballots eight days after the 3 November midterm elections. G1 and The Japan Times reported that 17 races remain undecided across the country.",
+              "The U.S. House of Representatives voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee. This vote halted the immediate impeachment effort, according to The Hindu.",
+              "Al Jazeera reported that 11 Democrats missed the vote on the impeachment resolution. The measure was moved to the committee level rather than proceeding to an immediate floor vote."
+            ],
+            "facts": [
+              "House Republicans selected Jim Jordan as their leader for the upcoming term.",
+              "Seventeen election races remain undecided across the United States.",
+              "The U.S. House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee.",
+              "Eleven Democrats were absent during the impeachment resolution vote."
+            ],
+            "title": "House Republicans select Jim Jordan as leader amid ongoing vote counts",
+            "context": "The midterm elections occurred on 3 November 2026. The House of Representatives holds the constitutional authority to initiate impeachment proceedings against federal officials.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Die Republikaner im Repräsentantenhaus haben Jim Jordan zu ihrem Anführer für den nächsten Kongress gewählt, während Wahlbeamte acht Tage nach den Zwischenwahlen weiterhin Stimmzettel auszählen.",
+            "body": [
+              "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Anführer der Partei im Kongress ab Januar. Laut NPR und der New York Times ist Jordan Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
+              "Wahlbeamte verarbeiten acht Tage nach den Zwischenwahlen vom 3. November weiterhin ausstehende Stimmzettel. G1 und die Japan Times berichteten, dass landesweit 17 Rennen unentschieden sind.",
+              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen. Diese Abstimmung stoppte das unmittelbare Amtsenthebungsverfahren, so The Hindu.",
+              "Al Jazeera berichtete, dass 11 Demokraten bei der Abstimmung über die Amtsenthebungsresolution fehlten. Die Maßnahme wurde auf die Ausschussebene verwiesen, anstatt direkt zur Abstimmung im Plenum zu gelangen."
+            ],
+            "facts": [
+              "Die Republikaner im Repräsentantenhaus wählten Jim Jordan zu ihrem Anführer für die kommende Legislaturperiode.",
+              "Siebzehn Wahlrennen in den Vereinigten Staaten sind weiterhin unentschieden.",
+              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
+              "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
+            ],
+            "title": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef während laufender Stimmenauszählung",
+            "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
+          }
+        }
+      },
+      {
         "at": "2026-11-11T08:41:22.152Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Wahlbeamte bearbeiten ausstehende Stimmzettel acht Tage nach den Zwischenwahlen, während das Repräsentantenhaus ein Amtsenthebungsverfahren gegen den Verteidigungsminister gestoppt hat.",
+            "body": [
+              "Wahlbeamte zählen acht Tage nach den US-Zwischenwahlen 2026 weiter Stimmzettel. Laut G1 und The Japan Times bleiben 17 Rennen unentschieden.",
+              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen. Diese Abstimmung stoppte die unmittelbare Amtsenthebungsinitiative effektiv, so The Hindu.",
+              "Al Jazeera berichtete, dass 11 Demokraten bei der Abstimmung über die Amtsenthebungsresolution fehlten. Die Resolution wurde auf die Ausschussstufe verwiesen, anstatt einer sofortigen Abstimmung im Plenum zuzuführen."
+            ],
+            "facts": [
+              "Siebzehn Wahlrennen bleiben in den Vereinigten Staaten unentschieden.",
+              "Wahlbeamte zählen acht Tage nach den Zwischenwahlen weiter Stimmzettel.",
+              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
+              "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
+            ],
+            "title": "Wahlbeamte zählen Stimmzettel weiter, während das Repräsentantenhaus Hegseths Amtsenthebungsverfahren blockiert",
+            "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
+          },
           "en": {
             "dek": "Election officials are processing outstanding ballots eight days after the midterm elections while the House of Representatives halted an impeachment effort against the Defense Secretary.",
             "body": [
@@ -74,22 +322,6 @@
             "title": "Election officials continue counting ballots as House blocks Hegseth impeachment",
             "context": "The midterm elections took place on 3 November 2026. The House of Representatives holds the constitutional power to initiate impeachment proceedings against federal officials.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Wahlbeamte bearbeiten ausstehende Stimmzettel acht Tage nach den Zwischenwahlen, während das Repräsentantenhaus ein Amtsenthebungsverfahren gegen den Verteidigungsminister gestoppt hat.",
-            "body": [
-              "Wahlbeamte zählen acht Tage nach den US-Zwischenwahlen 2026 weiter Stimmzettel. Laut G1 und The Japan Times bleiben 17 Rennen unentschieden.",
-              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen. Diese Abstimmung stoppte die unmittelbare Amtsenthebungsinitiative effektiv, so The Hindu.",
-              "Al Jazeera berichtete, dass 11 Demokraten bei der Abstimmung über die Amtsenthebungsresolution fehlten. Die Resolution wurde auf die Ausschussstufe verwiesen, anstatt einer sofortigen Abstimmung im Plenum zuzuführen."
-            ],
-            "facts": [
-              "Siebzehn Wahlrennen bleiben in den Vereinigten Staaten unentschieden.",
-              "Wahlbeamte zählen acht Tage nach den Zwischenwahlen weiter Stimmzettel.",
-              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
-              "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
-            ],
-            "title": "Wahlbeamte zählen Stimmzettel weiter, während das Repräsentantenhaus Hegseths Amtsenthebungsverfahren blockiert",
-            "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
           }
         }
       }
@@ -136,62 +368,236 @@
   },
   "updates": [
     {
-      "id": "u-1794391372000-k8x3",
-      "at": "2026-11-11T10:02:52.000Z",
+      "id": "u-1794414248000-jeaj",
+      "at": "2026-11-11T16:24:08.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "House Republicans select Jim Jordan as leader",
-          "body": "House Republicans chose Ohio's Jim Jordan to lead the party in Congress starting in January, according to reports by NPR and the New York Times. Jordan is a co-founder of the Freedom Caucus and an ally of President Trump."
-        },
-        "it": {
-          "headline": "I Repubblicani della Camera scelgono Jim Jordan come leader",
-          "body": "I Repubblicani della Camera dei rappresentanti hanno scelto Jim Jordan, dell'Ohio, per guidare il partito al Congresso a partire da gennaio, secondo quanto riferito da NPR e dal New York Times. Jordan è cofondatore del Freedom Caucus e alleato del presidente Trump."
+          "headline": "Democrats won US midterms as Republicans lost both chambers",
+          "body": "Democrats won the midterms, according to the USC Price School. The Hill reported that Republican losses cost the party control of both chambers of Congress."
         },
         "de": {
-          "headline": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef",
-          "body": "Die Republikaner im Repräsentantenhaus haben Jim Jordan aus Ohio zum künftigen Parteiführer im Kongress ab Januar gewählt, wie Berichte von NPR und der New York Times bestätigen. Jordan ist Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump."
+          "headline": "Demokraten gewannen US-Zwischenwahlen, Republikaner verloren beide Kammern",
+          "body": "Laut USC Price School gewannen die Demokraten die Zwischenwahlen. The Hill berichtete, dass die Republikaner durch die Verluste die Kontrolle über beide Kammern des Kongresses verloren."
         },
         "es": {
-          "headline": "Los republicanos de la Cámara de Representantes eligen a Jim Jordan como líder",
-          "body": "Los republicanos de la Cámara de Representantes eligieron a Jim Jordan, de Ohio, para liderar al partido en el Congreso a partir de enero, según informaron NPR y The New York Times. Jordan es cofundador del Freedom Caucus y aliado del presidente Trump."
+          "headline": "Demócratas ganan las elecciones de mitad de mandato en EE. UU. mientras los republicanos pierden ambas cámaras",
+          "body": "Los demócratas ganaron las elecciones de mitad de mandato, según la USC Price School. The Hill informó que las pérdidas republicanas costaron al partido el control de ambas cámaras del Congreso."
         },
-        "pt": {
-          "headline": "Republicanos da Câmara escolhem Jim Jordan como líder",
-          "body": "Os republicanos da Câmara de Representantes escolheram Jim Jordan, do Ohio, para liderar o partido no Congresso a partir de janeiro, de acordo com notícias da NPR e do New York Times. Jordan é um dos cofundadores do Freedom Caucus e um aliado do Presidente Trump."
-        },
-        "ja": {
-          "headline": "下院共和党、ジム・ジョーダン氏をリーダーに選出",
-          "body": "NPRやニューヨーク・タイムズ紙の報道によると、下院共和党は1月から党を率いる議会指導者にオハイオ州選出のジム・ジョーダン氏を選出した。ジョーダン氏はフリーダム・コーカスの共同創設者であり、トランプ大統領の側近である。"
+        "it": {
+          "headline": "I Democratici hanno vinto le elezioni di metà mandato negli Stati Uniti e i Repubblicani hanno perso entrambe le camere",
+          "body": "I Democratici hanno vinto le elezioni di metà mandato, secondo la USC Price School. Il quotidiano The Hill ha riferito che le sconfitte dei Repubblicani sono costate al partito il controllo di entrambe le camere del Congresso."
         },
         "zh": {
-          "headline": "众议院共和党人推选吉姆·乔丹为领袖",
-          "body": "据NPR和《纽约时报》报道，众议院共和党人选择来自俄亥俄州的吉姆·乔丹（Jim Jordan）从明年1月开始领导党内在国会的力量。乔丹是“自由核心小组”的共同创始人和总统特朗普的盟友。"
+          "headline": "民主党赢得美国中期选举，共和党在两院均失利",
+          "body": "根据南加州大学普莱斯学院的数据，民主党赢得了中期选举。《华盛顿邮报》报道，共和党的失利导致该党失去国会两院的控制权。"
         },
-        "ko": {
-          "headline": "미 공화당 하원, 짐 조던을 원내대표로 선출",
-          "body": "NPR과 뉴욕타임스의 보도에 따르면, 미 공화당 하원은 1월부터 당을 이끌 인물로 오하이오주 출신의 짐 조던 의원을 선출했다. 조던 의원은 프리덤 코커스(Freedom Caucus)의 공동 창립자이자 트럼프 대통령의 측근이다."
+        "pt": {
+          "headline": "Democratas venceram as eleições de meio de mandato nos EUA, enquanto os Republicanos perderam ambas as câmaras",
+          "body": "Os Democratas venceram as eleições de meio de mandato, segundo a USC Price School. O Hill reportou que as perdas dos Republicanos custaram ao partido o controlo de ambas as câmaras do Congresso."
         },
         "fr": {
-          "headline": "Les républicains de la Chambre choisissent Jim Jordan comme chef",
-          "body": "Les républicains de la Chambre des représentants ont choisi Jim Jordan, élu de l'Ohio, pour diriger le parti au Congrès à partir de janvier, selon des informations rapportées par NPR et le New York Times. M. Jordan est cofondateur du Freedom Caucus et un allié du président Trump."
+          "headline": "Les démocrates remportent les élections de mi-mandat aux États-Unis, les républicains perdent les deux chambres",
+          "body": "Les démocrates ont remporté les élections de mi-mandat, selon l'École de politique publique Price de l'Université de Californie du Sud (USC). Le journal The Hill a rapporté que les défaites républicaines ont fait perdre au parti le contrôle des deux chambres du Congrès."
+        },
+        "ja": {
+          "headline": "民主党が中間選挙で勝利、共和党は両院で敗北",
+          "body": "USC Price Schoolによると、民主党が中間選挙で勝利した。The Hillは、共和党の敗北により、同党は議会の両院の支配権を失ったと報じた。"
+        },
+        "ko": {
+          "headline": "민주당, 중도선거 승리...공화당 양원 모두 패배",
+          "body": "USC Price School에 따르면 민주당이 중간선거에서 승리했다. The Hill은 공화당의 패배로 인해 양원 의회에 대한 통제권을 잃었다고 보도했다."
         }
       },
       "sources": [
         {
-          "outlet": "NPR",
-          "title": "Close Trump ally to lead House Republicans next year",
+          "outlet": "The Hill",
+          "title": "Watch live: House Freedom Caucus charts path forward after GOP midterm losses",
+          "url": "https://thehill.com/video-clips/6213328-watch-house-freedom-caucus-gop-midterm-losses/",
+          "publishedAt": "2026-11-11T16:24:08.000Z"
+        },
+        {
+          "outlet": "USC Price School",
+          "title": "Democrats won the midterms. What happens now?",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4xRXRUTGNHN1E1Sk9PTFl4QU5HS0FFcGVHRlNzRzQ5dTRUYlQtSTFaYlBtd0ZsbGQ1N0xnRkVsSlh1SU0tckJXMWNiM1QyLTE4Y0NOV0FiS21pb2pOSk9QUFVaMjJKT25MTXFLV3hYVl8wTDFRWlE?oc=5",
+          "publishedAt": "2026-11-11T15:12:35.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-11T16:15:13.000Z",
+      "id": "u-1794413713000-pibu",
+      "kind": "reaction",
+      "locales": {
+        "de": {
+          "body": "Abgeordnete Madeleine Dean warnte Verteidigungsminister Hegseth, seine Tage seien gezählt, nachdem Republikaner einen Amtsenthebungsantrag blockiert hatten. House-Demokraten bereiten neue Artikel über ukrainische Militärhilfe vor.",
+          "headline": "House-Demokraten fordern neuen Amtsenthebungsantrag wegen Ukraine-Hilfe"
+        },
+        "en": {
+          "body": "Rep. Madeleine Dean warned Defense Secretary Hegseth's days are numbered after Republicans blocked impeachment. House Democrats prepare new articles over Ukraine military aid.",
+          "headline": "House Democrats push new impeachment push over Ukraine aid"
+        },
+        "es": {
+          "body": "La representante Madeleine Dean advirtió que los días del secretario de Defensa Hegseth están contados después de que los republicanos bloquearan el impeachment. Los demócratas de la Cámara preparan nuevos artículos sobre la ayuda militar a Ucrania.",
+          "headline": "Los demócratas de la Cámara impulsan un nuevo proceso de impeachment por la ayuda a Ucrania"
+        },
+        "fr": {
+          "body": "La représentante Madeleine Dean a prévenu que les jours du secrétaire à la Défense Hegseth étaient comptés après que les républicains ont bloqué la destitution. Les démocrates de la Chambre préparent de nouveaux articles de procédure concernant l'aide militaire à l'Ukraine.",
+          "headline": "Les démocrates de la Chambre poussent un nouveau processus de destitution concernant l'aide à l'Ukraine"
+        },
+        "it": {
+          "body": "La deputata Madeleine Dean ha avvertito che i giorni del segretario alla Difesa Hegseth sono contati dopo che i repubblicani hanno bloccato l'impeachment. I democratici della Camera preparano nuovi articoli sull'aiuto militare all'Ucraina.",
+          "headline": "I democratici della Camera spingono per un nuovo impeachment sull'aiuto all'Ucraina"
+        },
+        "pt": {
+          "body": "A deputada Madeleine Dean avisou que os dias do secretário de Defesa Hegseth estão contados após republicanos bloquearem o impeachment. Democratas da Câmara preparam novos artigos sobre ajuda militar à Ucrânia.",
+          "headline": "Democratas da Câmara impulsionam novo processo de impeachment sobre ajuda à Ucrânia"
+        },
+        "zh": {
+          "body": "迪恩众议员警告赫格斯塞思的日子屈指可数，因为共和党人阻挠了弹劾动议。众议院民主党人正准备就乌克兰军事援助提交新的弹劾条款。",
+          "headline": "众议院民主党人推动新的弹劾动议，针对乌克兰援助"
+        },
+        "ja": {
+          "headline": "下院民主党、ウクライナ支援を巡り新たな弾劾案を推進",
+          "body": "マドレーン・ディーン下院議員は、共和党が弾劾を阻止したため、国防長官ヘグセス氏の任期は限られていると警告した。下院民主党はウクライナ軍事支援に関する新たな弾劾条項を準備している。"
+        },
+        "ko": {
+          "headline": "하원 민주당, 우크라이나 지원 관련 탄핵 추진",
+          "body": "매들린 딘 하원의원은 공화당이 탄핵을 저지한 후 헤그세스 국방장관의 시일이 얼마 남지 않았다고 경고했다. 하원 민주당은 우크라이나 군사 지원에 관한 새로운 탄핵 조항을 준비하고 있다."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
+          "title": "White House Threatens Congress, Saying Aggressive Investigations Could Be Crime",
+          "outlet": "New York Times",
+          "publishedAt": "2026-11-11T16:15:13.000Z"
+        },
+        {
+          "url": "https://thehill.com/homenews/house/6213391-house-democrat-madeleine-dean-pete-hegseth-warning-impeachment/",
+          "title": "House Democrat: ‘Mr. Hegseth’s days are numbered’",
+          "outlet": "The Hill",
+          "publishedAt": "2026-11-11T16:07:03.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-11T16:15:13.000Z",
+      "id": "u-1794413713000-5mrf",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Das Weiße Haus schrieb dem Repräsentantenhaus-Ausschuss für Aufsicht, demokratische Untersuchungen könnten 'die Grenze in offenkundige Strafbarkeit' überschreiten. Demokraten bereiten sich auf Aufsichtsuntersuchungen vor.",
+          "headline": "Weißes Haus warnt Demokraten vor Untersuchungen, die in Strafbarkeit münden könnten"
+        },
+        "en": {
+          "body": "White House wrote to House Oversight Committee saying Democratic probes may 'cross the line into blatant criminality'. Democrats prepared to begin oversight inquiries.",
+          "headline": "White House warns Democrats investigations could cross into criminality"
+        },
+        "es": {
+          "body": "La Casa Blanca escribió al Comité de Supervisión de la Cámara afirmando que las indagaciones demócratas podrían 'cruzar la línea hacia la criminalidad abierta'. Los demócratas se preparan para iniciar indagaciones de supervisión.",
+          "headline": "La Casa Blanca advierte a los demócratas de que sus investigaciones podrían derivar en criminalidad"
+        },
+        "fr": {
+          "body": "La Maison Blanche a écrit au comité de surveillance de la Chambre affirmant que les enquêtes démocrates pourraient 'dépasser la ligne dans une criminalité manifeste'. Les démocrates se préparent à lancer des enquêtes de surveillance.",
+          "headline": "La Maison Blanche avertit les démocrates que leurs enquêtes pourraient franchir la ligne pénale"
+        },
+        "it": {
+          "body": "La Casa Bianca ha scritto alla commissione Oversight della Camera affermando che le indagini dei democratici potrebbero 'attraversare la linea nella evidente criminalità'. I democratici si preparano a iniziare le indagini di controllo.",
+          "headline": "La Casa Bianca avverte i democratici che le indagini potrebbero sfociare nella criminalità"
+        },
+        "pt": {
+          "body": "A Casa Branca escreveu ao Comité de Fiscalização da Câmara afirmando que as sondagens democráticas podem 'transpor a linha para a criminalidade aberta'. Democratas preparados para iniciar inquéritos de supervisão.",
+          "headline": "Casa Branca alerta que investigações democratas podem transpor a criminalidade"
+        },
+        "zh": {
+          "body": "白宫致众议院监督委员会信函，称民主党的调查可能‘越界明目张胆地涉及刑事犯罪’。民主党准备开始监督调查。",
+          "headline": "白宫警告民主党调查可能涉及刑事责任"
+        },
+        "ja": {
+          "headline": "ホワイトハウス、民主党の調査は犯罪行為に及ぶ可能性を警告",
+          "body": "ホワイトハウスは下院監視委員会宛の書簡で、民主党による調査が「明白な犯罪行為に踏み込む」可能性があると述べた。民主党は監視調査を開始する準備をしている。"
+        },
+        "ko": {
+          "headline": "백악관, 민주당 조사 범죄 영역 침범 가능성 경고",
+          "body": "백악관은 하원 감독위원회에 민주당의 조사가 '노골적인 범죄 영역을 넘을 수 있다'고 서한을 보냈다. 민주당은 감독 조사를 시작할 준비를 하고 있다."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
+          "title": "White House Threatens Congress, Saying Aggressive Investigations Could Be Crime",
+          "outlet": "New York Times",
+          "publishedAt": "2026-11-11T16:15:13.000Z"
+        },
+        {
+          "url": "https://thehill.com/homenews/administration/6213006-white-house-targets-democrat-congressional-investigators/",
+          "title": "White House asserts Democratic investigations could ‘cross the line into blatant criminality’",
+          "outlet": "The Hill",
+          "publishedAt": "2026-11-11T14:39:24.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-11T10:02:52.000Z",
+      "id": "u-1794391372000-k8x3",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die Republikaner im Repräsentantenhaus haben Jim Jordan aus Ohio zum künftigen Parteiführer im Kongress ab Januar gewählt, wie Berichte von NPR und der New York Times bestätigen. Jordan ist Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
+          "headline": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef"
+        },
+        "en": {
+          "body": "House Republicans chose Ohio's Jim Jordan to lead the party in Congress starting in January, according to reports by NPR and the New York Times. Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
+          "headline": "House Republicans select Jim Jordan as leader"
+        },
+        "es": {
+          "body": "Los republicanos de la Cámara de Representantes eligieron a Jim Jordan, de Ohio, para liderar al partido en el Congreso a partir de enero, según informaron NPR y The New York Times. Jordan es cofundador del Freedom Caucus y aliado del presidente Trump.",
+          "headline": "Los republicanos de la Cámara de Representantes eligen a Jim Jordan como líder"
+        },
+        "fr": {
+          "body": "Les républicains de la Chambre des représentants ont choisi Jim Jordan, élu de l'Ohio, pour diriger le parti au Congrès à partir de janvier, selon des informations rapportées par NPR et le New York Times. M. Jordan est cofondateur du Freedom Caucus et un allié du président Trump.",
+          "headline": "Les républicains de la Chambre choisissent Jim Jordan comme chef"
+        },
+        "it": {
+          "body": "I Repubblicani della Camera dei rappresentanti hanno scelto Jim Jordan, dell'Ohio, per guidare il partito al Congresso a partire da gennaio, secondo quanto riferito da NPR e dal New York Times. Jordan è cofondatore del Freedom Caucus e alleato del presidente Trump.",
+          "headline": "I Repubblicani della Camera scelgono Jim Jordan come leader"
+        },
+        "ja": {
+          "body": "NPRやニューヨーク・タイムズ紙の報道によると、下院共和党は1月から党を率いる議会指導者にオハイオ州選出のジム・ジョーダン氏を選出した。ジョーダン氏はフリーダム・コーカスの共同創設者であり、トランプ大統領の側近である。",
+          "headline": "下院共和党、ジム・ジョーダン氏をリーダーに選出"
+        },
+        "ko": {
+          "body": "NPR과 뉴욕타임스의 보도에 따르면, 미 공화당 하원은 1월부터 당을 이끌 인물로 오하이오주 출신의 짐 조던 의원을 선출했다. 조던 의원은 프리덤 코커스(Freedom Caucus)의 공동 창립자이자 트럼프 대통령의 측근이다.",
+          "headline": "미 공화당 하원, 짐 조던을 원내대표로 선출"
+        },
+        "pt": {
+          "body": "Os republicanos da Câmara de Representantes escolheram Jim Jordan, do Ohio, para liderar o partido no Congresso a partir de janeiro, de acordo com notícias da NPR e do New York Times. Jordan é um dos cofundadores do Freedom Caucus e um aliado do Presidente Trump.",
+          "headline": "Republicanos da Câmara escolhem Jim Jordan como líder"
+        },
+        "zh": {
+          "body": "据NPR和《纽约时报》报道，众议院共和党人选择来自俄亥俄州的吉姆·乔丹（Jim Jordan）从明年1月开始领导党内在国会的力量。乔丹是“自由核心小组”的共同创始人和总统特朗普的盟友。",
+          "headline": "众议院共和党人推选吉姆·乔丹为领袖"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.npr.org/2026/11/11/nx-s1-6035795/close-trump-ally-to-lead-house-republicans-next-year",
+          "title": "Close Trump ally to lead House Republicans next year",
+          "outlet": "NPR",
           "publishedAt": "2026-11-11T10:02:52.000Z"
         },
         {
-          "outlet": "New York Times",
-          "title": "Stung by Losses, G.O.P. Chooses Jordan and Thune as Leaders",
           "url": "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
+          "title": "Stung by Losses, G.O.P. Chooses Jordan and Thune as Leaders",
+          "outlet": "New York Times",
           "publishedAt": "2026-11-11T08:41:17.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-11T08:00:01.000Z",
@@ -370,13 +776,75 @@
     "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
     "https://www.spiegel.de/ausland/midterms-usa-2026-warum-die-demokraten-ihre-historische-chance-riskieren-a-30e72a93-c75e-41c5-89ec-b692eac271af#ref=rss",
     "https://news.google.com/rss/articles/CBMifkFVX3lxTFA3aFh0N1I3eXV5VHBNTkx3MEhtTnRKSmNtZXFNaVI3a0V5SUF2T2VfaC1SRnp0Uk5xOWt4Y0hZajRjTHp0bGhKS3RVbFd0b2pPaTJzT0JtbDhGVUc0V2FDTGFiZS1HaFFOdG5IejdJTUlMTGZlUExfZDEyc2c0dw?oc=5",
-    "https://www.japantimes.co.jp/commentary/2026/11/11/world/post-midterm-us-foreign-policy/"
+    "https://www.japantimes.co.jp/commentary/2026/11/11/world/post-midterm-us-foreign-policy/",
+    "https://www.semafor.com/article/11/11/2026/how-the-maga-map-cracked",
+    "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
+    "https://www.foxnews.com/politics/hegseth-could-face-new-impeachment-push-over-ukraine-aid-lawmakers-warn",
+    "https://thehill.com/homenews/house/6213391-house-democrat-madeleine-dean-pete-hegseth-warning-impeachment/",
+    "https://www.axios.com/2026/11/11/bessent-lutnick-megaspeed-nvidia-china-chips",
+    "https://thehill.com/homenews/campaign/6213245-politico-poll-maga-gop-defeat/",
+    "https://www.theguardian.com/world/2026/nov/11/is-the-us-blue-wave-a-turning-point-for-europe-too",
+    "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeUNlT3NKbHF5UDZBSHlIWTQ5STlLV1Ixd1doTjRBUEhHNkhRMm8zRmIycUJFdkRtRHpQRHBEc0Nzd3BOT3JfemtBdmJUMmdRdGlWd3dSZWEtWXJrN1BoY1U2Vk1GU3E4M3N2UWNhOHFjRlYyNDBNaVRwbjRUUkpQNXcxam5fVFBpSUE?oc=5",
+    "https://thehill.com/homenews/administration/6212080-marjorie-taylor-greene-donald-trump-pete-hegseth-impeachment-effort/",
+    "https://news.google.com/rss/articles/CBMiywJBVV95cUxOcnFpbDQ4cEw5WFlyVmNndHpMVk5SU19yc2c2MEdLeW9Fb1U1NjdqQmlDVEplNTlyZ3ppeTMxOHNINVFsWmJaeU5FaGdPdFA0bXdRV1hoQlh0RGVMMWlhX3VhRm4zZEc1RXpUR3Q4RmFrOS0zZ0pvWkhRcmRmM2xnc0EtQXpKSzc2SnNBMmZsTC1NRWhBOU5IN04yVlN5V0lxeWoyY0FRaFE1WnpSLWRDUDhqbmI2eWl2WEp4ek1ZZzcxdnYwSEROZmt3S2RlQ3JsU3pqZzdzaDFvVUpTTmIxUG1yT2JwY1R3NzNLUG9vejVkSzNlSDRhekFFMDJmdVQtaGZpSGlCLUo3Y2dTU2hiSEt5aEZmQ0k0b1V5OGtzYlFuSDlxR0lWaGFrWnZSWFRueVRrcDl0VTBYamhZVWsxY2N0bTB3YVV1Y19N?oc=5",
+    "https://www.france24.com/en/tv-shows/talking-europe/20261111-exclusive-eu-s-kallas-says-us-can-t-negotiate-on-our-behalf-on-lifting-russia-sanctions",
+    "https://www.foxnews.com/politics/he-blamed-jews-gop-congressman-levels-explosive-accusation-against-jd-vance-election-postmortem",
+    "https://thehill.com/homenews/administration/6213006-white-house-targets-democrat-congressional-investigators/",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWmg3cmlmWkFqQnRXbGZ0cnBlOUt5WDFTNi1jdFV0M1ROVXdudVhBalVnRjQweWVacUgxMVRPTzFVVTRNQUMxRXNVWElRdjNqbW9HQ05YVVBEZFFkSUdleHlPYW15RUxfVi0wcHlIRXBXNlZCOEFMbFBYcHRTMUVtR0JhRG1jS21tRW5Mam9QQVRQWDI0TmpEbE5JLVV6UEZhUUF0Q1ZmTG1pb1E?oc=5",
+    "https://thehill.com/homenews/house/6212860-house-democrat-kamlager-dove-hegseth-impeachment-vote/",
+    "https://www.npr.org/2026/11/11/nx-s1-6036790/swing-voters-swing-states-democrats-congress",
+    "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
+    "https://www.dawn.com/news/2043794/ji-announces-nationwide-protests-lahore-rally-against-inflation-and-delays-in-lg-polls",
+    "https://www.rollingstone.com/politics/politics-news/hegseth-impeachment-effort-blocked-democrats-absent-1235655731/",
+    "https://thehill.com/homenews/campaign/6212685-mississippi-senate-race-scott-colom-cindy-hyde-smith-update/",
+    "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+    "https://www.france24.com/en/us-house-votes-to-derail-impeachment-of-defense-secretary-hegseth",
+    "https://www.foxnews.com/politics/senate-republicans-plan-54-day-blitz-push-trumps-agenda-before-democrats-seize-power",
+    "https://allafrica.com/stories/202611110489.html",
+    "https://www.wired.com/story/michigan-voters-want-utility-money-out-of-politics-lawsuit/",
+    "https://www.axios.com/2026/11/11/don-leonard-ohio-democrat-house-jeffries",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbXFnZ3A3NUVfbWRuQ1EyaFF5Y2hUQ1pUYTFicERCRVFlVFFfUDBhcVRiVGRhTDkyVzdQcDk0eHJlNzRZZDVpMTA5QTBvSkp0cFVNVl9FMFVNaHlJcUhzbEtpVTZhb2lFQk9jSnhWR2xIanVoNU1qZ2NlcXJFVjBhUHd1Y2NUcHRNazBfc0NmTFNpZmpf0gGaAUFVX3lxTFBlc2xpNzhVdWZLdy1QU25CWGluSWh1X1MxaXJ2ZG54TTluX3hXa0ppTWVfa2psaHd6SDdYWlBhY2ZYX0pFeFNBdjBjUWlpc283YWFycm41TURhUl9hNTdEU2lfbWMyZ2laN2VyTDVnbzFWR21IRnNfOEtGR3dpek15RUFPVUZ2eS1vSnpGVDQtUFZvR1JDY3FPdUE?oc=5",
+    "https://www.jpost.com/international/article-914609",
+    "https://www.science.org/content/article/researchers-have-wish-list-can-new-congress-deliver",
+    "https://www.theguardian.com/film/2026/nov/11/how-to-rob-a-bank-movie-review-amazon",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbHRXQ1pzTjBmRXp2d2JOdk96TVByNWhhVnd6MWVjWnhHSEdHdWplaHJUNUFEb2dxeWc1RXhCaVBhX2c5bnM2bE9zYldkS1o2UUh3bUVKUDdsNHZfSm5zTnE2ZzRvdURCQU9GdVRpdDBlbzV3QzZ3TVZJVHdVS2o1OTRhU3o4U3pacjhZaHR1UzlkdWJSckhuRGEwSEVKOW1ER3Z3SkJpVWpvazJpZmljSkNqeHA2TkNmNXZmNDl5WFRoUQ?oc=5",
+    "https://www.france24.com/en/france/20261111-tehran-will-strike-us-bases-in-europe-if-used-to-attack-iran-security-chief-says",
+    "https://www.npr.org/2026/11/11/nx-s1-6037432/whats-behind-democratic-socialists-historic-victories-in-the-midterms",
+    "https://thehill.com/video-clips/6213328-watch-house-freedom-caucus-gop-midterm-losses/",
+    "https://thehill.com/homenews/campaign/6213460-erick-erickson-republicans-trump-midterms/",
+    "https://thehill.com/homenews/administration/6213390-mick-mulvaney-donald-trump-white-house-2026-midterms/",
+    "https://news.google.com/rss/articles/CBMidkFVX3lxTE4xRXRUTGNHN1E1Sk9PTFl4QU5HS0FFcGVHRlNzRzQ5dTRUYlQtSTFaYlBtd0ZsbGQ1N0xnRkVsSlh1SU0tckJXMWNiM1QyLTE4Y0NOV0FiS21pb2pOSk9QUFVaMjJKT25MTXFLV3hYVl8wTDFRWlE?oc=5"
   ],
   "startedAt": "2026-11-11T03:31:24.874Z",
-  "updatedAt": "2026-11-11T10:11:02.887Z",
+  "updatedAt": "2026-11-11T17:38:51.256Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-u-s-midterm-elections",
-  "sourceCount": 6,
-  "seenHeadlines": []
+  "sourceCount": 8,
+  "statsHistory": [
+    {
+      "at": "2026-11-05T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "republican-senate-vote-share",
+          "value": 54.2
+        },
+        {
+          "key": "democratic-senate-vote-share",
+          "value": 44.8
+        },
+        {
+          "key": "republican-house-vote-share",
+          "value": 51.5
+        },
+        {
+          "key": "democratic-house-vote-share",
+          "value": 47.2
+        }
+      ]
+    }
+  ],
+  "seenHeadlines": [
+    "Nearly half of MAGA supporters say movement was a loser in midterms"
+  ]
 }
