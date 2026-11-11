@@ -13,20 +13,9 @@
   },
   "slug": "federal-reserve-interest-rate-outlook",
   "stats": {
-    "label": "Credit Card & HELOC Data",
-    "note": "These statistics reflect recent data on credit card and HELOC balances from the Federal Reserve Bank of New York report.",
-    "unit": "",
     "max": null,
     "asOf": "2024-01-01T00:00:00.000Z",
-    "updatedAt": "2026-11-11T03:31:38.038Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "Homeowners tap equity as HELOC balances post biggest jump since 2005: New York Fed report",
-      "url": "https://www.cnbc.com/2026/11/10/heloc-balances-new-york-fed.html",
-      "publishedAt": "2026-11-10T21:37:43.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
+    "note": "These statistics reflect recent data on credit card and HELOC balances from the Federal Reserve Bank of New York report.",
     "rows": [
       {
         "key": "credit-card-balance-increase",
@@ -37,26 +26,26 @@
           "de": {
             "label": "Zunahme des Kreditkarten-Saldes"
           },
-          "fr": {
-            "label": "Augmentation du solde des cartes de crédit"
-          },
           "es": {
             "label": "Aumento del saldo de tarjetas de crédito"
           },
+          "fr": {
+            "label": "Augmentation du solde des cartes de crédit"
+          },
           "it": {
             "label": "Aumento del saldo delle carte di credito"
-          },
-          "pt": {
-            "label": "Aumento do saldo de cartão de crédito"
-          },
-          "zh": {
-            "label": "信用卡余额增长"
           },
           "ja": {
             "label": "クレジットカード残高の増加"
           },
           "ko": {
             "label": "신용카드 잔액 증가"
+          },
+          "pt": {
+            "label": "Aumento do saldo de cartão de crédito"
+          },
+          "zh": {
+            "label": "信用卡余额增长"
           }
         }
       },
@@ -69,54 +58,55 @@
           "de": {
             "label": "Anzahl der vierteljährlichen HELOC-Zunahmen"
           },
-          "fr": {
-            "label": "Nombre d'augmentations trimestrielles des HELOC"
-          },
           "es": {
             "label": "Recuento de aumentos trimestrales de HELOC"
           },
+          "fr": {
+            "label": "Nombre d'augmentations trimestrielles des HELOC"
+          },
           "it": {
             "label": "Conteggio degli aumenti trimestrali HELOC"
-          },
-          "pt": {
-            "label": "Contagem de aumento trimestral de HELOC"
-          },
-          "zh": {
-            "label": "房屋净值信用额度季度增长计数"
           },
           "ja": {
             "label": "HELOCの四半期ごとの増加件数"
           },
           "ko": {
             "label": "HELOC 분기별 증가 건수"
+          },
+          "pt": {
+            "label": "Contagem de aumento trimestral de HELOC"
+          },
+          "zh": {
+            "label": "房屋净值信用额度季度增长计数"
           }
         }
       }
     ],
+    "unit": "",
+    "label": "Credit Card & HELOC Data",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/10/heloc-balances-new-york-fed.html",
+      "title": "Homeowners tap equity as HELOC balances post biggest jump since 2005: New York Fed report",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-10T21:37:43.000Z"
+    },
     "locales": {
       "de": {
         "note": "Statistiken zu Kreditkarten-Salden und HELOC-Zunahmen von der Federal Reserve Bank of New York",
         "label": "Kreditkarten- und HELOC-Daten"
       },
-      "fr": {
-        "note": "Statistiques sur les soldes de cartes de crédit et les augmentations de HELOC de la Federal Reserve Bank de New York",
-        "label": "Données sur les cartes de crédit et les HELOC"
-      },
       "es": {
         "note": "Estadísticas sobre saldos de tarjetas de crédito y aumentos de HELOC del Banco de la Reserva Federal de Nueva York",
         "label": "Datos de tarjetas de crédito y HELOC"
       },
+      "fr": {
+        "note": "Statistiques sur les soldes de cartes de crédit et les augmentations de HELOC de la Federal Reserve Bank de New York",
+        "label": "Données sur les cartes de crédit et les HELOC"
+      },
       "it": {
         "note": "Statistiche sui saldi delle carte di credito e sugli aumenti HELOC della Federal Reserve Bank of New York",
         "label": "Dati su carte di credito e HELOC"
-      },
-      "pt": {
-        "note": "Estatísticas sobre saldos de cartões de crédito e aumentos de HELOC do Federal Reserve Bank de Nova Iorque",
-        "label": "Dados de Cartão de Crédito e HELOC"
-      },
-      "zh": {
-        "note": "纽约联邦储备银行关于信用卡余额和房屋净值信用额度增长的统计数据",
-        "label": "信用卡和房屋净值信用额度数据"
       },
       "ja": {
         "note": "ニューヨーク連邦準備銀行によるクレジットカード残高およびHELOC増加の統計",
@@ -125,13 +115,23 @@
       "ko": {
         "note": "뉴욕 연방준비은행의 신용카드 잔액 및 HELOC 증가 통계",
         "label": "신용카드 및 HELOC 데이터"
+      },
+      "pt": {
+        "note": "Estatísticas sobre saldos de cartões de crédito e aumentos de HELOC do Federal Reserve Bank de Nova Iorque",
+        "label": "Dados de Cartão de Crédito e HELOC"
+      },
+      "zh": {
+        "note": "纽约联邦储备银行关于信用卡余额和房屋净值信用额度增长的统计数据",
+        "label": "信用卡和房屋净值信用额度数据"
       }
-    }
+    },
+    "updatedAt": "2026-11-11T03:31:38.038Z",
+    "sourceCount": 1
   },
   "topic": "Federal Reserve Interest Rate Outlook",
-  "status": "live",
+  "status": "ended",
   "article": null,
-  "endedAt": null,
+  "endedAt": "2026-11-10T17:28:44.711Z",
   "locales": {
     "de": {
       "dek": "Märkte reagieren auf anhaltende Inflationsdaten, da Analysten eine letzte Zinserhöhung im Dezember erwarten.",
@@ -184,7 +184,7 @@
   ],
   "seenUrls": [],
   "startedAt": "2026-11-10T17:28:44.711Z",
-  "updatedAt": "2026-11-10T17:28:44.711Z",
+  "updatedAt": "2026-11-11T05:34:02.915Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": null,
