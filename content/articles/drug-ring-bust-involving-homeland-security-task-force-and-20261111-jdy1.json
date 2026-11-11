@@ -1,0 +1,64 @@
+{
+  "slug": "drug-ring-bust-involving-homeland-security-task-force-and-20261111-jdy1",
+  "category": "politics",
+  "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/08/todd-blanche-speech-8-14-26.png",
+  "imageCredit": "Fox News",
+  "video": {
+    "type": "youtube",
+    "id": "dLGhaHbWCAA",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dLGhaHbWCAA"
+  },
+  "importance": 5,
+  "publishedAt": "2026-11-11T17:47:15.190Z",
+  "updatedAt": "2026-11-11T17:47:15.190Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Fox News",
+      "title": "Drug ring busted, illegal aliens cuffed by Homeland Security Task Force in South Carolina: DOJ",
+      "url": "https://www.foxnews.com/politics/drug-ring-busted-illegal-aliens-cuffed-homeland-security-task-force-south-carolina-doj",
+      "publishedAt": "2026-11-11T14:19:03.000Z"
+    },
+    {
+      "outlet": "The Kyiv Post",
+      "title": "US DEA Aided Ukraine’s Probe Into Police-Protected Drug Ring, Interior Minister Says",
+      "url": "https://www.kyivpost.com/post/89833",
+      "publishedAt": "2026-11-11T17:16:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Drug ring bust involving Homeland Security Task Force and Ukraine's interior minister cooperation",
+      "dek": "US DEA aided Ukraine's investigation into a police-protected drug ring, Ukrainian interior minister says",
+      "facts": [
+        "US DEA shared operational and analytical information with Ukraine to expose the Khimprom criminal group",
+        "Ukrainian Interior Minister Ivan Vyhivskyi announced the cooperation on Nov. 11, 2026",
+        "The Khimprom group operated in Ukraine and EU countries according to Ukrainian authorities",
+        "Ukrainian NABU and SAPO alleged on Nov. 4 that SBU and National Police officials protected the criminal organization",
+        "The investigation led to shutdown of the group's drug sales points and notices of suspicion on over 12,000 people in drug-related cases in first 10 months of 2026"
+      ],
+      "body": [
+        "The US Drug Enforcement Administration helped Ukraine expose the Khimprom criminal group by sharing operational and analytical information, Ukrainian Interior Minister Ivan Vyhivskyi said on Nov. 11, 2026. The announcement follows a National Anti-Corruption Bureau and Specialized Anti-Corruption Prosecutor's Office investigation published Nov. 4 alleging that Security Service of Ukraine and National Police officials helped protect the group.",
+        "Vyhivskyi, who previously served as head of Ukraine's National Police, made the statement after meeting DEA attaché Lorraine Estep. The minister said the DEA's contribution included exchanging information about the group's activities, helping Ukrainian police investigate the network and shut down its drug sales points.",
+        "According to Ukrainian authorities, the Khimprom group's alleged leader is Yehor Burkin, nicknamed 'Mexican,' a Russian citizen who received a Ukrainian passport in 2014 under the name Yehor Levchenko. Police have served notices of suspicion on more than 12,000 people in drug-related cases and uncovered 87 criminal groups in the first 10 months of 2026."
+      ],
+      "context": "Ukrainian Interior Minister Ivan Vyhivskyi, formerly head of the National Police, announced US DEA cooperation in exposing a criminal group that operated in Ukraine and EU countries, following allegations that Ukrainian security officials protected the organization.",
+      "imageCaption": "South Carolina drug bust nets 36 arrests including 9 illegal aliens"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline references 'Homeland Security Task Force' which is not in the provided sources (S1 contains only a fragmentary text about unrelated topics; S2 is about Ukraine/DEA cooperation). The draft title conflates two separate stories.",
+      "Body contains invented framing: 'Ukrainian Interior Minister ... announced US DEA cooperation' — the sources state the minister announced the cooperation, but the draft adds unsupported context about 'police-protected' and 'shut down its drug sales points' without attribution to a specific source claim.",
+      "Facts list includes 'Ukrainian NABU and SAPO alleged on Nov. 4 that SBU and National Police officials helped protect the group' — this is supported by S2, but the body paragraph paraphrases it as fact without the required 'according to' attribution.",
+      "Body uses loaded language: 'helped Ukrainian police investigate the network and shut down its drug sales points' — 'shut down' is a result claim not explicitly stated as a fact in the sources; the sources say the minister 'said it led to the shutdown' but this is his assertion, not an established fact.",
+      "Draft ends with a summary sentence ('The investigation led to...') which violates the no-evaluative-summary rule.",
+      "Sentence rhythm issues: multiple short declarative sentences in a row; need at least one longer sentence with two clauses per paragraph.",
+      "The dek references 'US DEA aided Ukraine's investigation into a police-protected drug ring' — 'police-protected' is a contested claim from the sources (NABU/SAPO allegation), not an established fact. Must be attributed."
+    ]
+  }
+}
