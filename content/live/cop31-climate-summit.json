@@ -1,9 +1,222 @@
 {
+  "meta": {
+    "outlets": [
+      "The Guardian",
+      "Variety",
+      "Anadolu Ajansı",
+      "The Media Line"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "cop31-climate-summit",
-  "status": "live",
-  "category": "climate",
-  "importance": 8,
   "topic": "Cop31 Climate Summit",
+  "status": "live",
+  "article": {
+    "slug": "cop31-climate-summit",
+    "updatedAt": "2026-11-11T14:08:29.682Z",
+    "reason": "2 new update(s)",
+    "locales": {
+      "en": {
+        "title": "PM Shehbaz arrives at COP31 Antalya Leaders' Summit in Turkiye",
+        "dek": "Prime Minister Shehbaz Sharif arrived at the COP31 Antalya Leaders' Summit as UN chief Guterres urged climate ambassadors to fight harder.",
+        "facts": [
+          "PM Shehbaz arrived at the COP31 Antalya Leaders' Summit in Turkiye,Dawn",
+          "Delegates from nearly 200 countries are attending the COP31 summit,Dawn",
+          "UN chief Guterres accused the fossil fuel lobby of delaying climate action,Al Jazeera",
+          "Guterres implored climate ambassadors to fight harder at COP31,New York Times"
+        ],
+        "body": [
+          "Prime Minister Shehbaz Sharif arrived at the COP31 Antalya Leaders' Summit in Turkiye on 11 November 2026.",
+          "According to Dawn, he is set to highlight Pakistan’s climate priorities.",
+          "The summit brings together delegates from nearly 200 countries.",
+          "UN Secretary-General António Guterres accused the fossil fuel lobby of delaying climate action at the summit.",
+          "According to the New York Times, Guterres implored climate ambassadors to fight harder.",
+          "The COP31 climate summit kicked off in Turkey with cultural displays, protests and pin collectibles, according to The Straits Times."
+        ],
+        "context": "The COP31 climate summit is underway in Antalya, Turkiye, bringing together nearly 200 country delegates to discuss climate priorities and action.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Premierminister Shehbaz trifft auf COP31 Gipfel der Staats- und Regierungschefs in Antalya, Türkei",
+        "dek": "Premierminister Shehbaz Sharif traf auf dem COP31 Gipfel der Staats- und Regierungschefs in Antalya ein, während UN-Generalsekretär Guterres die Klimaambassadoren zu stärkerem Kampf mahnte.",
+        "facts": [
+          "Premierminister Shehbaz traf auf dem COP31 Gipfel der Staats- und Regierungschefs in Antalya in der Türkei ein, Dawn",
+          "Delegierte aus fast 200 Ländern nehmen am COP31 Gipfel teil, Dawn",
+          "UN-Generalsekretär Guterres beschuldigte die Lobby für fossile Brennstoffe, Klimaschutzmaßnahmen zu verzögern, Al Jazeera",
+          "Guterres flehte auf COP31 die Klimaambassadoren zu stärkerem Kampf auf, New York Times"
+        ],
+        "body": [
+          "Premierminister Shehbaz Sharif traf am 11. November 2026 auf dem COP31 Gipfel der Staats- und Regierungschefs in Antalya in der Türkei ein.",
+          "Laut Dawn soll er die Klima-Prioritäten Pakistans hervorheben.",
+          "Der Gipfel bringt Delegierte aus fast 200 Ländern zusammen.",
+          "Der UN-Generalsekretär António Guterres beschuldigte auf dem Gipfel die Lobby für fossile Brennstoffe, Klimaschutzmaßnahmen zu verzögern.",
+          "Laut New York Times flehte Guterres die Klimaambassadoren zu stärkerem Kampf auf.",
+          "Der COP31 Klimagipfel begann in der Türkei mit kulturellen Darbietungen, Protesten und Pin-Sammlern, laut The Straits Times."
+        ],
+        "context": "Der COP31 Klimagipfel findet in Antalya, Türkei, statt und bringt fast 200 Länderdelegierte zusammen, um Klima-Prioritäten und -maßnahmen zu diskutieren."
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Weltführer kommen zum Klimagipfel COP31 zusammen, um auf die eskalierenden Entwicklungen der Klimakrise zu reagieren.",
+      "title": "Klimagipfel COP31"
+    },
+    "en": {
+      "dek": "World leaders convene to address escalating climate crisis developments at the Cop31 summit.",
+      "title": "Cop31 Climate Summit"
+    },
+    "es": {
+      "dek": "Los líderes mundiales se reúnen para abordar los crecientes acontecimientos de la crisis climática en la cumbre COP31.",
+      "title": "Cumbre climática COP31"
+    },
+    "fr": {
+      "dek": "Les dirigeants mondiaux se réunissent pour faire face à l'aggravation de la crise climatique lors du sommet de la COP31.",
+      "title": "Sommet sur le climat de la COP31"
+    },
+    "it": {
+      "dek": "I leader mondiali si riuniscono per affrontare gli sviluppi della crescente crisi climatica al vertice Cop31.",
+      "title": "Vertice sul clima Cop31"
+    },
+    "ja": {
+      "dek": "世界の指導者らがCOP31首脳会議に参集し、深刻化する気候危機の動向に対処する。",
+      "title": "国連気候変動枠組条約第31回締約国会議（COP31）首脳会議"
+    },
+    "ko": {
+      "dek": "세계 지도자들이 COP31 정상회의에 모여 심화하는 기후 위기 상황에 대응한다.",
+      "title": "제31차 유엔기후변화협약 당사국총회(COP31) 기후 정상회의"
+    },
+    "pt": {
+      "dek": "Líderes mundiais reúnem-se para debater a evolução da crise climática na cimeira Cop31.",
+      "title": "Cimeira Climática Cop31"
+    },
+    "zh": {
+      "dek": "世界领导人齐聚Cop31峰会，商讨不断加剧的气候危机应对进展。",
+      "title": "Cop31气候峰会"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794401672000-rzpj",
+      "at": "2026-11-11T12:54:32.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "UN chief Guterres accuses fossil fuel lobby of delaying climate action",
+          "body": "Guterres says the world must fight harder at COP31. According to Al Jazeera, he accused the fossil fuel lobby of delaying climate action. New York Times reports he implored climate ambassadors to fight harder."
+        },
+        "es": {
+          "headline": "El secretario general de la ONU, Guterres, acusa al lobby de combustibles fósiles de retrasar la acción climática",
+          "body": "Guterres afirma que el mundo debe luchar más en la COP31. Según Al Jazeera, acusó al lobby de combustibles fósiles de retrasar la acción climática. El New York Times informa que instó a los embajadores climáticos a luchar con mayor intensidad."
+        },
+        "it": {
+          "headline": "Il segretario generale dell'ONU Guterres accusa il lobby dei combustibili fossili di rallentare l'azione climatica",
+          "body": "Guterres afferma che il mondo deve lottare di più alla COP31. Secondo Al Jazeera, ha accusato il lobby dei combustibili fossili di ritardare l'azione climatica. Il New York Times riferisce che ha esortato gli ambasciatori climatici a impegnarsi di più."
+        },
+        "fr": {
+          "headline": "Guterres accuse le lobby des combustibles fossiles de retarder l'action climatique",
+          "body": "Guterres affirme que le monde doit lutter davantage à la COP31. Selon Al Jazeera, il a accusé le lobby des combustibles fossiles de retarder l'action climatique. Le New York Times rapporte qu'il a imploré les ambassadeurs climatiques de lutter davantage."
+        },
+        "zh": {
+          "headline": "联合国秘书长古特雷斯指责化石燃料游说团体拖延气候行动",
+          "body": "古特雷斯表示，世界必须在COP31上更加努力。据半岛电视台报道，他指责化石燃料游说团体拖延气候行动。《纽约时报》报道称，他恳请气候大使们更加努力。"
+        },
+        "ja": {
+          "headline": "グテレス国連事務総長、化石燃料ロビーが気候変動対策を遅らせていると非難",
+          "body": "グテレス氏はCOP31で世界はより一層努力すべきだと述べた。アルジャジーラによると、同氏は化石燃料ロビーが気候変動対策を遅らせていると非難した。ニューヨーク・タイムズは、同氏が気候変動大使らに一層の努力を訴えたと報じた。"
+        },
+        "ko": {
+          "headline": "구테흐스 유엔 사무총장, 화석연료 로비가 기후 행동 지연시킨다고 비판",
+          "body": "구테흐스 사무총장은 COP31에서 세계가 더욱 적극적으로 나서야 한다고 말했다. 알자지라에 따르면, 그는 화석연료 로비가 기후 행동을 지연시키고 있다고 비판했다. 뉴욕타임스는 그가 기후 대사들에게 더욱 적극적으로 움직일 것을 촉구했다고 전했다."
+        },
+        "pt": {
+          "headline": "Chefe da ONU, Guterres, acusa lobby dos combustíveis fósseis de atrasar ação climática",
+          "body": "Guterres diz que o mundo deve lutar com mais determinação na COP31. Segundo a Al Jazeera, acusou o lobby dos combustíveis fósseis de atrasar a ação climática. O New York Times relata que ele implorou aos embaixadores climáticos que lutassem com mais determinação."
+        },
+        "de": {
+          "headline": "UN-Generalsekretär Guterres wirft der fossilen Brennstofflobby Verzögerung von Klimaschutz vor",
+          "body": "Guterres sagt, die Welt müsse auf der COP31 härter kämpfen. Laut Al Jazeera beschuldigte er die fossile Brennstofflobby, Klimaschutz zu verzögern. Die New York Times berichtet, er habe Klimabotschafter beschworen, härter zu kämpfen."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Dawn",
+          "title": "PM Shehbaz joins world leaders at COP31, will outline Pakistan’s climate priorities",
+          "url": "https://www.dawn.com/news/2043746/pm-shehbaz-joins-world-leaders-at-cop31-will-outline-pakistans-climate-priorities",
+          "publishedAt": "2026-11-11T12:54:32.000Z"
+        },
+        {
+          "outlet": "New York Times",
+          "title": "‘Fight Harder,’ U.N. Chief António Guterres Implores, Rousing Climate Ambassadors at COP31",
+          "url": "https://www.nytimes.com/2026/11/11/climate/cop31-antonio-guterres-un.html",
+          "publishedAt": "2026-11-11T12:41:20.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794401672000-fqsb",
+      "at": "2026-11-11T12:54:32.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "PM Shehbaz arrives at COP31 Antalya Leaders' Summit",
+          "body": "Prime Minister Shehbaz Sharif arrived at the COP31 Antalya Leaders' Summit in Turkiye. According to Dawn, he is set to highlight Pakistan’s climate priorities. Delegates from nearly 200 countries are reported to be attending."
+        },
+        "es": {
+          "headline": "El primer ministro Shehbaz llega a la Cumbre de Líderes de la COP31 en Antalya",
+          "body": "El primer ministro Shehbaz Sharif llegó a la Cumbre de Líderes de la COP31 en Antalya, Turquía. Según Dawn, está previsto que destaque las prioridades climáticas de Pakistán. Se reporta que asisten delegados de casi 200 países."
+        },
+        "it": {
+          "headline": "Il premier Shehbaz arriva al vertice dei leader della COP31 ad Antalya",
+          "body": "Il primo ministro Shehbaz Sharif è arrivato al vertice dei leader della COP31 ad Antalya, in Turchia. Secondo Dawn, dovrebbe evidenziare le priorità climatiche del Pakistan. Sono segnalati partecipanti da quasi 200 paesi."
+        },
+        "fr": {
+          "headline": "M. Shehbaz arrive au sommet des dirigeants de la COP31 à Antalya",
+          "body": "Le Premier ministre Shehbaz Sharif est arrivé au sommet des dirigeants de la COP31 à Antalya, en Turquie. Selon Dawn, il doit souligner les priorités climatiques du Pakistan. On rapporte la présence de délégués de près de 200 pays."
+        },
+        "zh": {
+          "headline": "总理夏巴兹抵达COP31安塔利亚领导人峰会",
+          "body": "总理夏巴兹·谢里夫抵达在土耳其举行的COP31安塔利亚领导人峰会。据《黎明报》报道，他将重点阐述巴基斯坦的气候优先事项。据报道，来自近200个国家的代表将出席。"
+        },
+        "ja": {
+          "headline": "シャバズ・シャリフ首相、COP31アンタリア首脳サミットに到着",
+          "body": "シャバズ・シャリフ首相はトルコのCOP31アンタリア首脳サミットに到着した。ドーンによると、同氏はパキスタンの気候変動対策の優先事項を強調する予定だ。約200カ国の代表が出席すると報じられている。"
+        },
+        "ko": {
+          "headline": "셰바즈 총리, COP31 안탈리아 지도자 정상회의 도착",
+          "body": "셰바즈 샤리프 총리가 튀르키예에서 열린 COP31 안탈리아 지도자 정상회의에 도착했다. 던에 따르면, 그는 파키스탄의 기후 우선순위를 부각시킬 예정이다. 약 200개국 대표단이 참석하는 것으로 전해졌다."
+        },
+        "pt": {
+          "headline": "Primeiro-ministro Shehbaz chega à Cimeira de Líderes da COP31 em Antália",
+          "body": "O primeiro-ministro Shehbaz Sharif chegou à Cimeira de Líderes da COP31 em Antália, na Turquia. Segundo o Dawn, deverá destacar as prioridades climáticas do Paquistão. Delegados de quase 200 países deverão participar, segundo relatos."
+        },
+        "de": {
+          "headline": "Premierminister Shehbaz auf COP31-Gipfeltreffen in Antalya eingetroffen",
+          "body": "Premierminister Shehbaz Sharif ist auf dem COP31-Gipfeltreffen in Antalya in der Türkei eingetroffen. Laut Dawn will er Pakistans Klimaprioritäten hervorheben. Berichten zufolge nehmen Delegierte aus fast 200 Ländern teil."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Dawn",
+          "title": "PM Shehbaz joins world leaders at COP31, will outline Pakistan’s climate priorities",
+          "url": "https://www.dawn.com/news/2043746/pm-shehbaz-joins-world-leaders-at-cop31-will-outline-pakistans-climate-priorities",
+          "publishedAt": "2026-11-11T12:54:32.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "COP31 climate summit kicks off in Turkey with cultural displays, protests and pin collectibles",
+          "url": "https://www.straitstimes.com/world/cop31-climate-summit-kicks-off-in-turkey-with-cultural-displays-protests-and-pin-collectibles",
+          "publishedAt": "2026-11-11T08:40:00.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "climate",
   "keywords": [
     "cop31",
     "climate summit",
@@ -12,61 +225,23 @@
     "global warming",
     "climate crisis"
   ],
+  "seenUrls": [
+    "https://www.kyivpost.com/post/89804",
+    "https://www.dawn.com/news/2043746/pm-shehbaz-joins-world-leaders-at-cop31-will-outline-pakistans-climate-priorities",
+    "https://www.aljazeera.com/news/2026/11/11/climate-crisis-is-outrunning-us-un-chief-guterres-says-at-cop31?traffic_source=rss",
+    "https://www.nytimes.com/2026/11/11/climate/cop31-antonio-guterres-un.html",
+    "https://www.climatechangenews.com/2026/11/11/cop31-bulletin-day-3-with-the-people-stuck-outside-world-leaders-jet-in/",
+    "https://www.theguardian.com/environment/2026/nov/11/burnham-offshore-wind-investment-norfolk-climate-summit-cop31-jackdaw-gasfield",
+    "https://www.theguardian.com/environment/2026/nov/11/ed-miliband-national-security-climate-crisis-cop31",
+    "http://www.africanews.com/2026/11/11/cop31-activists-demand-better-climate-finance-for-africa/",
+    "https://www.straitstimes.com/world/cop31-climate-summit-kicks-off-in-turkey-with-cultural-displays-protests-and-pin-collectibles",
+    "https://www.nytimes.com/2026/11/11/climate/trump-cop31-climate-turkey.html"
+  ],
   "startedAt": "2026-11-11T10:00:47.798Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-11T10:00:47.798Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-11T14:08:16.814Z",
+  "importance": 8,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Cop31 Climate Summit",
-      "dek": "World leaders convene to address escalating climate crisis developments at the Cop31 summit."
-    },
-    "de": {
-      "title": "Klimagipfel COP31",
-      "dek": "Weltführer kommen zum Klimagipfel COP31 zusammen, um auf die eskalierenden Entwicklungen der Klimakrise zu reagieren."
-    },
-    "it": {
-      "title": "Vertice sul clima Cop31",
-      "dek": "I leader mondiali si riuniscono per affrontare gli sviluppi della crescente crisi climatica al vertice Cop31."
-    },
-    "fr": {
-      "title": "Sommet sur le climat de la COP31",
-      "dek": "Les dirigeants mondiaux se réunissent pour faire face à l'aggravation de la crise climatique lors du sommet de la COP31."
-    },
-    "ja": {
-      "title": "国連気候変動枠組条約第31回締約国会議（COP31）首脳会議",
-      "dek": "世界の指導者らがCOP31首脳会議に参集し、深刻化する気候危機の動向に対処する。"
-    },
-    "ko": {
-      "title": "제31차 유엔기후변화협약 당사국총회(COP31) 기후 정상회의",
-      "dek": "세계 지도자들이 COP31 정상회의에 모여 심화하는 기후 위기 상황에 대응한다."
-    },
-    "es": {
-      "title": "Cumbre climática COP31",
-      "dek": "Los líderes mundiales se reúnen para abordar los crecientes acontecimientos de la crisis climática en la cumbre COP31."
-    },
-    "pt": {
-      "title": "Cimeira Climática Cop31",
-      "dek": "Líderes mundiais reúnem-se para debater a evolução da crise climática na cimeira Cop31."
-    },
-    "zh": {
-      "title": "Cop31气候峰会",
-      "dek": "世界领导人齐聚Cop31峰会，商讨不断加剧的气候危机应对进展。"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "The Guardian",
-      "Variety",
-      "Anadolu Ajansı",
-      "The Media Line"
-    ]
-  }
+  "articleSlug": "cop31-climate-summit",
+  "sourceCount": 3,
+  "seenHeadlines": []
 }

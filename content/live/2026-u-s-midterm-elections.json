@@ -7,50 +7,50 @@
       "The Hindu"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite",
+    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "2026-u-s-midterm-elections",
   "topic": "2026 U.S. Midterm Elections",
   "status": "live",
   "article": {
     "slug": "2026-u-s-midterm-elections",
-    "updatedAt": "2026-11-11T10:11:05.597Z",
     "reason": "1 new update(s)",
     "locales": {
-      "en": {
-        "title": "House Republicans select Jim Jordan as leader amid ongoing vote counts",
-        "dek": "House Republicans chose Jim Jordan as their leader for the next Congress while election officials continue counting ballots eight days after the midterm elections.",
-        "facts": [
-          "House Republicans selected Jim Jordan as their leader for the upcoming term.",
-          "Seventeen election races remain undecided across the United States.",
-          "The U.S. House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee.",
-          "Eleven Democrats were absent during the impeachment resolution vote."
-        ],
-        "body": [
-          "House Republicans selected Ohio representative Jim Jordan to lead the party in Congress starting in January. According to NPR and the New York Times, Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
-          "Election officials are continuing to process outstanding ballots eight days after the 3 November midterm elections. G1 and The Japan Times reported that 17 races remain undecided across the country.",
-          "The U.S. House of Representatives voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee. This vote halted the immediate impeachment effort, according to The Hindu.",
-          "Al Jazeera reported that 11 Democrats missed the vote on the impeachment resolution. The measure was moved to the committee level rather than proceeding to an immediate floor vote."
-        ],
-        "context": "The midterm elections occurred on 3 November 2026. The House of Representatives holds the constitutional authority to initiate impeachment proceedings against federal officials.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef während laufender Stimmenauszählung",
         "dek": "Die Republikaner im Repräsentantenhaus haben Jim Jordan zu ihrem Anführer für den nächsten Kongress gewählt, während Wahlbeamte acht Tage nach den Zwischenwahlen weiterhin Stimmzettel auszählen.",
-        "facts": [
-          "Die Republikaner im Repräsentantenhaus wählten Jim Jordan zu ihrem Anführer für die kommende Legislaturperiode.",
-          "Siebzehn Wahlrennen in den Vereinigten Staaten sind weiterhin unentschieden.",
-          "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
-          "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
-        ],
         "body": [
           "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Anführer der Partei im Kongress ab Januar. Laut NPR und der New York Times ist Jordan Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
           "Wahlbeamte verarbeiten acht Tage nach den Zwischenwahlen vom 3. November weiterhin ausstehende Stimmzettel. G1 und die Japan Times berichteten, dass landesweit 17 Rennen unentschieden sind.",
           "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen. Diese Abstimmung stoppte das unmittelbare Amtsenthebungsverfahren, so The Hindu.",
           "Al Jazeera berichtete, dass 11 Demokraten bei der Abstimmung über die Amtsenthebungsresolution fehlten. Die Maßnahme wurde auf die Ausschussebene verwiesen, anstatt direkt zur Abstimmung im Plenum zu gelangen."
         ],
+        "facts": [
+          "Die Republikaner im Repräsentantenhaus wählten Jim Jordan zu ihrem Anführer für die kommende Legislaturperiode.",
+          "Siebzehn Wahlrennen in den Vereinigten Staaten sind weiterhin unentschieden.",
+          "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
+          "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
+        ],
+        "title": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef während laufender Stimmenauszählung",
         "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
+      },
+      "en": {
+        "dek": "House Republicans chose Jim Jordan as their leader for the next Congress while election officials continue counting ballots eight days after the midterm elections.",
+        "body": [
+          "House Republicans selected Ohio representative Jim Jordan to lead the party in Congress starting in January. According to NPR and the New York Times, Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
+          "Election officials are continuing to process outstanding ballots eight days after the 3 November midterm elections. G1 and The Japan Times reported that 17 races remain undecided across the country.",
+          "The U.S. House of Representatives voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee. This vote halted the immediate impeachment effort, according to The Hindu.",
+          "Al Jazeera reported that 11 Democrats missed the vote on the impeachment resolution. The measure was moved to the committee level rather than proceeding to an immediate floor vote."
+        ],
+        "facts": [
+          "House Republicans selected Jim Jordan as their leader for the upcoming term.",
+          "Seventeen election races remain undecided across the United States.",
+          "The U.S. House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee.",
+          "Eleven Democrats were absent during the impeachment resolution vote."
+        ],
+        "title": "House Republicans select Jim Jordan as leader amid ongoing vote counts",
+        "context": "The midterm elections occurred on 3 November 2026. The House of Representatives holds the constitutional authority to initiate impeachment proceedings against federal officials.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -58,6 +58,22 @@
         "at": "2026-11-11T08:41:22.152Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Wahlbeamte bearbeiten ausstehende Stimmzettel acht Tage nach den Zwischenwahlen, während das Repräsentantenhaus ein Amtsenthebungsverfahren gegen den Verteidigungsminister gestoppt hat.",
+            "body": [
+              "Wahlbeamte zählen acht Tage nach den US-Zwischenwahlen 2026 weiter Stimmzettel. Laut G1 und The Japan Times bleiben 17 Rennen unentschieden.",
+              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen. Diese Abstimmung stoppte die unmittelbare Amtsenthebungsinitiative effektiv, so The Hindu.",
+              "Al Jazeera berichtete, dass 11 Demokraten bei der Abstimmung über die Amtsenthebungsresolution fehlten. Die Resolution wurde auf die Ausschussstufe verwiesen, anstatt einer sofortigen Abstimmung im Plenum zuzuführen."
+            ],
+            "facts": [
+              "Siebzehn Wahlrennen bleiben in den Vereinigten Staaten unentschieden.",
+              "Wahlbeamte zählen acht Tage nach den Zwischenwahlen weiter Stimmzettel.",
+              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
+              "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
+            ],
+            "title": "Wahlbeamte zählen Stimmzettel weiter, während das Repräsentantenhaus Hegseths Amtsenthebungsverfahren blockiert",
+            "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
+          },
           "en": {
             "dek": "Election officials are processing outstanding ballots eight days after the midterm elections while the House of Representatives halted an impeachment effort against the Defense Secretary.",
             "body": [
@@ -74,26 +90,11 @@
             "title": "Election officials continue counting ballots as House blocks Hegseth impeachment",
             "context": "The midterm elections took place on 3 November 2026. The House of Representatives holds the constitutional power to initiate impeachment proceedings against federal officials.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Wahlbeamte bearbeiten ausstehende Stimmzettel acht Tage nach den Zwischenwahlen, während das Repräsentantenhaus ein Amtsenthebungsverfahren gegen den Verteidigungsminister gestoppt hat.",
-            "body": [
-              "Wahlbeamte zählen acht Tage nach den US-Zwischenwahlen 2026 weiter Stimmzettel. Laut G1 und The Japan Times bleiben 17 Rennen unentschieden.",
-              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen. Diese Abstimmung stoppte die unmittelbare Amtsenthebungsinitiative effektiv, so The Hindu.",
-              "Al Jazeera berichtete, dass 11 Demokraten bei der Abstimmung über die Amtsenthebungsresolution fehlten. Die Resolution wurde auf die Ausschussstufe verwiesen, anstatt einer sofortigen Abstimmung im Plenum zuzuführen."
-            ],
-            "facts": [
-              "Siebzehn Wahlrennen bleiben in den Vereinigten Staaten unentschieden.",
-              "Wahlbeamte zählen acht Tage nach den Zwischenwahlen weiter Stimmzettel.",
-              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
-              "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution."
-            ],
-            "title": "Wahlbeamte zählen Stimmzettel weiter, während das Repräsentantenhaus Hegseths Amtsenthebungsverfahren blockiert",
-            "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-11T10:11:05.597Z"
   },
   "endedAt": null,
   "locales": {
@@ -136,62 +137,62 @@
   },
   "updates": [
     {
-      "id": "u-1794391372000-k8x3",
       "at": "2026-11-11T10:02:52.000Z",
+      "id": "u-1794391372000-k8x3",
       "kind": "result",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "House Republicans select Jim Jordan as leader",
-          "body": "House Republicans chose Ohio's Jim Jordan to lead the party in Congress starting in January, according to reports by NPR and the New York Times. Jordan is a co-founder of the Freedom Caucus and an ally of President Trump."
-        },
-        "it": {
-          "headline": "I Repubblicani della Camera scelgono Jim Jordan come leader",
-          "body": "I Repubblicani della Camera dei rappresentanti hanno scelto Jim Jordan, dell'Ohio, per guidare il partito al Congresso a partire da gennaio, secondo quanto riferito da NPR e dal New York Times. Jordan è cofondatore del Freedom Caucus e alleato del presidente Trump."
-        },
         "de": {
-          "headline": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef",
-          "body": "Die Republikaner im Repräsentantenhaus haben Jim Jordan aus Ohio zum künftigen Parteiführer im Kongress ab Januar gewählt, wie Berichte von NPR und der New York Times bestätigen. Jordan ist Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump."
+          "body": "Die Republikaner im Repräsentantenhaus haben Jim Jordan aus Ohio zum künftigen Parteiführer im Kongress ab Januar gewählt, wie Berichte von NPR und der New York Times bestätigen. Jordan ist Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
+          "headline": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef"
+        },
+        "en": {
+          "body": "House Republicans chose Ohio's Jim Jordan to lead the party in Congress starting in January, according to reports by NPR and the New York Times. Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
+          "headline": "House Republicans select Jim Jordan as leader"
         },
         "es": {
-          "headline": "Los republicanos de la Cámara de Representantes eligen a Jim Jordan como líder",
-          "body": "Los republicanos de la Cámara de Representantes eligieron a Jim Jordan, de Ohio, para liderar al partido en el Congreso a partir de enero, según informaron NPR y The New York Times. Jordan es cofundador del Freedom Caucus y aliado del presidente Trump."
-        },
-        "pt": {
-          "headline": "Republicanos da Câmara escolhem Jim Jordan como líder",
-          "body": "Os republicanos da Câmara de Representantes escolheram Jim Jordan, do Ohio, para liderar o partido no Congresso a partir de janeiro, de acordo com notícias da NPR e do New York Times. Jordan é um dos cofundadores do Freedom Caucus e um aliado do Presidente Trump."
-        },
-        "ja": {
-          "headline": "下院共和党、ジム・ジョーダン氏をリーダーに選出",
-          "body": "NPRやニューヨーク・タイムズ紙の報道によると、下院共和党は1月から党を率いる議会指導者にオハイオ州選出のジム・ジョーダン氏を選出した。ジョーダン氏はフリーダム・コーカスの共同創設者であり、トランプ大統領の側近である。"
-        },
-        "zh": {
-          "headline": "众议院共和党人推选吉姆·乔丹为领袖",
-          "body": "据NPR和《纽约时报》报道，众议院共和党人选择来自俄亥俄州的吉姆·乔丹（Jim Jordan）从明年1月开始领导党内在国会的力量。乔丹是“自由核心小组”的共同创始人和总统特朗普的盟友。"
-        },
-        "ko": {
-          "headline": "미 공화당 하원, 짐 조던을 원내대표로 선출",
-          "body": "NPR과 뉴욕타임스의 보도에 따르면, 미 공화당 하원은 1월부터 당을 이끌 인물로 오하이오주 출신의 짐 조던 의원을 선출했다. 조던 의원은 프리덤 코커스(Freedom Caucus)의 공동 창립자이자 트럼프 대통령의 측근이다."
+          "body": "Los republicanos de la Cámara de Representantes eligieron a Jim Jordan, de Ohio, para liderar al partido en el Congreso a partir de enero, según informaron NPR y The New York Times. Jordan es cofundador del Freedom Caucus y aliado del presidente Trump.",
+          "headline": "Los republicanos de la Cámara de Representantes eligen a Jim Jordan como líder"
         },
         "fr": {
-          "headline": "Les républicains de la Chambre choisissent Jim Jordan comme chef",
-          "body": "Les républicains de la Chambre des représentants ont choisi Jim Jordan, élu de l'Ohio, pour diriger le parti au Congrès à partir de janvier, selon des informations rapportées par NPR et le New York Times. M. Jordan est cofondateur du Freedom Caucus et un allié du président Trump."
+          "body": "Les républicains de la Chambre des représentants ont choisi Jim Jordan, élu de l'Ohio, pour diriger le parti au Congrès à partir de janvier, selon des informations rapportées par NPR et le New York Times. M. Jordan est cofondateur du Freedom Caucus et un allié du président Trump.",
+          "headline": "Les républicains de la Chambre choisissent Jim Jordan comme chef"
+        },
+        "it": {
+          "body": "I Repubblicani della Camera dei rappresentanti hanno scelto Jim Jordan, dell'Ohio, per guidare il partito al Congresso a partire da gennaio, secondo quanto riferito da NPR e dal New York Times. Jordan è cofondatore del Freedom Caucus e alleato del presidente Trump.",
+          "headline": "I Repubblicani della Camera scelgono Jim Jordan come leader"
+        },
+        "ja": {
+          "body": "NPRやニューヨーク・タイムズ紙の報道によると、下院共和党は1月から党を率いる議会指導者にオハイオ州選出のジム・ジョーダン氏を選出した。ジョーダン氏はフリーダム・コーカスの共同創設者であり、トランプ大統領の側近である。",
+          "headline": "下院共和党、ジム・ジョーダン氏をリーダーに選出"
+        },
+        "ko": {
+          "body": "NPR과 뉴욕타임스의 보도에 따르면, 미 공화당 하원은 1월부터 당을 이끌 인물로 오하이오주 출신의 짐 조던 의원을 선출했다. 조던 의원은 프리덤 코커스(Freedom Caucus)의 공동 창립자이자 트럼프 대통령의 측근이다.",
+          "headline": "미 공화당 하원, 짐 조던을 원내대표로 선출"
+        },
+        "pt": {
+          "body": "Os republicanos da Câmara de Representantes escolheram Jim Jordan, do Ohio, para liderar o partido no Congresso a partir de janeiro, de acordo com notícias da NPR e do New York Times. Jordan é um dos cofundadores do Freedom Caucus e um aliado do Presidente Trump.",
+          "headline": "Republicanos da Câmara escolhem Jim Jordan como líder"
+        },
+        "zh": {
+          "body": "据NPR和《纽约时报》报道，众议院共和党人选择来自俄亥俄州的吉姆·乔丹（Jim Jordan）从明年1月开始领导党内在国会的力量。乔丹是“自由核心小组”的共同创始人和总统特朗普的盟友。",
+          "headline": "众议院共和党人推选吉姆·乔丹为领袖"
         }
       },
       "sources": [
         {
-          "outlet": "NPR",
-          "title": "Close Trump ally to lead House Republicans next year",
           "url": "https://www.npr.org/2026/11/11/nx-s1-6035795/close-trump-ally-to-lead-house-republicans-next-year",
+          "title": "Close Trump ally to lead House Republicans next year",
+          "outlet": "NPR",
           "publishedAt": "2026-11-11T10:02:52.000Z"
         },
         {
-          "outlet": "New York Times",
-          "title": "Stung by Losses, G.O.P. Chooses Jordan and Thune as Leaders",
           "url": "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
+          "title": "Stung by Losses, G.O.P. Chooses Jordan and Thune as Leaders",
+          "outlet": "New York Times",
           "publishedAt": "2026-11-11T08:41:17.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-11T08:00:01.000Z",
@@ -378,5 +379,208 @@
   "wantsStats": true,
   "articleSlug": "2026-u-s-midterm-elections",
   "sourceCount": 6,
-  "seenHeadlines": []
+  "seenHeadlines": [],
+  "stats": {
+    "label": "Vote share comparison between parties",
+    "note": "Vote share percentages for major parties in the 2026 U.S. Midterm Elections as reported by news outlets",
+    "unit": "%",
+    "max": 100,
+    "asOf": "2026-11-05T00:00:00.000Z",
+    "updatedAt": "2026-11-11T14:03:21.546Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
+      "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+      "publishedAt": "2026-11-11T12:42:09.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "republican-senate-vote-share",
+        "label": "Republican Senate vote share",
+        "value": 54.2,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score républicain au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato repubblicano"
+          },
+          "zh": {
+            "label": "共和党参议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los republicanos"
+          },
+          "ja": {
+            "label": "共和党の上院得票率"
+          },
+          "ko": {
+            "label": "공화당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos no Senado"
+          }
+        }
+      },
+      {
+        "key": "democratic-senate-vote-share",
+        "label": "Democratic Senate vote share",
+        "value": 44.8,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score démocrate au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato democratico"
+          },
+          "zh": {
+            "label": "民主党参议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los demócratas"
+          },
+          "ja": {
+            "label": "民主党の上院得票率"
+          },
+          "ko": {
+            "label": "민주당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas no Senado"
+          }
+        }
+      },
+      {
+        "key": "republican-house-vote-share",
+        "label": "Republican House vote share",
+        "value": 51.5,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score républicain à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti repubblicana"
+          },
+          "zh": {
+            "label": "共和党众议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los republicanos"
+          },
+          "ja": {
+            "label": "共和党の下院得票率"
+          },
+          "ko": {
+            "label": "공화당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos na Câmara dos Representantes"
+          }
+        }
+      },
+      {
+        "key": "democratic-house-vote-share",
+        "label": "Democratic House vote share",
+        "value": 47.2,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score démocrate à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti democratica"
+          },
+          "zh": {
+            "label": "民主党众议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los demócratas"
+          },
+          "ja": {
+            "label": "民主党の下院得票率"
+          },
+          "ko": {
+            "label": "민주당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas na Câmara dos Representantes"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Vergleich der Stimmenanteile zwischen den Parteien",
+        "note": "Stimmenanteile in Prozent für die großen Parteien bei den US-Zwischenwahlen 2026, wie von Nachrichtenmedien berichtet"
+      },
+      "fr": {
+        "label": "Comparaison des scores électoraux entre les partis",
+        "note": "Pourcentages de scores électoraux pour les grands partis dans les élections de mi-mandat américaines de 2026, selon les médias"
+      },
+      "es": {
+        "label": "Comparación de la participación electoral entre partidos",
+        "note": "Porcentajes de participación electoral para los partidos principales en las elecciones de mitad de mandato de EE. UU. de 2026, según medios de comunicación"
+      },
+      "it": {
+        "label": "Confronto di quote di voto tra partiti",
+        "note": "Quote di voto percentuale per i principali partiti nelle elezioni di metà mandato statunitensi del 2026 come riportate dai media"
+      },
+      "pt": {
+        "label": "Comparação da percentagem de votos entre partidos",
+        "note": "Percentagens de votos dos principais partidos nas eleições de meio de mandato norte-americanas de 2026, conforme noticiado pelos meios de comunicação social"
+      },
+      "zh": {
+        "label": "各党派得票率对比",
+        "note": "新闻媒体报道的2026年美国中期选举主要政党得票率百分比"
+      },
+      "ja": {
+        "label": "政党別得票率比較",
+        "note": "報道機関が報じた2026年米国中間選挙における主要政党の得票率"
+      },
+      "ko": {
+        "label": "정당 간 득표율 비교",
+        "note": "뉴스 매체가 보도한 2026년 미국 중간선거에서 주요 정당의 득표율"
+      }
+    }
+  },
+  "statsHistory": [
+    {
+      "at": "2026-11-05T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "republican-senate-vote-share",
+          "value": 54.2
+        },
+        {
+          "key": "democratic-senate-vote-share",
+          "value": 44.8
+        },
+        {
+          "key": "republican-house-vote-share",
+          "value": 51.5
+        },
+        {
+          "key": "democratic-house-vote-share",
+          "value": 47.2
+        }
+      ]
+    }
+  ]
 }

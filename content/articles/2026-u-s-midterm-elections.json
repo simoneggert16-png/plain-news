@@ -6,11 +6,190 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-06T01:22:04.075Z",
-  "updatedAt": "2026-11-11T10:11:05.597Z",
+  "updatedAt": "2026-11-11T14:05:08.635Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-u-s-midterm-elections",
-  "stats": null,
+  "stats": {
+    "label": "Vote share comparison between parties",
+    "note": "Vote share percentages for major parties in the 2026 U.S. Midterm Elections as reported by news outlets",
+    "unit": "%",
+    "max": 100,
+    "asOf": "2026-11-05T00:00:00.000Z",
+    "updatedAt": "2026-11-11T14:03:21.546Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
+      "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+      "publishedAt": "2026-11-11T12:42:09.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "republican-senate-vote-share",
+        "label": "Republican Senate vote share",
+        "value": 54.2,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score républicain au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato repubblicano"
+          },
+          "zh": {
+            "label": "共和党参议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los republicanos"
+          },
+          "ja": {
+            "label": "共和党の上院得票率"
+          },
+          "ko": {
+            "label": "공화당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos no Senado"
+          }
+        }
+      },
+      {
+        "key": "democratic-senate-vote-share",
+        "label": "Democratic Senate vote share",
+        "value": 44.8,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score démocrate au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato democratico"
+          },
+          "zh": {
+            "label": "民主党参议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los demócratas"
+          },
+          "ja": {
+            "label": "民主党の上院得票率"
+          },
+          "ko": {
+            "label": "민주당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas no Senado"
+          }
+        }
+      },
+      {
+        "key": "republican-house-vote-share",
+        "label": "Republican House vote share",
+        "value": 51.5,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score républicain à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti repubblicana"
+          },
+          "zh": {
+            "label": "共和党众议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los republicanos"
+          },
+          "ja": {
+            "label": "共和党の下院得票率"
+          },
+          "ko": {
+            "label": "공화당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos na Câmara dos Representantes"
+          }
+        }
+      },
+      {
+        "key": "democratic-house-vote-share",
+        "label": "Democratic House vote share",
+        "value": 47.2,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Score démocrate à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti democratica"
+          },
+          "zh": {
+            "label": "民主党众议院得票率"
+          },
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los demócratas"
+          },
+          "ja": {
+            "label": "民主党の下院得票率"
+          },
+          "ko": {
+            "label": "민주당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas na Câmara dos Representantes"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Vergleich der Stimmenanteile zwischen den Parteien",
+        "note": "Stimmenanteile in Prozent für die großen Parteien bei den US-Zwischenwahlen 2026, wie von Nachrichtenmedien berichtet"
+      },
+      "fr": {
+        "label": "Comparaison des scores électoraux entre les partis",
+        "note": "Pourcentages de scores électoraux pour les grands partis dans les élections de mi-mandat américaines de 2026, selon les médias"
+      },
+      "es": {
+        "label": "Comparación de la participación electoral entre partidos",
+        "note": "Porcentajes de participación electoral para los partidos principales en las elecciones de mitad de mandato de EE. UU. de 2026, según medios de comunicación"
+      },
+      "it": {
+        "label": "Confronto di quote di voto tra partiti",
+        "note": "Quote di voto percentuale per i principali partiti nelle elezioni di metà mandato statunitensi del 2026 come riportate dai media"
+      },
+      "pt": {
+        "label": "Comparação da percentagem de votos entre partidos",
+        "note": "Percentagens de votos dos principais partidos nas eleições de meio de mandato norte-americanas de 2026, conforme noticiado pelos meios de comunicação social"
+      },
+      "zh": {
+        "label": "各党派得票率对比",
+        "note": "新闻媒体报道的2026年美国中期选举主要政党得票率百分比"
+      },
+      "ja": {
+        "label": "政党別得票率比較",
+        "note": "報道機関が報じた2026年米国中間選挙における主要政党の得票率"
+      },
+      "ko": {
+        "label": "정당 간 득표율 비교",
+        "note": "뉴스 매체가 보도한 2026년 미국 중간선거에서 주요 정당의 득표율"
+      }
+    }
+  },
   "sources": [
     {
       "outlet": "NPR",
