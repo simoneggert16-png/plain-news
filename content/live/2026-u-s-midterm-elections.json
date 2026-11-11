@@ -7,10 +7,190 @@
       "The Hindu"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite",
-    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "2026-u-s-midterm-elections",
+  "stats": {
+    "max": 100,
+    "asOf": "2026-11-05T00:00:00.000Z",
+    "note": "Vote share percentages for major parties in the 2026 U.S. Midterm Elections as reported by news outlets",
+    "rows": [
+      {
+        "key": "republican-senate-vote-share",
+        "label": "Republican Senate vote share",
+        "value": 54.2,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los republicanos"
+          },
+          "fr": {
+            "label": "Score républicain au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato repubblicano"
+          },
+          "ja": {
+            "label": "共和党の上院得票率"
+          },
+          "ko": {
+            "label": "공화당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos no Senado"
+          },
+          "zh": {
+            "label": "共和党参议院得票率"
+          }
+        }
+      },
+      {
+        "key": "democratic-senate-vote-share",
+        "label": "Democratic Senate vote share",
+        "value": 44.8,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Senat"
+          },
+          "es": {
+            "label": "Participación electoral al Senado por los demócratas"
+          },
+          "fr": {
+            "label": "Score démocrate au Sénat"
+          },
+          "it": {
+            "label": "Quote di voto per il Senato democratico"
+          },
+          "ja": {
+            "label": "民主党の上院得票率"
+          },
+          "ko": {
+            "label": "민주당 상원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas no Senado"
+          },
+          "zh": {
+            "label": "民主党参议院得票率"
+          }
+        }
+      },
+      {
+        "key": "republican-house-vote-share",
+        "label": "Republican House vote share",
+        "value": 51.5,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Republikaner im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los republicanos"
+          },
+          "fr": {
+            "label": "Score républicain à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti repubblicana"
+          },
+          "ja": {
+            "label": "共和党の下院得票率"
+          },
+          "ko": {
+            "label": "공화당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos republicanos na Câmara dos Representantes"
+          },
+          "zh": {
+            "label": "共和党众议院得票率"
+          }
+        }
+      },
+      {
+        "key": "democratic-house-vote-share",
+        "label": "Democratic House vote share",
+        "value": 47.2,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil der Demokraten im Repräsentantenhaus"
+          },
+          "es": {
+            "label": "Participación electoral a la Cámara por los demócratas"
+          },
+          "fr": {
+            "label": "Score démocrate à la Chambre des représentants"
+          },
+          "it": {
+            "label": "Quote di voto per la Camera dei rappresentanti democratica"
+          },
+          "ja": {
+            "label": "民主党の下院得票率"
+          },
+          "ko": {
+            "label": "민주당 하원 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos dos democratas na Câmara dos Representantes"
+          },
+          "zh": {
+            "label": "民主党众议院得票率"
+          }
+        }
+      }
+    ],
+    "unit": "%",
+    "label": "Vote share comparison between parties",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+      "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-11T12:42:09.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Stimmenanteile in Prozent für die großen Parteien bei den US-Zwischenwahlen 2026, wie von Nachrichtenmedien berichtet",
+        "label": "Vergleich der Stimmenanteile zwischen den Parteien"
+      },
+      "es": {
+        "note": "Porcentajes de participación electoral para los partidos principales en las elecciones de mitad de mandato de EE. UU. de 2026, según medios de comunicación",
+        "label": "Comparación de la participación electoral entre partidos"
+      },
+      "fr": {
+        "note": "Pourcentages de scores électoraux pour les grands partis dans les élections de mi-mandat américaines de 2026, selon les médias",
+        "label": "Comparaison des scores électoraux entre les partis"
+      },
+      "it": {
+        "note": "Quote di voto percentuale per i principali partiti nelle elezioni di metà mandato statunitensi del 2026 come riportate dai media",
+        "label": "Confronto di quote di voto tra partiti"
+      },
+      "ja": {
+        "note": "報道機関が報じた2026年米国中間選挙における主要政党の得票率",
+        "label": "政党別得票率比較"
+      },
+      "ko": {
+        "note": "뉴스 매체가 보도한 2026년 미국 중간선거에서 주요 정당의 득표율",
+        "label": "정당 간 득표율 비교"
+      },
+      "pt": {
+        "note": "Percentagens de votos dos principais partidos nas eleições de meio de mandato norte-americanas de 2026, conforme noticiado pelos meios de comunicação social",
+        "label": "Comparação da percentagem de votos entre partidos"
+      },
+      "zh": {
+        "note": "新闻媒体报道的2026年美国中期选举主要政党得票率百分比",
+        "label": "各党派得票率对比"
+      }
+    },
+    "updatedAt": "2026-11-11T14:03:21.546Z",
+    "sourceCount": 1
+  },
   "topic": "2026 U.S. Midterm Elections",
   "status": "live",
   "article": {
@@ -136,6 +316,106 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1794413713000-pibu",
+      "at": "2026-11-11T16:15:13.000Z",
+      "kind": "reaction",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "House Democrats push new impeachment push over Ukraine aid",
+          "body": "Rep. Madeleine Dean warned Defense Secretary Hegseth's days are numbered after Republicans blocked impeachment. House Democrats prepare new articles over Ukraine military aid."
+        },
+        "de": {
+          "headline": "House-Demokraten fordern neuen Amtsenthebungsantrag wegen Ukraine-Hilfe",
+          "body": "Abgeordnete Madeleine Dean warnte Verteidigungsminister Hegseth, seine Tage seien gezählt, nachdem Republikaner einen Amtsenthebungsantrag blockiert hatten. House-Demokraten bereiten neue Artikel über ukrainische Militärhilfe vor."
+        },
+        "it": {
+          "headline": "I democratici della Camera spingono per un nuovo impeachment sull'aiuto all'Ucraina",
+          "body": "La deputata Madeleine Dean ha avvertito che i giorni del segretario alla Difesa Hegseth sono contati dopo che i repubblicani hanno bloccato l'impeachment. I democratici della Camera preparano nuovi articoli sull'aiuto militare all'Ucraina."
+        },
+        "fr": {
+          "headline": "Les démocrates de la Chambre poussent un nouveau processus de destitution concernant l'aide à l'Ukraine",
+          "body": "La représentante Madeleine Dean a prévenu que les jours du secrétaire à la Défense Hegseth étaient comptés après que les républicains ont bloqué la destitution. Les démocrates de la Chambre préparent de nouveaux articles de procédure concernant l'aide militaire à l'Ukraine."
+        },
+        "es": {
+          "headline": "Los demócratas de la Cámara impulsan un nuevo proceso de impeachment por la ayuda a Ucrania",
+          "body": "La representante Madeleine Dean advirtió que los días del secretario de Defensa Hegseth están contados después de que los republicanos bloquearan el impeachment. Los demócratas de la Cámara preparan nuevos artículos sobre la ayuda militar a Ucrania."
+        },
+        "pt": {
+          "headline": "Democratas da Câmara impulsionam novo processo de impeachment sobre ajuda à Ucrânia",
+          "body": "A deputada Madeleine Dean avisou que os dias do secretário de Defesa Hegseth estão contados após republicanos bloquearem o impeachment. Democratas da Câmara preparam novos artigos sobre ajuda militar à Ucrânia."
+        },
+        "zh": {
+          "headline": "众议院民主党人推动新的弹劾动议，针对乌克兰援助",
+          "body": "迪恩众议员警告赫格斯塞思的日子屈指可数，因为共和党人阻挠了弹劾动议。众议院民主党人正准备就乌克兰军事援助提交新的弹劾条款。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "New York Times",
+          "title": "White House Threatens Congress, Saying Aggressive Investigations Could Be Crime",
+          "url": "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
+          "publishedAt": "2026-11-11T16:15:13.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "House Democrat: ‘Mr. Hegseth’s days are numbered’",
+          "url": "https://thehill.com/homenews/house/6213391-house-democrat-madeleine-dean-pete-hegseth-warning-impeachment/",
+          "publishedAt": "2026-11-11T16:07:03.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794413713000-5mrf",
+      "at": "2026-11-11T16:15:13.000Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "White House warns Democrats investigations could cross into criminality",
+          "body": "White House wrote to House Oversight Committee saying Democratic probes may 'cross the line into blatant criminality'. Democrats prepared to begin oversight inquiries."
+        },
+        "de": {
+          "headline": "Weißes Haus warnt Demokraten vor Untersuchungen, die in Strafbarkeit münden könnten",
+          "body": "Das Weiße Haus schrieb dem Repräsentantenhaus-Ausschuss für Aufsicht, demokratische Untersuchungen könnten 'die Grenze in offenkundige Strafbarkeit' überschreiten. Demokraten bereiten sich auf Aufsichtsuntersuchungen vor."
+        },
+        "it": {
+          "headline": "La Casa Bianca avverte i democratici che le indagini potrebbero sfociare nella criminalità",
+          "body": "La Casa Bianca ha scritto alla commissione Oversight della Camera affermando che le indagini dei democratici potrebbero 'attraversare la linea nella evidente criminalità'. I democratici si preparano a iniziare le indagini di controllo."
+        },
+        "fr": {
+          "headline": "La Maison Blanche avertit les démocrates que leurs enquêtes pourraient franchir la ligne pénale",
+          "body": "La Maison Blanche a écrit au comité de surveillance de la Chambre affirmant que les enquêtes démocrates pourraient 'dépasser la ligne dans une criminalité manifeste'. Les démocrates se préparent à lancer des enquêtes de surveillance."
+        },
+        "es": {
+          "headline": "La Casa Blanca advierte a los demócratas de que sus investigaciones podrían derivar en criminalidad",
+          "body": "La Casa Blanca escribió al Comité de Supervisión de la Cámara afirmando que las indagaciones demócratas podrían 'cruzar la línea hacia la criminalidad abierta'. Los demócratas se preparan para iniciar indagaciones de supervisión."
+        },
+        "pt": {
+          "headline": "Casa Branca alerta que investigações democratas podem transpor a criminalidade",
+          "body": "A Casa Branca escreveu ao Comité de Fiscalização da Câmara afirmando que as sondagens democráticas podem 'transpor a linha para a criminalidade aberta'. Democratas preparados para iniciar inquéritos de supervisão."
+        },
+        "zh": {
+          "headline": "白宫警告民主党调查可能涉及刑事责任",
+          "body": "白宫致众议院监督委员会信函，称民主党的调查可能‘越界明目张胆地涉及刑事犯罪’。民主党准备开始监督调查。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "New York Times",
+          "title": "White House Threatens Congress, Saying Aggressive Investigations Could Be Crime",
+          "url": "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
+          "publishedAt": "2026-11-11T16:15:13.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "White House asserts Democratic investigations could ‘cross the line into blatant criminality’",
+          "url": "https://thehill.com/homenews/administration/6213006-white-house-targets-democrat-congressional-investigators/",
+          "publishedAt": "2026-11-11T14:39:24.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-11-11T10:02:52.000Z",
       "id": "u-1794391372000-k8x3",
@@ -371,195 +651,41 @@
     "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
     "https://www.spiegel.de/ausland/midterms-usa-2026-warum-die-demokraten-ihre-historische-chance-riskieren-a-30e72a93-c75e-41c5-89ec-b692eac271af#ref=rss",
     "https://news.google.com/rss/articles/CBMifkFVX3lxTFA3aFh0N1I3eXV5VHBNTkx3MEhtTnRKSmNtZXFNaVI3a0V5SUF2T2VfaC1SRnp0Uk5xOWt4Y0hZajRjTHp0bGhKS3RVbFd0b2pPaTJzT0JtbDhGVUc0V2FDTGFiZS1HaFFOdG5IejdJTUlMTGZlUExfZDEyc2c0dw?oc=5",
-    "https://www.japantimes.co.jp/commentary/2026/11/11/world/post-midterm-us-foreign-policy/"
+    "https://www.japantimes.co.jp/commentary/2026/11/11/world/post-midterm-us-foreign-policy/",
+    "https://www.semafor.com/article/11/11/2026/how-the-maga-map-cracked",
+    "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
+    "https://www.foxnews.com/politics/hegseth-could-face-new-impeachment-push-over-ukraine-aid-lawmakers-warn",
+    "https://thehill.com/homenews/house/6213391-house-democrat-madeleine-dean-pete-hegseth-warning-impeachment/",
+    "https://www.axios.com/2026/11/11/bessent-lutnick-megaspeed-nvidia-china-chips",
+    "https://thehill.com/homenews/campaign/6213245-politico-poll-maga-gop-defeat/",
+    "https://www.theguardian.com/world/2026/nov/11/is-the-us-blue-wave-a-turning-point-for-europe-too",
+    "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeUNlT3NKbHF5UDZBSHlIWTQ5STlLV1Ixd1doTjRBUEhHNkhRMm8zRmIycUJFdkRtRHpQRHBEc0Nzd3BOT3JfemtBdmJUMmdRdGlWd3dSZWEtWXJrN1BoY1U2Vk1GU3E4M3N2UWNhOHFjRlYyNDBNaVRwbjRUUkpQNXcxam5fVFBpSUE?oc=5",
+    "https://thehill.com/homenews/administration/6212080-marjorie-taylor-greene-donald-trump-pete-hegseth-impeachment-effort/",
+    "https://news.google.com/rss/articles/CBMiywJBVV95cUxOcnFpbDQ4cEw5WFlyVmNndHpMVk5SU19yc2c2MEdLeW9Fb1U1NjdqQmlDVEplNTlyZ3ppeTMxOHNINVFsWmJaeU5FaGdPdFA0bXdRV1hoQlh0RGVMMWlhX3VhRm4zZEc1RXpUR3Q4RmFrOS0zZ0pvWkhRcmRmM2xnc0EtQXpKSzc2SnNBMmZsTC1NRWhBOU5IN04yVlN5V0lxeWoyY0FRaFE1WnpSLWRDUDhqbmI2eWl2WEp4ek1ZZzcxdnYwSEROZmt3S2RlQ3JsU3pqZzdzaDFvVUpTTmIxUG1yT2JwY1R3NzNLUG9vejVkSzNlSDRhekFFMDJmdVQtaGZpSGlCLUo3Y2dTU2hiSEt5aEZmQ0k0b1V5OGtzYlFuSDlxR0lWaGFrWnZSWFRueVRrcDl0VTBYamhZVWsxY2N0bTB3YVV1Y19N?oc=5",
+    "https://www.france24.com/en/tv-shows/talking-europe/20261111-exclusive-eu-s-kallas-says-us-can-t-negotiate-on-our-behalf-on-lifting-russia-sanctions",
+    "https://www.foxnews.com/politics/he-blamed-jews-gop-congressman-levels-explosive-accusation-against-jd-vance-election-postmortem",
+    "https://thehill.com/homenews/administration/6213006-white-house-targets-democrat-congressional-investigators/",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWmg3cmlmWkFqQnRXbGZ0cnBlOUt5WDFTNi1jdFV0M1ROVXdudVhBalVnRjQweWVacUgxMVRPTzFVVTRNQUMxRXNVWElRdjNqbW9HQ05YVVBEZFFkSUdleHlPYW15RUxfVi0wcHlIRXBXNlZCOEFMbFBYcHRTMUVtR0JhRG1jS21tRW5Mam9QQVRQWDI0TmpEbE5JLVV6UEZhUUF0Q1ZmTG1pb1E?oc=5",
+    "https://thehill.com/homenews/house/6212860-house-democrat-kamlager-dove-hegseth-impeachment-vote/",
+    "https://www.npr.org/2026/11/11/nx-s1-6036790/swing-voters-swing-states-democrats-congress",
+    "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
+    "https://www.dawn.com/news/2043794/ji-announces-nationwide-protests-lahore-rally-against-inflation-and-delays-in-lg-polls",
+    "https://www.rollingstone.com/politics/politics-news/hegseth-impeachment-effort-blocked-democrats-absent-1235655731/",
+    "https://thehill.com/homenews/campaign/6212685-mississippi-senate-race-scott-colom-cindy-hyde-smith-update/",
+    "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+    "https://www.france24.com/en/us-house-votes-to-derail-impeachment-of-defense-secretary-hegseth",
+    "https://www.foxnews.com/politics/senate-republicans-plan-54-day-blitz-push-trumps-agenda-before-democrats-seize-power",
+    "https://allafrica.com/stories/202611110489.html",
+    "https://www.wired.com/story/michigan-voters-want-utility-money-out-of-politics-lawsuit/",
+    "https://www.axios.com/2026/11/11/don-leonard-ohio-democrat-house-jeffries",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbXFnZ3A3NUVfbWRuQ1EyaFF5Y2hUQ1pUYTFicERCRVFlVFFfUDBhcVRiVGRhTDkyVzdQcDk0eHJlNzRZZDVpMTA5QTBvSkp0cFVNVl9FMFVNaHlJcUhzbEtpVTZhb2lFQk9jSnhWR2xIanVoNU1qZ2NlcXJFVjBhUHd1Y2NUcHRNazBfc0NmTFNpZmpf0gGaAUFVX3lxTFBlc2xpNzhVdWZLdy1QU25CWGluSWh1X1MxaXJ2ZG54TTluX3hXa0ppTWVfa2psaHd6SDdYWlBhY2ZYX0pFeFNBdjBjUWlpc283YWFycm41TURhUl9hNTdEU2lfbWMyZ2laN2VyTDVnbzFWR21IRnNfOEtGR3dpek15RUFPVUZ2eS1vSnpGVDQtUFZvR1JDY3FPdUE?oc=5"
   ],
   "startedAt": "2026-11-11T03:31:24.874Z",
-  "updatedAt": "2026-11-11T10:11:02.887Z",
+  "updatedAt": "2026-11-11T16:29:00.634Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-u-s-midterm-elections",
-  "sourceCount": 6,
-  "seenHeadlines": [],
-  "stats": {
-    "label": "Vote share comparison between parties",
-    "note": "Vote share percentages for major parties in the 2026 U.S. Midterm Elections as reported by news outlets",
-    "unit": "%",
-    "max": 100,
-    "asOf": "2026-11-05T00:00:00.000Z",
-    "updatedAt": "2026-11-11T14:03:21.546Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
-      "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
-      "publishedAt": "2026-11-11T12:42:09.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "republican-senate-vote-share",
-        "label": "Republican Senate vote share",
-        "value": 54.2,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Score républicain au Sénat"
-          },
-          "it": {
-            "label": "Quote di voto per il Senato repubblicano"
-          },
-          "zh": {
-            "label": "共和党参议院得票率"
-          },
-          "de": {
-            "label": "Stimmenanteil der Republikaner im Senat"
-          },
-          "es": {
-            "label": "Participación electoral al Senado por los republicanos"
-          },
-          "ja": {
-            "label": "共和党の上院得票率"
-          },
-          "ko": {
-            "label": "공화당 상원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos republicanos no Senado"
-          }
-        }
-      },
-      {
-        "key": "democratic-senate-vote-share",
-        "label": "Democratic Senate vote share",
-        "value": 44.8,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Score démocrate au Sénat"
-          },
-          "it": {
-            "label": "Quote di voto per il Senato democratico"
-          },
-          "zh": {
-            "label": "民主党参议院得票率"
-          },
-          "de": {
-            "label": "Stimmenanteil der Demokraten im Senat"
-          },
-          "es": {
-            "label": "Participación electoral al Senado por los demócratas"
-          },
-          "ja": {
-            "label": "民主党の上院得票率"
-          },
-          "ko": {
-            "label": "민주당 상원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos democratas no Senado"
-          }
-        }
-      },
-      {
-        "key": "republican-house-vote-share",
-        "label": "Republican House vote share",
-        "value": 51.5,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Score républicain à la Chambre des représentants"
-          },
-          "it": {
-            "label": "Quote di voto per la Camera dei rappresentanti repubblicana"
-          },
-          "zh": {
-            "label": "共和党众议院得票率"
-          },
-          "de": {
-            "label": "Stimmenanteil der Republikaner im Repräsentantenhaus"
-          },
-          "es": {
-            "label": "Participación electoral a la Cámara por los republicanos"
-          },
-          "ja": {
-            "label": "共和党の下院得票率"
-          },
-          "ko": {
-            "label": "공화당 하원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos republicanos na Câmara dos Representantes"
-          }
-        }
-      },
-      {
-        "key": "democratic-house-vote-share",
-        "label": "Democratic House vote share",
-        "value": 47.2,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Score démocrate à la Chambre des représentants"
-          },
-          "it": {
-            "label": "Quote di voto per la Camera dei rappresentanti democratica"
-          },
-          "zh": {
-            "label": "民主党众议院得票率"
-          },
-          "de": {
-            "label": "Stimmenanteil der Demokraten im Repräsentantenhaus"
-          },
-          "es": {
-            "label": "Participación electoral a la Cámara por los demócratas"
-          },
-          "ja": {
-            "label": "民主党の下院得票率"
-          },
-          "ko": {
-            "label": "민주당 하원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos democratas na Câmara dos Representantes"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Vergleich der Stimmenanteile zwischen den Parteien",
-        "note": "Stimmenanteile in Prozent für die großen Parteien bei den US-Zwischenwahlen 2026, wie von Nachrichtenmedien berichtet"
-      },
-      "fr": {
-        "label": "Comparaison des scores électoraux entre les partis",
-        "note": "Pourcentages de scores électoraux pour les grands partis dans les élections de mi-mandat américaines de 2026, selon les médias"
-      },
-      "es": {
-        "label": "Comparación de la participación electoral entre partidos",
-        "note": "Porcentajes de participación electoral para los partidos principales en las elecciones de mitad de mandato de EE. UU. de 2026, según medios de comunicación"
-      },
-      "it": {
-        "label": "Confronto di quote di voto tra partiti",
-        "note": "Quote di voto percentuale per i principali partiti nelle elezioni di metà mandato statunitensi del 2026 come riportate dai media"
-      },
-      "pt": {
-        "label": "Comparação da percentagem de votos entre partidos",
-        "note": "Percentagens de votos dos principais partidos nas eleições de meio de mandato norte-americanas de 2026, conforme noticiado pelos meios de comunicação social"
-      },
-      "zh": {
-        "label": "各党派得票率对比",
-        "note": "新闻媒体报道的2026年美国中期选举主要政党得票率百分比"
-      },
-      "ja": {
-        "label": "政党別得票率比較",
-        "note": "報道機関が報じた2026年米国中間選挙における主要政党の得票率"
-      },
-      "ko": {
-        "label": "정당 간 득표율 비교",
-        "note": "뉴스 매체가 보도한 2026년 미국 중간선거에서 주요 정당의 득표율"
-      }
-    }
-  },
+  "sourceCount": 7,
   "statsHistory": [
     {
       "at": "2026-11-05T00:00:00.000Z",
@@ -582,5 +708,8 @@
         }
       ]
     }
+  ],
+  "seenHeadlines": [
+    "Nearly half of MAGA supporters say movement was a loser in midterms"
   ]
 }
