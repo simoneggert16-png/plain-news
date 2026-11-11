@@ -6,11 +6,126 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-10T15:28:03.354Z",
-  "updatedAt": "2026-11-11T09:01:31.108Z",
+  "updatedAt": "2026-11-11T13:58:08.609Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-us-midterm-election-aftermath",
-  "stats": null,
+  "stats": {
+    "label": "Spain midterm election aftermath",
+    "note": "General strike turnout and housing protest numbers ahead of snap election",
+    "unit": "%",
+    "max": 100,
+    "asOf": "2026-11-12T14:30:00.000Z",
+    "updatedAt": "2026-11-11T13:57:14.625Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
+      "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
+      "publishedAt": "2026-11-11T12:39:20.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "general-strike-participation-rate",
+        "label": "General strike participation rate",
+        "value": 15,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Generaler-Streik-Beteiligung"
+          },
+          "it": {
+            "label": "Tasso di partecipazione allo sciopero generale"
+          },
+          "pt": {
+            "label": "Taxa de participação na greve geral"
+          },
+          "es": {
+            "label": "Tasa de participación en la huelga general"
+          },
+          "zh": {
+            "label": "总罢工参与率"
+          },
+          "ko": {
+            "label": "총파업 참가율"
+          },
+          "ja": {
+            "label": "ゼネラルストライキの参加率"
+          },
+          "fr": {
+            "label": "Taux de participation à la grève générale"
+          }
+        }
+      },
+      {
+        "key": "housing-affordability-protest-size",
+        "label": "Housing affordability protest size",
+        "value": 3,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Größe der Proteste zur Wohnungsaffordabilität"
+          },
+          "it": {
+            "label": "Dimensioni della protesta per l'accessibilità abitativa"
+          },
+          "pt": {
+            "label": "Tamanho do protesto de acessibilidade à habitação"
+          },
+          "es": {
+            "label": "Tamaño de la protesta por la asequibilidad de la vivienda"
+          },
+          "zh": {
+            "label": "住房可负担性抗议规模"
+          },
+          "ko": {
+            "label": "주택 구입 부담 시위 규모"
+          },
+          "ja": {
+            "label": "住宅の購入しやすさをめぐる抗議行動の規模"
+          },
+          "fr": {
+            "label": "Ampleur des manifestations sur l'accès au logement"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Spanien: Nachwirkungen der Zwischenwahlen",
+        "note": "Generaler-Streik-Beteiligung und Zahlen zu Wohnungsprotesten vor Neuwahl"
+      },
+      "fr": {
+        "label": "Conséquences des élections de mi-mandat en Espagne",
+        "note": "Taux de participation à la grève générale et nombre de manifestants pour le logement avant des élections anticipées"
+      },
+      "es": {
+        "label": "Consecuencias de las elecciones de mitad de mandato en España",
+        "note": "Participación en la huelga general y cifras de protesta por la vivienda previo a elecciones anticipadas"
+      },
+      "it": {
+        "label": "Elezioni di metà mandato in Spagna",
+        "note": "Partecipazione allo sciopero generale e numeri delle proteste per l'abitazione in vista delle elezioni anticipate"
+      },
+      "pt": {
+        "label": "Espanha: após eleições legislativas",
+        "note": "Greve geral e protestos de habitação antes de eleições antecipadas"
+      },
+      "zh": {
+        "label": "西班牙中期选举后续",
+        "note": "提前大选前的总罢工参与人数与住房抗议规模"
+      },
+      "ja": {
+        "label": "スペイン中間選挙後の情勢",
+        "note": "早期総選挙を前に、ゼネラルストライキの参加率と住宅抗議行動の規模"
+      },
+      "ko": {
+        "label": "스페인 중간선거 여파",
+        "note": "조기 총선을 앞두고 총파업 참가자 수와 주택 시위 규모"
+      }
+    }
+  },
   "sources": [
     {
       "outlet": "New York Times",
