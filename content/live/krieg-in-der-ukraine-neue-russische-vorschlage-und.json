@@ -1,9 +1,205 @@
 {
+  "meta": {
+    "outlets": [
+      "Die Zeit",
+      "Der Spiegel",
+      "Die Welt",
+      "NZZ"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "krieg-in-der-ukraine-neue-russische-vorschlage-und",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Krieg in der Ukraine: neue russische Vorschläge und westliche Reaktionen",
+  "status": "live",
+  "article": {
+    "slug": "krieg-in-der-ukraine-neue-russische-vorschlage-und",
+    "updatedAt": "2026-11-12T16:14:40.899Z",
+    "reason": "2 new update(s)",
+    "locales": {
+      "en": {
+        "title": "US envoys meet Putin in Moscow after Abu Dhabi talks, Ukrainian president cites Starlink disruptions",
+        "dek": "US special envoys Jared Kushner and Steve Witkoff traveled to the Kremlin on November 12 after Abu Dhabi talks, Ukrainian president says Starlink disruptions affect military operations, and European leaders were sidelined in Abu Dhabi.",
+        "facts": [
+          "US envoys Jared Kushner and Steve Witkoff met Putin in Moscow on November 12 after talks in Abu Dhabi",
+          "Ukrainian president says Starlink disruptions affect military operations",
+          "European leaders were sidelined in Abu Dhabi, says Kyiv Post",
+          "Russian president reportedly proposes humanitarian mission for eastern Kostyantynivka",
+          "German outlet Die Zeit confirms Putin made the humanitarian mission proposal",
+          "Ukrainian outlets report outrage over renewed Starshield throttling"
+        ],
+        "body": [
+          "US special envoys Jared Kushner and Steve Witkoff traveled to the Kremlin to meet Putin on November 12 after talks in Abu Dhabi, NPR reports.",
+          "Ukrainian president says Starlink disruptions affect military operations, BBC reports.",
+          "European leaders were sidelined in Abu Dhabi, Kyiv Post says.",
+          "Russian president reportedly offers US envoys a humanitarian mission for eastern Kostyantynivka, German outlet Die Zeit says.",
+          "Ukrainian outlets report outrage over renewed Starshield throttling following the Starlink disruptions.",
+          "The series of meetings and proposals reflects ongoing diplomatic activity around the conflict as both sides seek leverage."
+        ],
+        "context": "US envoys have been engaging Russian officials following recent diplomatic efforts in Abu Dhabi, while Ukrainian officials report technical disruptions to communication systems supplied by US companies.",
+        "imageCaption": ""
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "en": {
+      "dek": "Putin proposes evacuation of Kostyantynivka while the UK announces new sanctions",
+      "title": "War in Ukraine: new Russian proposals and Western reactions"
+    },
+    "es": {
+      "dek": "Putin propone la evacuación de Kostiantynivka, mientras el Reino Unido anuncia nuevas sanciones",
+      "title": "Guerra en Ucrania: nuevas propuestas rusas y reacciones occidentales"
+    },
+    "fr": {
+      "dek": "Poutine propose l'évacuation de Kostiantynivka tandis que la Grande-Bretagne annonce de nouvelles sanctions",
+      "title": "Guerre en Ukraine : nouvelles propositions russes et réactions occidentales"
+    },
+    "it": {
+      "dek": "Putin propone l'evacuazione di Kostyantynivka mentre il Regno Unito annuncia nuove sanzioni",
+      "title": "Guerra in Ucraina: nuove proposte russe e reazioni occidentali"
+    },
+    "ja": {
+      "dek": "プーチン大統領はコスティヤンティニフカの避難を提案、一方英国は新たな制裁を発表",
+      "title": "ウクライナ戦争：新たなロシアの提案と西側の反応"
+    },
+    "ko": {
+      "dek": "푸틴, 코스티안티니브카 대피 제안… 영국은 새 제재 발표",
+      "title": "우크라이나 전쟁: 러시아의 새 제안과 서방의 반응"
+    },
+    "pt": {
+      "dek": "Putin propõe a evacuação de Kostyantynivka enquanto o Reino Unido anuncia novas sanções",
+      "title": "Guerra na Ucrânia: novas propostas russas e reações ocidentais"
+    },
+    "zh": {
+      "dek": "普京提议撤离康斯坦丁尼夫卡，同时英国宣布新的制裁措施",
+      "title": "乌克兰战争：俄罗斯提出新建议，西方作出反应"
+    },
+    "de": {
+      "title": "Krieg in der Ukraine: neue russische Vorschläge und westliche Reaktionen",
+      "dek": "Putin schlägt Evakuierung von Kostiantyniwka vor, während das Vereinigte Königreich neue Sanktionen ankündigt"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794498875000-f8te",
+      "at": "2026-11-12T15:54:35.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Russian president proposes humanitarian mission for Kostyantynivka",
+          "body": "Putin reportedly offers US envoys a humanitarian mission for eastern Kostyantynivka. German outlet Die Zeit says he made the proposal. Ukrainian outlets report outrage over renewed Starshield throttling."
+        },
+        "fr": {
+          "headline": "Le président russe propose une mission humanitaire pour Kostyantynivka",
+          "body": "Poutine aurait proposé aux envoyés américains une mission humanitaire pour l'est de Kostyantynivka. Le journal allemand Die Zeit indique qu'il a fait cette proposition. Les médias ukrainiens font part d'une indignation face au nouveau throttling de Starshield."
+        },
+        "de": {
+          "headline": "Russischer Präsident schlägt humanitäre Mission für Kostyantynivka vor",
+          "body": "Putin bietet US-Envoys nach Angaben der deutschen Zeitschrift Die Zeit eine humanitäre Mission für den östlichen Teil von Kostyantynivka an. Ukrainische Medien berichten über Empörung über die erneute Aussetzung von Starshield."
+        },
+        "it": {
+          "headline": "Il presidente russo propone una missione umanitaria per Kostyantynivka",
+          "body": "Putin offre presuntamente agli inviati statunitensi una missione umanitaria per l'est di Kostyantynivka. L'outlet tedesco Die Zeit riferisce che ha avanzato la proposta. Gli outlet ucraini segnalano indignazione per il nuovo rallentamento di Starshield."
+        },
+        "es": {
+          "headline": "El presidente ruso propone una misión humanitaria para Kostyantynivka",
+          "body": "Putin supuestamente ofrece a enviados estadounidenses una misión humanitaria para el este de Kostyantynivka. El diario alemán Die Zeit informa que realizó la propuesta. Los medios ucranianos informan de indignación por el nuevo throttling de Starshield."
+        },
+        "pt": {
+          "headline": "Vladimir Putin propõe missão humanitária para Kostyantynivka",
+          "body": "Putin oferece suposta missão humanitária para o leste de Kostyantynivka aos enviados americanos. O jornal alemão Die Zeit diz que ele fez a proposta. Jornais ucranianos denunciam indignação pelo novo controlo de Starshield."
+        },
+        "zh": {
+          "headline": "俄罗斯总统提议对康斯坦丁诺夫卡开展人道主义行动",
+          "body": "据报道，普京向美国特使提出在康斯坦丁诺夫卡东部开展人道主义行动。德国《时代周报》称该提议由他提出。乌克兰媒体对“星盾”再次限流表示愤慨。"
+        },
+        "ja": {
+          "headline": "プーチン大統領、コスチャンティニフカへの人道支援ミッションを提案",
+          "body": "プーチン大統領が東部コスチャンティニフカへの人道支援ミッションを米特使に提案したと報じられている。ドイツのメディア『ディ・ツァイト』がこの提案を行ったと伝えている。ウクライナのメディアは、スターシールドの制限再開に激怒していると報じている。"
+        },
+        "ko": {
+          "headline": "러시아 대통령, 코스티안티니우카 인도주의 임무 제안",
+          "body": "푸틴 대통령이 미국 특사들에게 동부 코스티안티니우카 지역을 위한 인도주의 임무를 제안한 것으로 알려졌다. 독일 매체 디 차이트(Die Zeit)는 그가 이 같은 제안을 했다고 보도했다. 우크라이나 언론들은 스타실드(Starshield)의 통신 제한 재개에 대해 분노를 표하고 있다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Die Zeit",
+          "title": "Krieg gegen die Ukraine: Putin schlägt offenbar Evakuierung von Kostjantyniwka vor",
+          "url": "https://www.zeit.de/politik/ausland/ukraine-krieg-news-liveblog",
+          "publishedAt": "2026-11-12T15:54:35.000Z"
+        },
+        {
+          "outlet": "Der Spiegel",
+          "title": "Russland: Ukraine greift offenbar russischen Militär sowie Kriegsschiff an",
+          "url": "https://www.spiegel.de/ausland/russland-ukraine-greift-offenbar-russischen-militaer-sowie-kriegsschiff-an-a-542b7b39-72c1-4967-836c-591659fa211e#ref=rss",
+          "publishedAt": "2026-11-12T14:38:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794497194000-06t6",
+      "at": "2026-11-12T15:26:34.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "US envoys meet Putin in Moscow after Abu Dhabi talks",
+          "body": "Jared Kushner and Steve Witkoff traveled to the Kremlin to meet Putin. Ukrainian president says Starlink disruptions affect military operations. European leaders were sidelined in Abu Dhabi, says Kyiv Post."
+        },
+        "fr": {
+          "headline": "Des envoyés américains rencontrent Poutine à Moscou après des entretiens à Abu Dhabi",
+          "body": "Jared Kushner et Steve Witkoff se sont rendus au Kremlin pour rencontrer Poutine. Le président ukrainien indique que les perturbations de Starlink affectent les opérations militaires. Les dirigeants européens ont été écartés à Abu Dhabi, selon Kyiv Post."
+        },
+        "de": {
+          "headline": "US-Envoys treffen Putin in Moskau nach Abu-Dhabi-Gesprächen",
+          "body": "Jared Kushner und Steve Witkoff reisten zum Kreml, um Putin zu treffen. Der ukrainische Präsident sagt, Starlink-Störungen beeinträchtigen Militäraktionen. Europäische Führungspersonen wurden nach Angaben der Kyiv Post in Abu Dhabi zurückgelassen."
+        },
+        "it": {
+          "headline": "Incontri tra inviati statunitensi e Putin a Mosca dopo i colloqui di Abu Dhabi",
+          "body": "Jared Kushner e Steve Witkoff si sono recati al Cremlino per incontrare Putin. Il presidente ucraino afferma che le interruzioni di Starlink influenzano le operazioni militari. I leader europei sono stati accantonati ad Abu Dhabi, secondo Kyiv Post."
+        },
+        "es": {
+          "headline": "Encuesta de EE. UU. con Putin en Moscú tras conversaciones en Abu Dhabi",
+          "body": "Jared Kushner y Steve Witkoff viajaron al Kremlin para reunirse con Putin. El presidente ucraniano afirma que las interrupciones de Starlink afectan las operaciones militares. Los líderes europeos quedaron al margen en Abu Dhabi, según Kyiv Post."
+        },
+        "pt": {
+          "headline": "Enviados americanos encontram Putin em Moscovo após conversas em Abu Dhabi",
+          "body": "Jared Kushner e Steve Witkoff viajaram ao Kremlin para encontrar Putin. O presidente ucraniano afirma que as interrupções do Starlink afetam as operações militares. Líderes europeus foram deixados de lado em Abu Dhabi, diz o Kyiv Post."
+        },
+        "zh": {
+          "headline": "美国特使阿布扎比会谈后赴莫斯科会见普京",
+          "body": "贾里德·库什纳和史蒂夫·威特科夫前往克里姆林宫会见普京。乌克兰总统表示，“星链”中断影响军事行动。《基辅邮报》称，欧洲领导人在阿布扎比被边缘化。"
+        },
+        "ja": {
+          "headline": "アブダビでの会談後、米特使がモスクワでプーチンと会談",
+          "body": "ジャレッド・クシュナー氏とスティーブ・ウィトコフ氏はクレムリンを訪れ、プーチンと会談した。ウクライナ大統領は、スターリンクの混乱が軍事作戦に影響を与えていると述べている。キーウ・ポスト紙によると、欧州の指導者たちはアブダビでは傍流に置かれていた。"
+        },
+        "ko": {
+          "headline": "미국 특사단, 아부다비 회담 후 모스크바서 푸틴과 회동",
+          "body": "재러드 쿠슈너와 스티브 윗코프가 크렘린궁을 방문해 푸틴 대통령과 만났다. 우크라이나 대통령은 스타링크(Starlink)의 통신 장애가 군사 작전에 영향을 미치고 있다고 밝혔다. 키이우 포스트는 아부다비 회담에서 유럽 지도자들이 배제되었다고 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "NPR",
+          "title": "U.S. envoys meet with Putin in the Kremlin after Ukraine talks in Abu Dhabi",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6038809/us-envoys-meet-putin-russia-ukraine-war-talks",
+          "publishedAt": "2026-11-12T15:26:34.000Z"
+        },
+        {
+          "outlet": "BBC",
+          "title": "Ukraine says military Starlink disrupted again as US envoys meet Putin in Moscow",
+          "url": "https://www.bbc.co.uk/news/articles/cwrkgmymk55zo?at_medium=RSS&at_campaign=rss",
+          "publishedAt": "2026-11-12T15:16:39.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "ukraine",
     "russia",
@@ -17,57 +213,75 @@
     "diplomacy",
     "war"
   ],
+  "seenUrls": [
+    "https://www.jpost.com/israel-news/politics-and-diplomacy/article-914740",
+    "https://www.jpost.com/middle-east/iran-news/article-914741",
+    "https://asia.nikkei.com/business/aerospace-defense-industries/ukraine-defense-tech-unicorn-cultivates-taiwan-and-japan-supply-chain-ties",
+    "https://www.axios.com/local/washington-dc/2026/11/12/logan-circle-shooting-dc-barricade",
+    "https://www.theguardian.com/world/live/2026/nov/12/us-envoys-in-moscow-meeting-putin-abu-dhabi-trilateral-ukraine-ceasefire-talks-latest-news-updates",
+    "https://www.tagesanzeiger.ch/ukraine-gespraeche-warum-putin-abu-dhabi-als-sieg-wertet-610330726177",
+    "https://www.zeit.de/politik/ausland/ukraine-krieg-news-liveblog",
+    "https://www.axios.com/2026/11/12/ukraine-starshield-restricted-spacex-russia-zelensky",
+    "https://www.thehindu.com/news/international/us-envoys-meet-putin-at-kremlin-following-ukraine-talks-in-abu-dhabi/article71694418.ece",
+    "https://www.nzz.ch/international/krieg-in-der-ukraine-die-neusten-entwicklungen-im-liveticker-ld.10021245",
+    "https://www.faz.net/aktuell/politik/ukraine/sicherheitsordnung-europas-was-putin-mit-den-us-gesandten-verhandelt-201675744.html",
+    "https://www.faz.net/aktuell/politik/ukraine/eu-ukraine-hilfe-wieder-prescht-merz-ohne-absprache-vor-201675866.html",
+    "https://thehill.com/homenews/administration/6215557-donald-trump-us-mexico-migrants-gop-midterm-losses/",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbzNHR3M4NFdlbFlMckgzX3VGNWhoUmppZnFPYWhKWDVVTXB1bDVCMjVEWFJNVGRxVk94ZjhVMnBlQ2Y2S3lHR25zSEVyVVV0RU1CdHpGQVFnaHVKSGhod2J5THFjMDdhSFNWRG5LR2hhOTY4YTYwQ0FOMWZwTF9HTmN0T2Z1T3BBbHU5RXc5b3U?oc=5",
+    "https://news.google.com/rss/articles/CBMivwFBVV95cUxQT2xsT2dBb3F0RzFjcHVnbXdvV0VMUGVLQjF5NFFUa2ZjcGJ0MmFNVTlkb21lMkF2ZVdtSWV5MW9HTjlpWF9CRVVXYnBFT29aMFdLOFg2cm8tcW9NRVhTd2I5VFhHYVd1djRrOWdYVkh1VWJPLWRrNFlKcElWa2tiMk9fMkY1N1Z5VlNGMElpWkxHcW1uV2NxaGh2OTY4UjZtOFo4QUpnSG9tTGVGUG1ERmw0cUNLRHU4a2hwYjkzNA?oc=5",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxPa01fczZrQjRxdTYxUlJWMHlCVWduV3pvWWlnUS04LXBZUTRYdkM3TWtaRWlOZHNMZ05LcXFlRnZsX2RQdTRGOE1Pclh0VGFmNF9JaVBUeV9HSWNrZjdfVEdPcVBHSk44TmNGbkQzWnZsQnp2VTNSUkRpOEJGZFFBblMzSVBMTHhJdU5KSjc0SlpoZlUtX2pTLTBvN1lJdVZfbTU0OHJYYmVlaUM4bUQxV2xVeWw?oc=5",
+    "https://www.npr.org/2026/11/12/nx-s1-6038809/us-envoys-meet-putin-russia-ukraine-war-talks",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRG45T2R4UmFjWjFib21RZmdqMFNSNmc4VlM5SDhnSFNkOWU3WElJTHczOEhnSG5hc05KQ3BHdUV3R1RYeXRMVkQ0SlJmbkMxRWhkTVFDOEQ1N013VnhGdW1ENzlIR21VREJYUmk1SklrWEYyWUg1NTMtMDU3VFVaeTA0dkMtWFM1c0ZwUkNMNlE4VUd6Mm5CY1pESVZVdkw0SzZXNkVMMNIBrAFBVV95cUxPYThFUTlZR1BIaUZKVFdOcFlqbi1DR0FEUlV1d1UyMGNvRG5oa0ZtRnJsN0FoRW9GeUFyTGlsVkZtcS1HTmdoRGt1bmlvYmR0aEtuQ0pWT0NjdXBwRG1NSXY5RnRtQkx3MHR2WjRaQmkxMmxmRHBORnI1aXBrSnNvSGN6SHE4ODRsWlFLWGxraURmajBZc2daN20ycFY3SFRpOVVmQ3JEVVZvNmFz?oc=5",
+    "https://www.welt.de/politik/ausland/video6af5d86c5596369bf0edd65d/kushner-und-witkoff-in-moskau-im-endeffekt-wollen-die-russen-eine-entmilitarisierung-osteuropas.html",
+    "https://www.bbc.co.uk/news/articles/cx98757ymm6zo?at_medium=RSS&at_campaign=rss",
+    "https://www.bbc.co.uk/news/articles/cwrkgmymk55zo?at_medium=RSS&at_campaign=rss",
+    "https://www.aljazeera.com/news/2026/11/12/uk-court-finds-two-iranian-men-guilty-of-spying-for-iran?traffic_source=rss",
+    "https://www.foxnews.com/world/irans-shadow-operations-stretch-across-europe-chilling-spy-convictions-expose-tehrans-reach",
+    "https://www.straitstimes.com/world/attacks-on-health-workers-hamper-congo-ebola-fight-africa-cdc-warns",
+    "https://thehill.com/policy/international/6215721-zelensky-starshield-speed-restrictions/",
+    "https://www.euronews.com/2026/11/12/europe-tells-russia-our-security-architecture-is-for-us-to-decide",
+    "https://www.euronews.com/2026/11/12/european-parliament-urges-russia-to-return-deported-ukrainian-children",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaUkweGRGbi1tSTM3ZGxIaG5TVDFWcGhJRWdpeWdNRllNNjhYa09aMWVLLUNJTTNHSXgwS3YyQUpQbUU2eVoxcWlCRDMySGcxTEZiMU1xQXBrVS1YdGNQNVFtSmc2RXV5cDZTN1pWLXBjUGVoQTJZc2c4OE9IZ1NrMnRXR3lZOWZGR01ZeUljSVlLWmJqZS04QVhicGxoTTdhNkRmXzV4bWNaaFVX0gGyAUFVX3lxTE9xbkEwa2lCdEVVRlVETU1UaFdhQ1Y4THhwZ2d5d0RtYVg5ZEdENTM1eG5idk0tWTZXcTl3SGhjREs2N21oalY4NDk1a3NwUVUzd3loaS0xYkJHeFFxNFd5MmZwSU42T0RNdXVJTzVzcGxjZk03aXNQZDVCVThHNFJrZzNSaHNscTRQdGRmQURKUV9FZXNsNEQ0aFJFWTEzeHRWNGZ3blA0LXVONjlmZkdMS1E?oc=5",
+    "http://www.africanews.com/2026/11/12/russia-soldier-killed-in-car-explosion-in-saint-petersburg/",
+    "https://www.politico.eu/article/zelenskyy-demands-europe-become-regular-part-of-ukraine-talks/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.straitstimes.com/world/europe/romanian-prosecutors-indict-former-presidential-frontrunner-on-fraud-charges",
+    "https://www.kyivpost.com/post/89937",
+    "https://www.welt.de/politik/ausland/article6af5cc00c45061d752ba87a8/ukraine-krieg-putin-zeigt-sich-unnachgiebig-bei-gebietsfragen-und-schlaegt-neue-hilfsaktion-vor.html",
+    "https://www.kyivpost.com/post/89936",
+    "https://www.politico.eu/article/ukraine-meldet-erneut-einschraenkungen-bei-starlink/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://english.elpais.com/international/2026-11-12/pope-leo-xiv-in-lima-wars-demand-diplomacy-that-respects-international-law.html",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxQM3JYVFdLSVp2bm5lZ2p4T0Q2eVlZbDFTTk5fT1pkVGxPQnp1N0FtVkpLakRXNG1kaW1JUUNfNkdlZnlJQUFBRTBBUTBVeVFiRFptcWFaeEp5bzhRYnpEaW45ZnZwamsxUUZKUzA0UUkxcVZpUFNfdk5rQzRxMGh2emlvN1puMVZvb3JXY2FtWk1rNGpUazBONWZhZEk4R3VyYkc3Ng?oc=5",
+    "https://www.spiegel.de/ausland/russland-ukraine-greift-offenbar-russischen-militaer-sowie-kriegsschiff-an-a-542b7b39-72c1-4967-836c-591659fa211e#ref=rss",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxQc2lvZUtOMFJMUFh0VlBpdnZObEJBZHNSSmNzOENBaDhrRElabllhNWo2bGV5QTNtbGZsZnpIQWpPSy1helVnWWxjRHB3emtzWm02bHpmS2xyM3JTM1NIc3pHQ0FZek1NQ1dLbWZJZWoteE9YYUp0SndXMFMtWlVKSlZuUWRob0RGbzZYQlpfWV8zbFBwRk1lVEdDTkoxOUxrWVdUVGgzMA?oc=5",
+    "https://www.tagesschau.de/ausland/asien/eisenkot-netanjahu-100.html",
+    "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss",
+    "http://www.africanews.com/2026/11/12/ukraine-russian-drone-attack-sparks-major-fire-in-kyiv-residential-building/",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYVVsUkN5ZlFLb1RlUDBxQ3hDZmNwNWo0WjVFdXNCQ0QyaGE1M0tzM2p6cHFuQVVqcHZRZUNGQzFJVi1HRXBsbGN0TDRqeTJya2ZCZXUyRG9PcGN5LThvSmtCeDEydktrUHkwemlaNHR3ZmpMbmxKaFZaOWxYM09ReFlQUV80dG0zbXVsLTU5UmZUTmZTMERmTll0TdIBngFBVV95cUxNN3BWc2NqMVlYUmhfWXBsZjJQcGJ5Vi0wMWpTUkQ0TGxRNGctck01ZXFvS1VXYWt4dTRxQTBvVkpDWndyRUdydHZ0RmoxU2tzNTBLS09UMVplNG5HMlNxVFNjRmtmSDQ5b0dvb1RrOHVqa3dnRXQtekJuX3pxOF9tdV9aa0FjV0szeFFTbWtURl82OUJCRXpMdGhwQjNjdw?oc=5",
+    "https://www.scmp.com/news/world/united-states-canada/article/3374259/5-people-shot-neighbourhood-north-us-white-house",
+    "https://www.aljazeera.com/news/2026/11/12/horrific-crime-gaza-doctor-killed-as-israel-expands-war-on-healthcare?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWkxWdzRaWWZjX1dBSm1fRzl3dXNsbFExTHRra1haVS1OWUl2T0JrMUhQbGJiNHpSMUlXd0JKanV1cjgxclBWSXRYRm1lTTVjMWdnZ3VtRVpzNUJmNW9uZ1dpN2RYS3BaamEwYVowcTB4MjQwcUJodFVudWttRjFmZ0p2Um5abjI4dTk4THV0T3h3U1RXSXFjSU1NWC1wbE9l?oc=5",
+    "https://news.google.com/rss/articles/CBMinwFBVV95cUxORHlHa0lmYXB4UGotWXQzZUVzM1JwQVlLOWhaUTlLN2tXV3B6WVRvaHhRVXB2UWUtOEp5Mnh5N1lYYkM3NGdCS1hBNWJLNUJiZFh3ci1RWi1kVUMzd3dwWVp2REtyekh6MVpaWG5aLWkyc1BQZ1ZVY2pUOFdmQzZwLXl4SWhHM2EwdWZNa09zcmZlU2RIV2hTS0FaUjBZdzA?oc=5",
+    "https://www.scmp.com/news/world/united-states-canada/article/3374257/trump-says-us-does-not-need-deal-iran",
+    "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcmZNQXFjXzc5bXVzVzdFRG1LMHlRSW1ncmhpSGFSRExjZTlqZENUOXNILUxOM1lLV1RKYUFoRklTU09BamRoNno1YThCbUU3ejJOTmpKcEFTalBjWjJQM1lfN1ZvNjVNTVktNE9jTTU2N0V5a3hVZ2pKOTZ6OS1fdDZnM3Ywb05zTnF4ZzZ6UDA3dlhLV2JJ?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNnlqd0sxS3BlM29mWld6NURtU09hTHhoQ2QyYWtTRWltR2xOc3h0WV9xazRSY3FmSDlDZm9OeTY3ZXl1RDhjdFN1T2M1MDQ4SmlQbk1kd3ZYMTlGbk9aVVNYTW1tbkRPZW9yaERGcjRmWVNadXA1b1hFdUhkMkEyNDNIUzZjd3RTTlh1QkRwSW1lQTk2TXpiOXlxWXNkeHdEODFMZ00xSQ?oc=5",
+    "https://www.axios.com/2026/11/12/jensen-huang-nvidia-board",
+    "https://www.abc.net.au/news/2026-11-13/ukraine-elon-musk-starlink-access-disrupted/107380578",
+    "https://www.theguardian.com/australia-news/2026/nov/13/nsw-newsroom-instagram-account-labor-party",
+    "https://thehill.com/homenews/senate/6215464-gop-lame-duck-legislative-push/",
+    "https://www.newscientist.com/article/2598291-uk-military-taps-up-astronomers-to-spot-snooping-foreign-satellites/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
+    "https://www.axios.com/2026/11/12/trump-vance-focus-democrat-cities-iran",
+    "https://www.straitstimes.com/world/europe/finland-says-it-detects-strike-on-russian-warship-in-baltic-sea",
+    "https://www.kyivpost.com/post/89932",
+    "https://www.kyivpost.com/post/89929",
+    "https://www.straitstimes.com/world/united-states/trump-says-vance-should-focus-on-domestic-corruption-we-dont-need-a-deal-with-iran"
+  ],
   "startedAt": "2026-11-12T15:47:29.858Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-12T15:47:29.858Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-12T16:14:26.718Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "War in Ukraine: new Russian proposals and Western reactions",
-      "dek": "Putin proposes evacuation of Kostyantynivka while the UK announces new sanctions"
-    },
-    "es": {
-      "title": "Guerra en Ucrania: nuevas propuestas rusas y reacciones occidentales",
-      "dek": "Putin propone la evacuación de Kostiantynivka, mientras el Reino Unido anuncia nuevas sanciones"
-    },
-    "fr": {
-      "title": "Guerre en Ukraine : nouvelles propositions russes et réactions occidentales",
-      "dek": "Poutine propose l'évacuation de Kostiantynivka tandis que la Grande-Bretagne annonce de nouvelles sanctions"
-    },
-    "it": {
-      "title": "Guerra in Ucraina: nuove proposte russe e reazioni occidentali",
-      "dek": "Putin propone l'evacuazione di Kostyantynivka mentre il Regno Unito annuncia nuove sanzioni"
-    },
-    "zh": {
-      "title": "乌克兰战争：俄罗斯提出新建议，西方作出反应",
-      "dek": "普京提议撤离康斯坦丁尼夫卡，同时英国宣布新的制裁措施"
-    },
-    "pt": {
-      "title": "Guerra na Ucrânia: novas propostas russas e reações ocidentais",
-      "dek": "Putin propõe a evacuação de Kostyantynivka enquanto o Reino Unido anuncia novas sanções"
-    },
-    "ko": {
-      "title": "우크라이나 전쟁: 러시아의 새 제안과 서방의 반응",
-      "dek": "푸틴, 코스티안티니브카 대피 제안… 영국은 새 제재 발표"
-    },
-    "ja": {
-      "title": "ウクライナ戦争：新たなロシアの提案と西側の反応",
-      "dek": "プーチン大統領はコスティヤンティニフカの避難を提案、一方英国は新たな制裁を発表"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Die Zeit",
-      "Der Spiegel",
-      "Die Welt",
-      "NZZ"
-    ]
-  }
+  "articleSlug": "krieg-in-der-ukraine-neue-russische-vorschlage-und",
+  "sourceCount": 4,
+  "seenHeadlines": [
+    "Finland detects strike on Russian warship in Baltic Sea"
+  ]
 }

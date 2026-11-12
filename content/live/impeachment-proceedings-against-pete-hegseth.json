@@ -1,9 +1,130 @@
 {
+  "meta": {
+    "outlets": [
+      "DW",
+      "Fox News",
+      "The Hill",
+      "Semafor",
+      "Der Spiegel",
+      "Times of India"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "impeachment-proceedings-against-pete-hegseth",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "Impeachment proceedings against Pete Hegseth",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Das Repräsentantenhaus setzt die Impeachment-Bemühungen gegen den Verteidigungsminister inmitten interner demokratischer Spaltungen und prozeduraler Rückschläge fort.",
+      "title": "Impeachment-Verfahren gegen Pete Hegseth"
+    },
+    "en": {
+      "dek": "The House of Representatives moves forward with impeachment efforts against the Secretary of Defense amid internal Democratic divisions and procedural setbacks.",
+      "title": "Impeachment proceedings against Pete Hegseth"
+    },
+    "es": {
+      "dek": "La Cámara de Representantes avanza con los esfuerzos de destitución contra el Secretario de Defensa en medio de divisiones demócratas internas y contratiempos procesales.",
+      "title": "Proceso de destitución contra Pete Hegseth"
+    },
+    "fr": {
+      "dek": "La Chambre des représentants fait avancer les efforts d'impeachment contre le secrétaire à la Défense au milieu des divisions démocrates internes et des revers procéduraux.",
+      "title": "Procédure d'impeachment contre Pete Hegseth"
+    },
+    "it": {
+      "dek": "La Camera dei Rappresentanti procede con i tentativi di impeachment contro il Segretario della Difesa in mezzo alle divisioni interne democratiche e agli ostacoli procedurali.",
+      "title": "Procedimenti di impeachment contro Pete Hegseth"
+    },
+    "ja": {
+      "dek": "下院は、内部の民主党分裂と手続きの遅れの中、国防長官に対する弾劾手続きを進めている。",
+      "title": "ペテ・ヘグセト弾劾手続きが進行"
+    },
+    "ko": {
+      "dek": "하원이 내부 민주당 분열과 절차적 난관에도 불구하고 국방장관에 대한 탄핵 절차를 진행한다.",
+      "title": "펫 헤그세트 탄핵안 추진"
+    },
+    "pt": {
+      "dek": "A Câmara dos Representantes avança nos esforços de impeachment contra o Secretário de Defesa, face a divisões internas democratas e contratempos procedimentais.",
+      "title": "Processo de impedimento contra Pete Hegseth"
+    },
+    "zh": {
+      "dek": "众议院推进对国防部长的弹劾行动，此过程中面临民主党内部分歧和程序挫折。",
+      "title": "针对皮特·赫格塞思的弹劾程序"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794495624000-7rrv",
+      "at": "2026-11-12T15:00:24.000Z",
+      "kind": "reaction",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "House Democrat apologizes for missing Hegseth impeachment vote",
+          "body": "Rep. Melanie Stansbury apologized for missing a vote on impeaching Defense Secretary Pete Hegseth. She cited rush-hour traffic and a police motorcade near the Capitol as the reason. According to another report, she also blamed 'horrific' traffic for the absence."
+        },
+        "it": {
+          "headline": "Democrate della Camera si scusa per l'assenza al voto di impeachment su Hegseth",
+          "body": "La rappresentante Melanie Stansbury si è scusata per aver mancato il voto sull'impeachment del segretario alla Difesa Pete Hegseth. Ha attribuito l'assenza al traffico di ora di punta e a un convoglio di polizia vicino al Congresso. Secondo un altro report, ha anche incolpato il 'terrificante' traffico per l'assenza."
+        },
+        "es": {
+          "headline": "El diputado demócrata de la Cámara de Representantes se disculpa por faltar al voto de destitución de Hegseth",
+          "body": "El representante Melanie Stansbury se disculpó por faltar a la votación para destituir al secretario de Defensa Pete Hegseth. Justificó su ausencia con el tráfico de hora punta y un cortejo policial cerca del Capitolio. Según otro informe, también culpó a 'horrible' tráfico por su ausencia."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Yonhap",
+          "title": "U.S. House passes bill to protect small businesses from foreign adversaries, including N. Korea",
+          "url": "https://en.yna.co.kr/view/AEN20261112012600315",
+          "publishedAt": "2026-11-12T15:00:24.000Z"
+        },
+        {
+          "outlet": "Fox News",
+          "title": "Dem rep blames 'horrific' traffic for missing Hegseth impeachment vote: 'I am so sorry'",
+          "url": "https://www.foxnews.com/politics/dem-rep-blames-horrific-traffic-missing-hegseth-impeachment-vote-sorry",
+          "publishedAt": "2026-11-12T13:48:33.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794500085963-kn8w",
+      "at": "2026-11-12T16:14:45.963Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Trump directs Vance to focus on domestic corruption, not Iran deal",
+          "body": "President Trump directed Vice President JD Vance to focus on alleged corruption in Democrat-run areas, stating the US does not need a deal with Iran. Vance had previously distanced himself from Trump's position on Iran after Republican midterm election losses."
+        },
+        "it": {
+          "headline": "Trump dirige Vance a concentrarsi sulla corruzione domestica, non sull'accordo sull'Iran",
+          "body": "Il presidente Trump ha diretto il vicepresidente JD Vance a concentrarsi sulla presunta corruzione nelle aree gestite dai Democratici, affermando che gli Stati Uniti non hanno bisogno di un accordo con l'Iran. Vance aveva precedentemente preso le distanze dalla posizione di Trump sull'Iran dopo le sconfitte dei Democratici nelle elezioni di metà mandato."
+        },
+        "es": {
+          "headline": "Trump dirige a Vance para que se centre en la corrupción doméstica, no en el acuerdo con Irán",
+          "body": "El presidente Trump dirigió al vicepresidente JD Vance para que se centre en la supuesta corrupción en áreas gobernadas por demócratas, afirmando que EE. UU. no necesita un acuerdo con Irán. Vance se había distanciado anteriormente de la posición de Trump sobre Irán tras las derrotas electorales de los republicanos en las elecciones de mitad de mandato."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "Trump says US doesn't need Iran deal, charges Vance with investigating Democrat city corruption",
+          "url": "https://www.jpost.com/middle-east/iran-news/article-914741",
+          "publishedAt": "2026-11-12T17:00:31.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "‘We don’t need a deal with Iran’: Trump tells Vance to focus on domestic corruption",
+          "url": "https://www.straitstimes.com/world/united-states/trump-says-vance-should-focus-on-domestic-corruption-we-dont-need-a-deal-with-iran",
+          "publishedAt": "2026-11-12T13:44:11.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "pete hegseth",
     "impeachment",
@@ -14,63 +135,48 @@
     "congress",
     "washington"
   ],
+  "seenUrls": [
+    "https://www.jpost.com/middle-east/iran-news/article-914741",
+    "https://www.jpost.com/american-politics/article-914739",
+    "https://www.science.org/content/article/researchers-have-wish-list-can-new-congress-deliver",
+    "https://asia.nikkei.com/politics/indonesian-vp-s-resignation-plan-and-impeachment-threat-5-things-to-know",
+    "https://www.foxnews.com/politics/pence-delivers-scathing-rebuke-vances-iran-war-assessment-blames-trump-policies-gop-losses",
+    "https://www.marketwatch.com/story/nvidia-is-spending-more-than-ever-on-washington-lobbying-it-still-may-not-be-able-to-stop-congress-from-limiting-its-china-chip-sales-now-d4c34c66?mod=mw_rss_topstories",
+    "https://thehill.com/homenews/administration/6216059-trump-criticizes-gop-midterm-losses/",
+    "https://thehill.com/video-clips/6215905-watch-live-hakeem-jeffries-leadership-press-conference-postelection-wins-lame-duck-goals/",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbzNHR3M4NFdlbFlMckgzX3VGNWhoUmppZnFPYWhKWDVVTXB1bDVCMjVEWFJNVGRxVk94ZjhVMnBlQ2Y2S3lHR25zSEVyVVV0RU1CdHpGQVFnaHVKSGhod2J5THFjMDdhSFNWRG5LR2hhOTY4YTYwQ0FOMWZwTF9HTmN0T2Z1T3BBbHU5RXc5b3U?oc=5",
+    "https://www.jpost.com/american-politics/article-914725",
+    "https://www.dw.com/en/impeachment-how-it-works-and-why-trump-should-be-worried/a-79931040?maca=en-rss-en-all-1573-rdf",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONF94Zy1mMVNkMlBRbVpUZ0xUcVA5RGJ4NzladEJ4SzRGazhteW9HUWxXV1IyU0tTa0RHSngtRFVUdUd4cEpPSkdhVHZUNEdhWWRQZGNKQTlXVHhiRUN0b0xscHZBVnU4MUc1bEo0QVlRdF9aQm5hS0FWMDc4YndDU0Z0TnZnMmU5eEdZQlFUVFdaUmxlMkFsMlhtVS14empDekw3bHo1MGp2NER6OXkxeUJObXFMVklYaU4w?oc=5",
+    "https://en.yna.co.kr/view/AEN20261112012600315",
+    "https://thehill.com/homenews/house/6215755-stansbury-missed-hegseth-vote/",
+    "https://www.aljazeera.com/news/2026/11/12/migrant-caravan-sets-out-from-southern-mexico-bound-for-us-after-midterms?traffic_source=rss",
+    "https://www.scmp.com/news/world/united-states-canada/article/3374259/5-people-shot-neighbourhood-north-us-white-house",
+    "https://thehill.com/homenews/administration/6214786-live-updates-trump-midterms-alaska-congress/",
+    "https://timesofindia.indiatimes.com/world/us/us-shooting-4-people-shot-in-neighbourhood-near-white-house-area-cordoned-off/articleshow/135772622.cms",
+    "https://thehill.com/homenews/senate/6215464-gop-lame-duck-legislative-push/",
+    "https://www.axios.com/2026/11/12/trump-vance-focus-democrat-cities-iran",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNem10YmZFWHpEQ09XaXVOUHFnVFVSMFVETS1zLTBmR1FwY1loY2pCc3VUdEstU3g3ZGwzS01leXI3ZDRQelVPNHZVRDR1NHl1V0N5bUd1NDdWcV9OU2R0bDRYRmhleXhYNHc0SzRHZHV6cWZBZDZ2aUw1b205ZGxrdUpEd051SGFLTTdXZlBPbXhQajdZQjlFQnVfZDRrc2I5MTMxWVUxNVVQMU0?oc=5",
+    "https://www.kyivpost.com/post/89932",
+    "https://www.foxnews.com/politics/dem-rep-blames-horrific-traffic-missing-hegseth-impeachment-vote-sorry",
+    "https://www.straitstimes.com/world/united-states/trump-says-vance-should-focus-on-domestic-corruption-we-dont-need-a-deal-with-iran",
+    "https://www.semafor.com/article/11/12/2026/washington-risks-misinterpreting-irans-peacemaker-according-to-analyst",
+    "https://www.cnbc.com/2026/11/12/democrats-unions-midterms-2026.html",
+    "https://www.kyivpost.com/post/89919",
+    "https://www.aljazeera.com/news/2026/11/12/europe-views-us-with-much-less-horror-after-trumps-midterms-defeat?traffic_source=rss",
+    "https://www.npr.org/2026/11/12/g-s1-153171/up-first-newsletter-scott-colom-trump-democrats-ukraine-russia",
+    "https://english.elpais.com/usa/2026-11-12/democratic-representatives-elected-in-the-midterms-demand-immigration-reform-at-the-capitol.html",
+    "https://english.elpais.com/usa/2026-11-12/economic-populism-is-very-fashionable-the-old-bernie-sanders-formula-that-helped-democrats-win-the-midterms.html",
+    "https://www.axios.com/2026/11/12/scott-colom-mississippi-delta-civil-rights-till",
+    "https://www.axios.com/2026/11/12/democrats-debate-trump-economic-playbook",
+    "https://www.axios.com/2026/11/12/democrats-attack-corporate-health-care",
+    "https://english.elpais.com/usa/2026-11-12/a-crash-course-in-becoming-a-member-of-congress-veterans-doctors-farmers-firefighters-and-musicians-learn-on-the-job-in-washington.html"
+  ],
   "startedAt": "2026-11-12T15:27:22.916Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-12T15:27:22.916Z",
-  "articleSlug": null,
-  "sourceCount": 6,
+  "updatedAt": "2026-11-12T16:14:49.452Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Impeachment proceedings against Pete Hegseth",
-      "dek": "The House of Representatives moves forward with impeachment efforts against the Secretary of Defense amid internal Democratic divisions and procedural setbacks."
-    },
-    "es": {
-      "title": "Proceso de destitución contra Pete Hegseth",
-      "dek": "La Cámara de Representantes avanza con los esfuerzos de destitución contra el Secretario de Defensa en medio de divisiones demócratas internas y contratiempos procesales."
-    },
-    "fr": {
-      "title": "Procédure d'impeachment contre Pete Hegseth",
-      "dek": "La Chambre des représentants fait avancer les efforts d'impeachment contre le secrétaire à la Défense au milieu des divisions démocrates internes et des revers procéduraux."
-    },
-    "de": {
-      "title": "Impeachment-Verfahren gegen Pete Hegseth",
-      "dek": "Das Repräsentantenhaus setzt die Impeachment-Bemühungen gegen den Verteidigungsminister inmitten interner demokratischer Spaltungen und prozeduraler Rückschläge fort."
-    },
-    "it": {
-      "title": "Procedimenti di impeachment contro Pete Hegseth",
-      "dek": "La Camera dei Rappresentanti procede con i tentativi di impeachment contro il Segretario della Difesa in mezzo alle divisioni interne democratiche e agli ostacoli procedurali."
-    },
-    "zh": {
-      "title": "针对皮特·赫格塞思的弹劾程序",
-      "dek": "众议院推进对国防部长的弹劾行动，此过程中面临民主党内部分歧和程序挫折。"
-    },
-    "ja": {
-      "title": "ペテ・ヘグセト弾劾手続きが進行",
-      "dek": "下院は、内部の民主党分裂と手続きの遅れの中、国防長官に対する弾劾手続きを進めている。"
-    },
-    "ko": {
-      "title": "펫 헤그세트 탄핵안 추진",
-      "dek": "하원이 내부 민주당 분열과 절차적 난관에도 불구하고 국방장관에 대한 탄핵 절차를 진행한다."
-    },
-    "pt": {
-      "title": "Processo de impedimento contra Pete Hegseth",
-      "dek": "A Câmara dos Representantes avança nos esforços de impeachment contra o Secretário de Defesa, face a divisões internas democratas e contratempos procedimentais."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "DW",
-      "Fox News",
-      "The Hill",
-      "Semafor",
-      "Der Spiegel",
-      "Times of India"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 4,
+  "seenHeadlines": []
 }
