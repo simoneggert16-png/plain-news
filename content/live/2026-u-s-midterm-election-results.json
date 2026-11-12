@@ -1,0 +1,618 @@
+{
+  "meta": {
+    "outlets": [
+      "NPR",
+      "Al Jazeera",
+      "The Hill",
+      "Axios",
+      "Times of India",
+      "CNBC",
+      "InsideClimate News"
+    ],
+    "createdBy": "bots/live.mjs",
+    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
+  "slug": "2026-u-s-midterm-election-results",
+  "stats": {
+    "max": 100,
+    "asOf": "2026-11-06T00:00:00.000Z",
+    "note": "Scott Colom's victory as the first Black senator since Reconstruction and first Democrat since 1982",
+    "rows": [
+      {
+        "key": "vote-share-colom-vs-hyde-smith",
+        "label": "Vote share Colom vs Hyde-Smith",
+        "value": 50.1,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil Colom gegen Hyde-Smith"
+          },
+          "es": {
+            "label": "Porcentaje de voto Colom frente a Hyde-Smith"
+          },
+          "fr": {
+            "label": "Part des voix Colom contre Hyde-Smith"
+          },
+          "it": {
+            "label": "Quota di voti Colom contro Hyde-Smith"
+          },
+          "ja": {
+            "label": "コラム氏対ハイドスミス氏の得票率"
+          },
+          "ko": {
+            "label": "콜롬 대 하이드-스미스 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos Colom vs Hyde-Smith"
+          },
+          "zh": {
+            "label": "科洛姆与海德-史密斯的得票率"
+          }
+        }
+      },
+      {
+        "key": "vote-share-hyde-smith-vs-colom",
+        "label": "Vote share Hyde-Smith vs Colom",
+        "value": 49.9,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil Hyde-Smith gegen Colom"
+          },
+          "es": {
+            "label": "Porcentaje de voto Hyde-Smith frente a Colom"
+          },
+          "fr": {
+            "label": "Part des voix Hyde-Smith contre Colom"
+          },
+          "it": {
+            "label": "Quota di voti Hyde-Smith contro Colom"
+          },
+          "ja": {
+            "label": "ハイドスミス氏対コラム氏の得票率"
+          },
+          "ko": {
+            "label": "하이드-스미스 대 콜롬 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos Hyde-Smith vs Colom"
+          },
+          "zh": {
+            "label": "海德-史密斯与科洛姆的得票率"
+          }
+        }
+      }
+    ],
+    "unit": "%",
+    "label": "Mississippi Senate race results",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-12T12:56:27.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Scott Coloms Sieg als erster schwarzer Senator seit der Reconstruction und erster Demokrat seit 1982",
+        "label": "Ergebnisse der Senatswahl in Mississippi"
+      },
+      "es": {
+        "note": "Victoria de Scott Colom, primer senador negro desde la Reconstrucción y primer demócrata desde 1982",
+        "label": "Resultados de la carrera al Senado de Mississippi"
+      },
+      "fr": {
+        "note": "La victoire de Scott Colom, premier sénateur noir depuis la Reconstruction et premier démocrate depuis 1982",
+        "label": "Résultats de la course au Sénat du Mississippi"
+      },
+      "it": {
+        "note": "La vittoria di Scott Colom come primo senatore nero dal periodo della Ricostruzione e primo democratico dal 1982",
+        "label": "Risultati della corsa al Senato del Mississippi"
+      },
+      "ja": {
+        "note": "スコット・コラム氏がレコンストラクション（南部再建）期以降で初の黒人上院議員、また1982年以来初の民主党上院議員として当選",
+        "label": "ミシシッピ州上院選の結果"
+      },
+      "ko": {
+        "note": "스콧 콜롬이 재건 이후 최초의 흑인 상원의원이자 1982년 이후 최초의 민주당 상원의원으로 승리",
+        "label": "미시시피 상원 선거 결과"
+      },
+      "pt": {
+        "note": "Vitória de Scott Colom como primeiro senador negro desde a Reconstrução e primeiro democrata desde 1982",
+        "label": "Resultados da corrida no Senado do Mississippi"
+      },
+      "zh": {
+        "note": "斯科特·科洛姆胜选，成为自重建时期以来首位黑人参议员，也是自1982年以来首位民主党人",
+        "label": "密西西比州参议院选举结果"
+      }
+    },
+    "updatedAt": "2026-11-12T15:37:39.131Z",
+    "sourceCount": 1
+  },
+  "topic": "2026 U.S. Midterm Election Results",
+  "status": "live",
+  "article": {
+    "slug": "2026-u-s-midterm-election-results",
+    "updatedAt": "2026-11-12T18:22:01.718Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Scott Colom wins Mississippi Senate seat as Alaska race remains uncalled",
+        "dek": "Democrat Scott Colom won Mississippi's Senate race while vote counting continues in Alaska.",
+        "facts": [
+          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in Mississippi's U.S. Senate race.",
+          "Colom is the first Black senator elected from Mississippi since the 19th century.",
+          "The Alaska Senate race between Mary Peltola and Dan Sullivan remains undecided as ballots continue to be counted.",
+          "A court rejected the Peltola campaign's request to include rejected absentee ballots in the final tally.",
+          "A poll shows JD Vance and Marco Rubio leading early preferences for the 2028 Republican presidential nomination.",
+          "Gavin Newsom said he does not expect Democrats to change course on clean energy following the midterms."
+        ],
+        "body": [
+          "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November, defeating incumbent Republican Cindy Hyde-Smith. According to NPR and CNBC, Colom is the first Black senator elected from the state since the 19th century.",
+          "The Senate race between former Representative Mary Peltola and Senator Dan Sullivan remains undecided as ballots continue to be counted in Alaska. The Hill and Fox News reported on 12 November that the race is still uncalled, with Peltola maintaining a narrow lead while Sullivan has gained ground following recent vote tallies.",
+          "Fox News reported that a court ruled against the Peltola campaign regarding rejected absentee ballots, denying the campaign's request to include those specific rejected ballots in the final tally.",
+          "The Hill and The Jerusalem Post reported that a poll shows Vice President JD Vance and Senator Marco Rubio are favored for the 2028 Republican presidential nomination. Neither Vance nor Rubio has formally launched a campaign, and the nominating contests remain more than a year away.",
+          "California Governor Gavin Newsom said at COP31 that he doesn't expect Democrats to do anything but double down on clean energy following the midterms, according to Semafor. Newsom cautioned against romanticizing what this will mean.",
+          "The New York Times reported on latest Senate polls from the 2026 midterm elections.",
+          "The Alaska Senate race outcome will determine which party holds the seat in the upper chamber.",
+          "Legal challenges surrounding the Alaska contest have been resolved with the court's decision on absentee ballots.",
+          "The Mississippi Senate race result changes party representation for one of the state's two Senate seats."
+        ],
+        "context": "The 2026 U.S. midterm elections determined the composition of the Senate, with formal nominating contests for the 2028 presidential election cycle beginning more than a year away.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [
+      {
+        "at": "2026-11-12T15:49:45.740Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Democrat Scott Colom won the Mississippi Senate race, while ballot counting continues in Alaska and a new poll measures early interest in potential 2028 presidential contenders.",
+            "body": [
+              "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November, according to NPR and CNBC. He defeated the incumbent Republican senator, Cindy Hyde-Smith.",
+              "NPR and CNBC reported that Colom is the first Black senator elected to represent Mississippi since the 19th century. His victory changes the party representation for one of the state's two Senate seats.",
+              "Ballot counting remains underway in Alaska for the U.S. Senate race between former Representative Mary Peltola and Senator Dan Sullivan. The Hill and Fox News reported on 12 November that the race is still uncalled.",
+              "Peltola maintains a narrow lead in the total vote count, according to reporting from The Hill and Fox News. Sullivan narrowed that gap following recent vote tallies released by state election officials.",
+              "Legal action surrounding the Alaska contest reached a decision when a court ruled against the Peltola campaign regarding rejected absentee ballots. Fox News reported that the court denied the campaign's request to include those specific rejected ballots in the final tally.",
+              "Looking ahead to future elections, a new poll reported by The Jerusalem Post and The Hill shows Vice President JD Vance and Senator Marco Rubio favored for the 2028 Republican presidential nomination. Neither Vance nor Rubio has formally launched a campaign, and the nominating contests remain more than a year away."
+            ],
+            "facts": [
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in the Mississippi U.S. Senate election.",
+              "Colom is the first Black senator elected from Mississippi since the 19th century.",
+              "Former Representative Mary Peltola holds a narrow lead over Senator Dan Sullivan in the uncalled Alaska Senate race.",
+              "A court rejected a legal challenge from the Peltola campaign regarding rejected absentee ballots.",
+              "A new poll shows Republicans JD Vance and Marco Rubio leading early preferences for their party's 2028 nomination."
+            ],
+            "title": "Scott Colom wins Mississippi Senate seat as Alaska race remains uncalled",
+            "context": "The 2026 midterm elections determine the composition of the U.S. Senate. Formal nominating contests for the 2028 presidential election cycle begin in more than a year.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-11-12T15:20:59.870Z",
+        "reason": "2 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "Der Demokrat Scott Colom besiegte die Amtsinhaberin Cindy Hyde-Smith in Mississippi, während das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan andauert.",
+            "body": [
+              "Der Demokrat Scott Colom gewann am 12. November die US-Senatswahl in Mississippi. Laut NPR und CNBC besiegte er die republikanische Amtsinhaberin Cindy Hyde-Smith.",
+              "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde, wie NPR und CNBC berichteten. Dieses Ergebnis markiert einen Wechsel in der Senatsvertretung des Bundesstaates.",
+              "Wahlbeamte in Alaska zählen weiterhin die Stimmzettel im Rennen zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan. The Hill und Fox News berichteten, dass das Rennen zum 12. November noch nicht entschieden ist.",
+              "Peltola hält laut The Hill und Fox News einen knappen Vorsprung bei der Stimmenauszählung. Sullivan konnte nach jüngsten Stimmenzuwächsen im Bundesstaat Boden gutmachen.",
+              "Das Peltola-Wahlkampfteam verlor kürzlich einen Gerichtsprozess bezüglich abgelehnter Briefwahlunterlagen. Fox News gab an, dass das Gericht den Versuch des Wahlkampfteams, diese Stimmzettel in die endgültige Auszählung einzubeziehen, zurückwies.",
+              "Wahlbeamte in Alaska verarbeiten die verbleibenden Stimmzettel, um den Sieger zu ermitteln. Sowohl The Hill als auch Fox News merkten an, dass das Ergebnis von der endgültigen Auszählung abhängt."
+            ],
+            "facts": [
+              "Scott Colom besiegte die republikanische Amtsinhaberin Cindy Hyde-Smith bei der US-Senatswahl in Mississippi.",
+              "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde.",
+              "Das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan ist weiterhin unentschieden.",
+              "Peltola führt in Alaska knapp, während die Auszählung der Stimmzettel andauert.",
+              "Ein Gericht wies eine Klage des Peltola-Wahlkampfteams bezüglich der Briefwahlunterlagen ab."
+            ],
+            "title": "Scott Colom gewinnt Senatssitz in Mississippi, während Rennen in Alaska noch nicht entschieden ist",
+            "context": "Die Zwischenwahlen 2026 bestimmen die Zusammensetzung des US-Senats. Diese Rennen sind Teil des umfassenderen nationalen Wahlzyklus."
+          },
+          "en": {
+            "dek": "Democrat Scott Colom defeated incumbent Cindy Hyde-Smith in Mississippi, while the Alaska Senate race between Mary Peltola and Dan Sullivan continues.",
+            "body": [
+              "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November. According to NPR and CNBC, he defeated the incumbent Republican, Cindy Hyde-Smith.",
+              "Colom is the first Black senator elected from Mississippi since the 19th century, as reported by NPR and CNBC. This result marks a change in the state's Senate representation.",
+              "Alaska election officials continue to count ballots in the race between former Representative Mary Peltola and Senator Dan Sullivan. The Hill and Fox News reported that the race remains uncalled as of 12 November.",
+              "Peltola maintains a narrow lead in the vote count, according to The Hill and Fox News. Sullivan has gained ground following recent vote drops in the state.",
+              "The Peltola campaign recently lost a court case regarding rejected absentee ballots. Fox News stated that the court ruled against the campaign's attempt to include those ballots in the final tally.",
+              "Election officials in Alaska are processing the remaining ballots to determine the winner. Both The Hill and Fox News noted that the outcome depends on the final count."
+            ],
+            "facts": [
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in the Mississippi U.S. Senate race.",
+              "Colom is the first Black senator elected from Mississippi since the 19th century.",
+              "The Alaska Senate race between Mary Peltola and Dan Sullivan remains undecided.",
+              "Peltola holds a narrow lead in Alaska as ballot counting continues.",
+              "A court rejected a legal challenge from the Peltola campaign regarding absentee ballots."
+            ],
+            "title": "Scott Colom wins Mississippi Senate seat as Alaska race remains uncalled",
+            "context": "The 2026 midterm elections determine the composition of the U.S. Senate. These races are part of the broader national election cycle.",
+            "imageCaption": ""
+          }
+        }
+      }
+    ]
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Das Machtverhältnis im US-Senat bleibt ungewiss, während in Alaska die letzten Stimmen ausgezählt werden und die politischen Auswirkungen des historischen Ergebnisses in Mississippi anhalten.",
+      "title": "Ergebnisse der US-Zwischenwahlen 2026"
+    },
+    "en": {
+      "dek": "The balance of power in the U.S. Senate remains in flux as final votes are tallied in Alaska and the political fallout from Mississippi's historic result continues.",
+      "title": "2026 U.S. Midterm Election Results"
+    },
+    "es": {
+      "dek": "El equilibrio de poder en el Senado de EE. UU. sigue siendo incierto mientras se contabilizan los votos finales en Alaska y continúa la repercusión política del histórico resultado en Misisipi.",
+      "title": "Resultados de las elecciones de mitad de mandato de 2026 en EE. UU."
+    },
+    "fr": {
+      "dek": "L'équilibre des pouvoirs au Sénat américain reste incertain alors que les derniers votes sont dépouillés en Alaska et que les retombées politiques du résultat historique du Mississippi se poursuivent.",
+      "title": "Résultats des élections de mi-mandat américaines de 2026"
+    },
+    "it": {
+      "dek": "L'equilibrio di potere al Senato degli Stati Uniti resta incerto mentre vengono conteggiati i voti finali in Alaska e proseguono le conseguenze politiche dello storico risultato del Mississippi.",
+      "title": "Risultati delle elezioni di metà mandato statunitensi del 2026"
+    },
+    "ja": {
+      "dek": "米上院の勢力バランスは、アラスカ州で最終票の集計が進む中、依然として流動的で、ミシシッピ州の歴史的結果に伴う政治的余波も続いている。",
+      "title": "2026年米中間選挙結果"
+    },
+    "ko": {
+      "dek": "미국 상원의 권력 균형은 알래스카에서 최종 투표 집계가 이어지는 가운데, 미시시피의 역사적 선거 결과에서 비롯된 정치적 파장이 계속되면서 여전히 확정되지 않고 있다.",
+      "title": "2026년 미국 중간선거 결과"
+    },
+    "pt": {
+      "dek": "O equilíbrio de poder no Senado dos EUA permanece incerto enquanto os votos finais são contados no Alasca e as consequências políticas do resultado histórico do Mississippi continuam.",
+      "title": "Resultados das eleições de meio de mandato de 2026 nos EUA"
+    },
+    "zh": {
+      "dek": "随着阿拉斯加最后选票的统计，美国参议院权力平衡仍未确定；密西西比历史性结果引发的政治影响持续发酵。",
+      "title": "2026年美国中期选举结果"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794504071000-jzb4",
+      "at": "2026-11-12T17:21:11.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Gavin Newsom optimistic about clean energy after midterms",
+          "body": "California Governor Gavin Newsom said at COP31 that he doesn't expect Democrats to do anything but double down on clean energy following the midterms sweep according to Semafor. Newsom cautioned against romanticizing what this will mean."
+        },
+        "de": {
+          "headline": "Gavin Newsom optimistisch nach Zwischenwahlen zu sauberer Energie",
+          "body": "Der kalifornische Gouverneur Gavin Newsom sagte auf der COP31, er erwarte nach dem Sieg der Demokraten bei den Zwischenwahlen keine andere Richtung als eine weitere Fokussierung auf saubere Energie, wie Semafor berichtet. Newsom warnte davor, das zu romantisieren, was das bedeutet."
+        },
+        "it": {
+          "headline": "Gavin Newsom ottimista sull'energia pulita dopo le elezioni di metà mandato",
+          "body": "Il governatore della California Gavin Newsom ha dichiarato alla COP31 di non aspettarsi che i Democratici facciano altro che rafforzare l'energia pulita dopo la vittoria alle elezioni di metà mandato, secondo Semafor. Newsom ha avvertito contro il romanticizzare cosa ciò significherà."
+        },
+        "fr": {
+          "headline": "Gavin Newsom optimiste sur l'énergie propre après les élections de mi-mandat",
+          "body": "Le gouverneur de Californie Gavin Newsom a déclaré à la COP31 qu'il ne s'attend pas à ce que les démocrates fassent autre chose que de renforcer l'énergie propre suite à la vague démocrate selon Semafor. Newsom a mis en garde contre le romantisme quant à ce que cela signifiera."
+        },
+        "es": {
+          "headline": "Gavin Newsom optimista sobre la energía limpia tras las elecciones de mitad de mandato",
+          "body": "El gobernador de California, Gavin Newsom, dijo en la COP31 que no espera que los demócratas hagan otra cosa que redoblar su apuesta por la energía limpia tras el resultado arrollador en las elecciones de mitad de mandato, según Semafor. Newsom advirtió contra idealizar lo que esto significará."
+        },
+        "ko": {
+          "headline": "가빈 뉴섬, 중간선거 후 청정 에너지에 대해 낙관적",
+          "body": "세마포어에 따르면 캘리포니아 주지사 가빈 뉴섬은 COP31에서 중간선거 이후 민주당이 청정 에너지에 더욱 집중할 것이라고 예상한다고 밝혔다. 뉴섬은 이것이 의미하는 바를 낭만적으로 해석하는 것에 대해 경고했다."
+        },
+        "zh": {
+          "headline": "加文·纽森中期选举后对清洁能源表示乐观",
+          "body": "据Semafor报道，加州州长加文·纽森在COP31上表示，他预计民主党在中期选举大胜后，除了在清洁能源问题上加倍下注外不会有别的举动。纽森同时提醒，不要将此举的意义浪漫化。"
+        },
+        "pt": {
+          "headline": "Gavin Newsom otimista sobre energia limpa após eleições de meio de mandato",
+          "body": "O Governador da Califórnia, Gavin Newsom, afirmou na COP31 que não espera que os Democratas façam mais do que reforçar a energia limpa após a vitória nas eleições de meio de mandato, segundo a Semafor. Newsom alertou contra a romantização do que isto significará."
+        },
+        "ja": {
+          "headline": "中間選挙後、ガビン・ニューサムはクリーンエネルギーに楽観的",
+          "body": "セマフォ紙によると、カリフォルニア州知事のガビン・ニューサムはCOP31で、中間選挙での勝利を受けて民主党がクリーンエネルギーへの取り組みを強化するだろうと述べた。ニューサムは、このことが意味することをロマンチックに捉えることには注意が必要だと警告した。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Semafor",
+          "title": "Dems cautiously optimistic for clean energy following midterms sweep",
+          "url": "https://www.semafor.com/article/11/12/2026/dems-cautiously-optimistic-for-clean-energy-following-midterms-sweep",
+          "publishedAt": "2026-11-12T17:21:11.000Z"
+        },
+        {
+          "outlet": "The New York Times",
+          "title": "Latest Senate Polls: Midterm Elections 2026",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5Kem1zNEtLLXJhQndGWG1LTlI2UWtfWGlqdzJwTGFhV2c1ZUpYYTlNQnNaMW9HUGlHN281RzZpTktsSXVEVXhnS1diRndPbzQwYmtnM2NQSkY5VUstWFAta2ZuVlpRYkhMZk5hNEZrN0Vpdw?oc=5",
+          "publishedAt": "2026-11-12T13:58:06.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-12T15:49:40.961Z",
+      "id": "u-1794498580961-cqdi",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Eine Umfrage, die von der Jerusalem Post und The Hill berichtet wurde, zeigt, dass Vance und Rubio für die republikanische Nominierung 2028 favorisiert werden. Weder hat formell einen Wahlkampf gestartet, und die Vorwahlen der Parteien für 2028 sind mehr als ein Jahr entfernt.",
+          "headline": "Republikaner Vance und Rubio favorisiert für 2028 - Umfrage"
+        },
+        "en": {
+          "body": "A poll reported by The Jerusalem Post and The Hill shows Vance and Rubio are favored for the 2028 Republican nomination. Neither has formally launched a campaign, and the parties' 2028 nominating contests are more than a year away.",
+          "headline": "Republicans Vance, Rubio favored for 2028 US elections - poll"
+        },
+        "es": {
+          "body": "Una encuesta reportada por The Jerusalem Post y The Hill muestra a Vance y Rubio como favoritos para la nominación republicana de 2028. Ninguno ha lanzado formalmente su candidatura y los procesos de nominación de los partidos para 2028 aún están más de un año lejos.",
+          "headline": "Republicanos Vance y Rubio favoritos para las elecciones de 2028 - encuesta"
+        },
+        "fr": {
+          "body": "Un sondage rapporté par Le Jérusalem Post et The Hill montre que Vance et Rubio sont favoris pour la nomination républicaine en 2028. Aucun n'a officiellement lancé sa campagne, et les scrutins de nomination du parti en 2028 sont encore plus d'un an loin.",
+          "headline": "Républiquains Vance et Rubio favoris pour les élections de mi-mandat 2028 - sondage"
+        },
+        "it": {
+          "body": "Un sondaggio riportato da The Jerusalem Post e The Hill vede Vance e Rubio favoriti per la nomination repubblicana del 2028. Nessuno dei due ha formalmente lanciato la campagna elettorale e i contest di nomina dei partiti per il 2028 sono ancora più di un anno lontano.",
+          "headline": "Repubblicani Vance e Rubio favoriti per le elezioni del 2028 - sondaggio"
+        },
+        "ko": {
+          "headline": "공화당 밴스, 루비오, 2028년 미국 대선 유력 후보 - 여론조사",
+          "body": "예루살렘 포스트와 더 힐이 보도한 여론조사에 따르면 밴스와 루비오가 2028년 공화당 경선에서 우세한 것으로 나타났다. 두 사람 모두 공식적으로 선거 운동을 시작하지 않았으며, 양당의 2028년 경선은 1년 이상 남았다."
+        },
+        "zh": {
+          "headline": "民调显示共和党人万斯、鲁比奥在2028年美国大选中被看好",
+          "body": "《耶路撒冷邮报》和《国会山报》报道的一项民调显示，万斯和鲁比奥在2028年共和党提名竞争中占据优势。两人均未正式启动竞选活动，且两党2028年提名之争尚有一年多时间。"
+        },
+        "pt": {
+          "headline": "Republicanos Vance e Rubio favorecidos para eleições dos EUA de 2028 - inquérito",
+          "body": "Um inquérito reportado pelo The Jerusalem Post e The Hill mostra que Vance e Rubio são favorecidos para a nomeação Republicana de 2028. Nenhum lançou formalmente uma campanha, e os concursos de nomeação dos partidos para 2028 estão a mais de um ano de distância."
+        },
+        "ja": {
+          "headline": "共和党のヴァンス氏とルビオ氏が2028年米大統領選で有力視される - 世論調査",
+          "body": "エルサレム・ポスト紙とヒル紙が報じた世論調査によると、ヴァンス氏とルビオ氏が2028年の共和党ノミネートで有力視されている。両名とも正式な選挙運動は開始しておらず、両党の2028年ノミネート選は1年以上先である。"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/american-politics/article-914739",
+          "title": "Republicans Vance, Rubio, Democrats Ossoff, Buttigieg favored for 2028 US elections - poll",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-12T16:48:38.000Z"
+        },
+        {
+          "url": "https://thehill.com/homenews/campaign/data-nerds/6215990-alexandria-ocasio-cortez-white-house-bid-senate-run-live-discussion/",
+          "title": "Should Ocasio-Cortez run for president or Senate?",
+          "outlet": "The Hill",
+          "publishedAt": "2026-11-12T15:36:44.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-12T12:56:27.000Z",
+      "id": "u-1794488187000-7md3",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Der Demokrat Scott Colom hat die Wahl zum US-Senat in Mississippi gewonnen und die amtierende Republikanerin Cindy Hyde-Smith besiegt. Laut NPR und CNBC ist Colom der erste schwarze Senator, der seit dem 19. Jahrhundert in diesem Bundesstaat gewählt wurde.",
+          "headline": "Scott Colom gewinnt Senatssitz für Mississippi"
+        },
+        "en": {
+          "body": "Democrat Scott Colom has won the U.S. Senate race in Mississippi, defeating incumbent Republican Cindy Hyde-Smith. According to NPR and CNBC, Colom is the first Black senator elected from the state since the 19th century.",
+          "headline": "Scott Colom wins Mississippi U.S. Senate seat"
+        },
+        "es": {
+          "body": "El demócrata Scott Colom ha ganado la carrera al Senado de los Estados Unidos en Mississippi, derrotando a la titular republicana Cindy Hyde-Smith. Según NPR y CNBC, Colom es el primer senador negro elegido por el estado desde el siglo XIX.",
+          "headline": "Scott Colom gana el escaño de Mississippi en el Senado de EE. UU."
+        },
+        "fr": {
+          "body": "Le démocrate Scott Colom a remporté l'élection sénatoriale dans le Mississippi, battant la sénatrice républicaine sortante Cindy Hyde-Smith. Selon NPR et CNBC, Colom est le premier sénateur noir élu dans cet État depuis le XIXe siècle.",
+          "headline": "Scott Colom remporte un siège au Sénat américain dans le Mississippi"
+        },
+        "it": {
+          "body": "Il democratico Scott Colom ha vinto la corsa al Senato statunitense in Mississippi, sconfiggendo la senatrice repubblicana uscente Cindy Hyde-Smith. Secondo NPR e CNBC, Colom è il primo senatore afroamericano eletto nello Stato dal XIX secolo.",
+          "headline": "Scott Colom vince il seggio al Senato degli Stati Uniti per il Mississippi"
+        },
+        "ja": {
+          "body": "民主党のスコット・コラム氏がミシシッピ州の米上院選で、現職の共和党シンディ・ハイドスミス氏を破り当選した。NPRおよびCNBCによると、コラム氏は同州から選出された19世紀以来初の黒人上院議員となる。",
+          "headline": "スコット・コラム氏、ミシシッピ州の米上院選で勝利"
+        },
+        "ko": {
+          "body": "민주당의 스콧 콜롬이 미시시피주 연방 상원의원 선거에서 현역인 공화당의 신디 하이드-스미스를 꺾고 당선되었다. NPR과 CNBC에 따르면, 콜롬은 19세기 이후 해당 주에서 선출된 최초의 흑인 상원의원이다.",
+          "headline": "스콧 콜롬, 미시시피주 연방 상원의원 당선"
+        },
+        "pt": {
+          "body": "O democrata Scott Colom venceu a corrida ao Senado dos EUA no Mississippi, derrotando a titular republicana Cindy Hyde-Smith. Segundo a NPR e a CNBC, Colom é o primeiro senador negro eleito pelo estado desde o século XIX.",
+          "headline": "Scott Colom vence lugar no Senado dos EUA pelo Mississippi"
+        },
+        "zh": {
+          "body": "民主党人斯科特·科洛姆（Scott Colom）赢得了密西西比州的联邦参议院选举，击败了现任共和党参议员辛迪·海德-史密斯（Cindy Hyde-Smith）。据美国国家公共电台（NPR）和美国消费者新闻与商业频道（CNBC）报道，科洛姆是该州自19世纪以来首位当选的黑人参议员。",
+          "headline": "斯科特·科洛姆赢得密西西比州联邦参议员席位"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+          "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+          "outlet": "CNBC",
+          "publishedAt": "2026-11-12T12:56:27.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/12/g-s1-153171/up-first-newsletter-scott-colom-trump-democrats-ukraine-russia",
+          "title": "Colom wins Mississippi Senate race. And, White House warns Dems over future probes",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-12T12:15:48.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6037853/democrat-scott-colom-wins-mississippi-senate-race",
+          "title": "Democrat Scott Colom wins Mississippi Senate race",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-12T09:32:33.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-12T13:11:18.000Z",
+      "id": "u-1794489078000-dpmp",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Das Rennen um den Senatssitz zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan ist weiterhin unentschieden, während die Stimmzettel weiter ausgezählt werden. Laut The Hill und Fox News hält Peltola einen knappen Vorsprung, während Sullivan nach den jüngsten Stimmauszählungen Boden gutgemacht hat.",
+          "headline": "Senatswahl in Alaska bleibt bei laufender Auszählung offen"
+        },
+        "en": {
+          "body": "The Senate race between former Representative Mary Peltola and Senator Dan Sullivan remains undecided as ballots continue to be counted. According to The Hill and Fox News, Peltola maintains a narrow lead while Sullivan has gained ground following recent vote drops.",
+          "headline": "Alaska Senate race remains uncalled as vote count continues"
+        },
+        "es": {
+          "body": "La carrera al Senado entre la exrepresentante Mary Peltola y el senador Dan Sullivan sigue sin decidirse mientras continúa el recuento de papeletas. Según The Hill y Fox News, Peltola mantiene una estrecha ventaja, mientras que Sullivan ha ganado terreno tras los últimos recuentos de votos.",
+          "headline": "La carrera al Senado en Alaska sigue sin definirse mientras continúa el recuento de votos"
+        },
+        "fr": {
+          "body": "La course au Sénat entre l'ancienne représentante Mary Peltola et le sénateur Dan Sullivan reste indécise alors que le dépouillement des bulletins se poursuit. Selon The Hill et Fox News, Peltola conserve une courte avance tandis que Sullivan a gagné du terrain à la suite des derniers résultats publiés.",
+          "headline": "L'élection sénatoriale en Alaska reste indécise alors que le dépouillement se poursuit"
+        },
+        "it": {
+          "body": "La corsa al Senato tra l'ex deputata Mary Peltola e il senatore Dan Sullivan rimane indecisa mentre continua il conteggio delle schede. Secondo The Hill e Fox News, Peltola mantiene un lieve vantaggio, mentre Sullivan ha recuperato terreno in seguito agli ultimi aggiornamenti sui voti.",
+          "headline": "Ancora incerto l'esito della corsa al Senato in Alaska mentre prosegue lo spoglio"
+        },
+        "ja": {
+          "body": "元下院議員のメアリー・ペルトラ氏と現職のダン・サリバン上院議員が争うアラスカ州の上院選は、開票作業が続いており、依然として勝敗は決していない。ザ・ヒルおよびフォックスニュースによると、ペルトラ氏が僅差でリードを維持しているものの、直近の開票結果を受けてサリバン氏が追い上げを見せている。",
+          "headline": "アラスカ州の上院選、開票続くも勝敗決まらず"
+        },
+        "ko": {
+          "body": "메리 펠톨라 전 하원의원과 댄 설리번 상원의원이 맞붙은 상원의원 선거는 개표가 계속되면서 아직 승자가 결정되지 않았다. 더 힐과 폭스 뉴스에 따르면, 펠톨라가 근소한 차이로 앞서고 있으나 최근 개표 결과가 반영되면서 설리번이 추격하고 있다.",
+          "headline": "알래스카주 상원의원 선거, 개표 지속으로 당선자 미정"
+        },
+        "pt": {
+          "body": "A corrida ao Senado entre a antiga representante Mary Peltola e o senador Dan Sullivan permanece indecisa enquanto os boletins de voto continuam a ser contados. Segundo o The Hill e a Fox News, Peltola mantém uma curta vantagem, enquanto Sullivan ganhou terreno após as recentes atualizações na contagem de votos.",
+          "headline": "Corrida ao Senado no Alasca continua sem vencedor enquanto contagem de votos prossegue"
+        },
+        "zh": {
+          "body": "前众议员玛丽·佩尔托拉（Mary Peltola）与参议员丹·沙利文（Dan Sullivan）之间的参议院竞选结果仍未确定，计票工作仍在继续。据《国会山报》（The Hill）和福克斯新闻（Fox News）报道，佩尔托拉目前保持微弱领先，而沙利文在近期选票统计更新后缩小了差距。",
+          "headline": "阿拉斯加州参议员选举计票仍在进行，结果尚未出炉"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://thehill.com/homenews/campaign/6215353-mary-peltola-dan-sullivan-alaska-senate-race-update/",
+          "title": "Peltola holds lead, but Sullivan gains after latest Alaska Senate vote drop",
+          "outlet": "The Hill",
+          "publishedAt": "2026-11-12T13:11:18.000Z"
+        },
+        {
+          "url": "https://www.foxnews.com/politics/peltola-campaign-loses-court-rejected-absentee-ballots-maintains-narrow-lead",
+          "title": "Peltola campaign loses in court on rejected absentee ballots as she maintains narrow lead",
+          "outlet": "Fox News",
+          "publishedAt": "2026-11-12T12:19:50.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "politics",
+  "keywords": [
+    "scott colom",
+    "cindy hyde-smith",
+    "mary peltola",
+    "dan sullivan",
+    "mississippi",
+    "alaska",
+    "senate",
+    "midterms",
+    "elections"
+  ],
+  "seenUrls": [
+    "https://www1.folha.uol.com.br/colunas/ian-bremmer/2026/11/democratas-venceram-as-midterms-mas-isso-nao-muda-muita-coisa.shtml",
+    "https://www1.folha.uol.com.br/mundo/2026/11/democratas-ganham-forca-para-contornar-colegio-eleitoral-apos-midterms-nos-eua.shtml",
+    "https://www1.folha.uol.com.br/mundo/2026/11/mississippi-elege-democrata-scott-colom-primeiro-senador-negro-pelo-estado-dos-eua-em-150-anos.shtml",
+    "https://www.nytimes.com/2026/11/12/technology/voters-data-centers-construction.html",
+    "https://www.aljazeera.com/news/2026/11/12/migrant-caravan-sets-out-from-southern-mexico-bound-for-us-after-midterms?traffic_source=rss",
+    "https://thehill.com/homenews/administration/6214786-live-updates-trump-midterms-alaska-congress/",
+    "https://thehill.com/homenews/senate/6215464-gop-lame-duck-legislative-push/",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxOWENQUXV1Q1FkODFaUDBMOTA2dlI2Ulg1VWs5QTVfRXRENGtfTXEyTHRTWlA3N2VJRmxzQVJNYWdCVEh0Rm9fUFRIbFF5Z1JGUHJZSFNxVk84bi1PQUFmbF8wRHdyaV9ObFNyTnhVampuODhIQ28tcGRDZTkyZnVJV2hVTTN4V0psTlF5b1VHdURrWi02VkZqSTVsTkVMaVdWSHA5NHdCWU4zMHRTLVQ4?oc=5",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNem10YmZFWHpEQ09XaXVOUHFnVFVSMFVETS1zLTBmR1FwY1loY2pCc3VUdEstU3g3ZGwzS01leXI3ZDRQelVPNHZVRDR1NHl1V0N5bUd1NDdWcV9OU2R0bDRYRmhleXhYNHc0SzRHZHV6cWZBZDZ2aUw1b205ZGxrdUpEd051SGFLTTdXZlBPbXhQajdZQjlFQnVfZDRrc2I5MTMxWVUxNVVQMU0?oc=5",
+    "https://timesofindia.indiatimes.com/technology/tech-news/palantir-ceo-alex-karp-a-2-million-republican-donor-whose-software-powers-ice-deportations-says-ive-been-a-democrat-my-whole-life-i-know-more-about-being-a-/articleshow/135770991.cms",
+    "https://thehill.com/homenews/campaign/6215353-mary-peltola-dan-sullivan-alaska-senate-race-update/",
+    "https://www.bbc.co.uk/news/articles/cw7vppyr80eeo?at_medium=RSS&at_campaign=rss",
+    "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+    "https://www.aljazeera.com/news/2026/11/12/europe-views-us-with-much-less-horror-after-trumps-midterms-defeat?traffic_source=rss",
+    "https://www.foxnews.com/politics/peltola-campaign-loses-court-rejected-absentee-ballots-maintains-narrow-lead",
+    "https://www.npr.org/2026/11/12/g-s1-153171/up-first-newsletter-scott-colom-trump-democrats-ukraine-russia",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxPemFVdURfNlE3Tk1uXzRybDQzRVE3c2RTdERvU3BVNlJpZ0owelRtSzlYWTRQQXZ0Y2dTcGhOS3JNdUdaTlFjLTFId2pHOFBhTUh3ZzZOY3ZvSUlZWkNvV2E3bGpCdmdSX1g5bHJZZ20yNGx0ZTRtZ0JNU0xzSFljRENNSk52Unlfb3RZY2tFWWpEVXpJVk93clIySTI5RDZia0N2LTYwd1l6Wkt5OFhWNF9n?oc=5",
+    "https://www.spiegel.de/ausland/usa-pete-hegseth-wie-die-demokraten-das-impeachment-verkorksten-a-dc77fa79-6a82-43b9-9223-592591128419#ref=rss",
+    "https://www.foxnews.com/politics/gop-governor-prominent-dems-congratulate-senator-elect-flipping-mississippi-seat-blue",
+    "https://timesofindia.indiatimes.com/india/uttar-pradesh-elections-2027-who-will-owaisi-azad-alliance-hurt-most-explained-in-5-charts/articleshow/135767057.cms",
+    "https://www.aljazeera.com/news/2026/11/12/who-is-scott-colom-mississippis-first-black-senator-in-150-years?traffic_source=rss",
+    "https://english.elpais.com/usa/2026-11-12/democratic-representatives-elected-in-the-midterms-demand-immigration-reform-at-the-capitol.html",
+    "https://english.elpais.com/usa/2026-11-12/economic-populism-is-very-fashionable-the-old-bernie-sanders-formula-that-helped-democrats-win-the-midterms.html",
+    "https://www.axios.com/2026/11/12/scott-colom-mississippi-delta-civil-rights-till",
+    "https://www.tagesanzeiger.ch/midterms-warum-die-us-wahlen-hoffnung-machen-341678173242",
+    "https://www.axios.com/2026/11/12/democrats-debate-trump-economic-playbook",
+    "https://www.axios.com/2026/11/12/aoc-political-team-changes-2028",
+    "https://www.axios.com/2026/11/12/consumer-sentiment-midterms-elections",
+    "https://english.elpais.com/usa/2026-11-12/a-crash-course-in-becoming-a-member-of-congress-veterans-doctors-farmers-firefighters-and-musicians-learn-on-the-job-in-washington.html",
+    "https://www.theguardian.com/world/2026/nov/12/italy-anti-vax-medics-return-vote-meloni",
+    "https://www.npr.org/2026/11/12/nx-s1-6037438/scott-colom-defied-the-odds-mississippi-democratic-senator",
+    "https://insideclimatenews.org/news/12112026/pennsylvania-democrat-trifecta-clean-energy-affordability/",
+    "https://www.npr.org/2026/11/12/nx-s1-6037852/rep-bennie-thompson-discusses-the-u-s-senate-race-democrat-win-in-mississippi",
+    "https://www.npr.org/2026/11/12/nx-s1-6037853/democrat-scott-colom-wins-mississippi-senate-race",
+    "https://www.npr.org/2026/11/12/nx-s1-6034464/michigan-senator-elect-el-sayed-discusses-democrats-ambitions",
+    "https://www.jpost.com/american-politics/article-914739",
+    "https://www.dawn.com/news/2044064/cec-raja-alleges-federal-govt-wants-to-sabotage-islamabad-lg-polls",
+    "https://thehill.com/homenews/administration/6215557-donald-trump-us-mexico-migrants-gop-midterm-losses/",
+    "https://thehill.com/homenews/campaign/data-nerds/6215990-alexandria-ocasio-cortez-white-house-bid-senate-run-live-discussion/",
+    "http://www.africanews.com/2026/11/12/mississippi-elects-first-black-us-senator-since-post-civil-war-reconstruction/",
+    "https://www.bbc.co.uk/news/articles/cmde1y19g19do?at_medium=RSS&at_campaign=rss",
+    "https://www.theverge.com/ai-artificial-intelligence/1032126/alex-baby-you-were-recorded-on-video",
+    "https://www.nzz.ch/international/demokrat-holt-senatssitz-in-mississippi-erstmals-seit-1982-ld.10061692",
+    "https://thehill.com/homenews/campaign/6216648-kellyanne-conway-gop-ad-spending/",
+    "https://news.google.com/rss/articles/CBMiywFBVV95cUxOLVRFZW03Z1V5LXVLVnB1NjZVSVFQcm5VTlUtQlFVYTRLekNKNkZoeFJ0UTJVYU55bGZnWjZxMmZ0T2cwLUpoUjhBMGlQbHY2MTlJNFV2cXFzdHBhRDhxaFpxdUtRcG9zUmRhaXBlclBYanNpUHNiczBXb0hMdkJJWmJLOEp1T0phU1doZlNYWG1samsybmhXeWl4c2NBU055ajVVdzlGTmRlSFNONnpvNUtQV0NSYUdUMk8xZEtuNUI3RlVYYVhSb1p5Zw?oc=5",
+    "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQc212Rk11UXlfZU5kT3h6TkJ4LUZOUFFiNTZ6THRibnJpMnMzOHBueG9XT1hUREc5N2VjbW1NNW0tUFVTWXV2T3VpVjhvcXJmZmNlaFJRSEhVNjA4a1lYRjhZZlJQS1hOUGRDUkFOSG5YOTVIbDJDb0U4Q05YY3VWclplZ0dndV9ld1NlOWRkSUFIelBHSE93bno3MjB4OXZJVU51clpiUmg1enl2WGZrU1VmRjJZZFg2RDJPWGxQT3RBYUJCR2JLWW5FN2tpY0VHY0RhZ1p0d00?oc=5",
+    "https://www.semafor.com/article/11/12/2026/dems-cautiously-optimistic-for-clean-energy-following-midterms-sweep",
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSE5LaGE2aHhQdHVFWS1HNG1rdjRlWVBXZElFbjJKZll4aC1FQndOdFk2WHROZUFGV1lkNFdrX0g4TlRKSkxWUkw3TTBHVEcyX0hfd1NVbVdOcDhsSU5LcV9FSzc3WG9ubUJvTVBweV9wY1RueC02SHhHQTctaVNhR0FHZnlOSjEzVmw0WWR6TVdZTHVJUEF2dzh6eUFiQm5oQ2ZPcFVkbHl1ZllLc1Q2UQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiigJBVV95cUxPVGdqSWNyaTd5b2s0NGVVUmsxZ2plSEpyTjhUN3J3SmxHQlVIRHhwX0RiSW9heHFEYk1xeXM3QWpYX1RiQ1paVUFjSWVwenU5M3Y1STJTcExEN0x1VEFDUU1UZ1hMaHdsaW9xNkp1dHJ1UzJNN1ZJV0daSWpBWlE2Mm1GTEN3ZTlUR2dJQ1pIVF9BZjlRSFVGa3lXNDBrRTRuRG5YMHhoN1AyQmoxV2JIcGlaU3lab25NT3k0cjJoa3hsbTlNcVNnM3VrMlRYaUpBd3I2TVVSR3BMekhjUWlNQzNGY2pLckZxQk5uS2dqa2pXaUdIQWRjanVtZHhUaDZhNDVvTnFydTVHZw?oc=5",
+    "https://www.theguardian.com/culture/2026/nov/12/seth-meyers-trump-midterms-denial-late-night",
+    "http://www.africanews.com/2026/11/12/anc-vows-soul-searching-after-election-losses-but-says-ramaphosa-will-stay-put/",
+    "https://thehill.com/homenews/administration/6216059-trump-criticizes-gop-midterm-losses/",
+    "https://www.dawn.com/news/2044064/cec-raja-alleges-federal-govt-wants-to-sabotage-islamabad-local-govt-polls",
+    "https://news.google.com/rss/articles/CBMickFVX3lxTE5Kem1zNEtLLXJhQndGWG1LTlI2UWtfWGlqdzJwTGFhV2c1ZUpYYTlNQnNaMW9HUGlHN281RzZpTktsSXVEVXhnS1diRndPbzQwYmtnM2NQSkY5VUstWFAta2ZuVlpRYkhMZk5hNEZrN0Vpdw?oc=5",
+    "https://news.google.com/rss/articles/CBMizAFBVV95cUxONzExZUxXMHhCV1dmeXBTX0gtTFFEdVNnS2Y3U1VvUENPQXdXZE5IRDdEUXBtWmQzMHJCTTNzNkdLMkIyLWJ1X3JmclBVdzJTTXZHU1p2cHB0MkgwWDR6R2h4QXNaRFpBbWt1ZWJHYlp6UjAtX18xQ0x0OHBYMzlyMENYbWI1dHNBSmQzMXZtR1pTdVlnUlJmQXFPRXNfVHF0MktIZzhIZGpaV3VLTWc3MndEdWFPOExhYWxMaDlXZGJsZU9DU3EyeUVwODc?oc=5"
+  ],
+  "startedAt": "2026-11-12T15:17:52.338Z",
+  "updatedAt": "2026-11-12T18:21:30.981Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": "2026-u-s-midterm-election-results",
+  "sourceCount": 7,
+  "statsHistory": [
+    {
+      "at": "2026-11-06T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "vote-share-colom-vs-hyde-smith",
+          "value": 50.1
+        },
+        {
+          "key": "vote-share-hyde-smith-vs-colom",
+          "value": 49.9
+        }
+      ]
+    }
+  ],
+  "seenHeadlines": [
+    "Trump blames Senate Republicans for midterm losses",
+    "Scott Colom wins Mississippi Senate seat",
+    "Trump blames migrant caravans for Republican midterm losses",
+    "Ocasio-Cortez faces 2028 presidential or Senate choice"
+  ]
+}
