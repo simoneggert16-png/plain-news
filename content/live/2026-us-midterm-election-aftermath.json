@@ -12,71 +12,50 @@
   },
   "slug": "2026-us-midterm-election-aftermath",
   "stats": {
+    "label": "2026 US midterm election aftermath",
+    "note": "National Democrat sentiment swing and Mississippi Senate vote share",
+    "unit": "%",
     "max": 100,
     "asOf": "2026-11-12T14:30:00.000Z",
-    "note": "Vote share changes in Mississippi Senate race and national sentiment",
+    "updatedAt": "2026-11-12T17:47:25.733Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "publishedAt": "2026-11-12T12:56:27.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
       {
         "key": "democrat-vote-share-mississippi-senate",
         "label": "Democrat vote share Mississippi Senate",
         "value": 50.1,
-        "change": 0,
+        "change": 1.4,
         "locales": {
           "de": {
             "label": "Stimmenanteil der Demokraten bei Senatswahl in Mississippi"
           },
-          "es": {
-            "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
-          },
           "fr": {
             "label": "Part démocrate au Sénat du Mississippi"
           },
+          "es": {
+            "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
+          },
           "it": {
             "label": "Percentuale di voto del democratico al Senato del Mississippi"
-          },
-          "ja": {
-            "label": "ミシシッピ州上院選 民主党の得票率"
-          },
-          "ko": {
-            "label": "미시시피 상원 민주당 득표율"
           },
           "pt": {
             "label": "Percentagem de votos do Partido Democrata no Senado do Mississippi"
           },
           "zh": {
             "label": "民主党密西西比州参议院得票率"
-          }
-        }
-      },
-      {
-        "key": "republican-incumbent-vote-share-mississi",
-        "label": "Republican incumbent vote share Mississi",
-        "value": 48.7,
-        "change": 0,
-        "locales": {
-          "de": {
-            "label": "Stimmenanteil des republikanischen Amtsinhabers in Mississippi"
-          },
-          "es": {
-            "label": "Porcentaje del voto del titular republicano en Misisipi"
-          },
-          "fr": {
-            "label": "Part du candidat républicain sortant au Mississippi"
-          },
-          "it": {
-            "label": "Percentuale di voto del repubblicano uscente Mississi"
           },
           "ja": {
-            "label": "ミシシッピ州上院選 共和党現職の得票率"
+            "label": "ミシシッピ州上院選 民主党の得票率"
           },
           "ko": {
-            "label": "미시시피 공화당 현직 의원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos do incumbente Republicano no Mississippi"
-          },
-          "zh": {
-            "label": "共和党现任议员密西西比得票率"
+            "label": "미시시피 상원 민주당 득표율"
           }
         }
       },
@@ -94,55 +73,59 @@
           },
           "it": {
             "label": "Swing del sentiment democratico nazionale (7 giorni"
+          },
+          "fr": {
+            "label": "Évolution du sentiment démocrate national (7 jours"
+          },
+          "zh": {
+            "label": "全国民主党情绪转移（7天）"
+          },
+          "pt": {
+            "label": "Swing do sentimento nacional dos Democratas (7 dias)"
+          },
+          "ko": {
+            "label": "전국 민주당 여론 변화(7일"
+          },
+          "ja": {
+            "label": "全国の民主党支持の推移（7日"
           }
         }
       }
     ],
-    "unit": "%",
-    "label": "2026 US midterm election aftermath",
-    "source": {
-      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-11-12T12:56:27.000Z"
-    },
     "locales": {
       "de": {
         "note": "Stimmenanteilsänderungen im Mississippi-Senatswahlkampf und nationale Stimmung",
         "label": "Nachwirkungen der US-Zwischenwahlen 2026"
       },
+      "fr": {
+        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis",
+        "note": "Sentiment national démocrate et part de vote au Sénat du Mississippi"
+      },
       "es": {
         "note": "Cambios en la cuota de votos en la carrera al Senado de Mississippi y el sentimiento nacional",
         "label": "Consecuencias posteriores a las elecciones de mitad de mandato de EE. UU. 2026"
-      },
-      "fr": {
-        "note": "Vote share changes in Mississippi Senate race and national sentiment",
-        "label": "2026 US midterm election aftermath"
       },
       "it": {
         "note": "Variazioni di voto nella corsa al Senato nel Mississippi e sentimenti nazionali",
         "label": "2026 elezioni di metà mandato: conseguenze"
       },
-      "ja": {
-        "note": "Vote share changes in Mississippi Senate race and national sentiment",
-        "label": "2026 US midterm election aftermath"
-      },
-      "ko": {
-        "note": "Vote share changes in Mississippi Senate race and national sentiment",
-        "label": "2026 US midterm election aftermath"
-      },
       "pt": {
-        "note": "Vote share changes in Mississippi Senate race and national sentiment",
-        "label": "2026 US midterm election aftermath"
+        "label": "2026 eleições de meio de mandato nos EUA",
+        "note": "Sentimento nacional dos Democratas após o voto e percentagem de votos no Senado de Mississippi"
       },
       "zh": {
-        "note": "Vote share changes in Mississippi Senate race and national sentiment",
-        "label": "2026 US midterm election aftermath"
+        "label": "2026年美国中期选举余波",
+        "note": "全国民主党情绪转移和密西西比州参议院选票份额"
+      },
+      "ja": {
+        "label": "2026年米国中間選挙後の情勢",
+        "note": "全国の民主党支持の推移とミシシッピ州上院選挙の得票率"
+      },
+      "ko": {
+        "label": "2026년 미국 중간선거 이후",
+        "note": "전국 민주당 여론 변화와 미시시피 상원 득표율"
       }
-    },
-    "updatedAt": "2026-11-12T15:25:30.929Z",
-    "sourceCount": 1
+    }
   },
   "topic": "2026 US midterm election aftermath",
   "status": "live",
@@ -416,38 +399,38 @@
   },
   "updates": [
     {
-      "id": "u-1794502831000-g3rk",
       "at": "2026-11-12T17:00:31.000Z",
+      "id": "u-1794502831000-g3rk",
       "kind": "statement",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Trump says US doesn't need Iran deal, charges Vance with investigating Democrat city corruption",
-          "body": "Trump stated the US does not need an Iran deal. Vance distanced himself from Trump's position after Republicans' midterm election rout by Democrats, according to The Jerusalem Post. Vance, who had taken on a role in trying to resolve the conflict with Iran, distanced himself from Trump's war on Wednesday after Republicans' midterm election rout by Democrats, according to The Jerusalem Post."
-        },
         "de": {
-          "headline": "Trump sagt, die USA bräuchten keinen Iran-Deal, wirft Vance Untersuchung von Demokraten-Stadtkorruption vor",
-          "body": "Trump erklärte, die USA bräuchten keinen Iran-Deal. Vance distanzierte sich nach der Niederlage der Republikaner bei den Zwischenwahlen gegen die Demokraten von Trumps Position, laut The Jerusalem Post. Vance, der eine Rolle bei der Lösung des Konflikts mit Iran übernommen hatte, distanzierte sich am Mittwoch von Trumps Kurs, nachdem die Republikaner bei den Zwischenwahlen gegen die Demokraten unterlegen waren, laut The Jerusalem Post."
+          "body": "Trump erklärte, die USA bräuchten keinen Iran-Deal. Vance distanzierte sich nach der Niederlage der Republikaner bei den Zwischenwahlen gegen die Demokraten von Trumps Position, laut The Jerusalem Post. Vance, der eine Rolle bei der Lösung des Konflikts mit Iran übernommen hatte, distanzierte sich am Mittwoch von Trumps Kurs, nachdem die Republikaner bei den Zwischenwahlen gegen die Demokraten unterlegen waren, laut The Jerusalem Post.",
+          "headline": "Trump sagt, die USA bräuchten keinen Iran-Deal, wirft Vance Untersuchung von Demokraten-Stadtkorruption vor"
+        },
+        "en": {
+          "body": "Trump stated the US does not need an Iran deal. Vance distanced himself from Trump's position after Republicans' midterm election rout by Democrats, according to The Jerusalem Post. Vance, who had taken on a role in trying to resolve the conflict with Iran, distanced himself from Trump's war on Wednesday after Republicans' midterm election rout by Democrats, according to The Jerusalem Post.",
+          "headline": "Trump says US doesn't need Iran deal, charges Vance with investigating Democrat city corruption"
         },
         "fr": {
-          "headline": "Trump affirme que les États-Unis n'ont pas besoin de l'accord sur l'Iran, charge Vance d'enquêter sur la corruption d'une ville démocrate",
-          "body": "Trump a déclaré que les États-Unis n'avaient pas besoin d'un accord sur l'Iran. Vance s'est distancé de la position de Trump après la défaite républicaine aux élections de mi-mandat face aux démocrates, selon Le Poste de Jérusalem. Vance, qui avait assumé un rôle dans la tentative de résolution du conflit avec l'Iran, s'est distancé de la guerre de Trump mercredi après la défaite républicaine aux élections de mi-mandat face aux démocrates, selon Le Poste de Jérusalem."
+          "body": "Trump a déclaré que les États-Unis n'avaient pas besoin d'un accord sur l'Iran. Vance s'est distancé de la position de Trump après la défaite républicaine aux élections de mi-mandat face aux démocrates, selon Le Poste de Jérusalem. Vance, qui avait assumé un rôle dans la tentative de résolution du conflit avec l'Iran, s'est distancé de la guerre de Trump mercredi après la défaite républicaine aux élections de mi-mandat face aux démocrates, selon Le Poste de Jérusalem.",
+          "headline": "Trump affirme que les États-Unis n'ont pas besoin de l'accord sur l'Iran, charge Vance d'enquêter sur la corruption d'une ville démocrate"
         }
       },
       "sources": [
         {
-          "outlet": "The Jerusalem Post",
-          "title": "Trump says US doesn't need Iran deal, charges Vance with investigating Democrat city corruption",
           "url": "https://www.jpost.com/middle-east/iran-news/article-914741",
+          "title": "Trump says US doesn't need Iran deal, charges Vance with investigating Democrat city corruption",
+          "outlet": "The Jerusalem Post",
           "publishedAt": "2026-11-12T17:00:31.000Z"
         },
         {
-          "outlet": "Democracy Docket",
-          "title": "Trump: Not passing SAVE America Act ‘devastating’ for GOP in midterms",
           "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSE5LaGE2aHhQdHVFWS1HNG1rdjRlWVBXZElFbjJKZll4aC1FQndOdFk2WHROZUFGV1lkNFdrX0g4TlRKSkxWUkw3TTBHVEcyX0hfd1NVbVdOcDhsSU5LcV9FSzc3WG9ubUJvTVBweV9wY1RueC02SHhHQTctaVNhR0FHZnlOSjEzVmw0WWR6TVdZTHVJUEF2dzh6eUFiQm5oQ2ZPcFVkbHl1ZllLc1Q2UQ?oc=5",
+          "title": "Trump: Not passing SAVE America Act ‘devastating’ for GOP in midterms",
+          "outlet": "Democracy Docket",
           "publishedAt": "2026-11-12T16:51:50.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-12T11:00:49.000Z",
@@ -1084,6 +1067,19 @@
   "articleSlug": "2026-us-midterm-election-aftermath",
   "sourceCount": 16,
   "statsHistory": [
+    {
+      "at": "2026-11-12T14:30:00.000Z",
+      "rows": [
+        {
+          "key": "democrat-vote-share-mississippi-senate",
+          "value": 50.1
+        },
+        {
+          "key": "national-democrat-sentiment-swing-7-day",
+          "value": 21.4
+        }
+      ]
+    },
     {
       "at": "2026-11-12T14:30:00.000Z",
       "rows": [
