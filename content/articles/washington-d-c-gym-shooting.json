@@ -6,12 +6,24 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-12T16:07:29.393Z",
-  "updatedAt": "2026-11-12T16:09:50.517Z",
+  "updatedAt": "2026-11-12T16:39:52.360Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "washington-d-c-gym-shooting",
   "stats": null,
   "sources": [
+    {
+      "outlet": "Euronews",
+      "title": "Gunman kills one and barricades himself in building after gym shooting in Washington, DC",
+      "url": "https://www.euronews.com/2026/11/12/gunman-kills-one-and-barricades-himself-in-building-after-gym-shooting-in-washington-dc",
+      "publishedAt": "2026-11-12T16:28:39.000Z"
+    },
+    {
+      "outlet": "Advocate.com",
+      "title": "Mass shooting at popular gay-owned VIDA Fitness in D.C. leaves one dead, suspect barricaded",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQU2RCSjA3VmkxdW00MkdLMGZGcHFlYWZfVTdweW5Cd2J4MU0xRmduUWlndlFtYTJQeDBiNjNXTzVfZDZYV25KZHZrdk9adzRDSzE3VUpPdDRyblNCOTRBMkRVUWczbzc2YkJSTVpMcGE?oc=5",
+      "publishedAt": "2026-11-12T15:07:13.000Z"
+    },
     {
       "outlet": "mycbs4.com",
       "title": "1 dead, 4 hurt in mass shooting at gym in DC's Logan Circle",
@@ -32,27 +44,56 @@
       "facts": [
         "One person killed and four injured in mass shooting at DC gym",
         "Shooting occurred at gym in Logan Circle neighborhood",
-        "Police confirmed casualties but no suspect description provided",
-        "Multiple outlets confirmed the incident including mycbs4.com and WJLA"
+        "Suspect barricaded himself in building after shooting",
+        "Suspect apprehended after self-inflicted gunshot wound"
       ],
       "body": [
-        "One person was killed and four were injured in a mass shooting at a gym in DC's Logan Circle according to mycbs4.com and WJLA.",
-        "Police reported the casualties following the shooting at the gym in the Logan Circle area of Washington D.C.",
-        "The incident marks another shooting at a public venue in the nation's capital, though details regarding the shooter remain limited.",
-        "Authorities responded to the scene but have not released information about a suspect or motive as of the initial reports."
+        "Police reported one person was killed and four were injured in a mass shooting at a gym in DC's Logan Circle according to mycbs4.com and WJLA.",
+        "The gunman first shot and killed a person in a gym, then continued firing after reaching the street. According to police, he then barricaded himself in a building.",
+        "Authorities say the suspected shooter has been apprehended, after he shot himself, as reported by Euronews.",
+        "The Advocate.com reported the shooting occurred at VIDA Fitness, a gay-owned gym in D.C., leaving one dead and the suspect barricaded.",
+        "Multiple outlets confirmed the incident including mycbs4.com and WJLA.",
+        "Police confirmed casualties but no suspect description provided in initial reports.",
+        "The incident marks another shooting at a public venue in the nation's capital.",
+        "Details regarding the motive remain under investigation by authorities."
       ],
       "context": "A shooting at a gym in Washington D.C.'s Logan Circle neighborhood resulted in one death and four injuries, as confirmed by multiple news outlets reporting on the incident.",
       "imageCaption": ""
-    },
-    "de": {
-      "title": "Ein Toter und vier Verletzte bei Schusswaffenattacke in einer Washingtoner Gymnastikstätte",
-      "dek": "",
-      "facts": [],
-      "body": [],
-      "context": ""
     }
   },
-  "history": [],
+  "history": [
+    {
+      "at": "2026-11-12T16:09:50.517Z",
+      "reason": "1 new update(s)",
+      "locales": {
+        "en": {
+          "dek": "Police report one dead and four hurt after shooting at Logan Circle gym",
+          "body": [
+            "One person was killed and four were injured in a mass shooting at a gym in DC's Logan Circle according to mycbs4.com and WJLA.",
+            "Police reported the casualties following the shooting at the gym in the Logan Circle area of Washington D.C.",
+            "The incident marks another shooting at a public venue in the nation's capital, though details regarding the shooter remain limited.",
+            "Authorities responded to the scene but have not released information about a suspect or motive as of the initial reports."
+          ],
+          "facts": [
+            "One person killed and four injured in mass shooting at DC gym",
+            "Shooting occurred at gym in Logan Circle neighborhood",
+            "Police confirmed casualties but no suspect description provided",
+            "Multiple outlets confirmed the incident including mycbs4.com and WJLA"
+          ],
+          "title": "One killed, four injured in Washington D.C. gym shooting",
+          "context": "A shooting at a gym in Washington D.C.'s Logan Circle neighborhood resulted in one death and four injuries, as confirmed by multiple news outlets reporting on the incident.",
+          "imageCaption": ""
+        },
+        "de": {
+          "dek": "",
+          "body": [],
+          "facts": [],
+          "title": "Ein Toter und vier Verletzte bei Schusswaffenattacke in einer Washingtoner Gymnastikstätte",
+          "context": ""
+        }
+      }
+    }
+  ],
   "meta": {
     "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
     "editor": null,
