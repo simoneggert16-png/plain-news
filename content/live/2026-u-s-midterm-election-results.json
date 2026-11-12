@@ -10,60 +10,204 @@
       "InsideClimate News"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite",
-    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "2026-u-s-midterm-election-results",
+  "stats": {
+    "max": 100,
+    "asOf": "2026-11-06T00:00:00.000Z",
+    "note": "Scott Colom's victory as the first Black senator since Reconstruction and first Democrat since 1982",
+    "rows": [
+      {
+        "key": "vote-share-colom-vs-hyde-smith",
+        "label": "Vote share Colom vs Hyde-Smith",
+        "value": 50.1,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil Colom gegen Hyde-Smith"
+          },
+          "es": {
+            "label": "Porcentaje de voto Colom frente a Hyde-Smith"
+          },
+          "fr": {
+            "label": "Part des voix Colom contre Hyde-Smith"
+          },
+          "it": {
+            "label": "Quota di voti Colom contro Hyde-Smith"
+          },
+          "ja": {
+            "label": "コラム氏対ハイドスミス氏の得票率"
+          },
+          "ko": {
+            "label": "콜롬 대 하이드-스미스 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos Colom vs Hyde-Smith"
+          },
+          "zh": {
+            "label": "科洛姆与海德-史密斯的得票率"
+          }
+        }
+      },
+      {
+        "key": "vote-share-hyde-smith-vs-colom",
+        "label": "Vote share Hyde-Smith vs Colom",
+        "value": 49.9,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Stimmenanteil Hyde-Smith gegen Colom"
+          },
+          "es": {
+            "label": "Porcentaje de voto Hyde-Smith frente a Colom"
+          },
+          "fr": {
+            "label": "Part des voix Hyde-Smith contre Colom"
+          },
+          "it": {
+            "label": "Quota di voti Hyde-Smith contro Colom"
+          },
+          "ja": {
+            "label": "ハイドスミス氏対コラム氏の得票率"
+          },
+          "ko": {
+            "label": "하이드-스미스 대 콜롬 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos Hyde-Smith vs Colom"
+          },
+          "zh": {
+            "label": "海德-史密斯与科洛姆的得票率"
+          }
+        }
+      }
+    ],
+    "unit": "%",
+    "label": "Mississippi Senate race results",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-12T12:56:27.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Scott Coloms Sieg als erster schwarzer Senator seit der Reconstruction und erster Demokrat seit 1982",
+        "label": "Ergebnisse der Senatswahl in Mississippi"
+      },
+      "es": {
+        "note": "Victoria de Scott Colom, primer senador negro desde la Reconstrucción y primer demócrata desde 1982",
+        "label": "Resultados de la carrera al Senado de Mississippi"
+      },
+      "fr": {
+        "note": "La victoire de Scott Colom, premier sénateur noir depuis la Reconstruction et premier démocrate depuis 1982",
+        "label": "Résultats de la course au Sénat du Mississippi"
+      },
+      "it": {
+        "note": "La vittoria di Scott Colom come primo senatore nero dal periodo della Ricostruzione e primo democratico dal 1982",
+        "label": "Risultati della corsa al Senato del Mississippi"
+      },
+      "ja": {
+        "note": "スコット・コラム氏がレコンストラクション（南部再建）期以降で初の黒人上院議員、また1982年以来初の民主党上院議員として当選",
+        "label": "ミシシッピ州上院選の結果"
+      },
+      "ko": {
+        "note": "스콧 콜롬이 재건 이후 최초의 흑인 상원의원이자 1982년 이후 최초의 민주당 상원의원으로 승리",
+        "label": "미시시피 상원 선거 결과"
+      },
+      "pt": {
+        "note": "Vitória de Scott Colom como primeiro senador negro desde a Reconstrução e primeiro democrata desde 1982",
+        "label": "Resultados da corrida no Senado do Mississippi"
+      },
+      "zh": {
+        "note": "斯科特·科洛姆胜选，成为自重建时期以来首位黑人参议员，也是自1982年以来首位民主党人",
+        "label": "密西西比州参议院选举结果"
+      }
+    },
+    "updatedAt": "2026-11-12T15:37:39.131Z",
+    "sourceCount": 1
+  },
   "topic": "2026 U.S. Midterm Election Results",
   "status": "live",
   "article": {
     "slug": "2026-u-s-midterm-election-results",
-    "reason": "2 new update(s)",
+    "updatedAt": "2026-11-12T15:49:45.740Z",
+    "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Der Demokrat Scott Colom besiegte die Amtsinhaberin Cindy Hyde-Smith in Mississippi, während das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan andauert.",
-        "body": [
-          "Der Demokrat Scott Colom gewann am 12. November die US-Senatswahl in Mississippi. Laut NPR und CNBC besiegte er die republikanische Amtsinhaberin Cindy Hyde-Smith.",
-          "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde, wie NPR und CNBC berichteten. Dieses Ergebnis markiert einen Wechsel in der Senatsvertretung des Bundesstaates.",
-          "Wahlbeamte in Alaska zählen weiterhin die Stimmzettel im Rennen zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan. The Hill und Fox News berichteten, dass das Rennen zum 12. November noch nicht entschieden ist.",
-          "Peltola hält laut The Hill und Fox News einen knappen Vorsprung bei der Stimmenauszählung. Sullivan konnte nach jüngsten Stimmenzuwächsen im Bundesstaat Boden gutmachen.",
-          "Das Peltola-Wahlkampfteam verlor kürzlich einen Gerichtsprozess bezüglich abgelehnter Briefwahlunterlagen. Fox News gab an, dass das Gericht den Versuch des Wahlkampfteams, diese Stimmzettel in die endgültige Auszählung einzubeziehen, zurückwies.",
-          "Wahlbeamte in Alaska verarbeiten die verbleibenden Stimmzettel, um den Sieger zu ermitteln. Sowohl The Hill als auch Fox News merkten an, dass das Ergebnis von der endgültigen Auszählung abhängt."
-        ],
-        "facts": [
-          "Scott Colom besiegte die republikanische Amtsinhaberin Cindy Hyde-Smith bei der US-Senatswahl in Mississippi.",
-          "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde.",
-          "Das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan ist weiterhin unentschieden.",
-          "Peltola führt in Alaska knapp, während die Auszählung der Stimmzettel andauert.",
-          "Ein Gericht wies eine Klage des Peltola-Wahlkampfteams bezüglich der Briefwahlunterlagen ab."
-        ],
-        "title": "Scott Colom gewinnt Senatssitz in Mississippi, während Rennen in Alaska noch nicht entschieden ist",
-        "context": "Die Zwischenwahlen 2026 bestimmen die Zusammensetzung des US-Senats. Diese Rennen sind Teil des umfassenderen nationalen Wahlzyklus."
-      },
       "en": {
-        "dek": "Democrat Scott Colom defeated incumbent Cindy Hyde-Smith in Mississippi, while the Alaska Senate race between Mary Peltola and Dan Sullivan continues.",
-        "body": [
-          "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November. According to NPR and CNBC, he defeated the incumbent Republican, Cindy Hyde-Smith.",
-          "Colom is the first Black senator elected from Mississippi since the 19th century, as reported by NPR and CNBC. This result marks a change in the state's Senate representation.",
-          "Alaska election officials continue to count ballots in the race between former Representative Mary Peltola and Senator Dan Sullivan. The Hill and Fox News reported that the race remains uncalled as of 12 November.",
-          "Peltola maintains a narrow lead in the vote count, according to The Hill and Fox News. Sullivan has gained ground following recent vote drops in the state.",
-          "The Peltola campaign recently lost a court case regarding rejected absentee ballots. Fox News stated that the court ruled against the campaign's attempt to include those ballots in the final tally.",
-          "Election officials in Alaska are processing the remaining ballots to determine the winner. Both The Hill and Fox News noted that the outcome depends on the final count."
-        ],
-        "facts": [
-          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in the Mississippi U.S. Senate race.",
-          "Colom is the first Black senator elected from Mississippi since the 19th century.",
-          "The Alaska Senate race between Mary Peltola and Dan Sullivan remains undecided.",
-          "Peltola holds a narrow lead in Alaska as ballot counting continues.",
-          "A court rejected a legal challenge from the Peltola campaign regarding absentee ballots."
-        ],
         "title": "Scott Colom wins Mississippi Senate seat as Alaska race remains uncalled",
-        "context": "The 2026 midterm elections determine the composition of the U.S. Senate. These races are part of the broader national election cycle.",
+        "dek": "Democrat Scott Colom won the Mississippi Senate race, while ballot counting continues in Alaska and a new poll measures early interest in potential 2028 presidential contenders.",
+        "facts": [
+          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in the Mississippi U.S. Senate election.",
+          "Colom is the first Black senator elected from Mississippi since the 19th century.",
+          "Former Representative Mary Peltola holds a narrow lead over Senator Dan Sullivan in the uncalled Alaska Senate race.",
+          "A court rejected a legal challenge from the Peltola campaign regarding rejected absentee ballots.",
+          "A new poll shows Republicans JD Vance and Marco Rubio leading early preferences for their party's 2028 nomination."
+        ],
+        "body": [
+          "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November, according to NPR and CNBC. He defeated the incumbent Republican senator, Cindy Hyde-Smith.",
+          "NPR and CNBC reported that Colom is the first Black senator elected to represent Mississippi since the 19th century. His victory changes the party representation for one of the state's two Senate seats.",
+          "Ballot counting remains underway in Alaska for the U.S. Senate race between former Representative Mary Peltola and Senator Dan Sullivan. The Hill and Fox News reported on 12 November that the race is still uncalled.",
+          "Peltola maintains a narrow lead in the total vote count, according to reporting from The Hill and Fox News. Sullivan narrowed that gap following recent vote tallies released by state election officials.",
+          "Legal action surrounding the Alaska contest reached a decision when a court ruled against the Peltola campaign regarding rejected absentee ballots. Fox News reported that the court denied the campaign's request to include those specific rejected ballots in the final tally.",
+          "Looking ahead to future elections, a new poll reported by The Jerusalem Post and The Hill shows Vice President JD Vance and Senator Marco Rubio favored for the 2028 Republican presidential nomination. Neither Vance nor Rubio has formally launched a campaign, and the nominating contests remain more than a year away."
+        ],
+        "context": "The 2026 midterm elections determine the composition of the U.S. Senate. Formal nominating contests for the 2028 presidential election cycle begin in more than a year.",
         "imageCaption": ""
       }
     },
-    "versions": [],
-    "updatedAt": "2026-11-12T15:20:59.870Z"
+    "versions": [
+      {
+        "at": "2026-11-12T15:20:59.870Z",
+        "reason": "2 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Democrat Scott Colom defeated incumbent Cindy Hyde-Smith in Mississippi, while the Alaska Senate race between Mary Peltola and Dan Sullivan continues.",
+            "body": [
+              "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November. According to NPR and CNBC, he defeated the incumbent Republican, Cindy Hyde-Smith.",
+              "Colom is the first Black senator elected from Mississippi since the 19th century, as reported by NPR and CNBC. This result marks a change in the state's Senate representation.",
+              "Alaska election officials continue to count ballots in the race between former Representative Mary Peltola and Senator Dan Sullivan. The Hill and Fox News reported that the race remains uncalled as of 12 November.",
+              "Peltola maintains a narrow lead in the vote count, according to The Hill and Fox News. Sullivan has gained ground following recent vote drops in the state.",
+              "The Peltola campaign recently lost a court case regarding rejected absentee ballots. Fox News stated that the court ruled against the campaign's attempt to include those ballots in the final tally.",
+              "Election officials in Alaska are processing the remaining ballots to determine the winner. Both The Hill and Fox News noted that the outcome depends on the final count."
+            ],
+            "facts": [
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in the Mississippi U.S. Senate race.",
+              "Colom is the first Black senator elected from Mississippi since the 19th century.",
+              "The Alaska Senate race between Mary Peltola and Dan Sullivan remains undecided.",
+              "Peltola holds a narrow lead in Alaska as ballot counting continues.",
+              "A court rejected a legal challenge from the Peltola campaign regarding absentee ballots."
+            ],
+            "title": "Scott Colom wins Mississippi Senate seat as Alaska race remains uncalled",
+            "context": "The 2026 midterm elections determine the composition of the U.S. Senate. These races are part of the broader national election cycle.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Der Demokrat Scott Colom besiegte die Amtsinhaberin Cindy Hyde-Smith in Mississippi, während das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan andauert.",
+            "body": [
+              "Der Demokrat Scott Colom gewann am 12. November die US-Senatswahl in Mississippi. Laut NPR und CNBC besiegte er die republikanische Amtsinhaberin Cindy Hyde-Smith.",
+              "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde, wie NPR und CNBC berichteten. Dieses Ergebnis markiert einen Wechsel in der Senatsvertretung des Bundesstaates.",
+              "Wahlbeamte in Alaska zählen weiterhin die Stimmzettel im Rennen zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan. The Hill und Fox News berichteten, dass das Rennen zum 12. November noch nicht entschieden ist.",
+              "Peltola hält laut The Hill und Fox News einen knappen Vorsprung bei der Stimmenauszählung. Sullivan konnte nach jüngsten Stimmenzuwächsen im Bundesstaat Boden gutmachen.",
+              "Das Peltola-Wahlkampfteam verlor kürzlich einen Gerichtsprozess bezüglich abgelehnter Briefwahlunterlagen. Fox News gab an, dass das Gericht den Versuch des Wahlkampfteams, diese Stimmzettel in die endgültige Auszählung einzubeziehen, zurückwies.",
+              "Wahlbeamte in Alaska verarbeiten die verbleibenden Stimmzettel, um den Sieger zu ermitteln. Sowohl The Hill als auch Fox News merkten an, dass das Ergebnis von der endgültigen Auszählung abhängt."
+            ],
+            "facts": [
+              "Scott Colom besiegte die republikanische Amtsinhaberin Cindy Hyde-Smith bei der US-Senatswahl in Mississippi.",
+              "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde.",
+              "Das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan ist weiterhin unentschieden.",
+              "Peltola führt in Alaska knapp, während die Auszählung der Stimmzettel andauert.",
+              "Ein Gericht wies eine Klage des Peltola-Wahlkampfteams bezüglich der Briefwahlunterlagen ab."
+            ],
+            "title": "Scott Colom gewinnt Senatssitz in Mississippi, während Rennen in Alaska noch nicht entschieden ist",
+            "context": "Die Zwischenwahlen 2026 bestimmen die Zusammensetzung des US-Senats. Diese Rennen sind Teil des umfassenderen nationalen Wahlzyklus."
+          }
+        }
+      }
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -105,6 +249,48 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1794498580961-cqdi",
+      "at": "2026-11-12T15:49:40.961Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Republicans Vance, Rubio favored for 2028 US elections - poll",
+          "body": "A poll reported by The Jerusalem Post and The Hill shows Vance and Rubio are favored for the 2028 Republican nomination. Neither has formally launched a campaign, and the parties' 2028 nominating contests are more than a year away."
+        },
+        "de": {
+          "headline": "Republikaner Vance und Rubio favorisiert für 2028 - Umfrage",
+          "body": "Eine Umfrage, die von der Jerusalem Post und The Hill berichtet wurde, zeigt, dass Vance und Rubio für die republikanische Nominierung 2028 favorisiert werden. Weder hat formell einen Wahlkampf gestartet, und die Vorwahlen der Parteien für 2028 sind mehr als ein Jahr entfernt."
+        },
+        "fr": {
+          "headline": "Républiquains Vance et Rubio favoris pour les élections de mi-mandat 2028 - sondage",
+          "body": "Un sondage rapporté par Le Jérusalem Post et The Hill montre que Vance et Rubio sont favoris pour la nomination républicaine en 2028. Aucun n'a officiellement lancé sa campagne, et les scrutins de nomination du parti en 2028 sont encore plus d'un an loin."
+        },
+        "it": {
+          "headline": "Repubblicani Vance e Rubio favoriti per le elezioni del 2028 - sondaggio",
+          "body": "Un sondaggio riportato da The Jerusalem Post e The Hill vede Vance e Rubio favoriti per la nomination repubblicana del 2028. Nessuno dei due ha formalmente lanciato la campagna elettorale e i contest di nomina dei partiti per il 2028 sono ancora più di un anno lontano."
+        },
+        "es": {
+          "headline": "Republicanos Vance y Rubio favoritos para las elecciones de 2028 - encuesta",
+          "body": "Una encuesta reportada por The Jerusalem Post y The Hill muestra a Vance y Rubio como favoritos para la nominación republicana de 2028. Ninguno ha lanzado formalmente su candidatura y los procesos de nominación de los partidos para 2028 aún están más de un año lejos."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "Republicans Vance, Rubio, Democrats Ossoff, Buttigieg favored for 2028 US elections - poll",
+          "url": "https://www.jpost.com/american-politics/article-914739",
+          "publishedAt": "2026-11-12T16:48:38.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Should Ocasio-Cortez run for president or Senate?",
+          "url": "https://thehill.com/homenews/campaign/data-nerds/6215990-alexandria-ocasio-cortez-white-house-bid-senate-run-live-discussion/",
+          "publishedAt": "2026-11-12T15:36:44.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-11-12T12:56:27.000Z",
       "id": "u-1794488187000-7md3",
@@ -275,131 +461,20 @@
     "https://insideclimatenews.org/news/12112026/pennsylvania-democrat-trifecta-clean-energy-affordability/",
     "https://www.npr.org/2026/11/12/nx-s1-6037852/rep-bennie-thompson-discusses-the-u-s-senate-race-democrat-win-in-mississippi",
     "https://www.npr.org/2026/11/12/nx-s1-6037853/democrat-scott-colom-wins-mississippi-senate-race",
-    "https://www.npr.org/2026/11/12/nx-s1-6034464/michigan-senator-elect-el-sayed-discusses-democrats-ambitions"
+    "https://www.npr.org/2026/11/12/nx-s1-6034464/michigan-senator-elect-el-sayed-discusses-democrats-ambitions",
+    "https://www.jpost.com/american-politics/article-914739",
+    "https://www.dawn.com/news/2044064/cec-raja-alleges-federal-govt-wants-to-sabotage-islamabad-lg-polls",
+    "https://thehill.com/homenews/administration/6215557-donald-trump-us-mexico-migrants-gop-midterm-losses/",
+    "https://thehill.com/homenews/campaign/data-nerds/6215990-alexandria-ocasio-cortez-white-house-bid-senate-run-live-discussion/",
+    "http://www.africanews.com/2026/11/12/mississippi-elects-first-black-us-senator-since-post-civil-war-reconstruction/",
+    "https://www.bbc.co.uk/news/articles/cmde1y19g19do?at_medium=RSS&at_campaign=rss"
   ],
   "startedAt": "2026-11-12T15:17:52.338Z",
-  "updatedAt": "2026-11-12T15:20:22.471Z",
+  "updatedAt": "2026-11-12T15:49:42.894Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-u-s-midterm-election-results",
-  "sourceCount": 4,
-  "seenHeadlines": [],
-  "stats": {
-    "label": "Mississippi Senate race results",
-    "note": "Scott Colom's victory as the first Black senator since Reconstruction and first Democrat since 1982",
-    "unit": "%",
-    "max": 100,
-    "asOf": "2026-11-06T00:00:00.000Z",
-    "updatedAt": "2026-11-12T15:37:39.131Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-      "publishedAt": "2026-11-12T12:56:27.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "vote-share-colom-vs-hyde-smith",
-        "label": "Vote share Colom vs Hyde-Smith",
-        "value": 50.1,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Part des voix Colom contre Hyde-Smith"
-          },
-          "es": {
-            "label": "Porcentaje de voto Colom frente a Hyde-Smith"
-          },
-          "zh": {
-            "label": "科洛姆与海德-史密斯的得票率"
-          },
-          "it": {
-            "label": "Quota di voti Colom contro Hyde-Smith"
-          },
-          "pt": {
-            "label": "Percentagem de votos Colom vs Hyde-Smith"
-          },
-          "ko": {
-            "label": "콜롬 대 하이드-스미스 득표율"
-          },
-          "de": {
-            "label": "Stimmenanteil Colom gegen Hyde-Smith"
-          },
-          "ja": {
-            "label": "コラム氏対ハイドスミス氏の得票率"
-          }
-        }
-      },
-      {
-        "key": "vote-share-hyde-smith-vs-colom",
-        "label": "Vote share Hyde-Smith vs Colom",
-        "value": 49.9,
-        "change": null,
-        "locales": {
-          "fr": {
-            "label": "Part des voix Hyde-Smith contre Colom"
-          },
-          "es": {
-            "label": "Porcentaje de voto Hyde-Smith frente a Colom"
-          },
-          "zh": {
-            "label": "海德-史密斯与科洛姆的得票率"
-          },
-          "it": {
-            "label": "Quota di voti Hyde-Smith contro Colom"
-          },
-          "pt": {
-            "label": "Percentagem de votos Hyde-Smith vs Colom"
-          },
-          "ko": {
-            "label": "하이드-스미스 대 콜롬 득표율"
-          },
-          "de": {
-            "label": "Stimmenanteil Hyde-Smith gegen Colom"
-          },
-          "ja": {
-            "label": "ハイドスミス氏対コラム氏の得票率"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Ergebnisse der Senatswahl in Mississippi",
-        "note": "Scott Coloms Sieg als erster schwarzer Senator seit der Reconstruction und erster Demokrat seit 1982"
-      },
-      "fr": {
-        "label": "Résultats de la course au Sénat du Mississippi",
-        "note": "La victoire de Scott Colom, premier sénateur noir depuis la Reconstruction et premier démocrate depuis 1982"
-      },
-      "es": {
-        "label": "Resultados de la carrera al Senado de Mississippi",
-        "note": "Victoria de Scott Colom, primer senador negro desde la Reconstrucción y primer demócrata desde 1982"
-      },
-      "it": {
-        "label": "Risultati della corsa al Senato del Mississippi",
-        "note": "La vittoria di Scott Colom come primo senatore nero dal periodo della Ricostruzione e primo democratico dal 1982"
-      },
-      "pt": {
-        "label": "Resultados da corrida no Senado do Mississippi",
-        "note": "Vitória de Scott Colom como primeiro senador negro desde a Reconstrução e primeiro democrata desde 1982"
-      },
-      "zh": {
-        "label": "密西西比州参议院选举结果",
-        "note": "斯科特·科洛姆胜选，成为自重建时期以来首位黑人参议员，也是自1982年以来首位民主党人"
-      },
-      "ja": {
-        "label": "ミシシッピ州上院選の結果",
-        "note": "スコット・コラム氏がレコンストラクション（南部再建）期以降で初の黒人上院議員、また1982年以来初の民主党上院議員として当選"
-      },
-      "ko": {
-        "label": "미시시피 상원 선거 결과",
-        "note": "스콧 콜롬이 재건 이후 최초의 흑인 상원의원이자 1982년 이후 최초의 민주당 상원의원으로 승리"
-      }
-    }
-  },
+  "sourceCount": 5,
   "statsHistory": [
     {
       "at": "2026-11-06T00:00:00.000Z",
@@ -414,5 +489,9 @@
         }
       ]
     }
+  ],
+  "seenHeadlines": [
+    "Trump blames migrant caravans for Republican midterm losses",
+    "Ocasio-Cortez faces 2028 presidential or Senate choice"
   ]
 }
