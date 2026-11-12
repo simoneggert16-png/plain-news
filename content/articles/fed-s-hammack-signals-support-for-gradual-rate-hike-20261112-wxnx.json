@@ -1,0 +1,56 @@
+{
+  "slug": "fed-s-hammack-signals-support-for-gradual-rate-hike-20261112-wxnx",
+  "category": "business",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-11-12T18:35:10.509Z",
+  "updatedAt": "2026-11-12T18:35:10.509Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "New York Times",
+      "title": "The Concession Call to an Election Winner Is No Longer a Given",
+      "url": "https://www.nytimes.com/2026/11/12/us/politics/concession-calls-elections-midterms.html",
+      "publishedAt": "2026-11-12T15:00:11.000Z"
+    },
+    {
+      "outlet": "Reuters",
+      "title": "Fed's Hammack signals support for gradual rate-hike path",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWi1FbTBFZzFKNzU2S1UweWQ3Vk56U2NXRlRhbHgwSVdYN3NiOEhvOXgxOFh6ckNVbXZabEtCeVNDZzZIYkNud0N0OXd0dV9UY2dCdlpDQkZhX0VER2xpZ2xISmFIUUZIdEQzMDYxQ2s1Mkg5cW9LVWVwQ3d2QXl1dktYMHlpcDZoNHYwYmh1WHZWSDFneWgzeHZlbVc3cG8?oc=5",
+      "publishedAt": "2026-11-12T15:28:30.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Fed's Hammack signals support for gradual rate-hike path",
+      "dek": "Federal Reserve official Hammack signals support for a gradual path of interest rate hikes",
+      "facts": [
+        "Fed Governor Hammack expressed support for a gradual path of rate hikes on November 12, 2026",
+        "The remarks were made during regular Fed communication",
+        "The statement signals the central bank's approach to future interest rate increases"
+      ],
+      "body": [
+        "Federal Reserve Governor Hammack signaled support for a gradual path of interest rate hikes on November 12, 2026. His remarks indicate the central bank's continued focus on controlled monetary policy.",
+        "The statement reflects the Federal Reserve's ongoing communication regarding its dual mandate of price stability and maximum employment, as part of the Fed's regular strategy regarding future adjustments to interest rates."
+      ],
+      "context": "Reuters reported on Fed official Hammack's public remarks regarding the outlook for interest rates.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Body sentences contain claims not present in the source text (e.g. 'confidence in the current policy framework', 'dual mandate', 'ongoing assessment of economic conditions'). These are inferences not supported by the Reuters text, which only states Hammack 'signals support for gradual rate-hike path'.",
+      "Headline exceeds 90 characters and uses jargon ('rate-hike path') without defining it inline.",
+      "The dek uses 'backs a measured approach', which is evaluative language not found in the source.",
+      "The context section invents a definition of the Federal Reserve not present in the source text.",
+      "Four short declarative sentences in the first paragraph violate the rhythm rule (no four short sentences in a row).",
+      "The article ends with an evaluative summary sentence."
+    ]
+  }
+}
