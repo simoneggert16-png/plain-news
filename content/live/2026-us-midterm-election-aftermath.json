@@ -12,39 +12,50 @@
   },
   "slug": "2026-us-midterm-election-aftermath",
   "stats": {
+    "label": "2026 US midterm election aftermath",
+    "note": "Vote share changes in Mississippi Senate race and national sentiment",
+    "unit": "%",
     "max": 100,
     "asOf": "2026-11-12T14:30:00.000Z",
-    "note": "Vote share and seat changes across key races",
+    "updatedAt": "2026-11-12T15:25:30.929Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "publishedAt": "2026-11-12T12:56:27.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
       {
         "key": "democrat-vote-share-mississippi-senate",
         "label": "Democrat vote share Mississippi Senate",
         "value": 50.1,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Stimmenanteil der Demokraten bei Senatswahl in Mississippi"
           },
-          "es": {
-            "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
-          },
           "fr": {
             "label": "Part démocrate au Sénat du Mississippi"
           },
+          "es": {
+            "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
+          },
           "it": {
             "label": "Percentuale di voto del democratico al Senato del Mississippi"
-          },
-          "ja": {
-            "label": "ミシシッピ州上院選 民主党の得票率"
-          },
-          "ko": {
-            "label": "미시시피 상원 민주당 득표율"
           },
           "pt": {
             "label": "Percentagem de votos do Partido Democrata no Senado do Mississippi"
           },
           "zh": {
             "label": "民主党密西西比州参议院得票率"
+          },
+          "ja": {
+            "label": "ミシシッピ州上院選 民主党の得票率"
+          },
+          "ko": {
+            "label": "미시시피 상원 민주당 득표율"
           }
         }
       },
@@ -52,121 +63,95 @@
         "key": "republican-incumbent-vote-share-mississi",
         "label": "Republican incumbent vote share Mississi",
         "value": 48.7,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Stimmenanteil des republikanischen Amtsinhabers in Mississippi"
           },
-          "es": {
-            "label": "Porcentaje del voto del titular republicano en Misisipi"
-          },
           "fr": {
             "label": "Part du candidat républicain sortant au Mississippi"
           },
+          "es": {
+            "label": "Porcentaje del voto del titular republicano en Misisipi"
+          },
           "it": {
             "label": "Percentuale di voto del repubblicano uscente Mississi"
-          },
-          "ja": {
-            "label": "ミシシッピ州上院選 共和党現職の得票率"
-          },
-          "ko": {
-            "label": "미시시피 공화당 현직 의원 득표율"
           },
           "pt": {
             "label": "Percentagem de votos do incumbente Republicano no Mississippi"
           },
           "zh": {
             "label": "共和党现任议员密西西比得票率"
+          },
+          "ja": {
+            "label": "ミシシッピ州上院選 共和党現職の得票率"
+          },
+          "ko": {
+            "label": "미시시피 공화당 현직 의원 득표율"
+          }
+        }
+      },
+      {
+        "key": "national-democrat-sentiment-swing-7-day",
+        "label": "National Democrat sentiment swing (7 day",
+        "value": 21.4,
+        "change": -2.3,
+        "locales": {
+          "es": {
+            "label": "Variación del sentimiento demócrata nacional (7 días"
+          },
+          "de": {
+            "label": "Schwenk der nationalen Demokraten-Stimmung (7 Tage)"
+          },
+          "it": {
+            "label": "Swing del sentiment democratico nazionale (7 giorni"
           }
         }
       }
     ],
-    "unit": "%",
-    "label": "2026 US midterm election aftermath",
-    "source": {
-      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-11-11T23:31:37.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Stimmenanteil und Sitzveränderungen bei entscheidenden Rennen",
-        "label": "Ergebnisse der US-Zwischenwahlen 2026"
-      },
-      "es": {
-        "note": "Porcentaje del voto y cambios de escaños en las principales contiendas",
-        "label": "Consecuencias de las elecciones de mitad de mandato de EE. UU. de 2026"
+        "label": "Nachwirkungen der US-Zwischenwahlen 2026",
+        "note": "Stimmenanteilsänderungen im Mississippi-Senatswahlkampf und nationale Stimmung"
       },
       "fr": {
-        "note": "Part des voix et changements de sièges dans les courses clés",
-        "label": "Après les élections de mi-mandat de 2026 aux États-Unis"
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
+      },
+      "es": {
+        "label": "Consecuencias posteriores a las elecciones de mitad de mandato de EE. UU. 2026",
+        "note": "Cambios en la cuota de votos en la carrera al Senado de Mississippi y el sentimiento nacional"
       },
       "it": {
-        "note": "Percentuali di voto e variazioni di seggi nelle principali competizioni",
-        "label": "Conseguenze delle elezioni di metà mandato USA 2026"
-      },
-      "ja": {
-        "note": "主要選挙戦の得票率と議席の変動",
-        "label": "2026年米中間選挙の余波"
-      },
-      "ko": {
-        "note": "주요 선거에서의 득표율 및 의석 변화",
-        "label": "2026년 미국 중간선거 결과"
+        "label": "2026 elezioni di metà mandato: conseguenze",
+        "note": "Variazioni di voto nella corsa al Senato nel Mississippi e sentimenti nazionali"
       },
       "pt": {
-        "note": "Percentagem de votos e alterações de assentos em corridas chave",
-        "label": "Consequências das eleições de meio de mandato dos EUA de 2026"
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
       },
       "zh": {
-        "note": "关键选举中的得票率与席位变化",
-        "label": "2026年美国中期选举后续"
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
+      },
+      "ja": {
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
+      },
+      "ko": {
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
       }
-    },
-    "updatedAt": "2026-11-12T02:40:56.621Z",
-    "sourceCount": 1
+    }
   },
   "topic": "2026 US midterm election aftermath",
   "status": "live",
   "article": {
     "slug": "2026-us-midterm-election-aftermath",
-    "updatedAt": "2026-11-12T14:59:14.446Z",
     "reason": "1 new update(s)",
     "locales": {
-      "en": {
-        "title": "Vote counting continues after US midterms as Republicans select new leadership",
-        "dek": "Election officials continue counting ballots eight days after the vote while party leaders are selected and key races are resolved.",
-        "facts": [
-          "Democratic lawmakers are meeting in Denver to discuss the party's 2028 strategy, according to Fox News.",
-          "Scott Colom defeated Cindy Hyde-Smith to win the Mississippi Senate seat, according to AP News and The Washington Post.",
-          "Republican Greg Murphy conceded his North Carolina House race to Democrat Raymond Smith, according to The Hill and AP News.",
-          "The Republican Party selected Jim Jordan and John Thune as new House leaders, according to the New York Times.",
-          "Seventeen races remain without a final result one week after the election, according to G1."
-        ],
-        "body": [
-          "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
-          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. This victory provides Democrats with a majority in the Senate, as reported by AP News and The Washington Post.",
-          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District. The result flips another House seat to the Democratic Party, according to The Hill and AP News.",
-          "Election officials are still counting ballots eight days after the midterm elections, according to G1. A total of 17 races remain without a final declared result as counting proceeds across multiple states.",
-          "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera. Vote counting continues in these jurisdictions as officials process the remaining ballots.",
-          "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
-          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
-          "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
-        ],
-        "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Stimmenauszählung nach US-Zwischenwahlen dauert an, während Republikaner neue Führung wählen",
         "dek": "Acht Tage nach der Wahl zählen Wahlhelfer weiterhin die Stimmzettel, während Parteiführer gewählt und wichtige Rennen entschieden werden.",
-        "facts": [
-          "Demokratische Abgeordnete treffen sich laut Fox News in Denver, um die Strategie der Partei für 2028 zu erörtern.",
-          "Scott Colom besiegte Cindy Hyde-Smith und gewann den Senatssitz in Mississippi, wie AP News und die Washington Post berichten.",
-          "Der Republikaner Greg Murphy räumte seine Niederlage im Rennen um den Sitz im Repräsentantenhaus in North Carolina gegen den Demokraten Raymond Smith ein, so The Hill und AP News.",
-          "Die Republikanische Partei wählte laut der New York Times Jim Jordan und John Thune zu ihren neuen Führern im Repräsentantenhaus.",
-          "Eine Woche nach der Wahl stehen laut G1 die Ergebnisse von siebzehn Rennen noch aus."
-        ],
         "body": [
           "Demokratische Abgeordnete und Präsidentschaftsanwärter versammeln sich in Denver, um über die Zukunft der Partei und die Strategie für 2028 zu debattieren. Laut Fox News arbeitet die Partei daran, ihre Ausrichtung nach den Zwischenwahlen ohne einen klaren Spitzenkandidaten zu gestalten.",
           "Scott Colom besiegte die amtierende Republikanerin Cindy Hyde-Smith und gewann den US-Senatssitz für Mississippi, wie mehrere Prognosen zeigen. Dieser Sieg verschafft den Demokraten eine Mehrheit im Senat, wie AP News und die Washington Post berichten.",
@@ -177,7 +162,38 @@
           "Eine neue Umfrage von Politico ergab, dass 45 Prozent der MAGA-Anhänger von Präsident Trump die Bewegung als Verlierer der Zwischenwahlen im letzten Jahr ansehen, so The Hill. The Guardian berichtet, dass die Umfrage zeigt, dass fast die Hälfte der MAGA-Anhänger Trumps die Bewegung als Verlierer betrachtet.",
           "Das brasilianische Wahlgericht verhängte eine Geldstrafe gegen Meta, nachdem das Bündnis von Präsident Lula Beschwerde eingereicht hatte; das Gericht fand laut DW und The Hindu keine Beweise für eine vorsätzliche Wahlbeeinflussung."
         ],
+        "facts": [
+          "Demokratische Abgeordnete treffen sich laut Fox News in Denver, um die Strategie der Partei für 2028 zu erörtern.",
+          "Scott Colom besiegte Cindy Hyde-Smith und gewann den Senatssitz in Mississippi, wie AP News und die Washington Post berichten.",
+          "Der Republikaner Greg Murphy räumte seine Niederlage im Rennen um den Sitz im Repräsentantenhaus in North Carolina gegen den Demokraten Raymond Smith ein, so The Hill und AP News.",
+          "Die Republikanische Partei wählte laut der New York Times Jim Jordan und John Thune zu ihren neuen Führern im Repräsentantenhaus.",
+          "Eine Woche nach der Wahl stehen laut G1 die Ergebnisse von siebzehn Rennen noch aus."
+        ],
+        "title": "Stimmenauszählung nach US-Zwischenwahlen dauert an, während Republikaner neue Führung wählen",
         "context": "Die US-Zwischenwahlen 2026 führten zu mehreren unentschiedenen Kongressrennen, was zu personellen Veränderungen in der Führung der Republikanischen Partei führte, während internationale Gerichte separate Fälle im Zusammenhang mit dem Management von Wahlplattformen behandelten."
+      },
+      "en": {
+        "dek": "Election officials continue counting ballots eight days after the vote while party leaders are selected and key races are resolved.",
+        "body": [
+          "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
+          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. This victory provides Democrats with a majority in the Senate, as reported by AP News and The Washington Post.",
+          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District. The result flips another House seat to the Democratic Party, according to The Hill and AP News.",
+          "Election officials are still counting ballots eight days after the midterm elections, according to G1. A total of 17 races remain without a final declared result as counting proceeds across multiple states.",
+          "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera. Vote counting continues in these jurisdictions as officials process the remaining ballots.",
+          "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
+          "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+        ],
+        "facts": [
+          "Democratic lawmakers are meeting in Denver to discuss the party's 2028 strategy, according to Fox News.",
+          "Scott Colom defeated Cindy Hyde-Smith to win the Mississippi Senate seat, according to AP News and The Washington Post.",
+          "Republican Greg Murphy conceded his North Carolina House race to Democrat Raymond Smith, according to The Hill and AP News.",
+          "The Republican Party selected Jim Jordan and John Thune as new House leaders, according to the New York Times.",
+          "Seventeen races remain without a final result one week after the election, according to G1."
+        ],
+        "title": "Vote counting continues after US midterms as Republicans select new leadership",
+        "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -356,7 +372,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-12T14:59:14.446Z"
   },
   "endedAt": null,
   "locales": {
@@ -365,8 +382,8 @@
       "title": "Nachwirkungen der US-Zwischenwahlen 2026"
     },
     "en": {
-      "title": "Aftermath of the 2026 US midterm elections",
-      "dek": "Key races remain too close to call as vote counting continues across multiple states"
+      "dek": "Key races remain too close to call as vote counting continues across multiple states",
+      "title": "Aftermath of the 2026 US midterm elections"
     },
     "es": {
       "dek": "Las carreras clave siguen siendo demasiado tempranas para ser anticipadas mientras continúa el recuento de votos en múltiples estados",
@@ -399,62 +416,62 @@
   },
   "updates": [
     {
-      "id": "u-1794481249000-oqqn",
       "at": "2026-11-12T11:00:49.000Z",
+      "id": "u-1794481249000-oqqn",
       "kind": "reaction",
-      "importance": 3,
       "locales": {
+        "de": {
+          "body": "Demokratische Präsidentschaftsanwärter und Parteimitglieder treffen sich in Denver, um nach den Erfolgen bei den Zwischenwahlen über die Zukunft der Partei zu debattieren. Laut Fox News arbeitet die Gruppe daran, die Strategie der Partei für 2028 ohne einen klaren Spitzenkandidaten zu formen.",
+          "headline": "Demokratische Abgeordnete beraten in Denver über die Ausrichtung der Partei"
+        },
         "en": {
-          "headline": "Democratic lawmakers gather in Denver to discuss party direction",
-          "body": "Democratic presidential hopefuls and party members are meeting in Denver to debate the party's future following midterm election wins. According to Fox News, the group is working to shape the party's 2028 strategy without a clear frontrunner."
+          "body": "Democratic presidential hopefuls and party members are meeting in Denver to debate the party's future following midterm election wins. According to Fox News, the group is working to shape the party's 2028 strategy without a clear frontrunner.",
+          "headline": "Democratic lawmakers gather in Denver to discuss party direction"
         },
         "es": {
-          "headline": "Legisladores demócratas se reúnen en Denver para debatir el rumbo del partido",
-          "body": "Candidatos presidenciales y miembros del Partido Demócrata se reúnen en Denver para debatir el futuro de la formación tras sus victorias en las elecciones de mitad de mandato. Según Fox News, el grupo trabaja en la configuración de la estrategia del partido para 2028 sin un claro favorito."
-        },
-        "de": {
-          "headline": "Demokratische Abgeordnete beraten in Denver über die Ausrichtung der Partei",
-          "body": "Demokratische Präsidentschaftsanwärter und Parteimitglieder treffen sich in Denver, um nach den Erfolgen bei den Zwischenwahlen über die Zukunft der Partei zu debattieren. Laut Fox News arbeitet die Gruppe daran, die Strategie der Partei für 2028 ohne einen klaren Spitzenkandidaten zu formen."
-        },
-        "zh": {
-          "headline": "民主党议员齐聚丹佛商讨党派走向",
-          "body": "民主党总统竞选人及党内成员正在丹佛会晤，就中期选举获胜后的党派未来展开辩论。据福克斯新闻报道，该团体正致力于在缺乏明确领跑者的情况下，制定该党2028年的战略。"
-        },
-        "ja": {
-          "headline": "民主党議員らがデンバーに集結、党の進むべき方向性を議論",
-          "body": "民主党の大統領候補者や党員らがデンバーに集まり、中間選挙での勝利を受けた党の将来について議論している。フォックス・ニュースによると、同グループは明確な有力候補が不在の中、2028年に向けた党の戦略策定に取り組んでいる。"
-        },
-        "ko": {
-          "headline": "민주당 의원들, 덴버에 모여 당의 향후 방향 논의",
-          "body": "민주당 대선 주자들과 당원들이 중간선거 승리 이후 당의 미래를 논의하기 위해 덴버에 모였다. 폭스 뉴스에 따르면, 이들은 뚜렷한 선두 주자가 없는 상황에서 2028년 대선 전략을 구상하기 위해 노력하고 있다."
+          "body": "Candidatos presidenciales y miembros del Partido Demócrata se reúnen en Denver para debatir el futuro de la formación tras sus victorias en las elecciones de mitad de mandato. Según Fox News, el grupo trabaja en la configuración de la estrategia del partido para 2028 sin un claro favorito.",
+          "headline": "Legisladores demócratas se reúnen en Denver para debatir el rumbo del partido"
         },
         "fr": {
-          "headline": "Des élus démocrates réunis à Denver pour discuter de l'orientation du parti",
-          "body": "Des candidats à l'investiture démocrate et des membres du parti se réunissent à Denver pour débattre de l'avenir de la formation politique après ses victoires aux élections de mi-mandat. Selon Fox News, le groupe s'efforce de définir la stratégie du parti pour 2028 en l'absence de favori clair."
-        },
-        "pt": {
-          "headline": "Legisladores democratas reúnem-se em Denver para discutir o rumo do partido",
-          "body": "Candidatos presidenciais e membros do Partido Democrata estão reunidos em Denver para debater o futuro da formação política após as vitórias nas eleições de meio de mandato. Segundo a Fox News, o grupo está a trabalhar para definir a estratégia do partido para 2028, na ausência de um candidato favorito claro."
+          "body": "Des candidats à l'investiture démocrate et des membres du parti se réunissent à Denver pour débattre de l'avenir de la formation politique après ses victoires aux élections de mi-mandat. Selon Fox News, le groupe s'efforce de définir la stratégie du parti pour 2028 en l'absence de favori clair.",
+          "headline": "Des élus démocrates réunis à Denver pour discuter de l'orientation du parti"
         },
         "it": {
-          "headline": "I legislatori democratici si riuniscono a Denver per discutere la linea del partito",
-          "body": "I candidati presidenziali e i membri del Partito Democratico si stanno incontrando a Denver per dibattere sul futuro del partito in seguito alle vittorie ottenute nelle elezioni di metà mandato. Secondo Fox News, il gruppo sta lavorando per definire la strategia del partito per il 2028, in assenza di un chiaro favorito."
+          "body": "I candidati presidenziali e i membri del Partito Democratico si stanno incontrando a Denver per dibattere sul futuro del partito in seguito alle vittorie ottenute nelle elezioni di metà mandato. Secondo Fox News, il gruppo sta lavorando per definire la strategia del partito per il 2028, in assenza di un chiaro favorito.",
+          "headline": "I legislatori democratici si riuniscono a Denver per discutere la linea del partito"
+        },
+        "ja": {
+          "body": "民主党の大統領候補者や党員らがデンバーに集まり、中間選挙での勝利を受けた党の将来について議論している。フォックス・ニュースによると、同グループは明確な有力候補が不在の中、2028年に向けた党の戦略策定に取り組んでいる。",
+          "headline": "民主党議員らがデンバーに集結、党の進むべき方向性を議論"
+        },
+        "ko": {
+          "body": "민주당 대선 주자들과 당원들이 중간선거 승리 이후 당의 미래를 논의하기 위해 덴버에 모였다. 폭스 뉴스에 따르면, 이들은 뚜렷한 선두 주자가 없는 상황에서 2028년 대선 전략을 구상하기 위해 노력하고 있다.",
+          "headline": "민주당 의원들, 덴버에 모여 당의 향후 방향 논의"
+        },
+        "pt": {
+          "body": "Candidatos presidenciais e membros do Partido Democrata estão reunidos em Denver para debater o futuro da formação política após as vitórias nas eleições de meio de mandato. Segundo a Fox News, o grupo está a trabalhar para definir a estratégia do partido para 2028, na ausência de um candidato favorito claro.",
+          "headline": "Legisladores democratas reúnem-se em Denver para discutir o rumo do partido"
+        },
+        "zh": {
+          "body": "民主党总统竞选人及党内成员正在丹佛会晤，就中期选举获胜后的党派未来展开辩论。据福克斯新闻报道，该团体正致力于在缺乏明确领跑者的情况下，制定该党2028年的战略。",
+          "headline": "民主党议员齐聚丹佛商讨党派走向"
         }
       },
       "sources": [
         {
-          "outlet": "Fox News",
-          "title": "Dems admit uncomfortable election sweep truth as party descends on Denver to shape 2028 without a frontrunner",
           "url": "https://www.foxnews.com/politics/dems-admit-uncomfortable-election-sweep-truth-party-descends-denver-shape-2028-without-frontrunner",
+          "title": "Dems admit uncomfortable election sweep truth as party descends on Denver to shape 2028 without a frontrunner",
+          "outlet": "Fox News",
           "publishedAt": "2026-11-12T11:00:49.000Z"
         },
         {
-          "outlet": "El PaÃ­s",
-          "title": "‘Economic populism is very fashionable’: the old Bernie Sanders formula that helped Democrats win the midterms",
           "url": "https://english.elpais.com/usa/2026-11-12/economic-populism-is-very-fashionable-the-old-bernie-sanders-formula-that-helped-democrats-win-the-midterms.html",
+          "title": "‘Economic populism is very fashionable’: the old Bernie Sanders formula that helped Democrats win the midterms",
+          "outlet": "El PaÃ­s",
           "publishedAt": "2026-11-12T10:51:30.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-12T00:26:26.000Z",
@@ -1016,6 +1033,23 @@
   "articleSlug": "2026-us-midterm-election-aftermath",
   "sourceCount": 14,
   "statsHistory": [
+    {
+      "at": "2026-11-12T14:30:00.000Z",
+      "rows": [
+        {
+          "key": "democrat-vote-share-mississippi-senate",
+          "value": 50.1
+        },
+        {
+          "key": "republican-incumbent-vote-share-mississi",
+          "value": 48.7
+        },
+        {
+          "key": "national-democrat-sentiment-swing-7-day",
+          "value": 21.4
+        }
+      ]
+    },
     {
       "at": "2026-11-12T14:30:00.000Z",
       "rows": [

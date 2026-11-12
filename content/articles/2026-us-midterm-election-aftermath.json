@@ -6,44 +6,55 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-10T15:28:03.354Z",
-  "updatedAt": "2026-11-12T14:59:14.446Z",
+  "updatedAt": "2026-11-12T15:25:32.823Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-us-midterm-election-aftermath",
   "stats": {
+    "label": "2026 US midterm election aftermath",
+    "note": "Vote share changes in Mississippi Senate race and national sentiment",
+    "unit": "%",
     "max": 100,
     "asOf": "2026-11-12T14:30:00.000Z",
-    "note": "Vote share and seat changes across key races",
+    "updatedAt": "2026-11-12T15:25:30.929Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "publishedAt": "2026-11-12T12:56:27.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
       {
         "key": "democrat-vote-share-mississippi-senate",
         "label": "Democrat vote share Mississippi Senate",
         "value": 50.1,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Stimmenanteil der Demokraten bei Senatswahl in Mississippi"
           },
-          "es": {
-            "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
-          },
           "fr": {
             "label": "Part démocrate au Sénat du Mississippi"
           },
+          "es": {
+            "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
+          },
           "it": {
             "label": "Percentuale di voto del democratico al Senato del Mississippi"
-          },
-          "ja": {
-            "label": "ミシシッピ州上院選 民主党の得票率"
-          },
-          "ko": {
-            "label": "미시시피 상원 민주당 득표율"
           },
           "pt": {
             "label": "Percentagem de votos do Partido Democrata no Senado do Mississippi"
           },
           "zh": {
             "label": "民主党密西西比州参议院得票率"
+          },
+          "ja": {
+            "label": "ミシシッピ州上院選 民主党の得票率"
+          },
+          "ko": {
+            "label": "미시시피 상원 민주당 득표율"
           }
         }
       },
@@ -51,80 +62,86 @@
         "key": "republican-incumbent-vote-share-mississi",
         "label": "Republican incumbent vote share Mississi",
         "value": 48.7,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Stimmenanteil des republikanischen Amtsinhabers in Mississippi"
           },
-          "es": {
-            "label": "Porcentaje del voto del titular republicano en Misisipi"
-          },
           "fr": {
             "label": "Part du candidat républicain sortant au Mississippi"
           },
+          "es": {
+            "label": "Porcentaje del voto del titular republicano en Misisipi"
+          },
           "it": {
             "label": "Percentuale di voto del repubblicano uscente Mississi"
-          },
-          "ja": {
-            "label": "ミシシッピ州上院選 共和党現職の得票率"
-          },
-          "ko": {
-            "label": "미시시피 공화당 현직 의원 득표율"
           },
           "pt": {
             "label": "Percentagem de votos do incumbente Republicano no Mississippi"
           },
           "zh": {
             "label": "共和党现任议员密西西比得票率"
+          },
+          "ja": {
+            "label": "ミシシッピ州上院選 共和党現職の得票率"
+          },
+          "ko": {
+            "label": "미시시피 공화당 현직 의원 득표율"
+          }
+        }
+      },
+      {
+        "key": "national-democrat-sentiment-swing-7-day",
+        "label": "National Democrat sentiment swing (7 day",
+        "value": 21.4,
+        "change": -2.3,
+        "locales": {
+          "es": {
+            "label": "Variación del sentimiento demócrata nacional (7 días"
+          },
+          "de": {
+            "label": "Schwenk der nationalen Demokraten-Stimmung (7 Tage)"
+          },
+          "it": {
+            "label": "Swing del sentiment democratico nazionale (7 giorni"
           }
         }
       }
     ],
-    "unit": "%",
-    "label": "2026 US midterm election aftermath",
-    "source": {
-      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-11-11T23:31:37.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Stimmenanteil und Sitzveränderungen bei entscheidenden Rennen",
-        "label": "Ergebnisse der US-Zwischenwahlen 2026"
-      },
-      "es": {
-        "note": "Porcentaje del voto y cambios de escaños en las principales contiendas",
-        "label": "Consecuencias de las elecciones de mitad de mandato de EE. UU. de 2026"
+        "label": "Nachwirkungen der US-Zwischenwahlen 2026",
+        "note": "Stimmenanteilsänderungen im Mississippi-Senatswahlkampf und nationale Stimmung"
       },
       "fr": {
-        "note": "Part des voix et changements de sièges dans les courses clés",
-        "label": "Après les élections de mi-mandat de 2026 aux États-Unis"
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
+      },
+      "es": {
+        "label": "Consecuencias posteriores a las elecciones de mitad de mandato de EE. UU. 2026",
+        "note": "Cambios en la cuota de votos en la carrera al Senado de Mississippi y el sentimiento nacional"
       },
       "it": {
-        "note": "Percentuali di voto e variazioni di seggi nelle principali competizioni",
-        "label": "Conseguenze delle elezioni di metà mandato USA 2026"
-      },
-      "ja": {
-        "note": "主要選挙戦の得票率と議席の変動",
-        "label": "2026年米中間選挙の余波"
-      },
-      "ko": {
-        "note": "주요 선거에서의 득표율 및 의석 변화",
-        "label": "2026년 미국 중간선거 결과"
+        "label": "2026 elezioni di metà mandato: conseguenze",
+        "note": "Variazioni di voto nella corsa al Senato nel Mississippi e sentimenti nazionali"
       },
       "pt": {
-        "note": "Percentagem de votos e alterações de assentos em corridas chave",
-        "label": "Consequências das eleições de meio de mandato dos EUA de 2026"
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
       },
       "zh": {
-        "note": "关键选举中的得票率与席位变化",
-        "label": "2026年美国中期选举后续"
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
+      },
+      "ja": {
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
+      },
+      "ko": {
+        "label": "2026 US midterm election aftermath",
+        "note": "Vote share changes in Mississippi Senate race and national sentiment"
       }
-    },
-    "updatedAt": "2026-11-12T02:40:56.621Z",
-    "sourceCount": 1
+    }
   },
   "sources": [
     {
