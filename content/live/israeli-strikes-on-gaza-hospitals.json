@@ -1,9 +1,136 @@
 {
+  "meta": {
+    "outlets": [
+      "New York Times",
+      "The New York Times",
+      "Anadolu Ajansı",
+      "Arab News"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+  },
   "slug": "israeli-strikes-on-gaza-hospitals",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Israeli strikes on Gaza hospitals",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Mehrere Angriffe auf medizinische Einrichtungen im südlichen Gaza töten und verletzen Dutzende.",
+      "title": "Israelische Angriffe auf Krankenhäuser in Gaza"
+    },
+    "en": {
+      "dek": "Multiple attacks on medical facilities in southern Gaza kill and injure dozens.",
+      "title": "Israeli strikes on Gaza hospitals"
+    },
+    "es": {
+      "dek": "Múltiples ataques a instalaciones médicas en el sur de Gaza matan y hieren a decenas.",
+      "title": "Ataques israelíes a hospitales de Gaza"
+    },
+    "fr": {
+      "dek": "Plusieurs attaques contre des établissements médicaux dans le sud de Gaza tuent et blessent des dizaines de personnes.",
+      "title": "Frappes israéliennes sur des hôpitaux à Gaza"
+    },
+    "it": {
+      "dek": "Molti attacchi a strutture mediche nel sud di Gaza causano morti e feriti tra le decine.",
+      "title": "Attacchi israeliani a ospedali di Gaza"
+    },
+    "ja": {
+      "dek": "南部ガザの医療施設に対する複数回の攻撃で数十人が死亡または負傷した。",
+      "title": "イスラエルによるガザの病院への攻撃"
+    },
+    "ko": {
+      "dek": "남부 가자 의료 시설에 대한 다수 공격으로 수십 명이 사망하거나 부상당함.",
+      "title": "이스라엘, 가자 병원 공격"
+    },
+    "pt": {
+      "dek": "Múltiplos ataques a instalações médicas no sul de Gaza matam e ferem dezenas.",
+      "title": "Ataques israelitas a hospitais em Gaza"
+    },
+    "zh": {
+      "dek": "对加沙南部医疗设施的多次袭击造成数十人死亡和受伤。",
+      "title": "以色列对加沙医院的袭击"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794453966000-2v44",
+      "at": "2026-11-12T03:26:06.000Z",
+      "kind": "result",
+      "importance": 4,
+      "locales": {
+        "en": {
+          "headline": "Israeli strike hits Nasser Hospital in Khan Younis",
+          "body": "An Israeli strike hit the Nasser Medical Complex in Khan Younis, according to reports from the New York Times and Al Jazeera. Rescuers and civil defense officials reported that at least six people were killed and 20 others were injured in the attack."
+        },
+        "de": {
+          "headline": "Israelischer Schlag trifft Nasser-Krankenhaus in Khan Younis",
+          "body": "Berichten der New York Times und Al Jazeera zufolge traf ein israelischer Schlag das Nasser-Medizinische Zentrum in Khan Younis. Retter und Zivilverteidigungsbeamte berichteten, dass bei dem Angriff mindestens sechs Menschen getötet und 20 weitere verletzt wurden."
+        },
+        "es": {
+          "headline": "Ataque israelí golpea el Hospital Nasser en Khan Younis",
+          "body": "Un ataque israelí impactó el Complejo Médico Nasser en Khan Younis, según informes del New York Times y Al Jazeera. Rescatistas y funcionarios de defensa civil informaron que al menos seis personas murieron y otras 20 resultaron heridas en el ataque."
+        },
+        "it": {
+          "headline": "Attacco israeliano colpisce l'Ospedale Nasser a Khan Younis",
+          "body": "Un attacco israeliano ha colpito il Complesso Medico Nasser a Khan Younis, secondo rapporti del New York Times e Al Jazeera. Soccorritori e funzionari della protezione civile hanno riferito che almeno sei persone sono morte e altre 20 sono rimaste ferite nell'attacco."
+        },
+        "fr": {
+          "headline": "Frappe israélienne frappe l'hôpital Nasser à Khan Younis",
+          "body": "Une frappe israélienne a touché le complexe médical Nasser à Khan Younis, selon des informations du New York Times et d'Al Jazeera. Des secouristes et des responsables de la défense civile ont rapporté qu'au moins six personnes ont été tuées et 20 autres blessées lors de l'attaque."
+        },
+        "zh": {
+          "headline": "以色列空袭击中汗尤尼斯纳赛尔医院",
+          "body": "据《纽约时报》和半岛电视台报道，以色列空袭击中了汗尤尼斯（Khan Younis）的纳赛尔医疗综合体。救援人员和民防官员报告称，此次袭击造成至少六人死亡，另有20人受伤。"
+        },
+        "pt": {
+          "headline": "Ataque israelita atinge o Hospital Nasser em Khan Younis",
+          "body": "Um ataque israelita atingiu o Complexo Médico Nasser em Khan Younis, segundo relatos do New York Times e Al Jazeera. Socorristas e oficiais da defesa civil informaram que pelo menos seis pessoas morreram e 20 outras ficaram feridas no ataque."
+        },
+        "ja": {
+          "headline": "イスラエル軍の攻撃がハン・ユニスにあるナセル病院を直撃",
+          "body": "ニューヨーク・タイムズとアルジャジーラ紙の報道によると、イスラエル軍の攻撃がハン・ユニスのナセル医療複合施設を直撃しました。救助者および市民防衛当局の報告によれば、この攻撃で少なくとも6人が死亡し、20人が負傷しました。"
+        },
+        "ko": {
+          "headline": "이스라엘 공습, 칸 유니스 나세르 병원 강타",
+          "body": "뉴욕타임스와 알자지라 보도에 따르면 이스라엘 공습이 칸 유니스의 나세르 의료 단지에 명중했다. 구조대원과 민방위 당국자들은 이번 공격으로 최소 6명이 사망하고 20명이 부상당했다고 보고했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "New York Times",
+          "title": "Strike on Gaza Hospital Kills at Least 6 and Injures 20, Rescuers Say",
+          "url": "https://www.nytimes.com/2026/11/11/world/middleeast/nasser-hospital-gaza-strike-israel.html",
+          "publishedAt": "2026-11-12T03:26:06.000Z"
+        },
+        {
+          "outlet": "The New York Times",
+          "title": "Strike on Gaza Hospital Kills at Least 6 and Injures 20, Rescuers Say",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbWJsX09iak1JNmhabW1OdjdOVW84Yk5iYVI0YmJJeEE1LTc0YTAyamNncXpSbHNGT1ZNOGlNWFotMDNybEo4Uk9oVmVzeEpzdnBsWWxrb3pPbldXQmhMQWd3T3pHd2lGN0xqVVhwSjlBWEwwRXR2U0FLOXZmdTZBWC05Vmx4RVc4ek53ZnBqQ1BBRUlyNWc?oc=5",
+          "publishedAt": "2026-11-12T03:11:10.000Z"
+        },
+        {
+          "outlet": "Arab News",
+          "title": "Israeli strike kills six at southern Gaza hospital: civil defense",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWUtJQ1VmWEJGUko2TGl1RHJQc01TQ2VCRjh3RUQtQnVLR2RPTG1TS0g3cndVaE9WZlJBckkxVUQ1VmpxQ2RkTnpjeW1IZG16eXpXQW5lVC15SnFnMEl4RWNueHpMRmRNcG1kMzVJLUtqUWhuZFJrNGcyWXM2dEN1YW81aDBsWmFDS2N2WjVXd3dxZTRLaG9mYm1DUGNoajZKUWk5UWNGWVZqWkxaT1E?oc=5",
+          "publishedAt": "2026-11-12T01:20:52.000Z"
+        },
+        {
+          "outlet": "Anadolu Ajansı",
+          "title": "Israeli airstrike kills 6 Palestinians at Nasser Hospital in southern Gaza",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQcnZ2RDJPS2ZWNk1Md2x0aW5SMGRGQUFaUGhLM3h3WU9fOG9RSkNsS3NiNzNBMW5uS1Nvb0tlX2x3WnZyb0xJSzY1Z1F2MUNjd0JCTVFWRUlHYnFiWHpLVjY4cWpBNFVWNTBmVGJxMVQzRTBockZiRGFBTW9JR3ZJMUNsbVhjX2pqZXlkd0dtM285TFZ2WXVsLUVzU3hBbko2NDlkLUFyUldLUEtibmtlYnhHbTFyamc2dUdj?oc=5",
+          "publishedAt": "2026-11-12T00:47:08.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Israeli strikes hit medical complex as nine killed across Gaza",
+          "url": "https://www.aljazeera.com/news/2026/11/11/israeli-strikes-hit-tent-camp-as-five-killed-in-gaza?traffic_source=rss",
+          "publishedAt": "2026-11-11T22:55:37.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "gaza",
     "hospital",
@@ -12,61 +139,41 @@
     "palestinian",
     "israeli strike"
   ],
+  "seenUrls": [
+    "https://www.japantimes.co.jp/news/2026/11/12/japan/japan-aid-to-gaza-healthcare/",
+    "https://www.dawn.com/news/2043963/us-midterms-put-pro-israel-aipac-on-defensive",
+    "https://www.srf.ch/news/international/nahost/krieg-im-nahen-osten-berichte-mehrere-tote-bei-angriff-auf-krankenhaus-in-gaza",
+    "https://www.nytimes.com/2026/11/11/world/middleeast/nasser-hospital-gaza-strike-israel.html",
+    "https://www.thehindu.com/news/international/israeli-strike-on-southern-gaza-hospital-kills-five-gaza-civil-defence-says/article71692179.ece",
+    "https://www.thehindu.com/news/international/israeli-forces-shoot-dead-14-year-old-in-west-bank-palestinian-officials/article71687248.ece",
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbWJsX09iak1JNmhabW1OdjdOVW84Yk5iYVI0YmJJeEE1LTc0YTAyamNncXpSbHNGT1ZNOGlNWFotMDNybEo4Uk9oVmVzeEpzdnBsWWxrb3pPbldXQmhMQWd3T3pHd2lGN0xqVVhwSjlBWEwwRXR2U0FLOXZmdTZBWC05Vmx4RVc4ek53ZnBqQ1BBRUlyNWc?oc=5",
+    "https://www.dawn.com/news/2043940/iran-status-quo",
+    "https://www.jpost.com/israel-news/article-914638",
+    "https://g1.globo.com/mundo/noticia/2026/11/12/prisoes-de-imigrantes-continuam-nos-eua-apos-derrota-republicana-nas-midterms-apesar-de-criticas-de-trump.ghtml",
+    "https://news.google.com/rss/articles/CBMivwFBVV95cUxOQXNwUE05Q3Z0QmlrSkRkV2w1RFlwczlUUExibjRNS3NmY1VldVBtaUpYZVFISzZaX1J5RVctelpDTXlhNzREbGN1Ymx4Mm52aWx0elRtdHpmd01vOURRaFhaVGFBUlZhMFNYOUQxRHFXZXU5SmphZ2xqbzktdmtibDJvam5ZWGwzMFU3VEJkNXRVRS1qSHdFaWJ1YWtXZW5MVGVMRFoxdk9YYnEyTnhEUS0wNm9VMUhqLWtDWXBQTQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiugFBVV95cUxPS0VqdEFGYThDaWRZaGJvMGEtLVpKZjZkdGlsX1YxVkRoZG96SXpBUXl4bjd1QkJoT0R4enpic2JiajQ5LWd4VVVPc3kxY1hNWkxwbnpyRUVWNmRCZXdTbTJ2cHBzRlJxQUhrV09FeXB0cTBFdExDTHppa19fcWZPSXZUZk15ampsazRkMTZPX0hlcTEyZzhXQ1JFLTBCTlpfdGFvN213T1hMRWNjUURJeHZYeG1CRWNkUGc?oc=5",
+    "https://www.faz.net/aktuell/politik/ausland/liveblog-nahost-iran-droht-europa-mit-angriffen-faz-200583539.html",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWUtJQ1VmWEJGUko2TGl1RHJQc01TQ2VCRjh3RUQtQnVLR2RPTG1TS0g3cndVaE9WZlJBckkxVUQ1VmpxQ2RkTnpjeW1IZG16eXpXQW5lVC15SnFnMEl4RWNueHpMRmRNcG1kMzVJLUtqUWhuZFJrNGcyWXM2dEN1YW81aDBsWmFDS2N2WjVXd3dxZTRLaG9mYm1DUGNoajZKUWk5UWNGWVZqWkxaT1E?oc=5",
+    "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9WRUZkM3J3WUZCVDVVQjNfaFBNQ2FsMXg4TGpxa0htS1EzQ0lXMmZtZll0T0lqdzVldFI0dUgwM3g0dkVvUm9Ra1VlYThZQWNBMFg2UWd5VTJIcmVm?oc=5",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQcnZ2RDJPS2ZWNk1Md2x0aW5SMGRGQUFaUGhLM3h3WU9fOG9RSkNsS3NiNzNBMW5uS1Nvb0tlX2x3WnZyb0xJSzY1Z1F2MUNjd0JCTVFWRUlHYnFiWHpLVjY4cWpBNFVWNTBmVGJxMVQzRTBockZiRGFBTW9JR3ZJMUNsbVhjX2pqZXlkd0dtM285TFZ2WXVsLUVzU3hBbko2NDlkLUFyUldLUEtibmtlYnhHbTFyamc2dUdj?oc=5",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxNelVvSExVbm1SOFhwbklGMUptY2Y1M0pMSU5JSktQWkpsMU03VENsbUlDS2VWNGhmRE5qdzMzYS1tSFhha1hhbkZkMlVfR1lfb292NTA2VWVubHdhQUVFZ2Fndnd6enhzdTJLRWt5UHRwMmdtYWp6T3d3eDhvYW05dWNPa2ZTY3FXWTZ1ZERuYU9NYzcyOE5IakFkRWxHUThacWVmXzVpM2s2VTRzeWh4RkZuOE1RbWpTUnc4VzlfZ3lucGNXdWM4?oc=5",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZkNHUGxIX2ozTjBLVFlGZFNlRzFpN0pmYm1lQmxyVjQ4eWVvMFBkbm9xLWNLa0d3SGFyQ1E4OEUydkpmNmlyWkpzNjRDc2FEeXJHdHdoUDJ0ay12bVZDaTB1TW1uMDBkdGczTlQ3cTJWeVFKVlE5T05YcjV0R1lpcGVWa1hiel9fV0EzMFluWlZJNUNHci1uQlNRdw?oc=5",
+    "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNX01wYTFIUUpGYkdydmVEa2s0ZXEzOEN1VS1fNTJyZDFKeWlzWHFvb3dYYjVCSlRjbGpjRkxYZmVoX1REcWJOV3JCdFlFclBBNm1iaEFIUmJDQUFicy0xOWpBLVRtWWJrOUdZamdqYkFoNmdOY2tpeHJiLU83Rkt3cTdXa01uNW9xQXhDNUF1ZE1GbklFaWxFUzZLWExvTFVUaE9uUWh2dkw5QzY4VXpsZkJHQ0pRbW1iNnlGcnF4WTlWZUhwWVpYcHcwVjlVZU5HU09KUmhYblR6UXM?oc=5",
+    "https://www.aljazeera.com/news/liveblog/2026/11/12/iran-war-live-tehran-warns-of-wider-retaliation-israel-kills-in-gaza?traffic_source=rss",
+    "https://www.straitstimes.com/world/middle-east/israeli-strike-on-southern-gaza-hospital-kills-five-gaza-civil-defence-says",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNHRrZEVkeUZpNkp5bHczZzNJVWdWeHRfUVB0NFdtdG80Y01EVkl5MXZqWm9Rb1JpOWg5b2xScTFHdGVwaEt2N0pSQzRGbUlvUklXTm9FR3dRcWJNN3lEREZWYklNN0ZDOTh2dFJQWGt2SDNqVHRSM3ViMXhkUEY1T3pBTjRqMFVHQ0dyYnlsWlc1QWdBMkQ2U3dRLWtfajhUZ2duSw?oc=5",
+    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVU9JT21yR1JmZDE2Ujk1WXhLa25nSzRTSEVpUjhQT0l0U1hCd3FjTmFhc3pfSlEwcVNBTWN4MS1QdFh4bk53a0tTUHFXSUZraFRsUnJRVmROU24yU1FzeldNLUx6VFJXdVRSN0tRX094YWVhcFpqREF0VVQ2OHRWVlFBamg1WS1sS2RjaEtYSG9GejBmTEI5Qy1PdUc4RVl1Yk9RbDZ4MDVHSTNmRFdrUmdUd21hRm1LVnhlWE9IM3B3VzA?oc=5",
+    "https://www.aljazeera.com/news/2026/11/11/israeli-strikes-hit-tent-camp-as-five-killed-in-gaza?traffic_source=rss",
+    "https://www.jpost.com/middle-east/article-914629",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQUdzQXE2ZlQ4MjFhMFg5amhYLXk4Ml9NWDdTaEhtYUlXZVRpaTdlZzVWdXJsNnkyZ2tURUYzUExTb3JhbkN6NWt1c05JYmViNkZLT2dkNjhaaTRKakZUYXVzNlk3c2t6alRST0xXX1V4LXVVbFllQUhQcGVrRE5ZZ3RtcjZOSExDc19LTXNzNDFWY1hzVWhhYTV5NVF1Tld3?oc=5",
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZkdOdVozVS1Oak1FZ0RqdG5kS1NyLW1tclF5c0RybDN6bzRWTmNCU0lwQVN0ZWdoUUVSeGdHQ3AyNmtMZ084NGRDUkxlNkpxWTNCdWxpSEVaSktvZkdwY2MzblJVSnRBdUkzQ3d6VTlHY05WMXJfdkpaeVREODRZeWQ5SVRQZ0hLQ2xYd21iYkhtcWt0WU9PWE5B?oc=5",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxNUWJCdUR2WXBBNXlVQVlSdmN1THdmQWNlQnlwMzk1eDhDY21xMWNjMnpUVE05bzk3bWFxcGdwUVBBNVlPZS1WcWNSTVVVOEtUT1hUVEQzZ0FaSHNnVkY3VGo4ejZCenUyZTB2b0NocDA3ZWlocHRzXzRzZ0pReXpGaG0yLVZmSTFxYjB0UEV4M2pHTzY2ZmtyZXRQamVTbnpjN2c?oc=5"
+  ],
   "startedAt": "2026-11-12T03:39:36.796Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-12T03:39:36.796Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-12T03:59:42.056Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Israeli strikes on Gaza hospitals",
-      "dek": "Multiple attacks on medical facilities in southern Gaza kill and injure dozens."
-    },
-    "de": {
-      "title": "Israelische Angriffe auf Krankenhäuser in Gaza",
-      "dek": "Mehrere Angriffe auf medizinische Einrichtungen im südlichen Gaza töten und verletzen Dutzende."
-    },
-    "fr": {
-      "title": "Frappes israéliennes sur des hôpitaux à Gaza",
-      "dek": "Plusieurs attaques contre des établissements médicaux dans le sud de Gaza tuent et blessent des dizaines de personnes."
-    },
-    "es": {
-      "title": "Ataques israelíes a hospitales de Gaza",
-      "dek": "Múltiples ataques a instalaciones médicas en el sur de Gaza matan y hieren a decenas."
-    },
-    "it": {
-      "title": "Attacchi israeliani a ospedali di Gaza",
-      "dek": "Molti attacchi a strutture mediche nel sud di Gaza causano morti e feriti tra le decine."
-    },
-    "pt": {
-      "title": "Ataques israelitas a hospitais em Gaza",
-      "dek": "Múltiplos ataques a instalações médicas no sul de Gaza matam e ferem dezenas."
-    },
-    "zh": {
-      "title": "以色列对加沙医院的袭击",
-      "dek": "对加沙南部医疗设施的多次袭击造成数十人死亡和受伤。"
-    },
-    "ja": {
-      "title": "イスラエルによるガザの病院への攻撃",
-      "dek": "南部ガザの医療施設に対する複数回の攻撃で数十人が死亡または負傷した。"
-    },
-    "ko": {
-      "title": "이스라엘, 가자 병원 공격",
-      "dek": "남부 가자 의료 시설에 대한 다수 공격으로 수십 명이 사망하거나 부상당함."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "New York Times",
-      "The New York Times",
-      "Anadolu Ajansı",
-      "Arab News"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 5,
+  "seenHeadlines": []
 }
