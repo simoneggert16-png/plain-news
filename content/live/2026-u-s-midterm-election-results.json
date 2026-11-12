@@ -1,9 +1,234 @@
 {
+  "meta": {
+    "outlets": [
+      "NPR",
+      "Al Jazeera",
+      "The Hill",
+      "Axios",
+      "Times of India",
+      "CNBC",
+      "InsideClimate News"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite",
+    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "2026-u-s-midterm-election-results",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "2026 U.S. Midterm Election Results",
+  "status": "live",
+  "article": {
+    "slug": "2026-u-s-midterm-election-results",
+    "reason": "2 new update(s)",
+    "locales": {
+      "de": {
+        "dek": "Der Demokrat Scott Colom besiegte die Amtsinhaberin Cindy Hyde-Smith in Mississippi, während das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan andauert.",
+        "body": [
+          "Der Demokrat Scott Colom gewann am 12. November die US-Senatswahl in Mississippi. Laut NPR und CNBC besiegte er die republikanische Amtsinhaberin Cindy Hyde-Smith.",
+          "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde, wie NPR und CNBC berichteten. Dieses Ergebnis markiert einen Wechsel in der Senatsvertretung des Bundesstaates.",
+          "Wahlbeamte in Alaska zählen weiterhin die Stimmzettel im Rennen zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan. The Hill und Fox News berichteten, dass das Rennen zum 12. November noch nicht entschieden ist.",
+          "Peltola hält laut The Hill und Fox News einen knappen Vorsprung bei der Stimmenauszählung. Sullivan konnte nach jüngsten Stimmenzuwächsen im Bundesstaat Boden gutmachen.",
+          "Das Peltola-Wahlkampfteam verlor kürzlich einen Gerichtsprozess bezüglich abgelehnter Briefwahlunterlagen. Fox News gab an, dass das Gericht den Versuch des Wahlkampfteams, diese Stimmzettel in die endgültige Auszählung einzubeziehen, zurückwies.",
+          "Wahlbeamte in Alaska verarbeiten die verbleibenden Stimmzettel, um den Sieger zu ermitteln. Sowohl The Hill als auch Fox News merkten an, dass das Ergebnis von der endgültigen Auszählung abhängt."
+        ],
+        "facts": [
+          "Scott Colom besiegte die republikanische Amtsinhaberin Cindy Hyde-Smith bei der US-Senatswahl in Mississippi.",
+          "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde.",
+          "Das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan ist weiterhin unentschieden.",
+          "Peltola führt in Alaska knapp, während die Auszählung der Stimmzettel andauert.",
+          "Ein Gericht wies eine Klage des Peltola-Wahlkampfteams bezüglich der Briefwahlunterlagen ab."
+        ],
+        "title": "Scott Colom gewinnt Senatssitz in Mississippi, während Rennen in Alaska noch nicht entschieden ist",
+        "context": "Die Zwischenwahlen 2026 bestimmen die Zusammensetzung des US-Senats. Diese Rennen sind Teil des umfassenderen nationalen Wahlzyklus."
+      },
+      "en": {
+        "dek": "Democrat Scott Colom defeated incumbent Cindy Hyde-Smith in Mississippi, while the Alaska Senate race between Mary Peltola and Dan Sullivan continues.",
+        "body": [
+          "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November. According to NPR and CNBC, he defeated the incumbent Republican, Cindy Hyde-Smith.",
+          "Colom is the first Black senator elected from Mississippi since the 19th century, as reported by NPR and CNBC. This result marks a change in the state's Senate representation.",
+          "Alaska election officials continue to count ballots in the race between former Representative Mary Peltola and Senator Dan Sullivan. The Hill and Fox News reported that the race remains uncalled as of 12 November.",
+          "Peltola maintains a narrow lead in the vote count, according to The Hill and Fox News. Sullivan has gained ground following recent vote drops in the state.",
+          "The Peltola campaign recently lost a court case regarding rejected absentee ballots. Fox News stated that the court ruled against the campaign's attempt to include those ballots in the final tally.",
+          "Election officials in Alaska are processing the remaining ballots to determine the winner. Both The Hill and Fox News noted that the outcome depends on the final count."
+        ],
+        "facts": [
+          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in the Mississippi U.S. Senate race.",
+          "Colom is the first Black senator elected from Mississippi since the 19th century.",
+          "The Alaska Senate race between Mary Peltola and Dan Sullivan remains undecided.",
+          "Peltola holds a narrow lead in Alaska as ballot counting continues.",
+          "A court rejected a legal challenge from the Peltola campaign regarding absentee ballots."
+        ],
+        "title": "Scott Colom wins Mississippi Senate seat as Alaska race remains uncalled",
+        "context": "The 2026 midterm elections determine the composition of the U.S. Senate. These races are part of the broader national election cycle.",
+        "imageCaption": ""
+      }
+    },
+    "versions": [],
+    "updatedAt": "2026-11-12T15:20:59.870Z"
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Das Machtverhältnis im US-Senat bleibt ungewiss, während in Alaska die letzten Stimmen ausgezählt werden und die politischen Auswirkungen des historischen Ergebnisses in Mississippi anhalten.",
+      "title": "Ergebnisse der US-Zwischenwahlen 2026"
+    },
+    "en": {
+      "dek": "The balance of power in the U.S. Senate remains in flux as final votes are tallied in Alaska and the political fallout from Mississippi's historic result continues.",
+      "title": "2026 U.S. Midterm Election Results"
+    },
+    "es": {
+      "dek": "El equilibrio de poder en el Senado de EE. UU. sigue siendo incierto mientras se contabilizan los votos finales en Alaska y continúa la repercusión política del histórico resultado en Misisipi.",
+      "title": "Resultados de las elecciones de mitad de mandato de 2026 en EE. UU."
+    },
+    "fr": {
+      "dek": "L'équilibre des pouvoirs au Sénat américain reste incertain alors que les derniers votes sont dépouillés en Alaska et que les retombées politiques du résultat historique du Mississippi se poursuivent.",
+      "title": "Résultats des élections de mi-mandat américaines de 2026"
+    },
+    "it": {
+      "dek": "L'equilibrio di potere al Senato degli Stati Uniti resta incerto mentre vengono conteggiati i voti finali in Alaska e proseguono le conseguenze politiche dello storico risultato del Mississippi.",
+      "title": "Risultati delle elezioni di metà mandato statunitensi del 2026"
+    },
+    "ja": {
+      "dek": "米上院の勢力バランスは、アラスカ州で最終票の集計が進む中、依然として流動的で、ミシシッピ州の歴史的結果に伴う政治的余波も続いている。",
+      "title": "2026年米中間選挙結果"
+    },
+    "ko": {
+      "dek": "미국 상원의 권력 균형은 알래스카에서 최종 투표 집계가 이어지는 가운데, 미시시피의 역사적 선거 결과에서 비롯된 정치적 파장이 계속되면서 여전히 확정되지 않고 있다.",
+      "title": "2026년 미국 중간선거 결과"
+    },
+    "pt": {
+      "dek": "O equilíbrio de poder no Senado dos EUA permanece incerto enquanto os votos finais são contados no Alasca e as consequências políticas do resultado histórico do Mississippi continuam.",
+      "title": "Resultados das eleições de meio de mandato de 2026 nos EUA"
+    },
+    "zh": {
+      "dek": "随着阿拉斯加最后选票的统计，美国参议院权力平衡仍未确定；密西西比历史性结果引发的政治影响持续发酵。",
+      "title": "2026年美国中期选举结果"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-11-12T12:56:27.000Z",
+      "id": "u-1794488187000-7md3",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Der Demokrat Scott Colom hat die Wahl zum US-Senat in Mississippi gewonnen und die amtierende Republikanerin Cindy Hyde-Smith besiegt. Laut NPR und CNBC ist Colom der erste schwarze Senator, der seit dem 19. Jahrhundert in diesem Bundesstaat gewählt wurde.",
+          "headline": "Scott Colom gewinnt Senatssitz für Mississippi"
+        },
+        "en": {
+          "body": "Democrat Scott Colom has won the U.S. Senate race in Mississippi, defeating incumbent Republican Cindy Hyde-Smith. According to NPR and CNBC, Colom is the first Black senator elected from the state since the 19th century.",
+          "headline": "Scott Colom wins Mississippi U.S. Senate seat"
+        },
+        "es": {
+          "body": "El demócrata Scott Colom ha ganado la carrera al Senado de los Estados Unidos en Mississippi, derrotando a la titular republicana Cindy Hyde-Smith. Según NPR y CNBC, Colom es el primer senador negro elegido por el estado desde el siglo XIX.",
+          "headline": "Scott Colom gana el escaño de Mississippi en el Senado de EE. UU."
+        },
+        "fr": {
+          "body": "Le démocrate Scott Colom a remporté l'élection sénatoriale dans le Mississippi, battant la sénatrice républicaine sortante Cindy Hyde-Smith. Selon NPR et CNBC, Colom est le premier sénateur noir élu dans cet État depuis le XIXe siècle.",
+          "headline": "Scott Colom remporte un siège au Sénat américain dans le Mississippi"
+        },
+        "it": {
+          "body": "Il democratico Scott Colom ha vinto la corsa al Senato statunitense in Mississippi, sconfiggendo la senatrice repubblicana uscente Cindy Hyde-Smith. Secondo NPR e CNBC, Colom è il primo senatore afroamericano eletto nello Stato dal XIX secolo.",
+          "headline": "Scott Colom vince il seggio al Senato degli Stati Uniti per il Mississippi"
+        },
+        "ja": {
+          "body": "民主党のスコット・コラム氏がミシシッピ州の米上院選で、現職の共和党シンディ・ハイドスミス氏を破り当選した。NPRおよびCNBCによると、コラム氏は同州から選出された19世紀以来初の黒人上院議員となる。",
+          "headline": "スコット・コラム氏、ミシシッピ州の米上院選で勝利"
+        },
+        "ko": {
+          "body": "민주당의 스콧 콜롬이 미시시피주 연방 상원의원 선거에서 현역인 공화당의 신디 하이드-스미스를 꺾고 당선되었다. NPR과 CNBC에 따르면, 콜롬은 19세기 이후 해당 주에서 선출된 최초의 흑인 상원의원이다.",
+          "headline": "스콧 콜롬, 미시시피주 연방 상원의원 당선"
+        },
+        "pt": {
+          "body": "O democrata Scott Colom venceu a corrida ao Senado dos EUA no Mississippi, derrotando a titular republicana Cindy Hyde-Smith. Segundo a NPR e a CNBC, Colom é o primeiro senador negro eleito pelo estado desde o século XIX.",
+          "headline": "Scott Colom vence lugar no Senado dos EUA pelo Mississippi"
+        },
+        "zh": {
+          "body": "民主党人斯科特·科洛姆（Scott Colom）赢得了密西西比州的联邦参议院选举，击败了现任共和党参议员辛迪·海德-史密斯（Cindy Hyde-Smith）。据美国国家公共电台（NPR）和美国消费者新闻与商业频道（CNBC）报道，科洛姆是该州自19世纪以来首位当选的黑人参议员。",
+          "headline": "斯科特·科洛姆赢得密西西比州联邦参议员席位"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+          "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+          "outlet": "CNBC",
+          "publishedAt": "2026-11-12T12:56:27.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/12/g-s1-153171/up-first-newsletter-scott-colom-trump-democrats-ukraine-russia",
+          "title": "Colom wins Mississippi Senate race. And, White House warns Dems over future probes",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-12T12:15:48.000Z"
+        },
+        {
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6037853/democrat-scott-colom-wins-mississippi-senate-race",
+          "title": "Democrat Scott Colom wins Mississippi Senate race",
+          "outlet": "NPR",
+          "publishedAt": "2026-11-12T09:32:33.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-12T13:11:18.000Z",
+      "id": "u-1794489078000-dpmp",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Das Rennen um den Senatssitz zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan ist weiterhin unentschieden, während die Stimmzettel weiter ausgezählt werden. Laut The Hill und Fox News hält Peltola einen knappen Vorsprung, während Sullivan nach den jüngsten Stimmauszählungen Boden gutgemacht hat.",
+          "headline": "Senatswahl in Alaska bleibt bei laufender Auszählung offen"
+        },
+        "en": {
+          "body": "The Senate race between former Representative Mary Peltola and Senator Dan Sullivan remains undecided as ballots continue to be counted. According to The Hill and Fox News, Peltola maintains a narrow lead while Sullivan has gained ground following recent vote drops.",
+          "headline": "Alaska Senate race remains uncalled as vote count continues"
+        },
+        "es": {
+          "body": "La carrera al Senado entre la exrepresentante Mary Peltola y el senador Dan Sullivan sigue sin decidirse mientras continúa el recuento de papeletas. Según The Hill y Fox News, Peltola mantiene una estrecha ventaja, mientras que Sullivan ha ganado terreno tras los últimos recuentos de votos.",
+          "headline": "La carrera al Senado en Alaska sigue sin definirse mientras continúa el recuento de votos"
+        },
+        "fr": {
+          "body": "La course au Sénat entre l'ancienne représentante Mary Peltola et le sénateur Dan Sullivan reste indécise alors que le dépouillement des bulletins se poursuit. Selon The Hill et Fox News, Peltola conserve une courte avance tandis que Sullivan a gagné du terrain à la suite des derniers résultats publiés.",
+          "headline": "L'élection sénatoriale en Alaska reste indécise alors que le dépouillement se poursuit"
+        },
+        "it": {
+          "body": "La corsa al Senato tra l'ex deputata Mary Peltola e il senatore Dan Sullivan rimane indecisa mentre continua il conteggio delle schede. Secondo The Hill e Fox News, Peltola mantiene un lieve vantaggio, mentre Sullivan ha recuperato terreno in seguito agli ultimi aggiornamenti sui voti.",
+          "headline": "Ancora incerto l'esito della corsa al Senato in Alaska mentre prosegue lo spoglio"
+        },
+        "ja": {
+          "body": "元下院議員のメアリー・ペルトラ氏と現職のダン・サリバン上院議員が争うアラスカ州の上院選は、開票作業が続いており、依然として勝敗は決していない。ザ・ヒルおよびフォックスニュースによると、ペルトラ氏が僅差でリードを維持しているものの、直近の開票結果を受けてサリバン氏が追い上げを見せている。",
+          "headline": "アラスカ州の上院選、開票続くも勝敗決まらず"
+        },
+        "ko": {
+          "body": "메리 펠톨라 전 하원의원과 댄 설리번 상원의원이 맞붙은 상원의원 선거는 개표가 계속되면서 아직 승자가 결정되지 않았다. 더 힐과 폭스 뉴스에 따르면, 펠톨라가 근소한 차이로 앞서고 있으나 최근 개표 결과가 반영되면서 설리번이 추격하고 있다.",
+          "headline": "알래스카주 상원의원 선거, 개표 지속으로 당선자 미정"
+        },
+        "pt": {
+          "body": "A corrida ao Senado entre a antiga representante Mary Peltola e o senador Dan Sullivan permanece indecisa enquanto os boletins de voto continuam a ser contados. Segundo o The Hill e a Fox News, Peltola mantém uma curta vantagem, enquanto Sullivan ganhou terreno após as recentes atualizações na contagem de votos.",
+          "headline": "Corrida ao Senado no Alasca continua sem vencedor enquanto contagem de votos prossegue"
+        },
+        "zh": {
+          "body": "前众议员玛丽·佩尔托拉（Mary Peltola）与参议员丹·沙利文（Dan Sullivan）之间的参议院竞选结果仍未确定，计票工作仍在继续。据《国会山报》（The Hill）和福克斯新闻（Fox News）报道，佩尔托拉目前保持微弱领先，而沙利文在近期选票统计更新后缩小了差距。",
+          "headline": "阿拉斯加州参议员选举计票仍在进行，结果尚未出炉"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://thehill.com/homenews/campaign/6215353-mary-peltola-dan-sullivan-alaska-senate-race-update/",
+          "title": "Peltola holds lead, but Sullivan gains after latest Alaska Senate vote drop",
+          "outlet": "The Hill",
+          "publishedAt": "2026-11-12T13:11:18.000Z"
+        },
+        {
+          "url": "https://www.foxnews.com/politics/peltola-campaign-loses-court-rejected-absentee-ballots-maintains-narrow-lead",
+          "title": "Peltola campaign loses in court on rejected absentee ballots as she maintains narrow lead",
+          "outlet": "Fox News",
+          "publishedAt": "2026-11-12T12:19:50.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "scott colom",
     "cindy hyde-smith",
@@ -14,136 +239,6 @@
     "senate",
     "midterms",
     "elections"
-  ],
-  "startedAt": "2026-11-12T15:17:52.338Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-12T15:20:22.471Z",
-  "articleSlug": "2026-u-s-midterm-election-results",
-  "sourceCount": 4,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1794488187000-7md3",
-      "at": "2026-11-12T12:56:27.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Scott Colom wins Mississippi U.S. Senate seat",
-          "body": "Democrat Scott Colom has won the U.S. Senate race in Mississippi, defeating incumbent Republican Cindy Hyde-Smith. According to NPR and CNBC, Colom is the first Black senator elected from the state since the 19th century."
-        },
-        "de": {
-          "headline": "Scott Colom gewinnt Senatssitz für Mississippi",
-          "body": "Der Demokrat Scott Colom hat die Wahl zum US-Senat in Mississippi gewonnen und die amtierende Republikanerin Cindy Hyde-Smith besiegt. Laut NPR und CNBC ist Colom der erste schwarze Senator, der seit dem 19. Jahrhundert in diesem Bundesstaat gewählt wurde."
-        },
-        "pt": {
-          "headline": "Scott Colom vence lugar no Senado dos EUA pelo Mississippi",
-          "body": "O democrata Scott Colom venceu a corrida ao Senado dos EUA no Mississippi, derrotando a titular republicana Cindy Hyde-Smith. Segundo a NPR e a CNBC, Colom é o primeiro senador negro eleito pelo estado desde o século XIX."
-        },
-        "zh": {
-          "headline": "斯科特·科洛姆赢得密西西比州联邦参议员席位",
-          "body": "民主党人斯科特·科洛姆（Scott Colom）赢得了密西西比州的联邦参议院选举，击败了现任共和党参议员辛迪·海德-史密斯（Cindy Hyde-Smith）。据美国国家公共电台（NPR）和美国消费者新闻与商业频道（CNBC）报道，科洛姆是该州自19世纪以来首位当选的黑人参议员。"
-        },
-        "ja": {
-          "headline": "スコット・コラム氏、ミシシッピ州の米上院選で勝利",
-          "body": "民主党のスコット・コラム氏がミシシッピ州の米上院選で、現職の共和党シンディ・ハイドスミス氏を破り当選した。NPRおよびCNBCによると、コラム氏は同州から選出された19世紀以来初の黒人上院議員となる。"
-        },
-        "es": {
-          "headline": "Scott Colom gana el escaño de Mississippi en el Senado de EE. UU.",
-          "body": "El demócrata Scott Colom ha ganado la carrera al Senado de los Estados Unidos en Mississippi, derrotando a la titular republicana Cindy Hyde-Smith. Según NPR y CNBC, Colom es el primer senador negro elegido por el estado desde el siglo XIX."
-        },
-        "ko": {
-          "headline": "스콧 콜롬, 미시시피주 연방 상원의원 당선",
-          "body": "민주당의 스콧 콜롬이 미시시피주 연방 상원의원 선거에서 현역인 공화당의 신디 하이드-스미스를 꺾고 당선되었다. NPR과 CNBC에 따르면, 콜롬은 19세기 이후 해당 주에서 선출된 최초의 흑인 상원의원이다."
-        },
-        "fr": {
-          "headline": "Scott Colom remporte un siège au Sénat américain dans le Mississippi",
-          "body": "Le démocrate Scott Colom a remporté l'élection sénatoriale dans le Mississippi, battant la sénatrice républicaine sortante Cindy Hyde-Smith. Selon NPR et CNBC, Colom est le premier sénateur noir élu dans cet État depuis le XIXe siècle."
-        },
-        "it": {
-          "headline": "Scott Colom vince il seggio al Senato degli Stati Uniti per il Mississippi",
-          "body": "Il democratico Scott Colom ha vinto la corsa al Senato statunitense in Mississippi, sconfiggendo la senatrice repubblicana uscente Cindy Hyde-Smith. Secondo NPR e CNBC, Colom è il primo senatore afroamericano eletto nello Stato dal XIX secolo."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "CNBC",
-          "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-          "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-          "publishedAt": "2026-11-12T12:56:27.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "Colom wins Mississippi Senate race. And, White House warns Dems over future probes",
-          "url": "https://www.npr.org/2026/11/12/g-s1-153171/up-first-newsletter-scott-colom-trump-democrats-ukraine-russia",
-          "publishedAt": "2026-11-12T12:15:48.000Z"
-        },
-        {
-          "outlet": "NPR",
-          "title": "Democrat Scott Colom wins Mississippi Senate race",
-          "url": "https://www.npr.org/2026/11/12/nx-s1-6037853/democrat-scott-colom-wins-mississippi-senate-race",
-          "publishedAt": "2026-11-12T09:32:33.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794489078000-dpmp",
-      "at": "2026-11-12T13:11:18.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Alaska Senate race remains uncalled as vote count continues",
-          "body": "The Senate race between former Representative Mary Peltola and Senator Dan Sullivan remains undecided as ballots continue to be counted. According to The Hill and Fox News, Peltola maintains a narrow lead while Sullivan has gained ground following recent vote drops."
-        },
-        "de": {
-          "headline": "Senatswahl in Alaska bleibt bei laufender Auszählung offen",
-          "body": "Das Rennen um den Senatssitz zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan ist weiterhin unentschieden, während die Stimmzettel weiter ausgezählt werden. Laut The Hill und Fox News hält Peltola einen knappen Vorsprung, während Sullivan nach den jüngsten Stimmauszählungen Boden gutgemacht hat."
-        },
-        "pt": {
-          "headline": "Corrida ao Senado no Alasca continua sem vencedor enquanto contagem de votos prossegue",
-          "body": "A corrida ao Senado entre a antiga representante Mary Peltola e o senador Dan Sullivan permanece indecisa enquanto os boletins de voto continuam a ser contados. Segundo o The Hill e a Fox News, Peltola mantém uma curta vantagem, enquanto Sullivan ganhou terreno após as recentes atualizações na contagem de votos."
-        },
-        "zh": {
-          "headline": "阿拉斯加州参议员选举计票仍在进行，结果尚未出炉",
-          "body": "前众议员玛丽·佩尔托拉（Mary Peltola）与参议员丹·沙利文（Dan Sullivan）之间的参议院竞选结果仍未确定，计票工作仍在继续。据《国会山报》（The Hill）和福克斯新闻（Fox News）报道，佩尔托拉目前保持微弱领先，而沙利文在近期选票统计更新后缩小了差距。"
-        },
-        "ja": {
-          "headline": "アラスカ州の上院選、開票続くも勝敗決まらず",
-          "body": "元下院議員のメアリー・ペルトラ氏と現職のダン・サリバン上院議員が争うアラスカ州の上院選は、開票作業が続いており、依然として勝敗は決していない。ザ・ヒルおよびフォックスニュースによると、ペルトラ氏が僅差でリードを維持しているものの、直近の開票結果を受けてサリバン氏が追い上げを見せている。"
-        },
-        "es": {
-          "headline": "La carrera al Senado en Alaska sigue sin definirse mientras continúa el recuento de votos",
-          "body": "La carrera al Senado entre la exrepresentante Mary Peltola y el senador Dan Sullivan sigue sin decidirse mientras continúa el recuento de papeletas. Según The Hill y Fox News, Peltola mantiene una estrecha ventaja, mientras que Sullivan ha ganado terreno tras los últimos recuentos de votos."
-        },
-        "ko": {
-          "headline": "알래스카주 상원의원 선거, 개표 지속으로 당선자 미정",
-          "body": "메리 펠톨라 전 하원의원과 댄 설리번 상원의원이 맞붙은 상원의원 선거는 개표가 계속되면서 아직 승자가 결정되지 않았다. 더 힐과 폭스 뉴스에 따르면, 펠톨라가 근소한 차이로 앞서고 있으나 최근 개표 결과가 반영되면서 설리번이 추격하고 있다."
-        },
-        "fr": {
-          "headline": "L'élection sénatoriale en Alaska reste indécise alors que le dépouillement se poursuit",
-          "body": "La course au Sénat entre l'ancienne représentante Mary Peltola et le sénateur Dan Sullivan reste indécise alors que le dépouillement des bulletins se poursuit. Selon The Hill et Fox News, Peltola conserve une courte avance tandis que Sullivan a gagné du terrain à la suite des derniers résultats publiés."
-        },
-        "it": {
-          "headline": "Ancora incerto l'esito della corsa al Senato in Alaska mentre prosegue lo spoglio",
-          "body": "La corsa al Senato tra l'ex deputata Mary Peltola e il senatore Dan Sullivan rimane indecisa mentre continua il conteggio delle schede. Secondo The Hill e Fox News, Peltola mantiene un lieve vantaggio, mentre Sullivan ha recuperato terreno in seguito agli ultimi aggiornamenti sui voti."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Hill",
-          "title": "Peltola holds lead, but Sullivan gains after latest Alaska Senate vote drop",
-          "url": "https://thehill.com/homenews/campaign/6215353-mary-peltola-dan-sullivan-alaska-senate-race-update/",
-          "publishedAt": "2026-11-12T13:11:18.000Z"
-        },
-        {
-          "outlet": "Fox News",
-          "title": "Peltola campaign loses in court on rejected absentee ballots as she maintains narrow lead",
-          "url": "https://www.foxnews.com/politics/peltola-campaign-loses-court-rejected-absentee-ballots-maintains-narrow-lead",
-          "publishedAt": "2026-11-12T12:19:50.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www1.folha.uol.com.br/colunas/ian-bremmer/2026/11/democratas-venceram-as-midterms-mas-isso-nao-muda-muita-coisa.shtml",
@@ -182,105 +277,142 @@
     "https://www.npr.org/2026/11/12/nx-s1-6037853/democrat-scott-colom-wins-mississippi-senate-race",
     "https://www.npr.org/2026/11/12/nx-s1-6034464/michigan-senator-elect-el-sayed-discusses-democrats-ambitions"
   ],
+  "startedAt": "2026-11-12T15:17:52.338Z",
+  "updatedAt": "2026-11-12T15:20:22.471Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": "2026-u-s-midterm-election-results",
+  "sourceCount": 4,
   "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "2026 U.S. Midterm Election Results",
-      "dek": "The balance of power in the U.S. Senate remains in flux as final votes are tallied in Alaska and the political fallout from Mississippi's historic result continues."
+  "stats": {
+    "label": "Mississippi Senate race results",
+    "note": "Scott Colom's victory as the first Black senator since Reconstruction and first Democrat since 1982",
+    "unit": "%",
+    "max": 100,
+    "asOf": "2026-11-06T00:00:00.000Z",
+    "updatedAt": "2026-11-12T15:37:39.131Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "publishedAt": "2026-11-12T12:56:27.000Z",
+      "trusted": true
     },
-    "fr": {
-      "title": "Résultats des élections de mi-mandat américaines de 2026",
-      "dek": "L'équilibre des pouvoirs au Sénat américain reste incertain alors que les derniers votes sont dépouillés en Alaska et que les retombées politiques du résultat historique du Mississippi se poursuivent."
-    },
-    "es": {
-      "title": "Resultados de las elecciones de mitad de mandato de 2026 en EE. UU.",
-      "dek": "El equilibrio de poder en el Senado de EE. UU. sigue siendo incierto mientras se contabilizan los votos finales en Alaska y continúa la repercusión política del histórico resultado en Misisipi."
-    },
-    "zh": {
-      "title": "2026年美国中期选举结果",
-      "dek": "随着阿拉斯加最后选票的统计，美国参议院权力平衡仍未确定；密西西比历史性结果引发的政治影响持续发酵。"
-    },
-    "de": {
-      "title": "Ergebnisse der US-Zwischenwahlen 2026",
-      "dek": "Das Machtverhältnis im US-Senat bleibt ungewiss, während in Alaska die letzten Stimmen ausgezählt werden und die politischen Auswirkungen des historischen Ergebnisses in Mississippi anhalten."
-    },
-    "ja": {
-      "title": "2026年米中間選挙結果",
-      "dek": "米上院の勢力バランスは、アラスカ州で最終票の集計が進む中、依然として流動的で、ミシシッピ州の歴史的結果に伴う政治的余波も続いている。"
-    },
-    "it": {
-      "title": "Risultati delle elezioni di metà mandato statunitensi del 2026",
-      "dek": "L'equilibrio di potere al Senato degli Stati Uniti resta incerto mentre vengono conteggiati i voti finali in Alaska e proseguono le conseguenze politiche dello storico risultato del Mississippi."
-    },
-    "ko": {
-      "title": "2026년 미국 중간선거 결과",
-      "dek": "미국 상원의 권력 균형은 알래스카에서 최종 투표 집계가 이어지는 가운데, 미시시피의 역사적 선거 결과에서 비롯된 정치적 파장이 계속되면서 여전히 확정되지 않고 있다."
-    },
-    "pt": {
-      "title": "Resultados das eleições de meio de mandato de 2026 nos EUA",
-      "dek": "O equilíbrio de poder no Senado dos EUA permanece incerto enquanto os votos finais são contados no Alasca e as consequências políticas do resultado histórico do Mississippi continuam."
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "vote-share-colom-vs-hyde-smith",
+        "label": "Vote share Colom vs Hyde-Smith",
+        "value": 50.1,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Part des voix Colom contre Hyde-Smith"
+          },
+          "es": {
+            "label": "Porcentaje de voto Colom frente a Hyde-Smith"
+          },
+          "zh": {
+            "label": "科洛姆与海德-史密斯的得票率"
+          },
+          "it": {
+            "label": "Quota di voti Colom contro Hyde-Smith"
+          },
+          "pt": {
+            "label": "Percentagem de votos Colom vs Hyde-Smith"
+          },
+          "ko": {
+            "label": "콜롬 대 하이드-스미스 득표율"
+          },
+          "de": {
+            "label": "Stimmenanteil Colom gegen Hyde-Smith"
+          },
+          "ja": {
+            "label": "コラム氏対ハイドスミス氏の得票率"
+          }
+        }
+      },
+      {
+        "key": "vote-share-hyde-smith-vs-colom",
+        "label": "Vote share Hyde-Smith vs Colom",
+        "value": 49.9,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Part des voix Hyde-Smith contre Colom"
+          },
+          "es": {
+            "label": "Porcentaje de voto Hyde-Smith frente a Colom"
+          },
+          "zh": {
+            "label": "海德-史密斯与科洛姆的得票率"
+          },
+          "it": {
+            "label": "Quota di voti Hyde-Smith contro Colom"
+          },
+          "pt": {
+            "label": "Percentagem de votos Hyde-Smith vs Colom"
+          },
+          "ko": {
+            "label": "하이드-스미스 대 콜롬 득표율"
+          },
+          "de": {
+            "label": "Stimmenanteil Hyde-Smith gegen Colom"
+          },
+          "ja": {
+            "label": "ハイドスミス氏対コラム氏の得票率"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Ergebnisse der Senatswahl in Mississippi",
+        "note": "Scott Coloms Sieg als erster schwarzer Senator seit der Reconstruction und erster Demokrat seit 1982"
+      },
+      "fr": {
+        "label": "Résultats de la course au Sénat du Mississippi",
+        "note": "La victoire de Scott Colom, premier sénateur noir depuis la Reconstruction et premier démocrate depuis 1982"
+      },
+      "es": {
+        "label": "Resultados de la carrera al Senado de Mississippi",
+        "note": "Victoria de Scott Colom, primer senador negro desde la Reconstrucción y primer demócrata desde 1982"
+      },
+      "it": {
+        "label": "Risultati della corsa al Senato del Mississippi",
+        "note": "La vittoria di Scott Colom come primo senatore nero dal periodo della Ricostruzione e primo democratico dal 1982"
+      },
+      "pt": {
+        "label": "Resultados da corrida no Senado do Mississippi",
+        "note": "Vitória de Scott Colom como primeiro senador negro desde a Reconstrução e primeiro democrata desde 1982"
+      },
+      "zh": {
+        "label": "密西西比州参议院选举结果",
+        "note": "斯科特·科洛姆胜选，成为自重建时期以来首位黑人参议员，也是自1982年以来首位民主党人"
+      },
+      "ja": {
+        "label": "ミシシッピ州上院選の結果",
+        "note": "スコット・コラム氏がレコンストラクション（南部再建）期以降で初の黒人上院議員、また1982年以来初の民主党上院議員として当選"
+      },
+      "ko": {
+        "label": "미시시피 상원 선거 결과",
+        "note": "스콧 콜롬이 재건 이후 최초의 흑인 상원의원이자 1982년 이후 최초의 민주당 상원의원으로 승리"
+      }
     }
   },
-  "article": {
-    "slug": "2026-u-s-midterm-election-results",
-    "updatedAt": "2026-11-12T15:20:59.870Z",
-    "reason": "2 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Scott Colom wins Mississippi Senate seat as Alaska race remains uncalled",
-        "dek": "Democrat Scott Colom defeated incumbent Cindy Hyde-Smith in Mississippi, while the Alaska Senate race between Mary Peltola and Dan Sullivan continues.",
-        "facts": [
-          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith in the Mississippi U.S. Senate race.",
-          "Colom is the first Black senator elected from Mississippi since the 19th century.",
-          "The Alaska Senate race between Mary Peltola and Dan Sullivan remains undecided.",
-          "Peltola holds a narrow lead in Alaska as ballot counting continues.",
-          "A court rejected a legal challenge from the Peltola campaign regarding absentee ballots."
-        ],
-        "body": [
-          "Democrat Scott Colom won the U.S. Senate election in Mississippi on 12 November. According to NPR and CNBC, he defeated the incumbent Republican, Cindy Hyde-Smith.",
-          "Colom is the first Black senator elected from Mississippi since the 19th century, as reported by NPR and CNBC. This result marks a change in the state's Senate representation.",
-          "Alaska election officials continue to count ballots in the race between former Representative Mary Peltola and Senator Dan Sullivan. The Hill and Fox News reported that the race remains uncalled as of 12 November.",
-          "Peltola maintains a narrow lead in the vote count, according to The Hill and Fox News. Sullivan has gained ground following recent vote drops in the state.",
-          "The Peltola campaign recently lost a court case regarding rejected absentee ballots. Fox News stated that the court ruled against the campaign's attempt to include those ballots in the final tally.",
-          "Election officials in Alaska are processing the remaining ballots to determine the winner. Both The Hill and Fox News noted that the outcome depends on the final count."
-        ],
-        "context": "The 2026 midterm elections determine the composition of the U.S. Senate. These races are part of the broader national election cycle.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Scott Colom gewinnt Senatssitz in Mississippi, während Rennen in Alaska noch nicht entschieden ist",
-        "dek": "Der Demokrat Scott Colom besiegte die Amtsinhaberin Cindy Hyde-Smith in Mississippi, während das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan andauert.",
-        "facts": [
-          "Scott Colom besiegte die republikanische Amtsinhaberin Cindy Hyde-Smith bei der US-Senatswahl in Mississippi.",
-          "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde.",
-          "Das Senatsrennen in Alaska zwischen Mary Peltola und Dan Sullivan ist weiterhin unentschieden.",
-          "Peltola führt in Alaska knapp, während die Auszählung der Stimmzettel andauert.",
-          "Ein Gericht wies eine Klage des Peltola-Wahlkampfteams bezüglich der Briefwahlunterlagen ab."
-        ],
-        "body": [
-          "Der Demokrat Scott Colom gewann am 12. November die US-Senatswahl in Mississippi. Laut NPR und CNBC besiegte er die republikanische Amtsinhaberin Cindy Hyde-Smith.",
-          "Colom ist der erste schwarze Senator, der seit dem 19. Jahrhundert in Mississippi gewählt wurde, wie NPR und CNBC berichteten. Dieses Ergebnis markiert einen Wechsel in der Senatsvertretung des Bundesstaates.",
-          "Wahlbeamte in Alaska zählen weiterhin die Stimmzettel im Rennen zwischen der ehemaligen Abgeordneten Mary Peltola und Senator Dan Sullivan. The Hill und Fox News berichteten, dass das Rennen zum 12. November noch nicht entschieden ist.",
-          "Peltola hält laut The Hill und Fox News einen knappen Vorsprung bei der Stimmenauszählung. Sullivan konnte nach jüngsten Stimmenzuwächsen im Bundesstaat Boden gutmachen.",
-          "Das Peltola-Wahlkampfteam verlor kürzlich einen Gerichtsprozess bezüglich abgelehnter Briefwahlunterlagen. Fox News gab an, dass das Gericht den Versuch des Wahlkampfteams, diese Stimmzettel in die endgültige Auszählung einzubeziehen, zurückwies.",
-          "Wahlbeamte in Alaska verarbeiten die verbleibenden Stimmzettel, um den Sieger zu ermitteln. Sowohl The Hill als auch Fox News merkten an, dass das Ergebnis von der endgültigen Auszählung abhängt."
-        ],
-        "context": "Die Zwischenwahlen 2026 bestimmen die Zusammensetzung des US-Senats. Diese Rennen sind Teil des umfassenderen nationalen Wahlzyklus."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "NPR",
-      "Al Jazeera",
-      "The Hill",
-      "Axios",
-      "Times of India",
-      "CNBC",
-      "InsideClimate News"
-    ],
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
-  }
+  "statsHistory": [
+    {
+      "at": "2026-11-06T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "vote-share-colom-vs-hyde-smith",
+          "value": 50.1
+        },
+        {
+          "key": "vote-share-hyde-smith-vs-colom",
+          "value": 49.9
+        }
+      ]
+    }
+  ]
 }

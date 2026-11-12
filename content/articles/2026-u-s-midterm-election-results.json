@@ -6,11 +6,126 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-12T15:17:52.338Z",
-  "updatedAt": "2026-11-12T15:20:59.870Z",
+  "updatedAt": "2026-11-12T15:40:16.334Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-u-s-midterm-election-results",
-  "stats": null,
+  "stats": {
+    "label": "Mississippi Senate race results",
+    "note": "Scott Colom's victory as the first Black senator since Reconstruction and first Democrat since 1982",
+    "unit": "%",
+    "max": 100,
+    "asOf": "2026-11-06T00:00:00.000Z",
+    "updatedAt": "2026-11-12T15:37:39.131Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "publishedAt": "2026-11-12T12:56:27.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "vote-share-colom-vs-hyde-smith",
+        "label": "Vote share Colom vs Hyde-Smith",
+        "value": 50.1,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Part des voix Colom contre Hyde-Smith"
+          },
+          "es": {
+            "label": "Porcentaje de voto Colom frente a Hyde-Smith"
+          },
+          "zh": {
+            "label": "科洛姆与海德-史密斯的得票率"
+          },
+          "it": {
+            "label": "Quota di voti Colom contro Hyde-Smith"
+          },
+          "pt": {
+            "label": "Percentagem de votos Colom vs Hyde-Smith"
+          },
+          "ko": {
+            "label": "콜롬 대 하이드-스미스 득표율"
+          },
+          "de": {
+            "label": "Stimmenanteil Colom gegen Hyde-Smith"
+          },
+          "ja": {
+            "label": "コラム氏対ハイドスミス氏の得票率"
+          }
+        }
+      },
+      {
+        "key": "vote-share-hyde-smith-vs-colom",
+        "label": "Vote share Hyde-Smith vs Colom",
+        "value": 49.9,
+        "change": null,
+        "locales": {
+          "fr": {
+            "label": "Part des voix Hyde-Smith contre Colom"
+          },
+          "es": {
+            "label": "Porcentaje de voto Hyde-Smith frente a Colom"
+          },
+          "zh": {
+            "label": "海德-史密斯与科洛姆的得票率"
+          },
+          "it": {
+            "label": "Quota di voti Hyde-Smith contro Colom"
+          },
+          "pt": {
+            "label": "Percentagem de votos Hyde-Smith vs Colom"
+          },
+          "ko": {
+            "label": "하이드-스미스 대 콜롬 득표율"
+          },
+          "de": {
+            "label": "Stimmenanteil Hyde-Smith gegen Colom"
+          },
+          "ja": {
+            "label": "ハイドスミス氏対コラム氏の得票率"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Ergebnisse der Senatswahl in Mississippi",
+        "note": "Scott Coloms Sieg als erster schwarzer Senator seit der Reconstruction und erster Demokrat seit 1982"
+      },
+      "fr": {
+        "label": "Résultats de la course au Sénat du Mississippi",
+        "note": "La victoire de Scott Colom, premier sénateur noir depuis la Reconstruction et premier démocrate depuis 1982"
+      },
+      "es": {
+        "label": "Resultados de la carrera al Senado de Mississippi",
+        "note": "Victoria de Scott Colom, primer senador negro desde la Reconstrucción y primer demócrata desde 1982"
+      },
+      "it": {
+        "label": "Risultati della corsa al Senato del Mississippi",
+        "note": "La vittoria di Scott Colom come primo senatore nero dal periodo della Ricostruzione e primo democratico dal 1982"
+      },
+      "pt": {
+        "label": "Resultados da corrida no Senado do Mississippi",
+        "note": "Vitória de Scott Colom como primeiro senador negro desde a Reconstrução e primeiro democrata desde 1982"
+      },
+      "zh": {
+        "label": "密西西比州参议院选举结果",
+        "note": "斯科特·科洛姆胜选，成为自重建时期以来首位黑人参议员，也是自1982年以来首位民主党人"
+      },
+      "ja": {
+        "label": "ミシシッピ州上院選の結果",
+        "note": "スコット・コラム氏がレコンストラクション（南部再建）期以降で初の黒人上院議員、また1982年以来初の民主党上院議員として当選"
+      },
+      "ko": {
+        "label": "미시시피 상원 선거 결과",
+        "note": "스콧 콜롬이 재건 이후 최초의 흑인 상원의원이자 1982년 이후 최초의 민주당 상원의원으로 승리"
+      }
+    }
+  },
   "sources": [
     {
       "outlet": "The Hill",
