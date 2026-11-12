@@ -6,127 +6,157 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-10T15:28:03.354Z",
-  "updatedAt": "2026-11-11T16:08:43.048Z",
+  "updatedAt": "2026-11-12T02:43:00.499Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "2026-us-midterm-election-aftermath",
   "stats": {
+    "label": "2026 US midterm election aftermath",
+    "note": "Vote share and seat changes across key races",
+    "unit": "%",
     "max": 100,
     "asOf": "2026-11-12T14:30:00.000Z",
-    "note": "General strike turnout and housing protest numbers ahead of snap election",
+    "updatedAt": "2026-11-12T02:40:56.621Z",
+    "source": {
+      "outlet": "CNBC",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "publishedAt": "2026-11-11T23:31:37.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
       {
-        "key": "general-strike-participation-rate",
-        "label": "General strike participation rate",
-        "value": 15,
+        "key": "democrat-vote-share-mississippi-senate",
+        "label": "Democrat vote share Mississippi Senate",
+        "value": 50.1,
         "change": null,
         "locales": {
-          "de": {
-            "label": "Generaler-Streik-Beteiligung"
-          },
-          "es": {
-            "label": "Tasa de participación en la huelga general"
-          },
           "fr": {
-            "label": "Taux de participation à la grève générale"
+            "label": "Part démocrate au Sénat du Mississippi"
           },
-          "it": {
-            "label": "Tasso di partecipazione allo sciopero generale"
-          },
-          "ja": {
-            "label": "ゼネラルストライキの参加率"
-          },
-          "ko": {
-            "label": "총파업 참가율"
-          },
-          "pt": {
-            "label": "Taxa de participação na greve geral"
+          "de": {
+            "label": "Stimmenanteil der Demokraten bei Senatswahl in Mississippi"
           },
           "zh": {
-            "label": "总罢工参与率"
+            "label": "民主党密西西比州参议院得票率"
+          },
+          "es": {
+            "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
+          },
+          "ko": {
+            "label": "미시시피 상원 민주당 득표율"
+          },
+          "ja": {
+            "label": "ミシシッピ州上院選 民主党の得票率"
+          },
+          "it": {
+            "label": "Percentuale di voto del democratico al Senato del Mississippi"
+          },
+          "pt": {
+            "label": "Percentagem de votos do Partido Democrata no Senado do Mississippi"
           }
         }
       },
       {
-        "key": "housing-affordability-protest-size",
-        "label": "Housing affordability protest size",
-        "value": 3,
+        "key": "republican-incumbent-vote-share-mississi",
+        "label": "Republican incumbent vote share Mississi",
+        "value": 48.7,
         "change": null,
         "locales": {
-          "de": {
-            "label": "Größe der Proteste zur Wohnungsaffordabilität"
-          },
-          "es": {
-            "label": "Tamaño de la protesta por la asequibilidad de la vivienda"
-          },
           "fr": {
-            "label": "Ampleur des manifestations sur l'accès au logement"
+            "label": "Part du candidat républicain sortant au Mississippi"
           },
-          "it": {
-            "label": "Dimensioni della protesta per l'accessibilità abitativa"
-          },
-          "ja": {
-            "label": "住宅の購入しやすさをめぐる抗議行動の規模"
-          },
-          "ko": {
-            "label": "주택 구입 부담 시위 규모"
-          },
-          "pt": {
-            "label": "Tamanho do protesto de acessibilidade à habitação"
+          "de": {
+            "label": "Stimmenanteil des republikanischen Amtsinhabers in Mississippi"
           },
           "zh": {
-            "label": "住房可负担性抗议规模"
+            "label": "共和党现任议员密西西比得票率"
+          },
+          "es": {
+            "label": "Porcentaje del voto del titular republicano en Misisipi"
+          },
+          "ko": {
+            "label": "미시시피 공화당 현직 의원 득표율"
+          },
+          "ja": {
+            "label": "ミシシッピ州上院選 共和党現職の得票率"
+          },
+          "it": {
+            "label": "Percentuale di voto del repubblicano uscente Mississi"
+          },
+          "pt": {
+            "label": "Percentagem de votos do incumbente Republicano no Mississippi"
           }
         }
       }
     ],
-    "unit": "%",
-    "label": "Spain midterm election aftermath",
-    "source": {
-      "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
-      "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-11-11T12:39:20.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Generaler-Streik-Beteiligung und Zahlen zu Wohnungsprotesten vor Neuwahl",
-        "label": "Spanien: Nachwirkungen der Zwischenwahlen"
-      },
-      "es": {
-        "note": "Participación en la huelga general y cifras de protesta por la vivienda previo a elecciones anticipadas",
-        "label": "Consecuencias de las elecciones de mitad de mandato en España"
+        "label": "Ergebnisse der US-Zwischenwahlen 2026",
+        "note": "Stimmenanteil und Sitzveränderungen bei entscheidenden Rennen"
       },
       "fr": {
-        "note": "Taux de participation à la grève générale et nombre de manifestants pour le logement avant des élections anticipées",
-        "label": "Conséquences des élections de mi-mandat en Espagne"
+        "label": "Après les élections de mi-mandat de 2026 aux États-Unis",
+        "note": "Part des voix et changements de sièges dans les courses clés"
+      },
+      "es": {
+        "label": "Consecuencias de las elecciones de mitad de mandato de EE. UU. de 2026",
+        "note": "Porcentaje del voto y cambios de escaños en las principales contiendas"
       },
       "it": {
-        "note": "Partecipazione allo sciopero generale e numeri delle proteste per l'abitazione in vista delle elezioni anticipate",
-        "label": "Elezioni di metà mandato in Spagna"
-      },
-      "ja": {
-        "note": "早期総選挙を前に、ゼネラルストライキの参加率と住宅抗議行動の規模",
-        "label": "スペイン中間選挙後の情勢"
-      },
-      "ko": {
-        "note": "조기 총선을 앞두고 총파업 참가자 수와 주택 시위 규모",
-        "label": "스페인 중간선거 여파"
+        "label": "Conseguenze delle elezioni di metà mandato USA 2026",
+        "note": "Percentuali di voto e variazioni di seggi nelle principali competizioni"
       },
       "pt": {
-        "note": "Greve geral e protestos de habitação antes de eleições antecipadas",
-        "label": "Espanha: após eleições legislativas"
+        "label": "Consequências das eleições de meio de mandato dos EUA de 2026",
+        "note": "Percentagem de votos e alterações de assentos em corridas chave"
       },
       "zh": {
-        "note": "提前大选前的总罢工参与人数与住房抗议规模",
-        "label": "西班牙中期选举后续"
+        "label": "2026年美国中期选举后续",
+        "note": "关键选举中的得票率与席位变化"
+      },
+      "ja": {
+        "label": "2026年米中間選挙の余波",
+        "note": "主要選挙戦の得票率と議席の変動"
+      },
+      "ko": {
+        "label": "2026년 미국 중간선거 결과",
+        "note": "주요 선거에서의 득표율 및 의석 변화"
       }
-    },
-    "updatedAt": "2026-11-11T13:57:14.625Z",
-    "sourceCount": 1
+    }
   },
   "sources": [
+    {
+      "outlet": "AP News",
+      "title": "Mississippi U.S. Senate Election Live Results 2026",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE40QzF6VWVSbVp6Zkx1Q0I1OGU4aG5UVTdmMDM5UTdIVTNDd0t5RmJ1RHUxVW9DMmVialI4TWxCMERpUy1pTk1la01IS1ZVdFJJUnJGNmdBX29GU2M5ZlVqaDJ5VFctbUZtRXpLbVlpNGlYNDdkdkM0UEhod0Jmdw?oc=5",
+      "publishedAt": "2026-11-12T00:26:26.000Z"
+    },
+    {
+      "outlet": "The Washington Post",
+      "title": "The Latest: Democrat Scott Colom wins election to US Senate from Mississippi",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQjdCS2tVN2tLZms5NUJEcDExUWM5R1VMRmctc3c0b2FqeGYtRlVGUmVlOUs1MmdRcktqaTdZdm9tOE1VYmg3VUVRakdmd0RIaXZqd1FrWERoMUc1NkJ4eGtzRl9yN190YU0tS3RnY3lJWjRoREtuTFpHTE5zVDJ1N1Y4ekxuVG1zNUVmTDVCajZtYlVLV1VLUmJjVkFaZHlfSjlaTzlVZDc2cXp6LWY5SVJrZzA0ellJOF9UdGxMVC0yeW8tOXZIcXBB?oc=5",
+      "publishedAt": "2026-11-11T23:48:58.000Z"
+    },
+    {
+      "outlet": "The Hill",
+      "title": "GOP’s Murphy concedes in North Carolina House race",
+      "url": "https://thehill.com/homenews/campaign/6214832-murphy-concedes-north-carolina-house/",
+      "publishedAt": "2026-11-11T23:55:55.000Z"
+    },
+    {
+      "outlet": "PBS",
+      "title": "More than a dozen key races remain too early to call one week after Election Day",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQkdvWE9ndG1ZVDRaaWRzVFJIQTlUbXdEVFNHLVNEd2JIV0REZTdMaXNQbng0MEE3NmVndGhEZFl3b3lPeEJRTUtMQy1BWVFwNFFUQzVSMWJGcm1JQ3FQaXl6dkNOTEFsNWVRM1pISG11cWxsMGFReEY0bnVrWFlIZXZuY29UU0RjSEJrdkhSbmc0QmttalgwR20wZGVXZFhvSGR1UmtMdWhzN1k2clN0Ulk0UGhwQnlnckHSAb8BQVVfeXFMT002bVIyZ0g3ci1vcVVxUnM1dmdtZG80VldmbmMzbFNaMUxQUm9nNGd2QjE4T0ZsYXIzVTVQUnd5cUpUMjBzQmxmT2xQa0R0SW51cGp4dVNkWXlzUlh0ZTdsYzVLcjdLS0VBemRZa0dvR2ZVdmZFeHpfLVJ1STFpQ0c4enBROGtrd3dTRWQyUzlzclEtb2k3QzM3S3VZaUN6SnIwTmhaeFUyZk10ZXpMUTlrSWJ6T0hKYXdpTUplMTg?oc=5",
+      "publishedAt": "2026-11-11T20:33:19.000Z"
+    },
+    {
+      "outlet": "Al Jazeera",
+      "title": "Which key races remain undecided one week after the US midterms?",
+      "url": "https://www.aljazeera.com/news/2026/11/11/which-key-races-remain-undecided-one-week-after-the-us-midterms?traffic_source=rss",
+      "publishedAt": "2026-11-11T19:14:29.000Z"
+    },
     {
       "outlet": "The Hill",
       "title": "Almost half of MAGA Trump supporters call movement a loser in midterms: Survey",
@@ -179,25 +209,54 @@
   "locales": {
     "en": {
       "title": "Vote counting continues after US midterms as Republicans select new leadership",
-      "dek": "Election officials continue counting ballots eight days after the US midterms while a new survey measures Republican voter reactions and party leaders select House leadership.",
+      "dek": "Election officials continue counting ballots one week after the vote while party leaders are selected and key races are resolved.",
       "facts": [
-        "Vote counting continues eight days after the 2026 midterm elections with 17 races undecided, according to G1.",
-        "A Politico poll shows 45 percent of MAGA supporters view the movement as the loser in the midterms, according to The Hill and The Guardian.",
-        "The Republican Party selected Jim Jordan and John Thune as their new House leaders following election losses, according to the New York Times.",
-        "Brazil's electoral court fined Meta following a complaint by President Lula's coalition, according to DW and The Hindu."
+        "Vote counting continues one week after the 2026 midterm elections with 17 races still undecided, according to G1.",
+        "Republican Party selected Jim Jordan and John Thune as new House leaders following election losses, according to the New York Times.",
+        "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera.",
+        "Meta was fined by Brazil's electoral court following a complaint by President Lula's coalition, according to DW and The Hindu.",
+        "Nearly half of MAGA supporters view the movement as the loser in the midterms, according to a Politico survey cited by The Hill and The Guardian.",
+        "Republican Greg Murphy conceded his North Carolina House race to Democrat Raymond Smith, according to The Hill and AP News."
       ],
       "body": [
-        "A new Politico survey shows 45 percent of President Donald Trump's MAGA supporters described the movement as the loser in last year's midterm elections, according to reports by The Hill and The Guardian. The survey results were released as political parties evaluate the outcomes of the vote.",
         "Election officials are still counting ballots eight days after the midterm elections, according to G1. A total of 17 races remain without a final declared result as counting proceeds across multiple states.",
-        "The Republican Party has selected Representative Jim Jordan and Senator John Thune as their new leaders in the House of Representatives, according to the New York Times. The decisions followed election losses in the 2026 midterm vote.",
-        "Dawn reported that Donald Trump has issued mixed signals regarding his political plans following the midterm election results. The outlet noted contrasting messages from the former president as party members assess the political landscape.",
-        "In related international developments, Brazil's electoral court imposed a fine on Meta following a complaint submitted by President Luiz Inácio Lula da Silva's political coalition, according to DW and The Hindu. The electoral court stated that it found no evidence of deliberate election bias by the company."
+        "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera, as vote counting continues across multiple states.",
+        "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+        "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
+        "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu.",
+        "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith, flipping another House seat for Democrats after a close contest in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
+        "Democrat Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post."
       ],
       "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
       "imageCaption": ""
     }
   },
   "history": [
+    {
+      "at": "2026-11-11T16:08:43.048Z",
+      "reason": "1 new update(s)",
+      "locales": {
+        "en": {
+          "dek": "Election officials continue counting ballots eight days after the US midterms while a new survey measures Republican voter reactions and party leaders select House leadership.",
+          "body": [
+            "A new Politico survey shows 45 percent of President Donald Trump's MAGA supporters described the movement as the loser in last year's midterm elections, according to reports by The Hill and The Guardian. The survey results were released as political parties evaluate the outcomes of the vote.",
+            "Election officials are still counting ballots eight days after the midterm elections, according to G1. A total of 17 races remain without a final declared result as counting proceeds across multiple states.",
+            "The Republican Party has selected Representative Jim Jordan and Senator John Thune as their new leaders in the House of Representatives, according to the New York Times. The decisions followed election losses in the 2026 midterm vote.",
+            "Dawn reported that Donald Trump has issued mixed signals regarding his political plans following the midterm election results. The outlet noted contrasting messages from the former president as party members assess the political landscape.",
+            "In related international developments, Brazil's electoral court imposed a fine on Meta following a complaint submitted by President Luiz Inácio Lula da Silva's political coalition, according to DW and The Hindu. The electoral court stated that it found no evidence of deliberate election bias by the company."
+          ],
+          "facts": [
+            "Vote counting continues eight days after the 2026 midterm elections with 17 races undecided, according to G1.",
+            "A Politico poll shows 45 percent of MAGA supporters view the movement as the loser in the midterms, according to The Hill and The Guardian.",
+            "The Republican Party selected Jim Jordan and John Thune as their new House leaders following election losses, according to the New York Times.",
+            "Brazil's electoral court fined Meta following a complaint by President Lula's coalition, according to DW and The Hindu."
+          ],
+          "title": "Vote counting continues after US midterms as Republicans select new leadership",
+          "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
+          "imageCaption": ""
+        }
+      }
+    },
     {
       "at": "2026-11-11T15:31:34.209Z",
       "reason": "1 new update(s)",
@@ -321,11 +380,11 @@
     }
   ],
   "meta": {
-    "writer": "gemini/gemini-3.6-flash",
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
     "editor": null,
     "desk": "Live Desk",
     "verdict": "live-update",
     "problemsFixed": [],
-    "updatedReason": "1 new update(s)"
+    "updatedReason": "3 new update(s)"
   }
 }
