@@ -1,0 +1,99 @@
+{
+  "slug": "microsoft-outage-affected-outlook-teams-copilot-on-12-november-20261112-rutv",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-12T20:06:34.116Z",
+  "updatedAt": "2026-11-12T20:06:34.116Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Euronews",
+      "title": "Microsoft outage hits Outlook, Teams and Copilot, disrupting thousands",
+      "url": "https://www.euronews.com/2026/11/12/microsoft-outage-hits-outlook-teams-and-copilot-disrupting-thousands",
+      "publishedAt": "2026-11-12T19:38:47.000Z"
+    },
+    {
+      "outlet": "ABC Australia",
+      "title": "Breaking: Microsoft platforms suffering widespread outages, including Outlook",
+      "url": "https://www.abc.net.au/news/2026-11-13/microsoft-outlook-outage/107380958",
+      "publishedAt": "2026-11-12T19:29:40.000Z"
+    },
+    {
+      "outlet": "CNA",
+      "title": "Microsoft 365, Outlook down for thousands of US users, Downdetector shows",
+      "url": "https://www.channelnewsasia.com/business/microsoft-365-outlook-down-thousands-us-users-downdetector-shows-6547306",
+      "publishedAt": "2026-11-12T18:32:48.000Z"
+    },
+    {
+      "outlet": "The Verge",
+      "title": "Microsoft Outlook is down",
+      "url": "https://www.theverge.com/tech/1032226/microsoft-outlook-is-down",
+      "publishedAt": "2026-11-12T19:07:21.000Z"
+    },
+    {
+      "outlet": "TechCrunch",
+      "title": "Microsoft’s Outlook email hit by new outage",
+      "url": "https://techcrunch.com/2026/11/12/microsofts-outlook-email-hit-by-new-outage/",
+      "publishedAt": "2026-11-12T19:03:39.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Microsoft outage affected Outlook Teams Copilot on 12 November",
+      "dek": "Microsoft platforms experienced service interruptions on Thursday, 12 November, affecting Outlook and other 365 tools.",
+      "facts": [
+        "More than 120,000 users reported Outlook access issues on Downdetector by 12 November.",
+        "Microsoft reported that part of its infrastructure experienced elevated load, which it identified as a possible factor in the outage.",
+        "The disruption affected Outlook, Teams, Copilot, SharePoint Online, Exchange Online, and Defender XDR, according to Microsoft's Service Health Status site.",
+        "Microsoft announced it was redistributing traffic and restarting affected servers to restore service.",
+        "OpenAI and Anthropic reported issues with Microsoft connectors during the outage."
+      ],
+      "body": [
+        "Thousands of users experienced a service interruption at Microsoft on Thursday, 12 November, affecting Outlook, Teams, and Copilot, according to Euronews.",
+        "Downdetector reported that over 120,000 users in the United States reported difficulties accessing Outlook around 1:30 p.m. Eastern time, and this number rose to over 130,000, according to data reported by Downdetector.",
+        "Microsoft stated in updates on X that it initially received reports about users unable to access Exchange Online mailboxes in the Americas, and later identified elevated load on some infrastructure as a possible cause.",
+        "The company stated it resolved the Teams disruption in North America, while it also paused all deployments, moved additional traffic off affected infrastructure, and restarted servers to return services to operation.",
+        "Anthropic stated it identified an issue with an upstream provider affecting its Microsoft 365 connector, and OpenAI reported investigating issues with Microsoft connectors where new connections may be broken."
+      ],
+      "context": "Microsoft's Service Health Status site confirmed users could not connect to multiple 365 services, including Exchange Online and Copilot 365, during the event.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "Microsoft-Ausfall betraf Outlook, Teams und Copilot am 12. November",
+      "dek": "Microsoft-Dienste erlebten am Donnerstag, 12. November, Störungen; betroffen waren Outlook und weitere 365-Tools.",
+      "facts": [
+        "Mehr als 120.000 Nutzer meldeten Outlook-Zugriffsprobleme bei Downdetector bis zum 12. November",
+        "Microsoft gab an, Teile der Infrastruktur hätten erhöhte Last erfahren, was mögliche Ursache für den Ausfall sei",
+        "Die Störung betraf Outlook, Teams, Copilot, SharePoint Online, Exchange Online und Defender XDR, laut Microsoft-Statusseite",
+        "Microsoft kündigte an, Verkehr umzuleiten und betroffene Server neu zu starten, um den Dienst wiederherzustellen",
+        "OpenAI und Anthropic meldeten Probleme mit Microsoft-Schnittstellen während des Ausfalls"
+      ],
+      "body": [
+        "Tausende von Nutzern erlebten am Donnerstag, dem 12. November, einen Dienstausfall bei Microsoft, der Outlook, Teams und Copilot betraf, wie Euronews meldet.",
+        "Downdetector berichtete, dass über 120.000 Nutzer in den Vereinigten Staaten gegen 13:30 Uhr Eastern Time Schwierigkeiten beim Zugriff auf Outlook meldeten, wobei diese Zahl laut Downdetector auf über 130.000 stieg.",
+        "Microsoft gab in Updates auf X bekannt, dass es zunächst Berichte über Nutzer erhielt, die keinen Zugriff auf Exchange Online Postfächer in Amerika hatten, und später eine erhöhte Last auf einigen Infrastrukturen als mögliche Ursache identifizierte.",
+        "Das Unternehmen teilte mit, dass es die Störung bei Teams in Nordamerika behoben habe, während es zudem alle Bereitstellungen pausierte, zusätzlichen Datenverkehr von den betroffenen Infrastrukturen entfernte und Server neu startete, um den Dienst wiederherzustellen.",
+        "Anthropic gab bekannt, dass es ein Problem mit einem Upstream-Anbieter identifiziert habe, das seinen Microsoft 365 Connector beeinträchtigte, und OpenAI meldete, dass es Probleme mit Microsoft-Connectoren untersucht, bei denen neue Verbindungen unterbrochen sein könnten."
+      ],
+      "context": "Microsoft-Statusseite bestätigte, dass Nutzer während des Ereignisses keinen Zugriff auf mehrere 365-Dienste, darunter Exchange Online und Copilot 365, hatten",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "The headline uses an evaluative framing ('disrupts') and is not a purely factual statement of what happened.",
+      "The 'dek' is not a concise, one-sentence summary of what happened.",
+      "The 'facts' list contains unsupported claims (e.g., 'by 12 November 2026' without context on the reporting time, and the specific 130,000 figure is a reported maximum, not a confirmed fact).",
+      "The 'body' contains filler and violates rhythm rules (e.g., starting sentences with the same noun, ending paragraphs with summary statements).",
+      "The 'context' is speculative and not supported by the sources.",
+      "The structure violates PLAIN rules (e.g., no clear actor opening paragraphs, no variation in sentence length, and the final paragraph is an evaluative summary)."
+    ]
+  }
+}
