@@ -15,17 +15,27 @@
       "Al Jazeera"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "us-envoys-moscow-visit-and-ukraine-peace-negotiations",
   "topic": "US Envoys' Moscow Visit and Ukraine Peace Negotiations",
   "status": "live",
   "article": {
     "slug": "us-envoys-moscow-visit-and-ukraine-peace-negotiations",
+    "updatedAt": "2026-11-13T00:47:23.703Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
-        "dek": "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following peace talks in Abu Dhabi, according to Time Magazine and Al Jazeera.",
+        "title": "US envoys meet Putin in Moscow amid Starlink disruptions, prisoner exchange agreed",
+        "dek": "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks, according to Time Magazine and Al Jazeera.",
+        "facts": [
+          "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks",
+          "Abu Dhabi talks produced no breakthrough in the conflict and agreed on prisoner exchange",
+          "Ukrainian President Volodymyr Zelenskyy reported significant disruptions to the Starshield satellite communications service",
+          "These restrictions are affecting the ability of military units to intercept Russian drones",
+          "Russian President Putin suggests no Ukraine compromise in meeting with US envoys",
+          "Prisoner exchange agreed at trilateral Abu Dhabi talks between Ukraine, US and Russia"
+        ],
         "body": [
           "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following peace talks in Abu Dhabi, according to Time Magazine and Al Jazeera.",
           "The discussions in Abu Dhabi produced no breakthrough in the conflict, according to AP News and Radio Free Europe/Radio Liberty.",
@@ -36,20 +46,48 @@
           "The first trilateral talks between Ukraine, the US and Russia in nine months ended with an agreement on exchanging prisoners, according to DW and Africanews.",
           "US envoys are scheduled to meet with Vladimir Putin on Thursday and Volodymyr Zelenskyy on Friday, following U.S.-mediated talks in Abu Dhabi that resulted in an agreement on a prisoner exchange, according to NPR."
         ],
-        "facts": [
-          "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks",
-          "Abu Dhabi talks produced no breakthrough in the conflict and agreed on prisoner exchange",
-          "Ukrainian President Volodymyr Zelenskyy reported significant disruptions to the Starshield satellite communications service",
-          "These restrictions are affecting the ability of military units to intercept Russian drones",
-          "Russian President Putin suggests no Ukraine compromise in meeting with US envoys",
-          "Prisoner exchange agreed at trilateral Abu Dhabi talks between Ukraine, US and Russia"
-        ],
-        "title": "US envoys Jared Kushner and Steve Witkoff meet Putin in Moscow amid Starlink disruptions",
         "context": "US diplomatic envoys have been engaging with Russian leadership following previous peace talks, while Ukraine has reported intermittent disruptions to satellite communications services used by its military. The Abu Dhabi talks were the first trilateral talks between Ukraine, the US and Russia in nine months.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "US-Botschafter treffen Putin in Moskau inmitten Starlink-Störungen, Gefangenaustausch vereinbart",
+        "dek": "",
+        "facts": [],
+        "body": [],
+        "context": ""
       }
     },
     "versions": [
+      {
+        "at": "2026-11-12T19:10:42.444Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following peace talks in Abu Dhabi, according to Time Magazine and Al Jazeera.",
+            "body": [
+              "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following peace talks in Abu Dhabi, according to Time Magazine and Al Jazeera.",
+              "The discussions in Abu Dhabi produced no breakthrough in the conflict, according to AP News and Radio Free Europe/Radio Liberty.",
+              "Ukrainian President Volodymyr Zelenskyy reported significant disruptions to the Starshield satellite communications service, according to ABC Australia and Politico Europe.",
+              "These restrictions are affecting the ability of military units to intercept Russian drones, according to BBC and Politico Europe.",
+              "Russian President Putin suggests no Ukraine compromise in meeting with US envoys, according to Courthouse News and CNA.",
+              "Ukrainian President Volodymyr Zelenskyy warned European leaders against US-Russia discussions, according to Africanews.",
+              "The first trilateral talks between Ukraine, the US and Russia in nine months ended with an agreement on exchanging prisoners, according to DW and Africanews.",
+              "US envoys are scheduled to meet with Vladimir Putin on Thursday and Volodymyr Zelenskyy on Friday, following U.S.-mediated talks in Abu Dhabi that resulted in an agreement on a prisoner exchange, according to NPR."
+            ],
+            "facts": [
+              "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks",
+              "Abu Dhabi talks produced no breakthrough in the conflict and agreed on prisoner exchange",
+              "Ukrainian President Volodymyr Zelenskyy reported significant disruptions to the Starshield satellite communications service",
+              "These restrictions are affecting the ability of military units to intercept Russian drones",
+              "Russian President Putin suggests no Ukraine compromise in meeting with US envoys",
+              "Prisoner exchange agreed at trilateral Abu Dhabi talks between Ukraine, US and Russia"
+            ],
+            "title": "US envoys Jared Kushner and Steve Witkoff meet Putin in Moscow amid Starlink disruptions",
+            "context": "US diplomatic envoys have been engaging with Russian leadership following previous peace talks, while Ukraine has reported intermittent disruptions to satellite communications services used by its military. The Abu Dhabi talks were the first trilateral talks between Ukraine, the US and Russia in nine months.",
+            "imageCaption": ""
+          }
+        }
+      },
       {
         "at": "2026-11-12T18:09:42.448Z",
         "reason": "2 new update(s)",
@@ -159,8 +197,7 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-11-12T19:10:42.444Z"
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -203,62 +240,120 @@
   },
   "updates": [
     {
-      "id": "u-1794510597000-2r1i",
-      "at": "2026-11-12T19:09:57.000Z",
-      "kind": "context",
+      "id": "u-1794522829000-lsib",
+      "at": "2026-11-12T22:33:49.000Z",
+      "kind": "reaction",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Starshield speed restrictions return in Ukraine",
-          "body": "Starshield speed restrictions have returned in Ukraine, according to The Kyiv Independent and Ars Technica. Ars Technica reports that Ukraine suspects the speed limits are intended to help Russia in peace talks."
+          "headline": "Starlink disruptions reported in Ukraine amid envoy visits",
+          "body": "Ukraine reports fresh Starlink service disruptions. Ukrainian officials suggest the interruptions could be a pressure tactic. The Hill notes bipartisan concern over military-grade satellite access restrictions."
         },
         "fr": {
-          "headline": "Le retour des restrictions de vitesse de Starshield en Ukraine",
-          "body": "Les restrictions de vitesse de Starshield sont de retour en Ukraine, selon The Kyiv Independent et Ars Technica. Ars Technica rapporte que l'Ukraine soupçonne que ces limitations de vitesse visent à favoriser la Russie dans le cadre de pourparlers de paix."
+          "headline": "Des perturbations Starlink signalées en Ukraine à l'occasion de visites d'envoyés",
+          "body": "L'Ukraine signale de nouvelles perturbations du service Starlink. Des responsables ukrainiens suggèrent que ces interruptions pourraient constituer une tactique de pression. The Hill souligne des inquiétudes bipartisanes concernant les restrictions d'accès aux satellites militaires."
         },
         "es": {
-          "headline": "Reglas de velocidad de Starshield vuelven en Ucrania",
-          "body": "Las restricciones de velocidad de Starshield han regresado en Ucrania, según The Kyiv Independent y Ars Technica. Ars Technica informa que Ucrania sospecha que los límites de velocidad están destinados a ayudar a Rusia en las conversaciones de paz."
+          "headline": "Interrupciones de Starlink informadas en Ucrania en medio de visitas de enviados",
+          "body": "Ucrania informa de nuevas interrupciones en el servicio Starlink. Funcionarios ucranianos sugieren que las interrupciones podrían ser una táctica de presión. The Hill señala preocupación bipartidista por las restricciones al acceso a satélites militares."
         },
         "it": {
-          "headline": "Ritorno dei limiti di velocità Starshield in Ucraina",
-          "body": "I limiti di velocità Starshield sono tornati in Ucraina, secondo The Kyiv Independent e Ars Technica. Ars Technica riporta che l'Ucraina sospetta che i limiti di velocità siano intesi per aiutare la Russia nei negoziati di pace."
-        },
-        "pt": {
-          "headline": "Restrições de velocidade Starshield regressam na Ucrânia",
-          "body": "As restrições de velocidade Starshield regressaram na Ucrânia, segundo The Kyiv Independent e Ars Technica. A Ars Technica reporta que a Ucrânia suspeita que os limites de velocidade visam ajudar a Rússia nas negociações de paz."
-        },
-        "de": {
-          "headline": "Geschwindigkeitsbeschränkungen von Starshield kehren in der Ukraine zurück",
-          "body": "Laut The Kyiv Independent und Ars Technica sind die Geschwindigkeitsbeschränkungen von Starshield in der Ukraine zurückgekehrt. Ars Technica berichtet, dass die Ukraine vermutet, die Geschwindigkeitsbegrenzungen seien dazu gedacht, Russland bei Friedensgesprächen zu helfen."
-        },
-        "ja": {
-          "headline": "ウクライナでStarshieldの速度制限が再開",
-          "body": "Starshieldの速度制限がウクライナで再開されたと、Kyiv IndependentとArs Technicaが報じています。Ars Technicaは、ウクライナが速度制限がロシアの和平交渉を支援するためのものだと疑っていると報告しています。"
+          "headline": "Interruzioni di Starlink segnalate in Ucraina durante le visite dell'inviato",
+          "body": "L'Ucraina segnala nuove interruzioni del servizio Starlink. Le autorità ucraine suggeriscono che le interruzioni potrebbero essere una tattica di pressione. The Hill evidenzia preoccupazioni bipartisan sulle restrizioni all'accesso a satelliti militari."
         },
         "zh": {
-          "headline": "乌克兰恢复Starshield限速",
-          "body": "据《基辅独立报》和Ars Technica报道，乌克兰已恢复Starshield限速。Ars Technica报道称，乌克兰怀疑这些限速旨在帮助俄罗斯进行和平谈判。"
+          "headline": "乌克兰据报在特使到访期间出现星链服务中断",
+          "body": "乌克兰报告星链服务出现新一轮中断。乌克兰官员暗示，这些中断可能是一种施压手段。《国会山报》注意到两党对军用级卫星接入限制的担忧。"
+        },
+        "pt": {
+          "headline": "Interrupções da Starlink relatadas na Ucrânia durante visitas de enviados",
+          "body": "A Ucrânia relata novas interrupções no serviço Starlink. Autoridades ucranianas sugerem que as interrupções podem ser uma tática de pressão. O The Hill destaca a preocupação bipartidária quanto às restrições ao acesso a satélites de nível militar."
+        },
+        "de": {
+          "headline": "Starlink-Störungen in der Ukraine während Besuchen von Sondergesandten gemeldet",
+          "body": "Die Ukraine meldet erneute Störungen des Starlink-Dienstes. Ukrainische Beamte deuten an, dass die Unterbrechungen ein Druckmittel sein könnten. The Hill berichtet von parteiübergreifender Besorgnis über Beschränkungen für den Zugang zu Satelliten militärischer Qualität."
+        },
+        "ja": {
+          "headline": "ウクライナでスターリンク通信障害、特使訪問のさなか",
+          "body": "ウクライナはスターリンクの新たな通信障害を報告した。ウクライナ当局者は、この中断が圧力戦術である可能性があると示唆した。ザ・ヒルは、軍用級衛星通信へのアクセス制限をめぐる超党派の懸念を指摘している。"
         },
         "ko": {
-          "headline": "우크라이나에 스타쉬ieldspeed 제한 재도입",
-          "body": "우크라이나에 스타쉬ieldspeed 제한이 재도입된 것으로, 키이우 인디펜던트와 아스 테크니카가 보도했다. 아스 테크니카는 우크라이나가 속도 제한이 평화 협상에서 러시아에 도움이 되도록 의도된 것으로 의심하고 있다고 전했다."
+          "headline": "특사 방문 가운데 우크라이나서 스타링크 중단 보고",
+          "body": "우크라이나가 스타링크 서비스 중단이 새롭게 보고됐다고 밝혔다. 우크라이나 당국자들은 이번 중단이 압박 전술일 수 있다고 말했다. 더 힐은 군사급 위성 접근 제한에 대한 양당의 우려를 전했다."
         }
       },
       "sources": [
         {
-          "outlet": "Ars Technica",
-          "title": "Ukraine says it can’t stop Russian strikes because Starshield is limited again",
+          "outlet": "Semafor",
+          "title": "Ukraine says its facing Starlink disruptions again",
+          "url": "https://www.semafor.com/article/11/12/2026/ukraine-says-its-facing-starlink-disruptions-again",
+          "publishedAt": "2026-11-12T22:33:49.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Shaheen, Tillis demand probe into Ukraine Starshield restrictions",
+          "url": "https://thehill.com/homenews/senate/6217524-shaheen-tillis-ukraine-starshield-probe/",
+          "publishedAt": "2026-11-12T22:29:30.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-12T19:09:57.000Z",
+      "id": "u-1794510597000-2r1i",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Laut The Kyiv Independent und Ars Technica sind die Geschwindigkeitsbeschränkungen von Starshield in der Ukraine zurückgekehrt. Ars Technica berichtet, dass die Ukraine vermutet, die Geschwindigkeitsbegrenzungen seien dazu gedacht, Russland bei Friedensgesprächen zu helfen.",
+          "headline": "Geschwindigkeitsbeschränkungen von Starshield kehren in der Ukraine zurück"
+        },
+        "en": {
+          "body": "Starshield speed restrictions have returned in Ukraine, according to The Kyiv Independent and Ars Technica. Ars Technica reports that Ukraine suspects the speed limits are intended to help Russia in peace talks.",
+          "headline": "Starshield speed restrictions return in Ukraine"
+        },
+        "es": {
+          "body": "Las restricciones de velocidad de Starshield han regresado en Ucrania, según The Kyiv Independent y Ars Technica. Ars Technica informa que Ucrania sospecha que los límites de velocidad están destinados a ayudar a Rusia en las conversaciones de paz.",
+          "headline": "Reglas de velocidad de Starshield vuelven en Ucrania"
+        },
+        "fr": {
+          "body": "Les restrictions de vitesse de Starshield sont de retour en Ukraine, selon The Kyiv Independent et Ars Technica. Ars Technica rapporte que l'Ukraine soupçonne que ces limitations de vitesse visent à favoriser la Russie dans le cadre de pourparlers de paix.",
+          "headline": "Le retour des restrictions de vitesse de Starshield en Ukraine"
+        },
+        "it": {
+          "body": "I limiti di velocità Starshield sono tornati in Ucraina, secondo The Kyiv Independent e Ars Technica. Ars Technica riporta che l'Ucraina sospetta che i limiti di velocità siano intesi per aiutare la Russia nei negoziati di pace.",
+          "headline": "Ritorno dei limiti di velocità Starshield in Ucraina"
+        },
+        "ja": {
+          "body": "Starshieldの速度制限がウクライナで再開されたと、Kyiv IndependentとArs Technicaが報じています。Ars Technicaは、ウクライナが速度制限がロシアの和平交渉を支援するためのものだと疑っていると報告しています。",
+          "headline": "ウクライナでStarshieldの速度制限が再開"
+        },
+        "ko": {
+          "body": "우크라이나에 스타쉬ieldspeed 제한이 재도입된 것으로, 키이우 인디펜던트와 아스 테크니카가 보도했다. 아스 테크니카는 우크라이나가 속도 제한이 평화 협상에서 러시아에 도움이 되도록 의도된 것으로 의심하고 있다고 전했다.",
+          "headline": "우크라이나에 스타쉬ieldspeed 제한 재도입"
+        },
+        "pt": {
+          "body": "As restrições de velocidade Starshield regressaram na Ucrânia, segundo The Kyiv Independent e Ars Technica. A Ars Technica reporta que a Ucrânia suspeita que os limites de velocidade visam ajudar a Rússia nas negociações de paz.",
+          "headline": "Restrições de velocidade Starshield regressam na Ucrânia"
+        },
+        "zh": {
+          "body": "据《基辅独立报》和Ars Technica报道，乌克兰已恢复Starshield限速。Ars Technica报道称，乌克兰怀疑这些限速旨在帮助俄罗斯进行和平谈判。",
+          "headline": "乌克兰恢复Starshield限速"
+        }
+      },
+      "sources": [
+        {
           "url": "https://arstechnica.com/tech-policy/2026/11/ukraine-says-spacex-starshield-is-restricted-again-spacex-claims-it-isnt/",
+          "title": "Ukraine says it can’t stop Russian strikes because Starshield is limited again",
+          "outlet": "Ars Technica",
           "publishedAt": "2026-11-12T19:09:57.000Z"
         },
         {
-          "outlet": "The Kyiv Independent",
-          "title": "Ukraine war latest: Starshield speed restrictions return, Zelensky says",
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRGhQWVVLZ0luNFY4cHlNa19fVGVFQWVHZXB2WnFCV0JaM1FHTUltLWtUSW5zM2V5VlpkWWphU29STnpXbkFSUHd2bl8xN3FEX0dZLXJSa3h3bkZFNVpoYkpYNUM1SjNPT1ZYa3d0TWJvQ05sU3ZuaHJYRDlEVDcxb2p3VzE2VW8wSWhIekRwMjFSYVh5WmtwQzU3bF9fSkk?oc=5",
+          "title": "Ukraine war latest: Starshield speed restrictions return, Zelensky says",
+          "outlet": "The Kyiv Independent",
           "publishedAt": "2026-11-12T18:58:32.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-12T19:05:17.000Z",
@@ -937,14 +1032,48 @@
     "https://news.google.com/rss/articles/CBMinAFBVV95cUxQeVV3X1BzOWx3UU9VR014QVVGbW5JY0g5amxBWTZ3M1pOM25yT0RONVl4ZlJObzhFT0UwSk9MRzkwMkhVVFl1dm1LZURjaXZCcGxHSEJnWFFUd0J6WXBjX21oNUlEcEQwYWRQWmI3eDE5aUw5VjE5aU0tT1FSZTg5NWVKNUxBWVNGSmh4UWx4Szk3V19SWDQxX296em4?oc=5",
     "https://arstechnica.com/tech-policy/2026/11/ukraine-says-spacex-starshield-is-restricted-again-spacex-claims-it-isnt/",
     "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdU1FRmpodS1aU3VfVEc4b0ZYaWRSN2VaSW1GNXFEQ0QzZldBMmJGZTI2YTRSZXpMTDd4UWx6MG9FYnNVanJqQlVJMkpLdnpIMVVtM05ZYWZ4Qmw2c3oxaG9JSXRBeklLaUV1VE5velhqVkJjRGpYanNGWUNfRlJHeWlabkd5LU9BMjNjRWxYT0Fmb3JBbU1tY1hxS0RFWGtwdGlUV0N0R0JVY0FBbWpUZnFKQlVBdXYt?oc=5",
-    "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRGhQWVVLZ0luNFY4cHlNa19fVGVFQWVHZXB2WnFCV0JaM1FHTUltLWtUSW5zM2V5VlpkWWphU29STnpXbkFSUHd2bl8xN3FEX0dZLXJSa3h3bkZFNVpoYkpYNUM1SjNPT1ZYa3d0TWJvQ05sU3ZuaHJYRDlEVDcxb2p3VzE2VW8wSWhIekRwMjFSYVh5WmtwQzU3bF9fSkk?oc=5"
+    "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRGhQWVVLZ0luNFY4cHlNa19fVGVFQWVHZXB2WnFCV0JaM1FHTUltLWtUSW5zM2V5VlpkWWphU29STnpXbkFSUHd2bl8xN3FEX0dZLXJSa3h3bkZFNVpoYkpYNUM1SjNPT1ZYa3d0TWJvQ05sU3ZuaHJYRDlEVDcxb2p3VzE2VW8wSWhIekRwMjFSYVh5WmtwQzU3bF9fSkk?oc=5",
+    "https://www.tagesschau.de/ausland/europa/epg-ukraine-usa-europa-100.html",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNaWdyUWhPQnRiR210eElwazFOZ2pyWWgxN2FWX09VU0ZSZUpFcVlweFllV2E4aF9CcXpwQkhybkVzMjkwdTBOY3JTRFBXdlZBOXVvU2l5cjBKX1Znel9XR2JJb0gwbVlQOV9TenpJUkY2ZG1YcXEtRWdNWTQ0MDJTM3pQdnRHSkE0WXlWQjA5Y2JXQkpUN2hoSkkyTXhrTE1FdnUyblFjWDdqWHZTMGM1LVU4V2oxZnpqZzBj?oc=5",
+    "https://www.spiegel.de/ausland/krieg-gegen-ukraine-europaeer-formulieren-bedingungen-fuer-sicherheitsgespraeche-a-04895725-09d3-489a-9c25-368ec95b9467#ref=rss",
+    "https://www.lemonde.fr/en/international/article/2026/11/13/us-and-ukraine-say-europe-will-join-next-round-of-talks-with-russia-as-putin-sticks-to-hardline-stance_6779236_4.html",
+    "https://www.welt.de/politik/ausland/article6af64bb850175c81de7a47da/us-unterhaendler-putin-bereit-fuer-europaeer-am-verhandlungstisch-selenskyj-sieht-das-als-fortschritt.html",
+    "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTzhlX2t3bUdCNE5hRllCM1JXX1cxclVjVTdVZXA1WlpNUG9DX1dGZWNsWm8zc3htUktFWEp1cW13TjA5QWtrSVJDajFWbUdWY3RLcHJoblZXaEs4UEpzOU85QmRwWFl0UUxMdWI4eHljbm1jRXZEZzZCTWRoSnQ0TkJoRnJkRGtXNHc?oc=5",
+    "https://www.aljazeera.com/news/2026/11/12/russian-court-jails-rights-lawyer-for-12-years-on-treason-charge?traffic_source=rss",
+    "https://www.semafor.com/article/11/12/2026/ukraine-says-its-facing-starlink-disruptions-again",
+    "https://thehill.com/homenews/senate/6217524-shaheen-tillis-ukraine-starshield-probe/",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbzRyb0FHcGx5SWhhRFVTOUcyaG83Q0NoXzFYN2l5LXBkaUZLTEZPWWpiR1FNTUR4ZWFueXlPUEtKbnE5U3VxTzhITm1pa19ZQzBkeldseDdYeFZnN2tJUGJlOXJUdUU1eDJ6aUs5c0VTT3g1dWswcEE3c0s4Z2kzTC1keEtBaGlyTkh2RkxCVDY?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxOYlM3dUNSLV8wYmw1TXZDVWVTR0pWcFZ1MEprWWxHSDIzZ2ctZEptS0NJY3JBTmVUY2JLUE5Vb1NpSzRMWjR2M1pia1VqT2xhbGpsS3pvM0t5YXJkckVUWjd4Rnp3V0Vscm9HR3VvQ2dlUnFUd1pSbmxjTlI5ZmdvTm1DWU9tOHl6MW1oVHA2b0I4WEstb2pLNUdOU3FXdw?oc=5",
+    "https://www.dw.com/en/eu-leaders-tussle-over-who-to-send-to-ukraine-russia-peace-talks/a-79935468?maca=en-rss-en-all-1573-rdf",
+    "https://www.kyivpost.com/post/89969",
+    "https://www.spiegel.de/ausland/ukrainekrieg-witkoff-kuendigt-beteiligung-europas-an-verhandlungen-an-a-aa8619e7-7ea6-4b1d-bf03-3bf4cf42e0a1#ref=rss",
+    "https://thehill.com/policy/international/6217318-macron-europe-ukraine-support/",
+    "https://www.france24.com/en/across-africa-tunisians-drawn-into-russia-s-war-with-ukraine",
+    "https://www.nytimes.com/2026/11/12/world/russia-novaya-gazeta-nvidia-gaza.html",
+    "https://www.kyivpost.com/post/89967",
+    "https://www.welt.de/politik/ausland/article6af61e5dd03b96b78bace121/quantum-systems-deutscher-drohnenhersteller-meldet-hackerangriff-durch-feindliche-akteure.html",
+    "https://www.politico.eu/article/ai-and-ukraine-to-dominate-eu-leaders-talks-live-updates/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.welt.de/politik/ausland/article6af61a9450175c81de7a45e2/ukraine-gespraeche-in-einer-frage-sieht-merz-jetzt-putin-am-zug-kreml-vergleicht-europaeer-mit-spinnen-in-einem-glas.html",
+    "https://www.aljazeera.com/news/2026/11/12/regional-security-dominates-european-talks-in-dublin-amid-hybrid-attacks?traffic_source=rss",
+    "https://www.politico.eu/article/vladimir-putin-open-to-europe-joining-ukraine-peace-talks-steve-witkoff/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxQN2M0T2NkRzRNdHp6NS1ZcENMcmFSTHBDeDB2ZHgtNVd1LXFEYlgzNlVjSXpxaUstazNfc3o2R29VZWNUZmpla3lncjA0OEYtbXNMSFRBSl9aenpDR1dCeDdSVDVfbWR3ZXBYQm9mSzNCaF91ZE8zRktCdEN0VmZWT3dfZlF2dFY4WlVLQWZUWWpVZUtLNjdZdGxTRXFnQ2lsZWMxbWZNZw?oc=5",
+    "https://www.bbc.co.uk/news/articles/cmn0d33zz34zo?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVkVCdC1mdV9IOWFhWmRQN1JlcmM0NEFFOVZaVVhvWHFyTmJSVGM4cGtEQ3FlYVlNazQ0cjVwVUxIcnAzdVFIUV94b1ZqU2M0ME54ZUJJbW1hcThzR0N6b2VRcDZIQWhDYjAtcUp1Zi0xZWk2Q2lVY0FGbTNIZ19ZMXRjN3F5d2UxRkhjLThBWFFHTFQ2ZXQxNnM5dGUzUEdaYVdxclE4OWRrbVhTWkN1VG5oVU9UTHBDdmxlSFNTbE1UUVZiam9zV1lTb2dGbGpidGRqVw?oc=5",
+    "https://www.kyivpost.com/post/89965",
+    "https://www.srf.ch/news/international/ukraine/verhandlungen-zu-ukraine-krieg-ueber-europa-kann-nicht-ohne-europa-gesprochen-werden",
+    "https://www.france24.com/en/zelensky-warns-europe-over-us-russia-talks-on-broader-security-arrangements",
+    "https://www.kyivpost.com/post/89964",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWjJJc3NzaWxIUWtVbEpCUW5FU0RsUDJXT01kNmwyR01EN1BKMDNvMzM0ajdyd0NNcG12WXc5V3YtYUpEMGx1eTJ4czg0bV83TkpFMnA0Q1laZ0xQeGZOb19nSWk1SGp3RkFoQUt6RXJURU9FcFQ2STlTTE5IVjFyU3M5RXBaamxVcWthN21QSDFPR2xxRnBwQmQzNFgzVmw4ZFlXdURpSjI2djBkaUxpWGo2aw?oc=5",
+    "https://www.lemonde.fr/en/sports/article/2026/11/12/finland-blocks-visas-for-russian-athletes-ahead-of-world-figure-skating-championships_6778974_9.html",
+    "https://www.straitstimes.com/world/europe/nato-chief-tells-afp-very-difficult-to-say-if-ukraine-peace-any-closer",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRHN3SGVncFJCZ09IYXFWYkhXcWZWTHI4QUxDbExOUzZEbjlWc2ZVVjJQVFlNbVJ6dFdwWVBROVBUSkRxd0NfU3lyYjNlMjZXRzdBUUFqcjV0bGNNekxtOFl2d0ItcHMyanR1V3hIYWYwQnJid2ZiNWY1Wml6bFcwTHFoQ2dWaktvbHJ4QWZsZXNhRTdfQmN1WUNUcUJfUHdBaURnYmNpSzMzWU5n?oc=5"
   ],
   "startedAt": "2026-11-12T15:07:45.391Z",
-  "updatedAt": "2026-11-12T19:27:56.122Z",
+  "updatedAt": "2026-11-13T00:47:00.627Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "us-envoys-moscow-visit-and-ukraine-peace-negotiations",
-  "sourceCount": 22,
+  "sourceCount": 24,
   "seenHeadlines": [
     "Kyiv reports new Starshield network restrictions amid envoys' Moscow visit",
     "Russia and Iran criticise US Caspian task force over sanction evasion",
