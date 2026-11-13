@@ -8,7 +8,7 @@
     ],
     "createdBy": "bots/live.mjs",
     "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "2026-us-midterm-election-aftermath",
   "stats": {
@@ -131,41 +131,10 @@
   "status": "live",
   "article": {
     "slug": "2026-us-midterm-election-aftermath",
-    "updatedAt": "2026-11-13T08:49:51.496Z",
     "reason": "1 new update(s)",
     "locales": {
-      "en": {
-        "title": "Vote counting continues after US midterms as Republicans select new leadership",
-        "dek": "Election officials count remaining ballots as parties adjust leadership after the midterms.",
-        "facts": [
-          "Democrat Eric Jones won California’s 4th Congressional District against incumbent Mike Thompson, according to Decision Desk HQ.",
-          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
-          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to AP News and The Washington Post.",
-          "The Republican Party chose Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
-          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill."
-        ],
-        "body": [
-          "Democrat Eric Jones will win the race for California’s 4th Congressional District, according to Decision Desk HQ projections. Jones ousted incumbent Representative Mike Thompson in a single-party battle after the contest remained uncalled since Election Day. Election officials are still counting ballots across multiple states over a week after the midterm elections, according to G1 and PBS. There are 17 races that remain without a final result, leaving control of several seats undecided.",
-          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, flipping another House seat to the Democratic Party according to The Hill and AP News. Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
-          "The Republican Party chose Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeats in the 2026 midterm elections. House Democratic leaders also faced criticism after surprise Republican victories on the floor disrupted transition plans, according to Axios.",
-          "Senator Chris Van Hollen announced that he will challenge Chuck Schumer for Senate majority leader, accusing Schumer of siding with the American Israel Public Affairs Committee according to Axios and Al Jazeera. Meanwhile, Democratic lawmakers and presidential hopefuls gathered in Denver to debate the party's future and 2028 strategy without a clear frontrunner, according to Fox News.",
-          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reported that the survey shows nearly half of MAGA Trump supporters view the movement as a loser following the electoral results.",
-          "President Donald Trump stated that the United States does not need an Iran deal, according to The Jerusalem Post. Vice President JD Vance distanced himself from Trump's position after the Republican midterm election losses, according to the same report. Representative Hakeem Jeffries subsequently criticized the military actions against Iran as a reckless war of choice and called for changes to US military aid to Israel.",
-          "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint regarding platform management. The court found no evidence of deliberate election bias by the company, according to DW and The Hindu."
-        ],
-        "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within both parties and international legal actions regarding platform management during the vote.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Stimmenauszählung nach US-Zwischenwahlen dauert an, Republikaner wählen neue Führung",
         "dek": "Wahlbeamte zählen verbleibende Stimmzettel aus, während die Parteien nach den Zwischenwahlen ihre Führung neu aufstellen.",
-        "facts": [
-          "Demokrat Eric Jones gewann laut Decision Desk HQ das vierte Kongresswahlrecht in Kalifornien gegen den bisherigen Mandatsinhaber Mike Thompson.",
-          "Der Republikaner Greg Murphy räumte laut The Hill und AP News seine Niederlage bei der Wiederwahl gegen den Demokraten Raymond Smith im dritten Kongresswahlbezirk von North Carolina ein.",
-          "Scott Colom bezwang laut AP News und The Washington Post die amtierende Republikanerin Cindy Hyde-Smith und errang den US-Senatssitz für Mississippi.",
-          "Die Republikanische Partei wählte Jim Jordan und John Thune laut der New York Times zu ihren neuen Führern im Repräsentantenhaus.",
-          "Einer neuen Umfrage von Politico zufolge gaben 45 Prozent der MAGA-Unterstützer von Präsident Trump an, die Bewegung sei der Verlierer der Zwischenwahlen im vergangenen Jahr gewesen, berichtet The Hill."
-        ],
         "body": [
           "Demokrat Eric Jones gewinnt Prognosen von Decision Desk HQ zufolge das Rennen um Kaliforniens vierten Kongresswahlbezirk. Jones setzte sich in einem parteiinternen Duell gegen den bisherigen Abgeordneten Mike Thompson durch, nachdem das Rennen seit dem Wahltag offen geblieben war. Wahlbeamte zählen in mehreren Bundesstaaten auch eine Woche nach den Zwischenwahlen noch Stimmzettel aus, so G1 und PBS. In 17 Rennen steht ein Endergebnis weiterhin aus, wodurch die Kontrolle über mehrere Sitze unentschieden ist.",
           "Der Republikaner Greg Murphy räumte seine Niederlage im Rennen um die Wiederwahl gegen den Demokraten Raymond Smith im dritten Kongresswahlbezirk von North Carolina ein und verhalf den Demokraten damit laut The Hill und AP News zu einem weiteren Sitzgewinn im Repräsentantenhaus. Scott Colom besiegte mehreren Prognosen zufolge die amtierende Republikanerin Cindy Hyde-Smith und gewann den US-Senatssitz für Mississippi. Dieser Sieg verschafft den Demokraten laut AP News und The Washington Post eine Mehrheit im Senat.",
@@ -175,7 +144,37 @@
           "Präsident Donald Trump erklärte laut der Jerusalem Post, die Vereinigten Staaten benötigten kein Iran-Abkommen. Vizepräsident JD Vance distanzierte sich dem gleichen Bericht zufolge nach den Niederlagen der Republikaner bei den Zwischenwahlen von Trumps Position. Der Abgeordnete Hakeem Jeffries kritisierte die Militäraktionen gegen den Iran daraufhin als rücksichtslosen Entscheidungskrieg und forderte Änderungen der US-Militärhilfe für Israel.",
           "Brasiliens Wahlgericht verhängte eine Geldbuße gegen Meta, nachdem die Koalition von Präsident Lula eine Beschwerde über das Plattformmanagement eingereicht hatte. Das Gericht fand laut DW und The Hindu keine Beweise für eine vorsätzliche parteiische Beeinflussung der Wahlen durch das Unternehmen."
         ],
+        "facts": [
+          "Demokrat Eric Jones gewann laut Decision Desk HQ das vierte Kongresswahlrecht in Kalifornien gegen den bisherigen Mandatsinhaber Mike Thompson.",
+          "Der Republikaner Greg Murphy räumte laut The Hill und AP News seine Niederlage bei der Wiederwahl gegen den Demokraten Raymond Smith im dritten Kongresswahlbezirk von North Carolina ein.",
+          "Scott Colom bezwang laut AP News und The Washington Post die amtierende Republikanerin Cindy Hyde-Smith und errang den US-Senatssitz für Mississippi.",
+          "Die Republikanische Partei wählte Jim Jordan und John Thune laut der New York Times zu ihren neuen Führern im Repräsentantenhaus.",
+          "Einer neuen Umfrage von Politico zufolge gaben 45 Prozent der MAGA-Unterstützer von Präsident Trump an, die Bewegung sei der Verlierer der Zwischenwahlen im vergangenen Jahr gewesen, berichtet The Hill."
+        ],
+        "title": "Stimmenauszählung nach US-Zwischenwahlen dauert an, Republikaner wählen neue Führung",
         "context": "Die US-Zwischenwahlen 2026 führten zu mehreren unentschiedenen Kongressrennen, was interne Führungswechsel in beiden Parteien sowie internationale juristische Schritte bezüglich des Plattformmanagements während der Stimmenabgabe zur Folge hatte."
+      },
+      "en": {
+        "dek": "Election officials count remaining ballots as parties adjust leadership after the midterms.",
+        "body": [
+          "Democrat Eric Jones will win the race for California’s 4th Congressional District, according to Decision Desk HQ projections. Jones ousted incumbent Representative Mike Thompson in a single-party battle after the contest remained uncalled since Election Day. Election officials are still counting ballots across multiple states over a week after the midterm elections, according to G1 and PBS. There are 17 races that remain without a final result, leaving control of several seats undecided.",
+          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, flipping another House seat to the Democratic Party according to The Hill and AP News. Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
+          "The Republican Party chose Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeats in the 2026 midterm elections. House Democratic leaders also faced criticism after surprise Republican victories on the floor disrupted transition plans, according to Axios.",
+          "Senator Chris Van Hollen announced that he will challenge Chuck Schumer for Senate majority leader, accusing Schumer of siding with the American Israel Public Affairs Committee according to Axios and Al Jazeera. Meanwhile, Democratic lawmakers and presidential hopefuls gathered in Denver to debate the party's future and 2028 strategy without a clear frontrunner, according to Fox News.",
+          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reported that the survey shows nearly half of MAGA Trump supporters view the movement as a loser following the electoral results.",
+          "President Donald Trump stated that the United States does not need an Iran deal, according to The Jerusalem Post. Vice President JD Vance distanced himself from Trump's position after the Republican midterm election losses, according to the same report. Representative Hakeem Jeffries subsequently criticized the military actions against Iran as a reckless war of choice and called for changes to US military aid to Israel.",
+          "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint regarding platform management. The court found no evidence of deliberate election bias by the company, according to DW and The Hindu."
+        ],
+        "facts": [
+          "Democrat Eric Jones won California’s 4th Congressional District against incumbent Mike Thompson, according to Decision Desk HQ.",
+          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
+          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to AP News and The Washington Post.",
+          "The Republican Party chose Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
+          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill."
+        ],
+        "title": "Vote counting continues after US midterms as Republicans select new leadership",
+        "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within both parties and international legal actions regarding platform management during the vote.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -495,7 +494,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-13T08:49:51.496Z"
   },
   "endedAt": null,
   "locales": {
@@ -538,62 +538,92 @@
   },
   "updates": [
     {
-      "id": "u-1794553363000-pote",
-      "at": "2026-11-13T07:02:43.000Z",
+      "id": "u-1794569520000-wlz8",
+      "at": "2026-11-13T11:32:00.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Democrat Eric Jones wins California House race",
-          "body": "Democrat Eric Jones will win the race for California’s 4th Congressional District, according to Decision Desk HQ projections. Jones ousted incumbent Representative Mike Thompson in a single-party battle after the race went uncalled since Election Day."
-        },
-        "de": {
-          "headline": "Demokrat Eric Jones gewinnt US-Repräsentantenhauswahl in Kalifornien",
-          "body": "Demokrat Eric Jones wird die Wahl im 4. Kongresswahlbezirk Kaliforniens gewinnen, wie Prognosen von Decision Desk HQ zeigen. Jones setzte sich nach einem parteiinternen Duell gegen den amtierenden Abgeordneten Mike Thompson durch, nachdem das Rennen seit dem Wahltag unentschieden geblieben war."
-        },
-        "it": {
-          "headline": "Il democratico Eric Jones vince la corsa per la Camera in California",
-          "body": "Il democratico Eric Jones vincerà la corsa per il quarto distretto congressuale della California, secondo le proiezioni di Decision Desk HQ. Jones ha sconfitto il deputato uscente Mike Thompson in una sfida a partito unico, dopo che il risultato era rimasto in sospeso dalle elezioni."
-        },
-        "es": {
-          "headline": "El demócrata Eric Jones gana la contienda por la Cámara de Representantes en California",
-          "body": "El demócrata Eric Jones ganará la contienda por el cuarto distrito congresional de California, según las proyecciones de Decision Desk HQ. Jones desbancó al representante en funciones Mike Thompson en un duelo de partido único, después de que el resultado quedara sin definir desde el día de las elecciones."
+          "headline": "Alaskans vote to keep ranked choice voting and open primaries",
+          "body": "Alaskans have rejected another effort to repeal the Last Frontier’s ranked choice voting system and open primaries, Decision Desk HQ projects. The measure was defeated after voters retained the voting system adopted in 2020."
         },
         "fr": {
-          "headline": "Le démocrate Eric Jones remporte une course à la Chambre en Californie",
-          "body": "Le démocrate Eric Jones remportera l'élection dans la 4e circonscription congressionnelle de Californie, selon les projections de Decision Desk HQ. Jones a battu le représentant sortant Mike Thompson lors d'un duel entre candidats du même parti, après que le scrutin est resté indécis depuis le jour de l'élection."
-        },
-        "zh": {
-          "headline": "民主党人埃里克·琼斯赢得加州众议院议席",
-          "body": "根据“决策台总部”（Decision Desk HQ）的预测，民主党人埃里克·琼斯将赢得加州第四国会选区的选举。在选举日过后迟迟未决的这场单一政党对决中，琼斯击败了现任众议员迈克·汤普逊。"
-        },
-        "ko": {
-          "headline": "민주당 에릭 존스, 캘리포니아 하원의원 선거 승리",
-          "body": "디시전 데스크 HQ의 예측에 따르면, 민주당 에릭 존스 후보가 캘리포니아 제4선거구 하원의원 선거에서 승리할 것으로 보인다. 선거일 이후 당선자가 확정되지 않았던 이번 선거에서 존스 후보는 현역인 마이크 톰슨 의원을 꺾고 승리를 거뒀다."
-        },
-        "ja": {
-          "headline": "民主党のエリック・ジョーンズ氏、カリフォルニア州下院選で勝利",
-          "body": "ディシジョン・デスクHQの予測によると、カリフォルニア州第4選挙区の下院選は民主党のエリック・ジョーンズ氏が勝利する見通しとなった。投票日以降、結果が未確定となっていた同選挙区で、ジョーンズ氏は現職のマイク・トンプソン下院議員を破った。"
-        },
-        "pt": {
-          "headline": "O democrata Eric Jones vence a corrida à Câmara dos Representantes na Califórnia",
-          "body": "O democrata Eric Jones vencerá a corrida ao 4.º Distrito Congressional da Califórnia, de acordo com as projeções da Decision Desk HQ. Jones derrotou o representante incumbente Mike Thompson numa disputa de partido único, após o resultado ter permanecido por definir desde o dia das eleições."
+          "headline": "Les Alaskains votent pour conserver le vote par classement et les primaires ouvertes",
+          "body": "Les Alaskains ont rejeté une nouvelle tentative de repeindre le système de vote par classement et les primaires ouvertes de l'État du Dernier Bord, selon Decision Desk HQ. La mesure a été défaite après que les électeurs aient maintenu le système de vote adopté en 2020."
         }
       },
       "sources": [
         {
-          "outlet": "Dawn",
-          "title": "Democratic US Senator Chris Van Hollen announces run for US Senate majority leader, challenging Schumer",
+          "outlet": "The Hill",
+          "title": "Alaskans vote to keep ranked choice voting, open primaries",
+          "url": "https://thehill.com/homenews/campaign/6185752-alaska-ranked-choice-voting/",
+          "publishedAt": "2026-11-13T11:32:00.000Z"
+        },
+        {
+          "outlet": "Semafor",
+          "title": "Nigeria election body to comply with presidential candidate ruling",
+          "url": "https://www.semafor.com/article/11/13/2026/nigeria-election-body-to-comply-with-candidate-ruling",
+          "publishedAt": "2026-11-13T11:24:42.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-13T07:02:43.000Z",
+      "id": "u-1794553363000-pote",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Demokrat Eric Jones wird die Wahl im 4. Kongresswahlbezirk Kaliforniens gewinnen, wie Prognosen von Decision Desk HQ zeigen. Jones setzte sich nach einem parteiinternen Duell gegen den amtierenden Abgeordneten Mike Thompson durch, nachdem das Rennen seit dem Wahltag unentschieden geblieben war.",
+          "headline": "Demokrat Eric Jones gewinnt US-Repräsentantenhauswahl in Kalifornien"
+        },
+        "en": {
+          "body": "Democrat Eric Jones will win the race for California’s 4th Congressional District, according to Decision Desk HQ projections. Jones ousted incumbent Representative Mike Thompson in a single-party battle after the race went uncalled since Election Day.",
+          "headline": "Democrat Eric Jones wins California House race"
+        },
+        "es": {
+          "body": "El demócrata Eric Jones ganará la contienda por el cuarto distrito congresional de California, según las proyecciones de Decision Desk HQ. Jones desbancó al representante en funciones Mike Thompson en un duelo de partido único, después de que el resultado quedara sin definir desde el día de las elecciones.",
+          "headline": "El demócrata Eric Jones gana la contienda por la Cámara de Representantes en California"
+        },
+        "fr": {
+          "body": "Le démocrate Eric Jones remportera l'élection dans la 4e circonscription congressionnelle de Californie, selon les projections de Decision Desk HQ. Jones a battu le représentant sortant Mike Thompson lors d'un duel entre candidats du même parti, après que le scrutin est resté indécis depuis le jour de l'élection.",
+          "headline": "Le démocrate Eric Jones remporte une course à la Chambre en Californie"
+        },
+        "it": {
+          "body": "Il democratico Eric Jones vincerà la corsa per il quarto distretto congressuale della California, secondo le proiezioni di Decision Desk HQ. Jones ha sconfitto il deputato uscente Mike Thompson in una sfida a partito unico, dopo che il risultato era rimasto in sospeso dalle elezioni.",
+          "headline": "Il democratico Eric Jones vince la corsa per la Camera in California"
+        },
+        "ja": {
+          "body": "ディシジョン・デスクHQの予測によると、カリフォルニア州第4選挙区の下院選は民主党のエリック・ジョーンズ氏が勝利する見通しとなった。投票日以降、結果が未確定となっていた同選挙区で、ジョーンズ氏は現職のマイク・トンプソン下院議員を破った。",
+          "headline": "民主党のエリック・ジョーンズ氏、カリフォルニア州下院選で勝利"
+        },
+        "ko": {
+          "body": "디시전 데스크 HQ의 예측에 따르면, 민주당 에릭 존스 후보가 캘리포니아 제4선거구 하원의원 선거에서 승리할 것으로 보인다. 선거일 이후 당선자가 확정되지 않았던 이번 선거에서 존스 후보는 현역인 마이크 톰슨 의원을 꺾고 승리를 거뒀다.",
+          "headline": "민주당 에릭 존스, 캘리포니아 하원의원 선거 승리"
+        },
+        "pt": {
+          "body": "O democrata Eric Jones vencerá a corrida ao 4.º Distrito Congressional da Califórnia, de acordo com as projeções da Decision Desk HQ. Jones derrotou o representante incumbente Mike Thompson numa disputa de partido único, após o resultado ter permanecido por definir desde o dia das eleições.",
+          "headline": "O democrata Eric Jones vence a corrida à Câmara dos Representantes na Califórnia"
+        },
+        "zh": {
+          "body": "根据“决策台总部”（Decision Desk HQ）的预测，民主党人埃里克·琼斯将赢得加州第四国会选区的选举。在选举日过后迟迟未决的这场单一政党对决中，琼斯击败了现任众议员迈克·汤普逊。",
+          "headline": "民主党人埃里克·琼斯赢得加州众议院议席"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.dawn.com/news/2044266/democratic-us-senator-chris-van-hollen-announces-run-for-us-senate-majority-leader-challenging-schumer",
+          "title": "Democratic US Senator Chris Van Hollen announces run for US Senate majority leader, challenging Schumer",
+          "outlet": "Dawn",
           "publishedAt": "2026-11-13T07:02:43.000Z"
         },
         {
-          "outlet": "The Hill",
-          "title": "Jones ousts House Democrat in California",
           "url": "https://thehill.com/homenews/campaign/6217945-jones-wins-california-house-race/",
+          "title": "Jones ousts House Democrat in California",
+          "outlet": "The Hill",
           "publishedAt": "2026-11-13T03:20:25.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-13T03:02:55.000Z",
@@ -1513,14 +1543,38 @@
     "https://www.straitstimes.com/world/europe/as-election-nears-spains-sanchez-struggles-to-rally-disillusioned-left",
     "https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
     "https://www.npr.org/2026/11/12/nx-s1-6039357/chris-van-hollen-chuck-schumer-senate-majority-leader",
-    "https://thehill.com/homenews/campaign/6217945-jones-wins-california-house-race/"
+    "https://thehill.com/homenews/campaign/6217945-jones-wins-california-house-race/",
+    "https://medicalxpress.com/news/2026-11-human-hantavirus-cruise-ship.html",
+    "https://www.dawn.com/news/2044288/ihc-suspends-local-government-elections-in-islamabad",
+    "https://www.france24.com/en/tv-shows/scoop/20261113-what-does-the-blue-tsunami-mean-for-us-media",
+    "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQeVRkQXk2bFZCcjlYR0N6cENyUm44emdrYXJsX0lSM1JSMHBkOGVkMHpkRzgzWHdkQ3Z1NlRXN285aGY2M3cxQ1NwRlZCSmNScEZvLWt5LTBzVTZDay1yN2g3ZDNWbEQ2YldnZjJoMTlxdm5PVUQyYnF0X212bnJWOEdhMWlCWWQtLTczT2tBZWhsOHNEaHd4am9nOXpkWVVOVWpiaDBtc2p0RGMtX3IzQnZoZS03bEJtVXFYZFhXQTU5NFBzZzRUXy1vRzNzRndDYjBFUE1udU8tekpjSmRMdjRBZ3ZwRlJ0WURsSW1HaWQ1LXhiaFI2RkNnNA?oc=5",
+    "https://news.google.com/rss/articles/CBMingJBVV95cUxQRzVscmVqVGVuTXY5RlAydlRvTDRnMmF2aGgyaXZzaUhzTU13TE9SRGVXSmloeVE4a1RWWldyZkszejByT2hpMXpwdmxIWFBCQUNNZG9oWGJzb0NCSWI2N0RxVzItSHNDbDlWYl96dUFLQWdSZ3Q2Sm1YQVBxZDQzOTBWd1pjWU45VXZDVGxQcVZIYXVkZWxZakE5elNjRjF0M3ZWTENySXdMYW0tQ1dHU2F2U3I2LUx6LVdLQ3dSRGJ4QUFCeF9RZFF5Q0tTOXFaN2pfcm1WMmpydUxaS0ZTaWlWVzJOd0RBQ1NSRS1fN211emJBNDZCRDZlS2FkbTg2RDI1Sjd2MDZmNGJiVTUwc1RqejNoNTY0ZFkwNmFR?oc=5",
+    "https://news.google.com/rss/articles/CBMilAJBVV95cUxPZUxDME80c1kzeFJlUUNyN05ZbnVUNzhCMjVVRXJMcW5IYWZtV0pPUFlxdHo1d1phZklUTExBQkdqQkIyYXV2UmZtQ3RBT2kxSkNKeGZDSmg4c0hZbFRDRmJSOEY1bTlJMVVBQ3JDaThlVDBwc3F0N2F0ZFZ6dUtOekZFWTk1QkJhRDJIVnc1M2hOaEVHR0s3TUdhalFFSGZuVDNYS1Y4SFpEN3EtX3R4ZXRTVFpnc2daWTBJd1BraGZvQ0tSM0VYdEJ4ZmVUc2xOcThvZHZuY0NGMXNLNkNXWno1aEZWcDlEeHdDU3IzaDI1VDc1MlVlUVN1VlBhVmd0aHpWTU10QlZrVXQ1ci1Bek9rU2M?oc=5",
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTFJzMmJxLVk3WFpUQnhVNFp0bE1rcUF0WDFDdXNyazc1RnFudGJSWXhDejZrcmE0Y3RMMEl1OTR1eTdDMXkzWXhleVNGaG11WnNnM0FycmJ6dFFRQ0UyUmQ4WHpvekFKSnRpMHR3ZEJKc1R1d1FNa19hVzhDZGFzazRjQW9wNy01dlhHRnhlemp4OWxPY3c?oc=5",
+    "https://news.google.com/rss/articles/CBMijgJBVV95cUxQc01uUnBBMzM0R1VOeHhNaXpOV1gtYkVlcGN4d0RJcDdmc3dQYmxCTENIOUREeUFadDNUNVlkWG9rd3RmQUlaX044SEpWbmRyek5NY1BtNC16ZkpyNzRNeVpybHJ6aHp4RTFqWlRpb3lYbDRVN3N5enp3T1MzVlZWdURvZzkxYWZVb0lMUnFXODBiUXZ6MEFfNVBPQ0R0cERia0JZc3FUcS0waGFUV2x4U053NmdNRzZ2SEtVM0lkWTJESUlHWE5nU2g1RHc5NUhia1Awemc0dzc3NDN2ZDNmTm1RUVZocDZQRWJyZXlMaDJYcEtuZldlaXBLUFgwVWVVX1lUZHFoeGVla3doZGc?oc=5",
+    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPbVkwVXpMSnFGMkRPbVh0dEdUN0U1bU1mMWV5cG9lUUdsSzNRZzFLcWFScXBsUDZzLVhuNV9MSXN4Vk9KS1RYYm5IT3Y0Rk9TM0VzanVVb0R4d3FjUGV6M0V5eVJJSWRtU3FzcUN0MkE2ZnJEQmh1V0Q2a1paNEUzZ29fd0xONTJNcEVv0gGTAUFVX3lxTE0ydk1RaHBubFlKYUpzdHVoRlBHT1lRMzhHbWstNlBhTXI0di1reVQ1d2hCbXJIb2pqNTYxVWZYQ3NpLVE0NEVpUk9ET0ozWlNvX1pBZ3Y4WFlPQW5weHFDMXB1MnhaY2l3RzNRZ19xMzItTUhDTmJ4c3ZoREhBMHAtcUVnbTRKWmlZbTAyalQtWjAwRQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMVJqc1ZGNzl2ODJDSzBGWF9qU3I2NUhmOHdsYVZZeHZWUFh4UXJBT3BXZ0pmLWtDQXI3TXlteVRIY00tMGx1cTVTRDc3dTdKZ21mOXRrQ2ZzSmw4NjRiX3Y5SHBrbENoYnBSMG1pVDNHdVl4emJvZDBld1dWQWNuZ1lJRF8ya01PdWlncWctQlBVcmppQThwZ3kwVHNkNVR1dGFyWG1lTmHSAa4BQVVfeXFMUHRyQkFYWURpTTNJdzI5V3JlX1pUd0o1X0lWeWRpN19mRVZic2JfVk5PXzg3N1B0dk1iazZCTDhkRjJRNUFOaFNNdXFpeGRUU3ozMmhkN1c5MFBNblJuOTNXSWR3ZzNjYlp6dG1FSnF6M2N4Z2pYeTR1cmd1TlJhX19yS3JLNjY5RS1Ldi1YRTBBcmFBTTVicGhHa3BxYVNaOXJ4blJXTzBlUFk2OF9n?oc=5",
+    "https://thehill.com/homenews/campaign/6218300-john-kennedy-vance-midterm-elections/",
+    "https://www.kyivpost.com/post/90043",
+    "https://www.marketwatch.com/story/midterm-elections-provided-the-hyperscalers-with-the-excuse-they-needed-to-cut-back-on-spending-says-jefferies-strategist-de6349ec?mod=mw_rss_topstories",
+    "https://thehill.com/homenews/campaign/6218241-donald-trump-barack-obama-potential-matchup-midterms-postelection/",
+    "https://www.dawn.com/news/2044299/ecp-gives-federal-govt-2-weeks-to-submit-formal-request-for-cantonment-board-polls",
+    "https://www.technologyreview.com/2026/11/13/1148551/the-download-silicon-valley-midterms-nvidia-chip-tracking/",
+    "http://www.africanews.com/2026/11/13/burundi-11-opposition-parties-announce-support-for-president-ndayishimiyes-re-election-bid/",
+    "https://www.dw.com/en/is-the-ai-bubble-bursting-just-as-anthropic-goes-public/a-79896537?maca=en-rss-en-all-1573-rdf",
+    "https://thehill.com/homenews/campaign/6185752-alaska-ranked-choice-voting/",
+    "https://www.semafor.com/article/11/13/2026/nigeria-election-body-to-comply-with-candidate-ruling",
+    "http://www.africanews.com/2026/11/12/five-candidates-confirmed-for-gambias-presidential-election/",
+    "https://www.npr.org/2026/11/13/nx-s1-6038701/midterm-election-voter-turnout-south",
+    "https://www.technologyreview.com/2026/11/13/1148498/silicon-valley-claims-to-know-the-future-so-why-did-it-get-the-midterms-so-wrong/",
+    "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1SUDh5eXNhS0xqMUFWbWlzb3dxYjllR3hubmZvU193clhxSDRwNTJYSnVwRVNHV21FeUR5QjVuOGNTUXppZ2hhYTFQT2c1QTAySEF6ODVVdw?oc=5"
   ],
   "startedAt": "2026-11-11T07:30:47.904Z",
-  "updatedAt": "2026-11-13T08:49:45.757Z",
+  "updatedAt": "2026-11-13T15:31:40.736Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-us-midterm-election-aftermath",
-  "sourceCount": 18,
+  "sourceCount": 19,
   "statsHistory": [
     {
       "at": "2026-11-12T14:30:00.000Z",
@@ -1580,6 +1634,8 @@
     }
   ],
   "seenHeadlines": [
+    "More than a dozen key races remain undecided one week after vote",
+    "Meta fined by Brazil electoral court over election bias claims",
     "Trump says US does not need Iran deal",
     "Trump points to Senate Republicans over midterm losses: devastating",
     "Republicans Vance, Rubio, Democrats Ossoff, Buttigieg favored for 2028 US elections - poll"
