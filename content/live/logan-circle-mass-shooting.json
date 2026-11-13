@@ -1,9 +1,138 @@
 {
+  "meta": {
+    "outlets": [
+      "NBC4 Washington",
+      "FOX 5 DC",
+      "WUSA9",
+      "WJLA"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "logan-circle-mass-shooting",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Logan Circle Mass Shooting",
+  "status": "live",
+  "article": {
+    "slug": "logan-circle-mass-shooting",
+    "updatedAt": "2026-11-13T15:14:52.667Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Gunman Kills One and Injures Five at Logan Circle Gym in Washington",
+        "dek": "A gunman killed one person and wounded five others during a shooting inside a gym in Washington's Logan Circle neighborhood before dying at the scene.",
+        "facts": [
+          "One person was killed in the shooting inside a Logan Circle gym.",
+          "Five people were injured during the attack.",
+          "The gunman is dead, according to news reports.",
+          "The incident took place in Washington, D.C., on 13 November 2026."
+        ],
+        "body": [
+          "A gunman shot six people inside a gym in Washington's Logan Circle neighborhood on 13 November 2026, leaving one person dead and five others injured before the shooter died at the scene. WJLA reported that the attack resulted in one fatality, while Axios reported that the incident unfolded within minutes in the high-traffic area. Authorities confirmed the gunman is dead following the incident.",
+          "Five injured victims received treatment after the gunfire broke out inside the facility, according to WJLA. Axios reported that the attack upended one of the busiest neighborhoods in Washington, D.C., as emergency responders arrived at the scene.",
+          "Police units secured the area around the Logan Circle facility shortly after the shooting took place. Officials have not yet released the names of the victims or the dead gunman while the investigation continues."
+        ],
+        "context": "Logan Circle is a dense residential and commercial neighborhood located in Northwest Washington, D.C., known for its high foot traffic and active public venues.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Schütze tötet in Washington im Fitnessstudio in Logan Circle einen und verletzt fünf",
+        "dek": "Ein Schütze tötete eine Person und verwundete fünf weitere bei einem Schusswaffengefecht in einem Fitnessstudio im Stadtteil Logan Circle in Washington, bevor er am Tatort starb.",
+        "facts": [
+          "Eine Person wurde bei dem Schusswaffengefecht in einem Fitnessstudio in Logan Circle getötet.",
+          "Fünf Personen wurden bei dem Angriff verletzt.",
+          "Der Schütze ist laut Nachrichtenberichten tot.",
+          "Der Vorfall ereignete sich am 13. November 2026 in Washington, D.C."
+        ],
+        "body": [
+          "Ein Schütze schoss am 13. November 2026 in einem Fitnessstudio im Stadtteil Logan Circle in Washington sechs Personen und tötete eine Person, während fünf andere verletzt wurden, bevor der Schütze am Tatort starb. WJLA berichtete, dass der Angriff zu einem Todesopfer führte, während Axios berichtete, dass sich der Vorfall innerhalb weniger Minuten in dem stark frequentierten Gebiet ereignete. Die Behörden bestätigten den Tod des Schützen nach dem Vorfall.",
+          "Fünf verletzte Opfer erhielten nach dem Schusswaffengefecht in der Einrichtung medizinische Behandlung, so WJLA. Axios berichtete, dass der Angriff einen der belebtesten Stadtteile in Washington, D.C., erschütterte, als Einsatzkräfte am Tatort eintrafen.",
+          "Polizeieinheiten sicherten das Gebiet um die Einrichtung in Logan Circle kurz nach dem Schusswaffengefecht ab. Beamte haben die Namen der Opfer oder des toten Schützen noch nicht bekannt gegeben, während die Ermittlungen andauern."
+        ],
+        "context": "Logan Circle ist ein dicht besiedelter Wohn- und Geschäftsviertel im Nordwesten von Washington, D.C., bekannt für seinen hohen Fußgängerverkehr und aktive öffentliche Veranstaltungsorte."
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Mehrere lokale Medien berichten über die Nachbereitung, Mahnwachen der Gemeinschaft und die Ermittlungen zu den tödlichen Schüssen im Washingtoner Viertel Logan Circle.",
+      "title": "Massenerschießung am Logan Circle"
+    },
+    "en": {
+      "dek": "Multiple local outlets report on the aftermath, community vigils, and investigation into the deadly shooting in Washington, D.C.'s Logan Circle neighborhood.",
+      "title": "Logan Circle Mass Shooting"
+    },
+    "es": {
+      "dek": "Varios medios locales informan sobre las consecuencias, las vigilias comunitarias y la investigación del tiroteo mortal ocurrido en el barrio de Logan Circle, en Washington, D.C.",
+      "title": "Tiroteo masivo en Logan Circle"
+    },
+    "fr": {
+      "dek": "Plusieurs médias locaux rendent compte des suites, des veillées communautaires et de l'enquête sur la fusillade meurtrière survenue dans le quartier de Logan Circle à Washington, D.C.",
+      "title": "Fusillade de masse à Logan Circle"
+    },
+    "it": {
+      "dek": "Molti organi d'informazione locali riferiscono sulle conseguenze, sulle veglie della comunità e sulle indagini relative alla tragica sparatoria avvenuta nel quartiere di Logan Circle, a Washington.",
+      "title": "Spedizione punitiva a Logan Circle"
+    },
+    "ja": {
+      "dek": "ワシントンD.C.のローガン・サークル地区で発生した死亡銃撃事件をめぐり、地元複数のメディアが事件後の状況、コミュニティの追悼集会、捜査の進展を報じている。",
+      "title": "ローガン・サークルで銃撃事件"
+    },
+    "ko": {
+      "dek": "현지 다수의 언론 매체가 워싱턴 D.C. 로건 서클 지역에서 발생한 치명적인 총기 난사 사건의 여파와 추모 행렬, 수사 상황을 보도하고 있다.",
+      "title": "로건 서클 총기 난사 사건"
+    },
+    "pt": {
+      "dek": "Vários órgãos de comunicação locais noticiam as consequências, vigílias comunitárias e a investigação sobre o tiroteio mortal no bairro de Logan Circle, em Washington, D.C.",
+      "title": "Troteamento em massa em Logan Circle"
+    },
+    "zh": {
+      "dek": "多家当地媒体报道了华盛顿特区洛根圆环街区致命枪击事件的善后情况、社区守夜活动及相关调查。",
+      "title": "洛根圆环大规模枪击事件"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794569304000-3rqo",
+      "at": "2026-11-13T11:28:24.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Gunman dead after killing one at Logan Circle gym",
+          "body": "WJLA reports gunman dead after killing 1, injuring 5 in mass shooting at gym in DC's Logan Circle. Axios reports it took just minutes for a gunman to shoot five people and upend one of D.C.'s busiest neighborhoods, leaving one person dead in a Logan Circle gym."
+        },
+        "it": {
+          "headline": "Uomo morto dopo aver ucciso uno al gym di Logan Circle",
+          "body": "Secondo WJLA, l'uomo è morto dopo aver ucciso una persona e ferito 5 in una sparatoria di massa in un gym a Logan Circle. Axios riferisce che sono bastati pochi minuti perché l'uomo aprisse il fuoco su cinque persone e sconvolgesse uno dei quartieri più trafficati di Washington, lasciando una persona morta in un gym di Logan Circle."
+        },
+        "de": {
+          "headline": "Schütze nach Tötung einer Person in Gym in Logan Circle tot",
+          "body": "WJLA berichtet von einem Toten und fünf Verletzten bei einer Massenerschießung in einem Gym in D.C.'s Logan Circle. Axios berichtet, dass ein Schütze in nur wenigen Minuten fünf Menschen schoss und einen der belebtesten Stadtteile D.C. erschütterte, wobei eine Person in einem Gym in Logan Circle getötet wurde."
+        },
+        "es": {
+          "headline": "Gunman muerto tras matar a uno en un gimnasio de Logan Circle",
+          "body": "WJLA informa que el gunman está muerto tras matar a una persona e herir a cinco en un tiroteo masivo en un gimnasio del círculo Logan de la capital. Axios informa que fue solo cuestión de minutos para que un gunman disparara contra cinco personas y revirara uno de los vecindarios más transitados de la capital, dejando una persona muerta en un gimnasio del círculo Logan."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "WJLA",
+          "title": "Gunman dead after killing 1, injuring 5 in mass shooting at gym in DC's Logan Circle",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRUZMUGh2T1VCZnAxNUwwX1Rjb1ZJR1FaYllSMi10N0FwX3VTRVBBMFl6Y3J5U09Lb2tGZnl4eHlCekhBRmdFTE1XeUNyRG1NZzFVMWp3XzJYOEhWOVBuT01qTjMzblF6U3pNTVdIRGZRams5WlJjbUp0T3ZXYlRVOWNSdjBsakFWVEFLU3lSbXhkb05lbzFWSDdCdWtUdF9sbG05cmxmSndwVWxEa1dEd1AzVUw0alA1?oc=5",
+          "publishedAt": "2026-11-13T11:01:34.000Z"
+        },
+        {
+          "outlet": "Axios",
+          "title": "Inside the aftermath of the Logan Circle shooting",
+          "url": "https://www.axios.com/local/washington-dc/2026/11/13/logan-circle-shooting-dc-barricade",
+          "publishedAt": "2026-11-13T11:28:24.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "logan circle",
     "washington dc",
@@ -13,61 +142,29 @@
     "investigation",
     "police"
   ],
+  "seenUrls": [
+    "https://www.jpost.com/israel-news/article-914816",
+    "https://www.jpost.com/israel-news/crime-in-israel/article-914801",
+    "https://news.google.com/rss/articles/CBMiugFBVV95cUxQM3ZmelNrTTJxbTMzV1FrUTlUY0ViUlkzZmxRU3VMLW8zX0dZNnFPcW1PNlJSTnZkek5MNmRqaE1nb21Cd19rbmJZTzZCTVJ3akE4RGVjcndVM0RUMWFYNFBSbzVyVlRtN2tMeHVqclRqU2k5ZWtRTm03YXE1eHZVUlp1NmNHMXNPajNWWGhJRmk5dHZubzRGdWl1eGI1by11N1E0LS1fN0E2dmpQYTBuY0dKdHdXU015U2fSAcIBQVVfeXFMTmxZdEgyV0lnMzVQeVBFWHhRN0JPZUoxdkNscjRwYmx3RFVOT1o0c2NSWE1NRllLcmdVRmZaT2tzSFh2TXhOckVGM0VfeHU2c3pnaThGNHp2NTJEaTNQcWZ3a0VITjUwLWxHOXVXaGNlcTFFUHhEMEhwTWtiUW5UZmtVdFpvaEU0TjhBMjRacWpzY3c1MWFkYXFjSGY5aHdhV1Atajk2RkJyN2p5YTFnYmhib05ybkhaRmlPWk95S3pkR2c?oc=5",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZXlGQjVmWE1FN3B1UjZJRC10TlI2MUdxSklpNG9wTS1hcTdNLTVULWRMYm1xSk8ycUhIcllDQ0xLWGhhczZiMExLVzF0R0tLdHVLTXNlZDVQSFd1YW5YMVN0dFVaeGJ6YlFFcXJlTFhUU1FLWkZTM3J3MF9yaVhWcWFaWGFhQ3RHU29SOUh3QTg?oc=5",
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxPS0RJSHFYeUJETXFpSHdHVmZGUFpndTBseHlQTEdHUWZJVFd1djVCQVRnNTE0WXg3ME9Gam5IYlFTSU1PWUpNTTMwZ2lvYllMU3lhTEdCclVBTUhQNUhIbzBTS0VlaDhmc0ticXB4Wk84eDBseWlzQjRzMTVDSWZoa2o0X1BFc0I4MFhfeVM0c3dPeUF0UzJCSk9iTUYwNWV6MzRhQ2tuVEthS1FkeFMxcUhzYlVxcFdJOEtmNFlpUVBDNk9r?oc=5",
+    "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOQ0p6X2VyWEdhWXlYek95dnhTaHExajgtU2FYa3pOMkdOTzJiME9GR195Tkt5QU9KT0FqeU1uLVR5TUlCcXlVSTlwTzZ1WFhTSTRzZ0Z3bHI3Ul8yS1ZMMDhHZE80RWdPeXVhQlIwTnZDVU5TZDdnaGRORXlKcGR6dG9BN1V6aXE4clN1R3dNNmdqRERlcXkyQmQyVTRuMEJLZjhuRTNVYUc0dTJmRmFFQmlrd2t2NzRFVGZwZk1USHQ1MnlBNE9Hb1FRWmFBMDJvRFFTVDM5b2JLQmthN2JTSzVrR1hwLV9yWHc?oc=5",
+    "https://news.google.com/rss/articles/CBMirgJBVV95cUxPM215UHY0SGprMVpjblQ5UnppYnFISEJzOXQtVlJ2SlAtQkR1QkxENVByZU1yZlpBbjNRVTFTY3oxbmJGem53N2N4Ml9OT1NvYl9abmk4UUpKQWlFNnlnQndZTl9LMVpXaTlzSExaSDJ2cXpmeXJuS2I2ZUVxUmJQaEFQdnhpcGhKMVFNbWliUml5TlFVLTF4VXFXbE9RNUhadEV5aXZpNXRxRzNEcHdOdVUwaDROenlwdkNTdGxvR1dRQ2U5dW1PbjBQbG1ab2R5ekZVWU8wMnpacGpHVEs4aDdmaFRxallfcjFxZkFvM0F3bzhhWmlZMlNVZVdOV3FWVzU0UGo2dXdmRHpNYThCTWhQTGVoLWNsMzdLRzlhbUJNT3BVQjFqdkdWTklFQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNUdGRmpaT3JwenVlbWx1YWJFWXQ2dmpRTjBmSzRzZlZPM1A3VWMxWXpYVjdUYzIzUjFDSjNfMXJOMjNaTEFGby1DeTFRMUQtYkxNN1pLYjBNOEZocVJ3N01xa21WclR0aVQ0M0sySVRwNVM5VzhuVEdhN09JbThWaXpKMDJnWVhycXFqdkVSYlk5N3ZDTVotcktRVTVsZ2pNMlE?oc=5",
+    "https://news.google.com/rss/articles/CBMilgJBVV95cUxNRklKSDMwMF9VQ0ZpX0VZajBtQlpmYnZZTVFxM2xkcjhIQXJsVVRacFRoeS1CQTc0ckhoRjdXU09hM3BUaFBxNDlKQzlWeF94ZUNhSlQwczhxX080TEZxTk1PTzl1M2RFQnp2STNPZjE5TkxhMHp3dkE1YlVKaGFsQjBrMUk1aUY1SWkxa2dWMU5femhrb1NQTmRVY1pUd2lKanYxNEZPeHh2cGRaUG02OXNsVnJVV2RtVV9mYUZlcm9GdzJSbGI4ekpMZlpQVThLOTdmU3IxX2xVTmZKOFh0dm5MU0tDd1ZlakgyOUJBQ1VTU05rd195YXM1MEgyWFQ5bWVHdnNvX2pMYUNaeS1jQVRPN05ndw?oc=5",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxORHVSakdlS0kxaFg5OVdmZlEwWnBCNXFrLW9MTTVnVDVKSU5TYlBpMVppbTlGOVFYbmVQU3RVMEhBQkU2LTVHQTEzaUVmUGYwdXM1bVRGNWVRLTRpbXNfdHg2elJjaVRQb3pUemRMRGFlZEszU3RmWDRfLVY2NWdKUzQza3Bfejk5eWtYaW5qdmpwQk1WRWlDTUozN0FrWGs1cHFfbkxRMGxsSll1NmpZcUdtMlZ5U1BWWno4WmdoNEZiQ3duWmFR?oc=5",
+    "https://www.axios.com/local/washington-dc/2026/11/13/logan-circle-shooting-dc-barricade",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxQOGxud01JcGhYTEtSVGkzV081R1RzTnJmNTR1TE1USWtydGpaZXJMSGRHR1Q3MmpoVUdWd0JGWTU4WmpWbXlUd3pZUlF1dm5yYU5makU0alJaVkRjdzhiUksxNGxLb2NTck1HT3kzY29VdE5LOUFpOFhlZ2xIYTZ1ZV9SNVpIVUx2b2lERVlMcGY?oc=5",
+    "https://www.kyivpost.com/post/90026",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRUZMUGh2T1VCZnAxNUwwX1Rjb1ZJR1FaYllSMi10N0FwX3VTRVBBMFl6Y3J5U09Lb2tGZnl4eHlCekhBRmdFTE1XeUNyRG1NZzFVMWp3XzJYOEhWOVBuT01qTjMzblF6U3pNTVdIRGZRams5WlJjbUp0T3ZXYlRVOWNSdjBsakFWVEFLU3lSbXhkb05lbzFWSDdCdWtUdF9sbG05cmxmSndwVWxEa1dEd1AzVUw0alA1?oc=5",
+    "https://www.abc.net.au/news/2026-11-13/floreat-gunman-daughter-former-wife-speak-as-inquest-ends/107382636",
+    "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOcVhDNVBzNTdsQkNXVGtDbWw3ZGF0THdXWjVPa3FZa2RiUDlZTXlLaF9PZlpiZ1A5SlZSbkt6bW1JU2duTk9BMXlqRGxTcjJLTE43azB5b0dJMXJIbzdReXVwNVoxd3BsUEN1NUlhZEJnVDBZUWVMU3AtZU9xQmgyc083SGRoQmZNYnhLWnVGOFlqem83MzF2SmlHWXRkM2U5M08xSkplWWJhYzByWlV5Y3RYMzlqQ2NISm9MT0xtSHRDYnliRGthNEpGRnB1NVFRR29fQ1BPMA?oc=5"
+  ],
   "startedAt": "2026-11-13T08:05:43.444Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-13T08:05:43.444Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-13T15:13:02.062Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Logan Circle Mass Shooting",
-      "dek": "Multiple local outlets report on the aftermath, community vigils, and investigation into the deadly shooting in Washington, D.C.'s Logan Circle neighborhood."
-    },
-    "de": {
-      "title": "Massenerschießung am Logan Circle",
-      "dek": "Mehrere lokale Medien berichten über die Nachbereitung, Mahnwachen der Gemeinschaft und die Ermittlungen zu den tödlichen Schüssen im Washingtoner Viertel Logan Circle."
-    },
-    "fr": {
-      "title": "Fusillade de masse à Logan Circle",
-      "dek": "Plusieurs médias locaux rendent compte des suites, des veillées communautaires et de l'enquête sur la fusillade meurtrière survenue dans le quartier de Logan Circle à Washington, D.C."
-    },
-    "es": {
-      "title": "Tiroteo masivo en Logan Circle",
-      "dek": "Varios medios locales informan sobre las consecuencias, las vigilias comunitarias y la investigación del tiroteo mortal ocurrido en el barrio de Logan Circle, en Washington, D.C."
-    },
-    "pt": {
-      "title": "Troteamento em massa em Logan Circle",
-      "dek": "Vários órgãos de comunicação locais noticiam as consequências, vigílias comunitárias e a investigação sobre o tiroteio mortal no bairro de Logan Circle, em Washington, D.C."
-    },
-    "it": {
-      "title": "Spedizione punitiva a Logan Circle",
-      "dek": "Molti organi d'informazione locali riferiscono sulle conseguenze, sulle veglie della comunità e sulle indagini relative alla tragica sparatoria avvenuta nel quartiere di Logan Circle, a Washington."
-    },
-    "zh": {
-      "title": "洛根圆环大规模枪击事件",
-      "dek": "多家当地媒体报道了华盛顿特区洛根圆环街区致命枪击事件的善后情况、社区守夜活动及相关调查。"
-    },
-    "ko": {
-      "title": "로건 서클 총기 난사 사건",
-      "dek": "현지 다수의 언론 매체가 워싱턴 D.C. 로건 서클 지역에서 발생한 치명적인 총기 난사 사건의 여파와 추모 행렬, 수사 상황을 보도하고 있다."
-    },
-    "ja": {
-      "title": "ローガン・サークルで銃撃事件",
-      "dek": "ワシントンD.C.のローガン・サークル地区で発生した死亡銃撃事件をめぐり、地元複数のメディアが事件後の状況、コミュニティの追悼集会、捜査の進展を報じている。"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "NBC4 Washington",
-      "FOX 5 DC",
-      "WUSA9",
-      "WJLA"
-    ]
-  }
+  "articleSlug": "logan-circle-mass-shooting",
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
