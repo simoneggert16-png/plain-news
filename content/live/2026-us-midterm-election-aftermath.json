@@ -8,7 +8,7 @@
     ],
     "createdBy": "bots/live.mjs",
     "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
-    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
   },
   "slug": "2026-us-midterm-election-aftermath",
   "stats": {
@@ -131,35 +131,84 @@
   "status": "live",
   "article": {
     "slug": "2026-us-midterm-election-aftermath",
-    "updatedAt": "2026-11-13T03:16:58.290Z",
+    "updatedAt": "2026-11-13T08:49:51.496Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
         "title": "Vote counting continues after US midterms as Republicans select new leadership",
-        "dek": "Election officials continue counting ballots one week after the vote while party leaders are selected and key races are resolved.",
+        "dek": "Election officials count remaining ballots as parties adjust leadership after the midterms.",
         "facts": [
-          "Election officials are still counting ballots eight days after the midterm elections, with 17 races remaining without a final result, according to G1.",
+          "Democrat Eric Jones won California’s 4th Congressional District against incumbent Mike Thompson, according to Decision Desk HQ.",
           "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
           "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to AP News and The Washington Post.",
-          "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
-          "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera.",
+          "The Republican Party chose Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
           "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill."
         ],
         "body": [
-          "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
-          "More than a dozen key races remain too early to call one week after Election Day, as vote counting continues across multiple states, according to PBS and Al Jazeera.",
-          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, flipping another House seat to the Democratic Party, according to The Hill and AP News.",
-          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
-          "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
-          "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
-          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
-          "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+          "Democrat Eric Jones will win the race for California’s 4th Congressional District, according to Decision Desk HQ projections. Jones ousted incumbent Representative Mike Thompson in a single-party battle after the contest remained uncalled since Election Day. Election officials are still counting ballots across multiple states over a week after the midterm elections, according to G1 and PBS. There are 17 races that remain without a final result, leaving control of several seats undecided.",
+          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, flipping another House seat to the Democratic Party according to The Hill and AP News. Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
+          "The Republican Party chose Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeats in the 2026 midterm elections. House Democratic leaders also faced criticism after surprise Republican victories on the floor disrupted transition plans, according to Axios.",
+          "Senator Chris Van Hollen announced that he will challenge Chuck Schumer for Senate majority leader, accusing Schumer of siding with the American Israel Public Affairs Committee according to Axios and Al Jazeera. Meanwhile, Democratic lawmakers and presidential hopefuls gathered in Denver to debate the party's future and 2028 strategy without a clear frontrunner, according to Fox News.",
+          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reported that the survey shows nearly half of MAGA Trump supporters view the movement as a loser following the electoral results.",
+          "President Donald Trump stated that the United States does not need an Iran deal, according to The Jerusalem Post. Vice President JD Vance distanced himself from Trump's position after the Republican midterm election losses, according to the same report. Representative Hakeem Jeffries subsequently criticized the military actions against Iran as a reckless war of choice and called for changes to US military aid to Israel.",
+          "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint regarding platform management. The court found no evidence of deliberate election bias by the company, according to DW and The Hindu."
         ],
-        "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
+        "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within both parties and international legal actions regarding platform management during the vote.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "Stimmenauszählung nach US-Zwischenwahlen dauert an, Republikaner wählen neue Führung",
+        "dek": "Wahlbeamte zählen verbleibende Stimmzettel aus, während die Parteien nach den Zwischenwahlen ihre Führung neu aufstellen.",
+        "facts": [
+          "Demokrat Eric Jones gewann laut Decision Desk HQ das vierte Kongresswahlrecht in Kalifornien gegen den bisherigen Mandatsinhaber Mike Thompson.",
+          "Der Republikaner Greg Murphy räumte laut The Hill und AP News seine Niederlage bei der Wiederwahl gegen den Demokraten Raymond Smith im dritten Kongresswahlbezirk von North Carolina ein.",
+          "Scott Colom bezwang laut AP News und The Washington Post die amtierende Republikanerin Cindy Hyde-Smith und errang den US-Senatssitz für Mississippi.",
+          "Die Republikanische Partei wählte Jim Jordan und John Thune laut der New York Times zu ihren neuen Führern im Repräsentantenhaus.",
+          "Einer neuen Umfrage von Politico zufolge gaben 45 Prozent der MAGA-Unterstützer von Präsident Trump an, die Bewegung sei der Verlierer der Zwischenwahlen im vergangenen Jahr gewesen, berichtet The Hill."
+        ],
+        "body": [
+          "Demokrat Eric Jones gewinnt Prognosen von Decision Desk HQ zufolge das Rennen um Kaliforniens vierten Kongresswahlbezirk. Jones setzte sich in einem parteiinternen Duell gegen den bisherigen Abgeordneten Mike Thompson durch, nachdem das Rennen seit dem Wahltag offen geblieben war. Wahlbeamte zählen in mehreren Bundesstaaten auch eine Woche nach den Zwischenwahlen noch Stimmzettel aus, so G1 und PBS. In 17 Rennen steht ein Endergebnis weiterhin aus, wodurch die Kontrolle über mehrere Sitze unentschieden ist.",
+          "Der Republikaner Greg Murphy räumte seine Niederlage im Rennen um die Wiederwahl gegen den Demokraten Raymond Smith im dritten Kongresswahlbezirk von North Carolina ein und verhalf den Demokraten damit laut The Hill und AP News zu einem weiteren Sitzgewinn im Repräsentantenhaus. Scott Colom besiegte mehreren Prognosen zufolge die amtierende Republikanerin Cindy Hyde-Smith und gewann den US-Senatssitz für Mississippi. Dieser Sieg verschafft den Demokraten laut AP News und The Washington Post eine Mehrheit im Senat.",
+          "Die Republikanische Partei wählte Jim Jordan und John Thune laut der New York Times zu ihren neuen Führern im Repräsentantenhaus. Die Partei strebte nach ihren Niederlagen bei den Zwischenwahlen 2026 eine Erneuerung der Führung an. Auch demokratische Führungspersönlichkeiten im Repräsentantenhaus sahen sich nach überraschenden republikanischen Erfolgen im Plenarsaal mit Kritik konfrontiert, die die Übergangspläne störten, berichtet Axios.",
+          "Senator Chris Van Hollen kündigte an, Chuck Schumer als Mehrheitsführer im Senat herauszufordern, und warf Schumer vor, sich auf die Seite des American Israel Public Affairs Committee zu stellen, so Axios und Al Jazeera. Unterdessen versammelten sich demokratische Abgeordnete und potenzielle Präsidentschaftskandidaten in Denver, um ohne klaren Spitzenreiter über die Zukunft der Partei und die Strategie für 2028 zu debattieren, meldet Fox News.",
+          "Einer neuen Umfrage von Politico zufolge sagten 45 Prozent der MAGA-Unterstützer von Präsident Trump, die Bewegung sei der Verlierer der Zwischenwahlen im vergangenen Jahr gewesen, berichtet The Hill. The Guardian meldete, die Erhebung zeige, dass fast die Hälfte der MAGA-Anhänger von Trump die Bewegung nach den Wahlergebnissen als Verlierer betrachte.",
+          "Präsident Donald Trump erklärte laut der Jerusalem Post, die Vereinigten Staaten benötigten kein Iran-Abkommen. Vizepräsident JD Vance distanzierte sich dem gleichen Bericht zufolge nach den Niederlagen der Republikaner bei den Zwischenwahlen von Trumps Position. Der Abgeordnete Hakeem Jeffries kritisierte die Militäraktionen gegen den Iran daraufhin als rücksichtslosen Entscheidungskrieg und forderte Änderungen der US-Militärhilfe für Israel.",
+          "Brasiliens Wahlgericht verhängte eine Geldbuße gegen Meta, nachdem die Koalition von Präsident Lula eine Beschwerde über das Plattformmanagement eingereicht hatte. Das Gericht fand laut DW und The Hindu keine Beweise für eine vorsätzliche parteiische Beeinflussung der Wahlen durch das Unternehmen."
+        ],
+        "context": "Die US-Zwischenwahlen 2026 führten zu mehreren unentschiedenen Kongressrennen, was interne Führungswechsel in beiden Parteien sowie internationale juristische Schritte bezüglich des Plattformmanagements während der Stimmenabgabe zur Folge hatte."
       }
     },
     "versions": [
+      {
+        "at": "2026-11-13T03:16:58.290Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Election officials continue counting ballots one week after the vote while party leaders are selected and key races are resolved.",
+            "body": [
+              "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
+              "More than a dozen key races remain too early to call one week after Election Day, as vote counting continues across multiple states, according to PBS and Al Jazeera.",
+              "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, flipping another House seat to the Democratic Party, according to The Hill and AP News.",
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+              "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
+              "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
+              "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+            ],
+            "facts": [
+              "Election officials are still counting ballots eight days after the midterm elections, with 17 races remaining without a final result, according to G1.",
+              "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to AP News and The Washington Post.",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
+              "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera.",
+              "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill."
+            ],
+            "title": "Vote counting continues after US midterms as Republicans select new leadership",
+            "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
+            "imageCaption": ""
+          }
+        }
+      },
       {
         "at": "2026-11-13T00:57:19.310Z",
         "reason": "1 new update(s)",
@@ -489,62 +538,120 @@
   },
   "updates": [
     {
-      "id": "u-1794538975000-axhn",
-      "at": "2026-11-13T03:02:55.000Z",
-      "kind": "statement",
+      "id": "u-1794553363000-pote",
+      "at": "2026-11-13T07:02:43.000Z",
+      "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Van Hollen challenges Schumer for Senate leadership",
-          "body": "Sen. Chris Van Hollen announced Thursday that he'll challenge Chuck Schumer for majority leader, according to Axios and Al Jazeera. Van Hollen accused Schumer of siding with AIPAC, the sources said."
+          "headline": "Democrat Eric Jones wins California House race",
+          "body": "Democrat Eric Jones will win the race for California’s 4th Congressional District, according to Decision Desk HQ projections. Jones ousted incumbent Representative Mike Thompson in a single-party battle after the race went uncalled since Election Day."
         },
         "de": {
-          "headline": "Van Hollen fordert Schumer um Führung des Senats heraus",
-          "body": "Senator Chris Van Hollen gab bekannt, dass er Chuck Schumer um das Amt des Mehrheitsführers herausfordert, wie Axios und Al Jazeera berichteten. Van Hollen warf Schumer vor, sich der AIPAC angeschlossen zu haben, hieß es von den Quellen."
+          "headline": "Demokrat Eric Jones gewinnt US-Repräsentantenhauswahl in Kalifornien",
+          "body": "Demokrat Eric Jones wird die Wahl im 4. Kongresswahlbezirk Kaliforniens gewinnen, wie Prognosen von Decision Desk HQ zeigen. Jones setzte sich nach einem parteiinternen Duell gegen den amtierenden Abgeordneten Mike Thompson durch, nachdem das Rennen seit dem Wahltag unentschieden geblieben war."
         },
         "it": {
-          "headline": "Van Hollen sfida Schumer per la leadership al Senato",
-          "body": "Il senatore Chris Van Hollen ha annunciato giovedì che sfiderà Chuck Schumer per la maggioranza leader, secondo Axios e Al Jazeera. Van Hollen ha accusato Schumer di essersi schierato a favore di AIPAC, secondo le fonti."
-        },
-        "fr": {
-          "headline": "Van Hollen défie Schumer à la tête du Sénat",
-          "body": "Le sénateur Chris Van Hollen a annoncé jeudi qu'il défiait Chuck Schumer pour devenir leader de la majorité, selon Axios et Al Jazeera. Van Hollen a accusé Schumer d'être du côté de l'AIPAC, selon les sources."
-        },
-        "zh": {
-          "headline": "范霍伦挑战舒默，争夺参议院领导权",
-          "body": "据Axios和半岛电视台报道，参议员克里斯·范霍伦周四宣布，他将挑战查克·舒默的参议院多数党领袖职位。消息人士称，范霍伦指责舒默站在AIPAC一边。"
-        },
-        "pt": {
-          "headline": "Van Hollen desafia Schumer pela liderança no Senado",
-          "body": "O senador Chris Van Hollen anunciou na quinta-feira que vai desafiar Chuck Schumer para líder da maioria, segundo a Axios e a Al Jazeera. Van Hollen acusou Schumer de se alinhar com a AIPAC, disseram as fontes."
+          "headline": "Il democratico Eric Jones vince la corsa per la Camera in California",
+          "body": "Il democratico Eric Jones vincerà la corsa per il quarto distretto congressuale della California, secondo le proiezioni di Decision Desk HQ. Jones ha sconfitto il deputato uscente Mike Thompson in una sfida a partito unico, dopo che il risultato era rimasto in sospeso dalle elezioni."
         },
         "es": {
-          "headline": "Van Hollen desafía a Schumer por el liderazgo del Senado",
-          "body": "El senador Chris Van Hollen anunció el jueves que desafiará a Chuck Schumer por el puesto de líder de la mayoría, según Axios y Al Jazeera. Van Hollen acusó a Schumer de alinearse con AIPAC, dijeron las fuentes."
+          "headline": "El demócrata Eric Jones gana la contienda por la Cámara de Representantes en California",
+          "body": "El demócrata Eric Jones ganará la contienda por el cuarto distrito congresional de California, según las proyecciones de Decision Desk HQ. Jones desbancó al representante en funciones Mike Thompson en un duelo de partido único, después de que el resultado quedara sin definir desde el día de las elecciones."
         },
-        "ja": {
-          "headline": "バン・ホーレン氏、シューマー氏の上院指導部の地位に挑戦",
-          "body": "クリス・バン・ホーレン上院議員は木曜日、チャック・シューマー氏の上院院内総務の地位に挑戦すると発表した。アクシオスとアルジャジーラが伝えた。バン・ホーレン氏はシューマー氏がAIPAC側に立っていると非難したと、関係筋は述べた。"
+        "fr": {
+          "headline": "Le démocrate Eric Jones remporte une course à la Chambre en Californie",
+          "body": "Le démocrate Eric Jones remportera l'élection dans la 4e circonscription congressionnelle de Californie, selon les projections de Decision Desk HQ. Jones a battu le représentant sortant Mike Thompson lors d'un duel entre candidats du même parti, après que le scrutin est resté indécis depuis le jour de l'élection."
+        },
+        "zh": {
+          "headline": "民主党人埃里克·琼斯赢得加州众议院议席",
+          "body": "根据“决策台总部”（Decision Desk HQ）的预测，民主党人埃里克·琼斯将赢得加州第四国会选区的选举。在选举日过后迟迟未决的这场单一政党对决中，琼斯击败了现任众议员迈克·汤普逊。"
         },
         "ko": {
-          "headline": "밴 홀린, 상원 지도부를 놓고 슈머에 도전",
-          "body": "크리스 밴 홀린 상원의원이 목요일 척 슈머를 상대로 상원 다수당 원내대표 자리에 도전하겠다고 밝혔다고 악시오스와 알자지라가 전했다. 밴 홀린은 슈머가 AIPAC의 편을 든다고 비판했다고 관계자들은 말했다."
+          "headline": "민주당 에릭 존스, 캘리포니아 하원의원 선거 승리",
+          "body": "디시전 데스크 HQ의 예측에 따르면, 민주당 에릭 존스 후보가 캘리포니아 제4선거구 하원의원 선거에서 승리할 것으로 보인다. 선거일 이후 당선자가 확정되지 않았던 이번 선거에서 존스 후보는 현역인 마이크 톰슨 의원을 꺾고 승리를 거뒀다."
+        },
+        "ja": {
+          "headline": "民主党のエリック・ジョーンズ氏、カリフォルニア州下院選で勝利",
+          "body": "ディシジョン・デスクHQの予測によると、カリフォルニア州第4選挙区の下院選は民主党のエリック・ジョーンズ氏が勝利する見通しとなった。投票日以降、結果が未確定となっていた同選挙区で、ジョーンズ氏は現職のマイク・トンプソン下院議員を破った。"
+        },
+        "pt": {
+          "headline": "O democrata Eric Jones vence a corrida à Câmara dos Representantes na Califórnia",
+          "body": "O democrata Eric Jones vencerá a corrida ao 4.º Distrito Congressional da Califórnia, de acordo com as projeções da Decision Desk HQ. Jones derrotou o representante incumbente Mike Thompson numa disputa de partido único, após o resultado ter permanecido por definir desde o dia das eleições."
         }
       },
       "sources": [
         {
-          "outlet": "Axios",
-          "title": "Chris Van Hollen to challenge Schumer for Senate majority leader",
+          "outlet": "Dawn",
+          "title": "Democratic US Senator Chris Van Hollen announces run for US Senate majority leader, challenging Schumer",
+          "url": "https://www.dawn.com/news/2044266/democratic-us-senator-chris-van-hollen-announces-run-for-us-senate-majority-leader-challenging-schumer",
+          "publishedAt": "2026-11-13T07:02:43.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Jones ousts House Democrat in California",
+          "url": "https://thehill.com/homenews/campaign/6217945-jones-wins-california-house-race/",
+          "publishedAt": "2026-11-13T03:20:25.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-13T03:02:55.000Z",
+      "id": "u-1794538975000-axhn",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Senator Chris Van Hollen gab bekannt, dass er Chuck Schumer um das Amt des Mehrheitsführers herausfordert, wie Axios und Al Jazeera berichteten. Van Hollen warf Schumer vor, sich der AIPAC angeschlossen zu haben, hieß es von den Quellen.",
+          "headline": "Van Hollen fordert Schumer um Führung des Senats heraus"
+        },
+        "en": {
+          "body": "Sen. Chris Van Hollen announced Thursday that he'll challenge Chuck Schumer for majority leader, according to Axios and Al Jazeera. Van Hollen accused Schumer of siding with AIPAC, the sources said.",
+          "headline": "Van Hollen challenges Schumer for Senate leadership"
+        },
+        "es": {
+          "body": "El senador Chris Van Hollen anunció el jueves que desafiará a Chuck Schumer por el puesto de líder de la mayoría, según Axios y Al Jazeera. Van Hollen acusó a Schumer de alinearse con AIPAC, dijeron las fuentes.",
+          "headline": "Van Hollen desafía a Schumer por el liderazgo del Senado"
+        },
+        "fr": {
+          "body": "Le sénateur Chris Van Hollen a annoncé jeudi qu'il défiait Chuck Schumer pour devenir leader de la majorité, selon Axios et Al Jazeera. Van Hollen a accusé Schumer d'être du côté de l'AIPAC, selon les sources.",
+          "headline": "Van Hollen défie Schumer à la tête du Sénat"
+        },
+        "it": {
+          "body": "Il senatore Chris Van Hollen ha annunciato giovedì che sfiderà Chuck Schumer per la maggioranza leader, secondo Axios e Al Jazeera. Van Hollen ha accusato Schumer di essersi schierato a favore di AIPAC, secondo le fonti.",
+          "headline": "Van Hollen sfida Schumer per la leadership al Senato"
+        },
+        "ja": {
+          "body": "クリス・バン・ホーレン上院議員は木曜日、チャック・シューマー氏の上院院内総務の地位に挑戦すると発表した。アクシオスとアルジャジーラが伝えた。バン・ホーレン氏はシューマー氏がAIPAC側に立っていると非難したと、関係筋は述べた。",
+          "headline": "バン・ホーレン氏、シューマー氏の上院指導部の地位に挑戦"
+        },
+        "ko": {
+          "body": "크리스 밴 홀린 상원의원이 목요일 척 슈머를 상대로 상원 다수당 원내대표 자리에 도전하겠다고 밝혔다고 악시오스와 알자지라가 전했다. 밴 홀린은 슈머가 AIPAC의 편을 든다고 비판했다고 관계자들은 말했다.",
+          "headline": "밴 홀린, 상원 지도부를 놓고 슈머에 도전"
+        },
+        "pt": {
+          "body": "O senador Chris Van Hollen anunciou na quinta-feira que vai desafiar Chuck Schumer para líder da maioria, segundo a Axios e a Al Jazeera. Van Hollen acusou Schumer de se alinhar com a AIPAC, disseram as fontes.",
+          "headline": "Van Hollen desafia Schumer pela liderança no Senado"
+        },
+        "zh": {
+          "body": "据Axios和半岛电视台报道，参议员克里斯·范霍伦周四宣布，他将挑战查克·舒默的参议院多数党领袖职位。消息人士称，范霍伦指责舒默站在AIPAC一边。",
+          "headline": "范霍伦挑战舒默，争夺参议院领导权"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.axios.com/2026/11/13/schumer-van-hollen-senate-majority-leader",
+          "title": "Chris Van Hollen to challenge Schumer for Senate majority leader",
+          "outlet": "Axios",
           "publishedAt": "2026-11-13T03:02:55.000Z"
         },
         {
-          "outlet": "Al Jazeera",
-          "title": "Chris Van Hollen to run for US Senate majority leader",
           "url": "https://www.aljazeera.com/news/2026/11/13/chris-van-hollen-to-run-for-us-senate-majority-leader?traffic_source=rss",
+          "title": "Chris Van Hollen to run for US Senate majority leader",
+          "outlet": "Al Jazeera",
           "publishedAt": "2026-11-13T02:42:41.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-13T00:34:48.000Z",
@@ -1390,10 +1497,26 @@
     "https://www.dawn.com/news/2044185/trump-says-washington-does-not-need-iran-deal",
     "https://thehill.com/homenews/house/6217833-boebert-blames-policy-market-losses/",
     "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOEJMU2pwS05HMlUxblhZQ2ZNY1p0UDFvYVFENUF0VVZmMThxajlRWmJhVEFyRTFSV2dvMnBaUW9NQVJpbWRfTzlPQkpIQTExMEl6VEZwRVhUSXpTbVFkQ1NfNG5lX3h4Z0pvRF9qdU9vaDNTNEFoYU44TUVTNy1tLQ?oc=5",
-    "https://www.straitstimes.com/world/europe/swedens-rival-blocs-seek-centre-party-support-to-break-deadlock"
+    "https://www.straitstimes.com/world/europe/swedens-rival-blocs-seek-centre-party-support-to-break-deadlock",
+    "https://www.jpost.com/israel-news/politics-and-diplomacy/article-914797",
+    "https://www.dw.com/en/after-suffering-its-worst-election-result-what-s-next-for-the-anc-and-for-south-africa/a-79929902?maca=en-rss-en-all-1573-rdf",
+    "https://www.japantimes.co.jp/news/2026/11/13/japan/explainer/explainer-ruling-disparity-upper-house-seat/",
+    "https://www.dawn.com/news/2044270/why-trump-crowned-the-man-who-cost-him-congress",
+    "https://www.zeit.de/2026/49/us-midterms-donald-trump-republikaner-niederlage-kritik",
+    "https://www.thehindu.com/news/international/as-election-nears-spains-sanchez-struggles-to-rally-disillusioned-left/article71696797.ece",
+    "https://www.straitstimes.com/world/cape-verde-president-eyes-new-term-as-party-builds-on-legislative-win",
+    "https://www.dw.com/en/india-news-sonam-wangchuk-says-he-is-under-house-arrest-in-ladakh/live-79936475?maca=en-rss-en-all-1573-rdf",
+    "https://www.dawn.com/news/2044266/democratic-us-senator-chris-van-hollen-announces-run-for-us-senate-majority-leader-challenging-schumer",
+    "https://allafrica.com/stories/202611130100.html",
+    "https://www.theguardian.com/australia-news/2026/nov/13/victoria-state-election-2026-labor-greens-preference-deals-seats",
+    "https://www.kyivpost.com/post/89982",
+    "https://www.straitstimes.com/world/europe/as-election-nears-spains-sanchez-struggles-to-rally-disillusioned-left",
+    "https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+    "https://www.npr.org/2026/11/12/nx-s1-6039357/chris-van-hollen-chuck-schumer-senate-majority-leader",
+    "https://thehill.com/homenews/campaign/6217945-jones-wins-california-house-race/"
   ],
   "startedAt": "2026-11-11T07:30:47.904Z",
-  "updatedAt": "2026-11-13T03:16:26.494Z",
+  "updatedAt": "2026-11-13T08:49:45.757Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-us-midterm-election-aftermath",
