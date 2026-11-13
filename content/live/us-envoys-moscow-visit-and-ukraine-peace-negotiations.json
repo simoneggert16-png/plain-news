@@ -15,27 +15,17 @@
       "Al Jazeera"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "us-envoys-moscow-visit-and-ukraine-peace-negotiations",
   "topic": "US Envoys' Moscow Visit and Ukraine Peace Negotiations",
   "status": "live",
   "article": {
     "slug": "us-envoys-moscow-visit-and-ukraine-peace-negotiations",
-    "updatedAt": "2026-11-13T02:17:47.677Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
-        "title": "US envoys meet Putin in Moscow amid Starlink disruptions, prisoner exchange agreed",
         "dek": "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks, according to Time Magazine and Al Jazeera.",
-        "facts": [
-          "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks",
-          "Abu Dhabi talks produced no breakthrough in the conflict and agreed on prisoner exchange",
-          "Ukrainian President Volodymyr Zelenskyy reported significant disruptions to the Starshield satellite communications service",
-          "These restrictions are affecting the ability of military units to intercept Russian drones",
-          "Russian President Putin suggests no Ukraine compromise in meeting with US envoys",
-          "Prisoner exchange agreed at trilateral Abu Dhabi talks between Ukraine, US and Russia"
-        ],
         "body": [
           "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following peace talks in Abu Dhabi, according to Time Magazine and Al Jazeera.",
           "The discussions in Abu Dhabi produced no breakthrough in the conflict, according to AP News and Radio Free Europe/Radio Liberty.",
@@ -46,6 +36,15 @@
           "The first trilateral talks between Ukraine, the US and Russia in nine months ended with an agreement on exchanging prisoners, according to DW and Africanews.",
           "US envoys are scheduled to meet with Vladimir Putin on Thursday and Volodymyr Zelenskyy on Friday, following U.S.-mediated talks in Abu Dhabi that resulted in an agreement on a prisoner exchange, according to NPR."
         ],
+        "facts": [
+          "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks",
+          "Abu Dhabi talks produced no breakthrough in the conflict and agreed on prisoner exchange",
+          "Ukrainian President Volodymyr Zelenskyy reported significant disruptions to the Starshield satellite communications service",
+          "These restrictions are affecting the ability of military units to intercept Russian drones",
+          "Russian President Putin suggests no Ukraine compromise in meeting with US envoys",
+          "Prisoner exchange agreed at trilateral Abu Dhabi talks between Ukraine, US and Russia"
+        ],
+        "title": "US envoys meet Putin in Moscow amid Starlink disruptions, prisoner exchange agreed",
         "context": "US diplomatic envoys have been engaging with Russian leadership following previous peace talks, while Ukraine has reported intermittent disruptions to satellite communications services used by its military. The Abu Dhabi talks were the first trilateral talks between Ukraine, the US and Russia in nine months.",
         "imageCaption": ""
       }
@@ -55,6 +54,13 @@
         "at": "2026-11-13T00:47:23.703Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "",
+            "body": [],
+            "facts": [],
+            "title": "US-Botschafter treffen Putin in Moskau inmitten Starlink-Störungen, Gefangenaustausch vereinbart",
+            "context": ""
+          },
           "en": {
             "dek": "US envoys Jared Kushner and Steve Witkoff arrived in Moscow to meet with Russian President Vladimir Putin following Abu Dhabi talks, according to Time Magazine and Al Jazeera.",
             "body": [
@@ -78,13 +84,6 @@
             "title": "US envoys meet Putin in Moscow amid Starlink disruptions, prisoner exchange agreed",
             "context": "US diplomatic envoys have been engaging with Russian leadership following previous peace talks, while Ukraine has reported intermittent disruptions to satellite communications services used by its military. The Abu Dhabi talks were the first trilateral talks between Ukraine, the US and Russia in nine months.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "",
-            "body": [],
-            "facts": [],
-            "title": "US-Botschafter treffen Putin in Moskau inmitten Starlink-Störungen, Gefangenaustausch vereinbart",
-            "context": ""
           }
         }
       },
@@ -227,7 +226,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-13T02:17:47.677Z"
   },
   "endedAt": null,
   "locales": {
@@ -270,62 +270,96 @@
   },
   "updates": [
     {
-      "id": "u-1794535407000-7cd8",
-      "at": "2026-11-13T02:03:27.000Z",
+      "id": "u-1794537450000-b2jo",
+      "at": "2026-11-13T02:37:30.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "US envoys met Putin then debriefed Zelensky in Dublin",
-          "body": "US envoys Jared Kushner and Steve Witkoff held talks with Vladimir Putin in the Kremlin; they then debriefed Volodymyr Zelenskyy in Dublin according to The Hindu and BBC"
-        },
-        "it": {
-          "headline": "Inviati statunitensi incontrano Putin e poi debriefano Zelensky a Dublino",
-          "body": "Gli inviati statunitensi Jared Kushner e Steve Witkoff hanno tenuto colloqui con Vladimir Putin al Cremlino; hanno poi debriefato Volodymyr Zelenskyy a Dublino secondo The Hindu e BBC"
-        },
-        "es": {
-          "headline": "Envoys estadounidenses se reunieron con Putin y luego informaron a Zelenski en Dublín",
-          "body": "Los envoys estadounidenses Jared Kushner y Steve Witkoff mantuvieron conversaciones con Vladimir Putin en el Kremlin; posteriormente informaron a Volodímir Zelenski en Dublín según The Hindu y BBC"
-        },
-        "de": {
-          "headline": "US-Botschafter trafen Putin und berichterstellten Zelensky in Dublin",
-          "body": "US-Botschafter Jared Kushner und Steve Witkoff führten Gespräche mit Wladimir Putin im Kreml; anschließend berichterstellten sie in Dublin mit Wolodymyr Selenskyj, so The Hindu und BBC"
-        },
-        "zh": {
-          "headline": "美国特使会见普京后在都柏林向泽连斯基通报情况",
-          "body": "据《印度教徒报》和BBC报道，美国特使贾里德·库什纳和史蒂夫·威特科夫在克里姆林宫与弗拉基米尔·普京举行了会谈；随后他们在都柏林向弗拉基米尔·泽连斯基通报了情况。"
-        },
-        "ja": {
-          "headline": "米特使、プーチン氏と会談後にダブリンでゼレンスキー氏に説明",
-          "body": "米特使のジャレッド・クシュナー氏とスティーブ・ウィトコフ氏はクレムリンでウラジーミル・プーチン氏と会談し、その後ダブリンでウォロディミル・ゼレンスキー氏に説明した。「ザ・ヒンドゥー」とBBCによると。"
-        },
-        "ko": {
-          "headline": "미국 특사들, 푸틴과 회동 뒤 더블린서 젤렌스키에 브리핑",
-          "body": "더 힌두와 BBC에 따르면 미국 특사인 재러드 쿠시너와 스티브 위트코프는 크렘린에서 블라디미르 푸틴과 회담했고, 이어 더블린에서 볼로디미르 젤렌스키에게 브리핑했다."
+          "headline": "Finnish authorities detect strike on Russian warship as Zelenskyy meets US envoys",
+          "body": "Finnish authorities detected a strike on a Russian warship. This occurred while Zelenskyy met US envoys."
         },
         "fr": {
-          "headline": "Les émissaires américains ont rencontré Poutine puis fait un compte rendu à Zelensky à Dublin",
-          "body": "Les émissaires américains Jared Kushner et Steve Witkoff ont eu des entretiens avec Vladimir Poutine au Kremlin ; ils ont ensuite fait un compte rendu à Volodymyr Zelensky à Dublin, selon The Hindu et la BBC."
+          "headline": "Des autorités finlandaises détectent une frappe sur un navire de guerre russe alors que Zelenskyy reçoit des envoyés américains",
+          "body": "Des autorités finlandaises ont détecté une frappe sur un navire de guerre russe. Cela s'est produit alors que Zelenskyy recevait des envoyés américains."
         },
-        "pt": {
-          "headline": "Emissários dos EUA reuniram-se com Putin e depois debriefaram Zelensky em Dublin",
-          "body": "Os enviados dos EUA, Jared Kushner e Steve Witkoff, reuniram-se com Vladimir Putin no Kremlin; depois debriefaram Volodymyr Zelenskyy em Dublin, segundo The Hindu e a BBC"
+        "de": {
+          "headline": "Finnische Behörden registrieren Schlag auf russische Fregatte bei Zelenskyy-Treffen mit US-Vertretern",
+          "body": "Finnische Behörden haben einen Schlag auf eine russische Fregatte registriert. Dies geschah während Zelenskyy mit US-Vertretern zusammentraf."
         }
       },
       "sources": [
         {
-          "outlet": "The Hindu",
-          "title": "U.S., Ukraine say Europe to join Russia talks as Putin sticks to hardline stance",
+          "outlet": "Al Jazeera",
+          "title": "Finland detects strike on Russian warship as Zelenskyy meets US envoys",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQk5HZ2otLXgxVjM2Y2t3MVVGZllBYWlRUTBIYjJZb3FGcW15b0g1ZUlfR0FQT2NTZGhUcFpGR1JYczNaT3hucW91SE92U21TMW9lZEtkdUVTQm1hYUx1WmFJYmFzODdaUXFRSjV1aXZ5VzBRYzhrcHhvdTBMNVF2V1ZPTVhoWVN1dmdWRUUydWFFQi1mblE3a2dhN3ItSHhIWkNKSm1uMjVhS09NbW9na0VR0gG3AUFVX3lxTFBZTDVsS0F3WXJrQ1VlTDd1dUgzWC03ZlFSQjdSMzUyNG9JUzhzNW8wbmc2YXBiM1ZXbjlLa2NZc3VTTWtKY09QeHNOWHlFQl9mbVp2aFFId1JtdEFwb1N1WWc2c1VqYTJaX0U4ZTNjV1d4SUJJRW9WckF0Mm1hUVFQWENJS0xiYUNOTnRGdkk3WkRSZVJRUWxrRHlzN0JIX25ybzVCNk5ob2FjWEpobHJBblJabzhjdw?oc=5",
+          "publishedAt": "2026-11-13T02:37:30.000Z"
+        },
+        {
+          "outlet": "The Kyiv Post",
+          "title": "Russian Drones Target Kyiv Overnight, Debris Ignites Medical Facility",
+          "url": "https://www.kyivpost.com/post/89974",
+          "publishedAt": "2026-11-13T02:00:46.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-13T02:03:27.000Z",
+      "id": "u-1794535407000-7cd8",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "US-Botschafter Jared Kushner und Steve Witkoff führten Gespräche mit Wladimir Putin im Kreml; anschließend berichterstellten sie in Dublin mit Wolodymyr Selenskyj, so The Hindu und BBC",
+          "headline": "US-Botschafter trafen Putin und berichterstellten Zelensky in Dublin"
+        },
+        "en": {
+          "body": "US envoys Jared Kushner and Steve Witkoff held talks with Vladimir Putin in the Kremlin; they then debriefed Volodymyr Zelenskyy in Dublin according to The Hindu and BBC",
+          "headline": "US envoys met Putin then debriefed Zelensky in Dublin"
+        },
+        "es": {
+          "body": "Los envoys estadounidenses Jared Kushner y Steve Witkoff mantuvieron conversaciones con Vladimir Putin en el Kremlin; posteriormente informaron a Volodímir Zelenski en Dublín según The Hindu y BBC",
+          "headline": "Envoys estadounidenses se reunieron con Putin y luego informaron a Zelenski en Dublín"
+        },
+        "fr": {
+          "body": "Les émissaires américains Jared Kushner et Steve Witkoff ont eu des entretiens avec Vladimir Poutine au Kremlin ; ils ont ensuite fait un compte rendu à Volodymyr Zelensky à Dublin, selon The Hindu et la BBC.",
+          "headline": "Les émissaires américains ont rencontré Poutine puis fait un compte rendu à Zelensky à Dublin"
+        },
+        "it": {
+          "body": "Gli inviati statunitensi Jared Kushner e Steve Witkoff hanno tenuto colloqui con Vladimir Putin al Cremlino; hanno poi debriefato Volodymyr Zelenskyy a Dublino secondo The Hindu e BBC",
+          "headline": "Inviati statunitensi incontrano Putin e poi debriefano Zelensky a Dublino"
+        },
+        "ja": {
+          "body": "米特使のジャレッド・クシュナー氏とスティーブ・ウィトコフ氏はクレムリンでウラジーミル・プーチン氏と会談し、その後ダブリンでウォロディミル・ゼレンスキー氏に説明した。「ザ・ヒンドゥー」とBBCによると。",
+          "headline": "米特使、プーチン氏と会談後にダブリンでゼレンスキー氏に説明"
+        },
+        "ko": {
+          "body": "더 힌두와 BBC에 따르면 미국 특사인 재러드 쿠시너와 스티브 위트코프는 크렘린에서 블라디미르 푸틴과 회담했고, 이어 더블린에서 볼로디미르 젤렌스키에게 브리핑했다.",
+          "headline": "미국 특사들, 푸틴과 회동 뒤 더블린서 젤렌스키에 브리핑"
+        },
+        "pt": {
+          "body": "Os enviados dos EUA, Jared Kushner e Steve Witkoff, reuniram-se com Vladimir Putin no Kremlin; depois debriefaram Volodymyr Zelenskyy em Dublin, segundo The Hindu e a BBC",
+          "headline": "Emissários dos EUA reuniram-se com Putin e depois debriefaram Zelensky em Dublin"
+        },
+        "zh": {
+          "body": "据《印度教徒报》和BBC报道，美国特使贾里德·库什纳和史蒂夫·威特科夫在克里姆林宫与弗拉基米尔·普京举行了会谈；随后他们在都柏林向弗拉基米尔·泽连斯基通报了情况。",
+          "headline": "美国特使会见普京后在都柏林向泽连斯基通报情况"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.thehindu.com/news/international/us-ukraine-say-europe-to-join-russia-talks-as-putin-sticks-to-hardline-stance/article71696395.ece",
+          "title": "U.S., Ukraine say Europe to join Russia talks as Putin sticks to hardline stance",
+          "outlet": "The Hindu",
           "publishedAt": "2026-11-13T02:03:27.000Z"
         },
         {
-          "outlet": "BBC",
-          "title": "US envoys meet Zelensky in Dublin after talks with Putin in Moscow",
           "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB2YUZtTEpkZ1E5YmYwVXlWYXFzTWc4S09mYnBkejB5Y3NHd0xKTjB3MlVGeFZKaHlUdTNJRVRvWkgzQ3hHWWpVZm1neElKcDZ3NWJqbnl4WGdLbDQ?oc=5",
+          "title": "US envoys meet Zelensky in Dublin after talks with Putin in Moscow",
+          "outlet": "BBC",
           "publishedAt": "2026-11-12T21:00:42.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-12T22:33:49.000Z",
@@ -1167,10 +1201,13 @@
     "https://www.kyivpost.com/post/89972",
     "https://news.google.com/rss/articles/CBMingFBVV95cUxOYlM3dUNSLV8wYmw1TXZDVWVTR0pWcFZ1MEprWWxHSDIzZ2ctZEptS0NJY3JBTmVUY2JLUE5Vb1NpSzRMWjR2M1pia1VqT2xhbGpsS3pvM0t5YXJkckVUWjd4Rnp3V0Vscm9HR3VvQ2dlUnFUd1pSbmxjTlI5ZmdvTm1DWU9tOHl6MW1oVHA2b0I4WEstb2pLNUdOU3FXd9IBngFBVV95cUxNUzl4Z2c5TVdIc3dIaTlLZnp4bTUwS0VoQVVycXNWMlU0ekFqMXBIRTlZcjlVV0VrQlNob3NIaFF1WDkzSEE2eURRMEZUVWxlaEgyNERVbE9DZ0lqUm9zOEI4OFhTNVl3S3p0dXZGbVB0XzFVUUM0Yjh1Wmh2U3FfQmVPTFlmdVJKYnVFZXpnOFFrTVkzYVdvaWNUeDB4QQ?oc=5",
     "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdU1HYkpjZXQxTm82RC0xbEtOMnA2bFJWZEJMckowSEZCUlVmQ2RxSjgzc3g1bzU1eV9MUVZxVHpBeWtpa00tOTFQZ0lTMkk4N1Zob01pajFvb0t2aWtHOU9MbGFkLV9RYUJtZUxxOEJ4cEpuWTZKLUVlWVFkempZczdRX2loZWNyYXFZUm1KemUxelNZMHo5a3ZPSThoV1E4WDBQMG9RUWhSNG9BR0l6aDVfVFc0VEdsTl9hTWwwLTRvTVZkMjBmSQ?oc=5",
-    "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB2YUZtTEpkZ1E5YmYwVXlWYXFzTWc4S09mYnBkejB5Y3NHd0xKTjB3MlVGeFZKaHlUdTNJRVRvWkgzQ3hHWWpVZm1neElKcDZ3NWJqbnl4WGdLbDQ?oc=5"
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB2YUZtTEpkZ1E5YmYwVXlWYXFzTWc4S09mYnBkejB5Y3NHd0xKTjB3MlVGeFZKaHlUdTNJRVRvWkgzQ3hHWWpVZm1neElKcDZ3NWJqbnl4WGdLbDQ?oc=5",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQk5HZ2otLXgxVjM2Y2t3MVVGZllBYWlRUTBIYjJZb3FGcW15b0g1ZUlfR0FQT2NTZGhUcFpGR1JYczNaT3hucW91SE92U21TMW9lZEtkdUVTQm1hYUx1WmFJYmFzODdaUXFRSjV1aXZ5VzBRYzhrcHhvdTBMNVF2V1ZPTVhoWVN1dmdWRUUydWFFQi1mblE3a2dhN3ItSHhIWkNKSm1uMjVhS09NbW9na0VR0gG3AUFVX3lxTFBZTDVsS0F3WXJrQ1VlTDd1dUgzWC03ZlFSQjdSMzUyNG9JUzhzNW8wbmc2YXBiM1ZXbjlLa2NZc3VTTWtKY09QeHNOWHlFQl9mbVp2aFFId1JtdEFwb1N1WWc2c1VqYTJaX0U4ZTNjV1d4SUJJRW9WckF0Mm1hUVFQWENJS0xiYUNOTnRGdkk3WkRSZVJRUWxrRHlzN0JIX25ybzVCNk5ob2FjWEpobHJBblJabzhjdw?oc=5",
+    "https://www.faz.net/aktuell/feuilleton/medien-und-film/talkshow/tv-kritik-laschets-hoffnung-auf-ein-bisschen-frieden-accg-201679082.html",
+    "https://www.kyivpost.com/post/89974"
   ],
   "startedAt": "2026-11-12T15:07:45.391Z",
-  "updatedAt": "2026-11-13T02:17:22.421Z",
+  "updatedAt": "2026-11-13T02:43:49.648Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "us-envoys-moscow-visit-and-ukraine-peace-negotiations",
