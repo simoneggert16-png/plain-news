@@ -12,20 +12,9 @@
   },
   "slug": "2026-us-midterm-election-aftermath",
   "stats": {
-    "label": "2026 US midterm election aftermath",
-    "note": "National Democrat sentiment swing and Mississippi Senate vote share",
-    "unit": "%",
     "max": 100,
     "asOf": "2026-11-12T14:30:00.000Z",
-    "updatedAt": "2026-11-12T17:47:25.733Z",
-    "source": {
-      "outlet": "CNBC",
-      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-      "publishedAt": "2026-11-12T12:56:27.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
+    "note": "National Democrat sentiment swing and Mississippi Senate vote share",
     "rows": [
       {
         "key": "democrat-vote-share-mississippi-senate",
@@ -36,26 +25,26 @@
           "de": {
             "label": "Stimmenanteil der Demokraten bei Senatswahl in Mississippi"
           },
-          "fr": {
-            "label": "Part démocrate au Sénat du Mississippi"
-          },
           "es": {
             "label": "Porcentaje del voto demócrata en el Senado de Misisipi"
           },
+          "fr": {
+            "label": "Part démocrate au Sénat du Mississippi"
+          },
           "it": {
             "label": "Percentuale di voto del democratico al Senato del Mississippi"
-          },
-          "pt": {
-            "label": "Percentagem de votos do Partido Democrata no Senado do Mississippi"
-          },
-          "zh": {
-            "label": "民主党密西西比州参议院得票率"
           },
           "ja": {
             "label": "ミシシッピ州上院選 民主党の得票率"
           },
           "ko": {
             "label": "미시시피 상원 민주당 득표율"
+          },
+          "pt": {
+            "label": "Percentagem de votos do Partido Democrata no Senado do Mississippi"
+          },
+          "zh": {
+            "label": "民主党密西西比州参议院得票率"
           }
         }
       },
@@ -71,115 +60,217 @@
           "es": {
             "label": "Variación del sentimiento demócrata nacional (7 días"
           },
-          "it": {
-            "label": "Swing del sentiment democratico nazionale (7 giorni"
-          },
           "fr": {
             "label": "Évolution du sentiment démocrate national (7 jours"
           },
-          "zh": {
-            "label": "全国民主党情绪转移（7天）"
+          "it": {
+            "label": "Swing del sentiment democratico nazionale (7 giorni"
           },
-          "pt": {
-            "label": "Swing do sentimento nacional dos Democratas (7 dias)"
+          "ja": {
+            "label": "全国の民主党支持の推移（7日"
           },
           "ko": {
             "label": "전국 민주당 여론 변화(7일"
           },
-          "ja": {
-            "label": "全国の民主党支持の推移（7日"
+          "pt": {
+            "label": "Swing do sentimento nacional dos Democratas (7 dias)"
+          },
+          "zh": {
+            "label": "全国民主党情绪转移（7天）"
           }
         }
       }
     ],
+    "unit": "%",
+    "label": "2026 US midterm election aftermath",
+    "source": {
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "outlet": "CNBC",
+      "trusted": true,
+      "publishedAt": "2026-11-12T12:56:27.000Z"
+    },
     "locales": {
       "de": {
         "note": "Stimmenanteilsänderungen im Mississippi-Senatswahlkampf und nationale Stimmung",
         "label": "Nachwirkungen der US-Zwischenwahlen 2026"
       },
-      "fr": {
-        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis",
-        "note": "Sentiment national démocrate et part de vote au Sénat du Mississippi"
-      },
       "es": {
         "note": "Cambios en la cuota de votos en la carrera al Senado de Mississippi y el sentimiento nacional",
         "label": "Consecuencias posteriores a las elecciones de mitad de mandato de EE. UU. 2026"
+      },
+      "fr": {
+        "note": "Sentiment national démocrate et part de vote au Sénat du Mississippi",
+        "label": "Résultats des élections de mi-mandat de 2026 aux États-Unis"
       },
       "it": {
         "note": "Variazioni di voto nella corsa al Senato nel Mississippi e sentimenti nazionali",
         "label": "2026 elezioni di metà mandato: conseguenze"
       },
-      "pt": {
-        "label": "2026 eleições de meio de mandato nos EUA",
-        "note": "Sentimento nacional dos Democratas após o voto e percentagem de votos no Senado de Mississippi"
-      },
-      "zh": {
-        "label": "2026年美国中期选举余波",
-        "note": "全国民主党情绪转移和密西西比州参议院选票份额"
-      },
       "ja": {
-        "label": "2026年米国中間選挙後の情勢",
-        "note": "全国の民主党支持の推移とミシシッピ州上院選挙の得票率"
+        "note": "全国の民主党支持の推移とミシシッピ州上院選挙の得票率",
+        "label": "2026年米国中間選挙後の情勢"
       },
       "ko": {
-        "label": "2026년 미국 중간선거 이후",
-        "note": "전국 민주당 여론 변화와 미시시피 상원 득표율"
+        "note": "전국 민주당 여론 변화와 미시시피 상원 득표율",
+        "label": "2026년 미국 중간선거 이후"
+      },
+      "pt": {
+        "note": "Sentimento nacional dos Democratas após o voto e percentagem de votos no Senado de Mississippi",
+        "label": "2026 eleições de meio de mandato nos EUA"
+      },
+      "zh": {
+        "note": "全国民主党情绪转移和密西西比州参议院选票份额",
+        "label": "2026年美国中期选举余波"
       }
-    }
+    },
+    "updatedAt": "2026-11-12T17:47:25.733Z",
+    "sourceCount": 1
   },
   "topic": "2026 US midterm election aftermath",
   "status": "live",
   "article": {
     "slug": "2026-us-midterm-election-aftermath",
+    "updatedAt": "2026-11-13T03:16:58.290Z",
     "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Acht Tage nach der Wahl zählen Wahlhelfer weiterhin die Stimmzettel, während Parteiführer gewählt und wichtige Rennen entschieden werden.",
-        "body": [
-          "Demokratische Abgeordnete und Präsidentschaftsanwärter versammeln sich in Denver, um über die Zukunft der Partei und die Strategie für 2028 zu debattieren. Laut Fox News arbeitet die Partei daran, ihre Ausrichtung nach den Zwischenwahlen ohne einen klaren Spitzenkandidaten zu gestalten.",
-          "Scott Colom besiegte die amtierende Republikanerin Cindy Hyde-Smith und gewann den US-Senatssitz für Mississippi, wie mehrere Prognosen zeigen. Dieser Sieg verschafft den Demokraten eine Mehrheit im Senat, wie AP News und die Washington Post berichten.",
-          "Der Republikaner Greg Murphy räumte seine Wiederwahl gegen den Demokraten Raymond Smith im 3. Kongresswahlbezirk von North Carolina ein. Laut The Hill und AP News geht damit ein weiterer Sitz im Repräsentantenhaus an die Demokratische Partei.",
-          "Acht Tage nach den Zwischenwahlen zählen Wahlhelfer laut G1 noch immer die Stimmzettel. Insgesamt stehen die Ergebnisse von 17 Rennen noch aus, während die Auszählung in mehreren Bundesstaaten fortgesetzt wird.",
-          "Eine Woche nach dem Wahltag sind laut PBS und Al Jazeera mehr als ein Dutzend wichtige Rennen noch nicht entschieden. Die Stimmenauszählung in diesen Wahlbezirken dauert an, während die Behörden die verbleibenden Stimmzettel verarbeiten.",
-          "Die Republikanische Partei hat laut der New York Times Jim Jordan und John Thune zu ihren neuen Führern im Repräsentantenhaus gewählt. Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung.",
-          "Eine neue Umfrage von Politico ergab, dass 45 Prozent der MAGA-Anhänger von Präsident Trump die Bewegung als Verlierer der Zwischenwahlen im letzten Jahr ansehen, so The Hill. The Guardian berichtet, dass die Umfrage zeigt, dass fast die Hälfte der MAGA-Anhänger Trumps die Bewegung als Verlierer betrachtet.",
-          "Das brasilianische Wahlgericht verhängte eine Geldstrafe gegen Meta, nachdem das Bündnis von Präsident Lula Beschwerde eingereicht hatte; das Gericht fand laut DW und The Hindu keine Beweise für eine vorsätzliche Wahlbeeinflussung."
-        ],
-        "facts": [
-          "Demokratische Abgeordnete treffen sich laut Fox News in Denver, um die Strategie der Partei für 2028 zu erörtern.",
-          "Scott Colom besiegte Cindy Hyde-Smith und gewann den Senatssitz in Mississippi, wie AP News und die Washington Post berichten.",
-          "Der Republikaner Greg Murphy räumte seine Niederlage im Rennen um den Sitz im Repräsentantenhaus in North Carolina gegen den Demokraten Raymond Smith ein, so The Hill und AP News.",
-          "Die Republikanische Partei wählte laut der New York Times Jim Jordan und John Thune zu ihren neuen Führern im Repräsentantenhaus.",
-          "Eine Woche nach der Wahl stehen laut G1 die Ergebnisse von siebzehn Rennen noch aus."
-        ],
-        "title": "Stimmenauszählung nach US-Zwischenwahlen dauert an, während Republikaner neue Führung wählen",
-        "context": "Die US-Zwischenwahlen 2026 führten zu mehreren unentschiedenen Kongressrennen, was zu personellen Veränderungen in der Führung der Republikanischen Partei führte, während internationale Gerichte separate Fälle im Zusammenhang mit dem Management von Wahlplattformen behandelten."
-      },
       "en": {
-        "dek": "Election officials continue counting ballots eight days after the vote while party leaders are selected and key races are resolved.",
+        "title": "Vote counting continues after US midterms as Republicans select new leadership",
+        "dek": "Election officials continue counting ballots one week after the vote while party leaders are selected and key races are resolved.",
+        "facts": [
+          "Election officials are still counting ballots eight days after the midterm elections, with 17 races remaining without a final result, according to G1.",
+          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
+          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to AP News and The Washington Post.",
+          "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
+          "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera.",
+          "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill."
+        ],
         "body": [
-          "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
-          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. This victory provides Democrats with a majority in the Senate, as reported by AP News and The Washington Post.",
-          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District. The result flips another House seat to the Democratic Party, according to The Hill and AP News.",
-          "Election officials are still counting ballots eight days after the midterm elections, according to G1. A total of 17 races remain without a final declared result as counting proceeds across multiple states.",
-          "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera. Vote counting continues in these jurisdictions as officials process the remaining ballots.",
+          "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain without a final result.",
+          "More than a dozen key races remain too early to call one week after Election Day, as vote counting continues across multiple states, according to PBS and Al Jazeera.",
+          "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, flipping another House seat to the Democratic Party, according to The Hill and AP News.",
+          "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
           "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+          "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
           "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
           "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
         ],
-        "facts": [
-          "Democratic lawmakers are meeting in Denver to discuss the party's 2028 strategy, according to Fox News.",
-          "Scott Colom defeated Cindy Hyde-Smith to win the Mississippi Senate seat, according to AP News and The Washington Post.",
-          "Republican Greg Murphy conceded his North Carolina House race to Democrat Raymond Smith, according to The Hill and AP News.",
-          "The Republican Party selected Jim Jordan and John Thune as new House leaders, according to the New York Times.",
-          "Seventeen races remain without a final result one week after the election, according to G1."
-        ],
-        "title": "Vote counting continues after US midterms as Republicans select new leadership",
         "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
         "imageCaption": ""
       }
     },
     "versions": [
+      {
+        "at": "2026-11-13T00:57:19.310Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Election officials continue counting ballots one week after the vote while party leaders are selected and key races are resolved.",
+            "body": [
+              "Election officials are still counting ballots eight days after the midterm elections, with 17 races remaining without a final result, according to G1.",
+              "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera, as vote counting continues across multiple states.",
+              "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District. The result flips another House seat to the Democratic Party, according to The Hill and AP News.",
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+              "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
+              "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
+              "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+            ],
+            "facts": [
+              "Election officials are still counting ballots eight days after the midterm elections, with 17 races remaining without a final result, according to G1.",
+              "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to AP News and The Washington Post.",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
+              "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera.",
+              "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill."
+            ],
+            "title": "Vote counting continues after US midterms as Republicans select new leadership",
+            "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-11-12T23:56:58.106Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Election officials continue counting ballots one week after the vote while party leaders are selected and key races are resolved.",
+            "body": [
+              "Election officials are still counting ballots one week after the midterm elections, according to G1. There are 17 races that remain without a final result.",
+              "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera, as vote counting continues across multiple states.",
+              "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District. The result flips another House seat to the Democratic Party, according to The Hill and AP News.",
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. The victory gives Democrats a Senate majority, according to AP News and The Washington Post.",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+              "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
+              "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
+              "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+            ],
+            "facts": [
+              "Election officials are still counting ballots one week after the midterm elections, with 17 races remaining without a final result, according to G1.",
+              "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District, according to The Hill and AP News.",
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to AP News and The Washington Post.",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times.",
+              "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera.",
+              "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill."
+            ],
+            "title": "Vote counting continues after US midterms as Republicans select new leadership",
+            "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-11-12T14:59:14.446Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "Acht Tage nach der Wahl zählen Wahlhelfer weiterhin die Stimmzettel, während Parteiführer gewählt und wichtige Rennen entschieden werden.",
+            "body": [
+              "Demokratische Abgeordnete und Präsidentschaftsanwärter versammeln sich in Denver, um über die Zukunft der Partei und die Strategie für 2028 zu debattieren. Laut Fox News arbeitet die Partei daran, ihre Ausrichtung nach den Zwischenwahlen ohne einen klaren Spitzenkandidaten zu gestalten.",
+              "Scott Colom besiegte die amtierende Republikanerin Cindy Hyde-Smith und gewann den US-Senatssitz für Mississippi, wie mehrere Prognosen zeigen. Dieser Sieg verschafft den Demokraten eine Mehrheit im Senat, wie AP News und die Washington Post berichten.",
+              "Der Republikaner Greg Murphy räumte seine Wiederwahl gegen den Demokraten Raymond Smith im 3. Kongresswahlbezirk von North Carolina ein. Laut The Hill und AP News geht damit ein weiterer Sitz im Repräsentantenhaus an die Demokratische Partei.",
+              "Acht Tage nach den Zwischenwahlen zählen Wahlhelfer laut G1 noch immer die Stimmzettel. Insgesamt stehen die Ergebnisse von 17 Rennen noch aus, während die Auszählung in mehreren Bundesstaaten fortgesetzt wird.",
+              "Eine Woche nach dem Wahltag sind laut PBS und Al Jazeera mehr als ein Dutzend wichtige Rennen noch nicht entschieden. Die Stimmenauszählung in diesen Wahlbezirken dauert an, während die Behörden die verbleibenden Stimmzettel verarbeiten.",
+              "Die Republikanische Partei hat laut der New York Times Jim Jordan und John Thune zu ihren neuen Führern im Repräsentantenhaus gewählt. Die Partei suchte nach ihrer Niederlage bei den Zwischenwahlen 2026 eine neue Führung.",
+              "Eine neue Umfrage von Politico ergab, dass 45 Prozent der MAGA-Anhänger von Präsident Trump die Bewegung als Verlierer der Zwischenwahlen im letzten Jahr ansehen, so The Hill. The Guardian berichtet, dass die Umfrage zeigt, dass fast die Hälfte der MAGA-Anhänger Trumps die Bewegung als Verlierer betrachtet.",
+              "Das brasilianische Wahlgericht verhängte eine Geldstrafe gegen Meta, nachdem das Bündnis von Präsident Lula Beschwerde eingereicht hatte; das Gericht fand laut DW und The Hindu keine Beweise für eine vorsätzliche Wahlbeeinflussung."
+            ],
+            "facts": [
+              "Demokratische Abgeordnete treffen sich laut Fox News in Denver, um die Strategie der Partei für 2028 zu erörtern.",
+              "Scott Colom besiegte Cindy Hyde-Smith und gewann den Senatssitz in Mississippi, wie AP News und die Washington Post berichten.",
+              "Der Republikaner Greg Murphy räumte seine Niederlage im Rennen um den Sitz im Repräsentantenhaus in North Carolina gegen den Demokraten Raymond Smith ein, so The Hill und AP News.",
+              "Die Republikanische Partei wählte laut der New York Times Jim Jordan und John Thune zu ihren neuen Führern im Repräsentantenhaus.",
+              "Eine Woche nach der Wahl stehen laut G1 die Ergebnisse von siebzehn Rennen noch aus."
+            ],
+            "title": "Stimmenauszählung nach US-Zwischenwahlen dauert an, während Republikaner neue Führung wählen",
+            "context": "Die US-Zwischenwahlen 2026 führten zu mehreren unentschiedenen Kongressrennen, was zu personellen Veränderungen in der Führung der Republikanischen Partei führte, während internationale Gerichte separate Fälle im Zusammenhang mit dem Management von Wahlplattformen behandelten."
+          },
+          "en": {
+            "dek": "Election officials continue counting ballots eight days after the vote while party leaders are selected and key races are resolved.",
+            "body": [
+              "Democratic lawmakers and presidential hopefuls are gathering in Denver to debate the party's future and 2028 strategy. According to Fox News, the party is working to shape its direction without a clear frontrunner following the midterm elections.",
+              "Scott Colom defeated incumbent Republican Cindy Hyde-Smith to win the US Senate seat from Mississippi, according to multiple projections. This victory provides Democrats with a majority in the Senate, as reported by AP News and The Washington Post.",
+              "Republican Greg Murphy conceded his reelection race to Democrat Raymond Smith in North Carolina’s 3rd Congressional District. The result flips another House seat to the Democratic Party, according to The Hill and AP News.",
+              "Election officials are still counting ballots eight days after the midterm elections, according to G1. A total of 17 races remain without a final declared result as counting proceeds across multiple states.",
+              "More than a dozen key races remain too early to call one week after Election Day, according to PBS and Al Jazeera. Vote counting continues in these jurisdictions as officials process the remaining ballots.",
+              "The Republican Party has chosen Jim Jordan and John Thune as their new leaders in the House of Representatives, according to the New York Times. The party sought fresh leadership following their defeat in the 2026 midterm elections.",
+              "A new poll from Politico found 45 percent of MAGA supporters of President Trump said the movement was the loser in last year's midterms, according to The Hill. The Guardian reports the survey shows nearly half of MAGA Trump supporters view the movement as a loser.",
+              "Brazil's electoral court fined Meta after President Lula's coalition filed a complaint; the court found no evidence of deliberate election bias, according to DW and The Hindu."
+            ],
+            "facts": [
+              "Democratic lawmakers are meeting in Denver to discuss the party's 2028 strategy, according to Fox News.",
+              "Scott Colom defeated Cindy Hyde-Smith to win the Mississippi Senate seat, according to AP News and The Washington Post.",
+              "Republican Greg Murphy conceded his North Carolina House race to Democrat Raymond Smith, according to The Hill and AP News.",
+              "The Republican Party selected Jim Jordan and John Thune as new House leaders, according to the New York Times.",
+              "Seventeen races remain without a final result one week after the election, according to G1."
+            ],
+            "title": "Vote counting continues after US midterms as Republicans select new leadership",
+            "context": "The 2026 US midterm elections resulted in several undecided congressional races, leading to leadership adjustments within the Republican Party, while international courts addressed separate cases related to election platform management.",
+            "imageCaption": ""
+          }
+        }
+      },
       {
         "at": "2026-11-12T00:37:01.813Z",
         "reason": "3 new update(s)",
@@ -355,8 +446,7 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-11-12T14:59:14.446Z"
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -399,6 +489,180 @@
   },
   "updates": [
     {
+      "id": "u-1794538975000-axhn",
+      "at": "2026-11-13T03:02:55.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Van Hollen challenges Schumer for Senate leadership",
+          "body": "Sen. Chris Van Hollen announced Thursday that he'll challenge Chuck Schumer for majority leader, according to Axios and Al Jazeera. Van Hollen accused Schumer of siding with AIPAC, the sources said."
+        },
+        "de": {
+          "headline": "Van Hollen fordert Schumer um Führung des Senats heraus",
+          "body": "Senator Chris Van Hollen gab bekannt, dass er Chuck Schumer um das Amt des Mehrheitsführers herausfordert, wie Axios und Al Jazeera berichteten. Van Hollen warf Schumer vor, sich der AIPAC angeschlossen zu haben, hieß es von den Quellen."
+        },
+        "it": {
+          "headline": "Van Hollen sfida Schumer per la leadership al Senato",
+          "body": "Il senatore Chris Van Hollen ha annunciato giovedì che sfiderà Chuck Schumer per la maggioranza leader, secondo Axios e Al Jazeera. Van Hollen ha accusato Schumer di essersi schierato a favore di AIPAC, secondo le fonti."
+        },
+        "fr": {
+          "headline": "Van Hollen défie Schumer à la tête du Sénat",
+          "body": "Le sénateur Chris Van Hollen a annoncé jeudi qu'il défiait Chuck Schumer pour devenir leader de la majorité, selon Axios et Al Jazeera. Van Hollen a accusé Schumer d'être du côté de l'AIPAC, selon les sources."
+        },
+        "zh": {
+          "headline": "范霍伦挑战舒默，争夺参议院领导权",
+          "body": "据Axios和半岛电视台报道，参议员克里斯·范霍伦周四宣布，他将挑战查克·舒默的参议院多数党领袖职位。消息人士称，范霍伦指责舒默站在AIPAC一边。"
+        },
+        "pt": {
+          "headline": "Van Hollen desafia Schumer pela liderança no Senado",
+          "body": "O senador Chris Van Hollen anunciou na quinta-feira que vai desafiar Chuck Schumer para líder da maioria, segundo a Axios e a Al Jazeera. Van Hollen acusou Schumer de se alinhar com a AIPAC, disseram as fontes."
+        },
+        "es": {
+          "headline": "Van Hollen desafía a Schumer por el liderazgo del Senado",
+          "body": "El senador Chris Van Hollen anunció el jueves que desafiará a Chuck Schumer por el puesto de líder de la mayoría, según Axios y Al Jazeera. Van Hollen acusó a Schumer de alinearse con AIPAC, dijeron las fuentes."
+        },
+        "ja": {
+          "headline": "バン・ホーレン氏、シューマー氏の上院指導部の地位に挑戦",
+          "body": "クリス・バン・ホーレン上院議員は木曜日、チャック・シューマー氏の上院院内総務の地位に挑戦すると発表した。アクシオスとアルジャジーラが伝えた。バン・ホーレン氏はシューマー氏がAIPAC側に立っていると非難したと、関係筋は述べた。"
+        },
+        "ko": {
+          "headline": "밴 홀린, 상원 지도부를 놓고 슈머에 도전",
+          "body": "크리스 밴 홀린 상원의원이 목요일 척 슈머를 상대로 상원 다수당 원내대표 자리에 도전하겠다고 밝혔다고 악시오스와 알자지라가 전했다. 밴 홀린은 슈머가 AIPAC의 편을 든다고 비판했다고 관계자들은 말했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Axios",
+          "title": "Chris Van Hollen to challenge Schumer for Senate majority leader",
+          "url": "https://www.axios.com/2026/11/13/schumer-van-hollen-senate-majority-leader",
+          "publishedAt": "2026-11-13T03:02:55.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Chris Van Hollen to run for US Senate majority leader",
+          "url": "https://www.aljazeera.com/news/2026/11/13/chris-van-hollen-to-run-for-us-senate-majority-leader?traffic_source=rss",
+          "publishedAt": "2026-11-13T02:42:41.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-13T00:34:48.000Z",
+      "id": "u-1794530088000-an8b",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Haus-Demokraten stehen nach überraschenden Republikanischen Erfolgen auf dem Plenum in der Kritik, die Übergangspläne durcheinanderbrachten, berichtete Axios. Die New York Times berichtete, dass Umfragen die demokratische Unterstützung unterschätzt hätten und damit die Führungsschwierigkeiten verstärkt hätten.",
+          "headline": "Haus-Demokraten im Nachgang von Abstimmungsproblemen auf dem Plenum"
+        },
+        "en": {
+          "body": "House Democratic leaders faced criticism after surprise Republican victories on the House floor disrupted transition plans, according to Axios. The New York Times reported that polls underestimated Democratic support, contributing to the leadership challenges.",
+          "headline": "House Democratic leaders face fallout over floor vote fumbles"
+        },
+        "es": {
+          "body": "Los líderes demócratas de la Cámara de Representantes fueron criticados tras victorias republicanas sorpresas en el pleno que interrumpieron los planes de transición, según Axios. El New York Times informó que las encuestas subestimaron el apoyo demócrata, contribuyendo a los desafíos de liderazgo.",
+          "headline": "Líderes demócratas de la Cámara enfrentan consecuencias tras tropiezos en la votación en el pleno"
+        },
+        "fr": {
+          "body": "Les dirigeants démocrates de la Chambre des représentants ont été critiqués après que des victoires républicaines surprises en séance ont perturbé les plans de transition, selon Axios. Le New York Times a rapporté que les sondages avaient sous-estimé le soutien démocrate, contribuant aux difficultés de la direction.",
+          "headline": "Les dirigeants démocrates de la Chambre des représentants font face aux retombées de leurs ratés lors des votes en séance"
+        },
+        "it": {
+          "body": "I leader democratici della Camera hanno subito critiche a seguito di sorprendenti vittorie repubblicane all'interno dell'aula, che hanno interrotto i piani di transizione, secondo Axios. Il New York Times ha riferito che i sondaggi hanno sottostimato il sostegno democratico, contribuendo alle sfide di leadership.",
+          "headline": "Leader democratici della Camera affrontano le conseguenze dopo errori al voto in aula"
+        },
+        "ja": {
+          "body": "下院民主党指導部は、本会議での共和党の予想外の勝利が移行計画を乱したとして批判を浴びた。アクシオスが報じた。ニューヨーク・タイムズは、世論調査が民主党の支持を過小評価したことが指導部の難局に拍車を掛けたと報じた。",
+          "headline": "下院民主党指導部、本会議採算の失態で余波"
+        },
+        "ko": {
+          "body": "하원 민주당 지도부는 하원 본회의에서 예상 밖의 공화당 승리가 권력 이양 계획을 교란시킨 데 대해 비판을 받았다고 악시오스가 보도했다. 뉴욕타임스는 여론조사가 민주당 지지를 과소평가해 지도부가 직면한 도전에 기여했다고 전했다.",
+          "headline": "하원 민주당 지도부, 본회의 표결 실수 후폭풍에 직면"
+        },
+        "pt": {
+          "body": "Os líderes democratas na Câmara dos Representantes foram criticados depois de vitórias surpresa dos republicanos no plenário terem perturbado os planos de transição, segundo a Axios. O New York Times noticiou que as sondagens subestimaram o apoio aos democratas, contribuindo para os desafios de liderança.",
+          "headline": "Líderes democratas na Câmara dos Representantes enfrentam consequências de erros em votações no plenário"
+        },
+        "zh": {
+          "body": "据Axios报道，共和党在众议院意外获胜、打乱过渡计划后，众议院民主党领导层面临批评。《纽约时报》报道称，民调低估了民主党支持率，加剧了领导层面临的挑战。",
+          "headline": "众议院民主党领袖因院内投票失误面临余波"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.axios.com/2026/11/13/house-democrats-hegseth-impeachment-vote-jeffries",
+          "title": "House Democratic leaders face fallout over poorly timed floor vote fumbles",
+          "outlet": "Axios",
+          "publishedAt": "2026-11-13T00:34:48.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONlBRUE5XNHJwcGxBZW1xcjZoX3RZcHo1NTRYVnkzQW5xN0RzNzdBcTRaQnc3VGxlRW1HX2txN29UVTNVeHo4emlHdmhwcjJqR1pZZDhMUTBmVlR5UHQyRWlENWxCZk5RM3U4dHE0OTVYb2U3Rm1VSFpRc192bFFva1dzcDc2aVJH?oc=5",
+          "title": "Why 2026 Midterm Polls Underestimated Democratic Support",
+          "outlet": "The New York Times",
+          "publishedAt": "2026-11-12T20:29:06.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-12T20:35:17.000Z",
+      "id": "u-1794515717000-9xbb",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Jeffries kritisierte zudem scharf den Krieg von US-Präsident Donald Trump gegen den Iran und bezeichnete ihn als rücksichtslosen und kostspieligen Krieg der Wahl, der amerikanischen Interessen geschadet habe. Jeffries fordert einen dramatischen Wandel bei der US-Militärhilfe für Israel nach dem Wahlsieg der Demokraten.",
+          "headline": "Jeffries fordert dramatischen Wandel bei US-Militärhilfe für Israel"
+        },
+        "en": {
+          "body": "Jeffries also sharply criticized US President Donald Trump's war against Iran describing it as a reckless and costly war of choice that had harmed American interests. Jeffries calls for dramatic change in US military aid to Israel after Democrats' election victory.",
+          "headline": "Jeffries calls for dramatic change in US military aid to Israel"
+        },
+        "es": {
+          "body": "Jeffries también criticó duramente la guerra del presidente de EE. UU., Donald Trump, contra Irán, describiéndola como una guerra de elección imprudente y costosa que había perjudicado los intereses estadounidenses. Jeffries pide un cambio drástico en la ayuda militar de EE. UU. a Israel tras la victoria electoral de los demócratas.",
+          "headline": "Jeffries pide un cambio drástico en la ayuda militar de EE. UU. a Israel"
+        },
+        "fr": {
+          "body": "Jeffries a également vivement critiqué la guerre contre l'Iran du président américain Donald Trump, la qualifiant de guerre de choix hasardeuse et coûteuse ayant nui aux intérêts américains. Jeffries appelle à un changement dramatique de l'aide militaire américaine à Israël après la victoire démocrate.",
+          "headline": "Jeffries appelle à une changement dramatique de l'aide militaire américaine à Israël"
+        },
+        "it": {
+          "body": "Jeffries ha anche criticato aspramente la guerra contro l'Iran del presidente statunitense Donald Trump definendola una guerra sconsiderata e costosa, una scelta che ha danneggiato gli interessi americani. Jeffries chiede un cambiamento drastico negli aiuti militari statunitensi a Israele dopo la vittoria elettorale dei Democratici.",
+          "headline": "Jeffries chiede un cambiamento drastico negli aiuti militari statunitensi a Israele"
+        },
+        "ja": {
+          "body": "ジェフリーズ氏はまた、トランプ米大統領のイラン戦争を、米国の利益を損ねた無謀で代償の大きい「選択の戦争」だと厳しく批判した。ジェフリーズ氏は、民主党の選挙勝利を受け、イスラエルへの米軍事支援の大幅な変更を求める。",
+          "headline": "ジェフリーズ氏、イスラエルへの米軍事支援の大幅な変更を求める"
+        },
+        "ko": {
+          "body": "제프리스는 또한 도널드 트럼프 미국 대통령의 이란 전쟁을 무모하고 비용이 많이 드는 선택적 전쟁이라 비판하며 미국 이익에 해를 끼쳤다고 지적했다. 제프리스는 민주당의 선거 승리 이후 이스라엘에 대한 미국의 군사 원조에 극적인 변화를 촉구했다.",
+          "headline": "제프리스, 이스라엘에 대한 미국의 군사 원조에 극적인 변화 촉구"
+        },
+        "pt": {
+          "body": "Jeffries criticou também duramente a guerra do Presidente dos EUA, Donald Trump, contra o Irão, descrevendo-a como uma guerra de escolha imprudente e dispendiosa que prejudicou os interesses americanos. Jeffries apela a uma mudança drástica na ajuda militar dos EUA a Israel após a vitória dos Democratas nas eleições.",
+          "headline": "Jeffries apela a uma mudança drástica na ajuda militar dos EUA a Israel"
+        },
+        "zh": {
+          "body": "杰弗里斯还严厉批评了美国总统唐纳德·特朗普对伊朗的战争，称其是一场不计后果且代价高昂的选择性战争，损害了美国利益。在民主党选举获胜后，杰弗里斯呼吁美国对以色列军事援助作出重大改变。",
+          "headline": "杰弗里斯呼吁美国对以色列军事援助作出重大改变"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/american-politics/article-914766",
+          "title": "Jeffries calls for ‘dramatic change’ in US military aid to Israel after Democrats' election victory",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-12T20:35:17.000Z"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/11/12/us/politics/poll-error-democrats-midterms.html",
+          "title": "Why 2026 Midterm Polls Underestimated Democratic Support",
+          "outlet": "New York Times",
+          "publishedAt": "2026-11-12T20:29:06.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
       "at": "2026-11-12T17:00:31.000Z",
       "id": "u-1794502831000-g3rk",
       "kind": "statement",
@@ -411,9 +675,33 @@
           "body": "Trump stated the US does not need an Iran deal. Vance distanced himself from Trump's position after Republicans' midterm election rout by Democrats, according to The Jerusalem Post. Vance, who had taken on a role in trying to resolve the conflict with Iran, distanced himself from Trump's war on Wednesday after Republicans' midterm election rout by Democrats, according to The Jerusalem Post.",
           "headline": "Trump says US doesn't need Iran deal, charges Vance with investigating Democrat city corruption"
         },
+        "es": {
+          "body": "Trump afirmó que EE. UU. no necesita un acuerdo con Irán. Vance se distanció de la posición de Trump tras la contundente derrota de los republicanos en las elecciones de mitad de mandato ante los demócratas, según The Jerusalem Post. Vance, que había asumido un papel en el intento de resolver el conflicto con Irán, se distanció de la guerra de Trump el miércoles tras la contundente derrota de los republicanos en las elecciones de mitad de mandato ante los demócratas, según The Jerusalem Post.",
+          "headline": "Trump dice que EE. UU. no necesita un acuerdo con Irán y encarga a Vance investigar la corrupción en ciudades demócratas"
+        },
         "fr": {
           "body": "Trump a déclaré que les États-Unis n'avaient pas besoin d'un accord sur l'Iran. Vance s'est distancé de la position de Trump après la défaite républicaine aux élections de mi-mandat face aux démocrates, selon Le Poste de Jérusalem. Vance, qui avait assumé un rôle dans la tentative de résolution du conflit avec l'Iran, s'est distancé de la guerre de Trump mercredi après la défaite républicaine aux élections de mi-mandat face aux démocrates, selon Le Poste de Jérusalem.",
           "headline": "Trump affirme que les États-Unis n'ont pas besoin de l'accord sur l'Iran, charge Vance d'enquêter sur la corruption d'une ville démocrate"
+        },
+        "it": {
+          "body": "Trump ha dichiarato che gli Stati Uniti non necessitano di un accordo con l'Iran. Vance si è distanziato dalla posizione di Trump dopo la disfatta elettorale di metà mandato dei Repubblicani per mano dei Democratici, secondo The Jerusalem Post. Vance, che aveva assunto un ruolo nel tentativo di risolvere il conflitto con l'Iran, si è distanziato dalla guerra di Trump mercoledì dopo la disfatta elettorale di metà mandato dei Repubblicani per mano dei Democratici, secondo The Jerusalem Post.",
+          "headline": "Trump dice che gli Stati Uniti non hanno bisogno di un accordo con l'Iran, accusa Vance di indagare sulla corruzione democratica cittadina"
+        },
+        "ja": {
+          "body": "トランプ氏は、米国はイランとの合意を必要としないと述べた。エルサレム・ポストによると、バンス氏は中間選挙で民主党に大敗した後、トランプ氏の立場から距離を置いた。イランとの紛争解決に当たる役割を担ってきたバンス氏は、水曜日に、中間選挙で民主党に大敗した後、トランプ氏の戦争から距離を置いた、とエルサレム・ポストは報じた。",
+          "headline": "トランプ氏、米国はイラン合意を必要としないと述べ バンス氏に民主党系都市の汚職調査を担当させる"
+        },
+        "ko": {
+          "body": "트럼프는 미국이 이란 협정이 필요하지 않다고 밝혔다. 예루살렘 포스트에 따르면, 공화당이 민주당에 의해 중간선거에서 대패한 후 밴스는 트럼프의 입장에 거리를 두었다. 이란과의 분쟁 해결에 노력하는 역할을 맡았던 밴스는 민주당에 의한 공화당의 중간선거 대패 후 수요일 트럼프의 전쟁에 거리를 두었다.",
+          "headline": "트럼프, 미국은 이란 협정 불필요하다 밝히고 밴스에게 민주당 도시 부패 조사 요구"
+        },
+        "pt": {
+          "body": "Trump afirmou que os EUA não necessitam de um acordo com o Irão. Vance distanciou-se da posição de Trump após a derrota republicana nas eleições de meio de mandato para os Democratas, segundo The Jerusalem Post. Vance, que tinha assumido um papel na tentativa de resolver o conflito com o Irão, distanciou-se da guerra de Trump na quarta-feira após a derrota republicana nas eleições de meio de mandato para os Democratas, segundo The Jerusalem Post.",
+          "headline": "Trump diz que os EUA não precisam de acordo com o Irão, acusa Vance de investigar corrupção municipal Democrata"
+        },
+        "zh": {
+          "body": "特朗普表示，美国不需要与伊朗达成协议。据《耶路撒冷邮报》报道，在共和党于中期选举中被民主党击败后，万斯与特朗普的立场保持距离。万斯曾参与试图解决与伊朗的冲突，据《耶路撒冷邮报》报道，在共和党于中期选举中被民主党击败后，他于周三与特朗普的战争保持距离。",
+          "headline": "特朗普称美国不需要伊朗协议，责令万斯调查民主党城市腐败问题"
         }
       },
       "sources": [
@@ -1058,14 +1346,58 @@
     "https://www.nytimes.com/2026/11/12/us/politics/concession-calls-elections-midterms.html",
     "https://www.aljazeera.com/news/2026/11/12/migrant-caravan-sets-out-from-southern-mexico-bound-for-us-after-midterms?traffic_source=rss",
     "https://news.google.com/rss/articles/CBMickFVX3lxTE5Kem1zNEtLLXJhQndGWG1LTlI2UWtfWGlqdzJwTGFhV2c1ZUpYYTlNQnNaMW9HUGlHN281RzZpTktsSXVEVXhnS1diRndPbzQwYmtnM2NQSkY5VUstWFAta2ZuVlpRYkhMZk5hNEZrN0Vpdw?oc=5",
-    "https://timesofindia.indiatimes.com/technology/tech-news/new-texas-governor-elect-gina-hinojosa-who-campaigned-against-spacex-deal-says-ready-to-have-a-strong-working-relationship-with-elon-musk-and-his-companies-but-has-a-condition/articleshow/135771794.cms"
+    "https://timesofindia.indiatimes.com/technology/tech-news/new-texas-governor-elect-gina-hinojosa-who-campaigned-against-spacex-deal-says-ready-to-have-a-strong-working-relationship-with-elon-musk-and-his-companies-but-has-a-condition/articleshow/135771794.cms",
+    "https://www.jpost.com/international/article-914781",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNS0xoelhvSE5mQWkwX3ZETXVYRk9NYUpuY1VDbGVaM19QSGh1Z05kaEhQM2RvSHdldXFDX0FqTm1uMS10eEl6Y2xHX2hhN1JXaFcxelB6TFJIb2pza1B0VEJhSUUzY0RCaTBNX0ZjdE9UODdmemM3NHBTN290TTAzYXB4YTNCWW5ybE83NWR1VWxTRnpOX19vS1JabldVbGtxZTNETFhIdDNKU0lxck4zN1RhQzdfYlRrUHBXWmo4cnRKUQ?oc=5",
+    "http://www.africanews.com/2026/11/13/us-new-congress-members-pose-for-traditional-photo-at-capitol/",
+    "https://news.google.com/rss/articles/CBMinwFBVV95cUxOY0Z6ZE9DT0N3NmNjQjd1UDU2T29Icm1yZWo1OURyckR1bi1UVzJCOE5UUmIzRFMzWGJ2M0xUZWRMYUo1UzduNG5ETElsdUluLXlVRkVFU3RjdTVkZ3NWeVJIR29oOGo2cm1mLVM4S3hLbV9FZmFLaVlNdDFGS09mOFIzNlAtQnlVaFZoLW1VdkxxNml5SjVjb2QwdW5UQ2s?oc=5",
+    "https://www.abc.net.au/news/2026-11-13/victoria-election-campaign-live-blog-november-13/107381434",
+    "https://thehill.com/homenews/house/6217576-gop-lawmaker-says-party-is-focusing-on-political-power-rather-than-people/",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRW5vWExLTnB4aWpWYktDZElHQi0yb3lldUd6aVVNajhhM3dkQnhpMXU5NzNZX2pHS2prVzZNOUxpMjhNbHdXZnpXYngtT3pnNVNuQ21yRmp3REowNl91THBTaW9PaHJCRkdVeXdBQ0FjQncxTlBkbGN6d2hsaHJLOFhqQmxyX2lhVmVKVFdUczR1V19SOWtVVHRwdmxvM3Rpc1BjaTJkVzNEM0ctY1JieVEwX2g3QU1aczZsTE5kQkJ0clpKdWlV?oc=5",
+    "https://variety.com/2026/film/news/arnold-schwarzenegger-still-republican-jimmy-kimmel-1236946636/",
+    "https://www.jpost.com/israel-news/article-914778",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbzRyb0FHcGx5SWhhRFVTOUcyaG83Q0NoXzFYN2l5LXBkaUZLTEZPWWpiR1FNTUR4ZWFueXlPUEtKbnE5U3VxTzhITm1pa19ZQzBkeldseDdYeFZnN2tJUGJlOXJUdUU1eDJ6aUs5c0VTT3g1dWswcEE3c0s4Z2kzTC1keEtBaGlyTkh2RkxCVDY?oc=5",
+    "https://www.lemonde.fr/en/international/article/2026/11/12/democratic-lawmakers-plan-broad-investigations-into-trump-administration_6779139_4.html",
+    "https://www.channelnewsasia.com/asia/livelihoods-and-heritage-preservation-voters-minds-melaka-heads-polls-6545241",
+    "https://www.channelnewsasia.com/world/israel-gaza-strike-nasser-hospital-11-killed-6547556",
+    "http://www.africanews.com/2026/11/12/the-gambias-electoral-commission-announces-5-candidates-for-presidential-poll/",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcjRlVEoxS3BmS1RwRnBrZ25kandWaFJ6eGlCN1JMY1dwU1NTTzh2eDV1T3VaTUh6NDFzaTY3R1VoeUNkZm9hTTRFalVwM2ZWZ3NseDVjLUw2WG9hQlk0M21JSS1tS0xwN0FiYnBhRHRFSTZmS2ZibzcyQXhMSUdGT3cxaDRWWnhRTV9MMmFVZ3dCSjUyM283dDVNVTMzM3Y2VVM5RjdvWXN4S2FTNFJrRHhHbEdhUdIBuwFBVV95cUxOamo1M3dkV2V3NGNGRnNvcnZ6b1VMczdDeENiMUdXUlVfRWJSR0lXUmN6WkJ4U01lY2tvVU1yS1NScnA3YXpkX2YzQi1fcXNKV19DR1NySFdIdnlLTDN1Y2lVVUYtck1td05RZTY1YXc3aElaTlc1RWl2RkhXZUFOcjlHTlVvUXBxTG5UTUhDTXpYTGRCbzlicDJXajFhM1FJcXpFc3VzVFAyYjhNZFd4TGRHNFpFeXZOUGFr?oc=5",
+    "https://thehill.com/homenews/administration/6214786-live-updates-trump-midterms-alaska-congress/",
+    "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbl94MFc1NmpKMDA2TWNsUldZOFlQb01YMVUxeWt2SEFqNzNmUTltUHh1MjVBWUI0OUt0OHZnWmRrRUdPUGdiMXJUZ1AwbTMtazRYeWlRbWJRdnhLS0JMdmpLN2w5YVZBNkJKMEYxWFVUZVdSTXhMY3puVDR1d2J5TlRmSGM3MW8?oc=5",
+    "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBCcFo0SkdIVUtTRnBOSnJvRGQ5bmRGLTVzWHBRbmFNalFOWVpZTzBjMGNXQ2FkaTBkbWpDVFhJejJYTFhVZkNYMnBaM3BFRHQ5T0E?oc=5",
+    "https://www.foxnews.com/politics/democrats-turn-schumer-historic-election-wins-potential-challenger-emerges",
+    "https://www.jpost.com/american-politics/article-914766",
+    "https://www.nytimes.com/2026/11/12/us/politics/poll-error-democrats-midterms.html",
+    "https://thehill.com/policy/technology/6217137-heritage-leader-gop-data-center-mistake/",
+    "https://www.batimes.com.ar/news/economy/argentinas-inflation-ticked-up-more-than-expected-in-october.phtml",
+    "https://www.france24.com/en/israeli-strike-on-gaza-hospital-kills-six-including-surgeon-medics-say",
+    "https://www.kyivpost.com/post/89965",
+    "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRHN3SGVncFJCZ09IYXFWYkhXcWZWTHI4QUxDbExOUzZEbjlWc2ZVVjJQVFlNbVJ6dFdwWVBROVBUSkRxd0NfU3lyYjNlMjZXRzdBUUFqcjV0bGNNekxtOFl2d0ItcHMyanR1V3hIYWYwQnJid2ZiNWY1Wml6bFcwTHFoQ2dWaktvbHJ4QWZsZXNhRTdfQmN1WUNUcUJfUHdBaURnYmNpSzMzWU5n?oc=5",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSVB0dVN3dzc2MTBDcXROZWJsQnZDYUpPWE5XRkE3YnVwOXpEZ05WM0FWUW1jR2k3Z3hxYm9kb1lpblYwa0dPczNJMjdkaVJidmZIVm03SXl4LWxsZExfbkV2aDdSVHBUT0czUUJzU3pWUjJVd0ZlbW53YTVFOTljQ0dkWG9UazFnb1RXRWxUdEF0YTNTMkczelV5eXl5aXJENUFzR0RfT0c3LTVONFpyNkpEWFE?oc=5",
+    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQMWQ5VWd5bGxuNEU1c0MtdjAydjlzbjR1Z3hNa2M5Zlh5ZGlueEpkRE9GN1dRVjYtbXdsSTVVQzlMM1BhZ2VjcWtXSWNuQm5hdkFXa3o2SXU4a0NLWFZ2bjlzUlIxa2xtdlhUTlpJNEFpUGFVNm5RN3h5ZXQwZkNyZm1UZUNmdjFsZlZ3?oc=5",
+    "https://www.dw.com/en/nigeria-axe-wielding-men-attack-opposition-campaign-rally-in-lagos/a-79934958?maca=en-rss-en-all-1573-rdf",
+    "https://www.foxnews.com/politics/house-dem-misses-hegseth-impeachment-vote-major-medical-procedure-week-after-election-day",
+    "https://www.scmp.com/news/world/middle-east/article/3374264/israeli-strike-gaza-hospital-kills-11-deadliest-attack-election",
+    "https://www.axios.com/2026/11/13/house-democrats-hegseth-impeachment-vote-jeffries",
+    "https://www.channelnewsasia.com/asia/what-voters-want-melaka-prepares-polling-day-which-issues-are-residents-minds-6545241",
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONlBRUE5XNHJwcGxBZW1xcjZoX3RZcHo1NTRYVnkzQW5xN0RzNzdBcTRaQnc3VGxlRW1HX2txN29UVTNVeHo4emlHdmhwcjJqR1pZZDhMUTBmVlR5UHQyRWlENWxCZk5RM3U4dHE0OTVYb2U3Rm1VSFpRc192bFFva1dzcDc2aVJH?oc=5",
+    "https://www.axios.com/2026/11/13/schumer-van-hollen-senate-majority-leader",
+    "https://www.foxnews.com/politics/van-hollen-challenges-schumer-senate-leadership-after-democratic-election-sweep",
+    "https://www.aljazeera.com/news/2026/11/13/chris-van-hollen-to-run-for-us-senate-majority-leader?traffic_source=rss",
+    "https://www.jpost.com/international/article-914787",
+    "https://www.japantimes.co.jp/news/2026/11/13/world/israel-gaza-post-election-strike/",
+    "https://www.lemonde.fr/en/international/article/2026/11/13/trump-threatens-mexico-with-increased-tariffs-over-migrant-caravans_6779368_4.html",
+    "https://www.dawn.com/news/2044185/trump-says-washington-does-not-need-iran-deal",
+    "https://thehill.com/homenews/house/6217833-boebert-blames-policy-market-losses/",
+    "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOEJMU2pwS05HMlUxblhZQ2ZNY1p0UDFvYVFENUF0VVZmMThxajlRWmJhVEFyRTFSV2dvMnBaUW9NQVJpbWRfTzlPQkpIQTExMEl6VEZwRVhUSXpTbVFkQ1NfNG5lX3h4Z0pvRF9qdU9vaDNTNEFoYU44TUVTNy1tLQ?oc=5",
+    "https://www.straitstimes.com/world/europe/swedens-rival-blocs-seek-centre-party-support-to-break-deadlock"
   ],
   "startedAt": "2026-11-11T07:30:47.904Z",
-  "updatedAt": "2026-11-12T17:11:20.546Z",
+  "updatedAt": "2026-11-13T03:16:26.494Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-us-midterm-election-aftermath",
-  "sourceCount": 16,
+  "sourceCount": 18,
   "statsHistory": [
     {
       "at": "2026-11-12T14:30:00.000Z",
@@ -1125,6 +1457,7 @@
     }
   ],
   "seenHeadlines": [
+    "Trump says US does not need Iran deal",
     "Trump points to Senate Republicans over midterm losses: devastating",
     "Republicans Vance, Rubio, Democrats Ossoff, Buttigieg favored for 2028 US elections - poll"
   ]
