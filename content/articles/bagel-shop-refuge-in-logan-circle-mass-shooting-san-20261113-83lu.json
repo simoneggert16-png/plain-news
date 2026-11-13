@@ -1,0 +1,65 @@
+{
+  "slug": "bagel-shop-refuge-in-logan-circle-mass-shooting-san-20261113-83lu",
+  "category": "community",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-11-13T02:35:13.053Z",
+  "updatedAt": "2026-11-13T02:35:13.053Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "NBC4 Washington",
+      "title": "Bagel shop offers refuge during Logan Circle mass shooting",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbDdpa0lldmhoTlZleVBHdWx2NkM2ZWtBcFBWOGtJWHlDNHdEVFh3LU5QTWdjZEFkWHIzT0FhS1lMOXRBT1B6YnJVR3hSOGhJZncySGQxeDkwR0xQeXNFb2dPUTJCZ29UcmRZSHVGMGVFeEpDci1DQXJpZ1I2NGlLZGJKc0VLY0c0TDdpWTI4ZE83M3Jab2ZYY09yZXVIR01ZOFNKRTk1dEctMzh0U25QeVlxdXRmM3pS0gHAAUFVX3lxTE9qOHRSYlQ5bkRfU2JJaXpRTXd2X2J4YXVkTHJPME9CdmhtRVB1V01va3NUNTJZZ19MeEhLbU9ISXpoTUxPMEM4Y2lGb3gwZS1RMlVXbkJTdm5leWota005RlRFdHkyckdhdm1TeEUxTDRHTG1DOVhSaGJodEU0ZXlnejdUZ3d2cVZUMXVHcUFzRDlrM0RwbHd4aEdZeTBndEhhXzFXQThoVFhrbGNEZFFvdXFpN1ExTy1jNWRpSXFaMQ?oc=5",
+      "publishedAt": "2026-11-13T00:11:16.000Z"
+    },
+    {
+      "outlet": "cbs8.com",
+      "title": "Oregon school reopens after deadly mass shooting",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPbHAxdFd4Wkt1c3IzN1Y3d1F1eDZJdDZINFBVR2RDTWw1NzNMa0J4QjgycXUyU1VaU2d6UUxWay1uSTFILWt5N3dUUGJSUDI5WFE3bFphTXRNT3pQNEJTRVpPVlR1NFd6R1gtWjNUMTRFRjNfWF9JdjN2aVJ6T0k0N2FaUHY1MEw4YXpFYy1HcHV1Ri1uRkthVll4TTFPeFVWaWlabTBsWmtyU1h4bms0TWY3Y1VSdnZMdG02Nmtn?oc=5",
+      "publishedAt": "2026-11-13T00:01:00.000Z"
+    },
+    {
+      "outlet": "KING5.com",
+      "title": "State of emergency declared in San Juan County over damaged ferry terminal",
+      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQdHA1b09vMFdrdjRXcEVzd0RQa2p6N3J1QjZyQW9SZ3FjYVBIa2lkZUVMR2VEUFBYRG5QM0EyUUplTmlrb3pfUnAzbUUxcG5QSlJaMzlOODZGQ2ZJakJENUZlSW5xNkViekdXUnBZdWlNZG9mM3dDdzhBYWZZTDIxb0lDQkRXTVJFOVJfNm1CM3FienlrVFlPWVJHWnlrWlFaX1VCVzFvWXQtSEVYb2VNVXFzNkZQSGNjN3JIMm5KOFBFTWxZb0tfOHc3aURWWDRWMzJBTE16TlNFS1VuVmhNb1ljRVQ3MlpFS0ZaZXVkUEh5MEZJdDNibEJoU1YwQ0hHZ21WWWRn?oc=5",
+      "publishedAt": "2026-11-12T22:44:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Bagel shop refuge in Logan Circle mass shooting; San Juan County ferry terminal emergency",
+      "dek": "NBC4 Washington reported a bagel shop offered refuge during a Logan Circle mass shooting, and KING5.com reported San Juan County declared an emergency over a damaged ferry terminal.",
+      "facts": [
+        "NBC4 Washington reported that a bagel shop offered refuge during a mass shooting in Logan Circle.",
+        "The NBC4 Washington report was published on 13 November 2026.",
+        "KING5.com reported that San Juan County declared a state of emergency over a damaged ferry terminal.",
+        "The KING5.com report was published on 12 November 2026."
+      ],
+      "body": [
+        "A bagel shop offered refuge during a mass shooting in Logan Circle, according to an NBC4 Washington report published on 13 November 2026.",
+        "San Juan County declared a state of emergency over a damaged ferry terminal, according to a KING5.com report published on 12 November 2026.",
+        "The two reports were published on consecutive days, with the San Juan County report appearing on 12 November 2026 and the Logan Circle report on 13 November 2026."
+      ],
+      "context": "NBC4 Washington published its report on 13 November 2026, and KING5.com published its report on 12 November 2026.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "stepfun-ai/step-5-preview",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Title uses plural 'Mass shootings' but only one shooting is covered.",
+      "'Washington DC' is not stated in the sources.",
+      "The draft states the shooting and the emergency declaration occurred on the report dates; the sources only provide publication dates.",
+      "'Those involved' is an unsupported interpretation of who took refuge.",
+      "Sentences about details 'not provided' are meta-commentary, not facts.",
+      "The third body paragraph adds unsupported evaluations and implies a connection between unrelated events.",
+      "Dek and context largely repeat the body."
+    ]
+  }
+}

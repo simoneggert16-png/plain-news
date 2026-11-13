@@ -14,7 +14,7 @@
     "hints": "Issuance of Amended Iran-related General License"
   },
   "createdAt": "2026-11-02T15:41:59.014Z",
-  "updatedAt": "2026-11-12T15:55:07.749Z",
+  "updatedAt": "2026-11-13T00:26:04.239Z",
   "queries": [
     "OFAC amended Iran-related General License 2026",
     "OFAC Iran sanctions 2026",
@@ -1599,6 +1599,57 @@
       "status": "verified",
       "weight": 1,
       "checkedAt": "2026-11-12T15:37:00.787Z"
+    },
+    {
+      "id": "C90",
+      "text": "On November 4, 2026, OFAC published an Iran-related Alert titled 'Iranian Shadow Fleet Reliance on False Flags for Sanctions Evasion,' alongside new SDN List entries under IRAN-EO13902 with secondary sanctions risk under Section 2 including Ashwani Kumar Dhiman, Suniel Kumar Sharma, Ishwinder Singh, Jaspreet Preeti Shahid, Alexarya Finserv Private Limited, and Alexarya Media and Entertainment Private Limited.",
+      "sources": [
+        "S6"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-11-12T23:48:45.584Z"
+    },
+    {
+      "id": "C91",
+      "text": "As part of Operation Economic Outcast, the U.S. Department of the Treasury targeted the global network of Suniel Kumar Sharma and Jaspreet Preeti Shahid for enabling Iran's shadow fleet via maritime fraud, false flags, and fake certifications, and sanctioned Türkiye-based Fugo Ground Services Inc for supporting Iran's aviation sector pursuant to E.O. 13902.",
+      "sources": [
+        "S13"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-11-12T23:48:45.584Z"
+    },
+    {
+      "id": "C92",
+      "text": "Operation Economic Outcast was announced by Secretary of the Treasury Scott Bessent on August 24, 2026, to sever economic lifelines sustaining the Iranian regime by mapping facilitators, financial channels, and oil smuggling networks.",
+      "sources": [
+        "S13"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-11-12T23:48:45.584Z"
+    },
+    {
+      "id": "C93",
+      "text": "On November 4, 2026, OFAC issued Venezuela-related General License 5AA and amended FAQ 595 alongside its Iran-related actions.",
+      "sources": [
+        "S6"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-11-12T23:48:45.584Z"
+    },
+    {
+      "id": "C94",
+      "text": "The amended Iran General License FF-1 authorizes wind-down transactions only for International Development Bank for Investment and Finance (Iraq Development Bank) and its 50%-or-greater-owned entities through December 1, 2026, and does not establish broader trade authorizations for Iranian entities.",
+      "sources": [
+        "S1",
+        "S4"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-11-12T23:48:45.584Z"
     }
   ],
   "gaps": [
@@ -2067,6 +2118,18 @@
       "role": "the institution whose document is on file",
       "email": "news@sec.gov",
       "emailSource": "https://www.sec.gov/newsroom"
+    },
+    {
+      "org": "US Department of Justice",
+      "role": "the institution whose document is on file",
+      "email": "press@usdoj.gov",
+      "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
+    },
+    {
+      "org": "US SEC EDGAR",
+      "role": "the institution whose document is on file",
+      "email": "news@sec.gov",
+      "emailSource": "https://www.sec.gov/newsroom"
     }
   ],
   "outreach": [
@@ -2107,7 +2170,7 @@
     }
   ],
   "centre": "Iran",
-  "lastShiftAt": "2026-11-12T15:50:40.946Z",
+  "lastShiftAt": "2026-11-13T00:18:36.314Z",
   "letters": [
     {
       "id": "L1",
@@ -2140,158 +2203,156 @@
   ],
   "agent": [
     {
-      "at": "2026-11-12T15:18:10.486Z",
+      "at": "2026-11-12T23:45:24.948Z",
       "steps": [
         {
           "step": 1,
-          "thought": "The user is asking which Iranian entities are restricted by the amended US OFAC Iran sanctions license and what impact the license has on international trade. The provided context indicates that the *amended General License FF-1* (October 29, 2026) *does not expand general trade restrictions*; the expansion comes from *SDN designations* under IRAN-EO13902 (October 21, 2026, and November 4, 2026). ",
+          "thought": "...",
           "action": "final",
-          "ms": 8599
+          "ms": 49336
         }
       ],
-      "final": "Iranian entities restricted under IRAN-EO13902 include: (1) October 21, 2026 designations: Karnakis and Karnakis (Panama/Greece entity), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, and Ortega Jones Roberto. (2) November 4, 2026 designations: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti (all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED). The amended Iran-related General License FF-1 (October 29, 2026) authorizes only the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or its 50%+ owned entities through 12:01 a.m. EST December 1, 2026, and does not expand general trade restrictions on Iranian entities; the expansion of trade restrictions results from the SDN designations under IRAN-EO13902."
+      "final": "..."
     },
     {
-      "at": "2026-11-12T15:36:19.793Z",
+      "at": "2026-11-13T00:04:11.600Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I need to identify the Iranian entities now restricted under the amended OFAC license and understand the impact on international trade. I have extensive source material from previous shifts. Let me first review the key documents to extract the restricted entities and the license provisions.",
+          "thought": "",
           "action": "search",
           "args": {
-            "query": "OFAC amended Iran-related General License 2026"
+            "query": "OFAC amended Iran-related General License 2026 Iran entities restricted trade restrictions"
           },
           "ok": true,
-          "ms": 9742
+          "ms": 14286
         },
         {
           "step": 2,
-          "thought": "The search returned mostly unrelated results. I need to search more specifically for the OFAC Iran license amendment. Let me try a more targeted query.",
+          "thought": "The search returned 8 results from the desk wire, but only 2 are marked primary. The primary results are a US DOJ press release about firearms and a UN News story about Rwanda — neither is relevant to OFAC Iran sanctions. I need to open the primary OFAC documents directly. The desk wire likely has OFAC actions but they weren't flagged as primary. I should search more specifically for OFAC Iran Gen",
           "action": "search",
           "args": {
             "query": "OFAC Iran General License FF-1 October 2026 amended"
           },
           "ok": true,
-          "ms": 852
+          "ms": 2389
         },
         {
           "step": 3,
-          "thought": "The search tool is not finding the specific primary documents related to the OFAC Iran license amendment, despite the previous shift noting primary sources like [S1] and [S2] exist. I must now open the primary sources listed in the desk brief's context or the claims on file, as the search is not yielding the required documents. I will open [S1] as it is the primary source for the amended license.",
+          "thought": "I keep getting the same irrelevant results. I need to directly open the OFAC primary sources. From the briefing, the key sources are S1 (OFAC amended Iran-related General License, Oct 29 2026) and S2 (Iran-related designations Oct 21 2026). Let me open S1 first.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261029"
           },
           "ok": true,
-          "ms": 10913
+          "ms": 10284
         },
         {
           "step": 4,
-          "thought": "I have opened S1 and confirmed the issuance of Iran General License FF-1, which authorizes the wind-down of transactions involving International Development Bank for Investment and Finance. I need to open the linked document to get the specific details, including the effective dates and conditions, to answer the question about the license's impact.",
+          "thought": "I opened the OFAC page for the amended Iran-related General License FF-1. The text confirms it's about authorizing wind-down of transactions involving International Development Bank for Investment and Finance. There's a link to the actual license document. I need to open that PDF to see the full text and identify what entities are affected and what restrictions apply.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/media/937311/download?inline"
           },
           "ok": true,
-          "ms": 12364
+          "ms": 11223
         },
         {
           "step": 5,
-          "thought": "I have extracted the details of the amended license (FF-1) from S4. This license authorizes only the wind-down of transactions involving the Iraq Development Bank or its 50%+ owned entities through December 1, 2026, and requires payments to blocked persons to be made into blocked accounts. Crucially, it states it does not authorize any transactions otherwise prohibited by the ITSR. This directly a",
+          "thought": "I now have the full text of Iran General License FF-1. Key findings:\n1. It authorizes wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50%+ interest\n2. Authorized through 12:01 a.m. EST December 1, 2026\n3. Payments to blocked persons must be made into blocked accounts per ITSR\n4. Does NOT authorize ",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261021"
           },
           "ok": true,
-          "ms": 11665
+          "ms": 15566
         },
         {
           "step": 6,
-          "thought": "Observation 5 provides specific details on entities designated on October 21, 2026, under IRAN-EO13902: Karnakis and Karnakis (Panama/Greece), Amigoz Singapore Pte. Ltd., and five individuals (Karnakis Kosmas Ioanis, Konstantinos, Sofianos; Ortega Jones Pedro, Roberto). This answers part of the question regarding restricted entities. The license FF-1 (from S4) confirms that the license itself does",
+          "thought": "I have the details of the October 21, 2026 designations under IRAN-EO13902: five individuals (Karnakis Kosmas Ioanis, Konstantinos, Sofianos; Ortega Jones Pedro, Roberto) and two entities (Amigoz Singapore Pte. Ltd., Karnakis and Karnakis). These are the entities restricted by the October 21, 2026 action. The license FF-1 (Oct 29, 2026) does not expand general trade restrictions, but the SDN desig",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261104"
           },
           "ok": true,
-          "ms": 11420
-        },
-        {
-          "step": 7,
-          "thought": "Observation 6 details the November 4, 2026, designations under IRAN-EO13902: DHIMAN Ashwani Kumar, SHAHID Jaspreet Preeti, SHARMA Suniel Kumar, and SINGH Ishwinder, all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED and carrying secondary sanctions risk under Section 2 of E.O. 13902. It also lists DOMULLODZHANOV, Alisher under IRAN-CON-ARMS-EO. Combining this with Observation 5 (October 21, 20",
-          "action": "save_claim",
-          "args": {
-            "text": "Iranian entities restricted under IRAN-EO13902 include Karnakis and Karnakis (Panama/Greece entity), Amigoz Singapore Pte. Ltd., and five individuals designated on October 21, 2026: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, and Ortega Jones Roberto.",
-            "sources": [
-              "S5",
-              "S4",
-              "S2",
-              "S1"
-            ]
-          },
-          "ok": true,
-          "ms": 5136
+          "ms": 12444
         }
       ],
       "final": null
     },
     {
-      "at": "2026-11-12T15:53:07.443Z",
+      "at": "2026-11-13T00:21:26.953Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I need to identify the Iranian entities now restricted under the OFAC amendments and understand the impact of the amended license on international trade. I have extensive source material from previous shifts. Let me start by reviewing the key documents to extract the restricted entities and the license impact.",
+          "thought": "I need to identify the primary documents that establish the current status of OFAC's Iran sanctions amendments and restricted entities. I'll start by searching for the official OFAC actions and then open the primary sources to extract verifiable facts.",
           "action": "search",
           "args": {
-            "query": "OFAC amended Iran-related General License 2026 Iran sanctions 2026 OFAC Iran license amendment 2026 OFAC Iran trade restrictions 2026 OFAC Iran general license 2026"
+            "query": "OFAC amended Iran-related General License 2026"
           },
           "ok": true,
-          "ms": 17412
+          "ms": 12607
         },
         {
           "step": 2,
-          "thought": "The search returned mostly unrelated results. I need to focus on the OFAC-specific documents. Let me search more specifically for the OFAC recent actions pages.",
+          "thought": "The search returned mostly unrelated results. I need to search more specifically for OFAC Iran sanctions actions. Let me try a more targeted query.",
           "action": "search",
           "args": {
-            "query": "OFAC recent actions 2026 Iran General License FF-1 Iran-related designations October 2026"
+            "query": "OFAC Iran General License FF-1 2026 treasury.gov"
           },
           "ok": true,
-          "ms": 14321
+          "ms": 13584
         },
         {
           "step": 3,
-          "thought": "The search results are not giving me the OFAC-specific documents I need. Let me try searching directly for the OFAC treasury.gov pages that are already on file.",
+          "thought": "The search results are not giving me the specific OFAC documents I need. Let me try searching for the OFAC recent actions page directly, which should have the Iran-related general license amendments.",
           "action": "search",
           "args": {
-            "query": "site:ofac.treasury.gov Iran-related General License FF-1 2026 October 29"
+            "query": "site:ofac.treasury.gov Iran-related General License 2026"
           },
           "ok": true,
-          "ms": 1440
+          "ms": 3577
         },
         {
           "step": 4,
-          "thought": "",
+          "thought": "The previous search attempts failed to locate the specific OFAC documents. I must rely on the information provided in the 'ALREADY THROWN OUT' section and 'SOURCES ON FILE' which contain direct links to OFAC actions (S1, S2, S6, S16). I will open S1 to verify the details of the Amended Iran-related General License FF-1.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261029"
           },
           "ok": true,
-          "ms": 10648
+          "ms": 10590
         },
         {
           "step": 5,
-          "thought": "I found the OFAC page for the amended Iran-related General License FF-1. Now I need to download and read the actual license text to understand its provisions and impact.",
+          "thought": "I have opened S1 and confirmed the issuance of Iran General License FF-1, which authorizes the wind-down of transactions involving International Development Bank for Investment and Finance. I need to open S4, which is referenced alongside S1, to get more detail on the license and its supersession of FF.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/media/937311/download?inline"
           },
           "ok": true,
-          "ms": 21535
+          "ms": 10437
+        },
+        {
+          "step": 6,
+          "thought": "I have the full text of General License FF-1 from S4. It confirms the wind-down authorization for Iraq Development Bank through December 1, 2026, the blocked account requirement, and supersession of FF. Now I need to save these claims and then examine the designation actions (S2, S6) to identify the restricted entities.",
+          "action": "save_claim",
+          "args": {
+            "text": "On October 29, 2026, OFAC issued Iran General License FF-1, signed by Director Bradley T. Smith, authorizing the wind down of transactions prohibited by the Iranian Transactions and Sanctions Regulations (31 CFR part 560) that involve International Development Bank for Investment and Finance (a.k.a. Iraq Development Bank) or any entity in which it owns, directly or indirectly, a 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026.",
+            "sources": [
+              "S1",
+              "S4"
+            ]
+          },
+          "ok": true,
+          "ms": 38540
         }
       ],
       "final": null
     }
   ],
-  "shifts": 50,
-  "blankShifts": 0,
+  "shifts": 53,
+  "blankShifts": 2,
   "nextStep": "keep reporting: no outreach sent",
   "dropped": [
     {
