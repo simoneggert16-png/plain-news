@@ -7,7 +7,7 @@
       "Iran International"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "iaea-iran-uranium-enrichment-alarm",
   "topic": "IAEA Iran Uranium Enrichment Alarm",
@@ -54,62 +54,146 @@
   },
   "updates": [
     {
-      "id": "u-1794566586000-ely1",
-      "at": "2026-11-13T10:43:06.000Z",
+      "id": "u-1794565372000-yxd7",
+      "at": "2026-11-13T10:22:52.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "IAEA reports inability to verify Iranian nuclear material status",
-          "body": "The International Atomic Energy Agency stated it cannot confirm that Iran has not diverted nuclear material from peaceful activity. Iran informed the agency that monitoring cannot proceed while the country remains under threat, according to reports from The Times of Israel and WSLS."
-        },
-        "it": {
-          "headline": "L'AIEA riferisce l'impossibilità di verificare lo stato del materiale nucleare iraniano",
-          "body": "L'Agenzia internazionale per l'energia atomica ha dichiarato di non poter confermare che l'Iran non abbia sottratto materiale nucleare da attività pacifiche. Secondo quanto riportato dal The Times of Israel e da WSLS, l'Iran ha informato l'agenzia che il monitoraggio non può proseguire finché il Paese rimane sotto minaccia."
-        },
-        "pt": {
-          "headline": "AIEA relata incapacidade de verificar o estado do material nuclear iraniano",
-          "body": "A Agência Internacional de Energia Atómica declarou que não pode confirmar que o Irão não desviou material nuclear de atividades pacíficas. O Irão informou a agência de que a monitorização não pode prosseguir enquanto o país permanecer sob ameaça, de acordo com informações do The Times of Israel e da WSLS."
+          "headline": "Iran tells UN nuclear agency monitoring cannot proceed under threat",
+          "body": "Iran told the UN nuclear agency that monitoring cannot proceed while it is under threat. AP News and The Sun Chronicle both reported that Iran told the UN nuclear agency monitoring cannot proceed while it is under threat."
         },
         "de": {
-          "headline": "IAEA meldet Unfähigkeit, den Status iranischen Nuklearmaterials zu verifizieren",
-          "body": "Die Internationale Atomenergie-Organisation erklärte, sie könne nicht bestätigen, dass der Iran kein Nuklearmaterial von friedlichen Aktivitäten abgezweigt habe. Laut Berichten von The Times of Israel und WSLS teilte der Iran der Behörde mit, dass die Überwachung nicht fortgesetzt werden könne, solange das Land unter Bedrohung stehe."
+          "headline": "Iran weist UN-Atominspektion unter Bedrohung zurück",
+          "body": "Iran hat der UN-Atombehörde mitgeteilt, dass eine Überwachung nicht stattfinden kann, solange sie unter Bedrohung steht. Sowohl AP News als auch The Sun Chronicle berichteten, dass Iran der UN-Atombehörde mitteilte, die Überwachung könne nicht stattfinden, solange sie unter Bedrohung stehe."
         },
         "es": {
-          "headline": "El OIEA informa de su incapacidad para verificar el estado del material nuclear iraní",
-          "body": "El Organismo Internacional de Energía Atómica ha declarado que no puede confirmar que Irán no haya desviado material nuclear de actividades pacíficas. Irán informó al organismo de que la vigilancia no puede continuar mientras el país siga bajo amenaza, según informan The Times of Israel y WSLS."
+          "headline": "Irán le dice a la Agencia Internacional de Energía Atómica que la vigilancia no puede continuar bajo amenaza",
+          "body": "Irán le comunicó a la Agencia Internacional de Energía Atómica que la vigilancia no puede continuar mientras esté bajo amenaza. AP News y The Sun Chronicle informaron ambos que Irán le comunicó a la Agencia Internacional de Energía Atómica que la vigilancia no puede continuar mientras esté bajo amenaza."
+        },
+        "it": {
+          "headline": "Iran dice che il monitoraggio dell'agenzia nucleare ONU non può procedere sotto minaccia",
+          "body": "L'Iran ha comunicato all'agenzia nucleare ONU che il monitoraggio non può procedere finché è sotto minaccia. AP News e The Sun Chronicle hanno riportato entrambi che l'Iran ha detto all'agenzia nucleare ONU che il monitoraggio non può procedere finché è sotto minaccia."
         },
         "fr": {
-          "headline": "L'AIEA signale son incapacité à vérifier le statut des matières nucléaires iraniennes",
-          "body": "L'Agence internationale de l'énergie atomique a déclaré ne pas être en mesure de confirmer que l'Iran n'a pas détourné de matières nucléaires de ses activités pacifiques. Selon des rapports du Times of Israel et de WSLS, l'Iran a informé l'agence que la surveillance ne pouvait se poursuivre tant que le pays resterait sous la menace."
-        },
-        "zh": {
-          "headline": "国际原子能机构称无法核实伊朗核材料状况",
-          "body": "国际原子能机构表示，无法确认伊朗是否将核材料挪作他用。据《以色列时报》和WSLS报道，伊朗已告知该机构，在国家面临威胁的情况下，无法继续进行核监测。"
-        },
-        "ko": {
-          "headline": "IAEA, 이란 핵물질 상태 확인 불가 보고",
-          "body": "국제원자력기구(IAEA)는 이란이 평화적 활동에서 핵물질을 전용하지 않았는지 확인할 수 없다고 밝혔다. The Times of Israel와 WSLS 보도에 따르면, 이란은 국가가 위협받는 상황에서는 감시가 진행될 수 없다고 기구에 통보했다."
-        },
-        "ja": {
-          "headline": "IAEA、イランの核物質状況の検証不能を報告",
-          "body": "国際原子力機関（IAEA）は、イランが平和目的の活動から核物質を転用していないことを確認できないと表明した。タイムズ・オブ・イスラエルおよびWSLSの報道によると、イランは同国が脅威にさらされている間は監視活動を継続できない旨をIAEAに伝えたという。"
+          "headline": "L'Iran indique que le suivi de l'agence nucléaire de l'ONU ne peut pas se poursuivre sous la menace",
+          "body": "L'Iran a informé l'agence nucléaire de l'ONU que le suivi ne pouvait pas se poursuivre tant qu'il était sous la menace. AP News et The Sun Chronicle ont tous deux rapporté que l'Iran avait dit à l'agence nucléaire de l'ONU que le suivi ne pouvait pas se poursuivre tant qu'il était sous la menace."
         }
       },
       "sources": [
         {
-          "outlet": "The Times of Israel",
-          "title": "UN agency can't confirm Iran hasn't diverted nuclear material from peaceful activity, report says",
+          "outlet": "The Sun Chronicle",
+          "title": "Iran tells UN nuclear agency that monitoring cannot proceed while it is under threat",
+          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQVXpEeUp1MFduaW1VTTd5RUZUUzJWdlRTYVdVWTJSQnVkMUk4TnRpWW9zT2Z1S3hyZDVRX3pPUlZ1bnpUZHF2YUpjUnlxRHRLVDRFOVRtd3piaTF4cEszcFdkSHdZZHVIRjRyQXpUdzBnYTdKNFQ5djA5LVRhT05ub25WNXVMRkNHUGg5RVM0SG1yazhlVlR6LUtHcnVQSUtfRUVqSHozVzhuZnhfTlFKek5ULU5OVEJtUUF5TVF3YW4xekdSSXpLeGhyN1NXMi0wRWsxbzh6UGdFV3JCZWUwcExWZEw2eVo5UXVNbGNtdlpYZVJyY21NalZXckVpbm1HT2FBVjdHUF9UTkcwQnJtV01B?oc=5",
+          "publishedAt": "2026-11-13T10:22:52.000Z"
+        },
+        {
+          "outlet": "AP News",
+          "title": "Iran tells UN nuclear agency that monitoring cannot proceed while it is under threat",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSUhIeGdPMTNhOEtBdjc2VlJIaHpPZDh2NTdEb283VFY0Uzg0TVEyYzk4OW8zWXRJY2taTWFmVGJaY1YwYnMzTHBLVENmX2JUX1BxN0Vxa2hScmFMR3BLSjBuSUZIZEN2V0NBYmc2TVItTnYzSzRXWFBnUmxfUnhUVDJxQk5Ra0FhTUs4dXZpaER5ZDlpZTlRb045bkZXblJobGxJbWVKZHI4ZGVuQnlubXBjSzNwQQ?oc=5",
+          "publishedAt": "2026-11-13T10:22:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1794572908000-8soa",
+      "at": "2026-11-13T12:28:28.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "UN watchdog increasingly concerned over uninspected Isfahan plant",
+          "body": "UN watchdog states it has never been able to visit a uranium enrichment plant at Isfahan which Iran announced over a year ago. BBC and Al Jazeera both reported the IAEA's concern over the uninspected Isfahan enrichment plant."
+        },
+        "de": {
+          "headline": "UN-Wächter besorgt über uninspektionen Isfahan-Anlage",
+          "body": "Der UN-Wächter gibt an, er habe noch nie eine Uran-Anreicherungsanlage in Isfahan besuchen können, die Iran vor über einem Jahr angekündigt hatte. Sowohl BBC als auch Al Jazeera berichteten über die Sorge der IAEA bezüglich der uninspektierten Isfahan-Anreicherungsanlage."
+        },
+        "es": {
+          "headline": "Organismo de control cada vez más preocupado por planta no inspeccionada en Isfahán",
+          "body": "El organismo de control indica que nunca ha podido visitar una planta de enriquecimiento de uranio en Isfahán, la cual Irán anunció hace más de un año. BBC y Al Jazeera informaron ambas la preocupación del Organismo Internacional de Energía Atómica por la planta de enriquecimiento sin inspeccionar en Isfahán."
+        },
+        "it": {
+          "headline": "L'organo di controllo ONU sempre più preoccupato per l'impianto di Isfahan non ispezionato",
+          "body": "L'organo di controllo ONU afferma di non essere mai riuscito a visitare un impianto di arricchimento di uranio a Isfahan, che l'Iran aveva annunciato oltre un anno fa. BBC e Al Jazeera hanno riportato entrambi la preoccupazione dell'AIEA riguardo all'impianto di arricchimento di Isfahan non ispezionato."
+        },
+        "fr": {
+          "headline": "Le contre-pouvoir de l'ONU de plus en plus préoccupé par l'usine d'Isfahan non inspectée",
+          "body": "Le contre-pouvoir de l'ONU déclare n'avoir jamais pu visiter une usine d'enrichissement d'uranium à Isfahan, que l'Iran avait annoncé il y a plus d'un an. BBC et Al Jazeera ont tous deux rapporté l'inquiétude de l'AIEA concernant l'usine d'enrichissement d'Isfahan non inspectée."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "BBC",
+          "title": "UN watchdog 'increasingly concerned' over uninspected Iran nuclear site",
+          "url": "https://www.bbc.co.uk/news/articles/cm75261e3pdko?at_medium=RSS&at_campaign=rss",
+          "publishedAt": "2026-11-13T12:28:28.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "UN watchdog calls on Iran to reopen nuclear facilities to inspection",
+          "url": "https://www.aljazeera.com/news/2026/11/13/un-watchdog-calls-on-iran-to-reopen-nuclear-facilities-to-inspection?traffic_source=rss",
+          "publishedAt": "2026-11-13T11:51:57.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-13T10:43:06.000Z",
+      "id": "u-1794566586000-ely1",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die Internationale Atomenergie-Organisation erklärte, sie könne nicht bestätigen, dass der Iran kein Nuklearmaterial von friedlichen Aktivitäten abgezweigt habe. Laut Berichten von The Times of Israel und WSLS teilte der Iran der Behörde mit, dass die Überwachung nicht fortgesetzt werden könne, solange das Land unter Bedrohung stehe.",
+          "headline": "IAEA meldet Unfähigkeit, den Status iranischen Nuklearmaterials zu verifizieren"
+        },
+        "en": {
+          "body": "The International Atomic Energy Agency stated it cannot confirm that Iran has not diverted nuclear material from peaceful activity. Iran informed the agency that monitoring cannot proceed while the country remains under threat, according to reports from The Times of Israel and WSLS.",
+          "headline": "IAEA reports inability to verify Iranian nuclear material status"
+        },
+        "es": {
+          "body": "El Organismo Internacional de Energía Atómica ha declarado que no puede confirmar que Irán no haya desviado material nuclear de actividades pacíficas. Irán informó al organismo de que la vigilancia no puede continuar mientras el país siga bajo amenaza, según informan The Times of Israel y WSLS.",
+          "headline": "El OIEA informa de su incapacidad para verificar el estado del material nuclear iraní"
+        },
+        "fr": {
+          "body": "L'Agence internationale de l'énergie atomique a déclaré ne pas être en mesure de confirmer que l'Iran n'a pas détourné de matières nucléaires de ses activités pacifiques. Selon des rapports du Times of Israel et de WSLS, l'Iran a informé l'agence que la surveillance ne pouvait se poursuivre tant que le pays resterait sous la menace.",
+          "headline": "L'AIEA signale son incapacité à vérifier le statut des matières nucléaires iraniennes"
+        },
+        "it": {
+          "body": "L'Agenzia internazionale per l'energia atomica ha dichiarato di non poter confermare che l'Iran non abbia sottratto materiale nucleare da attività pacifiche. Secondo quanto riportato dal The Times of Israel e da WSLS, l'Iran ha informato l'agenzia che il monitoraggio non può proseguire finché il Paese rimane sotto minaccia.",
+          "headline": "L'AIEA riferisce l'impossibilità di verificare lo stato del materiale nucleare iraniano"
+        },
+        "ja": {
+          "body": "国際原子力機関（IAEA）は、イランが平和目的の活動から核物質を転用していないことを確認できないと表明した。タイムズ・オブ・イスラエルおよびWSLSの報道によると、イランは同国が脅威にさらされている間は監視活動を継続できない旨をIAEAに伝えたという。",
+          "headline": "IAEA、イランの核物質状況の検証不能を報告"
+        },
+        "ko": {
+          "body": "국제원자력기구(IAEA)는 이란이 평화적 활동에서 핵물질을 전용하지 않았는지 확인할 수 없다고 밝혔다. The Times of Israel와 WSLS 보도에 따르면, 이란은 국가가 위협받는 상황에서는 감시가 진행될 수 없다고 기구에 통보했다.",
+          "headline": "IAEA, 이란 핵물질 상태 확인 불가 보고"
+        },
+        "pt": {
+          "body": "A Agência Internacional de Energia Atómica declarou que não pode confirmar que o Irão não desviou material nuclear de atividades pacíficas. O Irão informou a agência de que a monitorização não pode prosseguir enquanto o país permanecer sob ameaça, de acordo com informações do The Times of Israel e da WSLS.",
+          "headline": "AIEA relata incapacidade de verificar o estado do material nuclear iraniano"
+        },
+        "zh": {
+          "body": "国际原子能机构表示，无法确认伊朗是否将核材料挪作他用。据《以色列时报》和WSLS报道，伊朗已告知该机构，在国家面临威胁的情况下，无法继续进行核监测。",
+          "headline": "国际原子能机构称无法核实伊朗核材料状况"
+        }
+      },
+      "sources": [
+        {
           "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMmNKOFpJM1ZPeWpFeHk1Sm52eGh3a3VuNnRPUzAzZF9IY3lfRlFRR2pMaVlrSVB6NXNFMEx1Z1FPRGxhdnUwUTYxR0NiVHp4UkJZS0hSVEFiUW9VZWF5RU12T01hdDJFNmIwem44NDdjYkVLa3VhTld0cTFqTlZLdzVmbkRiYU5wX0xkS2tzTlhxbE5KOEJLNzZOTWpReE9BV2pHeEIwUU4zSncyeEtHYWRpZDIxS3NqcjlNMW1HQl9qeDBXN3k1YnlsMU5IU2ZEakxpRHh2MA?oc=5",
+          "title": "UN agency can't confirm Iran hasn't diverted nuclear material from peaceful activity, report says",
+          "outlet": "The Times of Israel",
           "publishedAt": "2026-11-13T10:43:06.000Z"
         },
         {
-          "outlet": "WSLS",
-          "title": "Iran tells UN nuclear agency that monitoring cannot proceed while it is under threat",
           "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZnozMEdmYzlFWURPQ2U0bU1UeUxNRVZUcXNRSUNaeDNvTldXV053Q21jNnYxbU9wNzBzNU1aY0VsY0RXSVhTdm1yZmtoZDhRbHJ0TGs3VVJselJMcEpfajNyX0plX2gzXzYyeE1pYl9rSUNfbS1wd0pkcC1kVG9oU0pabkVTQXotdjgzQVhKTlcyYjRDV2FuTFJWZWRsY0w5QXdqU05VdGNPY1BYUk1QS3kwbkJfY3dhZUIyVWZraEpDVW9LU1Jj?oc=5",
+          "title": "Iran tells UN nuclear agency that monitoring cannot proceed while it is under threat",
+          "outlet": "WSLS",
           "publishedAt": "2026-11-13T10:12:48.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-13T10:15:45.839Z",
@@ -262,13 +346,28 @@
     "https://www.thehindu.com/news/international/un-nuclear-watchdog-urges-iran-to-take-steps-towards-inspections/article71697585.ece",
     "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQklZTUIzSUpmSWNLVkJRcEhmOHoxQVVKM3lfcnVCb2pNUUNkUmtaNmR5TE4tTDZxVDFoRmJuc0E4OXFCb2ZrbXdMaTNtRHpCU3V4Y1hCZkF4YkxLNkxyU2dzVW84SDM4cHItek1zclhzQVk1SDQ1aXBuUGsySFN1S3JkMkxIR0gxamswMVpoSnBuWl9LVko1SkxnSkREcVIzTzJGRWpHcVFrbVlBZFhLLUZ1b1k?oc=5",
     "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZnozMEdmYzlFWURPQ2U0bU1UeUxNRVZUcXNRSUNaeDNvTldXV053Q21jNnYxbU9wNzBzNU1aY0VsY0RXSVhTdm1yZmtoZDhRbHJ0TGs3VVJselJMcEpfajNyX0plX2gzXzYyeE1pYl9rSUNfbS1wd0pkcC1kVG9oU0pabkVTQXotdjgzQVhKTlcyYjRDV2FuTFJWZWRsY0w5QXdqU05VdGNPY1BYUk1QS3kwbkJfY3dhZUIyVWZraEpDVW9LU1Jj?oc=5",
-    "https://news.google.com/rss/articles/CBMifEFVX3lxTE1lbG9lcTYwcmRiOG9IRDRYRUUzM0gzU0dwUXdaUHh3QkpQX01KSkdkM18zZWFVMXZOd0lwdkxJY1lqQ0JCTUpzYmE4XzhWc2FjMWNiQ2ZITFZEay1nMHBHVHdIOURwcEdtOGVKZW9rVEtrTGFvc0tJejJWeHg?oc=5"
+    "https://news.google.com/rss/articles/CBMifEFVX3lxTE1lbG9lcTYwcmRiOG9IRDRYRUUzM0gzU0dwUXdaUHh3QkpQX01KSkdkM18zZWFVMXZOd0lwdkxJY1lqQ0JCTUpzYmE4XzhWc2FjMWNiQ2ZITFZEay1nMHBHVHdIOURwcEdtOGVKZW9rVEtrTGFvc0tJejJWeHg?oc=5",
+    "https://www.aljazeera.com/news/2026/11/13/can-netanyahu-launch-a-strike-on-iran-before-he-leaves?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTmd6TXU0RGFVTXRNX1BvWmJxV3NJNkpxeEdOYXpjV1ZfMTNaZlFPUjlCdWIxYUFuMkJxMlJtQjlRUzFvUVozWUVxQUdGa2NRWU5lTS1ZeFhLNHppS3YwY01kZWZrbXZGVUVwWTZtNlkwRE9IRnB1Qk0tZHYxTml2cVlOOUdtUDFm?oc=5",
+    "https://thehill.com/homenews/campaign/6218300-john-kennedy-vance-midterm-elections/",
+    "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5qaHE5WkIzRkVXMnhCaGl3WVRBSjhuNTZoRU1uRk1pSjY4NzhpRzZXWkhTYjVFdVd1Ulh0d2pSQ2VTSWN2Rk01WVNQTkhVcldTRmc?oc=5",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOT1oyTEJaRTVCVVl5ZEZZTFVlR0RkVi1SSWVUeklDdVBuVXlNTEc5NWI5SjdCbUROaW9KQXA1eDNqLWJNNnlpSUFyUlk1MmFMcEg0QXZWR0pNZWVUUjlXbHB4dU94cF9fZ1FYc2JtZ09NYUpMcGpiZ1BPRWM5c2FEdXZoMlQ5NlYyejR6b0o3dTZPRzd4ZmlCbXFZNE0yWEtSN3dQMTA5UlRtdjcwNkRTczJMNzJVZkkzUVhJYi1mbUhpUQ?oc=5",
+    "https://www.bbc.co.uk/news/articles/cm75261e3pdko?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1ISUJpaGVUMDU4Q3VLd0xnbUZMWjhCdE9sek5ScTFwbjFOa2xabFhRVU5KQklkbFhCUmJFTU5VZ0tzUW0tYUdBZUNDazE0dU9WbFh1N2ZnY0lmcG5LZVE?oc=5",
+    "https://news.google.com/rss/articles/CBMiswFBVV95cUxNUjJOOFZYSEVpcWtkRGplVVozUXpCc0E4VXB2bUQ1QVZBYzZHYWdsN295dVhNYkwxYlFTWnY0eDRzUm1qOGRyYkM2YnlsVjU2SHpUaUVTZWxSNEtEWXBLVVlBenp2bG90alF4ejBYZzc3NTZSNy1TNEUtc1VKVm9JOWVhcXRnMDVGNnNiZmVtVmtMVFRrWmxoLVhQSWxWcDlONE5tQlRHQjhTMWtxVS1TSE54NNIBuAFBVV95cUxPcElRT3Y1ZjBxVXhSMHVlTHhOd0k3M0VpZktrMllVa0VGRU52LTZXd2JuTFlINHFpYjJyOXU4QlQyRlFlSUpXM0RHT044NU1kWWNtZ2xuQXlTTWxmVDFVZERiTGNuX2xjWmtLMUl6cGl5TkxIZ2xMc1dSTk83UG1oaFJtSVRIU18wVFF5dzQ3T0tsaGtOZEoyUUJDWWVybXpLZG96dGZzdXdvNjJGSk4yYThfSG1BTkxk?oc=5",
+    "https://www.aljazeera.com/news/2026/11/13/un-watchdog-calls-on-iran-to-reopen-nuclear-facilities-to-inspection?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeE9jTEI2MWwzeHBONVhsWlFSNXlLam10OUZ0Y3drUG5fR3Bmd01NQmJ2UC04TlEzYU9JME54b2pVTGJOR0JnN2dKUG1CanBLa0JZNkZVRXYwN09sVVRHNDhTUWlRTkV1VDJ2U3dHaXJGbFl2WkZQSUxMSDZZaW43aXlPbE9MUdIBhgFBVV95cUxPeE9jTEI2MWwzeHBONVhsWlFSNXlLam10OUZ0Y3drUG5fR3Bmd01NQmJ2UC04TlEzYU9JME54b2pVTGJOR0JnN2dKUG1CanBLa0JZNkZVRXYwN09sVVRHNDhTUWlRTkV1VDJ2U3dHaXJGbFl2WkZQSUxMSDZZaW43aXlPbE9MUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMizwFBVV95cUxPYndNNlkxcDdYUXRleHBkS093NzN4TVk2d2ZIQ2Zadl9EOWV6U2M0cXA1R2Jqem5FWkE0VG9RNUxrUlJLTHZ1UFdZR3N2NVp6aTEwbGtQUE03U09QVDNGaXltWEs5UG1XQVNGT0hSZV9SRmxLZ0t0OVA1cV9KZFJJd0MxRlJ3MmcxLW53NHNJR2xIdTN5S09nbEw5QldtaF9YQzJHTzgtUHBValc5N1BfSlBCYnV2a3huQkN3YnoyT0FmRTNxS1ZJLUtFLVlKa0k?oc=5",
+    "https://news.google.com/rss/articles/CBMikgJBVV95cUxQVXpEeUp1MFduaW1VTTd5RUZUUzJWdlRTYVdVWTJSQnVkMUk4TnRpWW9zT2Z1S3hyZDVRX3pPUlZ1bnpUZHF2YUpjUnlxRHRLVDRFOVRtd3piaTF4cEszcFdkSHdZZHVIRjRyQXpUdzBnYTdKNFQ5djA5LVRhT05ub25WNXVMRkNHUGg5RVM0SG1yazhlVlR6LUtHcnVQSUtfRUVqSHozVzhuZnhfTlFKek5ULU5OVEJtUUF5TVF3YW4xekdSSXpLeGhyN1NXMi0wRWsxbzh6UGdFV3JCZWUwcExWZEw2eVo5UXVNbGNtdlpYZVJyY21NalZXckVpbm1HT2FBVjdHUF9UTkcwQnJtV01B?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSUhIeGdPMTNhOEtBdjc2VlJIaHpPZDh2NTdEb283VFY0Uzg0TVEyYzk4OW8zWXRJY2taTWFmVGJaY1YwYnMzTHBLVENmX2JUX1BxN0Vxa2hScmFMR3BLSjBuSUZIZEN2V0NBYmc2TVItTnYzSzRXWFBnUmxfUnhUVDJxQk5Ra0FhTUs4dXZpaER5ZDlpZTlRb045bkZXblJobGxJbWVKZHI4ZGVuQnlubXBjSzNwQQ?oc=5"
   ],
   "startedAt": "2026-11-13T10:15:44.602Z",
-  "updatedAt": "2026-11-13T10:46:19.887Z",
+  "updatedAt": "2026-11-13T15:01:47.009Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": null,
-  "sourceCount": 5,
-  "seenHeadlines": []
+  "sourceCount": 9,
+  "seenHeadlines": [
+    "IAEA reports inability to verify Iranian nuclear material status"
+  ]
 }
