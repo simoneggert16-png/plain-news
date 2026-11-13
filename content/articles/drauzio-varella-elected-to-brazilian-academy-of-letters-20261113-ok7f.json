@@ -1,0 +1,56 @@
+{
+  "slug": "drauzio-varella-elected-to-brazilian-academy-of-letters-20261113-ok7f",
+  "category": "culture",
+  "image": "https://s02.video.glbimg.com/x240/15183985.jpg",
+  "imageCredit": "G1",
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-11-13T02:36:12.488Z",
+  "updatedAt": "2026-11-13T02:36:12.488Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "G1",
+      "title": "Drauzio Varella é eleito para a Academia Brasileira de Letras; ele ocupará a cadeira que era do jornalista Zuenir Ventura",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/12/drauzio-varella-e-eleito-para-a-academia-brasileira-de-letras-ele-ocupara-a-cadeira-que-era-do-jornalista-zuenir-ventura.ghtml",
+      "publishedAt": "2026-11-13T02:04:36.000Z"
+    },
+    {
+      "outlet": "AgÃªncia Brasil",
+      "title": "Drauzio Varella é novo membro da Academia Brasileira de Letras",
+      "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-11/drauzio-varela-e-novo-membro-da-academia-brasileira-de-letras",
+      "publishedAt": "2026-11-12T21:47:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Drauzio Varella elected to Brazilian Academy of Letters",
+      "dek": "Physician and writer Drauzio Varella won 29 of 37 votes on Thursday to take seat 32 at the Brazilian Academy of Letters.",
+      "facts": [
+        "On 12 November 2026, Drauzio Varella was elected to seat 32 of the Brazilian Academy of Letters.",
+        "Varella received 29 of 37 votes in a contest that included 17 other candidates.",
+        "Seat 32 was left vacant following the death of journalist Zuenir Ventura in September 2026.",
+        "Varella is an oncologist, author of 24 books, and long-time health communicator on Brazilian radio and television."
+      ],
+      "body": [
+        "On 12 November 2026, the Brazilian Academy of Letters elected physician and writer Drauzio Varella to fill seat 32. Varella received 29 out of 37 votes in a secret ballot, defeating 17 other candidates for the position. The seat had been vacant since September 2026 following the death of journalist Zuenir Ventura, and it was previously held by writer Ariano Suassuna.",
+        "Following the vote, Varella told Globo News that joining the academy had never crossed his mind because he did not think he was prepared for it. Varella graduated in medicine from the University of São Paulo in 1967, and he published his first book in 1999 at the age of 59 after working as a volunteer doctor at the Carandiru prison.",
+        "Academy president Merval Pereira stated that Varella was elected as a writer and public figure who defends public health rather than solely for his medical career. Writer Gilberto Gil, who is also an academy member, described Varella as a highly cultured writer and an extraordinarily competent physician."
+      ],
+      "context": "The Brazilian Academy of Letters elects members to lifetime seats through secret voting by its 37 members whenever a chair becomes vacant due to a member's death.",
+      "imageCaption": "Drauzio Varella é eleito para a Academia Brasileira de Letras"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "gemini/gemini-3.6-flash",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "DRAFT BODY PARAGRAPH 1: The draft states 'The election results were kept secret; votes were incinerated, so the first public image came after the vote counting' in facts, but S1 specifically says the voting process itself is secret ('a votação dos imortais também é secreta') and that 37 votes were burned after the election, not that the result was kept secret.",
+      "DRAFT BODY PARAGRAPH 2: Repetitive information about the vote count (29 of 37 votes) between paragraph 1 and paragraph 2.",
+      "DRAFT BODY PARAGRAPH 2: Missing attribution for evaluative quotes from Merval Pereira ('great physician', 'great public man'). Quotes and judgments must be strictly attributed.",
+      "STYLE GUIDE RULE 13 & 11: Paragraph openings need variation, and sentence structures must vary to avoid repetitive phrasing."
+    ]
+  }
+}

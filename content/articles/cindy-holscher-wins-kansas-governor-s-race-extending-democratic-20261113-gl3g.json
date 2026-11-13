@@ -1,0 +1,70 @@
+{
+  "slug": "cindy-holscher-wins-kansas-governor-s-race-extending-democratic-20261113-gl3g",
+  "category": "politics",
+  "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/08/cindy-holscher-wins-kansas.jpg",
+  "imageCredit": "NPR",
+  "video": {
+    "type": "youtube",
+    "id": "c_USqDFYKl8",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/c_USqDFYKl8"
+  },
+  "importance": 3,
+  "publishedAt": "2026-11-13T02:35:21.615Z",
+  "updatedAt": "2026-11-13T02:35:21.615Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "NPR",
+      "title": "Cindy Holscher wins in Kansas, holding governor's office for Democrats",
+      "url": "https://www.npr.org/2026/11/12/g-s1-151239/kansas-governor-midterms-holscher-masterson",
+      "publishedAt": "2026-11-12T23:36:19.000Z"
+    },
+    {
+      "outlet": "Fox News",
+      "title": "Democrat Cindy Holscher wins Kansas governor's race, extending party's hold on governor's mansion",
+      "url": "https://www.foxnews.com/politics/democrat-cindy-holscher-wins-kansas-governors-race-extending-partys-hold-governors-mansion",
+      "publishedAt": "2026-11-12T23:06:47.000Z"
+    },
+    {
+      "outlet": "PBS",
+      "title": "Cindy Holscher wins election for Kansas governor, extending Democrats' wave of victories",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNS0xoelhvSE5mQWkwX3ZETXVYRk9NYUpuY1VDbGVaM19QSGh1Z05kaEhQM2RvSHdldXFDX0FqTm1uMS10eEl6Y2xHX2hhN1JXaFcxelB6TFJIb2pza1B0VEJhSUUzY0RCaTBNX0ZjdE9UODdmemM3NHBTN290TTAzYXB4YTNCWW5ybE83NWR1VWxTRnpOX19vS1JabldVbGtxZTNETFhIdDNKU0lxck4zN1RhQzdfYlRrUHBXWmo4cnRKUQ?oc=5",
+      "publishedAt": "2026-11-12T23:15:50.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Cindy Holscher wins Kansas governor's race, extending Democratic hold",
+      "dek": "Democrat Cindy Holscher defeated Republican Ty Masterson to win the Kansas governorship.",
+      "facts": [
+        "Cindy Holscher defeated Republican Ty Masterson in the Kansas governor's race.",
+        "Ty Masterson, president of the Kansas state Senate, was endorsed by President Trump.",
+        "Current Democratic Gov. Laura Kelly was term-limited after eight years in office.",
+        "Holscher campaigned on fighting \"sweetheart deals\" for billionaires and supporting public schools.",
+        "Masterson called Holscher \"the most radical, liberal, socialist Democrat ever\" to hold a ticket in Kansas."
+      ],
+      "body": [
+        "Cindy Holscher won the Kansas governor's race, defeating Republican Ty Masterson according to the Associated Press and multiple news outlets.",
+        "Holscher, a Democratic state senator, will hold the governor's office for her party after defeating Masterson, who was endorsed by former President Donald Trump.",
+        "The race was closely watched as Kansas was seen as the most likely governor's race to flip from Democratic to Republican control among the 36 gubernatorial elections held nationwide."
+      ],
+      "context": "Democratic Governor Laura Kelly was term-limited after serving eight years, creating an open seat that prompted a competitive race between Holscher and Masterson.",
+      "imageCaption": "Cindy Holscher wins Kansas governor’s race, keeps governor’s mansion blue"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "gemini/gemini-3.1-flash-lite",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline contains a colon, which is banned.",
+      "Body paragraph 1 contains filler ('multiple news outlets').",
+      "Body paragraph 2 refers to Donald Trump as 'former President' when the source refers to him as 'President Trump'.",
+      "Body paragraph 3 contains evaluative framing ('closely watched').",
+      "Context paragraph contains evaluative framing ('creating an open seat that prompted a competitive race').",
+      "The draft includes a 'dek' field which is not requested in the final JSON structure.",
+      "The draft includes a 'facts' field which is not requested in the final JSON structure."
+    ]
+  }
+}
