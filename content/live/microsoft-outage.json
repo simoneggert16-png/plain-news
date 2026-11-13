@@ -1,9 +1,79 @@
 {
+  "meta": {
+    "outlets": [
+      "France 24",
+      "The Guardian",
+      "The Hill",
+      "South China Morning Post",
+      "Breaking News, Latest News and Videos"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "microsoft-outage",
-  "status": "live",
-  "category": "tech",
-  "importance": 5,
   "topic": "Microsoft Outage",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Millionen sind weiterhin von der Microsoft-Dienstunterbrechung betroffen, die über achtzehn Stunden andauert.",
+      "title": "Microsoft-Ausfall"
+    },
+    "en": {
+      "dek": "Millions remain affected by Microsoft service disruption stretching past eighteen hours.",
+      "title": "Microsoft Outage"
+    },
+    "es": {
+      "dek": "Millones siguen afectados por la interrupción del servicio de Microsoft que se extiende más de dieciocho horas.",
+      "title": "Interrupción de Microsoft"
+    },
+    "fr": {
+      "dek": "Des millions de personnes sont toujours affectées par une perturbation des services Microsoft dépassant dix-huit heures.",
+      "title": "Panne Microsoft"
+    },
+    "it": {
+      "dek": "Milioni rimangono colpiti da un'interruzione dei servizi Microsoft che va oltre le diciotto ore.",
+      "title": "Interruzione dei servizi Microsoft"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794583808000-zywh",
+      "at": "2026-11-13T15:30:08.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Microsoft rules out cyberattack as cause of global outage",
+          "body": "Microsoft appeared to rule out a cyberattack as the cause of the outage that disrupted Outlook email, Teams and Copilot, according to New York Times and El PaÃ­s."
+        },
+        "de": {
+          "headline": "Microsoft schließt Cyberangriff als Ursache globaler Störung aus",
+          "body": "Microsoft scheint nach Angaben von New York Times und El País einen Cyberangriff als Ursache der Störung auszuschließen, die Outlook, Teams und Copilot beeinträchtigte."
+        },
+        "it": {
+          "headline": "Microsoft esclude attacco informatico come causa del guasto globale",
+          "body": "Microsoft sembra escludere un attacco informatico come causa dell'interruzione che ha interessato Outlook, Teams e Copilot, secondo il New York Times e El PaÃ­s."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "New York Times",
+          "title": "Microsoft Says Outage Disrupting Outlook Is Improving",
+          "url": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
+          "publishedAt": "2026-11-13T15:30:08.000Z"
+        },
+        {
+          "outlet": "El PaÃ­s",
+          "title": "Microsoft services are beginning to return to normal after global outage of over 18 hours",
+          "url": "https://english.elpais.com/technology/2026-11-13/microsoft-fails-to-restore-services-after-more-than-12-hours-of-global-disruption.html",
+          "publishedAt": "2026-11-13T13:56:19.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "tech",
   "keywords": [
     "microsoft",
     "outage",
@@ -12,46 +82,42 @@
     "disruption",
     "technology"
   ],
+  "seenUrls": [
+    "https://www.theguardian.com/technology/live/2026/nov/13/microsoft-outage-down-today-live-update-outlook-teams-365-when-fixed-latest-status-cause-news",
+    "https://www.bbc.co.uk/news/articles/cqp9d58eldlro?at_medium=RSS&at_campaign=rss",
+    "https://www.marketwatch.com/story/microsoft-stock-slumps-on-outage-that-includes-the-copilot-tool-it-has-been-heavily-promoting-4007dc4f?mod=mw_rss_topstories",
+    "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
+    "https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage",
+    "https://arstechnica.com/tech-policy/2026/11/microsoft-blames-failed-server-health-checks-not-hackers-for-global-outage/",
+    "https://www.channelnewsasia.com/world/microsoft-outage-businesses-fixes-fax-6550041",
+    "https://www.dawn.com/news/2044315/faxes-phones-and-bluetooth-microsoft-outage-forces-businesses-to-find-fixes",
+    "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
+    "https://www.theguardian.com/technology/2026/nov/13/microsoft-outage-outlook-teams-word-excel-reports",
+    "https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&at_campaign=rss",
+    "https://www.france24.com/en/technology/20261113-major-microsoft-outlook-outage-disrupts-services-in-74-countries",
+    "https://www.artnews.com/art-news/news/microsoft-outage-disrupts-global-operations-art-world-too-1234805835/",
+    "https://www.dawn.com/news/2044258/microsoft-says-improvements-for-outlook-in-north-america-europe",
+    "https://english.elpais.com/technology/2026-11-13/microsoft-fails-to-restore-services-after-more-than-12-hours-of-global-disruption.html",
+    "https://www.bbc.co.uk/news/articles/c6vg2ljjpj32o?at_medium=RSS&at_campaign=rss",
+    "https://www.politico.eu/article/eu-institutions-survive-microsoft-outage-unscathed/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.euronews.com/2026/11/13/microsoft-365-global-outage-disrupts-portuguese-government-health-services-and-schools",
+    "https://techcrunch.com/2026/11/13/microsoft-latest-email-outage-turned-into-a-full-blown-global-cloud-crisis/",
+    "https://www.technologyreview.com/2026/11/13/1148551/the-download-silicon-valley-midterms-nvidia-chip-tracking/",
+    "https://www.kyivpost.com/post/90036",
+    "https://thehill.com/policy/technology/6218199-microsoft-outage-recovery-process/",
+    "https://www.theguardian.com/technology/2026/nov/13/microsoft-outage-hits-nhs-hospitals-gps-schools-and-police-across-uk",
+    "https://www.jpost.com/business-and-innovation/tech-and-start-ups/article-914812",
+    "https://www.thehindu.com/sci-tech/technology/microsoft-outage-live-updates-november-13-2026-steps-to-fix-outlook-and-other-apps-ongoing/article71696624.ece",
+    "https://www.euronews.com/2026/11/13/take-your-time-funniest-reactions-to-microsoft-global-outage",
+    "https://www.aljazeera.com/news/liveblog/2026/11/13/live-microsoft-struggles-to-restore-services-as-outage-hits-global-users?traffic_source=rss",
+    "http://www.africanews.com/2026/11/13/outlook-outage-hits-users-in-74-countries-as-microsoft-seeks-fix/",
+    "https://www.kyivpost.com/post/90012"
+  ],
   "startedAt": "2026-11-13T15:59:34.976Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-13T15:59:34.976Z",
-  "articleSlug": null,
-  "sourceCount": 5,
+  "updatedAt": "2026-11-13T16:11:44.461Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Microsoft Outage",
-      "dek": "Millions remain affected by Microsoft service disruption stretching past eighteen hours."
-    },
-    "fr": {
-      "title": "Panne Microsoft",
-      "dek": "Des millions de personnes sont toujours affectées par une perturbation des services Microsoft dépassant dix-huit heures."
-    },
-    "es": {
-      "title": "Interrupción de Microsoft",
-      "dek": "Millones siguen afectados por la interrupción del servicio de Microsoft que se extiende más de dieciocho horas."
-    },
-    "de": {
-      "title": "Microsoft-Ausfall",
-      "dek": "Millionen sind weiterhin von der Microsoft-Dienstunterbrechung betroffen, die über achtzehn Stunden andauert."
-    },
-    "it": {
-      "title": "Interruzione dei servizi Microsoft",
-      "dek": "Milioni rimangono colpiti da un'interruzione dei servizi Microsoft che va oltre le diciotto ore."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "France 24",
-      "The Guardian",
-      "The Hill",
-      "South China Morning Post",
-      "Breaking News, Latest News and Videos"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
