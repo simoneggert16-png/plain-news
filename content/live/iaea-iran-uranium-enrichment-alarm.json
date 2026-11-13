@@ -1,9 +1,234 @@
 {
+  "meta": {
+    "outlets": [
+      "CNA",
+      "The Jerusalem Post",
+      "Reuters",
+      "Iran International"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+  },
   "slug": "iaea-iran-uranium-enrichment-alarm",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "IAEA Iran Uranium Enrichment Alarm",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die UN-Atomenergiebehörde hat laut einem neuen Bericht Bedenken hinsichtlich einer nicht inspizierten iranischen Urananreicherungsanlage in Isfahan geäußert.",
+      "title": "IAEA alarmiert wegen Urananreicherung im Iran"
+    },
+    "en": {
+      "dek": "The UN nuclear watchdog has expressed concern regarding an uninspected Iranian uranium enrichment facility in Isfahan, according to a new report.",
+      "title": "IAEA raises alarm over Iranian uranium enrichment"
+    },
+    "es": {
+      "dek": "El organismo de control nuclear de la ONU ha expresado su preocupación por una planta de enriquecimiento de uranio iraní no inspeccionada en Isfahán, según un nuevo informe.",
+      "title": "Alarma del OIEA por el enriquecimiento de uranio en Irán"
+    },
+    "fr": {
+      "dek": "L'agence onusienne de surveillance nucléaire a fait part de ses préoccupations concernant une usine d'enrichissement d'uranium iranienne non inspectée à Ispahan, selon un nouveau rapport.",
+      "title": "AIEA : inquiétudes sur l'enrichissement d'uranium en Iran"
+    },
+    "it": {
+      "dek": "L'agenzia dell'ONU per l'energia atomica ha espresso preoccupazione riguardo a un impianto di arricchimento dell'uranio iraniano non ispezionato a Isfahan, secondo quanto riportato in un nuovo rapporto.",
+      "title": "L'AIEA lancia l'allarme sull'arricchimento dell'uranio in Iran"
+    },
+    "ja": {
+      "dek": "国連の原子力監視機関である国際原子力機関（IAEA）は、イランのイスファハンにある未査察のウラン濃縮施設について、新たな報告書の中で懸念を表明した。",
+      "title": "IAEA、イランのウラン濃縮活動に懸念を表明"
+    },
+    "ko": {
+      "dek": "유엔 산하 핵 감시 기구인 국제원자력기구(IAEA)가 최근 보고서를 통해 이란 이스파한의 사찰을 받지 않는 우라늄 농축 시설에 대해 우려를 표명했다.",
+      "title": "IAEA, 이란 우라늄 농축 활동에 우려 표명"
+    },
+    "pt": {
+      "dek": "O organismo de vigilância nuclear da ONU manifestou preocupação relativamente a uma instalação de enriquecimento de urânio não inspecionada em Isfahan, segundo um novo relatório.",
+      "title": "AIEA manifesta preocupação com o enriquecimento de urânio no Irão"
+    },
+    "zh": {
+      "dek": "据一份最新报告显示，联合国核监督机构对伊朗伊斯法罕一处未经核查的铀浓缩设施表示担忧。",
+      "title": "国际原子能机构对伊朗铀浓缩活动表示关切"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794566586000-ely1",
+      "at": "2026-11-13T10:43:06.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "IAEA reports inability to verify Iranian nuclear material status",
+          "body": "The International Atomic Energy Agency stated it cannot confirm that Iran has not diverted nuclear material from peaceful activity. Iran informed the agency that monitoring cannot proceed while the country remains under threat, according to reports from The Times of Israel and WSLS."
+        },
+        "it": {
+          "headline": "L'AIEA riferisce l'impossibilità di verificare lo stato del materiale nucleare iraniano",
+          "body": "L'Agenzia internazionale per l'energia atomica ha dichiarato di non poter confermare che l'Iran non abbia sottratto materiale nucleare da attività pacifiche. Secondo quanto riportato dal The Times of Israel e da WSLS, l'Iran ha informato l'agenzia che il monitoraggio non può proseguire finché il Paese rimane sotto minaccia."
+        },
+        "pt": {
+          "headline": "AIEA relata incapacidade de verificar o estado do material nuclear iraniano",
+          "body": "A Agência Internacional de Energia Atómica declarou que não pode confirmar que o Irão não desviou material nuclear de atividades pacíficas. O Irão informou a agência de que a monitorização não pode prosseguir enquanto o país permanecer sob ameaça, de acordo com informações do The Times of Israel e da WSLS."
+        },
+        "de": {
+          "headline": "IAEA meldet Unfähigkeit, den Status iranischen Nuklearmaterials zu verifizieren",
+          "body": "Die Internationale Atomenergie-Organisation erklärte, sie könne nicht bestätigen, dass der Iran kein Nuklearmaterial von friedlichen Aktivitäten abgezweigt habe. Laut Berichten von The Times of Israel und WSLS teilte der Iran der Behörde mit, dass die Überwachung nicht fortgesetzt werden könne, solange das Land unter Bedrohung stehe."
+        },
+        "es": {
+          "headline": "El OIEA informa de su incapacidad para verificar el estado del material nuclear iraní",
+          "body": "El Organismo Internacional de Energía Atómica ha declarado que no puede confirmar que Irán no haya desviado material nuclear de actividades pacíficas. Irán informó al organismo de que la vigilancia no puede continuar mientras el país siga bajo amenaza, según informan The Times of Israel y WSLS."
+        },
+        "fr": {
+          "headline": "L'AIEA signale son incapacité à vérifier le statut des matières nucléaires iraniennes",
+          "body": "L'Agence internationale de l'énergie atomique a déclaré ne pas être en mesure de confirmer que l'Iran n'a pas détourné de matières nucléaires de ses activités pacifiques. Selon des rapports du Times of Israel et de WSLS, l'Iran a informé l'agence que la surveillance ne pouvait se poursuivre tant que le pays resterait sous la menace."
+        },
+        "zh": {
+          "headline": "国际原子能机构称无法核实伊朗核材料状况",
+          "body": "国际原子能机构表示，无法确认伊朗是否将核材料挪作他用。据《以色列时报》和WSLS报道，伊朗已告知该机构，在国家面临威胁的情况下，无法继续进行核监测。"
+        },
+        "ko": {
+          "headline": "IAEA, 이란 핵물질 상태 확인 불가 보고",
+          "body": "국제원자력기구(IAEA)는 이란이 평화적 활동에서 핵물질을 전용하지 않았는지 확인할 수 없다고 밝혔다. The Times of Israel와 WSLS 보도에 따르면, 이란은 국가가 위협받는 상황에서는 감시가 진행될 수 없다고 기구에 통보했다."
+        },
+        "ja": {
+          "headline": "IAEA、イランの核物質状況の検証不能を報告",
+          "body": "国際原子力機関（IAEA）は、イランが平和目的の活動から核物質を転用していないことを確認できないと表明した。タイムズ・オブ・イスラエルおよびWSLSの報道によると、イランは同国が脅威にさらされている間は監視活動を継続できない旨をIAEAに伝えたという。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Times of Israel",
+          "title": "UN agency can't confirm Iran hasn't diverted nuclear material from peaceful activity, report says",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMmNKOFpJM1ZPeWpFeHk1Sm52eGh3a3VuNnRPUzAzZF9IY3lfRlFRR2pMaVlrSVB6NXNFMEx1Z1FPRGxhdnUwUTYxR0NiVHp4UkJZS0hSVEFiUW9VZWF5RU12T01hdDJFNmIwem44NDdjYkVLa3VhTld0cTFqTlZLdzVmbkRiYU5wX0xkS2tzTlhxbE5KOEJLNzZOTWpReE9BV2pHeEIwUU4zSncyeEtHYWRpZDIxS3NqcjlNMW1HQl9qeDBXN3k1YnlsMU5IU2ZEakxpRHh2MA?oc=5",
+          "publishedAt": "2026-11-13T10:43:06.000Z"
+        },
+        {
+          "outlet": "WSLS",
+          "title": "Iran tells UN nuclear agency that monitoring cannot proceed while it is under threat",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZnozMEdmYzlFWURPQ2U0bU1UeUxNRVZUcXNRSUNaeDNvTldXV053Q21jNnYxbU9wNzBzNU1aY0VsY0RXSVhTdm1yZmtoZDhRbHJ0TGs3VVJselJMcEpfajNyX0plX2gzXzYyeE1pYl9rSUNfbS1wd0pkcC1kVG9oU0pabkVTQXotdjgzQVhKTlcyYjRDV2FuTFJWZWRsY0w5QXdqU05VdGNPY1BYUk1QS3kwbkJfY3dhZUIyVWZraEpDVW9LU1Jj?oc=5",
+          "publishedAt": "2026-11-13T10:12:48.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-13T10:15:45.839Z",
+      "id": "u-1794564945839-xxgh",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Die Internationale Atomenergiebehörde erklärte am Freitag, sie habe keine Kenntnis über den genauen Standort der Brennstoffanreicherungsanlage in Isfahan, deren Status bezüglich der Sicherheitsvorkehrungen oder den Inhalt an nuklearem Material. Iran hat Inspektoren der Behörde laut einem vertraulichen Bericht, der Reuters vorliegt, weder die Besichtigung der Anlage noch die Einsicht in die Planungsunterlagen gestattet.",
+          "headline": "IAEA äußert Besorgnis über nicht inspizierte Anreicherungsanlage in Isfahan"
+        },
+        "en": {
+          "body": "The International Atomic Energy Agency stated on Friday that it lacks knowledge of the Isfahan Fuel Enrichment Plant's exact location, safeguards status, or nuclear material content. Iran has not permitted agency officers to inspect the facility or view design plans, according to a confidential report seen by Reuters.",
+          "headline": "IAEA raises concern over uninspected Isfahan enrichment plant"
+        },
+        "es": {
+          "body": "El Organismo Internacional de Energía Atómica declaró el viernes que desconoce la ubicación exacta, el estatus de salvaguardias o el contenido de material nuclear de la Planta de Enriquecimiento de Combustible de Isfahán. Irán no ha permitido a los inspectores del organismo acceder a las instalaciones ni examinar los planos de diseño, según un informe confidencial al que tuvo acceso la agencia Reuters.",
+          "headline": "El OIEA expresa su preocupación por la planta de enriquecimiento de Isfahán, que sigue sin ser inspeccionada"
+        },
+        "fr": {
+          "body": "L'Agence internationale de l'énergie atomique a déclaré vendredi qu'elle ignorait l'emplacement exact de l'usine d'enrichissement de combustible d'Ispahan, son statut en matière de garanties ou sa teneur en matières nucléaires. L'Iran n'a pas autorisé les inspecteurs de l'agence à visiter l'installation ni à consulter les plans de conception, selon un rapport confidentiel consulté par l'agence Reuters.",
+          "headline": "L'AIEA exprime son inquiétude concernant une usine d'enrichissement non inspectée à Ispahan"
+        },
+        "it": {
+          "body": "L'Agenzia Internazionale per l'Energia Atomica ha dichiarato venerdì di non conoscere l'esatta ubicazione, lo stato delle salvaguardie o il contenuto di materiale nucleare dell'impianto di arricchimento del combustibile di Isfahan. L'Iran non ha permesso agli ispettori dell'agenzia di visitare la struttura né di visionare i progetti, secondo quanto emerge da un rapporto riservato visionato da Reuters.",
+          "headline": "L'AIEA esprime preoccupazione per l'impianto di arricchimento di Isfahan non ispezionato"
+        },
+        "ja": {
+          "body": "国際原子力機関（IAEA）は金曜日、エスファハーン燃料濃縮施設の正確な所在地、査察措置の状況、あるいは核物質の含有量について把握していないと発表した。ロイター通信が閲覧した非公開の報告書によると、イランは同機関の査察官による施設の立ち入りや設計図の閲覧を許可していないという。",
+          "headline": "IAEA、査察の入っていないエスファハーン濃縮施設に懸念を表明"
+        },
+        "ko": {
+          "body": "국제원자력기구(IAEA)는 금요일 이스파한 핵연료 농축 시설의 정확한 위치와 안전 조치 현황, 핵물질 보유량에 대해 파악하지 못하고 있다고 밝혔다. 로이터 통신이 입수한 기밀 보고서에 따르면, 이란은 IAEA 조사관들의 시설 사찰이나 설계도 열람을 허용하지 않고 있다.",
+          "headline": "IAEA, 이스파한 핵연료 농축 시설 사찰 불가에 우려 표명"
+        },
+        "pt": {
+          "body": "A Agência Internacional de Energia Atómica declarou esta sexta-feira que desconhece a localização exata, o estatuto de salvaguardas ou o conteúdo de material nuclear da Fábrica de Enriquecimento de Combustível de Isfafão. O Irão não permitiu que os inspetores da agência inspecionassem a instalação nem visualizassem os planos de conceção, segundo um relatório confidencial a que a Reuters teve acesso.",
+          "headline": "AIEA manifesta preocupação com fábrica de enriquecimento de Isfafão por inspecionar"
+        },
+        "zh": {
+          "body": "国际原子能机构周五表示，该机构对伊斯法罕燃料浓缩厂的确切位置、保障监督状态或核材料含量一无所知。路透社看到的一份保密报告显示，伊朗未允许该机构官员视察该设施或查看设计方案。",
+          "headline": "国际原子能机构对未经视察的伊斯法罕浓缩厂表示关切"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/middle-east/iran-news/article-914802",
+          "title": "UN nuclear watchdog IAEA raises alarm over uninspected Iranian uranium enrichment plant at Isfahan",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-13T10:28:08.000Z"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/world/iaea-un-report-concern-iran-nuclear-plant-6549176",
+          "title": "IAEA increasingly concerned about Iranian enrichment plant, its report says",
+          "outlet": "CNA",
+          "publishedAt": "2026-11-13T10:11:01.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-13T10:15:45.840Z",
+      "id": "u-1794564945840-0kx1",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Die Marine der iranischen Revolutionsgarden erklärte, ein Flüssiggastanker sei auf einer nicht genehmigten Route in der Straße von Hormus auf eine Seemine gefahren und explodiert. Iranischen Medienberichten zufolge wurden vier Öltanker in der Wasserstraße von Explosionen getroffen, nachdem sie Warnungen ignoriert hatten.",
+          "headline": "Iranische Revolutionsgarden melden Tankerexplosion in der Straße von Hormus"
+        },
+        "en": {
+          "body": "Iran's Revolutionary Guards navy stated that a liquefied natural gas tanker struck a naval mine and suffered an explosion while using an unauthorized route in the Strait of Hormuz. Iranian media reported that four oil tankers were hit by explosions in the waterway after ignoring warnings.",
+          "headline": "Iran Revolutionary Guards report tanker explosion in Strait of Hormuz"
+        },
+        "es": {
+          "body": "La armada de la Guardia Revolucionaria de Irán indicó que un buque cisterna de gas natural licuado chocó contra una mina marina y sufrió una explosión al utilizar una ruta no autorizada en el estrecho de Ormuz. Medios iraníes informaron de que cuatro petroleros sufrieron explosiones en la vía fluvial tras hacer caso omiso de las advertencias.",
+          "headline": "La Guardia Revolucionaria de Irán informa de la explosión de un petrolero en el estrecho de Ormuz"
+        },
+        "fr": {
+          "body": "La marine des Gardiens de la révolution iraniens a déclaré qu'un transporteur de gaz naturel liquéfié avait heurté une mine marine et subi une explosion alors qu'il empruntait une route non autorisée dans le détroit d'Ormuz. Les médias iraniens ont rapporté que quatre pétroliers avaient été touchés par des explosions dans cette voie navigable après avoir ignoré des avertissements.",
+          "headline": "Les Gardiens de la révolution iraniens signalent l'explosion d'un navire-citerne dans le détroit d'Ormuz"
+        },
+        "it": {
+          "body": "La marina dei Guardiani della rivoluzione iraniani ha dichiarato che una nave cisterna per gas naturale liquefatto ha urtato una mina navale subendo un'esplosione mentre percorreva una rotta non autorizzata nello Stretto di Hormuz. I media iraniani hanno riferito che quattro petroliere sono state colpite da esplosioni nel corso d'acqua dopo aver ignorato gli avvertimenti.",
+          "headline": "I Guardiani della rivoluzione iraniani segnalano l'esplosione di una petroliera nello Stretto di Hormuz"
+        },
+        "ja": {
+          "body": "イラン革命防衛隊海軍は、液化天然ガス（LNG）タンカーがホルムズ海峡で無許可の航路を使用中、海軍の機雷に接触して爆発を起こしたと発表した。イランメディアの報道によると、同水路で警告を無視した石油タンカー4隻が爆発に見舞われたという。",
+          "headline": "イラン革命防衛隊、ホルムズ海峡でのタンカー爆発を報告"
+        },
+        "ko": {
+          "body": "이란 혁명수비대 해군은 호르무즈 해협에서 액화천연가스(LNG) 운반선이 기뢰와 충돌해 폭발 사고가 발생했다고 밝혔다. 이란 언론은 해당 수로에서 경고를 무시하고 운항하던 유조선 4척이 폭발 피해를 입었다고 보도했다.",
+          "headline": "이란 혁명수비대, 호르무즈 해협서 유조선 폭발 보고"
+        },
+        "pt": {
+          "body": "A marinha da Guarda Revolucionária do Irão afirmou que um petroleiro de gás natural liquefeito atingiu uma mina naval e sofreu uma explosão ao utilizar uma rota não autorizada no Estreito de Ormuz. Os meios de comunicação iranianos noticiaram que quatro petroleiros foram atingidos por explosões na via navegável após ignorarem avisos.",
+          "headline": "Guarda Revolucionária do Irão relata explosão de petroleiro no Estreito de Ormuz"
+        },
+        "zh": {
+          "body": "伊朗革命卫队海军表示，一艘液化天然气油轮在霍尔木兹海峡使用未经授权的航线时触及水雷并发生爆炸。伊朗媒体报道称，四艘油轮在忽视警告后于该水道遭遇爆炸袭击。",
+          "headline": "伊朗革命卫队报告霍尔木兹海峡油轮爆炸"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/middle-east/iran-news/article-914804",
+          "title": "Iran's IRGC says liquified gas tanker struck mine along 'unauthorized' route in Strait of Hormuz",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-13T10:51:55.000Z"
+        },
+        {
+          "url": "https://www.straitstimes.com/world/middle-east/iran-says-tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz",
+          "title": "Iran says tanker carrying LNG hit mine, suffered explosion in Hormuz",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-13T07:04:01.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "iaea",
     "iran",
@@ -13,130 +238,6 @@
     "nuclear",
     "watchdog",
     "uninspected"
-  ],
-  "startedAt": "2026-11-13T10:15:44.602Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-13T10:17:49.201Z",
-  "articleSlug": null,
-  "sourceCount": 3,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1794564945839-xxgh",
-      "at": "2026-11-13T10:15:45.839Z",
-      "kind": "statement",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "IAEA raises concern over uninspected Isfahan enrichment plant",
-          "body": "The International Atomic Energy Agency stated on Friday that it lacks knowledge of the Isfahan Fuel Enrichment Plant's exact location, safeguards status, or nuclear material content. Iran has not permitted agency officers to inspect the facility or view design plans, according to a confidential report seen by Reuters."
-        },
-        "fr": {
-          "headline": "L'AIEA exprime son inquiétude concernant une usine d'enrichissement non inspectée à Ispahan",
-          "body": "L'Agence internationale de l'énergie atomique a déclaré vendredi qu'elle ignorait l'emplacement exact de l'usine d'enrichissement de combustible d'Ispahan, son statut en matière de garanties ou sa teneur en matières nucléaires. L'Iran n'a pas autorisé les inspecteurs de l'agence à visiter l'installation ni à consulter les plans de conception, selon un rapport confidentiel consulté par l'agence Reuters."
-        },
-        "es": {
-          "headline": "El OIEA expresa su preocupación por la planta de enriquecimiento de Isfahán, que sigue sin ser inspeccionada",
-          "body": "El Organismo Internacional de Energía Atómica declaró el viernes que desconoce la ubicación exacta, el estatus de salvaguardias o el contenido de material nuclear de la Planta de Enriquecimiento de Combustible de Isfahán. Irán no ha permitido a los inspectores del organismo acceder a las instalaciones ni examinar los planos de diseño, según un informe confidencial al que tuvo acceso la agencia Reuters."
-        },
-        "de": {
-          "headline": "IAEA äußert Besorgnis über nicht inspizierte Anreicherungsanlage in Isfahan",
-          "body": "Die Internationale Atomenergiebehörde erklärte am Freitag, sie habe keine Kenntnis über den genauen Standort der Brennstoffanreicherungsanlage in Isfahan, deren Status bezüglich der Sicherheitsvorkehrungen oder den Inhalt an nuklearem Material. Iran hat Inspektoren der Behörde laut einem vertraulichen Bericht, der Reuters vorliegt, weder die Besichtigung der Anlage noch die Einsicht in die Planungsunterlagen gestattet."
-        },
-        "pt": {
-          "headline": "AIEA manifesta preocupação com fábrica de enriquecimento de Isfafão por inspecionar",
-          "body": "A Agência Internacional de Energia Atómica declarou esta sexta-feira que desconhece a localização exata, o estatuto de salvaguardas ou o conteúdo de material nuclear da Fábrica de Enriquecimento de Combustível de Isfafão. O Irão não permitiu que os inspetores da agência inspecionassem a instalação nem visualizassem os planos de conceção, segundo um relatório confidencial a que a Reuters teve acesso."
-        },
-        "zh": {
-          "headline": "国际原子能机构对未经视察的伊斯法罕浓缩厂表示关切",
-          "body": "国际原子能机构周五表示，该机构对伊斯法罕燃料浓缩厂的确切位置、保障监督状态或核材料含量一无所知。路透社看到的一份保密报告显示，伊朗未允许该机构官员视察该设施或查看设计方案。"
-        },
-        "ko": {
-          "headline": "IAEA, 이스파한 핵연료 농축 시설 사찰 불가에 우려 표명",
-          "body": "국제원자력기구(IAEA)는 금요일 이스파한 핵연료 농축 시설의 정확한 위치와 안전 조치 현황, 핵물질 보유량에 대해 파악하지 못하고 있다고 밝혔다. 로이터 통신이 입수한 기밀 보고서에 따르면, 이란은 IAEA 조사관들의 시설 사찰이나 설계도 열람을 허용하지 않고 있다."
-        },
-        "it": {
-          "headline": "L'AIEA esprime preoccupazione per l'impianto di arricchimento di Isfahan non ispezionato",
-          "body": "L'Agenzia Internazionale per l'Energia Atomica ha dichiarato venerdì di non conoscere l'esatta ubicazione, lo stato delle salvaguardie o il contenuto di materiale nucleare dell'impianto di arricchimento del combustibile di Isfahan. L'Iran non ha permesso agli ispettori dell'agenzia di visitare la struttura né di visionare i progetti, secondo quanto emerge da un rapporto riservato visionato da Reuters."
-        },
-        "ja": {
-          "headline": "IAEA、査察の入っていないエスファハーン濃縮施設に懸念を表明",
-          "body": "国際原子力機関（IAEA）は金曜日、エスファハーン燃料濃縮施設の正確な所在地、査察措置の状況、あるいは核物質の含有量について把握していないと発表した。ロイター通信が閲覧した非公開の報告書によると、イランは同機関の査察官による施設の立ち入りや設計図の閲覧を許可していないという。"
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Jerusalem Post",
-          "title": "UN nuclear watchdog IAEA raises alarm over uninspected Iranian uranium enrichment plant at Isfahan",
-          "url": "https://www.jpost.com/middle-east/iran-news/article-914802",
-          "publishedAt": "2026-11-13T10:28:08.000Z"
-        },
-        {
-          "outlet": "CNA",
-          "title": "IAEA increasingly concerned about Iranian enrichment plant, its report says",
-          "url": "https://www.channelnewsasia.com/world/iaea-un-report-concern-iran-nuclear-plant-6549176",
-          "publishedAt": "2026-11-13T10:11:01.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1794564945840-0kx1",
-      "at": "2026-11-13T10:15:45.840Z",
-      "kind": "breaking",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Iran Revolutionary Guards report tanker explosion in Strait of Hormuz",
-          "body": "Iran's Revolutionary Guards navy stated that a liquefied natural gas tanker struck a naval mine and suffered an explosion while using an unauthorized route in the Strait of Hormuz. Iranian media reported that four oil tankers were hit by explosions in the waterway after ignoring warnings."
-        },
-        "fr": {
-          "headline": "Les Gardiens de la révolution iraniens signalent l'explosion d'un navire-citerne dans le détroit d'Ormuz",
-          "body": "La marine des Gardiens de la révolution iraniens a déclaré qu'un transporteur de gaz naturel liquéfié avait heurté une mine marine et subi une explosion alors qu'il empruntait une route non autorisée dans le détroit d'Ormuz. Les médias iraniens ont rapporté que quatre pétroliers avaient été touchés par des explosions dans cette voie navigable après avoir ignoré des avertissements."
-        },
-        "es": {
-          "headline": "La Guardia Revolucionaria de Irán informa de la explosión de un petrolero en el estrecho de Ormuz",
-          "body": "La armada de la Guardia Revolucionaria de Irán indicó que un buque cisterna de gas natural licuado chocó contra una mina marina y sufrió una explosión al utilizar una ruta no autorizada en el estrecho de Ormuz. Medios iraníes informaron de que cuatro petroleros sufrieron explosiones en la vía fluvial tras hacer caso omiso de las advertencias."
-        },
-        "de": {
-          "headline": "Iranische Revolutionsgarden melden Tankerexplosion in der Straße von Hormus",
-          "body": "Die Marine der iranischen Revolutionsgarden erklärte, ein Flüssiggastanker sei auf einer nicht genehmigten Route in der Straße von Hormus auf eine Seemine gefahren und explodiert. Iranischen Medienberichten zufolge wurden vier Öltanker in der Wasserstraße von Explosionen getroffen, nachdem sie Warnungen ignoriert hatten."
-        },
-        "pt": {
-          "headline": "Guarda Revolucionária do Irão relata explosão de petroleiro no Estreito de Ormuz",
-          "body": "A marinha da Guarda Revolucionária do Irão afirmou que um petroleiro de gás natural liquefeito atingiu uma mina naval e sofreu uma explosão ao utilizar uma rota não autorizada no Estreito de Ormuz. Os meios de comunicação iranianos noticiaram que quatro petroleiros foram atingidos por explosões na via navegável após ignorarem avisos."
-        },
-        "zh": {
-          "headline": "伊朗革命卫队报告霍尔木兹海峡油轮爆炸",
-          "body": "伊朗革命卫队海军表示，一艘液化天然气油轮在霍尔木兹海峡使用未经授权的航线时触及水雷并发生爆炸。伊朗媒体报道称，四艘油轮在忽视警告后于该水道遭遇爆炸袭击。"
-        },
-        "ko": {
-          "headline": "이란 혁명수비대, 호르무즈 해협서 유조선 폭발 보고",
-          "body": "이란 혁명수비대 해군은 호르무즈 해협에서 액화천연가스(LNG) 운반선이 기뢰와 충돌해 폭발 사고가 발생했다고 밝혔다. 이란 언론은 해당 수로에서 경고를 무시하고 운항하던 유조선 4척이 폭발 피해를 입었다고 보도했다."
-        },
-        "it": {
-          "headline": "I Guardiani della rivoluzione iraniani segnalano l'esplosione di una petroliera nello Stretto di Hormuz",
-          "body": "La marina dei Guardiani della rivoluzione iraniani ha dichiarato che una nave cisterna per gas naturale liquefatto ha urtato una mina navale subendo un'esplosione mentre percorreva una rotta non autorizzata nello Stretto di Hormuz. I media iraniani hanno riferito che quattro petroliere sono state colpite da esplosioni nel corso d'acqua dopo aver ignorato gli avvertimenti."
-        },
-        "ja": {
-          "headline": "イラン革命防衛隊、ホルムズ海峡でのタンカー爆発を報告",
-          "body": "イラン革命防衛隊海軍は、液化天然ガス（LNG）タンカーがホルムズ海峡で無許可の航路を使用中、海軍の機雷に接触して爆発を起こしたと発表した。イランメディアの報道によると、同水路で警告を無視した石油タンカー4隻が爆発に見舞われたという。"
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Jerusalem Post",
-          "title": "Iran's IRGC says liquified gas tanker struck mine along 'unauthorized' route in Strait of Hormuz",
-          "url": "https://www.jpost.com/middle-east/iran-news/article-914804",
-          "publishedAt": "2026-11-13T10:51:55.000Z"
-        },
-        {
-          "outlet": "The Straits Times",
-          "title": "Iran says tanker carrying LNG hit mine, suffered explosion in Hormuz",
-          "url": "https://www.straitstimes.com/world/middle-east/iran-says-tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz",
-          "publishedAt": "2026-11-13T07:04:01.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.jpost.com/middle-east/iran-news/article-914804",
@@ -156,56 +257,18 @@
     "https://www.thehindu.com/news/international/tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz-iran/article71696996.ece",
     "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9QLVJQcTBwTi1fMTFueFF3bmtRRFhlam9KVWZWZmlYUkhFMnd5OEdXSTlHYXU2OWk2MUsxMkRkREV3LXRsN2V5bjNlbVh3Y0lmZk9Qb2luQndNQQ?oc=5",
     "https://www.straitstimes.com/world/middle-east/iran-says-tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz",
-    "https://news.google.com/rss/articles/CBMiakFVX3lxTE5qZWhoaVp5V1BxSWw2MC1OU21JR0xpMVhxeHBuaWFCak9tZlFwN2ZXdHItWnQ1Mk5iRExJdWpFLTJEMklfMC15ZXFwNnNpN3hlY1laUkUxdWhKQ0FuMXVTUjZVc2RCaWEzNXc?oc=5"
+    "https://news.google.com/rss/articles/CBMiakFVX3lxTE5qZWhoaVp5V1BxSWw2MC1OU21JR0xpMVhxeHBuaWFCak9tZlFwN2ZXdHItWnQ1Mk5iRExJdWpFLTJEMklfMC15ZXFwNnNpN3hlY1laUkUxdWhKQ0FuMXVTUjZVc2RCaWEzNXc?oc=5",
+    "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMmNKOFpJM1ZPeWpFeHk1Sm52eGh3a3VuNnRPUzAzZF9IY3lfRlFRR2pMaVlrSVB6NXNFMEx1Z1FPRGxhdnUwUTYxR0NiVHp4UkJZS0hSVEFiUW9VZWF5RU12T01hdDJFNmIwem44NDdjYkVLa3VhTld0cTFqTlZLdzVmbkRiYU5wX0xkS2tzTlhxbE5KOEJLNzZOTWpReE9BV2pHeEIwUU4zSncyeEtHYWRpZDIxS3NqcjlNMW1HQl9qeDBXN3k1YnlsMU5IU2ZEakxpRHh2MA?oc=5",
+    "https://www.thehindu.com/news/international/un-nuclear-watchdog-urges-iran-to-take-steps-towards-inspections/article71697585.ece",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQklZTUIzSUpmSWNLVkJRcEhmOHoxQVVKM3lfcnVCb2pNUUNkUmtaNmR5TE4tTDZxVDFoRmJuc0E4OXFCb2ZrbXdMaTNtRHpCU3V4Y1hCZkF4YkxLNkxyU2dzVW84SDM4cHItek1zclhzQVk1SDQ1aXBuUGsySFN1S3JkMkxIR0gxamswMVpoSnBuWl9LVko1SkxnSkREcVIzTzJGRWpHcVFrbVlBZFhLLUZ1b1k?oc=5",
+    "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZnozMEdmYzlFWURPQ2U0bU1UeUxNRVZUcXNRSUNaeDNvTldXV053Q21jNnYxbU9wNzBzNU1aY0VsY0RXSVhTdm1yZmtoZDhRbHJ0TGs3VVJselJMcEpfajNyX0plX2gzXzYyeE1pYl9rSUNfbS1wd0pkcC1kVG9oU0pabkVTQXotdjgzQVhKTlcyYjRDV2FuTFJWZWRsY0w5QXdqU05VdGNPY1BYUk1QS3kwbkJfY3dhZUIyVWZraEpDVW9LU1Jj?oc=5",
+    "https://news.google.com/rss/articles/CBMifEFVX3lxTE1lbG9lcTYwcmRiOG9IRDRYRUUzM0gzU0dwUXdaUHh3QkpQX01KSkdkM18zZWFVMXZOd0lwdkxJY1lqQ0JCTUpzYmE4XzhWc2FjMWNiQ2ZITFZEay1nMHBHVHdIOURwcEdtOGVKZW9rVEtrTGFvc0tJejJWeHg?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "IAEA raises alarm over Iranian uranium enrichment",
-      "dek": "The UN nuclear watchdog has expressed concern regarding an uninspected Iranian uranium enrichment facility in Isfahan, according to a new report."
-    },
-    "fr": {
-      "title": "AIEA : inquiétudes sur l'enrichissement d'uranium en Iran",
-      "dek": "L'agence onusienne de surveillance nucléaire a fait part de ses préoccupations concernant une usine d'enrichissement d'uranium iranienne non inspectée à Ispahan, selon un nouveau rapport."
-    },
-    "de": {
-      "title": "IAEA alarmiert wegen Urananreicherung im Iran",
-      "dek": "Die UN-Atomenergiebehörde hat laut einem neuen Bericht Bedenken hinsichtlich einer nicht inspizierten iranischen Urananreicherungsanlage in Isfahan geäußert."
-    },
-    "pt": {
-      "title": "AIEA manifesta preocupação com o enriquecimento de urânio no Irão",
-      "dek": "O organismo de vigilância nuclear da ONU manifestou preocupação relativamente a uma instalação de enriquecimento de urânio não inspecionada em Isfahan, segundo um novo relatório."
-    },
-    "it": {
-      "title": "L'AIEA lancia l'allarme sull'arricchimento dell'uranio in Iran",
-      "dek": "L'agenzia dell'ONU per l'energia atomica ha espresso preoccupazione riguardo a un impianto di arricchimento dell'uranio iraniano non ispezionato a Isfahan, secondo quanto riportato in un nuovo rapporto."
-    },
-    "es": {
-      "title": "Alarma del OIEA por el enriquecimiento de uranio en Irán",
-      "dek": "El organismo de control nuclear de la ONU ha expresado su preocupación por una planta de enriquecimiento de uranio iraní no inspeccionada en Isfahán, según un nuevo informe."
-    },
-    "zh": {
-      "title": "国际原子能机构对伊朗铀浓缩活动表示关切",
-      "dek": "据一份最新报告显示，联合国核监督机构对伊朗伊斯法罕一处未经核查的铀浓缩设施表示担忧。"
-    },
-    "ja": {
-      "title": "IAEA、イランのウラン濃縮活動に懸念を表明",
-      "dek": "国連の原子力監視機関である国際原子力機関（IAEA）は、イランのイスファハンにある未査察のウラン濃縮施設について、新たな報告書の中で懸念を表明した。"
-    },
-    "ko": {
-      "title": "IAEA, 이란 우라늄 농축 활동에 우려 표명",
-      "dek": "유엔 산하 핵 감시 기구인 국제원자력기구(IAEA)가 최근 보고서를 통해 이란 이스파한의 사찰을 받지 않는 우라늄 농축 시설에 대해 우려를 표명했다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "CNA",
-      "The Jerusalem Post",
-      "Reuters",
-      "Iran International"
-    ],
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
-  }
+  "startedAt": "2026-11-13T10:15:44.602Z",
+  "updatedAt": "2026-11-13T10:46:19.887Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": null,
+  "sourceCount": 5,
+  "seenHeadlines": []
 }
