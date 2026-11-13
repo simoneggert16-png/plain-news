@@ -1,0 +1,83 @@
+{
+  "slug": "mass-shooting-reported-in-birmingham-alabama-20261113-de6b",
+  "category": "world",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-13T17:48:09.532Z",
+  "updatedAt": "2026-11-13T17:48:09.532Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "FAZ",
+      "title": "Panne bei Microsoft: Warum Friedrich Merz trotz des Microsoft-Ausfalls noch E-Mails schreiben konnte",
+      "url": "https://www.faz.net/aktuell/wirtschaft/mehr-wirtschaft/microsoft-ausfall-warum-bundesbehoerden-ungestoert-weiterarbeiteten-201680148.html",
+      "publishedAt": "2026-11-13T14:10:04.000Z"
+    },
+    {
+      "outlet": "thestatetimes.com",
+      "title": "1 Dead and 8 Wounded After a Mass Shooting in Birmingham, Alabama.",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMDF4V2N0Y1Z1TDRNRk1Fbnlib1pjQjBMbmk0UEQ1QVRaV010ZnNnUERWUVJyRzJBSW9NaVZOMElHb2hWdTJiVzNtSkxWUWlYeWJhR1VGZGFZdGxxT3h1d1lLMU5KSkNvaUlSbHRkaTFHRUpUeHZ6VW5YaTZDSHhTYVJWb2NLd2xOeUZSYVRncGtkeDlYNkNjYUJOYkE5Q0twdzQxSw?oc=5",
+      "publishedAt": "2026-11-13T16:02:22.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Mass shooting reported in Birmingham, Alabama",
+      "dek": "One person killed and eight others wounded in a mass shooting in Birmingham, Alabama.",
+      "facts": [
+        "A mass shooting was reported in Birmingham, Alabama on November 13, 2026 by thestatetimes.com.",
+        "The report states one person was killed and eight others were wounded."
+      ],
+      "body": [
+        "A mass shooting was reported in Birmingham, Alabama. The report from thestatetimes.com states one person was killed and eight others were wounded.",
+        "No further details about the shooter, motive, or specific circumstances were included in the source material."
+      ],
+      "context": "The source thestatetimes.com reported a mass shooting in Birmingham, Alabama with casualties, but provided no details on the shooter, motive, or time of the incident.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "Massenerschießung in Birmingham, Alabama gemeldet",
+      "dek": "Eine Person getötet und acht weitere verletzt in Massenerschießung in Birmingham, Alabama",
+      "facts": [
+        "Eine Massenerschießung wurde am 13. November 2026 in Birmingham, Alabama, von thestatetimes.com gemeldet",
+        "Der Bericht besagt, dass eine Person getötet und acht weitere verletzt wurden"
+      ],
+      "body": [
+        "In Birmingham, Alabama, wurde eine Massenerschießung gemeldet. Der Bericht von statetimes.com besagt, dass eine Person getötet und acht weitere verletzt wurden.",
+        "Weitere Details zum Schützen, zum Motiv oder zu spezifischen Umständen wurden in dem Quellmaterial nicht enthalten."
+      ],
+      "context": "Die Quelle thestatetimes.com berichtete über eine Massenerschießung in Birmingham, Alabama mit Opfern, gab jedoch keine Details zum Schützen, Motiv oder zur Zeit des Vorfalls.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "伯明翰阿拉巴马州枪击案致一人死亡八人受伤",
+      "dek": "伯明翰阿拉巴马州枪击案致一人死亡八人受伤",
+      "facts": [
+        "11月13日，伯明翰阿拉巴马州发生枪击事件，造成一人死亡八人受伤。",
+        "涉事媒体thestatetimes.com于2026年11月13日报道该事件，但未提供枪手、动机或 incident 时间细节。"
+      ],
+      "body": [
+        "伯明翰阿拉巴马州发生大规模枪击事件。据thestatetimes.com报道，一名当事人死亡，另有八人受伤。",
+        "关于枪手、动机或具体情况，原文未提供进一步细节。"
+      ],
+      "context": "涉事媒体thestatetimes.com于2026年11月13日报道该事件，但未提供枪手、动机或 incident 时间细节。",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Source S2 is a single-sentence RSS summary with no details on shooter, motive, time, or location beyond 'Birmingham, Alabama'. It cannot support the factual claims in the draft (date, casualty count, event type). The draft invents a 'November 13, 2026' date and specific casualty numbers not present in S2.",
+      "The headline and body contain unsupported claims (specific date, casualty count, event classification).",
+      "The 'context' field invents background not in sources.",
+      "The 'facts' array invents details not in sources.",
+      "The body repeats the lead sentence verbatim.",
+      "No neutral verb attribution for the casualty count; the source provides none."
+    ]
+  }
+}
