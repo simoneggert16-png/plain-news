@@ -9,7 +9,7 @@
   "requestId": null,
   "brief": null,
   "createdAt": "2026-10-30T19:14:08.445Z",
-  "updatedAt": "2026-11-14T00:02:10.844Z",
+  "updatedAt": "2026-11-14T13:46:10.987Z",
   "queries": [
     "Activision Blizzard contract with Korean media company for crowd crush footage",
     "Call of Duty 2024 footage lawsuit South Korea",
@@ -1422,7 +1422,26 @@
       ],
       "status": "verified",
       "weight": 2,
-      "checkedAt": "2026-11-13T23:31:31.857Z"
+      "checkedAt": "2026-11-13T23:31:31.857Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C65",
+      "text": "The provided sources do not contain direct evidence or statements answering whether the US game developer exploited the Itaewon tragedy specifically for profit.",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S34",
+        "S44"
+      ],
+      "status": "verified",
+      "weight": 1,
+      "checkedAt": "2026-11-14T13:26:24.870Z",
+      "checked": "supported"
     }
   ],
   "gaps": [
@@ -1566,421 +1585,40 @@
   "beat": "Activision Blizzard",
   "agent": [
     {
-      "at": "2026-11-13T23:31:56.854Z",
+      "at": "2026-11-14T13:26:23.406Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I will begin by finding the contact details of Activision Publishing to record their official press and media response channel, using their domain via find_contact.",
-          "action": "find_contact",
-          "args": {
-            "domain": "activision.com"
-          },
-          "ok": true,
-          "ms": 15513
-        },
-        {
-          "step": 2,
-          "thought": "The find_contact tool returned no published address for activision.com. I will now search for the primary source documents about the Call of Duty Itaewon footage controversy, starting with the Yonhap News Agency article which is the main Korean wire on the apology and removal.",
-          "action": "search",
-          "args": {
-            "query": "Yonhap Call of Duty publisher apologizes for using real footage of Itaewon crowd crush"
-          },
-          "ok": true,
-          "ms": 12403
-        },
-        {
-          "step": 3,
-          "thought": "The search returned many results but only one primary document on file from the desk wire: the UN News COP31 article, which is unrelated. I need to open the Korea Times article which is the primary Korean source on the apology. I will open that URL now.",
-          "action": "open",
-          "args": {
-            "url": "https://www.koreatimes.co.kr/southkorea/20261030/call-of-duty-publisher-apologizes-for-using-real-itaewon-crowd-crush"
-          },
-          "ok": true,
-          "ms": 2148
-        },
-        {
-          "step": 4,
-          "thought": "The Korea Times article opened but returned empty text. I will now open the Yonhap News Agency article which is the main Korean wire on the apology and removal, as it is listed as source S1 in the claims.",
-          "action": "open",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
-          },
-          "ok": true,
-          "ms": 1594
-        },
-        {
-          "step": 5,
-          "thought": "I have opened the primary Yonhap News Agency article which confirms the key facts: Activision Publishing apologized for using real footage of the 2022 Seoul Itaewon crowd crush in Call of Duty: Modern Warfare 4, agreed to remove it in an update scheduled for November 12, 2026, the footage showed a paramedic performing CPR on a victim and was used to depict civilian casualties during a fictional wa",
-          "action": "save_source",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320",
-            "outlet": "Yonhap News Agency",
-            "title": "Call of Duty publisher apologizes for using real footage of Itaewon crowd crush",
-            "publishedAt": "2026-10-30"
-          },
-          "ok": true,
-          "ms": 3361
-        },
-        {
-          "step": 6,
-          "thought": "I have recorded 4 claims from the Yonhap article. Now I need to search for the Korean Ministry of Culture press release or other official documents about how the footage was obtained or licensed, and also look for the SBS article which specifically mentions the footage being found in the game.",
-          "action": "search",
-          "args": {
-            "query": "Call of Duty Itaewon crowd crush footage Korean Ministry of Culture press release"
-          },
-          "ok": true,
-          "ms": 9402
-        },
-        {
-          "step": 7,
-          "thought": "The search returned no relevant Ministry of Culture press release. I will now search for the SBS article which specifically mentions the footage being found in Call of Duty and bereaved families demanding removal.",
-          "action": "search",
-          "args": {
-            "query": "Itaewon Crowd Crush Footage Found in Call of Duty bereaved families demand removal SBS"
-          },
-          "ok": true,
-          "ms": 9162
-        },
-        {
-          "step": 8,
-          "thought": "I will open the Eurogamer article which specifically discusses the Modern Warfare 4 footage backlash and Activision's defense.",
-          "action": "open",
-          "args": {
-            "url": "https://www.eurogamer.net/modern-warfare-4-south-korean-crowd-crush-footage"
-          },
-          "ok": true,
-          "ms": 1137
-        },
-        {
-          "step": 9,
-          "thought": "",
-          "action": "save_claim",
-          "args": {
-            "text": "The footage in Call of Duty: Modern Warfare 4's opening cinematic includes archived news clips of a person being carried away on a stretcher, someone performing CPR on a victim, and multiple bodies laying on a road, representing fictional civilian casualties during a North Korean invasion.",
-            "sources": [
-              "S46"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 3445
-        },
-        {
-          "step": 10,
-          "thought": "I have confirmed the details of the footage and the criticism from bereaved families and civic groups (S46). I need to check the other sources to see if they provide financial information or official government action beyond the initial apology and removal agreement. I will search for the contract between Activision Blizzard and a Korean media company, as suggested in the initial search notes, to ",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard contract with Korean media company for crowd crush footage"
-          },
-          "ok": true,
-          "ms": 11267
-        },
-        {
-          "step": 11,
-          "thought": "The search for the specific contract did not yield a document. The opened Nikkei Asia article is unrelated to the footage acquisition. I will now search for the specific lawsuit mentioned in the initial brief: 'Call of Duty 2024 footage lawsuit South Korea' to find any legal documentation or court filings.",
-          "action": "search",
-          "args": {
-            "query": "Call of Duty 2024 footage lawsuit South Korea court ruling"
-          },
-          "ok": true,
-          "ms": 9876
-        },
-        {
-          "step": 12,
-          "thought": "The search for a specific lawsuit ruling did not yield any relevant documents; the primary documents found were US SEC filings and unrelated Yonhap sports/diplomacy news. I have sufficient information from S1 and S46 to establish the facts of the incident, the apology, and the removal. I will now search for the official Korean Ministry of Culture press release again, but this time I will use the K",
-          "action": "search",
-          "args": {
-            "query": "site:ftc.go.kr Itaewon Call of Duty"
-          },
-          "ok": true,
-          "ms": 3853
+          "thought": "I will finalize the output as a valid JSON object summarizing the findings without any markdown or extra text.",
+          "action": "final",
+          "ms": 6639
         }
       ],
-      "final": null
+      "final": "The investigation into the use of the 2022 Seoul Itaewon crowd crush footage in Call of Duty: Modern Warfare 4 confirms that Activision Publishing and developer Infinity Ward incorporated real archive news footage—showing a paramedic performing CPR on a victim and bodies on a road—into the game's opening cinematic to depict civilian casualties during a fictional North Korean invasion. Following widespread condemnation from the 10.29 Itaewon Disaster Bereaved Families Association, civic groups, and South Korean government officials such as Minister of Interior and Safety Yun Ho-jung—who condemned the inclusion as 'secondary harm' and called for appropriate sanctions—Activision Publishing issued an apology in late October 2026. The publisher stated it had no intention of trivializing the disaster and committed to removing the footage via a game update scheduled for November 12, 2026."
     },
     {
-      "at": "2026-11-13T23:46:09.752Z",
+      "at": "2026-11-14T13:35:26.357Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I am starting a new investigation into whether Activision Blizzard exploited the 2022 Seoul Itaewon crowd crush tragedy for profit in Call of Duty: Modern Warfare 4. I have a desk brief that is empty, 47 sources on file, 64 claims, and 12 gaps. My priorities are to work the gaps using primary documents, find who must respond, and avoid searching the same headline repeatedly. I need to open sources",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard contract with Korean media company for crowd crush footage Call of Duty 2024 footage lawsuit South Korea"
-          },
-          "ok": true,
-          "ms": 11069
-        },
-        {
-          "step": 2,
-          "thought": "The search returned mostly unrelated results. I need to search more specifically for the Activision-Korean media contract or the lawsuit. Let me try a different query focusing on the contractual or legal aspect.",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard Korean media company crowd crush footage licensing agreement Call of Duty"
-          },
-          "ok": true,
-          "ms": 1216
-        },
-        {
-          "step": 3,
-          "thought": "The search is returning the same unrelated results. I need to look at the sources already on file. The desk brief says there are 47 sources on file. I should open some of those sources to extract claims. Let me start with S1, which is the Yonhap News Agency article about the apology.",
-          "action": "open",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
-          },
-          "ok": true,
-          "ms": 1953
-        },
-        {
-          "step": 4,
-          "thought": "I have opened S1, the Yonhap News Agency article. It confirms the key facts: Activision Publishing apologized, agreed to remove the footage by Nov 12 2026, the footage showed a paramedic performing CPR on a victim, was used to depict civilian casualties in a fictional war with North Korea, 159 people were killed in the actual 2022 Itaewon crowd crush, and bereaved families criticized the publisher",
-          "action": "save_claim",
-          "args": {
-            "text": "Activision Publishing Inc. apologized for using real footage of the 2022 Seoul Itaewon crowd crush in Call of Duty: Modern Warfare 4 and agreed to remove it in an update scheduled for November 12, 2026.",
-            "sources": [
-              "S1"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 5283
-        },
-        {
-          "step": 5,
-          "thought": "The claim I just saved is already on file as C59. I need to record other claims from S1 that are not yet captured. Let me save additional claims from this source.",
-          "action": "save_claim",
-          "args": {
-            "text": "A short clip showing a paramedic performing CPR on a crowd crush victim lying on the street appeared in the opening moments of Call of Duty: Modern Warfare 4 and was used to depict civilian casualties during a fictional war with North Korea.",
-            "sources": [
-              "S1"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1946
-        },
-        {
-          "step": 6,
-          "thought": "That claim is also already on file. Let me save the claim about the death toll from the actual Itaewon crowd crush.",
-          "action": "save_claim",
-          "args": {
-            "text": "A total of 159 people were killed in a narrow alleyway in Seoul's night life district of Itaewon during Halloween festivities on Oct. 29, 2022.",
-            "sources": [
-              "S1"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1963
-        },
-        {
-          "step": 7,
-          "thought": "The death toll claim is also on file as C21. I will now open S23, The Korea Times article, to gather more information, as it is also highly relevant.",
-          "action": "open",
-          "args": {
-            "url": "https://www.koreatimes.co.kr/southkorea/20261030/call-of-duty-publisher-apologizes-for-using-real-footage-of-itaewon-crowd-crush"
-          },
-          "ok": true,
-          "ms": 3268
-        },
-        {
-          "step": 8,
-          "thought": "S23 confirms the information from S1. I will save the claims that are supported by S23, ensuring they are distinct or reinforce existing ones. I have established the core facts: apology, removal date (Nov 12), footage content (paramedic CPR, civilian casualties in fictional war), death toll (159), and family criticism. I need to check other sources like S4, S7, S28, S32, S35, S36 to address the ga",
-          "action": "open",
-          "args": {
-            "url": "https://www.latintimes.com/activision-remove-itaewon-footage-call-duty-600738"
-          },
-          "ok": true,
-          "ms": 2899
-        },
-        {
-          "step": 9,
-          "thought": "S8 confirms the removal date (Nov 12), the developer (Infinity Ward), the publisher (Activision), the game release date (Oct 23, 2026), the footage content (CPR, victims on stretchers), the death toll (160), and the condemnation by the 10.29 Itaewon Disaster Bereaved Families Association and the Korea Game Users Association. Note the discrepancy in death toll (159 vs 160). I will save claims based",
-          "action": "save_claim",
-          "args": {
-            "text": "Call of Duty: Modern Warfare 4 was released worldwide on October 23, 2026, and was developed by Infinity Ward and published by Activision.",
-            "sources": [
-              "S8"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 3818
-        },
-        {
-          "step": 10,
-          "thought": "The game release date and developer/publisher information is already on file. I will now open S7, which mentions the South Korean Minister of Interior and Safety's reaction, addressing a gap regarding official government response.",
-          "action": "open",
-          "args": {
-            "url": "https://www.gosugamers.net/entertainment/news/79462-activision-is-removing-call-of-duty-modern-warfare-4-s-controversial-itaewon-crush-footage"
-          },
-          "ok": true,
-          "ms": 2536
-        },
-        {
-          "step": 11,
-          "thought": "S7 provides the official reaction from South Korean Minister of Interior and Safety Yun Ho-jung, stating he believes 'appropriate sanctions should be imposed' due to 'secondary harm' and that using tragedy for entertainment is unethical. It also confirms the 160 death toll and Activision's apology and intent clarification. I will save these claims. I have established the core facts and the officia",
-          "action": "save_claim",
-          "args": {
-            "text": "South Korean Minister of Interior and Safety Yun Ho-jung stated that he believes appropriate sanctions should be imposed because the footage causes 'secondary harm' and that using such a tragedy as material for a game or business should be refrained from as a matter of human ethics.",
-            "sources": [
-              "S7"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 4506
-        },
-        {
-          "step": 12,
-          "thought": "The minister's statement is already on file as C30. I will now open S16, The Herald Business article, to find information about the official support structure for victims, addressing a gap.",
-          "action": "open",
-          "args": {
-            "url": "https://biz.heraldcorp.com/article/10910031"
-          },
-          "ok": true,
-          "ms": 2877
+          "thought": "Reviewing findings regarding Call of Duty: Modern Warfare 4 using real footage of the 2022 Seoul Itaewon crowd crush, the resulting public backlash, the official apology and commitment to remove the footage by Activision Publishing, and the response from the 10.29 Itaewon Disaster Bereaved Families Association and the South Korean government. The direct question 'Did the US game developer exploit ",
+          "action": "final",
+          "ms": 2295
         }
       ],
-      "final": null
+      "final": "The investigation into the inclusion of the 2022 Seoul Itaewon crowd crush footage in Activision Publishing's 'Call of Duty: Modern Warfare 4' establishes the following facts based on official reports and news coverage:\n\n1. Use of Footage: In the opening cinematic of 'Call of Duty: Modern Warfare 4' (released October 23, 2026, developed by Infinity Ward), real news footage from the October 29, 2022 Itaewon crowd crush—which resulted in 159 deaths—was used to depict civilian casualties during a fictional war with North Korea. The footage included clips of a paramedic performing CPR, a person on a stretcher, and bodies on a road.\n\n2. Public Backlash and Government Response: The 10.29 Itaewon Disaster Bereaved Families Association and various civic groups strongly condemned the inclusion, calling it senseless and stating that relatives suffered significant distress. South Korean Minister of Interior and Safety Yun Ho-jung stated that the inclusion caused 'secondary harm' and called for appropriate sanctions, emphasizing that using such tragedies for entertainment or business violates human ethics.\n\n3. Publisher's Action and Apology: Activision Publishing Inc. issued an apology to victims, bereaved families, and the public, stating it had no intention of referencing or trivializing the Itaewon disaster or any other real-world tragedy. The publisher committed to completely removing the footage in a game update scheduled for November 12, 2026.\n\n4. Profit Exploitation Question: The provided documents do not contain direct evidence or financial analyses establishing whether Activision specifically exploited the tragedy for profit, noting only the publisher's stated intent to set up the game's fictional narrative using news broadcasts."
     },
     {
-      "at": "2026-11-13T23:59:37.479Z",
+      "at": "2026-11-14T13:44:33.493Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I need to investigate the Call of Duty crowd crush footage controversy. I have 47 sources on file and 64 claims. The key issue is whether Activision Blizzard exploited the 2022 Seoul Itaewon crowd crush tragedy for profit in Call of Duty: Modern Warfare 4. I need to find primary documents about the contract/licensing of the footage, the decision-making process, and any financial details. Let me st",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard contract Korean media company crowd crush footage Call of Duty"
-          },
-          "ok": true,
-          "ms": 10099
-        },
-        {
-          "step": 2,
-          "thought": "The search returned mostly unrelated results. I need to search more specifically for the Korean media company contract and the footage licensing. Let me try a different search focusing on the Korean Ministry of Culture or the original news agency that provided the footage.",
-          "action": "search",
-          "args": {
-            "query": "Korean Ministry of Culture Call of Duty footage licensing Itaewon crowd crush"
-          },
-          "ok": true,
-          "ms": 9327
-        },
-        {
-          "step": 3,
-          "thought": "The second search also did not yield a primary document regarding the contract or licensing of the footage. I have many claims supported by the existing 47 sources regarding the *fact* of the use, the *apology*, and the *removal*, but no document detailing the *profit* or the *contract*. I need to pivot to finding the official documentation related to the victims' support or the government's respo",
-          "action": "search",
-          "args": {
-            "query": "Ministry of Interior and Safety Itaewon crowd crush victims support website official document"
-          },
-          "ok": true,
-          "ms": 15544
-        },
-        {
-          "step": 4,
-          "thought": "The search results are still not providing the primary document detailing the contract or financial aspect. However, the observation noted that two pages were opened and filed, but the text of those pages is truncated in the observation, and no claims were saved. I must open one of the primary sources from the initial search (Observation 1) or one of the sources related to the victims' support (Ob",
-          "action": "open",
-          "args": {
-            "url": "https://en.yna.co.kr/view/AEN20261030011500320"
-          },
-          "ok": true,
-          "ms": 4398
-        },
-        {
-          "step": 5,
-          "thought": "I have opened a primary source (S1) from Yonhap News Agency. This source confirms the use of real footage, the apology by Activision Publishing Inc., the removal date (Nov 12), the depiction (paramedic CPR, fictional war with North Korea), the death toll (159 on Oct 29, 2022), and the criticism from bereaved families. I can now save several claims based on this document. I still lack primary docum",
-          "action": "save_claim",
-          "args": {
-            "text": "Activision Publishing Inc. apologized for using real footage of the 2022 Seoul Itaewon crowd crush in Call of Duty: Modern Warfare 4 and agreed to remove the footage in an update set for November 12.",
-            "sources": [
-              "S1"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 3292
-        },
-        {
-          "step": 6,
-          "thought": "The claim saved is a duplicate of C40. I need to save other distinct, verifiable claims from the opened source (S1). I will save the claim about the specific content of the footage and the death toll.",
-          "action": "save_claim",
-          "args": {
-            "text": "A short clip showing a paramedic performing CPR on a crowd crush victim appeared in the opening moments of Call of Duty: Modern Warfare 4.",
-            "sources": [
-              "S1"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2002
-        },
-        {
-          "step": 7,
-          "thought": "The claim saved is a duplicate of C16. I will now save the claim regarding the death toll and the date of the event, which is a core fact.",
-          "action": "save_claim",
-          "args": {
-            "text": "A total of 159 people were killed in a narrow alleyway in Seoul's night life district of Itaewon during Halloween festivities on October 29, 2022.",
-            "sources": [
-              "S1"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2000
-        },
-        {
-          "step": 8,
-          "thought": "The claim saved is a duplicate of C21. I have established the facts of the incident and the publisher's response based on S1. I still need primary documentation on the *profit* or the *contract*. Since the initial search for contracts failed, I will use the `find_contact` tool on the domain of the primary source (yna.co.kr) to see if I can find any official press/legal contact information for Yonh",
-          "action": "find_contact",
-          "args": {
-            "domain": "yna.co.kr"
-          },
-          "ok": true,
-          "ms": 4214
-        },
-        {
-          "step": 9,
-          "thought": "I have found a contact email for Yonhap News Agency. This is an institutional contact, not a primary document regarding the contract or profit. I have exhausted the immediate utility of this contact for finding the specific tender/contract document. I must return to the gaps. The most critical gap is the financial benefit/contract. I will search the filing cabinets (company filings, government not",
-          "action": "search",
-          "args": {
-            "query": "Activision Blizzard financial filings South Korea game revenue"
-          },
-          "ok": true,
-          "ms": 19587
-        },
-        {
-          "step": 10,
-          "thought": "The opened primary documents (S51 and S52) are SEC filings for other companies (NETEASE.COM, INC. and Giant Interactive Group Inc.) and do not pertain to Activision Blizzard or the Itaewon incident. I have confirmed no direct financial filings linking Activision to this specific event in the filing cabinets. I must now address the gaps by searching for legal actions or court rulings in South Korea",
-          "action": "search",
-          "args": {
-            "query": "scourt.go.kr Itaewon crowd crush court ruling Activision"
-          },
-          "ok": true,
-          "ms": 11332
-        },
-        {
-          "step": 11,
-          "thought": "The search results are returning general news articles and not primary court documents from scourt.go.kr. I need to use the specific search protocol for country databases. I will search for the Korean court database directly using the domain and a specific query related to the Itaewon crush, or I will search for the 'Joint Investigation Team' report mentioned in the claims (C52, C53). I will try s",
-          "action": "search",
-          "args": {
-            "query": "site:scourt.go.kr Itaewon"
-          },
-          "ok": true,
-          "ms": 1751
-        },
-        {
-          "step": 12,
-          "thought": "I have been searching extensively for primary documents regarding the contract, licensing, or financial profit from the footage use, but the desk wire and search results are returning general news and unrelated SEC filings. I have successfully saved several core facts from the Yonhap source (S1): the use of the footage, the apology, the removal plan, the death toll, and the fictional context. I ha",
-          "action": "search",
-          "args": {
-            "query": "Korean media company crowd crush footage Activision Blizzard contract"
-          },
-          "ok": true,
-          "ms": 2369
+          "thought": "We have established that Activision Publishing used real footage of the 2022 Seoul Itaewon crowd crush in Call of Duty: Modern Warfare 4, that it apologized and agreed to remove the footage following public backlash and criticism from bereaved families and South Korean officials, but the specific financial exploit question has no direct supporting documentation in the current sources. Let's inspec",
+          "action": "final",
+          "ms": 2682
         }
       ],
-      "final": null
+      "final": "The investigation confirms through multiple news reports and official statements that Activision Publishing Inc. used real news footage of the 2022 Seoul Itaewon crowd crush—which resulted in 159 deaths—in the opening cinematic of Call of Duty: Modern Warfare 4 (released October 23, 2026, developed by Infinity Ward). Following severe backlash from the 10.29 Itaewon Disaster Bereaved Families Association, civic groups, and South Korean government officials (including Minister of Interior and Safety Yun Ho-jung), Activision issued an apology and committed to removing the footage in an update scheduled for November 12, 2026. However, the available documents do not contain evidence directly answering whether the developer specifically exploited the tragedy for profit."
     }
   ],
   "nextStep": "keep reporting: no outreach sent",
@@ -2045,7 +1683,7 @@
       "why": "nicht belegt"
     }
   ],
-  "shifts": 76,
-  "blankShifts": 0,
-  "lastShiftAt": "2026-11-13T23:56:20.822Z"
+  "shifts": 79,
+  "blankShifts": 2,
+  "lastShiftAt": "2026-11-14T13:42:40.398Z"
 }
