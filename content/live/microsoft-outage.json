@@ -12,15 +12,19 @@
   },
   "slug": "microsoft-outage",
   "topic": "Microsoft Outage",
-  "status": "live",
+  "status": "ended",
   "article": {
     "slug": "microsoft-outage",
-    "updatedAt": "2026-11-13T18:13:14.869Z",
     "reason": "3 new update(s)",
     "locales": {
       "en": {
-        "title": "Microsoft Apologizes for Global Outage and Reports Restoration Progress",
         "dek": "Microsoft issued an apology and reported progress in restoring Outlook, Teams, and Copilot services following a technical failure that caused disruptions lasting over 18 hours.",
+        "body": [
+          "Microsoft issued an apology on Friday, 13 November 2026, after a global technical failure disrupted its Outlook email services for more than 18 hours. The company stated that affected customers can request service credits for the interruption, according to Variety.",
+          "Engineers made progress on Friday in restoring access to email, messaging, and assistant applications following a second day of disruptions, according to reporting by the New York Times and Semafor. Microsoft ruled out a cyberattack as the cause of the issues affecting Outlook, Teams, and Copilot, as reported by the New York Times and El País.",
+          "Access to mailboxes stopped for millions of Outlook users starting on Thursday, 12 November 2026. Services began returning to normal after more than 18 hours of continuous disruption, according to El País.",
+          "Lawmakers across Europe called for policy changes to lessen reliance on a small group of foreign technology firms after the system failure occurred, according to Politico Europe. The incident led to renewed requests from European officials to reduce dependence on software providers based in the United States."
+        ],
         "facts": [
           "Microsoft issued an apology on Friday for a technical failure that disrupted Outlook email services worldwide.",
           "The outage left millions of Outlook users without access to mailboxes for more than 18 hours starting on Thursday.",
@@ -28,19 +32,15 @@
           "European lawmakers called for measures to reduce reliance on foreign technology companies following the event.",
           "Affected customers can request service credits for the interruption."
         ],
-        "body": [
-          "Microsoft issued an apology on Friday, 13 November 2026, after a global technical failure disrupted its Outlook email services for more than 18 hours. The company stated that affected customers can request service credits for the interruption, according to Variety.",
-          "Engineers made progress on Friday in restoring access to email, messaging, and assistant applications following a second day of disruptions, according to reporting by the New York Times and Semafor. Microsoft ruled out a cyberattack as the cause of the issues affecting Outlook, Teams, and Copilot, as reported by the New York Times and El País.",
-          "Access to mailboxes stopped for millions of Outlook users starting on Thursday, 12 November 2026. Services began returning to normal after more than 18 hours of continuous disruption, according to El País.",
-          "Lawmakers across Europe called for policy changes to lessen reliance on a small group of foreign technology firms after the system failure occurred, according to Politico Europe. The incident led to renewed requests from European officials to reduce dependence on software providers based in the United States."
-        ],
+        "title": "Microsoft Apologizes for Global Outage and Reports Restoration Progress",
         "context": "The disruptions impacted Microsoft online services worldwide beginning on Thursday, 12 November 2026, before recovery efforts began on Friday.",
         "imageCaption": ""
       }
     },
-    "versions": []
+    "versions": [],
+    "updatedAt": "2026-11-13T18:13:14.869Z"
   },
-  "endedAt": null,
+  "endedAt": "2026-11-13T18:12:24.301Z",
   "locales": {
     "de": {
       "dek": "Millionen sind weiterhin von der Microsoft-Dienstunterbrechung betroffen, die über achtzehn Stunden andauert.",
@@ -65,118 +65,118 @@
   },
   "updates": [
     {
-      "id": "u-1794592743000-3e4q",
       "at": "2026-11-13T17:59:03.000Z",
+      "id": "u-1794592743000-3e4q",
       "kind": "result",
-      "importance": 3,
       "locales": {
         "en": {
-          "headline": "Microsoft apologizes for worldwide Outlook outage",
-          "body": "Microsoft issued an apology Friday for a worldwide outage of its email servers that left millions of Outlook users without access to their mailboxes starting Thursday in some cases for more than 18 hours. The company said it was due to a technical failure."
-        },
-        "it": {
-          "headline": "Microsoft si scusa per l'interruzione globale di Outlook",
-          "body": "Microsoft ha emesso un venerdì un'apologia per un'interruzione globale dei suoi server di posta elettronica che ha lasciato milioni di utenti di Outlook senza accesso alle proprie cassette postali a partire da giovedì in alcuni casi per oltre 18 ore. L'azienda ha affermato che è stato dovuto a un guasto tecnico."
+          "body": "Microsoft issued an apology Friday for a worldwide outage of its email servers that left millions of Outlook users without access to their mailboxes starting Thursday in some cases for more than 18 hours. The company said it was due to a technical failure.",
+          "headline": "Microsoft apologizes for worldwide Outlook outage"
         },
         "es": {
-          "headline": "Microsoft pide disculpas por una caída global de Outlook",
-          "body": "Microsoft emitió un viernes un disculpa por una caída global de sus servidores de correo electrónico que dejó a millones de usuarios de Outlook sin acceso a sus buzones desde jueves en algunos casos por más de 18 horas. La compañía indicó que se debió a una falla técnica."
+          "body": "Microsoft emitió un viernes un disculpa por una caída global de sus servidores de correo electrónico que dejó a millones de usuarios de Outlook sin acceso a sus buzones desde jueves en algunos casos por más de 18 horas. La compañía indicó que se debió a una falla técnica.",
+          "headline": "Microsoft pide disculpas por una caída global de Outlook"
         },
         "fr": {
-          "headline": "Microsoft s'excuse pour une panne mondiale d'Outlook",
-          "body": "Microsoft a présenté ses excuses vendredi pour une panne mondiale de ses serveurs de messagerie qui a privé des millions d'utilisateurs d'Outlook l'accès à leurs boîtes aux lettres, dès jeudi dans certains cas pendant plus de 18 heures. L'entreprise a déclaré qu'il s'agissait d'une défaillance technique."
+          "body": "Microsoft a présenté ses excuses vendredi pour une panne mondiale de ses serveurs de messagerie qui a privé des millions d'utilisateurs d'Outlook l'accès à leurs boîtes aux lettres, dès jeudi dans certains cas pendant plus de 18 heures. L'entreprise a déclaré qu'il s'agissait d'une défaillance technique.",
+          "headline": "Microsoft s'excuse pour une panne mondiale d'Outlook"
+        },
+        "it": {
+          "body": "Microsoft ha emesso un venerdì un'apologia per un'interruzione globale dei suoi server di posta elettronica che ha lasciato milioni di utenti di Outlook senza accesso alle proprie cassette postali a partire da giovedì in alcuni casi per oltre 18 ore. L'azienda ha affermato che è stato dovuto a un guasto tecnico.",
+          "headline": "Microsoft si scusa per l'interruzione globale di Outlook"
         }
       },
       "sources": [
         {
-          "outlet": "Variety",
-          "title": "Microsoft Apologizes for Massive Outlook Outage, Affected Customers Can Request Credits for Service Interruption",
           "url": "https://variety.com/2026/digital/news/microsoft-apologizes-outlook-outage-customer-credits-1236947124/",
+          "title": "Microsoft Apologizes for Massive Outlook Outage, Affected Customers Can Request Credits for Service Interruption",
+          "outlet": "Variety",
           "publishedAt": "2026-11-13T17:59:03.000Z"
         },
         {
-          "outlet": "BBC",
-          "title": "Microsoft outage 'stark reminder' of how much we rely on tech",
           "url": "https://www.bbc.co.uk/news/articles/cxzd9171m51qo?at_medium=RSS&at_campaign=rss",
+          "title": "Microsoft outage 'stark reminder' of how much we rely on tech",
+          "outlet": "BBC",
           "publishedAt": "2026-11-13T17:38:19.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1794592336000-y2ub",
       "at": "2026-11-13T17:52:16.000Z",
+      "id": "u-1794592336000-y2ub",
       "kind": "result",
-      "importance": 3,
       "locales": {
         "en": {
-          "headline": "Microsoft reports progress in restoring service",
-          "body": "The company described encouraging progress on efforts to overcome a second day of disruptions to its email, messaging and other services. Microsoft reports progress in restoring service after global outage."
-        },
-        "it": {
-          "headline": "Microsoft segnala progressi nel ripristino del servizio",
-          "body": "L'azienda ha descritto progressi incoraggianti negli sforzi per superare un secondo giorno di interruzioni dei suoi servizi di posta elettronica, messaggistica e altri. Microsoft segnala progressi nel ripristino del servizio dopo l'interruzione globale."
+          "body": "The company described encouraging progress on efforts to overcome a second day of disruptions to its email, messaging and other services. Microsoft reports progress in restoring service after global outage.",
+          "headline": "Microsoft reports progress in restoring service"
         },
         "es": {
-          "headline": "Microsoft informa avances en la restauración del servicio",
-          "body": "La compañía describió avances alentadores en los esfuerzos para superar un segundo día de interrupciones en su correo electrónico, mensajería y otros servicios. Microsoft informa avances en la restauración del servicio tras la caída global."
+          "body": "La compañía describió avances alentadores en los esfuerzos para superar un segundo día de interrupciones en su correo electrónico, mensajería y otros servicios. Microsoft informa avances en la restauración del servicio tras la caída global.",
+          "headline": "Microsoft informa avances en la restauración del servicio"
         },
         "fr": {
-          "headline": "Microsoft fait état de progrès dans la restauration du service",
-          "body": "L'entreprise a décrit des progrès encourageants dans ses efforts pour surmonter un deuxième jour de perturbations de ses services de messagerie et autres. Microsoft fait état de progrès dans la restauration du service après une panne mondiale."
+          "body": "L'entreprise a décrit des progrès encourageants dans ses efforts pour surmonter un deuxième jour de perturbations de ses services de messagerie et autres. Microsoft fait état de progrès dans la restauration du service après une panne mondiale.",
+          "headline": "Microsoft fait état de progrès dans la restauration du service"
+        },
+        "it": {
+          "body": "L'azienda ha descritto progressi incoraggianti negli sforzi per superare un secondo giorno di interruzioni dei suoi servizi di posta elettronica, messaggistica e altri. Microsoft segnala progressi nel ripristino del servizio dopo l'interruzione globale.",
+          "headline": "Microsoft segnala progressi nel ripristino del servizio"
         }
       },
       "sources": [
         {
-          "outlet": "New York Times",
-          "title": "Microsoft’s Global Outage and Fixes: What We Know",
           "url": "https://www.nytimes.com/2026/11/13/technology/microsoft-outage-what-to-know.html",
+          "title": "Microsoft’s Global Outage and Fixes: What We Know",
+          "outlet": "New York Times",
           "publishedAt": "2026-11-13T17:52:16.000Z"
         },
         {
-          "outlet": "Semafor",
-          "title": "Microsoft reports progress in restoring service after global outage",
           "url": "https://www.semafor.com/article/11/13/2026/microsoft-reports-progress-in-restoring-service-after-global-outage",
+          "title": "Microsoft reports progress in restoring service after global outage",
+          "outlet": "Semafor",
           "publishedAt": "2026-11-13T17:31:57.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1794591131000-9ynf",
       "at": "2026-11-13T17:32:11.000Z",
+      "id": "u-1794591131000-9ynf",
       "kind": "reaction",
-      "importance": 3,
       "locales": {
         "en": {
-          "headline": "European lawmakers call for tech detox after outage",
-          "body": "Lawmakers across Europe call for action to reduce reliance on a handful of foreign tech companies. The outage renews European calls to detox from US tech."
-        },
-        "it": {
-          "headline": "Gli europarlamentari chiedono una disintossicazione tecnologica dopo l'interruzione",
-          "body": "Parlamentari di tutta Europa chiedono azioni per ridurre la dipendenza da poche grandi aziende tecnologiche straniere. L'interruzione rinnova le chiamate europee a disintossicarsi dalle tecnologie statunitensi."
+          "body": "Lawmakers across Europe call for action to reduce reliance on a handful of foreign tech companies. The outage renews European calls to detox from US tech.",
+          "headline": "European lawmakers call for tech detox after outage"
         },
         "es": {
-          "headline": "Legisladores europeos exigen una desintoxicación tecnológica tras la caída",
-          "body": "Legisladores de toda Europa piden medidas para reducir la dependencia de unas pocas empresas tecnológicas extranjeras. La caída vuelve a avivar en Europa las llamadas a una desintoxicación de la tecnología estadounidense."
+          "body": "Legisladores de toda Europa piden medidas para reducir la dependencia de unas pocas empresas tecnológicas extranjeras. La caída vuelve a avivar en Europa las llamadas a una desintoxicación de la tecnología estadounidense.",
+          "headline": "Legisladores europeos exigen una desintoxicación tecnológica tras la caída"
         },
         "fr": {
-          "headline": "Les législateurs européens réclament une détox numérique après la panne",
-          "body": "Des parlementaires à travers l'Europe réclament des mesures pour réduire la dépendance à l'égard d'un petit nombre d'entreprises technologiques étrangères. La panne renouvelle les appels européens à une détox des technologies américaines."
+          "body": "Des parlementaires à travers l'Europe réclament des mesures pour réduire la dépendance à l'égard d'un petit nombre d'entreprises technologiques étrangères. La panne renouvelle les appels européens à une détox des technologies américaines.",
+          "headline": "Les législateurs européens réclament une détox numérique après la panne"
+        },
+        "it": {
+          "body": "Parlamentari di tutta Europa chiedono azioni per ridurre la dipendenza da poche grandi aziende tecnologiche straniere. L'interruzione rinnova le chiamate europee a disintossicarsi dalle tecnologie statunitensi.",
+          "headline": "Gli europarlamentari chiedono una disintossicazione tecnologica dopo l'interruzione"
         }
       },
       "sources": [
         {
-          "outlet": "Politico Europe",
-          "title": "Microsoft outage renews European calls to detox from US tech",
           "url": "https://www.politico.eu/article/microsoft-outage-renews-european-calls-to-detox-from-us-tech/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "title": "Microsoft outage renews European calls to detox from US tech",
+          "outlet": "Politico Europe",
           "publishedAt": "2026-11-13T17:32:11.000Z"
         },
         {
-          "outlet": "Wired",
-          "title": "The Microsoft Outage Is a Warning for the World",
           "url": "https://www.wired.com/story/the-microsoft-outage-is-a-warning-for-the-world/",
+          "title": "The Microsoft Outage Is a Warning for the World",
+          "outlet": "Wired",
           "publishedAt": "2026-11-13T17:15:54.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-13T15:30:08.000Z",
@@ -191,17 +191,17 @@
           "body": "Microsoft appeared to rule out a cyberattack as the cause of the outage that disrupted Outlook email, Teams and Copilot, according to New York Times and El PaÃ­s.",
           "headline": "Microsoft rules out cyberattack as cause of global outage"
         },
+        "es": {
+          "body": "Microsoft pareció descartar un ciberataque como causa de la caída que afectó a Outlook, Teams y Copilot, según The New York Times y El País.",
+          "headline": "Microsoft descarta un ciberataque como causa de la caída global"
+        },
+        "fr": {
+          "body": "Microsoft semble avoir exclu une cyberattaque comme cause de la panne qui a perturbé Outlook, Teams et Copilot, selon le New York Times et El País.",
+          "headline": "Microsoft exclut une cyberattaque comme cause de la panne mondiale"
+        },
         "it": {
           "body": "Microsoft sembra escludere un attacco informatico come causa dell'interruzione che ha interessato Outlook, Teams e Copilot, secondo il New York Times e El PaÃ­s.",
           "headline": "Microsoft esclude attacco informatico come causa del guasto globale"
-        },
-        "es": {
-          "headline": "Microsoft descarta un ciberataque como causa de la caída global",
-          "body": "Microsoft pareció descartar un ciberataque como causa de la caída que afectó a Outlook, Teams y Copilot, según The New York Times y El País."
-        },
-        "fr": {
-          "headline": "Microsoft exclut une cyberattaque comme cause de la panne mondiale",
-          "body": "Microsoft semble avoir exclu une cyberattaque comme cause de la panne qui a perturbé Outlook, Teams et Copilot, selon le New York Times et El País."
         }
       },
       "sources": [
@@ -269,7 +269,7 @@
     "https://timesofindia.indiatimes.com/world/us/georgia-towns-opposed-plans-to-turn-two-huge-warehouses-into-ice-detention-centers-including-one-designed-for-up-to-10000-people-the-federal-government-has-now-listed-both-properties-for-sale/articleshow/135809976.cms"
   ],
   "startedAt": "2026-11-13T15:59:34.976Z",
-  "updatedAt": "2026-11-13T18:12:24.301Z",
+  "updatedAt": "2026-11-14T06:13:38.748Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "microsoft-outage",
