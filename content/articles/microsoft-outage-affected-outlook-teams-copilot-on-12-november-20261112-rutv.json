@@ -6,7 +6,7 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-12T20:06:34.116Z",
-  "updatedAt": "2026-11-12T20:06:34.116Z",
+  "updatedAt": "2026-11-14T13:13:22.871Z",
   "sourcePolicy": "two-source",
   "sources": [
     {
@@ -119,6 +119,66 @@
         "Anthropic表示，其Microsoft 365连接器出现上游供应商问题；OpenAI则报告正在调查Microsoft连接器的问题，新建连接可能已中断。"
       ],
       "context": "微软服务健康状态网站确认，在此期间用户无法连接多个365服务，包括Exchange Online和Copilot 365",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Panne Microsoft : Outlook, Teams et Copilot touchés le 12 novembre",
+      "dek": "Les plateformes Microsoft ont connu des interruptions de service le jeudi 12 novembre, affectant Outlook et d'autres outils 365.",
+      "facts": [
+        "Plus de 120 000 utilisateurs ont signalé des problèmes d'accès à Outlook sur Downdetector le 12 novembre",
+        "Microsoft a indiqué qu'une charge élevée sur une partie de son infrastructure avait pu être à l'origine de la panne",
+        "La perturbation a touché Outlook, Teams, Copilot, SharePoint Online, Exchange Online et Defender XDR, selon le site de statut du service Microsoft",
+        "Microsoft a annoncé qu'il réacheminait le trafic et redémarrait les serveurs affectés pour restaurer le service",
+        "OpenAI et Anthropic ont signalé des problèmes avec les connecteurs Microsoft pendant la panne."
+      ],
+      "body": [
+        "Des milliers d'utilisateurs ont connu une interruption de service chez Microsoft le jeudi 12 novembre, affectant Outlook, Teams et Copilot, selon Euronews.",
+        "Downdetector a rapporté que plus de 120 000 utilisateurs aux États-Unis ont signalé des difficultés d'accès à Outlook vers 13h30 heure de l'Est, et ce chiffre est monté à plus de 130 000, selon les données de Downdetector.",
+        "Microsoft a indiqué dans des mises à jour sur X qu'il avait initialement reçu des signalements d'utilisateurs incapables d'accéder aux boîtes aux lettres Exchange Online dans les Amériques, avant d'identifier une charge élevée sur certaines infrastructures comme cause possible.",
+        "L'entreprise a déclaré avoir résolu la perturbation de Teams en Amérique du Nord, tout en mettant en pause tous les déploiements, en déplaçant le trafic supplémentaire hors des infrastructures affectées et en redémarrant les serveurs pour restaurer les services.",
+        "Anthropic a indiqué avoir identifié un problème auprès d'un fournisseur en amont affectant son connecteur Microsoft 365, et OpenAI a annoncé qu'il enquêtait sur des problèmes avec les connecteurs Microsoft où de nouvelles connexions pourraient être rompues."
+      ],
+      "context": "Le site de statut du service Microsoft a confirmé que les utilisateurs ne pouvaient pas se connecter à plusieurs services 365, dont Exchange Online et Copilot 365, pendant l'événement.",
+      "imageCaption": "Pan Microsoft : interruption des services Outlook et Teams le 12 novembre."
+    },
+    "pt": {
+      "title": "Interrupção da Microsoft afeta Outlook, Teams e Copilot a 12 de novembro",
+      "dek": "Plataformas da Microsoft sofreram interrupções de serviço na quinta-feira, 12 de novembro, afetando o Outlook e outras ferramentas 365.",
+      "facts": [
+        "Mais de 120.000 utilizadores reportaram problemas de acesso ao Outlook no Downdetector até 12 de novembro",
+        "A Microsoft reportou que parte da sua infraestrutura sofreu uma carga elevada, fator que identificou como possível causa da interrupção",
+        "A perturbação afetou o Outlook, Teams, Copilot, SharePoint Online, Exchange Online e Defender XDR, segundo o site de Estado de Saúde de Serviços da Microsoft",
+        "A Microsoft anunciou que estava a redistribuir tráfego e a reiniciar servidores afetados para restaurar o serviço",
+        "A OpenAI e a Anthropic reportaram problemas com os conectores da Microsoft durante a interrupção."
+      ],
+      "body": [
+        "Milhares de utilizadores experienciaram uma interrupção de serviço na Microsoft na quinta-feira, 12 de novembro, afetando o Outlook, Teams e Copilot, segundo a Euronews.",
+        "O Downdetector reportou que mais de 120 000 utilizadores nos Estados Unidos relataram dificuldades em aceder ao Outlook por volta da 1:30 da tarde, hora do Leste, e este número subiu para mais de 130 000, de acordo com dados reportados pelo Downdetector.",
+        "A Microsoft declarou em atualizações no X que inicialmente recebeu relatos de utilizadores incapazes de aceder às caixas de correio do Exchange Online nas Américas, e posteriormente identificou uma carga elevada em alguma infraestrutura como possível causa.",
+        "A empresa afirmou ter resolvido a interrupção do Teams na América do Norte, enquanto também suspendeu todos os *deployments*, desviou tráfego adicional da infraestrutura afetada e reiniciou servidores para restaurar os serviços.",
+        "A Anthropic declarou ter identificado um problema com um fornecedor *upstream* que afetava o seu conector Microsoft 365, e a OpenAI reportou estar a investigar problemas com conectores Microsoft onde novas ligações podem estar interrompidas."
+      ],
+      "context": "O site de Estado de Saúde de Serviços da Microsoft confirmou que os utilizadores não conseguiam ligar-se a múltiplos serviços 365, incluindo Exchange Online e Copilot 365, durante o evento.",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "11월 12일 마이크로소프트 장애로 아웃룩, 팀즈, 코파일럿 영향",
+      "dek": "목요일인 11월 12일 마이크로소프트 플랫폼에서 서비스 중단이 발생하여 아웃룩 및 기타 365 도구에 영향을 미쳤다.",
+      "facts": [
+        "11월 12일 기준 다운디텍터에서 12만 명 이상 사용자가 아웃룩 접속 문제 보고",
+        "마이크로소프트는 인프라 일부에 부하가 높았으며, 이를 장애의 가능한 요인으로 파악했다고 보고했다",
+        "마이크로소프트 서비스 상태 사이트에 따르면 이 중단은 아웃룩, 팀즈, 코파일럿, SharePoint Online, Exchange Online, Defender XDR에 영향을 미쳤다",
+        "마이크로소프트는 서비스 복구를 위해 트래픽 재분배 및 영향받은 서버 재시작을 발표했다",
+        "OpenAI와 Anthropic은 장애 기간 동안 마이크로소프트 커넥터 관련 문제를 보고했다"
+      ],
+      "body": [
+        "수천 명의 사용자가 마이크로소프트 서비스 중단에 영향을 받아 목요일인 11월 12일 아웃룩, 팀즈, 코파일럿 이용에 차질을 빚었다. (Euronews)",
+        "다운디텍터에 따르면 미국에서 오후 1시 30분(동부 표준시)께 아웃룩 접속에 어려움을 겪은 사용자가 12만 명을 넘어섰으며, 이 숫자는 다운디텍터가 보고한 자료에 따라 13만 명을 넘겼다.",
+        "마이크로소프트는 X(구 트위터)를 통해 초기에는 사용자들이 엑스체인지 온라인 메일함에 접속하지 못하는 보고를 접수했다고 밝힌 뒤, 이후 일부 인프라에서 트래픽이 과도하게 몰린 것을 가능한 원인으로 지목했다.",
+        "회사는 북미 지역에서 팀즈 장애를 해결했다고 밝혔으며, 모든 배포를 일시 중단하고 추가 트래픽을 영향을 받은 인프라에서 이전한 뒤 서버를 재부팅해 서비스를 정상화했다.",
+        "아나트리픽은 마이크로소프트 365 커넥터에 영향을 주는 상위 공급자 문제점을 파악했으며, 오픈AI는 마이크로소프트 커넥터 관련 문제점을 조사하고 있다고 밝혔다. 새로운 연결이 끊길 수 있는 상황이다."
+      ],
+      "context": "마이크로소프트 서비스 상태 사이트는 해당 기간 동안 Exchange Online 및 Copilot 365를 포함한 여러 365 서비스에 사용자가 연결할 수 없었음을 확인했다.",
       "imageCaption": ""
     }
   },
