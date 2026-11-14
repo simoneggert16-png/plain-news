@@ -1,9 +1,166 @@
 {
+  "meta": {
+    "outlets": [
+      "France 24",
+      "The Guardian",
+      "Fox News",
+      "The Hill",
+      "The Kyiv Post",
+      "SteamboatToday.com"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+  },
   "slug": "alaska-election-results",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "Alaska Election Results",
+  "status": "live",
+  "article": {
+    "slug": "alaska-election-results",
+    "updatedAt": "2026-11-14T08:04:00.590Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Democrat Jonathan Kreiss-Tomkins wins Alaska governor race",
+        "dek": "Jonathan Kreiss-Tomkins secured the Alaska gubernatorial seat, ending a two-decade period without a Democratic governor in the state.",
+        "facts": [
+          "Jonathan Kreiss-Tomkins won the Alaska governor election.",
+          "Decision Desk HQ projected the victory on 14 November 2026.",
+          "This result ends a streak of over 20 years without a Democratic governor in Alaska.",
+          "The outcome was reported by both Politico and The Hill."
+        ],
+        "body": [
+          "Jonathan Kreiss-Tomkins won the election for governor of Alaska. Decision Desk HQ projected the result on 14 November 2026.",
+          "The victory makes Kreiss-Tomkins the first Democrat to hold the office in more than 20 years. Politico reported the win early on 14 November.",
+          "The Hill confirmed the election results shortly after the projection was released. Both outlets identified the win as a flip of the gubernatorial seat.",
+          "Election officials have not yet released the final vote tallies. The projection relies on data analyzed by Decision Desk HQ.",
+          "Voters in Alaska participated in the general election to determine the state's executive leadership. The office of the governor oversees the administration of state agencies and policy implementation.",
+          "Political analysts noted the significance of the shift in state leadership. The transition process will begin following the certification of the results."
+        ],
+        "context": "Alaska had not elected a Democratic governor in over two decades prior to this result. The governor serves as the chief executive of the state government.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Demokrat Jonathan Kreiss-Tomkins gewinnt Gouverneurswahl in Alaska",
+        "dek": "Jonathan Kreiss-Tomkins sicherte sich das Gouverneursamt in Alaska und beendete damit eine zwei Jahrzehnte andauernde Phase ohne demokratischen Gouverneur im Bundesstaat.",
+        "facts": [
+          "Jonathan Kreiss-Tomkins hat die Gouverneurswahl in Alaska gewonnen.",
+          "Decision Desk HQ prognostizierte den Sieg am 14. November 2026.",
+          "Dieses Ergebnis beendet eine über 20-jährige Periode ohne demokratischen Gouverneur in Alaska.",
+          "Das Ergebnis wurde sowohl von Politico als auch von The Hill gemeldet."
+        ],
+        "body": [
+          "Jonathan Kreiss-Tomkins hat die Wahl zum Gouverneur von Alaska gewonnen. Decision Desk HQ prognostizierte das Ergebnis am 14. November 2026.",
+          "Mit diesem Sieg ist Kreiss-Tomkins der erste Demokrat seit mehr als 20 Jahren, der das Amt bekleidet. Politico berichtete früh am 14. November über den Wahlsieg.",
+          "The Hill bestätigte die Wahlergebnisse kurz nach Veröffentlichung der Prognose. Beide Medien bezeichneten den Sieg als Wechsel des Gouverneurspostens.",
+          "Wahlbehörden haben die endgültigen Stimmenzahlen noch nicht veröffentlicht. Die Prognose stützt sich auf Daten, die von Decision Desk HQ analysiert wurden.",
+          "Die Wähler in Alaska nahmen an der allgemeinen Wahl teil, um die Führung der Exekutive des Bundesstaates zu bestimmen. Das Amt des Gouverneurs beaufsichtigt die Verwaltung der staatlichen Behörden und die Umsetzung der Politik.",
+          "Politische Analysten wiesen auf die Bedeutung des Wechsels in der Führung des Bundesstaates hin. Der Übergangsprozess beginnt nach der Zertifizierung der Ergebnisse."
+        ],
+        "context": "Vor diesem Ergebnis hatte Alaska seit über zwei Jahrzehnten keinen demokratischen Gouverneur mehr gewählt. Der Gouverneur fungiert als Regierungschef des Bundesstaates."
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Wahlbeamte bearbeiten in Dutzenden knappen Rennen in Alaska weiterhin Stimmzettel, da die Stimmenauszählung andauert.",
+      "title": "Wahlergebnisse in Alaska"
+    },
+    "en": {
+      "dek": "Election officials continue to process ballots in dozens of tight races across Alaska as vote counts remain ongoing.",
+      "title": "Alaska Election Results"
+    },
+    "es": {
+      "dek": "Funcionarios electorales continúan procesando papeletas en docenas de contiendas reñidas en Alaska mientras los recuentos de votos siguen en curso.",
+      "title": "Resultados electorales de Alaska"
+    },
+    "fr": {
+      "dek": "Les responsables électoraux continuent de traiter les bulletins dans des dizaines de courses serrées à travers l'Alaska, les décomptes de voix étant toujours en cours.",
+      "title": "Résultats des élections en Alaska"
+    },
+    "it": {
+      "dek": "Gli ufficiali elettorali continuano a elaborare i voti in decine di competizioni serrate in Alaska poiché i conteggi dei voti sono ancora in corso.",
+      "title": "Risultati delle elezioni in Alaska"
+    },
+    "ja": {
+      "dek": "アラスカ全域の数十の接戦区で選挙当局は引き続き投票用紙の集計を行っており、得票数は現在も進行中です。",
+      "title": "アラスカ選挙結果"
+    },
+    "ko": {
+      "dek": "알래스카 전역의 수십 개 접전 선거에서 선거 관리 당국자들이 계속해서 투표를 집계하고 있으며, 득표수 집계는 계속 진행 중이다.",
+      "title": "알래스카 선거 결과"
+    },
+    "pt": {
+      "dek": "Os responsáveis eleitorais continuam a processar boletins em dezenas de corridas apertadas em todo o Alasca, enquanto as contagens de votos permanecem em curso.",
+      "title": "Resultados das Eleições do Alasca"
+    },
+    "zh": {
+      "dek": "阿拉斯加的选举官员仍在处理数十个胶着选区的选票，计票工作仍在进行中。",
+      "title": "阿拉斯加选举结果"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1794632828000-73dm",
+      "at": "2026-11-14T05:07:08.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Democrat Jonathan Kreiss-Tomkins wins Alaska governor race",
+          "body": "Jonathan Kreiss-Tomkins is projected to win the Alaska governor’s office according to Decision Desk HQ. This marks the first time Alaskans have elected a Democrat to the corner office in over two decades, as reported by Politico and The Hill."
+        },
+        "es": {
+          "headline": "El demócrata Jonathan Kreiss-Tomkins gana la gobernación de Alaska",
+          "body": "Se proyecta que Jonathan Kreiss-Tomkins ganará la gobernación de Alaska, según Decision Desk HQ. Esto marca la primera vez en más de dos décadas que los habitantes de Alaska eligen a un demócrata para el cargo, según informaron Politico y The Hill."
+        },
+        "de": {
+          "headline": "Demokrat Jonathan Kreiss-Tomkins gewinnt Gouverneurswahl in Alaska",
+          "body": "Dem Prognosen von Decision Desk HQ zufolge wird Jonathan Kreiss-Tomkins das Amt des Gouverneurs von Alaska gewinnen. Wie Politico und The Hill berichten, ist dies das erste Mal seit über zwei Jahrzehnten, dass die Wähler in Alaska einen Demokraten in dieses Spitzenamt gewählt haben."
+        },
+        "it": {
+          "headline": "Il democratico Jonathan Kreiss-Tomkins vince le elezioni governatoriali in Alaska",
+          "body": "Jonathan Kreiss-Tomkins è dato per vincitore nella corsa alla carica di governatore dell'Alaska secondo Decision Desk HQ. Si tratta della prima volta in oltre vent'anni che gli elettori dell'Alaska eleggono un democratico alla guida dello Stato, come riferito da Politico e The Hill."
+        },
+        "pt": {
+          "headline": "O democrata Jonathan Kreiss-Tomkins vence a corrida ao governo do Alasca",
+          "body": "Jonathan Kreiss-Tomkins é projetado como vencedor do cargo de governador do Alasca, de acordo com o Decision Desk HQ. Isto marca a primeira vez que os eleitores do Alasca elegem um democrata para o cargo máximo em mais de duas décadas, conforme noticiado pelo Politico e pelo The Hill."
+        },
+        "fr": {
+          "headline": "Le démocrate Jonathan Kreiss-Tomkins remporte l'élection gobernadoriale en Alaska",
+          "body": "Jonathan Kreiss-Tomkins devrait remporter le poste de gouverneur de l'Alaska, selon Decision Desk HQ. C'est la première fois en plus de deux décennies que les électeurs de l'Alaska élisent un démocrate à ce poste, rapportent Politico et The Hill."
+        },
+        "zh": {
+          "headline": "民主党人乔纳森·克赖斯-托姆金斯赢得阿拉斯加州长选举",
+          "body": "据“决策台总部”（Decision Desk HQ）预测，乔纳森·克赖斯-托姆金斯将赢得阿拉斯加州长职位。据《政客》杂志和《国会山报》报道，这是阿拉斯加选民二十多年来首次选举民主党人担任该州最高行政长官。"
+        },
+        "ja": {
+          "headline": "民主党のジョナサン・クライス＝トムキンス氏、アラスカ州知事選で勝利",
+          "body": "ディシジョン・デスクHQの予測によると、アラスカ州知事選で民主党のジョナサン・クライス＝トムキンス氏が勝利を確実にした。ポリティコやザ・ヒルが報じたところによれば、アラスカ州で民主党候補が知事に選出されるのは20年以上ぶりとなる。"
+        },
+        "ko": {
+          "headline": "민주당 조나단 크라이스-톰킨스, 알래스카 주지사 선거 승리",
+          "body": "디시전 데스크 HQ(Decision Desk HQ)에 따르면 조나단 크라이스-톰킨스가 알래스카 주지사 선거에서 승리할 것으로 예측된다. 폴리티코와 더 힐의 보도에 따르면, 이는 알래스카주에서 20여 년 만에 처음으로 민주당 후보가 주지사로 당선된 사례이다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Politico",
+          "title": "Democrat Jonathan Kreiss-Tomkins flips Alaska’s gubernatorial seat",
+          "url": "https://www.politico.com/news/2026/11/14/jonathan-kreiss-tomkins-wins-alaska-governor-01166573",
+          "publishedAt": "2026-11-14T05:07:08.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Democrat flips Alaska governor’s office",
+          "url": "https://thehill.com/homenews/campaign/6182120-democrat-kreiss-tomkins-wins-alaska/",
+          "publishedAt": "2026-11-14T05:05:12.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "alaska",
     "election",
@@ -15,63 +172,27 @@
     "senate",
     "results"
   ],
+  "seenUrls": [
+    "https://www.dw.com/en/nigeria-how-the-pcoming-elections-are-influeced-by-the-rise-of-ai-disinformation/a-79946897?maca=en-rss-en-all-1573-rdf",
+    "https://timesofindia.indiatimes.com/world/europe/licence-to-kill-row-child-rights-and-inflation-may-fuel-fresh-protests-across-france/articleshow/135826231.cms",
+    "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOckIxdm44UVFJaDRhTERXTXR2Z0Vyb3FwejhNaXk2Q3dLWFo1ZHlwaXBaeC1OSXpMZHoydlhuTTdEWGY4LUk1dXhDaFBlYVZWcjRwT0xfcVBYakJRZWJjSGk3RXlTd0JSV2pHSjh6b0tJMVRsV1NSQkV0TTNBdHM1d2czOHI3dVA5M19GbUJQNmJRblE0SUtCN1dsOUtqbjN4eUJzRnA3amdjSlVZcHUzODkzZVJ6cnRYTG84dFMwRmx3ejluNS1RQ2JTblRydHUtaUdWR3I4NEpTNy1vY3p3bTREMVExUQ?oc=5",
+    "https://timesofindia.indiatimes.com/world/us/jd-vance-weighs-skipping-2028-presidential-race-after-republican-midterm-losses-report/articleshow/135825647.cms",
+    "https://www.nytimes.com/2026/11/12/us/politics/van-hollen-schumer-democrats-majority-leader.html",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcGRpUnZKOEtydjhyR1RaNXRaVS1xdUk0MkFZTldVUktXM2xNa2JGS3Y4TG5LbmhkWHZ1VVpaaE43RnBaMElMczBHcGQ3LWpQRjFrTy03Y0FzNGx4RXlEOEtERy16RWJ2TkhDVVFYbVlWZmtvMWJ2dGxxbHQxVXhLdW1ZVERVV3VJbmVkLWpENA?oc=5",
+    "https://www.politico.com/news/2026/11/14/jonathan-kreiss-tomkins-wins-alaska-governor-01166573",
+    "https://thehill.com/homenews/campaign/6182120-democrat-kreiss-tomkins-wins-alaska/",
+    "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOSFhhVEhWdUYwbkhDQkxCM1ZVLWJTUk9mQ1ctV29XMzJXOVdHTjhjLWc0NjRoSjd4OWlDNW9GeG5ILW5aZlZiMjhPbHlIdzZKbEN1UDcwcTh0MlhKMk5PUlR5V2dEY19XcjlsYU5FNVpYdzkwaUZGVlFzcWlFVzhkdGtoVENEX2pKYWRwbUIzaTRMbGszTHRiajhscmIxVU1kbTBHRXBXTC1jT3RTcC1Vcm9Oa2tDa2ZxWXVwNGtVMGR6Vlp4NXo3Y1BJMnFHMkxrUkVLNnVUaw?oc=5",
+    "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+    "https://news.google.com/rss/articles/CBMibkFVX3lxTFBZWUZhVTEwNjh3SnN2aFU5X25BelVDRDdPVnh5R2hNdnAyNXNtbThZUUlScjJxMFlIbFlGeHFWM1VieUxFVXl4bVFJZE51VzlwN3Zsb1Zlb3RDdWlfNms4VHhHcFhfZTJjc0hKeXVR?oc=5",
+    "https://english.elpais.com/usa/2026-11-14/eleven-names-to-watch-in-the-race-for-the-white-house-in-2028.html",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZHhpdkxLZUM1UDVlRFVfRjNXV0NsYmkwbkw1S0NVMkZteW5wMzQtN0ZkNzhLQmhrS3E0NDZPekduUTh1c1RNMExZWENXSTVCMEFIa1hTd1Q1OXRmYTlfTFM4OHFlU1hYNGYxalVMMGcyOVFMbXBGWFlLYVF1SS16NFBqZV9mNmhlVzlMSEZ2Y2hOSlJFZjVrcXU0OEt1dGRzTGc?oc=5",
+    "https://news.google.com/rss/articles/CBMihAFBVV95cUxPc0NkZ04xdHd3QU1xQVg0V3dyZ2l5M3N3bFFwNU9rVk9wcW9Bc0VtZHl5QUlzSllFY1lVb0loM1dIZ1RoZmxmbHhlZE13ZnhjZ3FPVXlUeC04Nk5mUWFUV0JCOEVqVWVsRjZ1WXd3b1hMV1Zxc2h5cVFzYnEtcEdUOUZFdVo?oc=5"
+  ],
   "startedAt": "2026-11-14T00:05:55.832Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-14T00:05:55.832Z",
-  "articleSlug": null,
-  "sourceCount": 6,
+  "updatedAt": "2026-11-14T08:03:51.606Z",
+  "importance": 5,
   "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Alaska Election Results",
-      "dek": "Election officials continue to process ballots in dozens of tight races across Alaska as vote counts remain ongoing."
-    },
-    "de": {
-      "title": "Wahlergebnisse in Alaska",
-      "dek": "Wahlbeamte bearbeiten in Dutzenden knappen Rennen in Alaska weiterhin Stimmzettel, da die Stimmenauszählung andauert."
-    },
-    "fr": {
-      "title": "Résultats des élections en Alaska",
-      "dek": "Les responsables électoraux continuent de traiter les bulletins dans des dizaines de courses serrées à travers l'Alaska, les décomptes de voix étant toujours en cours."
-    },
-    "es": {
-      "title": "Resultados electorales de Alaska",
-      "dek": "Funcionarios electorales continúan procesando papeletas en docenas de contiendas reñidas en Alaska mientras los recuentos de votos siguen en curso."
-    },
-    "zh": {
-      "title": "阿拉斯加选举结果",
-      "dek": "阿拉斯加的选举官员仍在处理数十个胶着选区的选票，计票工作仍在进行中。"
-    },
-    "it": {
-      "title": "Risultati delle elezioni in Alaska",
-      "dek": "Gli ufficiali elettorali continuano a elaborare i voti in decine di competizioni serrate in Alaska poiché i conteggi dei voti sono ancora in corso."
-    },
-    "pt": {
-      "title": "Resultados das Eleições do Alasca",
-      "dek": "Os responsáveis eleitorais continuam a processar boletins em dezenas de corridas apertadas em todo o Alasca, enquanto as contagens de votos permanecem em curso."
-    },
-    "ja": {
-      "title": "アラスカ選挙結果",
-      "dek": "アラスカ全域の数十の接戦区で選挙当局は引き続き投票用紙の集計を行っており、得票数は現在も進行中です。"
-    },
-    "ko": {
-      "title": "알래스카 선거 결과",
-      "dek": "알래스카 전역의 수십 개 접전 선거에서 선거 관리 당국자들이 계속해서 투표를 집계하고 있으며, 득표수 집계는 계속 진행 중이다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "France 24",
-      "The Guardian",
-      "Fox News",
-      "The Hill",
-      "The Kyiv Post",
-      "SteamboatToday.com"
-    ]
-  }
+  "articleSlug": "alaska-election-results",
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
