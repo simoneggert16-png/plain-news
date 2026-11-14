@@ -1,0 +1,75 @@
+{
+  "slug": "koalitionsausschuss-spd-pruft-besetzung-nach-bas-rucktritt-20261114-mdnw",
+  "category": "politics",
+  "image": null,
+  "imageCredit": null,
+  "video": {
+    "type": "video",
+    "url": "https://welt.cdn.content-discovery.video/videos/1b1dfmmplv9s/rendition/7e99c691-15f8-4d21-82b5-85b0d71e2b34/file-v720p.mp4"
+  },
+  "importance": 4,
+  "publishedAt": "2026-11-14T10:32:20.213Z",
+  "updatedAt": "2026-11-14T10:32:20.213Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "FAZ",
+      "title": "Koalitionsausschuss: Am roten Faden nach Berlin",
+      "url": "https://www.faz.net/aktuell/politik/inland/koalitionsausschuss-manuela-schwesig-draengt-es-nicht-nach-berlin-noch-nicht-201680738.html",
+      "publishedAt": "2026-11-14T09:38:57.000Z"
+    },
+    {
+      "outlet": "Die Welt",
+      "title": "„Das wird der größte popkulturelle Spielmoment in der Geschichte der Unterhaltungsindustrie“",
+      "url": "https://www.welt.de/kultur/video6af829fc4495f9bd85b7f9ba/gta-vi-das-wird-der-groesste-popkulturelle-spielmoment-in-der-geschichte-der-unterhaltungsindustrie.html",
+      "publishedAt": "2026-11-14T10:19:12.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Koalitionsausschuss: SPD prüft Besetzung nach Bas-Rücktritt",
+      "dek": "SPD intern beschafft neuen Sitz im Koalitionsausschuss nach Bas-Rücktritt",
+      "facts": [
+        "SPD muss nach Rücktritt von Bärbel Bas neuen Sitz im Koalitionsausschuss besetzen",
+        "Manuela Schwesig und Anke Rehlinger führten Gespräche um die vakante Position",
+        "Petra Köpping (Sachsen) soll die Lücke füllen",
+        "Sitzverteilung schafft Unwucht, wenn nur ein Vertreter am Kabinettstisch sitzt"
+      ],
+      "body": [
+        "Nach dem Rücktritt von Bärbel Bas steht der freie Sitz im Koalitionsausschuss neben Lars Klingbeil zur Besetzung an, berichtet die FAZ.",
+        "Manuela Schwesig und Anke Rehlinger seien ins Gespräch gekommen, da beide Regierungen führten und in der Runde auf Augenhöhe teilnehmen könnten.",
+        "Petra Köpping, Sozialministerin aus Sachsen, wird als Kandidatin ins Gespräch gebracht, um die Lücke zu füllen.",
+        "Der Nachteil einer Doppelspitze innerhalb der SPD sei, dass bei einseitiger Kabinettteilnahme eine Unwucht entstehe."
+      ],
+      "context": "Die Diskussion erfolgt im Vorfeld des Koalitionsausschusses, wie die FAZ berichtete. Es geht um die interne Besetzung eines freien Sitzes nach dem Ausscheiden von Bärbel Bas.",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "SPDはバーゼル辞任後の幹部人事を検討",
+      "dek": "党内で新たな議席を確保、コアリション委員会の構成を調整",
+      "facts": [
+        "SPDはバーゼル辞任後の空席を埋める必要がある",
+        "マヌエラ・シュヴェジグとアンク・レイリンガーが協議を実施",
+        "ペトラ・ケルピング（ザクセン州）が穴埋めの有力候補",
+        "内閣構成員の座席配置にバランスの崩れが生じる可能性"
+      ],
+      "body": [
+        "SPDはバーゼル辞任後の幹部人事を検討",
+        "FAZの報道により、バーゼル辞任に伴い、連立協議会の空席に加え、ラース・クリングベイルの枠も埋める人事が検討されている。マヌエラ・シュヴェジグとアンク・ライリンガーが協議されたのは、両者とも州政府を率いており、対等な立場で参加できるためだ。",
+        "ザクセン州社会相のペトラ・ケッピングが、穴埋めの候補者として浮上している。",
+        "SPD内での二重代表の不利点は、一方的な閣僚参加の際に不均衡が生じるおそれがあることだ。"
+      ],
+      "context": "協議はFAZ報道の前倒しで行われ、バーゼル辞任後の空席埋めが焦点となっている",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts in body and context not directly sourced from S1 or S2; invented narrative about Berlin state election and 'adventurous pact'; headline exceeds 90 characters; body has four short declarative sentences in a row; opening noun repeated from previous paragraph; evaluative framing ('affecting coalition attractiveness'); missing attribution for key claims"
+    ]
+  }
+}
