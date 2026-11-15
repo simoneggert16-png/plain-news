@@ -6,12 +6,24 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-14T14:15:23.876Z",
-  "updatedAt": "2026-11-15T02:00:54.448Z",
+  "updatedAt": "2026-11-15T05:43:48.009Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "gaza-military-operations",
   "stats": null,
   "sources": [
+    {
+      "outlet": "TRT World",
+      "title": "Hamas urges emergency global action as Gaza floods affect over 200,000 Palestinians",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5EaVduLW5MVngxT2U2Q3l0V0JGQ3dWeGpOanBDQXpoSVJfQXF1Q0F3V0Q2OEY5Z3NaS2gyeVNpdmVucExsaG9qUVh5QlhOSVA3QzJxYlpPbTI?oc=5",
+      "publishedAt": "2026-11-15T03:30:02.000Z"
+    },
+    {
+      "outlet": "Anadolu Ajansı",
+      "title": "Hamas leader calls for emergency international relief campaign for flood-hit Gaza",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVWpfLWsxNzg1bjRYQk83U3R4ZVRGSElQQWVVOExZc0JrZU16LTRjcFIzbURXMmpYS051UklQemlqa01aUjBfRGptNlctWHNtSHprOWVhSVlZNFV5d2NqV1owQ2JPMzlpRWRCaUFSdVZGVHZOaTZ6aU12NzA5dVVzcHM2VVZ6el9uTFVFcVZCeTBta0poMkJvNC1wNWhqVE0xWDdLc2YydTZEOVZWOEdhZGY0ZlZ2ZWkxbElkLVB0cVhFX05w?oc=5",
+      "publishedAt": "2026-11-15T01:54:18.000Z"
+    },
     {
       "outlet": "Al Jazeera",
       "title": "Israeli air strike kills senior Hamas commander in Gaza",
@@ -131,6 +143,37 @@
     }
   },
   "history": [
+    {
+      "at": "2026-11-15T02:00:54.448Z",
+      "reason": "1 new update(s)",
+      "locales": {
+        "en": {
+          "title": "18 nations condemn Israeli strike on Gaza hospital and demand ceasefire",
+          "dek": "Eighteen countries, including Türkiye, condemned an Israeli airstrike on a Gaza hospital on 14 November 2026.",
+          "facts": [
+            "Eighteen countries condemned an Israeli airstrike on a Gaza hospital on 14 November 2026, according to Anadolu Ajansı and Daily Sabah.",
+            "An Israeli drone strike killed two Palestinians in northern Gaza on 14 November 2026, according to the Durango Herald and WKMG.",
+            "The Israel Defense Forces stated the northern Gaza strike targeted two terror operatives, according to The Times of Israel.",
+            "The European Union requested Israel open all border crossings for humanitarian aid into Gaza on 14 November 2026, according to SRF and Die Zeit.",
+            "Hamas confirmed the death of Rafah brigade commander Samir Abu Younis in an Israeli strike on southern Gaza on 15 November 2026, according to Al Jazeera.",
+            "Multiple states requested Israel open land crossings into Gaza as winter conditions began on 14 November 2026, according to The New Arab."
+          ],
+          "body": [
+            "Hamas confirmed the death of Rafah brigade commander Samir Abu Younis in an Israeli strike on southern Gaza on 15 November 2026, according to Al Jazeera.",
+            "Anadolu Ajansı also reported that the Rafah brigade commander was killed in an Israeli strike on southern Gaza, according to Anadolu Ajansı.",
+            "Eighteen countries condemned an Israeli airstrike on a Gaza hospital on 14 November 2026, according to Anadolu Ajansı and Daily Sabah.",
+            "The countries urged compliance with a ceasefire and the protection of medical facilities, according to Anadolu Ajansı and Daily Sabah.",
+            "Two Palestinians were killed in an Israeli drone strike in northern Gaza on 14 November 2026, according to the Durango Herald and WKMG.",
+            "The Israel Defense Forces stated that the northern Gaza strike targeted two terror operatives, according to The Times of Israel.",
+            "The European Union requested Israel open all border crossings for humanitarian aid into Gaza on 14 November 2026, according to SRF and Die Zeit.",
+            "EU foreign policy chief Kaja Kallas stated that Israel must enable the work of the United Nations and its agencies, according to Politico Europe and Al Jazeera.",
+            "The New Arab reported that multiple states requested Israel open land crossings into Gaza as winter conditions began on 14 November 2026."
+          ],
+          "context": "The conflict involves ongoing military operations by the Israel Defense Forces within the Gaza Strip. Heavy rainfall flooded tens of thousands of tents in the Gaza Strip, according to SRF and Die Zeit. Multiple nations have expressed concern regarding the impact of these operations on medical facilities and civilian areas.",
+          "imageCaption": ""
+        }
+      }
+    },
     {
       "at": "2026-11-14T16:45:55.271Z",
       "reason": "1 new update(s)",
@@ -299,7 +342,7 @@
     }
   ],
   "meta": {
-    "writer": "nvidia/nemotron-3.5-bolt-e4b",
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
     "editor": null,
     "desk": "Live Desk",
     "verdict": "live-update",
