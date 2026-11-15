@@ -1,0 +1,54 @@
+{
+  "slug": "wildfire-reported-in-los-angeles-county-on-november-15-20261115-mnmk",
+  "category": "climate",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-15T19:48:45.231Z",
+  "updatedAt": "2026-11-15T19:48:45.231Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Sacramento Bee",
+      "title": "Breaking: New wildfire reported in Los Angeles County on Nov. 15",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9rdXotcm1FSUx3WVZuUGFQd3pBNE56M2hOZkdIcnN0VEExRmVkUEJOSEVLdUdwU2c4cktXSlRWTHJNSGZRNTFqaWhRR0lIWFJuTjVFdGE3STFON3hxUlpxdlJtSU15SDRiclhPblNUTmFkS1Jv?oc=5",
+      "publishedAt": "2026-11-15T18:37:07.000Z"
+    },
+    {
+      "outlet": "FOX 13 Tampa Bay",
+      "title": "Two weeks left of hurricane season",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5OVC1uRjhtcmU4T2twdUtVZXVvMXBiM0ZsRURWQWpEQ2Rmd24tN0ozb2ZnUnFuY3MzTlJhX0ROUXlScWptRm1NYVc5LTNpYkgwTzhwcGZwdTFfV2EycGctVlVB0gFnQVVfeXFMTVpNSkdSUGxOWkhZUmRZTVU2Y3lyWlplaGo2TkFCOG5qcU0tVWtVc3dPeGVKMU9sWVFEbXpQWEsyaHFzRmdPc2xQR0Ntb0FYMDFjeE1kLUNpQXctNlpuN3RKSTNJQk1UZw?oc=5",
+      "publishedAt": "2026-11-15T17:33:21.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Wildfire Reported in Los Angeles County on November 15",
+      "dek": "N/A",
+      "facts": [
+        "The Sacramento Bee reported a new wildfire in Los Angeles County on November 15.",
+        "FOX 13 Tampa Bay reported that two weeks remained in hurricane season on November 15."
+      ],
+      "body": [
+        "The Sacramento Bee reported a new wildfire in Los Angeles County on November 15.",
+        "On that date, FOX 13 Tampa Bay stated that two weeks remained in hurricane season."
+      ],
+      "context": "N/A",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-bolt-e4b",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Climate, Environment & Nature Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "The draft includes a 'dek' which is not required by the style guide and is not a single-sentence summary under 30 words; the style guide requires a factual headline only.",
+      "The body paragraphs are repetitive and do not adhere to the rhythm requirement (varying sentence length and avoiding four short declarative sentences in a row).",
+      "The context section attempts to explain *why* events are happening, which requires speculation or external knowledge not present in the sources; the style guide demands facts only.",
+      "The structure is too fragmented; the body must read as prose, not a list of attributed statements.",
+      "The draft does not adhere to the rule of opening paragraphs with the actor, number, or date, as the body starts with the actor (Sacramento Bee)."
+    ]
+  }
+}
