@@ -1,0 +1,75 @@
+{
+  "slug": "2026-ballot-measure-and-fire-station-opening-20261115-7bu7",
+  "category": "politics",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-15T04:35:46.618Z",
+  "updatedAt": "2026-11-15T04:35:46.618Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "AP News",
+      "title": "2026 Ballot Measure Results",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5Cb3F6aURrMWJWLU9WT1NiNmxVcFNJSHQ4THBJdGZoLUpfcEYyQW5pRjZoYmp4QXYyR2NYSmsxMVdLSnJkWjNRMmctUjQwdzU4Y1JSQkNUNllValgwbnBPRHJUalozNERkaHpZUjZMVjIzU09Z?oc=5",
+      "publishedAt": "2026-11-15T00:44:00.000Z"
+    },
+    {
+      "outlet": "SierraDailyNews.com",
+      "title": "Grand Opening of Expanded Doyle Fire Station Strengthens Wildfire Response",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUzBfY1hJOUlxb2h1VDRIM0l3bnBaUVF2YnBYaG5ZSUxUcVNZZWZhQTRpMmFYOURxaW5nS0VoMEp6ZGZPQ3ZIb21tc1JqTEN2ZTFwdUhqZXJ5UFZsaUhsZWVIeWdCalM1ZkNYdW5PUExER2V5M1hJSTdFVjBoSnhpYmIzcHlxN1ZtSFFXTGI5YWhzT0JQQ2JUb245U0tHRWZvb1FpdWJtQWhUSnRJYXd1Z0tHbw?oc=5",
+      "publishedAt": "2026-11-15T02:37:43.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "2026 Ballot Measure and Fire Station Opening",
+      "dek": "Voters decided on abortion and voting rights measures while a California fire station expanded",
+      "facts": [
+        "AP News reported ballot measure results on November 15, 2026.",
+        "Measures on the ballot included abortion access and voting rights.",
+        "SierraDailyNews reported a grand opening of an expanded Doyle Fire Station on November 15, 2026."
+      ],
+      "body": [
+        "AP News published a report on 2026 ballot measure results on November 15, 2026, covering measures decided on by voters across multiple states during the 2026 election cycle. Voters faced decisions on issues including abortion access and voting rights.",
+        "SierraDailyNews reported on the grand opening of an expanded Doyle Fire Station on November 15, 2026. The report noted the station's expansion and its purpose for emergency services."
+      ],
+      "context": "Voters in multiple states participated in ballot measure elections during the 2026 cycle, and local governments continued infrastructure projects such as fire station expansions on the same date.",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "2026년 투표안과 소방서 개관",
+      "dek": "유권자들은 낙태와 투표권 안건에 투표했으며 캘리포니아 소방서가 확장 개관했다",
+      "facts": [
+        "AP 뉴스가 2026년 11월 15일 투표안 결과를 보도함",
+        "안건에는 낙태 접근권과 투표권이 포함됨",
+        "시에라데일리뉴스가 2026년 11월 15일 도일 소방서 확장 개관 보도함"
+      ],
+      "body": [
+        "AP 뉴스는 2026년 선거 기간 동안 유권자들이 다수 주에서 결정한 투표안 결과를 2026년 11월 15일 보도했다. 유권자들은 낙태 접근권과 투표권 등 쟁점들에 대해 결정해야 했다.",
+        "시에라데일리뉴스는 2026년 11월 15일 도일 소방서 확장 이전식 개관 소식을 전했다. 보도에 따르면 해당 소방서는 확장됐으며 응급 서비스 목적으로 활용된다."
+      ],
+      "context": "유권자들이 여러 주에서 2026년 투표안에 참여했으며 지방정부는 같은 날 소방서 확장 등 인프라 사업을 지속함",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline exceeds 90 characters (113 chars).",
+      "Dek exceeds 30 words (34 words).",
+      "Facts 3 and 4 are unsupported — sources do not contain vote tallies or specific outcomes.",
+      "Fact 5 references a claim not in sources (fire station 'strengthening capabilities' is not a documented outcome).",
+      "Body paragraph 1 contains filler phrase 'a range of issues' and unsupported claim about 'procedural aspects'.",
+      "Body paragraph 2 contains filler phrase 'were included in' and unsupported claim about 'enhanced facilities'.",
+      "Context contains evaluative framing ('continued infrastructure projects... to address community safety needs').",
+      "Paragraph 1 and 2 both open with 'AP News reported' / 'The report', violating rule 13.",
+      "Four short declarative sentences in a row in body paragraph 1 (violates rule 11).",
+      "Repetitive phrasing across body paragraphs."
+    ]
+  }
+}
