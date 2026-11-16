@@ -246,126 +246,139 @@
       "Azərtac",
       "yfm.co.za"
     ],
-    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "statsModel": "nvidia/nemotron-3.5-bolt-e4b",
     "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "stats": {
-    "label": "South Africa mass shooting spree",
-    "note": "17 killed across two incidents in Gauteng and KwaZulu-Natal provinces",
+    "label": "People killed in South Africa shootings",
+    "note": "The reports indicate the total number of people killed in the mass shooting incidents in South Africa.",
     "unit": "",
     "max": null,
     "asOf": "2024-05-23T14:30:00.000Z",
-    "updatedAt": "2026-11-16T15:33:49.954Z",
+    "updatedAt": "2026-11-16T15:39:51.861Z",
     "source": {
       "outlet": "BBC",
-      "title": "South Africa mass shooting: 17 shot dead in KwaZulu-Natal province and Pretoria",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9WLS1JVFRIYy1JUm5NUHNxWHBfaHA1YzVGdG9SWUlFcFozSWxkaWFMMEJ6d2hZQy1tQkNHQXFVZzUzNldzV1NkN0ltOXJyc2RSMnNZeDVoVjBuYUl1NHfSAWNBVV95cUxQeFVtbmEzWG56WnpNT2lFUGVhNF9ualBSelc2bEl0VEhYUEJsRk9RWEFnbXlKRG5aLUZCLTVZSWtZVXdHVG9xYXVGVU9uNlJpd3czcTN2cEJTYWtPbGk0TXlHb0E?oc=5",
-      "publishedAt": "2026-11-16T14:44:06.000Z",
+      "title": "Two mass shootings in South Africa leave 17 dead",
+      "url": "https://www.bbc.co.uk/news/articles/c8y5x3n4kywpo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-16T10:57:48.000Z",
       "trusted": true
     },
     "sourceCount": 1,
     "rows": [
       {
-        "key": "people-killed-in-kwazulu-natal-shack-att",
-        "label": "People killed in KwaZulu-Natal shack att",
+        "key": "kzn-shack-attack",
+        "label": "KZN shack attack",
         "value": 9,
-        "change": null,
+        "change": 0,
         "locales": {
-          "fr": {
-            "label": "Morts dans l'attaque de baraque au KwaZulu-Natal"
+          "de": {
+            "label": "Angriff auf Baracken in KZN"
           },
           "it": {
-            "label": "Morti nell'attacco in baracca nel KwaZulu-Natal"
+            "label": "Attacco a baracche nel KZN"
+          },
+          "fr": {
+            "label": "Attaque de baraque dans le KZN"
           },
           "es": {
-            "label": "Muertes en ataque a choza en KwaZulu-Natal"
-          },
-          "de": {
-            "label": "Tote bei Angriff auf Baracken in KwaZulu-Natal"
+            "label": "Ataque a chozas en KZN"
           },
           "zh": {
-            "label": "夸祖鲁-纳塔尔棚户区袭击致多人死亡"
-          },
-          "pt": {
-            "label": "Vítimas mortas em ataque a barracas em KwaZulu-Natal"
+            "label": "KZN小屋袭击事件"
           },
           "ja": {
-            "label": "クワズール・ナタール州のシャカでの殺害者"
+            "label": "KZN小屋襲撃事件"
+          },
+          "pt": {
+            "label": "Ataque a barracão em KZN"
           },
           "ko": {
-            "label": "콰줄루나탈주 오두막에서 사망자 발생"
+            "label": "KZN 오두막 공격"
           }
         }
       },
       {
-        "key": "people-killed-in-gauteng-shooting",
-        "label": "People killed in Gauteng shooting",
+        "key": "gauteng-shooting",
+        "label": "Gauteng shooting",
         "value": 8,
-        "change": null,
+        "change": 0,
         "locales": {
-          "fr": {
-            "label": "Morts dans la fusillade au Gauteng"
+          "de": {
+            "label": "Schießerei in Gauteng"
           },
           "it": {
-            "label": "Morti nello sparatorio nel Gauteng"
+            "label": "Sparatoria nel Gauteng"
+          },
+          "fr": {
+            "label": "Fusillade dans le Gauteng"
           },
           "es": {
-            "label": "Muertes en tiroteo en Gauteng"
-          },
-          "de": {
-            "label": "Tote bei Schießerei in Gauteng"
+            "label": "Tiroteo en Gauteng"
           },
           "zh": {
-            "label": "豪登省枪击事件致多人死亡"
-          },
-          "pt": {
-            "label": "Vítimas mortas em tiroteio em Gauteng"
+            "label": "豪登省枪击事件"
           },
           "ja": {
-            "label": "ガウテング州の銃撃事件による死者"
+            "label": "ガウテン銃撃事件"
+          },
+          "pt": {
+            "label": "Tiroteio em Gauteng"
           },
           "ko": {
-            "label": "가우텡주 총기 난사 사건으로 사망자 발생"
+            "label": "가우텐구 총격 사건"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "Massenschießerei in Südafrika",
-        "note": "17 Tote bei zwei Vorfällen in den Provinzen Gauteng und KwaZulu-Natal"
+        "label": "Tote bei Schießereien in Südafrika",
+        "note": "Berichte geben die Gesamtzahl der Todesopfer bei den Massenerschießungsvorfällen in Südafrika an."
       },
       "fr": {
-        "label": "Fusillade de masse en Afrique du Sud",
-        "note": "17 morts dans deux incidents dans les provinces du Gauteng et du KwaZulu-Natal"
+        "label": "Morts dans des fusillades en Afrique du Sud",
+        "note": "Les rapports indiquent le nombre total de personnes tuées lors des incidents de fusillades de masse en Afrique du Sud."
       },
       "es": {
-        "label": "Tirador masivo en Sudáfrica",
-        "note": "17 muertos en dos incidentes en las provincias de Gauteng y KwaZulu-Natal"
+        "label": "Personas muertas en tiroteos en Sudáfrica",
+        "note": "Los informes indican el número total de personas fallecidas en los incidentes de tiroteos masivos en Sudáfrica."
       },
       "it": {
-        "label": "Massacro sparatorio in Sudafrica",
-        "note": "17 morti in due incidenti nelle province del Gauteng e del KwaZulu-Natal"
+        "label": "Persone uccise in sparatorie in Sudafrica",
+        "note": "Le notizie indicano il numero totale di persone uccise negli incidenti di sparatoria di massa in Sudafrica."
       },
       "pt": {
-        "label": "Tiroteio em massa na África do Sul",
-        "note": "17 mortos em dois incidentes nas províncias de Gauteng e KwaZulu-Natal"
+        "label": "Pessoas mortas em tiroteios na África do Sul",
+        "note": "Os relatórios indicam o número total de pessoas mortas nos incidentes de tiroteio em massa na África do Sul."
       },
       "zh": {
-        "label": "南非大规模枪击事件",
-        "note": "豪登省和夸祖鲁-纳塔尔省两起事件中共17人死亡"
+        "label": "南非枪击案致多人遇难",
+        "note": "报告显示，南非大规模枪击事件中遇难者总人数。"
       },
       "ja": {
-        "label": "南アフリカで連続銃乱射事件",
-        "note": "ガウテング州とクワズール・ナタール州の2件で17人が死亡"
+        "label": "南アフリカ銃撃事件で犠牲者が出る",
+        "note": "報道によれば、南アフリカで発生した大量銃撃事件で死亡した人の総数が明らかにされた。"
       },
       "ko": {
-        "label": "남아프리카 공화국 가우텡주와 콰줄루나탈주 총기 난사 사건으로 17명 사망",
-        "note": "가우텡주와 콰줄루나탈주에서 발생한 두 건의 사건으로 17명이 사망했습니다"
+        "label": "남아프리카 공화국 총격 사건으로 사망자 발생",
+        "note": "남아프리카 공화국 대량 총격 사건으로 사망한 총 인원 수를 나타내는 보고서가 있습니다."
       }
     }
   },
   "statsHistory": [
+    {
+      "at": "2024-05-23T14:30:00.000Z",
+      "rows": [
+        {
+          "key": "kzn-shack-attack",
+          "value": 9
+        },
+        {
+          "key": "gauteng-shooting",
+          "value": 8
+        }
+      ]
+    },
     {
       "at": "2024-05-23T14:30:00.000Z",
       "rows": [
