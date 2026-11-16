@@ -365,16 +365,16 @@
   },
   "stats": {
     "label": "People killed in South Africa shootings",
-    "note": "The reports state the total number of people killed in two mass shooting incidents in South Africa.",
+    "note": "Reports indicate the total number of people killed in two mass shootings in South Africa.",
     "unit": "",
     "max": null,
     "asOf": "2024-05-23T14:30:00.000Z",
-    "updatedAt": "2026-11-16T16:19:53.854Z",
+    "updatedAt": "2026-11-16T17:59:53.043Z",
     "source": {
       "outlet": "BBC",
-      "title": "Two mass shootings in South Africa leave 17 dead",
-      "url": "https://www.bbc.co.uk/news/articles/c8y5x3n4kywpo?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-11-16T10:57:48.000Z",
+      "title": "South Africa mass shooting: 17 shot dead in KwaZulu-Natal province and Pretoria",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB4VW1uYTNYbnpaek1PaUVQZWE0X25qUFJ6VzZsSXRUSFhQQmxGT1FYQWdteUpEblotRkItNVlJa1lVd0dUb3FhdUZVT242Uml3dzNxM3ZwQlNha09saTRNeUdvQdIBY0FVX3lxTFB4VW1uYTNYbnpaek1PaUVQZWE0X25qUFJ6VzZsSXRUSFhQQmxGT1FYQWdteUpEblotRkItNVlJa1lVd0dUb3FhdUZVT242Uml3dzNxM3ZwQlNha09saTRNeUdvQQ?oc=5",
+      "publishedAt": "2026-11-16T14:47:53.000Z",
       "trusted": true
     },
     "sourceCount": 1,
@@ -382,9 +382,12 @@
       {
         "key": "kzn-attack",
         "label": "KZN attack",
-        "value": 9,
-        "change": 0,
+        "value": 17,
+        "change": 8,
         "locales": {
+          "de": {
+            "label": "Angriff in KZN"
+          },
           "fr": {
             "label": "Attaque au KwaZulu-Natal"
           },
@@ -394,52 +397,43 @@
           "it": {
             "label": "Attacco in KZN"
           },
-          "de": {
-            "label": "Angriff in KZN"
+          "pt": {
+            "label": "Ataque em KZN"
+          },
+          "zh": {
+            "label": "夸祖鲁-纳塔尔省袭击事件"
           },
           "ja": {
             "label": "クワズール・ナタール州の襲撃"
           },
           "ko": {
             "label": "콰줄루나탈(KZN) 공격"
-          },
-          "zh": {
-            "label": "夸祖鲁-纳塔尔省袭击事件"
-          },
-          "pt": {
-            "label": "Ataque em KZN"
           }
         }
       },
       {
-        "key": "gauteng-shooting",
-        "label": "Gauteng shooting",
-        "value": 8,
-        "change": 0,
+        "key": "pretoria-shooting",
+        "label": "Pretoria shooting",
+        "value": 17,
+        "change": 9,
         "locales": {
-          "de": {
-            "label": "Schießerei in Gauteng"
-          },
           "fr": {
-            "label": "Fusillade dans le Gauteng"
-          },
-          "es": {
-            "label": "Tiroteo en Gauteng"
+            "label": "Fusillade de Pretoria"
           },
           "it": {
-            "label": "Sparatoria nel Gauteng"
+            "label": "Sparatoria a Pretoria"
           },
-          "pt": {
-            "label": "Tiroteio em Gauteng"
+          "de": {
+            "label": "Schießerei in Pretoria"
           },
           "zh": {
-            "label": "豪登省枪击事件"
-          },
-          "ja": {
-            "label": "ガウテン銃撃事件"
+            "label": "比勒陀利亚枪击事件"
           },
           "ko": {
-            "label": "가우텐구 총격 사건"
+            "label": "프레토리아 총격 사건"
+          },
+          "ja": {
+            "label": "プレトリアの銃撃事件"
           }
         }
       }
@@ -447,39 +441,52 @@
     "locales": {
       "de": {
         "label": "Tote bei Schießereien in Südafrika",
-        "note": "Berichten zufolge ist dies die Gesamtzahl der Todesopfer bei zwei Massenerschießungen in Südafrika."
+        "note": "Berichten zufolge ist die Gesamtzahl der Todesopfer bei zwei Massenschießereien in Südafrika bekannt."
       },
       "fr": {
-        "label": "Personnes tuées dans des fusillades en Afrique du Sud",
-        "note": "Les rapports indiquent le nombre total de personnes tuées dans deux incidents de fusillade de masse en Afrique du Sud."
+        "label": "Nombre de morts dans des fusillades en Afrique du Sud",
+        "note": "Des rapports indiquent le nombre total de personnes tuées lors de deux fusillades de masse en Afrique du Sud."
       },
       "es": {
-        "label": "Personas muertas en tiroteos en Sudáfrica",
-        "note": "Los informes indican el número total de personas fallecidas en dos incidentes de tiroteo masivo en Sudáfrica."
+        "label": "People killed in South Africa shootings",
+        "note": "Reports indicate the total number of people killed in two mass shootings in South Africa."
       },
       "it": {
         "label": "Persone uccise in sparatorie in Sudafrica",
-        "note": "I rapporti indicano il numero totale di persone uccise in due incidenti di sparatoria di massa in Sudafrica."
+        "note": "Rapporti indicano il numero totale di persone uccise in due sparatorie di massa in Sudafrica."
       },
       "pt": {
-        "label": "Pessoas mortas em tiroteios na África do Sul",
-        "note": "Os relatórios indicam o número total de pessoas mortas em dois incidentes de tiroteio em massa na África do Sul."
+        "label": "People killed in South Africa shootings",
+        "note": "Reports indicate the total number of people killed in two mass shootings in South Africa."
       },
       "zh": {
-        "label": "南非发生多起枪击事件，造成人员伤亡",
-        "note": "据报道，南非两起大规模枪击事件造成的死亡人数已得到确认。"
+        "label": "南非枪击事件中的死亡人数",
+        "note": "报道显示，南非两起大规模枪击事件中的死亡总人数。"
       },
       "ja": {
         "label": "南アフリカの銃撃事件で死者",
-        "note": "報道によると、南アフリカで発生した2件の集団銃撃事件による死者総数について詳述している。"
+        "note": "報道によると、南アフリカで起きた2件の大規模な銃撃事件による死者の総数が明らかになった。"
       },
       "ko": {
         "label": "남아프리카공화국 총격 사건으로 사망자 발생",
-        "note": "보고서에 따르면 남아프리카공화국에서 발생한 두 건의 대규모 총격 사건으로 사망한 총 인원수를 집계했다."
+        "note": "보고에 따르면 남아프리카공화국에서 발생한 두 건의 대규모 총격 사건으로 사망한 총 인원수가 집계되었습니다."
       }
     }
   },
   "statsHistory": [
+    {
+      "at": "2024-05-23T14:30:00.000Z",
+      "rows": [
+        {
+          "key": "kzn-attack",
+          "value": 17
+        },
+        {
+          "key": "pretoria-shooting",
+          "value": 17
+        }
+      ]
+    },
     {
       "at": "2024-05-23T14:30:00.000Z",
       "rows": [
