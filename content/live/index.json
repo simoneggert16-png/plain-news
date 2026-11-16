@@ -1,6 +1,174 @@
 {
-  "updatedAt": "2026-11-16T08:34:25.614Z",
+  "updatedAt": "2026-11-16T08:43:34.624Z",
   "tickers": [
+    {
+      "slug": "israel-political-crisis",
+      "status": "live",
+      "category": "politics",
+      "importance": 5,
+      "title": "Israel Political Crisis",
+      "dek": "Eisenkot suggests Netanyahu cannot remain prime minister amid allegations of election interference",
+      "startedAt": "2026-11-16T05:43:08.374Z",
+      "updatedAt": "2026-11-16T08:43:20.995Z",
+      "endedAt": null,
+      "updateCount": 1,
+      "articleSlug": "israel-political-crisis",
+      "latest": {
+        "at": "2026-11-16T08:38:04.000Z",
+        "kind": "reaction",
+        "headline": "Israeli opposition leaders accuse Netanyahu of attempted coup"
+      },
+      "locales": {
+        "en": {
+          "title": "Israel Political Crisis",
+          "dek": "Eisenkot suggests Netanyahu cannot remain prime minister amid allegations of election interference"
+        },
+        "es": {
+          "title": "Crisis política israelí",
+          "dek": "Eisenkot sugiere que Netanyahu no puede seguir como primer ministro en medio de acusaciones de interferencia electoral"
+        },
+        "de": {
+          "title": "Israelische politische Krise",
+          "dek": "Eisenkot deutet an, dass Netanyahu angesichts von Vorwürfen der Wahlbeeinflussung nicht Premierminister bleiben kann"
+        },
+        "fr": {
+          "title": "Crise politique israélienne",
+          "dek": "Eisenkot suggère que Netanyahu ne peut rester premier ministre au vu des allégations d'ingérence électorale"
+        },
+        "it": {
+          "title": "Crisi politica in Israele",
+          "dek": "Eisenkot suggerisce che Netanyahu non possa rimanere primo ministro a causa di accuse di interferenza elettorale"
+        },
+        "zh": {
+          "title": "以色列政治危机",
+          "dek": "艾森科特认为，在选举干预指控下，内塔尼亚胡无法继续担任总理"
+        },
+        "pt": {
+          "title": "Crise Política em Israel",
+          "dek": "Eisenkot sugere que Netanyahu não pode permanecer primeiro-ministro face a alegações de interferência eleitoral"
+        },
+        "ja": {
+          "title": "イスラエルの政治危機",
+          "dek": "アイゼンコット氏は、選挙干渉の疑惑を背景にネタニヤフ首相は続投できないと示唆"
+        },
+        "ko": {
+          "title": "이스라엘 정치 위기",
+          "dek": "아이젠코트, 선거 개입 의혹 속 네타냐후 총리직 유지 어려울 것이라고 시사"
+        }
+      }
+    },
+    {
+      "slug": "live-ticker-krieg-in-der-ukraine-prinz-harry",
+      "status": "live",
+      "category": "world",
+      "importance": 5,
+      "title": "LIVE TICKER — War in Ukraine: Prince Harry visits veterans and Estonia closes borders",
+      "dek": "Prince Harry meets wounded soldiers in Lviv, while Estonia imposes border closures following an attack on a drone factory",
+      "startedAt": "2026-11-16T03:09:39.738Z",
+      "updatedAt": "2026-11-16T08:43:10.545Z",
+      "endedAt": null,
+      "updateCount": 5,
+      "articleSlug": "live-ticker-krieg-in-der-ukraine-prinz-harry",
+      "latest": {
+        "at": "2026-11-16T08:40:00.000Z",
+        "kind": "result",
+        "headline": "Russia halts traffic on Crimea bridge following drone attack"
+      },
+      "locales": {
+        "en": {
+          "title": "LIVE TICKER — War in Ukraine: Prince Harry visits veterans and Estonia closes borders",
+          "dek": "Prince Harry meets wounded soldiers in Lviv, while Estonia imposes border closures following an attack on a drone factory"
+        },
+        "es": {
+          "title": "TICKER EN VIVO - Guerra en Ucrania: Príncipe Harry visita veteranos y Estonia cierra fronteras",
+          "dek": "Príncipe Harry se reúne con soldados heridos en Lviv, mientras Estonia impone cierres fronterizos debido a un ataque a una fábrica de drones"
+        },
+        "fr": {
+          "title": "TICKER EN DIRECT - Guerre en Ukraine : Prince Harry rend visite à des vétérans et l'Estonie ferme ses frontières",
+          "dek": "Le prince Harry rencontre des soldats blessés à Lviv, tandis que l'Estonie instaure des fermetures de frontières suite à une attaque contre une usine de drones"
+        },
+        "it": {
+          "title": "LIVE-TICKER - Guerra in Ucraina: Principe Harry visita veterani ed Estonia chiude i confini",
+          "dek": "Il Principe Harry incontra soldati feriti a Lviv, mentre l'Estonia impone chiusure di frontiera dopo un attacco a una fabbrica di droni"
+        },
+        "pt": {
+          "title": "TICKER AO VIVO - Guerra na Ucrânia: Príncipe Harry visita veteranos e a Estónia fecha fronteiras",
+          "dek": "Príncipe Harry encontra soldados feridos em Lviv, enquanto a Estónia impõe o encerramento de fronteiras após um ataque a uma fábrica de drones"
+        },
+        "zh": {
+          "title": "实时快讯 - 乌克兰战争：哈里王子探访退伍军人，爱沙尼亚关闭边境",
+          "dek": "哈里王子在利沃夫会见伤兵，爱沙尼亚在无人机工厂遭袭击后实施边境关闭"
+        },
+        "ja": {
+          "title": "ライブ・ティッカー - ウクライナ戦争：ハリー王子が退役軍人を訪問、エストニアが国境を閉鎖",
+          "dek": "ハリー王子はルヴィウで負傷兵と面会。エストニアはドローン工場攻撃を受け国境閉鎖を施行"
+        },
+        "ko": {
+          "title": "실시간 속보 - 우크라이나 전쟁: 해리 왕자 참전용사 방문 및 에스토니아 국경 폐쇄",
+          "dek": "해리 왕자가 Lvov에서 부상병들을 만나고, 에스토니아는 드론 공장 공격 이후 국경을 폐쇄했다"
+        },
+        "de": {
+          "title": "LIVE-TICKER - Krieg in der Ukraine: Prinz Harry besucht Veteranen und Estland schließt Grenzen",
+          "dek": "Prinz Harry trifft verwundete Soldaten in Lwiw, während Estland nach einem Angriff auf eine Drohnenfabrik Grenzkontrollen einführt"
+        }
+      }
+    },
+    {
+      "slug": "ukraine-russia-conflict-escalation",
+      "status": "live",
+      "category": "world",
+      "importance": 5,
+      "title": "Escalation in Ukraine-Russia conflict",
+      "dek": "Ukrainian forces have struck Russian industrial infrastructure, as President Zelenskyy raises concerns regarding Starshield satellite restrictions affecting energy defence.",
+      "startedAt": "2026-11-15T14:33:38.726Z",
+      "updatedAt": "2026-11-16T08:43:03.281Z",
+      "endedAt": null,
+      "updateCount": 12,
+      "articleSlug": "ukraine-russia-conflict-escalation",
+      "latest": {
+        "at": "2026-11-16T08:40:00.000Z",
+        "kind": "breaking",
+        "headline": "Russia halts traffic on Crimea Bridge following overnight drone attack"
+      },
+      "locales": {
+        "en": {
+          "title": "Escalation in Ukraine-Russia conflict",
+          "dek": "Ukrainian forces have struck Russian industrial infrastructure, as President Zelenskyy raises concerns regarding Starshield satellite restrictions affecting energy defence."
+        },
+        "de": {
+          "title": "Eskalation des Ukraine-Russland-Konflikts",
+          "dek": "Ukrainische Streitkräfte schlagen russische Industrieinfrastruktur an, während Präsident Selenskyj Bedenken hinsichtlich der Starshield-Satellitenbeschränkungen äußert, die die Energieverteidigung beeinträchtigen."
+        },
+        "pt": {
+          "title": "Escalada do conflito Ucrânia-Rússia",
+          "dek": "Forças ucranianas atacam infraestrutura industrial russa enquanto o Presidente Zelenskyy expressa preocupações sobre restrições do satélite Starshield que afetam a defesa energética."
+        },
+        "fr": {
+          "title": "Escalade du conflit entre l'Ukraine et la Russie",
+          "dek": "Les forces ukrainiennes frappent des infrastructures industrielles russes alors que le président Zelensky exprime ses inquiétudes concernant les restrictions du satellite Starshield affectant la défense énergétique."
+        },
+        "zh": {
+          "title": "乌克兰-俄罗斯冲突升级",
+          "dek": "乌克兰军队袭击俄罗斯工业基础设施，总统泽连斯基对星盾卫星限制影响能源防御表示担忧。"
+        },
+        "ja": {
+          "title": "ウクライナ・ロシア紛争の激化",
+          "dek": "ウクライナ軍がロシアの産業インフラを攻撃。ゼレンスキー大統領は、スターシールド衛星の制限がエネルギー防衛に与える影響について懸念を表明。"
+        },
+        "it": {
+          "title": "Escalation del conflitto Ucraina-Russia",
+          "dek": "Forze ucraine colpiscono infrastrutture industriali russe mentre il presidente Zelenskyy solleva preoccupazioni sulle restrizioni satellitari Starshield che impattano la difesa energetica."
+        },
+        "ko": {
+          "title": "우크라이나-러시아 분쟁 격화",
+          "dek": "우크라이나군이 러시아 산업 기반 시설을 타격하는 가운데 젤렌스키 대통령은 스타쉴드 위성 제한이 에너지 방어에 미치는 영향에 대해 우려를 표명했다."
+        },
+        "es": {
+          "title": "Escalada del conflicto Ucrania-Rusia",
+          "dek": "Fuerzas ucranianas atacan infraestructura industrial rusa mientras el presidente Zelenski expresa preocupación por las restricciones satelitales de Starshield que afectan la defensa energética."
+        }
+      }
+    },
     {
       "slug": "iran-refuses-un-nuclear-inspections-at-damaged-sites",
       "status": "live",
@@ -58,62 +226,6 @@
       }
     },
     {
-      "slug": "ukraine-russia-conflict-escalation",
-      "status": "live",
-      "category": "world",
-      "importance": 5,
-      "title": "Escalation in Ukraine-Russia conflict",
-      "dek": "Ukrainian forces have struck Russian industrial infrastructure, as President Zelenskyy raises concerns regarding Starshield satellite restrictions affecting energy defence.",
-      "startedAt": "2026-11-15T14:33:38.726Z",
-      "updatedAt": "2026-11-16T08:33:03.221Z",
-      "endedAt": null,
-      "updateCount": 11,
-      "articleSlug": "ukraine-russia-conflict-escalation",
-      "latest": {
-        "at": "2026-11-16T08:23:22.000Z",
-        "kind": "result",
-        "headline": "Ukraine launches drone barrage targeting Crimea bridge"
-      },
-      "locales": {
-        "en": {
-          "title": "Escalation in Ukraine-Russia conflict",
-          "dek": "Ukrainian forces have struck Russian industrial infrastructure, as President Zelenskyy raises concerns regarding Starshield satellite restrictions affecting energy defence."
-        },
-        "de": {
-          "title": "Eskalation des Ukraine-Russland-Konflikts",
-          "dek": "Ukrainische Streitkräfte schlagen russische Industrieinfrastruktur an, während Präsident Selenskyj Bedenken hinsichtlich der Starshield-Satellitenbeschränkungen äußert, die die Energieverteidigung beeinträchtigen."
-        },
-        "pt": {
-          "title": "Escalada do conflito Ucrânia-Rússia",
-          "dek": "Forças ucranianas atacam infraestrutura industrial russa enquanto o Presidente Zelenskyy expressa preocupações sobre restrições do satélite Starshield que afetam a defesa energética."
-        },
-        "fr": {
-          "title": "Escalade du conflit entre l'Ukraine et la Russie",
-          "dek": "Les forces ukrainiennes frappent des infrastructures industrielles russes alors que le président Zelensky exprime ses inquiétudes concernant les restrictions du satellite Starshield affectant la défense énergétique."
-        },
-        "zh": {
-          "title": "乌克兰-俄罗斯冲突升级",
-          "dek": "乌克兰军队袭击俄罗斯工业基础设施，总统泽连斯基对星盾卫星限制影响能源防御表示担忧。"
-        },
-        "ja": {
-          "title": "ウクライナ・ロシア紛争の激化",
-          "dek": "ウクライナ軍がロシアの産業インフラを攻撃。ゼレンスキー大統領は、スターシールド衛星の制限がエネルギー防衛に与える影響について懸念を表明。"
-        },
-        "it": {
-          "title": "Escalation del conflitto Ucraina-Russia",
-          "dek": "Forze ucraine colpiscono infrastrutture industriali russe mentre il presidente Zelenskyy solleva preoccupazioni sulle restrizioni satellitari Starshield che impattano la difesa energetica."
-        },
-        "ko": {
-          "title": "우크라이나-러시아 분쟁 격화",
-          "dek": "우크라이나군이 러시아 산업 기반 시설을 타격하는 가운데 젤렌스키 대통령은 스타쉴드 위성 제한이 에너지 방어에 미치는 영향에 대해 우려를 표명했다."
-        },
-        "es": {
-          "title": "Escalada del conflicto Ucrania-Rusia",
-          "dek": "Fuerzas ucranianas atacan infraestructura industrial rusa mientras el presidente Zelenski expresa preocupación por las restricciones satelitales de Starshield que afectan la defensa energética."
-        }
-      }
-    },
-    {
       "slug": "yemen-houthi-advance-on-aden",
       "status": "live",
       "category": "world",
@@ -166,62 +278,6 @@
         "ko": {
           "title": "예멘 후티, 아덴 진격",
           "dek": "반군이 항구 도시로 진격하는 가운데 정부군은 수도 방어를 위해 재정비 중"
-        }
-      }
-    },
-    {
-      "slug": "live-ticker-krieg-in-der-ukraine-prinz-harry",
-      "status": "live",
-      "category": "world",
-      "importance": 5,
-      "title": "LIVE TICKER — War in Ukraine: Prince Harry visits veterans and Estonia closes borders",
-      "dek": "Prince Harry meets wounded soldiers in Lviv, while Estonia imposes border closures following an attack on a drone factory",
-      "startedAt": "2026-11-16T03:09:39.738Z",
-      "updatedAt": "2026-11-16T08:03:06.171Z",
-      "endedAt": null,
-      "updateCount": 4,
-      "articleSlug": "live-ticker-krieg-in-der-ukraine-prinz-harry",
-      "latest": {
-        "at": "2026-11-16T07:54:49.000Z",
-        "kind": "result",
-        "headline": "Ukraine strikes Kerch Strait bridge linking Russia and Crimea"
-      },
-      "locales": {
-        "en": {
-          "title": "LIVE TICKER — War in Ukraine: Prince Harry visits veterans and Estonia closes borders",
-          "dek": "Prince Harry meets wounded soldiers in Lviv, while Estonia imposes border closures following an attack on a drone factory"
-        },
-        "es": {
-          "title": "TICKER EN VIVO - Guerra en Ucrania: Príncipe Harry visita veteranos y Estonia cierra fronteras",
-          "dek": "Príncipe Harry se reúne con soldados heridos en Lviv, mientras Estonia impone cierres fronterizos debido a un ataque a una fábrica de drones"
-        },
-        "fr": {
-          "title": "TICKER EN DIRECT - Guerre en Ukraine : Prince Harry rend visite à des vétérans et l'Estonie ferme ses frontières",
-          "dek": "Le prince Harry rencontre des soldats blessés à Lviv, tandis que l'Estonie instaure des fermetures de frontières suite à une attaque contre une usine de drones"
-        },
-        "it": {
-          "title": "LIVE-TICKER - Guerra in Ucraina: Principe Harry visita veterani ed Estonia chiude i confini",
-          "dek": "Il Principe Harry incontra soldati feriti a Lviv, mentre l'Estonia impone chiusure di frontiera dopo un attacco a una fabbrica di droni"
-        },
-        "pt": {
-          "title": "TICKER AO VIVO - Guerra na Ucrânia: Príncipe Harry visita veteranos e a Estónia fecha fronteiras",
-          "dek": "Príncipe Harry encontra soldados feridos em Lviv, enquanto a Estónia impõe o encerramento de fronteiras após um ataque a uma fábrica de drones"
-        },
-        "zh": {
-          "title": "实时快讯 - 乌克兰战争：哈里王子探访退伍军人，爱沙尼亚关闭边境",
-          "dek": "哈里王子在利沃夫会见伤兵，爱沙尼亚在无人机工厂遭袭击后实施边境关闭"
-        },
-        "ja": {
-          "title": "ライブ・ティッカー - ウクライナ戦争：ハリー王子が退役軍人を訪問、エストニアが国境を閉鎖",
-          "dek": "ハリー王子はルヴィウで負傷兵と面会。エストニアはドローン工場攻撃を受け国境閉鎖を施行"
-        },
-        "ko": {
-          "title": "실시간 속보 - 우크라이나 전쟁: 해리 왕자 참전용사 방문 및 에스토니아 국경 폐쇄",
-          "dek": "해리 왕자가 Lvov에서 부상병들을 만나고, 에스토니아는 드론 공장 공격 이후 국경을 폐쇄했다"
-        },
-        "de": {
-          "title": "LIVE-TICKER - Krieg in der Ukraine: Prinz Harry besucht Veteranen und Estland schließt Grenzen",
-          "dek": "Prinz Harry trifft verwundete Soldaten in Lwiw, während Estland nach einem Angriff auf eine Drohnenfabrik Grenzkontrollen einführt"
         }
       }
     },
@@ -390,58 +446,6 @@
         "zh": {
           "title": "伊朗无人机袭击巴林",
           "dek": "在伊朗革命卫队声称对美军基地发动袭击后，巴林启动了威胁警报并拦截了空中袭击。"
-        }
-      }
-    },
-    {
-      "slug": "israel-political-crisis",
-      "status": "live",
-      "category": "politics",
-      "importance": 5,
-      "title": "Israel Political Crisis",
-      "dek": "Eisenkot suggests Netanyahu cannot remain prime minister amid allegations of election interference",
-      "startedAt": "2026-11-16T05:43:08.374Z",
-      "updatedAt": "2026-11-16T05:43:08.374Z",
-      "endedAt": null,
-      "updateCount": 0,
-      "articleSlug": null,
-      "latest": null,
-      "locales": {
-        "en": {
-          "title": "Israel Political Crisis",
-          "dek": "Eisenkot suggests Netanyahu cannot remain prime minister amid allegations of election interference"
-        },
-        "es": {
-          "title": "Crisis política israelí",
-          "dek": "Eisenkot sugiere que Netanyahu no puede seguir como primer ministro en medio de acusaciones de interferencia electoral"
-        },
-        "de": {
-          "title": "Israelische politische Krise",
-          "dek": "Eisenkot deutet an, dass Netanyahu angesichts von Vorwürfen der Wahlbeeinflussung nicht Premierminister bleiben kann"
-        },
-        "fr": {
-          "title": "Crise politique israélienne",
-          "dek": "Eisenkot suggère que Netanyahu ne peut rester premier ministre au vu des allégations d'ingérence électorale"
-        },
-        "it": {
-          "title": "Crisi politica in Israele",
-          "dek": "Eisenkot suggerisce che Netanyahu non possa rimanere primo ministro a causa di accuse di interferenza elettorale"
-        },
-        "zh": {
-          "title": "以色列政治危机",
-          "dek": "艾森科特认为，在选举干预指控下，内塔尼亚胡无法继续担任总理"
-        },
-        "pt": {
-          "title": "Crise Política em Israel",
-          "dek": "Eisenkot sugere que Netanyahu não pode permanecer primeiro-ministro face a alegações de interferência eleitoral"
-        },
-        "ja": {
-          "title": "イスラエルの政治危機",
-          "dek": "アイゼンコット氏は、選挙干渉の疑惑を背景にネタニヤフ首相は続投できないと示唆"
-        },
-        "ko": {
-          "title": "이스라엘 정치 위기",
-          "dek": "아이젠코트, 선거 개입 의혹 속 네타냐후 총리직 유지 어려울 것이라고 시사"
         }
       }
     },
