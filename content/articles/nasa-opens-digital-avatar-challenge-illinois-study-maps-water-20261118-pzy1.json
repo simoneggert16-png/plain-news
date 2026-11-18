@@ -1,0 +1,50 @@
+{
+  "slug": "nasa-opens-digital-avatar-challenge-illinois-study-maps-water-20261118-pzy1",
+  "category": "science",
+  "image": "https://www.nasa.gov/wp-content/uploads/2023/12/nasainsigniargb150px.png",
+  "imageCredit": "NASA",
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-18T03:35:43.436Z",
+  "updatedAt": "2026-11-18T03:35:43.436Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "NASA",
+      "title": "BPS Digital AVATAR Challenge",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/bps-digital-avatar-challenge/",
+      "publishedAt": "2026-11-17T20:39:38.000Z"
+    },
+    {
+      "outlet": "Phys.org",
+      "title": "New model reveals how water moves through tile-drained farm fields",
+      "url": "https://phys.org/news/2026-11-reveals-tile-farm-fields.html",
+      "publishedAt": "2026-11-18T03:20:07.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "NASA opens digital avatar challenge; Illinois study maps water movement in tile-drained fields",
+      "dek": "NASA competition seeks digital twins of astronaut bone marrow chips; Illinois study uses 3D modeling to track farm-field water flow",
+      "facts": [
+        "NASA's BPS Digital AVATAR Challenge invites the scientific community to apply computational digital twin technologies to model how the AVATAR bone marrow chip responds to spaceflight stressors.,The original AVATAR investigation flew aboard the Artemis II mission and returned organ-on-a-chip devices from crew cells after a 10-day lunar flyby.",
+        "University of Illinois Urbana-Champaign published a study in the Journal of Hydrology on high-resolution three-dimensional modeling of surface and subsurface water movement in tile-drained fields.,The study tested two approaches for representing tile drainage in the Advanced Terrestrial Simulator, finding that 2-meter resolution preserved local ponding patterns while 40-meter resolution smoothed out fine-scale features."
+      ],
+      "body": [
+        "NASA has opened the BPS Digital AVATAR Challenge, inviting the scientific community to apply innovative computational digital twin technologies to accelerate biological discovery and predict individual astronaut health outcomes. The digital twin will be a computational model of how the AVATAR bone marrow chip responds to spaceflight stressors, building on the original AVATAR investigation that flew aboard the Artemis II mission and returned organ-on-a-chip devices from crew cells after a 10-day lunar flyby.",
+        "A new study from the University of Illinois Urbana-Champaign, published in the Journal of Hydrology, addresses gaps in modeling water movement through tile-drained agricultural fields. Working with collaborators at Oak Ridge National Laboratory, the Illinois team used two tile-drained fields at the University of Illinois Energy Farm to evaluate how model resolution, microtopography, soil properties, and tile depth and spacing affected drainage."
+      ],
+      "context": "NASA develops personalized health strategies for deep space crew members while agricultural researchers model water movement in farm fields to support crop growth and water quality.",
+      "imageCaption": "Profile image for Bailey Light"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Science & Human Progress Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline exceeds 90 characters (112 chars). Facts 4 and 5 contain invented numbers not in sources (40-meter resolution claim not fully supported for overall drainage, and 2-meter vs 40-meter comparison lacks specific numeric claim from source). Fact 2 states 'April 10, 2026' but source gives 'April 10, 2026' as a lunar flyby date; source text says 'April 10, 2026' but the date format in source is 'April 10, 2026' — need to verify exact phrasing. Fact 5 states 'finer resolution is more important' which is a conclusion requiring attribution. Body: paragraph 2 repeats 'both approaches reproduced field-scale drainage reasonably well' from paragraph 1 without adding new info. Body: ends with evaluative summary 'This becomes more important when we want to study nutrient transport...' which is evaluative framing. Body: ends paragraph with 'while soil propertie' (incomplete). Context contains 'data-driven health strategies' which is from source but needs neutral framing. Category 'science' is fine but importance 3 needs justification if publishing."
+    ]
+  }
+}
