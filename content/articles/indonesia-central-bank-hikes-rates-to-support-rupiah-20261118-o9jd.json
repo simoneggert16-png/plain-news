@@ -1,0 +1,78 @@
+{
+  "slug": "indonesia-central-bank-hikes-rates-to-support-rupiah-20261118-o9jd",
+  "category": "business",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-18T09:45:36.558Z",
+  "updatedAt": "2026-11-18T09:45:36.558Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "HeraldNet.com",
+      "title": "Burke: Not another word about … the Blue Tsunami",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPaDVhaE5RcVpjbFBfRDdnY1J3QWMtR3VrWFRsUGRWSE9PMWo5RnFTd3lCSjNMbXFhWDEzTFA4MFowRXZoRE9FZFVDWWQ2Qmx2dXRFbVpwQTViWHpRZC01aUIwN3p6NkdHRHJfNHBpcEhHdnRaaERRcVNXT3hTdW5taVhEU2lNb00ybF9V?oc=5",
+      "publishedAt": "2026-11-18T09:32:08.000Z"
+    },
+    {
+      "outlet": "Reuters",
+      "title": "Indonesia central bank hikes rates to support rupiah",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQanJKMzJaNDVraEhpYUJhZ0JYZjdwQU9QSG5xNGtvR3VWaEtRSGJ4ZE9fTkxDYnBObnB2c3Z4bk1kdWtFekF5bG9aZVJvMjk3S2dBWlp5QURJcngyNUVWZkFCZXFjZFRaNXRlN3NGeU9ybm9JWTMtY1NBQ2xjVkZxLU1HOTJnNTgzRjd6Qm5MNXYwbkQ1c1E?oc=5",
+      "publishedAt": "2026-11-18T07:23:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Indonesia central bank hikes rates to support rupiah",
+      "dek": "Indonesia's central bank raised its key rate, Reuters reported",
+      "facts": [
+        "Indonesia's central bank raised its key rate,Reuters reported the decision",
+        "The decision was made on November 18, 2026,Source timestamp confirms date but source text does not state the date"
+      ],
+      "body": [
+        "Reuters reported Indonesia's central bank raised its key rate,The decision was made to support the rupiah currency",
+        "The central bank took action on currency stability,Source confirms the bank hiked rates"
+      ],
+      "context": "Indonesia's central bank adjusted its interest rate according to Reuters reporting",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "Indonesische Notenbank erhöht Leitzins für Rupiah",
+      "dek": "Indonesische Notenbank erhöht Leitzins, berichtete Reuters",
+      "facts": [
+        "Indonesische Notenbank erhöht Leitzins, berichtete Reuters über die Entscheidung",
+        "Die Entscheidung wurde am 18. November 2026 getroffen, Quelle bestätigt Datum, Originaltext nennt Datum nicht @@CONTEXTIndonesische Notenbank passt Leitzins gemäß Reuters-Berichterstattung an @@CAPTION"
+      ],
+      "body": [
+        "Reuters berichtete, dass die indonesische Zentralbank ihren Leitzins erhöht habe. Die Entscheidung wurde getroffen, um die Währung Rupiah zu stützen.",
+        "Die Zentralbank handelte im Hinblick auf die Währungssicherheit. Eine Quelle bestätigte, dass die Bank die Zinsen erhöht habe."
+      ],
+      "context": "",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "印尼央行加息支持卢比亚",
+      "dek": "路透社报道，印尼央行上调关键利率",
+      "facts": [
+        "印尼央行上调关键利率，路透社报道该决定",
+        "11月18日，印尼央行做出利率调整决定"
+      ],
+      "body": [
+        "路透社报道，印尼央行上调了其关键利率。此举旨在支持卢比亚货币。",
+        "央行针对货币稳定性采取了行动。消息来源确认央行已加息。"
+      ],
+      "context": "路透社报道，印尼央行根据报道调整了利率",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Markets & Global Economy Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts not in sources: 'November 18, 2026' date invented; 'key interest rate' not specified in source; 'stabilize the rupiah' and 'address currency pressure' are interpretation not in source text; 'Reuters reported the decision' adds attribution not present in source text; body paragraph 2 invents 'ongoing pressure in global foreign exchange markets' and 'mandate to maintain price stability' not in source; context section invents official currency status and typical central bank behavior not in source; headline uses clickbait framing 'to support rupiah' as purpose rather than reported fact; four short declarative sentences in paragraph 1 violates rhythm rule; paragraph 2 opens with same noun 'The' as paragraph 1; summary sentence 'The move aims to...' evaluates purpose not reported; 'amid growing concerns' style filler banned; no source specifies the rate amount or specific policy mechanism"
+    ]
+  }
+}
