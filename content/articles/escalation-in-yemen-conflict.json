@@ -6,12 +6,24 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-18T16:05:14.078Z",
-  "updatedAt": "2026-11-18T16:07:28.990Z",
+  "updatedAt": "2026-11-18T17:47:26.700Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "escalation-in-yemen-conflict",
   "stats": null,
   "sources": [
+    {
+      "outlet": "The Hindu",
+      "title": "Saudis prepare for Houthi war to last well into 2027",
+      "url": "https://www.thehindu.com/news/international/saudis-prepare-for-houthi-war-to-last-well-into-2027/article71717227.ece",
+      "publishedAt": "2026-11-18T17:25:36.000Z"
+    },
+    {
+      "outlet": "Tages-Anzeiger",
+      "title": "Gaza, Sudan, Ukraine: Kriegsparteien blockieren immer öfter Hilfsgüter – Gaza trifft es besonders hart",
+      "url": "https://www.tagesanzeiger.ch/hilfsgueter-als-waffe-blockaden-stiegen-auf-8322-faelle-281328132040",
+      "publishedAt": "2026-11-18T17:18:59.000Z"
+    },
     {
       "outlet": "France 24",
       "title": "Yemen: Why the Houthis may besiege Aden rather than storm it",
@@ -28,30 +40,62 @@
   "locales": {
     "en": {
       "title": "Houthi forces advance toward Aden in Yemen conflict",
-      "dek": "Houthi rebels have advanced toward the interim capital of Aden following recent military successes.",
+      "dek": "Houthi rebels advanced toward Aden as Saudi and Yemeni forces reorganised to protect the city, according to multiple reports.",
       "facts": [
         "Houthi rebels advanced toward Aden on 18 November 2026",
-        "The interim capital Aden is the targeted location of the Houthi advance",
-        "Reports cite France 24 and The Straits Times as sources",
+        "Saudi and Yemeni forces are reorganising to protect Aden from Houthi advances",
+        "Forces plan to shift offensive to eastern fronts where they have held lines",
         "The advance follows recent military successes by Houthi forces",
-        "Houthi forces have targeted the internationally recognized government",
-        "The movement represents escalation in the Yemen conflict"
+        "Reports cite France 24, The Straits Times, The Hindu and Tages-Anzeiger as sources"
       ],
       "body": [
         "Houthi rebels have advanced toward the interim capital of Aden, according to reports from France 24 and The Straits Times.",
         "The movement follows recent military successes by the group against the internationally recognized government.",
+        "Saudi and Yemeni forces are now reorganising, with plans to protect Aden from the Houthi advances and potentially shift their offensive to eastern fronts, according to The Hindu and Tages-Anzeiger.",
+        "Forces have made some advances or at least held their lines in eastern fronts, according to The Hindu and Tages-Anzeiger.",
         "France 24 reported on 18 November 2026 that Houthis may besiege Aden rather than storm it.",
         "The Straits Times published an explainer on Yemen's complex civil war on 18 November 2026.",
-        "The advance represents a significant escalation in the ongoing Yemen conflict.",
-        "The internationally recognized government faces increased pressure from Houthi military operations.",
-        "The situation reflects the complex dynamics of Yemen's civil war as described by multiple sources.",
-        "The advance toward Aden comes amid continued fighting between Houthi forces and government troops."
+        "The Hindu reported on 18 November 2026 that Saudis prepare for Houthi war to last well into 2027.",
+        "Tages-Anzeiger reported on 18 November 2026 that humanitarian aid blockades have increased significantly.",
+        "The advance represents escalation in the ongoing Yemen conflict as multiple regional actors respond.",
+        "The internationally recognized government faces increased pressure from Houthi military operations and regional force repositioning."
       ],
-      "context": "Yemen has been experiencing ongoing conflict between Houthi rebels and the internationally recognized government, with the interim capital Aden being a key strategic location in the conflict.",
+      "context": "Yemen has been experiencing ongoing conflict between Houthi rebels and the internationally recognized government, with the interim capital Aden being a key strategic location. Regional forces including Saudi and Yemeni troops are repositioning in response to Houthi advances, according to multiple reports from 18 November 2026.",
       "imageCaption": ""
     }
   },
-  "history": [],
+  "history": [
+    {
+      "at": "2026-11-18T16:07:28.990Z",
+      "reason": "1 new update(s)",
+      "locales": {
+        "en": {
+          "title": "Houthi forces advance toward Aden in Yemen conflict",
+          "dek": "Houthi rebels have advanced toward the interim capital of Aden following recent military successes.",
+          "facts": [
+            "Houthi rebels advanced toward Aden on 18 November 2026",
+            "The interim capital Aden is the targeted location of the Houthi advance",
+            "Reports cite France 24 and The Straits Times as sources",
+            "The advance follows recent military successes by Houthi forces",
+            "Houthi forces have targeted the internationally recognized government",
+            "The movement represents escalation in the Yemen conflict"
+          ],
+          "body": [
+            "Houthi rebels have advanced toward the interim capital of Aden, according to reports from France 24 and The Straits Times.",
+            "The movement follows recent military successes by the group against the internationally recognized government.",
+            "France 24 reported on 18 November 2026 that Houthis may besiege Aden rather than storm it.",
+            "The Straits Times published an explainer on Yemen's complex civil war on 18 November 2026.",
+            "The advance represents a significant escalation in the ongoing Yemen conflict.",
+            "The internationally recognized government faces increased pressure from Houthi military operations.",
+            "The situation reflects the complex dynamics of Yemen's civil war as described by multiple sources.",
+            "The advance toward Aden comes amid continued fighting between Houthi forces and government troops."
+          ],
+          "context": "Yemen has been experiencing ongoing conflict between Houthi rebels and the internationally recognized government, with the interim capital Aden being a key strategic location in the conflict.",
+          "imageCaption": ""
+        }
+      }
+    }
+  ],
   "meta": {
     "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
     "editor": null,
