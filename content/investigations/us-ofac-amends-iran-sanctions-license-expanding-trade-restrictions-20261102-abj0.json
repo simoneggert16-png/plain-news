@@ -14,7 +14,7 @@
     "hints": "Issuance of Amended Iran-related General License"
   },
   "createdAt": "2026-11-02T15:41:59.014Z",
-  "updatedAt": "2026-11-18T01:35:10.464Z",
+  "updatedAt": "2026-11-18T16:13:24.653Z",
   "queries": [
     "OFAC amended Iran-related General License 2026",
     "OFAC Iran sanctions 2026",
@@ -2214,6 +2214,46 @@
       "checkedAt": "2026-11-18T01:07:40.414Z",
       "checked": "partial",
       "checkNote": "The text states Operation Economic Outcast was announced on the day of the article (no specific date given in the excerpt) and quotes Secretary Bessent, but does not state the announcement date as August 24, 2026. It does confirm the target"
+    },
+    {
+      "id": "C125",
+      "text": "On November 4, 2026, OFAC designated under IRAN-EO13902 four individuals linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED and shadow fleet operations with secondary sanctions risk under Section 2 of E.O. 13902: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti. (S6)",
+      "sources": [
+        "S6"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-18T15:58:45.289Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C130",
+      "text": "The amended Iran-related General License FF-1 (October 29, 2026) does NOT expand general trade restrictions on Iranian entities; the expansion of trade restrictions comes from SDN designations under IRAN-EO13902. (S1,S2,S4,S6)",
+      "sources": [
+        "S1",
+        "S2",
+        "S4",
+        "S6"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-18T15:58:49.548Z",
+      "checked": "supported"
+    },
+    {
+      "id": "C131",
+      "text": "CONSOLIDATED FINDINGS: Iranian entities now restricted under IRAN-EO13902 as of November 4, 2026:\n\n(1) October 21, 2026 designations:\n- Karnakis and Karnakis (entity with offices in Panama City, Panama and Piraeus, Greece)\n- Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086)\n- Five individuals: Karnakis Kosmas Ioanis (DOB 20 Aug 1982, Panama City, Panama; passport PA1335855), Karnakis Kosmas Konstantinos (DOB 22 Feb 1981, Panama; alt. nationality Greece), Karnakis Kosmas Sofianos (DOB 06 Jan 1975, Panama City, Panama), Ortega Jones Pedro (DOB 31 Jan 1976, ",
+      "sources": [
+        "S1",
+        "S2",
+        "S4",
+        "S6"
+      ],
+      "status": "verified",
+      "weight": 2,
+      "checkedAt": "2026-11-18T15:58:56.054Z",
+      "checked": "partial",
+      "checkNote": "The source text S2 lists Karnakis and Karnakis (entity) and five individuals under IRAN-EO13902, including Karnakis Kosmas Ioanis and Karnakis Kosmas Konstantinos. It also references Amigoz Singapore Pte. Ltd. in the claim but the SDN list "
     }
   ],
   "gaps": [
@@ -3058,6 +3098,42 @@
       "role": "the institution whose document is on file",
       "email": "news@sec.gov",
       "emailSource": "https://www.sec.gov/newsroom"
+    },
+    {
+      "org": "US Department of Justice",
+      "role": "the institution whose document is on file",
+      "email": "press@usdoj.gov",
+      "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
+    },
+    {
+      "org": "US SEC EDGAR",
+      "role": "the institution whose document is on file",
+      "email": "news@sec.gov",
+      "emailSource": "https://www.sec.gov/newsroom"
+    },
+    {
+      "org": "US Department of Justice",
+      "role": "the institution whose document is on file",
+      "email": "press@usdoj.gov",
+      "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
+    },
+    {
+      "org": "US SEC EDGAR",
+      "role": "the institution whose document is on file",
+      "email": "news@sec.gov",
+      "emailSource": "https://www.sec.gov/newsroom"
+    },
+    {
+      "org": "US Department of Justice",
+      "role": "the institution whose document is on file",
+      "email": "press@usdoj.gov",
+      "emailSource": "https://www.justice.gov/opa/webform/media-inquiries"
+    },
+    {
+      "org": "US SEC EDGAR",
+      "role": "the institution whose document is on file",
+      "email": "news@sec.gov",
+      "emailSource": "https://www.sec.gov/newsroom"
     }
   ],
   "outreach": [
@@ -3098,7 +3174,7 @@
     }
   ],
   "centre": "Iran",
-  "lastShiftAt": "2026-11-18T01:30:58.959Z",
+  "lastShiftAt": "2026-11-18T16:10:36.095Z",
   "letters": [
     {
       "id": "L1",
@@ -3131,334 +3207,23 @@
   ],
   "agent": [
     {
-      "at": "2026-11-18T01:07:40.414Z",
+      "at": "2026-11-18T15:44:46.535Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I need to identify the Iranian entities restricted under the amended OFAC license and the impact on international trade. I have extensive source material from OFAC actions on October 21 and November 4, 2026, and the amended General License FF-1 on October 29, 2026. I need to consolidate the restricted entities and clarify the license's trade impact.",
-          "action": "save_claim",
-          "args": {
-            "text": "The amended Iran-related General License FF-1 (October 29, 2026) authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50% or greater interest, through 12:01 a.m. EST December 1, 2026. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902. (S1,S2,S4,S6)",
-            "sources": [
-              "S1",
-              "S2",
-              "S4",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2886
-        },
-        {
-          "step": 2,
-          "thought": "The claim I tried to save was a duplicate of C95. I need to find a distinct claim or rephrase. Let me look at what's already on file and identify a new, distinct finding.",
-          "action": "save_claim",
-          "args": {
-            "text": "On October 21, 2026, OFAC designated under IRAN-EO13902 the entity Karnakis and Karnakis (with offices in Panama City, Panama and Piraeus, Greece), Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086), and five individuals: Karnakis Kosmas Ioanis (DOB 20 Aug 1982, Panama City, Panama), Karnakis Kosmas Konstantinos (DOB 22 Feb 1981, Panama; alt. nationality Greece), Karnakis Kosmas Sofianos (DOB 06 Jan 1975, Panama City, Panama), Ortega Jones Pedro (DOB 31 Jan 1976, Panama City, Panama), and Ortega Jones Roberto (DOB 24 Dec 1972, Panama City, Panama). All were linked to Karnakis and Karnakis. (S2)",
-            "sources": [
-              "S2"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1987
-        },
-        {
-          "step": 3,
-          "thought": "The claim I tried to save was a duplicate of C99. I need to find a distinct claim not already on file. Let me look at the November 4, 2026 designations under IRAN-EO13902.",
-          "action": "save_claim",
-          "args": {
-            "text": "On November 4, 2026, OFAC designated under IRAN-EO13902 four individuals linked to shadow fleet operations and ARYAVART SHIP MANAGEMENT PRIVATE LIMITED with secondary sanctions risk under Section 2 of E.O. 13902: DHIMAN Ashwani Kumar (Chandigarh, India; DOB 01 Mar 1980), SHARMA Suniel Kumar (Chandigarh, India; DOB 07 Oct 1979), SINGH Ishwinder (Chandigarh, India; DOB 01 Apr 1992), and SHAHID Jaspreet Preeti (Chandigarh, India; DOB 22 Aug 1980). (S6)",
-            "sources": [
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1834
-        },
-        {
-          "step": 4,
-          "thought": "The claim I tried to save was a duplicate of C102. I need to find a distinct claim. Let me look at the specific details of the Karnakis and Karnakis entity designation.",
-          "action": "save_claim",
-          "args": {
-            "text": "Karnakis and Karnakis was designated under IRAN-EO13902 on October 21, 2026, with offices in Global Plaza Building, Calle 50, Floor 21, Panama City, Panama; and 158 II Merachias and Alkiviadou, Piraeus 185 35, Greece; RUC # 921299-2-23411 Panama. (S2,S6)",
-            "sources": [
-              "S2",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1310
-        },
-        {
-          "step": 5,
-          "thought": "I've saved several claims already. Now I need to consolidate the key findings about which Iranian entities are restricted and the impact of the amended license. Let me save a comprehensive claim about the November 4, 2026 designations that complements the earlier October 21 designations.",
-          "action": "save_claim",
-          "args": {
-            "text": "On November 4, 2026, OFAC designated under IRAN-EO13902 four individuals linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED and shadow fleet operations with secondary sanctions risk under Section 2 of E.O. 13902: DHIMAN Ashwani Kumar (Chandigarh, India; DOB 01 Mar 1980; Passport Z5925452), SHARMA Suniel Kumar (Chandigarh, India; DOB 07 Oct 1979; Passport Z5925452 expiring 27 Jul 2030), SINGH Ishwinder (Chandigarh, India; DOB 01 Apr 1992; Registration Number 08409602), and SHAHID Jaspreet Preeti a.k.a. KAUR Jaspreet (Chandigarh, India; DOB 22 Aug 1980; Registration Number 03563403). Also designated under IRAN-CON-ARMS-EO: Alisher Domullodzhanov (Str. 5, Bld. 6, Khripan Village, Ramenskiy Rayon, Moscow Oblast 140163, Russia; DOB 29 Nov 1989; POB Dushanbe, Tajikistan). (S6)",
-            "sources": [
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2544
-        },
-        {
-          "step": 6,
-          "thought": "I need to save a claim about the impact of the amended license on international trade. The key finding is that FF-1 does not expand general trade restrictions but the SDN designations under IRAN-EO13902 create secondary sanctions risk.",
-          "action": "save_claim",
-          "args": {
-            "text": "The amended Iran-related General License FF-1 (October 29, 2026) authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons. (S1,S2,S4,S6)",
-            "sources": [
-              "S1",
-              "S2",
-              "S4",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2535
-        },
-        {
-          "step": 7,
-          "thought": "The claim I tried to save was a duplicate of C118. I need to find a distinct claim. Let me look at the specific entities designated on October 21, 2026 under IRAN-EO13902 and their connections.",
-          "action": "save_claim",
-          "args": {
-            "text": "On October 21, 2026, OFAC added to the SDN List under Executive Order 13902 (IRAN-EO13902) five individuals — Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, and Ortega Jones Roberto — and two entities, Amigoz Singapore Pte. Ltd. and Karnakis and Karnakis, each linked to Karnakis and Karnakis. (S2)",
-            "sources": [
-              "S2"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2656
-        },
-        {
-          "step": 8,
-          "thought": "The claim I tried to save was a duplicate of C4. I need to find a distinct claim not already on file. Let me look at the specific details of the Amigoz Singapore Pte. Ltd. designation.",
-          "action": "save_claim",
-          "args": {
-            "text": "Amigoz Singapore Pte. Ltd. was designated under IRAN-EO13902 on October 21, 2026, located at 2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086; website https://amigozsg.com; Organization Established Date 27 Nov 2019; Business Number 201940121Z. (S2)",
-            "sources": [
-              "S2"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1352
-        },
-        {
-          "step": 9,
-          "thought": "I've now saved several key claims. Let me consolidate the main findings about restricted entities and the license impact. I need to ensure I have distinct claims covering all the essential information. Let me save a claim about the secondary sanctions risk triggered by the designations.",
-          "action": "save_claim",
-          "args": {
-            "text": "The SDN designations under IRAN-EO13902 trigger secondary sanctions risk for any person facilitating transactions with designated individuals/entities. This means international traders, US firms, and global companies must exercise caution when dealing with persons or vessels associated with the designated entities, as transactions could expose them to sanctions. (S2)",
-            "sources": [
-              "S2"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2139
-        },
-        {
-          "step": 10,
-          "thought": "I need to ensure I have a complete picture of the restricted entities. Let me save a claim summarizing all Iranian entities restricted under the OFAC actions as of November 4, 2026.",
-          "action": "save_claim",
-          "args": {
-            "text": "Iranian entities now restricted under IRAN-EO13902 as of November 4, 2026 include: (1) October 21, 2026 designations: Karnakis and Karnakis (entity with offices in Panama City, Panama and Piraeus, Greece), Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086), and five individuals: Karnakis Kosmas Ioanis (DOB 20 Aug 1982, Panama City, Panama), Karnakis Kosmas Konstantinos (DOB 22 Feb 1981, Panama; alt. nationality Greece), Karnakis Kosmas Sofianos (DOB 06 Jan 1975, Panama City, Panama), Ortega Jones Pedro (DOB 31 Jan 1976, Panama City, Panama), Ortega Jones Roberto (DOB 24 Dec 1972, Panama City, Panama). (2) November 4, 2026 designations: DHIMAN Ashwani Kumar (Chandigarh, India; DOB 01 Mar 1980), SHARMA Suniel Kumar (Chandigarh, India; DOB 07 Oct 1979), SINGH Ishwinder (Chandigarh, India; DOB 01 Apr 1992), and SHAHID Jaspreet Preeti (Chandigarh, India; DOB 22 Aug 1980), all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED with secondary sanctions risk under Section 2 of E.O. 13902. (S1,S2,S4,S6)",
-            "sources": [
-              "S1",
-              "S2",
-              "S4",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2795
-        },
-        {
-          "step": 11,
-          "thought": "The claim I tried to save was a duplicate of C96. I need to find a distinct claim. Let me look at the specific connection between the Karnakis and Karnakis entity and the shadow fleet operations.",
-          "action": "save_claim",
-          "args": {
-            "text": "Karnakis and Karnakis played a key role in establishing the corporate network behind Iranian liquefied petroleum gas magnate Seyed Asadoollah Emamjomeh, whose shipping operations transported hundreds of millions of dollars' worth of Iranian LPG and crude oil. The law firm helped obscure ownership of companies involved in Iranian commodity shipments. (S11)",
-            "sources": [
-              "S11"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1295
-        },
-        {
-          "step": 12,
-          "thought": "I need to ensure I have a claim about the Operation Economic Outcast connection, which is central to the story. Let me save a claim about the Treasury's Operation Economic Outcast announcement.",
-          "action": "save_claim",
-          "args": {
-            "text": "Operation Economic Outcast was announced by Secretary of the Treasury Scott Bessent on August 24, 2026, and is described by Treasury as severing the remaining economic lifelines of the Iranian regime. Secretary Bessent was quoted saying 'under Operation Economic Outcast, you are either with us or against us.' The operation targeted the criminal network of India-based Suniel Kumar Sharma and his spouse Jaspreet Preeti Shahid for supporting Iran's shadow fleet through maritime fraud involving false flags and certifications for sanctioned vessels transporting Iranian petroleum. (S13)",
-            "sources": [
-              "S13"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1331
+          "thought": "I have identified the key entities designated by OFAC under IRAN-EO13902 and the scope of the amended General License FF-1. I need to synthesize these findings to address the user's request, ensuring I distinguish between the specific wind-down authorization of FF-1 and the broader impact of the SDN designations. I have sufficient information from the provided sources to answer the question.",
+          "action": "final",
+          "ms": 6864
         }
       ],
-      "final": null
+      "final": "The US Treasury's Office of Foreign Assets Control (OFAC) has expanded trade restrictions on Iran through two primary mechanisms: the issuance of amended General License FF-1 and the designation of multiple entities and individuals to the Specially Designated Nationals (SDN) list under Executive Order 13902 (IRAN-EO13902).\n\n### Restricted Entities and Individuals\nAs of November 4, 2026, the following entities and individuals have been designated under IRAN-EO13902, primarily for their roles in supporting Iran's shadow fleet and maritime sanctions evasion:\n\n*   **Designated October 21, 2026:**\n    *   **Karnakis and Karnakis:** A law firm with offices in Panama City, Panama, and Piraeus, Greece.\n    *   **Amigoz Singapore Pte. Ltd.:** A Singapore-based entity (2 Leng Kee Road, #02-10, Thye Hong Centre).\n    *   **Five Individuals:** Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, and Ortega Jones Roberto.\n\n*   **Designated November 4, 2026:**\n    *   **Four Individuals:** DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti. These individuals are linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED and are cited for their involvement in maritime fraud, including the use of false flags and certifications to transport Iranian petroleum.\n\n### Impact on International Trade\n*   **General License FF-1:** The amended General License FF-1 (issued October 29, 2026) does **not** expand general trade restrictions. It is a narrow authorization allowing for the wind-down of transactions involving the International Development Bank for Investment and Finance (Iraq Development Bank) or its 50%-or-greater-owned entities until 12:01 a.m. EST on December 1, 2026. Any payments to blocked persons under this license must be deposited into blocked accounts in accordance with the Iranian Transactions and Sanctions Regulations (ITSR).\n*   **SDN Designations:** The actual expansion of trade restrictions is dr"
     },
     {
-      "at": "2026-11-18T01:21:32.951Z",
+      "at": "2026-11-18T15:59:13.040Z",
       "steps": [
         {
           "step": 1,
-          "thought": "I need to identify the Iranian entities restricted under the amended OFAC Iran sanctions and the impact of the amended license on international trade. I have extensive source material from OFAC actions in October and November 2026. I will first review the key source documents to extract the restricted entities and the license impact.",
-          "action": "search",
-          "args": {
-            "query": "OFAC amended Iran-related General License 2026 impact international trade restrictions entities restricted"
-          },
-          "ok": true,
-          "ms": 14008
-        },
-        {
-          "step": 2,
-          "thought": "The search returned mostly unrelated results. I need to search more specifically for the OFAC Iran license amendment and restricted entities. Let me try a more targeted query.",
-          "action": "search",
-          "args": {
-            "query": "OFAC Iran General License FF-1 October 2026 restricted entities secondary sanctions"
-          },
-          "ok": true,
-          "ms": 15379
-        },
-        {
-          "step": 3,
-          "thought": "The search results are not giving me the specific OFAC documents I need. Let me search directly for the OFAC recent actions page about Iran sanctions.",
-          "action": "search",
-          "args": {
-            "query": "site:ofac.treasury.gov Iran-related General License FF-1 2026"
-          },
-          "ok": true,
-          "ms": 1179
-        },
-        {
-          "step": 4,
-          "thought": "",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261029"
-          },
-          "ok": true,
-          "ms": 11124
-        },
-        {
-          "step": 5,
-          "thought": "I found the OFAC page for the amended Iran-related General License FF-1 issued on October 29, 2026. The page states it authorizes the wind down of transactions involving International Development Bank for Investment and Finance. There's a link to the full license text. Let me open the license document.",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/media/937311/download?inline"
-          },
-          "ok": true,
-          "ms": 12931
-        },
-        {
-          "step": 6,
-          "thought": "I now have the full text of Iran General License FF-1. Key points: (a) authorizes transactions ordinarily incident and necessary to the wind down involving Iraq Development Bank or entities where it owns 50%+ interest, through Dec 1, 2026; (b) does NOT authorize transactions involving other blocked persons; (c) supersedes the Oct 15, 2026 General License FF. This license does NOT expand general tr",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261021"
-          },
-          "ok": true,
-          "ms": 11598
-        },
-        {
-          "step": 7,
-          "thought": "Excellent! I now have the key OFAC October 21, 2026 SDN designations under IRAN-EO13902. The designations include: 5 individuals (Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto) and 2 entities (Amigoz Singapore Pte. Ltd. and Karnakis and Karnakis), all linked to Karnakis and Karnakis. Let me also check the November 4, 2026 a",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261104"
-          },
-          "ok": true,
-          "ms": 11094
-        },
-        {
-          "step": 8,
-          "thought": "Now I have the complete picture. From Observation 6 (October 21, 2026) and Observation 7 (November 4, 2026), I have all the restricted entities. Let me also verify the impact of the amended license from the source material. I have enough information to answer the user's questions. Let me organize the findings.",
-          "action": "save_claim",
-          "args": {
-            "text": "Iranian entities restricted under IRAN-EO13902 as of November 4, 2026: (1) October 21, 2026 designations: Karnakis and Karnakis (entity with offices in Panama City, Panama and Piraeus, Greece), Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086), and five individuals: Karnakis Kosmas Ioanis (DOB 20 Aug 1982), Karnakis Kosmas Konstantinos (DOB 22 Feb 1981), Karnakis Kosmas Sofianos (DOB 06 Jan 1975), Ortega Jones Pedro (DOB 31 Jan 1976), Ortega Jones Roberto (DOB 24 Dec 1972). (2) November 4, 2026 designations: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti (all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED with secondary sanctions risk under Section 2 of E.O. 13902).",
-            "sources": [
-              "S2",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 2045
-        },
-        {
-          "step": 9,
-          "thought": "I need to save the claim about the impact of the amended license on international trade. The key finding is that the amended Iran-related General License FF-1 does NOT expand general trade restrictions on Iranian entities - the expansion comes from SDN designations under IRAN-EO13902. Let me save this claim.",
-          "action": "save_claim",
-          "args": {
-            "text": "The amended Iran-related General License FF-1 (October 29, 2026) authorizes only the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons.",
-            "sources": [
-              "S1",
-              "S2",
-              "S4",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1456
-        },
-        {
-          "step": 10,
-          "thought": "",
-          "action": "none",
-          "args": {
-            "question1_entities_restricted": "Under IRAN-EO13902, two sets of designations restrict Iranian entities: (1) October 21, 2026: Karnakis and Karnakis (entity, Panama/Greece), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto. (2) November 4, 2026: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti (all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED with secondary sanctions risk under Section 2 of E.O. 13902).",
-            "question2_license_impact": "The amended Iran-related General License FF-1 (October 29, 2026) authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons."
-          },
-          "ok": false,
-          "ms": 6575
-        },
-        {
-          "step": 11,
-          "thought": "I have gathered all the necessary information from the OFAC sources to answer both questions. The search for OFAC actions from October 21 and November 4, 2026, plus the Iran General License FF-1 from October 29, 2026, provide complete coverage. I now need to provide the final answer in the required format.",
-          "action": "final",
-          "args": {
-            "question1_entities_restricted": "Under IRAN-EO13902, two sets of designations restrict Iranian entities: (1) October 21, 2026: Karnakis and Karnakis (entity, Panama/Greece), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto. (2) November 4, 2026: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti (all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED with secondary sanctions risk under Section 2 of E.O. 13902).\n\nquestion2_license_impact\":\"The amended Iran-related General License FF-1 (October 29, 2026) authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons."
-          },
-          "ok": false,
-          "ms": 2278
-        },
-        {
-          "step": 12,
-          "thought": "I need to use the correct action format. The final answer should be provided as the last reply in the format specified. Let me provide the findings in the required JSON format.",
-          "action": "final",
-          "args": {
-            "question1_entities_restricted": "Under IRAN-EO13902, two sets of designations restrict Iranian entities: (1) October 21, 2026: Karnakis and Karnakis (entity, Panama/Greece), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto. (2) November 4, 2026: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti (all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED with secondary sanctions risk under Section 2 of E.O. 13902).\n\nquestion2_license_impact\":\"The amended Iran-related General License FF-1 (October 29, 2026) authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50 percent or greater interest, through 12:01 a.m. eastern standard time, December 1, 2026. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons."
-          },
-          "ok": false,
-          "ms": 2347
-        }
-      ],
-      "final": null
-    },
-    {
-      "at": "2026-11-18T01:33:21.685Z",
-      "steps": [
-        {
-          "step": 1,
-          "thought": "I need to identify the Iranian entities restricted under the OFAC amendments and clarify the impact of the amended General License FF-1 on international trade. I have extensive source material from OFAC actions on October 21, November 4, and the October 29 amended General License FF-1. I will first verify the restricted entities from the SDN designations under IRAN-EO13902, then summarize the FF-1",
+          "thought": "I need to identify the Iranian entities restricted under the OFAC amendments and the impact of the amended license on international trade. I have extensive source material from OFAC actions on October 21, November 4, and the amended General License FF-1 on October 29, 2026. I will first verify the restricted entities from the SDN designations under IRAN-EO13902, then analyze the impact of FF-1.",
           "action": "save_source",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261029",
@@ -3467,138 +3232,168 @@
             "publishedAt": "2026-10-29"
           },
           "ok": true,
-          "ms": 1911
+          "ms": 2485
         },
         {
           "step": 2,
-          "thought": "I need to identify the Iranian entities restricted under the OFAC amendments and clarify the impact of the amended General License FF-1 on international trade. I have extensive source material from OFAC actions on October 21, November 4, and the October 29 amended General License FF-1. I will first verify the restricted entities from the SDN designations under IRAN-EO13902, then summarize the FF-1",
+          "thought": "Now I need to open the primary OFAC document about the amended Iran-related General License FF-1 to extract the specific details about what it authorizes and what it does not.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261029"
           },
           "ok": true,
-          "ms": 10396
+          "ms": 9576
         },
         {
           "step": 3,
-          "thought": "I need to access the full text of Iran General License FF-1 to understand its exact scope and restrictions. The open page provides a summary but I need the full document text.",
+          "thought": "I found the primary OFAC page about the amended Iran-related General License FF-1. It mentions the license authorizes the wind down of transactions involving the International Development Bank for Investment and Finance. There's also a link to the full text of the license. Let me download and read the full text of the license to get the precise details.",
           "action": "open",
           "args": {
             "url": "https://ofac.treasury.gov/media/937311/download?inline"
           },
           "ok": true,
-          "ms": 10327
+          "ms": 11849
         },
         {
           "step": 4,
-          "thought": "I now have the full text of Iran General License FF-1. It authorizes wind-down transactions involving Iraq Development Bank or its 50%+ owned entities through December 1, 2026, with payments to blocked persons required into blocked accounts. It explicitly does NOT authorize transactions involving other blocked persons. Now I need to verify the SDN designations under IRAN-EO13902 from the October 2",
+          "thought": "Now I have the full text of Iran General License FF-1. Key findings:\n1. It authorizes transactions ordinarily incident and necessary to the wind down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50% or greater interest\n2. Authorized through 12:01 a.m. EST December 1, 2026\n3. Any payment to a blocked perso",
+          "action": "save_claim",
+          "args": {
+            "text": "Iran General License FF-1 (Oct 29, 2026) authorizes only wind-down of transactions involving Iraq Development Bank or its 50%+ owned entities through Dec 1, 2026, with payments to blocked persons required into blocked accounts per 31 CFR 560. It does NOT expand general trade restrictions on Iranian entities. (S1,S4)",
+            "sources": [
+              "S1",
+              "S4"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 9946
+        },
+        {
+          "step": 5,
+          "thought": "Good, the claim is recorded. Now I need to find the Iranian entities restricted under the SDN designations. Let me check the OFAC actions from October 21, 2026, which designated entities under IRAN-EO13902.",
+          "action": "save_claim",
+          "args": {
+            "text": "On October 21, 2026, OFAC designated under IRAN-EO13902: Karnakis and Karnakis (entity with offices in Panama City, Panama and Piraeus, Greece), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto. (S2)",
+            "sources": [
+              "S2"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 1943
+        },
+        {
+          "step": 6,
+          "thought": "Good. Now let me check the November 4, 2026 designations under IRAN-EO13902.",
+          "action": "save_claim",
+          "args": {
+            "text": "On November 4, 2026, OFAC designated under IRAN-EO13902 four individuals linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED and shadow fleet operations with secondary sanctions risk under Section 2 of E.O. 13902: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti. (S6)",
+            "sources": [
+              "S6"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 1606
+        },
+        {
+          "step": 7,
+          "thought": "Now I have the key entities restricted. Let me also verify the specific details about Amigoz Singapore Pte. Ltd. from the sources.",
+          "action": "save_claim",
+          "args": {
+            "text": "Amigoz Singapore Pte. Ltd. is located at 2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086; website https://amigozsg.com; Organization Established Date 27 Nov 2019; Business Number 201940121Z. (S2)",
+            "sources": [
+              "S2"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 1377
+        },
+        {
+          "step": 8,
+          "thought": "Now I need to analyze the impact of the amended license on international trade. Based on the sources and my findings:\n\n1. The amended Iran-related General License FF-1 (October 29, 2026) does NOT expand general trade restrictions on Iranian entities. It only authorizes wind-down of transactions involving Iraq Development Bank or its 50%+ owned entities through December 1, 2026.\n\n2. The actual expa",
+          "action": "save_claim",
+          "args": {
+            "text": "The amended Iran-related General License FF-1 (October 29, 2026) does NOT expand general trade restrictions on Iranian entities; the expansion of trade restrictions comes from SDN designations under IRAN-EO13902. (S1,S2,S4,S6)",
+            "sources": [
+              "S1",
+              "S2",
+              "S4",
+              "S6"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 2881
+        },
+        {
+          "step": 9,
+          "thought": "Now I need to compile the complete findings about which Iranian entities are restricted and the impact on international trade. Let me create a comprehensive summary based on all the sources I've examined.",
+          "action": "save_claim",
+          "args": {
+            "text": "CONSOLIDATED FINDINGS: Iranian entities now restricted under IRAN-EO13902 as of November 4, 2026:\n\n(1) October 21, 2026 designations:\n- Karnakis and Karnakis (entity with offices in Panama City, Panama and Piraeus, Greece)\n- Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086)\n- Five individuals: Karnakis Kosmas Ioanis (DOB 20 Aug 1982, Panama City, Panama; passport PA1335855), Karnakis Kosmas Konstantinos (DOB 22 Feb 1981, Panama; alt. nationality Greece), Karnakis Kosmas Sofianos (DOB 06 Jan 1975, Panama City, Panama), Ortega Jones Pedro (DOB 31 Jan 1976, Panama City, Panama), Ortega Jones Roberto (DOB 24 Dec 1972, Panama City, Panama)\n\n(2) November 4, 2026 designations:\n- DHIMAN Ashwani Kumar (Chandigarh, India; DOB 01 Mar 1980; Passport Z5925452)\n- SHARMA Suniel Kumar (Chandigarh, India; DOB 07 Oct 1979; Passport Z5925452 expiring 27 Jul 2030)\n- SINGH Ishwinder (Chandigarh, India; DOB 01 Apr 1992; Registration Number 08409602)\n- SHAHID Jaspreet Preeti a.k.a. KAUR Jaspreet (Chandigarh, India; DOB 22 Aug 1980; Registration Number 03563403)\n\nAll designated under Executive Order 13902 (IRAN-EO13902) with secondary sanctions risk under Section 2 of E.O. 13902.\n\nIMPACT ON INTERNATIONAL TRADE:\n- The amended Iran-related General License FF-1 (October 29, 2026) authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50% or greater interest, through 12:01 a.m. EST December 1, 2026.\n- It does NOT expand general trade restrictions on Iranian entities.\n- The actual expansion of trade restrictions comes from the SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons.\n- These SDN designations trigger secondary sanctions risk for any person facilitating transactions with designated individuals/entities, meaning international traders, US firms, and global companies must exercise caution when dealing with persons or vessels associated with the designated entities.\n- General License FF-1 conditions its wind-down authorization on the requirement that any payment to a blocked person must be made into a blocked account in accordance with the Iranian Transactions and Sanctions Regulations (31 CFR part 560).",
+            "sources": [
+              "S1",
+              "S2",
+              "S4",
+              "S6"
+            ],
+            "contested": false
+          },
+          "ok": true,
+          "ms": 6506
+        },
+        {
+          "step": 10,
+          "thought": "I have now compiled all the key findings. Let me verify the complete picture by checking if there are any gaps in my understanding. I have:\n\n1. The Iranian entities restricted under IRAN-EO13902 (both October 21 and November 4, 2026 designations)\n2. The impact of the amended General License FF-1 (it does NOT expand general trade restrictions; the expansion comes from SDN designations)\n3. The speci",
+          "action": "final",
+          "args": {},
+          "ok": false,
+          "ms": 9855
+        },
+        {
+          "step": 11,
+          "thought": "I need to use the correct action name. Let me check what actions are available - it seems 'final' is not a valid action. I should probably just complete my analysis and present the findings without using a final action, or use one of the available actions.",
+          "action": "save_claim",
+          "args": {
+            "text": "FINAL INVESTIGATION FINDINGS:\n\nQUESTION 1: Which Iranian entities are now restricted?\n\nUnder Executive Order 13902 (IRAN-EO13902), OFAC has designated the following Iranian entities and individuals:\n\nOCTOBER 21, 2026 DESIGNATIONS:\n- Karnakis and Karnakis (entity with offices in Panama City, Panama and Piraeus, Greece)\n- Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086)\n- Five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto\n\nNOVEMBER 4, 2026 DESIGNATIONS:\n- DHIMAN Ashwani Kumar (Chandigarh, India; DOB 01 Mar 1980)\n- SHARMA Suniel Kumar (Chandigarh, India; DOB 07 Oct 1979)\n- SINGH Ishwinder (Chandigarh, India; DOB 01 Apr 1992)\n- SHAHID Jaspreet Preeti a.k.a. KAUR Jaspreet (Chandigarh, India; DOB 22 Aug 1980)\n\nAll designated under IRAN-EO13902 with secondary sanctions risk under Section 2 of E.O. 13902, linked to shadow fleet operations and ARYAVART SHIP MANAGEMENT PRIVATE LIMITED.\n\nQUESTION 2: What impact does the amended license have on international trade?\n\nThe amended Iran-related General License FF-1 (October 29, 2026) does NOT expand general trade restrictions on Iranian entities. It authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50% or greater interest, through 12:01 a.m. EST December 1, 2026, with payments to blocked persons required into blocked accounts per 31 CFR 560.\n\nThe actual expansion of trade restrictions comes from the SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons. These SDN designations trigger secondary sanctions risk for any person facilitating transactions with designated individuals/entities, meaning international traders, US firms, and global companies must exercise caution when dealing with persons or vessels associated with the designated entities."
+          },
+          "ok": false,
+          "ms": 5219
+        },
+        {
+          "step": 12,
+          "thought": "The save_claim action is failing because it needs valid source IDs from the on-file sources. Let me check which sources I actually have properly filed. I've been using S1, S2, S4, S6 in my claims, so let me verify those are properly recorded.",
           "action": "save_source",
           "args": {
             "url": "https://ofac.treasury.gov/recent-actions/20261021",
             "outlet": "US Treasury (OFAC)",
-            "title": "Iran-related Designations; Belarus and North Korea Designations Removals; Issuance of Iran-related and Russia-related General Licenses and Amended Frequently Asked Questions",
+            "title": "Iran-related Designations; Updates to Certain Iran-related Listings; Publication of Iran-related OFAC Alert; Issuance of Amended Venezuela-related General License and Frequently Asked Question",
             "publishedAt": "2026-10-21"
           },
           "ok": true,
-          "ms": 1543
-        },
-        {
-          "step": 5,
-          "thought": "I need to open the October 21, 2026 OFAC action to see the SDN designations under IRAN-EO13902.",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261021"
-          },
-          "ok": true,
-          "ms": 8904
-        },
-        {
-          "step": 6,
-          "thought": "I now have the October 21, 2026 SDN designations under IRAN-EO13902. The designated entities are: 1) Karnakis and Karnakis (Panama/Greece entity), 2) Amigoz Singapore Pte. Ltd. (Singapore), and 5 individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto. I need to also check the November 4, 2026 designations.",
-          "action": "save_source",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261104",
-            "outlet": "US Treasury (OFAC)",
-            "title": "Iran-related Designations; Updates to Certain Iran-related Listings; Publication of Iran-related OFAC Alert; Issuance of Amended Venezuela-related General License and Frequently Asked Question",
-            "publishedAt": "2026-11-04"
-          },
-          "ok": true,
-          "ms": 3874
-        },
-        {
-          "step": 7,
-          "thought": "I need to open the November 4, 2026 OFAC action to see the additional SDN designations under IRAN-EO13902.",
-          "action": "open",
-          "args": {
-            "url": "https://ofac.treasury.gov/recent-actions/20261104"
-          },
-          "ok": true,
-          "ms": 11144
-        },
-        {
-          "step": 8,
-          "thought": "I now have the complete picture of the OFAC actions. Let me summarize the findings:\n\n**Iranian entities restricted under IRAN-EO13902:**\n\n**October 21, 2026 designations:**\n- Karnakis and Karnakis (entity with offices in Panama City, Panama and Piraeus, Greece)\n- Amigoz Singapore Pte. Ltd. (2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086)\n- Five individuals: Karnakis Kosmas Ioanis (DOB",
-          "action": "final",
-          "args": {},
-          "ok": false,
-          "ms": 5042
-        },
-        {
-          "step": 9,
-          "thought": "I have completed the investigation. The tools available don't include a 'final' action, but I have all the information needed. Let me provide the summary as the investigation output.",
-          "action": "save_claim",
-          "args": {
-            "text": "US OFAC amended Iran sanctions: Iranian entities restricted under IRAN-EO13902 include (1) Oct 21 2026 designations: Karnakis and Karnakis (Panama/Greece entity), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto; (2) Nov 4 2026 designations: DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, SHAHID Jaspreet Preeti (all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED and shadow fleet operations). The amended Iran-related General License FF-1 (Oct 29, 2026) authorizes ONLY wind-down of transactions involving Iraq Development Bank or its 50%+ owned entities through Dec 1, 2026, with blocked account payment requirements. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902. Sources: S1, S2, S4, S6.",
-            "sources": [
-              "S1",
-              "S2",
-              "S4",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1847
-        },
-        {
-          "step": 10,
-          "thought": "The claim was marked as duplicate to C34, which is fine - it means the information is already on file. I have completed the investigation with all findings supported by primary sources. Let me provide the final summary.",
-          "action": "save_claim",
-          "args": {
-            "text": "The amended Iran-related General License FF-1 (October 29, 2026) authorizes ONLY the wind-down of transactions involving International Development Bank for Investment and Finance (Iraq Development Bank) or any entity in which it owns 50 percent or greater interest, through 12:01 a.m. eastern standard time December 1, 2026. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902, which designate individuals and entities with secondary sanctions risk under Section 2 of E.O. 13902 for facilitating transactions with designated persons.",
-            "sources": [
-              "S1",
-              "S2",
-              "S4",
-              "S6"
-            ],
-            "contested": false
-          },
-          "ok": true,
-          "ms": 1577
-        },
-        {
-          "step": 11,
-          "thought": "The investigation is complete. I have extracted and verified all the key information from the primary OFAC sources (S1, S2, S4, S6). The findings are:\n\n**Iranian entities now restricted under IRAN-EO13902:**\n- October 21, 2026: Karnakis and Karnakis (entity, Panama/Greece), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals (Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis ",
-          "action": "none",
-          "args": {
-            "status": 200
-          },
-          "ok": false,
-          "ms": 1689
-        },
-        {
-          "step": 12,
-          "thought": "The investigation is complete. I have extracted and verified all findings from the primary OFAC sources. The key results are:\n\n1. **Iranian entities restricted under IRAN-EO13902**:\n   - October 21, 2026: Karnakis and Karnakis (Panama/Greece entity), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals linked to Karnakis and Karnakis\n   - November 4, 2026: DHIMAN Ashwani Kumar, SHARMA Suni",
-          "action": "final",
-          "ms": 3219
+          "ms": 1912
         }
       ],
-      "final": "Investigation complete. Iranian entities restricted: (1) Oct 21 2026 - Karnakis and Karnakis (Panama/Greece entity), Amigoz Singapore Pte. Ltd. (Singapore), and five individuals: Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, Ortega Jones Roberto; (2) Nov 4 2026 - DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, SHAHID Jaspreet Preeti (linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED and shadow fleet). The amended Iran-related General License FF-1 (Oct 29, 2026) authorizes ONLY wind-down of Iraq Development Bank transactions through Dec 1, 2026, with blocked account payment requirements. It does NOT expand general trade restrictions on Iranian entities. The actual expansion of trade restrictions comes from SDN designations under IRAN-EO13902. Sources: S1, S2, S4, S6."
+      "final": null
+    },
+    {
+      "at": "2026-11-18T16:12:14.114Z",
+      "steps": [
+        {
+          "step": 1,
+          "thought": "I have sufficient information from the provided sources to answer the user's request. The documents (OFAC press releases and sanctions notices) clearly distinguish between the scope of the amended General License FF-1 and the impact of the SDN designations under Executive Order 13902. I will now synthesize these findings.",
+          "action": "final",
+          "ms": 9968
+        }
+      ],
+      "final": "The investigation into recent US Treasury actions confirms that the amended Iran-related General License FF-1 (issued October 29, 2026) does not expand general trade restrictions. Instead, it provides a narrow, time-limited authorization for the wind-down of transactions involving the International Development Bank for Investment and Finance (Iraq Development Bank) or its 50%-or-greater-owned entities, expiring at 12:01 a.m. EST on December 1, 2026. \n\nActual trade restrictions are driven by SDN designations under Executive Order 13902, which target third-country facilitators of Iran’s shadow fleet and aviation sector. \n\n**Restricted Entities and Individuals:**\n*   **October 21, 2026 Designations:** \n    *   **Entities:** Karnakis and Karnakis (Panama/Greece) and Amigoz Singapore Pte. Ltd. (Singapore).\n    *   **Individuals:** Karnakis Kosmas Ioanis, Karnakis Kosmas Konstantinos, Karnakis Kosmas Sofianos, Ortega Jones Pedro, and Ortega Jones Roberto.\n*   **November 4, 2026 Designations:** \n    *   **Individuals:** DHIMAN Ashwani Kumar, SHARMA Suniel Kumar, SINGH Ishwinder, and SHAHID Jaspreet Preeti (all linked to ARYAVART SHIP MANAGEMENT PRIVATE LIMITED).\n    *   **Other:** Alisher Domullodzhanov (designated under IRAN-CON-ARMS-EO).\n\n**Impact on International Trade:**\nThese SDN designations trigger secondary sanctions risk for any person or entity facilitating transactions with the listed parties. International traders and firms are now required to exercise heightened due diligence, as dealings with these individuals or their associated networks—specifically those involved in maritime fraud, false flagging, and shadow fleet operations—expose them to potential US sanctions."
     }
   ],
-  "shifts": 83,
-  "blankShifts": 2,
+  "shifts": 86,
+  "blankShifts": 1,
   "nextStep": "keep reporting: no outreach sent",
   "dropped": [
     {
@@ -3703,6 +3498,10 @@
     },
     {
       "text": "Amigoz Singapore Pte. Ltd. was designated under IRAN-EO13902 on October 21, 2026, located at 2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086; website https://amigozsg.com; Organization Established Date 27 Nov 2019; Business Number 201940121Z. (S2)",
+      "why": "nicht belegt"
+    },
+    {
+      "text": "Amigoz Singapore Pte. Ltd. is located at 2 Leng Kee Road, #02-10, Thye Hong Centre, Singapore 159086; website https://amigozsg.com; Organization Established Date 27 Nov 2019; Business Number 201940121Z. (S2)",
       "why": "nicht belegt"
     }
   ]
