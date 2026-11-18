@@ -386,20 +386,20 @@
       "The Washington Post"
     ],
     "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b",
-    "statsModel": "nvidia/nemotron-3.5-bolt-e4b"
+    "statsModel": "gemini/gemini-3.1-flash-lite"
   },
   "stats": {
-    "label": "US Senate Seat Majority",
-    "note": "Reports indicate the Democratic party achieved a 56-44 majority in the U.S. Senate following the Alaska election.",
+    "label": "Alaska Senate Election Results",
+    "note": "Final seat counts for the Alaska Senate election following Mary Peltola's victory over Dan Sullivan.",
     "unit": "seats",
-    "max": 100,
+    "max": null,
     "asOf": "2026-11-03T00:00:00.000Z",
-    "updatedAt": "2026-11-18T03:57:31.745Z",
+    "updatedAt": "2026-11-18T15:50:25.213Z",
     "source": {
-      "outlet": "Reuters",
-      "title": "Democrat Peltola wins in Alaska, securing 56-44 US Senate majority",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcDhNX2ltb0xDNjBoTzlRcFZtcGl4V0FhOE94dTEyMHZVSDItM1ZMYUR2SW1NZVRpamgzQ2g5cXNrcE1wWG5oZlJDNFBWZ1MxeUhUcWhUSF9qM3Y0RXFiY28zT0xiMXdlbU8xX2JoZkUtLW9WejVlX3p0NGtxT0JUNUh2QldjcU5aYThDNWdNcUxUTVo2dTBKTG16NGZrNGQ1WUR6ejUwUnZxM1U?oc=5",
-      "publishedAt": "2026-11-18T03:27:00.000Z",
+      "outlet": "CNBC",
+      "title": "Democrat Mary Peltola wins Alaska Senate election",
+      "url": "https://www.cnbc.com/2026/11/18/alaska-senate-mary-peltola-wins-election.html",
+      "publishedAt": "2026-11-18T12:50:00.000Z",
       "trusted": true
     },
     "sourceCount": 1,
@@ -408,31 +408,31 @@
         "key": "democrats-senate-seats",
         "label": "Democrats Senate Seats",
         "value": 56,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
-            "label": "Demokratische Senatssitze"
+            "label": "Senatssitze der Demokraten"
           },
           "fr": {
             "label": "Sièges sénatoriaux des Démocrates"
           },
           "es": {
-            "label": "Escaños del Senado de los Demócratas"
-          },
-          "pt": {
-            "label": "Assentos no Senado Democrata"
+            "label": "Escaños de los demócratas en el Senado"
           },
           "it": {
-            "label": "Seggi al Senato dei Democratici"
+            "label": "Seggi dei Democratici al Senato"
+          },
+          "pt": {
+            "label": "Assentos do Senado dos Democratas"
           },
           "zh": {
             "label": "民主党参议院席位"
           },
           "ja": {
-            "label": "民主党上院議席"
+            "label": "民主党の上院議席数"
           },
           "ko": {
-            "label": "민주당 상원 의원 수"
+            "label": "민주당 상원 의석"
           }
         }
       },
@@ -440,67 +440,67 @@
         "key": "republicans-senate-seats",
         "label": "Republicans Senate Seats",
         "value": 44,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
-            "label": "Republikanische Senatssitze"
+            "label": "Senatssitze der Republikaner"
           },
           "fr": {
             "label": "Sièges sénatoriaux des Républicains"
           },
           "es": {
-            "label": "Escaños del Senado de los Republicanos"
-          },
-          "pt": {
-            "label": "Assentos no Senado Republicano"
+            "label": "Escaños de los republicanos en el Senado"
           },
           "it": {
-            "label": "Seggi al Senato dei Repubblicani"
+            "label": "Seggi dei Repubblicani al Senato"
+          },
+          "pt": {
+            "label": "Assentos do Senado dos Republicanos"
           },
           "zh": {
             "label": "共和党参议院席位"
           },
           "ja": {
-            "label": "共和党上院議席"
+            "label": "共和党の上院議席数"
           },
           "ko": {
-            "label": "공화당 상원 의원 수"
+            "label": "공화당 상원 의석"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "Mehrheit im US-Senat",
-        "note": "Berichten zufolge erreichte die Demokratische Partei nach der Alaska-Wahl eine Mehrheit von 56 zu 44 im US-Senat."
+        "label": "Wahlergebnisse für den Senat in Alaska",
+        "note": "Endgültige Sitzverteilung für die Senatswahl in Alaska nach dem Sieg von Mary Peltola über Dan Sullivan."
       },
       "fr": {
-        "label": "Majorité des sièges au Sénat américain",
-        "note": "Des rapports indiquent que le parti démocrate a obtenu une majorité de 56 sièges contre 44 au Sénat américain suite aux élections en Alaska."
+        "label": "Résultats des élections au Sénat de l'Alaska",
+        "note": "Comptages définitifs des sièges pour l'élection du Sénat de l'Alaska suite à la victoire de Mary Peltola sur Dan Sullivan."
       },
       "es": {
-        "label": "Mayoría de escaños del Senado de EE. UU.",
-        "note": "Informes indican que el Partido Demócrata logró una mayoría de 56-44 en el Senado de EE. UU. tras las elecciones de Alaska."
+        "label": "Resultados de las elecciones al Senado de Alaska",
+        "note": "Recuento final de escaños para las elecciones al Senado de Alaska tras la victoria de Mary Peltola sobre Dan Sullivan."
       },
       "it": {
-        "label": "Maggioranza dei seggi al Senato USA",
-        "note": "Rapporti indicano che il Partito Democratico ha ottenuto una maggioranza di 56-44 al Senato degli Stati Uniti a seguito delle elezioni dell'Alaska."
+        "label": "Risultati delle elezioni per il Senato in Alaska",
+        "note": "Conteggio finale dei seggi per le elezioni al Senato in Alaska in seguito alla vittoria di Mary Peltola su Dan Sullivan."
       },
       "pt": {
-        "label": "Majoria do Senado dos EUA",
-        "note": "Relatórios indicam que o Partido Democrata alcançou uma maioria de 56-44 no Senado dos EUA após as eleições no Alasca."
+        "label": "Resultados das Eleições do Senado do Alasca",
+        "note": "Contagens finais de assentos para a eleição do Senado do Alasca após a vitória de Mary Peltola sobre Dan Sullivan."
       },
       "zh": {
-        "label": "美国参议院多数党地位",
-        "note": "报道称，民主党在阿拉斯加州选举后获得了美国参议院56比44的多数优势。"
+        "label": "阿拉斯加参议院选举结果",
+        "note": "在玛丽·佩尔托拉击败丹·苏利文后，阿拉斯加参议院选举的最终席位统计。"
       },
       "ja": {
-        "label": "米上院多数派",
-        "note": "報道では、アラスカ州選後の米上院で民主党が56対44の多数派を確保したと指摘されている。"
+        "label": "アラスカ州上院選結果",
+        "note": "メアリー・ペルトラ氏がダン・サリバン氏を破ったことを受け、アラスカ州上院選の最終議席数が確定した。"
       },
       "ko": {
-        "label": "미국 상원 다수당",
-        "note": "알래스카 선거 이후 민주당이 미국 상원에서 56대 44의 다수당을 차지했다는 보도가 나왔다."
+        "label": "알래스카 상원 선거 결과",
+        "note": "댄 설리번을 꺾은 메리 펠톨라의 승리 이후 알래스카 상원 선거의 최종 의석수 집계."
       }
     }
   },
