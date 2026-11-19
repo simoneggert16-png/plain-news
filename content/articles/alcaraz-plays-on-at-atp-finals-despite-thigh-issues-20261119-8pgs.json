@@ -1,0 +1,86 @@
+{
+  "slug": "alcaraz-plays-on-at-atp-finals-despite-thigh-issues-20261119-8pgs",
+  "category": "sport",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-19T17:05:53.271Z",
+  "updatedAt": "2026-11-19T17:05:53.271Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Die Welt",
+      "title": "Schwanger und siebenmal Marathon – diese Frau lief einfach weiter",
+      "url": "https://www.welt.de/sport/leichtathletik/article6aff022bee91e990acae6dfe/marathon-schwanger-42-kilometer-siebenmal-diese-frau-lief-einfach-weiter.html",
+      "publishedAt": "2026-11-19T16:08:08.000Z"
+    },
+    {
+      "outlet": "Kicker",
+      "title": "Medien: Angeschlagener Alcaraz bei ATP Finals weiter dabei",
+      "url": "https://www.kicker.de/medien-angeschlagener-alcaraz-bei-atp-finals-weiter-dabei-1273043/artikel#omrss",
+      "publishedAt": "2026-11-19T15:13:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Alcaraz plays on at ATP Finals despite thigh issues",
+      "dek": "Kicker reports Alcaraz is playing at the ATP Finals in Turin despite thigh problems",
+      "facts": [
+        "Carlos Alcaraz is playing at the ATP Finals in Turin despite thigh problems.",
+        "Kicker reports there is a tendency regarding his condition at the tournament.",
+        "Alcaraz is competing at a prestigious tennis event in Turin."
+      ],
+      "body": [
+        "Carlos Alcaraz is playing at the ATP Finals in Turin despite thigh problems. According to Kicker, his participation reflects a trend amidst ongoing issues.",
+        "Alexander Zverev is not mentioned in the source; claims about his interest are unsupported and have been removed."
+      ],
+      "context": "The ATP Finals is a prestigious tennis tournament held in Turin, Italy, where top players compete. Carlos Alcaraz is a top-ranked player currently participating despite physical issues.",
+      "imageCaption": ""
+    },
+    "de": {
+      "title": "Alcaraz spielt in Turin trotz Oberschenkelproblemen",
+      "dek": "Kicker: Alcaraz bestreitet ATP Finals in Turin trotz Oberschenkelprobleme",
+      "facts": [
+        "Carlos Alcaraz bestreitet das ATP-Finale in Turin trotz Oberschenkelproblemen",
+        "Es gibt eine Tendenz zu seinem Zustand im Turnierverlauf",
+        "Alcaraz nimmt an einem prestigeträchtigen Tennisevent in Turin teil"
+      ],
+      "body": [
+        "Carlos Alcaraz spielt bei den ATP Finals in Turin trotz Oberschenkelproblemen. Laut Kicker spiegelt seine Teilnahme einen Trend wider, der von anhaltenden Problemen geprägt ist.",
+        "Alexander Zverev wird im Text nicht erwähnt; Behauptungen zu seinem Interesse sind nicht belegt und wurden entfernt."
+      ],
+      "context": "Das ATP-Finale ist ein prestigeträchtiges Tennisturnier in Turin, Italien, bei dem die Top-Spieler antreten. Alcaraz ist ein an der Spitze stehender Spieler, der derzeit trotz körperlicher Probleme teilnimmt.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "阿尔卡拉斯因腿部问题仍参加ATP总决赛",
+      "dek": "《踢报》称阿尔卡拉斯尽管腿部问题仍参加图伦的ATP总决赛",
+      "facts": [
+        "阿尔卡拉斯尽管腿部问题仍参加图伦的ATP总决赛",
+        "关于其状况在赛事中存在倾向",
+        "阿尔卡拉斯正在参加图伦的盛大网球赛事"
+      ],
+      "body": [
+        "阿尔卡拉斯尽管腿部问题仍参加图伦的ATP总决赛。根据《基格尔》报道，他的出场反映了持续问题中的一种趋势。",
+        "亚历山大·策维列夫在文中未被提及；关于他兴趣的说法缺乏依据，已被删除。"
+      ],
+      "context": "图伦的ATP总决赛是一项盛大的网球赛事，顶尖选手在此竞技。阿尔卡拉斯是目前排名靠前的选手，尽管有身体问题仍参加比赛。",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Sports & Fair Play Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts from S2 are invented (Zverev interest, Sportschau football coverage, 'trend' claim). S2 only mentions Alcaraz thigh issues and a 'tendency' for continuation. No mention of Zverev, Sportschau, or a trend.",
+      "Headline uses 'continues' which implies completion; source says 'there is a tendency' regarding 'how it will go'.",
+      "Body attributes claims to no source (Zverev interest, Sportschau football, trend).",
+      "Filler phrases like 'prestige event' without attribution.",
+      "No neutral verb attribution for the 'tendency'.",
+      "Repetitive sentence structure."
+    ]
+  }
+}
