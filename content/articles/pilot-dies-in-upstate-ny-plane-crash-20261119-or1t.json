@@ -1,0 +1,84 @@
+{
+  "slug": "pilot-dies-in-upstate-ny-plane-crash-20261119-or1t",
+  "category": "community",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-19T14:36:19.016Z",
+  "updatedAt": "2026-11-19T14:36:19.016Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Sacramento Bee",
+      "title": "Seismic activity on Nov. 19: Earthquake close to Toms Place, CA reported - magnitude 3.0",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE03ZWpvNEJLVGN4ZFUyd0YzMllQMldlZkQtZTZrb0hKRjl5T0ZZMGxOT3Z3a0lHR2RnWGhnTVlDQmtES3IzVm5RU2RyaXV0aW84M3l6YzFja05vd2c3SHI0QklMTEcxSlZKYjlBMFdsNVZsT2R2blhsOV9IM0Y?oc=5",
+      "publishedAt": "2026-11-19T14:27:08.000Z"
+    },
+    {
+      "outlet": "NewYorkUpstate.com",
+      "title": "Pilot dies in Upstate NY plane crash",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMnQyeWt1X3Z5UlFMeWt0X05ZYzEtVVVSMVVrTTlqbGlPa0FfeVN4VEFKU0twdXpFUHppZFpXUUg1dE85bDlRZFZNRUN1em9UYTNKd1RBd3U3VUtncnE4SGdRSDVzcmxEVnVNMS0teElUb1p5ZmpENEtlbmZxc21OaXgtSWlyejBBbEhGRmtn?oc=5",
+      "publishedAt": "2026-11-19T13:59:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Pilot dies in Upstate NY plane crash",
+      "dek": "Pilot dies after plane crash in Upstate New York on November 19, 2026",
+      "facts": [
+        "A plane crash occurred in Upstate New York on November 19, 2026.",
+        "The pilot on board the aircraft died as a result of the crash.",
+        "NewYorkUpstate.com reported the incident on November 19, 2026."
+      ],
+      "body": [
+        "A plane crash occurred in Upstate New York on November 19, 2026. The pilot on board the aircraft died as a result of the crash.",
+        "NewYorkUpstate.com reported the incident, confirming the pilot's death.",
+        "The report did not include details about the cause of the crash or the pilot's identity."
+      ],
+      "context": "NewYorkUpstate.com reported on a plane crash in Upstate New York on November 19, 2026.",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "パイロットが上州ニューヨークで墜落死する",
+      "dek": "上州ニューヨークで11月19日、墜落事故によりパイロットが死亡",
+      "facts": [
+        "11月19日に上州ニューヨークで航空機が墜落",
+        "同事故で機内のパイロットが死亡",
+        "NewYorkUpstate.comが11月19日に同事故を報じた"
+      ],
+      "body": [
+        "19日、上州ニューヨークで飛行機が墜落し、乗っていたパイロットが死亡した。",
+        "NewYorkUpstate.comがこの事故を報告し、パイロットの死亡を確認した。",
+        "報告には、墜落の原因やパイロットの身元に関する詳細は含まれていなかった。"
+      ],
+      "context": "NewYorkUpstate.comが11月19日に上州ニューヨークで起きた航空機事故を報じた",
+      "imageCaption": ""
+    },
+    "ko": {
+      "title": "파일럿, 업스테이트 뉴욕 비행기 추락 사고로 사망",
+      "dek": "파일럿, 업스테이트 뉴욕 비행기 추락 사고로 사망… 2026년 11월 19일",
+      "facts": [
+        "비행기 추락이 업스테이트 뉴욕에서 2026년 11월 19일에 발생함",
+        "파일럿이 기내에서 사망함",
+        "NewYorkUpstate.com이 2026년 11월 19일에 사건을 보도함"
+      ],
+      "body": [
+        "뉴욕주 업스테이트에서 2026년 11월 19일, 비행기가 추락하는 사고가 발생했다. 사고기 안에 타고 있던 파일럿이 사망했다.",
+        "뉴욕업스테이트닷컴이 이 사고를 보도하며 파일럿의 사망을 확인했다.",
+        "보도 내용에는 추락 원인이나 파일럿의 신상에 대한 세부 정보가 포함되지 않았다."
+      ],
+      "context": "NewYorkUpstate.com이 2026년 11월 19일에 업스테이트 뉴욕 비행기 추락 사고를 보도함",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Global Health & Medicine Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts 4 and 5 in the 'facts' array are unsupported claims about source limitations. The body paragraph 3 ends with an evaluative summary sentence. The opening noun 'A plane crash' repeats the previous paragraph's opening. The context contains vague phrasing ('resulted in the death of a pilot') without a concrete source anchor. The category 'health' is inaccurate for a plane crash. The 'importance' field is a number without source backing."
+    ]
+  }
+}
