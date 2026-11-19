@@ -1,9 +1,177 @@
 {
+  "meta": {
+    "outlets": [
+      "NPR",
+      "The Guardian",
+      "Fox News",
+      "Africanews",
+      "BBC"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+  },
   "slug": "2026-u-s-midterm-elections",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "2026 U.S. Midterm Elections",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die politischen Nachwirkungen und personellen Umbesetzungen an der Spitze dauern an, nachdem die historischen Ergebnisse der Zwischenwahlen den Demokraten die Kontrolle über das Repräsentantenhaus eingebracht haben.",
+      "title": "US-Zwischenwahlen 2026"
+    },
+    "en": {
+      "dek": "Fallout and leadership shuffles continue following historic midterm election results that handed Democrats control of the House.",
+      "title": "2026 U.S. Midterm Elections"
+    },
+    "es": {
+      "dek": "Continúan las repercusiones y los cambios de liderazgo tras los históricos resultados de las elecciones de mitad de mandato que otorgaron a los demócratas el control de la Cámara de Representantes.",
+      "title": "Elecciones de mitad de mandato en EE. UU. de 2026"
+    },
+    "fr": {
+      "dek": "Les retombées et les remaniements à la tête des partis se poursuivent à la suite des résultats historiques des élections de mi-mandat qui ont accordé aux démocrates le contrôle de la Chambre des représentants.",
+      "title": "Élections de mi-mandat aux États-Unis en 2026"
+    },
+    "it": {
+      "dek": "Proseguono le ripercussioni e i rimpasti ai vertici in seguito ai risultati storici delle elezioni di metà mandato che hanno assegnato ai Democratici il controllo della Camera.",
+      "title": "Elezioni di metà mandato negli Stati Uniti del 2026"
+    },
+    "ja": {
+      "dek": "民主党が下院の過半数を握る歴史的な中間選挙の結果を受け、その影響と指導部の刷新が続いている。",
+      "title": "2026年米中間選挙"
+    },
+    "ko": {
+      "dek": "민주당이 하원 통제권을 장악한 역사적인 중간선거 결과의 여파와 지도부 개편이 이어지고 있다.",
+      "title": "2026년 미국 중간선거"
+    },
+    "pt": {
+      "dek": "As repercussões e as mexidas na liderança continuam após os resultados históricos das eleições de meio de mandato que deram aos Democratas o controlo da Câmara dos Representantes.",
+      "title": "Eleições de meio de mandato de 2026 nos EUA"
+    },
+    "zh": {
+      "dek": "在历史性的中期选举结果让民主党掌控众议院之后，善后工作与领导层改组仍在继续。",
+      "title": "2026年美国中期选举"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795103705000-jw1h",
+      "at": "2026-11-19T15:55:05.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Democrats secure 56-44 Senate majority",
+          "body": "Democrats hold a 56-44 majority in the U.S. Senate following the 2026 midterm elections, according to The Guardian. NPR reports that 56% of voters cast ballots for Democratic candidates in House races, marking the widest margin for either party in 50 years."
+        },
+        "it": {
+          "headline": "I Democratici ottengono la maggioranza al Senato con 56 seggi contro 44",
+          "body": "I Democratici detengono una maggioranza di 56 seggi contro 44 al Senato degli Stati Uniti in seguito alle elezioni di metà mandato del 2026, secondo quanto riportato dal Guardian. NPR riferisce che il 56% degli elettori ha votato per i candidati democratici alla Camera, segnando il margine più ampio per uno dei due partiti negli ultimi 50 anni."
+        },
+        "es": {
+          "headline": "Los demócratas aseguran una mayoría de 56-44 en el Senado",
+          "body": "Los demócratas mantienen una mayoría de 56-44 en el Senado de los Estados Unidos tras las elecciones de mitad de mandato de 2026, según The Guardian. NPR informa que el 56% de los votantes apoyó a los candidatos demócratas en las elecciones a la Cámara de Representantes, lo que supone el margen más amplio para cualquiera de los dos partidos en 50 años."
+        },
+        "fr": {
+          "headline": "Les démocrates obtiennent une majorité de 56 sièges contre 44 au Sénat",
+          "body": "Les démocrates détiennent une majorité de 56 sièges contre 44 au Sénat américain à l'issue des élections de mi-mandat de 2026, selon The Guardian. NPR rapporte que 56 % des électeurs ont voté pour des candidats démocrates lors des élections à la Chambre des représentants, marquant le plus grand écart pour l'un ou l'autre parti depuis 50 ans."
+        },
+        "zh": {
+          "headline": "民主党在参议院获得56比44的多数席位",
+          "body": "据《卫报》报道，在2026年中期选举后，民主党在美国参议院占据了56比44的多数席位。据美国国家公共电台（NPR）报道，56%的选民在众议院选举中投票支持民主党候选人，这是50年来任一政党获得的最大领先优势。"
+        },
+        "ja": {
+          "headline": "民主党が上院で56対44の過半数を確保",
+          "body": "ガーディアン紙によると、2026年の中間選挙を経て、米上院では民主党が56対44の過半数を維持した。NPRは、下院選において56％の有権者が民主党候補に投票したと報じており、これは過去50年間で両党間の最大の得票差となった。"
+        },
+        "ko": {
+          "headline": "민주당, 상원 56대 44 과반 의석 확보",
+          "body": "가디언에 따르면 2026년 중간선거 결과 민주당이 미국 상원에서 56대 44로 과반 의석을 차지했다. NPR은 하원 선거에서 민주당 후보에게 투표한 유권자가 56%에 달해 지난 50년 동안 양당 중 가장 큰 격차를 기록했다고 보도했다."
+        },
+        "pt": {
+          "headline": "Democratas asseguram maioria de 56-44 no Senado",
+          "body": "Os Democratas detêm uma maioria de 56-44 no Senado dos EUA após as eleições de meio de mandato de 2026, segundo o The Guardian. A NPR reporta que 56% dos eleitores votaram em candidatos democratas para a Câmara dos Representantes, marcando a maior margem para qualquer um dos partidos nos últimos 50 anos."
+        },
+        "de": {
+          "headline": "Demokraten sichern sich 56:44-Mehrheit im Senat",
+          "body": "Nach den Zwischenwahlen 2026 halten die Demokraten laut „The Guardian“ eine 56:44-Mehrheit im US-Senat. Wie NPR berichtet, stimmten 56 Prozent der Wähler bei den Wahlen zum Repräsentantenhaus für demokratische Kandidaten; dies ist der größte Vorsprung einer Partei seit 50 Jahren."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "NPR",
+          "title": "The midterms were the largest win for either party in 50 years",
+          "url": "https://www.npr.org/2026/11/19/nx-s1-6045916/democrats-midterm-house-majority",
+          "publishedAt": "2026-11-19T15:55:05.000Z"
+        },
+        {
+          "outlet": "The Guardian",
+          "title": "‘A new day in the Senate’: 56-44 majority gives Democrats fuel to take on Trump",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMWtMNDY5VzZpUGV1UmVERkRrNmpyRGNUQ05nSnlSR1NqaFBMMl96Q0dMUFF5VTJPdENhcE42VkZxOGIxOHVsdTVlNGxfSi1PVzMtRHRERUtSeWlXVGhGendFNHIxYVBEbkMtUHBFMkhxY3NpN3l4VVNLcE1mWXF3SjMwTGRmR1pyWkI3SEl2OXhxZw?oc=5",
+          "publishedAt": "2026-11-19T15:06:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1795104988000-fxxk",
+      "at": "2026-11-19T16:16:28.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Republican Nick Begich wins Alaska House seat",
+          "body": "Republican Rep. Nick Begich won re-election to Alaska's lone House seat, according to PBS. Fox News reported that the victory occurred following ranked-choice tabulation."
+        },
+        "it": {
+          "headline": "Il repubblicano Nick Begich vince il seggio alla Camera per l'Alaska",
+          "body": "Il deputato repubblicano Nick Begich è stato rieletto all'unico seggio dell'Alaska alla Camera, secondo quanto riportato da PBS. Fox News ha riferito che la vittoria è avvenuta in seguito allo scrutinio con voto di preferenza (ranked-choice)."
+        },
+        "es": {
+          "headline": "El republicano Nick Begich gana el escaño de Alaska en la Cámara",
+          "body": "El congresista republicano Nick Begich ha sido reelegido para el único escaño de Alaska en la Cámara de Representantes, según PBS. Fox News informó que la victoria se produjo tras el recuento por orden de preferencia."
+        },
+        "fr": {
+          "headline": "Le républicain Nick Begich remporte le siège de l'Alaska à la Chambre",
+          "body": "Le représentant républicain Nick Begich a été réélu au siège unique de l'Alaska à la Chambre des représentants, selon PBS. Fox News a rapporté que cette victoire a été obtenue à l'issue d'un dépouillement par classement préférentiel."
+        },
+        "zh": {
+          "headline": "共和党人尼克·贝吉奇赢得阿拉斯加州众议院席位",
+          "body": "据美国公共电视网（PBS）报道，共和党众议员尼克·贝吉奇（Nick Begich）成功连任阿拉斯加州唯一的众议院席位。福克斯新闻报道称，此次胜利是在进行排序复选制计票后确定的。"
+        },
+        "ja": {
+          "headline": "共和党のニック・ベギッチ氏がアラスカ州の下院議席を獲得",
+          "body": "PBSによると、共和党のニック・ベギッチ下院議員がアラスカ州の唯一の下院議席で再選を果たした。フォックスニュースは、この勝利が順位付け投票（ランクド・チョイス）の集計を経て確定したと報じた。"
+        },
+        "ko": {
+          "headline": "공화당 닉 베기치, 알래스카 하원 의석 당선",
+          "body": "PBS에 따르면 공화당의 닉 베기치 하원의원이 알래스카주 유일의 하원 의석 재선에 성공했다. 폭스 뉴스는 이번 승리가 순위 선택 투표 집계 이후 확정되었다고 보도했다."
+        },
+        "pt": {
+          "headline": "Republicano Nick Begich vence lugar na Câmara pelo Alasca",
+          "body": "O deputado republicano Nick Begich foi reeleito para o único lugar do Alasca na Câmara dos Representantes, segundo a PBS. A Fox News noticiou que a vitória ocorreu após a contagem de votos por preferência (ranked-choice)."
+        },
+        "de": {
+          "headline": "Republikaner Nick Begich gewinnt Sitz im Repräsentantenhaus für Alaska",
+          "body": "Der republikanische Abgeordnete Nick Begich wurde laut PBS für den einzigen Sitz Alaskas im Repräsentantenhaus wiedergewählt. Fox News berichtete, dass der Sieg nach einer Auszählung nach dem Prinzip der Rangfolgewahl feststand."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "PBS",
+          "title": "Republican Rep. Nick Begich wins reelection for Alaska House seat",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxON3FURTRJOUg0SEJxNXFoSU4yZmU2T0hCdHhHbTlIZGhYYkdiR01oWXhabEVZTE5RSll2dzFfNkd2NkgzVFVHRlpEYUVBNTlqb0psalpFeVY3MEItbWJXOGpEUjRrOVhEWVo2UlFEd08xTmY2WTA5VVNzWHlUUmtqSTQ2LWdzdmxNZkpQS2pHRm9NWlB3NnZfMmphaS1fUXZmZ2t1YdIBqgFBVV95cUxPM0hZSTNhdzdaOVlFWDBJWUFXcG5oUmtDSlZmNjM0NXFfZFd1WFRMMHBNcUFrUFJkQ0VWU0FfX2I0SmtIYzFxR1ZnbS03aVhpcUdrYnkwdTB5R0pkRHJPOTlfUVRwZWlvTWc3TDhKdDQ5cGlHMkdiS29PaXRUUzZsMXJPVG4zOUlldmFocURsSzZ0Y3JfWWd6blVpUUxLOWFuM21RUTBwR3FPQQ?oc=5",
+          "publishedAt": "2026-11-19T16:16:28.000Z"
+        },
+        {
+          "outlet": "Fox News",
+          "title": "Republicans hold lone Alaska House seat despite losing Senate, governor races",
+          "url": "https://www.foxnews.com/politics/republicans-hold-lone-alaska-house-seat-despite-losing-senate-governor-races",
+          "publishedAt": "2026-11-19T12:43:44.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "midterms",
     "congress",
@@ -15,62 +183,36 @@
     "republicans",
     "elections"
   ],
+  "seenUrls": [
+    "https://www.science.org/content/article/senate-bill-gives-nih-500-million-raise-2027",
+    "https://www1.folha.uol.com.br/colunas/lucia-guimaraes/2026/11/democratas-enfrentam-desafio-de-nao-desperdicar-vitoria-nas-midterms-com-divisoes-internas.shtml",
+    "https://thehill.com/the-120/6230849-chuck-todd-new-congress-tariffs-democrats/",
+    "https://www.straitstimes.com/world/el-salvadors-bukele-expected-to-seek-unprecedented-third-term-as-leader",
+    "https://www.france24.com/en/france/20261119-french-regulator-warns-influential-youtubers-respect-pluralism-rules-election-coverage",
+    "https://www.axios.com/2026/11/19/trump-elon-musk-not-maga-friend",
+    "https://thehill.com/homenews/campaign/6230774-flake-criticizes-musk-midterm-spending/",
+    "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQSXBZc3VWUC1ScjBtSWc1Q1E5R21FNURxa25sN0tMQXZ1NGY1ZG14NngyV3MyUkpZSnNkb2RrZjRBNjdwOG94dFktT3hEU0FfMWZYUU1VQ3NUUXdzUm9xMFNfdGJ0SjBoRjcwcVNuREFXSkhwV3hkd1pjUERBV1YwMXRPSmhuVHJTM2sta3FjTnR4YnVfV3BFaGJSa0ozUzBKbTEzMlpuZld6N3hGeVRsRXp5cXRiVWVCQmpCUE5FeFNmVUEyb3YtRmdab1J3TnNYUEFqS005OTZpRF9UZ1NB?oc=5",
+    "https://news.google.com/rss/articles/CBMiekFVX3lxTE14eGdJamx6ZW5udkhxMWlFdXBMQ2VSa19VazlMbmdHZ25EQTZiTXljaHdsTzNfTTNubEx5VTlIcVNRSktfUlF6ejk4QU1GdEpzTlVodjFIM1Z4bW5pTzYxaktYNms0am9OblhuOXRsVXJpU04waWFVWVRn?oc=5",
+    "https://www.nytimes.com/2026/11/19/us/politics/trump-summit-power.html",
+    "https://www.npr.org/2026/11/19/nx-s1-6047338/bigger-than-barack-obamas-election-scholars-reflect-on-mississippi-senate-race",
+    "https://www.theguardian.com/politics/2026/nov/19/andy-burnham-political-donations-cap-overseas-donors-elections",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxON3FURTRJOUg0SEJxNXFoSU4yZmU2T0hCdHhHbTlIZGhYYkdiR01oWXhabEVZTE5RSll2dzFfNkd2NkgzVFVHRlpEYUVBNTlqb0psalpFeVY3MEItbWJXOGpEUjRrOVhEWVo2UlFEd08xTmY2WTA5VVNzWHlUUmtqSTQ2LWdzdmxNZkpQS2pHRm9NWlB3NnZfMmphaS1fUXZmZ2t1YdIBqgFBVV95cUxPM0hZSTNhdzdaOVlFWDBJWUFXcG5oUmtDSlZmNjM0NXFfZFd1WFRMMHBNcUFrUFJkQ0VWU0FfX2I0SmtIYzFxR1ZnbS03aVhpcUdrYnkwdTB5R0pkRHJPOTlfUVRwZWlvTWc3TDhKdDQ5cGlHMkdiS29PaXRUUzZsMXJPVG4zOUlldmFocURsSzZ0Y3JfWWd6blVpUUxLOWFuM21RUTBwR3FPQQ?oc=5",
+    "https://www.npr.org/2026/11/19/nx-s1-6045916/democrats-midterm-house-majority",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWDcyOWhueHRCTlFzN29tNFRVRUZTdUxGdUY4eGRrZ0F5bGs4TWJ1NHhIajRMVTZZYll6cm1QNW9oRUFOX2dGR09qSkRuZ2c2TTlYdWZiWnpjTkpfSTdhZkZvc0ZCYlc0UXZTR1JpWUdoVG1hMW01cnRPb1dfNHVrNjJCdGNkVFMwY0lHSlNjNFBVaUFxczJXb0VFUHdkcjlRNENvdmhLZ2hYZDBnQmpVZkVBM2ZsZE9kbFVz?oc=5",
+    "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMWtMNDY5VzZpUGV1UmVERkRrNmpyRGNUQ05nSnlSR1NqaFBMMl96Q0dMUFF5VTJPdENhcE42VkZxOGIxOHVsdTVlNGxfSi1PVzMtRHRERUtSeWlXVGhGendFNHIxYVBEbkMtUHBFMkhxY3NpN3l4VVNLcE1mWXF3SjMwTGRmR1pyWkI3SEl2OXhxZw?oc=5",
+    "https://thehill.com/homenews/campaign/data-nerds/6230057-mary-peltola-alaska-senate-win-midterms-live-discussion/",
+    "https://www.foxnews.com/politics/aoc-leaves-door-open-2028-presidential-run-signals-willingness-work-trump",
+    "https://www.cnbc.com/2026/11/18/kash-patel-hearing-mar-a-lago-gala.html",
+    "https://www.axios.com/2026/11/19/energy-permitting-bill-senate-politics",
+    "https://allafrica.com/stories/202611190293.html",
+    "https://www.kyivpost.com/post/90606",
+    "https://www.foxnews.com/politics/republicans-hold-lone-alaska-house-seat-despite-losing-senate-governor-races"
+  ],
   "startedAt": "2026-11-19T16:16:52.238Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-19T16:16:52.238Z",
-  "articleSlug": null,
-  "sourceCount": 5,
+  "updatedAt": "2026-11-19T18:28:55.519Z",
+  "importance": 5,
   "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "2026 U.S. Midterm Elections",
-      "dek": "Fallout and leadership shuffles continue following historic midterm election results that handed Democrats control of the House."
-    },
-    "de": {
-      "title": "US-Zwischenwahlen 2026",
-      "dek": "Die politischen Nachwirkungen und personellen Umbesetzungen an der Spitze dauern an, nachdem die historischen Ergebnisse der Zwischenwahlen den Demokraten die Kontrolle über das Repräsentantenhaus eingebracht haben."
-    },
-    "fr": {
-      "title": "Élections de mi-mandat aux États-Unis en 2026",
-      "dek": "Les retombées et les remaniements à la tête des partis se poursuivent à la suite des résultats historiques des élections de mi-mandat qui ont accordé aux démocrates le contrôle de la Chambre des représentants."
-    },
-    "it": {
-      "title": "Elezioni di metà mandato negli Stati Uniti del 2026",
-      "dek": "Proseguono le ripercussioni e i rimpasti ai vertici in seguito ai risultati storici delle elezioni di metà mandato che hanno assegnato ai Democratici il controllo della Camera."
-    },
-    "zh": {
-      "title": "2026年美国中期选举",
-      "dek": "在历史性的中期选举结果让民主党掌控众议院之后，善后工作与领导层改组仍在继续。"
-    },
-    "pt": {
-      "title": "Eleições de meio de mandato de 2026 nos EUA",
-      "dek": "As repercussões e as mexidas na liderança continuam após os resultados históricos das eleições de meio de mandato que deram aos Democratas o controlo da Câmara dos Representantes."
-    },
-    "es": {
-      "title": "Elecciones de mitad de mandato en EE. UU. de 2026",
-      "dek": "Continúan las repercusiones y los cambios de liderazgo tras los históricos resultados de las elecciones de mitad de mandato que otorgaron a los demócratas el control de la Cámara de Representantes."
-    },
-    "ko": {
-      "title": "2026년 미국 중간선거",
-      "dek": "민주당이 하원 통제권을 장악한 역사적인 중간선거 결과의 여파와 지도부 개편이 이어지고 있다."
-    },
-    "ja": {
-      "title": "2026年米中間選挙",
-      "dek": "民主党が下院の過半数を握る歴史的な中間選挙の結果を受け、その影響と指導部の刷新が続いている。"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "NPR",
-      "The Guardian",
-      "Fox News",
-      "Africanews",
-      "BBC"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 4,
+  "seenHeadlines": []
 }
