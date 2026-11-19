@@ -1,224 +1,63 @@
 {
   "meta": {
     "outlets": [
+      "NPR",
+      "The Guardian",
       "Fox News",
-      "The Hill",
-      "South China Morning Post",
-      "The Hindu"
+      "Africanews",
+      "BBC"
     ],
     "createdBy": "bots/live.mjs",
-    "statsModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
-    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
   },
   "slug": "2026-u-s-midterm-elections",
-  "stats": {
-    "max": 100,
-    "asOf": "2026-11-05T00:00:00.000Z",
-    "note": "Vote share percentages for major parties in the 2026 U.S. Midterm Elections as reported by news outlets",
-    "rows": [
-      {
-        "key": "republican-senate-vote-share",
-        "label": "Republican Senate vote share",
-        "value": 54.2,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Stimmenanteil der Republikaner im Senat"
-          },
-          "es": {
-            "label": "Participación electoral al Senado por los republicanos"
-          },
-          "fr": {
-            "label": "Score républicain au Sénat"
-          },
-          "it": {
-            "label": "Quote di voto per il Senato repubblicano"
-          },
-          "ja": {
-            "label": "共和党の上院得票率"
-          },
-          "ko": {
-            "label": "공화당 상원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos republicanos no Senado"
-          },
-          "zh": {
-            "label": "共和党参议院得票率"
-          }
-        }
-      },
-      {
-        "key": "democratic-senate-vote-share",
-        "label": "Democratic Senate vote share",
-        "value": 44.8,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Stimmenanteil der Demokraten im Senat"
-          },
-          "es": {
-            "label": "Participación electoral al Senado por los demócratas"
-          },
-          "fr": {
-            "label": "Score démocrate au Sénat"
-          },
-          "it": {
-            "label": "Quote di voto per il Senato democratico"
-          },
-          "ja": {
-            "label": "民主党の上院得票率"
-          },
-          "ko": {
-            "label": "민주당 상원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos democratas no Senado"
-          },
-          "zh": {
-            "label": "民主党参议院得票率"
-          }
-        }
-      },
-      {
-        "key": "republican-house-vote-share",
-        "label": "Republican House vote share",
-        "value": 51.5,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Stimmenanteil der Republikaner im Repräsentantenhaus"
-          },
-          "es": {
-            "label": "Participación electoral a la Cámara por los republicanos"
-          },
-          "fr": {
-            "label": "Score républicain à la Chambre des représentants"
-          },
-          "it": {
-            "label": "Quote di voto per la Camera dei rappresentanti repubblicana"
-          },
-          "ja": {
-            "label": "共和党の下院得票率"
-          },
-          "ko": {
-            "label": "공화당 하원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos republicanos na Câmara dos Representantes"
-          },
-          "zh": {
-            "label": "共和党众议院得票率"
-          }
-        }
-      },
-      {
-        "key": "democratic-house-vote-share",
-        "label": "Democratic House vote share",
-        "value": 47.2,
-        "change": null,
-        "locales": {
-          "de": {
-            "label": "Stimmenanteil der Demokraten im Repräsentantenhaus"
-          },
-          "es": {
-            "label": "Participación electoral a la Cámara por los demócratas"
-          },
-          "fr": {
-            "label": "Score démocrate à la Chambre des représentants"
-          },
-          "it": {
-            "label": "Quote di voto per la Camera dei rappresentanti democratica"
-          },
-          "ja": {
-            "label": "民主党の下院得票率"
-          },
-          "ko": {
-            "label": "민주당 하원 득표율"
-          },
-          "pt": {
-            "label": "Percentagem de votos dos democratas na Câmara dos Representantes"
-          },
-          "zh": {
-            "label": "民主党众议院得票率"
-          }
-        }
-      }
-    ],
-    "unit": "%",
-    "label": "Vote share comparison between parties",
-    "source": {
-      "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
-      "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
-      "outlet": "CNBC",
-      "trusted": true,
-      "publishedAt": "2026-11-11T12:42:09.000Z"
-    },
-    "locales": {
-      "de": {
-        "note": "Stimmenanteile in Prozent für die großen Parteien bei den US-Zwischenwahlen 2026, wie von Nachrichtenmedien berichtet",
-        "label": "Vergleich der Stimmenanteile zwischen den Parteien"
-      },
-      "es": {
-        "note": "Porcentajes de participación electoral para los partidos principales en las elecciones de mitad de mandato de EE. UU. de 2026, según medios de comunicación",
-        "label": "Comparación de la participación electoral entre partidos"
-      },
-      "fr": {
-        "note": "Pourcentages de scores électoraux pour les grands partis dans les élections de mi-mandat américaines de 2026, selon les médias",
-        "label": "Comparaison des scores électoraux entre les partis"
-      },
-      "it": {
-        "note": "Quote di voto percentuale per i principali partiti nelle elezioni di metà mandato statunitensi del 2026 come riportate dai media",
-        "label": "Confronto di quote di voto tra partiti"
-      },
-      "ja": {
-        "note": "報道機関が報じた2026年米国中間選挙における主要政党の得票率",
-        "label": "政党別得票率比較"
-      },
-      "ko": {
-        "note": "뉴스 매체가 보도한 2026년 미국 중간선거에서 주요 정당의 득표율",
-        "label": "정당 간 득표율 비교"
-      },
-      "pt": {
-        "note": "Percentagens de votos dos principais partidos nas eleições de meio de mandato norte-americanas de 2026, conforme noticiado pelos meios de comunicação social",
-        "label": "Comparação da percentagem de votos entre partidos"
-      },
-      "zh": {
-        "note": "新闻媒体报道的2026年美国中期选举主要政党得票率百分比",
-        "label": "各党派得票率对比"
-      }
-    },
-    "updatedAt": "2026-11-11T14:03:21.546Z",
-    "sourceCount": 1
-  },
   "topic": "2026 U.S. Midterm Elections",
-  "status": "ended",
+  "status": "live",
   "article": {
     "slug": "2026-u-s-midterm-elections",
+    "updatedAt": "2026-11-19T18:46:21.244Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
-        "dek": "Democrats won the 2026 midterms and Republicans lost control of both chambers, while House Republicans chose Jim Jordan as their next leader and vote counting continues in 17 races.",
-        "body": [
-          "Democrats won the 2026 midterms and Republicans lost control of both chambers of Congress, according to The Hill and the USC Price School. The result ends Republican control of the House and Senate.",
-          "House Republicans selected Ohio representative Jim Jordan to lead the party in Congress starting in January, according to NPR and the New York Times. Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
-          "Election officials are continuing to process outstanding ballots eight days after the 3 November midterm elections, and G1 and The Japan Times reported that 17 races remain undecided across the country.",
-          "The U.S. House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee, halting the immediate impeachment effort, according to The Hindu and Al Jazeera.",
-          "According to Al Jazeera, 11 Democrats missed the vote on the impeachment resolution.",
-          "The White House wrote to the House Oversight Committee saying Democratic probes may 'cross the line into blatant criminality,' according to The New York Times and The Hill, and Democrats prepared to begin oversight inquiries.",
-          "Rep. Madeleine Dean said Defense Secretary Hegseth's days are numbered after Republicans blocked the impeachment effort, and House Democrats are preparing new articles over Ukraine military aid, according to The Hill."
-        ],
+        "title": "Democrats secure 56-44 Senate majority following 2026 midterm elections",
+        "dek": "The Democratic Party holds a 56-44 majority in the U.S. Senate as election results are finalized across the country.",
         "facts": [
-          "Democrats won the 2026 midterms and Republicans lost control of both chambers of Congress, according to The Hill and the USC Price School.",
-          "House Republicans selected Ohio representative Jim Jordan to lead the party in Congress starting in January, according to NPR and the New York Times.",
-          "Election officials are still counting ballots eight days after the 3 November election, with 17 races undecided, as reported by G1 and The Japan Times.",
-          "The House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee, halting the immediate effort, according to The Hindu and Al Jazeera.",
-          "The White House wrote to the House Oversight Committee saying Democratic probes may 'cross the line into blatant criminality,' according to The New York Times and The Hill.",
-          "House Democrats are preparing new articles over Ukraine military aid after Rep. Madeleine Dean warned Hegseth's days are numbered, according to The Hill."
+          "Democrats hold a 56-44 majority in the U.S. Senate.",
+          "Democratic candidates received 56% of the vote in House races.",
+          "Republican Rep. Nick Begich won re-election to Alaska's House seat.",
+          "Elon Musk stated he would have spent less on Republican candidates.",
+          "Musk stated he is not MAGA following the election results."
         ],
-        "title": "Democrats win US midterms as Republicans lose both chambers",
-        "context": "The midterm elections occurred on 3 November 2026. The House of Representatives holds the constitutional authority to initiate impeachment proceedings against federal officials, and the White House has warned that aggressive investigations could constitute criminality.",
+        "body": [
+          "Elon Musk stated on 19 November that he would have spent less money on Republican candidates if he could change his past decisions. He also said he is not MAGA following the election results, according to PBS and MarketWatch.",
+          "Republican Rep. Nick Begich won re-election to Alaska's lone House seat. Fox News reported that the victory occurred following ranked-choice tabulation.",
+          "Democrats hold a 56-44 majority in the U.S. Senate, according to The Guardian. This result follows the 2026 midterm elections.",
+          "NPR reported that 56% of voters cast ballots for Democratic candidates in House races. This figure marks the widest margin for either party in 50 years.",
+          "The Senate majority provides Democrats with the capacity to challenge the Trump administration, according to The Guardian. The party gained seats during the election cycle.",
+          "Alaska's House seat remained with the Republican Party despite losses in other races, according to Fox News. The state utilized a ranked-choice voting system to determine the winner."
+        ],
+        "context": "The 2026 midterm elections determined the composition of the U.S. Senate and House of Representatives. These results follow a period of campaigning involving significant financial contributions from private donors.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "Demokraten sichern sich 56:44-Mehrheit im Senat nach den Zwischenwahlen 2026",
+        "dek": "Die Demokratische Partei hält eine 56:44-Mehrheit im US-Senat, nachdem die Wahlergebnisse im ganzen Land feststehen.",
+        "facts": [
+          "Die Demokraten halten eine 56:44-Mehrheit im US-Senat.",
+          "Demokratische Kandidaten erhielten 56 % der Stimmen bei den Wahlen zum Repräsentantenhaus.",
+          "Der republikanische Abgeordnete Nick Begich wurde für Alaskas Sitz im Repräsentantenhaus wiedergewählt.",
+          "Elon Musk erklärte, er hätte weniger für republikanische Kandidaten ausgegeben.",
+          "Musk erklärte nach den Wahlergebnissen, er sei nicht MAGA."
+        ],
+        "body": [
+          "Elon Musk erklärte am 19. November, dass er weniger Geld für republikanische Kandidaten ausgegeben hätte, wenn er seine früheren Entscheidungen ändern könnte. Zudem sagte er laut PBS und MarketWatch nach den Wahlergebnissen, er sei nicht MAGA.",
+          "Der republikanische Abgeordnete Nick Begich wurde für Alaskas einzigen Sitz im Repräsentantenhaus wiedergewählt. Fox News berichtete, dass der Sieg nach der Auszählung mittels Rangfolgewahlverfahren feststand.",
+          "Die Demokraten halten laut The Guardian eine 56:44-Mehrheit im US-Senat. Dieses Ergebnis folgt auf die Zwischenwahlen 2026.",
+          "NPR berichtete, dass 56 % der Wähler bei den Wahlen zum Repräsentantenhaus ihre Stimme für demokratische Kandidaten auf dem Stimmzettel abgaben. Dieser Wert markiert den größten Vorsprung einer Partei seit 50 Jahren.",
+          "Die Senatsmehrheit gibt den Demokraten laut The Guardian die Möglichkeit, die Trump-Regierung herauszufordern. Die Partei konnte während des Wahlzyklus Sitze hinzugewinnen.",
+          "Alaskas Sitz im Repräsentantenhaus blieb laut Fox News bei der Republikanischen Partei, trotz Verlusten in anderen Wahlkämpfen. Der Bundesstaat nutzte ein Rangfolgewahlverfahren, um den Sieger zu ermitteln."
+        ],
+        "context": "Die Zwischenwahlen 2026 bestimmten die Zusammensetzung des US-Senats und des Repräsentantenhauses. Diese Ergebnisse folgen auf eine Phase des Wahlkampfs, die mit erheblichen finanziellen Zuwendungen privater Spender verbunden war."
       }
     },
     "versions": [
@@ -226,28 +65,6 @@
         "at": "2026-11-11T17:40:16.485Z",
         "reason": "1 new update(s)",
         "locales": {
-          "de": {
-            "dek": "Die Demokraten haben die Zwischenwahlen 2026 gewonnen und die Republikaner haben die Kontrolle über beide Kammern verloren, während die Republikaner im Repräsentantenhaus Jim Jordan als ihren nächsten Anführer wählten und die Stimmenauszählung in 17 Wahlkreisen andauert.",
-            "body": [
-              "Die Demokraten haben die Zwischenwahlen 2026 gewonnen, und die Verluste der Republikaner kosteten die Partei die Kontrolle über beide Kammern des Kongresses, so The Hill und die USC Price School. Das Ergebnis beendet die republikanische Kontrolle über das Repräsentantenhaus und den Senat.",
-              "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Parteiführer im Kongress ab Januar. Laut NPR und der New York Times ist Jordan Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
-              "Wahlbeamte verarbeiten acht Tage nach den Zwischenwahlen vom 3. November weiterhin ausstehende Stimmzettel; G1 und The Japan Times berichteten, dass landesweit 17 Rennen noch unentschieden sind.",
-              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen; laut The Hindu stoppte diese Abstimmung das unmittelbare Amtsenthebungsverfahren.",
-              "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution, so Al Jazeera, und die Maßnahme wurde auf die Ausschussebene verlagert, anstatt direkt zur Abstimmung im Plenum zu gelangen.",
-              "Die Abgeordnete Madeleine Dean sagte, die Tage von Verteidigungsminister Hegseth seien gezählt, nachdem die Republikaner das Amtsenthebungsverfahren blockiert hatten, und die Demokraten im Repräsentantenhaus bereiten laut The Hill neue Artikel wegen Militärhilfe für die Ukraine vor.",
-              "Das Weiße Haus schrieb an den Aufsichtsausschuss des Repräsentantenhauses, dass demokratische Untersuchungen \"die Grenze zur offensichtlichen Kriminalität überschreiten\" könnten, so The New York Times und The Hill, während die Demokraten sich darauf vorbereiteten, Aufsichtsuntersuchungen einzuleiten."
-            ],
-            "facts": [
-              "Die Demokraten gewannen die Zwischenwahlen 2026 und die Republikaner verloren die Kontrolle über beide Kammern des Kongresses.",
-              "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Parteiführer ab Januar.",
-              "Wahlbeamte zählen acht Tage nach der Wahl vom 3. November immer noch Stimmzettel; 17 Rennen sind noch unentschieden.",
-              "Das Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
-              "Das Weiße Haus warnte, dass demokratische Untersuchungen \"die Grenze zur offensichtlichen Kriminalität überschreiten\" könnten.",
-              "Die Demokraten im Repräsentantenhaus bereiten neue Amtsenthebungsartikel wegen Militärhilfe für die Ukraine vor."
-            ],
-            "title": "Demokraten gewinnen US-Zwischenwahlen, Republikaner verlieren beide Kammern",
-            "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
-          },
           "en": {
             "dek": "Democrats won the 2026 midterms and Republicans lost control of both chambers, while House Republicans chose Jim Jordan as their next leader and vote counting continues in 17 races.",
             "body": [
@@ -270,6 +87,28 @@
             "title": "Democrats win US midterms as Republicans lose both chambers",
             "context": "The midterm elections occurred on 3 November 2026. The House of Representatives holds the constitutional authority to initiate impeachment proceedings against federal officials.",
             "imageCaption": ""
+          },
+          "de": {
+            "dek": "Die Demokraten haben die Zwischenwahlen 2026 gewonnen und die Republikaner haben die Kontrolle über beide Kammern verloren, während die Republikaner im Repräsentantenhaus Jim Jordan als ihren nächsten Anführer wählten und die Stimmenauszählung in 17 Wahlkreisen andauert.",
+            "body": [
+              "Die Demokraten haben die Zwischenwahlen 2026 gewonnen, und die Verluste der Republikaner kosteten die Partei die Kontrolle über beide Kammern des Kongresses, so The Hill und die USC Price School. Das Ergebnis beendet die republikanische Kontrolle über das Repräsentantenhaus und den Senat.",
+              "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Parteiführer im Kongress ab Januar. Laut NPR und der New York Times ist Jordan Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
+              "Wahlbeamte verarbeiten acht Tage nach den Zwischenwahlen vom 3. November weiterhin ausstehende Stimmzettel; G1 und The Japan Times berichteten, dass landesweit 17 Rennen noch unentschieden sind.",
+              "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen; laut The Hindu stoppte diese Abstimmung das unmittelbare Amtsenthebungsverfahren.",
+              "Elf Demokraten fehlten bei der Abstimmung über die Amtsenthebungsresolution, so Al Jazeera, und die Maßnahme wurde auf die Ausschussebene verlagert, anstatt direkt zur Abstimmung im Plenum zu gelangen.",
+              "Die Abgeordnete Madeleine Dean sagte, die Tage von Verteidigungsminister Hegseth seien gezählt, nachdem die Republikaner das Amtsenthebungsverfahren blockiert hatten, und die Demokraten im Repräsentantenhaus bereiten laut The Hill neue Artikel wegen Militärhilfe für die Ukraine vor.",
+              "Das Weiße Haus schrieb an den Aufsichtsausschuss des Repräsentantenhauses, dass demokratische Untersuchungen \"die Grenze zur offensichtlichen Kriminalität überschreiten\" könnten, so The New York Times und The Hill, während die Demokraten sich darauf vorbereiteten, Aufsichtsuntersuchungen einzuleiten."
+            ],
+            "facts": [
+              "Die Demokraten gewannen die Zwischenwahlen 2026 und die Republikaner verloren die Kontrolle über beide Kammern des Kongresses.",
+              "Die Republikaner im Repräsentantenhaus wählten den Abgeordneten aus Ohio, Jim Jordan, zum Parteiführer ab Januar.",
+              "Wahlbeamte zählen acht Tage nach der Wahl vom 3. November immer noch Stimmzettel; 17 Rennen sind noch unentschieden.",
+              "Das Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen.",
+              "Das Weiße Haus warnte, dass demokratische Untersuchungen \"die Grenze zur offensichtlichen Kriminalität überschreiten\" könnten.",
+              "Die Demokraten im Repräsentantenhaus bereiten neue Amtsenthebungsartikel wegen Militärhilfe für die Ukraine vor."
+            ],
+            "title": "Demokraten gewinnen US-Zwischenwahlen, Republikaner verlieren beide Kammern",
+            "context": "Die Zwischenwahlen fanden am 3. November 2026 statt. Das Repräsentantenhaus besitzt die verfassungsmäßige Befugnis, Amtsenthebungsverfahren gegen Bundesbeamte einzuleiten."
           }
         }
       },
@@ -353,567 +192,218 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-11-11T18:19:12.278Z"
+    ]
   },
-  "endedAt": "2026-11-12T00:33:04.119Z",
+  "endedAt": null,
   "locales": {
     "de": {
-      "dek": "Analyse und Nachwirkungen setzen nach den US-Zwischenwahlen 2026 ein, die zu Wechseln in den Landesparlamenten und Debatten über politische Strategie und Einwanderungspolitik führten.",
+      "dek": "Die politischen Nachwirkungen und personellen Umbesetzungen an der Spitze dauern an, nachdem die historischen Ergebnisse der Zwischenwahlen den Demokraten die Kontrolle über das Repräsentantenhaus eingebracht haben.",
       "title": "US-Zwischenwahlen 2026"
     },
     "en": {
-      "dek": "Analysis and fallout continue following the 2026 US midterm elections, which resulted in state legislature flips and debate over political strategy and immigration policy.",
-      "title": "2026 US Midterm Elections"
+      "dek": "Fallout and leadership shuffles continue following historic midterm election results that handed Democrats control of the House.",
+      "title": "2026 U.S. Midterm Elections"
     },
     "es": {
-      "dek": "El análisis y las repercusiones continúan tras las elecciones de mitad de mandato de EE. UU. de 2026, que resultaron en cambios en las legislaturas estatales y debate sobre estrategia política y política de inmigración.",
-      "title": "Elecciones de mitad de mandato de EE. UU. de 2026"
+      "dek": "Continúan las repercusiones y los cambios de liderazgo tras los históricos resultados de las elecciones de mitad de mandato que otorgaron a los demócratas el control de la Cámara de Representantes.",
+      "title": "Elecciones de mitad de mandato en EE. UU. de 2026"
     },
     "fr": {
-      "dek": "L'analyse et les répercussions se poursuivent après les élections de mi-mandat américaines de 2026, qui ont entraîné des changements dans les législatures d'État et des débats sur la stratégie politique et la politique d'immigration.",
-      "title": "Élections de mi-mandat américaines de 2026"
+      "dek": "Les retombées et les remaniements à la tête des partis se poursuivent à la suite des résultats historiques des élections de mi-mandat qui ont accordé aux démocrates le contrôle de la Chambre des représentants.",
+      "title": "Élections de mi-mandat aux États-Unis en 2026"
     },
     "it": {
-      "dek": "Analisi e conseguenze continuano dopo le elezioni di metà mandato statunitensi del 2026, che hanno portato a cambiamenti nelle legislature statali e a dibattiti sulla strategia politica e sulla politica migratoria.",
-      "title": "Elezioni di metà mandato statunitensi del 2026"
+      "dek": "Proseguono le ripercussioni e i rimpasti ai vertici in seguito ai risultati storici delle elezioni di metà mandato che hanno assegnato ai Democratici il controllo della Camera.",
+      "title": "Elezioni di metà mandato negli Stati Uniti del 2026"
     },
     "ja": {
-      "dek": "2026年米国中間選挙の結果、州議会の議席が変動し、政治戦略や移民政策を巡る議論が続く中、分析と影響が続いている。",
-      "title": "2026年米国中間選挙"
+      "dek": "民主党が下院の過半数を握る歴史的な中間選挙の結果を受け、その影響と指導部の刷新が続いている。",
+      "title": "2026年米中間選挙"
     },
     "ko": {
-      "dek": "2026년 미국 중간선거는 주 의회 지형 변화와 정치 전략 및 이민 정책에 대한 논쟁을 낳았으며, 이에 대한 분석과 여파가 계속되고 있다.",
+      "dek": "민주당이 하원 통제권을 장악한 역사적인 중간선거 결과의 여파와 지도부 개편이 이어지고 있다.",
       "title": "2026년 미국 중간선거"
     },
     "pt": {
-      "dek": "A análise e as repercussões continuam após as eleições de meio de mandato dos EUA de 2026, que resultaram em mudanças nas legislaturas estaduais e debate sobre estratégia política e política de imigração.",
-      "title": "Eleições de Meio de Mandato dos EUA de 2026"
+      "dek": "As repercussões e as mexidas na liderança continuam após os resultados históricos das eleições de meio de mandato que deram aos Democratas o controlo da Câmara dos Representantes.",
+      "title": "Eleições de meio de mandato de 2026 nos EUA"
     },
     "zh": {
-      "dek": "在2026年美国中期选举导致州立法机构更迭以及关于政治战略和移民政策的辩论之后，分析和后续影响仍在持续。",
+      "dek": "在历史性的中期选举结果让民主党掌控众议院之后，善后工作与领导层改组仍在继续。",
       "title": "2026年美国中期选举"
     }
   },
   "updates": [
     {
-      "at": "2026-11-12T00:13:44.000Z",
-      "id": "u-1794442424000-z3cx",
+      "id": "u-1795113780000-91w0",
+      "at": "2026-11-19T18:43:00.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Elon Musk comments on 2026 midterm election spending",
+          "body": "Tesla CEO Elon Musk stated he would have spent less money on Republican candidates if he could rewind the clock. Musk also said he is not MAGA following the election results, according to PBS and MarketWatch."
+        },
+        "es": {
+          "headline": "Elon Musk comenta sobre el gasto en las elecciones de mitad de mandato de 2026",
+          "body": "El director ejecutivo de Tesla, Elon Musk, declaró que habría gastado menos dinero en los candidatos republicanos si pudiera retroceder el tiempo. Musk también afirmó que no es partidario del movimiento MAGA tras los resultados electorales, según PBS y MarketWatch."
+        },
+        "de": {
+          "headline": "Elon Musk äußert sich zu Ausgaben für die Zwischenwahlen 2026",
+          "body": "Tesla-Chef Elon Musk erklärte, er hätte weniger Geld für republikanische Kandidaten ausgegeben, wenn er die Zeit zurückdrehen könnte. Laut PBS und MarketWatch sagte Musk zudem, er sei nach den Wahlergebnissen kein Anhänger der MAGA-Bewegung."
+        },
+        "fr": {
+          "headline": "Elon Musk s'exprime sur les dépenses liées aux élections de mi-mandat de 2026",
+          "body": "Le PDG de Tesla, Elon Musk, a déclaré qu'il aurait dépensé moins d'argent pour les candidats républicains s'il pouvait revenir en arrière. Musk a également affirmé ne pas être « MAGA » à la suite des résultats électoraux, selon PBS et MarketWatch."
+        },
+        "ja": {
+          "headline": "イーロン・マスク氏、2026年中間選挙の支出について言及",
+          "body": "テスラCEOのイーロン・マスク氏は、過去に戻れるなら共和党候補者への支出を減らしていただろうと述べた。PBSおよびマーケットウォッチによると、同氏は選挙結果を受け、自身は「MAGA（米国を再び偉大に）」支持者ではないとも語った。"
+        },
+        "it": {
+          "headline": "Elon Musk commenta le spese per le elezioni di metà mandato del 2026",
+          "body": "L'amministratore delegato di Tesla, Elon Musk, ha dichiarato che, se potesse tornare indietro nel tempo, avrebbe speso meno denaro per i candidati repubblicani. Secondo quanto riportato da PBS e MarketWatch, Musk ha inoltre affermato di non essere un sostenitore del movimento MAGA in seguito ai risultati elettorali."
+        },
+        "zh": {
+          "headline": "埃隆·马斯克就2026年中期选举支出发表评论",
+          "body": "据美国公共电视网（PBS）和MarketWatch报道，特斯拉首席执行官埃隆·马斯克表示，如果时光能够倒流，他会减少在共和党候选人身上的投入。马斯克还表示，选举结果出炉后，他并非“让美国再次伟大”（MAGA）的支持者。"
+        },
+        "pt": {
+          "headline": "Elon Musk comenta gastos nas eleições de meio de mandato de 2026",
+          "body": "O CEO da Tesla, Elon Musk, afirmou que teria gasto menos dinheiro em candidatos republicanos se pudesse voltar atrás no tempo. Musk disse ainda não ser MAGA após os resultados eleitorais, segundo a PBS e a MarketWatch."
+        },
+        "ko": {
+          "headline": "일론 머스크, 2026년 중간선거 지출 관련 언급",
+          "body": "테슬라 CEO 일론 머스크는 시간을 되돌릴 수 있다면 공화당 후보들에게 더 적은 돈을 썼을 것이라고 밝혔다. PBS와 마켓워치에 따르면, 머스크는 선거 결과 이후 자신이 '마가(MAGA)' 지지자가 아니라고도 언급했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "MarketWatch",
+          "title": "Elon Musk becomes the latest tech billionaire to make a peace offering to Democrats after the midterms",
+          "url": "https://www.marketwatch.com/story/elon-musk-becomes-the-latest-tech-billionaire-to-make-a-peace-offering-to-democrats-after-the-midterms-05df0c0e?mod=mw_rss_topstories",
+          "publishedAt": "2026-11-19T18:43:00.000Z"
+        },
+        {
+          "outlet": "PBS",
+          "title": "'I'm not MAGA,' Elon Musk says after Republicans' midterm thrashing",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMnhzWmVXSHhGcUFLOHpnbmo3Q19DZmptQmRBa00wWDBCdS1rR25NOUdLSTdKcjU5SWt3OWdXbkpyVzRyY2pGSy1zX1VITENTbm1KMlUwRlcwT0lhdVV3Yi1odmtJM3FEcXpfeGtpZnN6SllrZ0ZlMTMtalYwOHNTSTVfVGQ0NmRSVHRCc091TjhrbFNrcmFDLTB5bkkyRUcwU0E?oc=5",
+          "publishedAt": "2026-11-19T17:09:25.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-19T15:55:05.000Z",
+      "id": "u-1795103705000-jw1h",
       "kind": "result",
       "locales": {
         "de": {
-          "body": "Scott Colom besiegte den amtierenden Republikaner Cindy Hyde-Smith und wurde zum ersten seit 1982 gewählten Demokraten im Senat von Mississippi gewählt. Der Sieg gibt den Demokraten einen Vorteil von 55 zu 44 im 100-köpfigen Senat, mit dem Ergebnis aus Alaska noch offen.",
-          "headline": "Demokrat Scott Colom gewinnt Senatssitz in Mississippi"
+          "body": "Nach den Zwischenwahlen 2026 halten die Demokraten laut „The Guardian“ eine 56:44-Mehrheit im US-Senat. Wie NPR berichtet, stimmten 56 Prozent der Wähler bei den Wahlen zum Repräsentantenhaus für demokratische Kandidaten; dies ist der größte Vorsprung einer Partei seit 50 Jahren.",
+          "headline": "Demokraten sichern sich 56:44-Mehrheit im Senat"
         },
         "en": {
-          "body": "Scott Colom defeated incumbent Republican Cindy Hyde-Smith, becoming the first Democrat elected to Mississippi's Senate delegation since 1982. The victory gives Democrats a 55-44 advantage in the 100-member Senate, with Alaska's result still pending.",
-          "headline": "Democrat Scott Colom wins Mississippi Senate seat"
+          "body": "Democrats hold a 56-44 majority in the U.S. Senate following the 2026 midterm elections, according to The Guardian. NPR reports that 56% of voters cast ballots for Democratic candidates in House races, marking the widest margin for either party in 50 years.",
+          "headline": "Democrats secure 56-44 Senate majority"
         },
         "es": {
-          "body": "Scott Colom derrotó a la republicana Cindy Hyde-Smith, senadora en funciones, y se convirtió en el primer demócrata elegido para la delegación del Senado de Misisipi desde 1982. La victoria otorga a los demócratas una ventaja de 55-44 en el Senado de 100 miembros, con el resultado en Alaska aún pendiente.",
-          "headline": "El demócrata Scott Colom gana un escaño del Senado por Misisipi"
+          "body": "Los demócratas mantienen una mayoría de 56-44 en el Senado de los Estados Unidos tras las elecciones de mitad de mandato de 2026, según The Guardian. NPR informa que el 56% de los votantes apoyó a los candidatos demócratas en las elecciones a la Cámara de Representantes, lo que supone el margen más amplio para cualquiera de los dos partidos en 50 años.",
+          "headline": "Los demócratas aseguran una mayoría de 56-44 en el Senado"
         },
         "fr": {
-          "body": "Scott Colom a battu l'incumbent républicaine Cindy Hyde-Smith, devenant le premier démocrate élu à la délégation sénatoriale du Mississippi depuis 1982. La victoire donne aux démocrates un avantage de 55 à 44 au Sénat de 100 membres, avec le résultat de l'Alaska toujours en attente.",
-          "headline": "Scott Colom, démocrate, remporte le siège au Sénat du Mississippi"
+          "body": "Les démocrates détiennent une majorité de 56 sièges contre 44 au Sénat américain à l'issue des élections de mi-mandat de 2026, selon The Guardian. NPR rapporte que 56 % des électeurs ont voté pour des candidats démocrates lors des élections à la Chambre des représentants, marquant le plus grand écart pour l'un ou l'autre parti depuis 50 ans.",
+          "headline": "Les démocrates obtiennent une majorité de 56 sièges contre 44 au Sénat"
         },
         "it": {
-          "body": "Scott Colom ha sconfitto la repubblicana in carica Cindy Hyde-Smith, diventando il primo democratico eletto nella delegazione del Mississippi al Senato dal 1982. La vittoria dà ai democratici un vantaggio di 55-44 nel Senato di 100 membri, con il risultato dell'Alaska ancora in sospeso.",
-          "headline": "Il democratico Scott Colom conquista un seggio al Senato per il Mississippi"
+          "body": "I Democratici detengono una maggioranza di 56 seggi contro 44 al Senato degli Stati Uniti in seguito alle elezioni di metà mandato del 2026, secondo quanto riportato dal Guardian. NPR riferisce che il 56% degli elettori ha votato per i candidati democratici alla Camera, segnando il margine più ampio per uno dei due partiti negli ultimi 50 anni.",
+          "headline": "I Democratici ottengono la maggioranza al Senato con 56 seggi contro 44"
         },
         "ja": {
-          "body": "スコット・コロム氏は現職の共和党員シンディ・ハイド＝スミス氏を破り、1982年以来ミシシッピ州選出の上院議員団で初めて当選した民主党員となった。この勝利により、全100議席の上院では民主党が55対44で優位に立ち、アラスカ州の結果はまだ確定していない。",
-          "headline": "民主党のスコット・コロム氏、ミシシッピ州上院議席を獲得"
+          "body": "ガーディアン紙によると、2026年の中間選挙を経て、米上院では民主党が56対44の過半数を維持した。NPRは、下院選において56％の有権者が民主党候補に投票したと報じており、これは過去50年間で両党間の最大の得票差となった。",
+          "headline": "民主党が上院で56対44の過半数を確保"
         },
         "ko": {
-          "body": "스콧 콜롬은 현직 공화당 소속 신디 하이드-스미스를 꺾고 1982년 이후 미시시피 상원 대표로 당선된 최초의 민주당 의원이 되었다. 이 승리로 민주당은 알래스카 결과가 아직 나오지 않은 가운데 100석 상원에서 55대 44의 우위를 점하게 되었다.",
-          "headline": "민주당 스콧 콜롬, 미시시피 상원 의원 당선"
+          "body": "가디언에 따르면 2026년 중간선거 결과 민주당이 미국 상원에서 56대 44로 과반 의석을 차지했다. NPR은 하원 선거에서 민주당 후보에게 투표한 유권자가 56%에 달해 지난 50년 동안 양당 중 가장 큰 격차를 기록했다고 보도했다.",
+          "headline": "민주당, 상원 56대 44 과반 의석 확보"
         },
         "pt": {
-          "body": "Scott Colom derrotou a republicana em exercício Cindy Hyde-Smith, tornando-se o primeiro democrata eleito para a delegação do Mississippi no Senado desde 1982. A vitória dá aos democratas uma vantagem de 55-44 no Senado de 100 membros, com o resultado do Alasca ainda pendente.",
-          "headline": "O democrata Scott Colom conquista um lugar no Senado pelo Mississippi"
+          "body": "Os Democratas detêm uma maioria de 56-44 no Senado dos EUA após as eleições de meio de mandato de 2026, segundo o The Guardian. A NPR reporta que 56% dos eleitores votaram em candidatos democratas para a Câmara dos Representantes, marcando a maior margem para qualquer um dos partidos nos últimos 50 anos.",
+          "headline": "Democratas asseguram maioria de 56-44 no Senado"
         },
         "zh": {
-          "body": "斯科特·科洛姆击败共和党现任议员辛迪·海德-史密斯，成为自1982年以来首位当选进入密西西比州国会参议院代表团的民主党人。这场胜利使民主党人在100席的参议院中取得55比44的优势，阿拉斯加州的结果目前尚未揭晓。",
-          "headline": "民主党人斯科特·科洛姆赢得密西西比州联邦参议院席位"
+          "body": "据《卫报》报道，在2026年中期选举后，民主党在美国参议院占据了56比44的多数席位。据美国国家公共电台（NPR）报道，56%的选民在众议院选举中投票支持民主党候选人，这是50年来任一政党获得的最大领先优势。",
+          "headline": "民主党在参议院获得56比44的多数席位"
         }
       },
       "sources": [
         {
-          "url": "https://www.zeit.de/politik/ausland/2026-11/senatswahl-mississippi-scott-colom-demokraten",
-          "title": "Midterms: Demokrat Scott Colom gewinnt Senatssitz in Mississippi",
-          "outlet": "Die Zeit",
-          "publishedAt": "2026-11-12T00:13:44.000Z"
-        },
-        {
-          "url": "https://www.channelnewsasia.com/world/mississippi-senate-scott-colom-democrat-us-midterms-6544221",
-          "title": "Democrat Colom wins Mississippi Senate seat, becomes state's first Black senator since 1874",
-          "outlet": "CNA",
-          "publishedAt": "2026-11-12T00:11:29.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-12T00:21:37.000Z",
-      "id": "u-1794442897000-7ase",
-      "kind": "reaction",
-      "locales": {
-        "de": {
-          "body": "Elf Demokraten fehlten bei der Abstimmung zur Absetzung von Verteidigungsminister Pete Hegseth, was den Republikanern half, das Vorhaben zu verhindern. Demokraten haben die Abwesenheit als verpasste Gelegenheit bezeichnet, angesichts von Spannungen um die Handhabung der Abstimmung.",
-          "headline": "Haus-Demokraten bei Hegseth-Impeachment-Abstimmung fehlten"
-        },
-        "en": {
-          "body": "Eleven Democrats were absent from the vote to impeach Defense Secretary Pete Hegseth, helping Republicans defeat the measure. Democrats have called the absence a missed opportunity amid tensions over the vote's handling.",
-          "headline": "House Democrats absent from Hegseth impeachment vote"
-        },
-        "es": {
-          "body": "Once demócratas faltaron a la votación para el impeachment del secretario de Defensa, Pete Hegseth, lo que ayudó a los republicanos a derrotar la medida. Los demócratas han calificado la ausencia como una oportunidad perdida en medio de tensiones por la gestión de la votación.",
-          "headline": "Demócratas de la Cámara de Representantes, ausentes en la votación del impeachment de Hegseth"
-        },
-        "fr": {
-          "body": "Onze démocrates étaient absents du vote visant à destituer le secrétaire à la Défense Pete Hegseth, aidant les républicains à vaincre la mesure. Les démocrates ont qualifié cette absence d'occasion manquée au milieu de tensions sur le déroulement du vote.",
-          "headline": "Les démocrates absents du vote de destitution de Hegseth"
-        },
-        "it": {
-          "body": "Undici democratici erano assenti al voto per mettere in stato di accusa il segretario alla Difesa Pete Hegseth, aiutando i repubblicani a bocciare la misura. I democratici hanno definito l'assenza un'occasione mancata in un clima di tensioni sulla gestione del voto.",
-          "headline": "Assenti i democratici della Camera al voto sull'impeachment di Hegseth"
-        },
-        "ja": {
-          "body": "ピート・ヘグセス国防長官を弾劾する投票に下院民主党議員11人が欠席し、共和党がこの措置を否決するのに役立った。民主党側は、投票の進め方を巡る緊張が続く中、今回の欠席は好機を逃したものだと述べている。",
-          "headline": "ヘグセス国防長官の弾劾投票、下院民主党議員が欠席"
-        },
-        "ko": {
-          "body": "11명의 민주당 의원이 국방장관 피트 헤그세스 탄핵 투표에 불참하면서 공화당이 해당 안건을 통과시키는 데 기여했다. 민주당은 투표 진행 과정에 대한 긴장 속에서 이번 불참을 기회를 놓친 것으로 평가했다.",
-          "headline": "하원 민주당 의원들, 헤그세스 탄핵 투표 불참"
-        },
-        "pt": {
-          "body": "Onze democratas faltaram à votação para o impeachment do secretário da Defesa Pete Hegseth, ajudando os republicanos a derrotar a medida. Os democratas consideraram a ausência uma oportunidade perdida em meio a tensões sobre a condução da votação.",
-          "headline": "Democratas da Câmara dos Representantes ausentes da votação do impeachment de Hegseth"
-        },
-        "zh": {
-          "body": "在针对国防部长皮特·赫格塞思的弹劾投票中，11名民主党人缺席，帮助共和党挫败了该议案。民主党人称此次缺席是一个错失的机会，目前围绕投票处理方式的紧张局势仍在持续。",
-          "headline": "众议院民主党人缺席赫格塞思弹劾投票"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.nytimes.com/2026/11/11/us/politics/democrats-backlash-missing-hegseth-impeachment-vote.html",
-          "title": "Democrats Face Backlash After Missing Hegseth Impeachment Vote",
-          "outlet": "New York Times",
-          "publishedAt": "2026-11-12T00:21:37.000Z"
-        },
-        {
-          "url": "https://thehill.com/homenews/house/6214625-house-democrats-fail-hegseth-measure/",
-          "title": "Democrats, vowing action next year, stew over missed votes on Hegseth impeachment",
-          "outlet": "The Hill",
-          "publishedAt": "2026-11-11T23:01:37.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T17:35:13.000Z",
-      "id": "u-1794418513000-pqld",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Nach den Zwischenwahlen suchen einige Republikaner über den Vizepräsidenten JD Vance hinaus, berichtet Politico. Analysten bewerten, wie die demokratischen Zwischenwahlgewinne die Trump-Lateinamerika-Politik verändern könnten, so die Orlando Sentinel.",
-          "headline": "Hill Republicans prüfen Marco Rubio für Präsidentschaftskandidatur 2028"
-        },
-        "en": {
-          "body": "Some Republicans are looking beyond Vice President JD Vance after midterm losses, according to Politico. Analysts weigh how Democrats’ midterm wins could shift Trump’s Latin America policy, according to Orlando Sentinel.",
-          "headline": "Hill Republicans consider Marco Rubio for 2028 presidential run"
-        },
-        "es": {
-          "body": "Algunos republicanos miran más allá del vicepresidente JD Vance tras los reveses en las elecciones de mitad de mandato, según Politico. Los analistas sopesan cómo las victorias de los demócratas en las elecciones de mitad de mandato podrían alterar la política de Trump hacia América Latina, según el Orlando Sentinel.",
-          "headline": "Republicanos del Capitolio barajan a Marco Rubio para la carrera presidencial de 2028"
-        },
-        "fr": {
-          "body": "Certains républicains envisagent au-delà du vice-président JD Vance après les défaites aux élections de mi-mandat, selon Politico. Des analystes examinent comment les victoires démocrates aux élections de mi-mandat pourraient modifier la politique latino-américaine de Trump, selon l'Orlando Sentinel.",
-          "headline": "Les républicains de la Chambre envisagent Marco Rubio pour une candidature à la présidence en 2028"
-        },
-        "it": {
-          "body": "Alcuni repubblicani guardano oltre il vicepresidente JD Vance dopo le sconfitte alle elezioni di metà mandato, secondo Politico. Gli analisti valutano come le vittorie dei democratici alle elezioni di metà mandato potrebbero modificare la politica di Trump per l'America Latina, secondo l'Orlando Sentinel.",
-          "headline": "I repubblicani del Congresso valutano Marco Rubio per la corsa presidenziale del 2028"
-        },
-        "ja": {
-          "body": "ポリティコによると、中間選挙での敗北を受け、一部の共和党員はJ・D・バンス副大統領の先を見据えている。オーランド・センチネルによると、アナリストらは民主党の中間選挙での勝利がトランプ氏のラテンアメリカ政策をどう変える可能性があるかを見極めようとしている。",
-          "headline": "議会共和党、マルコ・ルビオ氏の2028年大統領選出馬を検討"
-        },
-        "ko": {
-          "body": "폴리티코에 따르면 중간선거 패배 이후 일부 공화당 인사들은 JD 밴스 부통령 이후를 내다보고 있다. 올랜도 센티넬에 따르면 분석가들은 민주당의 중간선거 승리가 트럼프의 라틴아메리카 정책을 어떻게 바꿀 수 있을지 평가하고 있다.",
-          "headline": "의회 공화당 의원들, 마르코 루비오의 2028년 대선 출마 검토"
-        },
-        "pt": {
-          "body": "Alguns republicanos estão a olhar para além do vice-presidente JD Vance depois de derrotas nas eleições de meio de mandato, segundo o Politico. Analistas avaliam como as vitórias dos democratas nas eleições de meio de mandato poderão alterar a política de Trump para a América Latina, segundo o Orlando Sentinel.",
-          "headline": "Republicanos do Capitólio consideram Marco Rubio para corrida presidencial de 2028"
-        },
-        "zh": {
-          "body": "据Politico报道，中期选举失利后，一些共和党人正将目光投向副总统JD·万斯以外的人选。据《奥兰多哨兵报》报道，分析人士正在权衡民主党在中期选举中的获胜将如何改变特朗普的拉美政策。",
-          "headline": "国会山共和党人考虑马尔科·鲁比奥角逐2028年总统大选"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.politico.com/news/2026/11/11/hill-republicans-rubio-vance-2028-01160686",
-          "title": "More and more Hill Republicans are looking at Marco Rubio for 2028",
-          "outlet": "Politico",
-          "publishedAt": "2026-11-11T17:35:13.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOTWEtbVpEMmIwelY2Rl9vUVRxVEktY1VGaUJkTzhSYVYtWV9QaURab0R2cnpEYTd1R2gxblhVcWFmd0JRSWNXQ0ljME03aE8zXzhJUEFVMkZHMklmQ3h3SEVQQXFicXB4OXpVRjUxblFSYTUyMGVaXzhsdm8xY09wWTdmSQ?oc=5",
-          "title": "Analysts weigh how Democrats’ midterm wins could shift Trump’s Latin America policy",
-          "outlet": "Orlando Sentinel",
-          "publishedAt": "2026-11-11T16:43:55.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T16:24:08.000Z",
-      "id": "u-1794414248000-jeaj",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Laut USC Price School gewannen die Demokraten die Zwischenwahlen. The Hill berichtete, dass die Republikaner durch die Verluste die Kontrolle über beide Kammern des Kongresses verloren.",
-          "headline": "Demokraten gewannen US-Zwischenwahlen, Republikaner verloren beide Kammern"
-        },
-        "en": {
-          "body": "Democrats won the midterms, according to the USC Price School. The Hill reported that Republican losses cost the party control of both chambers of Congress.",
-          "headline": "Democrats won US midterms as Republicans lost both chambers"
-        },
-        "es": {
-          "body": "Los demócratas ganaron las elecciones de mitad de mandato, según la USC Price School. The Hill informó que las pérdidas republicanas costaron al partido el control de ambas cámaras del Congreso.",
-          "headline": "Demócratas ganan las elecciones de mitad de mandato en EE. UU. mientras los republicanos pierden ambas cámaras"
-        },
-        "fr": {
-          "body": "Les démocrates ont remporté les élections de mi-mandat, selon l'École de politique publique Price de l'Université de Californie du Sud (USC). Le journal The Hill a rapporté que les défaites républicaines ont fait perdre au parti le contrôle des deux chambres du Congrès.",
-          "headline": "Les démocrates remportent les élections de mi-mandat aux États-Unis, les républicains perdent les deux chambres"
-        },
-        "it": {
-          "body": "I Democratici hanno vinto le elezioni di metà mandato, secondo la USC Price School. Il quotidiano The Hill ha riferito che le sconfitte dei Repubblicani sono costate al partito il controllo di entrambe le camere del Congresso.",
-          "headline": "I Democratici hanno vinto le elezioni di metà mandato negli Stati Uniti e i Repubblicani hanno perso entrambe le camere"
-        },
-        "ja": {
-          "body": "USC Price Schoolによると、民主党が中間選挙で勝利した。The Hillは、共和党の敗北により、同党は議会の両院の支配権を失ったと報じた。",
-          "headline": "民主党が中間選挙で勝利、共和党は両院で敗北"
-        },
-        "ko": {
-          "body": "USC Price School에 따르면 민주당이 중간선거에서 승리했다. The Hill은 공화당의 패배로 인해 양원 의회에 대한 통제권을 잃었다고 보도했다.",
-          "headline": "민주당, 중도선거 승리...공화당 양원 모두 패배"
-        },
-        "pt": {
-          "body": "Os Democratas venceram as eleições de meio de mandato, segundo a USC Price School. O Hill reportou que as perdas dos Republicanos custaram ao partido o controlo de ambas as câmaras do Congresso.",
-          "headline": "Democratas venceram as eleições de meio de mandato nos EUA, enquanto os Republicanos perderam ambas as câmaras"
-        },
-        "zh": {
-          "body": "根据南加州大学普莱斯学院的数据，民主党赢得了中期选举。《华盛顿邮报》报道，共和党的失利导致该党失去国会两院的控制权。",
-          "headline": "民主党赢得美国中期选举，共和党在两院均失利"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://thehill.com/video-clips/6213328-watch-house-freedom-caucus-gop-midterm-losses/",
-          "title": "Watch live: House Freedom Caucus charts path forward after GOP midterm losses",
-          "outlet": "The Hill",
-          "publishedAt": "2026-11-11T16:24:08.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4xRXRUTGNHN1E1Sk9PTFl4QU5HS0FFcGVHRlNzRzQ5dTRUYlQtSTFaYlBtd0ZsbGQ1N0xnRkVsSlh1SU0tckJXMWNiM1QyLTE4Y0NOV0FiS21pb2pOSk9QUFVaMjJKT25MTXFLV3hYVl8wTDFRWlE?oc=5",
-          "title": "Democrats won the midterms. What happens now?",
-          "outlet": "USC Price School",
-          "publishedAt": "2026-11-11T15:12:35.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T16:15:13.000Z",
-      "id": "u-1794413713000-pibu",
-      "kind": "reaction",
-      "locales": {
-        "de": {
-          "body": "Abgeordnete Madeleine Dean warnte Verteidigungsminister Hegseth, seine Tage seien gezählt, nachdem Republikaner einen Amtsenthebungsantrag blockiert hatten. House-Demokraten bereiten neue Artikel über ukrainische Militärhilfe vor.",
-          "headline": "House-Demokraten fordern neuen Amtsenthebungsantrag wegen Ukraine-Hilfe"
-        },
-        "en": {
-          "body": "Rep. Madeleine Dean warned Defense Secretary Hegseth's days are numbered after Republicans blocked impeachment. House Democrats prepare new articles over Ukraine military aid.",
-          "headline": "House Democrats push new impeachment push over Ukraine aid"
-        },
-        "es": {
-          "body": "La representante Madeleine Dean advirtió que los días del secretario de Defensa Hegseth están contados después de que los republicanos bloquearan el impeachment. Los demócratas de la Cámara preparan nuevos artículos sobre la ayuda militar a Ucrania.",
-          "headline": "Los demócratas de la Cámara impulsan un nuevo proceso de impeachment por la ayuda a Ucrania"
-        },
-        "fr": {
-          "body": "La représentante Madeleine Dean a prévenu que les jours du secrétaire à la Défense Hegseth étaient comptés après que les républicains ont bloqué la destitution. Les démocrates de la Chambre préparent de nouveaux articles de procédure concernant l'aide militaire à l'Ukraine.",
-          "headline": "Les démocrates de la Chambre poussent un nouveau processus de destitution concernant l'aide à l'Ukraine"
-        },
-        "it": {
-          "body": "La deputata Madeleine Dean ha avvertito che i giorni del segretario alla Difesa Hegseth sono contati dopo che i repubblicani hanno bloccato l'impeachment. I democratici della Camera preparano nuovi articoli sull'aiuto militare all'Ucraina.",
-          "headline": "I democratici della Camera spingono per un nuovo impeachment sull'aiuto all'Ucraina"
-        },
-        "ja": {
-          "body": "マドレーン・ディーン下院議員は、共和党が弾劾を阻止したため、国防長官ヘグセス氏の任期は限られていると警告した。下院民主党はウクライナ軍事支援に関する新たな弾劾条項を準備している。",
-          "headline": "下院民主党、ウクライナ支援を巡り新たな弾劾案を推進"
-        },
-        "ko": {
-          "body": "매들린 딘 하원의원은 공화당이 탄핵을 저지한 후 헤그세스 국방장관의 시일이 얼마 남지 않았다고 경고했다. 하원 민주당은 우크라이나 군사 지원에 관한 새로운 탄핵 조항을 준비하고 있다.",
-          "headline": "하원 민주당, 우크라이나 지원 관련 탄핵 추진"
-        },
-        "pt": {
-          "body": "A deputada Madeleine Dean avisou que os dias do secretário de Defesa Hegseth estão contados após republicanos bloquearem o impeachment. Democratas da Câmara preparam novos artigos sobre ajuda militar à Ucrânia.",
-          "headline": "Democratas da Câmara impulsionam novo processo de impeachment sobre ajuda à Ucrânia"
-        },
-        "zh": {
-          "body": "迪恩众议员警告赫格斯塞思的日子屈指可数，因为共和党人阻挠了弹劾动议。众议院民主党人正准备就乌克兰军事援助提交新的弹劾条款。",
-          "headline": "众议院民主党人推动新的弹劾动议，针对乌克兰援助"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
-          "title": "White House Threatens Congress, Saying Aggressive Investigations Could Be Crime",
-          "outlet": "New York Times",
-          "publishedAt": "2026-11-11T16:15:13.000Z"
-        },
-        {
-          "url": "https://thehill.com/homenews/house/6213391-house-democrat-madeleine-dean-pete-hegseth-warning-impeachment/",
-          "title": "House Democrat: ‘Mr. Hegseth’s days are numbered’",
-          "outlet": "The Hill",
-          "publishedAt": "2026-11-11T16:07:03.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T16:15:13.000Z",
-      "id": "u-1794413713000-5mrf",
-      "kind": "context",
-      "locales": {
-        "de": {
-          "body": "Das Weiße Haus schrieb dem Repräsentantenhaus-Ausschuss für Aufsicht, demokratische Untersuchungen könnten 'die Grenze in offenkundige Strafbarkeit' überschreiten. Demokraten bereiten sich auf Aufsichtsuntersuchungen vor.",
-          "headline": "Weißes Haus warnt Demokraten vor Untersuchungen, die in Strafbarkeit münden könnten"
-        },
-        "en": {
-          "body": "White House wrote to House Oversight Committee saying Democratic probes may 'cross the line into blatant criminality'. Democrats prepared to begin oversight inquiries.",
-          "headline": "White House warns Democrats investigations could cross into criminality"
-        },
-        "es": {
-          "body": "La Casa Blanca escribió al Comité de Supervisión de la Cámara afirmando que las indagaciones demócratas podrían 'cruzar la línea hacia la criminalidad abierta'. Los demócratas se preparan para iniciar indagaciones de supervisión.",
-          "headline": "La Casa Blanca advierte a los demócratas de que sus investigaciones podrían derivar en criminalidad"
-        },
-        "fr": {
-          "body": "La Maison Blanche a écrit au comité de surveillance de la Chambre affirmant que les enquêtes démocrates pourraient 'dépasser la ligne dans une criminalité manifeste'. Les démocrates se préparent à lancer des enquêtes de surveillance.",
-          "headline": "La Maison Blanche avertit les démocrates que leurs enquêtes pourraient franchir la ligne pénale"
-        },
-        "it": {
-          "body": "La Casa Bianca ha scritto alla commissione Oversight della Camera affermando che le indagini dei democratici potrebbero 'attraversare la linea nella evidente criminalità'. I democratici si preparano a iniziare le indagini di controllo.",
-          "headline": "La Casa Bianca avverte i democratici che le indagini potrebbero sfociare nella criminalità"
-        },
-        "ja": {
-          "body": "ホワイトハウスは下院監視委員会宛の書簡で、民主党による調査が「明白な犯罪行為に踏み込む」可能性があると述べた。民主党は監視調査を開始する準備をしている。",
-          "headline": "ホワイトハウス、民主党の調査は犯罪行為に及ぶ可能性を警告"
-        },
-        "ko": {
-          "body": "백악관은 하원 감독위원회에 민주당의 조사가 '노골적인 범죄 영역을 넘을 수 있다'고 서한을 보냈다. 민주당은 감독 조사를 시작할 준비를 하고 있다.",
-          "headline": "백악관, 민주당 조사 범죄 영역 침범 가능성 경고"
-        },
-        "pt": {
-          "body": "A Casa Branca escreveu ao Comité de Fiscalização da Câmara afirmando que as sondagens democráticas podem 'transpor a linha para a criminalidade aberta'. Democratas preparados para iniciar inquéritos de supervisão.",
-          "headline": "Casa Branca alerta que investigações democratas podem transpor a criminalidade"
-        },
-        "zh": {
-          "body": "白宫致众议院监督委员会信函，称民主党的调查可能‘越界明目张胆地涉及刑事犯罪’。民主党准备开始监督调查。",
-          "headline": "白宫警告民主党调查可能涉及刑事责任"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
-          "title": "White House Threatens Congress, Saying Aggressive Investigations Could Be Crime",
-          "outlet": "New York Times",
-          "publishedAt": "2026-11-11T16:15:13.000Z"
-        },
-        {
-          "url": "https://thehill.com/homenews/administration/6213006-white-house-targets-democrat-congressional-investigators/",
-          "title": "White House asserts Democratic investigations could ‘cross the line into blatant criminality’",
-          "outlet": "The Hill",
-          "publishedAt": "2026-11-11T14:39:24.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T10:02:52.000Z",
-      "id": "u-1794391372000-k8x3",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Die Republikaner im Repräsentantenhaus haben Jim Jordan aus Ohio zum künftigen Parteiführer im Kongress ab Januar gewählt, wie Berichte von NPR und der New York Times bestätigen. Jordan ist Mitbegründer des Freedom Caucus und ein Verbündeter von Präsident Trump.",
-          "headline": "Republikaner im Repräsentantenhaus wählen Jim Jordan zum Fraktionschef"
-        },
-        "en": {
-          "body": "House Republicans chose Ohio's Jim Jordan to lead the party in Congress starting in January, according to reports by NPR and the New York Times. Jordan is a co-founder of the Freedom Caucus and an ally of President Trump.",
-          "headline": "House Republicans select Jim Jordan as leader"
-        },
-        "es": {
-          "body": "Los republicanos de la Cámara de Representantes eligieron a Jim Jordan, de Ohio, para liderar al partido en el Congreso a partir de enero, según informaron NPR y The New York Times. Jordan es cofundador del Freedom Caucus y aliado del presidente Trump.",
-          "headline": "Los republicanos de la Cámara de Representantes eligen a Jim Jordan como líder"
-        },
-        "fr": {
-          "body": "Les républicains de la Chambre des représentants ont choisi Jim Jordan, élu de l'Ohio, pour diriger le parti au Congrès à partir de janvier, selon des informations rapportées par NPR et le New York Times. M. Jordan est cofondateur du Freedom Caucus et un allié du président Trump.",
-          "headline": "Les républicains de la Chambre choisissent Jim Jordan comme chef"
-        },
-        "it": {
-          "body": "I Repubblicani della Camera dei rappresentanti hanno scelto Jim Jordan, dell'Ohio, per guidare il partito al Congresso a partire da gennaio, secondo quanto riferito da NPR e dal New York Times. Jordan è cofondatore del Freedom Caucus e alleato del presidente Trump.",
-          "headline": "I Repubblicani della Camera scelgono Jim Jordan come leader"
-        },
-        "ja": {
-          "body": "NPRやニューヨーク・タイムズ紙の報道によると、下院共和党は1月から党を率いる議会指導者にオハイオ州選出のジム・ジョーダン氏を選出した。ジョーダン氏はフリーダム・コーカスの共同創設者であり、トランプ大統領の側近である。",
-          "headline": "下院共和党、ジム・ジョーダン氏をリーダーに選出"
-        },
-        "ko": {
-          "body": "NPR과 뉴욕타임스의 보도에 따르면, 미 공화당 하원은 1월부터 당을 이끌 인물로 오하이오주 출신의 짐 조던 의원을 선출했다. 조던 의원은 프리덤 코커스(Freedom Caucus)의 공동 창립자이자 트럼프 대통령의 측근이다.",
-          "headline": "미 공화당 하원, 짐 조던을 원내대표로 선출"
-        },
-        "pt": {
-          "body": "Os republicanos da Câmara de Representantes escolheram Jim Jordan, do Ohio, para liderar o partido no Congresso a partir de janeiro, de acordo com notícias da NPR e do New York Times. Jordan é um dos cofundadores do Freedom Caucus e um aliado do Presidente Trump.",
-          "headline": "Republicanos da Câmara escolhem Jim Jordan como líder"
-        },
-        "zh": {
-          "body": "据NPR和《纽约时报》报道，众议院共和党人选择来自俄亥俄州的吉姆·乔丹（Jim Jordan）从明年1月开始领导党内在国会的力量。乔丹是“自由核心小组”的共同创始人和总统特朗普的盟友。",
-          "headline": "众议院共和党人推选吉姆·乔丹为领袖"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.npr.org/2026/11/11/nx-s1-6035795/close-trump-ally-to-lead-house-republicans-next-year",
-          "title": "Close Trump ally to lead House Republicans next year",
+          "url": "https://www.npr.org/2026/11/19/nx-s1-6045916/democrats-midterm-house-majority",
+          "title": "The midterms were the largest win for either party in 50 years",
           "outlet": "NPR",
-          "publishedAt": "2026-11-11T10:02:52.000Z"
+          "publishedAt": "2026-11-19T15:55:05.000Z"
         },
         {
-          "url": "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
-          "title": "Stung by Losses, G.O.P. Chooses Jordan and Thune as Leaders",
-          "outlet": "New York Times",
-          "publishedAt": "2026-11-11T08:41:17.000Z"
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMWtMNDY5VzZpUGV1UmVERkRrNmpyRGNUQ05nSnlSR1NqaFBMMl96Q0dMUFF5VTJPdENhcE42VkZxOGIxOHVsdTVlNGxfSi1PVzMtRHRERUtSeWlXVGhGendFNHIxYVBEbkMtUHBFMkhxY3NpN3l4VVNLcE1mWXF3SjMwTGRmR1pyWkI3SEl2OXhxZw?oc=5",
+          "title": "‘A new day in the Senate’: 56-44 majority gives Democrats fuel to take on Trump",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-19T15:06:00.000Z"
         }
       ],
       "importance": 3
     },
     {
-      "at": "2026-11-11T08:00:01.000Z",
-      "id": "u-1794384001000-twqb",
+      "at": "2026-11-19T16:16:28.000Z",
+      "id": "u-1795104988000-fxxk",
       "kind": "result",
       "locales": {
         "de": {
-          "body": "Acht Tage nach den Zwischenwahlen werden laut G1 noch immer Stimmzettel ausgezählt. Wie G1 und The Japan Times berichten, sind 17 Wahlentscheidungen weiterhin offen.",
-          "headline": "Stimmenauszählung eine Woche nach den US-Zwischenwahlen dauert an"
+          "body": "Der republikanische Abgeordnete Nick Begich wurde laut PBS für den einzigen Sitz Alaskas im Repräsentantenhaus wiedergewählt. Fox News berichtete, dass der Sieg nach einer Auszählung nach dem Prinzip der Rangfolgewahl feststand.",
+          "headline": "Republikaner Nick Begich gewinnt Sitz im Repräsentantenhaus für Alaska"
         },
         "en": {
-          "body": "Election officials are still counting ballots eight days after the midterm elections, according to G1. There are 17 races that remain undecided, as reported by G1 and The Japan Times.",
-          "headline": "Vote counting continues one week after US midterm elections"
+          "body": "Republican Rep. Nick Begich won re-election to Alaska's lone House seat, according to PBS. Fox News reported that the victory occurred following ranked-choice tabulation.",
+          "headline": "Republican Nick Begich wins Alaska House seat"
         },
         "es": {
-          "body": "Los funcionarios electorales siguen contando las papeletas ocho días después de las elecciones de mitad de mandato, según G1. Hay 17 contiendas que permanecen indecisas, tal como informaron G1 y The Japan Times.",
-          "headline": "El recuento de votos continúa una semana después de las elecciones de mitad de mandato en EE. UU."
+          "body": "El congresista republicano Nick Begich ha sido reelegido para el único escaño de Alaska en la Cámara de Representantes, según PBS. Fox News informó que la victoria se produjo tras el recuento por orden de preferencia.",
+          "headline": "El republicano Nick Begich gana el escaño de Alaska en la Cámara"
         },
         "fr": {
-          "body": "Les responsables électoraux continuent de dépouiller les bulletins de vote huit jours après les élections de mi-mandat, selon G1. Dix-sept scrutins restent indécis, comme l'ont rapporté G1 et The Japan Times.",
-          "headline": "Le dépouillement se poursuit une semaine après les élections de mi-mandat aux États-Unis"
+          "body": "Le représentant républicain Nick Begich a été réélu au siège unique de l'Alaska à la Chambre des représentants, selon PBS. Fox News a rapporté que cette victoire a été obtenue à l'issue d'un dépouillement par classement préférentiel.",
+          "headline": "Le républicain Nick Begich remporte le siège de l'Alaska à la Chambre"
         },
         "it": {
-          "body": "Otto giorni dopo le elezioni di metà mandato, i funzionari elettorali sono ancora impegnati nello scrutinio, secondo quanto riportato da G1. Sono 17 le sfide elettorali ancora in bilico, come riferito da G1 e dal Japan Times.",
-          "headline": "Prosegue lo spoglio delle schede a una settimana dalle elezioni di metà mandato negli Stati Uniti"
+          "body": "Il deputato repubblicano Nick Begich è stato rieletto all'unico seggio dell'Alaska alla Camera, secondo quanto riportato da PBS. Fox News ha riferito che la vittoria è avvenuta in seguito allo scrutinio con voto di preferenza (ranked-choice).",
+          "headline": "Il repubblicano Nick Begich vince il seggio alla Camera per l'Alaska"
         },
         "ja": {
-          "body": "G1によると、中間選挙から8日が経過した現在も選挙管理当局による開票作業が続いている。G1およびジャパンタイムズの報道によれば、依然として17の選挙区で勝敗が未定となっている。",
-          "headline": "米中間選挙から1週間、開票作業が続く"
+          "body": "PBSによると、共和党のニック・ベギッチ下院議員がアラスカ州の唯一の下院議席で再選を果たした。フォックスニュースは、この勝利が順位付け投票（ランクド・チョイス）の集計を経て確定したと報じた。",
+          "headline": "共和党のニック・ベギッチ氏がアラスカ州の下院議席を獲得"
         },
         "ko": {
-          "body": "G1에 따르면 중간선거가 치러진 지 8일이 지났음에도 선거 관리 당국이 여전히 개표를 진행 중이다. G1과 재팬 타임스는 아직 결과가 나오지 않은 선거구가 17곳이라고 보도했다.",
-          "headline": "미 중간선거 일주일 후에도 개표 계속돼"
+          "body": "PBS에 따르면 공화당의 닉 베기치 하원의원이 알래스카주 유일의 하원 의석 재선에 성공했다. 폭스 뉴스는 이번 승리가 순위 선택 투표 집계 이후 확정되었다고 보도했다.",
+          "headline": "공화당 닉 베기치, 알래스카 하원 의석 당선"
         },
         "pt": {
-          "body": "Os responsáveis eleitorais continuam a contar os boletins de voto oito dias após as eleições de meio de mandato, segundo o G1. Existem 17 disputas que permanecem por decidir, conforme noticiado pelo G1 e pelo The Japan Times.",
-          "headline": "Contagem de votos continua uma semana após as eleições de meio de mandato nos EUA"
+          "body": "O deputado republicano Nick Begich foi reeleito para o único lugar do Alasca na Câmara dos Representantes, segundo a PBS. A Fox News noticiou que a vitória ocorreu após a contagem de votos por preferência (ranked-choice).",
+          "headline": "Republicano Nick Begich vence lugar na Câmara pelo Alasca"
         },
         "zh": {
-          "body": "据G1报道，中期选举结束八天后，选举官员仍在进行计票工作。据G1和《日本时报》报道，目前仍有17场选举结果尚未确定。",
-          "headline": "美国中期选举一周后计票工作仍在继续"
+          "body": "据美国公共电视网（PBS）报道，共和党众议员尼克·贝吉奇（Nick Begich）成功连任阿拉斯加州唯一的众议院席位。福克斯新闻报道称，此次胜利是在进行排序复选制计票后确定的。",
+          "headline": "共和党人尼克·贝吉奇赢得阿拉斯加州众议院席位"
         }
       },
       "sources": [
         {
-          "url": "https://g1.globo.com/mundo/noticia/2026/11/11/eua-continuam-contando-votos-1-semana-apos-a-eleicao-disputas-ainda-estao-sem-resultado.ghtml",
-          "title": "EUA continuam contando votos 1 semana após a eleição; 17 disputas ainda estão sem resultado",
-          "outlet": "G1",
-          "publishedAt": "2026-11-11T08:00:01.000Z"
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxON3FURTRJOUg0SEJxNXFoSU4yZmU2T0hCdHhHbTlIZGhYYkdiR01oWXhabEVZTE5RSll2dzFfNkd2NkgzVFVHRlpEYUVBNTlqb0psalpFeVY3MEItbWJXOGpEUjRrOVhEWVo2UlFEd08xTmY2WTA5VVNzWHlUUmtqSTQ2LWdzdmxNZkpQS2pHRm9NWlB3NnZfMmphaS1fUXZmZ2t1YdIBqgFBVV95cUxPM0hZSTNhdzdaOVlFWDBJWUFXcG5oUmtDSlZmNjM0NXFfZFd1WFRMMHBNcUFrUFJkQ0VWU0FfX2I0SmtIYzFxR1ZnbS03aVhpcUdrYnkwdTB5R0pkRHJPOTlfUVRwZWlvTWc3TDhKdDQ5cGlHMkdiS29PaXRUUzZsMXJPVG4zOUlldmFocURsSzZ0Y3JfWWd6blVpUUxLOWFuM21RUTBwR3FPQQ?oc=5",
+          "title": "Republican Rep. Nick Begich wins reelection for Alaska House seat",
+          "outlet": "PBS",
+          "publishedAt": "2026-11-19T16:16:28.000Z"
         },
         {
-          "url": "https://www.japantimes.co.jp/news/2026/11/11/japan/society/data-center-backlash-japan-us-election/",
-          "title": "Japan not immune to public backlash against data centers, experts say",
-          "outlet": "The Japan Times",
-          "publishedAt": "2026-11-11T05:55:00.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T01:30:55.000Z",
-      "id": "u-1794360655000-dk07",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Das US-Repräsentantenhaus stimmte mit 211 zu 204 Stimmen dafür, eine Amtsenthebungsresolution gegen Verteidigungsminister Pete Hegseth an den Justizausschuss zu überweisen, womit das unmittelbare Vorhaben gestoppt wurde. Laut Al Jazeera fehlten 11 Demokraten bei der Abstimmung.",
-          "headline": "Republikaner im Repräsentantenhaus blockieren Amtsenthebungsverfahren gegen Verteidigungsminister Pete Hegseth"
-        },
-        "en": {
-          "body": "The U.S. House voted 211 to 204 to send an impeachment resolution against Defense Secretary Pete Hegseth to the Judiciary Committee, halting the immediate drive. According to Al Jazeera, 11 Democrats missed the vote.",
-          "headline": "House Republicans block impeachment effort against Defense Secretary Pete Hegseth"
-        },
-        "es": {
-          "body": "La Cámara de Representantes de EE. UU. votó 211 a 204 enviar una resolución de destitución contra el secretario de Defensa, Pete Hegseth, al Comité Judicial, lo que detuvo el impulso inmediato. Según Al Jazeera, 11 demócratas se ausentaron de la votación.",
-          "headline": "Los republicanos de la Cámara bloquean el intento de destitución contra el secretario de Defensa, Pete Hegseth"
-        },
-        "fr": {
-          "body": "La Chambre des représentants s'est prononcée par 211 voix contre 204 en faveur du renvoi devant la commission judiciaire d'une résolution de destitution visant le secrétaire à la Défense Pete Hegseth, mettant ainsi un terme à la poussée immédiate. Selon Al Jazeera, 11 démocrates ont manqué le vote.",
-          "headline": "Les républicains de la Chambre bloquent une tentative de destitution contre le secrétaire à la Défense Pete Hegseth"
-        },
-        "it": {
-          "body": "La Camera degli Stati Uniti ha votato 211 a 204 per inviare una risoluzione di impeachment contro il Segretario della Difesa Pete Hegseth al Comitato Giudiziario, interrompendo la spinta immediata. Secondo Al Jazeera, 11 Democratici hanno perso il voto.",
-          "headline": "I Repubblicani della Camera bloccano lo sforzo di impeachment contro il Segretario della Difesa Pete Hegseth"
-        },
-        "ja": {
-          "body": "米下院は211対204で、ピート・ヘグセス国防長官に対する弾劾決議を司法委員会に付託することを決め、即座の弾劾推進を止めた。アルジャジーラによると、民主党議員11人がこの採決を欠席した。",
-          "headline": "米下院共和党、ヘグセス国防長官を巡る弾劾の動きを阻止"
-        },
-        "ko": {
-          "body": "미 하원은 211대 204로 피트 헤그세스 국방장관에 대한 탄핵 결의안을 사법위원회로 회부해 즉각적인 추진을 중단시켰다. 알자지라에 따르면 민주당 의원 11명이 투표에 불참했다.",
-          "headline": "하원 공화당, 피트 헤그세스 국방장관 탄핵 시도 차단"
-        },
-        "pt": {
-          "body": "A Câmara dos Representantes norte-americana votou 211 contra 204 para enviar uma resolução de impeachment contra o secretário da Defesa, Pete Hegseth, para a Comissão Judicial, travando a iniciativa imediata. Segundo a Al Jazeera, 11 democratas não compareceram à votação.",
-          "headline": "Republicanos da Câmara bloqueiam tentativa de impeachment contra o secretário da Defesa, Pete Hegseth"
-        },
-        "zh": {
-          "body": "美国众议院以211票对204票通过表决，将针对国防部长皮特·赫格塞思的弹劾决议提交司法委员会处理，从而阻止了当前的推进。据半岛电视台报道，11名民主党人缺席了投票。",
-          "headline": "众议院共和党人阻止针对国防部长皮特·赫格塞思的弹劾行动"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.thehindu.com/news/international/us-republicans-derail-bid-to-impeach-hegseth/article71687959.ece",
-          "title": "U.S. Republicans derail bid to impeach Hegseth",
-          "outlet": "The Hindu",
-          "publishedAt": "2026-11-11T01:30:55.000Z"
-        },
-        {
-          "url": "https://www.aljazeera.com/news/liveblog/2026/11/11/iran-war-live-hegseth-survives-impeachment-bid-iran-denies-us-talks?traffic_source=rss",
-          "title": "Iran war live: US House blocks Hegseth impeachment with 11 Democrats absent",
-          "outlet": "Al Jazeera",
-          "publishedAt": "2026-11-11T00:01:26.000Z"
+          "url": "https://www.foxnews.com/politics/republicans-hold-lone-alaska-house-seat-despite-losing-senate-governor-races",
+          "title": "Republicans hold lone Alaska House seat despite losing Senate, governor races",
+          "outlet": "Fox News",
+          "publishedAt": "2026-11-19T12:43:44.000Z"
         }
       ],
       "importance": 3
@@ -922,167 +412,48 @@
   "category": "politics",
   "keywords": [
     "midterms",
-    "elections",
+    "congress",
+    "house",
+    "senate",
+    "katherine_clark",
+    "hakeem_jeffries",
     "democrats",
     "republicans",
-    "state legislatures",
-    "florida",
-    "mullin",
-    "immigration",
-    "congress"
+    "elections"
   ],
   "seenUrls": [
-    "https://www.spiegel.de/ausland/usa-nach-den-midterms-wie-es-fuer-pete-hegseth-und-stephen-miller-weitergeht-a-d36ddcf0-0d6a-4e05-90ca-1583c109e502#ref=rss",
-    "https://www.euronews.com/2026/11/11/us-republicans-block-efforts-to-impeach-us-defence-secretary-pete-hegseth-over-iran-war",
-    "https://www.lemonde.fr/en/international/article/2026/11/11/brazil-fines-meta-1-3-million-over-election-controversy_6777388_4.html",
-    "https://thehill.com/homenews/house/6212500-stansbury-misses-hegseth-vote/",
-    "https://www.nytimes.com/2026/11/10/us/politics/house-hegseth-impeachment-vote.html",
-    "https://www.thehindu.com/news/international/is-right-wing-populism-set-to-retreat/article71687301.ece",
-    "https://www.foxnews.com/politics/mullin-vows-zero-change-immigration-republicans-suffer-crushing-midterm-losses",
-    "https://www.thehindu.com/news/international/trump-ally-jim-jordan-elected-us-house-republican-leader-after-midterm-election-rout/article71688105.ece",
-    "https://www.axios.com/2026/11/11/democratic-leadership-congress-jeffries-schumer",
-    "https://www.dawn.com/news/2043724/us-house-blocks-bid-to-impeach-defence-secretary-hegseth",
-    "https://www.dw.com/en/us-republicans-derail-push-to-impeach-defense-secretary-pete-hegseth/a-79913761?maca=en-rss-en-all-1573-rdf",
-    "https://www.lemonde.fr/en/international/article/2026/11/11/pete-hegseth-defiant-and-combative-survives-impeachment-attempt_6777256_4.html",
-    "https://www.thehindu.com/news/international/us-republicans-derail-bid-to-impeach-hegseth/article71687959.ece",
-    "https://www.thehindu.com/news/international/us-senate-republicans-vote-to-keep-john-thune-as-leader-after-steep-midterm-election-losses/article71688101.ece",
-    "https://www.axios.com/2026/11/11/house-democrats-jeffries-speaker-vote-freshmen",
-    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZHN4M2s3UHlLenVVb21iWUZLa016MzFFb2E4YV9IY3lidkZrYUEyRmF6TkxHRUpObTJwSGhlREo5OVhZT2U5cF84Q3dBNHBVaVFSbkxkODlic3JERDloMk55ajZVRk45ejM0ZlZ2WWtPSEotNE13MnVYWTZQcTFKVmZxN195WFhrZ3Z6eEh1alVET3AwTFRZT0haelZvQ25hMmlLbm5iS1haTWvSAbABQVVfeXFMTjRpYktJLU41NGVGTzFwUTJJaHVQaVhldkxkWHlYV1hGeDN3N3pONW9JX0xCWnJ0enhKRDJ2dGRzR1B5MTA0ZEJGbXRFVE5KWDB1a2RLT0c0Y05GT2ZnWVhTbzlrenlFNXpQUzBHYzFKQVBOaXo5UW9ueHNaRW1TbXpvd2lDemVPc2V2UDI2ZkcyMDY4YmZKX1A0WGFobXJIb0ZvN2lOb1YzUVJfbUhodmo?oc=5",
-    "https://thehill.com/homenews/campaign/6212322-angie-nixon-florida-missed-opportunity-democrats/",
-    "https://news.google.com/rss/articles/CBMisAFBVV95cUxPUlFzU0pyRHcwTzdJRXhQbkk5eHllSGIzMEFQTHJVVVlaN1A4MGgweERwbU53ZUFXaGpHM25ia3BzTHJ1LW9jcHNtOUZHTjVwS3AwNVlWMkRtSzVVakp1ZkFoR0dZaFNrTWk4aERKSGRvQmF5U2N1N2tRMzNBNlFzd3ZhbzFUUmV6TWhxMGRmUlhRX3VzZk1QaUs4QVc4ZGhBdC1VQVhmT1RzZDJ4OXZpWNIBtgFBVV95cUxPOXdsWUpEZzRibTZNcFdUMEtDNGd6WUVtY0JUTWFJZjhUR243SmlZMnlUbFAzM1ROVzdMZHBkbWhDbGpMdUk1dVAxOVctNjlTN2Vpcjg3VWRRd3MteURwcHNTNF9DVE51OE9Rb183SXlIdlBQSDctWXM2Wmd6QnN4WjBRNVNoN1dpa2laZWdrc3Zjd1loQWtac25aQV9rWHluTTloVGh4b0tNVnUwYkdNcWdXOElXdw?oc=5",
-    "https://thehill.com/homenews/campaign/6212326-norman-gives-trump-f-grade/",
-    "https://news.google.com/rss/articles/CBMikAFBVV95cUxNREtDTzVra0dBUTJaZ3VfaUZiUUVOWWJmZUZtUndURWFFY0VBSjZHS2tpdVRGRXZBaXZXRUVMbjd0NjRJb2NWcTZmdThBVTFRbF82QVVfR2lHMS1zaUVQRmdUX3Z6Y29nY3hnTTFUbjltOHRhSlVqTE5veTJsYVcycmYyRkI5VzVORVF0WUptdi0?oc=5",
-    "https://www.aljazeera.com/news/liveblog/2026/11/11/iran-war-live-hegseth-survives-impeachment-bid-iran-denies-us-talks?traffic_source=rss",
-    "https://www.jpost.com/diaspora/article-914523",
-    "https://news.google.com/rss/articles/CBMiugFBVV95cUxNVlNKYzllVWtnUlJqNzBNYjhieGgtdzVsQ3pDRXpDMHVBT3BOSXFNTWp0WHljRklxX0N1XzM2VXlwU01GbkJ6aWF2MDFSdzl5SDRUSzBPWnVlRXVBRHgwRTNrOTlXcVlQSGF2RWh2Tlh6QjdieG1wWkJEb3NCNDNSbmJoTmFibkRfcFZ2Y2d2SFUxRHQ3MjVFWFZnQlFhWkpYZnU0bWRGbTJ2eVVFd1RQSDVuOEt1T1hySEE?oc=5",
-    "https://www.npr.org/2026/11/10/nx-s1-6035792/hegseth-has-remained-defiant-as-congress-members-deliberate-articles-of-impeachment",
-    "https://www.npr.org/2026/11/10/nx-s1-6036813/house-votes-to-effectively-end-the-impeachment-effort-against-pete-hegseth",
-    "https://thehill.com/homenews/campaign/6163186-maria-elvira-salazar-florida-27th-district-reelection/",
-    "https://www.axios.com/2026/11/10/trump-iran-war-diplomacy-economic-crackdown",
-    "https://www.france24.com/en/europe/20261111-spain-general-strike-puts-housing-crisis-centre-upcoming-elections",
-    "https://www.thehindu.com/news/international/immigration-arrests-go-on-unabated-despite-trumps-misgivings-after-gops-midterm-wipeout/article71688665.ece",
-    "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUk9aQXM1WmMtdmd1Wmx0TzlqZHJYMFdvWXN3cWNFRWktWWxUb19INzRpQ2dDRWR5d0ktRHJLU041ZmJDbHM4OUJlVTdqQ213WWxkQVlWNVJYR0p6aGh2Tm5nenZ5TXFFQmRZVTVUbXpMMVFxbkFDbjBOQUc2YUt3bm1ubXgxLVpBODgwWA?oc=5",
-    "https://en.yna.co.kr/view/AEN20261111007200320",
-    "https://g1.globo.com/mundo/noticia/2026/11/11/eua-continuam-contando-votos-1-semana-apos-a-eleicao-disputas-ainda-estao-sem-resultado.ghtml",
-    "https://www.aljazeera.com/opinions/2026/11/11/is-washington-rethinking-its-relationship-with-israel?traffic_source=rss",
-    "https://www.nzz.ch/international/us-innenpolitik-die-neuesten-meldungen-im-ticker-ld.10056111",
-    "https://en.yna.co.kr/view/AEN20261111006900320",
-    "https://www.japantimes.co.jp/news/2026/11/11/japan/society/data-center-backlash-japan-us-election/",
-    "https://www.dawn.com/news/2043747/fight-or-flight-trump-mixes-signals-after-midterms",
-    "https://www.npr.org/2026/11/11/nx-s1-6035795/close-trump-ally-to-lead-house-republicans-next-year",
-    "https://www.npr.org/2026/11/11/nx-s1-6035797/house-votes-to-end-the-impeachment-effort-against-pete-hegseth",
-    "https://www.npr.org/2026/11/11/nx-s1-6035568/morning-news-brief-hegseth-impeachment-new-house-gop-leader-uk-probes-base-plot",
-    "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOS1VvazVmOWwtNFlOS3cyTzNnUFJDSmRab1Y2RlM1N3VoMktMX3JHV3dlZUxtNkNodGpiSWZYZnRydEFkWXJUdUM5MXFLSktLSS1yYnRQd3duT1BrMnRBUE1kb0N3MTYtbXp4UnV5Ykp5U0FfUWRBbnY3VDN2ZmJfRkkwQllLMlU3YTZmZUQxa0VINENxZVJjbkpQeUxkUk1hU1ljRE42MW5wamlNczRYUEZyNXBGaFJycnhzZWNyWkZOaVV2M09rS3YyV1lwaWlpVHE1dDdDVUhhUHExUmpTRXhB?oc=5",
-    "https://www.axios.com/2026/11/11/stephen-miller-focus-men-maga",
-    "https://news.google.com/rss/articles/CBMingFBVV95cUxNcEVCUG1uajI3MTRqS3JQX0w0YktlX05WVjdRanFrblFCWTZaZllnVjByYjZvMGxtZzVxb1VfWEFOc2NYVklHd0NqVVp5UmRkdmI3d1U5QVFURFE2Nmo5NGtQemIxTGtzRV80aFFQLTFXdEpneTVMbnRiZl9Pckx6SE5CeFJyWmhBX3lBbTJqV255VGRoQVRNazdBTFBBQQ?oc=5",
-    "https://www.dw.com/en/spain-housing-crisis-prompts-general-strike/a-79915208?maca=en-rss-en-all-1573-rdf",
-    "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
-    "https://www.spiegel.de/ausland/midterms-usa-2026-warum-die-demokraten-ihre-historische-chance-riskieren-a-30e72a93-c75e-41c5-89ec-b692eac271af#ref=rss",
-    "https://news.google.com/rss/articles/CBMifkFVX3lxTFA3aFh0N1I3eXV5VHBNTkx3MEhtTnRKSmNtZXFNaVI3a0V5SUF2T2VfaC1SRnp0Uk5xOWt4Y0hZajRjTHp0bGhKS3RVbFd0b2pPaTJzT0JtbDhGVUc0V2FDTGFiZS1HaFFOdG5IejdJTUlMTGZlUExfZDEyc2c0dw?oc=5",
-    "https://www.japantimes.co.jp/commentary/2026/11/11/world/post-midterm-us-foreign-policy/",
-    "https://www.semafor.com/article/11/11/2026/how-the-maga-map-cracked",
-    "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
-    "https://www.foxnews.com/politics/hegseth-could-face-new-impeachment-push-over-ukraine-aid-lawmakers-warn",
-    "https://thehill.com/homenews/house/6213391-house-democrat-madeleine-dean-pete-hegseth-warning-impeachment/",
-    "https://www.axios.com/2026/11/11/bessent-lutnick-megaspeed-nvidia-china-chips",
-    "https://thehill.com/homenews/campaign/6213245-politico-poll-maga-gop-defeat/",
-    "https://www.theguardian.com/world/2026/nov/11/is-the-us-blue-wave-a-turning-point-for-europe-too",
-    "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeUNlT3NKbHF5UDZBSHlIWTQ5STlLV1Ixd1doTjRBUEhHNkhRMm8zRmIycUJFdkRtRHpQRHBEc0Nzd3BOT3JfemtBdmJUMmdRdGlWd3dSZWEtWXJrN1BoY1U2Vk1GU3E4M3N2UWNhOHFjRlYyNDBNaVRwbjRUUkpQNXcxam5fVFBpSUE?oc=5",
-    "https://thehill.com/homenews/administration/6212080-marjorie-taylor-greene-donald-trump-pete-hegseth-impeachment-effort/",
-    "https://news.google.com/rss/articles/CBMiywJBVV95cUxOcnFpbDQ4cEw5WFlyVmNndHpMVk5SU19yc2c2MEdLeW9Fb1U1NjdqQmlDVEplNTlyZ3ppeTMxOHNINVFsWmJaeU5FaGdPdFA0bXdRV1hoQlh0RGVMMWlhX3VhRm4zZEc1RXpUR3Q4RmFrOS0zZ0pvWkhRcmRmM2xnc0EtQXpKSzc2SnNBMmZsTC1NRWhBOU5IN04yVlN5V0lxeWoyY0FRaFE1WnpSLWRDUDhqbmI2eWl2WEp4ek1ZZzcxdnYwSEROZmt3S2RlQ3JsU3pqZzdzaDFvVUpTTmIxUG1yT2JwY1R3NzNLUG9vejVkSzNlSDRhekFFMDJmdVQtaGZpSGlCLUo3Y2dTU2hiSEt5aEZmQ0k0b1V5OGtzYlFuSDlxR0lWaGFrWnZSWFRueVRrcDl0VTBYamhZVWsxY2N0bTB3YVV1Y19N?oc=5",
-    "https://www.france24.com/en/tv-shows/talking-europe/20261111-exclusive-eu-s-kallas-says-us-can-t-negotiate-on-our-behalf-on-lifting-russia-sanctions",
-    "https://www.foxnews.com/politics/he-blamed-jews-gop-congressman-levels-explosive-accusation-against-jd-vance-election-postmortem",
-    "https://thehill.com/homenews/administration/6213006-white-house-targets-democrat-congressional-investigators/",
-    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWmg3cmlmWkFqQnRXbGZ0cnBlOUt5WDFTNi1jdFV0M1ROVXdudVhBalVnRjQweWVacUgxMVRPTzFVVTRNQUMxRXNVWElRdjNqbW9HQ05YVVBEZFFkSUdleHlPYW15RUxfVi0wcHlIRXBXNlZCOEFMbFBYcHRTMUVtR0JhRG1jS21tRW5Mam9QQVRQWDI0TmpEbE5JLVV6UEZhUUF0Q1ZmTG1pb1E?oc=5",
-    "https://thehill.com/homenews/house/6212860-house-democrat-kamlager-dove-hegseth-impeachment-vote/",
-    "https://www.npr.org/2026/11/11/nx-s1-6036790/swing-voters-swing-states-democrats-congress",
-    "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
-    "https://www.dawn.com/news/2043794/ji-announces-nationwide-protests-lahore-rally-against-inflation-and-delays-in-lg-polls",
-    "https://www.rollingstone.com/politics/politics-news/hegseth-impeachment-effort-blocked-democrats-absent-1235655731/",
-    "https://thehill.com/homenews/campaign/6212685-mississippi-senate-race-scott-colom-cindy-hyde-smith-update/",
-    "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
-    "https://www.france24.com/en/us-house-votes-to-derail-impeachment-of-defense-secretary-hegseth",
-    "https://www.foxnews.com/politics/senate-republicans-plan-54-day-blitz-push-trumps-agenda-before-democrats-seize-power",
-    "https://allafrica.com/stories/202611110489.html",
-    "https://www.wired.com/story/michigan-voters-want-utility-money-out-of-politics-lawsuit/",
-    "https://www.axios.com/2026/11/11/don-leonard-ohio-democrat-house-jeffries",
-    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbXFnZ3A3NUVfbWRuQ1EyaFF5Y2hUQ1pUYTFicERCRVFlVFFfUDBhcVRiVGRhTDkyVzdQcDk0eHJlNzRZZDVpMTA5QTBvSkp0cFVNVl9FMFVNaHlJcUhzbEtpVTZhb2lFQk9jSnhWR2xIanVoNU1qZ2NlcXJFVjBhUHd1Y2NUcHRNazBfc0NmTFNpZmpf0gGaAUFVX3lxTFBlc2xpNzhVdWZLdy1QU25CWGluSWh1X1MxaXJ2ZG54TTluX3hXa0ppTWVfa2psaHd6SDdYWlBhY2ZYX0pFeFNBdjBjUWlpc283YWFycm41TURhUl9hNTdEU2lfbWMyZ2laN2VyTDVnbzFWR21IRnNfOEtGR3dpek15RUFPVUZ2eS1vSnpGVDQtUFZvR1JDY3FPdUE?oc=5",
-    "https://www.jpost.com/international/article-914609",
-    "https://www.science.org/content/article/researchers-have-wish-list-can-new-congress-deliver",
-    "https://www.theguardian.com/film/2026/nov/11/how-to-rob-a-bank-movie-review-amazon",
-    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbHRXQ1pzTjBmRXp2d2JOdk96TVByNWhhVnd6MWVjWnhHSEdHdWplaHJUNUFEb2dxeWc1RXhCaVBhX2c5bnM2bE9zYldkS1o2UUh3bUVKUDdsNHZfSm5zTnE2ZzRvdURCQU9GdVRpdDBlbzV3QzZ3TVZJVHdVS2o1OTRhU3o4U3pacjhZaHR1UzlkdWJSckhuRGEwSEVKOW1ER3Z3SkJpVWpvazJpZmljSkNqeHA2TkNmNXZmNDl5WFRoUQ?oc=5",
-    "https://www.france24.com/en/france/20261111-tehran-will-strike-us-bases-in-europe-if-used-to-attack-iran-security-chief-says",
-    "https://www.npr.org/2026/11/11/nx-s1-6037432/whats-behind-democratic-socialists-historic-victories-in-the-midterms",
-    "https://thehill.com/video-clips/6213328-watch-house-freedom-caucus-gop-midterm-losses/",
-    "https://thehill.com/homenews/campaign/6213460-erick-erickson-republicans-trump-midterms/",
-    "https://thehill.com/homenews/administration/6213390-mick-mulvaney-donald-trump-white-house-2026-midterms/",
-    "https://news.google.com/rss/articles/CBMidkFVX3lxTE4xRXRUTGNHN1E1Sk9PTFl4QU5HS0FFcGVHRlNzRzQ5dTRUYlQtSTFaYlBtd0ZsbGQ1N0xnRkVsSlh1SU0tckJXMWNiM1QyLTE4Y0NOV0FiS21pb2pOSk9QUFVaMjJKT25MTXFLV3hYVl8wTDFRWlE?oc=5",
-    "https://www.politico.com/news/2026/11/11/hill-republicans-rubio-vance-2028-01160686",
-    "https://news.google.com/rss/articles/CBMigwFBVV95cUxOTWEtbVpEMmIwelY2Rl9vUVRxVEktY1VGaUJkTzhSYVYtWV9QaURab0R2cnpEYTd1R2gxblhVcWFmd0JRSWNXQ0ljME03aE8zXzhJUEFVMkZHMklmQ3h3SEVQQXFicXB4OXpVRjUxblFSYTUyMGVaXzhsdm8xY09wWTdmSQ?oc=5",
-    "https://www.nytimes.com/2026/11/11/us/politics/democrats-backlash-missing-hegseth-impeachment-vote.html",
-    "https://www.zeit.de/politik/ausland/2026-11/senatswahl-mississippi-scott-colom-demokraten",
-    "https://www.channelnewsasia.com/world/mississippi-senate-scott-colom-democrat-us-midterms-6544221",
-    "https://www.scmp.com/news/world/united-states-canada/article/3374129/democrat-colom-defeats-hyde-smith-mississippi-win-historic-senate-seat",
-    "https://www.lemonde.fr/en/international/article/2026/11/12/spain-s-nationwide-strike-erupts-amid-housing-crisis-and-anger-over-shrinking-purchasing-power_6778180_4.html",
-    "https://variety.com/2026/tv/news/jimmy-kimmel-live-ratings-midterms-1236945586/",
-    "https://thehill.com/homenews/campaign/6214832-murphy-concedes-north-carolina-house/",
-    "https://www.axios.com/2026/11/11/mississippi-ms-senate-scott-colom-cindy-hyde-smith",
-    "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQ0FPd1lQQTdINlJadmhzXzRSWWMwY1ozOUg3eTduYzRlT1JHTTlqWXhaVGRzcGd0cm5UUDRtODctWUFZR2xrOUg4ZzdwbGhKWkN2ckdXci1ReDY3M3VjUXM0dVZQUGhUNmpFOGRpQTVidXBDdHdGYVR2X2EtYi1BaFFxVFJnS1BPUFE?oc=5",
-    "https://www.nzz.ch/international/midterms-2026-die-resultate-der-us-wahlen-im-ueberblick-ld.10047365",
-    "https://www.srf.ch/news/international/usa/midterms-2026-demokrat-scott-colom-gewinnt-senatssitz-in-mississippi",
-    "https://www.aljazeera.com/news/2026/11/11/democrat-scott-colom-wins-closely-watched-us-senate-race-in-mississippi?traffic_source=rss",
-    "https://thehill.com/homenews/house/6214625-house-democrats-fail-hegseth-measure/",
-    "https://thehill.com/homenews/state-watch/6214635-ohio-republicans-loosen-regulations-on-gun-silencers-sawed-off-shotguns/",
-    "https://thehill.com/homenews/analysis/6214600-democrats-fail-hegseth-impeachment/",
-    "https://www.wired.com/story/pete-hegseth-is-about-to-get-his-ass-kicked/",
-    "https://www.dw.com/en/spain-housing-crisis-prompts-general-strike-mass-nighttime-protests/a-79915208?maca=en-rss-en-all-1573-rdf",
-    "https://thehill.com/homenews/house/6214482-gop-passes-tcava-veterans-bill/",
-    "https://www.france24.com/en/general-strike-over-housing-brings-out-hundreds-of-thousands-in-spain",
-    "https://thehill.com/policy/technology/6214401-tech-oversight-project-democrats-ai/",
-    "https://www.axios.com/2026/11/11/massie-epstein-files-second-vote",
-    "https://www.straitstimes.com/world/united-states/trump-defends-iran-war-in-veterans-day-address",
-    "https://thehill.com/the-120/6214383-senate-immigration-reform-bipartisan-push/",
-    "https://www.scmp.com/news/world/united-states-canada/article/3374123/trump-defends-iran-war-veterans-day-speech",
-    "https://www.straitstimes.com/world/democrats-are-ready-to-fight-trump-on-immigration-but-how-much-can-they-achieve",
-    "https://www.nytimes.com/2026/11/11/us/politics/trump-immigration-election-democrats-republicans.html",
-    "https://www.straitstimes.com/world/migrants-trek-north-through-mexico-buoyed-by-us-election-result",
-    "https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/",
-    "https://www.aljazeera.com/news/2026/11/11/which-key-races-remain-undecided-one-week-after-the-us-midterms?traffic_source=rss",
-    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPY3NwVERMZkt4QjlkRkc3UXFKa1E4eHRYNmZhdkhCUHV6MEltcjFMZ0ppZFlPdWE0aE9fVVpNQmttSVIyWnY5eExkUGZCdFFOS2xReS12aDRzLVh2QVk0M3d0Zm1UUnNGWVNwYjB4VkllRUNacktDNWQ1dUdJaE1LdTNmcTZmdjJDMU1WdFdTOHVEZTE5MEVnRkJadVg4dHRKVF9ra08wUzFyNGsxZlhfWDhYQ0R0SFRhZ2JsV3l3M2hSdw?oc=5"
+    "https://www.science.org/content/article/senate-bill-gives-nih-500-million-raise-2027",
+    "https://www1.folha.uol.com.br/colunas/lucia-guimaraes/2026/11/democratas-enfrentam-desafio-de-nao-desperdicar-vitoria-nas-midterms-com-divisoes-internas.shtml",
+    "https://thehill.com/the-120/6230849-chuck-todd-new-congress-tariffs-democrats/",
+    "https://www.straitstimes.com/world/el-salvadors-bukele-expected-to-seek-unprecedented-third-term-as-leader",
+    "https://www.france24.com/en/france/20261119-french-regulator-warns-influential-youtubers-respect-pluralism-rules-election-coverage",
+    "https://www.axios.com/2026/11/19/trump-elon-musk-not-maga-friend",
+    "https://thehill.com/homenews/campaign/6230774-flake-criticizes-musk-midterm-spending/",
+    "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQSXBZc3VWUC1ScjBtSWc1Q1E5R21FNURxa25sN0tMQXZ1NGY1ZG14NngyV3MyUkpZSnNkb2RrZjRBNjdwOG94dFktT3hEU0FfMWZYUU1VQ3NUUXdzUm9xMFNfdGJ0SjBoRjcwcVNuREFXSkhwV3hkd1pjUERBV1YwMXRPSmhuVHJTM2sta3FjTnR4YnVfV3BFaGJSa0ozUzBKbTEzMlpuZld6N3hGeVRsRXp5cXRiVWVCQmpCUE5FeFNmVUEyb3YtRmdab1J3TnNYUEFqS005OTZpRF9UZ1NB?oc=5",
+    "https://news.google.com/rss/articles/CBMiekFVX3lxTE14eGdJamx6ZW5udkhxMWlFdXBMQ2VSa19VazlMbmdHZ25EQTZiTXljaHdsTzNfTTNubEx5VTlIcVNRSktfUlF6ejk4QU1GdEpzTlVodjFIM1Z4bW5pTzYxaktYNms0am9OblhuOXRsVXJpU04waWFVWVRn?oc=5",
+    "https://www.nytimes.com/2026/11/19/us/politics/trump-summit-power.html",
+    "https://www.npr.org/2026/11/19/nx-s1-6047338/bigger-than-barack-obamas-election-scholars-reflect-on-mississippi-senate-race",
+    "https://www.theguardian.com/politics/2026/nov/19/andy-burnham-political-donations-cap-overseas-donors-elections",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxON3FURTRJOUg0SEJxNXFoSU4yZmU2T0hCdHhHbTlIZGhYYkdiR01oWXhabEVZTE5RSll2dzFfNkd2NkgzVFVHRlpEYUVBNTlqb0psalpFeVY3MEItbWJXOGpEUjRrOVhEWVo2UlFEd08xTmY2WTA5VVNzWHlUUmtqSTQ2LWdzdmxNZkpQS2pHRm9NWlB3NnZfMmphaS1fUXZmZ2t1YdIBqgFBVV95cUxPM0hZSTNhdzdaOVlFWDBJWUFXcG5oUmtDSlZmNjM0NXFfZFd1WFRMMHBNcUFrUFJkQ0VWU0FfX2I0SmtIYzFxR1ZnbS03aVhpcUdrYnkwdTB5R0pkRHJPOTlfUVRwZWlvTWc3TDhKdDQ5cGlHMkdiS29PaXRUUzZsMXJPVG4zOUlldmFocURsSzZ0Y3JfWWd6blVpUUxLOWFuM21RUTBwR3FPQQ?oc=5",
+    "https://www.npr.org/2026/11/19/nx-s1-6045916/democrats-midterm-house-majority",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWDcyOWhueHRCTlFzN29tNFRVRUZTdUxGdUY4eGRrZ0F5bGs4TWJ1NHhIajRMVTZZYll6cm1QNW9oRUFOX2dGR09qSkRuZ2c2TTlYdWZiWnpjTkpfSTdhZkZvc0ZCYlc0UXZTR1JpWUdoVG1hMW01cnRPb1dfNHVrNjJCdGNkVFMwY0lHSlNjNFBVaUFxczJXb0VFUHdkcjlRNENvdmhLZ2hYZDBnQmpVZkVBM2ZsZE9kbFVz?oc=5",
+    "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMWtMNDY5VzZpUGV1UmVERkRrNmpyRGNUQ05nSnlSR1NqaFBMMl96Q0dMUFF5VTJPdENhcE42VkZxOGIxOHVsdTVlNGxfSi1PVzMtRHRERUtSeWlXVGhGendFNHIxYVBEbkMtUHBFMkhxY3NpN3l4VVNLcE1mWXF3SjMwTGRmR1pyWkI3SEl2OXhxZw?oc=5",
+    "https://thehill.com/homenews/campaign/data-nerds/6230057-mary-peltola-alaska-senate-win-midterms-live-discussion/",
+    "https://www.foxnews.com/politics/aoc-leaves-door-open-2028-presidential-run-signals-willingness-work-trump",
+    "https://www.cnbc.com/2026/11/18/kash-patel-hearing-mar-a-lago-gala.html",
+    "https://www.axios.com/2026/11/19/energy-permitting-bill-senate-politics",
+    "https://allafrica.com/stories/202611190293.html",
+    "https://www.kyivpost.com/post/90606",
+    "https://www.foxnews.com/politics/republicans-hold-lone-alaska-house-seat-despite-losing-senate-governor-races",
+    "https://www.marketwatch.com/story/elon-musk-becomes-the-latest-tech-billionaire-to-make-a-peace-offering-to-democrats-after-the-midterms-05df0c0e?mod=mw_rss_topstories",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMnhzWmVXSHhGcUFLOHpnbmo3Q19DZmptQmRBa00wWDBCdS1rR25NOUdLSTdKcjU5SWt3OWdXbkpyVzRyY2pGSy1zX1VITENTbm1KMlUwRlcwT0lhdVV3Yi1odmtJM3FEcXpfeGtpZnN6SllrZ0ZlMTMtalYwOHNTSTVfVGQ0NmRSVHRCc091TjhrbFNrcmFDLTB5bkkyRUcwU0E?oc=5",
+    "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTndBYkVmZXdHQmJJMGpYREVNY0hhQUcwamZyc0xXc1lFaVFYS25TTXVHeGNtNWVvWm1rNDROQ0ZkYXkwZkFlUWJOX2cxTk9PMUdocFpweFAyS25MWjcxMTJjLVRGbWhqWkpnSXh4R0lMN3R4SllaR2o5SDhKdlN0cTNfOGFWZ1VaSFFvYlhqaWFqTnBqa0ZGSW83RUZKS0g4eC01dThNREtOMGtWZldkNVlkVWlkejJuTVE?oc=5"
   ],
-  "startedAt": "2026-11-11T03:31:24.874Z",
-  "updatedAt": "2026-11-12T15:02:40.815Z",
+  "startedAt": "2026-11-19T16:16:52.238Z",
+  "updatedAt": "2026-11-19T18:46:12.484Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "2026-u-s-midterm-elections",
-  "sourceCount": 12,
-  "statsHistory": [
-    {
-      "at": "2026-11-05T00:00:00.000Z",
-      "rows": [
-        {
-          "key": "republican-senate-vote-share",
-          "value": 54.2
-        },
-        {
-          "key": "democratic-senate-vote-share",
-          "value": 44.8
-        },
-        {
-          "key": "republican-house-vote-share",
-          "value": 51.5
-        },
-        {
-          "key": "democratic-house-vote-share",
-          "value": 47.2
-        }
-      ]
-    }
-  ],
-  "seenHeadlines": [
-    "White House warns Democrats against future investigations",
-    "Scott Colom wins Mississippi Senate seat",
-    "Republicans block impeachment effort against Hegseth",
-    "Nearly half of MAGA supporters say movement was a loser in midterms"
-  ]
+  "sourceCount": 5,
+  "seenHeadlines": []
 }
