@@ -1,9 +1,119 @@
 {
+  "meta": {
+    "outlets": [
+      "BBC",
+      "Dawn",
+      "The Japan Times",
+      "The Guardian",
+      "chinadailyhk"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "israeli-ground-operation-expands-in-gaza",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Israeli ground operation expands in Gaza",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Panzer und Truppen bewegen sich über die ausgewiesene Pufferzone in Zentral-Gaza hinaus",
+      "title": "Israelische Bodenoperation dehnt sich in Gaza aus"
+    },
+    "en": {
+      "dek": "Tanks and troops move beyond the designated buffer zone in central Gaza",
+      "title": "Israeli ground operation expands in Gaza"
+    },
+    "es": {
+      "dek": "Tanques y tropas avanzan más allá de la zona de amortiguación designada en el centro de Gaza",
+      "title": "Operación terrestre israelí se expande en Gaza"
+    },
+    "fr": {
+      "dek": "Tanks et troupes progressent au-delà de la zone tampon désignée dans le centre de Gaza",
+      "title": "Opération terrestre israélienne s'étend à Gaza"
+    },
+    "it": {
+      "dek": "Carri armati e truppe si muovono oltre la zona cuscinetto designata nel centro di Gaza",
+      "title": "Operazione terrestre israeliana si espande a Gaza"
+    },
+    "ja": {
+      "dek": "戦車と部隊がガザ中央の指定された緩衝地帯を超えて移動",
+      "title": "イスラエル地上作戦がガザで拡大"
+    },
+    "ko": {
+      "dek": "탱크와 병력이 가자지구 중부 지정 완충 지대를 넘어 이동 중",
+      "title": "이스라엘 지상 작전 가자지구로 확대"
+    },
+    "pt": {
+      "dek": "Tanques e tropas movem-se para além da zona tampão designada no centro de Gaza",
+      "title": "Operação terrestre israelita expande-se em Gaza"
+    },
+    "zh": {
+      "dek": "坦克和部队已超出加沙中部指定的缓冲区",
+      "title": "以色列地面行动在加沙扩大"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795061700000-818f",
+      "at": "2026-11-19T04:15:00.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Israeli ground operation expands beyond ceasefire line",
+          "body": "Israeli army launched a 'targeted operation' in the Gaza Strip despite an existing ceasefire, according to FAZ. Israeli tanks advanced in central Gaza on Wednesday, according to Anadolu Ajanza."
+        },
+        "it": {
+          "headline": "Operazione terrestre israeliana oltre la linea di cessate il fuoco",
+          "body": "L'esercito israeliano ha lanciato un'operazione 'mirata' nella Striscia di Gaza nonostante un cessate il fuoco esistente, secondo FAZ. I carri armati israeliani sono avanzati al centro della Striscia di Gaza mercoledì, secondo Anadolu Ajansı."
+        },
+        "fr": {
+          "headline": "Opération terrestre israélienne au-delà de la ligne de cessez-le-feu",
+          "body": "L'armée israélienne a lancé une « opération ciblée » dans la bande de Gaza malgré un cessez-le-feu en vigueur, selon le FAZ. Des chars israéliens ont avancé dans le centre de Gaza mercredi, selon Anadolu Ajansı."
+        },
+        "de": {
+          "headline": "Israeler Bodeneinsatz erweitert sich über die Waffenstillstandslinie hinaus",
+          "body": "Die israelische Armee führte einen 'gezielten Einsatz' im Gazastreifen durch, obwohl ein bestehender Waffenstillstand vorliegt, berichtet die FAZ. israelische Panzer rückten am Mittwoch in den zentralen Gazastreifen vor, berichtet Anadolu Ajansı."
+        },
+        "pt": {
+          "headline": "Operação terrestre israelita expande-se para além da linha de cessar-fogo",
+          "body": "Exército israelita lançou uma 'operação direcionada' na Faixa de Gaza apesar de existir um cessar-fogo em vigor, segundo a FAZ. Tanques israelitas avançaram no centro da Faixa de Gaza na quarta-feira, segundo a Anadolu Ajanza."
+        },
+        "zh": {
+          "headline": "以色列地面行动逾越停火线扩大",
+          "body": "据法兰克福汇报称，以军在现有停火协议下展开‘针对性行动’。据安adolu消息社报道，以色列坦克周三深入加沙中部。"
+        },
+        "ja": {
+          "headline": "イスラエル軍、 ceasefire 線を超えた地上作戦拡大",
+          "body": "FAZによると、イスラエル軍は既存の ceasefire にかかわらず、ガザ地区で「限定的作戦」を開始した。アナドル通信によれば、イスラエルの戦車が水曜日に中央ガザに進入した。"
+        },
+        "ko": {
+          "headline": "이스라엘 지상 작전, ceasefire 라인 넘어 확장",
+          "body": "이스라엘 군이 기존 휴전 협정에도 불구하고 가자지구에서 '타겟팅된 작전'을 개시했다. FAZ 보도에 따르면 이스라엘 탱크가 수요일 중부 가자지구로 진격했다. Anadolu Ajansı 보도."
+        },
+        "es": {
+          "headline": "Operación terrestre israelí se expande más allá de la línea de alto el fuego",
+          "body": "El ejército israelí lanzó una 'operación dirigida' en la Franja de Gaza a pesar de un alto el fuego existente, según FAZ. Tanques israelíes avanzaron en el centro de Gaza el miércoles, según Anadolu Ajansı."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "FAZ",
+          "title": "Liveblog Nahost: Israel meldet neuen Vorstoß im Gazastreifen",
+          "url": "https://www.faz.net/aktuell/politik/ausland/liveblog-nahost-israel-meldet-neuen-vorstoss-im-gazastreifen-faz-200583539.html",
+          "publishedAt": "2026-11-19T04:15:00.000Z"
+        },
+        {
+          "outlet": "Anadolu Ajansı",
+          "title": "Israel says central Gaza offensive coordinated with US, could last several days",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYWUtWlhlTU44eDNxNGF3bEQ3WEtxSURmb2VrSmVwRlhUbnQwRDJMMkF4ODVydEsxTFNIQ1dXVXFpTWxCeGdUYy12bVNMRWlsTHU5c1lWOEFGOGxuaVdtYU1TVGxHaHNPUkp3LXRnZV9kcjhwYlRuWEtDUHNtREVFbDk3Qk1ldTVVYm1OSER3SkF5Vkp0WWt3bHBKZ2d1ZHl3Z3BTaDY2dHRHS1BBSmFwdjlZSXphMEpRcTFJ?oc=5",
+          "publishedAt": "2026-11-18T23:31:14.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "israel",
     "gaza",
@@ -12,62 +122,41 @@
     "yellow line",
     "central gaza"
   ],
+  "seenUrls": [
+    "https://www1.folha.uol.com.br/mundo/2026/11/conselho-da-paz-de-trump-acusa-israel-e-hamas-de-descumprir-compromissos-em-gaza.shtml",
+    "https://www.jpost.com/international/article-915391",
+    "https://www.faz.net/aktuell/politik/ausland/liveblog-nahost-israel-meldet-neuen-vorstoss-im-gazastreifen-faz-200583539.html",
+    "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPLVJkMy0xazFJQWJDWVl2ZGtocjl1dXM3Q1NhZm9qMlEwM21sdnRhVXJ1ZWJST05UanJUMEJaaGdTcTA0SkMybE5WY1BPa3paVEdFdUxsdHZKa0xucF9ubDlYbmRidnRURF9sOE9mTzBwODhVc1NkWkt0VlNoQzB0akpua3ZHU3pnd2lERHUteDFONkFubTdiZmhQdEhmVEtBRlB6am51ck0?oc=5",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE9CNFdpZlR3RnBSbWVpcVp1V2p6Mk9VNnpTem5PSDlGTFBBbk43YWRSNlNoSWRrRUpuOFRNYUdmM1Bkbzhyc2pqbjdiUGVQeUtKVzdoRjRtTU4tenJFZ2U3RnV5Y1ZaLVF1VXpmamFETkQxUlB1RDU2enV2Z181Zw?oc=5",
+    "https://www.jpost.com/middle-east/article-915390",
+    "https://www.straitstimes.com/world/middle-east/israel-delays-controversial-planned-settlement-in-the-west-bank-called-e1",
+    "https://www.kyivpost.com/post/90544",
+    "https://news.google.com/rss/articles/CBMijAFBVV95cUxNeGlvWW5nc0k3R3hmNWgyalVnTWlxTExZOGhlVDQ1ZkpUQ29iUDNDRTBvS2NzV1A2Z3lxSElQUTJqREtmM1Z2X2pYRXh2cF9XRF9Wd0FVRU9Xa3NQUmJ4aU95WWR6cV9pSF8xNFowdi1lM0FTLVpvcFk5cjdvM05kUmJ2NkhGWXpIRGxXVA?oc=5",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQjNKNnl5WkxWRldaaGlLbGZNbWFGUjJYMERiQ3BtMHI0aDI1ZDN1Mk8xOG5rV25wYWRBYlpMU1JZWndLamRDazhKanlVTTdSWnE2OThnTTZIR3dwQWdldzkySi1EdUk5VzF0UnYwSHNFaHFoUHFHUS1MT2UyZzgzVlVTSS1wVm9vYTUyci1WbzkxRW1NZkwtemJsWWJpR2QwUl85NXdqN1ppaFREaEQzaWVyMjNKcXdXSTJ3Ul9rLTVDUQ?oc=5",
+    "https://www.scmp.com/news/asia/southeast-asia/article/3374989/angry-over-indignity-myanmar-review-future-ties-asean",
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1ZdHZLSE5BeGNCUmVNUE9HczY3enJ5SzVYYnVXLW92SnRiZ2VKWDhXSEUyalg4S25jeXlzaktsN3RWVlVSMXl3cVlIOWw3RU9uSDNXRjBBb0g?oc=5",
+    "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVVhsMGFnUEhueFlmbkpjTEdvbU1LVkxiUk8wVzhQMUZ2QlNfYUo2Nmh4N3dVSzI5ZXByTHpmdU9FNE9HaTloeTBGQU51cHNEbkZ0VEZJZFgxVWdoMFJKdDJkQk00a0Q0VXJlRmQ0RlJKX2RBalV4cy1ZaVVkeFE3bQ?oc=5",
+    "https://www.dawn.com/news/2045504/israel-forces-kill-3-palestinians-in-fresh-gaza-push",
+    "https://www.theverge.com/tech/1037448/elon-musk-ukraine-starlink-starshield-nyt-dealbook",
+    "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUmtmTEFXRkhQaTlEVjV1RFBiZmVtVEYzVmdPbWFqbDdSTEhzaHdiejhJanZIU0VTNEJWN2U5c0w1eS1NOElPc1hnWUMzR180VE9aOWx4YU9vZjk4WDZ1aVZKaktibEh2SnA3TjktZmhSdFIxUTV3bml2X2hyTnFId05jaGdhRTlodlpMSkRsSjdjTENEdkdpRUYybm5Na2xveFJNaVhyY2p1SGhqT09RMkxIWVJwVm12eDEzYkxOM1FQSVYxRVAyNXV4elVxN19C?oc=5",
+    "https://www.welt.de/politik/ausland/article6afe4e5f04f0ce65eb6ce92b/berichte-terrortunnel-zerstoert-israelische-armee-rueckt-trotz-waffenruhe-in-gaza-vor.html",
+    "https://www.japantimes.co.jp/news/2026/11/19/world/israel-ground-operation-gaza/",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUVpKQkp0N2EyeV9USXZ4LTRXSElKQU9yVVNERktROVAtbmlBYjlIYjlFR0xPZVljMXYyZVpKR1JEaEFrTGtBV0FHaDBHaUVKNnEza0QzX0d6Q1dZUnpsS2RpclpzTWd3SjFQZGNieUdqaUZmbi1mcWN4S0NDRkZIQ01GbkNNZlVobGJ4QVVURXRyWnpSN1FsWU82eU90WndvWWk5RWc4MmJYV1JXRF9acFJR0gG3AUFVX3lxTFBfZVMzY2NtUjhKYWU5YVBMVzZCOHBHd0xHWnp1dF9wYi0wNmdtcWxwNTVyYUppOXM3dWVQNDVDOHU5UDdDVk1FaFNCME8yQjNKUGJhcUtfeFRzYUh2VVVmMU40ZzhlQzN5SmJhTGNXcW1hOTh0eHltb0VVam9mNVFCaGJCUGJwS3BBdnJiSnhSSkFZUTlpY1BnclhZcEFabXZKOTZKS05oOGtqUXpIT29iSnJZMklRQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMivgFBVV95cUxQT3dEX09BWVR0NUZGYTNZNXNvYl85V1JfbDdYZzk5SDZ1OUVpTDN5SS1RaXZRMWNmNTNsM0VzeHFsMUtORTlyZ2xIVE1pS0RDVE9yQVVTMVhrTUJmNFFHcllVRk5ucTVfci1hV3FHakFhWlVZUm14MXctelI3aTdHVTg4TXpjcWZteHl0WkFiQzR4Zmg1eTRYcTE4YWN2UHJmZVp4cVYza2U4dlpsNW84N0JkQlVFMzNwRklnLXJB?oc=5",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYWUtWlhlTU44eDNxNGF3bEQ3WEtxSURmb2VrSmVwRlhUbnQwRDJMMkF4ODVydEsxTFNIQ1dXVXFpTWxCeGdUYy12bVNMRWlsTHU5c1lWOEFGOGxuaVdtYU1TVGxHaHNPUkp3LXRnZV9kcjhwYlRuWEtDUHNtREVFbDk3Qk1ldTVVYm1OSER3SkF5Vkp0WWt3bHBKZ2d1ZHl3Z3BTaDY2dHRHS1BBSmFwdjlZSXphMEpRcTFJ?oc=5",
+    "https://news.google.com/rss/articles/CBMikwFBVV95cUxNT3hsbnBMZi1tN0Q3YXZRbmJiSHRDUGVQTG41MTd3M3hpOFNOR3l4a2lSLU1UTUEtZnNOVF80anRBNDVrWHVtTmJ0eUFTU0ViMDNOZEo3alpHWWhxTGgyd1VTTl9jUkhmb2xDcUtiS1MzWGc0UjE0OTFoOVJONVNIbVNJTXlINVNvOVNiR2NVbUpWZUk?oc=5",
+    "https://www.nytimes.com/2026/11/18/business/watch-zohran-mamdani-on-finding-common-ground-with-trump.html",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxOX3ppbGVPaFM1cS1RQWthbUtudUF1dVhmU252Z3BJa2Ztc1FKTmM5UlhCMmFlNlRONHQ0VVhjXzE4ZVpxSnRFWldFYlMxTmJQUkRMdXU5S3h5RFhHNUh2eXFrSWhJOWhpRXo4U3JfY0twYXQtb19POE1nWEItSVcwVUNfZ1dLQzdnVnEwVlZ5Y0NpTjhNWWZvVldxTzRaQnhONG1WSUxnYkdxUTVwYUE?oc=5",
+    "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOdGlVNklobkY0LWlWcHRMOF9DX28zN2VSSjFHQmVHRUU5N09Eb0Njc3dudkpYTmxKYWVVYVpLR0FsN0Q5eGtmVEtCLU9QX0lZOGtLam5GUS02WVNDaWtYczVLZWs5ekw5Z3M5bkpfZmpZNEo3aFRuYldPd1BWaDRjVjNsSFdoWXlQYzRKSDdlZzVZQ0U3UTFaTVZRcTJYR2RaVnZxdjBCLW9GSTBqUThxeDl0VGVkcE5DQ0RWSnA1SHpDNWtXQlZHMjlteTZCVXh6NlZNbUJETkM2OWlOVFg0S0lSd1VQTHNzMFE?oc=5",
+    "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNRG9ueDlSZFZjd2hjUUROeThQZ1hYbE5weHhuM3NYUmZxclVPbG4xZXpEVVpsMDJCSXZBSjNxWWVJOFFxa25hdzkyQzVEX0pLeHNnOWpSWVRrRFVGS1RHcWJjdlppdGMzZUNuQm5ZUUpxbmZ1UEdhU25vSzNqcmtNdi1wNXNMQXlaNUpmdi03VWZuUGFUam5pZzBCOUpuS1ZkZ3F4SC1Sd00yd21wZHZ6Q0JKT3QwRUUxU2FhNFo3TktTYTlLbGZ2X0hPWkZpdDhqQ3F3Sk1RVnRRVXM0bmZWSEs5WQ?oc=5",
+    "https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNSVJTUkRBYmwtY0NqREJ4V1YwRFVwS0dRZnl5Wk9xR0NFdEFuMlY4Uk95SUJTR2E3NTFldEUtNXJRcEVsZjJNRENNZG81VF9KZE84THVRcWdTblcwU1JRM0VkWHRDRVRrb2hMSUU0X2RKWktnZHhmakxTWTNkS2ttVmNxcklpX25WWVpoZGVKSjV5XzhyR3hTd2lJejhiNlptR2Q1LWtuS0FlbXR3WDVCUlNuTGhvdmU2YkpnTnBaNzZjbVU4QVQ4Tk95aG80aE9vbHBfLU9qdUdCTS1XSDlhbjlheC1BRkVWME15ZFZCQQ?oc=5"
+  ],
   "startedAt": "2026-11-19T03:35:19.951Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-19T03:35:19.951Z",
-  "articleSlug": null,
-  "sourceCount": 5,
+  "updatedAt": "2026-11-19T04:25:25.397Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Israeli ground operation expands in Gaza",
-      "dek": "Tanks and troops move beyond the designated buffer zone in central Gaza"
-    },
-    "de": {
-      "title": "Israelische Bodenoperation dehnt sich in Gaza aus",
-      "dek": "Panzer und Truppen bewegen sich über die ausgewiesene Pufferzone in Zentral-Gaza hinaus"
-    },
-    "es": {
-      "title": "Operación terrestre israelí se expande en Gaza",
-      "dek": "Tanques y tropas avanzan más allá de la zona de amortiguación designada en el centro de Gaza"
-    },
-    "fr": {
-      "title": "Opération terrestre israélienne s'étend à Gaza",
-      "dek": "Tanks et troupes progressent au-delà de la zone tampon désignée dans le centre de Gaza"
-    },
-    "zh": {
-      "title": "以色列地面行动在加沙扩大",
-      "dek": "坦克和部队已超出加沙中部指定的缓冲区"
-    },
-    "pt": {
-      "title": "Operação terrestre israelita expande-se em Gaza",
-      "dek": "Tanques e tropas movem-se para além da zona tampão designada no centro de Gaza"
-    },
-    "it": {
-      "title": "Operazione terrestre israeliana si espande a Gaza",
-      "dek": "Carri armati e truppe si muovono oltre la zona cuscinetto designata nel centro di Gaza"
-    },
-    "ja": {
-      "title": "イスラエル地上作戦がガザで拡大",
-      "dek": "戦車と部隊がガザ中央の指定された緩衝地帯を超えて移動"
-    },
-    "ko": {
-      "title": "이스라엘 지상 작전 가자지구로 확대",
-      "dek": "탱크와 병력이 가자지구 중부 지정 완충 지대를 넘어 이동 중"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "BBC",
-      "Dawn",
-      "The Japan Times",
-      "The Guardian",
-      "chinadailyhk"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
