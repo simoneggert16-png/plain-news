@@ -1,0 +1,60 @@
+{
+  "slug": "ukrainian-aid-payments-halted-in-landkreis-greiz-20261120-401t",
+  "category": "politics",
+  "image": "https://cdn.prod.www.spiegel.de/images/a17a2d57-39fb-4cb7-9724-e1ed2e8f8f12_w960_r1.5_fpx52.64_fpy48.99.jpg",
+  "imageCredit": "Foto: Lia Toby / Getty Images",
+  "video": {
+    "type": "youtube",
+    "id": "iTt81uT3a7Q",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/iTt81uT3a7Q"
+  },
+  "importance": 5,
+  "publishedAt": "2026-11-20T13:39:19.569Z",
+  "updatedAt": "2026-11-20T13:39:19.569Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Der Spiegel",
+      "title": "Hunter Schafer wird pragmatisch, zumindest in Beziehungen",
+      "url": "https://www.spiegel.de/kultur/hunter-schafer-wird-pragmatisch-zumindest-in-beziehungen-a-4f469ccd-420f-488c-a431-eec77b1d7895#ref=rss",
+      "publishedAt": "2026-11-20T10:45:00.000Z"
+    },
+    {
+      "outlet": "Die Welt",
+      "title": "„Wir gehen da knallhart vor“ – Landkreis Greiz stoppt Zahlungen an mehrere Ukrainer",
+      "url": "https://www.welt.de/politik/deutschland/video6b00476a39a3e8110f0e40e9/buergergeld-betrug-wir-gehen-da-knallhart-vor-landkreis-greiz-stoppt-zahlungen-an-mehrere-ukrainer.html",
+      "publishedAt": "2026-11-20T13:24:31.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Ukrainian aid payments halted in Landkreis Greiz",
+      "dek": "Thuringian district stops payments to Ukrainian residents after Diia system checks",
+      "facts": [
+        "Landkreis Greiz in Thuringia halted or reduced payments to several Ukrainian residents after checking the Ukrainian Diia system.,District administrator Ulli Schäfer stated the wish to roll out the measure nationwide.",
+        "The decision follows inquiries over the Ukrainian Diia system, used for digital public services in Ukraine.,No specific number of affected residents or exact payment amounts were provided in the reporting."
+      ],
+      "body": [
+        "The Thuringian district of Greiz halted or reduced social benefit payments to several Ukrainian residents following checks against the Ukrainian Diia system, as reported by Die Welt.",
+        "District administrator Ulli Schäfer stated that the wish was for the measure to be rolled out across Germany, suggesting the Greiz decision could serve as a model for other districts.",
+        "The sources do not indicate whether similar actions have been taken in other districts or what legal basis underpins the halt in payments."
+      ],
+      "context": "The halt affects Bürgergeld, Germany's basic welfare benefit scheme, following data checks against Ukraine's Diia digital system.",
+      "imageCaption": "Schauspielerin Schafer bei der Premiere von »Blade Runner 2099«"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Body paragraph 1 contains an unsupported claim that Ulli Schäfer described the approach as going \"hard on\" the matter. The source text uses the phrase \"knallhart vor\" which translates to \"hard on\" but is the administrator's own description of the approach; however, the draft's framing of \"going hard on the matter\" is a loaded interpretation that goes beyond neutral reporting.",
+      "Body paragraph 2 contains an unsupported claim that \"The connection between the Diia system data and the eligibility for German welfare benefits was not detailed in the sources\" as a factual statement about what was or was not detailed. This is an inference, not a report of what the source says.",
+      "Body paragraph 3 contains an unsupported claim that \"The sources do not indicate whether similar actions have been taken in other districts or what legal basis underpins the halt in payments.\" This speculative framing is not in the sources and violates the no-speculation rule.",
+      "Headline exceeds 90 characters (112 characters).",
+      "The dek is 35 words, exceeding the 30-word maximum.",
+      "The context section contains evaluative framing (\". . . and follows data checks\" implies a judgment about the process) and lacks a neutral 'why' from the sources."
+    ]
+  }
+}
