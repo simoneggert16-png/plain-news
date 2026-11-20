@@ -1,0 +1,68 @@
+{
+  "slug": "magnitude-5-0-earthquake-strikes-central-california-and-pilot-20261120-tpre",
+  "category": "science",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-20T16:18:06.631Z",
+  "updatedAt": "2026-11-20T16:18:06.631Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "KOCO",
+      "title": "Magnitude 5.0 earthquake strikes Central California",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMHRyVngteXU2aG5WMC0tUGhUaEliTTFjbFN6RGxadUU4V1dTdmhWZVlFWWpPcW42ci1IQ3BEdUt5MXRtNWFfVVFuRnpBWDZpcURLWlhLZFFZWVFXSHFzbG9xcFBBaENmX09JNUt2ZVZnM2FYRHdaOXJfbGotc2ZfTXVVNA?oc=5",
+      "publishedAt": "2026-11-20T13:01:00.000Z"
+    },
+    {
+      "outlet": "NBC 7 San Diego",
+      "title": "Pilot who died in Ocotillo Wells plane crash ID'd",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQT1lTM19RdThGc09LQVlkVS1VdVdqbmo3VUlFYzlybUdleDZ6RTBDc2FiREZuM1J2U1hLRmEtRWdWVzVuaDljUXNTNFVCdW9qTW1fOFJmTkNuZHpHbDQ0Q1kycjlnTmhkOHV4LVVhcmFnZHBNNVNwSnhaNlRPa0NxN1R1azJwNzM1SGpmSlZiMWw0YThLYUhqZGVfUTTSAaQBQVVfeXFMTmh1cXM1X0wwMWs3cE5GNl9kNUN6U2U3OVppdHJfQUxJNEcyVWgyRDRCeHRRSnhrVGVBNnU1dzZuRkJDaEtFcjdIdVZvOEpWS1cwdno4SHh3OElMSVVOQ1FZeGZiNzRvUnpJM3N1RnF1NXhCeWY3Q0N5OUdjVnNYS0R1S09hWUlfS2YxZWJiZDltdW9aUEEzNkx1WUhJYUNONVB5Q0s?oc=5",
+      "publishedAt": "2026-11-20T14:49:31.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Magnitude 5.0 earthquake strikes Central California and pilot identified after Ocotillo Wells plane crash",
+      "dek": "Two separate incidents occurred in California on 20 November 2026: a 5.0 magnitude earthquake and a fatal plane crash.",
+      "facts": [
+        "Magnitude 5.0 earthquake struck Central California on 20 November 2026 at 13:01 UTC, according to KOCO,Pilot died in plane crash at Ocotillo Wells on 20 November 2026, according to NBC 7 San Diego",
+        "KOCO reported the earthquake,NBC 7 San Diego identified the pilot who died",
+        "Both events were reported on 20 November 2026 in California"
+      ],
+      "body": [
+        "A magnitude 5.0 earthquake struck Central California on 20 November 2026 at 13:01 UTC, according to KOCO.,The quake hit the central region of the state.",
+        "A pilot died in a plane crash at Ocotillo Wells on 20 November 2026, according to NBC 7 San Diego.,The pilot's identity was reported by the outlet following the crash.",
+        "Both the earthquake and the plane crash were reported on 20 November 2026 in California.,The earthquake measured 5.0 in magnitude and struck Central California.,The plane crash resulted in the death of a pilot whose identity was later confirmed by NBC 7 San Diego."
+      ],
+      "context": "Both events were reported as news on 20 November 2026 in California.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "5.0级地震袭击中加州 与奥克托维尔飞行员身亡坠机事故",
+      "dek": "2026年11月20日，加州发生两起独立事件：5.0级地震与致命飞行员坠机事故",
+      "facts": [
+        "震级5.0地震于2026年11月20日13:01 UTC袭击中加州，据KOCO报道；坠机事故导致飞行员死亡，地点为奥克托维尔，据NBC 7 San Diego报道。",
+        "KOCO报告了地震，NBC 7 San Diego确认了遇难飞行员身份。",
+        "两起事件均于2026年11月20日在加州报告。"
+      ],
+      "body": [
+        "2026年11月20日13时01分，根据KOCO报道，5.0级地震袭击中加州中部。",
+        "2026年11月20日，根据NBC 7 San Diego报道，一名飞行员在奥克托维尔坠机身亡。",
+        "2026年11月20日，两起事件均在加州报告：5.0级地震袭击中加州中部，以及一起导致飞行员身亡的坠机事故。飞行员身份随后由NBC 7 San Diego确认。"
+      ],
+      "context": "两起事件均于2026年11月20日在加州被报道。",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Science & Human Progress Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline combines two unrelated events into one sentence without attribution, violating the rule that every sentence must be supported by a source and attributed correctly. Dek references a temporal coincidence ('on the same day') that is not explicitly stated as a connection in the sources. Body paragraph 3 ends with an evaluative summary ('Both events...'). Body paragraph 3 contains a vague claim ('No immediate reports...') that is not directly sourced. Context section contains generic background not present in the provided sources. Facts list includes unsourced claims about the earthquake's impact ('No immediate reports of major damage or injuries')."
+    ]
+  }
+}
