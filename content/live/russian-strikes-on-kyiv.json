@@ -1,9 +1,342 @@
 {
+  "meta": {
+    "outlets": [
+      "Euronews",
+      "New York Times",
+      "CNA",
+      "The Straits Times"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+  },
   "slug": "russian-strikes-on-kyiv",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Russian strikes on Kyiv",
+  "status": "live",
+  "article": {
+    "slug": "russian-strikes-on-kyiv",
+    "updatedAt": "2026-11-20T15:16:44.100Z",
+    "reason": "2 new update(s)",
+    "locales": {
+      "en": {
+        "title": "France Seeks UN Meeting After Russian Strikes Kill Eight in Ukraine",
+        "dek": "France requested a UN Security Council meeting following Russian missile and drone attacks.",
+        "facts": [
+          "France called for a United Nations Security Council meeting on 20 November.",
+          "Russian missile and drone strikes killed at least eight people across Ukraine.",
+          "Dutch and Austrian embassy compounds in Kyiv sustained damage on 19 November.",
+          "European leaders meeting in Berlin rejected a Yalta-style peace format."
+        ],
+        "body": [
+          "France has called for a meeting of the United Nations Security Council following recent Russian strikes in Kyiv, according to the Straits Times and Der Spiegel. French Foreign Minister Jean-Noël Barrot wrote on the social media platform X that Russia will have to answer for the attack, according to the Jerusalem Post.",
+          "Russian forces launched a large missile and drone attack on Friday that killed at least eight people, according to the South China Morning Post and The Straits Times. The strikes targeted electricity facilities across Ukraine following attacks on the Crimean Bridge.",
+          "Previous drone strikes in Kyiv on 19 November caused damage to the Dutch and Austrian embassy compounds, according to the New York Times and CNA. Foreign ministers for both countries reported that no staff members were harmed during the incident.",
+          "European leaders meeting in Berlin stated that a Yalta format will not bring peace to Ukraine. German Chancellor Friedrich Merz and other officials emphasized that peace negotiations must include Ukraine and European representation, according to Euronews and The Guardian.",
+          "The Yalta reference recalls the 1945 summit where Allied leaders divided spheres of influence in Europe. Current European officials rejected applying a similar framework to the ongoing conflict after recent diplomatic contacts."
+        ],
+        "context": "The recent military escalation follows attacks on the Crimean Bridge and ongoing conflict between Russia and Ukraine. European allies continue to coordinate their diplomatic and security responses to the hostilities.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Frankreich fordert UN-Sitzung nach russischen Angriffen mit acht Toten in der Ukraine",
+        "dek": "Frankreich beantragte eine Sitzung des UN-Sicherheitsrats nach russischen Raketen- und Drohnenangriffen.",
+        "facts": [
+          "Frankreich forderte am 20. November eine Sitzung des Sicherheitsrats der Vereinten Nationen an.",
+          "Russische Raketen- und Drohnenangriffe töteten in der Ukraine mindestens acht Menschen.",
+          "Niederländische und österreichische Botschaftsgelände in Kiew wurden am 19. November beschädigt.",
+          "Europäische Staats- und Regierungschefs lehnten bei einem Treffen in Berlin ein Friedensformat nach Jalta-Vorbild ab."
+        ],
+        "body": [
+          "Frankreich hat laut Berichten der \"Straits Times\" und des \"Spiegels\" nach den jüngsten russischen Angriffe in Kiew eine Sitzung des Sicherheitsrats der Vereinten Nationen beantragt. Der französische Außenminister Jean-Noël Barrot schrieb auf der Social-Media-Plattform X, Russland werde sich für den Angriff verantworten müssen, so die \"Jerusalem Post\".",
+          "Russischen Streitkräften zufolge starteten diese am Freitag einen großangelegten Raketen- und Drohnenangriff, bei dem laut der \"South China Morning Post\" und der \"Straits Times\" mindestens acht Menschen getötet wurden. Die Angriffe galten Stromversorgungsanlagen in der gesamten Ukraine im Anschluss an Anschläge auf die Krim-Brücke.",
+          "Frühere Drohnenangriffe in Kiew hatten am 19. November Beschädigungen an den Botschaftsgeländen der Niederlande und Österreichs verursacht, wie die \"New York Times\" und CNA berichteten. Die Außenminister beider Länder erklärten, bei dem Vorfall seien keine Mitarbeiter zu Schaden gekommen.",
+          "Europäische Spitzenpolitiker erklärten bei einem Treffen in Berlin, dass ein Jalta-Format keinen Frieden in die Ukraine bringen werde. Bundeskanzler Friedrich Merz und andere Amtsträger betonten laut Euronews und dem \"Guardian\", dass Friedensverhandlungen die Ukraine und eine europäische Vertretung einschließen müssen.",
+          "Der Bezug auf Jalta erinnert an den Gipfel von 1945, auf dem die Alliierten die Einflusssphären in Europa aufteilten. Die gegenwärtigen europäischen Entscheidungsträger wiesen die Anwendung eines ähnlichen Rahmens auf den anhaltenden Konflikt nach jüngsten diplomatischen Kontakten zurück."
+        ],
+        "context": "Die jüngste militärische Eskalation folgt auf Angriffe auf die Krim-Brücke und den andauernden Konflikt zwischen Russland und der Ukraine. Europäische Verbündete stimmen ihre diplomatischen und sicherheitspolitischen Reaktionen auf die Feindseligkeiten weiterhin ab."
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Diplomatische Einrichtungen in der ukrainischen Hauptstadt wurden bei einem großflächigen Luftangriff beschädigt, was international für Verurteilung sorgte.",
+      "title": "Russische Angriffe auf Kiew"
+    },
+    "en": {
+      "dek": "Diplomatic facilities in the Ukrainian capital sustain damage during a large-scale aerial assault, prompting international condemnation.",
+      "title": "Russian strikes on Kyiv"
+    },
+    "es": {
+      "dek": "Instalaciones diplomáticas en la capital ucraniana sufren daños durante un ataque aéreo a gran escala, lo que provoca la condena internacional.",
+      "title": "Ataques rusos en Kiev"
+    },
+    "fr": {
+      "dek": "Des installations diplomatiques dans la capitale ukrainienne ont été endommagées lors d'une attaque aérienne de grande envergure, suscitant une condamnation internationale.",
+      "title": "Frappes russes sur Kiev"
+    },
+    "it": {
+      "dek": "Sedi diplomatiche nella capitale ucraina hanno subito danni durante un massiccio attacco aereo, suscitando la condanna della comunità internazionale.",
+      "title": "Attacchi russi su Kiev"
+    },
+    "ja": {
+      "dek": "ウクライナの首都にある外交施設が大規模な空爆により被害を受け、国際的な非難を招いている。",
+      "title": "キエフへのロシアの攻撃"
+    },
+    "ko": {
+      "dek": "우크라이나 수도의 외교 시설들이 대규모 공중 공격으로 피해를 입으면서 국제적인 규탄을 샀다.",
+      "title": "키이우에 대한 러시아 공습"
+    },
+    "pt": {
+      "dek": "Instalações diplomáticas na capital ucraniana sofrem danos durante um grande ataque aéreo, provocando condenação internacional.",
+      "title": "Ataques russos em Kyiv"
+    },
+    "zh": {
+      "dek": "在一次大规模空袭中，乌克兰首都的外交设施受损，引发国际谴责。",
+      "title": "俄罗斯对基辅的袭击"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795181585000-clwu",
+      "at": "2026-11-20T13:33:05.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Russian strikes on Ukraine kill eight people",
+          "body": "Russia launched one of the largest missile and drone attacks of the war on Friday, killing at least eight people, according to the South China Morning Post and The Straits Times. The strikes targeted electricity facilities across Ukraine following attacks on the Crimean Bridge."
+        },
+        "de": {
+          "headline": "Russische Angriffe auf die Ukraine fordern acht Todesopfer",
+          "body": "Russland hat am Freitag einen der bisher größten Raketen- und Drohnenangriffe des Krieges gestartet und dabei mindestens acht Menschen getötet, wie die „South China Morning Post“ und „The Straits Times“ berichten. Die Angriffe richteten sich nach Attacken auf die Krim-Brücke gegen Stromversorgungsanlagen in der gesamten Ukraine."
+        },
+        "fr": {
+          "headline": "Des frappes russes font huit morts en Ukraine",
+          "body": "La Russie a lancé vendredi l'une des plus importantes attaques de missiles et de drones du conflit, faisant au moins huit morts, selon le South China Morning Post et The Straits Times. Ces frappes ont visé des infrastructures électriques à travers l'Ukraine, à la suite d'attaques contre le pont de Crimée."
+        },
+        "es": {
+          "headline": "Los ataques rusos contra Ucrania matan a ocho personas",
+          "body": "Rusia lanzó el viernes uno de los mayores ataques con misiles y drones de la guerra, matando al menos a ocho personas, según el South China Morning Post y The Straits Times. Los ataques tuvieron como objetivo instalaciones eléctricas en toda Ucrania tras las agresiones contra el puente de Crimea."
+        },
+        "it": {
+          "headline": "Attacchi russi contro l'Ucraina provocano otto morti",
+          "body": "Venerdì la Russia ha lanciato una delle più grandi offensive con missili e droni dall'inizio della guerra, provocando la morte di almeno otto persone, secondo quanto riportato dal South China Morning Post e da The Straits Times. I raid hanno preso di mira impianti elettrici in tutta l'Ucraina in seguito agli attacchi contro il ponte di Kerch, in Crimea."
+        },
+        "pt": {
+          "headline": "Ataques russos na Ucrânia fazem oito mortos",
+          "body": "A Rússia lançou na sexta-feira um dos maiores ataques com mísseis e drones da guerra, fazendo pelo menos oito mortos, de acordo com o South China Morning Post e o The Straits Times. Os ataques tiveram como alvo instalações elétricas em toda a Ucrânia, na sequência de ataques à ponte da Crimeia."
+        },
+        "zh": {
+          "headline": "俄罗斯对乌克兰发动袭击致8人死亡",
+          "body": "据《南华早报》和《海峡时报》报道，俄罗斯于周五发动了战争中规模最大的导弹和无人机袭击之一，造成至少8人死伤。在克里米亚大桥遭到袭击后，这些空袭以乌克兰全境的电力设施为目标。"
+        },
+        "ko": {
+          "headline": "러시아의 우크라이나 공습으로 8명 사망",
+          "body": "사우스차이나모닝포스트와 스트레이츠타임즈에 따르면 러시아는 금요일 전쟁 발발 이후 최대 규모의 미사일 및 드론 공습 중 하나를 감행해 최소 8명이 사망했다. 이번 공습은 크림대교 공격 이후 우크라이나 전역의 전력 시설을 겨냥해 이루어졌다."
+        },
+        "ja": {
+          "headline": "ロシアのウクライナ空爆で8人死亡",
+          "body": "南華早報（サウスチャイナ・モーニング・ポスト）およびザ・ストラ、ストレーツ・タイムズ紙によると、ロシアは金曜日、戦争開始以来最大規模となるミサイルとドローンによる攻撃を仕掛け、少なくとも8人が死亡した。クリミア大橋への攻撃を受け、ウクライナ全土の電力施設が標的となった。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "South China Morning Post",
+          "title": "8 killed in Ukraine as Russia hits back after Crimea bridge attacks",
+          "url": "https://www.scmp.com/news/world/europe/article/3375281/8-killed-ukraine-russia-hits-back-after-crimea-bridge-attacks",
+          "publishedAt": "2026-11-20T13:33:05.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Russia pounds Ukraine, killing 8, as missile lands in Poland",
+          "url": "https://www.straitstimes.com/world/europe/russia-pounds-ukraine-killing-8-as-missile-lands-in-poland",
+          "publishedAt": "2026-11-20T13:32:55.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1795185318000-kazl",
+      "at": "2026-11-20T14:35:18.000Z",
+      "kind": "reaction",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "France calls for UN Security Council meeting after Kyiv strikes",
+          "body": "France has called for a meeting of the United Nations Security Council following the latest Russian strikes in Kyiv, according to the Straits Times and Der Spiegel. French Foreign Minister Jean-Noël Barrot wrote on the social media platform X that Russia will have to answer for the attack, according to the Jerusalem Post."
+        },
+        "de": {
+          "headline": "Frankreich fordert Sitzung des UN-Sicherheitsrats nach Angriffen auf Kiew",
+          "body": "Frankreich hat nach den jüngsten russischen Angriffen in Kiew eine Dringlichkeitssitzung des Sicherheitsrats der Vereinten Nationen einberufen, wie „The Straits Times“ und der „Spiegel“ berichten. Der französische Außenminister Jean-Noël Barrot schrieb auf der Plattform X, Russland werde sich für den Angriff verantworten müssen, so die „Jerusalem Post“."
+        },
+        "fr": {
+          "headline": "La France demande une réunion du Conseil de sécurité de l'ONU après les frappes sur Kiev",
+          "body": "La France a demandé la tenue d'une réunion du Conseil de sécurité des Nations unies à la suite des dernières frappes russes à Kiev, d'après le Straits Times et Der Spiegel. Le ministre français des Affaires étrangères, Jean-Noël Barrot, a écrit sur la plateforme X que la Russie devra rendre des comptes pour cette attaque, selon le Jerusalem Post."
+        },
+        "es": {
+          "headline": "Francia convoca una reunión del Consejo de Seguridad de la ONU tras los ataques en Kiev",
+          "body": "Francia ha convocado una reunión del Consejo de Seguridad de las Naciones Unidas tras los últimos ataques rusos en Kiev, según The Straits Times y Der Spiegel. El ministro francés de Asuntos Exteriores, Jean-Noël Barrot, escribió en la red social X que Rusia tendrá que rendir cuentas por el ataque, según el Jerusalem Post."
+        },
+        "it": {
+          "headline": "La Francia chiede una riunione del Consiglio di Sicurezza dell'ONU dopo i raid a Kiev",
+          "body": "La Francia ha chiesto la convocazione di una riunione del Consiglio di Sicurezza delle Nazioni Unite in seguito ai recenti attacchi russi a Kiev, secondo quanto riferito da The Straits Times e Der Spiegel. Il ministro degli Esteri francese Jean-Noël Barrot ha scritto sulla piattaforma social X che la Russia dovrà rispondere dell'attacco, come riportato dal Jerusalem Post."
+        },
+        "pt": {
+          "headline": "França pede reunião do Conselho de Segurança da ONU após ataques a Kiev",
+          "body": "A França convocou uma reunião do Conselho de Segurança das Nações Unidas na sequência dos mais recentes ataques russos em Kiev, segundo o Straits Times e o Der Spiegel. O ministro dos Negócios Estrangeiros francês, Jean-Noël Barrot, escreveu na rede social X que a Rússia terá de prestar contas pelo ataque, de acordo com o Jerusalem Post."
+        },
+        "zh": {
+          "headline": "基辅遭袭后法国呼吁召开联合国安理会会议",
+          "body": "据《海峡时报》和《明镜周刊》报道，在俄罗斯对基辅发动最新袭击后，法国已呼吁召开联合国安理会会议。据《耶路撒冷邮报》报道，法国外交部长让-诺埃尔·巴罗在社交媒体平台X上写道，俄罗斯将为此次袭击承担责任。"
+        },
+        "ko": {
+          "headline": "프랑스, 키이우 공습 이후 유엔 안보리 소집 요구",
+          "body": "스트레이츠타임즈와 슈피겔에 따르면 프랑스는 키이우에 대한 최근의 러시아 공습 이후 유엔 안전보장이사회 회의 소집을 요구했다. 예루살렘 포스트에 따르면 장노엘 바로 프랑스 외무장관은 소셜미디어 플랫폼 X에 러시아가 이번 공격에 대해 책임을 져야 할 것이라고 적었다."
+        },
+        "ja": {
+          "headline": "フランス、キーウへの攻撃を受け国連安保理の召集を要請",
+          "body": "ストレーツ・タイムズ紙およびシュピーゲル誌によると、フランスはキーウに対する最新のロシアの攻撃を受けて国連安全保障理事会の会合召集を求めた。エルサレム・ポスト紙によると、フランスのジャン＝ノエル・バロ外相はソーシャルメディアのXに、ロシアはこの攻撃の責任を問われることになると投稿した。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "France calls for UN Security Council meeting after Russian strikes kill eight, damage Kyiv embassy",
+          "url": "https://www.jpost.com/international/internationalrussia-ukraine-war/article-915590",
+          "publishedAt": "2026-11-20T14:35:18.000Z"
+        },
+        {
+          "outlet": "Der Spiegel",
+          "title": "Ukrainekrieg: Frankreich beantragt nach jüngsten russischen Angriffen Sitzung des Uno-Sicherheitsrats",
+          "url": "https://www.spiegel.de/ausland/ukrainekrieg-frankreich-beantragt-nach-juengsten-russischen-angriffen-sitzung-des-uno-sicherheitsrats-a-e2493c1e-b793-4bb8-8dbf-0c3d11dbe5ea#ref=rss",
+          "publishedAt": "2026-11-20T13:23:00.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "France seeks UN Security Council meeting after strikes in Kyiv",
+          "url": "https://www.straitstimes.com/world/europe/france-seeks-un-security-council-meeting-after-strikes-in-kyiv",
+          "publishedAt": "2026-11-20T12:15:26.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-19T18:47:57.000Z",
+      "id": "u-1795114077000-znjj",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Russische Drohnenangriffe in Kiew haben am 19. November die Botschaftsgelände der Niederlande und Österreichs beschädigt. Wie die New York Times und CNA berichten, teilten die Außenminister beider Länder mit, dass bei dem Vorfall keine Mitarbeiter zu Schaden kamen.",
+          "headline": "Russische Drohnenangriffe beschädigen niederländische und österreichische Botschaften in Kiew"
+        },
+        "en": {
+          "body": "Russian drone strikes in Kyiv caused damage to the Dutch and Austrian embassy compounds on 19 November. Foreign ministers for both countries reported that no staff members were harmed during the incident, according to the New York Times and CNA.",
+          "headline": "Russian drone strikes damage Dutch and Austrian embassies in Kyiv"
+        },
+        "es": {
+          "body": "Los ataques de drones rusos en Kiev causaron daños en las sedes de las embajadas de los Países Bajos y Austria el 19 de noviembre. Los ministros de Asuntos Exteriores de ambos países informaron que ningún miembro del personal resultó herido durante el incidente, según The New York Times y CNA.",
+          "headline": "Ataques de drones rusos dañan las embajadas de los Países Bajos y Austria en Kiev"
+        },
+        "fr": {
+          "body": "Des frappes de drones russes à Kiev ont endommagé les enceintes des ambassades néerlandaise et autrichienne le 19 novembre. Les ministres des Affaires étrangères des deux pays ont indiqué qu'aucun membre du personnel n'a été blessé lors de l'incident, selon le New York Times et CNA.",
+          "headline": "Des frappes de drones russes endommagent les ambassades des Pays-Bas et d'Autriche à Kiev"
+        },
+        "it": {
+          "body": "Gli attacchi di droni russi a Kiev hanno causato danni alle sedi delle ambasciate olandese e austriaca il 19 novembre. I ministri degli Esteri di entrambi i Paesi hanno riferito che nessun membro del personale è rimasto ferito durante l'incidente, secondo quanto riportato dal New York Times e da CNA.",
+          "headline": "Attacchi di droni russi danneggiano le ambasciate di Paesi Bassi e Austria a Kiev"
+        },
+        "ja": {
+          "body": "11月19日、キーウでロシアによるドローン攻撃があり、オランダとオーストリアの大使館施設が損傷した。ニューヨーク・タイムズおよびCNAによると、両国の外相は、この件による職員の負傷者はいないと報告した。",
+          "headline": "ロシアのドローン攻撃、キーウのオランダ・オーストリア大使館に被害"
+        },
+        "ko": {
+          "body": "11월 19일 키이우에서 발생한 러시아의 드론 공격으로 네덜란드와 오스트리아 대사관 시설이 피해를 입었다. 뉴욕타임스와 CNA에 따르면, 양국 외무장관은 이번 사건으로 인한 직원들의 인명 피해는 없다고 밝혔다.",
+          "headline": "러시아 드론 공격으로 키이우 주재 네덜란드·오스트리아 대사관 피해"
+        },
+        "pt": {
+          "body": "Ataques de drones russos em Kiev causaram danos às instalações das embaixadas dos Países Baixos e da Áustria a 19 de novembro. Os ministros dos Negócios Estrangeiros de ambos os países informaram que nenhum membro do pessoal ficou ferido durante o incidente, segundo o New York Times e a CNA.",
+          "headline": "Ataques de drones russos danificam embaixadas dos Países Baixos e da Áustria em Kiev"
+        },
+        "zh": {
+          "body": "据《纽约时报》和亚洲新闻台（CNA）报道，11月19日，俄罗斯对基辅发动的无人机袭击造成荷兰和奥地利大使馆建筑受损。两国的外交部长均表示，事件中没有工作人员受伤。",
+          "headline": "俄罗斯无人机袭击导致荷兰和奥地利驻基辅大使馆受损"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2026/11/19/world/europe/ukraine-dutch-embassy.html",
+          "title": "Dutch and Austrian Embassies Are Damaged as Russian Drones Swarm Kyiv",
+          "outlet": "New York Times",
+          "publishedAt": "2026-11-19T18:47:57.000Z"
+        },
+        {
+          "url": "https://www.channelnewsasia.com/world/russia-ukraine-drone-strikes-kyiv-putin-6566896",
+          "title": "Russian strikes on Kyiv kill one, damage Dutch and Austrian embassies",
+          "outlet": "CNA",
+          "publishedAt": "2026-11-19T17:58:44.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-19T18:50:06.000Z",
+      "id": "u-1795114206000-h9o5",
+      "kind": "reaction",
+      "locales": {
+        "de": {
+          "body": "Europäische Staats- und Regierungschefs erklärten bei einem Treffen in Berlin, dass ein „Jalta-Format“ keinen Frieden für die Ukraine bringen werde. Bundeskanzler Friedrich Merz und weitere Amtsträger betonten laut Euronews und The Guardian, dass Friedensverhandlungen die Ukraine sowie eine europäische Vertretung einbeziehen müssten.",
+          "headline": "Europäische Staats- und Regierungschefs lehnen Friedensgespräche nach Jalta-Vorbild für die Ukraine ab"
+        },
+        "en": {
+          "body": "European leaders meeting in Berlin stated that a \"Yalta format\" will not bring peace to Ukraine. German Chancellor Friedrich Merz and other officials emphasized that peace negotiations must include Ukraine and European representation, according to Euronews and The Guardian.",
+          "headline": "European leaders reject Yalta-style peace talks for Ukraine"
+        },
+        "es": {
+          "body": "Líderes europeos reunidos en Berlín declararon que un \"formato de Yalta\" no traerá la paz a Ucrania. El canciller alemán, Friedrich Merz, y otros funcionarios subrayaron que las negociaciones de paz deben incluir a Ucrania y a la representación europea, según Euronews y The Guardian.",
+          "headline": "Líderes europeos rechazan conversaciones de paz al estilo de Yalta para Ucrania"
+        },
+        "fr": {
+          "body": "Réunis à Berlin, les dirigeants européens ont déclaré qu'un « format Yalta » n'apporterait pas la paix en Ukraine. Le chancelier allemand Friedrich Merz et d'autres responsables ont souligné que les négociations de paix devaient inclure l'Ukraine et une représentation européenne, selon Euronews et The Guardian.",
+          "headline": "Les dirigeants européens rejettent des pourparlers de paix sur le modèle de Yalta pour l'Ukraine"
+        },
+        "it": {
+          "body": "I leader europei riuniti a Berlino hanno dichiarato che un \"formato Yalta\" non porterà la pace in Ucraina. Il cancelliere tedesco Friedrich Merz e altri funzionari hanno sottolineato che i negoziati di pace devono includere l'Ucraina e una rappresentanza europea, secondo quanto riportato da Euronews e The Guardian.",
+          "headline": "I leader europei respingono colloqui di pace in stile Yalta per l'Ucraina"
+        },
+        "ja": {
+          "body": "ベルリンで会合を開いた欧州の指導者らは、「ヤルタ会談形式」ではウクライナに平和はもたらされないとの見解を示した。ユーロニュースおよびガーディアンによると、ドイツのフリードリヒ・メルツ首相らは、和平交渉にはウクライナと欧州の代表が参加しなければならないと強調した。",
+          "headline": "欧州指導者ら、ウクライナを巡る「ヤルタ会談形式」の和平交渉を否定"
+        },
+        "ko": {
+          "body": "베를린에서 회동한 유럽 지도자들은 '얄타 형식'으로는 우크라이나에 평화를 가져올 수 없다고 밝혔다. 유로뉴스 및 가디언에 따르면, 프리드리히 메르츠 독일 총리를 비롯한 관계자들은 평화 협상에 반드시 우크라이나와 유럽 측 대표가 참여해야 한다고 강조했다.",
+          "headline": "유럽 지도자들, 우크라이나를 위한 '얄타식' 평화 회담 거부"
+        },
+        "pt": {
+          "body": "Líderes europeus reunidos em Berlim declararam que um \"formato de Ialta\" não trará a paz à Ucrânia. O chanceler alemão Friedrich Merz e outros responsáveis enfatizaram que as negociações de paz devem incluir a Ucrânia e representação europeia, segundo a Euronews e o The Guardian.",
+          "headline": "Líderes europeus rejeitam negociações de paz ao estilo de Ialta para a Ucrânia"
+        },
+        "zh": {
+          "body": "据欧洲新闻台（Euronews）和《卫报》报道，在柏林会晤的欧洲领导人表示，“雅尔塔模式”无法为乌克兰带来和平。德国总理弗里德里希·默茨及其他官员强调，和平谈判必须包含乌克兰和欧洲代表的参与。",
+          "headline": "欧洲领导人拒绝以“雅尔塔模式”进行乌克兰和平谈判"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.euronews.com/2026/11/19/european-leaders-reject-yalta-20-deal-for-ukraine-after-trump-meets-putin-and-xi",
+          "title": "European leaders reject 'Yalta 2.0' for Ukraine after Trump meets Putin and Xi",
+          "outlet": "Euronews",
+          "publishedAt": "2026-11-19T18:50:06.000Z"
+        },
+        {
+          "url": "https://www.theguardian.com/world/live/2026/nov/19/russia-ukraine-war-coalition-of-the-willing-europe-latest-news-updates",
+          "title": "Ukraine allies warn ‘Yalta format’ will not bring about peace – as it happened",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-19T18:03:54.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "world",
   "keywords": [
     "kyiv",
     "russia",
@@ -14,130 +347,6 @@
     "missile",
     "drone",
     "war"
-  ],
-  "startedAt": "2026-11-19T19:05:53.485Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-19T19:06:17.465Z",
-  "articleSlug": null,
-  "sourceCount": 4,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1795114077000-znjj",
-      "at": "2026-11-19T18:47:57.000Z",
-      "kind": "breaking",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Russian drone strikes damage Dutch and Austrian embassies in Kyiv",
-          "body": "Russian drone strikes in Kyiv caused damage to the Dutch and Austrian embassy compounds on 19 November. Foreign ministers for both countries reported that no staff members were harmed during the incident, according to the New York Times and CNA."
-        },
-        "de": {
-          "headline": "Russische Drohnenangriffe beschädigen niederländische und österreichische Botschaften in Kiew",
-          "body": "Russische Drohnenangriffe in Kiew haben am 19. November die Botschaftsgelände der Niederlande und Österreichs beschädigt. Wie die New York Times und CNA berichten, teilten die Außenminister beider Länder mit, dass bei dem Vorfall keine Mitarbeiter zu Schaden kamen."
-        },
-        "it": {
-          "headline": "Attacchi di droni russi danneggiano le ambasciate di Paesi Bassi e Austria a Kiev",
-          "body": "Gli attacchi di droni russi a Kiev hanno causato danni alle sedi delle ambasciate olandese e austriaca il 19 novembre. I ministri degli Esteri di entrambi i Paesi hanno riferito che nessun membro del personale è rimasto ferito durante l'incidente, secondo quanto riportato dal New York Times e da CNA."
-        },
-        "es": {
-          "headline": "Ataques de drones rusos dañan las embajadas de los Países Bajos y Austria en Kiev",
-          "body": "Los ataques de drones rusos en Kiev causaron daños en las sedes de las embajadas de los Países Bajos y Austria el 19 de noviembre. Los ministros de Asuntos Exteriores de ambos países informaron que ningún miembro del personal resultó herido durante el incidente, según The New York Times y CNA."
-        },
-        "fr": {
-          "headline": "Des frappes de drones russes endommagent les ambassades des Pays-Bas et d'Autriche à Kiev",
-          "body": "Des frappes de drones russes à Kiev ont endommagé les enceintes des ambassades néerlandaise et autrichienne le 19 novembre. Les ministres des Affaires étrangères des deux pays ont indiqué qu'aucun membre du personnel n'a été blessé lors de l'incident, selon le New York Times et CNA."
-        },
-        "ja": {
-          "headline": "ロシアのドローン攻撃、キーウのオランダ・オーストリア大使館に被害",
-          "body": "11月19日、キーウでロシアによるドローン攻撃があり、オランダとオーストリアの大使館施設が損傷した。ニューヨーク・タイムズおよびCNAによると、両国の外相は、この件による職員の負傷者はいないと報告した。"
-        },
-        "zh": {
-          "headline": "俄罗斯无人机袭击导致荷兰和奥地利驻基辅大使馆受损",
-          "body": "据《纽约时报》和亚洲新闻台（CNA）报道，11月19日，俄罗斯对基辅发动的无人机袭击造成荷兰和奥地利大使馆建筑受损。两国的外交部长均表示，事件中没有工作人员受伤。"
-        },
-        "pt": {
-          "headline": "Ataques de drones russos danificam embaixadas dos Países Baixos e da Áustria em Kiev",
-          "body": "Ataques de drones russos em Kiev causaram danos às instalações das embaixadas dos Países Baixos e da Áustria a 19 de novembro. Os ministros dos Negócios Estrangeiros de ambos os países informaram que nenhum membro do pessoal ficou ferido durante o incidente, segundo o New York Times e a CNA."
-        },
-        "ko": {
-          "headline": "러시아 드론 공격으로 키이우 주재 네덜란드·오스트리아 대사관 피해",
-          "body": "11월 19일 키이우에서 발생한 러시아의 드론 공격으로 네덜란드와 오스트리아 대사관 시설이 피해를 입었다. 뉴욕타임스와 CNA에 따르면, 양국 외무장관은 이번 사건으로 인한 직원들의 인명 피해는 없다고 밝혔다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "New York Times",
-          "title": "Dutch and Austrian Embassies Are Damaged as Russian Drones Swarm Kyiv",
-          "url": "https://www.nytimes.com/2026/11/19/world/europe/ukraine-dutch-embassy.html",
-          "publishedAt": "2026-11-19T18:47:57.000Z"
-        },
-        {
-          "outlet": "CNA",
-          "title": "Russian strikes on Kyiv kill one, damage Dutch and Austrian embassies",
-          "url": "https://www.channelnewsasia.com/world/russia-ukraine-drone-strikes-kyiv-putin-6566896",
-          "publishedAt": "2026-11-19T17:58:44.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1795114206000-h9o5",
-      "at": "2026-11-19T18:50:06.000Z",
-      "kind": "reaction",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "European leaders reject Yalta-style peace talks for Ukraine",
-          "body": "European leaders meeting in Berlin stated that a \"Yalta format\" will not bring peace to Ukraine. German Chancellor Friedrich Merz and other officials emphasized that peace negotiations must include Ukraine and European representation, according to Euronews and The Guardian."
-        },
-        "de": {
-          "headline": "Europäische Staats- und Regierungschefs lehnen Friedensgespräche nach Jalta-Vorbild für die Ukraine ab",
-          "body": "Europäische Staats- und Regierungschefs erklärten bei einem Treffen in Berlin, dass ein „Jalta-Format“ keinen Frieden für die Ukraine bringen werde. Bundeskanzler Friedrich Merz und weitere Amtsträger betonten laut Euronews und The Guardian, dass Friedensverhandlungen die Ukraine sowie eine europäische Vertretung einbeziehen müssten."
-        },
-        "it": {
-          "headline": "I leader europei respingono colloqui di pace in stile Yalta per l'Ucraina",
-          "body": "I leader europei riuniti a Berlino hanno dichiarato che un \"formato Yalta\" non porterà la pace in Ucraina. Il cancelliere tedesco Friedrich Merz e altri funzionari hanno sottolineato che i negoziati di pace devono includere l'Ucraina e una rappresentanza europea, secondo quanto riportato da Euronews e The Guardian."
-        },
-        "es": {
-          "headline": "Líderes europeos rechazan conversaciones de paz al estilo de Yalta para Ucrania",
-          "body": "Líderes europeos reunidos en Berlín declararon que un \"formato de Yalta\" no traerá la paz a Ucrania. El canciller alemán, Friedrich Merz, y otros funcionarios subrayaron que las negociaciones de paz deben incluir a Ucrania y a la representación europea, según Euronews y The Guardian."
-        },
-        "fr": {
-          "headline": "Les dirigeants européens rejettent des pourparlers de paix sur le modèle de Yalta pour l'Ukraine",
-          "body": "Réunis à Berlin, les dirigeants européens ont déclaré qu'un « format Yalta » n'apporterait pas la paix en Ukraine. Le chancelier allemand Friedrich Merz et d'autres responsables ont souligné que les négociations de paix devaient inclure l'Ukraine et une représentation européenne, selon Euronews et The Guardian."
-        },
-        "ja": {
-          "headline": "欧州指導者ら、ウクライナを巡る「ヤルタ会談形式」の和平交渉を否定",
-          "body": "ベルリンで会合を開いた欧州の指導者らは、「ヤルタ会談形式」ではウクライナに平和はもたらされないとの見解を示した。ユーロニュースおよびガーディアンによると、ドイツのフリードリヒ・メルツ首相らは、和平交渉にはウクライナと欧州の代表が参加しなければならないと強調した。"
-        },
-        "zh": {
-          "headline": "欧洲领导人拒绝以“雅尔塔模式”进行乌克兰和平谈判",
-          "body": "据欧洲新闻台（Euronews）和《卫报》报道，在柏林会晤的欧洲领导人表示，“雅尔塔模式”无法为乌克兰带来和平。德国总理弗里德里希·默茨及其他官员强调，和平谈判必须包含乌克兰和欧洲代表的参与。"
-        },
-        "pt": {
-          "headline": "Líderes europeus rejeitam negociações de paz ao estilo de Ialta para a Ucrânia",
-          "body": "Líderes europeus reunidos em Berlim declararam que um \"formato de Ialta\" não trará a paz à Ucrânia. O chanceler alemão Friedrich Merz e outros responsáveis enfatizaram que as negociações de paz devem incluir a Ucrânia e representação europeia, segundo a Euronews e o The Guardian."
-        },
-        "ko": {
-          "headline": "유럽 지도자들, 우크라이나를 위한 '얄타식' 평화 회담 거부",
-          "body": "베를린에서 회동한 유럽 지도자들은 '얄타 형식'으로는 우크라이나에 평화를 가져올 수 없다고 밝혔다. 유로뉴스 및 가디언에 따르면, 프리드리히 메르츠 독일 총리를 비롯한 관계자들은 평화 협상에 반드시 우크라이나와 유럽 측 대표가 참여해야 한다고 강조했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Euronews",
-          "title": "European leaders reject 'Yalta 2.0' for Ukraine after Trump meets Putin and Xi",
-          "url": "https://www.euronews.com/2026/11/19/european-leaders-reject-yalta-20-deal-for-ukraine-after-trump-meets-putin-and-xi",
-          "publishedAt": "2026-11-19T18:50:06.000Z"
-        },
-        {
-          "outlet": "The Guardian",
-          "title": "Ukraine allies warn ‘Yalta format’ will not bring about peace – as it happened",
-          "url": "https://www.theguardian.com/world/live/2026/nov/19/russia-ukraine-war-coalition-of-the-willing-europe-latest-news-updates",
-          "publishedAt": "2026-11-19T18:03:54.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.jpost.com/diaspora/antisemitism/article-915523",
@@ -199,56 +408,73 @@
     "https://www.welt.de/politik/deutschland/video6aff2a3fee91e990acae72d6/gipfel-der-willigen-nach-dem-dreiergipfel-macht-merz-europas-anspruch-deutlich.html",
     "https://news.google.com/rss/articles/CBMib0FVX3lxTFBFcFNwSGdaMm1TUTZSajh6ZWgtVzFKdk0tU0tuNVZpVGhrMHVIR2FwREotV3MyOEVmY2VQUXZyWFBHQmUybW4xZExCckljSUpGQmRSakREQWVjaHpuSlk4X0hMOVdYSWpUUVU0RDlLdw?oc=5",
     "https://www.kyivpost.com/post/90629",
-    "https://www.kyivpost.com/post/90631"
+    "https://www.kyivpost.com/post/90631",
+    "https://www.jpost.com/middle-east/iran-news/article-915595",
+    "https://www1.folha.uol.com.br/mundo/2026/11/destrocos-de-drones-russos-atingem-embaixada-do-brasil-na-ucrania-durante-ataque-que-matou-um-em-kiev.shtml",
+    "https://www.scmp.com/news/world/europe/article/3375289/uk-eu-seal-food-and-youth-deals-are-stuck-tuition-fees",
+    "https://www.euronews.com/2026/11/20/russia-stalls-un-bid-to-regulate-ai-killer-robots-as-talks-near-deadline",
+    "https://www.nytimes.com/2026/11/20/world/europe/poland-russia-airspace-missile.html",
+    "https://www.scmp.com/news/china/military/article/3375268/concrete-aims-or-just-symbolism-trump-xi-and-putin-talk-nuclear-risk-controls-stall",
+    "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNOVpBb0VGZHI2bWd4N090eTk1bEtZM0Vxa2ZUeWNZYjRBR08zX19zWGEzMEFIMnBTb1NabXdWMzNuQVYzRVZDREJQZjJwQm9ONWdXNjFxd0d3cVcxV0NndG8zOFA2eEJXSWQ3TkRlRV9aVnk1eW10a3lYNmJfa1F2ZHpBd3dqLTJGRjJpcXEtQXpHSnhORnM5Z2RKQWc3aUJqTzhqRzZZZm9Ob1RlOHNJU3haS19aRFc2Q2R5Vkw3TlJfeDRCWmhJR0ZTNnFWYzk3aFBkcXdySjRJQnpWQ1JfYlgzbDgxaUdhUV9JNlVxOTBGT0k?oc=5",
+    "https://www.zeit.de/news/2026-11/20/regierung-drei-russische-flugobjekte-in-polen-abgestuerzt",
+    "https://timesofindia.indiatimes.com/world/europe/russias-war-spills-into-poland-as-missile-crashes-near-ukraine-border-pm-tusk-suspects-provocation/articleshow/136030531.cms",
+    "https://www.zeit.de/politik/ausland/2026-11/russland-raketen-luftraumverletzung-polen-ukraine-gxe",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUUFYZGFEbEZUMVVLMmd0YjhxZy1jUEtJNENLVEdvZ1ZEQU51MklmbVZwRWtrcjQtczFGaTY2VklETnlqMl9rTk9FRXhtV2pKTHZ3MFRqaU9YbTdyMGk3VzZwb0tjOTUyRkc2WjduR2ZmRlMwMlo4TmVDNDRuNjNfV0lfaktfQTFncXE2XzBfR2xDdnNUcjlKTlQyOU1ZRnVnMlRvc3MyRFhHMV9jZ3N5ZWlpQ0ZweC1jbTRnUVJlYUhVQQ?oc=5",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-selenski-spricht-von-einem-der-schwersten-angriffe-auf-kiew",
+    "https://timesofindia.indiatimes.com/defence/news/same-french-fighter-two-different-hunts-ukraine-wants-jets-india-wants-spare-parts/articleshow/136030688.cms",
+    "https://www.jpost.com/international/internationalrussia-ukraine-war/article-915590",
+    "https://www.kyivpost.com/post/90737",
+    "https://www.faz.net/aktuell/politik/ukraine/koalition-der-willigen-in-berlin-europas-antwort-auf-ein-neues-jalta-201691751.html",
+    "https://www.kyivpost.com/post/90735",
+    "https://www.kicker.de/bayern-ii-und-gladbach-ii-betroffen-erste-absagen-im-fussballherbst-1273263/artikel#omrss",
+    "https://www.scmp.com/news/china/diplomacy/article/3375277/how-beijings-south-china-sea-stance-benefits-rare-joint-warning-icc",
+    "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+    "https://www.bbc.co.uk/news/articles/cqx2x9dklxnro?at_medium=RSS&at_campaign=rss",
+    "https://www.jpost.com/israel-news/politics-and-diplomacy/article-915586",
+    "https://www.aljazeera.com/news/2026/11/20/trump-putin-xi-pledge-to-increase-global-petrol-supplies-but-how?traffic_source=rss",
+    "https://www.tagesschau.de/ausland/europa/absturz-russische-flugobjekte-polen-100.html",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWDJrci1rRDFzaGY2R3IzOFp6TENkVF9NbUlsU2dhRlpfbHV2bEZIWDk3V2R4YXluR2VtUlB5QXJncVkzTlJ4OUdlSWxad0psU2tFbEozQ3RlTGFZTGRWd1BuTGVOU1NJRElGYXFTejZpZ0JhMVFoOXpSdEhodENxdVlEbzF0ODNsOEpXekFSTXYzcU0yRXoxMEZtazBBNFBNdkFKakhuTkpZdmEtNng4?oc=5",
+    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92UEdES3RsVmhXQzVxOEhGV3Z1c3BnRWNvNngta3FsMkxpU1c4TXlsYXNibjFHYWNUUE4wNElCazdvQUlyVWROSU5Pb0ZINTJZWWpwY3cxRWRyMkNoQlZsZi0wNGlNWGVX?oc=5",
+    "https://www.welt.de/politik/ausland/plus6aff067739a3e8110f0e2758/lettischer-ministerpraesident-die-lage-eskaliert-das-ist-es-womit-wir-es-an-europas-ostgrenze-zu-tun-haben.html",
+    "https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE1mSGhHcWttY0cxZTVGa3VBcDFzX2NqeVNpaTBLcmxqaEY1MHZGV0lEalNLWFhHYUlUSE5iSWVIaGdFczFHNTBvaGl6WUJvMUFDcGdaZGVuMnlZQWVXdHhmM0NWS2hlWGdteHBQTGRvdm4telhFYUxCYlZNYlNDZw?oc=5",
+    "https://arstechnica.com/space/2026/11/rocket-report-a-weekend-of-ups-and-downs-stoke-celebrates-engine-milestone/",
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZ2xmQTFfSFozN2gwUjc4em14QTNsMnRUZjgtZ0tpTmpDdTU0R3duOV9PX0NheUpiY3ZMRHlGSmRKMGp0NTdkemZkdWZfNlFDMzFOQkY2dnBwcDlSSzdlLXlGejJaNWZlcmJMdTN2ZnhnUUczQVYwUjFuOXc5MWFMcDJjNnA2QXBPaXNLZVBEaGdKYndGM3F6T0s4aThhek1JOGNWWmhGdjUyYU85cEk3ONIBtgFBVV95cUxQeTltZWM4UGlGUHI1SGlrdGRISXZSNnN3UWhXeWhieXA1UEVPUjV6Yk1HLWdtY0F2S3B0T1p6NGpZVXVrcXJVSndfd0pxTEhVZ0w0bGJhZjJTLTY3emJoNXZOVXFtRk1PY0E1d2NjdVVpaUpwQVpGX2JydDJ1UlNaZFlZNk0xQU1tSnl6QzFpVzB6akZDUlZxRDEwYnhjcW5UWWJBQUJnQTMyUWFndTAyTGtyVGNPdw?oc=5",
+    "https://www.scmp.com/news/world/europe/article/3375281/8-killed-ukraine-russia-hits-back-after-crimea-bridge-attacks",
+    "https://www.straitstimes.com/world/europe/russia-pounds-ukraine-killing-8-as-missile-lands-in-poland",
+    "https://www.theguardian.com/politics/2026/nov/20/nigel-farage-leadership-reform-uk-party",
+    "https://www.spiegel.de/ausland/ukrainekrieg-frankreich-beantragt-nach-juengsten-russischen-angriffen-sitzung-des-uno-sicherheitsrats-a-e2493c1e-b793-4bb8-8dbf-0c3d11dbe5ea#ref=rss",
+    "https://www.kyivpost.com/post/90722",
+    "https://www.kyivpost.com/post/90723",
+    "https://www.welt.de/politik/ausland/video6b00430639a3e8110f0e4056/gipfel-im-kanzleramt-es-war-absolut-richtig-die-ukraine-unterstuetzer-dort-zu-versammeln-und-ein-zeichen-zu-senden.html",
+    "https://www.euronews.com/2026/11/20/two-danes-suspected-of-russian-backed-plot-to-kill-ukrainian-rapper",
+    "https://www.thehindu.com/news/international/russia-says-role-for-eus-kallas-in-ukraine-talks-with-moscow-would-lead-to-their-collapse/article71724468.ece",
+    "https://www.bbc.co.uk/news/articles/c6x29gn4pdn9o?at_medium=RSS&at_campaign=rss",
+    "https://thehill.com/homenews/campaign/6232552-lauren-boebert-colorado-loss-donald-trump-policies-midterms/",
+    "https://www.dawn.com/news/2045911/bilawal-wants-pm-shehbaz-to-become-first-premier-to-complete-5-year-term",
+    "https://www.straitstimes.com/world/europe/ukraine-child-death-toll-climbs-to-near-2022-levels-unicef-says",
+    "https://www.faz.net/aktuell/politik/ukraine/ukrainekrieg-europa-bereitet-sich-auf-gespraeche-mit-russland-vor-accg-201701260.html",
+    "https://www.kyivpost.com/post/90721",
+    "https://www.marketwatch.com/story/these-5-defense-stocks-are-drawing-millions-in-insider-bets-ahead-of-military-spending-boom-in-2027-8b3b556b?mod=mw_rss_topstories",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxNN1pVZjVqRktKb21rNDk4T2NzLXk0YlpJTVA3aHNKZnowOWtkcEZERXpZVnczZm1OTnJoWE04Vnc1MnNabmxjZ2JKUVkyaGZMRFlIQnhXVXM0cmdfQ0lybDdqT2FHLTd0VVdaQ201YV9CQzdteEpPc1F6V1dEeEFFM2JnV1ltQXZQMENOeVEtb1ljUmFRUFBwTzRaX3l0Vm9CN2h2Yg?oc=5",
+    "https://www.politico.eu/article/russian-missile-incursion-into-poland-seems-intentional-tusk-says/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine",
+    "https://www.kyivpost.com/post/90720",
+    "https://www.semafor.com/article/11/20/2026/ebola-vaccine-trials-launches-amid-security-concerns",
+    "https://www.kyivpost.com/post/90718",
+    "https://timesofindia.indiatimes.com/defence/news/israels-new-super-ice-missile-packs-4x-the-punch-why-its-a-perfect-fit-for-india/articleshow/136026835.cms",
+    "https://www.kyivpost.com/post/90717",
+    "https://www.straitstimes.com/world/europe/two-danes-suspected-of-being-hired-by-russia-to-kill-ukrainian-rapper",
+    "https://www.straitstimes.com/world/europe/france-seeks-un-security-council-meeting-after-strikes-in-kyiv",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNU1ZYYTZsWjMwMkxWbXRSSWJTeGZjMEdJdy1DV3oxSjdVa2p5cTFYYVJDcHl1QUZBWi1OdjI5cERPbk1kdmlaY2VVaXBIeDFBdVl3MkVVZmpjdTd3Z3FlN2VnMlh5TnVtSVAzZXJnTHRwTmJ4YmcyRjFwMHh0eHU1eTVEa1ZRM3BxMzZIVU5IVnpDcnNlZ1R5SE9vUENMQnpGOVNxX25pMmtFUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdFd5aW9SdU82YUQyLXJHTzNPTmJISW82RlpUeWU4RFp0RTNNRmxmSlljamtMMmpITDdGQm4yTFo1dFl6eHY5dUFsdGRWaTM0NnBBbVFiam5iQzQyLVBwUDE4R0RmMFBHRUduMDhwS29nQUh1MG03ODEzRGdIUUNmWkFIYTEtb002N3NFdXozNTVNaWptZFNtOXhYbWoyNzlmTTJIaEllSQ?oc=5",
+    "https://news.google.com/rss/articles/CBMie0FVX3lxTFB0Z1p4WkZsSkluOWxnZkdxMlp0MzFfbWlTaXF5VDVEa29LQ1VXVWptZU5FUkdTSGFaTlFKNnJQYXB4SHVEd2N6MzBka1ljcmZITWN3R1dhZ1FqNGlSWVNEbWdIVHdHNExEYjk1QzJCR0dnVDhMeUdJc0M2NA?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Russian strikes on Kyiv",
-      "dek": "Diplomatic facilities in the Ukrainian capital sustain damage during a large-scale aerial assault, prompting international condemnation."
-    },
-    "de": {
-      "title": "Russische Angriffe auf Kiew",
-      "dek": "Diplomatische Einrichtungen in der ukrainischen Hauptstadt wurden bei einem großflächigen Luftangriff beschädigt, was international für Verurteilung sorgte."
-    },
-    "fr": {
-      "title": "Frappes russes sur Kiev",
-      "dek": "Des installations diplomatiques dans la capitale ukrainienne ont été endommagées lors d'une attaque aérienne de grande envergure, suscitant une condamnation internationale."
-    },
-    "pt": {
-      "title": "Ataques russos em Kyiv",
-      "dek": "Instalações diplomáticas na capital ucraniana sofrem danos durante um grande ataque aéreo, provocando condenação internacional."
-    },
-    "zh": {
-      "title": "俄罗斯对基辅的袭击",
-      "dek": "在一次大规模空袭中，乌克兰首都的外交设施受损，引发国际谴责。"
-    },
-    "ja": {
-      "title": "キエフへのロシアの攻撃",
-      "dek": "ウクライナの首都にある外交施設が大規模な空爆により被害を受け、国際的な非難を招いている。"
-    },
-    "it": {
-      "title": "Attacchi russi su Kiev",
-      "dek": "Sedi diplomatiche nella capitale ucraina hanno subito danni durante un massiccio attacco aereo, suscitando la condanna della comunità internazionale."
-    },
-    "ko": {
-      "title": "키이우에 대한 러시아 공습",
-      "dek": "우크라이나 수도의 외교 시설들이 대규모 공중 공격으로 피해를 입으면서 국제적인 규탄을 샀다."
-    },
-    "es": {
-      "title": "Ataques rusos en Kiev",
-      "dek": "Instalaciones diplomáticas en la capital ucraniana sufren daños durante un ataque aéreo a gran escala, lo que provoca la condena internacional."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Euronews",
-      "New York Times",
-      "CNA",
-      "The Straits Times"
-    ],
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
-  }
+  "startedAt": "2026-11-19T19:05:53.485Z",
+  "updatedAt": "2026-11-20T15:16:15.019Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": "russian-strikes-on-kyiv",
+  "sourceCount": 8,
+  "seenHeadlines": []
 }
