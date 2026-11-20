@@ -1,0 +1,66 @@
+{
+  "slug": "russia-launches-retaliatory-barrage-on-kyiv-bridges-20261120-y12o",
+  "category": "world",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-11-20T14:10:41.322Z",
+  "updatedAt": "2026-11-20T14:10:41.322Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "The Hill",
+      "title": "Rubio gains buzz while Vance’s fortunes falter in GOP race",
+      "url": "https://thehill.com/homenews/campaign/6231607-marco-rubio-trump-successor-buzz/",
+      "publishedAt": "2026-11-20T11:00:00.000Z"
+    },
+    {
+      "outlet": "Al Jazeera",
+      "title": "Russia unleashes retaliatory barrage on Kyiv bridges",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVTZ2NTYtWVl1UVdWUUEwRXN1LTZTSVUyWTZ3d1VBX2hvLVJWRmxQRmZWenFRcTB2M29aX3ZGTWxteUVpakx3UmgtdzdvUnA1dXVPSnh3T2tXQklCV290V0xGVlU4dHBOaVRPM2I2b2M1U0ViR1U5TmhLSGZTUDFtVzA0RTRHby04UkR1NmhNTWxIdUdZSmVmV2VB0gGfAUFVX3lxTE4yaU5yemNrMVAzTDVYdGtMcFpBZ1BURXZ5U1g2U3R5VlROaUxmdFdvVTVmWGtRaEotQUdndEJQazJSZi12c2xsclh3dHVLLUtud1dmak5HSm5rZVlVaGVRZWVXajNvYURVM0lhYTliYWd5TTBSbVd4RTZweENvMXJ1VUF6V29FVTl3aGhfbWNseE8wX3JPMkkzelVzUENWRQ?oc=5",
+      "publishedAt": "2026-11-20T10:03:15.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Russia launches retaliatory barrage on Kyiv bridges",
+      "dek": "Russia targeted Kyiv bridges in a retaliatory strike on November 20, 2026.",
+      "facts": [
+        "Russia launched a retaliatory barrage targeting Kyiv bridges on November 20, 2026, according to Al Jazeera.",
+        "The Al Jazeera report described the action as retaliatory in nature.",
+        "The strike was published at 10:03:15 UTC on November 20, 2026."
+      ],
+      "body": [
+        "Al Jazeera reported a retaliatory barrage on Kyiv bridges on November 20, 2026, as cited in the source text.",
+        "The report was published at 10:03:15 UTC on November 20, 2026, and described the action as retaliatory without detailing the specific trigger."
+      ],
+      "context": "Al Jazeera reported on November 20, 2026 that Russia launched a retaliatory barrage targeting Kyiv bridges.",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "ロシア、キエフ橋への報復砲撃を実施",
+      "dek": "ロシアは2026年11月20日、報復攻撃としてキエフの橋を標的にした。",
+      "facts": [
+        "ロシアが2026年11月20日にキエフ橋を標的に報復砲撃を実施したとアルジャジーラが報じた",
+        "アルジャジーラの報道によれば、その行動は報復的な性質を持つ",
+        "2026年11月20日午前10時03分15秒UTCに攻撃が公開された"
+      ],
+      "body": [
+        "ロシアが2026年11月20日、キエフ橋への報復砲撃を実施したと、Al Jazeeraが伝えた。",
+        "同報道は2026年11月20日午前10時03分15秒UTCに公開され、その行動を報復行為と記述したが、具体的なトリガーの詳細については触れていない。"
+      ],
+      "context": "アルジャジーラは2026年11月20日に、ロシアがキエフ橋を標的に報復砲撃を実施したと報じた。",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Body paragraph 2 repeats the same opening phrase as paragraph 1. Paragraph 2 ends with an evaluative summary ('though the specific trigger... was not detailed'). The headline is missing from the JSON structure. The 'context' section contains vague phrasing ('ongoing reporting') without a concrete source anchor. The dek is not a single sentence. The facts array contains redundant entries."
+    ]
+  }
+}
