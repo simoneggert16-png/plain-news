@@ -1,9 +1,168 @@
 {
+  "meta": {
+    "outlets": [
+      "The Hindu",
+      "The New York Times",
+      "AP News",
+      "Anadolu Ajansı"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+  },
   "slug": "peru-earthquake",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Peru Earthquake",
+  "status": "live",
+  "article": {
+    "slug": "peru-earthquake",
+    "updatedAt": "2026-11-21T07:17:00.062Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Magnitude 6.7 earthquake strikes Peru's Junin region",
+        "dek": "Anadolu Ajansı and AP News reported a magnitude 6.7 earthquake in Peru's Junin region on 21 November 2026.",
+        "facts": [
+          "Magnitude 6.7 earthquake struck Peru's Junin region",
+          "No immediate damage or casualties reported by AP News",
+          "Anadolu Ajansı confirmed the earthquake struck the Junin region",
+          "Event occurred on 21 November 2026 at 05:43:44 UTC",
+          "AP News reported the earthquake shook Peru's Andes",
+          "No damage or casualties immediately reported by AP News"
+        ],
+        "body": [
+          "A magnitude 6.7 earthquake struck Peru's Junin region on 21 November 2026.",
+          "Anadolu Ajansı reported the earthquake struck the Junin region, while AP News reported the event shook Peru's Andes.",
+          "No immediate damage or casualties were reported by AP News following the earthquake.",
+          "The earthquake occurred at 05:43:44 UTC according to Anadolu Ajansı, with AP News confirming the shaking in the Andes region.",
+          "Both news agencies confirmed the event but did not report immediate structural damage or injuries.",
+          "The lack of immediate casualty reports from AP News contrasts with the initial reporting of the event's occurrence."
+        ],
+        "context": "Peru is seismically active due to its location along the boundary of the Nazca and South American tectonic plates. The Junin region is one of the areas in central Peru that experiences regular seismic activity.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Erdbeben der Stärke 6,7 erschüttert Junin in Peru",
+        "dek": "Anadolu Ajansı und AP News berichteten über ein Erdbeben der Stärke 6,7 in der Region Junin in Peru am 21. November 2026.",
+        "facts": [
+          "Erdbeben der Stärke 6,7 erschütterte die Region Junin in Peru",
+          "AP News meldete keinen unmittelbaren Schaden oder Opfer",
+          "Anadolu Ajansı bestätigte, dass das Erdbeben die Region Junin traf",
+          "Das Ereignis ereignete sich am 21. November 2026 um 05:43:44 UTC",
+          "AP News berichtete, dass das Erdbeben die Anden Perus erschütterte",
+          "AP News meldete keinen unmittelbaren Schaden oder Opfer"
+        ],
+        "body": [
+          "Ein Erdbeben der Stärke 6,7 erschütterte die Region Junin in Peru am 21. November 2026.",
+          "Anadolu Ajansı berichtete, dass das Erdbeben die Region Junin traf, während AP News meldete, dass das Ereignis die Anden Perus erschütterte.",
+          "Nach dem Erdbeben meldete AP News keinen unmittelbaren Schaden oder Opfer.",
+          "Laut Anadolu Ajansı ereignete sich das Erdbeben um 05:43:44 UTC, wobei AP News die Erschütterung in der Andenregion bestätigte.",
+          "Beide Nachrichtenagenturen bestätigten das Ereignis, meldeten jedoch keinen unmittelbaren strukturellen Schaden oder Verletzungen.",
+          "Das Fehlen unmittelbarer Opfermeldungen von AP News steht im Gegensatz zur anfänglichen Meldung über das Eintreten des Ereignisses."
+        ],
+        "context": "Peru ist aufgrund seiner Lage an der Grenze der Nazca- und Südamerikanischen tektonischen Platten seismisch aktiv. Die Region Junin ist eine der Gebiete in Zentralperu, die regelmäßige seismische Aktivitäten erlebt."
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Ein starkes Erdbeben der Stärke 6,9 erschüttert die Andenregion Perus; Schätzungen zu möglichem Schaden und Opfern laufen.",
+      "title": "Erdbeben in Peru"
+    },
+    "en": {
+      "dek": "A strong magnitude 6.9 earthquake strikes Peru's Andes region, with assessments of potential damage and casualties underway.",
+      "title": "Peru Earthquake"
+    },
+    "es": {
+      "dek": "Un fuerte terremoto de magnitud 6.9 sacude la región andina de Perú, y se están realizando evaluaciones de posibles daños y víctimas.",
+      "title": "Terremoto en Perú"
+    },
+    "fr": {
+      "dek": "Un fort tremblement de terre de magnitude 6,9 frappe la région des Andes au Pérou, les évaluations des dégâts potentiels et des victimes étant en cours.",
+      "title": "Séisme au Pérou"
+    },
+    "it": {
+      "dek": "Un forte terremoto di magnitudo 6,9 colpisce la regione andina del Perù, mentre sono in corso le valutazioni dei potenziali danni e delle vittime.",
+      "title": "Terremoto in Perù"
+    },
+    "ja": {
+      "dek": "マグニチュード6.9の強い地震がペルーのアンデス地域を襲い、被害および死傷者の評価が進行中です。",
+      "title": "ペルー地震"
+    },
+    "ko": {
+      "dek": "규모 6.9의 강한 지진이 페루 안데스 지역을 강타했으며, 잠재적 피해 및 사상자 평가가 진행 중이다.",
+      "title": "페루 지진"
+    },
+    "pt": {
+      "dek": "Um forte terramoto de magnitude 6.9 atinge a região dos Andes do Peru, com avaliações de danos potenciais e vítimas em curso.",
+      "title": "Terramoto no Peru"
+    },
+    "zh": {
+      "dek": "一场强劲的6.9级地震袭击了秘鲁的安第斯地区，目前正在评估潜在的损失和伤亡情况。",
+      "title": "秘鲁地震"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795239824000-sq1q",
+      "at": "2026-11-21T05:43:44.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Magnitude 6.7 earthquake strikes Peru's Junin region",
+          "body": "Anadolu Ajansı reported the magnitude 6.7 earthquake struck Peru's Junin region; AP News also reported the magnitude 6.7 earthquake shook Peru’s Andes."
+        },
+        "de": {
+          "headline": "Erdbeben der Stärke 6,7 erschüttert Junin in Peru",
+          "body": "Anadolu Ajansı berichtete, dass das Erdbeben der Stärke 6,7 die Region Junin in Peru traf; AP News berichtete ebenfalls, dass das Erdbeben der Stärke 6,7 die Anden Perus erschütterte."
+        },
+        "es": {
+          "headline": "Terremoto de magnitud 6.7 golpea la región de Junín en Perú",
+          "body": "Anadolu Ajansı informó que el terremoto de magnitud 6.7 afectó la región de Junín en Perú; AP News también reportó que el terremoto de magnitud 6.7 sacudió los Andes peruanos."
+        },
+        "fr": {
+          "headline": "Séisme de magnitude 6,7 frappe la région de Junin au Pérou",
+          "body": "Anadolu Ajansı a rapporté que le séisme de magnitude 6,7 a frappé la région de Junin au Pérou ; l'AP News a également signalé que le séisme de magnitude 6,7 a secoué les Andes péruviennes."
+        },
+        "it": {
+          "headline": "Terremoto di magnitudo 6,7 colpisce la regione di Junin in Perù",
+          "body": "Anadolu Ajansı ha riportato che il terremoto di magnitudo 6,7 ha colpito la regione di Junin in Perù; AP News ha inoltre riferito che il terremoto di magnitudo 6,7 ha scosso le Ande peruviane."
+        },
+        "pt": {
+          "headline": "Terramoto de magnitude 6.7 atinge a região de Junín, no Peru",
+          "body": "A Anadolu Ajansı reportou que o terramoto de magnitude 6.7 atingiu a região de Junín, no Peru; a AP News também reportou que o terramoto de magnitude 6.7 abalou os Andes do Peru."
+        },
+        "zh": {
+          "headline": "里马地区发生6.7级地震",
+          "body": "安纳托卢通讯社报道，6.7级地震袭击了秘鲁的胡宁省；美联社也报道了6.7级地震震动了秘鲁的安第斯山脉。"
+        },
+        "ko": {
+          "headline": "규모 6.7 지진, 페루 주닌 지역 강타",
+          "body": "아나돌루 통신은 규모 6.7의 지진이 페루 주닌 지역을 강타했다고 보도했으며, AP 통신 또한 규모 6.7의 지진이 페루 안데스 산맥을 흔들었다고 보도했다."
+        },
+        "ja": {
+          "headline": "マグニチュード6.7の地震がペルーのフニン地域を襲う",
+          "body": "Anadolu Ajansıは、マグニチュード6.7の地震がペルーのフニン地域を襲ったと報じた。AP通信も、マグニチュード6.7の地震がペルーのアンデス山脈を揺らしたと報じた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Anadolu Ajansı",
+          "title": "Magnitude 6.7 earthquake strikes Peru's Junin region",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMV91YXFENFRzUzFzSmQ1VXNqZTh5UzRIc3RCMElXbkIxVjU4V25VYkl5MkRjbl9obUw2TFZfS3RCWGcxZ3phNXRMSDRLN0hqQ2lSWENubXN5REhWTEVCWkhWRjhtY05ucmlvSTQycHNOMXNIaVFRaVJYb0t4bXUyVHRrcXRla3FsQTAxdlRwaWtVY1k?oc=5",
+          "publishedAt": "2026-11-21T05:43:44.000Z"
+        },
+        {
+          "outlet": "AP News",
+          "title": "Magnitude 6.7 earthquake shakes Peru’s Andes, with no damage or casualties immediately reported",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRW9STTNuU3hmcFRRN1h2T2J2WUUzWXdiSGxiVnpaWnJRV25RZ2Y3YmF4TW1HY25aeC03NnhUSkhGQUpfamt2dDFjR2Y5R3oxNUxGUEtjelBSaXNXLXdBemlHbGJaVXVIWU9ialBGYkw1cklQWUZIbkh1VEE0SDNmRnAxWkVCZEJFcGd5TmJmOTEzUktwODZldHhn?oc=5",
+          "publishedAt": "2026-11-21T03:31:00.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "earthquake",
     "peru",
@@ -13,61 +172,20 @@
     "seismic",
     "magnitude"
   ],
+  "seenUrls": [
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxNMFI2ZkdVM21PODM4OUotYlUzSUNudkxJSkREMkp5aEJ4bHFfNVNfNHZXenA3ZXdFeDQ2empmdWJqTDZ2aFp5cy1oNWlHSWRfd1AwOVhRNUdzTlNKcEliazZ0Q2xNMUdRX0pRSjJyeFZ6WVV6TFZmYnpsSzc1QnZWdnhKMl9ZZGhOV3p1MGhZUE1sUHQwMzBIVmNR?oc=5",
+    "https://news.google.com/rss/articles/CBMifEFVX3lxTE50bXFaSUtBLVFfTXFiRGtXeVh1elYxY3VHdW9wUjY5Z211WmpYaWppUTBSZUlEUTZqa1d1X01ZNTBDOUdxT3ZmNkowelQ2NWRDVjYzQm5qOEkyTTMxRWZsVElZT1FaTDJTNi1lOWkyR0g0dmZhdEQ2RFRJQ2k?oc=5",
+    "https://www.spiegel.de/politik/deutschland/news-boris-pistorius-patzt-hilfen-fuer-die-ukraine-afd-auf-kurssuche-donald-trump-lobt-stephen-miller-a-cb84b583-511a-4850-9455-833a6e8d92a7#ref=rss",
+    "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMV91YXFENFRzUzFzSmQ1VXNqZTh5UzRIc3RCMElXbkIxVjU4V25VYkl5MkRjbl9obUw2TFZfS3RCWGcxZ3phNXRMSDRLN0hqQ2lSWENubXN5REhWTEVCWkhWRjhtY05ucmlvSTQycHNOMXNIaVFRaVJYb0t4bXUyVHRrcXRla3FsQTAxdlRwaWtVY1k?oc=5",
+    "https://www.thehindu.com/news/international/peru-andes-earthquake-toll-updates-november-21-2026/article71727128.ece",
+    "https://phys.org/news/2026-11-deep-beneath-continents.html",
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRW9STTNuU3hmcFRRN1h2T2J2WUUzWXdiSGxiVnpaWnJRV25RZ2Y3YmF4TW1HY25aeC03NnhUSkhGQUpfamt2dDFjR2Y5R3oxNUxGUEtjelBSaXNXLXdBemlHbGJaVXVIWU9ialBGYkw1cklQWUZIbkh1VEE0SDNmRnAxWkVCZEJFcGd5TmJmOTEzUktwODZldHhn?oc=5"
+  ],
   "startedAt": "2026-11-21T07:06:42.840Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-21T07:06:42.840Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-21T07:16:47.789Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Peru Earthquake",
-      "dek": "A strong magnitude 6.9 earthquake strikes Peru's Andes region, with assessments of potential damage and casualties underway."
-    },
-    "de": {
-      "title": "Erdbeben in Peru",
-      "dek": "Ein starkes Erdbeben der Stärke 6,9 erschüttert die Andenregion Perus; Schätzungen zu möglichem Schaden und Opfern laufen."
-    },
-    "es": {
-      "title": "Terremoto en Perú",
-      "dek": "Un fuerte terremoto de magnitud 6.9 sacude la región andina de Perú, y se están realizando evaluaciones de posibles daños y víctimas."
-    },
-    "fr": {
-      "title": "Séisme au Pérou",
-      "dek": "Un fort tremblement de terre de magnitude 6,9 frappe la région des Andes au Pérou, les évaluations des dégâts potentiels et des victimes étant en cours."
-    },
-    "it": {
-      "title": "Terremoto in Perù",
-      "dek": "Un forte terremoto di magnitudo 6,9 colpisce la regione andina del Perù, mentre sono in corso le valutazioni dei potenziali danni e delle vittime."
-    },
-    "pt": {
-      "title": "Terramoto no Peru",
-      "dek": "Um forte terramoto de magnitude 6.9 atinge a região dos Andes do Peru, com avaliações de danos potenciais e vítimas em curso."
-    },
-    "zh": {
-      "title": "秘鲁地震",
-      "dek": "一场强劲的6.9级地震袭击了秘鲁的安第斯地区，目前正在评估潜在的损失和伤亡情况。"
-    },
-    "ja": {
-      "title": "ペルー地震",
-      "dek": "マグニチュード6.9の強い地震がペルーのアンデス地域を襲い、被害および死傷者の評価が進行中です。"
-    },
-    "ko": {
-      "title": "페루 지진",
-      "dek": "규모 6.9의 강한 지진이 페루 안데스 지역을 강타했으며, 잠재적 피해 및 사상자 평가가 진행 중이다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "The Hindu",
-      "The New York Times",
-      "AP News",
-      "Anadolu Ajansı"
-    ]
-  }
+  "articleSlug": "peru-earthquake",
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
