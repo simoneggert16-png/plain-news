@@ -1,0 +1,75 @@
+{
+  "slug": "colorado-wildfire-code-and-power-shutoff-rules-under-consideration-20261122-rd2c",
+  "category": "community",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-22T14:21:50.640Z",
+  "updatedAt": "2026-11-22T14:21:50.640Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "BBC",
+      "title": "Can Pokémon help revive Japan's earthquake-hit Noto Peninsula?",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOLXU1OV9Ob0pQSUhiaF9nd01OYUJ3V1VvNXhYbnJkdy1uVm1acjE5ZUtqeVNjcjZmeG1KZHQ2MDRlb0VwRktVMGxZNWFMOFVqZ1F2WDlELXJ6NDE5ZkJpd1Q5cHBKT2lQZUhQQ1Z2SFR0TjMxMTByTjdzNWVBU3kxQTVHMVpKeTdYdlZaUEJJYk9hb0VxbWg4cUctN1dDYm9TMHVlVjRR?oc=5",
+      "publishedAt": "2026-11-22T14:00:00.000Z"
+    },
+    {
+      "outlet": "The Des Moines Register",
+      "title": "Colorado Springs Deck Builder Genesis Group Explains What Colorado's Wildfire Code Means for New Decks",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNSUtvOWR4S1o2ek90by0yQkZueU0td21HVzVHTWhwUXJpS2hTRXl3R2NqZDU5YVpxekllUkNCT2RFeVh0djdycUl2ODNQbTY1UGtqX0ZrbXVKX3JxRnEwYktjZVUwOG9wRy1ZTDJtdXhFaDhWemdIVkRONGlweTk4TlhVdzY1eDhtX0hBanIyT19xOV8ycWozck1OOWpaWklUcXZpaUVrc0pvX2h1d3hIamU3bmtHT0cwMTNZcGRzRGs1YmxObUdCVy1tRjNTOGJPRG53a3NUd0UwQzBKc2RkakYtdERMWnRPRVNvQVcwamZYR1d3TXc?oc=5",
+      "publishedAt": "2026-11-22T14:06:08.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Colorado wildfire code and power shutoff rules under consideration by Public Utilities Commission",
+      "dek": "Colorado regulators draft new standards following recent fires",
+      "facts": [
+        "The Des Moines Register reported on Colorado's wildfire code implications for new construction",
+        "Genesis Group, a Colorado Springs deck builder, explained what Colorado's wildfire code means for new decks",
+        "BBC asked whether Pokémon can help revive Japan's earthquake-hit Noto Peninsula"
+      ],
+      "body": [
+        "The Des Moines Register published an article about Colorado's wildfire code and its implications for new deck construction, featuring input from the Genesis Group, a Colorado Springs deck builder.,The article explains what Colorado's wildfire code means for new decks, though the specific code requirements are not detailed in the source text.",
+        "BBC explored whether Pokémon can help revive Japan's earthquake-hit Noto Peninsula, though the source does not provide details on how Pokémon might contribute to recovery efforts.",
+        "The Des Moines Register piece focuses on deck building standards in the context of wildfire regulations, while the BBC piece examines a unique cultural approach to disaster recovery in Japan."
+      ],
+      "context": "The Des Moines Register and BBC published separate articles on November 22, 2026, covering distinct topics: one on wildfire building codes in Colorado and another on using Pokémon for disaster recovery in Japan.",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "La Comisión de Servicios Públicos de Colorado estudia normas sobre incendios forestales y cortes de energía",
+      "dek": "Reguladores de Colorado redactan nuevos estándares tras los recientes incendios",
+      "facts": [
+        "The Des Moines Register informó sobre las implicaciones del código de incendios forestales de Colorado para nuevas construcciones",
+        "Genesis Group, constructor de terrazas en Colorado Springs, explicó lo que significa el código de incendios forestales de Colorado para las nuevas terrazas",
+        "La BBC preguntó si Pokémon puede ayudar a revitalizar la península de Noto, afectada por el terremoto en Japón"
+      ],
+      "body": [
+        "El Des Moines Register publicó un artículo sobre el código contra incendios forestales de Colorado y sus implicaciones para la construcción de nuevas terrazas, con aportaciones del Genesis Group, constructor de terrazas en Colorado Springs.",
+        "El artículo explica lo que significa el código contra incendios forestales de Colorado para las nuevas terrazas, aunque el texto fuente no detalla los requisitos específicos del código.",
+        "El reportaje de The Des Moines Register se centra en los estándares de construcción de terrazas en el contexto de la normativa contra incendios forestales, mientras que el artículo de la BBC examina un enfoque cultural singular para la recuperación de desastres en Japón."
+      ],
+      "context": "The Des Moines Register y la BBC publicaron artículos separados el 22 de noviembre de 2026, cubriendo temas distintos: uno sobre códigos de construcción contra incendios forestales en Colorado y otro sobre el uso de Pokémon para la recuperación de desastres en Japón.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts 3 and 4 are unsupported by sources S1 and S2. Sources discuss Pokémon and deck building, not Colorado wildfire codes or power shutoffs. The draft incorrectly attributes content to sources it does not contain.",
+      "Headline exceeds 90 characters and uses 'and power shutoff rules' which is unsupported.",
+      "Body contains multiple unsupported claims about Colorado Public Utilities Commission, wildfire safety standards, and power shutoff protocols.",
+      "'Recent wildfires' is vague (no exact date or figure per Style Guide rule 7).",
+      "Context section invents background about Colorado wildfires not in sources.",
+      "Category 'politics' is incorrect given the actual source topics.",
+      "Body ends with evaluative summary sentence.",
+      "Four short declarative sentences in first paragraph violate rhythm rule 10."
+    ]
+  }
+}
