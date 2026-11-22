@@ -1,0 +1,75 @@
+{
+  "slug": "fuchse-berlin-win-32-31-away-at-goppingen-20261122-15fn",
+  "category": "sport",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-22T16:22:43.647Z",
+  "updatedAt": "2026-11-22T16:22:43.647Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Die Zeit",
+      "title": "Handball-Bundesliga: Füchse Berlin mit Zittersieg in Göppingen",
+      "url": "https://www.zeit.de/news/2026-11/22/fuechse-berlin-mit-zittersieg-in-goeppingen",
+      "publishedAt": "2026-11-22T15:58:14.000Z"
+    },
+    {
+      "outlet": "Kicker",
+      "title": "Gidsel-Rausch und Entscheidung in letzter Sekunde: Berlin gewinnt Krimi in Göppingen",
+      "url": "https://www.kicker.de/goeppingen-gegen-berlin-2026-handball-bundesliga-5213859/spielbericht#omrss",
+      "publishedAt": "2026-11-22T15:59:00.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Füchse Berlin win 32-31 away at Göppingen",
+      "dek": "Berlin wins 32-31 in Göppingen after Champions League loss",
+      "facts": [
+        "Füchse Berlin won 32-31 away against Göppingen on 22 November 2026",
+        "The victory came after the team's recent Champions League loss to Aalborg",
+        "Kicker reported a decisive moment involving Gidsel in the last second",
+        "Die Zeit described the game as a nervous finish (Zittersieg)",
+        "Kicker stated the guests showed the appropriate reaction to their previous defeat"
+      ],
+      "body": [
+        "Füchse Berlin won 32-31 away against Frisch Auf Göppingen on 22 November 2026. The win came after the team's recent Champions League loss to Aalborg, as both Kicker and Die Zeit covered the match.",
+        "Kicker reported that the guests showed the appropriate reaction to their previous defeat, while Die Zeit noted the game was a nervous finish for the Berlin side."
+      ],
+      "context": "",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Füchse Berlin vence fora por 32-31 em Göppingen",
+      "dek": "Berlim vence por 32-31 em Göppingen após derrota na Liga dos Campeões",
+      "facts": [
+        "Füchse Berlin venceu fora por 32-31 contra Göppingen a 22 de novembro de 2026",
+        "A vitória ocorreu após a recente derrota da equipa na Liga dos Campeões contra Aalborg",
+        "O Kicker reportou um momento decisivo envolvendo Gidsel no último segundo",
+        "Die Zeit descreveu o jogo como um final nervoso (Zittersieg)",
+        "O Kicker afirmou que os visitantes demonstraram a reação apropriada à sua derrota anterior"
+      ],
+      "body": [
+        "O Füchse Berlin venceu fora por 32-31 contra o Frisch Auf Göppingen a 22 de novembro de 2026. A vitória ocorreu após a recente derrota do equipa na Liga dos Campeões para o Aalborg, conforme noticiaram o Kicker e a Die Zeit.",
+        "O O Kicker reportou que os visitantes demonstraram a reação adequada à derrota anterior, enquanto a Die Zeit observou que o jogo foi um final nervoso para a equipa de Berlim."
+      ],
+      "context": "",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Sports & Fair Play Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Fact 'Gidsel made the decisive play in the final seconds' not supported by sources and not attributed to Kicker",
+      "Evaluative terms 'Zittersieg' and 'Krimi' used without attribution; style guide bans evaluative framing unless attributed",
+      "Repetitive sentence openings with 'Füchse Berlin' and 'The match' at start of sentences",
+      "Summary sentence 'The victory provided a domestic win following the European setback' evaluates rather than reports",
+      "Title contains evaluative adjective 'dramatic'",
+      "Context paragraph not supported by provided sources"
+    ]
+  }
+}
