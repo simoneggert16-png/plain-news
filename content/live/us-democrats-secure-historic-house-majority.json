@@ -1,9 +1,243 @@
 {
+  "meta": {
+    "outlets": [
+      "BBC",
+      "France 24",
+      "Euronews",
+      "Al Jazeera",
+      "ABC Australia",
+      "New York Times",
+      "Fox News",
+      "The Hill",
+      "Axios",
+      "Der Spiegel",
+      "South China Morning Post",
+      "Times of India"
+    ],
+    "createdBy": "bots/live.mjs",
+    "statsModel": "nvidia/nemotron-3.5-bolt-e4b",
+    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+  },
   "slug": "us-democrats-secure-historic-house-majority",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
+  "stats": {
+    "label": "House Seats Count",
+    "note": "The reports detail the number of US House seats held by Democrats and Republicans after the midterm elections.",
+    "unit": "seats",
+    "max": 435,
+    "asOf": "2026-11-22T00:00:00.000Z",
+    "updatedAt": "2026-11-23T00:17:02.488Z",
+    "source": {
+      "outlet": "BBC",
+      "title": "Democrats win largest House majority since 1992 after flipping North Carolina seat",
+      "url": "https://www.bbc.co.uk/news/articles/c6vg29g7dlyno?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-22T20:26:24.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "democrats",
+        "label": "Democrats",
+        "value": 258,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Demokraten"
+          },
+          "fr": {
+            "label": "Démocrates"
+          },
+          "es": {
+            "label": "Demócratas"
+          },
+          "it": {
+            "label": "Democratici"
+          },
+          "pt": {
+            "label": "Democratas"
+          },
+          "zh": {
+            "label": "民主党"
+          },
+          "ja": {
+            "label": "民主党"
+          },
+          "ko": {
+            "label": "민주당"
+          }
+        }
+      },
+      {
+        "key": "republicans",
+        "label": "Republicans",
+        "value": 173,
+        "change": 0,
+        "locales": {
+          "de": {
+            "label": "Republikaner"
+          },
+          "fr": {
+            "label": "Républicains"
+          },
+          "es": {
+            "label": "Republicanos"
+          },
+          "it": {
+            "label": "Repubblicani"
+          },
+          "pt": {
+            "label": "Republicanos"
+          },
+          "zh": {
+            "label": "共和党"
+          },
+          "ja": {
+            "label": "共和党"
+          },
+          "ko": {
+            "label": "공화당"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Anzahl der Sitze im Repräsentantenhaus",
+        "note": "Die Berichte geben die Anzahl der Sitze im US-Repräsentantenhaus der Demokraten und Republikaner nach den Zwischenwahlen an."
+      },
+      "fr": {
+        "label": "Nombre de sièges à la Chambre",
+        "note": "Les rapports détaillent le nombre de sièges à la Chambre des États-Unis détenus par les Démocrates et les Républicains après les élections de mi-mandat."
+      },
+      "es": {
+        "label": "Recuento de escaños en la Cámara",
+        "note": "Los informes detallan el número de escaños en la Cámara de EE. UU. en manos de demócratas y republicanos tras las elecciones de mitad de mandato."
+      },
+      "it": {
+        "label": "Conteggi dei seggi alla Camera",
+        "note": "I rapporti dettagliano il numero di seggi alla Camera degli Stati Uniti detenuti da Democratici e Repubblicani dopo le elezioni di metà mandato."
+      },
+      "pt": {
+        "label": "Contagem de Assentos na Câmara",
+        "note": "Os relatórios detalham o número de assentos na Câmara dos EUA detidos por Democratas e Republicanos após as eleições de meio de mandato."
+      },
+      "zh": {
+        "label": "众议院席位统计",
+        "note": "报告详细说明了中期选举后民主党和共和党在美国众议院的席位数。"
+      },
+      "ja": {
+        "label": "下院議席数",
+        "note": "報道は、中間選挙後の民主党と共和党が保有する米下院議席数について詳述している。"
+      },
+      "ko": {
+        "label": "하원 의석수",
+        "note": "보고서는 중간선거 후 민주당과 공화당이 보유한 미국 하원 의석수를 상세히 설명합니다."
+      }
+    }
+  },
   "topic": "US Democrats Secure Historic House Majority",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Nach einem entscheidenden Nachzählserfolg in North Carolina sichern die Demokraten die größte Mehrheit im US-Repräsentantenhaus seit 1992.",
+      "title": "US-Demokraten sichern historische Mehrheit im Repräsentantenhaus"
+    },
+    "en": {
+      "dek": "Democrats secure the largest U.S. House majority since 1992 following a pivotal recount win in North Carolina.",
+      "title": "US Democrats Secure Historic House Majority"
+    },
+    "es": {
+      "dek": "Los demócratas aseguran la mayor mayoría en la Cámara de Representantes de EE. UU. desde 1992 tras una victoria decisiva en el recuento de Carolina del Norte.",
+      "title": "Demócratas estadounidenses aseguran una mayoría histórica en la Cámara"
+    },
+    "fr": {
+      "dek": "Les Démocrates obtiennent la plus grande majorité à la Chambre des États-Unis depuis 1992 suite à une victoire décisive lors d'un recomptage en Caroline du Nord.",
+      "title": "Les Démocrates américains obtiennent une majorité historique à la Chambre"
+    },
+    "it": {
+      "dek": "I Democratici hanno assicurato la più ampia maggioranza alla Camera degli Stati Uniti dal 1992 dopo una vittoria cruciale in riconteggio in Carolina del Nord.",
+      "title": "I Democratici statunitensi ottengono una storica maggioranza alla Camera"
+    },
+    "ja": {
+      "dek": "ノースカロライナ州での重要な再集計勝利を受け、民主党は1992年以来最大の米下院多数派を確保した。",
+      "title": "米民主党、歴史的な下院多数派を獲得"
+    },
+    "ko": {
+      "dek": "노스캐롤라이나에서의 결정적인 재검표 승리에 힘입어 민주당이 1992년 이후 최대 규모의 미국 하원 다수당을 확보했다.",
+      "title": "미국 민주당, 역사적인 하원 다수당 확보"
+    },
+    "pt": {
+      "dek": "Os Democratas garantem a maior maioria na Câmara dos EUA desde 1992 após uma vitória crucial em nova contagem na Carolina do Norte.",
+      "title": "Democratas dos EUA Garantem Maioria Histórica na Câmara"
+    },
+    "zh": {
+      "dek": "在北卡罗来纳州关键的计票复核获胜后，民主党获得了自1992年以来美国众议院的最大多数席位。",
+      "title": "美国民主党赢得历史性众议院多数席位"
+    }
+  },
+  "updates": [
+    {
+      "at": "2026-11-22T22:29:38.000Z",
+      "id": "u-1795386578000-o2ob",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Demokraten sicherten laut The Jerusalem Post und Al Jazeera mindestens 258 Sitze im US-Repräsentantenhaus. Diese Zahl stellt laut The Jerusalem Post und Al Jazeera die größte Mehrheit im Repräsentantenhaus seit 1992 dar.",
+          "headline": "Demokraten sichern größte Mehrheit im Repräsentantenhaus seit 1992 mit 258 Sitzen"
+        },
+        "en": {
+          "body": "Democrats secured at least 258 US House seats according to The Jerusalem Post and Al Jazeera. This tally represents the largest House majority since 1992 according to The Jerusalem Post and Al Jazeera.",
+          "headline": "Democrats secure largest House majority since 1992 with 258 seats"
+        },
+        "es": {
+          "body": "Los demócratas aseguraron al menos 258 escaños en la Cámara de Representantes de EE. UU., según The Jerusalem Post y Al Jazeera. Este recuento representa la mayoría más grande en la Cámara desde 1992, según The Jerusalem Post y Al Jazeera.",
+          "headline": "Demócratas aseguran la mayoría más grande en la Cámara desde 1992 con 258 escaños"
+        },
+        "fr": {
+          "body": "Les Démocrates ont obtenu au moins 258 sièges à la Chambre des États-Unis, selon The Jerusalem Post et Al Jazeera. Ce décompte représente la plus grande majorité à la Chambre depuis 1992, selon The Jerusalem Post et Al Jazeera.",
+          "headline": "Les Démocrates obtiennent la plus importante majorité à la Chambre depuis 1992 avec 258 sièges"
+        },
+        "it": {
+          "body": "I Democratici hanno assicurato almeno 258 seggi alla Camera dei Rappresentanti statunitense, secondo The Jerusalem Post e Al Jazeera. Questo conteggio rappresenta la maggioranza più ampia alla Camera dal 1992, secondo The Jerusalem Post e Al Jazeera.",
+          "headline": "Democratici ottengono la maggioranza più ampia alla Camera dal 1992 con 258 seggi"
+        },
+        "ja": {
+          "body": "エルサレム・ポスト紙とアルジャジーラによると、民主党は少なくとも258議席を確保した。エルサレム・ポスト紙とアルジャジーラによれば、この議席数は1992年以来最大の下院多数派を意味する。",
+          "headline": "民主党、1992年以来最大の下院多数派を258議席で確保"
+        },
+        "ko": {
+          "body": "예루살렘 포스트와 알자지라에 따르면 민주당은 최소 258석의 미국 하원 의석을 확보했다. 예루살렘 포스트와 알자지라에 따르면 이 수치는 1992년 이후 최대 하원 다수당을 의미한다.",
+          "headline": "민주당, 1992년 이후 최대 하원 다수당 확보, 의석 258석"
+        },
+        "pt": {
+          "body": "Os Democratas asseguraram pelo menos 258 assentos na Câmara dos EUA, segundo The Jerusalem Post e Al Jazeera. Este total representa a maior maioria na Câmara desde 1992, de acordo com The Jerusalem Post e Al Jazeera.",
+          "headline": "Democratas asseguram a maior maioria na Câmara desde 1992 com 258 assentos"
+        },
+        "zh": {
+          "body": "据《耶路撒冷邮报》和半岛电视台报道，民主党获得了至少258个美国众议院席位。据《耶路撒冷邮报》和半岛电视台报道，这一席位代表了自1992年以来的最大众议院多数。",
+          "headline": "民主党赢得自1992年以来最大的众议院多数，席位达258席"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.jpost.com/us-elections/article-915753",
+          "title": "Democrats secure biggest House majority since 1992 with 258 seats",
+          "outlet": "The Jerusalem Post",
+          "publishedAt": "2026-11-22T22:29:38.000Z"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/22/democrats-win-largest-house-majority-since-1992-with-north-carolina-seat?traffic_source=rss",
+          "title": "Democrats win largest House majority since 1992 with North Carolina seat",
+          "outlet": "Al Jazeera",
+          "publishedAt": "2026-11-22T22:19:47.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "democrats",
     "house of representatives",
@@ -13,72 +247,6 @@
     "midterms",
     "election",
     "congress"
-  ],
-  "startedAt": "2026-11-22T23:27:09.529Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-22T23:27:23.357Z",
-  "articleSlug": null,
-  "sourceCount": 2,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1795386578000-o2ob",
-      "at": "2026-11-22T22:29:38.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Democrats secure largest House majority since 1992 with 258 seats",
-          "body": "Democrats secured at least 258 US House seats according to The Jerusalem Post and Al Jazeera. This tally represents the largest House majority since 1992 according to The Jerusalem Post and Al Jazeera."
-        },
-        "it": {
-          "headline": "Democratici ottengono la maggioranza più ampia alla Camera dal 1992 con 258 seggi",
-          "body": "I Democratici hanno assicurato almeno 258 seggi alla Camera dei Rappresentanti statunitense, secondo The Jerusalem Post e Al Jazeera. Questo conteggio rappresenta la maggioranza più ampia alla Camera dal 1992, secondo The Jerusalem Post e Al Jazeera."
-        },
-        "fr": {
-          "headline": "Les Démocrates obtiennent la plus importante majorité à la Chambre depuis 1992 avec 258 sièges",
-          "body": "Les Démocrates ont obtenu au moins 258 sièges à la Chambre des États-Unis, selon The Jerusalem Post et Al Jazeera. Ce décompte représente la plus grande majorité à la Chambre depuis 1992, selon The Jerusalem Post et Al Jazeera."
-        },
-        "de": {
-          "headline": "Demokraten sichern größte Mehrheit im Repräsentantenhaus seit 1992 mit 258 Sitzen",
-          "body": "Demokraten sicherten laut The Jerusalem Post und Al Jazeera mindestens 258 Sitze im US-Repräsentantenhaus. Diese Zahl stellt laut The Jerusalem Post und Al Jazeera die größte Mehrheit im Repräsentantenhaus seit 1992 dar."
-        },
-        "es": {
-          "headline": "Demócratas aseguran la mayoría más grande en la Cámara desde 1992 con 258 escaños",
-          "body": "Los demócratas aseguraron al menos 258 escaños en la Cámara de Representantes de EE. UU., según The Jerusalem Post y Al Jazeera. Este recuento representa la mayoría más grande en la Cámara desde 1992, según The Jerusalem Post y Al Jazeera."
-        },
-        "pt": {
-          "headline": "Democratas asseguram a maior maioria na Câmara desde 1992 com 258 assentos",
-          "body": "Os Democratas asseguraram pelo menos 258 assentos na Câmara dos EUA, segundo The Jerusalem Post e Al Jazeera. Este total representa a maior maioria na Câmara desde 1992, de acordo com The Jerusalem Post e Al Jazeera."
-        },
-        "zh": {
-          "headline": "民主党赢得自1992年以来最大的众议院多数，席位达258席",
-          "body": "据《耶路撒冷邮报》和半岛电视台报道，民主党获得了至少258个美国众议院席位。据《耶路撒冷邮报》和半岛电视台报道，这一席位代表了自1992年以来的最大众议院多数。"
-        },
-        "ja": {
-          "headline": "民主党、1992年以来最大の下院多数派を258議席で確保",
-          "body": "エルサレム・ポスト紙とアルジャジーラによると、民主党は少なくとも258議席を確保した。エルサレム・ポスト紙とアルジャジーラによれば、この議席数は1992年以来最大の下院多数派を意味する。"
-        },
-        "ko": {
-          "headline": "민주당, 1992년 이후 최대 하원 다수당 확보, 의석 258석",
-          "body": "예루살렘 포스트와 알자지라에 따르면 민주당은 최소 258석의 미국 하원 의석을 확보했다. 예루살렘 포스트와 알자지라에 따르면 이 수치는 1992년 이후 최대 하원 다수당을 의미한다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Jerusalem Post",
-          "title": "Democrats secure biggest House majority since 1992 with 258 seats",
-          "url": "https://www.jpost.com/us-elections/article-915753",
-          "publishedAt": "2026-11-22T22:29:38.000Z"
-        },
-        {
-          "outlet": "Al Jazeera",
-          "title": "Democrats win largest House majority since 1992 with North Carolina seat",
-          "url": "https://www.aljazeera.com/news/2026/11/22/democrats-win-largest-house-majority-since-1992-with-north-carolina-seat?traffic_source=rss",
-          "publishedAt": "2026-11-22T22:19:47.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://asia.nikkei.com/spotlight/your-week-in-asia/laos-least-developed-status-shift-tata-meeting-taiwan-local-elections",
@@ -121,181 +289,12 @@
     "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQTjlyaFBqeExfeGk0WUNaOHNXSUhsdUtUUVhDeC1ELTNKOGNmcWcyUkVLb1otYVhMUWtKYmJOZXBHUTd6X25IY0owZHhFNGV5Wk55dTJmOVU1TXVkUno4V3MybTVqN0NNS3MtV015SDdTWjJweWdEZXF1dTFYTHNKR3RldXltTDFBU1pKSjJXeDNnWWdlZVM5cXlqYVRRejF6MHZrMC0tN3NwTkc4TFgwLXJ1QzdldXJFSFV5dXkyNkgyUdIBxwFBVV95cUxPZlVEVnlyejZodms5cVh2bkJCMmpDNkFUYUJnd1gzVTBhSDc1LWZEb3JDaDRKb0t2OHQwZ1Zpb2NIMW9GUlBlY3phd3lJYmlwSlIzay1raEdZNHh4ZjBSQlpRVmZLTzB0NmFRT0N6c1R1XzQyd2NiWUU0bHg0TEhQM25IejI2RFk2WlVGWkRKWlVDaGZ0dzRHWGFaMDEtOEt4dDgxQWVmVGs0el9BeGFyQVJvTElYZHhxVkR2aGp4b2RqWWZQbmIw?oc=5",
     "https://news.google.com/rss/articles/CBMingFBVV95cUxQSHl4b1RjY3R2dVVlNEN0VFFuLUM4ckx5R285RXBqdFlDd0J5aFRSQU1IZVBvdGRWQlo3R2hYalZjdzg4cWljSmJOSUp4WkRyWUNWY2dEdzdtTXF6OUN5Um4tcWNIUG45cXNSS1l6RnlpVklPZ3pHQ3RFNDJzalp2QkVwcjF0UHo3T1pxYUh5YnVta3JsYnlSVXQzS3dFUQ?oc=5"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "US Democrats Secure Historic House Majority",
-      "dek": "Democrats secure the largest U.S. House majority since 1992 following a pivotal recount win in North Carolina."
-    },
-    "de": {
-      "title": "US-Demokraten sichern historische Mehrheit im Repräsentantenhaus",
-      "dek": "Nach einem entscheidenden Nachzählserfolg in North Carolina sichern die Demokraten die größte Mehrheit im US-Repräsentantenhaus seit 1992."
-    },
-    "fr": {
-      "title": "Les Démocrates américains obtiennent une majorité historique à la Chambre",
-      "dek": "Les Démocrates obtiennent la plus grande majorité à la Chambre des États-Unis depuis 1992 suite à une victoire décisive lors d'un recomptage en Caroline du Nord."
-    },
-    "es": {
-      "title": "Demócratas estadounidenses aseguran una mayoría histórica en la Cámara",
-      "dek": "Los demócratas aseguran la mayor mayoría en la Cámara de Representantes de EE. UU. desde 1992 tras una victoria decisiva en el recuento de Carolina del Norte."
-    },
-    "pt": {
-      "title": "Democratas dos EUA Garantem Maioria Histórica na Câmara",
-      "dek": "Os Democratas garantem a maior maioria na Câmara dos EUA desde 1992 após uma vitória crucial em nova contagem na Carolina do Norte."
-    },
-    "it": {
-      "title": "I Democratici statunitensi ottengono una storica maggioranza alla Camera",
-      "dek": "I Democratici hanno assicurato la più ampia maggioranza alla Camera degli Stati Uniti dal 1992 dopo una vittoria cruciale in riconteggio in Carolina del Nord."
-    },
-    "zh": {
-      "title": "美国民主党赢得历史性众议院多数席位",
-      "dek": "在北卡罗来纳州关键的计票复核获胜后，民主党获得了自1992年以来美国众议院的最大多数席位。"
-    },
-    "ja": {
-      "title": "米民主党、歴史的な下院多数派を獲得",
-      "dek": "ノースカロライナ州での重要な再集計勝利を受け、民主党は1992年以来最大の米下院多数派を確保した。"
-    },
-    "ko": {
-      "title": "미국 민주당, 역사적인 하원 다수당 확보",
-      "dek": "노스캐롤라이나에서의 결정적인 재검표 승리에 힘입어 민주당이 1992년 이후 최대 규모의 미국 하원 다수당을 확보했다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "BBC",
-      "France 24",
-      "Euronews",
-      "Al Jazeera",
-      "ABC Australia",
-      "New York Times",
-      "Fox News",
-      "The Hill",
-      "Axios",
-      "Der Spiegel",
-      "South China Morning Post",
-      "Times of India"
-    ],
-    "statsModel": "gemini/gemini-3.5-flash-lite",
-    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
-  },
-  "stats": {
-    "label": "House Seats",
-    "note": "US House of Representatives seat counts following the 2026 midterms.",
-    "unit": "seats",
-    "max": null,
-    "asOf": "2026-11-22T00:00:00.000Z",
-    "updatedAt": "2026-11-22T23:27:11.361Z",
-    "source": {
-      "outlet": "BBC",
-      "title": "Democrats win largest House majority since 1992 after flipping North Carolina seat",
-      "url": "https://www.bbc.co.uk/news/articles/c6vg29g7dlyno?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-11-22T20:26:24.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "democrats",
-        "label": "Democrats",
-        "value": 258,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Demócratas"
-          },
-          "it": {
-            "label": "Democratici"
-          },
-          "fr": {
-            "label": "Démocrates"
-          },
-          "de": {
-            "label": "Demokraten"
-          },
-          "zh": {
-            "label": "民主党"
-          },
-          "ko": {
-            "label": "민주당"
-          },
-          "pt": {
-            "label": "Democratas"
-          },
-          "ja": {
-            "label": "民主党"
-          }
-        }
-      },
-      {
-        "key": "republicans",
-        "label": "Republicans",
-        "value": 173,
-        "change": null,
-        "locales": {
-          "es": {
-            "label": "Republicanos"
-          },
-          "it": {
-            "label": "Repubblicani"
-          },
-          "fr": {
-            "label": "Républicains"
-          },
-          "de": {
-            "label": "Republikaner"
-          },
-          "zh": {
-            "label": "共和党"
-          },
-          "ko": {
-            "label": "공화당"
-          },
-          "pt": {
-            "label": "Republicanos"
-          },
-          "ja": {
-            "label": "共和党"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Sitze im Repräsentantenhaus",
-        "note": "Die Sitzverteilung im US-Repräsentantenhaus nach den Zwischenwahlen 2026."
-      },
-      "fr": {
-        "label": "Sièges à la Chambre",
-        "note": "Nombre de sièges à la Chambre des représentants des États-Unis à l'issue des élections de mi-mandat de 2026."
-      },
-      "es": {
-        "label": "Escaños en la Cámara",
-        "note": "Recuento de escaños en la Cámara de Representantes de EE. UU. tras las elecciones de mitad de mandato de 2026."
-      },
-      "it": {
-        "label": "Seggi alla Camera",
-        "note": "Numero dei seggi della Camera dei Rappresentanti degli Stati Uniti in seguito alle elezioni di metà mandato del 2026."
-      },
-      "pt": {
-        "label": "Lugares na Câmara",
-        "note": "Contagem de lugares na Câmara dos Representantes dos EUA após as eleições de meio de mandato de 2026."
-      },
-      "zh": {
-        "label": "众议院席位",
-        "note": "2026年中期选举后的美国众议院席位统计。"
-      },
-      "ja": {
-        "label": "下院議席数",
-        "note": "2026年中間選挙後の米下院議席数。"
-      },
-      "ko": {
-        "label": "하원 의석수",
-        "note": "2026년 중간선거 후 미국 하원 의석수"
-      }
-    }
-  },
+  "startedAt": "2026-11-22T23:27:09.529Z",
+  "updatedAt": "2026-11-22T23:27:23.357Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": null,
+  "sourceCount": 2,
   "statsHistory": [
     {
       "at": "2026-11-22T00:00:00.000Z",
@@ -310,5 +309,6 @@
         }
       ]
     }
-  ]
+  ],
+  "seenHeadlines": []
 }
