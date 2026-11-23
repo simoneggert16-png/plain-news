@@ -11,25 +11,25 @@
       "Kyiv Post"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
   },
   "slug": "russia-ukraine-war-escalation",
   "topic": "Russia-Ukraine War Escalation",
   "status": "live",
   "article": {
     "slug": "russia-ukraine-war-escalation",
-    "updatedAt": "2026-11-23T01:17:41.371Z",
+    "updatedAt": "2026-11-23T02:47:28.059Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
         "title": "Russian vessel hit by drone in Libya as strikes continue in Ukraine",
         "dek": "A Russian ship in Libya was struck by a drone while rescue operations continue in Ukraine following a deadly apartment building strike.",
         "facts": [
-          "A Russian ship docked in Benghazi was hit by a suspected drone on Nov. 22 according to DW and the BBC.",
-          "Two people died and four were wounded in a Russian strike on a Kyiv region apartment building on Nov. 22.",
-          "Fourteen people remain missing following the drone strike in the Kyiv region.",
+          "Finnish authorities reported a drone strike on a Russian cargo ship in the Baltic Sea on Nov. 21.",
           "Ukraine and the UK signed an agreement on Nov. 21 to jointly produce deep-strike drones in Britain.",
-          "Finnish authorities reported a drone strike on a Russian cargo ship in the Baltic Sea on Nov. 21."
+          "A Russian drone struck a Kyiv region apartment building on Nov. 22, killing two and wounding four.",
+          "At least 14 people remain missing after the Kyiv region building strike.",
+          "A Russian ship docked in Benghazi was hit by a suspected drone on Nov. 22."
         ],
         "body": [
           "On Nov. 22, a Russian Navy guided-missile corvette docked at a naval base in Benghazi, Libya, was struck by a suspected drone, according to reports from DW and the BBC.",
@@ -46,9 +46,58 @@
     },
     "versions": [
       {
+        "at": "2026-11-23T01:17:41.371Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "A Russian ship in Libya was struck by a drone while rescue operations continue in Ukraine following a deadly apartment building strike.",
+            "body": [
+              "On Nov. 22, a Russian Navy guided-missile corvette docked at a naval base in Benghazi, Libya, was struck by a suspected drone, according to reports from DW and the BBC.",
+              "Libya's eastern-based government stated it is working with Russian officials to investigate the incident.",
+              "In Ukraine, a Russian attack near the capital struck an apartment building in the Vyshhorod district on Nov. 22, killing two people and wounding four others, according to reports.",
+              "Rescue operations are ongoing at the site of the building, where at least 14 people remain missing, according to Ukrainian President Volodymyr Zelenskiy.",
+              "Dashcam footage captured a separate Russian missile strike in Lviv on Nov. 22, as reported by Al Jazeera and CBS News.",
+              "Ukraine and the UK signed project agreements on Nov. 21 to jointly produce Ukrainian deep-strike and middle-strike drones in Britain, the project funded by London and the resulting weapons will be delivered to the Armed Forces of Ukraine, according to The Kyiv Post.",
+              "Finnish authorities reported on Nov. 22 that a drone set a Russian cargo ship ablaze in the eastern Baltic Sea on Nov. 21, with Finnish officials indicating the strike was likely carried out by Ukraine, according to France 24 and The Guardian."
+            ],
+            "facts": [
+              "A Russian ship docked in Benghazi was hit by a suspected drone on Nov. 22 according to DW and the BBC.",
+              "Two people died and four were wounded in a Russian strike on a Kyiv region apartment building on Nov. 22.",
+              "Fourteen people remain missing following the drone strike in the Kyiv region.",
+              "Ukraine and the UK signed an agreement on Nov. 21 to jointly produce deep-strike drones in Britain.",
+              "Finnish authorities reported a drone strike on a Russian cargo ship in the Baltic Sea on Nov. 21."
+            ],
+            "title": "Russian vessel hit by drone in Libya as strikes continue in Ukraine",
+            "context": "The Russia-Ukraine war has involved ongoing drone and missile strikes against residential and infrastructure targets. Recent incidents have also included maritime activity in the Baltic Sea and North Africa.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
         "at": "2026-11-22T16:57:45.433Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Ein russisches Schiff in Libyen wurde von einer Drohne getroffen, während in der Ukraine nach einem tödlichen Angriff auf ein Wohnhaus Rettungsarbeiten andauern.",
+            "body": [
+              "Eine in einem Marinestützpunkt in Bengasi, Libyen, liegende russische Korvette wurde am 22. November laut Berichten von DW und der BBC von einer mutmaßlichen Drohne getroffen. Die im Osten Libyens ansässige Regierung teilte mit, sie arbeite mit russischen Vertretern an der Untersuchung des Vorfalls.",
+              "Das Schiff hatte zuvor nach einer Explosion Feuer gefangen, wie The Kyiv Post und The Straits Times berichteten. Die im Osten Libyens ansässige Regierung erklärte, eine vorläufige Untersuchung deute darauf hin, dass sich die Explosion an Bord des vor Anker liegenden Schiffes ereignet habe.",
+              "In der Ukraine traf ein russischer Angriff nahe der Hauptstadt ein Wohnhaus, wobei laut Berichten zwei Menschen getötet und vier weitere verletzt wurden. Am Ort des Gebäudes im Bezirk Wyschhorod dauern die Rettungsarbeiten an.",
+              "Nach dem Drohnenangriff auf das Wohngebäude werden laut dem ukrainischen Präsidenten Wolodymyr Selenskyj noch mindestens 14 Menschen vermisst. Nach dem Angriff drängte Präsident Selenskyj Washington dazu, den Einsatz von durch Verbündete finanzierten Flugabwehrraketen zu genehmigen.",
+              "Dashcam-Aufnahmen hielten zudem einen separaten russischen Raketenangriff in Lwiw am 22. November fest, wie Al Jazeera und CBS News berichteten. Diese Angriffe folgen auf eine Reihe jüngster Luftangriffe im ganzen Land.",
+              "Die Ukraine und Großbritannien unterzeichneten am 21. November Projektvereinbarungen zur gemeinsamen Produktion ukrainischer Lang- und Mittelstreckendrohnen in Großbritannien. Das Projekt wird von London finanziert und die daraus resultierenden Waffen werden an die Streitkräfte der Ukraine geliefert, so The Kyiv Post.",
+              "Finnische Behörden meldeten am 22. November, dass eine Drohne am 21. November ein russisches Frachtschiff in der östlichen Ostsee in Brand gesetzt habe. Finnische Beamte erklärten, der Konflikt weite sich aus, und deuteten laut France 24 und The Guardian an, dass der Angriff auf das Frachtschiff wahrscheinlich von der Ukraine ausgeführt wurde."
+            ],
+            "facts": [
+              "Ein in Bengasi liegendes russisches Schiff wurde am 22. November laut DW und BBC von einer mutmaßlichen Drohne getroffen.",
+              "Bei einem russischen Angriff auf ein Wohnhaus in der Region Kiew am 22. November kamen zwei Menschen ums Leben, vier wurden verletzt.",
+              "Nach dem Drohnenangriff in der Region Kiew werden noch 14 Menschen vermisst.",
+              "Die Ukraine und Großbritannien unterzeichneten am 21. November ein Abkommen zur gemeinsamen Produktion von Langstreckendrohnen in Großbritannien.",
+              "Finnische Behörden meldeten am 21. November einen Drohnenangriff auf ein russisches Frachtschiff in der Ostsee."
+            ],
+            "title": "Russisches Schiff in Libyen von Drohne getroffen, während Angriffe in der Ukraine andauern",
+            "context": "Der Russland-Ukraine-Krieg umfasst anhaltende Drohnen- und Raketenangriffe auf Wohn- und Infrastrukturziele. Zu den jüngsten Vorfällen zählen auch maritime Aktivitäten in der Ostsee und in Nordafrika."
+          },
           "en": {
             "dek": "A Russian ship in Libya was struck by a drone while rescue operations continue in Ukraine following a deadly apartment building strike.",
             "body": [
@@ -70,27 +119,6 @@
             "title": "Russian vessel hit by drone in Libya as strikes continue in Ukraine",
             "context": "The Russia-Ukraine war has involved ongoing drone and missile strikes against residential and infrastructure targets. Recent incidents have also included maritime activity in the Baltic Sea and North Africa.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Ein russisches Schiff in Libyen wurde von einer Drohne getroffen, während in der Ukraine nach einem tödlichen Angriff auf ein Wohnhaus Rettungsarbeiten andauern.",
-            "body": [
-              "Eine in einem Marinestützpunkt in Bengasi, Libyen, liegende russische Korvette wurde am 22. November laut Berichten von DW und der BBC von einer mutmaßlichen Drohne getroffen. Die im Osten Libyens ansässige Regierung teilte mit, sie arbeite mit russischen Vertretern an der Untersuchung des Vorfalls.",
-              "Das Schiff hatte zuvor nach einer Explosion Feuer gefangen, wie The Kyiv Post und The Straits Times berichteten. Die im Osten Libyens ansässige Regierung erklärte, eine vorläufige Untersuchung deute darauf hin, dass sich die Explosion an Bord des vor Anker liegenden Schiffes ereignet habe.",
-              "In der Ukraine traf ein russischer Angriff nahe der Hauptstadt ein Wohnhaus, wobei laut Berichten zwei Menschen getötet und vier weitere verletzt wurden. Am Ort des Gebäudes im Bezirk Wyschhorod dauern die Rettungsarbeiten an.",
-              "Nach dem Drohnenangriff auf das Wohngebäude werden laut dem ukrainischen Präsidenten Wolodymyr Selenskyj noch mindestens 14 Menschen vermisst. Nach dem Angriff drängte Präsident Selenskyj Washington dazu, den Einsatz von durch Verbündete finanzierten Flugabwehrraketen zu genehmigen.",
-              "Dashcam-Aufnahmen hielten zudem einen separaten russischen Raketenangriff in Lwiw am 22. November fest, wie Al Jazeera und CBS News berichteten. Diese Angriffe folgen auf eine Reihe jüngster Luftangriffe im ganzen Land.",
-              "Die Ukraine und Großbritannien unterzeichneten am 21. November Projektvereinbarungen zur gemeinsamen Produktion ukrainischer Lang- und Mittelstreckendrohnen in Großbritannien. Das Projekt wird von London finanziert und die daraus resultierenden Waffen werden an die Streitkräfte der Ukraine geliefert, so The Kyiv Post.",
-              "Finnische Behörden meldeten am 22. November, dass eine Drohne am 21. November ein russisches Frachtschiff in der östlichen Ostsee in Brand gesetzt habe. Finnische Beamte erklärten, der Konflikt weite sich aus, und deuteten laut France 24 und The Guardian an, dass der Angriff auf das Frachtschiff wahrscheinlich von der Ukraine ausgeführt wurde."
-            ],
-            "facts": [
-              "Ein in Bengasi liegendes russisches Schiff wurde am 22. November laut DW und BBC von einer mutmaßlichen Drohne getroffen.",
-              "Bei einem russischen Angriff auf ein Wohnhaus in der Region Kiew am 22. November kamen zwei Menschen ums Leben, vier wurden verletzt.",
-              "Nach dem Drohnenangriff in der Region Kiew werden noch 14 Menschen vermisst.",
-              "Die Ukraine und Großbritannien unterzeichneten am 21. November ein Abkommen zur gemeinsamen Produktion von Langstreckendrohnen in Großbritannien.",
-              "Finnische Behörden meldeten am 21. November einen Drohnenangriff auf ein russisches Frachtschiff in der Ostsee."
-            ],
-            "title": "Russisches Schiff in Libyen von Drohne getroffen, während Angriffe in der Ukraine andauern",
-            "context": "Der Russland-Ukraine-Krieg umfasst anhaltende Drohnen- und Raketenangriffe auf Wohn- und Infrastrukturziele. Zu den jüngsten Vorfällen zählen auch maritime Aktivitäten in der Ostsee und in Nordafrika."
           }
         }
       },
@@ -280,62 +308,120 @@
   },
   "updates": [
     {
-      "id": "u-1795395776000-9fr2",
-      "at": "2026-11-23T01:02:56.000Z",
+      "id": "u-1795400745000-irx1",
+      "at": "2026-11-23T02:25:45.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Suspected Ukrainian drones hit Russian warship at Benghazi naval base",
-          "body": "Two Libyan military officials said the strike severely damaged the Merkury, a Russian navy corvette, and ignited a fire at the facility according to two Libyan military officials. The attack occurred at the Benghazi Naval Base in eastern Libya according to two Libyan military officials."
-        },
-        "de": {
-          "headline": "Verdächtige ukrainische Drohnen treffen russisches Kriegsschiff in der Marinebasis von Benghazi",
-          "body": "Zwei libysche Militärbeamte berichteten, dass der Schlag die Merkury, eine Korvette der russischen Marine, schwer beschädigt habe und in der Anlage ein Feuer ausgelöst habe. Der Angriff ereignete sich auf der Marinebasis von Benghazi in Ostlibyen, so zwei libysche Militärbeamte."
-        },
-        "es": {
-          "headline": "Posibles drones ucranianos impactan a buque de guerra ruso en base naval de Benghazi",
-          "body": "Dos altos cargos militares libios indicaron que el ataque dañó gravemente el Merkury, una corbeta de la marina rusa, e incendió las instalaciones, según dichos oficiales. El ataque tuvo lugar en la Base Naval de Benghazi, en el este de Libia, según dos altos cargos militares libios."
+          "headline": "Russian strikes in Kyiv region result in multiple deaths",
+          "body": "Russian attacks on an apartment block in the Kyiv region killed at least nine people, according to The Guardian. CNA reported that the death toll from Russian strikes in the Kyiv region has reached 12."
         },
         "it": {
-          "headline": "Droni ucraini sospettati hanno colpito una nave da guerra russa alla base navale di Bengasi",
-          "body": "Due ufficiali militari libici hanno dichiarato che l'attacco ha gravemente danneggiato la corvetta russa Merkury e ha innescato un incendio presso la struttura, secondo due ufficiali militari libici. L'attacco è avvenuto alla Base Navale di Bengasi, nell'est della Libia, secondo due ufficiali militari libici."
+          "headline": "Attacchi russi nella regione di Kyiv causano diverse vittime",
+          "body": "Attacchi russi su un blocco di appartamenti nella regione di Kyiv hanno ucciso almeno nove persone, secondo The Guardian. CNA ha riferito che il bilancio delle vittime degli attacchi russi nella regione di Kyiv ha raggiunto 12."
         },
-        "fr": {
-          "headline": "Des drones ukrainiens présumés ont frappé un navire de guerre russe à la base navale de Benghazi",
-          "body": "Deux responsables militaires libyens ont déclaré que la frappe avait gravement endommagé le Merkury, une corvette de la marine russe, et avait déclenché un incendie sur l'installation, selon deux responsables militaires libyens. L'attaque a eu lieu à la base navale de Benghazi, dans l'est de la Libye, selon deux responsables militaires libyens."
+        "es": {
+          "headline": "Ataques rusos en la región de Kiev resultan en múltiples muertes",
+          "body": "Según The Guardian, los ataques rusos a un bloque de apartamentos en la región de Kiev mataron al menos a nueve personas. CNA informó que el número de muertos por los ataques rusos en la región de Kiev ha alcanzado las 12."
         },
-        "zh": {
-          "headline": "疑似乌克兰无人机击中俄罗斯军舰于本加西海军基地",
-          "body": "两名利比亚军方官员称，此次袭击严重损毁了俄罗斯海军护卫舰“梅尔库里”，并在该设施引发了火灾。两名利比亚军方官员表示，此次袭击发生在利比亚东部的本加西海军基地。"
+        "de": {
+          "headline": "Russische Angriffe in der Region Kiew fordern mehrere Todesopfer",
+          "body": "Laut The Guardian töteten russische Angriffe auf einen Wohnblock in der Region Kiew mindestens neun Menschen. CNA berichtete, dass die Zahl der Todesopfer durch russische Angriffe in der Region Kiew 12 erreicht hat."
         },
         "ja": {
-          "headline": "ウクライナ製ドローンとみられるものがベンガジ海軍基地のロシア軍艦を攻撃",
-          "body": "2人のリビア軍関係者によると、この攻撃によりロシア海軍のコルベット艦メルクリが深刻な損傷を受け、施設で火災が発生したとのことである。2人のリビア軍関係者によると、この攻撃はリビア東部のベンガジ海軍基地で発生した。"
+          "headline": "キーウ地域でのロシアの攻撃で複数人が死亡",
+          "body": "ガーディアン紙によると、キーウ地域の集合住宅へのロシアの攻撃で少なくとも9人が死亡しました。CNAは、キーウ地域におけるロシアの攻撃による死者数が12人に達したと報じました。"
         },
         "pt": {
-          "headline": "Drones ucranianos suspeitos atingem navio de guerra russo na base naval de Benghazi",
-          "body": "Dois oficiais militares líbios afirmaram que o ataque danificou gravemente o Merkury, uma corveta da marinha russa, e iniciou um incêndio na instalação, segundo dois oficiais militares líbios. O ataque ocorreu na Base Naval de Benghazi, no leste da Líbia, de acordo com dois oficiais militares líbios."
+          "headline": "Ataques russos na região de Kyiv resultam em múltiplas mortes",
+          "body": "Ataques russos a um bloco de apartamentos na região de Kyiv mataram pelo menos nove pessoas, segundo The Guardian. A CNA reportou que o número de mortos por ataques russos na região de Kyiv atingiu 12."
+        },
+        "fr": {
+          "headline": "Des frappes russes dans la région de Kiev font plusieurs morts",
+          "body": "Les attaques russes contre un immeuble résidentiel dans la région de Kiev ont fait au moins neuf morts, selon The Guardian. CNA a rapporté que le bilan des frappes russes dans la région de Kiev s'élève désormais à 12 morts."
         },
         "ko": {
-          "headline": "우크라이나 드론 추정, 벵가지 해군 기지 러시아 군함 타격",
-          "body": "리비아 군 관계자 두 명에 따르면, 이번 공격으로 러시아 해군 코르벳함인 메르쿠리호가 심각하게 손상되었고 시설에 화재가 발생했다고 합니다. 리비아 군 관계자 두 명에 따르면, 이 공격은 리비아 동부 벵가지 해군 기지에서 발생했습니다."
+          "headline": "키이우 지역 러시아 공격으로 다수 사망",
+          "body": "가디언에 따르면 키이우 지역 아파트 건물에 대한 러시아 공격으로 최소 9명이 사망했습니다. CNA는 키이우 지역 러시아 공격으로 인한 사망자 수가 12명에 달했다고 보도했습니다."
+        },
+        "zh": {
+          "headline": "俄罗斯对基辅地区的袭击造成多人死亡",
+          "body": "据卫报报道，俄罗斯袭击基辅一公寓楼造成至少九人死亡。CNA报道称，俄罗斯对基辅地区的袭击死亡人数已达12人。"
         }
       },
       "sources": [
         {
-          "outlet": "The Hindu",
-          "title": "Suspected Ukrainian sea drones hit Russian warship at Benghazi naval base, Libyan officials say",
+          "outlet": "CNA",
+          "title": "Ukraine says Russian strikes kill 12 in Kyiv region",
+          "url": "https://www.channelnewsasia.com/world/ukraine-says-russian-strikes-kill-12-in-kyiv-region-6573721",
+          "publishedAt": "2026-11-23T02:25:45.000Z"
+        },
+        {
+          "outlet": "The Guardian",
+          "title": "Ukraine war briefing: Race to find survivors after Russian attack on apartment block kills at least nine",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOM0o3bHlPSG5VTk5id1NhTHhCeXVJbmIxTzJ2bVVfdVBLeldIUm1aZXdmbjA4Ry1aWWt5UUFYNUtJRWlCcTJiSVFzMTFteDUzSHBrXzBtR3hWUDdlRE5ZWl9pQWZSNUNndnVBbGJhNGp1bzFPTXM2ZlNlRkhzRmVNeU5OQ2NjUTVmWkxibmZFemNEdUl4RmRjWjRGMXpZUVUwTGF5NkdHQndaU2IzbWpxamthM2RzRVF3M0pNYXNZX2JHeTdILW5GUEZHOHhZeE8yVGZLUEdvTjFXLXUwdUNENnIwUQ?oc=5",
+          "publishedAt": "2026-11-23T02:10:00.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-23T01:02:56.000Z",
+      "id": "u-1795395776000-9fr2",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Zwei libysche Militärbeamte berichteten, dass der Schlag die Merkury, eine Korvette der russischen Marine, schwer beschädigt habe und in der Anlage ein Feuer ausgelöst habe. Der Angriff ereignete sich auf der Marinebasis von Benghazi in Ostlibyen, so zwei libysche Militärbeamte.",
+          "headline": "Verdächtige ukrainische Drohnen treffen russisches Kriegsschiff in der Marinebasis von Benghazi"
+        },
+        "en": {
+          "body": "Two Libyan military officials said the strike severely damaged the Merkury, a Russian navy corvette, and ignited a fire at the facility according to two Libyan military officials. The attack occurred at the Benghazi Naval Base in eastern Libya according to two Libyan military officials.",
+          "headline": "Suspected Ukrainian drones hit Russian warship at Benghazi naval base"
+        },
+        "es": {
+          "body": "Dos altos cargos militares libios indicaron que el ataque dañó gravemente el Merkury, una corbeta de la marina rusa, e incendió las instalaciones, según dichos oficiales. El ataque tuvo lugar en la Base Naval de Benghazi, en el este de Libia, según dos altos cargos militares libios.",
+          "headline": "Posibles drones ucranianos impactan a buque de guerra ruso en base naval de Benghazi"
+        },
+        "fr": {
+          "body": "Deux responsables militaires libyens ont déclaré que la frappe avait gravement endommagé le Merkury, une corvette de la marine russe, et avait déclenché un incendie sur l'installation, selon deux responsables militaires libyens. L'attaque a eu lieu à la base navale de Benghazi, dans l'est de la Libye, selon deux responsables militaires libyens.",
+          "headline": "Des drones ukrainiens présumés ont frappé un navire de guerre russe à la base navale de Benghazi"
+        },
+        "it": {
+          "body": "Due ufficiali militari libici hanno dichiarato che l'attacco ha gravemente danneggiato la corvetta russa Merkury e ha innescato un incendio presso la struttura, secondo due ufficiali militari libici. L'attacco è avvenuto alla Base Navale di Bengasi, nell'est della Libia, secondo due ufficiali militari libici.",
+          "headline": "Droni ucraini sospettati hanno colpito una nave da guerra russa alla base navale di Bengasi"
+        },
+        "ja": {
+          "body": "2人のリビア軍関係者によると、この攻撃によりロシア海軍のコルベット艦メルクリが深刻な損傷を受け、施設で火災が発生したとのことである。2人のリビア軍関係者によると、この攻撃はリビア東部のベンガジ海軍基地で発生した。",
+          "headline": "ウクライナ製ドローンとみられるものがベンガジ海軍基地のロシア軍艦を攻撃"
+        },
+        "ko": {
+          "body": "리비아 군 관계자 두 명에 따르면, 이번 공격으로 러시아 해군 코르벳함인 메르쿠리호가 심각하게 손상되었고 시설에 화재가 발생했다고 합니다. 리비아 군 관계자 두 명에 따르면, 이 공격은 리비아 동부 벵가지 해군 기지에서 발생했습니다.",
+          "headline": "우크라이나 드론 추정, 벵가지 해군 기지 러시아 군함 타격"
+        },
+        "pt": {
+          "body": "Dois oficiais militares líbios afirmaram que o ataque danificou gravemente o Merkury, uma corveta da marinha russa, e iniciou um incêndio na instalação, segundo dois oficiais militares líbios. O ataque ocorreu na Base Naval de Benghazi, no leste da Líbia, de acordo com dois oficiais militares líbios.",
+          "headline": "Drones ucranianos suspeitos atingem navio de guerra russo na base naval de Benghazi"
+        },
+        "zh": {
+          "body": "两名利比亚军方官员称，此次袭击严重损毁了俄罗斯海军护卫舰“梅尔库里”，并在该设施引发了火灾。两名利比亚军方官员表示，此次袭击发生在利比亚东部的本加西海军基地。",
+          "headline": "疑似乌克兰无人机击中俄罗斯军舰于本加西海军基地"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.thehindu.com/news/international/suspected-ukrainian-sea-drones-hit-russian-warship-at-benghazi-naval-base-libyan-officials-say/article71733178.ece",
+          "title": "Suspected Ukrainian sea drones hit Russian warship at Benghazi naval base, Libyan officials say",
+          "outlet": "The Hindu",
           "publishedAt": "2026-11-23T01:02:56.000Z"
         },
         {
-          "outlet": "Times of India",
-          "title": "Watch: Russian warship bursts into flames amid suspected Ukraine drone attack in Libya",
           "url": "https://timesofindia.indiatimes.com/world/rest-of-world/watch-russian-warship-hit-by-suspected-ukrainian-drones-at-benghazi-naval-base-bursts-into-flames/articleshow/136085577.cms",
+          "title": "Watch: Russian warship bursts into flames amid suspected Ukraine drone attack in Libya",
+          "outlet": "Times of India",
           "publishedAt": "2026-11-22T23:21:14.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-22T16:50:00.000Z",
@@ -930,15 +1016,22 @@
     "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDFnMHloOVE4ZWZwczNVdjdjb3JUU1dPZ2I3M3NWM00xWWVYdVhSMTIzY2FfR3pCMWRKQUIxM05kZnNHbnY1dWZhMkJhWjc2cG1YdTEzc3BHTTlra1FfVXNiek1NSWZBTW10TjluTUZiM0tNOWt6YmY4SGQ3VzF1TkxndjJVMVU2Rl9YQ1lEVnFhZjlYMHViN3FDNFlOU1hXeTJpRdIBqgFBVV95cUxPY0dfLUtaOXhsVG9ycUszbmxCVk83OWpBLTlhV252STNPX1AwQVpCc2ZtV1d2dEtIaHRsUVBlald1dW0xWlItWWJNTVM2Z2hDaER3djVGUW1RV2VZOEpwb3A5UF90RWFGQV8xLWxJbHZXYnllUmk2Q3IwdTZhdVJZQTd0VmxwRUtlbHFlV25uS3drNF9oaVVPbFpZTlVUeEwxZVdtQXl0OVl2dw?oc=5",
     "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPd2NCaGF6MUxSRzUwVFhLTFAxUzR6bnU3TW5PSE9vQzRrRnk4Qnd3d0ZpQ1RMYk1wZEd3eHVla1lNOFhZTHktekYwZWJ2eElMaXRpamVCWWFrSEpUTVQxVjRpdHJ2WG9SSFp1aXVHTTBXUWVCdHFHTFJzc0I3Zks1dzZxNS1zWjhCTFhKR0tCM3RJdy1YLXJsTWhwSGhJUktORXJwaTBaQjHSAa4BQVVfeXFMTjJuTVlYMUFraG1VUWhHUXY5TTJiMF9SajVvX1lqLWNtOTRqaHNsei1OcUVuN1NuVU5ucDNoa2lZZFk3ZGkzRm1ybW50UllFcUZveEhIMDBnaG5pVmdzTktDeWpfejBrVk9kQ0NQV2pWNDBfcTJ0eHNfYTM0cUNaZjNTdVFWV3VWWWFEeS0wWDFMYTZrbHBMeEl5NzItRE1jRE5qZG5mdFJ5VUxoV3lB?oc=5",
     "https://www.france24.com/en/africa/20261122-russian-warship-hit-by-suspected-ukrainian-drone-at-libya-s-benghazi-naval-base",
-    "https://www.channelnewsasia.com/world/russia-starts-towing-ship-hit-drones-in-baltic-finland-says-6573286"
+    "https://www.channelnewsasia.com/world/russia-starts-towing-ship-hit-drones-in-baltic-finland-says-6573286",
+    "https://www.faz.net/aktuell/feuilleton/medien-und-film/talkshow/caren-miosga-in-der-tv-kritik-roettgen-verteidigt-ukrainehilfen-accg-201707615.html",
+    "https://www.channelnewsasia.com/world/ukraine-says-russian-strikes-kill-12-in-kyiv-region-6573721",
+    "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOM0o3bHlPSG5VTk5id1NhTHhCeXVJbmIxTzJ2bVVfdVBLeldIUm1aZXdmbjA4Ry1aWWt5UUFYNUtJRWlCcTJiSVFzMTFteDUzSHBrXzBtR3hWUDdlRE5ZWl9pQWZSNUNndnVBbGJhNGp1bzFPTXM2ZlNlRkhzRmVNeU5OQ2NjUTVmWkxibmZFemNEdUl4RmRjWjRGMXpZUVUwTGF5NkdHQndaU2IzbWpxamthM2RzRVF3M0pNYXNZX2JHeTdILW5GUEZHOHhZeE8yVGZLUEdvTjFXLXUwdUNENnIwUQ?oc=5",
+    "https://www.aljazeera.com/news/2026/11/23/poland-says-russia-tried-to-assassinate-ukrainian-rapper-twice?traffic_source=rss",
+    "https://www.foxnews.com/world/russian-warship-sinks-libya-suspected-ukrainian-strikes-take-war-beyond-black-sea",
+    "https://www.japantimes.co.jp/news/2026/11/23/world/libya-drone-attack-russian-ship/"
   ],
   "startedAt": "2026-11-22T08:06:44.061Z",
-  "updatedAt": "2026-11-23T01:17:23.024Z",
+  "updatedAt": "2026-11-23T02:47:11.841Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "russia-ukraine-war-escalation",
-  "sourceCount": 16,
+  "sourceCount": 17,
   "seenHeadlines": [
+    "Russian corvette Merkury sinks in Libya after suspected drone strike",
     "Fire continues on Russian cargo ship off Finland after drone strike"
   ]
 }
