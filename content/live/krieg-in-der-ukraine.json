@@ -1,43 +1,297 @@
 {
-  "meta": {
-    "outlets": [
-      "Tagesschau",
-      "Die Welt",
-      "SRF",
-      "Kicker"
-    ],
-    "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
-  },
   "slug": "krieg-in-der-ukraine",
+  "status": "live",
+  "category": "world",
+  "importance": 5,
   "topic": "Krieg in der Ukraine",
-  "status": "ended",
+  "keywords": [
+    "ukraine",
+    "russland",
+    "krieg",
+    "wolodymyr selenskyj",
+    "libyen",
+    "kriegsschiff",
+    "angriff",
+    "opfer",
+    "kiew"
+  ],
+  "startedAt": "2026-11-23T08:56:56.666Z",
+  "endedAt": null,
+  "updatedAt": "2026-11-23T08:57:01.490Z",
+  "articleSlug": "krieg-in-der-ukraine",
+  "sourceCount": 8,
+  "wantsStats": false,
+  "updates": [
+    {
+      "id": "u-1795423524000-bhcs",
+      "at": "2026-11-23T08:45:24.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Ukraine says it sank Russian warship off Libya",
+          "body": "Ukrainian President Volodymyr Zelenskyy stated that Ukrainian forces used seven sea drones to sink the Russian corvette Merkury near the port of Benghazi. According to Kyiv, a cargo ship and a combat helicopter were also hit during the operation in Libyan waters."
+        },
+        "fr": {
+          "headline": "L'Ukraine affirme avoir coulé un navire de guerre russe au large de la Libye",
+          "body": "Le président ukrainien Volodymyr Zelensky a déclaré que les forces ukrainiennes avaient utilisé sept drones navals pour couler la corvette russe Merkury près du port de Benghazi. Selon Kyiv, un cargo et un hélicoptère de combat ont également été touchés lors de cette opération menée dans les eaux libyennes."
+        },
+        "de": {
+          "headline": "Ukraine meldet Versenkung russischen Kriegsschiffs vor Libyen",
+          "body": "Der ukrainische Präsident Wolodymyr Selenskyj erklärte, ukrainische Streitkräfte hätten die russische Korvette Merkury in der Nähe des Hafens von Bengasi mithilfe von sieben Seedrohnen versenkt. Kiew zufolge wurden bei dem Einsatz in libyschen Gewässern zudem ein Frachtschiff und ein Kampfhubschrauber getroffen."
+        },
+        "es": {
+          "headline": "Ucrania afirma haber hundido un buque de guerra ruso frente a las costas de Libia",
+          "body": "El presidente ucraniano, Volodímir Zelenski, declaró que las fuerzas ucranianas utilizaron siete drones marinos para hundir la corbeta rusa Merkury cerca del puerto de Bengasi. Según Kiev, un carguero y un helicóptero de combate también fueron alcanzados durante la operación en aguas libias."
+        },
+        "it": {
+          "headline": "L'Ucraina afferma di aver affondato una nave da guerra russa al largo della Libia",
+          "body": "Il presidente ucraino Volodymyr Zelenskyy ha dichiarato che le forze ucraine hanno utilizzato sette droni navali per affondare la corvetta russa Merkury vicino al porto di Bengasi. Secondo Kiev, durante l'operazione nelle acque libiche sono stati colpiti anche una nave cargo e un elicottero da combattimento."
+        },
+        "zh": {
+          "headline": "乌克兰称在利比亚附近击沉俄罗斯军舰",
+          "body": "乌克兰总统泽连斯基表示，乌克兰军队使用七艘海上无人艇，在班加西港附近击沉了俄罗斯“梅尔库里”号轻型护卫舰。据基辅方面称，在利比亚海域进行的此次行动中，还击中了一艘货轮和一架武装直升机。"
+        },
+        "pt": {
+          "headline": "Ucrânia afirma ter afundado navio de guerra russo ao largo da Líbia",
+          "body": "O presidente ucraniano, Volodymyr Zelenskyy, afirmou que as forças ucranianas utilizaram sete drones navais para afundar a corveta russa Merkury perto do porto de Benghazi. Segundo Kyiv, um navio de carga e um helicóptero de combate também foram atingidos durante a operação em águas líbias."
+        },
+        "ja": {
+          "headline": "ウクライナ、リビア沖でロシア軍艦を撃沈と発表",
+          "body": "ウクライナのウォロディミル・ゼレンスキー大統領は、ウクライナ軍が7機の水上ドローンを使用し、ベンガジ港近海でロシアのコルベット艦「メルクリウス」を撃沈したと述べた。キエフによると、リビア水域での作戦中には貨物船1隻と戦闘ヘリコプター1機も被弾したという。"
+        },
+        "ko": {
+          "headline": "우크라이나, 리비아 해역서 러시아 군함 격침 주장",
+          "body": "볼로디미르 젤렌스키 우크라이나 대통령은 우크라이나군이 해상 드론 7대를 이용해 벵가지 항구 인근에서 러시아 초계함 메르쿠리이를 격침했다고 밝혔다. 키이우에 따르면 리비아 해역에서 진행된 이번 작전 중 화물선과 전투헬기 1대도 피격됐다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Politico Europe",
+          "title": "Ukraine sank Russian warship off Libya, Zelenskyy says",
+          "url": "https://www.politico.eu/article/volodymyr-zelenskyy-claims-ukraine-sank-russia-warship-benghazi-libya/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "publishedAt": "2026-11-23T08:45:24.000Z"
+        },
+        {
+          "outlet": "Der Spiegel",
+          "title": "Ukraine: Streitkräfte haben laut Wolodymyr Selenskyj russisches Kriegsschiff versenkt",
+          "url": "https://www.spiegel.de/ausland/ukraine-streitkraefte-haben-laut-wolodymyr-selenskyj-russisches-kriegsschiff-versenkt-a-e3ec5640-1536-4700-9368-521b4ba48587#ref=rss",
+          "publishedAt": "2026-11-23T08:29:00.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Zelenskiy says Ukraine sank Russian corvette near Libya's coast, hit cargo ship",
+          "url": "https://www.straitstimes.com/world/europe/zelenskiy-says-ukraine-sank-russian-corvette-near-libyas-coast-hit-cargo-ship",
+          "publishedAt": "2026-11-23T07:57:20.000Z"
+        },
+        {
+          "outlet": "France 24",
+          "title": "Live: Zelensky confirms Ukraine’s military struck Russian ships in Libyan waters",
+          "url": "https://www.france24.com/en/europe/20261123-live-russian-strikes-kill-at-least-15-people-in-kyiv-region-ukraine-says",
+          "publishedAt": "2026-11-23T06:10:26.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1795417588000-1tqc",
+      "at": "2026-11-23T07:06:28.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Russian strikes kill at least eleven in Kyiv region",
+          "body": "At least 11 people died following a Russian attack on a residential building in the Kyiv region, according to Ukrainian officials and rescue services. Rescuers subsequently pulled a seven-year-old boy alive from the rubble as search efforts for missing residents continued."
+        },
+        "fr": {
+          "headline": "Des frappes russes font au moins onze morts dans la région de Kyiv",
+          "body": "Au moins onze personnes ont péri à la suite d'une attaque russe ayant visé un immeuble résidentiel dans la région de Kyiv, selon les autorités et les services de secours ukrainiens. Les secouristes ont ensuite extrait vivant un garçon de sept ans des décombres, tandis que les recherches se poursuivaient pour retrouver les habitants portés disparus."
+        },
+        "de": {
+          "headline": "Mindestens elf Tote bei russischen Angriffen in der Region Kiew",
+          "body": "Bei einem russischen Angriff auf ein Wohngebäude in der Region Kiew sind nach Angaben ukrainischer Behörden und Rettungsdienste mindestens elf Menschen ums Leben gekommen. Einsatzkräfte retteten im Anschluss einen siebenjährigen Jungen lebend aus den Trümmern, während die Suche nach vermissten Bewohnern andauerte."
+        },
+        "es": {
+          "headline": "Ataques rusos matan al menos a once personas en la región de Kiev",
+          "body": "Al menos 11 personas murieron tras un ataque ruso contra un edificio residencial en la región de Kiev, según informaron funcionarios y servicios de rescate ucranianos. Posteriormente, los rescatistas sacaron con vida a un niño de siete años de entre los escombros mientras continuaban las labores de búsqueda de los residentes desaparecidos."
+        },
+        "it": {
+          "headline": "Attacchi russi uccidono almeno undici persone nella regione di Kiev",
+          "body": "Almeno 11 persone sono morte a seguito di un attacco russo contro un edificio residenziale nella regione di Kiev, secondo quanto riferito da funzionari e servizi di soccorso ucraini. I soccorritori hanno successivamente estratto vivo dalle macerie un bambino di sette anni, mentre proseguono le ricerche dei residenti dispersi."
+        },
+        "zh": {
+          "headline": "俄罗斯对基辅地区发动袭击造成至少11人死亡",
+          "body": "据乌克兰官员和救援部门称，俄罗斯对基辅地区的一栋住宅楼发动袭击后，造成至少11人死亡。在搜寻失踪居民的行动中，救援人员随后从废墟中救出一名安然无恙的七岁男孩。"
+        },
+        "pt": {
+          "headline": "Ataques russos fazem pelo menos onze mortos na região de Kyiv",
+          "body": "Pelo menos 11 pessoas morreram na sequência de um ataque russo contra um edifício residencial na região de Kyiv, segundo autoridades e serviços de socorro ucranianos. Posteriormente, os socorristas retiraram com vida um rapaz de sete anos dos escombros, enquanto prosseguiam as buscas por residentes desaparecidos."
+        },
+        "ja": {
+          "headline": "ロシア軍の攻撃、キーウ州で少なくとも11人死亡",
+          "body": "ウクライナ当局および救助隊によると、キーウ州の住宅に対するロシアの攻撃により、少なくとも11人が死亡した。行方不明者の捜索活動が続く中、救助隊員らはがれきの中から7歳の男児を生還させた。"
+        },
+        "ko": {
+          "headline": "러시아 공습으로 키이우주에서 최소 11명 사망",
+          "body": "우크라이나 당국과 구조 당국에 따르면 키이우 주의 한 주거용 건물이 러시아의 공격을 받아 최소 11명이 사망했다. 실종자 수색 작업이 계속되는 가운데 구조대원은 잔해 속에서 7세 소년을 살아서 구조했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Anadolu Ajansı",
+          "title": "Ukraine says 11 killed in strike on residential building in Kyiv region",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZi1OTzhlSlFWS1JrQUlTVkRQQlR1dEJPSHQzS1dNT1VjbHYzREVDY3JIWkUyVzBYOFZvYk9uNWM4dklKR3pURC03U3RNQXhBYmpQaG5iQjBfX3JHZkd3NFBMRnRSaUtfeDI0OW84OGpnUnA0TjZsbzllS01FRU5DZHpjQlBTaXJFZGh2WVVTYmJxM0tJc3EyZWJVR0FRRmVBeG9tLTQxQU5KbEZ3QzI1Y0JXdl9MQ0lkUmlB?oc=5",
+          "publishedAt": "2026-11-23T07:06:28.000Z"
+        },
+        {
+          "outlet": "NZZ",
+          "title": "LIVE-TICKER - Krieg in der Ukraine: Inzwischen elf Todesopfer nach russischem Angriff bei Kiew",
+          "url": "https://www.nzz.ch/international/krieg-in-der-ukraine-zugverkehr-ueber-krim-bruecke-nach-erneutem-angriff-eingestellt-ld.10021245",
+          "publishedAt": "2026-11-23T06:22:08.000Z"
+        },
+        {
+          "outlet": "BBC",
+          "title": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+          "url": "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&at_campaign=rss",
+          "publishedAt": "2026-11-23T05:33:17.000Z"
+        },
+        {
+          "outlet": "Tagesschau",
+          "title": "Krieg gegen die Ukraine: Tote nach Angriff auf Mehrfamilienhaus",
+          "url": "https://www.tagesschau.de/ausland/europa/ukraine-angriffe-wohnhaeuser-104.html",
+          "publishedAt": "2026-11-23T04:43:07.000Z"
+        }
+      ]
+    }
+  ],
+  "seenUrls": [
+    "https://www.dawn.com/news/2046530/ukraine-claims-strikes-on-two-russian-boats-off-libya",
+    "https://www.zeit.de/politik/ausland/2026-11/russisches-kriegsschiff-libyen-bengasi-drohnenangriff-gxe",
+    "https://www.politico.eu/article/volodymyr-zelenskyy-claims-ukraine-sank-russia-warship-benghazi-libya/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://timesofindia.indiatimes.com/world/rest-of-world/ukraine-sinks-russian-warship-merkury-off-libya-releases-dramatic-video-of-operation/articleshow/136095079.cms",
+    "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-kiew-versenkt-russisches-kriegsschiff-vor-libyen-faz-110683325.html",
+    "https://www.japantimes.co.jp/news/2026/11/23/world/libya-drone-attack-russian-ship-ukraine/",
+    "https://www.spiegel.de/ausland/ukraine-streitkraefte-haben-laut-wolodymyr-selenskyj-russisches-kriegsschiff-versenkt-a-e3ec5640-1536-4700-9368-521b4ba48587#ref=rss",
+    "https://www.welt.de/politik/ausland/article6b03edb5172877701c06f03e/ben-hodges-genau-diese-haefen-werden-russen-ins-visier-nehmen-ex-us-general-nennt-bremerhaven-und-goeteborg.html",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxPYTlIX1dGbVlxZjUzVGQ3eUwwUXY5T3VfM3lqYktpTGY0SGlUSDAyMnBKdmRkczY2OUV5ZGlMWlZONzN3TEdTdWo1SnJEWnhvSDBlU3pzY1AxN0lXZnJLa0tseVBjbTR6WS1lNmV2cjRGN1lfMlRWR0J0dldpNVA3WlRnSHh1WS10OEdCdjVqRl9UdmhEM2JJZkNORDN5b2ZIV0Z1Qk5TMA?oc=5",
+    "https://www.tagesschau.de/ausland/afrika/russisches-kriegsschiff-zerstoert-100.html",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-selenski-bestaetigt-angriff-auf-russisches-kriegsschiff",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxQQVhvY2xqS1RjNGs5V0Q0bFRhNzN4a0N4cDlZcFNtTEVyU0ItNzJZTXlQZ0xfQUUyMlVRdGxwYTFNUW1CMXFaMDJ6d1ZTaDRfU2xkczRKMWtRbWwzZ1JWMnBjTThsV2s0ZDU0OTZUNDhVMW9JdFpCeF85YTZuZi14bnV6MDdrdWI3TGpQVlVEUzFrZHp6VzA0Q1czU3RGN2hRQllRaXU1TU9FanVzLXJkOUFsSjlGZ9IBuwFBVV95cUxNRFZuUzQzdE9faXRWVTZoN1lsVTA1ck55Sk5Qa1FmaF8zTVZTV0djNXA3LTQ3bmNmWDAzUXdGZjd6dnJ5RzZXUGhRN3JmQ3l2NDVRcmpEZ0UyalIydjdqWEdNdjlFdXpubG44ZGhOd1B1ZXR2RExDQUZXR3NVeWZqaWNaZUtTeEhHQWxOT3A0UjdOMlRUa3pENVJqVExOdUhWNnA0dU5kMWlsSTN4ak91YnhNR3J0RkNrT19n?oc=5",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMnBzQ2kybk5kYTQzWjlqQzRfdWU1Z1hWLWZfbVlVVlNyUUg3NWJoUk1VWGZSNEFjY2hUS3dhMklTZTFKajFqMnJDUXM4dkxnQXE0UVNRT1hmQ3h0WjQ4TmRmQVRCdmNoelN5TkZUOXB2b051aGhrS2k1OHdKOHhLcnROczZQS1JScW5SMEpsV0ZBaTQxQldVa19rajYyOU1m?oc=5",
+    "https://www.kyivpost.com/post/90881",
+    "https://www.straitstimes.com/world/europe/zelenskiy-says-ukraine-sank-russian-corvette-near-libyas-coast-hit-cargo-ship",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOHBEbnBOTldtai03VUJ5TEdnMVZpd2RNZi10UzRGMy1oY0dzbDRNakYwTjFIaTA0a1R5UTBNak5RTGpxQWRnNERSQTJnWDVYclktUFBoQWRHNjI3UllJNHZkZTNmRTRGT0NPay1CMVZJUkg5VE1ZM2dxb0NnRzN1T0pnc2JQUHZFY3IzanBUbzJXYzRMamFUbTJwOHFuRzViM3B0SGR3RnRlRUd3UmxJbG1NOU90RGF1YjlLOQ?oc=5",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRGdFUjBKQmwxQkFGRl9kTERDVDRiM3hwNFo1RHZRTWFVMjU3NmhCM1gxand1alJmQUJzSnUtVi1xYnVteXNYODI1OFdZN25aNUFGUVByczQwV0JidHhuMHl4U2hsWGQzQ3l4UlUxV3dUbWU4ZHNBQjBNTlNJR0IyODVhSmRLMGRTV3MxelRZNGQ5WTNzUUJza3h5bw?oc=5",
+    "https://www.dw.com/en/ukraine-updates-russian-strikes-kill-several-in-kyiv-region/live-80015859?maca=en-rss-en-all-1573-rdf",
+    "https://www.nzz.ch/international/libysche-streitkraefte-fangen-vor-bengasi-mehr-als-zwoelf-drohnenboote-ab-ld.10071748",
+    "https://www.aljazeera.com/news/2026/11/23/zelenskyy-says-ukraine-behind-drone-attacks-on-russian-ships-near-libya?traffic_source=rss",
+    "https://www.euronews.com/2026/11/23/sanctions-summits-and-strikes-the-war-in-ukraine-shows-no-sign-of-slowing",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZi1OTzhlSlFWS1JrQUlTVkRQQlR1dEJPSHQzS1dNT1VjbHYzREVDY3JIWkUyVzBYOFZvYk9uNWM4dklKR3pURC03U3RNQXhBYmpQaG5iQjBfX3JHZkd3NFBMRnRSaUtfeDI0OW84OGpnUnA0TjZsbzllS01FRU5DZHpjQlBTaXJFZGh2WVVTYmJxM0tJc3EyZWJVR0FRRmVBeG9tLTQxQU5KbEZ3QzI1Y0JXdl9MQ0lkUmlB?oc=5",
+    "https://www.welt.de/politik/ausland/video6b03e11d5842ff528b9e484b/angriffe-auf-die-schattenflotte-kann-der-versuch-von-hardlinern-sein-friedensgespraeche-zu-torpedieren.html",
+    "https://www.zeit.de/politik/ausland/ukraine-krieg-news-liveblog",
+    "https://www.zdfheute.de/politik/ausland/libyen-explosion-kriegsschiff-ukraine-krieg-russland-100.html",
+    "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOM0o3bHlPSG5VTk5id1NhTHhCeXVJbmIxTzJ2bVVfdVBLeldIUm1aZXdmbjA4Ry1aWWt5UUFYNUtJRWlCcTJiSVFzMTFteDUzSHBrXzBtR3hWUDdlRE5ZWl9pQWZSNUNndnVBbGJhNGp1bzFPTXM2ZlNlRkhzRmVNeU5OQ2NjUTVmWkxibmZFemNEdUl4RmRjWjRGMXpZUVUwTGF5NkdHQndaU2IzbWpxamthM2RzRVF3M0pNYXNZX2JHeTdILW5GUEZHOHhZeE8yVGZLUEdvTjFXLXUwdUNENnIwUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxNNl9ybzhPRDgyT1NzeC1jLUJGTDJWNE5Ud21KTzhDS2FhOGxkRElQREdtUF9mQXdBNnUyLVRESGU1UzdxVVhxbnVma1dhRVhQc1pWNWctSm5vN2lnWFp2R3dSSWE3SWZlNWJpRHl3S3VLaHhaRVFmaXkyUEd3TENGZ3Z0SURjZDhJVl9sMGNvdXI?oc=5",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOeW9GM0pzT0UtRkJLVGZTXzhaeEtIa2V0bGF5NFFPUTRGSm1WQW5fS05kMnpaYUVOYzctRjV6RGJzLW1CcE5zcFNzRGEtblFfUmVOX1ktSVlyX2UtYUpreXhBU3RhekRmTWxpcVlIWHRyZEFHYVJ5SUhfdF9sdHhSb3Bpa0dqQ2k4SzF3dEw2TGEyZFdIdWllcEFONFNOS2ZpaW9qaFJpdzNrQ3ZwN1VvR3B1NjFyclA2Rllia3M1Zms2dw?oc=5",
+    "https://www.thehindu.com/news/international/ukraine-says-russian-strikes-kill-several-in-kyiv-region/article71733677.ece",
+    "https://www.nzz.ch/international/krieg-in-der-ukraine-zugverkehr-ueber-krim-bruecke-nach-erneutem-angriff-eingestellt-ld.10021245",
+    "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNYk4yNXZOLWU2V0FYNW1fS0I4dW00dU1oeDg4VHpqTFNzZENRSnl4TjhiamhzZUxxcC11VU5zQXpPMXM5RER2LXNqemRzUnJPbjg2Sk5kT1laVkRzWkg1TU9NWW5ZYWhibUFEeDR6aDduZ1pvakY5b2ZfM1h2UkZjUERFM3FfQlAxV0hLb2JlSTZKaEtIQm1WaXZDaGJCaXU2ZGpuUjYyTGN2d3ZwQ3RRZWRqd1c3d2M1d3NoWEdnNlJjVjc5enFhTS1mUXJlSzdq0gHWAUFVX3lxTFBCVjNMQkNkam9ZNWJtMlpyVTRvY2FrZ3VxdmQtODlaVS1sM3poTzZkTEcxWWZGV2N6U2E3NU1EaXM0NFdvb0Fqai1QdEVnaDc4ZXlGVWgzWHdrdU9jcFpMNDBZQXBuOHJpcnhEc2h0SGg0Rlg2bk11TTREdkJ1UUNPTDREVGZtWmpjV2ZHdDE2ZXFHWm9RTEh4dWdVUFpTVlhpUHlfLWFHU1Znd19kVnN1eTNvNjFqa0EwNVN6d2hhb055MXhtUzFFNno4amNJN2R2WktHRGc?oc=5",
+    "https://www.euronews.com/2026/11/23/russian-air-strikes-kill-at-least-15-people-across-kyiv-region-ukraine-says",
+    "https://www.france24.com/en/europe/20261123-live-russian-strikes-kill-at-least-15-people-in-kyiv-region-ukraine-says",
+    "https://www.kyivpost.com/post/90867",
+    "https://www.srf.ch/news/international/nahost/krieg-im-nahen-osten-trump-sieht-eine-intensivierung-der-iranischen-angriffe",
+    "https://www.faz.net/aktuell/politik/ukraine/nato-vor-schwieriger-abwaegung-drei-vorfaelle-ein-dilemma-201706520.html",
+    "https://www.euronews.com/2026/11/23/un-mission-in-libya-urges-probe-after-russian-ship-hit-by-drones-off-benghazi",
+    "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWDROSjJ4ZmFrSWp4VDNoeS1aRVlHb25QQXJvV0JhQWtrNjdJekNQWHEyQ0VhZUIyNHBpd3l2eEJSYmc4Zk45V2lhcWxwMzJBT09XYk1hRzZwa0FkT2ltdUl2STFtb1lBVHRtVFpDTGtYc2FVZWJqQXYyYlFSVzBhNzhpbE83NlByTGJHQjloNEZvZ9IBlwFBVV95cUxORzQwam00SzMzbWFrZHNQMlAxQU1sTmJ3ZEFQRU51V1B4MGxUb1FFeUo3R05ya0hQMFRVRjRGOTlVZDliV25wbGdnZzI1YlI5N2lpTnltOE5ZYUItZDViTlJvNkRCaGR0M2NxQ19zeEJrSmhVTGVKVGpoRFBNTlFlMFpxUzNKblhkYjlBek91OUJxbmZNdkRr?oc=5",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRWE2WjNzLUJMRy0yRDhTMGVvakRTUjZiQ0xjMVlqZ1ZMb0lqRlFyVDVtcUFsY240eGZlQnZVRzJoakdvSTQxTTE3Vzhhd3dIS1V2aFZyQTJLMXRncjVNYzk3U283UTl2VjdUcmx6bEs3M0dnSEVobGdNZk1Xc3VOYk9WN015MVY5MUdzOWxVc0w2ZmJkR0xZNGNNdHZLUlJVelpUMTBQSXRpM2IzaF9xMTFR0gG3AUFVX3lxTE8zMTdOSDhiMWhiMlBmek5HemxBU1RmMUdOajNYWVNmUk55NzdrRG95QkRTZkJMRzNaMWo4Q0VERmlaRXpubEZkQnNLVDdiaVhXS19mRnozN0xsYW9PV29iRmp1ZkFrbkJVaWFfRU5fUjF5X0cyN0diazNFb0U5UWJMWXpqQTllUlRWUUU5MEV2cGJzUlBvVUpOZ3JnOE1jbjVRLXE2c044WHhtRjJQaFZCbDhVUEhnRQ?oc=5",
+    "https://www.tagesschau.de/ausland/europa/ukraine-angriffe-wohnhaeuser-104.html",
+    "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNLXpOdWlXckdpLXNuT053QVpxMFlxNkVKbjRtY29vam5PSEgtdWw5VkI3T19HWkg0eGE2MUxrTUdkSlg0WGN1Z19NOHhQSDh2YVlmMHZoOTQ1UmFFQ2tqYkVrU0p2aGsxNkdydlVYOVJzTUFkVm5xcEJGMUt2ZGEwaDFzLXoxMkVibnZMcUx1MUhIZUJtS2MzTnNBbTl0Z0tfSkdoUWVaZ0V5VktzMU9OZEcweEZ2Y00xeFJDNmh2Yzg0QndsUm9NRklNWDVLSkJuU0thMnFCZmdPV2x4S0ZLdmtybVBRM3FGOHc?oc=5",
+    "https://www.spiegel.de/ausland/libyen-uno-fordert-untersuchung-nach-angriffen-auf-schiffe-vor-bengasi-a-0843553c-ae70-475c-9d9f-9a64df4122a3#ref=rss"
+  ],
+  "seenHeadlines": [],
+  "locales": {
+    "en": {
+      "title": "War in Ukraine",
+      "dek": "Ukraine confirms the sinking of a Russian warship in the Mediterranean off Libya, while attacks on civilian infrastructure continue."
+    },
+    "fr": {
+      "title": "Guerre en Ukraine",
+      "dek": "L'Ukraine confirme le naufrage d'un navire de guerre russe en Méditerranée, au large de la Libye, alors que les attaques contre les infrastructures civiles se poursuivent."
+    },
+    "es": {
+      "title": "Guerra en Ucrania",
+      "dek": "Ucrania confirma el hundimiento de un buque de guerra ruso en el mar Mediterráneo, frente a las costas de Libyen, mientras continúan los ataques contra la infraestructura civil."
+    },
+    "pt": {
+      "title": "Guerra na Ucrânia",
+      "dek": "A Ucrânia confirma o afundamento de um navio de guerra russo no Mediterrâneo, ao largo da Líbia, enquanto continuam os ataques contra infraestruturas civis."
+    },
+    "it": {
+      "title": "Guerra in Ucraina",
+      "dek": "L'Ucraina conferma l'affondamento di una nave da guerra russa nel mar Mediterraneo al largo della Libia, mentre proseguono gli attacchi contro le infrastrutture civili."
+    },
+    "zh": {
+      "title": "乌克兰战争",
+      "dek": "乌克兰证实地中海利比亚沿岸一艘俄罗斯军舰沉没，同时针对平民基础设施的袭击仍在继续。"
+    },
+    "ja": {
+      "title": "ウクライナ戦争",
+      "dek": "ウクライナはリビア沖の地中海におけるロシア軍艦の撃沈を確認した。一方、民間インフラに対する攻撃は続いている。"
+    },
+    "ko": {
+      "title": "우크라이나 전쟁",
+      "dek": "우크라이나가 리비아 앞바다 지중해에서 러시아 군함이 침몰했다고 확인한 가운데, 민간 기반시설에 대한 공격이 계속되고 있다."
+    },
+    "de": {
+      "title": "Krieg in der Ukraine",
+      "dek": "Die Ukraine bestätigt die Versenkung eines russischen Kriegsschiffes im Mittelmeer vor Libyen, während die Angriffe auf die zivile Infrastruktur andauern."
+    }
+  },
   "article": {
     "slug": "krieg-in-der-ukraine",
+    "updatedAt": "2026-11-23T08:57:06.423Z",
     "reason": "2 new update(s)",
     "locales": {
       "en": {
-        "dek": "European representatives confirmed to join US-mediated talks in Abu Dhabi on November 10-11.",
-        "body": [
-          "French Foreign Minister Jean-Noël Barrot announced on November 8 that European representatives will join United States-mediated talks between Russia and Ukraine in Abu Dhabi, scheduled for November 10 and 11, according to Euronews, France 24 and Politico Europe.",
-          "Russian forces reported striking three cargo vessels carrying military goods for Ukraine and two electricity substations overnight, according to statements from the Russian military, as reported by Politico Europe and TASS.",
-          "Recent Russian attacks on energy infrastructure in eastern Ukraine left approximately 600,000 to 850,000 people without electricity, authorities stated, according to Al Jazeera, CBS News and Tagesschau.",
-          "The Zaporizhzhia nuclear power plant lost its primary connection to the grid during the strikes and is currently relying on backup power sources to maintain operations, according to Nikkei Asia and SRF.",
-          "Ukrainian President Volodymyr Zelenskyy stated that Russian forces launched a drone strike on emergency workers in Komyshuvakha, according to Sky News and Euronews.",
-          "Energy officials in Ukraine are working to restore power to the affected regions, the strikes caused significant damage to the regional electrical grid, according to local reports cited by Politico Europe.",
-          "The Abu Dhabi talks represent a diplomatic effort to engage multiple international stakeholders, with the United States facilitating the dialogue and European nations now confirmed to attend, according to Semafor and NPR.",
-          "Moscow has struck emergency workers on rescue missions, according to Sky News, with Ukrainian President Volodymyr Zelenskyy stating that Russia launched a drone strike on the site of a recent attack in Komyshuvakha where rescuers were carrying out search operations following a previous bombing."
-        ],
+        "title": "Russian strikes kill eleven near Kyiv as Ukraine claims ship sunk off Libya",
+        "dek": "Russian attacks killed 11 people in the Kyiv region while Ukrainian forces launched a drone strike off Libya.",
         "facts": [
-          "European nations confirmed to join Abu Dhabi talks",
-          "Russian strikes left 600,000 to 850,000 people without power",
-          "Zaporizhzhia nuclear plant forced to use backup power",
-          "Russian military reported strikes on three cargo ships and two power substations",
-          "President Zelenskyy reported a drone strike on emergency workers in Komyshuvakha"
+          "At least 11 people died in a Russian attack on a residential building in the Kyiv region according to officials.",
+          "Rescuers pulled a seven-year-old boy alive from the rubble following the strike in the Kyiv area.",
+          "Ukrainian President Volodymyr Zelenskyy stated that Ukrainian forces used seven sea drones to sink a Russian corvette.",
+          "The Russian corvette Merkury was reportedly sunk near the port of Benghazi in Libyan waters.",
+          "Kyiv stated that a cargo ship and a combat helicopter were also hit during the operation near Libya."
         ],
-        "title": "European nations to join Russia-Ukraine talks in Abu Dhabi",
-        "context": "The Zaporizhzhia nuclear power plant has frequently faced power supply disruptions since the start of the full-scale Russian invasion of Ukraine. Diplomatic efforts to reach a ceasefire or peace agreement have continued intermittently throughout the conflict, with the Abu Dhabi meetings marking the first direct three-way round of talks between the parties since February, according to Semafor and NPR.",
+        "body": [
+          "Ukrainian President Volodymyr Zelenskyy stated that Ukrainian forces used seven sea drones to sink a Russian corvette near the port of Benghazi. According to Kyiv, the operation in Libyan waters also resulted in hits on a cargo ship and a combat helicopter. Russian authorities have not yet issued a detailed public response regarding the reported incident off the coast of North Africa.",
+          "Rescue services in the Kyiv region reported that at least 11 people died following a Russian attack on a residential building. Emergency personnel continued search efforts for missing residents while combing through the debris of the targeted structure. Rescuers successfully pulled a seven-year-old boy alive from the rubble hours after the initial impact.",
+          "International media outlets verified that rescue operations in the Kyiv region remain ongoing as authorities account for casualties from the strikes. Ukrainian officials continue to assess the structural damage across multiple residential sectors affected by the bombardment. Further details regarding the precise number of injured individuals have not yet been fully released by regional administrators.",
+          "Military analysts note that the reported drone operation near Libya expands the geographic scope of engagements involving naval assets. Ukrainian leadership has increasingly emphasized long-range and unconventional tactics to target military capabilities outside the immediate territorial waters of the Black Sea. Official statements from Kyiv indicate that the operation required coordination across multiple specialized units.",
+          "Rescue workers deployed heavy equipment to lift concrete slabs at the site of the collapsed apartment building in the Kyiv region. Relatives of missing residents gathered near the cordoned area to await updates from emergency teams working through the debris. Medical personnel established triage stations close to the scene to treat survivors pulled from the wreckage.",
+          "Foreign observers continue to monitor the implications of maritime engagements in international waters following the reported sinking of the corvette Merkury. The deployment of sea drones against naval targets outside traditional combat zones demonstrates evolving operational methods in the conflict. Governments and defense ministries have yet to issue formal diplomatic assessments concerning the incident near Benghazi."
+        ],
+        "context": "The conflict between Russia and Ukraine involves ongoing aerial bombardments of residential areas and strategic engagements across various maritime zones.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "Russische Angriffe fordern elf Tote nahe Kiew, während die Ukraine die Versenkung eines Schiffes vor Libyen meldet",
+        "dek": "Russische Angriffe töteten 11 Menschen in der Region Kiew, während ukrainische Streitkräfte einen Drohnenangriff vor Libyen verübten.",
+        "facts": [
+          "Mindestens 11 Menschen starben nach Angaben von Behörden bei einem russischen Angriff auf ein Wohngebäude in der Region Kiew.",
+          "Retter zogen nach dem Angriff im Raum Kiew einen siebenjährigen Jungen lebend aus den Trümmern.",
+          "Der ukrainische Präsident Wolodymyr Selenskyj erklärte, ukrainische Streitkräfte hätten sieben Seedrohnen eingesetzt, um eine russische Korvette zu versenken.",
+          "Berichten zufolge wurde die russische Korvette Merkury nahe dem Hafen von Bengasi in libyschen Gewässern versenkt.",
+          "Kiew teilte mit, dass bei der Operation nahe Libyen auch ein Frachtschiff und ein Kampfhubschrauber getroffen wurden."
+        ],
+        "body": [
+          "Der ukrainische Präsident Wolodymyr Selenskyj erklärte, ukrainische Streitkräfte hätten sieben Seedrohnen eingesetzt, um eine russische Korvette nahe dem Hafen von Bengasi zu versenken. Kiew zufolge führte die Operation in libyschen Gewässern zudem zu Treffern auf einem Frachtschiff und einem Kampfhubschrauber. Russische Behörden haben sich bislang nicht öffentlich detailliert zu dem gemeldeten Zwischenfall vor der nordafrikanischen Küste geäußert.",
+          "Rettungsdienste in der Region Kiew meldeten, dass nach einem russischen Angriff auf ein Wohngebäude mindestens 11 Menschen starben. Rettungskräfte setzten die Suche nach vermissten Bewohnern fort und durchsuchen dabei die Trümmer der attackierten Struktur. Stunden nach dem ursprünglichen Einschlag zogen Retter einen siebenjährigen Jungen lebend aus den Trümmern.",
+          "Internationale Medien bestätigten, dass die Rettungseinsätze in der Region Kiew andauern, während die Behörden die Opferzahlen der Angriffe ermitteln. Ukrainische Offizielle bewerten weiterhin die strukturellen Schäden in mehreren von den Bombardements betroffenen Wohngebieten. Weitere Details zur genauen Zahl der Verletzten wurden von den Regionalverwaltungen noch nicht vollständig veröffentlicht.",
+          "Militäranalysten weisen darauf hin, dass die gemeldete Drohnenoperation nahe Libyen die geografische Reichweite von Gefechten mit Marineassets ausweitet. Die ukrainische Führung hat zunehmend Langstrecken- und unkonventionelle Taktiken betont, um militärische Kapazitäten außerhalb der unmittelbaren Hoheitsgewässer des Schwarzen Meeres ins Visier zu nehmen. Offizielle Erklärungen aus Kiew deuten darauf hin, dass die Operation die Koordinierung mehrerer spezialisierter Einheiten erforderte.",
+          "Rettungskräfte setzten schwere Geräte ein, um Betonplatten am Ort des eingestürzten Wohnblocks in der Region Kiew anzuheben. Angehörige vermisster Bewohner versammelten sich nahe dem abgesperrten Bereich, um auf Neuigkeiten von den Teams zu warten, die sich durch die Trümmer arbeiten. Sanitäter errichteten Triage-Stationen in der Nähe des Einsatzortes, um aus den Trümmern geborgene Überlebende zu behandeln.",
+          "Ausländische Beobachter verfolgen weiterhin die Auswirkungen der maritimen Gefechte in internationalen Gewässern nach der gemeldeten Versenkung der Korvette Merkury. Der Einsatz von Seedrohnen gegen Marineziele außerhalb traditioneller Kampfzonen zeigt sich entwickelnde operative Methoden in dem Konflikt. Regierungen und Verteidigungsministerien haben noch keine formalen diplomatischen Einschätzungen zu dem Vorfall nahe Bengasi abgegeben."
+        ],
+        "context": "Der Konflikt zwischen Russland und der Ukraine umfasst anhaltende Luftangriffe auf Wohngebiete und strategische Gefechte in verschiedenen Seegebieten."
       }
     },
     "versions": [
@@ -348,1066 +602,20 @@
           }
         }
       }
+    ]
+  },
+  "meta": {
+    "createdBy": "bots/live.mjs",
+    "outlets": [
+      "Tagesschau",
+      "ZDF heute",
+      "Die Zeit",
+      "Der Spiegel",
+      "FAZ",
+      "Die Welt",
+      "SRF",
+      "NZZ"
     ],
-    "updatedAt": "2026-11-09T15:44:36.222Z"
-  },
-  "endedAt": "2026-11-09T16:03:39.176Z",
-  "locales": {
-    "de": {
-      "dek": "Nach massiven russischen Luftangriffen hat die Ukraine von flächendeckenden Stromausfällen und kritischen Schäden an ihrer Energieinfrastruktur berichtet.",
-      "title": "Krieg in der Ukraine"
-    },
-    "en": {
-      "dek": "Following massive Russian air strikes, Ukraine has reported widespread power cuts and critical damage to its energy infrastructure.",
-      "title": "War in Ukraine"
-    },
-    "es": {
-      "dek": "Tras los masivos ataques aéreos rusos, Ucrania informa de cortes generalizados de electricidad y daños críticos en las infraestructuras energéticas.",
-      "title": "Guerra en Ucrania"
-    },
-    "fr": {
-      "dek": "À la suite d'attaques aériennes russes massives, l'Ukraine signale des pannes de courant généralisées et des dommages critiques sur son infrastructure énergétique.",
-      "title": "Guerre en Ukraine"
-    },
-    "it": {
-      "dek": "A seguito di massicci attacchi aerei russi, l'Ucraina segnala blackout diffusi e danni critici alle infrastrutture energetiche.",
-      "title": "Guerra in Ucraina"
-    },
-    "ja": {
-      "dek": "ロシアによる大規模な空爆を受け、ウクライナ全土で停電が発生し、エネルギーインフラに深刻な被害が出ていると報告された。",
-      "title": "ウクライナ情勢"
-    },
-    "ko": {
-      "dek": "러시아의 대규모 공습 이후 우크라이나는 광범위한 정전 사태와 에너지 기반 시설의 심각한 피해를 보고했다.",
-      "title": "우크라이나 전쟁"
-    },
-    "pt": {
-      "dek": "Na sequência de ataques aéreos russos maciços, a Ucrânia relatou cortes generalizados de eletricidade e danos críticos na sua infraestrutura energética.",
-      "title": "Guerra na Ucrânia"
-    },
-    "zh": {
-      "dek": "继俄罗斯发动大规模空袭后，乌克兰报告称全国多地出现大范围停电，能源基础设施遭到严重破坏。",
-      "title": "乌克兰战争"
-    }
-  },
-  "updates": [
-    {
-      "at": "2026-11-09T16:00:03.000Z",
-      "id": "u-1794240003000-3779",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Wie die Kyiv Post berichtet, ist eine ukrainische Delegation zu zweitägigen trilateralen Gesprächen mit den USA und Russland nach Abu Dhabi gereist. Kiew wird zudem separate Treffen mit Vertretern von vier europäischen Ländern, der NATO und der Europäischen Kommission abhalten.",
-          "headline": "Ukrainische Delegation für Gespräche in Abu Dhabi eingetroffen"
-        },
-        "en": {
-          "body": "Ukraine's delegation has departed for Abu Dhabi for two days of trilateral talks with the US and Russia, according to The Kyiv Post. Kyiv will also hold separate meetings with representatives of four European countries, NATO, and the European Commission.",
-          "headline": "Ukraine delegation arrives in Abu Dhabi for talks"
-        },
-        "es": {
-          "body": "La delegación de Ucrania ha partido a Abu Dabi para dos días de conversaciones trilaterales con EE. UU. y Rusia, según The Kyiv Post. Kiev también celebrará reuniones separadas con representantes de cuatro países europeos, la OTAN y la Comisión Europea.",
-          "headline": "Delegación ucraniana llega a Abu Dabi para negociaciones"
-        },
-        "fr": {
-          "body": "La délégation ukrainienne est partie à Abu Dhabi pour deux jours de pourparlers trilatéraux avec les États-Unis et la Russie, selon The Kyiv Post. Kyiv tiendra également des réunions séparées avec des représentants de quatre pays européens, de l'OTAN et de la Commission européenne.",
-          "headline": "Délégation ukrainienne arrive à Abu Dhabi pour des pourparlers"
-        },
-        "it": {
-          "body": "La delegazione ucraina è partita per Abu Dhabi per due giorni di colloqui trilaterali con Stati Uniti e Russia, secondo The Kyiv Post. Kiev terrà anche incontri separati con rappresentanti di quattro paesi europei, NATO e Commissione Europea.",
-          "headline": "Delegazione ucraina arriva ad Abu Dhabi per colloqui"
-        },
-        "ja": {
-          "body": "キエフ・ポストによると、ウクライナの代表団は、米国およびロシアとの三者会談のためアブダビに出発した。キエフでは、4つの欧州諸国、NATO、欧州委員会代表との個別会合も開催される予定である。",
-          "headline": "ウクライナ代表団、会談のためアブダビに到着"
-        },
-        "ko": {
-          "body": "키이우 포스트에 따르면 우크라이나 대표단은 미국 및 러시아와 2일간의 삼자 회담을 위해 아부다비로 떠났다. 키이우는 또한 네 유럽 국가, NATO, 유럽 위원회 대표들과 별도 회의를 개최할 예정이다.",
-          "headline": "우크라이나 대표단, 회담을 위해 아부다비 도착"
-        },
-        "pt": {
-          "body": "A delegação da Ucrânia partiu para Abu Dhabi para dois dias de negociações trilaterais com os EUA e a Rússia, segundo The Kyiv Post. Kyiv também terá reuniões separadas com representantes de quatro países europeus, a NATO e a Comissão Europeia.",
-          "headline": "Delegação da Ucrânia chega a Abu Dhabi para negociações"
-        },
-        "zh": {
-          "body": "据《基辅邮报》报道，乌克兰代表团已前往阿布扎比，与美国和俄罗斯举行为期两天的三边会谈。基辅还将与四个欧洲国家、北约和欧盟代表举行单独会晤。",
-          "headline": "乌克兰代表团抵达阿布扎比进行会谈"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.kyivpost.com/post/89581",
-          "title": "Ukraine Heads to Abu Dhabi for Talks as Umerov Vows to Keep Europe Involved",
-          "outlet": "The Kyiv Post",
-          "publishedAt": "2026-11-09T16:00:03.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPTzhka1o0a3hySjk2c1dUenp2VTNSR0liYWhobkZheC1zOXdvdkpCYVF5RFJybXRSTjl1dFZtM3l4MVVLR0ZsS0J5SHVOQUtCOFh0Z0NaM0NlZkFwS1ZQaVhHLWxRT2h1NldOcmxJc3hrcDNoc3NIWkFfbGFDc20teUN3a0xSSVE?oc=5",
-          "title": "Ukraine-Russia talks: what to know",
-          "outlet": "France 24",
-          "publishedAt": "2026-11-09T11:05:54.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-09T12:46:00.000Z",
-      "id": "u-1794228360000-fugv",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Die südafrikanische Polizei hat neun ausländische Staatsangehörige festgenommen, die im Verdacht stehen, in den Ukraine-Krieg ziehen zu wollen. Wie AP News und die BBC berichten, wurden die Personen abgefangen, als sie versuchten, das Land zu verlassen.",
-          "headline": "Südafrikanische Polizei nimmt neun Ausländer bei Versuch fest, sich dem Ukraine-Krieg anzuschließen"
-        },
-        "en": {
-          "body": "South African police arrested nine foreign nationals suspected of traveling to join the war in Ukraine. According to AP News and the BBC, the individuals were intercepted while attempting to leave the country.",
-          "headline": "South African police arrest nine foreigners attempting to join Ukraine war"
-        },
-        "es": {
-          "body": "La policía sudafricana detuvo a nueve ciudadanos extranjeros sospechosos de viajar para unirse a la guerra en Ucrania. Según AP News y la BBC, los individuos fueron interceptados mientras intentaban abandonar el país.",
-          "headline": "La policía sudafricana detiene a nueve extranjeros que intentaban unirse a la guerra en Ucrania"
-        },
-        "fr": {
-          "body": "La police sud-africaine a arrêté neuf ressortissants étrangers soupçonnés de vouloir se rendre en Ukraine pour participer au conflit. Selon AP News et la BBC, les individus ont été interceptés alors qu'ils tentaient de quitter le pays.",
-          "headline": "La police sud-africaine arrête neuf étrangers tentant de rejoindre la guerre en Ukraine"
-        },
-        "it": {
-          "body": "La polizia sudafricana ha arrestato nove cittadini stranieri sospettati di essere in viaggio per unirsi alla guerra in Ucraina. Secondo AP News e la BBC, gli individui sono stati intercettati mentre tentavano di lasciare il Paese.",
-          "headline": "La polizia sudafricana arresta nove stranieri che tentavano di unirsi alla guerra in Ucraina"
-        },
-        "ja": {
-          "body": "南アフリカ警察は、ウクライナ戦争への参加を試みていた疑いのある9人の外国籍者を逮捕した。AP通信とBBCによると、これらの個人は出国しようとした際に阻止された。",
-          "headline": "南アフリカ警察、ウクライナ戦争参加を試みた外国人9人を逮捕"
-        },
-        "ko": {
-          "body": "남아프리카공화국 경찰이 우크라이나 전쟁에 참전하기 위해 출국하려던 외국인 9명을 체포했다. AP 통신과 BBC에 따르면, 이들은 국외로 나가려다 당국에 적발되었다.",
-          "headline": "남아공 경찰, 우크라이나 전쟁 참전 시도한 외국인 9명 체포"
-        },
-        "pt": {
-          "body": "A polícia sul-africana deteve nove cidadãos estrangeiros suspeitos de viajar para se juntarem à guerra na Ucrânia. Segundo a AP News e a BBC, os indivíduos foram intercetados enquanto tentavam sair do país.",
-          "headline": "Polícia sul-africana detém nove estrangeiros que tentavam juntar-se à guerra na Ucrânia"
-        },
-        "zh": {
-          "body": "南非警方逮捕了九名涉嫌前往乌克兰参战的外国公民。据美联社和英国广播公司报道，这些人是在试图离境时被拦截的。",
-          "headline": "南非警方逮捕九名企图前往乌克兰参战的外国人"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNR2N4a2djZmNTTXYyR2ZhemFQZURkNGFrSE0tcU1pc3dPakRmQ2lVMWs2eTRDZklrUXpsQlRGVGlMVDFRTnFpSWZnd2c3TGU3M2dnY3B3WGFEVHhzcHg1Mm5DUXlCNWdzTk9WNnlKU3RFX3ZRSzVFcEhFMmlocEU4SmphbWphWHptZkNlLWo2cnVweHFoNUZ5cEZyQm1nQlNFcGZCVHlKY0VNRW8?oc=5",
-          "title": "South African police arrest 9 foreign nationals suspected of traveling to Russia to fight in Ukraine",
-          "outlet": "AP News",
-          "publishedAt": "2026-11-09T12:46:00.000Z"
-        },
-        {
-          "url": "https://www.bbc.co.uk/news/articles/cm93z3lp5lnpo?at_medium=RSS&at_campaign=rss",
-          "title": "Nine foreigners caught allegedly trying to leave South Africa to fight in Ukraine",
-          "outlet": "BBC",
-          "publishedAt": "2026-11-09T12:33:24.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-09T15:34:05.000Z",
-      "id": "u-1794238445000-u86p",
-      "kind": "statement",
-      "locales": {
-        "de": {
-          "body": "Präsident Wolodymyr Selenskyj sprach am 9. November mit dem indischen Premierminister Narendra Modi über diplomatische Bemühungen zur Beendigung des Krieges. Laut Anadolu Ajansı und der Times of India fand das Gespräch im Vorfeld anstehender trilateraler Gespräche in Abu Dhabi statt.",
-          "headline": "Selenskyj und Modi erörtern diplomatische Bemühungen zur Beendigung des Krieges"
-        },
-        "en": {
-          "body": "President Volodymyr Zelenskyy spoke with Indian Prime Minister Narendra Modi on 9 November regarding diplomatic efforts to end the war. According to Anadolu Ajansı and the Times of India, the discussion took place ahead of upcoming trilateral talks in Abu Dhabi.",
-          "headline": "Zelenskyy and Modi discuss diplomatic efforts to end war"
-        },
-        "es": {
-          "body": "El presidente Volodímir Zelenski habló con el primer ministro indio, Narendra Modi, el 9 de noviembre sobre los esfuerzos diplomáticos para poner fin a la guerra. Según Anadolu Ajansı y el Times of India, la conversación tuvo lugar antes de las próximas conversaciones trilaterales en Abu Dabi.",
-          "headline": "Zelenski y Modi debaten los esfuerzos diplomáticos para poner fin a la guerra"
-        },
-        "fr": {
-          "body": "Le président Volodymyr Zelensky s'est entretenu le 9 novembre avec le Premier ministre indien Narendra Modi au sujet des efforts diplomatiques visant à mettre fin à la guerre. Selon l'agence Anadolu et le Times of India, la discussion a eu lieu en amont de prochaines négociations trilatérales à Abou Dabi.",
-          "headline": "Zelensky et Modi discutent des efforts diplomatiques pour mettre fin à la guerre"
-        },
-        "it": {
-          "body": "Il presidente Volodymyr Zelensky ha parlato il 9 novembre con il primo ministro indiano Narendra Modi riguardo agli sforzi diplomatici per porre fine alla guerra. Secondo l'Anadolu Ajansı e il Times of India, la discussione ha avuto luogo in vista dei prossimi colloqui trilaterali ad Abu Dhabi.",
-          "headline": "Zelensky e Modi discutono degli sforzi diplomatici per porre fine alla guerra"
-        },
-        "ja": {
-          "body": "ウォロディミル・ゼレンスキー大統領は11月9日、戦争終結に向けた外交努力についてインドのナレンドラ・モディ首相と会談した。 Anadolu Ajansıとインド・タイムズ紙によると、この議論はアブダビでの今後の三国間会談に先立って行われた。",
-          "headline": "ゼレンスキー大統領とモディ首相、戦争終結に向けた外交努力を議論"
-        },
-        "ko": {
-          "body": "볼로디미르 젤렌스키 우크라이나 대통령은 11월 9일 나렌드라 모디 인도 총리와 전쟁 종식을 위한 외교적 노력을 주제로 통화했다. 아나돌루 통신과 타임스 오브 인디아에 따르면, 이번 논의는 아부다비에서 열릴 예정인 3자 회담을 앞두고 이루어졌다.",
-          "headline": "젤렌스키 대통령과 모디 총리, 전쟁 종식을 위한 외교적 노력 논의"
-        },
-        "pt": {
-          "body": "O Presidente Volodymyr Zelensky falou com o primeiro-ministro indiano, Narendra Modi, a 9 de novembro, sobre os esforços diplomáticos para pôr fim à guerra. Segundo a Anadolu Ajansı e o Times of India, a discussão ocorreu antes das próximas conversações trilaterais em Abu Dhabi.",
-          "headline": "Zelensky e Modi discutem esforços diplomáticos para pôr fim à guerra"
-        },
-        "zh": {
-          "body": "乌克兰总统弗拉基米尔·泽连斯基与印度总理纳伦德拉·莫迪于11月9日就结束战争的外交努力进行了交谈。据阿纳多卢通讯社和《印度时报》报道，此次讨论是在即将于阿布扎比举行的三方会谈之前进行的。",
-          "headline": "泽连斯基与莫迪讨论结束战争的外交努力"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZjFaWC11OUFIZTFYTV9ZYjNZMXA3U1ZrSVlpdy1idjM3dDdJNnBZbU5PaFo2NVF6ei05WmRhY0ZtMWxxeEdoOXJGRjZyYjQ4VTVzM0VCTHlscDhtWTVUWHp1Ukd2REdjUkYwOFVmZ1lMci0tSGNHcmd3RkxlX0lOSXZoV20zVlZZU1BCMzlIZFVZRlVuT0J1T3RTMzBQWEM5VDFyTnNPTmpkeV81VlMxbFAtVVd0X2pyOEJkNjZGcGFyWE45WnZ0OVg1UWRWZw?oc=5",
-          "title": "Zelenskyy, Modi discuss diplomatic efforts to end Russia-Ukraine war during phone call",
-          "outlet": "Anadolu Ajansı",
-          "publishedAt": "2026-11-09T15:34:05.000Z"
-        },
-        {
-          "url": "https://timesofindia.indiatimes.com/india/pm-modi-speaks-with-zelenskyy-discusses-efforts-for-russia-ukraine-peace-deal/articleshow/135684263.cms",
-          "title": "PM Modi speaks with Zelenskyy, discusses efforts for Russia-Ukraine peace deal",
-          "outlet": "Times of India",
-          "publishedAt": "2026-11-09T14:09:44.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-09T09:35:14.000Z",
-      "id": "u-1794216914000-aqao",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Unter Führung der Vereinigten Staaten werden in dieser Woche nach einer neunmonatigen Pause in Abu Dhabi wieder Gespräche zur Beendigung des Krieges zwischen Russland und der Ukraine aufgenommen, wie die New York Times berichtet. Eine Waffenruhe stehe bei den Treffen, bei denen auch Sicherheitsgarantien für beide Seiten erörtert werden sollen, nicht zur Debatte, so die New York Times und das Killeen Daily Herald.",
-          "headline": "Waffenruhe bei bevorstehenden Gesprächen in Abu Dhabi ausgeschlossen"
-        },
-        "en": {
-          "body": "United States-led talks to end the war between Russia and Ukraine will resume this week in Abu Dhabi after a nine-month lull, according to the New York Times. A cease-fire will not be on the table during the meetings, which will also examine security guarantees for both sides, according to the New York Times and the Killeen Daily Herald.",
-          "headline": "Cease-fire excluded from upcoming Abu Dhabi talks"
-        },
-        "es": {
-          "body": "Las conversaciones lideradas por Estados Unidos para poner fin a la guerra entre Rusia y Ucrania se reanudarán esta semana en Abu Dabi tras un paréntesis de nueve meses, según informa The New York Times. El alto el fuego no estará sobre la mesa durante las reuniones, que también examinarán garantías de seguridad para ambas partes, según The New York Times y el Killeen Daily Herald.",
-          "headline": "El alto el fuego queda excluido de las próximas conversaciones en Abu Dabi"
-        },
-        "fr": {
-          "body": "Les pourparlers menés par les États-Unis pour mettre fin à la guerre entre la Russie et l'Ukraine reprendront cette semaine à Abou Dhabi après une interruption de neuf mois, selon le New York Times. Un cessez-le-feu ne sera pas à l'ordre du jour de ces réunions, qui examineront également les garanties de sécurité pour les deux parties, selon le New York Times et le Killeen Daily Herald.",
-          "headline": "Le cessez-le-feu exclu des prochaines discussions d'Abou Dhabi"
-        },
-        "it": {
-          "body": "I colloqui guidati dagli Stati Uniti per porre fine alla guerra tra Russia e Ucraina riprenderanno questa settimana ad Abu Dhabi dopo una pausa di nove mesi, secondo quanto riportato dal New York Times. Un cessate il fuoco non sarà sul tavolo durante gli incontri, che esamineranno anche le garanzie di sicurezza per entrambe le parti, secondo quanto riferito dal New York Times e dal Killeen Daily Herald.",
-          "headline": "Escluso il cessate il fuoco dai prossimi colloqui di Abu Dhabi"
-        },
-        "ja": {
-          "body": "ニューヨーク・タイムズ紙によると、ロシアとウクライナの戦争終結に向けた米国主導の会談が9カ月の休止期間を経て、今週アブダビで再開される。ニューヨーク・タイムズ紙およびキリーン・デイリー・ヘラルド紙によれば、双方に対する安全保障の保証についても検討される今回の会談において、停戦は議題に含まれないという。",
-          "headline": "アブダビでの次回会談、停戦は除外"
-        },
-        "ko": {
-          "body": "뉴욕타임스에 따르면 러시아와 우크라이나 간의 전쟁을 종식하기 위한 미국 주도의 회담이 9개월의 소강상태 끝에 이번 주 아부다비에서 재개된다. 뉴욕타임스와 킬린 데일리 헤럴드는 이번 회담에서 양측에 대한 안보 보장을 논의할 예정이나 휴전은 안건에 포함되지 않는다고 보도했다.",
-          "headline": "아부다비에서 열릴 예정인 회담서 휴전은 제외돼"
-        },
-        "pt": {
-          "body": "As negociações lideradas pelos Estados Unidos para pôr fim à guerra entre a Rússia e a Ucrânia serão retomadas esta semana em Abu Dhabi, após uma pausa de nove meses, de acordo com o The New York Times. Um cessar-fogo não estará em cima da mesa durante os encontros, que também examinarão garantias de segurança para ambas as partes, segundo o The New York Times e o Killeen Daily Herald.",
-          "headline": "Trégua excluída das próximas negociações em Abu Dhabi"
-        },
-        "zh": {
-          "body": "据《纽约时报》报道，由美国主导的旨在结束俄乌冲突的会谈在中断九个月后，将于本周在阿布扎比恢复。据《纽约时报》和《基林每日先驱报》报道，在这些还将探讨双方安全保障的会议上，停火将不会被提上议事日程。",
-          "headline": "阿布扎比即将举行的会谈将不讨论停火"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.nytimes.com/2026/11/09/world/europe/ukraine-russia-peace-talks.html",
-          "title": "Ukraine Peace Talks Resume This Week in Abu Dhabi",
-          "outlet": "New York Times",
-          "publishedAt": "2026-11-09T09:35:14.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQQ0VQTmM4VUZzLTMxY3R3dlJtVldUdGZ0d1ZuSHB5X0JkTmN5aVlBSS1UR01aUnlZQ1pEci1XeTdxX3JfaGp1SWFmWElubGxpQi1McTJFQnd1bXh3TDQtU2pqTTdKV21uZUlUM0xYVmctVzkxLU9RUXIxZy1VWFUybExva3RNU05nR3ZVa1VVelBFRVpIZklTM2dQdUFTeVhkaUpuMlJ5dEt3amE5VEZ3VVA2dWdGdGQ3cVJ5aU0zSXRkTmhJc05FTWlsYlVodWxFZ3pCRW1melRKSTMtYVkxRXBmVUczc3dBTHJSZi1rVkMtdkd1UUNzNA?oc=5",
-          "title": "US-led peace talks for Russia and Ukraine will look at security guarantees for both sides",
-          "outlet": "The Killeen Daily Herald",
-          "publishedAt": "2026-11-09T09:17:39.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-09T09:17:19.000Z",
-      "id": "u-1794215839000-oy93",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Die Europäische Union wird laut Euronews ein gemeinsames Team zu den bevorstehenden Friedensgesprächen in Abu Dhabi entsenden. Frankreich, Deutschland und das Vereinigte Königreich werden ebenfalls neben den EU-Vertretern an den Diskussionen teilnehmen.",
-          "headline": "EU nimmt an Friedensgesprächen in Abu Dhabi teil"
-        },
-        "en": {
-          "body": "The European Union will send a joint team to the upcoming peace talks in Abu Dhabi, according to Euronews. France, Germany, and the UK will also participate in the discussions alongside the EU representatives.",
-          "headline": "EU to join peace talks in Abu Dhabi"
-        },
-        "es": {
-          "body": "La Unión Europea enviará un equipo conjunto a las próximas conversaciones de paz en Abu Dabi, según Euronews. Francia, Alemania y el Reino Unido también participarán en las discusiones junto a los representantes de la UE.",
-          "headline": "La UE se unirá a las conversaciones de paz en Abu Dabi"
-        },
-        "fr": {
-          "body": "L'Union européenne enverra une délégation commune aux prochains pourparlers de paix à Abou Dabi, selon Euronews. La France, l'Allemagne et le Royaume-Uni participeront également aux discussions aux côtés des représentants de l'UE.",
-          "headline": "L'UE participera aux pourparlers de paix à Abou Dabi"
-        },
-        "it": {
-          "body": "L'Unione Europea invierà una delegazione congiunta ai prossimi colloqui di pace ad Abu Dhabi, secondo quanto riportato da Euronews. Anche Francia, Germania e Regno Unito prenderanno parte alle discussioni insieme ai rappresentanti dell'UE.",
-          "headline": "L'UE parteciperà ai colloqui di pace ad Abu Dhabi"
-        },
-        "ja": {
-          "body": "ユーロニュースによると、欧州連合（EU）はアブダビで近日開催される和平協議に合同チームを派遣する。フランス、ドイツ、英国もEU代表団と共に協議に参加する予定である。",
-          "headline": "EU、アブダビでの和平協議に参加へ"
-        },
-        "ko": {
-          "body": "유로뉴스에 따르면 유럽연합(EU)은 아부다비에서 열릴 예정인 평화 회담에 공동 대표단을 파견할 예정이다. 프랑스, 독일, 영국도 EU 대표들과 함께 이번 논의에 참여한다.",
-          "headline": "EU, 아부다비 평화 회담 참여"
-        },
-        "pt": {
-          "body": "A União Europeia enviará uma equipa conjunta para as próximas conversações de paz em Abu Dhabi, segundo a Euronews. A França, a Alemanha e o Reino Unido também participarão nas discussões, a par dos representantes da UE.",
-          "headline": "UE vai participar nas conversações de paz em Abu Dhabi"
-        },
-        "zh": {
-          "body": "据欧洲新闻台报道，欧盟将派遣一个联合代表团参加即将于阿布扎比举行的和平谈判。法国、德国和英国也将与欧盟代表一同参与讨论。",
-          "headline": "欧盟将参加在阿布扎比举行的和平谈判"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.euronews.com/2026/11/09/eu-to-send-joint-team-to-ukraine-russia-peace-talks-in-abu-dhabi",
-          "title": "EU to send joint team to Ukraine-Russia peace talks in Abu Dhabi",
-          "outlet": "Euronews",
-          "publishedAt": "2026-11-09T09:17:19.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOVRvYUFQbS0za2RfNkk2T0xkYnVrcFVoNXZ3SzgwN2RpcTlMWDBha3lINTR1X0JSM0JkaldZMjB2SHFVYzJ2Mi1vcV9vamlQd1pOaWNtLV9aYjFlY1prMFh0ME1tZzdFa194dTJVSG1aU0c5bmZnU1BGWHdvbGhIakk1ekxVcjluRTZtQzJIQ19vSF91bHJsbVV4T1dWa1U?oc=5",
-          "title": "US-led peace talks for Russia and Ukraine will look at security guarantees for both sides",
-          "outlet": "AP News",
-          "publishedAt": "2026-11-09T05:01:00.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-09T07:05:00.000Z",
-      "id": "u-1794207900000-v3oa",
-      "kind": "statement",
-      "locales": {
-        "de": {
-          "body": "Donald Trump sagte gegenüber TVP World und A News, die Ukraine werde nach dem Krieg eine „andere Form“ haben. The Kyiv Post berichtete, dass Trump behauptet, ein Friedensabkommen sei nahe.",
-          "headline": "Trump deutet an, dass die Ukraine nach dem Krieg eine andere Form haben wird"
-        },
-        "en": {
-          "body": "Donald Trump said Ukraine will have a \"different shape\" after the war according to TVP World and A News. The Kyiv Post reported Trump claims a peace deal is near.",
-          "headline": "Trump suggests Ukraine will have different shape after war"
-        },
-        "es": {
-          "body": "Donald Trump afirmó que Ucrania tendrá una \"forma diferente\" después de la guerra, según TVP World y A News. The Kyiv Post informó que Trump sostiene que un acuerdo de paz es inminente.",
-          "headline": "Trump sugiere que Ucrania tendrá una forma diferente después de la guerra"
-        },
-        "fr": {
-          "body": "Donald Trump a déclaré que l'Ukraine aurait une « forme différente » après la guerre, selon TVP World et A News. The Kyiv Post a rapporté que Trump affirme qu'un accord de paix est proche.",
-          "headline": "Trump suggère que l'Ukraine aura une forme différente après la guerre"
-        },
-        "it": {
-          "body": "Donald Trump ha dichiarato che l'Ucraina avrà una \"forma diversa\" dopo la guerra, secondo TVP World e A News. The Kyiv Post ha riportato che Trump sostiene che un accordo di pace è vicino.",
-          "headline": "Trump suggerisce che l'Ucraina avrà una forma diversa dopo la guerra"
-        },
-        "ja": {
-          "body": "ドナルド・トランプ氏は、TVP WorldおよびA Newsによると、戦争後ウクライナは「異なる形」になると述べた。Kyiv Postは、トランプ氏が和平合意が近いと主張していると報じた。",
-          "headline": "トランプ氏、戦争後のウクライナは異なる形になると示唆"
-        },
-        "ko": {
-          "body": "도널드 트럼프는 TVP World와 A News에 따르면 전쟁 후 우크라이나가 \"다른 형태\"를 가질 것이라고 말했다. 키이우 포스트는 트럼프가 평화 협상이 임박했다고 주장했다고 보도했다.",
-          "headline": "트럼프, 전쟁 후 우크라이나는 다른 형태를 가질 것이라고 시사"
-        },
-        "pt": {
-          "body": "Donald Trump afirmou que a Ucrânia terá uma \"forma diferente\" após a guerra, segundo a TVP World e a A News. O Kyiv Post reportou que Trump alega que um acordo de paz está próximo.",
-          "headline": "Trump sugere que a Ucrânia terá uma forma diferente após a guerra"
-        },
-        "zh": {
-          "body": "根据TVP World和A News报道，唐纳德·特朗普表示，战争结束后乌克兰将拥有“不同的形态”。《基辅邮报》报道称，特朗普声称和平协议临近。",
-          "headline": "特朗普暗示乌克兰战后形态将不同"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRmlIUWZJTnBTM2w3MnBwRHExS3NELVlZT3FscU5kTWJhMjA4eVJyQ0pLUUhpVzZ2TXpsRGt0S04xWHd5R1BMcG1RYllYWFdEVnE5djlqWUY2cUtGN25EclZKNk1ycWlnWWZ1MTVUeHE2ZDQ2X0hIU1pOZkZMWHYzeWhXRm1YMzNMVWtVU3ZudDQ1WDFtd2duN3RteUxMVWs?oc=5",
-          "title": "Trump says Ukraine will have ‘different shape’ after peace deal",
-          "outlet": "TVP World",
-          "publishedAt": "2026-11-09T07:05:00.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPam15UGlSaThmRVVYc3JqMWFsZDhRQlFqd1RBR1VGclMtQmxscHdTbzF3cXJWcF9GcE9CZmVreHc4VE9yZnNHYXJkS21rUHE3R1c5cVo0NU42RnFxLVBZdW15RHNpT09OWlp5UmNueFk5MEZodHFFV3dxOHJOZWFXcVpsTFVIRkszWGlabUxLd0dxT1FWVllrLXRlaDhMRTBCTDE4OHdYV0Q1cHlqUWNxc3hxNNIBuAFBVV95cUxNZ2pPRk51VVdsS3E0R2VBZGpZeVNvcGlvX1BKYzYxRlFLeFZCNy1Wa0p3aHNVX2dBZHlBYkluRGwzblh6aUFKYUw4bm1INXloRWtKZnFQSjdWT0JsY3prWlF4cTZhV3RaY29reEFhNnJZbXlvQlJYSXVvTGR0ZWIzMERkMW1tRVRVZlhWQmlCZ1RpYnpRa2hpc3NOTmMzMS0wbWw3MlNldmo0WmRmUl9PczNJZ1RvZHRv?oc=5",
-          "title": "Trump says Ukraine will emerge with 'different shape' after Russia war",
-          "outlet": "A News",
-          "publishedAt": "2026-11-09T06:54:50.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-08T22:41:35.000Z",
-      "id": "u-1794177695000-9tfr",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Vertreter der USA, Russlands und der Ukraine werden diese Woche zu Verhandlungen in Abu Dhabi erwartet. Laut Semafor und NPR handelt es sich bei diesem Treffen um die erste direkte dreiseitige Gesprächsrunde zwischen den Parteien seit Februar.",
-          "headline": "USA, Russland und Ukraine führen Gespräche in Abu Dhabi"
-        },
-        "en": {
-          "body": "Officials from the US, Russia and Ukraine are expected to meet in Abu Dhabi this week for negotiations. According to Semafor and NPR, this meeting marks the first direct three-way round of talks between the parties since February.",
-          "headline": "US, Russia and Ukraine to hold talks in Abu Dhabi"
-        },
-        "es": {
-          "body": "Se espera que funcionarios de EE. UU., Rusia y Ucrania se reúnan esta semana en Abu Dabi para llevar a cabo negociaciones. Según Semafor y NPR, este encuentro supone la primera ronda de conversaciones tripartitas directas entre las partes desde febrero.",
-          "headline": "EE. UU., Rusia y Ucrania mantendrán conversaciones en Abu Dabi"
-        },
-        "fr": {
-          "body": "Des responsables des États-Unis, de la Russie et de l'Ukraine devraient se rencontrer à Abu Dhabi cette semaine pour des négociations. Selon Semafor et NPR, cette réunion marque la première discussion directe tripartite entre les parties depuis février.",
-          "headline": "États-Unis, Russie et Ukraine tiendront des pourparlers à Abu Dhabi"
-        },
-        "it": {
-          "body": "Si prevede che funzionari degli Stati Uniti, della Russia e dell'Ucraina si incontrino ad Abu Dhabi questa settimana per negoziati. Secondo Semafor e NPR, questo incontro segna il primo turno di colloqui diretti tra le tre parti da febbraio.",
-          "headline": "Stati Uniti, Russia e Ucraina terranno colloqui ad Abu Dhabi"
-        },
-        "ja": {
-          "body": "米国、ロシア、ウクライナの当局者らが今週アブダビで交渉を行う見込みである。SemaforおよびNPRによると、この会合は2月以来、当事者間で行われる初の三者直接会談となる。",
-          "headline": "米国、ロシア、ウクライナがアブダビで会談"
-        },
-        "ko": {
-          "body": "미국, 러시아, 우크라이나 관계자들이 이번 주 아부다비에서 협상을 위해 만날 예정입니다. 세마포어와 NPR에 따르면, 이번 회동은 2월 이후 당사자 간 첫 삼자 직접 회담입니다.",
-          "headline": "미국, 러시아, 우크라이나, 아부다비에서 회담 개최"
-        },
-        "pt": {
-          "body": "Funcionários dos EUA, Rússia e Ucrânia deverão reunir-se em Abu Dhabi esta semana para negociações. Segundo Semafor e NPR, este encontro marca a primeira ronda de conversações diretas tripartidas entre as partes desde fevereiro.",
-          "headline": "EUA, Rússia e Ucrânia realizarão conversações em Abu Dhabi"
-        },
-        "zh": {
-          "body": "美国、俄罗斯和乌克兰官员预计本周在阿布扎比会晤进行谈判。据Semafor和NPR报道，此次会议是自2月以来各方首次三方直接会谈。",
-          "headline": "美、俄、乌将在阿布扎比举行会谈"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.semafor.com/article/11/08/2026/us-to-hold-trilateral-ukraine-talks-in-uae",
-          "title": "US, Russia, and Ukraine to hold talks in Abu Dhabi",
-          "outlet": "Semafor",
-          "publishedAt": "2026-11-08T22:41:35.000Z"
-        },
-        {
-          "url": "https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia",
-          "title": "Europe to join U.S.-brokered Ukraine talks in Abu Dhabi, defying Kremlin objections",
-          "outlet": "NPR",
-          "publishedAt": "2026-11-08T19:25:30.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-08T17:50:52.000Z",
-      "id": "u-1794160252000-snf1",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Daten aus gehackten Unterlagen belegen, dass 392.700 Sterbeurkunden Todesfälle im Zusammenhang mit dem Krieg zwischen dem 24. Februar 2022 und Ende August 2026 verzeichnen. Berichten von The Straits Times und Bloomberg zufolge deuten diese Dokumente auf insgesamt 400.000 russische Todesopfer hin.",
-          "headline": "Gehackte Unterlagen deuten auf 400.000 russische Todesopfer im Ukraine-Krieg hin"
-        },
-        "en": {
-          "body": "Data from hacked records show that 392,700 death certificates link fatalities to the war between 24 February 2022 and late August 2026. According to reports from The Straits Times and Bloomberg, these documents indicate a total of 400,000 Russian deaths.",
-          "headline": "Hacked records indicate 400,000 Russian deaths in Ukraine war"
-        },
-        "es": {
-          "body": "Datos procedentes de registros pirateados muestran que 392.700 certificados de defunción vinculan fallecimientos con la guerra entre el 24 de febrero de 2022 y finales de agosto de 2026. Según informes de The Straits Times y Bloomberg, estos documentos indican un total de 400.000 muertes rusas.",
-          "headline": "Registros pirateados indican 400.000 muertes rusas en la guerra de Ucrania"
-        },
-        "fr": {
-          "body": "Des données issues de documents piratés révèlent que 392 700 certificats de décès lient des pertes humaines à la guerre entre le 24 février 2022 et fin août 2026. Selon des rapports du Straits Times et de Bloomberg, ces documents indiquent un total de 400 000 morts russes.",
-          "headline": "Des documents piratés font état de 400 000 morts russes dans la guerre en Ukraine"
-        },
-        "it": {
-          "body": "I dati provenienti da documenti hackerati mostrano che 392.700 certificati di morte collegano i decessi alla guerra tra il 24 febbraio 2022 e la fine di agosto 2026. Secondo quanto riportato da The Straits Times e Bloomberg, questi documenti indicano un totale di 400.000 morti russi.",
-          "headline": "Documenti hackerati indicano 400.000 morti russi nella guerra in Ucraina"
-        },
-        "ja": {
-          "body": "ハッキングされた記録のデータによると、2022年2月24日から2026年8月下旬までの間に、39万2700件の死亡診断書が戦争に関連していることが判明した。ストレーツ・タイムズ紙およびブルームバーグの報道によれば、これらの文書はロシア側の死者数が合計40万人に達していることを示唆している。",
-          "headline": "ハッキングされた記録により、ウクライナ戦争でのロシア軍死者数が40万人に達した可能性が浮上"
-        },
-        "ko": {
-          "body": "해킹된 기록 데이터에 따르면 2022년 2월 24일부터 2026년 8월 말까지 전쟁과 관련된 사망진단서가 39만 2,700건에 달하는 것으로 나타났다. 스트레이츠 타임스와 블룸버그의 보도에 따르면, 이 문서들은 러시아군 사망자가 총 40만 명에 이른다는 점을 시사한다.",
-          "headline": "해킹된 기록, 우크라이나 전쟁서 러시아군 40만 명 사망 시사"
-        },
-        "pt": {
-          "body": "Dados de registos pirateados mostram que 392 700 certidões de óbito associam mortes à guerra entre 24 de fevereiro de 2022 e o final de agosto de 2026. Segundo relatos do The Straits Times e da Bloomberg, estes documentos indicam um total de 400 000 mortes russas.",
-          "headline": "Registos pirateados indicam 400 000 mortes russas na guerra na Ucrânia"
-        },
-        "zh": {
-          "body": "遭窃记录显示，2022年2月24日至2026年8月下旬期间，有392,700份死亡证明将死亡原因与战争挂钩。据《海峡时报》和彭博社报道，这些文件显示俄罗斯在战争中的死亡总人数达到40万人。",
-          "headline": "遭窃记录显示俄乌战争导致40万俄罗斯人死亡"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.straitstimes.com/world/europe/hacked-records-show-400000-russians-killed-in-war-on-ukraine",
-          "title": "Hacked records show 400,000 Russians killed in war on Ukraine",
-          "outlet": "The Straits Times",
-          "publishedAt": "2026-11-08T17:50:52.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZ1NnNTdWOTdCT2lPOXg3dlU1V3EtSmlfcDhGdHUwZUpuNmVvcFN5dHFOUkZkZkpvM3lmeG1ab2YtLWxiNWtyMFd0WVo4eVpzZTJSb2RBWk40MkkycHU4ZFoyMGtraTVFc0g0cEF5Smg5b2d4OThHX3U4dkFyT2RLMW9zSUFDMHRyNE1NVDV4Qml4SURFbDlfOUU3VHZzWWppaVlWd3FuOGJjXzlZQWRQN1p3?oc=5",
-          "title": "Hacked Records Show 400,000 Russians Killed in War on Ukraine",
-          "outlet": "Bloomberg.com",
-          "publishedAt": "2026-11-08T16:45:39.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-08T17:03:11.000Z",
-      "id": "u-1794157391000-nvj9",
-      "kind": "statement",
-      "locales": {
-        "de": {
-          "body": "Russischen Angaben zufolge haben Streitkräfte des Landes über Nacht drei Frachtschiffe mit Militärgütern für die Ukraine sowie zwei Stromumspannwerke angegriffen. Die Umspannwerke hätten die ukrainische Rüstungsindustrie mit Strom versorgt, teilte das russische Militär mit.",
-          "headline": "Russland meldet Angriffe auf drei Frachtschiffe und Stromumspannwerke"
-        },
-        "en": {
-          "body": "Russian forces struck three cargo vessels carrying military goods for Ukraine and two electricity substations overnight, according to statements from Russia. The substations supplied power to the Ukrainian military industrial complex, the Russian military stated.",
-          "headline": "Russia reports strikes on three cargo ships and power substations"
-        },
-        "es": {
-          "body": "Las fuerzas rusas atacaron durante la noche tres buques de carga que transportaban material militar para Ucrania y dos subestaciones eléctricas, según declaraciones de Rusia. Las subestaciones suministraban energía al complejo militar-industrial ucraniano, indicó el ejército ruso.",
-          "headline": "Rusia informa de ataques contra tres buques de carga y subestaciones eléctricas"
-        },
-        "fr": {
-          "body": "Les forces russes ont frappé dans la nuit trois navires de charge transportant du matériel militaire à destination de l'Ukraine ainsi que deux sous-stations électriques, selon des communiqués russes. Ces sous-stations alimentaient en électricité le complexe industrialo-militaire ukrainien, a précisé l'armée russe.",
-          "headline": "La Russie fait état de frappes contre trois navires de charge et des sous-stations électriques"
-        },
-        "it": {
-          "body": "Le forze russe hanno colpito la scorsa notte tre navi cargo che trasportavano beni militari per l'Ucraina e due sottostazioni elettriche, secondo quanto dichiarato da Mosca. Le sottostazioni alimentavano il complesso militare-industriale ucraino, ha precisato l'esercito russo.",
-          "headline": "La Russia riferisce di attacchi contro tre navi cargo e sottostazioni elettriche"
-        },
-        "ja": {
-          "body": "ロシア軍は夜間にウクライナ向けの軍事物資を輸送していた貨物船3隻と、変電所2カ所を攻撃したと発表した。変電所はウクライナの軍需産業コンプレックスに電力を供給していたと、ロシア軍は述べている。",
-          "headline": "ロシア、貨物船3隻と変電所への攻撃を発表"
-        },
-        "ko": {
-          "body": "러시아군이 우크라이나로 군수품을 싣고 가던 화물선 3척과 변전소 2곳을 야간에 공습했다고 러시아 측이 밝혔다. 러시아군은 해당 변전소가 우크라이나 군산복합체에 전력을 공급했다고 덧붙였다.",
-          "headline": "러시아, 화물선 3척과 변전소 공습 주장"
-        },
-        "pt": {
-          "body": "As forças russas atacaram de madrugada três navios de carga que transportavam material militar para a Ucrânia e duas subestações elétricas, de acordo com declarações da Rússia. As subestações forneciam energia ao complexo industrial militar ucraniano, afirmou o exército russo.",
-          "headline": "Rússia relata ataques a três navios de carga e subestações elétricas"
-        },
-        "zh": {
-          "body": "据俄罗斯发表的声明称，俄军夜间打击了三艘为乌克兰运送军用物资的货轮以及两座电力变电站。俄军表示，这些变电站为乌克兰军工综合体供应电力。",
-          "headline": "俄罗斯称对三艘货轮和电力变电站实施打击"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeEUxVTdMN3NIX0NsMU1RSGFDYkp4TnVWdnJlckFobzh1dENSbzhzSFpod3hoN3NkYkROUnNab1MxM2dyR204Uks2cmcxLUI1ajdQZWdIdERqbXVMS2RJenJWSS1QZUd6ZEd2bkc1d201Tks5VkhRTXlBQTFURU52WHg1Ym14QnlYMkItMHpMSUVkM3NleEhFaTNZcC1FQ0pIeTJGR0hKTXUtSktrWFhWSkRFcC1aWlBxU0E?oc=5",
-          "title": "Russia Says Hit Power Substations in Ukraine and 3 Ships in Black Sea",
-          "outlet": "The Moscow Times",
-          "publishedAt": "2026-11-08T17:03:11.000Z"
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/russia-says-hit-power-substations-in-ukraine-and-three-ships-in-black-sea",
-          "title": "Russia says hit power substations in Ukraine and three ships in Black Sea",
-          "outlet": "The Straits Times",
-          "publishedAt": "2026-11-08T16:03:31.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-08T15:48:43.000Z",
-      "id": "u-1794152923000-8z7t",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Russland hat Berichten zufolge Rettungskräfte am Ort eines tödlichen Angriffs in der Südukraine ins Visier genommen. Die Angriffe ereigneten sich während Rettungseinsätzen in der Region.",
-          "headline": "Russland nimmt Rettungskräfte in der Südukraine ins Visier"
-        },
-        "en": {
-          "body": "Russia targeted emergency crews at the site of a deadly strike in southern Ukraine, according to reports. The attacks occurred during rescue missions in the region.",
-          "headline": "Russia targets emergency crews in southern Ukraine"
-        },
-        "es": {
-          "body": "Rusia atacó a los equipos de emergencia en el lugar de un ataque mortal en el sur de Ucrania, según los informes. Las ofensivas se produjeron durante las labores de rescate en la región.",
-          "headline": "Rusia ataca a los equipos de emergencia en el sur de Ucrania"
-        },
-        "fr": {
-          "body": "La Russie a pris pour cible des équipes de secours sur le site d'une frappe meurtrière dans le sud de l'Ukraine, selon des informations rapportées. Les attaques ont eu lieu lors d'opérations de sauvetage dans la région.",
-          "headline": "La Russie vise des équipes de secours dans le sud de l'Ukraine"
-        },
-        "it": {
-          "body": "La Russia ha preso di mira le squadre di emergenza sul luogo di un attacco mortale nel sud dell'Ucraina, secondo quanto riferito. I raid sono avvenuti durante le missioni di soccorso nella regione.",
-          "headline": "La Russia prende di mira i soccorritori nel sud dell'Ucraina"
-        },
-        "ja": {
-          "body": "報道によると、ロシアはウクライナ南部で死者を出した空爆の現場において、救助活動を行っていた緊急救助隊を標的とした。攻撃は同地域での救助活動中に発生した。",
-          "headline": "ロシア、ウクライナ南部の緊急救助隊を標的に"
-        },
-        "ko": {
-          "body": "보도에 따르면 러시아는 우크라이나 남부의 치명적인 공습 현장에서 구조 활동을 벌이던 구조대원들을 표적 삼아 공격했다. 해당 공격들은 이 지역의 구조 임무 수행 중에 발생했다.",
-          "headline": "러시아, 우크라이나 남부에서 구조대원들 겨냥해 공격"
-        },
-        "pt": {
-          "body": "A Rússia teve como alvo equipas de emergência no local de um ataque mortal no sul da Ucrânia, segundo relatos. Os ataques ocorreram durante missões de salvamento na região.",
-          "headline": "Rússia ataca equipas de emergência no sul da Ucrânia"
-        },
-        "zh": {
-          "body": "据报道，俄罗斯袭击了乌克兰南部一起致命袭击事件现场的应急救援人员。这些袭击发生在当地的搜救任务期间。",
-          "headline": "俄罗斯袭击乌克兰南部应急救援人员"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTXdHUlE5M0Q2cjFhcGU5R1NINWNYR2I3YnBxdlZ4emZDa3hjWW1jZDNRV2h4RjVoMFhYNHB1ZEtyejRiWFNUWlFlWDV1RjNzd0ZLTjdQLTZueDVLZDIzbnJzVnZXMW85VjhraHFWSWJfYWRoWk1HbW1QNHdkeU5BLV9YdGRFRHBYQzVwV0E3dDRYTkJFcVJWc0dqZW9GUQ?oc=5",
-          "title": "Russia targets emergency crews at the site of a deadly strike in southern Ukraine",
-          "outlet": "Washington Examiner",
-          "publishedAt": "2026-11-08T15:48:43.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYy1XR3JIYUJCNEpOR1czaFdQTG9OSHRtYkZiWnd4UzlMcXhlM0NoNlZIU1ZOVFpSdzRTc2Ewa1FLWUlERXNxbW5BY3JKMENwTmJkYmxpbG4tQ0QyS1JmdWRmaHU1VjduTkRFck02STFIeGVBLVVGeHdZSHdXMERWcUxsS1hKdXZRQlZESXd1S3A4Y2gwVGs0WWdQUnZBd3lVZWV3Qnc1X3pvSllFTU9UTnV2WndQdUdVdV9xZ05rYWFudVoxZkM4Zg?oc=5",
-          "title": "Russia targets emergency crews at the site of a deadly strike in southern Ukraine",
-          "outlet": "News4JAX",
-          "publishedAt": "2026-11-08T10:20:06.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-08T14:48:18.000Z",
-      "id": "u-1794149298000-lpyn",
-      "kind": "statement",
-      "locales": {
-        "de": {
-          "body": "Moskau hat Berichten von Sky News zufolge Rettungskräfte bei Hilfseinsätzen angegriffen. Der ukrainische Präsident Wolodymyr Selenskyj erklärte, Russland habe einen Drohnenangriff auf den Schauplatz eines jüngsten Angriffs in Komyschuwacha verübt, wo Rettungskräfte nach einer früheren Bombardierung Sucharbeiten durchführten.",
-          "headline": "Moskau attackiert Rettungskräfte bei Einsätzen in der Ukraine"
-        },
-        "en": {
-          "body": "Moscow has struck emergency workers on rescue missions, according to Sky News. Ukrainian President Volodymyr Zelenskyy stated that Russia launched a drone strike on the site of a recent attack in Komyshuvakha, where rescuers were carrying out search operations following a previous bombing.",
-          "headline": "Emergency workers struck by Moscow during rescue missions in Ukraine"
-        },
-        "es": {
-          "body": "Moscú ha atacado a los equipos de emergencia durante sus labores de rescate, según informaciones de Sky News. El presidente ucraniano, Volodímir Zelenski, declaró que Rusia lanzó un ataque con drones contra el lugar de una agresión reciente en Komyshuvakha, donde los socorristas llevaban a cabo operaciones de búsqueda tras un bombardeo previo.",
-          "headline": "Moscú ataca a los equipos de emergencia durante sus labores de rescate en Ucrania"
-        },
-        "fr": {
-          "body": "Moscou a pris pour cible des équipes de secours lors de missions d'intervention, selon Sky News. Le président ukrainien Volodymyr Zelensky a déclaré que la Russie avait mené une attaque de drone sur le site d'une frappe récente à Komyshuvakha, où des secouristes menaient des opérations de recherche à la suite d'un précédent bombardement.",
-          "headline": "Moscou vise des secouristes en mission en Ukraine"
-        },
-        "it": {
-          "body": "Mosca ha colpito operatori di soccorso durante le missioni di emergenza, secondo quanto riferito da Sky News. Il presidente ucraino Volodymyr Zelenskyy ha dichiarato che la Russia ha lanciato un attacco con droni sul luogo di un recente bombardamento a Komyshuvakha, dove i soccorritori stavano conducendo operazioni di ricerca in seguito a una precedente esplosione.",
-          "headline": "Soccorritori colpiti da Mosca durante le missioni di salvataggio in Ucraina"
-        },
-        "ja": {
-          "body": "スカイニュースによると、ロシア軍が救助活動中の緊急対応要員を攻撃した。ウクライナのウォロディミル・ゼレンスキー大統領は、コミシュバハで先に爆撃を受けた現場において、救助隊が捜索活動を行っていたところ、ロシアがドローン攻撃を仕掛けたと述べた。",
-          "headline": "ロシア軍、ウクライナで救助活動中の隊員を攻撃"
-        },
-        "ko": {
-          "body": "스카이뉴스에 따르면 러시아가 구조 임무를 수행 중이던 구급대원들을 공격했다. 볼로디미르 젤렌스키 우크라이나 대통령은 러시아가 코미슈바하의 최근 피격 현장에 드론 공격을 감행했으며, 당시 구조대원들이 이전 폭격 이후 수색 작업을 벌이고 있었다고 밝혔다.",
-          "headline": "러시아, 우크라이나 구조 작업 중인 구급대원 공격"
-        },
-        "pt": {
-          "body": "Moscovo atingiu equipas de emergência em missões de resgate, segundo a Sky News. O Presidente ucraniano, Volodymyr Zelenskyy, afirmou que a Rússia lançou um ataque com drones no local de um ataque recente em Komyshuvakha, onde os socorristas realizavam operações de busca na sequência de um bombardeamento anterior.",
-          "headline": "Moscovo atinge equipas de emergência durante missões de resgate na Ucrânia"
-        },
-        "zh": {
-          "body": "据天空新闻网报道，莫斯科袭击了正在执行救援任务的应急人员。乌克兰总统泽连斯基表示，俄罗斯对科米舒瓦哈此前遭袭的地点发动了无人机袭击，救援人员当时正在该处进行此前轰炸后的搜救工作。",
-          "headline": "乌克兰救援任务中的应急人员遭莫斯科袭击"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.euronews.com/2026/11/08/russian-strikes-on-ukraine-leave-850000-without-power-as-zelenskyy-reports-drone-attack-on",
-          "title": "Russian strikes on Ukraine leave 850,000 without power as Zelenskyy reports drone attack on Komyshuvakha",
-          "outlet": "Euronews",
-          "publishedAt": "2026-11-08T14:48:18.000Z"
-        },
-        {
-          "url": "https://news.sky.com/story/one-dead-in-russia-after-ukraine-drone-attack-as-emergency-workers-struck-by-moscow-13609678",
-          "title": "One dead in Russia after Ukraine drone attack - as emergency workers struck by Moscow",
-          "outlet": "Sky News",
-          "publishedAt": "2026-11-08T12:09:00.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-08T14:22:45.000Z",
-      "id": "u-1794147765000-2pti",
-      "kind": "statement",
-      "locales": {
-        "de": {
-          "body": "Nach Angaben des französischen Außenministers Jean-Noël Barrot werden sich europäische Vertreter den bevorstehenden, von den Vereinigten Staaten vermittelten Gesprächen zwischen Russland und der Ukraine in Abu Dhabi anschließen. Die Treffen sind für den 10. bis 11. November angesetzt.",
-          "headline": "Europäische Staaten nehmen an Gesprächen in Abu Dhabi teil"
-        },
-        "en": {
-          "body": "According to French Foreign Minister Jean-Noël Barrot, European representatives will join upcoming United States-mediated talks between Russia and Ukraine in Abu Dhabi. The meetings are scheduled for November 10 to November 11.",
-          "headline": "European nations will take part in Abu Dhabi talks"
-        },
-        "es": {
-          "body": "Según el ministro francés de Asuntos Exteriores, Jean-Noël Barrot, representantes europeos se sumarán a las próximas conversaciones entre Rusia y Ucrania en Abu Dabi, mediadas por Estados Unidos. Los encuentros están previstos del 10 al 11 de noviembre.",
-          "headline": "Naciones europeas participarán en las conversaciones de Abu Dabi"
-        },
-        "fr": {
-          "body": "Selon le ministre français des Affaires étrangères, Jean-Noël Barrot, des représentants européens participeront aux prochaines discussions entre la Russie et l'Ukraine à Abou Dhabi, sous la médiation des États-Unis. Ces réunions sont prévues les 10 et 11 novembre.",
-          "headline": "Des pays européens participeront aux discussions d'Abou Dhabi"
-        },
-        "it": {
-          "body": "Secondo il ministro degli Esteri francese Jean-Noël Barrot, i rappresentanti europei prenderanno parte ai prossimi colloqui tra Russia e Ucraina mediati dagli Stati Uniti ad Abu Dhabi. Gli incontri sono in programma dal 10 all'11 novembre.",
-          "headline": "Le nazioni europee parteciperanno ai colloqui di Abu Dhabi"
-        },
-        "ja": {
-          "body": "フランスのジャン＝ノエル・バロ外相によれば、欧州の代表団が、米国が仲介するロシアとウクライナの間でアブダビにて行われる今後の協議に参加する見通しである。会合は11月10日から11日にかけて予定されている。",
-          "headline": "欧州諸国、アブダビでの協議に参加へ"
-        },
-        "ko": {
-          "body": "장노엘 바로 프랑스 외무장관에 따르면, 유럽 대표들이 아부다비에서 열리는 미국 중재의 러시아·우크라이나 간 예정된 회담에 합류할 예정이다. 회의는 11월 10일부터 11일까지로 예정되어 있다.",
-          "headline": "유럽 국가들, 아부다비 회담 참가 예정"
-        },
-        "pt": {
-          "body": "Segundo o ministro dos Negócios Estrangeiros francês, Jean-Noël Barrot, representantes europeus vão juntar-se às próximas conversações entre a Rússia e a Ucrânia mediadas pelos Estados Unidos em Abu Dhabi. As reuniões estão agendadas para 10 a 11 de novembro.",
-          "headline": "Países europeus vão participar em conversações em Abu Dhabi"
-        },
-        "zh": {
-          "body": "据法国外交部长让-诺埃尔·巴罗称，欧洲代表将参加即将举行的、由美国斡旋的俄罗斯与乌克兰阿布扎比会谈。会议计划于11月10日至11日举行。",
-          "headline": "欧洲国家将参加阿布扎比会谈"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.euronews.com/2026/11/08/europeans-to-join-russia-ukraine-talks-in-abu-dhabi-says-french-fm-barrot",
-          "title": "Europeans to join Russia-Ukraine talks in Abu Dhabi, says French FM Barrot",
-          "outlet": "Euronews",
-          "publishedAt": "2026-11-08T14:22:45.000Z"
-        },
-        {
-          "url": "https://www.france24.com/en/europe/20261108-europe-will-take-part-us-mediated-ukraine-peace-talks-abu-dhabi-french-fm-says",
-          "title": "Europe will take part in US-mediated Ukraine talks in Abu Dhabi, French FM says",
-          "outlet": "France 24",
-          "publishedAt": "2026-11-08T14:16:31.000Z"
-        },
-        {
-          "url": "https://www.politico.eu/article/europe-will-be-represented-in-abu-dhabi-talks-on-ukraine-french-foreign-minister-jean-noel-barrot-says/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-          "title": "Europe will be represented in Abu Dhabi talks on Ukraine, French foreign minister says",
-          "outlet": "Politico Europe",
-          "publishedAt": "2026-11-08T14:03:28.000Z"
-        },
-        {
-          "url": "https://www.kyivpost.com/post/89489",
-          "title": "France Confirms European Role at Abu Dhabi Talks",
-          "outlet": "The Kyiv Post",
-          "publishedAt": "2026-11-08T13:41:00.000Z"
-        },
-        {
-          "url": "https://www.lemonde.fr/en/international/article/2026/11/08/europe-will-be-represented-at-us-mediated-ukraine-talks-in-abu-dhabi_6774979_4.html",
-          "title": "Europe will be represented at US-mediated Ukraine talks in Abu Dhabi",
-          "outlet": "Le Monde",
-          "publishedAt": "2026-11-08T13:12:08.000Z"
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/europeans-will-join-ukraine-talks-in-abu-dhabi-french-foreign-minister-says",
-          "title": "Europeans will join Ukraine talks in Abu Dhabi, French foreign minister says",
-          "outlet": "The Straits Times",
-          "publishedAt": "2026-11-08T12:08:39.000Z"
-        }
-      ],
-      "importance": 4
-    },
-    {
-      "at": "2026-11-08T14:36:16.814Z",
-      "id": "u-1794148576814-rvaq",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Jüngste russische Angriffe auf die Energieinfrastruktur in der Ostukraine haben schätzungsweise 600.000 bis 850.000 Menschen von der Stromversorgung abgeschnitten. Behörden erklärten, das Kernkraftwerk Saporischschja habe erneut auf Notstromquellen zurückgreifen müssen.",
-          "headline": "Russische Angriffe lassen Hunderttausende ohne Strom zurück"
-        },
-        "en": {
-          "body": "Recent Russian attacks on energy infrastructure in eastern Ukraine left approximately 600,000 to 850,000 people without electricity. Authorities stated that the Zaporizhzhia nuclear power plant once again had to rely on backup power sources.",
-          "headline": "Russian strikes leave hundreds of thousands without power"
-        },
-        "es": {
-          "body": "Los recientes ataques rusos contra las infraestructuras energéticas en el este de Ucrania dejaron a entre 600.000 y 850.000 personas sin suministro eléctrico. Las autoridades señalaron que la central nuclear de Zaporiyia tuvo que recurrir de nuevo a fuentes de energía de emergencia.",
-          "headline": "Los ataques rusos dejan a cientos de miles de personas sin electricidad"
-        },
-        "fr": {
-          "body": "De récentes attaques russes contre les infrastructures énergétiques dans l'est de l'Ukraine ont laissé environ 600 000 à 850 000 personnes sans électricité. Les autorités ont indiqué que la centrale nucléaire de Zaporijjia avait dû de nouveau recourir à des sources d'alimentation de secours.",
-          "headline": "Des frappes russes privent des centaines de milliers de personnes d'électricité"
-        },
-        "it": {
-          "body": "I recenti attacchi russi contro le infrastrutture energetiche nell'Ucraina orientale hanno lasciato circa 600.000-850.000 persone senza energia elettrica. Le autorità hanno dichiarato che la centrale nucleare di Zaporizhzhia ha dovuto nuovamente fare affidamento su fonti di alimentazione di riserva.",
-          "headline": "I raid russi lasciano centinaia di migliaia di persone senza elettricità"
-        },
-        "ja": {
-          "body": "ウクライナ東部のエネルギーインフラを狙った最近のロシアによる攻撃により、およそ60万から85万人が電気のない生活を強いられている。当局によると、ザポリージャ原子力発電所は再びバックアップ電源への依存を余儀なくされたという。",
-          "headline": "ロシアの攻撃により数十万人が停電に"
-        },
-        "ko": {
-          "body": "우크라이나 동부의 에너지 기반 시설을 겨냥한 최근의 러시아 공격으로 약 60만 명에서 85만 명이 전기를 쓰지 못하게 되었다. 당국은 자포리자 원자력발전소가 또다시 비상 전력원에 의존해야 했다고 밝혔다.",
-          "headline": "러시아 공습으로 수십만 명 정전 피해"
-        },
-        "pt": {
-          "body": "Recentes ataques russos contra infraestruturas energéticas no leste da Ucrânia deixaram aproximadamente 600.000 a 850.000 pessoas sem eletricidade. As autoridades indicaram que a central nuclear de Zaporíjia teve de recorrer mais uma vez a fontes de energia de recurso.",
-          "headline": "Ataques russos deixam centenas de milhares de pessoas sem eletricidade"
-        },
-        "zh": {
-          "body": "近期俄罗斯对乌克兰东部能源基础设施的袭击导致大约60万至85万人陷入断电状态。有关部门表示，扎波罗热核电站不得不再次依赖备用电源。",
-          "headline": "俄罗斯袭击导致数十万人断电"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power",
-          "title": "Ukraine's Zaporizhzhia nuclear plant again relies on backup power",
-          "outlet": "Nikkei Asia",
-          "publishedAt": "2026-11-08T14:36:16.814Z"
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/11/8/russian-strikes-on-ukraine-leave-hundreds-of-thousands-without-electricity?traffic_source=rss",
-          "title": "Russian strikes on Ukraine leave hundreds of thousands without electricity",
-          "outlet": "Al Jazeera",
-          "publishedAt": "2026-11-08T12:20:17.000Z"
-        },
-        {
-          "url": "https://www.tagesschau.de/ausland/europa/ukraine-stromausfall-120.html",
-          "title": "Russische Luftangriffe: Erneut Hunderttausende Ukrainer ohne Strom",
-          "outlet": "Tagesschau",
-          "publishedAt": "2026-11-08T12:05:57.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9JV3lDUVpZVXY0aUs3R2NtUDdKV1RTczJUaFRqdzkwZElYclVQMkRPeFdkcmdoRmhrSDFMU2xUTWZLdUItaC0yb0JWeVpjQm81cjdZMlBJdllHTHYycktHdUlFdEZTdHlHdklLdDZn?oc=5",
-          "title": "Hundreds of thousands left without power in Ukraine after Russian strikes, authorities say",
-          "outlet": "CBS News",
-          "publishedAt": "2026-11-08T11:20:29.000Z"
-        },
-        {
-          "url": "https://www.politico.eu/article/russian-strikes-leave-600000-in-the-dark-in-eastern-ukraine-dnipropetrovsk/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-          "title": "Russian strikes leave 600,000 in the dark in eastern Ukraine",
-          "outlet": "Politico Europe",
-          "publishedAt": "2026-11-08T11:09:52.000Z"
-        },
-        {
-          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-ukraine-meldet-massive-stromausfaelle-nach-russischem-angriff",
-          "title": "Krieg in der Ukraine – Ukraine meldet massive Stromausfälle nach russischem Angriff",
-          "outlet": "SRF",
-          "publishedAt": "2026-11-08T09:37:26.000Z"
-        }
-      ],
-      "importance": 4
-    }
-  ],
-  "category": "world",
-  "keywords": [
-    "ukraine",
-    "russland",
-    "krieg",
-    "luftangriff",
-    "stromausfall",
-    "energie",
-    "front"
-  ],
-  "seenUrls": [
-    "https://asia.nikkei.com/politics/ukraine-war/ukraine-s-zaporizhzhia-nuclear-plant-again-relies-on-backup-power",
-    "https://thehill.com/policy/international/6206505-meloni-blames-russian-hackers-tajani/",
-    "https://www.euronews.com/2026/11/08/europeans-to-join-russia-ukraine-talks-in-abu-dhabi-says-french-fm-barrot",
-    "https://www.france24.com/en/europe/20261108-europe-will-take-part-us-mediated-ukraine-peace-talks-abu-dhabi-french-fm-says",
-    "https://www.kyivpost.com/post/89491",
-    "https://www.kyivpost.com/post/89480",
-    "https://www.politico.eu/article/europe-will-be-represented-in-abu-dhabi-talks-on-ukraine-french-foreign-minister-jean-noel-barrot-says/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://www.thehindu.com/news/international/europe-will-be-represented-at-us-mediated-ukraine-talks-in-abu-dhabi-france/article71681017.ece",
-    "https://news.google.com/rss/articles/CBMihgFBVV95cUxOaHhHRThyS3A0V2gzd0tLUm1MSzRfWUozQXZIZHZHanFUR0gtQjZJV1hNd1NZZlhWZk02UGR1cG4yN0QtcjhuSjVaVjhHb245XzFEU3VkSlpnSENzcHEwblRtTDNrM1ozRDFERjJzVmxQT3BSTFhweEtTeTZYN0p4cTNNaG4xUQ?oc=5",
-    "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNHo4SnlRQjM4anZlWXZDZVFPbVd5YXFyRU1wZC1fZkRVLXlLMkRxcGoxVHdlLTRha1hWMmlod1h1Uks4SjIyWVY2Qk5tN2oyZ0NpZUVHeWVvQklkN3ZMUHN6Y3dxWXZUNUh2YVpVZEtQV3BaSGh1M2lfVXREMU9RdGJEX3NoaXJXdDJYN0RkZktCV1FtcVNWQXVyNmstcGtLMVZiY0J3?oc=5",
-    "https://www.kyivpost.com/post/89489",
-    "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1wQUZNYmlaSXhRVFdtTGg2VHF5ODl4Q3FzbVI1Ulk2Tm5oTVY5TTRDMFNfRjR5TXo4c2dqOE9KTVk0TlpDelVDNUhUVURJeGs?oc=5",
-    "https://news.google.com/rss/articles/CBMikgFBVV95cUxOdnhuM1FTZlRNamdKVzZveWZZbzMwMmM3SjNrMm5HSG5KaVdIVm9JWHRWMXNxN09tUVBTam9PSFIxdlpJUXFOaUM5X3hiMEF6S0lwN3NkbGYtUUpEZGdCRFJMcmliOV9VVzBrMU1PTmRUa1FGbjJraElkZV9mMDFTTlBjVC1ybmgyZlZkTTNvMEoxZw?oc=5",
-    "https://www.channelnewsasia.com/world/europe-us-mediated-ukraine-russia-talks-abu-dhabi-6534261",
-    "https://www.kyivpost.com/post/89475",
-    "https://www.lemonde.fr/en/international/article/2026/11/08/europe-will-be-represented-at-us-mediated-ukraine-talks-in-abu-dhabi_6774979_4.html",
-    "https://www.theguardian.com/us-news/2026/nov/08/datacenters-fossil-fuel-pipelines-regulations",
-    "https://news.google.com/rss/articles/CBMiygFBVV95cUxNemRXY1YwX05mZjJMTmhleHJCSXpZT1ZFc0IyM1dfc1pqV3BTUGkwZDdmYUoxaVRHLUIxLU5PWlhTbllfeW1SbWF6WlJOVDl4SHRLLWJSeWQxdGZaOU1FajVPLW5xajlmSDZONUZYSEoxMXlFeWpuLU5EcHg2RGluRjItcVF3LVN2d1MyYTBmU0J5eWFNcUJSV1NsMVZEMjE5dHhRUS12aEFFNFFJdnhpWkRoU2drUUllZC1XMEtKTEhfY1NTbS16bDVn?oc=5",
-    "https://www.euronews.com/2026/11/08/condolences-and-solidarity-european-and-world-leaders-react-to-krakow-shooting",
-    "https://www.kyivpost.com/post/89479",
-    "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMzJhMkUyWGRXYVlNTG9WMkR2S2VEa0tGVG9GVm5DY0F0R3BGdmc5b0U2YUl5X21xdVN0WnNNN2pMbTA0eklJSEpCMUktUlR2T0lJZVNTSlYzMTZ3R3JQTmNka244cE1Yd2JQY1NYTWprUm9qcDZRaFF1VzNDV19INWg1aUZqTHhtdElrSllYcUE1VXFJOE9nNHVlN1FwcC1IM0RKUVQyQUc3REU1Ny0zeWFOVWxGdXpibmJ4Qw?oc=5",
-    "https://www.kyivpost.com/post/89486",
-    "https://www.aljazeera.com/news/2026/11/8/russian-strikes-on-ukraine-leave-hundreds-of-thousands-without-electricity?traffic_source=rss",
-    "https://www.straitstimes.com/world/europe/europeans-will-join-ukraine-talks-in-abu-dhabi-french-foreign-minister-says",
-    "https://www.tagesschau.de/ausland/europa/ukraine-stromausfall-120.html",
-    "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5Oam90M3hpcWRWZjNsOEpmWXlCWkduWUhyU2NGa0JMYmxvTEtfVzNuc2ZuVktkOE80ZUxFbU9teUtOZjlMZ2haOE5rR2gyQQ?oc=5",
-    "https://www.kyivpost.com/post/89484",
-    "https://thehill.com/homenews/campaign/6206385-alaska-dunleavy-vote-update/",
-    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUlFnYVBkWHBXdnhJcHBhOTM4U0t0WnZHVkYwY3FQc3lUd3hpallTaHFGN1BuaVFWUEtITnVDSWFaWUdTZktXdjg5MUk0bWtsSkFsYk9xS21Lc2N0cnpPeHBEeVZDdW5RZ1h0NUs3Sk8wbGhiTmtTQjVjSjRrcEVsdTNjMk8wTDRuaDUxSlFrT0FvS2VsVkZVVVNYUmpXaW9jbUZZZGVzVzBDWE0?oc=5",
-    "https://www.kyivpost.com/post/89347",
-    "https://news.google.com/rss/articles/CBMibkFVX3lxTE9JV3lDUVpZVXY0aUs3R2NtUDdKV1RTczJUaFRqdzkwZElYclVQMkRPeFdkcmdoRmhrSDFMU2xUTWZLdUItaC0yb0JWeVpjQm81cjdZMlBJdllHTHYycktHdUlFdEZTdHlHdklLdDZn?oc=5",
-    "https://www.politico.eu/article/russian-strikes-leave-600000-in-the-dark-in-eastern-ukraine-dnipropetrovsk/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://www.lemonde.fr/en/politics/article/2026/11/08/2027-french-presidential-election-jean-luc-melenchon-energizes-his-base-and-seeks-to-broaden-his-electorate_6774847_5.html",
-    "https://www.tagesschau.de/ausland/europa/russland-nordkorea-104.html",
-    "https://www.nzz.ch/international/iran-krieg-jd-vance-soll-mit-iran-chance-auf-verhandlungen-ausloten-kaempfe-in-jemen-vertreiben-immer-mehr-menschen-ld.10021246",
-    "https://www.kyivpost.com/post/89469",
-    "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNRkt6ZVAwZklUdlJidEQ3OWZKSGc4aG9XV3JBWWprSkxHLVZKXzBkRkdJZXBZYnlTUEFiM3FmUFFQSTRXanpyUlcwYnhRRm5RMGtlN082a1Vna1ptLVMtMWttWDcwandZU0cxSERWMGlhYm5kZjRCcDFwek5IZWhwT0dOTTJLeHF5MV9RMG9sNFhEdEJRbG54NXQ5STJKNlNoVWhDWnFnZkdLRmpiWkNqMmktTFVPMGUtSUpUVFk1aXpIWTlFXzBRSFltXzVUbEhOZW8ySTl1SVgyb3o3ZWVPRnBXcEhoaVJuU2xiZmE4V2JHWG5s?oc=5",
-    "https://www.kyivpost.com/interviews/89370",
-    "https://www.aljazeera.com/sports/2026/11/8/tennis-world-number-one-rybakina-withdraws-from-wta-finals-due-to-virus?traffic_source=rss",
-    "https://www.newscientist.com/article/2597901-antipersonnel-mines-have-returned-in-ukraine-and-now-threaten-the-world/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
-    "https://www.straitstimes.com/world/europe/russian-strikes-cut-power-to-hundreds-of-thousands-in-ukraine",
-    "https://www.lemonde.fr/en/international/article/2026/11/08/russian-strikes-cut-power-to-hundreds-of-thousands-in-ukraine_6774748_4.html",
-    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-ukraine-meldet-massive-stromausfaelle-nach-russischem-angriff",
-    "https://www.politico.eu/podcast/berlin-playbook-podcast/security-sunday-die-neue-front-der-bundeswehr-in-litauen-mit-robertas-kaunas/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://www.aljazeera.com/news/2026/11/8/democrats-congressional-win-could-strengthen-ukraines-hand-against-russia?traffic_source=rss",
-    "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNOFhRcVN6LS1mZnM2TU90RlFSMzBkQTNWX2owLXdJeDJ2U1djSHU5WlR0UVhrWUdZdDZCUklQUlFBYmg0LS0wa3lMSDdPVmxSM0Y0ejFhZ0U5Z1QzRHFFYzlTQzQ4YW1xVHhWQmVVWGh3MEp5YnlKLXhraDhpUDFUUFB6cURsek5mOEtOUUd5YTNBWDN5WWtxdF92RnVLT2V4N2p0NUt6QWgzeVNoa09jTXV0U3hQeVNwdzQ0QTBpYlpkRFlITWZGTGFneUZ6WU8tWVJmLXJLVEROV0k?oc=5",
-    "https://www.kyivpost.com/post/89466",
-    "https://www.thehindu.com/news/international/kremlin-hopes-us-election-shake-up-wont-shift-trumps-negotiations-on-ukraine/article71680679.ece",
-    "https://www.kyivpost.com/post/89463",
-    "https://www.dawn.com/news/2043072/with-stephen-miller-at-the-helm-trump-charts-a-course-for-confrontation",
-    "https://www.theguardian.com/world/2026/nov/08/two-police-officers-heroes-confronting-krakow-gunman-poland",
-    "https://www.euronews.com/2026/11/08/russian-strikes-on-ukraine-leave-850000-without-power-as-zelenskyy-reports-drone-attack-on",
-    "https://news.sky.com/story/one-dead-in-russia-after-ukraine-drone-attack-as-emergency-workers-struck-by-moscow-13609678",
-    "https://news.google.com/rss/articles/CBMingFBVV95cUxOTXdHUlE5M0Q2cjFhcGU5R1NINWNYR2I3YnBxdlZ4emZDa3hjWW1jZDNRV2h4RjVoMFhYNHB1ZEtyejRiWFNUWlFlWDV1RjNzd0ZLTjdQLTZueDVLZDIzbnJzVnZXMW85VjhraHFWSWJfYWRoWk1HbW1QNHdkeU5BLV9YdGRFRHBYQzVwV0E3dDRYTkJFcVJWc0dqZW9GUQ?oc=5",
-    "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYy1XR3JIYUJCNEpOR1czaFdQTG9OSHRtYkZiWnd4UzlMcXhlM0NoNlZIU1ZOVFpSdzRTc2Ewa1FLWUlERXNxbW5BY3JKMENwTmJkYmxpbG4tQ0QyS1JmdWRmaHU1VjduTkRFck02STFIeGVBLVVGeHdZSHdXMERWcUxsS1hKdXZRQlZESXd1S3A4Y2gwVGs0WWdQUnZBd3lVZWV3Qnc1X3pvSllFTU9UTnV2WndQdUdVdV9xZ05rYWFudVoxZkM4Zg?oc=5",
-    "https://www.euronews.com/2026/11/08/rosstat-hack-data-obtained-suggests-over-390000-russian-deaths-in-ukraine-war",
-    "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcXVsdWRhRmVQZnBUMFVob0dxNFJ1TUgybVN3WmJmeWlCeE5uTmw5TmU5T1pTWS1OczJrM2FGUFFNUFhvbEs3OXc2R1JmczBHVWYxZjZWQU1obDNfZDJqcHZ3Z2lnX3otMTVZQ1JnY2ZMV0ExRmVTVnVGQUJZeGxJNjA3VXh6cy1XU2c4Tm9JTkwtdmZaVm41dTBkUFJ6TWN6X1g5ZWl3bXduODlLc2tNSXhVUQ?oc=5",
-    "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeEUxVTdMN3NIX0NsMU1RSGFDYkp4TnVWdnJlckFobzh1dENSbzhzSFpod3hoN3NkYkROUnNab1MxM2dyR204Uks2cmcxLUI1ajdQZWdIdERqbXVMS2RJenJWSS1QZUd6ZEd2bkc1d201Tks5VkhRTXlBQTFURU52WHg1Ym14QnlYMkItMHpMSUVkM3NleEhFaTNZcC1FQ0pIeTJGR0hKTXUtSktrWFhWSkRFcC1aWlBxU0E?oc=5",
-    "https://www.nzz.ch/international/krieg-in-der-ukraine-die-neusten-entwicklungen-im-liveticker-ld.10021245",
-    "https://www.tagesschau.de/ausland/europa/ukraine-verhandlungen-abu-dhabi-100.html",
-    "https://www.theguardian.com/football/2026/nov/08/crystal-palace-liverpool-premier-league-match-report",
-    "https://www.straitstimes.com/world/europe/russia-says-hit-power-substations-in-ukraine-and-three-ships-in-black-sea",
-    "https://news.google.com/rss/articles/CBMimgFBVV95cUxNOXJsQmZUbjREMUxPZUZwOUZGTm9pOVhXZDl5STI0MlkybXhDemF4ZWY2RzdKam4yWmFuVkczR2dXWWlLcUJucEJVMWNpZkQxeEkxZTAxc3JjVW55T1FfVFM2RjRseWVhVHhTQTRCclY4ZmlrcDVDZm9SZVNRSHZDNEhTU2VQMjNMa0tUbmlJSWloMl9NRmI4OUJB?oc=5",
-    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQOVRrRnRUbzJjUmVxN09hUXBRLUVPTzc2V2tMd0RwVHJhTkM4SzAwME9acXJOOHdYY2c0amZQVUhnejlPMzhHMGNVcWxiQVhtTjZZQXpXR0swQmlqb1BBZHBHOHh2a3BmMHZrYmVGcHFQYjhiS3M1aENPSkk0dGhuSzRvN1ZqdGVDYWhQWXN4elljeE5wMWxxOGFPMG1Fdk1MaGxfUE9GT1dROXBsWlRjS2R6cnotTTJl?oc=5",
-    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcmt3dmZtVkhucHJYZW1NSGk0SEF0eVlwdjJDYXpaYU5jUlFtaWpCUU1mQzRCVjBYWWJBaF8wcEpqczlSRjNKdzVNVHJfMFZUeUlBYTBBeVJaeE83R05fcXlUY1FfSWljdzRqdGRBSjkwYmNEOWozY05qYmlMOWx2NkVQcnk1cG10aFVrVm1TSUdva2U5Z3BnaWNHV0xRZmRBRlhQdDk2bUdOYWdlZFFzTWp30gG3AUFVX3lxTE1hbUtqNlV3YUhIMTdaQWYwWFBoVjExazBXVjZWUFlzNWd0Z0hMbmZ6OU4wMVVKNjBLcEhGYTVoSE90bURVbVZFSkpJS2NDeXRZYUY5SGNUeTIwc09kX1h2RGtFaWxkRnFVOWVRWllmbWdkc1JBUkRCME9hSlNJOUZXdUVmbm1xYlNVTlV1eVYxdmJldWxrYXNZbWFYQ0diMUIzZHAtNnpxXzU5cDFCR25XSkIyZnNIaw?oc=5",
-    "https://www.straitstimes.com/world/europe/hacked-records-show-400000-russians-killed-in-war-on-ukraine",
-    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxONkpSY1hLM2lUdWNJT3VvODMwb2d5b0k5amJ1ZTlzRGU3ZzAtbl8tRUVlWWVCbXBkZGxCcXBDTzRSS1piWFl1RzE4TFk1VWs2LXlGeGRJVmczUGQyN21yTy13TDg4UDZpcXFJSGVPa0MxamEzZFZpbkVDdEZyT2k1djI2cHZnU0F5ejJyaEdjQ0hzUEVfOVQtT1pINXRpc3Y3RXpRcDdxVl9hQQ?oc=5",
-    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQa21jMVpnVjNkZGVCQ3JSdDh3NmxMM05PSlc4ekt2ZHRmYnhyU0FOSnVpRWV6dFI0b2VHa3JPb1lBTkVrSGptZXBSTzJoRmNOWHRkYk95Nzd4a3ZMTlB3Y3F2a3lHbTAyWkgyQVdYSmszOXBBSVFIX3NaR0pfTjdJNm9RZFlUNkZKWTJXRm01NzdWRFJySTc5UUZQcU1RM3BGZVFBLTRiWHJlRDg2N253Mm5n?oc=5",
-    "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNOFRQX3g5cXBZbGtWaGJkZWdicmp2TkU5eEFFTkRkSVp6Uk01ejh1SjBQMFVaVFlBZWkwWUV2eUJLSkJ5MGg3dlB5WWlGUmVNNlZxZm40bW5NaUNDYlpUbFdrZzdOckhhMko5RWR0YTNIWlRVdXRJeFhtMThYcWtybGVQRTNIcWg3ajRROW5ZbEpnaHQ2YkpzUWx3UzNjVkNySzU4VzVYdE9ibXN0TXVzZlozTkQ0dnNrT3ZCWXlhUWtuSXBqd3FUMDNNdTJ5Z2doaTZhQmlVU1dyRXBualItNnNjeUhLOXJyUFE?oc=5",
-    "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWUpNNmdBeDVBWEZTUnlDMzQzNkFTd1ZsWHJ6cnZSQjVkZEZvZWxEWXpJcWFYbFRQU01GZFhaQm9NbFA5UnZubFpISW8zZ19TcTJrN0R1bHB6SmZFY1o4VlJ5NGl0RThwT3lYcU5qb0RGMGFwTkVJYUdwbWJWUFhKc3F1RGZXeXphc05ncnVHekt1WDlxdWZOUGUySUZRRUVudjBTWmFabw?oc=5",
-    "https://www.axios.com/2026/11/08/todd-blanche-doj-prosecuting-democrats-oversight",
-    "https://www.france24.com/en/ukraine-russian-strikes-leave-hundreds-of-thousands-without-power",
-    "https://www.tagesanzeiger.ch/putin-und-seine-kriegswette-er-haelt-am-laengsten-durch-699224083965",
-    "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZ1NnNTdWOTdCT2lPOXg3dlU1V3EtSmlfcDhGdHUwZUpuNmVvcFN5dHFOUkZkZkpvM3lmeG1ab2YtLWxiNWtyMFd0WVo4eVpzZTJSb2RBWk40MkkycHU4ZFoyMGtraTVFc0g0cEF5Smg5b2d4OThHX3U4dkFyT2RLMW9zSUFDMHRyNE1NVDV4Qml4SURFbDlfOUU3VHZzWWppaVlWd3FuOGJjXzlZQWRQN1p3?oc=5",
-    "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSWFTNnVoOUhvbVZXN0lVc0ZvcmVLT1pUMW1TVkVHZmZFU3ZocWpnVklGblFTVXR2WWg3MXJraFNYYVA2LVNaanQza01HRXJ0OUNCWUdoUjR4VmJPanluakVJNkltdGdtZ2tqcHB6YklaNWphRmlTT1c3bTBOd3lYV0tQU2VtcGxhRFZFRUVscXF1aDM0YzF6TjFzUHp5ZDBXcDRlZ1RXVlBZeDFNU2hwaGJZVdIBuAFBVV95cUxNSlhrQkRrSDhJeWtXLUxPSVNQTEMyMWpMOXNnXzZNY3FFZGh5UWlLMVhJQkY3STJibHN6b0hvbVkxSXRrSkhOclhOa204T3ZzSWRRd0ktb1lCemFBaTIxdGFmZmVDcUU5TGNnV0JqQXZLV2x6dzlCZGhfbFB1SnVPaTVUNnBIaFdlOTRpUVFuOE0xMzFVdU56VVdvS2w5V0ZfdjlhTU5rQjdWMHRNWldfeTBzTmdyblJG?oc=5",
-    "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVTRaSm9xLU5VLW9QS1JJb29JemVKYkNXQi1mVUtTR21KWUg4Rlk3MHA2Q1QtajVwazh1UThqMW04RWdFTUtsRldLeGNOQjBwdlVMOFp6N0RXMWR5Zl9DaEdmNlZIMEFGQmFleGRRXzU1Z3BlR2x6bThoNjVuT2hlVkJ1TWdSZUdleFE4QlVrMFRJZ9IBlAFBVV95cUxNTGFfdjFlOWxTTFhWNURmVUY1YWd3SjZVZ1YwMUVDY2ttZ2hhVnVzc21VNkNvYWZBWHk0Y29Ib1MtRUFnaVB2YzVMYUpPRkhvdU1zUEdFQzJpZFYwZGlhVFlaVzdZX0EzTWpRckc3bWxMdG9PTGtGNEtSdWlPMWdxQ2lEdEI5LVlBU3U4T1hhZDhhOVdr?oc=5",
-    "https://www.kyivpost.com/thread/89494",
-    "https://www.scmp.com/news/world/middle-east/article/3373722/israels-president-herzog-gives-gadi-eisenkot-first-chance-form-next-government",
-    "https://www.semafor.com/article/11/08/2026/us-to-hold-trilateral-ukraine-talks-in-uae",
-    "https://news.google.com/rss/articles/CBMiowFBVV95cUxQLWtfMzlraW41WnI0LVVCeHp2dnZNN1VMZTRpX09vX2NYOG1kaV9UamNqYW1WYVhaQjNjMFBmMUNRZC1GVUJUZHlXMVczQ21GcVhaUmNVdjNndGdpcnBrNU9obEY5VFZTTi02VWJtbDNxXzFXREk0WGhyNU1MSk1rQVZyV1o5Wk1pSlQtWlRVQ2xmRG96cnZPNC12RURzUDlDMy1Z?oc=5",
-    "https://news.google.com/rss/articles/CBMiigFBVV95cUxNYmVNZzU2YVlPQmgxLTh1VkxOOWdRcjJMWVhCaGNIX1VtWl9DeUd5SjR1TjE2WnpDT3EtekxEaWtvYTd6Z3BoMVhNNDlHREhlbkxtTHJxVGRiRHoxNGhud2h4bEJvZWRmVnJtOTllLXJPV0E4NS1PQ053SHRWRV85WDdHYmxEN3dYakE?oc=5",
-    "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNm8yQ0YtMGJKeEdYeExoS1BCMFJ1X2lCcnMyS1VSTmpaY3FUMzFFcjR5WXA5QTNoZHJTRkVmdTg1dkF3SXYzd3pISk9EOUJmSTVVSDJ6R291SWVjRlBEQ2FweUFNUU9HbGthMEpodHZSWGRGemhSWDJTUXRBZDB3dDA3N01jMUlpNUVNWUw5U2NKcjJ4dVRrNjd3RTBRR0FLRjg0c3lQd0pVWmJuTTc3NE5RQ0REcHZ3dlhIb9IBwgFBVV95cUxQNEZZdW8xdTZfR2RMbmIxZ0pjYTF4dUpuRUdqa1VrRi1ZRWxpcGNYNnFyM0hVX1JVVzQxVWx1dW1TM2E3a1lJWXdINmRnZFpnWEFLYUxIYnhuT3UyU1ZiRFNRTGh3aFRhSUxiN1FyN1RiR1ZucXVtZnUwSHFPaUtJVTQwQ1NoZ2dqdkFKVHpqSmx3MDl1M3NiUVhhVTdxVG5xU3llTHJoMW8zV1Q2amxyblNFbGpxdVNxNlJlZGR6UVFCQQ?oc=5",
-    "https://news.google.com/rss/articles/CBMingFBVV95cUxOVUZrVGpCbE9rYmUyUGM3eDRHMHl1eDV6Q2lTNUdsVjcxV3h3amxVNmtwT2dvdmljWDQzNTV1UjgwaHNYd2VXTlRHaXAwbmhMNnRjNlIyQzdXWGlyaDdSTDU3NkhrLTdiUFJaR2p0b0V0VGVtRUpEaV9wN0xZbkFsSm1kLTRQR2ZzWDZUYlhocjNWYmt4T0lHbzR5alphUQ?oc=5",
-    "https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia",
-    "https://www.tagesanzeiger.ch/drogenhandel-wie-kartelle-die-geopolitik-mitpraegen-469247482125",
-    "https://www.tagesanzeiger.ch/kaja-kallas-trump-respektiert-nur-staerke-441199908936",
-    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-kiew-verkehr-rollt-wieder-ueber-die-nordbruecke",
-    "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOcGJ6MnZzZWRHOEVfNGtiVVVtd2p2dzhDRHJrLXBEVUNCTUlINXhndmJRcFJnblNheGZmWVdKbTdJbWhGaWN6S0txM2NwbDNrUEF6anZVQTJVVnZlcnNXMXNTemdlRlhtUnd0NXpvZDRLeWZNdmFPVzdyOG1jak1zNkdnS1p4dlgzS2JHQzEtbzkyUXNtYVR5NGV4d21ZNnBSbURMWXNDd1V6TWxFSXpxQlZLY0p2VFpoeDJHay12RlYtYzA5eG1RaS0yQXNScDZI?oc=5",
-    "https://news.google.com/rss/articles/CBMihAFBVV95cUxOWmRmNzF1aWN3WHY1Y3g2SVZUc1lLYmhteFNUUkhiQjVydHVGNGZEME9MZVFzNE50MWRTWmNHT1VzU3IyamFGR3dVWU4xbnZlcUs1cWZiNjZyODBuZE1fOE9ieDc2SmpTQXlnVGdZeGVNVDlrb2ZQM1RPUDBmSDduZ1h5aTE?oc=5",
-    "https://news.google.com/rss/articles/CBMilwFBVV95cUxPa0p3OEgwSjk4bm5EM0tSQjZIMFpYSC1RRm9TVnZUSWtJTkVEbS1wbzd3ejRPZkh3RVI4anZLY3FMYW1HYW94b3hwN3JyNFQ5TFBmMGxyWjhNbWtsOWF6MERnMFF3MnBWT29HeXNtczA2c0h4NGRCU3NseHRWTHpITGVPVnVLZEZ1ZnVKVnBlSzA3c1dPYXRv?oc=5",
-    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQamM2Z3RPcWNjUGQtYTk1WFZHNGNlZUc2M1ZMRk1wTURKTE0zMnZVU09aV0tlMy1BanFvY0pTTVZVRkdvRVppTW84X0dQQUZUbEpVUWFlVHVfOVNjMGtJN0tRQlVHQ2FyWkczdXZIRG1wbkl1R0g5RHQzNldEeUE0MVJxT2RWdEdEcUU5TGdVYU5Vc0hIbS1hWFRIWmdSUTVQOEx0dWFfZ01IZmw5LW1ITkJR?oc=5",
-    "https://www.welt.de/politik/ausland/video6af16bc4a389bc337cfcabb8/ukraine-krieg-trump-verkuendet-baldiges-kriegsende-und-stellt-ukraine-auf-gebietsabtretungen-ein.html",
-    "https://www.euronews.com/2026/11/09/europe-searches-for-a-seat-at-the-table-in-abu-dhabi",
-    "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8tSnpPTGxPQkRvbDFGbTFSQy1pZ2YyVTdxeWtOUl9ZVHhTRWhwWWFOMW4zMEllSlBHbGExWEh4Smp3WllZUHpnX1ZXSQ?oc=5",
-    "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-trump-kriegsende-kann-grenzen-der-ukraine-veraendern-faz-110683325.html",
-    "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRmlIUWZJTnBTM2w3MnBwRHExS3NELVlZT3FscU5kTWJhMjA4eVJyQ0pLUUhpVzZ2TXpsRGt0S04xWHd5R1BMcG1RYllYWFdEVnE5djlqWUY2cUtGN25EclZKNk1ycWlnWWZ1MTVUeHE2ZDQ2X0hIU1pOZkZMWHYzeWhXRm1YMzNMVWtVU3ZudDQ1WDFtd2duN3RteUxMVWs?oc=5",
-    "https://www.euronews.com/2026/11/09/europe-today-poland-in-shock-after-deadly-krakow-attack-ukraine-peace-talks-in-abu-dhabi",
-    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVThnaFZKWUloX1luc1FQVE5DOF94UVZlZEQ3aFdHUWFndVprVUh2d0dCd3pnaEg4ZVA4eXFrcmNuNU03OWNuZ3RrTGl5X2pwd1hhTVdRUnN3bWg5d005WHpYLTh3UU51SFF0VHJpbzRCZURsNVB0SXFFcFZsaXdRUVpaMHRFbmE3VXJTcTNTS0JFQjJPZUR4RHJGdHhaVXVJX2t0anViYWY4WXNjWTRvdHd6cTlWSm5LT3lha3FUdHBMQQ?oc=5",
-    "https://news.google.com/rss/articles/CBMijgFBVV95cUxOYVFRUXF6MDg2d214dURFYU1CU2YyT2JlY0M0Y2xweVVLQnNob0NOLUpUTHE5ZlQ2dVRSQWZOVmR3NWpBYVN2MTFlaF91ZVZVQkRUQXZqX3o2YVpYQXJTN19IQUQxbW4tbV84ZUlGZmJpbXh6eFpPRUJNVzduVmY1Y1lWMko4TmlhcVhuRXhR?oc=5",
-    "https://news.google.com/rss/articles/CBMiswFBVV95cUxPam15UGlSaThmRVVYc3JqMWFsZDhRQlFqd1RBR1VGclMtQmxscHdTbzF3cXJWcF9GcE9CZmVreHc4VE9yZnNHYXJkS21rUHE3R1c5cVo0NU42RnFxLVBZdW15RHNpT09OWlp5UmNueFk5MEZodHFFV3dxOHJOZWFXcVpsTFVIRkszWGlabUxLd0dxT1FWVllrLXRlaDhMRTBCTDE4OHdYV0Q1cHlqUWNxc3hxNNIBuAFBVV95cUxNZ2pPRk51VVdsS3E0R2VBZGpZeVNvcGlvX1BKYzYxRlFLeFZCNy1Wa0p3aHNVX2dBZHlBYkluRGwzblh6aUFKYUw4bm1INXloRWtKZnFQSjdWT0JsY3prWlF4cTZhV3RaY29reEFhNnJZbXlvQlJYSXVvTGR0ZWIzMERkMW1tRVRVZlhWQmlCZ1RpYnpRa2hpc3NOTmMzMS0wbWw3MlNldmo0WmRmUl9PczNJZ1RvZHRv?oc=5",
-    "https://www.kyivpost.com/post/89511",
-    "https://www.tagesschau.de/ausland/europa/g7-paris-100.html",
-    "https://www.zdfheute.de/politik/ausland/ukraine-russland-konflikt-blog-102.html",
-    "https://www.thehindu.com/news/international/russia-hits-power-stations-in-ukraine-vessel-in-black-sea/article71681628.ece",
-    "https://news.google.com/rss/articles/CBMiowFBVV95cUxPME5vLXhiU2ZIaXl3clh1RGtjdnpjYnpKV0tKU2ZNZ3UtUUJub0NCQVhrSnBzSW9xaWFYRFA2cHFQcXQyc3FILUtMTXR0NTJmTWUzVzc3cDBYZ3pfZHVFVmhlWHNWNlVOYkJmS1Z4SWN2Q1loeVpya0lTSnVxLUJYZmJRRkMtRGN3c05JOGNWRGNqNHdhTm1iREc0eHdJZDdDOEZB?oc=5",
-    "https://www.kyivpost.com/post/89506",
-    "https://www.spiegel.de/ausland/ukrainekrieg-trump-deutet-etwas-andere-form-der-ukraine-an-a-a9973bbc-b103-4162-89d1-d76dd743ab3b#ref=rss",
-    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSWJRWkFlbi1rdHM1cUlndml0eUQwV2dhSkFXRGRkZWFsSnJtQWt2U1B0WFphZzR2QkQ4c3NnNGxwdnAzVkNoaDNLQkFsbHhLRHQ4WnhjWlhRQzVYR1pmcTFsdVRYVHhIXzdZWEpZMV9ZeTNVVUNMdFZ2YzIybC1fZE00Z3lzSWJXRm1GNTVIaW0xa3FJLWRDSG0yTXlLb3BnZWNEa0tPWld5UdIBrwFBVV95cUxOdzUta2toeDVfblFVVG1sc2ZFWDI1cmNEWnFxOHBnRm8xVU55aDQyaE10QzdWUWJUWUt5Z2tIYVM4TUxESFFMZGhNNjQ4X05NMXh1U21VOHpSOEluSnE5ZEpLVjlhZEVzcU9zM3lUVXJDVkdVbVRMdXN0WWh2a21ITEFBdGdRM1dLT1JWQUhKSUZOVVM2WGluSFhvZ210Q25wMDF4a1RaRjZnSml3VFBJ?oc=5",
-    "https://www.kyivpost.com/post/89501",
-    "https://news.google.com/rss/articles/CBMibkFVX3lxTE5xOWxKckdHUlZ4Y3JueVNMWk1XYzVUWVN5STduZkRzMzY3NGFHU3VyMG9oQWlqcnRud0JGZEhiU1F0cFZsSkRqdjd2Mk56VnQ4a21USUY5V2FxR0FkRjBxczJkTGJHVHh3c2xnUnp3?oc=5",
-    "https://news.google.com/rss/articles/CBMirwFBVV95cUxPOU81TTltam9GYlpvQUNvd21RQS1kcWczQmRIRktMM0tUa01ZUEtvclVTT2VEQzFWQnliOUlXU2FmWlBZNEFtMkpwcm1mQV8xbm5vZmlZdEpMVXZsOEdicVhhS25NU2k3TDNwanotMWlfSnVFWHBHcVBkcmMwNUdpSkVzdGQ2bU1rSWJIRFdqakN2cmdNMDRJXzFsX2VnM01PdUhGRTBlYVRNNllQQlVn?oc=5",
-    "https://www.politico.eu/podcast/brussels-playbook-podcast/le-pens-plan-to-end-eu-diplomacy/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQYXBma2x3bjdhMU9PRmZBWG1yTG9teVV6WXRNNXZzVHFIYmR1RFdENFZJQk5VSFBqcTJMUjVJQnFib1FqYUhyYlIxQ0lDWGhTLW9KVkJ5ME84SzYxVmtNeTF2eGxWazY1MDR0eHdwN29nZVNYSU9saURHVHJudnJreVNySDVxelk2bkVId1E1WTJOYWNNSVcxMDZwZG5IdDh4YjJsOFNLckFDdw?oc=5",
-    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-trump-ukraine-wird-etwas-andere-form-haben",
-    "https://www.nzz.ch/international/ukraine-trotz-kriegsrealitaet-sieht-trump-frieden-in-griffnaehe-ld.10057858",
-    "https://www.nzz.ch/international/fast-eine-halbe-million-gefallener-hacker-erbeuten-daten-zu-russischen-opferzahlen-im-krieg-ld.10057840",
-    "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeV9QcWdhVTVpQXBJWm8xNDB6MHdxMUlaejhOeHFIZ0R1M0ZvUFpBMlpBMlRwVmNvQjdRemUxd242eENOY0xHMG1DYXRMMmVxeWVWSXhjUTBKdDlDaHFKN1VxZmpUd1cxaE1yUl8zVHROWlZ6ZElKYmdOekZNeWVsWmJJTmxLRmVCbkR4S1E2WHJDSHpMcUVSZDBGeXo4SDhoZlF30gGjAUFVX3lxTFB5ekJ5UEsxdjNRR09vX3VJS2o5RnViUWU5TGNCN0VJbF9QWDRaSTJYcW9USmRwMXc0T1RKbFQ1QjhMd2lRZFdFdDRuLW9pQlNsZFBHaWgyaXNJX3FJTDZMNUNYTlJBRzZqUW5la2ZELTcybG5URC1wbGFHRTNKaXhkT29ySmczN3VWaVhHclNsa3A0dEo0cXZ3ZTNBLTlnc2Riejg?oc=5",
-    "https://www.dw.com/en/g7-ministers-meet-as-europe-seeks-greater-say-in-ukraine-peace-talks/a-79894960?maca=en-rss-en-all-1573-rdf",
-    "https://www.straitstimes.com/world/europe/g7-allies-to-assess-impact-of-trumps-midterm-setback-at-paris-talks",
-    "https://www.politico.eu/article/vladimir-putin-europe-rift-russia-ukraine-war/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://www.zdfheute.de/politik/ausland/militaermanoever-koalition-ukraine-krieg-russland-100.html",
-    "https://news.google.com/rss/articles/CBMivwFBVV95cUxPODdndDE3UnlQVEUwei1ra3JmZi00ZHdrSHpGSzdSYlYzWG52aHFQRXMyZmF6U3dONG5tMk5nSmJ4UUlzMExEQzlwY0pLamJvSTVqUW1wZUtEZEpYNXJlMWloR1h3ZGlWVVc3NnZiUG1VVVB2RmZCWFgxQ2dUWVRfY2V1VmJQaFVRT3l3Q1pUc0NJLWJXd05vRjhuQWtZelFpYW9tek1jbzVaMW01NGFsOFBOeDJuZEwzSVlEMzIzSQ?oc=5",
-    "https://thehill.com/homenews/6207193-trump-blames-zelensky-putin-hatred/",
-    "https://www.jpost.com/israel-news/article-914281",
-    "https://www.thehindu.com/news/international/g7-ministers-meeting-in-paris-russia-ukraine-conflict-us-israel-strikes-on-iran/article71681281.ece",
-    "https://www.france24.com/en/france/20261109-europa-us-ukraine-peace-iran-paris-g7-ministers",
-    "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbnYxU1hlQ2Vib01aVVJuZzdydnd1d2ozanJlbklReFpISkNJeG1zZFRSMkN4d3dwcU5EMktnLVdzOENRaDRHUjFwWm5vYS1pWWQ5OTF1NDZMM3gydm9YMVJ4Y2dxYUxoU0N0S2ZTZmw4eG5aSFR1TDdzSHhtSEJhT0FCelc0OFc4YnBmbEVhSmVRRVU5WjMzc25HX0VZaWRwWUx5WExHTW84VXNNYWpZcXdFSWVSY0VxYmdUZEl0aW1lRkhiZmRubUdvM2hJdHphdmttcWgwN0FZbFVWbmZF?oc=5",
-    "https://www.euronews.com/2026/11/09/eu-to-send-joint-team-to-ukraine-russia-peace-talks-in-abu-dhabi",
-    "https://www.france24.com/en/europe/20261109-we-call-it-war-life-balance-daryna-s-daily-struggle-to-live-survive-in-wartime-ukraine",
-    "https://www.euronews.com/2026/11/09/trump-says-post-war-ukraine-will-have-a-different-shape-ahead-of-abu-dhabi-talks",
-    "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbHVpZ0ZLRGh3M2JEdkhaUEw1ZTVDNkNxNG9RZXRGWHlVZk01SjEwOWV2aWY4OE5nX1NidUxxZ3B2QlB5QW9PTlljSWFBTnFJUnVCQkd0dVdGQkU0MlpTWC1QbnJ6NUJKekU4SkJIWUtmajZPZTdqUms5MHgtV1NpTkV5MmVJdmEtcks3NmZSTWpLWlktQ01qeTRBc1phS2l3UjR2c2JtLWx3VE1adUd4NXpIV056N2s?oc=5",
-    "https://www.kyivpost.com/post/89521",
-    "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZEJQOWFoVGtqVEFKazdTLXNTUVhodjNwd1o3bTc1RVZmUFVWa0VxNWFtNWxNSnhQeXJtSnVURUhnN0tIRW5mVDdNb1JjNjYwS29jZGxnMEVFSGc5Ri0tNGtnSUJLTnNWOFhjNVdOMmI2ZW9ldnhpRUhwWV96VnNIMEFVYlhRMml0eU1FVjRTZ0l3a3hmVTBENml2aXM0NlVJOHk2ZlgtV0lEZUtsdzBNWDczUW5PNV9WWHc?oc=5",
-    "https://news.google.com/rss/articles/CBMiogFBVV95cUxNblY4cE5mOGFyVnpPRXk4V2xRWS1uRWt1alVZbG1qVUxKSmVTaWVodDljU1pMMTJjUlhUZTQyYjNGVFNCbFJCSTdUUWh5OWxwbGl3cGExanhPYVVkenY5VFVrdnhseW5XR3EtTEZOQWt4S2FqVTRpUlhBV2c0eU1EVnhycFRyNGQ5X2ZfY1lFOHpUbkJlUGt3OFVLbTZ6dFU5cnfSAacBQVVfeXFMUG9qYWNOMHk5cElwVEVaRkZfV1duR0JZdk9kWTdueDVUby1qM3hvekowcnBnWmFsdWU5aHlJU0hVY2lGOGlKMElYSUVrdHZDNDBkOXV6eGhPQmRvRUxBMzlJNEU3QkllUWszeHB1YS1sWTJYWWpXRTRkMUdmd2lrUFN5MzcwTTl2b01oR0tKRW9UWGZmVXRvM1pvYXRjTTB4STBVNDZCU00?oc=5",
-    "https://www.spiegel.de/ausland/ukraine-donald-trump-deutet-etwas-andere-form-an-a-a9973bbc-b103-4162-89d1-d76dd743ab3b#ref=rss",
-    "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOVRvYUFQbS0za2RfNkk2T0xkYnVrcFVoNXZ3SzgwN2RpcTlMWDBha3lINTR1X0JSM0JkaldZMjB2SHFVYzJ2Mi1vcV9vamlQd1pOaWNtLV9aYjFlY1prMFh0ME1tZzdFa194dTJVSG1aU0c5bmZnU1BGWHdvbGhIakk1ekxVcjluRTZtQzJIQ19vSF91bHJsbVV4T1dWa1U?oc=5",
-    "https://news.google.com/rss/articles/CBMijwFBVV95cUxOY3V0T2NkOHc2b2treEl4QkdiZ3hkWUxFbUdLZmlfM3M4QWhPTVNEUS1ESEliLWgzd3lDZG1rdDhHZkZmUFBoanc1R2dkSGV1VFV3VHhIRmd5ay1wMzNMUE5ETnl2aHB3VFhxR0xpYjN4dDlIMTY1eEcweVJfMUZ2d3BPWmFjSXljSHRveW1FNA?oc=5",
-    "https://www.welt.de/politik/ausland/video6af18aa353650a498f207c45/ukraine-krieg-es-scheint-so-dass-die-territoriale-frage-fuer-die-usa-und-russland-entschieden-ist.html",
-    "https://news.google.com/rss/articles/CBMizAFBVV95cUxORHhrRVktNHFJd2k2MmxWd0VaS1hvOG4xT2Vmc1o2WHVEUFpJYzlQczhhWEdtSUVVbVRWdnZHeVFJVzNLMnpKRjdmYVZPTGgxWEs1LW9xOWZoUzlLcllTTjJpNzJXVnBTSHR3QkI4d0l3ZVVaS3VrZmNwUEdYRmVPWmhDSEwtVDF1TUh0N0ZIWTBaZlZIc1pEX3F5dGFOd0JCSmU4UFBoU3ZXV0J1cEU0UndDb2Y1UnBMbXZlZmFkUVhyM2RiWngwUG5hZng?oc=5",
-    "https://www.nytimes.com/2026/11/09/world/europe/ukraine-russia-peace-talks.html",
-    "https://news.google.com/rss/articles/CBMihgFBVV95cUxQOE9NUS1DRlJBNF9FaU1BcU5LNjFfX2I2eHRaRkYwOXdLWmdyLU5aUjdLeVJ1WV9nTUQtYVhXNkFfTjQ5dk5hdzJneTJxS0FmNHZKODR0cHpiUTVBanU5S0JGbk5ZTXBjaWNXWGFXN2hRRy13UGZEUWZkUGR4SEl6ODduQXNjQQ?oc=5",
-    "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQQ0VQTmM4VUZzLTMxY3R3dlJtVldUdGZ0d1ZuSHB5X0JkTmN5aVlBSS1UR01aUnlZQ1pEci1XeTdxX3JfaGp1SWFmWElubGxpQi1McTJFQnd1bXh3TDQtU2pqTTdKV21uZUlUM0xYVmctVzkxLU9RUXIxZy1VWFUybExva3RNU05nR3ZVa1VVelBFRVpIZklTM2dQdUFTeVhkaUpuMlJ5dEt3amE5VEZ3VVA2dWdGdGQ3cVJ5aU0zSXRkTmhJc05FTWlsYlVodWxFZ3pCRW1melRKSTMtYVkxRXBmVUczc3dBTHJSZi1rVkMtdkd1UUNzNA?oc=5",
-    "https://news.google.com/rss/articles/CBMigwJBVV95cUxNTkxVRHJyZHZLcHB6WGlGX1F5SndCMTZ4b0ttd0g4TTBxSkhMRXB1SmdVSEotX09PZTVySE11MHlvQXVIWTlXVXJOalRYMDhWT2ttZEJwRHRGQVIxM29QbWozTU9qN0Y0Wm85OE5HODBhMmVTTDktUjdUZkJVLWVLeFNjdFhVRmk2ZTI5dF9BZ0lFekdpbEFmQmkzZ2hGQmF2THBJYjlPSHlhVW9RanBseXhQNXRhU3hDb3BRdGQyeE90aFVhajZOMW9jaFhHVzMwUzdVNUY5M0Rsb0dFRXhuSkMwRm51cEY0ZElvX2RTS1JZMHBWa0swOE1jVGhxVkpMQ0dn?oc=5",
-    "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZjFaWC11OUFIZTFYTV9ZYjNZMXA3U1ZrSVlpdy1idjM3dDdJNnBZbU5PaFo2NVF6ei05WmRhY0ZtMWxxeEdoOXJGRjZyYjQ4VTVzM0VCTHlscDhtWTVUWHp1Ukd2REdjUkYwOFVmZ1lMci0tSGNHcmd3RkxlX0lOSXZoV20zVlZZU1BCMzlIZFVZRlVuT0J1T3RTMzBQWEM5VDFyTnNPTmpkeV81VlMxbFAtVVd0X2pyOEJkNjZGcGFyWE45WnZ0OVg1UWRWZw?oc=5",
-    "https://www.politico.eu/article/french-far-left-presidential-hopeful-jean-luc-melenchon-sparks-backlash-ukraine/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://www.euronews.com/2026/11/09/ukraine-hits-russias-second-largest-refinery-as-fuel-rationing-spreads",
-    "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQcjB3czQwcFNRT3V5cHRuRU5zNUFEdThMQlJpcHA4X2hERUNMUXNWT0RTclh2TDFrMWc5bGhFYy1hV2xSSF9JWnBKbUZmeXp5cTh4R19fYzN2NWpsdElvWWZxR25Qb214OXZJblBrVHFPbC1WdDFIcFhkWWRoRGY4SVZsbTlpZ2lPVkZPbkFZT1FDUVFSeXN6VE9Eb3BlNlBVSHB2Z2dONWtCbkFiaXpKMkV5bkdhRDJ3VTN0N1g2TXNBX0NYOHplNHlDSHpKN2ZlcXBDeEp4Mmh4cW5QSVh2aGJyUTE5Y1NTOWFRSG5fUUY?oc=5",
-    "https://news.google.com/rss/articles/CBMiigJBVV95cUxPTHQ4c3Z0LTFJMlJjbkpsTFlxQVRoVXJjeDlWLWg0d0VIYnJkQjVOb3hoNEtrdy1Bajd6RFR0dzZWbW5Sc25YNXI4dzlFN2hhLVAxRUVuSFM5TmNXVDBTM3hvdHVtYTd1dGxzb011bk9kZzRtT0JIR0s2Nll1elR2QTB2VW5wZjNXQmhYVEJLSy1qSjVwZXFzcnRoV01YbUx2SzF0cE53Wm0wN1AxcTB6Z203WF9YOURNN2YtMHVpUlJlV2FETlZxRzBjQUhXbE5tQXRjWTdnUDJacGIwUHdrNVdfa29tUHQ4ZHlueE83V2lHSFFjS1VvOWNCa3NnQkFCWTNabUJlWk5jQQ?oc=5",
-    "https://news.google.com/rss/articles/CBMipAFBVV95cUxNOFpuckV5cGwzTXdTTWh5Tno3TWJBdy0wMU13SjFqd3R5SkktMUk1ZnJxZF9pZG1sdlV1M01fUWg4M0Q5WlJxVGswOTVFbWdPZHBlUTh2ZFExR21OVUNSX2xuSG92NEJGdzBVZmJuNnBkX0Fqc3Rwd2F3UlZheTVSdUNybHV0Q0Znanh2b3E0OFBzMWdpWGdoRHBfQlVONzAxd3N5S9IBqgFBVV95cUxPVklnblA0N2tFdFFSUjJCQUsxRVg5Zk5GQXNUMlZuY3pUaVg1aU9JaFdXUENaMklwUlpHemVMbzBXTzh4WXBWSmJXNzhVSFlsX082MWN6WGdSN2d4N21xRVFIMUNFMEhxUWFDUEpSWGkzTEowdUhRby1RQzE0QUxqbmRWSG5HQTltdmZfUEhMbUtENjJuVGgwOWJxeWhCUTdpNmVhMjFyMExoZw?oc=5",
-    "https://www.welt.de/debatte/plus6af1beb8d0fb1ac9ce0ec761/9-november-fuer-ukrainer-ist-jede-nacht-eine-kristallnacht.html",
-    "https://www.theguardian.com/world/2026/nov/09/russians-killed-ukraine-war-leaked-data",
-    "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWVhuVmttSzVfc1pEeTZVbDhMQ2puekFLaUc0em1iSUJFU0MxOXF4bVowQ3oweHFDdU9CYzNzWTYwVHdkSktucmg5bGFFYW9NUVQ3OG5fbFpteDduNUdfeHU4NTRPbDIyWjZOR0hXRDJqdWFjZG9hUXpmNUxxbWhhaTR0SzI4Z2Zsd0pXXzRPbXlQdV8xaUdLMWVJRnZ0eE3SAaQBQVVfeXFMTUluVlZqQzhiUVlGSzRnTzZvVWhqRU4zMXNPdGhhTlNxbGVRTExlSXBQWG1yV05UanJIUU9YeDhVVmVXckdBOWEtaVllSnJ6N05qRlJJOGYyN0NkY1pibHoyOTJQU2ppMnM4MmpDMEYtci12VkJfSXptdDZfeHZGLXRIMVBZb08xMk9xT0Y2LUVSVGoyN3U5Q05YZGxLcGx2ZUU5VXg?oc=5",
-    "https://www.straitstimes.com/world/europe/eus-kallas-sees-no-sign-of-russian-goodwill-to-negotiate-peace",
-    "https://www.straitstimes.com/world/europe/zelenskiy-speaks-to-modi-ahead-of-ukraine-russia-talks",
-    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdGdMYVFDRzd5d0cxbjctRTF5eGFpN0QzT3MtSUxxM3JWd29HTlNLd1hJQVM2RkVqRGE4ZmJpUXV4aFh6UlhNU29EbjlZNHF1SG53S3ZBRlNhZG8zeld3ZU5uS0RIcEJQcmV4YlJ1WUF6cWEzZUp5dHV1VGN5UlNSNHdxVTJXVDFaOFREbVFzZ1JJbHhWTWdVMXhYSWx3SDJLNXlPVEx3NmhRWVRUdlg2Yi1UbHJma3VVc3d6VWVFRG9WbFE?oc=5",
-    "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9Ic0x0d0FZOUZiT3lOazl1RDZXUjEtU3hiUnlnTjZNUDRrdDRUWjVaQTZ4RC10NUVWUXNiWjE5SEFUc2hvcGx2eDVVbkY2dGVfa29XNG1oOA?oc=5",
-    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNOHBGbjFNQ0JrLWdqcUVrWGM0aEVSTXpwMktHek9kbEpteG96NHZHNHAyWjZhV1hLemY2MXBaMGFGcnE4MFRpaGZaSE0xMWdoR2JkcC1OS2M5VW0xWmFDZ1E3TXlMZmxSaHY0THYtaTZvZHJTdXpJSVV1RHg3TVRYelR6ZVhPeW1X0gGLAUFVX3lxTE1NaWhSNXd5Z0tPUk5qWTRrWkVoR1RsSFNBMGxrQlVxYzRCZ3JObi0tMS1jekNyRk1pZ20tTy1TMTNzYmNMai1nS29LT3dUUGFiYUdMVU41NmhPbHlDekdjb3RoSVlSekdUY1k4X3BlMDdPaWV1emtBeGlXdkpUNlZvMEVFZEhKWmZqQ3M?oc=5",
-    "https://www.aljazeera.com/news/2026/11/9/no-concession-what-to-expect-from-russia-us-ukraine-talks-in-abu-dhabi?traffic_source=rss",
-    "https://www.theguardian.com/world/live/2026/nov/09/polands-krakow-attack-ukraine-russia-france-germany-europe-latest-news",
-    "https://timesofindia.indiatimes.com/india/pm-modi-speaks-with-zelenskyy-discusses-efforts-for-russia-ukraine-peace-deal/articleshow/135684263.cms",
-    "https://www.nzz.ch/international/russland-rekrutiert-immer-mehr-soldaten-aus-suedostasien-dagegen-wehrt-sich-nun-indonesien-ld.10051750",
-    "https://www.kyivpost.com/post/89567",
-    "https://www.straitstimes.com/world/europe/g-7-ministers-press-us-for-fair-ukraine-deal-warns-against-iran-escalation",
-    "https://www.kyivpost.com/post/89564",
-    "https://www.kyivpost.com/post/89563",
-    "https://news.google.com/rss/articles/CBMi5wJBVV95cUxPb2M5cUh2cU10aEZFanRzc1lySHNFbG00dE5rd3JvaHg0RTR1TXUwQTV1MTdFeENXSUNIbm96V3JGOXpyLXVxUVlTVFpyLTc0dDZQc0xMTGp4YzQxX3h0UmlEU2FQQnY1Y0s3VGR6ZW5ZR1VPTlJkajhaS0hJNl9jWmNGTFRLenBWeTJXQ0FRVWhnYVBRc3dNbnJSWjRTNkxYZG1zM0dub2ZsOGhEU2ZuVTdENllwdW5GQU5FNWRJand2WkZ0Z0c4cGo5d2FfMW13YXZEcXlhZTNmVThzTmd3eFpOY3hKQS1aUjZMXzU2bVhCS2Z5YU1qZEZEWlNXeUNpcFVDNTFwRVdUdlBWenBwa3VpTWVnSWxvMlBNdHk3LVpZTE84RTlQYkZ4UmMyR1NsR3htaF9GaGlwVXdFb3lfZklIdTRkYV8xM1VxVUFmcnNGb3JvaU1jOWk1Tm1tNTB0Uk9aeWUwcw?oc=5",
-    "https://www.thehindu.com/news/international/us-china-russia-leaders-to-meet-next-week-says-trump-beijing-says-in-communication-with-parties/article71682111.ece",
-    "https://www.kyivpost.com/post/89550",
-    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-eu-meldet-teilnahme-an-friedensgespraechen-kreml-dementiert",
-    "https://www.kyivpost.com/post/89549",
-    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNR2N4a2djZmNTTXYyR2ZhemFQZURkNGFrSE0tcU1pc3dPakRmQ2lVMWs2eTRDZklrUXpsQlRGVGlMVDFRTnFpSWZnd2c3TGU3M2dnY3B3WGFEVHhzcHg1Mm5DUXlCNWdzTk9WNnlKU3RFX3ZRSzVFcEhFMmlocEU4SmphbWphWHptZkNlLWo2cnVweHFoNUZ5cEZyQm1nQlNFcGZCVHlKY0VNRW8?oc=5",
-    "https://www.npr.org/2026/11/09/g-s1-152627/up-first-newsletter-stephen-miller-trump-congress-nvidia-cop31",
-    "https://www.bbc.co.uk/news/articles/cm93z3lp5lnpo?at_medium=RSS&at_campaign=rss",
-    "https://www.straitstimes.com/world/europe/imf-launches-ukraine-loan-review-that-could-unlock-1-67-billion",
-    "https://www.tagesschau.de/ausland/europa/polen-uebung-koalicja-100.html",
-    "https://www.spiegel.de/ausland/ukraine-krieg-ukraine-und-russland-attackieren-sich-vor-verhandlungen-a-5022f249-a45e-487b-8adb-c78526aade5a#ref=rss",
-    "https://www.semafor.com/article/11/09/2026/the-eu-wants-greater-say-in-ukraine-talks",
-    "https://www.politico.eu/article/ukraine-europe-abu-dhabi-talks-officials-russia/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "https://news.google.com/rss/articles/CBMikwFBVV95cUxNaTZNM2tzbGQwRDdkdG5RTXhlUlR2OGppWVhXZlJiMmg0cm9BZ05tNm5MQzdtQ0dVcGZTd2RjQ2tzdXc5S0NzQmlJQWR0R3pkMDRIVHVPVUUxNTZTUHVpNkI0ZUJQREVXWGtfS2s4dUpiMHBKcEllMEg5T2VuYlVBeGVWN0hJWEFpYWNoSTlTSXpWZE3SAZgBQVVfeXFMTy1SeHc2b1hXTW96THhmWXlHMVFsSGlSU1UwZkRsdV9KRHRGbWZPNXhBd1JWMEVlNTBTNVFrVTFIN3U4V1VVRlQycFFRWDVuV29zTGJMeU9OUkZQQk1PMUl4UmY0NXBXcnAwQ3dZT2xtUlBHNkEwc1hlb3pIWlBjUnhqYmxxMmduODUyZjJySlZSVWVjajNjVTY?oc=5",
-    "https://www.kyivpost.com/post/89543",
-    "https://www.kyivpost.com/post/89540",
-    "https://www.lemonde.fr/en/international/article/2026/11/09/g7-ministers-to-press-rubio-on-iran-and-ukraine-at-paris-talks_6775771_4.html",
-    "https://www.france24.com/en/tv-shows/press-review/20261109-new-james-bond-actor-expected-within-weeks-as-unexpected-frontrunners-emerge",
-    "https://www.euronews.com/2026/11/09/from-repairing-homes-to-rebuilding-lives-in-war-torn-ukraine",
-    "https://www.axios.com/2026/11/09/elon-musk-midterms-risks-empire",
-    "https://www.kyivpost.com/post/89530",
-    "https://www.aljazeera.com/news/2026/11/9/at-least-one-person-killed-as-russia-and-ukraine-trade-strikes-overnight?traffic_source=rss",
-    "https://www.kyivpost.com/post/89526",
-    "https://www.kyivpost.com/post/89581",
-    "https://thehill.com/homenews/administration/6207962-marco-rubio-donald-trump-iran-war-defense-gop-midterm-losses/",
-    "https://www.kyivpost.com/post/89576",
-    "https://www.kyivpost.com/post/89578",
-    "https://timesofindia.indiatimes.com/world/europe/iran-ukraine-and-an-uneasy-europe-g7-weighs-fallout-of-trumps-election-blow/articleshow/135686645.cms",
-    "https://www.lemonde.fr/en/international/article/2026/11/09/ukraine-rebukes-french-leftist-melenchon-over-donbas-remarks_6775969_4.html",
-    "https://news.google.com/rss/articles/CBMihwFBVV95cUxPTzhka1o0a3hySjk2c1dUenp2VTNSR0liYWhobkZheC1zOXdvdkpCYVF5RFJybXRSTjl1dFZtM3l4MVVLR0ZsS0J5SHVOQUtCOFh0Z0NaM0NlZkFwS1ZQaVhHLWxRT2h1NldOcmxJc3hrcDNoc3NIWkFfbGFDc20teUN3a0xSSVE?oc=5"
-  ],
-  "startedAt": "2026-11-08T14:36:18.642Z",
-  "updatedAt": "2026-11-10T04:12:09.595Z",
-  "importance": 5,
-  "wantsStats": false,
-  "articleSlug": "krieg-in-der-ukraine",
-  "sourceCount": 26,
-  "seenHeadlines": [
-    "Ukraine and Russia exchange long-range strikes ahead of Abu Dhabi talks"
-  ]
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+  }
 }
