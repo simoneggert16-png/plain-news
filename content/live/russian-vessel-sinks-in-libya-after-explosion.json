@@ -1,9 +1,166 @@
 {
+  "meta": {
+    "outlets": [
+      "Tagesschau",
+      "Die Zeit",
+      "Der Spiegel",
+      "FAZ",
+      "SRF",
+      "NZZ"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+  },
   "slug": "russian-vessel-sinks-in-libya-after-explosion",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "russian vessel sinks in libya after explosion",
+  "status": "live",
+  "article": {
+    "slug": "russian-vessel-sinks-in-libya-after-explosion",
+    "updatedAt": "2026-11-23T01:17:14.008Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Russian corvette damaged in suspected drone attack at Libyan naval base",
+        "dek": "Libyan officials report a Russian navy corvette was struck by sea drones at Benghazi naval base",
+        "facts": [
+          "Russian corvette Merkury damaged by suspected Ukrainian sea drones at Benghazi Naval Base",
+          "Libyan military officials confirmed the strike damaged the vessel",
+          "The Hindu reports fire ignited at the naval facility following the attack",
+          "The Hill confirms Russian ship docked in Libya hit in suspected drone attack"
+        ],
+        "body": [
+          "Libyan military officials stated the Russian navy corvette Merkury was damaged by suspected Ukrainian sea drones at Benghazi Naval Base on 23 November 2026.",
+          "Two Libyan military officials confirmed the strike at the Benghazi Naval Base severely damaged the vessel and ignited a fire at the facility.",
+          "The Hindu reported the strike at the Benghazi Naval Base in eastern Libya ignited a fire at the facility following the drone attack.",
+          "The Hill reported a Russian ship docked in Libya was hit in a suspected drone attack, corroborating the Libyan officials' accounts.",
+          "Libyan officials have attributed the strike to suspected Ukrainian sea drones, though no group has claimed responsibility for the attack.",
+          "The damage to the Merkury represents a significant incident in the ongoing maritime tensions off the Libyan coast."
+        ],
+        "context": "Libya's Benghazi Naval Base has hosted Russian naval vessels as part of broader Russian military presence in the region, with the Merkury being a corvette-class ship of the Russian Navy.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Russische Korvette in mutmaßlichem Drohnenangriff in libyscher Marinebasis beschädigt",
+        "dek": "Libysche Beamte berichten, eine russische Marinekorvette wurde in Benghazi auf der Marinebasis von Seekräften getroffen",
+        "facts": [
+          "Russische Korvette Merkury durch mutmaßliche ukrainische Seekräfte in der Marinebasis Benghazi beschädigt",
+          "Libysche Militärbeamte bestätigten den Schlag, der das Schiff beschädigte",
+          "The Hindu berichtet, dass nach dem Angriff an der Marineeinrichtung Feuer ausbrach",
+          "The Hill bestätigt, dass ein in Libyen liegender russisches Schiff in mutmaßlichem Drohnenangriff getroffen wurde"
+        ],
+        "body": [
+          "Libysche Militärbeamte gaben bekannt, dass die russische Marinekorvette Merkury am 23. November 2026 durch mutmaßliche ukrainische Seekräfte in der Marinebasis Benghazi beschädigt wurde.",
+          "Zwei libysche Militärbeamte bestätigten, dass der Schlag auf der Marinebasis Benghazi das Schiff schwer beschädigte und an der Einrichtung ein Feuer auslöste.",
+          "The Hindu berichtete, dass der Schlag auf der Marinebasis Benghazi in Ostlibyen nach dem Drohnenangriff ein Feuer an der Einrichtung auslöste.",
+          "The Hill berichtete, dass ein in Libyen liegender russisches Schiff in einem mutmaßlichen Drohnenangriff getroffen wurde, was die Aussagen der libyschen Beamten bestätigt.",
+          "Libysche Beamte führten den Schlag auf mutmaßliche ukrainische Seekräfte zurück, obwohl keine Gruppe die Verantwortung für den Angriff übernommen hat.",
+          "Die Beschädigung der Merkury stellt ein bedeutendes Ereignis in den anhaltenden maritimen Spannungen vor der libyschen Küste dar."
+        ],
+        "context": "Die Marinebasis Benghazi in Libyen beherbergt russische Marineeinheiten im Rahmen der breiteren russischen Militärpräsenz in der Region, wobei die Merkury ein Korvettentyp des russischen Marine ist."
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Ein russisches Schiff explodiert und versinkt in einem libyschen Hafen; Behörden und Medien führen dies auf Drohnenangriffe oder ukrainische Beteiligung zurück.",
+      "title": "Russisches Schiff versinkt in Libyen nach Explosion"
+    },
+    "en": {
+      "dek": "A russian-flagged ship explodes and sinks in a libyan port, with authorities and media blaming drone attacks or ukrainian involvement.",
+      "title": "russian vessel sinks in libya after explosion"
+    },
+    "es": {
+      "dek": "Un barco de bandera rusa explota y se hunde en un puerto libio, y las autoridades y los medios culpan a ataques con drones o a la implicación ucraniana.",
+      "title": "Buque ruso se hunde en Libia tras explosión"
+    },
+    "fr": {
+      "dek": "Un navire battant pavillon russe explose et coule dans un port libyen, les autorités et les médias évoquant des attaques de drones ou une implication ukrainienne.",
+      "title": "Navire russe coule en Libye après une explosion"
+    },
+    "it": {
+      "dek": "Una nave di bandiera russa esplode e affonda in un porto libico; autorità e media attribuiscono l'incidente ad attacchi con droni o a coinvolgimento ucraino.",
+      "title": "nave russa affonda in Libia dopo esplosione"
+    },
+    "ja": {
+      "dek": "ロシア船籍の船舶がリビアの港で爆発し沈没。当局やメディアはドローン攻撃またはウクライナの関与を非難している。",
+      "title": "ロシア船がリビアで爆発後に沈没"
+    },
+    "ko": {
+      "dek": "러시아 국적 선박이 리비아 항구에서 폭발하며 침몰했으며, 당국과 언론은 드론 공격 또는 우크라이나 연루를 원인으로 지목하고 있다.",
+      "title": "러시아 선박, 리비아에서 폭발 후 침몰"
+    },
+    "pt": {
+      "dek": "Um navio de bandeira russa explode e afunda num porto líbio, com autoridades e meios de comunicação a culpar ataques de drones ou envolvimento ucraniano.",
+      "title": "navio russo afunda na Líbia após explosão"
+    },
+    "zh": {
+      "dek": "一艘俄罗斯船只在利比亚港口爆炸并沉没，当局和媒体将责任归咎于无人机袭击或乌克兰的参与。",
+      "title": "俄罗斯船只在利比亚爆炸后沉没"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795395776000-ish1",
+      "at": "2026-11-23T01:02:56.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Russian corvette Merkury damaged by suspected Ukrainian sea drones in Libya",
+          "body": "Two Libyan military officials said the strike at the Benghazi Naval Base severely damaged the Merkury, a Russian navy corvette. The Hindu reported the strike at the Benghazi Naval Base in eastern Libya ignited a fire at the facility."
+        },
+        "es": {
+          "headline": "Corbeta rusa Merkury dañada por drones marítimos ucranianos sospechosos en Libia",
+          "body": "Dos funcionarios militares libios dijeron que el ataque a la Base Naval de Benghazi dañó gravemente la Merkury, una corbeta de la marina rusa. The Hindu informó que el ataque a la Base Naval de Benghazi en el este de Libia provocó un incendio en la instalación."
+        },
+        "de": {
+          "headline": "Russische Korvette Merkury durch mutmaßliche ukrainische Seekräfte in Libyen beschädigt",
+          "body": "Zwei libysche Militärbeamte berichteten, dass der Angriff auf die Marinebasis in Benghazi die russische Marinekorvette Merkury schwer beschädigte. The Hindu berichtete, dass der Angriff auf die Marinebasis in Ostlibyen ein Feuer in der Anlage auslöste."
+        },
+        "it": {
+          "headline": "Corvetta russa Merkury danneggiata da sospetti droni marini ucraini in Libia",
+          "body": "Due funzionari militari libici hanno dichiarato che l'attacco alla Base Navale di Bengasi ha gravemente danneggiato la Merkury, una corvetta della marina russa. The Hindu ha riportato che l'attacco alla Base Navale di Bengasi, nell'est della Libia, ha innescato un incendio presso la struttura."
+        },
+        "fr": {
+          "headline": "La corvette russe Merkury endommagée par des drones marins ukrainiens présumés en Libye",
+          "body": "Deux responsables militaires libyens ont déclaré que la frappe sur la base navale de Benghazi avait gravement endommagé la Merkury, une corvette de la marine russe. The Hindu a rapporté que la frappe sur la base navale de Benghazi, dans l'est de la Libye, avait déclenché un incendie sur l'installation."
+        },
+        "pt": {
+          "headline": "Corveta russa Merkury danificada por drones marítimos ucranianos suspeitos na Líbia",
+          "body": "Dois oficiais militares líbios afirmaram que o ataque à Base Naval de Benghazi danificou gravemente a Merkury, uma corveta da marinha russa. O Hindu reportou que o ataque à Base Naval de Benghazi, no leste da Líbia, provocou um incêndio na instalação."
+        },
+        "zh": {
+          "headline": "俄罗斯“默库里”护卫舰在利比亚遭疑似乌克兰海无人机攻击",
+          "body": "两名利比亚军方官员称，对本加齐海军基地的袭击严重损坏了俄罗斯海军护卫舰“默库里”。《印度时报》报道，在利比亚东部的本加齐海军基地发生的袭击在该设施内引发了火灾。"
+        },
+        "ja": {
+          "headline": "リビアでロシアのコルベット「メルクリ」がウクライナの海ドローンによる攻撃で被弾",
+          "body": "2人のリビア軍関係者は、ベンガジ海軍基地への攻撃により、ロシア海軍のコルベット「メルクリ」が甚大な被害を受けたと述べた。ヒンドゥー紙は、東リビアのベンガジ海軍基地への攻撃が施設で火災を引き起こしたと報じた。"
+        },
+        "ko": {
+          "headline": "리비아에서 러시아 코르벳 '메르쿠리', 우크라이나 해상 드론 의심 공격으로 피해",
+          "body": "리비아 군 관계자 두 명은 벵가지 해군 기지에서 발생한 공격으로 러시아 해군 코르벳 '메르쿠리'가 심각한 피해를 입었다고 밝혔다. 힌두 신문은 동부 리비아 벵가지 해군 기지 공격으로 시설에 화재가 발생했다고 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "The Hindu",
+          "title": "Suspected Ukrainian sea drones hit Russian warship at Benghazi naval base, Libyan officials say",
+          "url": "https://www.thehindu.com/news/international/suspected-ukrainian-sea-drones-hit-russian-warship-at-benghazi-naval-base-libyan-officials-say/article71733178.ece",
+          "publishedAt": "2026-11-23T01:02:56.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Russian ship docked in Libya hit in suspected drone attack",
+          "url": "https://thehill.com/policy/international/6236346-russian-ship-docked-in-libya-hit-in-suspected-drone-attack/",
+          "publishedAt": "2026-11-22T22:03:52.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "russian ship",
     "libya",
@@ -18,63 +175,42 @@
     "maritime security",
     "international response"
   ],
+  "seenUrls": [
+    "https://www.thehindu.com/news/international/suspected-ukrainian-sea-drones-hit-russian-warship-at-benghazi-naval-base-libyan-officials-say/article71733178.ece",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUllLRmxobEp4dElCMVJrTnhoTjVjc3p3YTd1blNlR2YyZUUzRWlOelNZb0JVeWVxR3hkXzhWLU51eEU0N1E1NVhhRXJPM09KLVVzRDVXRmp0YUJnby1WZXZ2QVBfaUl6ckVTSnJ6RE1WRDhVRlVpb3FTZnJKQ19CUjR3ZjJCUmR2cnNrNTY1MkN5RGV2VlByc1FlZ0dPSnBUZVNrS2dn?oc=5",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-russisches-kriegsschiff-sinkt-nach-explosion-in-libyschem-hafen",
+    "https://www.tagesschau.de/ausland/afrika/russisches-schiff-libyen-100.html",
+    "https://www.spiegel.de/ausland/syrien-fuenf-kinder-sterben-bei-explosion-einer-landmine-in-idlib-a-0ed9f39a-c436-4611-bae9-e6316c5c081a#ref=rss",
+    "https://www.tagesanzeiger.ch/explosion-auf-russischem-kriegsschiff-angriff-vermutet-971188232337",
+    "https://www.straitstimes.com/world/united-states/us-army-plans-to-invoke-emergency-provisions-to-detonate-bomb-making-chemicals-in-iowa",
+    "https://timesofindia.indiatimes.com/world/rest-of-world/watch-russian-warship-hit-by-suspected-ukrainian-drones-at-benghazi-naval-base-bursts-into-flames/articleshow/136085577.cms",
+    "https://www.zeit.de/politik/ausland/ukraine-krieg-news-liveblog",
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxOM20xb1ZsZFVjRkJBRDE5cWNXUTdtMUZrbzRkQmVfY0ZNd0dCcUlnVmllX19TZTlHdmZYSnh3RXprbWM1WTUySS1HM1QxSHZ2aE1SUTRpOEdrYWlKU1MzTzY0SHFDYzB4WmZUNllVLU91em00Ri0wMjZFdzBkbnc3d2hDZndRbk03MDA0YXladGkzR1RqQ0ItbzNEVXRYS0JFbXpZb0hoeXBUdndYUkNHeVhFaVdDX1ZZUVRpQ0NvdEdEdXYw?oc=5",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxQNUVkazV3eVU0VlliLUJtY3hUY3J0djVGelpZTGY4R3dqZ2U5dTB1SXo4Y3JoSEFvRjF3Y2ZwVVZ0elJRTkI5WElHcHlZVFFaSTBzaWEwN1BINjBJQlJSaGpyYnRubkJ3VkVGNF9ZVS1LX2xCczdFZ1BaQ2QwWTBXOURrc1NUOHdvWm9TQ3NlWTRRTUNrLWRGY1BxNXNERjBya3pKUFR0d2xKY1lqNENEQXlGVGE?oc=5",
+    "https://www.kyivpost.com/thread/90862",
+    "https://www.scmp.com/news/world/africa/article/3375407/suspected-ukrainian-sea-drones-hit-russian-warship-libyan-naval-base-officials-say",
+    "https://www.npr.org/2026/11/22/nx-s1-6050236/ukraine-war-spilling-into-nato-territory",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTmphRHotSzZ1U0MzRkFFc3VnMnkyNWZ5M043MEdMZjh1dFdUVWh0VHF2c3FxVzhJRUdNeFdsQXBIYkhJb0J3SmZNTFMwVW1KRGhwQ05uUkFHZ2hxcDBIZE0tVEdVUnhuMXl3dGRjU1pPV21xdGtwaU9fUFNwLTRGU21JS1BRbFNpQ3BsendmWkw?oc=5",
+    "https://www.semafor.com/article/11/22/2026/ukraine-war-gets-harder-to-contain-amid-escalating-hybrid-attacks",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZzU3ZEZYME5lS0ROc3NoTHNrNlpjVlUyd2xjVnRLREpzSWlZWXMyS1E3OTJMZmxZNHZJV1BpbGM1U045c3JTc2p2dlFTYTNTSU9qdnVZamZZN29zR0JBY3ZpYjZ0Z1FpVXc2cDViTFZRMHNwejhPcTBrUHVqdFhZZG5XTTFSYi1Yc3AxaVlLc09VcTdyVzdFaNIBngFBVV95cUxNZlFIcHE3SVRDUFdGeE9CTEgtM3I3T2o3OTBUZWlQaU5IbWhXNVY4NjVqQ2s2eEJLVTRlUXFXakFWdkc0T3ViME1EMUt5US1zejJPSkthWjVaejRkTExNOGJ3LURHWDB3dndjeDBBM0hyRWt6d05ESnE0Ul9BbzlzSXZLSS1MZHM2RUJ4ZjJaMVFZSmlWS3ZSMEgtR2RJdw?oc=5",
+    "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBQRm1feEUySTFOVmV6bVJ2QVMtVEdWaURfM2ZydkxVNElIYUhqUG1vZU95bjNvUkNTQmtET2t4cEtuVVJTTGptOWc3bWlaTExGUDVBcF91THVCUTZY?oc=5",
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBlSXZvbjBWQjNrdmp1YXo0MGJtRTYtM0FiVG51WTEzVFJCRm80THNocFpaV1dqZ2dDcEpvcURTdGxqX1loYTM0bjY4MEc3MU00SldjLWVXTHI?oc=5",
+    "https://thehill.com/policy/international/6236346-russian-ship-docked-in-libya-hit-in-suspected-drone-attack/",
+    "https://www.theguardian.com/world/2026/nov/22/blast-russian-ship-suspected-drone-attack-benghazi-libya",
+    "https://www.scmp.com/news/world/russia-central-asia/article/3375406/russia-starts-towing-its-ship-hit-drones-baltic-finland-says",
+    "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-russisches-kriegsschiff-nach-explosion-in-libyschem-hafen-gesunken-faz-110683325.html",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1pN0hpeWZDTENEN1hEUFdKOTZzcDRNaGhyNGp4d1NuenhjZWJlaHAyQlVRZzFyczI3d3BYMk5JUXo4MmthdlNaeDhCdmxobHZyd1VIbUFTTDJLVUgxWkVRQjVvU21TV3c?oc=5",
+    "https://www.spiegel.de/ausland/libyen-explosion-auf-russischem-schiff-ukrainischer-angriff-vermutet-a-bc74e064-fd7a-4770-aebd-0d742578cfeb#ref=rss",
+    "https://www.euronews.com/2026/11/22/finland-confirms-russia-is-towing-drone-hit-cargo-ship-after-baltic-sea-attack",
+    "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDFnMHloOVE4ZWZwczNVdjdjb3JUU1dPZ2I3M3NWM00xWWVYdVhSMTIzY2FfR3pCMWRKQUIxM05kZnNHbnY1dWZhMkJhWjc2cG1YdTEzc3BHTTlra1FfVXNiek1NSWZBTW10TjluTUZiM0tNOWt6YmY4SGQ3VzF1TkxndjJVMVU2Rl9YQ1lEVnFhZjlYMHViN3FDNFlOU1hXeTJpRdIBqgFBVV95cUxPY0dfLUtaOXhsVG9ycUszbmxCVk83OWpBLTlhV252STNPX1AwQVpCc2ZtV1d2dEtIaHRsUVBlald1dW0xWlItWWJNTVM2Z2hDaER3djVGUW1RV2VZOEpwb3A5UF90RWFGQV8xLWxJbHZXYnllUmk2Q3IwdTZhdVJZQTd0VmxwRUtlbHFlV25uS3drNF9oaVVPbFpZTlVUeEwxZVdtQXl0OVl2dw?oc=5",
+    "https://www.france24.com/en/africa/20261122-russian-warship-hit-by-suspected-ukrainian-drone-at-libya-s-benghazi-naval-base"
+  ],
   "startedAt": "2026-11-22T23:38:03.738Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-22T23:38:03.738Z",
-  "articleSlug": null,
-  "sourceCount": 6,
+  "updatedAt": "2026-11-23T01:17:07.293Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "russian vessel sinks in libya after explosion",
-      "dek": "A russian-flagged ship explodes and sinks in a libyan port, with authorities and media blaming drone attacks or ukrainian involvement."
-    },
-    "fr": {
-      "title": "Navire russe coule en Libye après une explosion",
-      "dek": "Un navire battant pavillon russe explose et coule dans un port libyen, les autorités et les médias évoquant des attaques de drones ou une implication ukrainienne."
-    },
-    "es": {
-      "title": "Buque ruso se hunde en Libia tras explosión",
-      "dek": "Un barco de bandera rusa explota y se hunde en un puerto libio, y las autoridades y los medios culpan a ataques con drones o a la implicación ucraniana."
-    },
-    "de": {
-      "title": "Russisches Schiff versinkt in Libyen nach Explosion",
-      "dek": "Ein russisches Schiff explodiert und versinkt in einem libyschen Hafen; Behörden und Medien führen dies auf Drohnenangriffe oder ukrainische Beteiligung zurück."
-    },
-    "zh": {
-      "title": "俄罗斯船只在利比亚爆炸后沉没",
-      "dek": "一艘俄罗斯船只在利比亚港口爆炸并沉没，当局和媒体将责任归咎于无人机袭击或乌克兰的参与。"
-    },
-    "pt": {
-      "title": "navio russo afunda na Líbia após explosão",
-      "dek": "Um navio de bandeira russa explode e afunda num porto líbio, com autoridades e meios de comunicação a culpar ataques de drones ou envolvimento ucraniano."
-    },
-    "ja": {
-      "title": "ロシア船がリビアで爆発後に沈没",
-      "dek": "ロシア船籍の船舶がリビアの港で爆発し沈没。当局やメディアはドローン攻撃またはウクライナの関与を非難している。"
-    },
-    "ko": {
-      "title": "러시아 선박, 리비아에서 폭발 후 침몰",
-      "dek": "러시아 국적 선박이 리비아 항구에서 폭발하며 침몰했으며, 당국과 언론은 드론 공격 또는 우크라이나 연루를 원인으로 지목하고 있다."
-    },
-    "it": {
-      "title": "nave russa affonda in Libia dopo esplosione",
-      "dek": "Una nave di bandiera russa esplode e affonda in un porto libico; autorità e media attribuiscono l'incidente ad attacchi con droni o a coinvolgimento ucraino."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Tagesschau",
-      "Die Zeit",
-      "Der Spiegel",
-      "FAZ",
-      "SRF",
-      "NZZ"
-    ]
-  }
+  "articleSlug": "russian-vessel-sinks-in-libya-after-explosion",
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
