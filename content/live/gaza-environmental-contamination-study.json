@@ -1,9 +1,241 @@
 {
+  "meta": {
+    "outlets": [
+      "The Guardian",
+      "AP News",
+      "WV News",
+      "Anadolu Ajansı",
+      "Bluefield Daily Telegraph"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+  },
   "slug": "gaza-environmental-contamination-study",
-  "status": "live",
-  "category": "climate",
-  "importance": 5,
   "topic": "Gaza Environmental Contamination Study",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Neue internationale Berichte warnen, dass die anhaltenden Militäroperationen den Gazastreifen vor eine schwere und weitverbreitete giftige Umweltbelastung stellen.",
+      "title": "Studie zur Umweltkontamination im Gazastreifen"
+    },
+    "en": {
+      "dek": "New international reports warn that ongoing military operations have left Gaza facing severe and widespread toxic environmental contamination.",
+      "title": "Gaza Environmental Contamination Study"
+    },
+    "es": {
+      "dek": "Nuevos informes internacionales advierten de que las operaciones militares en curso han dejado a Gaza ante una grave y generalizada contaminación ambiental tóxica.",
+      "title": "Estudio sobre contaminación ambiental en Gaza"
+    },
+    "fr": {
+      "dek": "De nouveaux rapports internationaux préviennent que les opérations militaires en cours ont laissé Gaza confrontée à une contamination environnementale toxique, grave et généralisée.",
+      "title": "Étude sur la contamination environnementale à Gaza"
+    },
+    "it": {
+      "dek": "Nuovi rapporti internazionali avvertono che le continue operazioni militari hanno lasciato Gaza di fronte a una grave e diffusa contaminazione ambientale tossica.",
+      "title": "Studio sulla contaminazione ambientale a Gaza"
+    },
+    "ja": {
+      "dek": "新たな国際報告書は、継続中の軍事作戦により、ガザが深刻かつ広範囲にわたる有害な環境汚染に直面していると警告している。",
+      "title": "ガザの環境汚染に関する調査"
+    },
+    "ko": {
+      "dek": "새로운 국제 보고서들은 계속되는 군사 작전으로 인해 가자지구가 심각하고 광범위한 유독성 환경 오염에 직면해 있다고 경고했다.",
+      "title": "가자지구 환경 오염 연구"
+    },
+    "pt": {
+      "dek": "Novos relatórios internacionais alertam que as operações militares em curso deixaram Gaza a enfrentar uma contaminação ambiental tóxica, grave e generalizada.",
+      "title": "Estudo sobre Contaminação Ambiental em Gaza"
+    },
+    "zh": {
+      "dek": "新的国际报告警告称，持续的军事行动已使加沙面临严重且广泛的有毒环境污染。",
+      "title": "加沙环境污染研究"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795428421000-hsty",
+      "at": "2026-11-23T10:07:01.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Report identifies toxic pollution in 99 percent of Gaza",
+          "body": "A report by the charity Oxfam states that Israel's military actions have created a toxic wasteland in Gaza. According to CNN and Al Jazeera, the study attributes this environmental contamination to the destruction of infrastructure during the war."
+        },
+        "it": {
+          "headline": "Un rapporto identifica inquinamento tossico nel 99 percento di Gaza",
+          "body": "Un rapporto dell'organizzazione benefica Oxfam afferma che le azioni militari di Israele hanno creato una terra desolata tossica a Gaza. Secondo la CNN e Al Jazeera, lo studio attribuisce questa contaminazione ambientale alla distruzione delle infrastrutture durante la guerra."
+        },
+        "pt": {
+          "headline": "Relatório identifica poluição tóxica em 99 por cento de Gaza",
+          "body": "Um relatório da organização humanitária Oxfam afirma que as ações militares de Israel criaram um deserto tóxico em Gaza. Segundo a CNN e a Al Jazeera, o estudo atribui esta contaminação ambiental à destruição de infraestruturas durante a guerra."
+        },
+        "fr": {
+          "headline": "Un rapport identifie une pollution toxique dans 99 % de la bande de Gaza",
+          "body": "Un rapport de l'organisation caritative Oxfam indique que les opérations militaires israéliennes ont transformé Gaza en un terrain vague toxique. Selon CNN et Al Jazeera, l'étude attribue cette contamination environnementale à la destruction des infrastructures durant la guerre."
+        },
+        "es": {
+          "headline": "Un informe identifica contaminación tóxica en el 99 por ciento de Gaza",
+          "body": "Un informe de la organización benéfica Oxfam afirma que las acciones militares de Israel han creado un páramo tóxico en Gaza. Según CNN y Al Jazeera, el estudio atribuye esta contaminación ambiental a la destrucción de infraestructuras durante la guerra."
+        },
+        "ko": {
+          "headline": "보고서, 가자지구 99%에서 유독성 오염 확인",
+          "body": "국제구호단체 옥스팜(Oxfam)의 보고서에 따르면 이스라엘의 군사 작전이 가자지구를 유독성 황무지로 만들었다. CNN과 알자지라가 보도한 이 연구는 이러한 환경 오염의 원인을 전쟁 중 발생한 기반 시설 파괴로 지목했다."
+        },
+        "de": {
+          "headline": "Bericht stellt toxische Belastung in 99 Prozent des Gazastreifens fest",
+          "body": "Ein Bericht der Hilfsorganisation Oxfam besagt, dass die militärischen Aktionen Israels den Gazastreifen in eine toxische Einöde verwandelt haben. Laut CNN und Al Jazeera führt die Studie diese Umweltbelastung auf die Zerstörung der Infrastruktur während des Krieges zurück."
+        },
+        "zh": {
+          "headline": "报告显示加沙99%的地区存在有毒污染",
+          "body": "乐施会发布的一份报告指出，以色列的军事行动已将加沙变成一片有毒的荒地。据美国有线电视新闻网（CNN）和半岛电视台报道，该研究将这种环境污染归因于战争期间基础设施的破坏。"
+        },
+        "ja": {
+          "headline": "ガザ地区の99％で有害汚染を確認、報告書が指摘",
+          "body": "国際NGOオックスファムの報告書は、イスラエルの軍事行動がガザ地区を「有害な荒廃地」に変えたと指摘した。CNNやアルジャジーラによると、同調査は、この環境汚染の原因は戦争によるインフラの破壊にあるとしている。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "CNN",
+          "title": "Report: Israel's destruction of Gaza created \"toxic wasteland\"",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPQU5zS0VmOHJXUDNTYWFsRXlYdmlGX0pRZFBUc2FfaUt5VWZydFdBRHRaazgzUjRDV3dRemJYdmpsWXpfNjltNkpMcDlpVzZKYmV6ZVQwX0s1WTlqVld0NWpWYXh4ekR0RjdFcEk5Z19zTmx0UlJELS1vdjh4SjBCbHFJOHBXeVB0Z0VDWEtINDllQkFUQzBrbnVQSFFYSWF0SG1yNHVkZlctLUxDR19JYVgxSU9XMk1KSVliMXUxRmdsTlo2M0tuSUxCUUtLOFRySE0wVmRyVTVKOE9F?oc=5",
+          "publishedAt": "2026-11-23T10:07:01.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "Gaza turned into ‘toxic wasteland’ by Israel’s war, says new report",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPczQxSG9XUzZBRUZEc3VrWUlDbFBDbUM0ZWp1NEZBc1BnY1RUclFOUzlhdDBuRXJmT08tRk9kQndQMmR2MXNTX1dnNFptV0xJOVpLbHRpMjBrWV9sQ3FCQkFPSWczdUxBNVNJMXhBQkx4WHB0YlJ1ZW91T1BuRHkxNUNKYklORXhENlloTG95U2tYME00Mjd2cVR2cFBlaHE4T3loY0NqUmV6enloLU1YTmpXeUtOZ9IBuwFBVV95cUxQVGJGWWE4eHlzRzdqTXN3NkNUd3NWZGNkN291WEZraFo5QjB5azdjV2NYcUN6QzVxdWE2M3ZCSFFQRlRJeExxalZ1Y1J0TFU2alJuY2Nsc0JFQ1dkWmZlY2dlc04wWUJmQTJfS0N1RzNqX2FJT1h4UEIzaUFzTEtWMXVqcXZla25uN1ZkdnlaYnJ1UVdNdUwtQXFvZ3FabGR3UzA2TEQxT0otZGNFVVpqSTNNb3ZnOEZUZGFr?oc=5",
+          "publishedAt": "2026-11-23T09:34:34.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "‘Environmental crimes’: Israel blamed for toxic pollution in 99% of Gaza",
+          "url": "https://www.aljazeera.com/news/2026/11/23/environmental-crimes-israel-blamed-for-toxic-pollution-in-99-of-gaza?traffic_source=rss",
+          "publishedAt": "2026-11-23T09:30:16.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-23T09:16:24.000Z",
+      "id": "u-1795425384000-zi57",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Ein Kind im Gazastreifen ist laut Berichten der Anadolu Ajansı und von IMEMC News an einer akuten Bleivergiftung gestorben. Der Todesfall folgt auf anhaltende Sorgen bezüglich der Umweltbedingungen in der Region.",
+          "headline": "Kind im Gazastreifen stirbt an Bleivergiftung"
+        },
+        "en": {
+          "body": "A child in Gaza has died from acute lead poisoning, according to reports from Anadolu Ajansı and IMEMC News. The death follows ongoing concerns regarding environmental conditions in the region.",
+          "headline": "Gaza child dies from lead poisoning"
+        },
+        "es": {
+          "body": "Un niño ha muerto en Gaza a causa de un envenenamiento agudo por plomo, según informan Anadolu Ajansı e IMEMC News. El fallecimiento se produce tras la creciente preocupación por las condiciones medioambientales en la región.",
+          "headline": "Un niño muere en Gaza por envenenamiento por plomo"
+        },
+        "fr": {
+          "body": "Un enfant à Gaza est décédé d'un empoisonnement aigu au plomb, selon des rapports de l'Anadolu Ajansı et de IMEMC News. Ce décès fait suite aux préoccupations persistantes concernant les conditions environnementales dans la région.",
+          "headline": "Un enfant de Gaza meurt d'empoisonnement au plomb"
+        },
+        "it": {
+          "body": "Un bambino è morto a Gaza a causa di un avvelenamento acuto da piombo, secondo quanto riportato da Anadolu Ajansı e IMEMC News. Il decesso segue le crescenti preoccupazioni riguardanti le condizioni ambientali nella regione.",
+          "headline": "Bambino muore a Gaza per avvelenamento da piombo"
+        },
+        "ja": {
+          "body": "アナドル通信およびIMEMCニュースの報道によると、ガザの子供1人が急性鉛中毒により死亡した。この死は、同地域の環境状況に対する懸念が続く中で発生した。",
+          "headline": "ガザの子供が鉛中毒で死亡"
+        },
+        "ko": {
+          "body": "아나돌루 안사지 및 IMEMC 뉴스 보도에 따르면 가자 아동이 급성 납 중독으로 사망했다. 이 사망은 해당 지역의 환경 조건에 대한 지속적인 우려가 제기되는 가운데 발생했다.",
+          "headline": "가자 아동, 납 중독으로 사망"
+        },
+        "pt": {
+          "body": "Uma criança em Gaza morreu devido a envenenamento agudo por chumbo, segundo relatos da Anadolu Ajansı e da IMEMC News. A morte surge na sequência de preocupações constantes sobre as condições ambientais na região.",
+          "headline": "Criança morre em Gaza devido a envenenamento por chumbo"
+        },
+        "zh": {
+          "body": "据阿纳多卢通讯社和IMEMC新闻报道，加沙一名儿童死于急性铅中毒。此前，人们一直对该地区的生态环境状况表示担忧。",
+          "headline": "加沙一名儿童死于铅中毒"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQjJWbWpkcGsyYUk5VlJyT0k1ZG1rWDF0dFhGM0l0OVdzSnYyVUtBZW5YVDdDOWhWNGEzdTlxRWd4azM0cWlwT1UxVVlEWEFDUTFDVE01MU56bXVGNWlpNGZmWkkwbHc3SG5SUGRpcFl2azV1VzM3NVI1WDZ1dmlFWVBQbFQtNXZzcGlHLXcxU3JnTjVFeDBMamY4WHBta3VudjJmWTdWc0FhNnROajdCQ2dLd2h5MkhlYnFR?oc=5",
+          "title": "Israeli fire injures Palestinian in Gaza as child dies of acute lead poisoning",
+          "outlet": "Anadolu Ajansı",
+          "publishedAt": "2026-11-23T09:16:24.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQaUFNa3k4TjY5U3dGcmxibnhsTVVyNG04RGljWERfZWNmTTByaGtqYXVhSEpaS0F1RVdDUlJSSTV3dlMtVWt5VFRzTmtDNlFmMW13RHhaV1RlaDl0OUE3d2taRmc4cjR0NnZWR19jTVRMeGRpV0xmSGNyeHU0WXQxMUVLY0ZmOG8wak1iMw?oc=5",
+          "title": "Health Ministry: Gaza Child Dies From Acute Lead Poisoning -",
+          "outlet": "IMEMC News",
+          "publishedAt": "2026-11-23T09:01:14.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-23T04:04:00.000Z",
+      "id": "u-1795406640000-ao70",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Eine Studie hat eine weitverbreitete toxische Kontamination im gesamten Gazastreifen festgestellt; Berichte von AP News und The Guardian beschreiben das Gebiet als toxische Einöde. Die Ergebnisse deuten darauf hin, dass die Umweltauswirkungen die öffentliche Gesundheit über Generationen hinweg gefährden.",
+          "headline": "Bericht identifiziert weitverbreitete toxische Kontamination im Gazastreifen"
+        },
+        "en": {
+          "body": "A study has identified widespread toxic contamination across Gaza, with reports from AP News and The Guardian describing the area as a toxic wasteland. The findings indicate that the environmental impact poses risks to public health for generations.",
+          "headline": "Report identifies widespread toxic contamination in Gaza"
+        },
+        "es": {
+          "body": "Un estudio ha identificado una contaminación tóxica generalizada en toda Gaza, y los informes de AP News y The Guardian describen la zona como un erial tóxico. Los hallazgos indican que el impacto medioambiental supone riesgos para la salud pública durante generaciones.",
+          "headline": "Un informe identifica una contaminación tóxica generalizada en Gaza"
+        },
+        "fr": {
+          "body": "Une étude a identifié une contamination toxique généralisée à Gaza, des rapports de l'AP News et du Guardian décrivant la zone comme un désert toxique. Les conclusions indiquent que l'impact environnemental présente des risques pour la santé publique pour les générations à venir.",
+          "headline": "Un rapport identifie une contamination toxique généralisée à Gaza"
+        },
+        "it": {
+          "body": "Uno studio ha identificato una diffusa contaminazione tossica in tutta Gaza, con i resoconti di AP News e The Guardian che descrivono l'area come una distesa tossica. I risultati indicano che l'impatto ambientale pone rischi per la salute pubblica per le generazioni a venire.",
+          "headline": "Un rapporto identifica una diffusa contaminazione tossica a Gaza"
+        },
+        "ja": {
+          "body": "調査によりガザ全域で広範な有害汚染が確認された。AP通信やガーディアン紙は同地域を「有害な荒廃地」と報じている。調査結果は、環境への影響が今後数世代にわたり公衆衛生上のリスクとなることを示唆している。",
+          "headline": "報告書、ガザ全域で広範な有害汚染を指摘"
+        },
+        "ko": {
+          "body": "AP 뉴스 및 가디언 보도에 따르면 한 연구에서 가자 전역에 걸친 광범위한 유독 오염이 확인되었으며, 해당 지역을 유독 황무지로 묘사했다. 이 연구 결과는 환경적 영향이 여러 세대에 걸쳐 공중 보건에 위험을 초래함을 시사한다.",
+          "headline": "보고서, 가자 전역의 광범위한 유독 오염 확인"
+        },
+        "pt": {
+          "body": "Um estudo identificou uma contaminação tóxica generalizada em Gaza, com relatos da AP News e do The Guardian a descreverem a zona como um deserto tóxico. As conclusões indicam que o impacto ambiental representa riscos para a saúde pública durante gerações.",
+          "headline": "Relatório identifica contaminação tóxica generalizada em Gaza"
+        },
+        "zh": {
+          "body": "一项研究指出加沙全境存在大范围的有毒污染。据美联社和《卫报》报道，该地区已被形容为一片“有毒荒原”。研究结果显示，这种环境影响将对当地几代人的公共健康构成威胁。",
+          "headline": "报告指出加沙地区存在大范围有毒污染"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPaWJNRHlXSGdDeU5QMy1kN0dCMnIzVi1NWTFIWDQ3dVJvR2g2eU0tZ3hzYTBqdUQtNWNVSnBpQ2JfZjVwMzkyRkotckVNNllBU1RPNUFSSUhhWm8xZ2hxdXhFQ1J0dGtDUEpMOWNleEN4bWlTQ25lWU1rLTdYeVFiQTIycjRBcTZXNkJJLTRNM00wQjVKN2oyQU1IcV96cld1dHk5ZmEteVJjRnkteTBiT3M3ZUFSMVQ1ZjMxQ09YV1EwSkVjanBqamRmMWtUQm9udzYtQXFLbWdYN2JzNHZCX2QtcTNxa085dnc?oc=5",
+          "title": "Study warns of widespread toxic contamination in Gaza as war unleashes environmental catastrophe",
+          "outlet": "AP News",
+          "publishedAt": "2026-11-23T04:04:00.000Z"
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/nov/23/israel-gaza-destruction-created-toxic-wasteland-oxfam-report",
+          "title": "Israel’s destruction of Gaza has created a ‘toxic wasteland’, experts find",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-23T04:00:45.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "climate",
   "keywords": [
     "gaza",
     "israel",
@@ -13,130 +245,6 @@
     "water",
     "sanitation",
     "report"
-  ],
-  "startedAt": "2026-11-23T09:36:57.887Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-23T09:37:51.346Z",
-  "articleSlug": null,
-  "sourceCount": 4,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1795425384000-zi57",
-      "at": "2026-11-23T09:16:24.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Gaza child dies from lead poisoning",
-          "body": "A child in Gaza has died from acute lead poisoning, according to reports from Anadolu Ajansı and IMEMC News. The death follows ongoing concerns regarding environmental conditions in the region."
-        },
-        "es": {
-          "headline": "Un niño muere en Gaza por envenenamiento por plomo",
-          "body": "Un niño ha muerto en Gaza a causa de un envenenamiento agudo por plomo, según informan Anadolu Ajansı e IMEMC News. El fallecimiento se produce tras la creciente preocupación por las condiciones medioambientales en la región."
-        },
-        "it": {
-          "headline": "Bambino muore a Gaza per avvelenamento da piombo",
-          "body": "Un bambino è morto a Gaza a causa di un avvelenamento acuto da piombo, secondo quanto riportato da Anadolu Ajansı e IMEMC News. Il decesso segue le crescenti preoccupazioni riguardanti le condizioni ambientali nella regione."
-        },
-        "zh": {
-          "headline": "加沙一名儿童死于铅中毒",
-          "body": "据阿纳多卢通讯社和IMEMC新闻报道，加沙一名儿童死于急性铅中毒。此前，人们一直对该地区的生态环境状况表示担忧。"
-        },
-        "pt": {
-          "headline": "Criança morre em Gaza devido a envenenamento por chumbo",
-          "body": "Uma criança em Gaza morreu devido a envenenamento agudo por chumbo, segundo relatos da Anadolu Ajansı e da IMEMC News. A morte surge na sequência de preocupações constantes sobre as condições ambientais na região."
-        },
-        "ja": {
-          "headline": "ガザの子供が鉛中毒で死亡",
-          "body": "アナドル通信およびIMEMCニュースの報道によると、ガザの子供1人が急性鉛中毒により死亡した。この死は、同地域の環境状況に対する懸念が続く中で発生した。"
-        },
-        "de": {
-          "headline": "Kind im Gazastreifen stirbt an Bleivergiftung",
-          "body": "Ein Kind im Gazastreifen ist laut Berichten der Anadolu Ajansı und von IMEMC News an einer akuten Bleivergiftung gestorben. Der Todesfall folgt auf anhaltende Sorgen bezüglich der Umweltbedingungen in der Region."
-        },
-        "ko": {
-          "headline": "가자 아동, 납 중독으로 사망",
-          "body": "아나돌루 안사지 및 IMEMC 뉴스 보도에 따르면 가자 아동이 급성 납 중독으로 사망했다. 이 사망은 해당 지역의 환경 조건에 대한 지속적인 우려가 제기되는 가운데 발생했다."
-        },
-        "fr": {
-          "headline": "Un enfant de Gaza meurt d'empoisonnement au plomb",
-          "body": "Un enfant à Gaza est décédé d'un empoisonnement aigu au plomb, selon des rapports de l'Anadolu Ajansı et de IMEMC News. Ce décès fait suite aux préoccupations persistantes concernant les conditions environnementales dans la région."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Anadolu Ajansı",
-          "title": "Israeli fire injures Palestinian in Gaza as child dies of acute lead poisoning",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQjJWbWpkcGsyYUk5VlJyT0k1ZG1rWDF0dFhGM0l0OVdzSnYyVUtBZW5YVDdDOWhWNGEzdTlxRWd4azM0cWlwT1UxVVlEWEFDUTFDVE01MU56bXVGNWlpNGZmWkkwbHc3SG5SUGRpcFl2azV1VzM3NVI1WDZ1dmlFWVBQbFQtNXZzcGlHLXcxU3JnTjVFeDBMamY4WHBta3VudjJmWTdWc0FhNnROajdCQ2dLd2h5MkhlYnFR?oc=5",
-          "publishedAt": "2026-11-23T09:16:24.000Z"
-        },
-        {
-          "outlet": "IMEMC News",
-          "title": "Health Ministry: Gaza Child Dies From Acute Lead Poisoning -",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQaUFNa3k4TjY5U3dGcmxibnhsTVVyNG04RGljWERfZWNmTTByaGtqYXVhSEpaS0F1RVdDUlJSSTV3dlMtVWt5VFRzTmtDNlFmMW13RHhaV1RlaDl0OUE3d2taRmc4cjR0NnZWR19jTVRMeGRpV0xmSGNyeHU0WXQxMUVLY0ZmOG8wak1iMw?oc=5",
-          "publishedAt": "2026-11-23T09:01:14.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1795406640000-ao70",
-      "at": "2026-11-23T04:04:00.000Z",
-      "kind": "result",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Report identifies widespread toxic contamination in Gaza",
-          "body": "A study has identified widespread toxic contamination across Gaza, with reports from AP News and The Guardian describing the area as a toxic wasteland. The findings indicate that the environmental impact poses risks to public health for generations."
-        },
-        "es": {
-          "headline": "Un informe identifica una contaminación tóxica generalizada en Gaza",
-          "body": "Un estudio ha identificado una contaminación tóxica generalizada en toda Gaza, y los informes de AP News y The Guardian describen la zona como un erial tóxico. Los hallazgos indican que el impacto medioambiental supone riesgos para la salud pública durante generaciones."
-        },
-        "it": {
-          "headline": "Un rapporto identifica una diffusa contaminazione tossica a Gaza",
-          "body": "Uno studio ha identificato una diffusa contaminazione tossica in tutta Gaza, con i resoconti di AP News e The Guardian che descrivono l'area come una distesa tossica. I risultati indicano che l'impatto ambientale pone rischi per la salute pubblica per le generazioni a venire."
-        },
-        "zh": {
-          "headline": "报告指出加沙地区存在大范围有毒污染",
-          "body": "一项研究指出加沙全境存在大范围的有毒污染。据美联社和《卫报》报道，该地区已被形容为一片“有毒荒原”。研究结果显示，这种环境影响将对当地几代人的公共健康构成威胁。"
-        },
-        "pt": {
-          "headline": "Relatório identifica contaminação tóxica generalizada em Gaza",
-          "body": "Um estudo identificou uma contaminação tóxica generalizada em Gaza, com relatos da AP News e do The Guardian a descreverem a zona como um deserto tóxico. As conclusões indicam que o impacto ambiental representa riscos para a saúde pública durante gerações."
-        },
-        "ja": {
-          "headline": "報告書、ガザ全域で広範な有害汚染を指摘",
-          "body": "調査によりガザ全域で広範な有害汚染が確認された。AP通信やガーディアン紙は同地域を「有害な荒廃地」と報じている。調査結果は、環境への影響が今後数世代にわたり公衆衛生上のリスクとなることを示唆している。"
-        },
-        "de": {
-          "headline": "Bericht identifiziert weitverbreitete toxische Kontamination im Gazastreifen",
-          "body": "Eine Studie hat eine weitverbreitete toxische Kontamination im gesamten Gazastreifen festgestellt; Berichte von AP News und The Guardian beschreiben das Gebiet als toxische Einöde. Die Ergebnisse deuten darauf hin, dass die Umweltauswirkungen die öffentliche Gesundheit über Generationen hinweg gefährden."
-        },
-        "ko": {
-          "headline": "보고서, 가자 전역의 광범위한 유독 오염 확인",
-          "body": "AP 뉴스 및 가디언 보도에 따르면 한 연구에서 가자 전역에 걸친 광범위한 유독 오염이 확인되었으며, 해당 지역을 유독 황무지로 묘사했다. 이 연구 결과는 환경적 영향이 여러 세대에 걸쳐 공중 보건에 위험을 초래함을 시사한다."
-        },
-        "fr": {
-          "headline": "Un rapport identifie une contamination toxique généralisée à Gaza",
-          "body": "Une étude a identifié une contamination toxique généralisée à Gaza, des rapports de l'AP News et du Guardian décrivant la zone comme un désert toxique. Les conclusions indiquent que l'impact environnemental présente des risques pour la santé publique pour les générations à venir."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "AP News",
-          "title": "Study warns of widespread toxic contamination in Gaza as war unleashes environmental catastrophe",
-          "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPaWJNRHlXSGdDeU5QMy1kN0dCMnIzVi1NWTFIWDQ3dVJvR2g2eU0tZ3hzYTBqdUQtNWNVSnBpQ2JfZjVwMzkyRkotckVNNllBU1RPNUFSSUhhWm8xZ2hxdXhFQ1J0dGtDUEpMOWNleEN4bWlTQ25lWU1rLTdYeVFiQTIycjRBcTZXNkJJLTRNM00wQjVKN2oyQU1IcV96cld1dHk5ZmEteVJjRnkteTBiT3M3ZUFSMVQ1ZjMxQ09YV1EwSkVjanBqamRmMWtUQm9udzYtQXFLbWdYN2JzNHZCX2QtcTNxa085dnc?oc=5",
-          "publishedAt": "2026-11-23T04:04:00.000Z"
-        },
-        {
-          "outlet": "The Guardian",
-          "title": "Israel’s destruction of Gaza has created a ‘toxic wasteland’, experts find",
-          "url": "https://www.theguardian.com/world/2026/nov/23/israel-gaza-destruction-created-toxic-wasteland-oxfam-report",
-          "publishedAt": "2026-11-23T04:00:45.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.jpost.com/israel-news/politics-and-diplomacy/article-915797",
@@ -177,57 +285,27 @@
     "https://news.google.com/rss/articles/CBMizgFBVV95cUxOc3ZQMnNPYUJvbS1NdExvU2VXQnZPSkltN0NMSjBWQmE3Uzg2T0FEUU1RVFhmeXo0TGlOQUVfcFowZVBSTTdKMURiS210MzFqOGVlcmFiVFd0SllERE1yVzFvNkw1TmFNMWNSNGRSbU9XRlRCaFpOMnFQTDYySkdFMi00Um5PNkRna3ZhYXR0eDRQTUctLXAycjI4bkwtZEI1LUx4UjNMaEs0ZTV2cWtxVEQ2MVhBNUhyb2l5YlQyZjJCVXA4dVpONnVISkZCUQ?oc=5",
     "https://news.google.com/rss/articles/CBMijwFBVV95cUxOekVDcU1IVy1GdW9GN1Jpb2RKVlRxREliYTN2NTVSMlpyVmJLMlJ5WWFOWlZGcExyZVItNUF6U0dKbURkak5IbGFTcl9feEkyMkU5ejdXU09nT3hQcVV6LXlTQ2QyYTB0Q3Z0MGdOMXphZ0RYejcyRkJJN3hjRWtTZFAwMS1PWktHM1hmSWZFTQ?oc=5",
     "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPaWJNRHlXSGdDeU5QMy1kN0dCMnIzVi1NWTFIWDQ3dVJvR2g2eU0tZ3hzYTBqdUQtNWNVSnBpQ2JfZjVwMzkyRkotckVNNllBU1RPNUFSSUhhWm8xZ2hxdXhFQ1J0dGtDUEpMOWNleEN4bWlTQ25lWU1rLTdYeVFiQTIycjRBcTZXNkJJLTRNM00wQjVKN2oyQU1IcV96cld1dHk5ZmEteVJjRnkteTBiT3M3ZUFSMVQ1ZjMxQ09YV1EwSkVjanBqamRmMWtUQm9udzYtQXFLbWdYN2JzNHZCX2QtcTNxa085dnc?oc=5",
-    "https://www.theguardian.com/world/2026/nov/23/israel-gaza-destruction-created-toxic-wasteland-oxfam-report"
+    "https://www.theguardian.com/world/2026/nov/23/israel-gaza-destruction-created-toxic-wasteland-oxfam-report",
+    "https://www.jpost.com/israel-news/article-915812",
+    "https://www.jpost.com/israel-news/article-915810",
+    "https://timesofindia.indiatimes.com/world/europe/no-safe-waters-for-russian-ships-how-ukraine-pulled-off-2400-km-drone-strike-in-libya/articleshow/136098386.cms",
+    "https://www.wired.com/story/inside-googles-failure-to-make-google-maps-work-for-palestinians/",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxNSnpqckpXMXlYU3NlcWplQjdXVXR2OWplTU1jRkRKNTB0U2JqRHNRYTI0aXFkNXVWN2tWZGNkejJRbXBMWGFETmROWkNSSkVXS0V3aXNDbUZSQjRELVdMczBweGRXam1XNW1jaGdKQUZzS1pYWC1XNC0zM3ZJWEZoUXRiRXh5Y0JGZ1kyWUx3cG9SeE1IN1lmeUVidFRoWjgtcXdQQlZR?oc=5",
+    "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSEFHaDAzU3ljZUJXWjZPVlZWVVRRUTRURWlZa19LYzFiMHZYZ0wwUFlJYzdEdkNlYkNacFRXbUdjUzY5NXVhQUJ6Vmh3b2FMMkI2anl5T2dHU3hNY0J6bF90UlpqUlotdF9wVzhDSmlEc205dG5Zcm5WUEtqdVBkQ0E0bUt0NExWeTQ4UXhlMVhXQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQN1U3TlVwZkJnODVwREVKSUh5R2dXWHVHWlVrbzJpZUhNcVdaZzAzRXBqM1RqUmJrRm9mNDFpcHQ0c1dWU3FUd3VVa01ZVTRiX09vdXdfbWhpWE1FX1pOZFYza1F4RWxWc3JPem9RcDVHV1lxSGZJQmhMLThlemRJU2xBVkctVFhnY0FjQU9QdEI2amJvWFlNcUEwRER6bXowN2E4SnRYVUd1dGFqcTZLQnk0U1g4QmRJNTRv0gHAAUFVX3lxTE04MFp3SWFjTGxacVQyaGVKQndzdTEzS1B2ZC0wMFFHYzIzMG1PVFdKbnY2QlQtY2RfOFdPNUxuYmhadDg0YnRaalhQcVlWdzdIVVR3aldNVFY4QTB4WWczN0p3SDNHSkdIaGgzRS1xdGJnWHB2YVExeXk1OVV1WXpIcW91djdUYUVuZGxVNG91OU10MTV5R1Nva0R3RXdNaUMzZkNhT0tzb1VxMWhodTJWNmljZThrX19ZbnFDYlRNMw?oc=5",
+    "https://www.welt.de/politik/ausland/video6b040dad5842ff528b9e531c/libysche-kueste-russisches-kriegsschiff-im-mittelmeer-versenkt-ukraine-reklamiert-wasserdrohnen-angriff-fuer-sich.html",
+    "https://www.bbc.co.uk/news/articles/c6n90j1qxel8o?at_medium=RSS&at_campaign=rss",
+    "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPQU5zS0VmOHJXUDNTYWFsRXlYdmlGX0pRZFBUc2FfaUt5VWZydFdBRHRaazgzUjRDV3dRemJYdmpsWXpfNjltNkpMcDlpVzZKYmV6ZVQwX0s1WTlqVld0NWpWYXh4ekR0RjdFcEk5Z19zTmx0UlJELS1vdjh4SjBCbHFJOHBXeVB0Z0VDWEtINDllQkFUQzBrbnVQSFFYSWF0SG1yNHVkZlctLUxDR19JYVgxSU9XMk1KSVliMXUxRmdsTlo2M0tuSUxCUUtLOFRySE0wVmRyVTVKOE9F?oc=5",
+    "https://news.google.com/rss/articles/CBMiekFVX3lxTE02ZjRncTJoMWxic05yeDkxNTA2b0h5STVDQ0pQTHZaS0ZHZ21lalR6UjZsaDZsMV93TFF0bTc5M05QNWc3c002R3JJWlkybkV4LVRUSTN6VU9tSkstQ1NTb3h6aWttV3pYcGNraHhyTUsyYl91QmJra1FB?oc=5",
+    "https://news.google.com/rss/articles/CBMivAFBVV95cUxOR3ZZaTVYczRxdFhqQUlFVWhTM0JVX2xwTUdFcXhyY2hXMGFreTdLMTc3bDFyN1VKRDg0ZlZCVmVhX2t2WTBYVTY5b1N4czFfdVBTTHNmbWxjQnhQWE12dUo1VjNXZEpfQ2RJVDAwZ245cS13RWJGVnh1Q2NzMTAzTUNId2RrYzlQTXVTelBNMWlaQmdKT3ppczhwSThOcWR1ODVrY2lCTmo4R2VrMjZ3eG1aYV9rX2xxN3Vocw?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxPczQxSG9XUzZBRUZEc3VrWUlDbFBDbUM0ZWp1NEZBc1BnY1RUclFOUzlhdDBuRXJmT08tRk9kQndQMmR2MXNTX1dnNFptV0xJOVpLbHRpMjBrWV9sQ3FCQkFPSWczdUxBNVNJMXhBQkx4WHB0YlJ1ZW91T1BuRHkxNUNKYklORXhENlloTG95U2tYME00Mjd2cVR2cFBlaHE4T3loY0NqUmV6enloLU1YTmpXeUtOZ9IBuwFBVV95cUxQVGJGWWE4eHlzRzdqTXN3NkNUd3NWZGNkN291WEZraFo5QjB5azdjV2NYcUN6QzVxdWE2M3ZCSFFQRlRJeExxalZ1Y1J0TFU2alJuY2Nsc0JFQ1dkWmZlY2dlc04wWUJmQTJfS0N1RzNqX2FJT1h4UEIzaUFzTEtWMXVqcXZla25uN1ZkdnlaYnJ1UVdNdUwtQXFvZ3FabGR3UzA2TEQxT0otZGNFVVpqSTNNb3ZnOEZUZGFr?oc=5",
+    "https://www.aljazeera.com/news/2026/11/23/environmental-crimes-israel-blamed-for-toxic-pollution-in-99-of-gaza?traffic_source=rss"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Gaza Environmental Contamination Study",
-      "dek": "New international reports warn that ongoing military operations have left Gaza facing severe and widespread toxic environmental contamination."
-    },
-    "fr": {
-      "title": "Étude sur la contamination environnementale à Gaza",
-      "dek": "De nouveaux rapports internationaux préviennent que les opérations militaires en cours ont laissé Gaza confrontée à une contamination environnementale toxique, grave et généralisée."
-    },
-    "de": {
-      "title": "Studie zur Umweltkontamination im Gazastreifen",
-      "dek": "Neue internationale Berichte warnen, dass die anhaltenden Militäroperationen den Gazastreifen vor eine schwere und weitverbreitete giftige Umweltbelastung stellen."
-    },
-    "es": {
-      "title": "Estudio sobre contaminación ambiental en Gaza",
-      "dek": "Nuevos informes internacionales advierten de que las operaciones militares en curso han dejado a Gaza ante una grave y generalizada contaminación ambiental tóxica."
-    },
-    "it": {
-      "title": "Studio sulla contaminazione ambientale a Gaza",
-      "dek": "Nuovi rapporti internazionali avvertono che le continue operazioni militari hanno lasciato Gaza di fronte a una grave e diffusa contaminazione ambientale tossica."
-    },
-    "zh": {
-      "title": "加沙环境污染研究",
-      "dek": "新的国际报告警告称，持续的军事行动已使加沙面临严重且广泛的有毒环境污染。"
-    },
-    "pt": {
-      "title": "Estudo sobre Contaminação Ambiental em Gaza",
-      "dek": "Novos relatórios internacionais alertam que as operações militares em curso deixaram Gaza a enfrentar uma contaminação ambiental tóxica, grave e generalizada."
-    },
-    "ja": {
-      "title": "ガザの環境汚染に関する調査",
-      "dek": "新たな国際報告書は、継続中の軍事作戦により、ガザが深刻かつ広範囲にわたる有害な環境汚染に直面していると警告している。"
-    },
-    "ko": {
-      "title": "가자지구 환경 오염 연구",
-      "dek": "새로운 국제 보고서들은 계속되는 군사 작전으로 인해 가자지구가 심각하고 광범위한 유독성 환경 오염에 직면해 있다고 경고했다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "The Guardian",
-      "AP News",
-      "WV News",
-      "Anadolu Ajansı",
-      "Bluefield Daily Telegraph"
-    ],
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
-  }
+  "startedAt": "2026-11-23T09:36:57.887Z",
+  "updatedAt": "2026-11-23T10:47:36.816Z",
+  "importance": 5,
+  "wantsStats": true,
+  "articleSlug": null,
+  "sourceCount": 6,
+  "seenHeadlines": []
 }
