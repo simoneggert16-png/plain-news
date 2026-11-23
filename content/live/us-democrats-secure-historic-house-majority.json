@@ -16,24 +16,13 @@
     ],
     "createdBy": "bots/live.mjs",
     "statsModel": "nvidia/nemotron-3.5-bolt-e4b",
-    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
   },
   "slug": "us-democrats-secure-historic-house-majority",
   "stats": {
-    "label": "House Seats Count",
-    "note": "The reports detail the number of US House seats held by Democrats and Republicans after the midterm elections.",
-    "unit": "seats",
     "max": 435,
     "asOf": "2026-11-22T00:00:00.000Z",
-    "updatedAt": "2026-11-23T00:17:02.488Z",
-    "source": {
-      "outlet": "BBC",
-      "title": "Democrats win largest House majority since 1992 after flipping North Carolina seat",
-      "url": "https://www.bbc.co.uk/news/articles/c6vg29g7dlyno?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-11-22T20:26:24.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
+    "note": "The reports detail the number of US House seats held by Democrats and Republicans after the midterm elections.",
     "rows": [
       {
         "key": "democrats",
@@ -44,26 +33,26 @@
           "de": {
             "label": "Demokraten"
           },
-          "fr": {
-            "label": "Démocrates"
-          },
           "es": {
             "label": "Demócratas"
           },
+          "fr": {
+            "label": "Démocrates"
+          },
           "it": {
             "label": "Democratici"
-          },
-          "pt": {
-            "label": "Democratas"
-          },
-          "zh": {
-            "label": "民主党"
           },
           "ja": {
             "label": "民主党"
           },
           "ko": {
             "label": "민주당"
+          },
+          "pt": {
+            "label": "Democratas"
+          },
+          "zh": {
+            "label": "民主党"
           }
         }
       },
@@ -76,68 +65,110 @@
           "de": {
             "label": "Republikaner"
           },
-          "fr": {
-            "label": "Républicains"
-          },
           "es": {
             "label": "Republicanos"
           },
+          "fr": {
+            "label": "Républicains"
+          },
           "it": {
             "label": "Repubblicani"
-          },
-          "pt": {
-            "label": "Republicanos"
-          },
-          "zh": {
-            "label": "共和党"
           },
           "ja": {
             "label": "共和党"
           },
           "ko": {
             "label": "공화당"
+          },
+          "pt": {
+            "label": "Republicanos"
+          },
+          "zh": {
+            "label": "共和党"
           }
         }
       }
     ],
+    "unit": "seats",
+    "label": "House Seats Count",
+    "source": {
+      "url": "https://www.bbc.co.uk/news/articles/c6vg29g7dlyno?at_medium=RSS&at_campaign=rss",
+      "title": "Democrats win largest House majority since 1992 after flipping North Carolina seat",
+      "outlet": "BBC",
+      "trusted": true,
+      "publishedAt": "2026-11-22T20:26:24.000Z"
+    },
     "locales": {
       "de": {
-        "label": "Anzahl der Sitze im Repräsentantenhaus",
-        "note": "Die Berichte geben die Anzahl der Sitze im US-Repräsentantenhaus der Demokraten und Republikaner nach den Zwischenwahlen an."
-      },
-      "fr": {
-        "label": "Nombre de sièges à la Chambre",
-        "note": "Les rapports détaillent le nombre de sièges à la Chambre des États-Unis détenus par les Démocrates et les Républicains après les élections de mi-mandat."
+        "note": "Die Berichte geben die Anzahl der Sitze im US-Repräsentantenhaus der Demokraten und Republikaner nach den Zwischenwahlen an.",
+        "label": "Anzahl der Sitze im Repräsentantenhaus"
       },
       "es": {
-        "label": "Recuento de escaños en la Cámara",
-        "note": "Los informes detallan el número de escaños en la Cámara de EE. UU. en manos de demócratas y republicanos tras las elecciones de mitad de mandato."
+        "note": "Los informes detallan el número de escaños en la Cámara de EE. UU. en manos de demócratas y republicanos tras las elecciones de mitad de mandato.",
+        "label": "Recuento de escaños en la Cámara"
+      },
+      "fr": {
+        "note": "Les rapports détaillent le nombre de sièges à la Chambre des États-Unis détenus par les Démocrates et les Républicains après les élections de mi-mandat.",
+        "label": "Nombre de sièges à la Chambre"
       },
       "it": {
-        "label": "Conteggi dei seggi alla Camera",
-        "note": "I rapporti dettagliano il numero di seggi alla Camera degli Stati Uniti detenuti da Democratici e Repubblicani dopo le elezioni di metà mandato."
-      },
-      "pt": {
-        "label": "Contagem de Assentos na Câmara",
-        "note": "Os relatórios detalham o número de assentos na Câmara dos EUA detidos por Democratas e Republicanos após as eleições de meio de mandato."
-      },
-      "zh": {
-        "label": "众议院席位统计",
-        "note": "报告详细说明了中期选举后民主党和共和党在美国众议院的席位数。"
+        "note": "I rapporti dettagliano il numero di seggi alla Camera degli Stati Uniti detenuti da Democratici e Repubblicani dopo le elezioni di metà mandato.",
+        "label": "Conteggi dei seggi alla Camera"
       },
       "ja": {
-        "label": "下院議席数",
-        "note": "報道は、中間選挙後の民主党と共和党が保有する米下院議席数について詳述している。"
+        "note": "報道は、中間選挙後の民主党と共和党が保有する米下院議席数について詳述している。",
+        "label": "下院議席数"
       },
       "ko": {
-        "label": "하원 의석수",
-        "note": "보고서는 중간선거 후 민주당과 공화당이 보유한 미국 하원 의석수를 상세히 설명합니다."
+        "note": "보고서는 중간선거 후 민주당과 공화당이 보유한 미국 하원 의석수를 상세히 설명합니다.",
+        "label": "하원 의석수"
+      },
+      "pt": {
+        "note": "Os relatórios detalham o número de assentos na Câmara dos EUA detidos por Democratas e Republicanos após as eleições de meio de mandato.",
+        "label": "Contagem de Assentos na Câmara"
+      },
+      "zh": {
+        "note": "报告详细说明了中期选举后民主党和共和党在美国众议院的席位数。",
+        "label": "众议院席位统计"
       }
-    }
+    },
+    "updatedAt": "2026-11-23T00:17:02.488Z",
+    "sourceCount": 1
   },
   "topic": "US Democrats Secure Historic House Majority",
   "status": "live",
-  "article": null,
+  "article": {
+    "slug": "us-democrats-secure-historic-house-majority",
+    "updatedAt": "2026-11-23T08:18:02.846Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Democrats secure largest House majority since 1992 with 258 seats",
+        "dek": "Democrats secured at least 258 US House seats, the largest majority since 1992, according to multiple outlets.",
+        "facts": [
+          "Democrats secured at least 258 US House seats according to The Jerusalem Post and Al Jazeera",
+          "Republicans will hold at least 173 seats in the House of Representatives according to The Hindu and France 24",
+          "The 258-seat tally represents the largest House majority since 1992 according to The Jerusalem Post and Al Jazeera",
+          "Republicans are placed in the minority party following the 2026 midterm elections according to reports from The Hindu and France 24",
+          "Democrats won the largest US House majority since 1992 following the North Carolina seat win according to Al Jazeera",
+          "The Hindu reports Democrats clinched a historic House majority of at least 258 seats, largest since 1992"
+        ],
+        "body": [
+          "Democrats secured at least 258 US House seats according to The Jerusalem Post and Al Jazeera, the largest House majority since 1992.",
+          "Republicans will hold at least 173 seats in the House of Representatives following the 2026 midterm elections according to The Hindu and France 24, placing the party in the minority.",
+          "The 258-seat tally marks the largest House majority since 1992 according to The Jerusalem Post and Al Jazeera, while Republicans hold at least 173 seats according to The Hindu and France 24.",
+          "Democrats won the largest US House majority since 1992 following the North Carolina seat win according to Al Jazeera, with The Hindu reporting Democrats clinched a historic House majority of at least 258 seats.",
+          "Republicans are placed in the minority party with at least 173 seats following the 2026 midterm elections according to The Hindu and France 24, while Democrats secured at least 258 seats according to The Jerusalem Post and Al Jazeera.",
+          "The largest House majority since 1992 was secured by Democrats with 258 seats according to The Jerusalem Post and Al Jazeera, while Republicans hold at least 173 seats according to The Hindu and France 24.",
+          "Democrats secured at least 258 US House seats according to The Jerusalem Post and Al Jazeera, the largest majority since 1992, while Republicans hold at least 173 seats according to The Hindu and France 24.",
+          "Republicans will hold at least 173 seats in the House of Representatives following the 2026 midterm elections according to The Hindu and France 24, placing them in the minority as Democrats secured at least 258 seats according to The Jerusalem Post and Al Jazeera."
+        ],
+        "context": "Following the 2026 midterm elections, Democrats secured at least 258 US House seats, the largest majority since 1992, while Republicans hold at least 173 seats, placing them in the minority party according to multiple international outlets.",
+        "imageCaption": ""
+      }
+    },
+    "versions": []
+  },
   "endedAt": null,
   "locales": {
     "de": {
@@ -178,6 +209,64 @@
     }
   },
   "updates": [
+    {
+      "id": "u-1795418175000-hurz",
+      "at": "2026-11-23T07:16:15.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Republicans to hold at least 173 seats in House",
+          "body": "Republicans will hold at least 173 seats in the House of Representatives following the 2026 midterm elections. This total places the party in the minority, according to reports from The Hindu and France 24."
+        },
+        "fr": {
+          "headline": "Les républicains détiendront au moins 173 sièges à la Chambre",
+          "body": "Les républicains détiendront au moins 173 sièges à la Chambre des représentants à l'issue des élections de mi-mandat de 2026. Ce total place le parti dans la minorité, selon des informations rapportées par The Hindu et France 24."
+        },
+        "it": {
+          "headline": "I Repubblicani manterranno almeno 173 seggi alla Camera",
+          "body": "I Repubblicani deterranno almeno 173 seggi alla Camera dei Rappresentanti in seguito alle elezioni di metà mandato del 2026. Questo totale colloca il partito in minoranza, secondo quanto riportato da The Hindu e France 24."
+        },
+        "es": {
+          "headline": "Los republicanos obtendrán al menos 173 escaños en la Cámara de Representantes",
+          "body": "Los republicanos ocuparán al menos 173 escaños en la Cámara de Representantes tras las elecciones de mitad de mandato de 2026. Este total sitúa al partido en la minoría, según informes de The Hindu y France 24."
+        },
+        "ja": {
+          "headline": "共和党、下院で少なくとも173議席を確保",
+          "body": "2026年の中間選挙の結果、共和党は下院で少なくとも173議席を確保する見通しとなった。ザ・ヒンドゥー紙およびフランス24の報道によると、この結果により同党は少数派となる。"
+        },
+        "ko": {
+          "headline": "공화당, 하원 의석 최소 173석 확보",
+          "body": "2026년 중간선거 결과, 공화당은 하원에서 최소 173석을 확보하게 되었다. 더 힌두(The Hindu)와 프랑스 24(France 24)의 보도에 따르면, 이로써 공화당은 소수당 지위를 유지하게 된다."
+        },
+        "zh": {
+          "headline": "共和党将在众议院至少占据173个席位",
+          "body": "据《印度教徒报》和法兰西24电视台报道，在2026年中期选举后，共和党将在众议院至少占据173个席位。这一总数意味着该党将处于少数派地位。"
+        },
+        "de": {
+          "headline": "Republikaner halten mindestens 173 Sitze im Repräsentantenhaus",
+          "body": "Die Republikaner werden nach den Zwischenwahlen 2026 mindestens 173 Sitze im Repräsentantenhaus halten. Berichten von The Hindu und France 24 zufolge befindet sich die Partei damit in der Minderheit."
+        },
+        "pt": {
+          "headline": "Republicanos garantem pelo menos 173 lugares na Câmara",
+          "body": "Os Republicanos deterão pelo menos 173 lugares na Câmara dos Representantes após as eleições de meio de mandato de 2026. Este total coloca o partido na minoria, de acordo com informações do The Hindu e da France 24."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "France 24",
+          "title": "Democrats win largest US House majority since 1992: media",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZGxnZk1JeXNSN0pYM0t0bnV5MjRNeGFqTDdVSWhXc19LRC1vT21ZVVVSVGlMSUM4dGp2eGc3Yl9rTzVrb3lJX1ZHQ0doUXdyaVF6RVlqT2hBcDZJeS1rVy1LdEozbjRWa0ZTVi0wR2xtdFFrNGp0VTlCSXFqTUJuWlVMTGhWLWxwVFBFRmx6UWt6cmhfMDNyVmRkd3A2RzB4T2tDSVlR?oc=5",
+          "publishedAt": "2026-11-23T07:16:15.000Z"
+        },
+        {
+          "outlet": "The Hindu",
+          "title": "Democrats clinch a historic House majority of at least 258 seats, largest since 1992",
+          "url": "https://www.thehindu.com/news/international/democrats-clinch-a-historic-house-majority-of-at-least-258-seats-largest-since-1992/article71733328.ece",
+          "publishedAt": "2026-11-23T05:11:52.000Z"
+        }
+      ]
+    },
     {
       "at": "2026-11-22T22:29:38.000Z",
       "id": "u-1795386578000-o2ob",
@@ -287,14 +376,33 @@
     "https://www.nytimes.com/2026/11/22/us/politics/democrats-midterm-house-majority-record.html",
     "https://news.google.com/rss/articles/CBMilgFBVV95cUxNRTlhVl9TdFB4TzZPMHExRjJKdGJvQmZJcDRTcWl5TzRlMUpoalpDRmpJdjdpZWlQQTZrSWhfU2lXRGdSZVJCWVpMUFVubjNzRGpfUHEwUEptdHJJODZ1dlNoVk83dlN6aFgyRkk3RlRwUGJ2VXdNNFZSTThfOWxnclFjVzV5RS1iZ0R5QTZVcVU1YWRvamc?oc=5",
     "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQTjlyaFBqeExfeGk0WUNaOHNXSUhsdUtUUVhDeC1ELTNKOGNmcWcyUkVLb1otYVhMUWtKYmJOZXBHUTd6X25IY0owZHhFNGV5Wk55dTJmOVU1TXVkUno4V3MybTVqN0NNS3MtV015SDdTWjJweWdEZXF1dTFYTHNKR3RldXltTDFBU1pKSjJXeDNnWWdlZVM5cXlqYVRRejF6MHZrMC0tN3NwTkc4TFgwLXJ1QzdldXJFSFV5dXkyNkgyUdIBxwFBVV95cUxPZlVEVnlyejZodms5cVh2bkJCMmpDNkFUYUJnd1gzVTBhSDc1LWZEb3JDaDRKb0t2OHQwZ1Zpb2NIMW9GUlBlY3phd3lJYmlwSlIzay1raEdZNHh4ZjBSQlpRVmZLTzB0NmFRT0N6c1R1XzQyd2NiWUU0bHg0TEhQM25IejI2RFk2WlVGWkRKWlVDaGZ0dzRHWGFaMDEtOEt4dDgxQWVmVGs0el9BeGFyQVJvTElYZHhxVkR2aGp4b2RqWWZQbmIw?oc=5",
-    "https://news.google.com/rss/articles/CBMingFBVV95cUxQSHl4b1RjY3R2dVVlNEN0VFFuLUM4ckx5R285RXBqdFlDd0J5aFRSQU1IZVBvdGRWQlo3R2hYalZjdzg4cWljSmJOSUp4WkRyWUNWY2dEdzdtTXF6OUN5Um4tcWNIUG45cXNSS1l6RnlpVklPZ3pHQ3RFNDJzalp2QkVwcjF0UHo3T1pxYUh5YnVta3JsYnlSVXQzS3dFUQ?oc=5"
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxQSHl4b1RjY3R2dVVlNEN0VFFuLUM4ckx5R285RXBqdFlDd0J5aFRSQU1IZVBvdGRWQlo3R2hYalZjdzg4cWljSmJOSUp4WkRyWUNWY2dEdzdtTXF6OUN5Um4tcWNIUG45cXNSS1l6RnlpVklPZ3pHQ3RFNDJzalp2QkVwcjF0UHo3T1pxYUh5YnVta3JsYnlSVXQzS3dFUQ?oc=5",
+    "https://timesofindia.indiatimes.com/science/nature/workers-and-volunteers-collected-27744-acorns-at-north-carolinas-biltmore-estate-to-help-restore-forests-damaged-by-hurricane-helene-the-seeds-will-be-grown-into-young-trees-before-being-planted-on-damaged-land/articleshow/136091110.cms",
+    "https://allafrica.com/stories/202611230163.html",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZGxnZk1JeXNSN0pYM0t0bnV5MjRNeGFqTDdVSWhXc19LRC1vT21ZVVVSVGlMSUM4dGp2eGc3Yl9rTzVrb3lJX1ZHQ0doUXdyaVF6RVlqT2hBcDZJeS1rVy1LdEozbjRWa0ZTVi0wR2xtdFFrNGp0VTlCSXFqTUJuWlVMTGhWLWxwVFBFRmx6UWt6cmhfMDNyVmRkd3A2RzB4T2tDSVlR?oc=5",
+    "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOTUxPSWNnMjlaY2l1VHo0cFFRaTItNnhMNVgzVThCSm9YY2NMV2RlRWtQcVRVelBHTmNhWkVvRW1aWmdVbmxiZHhtZGRxVmF4RFJfV2JxcGdSSkNFeU1MWllaeDdZT2IwU2k5aGIzQ1o5UnNMa2w1SGdoVzRKTm9VM3d6ZWsyWGVCdGlr?oc=5",
+    "https://www.japantimes.co.jp/news/2026/11/23/japan/crime-legal/kamisu-mayoral-ambiguous-ballots/",
+    "https://en.yna.co.kr/view/AEN20261123006000315",
+    "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPZ3ozMWkyOF9peFQ2bmx5djYzUlluZnVmcHRSWHVFSzRMcVJzaXJRcm4xWHg4c3lpc3lNLXF5T250dmgwNGpROXBURUtfT3p0eWxCUWhDS2l5eUZkcFFUQnRhX3RfVzNxVTlVTm5xVm5oMHc0RDIxRGR4UGtGU3lxeEoxcUpoZ2FIV2pwdV9CWEVwOXhuN1hhU09kSWlZaENQT01qdmJjUUtFQ1M0ejVXYjAycVVYNnNZN01TazZkT29meVJPVE5nT2Y5NzZLeV9xQjZpNTRpdkpJNW1BX1hVd1REZE9Ob1pGT1YycG44d2tvY2Fzb3N1QldUWGE?oc=5",
+    "https://allafrica.com/stories/202611230142.html",
+    "https://allafrica.com/stories/202611230140.html",
+    "https://www.aljazeera.com/news/2026/11/23/who-is-alberto-feijoo-the-conservative-seeking-to-become-spains-new-pm?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNGJ6MGgtZVZtNjk1bEFZOEl3bU1QYzlEVjRZSUpNSmg2dXFQYWxKN09DdHE3anZTWmZVaENqemlMTFhRNnVvQ0RvSEcxTDZPejdZYkROSUtZQl9HRElfVE4tR00tdkZXRXlHTk5venV4M3o2QlFwQnhnWVdid1Bnd1NPemlEVHBBdFhFSmJydkt2RzBrdG5NbXpHYUwtVGxZWTEtNFQwWnNNOW55MVE?oc=5",
+    "https://www.semafor.com/article/11/22/2026/poll-shows-media-ripples-of-midterm-blue-wave-and-rogans-lasting-appeal",
+    "https://www.dawn.com/news/2046448/netanyahu-and-eisenkots-parties-resume-talks-to-form-coalition-govt-in-israel",
+    "https://www.thehindu.com/news/international/democrats-clinch-a-historic-house-majority-of-at-least-258-seats-largest-since-1992/article71733328.ece",
+    "https://www.thehindu.com/news/international/us-midterm-elections-2026-senate-governor-races-winners-losers-trump-republicans-democrats-news/article71663818.ece",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSnA5eFd6U1N4QjNuQjE0Q2d1bUFSWUhKMTMwU3BXYUUtUG5BYVUwdmg2ckQxN0FSVW4tM1lPb2VYWmVLV3QtYTN3SWtuclBuV2dveWVPMWZ2SlFHUzJZY2NVUmdLWm95TU56WDR6LTZPTHBsejZ6MEdFdmttOENTcW92dE0yQQ?oc=5",
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxNd2pka0ZDT193ejNCRHAtS3pmM1d1Ui03djNxaUlnR1NHc1JZcVd0aFp6WndwSlF4WEVRSWJHUnl2ZHlIeDlTUlk5bk4yQk9Gc0xyNDNJd3R0empLRE1wY1V1dGdxM204MGt5eTBPb01rMXFxRU1HVExqa3hrVGRWQzhCODcyNUFMVDZ4OXFKejI2QmxLaVE?oc=5",
+    "https://www.scmp.com/news/hong-kong/politics/article/3375417/beijing-hails-election-committee-poll-affirming-patriots-only-system-hong-kong",
+    "https://www.politico.eu/article/far-right-patriots-for-europe-national-election-wins-transform-eu/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
   ],
   "startedAt": "2026-11-22T23:27:09.529Z",
-  "updatedAt": "2026-11-22T23:27:23.357Z",
+  "updatedAt": "2026-11-23T08:17:15.885Z",
   "importance": 5,
   "wantsStats": true,
-  "articleSlug": null,
-  "sourceCount": 2,
+  "articleSlug": "us-democrats-secure-historic-house-majority",
+  "sourceCount": 4,
   "statsHistory": [
     {
       "at": "2026-11-22T00:00:00.000Z",
