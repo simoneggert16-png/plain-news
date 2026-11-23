@@ -1,6 +1,1455 @@
 {
-  "updatedAt": "2026-11-23T18:39:18.888Z",
+  "updatedAt": "2026-11-23T19:04:31.534Z",
   "articles": [
+    {
+      "slug": "open-source-pipeline-models-pediatric-tumors-for-drug-testing-20261123-zlum",
+      "category": "health",
+      "form": "report",
+      "image": "https://i.guim.co.uk/img/media/226638b0d64c231e0aad8f2c1ccfc9781cea65b3/0_0_6144_4096/master/6144.jpg?width=465&dpr=1&s=none&crop=none",
+      "imageCredit": "The Guardian",
+      "video": {
+        "type": "youtube",
+        "id": "RnHerrGsT-4",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/RnHerrGsT-4"
+      },
+      "importance": 3,
+      "publishedAt": "2026-11-23T18:53:24.650Z",
+      "updatedAt": "2026-11-23T18:53:24.650Z",
+      "sourceCount": 4,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Open-Source Pipeline Models Pediatric Tumors For Drug Testing",
+          "dek": "St. Jude Children's Research Hospital established a pipeline to generate accurate pediatric tumor models for anticancer therapy development.",
+          "standfirst": null,
+          "facts": [
+            "The pipeline generated organoids from 135 pediatric tumors and 82 patient-matched cell cultures according to MedicalXpress.",
+            "Researchers established 20 renewable cancer cell lines with the Broad Institute in collaboration with St. Jude Children's Research Hospital.",
+            "Data, including single-cell RNA-sequencing, is freely available through the Childhood Solid Tumor Network."
+          ],
+          "imageCaption": "Workers harvest cranberries at the Pine Island Farm in Chatsworth, New Jersey, on 19 October 2025. Photograph: Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "de": {
+          "title": "Open-Source-Pipelines modellieren pädiatrische Tumore für Medikamententests",
+          "dek": "Das St. Jude Children's Research Hospital etablierte eine Pipeline zur Erzeugung genauer pädiatrischer Tumormodelle für die Entwicklung von Krebsmedikamenten.",
+          "standfirst": null,
+          "facts": [
+            "Die Pipeline erzeugte Organoide aus 135 pädiatrischen Tumoren und 82 patientenpassenden Zellkulturen laut MedicalXpress",
+            "Forscher etablierten mit dem Broad Institute in Zusammenarbeit mit dem St. Jude Children's Research Hospital 20 erneuerbare Krebszelllinien",
+            "Daten, einschließlich Einzelzell-RNA-Sequenzierung, sind über das Childhood Solid Tumor Network frei verfügbar"
+          ],
+          "imageCaption": "Arbeiter ernten Cranberries auf der Pine Island Farm in Chatsworth, New Jersey, am 19. Oktober 2025. Foto: Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "fr": {
+          "title": "Modèles de tumeurs pédiatriques en libre accès pour les tests de médicaments",
+          "dek": "Le St. Jude Children's Research Hospital a mis en place un pipeline pour générer des modèles précis de tumeurs pédiatriques destinés au développement de thérapies anticancéreuses.",
+          "standfirst": null,
+          "facts": [
+            "Le pipeline a généré des organoïdes à partir de 135 tumeurs pédiatriques et de 82 cultures cellulaires appariées aux patients selon MedicalXpress",
+            "Les chercheurs ont établi 20 lignées cellulaires cancéreuses renouvelables avec le Broad Institute en collaboration avec le St. Jude Children's Research Hospital",
+            "Les données, incluant le séquençage ARN unicellulaire, sont librement accessibles via le Childhood Solid Tumor Network"
+          ],
+          "imageCaption": "Des ouvriers récoltent des canneberges à la Pine Island Farm à Chatsworth, New Jersey, le 19 octobre 2025. Photographie : Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "es": {
+          "title": "Modelos de tubería de código abierto para tumores pediátricos en pruebas de fármacos",
+          "dek": "El Hospital de Investigación Infantil St. Jude ha establecido una tubería para generar modelos precisos de tumores pediátricos para el desarrollo de terapias anticancerígenas.",
+          "standfirst": null,
+          "facts": [
+            "La tubería generó organoides a partir de 135 tumores pediátricos y 82 cultivos celulares emparejados con pacientes según MedicalXpress",
+            "Los investigadores establecieron 20 líneas celulares cancerosas renovables con el Broad Institute en colaboración con el Hospital de Investigación Infantil St. Jude",
+            "Los datos, incluida la secuenciación de ARN de célula única, están disponibles libremente a través de la Childhood Solid Tumor Network"
+          ],
+          "imageCaption": "Trabajadores cosechan arándanos en la Pine Island Farm de Chatsworth, Nueva Jersey, el 19 de octubre de 2025. Fotografía: Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "it": {
+          "title": "Modelli open-source per tumori pediatrici per i test sui farmaci",
+          "dek": "St. Jude Children's Research Hospital ha creato un sistema per generare modelli accurati di tumori pediatrici per lo sviluppo di terapie antitumorali.",
+          "standfirst": null,
+          "facts": [
+            "Il sistema ha generato organoidi da 135 tumori pediatrici e 82 colture cellulari abbinate ai pazienti secondo MedicalXpress",
+            "I ricercatori hanno stabilito 20 linee cellulari tumorali rinnovabili con il Broad Institute in collaborazione con St. Jude Children's Research Hospital",
+            "I dati, inclusa la sequenziamento RNA a singola cellula, sono liberamente disponibili tramite la Childhood Solid Tumor Network"
+          ],
+          "imageCaption": "Operai raccolgono mirtilli alla Pine Island Farm a Chatsworth, New Jersey, il 19 ottobre 2025. Fotografia: Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "pt": {
+          "title": "Modelos de Pipeline de Código Aberto para Tumores Pediátricos em Testes de Medicamentos",
+          "dek": "O St. Jude Children's Research Hospital estabeleceu um pipeline para gerar modelos precisos de tumores pediátricos para o desenvolvimento de terapias anticancerígenas.",
+          "standfirst": null,
+          "facts": [
+            "O pipeline gerou organoides a partir de 135 tumores pediátricos e 82 culturas de células correspondentes a pacientes, segundo a MedicalXpress",
+            "Os investigadores estabeleceram 20 linhagens de células cancerígenas renováveis em colaboração com o Broad Institute e o St. Jude Children's Research Hospital",
+            "Dados, incluindo sequenciação de RNA de célula única, estão disponíveis gratuitamente através da Childhood Solid Tumor Network"
+          ],
+          "imageCaption": "Trabalhadores colhem cranberries na Pine Island Farm em Chatsworth, Nova Jersey, a 19 de outubro de 2025. Fotografia: Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "ja": {
+          "title": "オープンソースのパイプラインで小児腫瘍を創出し薬剤試験へ",
+          "dek": "セントジュード小児研究病院が、抗がん剤治療開発のための正確な小児腫瘍モデルを生成するパイプラインを確立した",
+          "standfirst": null,
+          "facts": [
+            "パイプラインは135の小児腫瘍と82の患者マッチ細胞培養からオルガノイドを生成したとMedicalXpressが報じた",
+            "研究者らはブロード研究所とセントジュード小児研究病院の協力により20の再生可能ながん細胞株を確立した",
+            "シングルセルRNAシーケンシングを含むデータはチルドフッド・ソリッド・チューマー・ネットワークを通じて無料で利用可能"
+          ],
+          "imageCaption": "2025年10月19日、ニュージャージー州チャッツワースのパインアイランドファームで作業員がクランベリーを収穫している写真：Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "ko": {
+          "title": "오픈소스 파이프라인으로 소아 종양 약물 테스트",
+          "dek": "세인트주드 아동병원, 항암 치료제 개발을 위한 정확한 소아 종양 모델 생성 파이프라인 구축",
+          "standfirst": null,
+          "facts": [
+            "이 파이프라인은 135개 소아 종양과 82개 환자 매칭 세포 배양액으로부터 오가노이드를 생성했다고 메디컬엑스프레스가 보도했다",
+            "연구진은 브로드 연구소와 세인트주드 아동병원과의 협력을 통해 20개의 재생 가능한 암세포주를 확립했다",
+            "단일 세포 RNA 시퀀싱을 포함한 데이터는 아동 고형 종양 네트워크를 통해 자유롭게 이용 가능하다"
+          ],
+          "imageCaption": "2025년 10월 19일 뉴저지주 채츠워스 파인 아일랜드 농장에서 크랜베리 수확 작업자들. 사진: Lokman Vural Elibol/Anadolu/Getty Images"
+        },
+        "zh": {
+          "title": "开源管道模型为儿童肿瘤药物测试提供支持",
+          "dek": "圣犹大儿童研究医院建立管道，生成精准的儿童肿瘤模型，助力抗癌疗法研发",
+          "standfirst": null,
+          "facts": [
+            "管道依据MedicalXpress，从135例儿童肿瘤和82例匹配患者细胞系生成器官体；",
+            "研究人员与斯坦福儿童研究医院合作，利用 Broad Institute 建立20条可更新的癌症细胞系；",
+            "含单细胞RNA测序在内的数据通过儿童实体肿瘤网络免费获取；"
+          ],
+          "imageCaption": "工人于2025年10月19日在美国新泽西州查塔斯沃特的Pine Island Farm采摘 cranberries。摄影：Lokman Vural Elibol/Anadolu/Getty Images"
+        }
+      }
+    },
+    {
+      "slug": "danish-top-court-rules-ghetto-law-evictions-not-discriminatory-20261123-vzqc",
+      "category": "politics",
+      "form": "report",
+      "image": null,
+      "imageCredit": null,
+      "video": null,
+      "importance": 4,
+      "publishedAt": "2026-11-23T18:53:16.197Z",
+      "updatedAt": "2026-11-23T18:53:16.197Z",
+      "sourceCount": 2,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Danish Top Court Rules Ghetto Law Evictions Not Discriminatory",
+          "dek": "The Danish Supreme Court ruled that evicting tenants under the 2018 'ghetto law' was not discriminatory.",
+          "standfirst": null,
+          "facts": [
+            "The Supreme Court rejected an appeal by seven families on Monday, November 23, 2026.",
+            "The 2018 'ghetto law' allows relocation from areas where over half of residents are defined as 'non-Western'.",
+            "The court found the criterion 'immigrants and descendants from non-Western countries' is neutral, not a measure of ethnic origin."
+          ],
+          "imageCaption": null
+        },
+        "de": {
+          "title": "Obers Gericht Dänemarks hält Wohnungsenteignungen nach „Ghettogesetz“ für nicht diskriminierend",
+          "dek": "Das dänische Oberste Gericht entschied, dass die Räumung von Mietern nach dem „Ghettogesetz“ von 2018 nicht diskriminierend sei.",
+          "standfirst": null,
+          "facts": [
+            "Das Oberste Gericht wies am Montag, den 23. November 2026, eine Berufung von sieben Familien zurück",
+            "Das „Ghettogesetz“ von 2018 erlaubt die Umsiedlung aus Gebieten, in denen mehr als die Hälfte der Bewohner als „nicht-westlich“ definiert ist",
+            "Das Gericht befand, dass das Kriterium „Einwanderer und Nachkommen aus nicht-westlichen Ländern“ neutral und nicht ein Maß für die ethnische Herkunft sei"
+          ],
+          "imageCaption": null
+        },
+        "fr": {
+          "title": "La Cour suprême danoise juge les expulsions liées à la loi sur les ghettos non discriminatoires",
+          "dek": "La Cour suprême danoise a statué que l'expulsion des locataires au titre de la loi de 2018 sur les \"ghettos\" n'était pas discriminatoire.",
+          "standfirst": null,
+          "facts": [
+            "La Cour suprême a rejeté un appel déposé par sept familles le lundi 23 novembre 2026",
+            "La loi de 2018 sur les \"ghettos\" permet la relocalisation dans les zones où plus de la moitié des résidents sont définis comme \"non-occidentaux\"",
+            "La cour a jugé que le critère \"immigrants et descendants de pays non-occidentaux\" est neutre et non une mesure d'origine ethnique"
+          ],
+          "imageCaption": null
+        },
+        "es": {
+          "title": "Tribunal Supremo danés: los desalojos por la ley de guetos no son discriminatorios",
+          "dek": "El Tribunal Supremo danés dictaminó que desalojar inquilinos bajo la 'ley de guetos' de 2018 no constituye discriminación",
+          "standfirst": null,
+          "facts": [
+            "El Tribunal Supremo desestimó un recurso de siete familias el lunes 23 de noviembre de 2026",
+            "La 'ley de guetos' de 2018 permite la reubicación de áreas donde más de la mitad de los residentes son definidos como 'no occidentales'",
+            "El tribunal consideró que el criterio 'inmigrantes y descendientes de países no occidentales' es neutral, no una medida de origen étnico"
+          ],
+          "imageCaption": null
+        },
+        "it": {
+          "title": "Corte Suprema danese: gli sfratti previsti dalla legge sui ghetti non sono discriminatori",
+          "dek": "La Corte Suprema danese ha stabilito che gli sfratti di inquilini ai sensi della \"legge sui ghetti\" del 2018 non costituiscono discriminazione",
+          "standfirst": null,
+          "facts": [
+            "La Corte Suprema ha respinto un ricorso mosso da sette famiglie lunedì 23 novembre 2026",
+            "La \"legge sui ghetti\" del 2018 consente la ricollocazione da aree dove più della metà dei residenti è definita \"non occidentale\"",
+            "Il tribunale ha ritenuto che il criterio \"immigrati e discendenti da paesi non occidentali\" sia neutro, non una misura di origine etnica"
+          ],
+          "imageCaption": null
+        },
+        "pt": {
+          "title": "Tribunal Supremo Dinamarquês Julga que Despejos por Lei de Gueto Não São Discriminatórios",
+          "dek": "O Supremo Tribunal Dinamarquês decidiu que os despejos de inquilinos sob a \"lei de gueto\" de 2018 não são discriminatórios.",
+          "standfirst": null,
+          "facts": [
+            "O Supremo Tribunal rejeitou um recurso de sete famílias na segunda-feira, 23 de novembro de 2026",
+            "A \"lei de gueto\" de 2018 permite a realocação de áreas onde mais de metade dos residentes são definidos como \"não ocidentais\"",
+            "O tribunal considerou que o critério \"imigrantes e descendentes de países não ocidentais\" é neutro, e não uma medida de origem étnica"
+          ],
+          "imageCaption": null
+        },
+        "zh": {
+          "title": "丹麦最高法院裁定“贫民窟法”驱逐不具歧视性",
+          "dek": "丹麦最高法院裁定依据2018年“贫民窟法”的租户驱逐不构成歧视",
+          "standfirst": null,
+          "facts": [
+            "最高法院于2026年11月23日周一驳回了七个家庭的上诉",
+            "2018年“贫民窟法”允许从超过一半居民被定义为“非西方”的地区进行搬迁",
+            "法院认定“来自非西方国家的移民及其后代”这一标准是中性的，而非基于族裔出身"
+          ],
+          "imageCaption": null
+        },
+        "ja": {
+          "title": "デンマーク最高裁、ゲットー法に基づく立ち退きは差別的ではないと判決",
+          "dek": "デンマーク最高裁は、2018年の「ゲットー法」に基づくテナントの立ち退きは差別的ではないとの判断を下した。",
+          "standfirst": null,
+          "facts": [
+            "最高裁は2026年11月23日月曜日に7家族の控訴を棄却した",
+            "2018年の「ゲットー法」は、住民の過半数が「非西側」と定義される地域からの移転を認めている",
+            "裁判所は、「非西側諸国からの移民およびその子孫」という基準は民族的出自の尺度ではなく中立的であると判断した"
+          ],
+          "imageCaption": null
+        },
+        "ko": {
+          "title": "덴마크 대법원, 게토법에 따른 퇴거는 차별적이지 않다고 판결",
+          "dek": "덴마크 대법원은 2018년 '게토법'에 따른 세입자 퇴거가 차별적이지 않다고 판결했다.",
+          "standfirst": null,
+          "facts": [
+            "대법원은 2026년 11월 23일 7가족의 항소를 기각했다",
+            "2018년 '게토법'은 거주민 중 절반 이상이 '비서구권'으로 정의된 지역에서의 재배치를 허용한다",
+            "법원은 '비서구권 국가 출신 이민자와 그 후손'이라는 기준이 민족적 기원에 대한 척도가 아닌 중립적이라고 판단했다"
+          ],
+          "imageCaption": null
+        }
+      }
+    },
+    {
+      "slug": "iranian-authorities-flog-singer-and-four-team-members-in-20261123-ol2i",
+      "category": "world",
+      "form": "report",
+      "image": "https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/6a11/live/e201bf70-bb4c-11f1-bc1f-3f186ca4140c.jpg",
+      "imageCredit": "BBC",
+      "video": {
+        "type": "youtube",
+        "id": "oYcaDHEnhbU",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/oYcaDHEnhbU"
+      },
+      "importance": 4,
+      "publishedAt": "2026-11-23T18:53:08.912Z",
+      "updatedAt": "2026-11-23T18:53:08.912Z",
+      "sourceCount": 3,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Iranian authorities flog singer and four team members in Qom",
+          "dek": "Iranian authorities flogged singer Parastoo Ahmadi and four team members on Monday following a December 2024 performance without a hijab.",
+          "standfirst": null,
+          "facts": [
+            "Parastoo Ahmadi, 29, performed without a mandatory hijab in Qom in December 2024.",
+            "Ahmadi and four co-defendants received 74 lashes each.",
+            "The sentence also included a two-year ban on travel and two-year ban on audiovisual activity."
+          ],
+          "imageCaption": "Iranian singer Parastoo Ahmadi performs in Qom, Iran, during a livestreamed concert in December 2024"
+        },
+        "de": {
+          "title": "Iranische Behörden schlagen Sängerin und vier Teammitglieder in Qom",
+          "dek": "Iranische Behörden peitschten die Sängerin Parastoo Ahmadi und vier Teammitglieder am Montag nach einem Auftritt im Dezember 2024 ohne Hijab.",
+          "standfirst": null,
+          "facts": [
+            "Parastoo Ahmadi, 29, trat im Dezember 2024 in Qom ohne vorgeschriebenen Hijab auf",
+            "Ahmadi und vier Mitangeklagte erhielten jeweils 74 Peitschenhiebe",
+            "Das Urteil umfasste zudem ein zweijähriges Reiseverbot und ein zweijähriges Verbot audiovisueller Tätigkeit"
+          ],
+          "imageCaption": "Die iranische Sängerin Parastoo Ahmadi tritt in Qom, Iran, während eines im Dezember 2024 live gestreamten Konzerts auf"
+        },
+        "fr": {
+          "title": "Les autorités iraniennes fouettent une chanteuse et quatre membres de son équipe à Qom",
+          "dek": "Les autorités iraniennes ont fouetté la chanteuse Parastoo Ahmadi et quatre membres de son équipe lundi suite à une performance en décembre 2024 sans hijab.",
+          "standfirst": null,
+          "facts": [
+            "Parastoo Ahmadi, 29 ans, s'est produite sans hijab obligatoire à Qom en décembre 2024",
+            "Ahmadi et quatre co-accusés ont reçu 74 coups de fouet chacun",
+            "La peine comprenait également une interdiction de voyager de deux ans et une interdiction d'activité audiovisuelle de deux ans"
+          ],
+          "imageCaption": "La chanteuse iranienne Parastoo Ahmadi se produit à Qom, en Iran, lors d'un concert diffusé en direct en décembre 2024"
+        },
+        "es": {
+          "title": "Autoridades iraníes azotan a cantante y a cuatro miembros del equipo en Qom",
+          "dek": "Autoridades iraníes azotaron a la cantante Parastoo Ahmadi y a cuatro miembros de su equipo el lunes tras una actuación en diciembre de 2024 sin velo",
+          "standfirst": null,
+          "facts": [
+            "Parastoo Ahmadi, 29, actuó sin el velo obligatorio en Qom en diciembre de 2024",
+            "Ahmadi y cuatro coacusados recibieron 74 latigazos cada uno",
+            "La sentencia también incluyó una prohibición de viajar de dos años y una prohibición de actividad audiovisual de dos años"
+          ],
+          "imageCaption": "La cantante iraní Parastoo Ahmadi actúa en Qom, Irán, durante un concierto retransmitido en directo en diciembre de 2024"
+        },
+        "it": {
+          "title": "Autorità iraniane picchiano cantante e quattro membri del team a Qom",
+          "dek": "Le autorità iraniane hanno picchiato la cantante Parastoo Ahmadi e quattro membri del suo team lunedì a seguito di un'esibizione di dicembre 2024 senza hijab.",
+          "standfirst": null,
+          "facts": [
+            "Parastoo Ahmadi, 29 anni, si è esibita senza l'obbligatorio hijab a Qom a dicembre 2024",
+            "Ahmadi e quattro co-imputati hanno ricevuto 74 colpi ciascuno",
+            "La sentenza include anche un divieto di viaggio di due anni e un divieto di attività audiovisiva di due anni"
+          ],
+          "imageCaption": "La cantante iraniana Parastoo Ahmadi si esibisce a Qom, Iran, durante un concerto trasmesso in diretta nel dicembre 2024"
+        },
+        "zh": {
+          "title": "伊朗当局在库姆鞭打歌手及四名团队成员",
+          "dek": "歌手帕拉斯图·阿赫马迪及其四名团队成员因2024年12月无头巾演出，于周一遭到鞭打",
+          "standfirst": null,
+          "facts": [
+            "帕拉斯图·阿赫马迪，29岁，于2024年12月在库姆无头巾演出",
+            "阿赫马迪和四名共同被告各被判74鞭",
+            "判决还包括两年旅行禁令和两年视听活动禁令"
+          ],
+          "imageCaption": "伊朗歌手帕拉斯图·阿赫马迪于2024年12月在伊朗库姆进行直播演唱会"
+        },
+        "ja": {
+          "title": "イラン当局、歌手とチームメンバー4名に鞭打ち",
+          "dek": "イラン当局は、2024年12月のパフォーマンスでヒジャブを着用しなかった歌手パラストー・アフマディとチームメンバー4名に月曜日に鞭打ち刑を科した",
+          "standfirst": null,
+          "facts": [
+            "パラストー・アフマディ（29歳）は2024年12月にコムで義務的なヒジャブなしでパフォーマンスを行った",
+            "アフマディと4名の共犯者はそれぞれ74回の鞭打ち刑を受けた",
+            "判決には2年間の渡航禁止と2年間の視聴覚活動禁止も含まれた"
+          ],
+          "imageCaption": "イランの歌手パラストー・アフマディが2024年12月のライブストリーミングコンサートでイランのコムでパフォーマンスしている"
+        },
+        "ko": {
+          "title": "이란 당국, 코름 가수 및 팀원 4명에 채찍형 부과",
+          "dek": "이란 당국은 2024년 12월 히잡을 착용하지 않은 공연을 이유로 가수 파라스투 아흐마디와 팀원 4명에게 채찍형을 내렸다.",
+          "standfirst": null,
+          "facts": [
+            "파라스투 아흐마디(29세)는 2024년 12월 코름에서 의무 히잡 없이 공연했다",
+            "아흐마디와 4명의 공범은 각각 74대의 채찍형을 선고받았다",
+            "이 형벌에는 2년간의 여행 금지 및 2년간의 시청각 활동 금지가 포함되었다"
+          ],
+          "imageCaption": "이란 가수 파라스투 아흐마디가 2024년 12월 라이브 스트리밍 콘서트 중 이란 코름에서 공연하고 있다"
+        }
+      }
+    },
+    {
+      "slug": "experts-and-union-state-fc-bayern-cannot-unilaterally-cut-20261123-imyb",
+      "category": "sport",
+      "form": "report",
+      "image": "https://cdn.prod.www.spiegel.de/images/3b4f2c01-8f6a-44e1-82a0-67b8c8457c3f_w1024_r1.5_fpx51_fpy40.67.jpg",
+      "imageCredit": "Foto: F. Noever / FC Bayern / Getty Images",
+      "video": {
+        "type": "video",
+        "url": "https://welt.cdn.content-discovery.video/videos/rsymf7droifp/rendition/568cbb1c-b034-478e-9ada-cf477df927b2/file-v720p.mp4"
+      },
+      "importance": 4,
+      "publishedAt": "2026-11-23T18:53:08.048Z",
+      "updatedAt": "2026-11-23T18:53:08.048Z",
+      "sourceCount": 4,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Experts and union state FC Bayern cannot unilaterally cut Musiala's salary",
+          "dek": "Ulf Baranowsky of the VDV stated a unilateral salary cut for Jamal Musiala is legally not possible.",
+          "standfirst": null,
+          "facts": [
+            "Ulf Baranowsky, VDV manager, stated a unilateral salary cut for Jamal Musiala is legally not possible.",
+            "Jan-Christian Dreesen stated the club has a duty to ensure Musiala gets time to recover.",
+            "Uli Hoeneß and Karl-Heinz Rummenigge questioned Musiala's current contract conditions."
+          ],
+          "imageCaption": "Bayern-Profi Musiala: Unter dem Brennglas"
+        },
+        "de": {
+          "title": "Experten und Gewerkschaftsstaat FC Bayern können Musialas Gehalt nicht einseitig kürzen",
+          "dek": "Ulf Baranowsky vom VDV erklärte, eine einseitige Gehaltskürzung für Jamal Musiala sei rechtlich nicht möglich.",
+          "standfirst": null,
+          "facts": [
+            "Ulf Baranowsky, VDV-Manager, erklärte, eine einseitige Gehaltskürzung für Jamal Musiala sei rechtlich nicht möglich.",
+            "Jan-Christian Dreesen erklärte, der Verein habe die Pflicht, sicherzustellen, dass Musiala Zeit zur Erholung bekommt.",
+            "Uli Hoeneß und Karl-Heinz Rummenigge hinterfragten Musialas aktuelle Vertragsbedingungen."
+          ],
+          "imageCaption": "Bayern-Profi Musiala: Unter dem Brennglas"
+        },
+        "fr": {
+          "title": "Les experts et le syndicat : le FC Bayern ne peut couper unilatéralement le salaire de Musiala",
+          "dek": "Ulf Baranowsky du VDV a déclaré qu'une réduction salariale unilatérale de Jamal Musiala n'est pas légalement possible.",
+          "standfirst": null,
+          "facts": [
+            "Ulf Baranowsky, responsable du VDV, a déclaré qu'une réduction salariale unilatérale de Jamal Musiala n'est pas légalement possible",
+            "Jan-Christian Dreesen a affirmé que le club a le devoir de garantir à Musiala un temps de récupération",
+            "Uli Hoeneß et Karl-Heinz Rummenigge ont remis en question les conditions contractuelles actuelles de Musiala"
+          ],
+          "imageCaption": "Musiala, joueur du Bayern : Sous les projecteurs"
+        },
+        "es": {
+          "title": "Expertos y el club FC Bayern no pueden reducir unilateralmente el salario de Musiala",
+          "dek": "Ulf Baranowsky, del VDV, afirmó que una reducción salarial unilateral para Jamal Musiala no es legalmente posible",
+          "standfirst": null,
+          "facts": [
+            "Ulf Baranowsky, mánager del VDV, afirmó que una reducción salarial unilateral para Jamal Musiala no es legalmente posible",
+            "Jan-Christian Dreesen declaró que el club tiene el deber de asegurar que Musiala tenga tiempo para recuperarse",
+            "Uli Hoeneß y Karl-Heinz Rummenigge cuestionaron las condiciones contractuales actuales de Musiala"
+          ],
+          "imageCaption": "Musiala, profesional del Bayern: Bajo el microscopio"
+        },
+        "it": {
+          "title": "Esperti e lo stato del sindacato FC Bayern non possono ridurre unilateralmente lo stipendio di Musiala",
+          "dek": "Ulf Baranowsky del VDV ha dichiarato che una riduzione unilaterale dello stipendio di Jamal Musiala non è legalmente possibile.",
+          "standfirst": null,
+          "facts": [
+            "Ulf Baranowsky, dirigente del VDV, ha dichiarato che una riduzione unilaterale dello stipendio di Jamal Musiala non è legalmente possibile",
+            "Jan-Christian Dreesen ha dichiarato che il club ha il dovere di garantire a Musiala il tempo per riprendersi",
+            "Uli Hoeneß e Karl-Heinz Rummenigge hanno messo in discussione le attuali condizioni contrattuali di Musiala"
+          ],
+          "imageCaption": "Musiala, professionista del Bayern: Sotto i riflettori"
+        },
+        "pt": {
+          "title": "Especialistas e a diretoria do FC Bayern não podem reduzir unilateralmente o salário de Musiala",
+          "dek": "Ulf Baranowsky, do VDV, afirmou que uma redução salarial unilateral para Jamal Musiala não é legalmente possível.",
+          "standfirst": null,
+          "facts": [
+            "Ulf Baranowsky, gestor do VDV, afirmou que uma redução salarial unilateral para Jamal Musiala não é legalmente possível",
+            "Jan-Christian Dreesen afirmou que o clube tem o dever de garantir que Musiala tenha tempo para recuperar",
+            "Uli Hoeneß e Karl-Heinz Rummenigge questionaram as condições contratuais atuais de Musiala"
+          ],
+          "imageCaption": "Musiala, profissional do Bayern: Sob o foco"
+        },
+        "zh": {
+          "title": "专家和工会称拜仁无法单方面削减穆西亚拉薪水",
+          "dek": "VDV的乌尔夫·巴拉诺夫斯基表示，单方面削减贾马尔·穆西亚拉的薪水在法律上是不可能的",
+          "standfirst": null,
+          "facts": [
+            "乌尔夫·巴拉诺夫斯基 VDV经理表示单方面削减贾马尔·穆西亚拉的薪水在法律上不可能",
+            "扬-克里斯蒂安·德雷森表示俱乐部有责任确保穆西亚拉有时间恢复",
+            "乌利·霍内斯和卡尔-海因茨·鲁梅尼格质疑穆西亚拉目前的合同条款"
+          ],
+          "imageCaption": "拜仁球员穆西亚拉：聚光灯下"
+        },
+        "ja": {
+          "title": "専門家と労働組合、バイエルンはムジアラの給与を一方的にカットできない",
+          "dek": "VDVのウルフ・バラノウスキー氏が、ジャマル・ムジアラに対する一方的な給与カットは法的に不可能だと述べた",
+          "standfirst": null,
+          "facts": [
+            "ウルフ・バラノウスキーVVDマネージャーはジャマル・ムジアラに対する一方的な給与カットは法的に不可能だと述べた",
+            "ヤン＝クリスティアン・ドレーゼンはクラブにはムジアラが回復する時間を確保する義務があると述べた",
+            "ウリ・ホーネッスとカール＝ハインツ・ルメンニッケはムジアラの現行契約条件に疑問を呈した"
+          ],
+          "imageCaption": "バイエルン所属のムジアラ：注目の的の下で"
+        },
+        "ko": {
+          "title": "전문가 및 노조, 바이에른 뮌헨 일방적 무시알라 연봉 삭감 불가",
+          "dek": "VDV의 울프 바라노프스키는 자말 무시알라에 대한 일방적 연봉 삭감은 법적으로 불가능하다고 밝혔다.",
+          "standfirst": null,
+          "facts": [
+            "울프 바라노프스키 VDV 관리, 자말 무시알라에 대한 일방적 연봉 삭감은 법적으로 불가능하다고 밝힘",
+            "얀-크리스티안 드레젠, 구단은 무시알라가 회복할 시간을 보장할 의무가 있다고 밝힘",
+            "울리 호네스 및 카를-하인츠 룸메니게, 무시알라의 현 계약 조건에 의문을 제기함"
+          ],
+          "imageCaption": "바이에른 프로 무시알라: 집중 조명 아래"
+        }
+      }
+    },
+    {
+      "slug": "nasa-imaged-gastric-microtumors-in-microgravity-on-19-november-20261123-dfdw",
+      "category": "science",
+      "form": "report",
+      "image": "https://www.nasa.gov/wp-content/uploads/2026/11/jsc2026e426880orig.jpg",
+      "imageCredit": "NASA",
+      "video": null,
+      "importance": 4,
+      "publishedAt": "2026-11-23T18:53:05.017Z",
+      "updatedAt": "2026-11-23T18:53:05.017Z",
+      "sourceCount": 4,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "NASA imaged gastric microtumors in microgravity on 19 November 2026",
+          "dek": "The Encapsulate-1 investigation studied patient-derived gastric microtumors aboard the International Space Station.",
+          "standfirst": null,
+          "facts": [
+            "NASA provided an image on 19 November 2026 showing gastric microtumors grown within an Encapsulates biochip.",
+            "The Encapsulate-1 investigation used patient-derived tumor samples aboard the International Space Station.",
+            "The International Space Station orbits more than 200 miles (320 km) above Earth."
+          ],
+          "imageCaption": "Gastric microtumors in a biochip."
+        },
+        "de": {
+          "title": "NASA bildete Magenmikrotumore in Mikrogravitation am 19. November 2026 ab",
+          "dek": "Die Untersuchung Encapsulate-1 untersuchte patientenabgeleitete Magenmikrotumore an Bord der Internationalen Raumstation.",
+          "standfirst": null,
+          "facts": [
+            "NASA stellte am 19. November 2026 ein Bild von Magenmikrotumoren dar, die in einem Encapsulates-Biochip gewachsen waren",
+            "Die Untersuchung Encapsulate-1 verwendete tumorabgeleitete Proben von Patienten an Bord der Internationalen Raumstation",
+            "Die Internationale Raumstation umkreist die Erde in über 320 km Höhe"
+          ],
+          "imageCaption": "Magenmikrotumore in einem Biochip."
+        },
+        "fr": {
+          "title": "La NASA a photographié des microtumeurs gastriques en microgravité le 19 novembre 2026",
+          "dek": "L'étude Encapsulate-1 a examiné des microtumeurs gastriques dérivées de patients à bord de la Station spatiale internationale.",
+          "standfirst": null,
+          "facts": [
+            "La NASA a fourni une image le 19 novembre 2026 montrant des microtumeurs gastriques cultivées dans une biopuce Encapsulates",
+            "L'étude Encapsulate-1 a utilisé des échantillons tumoraux dérivés de patients à bord de la Station spatiale internationale",
+            "La Station spatiale internationale orbite à plus de 320 km au-dessus de la Terre"
+          ],
+          "imageCaption": "Microtumeurs gastriques dans une biopuce."
+        },
+        "es": {
+          "title": "La NASA ha fotografiado microtumores gástricos en microgravedad el 19 de noviembre de 2026",
+          "dek": "La investigación Encapsulate-1 estudió microtumores gástricos derivados de pacientes a bordo de la Estación Espacial Internacional.",
+          "standfirst": null,
+          "facts": [
+            "La NASA proporcionó una imagen el 19 de noviembre de 2026 mostrando microtumores gástricos cultivados en un biocip Encapsulates",
+            "La investigación Encapsulate-1 utilizó muestras tumorales derivadas de pacientes a bordo de la Estación Espacial Internacional",
+            "La Estación Espacial Internacional orbita a más de 320 km sobre la Tierra"
+          ],
+          "imageCaption": "Microtumores gástricos en un biocip."
+        },
+        "it": {
+          "title": "NASA ha immortalato microtumori gastrici in microgravità il 19 novembre 2026",
+          "dek": "L'indagine Encapsulate-1 ha studiato microtumori gastrici derivati da pazienti a bordo della Stazione Spaziale Internazionale.",
+          "standfirst": null,
+          "facts": [
+            "NASA ha fornito un'immagine il 19 novembre 2026 che mostra microtumori gastrici cresciuti all'interno di un biochip Encapsulates",
+            "L'indagine Encapsulate-1 ha utilizzato campioni tumorali derivati da pazienti a bordo della Stazione Spaziale Internazionale",
+            "La Stazione Spaziale Internazionale orbita a più di 320 km sopra la Terra"
+          ],
+          "imageCaption": "Microtumori gastrici in un biochip."
+        },
+        "pt": {
+          "title": "NASA imagens microtumores gástricos em microgravidade a 19 de novembro de 2026",
+          "dek": "A investigação Encapsulate-1 estudou microtumores gástricos derivados de pacientes a bordo da Estação Espacial Internacional.",
+          "standfirst": null,
+          "facts": [
+            "A NASA forneceu uma imagem a 19 de novembro de 2026 mostrando microtumores gástricos crescidos num biochip Encapsulates",
+            "A investigação Encapsulate-1 utilizou amostras tumorais derivadas de pacientes a bordo da Estação Espacial Internacional",
+            "A Estação Espacial Internacional orbita a mais de 320 km acima da Terra"
+          ],
+          "imageCaption": "Microtumores gástricos num biochip."
+        },
+        "zh": {
+          "title": "NASA于2026年11月19日拍摄微重力下胃微肿瘤图像",
+          "dek": "Encapsulate-1研究在国际空间站上研究了患者来源的胃微肿瘤",
+          "standfirst": null,
+          "facts": [
+            "NASA于2026年11月19日提供了一张图像，显示胃微肿瘤生长在Encapsulates生物芯片内",
+            "Encapsulate-1研究在国际空间站上使用了患者来源的肿瘤样本",
+            "国际空间站环绕地球高出200英里（320公里）以上"
+          ],
+          "imageCaption": "生物芯片中的胃微肿瘤"
+        },
+        "ja": {
+          "title": "NASA、2026年11月19日に微小重力下で胃微小腫瘍を撮影",
+          "dek": "Encapsulate-1調査は国際宇宙ステーション上で患者由来の胃微小腫瘍を研究",
+          "standfirst": null,
+          "facts": [
+            "NASAは2026年11月19日、Encapsulatesバイオチップ内で増殖した胃微小腫瘍の画像を提供した",
+            "Encapsulate-1調査は国際宇宙ステーション上で患者由来の腫瘍サンプルを使用した",
+            "国際宇宙ステーションは地球上空200マイル（320km）以上を周回している"
+          ],
+          "imageCaption": "バイオチップ内の胃微小腫瘍"
+        },
+        "ko": {
+          "title": "NASA, 2026년 11월 19일 미세중력 환경에서 위 미세종양 영상 확보",
+          "dek": "Encapsulate-1 연구는 국제우주정거장 내 환자 유래 위 미세종양을 연구함",
+          "standfirst": null,
+          "facts": [
+            "NASA는 2026년 11월 19일 Encapsulates 바이오칩 내에서 배양된 위 미세종양 이미지를 제공함",
+            "Encapsulate-1 연구는 국제우주정거장 내 환자 유래 종양 샘플을 사용함",
+            "국제우주정거장은 지구 상공 200마일(320km) 이상을 궤도함"
+          ],
+          "imageCaption": "바이오칩 내 위 미세종양"
+        }
+      }
+    },
+    {
+      "slug": "spielberg-to-direct-western-from-paul-thomas-anderson-based-20261123-bpe2",
+      "category": "culture",
+      "form": "report",
+      "image": "https://i.guim.co.uk/img/media/e1f49c81d555e4febe4fdd970d1f485ba0014e13/328_331_2849_2279/master/2849.jpg?width=465&dpr=1&s=none&crop=none",
+      "imageCredit": "The Guardian Culture",
+      "video": null,
+      "importance": 4,
+      "publishedAt": "2026-11-23T18:53:02.401Z",
+      "updatedAt": "2026-11-23T18:53:02.401Z",
+      "sourceCount": 3,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Spielberg to direct Western from Paul Thomas Anderson based on Heart in Winter",
+          "dek": "Steven Spielberg will direct a Western adaptation of Kevin Barry’s 2024 novel The Heart in Winter, written by Paul Thomas Anderson.",
+          "standfirst": null,
+          "facts": [
+            "The film is an adaptation of Kevin Barry’s 2024 novel The Heart in Winter",
+            "Jessie Buckley, Cillian Murphy, and Mark Rylance are set to star in the project",
+            "The novel is set in 1891 in Montana and follows Tom Rourke and Polly Gillespie"
+          ],
+          "imageCaption": "Steven Spielberg. Photograph: Mike Coppola/Getty Images for TCM"
+        },
+        "de": {
+          "title": "Spielberg inszeniert Western basierend auf Paul Thomas Andersons „Heart in Winter“",
+          "dek": "Steven Spielberg wird eine Western-Adaption von Kevin Barrys Roman „The Heart in Winter“ aus dem Jahr 2024 inszenieren, geschrieben von Paul Thomas Anderson.",
+          "standfirst": null,
+          "facts": [
+            "Das Film ist eine Adaption von Kevin Barrys Roman The Heart in Winter aus dem Jahr 2024",
+            "Jessie Buckley, Cillian Murphy und Mark Rylance sollen in dem Projekt mitwirken",
+            "Der Roman spielt 1891 in Montana und folgt Tom Rourke und Polly Gillespie"
+          ],
+          "imageCaption": "Steven Spielberg. Foto: Mike Coppola/Getty Images für TCM"
+        },
+        "fr": {
+          "title": "Spielberg réalisera un Western basé sur \"The Heart in Winter\" de Paul Thomas Anderson",
+          "dek": "Steven Spielberg réalisera une adaptation western du roman de Kevin Barry, \"The Heart in Winter\", écrit par Paul Thomas Anderson.",
+          "standfirst": null,
+          "facts": [
+            "Le film est une adaptation du roman de Kevin Barry paru en 2024",
+            "Jessie Buckley, Cillian Murphy et Mark Rylance participeront au projet",
+            "Le roman se déroule en 1891 dans le Montana et suit Tom Rourke et Polly Gillespie"
+          ],
+          "imageCaption": "Steven Spielberg. Photographie : Mike Coppola/Getty Images pour TCM"
+        },
+        "es": {
+          "title": "Spielberg dirigirá un Western basado en *El corazón en invierno*",
+          "dek": "Steven Spielberg dirigirá una adaptación western de la novela de Kevin Barry, escrita por Paul Thomas Anderson",
+          "standfirst": null,
+          "facts": [
+            "La película es una adaptación de la novela *El corazón en invierno* de Kevin Barry (2024)",
+            "Jessie Buckley, Cillian Murphy y Mark Rylance protagonizarán el proyecto",
+            "La novela se sitúa en 1891 en Montana y sigue a Tom Rourke y Polly Gillespie"
+          ],
+          "imageCaption": "Steven Spielberg. Fotografía: Mike Coppola/Getty Images para TCM"
+        },
+        "it": {
+          "title": "Spielberg regirà un Western basato su \"Heart in Winter\" di Paul Thomas Anderson",
+          "dek": "Steven Spielberg dirigerà un adattamento western del romanzo del 2024 di Kevin Barry, scritto da Paul Thomas Anderson.",
+          "standfirst": null,
+          "facts": [
+            "Il film è un adattamento del romanzo del 2024 di Kevin Barry The Heart in Winter",
+            "Jessie Buckley, Cillian Murphy e Mark Rylance parteciperanno al progetto",
+            "Il romanzo è ambientato nel 1891 in Montana e segue Tom Rourke e Polly Gillespie"
+          ],
+          "imageCaption": "Steven Spielberg. Fotografia: Mike Coppola/Getty Images per TCM"
+        },
+        "pt": {
+          "title": "Spielberg irá dirigir um Western baseado em \"Heart in Winter\" de Paul Thomas Anderson",
+          "dek": "Steven Spielberg irá dirigir uma adaptação Western do romance de Kevin Barry, \"The Heart in Winter\", de Paul Thomas Anderson.",
+          "standfirst": null,
+          "facts": [
+            "O filme é uma adaptação do romance de Kevin Barry de 2024 The Heart in Winter",
+            "Jessie Buckley, Cillian Murphy e Mark Rylance vão estrelar o projeto",
+            "O romance passa-se em 1891 em Montana e segue Tom Rourke e Polly Gillespie"
+          ],
+          "imageCaption": "Steven Spielberg. Fotografia: Mike Coppola/Getty Images para TCM"
+        },
+        "zh": {
+          "title": "斯皮尔伯格将执导改编自《冬日之心》的西部片",
+          "dek": "史蒂文·斯皮尔伯格将执导改编自保罗·托马斯·安德森的凯文·巴里2024年小说《冬日之心》的西部片",
+          "standfirst": null,
+          "facts": [
+            "该片改编自凯文·巴里2024年小说《冬日之心》",
+            "杰西·巴克利、基里安·墨菲和马克·莱兰斯将出演该项目",
+            "小说设定在1891年的蒙大拿州，讲述汤姆·罗克和波莉·吉尔雷斯的故事"
+          ],
+          "imageCaption": "史蒂文·斯皮尔伯格。摄影：Mike Coppola/Getty Images 供TCM使用"
+        },
+        "ja": {
+          "title": "スピルバーグがポール・トーマス・アンダーソン原作の西部劇を監督",
+          "dek": "スティーヴン・スピルバーグが、ケビン・バリーの2024年小説『冬の心』を基にした西部劇を監督する",
+          "standfirst": null,
+          "facts": [
+            "この映画はケビン・バリーの2024年小説『冬の心』の翻案である",
+            "ジェシー・バックリー、キリアン・マーフィー、マーク・リランスが主演予定",
+            "小説は1891年のモンタナを舞台に、トム・ルークとポリー・ギルレスピーを追う"
+          ],
+          "imageCaption": "スティーヴン・スピルバーグ。写真：Mike Coppola/TCM提供"
+        },
+        "ko": {
+          "title": "스필버그, 폴 토마스 앤더슨 원작 '겨울 속의 심장' 기반 서부극 연출",
+          "dek": "스티븐 스필버그가 폴 토마스 앤더슨이 쓴 케빈 배리의 2024년 소설 '겨울 속의 심장'을 서부극으로 각색하여 연출한다.",
+          "standfirst": null,
+          "facts": [
+            "이 영화는 케빈 배리의 2024년 소설 '겨울 속의 심장' 각색작이다",
+            "제시 버클리, 키리언 머피, 마크 라이랜스가 출연할 예정이다",
+            "소설은 1891년 몬태나를 배경으로 톰 라우크와 폴리 길레스피의 이야기를 다룬다"
+          ],
+          "imageCaption": "스티븐 스필버그. 사진: 마이크 코폴라/TCM 게티이미지"
+        }
+      }
+    },
+    {
+      "slug": "who-and-italy-partner-to-strengthen-services-for-children-20261123-g7x4",
+      "category": "health",
+      "form": "report",
+      "image": null,
+      "imageCredit": null,
+      "video": null,
+      "importance": 4,
+      "publishedAt": "2026-11-23T18:52:53.574Z",
+      "updatedAt": "2026-11-23T18:52:53.574Z",
+      "sourceCount": 1,
+      "sourcePolicy": "primary",
+      "locales": {
+        "en": {
+          "title": "WHO and Italy Partner to Strengthen Services for Children in Gaza Strip",
+          "dek": "The World Health Organization reported a partnership with Italy and UN agencies to strengthen integrated services for children and young people across the Gaza Strip.",
+          "standfirst": null,
+          "facts": [
+            "The World Health Organization reported the partnership on 23 November 2026.",
+            "Italy and UN agencies are involved in the partnership.",
+            "The services target children and young people across the Gaza Strip."
+          ],
+          "imageCaption": null
+        },
+        "de": {
+          "title": "WHO und Italien kooperieren zur Stärkung der Kinderdienste im Gazastreifen",
+          "dek": "Die Weltgesundheitsorganisation meldete eine Partnerschaft mit Italien und UN-Agenturen zur Stärkung integrierter Dienste für Kinder und Jugendliche im gesamten Gazastreifen.",
+          "standfirst": null,
+          "facts": [
+            "Die Weltgesundheitsorganisation berichtete über die Partnerschaft am 23. November 2026",
+            "Italien und UN-Agenturen sind an der Partnerschaft beteiligt",
+            "Die Dienste richten sich an Kinder und Jugendliche im Gazastreifen"
+          ],
+          "imageCaption": null
+        },
+        "fr": {
+          "title": "OMS et Italie s'associent pour renforcer les services aux enfants de la bande de Gaza",
+          "dek": "L'Organisation mondiale de la Santé a annoncé un partenariat avec l'Italie et des agences de l'ONU pour renforcer les services intégrés destinés aux enfants et aux jeunes dans toute la bande de Gaza.",
+          "standfirst": null,
+          "facts": [
+            "L'Organisation mondiale de la Santé a annoncé ce partenariat le 23 novembre 2026",
+            "L'Italie et des agences de l'ONU participent à ce partenariat",
+            "Les services ciblent les enfants et les jeunes dans toute la bande de Gaza"
+          ],
+          "imageCaption": null
+        },
+        "es": {
+          "title": "OMS e Italia colaboran para reforzar servicios infantiles en la Franja de Gaza",
+          "dek": "La Organización Mundial de la Salud ha anunciado una colaboración con Italia y agencias de la ONU para fortalecer los servicios integrados para niños y jóvenes en toda la Franja de Gaza.",
+          "standfirst": null,
+          "facts": [
+            "La Organización Mundial de la Salud informó de la colaboración el 23 de noviembre de 2026",
+            "Italia y agencias de la ONU participan en la colaboración",
+            "Los servicios están dirigidos a niños y jóvenes en toda la Franja de Gaza"
+          ],
+          "imageCaption": null
+        },
+        "it": {
+          "title": "OMS e Italia collaborano per rafforzare i servizi per i bambini nella Striscia di Gaza",
+          "dek": "L'Organizzazione Mondiale della Sanità ha annunciato una partnership con l'Italia e le agenzie ONU per rafforzare i servizi integrati per bambini e giovani in tutta la Striscia di Gaza.",
+          "standfirst": null,
+          "facts": [
+            "L'Organizzazione Mondiale della Sanità ha annunciato la partnership il 23 novembre 2026",
+            "Italia e agenzie ONU sono coinvolte nella partnership",
+            "I servizi sono rivolti a bambini e giovani in tutta la Striscia di Gaza"
+          ],
+          "imageCaption": null
+        },
+        "pt": {
+          "title": "OMS e Itália unem-se para reforçar serviços a crianças na Faixa de Gaza",
+          "dek": "A Organização Mundial da Saúde anunciou uma parceria com a Itália e agências da ONU para fortalecer serviços integrados para crianças e jovens em toda a Faixa de Gaza.",
+          "standfirst": null,
+          "facts": [
+            "A Organização Mundial da Saúde reportou a parceria a 23 de novembro de 2026",
+            "A Itália e agências da ONU estão envolvidas na parceria",
+            "Os serviços visam crianças e jovens em toda a Faixa de Gaza"
+          ],
+          "imageCaption": null
+        },
+        "zh": {
+          "title": "世界卫生组织与意大利合作加强加沙地带儿童服务",
+          "dek": "世界卫生组织报告与意大利及联合国机构合作，加强加沙地带儿童和青少年综合服务",
+          "standfirst": null,
+          "facts": [
+            "世界卫生组织于2026年11月23日报告了该合作",
+            "意大利和联合国机构参与了该合作",
+            "该服务针对加沙地带的儿童和青少年"
+          ],
+          "imageCaption": null
+        },
+        "ja": {
+          "title": "WHOとイタリアがガザ地区の児童向けサービス強化で提携",
+          "dek": "世界保健機関は、ガザ地区全域の児童および若者のための統合的サービスを強化するため、イタリアおよび国連機関とのパートナーシップを発表した",
+          "standfirst": null,
+          "facts": [
+            "世界保健機関は2026年11月23日に提携を発表した",
+            "イタリアと国連機関が提携に関与している",
+            "サービスはガザ地区全域の児童および若者を対象としている"
+          ],
+          "imageCaption": null
+        },
+        "ko": {
+          "title": "WHO와 이탈리아, 가자 지구 아동 서비스 강화 위해 협력",
+          "dek": "세계보건기구는 이탈리아 및 UN 기구와 협력하여 가자 지구 전역의 아동 및 청소년 통합 서비스 강화에 나섰다고 밝혔다.",
+          "standfirst": null,
+          "facts": [
+            "세계보건기구는 2026년 11월 23일 파트너십 발표",
+            "이탈리아와 UN 기구가 파트너십에 참여",
+            "서비스는 가자 지구 전역의 아동 및 청소년을 대상으로 함"
+          ],
+          "imageCaption": null
+        }
+      }
+    },
+    {
+      "slug": "badenoch-states-eu-rejoining-will-not-solve-uk-economic-20261123-8gr2",
+      "category": "politics",
+      "form": "report",
+      "image": "https://www.politico.eu/cdn-cgi/image/width=1160,height=773,quality=80,onerror=redirect,format=auto/wp-content/uploads/2026/11/23/GettyImages-2306488118-scaled.jpg",
+      "imageCredit": "Politico Europe",
+      "video": null,
+      "importance": 4,
+      "publishedAt": "2026-11-23T18:52:56.106Z",
+      "updatedAt": "2026-11-23T18:52:56.106Z",
+      "sourceCount": 2,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Badenoch states EU rejoining will not solve UK economic issues",
+          "dek": "Conservative leader Kemi Badenoch stated that reopening the Brexit debate will not resolve Britain's economic problems.",
+          "standfirst": null,
+          "facts": [
+            "Kemi Badenoch told the Confederation of British Industry on Monday that reopening the Brexit debate is not needed because there are more urgent priorities.",
+            "Badenoch stated that renewed EU membership will not solve recurring problems, including government spending over £100 billion servicing debt.",
+            "Volodymyr Zelensky told the NATO Parliamentary Assembly on Monday that NATO membership would protect Ukraine more reliably than Article 5-like security guarantees."
+          ],
+          "imageCaption": "Leader of the Conservative Party, Kemi Badenoch, speaks during the annual CBI conference in London on Nov. 23, 2026. | Leon Neal/Getty Images"
+        },
+        "de": {
+          "title": "Badenoch: EU-Wiedereintritt löst britische Wirtschaftsprobleme nicht",
+          "dek": "Konservative Führerin Kemi Badenoch erklärte, dass eine Wiederaufnahme der Brexit-Debatte die wirtschaftlichen Probleme Großbritanniens nicht lösen werde.",
+          "standfirst": null,
+          "facts": [
+            "Kemi Badenoch sagte am Montag gegenüber der Confederation of British Industry, dass eine Wiederaufnahme der Brexit-Debatte nicht nötig sei, da dringendere Prioritäten existieren",
+            "Badenoch erklärte, dass eine erneute EU-Mitgliedschaft wiederkehrende Probleme nicht lösen werde, darunter Staatsausgaben von über 100 Milliarden Pfund zur Schuldendienstdeckung",
+            "Wolodymyr Selenskyj sagte am Montag bei der NATO-Parlamentarischen Versammlung, dass die NATO-Mitgliedschaft die Ukraine zuverlässiger schützen würde als Art.-5-ähnliche Sicherheitsgarantien"
+          ],
+          "imageCaption": "Die Führerin der Konservativen Partei, Kemi Badenoch, spricht auf der jährlichen CBI-Konferenz in London am 23. November 2026. | Leon Neal/Getty Images"
+        },
+        "fr": {
+          "title": "Badenoch : le retour dans l'UE ne résoudra pas les problèmes économiques du Royaume-Uni",
+          "dek": "La leader conservatrice Kemi Badenoch a affirmé que rouvrir le débat sur le Brexit ne résoudra pas les problèmes économiques de la Grande-Bretagne.",
+          "standfirst": null,
+          "facts": [
+            "Kemi Badenoch a déclaré à la Confederation of British Industry lundi que rouvrir le débat sur le Brexit n'était pas nécessaire car des priorités plus urgentes existent",
+            "Badenoch a précisé qu'une nouvelle adhésion à l'UE ne résoudrait pas les problèmes récurrents, notamment les dépenses publiques dépassant 100 milliards de livres pour le service de la dette",
+            "Volodymyr Zelensky a déclaré à l'Assemblée parlementaire de l'OTAN lundi que l'adhés à l'OTAN protégerait l'Ukraine plus sûrement que des garanties sécuritaires de type Article 5"
+          ],
+          "imageCaption": "La leader du Parti Conservateur, Kemi Badenoch, s'exprime lors de la conférence annuelle de la CBI à Londres le 23 novembre 2026. | Leon Neal/Getty Images"
+        },
+        "es": {
+          "title": "Badenoch afirma que la reincorporación a la UE no solucionará los problemas económicos del Reino Unido",
+          "dek": "La líder conservadora Kemi Badenoch declaró que reabrir el debate sobre el Brexit no resolverá los problemas económicos de Gran Bretaña.",
+          "standfirst": null,
+          "facts": [
+            "Kemi Badenoch dijo a la Confederación de la Industria Británica el lunes que no es necesario reabrir el debate sobre el Brexit porque hay prioridades más urgentes",
+            "Badenoch afirmó que una renovada membresía en la UE no resolverá problemas recurrentes, incluido el gasto gubernamental superior a 100.000 millones de libras en servicio de deuda",
+            "Volodímir Zelenski dijo a la Asamblea Parlamentaria de la OTAN el lunes que la membresía en la OTAN protegería a Ucrania de manera más fiable que las garantías de seguridad similares al Artículo 5"
+          ],
+          "imageCaption": "La líder del Partido Conservador, Kemi Badenoch, habla durante la conferencia anual de la CBI en Londres el 23 de noviembre de 2026. | Leon Neal/Getty Images"
+        },
+        "it": {
+          "title": "Badenoch: il rientro nell'UE non risolverà i problemi economici del Regno Unito",
+          "dek": "La leader conservatrice Kemi Badenoch ha affermato che riaprire il dibattito sul Brexit non risolverà i problemi economici della Gran Bretagna.",
+          "standfirst": null,
+          "facts": [
+            "Kemi Badenoch ha dichiarato alla Confederation of British Industry lunedì che riaprire il dibattito sul Brexit non è necessario poiché ci sono priorità più urgenti",
+            "Badenoch ha affermato che un rinnovato ingresso nell'UE non risolverà i problemi ricorrenti, incluso il debito governativo superiore a 100 miliardi di sterline da servire",
+            "Volodymyr Zelensky ha dichiarato all'Assemblea Parlamentare NATO lunedì che l'appartenenza alla NATO proteggerebbe l'Ucraina in modo più affidabile rispetto a garanzie di sicurezza simili all'Articolo 5"
+          ],
+          "imageCaption": "La leader del Partito Conservatore, Kemi Badenoch, parla durante la conferenza annuale della CBI a Londra il 23 novembre 2026. | Leon Neal/Getty Images"
+        },
+        "pt": {
+          "title": "Badenoch afirma que a adesão da UE não resolverá os problemas económicos do Reino Unido",
+          "dek": "A líder conservadora Kemi Badenoch afirmou que reabrir o debate sobre o Brexit não resolverá os problemas económicos da Grã-Bretanha.",
+          "standfirst": null,
+          "facts": [
+            "Kemi Badenoch disse à Confederação da Indústria Britânica na segunda-feira que reabrir o debate sobre o Brexit não é necessário porque existem prioridades mais urgentes",
+            "Badenoch afirmou que a renovada adesão à UE não resolverá problemas recorrentes, incluindo despesas governamentais superiores a 100 mil milhões de libras no serviço da dívida",
+            "Volodymyr Zelensky disse à Assembleia Parlamentar da NATO na segunda-feira que a adesão à NATO protegeria a Ucrânia de forma mais fiável do que garantias de segurança semelhantes ao Artigo 5"
+          ],
+          "imageCaption": "A líder do Partido Conservador, Kemi Badenoch, fala durante a conferência anual da CBI em Londres a 23 de novembro de 2026. | Leon Neal/Getty Images"
+        },
+        "zh": {
+          "title": "巴登诺奇表示 欧盟重返不会解决英国经济问题",
+          "dek": "保守党领袖凯米·巴登诺奇称，重启脱欧辩论无法解决英国的经济难题",
+          "standfirst": null,
+          "facts": [
+            "凯米·巴登诺奇周一告诉英国工业联合会 重启脱欧辩论并非必需 因为有更紧迫的优先事项",
+            "巴登诺奇表示 重新加入欧盟无法解决政府债务服务超过1000亿英镑等反复出现的问题",
+            "弗拉基米尔·泽连斯基周一在北约议会大西洋理事会表示 北约成员资格比类似第五条的安全保障更能可靠地保护乌克兰"
+          ],
+          "imageCaption": "保守党领袖凯米·巴登诺奇于2026年11月23日在伦敦举行的年度CBI会议上发言 | Leon Neal/Getty Images"
+        },
+        "ja": {
+          "title": "バデノック氏、EU再加盟は英国の経済問題を解決しないと表明",
+          "dek": "保守党党首のケミ・バデノック氏は、ブレグジットの議論を再開しても英国の経済問題は解決しないと述べた",
+          "standfirst": null,
+          "facts": [
+            "ケミ・バデノック氏は月曜日、英国産業連盟に対し、より喫緊の優先課題があるためブレグジットの議論を再開する必要はないと述べた",
+            "バデノック氏は、政府債務の利払いだけで1,000億ポンドを超えるといった再発する問題は、EUへの再加盟によっても解決しないと述べた",
+            "ヴォロディミル・ゼレンスキー氏は月曜日、NATO議会総会で、NATO加盟は第5条のような安全保障上の保証よりもウクライナをより確実に保護すると述べた"
+          ],
+          "imageCaption": "保守党党首のケミ・バデノック氏が2026年11月23日ロンドンで開催された年次CBI会議で演説している。 | Leon Neal/Getty Images"
+        },
+        "ko": {
+          "title": "배데노크, EU 재가입으로 영국 경제 문제 해결 안 돼",
+          "dek": "보수당 대표 케미 배데노크, 브렉시트 재논의가 영국 경제 문제 해결에 도움이 되지 않을 것이라고 밝힘",
+          "standfirst": null,
+          "facts": [
+            "케미 배데노크는 월요일 영국산업연맹에 브렉시트 논의 재개는 더 시급한 우선순위가 있기 때문에 불필요하다고 말함",
+            "배데노크는 EU 재가입이 1,000억 파운드 이상의 부채 상환을 포함한 반복되는 문제를 해결하지 못할 것이라고 밝힘",
+            "볼로디미르 젤렌스키는 월요일 북대서양조약기구(NATO) 의회에서 NATO 가입이 제5조와 유사한 안보 보장보다 우크라이나를 더 확실하게 보호할 것이라고 말함"
+          ],
+          "imageCaption": "보수당 대표 케미 배데노크가 2026년 11월 23일 런던에서 열린 연례 CBI 회의에서 연설하고 있다. | Leon Neal/Getty Images"
+        }
+      }
+    },
+    {
+      "slug": "iranian-courts-order-us-to-pay-290-billion-in-20261123-dbqu",
+      "category": "world",
+      "form": "report",
+      "image": null,
+      "imageCredit": null,
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-11-23T18:52:42.377Z",
+      "updatedAt": "2026-11-23T18:52:42.377Z",
+      "sourceCount": 2,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Iranian Courts Order US to Pay $290 Billion in Damages",
+          "dek": "Iranian courts ordered the United States to pay $290 billion in damages for decades of US actions.",
+          "standfirst": null,
+          "facts": [
+            "Iranian courts ordered the United States to pay $290 billion in damages, according to a judiciary official.",
+            "Lawsuits were filed against Gulf Arab states for allowing US territory to be used to strike Iran.",
+            "Iran stated it would use all available means to counter a U.S. naval blockade, according to Foreign Ministry spokesman Esmaeil Baqaei."
+          ],
+          "imageCaption": null
+        },
+        "de": {
+          "title": "Iranische Gerichte verurteilen USA zu Schadensersatz von 290 Milliarden Dollar",
+          "dek": "Iranische Gerichte ordneten an, dass die Vereinigten Staaten 290 Milliarden Dollar Schadenersatz für jahrzehntelange US-Aktionen zahlen müssen.",
+          "standfirst": null,
+          "facts": [
+            "Ein Justizbeamter teilte mit, dass iranische Gerichte die Vereinigten Staaten zur Zahlung von 290 Milliarden Dollar verurteilt haben",
+            "Klagen wurden gegen Golfarabstaaten wegen der Erlaubnis, US-Gebiet für Angriffe auf Iran zu nutzen, eingereicht",
+            "Laut Sprecher des Außenministeriums Esmaeil Baqaei würde Iran alle verfügbaren Mittel einsetzen, um eine US-Seeblockade entgegenzuwirken"
+          ],
+          "imageCaption": null
+        },
+        "fr": {
+          "title": "Les tribunaux iraniens ordonnent aux États-Unis de payer 290 milliards de dollars d'indemnités",
+          "dek": "Des tribunaux iraniens ont condamné les États-Unis à verser 290 milliards de dollars d'indemnités pour des décennies d'actions américaines.",
+          "standfirst": null,
+          "facts": [
+            "Les tribunaux iraniens ont ordonné aux États-Unis de payer 290 milliards de dollars d'indemnités, selon un responsable judiciaire",
+            "Des poursuites ont été intentées contre des États arabes du Golfe pour avoir permis l'utilisation de territoire américain pour frapper l'Iran",
+            "L'Iran a déclaré qu'il utiliserait tous les moyens disponibles pour contrer un blocus naval américain, selon le porte-parole du ministère des Affaires étrangères, Esmaeil Baqaei"
+          ],
+          "imageCaption": null
+        },
+        "es": {
+          "title": "Tribunales iraníes ordenan a EE. UU. pagar 290.000 millones de dólares en daños",
+          "dek": "Tribunales iraníes han ordenado a Estados Unidos el pago de 290.000 millones de dólares por décadas de acciones estadounidenses.",
+          "standfirst": null,
+          "facts": [
+            "Tribunales iraníes ordenaron a Estados Unidos pagar 290.000 millones de dólares en daños, según un funcionario judicial",
+            "Se presentaron demandas contra estados árabes del Golfo por permitir el uso de territorio estadounidense para atacar a Irán",
+            "Irán declaró que usaría todos los medios disponibles para contrarrestar un bloqueo naval estadounidense, según el portavoz del Ministerio de Asuntos Exteriores, Esmaeil Baqaei"
+          ],
+          "imageCaption": null
+        },
+        "it": {
+          "title": "Tribunali iraniani ordinano agli Stati Uniti di pagare 290 miliardi di dollari di risarcimenti",
+          "dek": "I tribunali iraniani hanno ordinato agli Stati Uniti di pagare 290 miliardi di dollari di risarcimenti per decenni di azioni statunitensi.",
+          "standfirst": null,
+          "facts": [
+            "I tribunali iraniani hanno ordinato agli Stati Uniti di pagare 290 miliardi di dollari di risarcimenti, secondo un funzionario giudiziario",
+            "Sono state intentate cause contro stati arabi del Golfo per aver permesso l'uso di territorio statunitense per colpire l'Iran",
+            "L'Iran ha dichiarato che utilizzerà tutti i mezzi disponibili per contrastare un blocco navale statunitense, secondo il portavoce del Ministero degli Affari Esteri Esmaeil Baqaei"
+          ],
+          "imageCaption": null
+        },
+        "pt": {
+          "title": "Tribunais Iranianos Ordenam que os EUA Paguem 290 Mil Milhões de Dólares em Danos",
+          "dek": "Tribunais iranianos ordenaram que os Estados Unidos paguem 290 mil milhões de dólares em danos por décadas de ações americanas.",
+          "standfirst": null,
+          "facts": [
+            "Tribunais iranianos ordenaram que os Estados Unidos pagassem 290 mil milhões de dólares em danos, segundo um oficial do poder judicial",
+            "Processos foram apresentados contra estados árabes do Golfo por permitirem que território dos EUA fosse usado para atacar o Irão",
+            "O Irão afirmou que usaria todos os meios disponíveis para contrariar um bloqueio naval dos EUA, segundo o porta-voz do Ministério dos Negócios Estrangeiros, Esmaeil Baqaei"
+          ],
+          "imageCaption": null
+        },
+        "zh": {
+          "title": "伊朗法院判决美国赔付2900亿美元",
+          "dek": "伊朗法院裁定美国因数十年的行动需支付2900亿美元赔偿金",
+          "standfirst": null,
+          "facts": [
+            "据司法官员称，伊朗法院判决美国赔付2900亿美元",
+            "针对允许美国在海湾阿拉伯国家领土上打击伊朗的诉讼已提起",
+            "外交部发言人埃斯迈勒·巴卡伊表示，伊朗将动用一切可用手段应对美国的海上封锁"
+          ],
+          "imageCaption": null
+        },
+        "ja": {
+          "title": "イランの裁判所、米国に2,900億ドルの損害賠償を命じる",
+          "dek": "イランの裁判所は、長年にわたる米国の行為に対し、米国に2,900億ドルの損害賠償を命じた",
+          "standfirst": null,
+          "facts": [
+            "イランの司法当局者によると、イランの裁判所は米国に対し2,900億ドルの損害賠償を命じた",
+            "米国領土がイランへの攻撃に利用されたことについて、湾岸アラブ諸国を相手取った訴訟が提起された",
+            "外務省報道官エスマイエル・バガエイ氏によると、イランは米国の海上封鎖に対抗するため、利用可能なあらゆる手段を用いると表明した"
+          ],
+          "imageCaption": null
+        },
+        "ko": {
+          "title": "이란 법원, 미국에 2,900억 달러 배상 명령",
+          "dek": "이란 법원은 수십 년간의 미국의 조치에 대해 미국에 2,900억 달러의 손해배상을 명령했다.",
+          "standfirst": null,
+          "facts": [
+            "사법부 관계자에 따르면 이란 법원은 미국에 2,900억 달러의 손해배상을 명령했다",
+            "미국 영토가 이란 공격에 사용된 것을 허용한 걸프 아랍 국가들을 상대로 소송이 제기되었다",
+            "이란 외교부 대변인 에스마일 바가에이는 미국 해상 봉쇄에 대응하기 위해 모든 가용한 수단을 사용할 것이라고 밝혔다"
+          ],
+          "imageCaption": null
+        }
+      }
+    },
+    {
+      "slug": "china-us-ties-face-difficult-2027-period-amid-broad-20261123-kibo",
+      "category": "world",
+      "form": "report",
+      "image": "https://images.jpost.com/image/upload/f_auto,fl_lossy/q_auto/c_fill,g_faces:center,h_720,w_1280/737608",
+      "imageCredit": "South China Morning Post",
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-11-23T18:52:30.599Z",
+      "updatedAt": "2026-11-23T18:52:30.599Z",
+      "sourceCount": 2,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "China-US ties face difficult 2027 period amid broad stability",
+          "dek": "A Beijing expert stated China-US ties will face more confrontational dynamics in 2027 but broad stability will persist.",
+          "standfirst": null,
+          "facts": [
+            "Da Wei, a director at Tsinghua University’s Centre for International Security and Strategy, said ties will remain broadly stable in 2027 according to the South China Morning Post.",
+            "Danny Citrinowicz, an Iran and Shi'ite axis researcher at the Institute for National Security Studies, reported identifying food shortages in Iran.",
+            "Citrinowicz stated Iran is more likely to escalate than surrender under mounting pressure."
+          ],
+          "imageCaption": "People walk past an anti-US billboard at Enghelab Square in central Tehran on September 2, 2026."
+        },
+        "de": {
+          "title": "China-US-Beziehungen sehen sich 2027 mit schwieriger Phase gegenüber, aber breite Stabilität bleibt bestehen",
+          "dek": "Ein Experte aus Peking prognostizierte, dass die Beziehungen zwischen China und den USA 2027 konfrontativer werden, doch eine allgemeine Stabilität wird anhalten.",
+          "standfirst": null,
+          "facts": [
+            "Da Wei, Direktor des Zentrums für Internationale Sicherheit und Strategie der Tsinghua-Universität, sagte laut South China Morning Post, die Beziehungen blieben 2027 weitgehend stabil",
+            "Danny Citrinowicz, Forscher für Iran und schiitische Achse am Institute for National Security Studies, meldete Lebensmittelknappheit im Iran",
+            "Citrinowicz erklärte, Iran sei unter wachsendem Druck eher bereit zur Eskalation als zur Kapitulation"
+          ],
+          "imageCaption": "Menschen gehen an einer Anti-US-Plakatwand auf dem Enghelab-Platz im zentralen Teheran am 2. September 2026 vorbei"
+        },
+        "fr": {
+          "title": "Les relations Chine-États-Unis dans une période difficile en 2027 malgré une stabilité globale",
+          "dek": "Un expert de Pékin affirme que les relations Chine-États-Unis connaîtront des dynamiques plus conflictuelles en 2027, mais que la stabilité globale se maintiendra.",
+          "standfirst": null,
+          "facts": [
+            "Da Wei, directeur du Centre de sécurité internationale et de stratégie de l'université Tsinghua, a déclaré que les liens resteraient globalement stables en 2027 selon le South China Morning Post.",
+            "Danny Citrinowicz, chercheur sur l'Iran et l'axe chiite à l'Institut israélien des études de sécurité, a rapporté avoir identifié des pénuries alimentaires en Iran.",
+            "Citrinowicz a affirmé que l'Iran était plus enclin à s'en prendre qu'à se rendre sous la pression croissante."
+          ],
+          "imageCaption": "Des passants devant un panneau anti-États-Unis sur la place Enghelab à Téhran central le 2 septembre 2026."
+        },
+        "es": {
+          "title": "Las relaciones entre China y EE. UU. afrontarán un difícil período en 2027 en medio de una estabilidad general",
+          "dek": "Un experto de Pekín afirmó que las relaciones entre China y EE. UU. presentarán dinámicas más confrontacionales en 2027, pero persistirá una estabilidad general.",
+          "standfirst": null,
+          "facts": [
+            "Da Wei, director del Centro de Seguridad e Estrategia Internacional de la Universidad de Tsinghua, dijo que las relaciones se mantendrán en gran medida estables en 2027 según el South China Morning Post",
+            "Danny Citrinowicz, investigador del Instituto de Estudios de Seguridad Nacional sobre Irán y el eje chiita, informó de escasez de alimentos en Irán",
+            "Citrinowicz afirmó que es más probable que Irán escale que se rinda bajo presión creciente"
+          ],
+          "imageCaption": "Personas pasan junto a una valla publicitaria antiestadounidense en la Plaza Enghelab, en el centro de Teherán, el 2 de septiembre de 2026."
+        },
+        "it": {
+          "title": "I rapporti Cina-USA affronteranno un 2027 difficile ma con ampia stabilità",
+          "dek": "Un esperto di Pechino ha dichiarato che i legami tra Cina e Stati Uniti saranno caratterizzati da dinamiche più conflittuali nel 2027, pur mantenendo una stabilità generale.",
+          "standfirst": null,
+          "facts": [
+            "Da Wei, direttore del Centro per la Sicurezza e la Strategia Internazionale dell'Università Tsinghua, ha affermato che i rapporti rimarranno generalmente stabili nel 2027 secondo il South China Morning Post",
+            "Danny Citrinowicz, ricercatore sull'asse Iran-Sciita presso l'Institute for National Security Studies, ha segnalato carenze alimentari in Iran",
+            "Citrinowicz ha dichiarato che l'Iran è più propenso a escalare che a cedere sotto pressione crescente"
+          ],
+          "imageCaption": "Persone che passano davanti a un cartellone anti-USA in Piazza Enghelab nel centro di Teheran il 2 settembre 2026"
+        },
+        "pt": {
+          "title": "Relações China-EUA enfrentarão um período difícil em 2027, mas com estabilidade geral",
+          "dek": "Um especialista de Pequim afirmou que as relações China-EUA enfrentarão dinâmicas mais confrontacionais em 2027, mas a estabilidade geral persistirá.",
+          "standfirst": null,
+          "facts": [
+            "Da Wei, diretor do Centro de Segurança e Estratégia Internacional da Universidade de Tsinghua, disse que as relações permanecerão amplamente estáveis em 2027 segundo o South China Morning Post",
+            "Danny Citrinowicz, investigador do Instituto de Estudos de Segurança Nacional sobre o eixo Irão e Xiita, relatou a identificação de escassez alimentar no Irão",
+            "Citrinowicz afirmou que o Irão tem maior probabilidade de escalar do que de se render sob pressão crescente"
+          ],
+          "imageCaption": "Pessoas passam por um cartaz anti-EUA na Praça Enghelab, no centro de Teerã, a 2 de setembro de 2026."
+        },
+        "zh": {
+          "title": "中美关系在广泛稳定的背景下面临充满挑战的2027年",
+          "dek": "北京专家表示，中美关系在2027年将面临更具对抗性的动态，但总体稳定将持续",
+          "standfirst": null,
+          "facts": [
+            "清华大学国际安全与战略中心主任大伟表示，根据《南华早报》，2027年中美关系将保持总体稳定",
+            "国家安全研究所伊朗和什叶派轴心研究员丹尼·西特里诺维奇报告发现伊朗出现粮食短缺",
+            "西特里诺维奇表示，在压力增大下，伊朗更有可能升级而非投降"
+          ],
+          "imageCaption": "2026年9月2日，人们走过德黑兰市中心恩格拉布广场的一块反美标语牌"
+        },
+        "ja": {
+          "title": "米中関係は広範な安定の中、2027年は困難な時期に",
+          "dek": "北京の専門家は、米中関係は2027年にさらに対立的な力学に直面するものの、広範な安定は維持されると指摘",
+          "standfirst": null,
+          "facts": [
+            "清華大学国際安全保障戦略センターのダ・ウェイ氏は、2027年も関係は概ね安定すると南華早報が報じた",
+            "国立安全保障研究所のイラン・シーア派軸研究者であるダニー・シトリノヴィッチ氏は、イランでの食糧不足を特定したと報告した",
+            "シトリノヴィッチ氏は、イランは増大する圧力の下で屈服するよりもエスカレートする可能性が高いと述べた"
+          ],
+          "imageCaption": "2026年9月2日、テヘラン中心部のエンヘラブ広場にある反米の看板を人々が通り過ぎている"
+        },
+        "ko": {
+          "title": "중국-미국 관계, 2027년에도 광범위한 안정 속 대결 구도 전망",
+          "dek": "베이징 전문가 “2027년 중국-미국 관계, 대결적 양상 지속되지만 광범위한 안정 유지”",
+          "standfirst": null,
+          "facts": [
+            "대위(청화대 국제전략안보연구원 연구원), “2027년 중국-미국 관계 광범위하게 안정될 것”",
+            "시트린비츠(이스라엘 국방연구원 이란·시아 축 연구원), “이란에서 식량 부족 확인”",
+            "시트린비츠 “이란, 압력 커질 경우 항복보다 격화 가능성 커”"
+          ],
+          "imageCaption": "2026년 9월 2일 테헤란 엔헬라브 광장 안티-US billboard를 지나가는 사람들"
+        }
+      }
+    },
+    {
+      "slug": "nato-held-meeting-in-berlin-amid-missile-incursions-over-20261123-2kxz",
+      "category": "politics",
+      "form": "report",
+      "image": "https://images.tagesschau.de/image/056a4ff3-8222-4bd3-b8ee-81d154487ece/AAABogkF8mU/AAABnSSvdEs/16x7/schiff-torpedo-100.jpg?width=1280",
+      "imageCredit": "Tagesschau",
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-11-23T18:52:31.250Z",
+      "updatedAt": "2026-11-23T18:52:31.250Z",
+      "sourceCount": 2,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "NATO held meeting in Berlin amid missile incursions over Poland",
+          "dek": "NATO leaders warned Russia they would defend all territory following missile incursions over Poland on 23 November 2026.",
+          "standfirst": null,
+          "facts": [
+            "Three objects entered Polish airspace and crashed in southeastern Poland on 23 November 2026, according to the Polish prosecutor's office in Lublin.",
+            "The Polish prosecutor's office in Lublin stated the objects were Russian CH-101 cruise missiles.",
+            "NATO officials announced readiness to defend every part of NATO territory during the meeting in Berlin."
+          ],
+          "imageCaption": "Ein Wassergeschoss ist kurz vor dem Aufprall auf die Flanke eines Schiffes zu sehen. | via REUTERS"
+        },
+        "de": {
+          "title": "NATO warnt Russland nach Marschflugkörper-Einschlägen über Polen",
+          "dek": "NATO-Chefs warnten Russland, dass sie jedes NATO-Gebiet verteidigen würden, nach Marschflugkörper-Einschlägen über Polen am 23. November 2026.",
+          "standfirst": null,
+          "facts": [
+            "Drei Objekte traten am 23. November 2026 in polnischen Luftraum und stürzten in Südostpolen ab, wie die Staatsanwaltschaft Lublin mitteilte.",
+            "Die Staatsanwaltschaft Lublin erklärte, die Objekte seien russische Marschflugkörper des Typs CH-101.",
+            "NATO-Offizielle kündigten während des Treffens in Berlin die Bereitschaft an, jedes Teil des NATO-Gebiets zu verteidigen."
+          ],
+          "imageCaption": "Ein Wassergeschoss ist kurz vor dem Aufprall auf die Flanke eines Schiffes zu sehen. | via REUTERS"
+        },
+        "fr": {
+          "title": "NATO tiendra une réunion à Berlin suite à des incursions de missiles sur la Pologne",
+          "dek": "Les dirigeants de l'OTAN ont averti la Russie qu'ils défendraient tout territoire suite à des incursions de missiles sur la Pologne le 23 novembre 2026.",
+          "standfirst": null,
+          "facts": [
+            "Trois objets sont entrés dans l'espace aérien polonais et se sont écrasés dans le sud-est de la Pologne le 23 novembre 2026, selon le bureau du procureur de Lublin.",
+            "Le bureau du procureur de Lublin a indiqué que les objets étaient des missiles de croisière russes CH-101.",
+            "Des responsables de l'OTAN ont annoncé leur volonté de défendre chaque partie du territoire de l'OTAN lors de la réunion à Berlin."
+          ],
+          "imageCaption": null
+        },
+        "es": {
+          "title": "NATO celebró reunión en Berlín ante incursiones de misiles sobre Polonia",
+          "dek": "Los líderes de la OTAN advirtieron a Rusia que defenderían todo el territorio tras incursiones de misiles sobre Polonia el 23 de noviembre de 2026.",
+          "standfirst": null,
+          "facts": [
+            "Objetos tres entraron en el espacio aéreo polaco y se estrellaron en el sureste de Polonia el 23 de noviembre de 2026, según la oficina del fiscal general de Lublin.",
+            "El fiscal general de Lublin afirmó que los objetos eran misiles de crucero rusos CH-101.",
+            "Los funcionarios de la OTAN anunciaron disposición a defender cada parte del territorio de la OTAN durante la reunión en Berlín."
+          ],
+          "imageCaption": null
+        },
+        "it": {
+          "title": "NATO riunisce a Berlino dopo incursioni missilistiche su Polonia",
+          "dek": "I leader NATO hanno avvertito la Russia che difenderanno tutto il territorio a seguito delle incursioni missilistiche sulla Polonia il 23 novembre 2026.",
+          "standfirst": null,
+          "facts": [
+            "Tre oggetti sono entrati nello spazio aereo polacco e sono caduti nel sud-est della Polonia il 23 novembre 2026",
+            "L'ufficio del procuratore polacco di Lublino ha dichiarato che gli oggetti erano missili da crociera russi CH-101",
+            "I funzionari NATO hanno annunciato la prontezza a difendere ogni parte del territorio NATO durante la riunione a Berlino"
+          ],
+          "imageCaption": "Si vede un proiettile d'acqua poco prima dell'impatto sulla fiancata di una nave | via REUTERS"
+        },
+        "pt": {
+          "title": "NATO realiza reunião em Berlim após incursões de mísseis sobre a Polónia",
+          "dek": "Líderes da NATO alertam a Rússia que defenderão todo o território após incursões de mísseis sobre a Polónia em 23 de novembro de 2026.",
+          "standfirst": null,
+          "facts": [
+            "Três objetos entraram no espaço aéreo polaco e caíram no sudeste da Polónia em 23 de novembro de 2026, segundo o gabinete do procurador de Lublin",
+            "O gabinete do procurador de Lublin afirmou que os objetos eram mísseis de cruzeiro russos CH-101",
+            "Os responsáveis da NATO anunciaram a prontidão para defender todo o território da NATO durante a reunião em Berlim"
+          ],
+          "imageCaption": "Um projétil de água é visível pouco antes de atingir a lateral de um navio. | via REUTERS"
+        },
+        "zh": {
+          "title": "北约在柏林举行会议 导弹侵犯波兰领空",
+          "dek": "北约领导人警告俄罗斯 将保卫所有领土 此前导弹侵犯波兰领空事件发生在2026年11月23日",
+          "standfirst": null,
+          "facts": [
+            "根据卢布林检察署信息 2026年11月23日有三个物体进入波兰领空并在波兰东南部坠毁",
+            "卢布林检察署表示这些物体是俄罗斯CH-101巡航导弹",
+            "北约官员在柏林会议上宣布准备保卫北约所有领土"
+          ],
+          "imageCaption": "一枚水下炮弹在即将击中船体侧面时被拍到 | 路透社提供"
+        },
+        "ja": {
+          "title": "NATO in Berlin wegen Raketeneinschläge über Polen tagte",
+          "dek": "NATO-Führungen warnten Russland: Sie würden jedes Gebiet verteidigen, nachdem Raketen über Polen eingeschlagen waren.",
+          "standfirst": null,
+          "facts": [
+            "Drei Objekte drangen in polnischen Luftraum ein und stürzten im Südosten Polens am 23. November 2026 ab, teilte die Staatsanwaltschaft Lublin mit.",
+            "Die Staatsanwaltschaft Lublin erklärte, die Objekte seien russische CH-101-Kreuzflugkörper.",
+            "NATO-Offizielle verkündeten während der Berlin-Tagung Bereitschaft, jedes Teil des NATO-Gebiets zu verteidigen."
+          ],
+          "imageCaption": "Ein Einschlagskörper ist kurz vor dem Aufprall an der Flanke eines Schiffes zu sehen. | via REUTERS"
+        },
+        "ko": {
+          "title": "NATO 회의 폴란드 미사일 침범 amid",
+          "dek": "NATO 지도자들, 폴란드 미사일 침범 후 러시아에 영토 방어 경고",
+          "standfirst": null,
+          "facts": [
+            "폴란드 리우블린 지방검찰청에 따르면 2026년 11월 23일, 폴란드 영공에 세 객체가 침입해 동남부 폴란드에 추락",
+            "폴란드 리우블린 지방검찰청은 해당 객체가 러시아제 CH-101 순항미사일이라고 밝힘",
+            "NATO 관료들, 베를린 회의서 나토 영토 방어 준비 완료 선언"
+          ],
+          "imageCaption": "한 척의 배 flanc에 충돌 직전인 수중 폭탄 | 로이터 통신 via"
+        }
+      }
+    },
+    {
+      "slug": "nigeria-boat-capsizes-in-inland-waterway-ukraine-drone-strike-20261123-y53s",
+      "category": "world",
+      "form": "report",
+      "image": "https://ichef.bbci.co.uk/ace/standard/2560/cpsprodpb/4f67/live/f7d15990-e6fe-11f1-b302-63c5d030cf64.jpg",
+      "imageCredit": "BBC",
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-11-23T18:52:26.416Z",
+      "updatedAt": "2026-11-23T18:52:26.416Z",
+      "sourceCount": 2,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Nigeria boat capsizes in inland waterway Ukraine drone strike kills 11",
+          "dek": "Search and rescue operations concluded in Nigeria and Dymer, Kyiv region, following separate incidents on November 23",
+          "standfirst": null,
+          "facts": [
+            "Twenty-nine bodies were recovered and 50 people were rescued after a boat capsized in Nigeria on Friday, November 23",
+            "Search and rescue operations in Dymer, Kyiv region, concluded on Monday, November 23",
+            "The Russian drone strike in Dymer killed 11 people, according to Interior Minister Ivan Vyhivskyi"
+          ],
+          "imageCaption": "Many Nigerian rely on boats to travel beyond their villages (file photo)"
+        },
+        "de": {
+          "title": "Nigeria: Boot kippt in Binnenwasserweg um; Ukraine: Drohnenangriff auf Dymer fordert 11 Tote",
+          "dek": "Such- und Rettungsaktionen endeten in Nigeria und Dymer, Kyiver Region, nach separaten Vorfällen am 23. November",
+          "standfirst": null,
+          "facts": [
+            "Zwanzig-neun Leichen geborgen und 50 Menschen nach Bootskippung in Nigeria am Freitag, 23. November gerettet",
+            "Such- und Rettungsaktionen in Dymer, Kyiver Region, endeten am Montag, 23. November",
+            "Russische Drohnenattacke in Dymer tötete 11 Menschen, sagte Innenminister Iwan Wyhijiwskyi"
+          ],
+          "imageCaption": "Viele Nigerianer nutzen Boote, um über ihre Dörfer hinaus zu reisen (Datei-Foto)"
+        },
+        "es": {
+          "title": "Barco se volcó en Nigeria; ataque con drones ruso deja 11 muertos en Ucrania",
+          "dek": "Operaciones de búsqueda y rescate concluyeron en Nigeria y Dymer, región de Kiev, tras incidentes separados el 23 de noviembre",
+          "standfirst": null,
+          "facts": [
+            "Veintinueve cuerpos fueron recuperados y 50 personas fueron rescatadas después de que un barco volcó en Nigeria el viernes 23 de noviembre",
+            "Las operaciones de búsqueda y rescate en Dymer, región de Kiev, concluyeron el lunes 23 de noviembre",
+            "El ataque con dron ruso en Dymer mató a 11 personas, según el ministro del Interior Iván Víhivskyi"
+          ],
+          "imageCaption": "Muchos nigerianos dependen de los barcos para viajar más allá de sus aldeas (foto de archivo)"
+        },
+        "it": {
+          "title": "Tragedia in Nigeria, barca si capovolge in acqua interna; drone russo colpisce Dymyr, 11 morti",
+          "dek": "Le operazioni di ricerca e soccorso si sono concluse in Nigeria e a Dymyr, regione di Kiev, seguendo incidenti separati il 23 novembre",
+          "standfirst": null,
+          "facts": [
+            "Venti-nove corpi recuperati e 50 persone salvate dopo il capovolgimento di una barca in Nigeria venerdì 23 novembre",
+            "Le operazioni di ricerca e soccorso a Dymyr, regione di Kiev, si sono concluse lunedì 23 novembre",
+            "Il drone russo su Dymyr ha ucciso 11 persone, secondo il ministro dell'Interno Ivan Vyhivskyi"
+          ],
+          "imageCaption": "Molti nigeriani si affidano alle barche per spostarsi oltre i loro villaggi (foto di archivio)"
+        },
+        "pt": {
+          "title": "Nau capsota em via fluvial da Nigéria; drone russo atinge Dymir, região de Kyiv",
+          "dek": "Operações de busca e resgate terminaram na Nigéria e em Dymir, região de Kyiv, após incidentes separados em 23 de novembro",
+          "standfirst": null,
+          "facts": [
+            "29 corpos foram recuperados e 50 pessoas foram resgatadas após o capsizing de um barco na Nigéria na sexta-feira, 23 de novembro",
+            "Operações de busca e resgate em Dymir, região de Kyiv, terminaram na segunda-feira, 23 de novembro",
+            "O drone russo em Dymir matou 11 pessoas, segundo o ministro do Interior Ivan Vyhivskyi"
+          ],
+          "imageCaption": "Muitos nigerianos recorrem a barcos para viajar além dos seus vilarejos (foto de arquivo)"
+        },
+        "zh": {
+          "title": "尼日利亚船只翻覆，乌克兰无人机袭击身亡11人",
+          "dek": "11月23日，尼日利亚和基辅地区迪梅尔发生的两起独立事件后，搜救行动结束",
+          "standfirst": null,
+          "facts": [
+            "11月23日星期五，尼日利亚一船翻覆，共打捞出29具遗体并救出50人",
+            "11月23日星期一，基辅地区迪梅尔的搜救行动结束",
+            "内政部长伊万·维希夫斯基表示，俄罗斯无人机袭击在迪梅尔造成11人死亡"
+          ],
+          "imageCaption": "许多尼日利亚人依赖船只前往村外 (资料照片)"
+        },
+        "ja": {
+          "title": "ボート転覆事故のナイジェリアとウクライナのドローン攻撃で11人死亡",
+          "dek": "ナイジェリアとキーウ州ダイメルで別々の事故が11月23日に発生した後、捜索救助活動が終了",
+          "standfirst": null,
+          "facts": [
+            "29の遺体が回収され、ナイジェリアで金曜の11月23日にボートが転覆し50人が救助された",
+            "キーウ州ダイメルでの捜索救助活動が月曜の11月23日に終了した",
+            "ロシアのドローン攻撃でダイメルで11人が死亡し、内務大臣イワン・ヴィヒフスキーが報告した"
+          ],
+          "imageCaption": "多くのナイジェリア人が村を超えて移動するためにボートに頼っている（ファイル写真）"
+        },
+        "ko": {
+          "title": "나이지리아 내륙 수로 배 전복, 우크라이나 드론 공격으로 11명 사망",
+          "dek": "나이지리아와 키이우 지역 디머에서 발생한 별도 사고 수색·구조 작업 종료, 11월 23일",
+          "standfirst": null,
+          "facts": [
+            "29구의 시신이 수습되고 50명이 구조된 나이지리아 배 전복 사고",
+            "키이우 지역 디머에서 러시아 드론 공격으로 11명 사망",
+            "드론 공격으로 최소 7명 부상"
+          ],
+          "imageCaption": "많은 나이지리아인이 마을을 넘어 이동하기 위해 배 이용 (파일 사진)"
+        },
+        "fr": {
+          "title": "Tragédie sur un fleuve nigérian : un bateau se renverse ; frappe de drone en Ukraine à Dymer : 11 morts",
+          "dek": "Les opérations de recherche et de secours se sont terminées au Nigeria et à Dymer, dans la région de Kyiv, suite à des incidents distincts le 23 novembre",
+          "standfirst": null,
+          "facts": [
+            "Vingt-neuf corps ont été récupérés et 50 personnes ont été sauvées après le basculement d'un bateau au Nigeria vendredi 23 novembre",
+            "Les opérations de recherche et de secours se sont terminées à Dymer, dans la région de Kyiv, lundi 23 novembre",
+            "Une frappe de drone russe à Dymer a tué 11 personnes, selon le ministre de l'Intérieur Ivan Vyhivskyi"
+          ],
+          "imageCaption": null
+        }
+      }
+    },
+    {
+      "slug": "burnham-says-former-prime-ministers-are-stuck-on-brexit-20261123-tda9",
+      "category": "politics",
+      "form": "report",
+      "image": "https://www.politico.eu/cdn-cgi/image/width=1160,height=809,quality=80,onerror=redirect,format=auto/wp-content/uploads/2026/11/23/GettyImages-2306064245-scaled.jpg",
+      "imageCredit": "BBC",
+      "video": null,
+      "importance": 5,
+      "publishedAt": "2026-11-23T18:52:31.503Z",
+      "updatedAt": "2026-11-23T18:52:31.503Z",
+      "sourceCount": 5,
+      "sourcePolicy": "two-source",
+      "locales": {
+        "en": {
+          "title": "Burnham says former prime ministers are stuck on Brexit debate",
+          "dek": "Andy Burnham stated former prime ministers are stuck in the past regarding Brexit while defending EU trade deals.",
+          "standfirst": null,
+          "facts": [
+            "Andy Burnham announced a deal with the EU covering British food exports, emissions trading, and a youth experience scheme on November 23, 2026.",
+            "Burnham stated rejoining the European Union without a public referendum would be unthinkable during a Monday parliamentary debate.",
+            "Former prime ministers Rishi Sunak, Theresa May, Boris Johnson, and David Cameron urged Burnham not to reopen the Brexit debate."
+          ],
+          "imageCaption": "Andy Burnham speaks to the media after an EU-U.K. summit in Brussels on Nov. 20, 2026. | Sean Gallup/Getty Images"
+        },
+        "de": {
+          "title": "Burnham sagt, ehemalige Premier seien im Brexit-Debatte steckengeblieben",
+          "dek": "Andy Burnham erklärte, ehemalige Regierungschefs seien in der Vergangenheit steckengeblieben, was den Brexit betrifft, und verteidigte EU-Handelsabkommen.",
+          "standfirst": null,
+          "facts": [
+            "Andy Burnham kündigte am 23. November 2026 einen Vertrag mit der EU ab, der britische Lebensmittelexporte, Emissionshandel und ein Jugend-Erfahrungsprogramm umfasst.",
+            "Burnham erklärte bei einer Montags-Debatte im Parlament, ein Wiedereintritt in die Europäische Union ohne Volksabstimmung sei undenkbar.",
+            "Ehemalige Premier Rishi Sunak, Theresa May, Boris Johnson und David Cameron warnten Burnham davor, den Brexit-Debatte erneut zu eröffnen."
+          ],
+          "imageCaption": "Andy Burnham spricht nach einem EU‑UK‑Gipfel in Brüssel am 20. November 2026 mit den Medien. | Sean Gallup/Getty Images"
+        },
+        "pt": {
+          "title": "Burnham diz que ex-primeiros-ministros ficam presos no debate do Brexit",
+          "dek": "Andy Burnham afirmou que ex-primeiros-ministros ficam presos no passado relativamente ao Brexit enquanto defendia acordos comerciais com a UE.",
+          "standfirst": null,
+          "facts": [
+            "Andy Burnham anunciou um acordo com a UE a cobrir exportações de alimentos britânicos, comércio de emissões e um esquema de experiência jovem em 23 de novembro de 2026.",
+            "Burnham afirmou que voltar a integrar a União Europeia sem um referendo público seria impensável durante um debate parlamentar na segunda-feira.",
+            "Ex-primeiros-ministros Rishi Sunak, Theresa May, Boris Johnson e David Cameron instaram Burnham não reabrir o debate do Brexit."
+          ],
+          "imageCaption": "Andy Burnham fala com a imprensa após um summit UE-UK em Bruxelas em 20 de novembro de 2026. | Sean Gallup/Getty Images"
+        },
+        "zh": {
+          "title": "伯恩姆称前首相被困于Brexit争论",
+          "dek": "伯恩姆表示，前首相在欧盟贸易协定问题上固守过去",
+          "standfirst": null,
+          "facts": [
+            "安迪·伯恩姆宣布于2026年11月23日达成涵盖英国食品出口、碳交易及青年体验计划的欧盟协议",
+            "伯恩姆在周一的议会辩论中表示，未经公投重返欧盟是不可想象的",
+            "前首相里希·苏纳克、特雷莎·梅、博里斯·约翰逊和大卫·卡梅伦敦促伯恩姆勿重启Brexit争论"
+          ],
+          "imageCaption": "伯恩姆于2026年11月20日在布鲁塞尔欧美峰会后接受媒体采访 | Sean Gallup/Getty Images"
+        },
+        "ja": {
+          "title": "バーンハム、元首相はブレキシット論争に囚われている",
+          "dek": "アンドリュー・バーンハム元大臣は、EU貿易協定を守る中で、元首相が過去に囚われていると述べた",
+          "standfirst": null,
+          "facts": [
+            "アンドリュー・バーンハムは2026年11月23日、EUと英国食品輸出、排出取引、青年体験制度をカバーする協定を発表した",
+            "バーンハムは月曜日の議院討論で、公聴会なしでEU再加入は考えられないと述べた",
+            "元首相のリシ・スナク、テリーザ・メイ、ボリス・ジョンソン、デヴィッド・ Cameronはバーンハムにブレキシット論争の再開を求めなかった"
+          ],
+          "imageCaption": "2026年11月20日のEU-U.K.サミット後の記者会見で発言するバーンハム。 | Sean Gallup/Getty Images"
+        },
+        "ko": {
+          "title": "버넘 \"전직 총리들, 브렉시트 논쟁에 갇혀\"",
+          "dek": "앤디 버넘 \"전직 총리들은 브렉시트 문제에만 매몰돼 있다…EU 무역 협정 수비\"",
+          "standfirst": null,
+          "facts": [
+            "앤디 버넘이 영국 식품 수출, 배출권 거래, 청년 체험 프로그램 등을 포함한 EU 협정 발표(2026년 11월 23일)",
+            "버넘 \"공론화 없이 EU 재가입은 불가능하다\"(의회 월요일 토론)",
+            "리시 수낙, 테레사 메이, 보리스 존슨, 데이비드 카메론 전 총리 \"브렉시트 재논의 말아달라\" 요청"
+          ],
+          "imageCaption": "브뤼셀 EU-U.K. 정상회담 후 기자회견하는 앤디 버넘 | Sean Gallup/Getty Images"
+        }
+      }
+    },
     {
       "slug": "high-tides-expected-in-california-november-22-to-24-20261123-3h60",
       "category": "climate",
@@ -20614,6 +22063,17 @@
             "新しい親指インプラントはトラペジウム骨用のボールアンドソケット型挿入物として設計され、重度関節炎患者の手機能を変革している",
             "KeriMedicalが開発したCMC Touch 1プロテーゼは去年FDA承認を受け、欧州では承認以来13万例以上の手術が実施されている",
             "従来の親指再建手術はトラペジウム骨を切除し、6〜9カ月の回復期間が必要で、患者は6週間 splint または cast で固定される"
+          ],
+          "imageCaption": null
+        },
+        "es": {
+          "title": "Nuevo implante en el pulgar transforma la función de la mano en pacientes con artritis grave",
+          "dek": "Una prótesis de diseño suizo restaura el movimiento del pulgar con una recuperación medida en semanas en lugar de meses",
+          "standfirst": null,
+          "facts": [
+            "Un nuevo implante en el pulgar diseñado como un inserto de bola y cavidad para el hueso trapezoide está transformando la función de la mano en pacientes con artritis grave",
+            "La prótesis CMC Touch 1, desarrollada por KeriMedical, recibió la aprobación de la FDA el año pasado y se ha realizado más de 130.000 veces en Europa desde su aprobación allí",
+            "La reconstrucción tradicional del pulgar implica la extirpación del hueso trapezoide y requiere una recuperación de seis a nueve meses, con los pacientes en férula o yeso durante seis semanas"
           ],
           "imageCaption": null
         }
