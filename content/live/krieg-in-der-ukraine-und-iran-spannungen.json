@@ -1,9 +1,246 @@
 {
+  "meta": {
+    "outlets": [
+      "ZDF heute",
+      "Die Zeit",
+      "SRF",
+      "NZZ"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+  },
   "slug": "krieg-in-der-ukraine-und-iran-spannungen",
-  "status": "live",
-  "category": "world",
-  "importance": 5,
   "topic": "Krieg in der Ukraine und Iran-Spannungen",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "en": {
+      "dek": "New developments on the front and in the Persian Gulf dictate the daily agenda.",
+      "title": "War in Ukraine and Iran Tensions"
+    },
+    "es": {
+      "dek": "Nuevos desarrollos en el frente y en el Golfo Pérsico marcan la agenda del día.",
+      "title": "Guerra en Ucrania y tensiones iraníes"
+    },
+    "fr": {
+      "dek": "Les nouveaux développements sur le front et dans le golfe Persique déterminent l'actualité du jour.",
+      "title": "Guerre en Ukraine et tensions iraniennes"
+    },
+    "it": {
+      "dek": "Nuovi sviluppi sul fronte e nel Golfo Persico determinano l'agenda quotidiana.",
+      "title": "Guerra in Ucraina e tensioni con l'Iran"
+    },
+    "ja": {
+      "dek": "前線およびペルシャ湾での新たな展開が日々の議題を決定づけている。",
+      "title": "ウクライナ戦争とイランの緊張"
+    },
+    "ko": {
+      "dek": "전선과 페르시아만에서의 새로운 전개가 일일 의제를 결정하고 있다.",
+      "title": "우크라이나 전쟁과 이란 긴장"
+    },
+    "pt": {
+      "dek": "Novos desenvolvimentos no terreno e no Golfo Pérsico ditam a agenda diária.",
+      "title": "Guerra na Ucrânia e Tensões com o Irão"
+    },
+    "zh": {
+      "dek": "前线和波斯湾的最新事态发展决定了每日议程。",
+      "title": "乌克兰战争与伊朗紧张局势"
+    },
+    "de": {
+      "title": "Krieg in der Ukraine und iranische Spannungen",
+      "dek": "Neue Entwicklungen an der Front und im Persischen Golf bestimmen die Tagesagenda."
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795483255000-54mv",
+      "at": "2026-11-24T01:20:55.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Ukraine strikes Russian warship off Libya with naval drones",
+          "body": "Ukraine confirmed it used naval drones to strike two Russian ships near Benghazi, sinking the warship Merkury and damaging a cargo vessel. According to The Guardian, the strike was condemned by Libya's UN-backed government in Tripoli."
+        },
+        "es": {
+          "headline": "Ucrania atacó un buque de guerra ruso frente a las costas de Libia con drones navales",
+          "body": "Ucrania confirmó que utilizó drones navales para atacar dos barcos rusos cerca de Bengasi, lo que hundió el buque de guerra Merkury y dañó un buque de carga. Según The Guardian, el ataque fue condenado por el gobierno respaldado por la ONU en Trípoli."
+        },
+        "de": {
+          "headline": "Ukraine schlägt russisches Kriegsschiff vor Libyen mit Marine-Drohnen an",
+          "body": "Ukraine bestätigte, dass sie Marine-Drohnen einsetzte, um zwei russische Schiffe in der Nähe von Benghazi anzugreifen, wobei das Kriegsschiff Merkury sank und ein Frachtschiff beschädigt wurde. Laut The Guardian wurde der Angriff von der von den UN in Tripolis unterstützten Regierung Libyens verurteilt."
+        },
+        "it": {
+          "headline": "Ucraina colpisce nave da guerra russa al largo della Libia con droni navali",
+          "body": "L'Ucraina ha confermato di aver utilizzato droni navali per colpire due navi russe vicino a Bengasi, affondando la nave da guerra Merkury e danneggiando una nave da carico. Secondo The Guardian, l'attacco è stato condannato dal governo libico sostenuto dalle Nazioni Unite a Tripoli."
+        },
+        "fr": {
+          "headline": "L'Ukraine frappe un navire de guerre russe au large de la Libye avec des drones navals",
+          "body": "L'Ukraine a confirmé avoir utilisé des drones navals pour frapper deux navires russes près de Benghazi, coulant le navire de guerre Merkury et endommageant un cargo. Selon The Guardian, cette frappe a été condamnée par le gouvernement libyen soutenu par l'ONU à Tripoli."
+        },
+        "zh": {
+          "headline": "乌克兰使用海军无人机袭击利比亚俄军战舰",
+          "body": "乌克兰证实使用海军无人机袭击了本加齐附近的两艘俄罗斯船只，沉没了“梅尔库里”号战舰并损坏了一艘货船。据《卫报》报道，利比亚联合国支持的特里波里政府谴责了此次袭击。"
+        },
+        "ja": {
+          "headline": "ウクライナ、リビア沖のロシア軍艦を海空ドローンで攻撃",
+          "body": "ウクライナは、ベンガジ近郊のロシア艦船2隻を海空ドローンで攻撃し、軍艦メルクリを沈没させ、貨物船に損害を与えたことを確認した。ガーディアン紙によると、この攻撃はトリポリの国連支持下のリビア政府によって非難された。"
+        },
+        "pt": {
+          "headline": "Ucrânia ataca navio de guerra russo perto da Líbia com drones navais",
+          "body": "A Ucrânia confirmou ter usado drones navais para atacar duas embarcações russas perto de Benghazi, afundando o navio de guerra Merkury e danificando um navio de carga. Segundo o The Guardian, o ataque foi condenado pelo governo apoiado pela ONU da Líbia em Trípoli."
+        },
+        "ko": {
+          "headline": "우크라이나, 리비아 인근 러시아 군함에 해군 드론으로 타격",
+          "body": "우크라이나는 해군 드론을 이용해 벵가지 근처 러시아 선박 두 척을 타격하여 군함 메르쿠리호 침몰 및 화물선 피해를 입혔다고 확인했다. 가디언에 따르면, 이 타격은 트리폴리 유엔 지지 리비아 정부에 의해 규탄되었다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "CBS News",
+          "title": "Ukraine sinks Russian warship Merkury off Libya, damages sanctioned Russian cargo ship",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFAxeHBZeVU0VUJqbTZMY3JYZlVwcFVqak05aURsLTZOYU5uUEMzc2VvX2djLUhhWFJ5YlBUQ1pHX1laYzViNFRreFd2VEdiX1B2TnZrcEFaenhCdl90RWkyb0JobUtoUm5BLThhclo1YXptenlrWTVhaw?oc=5",
+          "publishedAt": "2026-11-24T01:20:55.000Z"
+        },
+        {
+          "outlet": "The Guardian",
+          "title": "Ukraine war briefing: Kyiv’s strike on Russian ships in Benghazi condemned by Libya’s UN-backed government",
+          "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNWHdha3RzX1VGNFF5Y0pKOHBlaTM1eGJ5ZHpGQUdDMGJXSmgzcjAzcGlzMEJQOEZ3MXo2RjBWRmJrWG01MUY0NGVOaFNsVWdpdVF1OFpkMHNvNmY3QVRwZ3pQMGFtdHFkLTRBM3FLOEhTaE8xdXpEdENkM21DSDNmU1BJdFZCY1hxbDZKMVNnbi1Vblo2QnM0RGJKbnhpQmNfSkxXYWJVdEg3a3AzWW9sNWdYVzd3LW1FdnZYQjdRNXJPMW1LRkRFOEZ2dS1UX0U1NEc0aEhINGtXZ1ZNdDI4cg?oc=5",
+          "publishedAt": "2026-11-24T01:08:00.000Z"
+        },
+        {
+          "outlet": "The Guardian",
+          "title": "Ukraine confirms it used naval drones to strike two Russian ships off Libya",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONjlYcEJxcWh6djFUeEhBbnR4eHJKWHdqOVNOVHhwc2ZGM3QtWGtDNUN3bHA2eUN0WEV3SkxwRVVyNXgzZzVlVHU5YXBZVm5CQmRoNUQ5ck00Rk1lOGFGc3FLRUFFelRnckhkaF9oVmplSE9UR2lEdEFQbFBNRjMya2l0WmFsTVR3bDM4SjNGS0FwOGJhblBsRmNKTQ?oc=5",
+          "publishedAt": "2026-11-23T23:44:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1795476663000-pvrf",
+      "at": "2026-11-23T23:31:03.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "US imposes new sanctions targeting Iranian shadow banking network",
+          "body": "The United States Treasury has sanctioned more than two dozen individuals and entities connected to Iran's financial networks. According to the US Treasury, the targeted activity linked to Iranian shadow banking reached $14.7 billion between January 2025 and August 2026."
+        },
+        "es": {
+          "headline": "Estados Unidos impone nuevas sanciones dirigidas a la red de banca en la sombra de Irán",
+          "body": "El Departamento del Tesoro de Estados Unidos sancionó a más de dos docenas de personas y entidades vinculadas a las redes financieras de Irán. Según el Tesoro estadounidense, la actividad objeto de las sanciones relacionada con la banca en la sombra iraní alcanzó los 14.700 millones de dólares entre enero de 2025 y agosto de 2026."
+        },
+        "de": {
+          "headline": "USA verhängen neue Sanktionen gegen iranisches Schattenbankennetzwerk",
+          "body": "Das US-Finanzministerium hat über zwei Dutzend Personen und Einrichtungen, die mit Irans Finanznetzwerken verbunden sind, sanktioniert. Laut US-Finanzministerium belief sich die mit dem iranischen Schattenbankwesen verbundene Aktivität zwischen Januar 2025 und August 2026 auf 14,7 Milliarden US-Dollar."
+        },
+        "it": {
+          "headline": "Stati Uniti impongono nuove sanzioni contro la rete bancaria occulta iraniana",
+          "body": "Il Tesoro degli Stati Uniti ha sanzionato più di due dozzine di individui ed entità collegate alle reti finanziarie dell'Iran. Secondo il Tesoro statunitense, l'attività mirata legata alla finanza occulta iraniana ha raggiunto 14,7 miliardi di dollari tra gennaio 2025 e agosto 2026."
+        },
+        "fr": {
+          "headline": "Les États-Unis imposent de nouvelles sanctions ciblant le réseau bancaire parallèle iranien",
+          "body": "Le Trésor américain a sanctionné plus de deux douzaines d'individus et d'entités liées aux réseaux financiers de l'Iran. Selon le Trésor américain, l'activité ciblée liée au secteur bancaire parallèle iranien a atteint 14,7 milliards de dollars entre janvier 2025 et août 2026."
+        },
+        "zh": {
+          "headline": "美国对伊朗影子银行网络实施新制裁",
+          "body": "美国财政部已对与伊朗金融网络相关的二十多个个人和实体实施了制裁。据美国财政部称，与伊朗影子银行相关的目标活动在2025年1月至2026年8月期间达到了147亿美元。"
+        },
+        "ja": {
+          "headline": "米国、イランのシャドーバンキングネットワークを標的とした新たな制裁を課す",
+          "body": "米国財務省は、イランの金融ネットワークに関連する20以上の個人および団体に制裁を科した。米国財務省によると、イランのシャドーバンキングに関連する標的活動は、2025年1月から2026年8月の間に147億ドルに達した。"
+        },
+        "pt": {
+          "headline": "EUA impõem novas sanções visando a rede bancária sombra iraniana",
+          "body": "O Tesouro dos Estados Unidos sancionou mais de duas dezenas de indivíduos e entidades ligadas às redes financeiras do Irão. Segundo o Tesouro dos EUA, a atividade visada ligada ao sistema bancário sombra iraniano atingiu 14,7 mil milhões de dólares entre janeiro de 2025 e agosto de 2026."
+        },
+        "ko": {
+          "headline": "미국, 이란 그림자 금융 네트워크 겨냥 새 제재 부과",
+          "body": "미국 재무부는 이란 금융 네트워크와 연관된 24개 이상의 개인 및 단체에 제재를 가했다. 미국 재무부에 따르면, 이란 그림자 금융과 관련된 표적 활동은 2025년 1월부터 2026년 8월 사이에 147억 달러에 달했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Le Monde",
+          "title": "US targets Iran's alleged 'shadow banking' network with new sanctions",
+          "url": "https://www.lemonde.fr/en/international/article/2026/11/24/us-targets-iran-s-alleged-shadow-banking-network-with-new-sanctions_6787387_4.html",
+          "publishedAt": "2026-11-23T23:31:03.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "US escalates sanctions on Iran, targets ‘shadow banking’ networks",
+          "url": "https://www.aljazeera.com/news/2026/11/23/us-escalates-sanctions-on-iran-targets-shadow-banking-networks?traffic_source=rss",
+          "publishedAt": "2026-11-23T21:30:40.000Z"
+        },
+        {
+          "outlet": "JNS",
+          "title": "US government sanctions more than two dozen people, entities aiding Iran’s ‘shadow banks’",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOcTB3d2JKcndQMU90eGVKczFLb1VSMkxWOWQ1NVJqejF4dlBpbEZzZ0lqY2lJMUxrcjF6ZVFoWWgyektNVGF0RzN6X1EtSHF2ek43MGdZbWpSaVVZM0pubWc4S3FwRUhsZ21HX3FyQnRXcVFVWmFpWHkxUkhDWlpmS2d5QVV2OWZZRnllYmxPU2kxdlJXOFlOTEtaR1J4aXhyWjZTLS1xZnMxNGM1YUhZTks0XzRHYkxZSU9r?oc=5",
+          "publishedAt": "2026-11-23T21:12:49.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1795470730000-rd50",
+      "at": "2026-11-23T21:52:10.000Z",
+      "kind": "statement",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "EU proposes banning Russian flags at sports events",
+          "body": "European Commission President Ursula von der Leyen announced a new sanctions proposal targeting Russia over the war in Ukraine. According to the proposal, Russian teams and individual athletes would be banned from competing under the Russian flag at sports events."
+        },
+        "es": {
+          "headline": "La UE propone prohibir las banderas rusas en los eventos deportivos",
+          "body": "La presidenta de la Comisión Europea, Ursula von der Leyen, anunció una nueva propuesta de sanciones contra Rusia por la guerra en Ucrania. Según la propuesta, se prohibiría a los equipos y atletas individuales rusos competir bajo la bandera rusa en eventos deportivos."
+        },
+        "de": {
+          "headline": "EU schlägt Verbot russischer Flaggen bei Sportveranstaltungen vor",
+          "body": "EU-Kommissionspräsidentin Ursula von der Leyen kündigte einen neuen Sanktionsvorschlag gegen Russland wegen des Krieges in der Ukraine an. Gemäß dem Vorschlag wären russische Teams und einzelne Athleten bei Sportveranstaltungen nicht unter der russischen Flagge antrittberechtigt."
+        },
+        "it": {
+          "headline": "UE propone il divieto delle bandiere russe agli eventi sportivi",
+          "body": "La presidente della Commissione Europea, Ursula von der Leyen, ha annunciato una nuova proposta di sanzioni contro la Russia in relazione alla guerra in Ucraina. Secondo la proposta, le squadre russe e gli atleti individuali sarebbero banditi dalla competizione sotto la bandiera russa agli eventi sportivi."
+        },
+        "fr": {
+          "headline": "L'UE propose d'interdire les drapeaux russes aux événements sportifs",
+          "body": "La présidente de la Commission européenne, Ursula von der Leyen, a annoncé une nouvelle proposition de sanctions visant la Russie en raison de la guerre en Ukraine. Selon la proposition, les équipes russes et les athlètes individuels seraient interdits de compétition sous le drapeau russe lors d'événements sportifs."
+        },
+        "zh": {
+          "headline": "欧盟提议禁止在体育赛事中使用俄罗斯国旗",
+          "body": "欧盟委员会主席乌尔苏拉·冯德莱恩宣布了一项针对俄罗斯的新的制裁提案，原因是乌克兰战争。根据该提案，俄罗斯队伍和个人运动员将被禁止在体育赛事中使用俄罗斯国旗参赛。"
+        },
+        "ja": {
+          "headline": "EU、スポーツイベントでのロシア国旗の使用禁止を提案",
+          "body": "ウルズラ・フォン・デア・ライエン欧州委員会委員長は、ウクライナ戦争をめぐるロシアに対する新たな制裁案を発表した。この提案によると、ロシアのチームおよび個々の選手は、スポーツイベントでロシア国旗の下で競技することを禁止されることになる。"
+        },
+        "pt": {
+          "headline": "UE propõe banir bandeiras russas em eventos desportivos",
+          "body": "A Presidente da Comissão Europeia, Ursula von der Leyen, anunciou uma nova proposta de sanções contra a Rússia devido à guerra na Ucrânia. De acordo com a proposta, equipas e atletas individuais russos seriam proibidos de competir sob a bandeira russa em eventos desportivos."
+        },
+        "ko": {
+          "headline": "EU, 스포츠 행사에서 러시아 국기 사용 금지 제안",
+          "body": "우르줄라 폰데어라이엔 유럽연합 집행위원장은 우크라이나 전쟁과 관련하여 러시아를 겨냥한 새로운 제재안을 발표했다. 이 제안에 따르면, 러시아 팀과 개별 선수는 스포츠 행사에서 러시아 국기 아래 출전이 금지된다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "SRF",
+          "title": "Krieg in der Ukraine – Russland-Flagge soll bei Sportevents in der EU verboten werden",
+          "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-russland-flagge-soll-bei-sportevents-in-der-eu-verboten-werden",
+          "publishedAt": "2026-11-23T21:52:10.000Z"
+        },
+        {
+          "outlet": "South China Morning Post",
+          "title": "EU proposes banning Russian flags at sports events under new sanctions",
+          "url": "https://www.scmp.com/news/world/europe/article/3375530/eu-moves-ban-russian-flags-sports-events-under-new-sanctions",
+          "publishedAt": "2026-11-23T21:15:30.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "world",
   "keywords": [
     "ukraine",
     "russland",
@@ -18,57 +255,65 @@
     "krieg",
     "konflikt"
   ],
+  "seenUrls": [
+    "https://news.google.com/rss/articles/CBMieEFVX3lxTFAxeHBZeVU0VUJqbTZMY3JYZlVwcFVqak05aURsLTZOYU5uUEMzc2VvX2djLUhhWFJ5YlBUQ1pHX1laYzViNFRreFd2VEdiX1B2TnZrcEFaenhCdl90RWkyb0JobUtoUm5BLThhclo1YXptenlrWTVhaw?oc=5",
+    "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNWHdha3RzX1VGNFF5Y0pKOHBlaTM1eGJ5ZHpGQUdDMGJXSmgzcjAzcGlzMEJQOEZ3MXo2RjBWRmJrWG01MUY0NGVOaFNsVWdpdVF1OFpkMHNvNmY3QVRwZ3pQMGFtdHFkLTRBM3FLOEhTaE8xdXpEdENkM21DSDNmU1BJdFZCY1hxbDZKMVNnbi1Vblo2QnM0RGJKbnhpQmNfSkxXYWJVdEg3a3AzWW9sNWdYVzd3LW1FdnZYQjdRNXJPMW1LRkRFOEZ2dS1UX0U1NEc0aEhINGtXZ1ZNdDI4cg?oc=5",
+    "https://www.japantimes.co.jp/news/2026/11/24/world/hacked-ukraine-russian-death-toll/",
+    "https://www.japantimes.co.jp/news/2026/11/24/world/ukraine-russian-warship-libyan-coast/",
+    "https://www.zeit.de/politik/ausland/ukraine-krieg-news-liveblog",
+    "https://www.foxnews.com/world/ukraines-drone-strike-russian-warship-libya-risks-serious-escalation-former-official-warns",
+    "https://www.faz.net/aktuell/politik/ausland/russische-militaerflugzeuge-dringen-in-suedkoreas-luftverteidigungszone-ein-accg-201711037.html",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxNS2dnOTZmT2o4SkpXREpMVEJja1RpM0J3NTVFUDFhM2x4TmlsQWVTU3pyX1pqdXkyZGJQQy1wdzhpaW04SmxKV3B1R1BNbHNpVk80bmYtQ2RWQ0JLbXhULU5ZNThSeGNNZjJnVDFDWWNFNnRibmg2V05OWGlJTWJ5M0lnQk9iRmJJLU12SmxxdTdZNmR1VFJPQw?oc=5",
+    "https://www.france24.com/en/europe/20261124-zelensky-urges-four-way-peace-talks-with-russia-europe-and-us-as-soon-as-possible",
+    "https://www.jpost.com/middle-east/iran-news/article-915899",
+    "https://www.straitstimes.com/world/europe/us-eyes-iran-as-possible-culprit-in-dozens-of-new-cyberattacks-against-ships-wsj-reports",
+    "https://www.aljazeera.com/news/liveblog/2026/11/24/iran-war-live-iran-says-three-ships-catch-fire-after-hitting-hormuz-mines?traffic_source=rss",
+    "https://www.scmp.com/news/world/middle-east/article/3375535/israel-leadership-rivals-clash-over-iran-threat-ahead-coalition-talks",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxONjlYcEJxcWh6djFUeEhBbnR4eHJKWHdqOVNOVHhwc2ZGM3QtWGtDNUN3bHA2eUN0WEV3SkxwRVVyNXgzZzVlVHU5YXBZVm5CQmRoNUQ5ck00Rk1lOGFGc3FLRUFFelRnckhkaF9oVmplSE9UR2lEdEFQbFBNRjMya2l0WmFsTVR3bDM4SjNGS0FwOGJhblBsRmNKTQ?oc=5",
+    "https://www.kyivpost.com/post/90982",
+    "https://www.foxnews.com/world/nato-warns-putin-could-strike-european-army-responds-points-us-military-model",
+    "https://www.lemonde.fr/en/international/article/2026/11/24/us-targets-iran-s-alleged-shadow-banking-network-with-new-sanctions_6787387_4.html",
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA4X2c1bEczMDZZdloxbk44ZDlFdGQtaUlLejV1c05RQkRBb3ZNeDI4X3RlOTdyQW4xbkE0MDd4MnJ6ck00bS13Q2lYQlBqN3RhazdXMkFR?oc=5",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxQcHEzaFFZSHUwdzN0LS1RbTVLRlF1MFpWblFUV2l1eUtybk9fOHJzNmQzeW8zSi13TEdMWGtYTE9UTFNHbGx4UUZ6Z2UyRlJQUU1kY3hKNmtsV3V1ZkVsWWR3UmxvdDlud0NQa2VRRldnWFQwdV85R0RNZTVKaTJKbko0UV9Qa3FLR0J1S1FNSkZxM01k?oc=5",
+    "https://www.welt.de/politik/deutschland/plus6b0009c0be487c5437746af9/krisen-in-der-welt-deutschland-soll-fuehren-doch-die-deutschen-wollen-nicht.html",
+    "https://www.zdfheute.de/politik/ausland/ukraine-russland-konflikt-blog-102.html",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5VdGxKN0RGUlhrZmRJRlg4MGFKcDF4a05PTjRhZjVfUEtRdl82bmdjT0h2eDNBMm0xZnlJTkxGSmt2anFYZm9nSE9CUWRzdmtPNC1qbFVqd1ZWT3ZtTEFzeWZVS094c2M?oc=5",
+    "https://www.kyivpost.com/post/90979",
+    "https://www.nzz.ch/international/iran-krieg-bahrain-geraet-erneut-unter-iranischen-beschuss-ld.10021246",
+    "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5qaU96eGFMSHZObHR0S0c0djVlZXQtakR3c2FVNmo4M0ZLQi1rUnVvdFJ1Zm4ySno4RVM1c3RNV0RkZElRY2F1TXRubHExOXAyaldDWGhiVFR6X19fRkRkaDdn?oc=5",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSzZIUTJVWnZ1QW5GSnlOd0tfX0x1ZDE5UDhvdkhUWlNVYjZtRFhXdjRkTjV6dGlsOFlCVGR4YTJxaXkxVFBESlBZVVBaZDhxcTY2STNQU0NfLXFKZ3dsa1RWVkNhYzNtY0R2UXVrdkNQTU5jZDVhNV85eVhIeWNTdkNiQ0JMRW1wUHNwU1VOX3pxbGk5cEdyM3lfNEJxUEE4dXlrUEFYWFVfal9CaEE?oc=5",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcGJrSk9PcUlfVk00Nm9kTXVCUDktbUt6aWNtVm9kRURWWFU2M1hrY0l4aTNjeFFhSmUtSGJ3UWhEeVZZMFdxVWctVl84b2RuNnBqSkpsZDNERlZCbHNNX1RZYmNsWm1SZ3lnRjZQSzZpdlQyLVBzNEVJQ0JCSXdyU2VPOXlCR2JuWkVTWFhRekE?oc=5",
+    "https://www.france24.com/en/tv-shows/a-propos/20261123-a-war-of-unmanned-machines-ai-and-total-transparency-of-the-battlefield",
+    "https://www.srf.ch/news/international/nahost/krieg-im-nahen-osten-usa-verhaengen-sanktionen-gegen-irans-schattenbankensystem",
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-russland-flagge-soll-bei-sportevents-in-der-eu-verboten-werden",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVjFkN1MzVzIxRWxUQXNFc3V6RlVpYlpBaDVHTnlsT3hRekJacUh0N3dpc2VpdTI5VG5IOXpZbnRsMk9lWTVidENvMllWWWRlSEwya2NfdFk3S0Z3d21ickk1MWV6V29JTm5oVVJGQndXMVZ6YWhuZFVKS3ppWDRhcXJrTW5aZDVYd1hKZXpFRFdwejdTczg2SGgzUTZHU2pvUDNablFJTHlBTnpYQVdUWkJLZUFRUFFzbGtN0gHAAUFVX3lxTE5SRHJRb1gzWEE5QVAzbTNKdVY1T1JBUURFQXllejlxRmRGVWtPRG9hd2t3S0Y2eHh2dGZwYV9ydVBHRl80MHRVbUlaSHB0bzRsMU5kY0xBQ0lYTVphRlBsMTdDQlBPdDVlcE5fVWlSZ0U4UDhqWTNvblFxbHpuTkRCdWcwREZ5emJpeTV4b0c4SXdfVFc0ZXVENGJHWkZFRU45Q0ZiVEh0MnQwQy1xV2dmT3B5OUs0dVZKYmJFd285Vw?oc=5",
+    "https://www.kyivpost.com/post/90978",
+    "https://www.tagesschau.de/tagesthemen/video-1688802.html",
+    "https://www.aljazeera.com/news/2026/11/23/us-escalates-sanctions-on-iran-targets-shadow-banking-networks?traffic_source=rss",
+    "https://www.euronews.com/2026/11/23/german-ukrainian-interceptor-shoots-down-russian-jet-powered-drone-company-says",
+    "https://thehill.com/policy/defense/6238400-russian-casualties-ukraine-war-putin-zelensky/",
+    "https://www.scmp.com/news/world/europe/article/3375530/eu-moves-ban-russian-flags-sports-events-under-new-sanctions",
+    "https://www.foxnews.com/politics/bessent-gave-iran-weeks-before-nothing-left-trade-new-sanctions-expose-what-survived",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOcTB3d2JKcndQMU90eGVKczFLb1VSMkxWOWQ1NVJqejF4dlBpbEZzZ0lqY2lJMUxrcjF6ZVFoWWgyektNVGF0RzN6X1EtSHF2ek43MGdZbWpSaVVZM0pubWc4S3FwRUhsZ21HX3FyQnRXcVFVWmFpWHkxUkhDWlpmS2d5QVV2OWZZRnllYmxPU2kxdlJXOFlOTEtaR1J4aXhyWjZTLS1xZnMxNGM1YUhZTks0XzRHYkxZSU9r?oc=5",
+    "https://www.foxnews.com/world/russia-warns-preventive-nuclear-attack-medvedev-claims-ukraine-nato-crossed-line",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxQcDVRN1hMMUQ1WTlnT0JLQWE5Q1lrTG4xN1c2dDU2WGs4Wkplb0FkZ0VkQWZnOWI3cjNMWnVpbHRUZDNabDBvb01yRzZQN3pzbERPeGJUbUFKSGRhRlNpMXFPc3ZQbWxpNzFfcUtCcjByMkh3eUdkYnV0WTZndXlReWFreU1QaDRiaGV2amUxdEJrWnBCN2pEbdIBngFBVV95cUxPanNlOXlSd3dtVDJQYkZHT21Wd2V2amJaT2Fha1BxcWxyMk1sU2Mxanh4UXR0el82RHFzRE1TZWplMm81cXhVUEVGQzdpcDYxWXhJTWtqbHZMeWNUejg3bnozbk5ObTVFb0NSNWttQVgtY2FDZExzVWVuUExpVWpGZE9BeGF0bUFOX1RPajc4cVROODFIMUsteW9DZVdxQQ?oc=5",
+    "https://www.straitstimes.com/world/europe/zelenskiy-says-intelligence-shows-russia-planning-new-strikes-on-ukraine",
+    "https://phys.org/news/2026-11-fungus-survive-chernobyl-materials-nerve.html",
+    "https://www.bbc.co.uk/news/articles/cm894p88jzxpo?at_medium=RSS&at_campaign=rss",
+    "https://www.abc.net.au/news/2026-11-24/russia-return-to-sport-olympics-ioc-2028-la/107419444",
+    "https://www.kyivpost.com/post/90977",
+    "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQc2wwV0pVdUZ5eEVNdDUzbFZNWWxHU1BJNzM1dU5qdjRFcmJQeTFLSUc5MW1xbFRZUXV4VDlaamFRQmNMazVyVXNLSFFWSDkyNl9IeWlIRlpaYWM2Z2NQeEEzOHFMNTdsY0pvbkNhampBUldNeHJCa0hnTjlOWTUyYlJhOHN2d1ZESmxRaUpxV29VaEM3ZGFXclhMcGFiOWVRbmhNU0tkaFTSAagBQVVfeXFMUHNsMFdKVXVGeXhFTXQ1M2xWTVlsR1NQSTczNXVOanY0RXJiUHkxS0lHOTFtcWxUWVF1eFQ5WmphUUJjTGs1clVzS0hRVkg5MjZfSHlpSEZaWmFjNmdjUHhBMzhxTDU3bGNKb25DYWpqQVJXTXhyQmtIZ045Tlk1MmJSYThzdndWREpsUWlKcVdvVWhDN2RhV3JYTHBhYjllUW5oTVNLZGhU?oc=5",
+    "https://www.welt.de/politik/deutschland/article6b04998339a3e8110f0e94e6/ukraine-krieg-krieg-darf-sich-nicht-auf-ostsee-ausweiten-pistorius-mahnt-kiew.html",
+    "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPclIybFN1cjJ1XzJuTEdkdjhqZzU2U2RWSlpocVp2VzVOaG9SVDE1Uk9PS2FSNU1UakliWmhyQ1ozVENPUXRGQndOekFQdnVjMktSek9DeHZybG1QYTllU0EzanNTZ1YwOGxIZTNnZHBjd0RmU1VXM0lMdGZmWFd2ajNHOUR2Ni1PRDFCc3ExODJseHdOeUx5NmJuWUtkZ2otOHB3Z2lXTjlydDNCdGpGeDNDNklDWktYN1lBRGFnNW4?oc=5",
+    "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBoU3U5SzJDSl8zMl9oZExNMmVfLU1nR3FNcU9DNURwX2tOd0F4QS03THRkNHVUR0I3Q2VxT1d2SF9CdUlWNER5SjE2dWR6VkxXeHc?oc=5",
+    "https://www.euronews.com/2026/11/23/nato-warns-of-intensifying-threats-as-ukraine-peace-proposals-face-key-questions",
+    "https://www.france24.com/en/libya-s-east-seeks-un-probe-into-claims-ukrainian-military-present-in-west"
+  ],
   "startedAt": "2026-11-24T01:48:42.148Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-24T01:48:42.148Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-24T01:58:58.795Z",
+  "importance": 5,
   "wantsStats": false,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "War in Ukraine and Iran Tensions",
-      "dek": "New developments on the front and in the Persian Gulf dictate the daily agenda."
-    },
-    "fr": {
-      "title": "Guerre en Ukraine et tensions iraniennes",
-      "dek": "Les nouveaux développements sur le front et dans le golfe Persique déterminent l'actualité du jour."
-    },
-    "es": {
-      "title": "Guerra en Ucrania y tensiones iraníes",
-      "dek": "Nuevos desarrollos en el frente y en el Golfo Pérsico marcan la agenda del día."
-    },
-    "it": {
-      "title": "Guerra in Ucraina e tensioni con l'Iran",
-      "dek": "Nuovi sviluppi sul fronte e nel Golfo Persico determinano l'agenda quotidiana."
-    },
-    "zh": {
-      "title": "乌克兰战争与伊朗紧张局势",
-      "dek": "前线和波斯湾的最新事态发展决定了每日议程。"
-    },
-    "pt": {
-      "title": "Guerra na Ucrânia e Tensões com o Irão",
-      "dek": "Novos desenvolvimentos no terreno e no Golfo Pérsico ditam a agenda diária."
-    },
-    "ja": {
-      "title": "ウクライナ戦争とイランの緊張",
-      "dek": "前線およびペルシャ湾での新たな展開が日々の議題を決定づけている。"
-    },
-    "ko": {
-      "title": "우크라이나 전쟁과 이란 긴장",
-      "dek": "전선과 페르시아만에서의 새로운 전개가 일일 의제를 결정하고 있다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "ZDF heute",
-      "Die Zeit",
-      "SRF",
-      "NZZ"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 7,
+  "seenHeadlines": []
 }
