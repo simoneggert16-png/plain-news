@@ -1,9 +1,273 @@
 {
+  "meta": {
+    "outlets": [
+      "ABC7 New York",
+      "The Jersey Vindicator",
+      "NBC10 Philadelphia",
+      "Montclair Local News",
+      "Anadolu Ajansı",
+      "CBS News",
+      "FOX 5 New York",
+      "FOX 29 Philadelphia"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "new-jersey-thanksgiving-storm",
-  "status": "live",
-  "category": "climate",
-  "importance": 5,
   "topic": "New Jersey Thanksgiving Storm",
+  "status": "live",
+  "article": {
+    "slug": "new-jersey-thanksgiving-storm",
+    "updatedAt": "2026-11-25T23:56:06.002Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "New Jersey declares state of emergency ahead of Thanksgiving storm, Macy's parade postponed",
+        "dek": "Governor Sherrill acts as powerful nor'easter approaches for holiday weekend",
+        "facts": [
+          "Governor Mikie Sherrill declared a state of emergency on Wednesday ahead of a powerful Thanksgiving nor'easter",
+          "Macy's announced the Thanksgiving Day Parade is being postponed to Saturday due to severe weather",
+          "The parade postponement marks the first time in the event's history",
+          "Army conducted a controlled munitions detonation in Iowa early Wednesday",
+          "Severe weather includes potential hurricane-force wind gusts for Thanksgiving"
+        ],
+        "body": [
+          "Governor Mikie Sherrill declared a state of emergency on Wednesday ahead of a powerful Thanksgiving nor'easter, according to The Jersey Vindicator and CBS News.",
+          "Macy's announced on Wednesday that the annual Thanksgiving Day Parade is being postponed to Saturday due to severe weather, according to Axios and CNBC, marking the first time in the event's history.",
+          "The postponement comes as severe weather approaches the region for the holiday weekend, with FOX 5 New York reporting potential hurricane-force wind gusts for Thanksgiving.",
+          "Army conducted a controlled munitions detonation in Iowa early Wednesday despite initial public health fears that had pushed back the plans, according to verified updates.",
+          "The state of emergency was issued as the powerful nor'easter approaches the region, with Governor Sherrill taking action ahead of the Thanksgiving holiday.",
+          "Retailers and media reports confirmed the Macy's parade postponement, noting the decision was made due to the severe weather conditions."
+        ],
+        "context": "Governor Mikie Sherrill declared a state of emergency ahead of a powerful Thanksgiving nor'easter, and Macy's announced the Thanksgiving Day Parade postponement for the first time in its history due to severe weather.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "New Jersey ruft Notstand aus – Thanksgiving-Sturm zieht los, Macy's-Parade verschoben",
+        "dek": "",
+        "facts": [],
+        "body": [],
+        "context": ""
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Gouverneur Mikie Sherrill von New Jersey hat angesichts eines starken Nor'easter am Thanksgiving-Wochenende den Notstand ausgerufen.",
+      "title": "Thanksgiving-Sturm in New Jersey"
+    },
+    "en": {
+      "dek": "New Jersey Governor Mikie Sherrill has declared a state of emergency ahead of a powerful Thanksgiving weekend nor'easter.",
+      "title": "New Jersey Thanksgiving Storm"
+    },
+    "es": {
+      "dek": "La gobernadora de Nueva Jersey, Mikie Sherrill, ha declarado el estado de emergencia ante un potente nor'easter de fin de semana de Acción de Gracias.",
+      "title": "Tormenta de Acción de Gracias en Nueva Jersey"
+    },
+    "fr": {
+      "dek": "Le gouverneur du New Jersey, Mikie Sherrill, a déclaré l'état d'urgence avant un puissant nor'easter prévu pour le week-end de Thanksgiving.",
+      "title": "Tempête de Thanksgiving dans le New Jersey"
+    },
+    "it": {
+      "dek": "Il governatore del New Jersey Mikie Sherrill ha dichiarato lo stato di emergenza in vista di un potente nor'easter nel weekend del Ringraziamento.",
+      "title": "Tempesta di Ringraziamento nel New Jersey"
+    },
+    "ja": {
+      "dek": "ニュージャージー州のマイク・シェリル知事は、強力なサンクスウィークエンドのノーエスターに先立ち、非常事態を宣言した。",
+      "title": "ニュージャージー州サンクスギビング嵐"
+    },
+    "ko": {
+      "dek": "뉴저지 주지사 미키 셀릴이 강력한 추수감사절 주말 노리에스터를 앞두고 비상사태를 선포했다.",
+      "title": "뉴저지 추수감사절 폭풍"
+    },
+    "pt": {
+      "dek": "O governador de Nova Jérsei, Mikie Sherrill, declarou estado de emergência ante um poderoso nor'easter para o fim de semana de Ação de Graças.",
+      "title": "Tempestade de Ação de Graças em Nova Jérsei"
+    },
+    "zh": {
+      "dek": "新泽西州州长米基·谢里尔在感恩节前夕宣布进入紧急状态，以应对强大的东北风暴。",
+      "title": "新泽西感恩风暴"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795644866000-rabt",
+      "at": "2026-11-25T22:14:26.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Army conducts controlled munitions detonation in Iowa",
+          "body": "Army detonated a degraded stockpile of lead-based munitions in Iowa early Wednesday. The controlled explosion proceeded despite initial public health fears that had pushed back the plans."
+        },
+        "es": {
+          "headline": "El Ejército realiza una detonación controlada de municiones en Iowa",
+          "body": "El Ejército detonó un stockpile degradado de municiones con base de plomo en Iowa el miércoles temprano. La explosión controlada se procedió a pesar de los temores iniciales de salud pública que habían retrasado los planes."
+        },
+        "it": {
+          "headline": "Esercito conduce detonazione controllata di munizioni in Iowa",
+          "body": "L'Esercito ha detonato un lotto di munizioni a base di piombo deteriorato in Iowa nella prima mattinata di mercoledì. L'esplosione controllata ha avuto luogo nonostante le iniziali preoccupazioni per la salute pubblica che avevano ritardato i piani."
+        },
+        "de": {
+          "headline": "Armee führt kontrollierte Sprengstoffdetonation in Iowa durch",
+          "body": "Die Armee hat am frühen Mittwoch ein veraltetes Lagerbestand an bleihaltigen Sprengstoffen in Iowa gesprengt. Die kontrollierte Explosion fand trotz anfänglicher öffentlicher Gesundheitsbedenken statt, die die Pläne zunächst verzögert hatten."
+        },
+        "pt": {
+          "headline": "Exército realiza detonação controlada de munições em Iowa",
+          "body": "Exército detonou um stockpile degradado de munições de chumbo em Iowa na quarta-feira cedo. A explosão controlada prosseguiu apesar dos medos iniciais de saúde pública que tinham adiado os planos."
+        },
+        "ja": {
+          "headline": "アーミー、アイオワ州で管理下の爆発処分",
+          "body": "アーミーは水曜早朝、鉛ベースの劣化弾薬の在庫をアイオワ州で管理下の爆発処分した。当初、公衆衛生上の懸念が計画を遅らせていたが、管理下の爆発は行われた。"
+        },
+        "zh": {
+          "headline": "军队在爱荷华州进行受控弹药爆炸",
+          "body": "军队周三早些时候在爱荷华州引爆了降级的铅基弹药库存。尽管最初有公共卫生方面的担忧推迟了计划，但这次受控爆炸还是进行了。"
+        },
+        "ko": {
+          "headline": "아미, 아이오와주에서 통제된 탄약 폭발 실시",
+          "body": "아미가 수요일 이른 시간 아이오와주에서 분해된 납 기반 탄약을 통제된 폭발로 처리했다. 초기 공중보건 우려로 계획이 미뤄졌으나 폭발은 강행됐다."
+        },
+        "fr": {
+          "headline": "L'armée américaine effectue une détonation contrôlée de munitions en Iowa",
+          "body": "L'armée américaine a procédé à la détonation contrôlée d'un stock de munitions à base de plomb en Iowa, mercredi matin. L'explosion s'est déroulée malgré des craintes initiales de santé publique qui avaient retardé les plans."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "FOX 5 New York",
+          "title": "Potential hurricane-force wind gusts for Thanksgiving",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9zVFRObnBKb3Q5aThoM3h1cjhSMFBGc28tYWpFN0xXOEp3eGVZV0liVFJDMk0tY3c1Y2xiS21XdHM5czIwSU5MUWQ3QXNycDM5TEtya2xYWWpLc1FFWmc?oc=5",
+          "publishedAt": "2026-11-25T22:14:26.000Z"
+        },
+        {
+          "outlet": "The Hill",
+          "title": "Sherrill declares state of emergency as Thanksgiving storm approaches",
+          "url": "https://thehill.com/homenews/state-watch/6243923-nj-governor-declares-emergency/",
+          "publishedAt": "2026-11-25T21:59:14.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-25T21:25:09.000Z",
+      "id": "u-1795641909000-blqg",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Gouverneurin Mikie Sherrill hat am Mittwoch angesichts eines heftigen Nor'easter-Sturms zum Thanksgiving-Fest den Notstand ausgerufen. Die Ausrufung des Notstands erfolgte im Zuge des Herannahens von Unwettern in der Region für das Feiertagswochenende.",
+          "headline": "New Jersey ruft vor Thanksgiving-Sturm den Notstand aus"
+        },
+        "en": {
+          "body": "Governor Mikie Sherrill declared a state of emergency on Wednesday ahead of a powerful Thanksgiving nor'easter. The state of emergency was issued as severe weather approaches the region for the holiday weekend.",
+          "headline": "New Jersey declares state of emergency ahead of Thanksgiving storm"
+        },
+        "es": {
+          "body": "La gobernadora Mikie Sherrill declaró el estado de emergencia este miércoles ante una potente tormenta del noreste prevista para Acción de Gracias. El estado de emergencia se emitió a medida que se acerca tiempo severo a la región para el fin de semana festivo.",
+          "headline": "Nueva Jersey declara el estado de emergencia ante la tormenta de Acción de Gracias"
+        },
+        "fr": {
+          "body": "La gouverneure Mikie Sherrill a déclaré l'état d'urgence mercredi, en prévision d'une puissante tempête hivernale (« nor'easter ») pour Thanksgiving. Cette mesure a été prise alors que des conditions météorologiques sévères menacent la région pour le week-end férié.",
+          "headline": "Le New Jersey déclare l'état d'urgence avant une tempête pour Thanksgiving"
+        },
+        "it": {
+          "body": "La governatrice Mikie Sherrill ha dichiarato mercoledì lo stato di emergenza in vista di un potente nor'easter previsto per il Ringraziamento. Lo stato di emergenza è stato emanato a causa dell'avvicinarsi di condizioni meteorologiche avverse nella regione per il fine settimana festivo.",
+          "headline": "Il New Jersey dichiara lo stato di emergenza in vista della tempesta del Ringraziamento"
+        },
+        "ja": {
+          "body": "ミッキー・シェリル知事は水曜日、感謝祭を直撃する強力な北東の嵐（ノーイースター）に備え、非常事態を宣言した。ホリデーシーズンに向けて悪天候が同地域に接近していることを受け、非常事態宣言が出された。",
+          "headline": "ニュージャージー州、感謝祭の嵐に備え非常事態宣言を発令"
+        },
+        "ko": {
+          "body": "미키 셰릴 주지사는 강력한 추수감사절 북동풍을 앞두고 수요일에 비상사태를 선포했다. 이 비상사태는 연휴 주말 동안 심각한 기상 현상이 해당 지역에 접근함에 따라 발령되었다.",
+          "headline": "뉴저지, 추수감사절 폭풍 대비 비상사태 선포"
+        },
+        "pt": {
+          "body": "A governadora Mikie Sherrill declarou o estado de emergência na quarta-feira antes de uma poderosa tempestade nor'easter no Dia de Ação de Graças. O estado de emergência foi emitido à medida que condições meteorológicas severas se aproximam da região para o fim de semana festivo.",
+          "headline": "Nova Jérsia declara estado de emergência antes de tempestade no Dia de Ação de Graças"
+        },
+        "zh": {
+          "body": "州长米基·谢里尔（Mikie Sherrill）周三宣布全州进入紧急状态，以应对即将到来的强劲感恩节东北风暴。随着假期周末恶劣天气的临近，该州发布了此项紧急状态令。",
+          "headline": "新泽西州因感恩节风暴宣布进入紧急状态"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY1dSMjV2VWxwcUYzbE9SZ2ZnaEtsb0lpSGlkY2pDLTlSRWdKTVF4anZ4XzhKWDZ0NlAxb2VuY1lyY3ZfZFI0UVpoSlQwbHdTR0lmQVMtT19NaUg3ak43MHVGd1ZpZGZOSnY2NGRLdHl6SjladG1PdERzMnBFVDB0RzJ1aW1ST1I1NHlfSF9FY3h1UUgyOVF4cGVFdnJkdzZwNzQ5aEw3b0dUQ3l6U2NwemFWS1kwUTNfSE5ndll3Y0lKZExwUkE?oc=5",
+          "title": "Governor Sherrill declares state of emergency ahead of powerful Thanksgiving nor’easter",
+          "outlet": "The Jersey Vindicator",
+          "publishedAt": "2026-11-25T21:25:09.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOWjlWdS1QR2FMT21GQzRYcnlSY2lBRXVUZk9JRVo5Y2pIbW9GQkxjTnlOUm83VFR6VFA2X0NSQkZmMGNMd1hfUkI2YUtFWGszSHZ0Z2JkVVdDVjEzalgyeDZ3bTVkR0Q3WVMwOTFlN2Fpa25fMXUyVC1lZDBLenFyN25zbFE?oc=5",
+          "title": "N.J. Gov. Mikie Sherrill declares state of emergency ahead of Thanksgiving storm",
+          "outlet": "CBS News",
+          "publishedAt": "2026-11-25T20:31:22.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-25T21:28:25.000Z",
+      "id": "u-1795642105000-bjmm",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Macy's hat am Mittwoch angekündigt, dass die jährliche Thanksgiving Day Parade wegen schweren Unwetters auf Samstag verschoben wird. Einzelhändler und Medienberichte bestätigten, dass die Veranstaltung zum ersten Mal in ihrer Geschichte verschoben wurde.",
+          "headline": "Macy's Thanksgiving Day Parade wegen Unwetters verschoben"
+        },
+        "en": {
+          "body": "Macy's announced on Wednesday that the annual Thanksgiving Day Parade is being postponed to Saturday due to severe weather. Retailers and media reports confirmed that the event has been postponed for the first time in its history.",
+          "headline": "Macy's Thanksgiving Day Parade postponed due to severe weather"
+        },
+        "es": {
+          "body": "Macy's anunció este miércoles que el tradicional desfile de Acción de Gracias se aplaza al sábado debido a las condiciones meteorológicas adversas. Minoristas e informes de prensa confirmaron que el evento se ha pospuesto por primera vez en su historia.",
+          "headline": "Aplazan el desfile de Acción de Gracias de Macy's debido al tiempo severo"
+        },
+        "fr": {
+          "body": "Macy's a annoncé mercredi que la parade annuelle de Thanksgiving est reportée à samedi en raison de conditions météorologiques sévères. Des détaillants et des rapports médiatiques ont confirmé qu'il s'agit du premier report de l'événement dans son histoire.",
+          "headline": "La parade de Thanksgiving de Macy's reportée en raison d'intempéries"
+        },
+        "it": {
+          "body": "Macy's ha annunciato mercoledì che l'annuale parata del Ringraziamento è stata rinviata a sabato a causa del maltempo. I rivenditori e i resoconti dei media hanno confermato che l'evento è stato posticipato per la prima volta nella sua storia.",
+          "headline": "La parata del Ringraziamento di Macy's rinviata a causa del maltempo"
+        },
+        "ja": {
+          "body": "メイシーズは水曜日、毎年恒例の感謝祭パレードを悪天候のため土曜日に延期すると発表した。小売業者やメディアの報道によると、同イベントが延期されるのは史上初となる。",
+          "headline": "メイシーズの感謝祭パレード、悪天候のため延期"
+        },
+        "ko": {
+          "body": "메이시스는 수요일에 악천후로 인해 연례 추수감사절 퍼레이드를 토요일로 연기한다고 발표했다. 소매업체와 언론 보도는 이번 행사가 역사상 처음으로 연기되었음을 확인했다.",
+          "headline": "악천후로 메이시스 추수감사절 퍼레이드 연기"
+        },
+        "pt": {
+          "body": "A Macy's anunciou na quarta-feira que o desfile anual do Dia de Ação de Graças foi adiado para sábado devido a condições meteorológicas severas. Retalhistas e meios de comunicação social confirmaram que o evento foi adiado pela primeira vez na sua história.",
+          "headline": "Desfile do Dia de Ação de Graças da Macy's adiado devido a condições meteorológicas severas"
+        },
+        "zh": {
+          "body": "梅西百货周三宣布，受恶劣天气影响，一年一度的感恩节大游行将推迟至周六举行。零售商和媒体报道证实，这是该活动历史上首次被推迟。",
+          "headline": "梅西感恩节大游行因恶劣天气推迟"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.axios.com/2026/11/25/macys-thanksgiving-parade-2026-balloons-weather",
+          "title": "Macy's Thanksgiving parade postponed for the first time in the event's history",
+          "outlet": "Axios",
+          "publishedAt": "2026-11-25T21:28:25.000Z"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/11/25/macys-thanksgiving-day-parade-postponed.html",
+          "title": "Macy's postpones Thanksgiving Day Parade due to severe weather",
+          "outlet": "CNBC",
+          "publishedAt": "2026-11-25T21:26:36.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "climate",
   "keywords": [
     "new jersey",
     "state of emergency",
@@ -12,130 +276,6 @@
     "storm",
     "nor'easter",
     "weather"
-  ],
-  "startedAt": "2026-11-25T21:35:52.827Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-25T21:36:00.046Z",
-  "articleSlug": null,
-  "sourceCount": 4,
-  "wantsStats": false,
-  "updates": [
-    {
-      "id": "u-1795641909000-blqg",
-      "at": "2026-11-25T21:25:09.000Z",
-      "kind": "breaking",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "New Jersey declares state of emergency ahead of Thanksgiving storm",
-          "body": "Governor Mikie Sherrill declared a state of emergency on Wednesday ahead of a powerful Thanksgiving nor'easter. The state of emergency was issued as severe weather approaches the region for the holiday weekend."
-        },
-        "de": {
-          "headline": "New Jersey ruft vor Thanksgiving-Sturm den Notstand aus",
-          "body": "Gouverneurin Mikie Sherrill hat am Mittwoch angesichts eines heftigen Nor'easter-Sturms zum Thanksgiving-Fest den Notstand ausgerufen. Die Ausrufung des Notstands erfolgte im Zuge des Herannahens von Unwettern in der Region für das Feiertagswochenende."
-        },
-        "fr": {
-          "headline": "Le New Jersey déclare l'état d'urgence avant une tempête pour Thanksgiving",
-          "body": "La gouverneure Mikie Sherrill a déclaré l'état d'urgence mercredi, en prévision d'une puissante tempête hivernale (« nor'easter ») pour Thanksgiving. Cette mesure a été prise alors que des conditions météorologiques sévères menacent la région pour le week-end férié."
-        },
-        "it": {
-          "headline": "Il New Jersey dichiara lo stato di emergenza in vista della tempesta del Ringraziamento",
-          "body": "La governatrice Mikie Sherrill ha dichiarato mercoledì lo stato di emergenza in vista di un potente nor'easter previsto per il Ringraziamento. Lo stato di emergenza è stato emanato a causa dell'avvicinarsi di condizioni meteorologiche avverse nella regione per il fine settimana festivo."
-        },
-        "es": {
-          "headline": "Nueva Jersey declara el estado de emergencia ante la tormenta de Acción de Gracias",
-          "body": "La gobernadora Mikie Sherrill declaró el estado de emergencia este miércoles ante una potente tormenta del noreste prevista para Acción de Gracias. El estado de emergencia se emitió a medida que se acerca tiempo severo a la región para el fin de semana festivo."
-        },
-        "pt": {
-          "headline": "Nova Jérsia declara estado de emergência antes de tempestade no Dia de Ação de Graças",
-          "body": "A governadora Mikie Sherrill declarou o estado de emergência na quarta-feira antes de uma poderosa tempestade nor'easter no Dia de Ação de Graças. O estado de emergência foi emitido à medida que condições meteorológicas severas se aproximam da região para o fim de semana festivo."
-        },
-        "ja": {
-          "headline": "ニュージャージー州、感謝祭の嵐に備え非常事態宣言を発令",
-          "body": "ミッキー・シェリル知事は水曜日、感謝祭を直撃する強力な北東の嵐（ノーイースター）に備え、非常事態を宣言した。ホリデーシーズンに向けて悪天候が同地域に接近していることを受け、非常事態宣言が出された。"
-        },
-        "zh": {
-          "headline": "新泽西州因感恩节风暴宣布进入紧急状态",
-          "body": "州长米基·谢里尔（Mikie Sherrill）周三宣布全州进入紧急状态，以应对即将到来的强劲感恩节东北风暴。随着假期周末恶劣天气的临近，该州发布了此项紧急状态令。"
-        },
-        "ko": {
-          "headline": "뉴저지, 추수감사절 폭풍 대비 비상사태 선포",
-          "body": "미키 셰릴 주지사는 강력한 추수감사절 북동풍을 앞두고 수요일에 비상사태를 선포했다. 이 비상사태는 연휴 주말 동안 심각한 기상 현상이 해당 지역에 접근함에 따라 발령되었다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Jersey Vindicator",
-          "title": "Governor Sherrill declares state of emergency ahead of powerful Thanksgiving nor’easter",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY1dSMjV2VWxwcUYzbE9SZ2ZnaEtsb0lpSGlkY2pDLTlSRWdKTVF4anZ4XzhKWDZ0NlAxb2VuY1lyY3ZfZFI0UVpoSlQwbHdTR0lmQVMtT19NaUg3ak43MHVGd1ZpZGZOSnY2NGRLdHl6SjladG1PdERzMnBFVDB0RzJ1aW1ST1I1NHlfSF9FY3h1UUgyOVF4cGVFdnJkdzZwNzQ5aEw3b0dUQ3l6U2NwemFWS1kwUTNfSE5ndll3Y0lKZExwUkE?oc=5",
-          "publishedAt": "2026-11-25T21:25:09.000Z"
-        },
-        {
-          "outlet": "CBS News",
-          "title": "N.J. Gov. Mikie Sherrill declares state of emergency ahead of Thanksgiving storm",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOWjlWdS1QR2FMT21GQzRYcnlSY2lBRXVUZk9JRVo5Y2pIbW9GQkxjTnlOUm83VFR6VFA2X0NSQkZmMGNMd1hfUkI2YUtFWGszSHZ0Z2JkVVdDVjEzalgyeDZ3bTVkR0Q3WVMwOTFlN2Fpa25fMXUyVC1lZDBLenFyN25zbFE?oc=5",
-          "publishedAt": "2026-11-25T20:31:22.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1795642105000-bjmm",
-      "at": "2026-11-25T21:28:25.000Z",
-      "kind": "breaking",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Macy's Thanksgiving Day Parade postponed due to severe weather",
-          "body": "Macy's announced on Wednesday that the annual Thanksgiving Day Parade is being postponed to Saturday due to severe weather. Retailers and media reports confirmed that the event has been postponed for the first time in its history."
-        },
-        "de": {
-          "headline": "Macy's Thanksgiving Day Parade wegen Unwetters verschoben",
-          "body": "Macy's hat am Mittwoch angekündigt, dass die jährliche Thanksgiving Day Parade wegen schweren Unwetters auf Samstag verschoben wird. Einzelhändler und Medienberichte bestätigten, dass die Veranstaltung zum ersten Mal in ihrer Geschichte verschoben wurde."
-        },
-        "fr": {
-          "headline": "La parade de Thanksgiving de Macy's reportée en raison d'intempéries",
-          "body": "Macy's a annoncé mercredi que la parade annuelle de Thanksgiving est reportée à samedi en raison de conditions météorologiques sévères. Des détaillants et des rapports médiatiques ont confirmé qu'il s'agit du premier report de l'événement dans son histoire."
-        },
-        "it": {
-          "headline": "La parata del Ringraziamento di Macy's rinviata a causa del maltempo",
-          "body": "Macy's ha annunciato mercoledì che l'annuale parata del Ringraziamento è stata rinviata a sabato a causa del maltempo. I rivenditori e i resoconti dei media hanno confermato che l'evento è stato posticipato per la prima volta nella sua storia."
-        },
-        "es": {
-          "headline": "Aplazan el desfile de Acción de Gracias de Macy's debido al tiempo severo",
-          "body": "Macy's anunció este miércoles que el tradicional desfile de Acción de Gracias se aplaza al sábado debido a las condiciones meteorológicas adversas. Minoristas e informes de prensa confirmaron que el evento se ha pospuesto por primera vez en su historia."
-        },
-        "pt": {
-          "headline": "Desfile do Dia de Ação de Graças da Macy's adiado devido a condições meteorológicas severas",
-          "body": "A Macy's anunciou na quarta-feira que o desfile anual do Dia de Ação de Graças foi adiado para sábado devido a condições meteorológicas severas. Retalhistas e meios de comunicação social confirmaram que o evento foi adiado pela primeira vez na sua história."
-        },
-        "ja": {
-          "headline": "メイシーズの感謝祭パレード、悪天候のため延期",
-          "body": "メイシーズは水曜日、毎年恒例の感謝祭パレードを悪天候のため土曜日に延期すると発表した。小売業者やメディアの報道によると、同イベントが延期されるのは史上初となる。"
-        },
-        "zh": {
-          "headline": "梅西感恩节大游行因恶劣天气推迟",
-          "body": "梅西百货周三宣布，受恶劣天气影响，一年一度的感恩节大游行将推迟至周六举行。零售商和媒体报道证实，这是该活动历史上首次被推迟。"
-        },
-        "ko": {
-          "headline": "악천후로 메이시스 추수감사절 퍼레이드 연기",
-          "body": "메이시스는 수요일에 악천후로 인해 연례 추수감사절 퍼레이드를 토요일로 연기한다고 발표했다. 소매업체와 언론 보도는 이번 행사가 역사상 처음으로 연기되었음을 확인했다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Axios",
-          "title": "Macy's Thanksgiving parade postponed for the first time in the event's history",
-          "url": "https://www.axios.com/2026/11/25/macys-thanksgiving-parade-2026-balloons-weather",
-          "publishedAt": "2026-11-25T21:28:25.000Z"
-        },
-        {
-          "outlet": "CNBC",
-          "title": "Macy's postpones Thanksgiving Day Parade due to severe weather",
-          "url": "https://www.cnbc.com/2026/11/25/macys-thanksgiving-day-parade-postponed.html",
-          "publishedAt": "2026-11-25T21:26:36.000Z"
-        }
-      ]
-    }
   ],
   "seenUrls": [
     "https://www.straitstimes.com/world/united-states/macys-thanksgiving-day-parade-postponed-due-to-storm-projections-us-media-reports",
@@ -159,60 +299,24 @@
     "https://news.google.com/rss/articles/CBMinAFBVV95cUxPWDVBcHBwNnRxWU9hUERvSHExd1YyVEx3V19fR3ByaE9GVFp4N1JsVE52dVRvWTRFaWVsLW5xTnFrS2VaY2xCaFNCang2WFBMcXBveXlLNWtTVXFJZ3pPeEJZa0wtWEtFT09EOWFfMTlxVDFYaTZnT0k0Yy1La29zOWFTSjExcXN0dmZfaFlON2ExTGw1cXRmcUVBcXrSAaIBQVVfeXFMTzZpelF6TTRBMGd6Z1ZabjNhUkpfMUdOT3JtM09LcTAyUXQ5MmQzMk92WTFYSENUZjhlMG5QeVFZSU9ScjRHMkF3UDBoN3ZjVWlqcGZ5Y3BPd2REUlJ3aU5yZ2FnY0VMbHplSHlwa01SdlJlekZQZWtWOGVlNXBpNEZ4dDdrYmZYLVA3VVJ4TzhBVXp4Nm1sblhyUjBHOERrQ0RR?oc=5",
     "https://www.bbc.co.uk/news/articles/ckp80mjr9emyo?at_medium=RSS&at_campaign=rss",
     "https://thehill.com/policy/transportation/6243181-duffy-thanksgiving-flight-delays-storms/",
-    "https://www.nytimes.com/2026/11/25/us/measles-cases-thanksgiving.html"
+    "https://www.nytimes.com/2026/11/25/us/measles-cases-thanksgiving.html",
+    "https://www.scmp.com/news/world/united-states-canada/article/3375820/macys-thanksgiving-day-parade-postponed-new-york-braces-huge-storm",
+    "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBpeWVCUFdpQ3Y2MWswVFcwNmJrd2FXX3BKU0w2dnJuUnRjWjFuNDhYeWFDY2c0OVU4NW9PVDdFd0gxeTUzWWcyYkRkcmo?oc=5",
+    "https://thehill.com/homenews/administration/6241678-live-updates-trump-army-lead-azide-thanksgiving-2026/",
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9zVFRObnBKb3Q5aThoM3h1cjhSMFBGc28tYWpFN0xXOEp3eGVZV0liVFJDMk0tY3c1Y2xiS21XdHM5czIwSU5MUWQ3QXNycDM5TEtya2xYWWpLc1FFWmc?oc=5",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWGN4NXZIOU5Bb19wVlFsRlUxUmdnemJmcUpSOEdRYXZiNTBQU1d0M3NpQWxTeDdlRWNxT1pZWTNNc0YwbzVyNmJPa244UHZMY3RudUlxaFYtU3hhUTJITmluQ3BMMVVzSVFSUzlhalZzNG5RSnNUSzktN0xzbzI2TUtmMjBNT2NIclo5MmtjdlRmbEtpZHo1eVVoLXc1TzdrV0EzTmNYRGJsR2IxV0YzeGpSSnU?oc=5",
+    "https://thehill.com/homenews/state-watch/6243923-nj-governor-declares-emergency/",
+    "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZEVKR1pCc2NlNnhBdFQ1OTFZX2pGeDYtQ0FjdGZweGxEeUhnSDFLa1RZeEFLU1RtajNUMTdMX0RVMVR1clh0SDdSWjdfUmNpRkRDS0thTExxMW5hMTFLR2kyZ3B0bnVrUF9rVkxZWURHZllWN2pCUTBhdS15eWJWVVRCTV9veDhPQzlyM0tJZ0dBbzY5T0FQc0VBN0YxcnRhYW9CQnV2bkg3bkxnRkdrM1Q0SDRUeGZPWFVkLU9xQ01TNEJwVllHZ243TUQ1T2Ryd0RWOTUxWUF1WENER3BlRndR0gHnAUFVX3lxTE83VmxDdnl1dmdKNGpRbzBldW51OE5JLXRHS2hnZEotTnVibUZvNEs1ZEVJMnZIem94OTdxLVVrdFBuX2ZSdlVWOTQySVVMNmtNX0xWc0NrSjZ4aVlUTjB0Zmt6WlNObFY5UnhMUXdRUG9WVG9lRWVhWS1sWkR0T3otZEptWU9PRmR3RFJrVkRvTFcwZmkwNnBxekZVeDB5Y3hLb1BPdWdRWnpwaVlEWjVFYXk2ZW1MSks3WE9taG5wTjEzTUlLYWEtM1REY3NjQ1cta2hTdncwSDZmbkI2MUx2MTN5Z3N2aw?oc=5",
+    "https://www.rollingstone.com/culture/culture-news/macys-thanksgiving-day-parade-postponed-strong-weather-1235664557/"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "New Jersey Thanksgiving Storm",
-      "dek": "New Jersey Governor Mikie Sherrill has declared a state of emergency ahead of a powerful Thanksgiving weekend nor'easter."
-    },
-    "fr": {
-      "title": "Tempête de Thanksgiving dans le New Jersey",
-      "dek": "Le gouverneur du New Jersey, Mikie Sherrill, a déclaré l'état d'urgence avant un puissant nor'easter prévu pour le week-end de Thanksgiving."
-    },
-    "de": {
-      "title": "Thanksgiving-Sturm in New Jersey",
-      "dek": "Gouverneur Mikie Sherrill von New Jersey hat angesichts eines starken Nor'easter am Thanksgiving-Wochenende den Notstand ausgerufen."
-    },
-    "es": {
-      "title": "Tormenta de Acción de Gracias en Nueva Jersey",
-      "dek": "La gobernadora de Nueva Jersey, Mikie Sherrill, ha declarado el estado de emergencia ante un potente nor'easter de fin de semana de Acción de Gracias."
-    },
-    "it": {
-      "title": "Tempesta di Ringraziamento nel New Jersey",
-      "dek": "Il governatore del New Jersey Mikie Sherrill ha dichiarato lo stato di emergenza in vista di un potente nor'easter nel weekend del Ringraziamento."
-    },
-    "zh": {
-      "title": "新泽西感恩风暴",
-      "dek": "新泽西州州长米基·谢里尔在感恩节前夕宣布进入紧急状态，以应对强大的东北风暴。"
-    },
-    "ja": {
-      "title": "ニュージャージー州サンクスギビング嵐",
-      "dek": "ニュージャージー州のマイク・シェリル知事は、強力なサンクスウィークエンドのノーエスターに先立ち、非常事態を宣言した。"
-    },
-    "pt": {
-      "title": "Tempestade de Ação de Graças em Nova Jérsei",
-      "dek": "O governador de Nova Jérsei, Mikie Sherrill, declarou estado de emergência ante um poderoso nor'easter para o fim de semana de Ação de Graças."
-    },
-    "ko": {
-      "title": "뉴저지 추수감사절 폭풍",
-      "dek": "뉴저지 주지사 미키 셀릴이 강력한 추수감사절 주말 노리에스터를 앞두고 비상사태를 선포했다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "ABC7 New York",
-      "The Jersey Vindicator",
-      "NBC10 Philadelphia",
-      "Montclair Local News",
-      "Anadolu Ajansı",
-      "CBS News",
-      "FOX 5 New York",
-      "FOX 29 Philadelphia"
-    ],
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
-  }
+  "startedAt": "2026-11-25T21:35:52.827Z",
+  "updatedAt": "2026-11-25T23:55:59.873Z",
+  "importance": 5,
+  "wantsStats": false,
+  "articleSlug": "new-jersey-thanksgiving-storm",
+  "sourceCount": 6,
+  "seenHeadlines": [
+    "New Jersey governor declares state of emergency",
+    "Macy's Thanksgiving Day Parade postponed to Saturday"
+  ]
 }
