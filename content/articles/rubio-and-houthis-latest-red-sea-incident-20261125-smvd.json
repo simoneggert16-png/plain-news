@@ -1,0 +1,82 @@
+{
+  "slug": "rubio-and-houthis-latest-red-sea-incident-20261125-smvd",
+  "category": "world",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 5,
+  "publishedAt": "2026-11-25T23:18:34.937Z",
+  "updatedAt": "2026-11-25T23:18:34.937Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "The Kyiv Post",
+      "title": "Ukraine War News Today - Top Stories and Breaking Updates from Kyiv Post",
+      "url": "https://www.kyivpost.com/thread/91217",
+      "publishedAt": "2026-11-25T23:00:00.000Z"
+    },
+    {
+      "outlet": "Latin Times",
+      "title": "Rubio condemns Houthi attacks after a third strike hits Riyadh's financial district in under three weeks",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZ3IwdGxRRjN6Y2VsdjZnRVRfOGJCVzQ0M2pxdV9WdGVnX1JVNHk1TVdXelh0UnF2a090ZEJMU2ZFdW1OcjFELWcwS3ktQ1JsclFDSnUtNDJvVlV4RlpfbTRWcURhYVRkQUNwMUxhUnJYcTNmTW1CdWdYSlpoc284WTN3?oc=5",
+      "publishedAt": "2026-11-25T23:08:17.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Rubio and Houthis: latest Red Sea incident",
+      "dek": "Latin Times reports Rubio response to Houthi activity near Riyadh",
+      "facts": [
+        "Latin Times published a headline about Rubio and Houthi attacks on 25 November 2026.",
+        "The headline states a third strike hit Riyadh's financial district within three weeks."
+      ],
+      "body": [
+        "Latin Times reported Rubio condemned Houthi attacks.",
+        "A separate headline from the same date notes a third strike impacted Riyadh's financial district."
+      ],
+      "context": "Both the Latin Times and the Kyiv Post published headline-level updates on 25 November 2026. The sources provide no details on the cause of the attacks, the broader conflict, or the specific events in Riyadh beyond what is stated in the headlines.",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "Rubio e Houthis: último incidente no Mar Vermelho",
+      "dek": "Latin Times reporta a resposta de Rubio à atividade Houthi perto de Riade",
+      "facts": [
+        "Latin Times publicou um título sobre ataques de Rubio e Houthi a 25 de novembro de 2026",
+        "O título afirma que um terceiro ataque atingiu o distrito financeiro de Riade em três semanas"
+      ],
+      "body": [
+        "Rubio condenou os ataques dos Houthis.",
+        "Um título separado da mesma data refere um terceiro ataque que atingiu o distrito financeiro de Riade."
+      ],
+      "context": "Tanto o Latin Times como o Kyiv Post publicaram atualizações a nível de título a 25 de novembro de 2026. As fontes não fornecem detalhes sobre a causa dos ataques, o conflito mais vasto ou os eventos específicos em Riade para além do que está indicado nos títulos.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "鲁比奥与胡塞武装：最新的红海事件",
+      "dek": "《拉丁时报》报道鲁比奥对黎达附近胡塞武装活动的回应",
+      "facts": [
+        "拉丁时报于2026年11月25日发布关于鲁比奥和胡塞武装袭击的报道。报道称三周内第三次袭击击中利雅得金融区。",
+        "拉丁时报和基辅邮报于2026年11月25日均发布了标题级别的更新。两家媒体未提供袭击原因、更广泛冲突背景或利雅得具体事件的细节，仅陈述了标题内容。"
+      ],
+      "body": [
+        "拉丁时报报道鲁比奥谴责胡塞武装的袭击",
+        "同一日另一条头条指出第三次袭击波及利雅得金融区"
+      ],
+      "context": "无",
+      "imageCaption": "无"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-bolt-e4b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts not in sources: 'third strike', 'three-week period', '25 November 2026' date, 'Latin Times' attribution in facts and body are unsupported — sources only provide headlines, no article text or dates. No source confirms Rubio's statement, the strike count, or the specific date.",
+      "Loaded language: 'condemns' is a loaded verb; style guide requires neutral verbs only (said, stated, announced, reported).",
+      "Repetitive body: sentences 1 and 3 in body are near-identical.",
+      "Summary sentence at end of body evaluates the content rather than reporting facts.",
+      "Headline likely exceeds 90 chars and uses 'condemns' which is not a neutral verb."
+    ]
+  }
+}
