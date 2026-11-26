@@ -7,48 +7,17 @@
       "NZZ"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "krieg-in-der-ukraine-und-iran-spannungen",
   "topic": "Krieg in der Ukraine und Iran-Spannungen",
   "status": "live",
   "article": {
     "slug": "krieg-in-der-ukraine-und-iran-spannungen",
-    "updatedAt": "2026-11-26T12:34:11.073Z",
     "reason": "2 new update(s)",
     "locales": {
-      "en": {
-        "title": "EU Leaders Clash Over Ukraine Financial Aid as Russian Strikes Continue",
-        "dek": "European leaders clash over a major loan package for Ukraine while regional missile strikes and international tensions persist.",
-        "facts": [
-          "Slovakia, Hungary, and Czechia are seeking to opt out of a 45 billion euro loan package for Ukraine.",
-          "Russian strikes on Kyiv and Kharkiv resulted in two deaths and seven injuries.",
-          "Federal prosecutors detained two men in Cologne and Heidelberg over a suspected synagogue attack plot.",
-          "Two oil tankers struck naval mines and caught fire in the Strait of Hormuz according to Iran's Revolutionary Guards Navy.",
-          "Ukraine reported using naval drones to strike two Russian vessels off Libya."
-        ],
-        "body": [
-          "Slovakia, Hungary, and Czechia are seeking to opt out of a 45 billion euro loan package for Ukraine, according to The Guardian. Concurrently, German Chancellor Friedrich Merz stated that he expects all 27 EU member states to participate in the financial support, as reported by Die Welt.",
-          "Russian strikes on Kyiv and Kharkiv resulted in two deaths and seven injuries, according to SRF. A separate Ukrainian drone attack in Russian-occupied Zaporizhia killed five people, Al Jazeera reported.",
-          "Federal prosecutors stated that two men suspected of belonging to a pro-Iranian group were detained in Cologne and Heidelberg. According to officials, the suspects planned an attack that may have targeted a synagogue in Cologne.",
-          "Two oil tankers struck naval mines, exploded and caught fire in the Strait of Hormuz, according to Iran's Revolutionary Guards Navy. Tehran stated it will not restore normal shipping until its demands are met, including the lifting of a U.S. naval blockade of Iranian ports, according to The Jerusalem Post and The Straits Times.",
-          "European Commission President Ursula von der Leyen announced a sanctions proposal to ban Russian teams and individual athletes from competing under the Russian flag at sports events. Separately, the United States Treasury sanctioned more than two dozen individuals and entities connected to Iran's financial networks.",
-          "Ukraine confirmed it used naval drones to strike two Russian ships near Benghazi, sinking the warship Merkury and damaging a cargo vessel according to The Guardian. Ukraine's foreign minister stated that the drone attack was a legitimate act of self-defence, while Libya's UN-backed government in Tripoli condemned the operation.",
-          "U.S. President Donald Trump and NATO Secretary General Mark Rutte urged Russia not to expand its war against Ukraine following talks in Florida. According to Reuters and The Straits Times, the two leaders called for a swift resolution after meeting on Wednesday."
-        ],
-        "context": "The ongoing conflicts involve military engagements in Ukraine, international weapons deliveries, and sanctions targeting financial and shipping networks.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "EU-Staats- und Regierungschefs uneins über Finanzhilfen für die Ukraine bei anhaltenden russischen Angriffen",
         "dek": "Europäische Staats- und Regierungschefs streiten über ein großes Kreditpaket für die Ukraine, während regionale Raketenangriffe und internationale Spannungen anhalten.",
-        "facts": [
-          "Die Slowakei, Ungarn und Tschechien streben eine Ausnahme von einem 45-Milliarden-Euro-Kreditpaket für die Ukraine an.",
-          "Russische Angriffe auf Kiew und Charkiw forderten zwei Todesopfer und sieben Verletzte.",
-          "Die Bundesanwaltschaft nahm in Köln und Heidelberg zwei Männer wegen eines mutmaßlichen Anschlagsplans auf eine Synagoge fest.",
-          "Zwei Öltanker liefen laut der Marine der iranischen Revolutionsgarden in der Straße von Hormus auf Seeminen und gerieten in Brand.",
-          "Die Ukraine meldete den Einsatz von Seedrohnen gegen zwei russische Schiffe vor Libyen."
-        ],
         "body": [
           "Die Slowakei, Ungarn und Tschechien streben laut dem Guardian eine Ausnahme von einem 45-Milliarden-Euro-Kreditpaket für die Ukraine an. Gleichzeitig erklärte Bundeskanzler Friedrich Merz laut der Welt, er erwarte, dass sich alle 27 EU-Mitgliedstaaten an der finanziellen Unterstützung beteiligen.",
           "Russische Angriffe auf Kiew und Charkiw forderten laut SRF zwei Todesopfer und sieben Verletzte. Ein separater ukrainischer Drohnenangriff im russisch besetzten Saporischschja tötete laut Al Jazeera fünf Menschen.",
@@ -58,7 +27,37 @@
           "Die Ukraine bestätigte den Einsatz von Seedrohnen gegen zwei russische Schiffe in der Nähe von Bengasi, wobei laut dem Guardian das Kriegsschiff Merkury sank und ein Frachtschiff beschädigt wurde. Der ukrainische Außenminister erklärte, der Drohnenangriff sei ein legitimer Akt der Selbstverteidigung gewesen, während die von der UN unterstützte libysche Regierung in Tripolis den Einsatz verurteilte.",
           "US-Präsident Donald Trump und NATO-Generalsekretär Mark Rutte forderten Russland nach Gesprächen in Florida auf, den Krieg gegen die Ukraine nicht auszuweiten. Laut Reuters und der Straits Times riefen beide Staatsmänner nach ihrem Treffen am Mittwoch zu einer raschen Lösung auf."
         ],
+        "facts": [
+          "Die Slowakei, Ungarn und Tschechien streben eine Ausnahme von einem 45-Milliarden-Euro-Kreditpaket für die Ukraine an.",
+          "Russische Angriffe auf Kiew und Charkiw forderten zwei Todesopfer und sieben Verletzte.",
+          "Die Bundesanwaltschaft nahm in Köln und Heidelberg zwei Männer wegen eines mutmaßlichen Anschlagsplans auf eine Synagoge fest.",
+          "Zwei Öltanker liefen laut der Marine der iranischen Revolutionsgarden in der Straße von Hormus auf Seeminen und gerieten in Brand.",
+          "Die Ukraine meldete den Einsatz von Seedrohnen gegen zwei russische Schiffe vor Libyen."
+        ],
+        "title": "EU-Staats- und Regierungschefs uneins über Finanzhilfen für die Ukraine bei anhaltenden russischen Angriffen",
         "context": "Die anhaltenden Konflikte umfassen militärische Auseinandersetzungen in der Ukraine, internationale Waffenlieferungen sowie Sanktionen gegen Finanz- und Schifffahrtsnetzwerke."
+      },
+      "en": {
+        "dek": "European leaders clash over a major loan package for Ukraine while regional missile strikes and international tensions persist.",
+        "body": [
+          "Slovakia, Hungary, and Czechia are seeking to opt out of a 45 billion euro loan package for Ukraine, according to The Guardian. Concurrently, German Chancellor Friedrich Merz stated that he expects all 27 EU member states to participate in the financial support, as reported by Die Welt.",
+          "Russian strikes on Kyiv and Kharkiv resulted in two deaths and seven injuries, according to SRF. A separate Ukrainian drone attack in Russian-occupied Zaporizhia killed five people, Al Jazeera reported.",
+          "Federal prosecutors stated that two men suspected of belonging to a pro-Iranian group were detained in Cologne and Heidelberg. According to officials, the suspects planned an attack that may have targeted a synagogue in Cologne.",
+          "Two oil tankers struck naval mines, exploded and caught fire in the Strait of Hormuz, according to Iran's Revolutionary Guards Navy. Tehran stated it will not restore normal shipping until its demands are met, including the lifting of a U.S. naval blockade of Iranian ports, according to The Jerusalem Post and The Straits Times.",
+          "European Commission President Ursula von der Leyen announced a sanctions proposal to ban Russian teams and individual athletes from competing under the Russian flag at sports events. Separately, the United States Treasury sanctioned more than two dozen individuals and entities connected to Iran's financial networks.",
+          "Ukraine confirmed it used naval drones to strike two Russian ships near Benghazi, sinking the warship Merkury and damaging a cargo vessel according to The Guardian. Ukraine's foreign minister stated that the drone attack was a legitimate act of self-defence, while Libya's UN-backed government in Tripoli condemned the operation.",
+          "U.S. President Donald Trump and NATO Secretary General Mark Rutte urged Russia not to expand its war against Ukraine following talks in Florida. According to Reuters and The Straits Times, the two leaders called for a swift resolution after meeting on Wednesday."
+        ],
+        "facts": [
+          "Slovakia, Hungary, and Czechia are seeking to opt out of a 45 billion euro loan package for Ukraine.",
+          "Russian strikes on Kyiv and Kharkiv resulted in two deaths and seven injuries.",
+          "Federal prosecutors detained two men in Cologne and Heidelberg over a suspected synagogue attack plot.",
+          "Two oil tankers struck naval mines and caught fire in the Strait of Hormuz according to Iran's Revolutionary Guards Navy.",
+          "Ukraine reported using naval drones to strike two Russian vessels off Libya."
+        ],
+        "title": "EU Leaders Clash Over Ukraine Financial Aid as Russian Strikes Continue",
+        "context": "The ongoing conflicts involve military engagements in Ukraine, international weapons deliveries, and sanctions targeting financial and shipping networks.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -66,39 +65,8 @@
         "at": "2026-11-26T09:51:20.828Z",
         "reason": "1 new update(s)",
         "locales": {
-          "en": {
-            "title": "Russian Strikes and International Sanctions Continue Across Ukraine and Middle East",
-            "dek": "International tensions mount as missile strikes hit Ukraine and new sanctions target Iran and Russia.",
-            "facts": [
-              "Two suspects were detained in Germany over a suspected Cologne synagogue attack plot.",
-              "Two people died after a Russian attack hit Zaporizhzhia, according to regional governor Mykhailo Semikin.",
-              "Two oil tankers struck naval mines and caught fire in the Strait of Hormuz.",
-              "Ukraine reported using naval drones to strike two Russian vessels off Libya.",
-              "The United States sanctioned over two dozen entities connected to Iranian shadow banking."
-            ],
-            "body": [
-              "Federal prosecutors in Germany stated that two men suspected of belonging to a pro-Iranian group were detained in Cologne and Heidelberg for planning an attack that may have targeted a Cologne synagogue. Meanwhile, Russian President Vladimir Putin stated on 24 November that Ukraine continues to strike Russian oil refineries despite U.S. requests, and announced that retaliation is inevitable according to Al Jazeera and The Straits Times.",
-              "Hungarian Prime Minister Peter Magyar arrived in Ukraine on 24 November to meet President Volodymyr Zelenskyy, with both leaders stating an intention to improve bilateral relations according to DW and Die Zeit. Concurrently, Latvian President Edgars Rinkevics stated that next year could bring a tipping point in the war because Moscow is not genuinely interested in ending the conflict.",
-              "Defense Minister Israel Katz stated that Israel and the U.S. possess intelligence regarding an alleged Iranian chemical weapons program, suggesting a preemptive strike remains possible according to The Jerusalem Post and Fox News. In the Strait of Hormuz, two oil tankers struck naval mines and caught fire according to Iran's Revolutionary Guards Navy, with Tehran stating normal shipping will not resume until the U.S. lifts its naval blockade.",
-              "The United States Treasury has sanctioned more than two dozen individuals and entities connected to Iran's financial networks, with targeted shadow banking activity reaching $14.7 billion between January 2025 and August 2026. Separately, European Commission President Ursula von der Leyen announced a sanctions proposal to ban Russian teams and athletes from competing under the Russian flag at sports events.",
-              "Ukraine confirmed it used naval drones to strike two Russian ships near Benghazi, sinking the warship Merkury and damaging a cargo vessel according to The Guardian. Ukraine's foreign minister stated that the drone attack was a legitimate act of self-defence, while Libya's UN-backed government in Tripoli condemned the operation.",
-              "A Russian attack killed two people and wounded dozens more in Zaporizhzhia, damaging apartments, private buildings, and transport infrastructure according to regional governor Mykhailo Semikin. Additionally, Russian forces conducted overnight strikes in the Odesa region resulting in two deaths, while a Russian drone briefly entered Polish airspace during the attacks according to military reports.",
-              "Poland's military stated that a Russian drone briefly entered Polish airspace during an overnight attack, prompting the deputy defense minister to assume the incursion was deliberate. Poland plans to create a no-fly zone near the Ukrainian border following repeated airspace violations, and has requested that NATO intercept Russian missiles over Ukrainian territory.",
-              "U.S. President Donald Trump and NATO Secretary General Mark Rutte urged Russia not to expand the war against Ukraine during talks in Florida, calling for a swift resolution according to Reuters and The Straits Times. Envoys Steve Witkoff and Jared Kushner also informed European officials that the U.S. has shelved proposals to use business deals with Russia to end the war, according to Reuters and The Hindu."
-            ],
-            "context": "The ongoing conflicts involve military engagements in Ukraine, international weapons deliveries, and sanctions targeting financial networks supporting Russia and Iran.",
-            "imageCaption": ""
-          },
           "de": {
-            "title": "Russische Angriffe und internationale Sanktionen in der Ukraine und im Nahen Osten dauern an",
             "dek": "Die internationalen Spannungen nehmen zu, während Raketenangriffe die Ukraine treffen und neue Sanktionen gegen den Iran und Russland verhängt werden.",
-            "facts": [
-              "In Deutschland wurden zwei Verdächtige wegen eines mutmaßlichen Anschlagsplans auf eine Kölner Synagoge festgenommen.",
-              "Nach Angaben des Regionalgouverneurs Mychajlo Semikin starben zwei Menschen bei einem russischen Angriff auf Saporischschja.",
-              "Zwei Öltanker liefen in der Straße von Hormus auf Seeminen und gerieten in Brand.",
-              "Die Ukraine meldete den Einsatz von Seedrohnen gegen zwei russische Schiffe vor Libyen.",
-              "Die Vereinigten Staaten verhängten Sanktionen gegen mehr als zwei Dutzend Einrichtungen, die mit dem iranischen Schattenbankwesen in Verbindung stehen."
-            ],
             "body": [
               "Die deutsche Bundesanwaltschaft teilte mit, dass zwei Männer, die verdächtigt werden, einer pro-iranischen Gruppe anzugehören, in Köln und Heidelberg festgenommen wurden. Sie sollen einen Anschlag geplant haben, der möglicherweise auf eine Kölner Synagoge abzielte. Unterdessen erklärte der russische Präsident Wladimir Putin am 24. November, dass die Ukraine trotz Bitten der USA weiterhin russische Ölraffinerien angreife, und kündigte laut Al Jazeera und The Straits Times Vergeltungsmaßnahmen als unvermeidlich an.",
               "Der ungarische Ministerpräsident Peter Magyar traf am 24. November in der Ukraine ein, um Präsident Wolodymyr Selenskyj zu treffen. Beide Staatschefs bekundeten laut DW und Die Zeit die Absicht, die bilateralen Beziehungen zu verbessern. Gleichzeitig erklärte der lettische Präsident Edgars Rinkēvičs, dass das nächste Jahr einen Wendepunkt im Krieg bringen könnte, da Moskau kein echtes Interesse an einer Beendigung des Konflikts habe.",
@@ -109,7 +77,38 @@
               "Das polnische Militär teilte mit, dass eine russische Drohne während eines nächtlichen Angriffs kurzzeitig in den polnischen Luftraum eingedrungen sei, was den stellvertretenden Verteidigungsminister zu der Annahme veranlasste, dass der Vorfall vorsätzlich war. Polen plant die Einrichtung einer Flugverbotszone nahe der ukrainischen Grenze nach wiederholten Luftraumverletzungen und hat die NATO gebeten, russische Raketen über ukrainischem Territorium abzufangen.",
               "US-Präsident Donald Trump und NATO-Generalsekretär Mark Rutte drängten Russland bei Gesprächen in Florida dazu, den Krieg gegen die Ukraine nicht auszuweiten, und forderten laut Reuters und The Straits Times eine rasche Lösung. Die Gesandten Steve Witkoff und Jared Kushner informierten zudem europäische Beamte darüber, dass die USA Vorschläge, den Krieg durch Geschäftsabschlüsse mit Russland zu beenden, zu den Akten gelegt hätten, so Reuters und The Hindu."
             ],
+            "facts": [
+              "In Deutschland wurden zwei Verdächtige wegen eines mutmaßlichen Anschlagsplans auf eine Kölner Synagoge festgenommen.",
+              "Nach Angaben des Regionalgouverneurs Mychajlo Semikin starben zwei Menschen bei einem russischen Angriff auf Saporischschja.",
+              "Zwei Öltanker liefen in der Straße von Hormus auf Seeminen und gerieten in Brand.",
+              "Die Ukraine meldete den Einsatz von Seedrohnen gegen zwei russische Schiffe vor Libyen.",
+              "Die Vereinigten Staaten verhängten Sanktionen gegen mehr als zwei Dutzend Einrichtungen, die mit dem iranischen Schattenbankwesen in Verbindung stehen."
+            ],
+            "title": "Russische Angriffe und internationale Sanktionen in der Ukraine und im Nahen Osten dauern an",
             "context": "Die laufenden Konflikte umfassen militärische Auseinandersetzungen in der Ukraine, internationale Waffenlieferungen sowie Sanktionen gegen Finanznetzwerke, die Russland und den Iran unterstützen."
+          },
+          "en": {
+            "dek": "International tensions mount as missile strikes hit Ukraine and new sanctions target Iran and Russia.",
+            "body": [
+              "Federal prosecutors in Germany stated that two men suspected of belonging to a pro-Iranian group were detained in Cologne and Heidelberg for planning an attack that may have targeted a Cologne synagogue. Meanwhile, Russian President Vladimir Putin stated on 24 November that Ukraine continues to strike Russian oil refineries despite U.S. requests, and announced that retaliation is inevitable according to Al Jazeera and The Straits Times.",
+              "Hungarian Prime Minister Peter Magyar arrived in Ukraine on 24 November to meet President Volodymyr Zelenskyy, with both leaders stating an intention to improve bilateral relations according to DW and Die Zeit. Concurrently, Latvian President Edgars Rinkevics stated that next year could bring a tipping point in the war because Moscow is not genuinely interested in ending the conflict.",
+              "Defense Minister Israel Katz stated that Israel and the U.S. possess intelligence regarding an alleged Iranian chemical weapons program, suggesting a preemptive strike remains possible according to The Jerusalem Post and Fox News. In the Strait of Hormuz, two oil tankers struck naval mines and caught fire according to Iran's Revolutionary Guards Navy, with Tehran stating normal shipping will not resume until the U.S. lifts its naval blockade.",
+              "The United States Treasury has sanctioned more than two dozen individuals and entities connected to Iran's financial networks, with targeted shadow banking activity reaching $14.7 billion between January 2025 and August 2026. Separately, European Commission President Ursula von der Leyen announced a sanctions proposal to ban Russian teams and athletes from competing under the Russian flag at sports events.",
+              "Ukraine confirmed it used naval drones to strike two Russian ships near Benghazi, sinking the warship Merkury and damaging a cargo vessel according to The Guardian. Ukraine's foreign minister stated that the drone attack was a legitimate act of self-defence, while Libya's UN-backed government in Tripoli condemned the operation.",
+              "A Russian attack killed two people and wounded dozens more in Zaporizhzhia, damaging apartments, private buildings, and transport infrastructure according to regional governor Mykhailo Semikin. Additionally, Russian forces conducted overnight strikes in the Odesa region resulting in two deaths, while a Russian drone briefly entered Polish airspace during the attacks according to military reports.",
+              "Poland's military stated that a Russian drone briefly entered Polish airspace during an overnight attack, prompting the deputy defense minister to assume the incursion was deliberate. Poland plans to create a no-fly zone near the Ukrainian border following repeated airspace violations, and has requested that NATO intercept Russian missiles over Ukrainian territory.",
+              "U.S. President Donald Trump and NATO Secretary General Mark Rutte urged Russia not to expand the war against Ukraine during talks in Florida, calling for a swift resolution according to Reuters and The Straits Times. Envoys Steve Witkoff and Jared Kushner also informed European officials that the U.S. has shelved proposals to use business deals with Russia to end the war, according to Reuters and The Hindu."
+            ],
+            "facts": [
+              "Two suspects were detained in Germany over a suspected Cologne synagogue attack plot.",
+              "Two people died after a Russian attack hit Zaporizhzhia, according to regional governor Mykhailo Semikin.",
+              "Two oil tankers struck naval mines and caught fire in the Strait of Hormuz.",
+              "Ukraine reported using naval drones to strike two Russian vessels off Libya.",
+              "The United States sanctioned over two dozen entities connected to Iranian shadow banking."
+            ],
+            "title": "Russian Strikes and International Sanctions Continue Across Ukraine and Middle East",
+            "context": "The ongoing conflicts involve military engagements in Ukraine, international weapons deliveries, and sanctions targeting financial networks supporting Russia and Iran.",
+            "imageCaption": ""
           }
         }
       },
@@ -117,6 +116,27 @@
         "at": "2026-11-26T08:01:54.211Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Russische ballistische Raketen treffen Kiew, während die internationalen Spannungen nach Zwischenfällen in der Straße von Hormus und den laufenden Militäroperationen in der Ukraine zunehmen.",
+            "body": [
+              "Russische Streitkräfte starteten am späten Mittwoch einen ballistischen Raketenangriff auf Kiew, bei dem laut The Kyiv Post vier Menschen verletzt und ein Einkaufszentrum im Bezirk Desnjanskyj beschädigt wurden. Zwei der Opfer mussten nach dem Einschlag im Krankenhaus behandelt werden.",
+              "Zwei Öltanker explodierten und gerieten in Brand, nachdem sie laut der Marine der iranischen Revolutionsgarden auf Seeminen getroffen waren. Teheran erklärte, dass der normale Schiffsverkehr erst wieder aufgenommen werde, wenn die Vereinigten Staaten ihre Seeblockade iranischer Häfen aufheben.",
+              "Der ukrainische Präsidentschaftsberater Serhij Beskrestnow berichtete, dass das Militär erstmals ein Blysk-Lasersystem eingesetzt habe, um eine russische, strahlgetriebene Shahed-Drohne abzuschießen. Das System wurde von der Firma Carmine Sky entwickelt.",
+              "Polen wird nach wiederholten Luftraumverletzungen eine Flugverbotszone nahe der ukrainischen Grenze einrichten, wie ein stellvertretender Verteidigungsminister ankündigte. The Kyiv Independent berichtete, dass Warschau zudem die NATO gebeten habe, russische Raketen über ukrainischem Territorium abzufangen.",
+              "US-Präsident Donald Trump und NATO-Generalsekretär Mark Rutte drängten Russland bei Gesprächen in Florida am Mittwoch dazu, den Krieg gegen die Ukraine nicht auszuweiten. Beide Staatsmänner forderten laut Reuters und The Straits Times eine rasche Lösung des Konflikts.",
+              "Die Vereinigten Staaten haben Pläne verworfen, Geschäftsabschlüsse mit Russland als Strategie zur Beendigung des Krieges zu nutzen, wie Reuters und The Hindu berichten. Die Gesandten Steve Witkoff und Jared Kushner teilten europäischen Vertretern mit, dass Unternehmenskooperationen kein Kernbestandteil der US-Politik mehr seien.",
+              "Bundeskanzler Friedrich Merz erklärte laut The Japan Times, dass die Unterstützung der Ukraine eine Maßnahme zum Schutz Deutschlands sei. Unterdessen nimmt das US-Finanzministerium weiterhin iranische Schattenbanknetzwerke ins Visier, die zwischen Januar 2025 und August 2026 14,7 Milliarden US-Dollar transferierten."
+            ],
+            "facts": [
+              "Russische ballistische Raketen trafen ein Einkaufszentrum in Kiew und verletzten vier Menschen.",
+              "Zwei Öltanker gerieten nach dem Treffen auf Seeminen in der Straße von Hormus in Brand.",
+              "Die Ukraine meldete den ersten Kampfeinsatz eines Lasersystems zum Abschuss einer russischen Drohne.",
+              "Polen plant die Einrichtung einer Flugverbotszone nahe der Grenze zur Ukraine.",
+              "Die Vereinigten Staaten verhängten neue Sanktionen gegen iranische Finanznetzwerke."
+            ],
+            "title": "Russische Angriffe und internationale Sanktionen dauern in der Ukraine und im Nahen Osten an",
+            "context": "Die laufenden Konflikte umfassen militärische Auseinandersetzungen in der Ukraine, internationale Waffenlieferungen sowie Sanktionen gegen Finanznetzwerke, die Russland und den Iran unterstützen."
+          },
           "en": {
             "dek": "Russian ballistic missiles hit Kyiv as international tensions rise following naval incidents in the Strait of Hormuz and ongoing military operations in Ukraine.",
             "body": [
@@ -138,27 +158,6 @@
             "title": "Russian Strikes and International Sanctions Continue Across Ukraine and Middle East",
             "context": "The ongoing conflicts involve military engagements in Ukraine, international weapons deliveries, and sanctions targeting financial networks supporting Russia and Iran.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Russische ballistische Raketen treffen Kiew, während die internationalen Spannungen nach Zwischenfällen in der Straße von Hormus und den laufenden Militäroperationen in der Ukraine zunehmen.",
-            "body": [
-              "Russische Streitkräfte starteten am späten Mittwoch einen ballistischen Raketenangriff auf Kiew, bei dem laut The Kyiv Post vier Menschen verletzt und ein Einkaufszentrum im Bezirk Desnjanskyj beschädigt wurden. Zwei der Opfer mussten nach dem Einschlag im Krankenhaus behandelt werden.",
-              "Zwei Öltanker explodierten und gerieten in Brand, nachdem sie laut der Marine der iranischen Revolutionsgarden auf Seeminen getroffen waren. Teheran erklärte, dass der normale Schiffsverkehr erst wieder aufgenommen werde, wenn die Vereinigten Staaten ihre Seeblockade iranischer Häfen aufheben.",
-              "Der ukrainische Präsidentschaftsberater Serhij Beskrestnow berichtete, dass das Militär erstmals ein Blysk-Lasersystem eingesetzt habe, um eine russische, strahlgetriebene Shahed-Drohne abzuschießen. Das System wurde von der Firma Carmine Sky entwickelt.",
-              "Polen wird nach wiederholten Luftraumverletzungen eine Flugverbotszone nahe der ukrainischen Grenze einrichten, wie ein stellvertretender Verteidigungsminister ankündigte. The Kyiv Independent berichtete, dass Warschau zudem die NATO gebeten habe, russische Raketen über ukrainischem Territorium abzufangen.",
-              "US-Präsident Donald Trump und NATO-Generalsekretär Mark Rutte drängten Russland bei Gesprächen in Florida am Mittwoch dazu, den Krieg gegen die Ukraine nicht auszuweiten. Beide Staatsmänner forderten laut Reuters und The Straits Times eine rasche Lösung des Konflikts.",
-              "Die Vereinigten Staaten haben Pläne verworfen, Geschäftsabschlüsse mit Russland als Strategie zur Beendigung des Krieges zu nutzen, wie Reuters und The Hindu berichten. Die Gesandten Steve Witkoff und Jared Kushner teilten europäischen Vertretern mit, dass Unternehmenskooperationen kein Kernbestandteil der US-Politik mehr seien.",
-              "Bundeskanzler Friedrich Merz erklärte laut The Japan Times, dass die Unterstützung der Ukraine eine Maßnahme zum Schutz Deutschlands sei. Unterdessen nimmt das US-Finanzministerium weiterhin iranische Schattenbanknetzwerke ins Visier, die zwischen Januar 2025 und August 2026 14,7 Milliarden US-Dollar transferierten."
-            ],
-            "facts": [
-              "Russische ballistische Raketen trafen ein Einkaufszentrum in Kiew und verletzten vier Menschen.",
-              "Zwei Öltanker gerieten nach dem Treffen auf Seeminen in der Straße von Hormus in Brand.",
-              "Die Ukraine meldete den ersten Kampfeinsatz eines Lasersystems zum Abschuss einer russischen Drohne.",
-              "Polen plant die Einrichtung einer Flugverbotszone nahe der Grenze zur Ukraine.",
-              "Die Vereinigten Staaten verhängten neue Sanktionen gegen iranische Finanznetzwerke."
-            ],
-            "title": "Russische Angriffe und internationale Sanktionen dauern in der Ukraine und im Nahen Osten an",
-            "context": "Die laufenden Konflikte umfassen militärische Auseinandersetzungen in der Ukraine, internationale Waffenlieferungen sowie Sanktionen gegen Finanznetzwerke, die Russland und den Iran unterstützen."
           }
         }
       },
@@ -641,7 +640,8 @@
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-26T12:34:11.073Z"
   },
   "endedAt": null,
   "locales": {
@@ -684,178 +684,236 @@
   },
   "updates": [
     {
-      "id": "u-1795694834000-kr8s",
-      "at": "2026-11-26T12:07:14.000Z",
+      "id": "u-1795725410000-bmvi",
+      "at": "2026-11-26T20:36:50.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "EU leaders clash over Ukraine financial aid at budget summit",
-          "body": "Slovakia, Hungary, and Czechia are seeking to opt out of a 45 billion euro loan package for Ukraine, according to The Guardian. German Chancellor Friedrich Merz stated that he expects all 27 EU member states to participate in the financial support, as reported by Die Welt."
+          "headline": "Zelenskiy says Russia preparing new mass strike",
+          "body": "President Volodymyr Zelenskiy said Ukraine had information Russia was planning a new mass strike on the country in the coming days. According to The Straits Times and PBS, the warning comes as Russia intensifies attacks."
         },
         "de": {
-          "headline": "EU-Staats- und Regierungschefs streiten auf Haushaltsgipfel über Finanzhilfen für die Ukraine",
-          "body": "Die Slowakei, Ungarn und Tschechien wollen sich laut dem „Guardian“ von einem Kreditpaket für die Ukraine in Höhe von 45 Milliarden Euro ausnehmen lassen. Bundeskanzler Friedrich Merz erklärte laut einem Bericht der „Welt“, er erwarte, dass sich alle 27 EU-Mitgliedstaaten an der finanziellen Unterstützung beteiligen."
-        },
-        "pt": {
-          "headline": "Líderes da UE em confronto sobre ajuda financeira à Ucrânia na cimeira orçamental",
-          "body": "Eslováquia, Hungria e Chéquia pretendem ficar de fora de um pacote de empréstimos de 45 mil milhões de euros para a Ucrânia, segundo o The Guardian. O chanceler alemão Friedrich Merz afirmou esperar que todos os 27 Estados-membros da UE participem no apoio financeiro, conforme noticiado pelo Die Welt."
-        },
-        "zh": {
-          "headline": "欧盟领导人在预算峰会上就援乌资金问题发生冲突",
-          "body": "据《卫报》报道，斯洛伐克、匈牙利和捷克寻求退出一项针对乌克兰的450亿欧元贷款计划。据《世界报》报道，德国总理弗里德里希·默茨表示，他期望所有27个欧盟成员国都能参与此次财政支持。"
-        },
-        "ja": {
-          "headline": "EU首脳、予算サミットでウクライナ財政支援をめぐり対立",
-          "body": "ガーディアン紙によると、スロバキア、ハンガリー、チェコの3カ国が、ウクライナ向けの450億ユーロの融資パッケージからの離脱を求めている。ディ・ヴェルト紙の報道によれば、ドイツのフリードリヒ・メルツ首相は、EU加盟全27カ国が財政支援に参加することを期待すると述べた。"
-        },
-        "it": {
-          "headline": "I leader dell'UE si scontrano sugli aiuti finanziari all'Ucraina al vertice sul bilancio",
-          "body": "Slovacchia, Ungheria e Repubblica Ceca intendono tirarsi fuori da un pacchetto di prestiti da 45 miliardi di euro destinato all'Ucraina, secondo quanto riportato dal Guardian. Il cancelliere tedesco Friedrich Merz ha dichiarato di aspettarsi che tutti i 27 Stati membri dell'UE partecipino al sostegno finanziario, come riferito da Die Welt."
-        },
-        "es": {
-          "headline": "Los líderes de la UE chocan por la ayuda financiera a Ucrania en la cumbre presupuestaria",
-          "body": "Eslovaquia, Hungría y Chequia buscan quedar excluidas de un paquete de préstamos de 45.000 millones de euros para Ucrania, según The Guardian. El canciller alemán, Friedrich Merz, declaró que espera que los 27 Estados miembros de la UE participen en el apoyo financiero, tal como informó Die Welt."
+          "headline": "Selenskyj sagt: Russland bereitet neuen Massenangriff vor",
+          "body": "Der ukrainische Präsident Wolodymyr Selenskyj hat nach Informationen von Ukraine Russland einen neuen Massenangriff auf das Land in den kommenden Tagen vorbereitet. Nach Angaben von The Straits Times und PBS warnt er vor einem verstärkten russischen Beschuss."
         },
         "fr": {
-          "headline": "Les dirigeants de l'UE s'opposent sur l'aide financière à l'Ukraine lors du sommet budgétaire",
-          "body": "La Slovaquie, la Hongrie et la Tchéquie cherchent à se retirer d'un programme de prêts de 45 milliards d'euros destiné à l'Ukraine, selon The Guardian. Le chancelier allemand Friedrich Merz a déclaré qu'il attendait de l'ensemble des 27 États membres de l'UE qu'ils participent au soutien financier, comme le rapporte Die Welt."
+          "headline": "Zelenskiy affirme que la Russie prépare une nouvelle frappe massive",
+          "body": "Le président Volodymyr Zelenskiy a déclaré que l'Ukraine disposait d'informations selon lesquelles la Russie préparait une nouvelle frappe massive sur le pays dans les prochains jours. Selon The Straits Times et PBS, cet avertissement intervient alors que la Russie intensifie ses attaques."
+        },
+        "es": {
+          "headline": "Zelenskiy dice que Rusia prepara un nuevo gran ataque",
+          "body": "El presidente Volodímir Zelenski afirmó que Ucrania tenía información de que Rusia estaba planeando un nuevo gran ataque al país en los próximos días. Según The Straits Times y PBS, la advertencia llega mientras Rusia intensifica sus ataques."
+        },
+        "it": {
+          "headline": "Zelenskiy afferma che la Russia sta preparando un nuovo massiccio attacco",
+          "body": "Il presidente Volodymyr Zelenskiy ha dichiarato che l'Ucraina dispone di informazioni secondo cui la Russia sta pianificando un nuovo massiccio attacco al paese nei prossimi giorni. L'avvertimento arriva mentre la Russia intensifica gli attacchi."
+        },
+        "pt": {
+          "headline": "Zelensky diz que a Rússia está a preparar novo ataque em massa",
+          "body": "O Presidente Volodymyr Zelensky afirmou que a Ucrânia tinha informações de que a Rússia estava a planear um novo ataque em massa contra o país nos próximos dias. Segundo o The Straits Times e a PBS, o aviso surge numa altura em que a Rússia intensifica os ataques."
+        },
+        "zh": {
+          "headline": "泽连斯基称俄罗斯正准备新一轮大规模打击",
+          "body": "总统弗拉基米尔·泽连斯基表示，乌克兰掌握的信息显示，俄罗斯正计划在未来几天对该国发动新一轮大规模打击。据《海峡时报》和PBS报道，此次警告发布之际，俄罗斯正加大袭击力度。"
         },
         "ko": {
-          "headline": "EU 정상들, 예산 정상회의서 우크라이나 재정 지원 두고 충돌",
-          "body": "가디언에 따르면 슬로바키아, 헝가리, 체코는 우크라이나를 위한 450억 유로 규모의 대출 패키지에서 빠지겠다는 의사를 밝혔다. 디 벨트에 따르면 프리드리히 메르츠 독일 총리는 27개 EU 회원국 모두가 재정 지원에 참여할 것으로 기대한다고 언급했다."
+          "headline": "젤렌스키, 러시아의 새로운 대규모 공격 준비 주장",
+          "body": "볼로디미르 젤렌스키 대통령은 우크라이나가 러시아가 수일 내에 이 나라에 대한 새로운 대규모 공격을 계획하고 있다는 정보를 갖고 있다고 말했다. 더 스트레이츠 타임스와 PBS에 따르면, 이 경고는 러시아가 공격을 강화하는 가운데 나온 것이다."
+        },
+        "ja": {
+          "headline": "ゼレンスキー氏、ロシアが新たな大規模攻撃を準備と述べる",
+          "body": "ウォロディミル・ゼレンスキー大統領は、ウクライナがロシアが今後数日以内に同国に対する新たな大規模攻撃を計画しているとの情報を把握していると述べた。ザ・ストレーツ・タイムズとPBSによると、この警告はロシアが攻撃を激化させている中で出された。"
         }
       },
       "sources": [
         {
-          "outlet": "The Guardian",
-          "title": "EU leaders braced for clashes over Ukraine aid at budget talks",
+          "outlet": "The Straits Times",
+          "title": "Zelenskiy says Russia preparing new mass strike in coming days",
+          "url": "https://www.straitstimes.com/world/europe/zelenskiy-says-russia-preparing-new-mass-strike-in-coming-days",
+          "publishedAt": "2026-11-26T20:36:50.000Z"
+        },
+        {
+          "outlet": "PBS",
+          "title": "Zelenskyy warns of imminent major Russian attack on Ukraine's power grid",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZThseDRiUjNOOHZZUlZIaWJxOVV0U3FFQTJBdWVKTlJFS1dvUVI1WFZuN2ROcktzM003MjBWWHpJeXFRYnNvTUtKN3NjeHQtVnlnWFVfMWMxX2hld2JnczI0Rm1rd1ZFWTdtenJDeXNQMVRUZkZ2bnE1SXpOQzhqcXJZeUxzTDZkRkhrVkc1MHNaRWlROWllelBiTVhYMnJGc3ZiYjJCQ3FLd9IBrwFBVV95cUxNaVF0QkROQndLRVFva3RRYjhhVXIyUGVWMXZNTExOU0dUQ09qT21UQTRJcjV1OTcyVkVJM2xqWHI1OWs2UzF4cUhNb29PZ3owRjBYYU4tN0hZR3ZaVmFnTWdCc1FrVlg2ektua2VzRVdBUS1OUXlPN2g1QmVGYmtHWV91LUxRVXFrME1zczktaklyNDdjMzB2dWttb0NrTExWWTh6VkI1MVd3V282Q0lJ?oc=5",
+          "publishedAt": "2026-11-26T17:24:27.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-26T12:07:14.000Z",
+      "id": "u-1795694834000-kr8s",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die Slowakei, Ungarn und Tschechien wollen sich laut dem „Guardian“ von einem Kreditpaket für die Ukraine in Höhe von 45 Milliarden Euro ausnehmen lassen. Bundeskanzler Friedrich Merz erklärte laut einem Bericht der „Welt“, er erwarte, dass sich alle 27 EU-Mitgliedstaaten an der finanziellen Unterstützung beteiligen.",
+          "headline": "EU-Staats- und Regierungschefs streiten auf Haushaltsgipfel über Finanzhilfen für die Ukraine"
+        },
+        "en": {
+          "body": "Slovakia, Hungary, and Czechia are seeking to opt out of a 45 billion euro loan package for Ukraine, according to The Guardian. German Chancellor Friedrich Merz stated that he expects all 27 EU member states to participate in the financial support, as reported by Die Welt.",
+          "headline": "EU leaders clash over Ukraine financial aid at budget summit"
+        },
+        "es": {
+          "body": "Eslovaquia, Hungría y Chequia buscan quedar excluidas de un paquete de préstamos de 45.000 millones de euros para Ucrania, según The Guardian. El canciller alemán, Friedrich Merz, declaró que espera que los 27 Estados miembros de la UE participen en el apoyo financiero, tal como informó Die Welt.",
+          "headline": "Los líderes de la UE chocan por la ayuda financiera a Ucrania en la cumbre presupuestaria"
+        },
+        "fr": {
+          "body": "La Slovaquie, la Hongrie et la Tchéquie cherchent à se retirer d'un programme de prêts de 45 milliards d'euros destiné à l'Ukraine, selon The Guardian. Le chancelier allemand Friedrich Merz a déclaré qu'il attendait de l'ensemble des 27 États membres de l'UE qu'ils participent au soutien financier, comme le rapporte Die Welt.",
+          "headline": "Les dirigeants de l'UE s'opposent sur l'aide financière à l'Ukraine lors du sommet budgétaire"
+        },
+        "it": {
+          "body": "Slovacchia, Ungheria e Repubblica Ceca intendono tirarsi fuori da un pacchetto di prestiti da 45 miliardi di euro destinato all'Ucraina, secondo quanto riportato dal Guardian. Il cancelliere tedesco Friedrich Merz ha dichiarato di aspettarsi che tutti i 27 Stati membri dell'UE partecipino al sostegno finanziario, come riferito da Die Welt.",
+          "headline": "I leader dell'UE si scontrano sugli aiuti finanziari all'Ucraina al vertice sul bilancio"
+        },
+        "ja": {
+          "body": "ガーディアン紙によると、スロバキア、ハンガリー、チェコの3カ国が、ウクライナ向けの450億ユーロの融資パッケージからの離脱を求めている。ディ・ヴェルト紙の報道によれば、ドイツのフリードリヒ・メルツ首相は、EU加盟全27カ国が財政支援に参加することを期待すると述べた。",
+          "headline": "EU首脳、予算サミットでウクライナ財政支援をめぐり対立"
+        },
+        "ko": {
+          "body": "가디언에 따르면 슬로바키아, 헝가리, 체코는 우크라이나를 위한 450억 유로 규모의 대출 패키지에서 빠지겠다는 의사를 밝혔다. 디 벨트에 따르면 프리드리히 메르츠 독일 총리는 27개 EU 회원국 모두가 재정 지원에 참여할 것으로 기대한다고 언급했다.",
+          "headline": "EU 정상들, 예산 정상회의서 우크라이나 재정 지원 두고 충돌"
+        },
+        "pt": {
+          "body": "Eslováquia, Hungria e Chéquia pretendem ficar de fora de um pacote de empréstimos de 45 mil milhões de euros para a Ucrânia, segundo o The Guardian. O chanceler alemão Friedrich Merz afirmou esperar que todos os 27 Estados-membros da UE participem no apoio financeiro, conforme noticiado pelo Die Welt.",
+          "headline": "Líderes da UE em confronto sobre ajuda financeira à Ucrânia na cimeira orçamental"
+        },
+        "zh": {
+          "body": "据《卫报》报道，斯洛伐克、匈牙利和捷克寻求退出一项针对乌克兰的450亿欧元贷款计划。据《世界报》报道，德国总理弗里德里希·默茨表示，他期望所有27个欧盟成员国都能参与此次财政支持。",
+          "headline": "欧盟领导人在预算峰会上就援乌资金问题发生冲突"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.theguardian.com/world/2026/nov/26/eu-leaders-braced-for-clashes-over-ukraine-aid-at-budget-talks",
+          "title": "EU leaders braced for clashes over Ukraine aid at budget talks",
+          "outlet": "The Guardian",
           "publishedAt": "2026-11-26T12:07:14.000Z"
         },
         {
-          "outlet": "Die Welt",
-          "title": "„27 und nicht 23 oder 24“ – Merz dringt auf Beteiligung aller EU-Länder an Ukraine-Hilfe",
           "url": "https://www.welt.de/politik/ausland/article6b07ffd81d0c4f9ebad704f9/eu-gipfel-27-und-nicht-23-oder-24-merz-dringt-auf-beteiligung-aller-eu-laender-an-ukraine-hilfe.html",
+          "title": "„27 und nicht 23 oder 24“ – Merz dringt auf Beteiligung aller EU-Länder an Ukraine-Hilfe",
+          "outlet": "Die Welt",
           "publishedAt": "2026-11-26T09:59:51.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1795687329000-fxk7",
       "at": "2026-11-26T10:02:09.000Z",
+      "id": "u-1795687329000-fxk7",
       "kind": "result",
-      "importance": 3,
       "locales": {
-        "en": {
-          "headline": "Russia and Ukraine report casualties following overnight strikes",
-          "body": "Russian strikes on Kyiv and Kharkiv resulted in two deaths and seven injuries, according to SRF. A separate Ukrainian drone attack in Russian-occupied Zaporizhia killed five people, Al Jazeera reported."
-        },
         "de": {
-          "headline": "Russland und Ukraine melden Opfer nach nächtlichen Angriffen",
-          "body": "Russische Angriffe auf Kiew und Charkiw forderten laut SRF zwei Todesopfer und sieben Verletzte. Ein separater ukrainischer Drohnenangriff im russisch besetzten Saporischschja tötete laut Al Jazeera fünf Menschen."
+          "body": "Russische Angriffe auf Kiew und Charkiw forderten laut SRF zwei Todesopfer und sieben Verletzte. Ein separater ukrainischer Drohnenangriff im russisch besetzten Saporischschja tötete laut Al Jazeera fünf Menschen.",
+          "headline": "Russland und Ukraine melden Opfer nach nächtlichen Angriffen"
         },
-        "pt": {
-          "headline": "Rússia e Ucrânia reportam baixas após ataques noturnos",
-          "body": "Os ataques russos a Kiev e Kharkiv resultaram em dois mortos e sete feridos, segundo a SRF. Um ataque separado com drones ucranianos em Zaporíjia, território ocupado pela Rússia, causou cinco mortos, noticiou a Al Jazeera."
-        },
-        "zh": {
-          "headline": "俄乌双方报告称隔夜袭击造成人员伤亡",
-          "body": "据瑞士广播电视集团（SRF）报道，俄罗斯对基辅和哈尔科夫的袭击造成2人死亡、7人受伤。据半岛电视台报道，另一起乌克兰无人机对俄罗斯占领的扎波罗热地区的袭击造成5人死亡。"
-        },
-        "ja": {
-          "headline": "ロシアとウクライナ、夜間の攻撃で双方に死傷者",
-          "body": "SRFによると、ロシアによるキーウとハルキウへの攻撃で2人が死亡、7人が負傷した。一方、アルジャジーラは、ロシアが占領するザポリージャでウクライナ軍のドローン攻撃があり、5人が死亡したと報じた。"
-        },
-        "it": {
-          "headline": "Russia e Ucraina segnalano vittime dopo gli attacchi notturni",
-          "body": "Gli attacchi russi su Kiev e Kharkiv hanno causato due morti e sette feriti, secondo l'emittente SRF. Un distinto attacco di droni ucraini nella regione di Zaporizhia, occupata dai russi, ha provocato cinque vittime, ha riferito Al Jazeera."
+        "en": {
+          "body": "Russian strikes on Kyiv and Kharkiv resulted in two deaths and seven injuries, according to SRF. A separate Ukrainian drone attack in Russian-occupied Zaporizhia killed five people, Al Jazeera reported.",
+          "headline": "Russia and Ukraine report casualties following overnight strikes"
         },
         "es": {
-          "headline": "Rusia y Ucrania informan de víctimas tras los ataques nocturnos",
-          "body": "Los ataques rusos contra Kiev y Járkov dejaron dos muertos y siete heridos, según SRF. Por otro lado, un ataque ucraniano con drones en la región de Zaporiyia, ocupada por Rusia, causó cinco muertos, informó Al Jazeera."
+          "body": "Los ataques rusos contra Kiev y Járkov dejaron dos muertos y siete heridos, según SRF. Por otro lado, un ataque ucraniano con drones en la región de Zaporiyia, ocupada por Rusia, causó cinco muertos, informó Al Jazeera.",
+          "headline": "Rusia y Ucrania informan de víctimas tras los ataques nocturnos"
         },
         "fr": {
-          "headline": "La Russie et l'Ukraine font état de victimes après des frappes nocturnes",
-          "body": "Les frappes russes sur Kiev et Kharkiv ont fait deux morts et sept blessés, selon la SRF. Une attaque distincte de drones ukrainiens dans la région de Zaporijjia, occupée par la Russie, a tué cinq personnes, a rapporté Al Jazeera."
+          "body": "Les frappes russes sur Kiev et Kharkiv ont fait deux morts et sept blessés, selon la SRF. Une attaque distincte de drones ukrainiens dans la région de Zaporijjia, occupée par la Russie, a tué cinq personnes, a rapporté Al Jazeera.",
+          "headline": "La Russie et l'Ukraine font état de victimes après des frappes nocturnes"
+        },
+        "it": {
+          "body": "Gli attacchi russi su Kiev e Kharkiv hanno causato due morti e sette feriti, secondo l'emittente SRF. Un distinto attacco di droni ucraini nella regione di Zaporizhia, occupata dai russi, ha provocato cinque vittime, ha riferito Al Jazeera.",
+          "headline": "Russia e Ucraina segnalano vittime dopo gli attacchi notturni"
+        },
+        "ja": {
+          "body": "SRFによると、ロシアによるキーウとハルキウへの攻撃で2人が死亡、7人が負傷した。一方、アルジャジーラは、ロシアが占領するザポリージャでウクライナ軍のドローン攻撃があり、5人が死亡したと報じた。",
+          "headline": "ロシアとウクライナ、夜間の攻撃で双方に死傷者"
         },
         "ko": {
-          "headline": "러시아와 우크라이나, 밤사이 공습으로 인한 사상자 보고",
-          "body": "SRF에 따르면 키이우와 하르키우에 대한 러시아의 공습으로 2명이 사망하고 7명이 부상했다. 알자지라는 별도의 우크라이나 드론 공격이 러시아가 점령 중인 자포리자에서 5명의 사망자를 냈다고 보도했다."
+          "body": "SRF에 따르면 키이우와 하르키우에 대한 러시아의 공습으로 2명이 사망하고 7명이 부상했다. 알자지라는 별도의 우크라이나 드론 공격이 러시아가 점령 중인 자포리자에서 5명의 사망자를 냈다고 보도했다.",
+          "headline": "러시아와 우크라이나, 밤사이 공습으로 인한 사상자 보고"
+        },
+        "pt": {
+          "body": "Os ataques russos a Kiev e Kharkiv resultaram em dois mortos e sete feridos, segundo a SRF. Um ataque separado com drones ucranianos em Zaporíjia, território ocupado pela Rússia, causou cinco mortos, noticiou a Al Jazeera.",
+          "headline": "Rússia e Ucrânia reportam baixas após ataques noturnos"
+        },
+        "zh": {
+          "body": "据瑞士广播电视集团（SRF）报道，俄罗斯对基辅和哈尔科夫的袭击造成2人死亡、7人受伤。据半岛电视台报道，另一起乌克兰无人机对俄罗斯占领的扎波罗热地区的袭击造成5人死亡。",
+          "headline": "俄乌双方报告称隔夜袭击造成人员伤亡"
         }
       },
       "sources": [
         {
-          "outlet": "Al Jazeera",
-          "title": "Ukraine drone attack kills five in Russian-occupied Zaporizhia",
           "url": "https://www.aljazeera.com/news/2026/11/26/ukraine-drone-attack-kills-five-in-russian-occupied-zaporizhia?traffic_source=rss",
+          "title": "Ukraine drone attack kills five in Russian-occupied Zaporizhia",
+          "outlet": "Al Jazeera",
           "publishedAt": "2026-11-26T10:02:09.000Z"
         },
         {
-          "outlet": "SRF",
-          "title": "Krieg in der Ukraine – Nach Angriffen: Tote und Verletzte auf beiden Seiten",
           "url": "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-nach-angriffen-tote-und-verletzte-auf-beiden-seiten",
+          "title": "Krieg in der Ukraine – Nach Angriffen: Tote und Verletzte auf beiden Seiten",
+          "outlet": "SRF",
           "publishedAt": "2026-11-26T09:30:37.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
-      "id": "u-1795685952000-c6t2",
       "at": "2026-11-26T09:39:12.000Z",
+      "id": "u-1795685952000-c6t2",
       "kind": "result",
-      "importance": 3,
       "locales": {
+        "de": {
+          "body": "Bundesstaatsanwälte teilten mit, dass zwei Männer, die verdächtigt werden, einer pro-iranischen Gruppe anzugehören, in Köln und Heidelberg festgenommen wurden. Beamten zufolge planten die Verdächtigen einen Anschlag, der möglicherweise auf eine Synagoge in Köln gerichtet war.",
+          "headline": "Deutsche Polizei nimmt zwei Verdächtige wegen mutmaßlichen Anschlagsplans auf Synagoge fest"
+        },
         "en": {
-          "headline": "German police arrest two suspects over alleged synagogue attack plot",
-          "body": "Federal prosecutors stated that two men suspected of belonging to a pro-Iranian group were detained in Cologne and Heidelberg. According to officials, the suspects planned an attack that may have targeted a synagogue in Cologne."
+          "body": "Federal prosecutors stated that two men suspected of belonging to a pro-Iranian group were detained in Cologne and Heidelberg. According to officials, the suspects planned an attack that may have targeted a synagogue in Cologne.",
+          "headline": "German police arrest two suspects over alleged synagogue attack plot"
         },
         "es": {
-          "headline": "La policía alemana detiene a dos sospechosos por un presunto plan de atentado contra una sinagoga",
-          "body": "La fiscalía federal indicó que dos hombres sospechosos de pertenecer a un grupo proiraní fueron arrestados en Colonia y Heidelberg. Según las autoridades, los sospechosos planeaban un ataque que podría haber tenido como objetivo una sinagoga en Colonia."
-        },
-        "it": {
-          "headline": "La polizia tedesca arresta due sospettati per un presunto piano di attacco a una sinagoga",
-          "body": "La procura federale ha dichiarato che due uomini sospettati di appartenere a un gruppo filo-iraniano sono stati fermati a Colonia e Heidelberg. Secondo le autorità, i sospettati pianificavano un attacco che avrebbe potuto prendere di mira una sinagoga a Colonia."
-        },
-        "pt": {
-          "headline": "Polícia alemã detém dois suspeitos por alegado plano de ataque a sinagoga",
-          "body": "Os procuradores federais afirmaram que dois homens suspeitos de pertencerem a um grupo pró-iraniano foram detidos em Colónia e Heidelberg. De acordo com as autoridades, os suspeitos planeavam um ataque que poderá ter tido como alvo uma sinagoga em Colónia."
-        },
-        "zh": {
-          "headline": "德国警方逮捕两名涉嫌密谋袭击犹太教堂的嫌疑人",
-          "body": "联邦检察官表示，两名涉嫌属于一个亲伊朗组织的男子分别在科隆和海德堡被拘留。据官员称，这些嫌疑人策划了一起可能将科隆一座犹太教堂作为目标的袭击。"
-        },
-        "ko": {
-          "headline": "독일 경찰, 시나고그 공격 모의 혐의로 용의자 2명 체포",
-          "body": "연방 검찰은 친이란 단체 소속으로 의심되는 두 남성이 쾰른과 하이델베르크에서 구금되었다고 밝혔다. 당국에 따르면 이들은 쾰른의 한 시나고그를 겨냥했을 가능성이 있는 공격을 모의했다."
+          "body": "La fiscalía federal indicó que dos hombres sospechosos de pertenecer a un grupo proiraní fueron arrestados en Colonia y Heidelberg. Según las autoridades, los sospechosos planeaban un ataque que podría haber tenido como objetivo una sinagoga en Colonia.",
+          "headline": "La policía alemana detiene a dos sospechosos por un presunto plan de atentado contra una sinagoga"
         },
         "fr": {
-          "headline": "La police allemande arrête deux suspects pour un projet d'attentat présumé contre une synagogue",
-          "body": "Le parquet fédéral a indiqué que deux hommes soupçonnés d'appartenir à un groupe pro-iranien avaient été interpellés à Cologne et à Heidelberg. Selon les autorités, les suspects prévoyaient une attaque qui aurait pu viser une synagogue à Cologne."
+          "body": "Le parquet fédéral a indiqué que deux hommes soupçonnés d'appartenir à un groupe pro-iranien avaient été interpellés à Cologne et à Heidelberg. Selon les autorités, les suspects prévoyaient une attaque qui aurait pu viser une synagogue à Cologne.",
+          "headline": "La police allemande arrête deux suspects pour un projet d'attentat présumé contre une synagogue"
         },
-        "de": {
-          "headline": "Deutsche Polizei nimmt zwei Verdächtige wegen mutmaßlichen Anschlagsplans auf Synagoge fest",
-          "body": "Bundesstaatsanwälte teilten mit, dass zwei Männer, die verdächtigt werden, einer pro-iranischen Gruppe anzugehören, in Köln und Heidelberg festgenommen wurden. Beamten zufolge planten die Verdächtigen einen Anschlag, der möglicherweise auf eine Synagoge in Köln gerichtet war."
+        "it": {
+          "body": "La procura federale ha dichiarato che due uomini sospettati di appartenere a un gruppo filo-iraniano sono stati fermati a Colonia e Heidelberg. Secondo le autorità, i sospettati pianificavano un attacco che avrebbe potuto prendere di mira una sinagoga a Colonia.",
+          "headline": "La polizia tedesca arresta due sospettati per un presunto piano di attacco a una sinagoga"
         },
         "ja": {
-          "headline": "ドイツ警察、シナゴーグ襲撃計画の疑いで容疑者2人を逮捕",
-          "body": "連邦検察当局は、親イラン組織に所属している疑いがある男2人がケルンとハイデルベルクで拘束されたと発表した。当局によると、容疑者らはケルンのシナゴーグを標的とした可能性のある襲撃を計画していたという。"
+          "body": "連邦検察当局は、親イラン組織に所属している疑いがある男2人がケルンとハイデルベルクで拘束されたと発表した。当局によると、容疑者らはケルンのシナゴーグを標的とした可能性のある襲撃を計画していたという。",
+          "headline": "ドイツ警察、シナゴーグ襲撃計画の疑いで容疑者2人を逮捕"
+        },
+        "ko": {
+          "body": "연방 검찰은 친이란 단체 소속으로 의심되는 두 남성이 쾰른과 하이델베르크에서 구금되었다고 밝혔다. 당국에 따르면 이들은 쾰른의 한 시나고그를 겨냥했을 가능성이 있는 공격을 모의했다.",
+          "headline": "독일 경찰, 시나고그 공격 모의 혐의로 용의자 2명 체포"
+        },
+        "pt": {
+          "body": "Os procuradores federais afirmaram que dois homens suspeitos de pertencerem a um grupo pró-iraniano foram detidos em Colónia e Heidelberg. De acordo com as autoridades, os suspeitos planeavam um ataque que poderá ter tido como alvo uma sinagoga em Colónia.",
+          "headline": "Polícia alemã detém dois suspeitos por alegado plano de ataque a sinagoga"
+        },
+        "zh": {
+          "body": "联邦检察官表示，两名涉嫌属于一个亲伊朗组织的男子分别在科隆和海德堡被拘留。据官员称，这些嫌疑人策划了一起可能将科隆一座犹太教堂作为目标的袭击。",
+          "headline": "德国警方逮捕两名涉嫌密谋袭击犹太教堂的嫌疑人"
         }
       },
       "sources": [
         {
-          "outlet": "Tagesschau",
-          "title": "Terrorverdacht - zwei Iraker in Köln und Heidelberg festgenommen",
           "url": "https://www.tagesschau.de/eilmeldung/terrorverdacht-festnahmen-102.html",
+          "title": "Terrorverdacht - zwei Iraker in Köln und Heidelberg festgenommen",
+          "outlet": "Tagesschau",
           "publishedAt": "2026-11-26T09:39:12.000Z"
         },
         {
-          "outlet": "DW",
-          "title": "Germany: 2 arrested, suspected of plotting synagogue attack",
           "url": "https://www.dw.com/en/germany-2-arrested-suspected-of-plotting-synagogue-attack/a-80057715?maca=en-rss-en-all-1573-rdf",
+          "title": "Germany: 2 arrested, suspected of plotting synagogue attack",
+          "outlet": "DW",
           "publishedAt": "2026-11-26T09:37:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-26T05:44:57.000Z",
@@ -2718,14 +2776,65 @@
     "https://www.tagesschau.de/ausland/europa/tote-nach-russischen-angriffen-ukraine-100.html",
     "https://www.tagesschau.de/inland/terrorverdacht-festnahmen-102.html",
     "https://www.kyivpost.com/post/91268",
-    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-nach-angriffen-tote-und-verletzte-auf-beiden-seiten"
+    "https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-nach-angriffen-tote-und-verletzte-auf-beiden-seiten",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRklINDh4LXY2RXVsWHlfS0g3VWxQVkxmZG5PeWNuMURvSTc5c01OZURIQUE5NjBrekZRUWRUV0l2UlJhSGJLSWxmaGpndWVIV2ZPb3d2WGdJLXN6RnJJZ3p4YTRVdElNQlk3R2ZSbjFBNnRLSENwaVNDZExUUW1hbHczWjkySzI1TXJlaS1xamdpVENZcmktTENQZHJOdVpDejBtZ0R1b2l6cVE1YUY3THFsTGVvdTlx?oc=5",
+    "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSDdVVGxfXzgxeDRUY3R1LXRZclVHTkJKam5IdVhVQk85ODBXaGcycjNfbU5TQUt0LWxHM0FqYXNDTUNRUDlXd3RNcTZ6ZEF1NDN0OVQ5N2ZLMTFUYzFxYXppVkc1cEpqRDdTN1U1SndsTENNcm45WElHaTdHamJxSEdxU2RzZldhZlh5bUM3T2tZaDA?oc=5",
+    "https://www.politico.eu/article/donald-trump-diverges-from-nato-statement-emphasizing-ukraine-mustnt-expand-war/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.straitstimes.com/world/europe/zelenskiy-says-russia-preparing-new-mass-strike-in-coming-days",
+    "https://www.jpost.com/israel-news/article-916280",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxQclg0TDNzVWJzX0xFYUxxN3RJLVZqQ1RoUzJFSFlTLU1xaVRNb2tORUZaNWxSWUxNaWN0MWdnRVZ2d1QxLXpQY0hIYXNqWF84dS1neU5oTWQtR0ptUFZfa2QxemNxR2FNME9fV01XajhzZU1UV3RSZXIzSUwyVW45MmVPNGdqQ0NlTzNuSTBuVEsyZEJVYXB3bW02ZW9FdUwxLWdCZ05UZjZ5eWwwZ0dIa3lzQXBGUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ObDlsWkZ4V2daSklXMHozRzBsMEZVaU5UMWJHVURqWDdqTzRGTkRzc2dXU1pNallnbXBmZ2UxQktlWUpIRjFiRU5RNDNXSzE2OWc?oc=5",
+    "https://www.spiegel.de/sport/fussball/europa-league-gazakrieg-schwere-ausschreitungen-bei-besiktas-gegen-hapoel-beer-sheva-a-0f1e8425-c88a-4e90-a2f0-d787f15297c3#ref=rss",
+    "https://www.kyivpost.com/post/91334",
+    "https://www.france24.com/en/trump-urges-putin-to-end-military-aggression-in-europe",
+    "https://www.france24.com/en/le-pen-slams-push-for-eu-budget-deal-before-french-election",
+    "https://news.google.com/rss/articles/CBMipgFBVV95cUxQU3JyVEhhM1RqS0xzQnBZbnA5YThWM0VPTmItaFNueVBieGJuejd4cE9qemtmbFp1R3kybm96VFBnNVN1X2hkQzYzTlNpTVpPdzNSNjduZVd5V0E5QVctUkJFdUFKZXRKZXNQSUJ2OVIyN2FUUVp6Rkk3Q0dPbXk5S0hhSUFkVE5oVk5QYTljTUZEYnVPMXoyX1M3VGdJbHkxQy1TeG1B0gGrAUFVX3lxTFBIRDVQQXJma09sX3BaV2lYcTBwQjBKZ1BEY2tKNDFjZF9xWlVOM2lRMGlnYUw3bFFRS1hNaUJIMklfSk9hU2JGVmd3d0lwWXlDWkpLTXZkRThEQnJwYnhaRmllcnVHYzdDaUhSWUpiSW5NYkdLdHlyRW50empzQUJWNnBsWE91S1ktSHo4ZGx2eGtLaElSUTVGeVNMRVVJREIzMDZrcVhnRzZiWQ?oc=5",
+    "https://news.google.com/rss/articles/CBMinwFBVV95cUxNS0RWcUt0cU8yTTB3S0xzenk3cGVCc3ZuUjhLVE51cnEtNnNUcFZhY0dwYzFjRlNCWTNSYlhQRkFnZ21tUks5TkR6WkJNdkotODRXOFBpRm96aU9HaVJyeTVUNENfdnpuVTV3VVpOMG1DUU9tdlBNdVBsRHRvdEpNMjZXMWhGeC12YlJSQjdUdC01MWZtcnVZLXpjRDdYQVE?oc=5",
+    "https://www.srf.ch/news/international/hybrider-krieg-wie-russland-europa-immer-staerker-unter-druck-setzt",
+    "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
+    "https://www.zeit.de/news/2026-11/26/medien-entscheidung-ueber-us-truppenabzug-verschiebt-sich",
+    "https://www.spiegel.de/panorama/justiz/prozess-gegen-ilona-w-in-berlin-eine-spionin-vor-der-kammergericht-a-05d733d6-9f42-491b-8d2b-89ad25612567#ref=rss",
+    "https://www.tagesschau.de/tagesschau_20_uhr/video-1690622.html",
+    "https://www.nzz.ch/international/koennen-kein-bancomat-fuer-die-eu-sein-die-ukraine-unterstuetzer-kritisieren-osteuropaeische-abweichler-scharf-ld.10075241",
+    "https://www.kyivpost.com/post/91331",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxPN1VRSkFfd2pOS0xUZEVVU1VVYzBCcl9KRk1RZFNFZGlsOXJhM1k5YjJrYVdabjJCNTJ1VlJQUVVVMEJPT1NWNmxDNTh0X0dWQ3hseW9hbnhldUU0NnNXMXBQemYtM0hlUlNCOWp3SVdCc2ttenNhQ3g0NGlyM1ZYSVk1SHRjZ1FUUnlzN290a2ZsVW9GOFhQdlpVeHFCY29Ma3E1dkJfdUVnRkhhbVNBMHRndk5jT0U?oc=5",
+    "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUUFfcUhOc0dCeENHdXg3OW44TjRqZ3lma0NiVzNRMjZWYjZhc1duOG9pLXQ5U0FSdjM0RDB5VlFxTlhkWWFVUDFlMElTdk5FZkM4NS1GR2hCZ2lOdHltTVJNVG51MWlxZUZQV2pRcXlCd1JjSU4wWE51U0trR2JubTBmc1YzMEhDMHZpVFprM3ktSGlXVW9yQmhnVUNyRXRUNzFXaUdiSQ?oc=5",
+    "https://www.kyivpost.com/post/91330",
+    "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUGI0c0JrbjJpWlRINVFhQkRBZDhDN0poRmRiOFBWS3RvSGZfZGNvd3dQc01KSVFvRXViUERlRkFnalNHWnNSWHVsbHdOQnZFS3RHMHRsc3RQbVBpc3B1WGd3NjZmT3ZCelpCOTlaV2JQU2pwNVhCRGgzVFBQMkdXQW5LSjBieEs5TjA1ZlVR0gGTAUFVX3lxTE5kVHFyTXhxNFl5eVZZOUhzM0tNdzk2Z2VlZTNjSHYzbG14Q3htNTdRcVoyNjhHWWRtVFY4eG1FSlY3YXlVOGVkMWc0QjZuTVF3QnRidEJUVmNTd1lPVFBDcW9HSExzek9vM2VFX1dGQ0htdmVwWVZzN0piNy05V0ZXYklRNVN0RmRJX1Q0U1lzSkpGQQ?oc=5",
+    "https://www.zeit.de/politik/2026-11/terrorismus-festnahmen-hayi-generalbundesanwalt-iran",
+    "https://www.straitstimes.com/world/europe/ukraine-claims-strike-that-damaged-russian-oil-refinery",
+    "https://news.google.com/rss/articles/CBMiekFVX3lxTE92N2x2Z1k4UUV0Wl9TTGhXY010eGtoRHdGUTNld1g2bmRnMUFxbEtoWUYwbkt4amZqd19tWWJFUnlaa2d4RW10Slc5Z3lEQlhGaW9fNXpVUWZ4LUo2dlpYQ3dvWnpURm8zdXB2ZkJ0VWZaemZSbmpQOW5n?oc=5",
+    "https://www.kyivpost.com/post/91326",
+    "https://www.aljazeera.com/economy/2026/11/26/eu-leaders-struggle-to-agree-on-long-term-budget-more-money-for-ukraine?traffic_source=rss",
+    "https://www.dw.com/en/trial-of-berlin-woman-accused-of-spying-for-russia-begins-after-delay/a-80057677?maca=en-rss-en-all-1573-rdf",
+    "https://www.euronews.com/2026/11/26/euronews-verify-how-can-the-eu-continue-to-afford-supporting-ukraine",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVE9yWG9JenZCTFpSOFJUeGxZcDVXTXE1eXRUOTdkRW5nelVQcU9DU2RfNmQzTlBWWnZXdlFoWmpGNktHUnJBTjdaV0w0M2tZUlFjZzA2SEljMzlHVklrOU80R09oenRVRG9FT2puQWVhcjVFNjV6dDlvRmhta1NCMWF4c3ZUbFBSMzlaMU5Vd2syOHozTzNCQ0VMc1JCdjA5NW9kTjdkQ1F4Q0Q5cXRF?oc=5",
+    "https://www.thehindu.com/news/international/kremlin-accuses-ukraine-of-trying-to-widen-conflict-zone-to-mediterranean-and-baltic-seas/article71747857.ece",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZThseDRiUjNOOHZZUlZIaWJxOVV0U3FFQTJBdWVKTlJFS1dvUVI1WFZuN2ROcktzM003MjBWWHpJeXFRYnNvTUtKN3NjeHQtVnlnWFVfMWMxX2hld2JnczI0Rm1rd1ZFWTdtenJDeXNQMVRUZkZ2bnE1SXpOQzhqcXJZeUxzTDZkRkhrVkc1MHNaRWlROWllelBiTVhYMnJGc3ZiYjJCQ3FLd9IBrwFBVV95cUxNaVF0QkROQndLRVFva3RRYjhhVXIyUGVWMXZNTExOU0dUQ09qT21UQTRJcjV1OTcyVkVJM2xqWHI1OWs2UzF4cUhNb29PZ3owRjBYYU4tN0hZR3ZaVmFnTWdCc1FrVlg2ektua2VzRVdBUS1OUXlPN2g1QmVGYmtHWV91LUxRVXFrME1zczktaklyNDdjMzB2dWttb0NrTExWWTh6VkI1MVd3V282Q0lJ?oc=5",
+    "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbU5CQUptYzlNTnJlbW5YZ3pQTGN6VkJVdW5KVTNUS2REMUo0QTFjbFpKeXpJQTZYb1ZRN1lIMGlIYlNvdk03WjdnZmhXN1FPUlNUYjVFdFBSZlRHNm5JWUNBQldwT3FMQVQxTnVORFc4YVd3Tm9SZFNWWV9leEFTd3JFYTI3dVJYbXZkYTFocG1FTWc?oc=5",
+    "https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-treffen-von-trump-und-rutte-abweichende-versionen-der-gemeinsamen-erklaerung-faz-110683325.html",
+    "https://www.dw.com/en/trump-says-he-urged-putin-to-pull-back-military-aggression-in-europe/a-80067722?maca=en-rss-en-all-1573-rdf",
+    "https://www.euronews.com/2026/11/26/europe-tonight-eu-leaders-clash-over-record-high-budget-amid-ukraine-funding-standoff",
+    "https://www.kyivpost.com/post/91322",
+    "https://thehill.com/policy/international/6244695-donald-trump-mark-rutte-meeting-russia-ukraine-war/",
+    "https://www.straitstimes.com/world/europe/russia-arrests-deputy-aerospace-commander-in-reported-corruption-case",
+    "https://news.google.com/rss/articles/CBMigAFBVV95cUxOVEtqeVRnZDItTjY1NGJpUE9haGVBcklFTEg4SDRSVmExY2RLekY1YzRyN1FrTV90XzFFblB0MjdYVGc0UkNGYUZDekREcmtfWjdEeEVRS25iQlhtWWxyLTRzaWpUOU8tT1BWMndmRVdJNkNpcmxQZTVYWVEtYnMzbw?oc=5",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxQT29USk1VZm0ydXdfaW5fa1JVbmRaYks2UTEzZ1R1bHd3WjdMM1RXS0Z2RW9mQ1pBcmRPRC1Yc3ZiQlk1WF8wbURsWXFNTnRHX2JSakNHSEFCZmlJSjRhT3lPNkNqdFNpZDQ0XzJKUlVCTGtzT2M2OXYxa3I4ZDZTN2ZiUVVwd1hGUTBsd29ReXJ6NzNPOUlpOXlMc3REREE5Mm5GRjhTY0tyWk1qUmZ4c1hVZTZoQUU?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU290ejg5RnI4Q2o4WHFUWDY0S1FKSEd1OWJfUXVKUHF0NXY5UENCS2tNWjU2REJHWjh6dEVnZXFPdks4dEY4T1BQTHJoZ2labDc2NTM2UlBUYmgyNTNrdDFSRktFWi1yektNN1BVMzJMMWxCWHlaQlZ3VUxQekhjUnlhWm5GQ0RWMzZwSVBKUUd5RFJMN2ktbXlzRll3b2NCMWwyWnVURFNJTHZ5VlZnYUQ4Sldqdw?oc=5",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE1XSG11OFNDMy1CT0lldVd0S21WUVE4SERyVUFSRWpqZUw1LXo0MEdVWmJWNWpjaWcxUGVXeVREcGt5SGplbzZsQURVdUVJZjZZQkEyMUh1cHl4RXpxV1pDblUyNUkweXJ5THRiNWJhSGNQMm14QVdFS2IyUEZyQQ?oc=5",
+    "https://www.kyivpost.com/post/91319",
+    "https://www.straitstimes.com/world/europe/ukraine-says-north-korea-temporarily-halted-missile-shipments-to-ally-russia",
+    "https://www.straitstimes.com/world/middle-east/egyptians-mourn-demand-accountability-after-deadly-tanker-explosion-kills-31",
+    "https://www.kyivpost.com/post/91317",
+    "http://www.africanews.com/2026/11/26/italys-meloni-concerned-after-ukraine-attack-on-russian-ship-in-libya/",
+    "https://www.straitstimes.com/world/middle-east/two-italians-killed-in-iranian-drone-attack-in-kuwait-italy-says"
   ],
   "startedAt": "2026-11-24T01:48:42.148Z",
-  "updatedAt": "2026-11-26T12:33:12.050Z",
+  "updatedAt": "2026-11-26T21:17:02.151Z",
   "importance": 5,
   "wantsStats": false,
   "articleSlug": "krieg-in-der-ukraine-und-iran-spannungen",
-  "sourceCount": 29,
+  "sourceCount": 30,
   "seenHeadlines": [
     "Russian strikes kill two people in Kharkiv",
     "Temporal provoca alagamentos em Americana",
