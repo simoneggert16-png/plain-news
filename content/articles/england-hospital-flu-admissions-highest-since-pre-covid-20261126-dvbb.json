@@ -1,0 +1,64 @@
+{
+  "slug": "england-hospital-flu-admissions-highest-since-pre-covid-20261126-dvbb",
+  "category": "health",
+  "image": "https://i.guim.co.uk/img/media/bb66565ac09bbed03f59b50957c8fef95435609d/625_0_6250_5000/master/6250.jpg?width=465&dpr=1&s=none&crop=none",
+  "imageCredit": "The Guardian",
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-26T21:38:09.827Z",
+  "updatedAt": "2026-11-26T21:38:09.827Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "The Guardian",
+      "title": "Hospitals in England brace for flu spike with admissions highest for time of year since pre-Covid",
+      "url": "https://www.theguardian.com/society/2026/nov/26/nhs-hospitals-england-flu-spike-masks",
+      "publishedAt": "2026-11-26T18:27:49.000Z"
+    },
+    {
+      "outlet": "South China Morning Post",
+      "title": "Spain’s Pablo Hernandez de Cos to succeed Lagarde as European Central Bank chief",
+      "url": "https://www.scmp.com/news/world/europe/article/3375963/spains-pablo-hernandez-de-cos-succeed-lagarde-european-central-bank-chief",
+      "publishedAt": "2026-11-26T17:26:17.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "England hospital flu admissions highest since pre-Covid",
+      "dek": "Flu admissions in England reached a high for this time of year since before Covid while Spain names new ECB chief",
+      "facts": [
+        "Flu hospital admissions in England rose to almost nine per 100,000 last week, the highest proportion this decade for this period in November, according to UK Health Security Agency data.",
+        "NHS England chief executive Jim Mackey stated that more hospital beds were occupied by people with flu than at the same time last year.",
+        "Almost two-fifths (38%) of people seeking help at the two A&Es run by Nottingham university hospitals NHS trust experienced corridor care, the highest proportion in England, according to Health Service Journal analysis of official data last week.",
+        "Spain’s Pablo Hernandez de Cos will succeed Christine Lagarde as European Central Bank chief, diplomats said on Thursday.",
+        "Hernandez de Cos, 55, has been head of the Bank for International Settlements since last year and previously led the Bank of Spain from 2018 to 2024."
+      ],
+      "body": [
+        "Hospitals in England are preparing for a flu spike as winter begins, because admissions for flu were at the highest for this time of year since before Covid, according to UK Health Security Agency data.",
+        "Jim Mackey, the NHS England chief executive, stated at an NHS Alliance conference in London that more hospital beds were occupied by people with flu than at the same time last year.",
+        "The rate of admission to hospital for people with flu rose sharply last week from five per 100,000 to almost nine per 100,000, which the UKHSA reported is the highest proportion this decade for this period in November.",
+        "Several health service trusts in England declared critical incidents this week due to winter pressures, including those in Nottingham, Derby and Burton, Kettering and Northampton, and Nottinghamshire.",
+        "Health Service Journal analysis of official data last week showed that almost two-fifths (38%) of people seeking help at the two A&Es run by Nottingham university hospitals NHS trust experienced corridor care, a proportion higher than in other parts of England.",
+        "Diplomats said on Thursday that Spain’s Pablo Hernandez de Cos will take over as European Central Bank chief from Christine Lagarde.",
+        "Hernandez de Cos, 55, has been head of the Swiss-based Bank for International Settlements since last year, and he previously led the Bank of Spain from 2018 to 2024."
+      ],
+      "context": "UK Health Security Agency data reported that only a third of people with a long-term health condition have been vaccinated against flu, and the agency urged eligible people to receive a free jab.",
+      "imageCaption": "The NHS England chief executive, Jim Mackey, said ‘corridor care’ had become normalised in too many places. Photograph: Jeff Moore/PA"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Global Health & Medicine Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline is not a factual statement of what happened and exceeds character limit; it combines two unrelated events without proper framing.",
+      "Dek is evaluative and too long.",
+      "The body contains unattributed claims and loaded language (e.g., 'horrible spike', 'should never have happened').",
+      "The body structure violates rhythm rules (e.g., too many short declarative sentences in a row).",
+      "The context section includes speculation ('economic tension in Europe') not directly supported as a primary fact of the ECB appointment.",
+      "The facts list contains unattributed claims and uses quotes/judgments instead of reported data.",
+      "The body repeats information unnecessarily and ends paragraphs with evaluative framing."
+    ]
+  }
+}
