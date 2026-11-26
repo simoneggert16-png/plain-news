@@ -1,0 +1,87 @@
+{
+  "slug": "thanksgiving-storms-cause-flooding-and-power-outages-across-us-20261126-avux",
+  "category": "climate",
+  "image": "https://live-production.wcms.abc-cdn.net.au/9be1c8ff56a73b911f2d1c5889bf4139?impolicy=wcms_crop_resize&cropH=3333&cropW=5000&xPos=0&yPos=0&width=862&height=575",
+  "imageCredit": "Euronews",
+  "video": {
+    "type": "video",
+    "url": "https://video.euronews.com/mp4/SHD/62/30/09/05/SHD_PYR_6230095_20261126215507.mp4"
+  },
+  "importance": 3,
+  "publishedAt": "2026-11-26T22:39:38.945Z",
+  "updatedAt": "2026-11-26T22:39:38.945Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Euronews",
+      "title": "Thanksgiving storms flood US coasts and disrupt holiday travel",
+      "url": "https://www.euronews.com/2026/11/26/thanksgiving-storms-flood-us-coasts-and-disrupt-holiday-travel",
+      "publishedAt": "2026-11-26T21:57:53.000Z"
+    },
+    {
+      "outlet": "ABC Australia",
+      "title": "Major Thanksgiving storms inundate US with heavy rain, wind and flooding",
+      "url": "https://www.abc.net.au/news/2026-11-27/thanksgiving-floods-storms-across-us/107433308",
+      "publishedAt": "2026-11-26T21:25:11.000Z"
+    },
+    {
+      "outlet": "The Hill",
+      "title": "Thanksgiving storms ground DC flights, knock out power for more than 850K",
+      "url": "https://thehill.com/policy/energy-environment/6244928-thanksgiving-storm-flight-delays-power-outages/",
+      "publishedAt": "2026-11-26T22:01:20.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Thanksgiving storms cause flooding and power outages across US",
+      "dek": "Storms brought flooding and strong winds to parts of the United States on Thanksgiving, complicating holiday travel.",
+      "facts": [
+        "More than 600,000 homes and businesses were without electricity on Thursday afternoon, mostly in East Coast states, according to poweroutage.us.",
+        "All of New Jersey was under a state of emergency declared by Governor Mikie Sherrill, and parts of New York were under one declared by Governor Kathy Hochul.",
+        "Macy's postponed its 100th Thanksgiving Day Parade in Manhattan until Saturday after consulting city officials.",
+        "Wind gusts of 80 km/h or higher were expected along the Interstate 95 corridor, according to the National Weather Service."
+      ],
+      "body": [
+        "On Thursday, heavy rain and winds brought flooding to parts of the United States, complicating holiday travel.",
+        "Streets were inundated in Sea Isle City and Ocean City in New Jersey, and water spread across parts of Avalon, where business administrator Scott J. Wahl stated the town saw some of the worst flooding in its history.",
+        "The National Weather Service warned of disruption at eastern US airports through Friday morning, citing poor visibility, turbulence, strong winds, and ice forming on aircraft.",
+        "More than 420 flights were canceled nationwide and nearly 2,000 flights were delayed by late Thursday afternoon, according to flight-tracking website FlightAware."
+      ],
+      "context": "Coastal flood warnings were issued from Southern California to the Oregon and Washington coasts because of king tides, which occur when the gravitational pulls of the moon and sun align to raise water levels.",
+      "imageCaption": "Workers rushed to deflate the parade's balloons following the rescheduled New York event. ( AP: Yuki Iwamura )"
+    },
+    "pt": {
+      "title": "Tempestades de Ação de Graças causam inundações e cortes de energia nos EUA",
+      "dek": "Tempestades trouxeram inundações e ventos fortes a partes dos EUA na Ação de Graças, complicando a viagem de férias.",
+      "facts": [
+        "Mais de 600 mil lares e empresas ficaram sem eletricidade na tarde de quinta-feira, principalmente nos estados da Costa Leste, segundo o poweroutage.us.",
+        "Todo o Novo Jérsei estava sob estado de emergência declarado pelo governador Mikie Sherrill, e partes de Nova York estavam sob uma declarada pela governadora Kathy Hochul.",
+        "A Macy's adiou o seu desfile de Ação de Graças de 100.ª edição em Manhattan para sábado após consultar autoridades da cidade.",
+        "Ráfagas de vento de 80 km/h ou mais eram esperadas ao longo do corredor da Interestadual 95, segundo o Serviço Meteorológico Nacional."
+      ],
+      "body": [
+        "Na quinta-feira, chuva forte e ventos causaram inundações em partes dos Estados Unidos, complicando as viagens de feriado.",
+        "As ruas ficaram inundadas em Sea Isle City e Ocean City, em Nova Jersey, e a água espalhou-se por partes de Avalon, onde o administrador de negócios Scott J. Wahl afirmou que a cidade registou algumas das piores inundações da sua história.",
+        "O Serviço Nacional de Meteorologia alertou para perturbações nos aeroportos do leste dos EUA até à manhã de sexta-feira, citando pouca visibilidade, turbulência, ventos fortes e formação de gelo nas aeronaves.",
+        "Mais de 420 voos foram cancelados a nível nacional e quase 2.000 voos foram atrasados até ao final da tarde de quinta-feira, de acordo com o website de rastreamento de voos FlightAware."
+      ],
+      "context": "Avisos de enchentes costeiras foram emitidos da Califórnia do Sul à costa de Oregon e Washington devido às marés vivas, que ocorrem quando as atrações gravitacionais da lua e do sol se alinham para elevar os níveis da água.",
+      "imageCaption": "Trabalhadores apressaram-se a desinflar as bolas do desfile após o evento remarcado em Nova York. (AP: Yuki Iwamura)"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "The headline uses a colon-like structure in its implied meaning and is not a purely factual statement of what happened.",
+      "The dek is not a single sentence and exceeds the length constraint.",
+      "The 'facts' list contains claims that need stricter attribution or refinement (e.g., the general statement about storms bringing flooding/winds).",
+      "The body paragraphs are too long and lack the required sentence variation (must have at least one longer sentence with two clauses, and never four short declarative sentences in a row).",
+      "The 'context' section uses evaluative framing ('powerful coastal storm moved across the United States').",
+      "The draft contains filler and restatements (e.g., the general summary in the context section).",
+      "The structure does not adhere to the required paragraph opening rule (open with actor, number, document, or date, not the same noun as the previous paragraph)."
+    ]
+  }
+}
