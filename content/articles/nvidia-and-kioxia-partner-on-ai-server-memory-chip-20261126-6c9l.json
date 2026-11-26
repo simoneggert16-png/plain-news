@@ -1,0 +1,72 @@
+{
+  "slug": "nvidia-and-kioxia-partner-on-ai-server-memory-chip-20261126-6c9l",
+  "category": "tech",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-11-26T21:09:48.439Z",
+  "updatedAt": "2026-11-26T21:09:48.439Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Nikkei Asia",
+      "title": "Nvidia, Kioxia team on AI server memory as alternative to South Korean chips",
+      "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-kioxia-team-on-ai-server-memory-as-alternative-to-south-korean-chips",
+      "publishedAt": "2026-11-26T21:07:37.886Z"
+    },
+    {
+      "outlet": "TechCrunch",
+      "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+      "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+      "publishedAt": "2026-11-26T20:03:54.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Nvidia and Kioxia partner on AI server memory; chip shipments to Southeast Asia paused",
+      "dek": "Nvidia collaborates with Kioxia on AI server memory while pausing shipments to Southeast Asia",
+      "facts": [
+        "Nvidia and Kioxia are testing racks that combine solid-state drives with GPUs for AI servers",
+        "Kioxia is the fourth-largest global NAND memory supplier, behind South Korean leaders",
+        "Nvidia has paused server shipments to Malaysia, Singapore, Thailand, and Indonesia",
+        "The pause follows reports that Chinese companies have been tapping Nvidia chips remotely from data centers in Southeast Asia",
+        "The Institute for Progress estimates remote data centers supply about 24% of China's AI computing power"
+      ],
+      "body": [
+        "Nvidia and Japanese chipmaker Kioxia are collaborating on memory for AI servers, targeting a market currently dominated by South Korean suppliers. Kioxia, the fourth-largest global NAND memory supplier, is testing server racks that combine solid-state drives with GPUs. The partnership aims to provide an alternative to the established players in the AI server memory space.",
+        "Nvidia has instructed manufacturing partners, including Dell and Super Micro, to pause server shipments to Malaysia, Singapore, Thailand, and Indonesia. The pause is indefinite as Nvidia assesses whether its regional partners are meeting U.S. export requirements.",
+        "According to the Wall Street Journal, Chinese companies have been tapping Nvidia chips remotely from data centers in Southeast Asian countries. A think tank, the Institute for Progress, estimates these remote data centers supply about 24% of China's AI computing power."
+      ],
+      "context": "Nvidia is working with Kioxia to develop memory for AI servers, aiming to diversify sources beyond dominant South Korean suppliers. Simultaneously, the U.S. Commerce Department has closed a loophole allowing remote data centers in Southeast Asia to supply AI computing power to Chinese entities.",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Nvidia et Kioxia s'associent pour la mémoire des serveurs IA ; les expéditions de puces vers l'Asie du Sud-Est suspendues",
+      "dek": "Nvidia collabore avec Kioxia sur la mémoire des serveurs IA tout en suspendant les expéditions vers l'Asie du Sud-Est",
+      "facts": [
+        "Nvidia et Kioxia testent des baies combinant des SSD avec des GPU pour les serveurs IA",
+        "Kioxia est le quatrième fournisseur mondial de mémoire NAND, derrière les leaders sud-coréens",
+        "Nvidia a suspendu les expéditions de serveurs vers la Malaisie, Singapour, la Thaïlande et l'Indonésie",
+        "La suspension fait suite à des rapports selon lesquels des entreprises chinoises accèdent aux puces Nvidia à distance depuis des centres de données en Asie du Sud-Est",
+        "L'Institut for Progress estime que les centres de données à distance fournissent environ 24 % de la puissance de calcul IA de la Chine"
+      ],
+      "body": [
+        "Nvidia et le fabricant japonais de puces Kioxia collaborent sur la mémoire destinée aux serveurs IA, ciblant un marché actuellement dominé par les fournisseurs sud-coréens. Kioxia, quatrième fournisseur mondial de mémoire NAND, teste des baies de serveurs qui combinent des disques SSD avec des GPU. Le partenariat vise à offrir une alternative aux acteurs établis dans le domaine de la mémoire des serveurs IA.",
+        "Nvidia a instruit ses partenaires de fabrication, notamment Dell et Super Micro, de suspendre les expéditions de serveurs vers la Malaisie, Singapour, la Thaïlande et l'Indonésie. La pause est indéfinie alors que Nvidia évalue si ses partenaires régionaux respectent les exigences d'exportation américaines.",
+        "Selon le Wall Street Journal, des entreprises chinoises accèdent aux puces Nvidia à distance depuis des centres de données dans les pays d'Asie du Sud-Est. Un think tank, l'Institute for Progress, estime que ces centres de données à distance fournissent environ 24 % de la puissance de calcul IA de la Chine."
+      ],
+      "context": "Nvidia travaille avec Kioxia pour développer de la mémoire pour les serveurs IA, visant à diversifier les sources au-delà des fournisseurs sud-coréens dominants. En même temps, le Département du Commerce américain a fermé une faille permettant aux centres de données à distance en Asie du Sud-Est d'alimenter en puissance de calcul IA des entités chinoises. @@CAPTION||",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Technology & Digital Frontiers Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts 4 and 5 in the 'facts' array are not directly supported by the provided sources. Fact 4 misattributes a 'crackdown' and combines details from S2 with unsourced inference. Fact 5 cites the Institute for Progress estimate, which appears in S2 but is not confirmed as a sourced fact in the provided S1 text. The 'context' section contains evaluative language ('heightened U.S. scrutiny') and vague phrasing. The dek contains evaluation ('challenge South Korean memory dominance'). The body paragraph 3 contains speculation ('Nvidia is acting to ensure compliance'). Sentence rhythm issues: four short declarative sentences in a row in paragraph 2. The headline uses a colon and exceeds ideal length/format preferences."
+    ]
+  }
+}
