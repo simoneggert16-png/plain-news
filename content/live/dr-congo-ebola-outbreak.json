@@ -1,55 +1,192 @@
 {
-  "meta": {
-    "outlets": [
-      "Al Jazeera",
-      "The Hindu",
-      "AllAfrica",
-      "MedicalXpress"
-    ],
-    "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
-  },
   "slug": "dr-congo-ebola-outbreak",
+  "status": "live",
+  "category": "health",
+  "importance": 5,
   "topic": "DR Congo Ebola Outbreak",
-  "status": "ended",
+  "keywords": [
+    "ebola",
+    "congo",
+    "dr congo",
+    "democratic republic of congo",
+    "outbreak",
+    "health",
+    "epidemic",
+    "disease",
+    "kivu"
+  ],
+  "startedAt": "2026-11-26T10:10:38.758Z",
+  "endedAt": null,
+  "updatedAt": "2026-11-26T10:12:51.868Z",
+  "articleSlug": "dr-congo-ebola-outbreak",
+  "sourceCount": 4,
+  "wantsStats": false,
+  "updates": [
+    {
+      "id": "u-1795686865000-h6b2",
+      "at": "2026-11-26T09:54:25.000Z",
+      "kind": "breaking",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Congo Ebola cases exceed 12,000 amid fighting",
+          "body": "Government data showed Thursday that the Ebola outbreak in eastern Congo surpassed 12,000 confirmed cases, while fighting between rebels and the army disrupts containment efforts. According to reports, only 15% of new cases originate from contacts known to health authorities, and violence has forced some responders to evacuate."
+        },
+        "es": {
+          "headline": "Los casos de ébola en el Congo superan los 12.000 en medio de los combates",
+          "body": "Datos gubernamentales mostraron este jueves que el brote de ébola en el este del Congo superó los 12.000 casos confirmados, mientras los combates entre los rebeldes y el ejército perturban las labores de contención. Según los informes, solo el 15% de los nuevos casos provienen de contactos conocidos por las autoridades sanitarias, y la violencia ha obligado a evacuar a algunos equipos de respuesta."
+        },
+        "fr": {
+          "headline": "Les cas d'Ebola au Congo dépassent les 12 000 sur fond de combats",
+          "body": "Selon des données gouvernementales publiées jeudi, l'épidémie d'Ebola dans l'est du Congo a dépassé les 12 000 cas confirmés, tandis que les combats entre rebelles et l'armée perturbent les efforts de confinement. D'après les rapports, seuls 15 % des nouveaux cas proviennent de contacts connus des autorités sanitaires, et les violences ont contraint certains intervenants à évacuer."
+        },
+        "de": {
+          "headline": "Ebola-Fälle im Kongo übersteigen im Zuge von Kämpfen 12.000",
+          "body": "Regierungsdaten zeigten am Donnerstag, dass der Ebola-Ausbruch im Osten des Kongo 12.000 bestätigte Fälle überschritten hat, während Kämpfe zwischen Rebellen und der Armee die Eindämmungsmaßnahmen behindern. Berichten zufolge stammen nur 15 Prozent der Neuinfektionen von Kontrollpersonen, die den Gesundheitsbehörden bekannt sind, und die Gewalt hat einige Helfer zur Evakuierung gezwungen."
+        },
+        "it": {
+          "headline": "Congo: i casi di Ebola superano quota 12.000 tra scontri armati",
+          "body": "I dati governativi pubblicati giovedì indicano che l'epidemia di Ebola nell'est del Congo ha superato i 12.000 casi confermati, mentre i combattimenti tra i ribelli e l'esercito ostacolano gli sforzi di contenimento. Secondo quanto riferito, solo il 15% dei nuovi casi proviene da contatti noti alle autorità sanitarie e le violenze hanno costretto alcuni operatori sanitari a evacuare."
+        },
+        "pt": {
+          "headline": "Casos de Ébola no Congo ultrapassam os 12.000 em plena vaga de combates",
+          "body": "Dados governamentais mostraram na quinta-feira que o surto de Ébola no leste do Congo ultrapassou os 12.000 casos confirmados, enquanto os combates entre rebeldes e o exército perturbam os esforços de contenção. Segundo os relatos, apenas 15% dos novos casos provêm de contactos conhecidos pelas autoridades de saúde, e a violência forçou algumas equipas de resposta a evacuar."
+        },
+        "ja": {
+          "headline": "コンゴのエボラ出血熱、戦闘の中で感染者が1万2000人を突破",
+          "body": "政府が木曜日に発表したデータによると、コンゴ東部のエボラ出血熱の確認された感染者数が1万2000人を突破した一方、反乱勢力と国軍の戦闘が封じ込め作業を妨げている。報道によると、新規感染者のうち保健当局が把握していた接触者に由来するのはわずか15％にとどまり、暴力行為により一部の支援要員の退避を余儀なくされている。"
+        },
+        "zh": {
+          "headline": "刚果埃博拉确诊病例在战乱中突破1.2万例",
+          "body": "政府周四公布的数据显示，刚果（金）东部的埃博拉疫情确诊病例已超过1.2万例，同时反叛武装与政府军之间的交火打断了疫情防控工作。据报道，新确诊病例中仅有15%来自卫生当局已知的密切接触者，暴力活动已迫使部分救援人员撤离。"
+        },
+        "ko": {
+          "headline": "콩고, 교전 속 에볼라 확진 1만 2000건 넘어",
+          "body": "정부 자료에 따르면 목요일 동부 콩고의 에볼라 발병 확진 사례가 1만 2000건을 넘어섰으며, 반군과 정부군 간의 교전으로 확산 방지 노력이 차질을 빚고 있다. 보도에 따르면 신규 확진자의 15%만이 보건 당국에 이미 파악된 접촉자로부터 발생했으며, 폭력 사태로 인해 일부 대응 인력은 대피해야 했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Euronews",
+          "title": "Ebola cases in Congo surpass 12,000 in fastest-growing outbreak",
+          "url": "https://www.euronews.com/2026/11/26/ebola-cases-in-congo-surpass-12000-in-fastest-growing-outbreak",
+          "publishedAt": "2026-11-26T09:54:25.000Z"
+        },
+        {
+          "outlet": "MedicalXpress",
+          "title": "Ebola outbreak in Congo reaches 12,000 cases as violence forces some responders to evacuate",
+          "url": "https://medicalxpress.com/news/2026-11-ebola-outbreak-congo-cases-violence.html",
+          "publishedAt": "2026-11-26T09:34:05.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Congo’s Ebola cases exceed 12,000 as responders struggle to contain outbreak",
+          "url": "https://www.straitstimes.com/world/congos-ebola-cases-exceed-12000-as-responders-struggle-to-contain-outbreak",
+          "publishedAt": "2026-11-26T07:46:46.000Z"
+        },
+        {
+          "outlet": "Al Jazeera",
+          "title": "DR Congo Ebola cases surpass 12,000 as fighting disrupts response in east",
+          "url": "https://www.aljazeera.com/news/2026/11/26/dr-congo-ebola-cases-surpass-12000-as-fighting-disrupts-response-in-east?traffic_source=rss",
+          "publishedAt": "2026-11-26T07:41:30.000Z"
+        }
+      ]
+    }
+  ],
+  "seenUrls": [
+    "https://www.healthline.com/health-news/healthy-salt-substitute-may-prevent-millions-of-heart-disease-stroke-deaths",
+    "https://www.healthline.com/health-news/mammograms-may-offer-early-detection-cardiovascular-disease",
+    "https://www.healthline.com/health-news/u-s-loses-measles-elimination-status-after-26-years",
+    "https://www.healthline.com/health-news/menopausale-hormone-therapy-lower-dementia-risk",
+    "https://www.healthline.com/health-news/glp-1s-ozempic-may-boost-brain-health-lower-dementia-risk",
+    "https://www.euronews.com/2026/11/26/ebola-cases-in-congo-surpass-12000-in-fastest-growing-outbreak",
+    "https://medicalxpress.com/news/2026-11-ebola-outbreak-congo-cases-violence.html",
+    "https://www.straitstimes.com/world/kenya-breached-constitution-in-building-us-backed-ebola-quarantine-site-court-says",
+    "https://www.straitstimes.com/world/congos-ebola-cases-exceed-12000-as-responders-struggle-to-contain-outbreak",
+    "https://www.aljazeera.com/news/2026/11/26/dr-congo-ebola-cases-surpass-12000-as-fighting-disrupts-response-in-east?traffic_source=rss",
+    "https://www.bbc.co.uk/news/articles/cwz0k90rgpm8o?at_medium=RSS&at_campaign=rss",
+    "https://www.aljazeera.com/news/2026/11/26/gaza-meningitis-cases-surge-as-collapsing-infrastructure-fuels-health-fears?traffic_source=rss"
+  ],
+  "seenHeadlines": [],
+  "locales": {
+    "en": {
+      "title": "DR Congo Ebola Outbreak",
+      "dek": "Confirmed Ebola cases in the Democratic Republic of Congo surpass 12,000 amid escalating violence and disruptions to response efforts."
+    },
+    "fr": {
+      "title": "Épidémie d'Ebola en RDC",
+      "dek": "Les cas confirmés d'Ebola en République démocratique du Congo dépassent les 12 000 dans un contexte d'escalade des violences et de perturbations des opérations de riposte."
+    },
+    "es": {
+      "title": "Brote de ébola en la República Democrática del Congo",
+      "dek": "Los casos confirmados de ébola en la República Democrática del Congo superan los 12.000 en medio de una escalada de violencia y de interrupciones en las labores de respuesta."
+    },
+    "de": {
+      "title": "Ebola-Ausbruch in der DR Kongo",
+      "dek": "Die Zahl der bestätigten Ebola-Fälle in der Demokratischen Republik Kongo übersteigt infolge eskalierender Gewalt und Störungen der Hilfsmaßnahmen 12.000."
+    },
+    "it": {
+      "title": "Epidemia di Ebola nella Repubblica Democratica del Congo",
+      "dek": "I casi confermati di Ebola nella Repubblica Democratica del Congo superano quota 12.000 tra violenze in aumento e interruzioni degli interventi di risposta."
+    },
+    "pt": {
+      "title": "Surto de Ébola na RDC",
+      "dek": "Casos confirmados de Ébola na República Democrática do Congo ultrapassam os 12.000 em plena escalada de violência e perturbações nos esforços de resposta."
+    },
+    "ja": {
+      "title": "コンゴ民主共和国でエボラ出血熱が流行",
+      "dek": "コンゴ民主共和国におけるエボラ出血熱の確認症例数が1万2000件を超えた。暴力の激化により、対応活動が妨げられている。"
+    },
+    "zh": {
+      "title": "刚果（金）埃博拉疫情",
+      "dek": "在暴力升级和应对工作受阻的背景下，刚果（金）确诊的埃博拉病例已超过1.2万例。"
+    },
+    "ko": {
+      "title": "콩고민주공화국 에볼라 발병",
+      "dek": "폭력 격화와 대응 노력 차질 속 콩고민주공화국의 확진 에볼라 사례가 12,000건을 넘어섰다."
+    }
+  },
   "article": {
     "slug": "dr-congo-ebola-outbreak",
+    "updatedAt": "2026-11-26T10:13:02.699Z",
     "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "",
-        "body": [],
-        "facts": [],
-        "title": "DR Kongo-Epidemie überschreitet 11.000 Fälle",
-        "context": ""
-      },
       "en": {
-        "dek": "International aid fails to reach DR Congo Ebola front lines as Kenya marks 42-day countdown to Ebola-free status.",
-        "body": [
-          "Democratic Republic of the Congo authorities announced on 11 November that the Ebola outbreak has surpassed 11,000 total cases, Al Jazeera reported that the outbreak has resulted in 5,387 deaths.",
-          "MedicalXpress and Al Jazeera confirmed these figures represent the highest number of cases recorded in the country's history for this virus.",
-          "Doctors Without Borders (MSF) reported on 12 November that international aid funds intended for the DR Congo Ebola response are not reaching the front lines.",
-          "The medical charity stated that staff are going unpaid and lack essential supplies as the virus continues to spread.",
-          "BBC and AllAfrica reported that these financial issues are hindering the containment of the virus in affected regions.",
-          "The reports indicated that the lack of resources is impacting the ability of medical teams to operate effectively.",
-          "Kenya discharged its last Ebola patient on 11 November, Health Minister Aden Duale said.",
-          "The country began a 42-day countdown to being declared Ebola-free, provided no new cases are recorded.",
-          "BBC and The Straits Times reported that the discharge marks a step towards the country achieving virus-free status.",
-          "DW and Der Spiegel confirmed that Kenya recorded nine total cases during the outbreak.",
-          "Africa CDC warns that attacks on health workers and facilities are increasingly hindering efforts to contain the Ebola outbreak in eastern DR Congo, which has killed more than 5,400 people.",
-          "The New York Times reports Israeli authorities say Hamas established a command center at the hospital complex."
-        ],
+        "title": "Congo Ebola outbreak surpasses 12,000 cases amid eastern fighting",
+        "dek": "Confirmed Ebola cases in the Democratic Republic of Congo have exceeded 12,000 during an ongoing conflict.",
         "facts": [
-          "DR Congo Ebola outbreak has surpassed 11,000 total cases with 5,387 deaths.",
-          "International aid funds are not reaching the front lines of the DR Congo Ebola response.",
-          "Kenya discharged its last Ebola patient on 11 November.",
-          "Kenya began a 42-day countdown to being declared Ebola-free.",
-          "Kenya recorded nine confirmed Ebola cases during the outbreak.",
-          "Attacks on health workers are hindering Ebola containment in eastern DR Congo."
+          "Government data showed confirmed Ebola cases surpassed 12,000 on Thursday.",
+          "Only 15% of new cases originate from contacts known to health authorities.",
+          "Fighting between rebels and the army has disrupted containment efforts.",
+          "Violence has forced some health responders to evacuate eastern Congo."
         ],
-        "title": "DR Congo Ebola outbreak exceeds 11,000 cases",
-        "context": "Ebola outbreaks in the Democratic Republic of the Congo have occurred periodically since the virus was first identified in 1976. The virus spreads through contact with bodily fluids and causes severe symptoms including fever, bleeding, and organ failure.",
+        "body": [
+          "Government data released on Thursday showed that confirmed Ebola cases in eastern Congo surpassed 12,000. Reports indicated that the outbreak is currently the fastest-growing on record.",
+          "Armed conflict between rebels and the national army has heavily disrupted medical containment efforts. According to health reports, violence in the region has forced some medical responders to evacuate.",
+          "Health authorities stated that tracking the virus has become increasingly difficult due to the ongoing security situation. Only 15% of new cases currently originate from contacts already known to health workers.",
+          "The Democratic Republic of Congo faces persistent challenges in managing infectious diseases while military clashes continue. Humanitarian organizations struggle to access affected populations as combat zones expand.",
+          "Officials continue to monitor infection rates while assessing the safety of deployment areas in the east. Responders report that security threats directly impede their ability to isolate infected individuals."
+        ],
+        "context": "The Democratic Republic of Congo has experienced multiple Ebola outbreaks historically, often complicated by regional armed conflict and displacement. Containment relies heavily on contact tracing and community engagement, which require stable security conditions.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "Ebola-Ausbruch im Kongo übersteigt 12.000 Fälle inmitten von Kämpfen im Osten",
+        "dek": "Die bestätigten Ebola-Fälle in der Demokratischen Republik Kongo haben während eines anhaltenden Konflikts die Marke von 12.000 überschritten.",
+        "facts": [
+          "Regierungsdaten zeigten, dass die bestätigten Ebola-Fälle am Donnerstag die Zahl von 12.000 überstiegen.",
+          "Nur 15 Prozent der Neuinfektionen gehen auf Kontakte zurück, die den Gesundheitsbehörden bekannt sind.",
+          "Kämpfe zwischen Rebellen und der Armee haben die Eindämmungsbemühungen gestört.",
+          "Die Gewalt hat einige medizinische Einsatzkräfte zur Evakuierung des Ostkongos gezwungen."
+        ],
+        "body": [
+          "Am Donnerstag veröffentlichte Regierungsdaten zeigten, dass die bestätigten Ebola-Fälle im Osten des Kongos 12.000 überstiegen haben. Berichten zufolge handelt es sich bei dem Ausbruch derzeit um den am schnellsten wachsenden seit Beginn der Aufzeichnungen.",
+          "Bewaffnete Konflikte zwischen Rebellen und der nationalen Armee haben die medizinischen Eindämmungsbemühungen massiv gestört. Gesundheitsberichten zufolge hat die Gewalt in der Region einige medizinische Einsatzkräfte zur Evakuierung gezwungen.",
+          "Gesundheitsbehörden erklärten, dass die Verfolgung des Virus aufgrund der anhaltenden Sicherheitslage zunehmend schwierig geworden sei. Lediglich 15 Prozent der Neuinfektionen gehen derzeit auf Kontakte zurück, die den Gesundheitssarbeitern bereits bekannt waren.",
+          "Die Demokratische Republik Kongo sieht sich bei der Bewältigung von Infektionskrankheiten anhaltenden Herausforderungen gegenüber, während die militärischen Zusammenstöße anhalten. Humanitäre Organisationen haben Schwierigkeiten, Zugang zu den betroffenen Bevölkerungsgruppen zu erhalten, da sich die Kampfzonen ausdehnen.",
+          "Offizielle Stellen überwachen weiterhin die Infektionsraten und bewerten gleichzeitig die Sicherheit der Einsatzgebiete im Osten. Einsatzkräfte berichten, dass Sicherheitsbedrohungen ihre Fähigkeit, infizierte Personen zu isolieren, direkt behindern."
+        ],
+        "context": "Die Demokratische Republik Kongo hat in ihrer Geschichte mehrere Ebola-Ausbrüche erlebt, die häufig durch regionale bewaffnete Konflikte und Vertreibung kompliziert wurden. Die Eindämmung stützt sich stark auf die Rückverfolgung von Kontakten und die Einbindung der Gemeinschaft, was stabile Sicherheitsbedingungen erfordert."
       }
     },
     "versions": [
@@ -244,532 +381,16 @@
           }
         }
       }
+    ]
+  },
+  "meta": {
+    "createdBy": "bots/live.mjs",
+    "outlets": [
+      "Euronews",
+      "Al Jazeera",
+      "The Straits Times",
+      "MedicalXpress"
     ],
-    "updatedAt": "2026-11-13T06:41:02.870Z"
-  },
-  "endedAt": "2026-11-13T06:40:56.637Z",
-  "locales": {
-    "de": {
-      "dek": "Die Zahl der bestätigten Ebola-Fälle in der Demokratischen Republik Kongo übersteigt im bisher tödlichsten Ausbruch der Region 11.000.",
-      "title": "Ebola-Ausbruch in DR Kongo"
-    },
-    "en": {
-      "dek": "Confirmed Ebola cases in the Democratic Republic of Congo surpass 11,000 in the deadliest outbreak on record for the region.",
-      "title": "DR Congo Ebola Outbreak"
-    },
-    "es": {
-      "dek": "Los casos confirmados de ébola en la República Democrática del Congo superan los 11.000 en el brote más mortífero registrado en la región.",
-      "title": "Brote de ébola en la RDC"
-    },
-    "fr": {
-      "dek": "Le nombre de cas confirmés d'Ebola en République démocratique du Congo dépasse les 11 000, constituant la plus meurtrière épidémie jamais enregistrée dans la région.",
-      "title": "Épidémie d'Ebola en RDC"
-    },
-    "it": {
-      "dek": "I casi confermati di Ebola nella Repubblica Democratica del Congo superano quota 11.000, segnando l'epidemia più letale mai registrata nella regione.",
-      "title": "Epidemia di Ebola nella RD del Congo"
-    },
-    "ja": {
-      "dek": "コンゴ民主共和国におけるエボラ出血熱の確認症例数が1万1000件を超え、同地域で過去最悪の流行となっている。",
-      "title": "コンゴ民主共和国でエボラ出血熱が流行"
-    },
-    "ko": {
-      "dek": "콩고민주공화국의 에볼라 확진자 수가 1만 1천 명을 넘어서며 해당 지역 역사상 가장 치명적인 발병 사례로 기록되었다.",
-      "title": "콩고민주공화국 에볼라 발병"
-    },
-    "pt": {
-      "dek": "Os casos confirmados de Ébola na República Democrática do Congo ultrapassam os 11 000, no surto mais mortífero registado na região.",
-      "title": "Surto de Ébola na RDC"
-    },
-    "zh": {
-      "dek": "刚果民主共和国确诊的埃博拉病例已超过1.1万例，这是该地区有记录以来最致命的一次疫情。",
-      "title": "刚果（金）埃博拉疫情"
-    }
-  },
-  "updates": [
-    {
-      "at": "2026-11-13T04:58:48.000Z",
-      "id": "u-1794545928000-fsk9",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Präsident Felix Tschisekedi hat ein Gesetz erlassen, das eine verfassungsmäßige Änderung ermöglicht. Der oppositionelle Protest kritisiert dies als Bestreben, am Machtapparat zu bleiben. RFI berichtete, dass der Präsident das Gesetz erlassen habe, während AllAfrica berichtete, dass die Opposition dies als Bestreben, am Machtapparat zu bleiben, verurteilte.",
-          "headline": "DR-Kongolei-Präsident Tschisekedi erleichtert Dritte Amtszeit unter neuer Verfassung"
-        },
-        "en": {
-          "body": "President Felix Tshisekedi has enacted a law that paves the way for constitutional change, condemned by the opposition as an attempt to cling onto power. RFI reported the president enacted the law, while AllAfrica reported the opposition condemned it as an attempt to cling onto power.",
-          "headline": "DR Congo leader enacts law enabling third term under new constitution"
-        },
-        "es": {
-          "body": "El presidente Félix Tshisekedi ha promulgado una ley que allana el camino para el cambio constitucional, condenado por la oposición como un intento de aferrarse al poder. RFI informó que el presidente promulgó la ley, mientras que AllAfrica informó que la oposición lo condenó como un intento de aferrarse al poder.",
-          "headline": "Líder de la RDC promulga ley que permite un tercer mandato bajo la nueva constitución"
-        },
-        "fr": {
-          "body": "Le président Félix Tshisekedi a promulgué une loi ouvrant la voie à un changement constitutionnel, que l'opposition dénonce comme une tentative de s'accrocher au pouvoir. RFI a rapporté que le président avait promulgué la loi, tandis qu'AllAfrica a rapporté que l'opposition la dénonçait comme une tentative de s'accrocher au pouvoir.",
-          "headline": "Le dirigeant de la RD Congo promulgue une loi permettant un troisième mandat dans le cadre d'une nouvelle constitution"
-        },
-        "it": {
-          "body": "Il presidente Felix Tshisekedi ha promulgato una legge che apre alla modifica costituzionale, condannata dall'opposizione come tentativo di restare al potere. Secondo RFI il presidente ha promulgato la legge, mentre AllAfrica ha riportato la condanna dell'opposizione come tentativo di restare al potere.",
-          "headline": "Il leader della Repubblica Democratica del Congo vara la legge che consente un terzo mandato in base alla nuova Costituzione"
-        },
-        "ja": {
-          "body": "フェリックス・チセケディ大統領は、憲法改正への道を開く法律を制定した。野党はこれを権力にしがみつこうとする試みだと非難している。RFIは大統領が法律を制定したと報じ、AllAfricaは野党が権力にしがみつこうとする試みだと非難したと伝えた。",
-          "headline": "コンゴ民主共和国の指導者、新憲法下で3期目を可能にする法律を制定"
-        },
-        "ko": {
-          "body": "펠릭스 치세케디 대통령이 헌법 개정을 가능하게 하는 법률에 서명했습니다. 야당은 이가 권력을 잡으려는 시도로 비판하고 있습니다. RFI는 대통령이 법률을 서명했다고 보도했으며, AllAfrica는 야당이 이를 권력을 잡으려는 시도로 비판했다고 보도했습니다.",
-          "headline": "DR콩고 지도자, 새로운 헌법 하에서 3선 가능하게 하는 법률 서명"
-        },
-        "pt": {
-          "body": "O Presidente Felix Tshisekedi promulgou uma lei que abre caminho a uma alteração constitucional, condenada pela oposição como uma tentativa de se agarrar ao poder. A RFI noticiou que o Presidente promulgou a lei, enquanto a AllAfrica noticiou que a oposição a condenou como uma tentativa de se agarrar ao poder.",
-          "headline": "Dirigente da RD Congo promulga lei que permite terceiro mandato ao abrigo de nova Constituição"
-        },
-        "zh": {
-          "body": "总统费利克斯·齐塞克迪颁布了一项为宪法变革铺平道路的法律，反对派谴责此举是企图继续掌权。RFI报道称总统已颁布该法律，AllAfrica则报道称反对派谴责这是企图继续掌权。",
-          "headline": "刚果（金）领导人颁布法律，为新宪法下开启第三任期铺路"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://allafrica.com/stories/202611130005.html",
-          "title": "Congo-Kinshasa: DR Congo Leader Opens Way for Third Term Under New Constitution",
-          "outlet": "AllAfrica",
-          "publishedAt": "2026-11-13T04:58:48.000Z"
-        },
-        {
-          "url": "https://www.politico.eu/podcast/brussels-playbook-podcast/what-will-a-female-president-mean-for-germany-and-europe/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-          "title": "What will a female president mean for Germany and Europe?",
-          "outlet": "Politico Europe",
-          "publishedAt": "2026-11-13T03:00:00.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-12T20:17:37.000Z",
-      "id": "u-1794514657000-qcxo",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Israeliische Angriffe haben am Donnerstag in Gazastreifen 11 Menschen getötet, sechs davon bei einem Bombenangriff auf das Nasser-Krankenhaus im Süden des Gebiets früh am Tag, wie Gesundheitsbeamte mitteilten. Gesundheitsbehörden gaben an, dass der Angriff sechs Menschen getötet habe, darunter einen Chirurgen.",
-          "headline": "Israeliischer Luftschlag auf Gazastreifen-Klinik tötet sechs Menschen einschließlich Chirurgen"
-        },
-        "en": {
-          "body": "Israeli fire killed 11 people in Gaza on Thursday, six of them in the bombing of Nasser hospital in south Gaza early in the day, health officials said. Health authorities say the strike killed six people including a surgeon.",
-          "headline": "Israeli strike on Gaza hospital kills six including surgeon"
-        },
-        "es": {
-          "body": "El fuego israelí mató a 11 personas en Gaza el jueves, seis de ellas en el bombardeo del hospital Nasser al sur de la franja, temprano en el día, según autoridades de salud. Las autoridades sanitarias indican que el ataque mató a seis personas, incluido un cirujano.",
-          "headline": "Ataque israelí a hospital de Gaza deja seis muertos, incluido un cirujano"
-        },
-        "fr": {
-          "body": "Des tirs israéliens ont tué 11 personnes à Gaza jeudi, dont six dans le bombardement de l'hôpital Nasser dans le sud de la bande de Gaza tôt dans la journée, ont indiqué des responsables de la santé. Les autorités sanitaires affirment que la frappe a tué six personnes, dont un chirurgien.",
-          "headline": "Une frappe israélienne sur un hôpital de Gaza fait six morts, dont un chirurgien"
-        },
-        "it": {
-          "body": "Fuoco israeliano ha ucciso 11 persone a Gaza giovedì, di cui sei nell'attacco all'ospedale Nasser nel sud della Striscia, avvenuto all'inizio della giornata, secondo le autorità sanitarie. Le autorità sanitarie affermano che l'attacco ha ucciso sei persone, tra cui un chirurgo.",
-          "headline": "Attacco israeliano a ospedale a Gaza: morti sei persone, tra cui un chirurgo"
-        },
-        "ja": {
-          "body": "保健当局によると、イスラエルの攻撃により木曜日にガザで11人が死亡し、このうち6人は同日早朝、南部ガザのナセル病院への爆撃によるものだった。保健当局は、この攻撃で外科医を含む6人が死亡したと述べている。",
-          "headline": "イスラエルのガザの病院攻撃、外科医含む6人死亡"
-        },
-        "ko": {
-          "body": "이스라엘군의 가자지구 공격으로 목요일 11명이 사망했습니다. 이 중 남부 가자지구 나세르 병원 조기 공습으로 6명이 사망했습니다. 보건 당국에 따르면 공습으로 외과 의사 등 6명이 사망했습니다.",
-          "headline": "가자지구 병원 공습으로 외과의사와 6명 사망"
-        },
-        "pt": {
-          "body": "O fogo israelita matou 11 pessoas em Gaza na quinta-feira, seis delas no bombardeamento do hospital Nasser, no sul de Gaza, no início do dia, segundo as autoridades de saúde. As autoridades sanitárias afirmam que o ataque matou seis pessoas, incluindo um cirurgião.",
-          "headline": "Ataque israelita a hospital em Gaza mata seis pessoas, incluindo um cirurgião"
-        },
-        "zh": {
-          "body": "卫生官员称，周四以军火力在加沙造成11人死亡，其中6人死于当天凌晨对加沙南部纳赛尔医院的轰炸。卫生部门表示，此次袭击造成包括一名外科医生在内的六人死亡。",
-          "headline": "以军袭击加沙医院致六人死亡，包括一名外科医生"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOYVVySElpemNmLU54S2ZLMXJqanRNU25zbXMwT2R2VXhULTNCcmUtRU52MnJnNEZCY3ZaWFlkc3EzY1pmUjJzT2llb2ZWWW85bS01amNhMWhDWHRXZ1lvV1JQR1JCZERfbl9wM0dsQzR4RllmOGdjdm1jVDUxM3pTWEF5Z0NPa2R1NDAwWU5qV1I5dw?oc=5",
-          "title": "Israeli strike on a Gaza hospital kills 6 people, including surgeon, health authorities say",
-          "outlet": "CBC",
-          "publishedAt": "2026-11-12T20:17:37.000Z"
-        },
-        {
-          "url": "https://www.france24.com/en/israeli-strike-on-gaza-hospital-kills-six-including-surgeon-medics-say",
-          "title": "Israeli strike on Gaza hospital kills six, including surgeon, medics say",
-          "outlet": "France 24",
-          "publishedAt": "2026-11-12T20:03:55.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-12T15:16:00.000Z",
-      "id": "u-1794496560000-afrk",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Das Africa CDC warnt davor, dass Angriffe auf Gesundheitspersonal und -einrichtungen die Bemühungen, die Ebola-Epidemie im östlichen DR Kongo einzudämmen, zunehmend behindern. Dabei sind nach offiziellen Angaben mehr als 5.400 Menschen gestorben. Die New York Times berichtet, israelische Behörden hätten erklärt, die Hamas habe ein Kommandozentrum in einem Krankenhauskomplex eingerichtet.",
-          "headline": "Angriffe auf Gesundheitspersonal behindern Ebola-Bekämpfung in Kongo"
-        },
-        "en": {
-          "body": "Africa CDC warns that attacks on health workers and facilities are increasingly hindering efforts to contain the Ebola outbreak in eastern DR Congo, which has killed more than 5,400 people. The New York Times reports Israeli authorities say Hamas established a command center at the hospital complex.",
-          "headline": "Attacks on health workers hinder Congo Ebola fight"
-        },
-        "es": {
-          "body": "El CDC de África advierte que los ataques a trabajadores y instalaciones de salud están obstaculizando cada vez más los esfuerzos para contener el brote de ébola en el este de la RDC, que ha causado más de 5.400 muertes. The New York Times informa que las autoridades israelíes aseguran que Hamás estableció un centro de mando en el complejo hospitalario.",
-          "headline": "Ataques a trabajadores de salud obstaculizan la lucha contra el ébola en el Congo"
-        },
-        "fr": {
-          "body": "L'Africa CDC alerte que les attaques contre les travailleurs de santé et les structures de santé entravent de plus en plus les efforts pour contenir l'épidémie d'Ebola dans l'Est de la RDC, qui a fait plus de 5 400 morts. Le New York Times rapporte que les autorités israéliennes affirment que le Hamas a établi un centre de commandement au complexe hospitalier.",
-          "headline": "Attaques contre les travailleurs de santé qui entravent la lutte contre Ebola en RDC"
-        },
-        "it": {
-          "body": "L'Africa CDC avverte che gli attacchi contro operatori e strutture sanitarie ostacolano sempre più gli sforzi per contenere il focolaio di Ebola nell'est della RD Congo, che ha ucciso più di 5.400 persone. Il New York Times riferisce che le autorità israeliane affermano che Hamas ha stabilito un centro di comando nel complesso ospedaliero.",
-          "headline": "Attacchi contro gli operatori sanitari ostacolano la lotta all'Ebola in Congo"
-        },
-        "ja": {
-          "body": "アフリカCDCは、医療従事者や施設への攻撃が、東部コンゴ民主共和国（DRコンゴ）で5,400人以上が死亡したエボラ出血熱の封じ込め努力をいっそう妨げていると警告した。ニューヨーク・タイムズ紙は、イスラエル当局がハマスが病院複合施設に司令部を設置したと述べていると報じた。",
-          "headline": "医療従事者への攻撃がコンゴのエボラ対策を妨げる"
-        },
-        "ko": {
-          "body": "아프리카 CDC는 보건 종사자와 시설에 대한 공격이 5,400명 이상 사망한 동부 콩고민주공화국의 에볼라 발병 확산 방지 노력을 점점 더 저해하고 있다고 경고했다. 뉴욕타임스는 이스라엘 당국이 하마스가 병원 단지에 지휘 센터를 설치했다고 보도했다.",
-          "headline": "보건 종사자 공격이 콩고 에볼라 대응 방해"
-        },
-        "pt": {
-          "body": "O CDC África alerta que os ataques a profissionais e instalações de saúde estão a dificultar cada vez mais os esforços para conter o surto de Ébola no leste da RD Congo, que já matou mais de 5.400 pessoas. O New York Times noticia que as autoridades israelitas afirmam que o Hamas estabeleceu um centro de comando no complexo hospitalar.",
-          "headline": "Ataques a profissionais de saúde dificultam combate ao Ébola no Congo"
-        },
-        "zh": {
-          "body": "非洲疾控中心警告称，针对医护人员和医疗设施的袭击正日益阻碍刚果（金）东部遏制埃博拉疫情的努力，该疫情已导致5400多人死亡。《纽约时报》报道称，以色列当局表示哈马斯在医院建筑群内设立了指挥中心。",
-          "headline": "针对医护人员的袭击阻碍刚果抗击埃博拉"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.straitstimes.com/world/attacks-on-health-workers-hamper-congo-ebola-fight-africa-cdc-warns",
-          "title": "Attacks on health workers hamper Congo Ebola fight, Africa CDC warns",
-          "outlet": "The Straits Times",
-          "publishedAt": "2026-11-12T15:09:22.000Z"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbWJsX09iak1JNmhabW1OdjdOVW84Yk5iYVI0YmJJeEE1LTc0YTAyamNncXpSbHNGT1ZNOGlNWFotMDNybEo4Uk9oVmVzeEpzdnBsWWxrb3pPbldXQmhMQWd3T3pHd2lGN0xqVVhwSjlBWEwwRXR2U0FLOXZmdTZBWC05Vmx4RVc4ek53ZnBqQ1BBRUlyNWc?oc=5",
-          "title": "Israeli Strikes on Gaza Hospital Kill 6 and Injure Dozens, Health Officials Say",
-          "outlet": "The New York Times",
-          "publishedAt": "2026-11-12T15:16:00.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-12T14:24:48.000Z",
-      "id": "u-1794493488000-avu9",
-      "kind": "context",
-      "locales": {
-        "de": {
-          "body": "Große Summen internationaler Hilfsgelder erreichen laut Ärzte ohne Grenzen (MSF) nicht die Frontlinie des Ebola-Ausbruchs in der Demokratischen Republik Kongo. Die medizinische Hilfsorganisation berichtete, dass Mitarbeiter nicht bezahlt werden und es an lebensnotwendigen Versorgungsgütern mangelt, während sich das Virus weiter ausbreitet.",
-          "headline": "Medizinische Hilfsorganisation meldet fehlende Gelder für Ebola-Bekämpfung in DR Kongo"
-        },
-        "en": {
-          "body": "Large sums of international aid are not reaching the front line of the DR Congo Ebola outbreak, according to Doctors Without Borders (MSF). The medical charity reported that staff are going unpaid and lack essential supplies as the virus continues to spread.",
-          "headline": "Medical charity reports missing funds for DR Congo Ebola response"
-        },
-        "es": {
-          "body": "Grandes sumas de ayuda internacional no están llegando a la primera línea del brote de ébola en la República Democrática del Congo, según Médicos Sin Fronteras (MSF). La organización médica ha denunciado que el personal no está recibiendo sus salarios y carece de suministros esenciales mientras el virus continúa propagándose.",
-          "headline": "Una organización médica benéfica denuncia la falta de fondos para combatir el ébola en la RD del Congo"
-        },
-        "fr": {
-          "body": "D'importantes sommes d'aide internationale n'atteignent pas le front de l'épidémie d'Ebola en République démocratique du Congo, selon Médecins Sans Frontières (MSF). L'organisation médicale a rapporté que le personnel n'est pas payé et manque de fournitures essentielles alors que le virus continue de se propager.",
-          "headline": "Une organisation médicale signale des fonds manquants pour la lutte contre Ebola en RDC"
-        },
-        "it": {
-          "body": "Grandi somme di aiuti internazionali non stanno raggiungendo la prima linea dell'epidemia di Ebola nella Repubblica Democratica del Congo, secondo Medici Senza Frontiere (MSF). L'organizzazione medica ha riferito che il personale non viene pagato e manca di forniture essenziali mentre il virus continua a diffondersi.",
-          "headline": "Organizzazione medica denuncia la scomparsa di fondi per la risposta all'Ebola nella RDC"
-        },
-        "ja": {
-          "body": "国境なき医師団（MSF）によると、コンゴ民主共和国で発生しているエボラ出血熱の流行に対し、国際的な支援金の多額が最前線に届いていない。同団体は、ウイルス感染が拡大する中、スタッフへの給与が支払われず、不可欠な物資も不足していると報告した。",
-          "headline": "医療慈善団体、コンゴ民主共和国のエボラ出血熱対策で資金不足を報告"
-        },
-        "ko": {
-          "body": "국경없는의사회(MSF)에 따르면, 콩고민주공화국 에볼라 발병 대응을 위한 막대한 국제 원조 자금이 최전선에 전달되지 않고 있다. 해당 의료 구호단체는 바이러스가 계속 확산되는 가운데 직원들의 급여가 체불되고 필수 물자가 부족한 실정이라고 보고했다.",
-          "headline": "의료 구호단체, 콩고민주공화국 에볼라 대응 자금 실종 보고"
-        },
-        "pt": {
-          "body": "Grandes somas de ajuda internacional não estão a chegar à linha da frente do surto de Ébola na República Democrática do Congo, segundo os Médicos Sem Fronteiras (MSF). A organização médica relatou que os funcionários estão sem receber salários e carecem de mantimentos essenciais enquanto o vírus continua a propagar-se.",
-          "headline": "Organização médica denuncia falta de fundos para o combate ao Ébola na RDC"
-        },
-        "zh": {
-          "body": "无国界医生组织（MSF）表示，大量国际援助资金未能送达刚果民主共和国埃博拉疫情的一线。该医疗慈善机构报告称，随着病毒持续蔓延，工作人员面临薪资拖欠及基本物资匮乏的困境。",
-          "headline": "医疗慈善机构称刚果（金）埃博拉疫情应对资金去向不明"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.bbc.co.uk/news/articles/cx98757ymm6zo?at_medium=RSS&at_campaign=rss",
-          "title": "Millions of Ebola dollars going missing as virus spreads, medical charity warns",
-          "outlet": "BBC",
-          "publishedAt": "2026-11-12T14:24:48.000Z"
-        },
-        {
-          "url": "https://allafrica.com/stories/202611120312.html",
-          "title": "Congo-Kinshasa: Medical Charity Warns Funds for DR Congo Ebola Fight Not Reaching Front",
-          "outlet": "AllAfrica",
-          "publishedAt": "2026-11-12T10:35:57.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T16:16:00.000Z",
-      "id": "u-1794413760000-fvdb",
-      "kind": "context",
-      "locales": {
-        "de": {
-          "body": "Die Deutsche Welle und Der Spiegel berichteten über neun bestätigte Ebola-Fälle in Kenia. Beide Berichte erschienen am 11. November 2026.",
-          "headline": "Neun bestätigte Ebola-Fälle in Kenia"
-        },
-        "en": {
-          "body": "DW and Der Spiegel reported nine confirmed Ebola cases in Kenya. Both reports were published on 11 November 2026.",
-          "headline": "Kenya had nine confirmed Ebola cases"
-        },
-        "es": {
-          "body": "DW y Der Spiegel informaron nueve casos confirmados de ébola en Kenia. Ambos informes fueron publicados el 11 de noviembre de 2026.",
-          "headline": "Kenya confirmó nueve casos de ébola"
-        },
-        "fr": {
-          "body": "DW et Der Spiegel ont rapporté neuf cas confirmés de fièvre Ebola au Kenya. Les deux rapports ont été publiés le 11 novembre 2026.",
-          "headline": "Kenya a confirmé neuf cas de fièvre Ebola"
-        },
-        "it": {
-          "body": "DW e Der Spiegel hanno riportato nove casi confermati di Ebola in Kenya. Entrambi gli articoli sono stati pubblicati l'11 novembre 2026.",
-          "headline": "Kenya: nove casi confermati di Ebola"
-        },
-        "ja": {
-          "body": "DWとデア・シュピーゲルは、ケニアでエボラ感染者9人が確認されたと報じた。両報道は2026年11月11日に発表された。",
-          "headline": "ケニアでエボラ感染者9人が確認"
-        },
-        "ko": {
-          "body": "DW와 데어 슈피겔은 케냐에서 에볼라 확진 사례 9건이 발생했다고 보도했다. 두 보도는 모두 2026년 11월 11일에 발표됐다.",
-          "headline": "케냐, 에볼라 확진 사례 9건"
-        },
-        "pt": {
-          "body": "A DW e o Der Spiegel reportaram nove casos confirmados de Ebola no Quénia. Ambos os relatórios foram publicados a 11 de novembro de 2026.",
-          "headline": "Quénia registou nove casos confirmados de Ebola"
-        },
-        "zh": {
-          "body": "德国之声和《明镜周刊》报道，肯尼亚有九例确诊的埃博拉病例。两份报道均于2026年11月11日发布。",
-          "headline": "肯尼亚确认九例埃博拉病例"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.dw.com/en/kenya-s-last-ebola-patient-leaves-hospital/a-79921240?maca=en-rss-en-all-1573-rdf",
-          "title": "Kenya's last Ebola patient leaves hospital",
-          "outlet": "DW",
-          "publishedAt": "2026-11-11T16:16:00.000Z"
-        },
-        {
-          "url": "https://www.spiegel.de/wissenschaft/medizin/ebola-letzter-ebolapatient-in-kenia-aus-klinik-entlassen-a-af1b2733-c18b-4c03-be02-af994577a23a#ref=rss",
-          "title": "Ebola: Letzter Ebolapatient in Kenia aus Klinik entlassen",
-          "outlet": "Der Spiegel",
-          "publishedAt": "2026-11-11T15:59:00.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T12:53:11.000Z",
-      "id": "u-1794401591000-qcns",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Kenia entließ seinen letzten Ebola-Patienten am Mittwoch, sagte Gesundheitsminister Aden Duale. Das Land begann einen 42-tägigen Countdown zur Erklärung der Ebola-Freiheit, vorausgesetzt, es werden keine neuen Fälle registriert.",
-          "headline": "Kenia entlässt letzten Ebola-Patienten und beginnt 42-tägigen Countdown zur Ebola-freien Status"
-        },
-        "en": {
-          "body": "Kenya discharged its last Ebola patient on Wednesday, Health Minister Aden Duale said. The country began a 42-day countdown to being declared Ebola-free, provided no new cases are recorded.",
-          "headline": "Kenya discharges last Ebola patient, starts 42-day countdown to Ebola-free status"
-        },
-        "es": {
-          "body": "Kenia dio de alta a su último paciente de Ébola el miércoles, según declaró el Ministro de Sanidad, Aden Duale. El país ha comenzado una cuenta atrás de 42 días para ser declarado libre de Ébola, siempre que no se registren nuevos casos.",
-          "headline": "Kenia da de alta a último paciente de Ébola e inicia cuenta atrás de 42 días hacia el estatus libre de Ébola"
-        },
-        "fr": {
-          "body": "Le Kenya a déchargé son dernier patient Ebola mercredi, a déclaré le ministre de la Santé, Aden Duale. Le pays a commencé un compte à rebours de 42 jours pour être déclaré exempt d'Ebola, à condition qu'aucun nouveau cas ne soit enregistré.",
-          "headline": "Le Kenya décharge son dernier patient Ebola et entame un compte à rebours de 42 jours vers le statut exempt d'Ebola"
-        },
-        "it": {
-          "body": "Il Kenya ha dimesso il suo ultimo paziente Ebola mercoledì, ha dichiarato il Ministro della Salute Aden Duale. Il Paese ha iniziato un conto alla rovescia di 42 giorni per essere dichiarato esente da Ebola, a condizione che non vengano registrati nuovi casi.",
-          "headline": "Kenya dimette ultimo paziente Ebola, inizia il conto alla rovescia di 42 giorni per lo stato di assenza di Ebola"
-        },
-        "ja": {
-          "body": "アデン・デュアレ保健大臣によると、ケニアは水曜日に最後のエボラ患者を退院させた。新たな症例が報告されなければ、同国はエボラ陰性として宣言されるまでの42日間のカウントダウンを開始した。",
-          "headline": "ケニア、最後のエボラ患者を退院させ、エボラ陰性宣言までの42日間カウントダウン開始"
-        },
-        "ko": {
-          "body": "케냐 보건부 장관 아데누 두알레에 따르면, 케냐가 수요일 마지막 에볼라 환자를 퇴원시켰다. 신규 환자가 기록되지 않는 한, 해당 국가는 에볼라 프리(무 에볼라) 선언을 앞두고 42일 간의 카운트다운에 들어갔다.",
-          "headline": "케냐, 마지막 에볼라 환자 퇴원…42일 후 에볼라 프리 선언 카운트다운 돌입"
-        },
-        "pt": {
-          "body": "O Ministro da Saúde, Aden Duale, afirmou que o Quénia descarregou o seu último paciente de Ebola na quarta-feira. O país iniciou uma contagem decrescente de 42 dias para ser declarado livre de Ebola, desde que não sejam registados novos casos.",
-          "headline": "Quénia desliga último paciente de Ebola e inicia contagem decrescente de 42 dias para estatuto livre de Ebola"
-        },
-        "zh": {
-          "body": "卫生部长阿登·杜阿莱（Aden Duale）周三表示，肯尼亚已出院最后一名埃博拉患者。前提是没有新病例报告，该国已开始42天的倒计时，以宣布ปลอด埃博拉状态。",
-          "headline": "肯尼亚出院最后一名埃博拉患者，开始42天倒计时迈向ปลอด埃博拉状态"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://www.bbc.co.uk/news/articles/cwe9kzv0g0v7o?at_medium=RSS&at_campaign=rss",
-          "title": "Kenya discharges last Ebola patient in major milestone towards virus-free status",
-          "outlet": "BBC",
-          "publishedAt": "2026-11-11T12:53:11.000Z"
-        },
-        {
-          "url": "https://www.straitstimes.com/world/kenya-releases-last-ebola-patient-starts-42-day-countdown-to-disease-free-status",
-          "title": "Kenya releases last Ebola patient, starts 42-day countdown to disease-free status",
-          "outlet": "The Straits Times",
-          "publishedAt": "2026-11-11T09:29:04.000Z"
-        }
-      ],
-      "importance": 3
-    },
-    {
-      "at": "2026-11-11T08:37:27.000Z",
-      "id": "u-1794386247000-o4to",
-      "kind": "result",
-      "locales": {
-        "de": {
-          "body": "Die Behörden der Demokratischen Republik Kongo gaben am Mittwoch bekannt, dass der Ebola-Ausbruch insgesamt mehr als 11.000 Fälle verzeichnet hat. Wie Al Jazeera berichtete, hat der Ausbruch 5.387 Todesopfer gefordert, während die Behörden Schwierigkeiten haben, die Ausbreitung einzudämmen.",
-          "headline": "Ebola-Ausbruch in DR Kongo überschreitet Marke von 11.000 Fällen"
-        },
-        "en": {
-          "body": "Democratic Republic of the Congo authorities announced Wednesday that the Ebola outbreak has surpassed 11,000 total cases. Al Jazeera reported that the outbreak has resulted in 5,387 deaths as authorities face difficulties containing the spread.",
-          "headline": "DR Congo Ebola outbreak exceeds 11,000 cases"
-        },
-        "es": {
-          "body": "Las autoridades de la República Democrática del Congo anunciaron el miércoles que el brote de ébola ha superado los 11.000 casos totales. Al Jazeera informó de que el brote ha provocado 5.387 muertes, mientras las autoridades afrontan dificultades para contener la propagación.",
-          "headline": "El brote de ébola en la RDC supera los 11.000 casos"
-        },
-        "fr": {
-          "body": "Les autorités de la République démocratique du Congo ont annoncé mercredi que l'épidémie d'Ebola avait franchi la barre des 11 000 cas au total. Selon Al Jazeera, cette épidémie a fait 5 387 morts alors que les autorités rencontrent des difficultés pour en contenir la propagation.",
-          "headline": "RD Congo : l'épidémie d'Ebola dépasse les 11 000 cas"
-        },
-        "it": {
-          "body": "Le autorità della Repubblica Democratica del Congo hanno annunciato mercoledì che l'epidemia di Ebola ha superato un totalizzatore di 11.000 casi. Secondo quanto riportato da Al Jazeera, l'epidemia ha causato 5.387 decessi, mentre le autorità incontrano difficoltà nel contenerne la diffusione.",
-          "headline": "Repubblica Democratica del Congo: l'epidemia di Ebola supera gli 11.000 casi"
-        },
-        "ja": {
-          "body": "コンゴ民主共和国当局は水曜日、エボラ出血熱の累計感染者数が1万1000人を超えたと発表した。アルジャジーラによると、当局が感染拡大の抑え込みに苦慮する中、死者数は5387人に達している。",
-          "headline": "コンゴ民主共和国のエボラ出血熱、感染者数が1万1000人を超える"
-        },
-        "ko": {
-          "body": "콩고민주공화국 당국은 수요일 에볼라 발병 건수가 총 1만 1,000건을 넘어섰다고 발표했다. 알자지라는 당국이 확산 통제에 어려움을 겪는 가운데 이번 발병으로 5,387명이 사망했다고 보도했다.",
-          "headline": "콩고민주공화국 에볼라 발병 환자 1만 1,000명 넘어"
-        },
-        "pt": {
-          "body": "As autoridades da República Democrática do Congo anunciaram esta quarta-feira que o surto de Ébola ultrapassou um total de 11.000 casos. A Al Jazeera noticiou que o surto resultou em 5.387 mortes, enquanto as autoridades enfrentam dificuldades para conter a propagação.",
-          "headline": "Surto de Ébola na RDC ultrapassa os 11.000 casos"
-        },
-        "zh": {
-          "body": "刚果民主共和国当局于周三宣布，该国埃博拉疫情的累计确诊病例已超过11,000例。据半岛电视台报道，由于当局在控制疫情传播方面面临困难，此次疫情已导致5,387人死亡。",
-          "headline": "刚果（金）埃博拉疫情确诊病例超过11,000例"
-        }
-      },
-      "sources": [
-        {
-          "url": "https://medicalxpress.com/news/2026-11-ebola-tops-cases-congo-deadliest.html",
-          "title": "Ebola tops 11,000 cases in Congo's deadliest outbreak",
-          "outlet": "MedicalXpress",
-          "publishedAt": "2026-11-11T08:37:27.000Z"
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/11/11/ebola-cases-in-dr-congo-pass-11000-with-5387-deaths?traffic_source=rss",
-          "title": "Ebola cases in DR Congo pass 11,000, with 5,387 deaths",
-          "outlet": "Al Jazeera",
-          "publishedAt": "2026-11-11T04:44:18.000Z"
-        }
-      ],
-      "importance": 3
-    }
-  ],
-  "category": "health",
-  "keywords": [
-    "ebola",
-    "dr congo",
-    "congo-kinshasa",
-    "outbreak",
-    "epidemic",
-    "health",
-    "iom",
-    "cholera",
-    "cases"
-  ],
-  "seenUrls": [
-    "https://www.healthline.com/health-news/healthy-salt-substitute-may-prevent-millions-of-heart-disease-stroke-deaths",
-    "https://www.healthline.com/health-news/mark-paul-gosselaar-cancer-biomarker-testing",
-    "https://www.healthline.com/health-news/infant-bleeding-cases-surge-parents-refuse-vitamin-k-shot-newborn",
-    "https://medicalxpress.com/news/2026-11-ebola-tops-cases-congo-deadliest.html",
-    "https://www.thehindu.com/news/international/congos-ebola-outbreak-tops-11000-cases-as-disease-keeps-spreading/article71688652.ece",
-    "https://allafrica.com/stories/202611110252.html",
-    "https://news.google.com/rss/articles/CBMieEFVX3lxTE10cnd5enZ6SEMtTlctMUxseUs4alJsNjg5ZmxxbHgxendZcVgwYnM4d1hEd09IYTBZSmZCNzJnTnVfN0dydWx4MnNRM2lDSzhUazlObGdJeEpvMl9kVU9MdklqaC13QVV3eHlaM2I4NUtnSVQ4MFAxdw?oc=5",
-    "https://allafrica.com/stories/202611110139.html",
-    "https://www.aljazeera.com/news/2026/11/11/ebola-cases-in-dr-congo-pass-11000-with-5387-deaths?traffic_source=rss",
-    "https://www.cnbc.com/2026/11/11/measles-outbreak-us-economic-cost.html",
-    "https://www.semafor.com/article/11/11/2026/doctors-without-borders-urge-global-health-officials-to-widen-ebola-vaccine-access",
-    "https://www.theguardian.com/australia-news/2026/nov/12/first-covid-lockdowns-then-alcohol-to-your-door-rise-in-young-victorians-with-liver-diseases-prompts-fears",
-    "http://www.africanews.com/2026/11/11/dr-congo-tshisekedi-signs-new-referendum-law-amid-third-term-fears/",
-    "https://www.theguardian.com/us-news/2026/nov/11/measles-status-rfk-jr-anti-vaccine-agenda",
-    "https://www.bbc.co.uk/news/articles/cwe9kzv0g0v7o?at_medium=RSS&at_campaign=rss",
-    "https://www.straitstimes.com/world/middle-east/israeli-strikes-kill-three-people-including-two-brothers-in-gaza-medics-say",
-    "https://www.aljazeera.com/news/2026/11/11/rights-group-raises-concerns-about-jailed-dr-abu-safia-amid-strikes-on-gaza?traffic_source=rss",
-    "https://www.nzz.ch/wissenschaft/ebola-ausbruch-in-zentralafrika-mehr-als-300-ebola-tote-in-kongo-erster-fall-in-frankreich-nachgewiesen-ld.10007509",
-    "https://news.google.com/rss/articles/CBMioAJBVV95cUxPRW1DRHB5VTQwaUhJc0FxOVNBdUFrN1hhbTRLaTA1MjFLbENZSkxaUXgzVURzVDU3d2NtekNNSldSc29pTllaRFozcFVlTG02ZWZaTXJsVkxqTVRJdHZsVnd2eGJ0LWZUR3puV0FlVG9xQ3g5ZWxGVzJORnUtZDNGM2JGT1pOZWU2OHQ2WXZzbVhPTFZ2VEtZUEYzdG9LZTFLaWE3MkxsV0lDTU1WeHNPeENlbUpXa1BObzZBVUtMbnRvZGxybE1BWGNCbEotNUVja1c0eWtNY1BHa1RZOFl5amdudkpIbS1Td1FuWVpBUlpEVXprTlZhSzNMN00tRGxPRjFsMGVtdUNkS1FVUkFpbDVVNFhJLXAtYUp2SFdkNG8?oc=5",
-    "https://news.google.com/rss/articles/CBMijwFBVV95cUxONzA2eFQ5RHZIWEtVclV4X2tDMTRPMHNnSkt6MWtqSjRPUGx1REs3aHZsVU5PNkxJbzVJaDU2UDFYTlFmRl9LeEdvQ0phcjJSR0tuZl9LWFAzSEpvc1M1Mk9jX2FoTmF6ZGY1b3dnbWdzc2NxOWlzTDZOM0JDQjFrbWJfQ092OFFmUEdOVHJxQQ?oc=5",
-    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOOGdWMGVjUVhiYmZhdTdNQXhWb05TSUY1bVQySzlrWGZKQ3ZYU0tRTm1JcVRFZWZhM0pKRU14bHEwZm1NZ1hnMFRyUjc1NHBva1ZJak9PUVJEWkE1d28ybGgxSG5abGwzUWE2OHA1Z25raGJ4cUQwSHpxd3BGNFNPS2tIdXBqWmQ5eG1JQUtNUjBHbW1vaGFDOW9XNEdhNWZVaGx4d2xFal9tM253SEpPd3czTkhvUUdnZDM4bFJ0bjZ2Zw?oc=5",
-    "https://www.straitstimes.com/world/kenya-releases-last-ebola-patient-starts-42-day-countdown-to-disease-free-status",
-    "https://www.npr.org/2026/11/11/nx-s1-6037304/ebola-congo-outbreak",
-    "https://www.science.org/content/article/researchers-have-wish-list-can-new-congress-deliver",
-    "https://www.nytimes.com/2026/11/11/world/africa/kenya-ebola-countdown.html",
-    "https://www.thehindu.com/news/international/dr-congo-ebola-outbreak-exceeds-11000-cases-causes-5387-deaths/article71691022.ece",
-    "https://www.jpost.com/israel-news/article-914602",
-    "https://news.mongabay.com/2026/11/epidemiologist-neil-vora-joins-mongabays-board-as-it-expands-global-reach-and-planetary-health-coverage/",
-    "https://www.dw.com/en/kenya-s-last-ebola-patient-leaves-hospital/a-79921240?maca=en-rss-en-all-1573-rdf",
-    "https://www.spiegel.de/wissenschaft/medizin/ebola-letzter-ebolapatient-in-kenia-aus-klinik-entlassen-a-af1b2733-c18b-4c03-be02-af994577a23a#ref=rss",
-    "http://www.africanews.com/2026/11/11/kenya-discharges-last-ebola-patient-begins-42-day-countdown-to-being-declared-ebola-free/",
-    "https://www.aljazeera.com/news/2026/11/11/kenya-discharges-last-ebola-patient?traffic_source=rss",
-    "https://phys.org/news/2026-11-food-bran-based-gels-potential.html",
-    "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss",
-    "https://www.bbc.co.uk/news/articles/cx98757ymm6zo?at_medium=RSS&at_campaign=rss",
-    "https://www.aljazeera.com/news/2026/11/12/horrific-crime-gaza-doctor-killed-as-israel-expands-war-on-healthcare?traffic_source=rss",
-    "https://www.theguardian.com/society/2026/nov/12/time-running-out-young-people-meningitis-b-vaccines-uk",
-    "https://www.straitstimes.com/world/europe/swiss-woman-with-ebola-released-from-hospital-statement-says",
-    "https://news.google.com/rss/articles/CBMiowFBVV95cUxNU3ZJQlhjSko5MDVzS25JNzdQaWprR1pORklBMUI1Qlg0T3Zkc2J1eV8yUTE1S2RMdHlLcjdDbXNrNERFdDNtYTFleFlkNHZyeXBfQ25lcS05S29hd3YtT3ZWMXE2eUs2RXpuZXV2Z01OcklJeXdKT2FzR1dqZVRHRE9Ncl9QUzVSTkVod1V6RnFjMWNIcFBkWXBWU0FWWTM3TGJj?oc=5",
-    "https://news.sky.com/story/israeli-strike-on-gaza-hospital-kills-six-including-doctor-health-ministry-says-13611456",
-    "https://allafrica.com/stories/202611120312.html",
-    "https://www.axios.com/2026/11/12/democrats-attack-corporate-health-care",
-    "https://www.npr.org/2026/11/12/nx-s1-6038339/israeli-strike-gaza-hospital",
-    "https://www.dawn.com/news/2044072/imrans-key-message-from-jail-is-to-stick-firmly-to-the-ideology-pti-secretary-general",
-    "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVGh2c012X3FlMGJkTzJBNUZYRGtPdC1aQUxzYzdEZlFQNWNKVFp0bzlGWmJlSDlTQzRBQm9Lb05YU3B6bGFnSHZmZE9nczQ1WDFsSlVrcXpid3ZOR3dIOFRESnFIQ3dPRzZJVUplSldCci13R0dQZ0wtQzEybXUxX216b2g5VU5STGwzZTFrb1FwZ0tUWXE5LXZjaFlFa0pQRUFxMEZIRVPSAa4BQVVfeXFMTXJRX19VXzJCMVdmenpxUFlUX0pSM1JWTGpzZ0lSQURWYUFKbGtxd0I1cnEweE5VNWNxaTlkV0d3b3QwMTg4OHM3MEp0R25nRC12bklOLW1WWDBESXRBQmttZ0p3b0gtbVdIeHpoZGRBV1FBYTNlZGtPZTJlZmJOMk5tZXlpQ3kxZmUxdVlHYjJZVTk5QXl1U1hZR1M5cUNWTVZnWW1uLVNQUFMwNG9B?oc=5",
-    "http://www.africanews.com/2026/11/12/gaza-devastation-inside-nasser-hospital-after-deadly-israeli-strike/",
-    "https://www.nytimes.com/2026/11/11/world/middleeast/nasser-hospital-gaza-strike-israel.html",
-    "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbWJsX09iak1JNmhabW1OdjdOVW84Yk5iYVI0YmJJeEE1LTc0YTAyamNncXpSbHNGT1ZNOGlNWFotMDNybEo4Uk9oVmVzeEpzdnBsWWxrb3pPbldXQmhMQWd3T3pHd2lGN0xqVVhwSjlBWEwwRXR2U0FLOXZmdTZBWC05Vmx4RVc4ek53ZnBqQ1BBRUlyNWc?oc=5",
-    "https://www.straitstimes.com/world/attacks-on-health-workers-hamper-congo-ebola-fight-africa-cdc-warns",
-    "https://www.euronews.com/2026/11/12/european-parliament-urges-russia-to-return-deported-ukrainian-children",
-    "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZndqQ2lTUGNkWm9DMkZRNFdXMG9vVFpFckZ4YnZTeFRmTVhSNjZpRm1TdERUNlJBelhfSTJvWXpRaU11eUJYX3NOeHdlZkJBLUQ5ZU4zajdPSFdnOGNFWlJzUUp5dUJpU20wNjVoem1qd2g2THhrdGdQLXRrN0MzQndVZ1RKOUVqQ1FaTFBpU0RwQkFYbHJIR1RhUEZscGRJN1V1RGg0VFVkYWNMRDhaTE4yQWdRa1EwV0lLTnhfZU5ER29yWFFXZEQ1Y3Jrdw?oc=5",
-    "https://news.google.com/rss/articles/CBMikgFBVV95cUxOYVVySElpemNmLU54S2ZLMXJqanRNU25zbXMwT2R2VXhULTNCcmUtRU52MnJnNEZCY3ZaWFlkc3EzY1pmUjJzT2llb2ZWWW85bS01amNhMWhDWHRXZ1lvV1JQR1JCZERfbl9wM0dsQzR4RllmOGdjdm1jVDUxM3pTWEF5Z0NPa2R1NDAwWU5qV1I5dw?oc=5",
-    "https://www.france24.com/en/israeli-strike-on-gaza-hospital-kills-six-including-surgeon-medics-say",
-    "https://www.lemonde.fr/en/science/article/2026/11/12/andes-hantavirus-outbreak-examined-by-scientists-through-its-genome_6778972_10.html",
-    "https://www.scmp.com/news/world/middle-east/article/3374264/israeli-strike-gaza-hospital-kills-11-deadliest-attack-election",
-    "https://allafrica.com/stories/202611130005.html",
-    "https://www.politico.eu/podcast/brussels-playbook-podcast/what-will-a-female-president-mean-for-germany-and-europe/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
-  ],
-  "startedAt": "2026-11-11T09:00:47.911Z",
-  "updatedAt": "2026-11-13T18:41:58.684Z",
-  "importance": 5,
-  "wantsStats": false,
-  "articleSlug": "dr-congo-ebola-outbreak",
-  "sourceCount": 11,
-  "seenHeadlines": []
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+  }
 }
