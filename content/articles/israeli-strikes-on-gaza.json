@@ -6,11 +6,158 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-24T01:18:39.626Z",
-  "updatedAt": "2026-11-26T11:31:13.784Z",
+  "updatedAt": "2026-11-26T23:33:45.560Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "israeli-strikes-on-gaza",
-  "stats": null,
+  "stats": {
+    "label": "Casualties in Gaza",
+    "note": "Reported Palestinian fatalities resulting from recent Israeli strikes and gunfire.",
+    "unit": "",
+    "max": null,
+    "asOf": "2026-11-26T00:00:00.000Z",
+    "updatedAt": "2026-11-26T23:33:42.314Z",
+    "source": {
+      "outlet": "Reuters",
+      "title": "Hamas weighs response after Israel kills 10 people in Gaza",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNzFiM29KUVhvZHZUYTV1SWtlLXNYbXg3ZzRodFVmanZkNzJsczZ4UldfRkNkSW1fVDhMaTFYOW9ETUxXaXFKcktCTThoYnBYS21mVjQxYkNWM19MR1h0WHNSdjlGenRTNkExU2RKU0ZKNUhCRWR0OVU2VmFqTUJHeE5QMVNybDE4Qk1WTmp5VGgyWDV0NjhaM3h4Ulp1bWZDUThnSlI0TFMwMnQzNk5KQnZXVTRCUUxvc2FLbmlDYVREeHpwOUpV?oc=5",
+      "publishedAt": "2026-11-26T20:56:54.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
+    "rows": [
+      {
+        "key": "fatalities-general-reports",
+        "label": "Fatalities (general reports)",
+        "value": 10,
+        "change": null,
+        "locales": {
+          "it": {
+            "label": "Vittime (rapporti generali)"
+          },
+          "fr": {
+            "label": "Décès (rapports généraux)"
+          },
+          "de": {
+            "label": "Todesopfer (allgemeine Berichte)"
+          },
+          "es": {
+            "label": "Víctimas (informes generales)"
+          },
+          "pt": {
+            "label": "Fatais (relatórios gerais)"
+          },
+          "ja": {
+            "label": "死亡者（一般報道）"
+          },
+          "ko": {
+            "label": "일반적인 사망자 보고"
+          },
+          "zh": {
+            "label": "伤亡情况（一般报告）"
+          }
+        }
+      },
+      {
+        "key": "fatalities-specific-reports",
+        "label": "Fatalities (specific reports)",
+        "value": 7,
+        "change": null,
+        "locales": {
+          "it": {
+            "label": "Vittime (rapporti specifici)"
+          },
+          "fr": {
+            "label": "Décès (rapports spécifiques)"
+          },
+          "de": {
+            "label": "Todesopfer (spezifische Berichte)"
+          },
+          "es": {
+            "label": "Víctimas (informes específicos)"
+          },
+          "pt": {
+            "label": "Fatais (relatórios específicos)"
+          },
+          "ja": {
+            "label": "死亡者（具体的報道）"
+          },
+          "ko": {
+            "label": "구체적인 사망자 보고"
+          },
+          "zh": {
+            "label": "伤亡情况（具体报告）"
+          }
+        }
+      },
+      {
+        "key": "schoolchildren-killed-this-month",
+        "label": "Schoolchildren killed this month",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "it": {
+            "label": "Bambini in età scolare uccisi questo mese"
+          },
+          "fr": {
+            "label": "Enfants scolarisés tués ce mois-ci"
+          },
+          "de": {
+            "label": "Diesen Monat getötete Schulkinder"
+          },
+          "es": {
+            "label": "Niños en edad escolar muertos este mes"
+          },
+          "pt": {
+            "label": "Escolares mortos este mês"
+          },
+          "ja": {
+            "label": "今月殺害された児童"
+          },
+          "ko": {
+            "label": "이번 달 살해된 학교 학생들"
+          },
+          "zh": {
+            "label": "本月遇难学童"
+          }
+        }
+      }
+    ],
+    "locales": {
+      "de": {
+        "label": "Tote in Gaza",
+        "note": "Gemeldete palästinensische Todesopfer infolge jüngster israelischer Angriffe und Schießereien."
+      },
+      "fr": {
+        "label": "Victimes à Gaza",
+        "note": "Décès palestiniens signalés suite aux récents frappes et tirs israéliens."
+      },
+      "es": {
+        "label": "Víctimas en Gaza",
+        "note": "Se reportan muertes palestinas como resultado de recientes ataques e incidentes de disparos israelíes."
+      },
+      "it": {
+        "label": "Vittime a Gaza",
+        "note": "Riferimento a vittime palestinesi derivanti da recenti attacchi israeliani e sparatorie."
+      },
+      "pt": {
+        "label": "Baixas em Gaza",
+        "note": "Fatais palestinianos reportados resultantes de recentes ataques e disparos israelitas."
+      },
+      "zh": {
+        "label": "加沙伤亡情况",
+        "note": "报道因近期以色列空袭和枪击造成的巴勒斯坦人员死亡。"
+      },
+      "ja": {
+        "label": "ガザでの死者",
+        "note": "最近のイスラエルの空爆と銃撃により報告されたパレスチナ人の死亡者数。"
+      },
+      "ko": {
+        "label": "가자지구 희생자",
+        "note": "최근 이스라엘의 공습과 총격으로 보고된 팔레스타인인 사망자 수."
+      }
+    }
+  },
   "sources": [
     {
       "outlet": "Anadolu Ajansı",
