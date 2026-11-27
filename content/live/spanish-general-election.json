@@ -1,9 +1,270 @@
 {
+  "meta": {
+    "outlets": [
+      "Euronews",
+      "The Guardian",
+      "South China Morning Post",
+      "The Straits Times"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
+  },
   "slug": "spanish-general-election",
-  "status": "live",
-  "category": "politics",
-  "importance": 4,
   "topic": "Spanish General Election",
+  "status": "live",
+  "article": {
+    "slug": "spanish-general-election",
+    "updatedAt": "2026-11-27T20:58:44.985Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Spain Prime Minister Pedro Sanchez seeks fourth term in snap election",
+        "dek": "Sanchez defied opinion polls to campaign for a fourth term as housing policy and Vox's kingmaker role dominate final election analysis.",
+        "facts": [
+          "Pedro Sanchez stated on Friday he was confident of securing a left-wing majority in the snap general election",
+          "Opinion polls indicate voters could end eight years of leftist rule in Spain",
+          "Housing policy and the role of the far-right Vox party are decisive factors in the election outcome",
+          "Euronews reports a prime minister needs 176 votes for an absolute majority and questions coalition chances with Partido Popular"
+        ],
+        "body": [
+          "Spain Prime Minister Pedro Sanchez stated on Friday that he was confident of securing a left-wing majority in the upcoming snap general election according to The Straits Times and The Guardian",
+          "Political parties are wrapping up their campaigns ahead of Sunday's vote as reported by The Straits Times and The Guardian",
+          "Pedro Sanchez is pursuing a fourth term in office despite current political conditions as reported by multiple outlets",
+          "Opinion polls indicate that voters could potentially end eight years of leftist rule in the country according to news reports"
+        ],
+        "context": "Spain is holding a snap general election on Sunday to determine its government leadership. The current administration led by Prime Minister Pedro Sanchez has been in power for eight years under leftist rule. The election will determine the future leadership of the Spanish government.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Spaniens Ministerpräsident Pedro Sanchez kandidiert für viertes Amt in Neuwahl",
+        "dek": "Sanchez widerlegte Meinungsumfragen und campaignte für ein viertes Amt, während Wohnungspolitik und die Rolle der rechtspopulistischen Vox-Partei die finale Wahlanalyse bestimmten.",
+        "facts": [
+          "Pedro Sanchez erklärte am Freitag, er sei zuversichtlich, bei der Neuwahl eine Linksmehrheit zu erreichen",
+          "Meinungsumfragen deuten darauf hin, dass Wähler acht Jahre linkes Regieren in Spanien beenden könnten",
+          "Wohnungspolitik und die Rolle der rechtspopulistischen Vox-Partei sind entscheidende Faktoren für das Wahlergebnis",
+          "Euronews berichtet, dass ein Ministerpräsident 176 Stimmen für eine absolute Mehrheit benötigt und die Koalitionsaussichten mit der Partido Popular infrage stellt"
+        ],
+        "body": [
+          "Spaniens Ministerpräsident Pedro Sanchez erklärte am Freitag laut The Straits Times und The Guardian Zuversicht, bei der Neuwahl eine Linksmehrheit zu erringen",
+          "Politische Parteien beenden ihre Kampagnen vor der Abstimmung am Sonntag wie von The Straits Times und The Guardian berichtet",
+          "Pedro Sanchez verfolgt trotz aktueller politischer Lage ein viertes Amt, wie von mehreren Medien berichtet",
+          "Meinungsumfragen deuten laut Nachrichtenberichten darauf hin, dass Wähler potenziell acht Jahre linkes Regieren im Land beenden könnten"
+        ],
+        "context": "Spanien hält am Sonntag eine Neuwahl ab, um die Regierungsführung zu bestimmen. Die aktuelle Regierung unter Ministerpräsident Pedro Sanchez ist seit acht Jahren im Amt. Die Wahl bestimmt die zukünftige Führung der spanischen Regierung."
+      }
+    },
+    "versions": [
+      {
+        "at": "2026-11-27T12:09:47.295Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Spain Prime Minister Pedro Sanchez pursues a fourth term as political parties wrap up campaigns.",
+            "body": [
+              "Spain Prime Minister Pedro Sanchez stated on Friday that he was confident of securing a left-wing majority in the upcoming snap general election. Political parties are wrapping up their campaigns ahead of Sunday's vote according to reports from The Straits Times and The Guardian. Pedro Sanchez is pursuing a fourth term in office despite current political conditions.",
+              "Opinion polls indicate that voters could end eight years of leftist rule in Spain. The Straits Times and The Guardian reported that political parties wrapped up their campaigning activities on Friday. Prime Minister Sanchez insisted that he would defy the polls as the campaign came to a close.",
+              "Campaigning activities for the snap general election concluded on Friday across the country. Candidates from the main parties finalized their proposals before voters head to the polls on Sunday. The election will determine the future leadership of the Spanish government.",
+              "The Straits Times published details regarding what the main parties are proposing in the election. Voters face choices between competing political platforms as the campaign period ends. Observers and voters await the outcome of Sunday's snap general election.",
+              "Pedro Sanchez stated his confidence to reporters while finishing his campaign schedule. According to The Guardian, the prime minister maintained his optimistic stance despite unfavorable poll numbers. The final days of campaigning focused on mobilizing the remaining undecided voters.",
+              "Opposition parties campaigned actively during the final week to challenge the incumbent administration. The Straits Times reported that the political landscape remains competitive as Sunday approaches. Parties made their final appeals to the public on Friday before the mandatory campaign silence."
+            ],
+            "facts": [
+              "Spain Prime Minister Pedro Sanchez stated on Friday that he is confident of securing a left-wing majority.",
+              "Political parties are wrapping up their campaigns ahead of Sunday's vote according to news reports.",
+              "Opinion polls indicate that voters could potentially end eight years of leftist rule in the country.",
+              "Pedro Sanchez is pursuing a fourth term in office during the upcoming snap general election."
+            ],
+            "title": "Spain Prime Minister Pedro Sanchez seeks fourth term in snap election",
+            "context": "Spain is holding a snap general election on Sunday to determine its government leadership. The current administration led by Prime Minister Pedro Sanchez has been in power for eight years under leftist rule.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Spaniens Ministerpräsident Pedro Sánchez strebt eine vierte Amtszeit an, während die Parteien ihre Wahlkämpfe abschließen.",
+            "body": [
+              "Der spanische Ministerpräsident Pedro Sánchez erklärte am Freitag, er sei zuversichtlich, bei der anstehenden vorgezogenen Parlamentswahl eine linke Mehrheit zu erringen. Berichten von The Straits Times und The Guardian zufolge schließen die politischen Parteien ihre Wahlkämpfe im Vorfeld der Abstimmung am Sonntag ab. Pedro Sánchez strebt trotz der gegenwärtigen politischen Bedingungen eine vierte Amtszeit an.",
+              "Umfragen deuten darauf hin, dass die Wähler acht Jahre linker Herrschaft in Spanien beenden könnten. The Straits Times und The Guardian berichteten, dass die Parteien ihre Wahlkampfaktivitäten am Freitag abschlossen. Ministerpräsident Sánchez betonte zum Ende des Wahlkampfs, er werde den Umfragen trotzen.",
+              "Die Wahlkampfaktivitäten für die vorgezogene Parlamentswahl wurden am Freitag im ganzen Land beendet. Die Kandidaten der großen Parteien finalisierten ihre Vorschläge, bevor die Wähler am Sonntag an die Urnen gehen. Die Wahl wird über die künftige Führung der spanischen Regierung entscheiden.",
+              "The Straits Times veröffentlichte Einzelheiten darüber, was die Hauptparteien bei der Wahl vorschlagen. Die Wähler stehen zum Ende des Wahlkampfs vor der Wahl zwischen konkurrierenden politischen Programmen. Beobachter und Wähler erwarten den Ausgang der vorgezogenen Parlamentswahl am Sonntag.",
+              "Pedro Sánchez äußerte sich gegenüber Reportern zuversichtlich, während er seinen Wahlkampfplan abschloss. Dem Guardian zufolge behielt der Ministerpräsident trotz ungünstiger Umfragezahlen seine optimistische Haltung bei. Die letzten Tage des Wahlkampfs konzentrierten sich auf die Mobilisierung der verbleibenden unentschlossenen Wähler.",
+              "Die Oppositionsparteien warben in der letzten Woche intensiv um Stimmen, um die amtierende Regierung herauszufordern. The Straits Times berichtete, dass die politische Landschaft angesichts des bevorstehenden Sonntags umkämpft bleibt. Die Parteien richteten am Freitag vor Beginn der gesetzlichen Wahlruhe ihre letzten Appelle an die Öffentlichkeit."
+            ],
+            "facts": [
+              "Der spanische Ministerpräsident Pedro Sánchez erklärte am Freitag, er sei zuversichtlich, eine linke Mehrheit zu errringen.",
+              "Berichten zufolge schließen die politischen Parteien ihre Wahlkämpfe im Vorfeld der Abstimmung am Sonntag ab.",
+              "Umfragen deuten darauf hin, dass die Wähler möglicherweise acht Jahre linker Regierung im Land beenden könnten.",
+              "Pedro Sánchez strebt bei der anstehenden vorgezogenen Parlamentswahl eine vierte Amtszeit im Amt an."
+            ],
+            "title": "Spaniens Ministerpräsident Pedro Sánchez strebt bei vorgezogener Wahl vierte Amtszeit an",
+            "context": "Spanien hält am Sonntag eine vorgezogene Parlamentswahl ab, um über die Führung seiner Regierung zu entscheiden. Die derzeitige Regierung unter Ministerpräsident Pedro Sánchez ist seit acht Jahren an der Macht und steht für eine linke Regierungsführung."
+          }
+        }
+      }
+    ]
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Politische Spitzenkräfte richten letzte Appelle an die Wähler, während Spanien auf eine mit Spannung erwartete nationale Abstimmung zusteuert.",
+      "title": "Spanische Parlamentswahl"
+    },
+    "en": {
+      "dek": "Political leaders make final campaign appeals as Spain approaches a high-stakes national vote.",
+      "title": "Spanish General Election"
+    },
+    "es": {
+      "dek": "Los líderes políticos realizan sus últimos llamamientos de campaña mientras España se aproxima a unas elecciones nacionales de gran trascendencia.",
+      "title": "Elecciones generales en España"
+    },
+    "fr": {
+      "dek": "Les dirigeants politiques lancent leurs derniers appels de campagne alors que l'Espagne s'approche d'un scrutin national à fort enjeu.",
+      "title": "Élections générales en Espagne"
+    },
+    "it": {
+      "dek": "I leader politici rivolgono i loro appelli finali di campagna elettorale mentre la Spagna si avvia verso un voto nazionale cruciale.",
+      "title": "Elezioni generali in Spagna"
+    },
+    "ja": {
+      "dek": "スペインが重要な国政選挙を控え、政治指導者らが最後のお願い演説を行っている。",
+      "title": "スペイン総選挙"
+    },
+    "ko": {
+      "dek": "스페인의 중대 국가 선거를 앞두고 정치 지도자들이 마지막 선거 유세에 총력을 기울이고 있다.",
+      "title": "스페인 총선"
+    },
+    "pt": {
+      "dek": "Líderes políticos fazem os apelos finais de campanha enquanto Espanha se aproxima de uma votação nacional de alto risco.",
+      "title": "Eleições Gerais em Espanha"
+    },
+    "zh": {
+      "dek": "随着西班牙迎来一场高风险的全国大选，政治领导人们作出了最后的竞选呼吁。",
+      "title": "西班牙大选"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795804302000-jhw4",
+      "at": "2026-11-27T18:31:42.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Spain election: Housing and Vox kingmaker factors",
+          "body": "According to Euronews and France 24, housing policy and the role of the far-right Vox party are decisive factors. Euronews reports a prime minister needs 176 votes for an absolute majority and questions coalition chances with the conservative Partido Popular, while France 24 asks if women can bail out Sanchez amid the far right's rise."
+        },
+        "de": {
+          "headline": "Spanien-Wahl: Wohnungsmarkt und Vox als Königsmacher-Faktoren",
+          "body": "Laut Euronews und France 24 sind die Wohnungsmarktpolitik und die Rolle der rechtspopulistischen Vox-Partei entscheidende Faktoren. Euronews berichtet, dass ein Ministerpräsident 176 Stimmen für eine absolute Mehrheit benötigt und die Koalitionsaussichten mit der konservativen Partido Popular in Frage stellt, während France 24 fragt, ob Frauen Sánchez vor dem Aufstieg der Rechten retten können."
+        },
+        "fr": {
+          "headline": "Élections en Espagne : le logement et Vox, facteurs décisifs",
+          "body": "Selon Euronews et France 24, la politique du logement et le rôle du parti d'extrême droite Vox sont des facteurs décisifs. Euronews rapporte qu'un Premier ministre a besoin de 176 voix pour une majorité absolue et questionne les chances de coalition avec le Parti populaire conservateur, tandis que France 24 s'interroge sur la capacité des femmes à sauver Sánchez face à la montée de l'extrême droite."
+        },
+        "es": {
+          "headline": "España: Vivienda y Vox, factores decisivos",
+          "body": "Según Euronews y France 24, la política de vivienda y el papel del partido de extrema derecha Vox son factores decisivos. Euronews informa de que un primer ministro necesita 176 votos para mayoría absoluta y cuestiona las posibilidades de coalición con el conservador Partido Popular, mientras que France 24 pregunta si las mujeres pueden sacar a Sánchez del paso ante el auge de la extrema derecha."
+        },
+        "it": {
+          "headline": "Elezioni in Spagna: politica abitativa e ruolo di Vox come ago della bilancia",
+          "body": "Secondo Euronews e France 24, la politica abitativa e il ruolo del partito di estrema destra Vox sono fattori decisivi. Euronews riferisce che un primo ministro ha bisogno di 176 voti per una maggioranza assoluta e mette in dubbio le possibilità di coalizione con il conservatore Partido Popular, mentre France 24 si chiede se le donne possano salvare Sanchez di fronte alla crescita dell'estrema destra."
+        },
+        "zh": {
+          "headline": "西班牙大选：住房政策与Vox党造王者因素",
+          "body": "据欧洲新闻台和法国24报道，住房政策与极右翼Vox党的角色是决定性因素。欧洲新闻台报道称，首相需要176票才能获得绝对多数，并质疑与保守派人民党的联合执政可能性；而法国24则提问，在极右翼势力崛起的背景下，女性能否助桑切斯脱困。"
+        },
+        "ja": {
+          "headline": "スペイン総選挙：住宅問題とVoxのキングメーカー的役割が要因",
+          "body": "ユーロニュースとフランス24によると、住宅政策と極右政党Voxの役割が決定的な要因となっている。ユーロニュースは、首相の絶対多数獲得には176票が必要で、保守政党国民党（Partido Popular）との連立の可能性に疑問を呈している。一方、フランス24は、極右の台頭の中で女性がサンチェス氏を救えるかどうかを問いかけている。"
+        },
+        "pt": {
+          "headline": "Eleições em Espanha: Habitação e o fator Vox como fiel da balança",
+          "body": "Segundo a Euronews e a France 24, a política de habitação e o papel do partido de extrema-direita Vox são fatores decisivos. A Euronews refere que um primeiro-ministro precisa de 176 votos para uma maioria absoluta e questiona as hipóteses de coligação com o conservador Partido Popular, enquanto a France 24 questiona se as mulheres podem salvar Sánchez perante a ascensão da extrema-direita."
+        },
+        "ko": {
+          "headline": "스페인 선거: 주택 및 복스(Vox)의 결정적 요인",
+          "body": "유로뉴스와 프랑스 24에 따르면 주택 정책과 극우 정당 복스(Vox)의 역할이 결정적인 요인입니다. 유로뉴스는 절대 다수 의석 확보를 위해 총리가 176표가 필요하다고 보도하며 보수당인 국민당(Partido Popular)과의 연정 가능성에 의문을 제기하고 있고, 프랑스 24는 극우의 부상 속에서 여성들이 산체스(Sanchez)를 구제할 수 있는지 묻고 있습니다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Euronews",
+          "title": "Spain election: Will Vox be the kingmaker, and will housing decide the vote?",
+          "url": "https://www.euronews.com/2026/11/27/spain-general-election-is-vox-set-to-be-the-kingmaker-and-how-crucial-is-the-housing-issue",
+          "publishedAt": "2026-11-27T17:40:17.000Z"
+        },
+        {
+          "outlet": "France 24",
+          "title": "Is Spain 'nostalgic' for Franco? Would traditional right PP consider an alliance with far-right Vox?",
+          "url": "https://www.france24.com/en/is-spain-nostalgic-for-franco-would-traditional-right-pp-consider-an-alliance-with-far-right-vox",
+          "publishedAt": "2026-11-27T18:31:42.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T11:42:23.000Z",
+      "id": "u-1795779743000-948c",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Der spanische Ministerpräsident Pedro Sánchez hat am Freitag erklärt, er sei zuversichtlich, bei der bevorstehenden vorgezogenen Parlamentswahl eine linksgerichtete Mehrheit zu erringen. Berichten von „The Straits Times“ und „The Guardian“ zufolge strebt Sánchez eine vierte Amtszeit an, während die Parteien am Vorabend der Abstimmung am Sonntag ihre Wahlkämpfe abschließen, obwohl Umfragen darauf hindeuten, dass die Wähler eine achtjährige Herrschaft der Linken beenden könnten.",
+          "headline": "Spaniens Ministerpräsident Pedro Sánchez strebt vierte Amtszeit an"
+        },
+        "en": {
+          "body": "Spain Prime Minister Pedro Sanchez stated on Friday that he was confident of securing a left-wing majority in the upcoming snap general election. According to The Straits Times and The Guardian, Sanchez is pursuing a fourth term as political parties wrap up their campaigns ahead of Sunday's vote despite polls indicating voters could end eight years of leftist rule.",
+          "headline": "Spain Prime Minister Pedro Sanchez seeks fourth term"
+        },
+        "es": {
+          "body": "El presidente del Gobierno español, Pedro Sánchez, afirmó el viernes que confiaba en asegurar una mayoría de izquierdas en las próximas elecciones generales anticipadas. Según The Straits Times y The Guardian, Sánchez aspira a un cuarto mandato mientras los partidos políticos concluyen sus campañas antes de la votación del domingo, a pesar de que los sondeos indican que los electores podrían poner fin a ocho años de gobierno de izquierda.",
+          "headline": "El presidente del Gobierno español, Pedro Sánchez, busca un cuarto mandato"
+        },
+        "fr": {
+          "body": "Le Premier ministre espagnol Pedro Sánchez a déclaré vendredi qu'il était confiant quant à sa capacité d'obtenir une majorité de gauche lors des prochaines élections législatives anticipées. Selon The Straits Times et The Guardian, M. Sánchez brigue un quatrième mandat alors que les partis politiques bouclent leurs campagnes avant le scrutin de dimanche, en dépit de sondages indiquant que les électeurs pourraient mettre fin à huit années de gouvernement de gauche.",
+          "headline": "Le Premier ministre espagnol Pedro Sánchez brigue un quatrième mandat"
+        },
+        "it": {
+          "body": "Il primo ministro spagnolo Pedro Sánchez ha dichiarato venerdì di essere fiducioso di ottenere una maggioranza di sinistra nelle prossime elezioni politiche anticipate. Secondo The Straits Times e The Guardian, Sánchez punta a un quarto mandato mentre i partiti concludono le loro campagne in vista del voto di domenica, nonostante i sondaggi indichino che gli elettorati potrebbero porre fine a otto anni di governo di sinistra.",
+          "headline": "Il primo ministro spagnolo Pedro Sánchez punta a un quarto mandato"
+        },
+        "ja": {
+          "body": "スペインのペドロ・サンチェス首相は金曜日、来たるべき解散総選挙で左派過半数を確実に獲得できるとの自信を示した。海峡時報（ザ・スト和イツ・タイムズ）およびガーディアン紙によると、世論調査が8年間にわたる左派政権の終焉を示唆する中、日曜日の投票を前に各政党が選挙運動を締めくくるなか、サンチェス氏は4期目を目指して活動を続けている。",
+          "headline": "スペインのペドロ・サンチェス首相、4選を目指す"
+        },
+        "ko": {
+          "body": "페드로 산체스 스페인 총리는 다가오는 조기 총선에서 좌파 연합이 과반을 확보할 것으로 확신한다고 금요일 밝혔다. 스트레이츠 타임스와 가디언에 따르면, 여론조사에서 유권자들이 8년간의 좌파 집권을 끝낼 수 있다는 전망이 나오는 가운데, 각 정당이 일요일 투표를 앞두고 선거 운동을 마무리하면서 산체스 총리는 4선 연임을 추진하고 있다.",
+          "headline": "스페인 페드로 산체스 총리, 4선 도전"
+        },
+        "pt": {
+          "body": "O Primeiro-Ministro espanhol Pedro Sánchez afirmou esta sexta-feira estar confiante em assegurar uma maioria de esquerda nas próximas eleições legislativas antecipadas. De acordo com o The Straits Times e o The Guardian, Sánchez procura um quarto mandato enquanto os partidos políticos encerram as suas campanhas antes da votação de domingo, apesar de as sondagens indicarem que os eleitores poderão pôr fim a oito anos de governo de esquerda.",
+          "headline": "Primeiro-Ministro espanhol Pedro Sánchez procura quarto mandato"
+        },
+        "zh": {
+          "body": "西班牙首相佩德罗·桑切斯于周五表示，他有信心在即将到来的提前大选中赢得左翼多数席位。据《海峡时报》和《卫报》报道，尽管民调显示选民可能会结束八年的左翼统治，但在各政党为周日的投票做最后冲刺之际，桑切斯正在寻求第四任期。",
+          "headline": "西班牙首相佩德罗·桑切斯寻求第四任期"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.straitstimes.com/world/europe/spains-sanchez-insists-he-will-defy-polls-as-election-campaign-wraps-up",
+          "title": "Spain's Sanchez insists he will defy polls as election campaign wraps up",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-27T11:42:23.000Z"
+        },
+        {
+          "url": "https://www.theguardian.com/world/live/2026/nov/27/zelenskyy-putin-trump-comments-russia-ukraine-latest-news-updates",
+          "title": "Spanish prime minister Pedro Sánchez confident of election victory despite polls – Europe live",
+          "outlet": "The Guardian",
+          "publishedAt": "2026-11-27T11:41:55.000Z"
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/spain-election-what-the-main-parties-are-proposing",
+          "title": "Spain election: what the main parties are proposing",
+          "outlet": "The Straits Times",
+          "publishedAt": "2026-11-27T08:42:01.000Z"
+        }
+      ],
+      "importance": 3
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "spain election",
     "pedro sanchez",
@@ -13,78 +274,6 @@
     "polls",
     "voters"
   ],
-  "startedAt": "2026-11-27T11:59:39.105Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-27T12:09:43.777Z",
-  "articleSlug": "spanish-general-election",
-  "sourceCount": 2,
-  "wantsStats": true,
-  "updates": [
-    {
-      "id": "u-1795779743000-948c",
-      "at": "2026-11-27T11:42:23.000Z",
-      "kind": "statement",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Spain Prime Minister Pedro Sanchez seeks fourth term",
-          "body": "Spain Prime Minister Pedro Sanchez stated on Friday that he was confident of securing a left-wing majority in the upcoming snap general election. According to The Straits Times and The Guardian, Sanchez is pursuing a fourth term as political parties wrap up their campaigns ahead of Sunday's vote despite polls indicating voters could end eight years of leftist rule."
-        },
-        "es": {
-          "headline": "El presidente del Gobierno español, Pedro Sánchez, busca un cuarto mandato",
-          "body": "El presidente del Gobierno español, Pedro Sánchez, afirmó el viernes que confiaba en asegurar una mayoría de izquierdas en las próximas elecciones generales anticipadas. Según The Straits Times y The Guardian, Sánchez aspira a un cuarto mandato mientras los partidos políticos concluyen sus campañas antes de la votación del domingo, a pesar de que los sondeos indican que los electores podrían poner fin a ocho años de gobierno de izquierda."
-        },
-        "de": {
-          "headline": "Spaniens Ministerpräsident Pedro Sánchez strebt vierte Amtszeit an",
-          "body": "Der spanische Ministerpräsident Pedro Sánchez hat am Freitag erklärt, er sei zuversichtlich, bei der bevorstehenden vorgezogenen Parlamentswahl eine linksgerichtete Mehrheit zu erringen. Berichten von „The Straits Times“ und „The Guardian“ zufolge strebt Sánchez eine vierte Amtszeit an, während die Parteien am Vorabend der Abstimmung am Sonntag ihre Wahlkämpfe abschließen, obwohl Umfragen darauf hindeuten, dass die Wähler eine achtjährige Herrschaft der Linken beenden könnten."
-        },
-        "it": {
-          "headline": "Il primo ministro spagnolo Pedro Sánchez punta a un quarto mandato",
-          "body": "Il primo ministro spagnolo Pedro Sánchez ha dichiarato venerdì di essere fiducioso di ottenere una maggioranza di sinistra nelle prossime elezioni politiche anticipate. Secondo The Straits Times e The Guardian, Sánchez punta a un quarto mandato mentre i partiti concludono le loro campagne in vista del voto di domenica, nonostante i sondaggi indichino che gli elettorati potrebbero porre fine a otto anni di governo di sinistra."
-        },
-        "fr": {
-          "headline": "Le Premier ministre espagnol Pedro Sánchez brigue un quatrième mandat",
-          "body": "Le Premier ministre espagnol Pedro Sánchez a déclaré vendredi qu'il était confiant quant à sa capacité d'obtenir une majorité de gauche lors des prochaines élections législatives anticipées. Selon The Straits Times et The Guardian, M. Sánchez brigue un quatrième mandat alors que les partis politiques bouclent leurs campagnes avant le scrutin de dimanche, en dépit de sondages indiquant que les électeurs pourraient mettre fin à huit années de gouvernement de gauche."
-        },
-        "zh": {
-          "headline": "西班牙首相佩德罗·桑切斯寻求第四任期",
-          "body": "西班牙首相佩德罗·桑切斯于周五表示，他有信心在即将到来的提前大选中赢得左翼多数席位。据《海峡时报》和《卫报》报道，尽管民调显示选民可能会结束八年的左翼统治，但在各政党为周日的投票做最后冲刺之际，桑切斯正在寻求第四任期。"
-        },
-        "pt": {
-          "headline": "Primeiro-Ministro espanhol Pedro Sánchez procura quarto mandato",
-          "body": "O Primeiro-Ministro espanhol Pedro Sánchez afirmou esta sexta-feira estar confiante em assegurar uma maioria de esquerda nas próximas eleições legislativas antecipadas. De acordo com o The Straits Times e o The Guardian, Sánchez procura um quarto mandato enquanto os partidos políticos encerram as suas campanhas antes da votação de domingo, apesar de as sondagens indicarem que os eleitores poderão pôr fim a oito anos de governo de esquerda."
-        },
-        "ja": {
-          "headline": "スペインのペドロ・サンチェス首相、4選を目指す",
-          "body": "スペインのペドロ・サンチェス首相は金曜日、来たるべき解散総選挙で左派過半数を確実に獲得できるとの自信を示した。海峡時報（ザ・スト和イツ・タイムズ）およびガーディアン紙によると、世論調査が8年間にわたる左派政権の終焉を示唆する中、日曜日の投票を前に各政党が選挙運動を締めくくるなか、サンチェス氏は4期目を目指して活動を続けている。"
-        },
-        "ko": {
-          "headline": "스페인 페드로 산체스 총리, 4선 도전",
-          "body": "페드로 산체스 스페인 총리는 다가오는 조기 총선에서 좌파 연합이 과반을 확보할 것으로 확신한다고 금요일 밝혔다. 스트레이츠 타임스와 가디언에 따르면, 여론조사에서 유권자들이 8년간의 좌파 집권을 끝낼 수 있다는 전망이 나오는 가운데, 각 정당이 일요일 투표를 앞두고 선거 운동을 마무리하면서 산체스 총리는 4선 연임을 추진하고 있다."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "The Straits Times",
-          "title": "Spain's Sanchez insists he will defy polls as election campaign wraps up",
-          "url": "https://www.straitstimes.com/world/europe/spains-sanchez-insists-he-will-defy-polls-as-election-campaign-wraps-up",
-          "publishedAt": "2026-11-27T11:42:23.000Z"
-        },
-        {
-          "outlet": "The Guardian",
-          "title": "Spanish prime minister Pedro Sánchez confident of election victory despite polls – Europe live",
-          "url": "https://www.theguardian.com/world/live/2026/nov/27/zelenskyy-putin-trump-comments-russia-ukraine-latest-news-updates",
-          "publishedAt": "2026-11-27T11:41:55.000Z"
-        },
-        {
-          "outlet": "The Straits Times",
-          "title": "Spain election: what the main parties are proposing",
-          "url": "https://www.straitstimes.com/world/europe/spain-election-what-the-main-parties-are-proposing",
-          "publishedAt": "2026-11-27T08:42:01.000Z"
-        }
-      ]
-    }
-  ],
   "seenUrls": [
     "https://www.straitstimes.com/world/europe/spains-sanchez-insists-he-will-defy-polls-as-election-campaign-wraps-up",
     "https://www.theguardian.com/world/live/2026/nov/27/zelenskyy-putin-trump-comments-russia-ukraine-latest-news-updates",
@@ -93,102 +282,22 @@
     "https://www.lemonde.fr/en/politics/article/2026/11/27/pro-ukraine-and-pro-eu-presidential-candidates-struggle-to-engage-french-voters-on-these-issues_6789832_5.html",
     "http://www.africanews.com/2026/11/27/south-sudans-president-lifts-state-of-emergency-in-four-regions-ahead-of-polls/",
     "https://www.straitstimes.com/world/europe/spain-election-what-the-main-parties-are-proposing",
-    "https://www.straitstimes.com/world/europe/centre-right-leader-feijoo-pitches-himself-as-the-manager-spain-needs"
+    "https://www.straitstimes.com/world/europe/centre-right-leader-feijoo-pitches-himself-as-the-manager-spain-needs",
+    "https://www.france24.com/en/tv-shows/spotlight/20261127-spanish-elections-right-wing-voters-extremely-mobilised-left-wing-voters-not-mobilised-enough",
+    "https://www.abc.net.au/news/2026-11-28/victorian-election-live-updates-voting-results-seat-count/107418038",
+    "https://timesofindia.indiatimes.com/life-style/people/at-18-ranchis-sarthak-sidhant-made-headlines-for-exposing-alleged-flaws-in-cbses-marking-system-now-he-has-converted-6-8-lakh-up-voter-list-pdfs-into-searchable-data-covering-54-8-crore-records/articleshow/136213352.cms",
+    "https://english.elpais.com/spain/2026-11-27/what-could-decide-spains-election-the-electoral-shifts-that-could-tip-the-scales.html",
+    "https://www.france24.com/en/is-spain-nostalgic-for-franco-would-traditional-right-pp-consider-an-alliance-with-far-right-vox",
+    "https://www.euronews.com/2026/11/27/spain-general-election-is-vox-set-to-be-the-kingmaker-and-how-crucial-is-the-housing-issue",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qM2xEd3lHR1dpU2xwT1JLcDEyUXlVS0xaeGptQzlscXNJSHc1VVVXQnZpY2FfN0NYdlFLMGZfWW9SSDFLT3NQVEF5cDlKZUlaVGNmZW5VUlR6LXI1MGtGeHJZWU1icGs?oc=5",
+    "https://www.aljazeera.com/news/2026/11/27/spains-pedro-sanchez-bets-on-left-wing-voting-surge-to-defy-election-polls?traffic_source=rss",
+    "https://www.france24.com/en/europe/20261127-spain-far-right-vox-at-the-gates-can-women-bail-out-sanchez-once-again"
   ],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Spanish General Election",
-      "dek": "Political leaders make final campaign appeals as Spain approaches a high-stakes national vote."
-    },
-    "de": {
-      "title": "Spanische Parlamentswahl",
-      "dek": "Politische Spitzenkräfte richten letzte Appelle an die Wähler, während Spanien auf eine mit Spannung erwartete nationale Abstimmung zusteuert."
-    },
-    "es": {
-      "title": "Elecciones generales en España",
-      "dek": "Los líderes políticos realizan sus últimos llamamientos de campaña mientras España se aproxima a unas elecciones nacionales de gran trascendencia."
-    },
-    "fr": {
-      "title": "Élections générales en Espagne",
-      "dek": "Les dirigeants politiques lancent leurs derniers appels de campagne alors que l'Espagne s'approche d'un scrutin national à fort enjeu."
-    },
-    "pt": {
-      "title": "Eleições Gerais em Espanha",
-      "dek": "Líderes políticos fazem os apelos finais de campanha enquanto Espanha se aproxima de uma votação nacional de alto risco."
-    },
-    "it": {
-      "title": "Elezioni generali in Spagna",
-      "dek": "I leader politici rivolgono i loro appelli finali di campagna elettorale mentre la Spagna si avvia verso un voto nazionale cruciale."
-    },
-    "ja": {
-      "title": "スペイン総選挙",
-      "dek": "スペインが重要な国政選挙を控え、政治指導者らが最後のお願い演説を行っている。"
-    },
-    "zh": {
-      "title": "西班牙大选",
-      "dek": "随着西班牙迎来一场高风险的全国大选，政治领导人们作出了最后的竞选呼吁。"
-    },
-    "ko": {
-      "title": "스페인 총선",
-      "dek": "스페인의 중대 국가 선거를 앞두고 정치 지도자들이 마지막 선거 유세에 총력을 기울이고 있다."
-    }
-  },
-  "article": {
-    "slug": "spanish-general-election",
-    "updatedAt": "2026-11-27T12:09:47.295Z",
-    "reason": "1 new update(s)",
-    "locales": {
-      "en": {
-        "title": "Spain Prime Minister Pedro Sanchez seeks fourth term in snap election",
-        "dek": "Spain Prime Minister Pedro Sanchez pursues a fourth term as political parties wrap up campaigns.",
-        "facts": [
-          "Spain Prime Minister Pedro Sanchez stated on Friday that he is confident of securing a left-wing majority.",
-          "Political parties are wrapping up their campaigns ahead of Sunday's vote according to news reports.",
-          "Opinion polls indicate that voters could potentially end eight years of leftist rule in the country.",
-          "Pedro Sanchez is pursuing a fourth term in office during the upcoming snap general election."
-        ],
-        "body": [
-          "Spain Prime Minister Pedro Sanchez stated on Friday that he was confident of securing a left-wing majority in the upcoming snap general election. Political parties are wrapping up their campaigns ahead of Sunday's vote according to reports from The Straits Times and The Guardian. Pedro Sanchez is pursuing a fourth term in office despite current political conditions.",
-          "Opinion polls indicate that voters could end eight years of leftist rule in Spain. The Straits Times and The Guardian reported that political parties wrapped up their campaigning activities on Friday. Prime Minister Sanchez insisted that he would defy the polls as the campaign came to a close.",
-          "Campaigning activities for the snap general election concluded on Friday across the country. Candidates from the main parties finalized their proposals before voters head to the polls on Sunday. The election will determine the future leadership of the Spanish government.",
-          "The Straits Times published details regarding what the main parties are proposing in the election. Voters face choices between competing political platforms as the campaign period ends. Observers and voters await the outcome of Sunday's snap general election.",
-          "Pedro Sanchez stated his confidence to reporters while finishing his campaign schedule. According to The Guardian, the prime minister maintained his optimistic stance despite unfavorable poll numbers. The final days of campaigning focused on mobilizing the remaining undecided voters.",
-          "Opposition parties campaigned actively during the final week to challenge the incumbent administration. The Straits Times reported that the political landscape remains competitive as Sunday approaches. Parties made their final appeals to the public on Friday before the mandatory campaign silence."
-        ],
-        "context": "Spain is holding a snap general election on Sunday to determine its government leadership. The current administration led by Prime Minister Pedro Sanchez has been in power for eight years under leftist rule.",
-        "imageCaption": ""
-      },
-      "de": {
-        "title": "Spaniens Ministerpräsident Pedro Sánchez strebt bei vorgezogener Wahl vierte Amtszeit an",
-        "dek": "Spaniens Ministerpräsident Pedro Sánchez strebt eine vierte Amtszeit an, während die Parteien ihre Wahlkämpfe abschließen.",
-        "facts": [
-          "Der spanische Ministerpräsident Pedro Sánchez erklärte am Freitag, er sei zuversichtlich, eine linke Mehrheit zu errringen.",
-          "Berichten zufolge schließen die politischen Parteien ihre Wahlkämpfe im Vorfeld der Abstimmung am Sonntag ab.",
-          "Umfragen deuten darauf hin, dass die Wähler möglicherweise acht Jahre linker Regierung im Land beenden könnten.",
-          "Pedro Sánchez strebt bei der anstehenden vorgezogenen Parlamentswahl eine vierte Amtszeit im Amt an."
-        ],
-        "body": [
-          "Der spanische Ministerpräsident Pedro Sánchez erklärte am Freitag, er sei zuversichtlich, bei der anstehenden vorgezogenen Parlamentswahl eine linke Mehrheit zu erringen. Berichten von The Straits Times und The Guardian zufolge schließen die politischen Parteien ihre Wahlkämpfe im Vorfeld der Abstimmung am Sonntag ab. Pedro Sánchez strebt trotz der gegenwärtigen politischen Bedingungen eine vierte Amtszeit an.",
-          "Umfragen deuten darauf hin, dass die Wähler acht Jahre linker Herrschaft in Spanien beenden könnten. The Straits Times und The Guardian berichteten, dass die Parteien ihre Wahlkampfaktivitäten am Freitag abschlossen. Ministerpräsident Sánchez betonte zum Ende des Wahlkampfs, er werde den Umfragen trotzen.",
-          "Die Wahlkampfaktivitäten für die vorgezogene Parlamentswahl wurden am Freitag im ganzen Land beendet. Die Kandidaten der großen Parteien finalisierten ihre Vorschläge, bevor die Wähler am Sonntag an die Urnen gehen. Die Wahl wird über die künftige Führung der spanischen Regierung entscheiden.",
-          "The Straits Times veröffentlichte Einzelheiten darüber, was die Hauptparteien bei der Wahl vorschlagen. Die Wähler stehen zum Ende des Wahlkampfs vor der Wahl zwischen konkurrierenden politischen Programmen. Beobachter und Wähler erwarten den Ausgang der vorgezogenen Parlamentswahl am Sonntag.",
-          "Pedro Sánchez äußerte sich gegenüber Reportern zuversichtlich, während er seinen Wahlkampfplan abschloss. Dem Guardian zufolge behielt der Ministerpräsident trotz ungünstiger Umfragezahlen seine optimistische Haltung bei. Die letzten Tage des Wahlkampfs konzentrierten sich auf die Mobilisierung der verbleibenden unentschlossenen Wähler.",
-          "Die Oppositionsparteien warben in der letzten Woche intensiv um Stimmen, um die amtierende Regierung herauszufordern. The Straits Times berichtete, dass die politische Landschaft angesichts des bevorstehenden Sonntags umkämpft bleibt. Die Parteien richteten am Freitag vor Beginn der gesetzlichen Wahlruhe ihre letzten Appelle an die Öffentlichkeit."
-        ],
-        "context": "Spanien hält am Sonntag eine vorgezogene Parlamentswahl ab, um über die Führung seiner Regierung zu entscheiden. Die derzeitige Regierung unter Ministerpräsident Pedro Sánchez ist seit acht Jahren an der Macht und steht für eine linke Regierungsführung."
-      }
-    },
-    "versions": []
-  },
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "Euronews",
-      "The Guardian",
-      "South China Morning Post",
-      "The Straits Times"
-    ],
-    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
-  }
+  "startedAt": "2026-11-27T11:59:39.105Z",
+  "updatedAt": "2026-11-27T20:58:41.363Z",
+  "importance": 4,
+  "wantsStats": true,
+  "articleSlug": "spanish-general-election",
+  "sourceCount": 4,
+  "seenHeadlines": []
 }
