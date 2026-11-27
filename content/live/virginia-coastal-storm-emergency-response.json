@@ -11,19 +11,19 @@
       "WITN"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "nvidia/nemotron-3.5-bolt-e4b"
+    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b"
   },
   "slug": "virginia-coastal-storm-emergency-response",
   "topic": "virginia coastal storm emergency response",
   "status": "live",
   "article": {
     "slug": "virginia-coastal-storm-emergency-response",
-    "updatedAt": "2026-11-27T21:28:42.955Z",
+    "updatedAt": "2026-11-27T22:31:46.631Z",
     "reason": "1 new update(s)",
     "locales": {
       "en": {
         "title": "Virginia governor declares state of emergency after coastal storm",
-        "dek": "Governor Spanberger acts as Thanksgiving storm impacts Virginia coast",
+        "dek": "Gov. Spanberger declared a state of emergency following a Thanksgiving storm according to WSLS and FOX 5 DC.",
         "facts": [
           "Governor Spanberger declared a state of emergency following a Thanksgiving storm",
           "The declaration followed reports of coastal storm impacts in Virginia",
@@ -34,13 +34,42 @@
           "Governor Abigail Spanberger declared a state of emergency following a Thanksgiving storm according to WSLS and FOX 5 DC.",
           "The declaration came after a coastal storm affected Virginia during the Thanksgiving period.",
           "Both WSLS and FOX 5 DC reported on Governor Spanberger's emergency action.",
-          "The state of emergency declaration was made public on November 27, 2026."
+          "The state of emergency declaration was made public on November 27, 2026.",
+          "WJLA and Washington Examiner confirmed Governor Spanberger's emergency declaration following a severe coastal storm.",
+          "The emergency declaration followed reports of a severe coastal storm impacting the Virginia coast.",
+          "Washington Examiner and WJLA verified the emergency action taken by Governor Spanberger.",
+          "The state of emergency was declared in response to storm impacts during the Thanksgiving holiday period."
         ],
         "context": "Governor Spanberger declared a state of emergency in response to a coastal storm affecting Virginia during the Thanksgiving period, as reported by multiple news outlets.",
         "imageCaption": ""
       }
     },
-    "versions": []
+    "versions": [
+      {
+        "at": "2026-11-27T21:28:42.955Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Governor Spanberger acts as Thanksgiving storm impacts Virginia coast",
+            "body": [
+              "Governor Abigail Spanberger declared a state of emergency following a Thanksgiving storm according to WSLS and FOX 5 DC.",
+              "The declaration came after a coastal storm affected Virginia during the Thanksgiving period.",
+              "Both WSLS and FOX 5 DC reported on Governor Spanberger's emergency action.",
+              "The state of emergency declaration was made public on November 27, 2026."
+            ],
+            "facts": [
+              "Governor Spanberger declared a state of emergency following a Thanksgiving storm",
+              "The declaration followed reports of coastal storm impacts in Virginia",
+              "Multiple outlets confirmed the emergency declaration on November 27, 2026",
+              "The storm prompted emergency response measures across the coastal region"
+            ],
+            "title": "Virginia governor declares state of emergency after coastal storm",
+            "context": "Governor Spanberger declared a state of emergency in response to a coastal storm affecting Virginia during the Thanksgiving period, as reported by multiple news outlets.",
+            "imageCaption": ""
+          }
+        }
+      }
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -83,62 +112,120 @@
   },
   "updates": [
     {
-      "id": "u-1795813759000-9h40",
-      "at": "2026-11-27T21:09:19.000Z",
-      "kind": "statement",
+      "id": "u-1795816977000-d3sm",
+      "at": "2026-11-27T22:02:57.000Z",
+      "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Governor Spanberger declares state of emergency after coastal storm",
-          "body": "Gov. Spanberger declared a state of emergency following a Thanksgiving storm according to WSLS and FOX 5 DC."
-        },
-        "de": {
-          "headline": "Gouverneur Spanberger erklärt Notstand nach Küstengestöber",
-          "body": "Laut WSLS und FOX 5 DC erklärte Gouverneur Spanberger nach einem Thanksgiving-Sturm den Notstand."
-        },
-        "es": {
-          "headline": "El gobernador Spanberger declara estado de emergencia tras tormenta costera",
-          "body": "El gobernador Spanberger declaró el estado de emergencia tras una tormenta de Acción de Gracias, según WSLS y FOX 5 DC."
-        },
-        "it": {
-          "headline": "Lo statista Spanberger dichiara stato di emergenza dopo tempesta costiera",
-          "body": "Il governatore Spanberger ha dichiarato lo stato di emergenza a seguito di una tempesta di Ringraziamento, secondo WSLS e FOX 5 DC."
+          "headline": "State of emergency declared after Thanksgiving nor'easter",
+          "body": "Governor Spanberger has declared a state of emergency following a severe coastal storm. WJLA and Washington Examiner confirm the emergency declaration."
         },
         "fr": {
-          "headline": "Le gouverneur Spanberger déclare l'état d'urgence après une tempête côtière",
-          "body": "Le gouverneur Spanberger a déclaré l'état d'urgence suite à une tempête de Thanksgiving, selon WSLS et FOX 5 DC."
+          "headline": "État d'urgence déclaré après le nor'easter de Thanksgiving",
+          "body": "Le gouverneur Spanberger a déclaré l'état d'urgence suite à une violente tempête côtière. WJLA et Washington Examiner confirment la déclaration d'urgence."
         },
-        "pt": {
-          "headline": "Governador Spanberger declara estado de emergência após tempestade costeira",
-          "body": "O governador Spanberger declarou estado de emergência após uma tempestade de Ação de Graças, segundo a WSLS e a FOX 5 DC."
+        "de": {
+          "headline": "Notstand nach Thanksgiving-Nor'easter ausgerufen",
+          "body": "Regierungspräsident Spanberger hat nach einem schweren Küstensturm den Notstand ausgerufen. WJLA und Washington Examiner bestätigen die Notstandsverkündung."
         },
-        "ja": {
-          "headline": "知事スペンバーガー、沿岸部の暴風雨の後非常事態宣言",
-          "body": "スペンバーガー知事は、WSLSとFOX 5 DCの報道に基づき、感謝祭の暴風雨の後、非常事態を宣言した。"
+        "it": {
+          "headline": "Stato di emergenza dopo la tempesta da nord-est del Giorno del Ringraziamento",
+          "body": "Il governatore Spanberger ha dichiarato lo stato di emergenza in seguito a una violenta tempesta costiera. WJLA e Washington Examiner confermano la dichiarazione di emergenza."
         },
         "zh": {
-          "headline": "Spanberger州长因沿海风暴宣布进入紧急状态",
-          "body": "根据WSLS和FOX 5 DC报道，Spanberger州长因感恩节风暴宣布进入紧急状态。"
+          "headline": "感恩节东北风暴后宣布进入紧急状态",
+          "body": "斯潘伯格州长在一场严重的沿海风暴过后宣布进入紧急状态。WJLA和《华盛顿观察家报》证实了这一紧急状态声明。"
+        },
+        "pt": {
+          "headline": "Estado de emergência declarado após nor'easter do Dia de Ação de Graças",
+          "body": "A governadora Spanberger declarou o estado de emergência na sequência de uma severa tempestade costeira. A WJLA e o Washington Examiner confirmam a declaração de emergência."
+        },
+        "es": {
+          "headline": "Declarado el estado de emergencia tras el nor'easter del Día de Acción de Gracias",
+          "body": "La gobernadora Spanberger ha declarado el estado de emergencia tras una severa tormenta costera. WJLA y Washington Examiner confirman la declaración de emergencia."
+        },
+        "ja": {
+          "headline": "感謝祭のノーイースターを受け非常事態宣言",
+          "body": "スパンバーガー州知事は、激しい沿岸暴風雨を受けて非常事態を宣言した。WJLAとワシントン・エグザミナーが、この非常事態宣言を確認している。"
         },
         "ko": {
-          "headline": "스팬버거 주지사, 해안 폭풍 이후 비상사태 선포",
-          "body": "스팬버거 주지사가 추수감사절 폭풍 이후 비상사태를 선포했다고 WSLS와 FOX 5 DC가 전했다."
+          "headline": "추수감사절 노스이스터 이후 비상사태 선포",
+          "body": "스팬버거 주지사가 심각한 연안 폭풍 이후 비상사태를 선포했다. WJLA와 워싱턴 이그재미너가 이번 비상사태 선포를 확인했다."
         }
       },
       "sources": [
         {
-          "outlet": "WSLS",
-          "title": "Gov. Spanberger declares state of emergency following Thanksgiving storm",
+          "outlet": "WJLA",
+          "title": "Gov. Spanberger declares state of emergency following severe holiday storm",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOLXV2Z21vWTNIVEsteEctdFIzWFRlSkNkN190ZUczS1BCci1wN2k4NlR4YXUzNG9CLUlfdTJadmFLWmJWeG9hTTB1MEktN19oT2FYZmNxVVB4emtqOEVMaTJBQ2RVMEw5U2ltNlk2andTQ3dFN1Z0U2NRbmVXaGVxZjZmeWdKNHEwZ1ZoYk1vdlVSNmxzcWp2c2dwdTl1cmYyU0oxMHlKQnRzUDMwNnNXQVRyM3FXaXFjM1gweENjNENsODN0aVppRjdacnZ5WWhUV0NrMDhQVWE5UQ?oc=5",
+          "publishedAt": "2026-11-27T22:02:57.000Z"
+        },
+        {
+          "outlet": "Washington Examiner",
+          "title": "Virginia governor declares state of emergency after Thanksgiving storm",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcGVBVnh4U3M5RnlwOW55R2trb1lXVlprMEZNWE42SlpETFIzOTVGWUJjdmZFeUE2akg1MEM1MEFISWZSekx2bm4tRjMxTU94dWJoeTB0b1dQZWZpVzRSYlU5dEpORHYwbWIzb19jZzB0dG51ZXRhNHd3aGlkbF9PTEJ2b2NKdV9NellfWm91Vml5OXVyMXJnM002cmVjYTFCQzQ4MlRoTU5OSDVFZUhwWnp3?oc=5",
+          "publishedAt": "2026-11-27T21:33:24.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T21:09:19.000Z",
+      "id": "u-1795813759000-9h40",
+      "kind": "statement",
+      "locales": {
+        "de": {
+          "body": "Laut WSLS und FOX 5 DC erklärte Gouverneur Spanberger nach einem Thanksgiving-Sturm den Notstand.",
+          "headline": "Gouverneur Spanberger erklärt Notstand nach Küstengestöber"
+        },
+        "en": {
+          "body": "Gov. Spanberger declared a state of emergency following a Thanksgiving storm according to WSLS and FOX 5 DC.",
+          "headline": "Governor Spanberger declares state of emergency after coastal storm"
+        },
+        "es": {
+          "body": "El gobernador Spanberger declaró el estado de emergencia tras una tormenta de Acción de Gracias, según WSLS y FOX 5 DC.",
+          "headline": "El gobernador Spanberger declara estado de emergencia tras tormenta costera"
+        },
+        "fr": {
+          "body": "Le gouverneur Spanberger a déclaré l'état d'urgence suite à une tempête de Thanksgiving, selon WSLS et FOX 5 DC.",
+          "headline": "Le gouverneur Spanberger déclare l'état d'urgence après une tempête côtière"
+        },
+        "it": {
+          "body": "Il governatore Spanberger ha dichiarato lo stato di emergenza a seguito di una tempesta di Ringraziamento, secondo WSLS e FOX 5 DC.",
+          "headline": "Lo statista Spanberger dichiara stato di emergenza dopo tempesta costiera"
+        },
+        "ja": {
+          "body": "スペンバーガー知事は、WSLSとFOX 5 DCの報道に基づき、感謝祭の暴風雨の後、非常事態を宣言した。",
+          "headline": "知事スペンバーガー、沿岸部の暴風雨の後非常事態宣言"
+        },
+        "ko": {
+          "body": "스팬버거 주지사가 추수감사절 폭풍 이후 비상사태를 선포했다고 WSLS와 FOX 5 DC가 전했다.",
+          "headline": "스팬버거 주지사, 해안 폭풍 이후 비상사태 선포"
+        },
+        "pt": {
+          "body": "O governador Spanberger declarou estado de emergência após uma tempestade de Ação de Graças, segundo a WSLS e a FOX 5 DC.",
+          "headline": "Governador Spanberger declara estado de emergência após tempestade costeira"
+        },
+        "zh": {
+          "body": "根据WSLS和FOX 5 DC报道，Spanberger州长因感恩节风暴宣布进入紧急状态。",
+          "headline": "Spanberger州长因沿海风暴宣布进入紧急状态"
+        }
+      },
+      "sources": [
+        {
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQU0tRbGljVlZIQkRrT0ZRazZkc2s5eWFIMWw0T1hRWnJMM080cW5jVGVQX0ltVnZoek1nRWdLLW0zX1pOZmdtZ1BOcHVnQzEybFA5eTl2bEVORzM4c1l3V1lKcnBHWTBSX3lVa25kLVA4WTU5SW1mME9FX3huakRyZE9fbjlhS2lGcDBuTzU2UWlSeG4zTjFMQjhTSDRFbWRyclVSV29Va3NzbC1TSXlsc1cwaU9OUQ?oc=5",
+          "title": "Gov. Spanberger declares state of emergency following Thanksgiving storm",
+          "outlet": "WSLS",
           "publishedAt": "2026-11-27T21:09:19.000Z"
         },
         {
-          "outlet": "FOX 5 DC",
-          "title": "Virginia Gov. Abigail Spanberger declares state of emergency after coastal storm",
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQV0hVb0lZdVZhVjdnWS1sLVBDb1piTkVuazd0dUNZWkNOT0w3UWdSa2sta1hGdUJNSkk4eDRnVWVLVUgyR3NrNnJBN1ZxV3VLYmNDMXhjelpnN3JQcEhubk5najNwRHA2ZmFuT2s2NDBHYk9RUUNMaWhkMDE2ZjJaejQ3WWNXOWcxMEJEcVBDSmQ4Yk5xbmVlWjdPY0xKbHZTT0EzZFd6aw?oc=5",
+          "title": "Virginia Gov. Abigail Spanberger declares state of emergency after coastal storm",
+          "outlet": "FOX 5 DC",
           "publishedAt": "2026-11-27T21:04:28.000Z"
         }
-      ]
+      ],
+      "importance": 3
     }
   ],
   "category": "world",
@@ -164,15 +251,22 @@
     "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMmJOdFZZdld6a3E4UWxKa051akh1LVhRYU0wcWh0TmF5VEluSFpRcHlvY216SnpGeTVOUUQxcXhBbHo2QmRnTWNFRUdPVjV2LUk5WTRFaGQybXd0YXRUN0wxYksyMGJmT1JHOGhrU1F2MTZIcENCampxaHItRktTOXhHZU83TnRZcmY0RmdwaWdhQWsteFE?oc=5",
     "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPdzZlM2FlSmRadmpva0t6WWltd0o2Y0pOLWVXWGVDVVNTb2dLa1h1NGZ6WWtud0VwQVFhUzhBZ0p6MkNuRHRDNnVrQzJrSFR0REpfODgzandnckYwRXlJUUE1LUh2QlhyLVBZemRsREhuQkdseWRYN19WVUNkU3NDTFdMaDdfUnY4QmRCUzIxbG5obmdwbnhTZ3R2VWQzN1JmWl84amFqTTA4ZkRPQnU2VmVROGlTXzZYVzY1Z3IzdFQ1QTFGZGVVUEx2OHRJYVg1Z0FxY3FyN2tHN0wxbVZXU1pTVThYZUVza1E?oc=5",
     "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSnVEYTVhVGdrdVNURlhpOUkzT2pnLTJ0SnNwWGxWUmNlYVhQOHlTdHZlQVRRRDE4Sm0td0M4dnVjTzVzMmw1eGx3a3UybFVyakp0WWI1aDR6UzQ5VDR5LU1ubmdCWUxqUzFvaXlSSkdmcFV0QndIbWlqU2JjZjl2OXpZc2VlX3IwVDBOTU1jb0hHSmM5c1ZZemZDVy1PYmR5cXZIVEF0TWllMzRvOHlDTEV3bDh5OXdp0gHSAUFVX3lxTE1ZcExHZEtNcE4zZXd3STF2SGF0UUVxVHhKcHRfeGRpRmFyc1V0RE80WE1RM2Y0cWJSMUduTFh1ZXdfRmd5NlNCT1RhR29RbkdlU2U3akpsejNpTERuTXpKcWZQTkkxSXdzQ2pzcWFGNGdNZXo3b2tkUUZCNFJFcHVBbFFUdkZSMWNLZmZjWTUxbGlaeVJ6ZjdLX244SEh0S2xqQzBrQkhNbWpmbWhWWElJbjlYYXhJdlFMcF9RV3BEUzRZQk84eWFEeFY3UDUxMUR0UQ?oc=5",
-    "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZEk1VjkzQ0N2SzFKdXZCTHc5QVFLd1hkMGVEcktRWHJkc3BVbUdZaE4yZEdBNTdIcDVrRzF6WDZFR1RZX25JakFrVmlseWJ1MEFRLVozNFVhaDYwdklwVnNoR2JSWWg2eXlYSzNERUxmT0JkTEZwQ3VhUVFzanBrbTlOYVJCWmdNTlp3VUJqMDJDeTJXV1dLa0NsWXJsSjVZWFJlcURaQmNodFQxWFBTSnlLclc?oc=5"
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZEk1VjkzQ0N2SzFKdXZCTHc5QVFLd1hkMGVEcktRWHJkc3BVbUdZaE4yZEdBNTdIcDVrRzF6WDZFR1RZX25JakFrVmlseWJ1MEFRLVozNFVhaDYwdklwVnNoR2JSWWg2eXlYSzNERUxmT0JkTEZwQ3VhUVFzanBrbTlOYVJCWmdNTlp3VUJqMDJDeTJXV1dLa0NsWXJsSjVZWFJlcURaQmNodFQxWFBTSnlLclc?oc=5",
+    "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOLXV2Z21vWTNIVEsteEctdFIzWFRlSkNkN190ZUczS1BCci1wN2k4NlR4YXUzNG9CLUlfdTJadmFLWmJWeG9hTTB1MEktN19oT2FYZmNxVVB4emtqOEVMaTJBQ2RVMEw5U2ltNlk2andTQ3dFN1Z0U2NRbmVXaGVxZjZmeWdKNHEwZ1ZoYk1vdlVSNmxzcWp2c2dwdTl1cmYyU0oxMHlKQnRzUDMwNnNXQVRyM3FXaXFjM1gweENjNENsODN0aVppRjdacnZ5WWhUV0NrMDhQVWE5UQ?oc=5",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcGVBVnh4U3M5RnlwOW55R2trb1lXVlprMEZNWE42SlpETFIzOTVGWUJjdmZFeUE2akg1MEM1MEFISWZSekx2bm4tRjMxTU94dWJoeTB0b1dQZWZpVzRSYlU5dEpORHYwbWIzb19jZzB0dG51ZXRhNHd3aGlkbF9PTEJ2b2NKdV9NellfWm91Vml5OXVyMXJnM002cmVjYTFCQzQ4MlRoTU5OSDVFZUhwWnp3?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxOekR3RkpvbXdZTHBqVmVBc1RLNjZLN0lOdEYyNTVLN2JZWG1UcU0ycEIyUTFmaWdKNFh3ZDNoc3l6dnpoaDgtZ05aUlRCajhwZnM0V3VCNjJtVXZqYXFiSHlWNjlUenNFQ3pEbmFUODhsVDd1TTA5dEJpOUI4eW9uMXI2M2RRZlJnWURCV3RPamVrWHI0dUVCaFF4clVIUdIBtwFBVV95cUxNRnZ5UzlvQkstcGJNdUdfOWRsUks5RzFYN0R6NnVKXzNid1FBOWNhN0dDYVpjRUgzWnM1YkpIb3NEUXRPTXdycHBoN0V1alR3R01QcHdnOEdPUzBOeWN1UGFYUEJ0TW9Wb1ZUdFZkNUh1bW1PNlhob3hFTXR4aG5sLXo1Mnp3blZwMFN2R2ZGZi03RjZpMVRkNTdaMkxUdzdnUjExaVpCTnhFYVFGcG1uWHFSTEVYOHc?oc=5",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE5pQkVrb1hNZWVmQXdKQ3VUdl9jVEc2TEwzSDBTTDY5SHAtZ2xJRVpzTXljaDNjNTJMem44WXBiZ2xaczFvZDNXU1diSE9BcmMyUUU2WVRoN3lpNUxQV3pLVzRLdWFJQVZ1cDJFMC1lR2NOZ2NSaWJaOWVOWWNEZ9IBgwFBVV95cUxQOEliMlhSWjEtS3MwcjNXUDhGWnhFVXZiZW9hb3QwYW9MMUZuMXItUzNydGlrd2xldDNpdHMwMmVtMWp0SmpWZWUwWi1NcWwyeXpadTBMbU9fczUwR0ViYmRlc3BuLXM4S2pGaE5VYVlwM1ZfS0NJU3c3N2RZVkpoTnd3QQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOVl92eFlUVnFCTTd1ZmJNQ3FCSHdOMlltS0dJVk1IZnlYTWJZbUZTNXY1MHJsWjljUG5mZ2JINDZCWDRVVVZFa1BOaWQ5SGE2QWhTQ3c0a2t0Y1B3RFpBN2F5YTVxcW9yVjVIYkZwUFV1QUdLeTdqTHZ0MHI0ZTJGd2djbmZTbTA4QzdjZk5xU1gxR2t5N0pkZTVoY2hiNkp2M210ZmN0eUdxREZ4aW5ucGRKdEJLZ0hYaDdj?oc=5",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxNbklCM2hrWmIwbC03SVFyY0xKRmk5SU9LVS16V2hGZFRFQjNvdTktSmFXVEl6ZjE4U1RveHpWeTBvamc2N1hfZ3JrUUdxaW5tMEUxV2dKWE1xeXFJbVU5THlmeDRaRlE3N3hDYjhMRm9kMDZGUVVRZTBGWDBoUzV2QWFGcXRpWjFhNUVpalNqS3VCcDVTcVlDRXFFNVVxRGUy0gGmAUFVX3lxTE04a0Q1MFl2Q2dGZFprWmVYeFhmWmZndkx5MFBReGNjaHl4RG94UEdtRU1PQ19xWkNnZWxjN0NmY2MyUllWN1pPZ2w1Z2VlczVLc0dxZUFqemJmekgwWVdsNGtOcUtKS1MwbVhNQzAzdUlvTHA3bzVNZ1ZKaUc4MHhuLTJNbGhUX1o2R0g4dHBPeWNqNmJqRVRmQnBUZW1MTkxwS1hRSlE?oc=5"
   ],
   "startedAt": "2026-11-27T21:17:07.143Z",
-  "updatedAt": "2026-11-27T21:28:38.697Z",
+  "updatedAt": "2026-11-27T22:29:43.344Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "virginia-coastal-storm-emergency-response",
-  "sourceCount": 2,
+  "sourceCount": 4,
   "seenHeadlines": [
+    "Northumberland County under local emergency after severe weather",
     "Northumberland County declares state of emergency after severe weather"
   ]
 }
