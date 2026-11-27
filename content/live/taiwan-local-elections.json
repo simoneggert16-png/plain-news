@@ -1,9 +1,124 @@
 {
+  "meta": {
+    "outlets": [
+      "South China Morning Post",
+      "CNA",
+      "Nikkei Asia",
+      "Healthline"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.5-flash-lite"
+  },
   "slug": "taiwan-local-elections",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "Taiwan Local Elections",
+  "status": "live",
+  "article": null,
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die Wähler in ganz Taiwan gehen zu entscheidenden Kommunalwahlen an die Urnen, die wegen Hinweisen auf den Präsidentschaftswahlkampf 2028 und die Beziehungen über die Taiwanstraße hinweg genau beobachtet werden.",
+      "title": "Kommunalwahlen in Taiwan"
+    },
+    "en": {
+      "dek": "Voters head to the polls across Taiwan in crucial local races watched closely for clues on the 2028 presidential contest and cross-strait relations.",
+      "title": "Taiwan Local Elections"
+    },
+    "es": {
+      "dek": "Los votantes acuden a las urnas en todo Taiwán en unos comicios locales cruciales, observados con atención en busca de pistas sobre la contienda presidencial de 2028 y las relaciones a través del estrecho.",
+      "title": "Elecciones locales en Taiwán"
+    },
+    "fr": {
+      "dek": "Les électeurs se rendent aux urnes dans tout Taïwan pour des scrutins locaux cruciaux, suivis de près pour y déceler des indications sur l'élection présidentielle de 2028 et les relations interdétroit.",
+      "title": "Élections locales à Taïwan"
+    },
+    "it": {
+      "dek": "Gli elettori si recano alle urne in tutta Taiwan per cruciali elezioni locali, seguite con attenzione alla ricerca di indizi in vista della contesa presidenziale del 2028 e delle relazioni attraverso lo Stretto.",
+      "title": "Elezioni locali a Taiwan"
+    },
+    "ja": {
+      "dek": "台湾各地で投票が始まった。2028年の総統選や両岸（中台）関係の行方を占う重要な地方選として、動向が注目されている。",
+      "title": "台湾統一地方選"
+    },
+    "ko": {
+      "dek": "대만 전역에서 2028년 대선과 양안 관계의 향방을 가늠할 중요 지표로 주목받는 지방선거 투표가 시작되었다.",
+      "title": "대만 지방선거"
+    },
+    "pt": {
+      "dek": "Os eleitores dirigem-se às urnas em todo o território de Taiwan para sufrágios locais cruciais, acompanhados de perto em busca de pistas sobre a corrida presidencial de 2028 e as relações entre os dois lados do estreito.",
+      "title": "Eleições locais em Taiwan"
+    },
+    "zh": {
+      "dek": "台湾选民前往各地投票参加关键的地方选举，各方正密切关注此次选举结果，以寻找关于2028年总统大选及两岸关系的线索。",
+      "title": "台湾地方选举"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795772975115-jwvc",
+      "at": "2026-11-27T09:49:35.115Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Taiwan local elections scheduled for Saturday",
+          "body": "Nearly 20 million voters are eligible to elect 11,051 officials at various levels of government, including city mayors and county magistrates, according to CNA. Nikkei Asia reported that the elections are being eyed by China and the United States while the island weathers a wave of cyberattacks."
+        },
+        "it": {
+          "headline": "Elezioni locali a Taiwan previste per sabato",
+          "body": "Quasi 20 milioni di elettori sono chiamati alle urne per eleggere 11.051 funzionari a vari livelli di governo, tra cui sindaci di città e magistrati di contea, secondo quanto riportato dalla CNA. Nikkei Asia ha riferito che le elezioni sono monitorate con attenzione da Cina e Stati Uniti, mentre l'isola fa fronte a un'ondata di attacchi informatici."
+        },
+        "es": {
+          "headline": "Las elecciones locales en Taiwán están previstas para el sábado",
+          "body": "Casi 20 millones de votantes están llamados a elegir a 11.051 funcionarios de varios niveles de gobierno, incluidos alcaldes de ciudades y magistrados de distritos, según la agencia CNA. Nikkei Asia informó de que los comicios son observados de cerca por China y Estados Unidos, mientras la isla afronta una oleada de ciberataques."
+        },
+        "fr": {
+          "headline": "Élections locales à Taïwan prévues ce samedi",
+          "body": "Près de 20 millions d'électeurs sont appelés à élire 11 051 responsables à divers niveaux de l'État, notamment des maires de villes et des magistrats de comté, selon l'agence CNA. D'après Nikkei Asia, ces élections sont suivies de près par la Chine et les États-Unis alors que l'île fait face à une vague de cyberattaques."
+        },
+        "de": {
+          "headline": "Kommunalwahlen in Taiwan für Samstag angesetzt",
+          "body": "Laut CNA sind fast 20 Millionen Wähler stimmberechtigt, um 11.051 Amtsträger auf verschiedenen Ebenen der Regierung zu wählen, darunter Oberbürgermeister und Landräte. Wie „Nikkei Asia“ berichtete, werden die Wahlen von China und den Vereinigten Staaten beobachtet, während die Insel eine Welle von Cyberangriffen abwehrt."
+        },
+        "pt": {
+          "headline": "Eleições locais em Taiwan marcadas para sábado",
+          "body": "Quase 20 milhões de eleitores estão aptos a eleger 11.051 funcionários a vários níveis do governo, incluindo presidentes de câmara municipais e magistrados de condados, segundo a CNA. O Nikkei Asia noticiou que as eleições estão a ser acompanhadas de perto pela China e pelos Estados Unidos, enquanto a ilha enfrenta uma vaga de ciberataques."
+        },
+        "zh": {
+          "headline": "台湾地方选举定于周六举行",
+          "body": "据“中央社”报道，近2000万选民有资格选举包括市长和县长在内的11051名各级政府官员。《日经亚洲》报道称，在台湾遭遇一波网络攻击之际，这场选举正受到中国大陆和美国的密切关注。"
+        },
+        "ja": {
+          "headline": "台湾の地方選挙、土曜日に投票実施へ",
+          "body": "中央社（CNA）によると、約2000万人の有権者が、市長や県長を含む地方政府の各層の役職者1万1051人を選出する資格を有している。日経アジアの報道では、島内がサイバー攻撃の波に見舞われる中、米中両国が今回の選挙に注目しているという。"
+        },
+        "ko": {
+          "headline": "대만 지방선거 토요일 실시 예정",
+          "body": "CNA에 따르면 약 2,000만 명의 유권자가 시장과 현장을 포함해 정부 각급의 공직자 11,051명을 선출할 자격을 갖추고 있다. 닛케이 아시아는 대만이 일련의 사이버 공격을 겪는 가운데 이번 선거가 중국과 미국의 주목을 받고 있다고 보도했다."
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Nikkei Asia",
+          "title": "Taiwan weathers wave of cyberattacks ahead of Saturday's elections",
+          "url": "https://asia.nikkei.com/spotlight/cybersecurity/taiwan-weathers-wave-of-cyberattacks-ahead-of-saturday-s-elections",
+          "publishedAt": "2026-11-27T09:49:35.115Z"
+        },
+        {
+          "outlet": "Nikkei Asia",
+          "title": "Taiwan elections: 5 things to know about city races eyed by China and US",
+          "url": "https://asia.nikkei.com/politics/taiwan-elections-5-things-to-know-about-city-races-eyed-by-china-and-us",
+          "publishedAt": "2026-11-27T09:49:35.114Z"
+        },
+        {
+          "outlet": "CNA",
+          "title": "Taipei mayoral race in spotlight as Taiwan votes in local elections",
+          "url": "https://www.channelnewsasia.com/east-asia/taiwan-elections-taipei-mayor-puma-shen-kaohsiung-6587176",
+          "publishedAt": "2026-11-27T09:07:42.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "taiwan",
     "taipei",
@@ -14,61 +129,30 @@
     "china",
     "united states"
   ],
+  "seenUrls": [
+    "https://www.healthline.com/health-news/u-s-loses-measles-elimination-status-after-26-years",
+    "https://asia.nikkei.com/spotlight/cybersecurity/taiwan-weathers-wave-of-cyberattacks-ahead-of-saturday-s-elections",
+    "https://asia.nikkei.com/politics/taiwan-elections-5-things-to-know-about-city-races-eyed-by-china-and-us",
+    "https://www.dawn.com/news/2047464/ecp-says-it-cannot-force-parties-to-field-women-on-winnable-seats",
+    "https://www.lemonde.fr/en/international/article/2026/11/27/eu-budget-talks-threatened-by-upcoming-french-elections_6789830_4.html",
+    "http://www.africanews.com/2026/11/27/south-sudans-president-lifts-state-of-emergency-in-four-regions-ahead-of-polls/",
+    "http://www.africanews.com/2026/11/26/guinea-bissau-delays-elections-for-two-years-to-2028/",
+    "https://www.channelnewsasia.com/east-asia/taiwan-elections-taipei-mayor-puma-shen-kaohsiung-6587176",
+    "https://www.france24.com/en/europe/20261127-france-and-germany-push-for-eu-budget-deal-by-year-end-as-far-right-rise-threatens-ukraine-aid",
+    "https://www.thehindu.com/news/international/donald-trump-urges-vladimir-putin-to-end-military-aggression-in-europe/article71749343.ece",
+    "https://www.france24.com/en/middle-east/20261127-israel-s-eisenkot-agrees-to-coalition-deal-with-left-wing-democrats",
+    "https://allafrica.com/stories/202611270135.html",
+    "https://www.straitstimes.com/world/europe/polands-russia-friendly-party-creates-conundrum-for-conservatives-ahead-of-2027-vote",
+    "https://www.scmp.com/news/asia/southeast-asia/article/3375994/singapore-reaches-out-local-firms-amid-reports-nvidia-chip-shipment-halt",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qM2xEd3lHR1dpU2xwT1JLcDEyUXlVS0xaeGptQzlscXNJSHc1VVVXQnZpY2FfN0NYdlFLMGZfWW9SSDFLT3NQVEF5cDlKZUlaVGNmZW5VUlR6LXI1MGtGeHJZWU1icGs?oc=5",
+    "https://www.scmp.com/news/china/politics/article/3375904/what-will-taiwan-local-elections-reveal-about-2028-race-and-cross-strait-shifts",
+    "https://thehill.com/policy/international/6245089-zelensky-calls-for-us-peace-progress/"
+  ],
   "startedAt": "2026-11-27T09:19:36.250Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-27T09:19:36.250Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-27T09:49:45.866Z",
+  "importance": 5,
   "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Taiwan Local Elections",
-      "dek": "Voters head to the polls across Taiwan in crucial local races watched closely for clues on the 2028 presidential contest and cross-strait relations."
-    },
-    "de": {
-      "title": "Kommunalwahlen in Taiwan",
-      "dek": "Die Wähler in ganz Taiwan gehen zu entscheidenden Kommunalwahlen an die Urnen, die wegen Hinweisen auf den Präsidentschaftswahlkampf 2028 und die Beziehungen über die Taiwanstraße hinweg genau beobachtet werden."
-    },
-    "fr": {
-      "title": "Élections locales à Taïwan",
-      "dek": "Les électeurs se rendent aux urnes dans tout Taïwan pour des scrutins locaux cruciaux, suivis de près pour y déceler des indications sur l'élection présidentielle de 2028 et les relations interdétroit."
-    },
-    "es": {
-      "title": "Elecciones locales en Taiwán",
-      "dek": "Los votantes acuden a las urnas en todo Taiwán en unos comicios locales cruciales, observados con atención en busca de pistas sobre la contienda presidencial de 2028 y las relaciones a través del estrecho."
-    },
-    "it": {
-      "title": "Elezioni locali a Taiwan",
-      "dek": "Gli elettori si recano alle urne in tutta Taiwan per cruciali elezioni locali, seguite con attenzione alla ricerca di indizi in vista della contesa presidenziale del 2028 e delle relazioni attraverso lo Stretto."
-    },
-    "zh": {
-      "title": "台湾地方选举",
-      "dek": "台湾选民前往各地投票参加关键的地方选举，各方正密切关注此次选举结果，以寻找关于2028年总统大选及两岸关系的线索。"
-    },
-    "pt": {
-      "title": "Eleições locais em Taiwan",
-      "dek": "Os eleitores dirigem-se às urnas em todo o território de Taiwan para sufrágios locais cruciais, acompanhados de perto em busca de pistas sobre a corrida presidencial de 2028 e as relações entre os dois lados do estreito."
-    },
-    "ja": {
-      "title": "台湾統一地方選",
-      "dek": "台湾各地で投票が始まった。2028年の総統選や両岸（中台）関係の行方を占う重要な地方選として、動向が注目されている。"
-    },
-    "ko": {
-      "title": "대만 지방선거",
-      "dek": "대만 전역에서 2028년 대선과 양안 관계의 향방을 가늠할 중요 지표로 주목받는 지방선거 투표가 시작되었다."
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "South China Morning Post",
-      "CNA",
-      "Nikkei Asia",
-      "Healthline"
-    ]
-  }
+  "articleSlug": null,
+  "sourceCount": 2,
+  "seenHeadlines": []
 }
