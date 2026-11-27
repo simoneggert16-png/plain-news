@@ -1,0 +1,72 @@
+{
+  "slug": "global-fashion-brands-shift-orders-from-bangladesh-to-india-20261127-6yhu",
+  "category": "business",
+  "image": "https://imagens.ebc.com.br/MynwIHjHqZSfGf55DwUY9mWcs0k=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/marcelo-queiroga-testagem-covid_mcamgo_abr_140820211818-3.jpg?itok=6-Bi3cgd",
+  "imageCredit": "AgÃªncia Brasil",
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-27T19:46:49.661Z",
+  "updatedAt": "2026-11-27T19:46:49.661Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "AgÃªncia Brasil",
+      "title": "Aumento de casos de covid-19 pode estar relacionado a nova variante",
+      "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-11/aumento-de-casos-de-covid-19-pode-estar-relacionado-nova-variante",
+      "publishedAt": "2026-11-27T19:12:00.000Z"
+    },
+    {
+      "outlet": "The Hindu",
+      "title": "Global fashion brands shift orders from Bangladesh to India amid unrest",
+      "url": "https://www.thehindu.com/business/global-fashion-brands-shift-orders-from-bangladesh-to-india-amid-unrest/article71752292.ece",
+      "publishedAt": "2026-11-27T19:27:54.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Global fashion brands shift orders from Bangladesh to India amid unrest",
+      "dek": "Fashion retailers diverted $254 million in orders from Bangladesh to India in mid-November, owners said",
+      "facts": [
+        "Between November 1 and 18, brands diverted about $254 million worth of orders from Bangladesh, with most moving to India, factory owners said",
+        "The Bangladesh Garment Manufacturers and Exporters Association reports protests have caused more than $400 million in production losses",
+        "Bangladesh approved a 36% increase in the minimum wage for garment workers, the smallest rise in four decades",
+        "Industry leaders say rising wages, energy shortages and political uncertainty have weakened Bangladesh's low-cost advantage over India"
+      ],
+      "body": [
+        "Global fashion retailers including Zara and H&M shifted nearly a tenth of their monthly orders from Bangladesh to other Asian manufacturing hubs in the first half of November, as labour unrest disrupted production and rising costs eroded the country's competitive edge, three factory owners said.",
+        "Between November 1 and 18, brands diverted about $254 million worth of orders from Bangladesh, with most moving to neighbouring India, the owners said.",
+        "The protests have caused more than $400 million in production losses, according to the Bangladesh Garment Manufacturers and Exporters Association.",
+        "India has emerged as the biggest beneficiary, while buyers are also looking to Vietnam, Cambodia and Indonesia to reduce supply-chain risks and improve delivery reliability, industry leaders said."
+      ],
+      "context": "Factory owners said the unrest had prompted Zara, H&M, Marks & Spencer, Celio and other global brands to divert orders, with India receiving the bulk of the business.",
+      "imageCaption": "Teste do Plano Nacional de Testagem para a Covid-19, na Feira dos Importados, em Brasília."
+    },
+    "pt": {
+      "title": "Marcas de moda globais redirecionam encomendas de Bangladesh para a Índia devido a distúrbios",
+      "dek": "Retalhistas de moda desviaram 254 milhões de dólares em encomendas de Bangladesh para a Índia em meados de novembro, revelaram os proprietários",
+      "facts": [
+        "Entre 1 e 18 de novembro, as marcas desviaram encomendas no valor de cerca de 254 milhões de dólares de Bangladesh, sendo a maioria redirecionada para a Índia, segundo proprietários de fábricas",
+        "A Associação de Fabricantes e Exportadores de Vestuário de Bangladesh relata que os protestos causaram perdas de produção superiores a 400 milhões de dólares",
+        "Bangladesh aprovou um aumento de 36% no salário mínimo para trabalhadores da indústria têxtil, o menor aumento em quatro décadas",
+        "Líderes da indústria afirmam que o aumento dos salários, a escassez de energia e a incerteza política enfraqueceram a vantagem de baixo custo de Bangladesh face à Índia"
+      ],
+      "body": [
+        "Retalhistas de moda globais, incluindo Zara e H&M, redirecionaram quase um décimo dos seus pedidos mensais de Bangladesh para outros centros de produção asiáticos no primeiro semestre de novembro, devido a distúrbios laborais que interromperam a produção e a subida dos custos que corroeu a vantagem competitiva do país, afirmaram três proprietários de fábricas.",
+        "Entre 1 e 18 de novembro, as marcas desviaram cerca de 254 milhões de dólares em encomendas de Bangladesh, sendo a maioria destinada à vizinha Índia, segundo os proprietários.",
+        "Os protestos causaram mais de 400 milhões de dólares em perdas de produção, de acordo com a Associação de Fabricantes e Exportadores de Vestuário de Bangladesh.",
+        "A Índia emergiu como o maior beneficiário, enquanto os compradores também procuram o Vietname, Camboja e Indonésia para reduzir os riscos da cadeia de abastecimento e melhorar a fiabilidade das entregas, disseram líderes da indústria."
+      ],
+      "context": "Os proprietários de fábricas indicaram que os distúrbios levaram a Zara, H&M, Marks & Spencer, Celio e outras marcas globais a desviar encomendas, com a Índia a receber a maior parte dos negócios.",
+      "imageCaption": "Teste do Plano Nacional de Testagem para a Covid-19, na Feira dos Importados, em Brasília."
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Markets & Global Economy Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts in 'facts' array and 'body' are not consistently attributed to sources; some claims (e.g., \"major blow to a key pillar of Bangladesh's economy\") are evaluative and unsupported as stated; headline uses 'shift' without attribution to owners; body contains evaluative framing ('major blow', 'could extend beyond current unrest'); repeated sentence openings ('Between November 1 and 18...' appears twice); body ends with evaluative summary; context contains invented claim about 'millions' of employees not in sources; category should be 'business' not 'world'; importance 3 is acceptable but structure needs fixing"
+    ]
+  }
+}
