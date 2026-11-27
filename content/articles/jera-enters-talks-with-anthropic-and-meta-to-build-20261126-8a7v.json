@@ -1,0 +1,72 @@
+{
+  "slug": "jera-enters-talks-with-anthropic-and-meta-to-build-20261126-8a7v",
+  "category": "business",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-11-26T22:39:33.759Z",
+  "updatedAt": "2026-11-26T22:39:33.759Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "CNA",
+      "title": "Japan's JERA enters talks with Anthropic, Meta to build data centres, Nikkei reports",
+      "url": "https://www.channelnewsasia.com/business/japans-jera-enters-talks-anthropic-meta-build-data-centres-nikkei-reports-6586021",
+      "publishedAt": "2026-11-26T22:13:30.000Z"
+    },
+    {
+      "outlet": "Nikkei Asia",
+      "title": "Japan's JERA aims to build Anthropic, Meta data centers near power plants",
+      "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-jera-aims-to-build-anthropic-meta-data-centers-near-power-plants",
+      "publishedAt": "2026-11-26T22:36:54.230Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "JERA enters talks with Anthropic and Meta to build data centres near power plants",
+      "dek": "Japan's largest power generator JERA is negotiating with Anthropic and Meta to build data centres adjacent to power plants in the Tokyo area.",
+      "facts": [
+        "JERA, Japan's largest power generator, has entered talks with Anthropic, Meta and other U.S. tech giants to build data centres near power plants in the Tokyo area, Nikkei reported on Friday.",
+        "JERA plans to build a data centre at the Chiba Thermal Power Station, the chief of Japan's largest electricity producer told Nikkei.",
+        "The talks involve 'behind the meter' setups, where data centres receive power directly from the plant, improving energy efficiency.",
+        "Resident Susumu Goto, 76, lives near a data centre site in Kashiwa and has observed construction of large facilities and black fumes from backup generators during test runs."
+      ],
+      "body": [
+        "Japan's largest power generator JERA has entered talks with Anthropic, Meta and other U.S. tech giants to build data centres near power plants in the Tokyo area, Nikkei reported on Friday. The initiative would place data centres adjacent to power stations to secure a direct and reliable power supply.",
+        "JERA plans to build a data centre at the Chiba Thermal Power Station, the chief of Japan's largest electricity producer told Nikkei. The proposed 'behind the meter' setups would allow data centres to receive power directly from the plant.",
+        "The talks come as electricity demand rises sharply due to the expansion of artificial intelligence and data centres. By locating data centres near power plants, JERA and the tech companies aim to reduce transmission losses and ensure a stable power supply for the facilities.",
+        "Resident Susumu Goto, 76, lives near a data centre site in Kashiwa and has observed the construction of large facilities. Black fumes from backup generators during test runs have been observed by the resident, raising concerns about infrastructure and environmental impact."
+      ],
+      "context": "JERA, Japan's largest power generator, is in talks with major U.S. tech companies to locate data centres near power plants in the Tokyo area.",
+      "imageCaption": ""
+    },
+    "pt": {
+      "title": "A JERA entra em negociações com a Anthropic e a Meta para construir centros de dados perto de centrais elétricas",
+      "dek": "A JERA, maior geradora de energia do Japão, negocia com a Anthropic e a Meta para construir centros de dados adjacentes a centrais elétricas na área de Tóquio.",
+      "facts": [
+        "JERA, maior geradora de energia do Japão, entrou em negociações com a Anthropic, a Meta e outras gigantes tecnológicas dos EUA para construir centros de dados perto de centrais elétricas na área de Tóquio, segundo o Nikkei.",
+        "JERA planeia construir um centro de dados na central térmica de Chiba, disse o chefe da maior produtora de eletricidade do Japão ao Nikkei.",
+        "As negociações envolvem configurações \"atrás do medidor\", onde os centros de dados recebem energia diretamente da central, melhorando a eficiência energética.",
+        "O residente Susumu Goto, 76 anos, vive perto de um local de centro de dados em Kashiwa e observou a construção de grandes instalações e fumo negro dos geradores de backup durante testes."
+      ],
+      "body": [
+        "A maior geradora de energia do Japão, JERA, iniciou negociações com a Anthropic, a Meta e outras gigantes tecnológicas dos EUA para construir centros de dados perto de centrais elétricas na área de Tóquio, segundo noticiou o Nikkei na sexta-feira. A iniciativa colocaria os centros de dados adjacentes às centrais elétricas para garantir um fornecimento de energia direto e fiável.",
+        "A JERA planeia construir um centro de dados na Central Termoelétrica de Chiba, informou o diretor da maior produtora de eletricidade do Japão ao Nikkei. As propostas de instalações \"atrás do contador\" permitiriam que os centros de dados recebessem energia diretamente da central.",
+        "As negociações ocorrem num momento em que a procura de eletricidade aumenta acentuadamente devido à expansão da inteligência artificial e dos centros de dados. Ao localizar os centros de dados perto das centrais elétricas, a JERA e as empresas tecnológicas visam reduzir as perdas de transmissão e assegurar um fornecimento de energia estável para as instalações.",
+        "O residente Susumu Goto, de 76 anos, vive perto de um local de centro de dados em Kashiwa e observou a construção de grandes instalações. O residente notou fumo negro proveniente de geradores de apoio durante testes, o que levanta preocupações sobre o impacto infraestrutural e ambiental."
+      ],
+      "context": "A JERA, maior geradora de energia do Japão, está em negociações com grandes empresas tecnológicas dos EUA para localizar centros de dados perto de centrais elétricas na área de Tóquio.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Markets & Global Economy Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts 4 and 5 are unsupported or overreaching. Fact 4 claims an 'aim' to address demand and improve efficiency without a direct source quote. Fact 5 attributes resident concerns but the source only mentions one resident observing construction and fumes, not a formal 'concern' statement. Headline currently exceeds 90 characters. Body contains repetitive sentence openings ('JERA...', 'The talks...', 'Resident...'). Context uses evaluative framing ('exploring ways to meet...')."
+    ]
+  }
+}
