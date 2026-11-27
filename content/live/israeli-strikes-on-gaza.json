@@ -7,55 +7,326 @@
       "New Hampshire Union Leader"
     ],
     "createdBy": "bots/live.mjs",
-    "lastUpdateModel": "nvidia/nemotron-3.5-lightning-30b-a3b",
-    "statsModel": "gemini/gemini-3.1-flash-lite"
+    "statsModel": "gemini/gemini-3.1-flash-lite",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
   },
   "slug": "israeli-strikes-on-gaza",
+  "stats": {
+    "max": null,
+    "asOf": "2026-11-26T00:00:00.000Z",
+    "note": "Reported Palestinian fatalities resulting from recent Israeli strikes and gunfire.",
+    "rows": [
+      {
+        "key": "fatalities-general-reports",
+        "label": "Fatalities (general reports)",
+        "value": 10,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Todesopfer (allgemeine Berichte)"
+          },
+          "es": {
+            "label": "Víctimas (informes generales)"
+          },
+          "fr": {
+            "label": "Décès (rapports généraux)"
+          },
+          "it": {
+            "label": "Vittime (rapporti generali)"
+          },
+          "ja": {
+            "label": "死亡者（一般報道）"
+          },
+          "ko": {
+            "label": "일반적인 사망자 보고"
+          },
+          "pt": {
+            "label": "Fatais (relatórios gerais)"
+          },
+          "zh": {
+            "label": "伤亡情况（一般报告）"
+          }
+        }
+      },
+      {
+        "key": "fatalities-specific-reports",
+        "label": "Fatalities (specific reports)",
+        "value": 7,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Todesopfer (spezifische Berichte)"
+          },
+          "es": {
+            "label": "Víctimas (informes específicos)"
+          },
+          "fr": {
+            "label": "Décès (rapports spécifiques)"
+          },
+          "it": {
+            "label": "Vittime (rapporti specifici)"
+          },
+          "ja": {
+            "label": "死亡者（具体的報道）"
+          },
+          "ko": {
+            "label": "구체적인 사망자 보고"
+          },
+          "pt": {
+            "label": "Fatais (relatórios específicos)"
+          },
+          "zh": {
+            "label": "伤亡情况（具体报告）"
+          }
+        }
+      },
+      {
+        "key": "schoolchildren-killed-this-month",
+        "label": "Schoolchildren killed this month",
+        "value": 16,
+        "change": null,
+        "locales": {
+          "de": {
+            "label": "Diesen Monat getötete Schulkinder"
+          },
+          "es": {
+            "label": "Niños en edad escolar muertos este mes"
+          },
+          "fr": {
+            "label": "Enfants scolarisés tués ce mois-ci"
+          },
+          "it": {
+            "label": "Bambini in età scolare uccisi questo mese"
+          },
+          "ja": {
+            "label": "今月殺害された児童"
+          },
+          "ko": {
+            "label": "이번 달 살해된 학교 학생들"
+          },
+          "pt": {
+            "label": "Escolares mortos este mês"
+          },
+          "zh": {
+            "label": "本月遇难学童"
+          }
+        }
+      }
+    ],
+    "unit": "",
+    "label": "Casualties in Gaza",
+    "source": {
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNzFiM29KUVhvZHZUYTV1SWtlLXNYbXg3ZzRodFVmanZkNzJsczZ4UldfRkNkSW1fVDhMaTFYOW9ETUxXaXFKcktCTThoYnBYS21mVjQxYkNWM19MR1h0WHNSdjlGenRTNkExU2RKU0ZKNUhCRWR0OVU2VmFqTUJHeE5QMVNybDE4Qk1WTmp5VGgyWDV0NjhaM3h4Ulp1bWZDUThnSlI0TFMwMnQzNk5KQnZXVTRCUUxvc2FLbmlDYVREeHpwOUpV?oc=5",
+      "title": "Hamas weighs response after Israel kills 10 people in Gaza",
+      "outlet": "Reuters",
+      "trusted": true,
+      "publishedAt": "2026-11-26T20:56:54.000Z"
+    },
+    "locales": {
+      "de": {
+        "note": "Gemeldete palästinensische Todesopfer infolge jüngster israelischer Angriffe und Schießereien.",
+        "label": "Tote in Gaza"
+      },
+      "es": {
+        "note": "Se reportan muertes palestinas como resultado de recientes ataques e incidentes de disparos israelíes.",
+        "label": "Víctimas en Gaza"
+      },
+      "fr": {
+        "note": "Décès palestiniens signalés suite aux récents frappes et tirs israéliens.",
+        "label": "Victimes à Gaza"
+      },
+      "it": {
+        "note": "Riferimento a vittime palestinesi derivanti da recenti attacchi israeliani e sparatorie.",
+        "label": "Vittime a Gaza"
+      },
+      "ja": {
+        "note": "最近のイスラエルの空爆と銃撃により報告されたパレスチナ人の死亡者数。",
+        "label": "ガザでの死者"
+      },
+      "ko": {
+        "note": "최근 이스라엘의 공습과 총격으로 보고된 팔레스타인인 사망자 수.",
+        "label": "가자지구 희생자"
+      },
+      "pt": {
+        "note": "Fatais palestinianos reportados resultantes de recentes ataques e disparos israelitas.",
+        "label": "Baixas em Gaza"
+      },
+      "zh": {
+        "note": "报道因近期以色列空袭和枪击造成的巴勒斯坦人员死亡。",
+        "label": "加沙伤亡情况"
+      }
+    },
+    "updatedAt": "2026-11-26T23:33:42.314Z",
+    "sourceCount": 1
+  },
   "topic": "Israeli strikes on Gaza",
   "status": "live",
   "article": {
     "slug": "israeli-strikes-on-gaza",
+    "updatedAt": "2026-11-27T11:51:09.963Z",
     "reason": "1 new update(s)",
     "locales": {
-      "de": {
-        "dek": "Bei israelischen Angriffen auf Gaza kamen 19 Palästinenser ums Leben und 48 weitere wurden verletzt, wie Anadolu Ajansı und A News berichten.",
-        "body": [
-          "Wie Anadolu Ajansı und A News am 26. November 2026 berichteten, kamen bei israelischen Angriffen auf Gaza 19 Palästinenser ums Leben und 48 weitere wurden verletzt. Die Angriffe erfolgten trotz eines laufenden Waffenstillstands, so beide Medien. Die israelischen Verteidigungsstreitkräfte und der Shin Bet teilten am 26. November 2026 mit, dass sie den hochrangigen Hamas-Wirtschafts- und Bildungsbeauftragten Khaled Abu Nada bei einem Angriff in Gaza getötet hätten, wie JNS und die New York Post berichteten.",
-          "Bei einem israelischen Luftangriff im Westen von Gaza-Stadt wurden am 24. November 2026 der hochrangige Hamas-Sicherheitsbeamte Naeem Abu Nahel und sechs weitere Personen getötet, wie palästinensische Beamte und internationale Medien meldeten. Das israelische Militär und der Shin Bet erklärten, sie hätten eine gezielte Operation gegen ein hochrangiges Hamas-Mitglied durchgeführt, wie Reuters und The Hindu berichteten.",
-          "Die Gesundheitsbehörden in Gaza gaben am 24. November 2026 nach einem starken Anstieg von Fällen bei Säuglingen eine Meningitis-Epidemie-Warnung heraus, wie The Guardian und UPI berichteten. Amnesty International forderte den Internationalen Strafgerichtshof am 25. November 2026 auf, zu untersuchen, ob israelische Amtsträger in Gaza Völkermord begangen haben, und erklärte, dass Maßnahmen Geburten verhindert und die reproduktive Gesundheit von Frauen geschädigt hätten, so Amnesty International.",
-          "Verteidigungsminister Israel Katz erklärte am 25. November 2026, dass Israel und die USA über Geheimdienstinformationen zu einem aufkommenden iranischen Chemiewaffenprogramm verfügten und ein Präventivschlag eine Möglichkeit bleibe, wie Fox News und The Jerusalem Post berichteten. Israelische Richter empfahlen am 25. November 2026, eines von drei Korruptionsverfahren gegen Premierminister Benjamin Netanjahu einzustellen und ein weiteres neu zu bewerten.",
-          "Die Vereinten Nationen warnten vor einem wachsenden Risiko von Gräueltaten Israels gegen Palästinenser und stellten fest, dass die Gewalt im Westjordanland seit dem Angriff der Hamas am 7. Oktober 2023 zugenommen habe, so die UN. Gadi Eisenkot und Avigdor Lieberman einigten sich auf das erste Koalitionsabkommen nach der Pattsituation bei der israelischen Wahl vom 27. Oktober, wie NewsCord und The Jerusalem Post berichteten."
-        ],
-        "facts": [
-          "Am 26. November 2026 kamen bei israelischen Angriffen auf Gaza 19 Palästinenser ums Leben und 48 weitere wurden verletzt",
-          "Die israelischen Verteidigungsstreitkräfte und der Inlandsgeheimdienst Shin Bet gaben an, bei einem Luftangriff in Gaza den hochrangigen Hamas-Wirtschafts- und Bildungsbeauftragten Khaled Abu Nada getötet zu haben",
-          "Die Gesundheitsbehörden in Gaza haben nach einem starken Anstieg von Fällen bei Säuglingen eine Meningitis-Epidemie-Warnung herausgegeben",
-          "Verteidigungsminister Israel Katz erklärte, Israel und die USA verfügten über Geheimdienstinformationen zu einem iranischen Chemiewaffenprogramm"
-        ],
-        "title": "Neunzehn Palästinenser bei israelischen Angriffen auf Gaza getötet",
-        "context": "Die israelischen Militäroperationen in Gaza dauern mit häufigen Luftangriffen und gezielten Tötungen an. Das Gebiet ist derzeit neben dem anhaltenden Konflikt mit einer Meningitis-Epidemie konfrontiert, und internationale Gremien haben Bedenken hinsichtlich der gesundheitlichen Bedingungen und möglicher Gräueltaten geäußert."
-      },
       "en": {
-        "dek": "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza, according to Anadolu Ajansı and A News.",
-        "body": [
-          "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza, according to reports by Anadolu Ajansı and A News on November 26, 2026. The strikes occurred despite an ongoing ceasefire, both outlets stated. The Israel Defense Forces and Shin Bet stated on November 26, 2026, that they killed a senior Hamas economy and education chief named Khaled Abu Nada in a Gaza strike, according to JNS and the New York Post.",
-          "An Israeli airstrike in western Gaza City killed senior Hamas security official Naeem Abu Nahel and six others on November 24, 2026, according to Palestinian officials and international outlets. The Israeli military and Shin Bet stated they conducted a targeted operation against a senior Hamas member, as reported by Reuters and The Hindu.",
-          "Health authorities in Gaza issued a meningitis epidemic alert on November 24, 2026, following a steep rise in cases among infants, according to The Guardian and UPI. Amnesty International urged the International Criminal Court on November 25, 2026, to investigate whether Israeli officials committed genocide in Gaza, stating measures have prevented births and harmed women's reproductive health, according to Amnesty International.",
-          "Defense Minister Israel Katz stated on November 25, 2026, that Israel and the U.S. possess intelligence regarding an emerging Iranian chemical weapons program, and that a preemptive strike remains a possibility, according to Fox News and The Jerusalem Post. Israeli judges recommended dropping one of three corruption cases against Prime Minister Benjamin Netanyahu and reconsidering another, according to reports from November 25, 2026.",
-          "The United Nations warned of a growing risk of atrocities by Israel against Palestinians, noting violence in the West Bank has surged since the 7 October 2023 attack by Hamas, according to the UN. Gadi Eisenkot and Avigdor Lieberman agreed the first coalition deal after Israel's October 27 election deadlock, according to NewsCord and The Jerusalem Post."
-        ],
+        "title": "Nineteen Palestinians killed in Israeli attacks on Gaza",
+        "dek": "Israeli strikes and coalition negotiations continue as regional mediation efforts proceed.",
         "facts": [
           "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza on November 26, 2026",
-          "The Israel Defense Forces and Shin Bet stated they killed senior Hamas economy and education chief Khaled Abu Nada in a Gaza strike",
-          "Health authorities in Gaza issued a meningitis epidemic alert following a steep rise in cases among infants",
-          "Defense Minister Israel Katz stated Israel and the U.S. possess intelligence regarding an Iranian chemical weapons program"
+          "Khaled Abu Nada, Deputy Gaza Education Minister, was killed in an Israeli airstrike on an apartment in Deir Al-Balah on November 26, 2026",
+          "Hamas official Hayya stated on November 26, 2026, that the group is considering measures in response to Israeli targeted killings",
+          "Gadi Eisenkot and Avigdor Lieberman agreed to a coalition deal following Israel's October 27 election deadlock, according to NewsCord and The Jerusalem Post",
+          "Israeli military and Shin Bet confirmed they conducted a joint operation against Hamas internal security chief Naeem Abu Nahel on November 24, 2026"
         ],
-        "title": "Nineteen Palestinians killed in Israeli attacks on Gaza",
-        "context": "Israeli military operations in Gaza have continued with frequent airstrikes and targeted killings. The territory is currently facing a meningitis epidemic alert alongside ongoing conflict, and international bodies have raised concerns over health conditions and potential atrocities.",
+        "body": [
+          "Israeli military strikes were reported in both Gaza and Lebanon on November 27, 2026, according to ArabAmericanNews and CGTN. Mediation efforts involving Iran and the United States remain ongoing, both outlets reported.",
+          "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza on November 26, 2026, according to Anadolu Ajansı and A News. Both outlets stated that the strikes occurred despite an ongoing ceasefire.",
+          "Khaled Abu Nada, the Deputy Gaza Education Minister, was killed alongside his wife in an Israeli airstrike on an apartment in Deir Al-Balah, according to medics and officials. The Israel Defense Forces and Shin Bet previously stated they targeted Abu Nada, who they identified as a senior Hamas economy and education chief, as reported by JNS and the New York Post.",
+          "Hamas official Hayya stated on November 26, 2026, that the group is considering measures in response to the Israeli targeted killings of senior officials. He did not specify what actions the group might take.",
+          "An Israeli airstrike in western Gaza City killed senior Hamas internal security official Naeem Abu Nahel and eight others on November 24, 2026, according to the interior ministry and The New Arab. The Israeli military and Shin Bet confirmed they conducted a joint operation against the official, as reported by Reuters and The Jerusalem Post.",
+          "Health authorities in Gaza issued a meningitis epidemic alert on November 24, 2026, following a steep rise in cases among infants, according to The Guardian and UPI. Amnesty International subsequently urged the International Criminal Court on November 25, 2026, to investigate whether Israeli officials committed genocide by preventing births and harming women's reproductive health.",
+          "Israeli political factions are weighing potential coalition deals as government negotiations continue, according to NPR. Gadi Eisenkot and Avigdor Lieberman agreed on a coalition deal following Israel's October 27 election deadlock, NewsCord reported on November 25, 2026."
+        ],
+        "context": "Israeli military operations in Gaza have continued with frequent airstrikes and targeted killings. The territory is currently facing a meningitis epidemic alert alongside ongoing conflict, and international bodies have raised concerns over health conditions.",
         "imageCaption": ""
+      },
+      "de": {
+        "title": "19 Palästinenser bei israelischen Angriffsoperationen auf den Gazastreifen getötet",
+        "dek": "Israelische Angriffe und Koalitionsverhandlungen dauern an, während die regionalen Bemühungen um Vermittlung fortgesetzt werden.",
+        "facts": [
+          "Bei israelischen Angriffen auf den Gazastreifen starben am 26. November 2026 19 Palästinenser, 48 weitere erlitten Verletzungen.",
+          "Der stellvertretende Bildungsminister des Gazastreifens, Khaled Abu Nada, wurde am 26. November 2026 bei einem israelischen Luftangriff auf eine Wohnung in Deir al-Balah getötet.",
+          "Hamas-Vertreter Hajja erklärte am 26. November 2026, die Gruppe prüfe Maßnahmen als Reaktion auf die gezielten israelischen Tötungen.",
+          "Gadi Eisenkot und Avigdor Lieberman einigten sich nach der Pattsituation bei der israelischen Wahl vom 27. Oktober auf einen Koalitionsvertrag, wie NewsCord und The Jerusalem Post berichteten.",
+          "Das israelische Militär und der Inlandsgeheimdienst Schin Bet bestätigten, dass sie am 24. November 2026 eine gemeinsame Operation gegen den Leiter der Hamas-internen Sicherheit, Naim Abu Nahil, durchgeführt hatten."
+        ],
+        "body": [
+          "Am 27. November 2026 wurde laut ArabAmericanNews und CGTN über israelische Militärangriffe im Gazastreifen und im Libanon berichtet. Die Vermittlungsbemühungen unter Beteiligung des Iran und der Vereinigten Staaten dauern demnach an.",
+          "Bei israelischen Angriffen auf den Gazastreifen starben am 26. November 2026 19 Palästinenser, 48 weitere erlitten Verletzungen, wie Anadolu Ajansı und A News berichteten. Beide Medien erklärten, die Angriffe hätten trotz einer anhaltenden Waffenruhe stattgefunden.",
+          "Der stellvertretende Bildungsminister des Gazastreifens, Khaled Abu Nada, wurde nach Angaben von Sanitätern und Beamten zusammen mit seiner Frau bei einem israelischen Luftangriff auf eine Wohnung in Deir al-Balah getötet. Die israelischen Streitkräfte und Schin Bet hatten zuvor erklärt, sie hätten Abu Nada ins Visier genommen, den sie als hochrangigen Hamas-Wirtschafts- und Bildungschef identifizierten, wie JNS und die New York Post berichteten.",
+          "Hamas-Vertreter Hajja erklärte am 26. November 2026, die Gruppe erwäge Maßnahmen als Reaktion auf die gezielten israelischen Tötungen hochrangiger Funktionäre. Er nannte keine Einzelheiten dazu, welche Schritte die Organisation unternehmen könnte.",
+          "Ein israelischer Luftangriff im Westen von Gaza-Stadt tötete am 24. November 2026 den hochrangigen Hamas-Sicherheitsbeamten Naim Abu Nahil sowie acht weitere Personen, wie das Innenministerium und The New Arab mitteilten. Das israelische Militär und Schin Bet bestätigten, dass sie eine gemeinsame Operation gegen den Funktionär durchgeführt hatten, wie Reuters und The Jerusalem Post berichteten.",
+          "Die Gesundheitsbehörden im Gazastreifen gaben am 24. November 2026 nach einem starken Anstieg der Fallzahlen bei Kleinkindern eine Meningitis-Epidemiewarnung heraus, so The Guardian und UPI. Amnesty International forderte daraufhin am 25. November 2026 den Internationalen Strafgerichtshof auf, zu untersuchen, ob israelische Amtsträger einen Völkermord begangen haben, indem sie Geburten verhinderten und die reproduktive Gesundheit von Frauen schädigten.",
+          "Israelische Politischer Gruppierungen wägen im Zuge der anhaltenden Regierungsverhandlungen mögliche Koalitionsvereinbarungen ab, wie NPR berichtete. Gadi Eisenkot und Avigdor Lieberman einigten sich nach der Pattsituation bei der israelischen Wahl vom 27. Oktober auf einen Koalitionsvertrag, wie NewsCord am 25. November 2026 meldete."
+        ],
+        "context": "Die israelischen Militäroperationen im Gazastreifen werden mit häufigen Luftangriffen und gezielten Tötungen fortgesetzt. Das Gebiet sieht sich neben dem anhaltenden Konflikt derzeit einer Meningitis-Epidemiewarnung ausgesetzt, und internationale Gremien haben Bedenken hinsichtlich der gesundheitlichen Bedingungen geäußert."
       }
     },
     "versions": [
+      {
+        "at": "2026-11-27T09:50:42.461Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "title": "Nineteen Palestinians killed in Israeli attacks on Gaza",
+            "dek": "Israeli strikes continued in Gaza and Lebanon as ceasefire violations were reported, according to ArabAmericanNews and CGTN.",
+            "facts": [
+              "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza on November 26, 2026",
+              "Khaled Abu Nada, Deputy Gaza Education Minister, was killed in an Israeli airstrike on an apartment in Deir Al-Balah on November 26, 2026",
+              "Hamas official Hayya stated the group is considering measures in response to Israeli targeted killings of senior officials",
+              "Israeli military and Shin Bet confirmed they conducted a joint operation against Hamas internal security chief Naeem Abu Nahel on November 24, 2026"
+            ],
+            "body": [
+              "Israeli military strikes continued in Gaza and Lebanon on November 27, 2026, according to ArabAmericanNews and CGTN. Mediation efforts involving Iran and the United States remain ongoing, the outlets reported.",
+              "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza on November 26, 2026, according to Anadolu Ajansı and A News. Both outlets stated the strikes occurred despite an ongoing ceasefire.",
+              "Khaled Abu Nada, the Deputy Gaza Education Minister, was killed alongside his wife in an Israeli airstrike on an apartment in Deir Al-Balah, according to medics and officials. The Israel Defense Forces and Shin Bet previously stated they targeted Abu Nada, who they identified as a senior Hamas economy and education chief, as reported by JNS and the New York Post.",
+              "Hamas official Hayya stated on November 26, 2026, that the group is considering measures in response to the Israeli targeted killings of senior officials. He did not specify what actions the group might take.",
+              "An Israeli airstrike in western Gaza City killed senior Hamas internal security official Naeem Abu Nahel and eight others on November 24, 2026, according to the interior ministry and The New Arab. The Israeli military and Shin Bet confirmed they conducted a joint operation against the official, as reported by Reuters and The Jerusalem Post.",
+              "Health authorities in Gaza issued a meningitis epidemic alert on November 24, 2026, following a steep rise in cases among infants, according to The Guardian and UPI.",
+              "Amnesty International urged the International Criminal Court on November 25, 2026, to investigate whether Israeli officials committed genocide, stating that measures have prevented births and harmed women's reproductive health.",
+              "Israeli military strikes were reported in both Gaza and Lebanon on November 27, 2026, according to ArabAmericanNews and CGTN. Mediation efforts involving Iran and the United States remain ongoing, the outlets reported."
+            ],
+            "context": "Israeli military operations in Gaza have continued with frequent airstrikes and targeted killings. The territory is currently facing a meningitis epidemic alert alongside ongoing conflict, and international bodies have raised concerns over health conditions and potential atrocities.",
+            "imageCaption": ""
+          }
+        }
+      },
+      {
+        "at": "2026-11-27T08:50:34.556Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "en": {
+            "dek": "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza, according to Anadolu Ajansı and A News.",
+            "body": [
+              "Israeli military strikes continued in Gaza and Lebanon on November 27, 2026, according to ArabAmericanNews and CGTN. Mediation efforts involving Iran and the United States remain ongoing, the outlets reported.",
+              "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza on November 26, 2026, according to Anadolu Ajansı and A News. Both outlets stated the strikes occurred despite an ongoing ceasefire.",
+              "Khaled Abu Nada, the Deputy Gaza Education Minister, was killed alongside his wife in an Israeli airstrike on an apartment in Deir Al-Balah, according to medics and officials. The Israel Defense Forces and Shin Bet previously stated they targeted Abu Nada, who they identified as a senior Hamas economy and education chief, as reported by JNS and the New York Post.",
+              "Hamas official Hayya stated on November 26, 2026, that the group is considering measures in response to the Israeli targeted killings of senior officials. He did not specify what actions the group might take.",
+              "An Israeli airstrike in western Gaza City killed senior Hamas internal security official Naeem Abu Nahel and eight others on November 24, 2026, according to the interior ministry and The New Arab. The Israeli military and Shin Bet confirmed they conducted a joint operation against the official, as reported by Reuters and The Jerusalem Post.",
+              "Health authorities in Gaza issued a meningitis epidemic alert on November 24, 2026, following a steep rise in cases among infants, according to The Guardian and UPI. Amnesty International urged the International Criminal Court on November 25, 2026, to investigate whether Israeli officials committed genocide, stating that measures have prevented births and harmed women's reproductive health."
+            ],
+            "facts": [
+              "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza on November 26, 2026",
+              "Khaled Abu Nada, the Deputy Gaza Education Minister, was killed in an Israeli airstrike",
+              "Hamas official Hayya stated the group is weighing its response to recent targeted killings",
+              "Israeli military strikes were reported in both Gaza and Lebanon on November 27, 2026"
+            ],
+            "title": "Nineteen Palestinians killed in Israeli attacks on Gaza",
+            "context": "Israeli military operations in Gaza have continued with frequent airstrikes and targeted killings. The territory is currently facing a meningitis epidemic alert alongside ongoing conflict, and international bodies have raised concerns over health conditions and potential atrocities.",
+            "imageCaption": ""
+          },
+          "de": {
+            "dek": "Bei israelischen Angriffen auf Gaza kamen 19 Palästinenser ums Leben und 48 weitere wurden verletzt, wie Anadolu Ajansı und A News berichten.",
+            "body": [
+              "Die israelischen Militärschläge im Gazastreifen und im Libanon dauerten am 27. November 2026 an, wie ArabAmericanNews und CGTN berichten. Vermittlungsbemühungen unter Beteiligung des Iran und der Vereinigten Staaten laufen den Berichten zufolge weiter.",
+              "Am 26. November 2026 starben 19 Palästinenser bei israelischen Angriffen auf Gaza, 48 weitere wurden verletzt, so Anadolu Ajansı und A News. Beide Medien gaben an, dass die Angriffe trotz eines laufenden Waffenstillstands erfolgten.",
+              "Der stellvertretende Bildungsminister von Gaza, Khaled Abu Nada, wurde laut Medizinern und Beamten zusammen mit seiner Ehefrau bei einem israelischen Luftangriff auf eine Wohnung in Deir al-Balah getötet. Die israelischen Verteidigungsstreitkräfte und der Inlandsgeheimdienst Shin Bet hatten zuvor erklärt, sie hätten Abu Nada ins Visier genommen, den sie als hochrangigen Hamas-Wirtschafts- und Bildungschef identifizierten, wie JNS und die New York Post berichteten.",
+              "Der Hamas-Funktionär Hayya erklärte am 26. November 2026, dass die Gruppe Maßnahmen als Reaktion auf die gezielten Tötungen hochrangiger Funktionäre durch Israel erwäge. Er spezifizierte nicht, welche Schritte die Gruppe unternehmen könnte.",
+              "Ein israelischer Luftangriff im Westen von Gaza-Stadt tötete am 24. November 2026 den hochrangigen Hamas-Funktionär für innere Sicherheit, Naeem Abu Nahel, sowie acht weitere Personen, wie das Innenministerium und The New Arab berichteten. Das israelische Militär und der Shin Bet bestätigten, eine gemeinsame Operation gegen den Funktionär durchgeführt zu haben, wie Reuters und The Jerusalem Post meldeten.",
+              "Die Gesundheitsbehörden in Gaza gaben am 24. November 2026 eine Meningitis-Epidemie-Warnung heraus, nachdem die Fallzahlen bei Säuglingen stark angestiegen waren, so The Guardian und UPI. Amnesty International forderte den Internationalen Strafgerichtshof am 25. November 2026 auf, zu untersuchen, ob israelische Amtsträger Völkermord begangen haben, und erklärte, dass Maßnahmen Geburten verhindert und die reproduktive Gesundheit von Frauen geschädigt hätten."
+            ],
+            "facts": [
+              "Am 26. November 2026 starben 19 Palästinenser bei israelischen Angriffen auf Gaza, 48 weitere wurden verletzt",
+              "Der stellvertretende Bildungsminister von Gaza, Khaled Abu Nada, wurde bei einem israelischen Luftangriff getötet",
+              "Hamas-Funktionär Hayya erklärte, die Gruppe prüfe ihre Reaktion auf die jüngsten gezielten Tötungen",
+              "Am 27. November 2026 wurden israelische Militärschläge sowohl im Gazastreifen als auch im Libanon gemeldet"
+            ],
+            "title": "Neunzehn Palästinenser bei israelischen Angriffen auf Gaza getötet",
+            "context": "Die israelischen Militäroperationen im Gazastreifen dauern mit häufigen Luftangriffen und gezielten Tötungen an. Das Gebiet ist derzeit neben dem anhaltenden Konflikt mit einer Meningitis-Epidemie konfrontiert, und internationale Gremien haben Bedenken hinsichtlich der gesundheitlichen Bedingungen und möglicher Gräueltaten geäußert."
+          }
+        }
+      },
+      {
+        "at": "2026-11-26T11:31:13.784Z",
+        "reason": "1 new update(s)",
+        "locales": {
+          "de": {
+            "dek": "Bei israelischen Angriffen auf Gaza kamen 19 Palästinenser ums Leben und 48 weitere wurden verletzt, wie Anadolu Ajansı und A News berichten.",
+            "body": [
+              "Wie Anadolu Ajansı und A News am 26. November 2026 berichteten, kamen bei israelischen Angriffen auf Gaza 19 Palästinenser ums Leben und 48 weitere wurden verletzt. Die Angriffe erfolgten trotz eines laufenden Waffenstillstands, so beide Medien. Die israelischen Verteidigungsstreitkräfte und der Shin Bet teilten am 26. November 2026 mit, dass sie den hochrangigen Hamas-Wirtschafts- und Bildungsbeauftragten Khaled Abu Nada bei einem Angriff in Gaza getötet hätten, wie JNS und die New York Post berichteten.",
+              "Bei einem israelischen Luftangriff im Westen von Gaza-Stadt wurden am 24. November 2026 der hochrangige Hamas-Sicherheitsbeamte Naeem Abu Nahel und sechs weitere Personen getötet, wie palästinensische Beamte und internationale Medien meldeten. Das israelische Militär und der Shin Bet erklärten, sie hätten eine gezielte Operation gegen ein hochrangiges Hamas-Mitglied durchgeführt, wie Reuters und The Hindu berichteten.",
+              "Die Gesundheitsbehörden in Gaza gaben am 24. November 2026 nach einem starken Anstieg von Fällen bei Säuglingen eine Meningitis-Epidemie-Warnung heraus, wie The Guardian und UPI berichteten. Amnesty International forderte den Internationalen Strafgerichtshof am 25. November 2026 auf, zu untersuchen, ob israelische Amtsträger in Gaza Völkermord begangen haben, und erklärte, dass Maßnahmen Geburten verhindert und die reproduktive Gesundheit von Frauen geschädigt hätten, so Amnesty International.",
+              "Verteidigungsminister Israel Katz erklärte am 25. November 2026, dass Israel und die USA über Geheimdienstinformationen zu einem aufkommenden iranischen Chemiewaffenprogramm verfügten und ein Präventivschlag eine Möglichkeit bleibe, wie Fox News und The Jerusalem Post berichteten. Israelische Richter empfahlen am 25. November 2026, eines von drei Korruptionsverfahren gegen Premierminister Benjamin Netanjahu einzustellen und ein weiteres neu zu bewerten.",
+              "Die Vereinten Nationen warnten vor einem wachsenden Risiko von Gräueltaten Israels gegen Palästinenser und stellten fest, dass die Gewalt im Westjordanland seit dem Angriff der Hamas am 7. Oktober 2023 zugenommen habe, so die UN. Gadi Eisenkot und Avigdor Lieberman einigten sich auf das erste Koalitionsabkommen nach der Pattsituation bei der israelischen Wahl vom 27. Oktober, wie NewsCord und The Jerusalem Post berichteten."
+            ],
+            "facts": [
+              "Am 26. November 2026 kamen bei israelischen Angriffen auf Gaza 19 Palästinenser ums Leben und 48 weitere wurden verletzt",
+              "Die israelischen Verteidigungsstreitkräfte und der Inlandsgeheimdienst Shin Bet gaben an, bei einem Luftangriff in Gaza den hochrangigen Hamas-Wirtschafts- und Bildungsbeauftragten Khaled Abu Nada getötet zu haben",
+              "Die Gesundheitsbehörden in Gaza haben nach einem starken Anstieg von Fällen bei Säuglingen eine Meningitis-Epidemie-Warnung herausgegeben",
+              "Verteidigungsminister Israel Katz erklärte, Israel und die USA verfügten über Geheimdienstinformationen zu einem iranischen Chemiewaffenprogramm"
+            ],
+            "title": "Neunzehn Palästinenser bei israelischen Angriffen auf Gaza getötet",
+            "context": "Die israelischen Militäroperationen in Gaza dauern mit häufigen Luftangriffen und gezielten Tötungen an. Das Gebiet ist derzeit neben dem anhaltenden Konflikt mit einer Meningitis-Epidemie konfrontiert, und internationale Gremien haben Bedenken hinsichtlich der gesundheitlichen Bedingungen und möglicher Gräueltaten geäußert."
+          },
+          "en": {
+            "dek": "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza, according to Anadolu Ajansı and A News.",
+            "body": [
+              "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza, according to reports by Anadolu Ajansı and A News on November 26, 2026. The strikes occurred despite an ongoing ceasefire, both outlets stated. The Israel Defense Forces and Shin Bet stated on November 26, 2026, that they killed a senior Hamas economy and education chief named Khaled Abu Nada in a Gaza strike, according to JNS and the New York Post.",
+              "An Israeli airstrike in western Gaza City killed senior Hamas security official Naeem Abu Nahel and six others on November 24, 2026, according to Palestinian officials and international outlets. The Israeli military and Shin Bet stated they conducted a targeted operation against a senior Hamas member, as reported by Reuters and The Hindu.",
+              "Health authorities in Gaza issued a meningitis epidemic alert on November 24, 2026, following a steep rise in cases among infants, according to The Guardian and UPI. Amnesty International urged the International Criminal Court on November 25, 2026, to investigate whether Israeli officials committed genocide in Gaza, stating measures have prevented births and harmed women's reproductive health, according to Amnesty International.",
+              "Defense Minister Israel Katz stated on November 25, 2026, that Israel and the U.S. possess intelligence regarding an emerging Iranian chemical weapons program, and that a preemptive strike remains a possibility, according to Fox News and The Jerusalem Post. Israeli judges recommended dropping one of three corruption cases against Prime Minister Benjamin Netanyahu and reconsidering another, according to reports from November 25, 2026.",
+              "The United Nations warned of a growing risk of atrocities by Israel against Palestinians, noting violence in the West Bank has surged since the 7 October 2023 attack by Hamas, according to the UN. Gadi Eisenkot and Avigdor Lieberman agreed the first coalition deal after Israel's October 27 election deadlock, according to NewsCord and The Jerusalem Post."
+            ],
+            "facts": [
+              "Nineteen Palestinians died and 48 others sustained injuries in Israeli attacks on Gaza on November 26, 2026",
+              "The Israel Defense Forces and Shin Bet stated they killed senior Hamas economy and education chief Khaled Abu Nada in a Gaza strike",
+              "Health authorities in Gaza issued a meningitis epidemic alert following a steep rise in cases among infants",
+              "Defense Minister Israel Katz stated Israel and the U.S. possess intelligence regarding an Iranian chemical weapons program"
+            ],
+            "title": "Nineteen Palestinians killed in Israeli attacks on Gaza",
+            "context": "Israeli military operations in Gaza have continued with frequent airstrikes and targeted killings. The territory is currently facing a meningitis epidemic alert alongside ongoing conflict, and international bodies have raised concerns over health conditions and potential atrocities.",
+            "imageCaption": ""
+          }
+        }
+      },
       {
         "at": "2026-11-26T10:54:14.934Z",
         "reason": "1 new update(s)",
@@ -683,8 +954,7 @@
           }
         }
       }
-    ],
-    "updatedAt": "2026-11-26T11:31:13.784Z"
+    ]
   },
   "endedAt": null,
   "locales": {
@@ -727,6 +997,180 @@
   },
   "updates": [
     {
+      "id": "u-1795772686000-u7hm",
+      "at": "2026-11-27T09:44:46.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Israel and Hamas factions continue coalition and military activity",
+          "body": "Israeli rival factions are considering coalition deals as the government deadlock continues, according to NPR. Meanwhile, the IDF reported killing four Hamas operatives in Gaza, including an individual involved in a hostage handover, Ynetnews stated."
+        },
+        "fr": {
+          "headline": "Israël et les factions du Hamas poursuivent leurs activités politiques et militaires",
+          "body": "Selon NPR, les factions israéliennes rivales envisagent des accords de coalition alors que l'impasse gouvernementale perdure. Parallèlement, Tsahal a annoncé avoir tué quatre membres du Hamas à Gaza, dont un individu impliqué dans le transfert d'otages, a rapporté Ynetnews."
+        },
+        "es": {
+          "headline": "Las facciones de Israel y Hamás continúan con su actividad militar y de coalición",
+          "body": "Las facciones rivales israelíes están considerando acuerdos de coalición mientras persiste el bloqueo gubernamental, según NPR. Por otro lado, las FDI informaron de la muerte de cuatro operativos de Hamás en Gaza, incluido un individuo involucrado en la entrega de rehenes, según indicó Ynetnews."
+        },
+        "de": {
+          "headline": "Israelische Fraktionen setzen Koalitionsgespräche und militärische Aktivitäten fort",
+          "body": "Wie NPR berichtet, erwägen rivalisierende israelische Fraktionen Koalitionsvereinbarungen, während die politische Blockade andauert. Unterdessen meldete die IDF laut Ynetnews die Tötung von vier Hamas-Kämpfern im Gazastreifen, darunter eine Person, die an einer Geiselübergabe beteiligt war."
+        },
+        "it": {
+          "headline": "Israele e fazioni di Hamas proseguono le attività di coalizione e militari",
+          "body": "Le fazioni rivali israeliane stanno valutando accordi di coalizione mentre persiste lo stallo governativo, secondo quanto riportato da NPR. Nel frattempo, le IDF hanno riferito di aver ucciso quattro operativi di Hamas a Gaza, tra cui un individuo coinvolto nel rilascio di ostaggi, come dichiarato da Ynetnews."
+        },
+        "zh": {
+          "headline": "以色列与哈马斯各派系持续进行联盟谈判及军事行动",
+          "body": "据美国国家公共电台（NPR）报道，随着政府僵局持续，以色列各竞争派系正在考虑达成联盟协议。与此同时，据《新消息报》（Ynetnews）报道，以色列国防军称在加沙击毙了四名哈马斯武装人员，其中包括一名曾参与人质移交工作的成员。"
+        },
+        "pt": {
+          "headline": "Fações israelitas e do Hamas mantêm atividade de coligação e militar",
+          "body": "As fações rivais israelitas estão a considerar acordos de coligação à medida que o impasse governamental persiste, segundo a NPR. Entretanto, as FDI comunicaram a morte de quatro operacionais do Hamas em Gaza, incluindo um indivíduo envolvido na entrega de reféns, afirmou o Ynetnews."
+        },
+        "ko": {
+          "headline": "이스라엘 정파들 연정 협상 지속 및 하마스 교전",
+          "body": "NPR에 따르면 이스라엘 내 정파들은 정부 구성 교착 상태가 지속됨에 따라 연정 합의를 고려하고 있다. 한편 Ynetnews는 이스라엘 방위군(IDF)이 가자지구에서 인질 교환에 관여했던 인물을 포함해 하마스 대원 4명을 사살했다고 보도했다."
+        },
+        "ja": {
+          "headline": "イスラエルとハマスの各派、連立交渉と軍事活動を継続",
+          "body": "NPRによると、イスラエルでは政府の膠着状態が続く中、対立する各派が連立合意を模索している。一方、Ynetnewsは、イスラエル国防軍（IDF）がガザ地区で、人質の引き渡しに関与した人物を含むハマスの工作員4人を殺害したと報じた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "NPR",
+          "title": "Israel’s rival factions consider coalition deals as government deadlock continues",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQX1ZTdV9zblkxQ0lQNEw2OFhsNUYyMUVwWWk3VzlnVEJGZzQxSjYwSHRxWm16ZkRqR0dJOVo1UnlleFFQNGRxUmthM2UtNVowcDNCbUM4QTZWWk5EVmJHWUtpdGpqemNTc1J6ajhqaGdTXy15X1VOcGlMZGF1RGMyalpUaG5ISy0wLS1OVlFEMV9hc3NOREJXS3VNZzJWY0N3aF9NeHl2bzAtbmlXZUIzRmRYZkdSeE82TktKcGg5MXNCQ0E?oc=5",
+          "publishedAt": "2026-11-27T09:44:46.000Z"
+        },
+        {
+          "outlet": "Ynetnews",
+          "title": "IDF kills 4 Hamas operatives in Gaza, including Oct. 7 attacker involved in hostage handover",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9SQkZrUFJhRWYzaHNEV2tyUHlaazFlcnVWaTFhYjg0T1VibXVqdDRUZVg3azBNekZzMThDa1owV1l6Q3lIOE1oa0J2eWxQOG1zU2F6T3lR?oc=5",
+          "publishedAt": "2026-11-27T09:12:01.000Z"
+        }
+      ]
+    },
+    {
+      "id": "u-1795772686000-m2ah",
+      "at": "2026-11-27T09:44:46.000Z",
+      "kind": "result",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Israeli political factions continue coalition negotiations",
+          "body": "Israeli political factions are weighing potential coalition deals as the government deadlock persists, according to NPR. The Jerusalem Post and NPR reported that Gadi Eisenkot and Benjamin Netanyahu are currently competing to form a new government."
+        },
+        "fr": {
+          "headline": "Les factions politiques israéliennes poursuivent les négociations de coalition",
+          "body": "Les factions politiques israéliennes évaluent des accords de coalition potentiels alors que l'impasse gouvernementale persiste, selon NPR. Le Jerusalem Post et NPR ont rapporté que Gadi Eisenkot et Benjamin Netanyahu sont actuellement en concurrence pour former un nouveau gouvernement."
+        },
+        "es": {
+          "headline": "Las facciones políticas israelíes continúan las negociaciones de coalición",
+          "body": "Las facciones políticas israelíes están evaluando posibles acuerdos de coalición mientras persiste el bloqueo gubernamental, según NPR. The Jerusalem Post y NPR informaron que Gadi Eisenkot y Benjamin Netanyahu compiten actualmente para formar un nuevo gobierno."
+        },
+        "de": {
+          "headline": "Israelische politische Gruppierungen setzen Koalitionsverhandlungen fort",
+          "body": "Wie NPR berichtet, wägen israelische politische Gruppierungen angesichts der anhaltenden Regierungsblockade mögliche Koalitionsvereinbarungen ab. Laut The Jerusalem Post und NPR konkurrieren Gadi Eisenkot und Benjamin Netanjahu derzeit um die Bildung einer neuen Regierung."
+        },
+        "it": {
+          "headline": "Le fazioni politiche israeliane proseguono i negoziati di coalizione",
+          "body": "Le fazioni politiche israeliane stanno valutando potenziali accordi di coalizione mentre persiste lo stallo governativo, secondo quanto riportato da NPR. Il Jerusalem Post e NPR hanno riferito che Gadi Eisenkot e Benjamin Netanyahu sono attualmente in competizione per formare un nuovo governo."
+        },
+        "pt": {
+          "headline": "Fações políticas israelitas continuam negociações de coligação",
+          "body": "As fações políticas israelitas estão a avaliar potenciais acordos de coligação à medida que o impasse governamental persiste, segundo a NPR. O The Jerusalem Post e a NPR noticiaram que Gadi Eisenkot e Benjamin Netanyahu estão atualmente a competir para formar um novo governo."
+        },
+        "ja": {
+          "headline": "イスラエルの各政治勢力、連立交渉を継続",
+          "body": "NPRによると、イスラエルの各政治勢力は政府の膠着状態が続く中、連立合意の可能性を検討している。エルサレム・ポストとNPRは、ガディ・エイゼンコット氏とベンヤミン・ネタニヤフ氏が現在、新政権樹立に向けて競合していると報じた。"
+        },
+        "ko": {
+          "headline": "이스라엘 정파들, 연립정부 구성 협상 지속",
+          "body": "NPR에 따르면 이스라엘 정파들은 정부 구성 교착 상태가 지속되는 가운데 잠재적인 연립정부 합의안을 검토하고 있다. 예루살렘 포스트와 NPR은 가디 아이젠코트와 베냐민 네타냐후가 현재 새 정부 구성을 놓고 경쟁 중이라고 보도했다."
+        },
+        "zh": {
+          "headline": "以色列各政治派别继续进行组阁谈判",
+          "body": "据美国国家公共电台（NPR）报道，随着政府僵局持续，以色列各政治派别正在权衡潜在的联合政府协议。《耶路撒冷邮报》和美国国家公共电台报道称，加迪·艾森科特（Gadi Eisenkot）与本雅明·内塔尼亚胡（Benjamin Netanyahu）目前正在竞相组建新政府。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "NPR",
+          "title": "Israel's rival factions consider coalition deals as government deadlock continues",
+          "url": "https://www.npr.org/2026/11/27/nx-s1-6053018/israels-rival-factions-consider-coalition-deals-as-government-deadlock-continues",
+          "publishedAt": "2026-11-27T09:44:46.000Z"
+        },
+        {
+          "outlet": "The Jerusalem Post",
+          "title": "Israel Election 2026 Live Updates: Eisenkot, Netanyahu race to build government",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE4tWFZRaDZIUFRpMUFiZzl1bDFsTW9DaUpZaHQ2WDBKSjNhWTlyellVeEd3RmU3cmg1RzdNWlZJVW1yMWRreDhkUnJvclkxVnUwUl9CdHp3aHdxTGFiSlRHZnBCVmFYdUVCX1F4aFd5VjZuSWtBLWpXNUNiV3ktZw?oc=5",
+          "publishedAt": "2026-11-27T09:00:05.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T08:39:33.000Z",
+      "id": "u-1795768773000-4yje",
+      "kind": "breaking",
+      "locales": {
+        "de": {
+          "body": "Am 27. November wurden sowohl im Gazastreifen als auch im Libanon israelische Militärschläge gemeldet. Laut ArabAmericanNews und CGTN laufen derzeit Vermittlungsbemühungen unter Beteiligung des Iran und der Vereinigten Staaten.",
+          "headline": "Israelische Angriffe im Gazastreifen und im Libanon dauern an"
+        },
+        "en": {
+          "body": "Israeli military strikes were reported in both Gaza and Lebanon on 27 November. Mediation efforts involving Iran and the United States are ongoing, according to ArabAmericanNews and CGTN.",
+          "headline": "Israeli strikes continue in Gaza and Lebanon"
+        },
+        "es": {
+          "body": "El 27 de noviembre se informaron ataques militares israelíes tanto en Gaza como en el Líbano. Los esfuerzos de mediación en los que participan Irán y Estados Unidos siguen en curso, según ArabAmericanNews y CGTN.",
+          "headline": "Continúan los ataques israelíes en Gaza y el Líbano"
+        },
+        "fr": {
+          "body": "Des frappes militaires israéliennes ont été signalées à Gaza et au Liban le 27 novembre. Les efforts de médiation impliquant l'Iran et les États-Unis se poursuivent, selon ArabAmericanNews et CGTN.",
+          "headline": "Les frappes israéliennes se poursuivent à Gaza et au Liban"
+        },
+        "it": {
+          "body": "Il 27 novembre sono stati segnalati attacchi militari israeliani sia a Gaza che in Libano. Secondo quanto riportato da ArabAmericanNews e CGTN, sono in corso sforzi di mediazione che coinvolgono l'Iran e gli Stati Uniti.",
+          "headline": "Proseguono i raid israeliani a Gaza e in Libano"
+        },
+        "ja": {
+          "body": "11月27日、ガザとレバノンの双方でイスラエル軍による攻撃が報告された。アラブ・アメリカン・ニュースおよびCGTNによると、イランと米国を交えた仲介努力が現在も続いている。",
+          "headline": "イスラエル軍、ガザとレバノンで攻撃を継続"
+        },
+        "ko": {
+          "body": "11월 27일 가자지구와 레바논 양측에서 이스라엘군의 공습이 보고되었다. 아랍아메리칸뉴스(ArabAmericanNews)와 CGTN에 따르면 이란과 미국이 관여하는 중재 노력이 계속되고 있다.",
+          "headline": "이스라엘, 가자지구와 레바논 공습 지속"
+        },
+        "pt": {
+          "body": "Foram reportados ataques militares israelitas tanto em Gaza como no Líbano a 27 de novembro. Os esforços de mediação que envolvem o Irão e os Estados Unidos estão em curso, segundo o ArabAmericanNews e a CGTN.",
+          "headline": "Ataques israelitas continuam em Gaza e no Líbano"
+        },
+        "zh": {
+          "body": "据《阿拉伯美国人新闻》和中国国际电视台（CGTN）报道，11月27日，以色列军队在加沙和黎巴嫩发动了军事打击。涉及伊朗和美国的斡旋努力仍在进行中。",
+          "headline": "以色列在加沙和黎巴嫩持续发动空袭"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVXBPcXZCMDQ0Qmg1WkQ1b3c2a2g2TVpobVJKcHM5QmttZm90RGlGNWE0bmNJTW9sT1g1WEVYLVM4bmFGUTNSUWQtY2tpTG9XcHlOV2R6aWdpNS1XUVlIVjNINWZMci04WW9KSGJLeHRvNTZIcXF4OExkVnNFWkVGTWFaeS1QdE9FRHhMXzlCVUQ2MlFIeFdsek1uMUktZ242anctVDBIaGpwYVFtcHk1SG9HcS1tRFQyb0dibmpTcUlNR1lONXRlQ3IzZHM5VmJZM1dWd3BFYw?oc=5",
+          "title": "Gaza, Lebanon face new Israeli strikes as Iran-U.S. mediation continues",
+          "outlet": "ArabAmericanNews",
+          "publishedAt": "2026-11-27T08:39:33.000Z"
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLXlPT3dvX1lOS3J5VDgwNXUwYjBaOHN0Rkp4RktnY2JwdjlKVENEQUp0QldiUHNBX1RiRVlURm4tY2g2TklLYlg2NE9uUng1cUZ0OXMyRW5hWGI2T29OQ1BORTdmV3ZNUUVKN0Y2WmJrNy1GazkwdHQ2Q2JtRVRuanhVWnRnZnA1VEFReDQtSl94amYzMkxjQnJsTFNYS0diYk5vN0xnZjlFWmNOd01DSkg0eHZjRUU?oc=5",
+          "title": "Israel threatens further Gaza displacement as Hamas weighs response to ceasefire violations",
+          "outlet": "CGTN",
+          "publishedAt": "2026-11-27T06:33:58.000Z"
+        }
+      ],
+      "importance": 3
+    },
+    {
       "at": "2026-11-26T23:02:33.537Z",
       "id": "u-1795734153537-b43e",
       "kind": "reaction",
@@ -739,6 +1183,10 @@
           "body": "Hamas official Hayya said the group was considering measures in response to Israeli targeted killings of senior officials in Gaza, without specifying what measures were being considered.",
           "headline": "Hamas official says group weighs response to killings"
         },
+        "es": {
+          "body": "El funcionario de Hamás, Hayya, declaró que el grupo está considerando medidas en respuesta a los asesinatos selectivos de altos cargos en Gaza por parte de Israel, sin especificar qué medidas se están contemplando.",
+          "headline": "Un funcionario de Hamás afirma que el grupo evalúa su respuesta a los asesinatos"
+        },
         "fr": {
           "body": "Le responsable du Hamas Hayya a indiqué que le groupe envisageait des mesures en réponse aux assassinats ciblés israéliens de hauts responsables à Gaza, sans préciser quelles mesures étaient envisagées.",
           "headline": "Responsable du Hamas indique que le groupe pèse sa réponse aux assassinats"
@@ -746,6 +1194,22 @@
         "it": {
           "body": "L'ufficiale di Hamas Hayya ha affermato che il gruppo stava valutando misure in risposta agli uccisioni mirati di alti funzionari israeliani a Gaza, senza specificare quali misure fossero in considerazione.",
           "headline": "Ufficiale di Hamas: il gruppo valuta una risposta agli uccisioni mirate"
+        },
+        "ja": {
+          "body": "ハマスのハイヤ幹部は、イスラエルによるガザの幹部標的殺害への対抗措置を検討していると述べた。具体的な措置の内容については言及しなかった。",
+          "headline": "ハマス幹部、幹部殺害への対応を検討中と表明"
+        },
+        "ko": {
+          "body": "하마스 관계자 하이야는 가자지구 내 고위급 인사들에 대한 이스라엘의 표적 살해에 대응하여 구체적인 조치를 검토하고 있다고 밝혔으나, 어떤 조치가 고려되고 있는지는 언급하지 않았다.",
+          "headline": "하마스 관계자, 고위급 살해에 대한 대응 검토 중"
+        },
+        "pt": {
+          "body": "O responsável do Hamas, Hayya, afirmou que o grupo está a considerar medidas em resposta aos assassínios seletivos de altos responsáveis em Gaza por parte de Israel, sem especificar quais as medidas em análise.",
+          "headline": "Responsável do Hamas diz que o grupo avalia resposta a mortes"
+        },
+        "zh": {
+          "body": "哈马斯官员哈亚表示，该组织正在考虑采取措施，以回应以色列针对加沙高级官员的定点清除行动，但未说明具体考虑采取何种措施。",
+          "headline": "哈马斯官员称该组织正在权衡对暗杀事件的回应"
         }
       },
       "sources": [
@@ -777,6 +1241,10 @@
           "body": "An Israeli airstrike hit an apartment in Deir Al-Balah, killing Khaled Abu Nada, the Deputy Gaza Education Minister, and his wife, according to medics and officials.",
           "headline": "Senior Hamas deputy Education Minister killed in airstrike"
         },
+        "es": {
+          "body": "Un ataque aéreo israelí alcanzó un apartamento en Deir al-Balah, acabando con la vida de Khaled Abu Nada, viceministro de Educación de Gaza, y su esposa, según informaron médicos y funcionarios.",
+          "headline": "Muere el viceministro de Educación de Hamás en un ataque aéreo"
+        },
         "fr": {
           "body": "Une frappe israélienne a touché un appartement à Deir Al-Balah, tuant Khaled Abu Nada, vice-ministre de l'Éducation de Gaza, et sa femme, selon des médecins et des responsables.",
           "headline": "Délégué senior du Hamas au Ministère de l'Éducation tué dans une frappe aérienne"
@@ -784,6 +1252,22 @@
         "it": {
           "body": "Un raid aereo israeliano ha colpito un appartamento a Deir Al-Balah, uccidendo Khaled Abu Nada, vice ministro dell'istruzione di Gaza, e sua moglie, secondo medici e funzionari.",
           "headline": "Vice ministro dell'istruzione di Hamas ucciso in un raid aereo"
+        },
+        "ja": {
+          "body": "医療関係者や当局者によると、イスラエル軍による空爆がデイル・アル・バラの集合住宅に着弾し、ガザ地区の教育副大臣であるハレド・アブ・ナダ氏と彼の妻が死亡した。",
+          "headline": "ハマスの教育副大臣、空爆により死亡"
+        },
+        "ko": {
+          "body": "의료진과 당국에 따르면 이스라엘의 공습이 데이르 알발라의 한 아파트를 타격해 칼레드 아부 나다 가자지구 교육부 부장관과 그의 아내가 사망했다.",
+          "headline": "하마스 교육부 부장관, 공습으로 사망"
+        },
+        "pt": {
+          "body": "Um ataque aéreo israelita atingiu um apartamento em Deir Al-Balah, matando Khaled Abu Nada, vice-ministro da Educação de Gaza, e a sua esposa, segundo médicos e responsáveis oficiais.",
+          "headline": "Vice-ministro da Educação do Hamas morto em ataque aéreo"
+        },
+        "zh": {
+          "body": "据医务人员和官员称，以色列的一次空袭击中了代尔拜拉赫的一处公寓，造成加沙教育部副部长哈立德·阿布·纳达及其妻子死亡。",
+          "headline": "哈马斯高级别教育部副部长在空袭中丧生"
         }
       },
       "sources": [
@@ -2306,170 +2790,56 @@
     "https://news.google.com/rss/articles/CBMid0FVX3lxTE4wY1h5amRLa0RPd0NwM014dkEwbVEwY2pIczhCUkpiMjM4Y2JGWWpUdU9nR3hsUDY5Rm1mWTNEaHFBdWJCU2kzX042MThZRjVhQXZJV3BOVURUVWlObGhMaXpxbTJIcUU0SzViNEx4ZWZLTEV2TnNZ?oc=5",
     "https://www.aljazeera.com/news/2026/11/26/netanyahus-corruption-trial-is-it-really-all-over?traffic_source=rss",
     "https://www.thehindu.com/news/international/israel-kills-nine-in-gaza-including-hamas-appointed-deputy-education-minister-officials-say/article71747983.ece",
-    "https://www.thehindu.com/news/international/kremlin-accuses-ukraine-of-trying-to-widen-conflict-zone-to-mediterranean-and-baltic-seas/article71747857.ece"
+    "https://www.thehindu.com/news/international/kremlin-accuses-ukraine-of-trying-to-widen-conflict-zone-to-mediterranean-and-baltic-seas/article71747857.ece",
+    "https://www.jpost.com/israel-news/politics-and-diplomacy/article-916313",
+    "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVXBPcXZCMDQ0Qmg1WkQ1b3c2a2g2TVpobVJKcHM5QmttZm90RGlGNWE0bmNJTW9sT1g1WEVYLVM4bmFGUTNSUWQtY2tpTG9XcHlOV2R6aWdpNS1XUVlIVjNINWZMci04WW9KSGJLeHRvNTZIcXF4OExkVnNFWkVGTWFaeS1QdE9FRHhMXzlCVUQ2MlFIeFdsek1uMUktZ242anctVDBIaGpwYVFtcHk1SG9HcS1tRFQyb0dibmpTcUlNR1lONXRlQ3IzZHM5VmJZM1dWd3BFYw?oc=5",
+    "https://www.aljazeera.com/features/2026/11/27/will-i-get-taller-gazas-children-suffer-stunting-amid-war-blockade?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMinwFBVV95cUxOcWV6RDNUNjNfM2lwMUNCS2E3d1B5V0VXWGtUVjE5c2pCQWxmOWUyV0tvZUxNV1FrRnNnaUlUcl9XVThyU01IbTBTaUhmZ0ZPbFoxeXozQk5uM3BxaVZBUGJ4ZVFMaHE0TVFtT25yWlMwMUt0LWRHZGo0MjlnbnVRTGd2WXBMN195TjVNT3JIYS1ieVcxSWpUdHNRQ24tbm_SAaQBQVVfeXFMT3dUUGtDS0VFZXlCQ290bU9KNzdveXZHa2I2NXZ2ZDJncFhaUTFtcjVtQXdUTHlvX01tSmdiSjhQbi1UYjVpUkwwMXVxbWxJa0lVemhQZ3ZEX1NWdFEzQWl3SndBUENyX2w4d0owM0d3VEo5X2dHaXFYeDFIcmRWdGZZdGhhZnRCeEN5czBVdElmNi1mU2tmV05TRmxpVy1STzM4WE0?oc=5",
+    "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOU1lndnktZzRGN21sSkJIMzdDZGROSUl4ei1lcXNrNUZEOWYyMmpkOWJGMDNnWnBUMlc3TkpISUNaRk1KWlpuYy1xVWM2Mlg0UWJjdVJNUUtCZHdzZndxMU9fdV9oOFgwRmNLWW5lVVhhY1NyUng0dU1WTlRRN0VlbjU3aDk4N01DblI0eklmTFdrcnBabTFzMEd6WHRTLVFwQUhXZ3FyQVFteXJlR0V1dVlxSi1naG9rUmZfMzkyQ0h0cVRJeFRHeHh0SUp0VFN5ZkZHbi12endRZkFreUVEZk1B?oc=5",
+    "http://www.africanews.com/2026/11/27/egypts-president-sisi-welcomes-qatars-sheikh-tamim-to-cairo-for-talks/",
+    "https://www.kyivpost.com/post/91382",
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT19wdmhETVp5R1R0LTdqUktoTmJ2X2x0ODFUZk8yUVVIeG9TUGVKVXhSS3E4a1BWeHlkempMNU1heEZmNFpKSFZybWVsNmNobVdLLTJzSTQ1b3VENEJ6SHhvYmhRZXNvVFNMa1hadmk0dXljYjdLUVVBMllKeU40S0U5SE52d2FN?oc=5",
+    "https://news.google.com/rss/articles/CBMilwJBVV95cUxNYkhEWV9vWnVnNEE2czBzQWJVVnZGcTQyMXRFSHM5VFhhdEVfaXZhX0NnQ01yM1JoYTF6NXZRM0tiVzBNbUZ4Wm9JcFFXTC1CazNjN3hza2ZFTVBLTkZtWEUxY1pNQkVjYnZyamk1QnozM3h1MnJmZUpRTXpIN0dRY3pQMHh3djZoa1I4OHc0aW9NSUVnZXFoYjlKSmJ5YU5SMzB3ZEZaUWN3d0tNUEFoT1FJdTVFRlgycHpLdzhwRm1Sc0l4SDU5VFFSalV1d0U1dVh6ZjEtdnpyVUxnZ0t6d0dkMV9LQnJDS01jZF9va2tpMjlma3ZhVkVDVm1FR0k5M1pDUDVtMlNrNG11aFNrNExvS1pZUU0?oc=5",
+    "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWjkzVlBiblBCRlRIN05KeHlISHVvRkdnYXRlb3B3cGw4ZFVBc2FpdFRpTWJuMllvOFMyN25VZjJRLTAxaEFjMFlRNEVJNTBTd1JucVhPZmQ5QnptcjRTdFJBVjVyYjZiMEJUUGQyc3hrMWszLXBReWFaX3U5clE5Ql9IWThCS1Voa1M4RXd0ay0yTVdWSkpJWDJLUkVkTExmYVFWZg?oc=5",
+    "http://www.africanews.com/2026/11/27/italy-not-informed-about-ukraine-drone-strike-on-russian-ships-in-libya/",
+    "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS244V1JFWVg3NHNvalJBczh2Z3M4Z1pUU3dhQ0QyRHpvZkkxNmVlb012Tm0yemxwWnBEMGlGdExoZnBOV1JlLWdPc2hNSWhGd044cTBMbUIySV9GVWszVEsxQXVWUWd6YVd1Z0NHNHFfWHBqTjhkS0pGNmFka2VOQURrR25wQUxXTW5RRkh5cVNCRmZzYmU2N25jVFdnQmgxcUViSE1Zb3doZw?oc=5",
+    "https://www.france24.com/en/middle-east/20261127-israel-s-eisenkot-agrees-to-coalition-deal-with-left-wing-democrats",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLXlPT3dvX1lOS3J5VDgwNXUwYjBaOHN0Rkp4RktnY2JwdjlKVENEQUp0QldiUHNBX1RiRVlURm4tY2g2TklLYlg2NE9uUng1cUZ0OXMyRW5hWGI2T29OQ1BORTdmV3ZNUUVKN0Y2WmJrNy1GazkwdHQ2Q2JtRVRuanhVWnRnZnA1VEFReDQtSl94amYzMkxjQnJsTFNYS0diYk5vN0xnZjlFWmNOd01DSkg0eHZjRUU?oc=5",
+    "http://www.africanews.com/2026/11/27/algeria-condemns-spillover-of-ukraine-war-into-libya/",
+    "https://www.theguardian.com/world/2026/nov/27/paramedics-blocked-attacked-by-settlers-west-bank",
+    "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZLTR5dXJUVGdNbk5QWHI0U1JoNTdQQkhOT2FJd0o0Wmk5RkEyZ3EydnYtNEcwcmg3UEJwMXN2SzRBY3hDQkxOLXRhelByMnRhZFN0OHlZY283Zm9hLVVUQVlqUEhWQnVyQmViaWJ3?oc=5",
+    "https://news.google.com/rss/articles/CBMisgFBVV95cUxPYXVDeDZ3NkFvXzRhSnREUnNfUzZLS252LVRZRjE4STVHNXc1UFBmTV9YdmZ0U1VGX3UzRkJ4S1RKTV9YVXdJSVNWTy1xY25GUHNvOTd5ek5xdXVtdnUyOTJYZnJNME9BM1hRMmhoVEEtZW9MbHItam1DWVV6UndpMGU2WlBsVVlhRVVBOXBwd1drSGo3SUZ6REZWTDh0SGNkcjhPc0F3S2k5NFUtSVhVSlhR0gG3AUFVX3lxTE1uY25ieXJNM3JIWDhZNEVrOGtDakthTGtuOUFRQ3MtOF9nY05IMWI3MkYyZEZWSDlLX1BDVTk5TVRLaEJBd0t0Q3JKN2NaZUdpX09wcF91WEN5UnJ5LXJqcGk3WWJUSU5DNm9qT0RBdkQ1WkNuWlhYZGhBU2RlMmR1TTFGb2hLajdpLVlPY2xQQ0FtX0pMbHdvakJLTDNJNWJTcDhudFByLUx4QTFjRlBlOVlEd2V2TQ?oc=5",
+    "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNVZ3YkN1M2hSQ1cwaUZMN2NwTjhaYk9LWEd2N2E3TnlGUTV5dUxLbEx1OU43T3RYeWtPUG14SFphWDFoczJKYTlKekFBZF9LbGczOFU5N0dINXFrSGlWa2dnQnNXSm9DWTZMQnQxdlJ0Qnlsd3ZsVEJzUlFOUXhXalp2U3BRTk84YU9YNWlkRDFQeTI4dUk0ZDhOaGdQaVR2eFk2Qm13eUw0d2JXX2lPR3R5QUg3Rjhyd19KM2hwZmN6aEdSMWhQRkhzaFZ4anZNQVh5TQ?oc=5",
+    "https://www.npr.org/2026/11/27/nx-s1-6053018/israels-rival-factions-consider-coalition-deals-as-government-deadlock-continues",
+    "https://www.npr.org/2026/11/27/nx-s1-6054840/israeli-opposition-leader-seeks-path-to-form-government-without-netanyahu",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE4tWFZRaDZIUFRpMUFiZzl1bDFsTW9DaUpZaHQ2WDBKSjNhWTlyellVeEd3RmU3cmg1RzdNWlZJVW1yMWRreDhkUnJvclkxVnUwUl9CdHp3aHdxTGFiSlRHZnBCVmFYdUVCX1F4aFd5VjZuSWtBLWpXNUNiV3ktZw?oc=5",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNejRpOWVqQmxQcVJOXzRBTmVxMWZiRnZpS0NWLUNhSlZlQlk3LUQwUU90bEI2TFN6Qk1nNkVfb1NYa1dBVEJkWjNzenFuX0tvTEwtRGZXRFB0Vmo0dlh6QmRjYV9zZl83OVN5cWhvbml4MjhtQVFkVU42SHpfNTM1QmtpeGVxRGFqVWEwREtGX0tBMTR6YnZLUXZaNHdKcU16bEptWmhyVW9TcWJpdk9YODZyUUg5akJY?oc=5",
+    "https://news.google.com/rss/articles/CBMiywFBVV95cUxNMlZTS3FkSXB2bG5sRVEwN2twdVFhcnJveFozdHJFQ0hfN1R2RjROR096SnhNSXphT0l4dkV1VmE5OUN5OE05Tk5peldfbUs5bUFsdHgxUjFKQ0FFYTRwLWVUZU9VUVp3eDBqQUZvNW14OWFOT3lvVnpILUhVUWY4emlQb2Nxa1B1UERSTlFDRkxZWXJDdXNDd1d1c25jbDI3c2hLSU5Xc1RHUEF2ems1aE54WGpHMzU1VnNpcVI0M3hrRE0wNVBfMDBrMA?oc=5",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9kVFVoVlFoVE0zc3lYOGVrcWl2d25YRm9xekxhemwzM0JxNkhzcE1YTEphbE4yODJmTHlZMmtZRlJmYmRoRkNqMGc2dTluSXNRQUNzVldVeXlXMnJEcnRLcHdNa1RRSVk?oc=5",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPOHlqNkdGTGNwVS1RSWpzWUhxLWZkcElrR1lnUDZCSEJvTlJQZnRJN1k1SE5jRlpkYjd0eUJ2SXo4alhPSWRIR3hIVjdseWN6UkdoRDVCVDZaMnVBeDZ5NVBZQlF4TWVzRDh5Z2hSaV9iMmJFSVVJZk93MkR3ZnB0V2RjdVNBQk5mZWdvb0JuaHZMMDlGa2pWYzNnNnlQclRKaUtGOUx2ZVl1S0JNNVRqTTA1ZXhZem5MNG9KT3dEa1p2Zw?oc=5",
+    "https://www.jpost.com/middle-east/article-916319",
+    "https://www.jpost.com/israel-news/politics-and-diplomacy/article-916257",
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1DVmlGSU8xTEhBbXNIVTVlR1lEN2pUSUJlRlVYdzFfcmFIVEV4ZnpzZ1pSTHJMRDZBNFdUU1F2Q2ZIbU5kLTBaOUEycjdkTWh0anVXOUVabmg?oc=5",
+    "https://www.aljazeera.com/news/2026/11/27/israeli-attacks-on-women-and-girls-meant-to-destroy-life-in-gaza-amnesty?traffic_source=rss",
+    "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUE9TQ2REMVdleHpyZjN3WFRZUDc1NWJVdlNMNVd6OXEtVTdlMmg5cFNRN1B2UHQ4aUY0THduZV9Icm1vdmU1TXE4R0dxd192aDNsLTdXQ3BiVTNzSGdSSzVRRHlvSm9rS0NNY1FSYmdYZ3J2dldZa2wxNFo3ejJZQTFzZkR2YXVGcVdGZGpR?oc=5",
+    "https://www.euronews.com/2026/11/27/iran-denies-responsibility-for-kuwait-drone-strike-that-killed-two-italians",
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxQemFsZ0h4N0ktTTdoUkdCQjE4TXJoRkVsQTlIRGlLek1nY0FrcGVtT2w1U3Y5bzRyd01OYW1MSmFqR2taV0dXNWhTSXJUeW1CdjZDZm9lQWhlMlRCcFBXOHpuOWpDOGs1M3A4MXN6Rkh5SlctUDZDdjg1LWY2REZfeEdRMlpCcDlnVTFvaE5QSHYxZC1iWmRYWkNQQmR5R2NwaDczWFBjeG5OYTRZbTc3eg?oc=5",
+    "https://www.faz.net/aktuell/feuilleton/debatten/streit-um-gaza-us-schriftsteller-gruenden-neuen-pen-verein-201721912.html",
+    "https://news.google.com/rss/articles/CBMie0FVX3lxTE5hZHJWYWFaa2d1RjF2TllHSFpUZXA0WVEwUUFvRmtmT05waVZaTl9fOGNXZ1BPLWY4SnlqNnJfMUY5b19iTm5qeE1yZnBzdHd5TjdaMjdoWEU1cmpCTjVFVVVxenRCVU1ia1JWZ0FjX1NDSEV0ZFR2Nzl6WQ?oc=5",
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMUZHeFpuRjRpUHczYXN5d0ZjT2FTVnFhSWlxMzZvQzhzalBrTVJvTWh2UnBBWEt5VllKWE9jVTVkYlpsWDJPR3ZYSW5Fc2U3elJKSUh6WjRwRURDdndrdWdjQ2pEWkRtX3FzUFVhWkhGOTNIeGJ1T09hUDg4M21vYzY4SHJpNEZVQWx6N0FlbW9NVjlvZGhlcFJ4R1JiM3RkdUxPQkVqNk44U0VOXzlEMWw5d2dpUQ?oc=5",
+    "https://www.npr.org/2026/11/27/nx-s1-6047116/morning-news-brief",
+    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQX1ZTdV9zblkxQ0lQNEw2OFhsNUYyMUVwWWk3VzlnVEJGZzQxSjYwSHRxWm16ZkRqR0dJOVo1UnlleFFQNGRxUmthM2UtNVowcDNCbUM4QTZWWk5EVmJHWUtpdGpqemNTc1J6ajhqaGdTXy15X1VOcGlMZGF1RGMyalpUaG5ISy0wLS1OVlFEMV9hc3NOREJXS3VNZzJWY0N3aF9NeHl2bzAtbmlXZUIzRmRYZkdSeE82TktKcGg5MXNCQ0E?oc=5",
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9SQkZrUFJhRWYzaHNEV2tyUHlaazFlcnVWaTFhYjg0T1VibXVqdDRUZVg3azBNekZzMThDa1owV1l6Q3lIOE1oa0J2eWxQOG1zU2F6T3lR?oc=5",
+    "https://news.google.com/rss/articles/CBMicEFVX3lxTE1sZ0syQXJYUkRieHhsQzdHMTZmWU5kMDBfRXk3UkJrODIyb2RwTGpHdldnRVVqdUFTNkZ2N1l0ZjFVTURHUmNxWmU4bzlsbURnTDNvZ2p6aFUyVXVLdjhHZEJtWnZ5RnVjTkIxXzhOeDA?oc=5",
+    "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcEtCN0NIcEh1cVY3cFNJNm5UNk9wU2RWZmZQTUVabmpScE9XOU5fZmxZU1daelExLTY2R2tkNGxjREN2QVlEYkVUbEptbzBBekl1d193Y2RKMUl4UEl4cklydlFlTXNoZkpjQjR6cWQ4V2Y3ZklUSkZydmNfeV9SRHdGZEJTVGlVeTBYeDV4ZjRaeVp3bzhSX2p1WktzNmYwSTBlSkhSN0hqSmc3d0E3aXBNSXU?oc=5",
+    "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSlNKeVpGLUVhcTZfSHVlSXJFbVlfcExGSkJBdldtWlBYbjVaaVRoVUpMOFRwNGxFRDFCem9ibDQwcmw0NjRTOFZ0QXVzLXZ1emF2eVhsSHJraHZZUVd4bFlyNnhMNnFkQTFhanR1djBhN1pfY2hxZVhEYXRrdW4xUjdmS3pkWmpYUFgxcmM5Y3BWUzVHc2FsUjB0clZxME4wclBDX1MxUW5relZ6SlltaUZEU2I3SXBzb2NsODA4Ynkzdw?oc=5"
   ],
   "startedAt": "2026-11-24T01:18:39.626Z",
-  "updatedAt": "2026-11-26T23:06:22.118Z",
+  "updatedAt": "2026-11-27T11:51:04.995Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "israeli-strikes-on-gaza",
-  "sourceCount": 28,
-  "seenHeadlines": [
-    "Israeli strikes kill 10 in Gaza overnight",
-    "Israeli strikes kill nine people in Gaza including Hamas-appointed official",
-    "Israeli strikes kill Hamas education official and others in Gaza",
-    "Israeli strikes kill 11 Palestinians including two girls in Gaza",
-    "Israeli drone strike kills 3 Palestinians in Gaza City",
-    "Israeli strike kills Hamas official and family in Gaza"
-  ],
-  "stats": {
-    "label": "Casualties in Gaza",
-    "note": "Reported Palestinian fatalities resulting from recent Israeli strikes and gunfire.",
-    "unit": "",
-    "max": null,
-    "asOf": "2026-11-26T00:00:00.000Z",
-    "updatedAt": "2026-11-26T23:33:42.314Z",
-    "source": {
-      "outlet": "Reuters",
-      "title": "Hamas weighs response after Israel kills 10 people in Gaza",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNzFiM29KUVhvZHZUYTV1SWtlLXNYbXg3ZzRodFVmanZkNzJsczZ4UldfRkNkSW1fVDhMaTFYOW9ETUxXaXFKcktCTThoYnBYS21mVjQxYkNWM19MR1h0WHNSdjlGenRTNkExU2RKU0ZKNUhCRWR0OVU2VmFqTUJHeE5QMVNybDE4Qk1WTmp5VGgyWDV0NjhaM3h4Ulp1bWZDUThnSlI0TFMwMnQzNk5KQnZXVTRCUUxvc2FLbmlDYVREeHpwOUpV?oc=5",
-      "publishedAt": "2026-11-26T20:56:54.000Z",
-      "trusted": true
-    },
-    "sourceCount": 1,
-    "rows": [
-      {
-        "key": "fatalities-general-reports",
-        "label": "Fatalities (general reports)",
-        "value": 10,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Vittime (rapporti generali)"
-          },
-          "fr": {
-            "label": "Décès (rapports généraux)"
-          },
-          "de": {
-            "label": "Todesopfer (allgemeine Berichte)"
-          },
-          "es": {
-            "label": "Víctimas (informes generales)"
-          },
-          "pt": {
-            "label": "Fatais (relatórios gerais)"
-          },
-          "ja": {
-            "label": "死亡者（一般報道）"
-          },
-          "ko": {
-            "label": "일반적인 사망자 보고"
-          },
-          "zh": {
-            "label": "伤亡情况（一般报告）"
-          }
-        }
-      },
-      {
-        "key": "fatalities-specific-reports",
-        "label": "Fatalities (specific reports)",
-        "value": 7,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Vittime (rapporti specifici)"
-          },
-          "fr": {
-            "label": "Décès (rapports spécifiques)"
-          },
-          "de": {
-            "label": "Todesopfer (spezifische Berichte)"
-          },
-          "es": {
-            "label": "Víctimas (informes específicos)"
-          },
-          "pt": {
-            "label": "Fatais (relatórios específicos)"
-          },
-          "ja": {
-            "label": "死亡者（具体的報道）"
-          },
-          "ko": {
-            "label": "구체적인 사망자 보고"
-          },
-          "zh": {
-            "label": "伤亡情况（具体报告）"
-          }
-        }
-      },
-      {
-        "key": "schoolchildren-killed-this-month",
-        "label": "Schoolchildren killed this month",
-        "value": 16,
-        "change": null,
-        "locales": {
-          "it": {
-            "label": "Bambini in età scolare uccisi questo mese"
-          },
-          "fr": {
-            "label": "Enfants scolarisés tués ce mois-ci"
-          },
-          "de": {
-            "label": "Diesen Monat getötete Schulkinder"
-          },
-          "es": {
-            "label": "Niños en edad escolar muertos este mes"
-          },
-          "pt": {
-            "label": "Escolares mortos este mês"
-          },
-          "ja": {
-            "label": "今月殺害された児童"
-          },
-          "ko": {
-            "label": "이번 달 살해된 학교 학생들"
-          },
-          "zh": {
-            "label": "本月遇难学童"
-          }
-        }
-      }
-    ],
-    "locales": {
-      "de": {
-        "label": "Tote in Gaza",
-        "note": "Gemeldete palästinensische Todesopfer infolge jüngster israelischer Angriffe und Schießereien."
-      },
-      "fr": {
-        "label": "Victimes à Gaza",
-        "note": "Décès palestiniens signalés suite aux récents frappes et tirs israéliens."
-      },
-      "es": {
-        "label": "Víctimas en Gaza",
-        "note": "Se reportan muertes palestinas como resultado de recientes ataques e incidentes de disparos israelíes."
-      },
-      "it": {
-        "label": "Vittime a Gaza",
-        "note": "Riferimento a vittime palestinesi derivanti da recenti attacchi israeliani e sparatorie."
-      },
-      "pt": {
-        "label": "Baixas em Gaza",
-        "note": "Fatais palestinianos reportados resultantes de recentes ataques e disparos israelitas."
-      },
-      "zh": {
-        "label": "加沙伤亡情况",
-        "note": "报道因近期以色列空袭和枪击造成的巴勒斯坦人员死亡。"
-      },
-      "ja": {
-        "label": "ガザでの死者",
-        "note": "最近のイスラエルの空爆と銃撃により報告されたパレスチナ人の死亡者数。"
-      },
-      "ko": {
-        "label": "가자지구 희생자",
-        "note": "최근 이스라엘의 공습과 총격으로 보고된 팔레스타인인 사망자 수."
-      }
-    }
-  },
+  "sourceCount": 32,
   "statsHistory": [
     {
       "at": "2026-11-26T00:00:00.000Z",
@@ -2488,5 +2858,14 @@
         }
       ]
     }
+  ],
+  "seenHeadlines": [
+    "Israeli strikes kill and wound Palestinians in Gaza",
+    "Israeli strikes kill 10 in Gaza overnight",
+    "Israeli strikes kill nine people in Gaza including Hamas-appointed official",
+    "Israeli strikes kill Hamas education official and others in Gaza",
+    "Israeli strikes kill 11 Palestinians including two girls in Gaza",
+    "Israeli drone strike kills 3 Palestinians in Gaza City",
+    "Israeli strike kills Hamas official and family in Gaza"
   ]
 }
