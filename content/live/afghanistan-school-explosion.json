@@ -7,22 +7,22 @@
       "The Kyiv Post"
     ],
     "createdBy": "bots/live.mjs",
-    "statsModel": "gemini/gemini-3.1-flash-lite",
+    "statsModel": "nvidia/nemotron-3.5-bolt-e4b",
     "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
   },
   "slug": "afghanistan-school-explosion",
   "stats": {
-    "label": "Casualties",
-    "note": "Reported casualties following an explosion near a school in Afghanistan.",
+    "label": "Casualties in Afghanistan school explosion",
+    "note": "Reported figures on students killed and injured in the explosion.",
     "unit": "",
     "max": null,
     "asOf": "2024-05-22T00:00:00.000Z",
-    "updatedAt": "2026-11-28T11:16:30.543Z",
+    "updatedAt": "2026-11-28T11:28:29.010Z",
     "source": {
       "outlet": "BBC",
-      "title": "Seven students killed and nearly 100 injured in explosion in Afghanistan, official says",
+      "title": "Ten students killed and over 100 injured in explosion in Afghanistan, official says",
       "url": "https://www.bbc.co.uk/news/articles/ckp80jyz6dl8o?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-11-28T10:14:37.000Z",
+      "publishedAt": "2026-11-28T11:18:37.000Z",
       "trusted": true
     },
     "sourceCount": 1,
@@ -31,7 +31,7 @@
         "key": "students-killed",
         "label": "Students killed",
         "value": 7,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Getötete Schüler"
@@ -40,7 +40,7 @@
             "label": "Élèves tués"
           },
           "es": {
-            "label": "Estudiantes fallecidos"
+            "label": "Estudiantes muertos"
           },
           "it": {
             "label": "Studenti uccisi"
@@ -49,45 +49,45 @@
             "label": "Estudantes mortos"
           },
           "zh": {
-            "label": "学生死亡人数"
+            "label": "遇难学生"
           },
           "ja": {
-            "label": "死亡した生徒"
+            "label": "死亡した学生"
           },
           "ko": {
-            "label": "사망 학생 수"
+            "label": "사망한 학생들"
           }
         }
       },
       {
         "key": "students-injured-upper-estimate",
         "label": "Students injured (upper estimate)",
-        "value": 99,
-        "change": null,
+        "value": 100,
+        "change": 1,
         "locales": {
-          "fr": {
-            "label": "Élèves blessés (estimation haute)"
-          },
-          "it": {
-            "label": "Studenti feriti (stima massima)"
-          },
           "de": {
             "label": "Verletzte Schüler (obere Schätzung)"
           },
-          "pt": {
-            "label": "Estudantes feridos (estimativa máxima)"
-          },
-          "ko": {
-            "label": "부상 학생 수 (최대 추정치)"
-          },
-          "zh": {
-            "label": "学生受伤人数（上限估计）"
+          "fr": {
+            "label": "Élèves blessés (estimation haute)"
           },
           "es": {
-            "label": "Estudiantes heridos (estimación máxima)"
+            "label": "Estudiantes heridos (estimación superior)"
+          },
+          "it": {
+            "label": "Studenti feriti (stima superiore)"
+          },
+          "pt": {
+            "label": "Estudantes feridos (estimativa superior)"
+          },
+          "zh": {
+            "label": "受伤学生（上限估计）"
           },
           "ja": {
-            "label": "負傷した生徒数（上限見積もり）"
+            "label": "負傷した学生（上限推定）"
+          },
+          "ko": {
+            "label": "부상 학생 수(상한 추정)"
           }
         }
       },
@@ -95,67 +95,67 @@
         "key": "students-injured-lower-estimate",
         "label": "Students injured (lower estimate)",
         "value": 97,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
-            "label": "Verletzte Schüler (niedrigere Schätzung)"
+            "label": "Verletzte Schüler (untere Schätzung)"
           },
           "fr": {
             "label": "Élèves blessés (estimation basse)"
           },
           "es": {
-            "label": "Estudiantes heridos (estimación mínima)"
+            "label": "Estudiantes heridos (estimación inferior)"
           },
           "it": {
-            "label": "Studenti feriti (stima al ribasso)"
+            "label": "Studenti feriti (stima inferiore)"
           },
           "pt": {
-            "label": "Estudantes feridos (estimativa mais baixa)"
+            "label": "Estudantes feridos (estimativa inferior)"
           },
           "zh": {
-            "label": "学生受伤人数（低估值）"
+            "label": "受伤学生（下限估计）"
           },
           "ja": {
-            "label": "負傷した生徒（低い見積もり）"
+            "label": "負傷した学生（下限推定）"
           },
           "ko": {
-            "label": "부상 학생 수 (최소 추정치)"
+            "label": "부상 학생 수(하한 추정)"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "Opferzahlen",
-        "note": "Gemeldete Opferzahlen nach einer Explosion in der Nähe einer Schule in Afghanistan."
+        "label": "Tote und Verletzte bei Explosion an afghanischer Schule",
+        "note": "Berichtigte Zahlen zu getöteten und verletzten Schülern."
       },
       "fr": {
-        "label": "Victimes",
-        "note": "Bilan des victimes suite à une explosion près d'une école en Afghanistan."
+        "label": "Casualties dans l'explosion d'une école en Afghanistan",
+        "note": "Signalements sur le nombre d'élèves tués et blessés dans l'explosion."
       },
       "es": {
-        "label": "Víctimas",
-        "note": "Víctimas reportadas tras una explosión cerca de una escuela en Afganistán."
+        "label": "Casualties en explosión de escuela en Afganistán",
+        "note": "Figuras reportadas de estudiantes muertos y heridos en la explosión."
       },
       "it": {
-        "label": "Vittime",
-        "note": "Vittime segnalate in seguito a un'esplosione nei pressi di una scuola in Afghanistan."
+        "label": "Vittime nell'esplosione in una scuola afghana",
+        "note": "Cifre riportate su studenti uccisi e feriti nell'esplosione."
       },
       "pt": {
-        "label": "Baixas",
-        "note": "Baixas reportadas na sequência de uma explosão perto de uma escola no Afeganistão."
+        "label": "Vítimas em explosão de escola no Afeganistão",
+        "note": "Relatórios sobre o número de estudantes mortos e feridos na explosão."
       },
       "zh": {
-        "label": "伤亡情况",
-        "note": "阿富汗一所学校附近发生爆炸，据报道造成人员伤亡。"
+        "label": "阿富汗学校爆炸造成伤亡",
+        "note": "关于爆炸中遇难和受伤学生的报告数字。"
       },
       "ja": {
-        "label": "死傷者",
-        "note": "アフガニスタンの学校付近で発生した爆発による死傷者の報告。"
+        "label": "アフガニスタンの学校爆発で犠牲者",
+        "note": "学生の死亡者数と負傷者数の報告された数字。"
       },
       "ko": {
-        "label": "사상자",
-        "note": "아프가니스탄의 한 학교 인근에서 발생한 폭발 사고로 인한 사상자 보고."
+        "label": "아프가니스탄 학교 폭발로 인한 인명 피해",
+        "note": "학생 사망 및 부상자 수에 대한 보고된 수치."
       }
     }
   },
@@ -295,62 +295,62 @@
   },
   "updates": [
     {
-      "id": "u-1795864055000-uslx",
       "at": "2026-11-28T11:07:35.000Z",
+      "id": "u-1795864055000-uslx",
       "kind": "result",
-      "importance": 3,
       "locales": {
+        "de": {
+          "body": "Ein Sprecher des Taliban-Innenministeriums teilte mit, dass bis zu 99 Menschen bei der Explosion verletzt wurden. Das Ministerium bestätigte zudem, dass sieben Schüler bei dem Vorfall ums Leben kamen.",
+          "headline": "Taliban Innenministerium bestätigt 99 Verletzte bei Schulexplosion in Kunar"
+        },
         "en": {
-          "headline": "Taliban Interior Ministry confirms 99 injured in Kunar school explosion",
-          "body": "A spokesperson for the Taliban Interior Ministry stated that up to 99 people were injured in the explosion. The ministry also confirmed that seven students were killed in the incident."
+          "body": "A spokesperson for the Taliban Interior Ministry stated that up to 99 people were injured in the explosion. The ministry also confirmed that seven students were killed in the incident.",
+          "headline": "Taliban Interior Ministry confirms 99 injured in Kunar school explosion"
         },
         "es": {
-          "headline": "El Ministerio del Interior talibán confirma 99 heridos en la explosión de una escuela en Kunar",
-          "body": "Un portavoz del Ministerio del Interior talibán declaró que hasta 99 personas resultaron heridas en la explosión. El ministerio también confirmó que siete estudiantes murieron en el incidente."
-        },
-        "it": {
-          "headline": "Il Ministero dell'Interno talebano conferma 99 feriti nell'esplosione in una scuola nel Kunar",
-          "body": "Un portavoce del Ministero dell'Interno talebano ha dichiarato che fino a 99 persone sono rimaste ferite nell'esplosione. Il ministero ha inoltre confermato che sette studenti sono morti nell'incidente."
-        },
-        "zh": {
-          "headline": "塔利班内政部证实库纳尔省学校爆炸造成99人受伤",
-          "body": "塔利班内政部发言人表示，爆炸已造成多达99人受伤。该部还证实，有7名学生在事件中丧生。"
-        },
-        "ja": {
-          "headline": "タリバン内務省、クナール州の学校での爆発で99人が負傷したと発表",
-          "body": "タリバン内務省の報道官は、この爆発により最大99人が負傷したと述べた。同省はまた、この事件で生徒7人が死亡したことを確認した。"
+          "body": "Un portavoz del Ministerio del Interior talibán declaró que hasta 99 personas resultaron heridas en la explosión. El ministerio también confirmó que siete estudiantes murieron en el incidente.",
+          "headline": "El Ministerio del Interior talibán confirma 99 heridos en la explosión de una escuela en Kunar"
         },
         "fr": {
-          "headline": "Le ministère de l'Intérieur des talibans confirme 99 blessés dans l'explosion d'une école au Kounar",
-          "body": "Un porte-parole du ministère de l'Intérieur des talibans a déclaré que près de 99 personnes avaient été blessées dans l'explosion. Le ministère a également confirmé que sept élèves avaient trouvé la mort dans l'incident."
+          "body": "Un porte-parole du ministère de l'Intérieur des talibans a déclaré que près de 99 personnes avaient été blessées dans l'explosion. Le ministère a également confirmé que sept élèves avaient trouvé la mort dans l'incident.",
+          "headline": "Le ministère de l'Intérieur des talibans confirme 99 blessés dans l'explosion d'une école au Kounar"
         },
-        "pt": {
-          "headline": "Ministério do Interior dos Talibãs confirma 99 feridos em explosão numa escola em Kunar",
-          "body": "Um porta-voz do Ministério do Interior dos Talibãs declarou que cerca de 99 pessoas ficaram feridas na explosão. O ministério confirmou ainda que sete estudantes morreram no incidente."
+        "it": {
+          "body": "Un portavoce del Ministero dell'Interno talebano ha dichiarato che fino a 99 persone sono rimaste ferite nell'esplosione. Il ministero ha inoltre confermato che sette studenti sono morti nell'incidente.",
+          "headline": "Il Ministero dell'Interno talebano conferma 99 feriti nell'esplosione in una scuola nel Kunar"
+        },
+        "ja": {
+          "body": "タリバン内務省の報道官は、この爆発により最大99人が負傷したと述べた。同省はまた、この事件で生徒7人が死亡したことを確認した。",
+          "headline": "タリバン内務省、クナール州の学校での爆発で99人が負傷したと発表"
         },
         "ko": {
-          "headline": "탈레반 내무부, 쿠나르 학교 폭발 사고로 99명 부상 확인",
-          "body": "탈레반 내무부 대변인은 이번 폭발 사고로 최대 99명이 부상을 입었다고 밝혔다. 또한 내무부는 이번 사고로 학생 7명이 사망했다고 확인했다."
+          "body": "탈레반 내무부 대변인은 이번 폭발 사고로 최대 99명이 부상을 입었다고 밝혔다. 또한 내무부는 이번 사고로 학생 7명이 사망했다고 확인했다.",
+          "headline": "탈레반 내무부, 쿠나르 학교 폭발 사고로 99명 부상 확인"
         },
-        "de": {
-          "headline": "Taliban Innenministerium bestätigt 99 Verletzte bei Schulexplosion in Kunar",
-          "body": "Ein Sprecher des Taliban-Innenministeriums teilte mit, dass bis zu 99 Menschen bei der Explosion verletzt wurden. Das Ministerium bestätigte zudem, dass sieben Schüler bei dem Vorfall ums Leben kamen."
+        "pt": {
+          "body": "Um porta-voz do Ministério do Interior dos Talibãs declarou que cerca de 99 pessoas ficaram feridas na explosão. O ministério confirmou ainda que sete estudantes morreram no incidente.",
+          "headline": "Ministério do Interior dos Talibãs confirma 99 feridos em explosão numa escola em Kunar"
+        },
+        "zh": {
+          "body": "塔利班内政部发言人表示，爆炸已造成多达99人受伤。该部还证实，有7名学生在事件中丧生。",
+          "headline": "塔利班内政部证实库纳尔省学校爆炸造成99人受伤"
         }
       },
       "sources": [
         {
-          "outlet": "South China Morning Post",
-          "title": "Afghanistan school explosion kills 7 pupils, over 90 injured",
           "url": "https://www.scmp.com/news/world/russia-central-asia/article/3376136/afghanistan-school-explosion-kills-7-pupils-over-90-injured",
+          "title": "Afghanistan school explosion kills 7 pupils, over 90 injured",
+          "outlet": "South China Morning Post",
           "publishedAt": "2026-11-28T11:07:35.000Z"
         },
         {
-          "outlet": "Sky News",
-          "title": "Seven students killed and up to 99 injured in explosion near Afghan school",
           "url": "https://news.sky.com/story/seven-students-killed-and-up-to-99-injured-in-explosion-near-afghan-school-13617431",
+          "title": "Seven students killed and up to 99 injured in explosion near Afghan school",
+          "outlet": "Sky News",
           "publishedAt": "2026-11-28T09:57:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-28T11:04:57.000Z",
@@ -572,6 +572,23 @@
   "articleSlug": "afghanistan-school-explosion",
   "sourceCount": 8,
   "statsHistory": [
+    {
+      "at": "2024-05-22T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "students-killed",
+          "value": 7
+        },
+        {
+          "key": "students-injured-upper-estimate",
+          "value": 100
+        },
+        {
+          "key": "students-injured-lower-estimate",
+          "value": 97
+        }
+      ]
+    },
     {
       "at": "2024-05-22T00:00:00.000Z",
       "rows": [
