@@ -1,0 +1,94 @@
+{
+  "slug": "flight-operations-stopped-at-cologne-bonn-after-drone-sighting-20261128-k4o9",
+  "category": "world",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-28T02:02:59.246Z",
+  "updatedAt": "2026-11-28T02:02:59.246Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Die Zeit",
+      "title": "Sicherheit: Flugbetrieb in Köln/Bonn nach Drohnensichtung gestoppt",
+      "url": "https://www.zeit.de/news/2026-11/28/flugbetrieb-in-koeln-bonn-nach-drohnensichtung-gestoppt",
+      "publishedAt": "2026-11-27T23:56:25.000Z"
+    },
+    {
+      "outlet": "Tages-Anzeiger",
+      "title": "Unterbruch von zweieinhalb Stunden: Flugbetrieb in Köln/Bonn nach Drohnensichtung gestoppt",
+      "url": "https://www.tagesanzeiger.ch/drohne-legt-flughafen-koeln-bonn-2-5-stunden-lahm-567234057494",
+      "publishedAt": "2026-11-28T01:58:04.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Flight operations stopped at Cologne/Bonn after drone sighting on 27 November 2026",
+      "dek": "All take-offs and landings were suspended for two and a half hours following a drone sighting at Cologne/Bonn airport.",
+      "facts": [
+        "All starts and landings were suspended because of a drone sighting at Cologne/Bonn airport.",
+        "The disruption lasted two and a half hours, according to Tages-Anzeiger.",
+        "Air traffic control gave clearance to resume operations shortly after midnight, according to Tages-Anzeiger.",
+        "Die Zeit reported the flight operations stoppage on 27 November 2026."
+      ],
+      "body": [
+        "Tages-Anzeiger reported that all starts and landings were suspended because of a drone sighting at Cologne/Bonn airport.",
+        "Die Zeit stated the flight operations in Cologne/Bonn were stopped following the drone sighting on 27 November 2026.",
+        "Air traffic control gave clearance to resume operations shortly after midnight, according to Tages-Anzeiger, which noted the interruption lasted two and a half hours."
+      ],
+      "context": "No neutral background context is provided in the sources.",
+      "imageCaption": ""
+    },
+    "es": {
+      "title": "Las operaciones de vuelo se detuvieron en Colonia/Bonn tras la avistamiento de un dron el 27 de noviembre de 2026",
+      "dek": "Todos los despegues y aterrizajes fueron suspendidos durante dos horas y media tras el avistamiento de un dron en el aeropuerto de Colonia/Bonn.",
+      "facts": [
+        "Todos los despegues y aterrizajes fueron suspendidos por el avistamiento de un dron en el aeropuerto de Colonia/Bonn",
+        "La interrupción duró dos horas y media, según Tages-Anzeiger",
+        "El control de tráfico aéreo dio luz verde para reanudar las operaciones poco después de la medianoche, según Tages-Anzeiger",
+        "Die Zeit informó la suspensión de operaciones el 27 de noviembre de 2026"
+      ],
+      "body": [
+        "Tages-Anzeiger informó que todas las salidas y llegadas se suspendieron debido a la detección de un dron en el aeropuerto de Colonia/Bonn.",
+        "Die Zeit comunicó que las operaciones de vuelo en Colonia/Bonn se detuvieron tras el avistamiento del dron el 27 de noviembre de 2026.",
+        "Según Tages-Anzeiger, el control de tráfico aéreo dio luz verde para reanudar las operaciones poco después de la medianoche, señalando que la interrupción duró dos horas y media."
+      ],
+      "context": "Nada",
+      "imageCaption": "Nada"
+    },
+    "ko": {
+      "title": "콜롬보/본 공항 드론 목격으로 항공기 운항 중단",
+      "dek": "콜롬보/본 공항에서 드론 목격 소식에 따라 이륙·착륙이 2시간 30분간 중단됐다",
+      "facts": [
+        "콜롬보/본 공항에서 드론 목격으로 이륙·착륙이 2시간 30분간 중단됨",
+        "타게스-안차이거에 따르면 중단 기간은 2시간 30분",
+        "타게스-안차이거에 따르면 항공 교통 관제 당국이 자정 직후 운항 재개를 허가함",
+        "디차이츠가 2026년 11월 27일 항공기 운항 중단 보도"
+      ],
+      "body": [
+        "콜롬보/본 공항 드론 목격으로 항공기 운항 중단",
+        "디 차이퉁은 2026년 11월 27일 콜롬보/본 공항 드론 목격 이후 항공기 운항이 중단됐다고 보도했다.",
+        "타게스-안자이거에 따르면 자정 직후 공중교통 관제당국이 운항 재개를 허가했으며, 중단 기간은 2시간 30분간 지속된 것으로 전해졌다."
+      ],
+      "context": "",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "The headline is not a factual statement of what happened and is too conversational.",
+      "The dek is not a single sentence summary, max 30 words.",
+      "The facts list contains unsupported claims regarding the exact timing of resumption and duration without specific attribution.",
+      "The body contains loaded language ('reflects ongoing concerns'), speculation, and restatements.",
+      "The body paragraphs do not adhere to the required structure (opening with actor/number/date, varying sentence length, avoiding evaluative summaries).",
+      "The context section introduces speculation not supported by the sources.",
+      "The draft contains four short declarative sentences in a row in the facts list, violating rhythm rules.",
+      "The draft ends a paragraph with an evaluative summary in the body."
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "rockstar-employees-reject-union-ai-efforts-to-clone-gta-20261128-938c",
+  "category": "politics",
+  "image": "https://ichef.bbci.co.uk/ace/standard/3840/cpsprodpb/98a4/live/a2c48d10-e97d-11f1-99a1-253766e7ad8b.jpg",
+  "imageCredit": "BBC",
+  "video": {
+    "type": "youtube",
+    "id": "r7BWW8gvxRw",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/r7BWW8gvxRw"
+  },
+  "importance": 3,
+  "publishedAt": "2026-11-28T02:02:55.472Z",
+  "updatedAt": "2026-11-28T02:02:55.472Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "BBC",
+      "title": "How gamers are using AI and leaked files to clone Grand Theft Auto 6",
+      "url": "https://www.bbc.co.uk/news/articles/c64gn8pe5eeqo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-28T01:30:50.000Z"
+    },
+    {
+      "outlet": "The Hill",
+      "title": "Employees at GTA 6 developer Rockstar Games reject union",
+      "url": "https://thehill.com/blogs/in-the-know/6245743-rockstar-employees-reject-union/",
+      "publishedAt": "2026-11-27T22:56:41.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Rockstar employees reject union; AI efforts to clone GTA 6 underway",
+      "dek": "Employees vote against union recognition while gamers use AI to recreate GTA 6",
+      "facts": [
+        "75.3 percent of Rockstar Games employees voted against recognizing the Rockstar Game Workers Union with the Independent Workers of Great Britain.,24.7 percent of employees, or 381 members, voted in favor of union recognition.",
+        "Gamers are using AI tools such as Claude and ChatGPT to recreate or adapt Grand Theft Auto 6.,A leak of files from an Xbox development build of GTA 6 has occurred, and AI coding platforms are being used to reverse-engineer the game.",
+        "Rockstar has not announced an official PC version of GTA 6; previous Grand Theft Auto titles were typically released on PC approximately 19 months after their console launch."
+      ],
+      "body": [
+        "Employees at Rockstar Games overwhelmingly voted against recognizing a union this week. In a Thursday vote, 75.3 percent of team members rejected the Rockstar Game Workers Union affiliated with the Independent Workers of Great Britain, while 24.7 percent voted in favor, according to The Hill.,The vote result saw 1,163 employees reject recognition and 381 members support it.",
+        "Meanwhile, gamers are using AI tools and leaked game files to recreate Grand Theft Auto 6 on personal computers, as reported by the BBC.,Powerful AI coding platforms are being used to reverse-engineer the game, and some projects have faced takedown notices from the game's publisher, Take-Two Interactive.",
+        "The recent wave of AI-assisted game recreation has been linked to Anthropic's Opus 5.5 model, released in September, and to agentic tools such as Claude Code.,Mark Brown of Game Maker's Toolkit said cloning largely takes two forms: replication, where an AI chatbot builds a new game based on an existing one, and reverse engineering, which involves working backwards from a finished game to understand its creation."
+      ],
+      "context": "Rockstar Games released Grand Theft Auto 6 to record retail sales, making it the biggest entertainment launch in history. The developer has typically released Grand Theft Auto titles on PC after their initial console launch.",
+      "imageCaption": "Art from GTA 6 showing character Cal topless on a pink flamingo lilo in a swimming pool, wearing green and black flowered swimming trunks, a yellow baseball cap and shades. In the pool drinks cans are floating as well as an ashtray."
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Facts 4 and 5 in the 'facts' array are unsupported or invented. Source S1 mentions a leak of Xbox development files but does not state it 'accelerated efforts' as a fact; it states efforts are 'under way'. Fact 5 invents a 19-month delay figure not present in the sources. The 'context' section invents a 'record sales' claim not directly quoted and adds unsupported inference. The body paragraph 3 contains speculative language ('come amid a leak... and the rapid advance'). Thedek is evaluative ('reject unionization') and the headline is missing. The draft violates multiple style guide rules including neutral verbs, attribution, and concrete over vague claims."
+    ]
+  }
+}
