@@ -1,0 +1,84 @@
+{
+  "slug": "state-leaders-review-german-media-treaty-changes-20261128-ct0s",
+  "category": "politics",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-28T11:26:46.439Z",
+  "updatedAt": "2026-11-28T11:26:46.439Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "FAZ",
+      "title": "Geldanlage: Wie heftig ist der Ausverkauf?",
+      "url": "https://www.faz.net/aktuell/finanzen/boersenausverkauf-droht-jetzt-ein-echter-crash-accg-201720163.html",
+      "publishedAt": "2026-11-28T10:50:44.000Z"
+    },
+    {
+      "outlet": "Die Welt",
+      "title": "Meinungskontrolle ist für die Medienanstalten ein dynamisches Wachstumsfeld",
+      "url": "https://www.welt.de/debatte/plus6b0860dc78855274ac4abc29/oeffentlich-rechtlicher-rundfunk-meinungskontrolle-ist-fuer-die-medienanstalten-ein-dynamisches-wachstumsfeld.html",
+      "publishedAt": "2026-11-28T10:59:38.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "State leaders review German media treaty changes",
+      "dek": "German state leaders consider changes to unanimity rule in media treaty",
+      "facts": [
+        "German state leaders are reviewing changes to the media state treaty",
+        "The proposed changes include removing the requirement for unanimous agreement among states",
+        "Die Welt reports the initiative is motivated by concerns regarding AfD leadership in Saxony-Anhalt",
+        "Critics argue the changes could accelerate the decline of the public broadcasting system"
+      ],
+      "body": [
+        "State premiers in Germany are reviewing the media state treaty to alter current regulatory procedures. The proposed changes include removing the requirement for unanimous consent among the states.",
+        "Die Welt reports that this initiative is motivated by concerns regarding the potential for Ulrich Siegmund of the AfD to become minister-president of Saxony-Anhalt. The outlet states that officials fear the current structure could be affected under such leadership."
+      ],
+      "context": "The media state treaty is an agreement between German states that governs public broadcasting regulation. The unanimity principle currently requires all states to agree on changes.",
+      "imageCaption": ""
+    },
+    "zh": {
+      "title": "德国州领导审查媒体条约修订",
+      "dek": "德国州领导考虑废除媒体条约一致性规则",
+      "facts": [
+        "德国州领导正审查媒体州条约修订",
+        "提议的变更包括废除各州一致同意的要求",
+        "《世界报》报道，该举措受到对萨克森-安哈特州 AfD 领导层的担忧驱动",
+        "批评者认为，这些变更可能加速公共广播体系的衰退"
+      ],
+      "body": [
+        "德国各州州长正在审议《州媒体条约》的修订事宜，旨在调整现行的监管程序。拟议的修订内容包括取消各州必须达成一致同意的要求。",
+        "据《世界报》报道，此项动议的动机在于各方对德国选择党（AfD）成员乌尔里希·齐格蒙德（Ulrich Siegmund）可能出任萨克森-安哈尔特州州长的担忧。该报称，相关官员担心，若由其领导该州，现行的监管架构可能会受到影响。"
+      ],
+      "context": "媒体州条约是德国州之间的协议，管辖公共广播监管。一致性原则目前要求所有州就变更达成一致。",
+      "imageCaption": ""
+    },
+    "fr": {
+      "title": "Les dirigeants d'État examinent les changements au traité médiatique allemand",
+      "dek": "Les dirigeants d'État allemands étudient une modification de la règle d'unanimité du traité médiatique",
+      "facts": [
+        "Les dirigeants d'État allemands examinent les changements au traité médiatique d'État",
+        "Les changements proposés incluent la suppression de l'exigence d'accord unanime entre les États",
+        "Die Welt rapporte que l'initiative est motivée par des préoccupations concernant la direction de l'AfD en Saxe-Anhalt",
+        "Les critiques estiment que ces changements pourraient accélérer le déclin du système de radiodiffusion publique"
+      ],
+      "body": [
+        "Les chefs de gouvernement des Länder allemands examinent actuellement le traité d'État sur les médias afin de modifier les procédures de régulation en vigueur. Les changements proposés prévoient notamment la suppression de l'exigence d'un consentement unanime entre les États fédérés.",
+        "Selon le quotidien *Die Welt*, cette initiative est motivée par la crainte qu'Ulrich Siegmund, membre de l'AfD, ne devienne ministre-président de Saxe-Anhalt. Le journal précise que les responsables politiques redoutent que la structure actuelle ne soit compromise sous une telle direction."
+      ],
+      "context": "Le traité médiatique d'État est un accord entre les États allemands qui régit la réglementation de la radiodiffusion publique. Le principe d'unanimité exige actuellement l'accord de tous les États sur les changements.",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "gemini/gemini-3.1-flash-lite",
+    "editor": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "desk": "Global & Humanitarian Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "Headline uses 'propose' without attribution to a specific actor beyond 'state premiers'; dek exceeds 30-word limit; body contains evaluative language ('accelerate the decline', 'decay'); context section contains invented framing ('a legal agreement... governs'); repeated sentence openings in body paragraphs; missing attribution for the AfD concern in the first body paragraph sentence; sources contain no numbers, dates, or specific treaty article references, requiring careful neutral rephrasing"
+    ]
+  }
+}

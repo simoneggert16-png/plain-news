@@ -1,0 +1,87 @@
+{
+  "slug": "automated-driving-and-tsg-hoffenheim-player-updates-20261128-cqcz",
+  "category": "science",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-28T11:25:25.025Z",
+  "updatedAt": "2026-11-28T11:25:25.025Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Die Welt",
+      "title": "„Der Sicherheitsgewinn ist empirisch nachgewiesen, aber in Deutschland wird er geringer ausfallen“",
+      "url": "https://www.welt.de/kultur/plus6b057c8c6a4309d5f179c685/cybercab-der-sicherheitsgewinn-ist-empirisch-nachgewiesen-in-deutschland-aber-wird-er-geringer-ausfallen.html",
+      "publishedAt": "2026-11-28T10:29:57.000Z"
+    },
+    {
+      "outlet": "Kicker",
+      "title": "Sonderlob für TSG-Joker: Wird Moerstedt im zweiten Anlauf zur Stammkraft?",
+      "url": "https://www.kicker.de/sonderlob-fuer-tsg-joker-wird-moerstedt-im-zweiten-anlauf-zur-stammkraft-1275801/artikel#omrss",
+      "publishedAt": "2026-11-28T09:51:55.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Automated driving and TSG Hoffenheim player updates",
+      "dek": "Traffic engineer Klaus Bogenberger discusses automated driving in Germany, while TSG Hoffenheim evaluates player Max Moerstedt.",
+      "facts": [
+        "Klaus Bogenberger stated that automated driving will change Germany.",
+        "Bogenberger said automated driving offers opportunities for German commercial vehicles.",
+        "TSG Hoffenheim has 13 different goal scorers this season.",
+        "Kicker reported that Max Moerstedt may have an opportunity to become a regular starter."
+      ],
+      "body": [
+        "Traffic engineer Klaus Bogenberger stated that automated driving will change Germany. He said the technology presents an opportunity for German commercial vehicles.",
+        "TSG Hoffenheim has 13 different goal scorers, according to Kicker. The publication reported that Max Moerstedt may have an opportunity to become a regular starter."
+      ],
+      "context": "",
+      "imageCaption": ""
+    },
+    "ja": {
+      "title": "自動運転の展望とTSGホッフェンハイムの選手動向",
+      "dek": "交通工学者のクラウス・ボーゲンベルガー氏がドイツにおける自動運転の未来を語る一方、TSGホッフェンハイムはマックス・モルシュテット選手の起用を検討している。",
+      "facts": [
+        "クラウス・ボーゲンベルガー氏は、自動運転がドイツの交通環境を一変させるとの見解を示した。",
+        "ボーゲンベルガー氏は、自動運転がドイツの商用車産業に新たな機会をもたらすと述べた。",
+        "TSGホッフェンハイムでは今シーズン、13人の選手が得点を記録している。",
+        "キッカー誌は、マックス・モルシュテット選手がレギュラー定着のチャンスを得る可能性があると報じた。"
+      ],
+      "body": [
+        "交通技術者のクラウス・ボゲンベルガー氏は、自動運転がドイツを変えるだろうと述べた。彼は、この技術がドイツの商用車にとって機会をもたらすと指摘した。",
+        "キッカー紙によると、TSGホッフェンハイムには13人の異なる得点者がいる。同紙は、マックス・ムーアシュテットがレギュラーの先発選手になる機会を得る可能性があると報じた。"
+      ],
+      "context": "",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "Guida automatizzata e aggiornamenti sui giocatori del TSG Hoffenheim",
+      "dek": "L'ingegnere del traffico Klaus Bogenberger discute della guida automatizzata in Germania, mentre il TSG Hoffenheim valuta il giocatore Max Moerstedt.",
+      "facts": [
+        "Klaus Bogenberger ha dichiarato che la guida automatizzata cambierà la Germania",
+        "Bogenberger ha affermato che la guida automatizzata offre opportunità per i veicoli commerciali tedeschi",
+        "Il TSG Hoffenheim ha 13 marcatori diversi in questa stagione",
+        "Kicker ha riportato che Max Moerstedt potrebbe avere l'opportunità di diventare titolare fisso"
+      ],
+      "body": [
+        "L'ingegnere del traffico Klaus Bogenberger ha dichiarato che la guida automatizzata cambierà la Germania e che questa tecnologia rappresenta un'opportunità per i veicoli commerciali tedeschi.",
+        "Secondo Kicker, il TSG Hoffenheim vanta 13 marcatori diversi; la pubblicazione ha riportato che Max Moerstedt potrebbe avere l'opportunità di diventare un titolare fisso."
+      ],
+      "context": "",
+      "imageCaption": ""
+    }
+  },
+  "meta": {
+    "writer": "gemini/gemini-3.1-flash-lite",
+    "editor": "gemini/gemini-3.1-flash-lite",
+    "desk": "Science & Human Progress Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "The draft included meta-commentary about what the sources do not contain, which violates the 'facts only' rule.",
+      "The draft included a 'context' field that was not requested in the final output structure.",
+      "The draft included an 'importance' field that was not requested in the final output structure.",
+      "The draft included a 'category' field that was not requested in the final output structure."
+    ]
+  }
+}
