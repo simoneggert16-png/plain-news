@@ -6,22 +6,22 @@
   "video": null,
   "importance": 5,
   "publishedAt": "2026-11-28T10:26:31.988Z",
-  "updatedAt": "2026-11-28T11:17:23.756Z",
+  "updatedAt": "2026-11-28T11:28:32.253Z",
   "sourcePolicy": "two-source",
   "live": true,
   "liveSlug": "afghanistan-school-explosion",
   "stats": {
-    "label": "Casualties",
-    "note": "Reported casualties following an explosion near a school in Afghanistan.",
+    "label": "Casualties in Afghanistan school explosion",
+    "note": "Reported figures on students killed and injured in the explosion.",
     "unit": "",
     "max": null,
     "asOf": "2024-05-22T00:00:00.000Z",
-    "updatedAt": "2026-11-28T11:16:30.543Z",
+    "updatedAt": "2026-11-28T11:28:29.010Z",
     "source": {
       "outlet": "BBC",
-      "title": "Seven students killed and nearly 100 injured in explosion in Afghanistan, official says",
+      "title": "Ten students killed and over 100 injured in explosion in Afghanistan, official says",
       "url": "https://www.bbc.co.uk/news/articles/ckp80jyz6dl8o?at_medium=RSS&at_campaign=rss",
-      "publishedAt": "2026-11-28T10:14:37.000Z",
+      "publishedAt": "2026-11-28T11:18:37.000Z",
       "trusted": true
     },
     "sourceCount": 1,
@@ -30,7 +30,7 @@
         "key": "students-killed",
         "label": "Students killed",
         "value": 7,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
             "label": "Getötete Schüler"
@@ -39,7 +39,7 @@
             "label": "Élèves tués"
           },
           "es": {
-            "label": "Estudiantes fallecidos"
+            "label": "Estudiantes muertos"
           },
           "it": {
             "label": "Studenti uccisi"
@@ -48,45 +48,45 @@
             "label": "Estudantes mortos"
           },
           "zh": {
-            "label": "学生死亡人数"
+            "label": "遇难学生"
           },
           "ja": {
-            "label": "死亡した生徒"
+            "label": "死亡した学生"
           },
           "ko": {
-            "label": "사망 학생 수"
+            "label": "사망한 학생들"
           }
         }
       },
       {
         "key": "students-injured-upper-estimate",
         "label": "Students injured (upper estimate)",
-        "value": 99,
-        "change": null,
+        "value": 100,
+        "change": 1,
         "locales": {
-          "fr": {
-            "label": "Élèves blessés (estimation haute)"
-          },
-          "it": {
-            "label": "Studenti feriti (stima massima)"
-          },
           "de": {
             "label": "Verletzte Schüler (obere Schätzung)"
           },
-          "pt": {
-            "label": "Estudantes feridos (estimativa máxima)"
-          },
-          "ko": {
-            "label": "부상 학생 수 (최대 추정치)"
-          },
-          "zh": {
-            "label": "学生受伤人数（上限估计）"
+          "fr": {
+            "label": "Élèves blessés (estimation haute)"
           },
           "es": {
-            "label": "Estudiantes heridos (estimación máxima)"
+            "label": "Estudiantes heridos (estimación superior)"
+          },
+          "it": {
+            "label": "Studenti feriti (stima superiore)"
+          },
+          "pt": {
+            "label": "Estudantes feridos (estimativa superior)"
+          },
+          "zh": {
+            "label": "受伤学生（上限估计）"
           },
           "ja": {
-            "label": "負傷した生徒数（上限見積もり）"
+            "label": "負傷した学生（上限推定）"
+          },
+          "ko": {
+            "label": "부상 학생 수(상한 추정)"
           }
         }
       },
@@ -94,67 +94,67 @@
         "key": "students-injured-lower-estimate",
         "label": "Students injured (lower estimate)",
         "value": 97,
-        "change": null,
+        "change": 0,
         "locales": {
           "de": {
-            "label": "Verletzte Schüler (niedrigere Schätzung)"
+            "label": "Verletzte Schüler (untere Schätzung)"
           },
           "fr": {
             "label": "Élèves blessés (estimation basse)"
           },
           "es": {
-            "label": "Estudiantes heridos (estimación mínima)"
+            "label": "Estudiantes heridos (estimación inferior)"
           },
           "it": {
-            "label": "Studenti feriti (stima al ribasso)"
+            "label": "Studenti feriti (stima inferiore)"
           },
           "pt": {
-            "label": "Estudantes feridos (estimativa mais baixa)"
+            "label": "Estudantes feridos (estimativa inferior)"
           },
           "zh": {
-            "label": "学生受伤人数（低估值）"
+            "label": "受伤学生（下限估计）"
           },
           "ja": {
-            "label": "負傷した生徒（低い見積もり）"
+            "label": "負傷した学生（下限推定）"
           },
           "ko": {
-            "label": "부상 학생 수 (최소 추정치)"
+            "label": "부상 학생 수(하한 추정)"
           }
         }
       }
     ],
     "locales": {
       "de": {
-        "label": "Opferzahlen",
-        "note": "Gemeldete Opferzahlen nach einer Explosion in der Nähe einer Schule in Afghanistan."
+        "label": "Tote und Verletzte bei Explosion an afghanischer Schule",
+        "note": "Berichtigte Zahlen zu getöteten und verletzten Schülern."
       },
       "fr": {
-        "label": "Victimes",
-        "note": "Bilan des victimes suite à une explosion près d'une école en Afghanistan."
+        "label": "Casualties dans l'explosion d'une école en Afghanistan",
+        "note": "Signalements sur le nombre d'élèves tués et blessés dans l'explosion."
       },
       "es": {
-        "label": "Víctimas",
-        "note": "Víctimas reportadas tras una explosión cerca de una escuela en Afganistán."
+        "label": "Casualties en explosión de escuela en Afganistán",
+        "note": "Figuras reportadas de estudiantes muertos y heridos en la explosión."
       },
       "it": {
-        "label": "Vittime",
-        "note": "Vittime segnalate in seguito a un'esplosione nei pressi di una scuola in Afghanistan."
+        "label": "Vittime nell'esplosione in una scuola afghana",
+        "note": "Cifre riportate su studenti uccisi e feriti nell'esplosione."
       },
       "pt": {
-        "label": "Baixas",
-        "note": "Baixas reportadas na sequência de uma explosão perto de uma escola no Afeganistão."
+        "label": "Vítimas em explosão de escola no Afeganistão",
+        "note": "Relatórios sobre o número de estudantes mortos e feridos na explosão."
       },
       "zh": {
-        "label": "伤亡情况",
-        "note": "阿富汗一所学校附近发生爆炸，据报道造成人员伤亡。"
+        "label": "阿富汗学校爆炸造成伤亡",
+        "note": "关于爆炸中遇难和受伤学生的报告数字。"
       },
       "ja": {
-        "label": "死傷者",
-        "note": "アフガニスタンの学校付近で発生した爆発による死傷者の報告。"
+        "label": "アフガニスタンの学校爆発で犠牲者",
+        "note": "学生の死亡者数と負傷者数の報告された数字。"
       },
       "ko": {
-        "label": "사상자",
-        "note": "아프가니스탄의 한 학교 인근에서 발생한 폭발 사고로 인한 사상자 보고."
+        "label": "아프가니스탄 학교 폭발로 인한 인명 피해",
+        "note": "학생 사망 및 부상자 수에 대한 보고된 수치."
       }
     }
   },
