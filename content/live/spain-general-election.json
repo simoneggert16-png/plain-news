@@ -1,9 +1,176 @@
 {
+  "meta": {
+    "outlets": [
+      "New York Times",
+      "Le Monde",
+      "El PaÃ­s",
+      "The Kyiv Post"
+    ],
+    "createdBy": "bots/live.mjs",
+    "lastUpdateModel": "gemini/gemini-3.1-flash-lite"
+  },
   "slug": "spain-general-election",
-  "status": "live",
-  "category": "politics",
-  "importance": 5,
   "topic": "Spain General Election",
+  "status": "live",
+  "article": {
+    "slug": "spain-general-election",
+    "updatedAt": "2026-11-28T10:48:46.071Z",
+    "reason": "1 new update(s)",
+    "locales": {
+      "en": {
+        "title": "Spain holds national general election on Sunday",
+        "dek": "Prime Minister Pedro Sanchez faces a challenge from conservative and far-right parties in the national election scheduled for November 29.",
+        "facts": [
+          "Spain holds a national election on Sunday, November 29.",
+          "Prime Minister Pedro Sanchez is seeking to retain power against conservative and far-right opposition.",
+          "Immigration is a central campaign issue following migrant arrivals in Ceuta in July.",
+          "The election follows a campaign period focused on national policy and political leadership."
+        ],
+        "body": [
+          "Spain will hold a national election on Sunday, November 29. Prime Minister Pedro Sanchez faces a challenge from conservative and far-right parties, according to reports from The Straits Times and the South China Morning Post.",
+          "The campaign period concluded following debates over national policy. France 24 reported that immigration became a prominent topic during the final days of the campaign.",
+          "Migrant arrivals in the Spanish territory of Ceuta in July influenced the political discourse. The South China Morning Post stated that these events shaped the focus of the competing parties.",
+          "Pedro Sanchez is seeking to maintain his position as Prime Minister. The New York Times reported that he is viewed internationally as a prominent figure of the global left.",
+          "Conservative and far-right parties have campaigned to replace the current government. The Straits Times reported that these groups have challenged the policies of the Sanchez administration.",
+          "Voters will determine the composition of the national government through this election. The South China Morning Post noted that the outcome will decide the future leadership of the country."
+        ],
+        "context": "Spain is a parliamentary democracy where the Prime Minister is typically chosen by the legislature following a general election. The country has experienced recent political shifts regarding immigration policy and national governance.",
+        "imageCaption": ""
+      },
+      "de": {
+        "title": "Spanien hält am Sonntag nationale Parlamentswahlen ab",
+        "dek": "Ministerpräsident Pedro Sánchez sieht sich bei der für den 29. November angesetzten nationalen Wahl einer Herausforderung durch konservative und rechtsextreme Parteien gegenüber.",
+        "facts": [
+          "Spanien hält am Sonntag, dem 29. November, eine nationale Wahl ab.",
+          "Ministerpräsident Pedro Sánchez versucht, sich gegen die konservative und rechtsextreme Opposition an der Macht zu halten.",
+          "Einwanderung ist nach der Ankunft von Migranten in Ceuta im Juli ein zentrales Wahlkampfthema.",
+          "Die Wahl folgt auf eine Kampagnenphase, die sich auf nationale Politik und politische Führung konzentrierte."
+        ],
+        "body": [
+          "Spanien wird am Sonntag, dem 29. November, eine nationale Wahl abhalten. Berichten von The Straits Times und der South China Morning Post zufolge sieht sich Ministerpräsident Pedro Sánchez einer Herausforderung durch konservative und rechtsextreme Parteien gegenüber.",
+          "Die Wahlkampfphase endete nach Debatten über die nationale Politik. France 24 berichtete, dass Einwanderung in den letzten Tagen des Wahlkampfs zu einem prominenten Thema wurde.",
+          "Die Ankunft von Migranten im spanischen Hoheitsgebiet Ceuta im Juli beeinflusste den politischen Diskurs. Die South China Morning Post stellte fest, dass diese Ereignisse den Fokus der konkurrierenden Parteien prägten.",
+          "Pedro Sánchez versucht, seine Position als Ministerpräsident zu behaupten. Die New York Times berichtete, dass er international als eine prominente Figur der globalen Linken angesehen wird.",
+          "Konservative und rechtsextreme Parteien haben Wahlkampf geführt, um die derzeitige Regierung abzulösen. The Straits Times berichtete, dass diese Gruppen die Politik der Regierung Sánchez infrage gestellt haben.",
+          "Die Wähler werden durch diese Wahl die Zusammensetzung der nationalen Regierung bestimmen. Die South China Morning Post merkte an, dass das Ergebnis über die künftige Führung des Landes entscheiden wird."
+        ],
+        "context": "Spanien ist eine parlamentarische Demokratie, in der der Ministerpräsident üblicherweise nach einer Parlamentswahl von der Legislative gewählt wird. Das Land hat in jüngster Zeit politische Verschiebungen in Bezug auf die Einwanderungspolitik und die nationale Regierungsführung erlebt."
+      }
+    },
+    "versions": []
+  },
+  "endedAt": null,
+  "locales": {
+    "de": {
+      "dek": "Die Wähler in Spanien gehen bei einer richtungsweisenden Parlamentswahl an die Urnen; vorausgegangen war ein volatiler Wahlkampf, der von sich verändernden politischen Bündnissen und regionalen Dynamiken geprägt war.",
+      "title": "Parlamentswahl in Spanien"
+    },
+    "en": {
+      "title": "Spanish General Election",
+      "dek": "Voters are heading to the polls in a high-stakes Spanish general election following a volatile campaign dominated by shifting political alliances and regional dynamics."
+    },
+    "es": {
+      "dek": "Los ciudadanos acuden a las urnas en unas elecciones generales en España de alto riesgo, tras una campaña volátil marcada por los cambios en las alianzas políticas y las dinámicas regionales.",
+      "title": "Elecciones generales en España"
+    },
+    "fr": {
+      "dek": "Les électeurs se rendent aux urnes pour des élections générales espagnoles à haut risque, à l'issue d'une campagne volatile dominée par l'évolution des alliances politiques et les dynamiques régionales.",
+      "title": "Élections générales en Espagne"
+    },
+    "it": {
+      "dek": "Gli elettori si recano alle urne per elezioni generali spagnole cruciali, al termine di una campagna elettorale instabile dominata da mutevoli alleanze politiche e dinamiche regionali.",
+      "title": "Elezioni generali in Spagna"
+    },
+    "ja": {
+      "dek": "目まぐるしい政治同盟の変動や地域情勢が支配的となった波乱含みの選挙戦を受け、スペインの有権者は緊迫した総選挙の投票に向かっている。",
+      "title": "スペイン総選挙"
+    },
+    "ko": {
+      "dek": "변화무쌍한 정치적 연대와 지역적 역학 구도가 지배한 격렬한 선거 운동 끝에, 유권자들이 중대 기로에 놓인 스페인 총선 투표소로 향하고 있다.",
+      "title": "스페인 조기 총선"
+    },
+    "pt": {
+      "dek": "Os eleitores dirigem-se às urnas numa eleição geral espanhola de alto risco, após uma campanha volátil dominada por alianças políticas em constante mudança e dinâmicas regionais.",
+      "title": "Eleições gerais em Espanha"
+    },
+    "zh": {
+      "dek": "在经历了以政治联盟变迁和区域动态为主导的动荡竞选之后，西班牙选民前往投票所，迎来一场高风险的大选。",
+      "title": "西班牙大选"
+    }
+  },
+  "updates": [
+    {
+      "id": "u-1795861847000-helc",
+      "at": "2026-11-28T10:30:47.000Z",
+      "kind": "context",
+      "importance": 3,
+      "locales": {
+        "en": {
+          "headline": "Spain holds national election on Sunday",
+          "body": "Prime Minister Pedro Sanchez faces a challenge from conservative and far-right parties in the national election scheduled for Sunday, according to reports from South China Morning Post and The Straits Times. The campaign has focused on issues including immigration, which became a prominent topic following the arrival of migrants in Ceuta in July, France 24 and South China Morning Post reported."
+        },
+        "it": {
+          "headline": "La Spagna vota per le elezioni generali domenica",
+          "body": "Il primo ministro Pedro Sanchez affronta la sfida dei partiti conservatori e di estrema destra nelle elezioni generali previste per domenica, secondo quanto riferito da South China Morning Post e The Straits Times. La campagna si è concentrata su temi tra cui l'immigrazione, che è diventata un argomento di primo piano in seguito all'arrivo di migranti a Ceuta a luglio, hanno riportato France 24 e South China Morning Post."
+        },
+        "de": {
+          "headline": "Spanien hält am Sonntag Parlamentswahl ab",
+          "body": "Ministerpräsident Pedro Sánchez sieht sich bei der für Sonntag angesetzten Parlamentswahl einer Herausforderung durch konservative und rechtsextreme Parteien gegenüber, wie Berichten der „South China Morning Post“ und der „Straits Times“ zufolge. Im Mittelpunkt des Wahlkampfs standen Themen wie die Einwanderung, die nach der Ankunft von Migranten in Ceuta im Juli zu einem prominenten Thema wurde, wie France 24 und die „South China Morning Post“ berichteten."
+        },
+        "es": {
+          "headline": "España celebra elecciones generales este domingo",
+          "body": "El presidente del Gobierno, Pedro Sánchez, se enfrenta al desafío de los partidos conservadores y de extrema derecha en las elecciones generales previstas para este domingo, según informan el South China Morning Post y The Straits Times. La campaña se ha centrado en cuestiones como la inmigración, que se convirtió en un tema destacado tras la llegada de migrantes a Ceuta en julio, según informaron France 24 y el South China Morning Post."
+        },
+        "fr": {
+          "headline": "L'Espagne organise des élections nationales ce dimanche",
+          "body": "Le Premier ministre Pedro Sanchez fait face à la concurrence des partis conservateurs et d'extrême droite lors des élections nationales prévues ce dimanche, selon des rapports du South China Morning Post et du Straits Times. La campagne s'est concentrée sur des enjeux tels que l'immigration, devenue un sujet majeur après l'arrivée de migrants à Ceuta en juillet, ont rapporté France 24 et le South China Morning Post."
+        },
+        "zh": {
+          "headline": "西班牙将于周日举行全国大选",
+          "body": "据《南华早报》和《海峡时报》报道，西班牙首相佩德罗·桑切斯在定于周日举行的全国大选中面临来自保守派和极右翼政党的挑战。据法国24电视台和《南华早报》报道，竞选焦点集中在包括移民在内的议题上，这些议题在7月移民抵达休达后成为了突出话题。"
+        },
+        "pt": {
+          "headline": "Espanha realiza eleições nacionais no domingo",
+          "body": "O primeiro-ministro Pedro Sánchez enfrenta um desafio por parte de partidos conservadores e de extrema-direita nas eleições nacionais agendadas para domingo, segundo relatos do South China Morning Post e do The Straits Times. A campanha centrou-se em questões como a imigração, que se tornou um tema proeminente após a chegada de migrantes a Ceuta em julho, noticiaram a France 24 e o South China Morning Post."
+        },
+        "ko": {
+          "headline": "스페인, 일요일 총선 실시",
+          "body": "사우스차이나모닝포스트(SCMP)와 스트레이츠타임스 보도에 따르면, 페드로 산체스 총리는 일요일로 예정된 총선에서 보수 및 극우 정당들의 도전에 직면해 있다. 프랑스 24와 SCMP는 이번 선거 캠페인이 지난 7월 세우타 지역으로의 이주민 유입 이후 주요 쟁점으로 떠오른 이민 문제 등에 집중됐다고 전했다."
+        },
+        "ja": {
+          "headline": "スペインで日曜に総選挙",
+          "body": "サウスチャイナ・モーニング・ポストおよびストレーツ・タイムズの報道によると、スペインのペドロ・サンチェス首相は、日曜に予定されている総選挙で保守派および極右政党からの挑戦に直面している。フランス24とサウスチャイナ・モーニング・ポストは、選挙戦は7月にセウタへ移民が到着したことを受け主要な争点となった移民問題などを中心に展開されていると報じた。"
+        }
+      },
+      "sources": [
+        {
+          "outlet": "France 24",
+          "title": "Immigration, a key issue in Sunday's Spanish snap election",
+          "url": "https://www.france24.com/en/immigration-a-key-issue-in-sunday-s-spanish-snap-election",
+          "publishedAt": "2026-11-28T10:30:47.000Z"
+        },
+        {
+          "outlet": "South China Morning Post",
+          "title": "Spain’s PM Sanchez makes final bid to head off conservatives and far-right",
+          "url": "https://www.scmp.com/news/world/europe/article/3376131/spains-pm-sanchez-makes-final-bid-head-conservatives-and-far-right",
+          "publishedAt": "2026-11-28T10:29:52.000Z"
+        },
+        {
+          "outlet": "The Straits Times",
+          "title": "Vote in Spain may oust a hero of the global left",
+          "url": "https://www.straitstimes.com/world/europe/vote-in-spain-may-oust-a-hero-of-the-global-left",
+          "publishedAt": "2026-11-28T08:09:00.000Z"
+        },
+        {
+          "outlet": "New York Times",
+          "title": "Abroad, Spain’s Leader Is a Left-Wing Hero. Will He Lose Power at Home?",
+          "url": "https://www.nytimes.com/2026/11/28/world/europe/spain-pedro-sanchez-conservatives-election.html",
+          "publishedAt": "2026-11-28T05:01:10.000Z"
+        }
+      ]
+    }
+  ],
+  "category": "politics",
   "keywords": [
     "spain",
     "election",
@@ -13,61 +180,38 @@
     "politics",
     "campaign"
   ],
+  "seenUrls": [
+    "https://asia.nikkei.com/politics/australian-state-election-provides-dry-run-for-federal-contest",
+    "https://asia.nikkei.com/politics/taiwan-elections-5-things-to-know-about-city-races-eyed-by-china-and-us",
+    "https://asia.nikkei.com/politics/new-zealand-ruling-coalition-misses-majority-as-election-results-announced",
+    "https://www.politico.eu/article/santiago-abascal-spain-election-2026-far-right-kingmaker/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "https://www.theguardian.com/australia-news/live/2026/nov/28/victorian-election-live-results-updates-premier-ben-carroll-jess-wilson-warren-pickering-2026-victoria-polls-votes-latest-news-ntwnfb",
+    "https://www.france24.com/en/immigration-a-key-issue-in-sunday-s-spanish-snap-election",
+    "https://www.scmp.com/news/world/europe/article/3376131/spains-pm-sanchez-makes-final-bid-head-conservatives-and-far-right",
+    "https://www.theguardian.com/australia-news/2026/nov/28/victoria-election-2026-winner-announced-who-won-poll-win-coalition-labor-victorian-state-results",
+    "https://www.euronews.com/2026/11/28/australias-conservatives-hope-for-victory-in-trendsetting-state",
+    "https://www.nytimes.com/2026/11/28/world/europe/ukraine-russia-long-range-strikes.html",
+    "https://www.scmp.com/news/people-culture/trending-china/article/3376112/scientists-find-dice-game-tiles-kublai-khan-shipwreck-revealing-how-troops-coped-sea",
+    "https://www.aljazeera.com/news/2026/11/28/yemen-governmen-forces-hit-houthi-positions-as-un-warns-of-hunger-crisis?traffic_source=rss",
+    "https://www.abc.net.au/news/2026-11-28/hikers-rescued-lerderderg-gorge-bacchus-marsh/107438542",
+    "https://www.kyivpost.com/post/91477",
+    "https://www.abc.net.au/news/2026-11-28/jess-wilson-victorian-liberals-form-government-state-election/107438320",
+    "https://www.straitstimes.com/world/europe/vote-in-spain-may-oust-a-hero-of-the-global-left",
+    "https://www.kyivpost.com/post/91471",
+    "http://www.africanews.com/2026/11/28/mixed-reaction-in-guinea-bissau-to-news-of-two-year-delay-in-elections/",
+    "https://www.thehindu.com/news/international/saudi-arabia-houthis-trade-attacks-on-rival-capitals/article71753601.ece",
+    "https://timesofindia.indiatimes.com/world/middle-east/netanyahu-willing-to-serve-second-to-eisenkot-in-israel-pm-rotation-deal-report/articleshow/136240515.cms",
+    "https://www.channelnewsasia.com/asia/malaysia-sarawak-state-election-gps-abang-johari-openg-uncontested-6586651",
+    "https://www.france24.com/en/asia-pacific/20261128-taiwan-holds-local-elections-under-beijing-s-watchful-gaze",
+    "https://www.kyivpost.com/post/91452",
+    "https://www.scmp.com/week-asia/politics/article/3376115/sarawak-state-election-retreat-anwar-and-rivals-brings-ruling-gps-closer-victory",
+    "https://www.nytimes.com/2026/11/28/world/europe/spain-pedro-sanchez-conservatives-election.html"
+  ],
   "startedAt": "2026-11-28T08:56:28.880Z",
-  "endedAt": null,
-  "updatedAt": "2026-11-28T08:56:28.880Z",
-  "articleSlug": null,
-  "sourceCount": 4,
+  "updatedAt": "2026-11-28T10:48:38.845Z",
+  "importance": 5,
   "wantsStats": true,
-  "updates": [],
-  "seenUrls": [],
-  "seenHeadlines": [],
-  "locales": {
-    "en": {
-      "title": "Spain General Election",
-      "dek": "Voters head to the polls in a high-stakes Spanish general election following a volatile campaign dominated by shifting political alliances and regional dynamics."
-    },
-    "de": {
-      "title": "Parlamentswahl in Spanien",
-      "dek": "Die Wähler in Spanien gehen bei einer richtungsweisenden Parlamentswahl an die Urnen; vorausgegangen war ein volatiler Wahlkampf, der von sich verändernden politischen Bündnissen und regionalen Dynamiken geprägt war."
-    },
-    "es": {
-      "title": "Elecciones generales en España",
-      "dek": "Los ciudadanos acuden a las urnas en unas elecciones generales en España de alto riesgo, tras una campaña volátil marcada por los cambios en las alianzas políticas y las dinámicas regionales."
-    },
-    "fr": {
-      "title": "Élections générales en Espagne",
-      "dek": "Les électeurs se rendent aux urnes pour des élections générales espagnoles à haut risque, à l'issue d'une campagne volatile dominée par l'évolution des alliances politiques et les dynamiques régionales."
-    },
-    "it": {
-      "title": "Elezioni generali in Spagna",
-      "dek": "Gli elettori si recano alle urne per elezioni generali spagnole cruciali, al termine di una campagna elettorale instabile dominata da mutevoli alleanze politiche e dinamiche regionali."
-    },
-    "pt": {
-      "title": "Eleições gerais em Espanha",
-      "dek": "Os eleitores dirigem-se às urnas numa eleição geral espanhola de alto risco, após uma campanha volátil dominada por alianças políticas em constante mudança e dinâmicas regionais."
-    },
-    "zh": {
-      "title": "西班牙大选",
-      "dek": "在经历了以政治联盟变迁和区域动态为主导的动荡竞选之后，西班牙选民前往投票所，迎来一场高风险的大选。"
-    },
-    "ko": {
-      "title": "스페인 조기 총선",
-      "dek": "변화무쌍한 정치적 연대와 지역적 역학 구도가 지배한 격렬한 선거 운동 끝에, 유권자들이 중대 기로에 놓인 스페인 총선 투표소로 향하고 있다."
-    },
-    "ja": {
-      "title": "スペイン総選挙",
-      "dek": "目まぐるしい政治同盟の変動や地域情勢が支配的となった波乱含みの選挙戦を受け、スペインの有権者は緊迫した総選挙の投票に向かっている。"
-    }
-  },
-  "article": null,
-  "meta": {
-    "createdBy": "bots/live.mjs",
-    "outlets": [
-      "New York Times",
-      "Le Monde",
-      "El PaÃ­s",
-      "The Kyiv Post"
-    ]
-  }
+  "articleSlug": "spain-general-election",
+  "sourceCount": 4,
+  "seenHeadlines": []
 }
