@@ -1,0 +1,60 @@
+{
+  "slug": "swiss-parliament-begins-winter-session-with-federal-council-vote-20261128-giou",
+  "category": "politics",
+  "image": "https://img-msp-prod.nzz.ch/2026/10/06/e1fad04c-b11a-4d84-9e86-a7a44cbb46ea.jpg?width=144&height=144&fit=bounds&quality=75&auto=webp&crop=2886,2886,x722,y0",
+  "imageCredit": "NZZ",
+  "video": null,
+  "importance": 4,
+  "publishedAt": "2026-11-28T05:18:52.052Z",
+  "updatedAt": "2026-11-28T05:18:52.052Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "NZZ",
+      "title": "Im Bundeshaus beginnt eine Wintersession mit Seifenopern und Mammutdebatten",
+      "url": "https://www.nzz.ch/schweiz/im-bundeshaus-beginnt-eine-wintersession-mit-seifenopern-und-mammut-debatten-ld.10076242",
+      "publishedAt": "2026-11-28T04:30:00.000Z"
+    },
+    {
+      "outlet": "The Hindu",
+      "title": "Taiwan votes in local elections as China sends warplanes, lambastes Taipei candidate",
+      "url": "https://www.thehindu.com/news/international/taiwan-votes-in-key-local-elections-as-china-looks-on/article71753506.ece",
+      "publishedAt": "2026-11-28T04:31:57.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Swiss Parliament Begins Winter Session With Federal Council Vote",
+      "dek": "The Swiss Parliament begins its winter session on 28 November 2026 to elect a federal council member and debate the budget.",
+      "facts": [
+        "The National and Ständerat must elect a new Bundesrat member during the winter session starting Monday, 28 November 2026.",
+        "The SVP nominated two candidates, Thomas Aeschi and Michael Graber, for the federal council seat.",
+        "The Nationalrat's Finance Commission rejected the draft budget in a total vote, an action taken by an alliance of SVP and Links-Grün.",
+        "The Ständerat will consider the electricity market agreement regarding EU treaties in the second session week.",
+        "The Nationalrat will debate the remaining EU treaties over six session days."
+      ],
+      "body": [
+        "The National- and Ständerat begin the three-week winter session on 28 November 2026, during which they must elect a new Bundesrat member and address a budget crisis, according to NZZ. The SVP put forward two candidates, Thomas Aeschi and Michael Graber, for the vacant position in the government.",
+        "The Nationalrat's Finance Commission rejected the draft budget in a total vote, which involved an alliance between the SVP and Links-Grün. This rejection raises the question of whether the Parliament can approve a budget before the new year, a situation not seen since 1975.",
+        "The Ständerat will take up the electricity market agreement in the second session week, which was previously excluded during autumn debates on EU treaties.",
+        "The Nationalrat will debate the remaining EU treaties across six session days in thematic blocks.",
+        "The Ständerat previously approved army financing using a special fund and a higher value-added tax, while the Nationalrat considered an option involving reallocations and savings from development aid without tax increases."
+      ],
+      "context": "The Swiss Parliament holds a winter session to address complex policy issues, including the election of a federal council member and debates on EU policy.",
+      "imageCaption": "Die Aussenpolitische Kommission des Nationalrats befürwortet die EU-Verträge klar und will bei den Umsetzungsgesetzen vertragswidrige Beschlüsse verhindern. Im Kampf ums Ständemehr könnte die «Kompass-Initiative» ein Comeback erleben."
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Statecraft & Governance Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "The draft mixes information from two unrelated sources (Switzerland and Taiwan) without clear separation; the output must only reflect information from the sources provided, and the draft focuses solely on S1 (Switzerland).",
+      "The draft uses loaded language and speculation (e.g., \"stürmischen Wochen,\" \"Feuer im Dach,\" \"spannender werden\").",
+      "The draft includes direct quotes and attributed speculation (Blocher's comments) without proper attribution structure as per PLAIN rules.",
+      "The draft contains filler and evaluative framing (e.g., \"more consequential for the country’s long-term direction\").",
+      "The structure does not adhere to PLAIN rules (e.g., opening paragraphs with actors/dates, varying sentence length, avoiding summary conclusions)."
+    ]
+  }
+}

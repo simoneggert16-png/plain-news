@@ -1,0 +1,81 @@
+{
+  "slug": "storms-affect-us-east-coast-and-australia-s-eastern-20261128-e8jc",
+  "category": "climate",
+  "image": null,
+  "imageCredit": null,
+  "video": null,
+  "importance": 3,
+  "publishedAt": "2026-11-28T05:18:56.685Z",
+  "updatedAt": "2026-11-28T05:18:56.685Z",
+  "sourcePolicy": "two-source",
+  "sources": [
+    {
+      "outlet": "Al Jazeera",
+      "title": "Parts of US clean up after Thanksgiving storm lashes East Coast",
+      "url": "https://www.aljazeera.com/news/2026/11/28/parts-of-us-clean-up-after-thanksgiving-storm-lashes-east-coast?traffic_source=rss",
+      "publishedAt": "2026-11-28T03:00:00.000Z"
+    },
+    {
+      "outlet": "The Guardian",
+      "title": "Australia’s east coast deluged by storms as roads flood and damaging winds forecast for NSW and Victoria",
+      "url": "https://www.theguardian.com/australia-news/2026/nov/28/australias-east-coast-deluged-by-storms-as-roads-flood-and-damaging-winds-forecast-for-nsw-and-victoria",
+      "publishedAt": "2026-11-28T02:39:28.000Z"
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Storms affect US East Coast and Australia's Eastern States on November 28",
+      "dek": "Storms caused flooding and power outages across the US East Coast and Australia's eastern states on November 28, 2026.",
+      "facts": [
+        "Power outages in the US East Coast peaked at more than 900,000 on Thursday, falling to 264,000 by Friday evening, according to poweroutage.us.",
+        "New York City postponed the Macy’s Thanksgiving Day Parade because of rain and high winds, organizers said.",
+        "In southern Tennessee, a winter storm warning was in effect for up to 2.5cm of snow on Friday.",
+        "Victorian State Emergency Service volunteers reported more than 340 calls to 6am on Saturday, according to The Guardian.",
+        "Flight disruptions on Friday included about 1,600 delays and more than 500 cancellations, according to FlightAware."
+      ],
+      "body": [
+        "Heavy rain and flooding eased along the US East Coast as power restoration continued to hundreds of thousands of customers following holiday storms, according to Al Jazeera.",
+        "Coastal flood warnings were issued in several US states from New Jersey to Virginia, and the National Weather Service reported the low-pressure system would bring lingering showers through Saturday.",
+        "A weather band moved from central Queensland through New South Wales to Victoria and Tasmania, bringing severe weather and flood watch warnings across Australia's eastern states, The Guardian reported.",
+        "Victorian State Emergency Service volunteers reported more than 340 calls to 6am on Saturday, because most calls related to fallen trees, building damage, and flooding impacts, The Guardian stated.",
+        "In the southern US, part of Tennessee received a winter storm warning for up to 2.5cm of snow on Friday, while in the Midwest, 38cm of snow fell in eastern Missouri on the previous day."
+      ],
+      "context": "Tropical humidity drifted across the continent, sweeping into Australia's eastern states, according to The Guardian.",
+      "imageCaption": ""
+    },
+    "it": {
+      "title": "Tempeste colpiscono la costa orientale degli Stati Uniti e gli stati orientali australiani il 28 novembre",
+      "dek": "Tempeste hanno provocato inondazioni e blackout sulla costa orientale degli Stati Uniti e sugli stati orientali australiani il 28 novembre 2026.",
+      "facts": [
+        "Blackout sulla costa orientale degli USA hanno raggiunto un picco di oltre 900.000 giovedì, scendendo a 264.000 venerdì sera secondo poweroutage.us",
+        "La città di New York ha posticipato il Macy’s Thanksgiving Day Parade per pioggia e venti forti, hanno detto gli organizzatori",
+        "Nel Tennessee meridionale, un avviso di tempesta invernale è stato in vigore fino a 2,5 cm di neve venerdì",
+        "Volontari del Victorian State Emergency Service hanno segnalato più di 340 chiamate alle 6 di sabato, secondo The Guardian",
+        "Disagi ai voli venerdì con circa 1.600 ritardi e più di 500 cancellazioni, secondo FlightAware. @@CONTEXT__ Umidità tropicale ha attraversato il continente, entrando negli stati orientali australiani, secondo The Guardian."
+      ],
+      "body": [
+        "Forti piogge e allagamenti si sono attenuati lungo la costa orientale degli Stati Uniti mentre il ripristino dell'energia proseguiva per centinaia di migliaia di clienti dopo le tempeste festività, secondo Al Jazeera.",
+        "Sono stati emessi avvisi di alluvione costiera in diversi stati statunitensi, dal New Jersey alla Virginia, e il National Weather Service ha segnalato che il sistema di bassa pressione avrebbe portato piogge residue fino a sabato.",
+        "Una banda meteorologica si è spostata dal Queensland centrale attraverso il Nuovo Galles del Sud fino a Victoria e Tasmania, portando maltempo e avvisi di alluvione negli stati orientali australiani, ha riportato The Guardian.",
+        "I volontari del Servizio di Emergenza dello Stato del Victoria hanno registrato oltre 340 chiamate entro le 6 del mattino di sabato, poiché la maggior parte delle chiamate riguardava alberi caduti, danni agli edifici e impatti delle inondazioni, ha dichiarato The Guardian.",
+        "Nelle parti meridionali degli Stati Uniti, parte del Tennessee ha ricevuto un avviso di tempesta invernale per fino a 2,5 cm di neve venerdì, mentre nel Midwest sono caduti 38 cm di neve nell'est del Missouri il giorno precedente."
+      ],
+      "context": "",
+      "imageCaption": "Nessuna didascalia disponibile"
+    }
+  },
+  "meta": {
+    "writer": "nvidia/nemotron-3.5-bolt-e4b",
+    "editor": "nvidia/nemotron-3.5-bolt-e4b",
+    "desk": "Climate, Environment & Nature Desk",
+    "verdict": "revise",
+    "problemsFixed": [
+      "The headline is not a factual statement of what happened and contains unnecessary phrasing.",
+      "The dek is not a single-sentence summary, max 30 words.",
+      "The facts list contains an unsupported claim regarding the Bureau of Meteorology reporting a moderate flood warning for Warrill Creek; S2 states a moderate flood warning is in place for Warrill Creek, but this is not attributed to the Bureau of Meteorology.",
+      "The body paragraphs contain filler and do not adhere to the required rhythm and structure (e.g., the first body paragraph is too long and lacks the required clause variation).",
+      "The context section uses attribution incorrectly and does not meet the requirement of explaining jargon in-line for a curious 18-year-old.",
+      "The structure does not adhere to the required paragraph opening rules (actor/number/date first)."
+    ]
+  }
+}
