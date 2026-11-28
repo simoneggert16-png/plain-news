@@ -12,9 +12,20 @@
   },
   "slug": "afghanistan-school-explosion",
   "stats": {
+    "label": "Casualties",
+    "note": "Reported casualties following an explosion near a school in Afghanistan.",
+    "unit": "",
     "max": null,
     "asOf": "2024-05-22T00:00:00.000Z",
-    "note": "Reported deaths and injuries following an explosion at a school in Afghanistan.",
+    "updatedAt": "2026-11-28T11:16:30.543Z",
+    "source": {
+      "outlet": "BBC",
+      "title": "Seven students killed and nearly 100 injured in explosion in Afghanistan, official says",
+      "url": "https://www.bbc.co.uk/news/articles/ckp80jyz6dl8o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-11-28T10:14:37.000Z",
+      "trusted": true
+    },
+    "sourceCount": 1,
     "rows": [
       {
         "key": "students-killed",
@@ -25,58 +36,58 @@
           "de": {
             "label": "Getötete Schüler"
           },
-          "es": {
-            "label": "Estudiantes fallecidos"
-          },
           "fr": {
             "label": "Élèves tués"
           },
+          "es": {
+            "label": "Estudiantes fallecidos"
+          },
           "it": {
             "label": "Studenti uccisi"
-          },
-          "ja": {
-            "label": "死亡した生徒"
-          },
-          "ko": {
-            "label": "사망 학생 수"
           },
           "pt": {
             "label": "Estudantes mortos"
           },
           "zh": {
             "label": "学生死亡人数"
+          },
+          "ja": {
+            "label": "死亡した生徒"
+          },
+          "ko": {
+            "label": "사망 학생 수"
           }
         }
       },
       {
-        "key": "students-injured",
-        "label": "Students injured",
+        "key": "students-injured-upper-estimate",
+        "label": "Students injured (upper estimate)",
         "value": 99,
         "change": null,
         "locales": {
-          "de": {
-            "label": "Verletzte Schüler"
-          },
-          "es": {
-            "label": "Estudiantes heridos"
-          },
           "fr": {
-            "label": "Élèves blessés"
+            "label": "Élèves blessés (estimation haute)"
           },
           "it": {
-            "label": "Studenti feriti"
+            "label": "Studenti feriti (stima massima)"
           },
-          "ja": {
-            "label": "負傷した生徒"
-          },
-          "ko": {
-            "label": "부상 학생 수"
+          "de": {
+            "label": "Verletzte Schüler (obere Schätzung)"
           },
           "pt": {
-            "label": "Estudantes feridos"
+            "label": "Estudantes feridos (estimativa máxima)"
+          },
+          "ko": {
+            "label": "부상 학생 수 (최대 추정치)"
           },
           "zh": {
-            "label": "学生受伤人数"
+            "label": "学生受伤人数（上限估计）"
+          },
+          "es": {
+            "label": "Estudiantes heridos (estimación máxima)"
+          },
+          "ja": {
+            "label": "負傷した生徒数（上限見積もり）"
           }
         }
       },
@@ -89,112 +100,73 @@
           "de": {
             "label": "Verletzte Schüler (niedrigere Schätzung)"
           },
-          "es": {
-            "label": "Estudiantes heridos (estimación mínima)"
-          },
           "fr": {
             "label": "Élèves blessés (estimation basse)"
           },
+          "es": {
+            "label": "Estudiantes heridos (estimación mínima)"
+          },
           "it": {
             "label": "Studenti feriti (stima al ribasso)"
-          },
-          "ja": {
-            "label": "負傷した生徒（低い見積もり）"
-          },
-          "ko": {
-            "label": "부상 학생 수 (최소 추정치)"
           },
           "pt": {
             "label": "Estudantes feridos (estimativa mais baixa)"
           },
           "zh": {
             "label": "学生受伤人数（低估值）"
+          },
+          "ja": {
+            "label": "負傷した生徒（低い見積もり）"
+          },
+          "ko": {
+            "label": "부상 학생 수 (최소 추정치)"
           }
         }
       }
     ],
-    "unit": "",
-    "label": "Casualties",
-    "source": {
-      "url": "https://www.bbc.co.uk/news/articles/ckp80jyz6dl8o?at_medium=RSS&at_campaign=rss",
-      "title": "Seven students killed and nearly 100 injured in explosion in Afghanistan, official says",
-      "outlet": "BBC",
-      "trusted": true,
-      "publishedAt": "2026-11-28T10:14:37.000Z"
-    },
     "locales": {
       "de": {
-        "note": "Gemeldete Todesfälle und Verletzungen nach einer Explosion an einer Schule in Afghanistan.",
-        "label": "Opferzahlen"
-      },
-      "es": {
-        "note": "Muertes y heridos reportados tras una explosión en una escuela en Afganistán.",
-        "label": "Víctimas"
+        "label": "Opferzahlen",
+        "note": "Gemeldete Opferzahlen nach einer Explosion in der Nähe einer Schule in Afghanistan."
       },
       "fr": {
-        "note": "Bilan des morts et des blessés suite à une explosion dans une école en Afghanistan.",
-        "label": "Victimes"
+        "label": "Victimes",
+        "note": "Bilan des victimes suite à une explosion près d'une école en Afghanistan."
+      },
+      "es": {
+        "label": "Víctimas",
+        "note": "Víctimas reportadas tras una explosión cerca de una escuela en Afganistán."
       },
       "it": {
-        "note": "Morti e feriti segnalati in seguito a un'esplosione in una scuola in Afghanistan.",
-        "label": "Vittime"
-      },
-      "ja": {
-        "note": "アフガニスタンの学校で発生した爆発による死傷者の報告。",
-        "label": "死傷者"
-      },
-      "ko": {
-        "note": "아프가니스탄의 한 학교에서 발생한 폭발 사고 이후 보고된 사망자 및 부상자 현황입니다.",
-        "label": "사상자"
+        "label": "Vittime",
+        "note": "Vittime segnalate in seguito a un'esplosione nei pressi di una scuola in Afghanistan."
       },
       "pt": {
-        "note": "Mortes e feridos reportados na sequência de uma explosão numa escola no Afeganistão.",
-        "label": "Baixas"
+        "label": "Baixas",
+        "note": "Baixas reportadas na sequência de uma explosão perto de uma escola no Afeganistão."
       },
       "zh": {
-        "note": "阿富汗一所学校发生爆炸，造成人员伤亡。",
-        "label": "伤亡情况"
+        "label": "伤亡情况",
+        "note": "阿富汗一所学校附近发生爆炸，据报道造成人员伤亡。"
+      },
+      "ja": {
+        "label": "死傷者",
+        "note": "アフガニスタンの学校付近で発生した爆発による死傷者の報告。"
+      },
+      "ko": {
+        "label": "사상자",
+        "note": "아프가니스탄의 한 학교 인근에서 발생한 폭발 사고로 인한 사상자 보고."
       }
-    },
-    "updatedAt": "2026-11-28T10:26:40.850Z",
-    "sourceCount": 1
+    }
   },
   "topic": "Afghanistan school explosion",
   "status": "live",
   "article": {
     "slug": "afghanistan-school-explosion",
-    "updatedAt": "2026-11-28T11:08:25.589Z",
     "reason": "2 new update(s)",
     "locales": {
-      "en": {
-        "title": "Seven students killed in explosion near Afghan school",
-        "dek": "Seven students died and nearly 100 people sustained injuries in an explosion at a mining explosives storage site in eastern Afghanistan.",
-        "facts": [
-          "Seven students died in the explosion",
-          "Nearly 100 people sustained injuries",
-          "The blast occurred in Kunar province",
-          "Authorities attributed the explosion to negligence at a mining company's storage site"
-        ],
-        "body": [
-          "Seven students died and nearly 100 people sustained injuries in an explosion in the Kunar province of eastern Afghanistan. Authorities stated that the blast originated at a mining company's explosives storage site, according to Die Welt and Der Spiegel.",
-          "Officials reported that the incident was caused by negligence, as reported by Die Welt and Der Spiegel. The explosion occurred near an educational facility, which resulted in the casualties among the student population.",
-          "Casualty figures reported by news organizations varied, with counts ranging from 97 to 99 injured individuals alongside the seven confirmed student deaths. Medical facilities in the area received the wounded students and other affected persons following the incident.",
-          "Emergency response efforts began immediately after the detonation as local authorities coordinated the transport of the wounded to medical care. Officials gathered details at the site to assess the damage caused by the mining materials.",
-          "The interior ministry spokesperson provided the initial explanation regarding the storage site located near the school. Investigations into the exact circumstances of the explosion continued as officials reviewed the site's safety protocols.",
-          "Reports from The Hindu and The Times of India confirmed the death toll of seven students. The Jerusalem Post and the BBC also cited official sources confirming the location and the nature of the blast."
-        ],
-        "context": "Explosions involving stored industrial or mining materials have previously occurred in various parts of Afghanistan, where regulatory controls on hazardous substances can be limited.",
-        "imageCaption": ""
-      },
       "de": {
-        "title": "Sieben Schüler bei Explosion nahe afghanischer Schule getötet",
         "dek": "Sieben Schüler starben und fast 100 Menschen wurden bei einer Explosion in einem Lager für Bergbausprengstoffe im Osten Afghanistans verletzt.",
-        "facts": [
-          "Sieben Schüler starben bei der Explosion",
-          "Fast 100 Menschen wurden verletzt",
-          "Die Detonation ereignete sich in der Provinz Kunar",
-          "Behörden führten die Explosion auf Fahrlässigkeit im Lager einer Bergbaufirma zurück"
-        ],
         "body": [
           "Sieben Schüler starben und fast 100 Menschen wurden bei einer Explosion in der Provinz Kunar im Osten Afghanistans verletzt. Behörden erklärten, dass die Detonation von einem Sprengstofflager einer Bergbaufirma ausging, wie Die Welt und Der Spiegel berichteten.",
           "Beamte berichteten, dass der Vorfall durch Fahrlässigkeit verursacht wurde, wie Die Welt und Der Spiegel meldeten. Die Explosion ereignete sich in der Nähe einer Bildungseinrichtung, was zu den Opfern unter der Schülerschaft führte.",
@@ -203,7 +175,34 @@
           "Der Sprecher des Innenministeriums lieferte die erste Erklärung bezüglich des Lagerstandorts in der Nähe der Schule. Die Untersuchungen zu den genauen Umständen der Explosion dauerten an, während Beamte die Sicherheitsprotokolle des Standorts überprüften.",
           "Berichte von The Hindu und The Times of India bestätigten die Opferzahl von sieben Schülern. Auch die Jerusalem Post und die BBC zitierten offizielle Quellen, die den Ort und die Art der Detonation bestätigten."
         ],
+        "facts": [
+          "Sieben Schüler starben bei der Explosion",
+          "Fast 100 Menschen wurden verletzt",
+          "Die Detonation ereignete sich in der Provinz Kunar",
+          "Behörden führten die Explosion auf Fahrlässigkeit im Lager einer Bergbaufirma zurück"
+        ],
+        "title": "Sieben Schüler bei Explosion nahe afghanischer Schule getötet",
         "context": "Explosionen mit gelagerten Industrie- oder Bergbaumaterialien haben sich bereits in verschiedenen Teilen Afghanistans ereignet, wo die behördliche Kontrolle über Gefahrstoffe begrenzt sein kann."
+      },
+      "en": {
+        "dek": "Seven students died and nearly 100 people sustained injuries in an explosion at a mining explosives storage site in eastern Afghanistan.",
+        "body": [
+          "Seven students died and nearly 100 people sustained injuries in an explosion in the Kunar province of eastern Afghanistan. Authorities stated that the blast originated at a mining company's explosives storage site, according to Die Welt and Der Spiegel.",
+          "Officials reported that the incident was caused by negligence, as reported by Die Welt and Der Spiegel. The explosion occurred near an educational facility, which resulted in the casualties among the student population.",
+          "Casualty figures reported by news organizations varied, with counts ranging from 97 to 99 injured individuals alongside the seven confirmed student deaths. Medical facilities in the area received the wounded students and other affected persons following the incident.",
+          "Emergency response efforts began immediately after the detonation as local authorities coordinated the transport of the wounded to medical care. Officials gathered details at the site to assess the damage caused by the mining materials.",
+          "The interior ministry spokesperson provided the initial explanation regarding the storage site located near the school. Investigations into the exact circumstances of the explosion continued as officials reviewed the site's safety protocols.",
+          "Reports from The Hindu and The Times of India confirmed the death toll of seven students. The Jerusalem Post and the BBC also cited official sources confirming the location and the nature of the blast."
+        ],
+        "facts": [
+          "Seven students died in the explosion",
+          "Nearly 100 people sustained injuries",
+          "The blast occurred in Kunar province",
+          "Authorities attributed the explosion to negligence at a mining company's storage site"
+        ],
+        "title": "Seven students killed in explosion near Afghan school",
+        "context": "Explosions involving stored industrial or mining materials have previously occurred in various parts of Afghanistan, where regulatory controls on hazardous substances can be limited.",
+        "imageCaption": ""
       }
     },
     "versions": [
@@ -211,6 +210,25 @@
         "at": "2026-11-28T10:29:58.344Z",
         "reason": "1 new update(s)",
         "locales": {
+          "de": {
+            "dek": "Bei einer Explosion im Osten Afghanistans starben sieben Schüler, und fast 100 Menschen wurden verletzt.",
+            "body": [
+              "Bei einer Explosion im Osten Afghanistans sind sieben Schüler gestorben und fast 100 Menschen verletzt worden. Die Detonation ging von einem nahegelegenen Depot für Sprengstoff für den Bergbau aus, wie ein Sprecher des Innenministeriums und von der \"Jerusalem Post\" zitierte Beamte mitteilten.",
+              "Berichten der Zeitung \"The Hindu\" zufolge wurden bei der Explosion an der Mittelschule mindestens sieben Schüler getötet und 97 Menschen verletzt. \"The Times of India\" berichtete, dass bei der Detonation in der Provinz Kunar sieben Schüler starben und mindestens 99 Menschen verletzt wurden.",
+              "Offizielle Quellen gaben an, dass sich der Vorfall in der Nähe einer Bildungseinrichtung im Osten des Landes ereignete. Nach der Explosion liefen Rettungsmaßnahmen an, während Verletzte zur medizinischen Versorgung abtransportiert wurden.",
+              "Zu den Opfern zählten knapp 100 Menschen, die nach der Explosion medizinische Hilfe benötigten. Örtliche Behörden koordinierten den Einsatz vor Ort und bewerteten die durch die Detonation verursachten Schäden.",
+              "Die Ermittlungen zur genauen Ursache und zum Ursprung der Explosion in dem Bergbau-Sprengstoffdepot wurden fortgesetzt, während Beamte Details zusammentrugen. Der Sprecher des Innenministeriums lieferte die erste Erklärung bezüglich des Lagerplatzes in der Nähe der Schule.",
+              "Die von Nachrichtenorganisationen gemeldeten Opferzahlen wichen leicht voneinander ab; die Zahl der Verletzten lag neben den sieben bestätigten Schülertoden zwischen 97 und 99 Personen. Medizinische Einrichtungen in der Region nahmen die verletzten Schüler und andere Betroffene nach dem Vorfall auf."
+            ],
+            "facts": [
+              "Sieben Schüler starben bei der Explosion",
+              "Knapp 100 Menschen erlitten Verletzungen",
+              "Die Explosion ereignete sich in der ostafghanischen Provinz Kunar",
+              "Das Innenministerium erklärte, die Explosion sei von einem Depot für Sprengstoff für den Bergbau ausgegangen"
+            ],
+            "title": "Sieben Schüler bei Explosion nahe afghanischer Schule getötet",
+            "context": "In verschiedenen Teilen Afghanistans kam es in der Vergangenheit bereits zu Explosionen im Zusammenhang mit gelagerten Industrie- oder Bergbaumaterialien, da die regulatorischen Kontrollen für Gefahrstoffe dort begrenzt sein können."
+          },
           "en": {
             "dek": "Seven students died and nearly 100 people sustained injuries in an eastern Afghanistan explosion.",
             "body": [
@@ -230,29 +248,11 @@
             "title": "Seven students killed in explosion near Afghan school",
             "context": "Explosions involving stored industrial or mining materials have previously occurred in various parts of Afghanistan, where regulatory controls on hazardous substances can be limited.",
             "imageCaption": ""
-          },
-          "de": {
-            "dek": "Bei einer Explosion im Osten Afghanistans starben sieben Schüler, und fast 100 Menschen wurden verletzt.",
-            "body": [
-              "Bei einer Explosion im Osten Afghanistans sind sieben Schüler gestorben und fast 100 Menschen verletzt worden. Die Detonation ging von einem nahegelegenen Depot für Sprengstoff für den Bergbau aus, wie ein Sprecher des Innenministeriums und von der \"Jerusalem Post\" zitierte Beamte mitteilten.",
-              "Berichten der Zeitung \"The Hindu\" zufolge wurden bei der Explosion an der Mittelschule mindestens sieben Schüler getötet und 97 Menschen verletzt. \"The Times of India\" berichtete, dass bei der Detonation in der Provinz Kunar sieben Schüler starben und mindestens 99 Menschen verletzt wurden.",
-              "Offizielle Quellen gaben an, dass sich der Vorfall in der Nähe einer Bildungseinrichtung im Osten des Landes ereignete. Nach der Explosion liefen Rettungsmaßnahmen an, während Verletzte zur medizinischen Versorgung abtransportiert wurden.",
-              "Zu den Opfern zählten knapp 100 Menschen, die nach der Explosion medizinische Hilfe benötigten. Örtliche Behörden koordinierten den Einsatz vor Ort und bewerteten die durch die Detonation verursachten Schäden.",
-              "Die Ermittlungen zur genauen Ursache und zum Ursprung der Explosion in dem Bergbau-Sprengstoffdepot wurden fortgesetzt, während Beamte Details zusammentrugen. Der Sprecher des Innenministeriums lieferte die erste Erklärung bezüglich des Lagerplatzes in der Nähe der Schule.",
-              "Die von Nachrichtenorganisationen gemeldeten Opferzahlen wichen leicht voneinander ab; die Zahl der Verletzten lag neben den sieben bestätigten Schülertoden zwischen 97 und 99 Personen. Medizinische Einrichtungen in der Region nahmen die verletzten Schüler und andere Betroffene nach dem Vorfall auf."
-            ],
-            "facts": [
-              "Sieben Schüler starben bei der Explosion",
-              "Knapp 100 Menschen erlitten Verletzungen",
-              "Die Explosion ereignete sich in der ostafghanischen Provinz Kunar",
-              "Das Innenministerium erklärte, die Explosion sei von einem Depot für Sprengstoff für den Bergbau ausgegangen"
-            ],
-            "title": "Sieben Schüler bei Explosion nahe afghanischer Schule getötet",
-            "context": "In verschiedenen Teilen Afghanistans kam es in der Vergangenheit bereits zu Explosionen im Zusammenhang mit gelagerten Industrie- oder Bergbaumaterialien, da die regulatorischen Kontrollen für Gefahrstoffe dort begrenzt sein können."
           }
         }
       }
-    ]
+    ],
+    "updatedAt": "2026-11-28T11:08:25.589Z"
   },
   "endedAt": null,
   "locales": {
@@ -295,120 +295,178 @@
   },
   "updates": [
     {
-      "id": "u-1795863897000-e802",
-      "at": "2026-11-28T11:04:57.000Z",
-      "kind": "context",
-      "importance": 3,
-      "locales": {
-        "en": {
-          "headline": "Explosion near school in Kunar province caused by mining explosives",
-          "body": "Authorities in Afghanistan stated that the explosion occurred at a mining company's explosives storage site. Officials reported that the incident was caused by negligence, according to Die Welt and Der Spiegel."
-        },
-        "es": {
-          "headline": "Una explosión cerca de una escuela en la provincia de Kunar fue causada por explosivos mineros",
-          "body": "Las autoridades de Afganistán declararon que la explosión ocurrió en un almacén de explosivos de una empresa minera. Según Die Welt y Der Spiegel, los funcionarios informaron que el incidente fue causado por negligencia."
-        },
-        "pt": {
-          "headline": "Explosão perto de escola na província de Kunar causada por explosivos mineiros",
-          "body": "As autoridades no Afeganistão declararam que a explosão ocorreu no local de armazenamento de explosivos de uma empresa mineira. Segundo o Die Welt e o Der Spiegel, os responsáveis indicaram que o incidente foi causado por negligência."
-        },
-        "zh": {
-          "headline": "阿富汗库纳尔省学校附近发生爆炸，系采矿炸药引发",
-          "body": "阿富汗当局表示，爆炸发生在一家采矿公司的炸药储存点。据《世界报》和《明镜周刊》报道，官员称此次事故是由疏忽大意造成的。"
-        },
-        "fr": {
-          "headline": "Une explosion près d'une école dans la province de Kounar causée par des explosifs miniers",
-          "body": "Les autorités afghanes ont déclaré que l'explosion s'est produite sur le site de stockage d'explosifs d'une société minière. Selon Die Welt et Der Spiegel, les responsables ont indiqué que l'incident était dû à une négligence."
-        },
-        "ja": {
-          "headline": "クナール州の学校付近での爆発、鉱山用爆薬が原因",
-          "body": "アフガニスタンの当局は、爆発は鉱山会社の爆薬貯蔵施設で発生したと発表した。ディー・ヴェルト紙およびデア・シュピーゲル誌によると、当局は過失が原因であると報告している。"
-        },
-        "it": {
-          "headline": "Esplosione vicino a una scuola nella provincia di Kunar causata da esplosivi minerari",
-          "body": "Le autorità in Afghanistan hanno dichiarato che l'esplosione si è verificata presso il deposito di esplosivi di una compagnia mineraria. Secondo quanto riportato da Die Welt e Der Spiegel, i funzionari hanno riferito che l'incidente è stato causato da negligenza."
-        },
-        "ko": {
-          "headline": "쿠나르주 학교 인근 폭발, 광산용 폭발물 때문",
-          "body": "아프가니스탄 당국은 이번 폭발이 한 광산 회사의 폭발물 저장소에서 발생했다고 밝혔다. 디 벨트(Die Welt)와 데어 슈피겔(Der Spiegel)에 따르면, 관계자들은 이번 사고가 부주의로 인해 발생했다고 전했다."
-        },
-        "de": {
-          "headline": "Explosion in der Nähe einer Schule in der Provinz Kunar durch Bergbau-Sprengstoff verursacht",
-          "body": "Behörden in Afghanistan teilten mit, dass sich die Explosion am Lagerort für Sprengstoffe eines Bergbauunternehmens ereignete. Laut Die Welt und Der Spiegel berichteten Beamte, dass der Vorfall durch Fahrlässigkeit verursacht wurde."
-        }
-      },
-      "sources": [
-        {
-          "outlet": "Die Welt",
-          "title": "Sieben Schüler nach Explosion neben Schule in Afghanistan getötet",
-          "url": "https://www.welt.de/politik/ausland/article6b0aaf12e6dce45621984d6a/afghanistan-sprengstofflager-explodiert-neben-schule-mindestens-sieben-schueler-tot.html",
-          "publishedAt": "2026-11-28T11:04:57.000Z"
-        },
-        {
-          "outlet": "Der Spiegel",
-          "title": "Afghanistan: Mehrere Tote bei Explosion nahe Schule",
-          "url": "https://www.spiegel.de/panorama/afghanistan-mehrere-tote-bei-explosion-nahe-schule-a-7f2d2901-cf4d-4ba0-83bd-bd580b72ce48#ref=rss",
-          "publishedAt": "2026-11-28T10:54:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "u-1795863897000-o9cc",
-      "at": "2026-11-28T11:04:57.000Z",
+      "id": "u-1795864055000-uslx",
+      "at": "2026-11-28T11:07:35.000Z",
       "kind": "result",
       "importance": 3,
       "locales": {
         "en": {
-          "headline": "Nearly 100 people injured in Kunar province explosion",
-          "body": "Die Welt and Der Spiegel reported that nearly 100 people were injured in the blast. The explosion took place in the province of Kunar, according to both outlets."
+          "headline": "Taliban Interior Ministry confirms 99 injured in Kunar school explosion",
+          "body": "A spokesperson for the Taliban Interior Ministry stated that up to 99 people were injured in the explosion. The ministry also confirmed that seven students were killed in the incident."
         },
         "es": {
-          "headline": "Cerca de 100 personas heridas en la explosión de la provincia de Kunar",
-          "body": "Die Welt y Der Spiegel informaron que cerca de 100 personas resultaron heridas en la explosión. El suceso tuvo lugar en la provincia de Kunar, según ambos medios."
-        },
-        "pt": {
-          "headline": "Quase 100 pessoas feridas em explosão na província de Kunar",
-          "body": "O Die Welt e o Der Spiegel noticiaram que quase 100 pessoas ficaram feridas na explosão. O incidente ocorreu na província de Kunar, segundo ambos os meios de comunicação."
-        },
-        "zh": {
-          "headline": "库纳尔省爆炸造成近百人受伤",
-          "body": "据《世界报》和《明镜周刊》报道，此次爆炸造成近百人受伤。两家媒体均指出，爆炸发生在库纳尔省。"
-        },
-        "fr": {
-          "headline": "Près de 100 blessés dans l'explosion dans la province de Kounar",
-          "body": "Die Welt et Der Spiegel ont rapporté que près de 100 personnes ont été blessées dans la déflagration. L'explosion a eu lieu dans la province de Kounar, selon les deux médias."
-        },
-        "ja": {
-          "headline": "クナール州の爆発で100人近くが負傷",
-          "body": "ディー・ヴェルト紙およびデア・シュピーゲル誌は、この爆発で100人近くが負傷したと報じた。両メディアによると、爆発はクナール州で発生した。"
+          "headline": "El Ministerio del Interior talibán confirma 99 heridos en la explosión de una escuela en Kunar",
+          "body": "Un portavoz del Ministerio del Interior talibán declaró que hasta 99 personas resultaron heridas en la explosión. El ministerio también confirmó que siete estudiantes murieron en el incidente."
         },
         "it": {
-          "headline": "Quasi 100 feriti nell'esplosione nella provincia di Kunar",
-          "body": "Die Welt e Der Spiegel hanno riferito che quasi 100 persone sono rimaste ferite nell'esplosione. Secondo entrambe le testate, l'esplosione è avvenuta nella provincia di Kunar."
+          "headline": "Il Ministero dell'Interno talebano conferma 99 feriti nell'esplosione in una scuola nel Kunar",
+          "body": "Un portavoce del Ministero dell'Interno talebano ha dichiarato che fino a 99 persone sono rimaste ferite nell'esplosione. Il ministero ha inoltre confermato che sette studenti sono morti nell'incidente."
+        },
+        "zh": {
+          "headline": "塔利班内政部证实库纳尔省学校爆炸造成99人受伤",
+          "body": "塔利班内政部发言人表示，爆炸已造成多达99人受伤。该部还证实，有7名学生在事件中丧生。"
+        },
+        "ja": {
+          "headline": "タリバン内務省、クナール州の学校での爆発で99人が負傷したと発表",
+          "body": "タリバン内務省の報道官は、この爆発により最大99人が負傷したと述べた。同省はまた、この事件で生徒7人が死亡したことを確認した。"
+        },
+        "fr": {
+          "headline": "Le ministère de l'Intérieur des talibans confirme 99 blessés dans l'explosion d'une école au Kounar",
+          "body": "Un porte-parole du ministère de l'Intérieur des talibans a déclaré que près de 99 personnes avaient été blessées dans l'explosion. Le ministère a également confirmé que sept élèves avaient trouvé la mort dans l'incident."
+        },
+        "pt": {
+          "headline": "Ministério do Interior dos Talibãs confirma 99 feridos em explosão numa escola em Kunar",
+          "body": "Um porta-voz do Ministério do Interior dos Talibãs declarou que cerca de 99 pessoas ficaram feridas na explosão. O ministério confirmou ainda que sete estudantes morreram no incidente."
         },
         "ko": {
-          "headline": "쿠나르주 폭발 사고로 100명 가까이 부상",
-          "body": "디 벨트와 데어 슈피겔은 이번 폭발로 100명 가까운 사람들이 부상을 입었다고 보도했다. 두 매체에 따르면 폭발은 쿠나르주에서 발생했다."
+          "headline": "탈레반 내무부, 쿠나르 학교 폭발 사고로 99명 부상 확인",
+          "body": "탈레반 내무부 대변인은 이번 폭발 사고로 최대 99명이 부상을 입었다고 밝혔다. 또한 내무부는 이번 사고로 학생 7명이 사망했다고 확인했다."
         },
         "de": {
-          "headline": "Fast 100 Menschen bei Explosion in der Provinz Kunar verletzt",
-          "body": "Die Welt und Der Spiegel berichteten, dass bei der Detonation fast 100 Menschen verletzt wurden. Die Explosion ereignete sich laut beiden Medien in der Provinz Kunar."
+          "headline": "Taliban Innenministerium bestätigt 99 Verletzte bei Schulexplosion in Kunar",
+          "body": "Ein Sprecher des Taliban-Innenministeriums teilte mit, dass bis zu 99 Menschen bei der Explosion verletzt wurden. Das Ministerium bestätigte zudem, dass sieben Schüler bei dem Vorfall ums Leben kamen."
         }
       },
       "sources": [
         {
-          "outlet": "Die Welt",
-          "title": "Sieben Schüler nach Explosion neben Schule in Afghanistan getötet",
+          "outlet": "South China Morning Post",
+          "title": "Afghanistan school explosion kills 7 pupils, over 90 injured",
+          "url": "https://www.scmp.com/news/world/russia-central-asia/article/3376136/afghanistan-school-explosion-kills-7-pupils-over-90-injured",
+          "publishedAt": "2026-11-28T11:07:35.000Z"
+        },
+        {
+          "outlet": "Sky News",
+          "title": "Seven students killed and up to 99 injured in explosion near Afghan school",
+          "url": "https://news.sky.com/story/seven-students-killed-and-up-to-99-injured-in-explosion-near-afghan-school-13617431",
+          "publishedAt": "2026-11-28T09:57:00.000Z"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-28T11:04:57.000Z",
+      "id": "u-1795863897000-e802",
+      "kind": "context",
+      "locales": {
+        "de": {
+          "body": "Behörden in Afghanistan teilten mit, dass sich die Explosion am Lagerort für Sprengstoffe eines Bergbauunternehmens ereignete. Laut Die Welt und Der Spiegel berichteten Beamte, dass der Vorfall durch Fahrlässigkeit verursacht wurde.",
+          "headline": "Explosion in der Nähe einer Schule in der Provinz Kunar durch Bergbau-Sprengstoff verursacht"
+        },
+        "en": {
+          "body": "Authorities in Afghanistan stated that the explosion occurred at a mining company's explosives storage site. Officials reported that the incident was caused by negligence, according to Die Welt and Der Spiegel.",
+          "headline": "Explosion near school in Kunar province caused by mining explosives"
+        },
+        "es": {
+          "body": "Las autoridades de Afganistán declararon que la explosión ocurrió en un almacén de explosivos de una empresa minera. Según Die Welt y Der Spiegel, los funcionarios informaron que el incidente fue causado por negligencia.",
+          "headline": "Una explosión cerca de una escuela en la provincia de Kunar fue causada por explosivos mineros"
+        },
+        "fr": {
+          "body": "Les autorités afghanes ont déclaré que l'explosion s'est produite sur le site de stockage d'explosifs d'une société minière. Selon Die Welt et Der Spiegel, les responsables ont indiqué que l'incident était dû à une négligence.",
+          "headline": "Une explosion près d'une école dans la province de Kounar causée par des explosifs miniers"
+        },
+        "it": {
+          "body": "Le autorità in Afghanistan hanno dichiarato che l'esplosione si è verificata presso il deposito di esplosivi di una compagnia mineraria. Secondo quanto riportato da Die Welt e Der Spiegel, i funzionari hanno riferito che l'incidente è stato causato da negligenza.",
+          "headline": "Esplosione vicino a una scuola nella provincia di Kunar causata da esplosivi minerari"
+        },
+        "ja": {
+          "body": "アフガニスタンの当局は、爆発は鉱山会社の爆薬貯蔵施設で発生したと発表した。ディー・ヴェルト紙およびデア・シュピーゲル誌によると、当局は過失が原因であると報告している。",
+          "headline": "クナール州の学校付近での爆発、鉱山用爆薬が原因"
+        },
+        "ko": {
+          "body": "아프가니스탄 당국은 이번 폭발이 한 광산 회사의 폭발물 저장소에서 발생했다고 밝혔다. 디 벨트(Die Welt)와 데어 슈피겔(Der Spiegel)에 따르면, 관계자들은 이번 사고가 부주의로 인해 발생했다고 전했다.",
+          "headline": "쿠나르주 학교 인근 폭발, 광산용 폭발물 때문"
+        },
+        "pt": {
+          "body": "As autoridades no Afeganistão declararam que a explosão ocorreu no local de armazenamento de explosivos de uma empresa mineira. Segundo o Die Welt e o Der Spiegel, os responsáveis indicaram que o incidente foi causado por negligência.",
+          "headline": "Explosão perto de escola na província de Kunar causada por explosivos mineiros"
+        },
+        "zh": {
+          "body": "阿富汗当局表示，爆炸发生在一家采矿公司的炸药储存点。据《世界报》和《明镜周刊》报道，官员称此次事故是由疏忽大意造成的。",
+          "headline": "阿富汗库纳尔省学校附近发生爆炸，系采矿炸药引发"
+        }
+      },
+      "sources": [
+        {
           "url": "https://www.welt.de/politik/ausland/article6b0aaf12e6dce45621984d6a/afghanistan-sprengstofflager-explodiert-neben-schule-mindestens-sieben-schueler-tot.html",
+          "title": "Sieben Schüler nach Explosion neben Schule in Afghanistan getötet",
+          "outlet": "Die Welt",
           "publishedAt": "2026-11-28T11:04:57.000Z"
         },
         {
-          "outlet": "Der Spiegel",
-          "title": "Afghanistan: Mehrere Tote bei Explosion nahe Schule",
           "url": "https://www.spiegel.de/panorama/afghanistan-mehrere-tote-bei-explosion-nahe-schule-a-7f2d2901-cf4d-4ba0-83bd-bd580b72ce48#ref=rss",
+          "title": "Afghanistan: Mehrere Tote bei Explosion nahe Schule",
+          "outlet": "Der Spiegel",
           "publishedAt": "2026-11-28T10:54:00.000Z"
         }
-      ]
+      ],
+      "importance": 3
+    },
+    {
+      "at": "2026-11-28T11:04:57.000Z",
+      "id": "u-1795863897000-o9cc",
+      "kind": "result",
+      "locales": {
+        "de": {
+          "body": "Die Welt und Der Spiegel berichteten, dass bei der Detonation fast 100 Menschen verletzt wurden. Die Explosion ereignete sich laut beiden Medien in der Provinz Kunar.",
+          "headline": "Fast 100 Menschen bei Explosion in der Provinz Kunar verletzt"
+        },
+        "en": {
+          "body": "Die Welt and Der Spiegel reported that nearly 100 people were injured in the blast. The explosion took place in the province of Kunar, according to both outlets.",
+          "headline": "Nearly 100 people injured in Kunar province explosion"
+        },
+        "es": {
+          "body": "Die Welt y Der Spiegel informaron que cerca de 100 personas resultaron heridas en la explosión. El suceso tuvo lugar en la provincia de Kunar, según ambos medios.",
+          "headline": "Cerca de 100 personas heridas en la explosión de la provincia de Kunar"
+        },
+        "fr": {
+          "body": "Die Welt et Der Spiegel ont rapporté que près de 100 personnes ont été blessées dans la déflagration. L'explosion a eu lieu dans la province de Kounar, selon les deux médias.",
+          "headline": "Près de 100 blessés dans l'explosion dans la province de Kounar"
+        },
+        "it": {
+          "body": "Die Welt e Der Spiegel hanno riferito che quasi 100 persone sono rimaste ferite nell'esplosione. Secondo entrambe le testate, l'esplosione è avvenuta nella provincia di Kunar.",
+          "headline": "Quasi 100 feriti nell'esplosione nella provincia di Kunar"
+        },
+        "ja": {
+          "body": "ディー・ヴェルト紙およびデア・シュピーゲル誌は、この爆発で100人近くが負傷したと報じた。両メディアによると、爆発はクナール州で発生した。",
+          "headline": "クナール州の爆発で100人近くが負傷"
+        },
+        "ko": {
+          "body": "디 벨트와 데어 슈피겔은 이번 폭발로 100명 가까운 사람들이 부상을 입었다고 보도했다. 두 매체에 따르면 폭발은 쿠나르주에서 발생했다.",
+          "headline": "쿠나르주 폭발 사고로 100명 가까이 부상"
+        },
+        "pt": {
+          "body": "O Die Welt e o Der Spiegel noticiaram que quase 100 pessoas ficaram feridas na explosão. O incidente ocorreu na província de Kunar, segundo ambos os meios de comunicação.",
+          "headline": "Quase 100 pessoas feridas em explosão na província de Kunar"
+        },
+        "zh": {
+          "body": "据《世界报》和《明镜周刊》报道，此次爆炸造成近百人受伤。两家媒体均指出，爆炸发生在库纳尔省。",
+          "headline": "库纳尔省爆炸造成近百人受伤"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.welt.de/politik/ausland/article6b0aaf12e6dce45621984d6a/afghanistan-sprengstofflager-explodiert-neben-schule-mindestens-sieben-schueler-tot.html",
+          "title": "Sieben Schüler nach Explosion neben Schule in Afghanistan getötet",
+          "outlet": "Die Welt",
+          "publishedAt": "2026-11-28T11:04:57.000Z"
+        },
+        {
+          "url": "https://www.spiegel.de/panorama/afghanistan-mehrere-tote-bei-explosion-nahe-schule-a-7f2d2901-cf4d-4ba0-83bd-bd580b72ce48#ref=rss",
+          "title": "Afghanistan: Mehrere Tote bei Explosion nahe Schule",
+          "outlet": "Der Spiegel",
+          "publishedAt": "2026-11-28T10:54:00.000Z"
+        }
+      ],
+      "importance": 3
     },
     {
       "at": "2026-11-28T10:14:37.000Z",
@@ -503,15 +561,34 @@
     "https://www.thehindu.com/news/international/hamas-says-israel-tried-to-kill-chiefs-son-in-gaza/article71752540.ece",
     "https://www.lemonde.fr/culture/article/2026/11/28/le-musee-kanal-a-bruxelles-ouvre-enfin-ses-portes-en-collaboration-avec-le-centre-pompidou-apres-de-nombreuses-polemiques_6816061_3246.html",
     "https://www.welt.de/politik/ausland/article6b0aaf12e6dce45621984d6a/afghanistan-sprengstofflager-explodiert-neben-schule-mindestens-sieben-schueler-tot.html",
-    "https://www.spiegel.de/panorama/afghanistan-mehrere-tote-bei-explosion-nahe-schule-a-7f2d2901-cf4d-4ba0-83bd-bd580b72ce48#ref=rss"
+    "https://www.spiegel.de/panorama/afghanistan-mehrere-tote-bei-explosion-nahe-schule-a-7f2d2901-cf4d-4ba0-83bd-bd580b72ce48#ref=rss",
+    "https://www.scmp.com/news/world/russia-central-asia/article/3376136/afghanistan-school-explosion-kills-7-pupils-over-90-injured",
+    "https://news.sky.com/story/seven-students-killed-and-up-to-99-injured-in-explosion-near-afghan-school-13617431"
   ],
   "startedAt": "2026-11-28T10:26:31.988Z",
-  "updatedAt": "2026-11-28T11:07:35.450Z",
+  "updatedAt": "2026-11-28T11:19:31.336Z",
   "importance": 5,
   "wantsStats": true,
   "articleSlug": "afghanistan-school-explosion",
-  "sourceCount": 6,
+  "sourceCount": 8,
   "statsHistory": [
+    {
+      "at": "2024-05-22T00:00:00.000Z",
+      "rows": [
+        {
+          "key": "students-killed",
+          "value": 7
+        },
+        {
+          "key": "students-injured-upper-estimate",
+          "value": 99
+        },
+        {
+          "key": "students-injured-lower-estimate",
+          "value": 97
+        }
+      ]
+    },
     {
       "at": "2024-05-22T00:00:00.000Z",
       "rows": [
